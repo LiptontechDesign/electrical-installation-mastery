@@ -3,11 +3,12 @@ import type { LessonGuide } from './lesson-guides';
 export type Flashcard = {
   id: string;
   lessonId: string;
+  lessonTitle: string;
   moduleId: string;
   front: string;
   back: string;
   whyItMatters: string;
-  kind: 'Big picture' | 'Core idea' | 'Concept connection' | 'Site decision' | 'Teach it back' | 'Safety check' | 'Kenya standards';
+  kind: 'Big picture' | 'Core idea' | 'Concept connection' | 'Site decision' | 'Safety check' | 'Kenya standards';
   answerPoints?: string[];
   kenyaNote?: string;
 };
@@ -15,13 +16,14 @@ export type Flashcard = {
 export type AssessmentQuestion = {
   id: string;
   lessonId: string;
+  lessonTitle: string;
   moduleId: string;
   cardId: string;
   prompt: string;
   options: string[];
   answer: number;
   explanation: string;
-  kind: 'Understanding' | 'Concept connection' | 'Job scenario' | 'Reasoning' | 'Teach-back' | 'Safety & standards';
+  kind: 'Understanding' | 'Concept connection' | 'Job scenario' | 'Reasoning' | 'Safety & standards';
 };
 
 export type LessonAssessment = {
@@ -92,22 +94,38 @@ function cleanSentence(value: string) {
   return value.trim().replace(/[.?!]+$/, '');
 }
 
+function firstSentence(value: string) {
+  return value.trim().split(/(?<=[.!?])\s+/)[0];
+}
+
 function directConceptQuestion(concept: string, topic: string) {
   const sentence = cleanSentence(concept);
   let match = sentence.match(/^(.+?)\s+before\s+(.+)$/i);
-  if (match) return { prompt: `What must be done before ${match[2].toLocaleLowerCase()}?`, answer: match[1] };
+  if (match) return { prompt: `What must be done before ${match[2].toLocaleLowerCase()}?`, answer: sentence };
 
   match = sentence.match(/^(.+?)\s+(contain|contains)\s+(.+)$/i);
-  if (match) return { prompt: `What ${match[2].toLocaleLowerCase() === 'contains' ? 'does' : 'do'} ${match[1].toLocaleLowerCase()} contain?`, answer: match[3] };
+  if (match) return { prompt: `What ${match[2].toLocaleLowerCase() === 'contains' ? 'does' : 'do'} ${match[1].toLocaleLowerCase()} contain?`, answer: sentence };
 
-  match = sentence.match(/^(.+?)\s+(influences|determines|affects)\s+(whether\s+.+)$/i);
-  if (match) return { prompt: `What ${match[2].toLocaleLowerCase()} ${match[3].toLocaleLowerCase()}?`, answer: match[1] };
+  match = sentence.match(/^(.+?)(?:\s+(strongly|directly|mainly|largely))?\s+(influences|determines|affects)\s+(whether\s+.+)$/i);
+  if (match) return { prompt: `What ${match[3].toLocaleLowerCase()} ${match[4].toLocaleLowerCase()}?`, answer: sentence };
 
   match = sentence.match(/^(.+?)\s+depends\s+on\s+(.+)$/i);
-  if (match) return { prompt: `What does ${match[1].toLocaleLowerCase()} depend on?`, answer: match[2] };
+  if (match) return { prompt: `What does ${match[1].toLocaleLowerCase()} depend on?`, answer: sentence };
 
   match = sentence.match(/^(.+?)\s+is\s+opposite\s+to\s+(.+)$/i);
-  if (match) return { prompt: `How is ${match[1].toLocaleLowerCase()} related to ${match[2].toLocaleLowerCase()}?`, answer: 'They are in opposite directions.' };
+  if (match) return { prompt: `How is ${match[1].toLocaleLowerCase()} related to ${match[2].toLocaleLowerCase()}?`, answer: sentence };
+
+  match = sentence.match(/^(.+?)\s+(increases|decreases|rises|falls)\s+(.+)$/i);
+  if (match) return { prompt: `How does ${match[1].toLocaleLowerCase()} change ${match[3].toLocaleLowerCase()}?`, answer: sentence };
+
+  match = sentence.match(/^(.+?)\s+equals\s+(.+)$/i);
+  if (match) return { prompt: `What does ${match[1].toLocaleLowerCase()} equal?`, answer: sentence };
+
+  match = sentence.match(/^(.+?)\s+can\s+(.+)$/i);
+  if (match) return { prompt: `What can ${match[1].toLocaleLowerCase()} do?`, answer: sentence };
+
+  match = sentence.match(/^(.+?)\s+(creates|produces|forms|stores|shares|adds|opposes|guides|intensifies)\s+(.+)$/i);
+  if (match) return { prompt: `What does ${match[1].toLocaleLowerCase()} ${match[2].toLocaleLowerCase()}?`, answer: sentence };
 
   const action = sentence.match(/^(Choose|Select|Check|Confirm|Verify|Read|Record|Scan|Keep|Plan|Allow|Restore|Coordinate|Place|Use|Compare|Distinguish|Separate|Establish)\b/i)?.[1]?.toLocaleLowerCase();
   if (action === 'choose' || action === 'select') {
@@ -115,69 +133,75 @@ function directConceptQuestion(concept: string, topic: string) {
     return { prompt: `What must be considered when ${action === 'choose' ? 'choosing' : 'selecting'} ${object.toLocaleLowerCase()}?`, answer: sentence };
   }
   const actionPrompts: Record<string, string> = {
-    check: `What must be checked for ${topic.toLocaleLowerCase()}?`,
-    confirm: `What must be confirmed for ${topic.toLocaleLowerCase()}?`,
-    verify: `What must be verified for ${topic.toLocaleLowerCase()}?`,
-    read: `What information must be read before working with ${topic.toLocaleLowerCase()}?`,
-    record: `What must be recorded for ${topic.toLocaleLowerCase()}?`,
-    scan: `What must be checked before work starts on ${topic.toLocaleLowerCase()}?`,
-    keep: `What must be kept correctly controlled in ${topic.toLocaleLowerCase()}?`,
-    plan: `What must be planned for ${topic.toLocaleLowerCase()}?`,
-    allow: `What allowances are needed for ${topic.toLocaleLowerCase()}?`,
+    check: `What must be checked in “${topic}”?`,
+    confirm: `What must be confirmed in “${topic}”?`,
+    verify: `What must be verified in “${topic}”?`,
+    read: `What information must be read before applying “${topic}”?`,
+    record: `What must be recorded when applying “${topic}”?`,
+    scan: `What must be checked before the work in “${topic}” starts?`,
+    keep: `What must be kept correctly controlled in “${topic}”?`,
+    plan: `What must be planned in “${topic}”?`,
+    allow: `What allowances are required in “${topic}”?`,
     restore: `What must be restored before the work is complete?`,
-    coordinate: `What must be coordinated for ${topic.toLocaleLowerCase()}?`,
-    place: `What must be considered when positioning equipment for ${topic.toLocaleLowerCase()}?`,
-    use: `What should be used for ${topic.toLocaleLowerCase()}?`,
-    compare: `What must be compared for ${topic.toLocaleLowerCase()}?`,
-    distinguish: `What must be distinguished in ${topic.toLocaleLowerCase()}?`,
-    separate: `What must be kept separate in ${topic.toLocaleLowerCase()}?`,
+    coordinate: `What must be coordinated in “${topic}”?`,
+    place: `What must be considered when positioning equipment in “${topic}”?`,
+    use: `What should be used in “${topic}”?`,
+    compare: `What must be compared in “${topic}”?`,
+    distinguish: `What must be distinguished in “${topic}”?`,
+    separate: `What must be kept separate in “${topic}”?`,
     establish: 'What must be established before work starts?',
   };
   if (action && actionPrompts[action]) return { prompt: actionPrompts[action], answer: sentence };
 
-  match = sentence.match(/^(.+?)\s+(?:is|are|means|allows|requires|provides|supports|protects|controls|limits|reduces|increases|connects|contributes|responds|remains|stays)\b/i);
-  if (match && match[1].split(/\s+/).length <= 7) return { prompt: `What is correct about ${match[1].toLocaleLowerCase()}?`, answer: sentence };
-
-  return { prompt: `What is the correct technical point about ${topic.toLocaleLowerCase()}?`, answer: sentence };
-}
-
-function fieldAction(concept: string, topic: string) {
-  if (/^(choose|check|confirm|keep|record|read|select|separate|distinguish|establish|scan|plan|allow|restore|coordinate|verify|understand|compare|place|use)\b/i.test(concept)) {
-    return concept;
+  match = sentence.match(/^(.+?)\s+(is|are|means)\s+(.+)$/i);
+  if (match && match[1].split(/\s+/).length <= 7 && !/\b(?:while|but|and)\b|,/.test(match[1])) {
+    return { prompt: `How does this lesson describe ${match[1].toLocaleLowerCase()}?`, answer: sentence };
   }
-  return `Use this principle when explaining, selecting or checking ${topic.toLocaleLowerCase()}: ${concept}`;
+
+  match = sentence.match(/^(.+?)\s+(allows|requires|provides|supports|protects|controls|limits|reduces|increases|connects|contributes|responds|remains|stays)\s+(.+)$/i);
+  if (match && match[1].split(/\s+/).length <= 7 && !/\b(?:while|but|and)\b|,/.test(match[1])) {
+    return { prompt: `What does the lesson explain about ${match[1].toLocaleLowerCase()}?`, answer: sentence };
+  }
+
+  return { prompt: `Which statement accurately explains this point from “${topic}”?`, answer: sentence };
 }
 
 function reasoningDistractors(topic: string) {
-  const subject = topic.toLocaleLowerCase();
   return [
-    `The principle has no effect on how ${subject} behaves or how the result is checked.`,
-    `Use the same approach for ${subject} in every situation without checking the actual conditions.`,
-    `Judge ${subject} mainly by appearance; the reason behind the decision does not need to be verified.`,
+    `The principle has no connection to the electrical behaviour explained in “${topic}”.`,
+    `Use the same conclusion from “${topic}” in every situation without checking the actual conditions.`,
+    'Judge the result mainly by appearance; the reason behind it does not need to be explained or verified.',
   ];
 }
 
 function unsafeDistractors(topic: string) {
-  const subject = topic.toLocaleLowerCase();
   return [
-    `Begin the work on ${subject} and decide what should have been checked only if a problem appears.`,
+    `Begin the work covered in “${topic}” and decide what should have been checked only if a problem appears.`,
     'Copy the demonstrated arrangement exactly without checking the drawing, equipment data or installation environment.',
     'Accept operation as proof that the design, workmanship, protection and required verification are all correct.',
   ];
 }
 
-function balancedSelection<T>(groups: T[][], limit: number) {
-  const selected: T[] = [];
-  let round = 0;
-  while (selected.length < limit && groups.some((group) => round < group.length)) {
-    groups.forEach((group, groupIndex) => {
-      if (selected.length >= limit || !group.length) return;
-      const item = group[(round + groupIndex) % group.length];
-      if (item && !selected.includes(item)) selected.push(item);
-    });
-    round += 1;
-  }
-  return selected;
+function summaryDistractors(title: string) {
+  return [
+    `It deals only with the appearance of equipment and does not explain the electrical principle in “${title}”.`,
+    'It assumes one arrangement can be copied into every installation without checking the circuit or environment.',
+    'It treats successful operation as complete proof that the design, protection and workmanship are correct.',
+  ];
+}
+
+function groupedLessonSelection<T>(groups: T[][], limit: number) {
+  const availableGroups = groups.filter((group) => group.length > 0);
+  if (!availableGroups.length) return [];
+  const base = Math.floor(limit / availableGroups.length);
+  const remainder = limit % availableGroups.length;
+  return availableGroups.flatMap((group, groupIndex) => {
+    const count = Math.min(group.length, base + (groupIndex < remainder ? 1 : 0));
+    // Each lesson assessment is ordered as overview, core concepts, then application.
+    // Preserve that teaching sequence when composing a module review instead of
+    // jumping from an overview to an unrelated final card from the same lesson.
+    return group.slice(0, count);
+  }).slice(0, limit);
 }
 
 export function buildAssessmentBank(modules: readonly CourseModule[], guides: Record<string, LessonGuide>) {
@@ -185,86 +209,57 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
   const moduleAssessments: Record<string, ModuleAssessment> = {};
 
   modules.forEach((module) => {
-    const moduleGuides = module.lessons.map((lesson) => guides[lesson.id] ?? fallbackGuide(lesson));
-    const moduleSummaryPool = unique(moduleGuides.map((guide) => guide.summary));
-    const moduleRememberPool = unique(moduleGuides.map((guide) => guide.remember));
-    const modulePracticePool = unique(moduleGuides.map((guide) => guide.practicalConnection));
-
     module.lessons.forEach((lesson, lessonIndex) => {
       const guide = guides[lesson.id] ?? fallbackGuide(lesson);
-      const topic = lesson.topic.toLocaleLowerCase();
+      const lessonFocus = lesson.title;
       const isFoundationTheory = module.id === 'module-01';
-      const conceptQuestions = guide.keyConcepts.map((concept) => directConceptQuestion(concept, lesson.topic));
+      const conceptQuestions = guide.keyConcepts.map((concept) => directConceptQuestion(concept, lessonFocus));
       const flashcards: Flashcard[] = [
         {
-          id: `${lesson.id}-summary`, lessonId: lesson.id, moduleId: module.id,
+          id: `${lesson.id}-summary`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
           kind: 'Big picture',
-          front: `What is the main idea behind ${topic}?`,
+          front: `What does “${lesson.title}” explain?`,
           back: guide.summary,
           answerPoints: guide.keyConcepts.slice(0, 3),
-          whyItMatters: `A competent electrician can connect ${topic} to the complete circuit or installation—not only repeat a definition.`,
+          whyItMatters: 'This overview gives the context needed before studying the individual facts and their practical use.',
         },
-        ...guide.keyConcepts.flatMap((concept, conceptIndex) => {
+        ...guide.keyConcepts.map((concept, conceptIndex) => {
           const conceptQuestion = conceptQuestions[conceptIndex];
-          return [
-            {
-              id: `${lesson.id}-concept-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
-              kind: 'Core idea' as const,
-              front: conceptQuestion.prompt,
-              back: conceptQuestion.answer,
-              answerPoints: [
-                `State the principle accurately: ${concept}`,
-                `Connect it to the main point: ${guide.remember}`,
-              ],
-              whyItMatters: `This is core idea ${conceptIndex + 1} of ${guide.keyConcepts.length}. Keep it connected to the ideas before and after it.`,
-            },
-            {
-              id: `${lesson.id}-decision-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
-              kind: isFoundationTheory ? 'Concept connection' as const : 'Site decision' as const,
-              front: isFoundationTheory
-                ? `This principle is important: “${concept}” What does it help explain?`
-                : `Apply this requirement: “${concept}” What should it change on the job?`,
-              back: isFoundationTheory ? `It helps explain ${topic}: ${concept}` : fieldAction(concept, lesson.topic),
-              answerPoints: isFoundationTheory
-                ? [concept, `Connect this fact to the wider topic: ${guide.summary}`]
-                : [concept, 'Explain what could be wrong, unsafe or incomplete if this point is ignored.'],
-              whyItMatters: isFoundationTheory
-                ? 'This connects the scientific idea to circuit behaviour and to the practical topics that follow later in the course.'
-                : 'This connects the core idea to what should be inspected, selected, installed, tested or explained on a real job.',
-            },
-          ];
+          return {
+            id: `${lesson.id}-concept-${conceptIndex + 1}`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
+            kind: 'Core idea' as const,
+            front: conceptQuestion.prompt,
+            back: conceptQuestion.answer,
+            answerPoints: [
+              `State the principle accurately: ${concept}`,
+              `Connect it to the main point: ${guide.remember}`,
+            ],
+            whyItMatters: `This is core idea ${conceptIndex + 1} of ${guide.keyConcepts.length}. It builds the knowledge needed for the lesson's final safety rule and practical application.`,
+          };
         }),
         {
-          id: `${lesson.id}-remember`, lessonId: lesson.id, moduleId: module.id,
+          id: `${lesson.id}-remember`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
           kind: 'Safety check',
-          front: `What is the most important rule to remember about ${topic}?`,
+          front: `What is the key rule to remember from “${lesson.title}”?`,
           back: guide.remember,
           answerPoints: [guide.remember, 'Use the check before proceeding, not only after a defect appears.'],
           whyItMatters: 'A short, accurate mental check helps prevent a familiar task from becoming an automatic—and possibly unsafe—routine.',
         },
         {
-          id: `${lesson.id}-practice`, lessonId: lesson.id, moduleId: module.id,
-          kind: 'Site decision',
-          front: `How is ${topic} applied on a real job?`,
+          id: `${lesson.id}-practice`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
+          kind: isFoundationTheory ? 'Concept connection' : 'Site decision',
+          front: `How can the main idea from “${lesson.title}” be applied or demonstrated?`,
           back: guide.practicalConnection,
           answerPoints: [guide.practicalConnection, 'Name the evidence that would show the work has been carried out and checked correctly.'],
           whyItMatters: 'Practical evidence connects theory to a drawing, installation method, test result or clear client decision.',
-        },
-        {
-          id: `${lesson.id}-teach-back`, lessonId: lesson.id, moduleId: module.id,
-          kind: 'Teach it back',
-          front: guide.checkYourself,
-          back: `A strong answer should explain the principle, the reason it matters and its practical consequence—not merely repeat a definition.`,
-          answerPoints: [...guide.keyConcepts, `Practical connection: ${guide.practicalConnection}`],
-          whyItMatters: 'If you can teach the idea clearly and answer a follow-up question, you are more likely to understand it well enough to use it.',
         },
       ];
 
       if (lesson.regulationSensitive) {
         flashcards.push({
-          id: `${lesson.id}-kenya`, lessonId: lesson.id, moduleId: module.id,
+          id: `${lesson.id}-kenya`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
           kind: 'Kenya standards',
-          front: `Before applying ${topic} in Kenya, what must be confirmed?`,
+          front: `Before applying the method in “${lesson.title}” in Kenya, what must be confirmed?`,
           back: lesson.regulationStatus || kenyaGuardrail,
           answerPoints: ['Separate the transferable technical principle from the rule or value that must be verified locally.', 'Confirm competence, project requirements, product instructions and the required inspection or testing evidence.'],
           whyItMatters: 'Technical principles transfer across countries, but legal duties, values, certificates, permitted methods and licence scope can change.',
@@ -273,82 +268,57 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       }
 
       const questions: AssessmentQuestion[] = [];
-      const summaryChoice = rotateCorrectOption(guide.summary, moduleSummaryPool, lessonIndex);
+      const summaryAnswer = firstSentence(guide.summary);
+      const summaryChoice = rotateCorrectOption(summaryAnswer, summaryDistractors(lesson.title), lessonIndex);
       questions.push({
-        id: `${lesson.id}-q-summary`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-summary`,
-        prompt: `What is the main purpose of ${topic}?`,
+        id: `${lesson.id}-q-summary`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-summary`,
+        prompt: `Which statement best explains the main purpose of “${lesson.title}”?`,
         kind: 'Understanding',
         ...summaryChoice,
-        explanation: guide.summary,
+        explanation: `Direct answer: ${summaryAnswer} Full context: ${guide.summary}`,
       });
 
       guide.keyConcepts.forEach((concept, conceptIndex) => {
         const conceptQuestion = conceptQuestions[conceptIndex];
         const relatedAnswers = conceptQuestions.filter((_, index) => index !== conceptIndex).map((item) => item.answer);
-        const choice = rotateCorrectOption(conceptQuestion.answer, [...relatedAnswers, ...reasoningDistractors(lesson.topic)], lessonIndex + conceptIndex + 1);
+        const choice = rotateCorrectOption(conceptQuestion.answer, [...relatedAnswers, ...reasoningDistractors(lesson.title)], lessonIndex + conceptIndex + 1);
         questions.push({
-          id: `${lesson.id}-q-concept-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
+          id: `${lesson.id}-q-concept-${conceptIndex + 1}`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
           cardId: `${lesson.id}-concept-${conceptIndex + 1}`,
           prompt: conceptQuestion.prompt,
           kind: 'Understanding',
           ...choice,
-          explanation: `Correct answer: ${conceptQuestion.answer}. In context: ${concept}`,
+          explanation: `${concept} This point supports the lesson's main takeaway: ${guide.remember}`,
         });
 
-        const action = isFoundationTheory
-          ? `It helps explain ${topic}: ${concept}`
-          : fieldAction(concept, lesson.topic);
-        const scenarioChoice = rotateCorrectOption(action, isFoundationTheory ? reasoningDistractors(lesson.topic) : unsafeDistractors(lesson.topic), lessonIndex + conceptIndex + 11);
-        questions.push({
-          id: `${lesson.id}-q-scenario-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
-          cardId: `${lesson.id}-decision-${conceptIndex + 1}`,
-          prompt: isFoundationTheory
-            ? `The principle is “${concept}” What does it help explain?`
-            : `The requirement is “${concept}” Which option applies it correctly?`,
-          kind: isFoundationTheory ? 'Concept connection' : 'Job scenario',
-          ...scenarioChoice,
-          explanation: isFoundationTheory
-            ? `${action} This connects the individual fact to the wider electrical idea.`
-            : `${action} Check the drawing, circuit conditions, equipment information and the required verification before accepting the work.`,
-        });
       });
 
-      const rememberChoice = rotateCorrectOption(guide.remember, moduleRememberPool, lessonIndex + 5);
+      const rememberChoice = rotateCorrectOption(guide.remember, unsafeDistractors(lesson.title), lessonIndex + 5);
       questions.push({
-        id: `${lesson.id}-q-remember`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-remember`,
-        prompt: `Which rule is most important when working with ${topic}?`,
+        id: `${lesson.id}-q-remember`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-remember`,
+        prompt: `Which statement is the correct rule to remember from “${lesson.title}”?`,
         kind: 'Safety & standards',
         ...rememberChoice,
         explanation: guide.remember,
       });
 
-      const practiceChoice = rotateCorrectOption(guide.practicalConnection, modulePracticePool, lessonIndex + 6);
+      const practiceChoice = rotateCorrectOption(guide.practicalConnection, unsafeDistractors(lesson.title), lessonIndex + 6);
       questions.push({
-        id: `${lesson.id}-q-practice`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-practice`,
-        prompt: `Which example shows ${topic} being applied correctly?`,
+        id: `${lesson.id}-q-practice`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-practice`,
+        prompt: `Which activity correctly applies the main idea from “${lesson.title}”?`,
         kind: 'Job scenario',
         ...practiceChoice,
         explanation: guide.practicalConnection,
       });
 
-      const teachBackAnswer = `Explain these connected points: ${guide.keyConcepts.join(' ')}`;
-      const teachBackChoice = rotateCorrectOption(teachBackAnswer, reasoningDistractors(lesson.topic), lessonIndex + 31);
+      const integrationAnswer = `${guide.remember} Practical application: ${guide.practicalConnection}`;
+      const integrationChoice = rotateCorrectOption(integrationAnswer, unsafeDistractors(lesson.title), lessonIndex + 41);
       questions.push({
-        id: `${lesson.id}-q-teach-back`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-teach-back`,
-        prompt: guide.checkYourself,
-        kind: 'Teach-back',
-        ...teachBackChoice,
-        explanation: `A complete answer connects these points: ${guide.keyConcepts.join(' ')}`,
-      });
-
-      const completionAnswer = `Explain the principle, apply it to the work, and identify the evidence or check that would confirm the result.`;
-      const completionChoice = rotateCorrectOption(completionAnswer, unsafeDistractors(lesson.topic), lessonIndex + 41);
-      questions.push({
-        id: `${lesson.id}-q-completion`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-practice`,
-        prompt: `Which result best shows that ${topic} has been applied correctly?`,
+        id: `${lesson.id}-q-integration`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-practice`,
+        prompt: `Which answer correctly connects the key rule in “${lesson.title}” to its practical use?`,
         kind: 'Reasoning',
-        ...completionChoice,
-        explanation: `${completionAnswer} Practical example: ${guide.practicalConnection}`,
+        ...integrationChoice,
+        explanation: `Key rule: ${guide.remember} Practical application: ${guide.practicalConnection}`,
       });
 
       if (lesson.regulationSensitive) {
@@ -359,7 +329,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
           'Only the equipment colour and appearance need to be checked before installation.',
         ], lessonIndex + 7);
         questions.push({
-          id: `${lesson.id}-q-kenya`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-kenya`,
+          id: `${lesson.id}-q-kenya`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-kenya`,
           prompt: `Before using this method on a Kenyan project, what must be done?`,
           kind: 'Safety & standards',
           ...choice,
@@ -374,8 +344,8 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
     moduleAssessments[module.id] = {
       moduleId: module.id,
       title: module.title,
-      flashcards: balancedSelection(lessonAssessments.map((assessment) => assessment.flashcards), 40),
-      questions: balancedSelection(lessonAssessments.map((assessment) => assessment.questions), 50),
+      flashcards: groupedLessonSelection(lessonAssessments.map((assessment) => assessment.flashcards), 40),
+      questions: groupedLessonSelection(lessonAssessments.map((assessment) => assessment.questions), 50),
     };
   });
 

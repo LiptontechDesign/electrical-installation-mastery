@@ -100,6 +100,7 @@ export default function AssessmentPanel({
           <div className="trainer-progress"><span>Flashcard {cardIndex + 1} of {flashcards.length}</span><b>{percent(sessionReviewed.length, flashcards.length)}% reviewed this session</b><div className="progress-line"><span style={{ width: `${percent(cardIndex + 1, flashcards.length)}%` }} /></div></div>
           <button type="button" className={`learning-flashcard ${cardRevealed ? 'revealed' : ''}`} onClick={() => setCardRevealed((current) => !current)} aria-label={cardRevealed ? 'Hide answer' : 'Reveal answer'}>
             <div className="learning-item-labels"><span className="flashcard-side-label">{cardRevealed ? 'Model answer' : 'Recall first'}</span><span className="learning-kind">{card.kind}</span></div>
+            <span className="assessment-lesson-source">From lesson: {card.lessonTitle}</span>
             <h3>{cardRevealed ? card.back : card.front}</h3>
             {cardRevealed ? <>
               {card.answerPoints && card.answerPoints.length > 0 && <div className="complete-answer"><strong>A complete answer should include</strong><ol>{card.answerPoints.map((point, index) => <li key={`${card.id}-point-${index}`}>{point}</li>)}</ol></div>}
@@ -119,6 +120,7 @@ export default function AssessmentPanel({
         <div className="assessment-quiz">
           <div className="trainer-progress"><span>Question {questionIndex + 1} of {questions.length}</span><b>{score} correct so far</b><div className="progress-line"><span style={{ width: `${percent(questionIndex + (revealed ? 1 : 0), questions.length)}%` }} /></div></div>
           <div className="question-identity"><span>Question {questionIndex + 1}</span><b>{question.kind}</b></div>
+          <p className="assessment-question-source">From lesson: <strong>{question.lessonTitle}</strong></p>
           <h3>{question.prompt}</h3>
           <div className="assessment-options">{question.options.map((option, index) => {
             const selected = answers[questionIndex] === index;
