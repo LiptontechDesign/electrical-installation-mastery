@@ -1,0 +1,563 @@
+{
+  "p04-l01": {
+    "summary": "Metal conduit work depends on accurate measurement, secure workholding, clean cutting, threading, bending, and deburring. Choosing the right tool for each operation improves both safety and the finished installation.",
+    "keyConcepts": [
+      "Accurate measuring tools keep conduit runs aligned and repeatable.",
+      "Cutting, threading, bending, and deburring each require purpose-made tools.",
+      "Eye protection and secure workholding reduce common workshop injuries."
+    ],
+    "remember": "A well-made conduit run starts with the correct tool used under control.",
+    "practicalConnection": "Before starting a conduit task, lay out and inspect every tool needed from measurement through finishing.",
+    "checkYourself": "Why should a freshly cut conduit end be deburred before any conductors are installed?"
+  },
+  "p04-l02": {
+    "summary": "PVC conduit is available in different sizes, duties, colours, and fittings for routing and protecting insulated conductors. Good selection considers cable space, support, access, environmental exposure, and thermal movement rather than size alone.",
+    "keyConcepts": [
+      "PVC conduit size must suit cables, bends, and pulling space.",
+      "Fittings create changes of direction, access points, and secure support.",
+      "Expansion couplers accommodate movement caused by temperature changes."
+    ],
+    "remember": "Select PVC conduit as a complete supported system, not as an isolated tube.",
+    "practicalConnection": "On a planned surface run, identify where saddles, inspection boxes, bends, and expansion allowance would be needed.",
+    "checkYourself": "What installation problem can arise when a long PVC conduit run has no allowance for thermal expansion?"
+  },
+  "p04-l03": {
+    "summary": "A sound 90-degree PVC bend is formed with even heating, an appropriate radius, and controlled shaping. Overheating, tight bending, or uneven pressure can flatten, wrinkle, or weaken the conduit and make cable pulling difficult.",
+    "keyConcepts": [
+      "Even heating softens PVC without scorching or weakening one area.",
+      "An appropriate bend radius protects cable and preserves pulling space.",
+      "Cooling the formed conduit fixes the angle and limits spring-back."
+    ],
+    "remember": "Heat gradually, form smoothly, and preserve the conduit bore.",
+    "practicalConnection": "Practise on spare conduit and compare the finished bore with an unbent piece before using the technique on a real run.",
+    "checkYourself": "Which visible signs would tell you that a PVC bend has been overheated or formed too tightly?"
+  },
+  "p04-l04": {
+    "summary": "Steel conduit offers strong mechanical protection and is supplied in different finishes, sizes, fittings, and box systems. Selection must suit corrosion exposure, support needs, conductor access, and the intended protective-conductor arrangement.",
+    "keyConcepts": [
+      "Steel conduit provides strong mechanical protection in demanding environments.",
+      "Finish selection should match moisture, corrosion, and exposure conditions.",
+      "Compatible boxes and fittings help maintain mechanical and electrical continuity."
+    ],
+    "remember": "Every steel-conduit fitting forms part of one continuous mechanical system.",
+    "practicalConnection": "Compare a dry indoor route with a damp plant room and explain how the conduit finish and fittings should differ.",
+    "checkYourself": "Why must corrosion risk be considered before choosing a steel-conduit finish?"
+  },
+  "p04-l05": {
+    "summary": "Cutting and threading steel conduit requires a square cut, firm support, careful deburring, and a correctly matched die. Clean threads let couplers and spouted boxes seat properly without leaving sharp edges or loose metal inside the system.",
+    "keyConcepts": [
+      "A square cut helps threaded fittings seat straight and securely.",
+      "Deburring removes sharp edges that could damage conductor insulation.",
+      "Correct dies, lubricant, and workholding produce clean, usable threads."
+    ],
+    "remember": "A thread is only useful when the cut is square and the bore is smooth.",
+    "practicalConnection": "After threading a training piece, inspect the bore, test-fit a coupler, and check that it aligns without force.",
+    "checkYourself": "What faults could result from threading conduit that was cut at an angle?"
+  },
+  "p04-l06": {
+    "summary": "Accurate steel-conduit bending links the required finished dimension to the geometry of the bending tool. Correct marking, allowance for the set, and controlled force produce a bend whose back lands at the intended point without twisting or flattening.",
+    "keyConcepts": [
+      "Set allowance links the bender geometry to the finished measurement.",
+      "Clear reference marks prevent measuring from the wrong bend point.",
+      "Gradual forming limits flattening, wrinkling, and unwanted conduit twist."
+    ],
+    "remember": "Measure the finished bend you need, then account for what the bender takes up.",
+    "practicalConnection": "Make a test bend, measure the actual take-up of the available bender, and record it for repeat work.",
+    "checkYourself": "Why is one universal bend deduction unreliable across different conduit benders?"
+  },
+  "p04-l07": {
+    "summary": "A flat 90-degree bend in steel trunking is produced by translating the route into accurate marks, cuts, folds, and secure joints. The finished bend must retain usable cable space and present no sharp edges to conductors.",
+    "keyConcepts": [
+      "Accurate marking converts the required route into reliable cut lines.",
+      "Neat cuts and folds preserve usable capacity around the bend.",
+      "Finished edges and joints must not damage cables during installation."
+    ],
+    "remember": "Good trunking fabrication protects both route geometry and cable space.",
+    "practicalConnection": "Use a paper or scrap-metal template to plan the removed sections before cutting the assessed workpiece.",
+    "checkYourself": "What should you inspect inside a completed trunking bend before cables are introduced?"
+  },
+  "p04-l08": {
+    "summary": "Cable-tray bends are fabricated by careful marking, controlled cutting, forming, joining, and edge finishing. The result should follow the route, support cables evenly, and preserve corrosion protection wherever the tray has been cut.",
+    "keyConcepts": [
+      "Tray bends should support cables without sharp edges or abrupt turns.",
+      "Symmetrical marking keeps the bend aligned with the planned route.",
+      "Cut edges need protection against corrosion and cable abrasion."
+    ],
+    "remember": "The tray must guide and support the cable without becoming a source of damage.",
+    "practicalConnection": "Inspect a fabricated bend for alignment, burrs, joint strength, coating damage, and suitable cable radius.",
+    "checkYourself": "Why should exposed cut edges on metallic cable tray be treated after fabrication?"
+  },
+  "p04-l09": {
+    "summary": "Conduit-capacity calculations compare the space required by the chosen cables with the usable capacity of the conduit. The calculation is only one check: bends, route length, pulling difficulty, heat, and maintainability also matter, and all factors must be verified against current KS 662, EPRA, utility, and manufacturer requirements.",
+    "keyConcepts": [
+      "Capacity factors limit crowding and preserve space for safe cable pulling.",
+      "Bends and long runs can make a nominally compliant conduit impractical.",
+      "Applicable cable and conduit factors come from the governing local standard."
+    ],
+    "remember": "A conduit that passes the table still needs to be practical to wire safely.",
+    "practicalConnection": "Calculate a proposed run, then review its bends and length before accepting the conduit size.",
+    "checkYourself": "Why might you select a larger conduit even when the capacity-factor calculation passes?"
+  },
+  "p04-l10": {
+    "summary": "Trunking capacity is assessed by comparing the combined space demand of the installed cables with the usable capacity of the trunking. Fill alone does not address thermal grouping, circuit segregation, pulling access, or space for future maintenance.",
+    "keyConcepts": [
+      "Total cable factors are compared with the chosen trunking capacity.",
+      "Fill calculations do not replace thermal grouping and segregation checks.",
+      "Spare capacity improves installation, maintenance, and future circuit additions."
+    ],
+    "remember": "Trunking must provide workable space, not merely enough mathematical area.",
+    "practicalConnection": "Lay out a sample group of singles and check capacity, grouping, segregation, and access as separate design questions.",
+    "checkYourself": "Which two checks are still needed after a trunking fill calculation shows adequate capacity?"
+  },
+  "p04-l11": {
+    "summary": "Steel-wire-armoured cable combines insulated current-carrying cores with bedding, armour, and an outer sheath. Each layer has a different job, and conductor identification and any use of armour in the protective path must follow the designed arrangement.",
+    "keyConcepts": [
+      "Insulated cores carry current inside bedding, armour, and outer sheath.",
+      "Steel wire armour provides mechanical protection and may support fault return.",
+      "Core colours identify conductors only when applied under the current code."
+    ],
+    "remember": "Understand every SWA layer before cutting, glanding, or connecting it.",
+    "practicalConnection": "Examine an offcut and identify the core insulation, fillers, bedding, armour, and outer sheath in order.",
+    "checkYourself": "What is the main difference between the job of SWA armour and the job of its core insulation?"
+  },
+  "p04-l12": {
+    "summary": "SWA gland parts work together to grip the cable, clamp the armour, secure the enclosure entry, and provide the intended environmental seal. BW and CW patterns suit different exposure conditions, so the gland type and accessories must match the cable, enclosure, and location.",
+    "keyConcepts": [
+      "BW glands suit protected dry locations where no outer seal is needed.",
+      "CW glands seal the outer sheath for exposed or damp conditions.",
+      "Earth tags, locknuts, and shrouds complete mechanical and protective connections."
+    ],
+    "remember": "Choose the gland for the cable and environment before preparing the armour.",
+    "practicalConnection": "Arrange the gland components in assembly order and explain the purpose of each before making a termination.",
+    "checkYourself": "What extra environmental function distinguishes a typical CW gland arrangement from a BW arrangement?"
+  },
+  "p04-l13": {
+    "summary": "Making off an SWA gland requires controlled sheath removal, evenly prepared armour wires, correct cone seating, and firm assembly. A sound gland provides strain relief, mechanical security, armour continuity, and the required enclosure sealing without damaging the cores.",
+    "keyConcepts": [
+      "Even armour preparation lets every wire seat correctly around the cone.",
+      "Tight gland assembly provides strain relief and reliable armour continuity.",
+      "Correct sealing and enclosure entry preserve the required ingress protection."
+    ],
+    "remember": "Uniform armour seating is the heart of a reliable SWA gland.",
+    "practicalConnection": "After a training termination, perform a pull check and inspect the armour ring before testing continuity.",
+    "checkYourself": "What could happen if several armour wires fail to seat around the gland cone?"
+  },
+  "p04-l14": {
+    "summary": "SWA support must control weight, route, bend radius, and mechanical forces without transferring strain to glands or equipment. Cleats, supports, and any catenary system should match the cable construction, span, environment, and manufacturer guidance.",
+    "keyConcepts": [
+      "Cleats transfer cable weight and fault forces into secure supports.",
+      "Minimum bend radius prevents armour distortion and insulation damage.",
+      "Catenary support must carry strain without overloading cable terminations."
+    ],
+    "remember": "The support system carries the cable so the termination does not have to.",
+    "practicalConnection": "Plan supports for a vertical-to-horizontal SWA route and identify every point where weight or bending force changes.",
+    "checkYourself": "Why should a gland never be expected to support the weight of a long SWA run?"
+  },
+  "p04-l15": {
+    "summary": "SY flexible cable normally contains insulated cores beneath a braided screen and outer sheath, but its permitted uses are not universal. Termination must secure the cable, manage the braid deliberately, and follow the cable maker's instructions and current local requirements for the intended duty.",
+    "keyConcepts": [
+      "SY braid offers mechanical screening but needs a suitable termination method.",
+      "The gland must grip the cable without damaging inner insulation.",
+      "Suitability depends on environment, duty, manufacturer guidance, and local rules."
+    ],
+    "remember": "A neat SY termination does not prove the cable is suitable for the application.",
+    "practicalConnection": "Before terminating SY cable, record its product specification and confirm how the braid should be connected for that application.",
+    "checkYourself": "Why must the intended use of SY cable be checked separately from the quality of its termination?"
+  },
+  "p04-l16": {
+    "summary": "Mineral-insulated copper-sheathed cable uses compacted mineral powder to insulate conductors inside a seamless metal sheath. It performs well in demanding heat and fire conditions, but exposed insulation attracts moisture and the cable requires careful bending, clipping, and sealing.",
+    "keyConcepts": [
+      "MICC uses compacted mineral insulation inside a seamless metal sheath.",
+      "The construction tolerates heat but demands careful bending and support.",
+      "Exposed mineral insulation absorbs moisture and must be sealed promptly."
+    ],
+    "remember": "Keep prepared MICC ends dry because mineral insulation readily absorbs moisture.",
+    "practicalConnection": "Inspect an MICC sample for sheath condition, minimum bend radius, support needs, and protected end sealing.",
+    "checkYourself": "Why is moisture control especially important immediately after an MICC cable is cut?"
+  },
+  "p04-l17": {
+    "summary": "An MICC termination combines a gland for mechanical and earth connection with a sealed pot that protects the mineral insulation. Careful preparation, correct sealing material, and insulation-resistance testing are essential because hidden moisture or debris can undermine the termination.",
+    "keyConcepts": [
+      "The pot seals mineral insulation from damaging moisture after preparation.",
+      "The gland secures the sheath and establishes the intended earth connection.",
+      "Insulation resistance testing confirms the termination remains dry and sound."
+    ],
+    "remember": "Seal first-class workmanship into the MICC end, then prove it by testing.",
+    "practicalConnection": "Make a supervised practice termination and record insulation-resistance results before and after fitting the pot.",
+    "checkYourself": "What does a poor insulation-resistance result suggest after an MICC termination has been completed?"
+  },
+  "p04-l18": {
+    "summary": "The conduit loop-in method routes insulated singles through conduit and makes planned connections at accessible lighting points or boxes. Successful work depends on a clear circuit path, correct conductor identification, sound terminations, manageable conduit fill, and continuous protection.",
+    "keyConcepts": [
+      "Looping through conduit boxes reduces inaccessible joints along the circuit.",
+      "PVC singles depend on conduit for routing and mechanical protection.",
+      "Conductor identification and protective continuity must remain clear throughout."
+    ],
+    "remember": "Plan the conductor journey before pulling any single into the conduit.",
+    "practicalConnection": "Draw the line, neutral, switched-line, and protective paths for a two-light loop-in training circuit.",
+    "checkYourself": "Why is a conductor schedule useful before pulling singles into a multi-box lighting route?"
+  },
+  "p04-l19": {
+    "summary": "A direct-on-line starter connects a three-phase motor directly to the supply through a contactor and overload device. Its power circuit carries motor current, while a lower-current control circuit operates the coil through Stop, Start, holding, and overload contacts.",
+    "keyConcepts": [
+      "The power circuit carries motor current through contactor and overload.",
+      "The control circuit energizes the contactor coil through command devices.",
+      "A holding contact keeps the coil energized after Start is released."
+    ],
+    "remember": "Read DOL diagrams as two linked circuits: power and control.",
+    "practicalConnection": "Trace the control path from the supply through Stop, Start, overload, coil, and holding contact on a schematic.",
+    "checkYourself": "How does the holding contact keep a DOL contactor energized after the Start button is released?"
+  },
+  "p04-l20": {
+    "summary": "Wiring a DOL starter means translating the schematic into verified terminal-to-terminal connections. Isolation, conductor identification, coil-voltage checks, overload settings, phase sequence, and controlled functional testing are all necessary before a motor is placed in service.",
+    "keyConcepts": [
+      "Terminal references connect the schematic logically to the physical starter.",
+      "Overload auxiliary contacts interrupt the coil when excessive current persists.",
+      "Phase sequence and motor rotation are checked only under controlled conditions."
+    ],
+    "remember": "Wire from the diagram, verify every terminal, and test without assumptions.",
+    "practicalConnection": "On an isolated training starter, continuity-check each control path against the diagram before applying a supply.",
+    "checkYourself": "Why should coil voltage be confirmed before energizing a newly wired DOL starter?"
+  },
+  "p04-l21": {
+    "summary": "A single-phase contactor uses a small control current in its coil to operate contacts carrying a separate load current. Correct design matches coil voltage, contact current, pole arrangement, enclosure, and switching category to the real load and control method.",
+    "keyConcepts": [
+      "The coil current controls contacts that switch a separate load current.",
+      "Coil voltage must match the control supply applied to its terminals.",
+      "Contact ratings must suit the load type and switching duty."
+    ],
+    "remember": "The coil controls the contactor, but the contacts must carry the load safely.",
+    "practicalConnection": "Sketch a thermostat controlling a heater through a contactor and label the control and load currents separately.",
+    "checkYourself": "Why can a contactor rated for one resistive load be unsuitable for a motor of the same current?"
+  },
+  "p05-l01": {
+    "summary": "Overload, short circuit, and earth fault describe different abnormal current paths and therefore different risks and protective responses. Their severity depends on available fault energy, duration, equipment, and human exposure, so current protection and disconnection requirements must be checked against KS 662, EPRA, utility, and manufacturer rules.",
+    "keyConcepts": [
+      "Overload current follows the normal path but exceeds circuit capacity.",
+      "Short-circuit current takes a low-impedance path between live conductors.",
+      "Earth-fault current flows through protective paths toward the source."
+    ],
+    "remember": "Identify the current path before deciding which protective action is needed.",
+    "practicalConnection": "Given a tripping circuit, classify the symptom as likely overload, short circuit, or earth fault before selecting tests.",
+    "checkYourself": "How does an overload current path differ from an earth-fault current path?"
+  },
+  "p05-l02": {
+    "summary": "A fuse protects a circuit by allowing its calibrated element to melt and interrupt excessive current. Fuse type, current rating, time-current behavior, and breaking capacity must coordinate with the circuit, using current locally applicable standards and manufacturer data.",
+    "keyConcepts": [
+      "Fuse elements melt when accumulated heating exceeds their designed limit.",
+      "Time-current behavior determines how quickly a fuse clears different faults.",
+      "Breaking capacity must safely contain the available prospective fault current."
+    ],
+    "remember": "A fuse sacrifices its element so the fault does not sacrifice the installation.",
+    "practicalConnection": "Compare two fuse data sheets and identify differences in rating, operating time, and breaking capacity.",
+    "checkYourself": "Why is replacing a blown fuse with any fuse of the same current rating unsafe?"
+  },
+  "p05-l03": {
+    "summary": "A miniature circuit breaker combines thermal overload response with rapid magnetic fault response and can be reset after the fault is cleared. Rated current, trip curve, breaking capacity, poles, and coordination must be selected from current KS 662, EPRA, utility, and manufacturer requirements.",
+    "keyConcepts": [
+      "Thermal operation responds mainly to sustained overload current.",
+      "Magnetic operation responds rapidly to high fault current.",
+      "Trip curve and breaking capacity must match circuit conditions."
+    ],
+    "remember": "An MCB rating describes several behaviors, not just one current number.",
+    "practicalConnection": "Read an MCB marking and identify its rated current, curve, poles, and short-circuit capability.",
+    "checkYourself": "Which internal MCB mechanism normally responds fastest to a high-current short circuit?"
+  },
+  "p05-l04": {
+    "summary": "A residual current device monitors the difference between current leaving and returning through the conductors it encloses. An imbalance can indicate leakage, but RCD type, residual rating, time behavior, testing, and coordination must follow current local standards; an RCD alone normally does not provide overload protection.",
+    "keyConcepts": [
+      "An RCD compares outgoing and returning current for an imbalance.",
+      "Residual current can indicate leakage through earth or a person.",
+      "An RCD does not provide overload protection unless combined as an RCBO."
+    ],
+    "remember": "An RCD watches current balance, while overcurrent protection watches current magnitude.",
+    "practicalConnection": "On a distribution schedule, identify which device provides residual protection and which provides overload protection.",
+    "checkYourself": "Why can a circuit protected only by an RCD still need a fuse or circuit breaker?"
+  },
+  "p05-l05": {
+    "summary": "An MCB that will not reset may still see a connected fault, a persistent overload, or a mechanical problem; repeated forcing is not diagnosis. Type B and Type C curves have different magnetic operating ranges, and their use must be justified against current circuit conditions, local requirements, and manufacturer data.",
+    "keyConcepts": [
+      "An MCB may refuse reset while a downstream fault remains.",
+      "Type B and C curves tolerate different magnetic inrush levels.",
+      "Repeated resetting without investigation can expose equipment and people to danger."
+    ],
+    "remember": "A breaker that will not stay on is reporting a condition to investigate.",
+    "practicalConnection": "Develop an isolated troubleshooting sequence that separates downstream faults from a suspected defective MCB.",
+    "checkYourself": "Why might a Type C MCB suit some inrush loads better than a Type B device?"
+  },
+  "p05-l06": {
+    "summary": "Automatic disconnection of supply limits danger by making a protective device disconnect a faulted circuit within the required time. The fault path, earthing, bonding, protective conductor, loop impedance, and device characteristics work as one system, and numerical limits require current KS 662, EPRA, utility, and manufacturer verification.",
+    "keyConcepts": [
+      "ADS uses a protective device to remove a dangerous fault quickly.",
+      "A complete low-impedance fault path allows sufficient operating current.",
+      "Earthing, bonding, and protective conductors support the disconnection process."
+    ],
+    "remember": "ADS succeeds only when the entire fault loop and protective device coordinate.",
+    "practicalConnection": "Trace an appliance earth fault from line conductor through the protective path back to the source device.",
+    "checkYourself": "What happens to ADS performance if fault-loop impedance becomes too high?"
+  },
+  "p05-l07": {
+    "summary": "Earth-fault loop impedance is the total opposition around the line-to-earth fault path, commonly expressed as Zs = Ze + (R1 + R2). The relationship explains the path, but allowable values and temperature treatment must be verified using current KS 662, EPRA, utility, and manufacturer information.",
+    "keyConcepts": [
+      "Ze represents the external portion of the earth fault loop.",
+      "R1 plus R2 represents line and protective conductors within the installation.",
+      "Zs combines the whole loop seen at the fault point."
+    ],
+    "remember": "Zs follows line out to the fault and the protective path back to the source.",
+    "practicalConnection": "Draw the complete loop for a final-circuit earth fault and label Ze, R1, and R2.",
+    "checkYourself": "Which parts of Zs belong to the installation rather than the external supply?"
+  },
+  "p05-l08": {
+    "summary": "TN-S, TN-C-S, and TT describe how the supply neutral and protective earth are arranged and how earth-fault current returns to the source. Each arrangement changes electrode, bonding, RCD, and fault-loop considerations, so never assume the system type; confirm it with the utility and current Kenyan requirements.",
+    "keyConcepts": [
+      "TN-S uses a separate protective conductor throughout the supply arrangement.",
+      "TN-C-S combines neutral and earth upstream, then separates them.",
+      "TT relies on a local electrode and commonly requires residual-current protection."
+    ],
+    "remember": "Identify the earthing arrangement before designing or testing its protection.",
+    "practicalConnection": "Compare simplified TN-S, TN-C-S, and TT diagrams and trace the earth-fault return path in each.",
+    "checkYourself": "Why is a local earth electrode central to the fault path in a TT arrangement?"
+  },
+  "p05-l09": {
+    "summary": "Testing a protective bonding conductor begins with visual confirmation and a safe low-resistance continuity method that proves the intended path. Parallel metallic paths can hide a disconnected conductor, so isolation, temporary disconnection, reconnection, expected values, and the sequence must follow current local procedures and competent supervision.",
+    "keyConcepts": [
+      "Visual inspection should confirm identification, routing, size, and sound connections.",
+      "Low-resistance continuity testing checks the bonding path end to end.",
+      "Parallel metallic paths can make a defective conductor appear satisfactory."
+    ],
+    "remember": "A low reading is meaningful only when you understand every parallel path.",
+    "practicalConnection": "On isolated training equipment, compare continuity readings before and after introducing a deliberate parallel path.",
+    "checkYourself": "How can connected pipework create a misleading protective-bonding continuity result?"
+  },
+  "p05-l10": {
+    "summary": "A circuit protective conductor is sized to carry fault current safely until protection disconnects, not to carry normal load current. Thermal withstand, fault duration, material, installation, and mechanical robustness all matter, with final sizing verified against current KS 662, EPRA, utility, and manufacturer requirements.",
+    "keyConcepts": [
+      "A protective conductor carries fault current, not normal load current.",
+      "Required area depends on fault magnitude, duration, material, and installation.",
+      "Mechanical robustness can impose a larger minimum than thermal calculation."
+    ],
+    "remember": "A small earth conductor still has a large safety job during a fault.",
+    "practicalConnection": "Compare two circuits with different fault levels and disconnection times to explain why their protective conductors may differ.",
+    "checkYourself": "Why is normal load current alone insufficient for sizing a circuit protective conductor?"
+  },
+  "p05-l11": {
+    "summary": "Calculated loop impedance must allow for conductor resistance increasing as operating temperature rises. Applying an appropriate factor to R1 + R2 before adding Ze gives a more realistic design estimate, but the factor and maximum permitted Zs require current local-standard and manufacturer verification.",
+    "keyConcepts": [
+      "Conductor resistance rises as copper temperature increases during normal operation.",
+      "A temperature factor converts measured resistance toward a design condition.",
+      "Adding Ze produces the estimated total loop impedance at the point."
+    ],
+    "remember": "Cold test resistance can understate the impedance of a warm working circuit.",
+    "practicalConnection": "Calculate Zs from a given Ze and R1 + R2, then repeat after applying the stated temperature factor.",
+    "checkYourself": "Why is an unadjusted room-temperature R1 + R2 value potentially optimistic for design?"
+  },
+  "p05-l12": {
+    "summary": "A second worked loop-impedance calculation should reinforce consistent units, temperature assumptions, rounding, and comparison with a justified limit. Supply variation and conductor temperature need sensible design margin, while the accepted method and limits must be checked against current KS 662, EPRA, utility, and manufacturer information.",
+    "keyConcepts": [
+      "Predicted Zs should use consistent units and clearly stated temperature assumptions.",
+      "Design margins matter because supply impedance and conductor temperature can vary.",
+      "Measured and calculated results should be compared, explained, and documented."
+    ],
+    "remember": "A calculation is defensible only when its assumptions and comparison limit are visible.",
+    "practicalConnection": "Write a complete calculation record showing inputs, temperature factor, result, limit, margin, and conclusion.",
+    "checkYourself": "What information should accompany a calculated Zs value so another electrician can verify it?"
+  },
+  "p05-l13": {
+    "summary": "Designing for earth-fault loop impedance combines external supply impedance, conductor resistance, temperature, and protective-device behavior. The predicted worst-case Zs must support timely disconnection with adequate margin, using currently applicable Kenyan rules and verified device data.",
+    "keyConcepts": [
+      "Design Zs combines supply impedance with the final circuit conductor path.",
+      "The protective device needs enough fault current to disconnect in time.",
+      "Worst-case temperature and tolerances prevent optimistic design conclusions."
+    ],
+    "remember": "Design to the warm, credible worst case rather than the easiest measured case.",
+    "practicalConnection": "For a sample circuit, calculate predicted Zs and explain whether the selected protective device can meet its required operation.",
+    "checkYourself": "How does a higher Zs generally affect the fault current available to operate an overcurrent device?"
+  },
+  "p05-l14": {
+    "summary": "Protective-device selection coordinates load demand, cable capacity, overload response, fault interruption, disconnection time, inrush, and selectivity. Device ratings and curves must be checked against the actual prospective fault current, current KS 662 and EPRA requirements, and manufacturer coordination data.",
+    "keyConcepts": [
+      "Design current, device rating, and cable capacity must coordinate together.",
+      "Breaking capacity must exceed the prospective fault current at installation.",
+      "Trip behavior must satisfy disconnection, inrush, and selectivity requirements."
+    ],
+    "remember": "Choose protection for the whole circuit duty, not only the normal load current.",
+    "practicalConnection": "Build a selection checklist for a circuit using load, cable, fault level, curve, residual protection, and coordination data.",
+    "checkYourself": "Why can a breaker with the correct ampere rating still be unsuitable for a circuit?"
+  },
+  "p05-l15": {
+    "summary": "High earth-fault loop impedance may limit fault current so an overcurrent device cannot disconnect quickly enough. An RCD can respond to a much smaller residual imbalance, which is especially important in some earthing arrangements, but it never replaces sound earthing, protective conductors, or verification against current local requirements.",
+    "keyConcepts": [
+      "High loop impedance may prevent an overcurrent device operating quickly enough.",
+      "An RCD can detect small residual currents independently of load current.",
+      "RCD protection never removes the need for sound earthing and conductors."
+    ],
+    "remember": "RCD sensitivity can assist disconnection, but the protective path must still be intact.",
+    "practicalConnection": "Compare how an overcurrent device and an RCD respond conceptually to the same low-current earth fault.",
+    "checkYourself": "Why can an RCD provide useful fault protection where Zs is too high for rapid MCB operation?"
+  },
+  "p06-l01": {
+    "summary": "Electrical design starts by defining the supply, load, environment, installation method, user needs, and constraints before selecting products. This first step prevents later calculations from being built on assumptions, while all compliance decisions must use current KS 662, EPRA, utility, and manufacturer information.",
+    "keyConcepts": [
+      "Supply characteristics define voltage, phases, earthing, and available fault current.",
+      "Load information establishes operating current and expected usage patterns.",
+      "Environment and installation method shape cable and protection choices."
+    ],
+    "remember": "A correct calculation cannot rescue an incorrectly defined design problem.",
+    "practicalConnection": "Create a one-page design brief listing supply, loads, route, environment, users, and missing information before calculating.",
+    "checkYourself": "Which supply characteristics must be known before selecting cable and protection?"
+  },
+  "p06-l02": {
+    "summary": "Design current estimates the current a load is expected to draw under its intended operating conditions. The correct relationship depends on phase arrangement, voltage, power factor, efficiency, and load information, all of which must be verified before applying current local design rules.",
+    "keyConcepts": [
+      "Design current estimates the current a load should draw in service.",
+      "Single-phase and three-phase loads require different power relationships.",
+      "Efficiency and power factor can materially increase required input current."
+    ],
+    "remember": "Start cable and protective-device design with a justified load current, not a guess.",
+    "practicalConnection": "Calculate and compare design current for equal-power single-phase and balanced three-phase loads using stated assumptions.",
+    "checkYourself": "Why can ignoring motor efficiency and power factor underestimate its design current?"
+  },
+  "p06-l03": {
+    "summary": "Transposing a power formula isolates the unknown quantity without changing the equality. Unit consistency, phase arrangement, power factor, and efficiency must be handled explicitly, and any values used for installation design need current local and manufacturer verification.",
+    "keyConcepts": [
+      "Transposition isolates the unknown while preserving equality on both sides.",
+      "Watts, volts, and amperes must use compatible units before calculation.",
+      "Power factor and efficiency modify simple power-current relationships."
+    ],
+    "remember": "Rearrange symbolically first, then substitute values with units.",
+    "practicalConnection": "Rearrange P = V × I for current and test the result by substituting it back into the original formula.",
+    "checkYourself": "What error occurs if kilowatts are entered as though they were watts in I = P ÷ V?"
+  },
+  "p06-l04": {
+    "summary": "Choosing cable size requires more than matching normal load current to a table. Protective-device coordination, installation method, ambient temperature, grouping, thermal insulation, voltage drop, fault withstand, mechanical duty, and current Kenyan requirements all influence the final choice.",
+    "keyConcepts": [
+      "Cable capacity must remain above the coordinated protective-device rating.",
+      "Installation method and correction factors reduce usable current capacity.",
+      "Voltage drop and fault performance can require a larger conductor."
+    ],
+    "remember": "Cable size is the result of several checks, not one lookup.",
+    "practicalConnection": "Use a design worksheet that records load, device, installation factors, voltage drop, fault checks, and the selected size.",
+    "checkYourself": "What three reasons might require a conductor to be larger than the load-current check alone suggests?"
+  },
+  "p06-l05": {
+    "summary": "A live-conductor sizing calculation derives the required tabulated capacity after applying relevant correction factors, then selects a conductor that meets or exceeds it. BS 7671 examples are useful learning models, but final table values and methods must be replaced or confirmed using current KS 662, EPRA, utility, and manufacturer requirements for Kenya.",
+    "keyConcepts": [
+      "Tabulated capacity is adjusted for temperature, grouping, insulation, and installation.",
+      "The required tabulated value is found before selecting a conductor size.",
+      "British tables must not be applied where governing Kenyan requirements differ."
+    ],
+    "remember": "Correction factors change the capacity you must find in the table, not the load itself.",
+    "practicalConnection": "Repeat one sizing example with and without a grouping factor and compare the required tabulated capacity.",
+    "checkYourself": "Why is it unsafe to copy a conductor size directly from an old British example for a Kenyan installation?"
+  },
+  "p06-l06": {
+    "summary": "Conductor resistance follows R = ρL/A: it rises with material resistivity and length and falls as cross-sectional area increases. Temperature changes resistivity, so design constants and operating assumptions must be taken from current applicable data when the result supports regulated work.",
+    "keyConcepts": [
+      "Resistance increases with resistivity and conductor length.",
+      "Resistance decreases when conductor cross-sectional area becomes larger.",
+      "Operating temperature changes resistivity and therefore the real resistance."
+    ],
+    "remember": "Longer is more resistance; larger area is less resistance.",
+    "practicalConnection": "Calculate the resistance of two equal-length copper conductors with different areas and compare their expected losses.",
+    "checkYourself": "What happens to resistance if conductor length doubles while material and area stay unchanged?"
+  },
+  "p06-l07": {
+    "summary": "Voltage drops because current flowing through conductor impedance produces a voltage difference along the route and dissipates energy. Longer routes, higher current, smaller conductors, and reactive effects can increase the drop, while permitted limits must be verified under current Kenyan requirements and equipment needs.",
+    "keyConcepts": [
+      "Current through conductor resistance converts electrical energy into heat.",
+      "The resulting voltage difference leaves less voltage available at the load.",
+      "Longer routes and smaller conductors usually increase voltage drop."
+    ],
+    "remember": "Voltage drop is the electrical cost of pushing current through a real conductor.",
+    "practicalConnection": "Measure source and load voltage on a safe low-voltage training circuit while changing current or conductor length.",
+    "checkYourself": "Why does increasing conductor cross-sectional area normally reduce voltage drop?"
+  },
+  "p06-l08": {
+    "summary": "Practical voltage-drop design often uses tabulated values with design current and route length to estimate loss. The correct single-phase or three-phase method, conductor temperature, load characteristics, and acceptable limit must be verified against current KS 662, EPRA, utility, equipment, and manufacturer requirements.",
+    "keyConcepts": [
+      "Voltage-drop tables combine conductor properties into convenient design values.",
+      "Route length and design current directly influence calculated voltage drop.",
+      "Permitted limits protect equipment performance and installation efficiency."
+    ],
+    "remember": "Calculate the drop, convert it to a useful percentage, and compare it with a justified limit.",
+    "practicalConnection": "Calculate voltage drop for one route, then test how the result changes with doubled length or current.",
+    "checkYourself": "Why should a calculated voltage drop be expressed as a percentage of nominal voltage?"
+  },
+  "p06-l09": {
+    "summary": "Voltage drop can also be derived from conductor resistivity by calculating resistance for the complete current path and applying V = I × R. Single-phase and three-phase paths differ, temperature affects resistance, and all constants and acceptance limits need current local verification before design use.",
+    "keyConcepts": [
+      "Resistivity links material behavior to conductor resistance and voltage loss.",
+      "Single-phase loops include both outward and return path length.",
+      "Three-phase calculations use the appropriate balanced-system relationship."
+    ],
+    "remember": "Use the electrical length of the current path, not just the physical one-way route.",
+    "practicalConnection": "Derive resistance and voltage drop for a single-phase two-wire route, showing why both conductors matter.",
+    "checkYourself": "Why is one-way route length commonly doubled in a simple single-phase resistivity calculation?"
+  },
+  "p06-l10": {
+    "summary": "Loaded cables grouped on tray heat one another and may not dissipate heat as effectively as isolated cables. Grouping factors account for arrangement, spacing, loading, and installation method, but their values must come from current KS 662 and manufacturer data for the actual tray layout.",
+    "keyConcepts": [
+      "Closely grouped loaded cables cannot release heat as effectively.",
+      "Grouping factors reduce allowable current to control conductor temperature.",
+      "Spacing, arrangement, and loading pattern affect the applicable factor."
+    ],
+    "remember": "Cable grouping is a thermal question, not merely a space question.",
+    "practicalConnection": "Sketch a tray arrangement and mark which circuits are loaded, spaced, bundled, or likely to require derating.",
+    "checkYourself": "Why can two tray layouts with the same number of cables require different grouping factors?"
+  },
+  "p06-l11": {
+    "summary": "Maximum demand estimates the greatest load likely to operate at one time, while diversity recognizes that not every connected load runs simultaneously. Diversity rules are context-dependent assumptions, so the method must be justified using current KS 662, EPRA, utility requirements, client information, and real load behavior.",
+    "keyConcepts": [
+      "Connected load is the total rating of all installed equipment.",
+      "Maximum demand estimates the greatest load expected at one time.",
+      "Diversity recognizes that many loads do not operate simultaneously."
+    ],
+    "remember": "Diversity is evidence-based simultaneity, not permission to ignore connected load.",
+    "practicalConnection": "Create a load schedule for a small building and state why each diversity assumption is reasonable.",
+    "checkYourself": "What is the difference between connected load and maximum demand?"
+  },
+  "p06-l12": {
+    "summary": "Standard diversity methods can misrepresent buildings whose occupancy or equipment differs from the assumptions behind the method. Modern large loads, duty cycles, and simultaneous use may require measured profiles or documented engineering judgment, always checked against current Kenyan utility and regulatory expectations.",
+    "keyConcepts": [
+      "Standard diversity assumptions may not represent a building's real usage.",
+      "Modern high-power loads can change both magnitude and timing of demand.",
+      "Measured profiles and documented judgment can improve the design estimate."
+    ],
+    "remember": "A familiar maximum-demand method is still only as good as its assumptions.",
+    "practicalConnection": "Challenge a standard diversity result by adding an electric vehicle charger or other long-duration high-power load.",
+    "checkYourself": "When should measured load data be preferred over a generic diversity rule?"
+  },
+  "p06-l13": {
+    "summary": "Balanced three-phase star and delta connections relate line and phase quantities through √3 in different ways. These relationships support current and voltage calculations, but actual supply voltage, balance, load data, and design requirements must be confirmed locally before application.",
+    "keyConcepts": [
+      "Star connection gives line voltage equal to √3 times phase voltage.",
+      "Delta connection gives line current equal to √3 times phase current.",
+      "These relationships assume a balanced three-phase system."
+    ],
+    "remember": "In star, voltage gains √3; in delta, current gains √3.",
+    "practicalConnection": "Calculate line and phase quantities for one balanced star load and one balanced delta load.",
+    "checkYourself": "For a balanced star load, how are line current and phase current related?"
+  },
+  "p06-l14": {
+    "summary": "The power triangle relates real power P, reactive power Q, and apparent power S, with power factor describing how much apparent power becomes useful real power. Calculations should use consistent units and the correct load behavior, while equipment ratings and correction decisions require current utility, Kenyan, and manufacturer verification.",
+    "keyConcepts": [
+      "Real power performs useful work and is measured in watts.",
+      "Reactive power exchanges energy with fields and is measured in vars.",
+      "Apparent power combines real and reactive components in volt-amperes."
+    ],
+    "remember": "Power factor is the real-power share of the apparent-power demand.",
+    "practicalConnection": "Draw a scaled power triangle from given P and Q values, then calculate S and power factor.",
+    "checkYourself": "How does a lower power factor affect current for the same useful real power?"
+  },
+  "p06-l15": {
+    "summary": "A breaker's 6 kA or 10 kA marking states the fault current it can interrupt safely under specified conditions, not its normal load rating. The chosen capability must meet or exceed prospective fault current at the installation point and coordinate with upstream devices under current KS 662, EPRA, utility, and manufacturer requirements.",
+    "keyConcepts": [
+      "Breaking capacity states the maximum fault current a breaker can interrupt.",
+      "Prospective fault current must not exceed the selected device capability.",
+      "The kA marking is separate from normal-current rating and trip curve."
+    ],
+    "remember": "Ampere rating carries the load; kA rating survives and clears the fault.",
+    "practicalConnection": "Compare a board's measured prospective fault current with candidate device breaking capacities and document the margin.",
+    "checkYourself": "Why can a 32 A, 6 kA breaker be unsuitable even when the circuit normally draws only 20 A?"
+  }
+}

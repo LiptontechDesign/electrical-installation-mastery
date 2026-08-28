@@ -1,0 +1,112 @@
+import { G, L, M } from './builders';
+
+export const module15 = M(
+  15,
+  'Building Services, Motors, Ventilation and Surge Protection',
+  'Extend domestic wiring skills into the services electricians increasingly coordinate in modern buildings: motor starters, pump-control panels, healthy mechanical ventilation and protection of electronic lighting from transient overvoltage. The module emphasises control logic, maintainability and whole-system commissioning rather than isolated connections.',
+  'Prepare a coordinated services design for a masonry home with a water-storage pump and bathrooms below gypsum ceilings. Include the motor and starter data, overload setting basis, control-panel schematic, isolation and dry-run or level protection, ventilation airflow route and controls, accessible fan/duct maintenance points, and surge-risk response for electronic equipment. Add a commissioning sheet that proves safe rotation or flow, automatic and manual modes, protective-device operation, ventilation performance and the agreed surge-protection measures.',
+  'Complete the core lessons on circuit protection, contactors, isolation, earthing, inspection and testing before working through building-service controls.',
+  'Use the UK examples to learn system principles. Verify current BS 7671 guidance, motor and ventilation product instructions, Kenyan building and electrical requirements, environmental conditions and the project design before installation.',
+  [
+    L(
+      'p15-v2-l01',
+      'Single-Phase Direct-On-Line Starter Wiring',
+      'PIaqmCxN9KU',
+      'GSH Electrical',
+      512,
+      'DOL motor starter connections and overload setting',
+      'Motor controls',
+      'UK educator',
+      G(
+        'This practical lesson opens a single-phase direct-on-line starter and traces the supply, motor, contactor, overload relay, start button, stop button and reset path. It turns a collection of terminals into a readable power-and-control sequence and shows how overload protection and three-wire control allow a motor to stop safely rather than restart unexpectedly after a supply interruption.',
+        [
+          'The power circuit carries motor current through the switching and overload elements, while the control circuit operates the contactor coil.',
+          'A normally closed stop and overload contact interrupt the coil circuit when the user stops the motor or an overload trips.',
+          'The auxiliary holding contact maintains the coil after the momentary start button is released.',
+          'The overload setting is based on the motor nameplate and starter arrangement, not simply on the upstream circuit-breaker rating.',
+        ],
+        'A DOL starter is not merely an on-off box: confirm coil voltage, overload range, no-volt release behaviour, enclosure rating and the motor full-load current before connecting it.',
+        'Draw separate power and control diagrams for a single-phase water pump. Label the contactor coil, hold-in contact, stop/start stations, overload contact, isolator, CPC and motor terminals.',
+        'When the start button is released, what keeps the contactor energised, and which two normally closed devices can deliberately break that holding circuit?',
+      ),
+      {
+        regulationStatus: 'Verify the actual starter schematic, coil voltage, motor nameplate, overload instructions, fault protection and local isolation requirements before energising a motor.',
+      },
+    ),
+    L(
+      'p15-v2-l02',
+      'Pump Control Panel and Cabinet',
+      'Ny9Cut_oJC0',
+      'John Ward',
+      1107,
+      'Coordinated pump controls and panel operation',
+      'Pump systems',
+      'UK educator',
+      G(
+        'John Ward examines a completed pump-control panel in its cabinet and explains how the devices work together. The lesson develops the starter circuit into a serviceable system with modes, sensors or switches, protective devices and labelled internal wiring, illustrating why a clear functional description is essential for installation, testing and later fault finding.',
+        [
+          'A pump panel combines power switching, control logic, protection and field inputs; each circuit should be identifiable from the drawing and labels.',
+          'Automatic level, pressure or demand controls need a defined manual mode and safe response to a failed or implausible sensor.',
+          'Dry-running, overload, short-circuit and loss-of-supply risks require different protective or control responses.',
+          'Cabinet layout should provide separation, heat dissipation, accessible terminals, gland support and space for safe testing and maintenance.',
+        ],
+        'Write the operating sequence before wiring: what starts the pump, what stops it, what locks it out, how it is reset and what the user sees during each condition.',
+        'For a roof- or ground-tank system, create an input/output table covering low and high level, dry-run protection, automatic/manual selection, pump contactor, alarm indication and emergency isolation.',
+        'If a pump will run manually but not automatically, which field inputs, control supplies and interlocks should be checked before replacing the motor or contactor?',
+      ),
+      {
+        regulationStatus: 'This is a worked UK panel example. Adapt the logic to the selected pump, sensors, water arrangement, enclosure environment and current Kenyan electrical and water-service requirements.',
+      },
+    ),
+    L(
+      'p15-v2-l03',
+      'Extractor Fan Installation Mistakes You Are Making Right Now',
+      'OlTniinvHCw',
+      'eFIXX',
+      5818,
+      'Ventilation design, fan selection and installation quality',
+      'Healthy buildings',
+      'UK educator',
+      G(
+        'This in-depth lesson explains why an electrically working fan can still fail to control humidity, condensation and mould. It brings together airflow demand, fan type, duct resistance, terminals, controls, make-up air, discharge position and maintenance, helping electricians specify a complete ventilation path instead of selecting equipment only by grille size or price.',
+        [
+          'Required airflow and system resistance determine whether an axial, centrifugal, mixed-flow or whole-house solution is appropriate.',
+          'Long, narrow, flexible or sharply bent ducts reduce delivered airflow and can create noise and condensation problems.',
+          'Timer, humidistat, occupancy and continuous-running controls must match room use and include appropriate isolation and permanent supplies.',
+          'The fan, duct, backdraft control, external terminal and replacement access form one system whose actual airflow must be commissioned.',
+        ],
+        'Do not bury a driver, fan, joint or non-serviceable damper above a sealed gypsum ceiling. Design access before the ceiling closes and support ducts and cables independently.',
+        'Survey a bathroom route from intake grille to external discharge. Record duct length and bends, fan duty, control method, make-up-air path, isolator, condensation strategy and the access panel needed for cleaning or replacement.',
+        'Why might a high-airflow fan still deliver poor extraction after installation, and which duct, room-air and commissioning checks would reveal the cause?',
+      ),
+      {
+        regulationStatus: 'The regulatory examples are UK based. Use the design principles, then verify Kenyan ventilation, wet-location, fire/acoustic penetration and electrical requirements plus the fan manufacturer data.',
+      },
+    ),
+    L(
+      'p15-v2-l04',
+      'Electrical Surges and Lighting',
+      '0NVSpbYT3D8',
+      'ECA',
+      2059,
+      'Transient overvoltage and modern lighting systems',
+      'Surge protection',
+      'UK professional body',
+      G(
+        'This ECA learning session uses modern lighting installations to examine installer considerations including electronic drivers, changing technology, sustainability and exposure to electrical surges. It reinforces that sensitive luminaires and controls should be considered within the building surge-risk strategy, not treated as disposable accessories after the distribution design is complete.',
+        [
+          'Electronic LED drivers and controls can be more vulnerable to transient overvoltage than traditional resistive lighting loads.',
+          'Surge protection is coordinated from the origin through distribution and, where required, close to sensitive equipment rather than chosen as an isolated device.',
+          'Cable routing, conductor length, earthing and bonding influence the effectiveness of an installed surge protective device.',
+          'Luminaire efficiency, maintainability, replaceable components and expected life should be discussed with the client alongside initial cost.',
+        ],
+        'An SPD is not a substitute for a lightning-protection design, sound earthing or correct equipment withstand selection; it is one coordinated protective measure.',
+        'Review a house with external lighting, smart controls, CCTV, an inverter and LED drivers. Identify sensitive loads, likely incoming and internally generated surge paths, proposed protective stages and accessible indication or replacement points.',
+        'What information would you collect before deciding whether surge protection is required, where it belongs and how its connecting conductors should be routed?',
+      ),
+      {
+        regulationStatus: 'Confirm the current BS 7671 surge-protection provisions only as a UK reference. Apply current Kenyan requirements, the supply arrangement, lightning-risk assessment and manufacturer coordination data.',
+      },
+    ),
+  ],
+);

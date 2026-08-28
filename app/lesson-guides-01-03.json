@@ -1,0 +1,644 @@
+{
+  "p01-l01": {
+    "summary": "Electricity begins with the structure of matter and the charge carried by subatomic particles. Understanding nuclei, electrons and electron shells gives a physical foundation for later ideas about current and voltage.",
+    "keyConcepts": [
+      "Atoms contain a positive nucleus surrounded by negatively charged electrons.",
+      "Valence-electron behaviour strongly influences whether a material can conduct electricity.",
+      "Electric charge is a particle property, not something manufactured by wires."
+    ],
+    "remember": "Electrical behaviour begins with how matter holds and moves charge.",
+    "practicalConnection": "This atomic model helps explain why copper conducts while many plastics insulate.",
+    "checkYourself": "Which part of an atom is most directly involved in ordinary electrical conduction?"
+  },
+  "p01-l02": {
+    "summary": "Copper conducts well because its atomic structure allows some outer electrons to move through the metallic lattice. Those mobile charge carriers respond to an electric field while the copper atoms remain in place.",
+    "keyConcepts": [
+      "Copper atoms contribute mobile outer electrons to the shared metallic structure.",
+      "Electron drift is slow even though electrical effects propagate through circuits quickly.",
+      "Conventional current direction is opposite to the average drift of electrons."
+    ],
+    "remember": "The conductor stays still; its mobile charge carriers respond to the field.",
+    "practicalConnection": "Copper's conductivity and mechanical properties make it a common installation conductor.",
+    "checkYourself": "Why can copper carry current without copper atoms travelling along the cable?"
+  },
+  "p01-l03": {
+    "summary": "Electrical charge can be counted and expressed using the SI unit called the coulomb. Prefixes such as milli and micro let electricians describe practical amounts without writing awkward strings of zeros.",
+    "keyConcepts": [
+      "Charge is quantized because it occurs in whole multiples of elementary charge.",
+      "One coulomb represents the combined charge of an enormous number of electrons.",
+      "SI prefixes scale units consistently by powers of ten."
+    ],
+    "remember": "The coulomb measures quantity of charge, while prefixes make the number manageable.",
+    "practicalConnection": "Charge units support later calculations involving current, time, capacitance and stored energy.",
+    "checkYourself": "What physical quantity is measured in coulombs, and why are prefixes useful?"
+  },
+  "p01-l04": {
+    "summary": "Current describes the rate at which electric charge passes a point in a circuit. The relationship I = Q divided by t links amperes, coulombs and seconds, and can be rearranged to find any missing quantity.",
+    "keyConcepts": [
+      "One ampere means one coulomb of charge passing each second.",
+      "Current is a rate, so both charge quantity and elapsed time matter.",
+      "The relationship Q = I times t finds transferred charge."
+    ],
+    "remember": "An ampere is a flow rate for charge, not an amount of charge.",
+    "practicalConnection": "Current ratings describe how rapidly charge moves under a particular operating condition.",
+    "checkYourself": "How much charge passes when two amperes flow steadily for five seconds?"
+  },
+  "p01-l05": {
+    "summary": "A useful circuit model includes a source, conducting path, load and some means of control. The path must be complete for sustained current, while protection is added to limit harmful fault consequences.",
+    "keyConcepts": [
+      "The source provides the potential difference that drives circuit current.",
+      "A closed conducting path lets charge circulate through the connected load.",
+      "Controls manage operation, while protective devices respond to abnormal conditions."
+    ],
+    "remember": "No complete path means no sustained circuit current.",
+    "practicalConnection": "Identify source, path, control, protection and load before tracing any circuit diagram.",
+    "checkYourself": "Which basic circuit element converts electrical energy into the intended useful effect?"
+  },
+  "p01-l06": {
+    "summary": "Voltage provides the electrical push, resistance opposes current, and current is the resulting rate of charge flow. For an ohmic component under stable conditions, changing one quantity changes the others predictably.",
+    "keyConcepts": [
+      "Voltage is potential difference between two points in a circuit.",
+      "Resistance limits current for a given applied voltage.",
+      "Current increases with voltage and decreases as resistance rises."
+    ],
+    "remember": "Voltage drives, resistance restrains, and current responds.",
+    "practicalConnection": "This relationship helps predict whether a load will draw a normal or excessive current.",
+    "checkYourself": "If voltage stays constant and resistance doubles, what happens to current?"
+  },
+  "p01-l07": {
+    "summary": "Ohm's law expresses the relationship between voltage, current and resistance as V = I times R. Rearranging the equation is useful, but the result is meaningful only when units and component conditions are understood.",
+    "keyConcepts": [
+      "V = I times R links volts, amperes and ohms.",
+      "The equation can be rearranged to calculate current or resistance.",
+      "Real components may change resistance when temperature or operating conditions change."
+    ],
+    "remember": "Choose the correct form of Ohm's law, then check the units and conditions.",
+    "practicalConnection": "Ohm's law supports expected-reading calculations before making measurements on safe training circuits.",
+    "checkYourself": "What resistance would allow three amperes to flow from a twelve-volt source?"
+  },
+  "p01-l08": {
+    "summary": "Series components share one current because there is only one path through the circuit. Their resistances add directly, and the supply voltage is divided across them according to resistance.",
+    "keyConcepts": [
+      "The same current passes through every component in a series path.",
+      "Series resistance equals the sum of all individual resistances.",
+      "Individual voltage drops add to the applied supply voltage."
+    ],
+    "remember": "Series circuits share current and divide voltage.",
+    "practicalConnection": "A series model helps interpret voltage drops along conductors, connections and loads.",
+    "checkYourself": "What is the total resistance of two-, three- and five-ohm resistors in series?"
+  },
+  "p01-l09": {
+    "summary": "Parallel branches connect across the same two electrical points, so every branch has the same voltage. Adding a branch creates another current path and therefore reduces the equivalent resistance seen by the source.",
+    "keyConcepts": [
+      "Every parallel branch has the same potential difference across it.",
+      "Source current equals the sum of all branch currents.",
+      "Equivalent parallel resistance is lower than the smallest branch resistance."
+    ],
+    "remember": "Parallel circuits share voltage and divide current.",
+    "practicalConnection": "Most building loads operate in parallel so each receives the intended supply voltage.",
+    "checkYourself": "Why does total resistance fall when another parallel load is connected?"
+  },
+  "p01-l10": {
+    "summary": "The reciprocal method calculates the equivalent resistance of any number of parallel resistors. Thinking in terms of conductance clarifies the result because each added branch contributes another way for current to flow.",
+    "keyConcepts": [
+      "Parallel conductances add even though parallel resistances do not add directly.",
+      "The reciprocal formula works for unequal branch resistances.",
+      "Identical parallel resistors equal one resistance divided by the branch count."
+    ],
+    "remember": "More parallel paths mean more conductance and less equivalent resistance.",
+    "practicalConnection": "Equivalent resistance lets you predict total current drawn by multiple resistive loads.",
+    "checkYourself": "What is the equivalent resistance of three identical twelve-ohm resistors in parallel?"
+  },
+  "p01-l11": {
+    "summary": "Complete parallel-circuit analysis combines common branch voltage, Ohm's law and current conservation. A reliable solution calculates branch values independently and then checks that their currents sum to the source current.",
+    "keyConcepts": [
+      "Each branch current follows from its voltage and resistance.",
+      "Current entering a junction equals current leaving that junction.",
+      "Calculated source current should agree with equivalent-resistance analysis."
+    ],
+    "remember": "Solve each branch, add the currents, then perform an independent check.",
+    "practicalConnection": "Expected branch readings help distinguish healthy parallel loads from open or abnormal branches.",
+    "checkYourself": "Which two methods can independently verify total current in a parallel circuit?"
+  },
+  "p01-l12": {
+    "summary": "Electrical power is the rate at which energy is transferred or converted. The expression P = V times I follows from energy per charge multiplied by charge flow per second.",
+    "keyConcepts": [
+      "One watt equals one joule of energy transferred each second.",
+      "Power equals voltage multiplied by current for the stated operating condition.",
+      "Higher power means energy is converted at a faster rate."
+    ],
+    "remember": "Power tells you how quickly electrical energy is being used or delivered.",
+    "practicalConnection": "Load power and supply voltage provide a first estimate of expected operating current.",
+    "checkYourself": "How much power is transferred by a twelve-volt load drawing two amperes?"
+  },
+  "p01-l13": {
+    "summary": "Substituting Ohm's law into P = V times I produces P = I squared times R. This form is especially useful when current and resistance are known, including when estimating resistive heating.",
+    "keyConcepts": [
+      "P = I squared times R removes voltage from the calculation.",
+      "Heating rises with the square of current for constant resistance.",
+      "Doubling current produces four times the resistive power loss."
+    ],
+    "remember": "Current has a squared effect on resistive heating.",
+    "practicalConnection": "The squared-current relationship explains why overloaded or loose connections can heat rapidly.",
+    "checkYourself": "If current doubles while resistance stays constant, by what factor does power increase?"
+  },
+  "p01-l14": {
+    "summary": "A second substitution gives P = V squared divided by R when voltage and resistance are known. This form shows that, for constant resistance, a modest voltage increase can cause a much larger power increase.",
+    "keyConcepts": [
+      "P = V squared divided by R removes current from the calculation.",
+      "Power rises with voltage squared when resistance remains constant.",
+      "Choose a power formula that matches the quantities actually known."
+    ],
+    "remember": "Use V squared over R when voltage and resistance are your reliable inputs.",
+    "practicalConnection": "This calculation helps compare resistive-load behaviour at different applied voltages.",
+    "checkYourself": "What power does a twelve-ohm resistor take when twenty-four volts is applied?"
+  },
+  "p01-l15": {
+    "summary": "Power describes an instantaneous rate, while energy accumulates as power acts over time. The kilowatt-hour is convenient for billing and appliance use, whereas the joule remains the SI energy unit.",
+    "keyConcepts": [
+      "Watts measure power, while joules and kilowatt-hours measure energy.",
+      "Energy equals power multiplied by the time of operation.",
+      "One kilowatt-hour equals 3.6 million joules."
+    ],
+    "remember": "Power is the rate; energy is what accumulates over time.",
+    "practicalConnection": "Appliance ratings and operating hours can be combined to estimate energy consumption.",
+    "checkYourself": "How much energy in kilowatt-hours does a two-kilowatt heater use in three hours?"
+  },
+  "p01-l16": {
+    "summary": "Electric current can produce heating, magnetic and chemical effects. These effects explain how many practical devices work and also reveal hazards that protection and good workmanship must control.",
+    "keyConcepts": [
+      "Resistance converts electrical energy into heat within conductors and loads.",
+      "Current creates magnetic fields used by motors, relays and transformers.",
+      "Current through suitable materials can drive chemical reactions."
+    ],
+    "remember": "Heat, magnetism and chemistry are three useful consequences of electric current.",
+    "practicalConnection": "Recognizing the intended effect helps separate normal device operation from an unwanted symptom.",
+    "checkYourself": "Which electrical effect is central to the operation of a relay coil?"
+  },
+  "p01-l17": {
+    "summary": "A current-carrying conductor creates a magnetic field around itself. Coiling the conductor concentrates the field, and an iron core can strengthen it further for practical electromagnetic devices.",
+    "keyConcepts": [
+      "Magnetic field direction depends on the direction of conventional current.",
+      "More coil turns can strengthen the field for a given current.",
+      "A ferromagnetic core guides and intensifies magnetic flux."
+    ],
+    "remember": "Current creates magnetism, and a coil concentrates the effect.",
+    "practicalConnection": "Electromagnets are the operating heart of contactors, relays, solenoids and many meters.",
+    "checkYourself": "What two construction changes can strengthen a coil's magnetic field without raising voltage?"
+  },
+  "p01-l18": {
+    "summary": "Electromagnetic induction occurs when magnetic flux linking a conductor changes. The induced voltage depends on how quickly the flux changes and how many conductor turns are linked.",
+    "keyConcepts": [
+      "Changing magnetic flux induces an electromotive force in a conductor.",
+      "Faster flux change generally produces a larger induced voltage.",
+      "More linked turns increase the total induced electromotive force."
+    ],
+    "remember": "A changing magnetic field can create voltage; a steady field cannot.",
+    "practicalConnection": "Induction explains generators, transformers, current transformers and unwanted coupling between circuits.",
+    "checkYourself": "Why does a stationary conductor in an unchanging magnetic field produce no continuous induced voltage?"
+  },
+  "p01-l19": {
+    "summary": "An alternating waveform can be produced by rotating a conductor or magnetic field so the flux linkage changes continuously. The induced polarity reverses every half-turn, creating alternating voltage and current.",
+    "keyConcepts": [
+      "Rotation causes magnetic flux linkage to vary throughout each cycle.",
+      "Induced polarity reverses as the conductor crosses opposite magnetic regions.",
+      "Mechanical rotation rate determines the electrical waveform frequency."
+    ],
+    "remember": "Alternating generation repeatedly reverses polarity as flux linkage changes.",
+    "practicalConnection": "This generator model connects mechanical prime movers to the AC supplied to buildings.",
+    "checkYourself": "What physical change causes the generated voltage polarity to reverse?"
+  },
+  "p01-l20": {
+    "summary": "A sine wave results when uniform circular motion is projected onto one axis. The waveform changes smoothly because the conductor's effective cutting of magnetic flux varies with angular position.",
+    "keyConcepts": [
+      "A sine wave is the projection of uniform circular motion.",
+      "Instantaneous magnitude depends on angular position within the cycle.",
+      "Positive and negative half-cycles are symmetrical in an ideal waveform."
+    ],
+    "remember": "A sine wave is circular motion viewed along one dimension.",
+    "practicalConnection": "Waveform shape matters when interpreting AC meter readings, phase and equipment behaviour.",
+    "checkYourself": "At which angular positions does an ideal sine wave cross zero?"
+  },
+  "p01-l21": {
+    "summary": "An AC waveform is described by amplitude, cycle, frequency and periodic time. Frequency counts cycles per second, while periodic time is the duration of one cycle, so T equals one divided by f.",
+    "keyConcepts": [
+      "Amplitude describes the waveform's maximum displacement from zero.",
+      "Frequency in hertz counts complete cycles occurring each second.",
+      "Periodic time and frequency are reciprocal quantities."
+    ],
+    "remember": "High frequency means each individual cycle takes less time.",
+    "practicalConnection": "Frequency and period help relate supply waveforms to motors, transformers and electronic controls.",
+    "checkYourself": "What is the periodic time of a fifty-hertz waveform?"
+  },
+  "p01-l22": {
+    "summary": "AC current can be opposed by resistance and by reactance associated with inductance or capacitance. Their combined effect is impedance, which can change both current magnitude and phase relationship.",
+    "keyConcepts": [
+      "Resistance dissipates real power and opposes both direct and alternating current.",
+      "Reactance stores and returns energy through magnetic or electric fields.",
+      "Impedance combines resistance and reactance into total AC opposition."
+    ],
+    "remember": "In AC circuits, opposition may change phase as well as current magnitude.",
+    "practicalConnection": "Impedance explains why coils, capacitors and electronic loads behave differently from simple heaters.",
+    "checkYourself": "What two broad components combine to form impedance?"
+  },
+  "p01-l23": {
+    "summary": "An inductor stores energy in its magnetic field and resists changes in current through induced back electromotive force. In an ideal inductive AC circuit, current lags voltage because the field must build and collapse.",
+    "keyConcepts": [
+      "Inductance opposes changes in current rather than steady current itself.",
+      "Back electromotive force is created by the coil's changing magnetic field.",
+      "Inductive reactance increases as frequency or inductance increases."
+    ],
+    "remember": "A coil resists change, so its current cannot respond instantly.",
+    "practicalConnection": "Inductive behaviour appears in motors, transformers, contactors and long wound components.",
+    "checkYourself": "Why does increasing frequency increase the opposition of an ideal inductor?"
+  },
+  "p01-l24": {
+    "summary": "An impedance triangle represents resistance and inductive reactance as perpendicular components, with impedance as the resultant. Pythagoras finds the magnitude, while the triangle angle represents the phase relationship.",
+    "keyConcepts": [
+      "Resistance forms the horizontal component of an impedance triangle.",
+      "Inductive reactance forms the perpendicular reactive component.",
+      "Impedance is the vector combination, not the simple arithmetic sum."
+    ],
+    "remember": "Add AC opposition as vectors when its components are out of phase.",
+    "practicalConnection": "The triangle links measured resistance and reactance to expected current and phase angle.",
+    "checkYourself": "Why cannot resistance and inductive reactance always be added arithmetically?"
+  },
+  "p01-l25": {
+    "summary": "Capacitors store separated charge and energy in an electric field. Parallel capacitances add directly, while series capacitances combine reciprocally because the same charge appears on each series capacitor.",
+    "keyConcepts": [
+      "Capacitance measures stored charge per unit of applied voltage.",
+      "Parallel capacitors share voltage and add their capacitance values.",
+      "Series capacitors share charge and produce a lower equivalent capacitance."
+    ],
+    "remember": "Series capacitance uses reciprocals, while parallel capacitance adds directly.",
+    "practicalConnection": "Capacitor combinations appear in filtering, timing, motor circuits and power-factor correction.",
+    "checkYourself": "Which connection gives a greater total capacitance: identical capacitors in series or parallel?"
+  },
+  "p01-l26": {
+    "summary": "Power factor compares useful real power with total apparent power in an AC circuit. A low power factor means more current is required to deliver the same real power, increasing conductor and equipment loading.",
+    "keyConcepts": [
+      "Power factor equals real power divided by apparent power.",
+      "Phase displacement can reduce power factor in reactive loads.",
+      "Lower power factor increases current for the same useful power."
+    ],
+    "remember": "Poor power factor makes the supply carry more current for the same useful work.",
+    "practicalConnection": "Power factor influences current, cable loading, voltage drop and industrial supply capacity.",
+    "checkYourself": "What happens to current when real power stays constant but power factor decreases?"
+  },
+  "p01-l27": {
+    "summary": "The power triangle relates real power, reactive power and apparent power in an AC system. Its geometry connects these quantities to power factor and phase angle without treating them as simple arithmetic equivalents.",
+    "keyConcepts": [
+      "Real power in watts represents net useful energy conversion.",
+      "Reactive power in vars represents exchanged field energy.",
+      "Apparent power in volt-amperes combines real and reactive components."
+    ],
+    "remember": "Watts do useful work, vars sustain fields, and volt-amperes burden the supply.",
+    "practicalConnection": "The triangle helps interpret motor and transformer loads when sizing upstream equipment conceptually.",
+    "checkYourself": "Which side of the power triangle represents the total demand seen by the supply?"
+  },
+  "p01-l28": {
+    "summary": "Voltage is measured between two points, so a voltmeter is connected in parallel with the quantity of interest. Correct function, AC or DC mode, range, lead sockets and instrument rating must be checked before contact.",
+    "keyConcepts": [
+      "A voltmeter compares electrical potential between two selected points.",
+      "High input impedance minimizes the meter's effect on the circuit.",
+      "Function, lead placement and safety category must suit the measurement."
+    ],
+    "remember": "Voltage is always a measurement between two points.",
+    "practicalConnection": "Practise probe placement first on an approved extra-low-voltage or simulated circuit.",
+    "checkYourself": "Why is a voltmeter connected in parallel rather than inserted in series?"
+  },
+  "p01-l29": {
+    "summary": "A conventional multimeter measures current by becoming part of the current path, so it must be connected in series. Incorrect socket selection or placing a current-configured meter across a source can create a dangerous short circuit.",
+    "keyConcepts": [
+      "Series connection makes the measured current pass through the meter.",
+      "Current ranges use dedicated input sockets and internal protection.",
+      "Expected magnitude determines the safest starting range and connection method."
+    ],
+    "remember": "A current-configured meter must never be placed directly across a supply.",
+    "practicalConnection": "Use only approved training equipment until competent to assess circuit energy and instrument ratings.",
+    "checkYourself": "What dangerous condition can occur if an ammeter is connected across a voltage source?"
+  },
+  "p01-l30": {
+    "summary": "Resistance measurement uses the meter's own small test source and therefore requires the circuit to be isolated and proven de-energized. Parallel paths, connected components and probe-lead resistance can all change the displayed value.",
+    "keyConcepts": [
+      "Resistance tests must be performed on safely isolated circuits.",
+      "Parallel paths can make measured resistance lower than expected.",
+      "Probe and lead resistance matters when measuring very small values."
+    ],
+    "remember": "Never apply an ohmmeter to an energized circuit.",
+    "practicalConnection": "Resistance testing supports continuity checks and comparison with expected component values on safe equipment.",
+    "checkYourself": "Why might a resistor measure lower while it remains connected within a larger circuit?"
+  },
+  "p01-l31": {
+    "summary": "A clamp meter senses the magnetic field around a conductor and estimates the current producing it. The clamp normally surrounds one conductor only, because equal outgoing and returning currents cancel when enclosed together.",
+    "keyConcepts": [
+      "Current creates a magnetic field that a clamp sensor can detect.",
+      "Clamping one conductor isolates the magnetic effect of that current path.",
+      "Instrument range, jaw closure and waveform capability affect measurement quality."
+    ],
+    "remember": "Clamp one current path, not the complete cable carrying equal return current.",
+    "practicalConnection": "Clamp meters allow current observation without opening the conductor, subject to competence and safe access.",
+    "checkYourself": "Why can clamping line and neutral together produce a near-zero reading?"
+  },
+  "p02-l01": {
+    "summary": "Installation cables combine conductors with insulation, protective coverings and sometimes armour to suit different duties. Selecting between twin-and-earth, flexible cable, singles, SWA and concentric constructions depends on the circuit, route, environment and termination method.",
+    "keyConcepts": [
+      "Cable layers divide electrical, mechanical and environmental protection between materials.",
+      "Insulation surrounds conductors, while an outer sheath protects the assembly.",
+      "Armour provides mechanical protection and can contribute to protective continuity.",
+      "Cable selection must match load, route, environment and termination method."
+    ],
+    "remember": "Choose a cable by what every layer must do in its actual environment.",
+    "practicalConnection": "Compare cable samples by identifying each layer and explaining its installation purpose.",
+    "checkYourself": "Which installation conditions would make a sheathed flexible cable unsuitable but favour an armoured cable?"
+  },
+  "p02-l02": {
+    "summary": "A consumer unit receives the incoming supply and divides it into final circuits through switching and protective devices. Its exact construction, device arrangement and labeling must be verified against current Kenyan requirements, supply conditions and manufacturer instructions.",
+    "keyConcepts": [
+      "The main switch provides a common means of controlling the installation supply.",
+      "Outgoing protective devices limit faults affecting their assigned final circuits.",
+      "Neutral and protective conductors terminate on functionally distinct bars.",
+      "A clear circuit schedule connects physical devices with the loads they protect."
+    ],
+    "remember": "A consumer unit organizes isolation, distribution, protection and identification in one assembly.",
+    "practicalConnection": "Trace a de-energized training board from incoming terminals to one labeled outgoing circuit.",
+    "checkYourself": "Why must the circuit schedule agree exactly with the protective devices and connected loads?"
+  },
+  "p02-l03": {
+    "summary": "A three-phase system uses three alternating quantities displaced by 120 electrical degrees. The arrangement can supply phase-to-neutral and phase-to-phase loads efficiently, while balanced loading reduces unnecessary neutral current and voltage imbalance.",
+    "keyConcepts": [
+      "Three phase waveforms reach corresponding points 120 electrical degrees apart.",
+      "Line-to-line voltage differs from line-to-neutral voltage in a star system.",
+      "Balanced phase currents largely cancel their combined neutral current.",
+      "Phase sequence affects the rotation direction of three-phase motors."
+    ],
+    "remember": "Three evenly displaced phases deliver smoother power and share large loads efficiently.",
+    "practicalConnection": "Use a phasor sketch to explain phase allocation, neutral current and motor rotation.",
+    "checkYourself": "What happens to neutral current when three equal linear loads are perfectly phase-balanced?"
+  },
+  "p02-l04": {
+    "summary": "TN-C-S, TN-S and TT describe different relationships between the supply source, neutral and protective earthing path. Their application and permitted uses depend on local network conditions, so verify the current Kenyan utility, EPRA and relevant standards before design or work.",
+    "keyConcepts": [
+      "TN-S keeps neutral and protective functions separate throughout the supply path.",
+      "TN-C-S combines functions upstream and separates them at the installation origin.",
+      "TT installations rely on a local electrode for the installation earth connection.",
+      "Each arrangement changes fault paths, protective measures and verification needs."
+    ],
+    "remember": "The earthing arrangement tells you how fault current is intended to return.",
+    "practicalConnection": "Identify the intended fault loop on simplified diagrams before considering protective-device operation.",
+    "checkYourself": "What fundamental feature distinguishes a TT arrangement from TN-S and TN-C-S arrangements?"
+  },
+  "p02-l05": {
+    "summary": "Protective earthing provides a path that supports automatic disconnection when an exposed conductive part becomes live. Bonding connects relevant conductive parts to reduce dangerous potential differences; current requirements and conductor details must be verified locally.",
+    "keyConcepts": [
+      "Protective earthing connects exposed conductive parts into the fault-current return path.",
+      "Bonding limits touch voltage between conductive parts that could be contacted together.",
+      "Bonding does not replace a reliable circuit protective conductor.",
+      "Both measures support safety but solve different parts of the fault problem."
+    ],
+    "remember": "Earthing completes the protective fault path; bonding reduces dangerous differences in potential.",
+    "practicalConnection": "Trace earthing and bonding separately on a building schematic and explain each connection's purpose.",
+    "checkYourself": "Why is a bonded pipe not a substitute for the circuit protective conductor of an appliance?"
+  },
+  "p02-l06": {
+    "summary": "Fuses and circuit-breakers use different operating principles and time-current characteristics to interrupt overcurrent. Some standards named in the lesson represent older UK equipment, so confirm present device standards, ratings, fault capacity and Kenyan compliance before applying them.",
+    "keyConcepts": [
+      "A fuse opens when its calibrated element melts under excessive current.",
+      "Circuit-breakers combine resettable mechanisms with defined operating characteristics.",
+      "Device rating alone does not establish suitable breaking capacity or disconnection.",
+      "Time-current behaviour determines how quickly different overcurrents are cleared."
+    ],
+    "remember": "Select protection by the complete fault duty, not merely the ampere number.",
+    "practicalConnection": "Compare device markings and data sheets without assuming every legacy standard remains applicable.",
+    "checkYourself": "Why could a correctly rated fuse or breaker still be unsafe at a high-fault-current location?"
+  },
+  "p02-l07": {
+    "summary": "An RCD compares current leaving through live conductors with current returning through them. A difference indicates an unintended path, but required RCD type, sensitivity, application and testing must be confirmed against current local rules and manufacturer data.",
+    "keyConcepts": [
+      "Healthy outgoing and returning currents create a near-zero residual balance.",
+      "Earth leakage creates an imbalance detected by the residual-current sensor.",
+      "The trip mechanism disconnects when imbalance satisfies its operating characteristic.",
+      "An RCD does not inherently provide complete overcurrent protection."
+    ],
+    "remember": "An RCD watches for missing return current, not ordinary load size.",
+    "practicalConnection": "Use a safe simulator to compare balanced current with a deliberate modeled leakage path.",
+    "checkYourself": "Why might an overload fail to operate an RCD that has no overcurrent function?"
+  },
+  "p02-l08": {
+    "summary": "An RCD provides residual-current protection for the circuit or group it controls, while an RCBO combines residual-current and overcurrent protection for one circuit. Device type, pole arrangement and suitability must be checked against current Kenyan requirements and manufacturer coordination data.",
+    "keyConcepts": [
+      "An RCD responds to residual imbalance but may need separate overcurrent protection.",
+      "An RCBO combines residual-current and overcurrent functions within one device.",
+      "Individual RCBOs can reduce the number of circuits lost after one fault.",
+      "Device markings identify characteristics that must match the intended circuit."
+    ],
+    "remember": "An RCBO combines two protective jobs; an RCD does not necessarily do both.",
+    "practicalConnection": "Compare example distribution layouts by predicting which circuits disconnect for each modeled fault.",
+    "checkYourself": "What additional protective function does an RCBO include beyond residual-current detection?"
+  },
+  "p02-l09": {
+    "summary": "External earth-fault-loop impedance, Ze, represents the loop impedance outside the installation up to its origin. Measuring it can involve live conductors and must be performed only by competent, authorized people using current Kenyan procedures, suitable instruments and verified limits.",
+    "keyConcepts": [
+      "Ze covers the external portion of the earth-fault return loop.",
+      "The main earthing terminal forms a key reference point at the origin.",
+      "Loop impedance influences the fault current available for automatic disconnection.",
+      "Live testing requires controlled access, suitable equipment and proven competence."
+    ],
+    "remember": "Ze describes the external fault loop; measuring it is not a beginner live exercise.",
+    "practicalConnection": "Interpret supplied Ze results on paper and compare them with a modeled complete circuit loop.",
+    "checkYourself": "How does a higher Ze generally affect prospective earth-fault current?"
+  },
+  "p02-l10": {
+    "summary": "Long or insufficiently protected meter tails may require a coordinated switch-fuse or other upstream protective arrangement near the supply origin. The title's three-metre figure is not universal, so verify current utility policy, Kenyan requirements, fault levels and equipment instructions for every installation.",
+    "keyConcepts": [
+      "Meter tails need protection appropriate to their route and potential fault energy.",
+      "A switch-fuse can combine isolation with upstream overcurrent protection.",
+      "Protection must coordinate with both distributor equipment and downstream devices.",
+      "Permitted tail length depends on local rules, construction and utility agreement."
+    ],
+    "remember": "Do not turn a familiar distance guideline into a universal design rule.",
+    "practicalConnection": "Mark protection boundaries on a supply diagram and identify who must approve each section.",
+    "checkYourself": "Which factors besides length determine whether meter tails need additional upstream protection?"
+  },
+  "p02-l11": {
+    "summary": "A three-phase plug and socket provides identified terminals for phases, protective earth and, where required, neutral. Correct phase sequence, conductor identification, termination quality and strain relief are essential, and all practice should use isolated training equipment.",
+    "keyConcepts": [
+      "Phase terminals carry separate alternating waveforms with a defined sequence.",
+      "The protective conductor must remain reliable and correctly identified.",
+      "A neutral terminal is present only where the connected system requires it.",
+      "Secure terminations and strain relief prevent movement damaging conductor connections."
+    ],
+    "remember": "Identify every terminal and system requirement before preparing a three-phase connection.",
+    "practicalConnection": "Map plug pins to an isolated socket diagram before attempting supervised de-energized termination.",
+    "checkYourself": "Why can changing two phase conductors reverse a connected motor's rotation?"
+  },
+  "p03-l01": {
+    "summary": "Preparing twin-and-earth cable well means removing sheath and insulation without damaging the conductors beneath. A sound termination also controls strip length, conductor shape, protective-conductor identification and copper exposure.",
+    "keyConcepts": [
+      "Sheath removal must not nick insulation or weaken any conductor.",
+      "Strip length should suit the terminal without leaving exposed copper.",
+      "The protective conductor needs correct identification and continuous routing.",
+      "Neat conductor formation reduces stress and supports reliable terminal contact."
+    ],
+    "remember": "A good termination begins before the conductor reaches the terminal.",
+    "practicalConnection": "Practise only on loose, de-energized cable and inspect every core under good light.",
+    "checkYourself": "What hidden defect can a knife nick create even when the conductor still looks connected?"
+  },
+  "p03-l02": {
+    "summary": "Flexible cable uses many fine strands so it can bend repeatedly without behaving like a solid conductor. Preparation must preserve every strand, keep insulation close to the terminal and provide strain relief through the outer sheath.",
+    "keyConcepts": [
+      "Fine strands provide flexibility but are easily cut during stripping.",
+      "Every strand should enter the terminal without spreading or escaping.",
+      "Cord grips should retain the outer sheath, not individual insulated cores.",
+      "Ferrules are used only when the terminal design or instructions require them."
+    ],
+    "remember": "Protect every strand and let the cord grip hold the sheath.",
+    "practicalConnection": "Prepare spare de-energized flex, then inspect strand count, strip length and strain relief.",
+    "checkYourself": "Why is gripping only the individual cores an unreliable form of strain relief?"
+  },
+  "p03-l03": {
+    "summary": "A twin socket termination depends on correct conductor identification, secure protective continuity and terminals that contain all copper without damaging insulation. BS 1363 is a UK product standard, so confirm socket compatibility, Kenyan requirements and manufacturer torque instructions before real work.",
+    "keyConcepts": [
+      "Line, neutral and protective conductors must reach their intended terminals.",
+      "No loose strand or excess bare copper should remain outside terminals.",
+      "Protective continuity must not depend on an uncertain accessory fixing.",
+      "Terminal tightness must follow the accessory manufacturer's stated method."
+    ],
+    "remember": "Correct terminal, complete copper capture and reliable earth continuity are all essential.",
+    "practicalConnection": "Use an isolated practice accessory, then perform a visual and gentle mechanical inspection.",
+    "checkYourself": "Which termination defects could create heat even when the socket initially appears to work?"
+  },
+  "p03-l04": {
+    "summary": "Reliable socket connections come from repeatable workmanship rather than speed. Conductor preparation, terminal capacity, copper capture, mechanical security, protective continuity and final inspection should all be checked before the accessory is closed.",
+    "keyConcepts": [
+      "Terminal capacity must suit the number and size of conductors.",
+      "Insulation should approach the terminal without being trapped beneath contact surfaces.",
+      "Conductors need enough space to fold without sharp stress or damage.",
+      "A final inspection catches exposed copper, loose strands and misplaced conductors."
+    ],
+    "remember": "Neatness matters because it makes hidden connection problems easier to detect.",
+    "practicalConnection": "Use a photographed practice termination and write a defect checklist before touching hardware.",
+    "checkYourself": "Why can an overcrowded back box undermine an otherwise correct terminal connection?"
+  },
+  "p03-l05": {
+    "summary": "In a one-way three-plate lighting arrangement, the ceiling point commonly groups permanent line conductors, neutrals and the switched-line return into separate functions. The lamp operates when the switch completes the line path, while protective continuity must be maintained throughout.",
+    "keyConcepts": [
+      "Permanent line conductors remain joined to feed the switching path.",
+      "Neutral connects directly to the lamp rather than the ordinary switch.",
+      "The switched-line conductor returns controlled power from switch to lamp.",
+      "Protective conductors remain continuous through every relevant point."
+    ],
+    "remember": "Keep permanent line, neutral and switched line as three distinct functions.",
+    "practicalConnection": "Trace the three functions with colors on a diagram before supervised de-energized wiring.",
+    "checkYourself": "What fault occurs if the switched-line return is confused with the neutral group?"
+  },
+  "p03-l06": {
+    "summary": "A ceiling rose in a three-plate system acts as both a luminaire connection and a junction point for the lighting circuit. Correct grouping of loop conductors, neutrals, switched line and protective conductors is more important than memorizing terminal positions by appearance.",
+    "keyConcepts": [
+      "Loop terminals maintain the permanent line path through the circuit.",
+      "Neutral terminals join supply neutrals with the lamp neutral.",
+      "The lamp line connects to the switch-controlled return conductor.",
+      "Terminal identification should be confirmed rather than assumed from physical layout."
+    ],
+    "remember": "Identify conductor function first; terminal position alone is not a safe guide.",
+    "practicalConnection": "Label an isolated ceiling-rose diagram before arranging conductors on a training board.",
+    "checkYourself": "Why must the pendant line avoid the permanent-line loop terminal?"
+  },
+  "p03-l07": {
+    "summary": "A basic one-way light switch controls the line conductor so the load is not intentionally left energized when switched off. The common and switched terminals form the control path, while protective continuity must be maintained at the box and accessory where required.",
+    "keyConcepts": [
+      "Ordinary switching should interrupt the line conductor, not merely the neutral.",
+      "Common and output terminals create the one-way switched path.",
+      "Conductor function must be identified even when insulation colors are repurposed.",
+      "Protective continuity remains necessary around conductive boxes and accessories."
+    ],
+    "remember": "A switch controls the line path; it does not make isolation automatically safe.",
+    "practicalConnection": "Use a continuity tester only on an isolated loose switch to observe contact states.",
+    "checkYourself": "Why can switching only the neutral leave a lamp holder hazardous when the lamp is off?"
+  },
+  "p03-l08": {
+    "summary": "Two-way control uses two changeover switches so either location can alter the available path to the lamp. Each switch has a common terminal and two traveler connections, often called strappers, whose state determines circuit continuity.",
+    "keyConcepts": [
+      "Each two-way switch changes its common between two traveler terminals.",
+      "The paired travelers provide alternative paths between the two switches.",
+      "Either switch can change the final continuity state of the circuit.",
+      "Terminal markings should be followed because layouts differ between products."
+    ],
+    "remember": "Two changeover switches let either location select the available path.",
+    "practicalConnection": "Model both switch positions on paper, then confirm continuity on isolated training switches.",
+    "checkYourself": "What terminal function is shared by both possible traveler paths on each switch?"
+  },
+  "p03-l09": {
+    "summary": "An intermediate switch extends two-way control to three or more locations by redirecting the pair of traveler conductors. It switches the travelers straight-through or crossed while the two end switches retain the common terminals.",
+    "keyConcepts": [
+      "Two-way switches remain at the two ends of the control chain.",
+      "Intermediate switches sit between them in the traveler path.",
+      "The intermediate action passes travelers straight or exchanges their paths.",
+      "Additional intermediate switches can provide more control locations."
+    ],
+    "remember": "Two-way switches form the ends; intermediate switches reshape the path between them.",
+    "practicalConnection": "Build a truth table showing lamp state for different isolated switch combinations.",
+    "checkYourself": "Why does an intermediate switch not normally use a common terminal like an end switch?"
+  },
+  "p03-l10": {
+    "summary": "A spur branches from an existing ring-final point to supply an additional outlet or fixed connection. Ring-final and spur practices are strongly UK-specific, so verify whether the arrangement is permitted and correctly protected under current Kenyan requirements before considering real work.",
+    "keyConcepts": [
+      "A ring final circuit provides two conductor paths back to its origin.",
+      "A spur creates a branch that does not continue around the ring.",
+      "Branch loading and protection must suit the conductors and connected equipment.",
+      "Testing must confirm the parent ring remains complete after alteration."
+    ],
+    "remember": "Adding a working socket is not enough; the parent circuit must remain correctly designed and verified.",
+    "practicalConnection": "Trace a proposed spur on a diagram and list the design checks needed before installation.",
+    "checkYourself": "Why could a broken ring conductor make an apparently normal spur alteration unsafe?"
+  },
+  "p03-l11": {
+    "summary": "A group of LED downlights needs a maintainable wiring route, compatible drivers and connectors, and protection against heat, moisture and building-fire risks. Verify current Kenyan requirements, luminaire instructions, insulation clearances, fire barriers and location-specific IP needs before installation.",
+    "keyConcepts": [
+      "LED drivers must match the luminaires and their electrical operating requirements.",
+      "Connections need suitable enclosures, support and future maintenance access.",
+      "Thermal insulation can change luminaire temperature and driver life.",
+      "Ceiling penetrations may affect fire, acoustic and moisture performance."
+    ],
+    "remember": "A downlight is part of the building envelope as well as the electrical circuit.",
+    "practicalConnection": "Plan a ceiling layout that records drivers, joints, insulation and accessible maintenance points.",
+    "checkYourself": "Which non-electrical building features can be compromised by an unsuitable downlight installation?"
+  },
+  "p03-l12": {
+    "summary": "Consumer-unit assembly requires disciplined conductor routing, correct device and bar connections, clear identification and manufacturer-specified tightening. This work is regulation-sensitive and close to high fault energy, so only competent authorized people should apply current Kenyan rules, equipment instructions and verified isolation procedures.",
+    "keyConcepts": [
+      "Each circuit conductor must terminate at its corresponding device and bar.",
+      "Routing should remain identifiable without stressing insulation or terminal connections.",
+      "Protective devices must match the designed circuit and prospective fault duty.",
+      "Manufacturer torque values govern terminal tightening rather than personal feel."
+    ],
+    "remember": "Inside a distribution board, identification and controlled workmanship are protective measures.",
+    "practicalConnection": "Use only an unconnected training enclosure to rehearse routing, labeling and inspection.",
+    "checkYourself": "Why is a neat-looking consumer unit still unsafe if device selection or torque is unverified?"
+  },
+  "p03-l13": {
+    "summary": "A torque screwdriver applies a controlled turning moment so a terminal reaches the manufacturer's intended clamping condition. Tool range, bit fit, setting, calibration and the current equipment instructions must all be verified before use.",
+    "keyConcepts": [
+      "The selected torque must come from the equipment manufacturer.",
+      "A suitable bit transfers torque without damaging the screw head.",
+      "Tool range and calibration influence the reliability of the applied value.",
+      "Overtightening can damage terminals just as undertightening can cause heating."
+    ],
+    "remember": "Correct torque is a specified value, not a feeling in the hand.",
+    "practicalConnection": "Practise setting and resetting the tool on isolated demonstration hardware with supplied torque data.",
+    "checkYourself": "Why can a torque screwdriver click without proving the electrical connection is otherwise correct?"
+  },
+  "p03-l14": {
+    "summary": "Safe isolation prevents dangerous electrical energy from reaching the work and must address every possible source. A controlled process identifies the circuit, isolates and secures it, proves the indicator, tests relevant conductors and re-proves the indicator. Follow current Kenyan procedures only under competent authorization and supervision; AM2 or AM2S details are UK assessment context.",
+    "keyConcepts": [
+      "Every normal, standby and backfeed source must be identified before isolation.",
+      "Lock-off and warning controls help prevent unintended re-energization.",
+      "The voltage indicator is proved before and after testing the conductors.",
+      "All relevant conductors are checked rather than trusting labels or switches.",
+      "Work stops when the circuit identity or isolation result remains uncertain."
+    ],
+    "remember": "Identify, secure, prove, test and re-prove—then stop if anything is uncertain.",
+    "practicalConnection": "Rehearse the sequence with a simulator or approved de-energized board before any supervised assessment.",
+    "checkYourself": "Why must the voltage indicator be re-proved after testing the isolated circuit?"
+  }
+}

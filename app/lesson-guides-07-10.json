@@ -1,0 +1,657 @@
+{
+  "p07-l01": {
+    "summary": "A three-phase supply uses three alternating voltages separated by 120 electrical degrees, allowing smoother power delivery and efficient distribution. Relate phase conductors, neutral, line-to-line voltage, and line-to-neutral voltage, while verifying nominal values and working practices against current local standards.",
+    "keyConcepts": [
+      "Three phase voltages reach their peaks 120 electrical degrees apart",
+      "Line-to-line voltage differs from line-to-neutral voltage in common systems",
+      "Balanced three-phase loads deliver power more evenly than single-phase loads"
+    ],
+    "remember": "Three equal phase quantities spaced by 120 degrees form a balanced set.",
+    "practicalConnection": "This foundation helps you trace supplies, allocate loads, and interpret three-phase distribution boards safely.",
+    "checkYourself": "Why are the three phase voltages described as being 120 degrees apart?"
+  },
+  "p07-l02": {
+    "summary": "In a balanced star connection, each load phase joins a common star point, which may be connected to neutral. Line current equals phase current, while line voltage is root three times phase voltage; verify the system voltage and assumptions against current local standards.",
+    "keyConcepts": [
+      "Each star-connected element sits between one line and the star point",
+      "Line current equals phase current in a balanced star-connected load",
+      "Line voltage equals phase voltage multiplied by root three"
+    ],
+    "remember": "In star, current stays the same while voltage gains the root-three factor.",
+    "practicalConnection": "Use star relationships when checking equipment ratings or calculating current on a balanced supply.",
+    "checkYourself": "What phase voltage would each star-connected element receive from a stated line voltage?"
+  },
+  "p07-l03": {
+    "summary": "In a balanced delta connection, each load phase is connected directly between two line conductors. Phase voltage equals line voltage, while line current is root three times phase current; confirm equipment ratings and current local requirements before applying these relationships.",
+    "keyConcepts": [
+      "Each delta element is connected directly across two line conductors",
+      "Phase voltage equals line voltage in a balanced delta connection",
+      "Line current equals phase current multiplied by root three"
+    ],
+    "remember": "In delta, voltage stays the same while current gains the root-three factor.",
+    "practicalConnection": "Delta relationships help you interpret motor nameplates and size conductors for balanced loads.",
+    "checkYourself": "How do line current and phase current relate in a balanced delta load?"
+  },
+  "p07-l04": {
+    "summary": "The instantaneous phasor sum of three equal, balanced phase currents is zero, so an ideal linear balanced load carries no neutral current. A neutral must never be omitted merely from this rule because imbalance, harmonics, equipment needs, and current local standards can require it.",
+    "keyConcepts": [
+      "Balanced fundamental phase currents cancel vectorially at the neutral point",
+      "Unequal single-phase loading produces current in the shared neutral conductor",
+      "Triplen harmonics can add in neutral instead of cancelling"
+    ],
+    "remember": "Neutral cancellation is a design result, not permission to remove a conductor.",
+    "practicalConnection": "Understanding cancellation helps you investigate unexpected neutral heating or load imbalance in buildings.",
+    "checkYourself": "Which real-world conditions can produce neutral current even when phase loads appear similar?"
+  },
+  "p07-l05": {
+    "summary": "Neutral current in an unbalanced three-phase four-wire system is the vector sum of the three phase currents, not their arithmetic total. Use phase angle, power factor, and harmonic information where relevant, and verify the design method against current local standards.",
+    "keyConcepts": [
+      "Phase currents must be added as vectors with their angles",
+      "Unequal magnitudes shift the vector sum away from zero",
+      "Nonlinear loads may increase neutral current through harmonic components"
+    ],
+    "remember": "Add phase currents by direction as well as magnitude.",
+    "practicalConnection": "A correct neutral-current estimate supports conductor sizing and sensible phase-load redistribution.",
+    "checkYourself": "Why can adding three phase-current magnitudes arithmetically give the wrong neutral current?"
+  },
+  "p07-l06": {
+    "summary": "A three-phase distribution board receives, isolates, protects, and divides a supply into outgoing circuits across the phases. Identify the main device, busbars, neutral and protective-conductor bars, protective devices, and phase arrangement, then verify ratings and assembly rules against current local standards and manufacturer instructions.",
+    "keyConcepts": [
+      "The incomer provides controlled isolation for the distribution board",
+      "Busbars distribute phases to correctly rated outgoing protective devices",
+      "Neutral and protective conductors require distinct correctly arranged terminations",
+      "Phase allocation should limit imbalance under expected operating conditions"
+    ],
+    "remember": "A distribution board is a coordinated protective system, not just a box of breakers.",
+    "practicalConnection": "Reading the board layout lets you trace circuits and judge load balance before testing.",
+    "checkYourself": "What information would you confirm before assigning a new circuit to one phase?"
+  },
+  "p07-l07": {
+    "summary": "A smart three-phase distribution board adds monitoring or control functions to the normal tasks of isolation, protection, and distribution. Treat sensing, communications, metering, and switching as coordinated parts of the installation, and verify product capabilities and compliance against current local standards and manufacturer documentation.",
+    "keyConcepts": [
+      "Monitoring can reveal phase loading, energy use, and abnormal conditions",
+      "Control functions must not compromise required isolation or protection",
+      "Metering accuracy depends on correct sensing orientation and configuration",
+      "Proprietary features require the exact manufacturer commissioning instructions"
+    ],
+    "remember": "Smart information supplements protective design; it never replaces it.",
+    "practicalConnection": "Board data can support load balancing, maintenance planning, and early fault investigation.",
+    "checkYourself": "Which safety functions must remain effective if a board's smart controls fail?"
+  },
+  "p07-l08": {
+    "summary": "A sub-main switch-fuse combines local isolation with overcurrent protection for a downstream feeder such as an SWA cable. Cable capacity, fault level, protective-device coordination, gland earthing, termination torque, and enclosure integrity must all be checked against current local standards and manufacturer instructions.",
+    "keyConcepts": [
+      "The fuse protects the sub-main against overload and fault current",
+      "The switch-disconnector provides a defined means of local isolation",
+      "SWA glands must preserve mechanical security and the designed earth path",
+      "Protective coordination should isolate the fault with minimal wider disruption"
+    ],
+    "remember": "A sound sub-main depends on matched cable, protection, isolation, and termination.",
+    "practicalConnection": "These checks apply when feeding an outbuilding, floor board, or other downstream distribution point.",
+    "checkYourself": "Why must the switch-fuse rating be coordinated with both the cable and downstream system?"
+  },
+  "p07-l09": {
+    "summary": "Tying conductors can improve routing and restraint, but tight bundling can reduce heat dissipation and change cable current capacity. Choose spacing, support, tie material, and grouping from the design, fault forces, enclosure conditions, and current local or manufacturer requirements.",
+    "keyConcepts": [
+      "Bundled loaded conductors can run hotter than separated conductors",
+      "Grouping effects may require a cable-rating correction factor",
+      "Supports should withstand expected temperature and short-circuit forces",
+      "Neat routing must not strain terminals or obstruct maintenance"
+    ],
+    "remember": "Neatness is useful only when it preserves thermal and mechanical performance.",
+    "practicalConnection": "Thoughtful conductor management makes a board safer to inspect, test, and maintain.",
+    "checkYourself": "How could tightly bundling several loaded conductors affect their allowable current?"
+  },
+  "p07-l10": {
+    "summary": "The luminous flux method estimates average maintained illuminance from total lamp lumens, room area, utilisation factor, and maintenance factor. It is a planning method rather than a complete lighting-quality assessment, so verify target illuminance and design criteria against current local guidance.",
+    "keyConcepts": [
+      "Illuminance describes luminous flux received per unit surface area",
+      "Utilisation factor estimates how much lamp output reaches the working plane",
+      "Maintenance factor allows for dirt, ageing, and output depreciation",
+      "Average illuminance does not by itself guarantee uniformity or glare control"
+    ],
+    "remember": "Design for maintained light on the task, not just lumens from the fitting.",
+    "practicalConnection": "The method gives an initial quantity estimate before refining spacing and luminaire selection.",
+    "checkYourself": "Why are utilisation and maintenance factors both needed in a lumen-method calculation?"
+  },
+  "p07-l11": {
+    "summary": "Required lamp lumens can be estimated by multiplying target illuminance by area and dividing by utilisation and maintenance factors. Use realistic room surfaces, mounting data, and maintained performance, and confirm the illuminance target against current local standards for the space.",
+    "keyConcepts": [
+      "Target illuminance and room area establish the useful light requirement",
+      "Lower utilisation requires more source lumens for the same task level",
+      "Lower maintenance factor increases initial lumens needed over service life",
+      "Manufacturer photometric data improves the estimate's reliability"
+    ],
+    "remember": "Every lost or depreciated lumen must be allowed for at the source.",
+    "practicalConnection": "This calculation helps compare candidate luminaires before choosing a final layout.",
+    "checkYourself": "What happens to required source lumens when the maintenance factor decreases?"
+  },
+  "p07-l12": {
+    "summary": "Estimate luminaire quantity by dividing the required total lumens by the maintained useful output of one luminaire and rounding up. Then check spacing, uniformity, glare, controls, emergency needs, and current local lighting requirements rather than accepting quantity alone.",
+    "keyConcepts": [
+      "Luminaire count starts from required lumens divided by unit output",
+      "Rounding up protects the minimum calculated lighting provision",
+      "Spacing and mounting height strongly influence uniformity across the room",
+      "A compliant design may need glare and emergency-lighting checks"
+    ],
+    "remember": "The right number of fittings can still form the wrong layout.",
+    "practicalConnection": "Use the result to sketch a balanced grid and test it against the room geometry.",
+    "checkYourself": "Which checks remain after you calculate and round up the luminaire quantity?"
+  },
+  "p07-l13": {
+    "summary": "A single-line diagram represents a multi-conductor power system with simplified lines and standard symbols, showing how sources, boards, feeders, and protection relate. Include the ratings and references needed for design and operation, and verify symbols and required details against current local standards.",
+    "keyConcepts": [
+      "One line can represent all phases of a three-phase circuit",
+      "Device ratings explain protection and switching at each system level",
+      "Feeder labels connect the diagram to cable and schedule information",
+      "Earthing arrangements must be clear enough for safety decisions"
+    ],
+    "remember": "A good single-line diagram explains the power path at a glance.",
+    "practicalConnection": "Technicians use the diagram to plan isolation, trace faults, and coordinate additions.",
+    "checkYourself": "What minimum information would let someone trace a feeder from source to final board?"
+  },
+  "p07-l14": {
+    "summary": "Single-line, riser, and block diagrams describe different views of the same system: electrical connectivity, vertical distribution, and functional relationships. Coordinate identifiers and ratings across the drawings, using current local documentation conventions and project requirements.",
+    "keyConcepts": [
+      "Single-line diagrams emphasise electrical paths, switching, and protection",
+      "Riser diagrams show distribution between floors or vertical zones",
+      "Block diagrams simplify functional relationships without full wiring detail",
+      "Shared equipment tags keep separate drawings cross-referenced"
+    ],
+    "remember": "Choose the drawing that answers the question you are asking.",
+    "practicalConnection": "A building project may use all three views to coordinate designers, installers, and testers.",
+    "checkYourself": "Which diagram best shows how floor distribution boards connect vertically through a building?"
+  },
+  "p07-l15": {
+    "summary": "A single-line diagram shows system-wide connections, while a panel schedule lists the detailed circuits, loads, phases, and protective devices belonging to one board. Both documents must agree and should follow current local requirements for labels, ratings, and project records.",
+    "keyConcepts": [
+      "Single-line diagrams reveal upstream and downstream distribution relationships",
+      "Panel schedules describe individual ways within a particular board",
+      "Matching circuit identifiers prevent ambiguity between drawings and equipment",
+      "Phase columns help designers review load balance across the board"
+    ],
+    "remember": "The diagram shows where power goes; the schedule shows what each way does.",
+    "practicalConnection": "Cross-checking both documents exposes missing circuits, wrong ratings, or phase-allocation errors.",
+    "checkYourself": "Where would you expect to find the protective-device rating for a specific final circuit?"
+  },
+  "p07-l16": {
+    "summary": "Building load calculation progresses from connected loads to realistic maximum demand, then sizes transformers, main boards, sub-main boards, feeders, and protection as a coordinated system. Account for diversity, power factor, starting current, voltage drop, fault level, phase balance, and growth while verifying all factors against current local standards and utility rules.",
+    "keyConcepts": [
+      "Connected load is usually greater than realistic coincident maximum demand",
+      "Diversity must reflect how occupants and equipment actually operate",
+      "Upstream equipment needs adequate capacity and fault withstand ratings",
+      "Phase balancing reduces neutral current and unequal voltage conditions",
+      "Spare capacity supports foreseeable growth without excessive oversizing"
+    ],
+    "remember": "Size the whole distribution chain from credible demand, not guesses or nameplates alone.",
+    "practicalConnection": "A coordinated calculation turns a load list into defensible transformer, feeder, and board selections.",
+    "checkYourself": "Why should maximum demand, fault level, and voltage drop be checked together?"
+  },
+  "p08-l01": {
+    "summary": "Safe isolation identifies every source, switches off and secures the correct isolating device, proves the voltage indicator, tests all relevant conductor combinations, and proves the indicator again. Three-phase work can involve multiple supplies and dangerous line-to-line voltage, so follow a current locally approved procedure using suitable equipment and competent supervision.",
+    "keyConcepts": [
+      "Identify every normal, standby, generated, and backfeed source before isolation",
+      "Locking and tagging prevent another person from restoring the supply",
+      "Prove-test-reprove confirms the voltage indicator worked throughout the check",
+      "Test phase-to-phase, phase-to-neutral, and phase-to-earth where applicable"
+    ],
+    "remember": "Switching off is not isolation until absence of voltage is proved.",
+    "practicalConnection": "This sequence protects anyone opening a distribution board or touching circuit conductors.",
+    "checkYourself": "Why must a voltage indicator be proved both before and after testing for dead?"
+  },
+  "p08-l02": {
+    "summary": "A multifunction tester must be configured for the intended continuity or insulation-resistance measurement before it is connected. Inspect leads, select the correct function and test voltage, compensate lead resistance where required, and follow current local test procedures and the instrument instructions.",
+    "keyConcepts": [
+      "Correct function selection prevents misleading or potentially damaging test output",
+      "Lead nulling removes test-lead resistance from low-resistance continuity results",
+      "Insulation test voltage must suit the circuit and connected equipment",
+      "Instrument condition and calibration support confidence in recorded measurements"
+    ],
+    "remember": "A trustworthy result begins with a correctly prepared tester.",
+    "practicalConnection": "Consistent setup prevents false failures when moving between continuity and insulation tests.",
+    "checkYourself": "When should test-lead resistance be nulled, and what error does this remove?"
+  },
+  "p08-l03": {
+    "summary": "Protective-bonding continuity testing checks for a reliable low-resistance path between the main earthing terminal and the bonded service or metalwork. Isolate as required, compensate long test leads, recognise parallel paths, and judge results using the current local standard and installation design.",
+    "keyConcepts": [
+      "Bonding limits dangerous touch-voltage differences during an electrical fault",
+      "Long test leads must be compensated before low-resistance measurement",
+      "Parallel metallic paths can hide a loose bonding conductor",
+      "Visual inspection should confirm conductor route, size, and termination"
+    ],
+    "remember": "A low reading is meaningful only when you understand every possible parallel path.",
+    "practicalConnection": "The test helps confirm that incoming metallic services share the intended equipotential zone.",
+    "checkYourself": "How could parallel pipework make a defective bonding conductor appear satisfactory?"
+  },
+  "p08-l04": {
+    "summary": "An R1+R2 continuity test confirms that the line and circuit protective conductor reach the lighting point and supports polarity checks through the switching path. Perform the dead-test connections methodically, operate relevant switches, record results, and verify acceptance against the current local test sequence.",
+    "keyConcepts": [
+      "R1 plus R2 represents line and protective-path resistance to a point",
+      "Switch operation helps confirm continuity through the intended switched line",
+      "Low protective-conductor resistance supports reliable fault-current return",
+      "Recorded values can support later earth-loop assessment and fault finding"
+    ],
+    "remember": "Continuity proves the path; correct connections prove its purpose.",
+    "practicalConnection": "This test can reveal missing CPC connections or incorrect lighting-switch wiring before energisation.",
+    "checkYourself": "What does an unexpectedly high R1+R2 result suggest you should investigate?"
+  },
+  "p08-l05": {
+    "summary": "Ring-final testing measures end-to-end continuity of line, neutral, and protective conductors, then uses cross-connections and outlet readings to examine ring integrity and polarity. Bridges, interconnections, spurs, reversals, and broken conductors can distort the pattern, so follow the current locally approved sequence and interpret all results together.",
+    "keyConcepts": [
+      "End-to-end readings establish continuity of every ring conductor",
+      "Cross-connected readings should follow a predictable pattern around outlets",
+      "Irregular values can reveal breaks, bridges, spurs, or crossed conductors",
+      "Polarity checks ensure protective devices interrupt the line conductor"
+    ],
+    "remember": "A ring is proven by a pattern of consistent evidence, not one low reading.",
+    "practicalConnection": "Systematic readings let you locate wiring defects before carrying out live tests.",
+    "checkYourself": "Why are end-to-end tests alone insufficient to prove a ring final circuit?"
+  },
+  "p08-l06": {
+    "summary": "Insulation-resistance testing applies a controlled DC voltage to check separation between live conductors and earth, and between live conductors where appropriate. Safely isolate, discharge stored energy, disconnect or protect sensitive equipment, choose the correct test voltage, and compare results with current local requirements.",
+    "keyConcepts": [
+      "High insulation resistance indicates little unintended leakage through insulation",
+      "Connected electronics and surge devices may require disconnection before testing",
+      "Joining line and neutral can protect connected equipment during earth testing",
+      "Low readings require circuit subdivision and investigation before energisation"
+    ],
+    "remember": "Test the insulation without sacrificing the equipment connected to it.",
+    "practicalConnection": "The test can reveal damaged cable, moisture, contamination, or incorrect connections before supply is restored.",
+    "checkYourself": "Why might line and neutral be joined together for an insulation test to earth?"
+  },
+  "p08-l07": {
+    "summary": "A live polarity check at a three-phase origin uses an approved indicator to confirm expected voltages between line, neutral, and earth conductors. This is hazardous live work, so prove-test-reprove, control access and exposure, use the current locally approved method, and do not confuse polarity with phase-sequence testing.",
+    "keyConcepts": [
+      "Expected conductor-pair voltages help identify incorrect supply connections",
+      "An approved two-pole indicator is preferred for dependable voltage confirmation",
+      "Phase sequence requires a suitable dedicated test rather than voltage alone",
+      "Live testing demands competent risk controls and protected test access"
+    ],
+    "remember": "Correct voltage magnitude does not by itself prove correct phase sequence.",
+    "practicalConnection": "The check helps prevent energising a board with a misplaced neutral or phase conductor.",
+    "checkYourself": "What can a voltage-indicator polarity check confirm, and what can it not confirm?"
+  },
+  "p08-l08": {
+    "summary": "External earth-fault loop impedance, Ze, describes the supply-side earth loop at the installation origin and should exclude installation parallel paths. Removing or reconnecting earthing paths around a live test creates exceptional danger, so only a competent person should use the current locally approved method and fully restore and verify every connection.",
+    "keyConcepts": [
+      "Ze covers the external loop before final-circuit conductor resistance",
+      "Parallel metallic paths can make the measured impedance appear lower",
+      "Earthing conductors must be restored and securely verified after testing",
+      "Live loop testing requires strict exposure and instrument controls"
+    ],
+    "remember": "An earth-loop test must never leave the installation without its safety connections.",
+    "practicalConnection": "Ze contributes to predicted Zs values and the assessment of automatic disconnection.",
+    "checkYourself": "Why can parallel earth paths make a Ze result misleading?"
+  },
+  "p08-l09": {
+    "summary": "Prospective fault current at the origin estimates the greatest current that could flow during a short circuit or earth fault at that point. Measure or calculate the relevant PEFC and PSCC values, use the greater applicable result for equipment assessment, and verify the method and limits against current local standards and supply conditions.",
+    "keyConcepts": [
+      "PSCC estimates fault current between live conductors or line and neutral",
+      "PEFC estimates current through the earth-fault return path",
+      "Protective devices need breaking capacity above prospective fault current",
+      "Three-phase fault level may exceed a single-phase instrument reading"
+    ],
+    "remember": "Protection must be able to interrupt the worst credible fault, not the average one.",
+    "practicalConnection": "PFC results help confirm that switchgear and protective devices can safely clear faults.",
+    "checkYourself": "Why is the higher applicable prospective-fault-current value important when selecting protective devices?"
+  },
+  "p08-l10": {
+    "summary": "Earth-fault loop impedance testing checks whether the complete fault path is low enough for the protective device to disconnect within the required time. Understand the accuracy and RCD implications of high-current and low-current test modes, then compare the result with current local limits for the actual protective device.",
+    "keyConcepts": [
+      "Zs includes external impedance plus line and protective-conductor resistance",
+      "Lower loop impedance permits greater fault current and faster disconnection",
+      "Low-current modes reduce unwanted operation of some residual-current devices",
+      "Instrument mode and circuit conditions affect result accuracy"
+    ],
+    "remember": "A Zs number matters only when matched to the correct protective device.",
+    "practicalConnection": "The test supports verification that exposed metalwork will not remain dangerous during a fault.",
+    "checkYourself": "How does a high Zs value affect fault current and disconnection performance?"
+  },
+  "p08-l11": {
+    "summary": "Testing industrial socket outlets extends Zs assessment to single-phase and three-phase connection points, with each relevant line-to-earth path considered. Use a suitable test mode, verify conductor identification and socket condition, and compare the highest applicable result with current local disconnection requirements.",
+    "keyConcepts": [
+      "Each phase may present a different line-to-earth loop impedance",
+      "The highest relevant result represents the least favourable fault path",
+      "Socket construction and protective devices influence the chosen test method",
+      "Protective-conductor continuity should already be established by dead testing"
+    ],
+    "remember": "On a three-phase outlet, test every relevant path and keep the worst result.",
+    "practicalConnection": "Complete outlet testing supports safe use of portable or fixed industrial equipment.",
+    "checkYourself": "Why should more than one line-to-earth path be checked at a three-phase socket?"
+  },
+  "p08-l12": {
+    "summary": "Earth-electrode testing assesses how effectively an electrode transfers fault or protective current into the general mass of earth. Select a valid method for the electrode arrangement, control parallel paths and probe spacing, consider soil conditions, and verify acceptable values against the current local earthing design and standards.",
+    "keyConcepts": [
+      "Fall-of-potential testing uses auxiliary probes to estimate electrode resistance",
+      "Parallel electrodes can invalidate a measurement unless the method allows them",
+      "Soil moisture, temperature, and geometry influence electrode resistance",
+      "A clamp method works only when a suitable return loop exists"
+    ],
+    "remember": "An electrode reading is only as valid as the current path created by the test.",
+    "practicalConnection": "Reliable electrode data supports shock protection and earthing-system maintenance decisions.",
+    "checkYourself": "What site conditions could cause the same earth electrode to produce different readings?"
+  },
+  "p08-l13": {
+    "summary": "An RCD ramp test gradually increases residual current to estimate the device's operating threshold and can help investigate nuisance tripping. Select the correct RCD type and tester setting, account for existing leakage, and interpret the result using current local standards and manufacturer instructions rather than treating it as the only required test.",
+    "keyConcepts": [
+      "Ramp testing estimates the residual current that causes device operation",
+      "Existing circuit leakage can make the apparent trip threshold lower",
+      "RCD type determines the waveform the device should detect",
+      "Trip-current information does not replace required timed functional tests"
+    ],
+    "remember": "A ramp result diagnoses sensitivity; it does not certify the whole protective function.",
+    "practicalConnection": "The test can distinguish a sensitive device from excessive accumulated leakage on connected circuits.",
+    "checkYourself": "How can connected load leakage influence an RCD ramp-test result?"
+  },
+  "p08-l14": {
+    "summary": "RCD test procedures evolve as standards and device technologies change, so a rule tied to one edition or jurisdiction must not be applied automatically elsewhere. Identify the RCD type, confirm the required test sequence and instrument compatibility, and verify all test currents and limits against current KS 662, EPRA requirements, and manufacturer instructions.",
+    "keyConcepts": [
+      "RCD type determines the residual-current waveforms it recognises",
+      "Instrument settings must match both device technology and test objective",
+      "The integral test button checks mechanism operation, not installation measurements",
+      "Current local rules override remembered procedures from another jurisdiction"
+    ],
+    "remember": "Test the device you have under the rules that apply today and locally.",
+    "practicalConnection": "Checking the current procedure prevents an obsolete test routine from producing a false pass or failure.",
+    "checkYourself": "Which details must you verify before choosing an instrument test sequence for an RCD?"
+  },
+  "p08-l15": {
+    "summary": "Live polarity re-checking and functional testing confirm that a two-way and intermediate lighting circuit operates correctly through every switch combination. Functional success does not replace dead continuity or polarity evidence, and live measurements must follow current local procedures with competent risk controls.",
+    "keyConcepts": [
+      "Every switch combination should produce the intended lamp state",
+      "Protective switching should interrupt the line conductor rather than neutral",
+      "Functional operation cannot prove protective-conductor continuity by itself",
+      "Live confirmation follows satisfactory inspection and dead-test results"
+    ],
+    "remember": "If it works, test evidence must still show that it works safely.",
+    "practicalConnection": "Operating every switching state can expose crossed strappers or an incorrect intermediate connection.",
+    "checkYourself": "Why is correct lamp operation insufficient evidence of safe circuit polarity?"
+  },
+  "p08-l16": {
+    "summary": "Insulation-test conductor arrangements depend on what is being tested and what equipment remains connected. Joining live conductors for a test to earth can reduce stress on connected loads, while separate live-conductor tests may require disconnection; always use the current local procedure and equipment instructions.",
+    "keyConcepts": [
+      "Combined live conductors receive equal test potential relative to earth",
+      "Sensitive electronics and surge devices may distort or suffer from testing",
+      "Line-to-neutral testing requires connected loads to be safely removed",
+      "All tested conductors must be discharged before reconnection or handling"
+    ],
+    "remember": "Choose connections that test the insulation without energising equipment internally.",
+    "practicalConnection": "Correct conductor grouping prevents misleading low readings and accidental damage during commissioning.",
+    "checkYourself": "When would testing line and neutral separately require equipment to be disconnected?"
+  },
+  "p08-l17": {
+    "summary": "Live testing at a three-phase distribution board can establish Ze and prospective earth-fault and short-circuit currents for the supply. Test the required phase combinations, retain the worst credible fault level, and use only the current locally approved live-work method with suitable instruments, access control, and personal protection.",
+    "keyConcepts": [
+      "Ze describes supply-side earth-loop impedance at the installation origin",
+      "PEFC and PSCC represent different possible fault-current paths",
+      "Fault current can differ between phases and conductor combinations",
+      "The highest applicable value informs equipment breaking-capacity checks",
+      "Three-phase live boards demand rigorous control of exposed conductive parts"
+    ],
+    "remember": "At the origin, design for the highest fault current and work for the highest hazard.",
+    "practicalConnection": "These measurements complete key supply checks before a three-phase board is commissioned.",
+    "checkYourself": "Why should three-phase PFC assessment consider more than one conductor combination?"
+  },
+  "p09-l01": {
+    "summary": "Ring-final fault finding starts with safe isolation, inspection, end-to-end conductor measurements, and structured cross-connected readings. Use the result pattern to narrow opens, interconnections, reversals, and spurs, while following current local inspection and test requirements.",
+    "keyConcepts": [
+      "End-to-end resistance identifies which ring conductor has lost continuity",
+      "Cross-connected outlet readings reveal the fault's likely position",
+      "A circuit sketch prevents confusion while conductors are separated",
+      "Repair must be followed by the complete relevant retest sequence"
+    ],
+    "remember": "Divide the ring with measurements until the fault has nowhere left to hide.",
+    "practicalConnection": "A recorded sequence avoids random disconnection and shortens time spent opening accessories.",
+    "checkYourself": "Which first measurements distinguish an open line, neutral, or protective conductor on a ring?"
+  },
+  "p09-l02": {
+    "summary": "An open ring and low insulation resistance are separate fault conditions that may coexist and should be investigated with distinct evidence. Confirm conductor continuity, remove connected loads, subdivide the circuit for insulation tests, and evaluate results under current local requirements.",
+    "keyConcepts": [
+      "End-to-end tests locate which ring conductor is open",
+      "Insulation tests distinguish leakage between specific conductor groups",
+      "Dividing the circuit repeatedly narrows the defective cable section",
+      "Connected appliances can imitate an insulation fault and mislead diagnosis"
+    ],
+    "remember": "Name each fault from evidence before assuming one defect explains everything.",
+    "practicalConnection": "Separating continuity and insulation problems leads to smaller, safer, and more reliable repairs.",
+    "checkYourself": "How would you prevent a connected appliance from being mistaken for damaged fixed wiring?"
+  },
+  "p09-l03": {
+    "summary": "A low insulation-resistance reading indicates an unintended conductive path, but its cause may be damaged insulation, moisture, contamination, a connected load, or a protective component. Isolate and discharge safely, use the correct test voltage, split the circuit methodically, and judge results by current local requirements.",
+    "keyConcepts": [
+      "Testing each conductor pair identifies where leakage is occurring",
+      "Circuit subdivision reduces the length of wiring under suspicion",
+      "Moisture and contamination can create variable low-resistance paths",
+      "Electronic equipment may require disconnection before insulation testing"
+    ],
+    "remember": "A low reading tells you a path exists, not what created it.",
+    "practicalConnection": "Divide-and-test diagnosis can locate one damaged accessory without replacing an entire circuit.",
+    "checkYourself": "What sequence would you use to narrow a low insulation reading to one circuit section?"
+  },
+  "p09-l04": {
+    "summary": "Reverse polarity places conductors on the wrong terminals, while high resistance points to a poor joint, damaged conductor, or unintended current path. Use dead polarity and continuity tests, compare resistance patterns, inspect suspect points, and apply current local classification and retest requirements.",
+    "keyConcepts": [
+      "Reverse polarity can leave equipment internally live when switched off",
+      "High-resistance joints can overheat without immediately operating protection",
+      "Comparative outlet readings help locate abnormal resistance around a ring",
+      "Visual evidence should confirm rather than replace electrical measurements"
+    ],
+    "remember": "Wrong connections shock; weak connections heat.",
+    "practicalConnection": "Combining resistance patterns with inspection can pinpoint a reversed or loose socket connection.",
+    "checkYourself": "Why can a high-resistance joint become dangerous even when the circuit still operates?"
+  },
+  "p09-l05": {
+    "summary": "A non-working socket should be diagnosed from the supply outward instead of assuming the appliance or accessory has failed. Confirm safe conditions, check upstream protection and isolation, then use voltage, polarity, and continuity evidence under current local procedures to locate an open line, neutral, or connection fault.",
+    "keyConcepts": [
+      "Upstream isolation or protection may explain a dead outlet immediately",
+      "A missing neutral can leave misleading voltage indications on some testers",
+      "Known-good load checks should follow electrical safety confirmation",
+      "Loose terminations can cause intermittent failure and dangerous heating"
+    ],
+    "remember": "Follow the energy path from source to load and test every assumption.",
+    "practicalConnection": "A structured approach separates appliance failure from socket, circuit, and supply faults.",
+    "checkYourself": "Which measurements would distinguish an open line from an open neutral at a socket?"
+  },
+  "p09-l06": {
+    "summary": "A borrowed neutral occurs when one circuit uses another circuit's neutral return, creating unexpected current paths and residual-current imbalance. The condition can defeat single-circuit isolation and cause RCD operation, so identify all linked circuits, correct the wiring, and verify the repair to current local requirements.",
+    "keyConcepts": [
+      "Shared neutral current may not return through the same RCD",
+      "Residual imbalance causes an RCD to operate despite normal loads",
+      "Isolating one circuit may leave its borrowed neutral energised",
+      "Each circuit should retain its intended line and neutral pairing"
+    ],
+    "remember": "A neutral borrowed from another circuit also borrows its hazards.",
+    "practicalConnection": "Recognising the pattern prevents repeated RCD replacement when the real problem is circuit interconnection.",
+    "checkYourself": "Why can a borrowed neutral remain hazardous after one circuit is switched off?"
+  },
+  "p09-l07": {
+    "summary": "Green exudate on older PVC-insulated cable can result from plasticiser migration and interaction with copper, and it may spread into accessories. Treat it as evidence requiring inspection, insulation testing, cleaning or replacement assessment, and a full retest rather than as a cosmetic stain.",
+    "keyConcepts": [
+      "Migrating cable plasticiser can form green contamination around copper conductors",
+      "Contamination may travel along conductors into switches and sockets",
+      "Material deterioration requires electrical testing and condition assessment",
+      "Affected accessories may need replacement even when conductors remain continuous"
+    ],
+    "remember": "Green residue is a symptom; assess the cable system behind it.",
+    "practicalConnection": "Early identification can prevent contamination from compromising new accessories or unreliable terminations.",
+    "checkYourself": "What evidence would you gather before deciding whether affected cable can remain in service?"
+  },
+  "p09-l08": {
+    "summary": "Unexpected partial voltages on an SWA circuit can arise from an open conductor, poor earth path, capacitive coupling, or a high-impedance measurement rather than a healthy supply. Confirm with an appropriate low-impedance or two-pole method, then test conductor continuity, glands, bonding, and terminations before drawing conclusions.",
+    "keyConcepts": [
+      "High-impedance meters can display capacitively coupled phantom voltage",
+      "An open conductor can float to an intermediate measured potential",
+      "SWA gland continuity is essential to the designed protective path",
+      "Loaded or low-impedance testing helps distinguish real energy from coupling"
+    ],
+    "remember": "A voltage reading proves potential, not the source strength behind it.",
+    "practicalConnection": "Using the right tester prevents unnecessary cable replacement based on phantom voltage alone.",
+    "checkYourself": "How would you distinguish a capacitively coupled phantom voltage from a firm supply?"
+  },
+  "p09-l09": {
+    "summary": "A leakage clamp meter measures small residual current by enclosing all live conductors of a circuit so normal load currents cancel. Separate circuits and loads methodically, account for normal filter leakage, and use trends and circuit context to distinguish cumulative leakage from an insulation fault.",
+    "keyConcepts": [
+      "Clamping all live conductors reveals their uncancelled residual current",
+      "Clamping one conductor measures load current rather than earth leakage",
+      "Electronic filters can contribute normal but cumulative protective-conductor current",
+      "Meter resolution and jaw closure matter at milliampere levels"
+    ],
+    "remember": "What the clamp surrounds determines what current it reveals.",
+    "practicalConnection": "Circuit-by-circuit leakage readings can identify which loads are driving repeated RCD trips.",
+    "checkYourself": "Why must line and neutral both pass through the clamp for a residual-leakage measurement?"
+  },
+  "p09-l10": {
+    "summary": "A storage heater that remains cold may have no off-peak supply, an incorrect control setting, an open element, or an operated thermal cut-out. Check supply timing and controls before safely isolating for continuity, resistance, and termination tests.",
+    "keyConcepts": [
+      "Off-peak circuits may be energised only during scheduled periods",
+      "Element resistance can indicate whether the heating path is open",
+      "Thermal controls interrupt supply when temperature becomes excessive",
+      "Loose high-current connections may discolor, overheat, or fail intermittently"
+    ],
+    "remember": "Before blaming the heater, confirm when and how it is meant to receive power.",
+    "practicalConnection": "Understanding timed supplies prevents a normal off-peak circuit from being diagnosed as dead wiring.",
+    "checkYourself": "What would you verify before opening a storage heater to test its elements?"
+  },
+  "p09-l11": {
+    "summary": "A clamp meter supports fault finding by measuring current without opening the conductor, provided the correct conductor or conductor group is enclosed. Compare measured current with the operating state and expected load, and remember that clamping an entire healthy cable usually makes opposing currents cancel.",
+    "keyConcepts": [
+      "Clamping one live conductor measures the current carried by that conductor",
+      "Clamping all live conductors measures only uncancelled residual current",
+      "Phase-current comparison can reveal imbalance or a failed load section",
+      "Zeroing and fully closing the jaws improve small-current accuracy"
+    ],
+    "remember": "Place the clamp around the current path you actually want to measure.",
+    "practicalConnection": "Non-invasive current checks can confirm whether a heater, motor, or branch circuit is drawing power.",
+    "checkYourself": "What reading would you expect when clamping around both line and neutral of a healthy load?"
+  },
+  "p10-l01": {
+    "summary": "A complete shed supply coordinates load assessment, feeder protection, SWA routing and termination, local distribution, conduit, singles, accessories, and testing. Treat the work as one system so environmental protection, earthing, voltage drop, maintainability, and circuit separation are resolved before installation.",
+    "keyConcepts": [
+      "Load assessment determines feeder capacity and downstream circuit needs",
+      "SWA terminations provide mechanical retention and the designed earth path",
+      "Conduit routes need suitable fill, bends, supports, and pulling access",
+      "External equipment needs protection suited to moisture and mechanical exposure",
+      "Inspection and testing confirm the finished system matches the design"
+    ],
+    "remember": "A small outbuilding is still a complete electrical distribution project.",
+    "practicalConnection": "Planning the entire route and materials list prevents incompatible parts and late design changes.",
+    "checkYourself": "Which design decisions must be settled before selecting the shed's SWA feeder?"
+  },
+  "p10-l02": {
+    "summary": "Changing a consumer unit alters the installation's central protection and demands assessment of the supply, earthing, bonding, existing circuits, fault level, device compatibility, and enclosure arrangement. Record pre-work conditions, isolate safely, test before and after, label accurately, and verify certification and installation requirements against current KS 662, EPRA rules, utility conditions, and manufacturer instructions.",
+    "keyConcepts": [
+      "Pre-work tests reveal defects that a new board will not cure",
+      "Protective devices must suit circuit characteristics and prospective fault current",
+      "Neutral arrangements must match the selected residual-current protection scheme",
+      "Manufacturer-approved assemblies preserve device coordination and enclosure ratings",
+      "Final records communicate test results, circuit details, and limitations"
+    ],
+    "remember": "A new board cannot make unverified old circuits safe by appearance alone.",
+    "practicalConnection": "A disciplined changeover keeps existing defects visible and provides evidence for safe re-energisation.",
+    "checkYourself": "Which existing-installation checks should be completed before the old consumer unit is disconnected?"
+  },
+  "p10-l03": {
+    "summary": "First fix places boxes, routes, and cables according to a completed design before finishes conceal the work. Size cables from load, protection, installation method, grouping, temperature, voltage drop, and fault performance, and verify permitted routes, chase limits, fire stopping, and local requirements before cutting or installing.",
+    "keyConcepts": [
+      "Design current, device rating, and corrected cable capacity must coordinate",
+      "Concealed routes should follow recognised zones or receive suitable protection",
+      "Chasing must not weaken the wall or breach required barriers",
+      "First-fix positioning must leave enough conductor for sound terminations",
+      "Photographic records preserve hidden route information for future work"
+    ],
+    "remember": "What you conceal at first fix must already be designed, protected, and documented.",
+    "practicalConnection": "Accurate setting-out prevents second-fix accessories from clashing with structure or missing cable routes.",
+    "checkYourself": "Which correction factors could reduce a cable's allowable current after installation?"
+  },
+  "p10-l04": {
+    "summary": "Second fixing a loop-in lighting circuit means identifying permanent line, neutral, switched line, and protective conductors, then terminating them without confusing their functions. Sound preparation, sleeving, torque, enclosure space, continuity, polarity, and functional checks turn the first-fix wiring into a maintainable circuit.",
+    "keyConcepts": [
+      "Permanent line feeds the switch while switched line returns to the lamp",
+      "Neutral conductors remain continuous to the load rather than the switch",
+      "Protective conductors require continuous, secure, and identifiable terminations",
+      "Terminal preparation should avoid damaged strands and exposed copper",
+      "Testing must precede reliance on successful lamp operation"
+    ],
+    "remember": "Identify every conductor by function before placing it in a terminal.",
+    "practicalConnection": "Clear conductor grouping makes later testing and fault finding far quicker.",
+    "checkYourself": "How would you distinguish the permanent line from the switched line before energisation?"
+  },
+  "p10-l05": {
+    "summary": "Connecting a cooker requires coordination of assessed load, circuit capacity, protective device, isolation, cable termination, and appliance instructions. Earth-fault loop impedance at the final point helps verify automatic disconnection, but the result must be obtained safely and checked against current local limits for the actual protective device.",
+    "keyConcepts": [
+      "Cooker demand must be assessed against circuit and connection ratings",
+      "A suitable local isolator supports safe operation and maintenance",
+      "Zs represents the complete line-to-earth fault-loop impedance",
+      "Lower loop impedance supports sufficient current for prompt disconnection",
+      "Final checks include polarity, protective continuity, and functional operation"
+    ],
+    "remember": "A powerful appliance needs both a sound load path and a proven fault path.",
+    "practicalConnection": "Coordinated connection and testing reduce overheating risk and confirm protective performance at the appliance.",
+    "checkYourself": "Why must a measured cooker-circuit Zs be matched to its specific protective device?"
+  },
+  "p10-l06": {
+    "summary": "Installing a three-phase distribution board requires correct assembly, isolation, phase sequence, busbar arrangement, neutral and protective-conductor segregation, circuit allocation, and torque-controlled termination. Follow the exact manufacturer system and verify ratings, fault capacity, access, labelling, and test procedures against current local standards.",
+    "keyConcepts": [
+      "Compatible enclosure, busbar, and devices form a tested assembly",
+      "Phase sequence matters for rotating equipment and downstream consistency",
+      "Circuit allocation should limit phase imbalance under realistic demand",
+      "Torque values protect terminals from looseness and mechanical damage",
+      "Blanking and barriers prevent access to live conductive parts"
+    ],
+    "remember": "Build the board as a verified system, not a collection of compatible-looking parts.",
+    "practicalConnection": "Careful assembly and scheduling make commissioning safer and future circuit tracing reliable.",
+    "checkYourself": "Why is visual compatibility insufficient when selecting devices for a distribution-board assembly?"
+  },
+  "p10-l07": {
+    "summary": "A three-phase domestic service can include utility intake equipment, metering, isolation, and distribution arrangements that differ from a familiar single-phase consumer unit. Balance single-phase circuits, consider neutral and harmonic loading, preserve utility boundaries, and verify every service and protection requirement against current local standards and the supplying utility.",
+    "keyConcepts": [
+      "Utility intake equipment is not automatically the customer's final distribution board",
+      "Single-phase household loads should be distributed sensibly across available phases",
+      "Neutral current reflects imbalance and harmonic content of connected loads",
+      "Metering and service equipment may be accessible only to authorised personnel",
+      "Whole-installation isolation must be clear and correctly rated"
+    ],
+    "remember": "Three-phase at home changes the distribution plan, not the need for clear ownership and protection.",
+    "practicalConnection": "Correctly identifying service equipment prevents unauthorised work and poor phase allocation in new homes.",
+    "checkYourself": "What information would you obtain from the utility before designing downstream three-phase domestic distribution?"
+  },
+  "p10-l08": {
+    "summary": "A decision to repair or rewire a poor three-phase installation should follow evidence, not appearance alone. Inspect and test conductor condition, connections, protection, earthing, identification, fault capacity, accessibility, and thermal damage, then compare the risk and scope of targeted correction with full replacement.",
+    "keyConcepts": [
+      "Visual disorder can indicate problems but does not quantify electrical safety",
+      "Testing reveals hidden continuity, insulation, polarity, and loop defects",
+      "Heat damage often points to overload or high-resistance connections",
+      "Protective devices must coordinate with conductors and available fault current",
+      "Repair decisions require records, risk judgement, and complete retesting"
+    ],
+    "remember": "Condemn or retain wiring from evidence, never from tidiness alone.",
+    "practicalConnection": "A structured condition assessment supports a defensible repair, partial rewire, or complete rewire proposal.",
+    "checkYourself": "Which findings would make a full rewire more reasonable than isolated repairs?"
+  },
+  "p10-l09": {
+    "summary": "Load estimation predicts the demand a project is likely to place on its supply and distribution system. It converts a raw equipment list into credible design demand using operating patterns, coincidence, diversity, power factor, starting behaviour, and future growth.",
+    "keyConcepts": [
+      "Connected load assumes everything operates at rated power simultaneously",
+      "Maximum demand estimates the greatest credible coincident operating load",
+      "Diversity reflects that many loads do not operate together",
+      "Power factor links useful kilowatts with supplied kilovolt-amperes",
+      "Growth allowance reduces the chance of premature capacity upgrades"
+    ],
+    "remember": "Estimate how the building will operate, not merely what equipment it contains.",
+    "practicalConnection": "A credible estimate supports economical service, transformer, generator, feeder, and board choices.",
+    "checkYourself": "Why is adding every equipment nameplate rating usually a poor estimate of maximum demand?"
+  },
+  "p10-l10": {
+    "summary": "A distribution load calculation groups loads, applies justified demand and coincidence factors, converts between kW, kVA, current, and power factor, and examines phase allocation. The resulting demand supports coordinated sizing of feeders, transformers, generators, boards, and protection while retaining capacity for starting conditions and planned growth.",
+    "keyConcepts": [
+      "Load schedules organise ratings, duty, phase, and demand assumptions",
+      "Coincidence factors describe which load groups peak at the same time",
+      "Motor starting may govern voltage-drop or generator performance checks",
+      "Phase balancing improves utilisation and limits neutral current",
+      "Documented assumptions make calculations reviewable and updateable"
+    ],
+    "remember": "A useful load calculation is transparent enough for another designer to challenge.",
+    "practicalConnection": "The final load schedule becomes the numerical backbone of the project's single-line diagram and board schedules.",
+    "checkYourself": "How would a poor power factor change current for the same useful three-phase power?"
+  }
+}
