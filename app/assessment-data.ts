@@ -56,7 +56,7 @@ const kenyaGuardrail = 'Apply the principle only after checking current Kenyan l
 
 function fallbackGuide(lesson: CourseLesson): LessonGuide {
   return {
-    summary: `This lesson develops ${lesson.topic.toLocaleLowerCase()} and connects it to safe, complete electrical installation work.`,
+    summary: `${lesson.topic} connects directly to safe, complete electrical installation work.`,
     keyConcepts: [
       `Understand the purpose of ${lesson.topic.toLocaleLowerCase()}.`,
       'Relate the component or method to the complete circuit.',
@@ -65,7 +65,7 @@ function fallbackGuide(lesson: CourseLesson): LessonGuide {
     ],
     remember: 'Understand the reason behind the method before memorising its steps.',
     practicalConnection: 'Find the principle on a drawing, safe training board or supervised installation and explain what changes if it is omitted.',
-    checkYourself: `Can you explain ${lesson.topic.toLocaleLowerCase()} without repeating the video title?`,
+    checkYourself: `What is ${lesson.topic.toLocaleLowerCase()}, and how is it used in electrical work?`,
   };
 }
 
@@ -78,7 +78,7 @@ function rotateCorrectOption(correct: string, distractors: string[], seed: numbe
   while (alternatives.length < 3) {
     alternatives.push([
       'Choose the method only from habit, without checking the circuit or environment.',
-      'Treat the video example as automatic legal approval for every installation.',
+      'Treat one example as automatic legal approval for every installation.',
       'Continue practical work even when the supply, protection or competence is uncertain.',
     ][alternatives.length]);
   }
@@ -99,6 +99,11 @@ function conceptFocus(concept: string, fallback: string) {
   return subject;
 }
 
+function whyQuestion(focus: string, topic: string) {
+  if (focus.toLocaleLowerCase() === topic.toLocaleLowerCase()) return `Why is ${topic.toLocaleLowerCase()} important?`;
+  return `Why does ${lowerFirst(focus)} matter when working with ${topic.toLocaleLowerCase()}?`;
+}
+
 function fieldAction(concept: string, topic: string) {
   if (/^(choose|check|confirm|keep|record|read|select|separate|distinguish|establish|scan|plan|allow|restore|coordinate|verify|understand|compare|place|use)\b/i.test(concept)) {
     return concept;
@@ -109,9 +114,9 @@ function fieldAction(concept: string, topic: string) {
 function reasoningDistractors(topic: string) {
   const subject = topic.toLocaleLowerCase();
   return [
-    `Memorise the wording about ${subject}, but do not connect it to circuit behaviour or the result of the work.`,
-    `Assume one video example makes every method suitable for ${subject}, regardless of the installation conditions.`,
-    `Rely on habit and appearance; the reason behind the decision does not need to be explained or verified.`,
+    `The principle has no effect on how ${subject} behaves or how the result is checked.`,
+    `Use the same approach for ${subject} in every situation without checking the actual conditions.`,
+    `Judge ${subject} mainly by appearance; the reason behind the decision does not need to be verified.`,
   ];
 }
 
@@ -155,7 +160,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         {
           id: `${lesson.id}-summary`, lessonId: lesson.id, moduleId: module.id,
           kind: 'Big picture',
-          front: `Imagine an apprentice missed this lesson. How would you explain the main purpose of “${lesson.title}” in plain language?`,
+          front: `What is the main idea behind ${topic}?`,
           back: guide.summary,
           answerPoints: guide.keyConcepts.slice(0, 3),
           whyItMatters: `A competent electrician can connect ${topic} to the complete circuit or installation—not only repeat a definition.`,
@@ -166,18 +171,18 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
             {
               id: `${lesson.id}-concept-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
               kind: 'Explain it' as const,
-              front: `What should you understand about ${lowerFirst(focus)}—and how would you explain it without simply memorising the video?`,
+              front: `What should you understand about ${lowerFirst(focus)}?`,
               back: concept,
               answerPoints: [
                 `State the principle accurately: ${concept}`,
-                `Connect it to the lesson’s main idea: ${guide.remember}`,
+                `Explain why it matters: ${guide.remember}`,
               ],
               whyItMatters: `This tests whether you can explain the reason behind ${topic}, which is necessary before making or defending a technical decision.`,
             },
             {
               id: `${lesson.id}-decision-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
               kind: 'Site decision' as const,
-              front: `You are preparing or checking work involving ${topic}. What decision or observable check follows from this principle?`,
+              front: `How should ${lowerFirst(focus)} affect the way you work?`,
               back: fieldAction(concept, lesson.topic),
               answerPoints: [concept, 'Explain what could be wrong, unsafe or incomplete if this point is ignored.'],
               whyItMatters: `Understanding becomes useful when it changes what you inspect, select, install, test or explain on a real job.`,
@@ -187,7 +192,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         {
           id: `${lesson.id}-remember`, lessonId: lesson.id, moduleId: module.id,
           kind: 'Safety check',
-          front: `Before accepting work on ${topic} as correct, what final mental check from this lesson should stop you from relying on habit alone?`,
+          front: `What is the most important rule to remember about ${topic}?`,
           back: guide.remember,
           answerPoints: [guide.remember, 'Use the check before proceeding, not only after a defect appears.'],
           whyItMatters: 'A short, accurate mental check helps prevent a familiar task from becoming an automatic—and possibly unsafe—routine.',
@@ -195,7 +200,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         {
           id: `${lesson.id}-practice`, lessonId: lesson.id, moduleId: module.id,
           kind: 'Site decision',
-          front: `How would you demonstrate this lesson on a drawing, training board or supervised installation—not just describe it?`,
+          front: `How is ${topic} applied on a real job?`,
           back: guide.practicalConnection,
           answerPoints: [guide.practicalConnection, 'Name the evidence that would show the work has been carried out and checked correctly.'],
           whyItMatters: 'Practical evidence connects theory to a drawing, installation method, test result or clear client decision.',
@@ -214,7 +219,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         flashcards.push({
           id: `${lesson.id}-kenya`, lessonId: lesson.id, moduleId: module.id,
           kind: 'Kenya standards',
-          front: 'What must be checked before applying this lesson on a Kenyan installation?',
+          front: `Before applying ${topic} in Kenya, what must be confirmed?`,
           back: lesson.regulationStatus || kenyaGuardrail,
           answerPoints: ['Separate the transferable technical principle from the rule or value that must be verified locally.', 'Confirm competence, project requirements, product instructions and the required inspection or testing evidence.'],
           whyItMatters: 'Technical principles transfer across countries, but legal duties, values, certificates, permitted methods and licence scope can change.',
@@ -226,10 +231,10 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       const summaryChoice = rotateCorrectOption(guide.summary, moduleSummaryPool, lessonIndex);
       questions.push({
         id: `${lesson.id}-q-summary`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-summary`,
-        prompt: `Which statement best summarises “${lesson.title}”?`,
+        prompt: `What is the main purpose of ${topic}?`,
         kind: 'Understanding',
         ...summaryChoice,
-        explanation: `The lesson’s central purpose is: ${guide.summary}`,
+        explanation: guide.summary,
       });
 
       guide.keyConcepts.forEach((concept, conceptIndex) => {
@@ -237,10 +242,10 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         questions.push({
           id: `${lesson.id}-q-concept-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
           cardId: `${lesson.id}-concept-${conceptIndex + 1}`,
-          prompt: `Which explanation shows real understanding of ${topic}, rather than memorising a phrase?`,
+          prompt: `Which statement correctly explains ${lowerFirst(conceptFocus(concept, lesson.topic))}?`,
           kind: 'Understanding',
           ...choice,
-          explanation: `Correct principle: ${concept} Understanding means you can connect this statement to the behaviour of the circuit, the installation decision or the evidence you would check.`,
+          explanation: `${concept} This is the principle to use when explaining the circuit, making the installation decision or checking the result.`,
         });
 
         const action = fieldAction(concept, lesson.topic);
@@ -248,10 +253,10 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         questions.push({
           id: `${lesson.id}-q-scenario-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
           cardId: `${lesson.id}-decision-${conceptIndex + 1}`,
-          prompt: `Job scenario: you are preparing or checking work involving ${topic}. Which response best turns the lesson into a sound technical action?`,
+          prompt: `You are working with ${topic}. Which action is correct?`,
           kind: 'Job scenario',
           ...scenarioChoice,
-          explanation: `Best action: ${action} The decision should be supported by the drawing, circuit conditions, equipment information and the verification appropriate to the work.`,
+          explanation: `${action} Check the drawing, circuit conditions, equipment information and the required verification before accepting the work.`,
         });
 
         const reasoningAnswer = `It changes a real technical decision: ${concept}`;
@@ -259,17 +264,17 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         questions.push({
           id: `${lesson.id}-q-reasoning-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
           cardId: `${lesson.id}-concept-${conceptIndex + 1}`,
-          prompt: `Why is this principle important to a competent electrician working with ${topic}?`,
+          prompt: whyQuestion(conceptFocus(concept, lesson.topic), lesson.topic),
           kind: 'Reasoning',
           ...reasoningChoice,
-          explanation: `${concept} The important point is not the sentence alone; it is how the principle changes planning, selection, workmanship, testing or the explanation given to another person.`,
+          explanation: `${concept} It affects planning, selection, workmanship, testing or the way the result is explained.`,
         });
       });
 
       const rememberChoice = rotateCorrectOption(guide.remember, moduleRememberPool, lessonIndex + 5);
       questions.push({
         id: `${lesson.id}-q-remember`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-remember`,
-        prompt: 'Which reminder should guide your decision after this lesson?',
+        prompt: `Which rule is most important when working with ${topic}?`,
         kind: 'Safety & standards',
         ...rememberChoice,
         explanation: guide.remember,
@@ -278,7 +283,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       const practiceChoice = rotateCorrectOption(guide.practicalConnection, modulePracticePool, lessonIndex + 6);
       questions.push({
         id: `${lesson.id}-q-practice`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-practice`,
-        prompt: 'Which practical connection best applies this lesson?',
+        prompt: `Which example shows ${topic} being applied correctly?`,
         kind: 'Job scenario',
         ...practiceChoice,
         explanation: guide.practicalConnection,
@@ -288,32 +293,32 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       const teachBackChoice = rotateCorrectOption(teachBackAnswer, reasoningDistractors(lesson.topic), lessonIndex + 31);
       questions.push({
         id: `${lesson.id}-q-teach-back`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-teach-back`,
-        prompt: `${guide.checkYourself} Which answer contains the essential reasoning?`,
+        prompt: guide.checkYourself,
         kind: 'Teach-back',
         ...teachBackChoice,
-        explanation: `A complete answer connects the ideas instead of naming one fact: ${guide.keyConcepts.join(' ')}`,
+        explanation: `A complete answer connects these points: ${guide.keyConcepts.join(' ')}`,
       });
 
       const completionAnswer = `Explain the principle, apply it to the work, and identify the evidence or check that would confirm the result.`;
       const completionChoice = rotateCorrectOption(completionAnswer, unsafeDistractors(lesson.topic), lessonIndex + 41);
       questions.push({
         id: `${lesson.id}-q-completion`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-practice`,
-        prompt: `What would best demonstrate that someone has understood “${lesson.title}” well enough to use it responsibly?`,
+        prompt: `Which result best shows that ${topic} has been applied correctly?`,
         kind: 'Reasoning',
         ...completionChoice,
-        explanation: `${completionAnswer} For this lesson, the practical connection is: ${guide.practicalConnection}`,
+        explanation: `${completionAnswer} Practical example: ${guide.practicalConnection}`,
       });
 
       if (lesson.regulationSensitive) {
         const correct = lesson.regulationStatus || kenyaGuardrail;
         const choice = rotateCorrectOption(correct, [
-          'The UK video automatically proves compliance in Kenya without further checks.',
-          'A learner may carry out any specialised installation after watching the lesson.',
+          'A method used elsewhere automatically proves compliance in Kenya without further checks.',
+          'Anyone may carry out specialised electrical work after seeing one demonstration.',
           'Only the equipment colour and appearance need to be checked before installation.',
         ], lessonIndex + 7);
         questions.push({
           id: `${lesson.id}-q-kenya`, lessonId: lesson.id, moduleId: module.id, cardId: `${lesson.id}-kenya`,
-          prompt: 'What is the correct compliance approach before using this lesson on a Kenyan project?',
+          prompt: `Before using this method on a Kenyan project, what must be done?`,
           kind: 'Safety & standards',
           ...choice,
           explanation: `${correct} ${kenyaGuardrail}`,
