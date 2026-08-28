@@ -1034,8 +1034,9 @@ export default function CourseApp() {
                     <AssessmentPanel
                       key={activeLesson.id}
                       eyebrow={`M${pad(location.module.number)} · L${pad(activeLesson.number)} lesson recap`}
-                      title="Make this lesson stay with you."
-                      description="Recall the ideas before seeing the answers, then complete the quiz. Missed concepts automatically return to your review queue."
+                      title={activeLesson.title}
+                      description={activeGuide.summary}
+                      connectedLessonFlow
                       flashcards={activeAssessment.flashcards}
                       questions={activeAssessment.questions}
                       progress={learner.flashcardProgress}

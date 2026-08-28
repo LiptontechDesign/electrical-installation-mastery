@@ -7,7 +7,7 @@ export type Flashcard = {
   front: string;
   back: string;
   whyItMatters: string;
-  kind: 'Big picture' | 'Explain it' | 'Site decision' | 'Teach it back' | 'Safety check' | 'Kenya standards';
+  kind: 'Big picture' | 'Core idea' | 'Concept connection' | 'Site decision' | 'Teach it back' | 'Safety check' | 'Kenya standards';
   answerPoints?: string[];
   kenyaNote?: string;
 };
@@ -21,7 +21,7 @@ export type AssessmentQuestion = {
   options: string[];
   answer: number;
   explanation: string;
-  kind: 'Understanding' | 'Job scenario' | 'Reasoning' | 'Teach-back' | 'Safety & standards';
+  kind: 'Understanding' | 'Concept connection' | 'Job scenario' | 'Reasoning' | 'Teach-back' | 'Safety & standards';
 };
 
 export type LessonAssessment = {
@@ -88,20 +88,57 @@ function rotateCorrectOption(correct: string, distractors: string[], seed: numbe
   return { options, answer };
 }
 
-function lowerFirst(value: string) {
-  return value ? `${value.charAt(0).toLocaleLowerCase()}${value.slice(1)}` : value;
+function cleanSentence(value: string) {
+  return value.trim().replace(/[.?!]+$/, '');
 }
 
-function conceptFocus(concept: string, fallback: string) {
-  const cleaned = concept.replace(/[.?!]+$/, '').trim();
-  const subject = cleaned.split(/\b(?:is|are|means|contains|include|includes|allows|requires|must|should|can|may|will|helps|protects|provides|uses|depends|occurs|responds|remain|stays|supports|influences)\b/i)[0]?.trim();
-  if (!subject || subject.split(/\s+/).length > 8 || /^(choose|check|confirm|keep|record|read|select|separate|distinguish|establish|scan|plan|allow|restore|coordinate|verify|understand|treat|compare)\b/i.test(subject)) return fallback;
-  return subject;
-}
+function directConceptQuestion(concept: string, topic: string) {
+  const sentence = cleanSentence(concept);
+  let match = sentence.match(/^(.+?)\s+before\s+(.+)$/i);
+  if (match) return { prompt: `What must be done before ${match[2].toLocaleLowerCase()}?`, answer: match[1] };
 
-function whyQuestion(focus: string, topic: string) {
-  if (focus.toLocaleLowerCase() === topic.toLocaleLowerCase()) return `Why is ${topic.toLocaleLowerCase()} important?`;
-  return `Why does ${lowerFirst(focus)} matter when working with ${topic.toLocaleLowerCase()}?`;
+  match = sentence.match(/^(.+?)\s+(contain|contains)\s+(.+)$/i);
+  if (match) return { prompt: `What ${match[2].toLocaleLowerCase() === 'contains' ? 'does' : 'do'} ${match[1].toLocaleLowerCase()} contain?`, answer: match[3] };
+
+  match = sentence.match(/^(.+?)\s+(influences|determines|affects)\s+(whether\s+.+)$/i);
+  if (match) return { prompt: `What ${match[2].toLocaleLowerCase()} ${match[3].toLocaleLowerCase()}?`, answer: match[1] };
+
+  match = sentence.match(/^(.+?)\s+depends\s+on\s+(.+)$/i);
+  if (match) return { prompt: `What does ${match[1].toLocaleLowerCase()} depend on?`, answer: match[2] };
+
+  match = sentence.match(/^(.+?)\s+is\s+opposite\s+to\s+(.+)$/i);
+  if (match) return { prompt: `How is ${match[1].toLocaleLowerCase()} related to ${match[2].toLocaleLowerCase()}?`, answer: 'They are in opposite directions.' };
+
+  const action = sentence.match(/^(Choose|Select|Check|Confirm|Verify|Read|Record|Scan|Keep|Plan|Allow|Restore|Coordinate|Place|Use|Compare|Distinguish|Separate|Establish)\b/i)?.[1]?.toLocaleLowerCase();
+  if (action === 'choose' || action === 'select') {
+    const object = sentence.replace(/^(Choose|Select)\s+/i, '').split(/\s+(?:for|from|according to|based on)\s+/i)[0];
+    return { prompt: `What must be considered when ${action === 'choose' ? 'choosing' : 'selecting'} ${object.toLocaleLowerCase()}?`, answer: sentence };
+  }
+  const actionPrompts: Record<string, string> = {
+    check: `What must be checked for ${topic.toLocaleLowerCase()}?`,
+    confirm: `What must be confirmed for ${topic.toLocaleLowerCase()}?`,
+    verify: `What must be verified for ${topic.toLocaleLowerCase()}?`,
+    read: `What information must be read before working with ${topic.toLocaleLowerCase()}?`,
+    record: `What must be recorded for ${topic.toLocaleLowerCase()}?`,
+    scan: `What must be checked before work starts on ${topic.toLocaleLowerCase()}?`,
+    keep: `What must be kept correctly controlled in ${topic.toLocaleLowerCase()}?`,
+    plan: `What must be planned for ${topic.toLocaleLowerCase()}?`,
+    allow: `What allowances are needed for ${topic.toLocaleLowerCase()}?`,
+    restore: `What must be restored before the work is complete?`,
+    coordinate: `What must be coordinated for ${topic.toLocaleLowerCase()}?`,
+    place: `What must be considered when positioning equipment for ${topic.toLocaleLowerCase()}?`,
+    use: `What should be used for ${topic.toLocaleLowerCase()}?`,
+    compare: `What must be compared for ${topic.toLocaleLowerCase()}?`,
+    distinguish: `What must be distinguished in ${topic.toLocaleLowerCase()}?`,
+    separate: `What must be kept separate in ${topic.toLocaleLowerCase()}?`,
+    establish: 'What must be established before work starts?',
+  };
+  if (action && actionPrompts[action]) return { prompt: actionPrompts[action], answer: sentence };
+
+  match = sentence.match(/^(.+?)\s+(?:is|are|means|allows|requires|provides|supports|protects|controls|limits|reduces|increases|connects|contributes|responds|remains|stays)\b/i);
+  if (match && match[1].split(/\s+/).length <= 7) return { prompt: `What is correct about ${match[1].toLocaleLowerCase()}?`, answer: sentence };
+
+  return { prompt: `What is the correct technical point about ${topic.toLocaleLowerCase()}?`, answer: sentence };
 }
 
 function fieldAction(concept: string, topic: string) {
@@ -156,6 +193,8 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
     module.lessons.forEach((lesson, lessonIndex) => {
       const guide = guides[lesson.id] ?? fallbackGuide(lesson);
       const topic = lesson.topic.toLocaleLowerCase();
+      const isFoundationTheory = module.id === 'module-01';
+      const conceptQuestions = guide.keyConcepts.map((concept) => directConceptQuestion(concept, lesson.topic));
       const flashcards: Flashcard[] = [
         {
           id: `${lesson.id}-summary`, lessonId: lesson.id, moduleId: module.id,
@@ -166,26 +205,32 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
           whyItMatters: `A competent electrician can connect ${topic} to the complete circuit or installation—not only repeat a definition.`,
         },
         ...guide.keyConcepts.flatMap((concept, conceptIndex) => {
-          const focus = conceptFocus(concept, lesson.topic);
+          const conceptQuestion = conceptQuestions[conceptIndex];
           return [
             {
               id: `${lesson.id}-concept-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
-              kind: 'Explain it' as const,
-              front: `What should you understand about ${lowerFirst(focus)}?`,
-              back: concept,
+              kind: 'Core idea' as const,
+              front: conceptQuestion.prompt,
+              back: conceptQuestion.answer,
               answerPoints: [
                 `State the principle accurately: ${concept}`,
-                `Explain why it matters: ${guide.remember}`,
+                `Connect it to the main point: ${guide.remember}`,
               ],
-              whyItMatters: `This tests whether you can explain the reason behind ${topic}, which is necessary before making or defending a technical decision.`,
+              whyItMatters: `This is core idea ${conceptIndex + 1} of ${guide.keyConcepts.length}. Keep it connected to the ideas before and after it.`,
             },
             {
               id: `${lesson.id}-decision-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
-              kind: 'Site decision' as const,
-              front: `How should ${lowerFirst(focus)} affect the way you work?`,
-              back: fieldAction(concept, lesson.topic),
-              answerPoints: [concept, 'Explain what could be wrong, unsafe or incomplete if this point is ignored.'],
-              whyItMatters: `Understanding becomes useful when it changes what you inspect, select, install, test or explain on a real job.`,
+              kind: isFoundationTheory ? 'Concept connection' as const : 'Site decision' as const,
+              front: isFoundationTheory
+                ? `This principle is important: “${concept}” What does it help explain?`
+                : `Apply this requirement: “${concept}” What should it change on the job?`,
+              back: isFoundationTheory ? `It helps explain ${topic}: ${concept}` : fieldAction(concept, lesson.topic),
+              answerPoints: isFoundationTheory
+                ? [concept, `Connect this fact to the wider topic: ${guide.summary}`]
+                : [concept, 'Explain what could be wrong, unsafe or incomplete if this point is ignored.'],
+              whyItMatters: isFoundationTheory
+                ? 'This connects the scientific idea to circuit behaviour and to the practical topics that follow later in the course.'
+                : 'This connects the core idea to what should be inspected, selected, installed, tested or explained on a real job.',
             },
           ];
         }),
@@ -238,36 +283,33 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       });
 
       guide.keyConcepts.forEach((concept, conceptIndex) => {
-        const choice = rotateCorrectOption(concept, reasoningDistractors(lesson.topic), lessonIndex + conceptIndex + 1);
+        const conceptQuestion = conceptQuestions[conceptIndex];
+        const relatedAnswers = conceptQuestions.filter((_, index) => index !== conceptIndex).map((item) => item.answer);
+        const choice = rotateCorrectOption(conceptQuestion.answer, [...relatedAnswers, ...reasoningDistractors(lesson.topic)], lessonIndex + conceptIndex + 1);
         questions.push({
           id: `${lesson.id}-q-concept-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
           cardId: `${lesson.id}-concept-${conceptIndex + 1}`,
-          prompt: `Which statement correctly explains ${lowerFirst(conceptFocus(concept, lesson.topic))}?`,
+          prompt: conceptQuestion.prompt,
           kind: 'Understanding',
           ...choice,
-          explanation: `${concept} This is the principle to use when explaining the circuit, making the installation decision or checking the result.`,
+          explanation: `Correct answer: ${conceptQuestion.answer}. In context: ${concept}`,
         });
 
-        const action = fieldAction(concept, lesson.topic);
-        const scenarioChoice = rotateCorrectOption(action, unsafeDistractors(lesson.topic), lessonIndex + conceptIndex + 11);
+        const action = isFoundationTheory
+          ? `It helps explain ${topic}: ${concept}`
+          : fieldAction(concept, lesson.topic);
+        const scenarioChoice = rotateCorrectOption(action, isFoundationTheory ? reasoningDistractors(lesson.topic) : unsafeDistractors(lesson.topic), lessonIndex + conceptIndex + 11);
         questions.push({
           id: `${lesson.id}-q-scenario-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
           cardId: `${lesson.id}-decision-${conceptIndex + 1}`,
-          prompt: `You are working with ${topic}. Which action is correct?`,
-          kind: 'Job scenario',
+          prompt: isFoundationTheory
+            ? `The principle is “${concept}” What does it help explain?`
+            : `The requirement is “${concept}” Which option applies it correctly?`,
+          kind: isFoundationTheory ? 'Concept connection' : 'Job scenario',
           ...scenarioChoice,
-          explanation: `${action} Check the drawing, circuit conditions, equipment information and the required verification before accepting the work.`,
-        });
-
-        const reasoningAnswer = `It changes a real technical decision: ${concept}`;
-        const reasoningChoice = rotateCorrectOption(reasoningAnswer, reasoningDistractors(lesson.topic), lessonIndex + conceptIndex + 21);
-        questions.push({
-          id: `${lesson.id}-q-reasoning-${conceptIndex + 1}`, lessonId: lesson.id, moduleId: module.id,
-          cardId: `${lesson.id}-concept-${conceptIndex + 1}`,
-          prompt: whyQuestion(conceptFocus(concept, lesson.topic), lesson.topic),
-          kind: 'Reasoning',
-          ...reasoningChoice,
-          explanation: `${concept} It affects planning, selection, workmanship, testing or the way the result is explained.`,
+          explanation: isFoundationTheory
+            ? `${action} This connects the individual fact to the wider electrical idea.`
+            : `${action} Check the drawing, circuit conditions, equipment information and the required verification before accepting the work.`,
         });
       });
 

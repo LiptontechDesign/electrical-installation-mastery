@@ -19,6 +19,7 @@ type AssessmentPanelProps = {
   onCompleteQuiz: (score: number, total: number) => void;
   onContinue?: () => void;
   continueLabel?: string;
+  connectedLessonFlow?: boolean;
 };
 
 function percent(value: number, total: number) {
@@ -27,7 +28,7 @@ function percent(value: number, total: number) {
 
 export default function AssessmentPanel({
   title, eyebrow, description, flashcards, questions, progress, bestScore, completed,
-  onRateCard, onCompleteQuiz, onContinue, continueLabel = 'Continue learning',
+  onRateCard, onCompleteQuiz, onContinue, continueLabel = 'Continue learning', connectedLessonFlow = false,
 }: AssessmentPanelProps) {
   const [mode, setMode] = useState<'cards' | 'quiz'>('cards');
   const [cardIndex, setCardIndex] = useState(0);
@@ -76,7 +77,7 @@ export default function AssessmentPanel({
   return (
     <section className="assessment-panel">
       <header className="assessment-header">
-        <div><span className="eyebrow neutral"><Target size={16} /> {eyebrow}</span><h2>{title}</h2><p>{description}</p></div>
+        <div><span className="eyebrow neutral"><Target size={16} /> {eyebrow}</span><h2>{title}</h2><p>{description}</p>{connectedLessonFlow && <div className="connected-learning-flow" aria-label="Recap learning sequence"><span><b>1</b> Overview</span><i>→</i><span><b>2</b> Core ideas</span><i>→</i><span><b>3</b> Application</span><i>→</i><span><b>4</b> Safety & Kenya</span></div>}</div>
         <div className="assessment-metrics" aria-label="Assessment size">
           <span><b>{flashcards.length}</b> flashcards</span><span><b>{questions.length}</b> questions</span><span><b>80%</b> mastery</span>
         </div>
