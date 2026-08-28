@@ -96,11 +96,15 @@ export default function AssessmentPanel({
 
       {mode === 'cards' && card && (
         <div className="flashcard-workspace">
-          <div className="trainer-progress"><span>Card {cardIndex + 1} of {flashcards.length}</span><b>{percent(sessionReviewed.length, flashcards.length)}% this session</b><div className="progress-line"><span style={{ width: `${percent(cardIndex + 1, flashcards.length)}%` }} /></div></div>
+          <div className="trainer-progress"><span>Flashcard {cardIndex + 1} of {flashcards.length}</span><b>{percent(sessionReviewed.length, flashcards.length)}% reviewed this session</b><div className="progress-line"><span style={{ width: `${percent(cardIndex + 1, flashcards.length)}%` }} /></div></div>
           <button type="button" className={`learning-flashcard ${cardRevealed ? 'revealed' : ''}`} onClick={() => setCardRevealed((current) => !current)} aria-label={cardRevealed ? 'Hide answer' : 'Reveal answer'}>
-            <span className="flashcard-side-label">{cardRevealed ? 'Answer' : 'Recall first'}</span>
+            <div className="learning-item-labels"><span className="flashcard-side-label">{cardRevealed ? 'Model answer' : 'Recall first'}</span><span className="learning-kind">{card.kind}</span></div>
             <h3>{cardRevealed ? card.back : card.front}</h3>
-            {cardRevealed ? <><div className="why-it-matters"><Lightbulb size={19} /><p><strong>Why it matters</strong>{card.whyItMatters}</p></div>{card.kenyaNote && <div className="kenya-card-note"><ShieldCheck size={18} /><p>{card.kenyaNote}</p></div>}</> : <p className="flip-instruction">Say your answer aloud, then tap to reveal.</p>}
+            {cardRevealed ? <>
+              {card.answerPoints && card.answerPoints.length > 0 && <div className="complete-answer"><strong>A complete answer should include</strong><ol>{card.answerPoints.map((point, index) => <li key={`${card.id}-point-${index}`}>{point}</li>)}</ol></div>}
+              <div className="why-it-matters"><Lightbulb size={19} /><p><strong>Why it matters</strong>{card.whyItMatters}</p></div>
+              {card.kenyaNote && <div className="kenya-card-note"><ShieldCheck size={18} /><p>{card.kenyaNote}</p></div>}
+            </> : <p className="flip-instruction">Pause. Explain the answer in your own words and give one job example, then reveal the model answer.</p>}
           </button>
           <div className="flashcard-actions">
             <button type="button" className="card-nav" disabled={cardIndex === 0} onClick={() => { setCardIndex((current) => current - 1); setCardRevealed(false); }}><ChevronLeft size={18} /> Previous</button>
@@ -113,13 +117,14 @@ export default function AssessmentPanel({
       {mode === 'quiz' && !finished && question && (
         <div className="assessment-quiz">
           <div className="trainer-progress"><span>Question {questionIndex + 1} of {questions.length}</span><b>{score} correct so far</b><div className="progress-line"><span style={{ width: `${percent(questionIndex + (revealed ? 1 : 0), questions.length)}%` }} /></div></div>
+          <div className="question-identity"><span>Question {questionIndex + 1}</span><b>{question.kind}</b></div>
           <h3>{question.prompt}</h3>
           <div className="assessment-options">{question.options.map((option, index) => {
             const selected = answers[questionIndex] === index;
             const correct = question.answer === index;
             return <button type="button" key={`${question.id}-${index}`} disabled={revealed} className={`${selected ? 'selected' : ''} ${revealed && correct ? 'correct' : ''} ${revealed && selected && !correct ? 'incorrect' : ''}`} onClick={() => answerQuestion(index)}><span>{String.fromCharCode(65 + index)}</span><p>{option}</p>{revealed && correct ? <Check size={18} /> : <Circle size={18} />}</button>;
           })}</div>
-          {revealed && <div className={answers[questionIndex] === question.answer ? 'assessment-feedback correct' : 'assessment-feedback'}><Lightbulb size={21} /><div><strong>{answers[questionIndex] === question.answer ? 'Correct—keep the reasoning.' : 'Add this to your review queue.'}</strong><p>{question.explanation}</p></div></div>}
+          {revealed && <div className={answers[questionIndex] === question.answer ? 'assessment-feedback correct' : 'assessment-feedback'}><Lightbulb size={21} /><div><strong>{answers[questionIndex] === question.answer ? 'Correct—now explain why.' : 'Not yet—study the reasoning, not only the correct letter.'}</strong><p>{question.explanation}</p><small>Before continuing, say what you would check or do differently on a real job.</small></div></div>}
           <div className="assessment-quiz-actions"><button type="button" onClick={restartQuiz}><RotateCcw size={17} /> Restart</button><button type="button" className="primary-button" disabled={!revealed} onClick={nextQuestion}>{questionIndex === questions.length - 1 ? 'Finish assessment' : 'Next question'} <ArrowRight size={17} /></button></div>
         </div>
       )}

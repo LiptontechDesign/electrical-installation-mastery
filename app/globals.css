@@ -799,10 +799,16 @@ kbd {
 }
 .learning-flashcard:hover { transform: translateY(-2px); box-shadow: 0 28px 58px rgba(7,17,31,.22); }
 .learning-flashcard.revealed { background: linear-gradient(145deg,#f8fbfc,#eef6f7); color: var(--ink); }
-.flashcard-side-label { margin-bottom: 17px; color: var(--cyan); font-size: 11px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.learning-item-labels { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-bottom: 17px; }
+.flashcard-side-label { color: var(--cyan); font-size: 11px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.learning-kind { border: 1px solid rgba(255,255,255,.18); border-radius: 99px; background: rgba(255,255,255,.08); padding: 4px 9px; color: #d6e4ec; font-size: 10px; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
 .learning-flashcard.revealed .flashcard-side-label { color: #0a7e89; }
+.learning-flashcard.revealed .learning-kind { border-color: #c9dde0; background: #e8f4f5; color: #176d75; }
 .learning-flashcard h3 { max-width: 850px; margin: 0; font-size: clamp(24px,3vw,36px); letter-spacing: -.035em; line-height: 1.25; }
 .flip-instruction { margin: 24px 0 0; color: #adc0d0; font-size: 13px; }
+.complete-answer { width: min(780px,100%); margin-top: 24px; border: 1px solid #d6e1e5; border-radius: 13px; background: #fff; padding: 16px 18px; text-align: left; }
+.complete-answer > strong { display: block; margin-bottom: 8px; color: #0b6972; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; }
+.complete-answer ol { display: grid; gap: 7px; margin: 0; padding-left: 22px; color: #41515e; font-size: 14px; line-height: 1.5; }
 .why-it-matters, .kenya-card-note { display: flex; max-width: 780px; align-items: flex-start; gap: 9px; margin-top: 28px; border-radius: 12px; padding: 13px 15px; text-align: left; }
 .why-it-matters { background: #fff; color: var(--muted); }
 .why-it-matters svg { color: var(--copper-dark); }
@@ -817,7 +823,10 @@ kbd {
 .card-rating .again { border: 1px solid #e7b0a9; background: #fff0ee; color: #a23c31; }
 .card-rating .got-it { background: #dff7e9; color: #176b43; }
 .reveal-card { min-width: 180px; justify-self: center; background: var(--copper); color: var(--navy); }
-.assessment-quiz > h3 { max-width: 900px; margin: 24px 0 20px; font-size: clamp(22px,2.7vw,31px); letter-spacing: -.03em; line-height: 1.25; }
+.question-identity { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; }
+.question-identity span { border-radius: 7px; background: var(--navy-2); padding: 5px 9px; color: #fff; font-size: 11px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.question-identity b { border-radius: 99px; background: #e8f4f5; padding: 5px 10px; color: #176d75; font-size: 11px; }
+.assessment-quiz > h3 { max-width: 900px; margin: 12px 0 20px; font-size: clamp(22px,2.7vw,31px); letter-spacing: -.03em; line-height: 1.25; }
 .assessment-options { display: grid; gap: 10px; }
 .assessment-options button { display: grid; width: 100%; min-height: 68px; grid-template-columns: 36px minmax(0,1fr) 22px; align-items: center; gap: 12px; border: 1px solid #d4dde3; border-radius: 12px; background: #fff; padding: 11px 14px; text-align: left; }
 .assessment-options button:hover:not(:disabled) { border-color: #7ea9af; background: #f2fafa; }
@@ -829,6 +838,7 @@ kbd {
 .assessment-feedback { display: flex; align-items: flex-start; gap: 11px; margin-top: 16px; border-left: 4px solid var(--copper); border-radius: 10px; background: #fff7eb; padding: 15px 17px; }
 .assessment-feedback.correct { border-left-color: var(--green); background: #ebf8f1; }
 .assessment-feedback p { margin: 3px 0 0; color: var(--muted); }
+.assessment-feedback small { display: block; margin-top: 8px; color: #5e6b75; font-weight: 750; }
 .assessment-quiz-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; }
 .assessment-quiz-actions > button:first-child, .result-actions > button:first-child { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 7px; border-radius: 10px; background: #eef2f4; padding: 9px 14px; font-weight: 850; }
 .assessment-result { display: grid; grid-template-columns: 68px minmax(0,1fr) auto; align-items: center; gap: 18px; margin: 28px 30px 30px; border: 1px solid #ebc79a; border-radius: 16px; background: #fff8ea; padding: 24px; }
