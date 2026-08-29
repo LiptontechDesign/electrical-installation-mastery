@@ -110,7 +110,7 @@ function baseVerb(value: string) {
     permits: 'permit', overrides: 'override', proves: 'prove',
     informs: 'inform', distinguishes: 'distinguish', narrows: 'narrow', communicates: 'communicate',
     reflects: 'reflect', constrains: 'constrain', addresses: 'address', enables: 'enable', offers: 'offer',
-    solves: 'solve', serves: 'serve', follows: 'follow', begins: 'begin', belongs: 'belong', points: 'point',
+    solves: 'solve', serves: 'serve', begins: 'begin', belongs: 'belong', points: 'point',
     coordinates: 'coordinate', decides: 'decide',
   };
   return forms[value.toLocaleLowerCase()] ?? value.toLocaleLowerCase();
