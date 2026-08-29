@@ -10,6 +10,7 @@
     "dev": "vinext dev --host 127.0.0.1",
     "build": "vinext build",
     "start": "vinext start --host 127.0.0.1",
+    "audit:transcripts": "node scripts/audit-transcript-assessments.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
