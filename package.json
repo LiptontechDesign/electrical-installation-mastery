@@ -12,14 +12,22 @@
     "start": "vinext start --host 127.0.0.1",
     "audit:transcripts": "node scripts/audit-transcript-assessments.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
-    "test:learning": "node scripts/test-learning.mjs"
+    "test:learning": "node scripts/test-learning.mjs",
+    "prepare:reader": "node scripts/prepare-reader.mjs",
+    "predev": "node scripts/prepare-reader.mjs",
+    "prebuild": "node scripts/prepare-reader.mjs",
+    "test:books": "node scripts/test-books.mjs"
   },
   "dependencies": {
+    "@vercel/blob": "^2.8.0",
+    "jose": "^6.2.11",
     "katex": "0.18.5",
     "lucide-react": "^0.542.0",
     "next": "16.3.2",
+    "pdfjs-dist": "^6.3.289",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",

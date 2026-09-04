@@ -18,6 +18,10 @@ import { bookCompanions, glossary, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
 import { buildAssessmentBank } from './assessment-data';
+import LessonReading from './lesson-reading';
+import { readingForLesson, type Reading } from './books-data';
+
+const BookReader = dynamic(() => import('./book-reader'), { ssr: false });
 
 const LearningToolkit = dynamic(() => import('./learning-toolkit'), {
   loading: () => <div className="page" role="status">Loading toolkit…</div>,
@@ -246,6 +250,7 @@ export default function CourseApp() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const [bookReader, setBookReader] = useState<{ reading?: Reading } | null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
   const [toast, setToast] = useState('');
   const [selectedMasteryModuleId, setSelectedMasteryModuleId] = useState(course.modules[0].id);
@@ -815,6 +820,7 @@ export default function CourseApp() {
           <button className="mobile-brand" type="button" onClick={() => navigate('home')} aria-label="Go home"><span className="brand-symbol"><Zap size={18} /></span><span>Electrical Mastery</span></button>
           <button className="search-trigger" type="button" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={19} /><span>Search lessons and terms</span><kbd>/</kbd></button>
           <div className="header-actions">
+            <button className="my-books-button" type="button" aria-label="Open My books" onClick={() => setBookReader({})}><BookOpen size={19} /><span>My books</span></button>
             <button className="header-progress" type="button" onClick={() => navigate('progress')} aria-label={`${overallPercent}% of video course complete`}><span className="mini-progress"><i style={{ width: `${overallPercent}%` }} /></span><b>{overallPercent}%</b></button>
             <button className="icon-button" type="button" onClick={() => setSettingsOpen(true)} aria-label="Open data and settings"><Settings size={20} /></button>
           </div>
@@ -920,8 +926,8 @@ export default function CourseApp() {
                   <section id="lesson-overview" role="tabpanel" aria-labelledby="lesson-tab-overview" hidden={lessonTab !== 'overview'} className="lesson-overview">
                     <p className="overview-summary">{activeGuide.summary}</p>
                     <ul className="overview-takeaways">{activeGuide.keyConcepts.filter((concept) => !activeGuide.summary.toLocaleLowerCase().includes(concept.replace(/[.!?]$/, '').toLocaleLowerCase())).map((concept) => <li key={concept}><CheckCircle2 size={18} /><span>{concept}</span></li>)}</ul>
-                    <div className="overview-application"><strong>Put it into context</strong><p>{activeGuide.practicalConnection}</p></div>
-                    {activeLesson.regulationSensitive && <div className="regulation-notice"><AlertTriangle size={20} /><div><strong>Check before applying</strong><p>{activeLesson.regulationStatus}</p></div></div>}
+                    {readingForLesson(activeLesson.id) ? <LessonReading key={activeLesson.id} lessonId={activeLesson.id} onRead={reading => setBookReader({ reading })} note={learner.notes[activeLesson.id] ?? ''} onNote={value => setLearner(current => ({ ...current, notes: { ...current.notes, [activeLesson.id]: value }, updatedAt: new Date().toISOString() }))} /> : <div className="overview-application"><strong>Put it into context</strong><p>{activeGuide.practicalConnection}</p></div>}
+                    {activeLesson.regulationSensitive && !readingForLesson(activeLesson.id) && <div className="regulation-notice"><AlertTriangle size={20} /><div><strong>Check before applying</strong><p>{activeLesson.regulationStatus}</p></div></div>}
                     <details className="lesson-extra"><summary>Before you begin</summary><p>{activeLesson.prerequisite}</p></details>
                     <div className="confidence-inline"><span>How well do you understand this?</span><div>{([1, 2, 3] as const).map((rating) => <button key={rating} type="button" aria-pressed={learner.confidence[activeLesson.id] === rating} onClick={() => setConfidence(rating)}>{rating === 1 ? 'Revisit' : rating === 2 ? 'Getting there' : 'Can explain'}</button>)}</div></div>
                   </section>
@@ -1025,7 +1031,7 @@ export default function CourseApp() {
         <div className="modal-layer align-right" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
           <section className="settings-drawer" role="dialog" aria-modal="true" aria-labelledby="settings-title">
             <div className="dialog-title"><div><span className="eyebrow neutral">Device & data</span><h2 id="settings-title">Settings</h2></div><button type="button" onClick={() => setSettingsOpen(false)} aria-label="Close settings"><X size={22} /></button></div>
-            <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>Progress stays in this browser</strong><p>No account is required. Your course record and notes are stored locally on this device—not sent to the site host.</p></div></div>
+            <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>Your learning data</strong><p>Video progress and lesson notes stay in this browser. My books uses private Vercel storage to save reading positions, page bookmarks and book notes across your devices.</p></div></div>
             <section className="settings-section playback-settings"><span className="eyebrow neutral">Playback & recall</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished lesson</strong><small>Continue automatically when the required recap is complete</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><button className="settings-switch" type="button" role="switch" aria-checked={learner.reviewBeforeNext} onClick={() => { const enabled = !learner.reviewBeforeNext; setLearner((current) => ({ ...current, reviewBeforeNext: enabled, updatedAt: new Date().toISOString() })); setToast(enabled ? 'Lesson recap is now required before auto-next.' : 'Auto-next will use the five-second countdown without opening the recap.'); }}><ListChecks size={19} /><span><strong>Review before next</strong><small>Open flashcards and quiz when a video finishes</small></span><span className={`switch-track ${learner.reviewBeforeNext ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>Recommended: keep both settings on. In fullscreen, the app waits for you to exit safely before changing the lesson.</p></section>
             <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save progress, quiz results and notes</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>
             <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>lessons</span></div><div><b>{learner.completedLessonAssessmentIds.length}</b><span>quizzes passed</span></div><div><b>{Object.values(learner.notes).filter(Boolean).length}</b><span>notes</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This permanently clears progress from this browser. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Clear local progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset local progress</strong><small>Clear this browser’s learning record</small></span></button>}</section>
@@ -1034,6 +1040,7 @@ export default function CourseApp() {
         </div>
       )}
       {toast && <div className="toast" role="status" aria-live="polite"><CheckCircle2 size={19} /><span>{toast}</span></div>}
+      {bookReader && <BookReader initialReading={bookReader.reading} onClose={() => setBookReader(null)} />}
     </div>
   );
 }

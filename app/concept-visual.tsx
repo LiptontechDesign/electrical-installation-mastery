@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { readingForLesson } from './books-data';
+import LearningExperiment from './learning-experiment';
 
 const particles = [
   { name: 'Proton', charge: '+', place: 'In the nucleus', note: 'Positive charge.', className: 'positive' },
@@ -11,6 +13,8 @@ const particles = [
 export default function ConceptVisual({ lessonId }: { lessonId: string }) {
   const [particleIndex, setParticleIndex] = useState(0);
   const [closed, setClosed] = useState(true);
+  const experiment = readingForLesson(lessonId)?.experiment;
+  if (experiment) return <LearningExperiment kind={experiment} />;
   if (lessonId === 'p01-l01' || lessonId === 'p01-l02') {
     const particle = particles[particleIndex];
     return <details className="concept-visual"><summary>Explore the particles</summary><div className="particle-selector" aria-label="Choose a particle">{particles.map((item, i) => <button key={item.name} className={item.className} aria-pressed={i === particleIndex} type="button" onClick={() => setParticleIndex(i)}><b>{item.charge}</b><span>{item.name}</span></button>)}</div><div className="particle-explanation" role="status"><strong>{particle.place}</strong><p>{particle.note}</p></div></details>;
