@@ -1,10 +1,9 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import baseCourse from '../app/course-data.json';
-import courseExtension from '../app/course-extension-data';
+import course from '../app/course-curriculum';
 
 const outputDirectory = path.resolve(process.cwd(), '..', 'course-transcripts');
-const modules = [...baseCourse.modules, ...courseExtension.modules];
+const modules = course.modules;
 const videos = modules.flatMap((module, moduleIndex) =>
   module.lessons.map((lesson, lessonIndex) => ({
     sequence: videosBeforeModule(moduleIndex) + lessonIndex + 1,

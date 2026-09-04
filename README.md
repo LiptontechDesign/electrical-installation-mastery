@@ -6,11 +6,11 @@ A mobile-friendly, self-paced electrical installation course designed around lon
 
 ## What has been built
 
-- **239 sequenced video lessons across 16 modules:** the original 161-lesson foundation plus 78 advanced lessons covering residential work, lighting, smart systems, communications, security, solar, backup power and professional practice.
+- **246 sequenced video lessons across 16 modules:** the existing 239 lessons plus seven targeted additions; safety, three-phase theory, motors, calculations and verification now follow a clearer dependency order. See [the course review](docs/COURSE_FLOW_REVIEW.md).
 - **Embedded YouTube learning:** lessons play inside the course without requiring a separate playlist or paid video hosting.
 - **Reliable optional auto-next:** a completed video is marked finished and the next lesson loads after a five-second countdown. The learner can cancel, select another lesson or switch auto-next off. Fullscreen playback is handled without removing the active player unexpectedly.
 - **Lesson teaching guides:** every video has a concise summary, key concepts, points to remember and practical connections.
-- **Transcript-grounded retrieval practice:** 1,521 flashcards and 1,521 quiz questions are linked to the content of their source lessons. Questions are short, direct recall prompts rather than copied transcript sentences or vague title-based questions.
+- **Lesson-specific retrieval practice:** 1,580 flashcards and 1,580 quiz questions include new worked applications. Optional explanations and three interactive exercises appear inside the existing Overview tab.
 - **Lesson and module mastery:** flashcard review, instant quiz feedback, saved best scores, an 80% mastery target and spaced-review due dates.
 - **Learning workspace:** searchable lessons, concise lesson overviews, interactive formula diagrams with KaTeX, glossary, bookmarks, personal notes, confidence ratings and progress reporting. Navigation is limited to Home, Learn, Toolkit and Progress; lessons have Overview, Quiz, Flashcards and My notes tabs, and module quizzes and due flashcards open from Progress.
 - **Local-first progress:** learning records stay in browser storage and can be exported or restored as a JSON backup.
@@ -91,18 +91,17 @@ Run the course-wide assessment audit with:
 npm run audit:transcripts
 ```
 
-Current verified coverage:
+September 2026 verified coverage:
 
-- 239 lessons checked
-- 238 spoken transcripts grounded
-- 1 visual-only lesson documented
-- 0 missing lesson guides or transcript records
-- 1,521 flashcards
-- 1,521 quiz questions
+- 246 unique videos, 16 modules and complete lesson-guide/assessment coverage
+- All 239 original lesson and flashcard identities preserved
+- Seven new videos checked against publicly indexed creator captions and metadata
+- 1,580 flashcards
+- 1,580 quiz questions
 - 0 generic title-based recall prompts
 - 0 overlong flashcard questions or answers
 
-The transcript archive itself is maintained outside this repository. It is used as research material for creating original lesson summaries and assessments, not published as copied video content.
+The transcript archive is maintained outside this repository. The historical archive was unavailable in the September review checkout; this review does not claim a fresh full-course transcript audit. Run `node scripts/audit-transcript-assessments.mjs --new-only` to explicitly audit the seven new caption records. The default command remains strict and requires all 246 archived records. Vocabulary overlap is an evidence-coverage check, not proof of technical accuracy. Original guides and the current author/manufacturer references are reviewed separately; copied captions are not published by the site.
 
 ## Safety and standards
 
@@ -113,6 +112,11 @@ This is an educational course, not an electrical licence or authorisation to und
 - `app/course-data.json` — validated catalogue for the original 161 lessons.
 - `app/course-extension/` — modular definitions for the advanced curriculum.
 - `app/course-extension-data.ts` — combines and validates extension modules.
+- `app/course-curriculum.ts` — canonical ordering, module descriptions and totals used by the website and audits.
+- `app/course-gap-data.ts` — seven accepted video additions and original guides.
+- `app/lesson-connections-data.ts` — concise calculation and concept explanations with primary sources.
+- `app/lesson-connection.tsx` — optional explanations and interactive learning exercises.
+- `scripts/test-curriculum.mjs` — progress-identity, prerequisite, assessment and exercise checks.
 - `app/lesson-guides-*.json` — lesson-specific summaries and core concepts.
 - `app/assessment-data.ts` — flashcard and quiz construction and quality rules.
 - `app/assessment-panel.tsx` — lesson and module practice interface.

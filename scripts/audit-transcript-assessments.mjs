@@ -42,13 +42,23 @@ const vite = await createServer({
 try {
   const { lessonGuides } = await vite.ssrLoadModule('/app/lesson-guides.ts');
   const { buildAssessmentBank } = await vite.ssrLoadModule('/app/assessment-data.ts');
-  const { default: courseExtension } = await vite.ssrLoadModule('/app/course-extension-data.ts');
-  const courseData = JSON.parse(readFileSync(join(projectRoot, 'app', 'course-data.json'), 'utf8'));
-  const assessmentBank = buildAssessmentBank([...courseData.modules, ...courseExtension.modules], lessonGuides);
+  const { default: course } = await vite.ssrLoadModule('/app/course-curriculum.ts');
+  const { gapLessons } = await vite.ssrLoadModule('/app/course-gap-data.ts');
+  const assessmentBank = buildAssessmentBank(course.modules, lessonGuides);
   const failures = [];
+  const liveLessons = course.modules.flatMap(module => module.lessons);
+  for (const lesson of liveLessons) {
+    if (!manifest.videos.some(video => video.lessonId === lesson.id && video.videoId === lesson.videoId)) failures.push({ lessonId: lesson.id, reason: 'live lesson absent from transcript manifest' });
+  }
+  if (manifest.videos.length !== liveLessons.length) failures.push({ reason: 'manifest and live curriculum counts differ' });
+  // Explicit partial audit for a checkout without the historical local archive.
+  // The default remains a strict audit of every live lesson.
+  const newOnly = process.argv.includes('--new-only');
+  const newIds = new Set(gapLessons.map(lesson => lesson.id));
+  const videosToAudit = newOnly ? manifest.videos.filter(video => newIds.has(video.lessonId)) : manifest.videos;
   let visualOnly = 0;
 
-  for (const video of manifest.videos) {
+  for (const video of videosToAudit) {
     const marker = ` - ${video.lessonId} - `;
     const transcriptPath = transcriptFiles.find((path) => path.includes(marker));
     const guide = lessonGuides[video.lessonId];
@@ -78,12 +88,14 @@ try {
   }
 
   if (failures.length) {
-    console.error(JSON.stringify({ checked: manifest.totalVideos, failures }, null, 2));
+    console.error(JSON.stringify({ scope: newOnly ? 'new lessons only' : 'all lessons', checked: videosToAudit.length, failures }, null, 2));
     process.exitCode = 1;
   } else {
     console.log(JSON.stringify({
-      checked: manifest.totalVideos,
-      transcriptGrounded: manifest.totalVideos - visualOnly,
+      scope: newOnly ? 'new lessons only' : 'all lessons',
+      checked: videosToAudit.length,
+      notAudited: liveLessons.length - videosToAudit.length,
+      transcriptGrounded: videosToAudit.length - visualOnly,
       visualOnly,
       missing: 0,
       flashcards: assessmentBank.allFlashcards.length,

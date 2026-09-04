@@ -12,33 +12,21 @@ import {
   PlayCircle, RotateCcw, Search, Settings, ShieldCheck, SkipForward, Sparkles, Target,
   Upload, X, Zap,
 } from 'lucide-react';
-import baseCourse from './course-data.json';
-import courseExtension from './course-extension-data';
+import course from './course-curriculum';
 import { bookCompanions, glossary, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
 import { buildAssessmentBank } from './assessment-data';
 import LessonReading from './lesson-reading';
 import { readingForLesson, type Reading } from './books-data';
+import { lessonConnections } from './lesson-connections-data';
 
 const BookReader = dynamic(() => import('./book-reader'), { ssr: false });
+const LessonConnection = dynamic(() => import('./lesson-connection'));
 
 const LearningToolkit = dynamic(() => import('./learning-toolkit'), {
   loading: () => <div className="page" role="status">Loading toolkit…</div>,
 });
-
-const baseDurationSeconds = baseCourse.modules.reduce((sum, module) => sum + module.durationSeconds, 0);
-const combinedDurationSeconds = baseDurationSeconds + courseExtension.durationSeconds;
-const combinedDurationMinutes = Math.floor(combinedDurationSeconds / 60);
-const combinedDuration = `${Math.floor(combinedDurationMinutes / 60)} h ${String(combinedDurationMinutes % 60).padStart(2, '0')} min`;
-
-const course = {
-  ...baseCourse,
-  description: `${baseCourse.lessonCount + courseExtension.lessonCount} carefully sequenced lessons covering electrical foundations, residential first-fix, client specification, modern lighting, smart and security systems, backup power, solar, EV readiness, building services and professional handover.`,
-  lessonCount: baseCourse.lessonCount + courseExtension.lessonCount,
-  duration: combinedDuration,
-  modules: [...baseCourse.modules, ...courseExtension.modules],
-};
 
 type CourseModule = (typeof course.modules)[number];
 type View = 'home' | 'learn' | 'toolkit' | 'progress';
@@ -926,6 +914,7 @@ export default function CourseApp() {
                   <section id="lesson-overview" role="tabpanel" aria-labelledby="lesson-tab-overview" hidden={lessonTab !== 'overview'} className="lesson-overview">
                     <p className="overview-summary">{activeGuide.summary}</p>
                     <ul className="overview-takeaways">{activeGuide.keyConcepts.filter((concept) => !activeGuide.summary.toLocaleLowerCase().includes(concept.replace(/[.!?]$/, '').toLocaleLowerCase())).map((concept) => <li key={concept}><CheckCircle2 size={18} /><span>{concept}</span></li>)}</ul>
+                    {lessonConnections[activeLesson.id] && <LessonConnection key={activeLesson.id} connection={lessonConnections[activeLesson.id]} />}
                     {readingForLesson(activeLesson.id) ? <LessonReading key={activeLesson.id} lessonId={activeLesson.id} onRead={reading => setBookReader({ reading })} note={learner.notes[activeLesson.id] ?? ''} onNote={value => setLearner(current => ({ ...current, notes: { ...current.notes, [activeLesson.id]: value }, updatedAt: new Date().toISOString() }))} /> : <div className="overview-application"><strong>Put it into context</strong><p>{activeGuide.practicalConnection}</p></div>}
                     {activeLesson.regulationSensitive && !readingForLesson(activeLesson.id) && <div className="regulation-notice"><AlertTriangle size={20} /><div><strong>Check before applying</strong><p>{activeLesson.regulationStatus}</p></div></div>}
                     <details className="lesson-extra"><summary>Before you begin</summary><p>{activeLesson.prerequisite}</p></details>

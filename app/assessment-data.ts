@@ -1,4 +1,5 @@
 import type { LessonGuide } from './lesson-guides';
+import { connectionChecks } from './connection-assessments';
 
 export type Flashcard = {
   id: string;
@@ -503,6 +504,11 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         });
       }
 
+      for (const check of connectionChecks[lesson.id] ?? []) {
+        const cardId = `${lesson.id}-connection-${check.id}`;
+        flashcards.push({ id: cardId, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, front: check.prompt, back: check.explanation, kind: 'Application' });
+        questions.push({ id: `${cardId}-question`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId, prompt: check.prompt, ...rotateCorrectOption(check.correct, check.distractors, lessonIndex + 8), explanation: check.explanation, kind: 'Application' });
+      }
       lessons[lesson.id] = { lessonId: lesson.id, moduleId: module.id, flashcards, questions };
 
       if (flashcards.length < 5 || questions.length < 5) {
@@ -522,8 +528,8 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
     moduleAssessments[module.id] = {
       moduleId: module.id,
       title: module.title,
-      flashcards: groupedLessonSelection(lessonAssessments.map((assessment) => assessment.flashcards), 40),
-      questions: groupedLessonSelection(lessonAssessments.map((assessment) => assessment.questions), 50),
+      flashcards: groupedLessonSelection(lessonAssessments.map((assessment) => [...assessment.flashcards.filter(card => card.id.includes('-connection-')), ...assessment.flashcards.filter(card => !card.id.includes('-connection-'))]), 40),
+      questions: groupedLessonSelection(lessonAssessments.map((assessment) => [...assessment.questions.filter(question => question.id.includes('-connection-')), ...assessment.questions.filter(question => !question.id.includes('-connection-'))]), 50),
     };
   });
 

@@ -54,7 +54,7 @@ export const readingTopics: ReadingTopic[] = [
     question: 'What can you identify from the photograph, and what would still require measurements or design information?', explanation: 'You can identify visible containment and routing. A photograph alone cannot establish loading, hidden connections, material ratings, separation requirements or complete compliance.',
     rule: 'Check current support, segregation, fire-stopping and product requirements for the actual installation. Keep the manufacturer’s bend radius and loading limits tied to the selected system.',
   },
-  { id: 'testing', title: 'Use a result as evidence', lessonIds: ['p08-l02','p08-l03','p08-l04','p08-l05','p09-l01'],
+  { id: 'testing', title: 'Use a result as evidence', lessonIds: ['p08-l02','p08-l03','p08-l04','p08-l05','p09-l01','p08-periodic'],
     readings: [read('modern-wiring','Connect inspection with the design','302–303',317,318,'Read why verification is compared with the design.'),read('installation-designs','Continuity of protective conductors','199',221,221,'Interpret figure 15.6 as a historical test illustration.')],
     principle: 'A test result only becomes useful when you know what the test checks, what you expect and what could explain a different result. Inspection and testing support each other.',
     question: 'What would you investigate if a virtual continuity result were much higher than the expected value?', explanation: 'Consider the test setup, lead resistance, conductor length and size, connections and possible discontinuities. Interpret the evidence before deciding on the next test.',

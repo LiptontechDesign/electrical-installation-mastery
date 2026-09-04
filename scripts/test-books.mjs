@@ -1,22 +1,21 @@
 import assert from 'node:assert/strict';
-import { readFile, mkdir } from 'node:fs/promises';
+import { mkdir } from 'node:fs/promises';
 import { build } from 'esbuild';
 import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { act, create } from 'react-test-renderer';
 
 await mkdir('work/book-tests', { recursive: true });
-await build({ entryPoints: ['app/books-data.ts','app/reader-state.ts','app/experiment-models.ts','app/learning-experiment.tsx','app/book-simulations.tsx','app/pdf-layout.ts','app/course-extension-data.ts','app/pdf-range.ts'], outdir: 'work/book-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
+await build({ entryPoints: ['app/books-data.ts','app/reader-state.ts','app/experiment-models.ts','app/learning-experiment.tsx','app/book-simulations.tsx','app/pdf-layout.ts','app/course-curriculum.ts','app/pdf-range.ts'], outdir: 'work/book-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
 const { courseBooks, readingTopics, printedPage, simulationForPage } = await import('../work/book-tests/books-data.js');
 const { applyReaderCommand, emptyReaderState, parseReaderCommand, parseByteRange } = await import('../work/book-tests/reader-state.js');
 const { motorTransition, initialMotor, cableExample, residualExample } = await import('../work/book-tests/experiment-models.js');
 const { default: Experiment } = await import('../work/book-tests/learning-experiment.js');
-const { default: extension } = await import('../work/book-tests/course-extension-data.js');
+const { default: course } = await import('../work/book-tests/course-curriculum.js');
 const { PdfRangeQueue } = await import('../work/book-tests/pdf-range.js');
 const { pdfRenderSize } = await import('../work/book-tests/pdf-layout.js');
 const { default: BookSimulations } = await import('../work/book-tests/book-simulations.js');
-const base = JSON.parse(await readFile('app/course-data.json','utf8'));
-const lessons = [...base.modules,...extension.modules].flatMap(module => module.lessons);
+const lessons = course.modules.flatMap(module => module.lessons);
 const ids = new Set(lessons.map(lesson => lesson.id));
 for (const topic of readingTopics) {
   for (const id of topic.lessonIds) assert.ok(ids.has(id), `${topic.id}: unknown lesson ${id}`);
