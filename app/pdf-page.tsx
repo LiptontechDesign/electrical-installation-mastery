@@ -42,7 +42,7 @@ export default function PdfPage({ bookId, page, zoom, onRendered }: { bookId: Bo
       task = pdfjs.getDocument({ range: transport, disableAutoFetch: true, disableStream: true, rangeChunkSize: 1048576, cMapUrl: '/pdfjs/cmaps/', cMapPacked: true, standardFontDataUrl: '/pdfjs/standard_fonts/', wasmUrl: '/pdfjs/wasm/' });
       const loaded = await task.promise;
       if (!cancelled) setDocument(loaded);
-    })().catch(() => { if (!cancelled) { setLoading(false); setError('This page could not load. Check your connection and that your books are unlocked.'); } });
+    })().catch(() => { if (!cancelled) { setLoading(false); setError('This page could not load. Check your connection or reopen My books.'); } });
     return () => { cancelled = true; downloads?.abort(); void task?.destroy(); };
   }, [bookId, retry]);
   useEffect(() => {

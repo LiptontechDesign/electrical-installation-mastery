@@ -3,24 +3,33 @@ import { readFile } from 'node:fs/promises';
 import { get, put } from '@vercel/blob';
 
 const origin = new URL(process.argv[2] || 'http://127.0.0.1:3001').origin;
-const keyFile = await readFile('outputs/book-integration/PRIVATE-READER-KEY.txt', 'utf8');
-const key = keyFile.split(/\r?\n/).find(line => /^[A-Za-z0-9_-]{43}$/.test(line));
-assert.ok(key, 'A local private reader key is required.');
 const call = (path, session = '', options = {}) => fetch(`${origin}${path}`, { ...options, headers: { Origin: origin, ...(session ? { Cookie: session } : {}), ...options.headers } });
 const jsonOptions = (method, body) => ({ method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
-const login = async () => {
-  const response = await call('/api/reader/session', '', jsonOptions('POST', { key }));
-  assert.equal(response.status, 200, await response.text());
+const openReader = async (previousSession = '') => {
+  const response = await call('/api/reader/session', previousSession, { method: 'POST' });
+  const data = await response.json();
+  assert.equal(response.status, 200, JSON.stringify(data));
+  assert.deepEqual(data, { configured: true, authenticated: true, automatic: true });
   const cookie = response.headers.get('set-cookie');
-  assert.ok(cookie?.includes('HttpOnly') && cookie.includes('SameSite=strict'), 'Private session cookie');
+  assert.ok(cookie?.includes('HttpOnly') && cookie.includes('SameSite=strict'), 'Server-managed session cookie');
+  if (origin.startsWith('https:')) assert.ok(cookie.includes('Secure'), 'HTTPS session cookie');
   return cookie.split(';')[0];
 };
+assert.equal((await (await call('/api/reader/session')).json()).automatic, true);
 assert.equal((await call('/api/reader/books/installation-designs')).status, 401);
 assert.equal((await call('/api/reader/figures/designs-rcd-healthy')).status, 401);
 assert.equal((await call('/api/reader/state')).status, 401);
-assert.equal((await call('/api/reader/session','',jsonOptions('POST',{key:'incorrect'.repeat(8)}))).status,401);
-assert.equal((await call('/api/reader/session','',{...jsonOptions('POST',{key}),headers:{'Content-Type':'application/json',Origin:'https://untrusted.example'}})).status,403);
-const [sessionA, sessionB] = await Promise.all([login(), login()]);
+assert.equal((await call('/api/reader/session','',{method:'POST',headers:{Origin:'https://untrusted.example'}})).status,403);
+const [sessionA, sessionB] = await Promise.all([openReader(), openReader()]);
+const cookieName = sessionA.split('=')[0];
+const expiredSession = await openReader(`${cookieName}=expired-session`);
+for (const session of [sessionA, sessionB, expiredSession]) {
+  const response = await call('/api/reader/state', session);
+  assert.equal(response.status, 200);
+  const state = await response.json();
+  assert.equal(state.version, 1);
+  assert.equal(typeof state.books, 'object');
+}
 const assets = JSON.parse(await readFile('app/book-assets.json','utf8'));
 for (const [id,{ reader: { size } }] of Object.entries(assets)) {
   const response = await call(`/api/reader/books/${id}`,sessionA,{headers:{Range:'bytes=0-1023'}});
@@ -44,9 +53,9 @@ const manifest = JSON.parse(await readFile('work/book-integration/upload-manifes
 const unauthorized = await fetch(manifest[0].url,{headers:{Range:'bytes=0-15'}});
 assert.ok([401,403,404].includes(unauthorized.status), 'Direct private Blob URL denies unauthenticated access');
 await unauthorized.body?.cancel();
-console.log('PASS: private access, secure sessions, cross-origin rejection, both PDF byte ranges and extracted figure.');
+console.log('PASS: automatic access without a key, renewed sessions, shared reading state, cross-origin rejection, both PDF byte ranges and extracted figure.');
 
-// Test-only mutations are opt-in. The routine production check above is read-only after sign-in.
+// Test-only mutations are opt-in. The routine production check above only creates sessions and reads books/state.
 if (process.argv.includes('--test-saving')) {
   const statePath='reader/owner-state-v1.json';
   const previous=await get(statePath,{access:'private',useCache:false});
@@ -85,5 +94,4 @@ if (process.argv.includes('--test-saving')) {
     }
   }
 }
-await call('/api/reader/session',sessionA,{method:'DELETE'});
-console.log(`Private reader verified at ${origin}.`);
+console.log(`Automatic reader verified at ${origin}.`);

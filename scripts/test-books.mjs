@@ -96,7 +96,7 @@ try {
   locked.request(0,4);
   await new Promise(resolve=>setImmediate(resolve));
   assert.equal(calls,1,'An authentication failure is not retried');
-  assert.match(failure.message,/Unlock/);
+  assert.match(failure.message,/Reopen My books/);
   locked.request(4,8);
   assert.equal(calls,1,'A failed queue stops additional downloads');
 } finally { globalThis.fetch = nativeFetch; }

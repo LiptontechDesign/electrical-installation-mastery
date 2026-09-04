@@ -29,7 +29,7 @@ export class PdfRangeQueue {
         const response = await fetch(this.url, { credentials: 'same-origin', cache: 'no-store', signal: controller.signal, headers: { ...this.extraHeaders, Range: `bytes=${job.begin}-${job.end - 1}` } });
         if (response.status === 401 || response.status === 404) {
           await response.body?.cancel();
-          throw new ReaderAccessError(response.status === 401 ? 'Unlock your books again to continue reading.' : 'This book is not available yet.');
+          throw new ReaderAccessError(response.status === 401 ? 'Reopen My books to reconnect the reader.' : 'This book is not available yet.');
         }
         if (response.status !== 206) { await response.body?.cancel(); throw new Error('Could not load part of the book.'); }
         const bytes = new Uint8Array(await response.arrayBuffer());

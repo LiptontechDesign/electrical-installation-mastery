@@ -7,7 +7,7 @@ import { bookFiles } from '../../../../server/reader-storage';
 export const runtime = 'nodejs';
 export const maxDuration = 60;
 export async function GET(request: Request, context: { params: Promise<{ bookId: string }> }) {
-  if (!await readerAuthenticated()) return Response.json({ error: 'Unlock your books first.' }, { status: 401, headers: privateHeaders });
+  if (!await readerAuthenticated()) return Response.json({ error: 'Open My books to start a reading session.' }, { status: 401, headers: privateHeaders });
   const book = getBook((await context.params).bookId);
   if (!book) return new Response(null, { status: 404, headers: privateHeaders });
   const file = bookFiles[book.id];

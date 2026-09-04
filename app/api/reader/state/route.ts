@@ -4,13 +4,13 @@ import { parseReaderCommand } from '../../../reader-state';
 
 export const runtime = 'nodejs';
 export async function GET() {
-  if (!await readerAuthenticated()) return Response.json({ error: 'Unlock your books first.' }, { status: 401, headers: privateHeaders });
+  if (!await readerAuthenticated()) return Response.json({ error: 'Open My books to start a reading session.' }, { status: 401, headers: privateHeaders });
   try { return Response.json((await readReaderState()).state, { headers: privateHeaders }); }
   catch { return Response.json({ error: 'Saved pages could not be loaded. Please retry.' }, { status: 503, headers: privateHeaders }); }
 }
 export async function PATCH(request: Request) {
   if (!sameOrigin(request)) return Response.json({ error: 'Request not allowed.' }, { status: 403, headers: privateHeaders });
-  if (!await readerAuthenticated()) return Response.json({ error: 'Unlock your books first.' }, { status: 401, headers: privateHeaders });
+  if (!await readerAuthenticated()) return Response.json({ error: 'Open My books to start a reading session.' }, { status: 401, headers: privateHeaders });
   let command;
   try { command = parseReaderCommand(await limitedJson(request)); } catch { command = null; }
   if (!command) return Response.json({ error: 'Invalid page or bookmark.' }, { status: 400, headers: privateHeaders });

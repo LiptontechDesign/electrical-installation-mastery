@@ -15,20 +15,19 @@ A mobile-friendly, self-paced electrical installation course designed around lon
 - **Learning workspace:** searchable lessons, concise lesson overviews, interactive formula diagrams with KaTeX, glossary, bookmarks, personal notes, confidence ratings and progress reporting. Navigation is limited to Home, Learn, Toolkit and Progress; lessons have Overview, Quiz, Flashcards and My notes tabs, and module quizzes and due flashcards open from Progress.
 - **Local-first progress:** learning records stay in browser storage and can be exported or restored as a JSON backup.
 - **Responsive interface:** the course navigation, video lesson, practice tools and progress views adapt for desktop and phone use.
-- **Private book reader:** two complete reference books and eight extracted illustrations in private Vercel Blob storage. My books includes chapter search, PDF page navigation, zoom, saved pages and book notes. A private reader key opens the same reading state on different devices.
+- **Book reader:** two complete reference books and eight extracted illustrations in private Vercel Blob storage. My books opens automatically and includes chapter search, PDF page navigation, zoom, saved pages and book notes. Devices share the same reading state without entering a key.
 - **Reading companions:** nine carefully mapped topics connect 39 lessons to precise book pages. RCD current balance, cable-route conditions and motor holding contacts have interactive models, also available after revealing relevant quiz and flashcard answers.
 
-## Private books on Vercel
+## Books on Vercel
 
-The PDFs and extracted images are stored in a **private** Blob store, outside Git and the public website assets. Book and figure routes require a signed, HttpOnly owner session. Bookmarks and reading positions use small operations with ETag checks so simultaneous changes on different devices do not replace the whole reading record. Video progress and lesson notes retain their existing browser storage.
+The PDFs and extracted images are stored in a **private** Blob store, outside Git and the public website assets. Opening My books automatically creates a signed, HttpOnly session; no reader key or account is required. This is a shared reader: anyone using the website can read the books and access or update the same book positions, bookmarks and notes. Private storage keeps Blob credentials on the server; the automatic session is not an identity check. Bookmarks and reading positions use small operations with ETag checks so simultaneous changes on different devices do not replace the whole reading record. Video progress and lesson notes retain their existing browser storage.
 
 Required server variables:
 
 - `BLOB_READ_WRITE_TOKEN` from the connected private store, or `BLOB_STORE_ID` with Vercel OIDC.
-- `READER_ACCESS_KEY_SHA256`: SHA-256 of a cryptographically random, 32-byte reader key, encoded as 64 lowercase hexadecimal characters.
 - `READER_SESSION_SECRET`: a separate random secret of at least 32 characters. Changing it invalidates existing reader sessions.
 
-Never expose these variables with a `NEXT_PUBLIC_` prefix. Keep the actual reader key private. Sign-in lasts 30 days; Lock on this device removes its cookie. This is a single-owner reader, not a multi-user accounts system.
+Never expose these variables with a `NEXT_PUBLIC_` prefix. Sessions last 30 days and renew automatically whenever My books opens, including after a session expires. No secret is hardcoded in the browser, and `READER_ACCESS_KEY_SHA256` is no longer required. There are no individual user accounts.
 
 `scripts/prepare-book-copies.py` creates reading copies with compact PDF object indexes using pikepdf. All 264 / 352 pages are retained; source originals remain in the private store. The optimized indexes prevent the scanned book from downloading every page image just to open the document. `app/book-assets.json` records the exact file sizes required for range reads.
 
@@ -44,7 +43,7 @@ npx next build
 node --env-file=.env.local scripts/verify-book-access.mjs https://electrical-installation-mastery.vercel.app
 ```
 
-The access check reads the private key from the ignored local handoff file and does not print it. The optional `--test-saving` flag is only for an unused store; it checks concurrent updates from two independent sessions and then removes its temporary test progress. The normal check verifies authentication, CSRF rejection, PDF ranges, private Blob access and an extracted figure without changing reading progress.
+The access check verifies opening without a key, replacement of an invalid session, shared state access, CSRF rejection, PDF ranges, private Blob access and an extracted figure without changing reading progress. The optional `--test-saving` flag is only for an unused store; it checks concurrent updates from two independent sessions and then removes its temporary test progress.
 
 These books describe historical UK requirements. The lesson source panels explain that context and direct learners to current authorities. The interactive cable values are illustrative, and the models do not certify a real installation. Chapter-title search works for both books; the scanned book has no selectable page text.
 

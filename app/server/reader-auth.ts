@@ -1,5 +1,4 @@
 import 'server-only';
-import { createHash, timingSafeEqual } from 'node:crypto';
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
 
@@ -9,12 +8,7 @@ const issuer = 'electrical-installation-mastery';
 const audience = 'private-book-reader';
 export const privateHeaders = { 'Cache-Control': 'private, no-store', 'X-Content-Type-Options': 'nosniff', 'Vary': 'Cookie' };
 export function readerConfigured() {
-  return Boolean(process.env.READER_ACCESS_KEY_SHA256?.match(/^[a-f0-9]{64}$/) && (process.env.READER_SESSION_SECRET?.length ?? 0) >= 32 && (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID));
-}
-export function checkAccessKey(key: string) {
-  const expected = process.env.READER_ACCESS_KEY_SHA256;
-  if (!expected?.match(/^[a-f0-9]{64}$/) || key.length < 32 || key.length > 256) return false;
-  return timingSafeEqual(createHash('sha256').update(key).digest(), Buffer.from(expected, 'hex'));
+  return Boolean((process.env.READER_SESSION_SECRET?.length ?? 0) >= 32 && (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID));
 }
 function secret() { return new TextEncoder().encode(process.env.READER_SESSION_SECRET); }
 export async function readerAuthenticated() {
@@ -30,7 +24,6 @@ export async function signInReader() {
   const token = await new SignJWT({}).setProtectedHeader({ alg: 'HS256' }).setSubject('owner').setIssuer(issuer).setAudience(audience).setIssuedAt().setExpirationTime(`${duration}s`).sign(secret());
   (await cookies()).set(cookieName, token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', path: '/', maxAge: duration });
 }
-export async function signOutReader() { (await cookies()).delete(cookieName); }
 export function sameOrigin(request: Request) {
   const origin = request.headers.get('origin');
   // Next may normalise request.url to localhost behind its production server.
