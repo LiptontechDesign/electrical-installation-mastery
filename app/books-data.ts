@@ -74,6 +74,9 @@ export const readingTopics: ReadingTopic[] = [
   },
 ];
 export const readingForLesson = (lessonId: string) => readingTopics.find(topic => topic.lessonIds.includes(lessonId));
+export function simulationForPage(bookId: BookId, page: number) {
+  return readingTopics.flatMap(topic => topic.experiment ? topic.readings.filter(reading => reading.bookId === bookId && page >= reading.pdf && page <= reading.end).map(reading => ({ topic, span: reading.end - reading.pdf })) : []).sort((a, b) => a.span - b.span)[0]?.topic;
+}
 export function printedPage(book: CourseBook, pdf: number) {
   if (book.id === 'installation-designs') return pdf >= 260 ? `p. ${pdf - 21}` : pdf >= 23 ? `p. ${pdf - 22}` : 'Front matter';
   return pdf >= 16 ? `p. ${pdf - 15}` : 'Front matter';

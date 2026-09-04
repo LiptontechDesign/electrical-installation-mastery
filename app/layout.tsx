@@ -3,6 +3,7 @@ import 'katex/dist/katex.min.css';
 import './globals.css';
 import './learning-ui.css';
 import './book-reading.css';
+import './reader-mobile.css';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =

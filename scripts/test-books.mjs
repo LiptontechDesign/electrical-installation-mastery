@@ -6,13 +6,15 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { act, create } from 'react-test-renderer';
 
 await mkdir('work/book-tests', { recursive: true });
-await build({ entryPoints: ['app/books-data.ts','app/reader-state.ts','app/experiment-models.ts','app/learning-experiment.tsx','app/course-extension-data.ts','app/pdf-range.ts'], outdir: 'work/book-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
-const { courseBooks, readingTopics, printedPage } = await import('../work/book-tests/books-data.js');
+await build({ entryPoints: ['app/books-data.ts','app/reader-state.ts','app/experiment-models.ts','app/learning-experiment.tsx','app/book-simulations.tsx','app/pdf-layout.ts','app/course-extension-data.ts','app/pdf-range.ts'], outdir: 'work/book-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
+const { courseBooks, readingTopics, printedPage, simulationForPage } = await import('../work/book-tests/books-data.js');
 const { applyReaderCommand, emptyReaderState, parseReaderCommand, parseByteRange } = await import('../work/book-tests/reader-state.js');
 const { motorTransition, initialMotor, cableExample, residualExample } = await import('../work/book-tests/experiment-models.js');
 const { default: Experiment } = await import('../work/book-tests/learning-experiment.js');
 const { default: extension } = await import('../work/book-tests/course-extension-data.js');
 const { PdfRangeQueue } = await import('../work/book-tests/pdf-range.js');
+const { pdfRenderSize } = await import('../work/book-tests/pdf-layout.js');
+const { default: BookSimulations } = await import('../work/book-tests/book-simulations.js');
 const base = JSON.parse(await readFile('app/course-data.json','utf8'));
 const lessons = [...base.modules,...extension.modules].flatMap(module => module.lessons);
 const ids = new Set(lessons.map(lesson => lesson.id));
@@ -27,6 +29,10 @@ for (const book of courseBooks) for (const chapter of book.chapters) assert.equa
 assert.equal(printedPage(courseBooks[0], 259), 'p. 237');
 assert.equal(printedPage(courseBooks[0], 260), 'p. 239');
 assert.equal(printedPage(courseBooks[1], 149), 'p. 134');
+assert.equal(simulationForPage('installation-designs', 237).id, 'rcd');
+assert.equal(simulationForPage('installation-designs', 255).id, 'voltage-drop', 'A specific page takes priority over a broader reading range');
+assert.equal(simulationForPage('modern-wiring', 149).id, 'motor');
+assert.equal(simulationForPage('modern-wiring', 1), undefined);
 assert.equal(parseReaderCommand({bookId:'../secret',action:'position',page:1}),null);
 for (const page of [0,265,1.5,NaN,'10']) assert.equal(parseReaderCommand({bookId:'installation-designs',action:'position',page}),null);
 assert.equal(parseReaderCommand({bookId:'modern-wiring',action:'bookmark',page:1,saved:true,note:'x'.repeat(2001)}),null);
@@ -65,6 +71,21 @@ assert.equal(cableExample(33,31,1).capacityMet,false);
 assert.ok(Math.abs(cableExample(27,31,1).drop - 3.6828)<1e-8);
 assert.equal(cableExample(NaN,31,1),null);
 assert.equal(residualExample(true).residualMilliamps,40);
+for (const leakage of [0, 5, 30, 60]) {
+  const current = residualExample(true, leakage);
+  assert.ok(Math.abs(current.line - current.neutral - current.protective) < 1e-10, 'Current is conserved for every slider setting');
+  assert.equal(current.residualMilliamps, leakage);
+  assert.equal(residualExample(false, leakage).residualMilliamps, 0);
+}
+assert.equal(cableExample(27, 60, 1).drop, 2 * cableExample(27, 30, 1).drop);
+for (const viewport of [280, 320, 375, 390, 430, 600, 768, 1280]) {
+  for (const zoom of [1, 2, 3]) {
+    const size = pdfRenderSize(viewport - 24, 595, 842, zoom, 3);
+    if (zoom === 1) assert.ok(size.width + 24 <= viewport + .001, `Page fits ${viewport}px screen`);
+    assert.ok(size.pixelsWide * size.pixelsHigh <= 4_000_000, 'Rendered canvas stays within the phone pixel budget');
+    assert.ok(Math.max(size.pixelsWide, size.pixelsHigh) <= 4096);
+  }
+}
 for (const kind of ['rcd','cable','motor']) assert.ok(renderToStaticMarkup(h(Experiment,{kind})).includes('experiment'));
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 let ui;
@@ -72,6 +93,30 @@ await act(async()=>{ ui=create(h(Experiment,{kind:'cable'})); });
 await act(async()=>{ ui.root.findByType('select').props.onChange({target:{value:'2'}}); });
 assert.ok(JSON.stringify(ui.toJSON()).includes('not met'));
 assert.ok(JSON.stringify(ui.toJSON()).includes('&gt;') || JSON.stringify(ui.toJSON()).includes('>'));
+await act(async()=>ui.unmount());
+await act(async()=>{ ui=create(h(Experiment,{kind:'rcd'})); });
+const buttonText = node => node.children.filter(value => typeof value === 'string').join('');
+await act(async()=>ui.root.findAllByType('button').find(node => buttonText(node) === 'Earth fault').props.onClick());
+await act(async()=>ui.root.findByType('input').props.onChange({target:{value:'60'}}));
+assert.ok(JSON.stringify(ui.toJSON()).includes('2.060'), 'Moving leakage changes the displayed line current');
+await act(async()=>ui.root.findAllByType('button').find(node => buttonText(node) === 'Healthy circuit').props.onClick());
+assert.equal(ui.root.findAllByType('input').length, 0);
+await act(async()=>ui.unmount());
+let source;
+await act(async()=>{ ui=create(h(BookSimulations,{onRead: reading => { source = reading; }})); });
+for (const [label, id, correct] of [['Current balance','rcd',0],['Cable capacity','cable',1],['Voltage drop','voltage-drop',1],['Motor starter','motor',1]]) {
+  await act(async()=>ui.root.findAllByType('button').find(node => buttonText(node) === label).props.onClick());
+  const check = ui.root.findByType('fieldset');
+  assert.equal(check.findAllByProps({role:'status'}).length,0,'Changing the activity clears the previous answer');
+  await act(async()=>check.findAllByType('button')[correct].props.onClick());
+  assert.equal(check.findByProps({role:'status'}).props.className,'answer-correct');
+  const sources = ui.root.findByProps({className:'simulation-sources'}).findAllByType('button');
+  const topic = readingTopics.find(item => item.id === id);
+  for (let index=0; index<sources.length; index++) {
+    await act(async()=>sources[index].props.onClick());
+    assert.deepEqual(source,topic.readings[index],`${id}: book link preserves exact source page`);
+  }
+}
 await act(async()=>ui.unmount());
 const nativeFetch = globalThis.fetch;
 try {

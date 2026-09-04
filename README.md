@@ -16,7 +16,9 @@ A mobile-friendly, self-paced electrical installation course designed around lon
 - **Local-first progress:** learning records stay in browser storage and can be exported or restored as a JSON backup.
 - **Responsive interface:** the course navigation, video lesson, practice tools and progress views adapt for desktop and phone use.
 - **Book reader:** two complete reference books and eight extracted illustrations in private Vercel Blob storage. My books opens automatically and includes chapter search, PDF page navigation, zoom, saved pages and book notes. Devices share the same reading state without entering a key.
+- **Phone reading:** full-screen reader, safe-area spacing, larger touch controls, persistent bottom page navigation and fit-to-width pages. Page zoom reaches 300%; Text view offers adjustable, wrapping text wherever the source PDF has selectable text. Scanned pages remain available in Page view. Rendered canvases are limited to four million pixels to reduce memory pressure.
 - **Reading companions:** nine carefully mapped topics connect 39 lessons to precise book pages. RCD current balance, cable-route conditions and motor holding contacts have interactive models, also available after revealing relevant quiz and flashcard answers.
+- **My books → Simulations:** four guided activities explore current balance, cable capacity, voltage drop and motor control using those models. Each has a prediction check and exact source-page links. Matching book pages link back to the relevant simulation. The RCD model has an adjustable protective-path current and animated current paths, with reduced-motion support.
 
 ## Books on Vercel
 

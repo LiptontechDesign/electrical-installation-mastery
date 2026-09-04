@@ -21,6 +21,7 @@ export function cableExample(current: number, length: number, factor: number) {
   const drop = current * length * 4.4 / 1000;
   return { capacity, drop, percent: drop / 230 * 100, capacityMet: current <= 32 && 32 <= capacity };
 }
-export function residualExample(fault: boolean) {
-  return { line: fault ? 2.04 : 2, neutral: 2, protective: fault ? .04 : 0, residualMilliamps: fault ? 40 : 0 };
+export function residualExample(fault: boolean, leakageMilliamps = 40) {
+  const residualMilliamps = fault ? Math.max(0, Math.min(60, Number.isFinite(leakageMilliamps) ? leakageMilliamps : 40)) : 0;
+  return { line: 2 + residualMilliamps / 1000, neutral: 2, protective: residualMilliamps / 1000, residualMilliamps };
 }
