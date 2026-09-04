@@ -3,7 +3,7 @@ import './globals.css';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =
-  'A personal electrical learning workshop for video lessons, guided study, practical activities, projects, calculations, and revision.';
+  'Electrical installation video lessons, summaries, quizzes and calculators. Track your learning at your own pace.';
 
 function resolveMetadataBase() {
   const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();

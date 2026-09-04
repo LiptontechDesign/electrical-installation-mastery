@@ -12,7 +12,7 @@ A mobile-friendly, self-paced electrical installation course designed around lon
 - **Lesson teaching guides:** every video has a concise summary, key concepts, points to remember and practical connections.
 - **Transcript-grounded retrieval practice:** 1,521 flashcards and 1,521 quiz questions are linked to the content of their source lessons. Questions are short, direct recall prompts rather than copied transcript sentences or vague title-based questions.
 - **Lesson and module mastery:** flashcard review, instant quiz feedback, saved best scores, an 80% mastery target and spaced-review due dates.
-- **Learning workspace:** searchable lessons, reading guides, practical labs, glossary, bookmarks, personal notes, confidence ratings and progress reporting.
+- **Learning workspace:** searchable lessons, lesson summaries, glossary, bookmarks, personal notes, confidence ratings and progress reporting. Navigation is limited to Home, Learn, Toolkit and Progress; lesson quizzes are in Review, and module quizzes and due flashcards open from Progress.
 - **Local-first progress:** learning records stay in browser storage and can be exported or restored as a JSON backup.
 - **Responsive interface:** the course navigation, video lesson, practice tools and progress views adapt for desktop and phone use.
 

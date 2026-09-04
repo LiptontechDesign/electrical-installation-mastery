@@ -299,6 +299,7 @@ kbd {
 .hero-session-card button { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; background: transparent; color: #fff; font-weight: 800; }
 
 .stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; margin: 18px 0 36px; }
+.home-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
 .stat-grid article { display: flex; min-height: 104px; align-items: center; gap: 15px; border: 1px solid var(--line); border-radius: 15px; background: #fff; padding: 18px; box-shadow: var(--shadow-sm); }
 .stat-icon { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 13px; }
 .stat-icon.copper { background: #fff0e7; color: #c75d20; }
@@ -854,7 +855,9 @@ kbd {
 .assessment-practical-link h2 { margin: 4px 0; font-size: 23px; }
 .assessment-practical-link p { margin: 0; color: var(--muted); }
 .assessment-practical-link .safety-inline { margin: 0; }
-.mastery-centre { margin-top: 54px; }
+.mastery-centre { margin: 24px 0; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; padding: 18px 20px; }
+.mastery-centre > summary { cursor: pointer; color: var(--ink); font-size: 16px; font-weight: 800; }
+.mastery-centre > summary:focus-visible { outline: 3px solid var(--copper); outline-offset: 5px; }
 .review-queue-banner { display: grid; grid-template-columns: 58px minmax(0,1fr) auto; align-items: center; gap: 16px; margin: 18px 0; border: 1px solid #b9dde1; border-radius: 16px; background: linear-gradient(120deg,#edf9fa,#f8fbfc); padding: 18px 20px; }
 .review-queue-icon { display: grid; width: 54px; height: 54px; place-items: center; border-radius: 15px; background: #fff; color: #0a7d88; box-shadow: var(--shadow-sm); }
 .review-queue-banner h3 { margin: 4px 0 2px; font-size: 22px; }
@@ -1050,7 +1053,7 @@ kbd {
   .assessment-practical-link { grid-template-columns: 1fr; padding: 18px; }
   .assessment-practical-link .safety-inline { grid-column: auto; grid-row: auto; }
   .assessment-practical-link > button { width: 100%; justify-content: center; }
-  .mastery-centre { margin-top: 42px; }
+  .mastery-centre { margin: 18px 0; padding: 16px; }
   .review-queue-banner { grid-template-columns: 48px minmax(0,1fr); padding: 16px; }
   .review-queue-icon { width: 46px; height: 46px; border-radius: 13px; }
   .review-queue-banner > button { grid-column: 1 / -1; width: 100%; }
@@ -1072,7 +1075,7 @@ kbd {
   .module-progress-list > button { grid-template-columns: 38px minmax(0,1fr) 40px; }
   .module-progress-list > button > svg { display: none; }
 
-  .mobile-navigation { position: fixed; z-index: 80; right: 0; bottom: 0; left: 0; display: grid; height: calc(68px + env(safe-area-inset-bottom)); grid-template-columns: repeat(5,1fr); border-top: 1px solid var(--line); background: rgba(255,255,255,.97); padding: 5px 5px env(safe-area-inset-bottom); backdrop-filter: blur(18px); }
+  .mobile-navigation { position: fixed; z-index: 80; right: 0; bottom: 0; left: 0; display: grid; height: calc(68px + env(safe-area-inset-bottom)); grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--line); background: rgba(255,255,255,.97); padding: 5px 5px env(safe-area-inset-bottom); backdrop-filter: blur(18px); }
   .mobile-navigation button { display: flex; min-width: 0; align-items: center; justify-content: center; flex-direction: column; gap: 2px; background: transparent; color: #6a7784; font-size: 10px; font-weight: 750; }
   .mobile-navigation button.active { color: var(--copper-dark); }
   .mobile-navigation button.active svg { stroke-width: 2.5; }

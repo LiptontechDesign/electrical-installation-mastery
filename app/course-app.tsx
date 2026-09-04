@@ -5,8 +5,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Script from 'next/script';
 import {
   AlertTriangle, ArrowRight, Award, BarChart3, BookOpen, Bookmark, Calculator,
-  Cable, Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Circle,
-  CirclePlay, Clock3, Database, Download, ExternalLink, FileUp, FlaskConical,
+  Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Circle,
+  CirclePlay, Database, Download, ExternalLink,
   Gauge, Home, Info, Lightbulb, ListChecks, LockKeyhole, Menu, NotebookPen,
   PlayCircle, RotateCcw, Search, Settings, ShieldCheck, SkipForward, Sparkles, Target,
   Upload, Wrench, X, Zap,
@@ -32,8 +32,8 @@ const course = {
 };
 
 type CourseModule = (typeof course.modules)[number];
-type View = 'home' | 'learn' | 'library' | 'practice' | 'toolkit' | 'progress';
-type LessonTab = 'watch' | 'study' | 'practice' | 'notes';
+type View = 'home' | 'learn' | 'toolkit' | 'progress';
+type LessonTab = 'watch' | 'study' | 'review' | 'notes';
 type CalculatorMode = 'ohm' | 'power' | 'three-phase';
 type AutoNextState = {
   seconds: number;
@@ -91,6 +91,7 @@ const lessonLocation = new Map(
     module.lessons.map((lesson, lessonIndex) => [lesson.id, { module, moduleIndex, lessonIndex }] as const),
   ),
 );
+// Retain retired reading/lab IDs so older progress backups remain lossless.
 const allReading = bookCompanions.flatMap((book) => book.guides.map((guide) => ({ book, guide })));
 const validReadingIds = new Set(allReading.map(({ guide }) => guide.id));
 const validLabIds = new Set(practiceLabs.map((lab) => lab.id));
@@ -224,16 +225,9 @@ function getRecentStudyMinutes(days: number, entries: Record<string, number>) {
   }, 0);
 }
 
-function parseDurationMinutes(duration: string) {
-  const value = Number.parseInt(duration, 10);
-  return Number.isFinite(value) ? value : 20;
-}
-
 const navigation = [
   { id: 'home' as const, label: 'Home', icon: Home },
   { id: 'learn' as const, label: 'Learn', icon: PlayCircle },
-  { id: 'library' as const, label: 'Library', icon: BookOpen },
-  { id: 'practice' as const, label: 'Practice', icon: FlaskConical },
   { id: 'toolkit' as const, label: 'Toolkit', icon: Calculator },
   { id: 'progress' as const, label: 'Progress', icon: BarChart3 },
 ];
@@ -250,11 +244,6 @@ export default function CourseApp() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const [toast, setToast] = useState('');
-  const [selectedBookId, setSelectedBookId] = useState(bookCompanions[0].id);
-  const [selectedGuideId, setSelectedGuideId] = useState(bookCompanions[0].guides[0].id);
-  const [libraryQuery, setLibraryQuery] = useState('');
-  const [selectedLabId, setSelectedLabId] = useState(practiceLabs[0].id);
-  const [practiceFilter, setPracticeFilter] = useState('All');
   const [selectedMasteryModuleId, setSelectedMasteryModuleId] = useState(course.modules[0].id);
   const [reviewQueueOpen, setReviewQueueOpen] = useState(false);
   const [toolQuery, setToolQuery] = useState('');
@@ -264,7 +253,6 @@ export default function CourseApp() {
   const [autoPlayLessonId, setAutoPlayLessonId] = useState<string | null>(null);
   const [autoNextState, setAutoNextState] = useState<AutoNextState>(null);
   const importInputRef = useRef<HTMLInputElement>(null);
-  const pdfInputRef = useRef<HTMLInputElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
   const playerHostRef = useRef<HTMLDivElement>(null);
   const playerIframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -286,8 +274,6 @@ export default function CourseApp() {
   const activeLesson = location.module.lessons[location.lessonIndex];
   const completed = useMemo(() => new Set(learner.completedLessonIds), [learner.completedLessonIds]);
   const bookmarked = useMemo(() => new Set(learner.bookmarkedLessonIds), [learner.bookmarkedLessonIds]);
-  const completedReading = useMemo(() => new Set(learner.completedReadingIds), [learner.completedReadingIds]);
-  const completedLabs = useMemo(() => new Set(learner.completedLabIds), [learner.completedLabIds]);
   const overallPercent = percent(completed.size, allLessons.length);
   const weekMinutes = getRecentStudyMinutes(7, learner.studyMinutesByDate);
   const weekPercent = Math.min(100, percent(weekMinutes, learner.weeklyGoalMinutes));
@@ -295,12 +281,6 @@ export default function CourseApp() {
     () => allLessons.filter((lesson) => completed.has(lesson.id)).reduce((sum, lesson) => sum + lesson.durationSeconds, 0),
     [completed],
   );
-  const selectedBook = bookCompanions.find((book) => book.id === selectedBookId) ?? bookCompanions[0];
-  const selectedGuide = selectedBook.guides.find((guide) => guide.id === selectedGuideId) ?? selectedBook.guides[0];
-  const selectedLab = practiceLabs.find((lab) => lab.id === selectedLabId) ?? practiceLabs[0];
-  const contextualReading = allReading.filter(({ guide }) => guide.linkedModules.includes(location.module.number)).slice(0, 2);
-  const deeperReading = allReading.filter(({ guide }) => guide.linkedModules.includes(location.module.number)).slice(2, 5);
-  const contextualLab = practiceLabs.find((lab) => lab.linkedModules.includes(location.module.number)) ?? practiceLabs[0];
   const activeGuide = lessonGuides[activeLesson.id] ?? {
     summary: `This lesson develops ${activeLesson.topic.toLocaleLowerCase()} and connects the idea to safe electrical installation work. Use the video for the instructor’s exact examples and sequence.`,
     keyConcepts: [`Understand the purpose of ${activeLesson.topic.toLocaleLowerCase()}.`, 'Connect the principle to the complete circuit or installation.', 'Verify safety and current requirements before practical application.'],
@@ -432,7 +412,13 @@ export default function CourseApp() {
     }
     const timer = window.setTimeout(() => {
       if (readError) setToast('Saved progress could not be read, so a fresh local record is active.');
-      if (navigation.some((item) => item.id === hashView)) setView(hashView as View);
+      if (hashView === 'library' || hashView === 'practice') {
+        setView('learn');
+        setOpenModuleId(lessonLocation.get(nextState.activeLessonId)?.module.id ?? course.modules[0].id);
+        window.history.replaceState(null, '', `#learn/${nextState.activeLessonId}`);
+      } else if (navigation.some((item) => item.id === hashView)) {
+        setView(hashView as View);
+      }
       if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
         setOpenModuleId(lessonLocation.get(hashId)?.module.id ?? course.modules[0].id);
       }
@@ -588,7 +574,7 @@ export default function CourseApp() {
           }
 
           if (reviewBeforeNextRef.current) {
-            setLessonTab('practice');
+            setLessonTab('review');
             setToast('Video complete. Review the flashcards and quiz before moving to the next lesson.');
             return;
           }
@@ -619,19 +605,11 @@ export default function CourseApp() {
           searchable: `${lesson.title} ${lesson.topic} ${lesson.instructor} ${lesson.layer} ${guide?.summary ?? ''} ${guide?.keyConcepts.join(' ') ?? ''}`,
         };
       }),
-      ...allReading.map(({ book, guide }) => ({ kind: 'Reading guide' as const, id: guide.id, parentId: book.id, title: guide.title, subtitle: `${book.shortTitle} · printed pages ${guide.pages}`, searchable: `${guide.title} ${guide.summary} ${guide.keyConcepts.join(' ')} ${book.title}` })),
-      ...practiceLabs.map((lab) => ({ kind: 'Practice lab' as const, id: lab.id, parentId: '', title: lab.title, subtitle: `${lab.category} · ${lab.duration}`, searchable: `${lab.title} ${lab.description} ${lab.category} ${lab.steps.join(' ')}` })),
       ...glossary.map((item) => ({ kind: 'Glossary term' as const, id: item.term, parentId: '', title: item.term, subtitle: item.definition, searchable: `${item.term} ${item.definition} ${item.category}` })),
     ];
     return results.filter((result) => !query || result.searchable.toLocaleLowerCase().includes(query)).slice(0, 36);
   }, [searchQuery]);
 
-  const filteredGuides = selectedBook.guides.filter((guide) => {
-    const query = libraryQuery.trim().toLocaleLowerCase();
-    return !query || `${guide.title} ${guide.summary} ${guide.keyConcepts.join(' ')}`.toLocaleLowerCase().includes(query);
-  });
-  const practiceCategories = ['All', ...new Set(practiceLabs.map((lab) => lab.category))];
-  const filteredLabs = practiceLabs.filter((lab) => practiceFilter === 'All' || lab.category === practiceFilter);
   const filteredGlossary = glossary.filter((entry) => {
     const query = toolQuery.trim().toLocaleLowerCase();
     return !query || `${entry.term} ${entry.definition} ${entry.category}`.toLocaleLowerCase().includes(query);
@@ -781,33 +759,8 @@ export default function CourseApp() {
     else setToast('You completed the final lesson assessment. The full course is complete.');
   };
 
-  const toggleReading = (guideId: string) => {
-    const isDone = completedReading.has(guideId);
-    setLearner((current) => {
-      const next = { ...current, completedReadingIds: isDone ? current.completedReadingIds.filter((id) => id !== guideId) : [...current.completedReadingIds, guideId], updatedAt: new Date().toISOString() };
-      return isDone ? next : withStudyMinutes(next, 20);
-    });
-    setToast(isDone ? 'Guide returned to your reading list.' : 'Reading guide completed.');
-  };
-
-  const toggleLab = (labId: string) => {
-    const lab = practiceLabs.find((item) => item.id === labId);
-    const isDone = completedLabs.has(labId);
-    setLearner((current) => {
-      const next = { ...current, completedLabIds: isDone ? current.completedLabIds.filter((id) => id !== labId) : [...current.completedLabIds, labId], updatedAt: new Date().toISOString() };
-      return isDone ? next : withStudyMinutes(next, parseDurationMinutes(lab?.duration ?? '20'));
-    });
-    setToast(isDone ? 'Practice lab reopened.' : 'Practice evidence marked complete.');
-  };
-
   const chooseSearchResult = (result: (typeof searchResults)[number]) => {
     if (result.kind === 'Video lesson') chooseLesson(result.id);
-    if (result.kind === 'Reading guide') {
-      setSelectedBookId(result.parentId); setSelectedGuideId(result.id); setSearchOpen(false); navigate('library');
-    }
-    if (result.kind === 'Practice lab') {
-      setSelectedLabId(result.id); setSearchOpen(false); navigate('practice');
-    }
     if (result.kind === 'Glossary term') {
       setToolQuery(result.title); setSearchOpen(false); navigate('toolkit');
     }
@@ -828,16 +781,6 @@ export default function CourseApp() {
       const parsed = JSON.parse(await file.text());
       setLearner(clampState(parsed.progress ?? parsed)); setToast('Progress backup restored.'); setSettingsOpen(false);
     } catch { setToast('That file is not a valid course progress backup.'); }
-  };
-
-  const openLocalPdf = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]; event.target.value = '';
-    if (!file) return;
-    if (file.type !== 'application/pdf' && !file.name.toLocaleLowerCase().endsWith('.pdf')) { setToast('Please choose a PDF book file.'); return; }
-    const url = URL.createObjectURL(file);
-    const opened = window.open(url, '_blank', 'noopener,noreferrer');
-    setToast(opened ? 'Opened locally. The PDF was not uploaded.' : 'Your browser blocked the new PDF tab. Allow pop-ups and try again.');
-    window.setTimeout(() => URL.revokeObjectURL(url), 120000);
   };
 
   const resetProgress = () => { setLearner(initialLearnerState); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
@@ -891,7 +834,7 @@ export default function CourseApp() {
       <div className="app-frame">
         <header className="app-header">
           <button className="mobile-brand" type="button" onClick={() => navigate('home')} aria-label="Go home"><span className="brand-symbol"><Zap size={18} /></span><span>Electrical Mastery</span></button>
-          <button className="search-trigger" type="button" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={19} /><span>Search lessons, guides, labs and terms</span><kbd>/</kbd></button>
+          <button className="search-trigger" type="button" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={19} /><span>Search lessons and terms</span><kbd>/</kbd></button>
           <div className="header-actions">
             <button className="header-progress" type="button" onClick={() => navigate('progress')} aria-label={`${overallPercent}% of video course complete`}><span className="mini-progress"><i style={{ width: `${overallPercent}%` }} /></span><b>{overallPercent}%</b></button>
             <button className="icon-button" type="button" onClick={() => setSettingsOpen(true)} aria-label="Open data and settings"><Settings size={20} /></button>
@@ -904,14 +847,12 @@ export default function CourseApp() {
               <section className="home-hero">
                 <div className="hero-glow" aria-hidden="true" />
                 <div className="hero-copy">
-                  <span className="eyebrow"><Sparkles size={16} /> Your personal electrical workshop</span>
-                  <h1>Learn the craft.<br /><em>Understand the system.</em></h1>
-                  <p>A complete path through electrical science, installation practice, design thinking, testing and professional handover.</p>
+                  <span className="eyebrow"><Sparkles size={16} /> Electrical Installation Mastery</span>
+                  <h1>Your electrical course.</h1>
+                  <p>{allLessons.length} video lessons across {course.modules.length} modules. Learn at your own pace.</p>
                   <div className="button-row">
                     <button className="primary-button" type="button" onClick={() => chooseLesson(activeLesson.id)}><CirclePlay size={19} /> {completed.size ? 'Continue learning' : 'Start the course'} <ArrowRight size={18} /></button>
-                    <button className="ghost-button on-dark" type="button" onClick={() => navigate('library')}><BookOpen size={18} /> Open book companions</button>
                   </div>
-                  <div className="hero-trust"><ShieldCheck size={18} /><span>Safety-led learning · Original study guides · Progress stays on this device</span></div>
                 </div>
                 <div className="hero-session-card">
                   <div className="session-label"><span>Up next</span><span>{activeLesson.duration}</span></div>
@@ -922,38 +863,23 @@ export default function CourseApp() {
                 </div>
               </section>
 
-              <section className="stat-grid" aria-label="Learning overview">
+              <section className="stat-grid home-stats" aria-label="Learning overview">
                 <article><span className="stat-icon copper"><PlayCircle size={21} /></span><div><b>{completed.size}<small> / {allLessons.length}</small></b><p>Video lessons completed</p></div></article>
-                <article><span className="stat-icon cyan"><BookOpen size={21} /></span><div><b>{completedReading.size}<small> / {allReading.length}</small></b><p>Reading guides completed</p></div></article>
-                <article><span className="stat-icon green"><FlaskConical size={21} /></span><div><b>{completedLabs.size}<small> / {practiceLabs.length}</small></b><p>Practice labs completed</p></div></article>
                 <article><span className="stat-icon amber"><Target size={21} /></span><div><b>{weekMinutes}<small> / {learner.weeklyGoalMinutes} min</small></b><p>This week’s study goal</p></div></article>
               </section>
 
-              <section className="home-grid">
+              <section className="home-course">
                 <div className="home-primary-column">
-                  <div className="section-heading"><div><span className="eyebrow neutral">The learning path</span><h2>Watch, understand, practise, apply.</h2></div><button className="text-button" type="button" onClick={() => navigate('learn')}>Explore all modules <ArrowRight size={17} /></button></div>
-                  <div className="learning-path-grid">
-                    <button type="button" onClick={() => navigate('learn')}><span>01</span><PlayCircle size={24} /><h3>Watch</h3><p>{allLessons.length} expert-led videos in a clear sequence.</p><small>{overallPercent}% complete</small></button>
-                    <button type="button" onClick={() => navigate('library')}><span>02</span><BookOpen size={24} /><h3>Understand</h3><p>Every video has a plain-language summary, supported by original guided reading.</p><small>{allLessons.length} summaries · {allReading.length} reading guides</small></button>
-                    <button type="button" onClick={() => navigate('practice')}><span>03</span><FlaskConical size={24} /><h3>Practise</h3><p>Safe simulations, design tasks and knowledge checks.</p><small>{practiceLabs.length} evidence-based labs</small></button>
-                    <button type="button" onClick={() => navigate('progress')}><span>04</span><Award size={24} /><h3>Master</h3><p>Track confidence, review gaps and build a portfolio.</p><small>{learner.completedLessonAssessmentIds.length} lesson recaps · {learner.completedModuleAssessmentIds.length} modules mastered</small></button>
-                  </div>
-
-                  <div className="section-heading compact"><div><span className="eyebrow neutral">Course map</span><h2>{course.modules.length} connected modules</h2></div></div>
+                  <div className="section-heading compact"><div><h2>Course modules</h2></div></div>
                   <div className="module-card-grid">
                     {course.modules.map((module) => {
                       const done = moduleCompletedCount(module);
                       const modulePercent = percent(done, module.lessons.length);
-                      return <button type="button" className="module-card" key={module.id} onClick={() => chooseModule(module)}><div className="module-card-head"><span>{pad(module.number)}</span><small>{module.duration}</small></div><h3>{module.title}</h3><p>{module.description}</p><div className="progress-line"><span style={{ width: `${modulePercent}%` }} /></div><footer><span>{done} of {module.lessons.length} lessons</span><b>{modulePercent}%</b></footer></button>;
+                      return <button type="button" className="module-card" key={module.id} onClick={() => chooseModule(module)}><div className="module-card-head"><span>{pad(module.number)}</span><small>{module.duration}</small></div><h3>{module.title}</h3><div className="progress-line"><span style={{ width: `${modulePercent}%` }} /></div><footer><span>{done} of {module.lessons.length} lessons</span><b>{modulePercent}%</b></footer></button>;
                     })}
                   </div>
                 </div>
 
-                <aside className="home-side-column">
-                  <section className="weekly-card"><div className="weekly-ring" style={{ '--progress': `${weekPercent * 3.6}deg` } as CSSProperties}><span><b>{weekPercent}%</b><small>weekly goal</small></span></div><div><span className="eyebrow neutral">Your rhythm</span><h3>{weekMinutes ? 'Momentum is building.' : 'Begin with one focused lesson.'}</h3><p>{weekMinutes} of {learner.weeklyGoalMinutes} minutes studied during the last seven days.</p></div></section>
-                  <section className="safety-card"><div className="safety-card-icon"><ShieldCheck size={25} /></div><span className="eyebrow">Non-negotiable</span><h3>Safety passport</h3><p>Before any practical task: identify every source, isolate, lock off, prove your tester, test, and prove again.</p><button type="button" onClick={() => { setSelectedLabId('lab-safe-isolation'); navigate('practice'); }}>Open safety briefing <ArrowRight size={17} /></button></section>
-                  <section className="local-data-card"><Database size={21} /><div><strong>Private by design</strong><p>Your progress is stored in this browser. Use backup before changing device or clearing browser data.</p></div></section>
-                </aside>
               </section>
             </div>
           )}
@@ -1004,7 +930,7 @@ export default function CourseApp() {
                   <div><button className={`bookmark-button ${bookmarked.has(activeLesson.id) ? 'active' : ''}`} type="button" onClick={toggleBookmark}><Bookmark size={18} fill={bookmarked.has(activeLesson.id) ? 'currentColor' : 'none'} /> {bookmarked.has(activeLesson.id) ? 'Saved' : 'Save lesson'}</button><button className={`auto-next-toggle ${learner.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={18} /> Auto-next <span>{learner.autoNextEnabled ? 'On' : 'Off'}</span></button><a className="transcript-link" href={activeLesson.url} target="_blank" rel="noreferrer">Open on YouTube <ExternalLink size={15} /></a></div>
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" onClick={() => toggleComplete(!completed.has(activeLesson.id))}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Lesson completed' : 'Complete & continue'} {!completed.has(activeLesson.id) && <ArrowRight size={18} />}</button>
                 </div>
-                <nav className="lesson-tabs" aria-label="Lesson sections">{([['watch', 'Overview', CirclePlay], ['study', 'Summary', BookOpen], ['practice', 'Practice', ListChecks], ['notes', 'My notes', NotebookPen]] as const).map(([id, label, Icon]) => <button key={id} type="button" className={lessonTab === id ? 'active' : ''} onClick={() => setLessonTab(id)}><Icon size={18} />{label}</button>)}</nav>
+                <nav className="lesson-tabs" aria-label="Lesson sections">{([['watch', 'Overview', CirclePlay], ['study', 'Summary', BookOpen], ['review', 'Review', ListChecks], ['notes', 'My notes', NotebookPen]] as const).map(([id, label, Icon]) => <button key={id} type="button" className={lessonTab === id ? 'active' : ''} onClick={() => setLessonTab(id)}><Icon size={18} />{label}</button>)}</nav>
 
                 <div className="lesson-tab-content">
                   {lessonTab === 'watch' && <div className="lesson-reading-layout">
@@ -1014,8 +940,7 @@ export default function CourseApp() {
 
                   {lessonTab === 'study' && <div className="lesson-study-stack">
                     <section className="lesson-summary-card">
-                      <div className="summary-card-heading"><div><span className="eyebrow"><BookOpen size={16} /> Lesson concept companion</span><h2>Understand this video in plain language.</h2></div><span className="summary-lesson-code">M{pad(location.module.number)} · L{pad(activeLesson.number)}</span></div>
-                      <div className="summary-source-note"><Info size={18} /><p>This is an original learning aid based on the lesson title, course topic and established electrical principles. It is not a transcript; watch the video for the instructor’s exact demonstration and examples.</p></div>
+                      <div className="summary-card-heading"><div><span className="eyebrow"><BookOpen size={16} /> Lesson summary</span><h2>{activeLesson.topic}</h2></div><span className="summary-lesson-code">M{pad(location.module.number)} · L{pad(activeLesson.number)}</span></div>
                       <div className="plain-summary"><span className="eyebrow neutral">Clear summary</span><p>{activeGuide.summary}</p></div>
                       <div className="summary-learning-grid">
                         <article className="key-concepts-card"><span className="eyebrow neutral">Key concepts to understand</span><ol>{activeGuide.keyConcepts.map((concept, index) => <li key={concept}><span>{index + 1}</span><p>{concept}</p></li>)}</ol></article>
@@ -1024,18 +949,15 @@ export default function CourseApp() {
                       <div className="self-check-card"><span><ListChecks size={21} /></span><div><span className="eyebrow neutral">Check yourself</span><h3>{activeGuide.checkYourself}</h3><p>Try answering aloud without looking back. If it is difficult, replay the key section and update your notes.</p></div></div>
                       {activeLesson.regulationSensitive && <div className="regulation-notice"><AlertTriangle size={21} /><div><strong>Concept first—current rules second</strong><p>This summary explains the principle only. Verify current KS 662, EPRA requirements, utility rules and manufacturer instructions before applying regulation-sensitive details.</p></div></div>}
                     </section>
-                    <div className="study-guide-layout">
-                      <section className="lesson-main-card"><span className="eyebrow neutral">Read alongside this module</span><h2>Book companion</h2><p className="reading-lead">These are newly written learning guides. Printed page numbers help you find the chapter in your own copy; the books themselves stay on your computer.</p><div className="context-reading-list">{contextualReading.map(({ book, guide }) => <button type="button" key={guide.id} onClick={() => { setSelectedBookId(book.id); setSelectedGuideId(guide.id); navigate('library'); }}><span className={`book-dot ${book.accent}`}><BookOpen size={18} /></span><span><small>Start here · {book.shortTitle} · printed pages {guide.pages}</small><strong>{guide.title}</strong><p>{guide.summary}</p></span><ChevronRight size={19} /></button>)}</div>{deeperReading.length > 0 && <details className="go-deeper"><summary>Go deeper ({deeperReading.length})</summary>{deeperReading.map(({ book, guide }) => <button type="button" key={guide.id} onClick={() => { setSelectedBookId(book.id); setSelectedGuideId(guide.id); navigate('library'); }}>{guide.title}<span>{book.shortTitle} · pp. {guide.pages}</span></button>)}</details>}</section>
                       <aside className="lesson-context-card confidence-card"><span className="eyebrow neutral">Quick reflection</span><h3>How confident do you feel?</h3><p>This is private and helps you spot topics to revisit.</p><div className="confidence-options">{([1, 2, 3] as const).map((rating) => <button key={rating} className={learner.confidence[activeLesson.id] === rating ? 'active' : ''} type="button" onClick={() => setConfidence(rating)}><span>{rating}</span>{rating === 1 ? 'Review' : rating === 2 ? 'Getting it' : 'Can explain'}</button>)}</div></aside>
-                    </div>
                   </div>}
 
-                  {lessonTab === 'practice' && <div className="lesson-assessment-stack">
+                  {lessonTab === 'review' && <div className="lesson-assessment-stack">
                     <AssessmentPanel
                       key={activeLesson.id}
                       eyebrow={`M${pad(location.module.number)} · L${pad(activeLesson.number)} lesson recap`}
                       title={activeLesson.title}
-                      description={activeGuide.summary}
+                      description="Review the flashcards, then take the quiz."
                       connectedLessonFlow
                       flashcards={activeAssessment.flashcards}
                       questions={activeAssessment.questions}
@@ -1047,7 +969,6 @@ export default function CourseApp() {
                       onContinue={continueAfterLessonAssessment}
                       continueLabel={activeLesson.id === allLessons.at(-1)?.id ? 'Finish course' : 'Continue to next lesson'}
                     />
-                    <section className="assessment-practical-link"><div><span className="eyebrow neutral">Apply it safely</span><h2>{contextualLab.title}</h2><p>{contextualLab.description}</p></div><div className="safety-inline"><ShieldCheck size={19} /><span>{contextualLab.safety}</span></div><button className="secondary-button" type="button" onClick={() => { setSelectedLabId(contextualLab.id); navigate('practice'); }}>Open practical lab <ArrowRight size={17} /></button></section>
                   </div>}
 
                   {lessonTab === 'notes' && <section className="notes-card"><div><span className="eyebrow neutral">Private notebook</span><h2>Notes for this lesson</h2><p>Saved automatically in this browser.</p></div><textarea value={learner.notes[activeLesson.id] ?? ''} onChange={(event) => setLearner((current) => ({ ...current, notes: { ...current.notes, [activeLesson.id]: event.target.value }, updatedAt: new Date().toISOString() }))} placeholder="Write what clicked, what needs review, and how this connects to work you know…" aria-label="Lesson notes" /><div className="autosave"><Check size={15} /> Local autosave</div></section>}
@@ -1056,53 +977,28 @@ export default function CourseApp() {
               </article>
             </div>
           )}
-          {view === 'library' && (
-            <div className="page library-page">
-              <section className="page-hero light-hero">
-                <div><span className="eyebrow neutral"><BookOpen size={16} /> Guided reading</span><h1>Your book companion library.</h1><p>Original summaries, safe learning activities and chapter page guides built around the two books already on your computer.</p></div>
-                <div className="pdf-open-card"><FileUp size={24} /><div><strong>Open your own PDF</strong><p>Choose a book from your PC. It opens locally in a new tab and is never uploaded.</p></div><button type="button" onClick={() => pdfInputRef.current?.click()}>Choose PDF <ExternalLink size={16} /></button><input ref={pdfInputRef} type="file" accept="application/pdf,.pdf" onChange={openLocalPdf} hidden /></div>
+          {view === 'toolkit' && (
+            <div className="page toolkit-page">
+              <section className="page-hero light-hero"><div><span className="eyebrow neutral"><Calculator size={16} /> Learning toolkit</span><h1>Calculators & glossary.</h1><p>Check a formula or look up an electrical term.</p></div><div className="toolkit-badge"><Gauge size={28} /><div><strong>Training calculators</strong><p>Educational relationships only. They do not approve cable, device or installation design.</p></div></div></section>
+              <section className="calculator-workspace">
+                <div className="calculator-panel"><div className="section-heading compact"><div><span className="eyebrow neutral">Formula lab</span><h2>Choose a relationship</h2></div></div><div className="calculator-tabs">{([['ohm', 'Ohm’s law'], ['power', 'Power'], ['three-phase', 'Three-phase']] as [CalculatorMode, string][]).map(([id, label]) => <button type="button" key={id} className={calculatorMode === id ? 'active' : ''} onClick={() => setCalculatorMode(id)}>{label}</button>)}</div><div className="formula-display"><small>Relationship</small><strong>{calculatorFormula}</strong><p>{calculatorMode === 'ohm' ? 'Enter any two known positive values. The missing quantity is calculated.' : calculatorMode === 'power' ? 'Electrical power is voltage multiplied by current for this simple relationship.' : 'Balanced three-phase real power includes the phase relationship and power factor.'}</p></div><div className="calculator-inputs"><label><span>Voltage</span><div><input inputMode="decimal" value={calculatorValues.voltage} onChange={(event) => setCalculatorValues((values) => ({ ...values, voltage: event.target.value }))} placeholder="0" /><b>V</b></div></label><label><span>Current</span><div><input inputMode="decimal" value={calculatorValues.current} onChange={(event) => setCalculatorValues((values) => ({ ...values, current: event.target.value }))} placeholder="0" /><b>A</b></div></label>{calculatorMode === 'ohm' && <label><span>Resistance</span><div><input inputMode="decimal" value={calculatorValues.resistance} onChange={(event) => setCalculatorValues((values) => ({ ...values, resistance: event.target.value }))} placeholder="0" /><b>Ω</b></div></label>}{calculatorMode === 'three-phase' && <label><span>Power factor</span><div><input inputMode="decimal" value={calculatorValues.powerFactor} onChange={(event) => setCalculatorValues((values) => ({ ...values, powerFactor: event.target.value }))} placeholder="0.8" /><b>PF</b></div></label>}</div><div className="calculator-result"><Zap size={25} /><div><small>Calculated result</small><strong>{calculatorResult}</strong></div></div><div className="training-warning"><Info size={18} /><span>Use values from an approved learning exercise. Real installation design requires current standards, verified supply data and competent review.</span></div></div>
+                <aside className="formula-reference"><span className="eyebrow neutral">Quick reference</span><h2>Core relationships</h2>{[['Ohm’s law', 'V = I × R', 'Voltage, current and resistance'], ['Power', 'P = V × I', 'Rate of electrical energy transfer'], ['Energy', 'E = P × t', 'Power used over time'], ['Series resistance', 'Rᵀ = R₁ + R₂ + …', 'Resistances add in one path'], ['Three-phase power', 'P = √3 × V × I × PF', 'Balanced real power relationship']].map(([name, formula, description]) => <div className="formula-row" key={name}><span><strong>{name}</strong><small>{description}</small></span><b>{formula}</b></div>)}</aside>
               </section>
-              <div className="book-selector">
-                {bookCompanions.map((book) => {
-                  const done = book.guides.filter((guide) => completedReading.has(guide.id)).length;
-                  return <button type="button" key={book.id} className={`${selectedBook.id === book.id ? 'active' : ''} ${book.accent}`} onClick={() => { setSelectedBookId(book.id); setSelectedGuideId(book.guides[0].id); }}><span className="book-cover"><Cable size={28} /><small>{book.edition}</small></span><span><small>{book.authors}</small><strong>{book.title}</strong><p>{book.description}</p><span className="book-progress">{done}/{book.guides.length} complete</span></span></button>;
-                })}
-              </div>
-              <section className="library-workspace">
-                <aside className="chapter-index">
-                  <div className="chapter-search"><Search size={18} /><input value={libraryQuery} onChange={(event) => setLibraryQuery(event.target.value)} placeholder="Search this companion" aria-label="Search this book companion" /></div><p>{filteredGuides.length} guided chapters</p>
-                  <nav>{filteredGuides.map((guide) => <button type="button" key={guide.id} className={selectedGuide.id === guide.id ? 'active' : ''} onClick={() => setSelectedGuideId(guide.id)}><span>{completedReading.has(guide.id) ? <CheckCircle2 size={18} /> : pad(guide.number)}</span><span><strong>{guide.title}</strong><small>Printed pages {guide.pages}</small></span><ChevronRight size={17} /></button>)}</nav>
-                </aside>
-                <article className="reading-guide">
-                  <div className="reading-guide-head"><div><span className="eyebrow neutral">Chapter {pad(selectedGuide.number)} · printed pages {selectedGuide.pages}</span><h2>{selectedGuide.title}</h2><p>{selectedBook.title} companion</p></div><button className={completedReading.has(selectedGuide.id) ? 'complete-button completed' : 'complete-button'} type="button" onClick={() => toggleReading(selectedGuide.id)}>{completedReading.has(selectedGuide.id) ? <Check size={18} /> : <Circle size={18} />}{completedReading.has(selectedGuide.id) ? 'Guide completed' : 'Mark guide complete'}</button></div>
-                  {selectedGuide.regulationSensitive && <div className="edition-banner"><AlertTriangle size={20} /><div><strong>Historical edition · Kenya verification required</strong><p>{selectedBook.notice} Training guidance—not installation approval.</p></div></div>}
-                  <section><span className="eyebrow neutral">The big idea</span><p className="guide-summary">{selectedGuide.summary}</p></section>
-                  <section><span className="eyebrow neutral">Concepts to notice</span><div className="concept-chip-list">{selectedGuide.keyConcepts.map((concept) => <span key={concept}>{concept}</span>)}</div></section>
-                  <section className="try-card"><span className="try-icon"><Wrench size={21} /></span><div><span className="eyebrow neutral">Try it safely</span><h3>Turn reading into evidence</h3><p>{selectedGuide.activity}</p></div></section>
-                  <section className="knowledge-prompt"><span><Lightbulb size={21} /></span><div><span className="eyebrow neutral">Check your understanding</span><h3>{selectedGuide.knowledgeCheck}</h3><p>Explain the answer in your own words or add it to the notes of a related video lesson.</p></div></section>
-                  <section><span className="eyebrow neutral">Connected video modules</span><div className="linked-modules">{selectedGuide.linkedModules.map((moduleNumber) => { const linkedModule = course.modules[moduleNumber - 1]; return <button key={moduleNumber} type="button" onClick={() => chooseModule(linkedModule)}><span>M{pad(moduleNumber)}</span>{linkedModule.title}<ArrowRight size={15} /></button>; })}</div></section>
-                </article>
-              </section>
+              <section className="glossary-section"><div className="section-heading"><div><span className="eyebrow neutral">Plain-language reference</span><h2>Electrical glossary</h2></div><div className="glossary-search"><Search size={18} /><input value={toolQuery} onChange={(event) => setToolQuery(event.target.value)} placeholder="Search a term" aria-label="Search electrical glossary" /></div></div><div className="glossary-grid">{filteredGlossary.map((entry) => <article key={entry.term}><span>{entry.category}</span><h3>{entry.term}</h3><p>{entry.definition}</p></article>)}</div>{!filteredGlossary.length && <div className="empty-state"><Search size={24} /><h3>No glossary match</h3><p>Try a broader term such as current, protection, circuit or testing.</p></div>}</section>
             </div>
           )}
-          {view === 'practice' && (
-            <div className="page practice-page">
-              <section className="page-hero practice-hero"><div><span className="eyebrow"><FlaskConical size={16} /> Practice studio</span><h1>Think like an installer.<br />Act like a professional.</h1><p>Safe simulations and design exercises that turn passive learning into evidence you can explain.</p></div><div className="practice-hero-stat"><b>{completedLabs.size}</b><span>of {practiceLabs.length} labs completed</span><div className="progress-line"><span style={{ width: `${percent(completedLabs.size, practiceLabs.length)}%` }} /></div></div></section>
-              <section className="safety-ribbon"><ShieldCheck size={22} /><div><strong>Safe practice boundary</strong><p>Never use these exercises as authorization for live work. Use paper, simulation, extra-low-voltage trainers or approved de-energized equipment unless a competent supervisor directs otherwise.</p></div></section>
-              <div className="section-heading"><div><span className="eyebrow neutral">Evidence-based activities</span><h2>Practice labs</h2></div><p>Choose a focused exercise or build toward the complete design portfolio.</p></div>
-              <div className="filter-row" aria-label="Filter practice labs">{practiceCategories.map((category) => <button key={category} type="button" className={practiceFilter === category ? 'active' : ''} onClick={() => setPracticeFilter(category)}>{category}</button>)}</div>
-              <div className="practice-layout">
-                <div className="lab-grid">{filteredLabs.map((lab) => <button type="button" key={lab.id} className={selectedLab.id === lab.id ? 'lab-card active' : 'lab-card'} onClick={() => setSelectedLabId(lab.id)}><div className="lab-card-head"><span>{lab.category}</span>{completedLabs.has(lab.id) ? <CheckCircle2 size={20} /> : <FlaskConical size={20} />}</div><h3>{lab.title}</h3><p>{lab.description}</p><footer><span><Clock3 size={15} /> {lab.duration}</span><span>{lab.level}</span></footer></button>)}</div>
-                <aside className="lab-detail"><div className="lab-detail-head"><span className="lab-badge">{selectedLab.category}</span><span>{selectedLab.level} · {selectedLab.duration}</span></div><h2>{selectedLab.title}</h2><p className="reading-lead">{selectedLab.description}</p><span className="eyebrow neutral">Your method</span><ol className="step-list">{selectedLab.steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol><div className="evidence-card"><Award size={20} /><div><strong>Evidence to produce</strong><p>{selectedLab.evidence}</p></div></div><div className="safety-inline"><ShieldCheck size={19} /><span>{selectedLab.safety}</span></div><button className={completedLabs.has(selectedLab.id) ? 'complete-button completed full' : 'complete-button full'} type="button" onClick={() => toggleLab(selectedLab.id)}>{completedLabs.has(selectedLab.id) ? <Check size={18} /> : <Circle size={18} />}{completedLabs.has(selectedLab.id) ? 'Evidence completed' : 'Mark evidence complete'}</button></aside>
-              </div>
-              <section className="mastery-centre">
-                <div className="section-heading"><div><span className="eyebrow neutral"><Award size={16} /> Module mastery centre</span><h2>Deep review for every module</h2></div><p>Choose a module, review up to 40 lesson-linked cards and complete up to 50 questions. Every item names its source lesson, and wrong answers return to spaced review.</p></div>
-                <section className="review-queue-banner"><span className="review-queue-icon"><RotateCcw size={25} /></span><div><span className="eyebrow neutral">Spaced repetition queue</span><h3>{dueFlashcards.length ? `${dueFlashcards.length} cards are ready for recall` : 'You are caught up for today'}</h3><p>{dueFlashcards.length ? 'Work through a focused set of up to 30 due cards. Correct answers move to longer intervals; missed ideas return sooner.' : 'Review a lesson or module to schedule more cards. Your next due cards will appear here automatically.'}</p></div><button type="button" disabled={!dueReviewCards.length} onClick={() => setReviewQueueOpen((current) => !current)}>{reviewQueueOpen ? 'Close review' : 'Start due review'} <ArrowRight size={17} /></button></section>
+          {view === 'progress' && (
+            <div className="page progress-page">
+              <section className="progress-hero"><div><span className="eyebrow"><BarChart3 size={16} /> Your learning record</span><h1>Your progress.</h1><p>Track completed lessons, quiz results and study time.</p></div><div className="overall-ring" style={{ '--progress': `${overallPercent * 3.6}deg` } as CSSProperties}><span><b>{overallPercent}%</b><small>video course</small></span></div></section>
+              <section className="stat-grid progress-stats"><article><span className="stat-icon copper"><CirclePlay size={21} /></span><div><b>{Math.floor(completedSeconds / 3600)}h {Math.round((completedSeconds % 3600) / 60)}m</b><p>Video time completed</p></div></article><article><span className="stat-icon cyan"><BookOpen size={21} /></span><div><b>{learner.completedLessonAssessmentIds.length}<small> / {allLessons.length}</small></b><p>Lesson recaps mastered</p></div></article><article><span className="stat-icon green"><RotateCcw size={21} /></span><div><b>{dueFlashcards.length}</b><p>Flashcards due for review</p></div></article><article><span className="stat-icon amber"><Award size={21} /></span><div><b>{learner.completedModuleAssessmentIds.length}<small> / {course.modules.length}</small></b><p>Modules mastered</p></div></article></section>
+              <details className="mastery-centre">
+                <summary>Module quizzes &amp; flashcard review</summary>
+                <section className="review-queue-banner"><span className="review-queue-icon"><RotateCcw size={25} /></span><div><span className="eyebrow neutral">Flashcards</span><h3>{dueFlashcards.length ? `${dueFlashcards.length} cards due` : 'No cards due today'}</h3><p>{dueFlashcards.length ? 'Review up to 30 cards.' : 'Review a lesson to add cards.'}</p></div><button type="button" disabled={!dueReviewCards.length} onClick={() => setReviewQueueOpen((current) => !current)}>{reviewQueueOpen ? 'Close review' : 'Start due review'} <ArrowRight size={17} /></button></section>
                 {reviewQueueOpen && dueReviewCards.length > 0 && <div className="due-review-panel"><AssessmentPanel
                   key={`due-${today}`}
                   eyebrow="Today’s recall session"
-                  title="Review what is due—not what is easy."
-                  description="This queue mixes lessons across the course so you must retrieve the idea without relying on the order in which you learned it."
+                  title="Due flashcards"
+                  description="Recall each answer, then check it."
                   flashcards={dueReviewCards}
                   questions={dueReviewQuestions}
                   progress={learner.flashcardProgress}
@@ -1122,7 +1018,7 @@ export default function CourseApp() {
                   key={selectedMasteryModule.id}
                   eyebrow={`Module ${pad(selectedMasteryModule.number)} mastery`}
                   title={selectedMasteryModule.title}
-                  description="This balanced review draws from lessons across the module. Reach 80%, then return when the spaced cards become due."
+                  description="Review this module. Score 80% to pass."
                   flashcards={selectedMasteryAssessment.flashcards}
                   questions={selectedMasteryAssessment.questions}
                   progress={learner.flashcardProgress}
@@ -1137,23 +1033,7 @@ export default function CourseApp() {
                   }}
                   continueLabel={selectedMasteryModule.number === course.modules.length ? 'View progress' : 'Next module review'}
                 />
-              </section>
-            </div>
-          )}
-          {view === 'toolkit' && (
-            <div className="page toolkit-page">
-              <section className="page-hero light-hero"><div><span className="eyebrow neutral"><Calculator size={16} /> Learning toolkit</span><h1>Calculate with meaning.</h1><p>Formula practice and plain-language definitions designed to reveal the reasoning—not hide it behind a result.</p></div><div className="toolkit-badge"><Gauge size={28} /><div><strong>Training calculators</strong><p>Educational relationships only. They do not approve cable, device or installation design.</p></div></div></section>
-              <section className="calculator-workspace">
-                <div className="calculator-panel"><div className="section-heading compact"><div><span className="eyebrow neutral">Formula lab</span><h2>Choose a relationship</h2></div></div><div className="calculator-tabs">{([['ohm', 'Ohm’s law'], ['power', 'Power'], ['three-phase', 'Three-phase']] as [CalculatorMode, string][]).map(([id, label]) => <button type="button" key={id} className={calculatorMode === id ? 'active' : ''} onClick={() => setCalculatorMode(id)}>{label}</button>)}</div><div className="formula-display"><small>Relationship</small><strong>{calculatorFormula}</strong><p>{calculatorMode === 'ohm' ? 'Enter any two known positive values. The missing quantity is calculated.' : calculatorMode === 'power' ? 'Electrical power is voltage multiplied by current for this simple relationship.' : 'Balanced three-phase real power includes the phase relationship and power factor.'}</p></div><div className="calculator-inputs"><label><span>Voltage</span><div><input inputMode="decimal" value={calculatorValues.voltage} onChange={(event) => setCalculatorValues((values) => ({ ...values, voltage: event.target.value }))} placeholder="0" /><b>V</b></div></label><label><span>Current</span><div><input inputMode="decimal" value={calculatorValues.current} onChange={(event) => setCalculatorValues((values) => ({ ...values, current: event.target.value }))} placeholder="0" /><b>A</b></div></label>{calculatorMode === 'ohm' && <label><span>Resistance</span><div><input inputMode="decimal" value={calculatorValues.resistance} onChange={(event) => setCalculatorValues((values) => ({ ...values, resistance: event.target.value }))} placeholder="0" /><b>Ω</b></div></label>}{calculatorMode === 'three-phase' && <label><span>Power factor</span><div><input inputMode="decimal" value={calculatorValues.powerFactor} onChange={(event) => setCalculatorValues((values) => ({ ...values, powerFactor: event.target.value }))} placeholder="0.8" /><b>PF</b></div></label>}</div><div className="calculator-result"><Zap size={25} /><div><small>Calculated result</small><strong>{calculatorResult}</strong></div></div><div className="training-warning"><Info size={18} /><span>Use values from an approved learning exercise. Real installation design requires current standards, verified supply data and competent review.</span></div></div>
-                <aside className="formula-reference"><span className="eyebrow neutral">Quick reference</span><h2>Core relationships</h2>{[['Ohm’s law', 'V = I × R', 'Voltage, current and resistance'], ['Power', 'P = V × I', 'Rate of electrical energy transfer'], ['Energy', 'E = P × t', 'Power used over time'], ['Series resistance', 'Rᵀ = R₁ + R₂ + …', 'Resistances add in one path'], ['Three-phase power', 'P = √3 × V × I × PF', 'Balanced real power relationship']].map(([name, formula, description]) => <div className="formula-row" key={name}><span><strong>{name}</strong><small>{description}</small></span><b>{formula}</b></div>)}</aside>
-              </section>
-              <section className="glossary-section"><div className="section-heading"><div><span className="eyebrow neutral">Plain-language reference</span><h2>Electrical glossary</h2></div><div className="glossary-search"><Search size={18} /><input value={toolQuery} onChange={(event) => setToolQuery(event.target.value)} placeholder="Search a term" aria-label="Search electrical glossary" /></div></div><div className="glossary-grid">{filteredGlossary.map((entry) => <article key={entry.term}><span>{entry.category}</span><h3>{entry.term}</h3><p>{entry.definition}</p></article>)}</div>{!filteredGlossary.length && <div className="empty-state"><Search size={24} /><h3>No glossary match</h3><p>Try a broader term such as current, protection, circuit or testing.</p></div>}</section>
-            </div>
-          )}
-          {view === 'progress' && (
-            <div className="page progress-page">
-              <section className="progress-hero"><div><span className="eyebrow"><BarChart3 size={16} /> Your learning record</span><h1>Progress you can understand.</h1><p>Completion is only one signal. Combine lessons, reading, practice, confidence and reflection to build real mastery.</p></div><div className="overall-ring" style={{ '--progress': `${overallPercent * 3.6}deg` } as CSSProperties}><span><b>{overallPercent}%</b><small>video course</small></span></div></section>
-              <section className="stat-grid progress-stats"><article><span className="stat-icon copper"><CirclePlay size={21} /></span><div><b>{Math.floor(completedSeconds / 3600)}h {Math.round((completedSeconds % 3600) / 60)}m</b><p>Video time completed</p></div></article><article><span className="stat-icon cyan"><BookOpen size={21} /></span><div><b>{learner.completedLessonAssessmentIds.length}<small> / {allLessons.length}</small></b><p>Lesson recaps mastered</p></div></article><article><span className="stat-icon green"><RotateCcw size={21} /></span><div><b>{dueFlashcards.length}</b><p>Flashcards due for review</p></div></article><article><span className="stat-icon amber"><Award size={21} /></span><div><b>{learner.completedModuleAssessmentIds.length}<small> / {course.modules.length}</small></b><p>Modules mastered</p></div></article></section>
+              </details>
               <div className="progress-layout">
                 <section className="module-progress-panel"><div className="section-heading compact"><div><span className="eyebrow neutral">Video pathway</span><h2>Module progress</h2></div></div><div className="module-progress-list">{course.modules.map((module) => { const done = moduleCompletedCount(module); const modulePercent = percent(done, module.lessons.length); return <button type="button" key={module.id} onClick={() => chooseModule(module)}><span className="module-index">{pad(module.number)}</span><span className="module-progress-copy"><strong>{module.title}</strong><small>{done} of {module.lessons.length} lessons</small><span className="progress-line"><i style={{ width: `${modulePercent}%` }} /></span></span><b>{modulePercent}%</b><ChevronRight size={18} /></button>; })}</div></section>
                 <aside className="progress-side"><section className="goal-card"><div className="goal-card-head"><Target size={22} /><span>Weekly study goal</span></div><b>{weekMinutes}<small> / {learner.weeklyGoalMinutes} minutes</small></b><div className="progress-line"><span style={{ width: `${weekPercent}%` }} /></div><label><span>Set a weekly goal</span><input type="number" min="30" max="1200" step="30" value={learner.weeklyGoalMinutes} onChange={(event) => setLearner((current) => ({ ...current, weeklyGoalMinutes: Math.max(30, Math.min(1200, Number(event.target.value) || 30)), updatedAt: new Date().toISOString() }))} /><small>minutes</small></label></section><section className="mastery-card"><span className="eyebrow neutral">Confidence snapshot</span><h3>{Object.values(learner.confidence).filter((value) => value === 3).length} lessons you can explain</h3><p>{Object.values(learner.confidence).filter((value) => value === 1).length} marked for review · {learner.bookmarkedLessonIds.length} saved · {Object.values(learner.notes).filter(Boolean).length} with notes.</p><button type="button" onClick={() => navigate('learn')}>Continue building mastery <ArrowRight size={17} /></button></section><section className="backup-card"><Database size={22} /><div><strong>Keep your progress safe</strong><p>Progress is device-local. Download a backup before changing browser or computer.</p></div><button type="button" onClick={exportProgress}><Download size={17} /> Download backup</button></section></aside>
@@ -1161,15 +1041,15 @@ export default function CourseApp() {
             </div>
           )}
         </main>
-        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.slice(0, 5).map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}</nav>
+        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}</nav>
       </div>
 
       {searchOpen && (
         <div className="modal-layer" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSearchOpen(false); }}>
           <section className="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
-            <div className="dialog-title"><div><span className="eyebrow neutral">Global search</span><h2 id="search-title">Find anything in your workshop</h2></div><button type="button" onClick={() => setSearchOpen(false)} aria-label="Close search"><X size={22} /></button></div>
+            <div className="dialog-title"><div><span className="eyebrow neutral">Global search</span><h2 id="search-title">Search the course</h2></div><button type="button" onClick={() => setSearchOpen(false)} aria-label="Close search"><X size={22} /></button></div>
             <label className="search-field"><Search size={21} /><input ref={searchInputRef} value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Try “earthing”, “safe isolation” or “voltage drop”…" autoComplete="off" /><kbd>esc</kbd></label>
-            <div className="search-results">{searchResults.map((result) => <button type="button" key={`${result.kind}-${result.id}`} onClick={() => chooseSearchResult(result)}><span className="result-icon">{result.kind === 'Video lesson' ? <PlayCircle size={19} /> : result.kind === 'Reading guide' ? <BookOpen size={19} /> : result.kind === 'Practice lab' ? <FlaskConical size={19} /> : <BookOpen size={19} />}</span><span><small>{result.kind}</small><strong>{result.title}</strong><p>{result.subtitle}</p></span><ChevronRight size={18} /></button>)}</div>
+            <div className="search-results">{searchResults.map((result) => <button type="button" key={`${result.kind}-${result.id}`} onClick={() => chooseSearchResult(result)}><span className="result-icon">{result.kind === 'Video lesson' ? <PlayCircle size={19} /> : <BookOpen size={19} />}</span><span><small>{result.kind}</small><strong>{result.title}</strong><p>{result.subtitle}</p></span><ChevronRight size={18} /></button>)}</div>
             {!searchResults.length && <div className="empty-state"><Search size={25} /><h3>No results yet</h3><p>Try a shorter topic or search one word.</p></div>}
           </section>
         </div>
@@ -1180,9 +1060,9 @@ export default function CourseApp() {
             <div className="dialog-title"><div><span className="eyebrow neutral">Device & data</span><h2 id="settings-title">Settings</h2></div><button type="button" onClick={() => setSettingsOpen(false)} aria-label="Close settings"><X size={22} /></button></div>
             <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>Progress stays in this browser</strong><p>No account is required. Your course record and notes are stored locally on this device—not sent to the site host.</p></div></div>
             <section className="settings-section playback-settings"><span className="eyebrow neutral">Playback & recall</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished lesson</strong><small>Continue automatically when the required recap is complete</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><button className="settings-switch" type="button" role="switch" aria-checked={learner.reviewBeforeNext} onClick={() => { const enabled = !learner.reviewBeforeNext; setLearner((current) => ({ ...current, reviewBeforeNext: enabled, updatedAt: new Date().toISOString() })); setToast(enabled ? 'Lesson recap is now required before auto-next.' : 'Auto-next will use the five-second countdown without opening the recap.'); }}><ListChecks size={19} /><span><strong>Review before next</strong><small>Open flashcards and quiz when a video finishes</small></span><span className={`switch-track ${learner.reviewBeforeNext ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>Recommended: keep both settings on. In fullscreen, the app waits for you to exit safely before changing the lesson.</p></section>
-            <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save lessons, reading, labs, quiz and notes</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>
-            <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>lessons</span></div><div><b>{completedReading.size}</b><span>guides</span></div><div><b>{completedLabs.size}</b><span>labs</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This permanently clears progress from this browser. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Clear local progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset local progress</strong><small>Clear this browser’s learning record</small></span></button>}</section>
-            <div className="settings-footnote"><Info size={18} /><p>Videos stream from YouTube and need internet access. The source PDFs are not part of this website; choosing one in Library opens your own local copy only.</p></div>
+            <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save progress, quiz results and notes</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>
+            <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>lessons</span></div><div><b>{learner.completedLessonAssessmentIds.length}</b><span>quizzes passed</span></div><div><b>{Object.values(learner.notes).filter(Boolean).length}</b><span>notes</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This permanently clears progress from this browser. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Clear local progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset local progress</strong><small>Clear this browser’s learning record</small></span></button>}</section>
+            <div className="settings-footnote"><Info size={18} /><p>Videos stream from YouTube and need internet access.</p></div>
           </section>
         </div>
       )}
