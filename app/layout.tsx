@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
+import 'katex/dist/katex.min.css';
 import './globals.css';
+import './learning-ui.css';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =

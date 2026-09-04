@@ -3,13 +3,14 @@
 import type { ChangeEvent, CSSProperties } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Script from 'next/script';
+import dynamic from 'next/dynamic';
 import {
   AlertTriangle, ArrowRight, Award, BarChart3, BookOpen, Bookmark, Calculator,
   Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Circle,
   CirclePlay, Database, Download, ExternalLink,
-  Gauge, Home, Info, Lightbulb, ListChecks, LockKeyhole, Menu, NotebookPen,
+  Home, Info, Layers, ListChecks, LockKeyhole, Menu, NotebookPen,
   PlayCircle, RotateCcw, Search, Settings, ShieldCheck, SkipForward, Sparkles, Target,
-  Upload, Wrench, X, Zap,
+  Upload, X, Zap,
 } from 'lucide-react';
 import baseCourse from './course-data.json';
 import courseExtension from './course-extension-data';
@@ -17,6 +18,10 @@ import { bookCompanions, glossary, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
 import { buildAssessmentBank } from './assessment-data';
+
+const LearningToolkit = dynamic(() => import('./learning-toolkit'), {
+  loading: () => <div className="page" role="status">Loading toolkit…</div>,
+});
 
 const baseDurationSeconds = baseCourse.modules.reduce((sum, module) => sum + module.durationSeconds, 0);
 const combinedDurationSeconds = baseDurationSeconds + courseExtension.durationSeconds;
@@ -33,8 +38,7 @@ const course = {
 
 type CourseModule = (typeof course.modules)[number];
 type View = 'home' | 'learn' | 'toolkit' | 'progress';
-type LessonTab = 'watch' | 'study' | 'review' | 'notes';
-type CalculatorMode = 'ohm' | 'power' | 'three-phase';
+type LessonTab = 'overview' | 'quiz' | 'cards' | 'notes';
 type AutoNextState = {
   seconds: number;
   fromLessonId: string;
@@ -236,7 +240,7 @@ export default function CourseApp() {
   const [learner, setLearner] = useState<LearnerState>(initialLearnerState);
   const [hydrated, setHydrated] = useState(false);
   const [view, setView] = useState<View>('home');
-  const [lessonTab, setLessonTab] = useState<LessonTab>('watch');
+  const [lessonTab, setLessonTab] = useState<LessonTab>('overview');
   const [openModuleId, setOpenModuleId] = useState(course.modules[0].id);
   const [moduleDrawerOpen, setModuleDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -247,8 +251,6 @@ export default function CourseApp() {
   const [selectedMasteryModuleId, setSelectedMasteryModuleId] = useState(course.modules[0].id);
   const [reviewQueueOpen, setReviewQueueOpen] = useState(false);
   const [toolQuery, setToolQuery] = useState('');
-  const [calculatorMode, setCalculatorMode] = useState<CalculatorMode>('ohm');
-  const [calculatorValues, setCalculatorValues] = useState({ voltage: '', current: '', resistance: '', powerFactor: '0.8' });
   const [youtubeApiReady, setYouTubeApiReady] = useState(false);
   const [autoPlayLessonId, setAutoPlayLessonId] = useState<string | null>(null);
   const [autoNextState, setAutoNextState] = useState<AutoNextState>(null);
@@ -326,7 +328,7 @@ export default function CourseApp() {
     setAutoPlayLessonId(nextLessonId);
     setLearner((current) => ({ ...current, activeLessonId: nextLessonId, updatedAt: new Date().toISOString() }));
     setOpenModuleId(nextLocation.module.id);
-    setLessonTab('watch');
+    setLessonTab('overview');
     setView('learn');
     window.history.replaceState(null, '', `#learn/${nextLessonId}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -574,7 +576,7 @@ export default function CourseApp() {
           }
 
           if (reviewBeforeNextRef.current) {
-            setLessonTab('review');
+            setLessonTab('cards');
             setToast('Video complete. Review the flashcards and quiz before moving to the next lesson.');
             return;
           }
@@ -609,11 +611,6 @@ export default function CourseApp() {
     ];
     return results.filter((result) => !query || result.searchable.toLocaleLowerCase().includes(query)).slice(0, 36);
   }, [searchQuery]);
-
-  const filteredGlossary = glossary.filter((entry) => {
-    const query = toolQuery.trim().toLocaleLowerCase();
-    return !query || `${entry.term} ${entry.definition} ${entry.category}`.toLocaleLowerCase().includes(query);
-  });
 
   const cancelAutoNext = (announce = false) => {
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
@@ -666,7 +663,7 @@ export default function CourseApp() {
     setAutoPlayLessonId(null);
     setLearner((current) => ({ ...current, activeLessonId: lessonId, updatedAt: new Date().toISOString() }));
     setOpenModuleId(nextLocation.module.id);
-    setLessonTab('watch');
+    setLessonTab('overview');
     setView('learn');
     setSearchOpen(false);
     setModuleDrawerOpen(false);
@@ -785,24 +782,6 @@ export default function CourseApp() {
 
   const resetProgress = () => { setLearner(initialLearnerState); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
   const moduleCompletedCount = (module: CourseModule) => module.lessons.filter((lesson) => completed.has(lesson.id)).length;
-
-  const voltage = Number(calculatorValues.voltage);
-  const current = Number(calculatorValues.current);
-  const resistance = Number(calculatorValues.resistance);
-  const powerFactor = Number(calculatorValues.powerFactor);
-  let calculatorResult = 'Enter the known values to see a result.';
-  let calculatorFormula = 'V = I × R';
-  if (calculatorMode === 'ohm') {
-    if (voltage > 0 && current > 0) calculatorResult = `Resistance = ${(voltage / current).toFixed(2)} Ω`;
-    else if (current > 0 && resistance > 0) calculatorResult = `Voltage = ${(current * resistance).toFixed(2)} V`;
-    else if (voltage > 0 && resistance > 0) calculatorResult = `Current = ${(voltage / resistance).toFixed(2)} A`;
-  } else if (calculatorMode === 'power') {
-    calculatorFormula = 'P = V × I';
-    if (voltage > 0 && current > 0) calculatorResult = `Power = ${(voltage * current).toFixed(2)} W`;
-  } else {
-    calculatorFormula = 'P = √3 × V × I × PF';
-    if (voltage > 0 && current > 0 && powerFactor > 0 && powerFactor <= 1) calculatorResult = `Three-phase power = ${((Math.sqrt(3) * voltage * current * powerFactor) / 1000).toFixed(2)} kW`;
-  }
 
   return (
     <div className="app-shell">
@@ -930,35 +909,32 @@ export default function CourseApp() {
                   <div><button className={`bookmark-button ${bookmarked.has(activeLesson.id) ? 'active' : ''}`} type="button" onClick={toggleBookmark}><Bookmark size={18} fill={bookmarked.has(activeLesson.id) ? 'currentColor' : 'none'} /> {bookmarked.has(activeLesson.id) ? 'Saved' : 'Save lesson'}</button><button className={`auto-next-toggle ${learner.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={18} /> Auto-next <span>{learner.autoNextEnabled ? 'On' : 'Off'}</span></button><a className="transcript-link" href={activeLesson.url} target="_blank" rel="noreferrer">Open on YouTube <ExternalLink size={15} /></a></div>
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" onClick={() => toggleComplete(!completed.has(activeLesson.id))}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Lesson completed' : 'Complete & continue'} {!completed.has(activeLesson.id) && <ArrowRight size={18} />}</button>
                 </div>
-                <nav className="lesson-tabs" aria-label="Lesson sections">{([['watch', 'Overview', CirclePlay], ['study', 'Summary', BookOpen], ['review', 'Review', ListChecks], ['notes', 'My notes', NotebookPen]] as const).map(([id, label, Icon]) => <button key={id} type="button" className={lessonTab === id ? 'active' : ''} onClick={() => setLessonTab(id)}><Icon size={18} />{label}</button>)}</nav>
+                <nav className="lesson-tabs" role="tablist" aria-label="Lesson sections" onKeyDown={(event) => {
+                  const tabs = Array.from(event.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+                  const index = tabs.indexOf(event.target as HTMLButtonElement);
+                  const next = event.key === 'ArrowRight' ? (index + 1) % tabs.length : event.key === 'ArrowLeft' ? (index - 1 + tabs.length) % tabs.length : event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : -1;
+                  if (next >= 0) { event.preventDefault(); tabs[next].focus(); tabs[next].click(); }
+                }}>{([['overview', 'Overview', BookOpen], ['quiz', 'Quiz', ListChecks], ['cards', 'Flashcards', Layers], ['notes', 'My notes', NotebookPen]] as const).map(([id, label, Icon]) => <button key={id} id={`lesson-tab-${id}`} type="button" role="tab" aria-selected={lessonTab === id} aria-controls={id === 'quiz' || id === 'cards' ? 'lesson-assessment' : `lesson-${id}`} tabIndex={lessonTab === id ? 0 : -1} className={lessonTab === id ? 'active' : ''} onClick={() => setLessonTab(id)}><Icon size={18} />{label}</button>)}</nav>
 
                 <div className="lesson-tab-content">
-                  {lessonTab === 'watch' && <div className="lesson-reading-layout">
-                    <section className="lesson-main-card"><span className="eyebrow neutral">Why this lesson matters</span><h2>{activeLesson.topic}</h2><p className="reading-lead">{activeLesson.rationale}</p><div className="before-card"><Lightbulb size={20} /><div><strong>Before you begin</strong><p>{activeLesson.prerequisite}</p></div></div>{activeLesson.regulationSensitive && <div className="regulation-notice"><AlertTriangle size={21} /><div><strong>Verify current requirements</strong><p>{activeLesson.regulationStatus}. Confirm current KS 662, EPRA requirements, utility rules and manufacturer instructions.</p></div></div>}</section>
-                    <aside className="lesson-context-card"><span className="eyebrow neutral">Learning outcome</span><h3>By the end, you should be able to:</h3><ul><li><Check size={16} />Explain {activeLesson.topic.toLocaleLowerCase()} in your own words.</li><li><Check size={16} />Connect the concept to a complete installation.</li><li><Check size={16} />Identify what must be verified before real work.</li></ul></aside>
-                  </div>}
+                  <section id="lesson-overview" role="tabpanel" aria-labelledby="lesson-tab-overview" hidden={lessonTab !== 'overview'} className="lesson-overview">
+                    <p className="overview-summary">{activeGuide.summary}</p>
+                    <ul className="overview-takeaways">{activeGuide.keyConcepts.filter((concept) => !activeGuide.summary.toLocaleLowerCase().includes(concept.replace(/[.!?]$/, '').toLocaleLowerCase())).map((concept) => <li key={concept}><CheckCircle2 size={18} /><span>{concept}</span></li>)}</ul>
+                    <div className="overview-application"><strong>Put it into context</strong><p>{activeGuide.practicalConnection}</p></div>
+                    {activeLesson.regulationSensitive && <div className="regulation-notice"><AlertTriangle size={20} /><div><strong>Check before applying</strong><p>{activeLesson.regulationStatus}</p></div></div>}
+                    <details className="lesson-extra"><summary>Before you begin</summary><p>{activeLesson.prerequisite}</p></details>
+                    <div className="confidence-inline"><span>How well do you understand this?</span><div>{([1, 2, 3] as const).map((rating) => <button key={rating} type="button" aria-pressed={learner.confidence[activeLesson.id] === rating} onClick={() => setConfidence(rating)}>{rating === 1 ? 'Revisit' : rating === 2 ? 'Getting there' : 'Can explain'}</button>)}</div></div>
+                  </section>
 
-                  {lessonTab === 'study' && <div className="lesson-study-stack">
-                    <section className="lesson-summary-card">
-                      <div className="summary-card-heading"><div><span className="eyebrow"><BookOpen size={16} /> Lesson summary</span><h2>{activeLesson.topic}</h2></div><span className="summary-lesson-code">M{pad(location.module.number)} · L{pad(activeLesson.number)}</span></div>
-                      <div className="plain-summary"><span className="eyebrow neutral">Clear summary</span><p>{activeGuide.summary}</p></div>
-                      <div className="summary-learning-grid">
-                        <article className="key-concepts-card"><span className="eyebrow neutral">Key concepts to understand</span><ol>{activeGuide.keyConcepts.map((concept, index) => <li key={concept}><span>{index + 1}</span><p>{concept}</p></li>)}</ol></article>
-                        <aside className="summary-side-stack"><section className="practical-connection"><Wrench size={20} /><div><span className="eyebrow neutral">Where this connects</span><p>{activeGuide.practicalConnection}</p></div></section><section className="remember-card"><Lightbulb size={21} /><div><span className="eyebrow">Remember this</span><strong>{activeGuide.remember}</strong></div></section></aside>
-                      </div>
-                      <div className="self-check-card"><span><ListChecks size={21} /></span><div><span className="eyebrow neutral">Check yourself</span><h3>{activeGuide.checkYourself}</h3><p>Try answering aloud without looking back. If it is difficult, replay the key section and update your notes.</p></div></div>
-                      {activeLesson.regulationSensitive && <div className="regulation-notice"><AlertTriangle size={21} /><div><strong>Concept first—current rules second</strong><p>This summary explains the principle only. Verify current KS 662, EPRA requirements, utility rules and manufacturer instructions before applying regulation-sensitive details.</p></div></div>}
-                    </section>
-                      <aside className="lesson-context-card confidence-card"><span className="eyebrow neutral">Quick reflection</span><h3>How confident do you feel?</h3><p>This is private and helps you spot topics to revisit.</p><div className="confidence-options">{([1, 2, 3] as const).map((rating) => <button key={rating} className={learner.confidence[activeLesson.id] === rating ? 'active' : ''} type="button" onClick={() => setConfidence(rating)}><span>{rating}</span>{rating === 1 ? 'Review' : rating === 2 ? 'Getting it' : 'Can explain'}</button>)}</div></aside>
-                  </div>}
-
-                  {lessonTab === 'review' && <div className="lesson-assessment-stack">
+                  <div id="lesson-assessment" role="tabpanel" aria-labelledby={`lesson-tab-${lessonTab === 'quiz' ? 'quiz' : 'cards'}`} hidden={lessonTab !== 'quiz' && lessonTab !== 'cards'}>
                     <AssessmentPanel
                       key={activeLesson.id}
                       eyebrow={`M${pad(location.module.number)} · L${pad(activeLesson.number)} lesson recap`}
                       title={activeLesson.title}
                       description="Review the flashcards, then take the quiz."
                       connectedLessonFlow
+                      mode={lessonTab === 'quiz' ? 'quiz' : 'cards'}
+                      onModeChange={setLessonTab}
                       flashcards={activeAssessment.flashcards}
                       questions={activeAssessment.questions}
                       progress={learner.flashcardProgress}
@@ -969,24 +945,15 @@ export default function CourseApp() {
                       onContinue={continueAfterLessonAssessment}
                       continueLabel={activeLesson.id === allLessons.at(-1)?.id ? 'Finish course' : 'Continue to next lesson'}
                     />
-                  </div>}
+                  </div>
 
-                  {lessonTab === 'notes' && <section className="notes-card"><div><span className="eyebrow neutral">Private notebook</span><h2>Notes for this lesson</h2><p>Saved automatically in this browser.</p></div><textarea value={learner.notes[activeLesson.id] ?? ''} onChange={(event) => setLearner((current) => ({ ...current, notes: { ...current.notes, [activeLesson.id]: event.target.value }, updatedAt: new Date().toISOString() }))} placeholder="Write what clicked, what needs review, and how this connects to work you know…" aria-label="Lesson notes" /><div className="autosave"><Check size={15} /> Local autosave</div></section>}
+                  {lessonTab === 'notes' && <section id="lesson-notes" role="tabpanel" aria-labelledby="lesson-tab-notes" className="notes-card"><div><h2>My notes</h2><p>Saved automatically in this browser.</p></div><textarea value={learner.notes[activeLesson.id] ?? ''} onChange={(event) => setLearner((current) => ({ ...current, notes: { ...current.notes, [activeLesson.id]: event.target.value }, updatedAt: new Date().toISOString() }))} placeholder="Write a key idea or a question to revisit…" aria-label="Lesson notes" /><div className="autosave"><Check size={15} /> Local autosave</div></section>}
                 </div>
                 <footer className="lesson-next-card"><div><span>Next lesson</span><h3>{allLessons[allLessons.findIndex((lesson) => lesson.id === activeLesson.id) + 1]?.title ?? 'Course complete'}</h3></div><button type="button" onClick={() => goRelative(1)} disabled={activeLesson.id === allLessons.at(-1)?.id}>Continue <ArrowRight size={18} /></button></footer>
               </article>
             </div>
           )}
-          {view === 'toolkit' && (
-            <div className="page toolkit-page">
-              <section className="page-hero light-hero"><div><span className="eyebrow neutral"><Calculator size={16} /> Learning toolkit</span><h1>Calculators & glossary.</h1><p>Check a formula or look up an electrical term.</p></div><div className="toolkit-badge"><Gauge size={28} /><div><strong>Training calculators</strong><p>Educational relationships only. They do not approve cable, device or installation design.</p></div></div></section>
-              <section className="calculator-workspace">
-                <div className="calculator-panel"><div className="section-heading compact"><div><span className="eyebrow neutral">Formula lab</span><h2>Choose a relationship</h2></div></div><div className="calculator-tabs">{([['ohm', 'Ohm’s law'], ['power', 'Power'], ['three-phase', 'Three-phase']] as [CalculatorMode, string][]).map(([id, label]) => <button type="button" key={id} className={calculatorMode === id ? 'active' : ''} onClick={() => setCalculatorMode(id)}>{label}</button>)}</div><div className="formula-display"><small>Relationship</small><strong>{calculatorFormula}</strong><p>{calculatorMode === 'ohm' ? 'Enter any two known positive values. The missing quantity is calculated.' : calculatorMode === 'power' ? 'Electrical power is voltage multiplied by current for this simple relationship.' : 'Balanced three-phase real power includes the phase relationship and power factor.'}</p></div><div className="calculator-inputs"><label><span>Voltage</span><div><input inputMode="decimal" value={calculatorValues.voltage} onChange={(event) => setCalculatorValues((values) => ({ ...values, voltage: event.target.value }))} placeholder="0" /><b>V</b></div></label><label><span>Current</span><div><input inputMode="decimal" value={calculatorValues.current} onChange={(event) => setCalculatorValues((values) => ({ ...values, current: event.target.value }))} placeholder="0" /><b>A</b></div></label>{calculatorMode === 'ohm' && <label><span>Resistance</span><div><input inputMode="decimal" value={calculatorValues.resistance} onChange={(event) => setCalculatorValues((values) => ({ ...values, resistance: event.target.value }))} placeholder="0" /><b>Ω</b></div></label>}{calculatorMode === 'three-phase' && <label><span>Power factor</span><div><input inputMode="decimal" value={calculatorValues.powerFactor} onChange={(event) => setCalculatorValues((values) => ({ ...values, powerFactor: event.target.value }))} placeholder="0.8" /><b>PF</b></div></label>}</div><div className="calculator-result"><Zap size={25} /><div><small>Calculated result</small><strong>{calculatorResult}</strong></div></div><div className="training-warning"><Info size={18} /><span>Use values from an approved learning exercise. Real installation design requires current standards, verified supply data and competent review.</span></div></div>
-                <aside className="formula-reference"><span className="eyebrow neutral">Quick reference</span><h2>Core relationships</h2>{[['Ohm’s law', 'V = I × R', 'Voltage, current and resistance'], ['Power', 'P = V × I', 'Rate of electrical energy transfer'], ['Energy', 'E = P × t', 'Power used over time'], ['Series resistance', 'Rᵀ = R₁ + R₂ + …', 'Resistances add in one path'], ['Three-phase power', 'P = √3 × V × I × PF', 'Balanced real power relationship']].map(([name, formula, description]) => <div className="formula-row" key={name}><span><strong>{name}</strong><small>{description}</small></span><b>{formula}</b></div>)}</aside>
-              </section>
-              <section className="glossary-section"><div className="section-heading"><div><span className="eyebrow neutral">Plain-language reference</span><h2>Electrical glossary</h2></div><div className="glossary-search"><Search size={18} /><input value={toolQuery} onChange={(event) => setToolQuery(event.target.value)} placeholder="Search a term" aria-label="Search electrical glossary" /></div></div><div className="glossary-grid">{filteredGlossary.map((entry) => <article key={entry.term}><span>{entry.category}</span><h3>{entry.term}</h3><p>{entry.definition}</p></article>)}</div>{!filteredGlossary.length && <div className="empty-state"><Search size={24} /><h3>No glossary match</h3><p>Try a broader term such as current, protection, circuit or testing.</p></div>}</section>
-            </div>
-          )}
+          {view === 'toolkit' && <LearningToolkit query={toolQuery} onQueryChange={setToolQuery} />}
           {view === 'progress' && (
             <div className="page progress-page">
               <section className="progress-hero"><div><span className="eyebrow"><BarChart3 size={16} /> Your learning record</span><h1>Your progress.</h1><p>Track completed lessons, quiz results and study time.</p></div><div className="overall-ring" style={{ '--progress': `${overallPercent * 3.6}deg` } as CSSProperties}><span><b>{overallPercent}%</b><small>video course</small></span></div></section>

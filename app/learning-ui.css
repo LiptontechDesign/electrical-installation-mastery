@@ -1,0 +1,195 @@
+/* Focused lesson workspace */
+[hidden] { display: none !important; }
+.lesson-tabs { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); }
+.lesson-tabs button { justify-content: center; min-width: 0; }
+.lesson-overview { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: clamp(20px,3vw,32px); }
+.overview-summary { margin: 0; color: var(--ink); font-size: 18px; line-height: 1.75; max-width: 80ch; }
+.overview-takeaways { list-style: none; display: grid; gap: 14px; padding: 0; margin: 24px 0; }
+.overview-takeaways:empty { display: none; }
+.overview-takeaways li { display: flex; align-items: start; gap: 12px; font-size: 16px; }
+.overview-takeaways svg { flex-shrink: 0; margin-top: 4px; color: #14855b; }
+.overview-application { margin-top: 24px; padding: 18px 20px; border-left: 3px solid var(--cyan); background: #f0f8f9; }
+.overview-application strong { font-size: 14px; color: #20626d; }
+.overview-application p { margin: 5px 0 0; font-size: 16px; }
+.lesson-extra { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.lesson-extra summary { cursor: pointer; font-size: 14px; font-weight: 750; color: var(--muted); }
+.lesson-extra p { font-size: 16px; margin: 12px 0 0; }
+.confidence-inline { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding-top: 20px; font-size: 14px; color: var(--muted); }
+.confidence-inline > div { display: flex; flex-wrap: wrap; gap: 6px; }
+.confidence-inline button { min-height: 42px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; background: white; font-size: 14px; }
+.confidence-inline button[aria-pressed=true] { background: #e3f5ec; border-color: #16805a; color: #126846; }
+
+/* Assessments: one activity, one clear next action */
+.focused-assessment { box-shadow: none; border-radius: 18px; }
+.compact-assessment-heading { padding: 22px 26px 8px; }
+.compact-assessment-heading h2 { margin: 6px 0 14px; font-size: 24px; }
+.session-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
+.session-heading h2 { margin: 0; font-size: 20px; letter-spacing: -.025em; }
+.session-heading h2 span { color: var(--muted); font-weight: 500; }
+.session-heading > span { color: var(--muted); font-size: 14px; }
+.recall-map { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px; }
+.recall-map button { display: grid; place-items: center; min-width: 36px; min-height: 36px; border-radius: 8px; border: 1px solid transparent; background: #eef2f5; color: #65737f; font-size: 13px; }
+.recall-map .known { background: #ddf4e8; color: #146944; }
+.recall-map .again { background: #fff0da; color: #8b4c09; }
+.recall-map .current { border: 2px solid var(--navy); color: var(--navy); font-weight: 800; }
+.recall-card { width: 100%; min-height: 290px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; padding: clamp(24px,4vw,38px); border-radius: 16px; background: var(--navy-2); color: #f5f8fb; text-align: left; border: 2px solid var(--navy-2); transition: background .2s ease, border-color .2s ease; }
+.recall-card.revealed { background: #effaf6; color: var(--ink); border-color: #94cdb6; }
+.recall-card-meta { display: flex; justify-content: space-between; align-items: center; color: var(--cyan); font-size: 14px; }
+.recall-card.revealed .recall-card-meta { color: #18704f; }
+.recall-copy { display: block; max-width: 46ch; margin: 28px 0; font-size: clamp(22px,2.7vw,30px); font-weight: 650; line-height: 1.4; letter-spacing: -.025em; }
+.recall-source { color: #b6c6d4; font-size: 14px; margin-top: 14px; }
+.revealed .recall-source { color: #547065; }
+.recall-hint { font-size: 14px; color: #a9bfce; }
+.revealed .recall-hint { color: #557367; }
+.recall-tally { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding-top: 20px; color: #4f6870; font-size: 14px; }
+.recall-tally span, .recall-tally button { display: inline-flex; align-items: center; gap: 6px; }
+.recall-tally button { margin-left: auto; background: transparent; color: #176c78; min-height: 40px; font-weight: 750; }
+.quiz-map { display: flex; gap: 4px; margin-bottom: 26px; }
+.quiz-map span { flex: 1; height: 7px; background: #e7edf1; border-radius: 4px; }
+.quiz-map .current { background: var(--copper); }
+.quiz-map .known { background: #1d9266; }
+.quiz-map .again { background: #b86632; }
+.focused-assessment .assessment-options { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.focused-assessment .assessment-options button { align-items: start; min-height: 100px; grid-template-columns: 32px minmax(0,1fr) 20px; padding: 16px; }
+.focused-assessment .assessment-options .option-copy { display: block; width: auto; height: auto; background: none; padding: 0; color: var(--ink); font-size: 16px; font-weight: 500; line-height: 1.5; }
+.focused-assessment .assessment-options button:disabled { opacity: 1; cursor: default; }
+.focused-assessment .assessment-options button > svg { margin-top: 5px; }
+.focused-assessment .assessment-feedback { margin-top: 18px; }
+.focused-assessment .assessment-feedback p { margin-bottom: 0; font-size: 16px; }
+.quiz-finish { display: grid; grid-template-columns: 150px minmax(0,1fr); align-items: center; gap: 28px; padding: 36px; }
+.score-ring { width: 150px; height: 150px; padding: 10px; border-radius: 50%; }
+.score-ring > span { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; background: white; border-radius: 50%; }
+.score-ring b { font-size: 32px; }
+.score-ring small { font-size: 14px; color: var(--muted); }
+.quiz-finish h2 { margin: 0; font-size: 26px; }
+.quiz-finish p { font-size: 16px; color: var(--muted); }
+.quiz-best { display: flex; align-items: center; gap: 6px; color: #14744c; font-size: 14px; }
+.quiz-finish-actions { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
+.concept-visual { border: 1px solid #cddfe2; border-radius: 12px; padding: 16px 18px; background: #f7fbfc; margin-top: 20px; }
+.concept-visual > summary { cursor: pointer; color: #1e6470; font-size: 14px; font-weight: 800; }
+.particle-selector { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 20px; }
+.particle-selector button { display: grid; justify-items: center; gap: 8px; padding: 16px 6px; background: #fff; border: 2px solid transparent; border-radius: 12px; font-size: 14px; }
+.particle-selector b { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; font-size: 26px; }
+.particle-selector .positive b { background: #ffeadb; color: #92410c; }
+.particle-selector .neutral b { background: #e9edf1; color: #536270; }
+.particle-selector .negative b { background: #dbf5f8; color: #096775; }
+.particle-selector button[aria-pressed=true] { border-color: #347b87; }
+.particle-explanation { padding-top: 16px; font-size: 16px; }
+.particle-explanation p, .concept-visual > p { margin: 4px 0 0; font-size: 16px; }
+.circuit-switch { margin-top: 16px; min-height: 44px; background: #d7edf0; padding: 10px 16px; border-radius: 8px; }
+.circuit-model { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px 0; }
+.circuit-model span { border: 1px solid #d0d8df; padding: 12px; border-radius: 8px; background: #eef2f5; font-size: 14px; }
+.circuit-model.closed span { background: #e2f7eb; border-color: #8fc6a9; }
+
+/* Interactive formula studio */
+.interactive-toolkit { min-width: 0; }
+.toolkit-heading h1 { font-size: clamp(28px,3.6vw,42px); line-height: 1.15; letter-spacing: -.045em; margin: 12px 0; }
+.toolkit-heading p { color: var(--muted); font-size: 16px; margin: 0; }
+.formula-picker { display: grid; grid-template-columns: repeat(5,minmax(185px,1fr)); overflow-x: auto; gap: 10px; padding: 5px 2px 14px; margin-top: 28px; scroll-snap-type: x proximity; }
+.formula-picker button { min-width: 0; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 16px; text-align: left; scroll-snap-align: start; }
+.formula-picker button > span:first-child { font-size: 14px; font-weight: 750; }
+.formula-picker button[aria-pressed=true] { border-color: #287c8b; background: #eaf7f9; box-shadow: 0 0 0 1px #287c8b; }
+.math-formula { max-width: 100%; }
+.math-block { display: block; overflow-x: auto; padding: 6px 2px; }
+.math-formula .katex-display { margin: .25em 0; }
+.formula-picker .katex { font-size: 1.05em; }
+.formula-picker .math-formula { overflow-x: auto; }
+.formula-studio { display: grid; grid-template-columns: minmax(250px,.8fr) minmax(0,1.4fr); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: white; margin-top: 8px; }
+.formula-controls { padding: clamp(22px,3vw,32px); min-width: 0; }
+.formula-control-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.formula-control-heading h2 { font-size: 23px; letter-spacing: -.03em; margin: 0; }
+.example-reset { display: inline-flex; align-items: center; gap: 5px; background: transparent; color: #496a73; min-height: 40px; font-size: 14px; padding: 0; }
+.solve-for { display: flex; gap: 5px; border: 0; padding: 0; margin: 18px 0 0; flex-wrap: wrap; }
+.solve-for legend { font-size: 14px; color: var(--muted); padding: 0; margin-bottom: 8px; }
+.solve-for label { cursor: pointer; display: flex; align-items: center; gap: 5px; font-size: 14px; min-height: 40px; }
+.solve-for input { accent-color: #257787; }
+.solve-for span { padding-right: 9px; }
+.editable-values { display: grid; gap: 24px; margin-top: 24px; }
+.quantity-control > label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 14px; }
+.quantity-control label > span:first-child { display: flex; align-items: center; gap: 12px; }
+.quantity-control label .math-formula { color: #1c7785; font-size: 18px; }
+.quantity-unit { color: var(--muted); }
+.quantity-control input[type=number] { display: block; width: 100%; min-height: 48px; border: 1px solid #bdccd5; border-radius: 9px; background: #fbfcfd; color: var(--ink); font-size: 21px; padding: 10px 12px; font-variant-numeric: tabular-nums; }
+.quantity-control input[type=range] { width: 100%; min-height: 28px; margin: 8px 0 0; accent-color: #257787; cursor: pointer; }
+.formula-assumption { padding-top: 18px; margin: 24px 0 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.formula-live { min-width: 0; background: var(--navy-2); color: #eef8fc; padding: clamp(20px,3vw,32px); }
+.formula-equation { color: #9be8ee; font-size: clamp(22px,2.4vw,30px); }
+.formula-answer { text-align: center; padding: 16px 0; }
+.formula-answer > span { display: block; color: #b6cbd6; font-size: 14px; }
+.formula-answer > strong { font-size: clamp(30px,4vw,48px); font-weight: 650; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.formula-answer > strong small { font-size: 22px; color: var(--copper); }
+.formula-answer.invalid { color: #ffc39e; padding: 36px 15px; font-size: 16px; }
+.worked-equation { padding-bottom: 18px; color: #d7e5ed; border-bottom: 1px solid #344b60; font-size: 16px; }
+.formula-empty { display: grid; place-items: center; min-height: 250px; padding: 25px; color: #bdcbd5; text-align: center; }
+.formula-visual { margin: 22px 0 0; }
+.formula-visual figcaption { font-size: 14px; font-weight: 650; color: #c5d7e3; }
+.formula-visual svg { display: block; width: 100%; height: auto; max-height: 250px; margin: 15px 0; overflow: visible; }
+.formula-visual svg text { fill: #d6e6ee; font-family: inherit; font-size: 17px; }
+.formula-visual .diagram-answer { fill: #9ce5ec; font-size: 24px; font-weight: 700; }
+.diagram-wire, .diagram-source { stroke: #43d3e2; stroke-width: 3; fill: none; }
+.diagram-axis { stroke: #708798; stroke-width: 1.5; fill: none; }
+.diagram-load { fill: #322c2b; stroke: #ff914d; stroke-width: 3; }
+.diagram-flow { fill: none; stroke: #ff914d; stroke-width: 3; }
+.energy-area { fill: #43d3e2; opacity: .15; }
+.formula-visual p { color: #b1c6d4; font-size: 14px; margin: 8px 0 0; line-height: 1.5; }
+.resistance-stack { display: flex; gap: 3px; height: 12px; overflow: hidden; border-radius: 5px; }
+.resistance-stack span { background: var(--cyan); flex-basis: 0; }
+.resistance-stack span:nth-child(2) { background: var(--copper); }
+.resistance-stack span:nth-child(3) { background: #b7a4ff; }
+.power-factor-track { height: 12px; background: #35495d; border-radius: 5px; overflow: hidden; }
+.power-factor-track > span { display: block; height: 100%; background: var(--cyan); transition: width .15s; }
+.toolkit-scope { color: var(--muted); font-size: 14px; margin: 16px 0 38px; }
+.term-heading { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 14px; }
+.term-heading h2 { display: flex; gap: 10px; align-items: center; font-size: 24px; margin: 0; letter-spacing: -.03em; }
+.term-heading .glossary-search { width: 300px; max-width: 100%; }
+.term-categories { display: flex; gap: 7px; flex-wrap: wrap; margin: 18px 0; }
+.term-categories button { min-height: 40px; border: 1px solid var(--line); background: white; border-radius: 20px; padding: 8px 14px; color: var(--muted); font-size: 14px; }
+.term-categories button[aria-pressed=true] { background: var(--navy-2); color: white; border-color: var(--navy-2); }
+.term-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: start; gap: 10px; }
+.term-grid details { border: 1px solid var(--line); border-radius: 12px; background: white; }
+.term-grid summary { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 18px; gap: 10px; list-style: none; }
+.term-grid summary::-webkit-details-marker { display: none; }
+.term-grid summary small { display: block; color: #367884; font-size: 12px; margin-bottom: 5px; }
+.term-grid summary strong { font-size: 16px; }
+.term-grid summary svg { flex-shrink: 0; }
+.term-grid details[open] summary svg { transform: rotate(180deg); }
+.term-grid p { padding: 0 18px 18px; margin: 0; font-size: 16px; color: var(--muted); }
+.term-empty { background: #fff; padding: 24px; border-radius: 12px; font-size: 16px; }
+
+@media (max-width: 1100px) {
+  .focused-assessment .assessment-options { grid-template-columns: 1fr; }
+  .focused-assessment .assessment-options button { min-height: 68px; }
+  .term-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .formula-studio { grid-template-columns: 1fr; }
+  .editable-values { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .quantity-control:nth-child(3) { grid-column: 1 / -1; }
+  .formula-picker { grid-template-columns: repeat(5,190px); margin-top: 18px; }
+  .formula-assumption { margin-top: 14px; }
+  .quiz-finish { padding: 24px; gap: 20px; grid-template-columns: 110px minmax(0,1fr); }
+  .score-ring { width: 110px; height: 110px; padding: 8px; }
+  .score-ring b { font-size: 26px; }
+  .score-ring small { font-size: 12px; }
+  .quiz-finish h2 { font-size: 22px; }
+  .recall-copy { font-size: 23px; }
+  .focused-assessment .flashcard-actions { display: flex; flex-wrap: wrap; justify-content: space-between; }
+  .focused-assessment .flashcard-actions .card-rating, .focused-assessment .flashcard-actions .reveal-card { order: -1; width: 100%; }
+  .focused-assessment .flashcard-actions .card-nav { flex: 1; }
+  .focused-assessment .card-rating button { min-width: 0; flex: 1; }
+  .focused-assessment .assessment-quiz, .focused-assessment .flashcard-workspace { padding: 20px; }
+  .lesson-tabs button { font-size: 14px; gap: 6px; padding-inline: 5px; }
+  .term-heading .glossary-search { width: 100%; }
+}
+@media (max-width: 420px) {
+  .lesson-tabs button { flex-direction: column; font-size: 13px; }
+  .term-grid { grid-template-columns: 1fr; }
+  .quiz-finish { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .quiz-best { justify-content: center; }
+  .editable-values { grid-template-columns: 1fr; }
+  .circuit-model { gap: 4px; }
+  .circuit-model span { padding: 10px 6px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .recall-card, .power-factor-track > span { transition: none; }
+}
