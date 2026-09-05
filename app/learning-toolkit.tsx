@@ -1,15 +1,18 @@
 'use client';
 
 import { useId, useState } from 'react';
-import { BookOpen, ChevronDown, RotateCcw, Search, SlidersHorizontal } from 'lucide-react';
-import { glossary } from './learning-data';
+import { BookOpen, RotateCcw, Search, SlidersHorizontal } from 'lucide-react';
+import { electricalTerms as glossary, lessons, lessonById } from './knowledge-graph';
+import { ContextTerm } from './tutor-panels';
+import { calculations, faultCases, practiceForLesson } from './practice-data';
+import { lessonGuides } from './lesson-guides';
 import Formula from './formula';
 import ToolkitVisual from './toolkit-visual';
 import { calculate, formulas, formatNumber, ohmExpressions, type FormulaMode, type OhmTarget } from './toolkit-math';
 
 const categories = ['All', ...new Set(glossary.map((term) => term.category))];
 
-export default function LearningToolkit({ query, onQueryChange }: { query: string; onQueryChange: (query: string) => void }) {
+export default function LearningToolkit({ query, onQueryChange, onLesson = () => {}, onPractice = () => {} }: { query: string; onQueryChange: (query: string) => void; onLesson?: (id:string)=>void; onPractice?: (id:string)=>void }) {
   const id = useId();
   const [mode, setMode] = useState<FormulaMode>('ohm');
   const [target, setTarget] = useState<OhmTarget>('current');
@@ -20,7 +23,7 @@ export default function LearningToolkit({ query, onQueryChange }: { query: strin
   const { result, error } = calculate(spec, values, target);
   const fields = spec.fields.filter((field) => mode !== 'ohm' || field.key !== target);
   const filteredTerms = glossary.filter((entry) => (query.trim() || category === 'All' || category === entry.category)
-    && `${entry.term} ${entry.definition} ${entry.category}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
+    && `${entry.term} ${entry.aliases.join(' ')} ${entry.definition} ${entry.category}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
 
   const update = (key: string, value: string) => setExamples((current) => ({ ...current, [mode]: { ...current[mode], [key]: value } }));
 
@@ -38,7 +41,7 @@ export default function LearningToolkit({ query, onQueryChange }: { query: strin
           const sliderMax = Number.isFinite(sliderValue) ? Math.max(field.max, sliderValue) : field.max;
           return <div className="quantity-control" key={field.key}>
             <label htmlFor={`${id}-${field.key}`}><span><Formula tex={field.symbol} /> {field.label}</span><span className="quantity-unit">{field.unit}</span></label>
-            <input id={`${id}-${field.key}`} type="number" inputMode="decimal" min="0" max={field.key === 'pf' ? 1 : 1e9} step="any" value={values[field.key]} onChange={(event) => update(field.key, event.target.value)} aria-describedby={`${id}-calculation-status`} />
+            <output id={`${id}-${field.key}`}>{values[field.key]} {field.unit}</output>
             <input type="range" min="0" max={sliderMax} step={field.step} value={Number.isFinite(sliderValue) ? Math.max(0, sliderValue) : 0} onChange={(event) => update(field.key, event.target.value)} aria-label={`Adjust ${field.label.toLowerCase()}`} />
           </div>;
         })}</div>
@@ -56,8 +59,12 @@ export default function LearningToolkit({ query, onQueryChange }: { query: strin
     <section className="term-reference" aria-labelledby={`${id}-glossary`}>
       <div className="term-heading"><h2 id={`${id}-glossary`}><BookOpen size={22} /> Electrical glossary</h2><label className="glossary-search"><Search size={18} /><input value={query} onChange={(event) => { onQueryChange(event.target.value); setCategory('All'); }} placeholder="Find a term" aria-label="Search electrical glossary" /></label></div>
       <div className="term-categories" aria-label="Glossary categories">{categories.map((item) => <button type="button" key={item} aria-pressed={category === item} onClick={() => { setCategory(item); onQueryChange(''); }}>{item}</button>)}</div>
-      <div className="term-grid">{filteredTerms.map((entry) => <details key={entry.term}><summary><span><small>{entry.category}</small><strong>{entry.term}</strong></span><ChevronDown size={17} /></summary><p>{entry.definition}</p></details>)}</div>
+      <div className="context-term-list">{filteredTerms.map(entry=><ContextTerm key={entry.term} item={entry} onLesson={onLesson}/>)}</div>
       {!filteredTerms.length && <p className="term-empty" role="status">No matching terms. Try a shorter search.</p>}
     </section>
+    <section className="practice-library"><h2>Put the theory to work</h2><p>Open an activity inside its lesson context. Each model states its assumptions.</p><div className="practice-library-list">{[...calculations,...faultCases].map(activity=>{
+      const lesson=lessons.find(item=>{const practice=practiceForLesson(`${item.title} ${lessonGuides[item.id].summary}`);return practice.calculation?.id===activity.id||practice.cases.some(example=>example.id===activity.id);});
+      return lesson?<button key={activity.id} type="button" onClick={()=>onPractice(lesson.id)}><strong>{activity.title}</strong><small>{lessonById.get(lesson.id)?.title}</small></button>:null;
+    })}</div></section>
   </div>;
 }

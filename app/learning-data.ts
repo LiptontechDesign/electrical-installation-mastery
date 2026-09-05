@@ -34,7 +34,7 @@ export const bookCompanions: BookCompanion[] = [
     year: 2015,
     accent: 'cyan',
     description: 'A five-unit foundation companion covering safe work, electrical science, installation technology, wiring systems and professional communication.',
-    notice: 'The source reflects UK City & Guilds and 17th Edition-era material. Treat legal and numerical requirements as historical learning context and verify current Kenyan requirements.',
+    notice: 'The source reflects City & Guilds and 17th Edition-era material. Treat legal and numerical requirements as historical learning context and verify current applicable requirements.',
     guides: [
       {
         id: 'level2-01', number: 1, title: 'Health and safety in building services engineering', pages: '1-60',
@@ -87,7 +87,7 @@ export const bookCompanions: BookCompanion[] = [
     year: 2013,
     accent: 'copper',
     description: 'Nineteen design-led case studies that show how building type, users, environment, supply, loads, protection and documentation influence a complete installation.',
-    notice: 'All case studies predate current standards and are UK-oriented. Use them to learn the design process, never as current Kenyan compliance instructions.',
+    notice: 'All case studies predate current standards and are based on an earlier standards edition. Use them to learn the design process, never as current suitability for the actual circuit instructions.',
     guides: [
       { id: 'design-01', number: 1, title: 'Introduction', pages: '1-7', summary: 'Frame electrical design as a controlled process from client need and site information through installation, inspection, certification and handover.', keyConcepts: ['Design responsibility', 'Terminology', 'Project procedure', 'Inspection and test', 'Completion records'], activity: 'Create a five-stage workflow for a new installation and name the evidence produced at every stage.', knowledgeCheck: 'Where does design responsibility begin and end when several people change the work?', linkedModules: [6, 8, 10, 11, 12, 13, 14, 15, 16], regulationSensitive: true },
       { id: 'design-02', number: 2, title: 'Three Bedroom House', pages: '8-20', summary: 'Balance minimum provision, occupant needs, circuit arrangement, load, protection and future flexibility in a familiar domestic brief.', keyConcepts: ['Client requirements', 'Domestic load assessment', 'Lighting and socket circuits', 'Consumer-unit arrangement', 'Earthing and bonding'], activity: 'Sketch a room-by-room requirement schedule for a three-bedroom house before deciding circuit quantities.', knowledgeCheck: 'Which client decisions change the design before cable sizes are considered?', linkedModules: [2, 3, 5, 6, 7, 11, 12, 13, 14, 15], regulationSensitive: true },

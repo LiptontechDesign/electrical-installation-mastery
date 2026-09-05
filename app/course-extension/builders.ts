@@ -7,9 +7,9 @@ export type LessonGuide = {
 };
 
 export type SourceKind =
-  | 'UK educator'
-  | 'UK professional body'
-  | 'UK manufacturer or trade specialist'
+  | 'Educator'
+  | 'Professional body'
+  | 'Manufacturer or trade specialist'
   | 'Official international manufacturer exception';
 
 export type LessonSeed = {

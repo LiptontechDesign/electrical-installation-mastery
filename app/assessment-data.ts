@@ -1,5 +1,8 @@
 import type { LessonGuide } from './lesson-guides';
+import { topicsForLesson } from './standards-data';
+import { standardsChecks } from './standards-checks';
 import { connectionChecks } from './connection-assessments';
+import { conceptDistractors } from './concept-distractors';
 
 export type Flashcard = {
   id: string;
@@ -8,7 +11,7 @@ export type Flashcard = {
   moduleId: string;
   front: string;
   back: string;
-  kind: 'Core idea' | 'Application' | 'Safety check' | 'Kenya check';
+  kind: 'Core idea' | 'Application' | 'Safety check' | 'Standards check';
 };
 
 export type AssessmentQuestion = {
@@ -21,7 +24,7 @@ export type AssessmentQuestion = {
   options: string[];
   answer: number;
   explanation: string;
-  kind: 'Recall' | 'Application' | 'Safety check' | 'Kenya check';
+  kind: 'Recall' | 'Application' | 'Safety check' | 'Standards check';
 };
 
 export type LessonAssessment = {
@@ -51,8 +54,6 @@ type CourseModule = {
   title: string;
   lessons: readonly CourseLesson[];
 };
-
-const kenyaGuardrail = 'Apply the principle only after checking current Kenyan law, EPRA and utility requirements, applicable KS/IEC standards, the project specification and the equipment manufacturer’s instructions.';
 
 function unique(values: string[]) {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
@@ -170,6 +171,8 @@ function directConceptQuestion(concept: string, topic: string) {
       statement: sentence,
     };
   }
+  const reason = sentence.match(/^(.+?)\s+(is|are)\s+(.+?)\s+because\s+(.+)$/i);
+  if (reason) return { prompt: `Why ${reason[2]} ${reason[1].toLocaleLowerCase()} ${reason[3]}?`, answer: cleanSentence(reason[4]), statement: sentence };
   let match = sentence.match(/^(.+?)\s+before\s+(.+)$/i);
   if (match) return { prompt: `Before ${match[2].toLocaleLowerCase()}, what must be done?`, answer: cleanSentence(match[1]), statement: sentence };
 
@@ -378,15 +381,15 @@ function directConceptQuestion(concept: string, topic: string) {
   };
 }
 
-function reasoningDistractors(topic: string) {
+function reasoningDistractors() {
   return [
-    `It has no effect on ${topic.toLocaleLowerCase()}.`,
+    'The result stays the same regardless of the circuit conditions.',
     'The opposite relationship always applies.',
     'Appearance alone gives the answer.',
   ];
 }
 
-function unsafeDistractors(_topic: string) {
+function unsafeDistractors() {
   return [
     'Copy the demonstration without checking the actual conditions.',
     'Judge the work only by its appearance.',
@@ -444,11 +447,13 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       ];
 
       if (lesson.regulationSensitive) {
+        const standardTopic = topicsForLesson(`${lesson.title} ${guide.summary}`)[0];
+        const standardCheck = standardsChecks[standardTopic.id];
         flashcards.push({
-          id: `${lesson.id}-kenya`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
-          kind: 'Kenya check',
-          front: 'What must you verify before using this method in Kenya?',
-          back: firstSentence(lesson.regulationStatus || kenyaGuardrail),
+          id: `${lesson.id}-standard`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
+          kind: 'Standards check',
+          front: standardCheck?.prompt ?? 'Which installation principle connects to this lesson?',
+          back: standardCheck?.options[standardCheck.answer] ?? standardTopic.principle,
         });
       }
 
@@ -456,8 +461,9 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
 
       guide.keyConcepts.forEach((concept, conceptIndex) => {
         const conceptQuestion = conceptQuestions[conceptIndex];
-        const relatedAnswers = conceptQuestions.filter((_, index) => index !== conceptIndex).map((item) => item.answer);
-        const choice = rotateCorrectOption(conceptQuestion.answer, [...relatedAnswers, ...reasoningDistractors(lesson.title)], lessonIndex + conceptIndex + 1);
+        const relatedAnswers = conceptQuestions.filter((_, index) => index !== conceptIndex).map((item) => item.statement);
+        const authored = conceptQuestion.prompt === 'What should you start with?' && !/detector/i.test(lesson.title) ? undefined : conceptDistractors[conceptQuestion.prompt];
+        const choice = rotateCorrectOption(conceptQuestion.answer, authored ?? [...relatedAnswers, ...reasoningDistractors()], lessonIndex + conceptIndex + 1);
         questions.push({
           id: `${lesson.id}-q-concept-${conceptIndex + 1}`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
           cardId: `${lesson.id}-concept-${conceptIndex + 1}`,
@@ -469,7 +475,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
 
       });
 
-      const rememberChoice = rotateCorrectOption(guide.remember, unsafeDistractors(lesson.title), lessonIndex + 5);
+      const rememberChoice = rotateCorrectOption(guide.remember, unsafeDistractors(), lessonIndex + 5);
       questions.push({
         id: `${lesson.id}-q-remember`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-remember`,
         prompt: 'Which rule from this lesson should you remember?',
@@ -479,7 +485,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       });
 
       const practicalAnswer = firstSentence(guide.practicalConnection);
-      const practiceChoice = rotateCorrectOption(practicalAnswer, unsafeDistractors(lesson.title), lessonIndex + 6);
+      const practiceChoice = rotateCorrectOption(practicalAnswer, unsafeDistractors(), lessonIndex + 6);
       questions.push({
         id: `${lesson.id}-q-practice`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-practice`,
         prompt: 'Which activity best applies what this lesson taught?',
@@ -489,18 +495,21 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       });
 
       if (lesson.regulationSensitive) {
-        const correct = lesson.regulationStatus || kenyaGuardrail;
-        const choice = rotateCorrectOption(firstSentence(correct), [
-          'A method used elsewhere automatically proves compliance in Kenya without further checks.',
+        const standardTopic = topicsForLesson(`${lesson.title} ${guide.summary}`)[0];
+        const standardCheck = standardsChecks[standardTopic.id];
+        const correct = standardCheck?.options[standardCheck.answer] ?? firstSentence(standardTopic.principle);
+        const distractors = standardCheck?.options.filter((_, index) => index !== standardCheck.answer) ?? [
+          'A successful functional test establishes every protective requirement.',
           'Anyone may carry out specialised electrical work after seeing one demonstration.',
           'Only the equipment colour and appearance need to be checked before installation.',
-        ], lessonIndex + 7);
+        ];
+        const choice = rotateCorrectOption(correct, distractors, lessonIndex + 7);
         questions.push({
-          id: `${lesson.id}-q-kenya`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-kenya`,
-          prompt: 'Before using this method in Kenya, what must be verified?',
-          kind: 'Kenya check',
+          id: `${lesson.id}-q-standard`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-standard`,
+          prompt: standardCheck?.prompt ?? 'Which installation principle connects to this lesson?',
+          kind: 'Standards check',
           ...choice,
-          explanation: firstSentence(correct),
+          explanation: standardCheck ? `${standardCheck.feedback[standardCheck.answer]} ${standardTopic.principle}` : firstSentence(correct),
         });
       }
 

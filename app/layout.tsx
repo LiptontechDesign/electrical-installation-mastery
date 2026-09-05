@@ -4,6 +4,7 @@ import './globals.css';
 import './learning-ui.css';
 import './book-reading.css';
 import './reader-mobile.css';
+import './tutor.css';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =

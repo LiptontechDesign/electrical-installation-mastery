@@ -36,9 +36,9 @@ export const lessonConnections: Record<string, LessonConnection> = {
   },
   'p02-l01': {
     title: 'Separate a principle from a current rule',
-    points: ['A physical principle explains what happens. A standard defines requirements within a stated scope. A manufacturer specifies the actual product. Record the document, edition and relevant clause before using a rule in a design.', 'The UK examples are teaching references. For a Kenyan project, establish the applicable Kenyan standards, EPRA requirements, supply conditions and authorised scope of work.', 'Edition check, 4 September 2026: BS 7671 Amendment 4:2026 is published; the IET gives 15 October 2026 as the end of the preceding edition’s transition. The 2010/2013 books remain historical explanations.'],
-    question: 'Does a UK video or a draft regulation establish the rule for a Kenyan installation?',
-    answer: 'No. Confirm the applicable published requirement and project scope with the responsible authority. Use EPRA and KEBS as starting points, and the exact equipment instructions for product-specific decisions.',
+    points: ['A physical principle explains what happens. A standard defines requirements within a stated scope. A manufacturer specifies the actual product. Record the document, edition and relevant clause before using a rule in a design.', 'Use the example’s supply arrangement and equipment data when following its reasoning. BS 7671 is the installation teaching reference.', 'Edition check, 4 September 2026: BS 7671 Amendment 4:2026 is published; the IET gives 15 October 2026 as the end of the preceding edition’s transition. The 2010/2013 books remain historical explanations.'],
+    question: 'Does a demonstration prove that every installation has the same requirements?',
+    answer: 'No. A demonstration uses particular equipment and circuit conditions. For example, the correct cable capacity depends on its route, grouping and temperature.',
     source: ietSource,
   },
   'p07-l04': {
@@ -106,7 +106,7 @@ export const lessonConnections: Record<string, LessonConnection> = {
     title: 'Interpret an older case using current evidence',
     points: ['An installation’s age or compliance with an earlier edition does not alone establish danger. Start with the actual observation, protective measure, condition and risk.', 'Keep new-work certification separate from condition reporting. Record extent, limitations, measurements and remedial recommendations using the applicable local procedure.'],
     question: 'If a video labels a defect C2, can that label be copied into another installation’s report?',
-    answer: 'No. UK EICR codes are conclusions about a particular observed risk. Establish the facts and use current applicable reporting guidance. A Kenyan report also needs the correct local authority and requirements.',
+    answer: 'No. EICR codes are conclusions about a particular observed risk. Establish the facts and use current applicable reporting guidance. Record the observed defect, its safety implication and the required action.',
     source: { title: 'IET: applying amendments to existing installations', url: 'https://electrical.theiet.org/wiring-matters/years/2026/109-april-2026/mythbuster-13-the-four-amendments-to-the-rumour-mill/' },
   },
 };

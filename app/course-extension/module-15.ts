@@ -6,7 +6,7 @@ export const module15 = M(
   'Extend domestic wiring skills into the services electricians increasingly coordinate in modern buildings: motor starters, pump-control panels, healthy mechanical ventilation and protection of electronic lighting from transient overvoltage. The module emphasises control logic, maintainability and whole-system commissioning rather than isolated connections.',
   'Prepare a coordinated services design for a masonry home with a water-storage pump and bathrooms below gypsum ceilings. Include the motor and starter data, overload setting basis, control-panel schematic, isolation and dry-run or level protection, ventilation airflow route and controls, accessible fan/duct maintenance points, and surge-risk response for electronic equipment. Add a commissioning sheet that proves safe rotation or flow, automatic and manual modes, protective-device operation, ventilation performance and the agreed surge-protection measures.',
   'Complete the core lessons on circuit protection, contactors, isolation, earthing, inspection and testing before working through building-service controls.',
-  'Use the UK examples to learn system principles. Verify current BS 7671 guidance, motor and ventilation product instructions, Kenyan building and electrical requirements, environmental conditions and the project design before installation.',
+  'Use the examples to learn system principles. Verify current BS 7671 guidance, motor and ventilation product instructions, building and electrical requirements, environmental conditions and the project design before installation.',
   [
     L(
       'p15-v2-l01',
@@ -16,7 +16,7 @@ export const module15 = M(
       512,
       'DOL motor starter connections and overload setting',
       'Motor controls',
-      'UK educator',
+      'Educator',
       G(
         'This practical lesson opens a single-phase direct-on-line starter and traces the supply, motor, contactor, overload relay, start button, stop button and reset path. It turns a collection of terminals into a readable power-and-control sequence and shows how overload protection and three-wire control allow a motor to stop safely rather than restart unexpectedly after a supply interruption.',
         [
@@ -41,7 +41,7 @@ export const module15 = M(
       1107,
       'Coordinated pump controls and panel operation',
       'Pump systems',
-      'UK educator',
+      'Educator',
       G(
         'John Ward examines a completed pump-control panel in its cabinet and explains how the devices work together. The lesson develops the starter circuit into a serviceable system with modes, sensors or switches, protective devices and labelled internal wiring, illustrating why a clear functional description is essential for installation, testing and later fault finding.',
         [
@@ -55,7 +55,7 @@ export const module15 = M(
         'If a pump will run manually but not automatically, which field inputs, control supplies and interlocks should be checked before replacing the motor or contactor?',
       ),
       {
-        regulationStatus: 'This is a worked UK panel example. Adapt the logic to the selected pump, sensors, water arrangement, enclosure environment and current Kenyan electrical and water-service requirements.',
+        regulationStatus: 'This is a worked panel example. Adapt the logic to the selected pump, sensors, water arrangement, enclosure environment and current electrical and water-service requirements.',
       },
     ),
     L(
@@ -66,7 +66,7 @@ export const module15 = M(
       5818,
       'Ventilation design, fan selection and installation quality',
       'Healthy buildings',
-      'UK educator',
+      'Educator',
       G(
         'This in-depth lesson explains why an electrically working fan can still fail to control humidity, condensation and mould. It brings together airflow demand, fan type, duct resistance, terminals, controls, make-up air, discharge position and maintenance, helping electricians specify a complete ventilation path instead of selecting equipment only by grille size or price.',
         [
@@ -80,7 +80,7 @@ export const module15 = M(
         'Why might a high-airflow fan still deliver poor extraction after installation, and which duct, room-air and commissioning checks would reveal the cause?',
       ),
       {
-        regulationStatus: 'The regulatory examples are UK based. Use the design principles, then verify Kenyan ventilation, wet-location, fire/acoustic penetration and electrical requirements plus the fan manufacturer data.',
+        regulationStatus: 'The regulatory examples are based on the cited standards edition. Use the design principles, then verify ventilation, wet-location, fire/acoustic penetration and electrical requirements plus the fan manufacturer data.',
       },
     ),
     L(
@@ -91,7 +91,7 @@ export const module15 = M(
       2059,
       'Transient overvoltage and modern lighting systems',
       'Surge protection',
-      'UK professional body',
+      'Professional body',
       G(
         'This ECA learning session uses modern lighting installations to examine installer considerations including electronic drivers, changing technology, sustainability and exposure to electrical surges. It reinforces that sensitive luminaires and controls should be considered within the building surge-risk strategy, not treated as disposable accessories after the distribution design is complete.',
         [
@@ -105,7 +105,7 @@ export const module15 = M(
         'What information would you collect before deciding whether surge protection is required, where it belongs and how its connecting conductors should be routed?',
       ),
       {
-        regulationStatus: 'Confirm the current BS 7671 surge-protection provisions only as a UK reference. Apply current Kenyan requirements, the supply arrangement, lightning-risk assessment and manufacturer coordination data.',
+        regulationStatus: 'Confirm the current BS 7671 surge-protection provisions only as a BS-based reference. Apply current applicable requirements, the supply arrangement, lightning-risk assessment and manufacturer coordination data.',
       },
     ),
   ],

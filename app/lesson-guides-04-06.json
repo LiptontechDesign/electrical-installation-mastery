@@ -88,7 +88,7 @@
     "checkYourself": "Why should exposed cut edges on metallic cable tray be treated after fabrication?"
   },
   "p04-l09": {
-    "summary": "Conduit-capacity calculations compare the space required by the chosen cables with the usable capacity of the conduit. The calculation is only one check: bends, route length, pulling difficulty, heat, and maintainability also matter, and all factors must be verified against current KS 662, EPRA, utility, and manufacturer requirements.",
+    "summary": "Conduit-capacity calculations compare the space required by the chosen cables with the usable capacity of the conduit. The calculation is only one check: bends, route length, pulling difficulty, heat, and maintainability also matter, and all factors must be verified against BS 7671 and the actual supply and manufacturer data.",
     "keyConcepts": [
       "Capacity factors limit crowding and preserve space for safe cable pulling.",
       "Bends and long runs can make a nominally compliant conduit impractical.",
@@ -231,7 +231,7 @@
     "checkYourself": "Why can a contactor rated for one resistive load be unsuitable for a motor of the same current?"
   },
   "p05-l01": {
-    "summary": "Overload, short circuit, and earth fault describe different abnormal current paths and therefore different risks and protective responses. Their severity depends on available fault energy, duration, equipment, and human exposure, so current protection and disconnection requirements must be checked against KS 662, EPRA, utility, and manufacturer rules.",
+    "summary": "Overload, short circuit, and earth fault describe different abnormal current paths and therefore different risks and protective responses. Their severity depends on available fault energy, duration, equipment, and human exposure, so current protection and disconnection requirements must be checked against BS 7671 requirements and manufacturer data.",
     "keyConcepts": [
       "Overload current follows the normal path but exceeds circuit capacity.",
       "Short-circuit current takes a low-impedance path between live conductors.",
@@ -253,7 +253,7 @@
     "checkYourself": "Why is replacing a blown fuse with any fuse of the same current rating unsafe?"
   },
   "p05-l03": {
-    "summary": "A miniature circuit breaker combines thermal overload response with rapid magnetic fault response and can be reset after the fault is cleared. Rated current, trip curve, breaking capacity, poles, and coordination must be selected from current KS 662, EPRA, utility, and manufacturer requirements.",
+    "summary": "A miniature circuit breaker combines thermal overload response with rapid magnetic fault response and can be reset after the fault is cleared. Rated current, trip curve, breaking capacity, poles, and coordination must be selected from BS 7671 and the actual supply and manufacturer data.",
     "keyConcepts": [
       "Thermal operation responds mainly to sustained overload current.",
       "Magnetic operation responds rapidly to high fault current.",
@@ -286,7 +286,7 @@
     "checkYourself": "Why might a Type C MCB suit some inrush loads better than a Type B device?"
   },
   "p05-l06": {
-    "summary": "Automatic disconnection of supply limits danger by making a protective device disconnect a faulted circuit within the required time. The fault path, earthing, bonding, protective conductor, loop impedance, and device characteristics work as one system, and numerical limits require current KS 662, EPRA, utility, and manufacturer verification.",
+    "summary": "Automatic disconnection of supply limits danger by making a protective device disconnect a faulted circuit within the required time. The fault path, earthing, bonding, protective conductor, loop impedance, and device characteristics work as one system, and numerical limits require BS 7671 requirements and the actual device characteristics.",
     "keyConcepts": [
       "ADS uses a protective device to remove a dangerous fault quickly.",
       "A complete low-impedance fault path allows sufficient operating current.",
@@ -297,7 +297,7 @@
     "checkYourself": "What happens to ADS performance if fault-loop impedance becomes too high?"
   },
   "p05-l07": {
-    "summary": "Earth-fault loop impedance is the total opposition around the line-to-earth fault path, commonly expressed as Zs = Ze + (R1 + R2). The relationship explains the path, but allowable values and temperature treatment must be verified using current KS 662, EPRA, utility, and manufacturer information.",
+    "summary": "Earth-fault loop impedance is the total opposition around the line-to-earth fault path, commonly expressed as Zs = Ze + (R1 + R2). The relationship explains the path, but allowable values and temperature treatment must be verified using BS 7671 and the actual supply and manufacturer data.",
     "keyConcepts": [
       "Ze represents the external portion of the earth fault loop.",
       "R1 plus R2 represents line and protective conductors within the installation.",
@@ -308,7 +308,7 @@
     "checkYourself": "Which parts of Zs belong to the installation rather than the external supply?"
   },
   "p05-l08": {
-    "summary": "TN-S, TN-C-S, and TT describe how the supply neutral and protective earth are arranged and how earth-fault current returns to the source. Each arrangement changes electrode, bonding, RCD, and fault-loop considerations, so never assume the system type; confirm it with the utility and current Kenyan requirements.",
+    "summary": "TN-S, TN-C-S, and TT describe how the supply neutral and protective earth are arranged and how earth-fault current returns to the source. Each arrangement changes electrode, bonding, RCD, and fault-loop considerations, so never assume the system type; confirm it with the utility and current applicable requirements.",
     "keyConcepts": [
       "TN-S uses a separate protective conductor throughout the supply arrangement.",
       "TN-C-S combines neutral and earth upstream, then separates them.",
@@ -330,7 +330,7 @@
     "checkYourself": "How can connected pipework create a misleading protective-bonding continuity result?"
   },
   "p05-l10": {
-    "summary": "A circuit protective conductor is sized to carry fault current safely until protection disconnects, not to carry normal load current. Thermal withstand, fault duration, material, installation, and mechanical robustness all matter, with final sizing verified against current KS 662, EPRA, utility, and manufacturer requirements.",
+    "summary": "A circuit protective conductor is sized to carry fault current safely until protection disconnects, not to carry normal load current. Thermal withstand, fault duration, material, installation, and mechanical robustness all matter, with final sizing verified against BS 7671 and the actual supply and manufacturer data.",
     "keyConcepts": [
       "A protective conductor carries fault current, not normal load current.",
       "Required area depends on fault magnitude, duration, material, and installation.",
@@ -352,7 +352,7 @@
     "checkYourself": "Why is an unadjusted room-temperature R1 + R2 value potentially optimistic for design?"
   },
   "p05-l12": {
-    "summary": "A second worked loop-impedance calculation should reinforce consistent units, temperature assumptions, rounding, and comparison with a justified limit. Supply variation and conductor temperature need sensible design margin, while the accepted method and limits must be checked against current KS 662, EPRA, utility, and manufacturer information.",
+    "summary": "A second worked loop-impedance calculation should reinforce consistent units, temperature assumptions, rounding, and comparison with a justified limit. Supply variation and conductor temperature need sensible design margin, while the accepted method and limits must be checked against BS 7671 and the actual supply and manufacturer data.",
     "keyConcepts": [
       "Predicted Zs should use consistent units and clearly stated temperature assumptions.",
       "Design margins matter because supply impedance and conductor temperature can vary.",
@@ -363,7 +363,7 @@
     "checkYourself": "What information should accompany a calculated Zs value so another electrician can verify it?"
   },
   "p05-l13": {
-    "summary": "Designing for earth-fault loop impedance combines external supply impedance, conductor resistance, temperature, and protective-device behavior. The predicted worst-case Zs must support timely disconnection with adequate margin, using currently applicable Kenyan rules and verified device data.",
+    "summary": "Designing for earth-fault loop impedance combines external supply impedance, conductor resistance, temperature, and protective-device behavior. The predicted worst-case Zs must support timely disconnection with adequate margin, using currently applicable BS 7671 requirements and verified device data.",
     "keyConcepts": [
       "Design Zs combines supply impedance with the final circuit conductor path.",
       "The protective device needs enough fault current to disconnect in time.",
@@ -374,7 +374,7 @@
     "checkYourself": "How does a higher Zs generally affect the fault current available to operate an overcurrent device?"
   },
   "p05-l14": {
-    "summary": "Protective-device selection coordinates load demand, cable capacity, overload response, fault interruption, disconnection time, inrush, and selectivity. Device ratings and curves must be checked against the actual prospective fault current, current KS 662 and EPRA requirements, and manufacturer coordination data.",
+    "summary": "Protective-device selection coordinates load demand, cable capacity, overload response, fault interruption, disconnection time, inrush, and selectivity. Device ratings and curves must be checked against the actual prospective fault current, BS 7671 requirements, and manufacturer coordination data.",
     "keyConcepts": [
       "Design current, device rating, and cable capacity must coordinate together.",
       "Breaking capacity must exceed the prospective fault current at installation.",
@@ -396,7 +396,7 @@
     "checkYourself": "Why can an RCD provide useful fault protection where Zs is too high for rapid MCB operation?"
   },
   "p06-l01": {
-    "summary": "Electrical design starts by defining the supply, load, environment, installation method, user needs, and constraints before selecting products. This first step prevents later calculations from being built on assumptions, while all compliance decisions must use current KS 662, EPRA, utility, and manufacturer information.",
+    "summary": "Electrical design starts by defining the supply, load, environment, installation method, user needs, and constraints before selecting products. This first step prevents later calculations from being built on assumptions, while all compliance decisions must use BS 7671 and the actual supply and manufacturer data.",
     "keyConcepts": [
       "Supply characteristics define voltage, phases, earthing, and available fault current.",
       "Load information establishes operating current and expected usage patterns.",
@@ -429,7 +429,7 @@
     "checkYourself": "What error occurs if kilowatts are entered as though they were watts in I = P ÷ V?"
   },
   "p06-l04": {
-    "summary": "Choosing cable size requires more than matching normal load current to a table. Protective-device coordination, installation method, ambient temperature, grouping, thermal insulation, voltage drop, fault withstand, mechanical duty, and current Kenyan requirements all influence the final choice.",
+    "summary": "Choosing cable size requires more than matching normal load current to a table. Protective-device coordination, installation method, ambient temperature, grouping, thermal insulation, voltage drop, fault withstand, mechanical duty, and current applicable requirements all influence the final choice.",
     "keyConcepts": [
       "Cable capacity must remain above the coordinated protective-device rating.",
       "Installation method and correction factors reduce usable current capacity.",
@@ -440,15 +440,15 @@
     "checkYourself": "What three reasons might require a conductor to be larger than the load-current check alone suggests?"
   },
   "p06-l05": {
-    "summary": "A live-conductor sizing calculation derives the required tabulated capacity after applying relevant correction factors, then selects a conductor that meets or exceeds it. BS 7671 examples are useful learning models, but final table values and methods must be replaced or confirmed using current KS 662, EPRA, utility, and manufacturer requirements for Kenya.",
+    "summary": "A live-conductor sizing calculation derives the required tabulated capacity after applying relevant correction factors, then selects a conductor that meets or exceeds it. BS 7671 examples are useful learning models, but final table values and methods must be replaced or confirmed using BS 7671 and the actual supply and manufacturer data for the actual circuit.",
     "keyConcepts": [
       "Tabulated capacity is adjusted for temperature, grouping, insulation, and installation.",
       "The required tabulated value is found before selecting a conductor size.",
-      "British tables must not be applied where governing Kenyan requirements differ."
+      "Select the table and correction factors for the actual cable and installation method."
     ],
     "remember": "Correction factors change the capacity you must find in the table, not the load itself.",
     "practicalConnection": "Repeat one sizing example with and without a grouping factor and compare the required tabulated capacity.",
-    "checkYourself": "Why is it unsafe to copy a conductor size directly from an old British example for a Kenyan installation?"
+    "checkYourself": "Why is it unsafe to copy a conductor size directly from an old British example for a installation?"
   },
   "p06-l06": {
     "summary": "Conductor resistance follows R = ρL/A: it rises with material resistivity and length and falls as cross-sectional area increases. Temperature changes resistivity, so design constants and operating assumptions must be taken from current applicable data when the result supports regulated work.",
@@ -462,7 +462,7 @@
     "checkYourself": "What happens to resistance if conductor length doubles while material and area stay unchanged?"
   },
   "p06-l07": {
-    "summary": "Voltage drops because current flowing through conductor impedance produces a voltage difference along the route and dissipates energy. Longer routes, higher current, smaller conductors, and reactive effects can increase the drop, while permitted limits must be verified under current Kenyan requirements and equipment needs.",
+    "summary": "Voltage drops because current flowing through conductor impedance produces a voltage difference along the route and dissipates energy. Longer routes, higher current, smaller conductors, and reactive effects can increase the drop, while permitted limits must be verified under current applicable requirements and equipment needs.",
     "keyConcepts": [
       "Current through conductor resistance converts electrical energy into heat.",
       "The resulting voltage difference leaves less voltage available at the load.",
@@ -473,7 +473,7 @@
     "checkYourself": "Why does increasing conductor cross-sectional area normally reduce voltage drop?"
   },
   "p06-l08": {
-    "summary": "Practical voltage-drop design often uses tabulated values with design current and route length to estimate loss. The correct single-phase or three-phase method, conductor temperature, load characteristics, and acceptable limit must be verified against current KS 662, EPRA, utility, equipment, and manufacturer requirements.",
+    "summary": "Practical voltage-drop design often uses tabulated values with design current and route length to estimate loss. The correct single-phase or three-phase method, conductor temperature, load characteristics, and acceptable limit must be verified against BS 7671 and the actual cable, circuit and equipment data.",
     "keyConcepts": [
       "Voltage-drop tables combine conductor properties into convenient design values.",
       "Route length and design current directly influence calculated voltage drop.",
@@ -495,7 +495,7 @@
     "checkYourself": "Why is one-way route length commonly doubled in a simple single-phase resistivity calculation?"
   },
   "p06-l10": {
-    "summary": "Loaded cables grouped on tray heat one another and may not dissipate heat as effectively as isolated cables. Grouping factors account for arrangement, spacing, loading, and installation method, but their values must come from current KS 662 and manufacturer data for the actual tray layout.",
+    "summary": "Loaded cables grouped on tray heat one another and may not dissipate heat as effectively as isolated cables. Grouping factors account for arrangement, spacing, loading, and installation method, but their values must come from BS 7671 and manufacturer data for the actual tray layout.",
     "keyConcepts": [
       "Closely grouped loaded cables cannot release heat as effectively.",
       "Grouping factors reduce allowable current to control conductor temperature.",
@@ -506,7 +506,7 @@
     "checkYourself": "Why can two tray layouts with the same number of cables require different grouping factors?"
   },
   "p06-l11": {
-    "summary": "Maximum demand estimates the greatest load likely to operate at one time, while diversity recognizes that not every connected load runs simultaneously. Diversity rules are context-dependent assumptions, so the method must be justified using current KS 662, EPRA, utility requirements, client information, and real load behavior.",
+    "summary": "Maximum demand estimates the greatest load likely to operate at one time, while diversity recognizes that not every connected load runs simultaneously. Diversity rules are context-dependent assumptions, so the method must be justified using BS 7671 and supply requirements, client information, and real load behavior.",
     "keyConcepts": [
       "Connected load is the total rating of all installed equipment.",
       "Maximum demand estimates the greatest load expected at one time.",
@@ -517,7 +517,7 @@
     "checkYourself": "What is the difference between connected load and maximum demand?"
   },
   "p06-l12": {
-    "summary": "Standard diversity methods can misrepresent buildings whose occupancy or equipment differs from the assumptions behind the method. Modern large loads, duty cycles, and simultaneous use may require measured profiles or documented engineering judgment, always checked against current Kenyan utility and regulatory expectations.",
+    "summary": "Standard diversity methods can misrepresent buildings whose occupancy or equipment differs from the assumptions behind the method. Modern large loads, duty cycles, and simultaneous use may require measured profiles or documented engineering judgment, always checked against current utility and regulatory expectations.",
     "keyConcepts": [
       "Standard diversity assumptions may not represent a building's real usage.",
       "Modern high-power loads can change both magnitude and timing of demand.",
@@ -539,7 +539,7 @@
     "checkYourself": "For a balanced star load, how are line current and phase current related?"
   },
   "p06-l14": {
-    "summary": "The power triangle relates real power P, reactive power Q, and apparent power S, with power factor describing how much apparent power becomes useful real power. Calculations should use consistent units and the correct load behavior, while equipment ratings and correction decisions require current utility, Kenyan, and manufacturer verification.",
+    "summary": "The power triangle relates real power P, reactive power Q, and apparent power S, with power factor describing how much apparent power becomes useful real power. Calculations should use consistent units and the correct load behavior, while equipment ratings and correction decisions require the actual supply conditions and manufacturer data.",
     "keyConcepts": [
       "Real power performs useful work and is measured in watts.",
       "Reactive power exchanges energy with fields and is measured in vars.",
@@ -550,7 +550,7 @@
     "checkYourself": "How does a lower power factor affect current for the same useful real power?"
   },
   "p06-l15": {
-    "summary": "A breaker's 6 kA or 10 kA marking states the fault current it can interrupt safely under specified conditions, not its normal load rating. The chosen capability must meet or exceed prospective fault current at the installation point and coordinate with upstream devices under current KS 662, EPRA, utility, and manufacturer requirements.",
+    "summary": "A breaker's 6 kA or 10 kA marking states the fault current it can interrupt safely under specified conditions, not its normal load rating. The chosen capability must meet or exceed prospective fault current at the installation point and coordinate with upstream devices under BS 7671 and the actual supply and manufacturer data.",
     "keyConcepts": [
       "Breaking capacity states the maximum fault current a breaker can interrupt.",
       "Prospective fault current must not exceed the selected device capability.",

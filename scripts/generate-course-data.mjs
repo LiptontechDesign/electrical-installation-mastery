@@ -103,7 +103,7 @@ const course = {
   lessonCount,
   duration: '29 h 23 min',
   safetyNotice: 'Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.',
-  jurisdictionNotice: 'Where a lesson is regulation-sensitive, verify the details against current KS 662, EPRA requirements and the rules that apply to your installation.',
+  jurisdictionNotice: 'Where a lesson is regulation-sensitive, verify the details against current BS 7671 requirements, product instructions and the rules that apply to the installation.',
   modules,
 };
 

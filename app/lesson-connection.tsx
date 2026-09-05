@@ -61,8 +61,7 @@ export default function LessonConnection({ connection }: { connection: Connectio
       {connection.exercise === 'motor' && <MotorExercise />}
       {connection.exercise === 'sequence' && <SequenceExercise />}
       <details className="connection-answer"><summary>{connection.question}</summary><p>{connection.answer}</p></details>
-      <a href={connection.source.url} target="_blank" rel="noreferrer">{connection.source.title} ↗</a>
-      {connection.title === 'Separate a principle from a current rule' && <p className="connection-authorities"><a href="https://epra.go.ke/electricity-1" target="_blank" rel="noreferrer">EPRA requirements ↗</a> <a href="https://www.kebs.org/" target="_blank" rel="noreferrer">KEBS standards ↗</a></p>}
+      <strong>{connection.source.title}</strong>
     </div>
   </details>;
 }

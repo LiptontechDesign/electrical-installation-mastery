@@ -344,7 +344,7 @@
     "checkYourself": "How can connected load leakage influence an RCD ramp-test result?"
   },
   "p08-l14": {
-    "summary": "RCD test procedures evolve as standards and device technologies change, so a rule tied to one edition or jurisdiction must not be applied automatically elsewhere. Identify the RCD type, confirm the required test sequence and instrument compatibility, and verify all test currents and limits against current KS 662, EPRA requirements, and manufacturer instructions.",
+    "summary": "RCD test procedures evolve as standards and device technologies change, so a rule tied to one edition or jurisdiction must not be applied automatically elsewhere. Identify the RCD type, confirm the required test sequence and instrument compatibility, and verify all test currents and limits against BS 7671 and the actual manufacturer instructions.",
     "keyConcepts": [
       "RCD type determines the residual-current waveforms it recognises",
       "Instrument settings must match both device technology and test objective",
@@ -538,7 +538,7 @@
     "checkYourself": "Which design decisions must be settled before selecting the shed's SWA feeder?"
   },
   "p10-l02": {
-    "summary": "Changing a consumer unit alters the installation's central protection and demands assessment of the supply, earthing, bonding, existing circuits, fault level, device compatibility, and enclosure arrangement. Record pre-work conditions, isolate safely, test before and after, label accurately, and verify certification and installation requirements against current KS 662, EPRA rules, utility conditions, and manufacturer instructions.",
+    "summary": "Changing a consumer unit alters the installation's central protection and demands assessment of the supply, earthing, bonding, existing circuits, fault level, device compatibility, and enclosure arrangement. Record pre-work conditions, isolate safely, test before and after, label accurately, and verify certification and installation requirements against BS 7671, the actual supply conditions and manufacturer instructions.",
     "keyConcepts": [
       "Pre-work tests reveal defects that a new board will not cure",
       "Protective devices must suit circuit characteristics and prospective fault current",

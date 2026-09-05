@@ -353,7 +353,7 @@
     "checkYourself": "Which installation conditions would make a sheathed flexible cable unsuitable but favour an armoured cable?"
   },
   "p02-l02": {
-    "summary": "A consumer unit receives the incoming supply and divides it into final circuits through switching and protective devices. Its exact construction, device arrangement and labeling must be verified against current Kenyan requirements, supply conditions and manufacturer instructions.",
+    "summary": "A consumer unit receives the incoming supply and divides it into final circuits through switching and protective devices. Its exact construction, device arrangement and labeling must be verified against current applicable requirements, supply conditions and manufacturer instructions.",
     "keyConcepts": [
       "The main switch provides a common means of controlling the installation supply.",
       "Outgoing protective devices limit faults affecting their assigned final circuits.",
@@ -377,7 +377,7 @@
     "checkYourself": "What happens to neutral current when three equal linear loads are perfectly phase-balanced?"
   },
   "p02-l04": {
-    "summary": "TN-C-S, TN-S and TT describe different relationships between the supply source, neutral and protective earthing path. Their application and permitted uses depend on local network conditions, so verify the current Kenyan utility, EPRA and relevant standards before design or work.",
+    "summary": "TN-C-S, TN-S and TT describe different relationships between the supply source, neutral and protective earthing path. Their application and permitted uses depend on local network conditions, so verify the current utility,  relevant standards before design or work.",
     "keyConcepts": [
       "TN-S keeps neutral and protective functions separate throughout the supply path.",
       "TN-C-S combines functions upstream and separates them at the installation origin.",
@@ -401,7 +401,7 @@
     "checkYourself": "Why is a bonded pipe not a substitute for the circuit protective conductor of an appliance?"
   },
   "p02-l06": {
-    "summary": "Fuses and circuit-breakers use different operating principles and time-current characteristics to interrupt overcurrent. Some standards named in the lesson represent older UK equipment, so confirm present device standards, ratings, fault capacity and Kenyan compliance before applying them.",
+    "summary": "Fuses and circuit-breakers use different operating principles and time-current characteristics to interrupt overcurrent. Some standards named in the lesson represent older featured equipment, so confirm present device standards, ratings, fault capacity and suitability for the actual circuit before applying them.",
     "keyConcepts": [
       "A fuse opens when its calibrated element melts under excessive current.",
       "Circuit-breakers combine resettable mechanisms with defined operating characteristics.",
@@ -425,7 +425,7 @@
     "checkYourself": "Why might an overload fail to operate an RCD that has no overcurrent function?"
   },
   "p02-l08": {
-    "summary": "An RCD provides residual-current protection for the circuit or group it controls, while an RCBO combines residual-current and overcurrent protection for one circuit. Device type, pole arrangement and suitability must be checked against current Kenyan requirements and manufacturer coordination data.",
+    "summary": "An RCD provides residual-current protection for the circuit or group it controls, while an RCBO combines residual-current and overcurrent protection for one circuit. Device type, pole arrangement and suitability must be checked against current applicable requirements and manufacturer coordination data.",
     "keyConcepts": [
       "An RCD responds to residual imbalance but may need separate overcurrent protection.",
       "An RCBO combines residual-current and overcurrent functions within one device.",
@@ -437,7 +437,7 @@
     "checkYourself": "What additional protective function does an RCBO include beyond residual-current detection?"
   },
   "p02-l09": {
-    "summary": "External earth-fault-loop impedance, Ze, represents the loop impedance outside the installation up to its origin. Measuring it can involve live conductors and must be performed only by competent, authorized people using current Kenyan procedures, suitable instruments and verified limits.",
+    "summary": "External earth-fault-loop impedance, Ze, represents the loop impedance outside the installation up to its origin. Measuring it can involve live conductors and must be performed only by competent, authorized people using current safe procedures, suitable instruments and verified limits.",
     "keyConcepts": [
       "Ze covers the external portion of the earth-fault return loop.",
       "The main earthing terminal forms a key reference point at the origin.",
@@ -449,7 +449,7 @@
     "checkYourself": "How does a higher Ze generally affect prospective earth-fault current?"
   },
   "p02-l10": {
-    "summary": "Long or insufficiently protected meter tails may require a coordinated switch-fuse or other upstream protective arrangement near the supply origin. The title's three-metre figure is not universal, so verify current utility policy, Kenyan requirements, fault levels and equipment instructions for every installation.",
+    "summary": "Long or insufficiently protected meter tails may require a coordinated switch-fuse or other upstream protective arrangement near the supply origin. The title's three-metre figure is not universal, so verify current utility policy, applicable requirements, fault levels and equipment instructions for every installation.",
     "keyConcepts": [
       "Meter tails need protection appropriate to their route and potential fault energy.",
       "A switch-fuse can combine isolation with upstream overcurrent protection.",
@@ -497,7 +497,7 @@
     "checkYourself": "Why is gripping only the individual cores an unreliable form of strain relief?"
   },
   "p03-l03": {
-    "summary": "A twin socket termination depends on correct conductor identification, secure protective continuity and terminals that contain all copper without damaging insulation. BS 1363 is a UK product standard, so confirm socket compatibility, Kenyan requirements and manufacturer torque instructions before real work.",
+    "summary": "A twin socket termination depends on correct conductor identification, secure protective continuity and terminals that contain all copper without damaging insulation. BS 1363 is a featured product standard, so confirm socket compatibility, applicable requirements and manufacturer torque instructions before real work.",
     "keyConcepts": [
       "Line, neutral and protective conductors must reach their intended terminals.",
       "No loose strand or excess bare copper should remain outside terminals.",
@@ -581,7 +581,7 @@
     "checkYourself": "Why does an intermediate switch not normally use a common terminal like an end switch?"
   },
   "p03-l10": {
-    "summary": "A spur branches from an existing ring-final point to supply an additional outlet or fixed connection. Ring-final and spur practices are strongly UK-specific, so verify whether the arrangement is permitted and correctly protected under current Kenyan requirements before considering real work.",
+    "summary": "A spur branches from an existing ring-final point to supply an additional outlet or fixed connection. Ring-final and spur practices are strongly specific to BS 7671 practice, so verify whether the arrangement is permitted and correctly protected under current applicable requirements before considering real work.",
     "keyConcepts": [
       "A ring final circuit provides two conductor paths back to its origin.",
       "A spur creates a branch that does not continue around the ring.",
@@ -593,7 +593,7 @@
     "checkYourself": "Why could a broken ring conductor make an apparently normal spur alteration unsafe?"
   },
   "p03-l11": {
-    "summary": "A group of LED downlights needs a maintainable wiring route, compatible drivers and connectors, and protection against heat, moisture and building-fire risks. Verify current Kenyan requirements, luminaire instructions, insulation clearances, fire barriers and location-specific IP needs before installation.",
+    "summary": "A group of LED downlights needs a maintainable wiring route, compatible drivers and connectors, and protection against heat, moisture and building-fire risks. Verify current applicable requirements, luminaire instructions, insulation clearances, fire barriers and location-specific IP needs before installation.",
     "keyConcepts": [
       "LED drivers must match the luminaires and their electrical operating requirements.",
       "Connections need suitable enclosures, support and future maintenance access.",
@@ -605,7 +605,7 @@
     "checkYourself": "Which non-electrical building features can be compromised by an unsuitable downlight installation?"
   },
   "p03-l12": {
-    "summary": "Consumer-unit assembly requires disciplined conductor routing, correct device and bar connections, clear identification and manufacturer-specified tightening. This work is regulation-sensitive and close to high fault energy, so only competent authorized people should apply current Kenyan rules, equipment instructions and verified isolation procedures.",
+    "summary": "Consumer-unit assembly requires disciplined conductor routing, correct device and bar connections, clear identification and manufacturer-specified tightening. This work is regulation-sensitive and close to high fault energy, so only competent authorized people should apply current BS 7671 requirements, equipment instructions and verified isolation procedures.",
     "keyConcepts": [
       "Each circuit conductor must terminate at its corresponding device and bar.",
       "Routing should remain identifiable without stressing insulation or terminal connections.",
@@ -629,7 +629,7 @@
     "checkYourself": "Why can a torque screwdriver click without proving the electrical connection is otherwise correct?"
   },
   "p03-l14": {
-    "summary": "Safe isolation prevents dangerous electrical energy from reaching the work and must address every possible source. A controlled process identifies the circuit, isolates and secures it, proves the indicator, tests relevant conductors and re-proves the indicator. Follow current Kenyan procedures only under competent authorization and supervision; AM2 or AM2S details are UK assessment context.",
+    "summary": "Safe isolation prevents dangerous electrical energy from reaching the work and must address every possible source. A controlled process identifies the circuit, isolates and secures it, proves the indicator, tests relevant conductors and re-proves the indicator. Follow current safe procedures only under competent authorization and supervision; AM2 or AM2S details are a particular assessment context.",
     "keyConcepts": [
       "Every normal, standby and backfeed source must be identified before isolation.",
       "Lock-off and warning controls help prevent unintended re-energization.",

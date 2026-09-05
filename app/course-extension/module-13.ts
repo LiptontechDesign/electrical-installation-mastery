@@ -4,9 +4,9 @@ export const module13 = M(
   13,
   'Smart Buildings, Data, Security and Life Safety',
   'Plan a modern connected building as one coordinated system: KNX automation, structured cabling, Wi-Fi, CCTV, access control, automated gates, domestic alarms and non-domestic fire detection. The sequence moves from system architecture to commissioning and life-safety decisions, while keeping power, data and future expansion coordinated from first fix.',
-  'Produce a coordinated services plan for a three-bedroom masonry home with gypsum ceilings. Show the KNX or smart-control zones, data cabinet, Wi-Fi access points, CCTV coverage, access-controlled entrance, automated gate, domestic alarms, fire-alarm interface where applicable, backup-power needs and test records. Include segregation, accessible equipment, cyber-safe commissioning and spare labelled ducts to the boundary for future gate, intercom, CCTV or professionally designed electric-fence infrastructure. No electric-fence video is included because no substantial, UK-quality, directly embeddable lesson passed the course filter.',
+  'Produce a coordinated services plan for a three-bedroom masonry home with gypsum ceilings. Show the KNX or smart-control zones, data cabinet, Wi-Fi access points, CCTV coverage, access-controlled entrance, automated gate, domestic alarms, fire-alarm interface where applicable, backup-power needs and test records. Include segregation, accessible equipment, cyber-safe commissioning and spare labelled ducts to the boundary for future gate, intercom, CCTV or professionally designed electric-fence infrastructure. No electric-fence video is included because no substantial, high-quality, directly embeddable lesson passed the course filter.',
   'Complete the core lighting, final-circuit, inspection and testing lessons so that power wiring, protective measures and commissioning terminology are already familiar.',
-  'Use the UK and international material as a technical learning reference. Confirm current BS 7671, relevant BS/EN/ISO standards, manufacturer instructions, Kenyan law, EPRA requirements and the client brief before design or installation.',
+  'Use the the course material as a technical learning reference. Confirm current BS 7671, relevant BS/EN/ISO standards, manufacturer instructions, applicable law, installation requirements and the client brief before design or installation.',
   [
     L(
       'p13-v2-l01',
@@ -16,7 +16,7 @@ export const module13 = M(
       1308,
       'KNX architecture and smart-building fundamentals',
       'Systems overview',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'This lesson introduces KNX as an open building-automation platform rather than a collection of unrelated smart gadgets. It explains how sensors, user controls and actuators share a dedicated bus so lighting, blinds, heating and other services can work together, and it frames the design benefits of interoperability, distributed intelligence and future expansion.',
         [
@@ -26,11 +26,11 @@ export const module13 = M(
           'Good smart-home outcomes begin with room functions, scenes and manual overrides, not with a shopping list of devices.',
         ],
         'Automation must fail safely and remain understandable: essential lighting and services need sensible local control even when an app, router or visualisation server is unavailable.',
-        'For a Kenyan masonry home, decide the automation topology before chasing walls. Reserve deep boxes, accessible control locations, a suitable panel, neutral conductors where required and spare conduits between floors, ceilings and the communications cabinet.',
+        'For a masonry home, decide the automation topology before chasing walls. Reserve deep boxes, accessible control locations, a suitable panel, neutral conductors where required and spare conduits between floors, ceilings and the communications cabinet.',
         'Can you describe the roles of a KNX sensor, actuator, bus power supply and programming interface, then identify which loads in a house should retain a manual fallback?',
       ),
       {
-        regulationStatus: 'KNX architecture is transferable, but equipment selection, SELV segregation, mains wiring and commissioning must follow current product documentation, BS 7671 principles and Kenyan requirements.',
+        regulationStatus: 'KNX architecture is transferable, but equipment selection, SELV segregation, mains wiring and commissioning must follow current product documentation, BS 7671 principles and applicable requirements.',
       },
     ),
     L(
@@ -41,7 +41,7 @@ export const module13 = M(
       757,
       'ETS project structure, products and backups',
       'Configuration foundations',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'The first ETS lesson tours the software used to engineer a KNX installation. It shows how a project is organised, how product data is obtained from the catalogue and why a recoverable project backup is part of the installation deliverable rather than an optional computer file.',
         [
@@ -66,7 +66,7 @@ export const module13 = M(
       1763,
       'KNX parameters, group addresses and commissioning',
       'Configuration workflow',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'Part two moves from project setup into programming. It demonstrates device parameterisation, group-address creation and the linking of communication objects so a physical input can command one or several outputs, providing the mental model needed to build scenes, central functions and coordinated room control.',
         [
@@ -105,7 +105,7 @@ export const module13 = M(
         'Why can a cable with eight connected conductors still perform badly, and which test result would you inspect for a pair-termination or crosstalk problem?',
       ),
       {
-        regulationStatus: 'Fluke provides authoritative test-method training. Select current ISO/IEC, BS/EN or client-specified cabling limits and apply Kenyan communications, fire-stopping and segregation requirements.',
+        regulationStatus: 'Fluke provides authoritative test-method training. Select current ISO/IEC, BS/EN or client-specified cabling limits and apply communications, fire-stopping and segregation requirements.',
       },
     ),
     L(
@@ -155,7 +155,7 @@ export const module13 = M(
         'What makes an MPTL different from a permanent link, and what must change in the certification setup to test it correctly?',
       ),
       {
-        regulationStatus: 'Follow current cabling, PoE and product requirements; coordinate penetrations, fire stopping, ceiling access and separation with the Kenyan building design.',
+        regulationStatus: 'Follow current cabling, PoE and product requirements; coordinate penetrations, fire stopping, ceiling access and separation with the building design.',
       },
     ),
     L(
@@ -166,7 +166,7 @@ export const module13 = M(
       3114,
       'Network video recorder design and commissioning',
       'Video security',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'This technical overview uses an I-Series network video recorder to explain the centre of an IP CCTV system: camera channels, storage, recording, network configuration, event handling and remote access. The product-specific interface is useful as a worked example, but the more important lesson is how recording objectives drive bandwidth, disk capacity and commissioning choices.',
         [
@@ -180,7 +180,7 @@ export const module13 = M(
         'Which five design inputs would you collect before selecting an NVR and hard-drive capacity for a client?',
       ),
       {
-        regulationStatus: 'The interface and firmware will age. Follow current manufacturer guidance and Kenyan privacy, cybersecurity, signage and data-retention requirements.',
+        regulationStatus: 'The interface and firmware will age. Follow current manufacturer guidance and privacy, cybersecurity, signage and data-retention requirements.',
       },
     ),
     L(
@@ -191,7 +191,7 @@ export const module13 = M(
       1091,
       'Door access-control installation',
       'Access control',
-      'UK educator',
+      'Educator',
       G(
         'A practical site lesson follows the installation of a Paxton access-control system and connects the logical access decision to the physical door hardware. It highlights neat controller placement, reader and lock wiring, power arrangements and the importance of commissioning the complete door rather than treating the electrical connections in isolation.',
         [
@@ -205,7 +205,7 @@ export const module13 = M(
         'For a selected door, should the lock fail safe or fail secure, and what evidence from the escape and security strategy supports that decision?',
       ),
       {
-        regulationStatus: 'This is a product-based UK installation example. Confirm current manufacturer instructions, fire/escape coordination, security grades and Kenyan authority requirements.',
+        regulationStatus: 'This is a product-based featured installation example. Confirm current manufacturer instructions, fire/escape coordination, security grades and authority requirements.',
       },
     ),
     L(
@@ -216,7 +216,7 @@ export const module13 = M(
       422,
       'Automated-gate controller functions',
       'Gate automation',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'This lesson introduces a modern automated-gate control panel from an installer perspective. It provides a compact view of power, motor outputs, command inputs, safety devices and configuration features, making it a useful bridge between ordinary control wiring and the more demanding safety logic of a moving gate.',
         [
@@ -241,7 +241,7 @@ export const module13 = M(
       1153,
       'Gate risk reduction and protective devices',
       'Gate safety',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'The FAAC safety webinar expands gate automation beyond wiring by examining devices used to reduce impact, crushing and entrapment risks. It encourages a hazard-led design in which photocells, monitored edges, force control, guarding and emergency arrangements are selected for the real geometry and users of the gate.',
         [
@@ -266,7 +266,7 @@ export const module13 = M(
       712,
       'Domestic smoke, heat and multi-sensor alarm selection',
       'Domestic life safety',
-      'UK educator',
+      'Educator',
       G(
         'This lesson explains why alarm technology should match the fire risk and the normal environment of each room. It compares common smoke, heat and multi-sensor choices, connects selection to siting and interconnection, and helps prevent both dangerous under-protection and nuisance alarms that occupants may disable.',
         [
@@ -280,7 +280,7 @@ export const module13 = M(
         'Which alarm technology would you propose for the kitchen, escape route and garage, and what nuisance source or fire risk drives each choice?',
       ),
       {
-        regulationStatus: 'The lesson is based on UK practice. Confirm the current domestic fire-alarm standard, Kenyan building/fire requirements and the selected manufacturer siting instructions.',
+        regulationStatus: 'The lesson is based on BS-based practice. Confirm the current domestic fire-alarm standard, building/fire requirements and the selected manufacturer siting instructions.',
       },
     ),
     L(
@@ -291,7 +291,7 @@ export const module13 = M(
       4472,
       'Non-domestic fire-alarm fundamentals',
       'Fire-alarm foundations',
-      'UK educator',
+      'Educator',
       G(
         'This substantial introduction gives electricians a structured route into non-domestic fire detection and alarm work. It covers system purpose and categories, common control and indicating equipment, initiating and alarm devices, circuit integrity and the design-install-commission-handover chain required for a life-safety system.',
         [
@@ -305,7 +305,7 @@ export const module13 = M(
         'What is the difference between the system category, a detection zone and an alarm circuit, and where is each documented?',
       ),
       {
-        regulationStatus: 'The lesson references BS 5839-1 as current when recorded. Verify the latest standard, Kenyan fire authority requirements, product approvals and the project fire strategy.',
+        regulationStatus: 'The lesson references BS 5839-1 as current when recorded. Verify the latest standard, fire authority requirements, product approvals and the project fire strategy.',
       },
     ),
     L(
@@ -316,7 +316,7 @@ export const module13 = M(
       3314,
       'Fire-alarm standards and professional responsibilities',
       'Life-safety standards',
-      'UK professional body',
+      'Professional body',
       G(
         'The ECA and Fire & Security Association webinar examines important changes to BS 5839-1 and, more broadly, shows how detailed standards shape system design, installation, commissioning and documentation. Studying the reasoning behind changes helps an electrician recognise when a familiar rule or inherited site practice may no longer be adequate.',
         [
@@ -330,7 +330,7 @@ export const module13 = M(
         'If a site condition requires departure from the specified fire-alarm design, who must agree it, how should it be assessed and where must it be recorded?',
       ),
       {
-        regulationStatus: 'This webinar discusses BS 5839-1:2017. Treat it as standards-development and responsibility training, then verify the latest edition and all Kenyan fire-safety requirements.',
+        regulationStatus: 'This webinar discusses BS 5839-1:2017. Treat it as standards-development and responsibility training, then verify the latest edition and all fire-safety requirements.',
       },
     ),
   ],

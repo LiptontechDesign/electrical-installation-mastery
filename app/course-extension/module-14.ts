@@ -6,7 +6,7 @@ export const module14 = M(
   'Progress from survey and prosumer architecture through PV, batteries, inverters, source transfer and UPS systems to a complete three-part EV-charger installation and fault-finding sequence.',
   'PRODUCE a project-specific single-line diagram and commissioning plan showing utility supply, PV strings, inverter, battery, essential-load board, isolation, earthing, SPDs, source transfer or UPS, monitoring and a load-managed EV circuit.',
   'Complete the existing modules on AC/DC principles, distribution, earthing, protection, safe isolation, testing and three-phase systems before entering this advanced module.',
-  'These lessons use UK practice plus explicitly labelled international manufacturer explanations. For Kenya, verify every design against current EPRA and Kenya Power requirements, applicable KS/IEC standards, the supply earthing arrangement, product manuals, fire/building rules and competent commissioning.',
+  'These lessons use BS-based practice plus explicitly labelled international manufacturer explanations. For the installation, verify every design against the applicable distribution-network requirements, applicable BS standards, the supply earthing arrangement, product manuals, fire/building rules and competent commissioning.',
   [
     L(
       'p14-l01',
@@ -16,7 +16,7 @@ export const module14 = M(
       912,
       'Solar PV site survey and client brief',
       'SURVEY + DEFINE',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'A professional survey begins solar design with evidence rather than equipment shopping. It connects the client goal, energy use, roof and shading, cable routes, distribution equipment and plant space before an array or inverter is selected.',
         [
@@ -26,11 +26,11 @@ export const module14 = M(
           'Reserve safe, ventilated and serviceable positions for inverter, battery, isolation and monitoring equipment.',
         ],
         'A panel count is not a design; the survey must connect the resource, building, electrical installation and client operating objective.',
-        'Carry out a paper survey of a Kenyan home and produce a photo list, load questions, shading sketch, proposed equipment zones and unresolved risks.',
+        'Carry out a paper survey of a home and produce a photo list, load questions, shading sketch, proposed equipment zones and unresolved risks.',
         'Which survey finding could change the entire system architecture even if the roof has ample space?',
       ),
       {
-        regulationStatus: 'Replace UK network-notification assumptions with current Kenya Power, EPRA, county/building and applicable KS/IEC requirements; obtain structural advice where the mounting surface is uncertain.',
+        regulationStatus: 'Replace the demonstrated network-notification assumptions with current applicable distribution-network, building and BS requirements; obtain structural advice where the mounting surface is uncertain.',
       },
     ),
     L(
@@ -41,9 +41,9 @@ export const module14 = M(
       1125,
       'Prosumer architecture and energy flow',
       'SEE THE SYSTEM',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
-        'A technical tour follows a property that both consumes and produces energy, making the relationships between PV, storage, distribution, metering and household loads visible. Study the architecture and decisions rather than copying its UK equipment schedule.',
+        'A technical tour follows a property that both consumes and produces energy, making the relationships between PV, storage, distribution, metering and household loads visible. Study the architecture and decisions rather than copying its featured equipment schedule.',
         [
           'Trace power from the array through DC equipment, inverter, AC distribution, loads, battery and grid.',
           'Distinguish self-consumption, battery charging, export, import and backup operating states.',
@@ -51,11 +51,11 @@ export const module14 = M(
           'Explain to a client how control settings and daily load timing affect savings and resilience.',
         ],
         'A prosumer system changes direction and source; every drawing and isolation procedure must remain clear in all operating modes.',
-        'Redraw the tour as a source-and-load block diagram, then adapt it for a Kenyan home with an essential-load board and intermittent utility supply.',
+        'Redraw the tour as a source-and-load block diagram, then adapt it for a home with an essential-load board and intermittent utility supply.',
         'When the sun, battery and utility are all available, how would you determine which source is feeding each load and where excess energy goes?',
       ),
       {
-        regulationStatus: 'The installation is a UK case study. Recalculate ratings and replace UK metering, export and DNO arrangements with current Kenyan utility and approval requirements.',
+        regulationStatus: 'The installation is a case study. Recalculate ratings and replace the demonstrated metering, export and DNO arrangements with current utility and approval requirements.',
       },
     ),
     L(
@@ -66,7 +66,7 @@ export const module14 = M(
       1174,
       'Pre-installation condition and capacity checks',
       'INSPECT + PREPARE',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'This lesson puts the existing electrical installation under scrutiny before generation is added. It reinforces that a new inverter can expose weaknesses in earthing, protection, distribution capacity, labelling and isolation that a panel-only survey would miss.',
         [
@@ -80,7 +80,7 @@ export const module14 = M(
         'Which existing-installation defects could make an otherwise correctly sized solar system unsafe?',
       ),
       {
-        regulationStatus: 'Use inspection and test methods accepted in Kenya and confirm utility connection, export, protection and metering requirements before equipment procurement.',
+        regulationStatus: 'Use inspection and test methods accepted for the installation and confirm utility connection, export, protection and metering requirements before equipment procurement.',
       },
     ),
     L(
@@ -91,9 +91,9 @@ export const module14 = M(
       626,
       'Stationary battery siting and PAS 63100 context',
       'LOCATE + MANAGE RISK',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
-        'A discussion of UK PAS 63100:2024 shows why battery location is a fire, access and emergency-planning decision rather than a spare-space decision. Its risk principles are valuable in Kenya even though the cited UK document is not Kenyan law.',
+        'A discussion of PAS 63100:2024 shows why battery location is a fire, access and emergency-planning decision rather than a spare-space decision. It explains why escape routes, fire spread and access matter when selecting a battery location.',
         [
           'Keep storage away from escape routes, vulnerable occupants and locations where a fire would trap people.',
           'Evaluate temperature, ventilation, moisture, direct sun, flooding and combustible surroundings.',
@@ -101,11 +101,11 @@ export const module14 = M(
           'Coordinate detection, warning, emergency information and the response of occupants and firefighters.',
         ],
         'Do not interpret a permitted product temperature range as permission to install a battery in any hot, confined or occupied space.',
-        'Score three possible battery locations in a Kenyan house against fire spread, escape, heat, moisture, security, cable length and maintenance access.',
+        'Score three possible battery locations in a house against fire spread, escape, heat, moisture, security, cable length and maintenance access.',
         'Why can the electrically shortest battery location still be the wrong overall location?',
       ),
       {
-        regulationStatus: 'PAS 63100:2024 is UK guidance, not Kenyan law. Verify Kenyan fire/building requirements, insurer conditions, manufacturer limits and a project-specific risk assessment.',
+        regulationStatus: 'PAS 63100:2024 addresses fire safety for battery storage in dwellings. Verify fire/building requirements, insurer conditions, manufacturer limits and a project-specific risk assessment.',
       },
     ),
     L(
@@ -116,7 +116,7 @@ export const module14 = M(
       814,
       'Inverter siting, environment and service access',
       'SELECT + COORDINATE',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'The inverter-location lesson exposes the thermal, environmental and maintenance consequences of treating a power-electronics unit like a decorative wall box. Good siting protects output, lifespan, safe operation and the technician who must service it.',
         [
@@ -130,7 +130,7 @@ export const module14 = M(
         'Which site conditions affect inverter performance even when its electrical ratings are correct?',
       ),
       {
-        regulationStatus: 'Follow the exact inverter environmental category, mounting and clearance instructions plus Kenyan fire, access and electrical requirements; never infer suitability from another model.',
+        regulationStatus: 'Follow the exact inverter environmental category, mounting and clearance instructions plus fire, access and electrical requirements; never infer suitability from another model.',
       },
     ),
     L(
@@ -141,7 +141,7 @@ export const module14 = M(
       607,
       'PV inspection, testing and commissioning discipline',
       'TEST + RECORD',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'A mistake-led PV testing lesson shows why the order of inspection, polarity, voltage and insulation checks matters. Solar DC remains present in daylight, so instruments, connectors and the commissioning sequence must be selected for the real array voltage and energy.',
         [
@@ -155,7 +155,7 @@ export const module14 = M(
         'Why must polarity and expected string voltage be checked before connecting a string to the inverter?',
       ),
       {
-        regulationStatus: 'Use current Kenyan/IEC PV verification requirements, calibrated PV-rated instruments and the exact inverter, module and SPD test instructions; advanced testing requires competent persons.',
+        regulationStatus: 'Use current applicable PV verification requirements, calibrated PV-rated instruments and the exact inverter, module and SPD test instructions; advanced testing requires competent persons.',
       },
     ),
     L(
@@ -166,9 +166,9 @@ export const module14 = M(
       1561,
       'Hybrid inverter and battery installation case study',
       'BUILD + COMMISSION',
-      'UK educator',
+      'Educator',
       G(
-        'A complete UK installation case study brings mounting, DC and AC wiring, battery communication and startup into one visible sequence. Observe it as a coordination and workmanship example, not a generic connection diagram for other brands.',
+        'A complete featured installation case study brings mounting, DC and AC wiring, battery communication and startup into one visible sequence. Observe it as a coordination and workmanship example, not a generic connection diagram for other brands.',
         [
           'Set out equipment, cable routes, clearances and lifting operations before drilling or termination.',
           'Coordinate PV strings, DC isolation, battery conductors, overcurrent protection and polarity.',
@@ -180,7 +180,7 @@ export const module14 = M(
         'Which settings and connections are specific to the selected inverter and battery combination rather than transferable installation principles?',
       ),
       {
-        regulationStatus: 'The case follows UK equipment and practice. Re-engineer protection, earthing, anti-islanding, settings and utility interfaces for the exact Kenyan supply and approved product combination.',
+        regulationStatus: 'The case follows featured equipment and practice. Re-engineer protection, earthing, anti-islanding, settings and utility interfaces for the exact supply and approved product combination.',
       },
     ),
     L(
@@ -205,7 +205,7 @@ export const module14 = M(
         'What changes inside the unit when utility power fails but the protected loads remain energised?',
       ),
       {
-        regulationStatus: 'Official Victron training is an international manufacturer exception. Apply only the transferable principles and use the exact model manual plus Kenyan protection, earthing and approval requirements.',
+        regulationStatus: 'Official Victron training is an international manufacturer exception. Apply only the transferable principles and use the exact model manual plus protection, earthing and approval requirements.',
       },
     ),
     L(
@@ -216,7 +216,7 @@ export const module14 = M(
       1061,
       'Inverter backfeed and isolation hazards',
       'QUESTION + ISOLATE',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'Using an IET warning as its starting point, this electrical-news lesson challenges any assumption that an inverter control or one isolator removes every source. Its core value is a multiple-source isolation mindset for PV, batteries and prosumer circuits.',
         [
@@ -230,7 +230,7 @@ export const module14 = M(
         'After opening the main AC switch, which parts of a solar-and-storage installation may still be energised and why?',
       ),
       {
-        regulationStatus: 'The programme reports UK/IET concerns rather than replacing a standard. Use current Kenyan rules, manufacturer isolation instructions and a system-specific safe-isolation procedure.',
+        regulationStatus: 'The programme reports IET concerns rather than replacing a standard. Use current BS 7671 requirements, manufacturer isolation instructions and a system-specific safe-isolation procedure.',
       },
     ),
     L(
@@ -243,7 +243,7 @@ export const module14 = M(
       'TRANSFER + INTERLOCK',
       'Official international manufacturer exception',
       G(
-        'This official Eaton lesson is retained as an international manufacturer exception for its clear mechanical and operating explanation of transfer switches. Its US UL examples must be separated from the transferable concepts used in Kenyan 230/400 V, 50 Hz systems.',
+        'This official Eaton lesson is retained as an international manufacturer exception for its clear mechanical and operating explanation of transfer switches. Its US UL examples must be separated from the transferable concepts used for the installationn 230/400 V, 50 Hz systems.',
         [
           'Distinguish manual, non-automatic and automatic transfer operation.',
           'Compare open, delayed and closed transition without allowing unintended source paralleling.',
@@ -255,7 +255,7 @@ export const module14 = M(
         'When would the neutral need to be switched, and what supply and earthing information is required before deciding?',
       ),
       {
-        regulationStatus: 'Official Eaton US training is an international exception. Ignore UL/NEC conclusions unless independently applicable; verify IEC product duty, Kenyan source-changeover rules, poles switched, earthing and backfeed prevention.',
+        regulationStatus: 'Official Eaton US training is an international exception. Ignore UL/NEC conclusions unless independently applicable; verify IEC product duty, source-changeover rules, poles switched, earthing and backfeed prevention.',
       },
     ),
     L(
@@ -280,7 +280,7 @@ export const module14 = M(
         'Why might a correctly rated UPS still provide less runtime than the client expects?',
       ),
       {
-        regulationStatus: 'Official Eaton training is an international manufacturer exception. Verify 230/400 V, 50 Hz compatibility, Kenyan protection and earthing, battery/fire provisions and the exact bypass design.',
+        regulationStatus: 'Official Eaton training is an international manufacturer exception. Verify 230/400 V, 50 Hz compatibility, protection and earthing, battery/fire provisions and the exact bypass design.',
       },
     ),
     L(
@@ -291,9 +291,9 @@ export const module14 = M(
       1605,
       'Three-phase battery storage and whole-property backup',
       'SYNTHESISE + REVIEW',
-      'UK educator',
+      'Educator',
       G(
-        'A large UK battery installation reveals the physical and system-level decisions hidden by small diagrams: three-phase distribution, gateway position, battery stacking, cable containment, lifting, commissioning and client monitoring.',
+        'A large battery installation reveals the physical and system-level decisions hidden by small diagrams: three-phase distribution, gateway position, battery stacking, cable containment, lifting, commissioning and client monitoring.',
         [
           'Map utility, gateway, inverter phases, battery modules and backed-up distribution boundaries.',
           'Check phase loading, total power, surge demand and the distinction between whole-site and essential-load backup.',
@@ -301,11 +301,11 @@ export const module14 = M(
           'Commission operating modes, loss-of-grid behaviour, monitoring, alarms and client handover.',
         ],
         'A polished product installation is a case study, not a design certificate; whole-property backup greatly increases fault, load and operating-mode complexity.',
-        'Review the case using a design checklist and identify which decisions require structural, fire, utility, manufacturer or electrical-engineering approval in Kenya.',
+        'Review the case using a design checklist and identify which decisions require structural, fire, utility, manufacturer or electrical-engineering approval for the installation.',
         'What new risks appear when backup expands from a few essential circuits to an entire three-phase property?',
       ),
       {
-        regulationStatus: 'This UK, product-led case study must be re-engineered for Kenyan supply conditions, utility permissions, fault levels, earthing, fire strategy and approved equipment.',
+        regulationStatus: 'This product-led case study must be re-engineered for the actual supply conditions, utility permissions, fault levels, earthing, fire strategy and approved equipment.',
       },
     ),
     L(
@@ -316,7 +316,7 @@ export const module14 = M(
       894,
       'EV charging installation workflow',
       'PLAN + INSTALL',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'The first EV lesson follows a professional charger installation from site decisions into mounting and electrical preparation. Use the workflow to connect client charging needs with supply capacity, cable routes, protective functions and maintainable positioning.',
         [
@@ -330,7 +330,7 @@ export const module14 = M(
         'Which client and supply data determine whether load management is required?',
       ),
       {
-        regulationStatus: 'The installation uses UK equipment and rules. Verify Kenyan EVSE approval, supply capacity, RCD/DC protection, earthing, outdoor equipment and utility requirements.',
+        regulationStatus: 'The installation uses featured equipment and rules. Verify EVSE approval, supply capacity, RCD/DC protection, earthing, outdoor equipment and utility requirements.',
       },
     ),
     L(
@@ -341,9 +341,9 @@ export const module14 = M(
       1279,
       'EV charging earthing and shock protection',
       'EARTH + PROTECT',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
-        'A charger-specific earthing lesson explains why vehicle charging creates a special touch-voltage problem and how one UK product addresses supply-conductor faults. The reasoning is useful, but the exact UK PME and open-PEN solution must not be copied into an unverified Kenyan earthing system.',
+        'A charger-specific earthing lesson explains why vehicle charging creates a special touch-voltage problem and how one featured product addresses supply-conductor faults. The reasoning is useful, but the exact PME and open-PEN solution must not be copied into an unverified earthing system.',
         [
           'Identify the actual supply earthing arrangement and every exposed or extraneous conductive part.',
           'Understand how a lost neutral/PEN-type fault can raise vehicle body voltage in relevant systems.',
@@ -352,10 +352,10 @@ export const module14 = M(
         ],
         'Earthing labels such as TN-C-S, TN-S or TT describe system conditions, not a menu from which the installer may choose without supply evidence.',
         'Draw the vehicle, charger, CPC, supply neutral and earth paths for the actual property, then mark the protective response to each credible conductor fault.',
-        'Why can a UK charger with built-in open-PEN protection still require a different earthing decision on a Kenyan supply?',
+        'Why can a charger with built-in open-PEN protection still require a different earthing decision on a supply?',
       ),
       {
-        regulationStatus: 'UK PME/open-PEN requirements are contextual only. Determine the Kenyan supply earthing arrangement and apply current local/IEC EV charging and manufacturer protection requirements.',
+        regulationStatus: 'PME/open-PEN requirements are contextual only. Determine the supply earthing arrangement and apply current local/IEC EV charging and manufacturer protection requirements.',
       },
     ),
     L(
@@ -366,7 +366,7 @@ export const module14 = M(
       1211,
       'EV charger final connection and load management',
       'CONNECT + COMMISSION',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'The connection stage makes current-transformer load sensing, final terminations and commissioning visible. It links the earlier supply survey to a charger that can limit demand instead of overloading the property supply.',
         [
@@ -380,7 +380,7 @@ export const module14 = M(
         'How can you prove that dynamic load management is measuring the correct conductor and responding in the safe direction?',
       ),
       {
-        regulationStatus: 'Follow the exact charger, CT and protective-device manuals and Kenyan verification requirements; UK notification and PME details do not automatically apply.',
+        regulationStatus: 'Follow the exact charger, CT and protective-device manuals and verification for the actual project requirements; notification and PME details do not automatically apply.',
       },
     ),
     L(
@@ -391,7 +391,7 @@ export const module14 = M(
       719,
       'EV charger diagnosis and support',
       'DIAGNOSE + HAND OVER',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'The final EV lesson turns common installation questions into a structured diagnostic approach. It separates supply, protection, CT sensing, communications, vehicle and cloud-service faults so that troubleshooting does not become random part replacement.',
         [
@@ -405,7 +405,7 @@ export const module14 = M(
         'What first checks distinguish an electrical-supply problem from a communications or vehicle problem?',
       ),
       {
-        regulationStatus: 'Use manufacturer-approved diagnostic steps and Kenyan electrical safety procedures; do not bypass protection or energise exposed equipment to chase a software fault.',
+        regulationStatus: 'Use manufacturer-approved diagnostic steps and electrical safety procedures; do not bypass protection or energise exposed equipment to chase a software fault.',
       },
     ),
   ],

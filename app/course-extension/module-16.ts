@@ -4,9 +4,9 @@ export const module16 = M(
   16,
   'Professional Tools, Estimating and Handover',
   'Build the professional habits that turn technical ability into reliable paid work. The module covers purposeful tool selection, dependable terminations, cable detection, thermal inspection, job pricing, rewire surveys and defensible installation documentation, with a strong emphasis on traceability and client communication.',
-  'Prepare a complete proposal and handover pack for a sample house rewire. Include a task-based tool and test-equipment plan, termination schedule for flexible conductors and larger cable lugs, pre-drilling cable-detection method, optional thermal-survey scope, measured quantities, labour and overhead build-up, exclusions, variation procedure, inspection and test plan, labelled drawings, certificate information and a short client demonstration. State clearly where UK examples have been adapted to Kenyan prices, contracts, EPRA practice and supply conditions.',
+  'Prepare a complete proposal and handover pack for a sample house rewire. Include a task-based tool and test-equipment plan, termination schedule for flexible conductors and larger cable lugs, pre-drilling cable-detection method, optional thermal-survey scope, measured quantities, labour and overhead build-up, exclusions, variation procedure, inspection and test plan, labelled drawings, certificate information and a short client demonstration. State clearly where examples have been adapted to prices, contracts, installation and certification practice and supply conditions.',
   'Complete the practical wiring and inspection-and-testing modules so the tools, quotation and certificate can be related to a complete installation rather than isolated exercises.',
-  'Tool techniques are broadly transferable, but safe systems of work, calibration, certificates, commercial terms and regulatory duties must be checked against current manufacturer guidance and Kenyan requirements.',
+  'Tool techniques are broadly transferable, but safe systems of work, calibration, certificates, commercial terms and regulatory duties must be checked against current manufacturer guidance and applicable requirements.',
   [
     L(
       'p16-l01',
@@ -16,7 +16,7 @@ export const module16 = M(
       3299,
       'Task-based electrician tool selection and care',
       'Professional toolkit',
-      'UK educator',
+      'Educator',
       G(
         'This extended eFIXX lesson explains the purpose behind an apprentice electrician\'s core hand tools rather than encouraging an expensive collection. It connects insulated screwdrivers, correct terminal profiles, torque control, cable preparation, fastening and test equipment to safer work, repeatable terminations and fewer damaged accessories.',
         [
@@ -31,7 +31,7 @@ export const module16 = M(
       ),
       {
         regulationSensitive: false,
-        regulationStatus: 'Technique-focused UK training. Follow current safe-isolation rules, tool standards, calibration intervals, manufacturer instructions and the employer or site safe system of work.',
+        regulationStatus: 'Technique-focused training. Follow current safe-isolation rules, tool standards, calibration intervals, manufacturer instructions and the employer or site safe system of work.',
       },
     ),
     L(
@@ -42,7 +42,7 @@ export const module16 = M(
       1189,
       'Ferrule selection and flexible-conductor termination',
       'Cable preparation',
-      'UK educator',
+      'Educator',
       G(
         'This lesson examines when cable-end sleeves improve a flexible-conductor termination and when their use is optional or unsuitable. It covers conductor preparation, ferrule length and cross-section, insulated and uninsulated types, crimp profiles and the need to confirm that the receiving terminal is designed to accept the finished end.',
         [
@@ -67,7 +67,7 @@ export const module16 = M(
       1053,
       'Power-cable lug selection and crimp integrity',
       'High-current terminations',
-      'UK educator',
+      'Educator',
       G(
         'Cable lugs carry high current in distribution equipment, switchgear, transformers and motor systems, so a visually neat crimp can still be dangerously wrong. The lesson compares lug families and crimp methods and explains how conductor construction, lug standard, die system, preparation and inspection combine to produce a low-resistance mechanical and electrical joint.',
         [
@@ -92,7 +92,7 @@ export const module16 = M(
       916,
       'Scanning walls before drilling or chasing',
       'Hidden-service detection',
-      'UK educator',
+      'Educator',
       G(
         'This practical demonstration shows how a multi-detector can help locate concealed metal, timber and energised cables before drilling or chasing. It also exposes the limitations that create false confidence: calibration, grip, wall moisture, foil, mesh, depth, cable loading and scanning direction can all change what the instrument reports.',
         [
@@ -118,7 +118,7 @@ export const module16 = M(
       4339,
       'Locating buried utilities with a cable avoidance tool and signal generator',
       'Underground services',
-      'UK educator',
+      'Educator',
       G(
         'This detailed training webinar explains how applying a known signal with a Genny improves underground service location compared with passive scanning alone. It explores direct connection, signal clamping and induction, then shows how coupling, return paths, frequency choice and depth/current interpretation affect the apparent route on the locator.',
         [
@@ -144,7 +144,7 @@ export const module16 = M(
       3060,
       'Electrical thermography and condition assessment',
       'Diagnostic inspection',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'This Fluke webinar explains how thermal imagers reveal abnormal heat patterns in cables, connections, fuses, breakers, transformers and motors. It moves beyond colourful pictures by considering load, comparison points, emissivity, reflections, environmental effects and temperature trend, enabling thermography to guide investigation without pretending it identifies the underlying fault by itself.',
         [
@@ -169,7 +169,7 @@ export const module16 = M(
       798,
       'Building a sustainable electrical quotation',
       'Commercial practice',
-      'UK educator',
+      'Educator',
       G(
         'This lesson explains why a professional quotation must recover more than visible labour and materials. It introduces the cost of productive and non-productive time, overheads, travel, consumables, risk and profit, then connects accurate pricing to a clearly defined scope that lets the client compare value rather than a vague total.',
         [
@@ -183,7 +183,7 @@ export const module16 = M(
         'Which costs continue when you are not physically installing, and where are they recovered in your labour rate or quotation?',
       ),
       {
-        regulationStatus: 'The commercial examples are UK based. Recalculate with current Kenyan labour, tax, transport, insurance, supplier and contract conditions; use clear lawful terms appropriate to the client.',
+        regulationStatus: 'The commercial examples use a particular market. Recalculate with current labour, tax, transport, insurance, supplier and contract conditions; use clear lawful terms appropriate to the client.',
       },
     ),
     L(
@@ -194,7 +194,7 @@ export const module16 = M(
       1188,
       'Rewire surveying, quantities and risk allowances',
       'Estimating workflow',
-      'UK educator',
+      'Educator',
       G(
         'This house-rewire lesson turns pricing principles into a site-survey workflow. It shows why the estimator must count points and circuits while also understanding occupation, access, construction, finishes, distribution equipment, earthing, temporary supplies, testing, making good and client expectations that can transform the labour required.',
         [
@@ -204,11 +204,11 @@ export const module16 = M(
           'The quotation should define containment, accessories, equipment quality, testing, certification, drawings, waste removal and making-good responsibility.',
         ],
         'Survey the route as carefully as the point count. Ten outlets in open new construction are not the same job as ten outlets in an occupied, finished stone house.',
-        'Survey a sample Kenyan home room by room. Mark chases, slab or ceiling routes, distribution-board work, essential/backup circuits, data and security points, finish coordination, testing and every unresolved client decision.',
+        'Survey a sample home room by room. Mark chases, slab or ceiling routes, distribution-board work, essential/backup circuits, data and security points, finish coordination, testing and every unresolved client decision.',
         'Which five site conditions can change rewire labour most, and how would each appear in the quotation so it cannot become an undocumented variation?',
       ),
       {
-        regulationStatus: 'Adapt the UK workflow to Kenyan construction, supply arrangements, EPRA practice, Kenya Power interfaces, taxes, contracts and client expectations. Verify all prices at quotation time.',
+        regulationStatus: 'Adapt the workflow to construction, supply arrangements, installation and certification practice, distribution-network interfaces, taxes, contracts and client expectations. Verify all prices at quotation time.',
       },
     ),
     L(
@@ -219,7 +219,7 @@ export const module16 = M(
       2563,
       'Installation certification and client handover evidence',
       'Handover documentation',
-      'UK educator',
+      'Educator',
       G(
         'John Ward works through the purpose and completion of an electrical installation certificate, connecting its declarations, supply data, circuit schedules and test results to the work actually designed, constructed, inspected and tested. The enduring lesson is evidence: entries must be traceable to measured conditions and responsible people, never copied from a previous form or guessed after leaving site.',
         [
@@ -233,7 +233,7 @@ export const module16 = M(
         'How can a reviewer trace each certificate entry back to the circuit, instrument reading, design decision or responsible person who produced it?',
       ),
       {
-        regulationStatus: 'The form and terminology shown are UK specific. Apply the evidence and traceability principles, then use the current certificates, signatures and submission process required in Kenya.',
+        regulationStatus: 'A certificate records the installation scope, responsible persons, inspection and test results, and any stated limitations.',
       },
     ),
   ],

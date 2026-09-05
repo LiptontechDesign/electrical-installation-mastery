@@ -8,7 +8,7 @@
   "lessonCount": 161,
   "duration": "29 h 23 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
-  "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against current KS 662, EPRA requirements and the rules that apply to your installation.",
+  "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
     {
       "id": "module-01",
@@ -555,7 +555,7 @@
           "layer": "WHY",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P02-L01 — Basic Construction of Twin & Earth Cables, Flexes, SWA Cable, PVC Singles and Concentric Cables.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -587,7 +587,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P02-L03 — The Utimate Guide to Three Phase Electricity.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -603,7 +603,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P02-L04 — Earthing Arrangements TN-C-S, TN-S and TT Identified and Explained.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -619,7 +619,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P02-L05 — Earthing vs. Bonding: What's the Difference?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -635,7 +635,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P02-L06 — Different Types of Protective Devices BS 3036, BS 1361, BSEN 60898 and BS 88 Fuses.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -651,7 +651,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P02-L07 — How Does an RCD Work? Explained using the Matrix Locktronics Kit.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -667,7 +667,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P02-L08 — What's the difference between an RCD and an RCBO? - Circuit protection..",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -683,7 +683,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P02-L09 — Testing for External Earth Fault Loop Impedance (Ze) When You Have a Main Earthing Terminal (MET).",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -902,7 +902,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P03-L11 — New Build Method of Wiring LED Downlights Explained.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -918,7 +918,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P03-L12 — Connecting up a Consumer Unit Wired in PVC Singles - Fitting MCBs and Using a Torque Screwdriver.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -934,7 +934,7 @@
           "layer": "HOW",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P03-L13 — How to Set Up and Use a Torque Screwdriver for all the Connections in a Consumer Unit (Fuse Box).",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         }
       ]
@@ -1089,7 +1089,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P04-L08 — How to Bend Cable Tray.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1293,7 +1293,7 @@
       "description": "Understand protective devices, earthing arrangements and disconnection paths.",
       "duration": "2 h 50 min",
       "durationSeconds": 10227,
-      "checkpoint": "EXPLAIN an earth-fault-current path; compare TN/TT; choose protection conceptually and state which numbers require Kenyan verification.",
+      "checkpoint": "EXPLAIN an earth-fault-current path; compare TN/TT; choose protection conceptually and state which numbers require verification for the actual project.",
       "lessons": [
         {
           "id": "p05-l01",
@@ -1308,7 +1308,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "Prior electrical-engineering study is helpful; no retained knowledge assumed.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1324,7 +1324,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L01 — Short Circuit, Earth Fault or Overload : Which One's Worse?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1340,7 +1340,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L02 — Fuses: When Breaking Something Is a GOOD Thing! 💥.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1356,7 +1356,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L03 — The Complete Guide to MCBs - Miniature Circuit Breakers.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1372,7 +1372,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L04 — The Complete Guide To RCDs - Residual Current Devices.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1388,7 +1388,7 @@
           "layer": "HOW",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P05-L05 — Why won't an MCB reset? What's the difference between TYPE B and TYPE C MCBs?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1404,7 +1404,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P05-L06 — Automatic Disconnection of Supply Explain - ADS.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1420,7 +1420,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L07 — Earth Fault Loop Impedance Path Explained Zs = Ze + (R1 + R2) Earthing Arrangements TN-S & TN-C-S.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1436,7 +1436,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P05-L08 — Understanding Earthing Arrangements - TNCS, TT, TNS.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1452,7 +1452,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L09 — How to Test the Protective Bonding Conductor - Testing and Fault Finding Hints and Tips - AM2 & AM2S.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1468,7 +1468,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P05-L10 — Small Earth Wire: Does Size Matter?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1484,7 +1484,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P05-L11 — How to Calculate Total Earth Fault Loop Impedance - Applying a Temperature Factor to R1 + R2.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1500,7 +1500,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L12 — How to Calculate Total Earth Fault Loop Impedance Part 2 - Applying a Temperature Factor to R1 + R2.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1516,7 +1516,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L13 — Electrical Design: Calculating Earth Fault Loop Impedance.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1532,7 +1532,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P05-L14 — Electricians' Guide: Circuit Protective Device Selection.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         }
       ]
@@ -1559,7 +1559,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "Prior electrical-engineering study is helpful; no retained knowledge assumed.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1575,7 +1575,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P06-L01 — Mastering Electrical Design - Don't Miss This Step!.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1591,7 +1591,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P06-L02 — Electrical Design - Calculating Circuit Current.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1607,7 +1607,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P06-L03 — How to Transpose the Power Formula to Calculate Design Current.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1623,7 +1623,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Audited primary-channel gap: added for this missing building-design concept only.",
           "prerequisite": "P06-L04 — How To Choose The Correct Cable Size.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1639,7 +1639,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P06-L05 — Cable calculation. Calculating the live cable size from BS 7671.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1655,7 +1655,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P06-L06 — How to Calculate the Resistance of a Conductor Based on Resistivity, Length and Cross-Sectional Area.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1671,7 +1671,7 @@
           "layer": "WHY",
           "rationale": "Audited primary-channel gap: added for this missing building-design concept only.",
           "prerequisite": "P06-L07 — Why Does Voltage Drop Along a Circuit?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1687,7 +1687,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P06-L08 — Voltage Drop in Electrical Circuits.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1703,7 +1703,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P06-L09 — Questions from Viewers: How to Calculate Volt Drop based on the Resistivity of a Conductor.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1719,7 +1719,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P06-L10 — ELECTRICIANS Q&A: CABLE TRAY GROUPING FACTOR CALCULATIONS.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1735,7 +1735,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P06-L11 — Maximum Demand and Diversity Calculation Explained - BS 7671 On-Site Guide Appendix A.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1751,7 +1751,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P06-L12 — The Problem With Standard Maximum Demand Methods.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1767,7 +1767,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P06-L13 — 3 Phase: How to Calculate Line Voltage, Phase Voltage, Line Current & Phase Current in Star & Delta.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1783,7 +1783,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P06-L14 — Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         }
       ]
@@ -1810,7 +1810,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "Prior electrical-engineering study is helpful; no retained knowledge assumed.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1826,7 +1826,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P07-L01 — An Introduction to Three Phase Systems Using the Matrix Locktronics Kit.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1842,7 +1842,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P07-L02 — 3 Phase: Star Connected Loads, How to Calculate Line and Phase Voltage & Line and Phase Current.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1858,7 +1858,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P07-L03 — 3 Phase: Delta Connected Loads, How to Calculate Line and Phase Voltage & Line and Phase Current.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1874,7 +1874,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P07-L04 — Three Phase Mystery Solved, No Neutral Required in a Balanced Load?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1890,7 +1890,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P07-L05 — The Easiest Most Accurate Way to Calculate Three Phase Neutral Current in an Unbalanced Load.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1906,7 +1906,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P07-L06 — Understanding Your Three-Phase Distribution Board.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1922,7 +1922,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P07-L07 — Inside Hager's Smart Three-Phase Distribution Board 🤓.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1938,7 +1938,7 @@
           "layer": "WHY",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P07-L08 — Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse).",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1954,7 +1954,7 @@
           "layer": "WHY",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P07-L09 — Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1970,7 +1970,7 @@
           "layer": "WHY + HOW",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P07-L10 — What is the Luminous Flux Method or Lumen Method for Calculating Light Levels?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -1986,7 +1986,7 @@
           "layer": "WHY + HOW",
           "rationale": "Primary WHY lesson: Joe gives the clearest dependency-first explanation and physical meaning.",
           "prerequisite": "P07-L11 — How to Use the Luminous Flux Method to Calculate the Amount of Lumens Required to Illuminate a Room.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2002,7 +2002,7 @@
           "layer": "WHY",
           "rationale": "Audited primary-channel gap: added for this missing building-design concept only.",
           "prerequisite": "P07-L12 — How to Use the Luminous Flux Method to Calculate the Amount of Lights Required in a Room.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2018,7 +2018,7 @@
           "layer": "WHY",
           "rationale": "Audited primary-channel gap: added for this missing building-design concept only.",
           "prerequisite": "P07-L13 — ELECTRICAL ENGINEER Explains Single Line Diagrams.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2034,7 +2034,7 @@
           "layer": "WHY",
           "rationale": "Audited primary-channel gap: added for this missing building-design concept only.",
           "prerequisite": "P07-L14 — Understanding Single Line, Riser, and Block Diagrams.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2050,7 +2050,7 @@
           "layer": "WHY",
           "rationale": "Audited primary-channel gap: added for this missing building-design concept only.",
           "prerequisite": "P07-L15 — Single Line (1-Line) or Panel Schedule?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         }
       ]
@@ -2077,7 +2077,7 @@
           "layer": "WHY",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "Prior electrical-engineering study is helpful; no retained knowledge assumed.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2093,7 +2093,7 @@
           "layer": "HOW",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L01 — 10 Stages of Safe Isolation - 3 Phase Distribution Board.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2109,7 +2109,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L02 — Setting Up A Megger MFT for Continuity and Insulation Resistance Tests (How to set up a Tester).",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2125,7 +2125,7 @@
           "layer": "WHY",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L03 — Measuring the Continuity (Resistance in Ohms) of the Protective Bonding Conductor to Water and Gas.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2141,7 +2141,7 @@
           "layer": "HOW",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L04 — Continuity of CPC and Polarity of our 1 Way Lighting Circuit (R1 + R2 Measured in Ohms).",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2157,7 +2157,7 @@
           "layer": "HOW",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L05 — How to Test a Ring Final Circuit - Ring Main or Socket Circuit - Ring Continuity & Polarity Tests.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2173,7 +2173,7 @@
           "layer": "HOW",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L06 — Insulation Resistance Test (Includes Line and Neutral Together to Earth and Between Live Conductors).",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2189,7 +2189,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L07 — First Live Test - Check Polarity of 3 Phase Supply, Using an Approved Voltage Indicator AM2 & AM2S.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2205,7 +2205,7 @@
           "layer": "WHY",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L08 — External Earth Fault Loop Impedance Ze Test - How to Remove Parallel Earth Paths - Live Testing.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2221,7 +2221,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "GSH joins explanation to installation reality; selected over a shorter duplicate.",
           "prerequisite": "P08-L09 — Measuring Prospective Fault Current (PFC) at the Origin of a Single Phase Supply (Live Test).",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2237,7 +2237,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L10 — Earth Fault Loop Impedance Test - 3 Lead Low or 2 Lead High - Test Explained.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2253,7 +2253,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P08-L11 — Earth Fault Loop Impedance (Zs) - Testing 16 Amp Industrial Socket Outlets Both Single and 3 Phase.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2269,7 +2269,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L12 — Earth Electrode Testing for Beginners.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2285,7 +2285,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L13 — How to Carryout the RCD Ramp Test - Why Does my RCD Keep Tripping.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2301,7 +2301,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L14 — BS 7671 Testing RCD’s - Regardless of the Type of RCD Test it as if it is an AC RCD at x1 ONLY.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2317,7 +2317,7 @@
           "layer": "HOW",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L15 — Live Test Re-check Polarity and Functional Testing of our 2 Way and Intermediate Lighting Circuit.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2333,7 +2333,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P08-L16 — Do you Know Which Conductors Need to be Connected During the Insulation Resistance Test?.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         }
       ]
@@ -2360,7 +2360,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "Prior electrical-engineering study is helpful; no retained knowledge assumed.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2376,7 +2376,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P09-L01 — How to Find a Fault on a Ring Final Circuit (Sockets) Help for AM2 & AM2S Testing and Fault Finding.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2392,7 +2392,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P09-L02 — EICR Ring Circuit Fault Finding Issues - Testing an Open Ring Circuit & Low Insulation Resistance.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2408,7 +2408,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P09-L03 — Fault Finding Testing for Insulation Resistance. Low Reading Insulation Resistance Fault.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2424,7 +2424,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P09-L04 — EICR Fault Finding on Sockets - Reverse Polarity & High Resistance - Ring Final Circuit Testing.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2440,7 +2440,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P09-L05 — Electrical Testing and Fault Finding - Socket NOT Working for a Dishwasher.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2563,7 +2563,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P10-L01 — On Site With Matt Shed Supply in SWA Cable, Wiring PVC Singles in PVC Conduit For Sockets and Lights.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2579,7 +2579,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P10-L02 — On-Site Consumer Unit Change (Fuse Board or Fuse Box Change) Includes Live and Dead Testing.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2611,7 +2611,7 @@
           "layer": "HOW + REQUIREMENT",
           "rationale": "Primary HOW lesson: the strongest full practical demonstration found in GSH’s catalogue.",
           "prerequisite": "P10-L04 — Second Fix - PVC Singles in Conduit - 1 Way Switched Lighting Circuit - Wiring Loop In Method.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2627,7 +2627,7 @@
           "layer": "HOW",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P10-L05 — On Site with Matt Connecting up a new Cooker and Testing the Circuits Earth Fault Loop Impedance Zs.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {
@@ -2643,7 +2643,7 @@
           "layer": "WHY + REQUIREMENT",
           "rationale": "Best concise system/requirement treatment in eFIXX; direct teaching outweighed news/product-led overlaps.",
           "prerequisite": "P10-L06 — SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION.",
-          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST CURRENT KS 662 / EPRA",
+          "regulationStatus": "Regulation-sensitive or numerical detail may age — VERIFY AGAINST BS 7671:2018+A4:2026",
           "regulationSensitive": true
         },
         {

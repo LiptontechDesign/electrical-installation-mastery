@@ -1,13 +1,13 @@
 import { G, L, M } from './builders';
 
 const kenyaLightingStatus =
-  'Use the UK lesson for design principles, product literacy and workmanship. For Kenyan work, verify the current Kenyan Building Code, applicable KS/IEC standards, EPRA requirements, fire-authority and project requirements, and manufacturer instructions; a cited UK rule is not automatically Kenyan law.';
+  'Use the lesson for design principles, product literacy and workmanship. For work, verify the current Building Code, applicable BS standards, installation requirements, fire-authority and project requirements, and manufacturer instructions; a cited rule is not automatically applicable law.';
 
 export const module12 = M(
   12,
   'Lighting Specification, Fittings and Controls',
-  'Move from simply wiring a light to specifying a complete lighting result. The sequence covers lamp and fitting selection, human-centred design, gypsum and fire-rated ceiling coordination, LED strips and drivers, dimming, outdoor and industrial lighting, sensors, DALI, smart controls and emergency lighting. UK teaching is translated into practical decisions for Kenyan masonry, stone and brick homes with gypsum ceilings, strong daylight, dust, rain, voltage variation and backup-power systems.',
-  'Prepare a room-by-room lighting schedule for a Kenyan masonry-and-gypsum home. For every space, justify the visual task, fitting type, lumen target, colour quality, beam or distribution, glare control, IP/IK needs, mounting and maintenance access, driver location, switching or control method, and coordination with ceiling services. Identify every point where Kenyan requirements or manufacturer evidence must be checked.',
+  'Move from simply wiring a light to specifying a complete lighting result. The sequence covers lamp and fitting selection, human-centred design, gypsum and fire-rated ceiling coordination, LED strips and drivers, dimming, outdoor and industrial lighting, sensors, DALI, smart controls and emergency lighting. teaching is translated into practical decisions for the actual masonry, stone and brick homes with gypsum ceilings, strong daylight, dust, rain, voltage variation and backup-power systems.',
+  'Prepare a room-by-room lighting schedule for a masonry-and-gypsum home. For every space, justify the visual task, fitting type, lumen target, colour quality, beam or distribution, glare control, IP/IK needs, mounting and maintenance access, driver location, switching or control method, and coordination with ceiling services. Identify every point where applicable requirements or manufacturer evidence must be checked.',
   'Complete the core lighting-circuit, protective-device, safe-isolation and testing lessons before specifying fittings or controls.',
   kenyaLightingStatus,
   [
@@ -19,9 +19,9 @@ export const module12 = M(
       625,
       'Lamp technologies and cap identification',
       'FOUNDATION',
-      'UK educator',
+      'Educator',
       G(
-        'The lesson compares incandescent, halogen, compact-fluorescent and LED light sources, then identifies common bayonet and Edison-screw cap arrangements. Use those comparisons to separate heat, energy use, expected life and light quality from the physical cap that connects a lamp to its holder. On Kenyan projects, also confirm the actual supply rating, lamp-holder temperature rating, locally available replacement type and the quality of imported LED electronics before promising a client long service life.',
+        'The lesson compares incandescent, halogen, compact-fluorescent and LED light sources, then identifies common bayonet and Edison-screw cap arrangements. Use those comparisons to separate heat, energy use, expected life and light quality from the physical cap that connects a lamp to its holder. On projects, also confirm the actual supply rating, lamp-holder temperature rating, locally available replacement type and the quality of imported LED electronics before promising a client long service life.',
         [
           'Lamp technology changes efficiency, heat output and service life.',
           'The lamp cap must mechanically and electrically match the holder.',
@@ -41,9 +41,9 @@ export const module12 = M(
       1434,
       'Lighting-design fundamentals',
       'DESIGN FOUNDATION',
-      'UK educator',
+      'Educator',
       G(
-        'Lighting design starts with people, activities and surfaces rather than a symmetrical pattern of ceiling points. The lesson introduces the linked choices behind useful illumination: quantity of light, distribution, colour, glare, contrast, fitting position and control. Apply the method to Kenyan rooms by accounting for strong daytime light, dark stone or timber finishes, reflective tiles, gypsum details, ceiling fans and the locations of HVAC, sprinklers and detectors.',
+        'Lighting design starts with people, activities and surfaces rather than a symmetrical pattern of ceiling points. The lesson introduces the linked choices behind useful illumination: quantity of light, distribution, colour, glare, contrast, fitting position and control. Apply the method to rooms by accounting for strong daytime light, dark stone or timber finishes, reflective tiles, gypsum details, ceiling fans and the locations of HVAC, sprinklers and detectors.',
         [
           'Define the visual task before choosing a fitting.',
           'Light distribution and surface reflectance shape the result.',
@@ -63,9 +63,9 @@ export const module12 = M(
       671,
       'Professional lighting rules of thumb',
       'CLIENT DESIGN',
-      'UK educator',
+      'Educator',
       G(
-        'The first part of Ray Molony\'s series turns professional lighting experience into questions an electrician can use during a client survey. Treat each rule as a design prompt rather than a fixed recipe: observe the task, daylight, surfaces, sightlines and desired atmosphere, then decide where light should come from. In a Kenyan home, survey both daytime and night-time use because deep verandas, small openings, dark finishes and load-shedding can change the brief.',
+        'The first part of Ray Molony\'s series turns professional lighting experience into questions an electrician can use during a client survey. Treat each rule as a design prompt rather than a fixed recipe: observe the task, daylight, surfaces, sightlines and desired atmosphere, then decide where light should come from. In a home, survey both daytime and night-time use because deep verandas, small openings, dark finishes and load-shedding can change the brief.',
         [
           'Survey how the space is used before discussing products.',
           'Daylight and electric light must be considered together.',
@@ -85,7 +85,7 @@ export const module12 = M(
       652,
       'Applying lighting rules to fitting selection',
       'CLIENT DESIGN',
-      'UK educator',
+      'Educator',
       G(
         'Part two continues the rule-based review and helps turn a broad brief into fitting and placement decisions. Use it to compare general illumination with light aimed at worktops, walls, artwork, circulation routes or architectural features, and to judge whether contrast is intentional or accidental. For gypsum ceilings and stone or brick walls, coordinate recess depth, surface texture, grazing effects, access panels and the shadow lines created by coves and bulkheads before first-fix.',
         [
@@ -107,9 +107,9 @@ export const module12 = M(
       860,
       'Completing and reviewing a lighting proposal',
       'CLIENT DESIGN',
-      'UK educator',
+      'Educator',
       G(
-        'The final part completes the professional checklist and is best used as a review before a scheme is priced or installed. Check that control groups make sense to the user, fittings and drivers remain maintainable, the scheme can adapt to different activities, and the visual result has not been sacrificed to ceiling symmetry. Add Kenyan realities to the review: locally serviceable parts, surge exposure, generator or inverter operation, cleaning access and a clear manual override for smart controls.',
+        'The final part completes the professional checklist and is best used as a review before a scheme is priced or installed. Check that control groups make sense to the user, fittings and drivers remain maintainable, the scheme can adapt to different activities, and the visual result has not been sacrificed to ceiling symmetry. Add realities to the review: locally serviceable parts, surge exposure, generator or inverter operation, cleaning access and a clear manual override for smart controls.',
         [
           'Group controls around activities and understandable scenes.',
           'Drivers, lamps and fittings require realistic maintenance access.',
@@ -129,9 +129,9 @@ export const module12 = M(
       2991,
       'Professional lighting-design reference framework',
       'ADVANCED DESIGN',
-      'UK professional body',
+      'Professional body',
       G(
-        'CIBSE presents the Society of Light and Lighting handbook as a structured professional reference covering both the measurable and human sides of lighting. Use the webinar to understand how illuminance, uniformity, glare, colour, daylight, controls, energy, maintenance and application guidance fit into one design process. The handbook is a UK reference, so its figures are valuable study material but must be checked against the Kenyan project brief, applicable local standards and the authority having jurisdiction.',
+        'CIBSE presents the Society of Light and Lighting handbook as a structured professional reference covering both the measurable and human sides of lighting. Use the webinar to understand how illuminance, uniformity, glare, colour, daylight, controls, energy, maintenance and application guidance fit into one design process. The handbook is a BS-based reference, so its figures are valuable study material but must be checked against the project brief, applicable local standards and the authority having jurisdiction.',
         [
           'Professional design combines quantitative and qualitative criteria.',
           'Application guidance depends on the task and occupants.',
@@ -140,7 +140,7 @@ export const module12 = M(
         ],
         'Use a handbook to justify decisions, not to copy a number without its context and assumptions.',
         'Create a one-page specification template with fields for illuminance, uniformity, glare, colour, controls, maintenance and verification source.',
-        'Which parts of a UK lighting recommendation transfer as principles, and which require Kenyan verification?',
+        'Why must a lighting recommendation match the actual room, task and equipment?',
       ),
     ),
     L(
@@ -151,9 +151,9 @@ export const module12 = M(
       1228,
       'LED downlight specification',
       'FITTING SELECTION',
-      'UK educator',
+      'Educator',
       G(
-        'This lesson evaluates the decisions hidden behind a simple downlight: light output and beam, glare, colour, dimming, cut-out, connector, driver, insulation contact and evidence for the ceiling application. For Kenyan gypsum work, agree the fitting and access strategy before the ceiling is closed; leave the required clearance, support cables independently, keep drivers retrievable and coordinate with brandering, HVAC and fire or acoustic barriers. A fire-rated product claim must be matched to the actual tested ceiling construction rather than treated as a universal label.',
+        'This lesson evaluates the decisions hidden behind a simple downlight: light output and beam, glare, colour, dimming, cut-out, connector, driver, insulation contact and evidence for the ceiling application. For gypsum work, agree the fitting and access strategy before the ceiling is closed; leave the required clearance, support cables independently, keep drivers retrievable and coordinate with brandering, HVAC and fire or acoustic barriers. A fire-rated product claim must be matched to the actual tested ceiling construction rather than treated as a universal label.',
         [
           'Beam, lumen output and glare determine visual performance.',
           'Cut-out, recess depth and insulation conditions determine physical suitability.',
@@ -173,9 +173,9 @@ export const module12 = M(
       737,
       'Fire performance of recessed lighting',
       'FITTING SELECTION',
-      'UK educator',
+      'Educator',
       G(
-        'Recessing a luminaire can interrupt a ceiling that is intended to resist fire, so product testing and the complete ceiling build-up matter. The lesson explains why a fire-rated downlight is part of an assembly decision involving board type, layers, joists, insulation and test evidence. Many Kenyan gypsum ceilings are decorative rather than certified fire-resisting constructions; first establish the required performance, then obtain evidence applicable to the actual system instead of borrowing a UK installation detail blindly.',
+        'Recessing a luminaire can interrupt a ceiling that is intended to resist fire, so product testing and the complete ceiling build-up matter. The lesson explains why a fire-rated downlight is part of an assembly decision involving board type, layers, joists, insulation and test evidence. Many gypsum ceilings are decorative rather than certified fire-resisting constructions; first establish the required performance, then obtain evidence applicable to the actual system instead of borrowing a featured installation detail blindly.',
         [
           'A downlight opening can compromise a fire-separating ceiling.',
           'Fire performance belongs to the tested assembly, not the fitting alone.',
@@ -195,9 +195,9 @@ export const module12 = M(
       430,
       'LED strip specification',
       'FITTING SELECTION',
-      'UK educator',
+      'Educator',
       G(
-        'LED tape must be specified as a system rather than as a decorative roll. Match voltage, watts per metre, lumen output, colour temperature, colour quality, LED density, ingress protection, dimming method, profile and driver to the required effect and installed length. In Kenyan gypsum coves, kitchens and joinery, document feed points and accessible driver locations before closing finishes, and allow for heat, dust, cleaning and the voltage drop of long concealed runs.',
+        'LED tape must be specified as a system rather than as a decorative roll. Match voltage, watts per metre, lumen output, colour temperature, colour quality, LED density, ingress protection, dimming method, profile and driver to the required effect and installed length. In gypsum coves, kitchens and joinery, document feed points and accessible driver locations before closing finishes, and allow for heat, dust, cleaning and the voltage drop of long concealed runs.',
         [
           'Voltage and watts per metre determine driver and cable requirements.',
           'LED density and profile affect dotting, diffusion and heat removal.',
@@ -217,7 +217,7 @@ export const module12 = M(
       704,
       'Thermal management for LED strip',
       'FITTING SELECTION',
-      'UK educator',
+      'Educator',
       G(
         'Even efficient LEDs convert part of their input power into heat, and excessive junction temperature shortens life and shifts performance. The lesson shows why an aluminium profile is more than a decorative channel: it spreads heat, protects the tape and supports a diffuser for a cleaner result. In gypsum coves or timber joinery, do not stick tape directly to dusty, insulating or inaccessible surfaces; prepare the substrate, provide ventilation where required and leave the strip, joints and driver serviceable.',
         [
@@ -239,9 +239,9 @@ export const module12 = M(
       542,
       'LED driver data and markings',
       'DRIVER SELECTION',
-      'UK educator',
+      'Educator',
       G(
-        'Driver markings communicate the electrical and environmental limits that protect both the LED load and the installation. Learn to distinguish constant-voltage from constant-current output and to read power, input, output, temperature, insulation, SELV, ingress and dimming information before connecting a product. For Kenyan projects, also check supply tolerance, surge strategy, generator or inverter compatibility, ambient temperature and whether the selected replacement will remain obtainable.',
+        'Driver markings communicate the electrical and environmental limits that protect both the LED load and the installation. Learn to distinguish constant-voltage from constant-current output and to read power, input, output, temperature, insulation, SELV, ingress and dimming information before connecting a product. For projects, also check supply tolerance, surge strategy, generator or inverter compatibility, ambient temperature and whether the selected replacement will remain obtainable.',
         [
           'Constant-voltage and constant-current drivers are not interchangeable.',
           'Input, output and maximum power must all suit the load.',
@@ -261,9 +261,9 @@ export const module12 = M(
       599,
       'LED dimmer compatibility',
       'CONTROLS',
-      'UK educator',
+      'Educator',
       G(
-        'Reliable dimming depends on the combined behaviour of the control, driver or lamp, connected load and wiring. The lesson explains why LED loads can flicker, buzz, jump, refuse to start or have a poor low end when a dimmer is selected by current rating alone. Build compatibility from manufacturer data and testing, and re-check behaviour on the generator, UPS or inverter supply that may operate a Kenyan home during an outage.',
+        'Reliable dimming depends on the combined behaviour of the control, driver or lamp, connected load and wiring. The lesson explains why LED loads can flicker, buzz, jump, refuse to start or have a poor low end when a dimmer is selected by current rating alone. Build compatibility from manufacturer data and testing, and re-check behaviour on the generator, UPS or inverter supply that may operate a home during an outage.',
         [
           'The lamp or driver and dimmer must be tested as a combination.',
           'Minimum load and control method affect the dimming range.',
@@ -283,7 +283,7 @@ export const module12 = M(
       999,
       'Advanced LED dimming behaviour',
       'DIAGNOSE',
-      'UK educator',
+      'Educator',
       G(
         'This deeper lesson examines what happens inside common dimming arrangements and why LED lamps may behave badly as the requested output approaches the lower limit. Use it to separate control-type, minimum-load, driver, lamp, supply and connection problems instead of replacing components at random. Phone-camera banding can reveal modulation, but a professional conclusion still needs product data, repeatable tests and suitable measuring equipment.',
         [
@@ -305,9 +305,9 @@ export const module12 = M(
       1336,
       'Ingress and impact protection',
       'FITTING SELECTION',
-      'UK educator',
+      'Educator',
       G(
-        'IP and IK codes describe different kinds of protection: ingress of solids and water versus mechanical impact. The lesson explains how to read the digits and why the completed installation, including glands, seals, orientation and opening method, must preserve the claimed performance. Kenyan outdoor fittings may face wind-blown dust, insects, intense rain, irrigation, cleaning jets, sunlight and casual impact, so choose from the real exposure rather than using “waterproof” as a vague sales term.',
+        'IP and IK codes describe different kinds of protection: ingress of solids and water versus mechanical impact. The lesson explains how to read the digits and why the completed installation, including glands, seals, orientation and opening method, must preserve the claimed performance. outdoor fittings may face wind-blown dust, insects, intense rain, irrigation, cleaning jets, sunlight and casual impact, so choose from the real exposure rather than using “waterproof” as a vague sales term.',
         [
           'IP addresses solid and water ingress; IK addresses impact.',
           'Each IP digit has a separate meaning.',
@@ -327,9 +327,9 @@ export const module12 = M(
       464,
       'Outdoor lighting concepts',
       'OUTDOOR DESIGN',
-      'UK educator',
+      'Educator',
       G(
-        'The lesson demonstrates how several outdoor-lighting approaches create different effects instead of flooding a whole garden with one harsh source. Translate the ideas into layers for paths, steps, planting, walls, entrances, work areas and security while controlling glare into bedrooms and neighbouring property. For Kenyan compounds, coordinate lighting with gates, electric-fence zones, CCTV, drainage, irrigation and future landscaping, and keep buried joints and drivers accessible and appropriately protected.',
+        'The lesson demonstrates how several outdoor-lighting approaches create different effects instead of flooding a whole garden with one harsh source. Translate the ideas into layers for paths, steps, planting, walls, entrances, work areas and security while controlling glare into bedrooms and neighbouring property. For compounds, coordinate lighting with gates, electric-fence zones, CCTV, drainage, irrigation and future landscaping, and keep buried joints and drivers accessible and appropriately protected.',
         [
           'Outdoor lighting works best as purposeful layers.',
           'Beam direction controls drama, visibility and glare.',
@@ -349,9 +349,9 @@ export const module12 = M(
       1759,
       'Premium garden-lighting installation',
       'CASE STUDY',
-      'UK educator',
+      'Educator',
       G(
-        'This extended site case study shows the coordination and workmanship behind a high-end garden-lighting result. Observe how a visual concept becomes fitting positions, cable routes, connections, controls, testing and a finished client experience, while distinguishing transferable method from project-specific products. On a Kenyan compound, adapt the workflow for masonry walls, garden trenches, heavy rain, termites or soil disturbance, gate services, electric-fence separation and the availability of replacement fittings.',
+        'This extended site case study shows the coordination and workmanship behind a high-end garden-lighting result. Observe how a visual concept becomes fitting positions, cable routes, connections, controls, testing and a finished client experience, while distinguishing transferable method from project-specific products. On a compound, adapt the workflow for masonry walls, garden trenches, heavy rain, termites or soil disturbance, gate services, electric-fence separation and the availability of replacement fittings.',
         [
           'A site survey connects the visual brief to buildable routes.',
           'Outdoor joints and supports require durable workmanship.',
@@ -359,7 +359,7 @@ export const module12 = M(
           'Commissioning includes the night-time visual result.',
         ],
         'Outdoor lighting should be inspected after dark; daylight completion alone cannot prove the design.',
-        'Create a method statement for one Kenyan garden zone covering route, protection, drainage, joints, control, testing and night-time aiming.',
+        'Create a method statement for one garden zone covering route, protection, drainage, joints, control, testing and night-time aiming.',
         'Which details in the case study transfer directly, and which must change for local construction and environment?',
       ),
     ),
@@ -371,9 +371,9 @@ export const module12 = M(
       649,
       'Industrial high-bay lighting',
       'COMMERCIAL FITTINGS',
-      'UK educator',
+      'Educator',
       G(
-        'A warehouse fitting is a package of optical distribution, mounting, output, control and emergency options rather than simply a powerful lamp. The lesson uses a high-bay product to expose questions about mounting height, aisle or open-area distribution, sensors, emergency provision, installation speed and maintenance access. Apply the questions to Kenyan warehouses and workshops while verifying local emergency, occupational-safety and fire requirements and checking high ambient temperature, dust and supply quality.',
+        'A warehouse fitting is a package of optical distribution, mounting, output, control and emergency options rather than simply a powerful lamp. The lesson uses a high-bay product to expose questions about mounting height, aisle or open-area distribution, sensors, emergency provision, installation speed and maintenance access. Apply the questions to warehouses and workshops while verifying local emergency, occupational-safety and fire requirements and checking high ambient temperature, dust and supply quality.',
         [
           'Mounting height and distribution determine useful floor-level light.',
           'High output still requires glare and uniformity control.',
@@ -393,9 +393,9 @@ export const module12 = M(
       1413,
       'Sensor control and override wiring',
       'CONTROLS',
-      'UK educator',
+      'Educator',
       G(
-        'The lesson develops a sensor-controlled lighting arrangement with an override facility and explains the function of permanent supply, switched output, neutral and manual control. Use the circuit logic to design predictable operation rather than copying conductor colours or a UK accessory layout. PIR control suits Kenyan entrances, stairs, corridors, washrooms and security areas, but the sensor position, load type, weather exposure, client expectation and safe override state must be agreed first.',
+        'The lesson develops a sensor-controlled lighting arrangement with an override facility and explains the function of permanent supply, switched output, neutral and manual control. Use the circuit logic to design predictable operation rather than copying conductor colours or a demonstrated accessory layout. PIR control suits entrances, stairs, corridors, washrooms and security areas, but the sensor position, load type, weather exposure, client expectation and safe override state must be agreed first.',
         [
           'A sensor needs the correct supply and switched-load connections.',
           'Override logic must be intentional and clearly documented.',
@@ -415,9 +415,9 @@ export const module12 = M(
       552,
       'DALI control fundamentals',
       'SMART CONTROLS',
-      'UK educator',
+      'Educator',
       G(
-        'DALI allows compatible lighting devices to receive digital commands, be addressed and arranged into groups and scenes without reproducing every control relationship in mains switch wiring. The lesson introduces the bus, control gear and commissioning concept so an electrician can understand the difference between supplying a fitting and controlling it. In Kenya, DALI is most useful where project scale, scene changes, monitoring or energy management justify the added design, programming, documentation and spare-parts burden.',
+        'DALI allows compatible lighting devices to receive digital commands, be addressed and arranged into groups and scenes without reproducing every control relationship in mains switch wiring. The lesson introduces the bus, control gear and commissioning concept so an electrician can understand the difference between supplying a fitting and controlling it. DALI is most useful where project scale, scene changes, monitoring or energy management justify the added design, programming, documentation and spare-parts burden.',
         [
           'DALI separates digital control relationships from mains power paths.',
           'Addressing enables flexible groups and scenes.',
@@ -437,9 +437,9 @@ export const module12 = M(
       434,
       'DALI bus wiring',
       'SMART CONTROLS',
-      'UK educator',
+      'Educator',
       G(
-        'This follow-on lesson focuses on the physical DALI control bus and shows why its topology and function differ from a conventional switched-live circuit. Plan the bus, compatible cable, control power and device locations as an engineered system, then leave addressing and group information in the commissioning record. Cable rating, containment, segregation and identification must follow the applicable Kenyan installation requirements and the selected DALI equipment instructions rather than an assumed UK detail.',
+        'This follow-on lesson focuses on the physical DALI control bus and shows why its topology and function differ from a conventional switched-live circuit. Plan the bus, compatible cable, control power and device locations as an engineered system, then leave addressing and group information in the commissioning record. Cable rating, containment, segregation and identification must follow the applicable installation requirements and the selected DALI equipment instructions rather than an assumed detail.',
         [
           'DALI power and DALI control are related but distinct functions.',
           'Bus topology offers flexibility within documented limits.',
@@ -453,15 +453,15 @@ export const module12 = M(
     ),
     L(
       'p12-v2-l21',
-      'UK Smart Dimmer Case Study: Two-Way, Matter and No-Neutral Design',
+      'Smart Dimmer Case Study: Two-Way, Matter and No-Neutral Design',
       'nEpOpzAzgFs',
       'My Project Box',
       1336,
       'Retrofit smart dimming',
       'SMART CONTROLS',
-      'UK educator',
+      'Educator',
       G(
-        'This practical case study explores a smart-dimmer retrofit that must work with UK-style switch wiring, multi-way control, Matter integration and locations where no neutral is available at the switch. Those constraints closely resemble many Kenyan homes, but product suitability still depends on the exact load, conductor arrangement, box depth, wireless environment and supply. For new masonry work, provide neutrals, deep boxes and spare conduit where practical so future smart controls do not depend on compromises.',
+        'This practical case study explores a smart-dimmer retrofit that must work with the demonstrated switch wiring, multi-way control, Matter integration and locations where no neutral is available at the switch. Those constraints closely resemble many homes, but product suitability still depends on the exact load, conductor arrangement, box depth, wireless environment and supply. For new masonry work, provide neutrals, deep boxes and spare conduit where practical so future smart controls do not depend on compromises.',
         [
           'No-neutral controls power themselves through the connected load.',
           'Multi-way switching and smart control need a defined architecture.',
@@ -481,9 +481,9 @@ export const module12 = M(
       5112,
       'Lighting-control system design',
       'ADVANCED CONTROLS',
-      'UK educator',
+      'Educator',
       G(
-        'This extended discussion compares the purposes and trade-offs behind modern lighting controls rather than treating “smart” as a single product category. Use it to organise manual switching, dimming, occupancy and daylight sensors, scenes, scheduling, connected systems, commissioning and user interfaces around the building brief. For Kenyan projects, include offline operation, manual fallback, surge protection, backup-power behaviour, local technical support, cybersecurity and an exit plan if a cloud service or proprietary component disappears.',
+        'This extended discussion compares the purposes and trade-offs behind modern lighting controls rather than treating “smart” as a single product category. Use it to organise manual switching, dimming, occupancy and daylight sensors, scenes, scheduling, connected systems, commissioning and user interfaces around the building brief. For projects, include offline operation, manual fallback, surge protection, backup-power behaviour, local technical support, cybersecurity and an exit plan if a cloud service or proprietary component disappears.',
         [
           'Control architecture begins with user and energy objectives.',
           'Sensors, scenes and schedules solve different problems.',
@@ -503,9 +503,9 @@ export const module12 = M(
       3648,
       'Emergency-lighting design',
       'LIFE SAFETY',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
-        'The webinar develops emergency lighting as a life-safety system that begins with risk, escape strategy and the loss of normal supply—not with placing a few battery fittings. It covers maintained and non-maintained operation, escape routes, open and high-risk areas, signs, duration, central or self-contained arrangements, commissioning and records. These UK design principles are valuable, but a Kenyan installation must follow the project fire strategy, current local legal and standards requirements, the approving authorities and the specified product evidence.',
+        'The webinar develops emergency lighting as a life-safety system that begins with risk, escape strategy and the loss of normal supply—not with placing a few battery fittings. It covers maintained and non-maintained operation, escape routes, open and high-risk areas, signs, duration, central or self-contained arrangements, commissioning and records. These the design principles are valuable, but a installation must follow the project fire strategy, current legal and standards requirements, the approving authorities and the specified product evidence.',
         [
           'Emergency coverage follows risk and escape strategy.',
           'Maintained and non-maintained modes serve different needs.',
@@ -525,14 +525,14 @@ export const module12 = M(
       628,
       'Emergency-lighting testing and records',
       'LIFE SAFETY',
-      'UK educator',
+      'Educator',
       G(
-        'Emergency lighting needs routine functional checks, periodic duration testing, defect correction and records that show the system remains ready after handover. The lesson explains the UK testing pattern and the practical difference between confirming operation and proving rated endurance. Treat those intervals as UK teaching, not Kenyan law: establish the schedule from current Kenyan requirements, the fire strategy, the responsible authority and manufacturer instructions, and arrange tests so battery discharge does not leave the building unprotected.',
+        'Emergency lighting needs routine functional checks, periodic duration testing, defect correction and records that show the system remains ready after handover. The lesson explains the testing pattern and the practical difference between confirming operation and proving rated endurance. Establish the schedule from the applicable emergency-lighting standard, fire strategy and manufacturer instructions, and arrange tests so battery discharge does not leave the building unprotected.',
         [
           'A functional test and a full-duration test prove different things.',
           'Test timing must consider recharge and continued building safety.',
           'Failures require repair and documented re-test.',
-          'The Kenyan maintenance schedule must be formally verified.',
+          'A maintenance schedule must specify functional checks, duration tests and records.',
         ],
         'Testing without a log, defect process and responsible person is not a maintenance system.',
         'Draft an emergency-lighting logbook page with asset ID, location, test type, result, defect, action, re-test and responsible person.',
@@ -547,9 +547,9 @@ export const module12 = M(
       6812,
       'Whole-scheme lighting design review',
       'CAPSTONE',
-      'UK educator',
+      'Educator',
       G(
-        'Good lighting begins with what people do in the room. This practitioner-led capstone critiques common mistakes in fitting position, glare, task lighting, ceiling-grid thinking and control grouping. Bring the complete module together by layering ambient, task, accent and decorative light; coordinating furniture, daylight, showers, joinery, fans, HVAC, detectors and gypsum details; and making drivers, fittings and controls maintainable in Kenyan construction conditions.',
+        'Good lighting begins with what people do in the room. This practitioner-led capstone critiques common mistakes in fitting position, glare, task lighting, ceiling-grid thinking and control grouping. Bring the complete module together by layering ambient, task, accent and decorative light; coordinating furniture, daylight, showers, joinery, fans, HVAC, detectors and gypsum details; and making drivers, fittings and controls maintainable for the installationn construction conditions.',
         [
           'Start with activities, surfaces and visual tasks.',
           'Layer light instead of relying on one uniform ceiling grid.',

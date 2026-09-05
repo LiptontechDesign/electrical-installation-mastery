@@ -6,7 +6,7 @@ export const module11 = M(
   'Turn a room layout into coordinated masonry first-fix work, then select and explain the socket-outlets, isolators and accessories a modern client may need.',
   'PRODUCE a marked-up room and kitchen accessory schedule showing box positions, circuit purpose, accessory type, load, isolation, IP or impact rating, mounting depth and the checks required before handover.',
   'Complete the existing safety, cable-routing, circuit-protection and testing modules before using these lessons for supervised practical work.',
-  'The videos demonstrate UK trade practice. Apply the methods in Kenya only after checking current Kenyan law, EPRA and Kenya Power requirements, applicable KS/IEC standards, project specifications, product instructions and competent inspection and testing.',
+  'The videos demonstrate trade practice. Apply the methods for the installation only after checking applicable safety requirements, distribution-network requirements, applicable BS standards, project specifications, product instructions and competent inspection and testing.',
   [
     L(
       'p11-l01',
@@ -16,9 +16,9 @@ export const module11 = M(
       792,
       'Masonry chasing, set-out and flush boxes',
       'FIRST-FIX PRACTICE',
-      'UK educator',
+      'Educator',
       G(
-        'A practical wall-chasing sequence shows how careful set-out, controlled cutting and accurate back-box alignment create a clean first fix. Translate the method to Kenyan stone, fired-brick and block walls without assuming that every wall may safely be chased.',
+        'A practical wall-chasing sequence shows how careful set-out, controlled cutting and accurate back-box alignment create a clean first fix. Translate the method to stone, fired-brick and block walls without assuming that every wall may safely be chased.',
         [
           'Establish a level datum and mark recognised cable routes before cutting.',
           'Choose box depth for the accessory, conductor space and final plaster or tile finish.',
@@ -30,7 +30,7 @@ export const module11 = M(
         'What four checks must be complete before the wall chaser or SDS tool touches the masonry?',
       ),
       {
-        regulationStatus: 'Verify wall construction, permitted chase depth, concealed-wiring zones, dust controls and project approval before cutting; UK chase guidance is context rather than Kenyan legal authority.',
+        regulationStatus: 'Verify wall construction, permitted chase depth, concealed-wiring zones, dust controls and project approval before cutting; the cited chase guidance is context rather than a complete design specification.',
       },
     ),
     L(
@@ -41,7 +41,7 @@ export const module11 = M(
       834,
       'Accessory identification and functional selection',
       'IDENTIFY + SPECIFY',
-      'UK educator',
+      'Educator',
       G(
         'This visual survey distinguishes common BS-style switches, socket-outlets and distribution accessories by what they do, not merely by appearance. It builds the vocabulary needed to discuss options clearly with a client and to read a schedule correctly.',
         [
@@ -55,7 +55,7 @@ export const module11 = M(
         'How would you explain the difference between two-way switching, an isolator and a fused connection unit without referring only to their appearance?',
       ),
       {
-        regulationStatus: 'Confirm Kenyan market approval, voltage and current ratings, earthing provision, box compatibility and the applicable product standard before specification.',
+        regulationStatus: 'Confirm market approval, voltage and current ratings, earthing provision, box compatibility and the applicable product standard before specification.',
       },
     ),
     L(
@@ -66,7 +66,7 @@ export const module11 = M(
       704,
       'Safe socket replacement and workmanship',
       'AVOID + VERIFY',
-      'UK educator',
+      'Educator',
       G(
         'A fault-focused socket replacement demonstrates how apparently small workmanship errors can create loose connections, damaged conductors or lost earthing. Treat it as a quality-control lesson, not permission to work live or bypass testing.',
         [
@@ -80,7 +80,7 @@ export const module11 = M(
         'Which defects could remain hidden even when a newly replaced socket appears to work normally?',
       ),
       {
-        regulationStatus: 'Socket replacement must follow Kenyan competence, isolation, inspection, testing and certification requirements; UK conductor colours and ring-circuit assumptions may not describe the local circuit.',
+        regulationStatus: 'Socket replacement must follow competence, isolation, inspection, testing and certification requirements; the demonstrated conductor colours and ring-circuit assumptions may not describe the actual circuit.',
       },
     ),
     L(
@@ -91,7 +91,7 @@ export const module11 = M(
       402,
       'Fused connection units and fixed-appliance supplies',
       'CONNECT + EXPLAIN',
-      'UK educator',
+      'Educator',
       G(
         'Three fused connection unit layouts make supply, load, earth and flex-outlet arrangements visible. The lesson supports safer specification of local control for fixed appliances while showing why terminal layout must be checked on the actual product.',
         [
@@ -105,7 +105,7 @@ export const module11 = M(
         'Why can the fuse in a connection unit protect the appliance flex without replacing the protective device for the fixed circuit?',
       ),
       {
-        regulationStatus: 'Use only where the accessory rating, fuse system and product standard are accepted for the Kenyan installation; verify isolation duties and appliance instructions.',
+        regulationStatus: 'Use only where the accessory rating, fuse system and product standard are accepted for the installation; verify isolation duties and appliance instructions.',
       },
     ),
     L(
@@ -116,7 +116,7 @@ export const module11 = M(
       326,
       'Integrated USB socket selection',
       'SELECT + FUTURE-PROOF',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'A trade product demonstration introduces integrated USB charging outlets as an accessory option. Use it to ask better specification questions about charging power, back-box space, heat, replacement and client expectations rather than treating one model as a universal recommendation.',
         [
@@ -130,7 +130,7 @@ export const module11 = M(
         'What information must you collect before recommending an integrated USB outlet to a client?',
       ),
       {
-        regulationStatus: 'This is a UK trade/product example, not a Kenyan approval. Verify local product certification, supply rating, back-box compatibility and manufacturer installation limits.',
+        regulationStatus: 'This is a trade and product example, not a project approval. Verify local product certification, supply rating, back-box compatibility and manufacturer installation limits.',
       },
     ),
     L(
@@ -141,7 +141,7 @@ export const module11 = M(
       789,
       'Kitchen accessory layout and service coordination',
       'PLAN + COORDINATE',
-      'UK educator',
+      'Educator',
       G(
         'The kitchen layout discussion links socket and cooker-point positions to cabinets, worktops and appliance access. Its durable value is coordination: electrical points must be agreed before masonry, plumbing, joinery, tiling and finishes remove safe or usable locations.',
         [
@@ -150,12 +150,12 @@ export const module11 = M(
           'Coordinate cooker controls, connection points and cable routes with the final appliance data.',
           'Record finished levels, cabinet dimensions, sinks, hobs, splashbacks and service conflicts before first fix.',
         ],
-        'The video includes UK and Welsh layout context; use its coordination method, not its regional dimensions as automatic Kenyan rules.',
+        'The video includes the layout context; use its coordination method, not its regional dimensions as automatic BS 7671 requirements.',
         'Overlay the electrical schedule on an actual kitchen elevation and resolve every outlet, isolator and cooker point with the cabinetmaker and plumber before chasing.',
         'Which kitchen dimensions and appliance details must be frozen before the electrician can set out boxes confidently?',
       ),
       {
-        regulationStatus: 'Verify Kenyan building, wet-area, accessibility and appliance requirements; project drawings and manufacturer clearances govern the final positions.',
+        regulationStatus: 'Verify building, wet-area, accessibility and appliance requirements; project drawings and manufacturer clearances govern the final positions.',
       },
     ),
     L(
@@ -166,7 +166,7 @@ export const module11 = M(
       1348,
       'Cooking appliance demand and circuit design',
       'CALCULATE + CHALLENGE',
-      'UK educator',
+      'Educator',
       G(
         'A worked 15 kW cooker example explains why connected load and expected maximum demand are different quantities. It also shows why diversity is a design judgement that must be combined with cable, protection, installation method and appliance information.',
         [
@@ -180,7 +180,7 @@ export const module11 = M(
         'Why can a high connected cooking load sometimes use a lower design current, and what checks must still remain unchanged?',
       ),
       {
-        regulationStatus: 'The worked diversity rule is UK guidance. Use a demand method accepted by the Kenyan designer, utility and applicable standard, and verify it against actual appliance data.',
+        regulationStatus: 'The worked diversity rule is the cited guidance. Use a demand method accepted by the designer, utility and applicable standard, and verify it against actual appliance data.',
       },
     ),
     L(
@@ -191,7 +191,7 @@ export const module11 = M(
       345,
       'High-load bathroom appliance isolation',
       'DECIDE + ISOLATE',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'The shower-isolator discussion separates habit from a reasoned design decision. It prompts the learner to examine appliance instructions, switching duties, bathroom location, current rating and maintenance needs before specifying an isolator.',
         [
@@ -205,7 +205,7 @@ export const module11 = M(
         'What evidence would justify adding, omitting or relocating a shower isolator on a real project?',
       ),
       {
-        regulationStatus: 'UK bathroom and isolation conclusions do not transfer automatically. Verify Kenyan wet-area rules, supply capacity, manufacturer instructions and competent design for the selected shower.',
+        regulationStatus: 'bathroom and isolation conclusions do not transfer automatically. Verify wet-area rules, supply capacity, manufacturer instructions and competent design for the selected shower.',
       },
     ),
     L(
@@ -216,9 +216,9 @@ export const module11 = M(
       907,
       'Isolated shaver supplies in bathrooms',
       'UNDERSTAND + LOCATE',
-      'UK educator',
+      'Educator',
       G(
-        'A detailed look inside UK shaver outlets explains why their isolating transformer and limited output make them different from ordinary socket-outlets. The lesson supports informed bathroom specification while exposing strict load and location limitations.',
+        'A detailed look inside shaver outlets explains why their isolating transformer and limited output make them different from ordinary socket-outlets. The lesson supports informed bathroom specification while exposing strict load and location limitations.',
         [
           'Understand how the internal isolating transformer separates the output from the normal mains supply.',
           'Read voltage options, output limits and continuous-use restrictions on the exact product.',
@@ -230,7 +230,7 @@ export const module11 = M(
         'What electrical feature makes a shaver outlet suitable for its narrow purpose, and why does that not make every connected appliance acceptable?',
       ),
       {
-        regulationStatus: 'Confirm that the selected isolated outlet and its location comply with Kenyan wet-area requirements and the applicable product standard; UK bathroom zones are reference context only.',
+        regulationStatus: 'Confirm that the selected isolated outlet and its location comply with wet-area requirements and the applicable product standard; bathroom zones are reference context only.',
       },
     ),
     L(
@@ -241,9 +241,9 @@ export const module11 = M(
       464,
       'Outdoor socket-outlets and environmental protection',
       'WEATHERPROOF + TEST',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
-        'An outdoor socket installation demonstrates that an IP label is only one part of weather resistance. Correct entries, seals, drainage, mounting and circuit protection must preserve the enclosure performance throughout Kenyan rain, dust, heat and ultraviolet exposure.',
+        'An outdoor socket installation demonstrates that an IP label is only one part of weather resistance. Correct entries, seals, drainage, mounting and circuit protection must preserve the enclosure performance throughout rain, dust, heat and ultraviolet exposure.',
         [
           'Select IP, impact and ultraviolet resistance for the actual exposed location and likely use.',
           'Use suitable glands, seals, cable entries and mounting surfaces without creating water paths.',
@@ -255,7 +255,7 @@ export const module11 = M(
         'Which installation details can defeat a high IP rating even when the enclosure itself is genuine?',
       ),
       {
-        regulationStatus: 'Verify Kenyan outdoor-supply, RCD, earthing and equipment-approval requirements plus the manufacturer IP conditions; do not infer local compliance from a UK product demonstration.',
+        regulationStatus: 'Verify outdoor-supply, RCD, earthing and equipment-approval requirements plus the manufacturer IP conditions; do not infer local compliance from a featured product demonstration.',
       },
     ),
     L(
@@ -266,7 +266,7 @@ export const module11 = M(
       346,
       'Heavy-duty industrial connection systems',
       'SELECT + PROTECT',
-      'UK manufacturer or trade specialist',
+      'Manufacturer or trade specialist',
       G(
         'A heavy-duty product example introduces robust industrial plugs and socket-outlets for harsh service. Use the construction details to build a general selection method based on voltage, current, poles, environment, impact and safe disconnection.',
         [
@@ -280,7 +280,7 @@ export const module11 = M(
         'What must match before an industrial plug and socket can be considered electrically and mechanically compatible?',
       ),
       {
-        regulationStatus: 'The featured product is a UK trade example. Verify the applicable IEC/KS product standard, Kenyan approval, short-circuit duty, earthing and isolation requirements for the actual installation.',
+        regulationStatus: 'The featured product is a trade example. Verify the applicable product standard, project approval, short-circuit duty, earthing and isolation requirements for the actual installation.',
       },
     ),
   ],
