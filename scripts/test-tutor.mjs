@@ -48,7 +48,8 @@ assert.equal(model.nextLearningAction([], 9, 'p01-l01').title, 'Retrieve 5 due i
 const ids = new Set(graph.lessonById.keys());
 assert.equal(model.isProgressBackup({ activeLessonId: 'p01-l01', completedLessonIds: [] }, ids), true, 'Legacy unversioned progress supported');
 assert.equal(model.isProgressBackup({ schemaVersion: 4, activeLessonId: 'p01-l01', completedLessonIds: [] }, ids), true);
-for (const bad of [null, [], {}, { schemaVersion: 5, activeLessonId: 'p01-l01', completedLessonIds: [] }, { activeLessonId: 'missing', completedLessonIds: [] }]) assert.equal(model.isProgressBackup(bad, ids), false);
+assert.equal(model.isProgressBackup({ schemaVersion: 5, activeLessonId: 'p01-l01', completedLessonIds: [] }, ids), true);
+for (const bad of [null, [], {}, { schemaVersion: 6, activeLessonId: 'p01-l01', completedLessonIds: [] }, { activeLessonId: 'missing', completedLessonIds: [] }]) assert.equal(model.isProgressBackup(bad, ids), false);
 assert.equal(model.validEvidence([events[0], events[0], { ...events[0], id: 'bad', lessonId: 'missing' }], ids).length, 1);
 
 for (const spec of practice.calculations) {

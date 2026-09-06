@@ -7,7 +7,7 @@ import { act, create } from 'react-test-renderer';
 import { renderToString } from 'katex';
 
 await mkdir('work/curriculum-tests', { recursive: true });
-await build({ entryPoints: ['app/course-curriculum.ts','app/course-extension-data.ts','app/lesson-guides.ts','app/assessment-data.ts','app/connection-models.ts','app/lesson-connections-data.ts','app/lesson-connection.tsx'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
+await build({ entryPoints: ['app/course-curriculum.ts','app/course-extension-data.ts','app/lesson-guides.ts','app/assessment-data.ts','app/connection-models.ts','app/lesson-connections-data.ts','app/lesson-connection.tsx','app/practice-data.ts','app/knowledge-graph.ts'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
 const { default: course } = await import('../work/curriculum-tests/course-curriculum.js');
 const { default: extension } = await import('../work/curriculum-tests/course-extension-data.js');
 const { lessonGuides } = await import('../work/curriculum-tests/lesson-guides.js');
@@ -15,6 +15,8 @@ const { buildAssessmentBank } = await import('../work/curriculum-tests/assessmen
 const { powerFactorExample, motorSpeedExample } = await import('../work/curriculum-tests/connection-models.js');
 const { lessonConnections } = await import('../work/curriculum-tests/lesson-connections-data.js');
 const { default: Connection } = await import('../work/curriculum-tests/lesson-connection.js');
+const { calculations, calculationProblem } = await import('../work/curriculum-tests/practice-data.js');
+const { electricalTerms } = await import('../work/curriculum-tests/knowledge-graph.js');
 const original = JSON.parse(await readFile('app/course-data.json','utf8'));
 const oldModules = [...original.modules, ...extension.modules];
 const lessons = course.modules.flatMap(module => module.lessons);
@@ -24,7 +26,7 @@ assert.equal(lessons.length, 246);
 assert.equal(new Set(lessons.map(lesson => lesson.videoId)).size, lessons.length, 'No repeated video');
 const bank = buildAssessmentBank(course.modules, lessonGuides);
 assert.equal(bank.allFlashcards.filter(card => card.front === 'How would you explain this lesson point in your own words?').length, 0, 'Every recall prompt names a specific concept');
-const oldBank = buildAssessmentBank(oldModules, lessonGuides);
+const oldBank = buildAssessmentBank(oldModules, lessonGuides, { includeCheckpoints:false });
 for (const courseModule of oldModules) for (const lesson of courseModule.lessons) {
   assert.equal(lookup.get(lesson.id)?.videoId, lesson.videoId, 'Original lesson identity retained');
   for (const card of oldBank.lessons[lesson.id].flashcards) assert.ok(bank.lessons[lesson.id].flashcards.some(item => item.id === card.id && item.front === card.front && item.back === card.back), `Saved card ${card.id} is preserved`);
@@ -34,7 +36,30 @@ for (const pair of [['p01-l23','p01-transformers'],['p01-pf-visual','p01-l26'],[
 for (const courseModule of course.modules) {
   assert.equal(courseModule.durationSeconds, courseModule.lessons.reduce((sum,lesson) => sum + lesson.durationSeconds,0));
   courseModule.lessons.forEach((lesson,index) => { assert.equal(lesson.number,index+1); assert.ok(bank.lessons[lesson.id].questions.length >= 5); });
+  const checkpoints = bank.checkpointsByModule[courseModule.id];
+  assert.ok(checkpoints.length >= 1, `${courseModule.id} has a required checkpoint`);
+  let previousBoundary = -1;
+  const introduced = [];
+  for (const checkpoint of checkpoints) {
+    const boundary = courseModule.lessons.findIndex(lesson => lesson.id === checkpoint.throughLessonId);
+    assert.ok(boundary > previousBoundary, `${checkpoint.id} follows the previous checkpoint`);
+    assert.deepEqual(checkpoint.lessonIds, courseModule.lessons.slice(0,boundary+1).map(lesson=>lesson.id), `${checkpoint.id} is cumulative`);
+    assert.deepEqual(checkpoint.newLessonIds, courseModule.lessons.slice(previousBoundary+1,boundary+1).map(lesson=>lesson.id), `${checkpoint.id} names its new lesson group`);
+    introduced.push(...checkpoint.newLessonIds);
+    assert.ok(checkpoint.questions.length >= 10, `${checkpoint.id} has at least ten questions`);
+    assert.ok(checkpoint.questions.length <= 30, `${checkpoint.id} stays within the 30-question ceiling`);
+    assert.equal(new Set(checkpoint.questions.map(question=>question.id)).size, checkpoint.questions.length, `${checkpoint.id} has no repeated questions`);
+    assert.ok(checkpoint.questions.every(question=>checkpoint.lessonIds.includes(question.lessonId)), `${checkpoint.id} contains only studied lessons`);
+    assert.ok(checkpoint.newLessonIds.every(lessonId=>checkpoint.questions.some(question=>question.lessonId===lessonId)), `${checkpoint.id} checks every new lesson`);
+    assert.equal(new Set(checkpoint.questions.map(question=>question.lessonId)).size,Math.min(30,checkpoint.lessonIds.length),`${checkpoint.id} spreads recall across the cumulative lesson range`);
+    assert.ok(checkpoint.questions.every(question=>question.options.length===4), `${checkpoint.id} uses four-choice questions`);
+    previousBoundary = boundary;
+  }
+  assert.equal(previousBoundary, courseModule.lessons.length-1, `${courseModule.id} ends with a checkpoint`);
+  assert.deepEqual(introduced, courseModule.lessons.map(lesson=>lesson.id), `${courseModule.id} partitions every lesson once`);
 }
+assert.ok(bank.checkpointsByModule['module-01'].length >= 5, 'Module 1 has at least five major checkpoints');
+assert.equal(bank.checkpointList.length, 59, 'Every planned checkpoint is built');
 assert.equal(course.durationSeconds, course.modules.reduce((sum,module) => sum+module.durationSeconds,0));
 const originalIds = new Set(oldModules.flatMap(module => module.lessons.map(lesson => lesson.id)));
 for (const lesson of lessons.filter(lesson => !originalIds.has(lesson.id))) assert.ok(lesson.durationSeconds >= 300, 'New video meets quality duration floor');
@@ -56,6 +81,11 @@ for (const [id,connection] of Object.entries(lessonConnections)) {
   assert.ok(html.includes('<details class="lesson-connection">'), 'Connection starts collapsed');
   assert.ok(!html.includes('katex-error'));
 }
+for (const calculation of calculations) for (let variant=0;variant<4;variant+=1) {
+  const problem=calculationProblem(calculation.id,variant);
+  assert.ok(renderToString(problem.workingTex,{displayMode:true,strict:'error',throwOnError:true}).includes('katex'), `${calculation.id} variant ${variant+1} has valid LaTeX working`);
+}
+for (const item of electricalTerms.filter(item=>item.formulaTex)) assert.ok(renderToString(item.formulaTex,{displayMode:true,strict:'error',throwOnError:true}).includes('katex'), `${item.term} has valid LaTeX`);
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 let tree;
 await act(async()=>{ tree=create(h(Connection,{connection:lessonConnections['p01-l26']})); });
@@ -70,4 +100,4 @@ assert.equal(tree.root.findByType('button').props['aria-pressed'],true);
 assert.ok(JSON.stringify(tree.toJSON()).includes('reversed'));
 await act(async()=>tree.unmount());
 for (const [moduleId,lessonId] of [['module-01','p01-l26'],['module-06','p06-l13'],['module-07','p07-induction'],['module-08','p08-l07']]) assert.ok(bank.modules[moduleId].questions.some(question=>question.lessonId===lessonId && question.id.includes('-connection-')), 'Module assessment includes the new application check');
-console.log(`PASS: ${lessons.length} unique lessons; 239 original lesson/card identities; prerequisites; 16 module totals; ${bank.totalLessonQuestions} questions; formulas and three interactive exercises.`);
+console.log(`PASS: ${lessons.length} unique lessons; 59 required checkpoints; ${bank.totalLessonQuestions} lesson questions; formulas and three interactive exercises.`);

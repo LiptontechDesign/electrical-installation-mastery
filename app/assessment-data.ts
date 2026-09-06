@@ -4,6 +4,7 @@ import { standardsChecks, type StandardsCheck } from './standards-checks';
 import { connectionChecks } from './connection-assessments';
 import { conceptDistractors } from './concept-distractors';
 import { electricalTerms, lessonKnowledge, type KnowledgeTerm } from './knowledge-graph';
+import { checkpointPlan } from './checkpoint-plan';
 
 export type Flashcard = {
   id: string;
@@ -39,6 +40,18 @@ export type LessonAssessment = {
 export type ModuleAssessment = {
   moduleId: string;
   title: string;
+  flashcards: Flashcard[];
+  questions: AssessmentQuestion[];
+};
+
+export type CheckpointAssessment = {
+  id: string;
+  moduleId: string;
+  number: number;
+  title: string;
+  throughLessonId: string;
+  lessonIds: string[];
+  newLessonIds: string[];
   flashcards: Flashcard[];
   questions: AssessmentQuestion[];
 };
@@ -525,9 +538,34 @@ function balancedModuleQuestions(groups: AssessmentQuestion[][], limit: number) 
   return selected.slice(0, target);
 }
 
-export function buildAssessmentBank(modules: readonly CourseModule[], guides: Record<string, LessonGuide>) {
+function checkpointQuestions(groups: AssessmentQuestion[][], checkpointNumber: number, newGroupSize: number) {
+  const target = Math.min(30, Math.max(10, groups.length * 2));
+  const preferredKinds: AssessmentQuestion['kind'][] = ['Recall', 'Application', 'Safety check', 'Standards check'];
+  const newGroupStart = Math.max(0,groups.length-newGroupSize);
+  const coverageIndices = groups.length<=target
+    ? groups.map((_,index)=>index)
+    : [
+      ...Array.from({length:Math.max(0,target-newGroupSize)},(_,index)=>Math.floor(index*newGroupStart/Math.max(1,target-newGroupSize))),
+      ...Array.from({length:newGroupSize},(_,index)=>newGroupStart+index),
+    ];
+  const coverage = coverageIndices.map((groupIndex) => {
+    const group=groups[groupIndex];
+    const preferred = preferredKinds[(groupIndex + checkpointNumber - 1) % preferredKinds.length];
+    return group.find((question) => question.kind === preferred)
+      ?? group.find((question) => question.kind === 'Application')
+      ?? group[0];
+  }).filter((question): question is AssessmentQuestion => Boolean(question));
+  const selectedIds = new Set(coverage.map((question) => question.id));
+  const remaining = groups.map((group) => group.filter((question) => !selectedIds.has(question.id)));
+  const fill = balancedModuleQuestions(remaining, Math.max(0, target - coverage.length));
+  return [...coverage, ...fill].slice(0, target);
+}
+
+export function buildAssessmentBank(modules: readonly CourseModule[], guides: Record<string, LessonGuide>, options: { includeCheckpoints?: boolean } = {}) {
   const lessons: Record<string, LessonAssessment> = {};
   const moduleAssessments: Record<string, ModuleAssessment> = {};
+  const checkpoints: Record<string, CheckpointAssessment> = {};
+  const checkpointsByModule: Record<string, CheckpointAssessment[]> = {};
 
   modules.forEach((module) => {
     const moduleRememberPool = module.lessons.map((item)=>guides[item.id]?.remember).filter((item):item is string=>Boolean(item));
@@ -682,6 +720,36 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         ...assessment.questions.filter((question) => !question.id.includes('-connection-')),
       ]), 50),
     };
+
+    if(options.includeCheckpoints===false){
+      checkpointsByModule[module.id]=[];
+      return;
+    }
+    const planned = checkpointPlan[module.id];
+    if (!planned?.length) throw new Error(`Module ${module.id} needs at least one required checkpoint.`);
+    let previousBoundary = -1;
+    checkpointsByModule[module.id] = planned.map((item, checkpointIndex) => {
+      const boundary = module.lessons.findIndex((lesson) => lesson.id === item.throughLessonId);
+      if (boundary <= previousBoundary) throw new Error(`Checkpoint ${checkpointIndex + 1} in ${module.id} has an invalid lesson boundary.`);
+      const cumulativeLessons = module.lessons.slice(0, boundary + 1);
+      const newLessons = module.lessons.slice(previousBoundary + 1, boundary + 1);
+      previousBoundary = boundary;
+      const id = `${module.id}-checkpoint-${checkpointIndex + 1}`;
+      const assessment: CheckpointAssessment = {
+        id,
+        moduleId: module.id,
+        number: checkpointIndex + 1,
+        title: item.title,
+        throughLessonId: item.throughLessonId,
+        lessonIds: cumulativeLessons.map((lesson) => lesson.id),
+        newLessonIds: newLessons.map((lesson) => lesson.id),
+        flashcards: cumulativeLessons.flatMap((lesson) => lessons[lesson.id].flashcards),
+        questions: checkpointQuestions(cumulativeLessons.map((lesson) => lessons[lesson.id].questions), checkpointIndex + 1, newLessons.length),
+      };
+      checkpoints[id] = assessment;
+      return assessment;
+    });
+    if (previousBoundary !== module.lessons.length - 1) throw new Error(`The final checkpoint in ${module.id} must close the module.`);
   });
 
   const allFlashcards = Object.values(lessons).flatMap((assessment) => assessment.flashcards);
@@ -692,6 +760,9 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
   return {
     lessons,
     modules: moduleAssessments,
+    checkpoints,
+    checkpointsByModule,
+    checkpointList: modules.flatMap((module) => checkpointsByModule[module.id]),
     allFlashcards,
     flashcardLookup: new Map(allFlashcards.map((card) => [card.id, card])),
     totalLessonQuestions: Object.values(lessons).reduce((total, assessment) => total + assessment.questions.length, 0),

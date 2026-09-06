@@ -22,7 +22,7 @@
 .context-term{border:1px solid var(--line);padding:0 16px;border-radius:10px;min-width:0;align-self:start;background:#fff}
 .context-term summary{cursor:pointer;min-height:48px;padding:12px 0;font-weight:700}
 .context-term small{font-weight:400;color:var(--muted);margin-left:10px}
-.context-term p{font-size:1rem;margin:12px 0}.term-formula{background:#edf4f7;padding:10px;border-radius:6px}
+.context-term p{font-size:1rem;margin:12px 0}.term-formula{background:#edf4f7;padding:10px;border-radius:6px}.term-formula small{display:block;margin-top:7px;color:#536975;line-height:1.5}
 .term-lesson-links{display:grid;gap:6px;margin:16px 0}.term-lesson-links button{background:none;border-top:1px solid var(--line);padding:12px 0;display:flex;gap:8px;justify-content:space-between;text-align:left;font-size:.875rem;color:#195b73}
 .practice-picker{display:flex;overflow:auto;gap:8px;padding:0 0 16px;scrollbar-width:thin}.practice-picker button{padding:12px 16px;border:1px solid var(--line);background:#fff;border-radius:9px;min-width:150px;text-align:left;font-size:.875rem}.practice-picker button[aria-pressed=true]{color:#fff;background:var(--navy-3);border-color:var(--navy-3)}
 .practice-question{font-size:1.125rem;font-weight:600;margin:24px 0}.worked-solution{display:flex;gap:12px;background:#eef7fa;border-left:3px solid #26738b;padding:18px;margin:20px 0}.worked-solution p:last-child{margin:0}

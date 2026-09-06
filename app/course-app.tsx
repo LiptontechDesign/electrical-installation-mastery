@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import {
-  AlertTriangle, ArrowRight, Award, BarChart3, BookOpen, Bookmark, Calculator,
+  AlertTriangle, ArrowRight, BarChart3, BookOpen, Bookmark, Calculator,
   Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Circle,
   CirclePlay, Database, Download,
   Home, Info, ListChecks, LockKeyhole, Menu,
@@ -16,7 +16,8 @@ import course from './course-curriculum';
 import { bookCompanions, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
-import { buildAssessmentBank } from './assessment-data';
+import { buildAssessmentBank, type CheckpointAssessment } from './assessment-data';
+import CheckpointWorkspace from './checkpoint-workspace';
 import LessonOverview from './lesson-overview';
 import type { Reading } from './books-data';
 import { appendEvidence, validEvidence, isProgressBackup, scheduleRecall, calendarDay, nextLearningAction, type LearningEvidence, type EvidenceInput } from './tutor-model';
@@ -64,7 +65,7 @@ declare global {
 }
 
 type LearnerState = {
-  schemaVersion: 4;
+  schemaVersion: 5;
   evidence: LearningEvidence[];
   activeLessonId: string;
   completedLessonIds: string[];
@@ -80,8 +81,10 @@ type LearnerState = {
   flashcardProgress: FlashcardLearningState;
   lessonQuizBestScores: Record<string, number>;
   moduleQuizBestScores: Record<string, number>;
+  checkpointQuizBestScores: Record<string, number>;
   completedLessonAssessmentIds: string[];
   completedModuleAssessmentIds: string[];
+  completedCheckpointIds: string[];
   updatedAt: string | null;
 };
 
@@ -100,9 +103,12 @@ const validLabIds = new Set(practiceLabs.map((lab) => lab.id));
 const assessmentBank = buildAssessmentBank(course.modules, lessonGuides);
 const validFlashcardIds = new Set(assessmentBank.allFlashcards.map((card) => card.id));
 const validModuleIds = new Set(course.modules.map((module) => module.id));
+const validCheckpointIds = new Set(assessmentBank.checkpointList.map((checkpoint) => checkpoint.id));
+const checkpointAfterLesson = new Map(assessmentBank.checkpointList.map((checkpoint) => [checkpoint.throughLessonId, checkpoint]));
+const globalLessonIndex = new Map(allLessons.map((lesson,index)=>[lesson.id,index]));
 
 const initialLearnerState: LearnerState = {
-  schemaVersion: 4,
+  schemaVersion: 5,
   evidence: [],
   activeLessonId: allLessons[0].id,
   completedLessonIds: [],
@@ -118,8 +124,10 @@ const initialLearnerState: LearnerState = {
   flashcardProgress: {},
   lessonQuizBestScores: {},
   moduleQuizBestScores: {},
+  checkpointQuizBestScores: {},
   completedLessonAssessmentIds: [],
   completedModuleAssessmentIds: [],
+  completedCheckpointIds: [],
   updatedAt: null,
 };
 
@@ -163,9 +171,12 @@ function clampState(value: unknown): LearnerState {
   const moduleQuizBestScores = input.moduleQuizBestScores && typeof input.moduleQuizBestScores === 'object'
     ? Object.fromEntries(Object.entries(input.moduleQuizBestScores).filter(([id, score]) => validModuleIds.has(id) && typeof score === 'number' && score >= 0))
     : {};
+  const checkpointQuizBestScores = input.checkpointQuizBestScores && typeof input.checkpointQuizBestScores === 'object'
+    ? Object.fromEntries(Object.entries(input.checkpointQuizBestScores).filter(([id, score]) => validCheckpointIds.has(id) && typeof score === 'number' && score >= 0))
+    : {};
 
   return {
-    schemaVersion: 4,
+    schemaVersion: 5,
     evidence: validEvidence(input.evidence, lessonIds),
     activeLessonId,
     completedLessonIds: uniqueValidIds(input.completedLessonIds, lessonIds),
@@ -182,8 +193,10 @@ function clampState(value: unknown): LearnerState {
     flashcardProgress,
     lessonQuizBestScores,
     moduleQuizBestScores,
+    checkpointQuizBestScores,
     completedLessonAssessmentIds: uniqueValidIds(input.completedLessonAssessmentIds, lessonIds),
     completedModuleAssessmentIds: uniqueValidIds(input.completedModuleAssessmentIds, validModuleIds),
+    completedCheckpointIds: uniqueValidIds(input.completedCheckpointIds, validCheckpointIds),
     updatedAt: typeof input.updatedAt === 'string' ? input.updatedAt : null,
   };
 }
@@ -194,6 +207,15 @@ function percent(value: number, total: number) {
 
 function pad(value: number) {
   return String(value).padStart(2, '0');
+}
+
+function checkpointBeforeLesson(lessonId: string, completedCheckpointIds: string[]) {
+  const targetIndex = globalLessonIndex.get(lessonId);
+  if (targetIndex === undefined) return undefined;
+  const passed = new Set(completedCheckpointIds);
+  return assessmentBank.checkpointList.find((checkpoint) =>
+    (globalLessonIndex.get(checkpoint.throughLessonId) ?? Number.MAX_SAFE_INTEGER) < targetIndex
+    && !passed.has(checkpoint.id));
 }
 
 function todayKey() {
@@ -235,6 +257,7 @@ export default function CourseApp() {
   const [view, setView] = useState<View>('home');
   const [lessonTab, setLessonTab] = useState<LessonTab>('overview');
   const [assessmentMode,setAssessmentMode]=useState<'quiz'|'cards'>('quiz');
+  const [activeCheckpointId,setActiveCheckpointId]=useState<string|null>(null);
   const [practiceOpen,setPracticeOpen]=useState(false);
   const [returnLesson, setReturnLesson] = useState<{id:string;tab:LessonTab}|null>(null);
   const [openModuleId, setOpenModuleId] = useState(course.modules[0].id);
@@ -298,6 +321,10 @@ export default function CourseApp() {
   };
   const queuedNextLesson = autoNextState ? lessonLookup.get(autoNextState.nextLessonId) : undefined;
   const activeAssessment = assessmentBank.lessons[activeLesson.id];
+  const activeCheckpoint = activeCheckpointId ? assessmentBank.checkpoints[activeCheckpointId] : undefined;
+  const activeCheckpointModule = activeCheckpoint ? course.modules.find((module)=>module.id===activeCheckpoint.moduleId) : undefined;
+  const checkpointNextLesson = activeCheckpoint ? allLessons[(globalLessonIndex.get(activeCheckpoint.throughLessonId)??-1)+1] : undefined;
+  const activeBoundaryCheckpoint = checkpointAfterLesson.get(activeLesson.id);
   const activeLearningText = `${activeLesson.title} ${activeGuide.summary}`;
   const activePractice = practiceForLesson(activeLearningText);
   const nextAction = nextLearningAction(learner.evidence, Object.values(learner.flashcardProgress).filter(item => item.dueAt <= todayKey()).length, activeLesson.id);
@@ -327,6 +354,33 @@ export default function CourseApp() {
   autoNextStateRef.current = autoNextState;
   autoAdvanceRef.current = (fromLessonId, nextLessonId) => {
     if (learner.activeLessonId !== fromLessonId) return;
+    const checkpoint = checkpointAfterLesson.get(fromLessonId);
+    if (checkpoint && !learner.completedCheckpointIds.includes(checkpoint.id)) {
+      pendingAutoNextRef.current=null;
+      autoNextStateRef.current=null;
+      setAutoNextState(null);
+      const missingLessonId = checkpoint.lessonIds.find((lessonId)=>lessonId!==fromLessonId&&!completed.has(lessonId));
+      if (missingLessonId) {
+        const missingLocation=lessonLocation.get(missingLessonId);
+        if(!missingLocation)return;
+        setAutoPlayLessonId(null);
+        setLearner((current)=>({...current,activeLessonId:missingLessonId,updatedAt:new Date().toISOString()}));
+        setOpenModuleId(missingLocation.module.id);
+        setLessonTab('overview');
+        setView('learn');
+        window.history.replaceState(null,'',`#learn/${missingLessonId}`);
+        window.scrollTo({top:0,behavior:'smooth'});
+        setToast('Complete the remaining lesson before the required checkpoint.');
+        return;
+      }
+      setAutoPlayLessonId(null);
+      setActiveCheckpointId(checkpoint.id);
+      setOpenModuleId(checkpoint.moduleId);
+      setView('learn');
+      window.scrollTo({top:0,behavior:'smooth'});
+      setToast(`Checkpoint ${checkpoint.number} is required before the next lesson group.`);
+      return;
+    }
     const nextLocation = lessonLocation.get(nextLessonId);
     if (!nextLocation) return;
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
@@ -335,6 +389,7 @@ export default function CourseApp() {
     autoNextStateRef.current = null;
     setAutoNextState(null);
     setAutoPlayLessonId(nextLessonId);
+    setActiveCheckpointId(null);
     setLearner((current) => ({ ...current, activeLessonId: nextLessonId, updatedAt: new Date().toISOString() }));
     setOpenModuleId(nextLocation.module.id);
     setLessonTab('overview');
@@ -411,6 +466,7 @@ export default function CourseApp() {
   useEffect(() => {
     let nextState = initialLearnerState;
     let readError = false;
+    let checkpointToOpen: CheckpointAssessment | undefined;
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (saved) {
@@ -425,6 +481,13 @@ export default function CourseApp() {
     if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
       nextState = { ...nextState, activeLessonId: hashId };
     }
+    const blocker = checkpointBeforeLesson(nextState.activeLessonId,nextState.completedCheckpointIds);
+    if(blocker){
+      const watched=new Set(nextState.completedLessonIds);
+      const missingLessonId=blocker.lessonIds.find((lessonId)=>!watched.has(lessonId));
+      nextState={...nextState,activeLessonId:missingLessonId??blocker.throughLessonId};
+      if(!missingLessonId)checkpointToOpen=blocker;
+    }
     const timer = window.setTimeout(() => {
       if (readError) { setStorageBlocked(true); setToast('Saved progress could not be read. The original record is preserved; export this session before restoring a valid backup.'); }
       if (hashView === 'library' || hashView === 'practice') {
@@ -435,8 +498,10 @@ export default function CourseApp() {
         setView(hashView as View);
       }
       if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
-        setOpenModuleId(lessonLocation.get(hashId)?.module.id ?? course.modules[0].id);
+        setOpenModuleId(lessonLocation.get(nextState.activeLessonId)?.module.id ?? course.modules[0].id);
+        if(nextState.activeLessonId!==hashId)window.history.replaceState(null,'',`#learn/${nextState.activeLessonId}`);
       }
+      if(checkpointToOpen)setActiveCheckpointId(checkpointToOpen.id);
       setLearner(nextState);
       setHydrated(true);
     }, 0);
@@ -677,6 +742,7 @@ export default function CourseApp() {
     if (nextView !== 'learn') {
       cancelAutoNext(false);
       setAutoPlayLessonId(null);
+      setActiveCheckpointId(null);
     }
     setView(nextView);
     const suffix = nextView === 'learn' ? `/${learner.activeLessonId}` : '';
@@ -684,11 +750,12 @@ export default function CourseApp() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const chooseLesson = (lessonId: string) => {
+  const loadLesson = (lessonId: string) => {
     const nextLocation = lessonLocation.get(lessonId);
     if (!nextLocation) return;
     cancelAutoNext(false);
     setAutoPlayLessonId(null);
+    setActiveCheckpointId(null);
     setLearner((current) => ({ ...current, activeLessonId: lessonId, updatedAt: new Date().toISOString() }));
     setOpenModuleId(nextLocation.module.id);
     setLessonTab('overview');
@@ -698,6 +765,47 @@ export default function CourseApp() {
     setModuleDrawerOpen(false);
     window.history.replaceState(null, '', `#learn/${lessonId}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const openCheckpoint = (checkpoint: CheckpointAssessment) => {
+    cancelAutoNext(false);
+    setAutoPlayLessonId(null);
+    setLearner((current)=>({...current,activeLessonId:checkpoint.throughLessonId,updatedAt:new Date().toISOString()}));
+    setActiveCheckpointId(checkpoint.id);
+    setOpenModuleId(checkpoint.moduleId);
+    setView('learn');
+    setSearchOpen(false);
+    setModuleDrawerOpen(false);
+    window.history.replaceState(null,'',`#learn/${checkpoint.throughLessonId}`);
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+
+  const resolveCheckpoint = (checkpoint: CheckpointAssessment) => {
+    const missingLessonId=checkpoint.lessonIds.find((lessonId)=>!completed.has(lessonId));
+    if(missingLessonId){
+      loadLesson(missingLessonId);
+      setToast('Finish this lesson group before taking its checkpoint.');
+      return;
+    }
+    openCheckpoint(checkpoint);
+  };
+
+  const startCheckpoint = (checkpointId: string) => {
+    const targetIndex=assessmentBank.checkpointList.findIndex((checkpoint)=>checkpoint.id===checkpointId);
+    if(targetIndex<0)return;
+    const passed=new Set(learner.completedCheckpointIds);
+    const required=assessmentBank.checkpointList.slice(0,targetIndex+1).find((checkpoint)=>!passed.has(checkpoint.id));
+    resolveCheckpoint(required??assessmentBank.checkpointList[targetIndex]);
+  };
+
+  const chooseLesson = (lessonId: string) => {
+    const blocker=checkpointBeforeLesson(lessonId,learner.completedCheckpointIds);
+    if(blocker){
+      resolveCheckpoint(blocker);
+      if(blocker.lessonIds.every((id)=>completed.has(id)))setToast(`Pass “${blocker.title}” to unlock the next lesson group.`);
+      return;
+    }
+    loadLesson(lessonId);
   };
 
   const chooseModule = (module: CourseModule) => {
@@ -774,7 +882,19 @@ export default function CourseApp() {
         : current.completedLessonAssessmentIds,
       updatedAt: new Date().toISOString(),
     }));
-    setToast(passed ? `Recognition check passed: ${score} of ${total}. Try an application next.` : `You scored ${score} of ${total}. Work through the missed ideas before retrying.`);
+    setToast(passed ? `Lesson quiz passed: ${score} of ${total}.` : `You scored ${score} of ${total}. Review the missed ideas before retrying.`);
+  };
+
+  const completeCheckpointQuiz = (score: number, total: number) => {
+    if(!activeCheckpoint)return;
+    const passed=score>=Math.ceil(total*.8);
+    setLearner((current)=>({
+      ...withStudyMinutes(current,Math.max(10,Math.ceil(total/2))),
+      checkpointQuizBestScores:{...current.checkpointQuizBestScores,[activeCheckpoint.id]:Math.max(current.checkpointQuizBestScores[activeCheckpoint.id]??0,score)},
+      completedCheckpointIds:passed&&!current.completedCheckpointIds.includes(activeCheckpoint.id)?[...current.completedCheckpointIds,activeCheckpoint.id]:current.completedCheckpointIds,
+      updatedAt:new Date().toISOString(),
+    }));
+    setToast(passed?`Checkpoint ${activeCheckpoint.number} passed. The next lesson group is unlocked.`:`You scored ${score} of ${total}. Reach 80% to continue.`);
   };
 
   const completeModuleQuiz = (score: number, total: number) => {
@@ -796,8 +916,20 @@ export default function CourseApp() {
   };
 
   const continueAfterLessonAssessment = () => {
+    if(activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)){
+      startCheckpoint(activeBoundaryCheckpoint.id);
+      return;
+    }
     const next = allLessons[allLessons.findIndex((lesson) => lesson.id === activeLesson.id) + 1];
     if (next) chooseLesson(next.id);
+    else navigate('progress');
+  };
+
+  const continueAfterCheckpoint = () => {
+    if(!activeCheckpoint)return;
+    const next=allLessons[(globalLessonIndex.get(activeCheckpoint.throughLessonId)??-1)+1];
+    setActiveCheckpointId(null);
+    if(next)chooseLesson(next.id);
     else navigate('progress');
   };
 
@@ -829,7 +961,7 @@ export default function CourseApp() {
     } catch { setToast('That file is not a valid course progress backup.'); }
   };
 
-  const resetProgress = () => { setLearner(initialLearnerState); setStorageBlocked(false); setReviewSession([]); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
+  const resetProgress = () => { setLearner(initialLearnerState); setActiveCheckpointId(null); setStorageBlocked(false); setReviewSession([]); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
   const moduleCompletedCount = (module: CourseModule) => module.lessons.filter((lesson) => completed.has(lesson.id)).length;
 
   return (
@@ -907,7 +1039,9 @@ export default function CourseApp() {
                     {course.modules.map((module) => {
                       const done = moduleCompletedCount(module);
                       const modulePercent = percent(done, module.lessons.length);
-                      return <button type="button" className="module-card" key={module.id} onClick={() => chooseModule(module)}><div className="module-card-head"><span>{pad(module.number)}</span><small>{module.duration}</small></div><h3>{module.title}</h3><div className="progress-line"><span style={{ width: `${modulePercent}%` }} /></div><footer><span>{done} of {module.lessons.length} lessons</span><b>{modulePercent}%</b></footer></button>;
+                      const moduleCheckpoints=assessmentBank.checkpointsByModule[module.id];
+                      const passedCheckpoints=moduleCheckpoints.filter((checkpoint)=>learner.completedCheckpointIds.includes(checkpoint.id)).length;
+                      return <button type="button" className="module-card" key={module.id} onClick={() => chooseModule(module)}><div className="module-card-head"><span>{pad(module.number)}</span><small>{module.duration}</small></div><h3>{module.title}</h3><div className="progress-line"><span style={{ width: `${modulePercent}%` }} /></div><footer><span>{done}/{module.lessons.length} lessons · {passedCheckpoints}/{moduleCheckpoints.length} checkpoints</span><b>{modulePercent}%</b></footer></button>;
                     })}
                   </div>
                 </div>
@@ -927,9 +1061,15 @@ export default function CourseApp() {
                     return (
                       <section className={`module-accordion ${isOpen ? 'open' : ''}`} key={module.id}>
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => setOpenModuleId(isOpen ? '' : module.id)} aria-expanded={isOpen}>
-                          <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} lessons</small></span><ChevronDown size={18} />
+                          <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} lessons · {assessmentBank.checkpointsByModule[module.id].filter((checkpoint)=>learner.completedCheckpointIds.includes(checkpoint.id)).length}/{assessmentBank.checkpointsByModule[module.id].length} checkpoints</small></span><ChevronDown size={18} />
                         </button>
-                        {isOpen && <div className="accordion-lessons">{module.lessons.map((lesson) => <button type="button" key={lesson.id} className={activeLesson.id === lesson.id ? 'active' : ''} onClick={() => chooseLesson(lesson.id)}>{completed.has(lesson.id) ? <CheckCircle2 size={17} /> : <Circle size={17} />}<span><strong>{lesson.title}</strong><small>{lesson.duration} · {lesson.instructor}</small></span>{bookmarked.has(lesson.id) && <Bookmark size={14} fill="currentColor" />}</button>)}</div>}
+                        {isOpen && <div className="accordion-lessons">{module.lessons.flatMap((lesson) => {
+                          const checkpoint=checkpointAfterLesson.get(lesson.id);
+                          const lessonLocked=Boolean(checkpointBeforeLesson(lesson.id,learner.completedCheckpointIds));
+                          const rows=[<button type="button" key={lesson.id} className={`${activeLesson.id===lesson.id&&!activeCheckpoint?'active ':''}${lessonLocked?'locked':''}`} onClick={()=>chooseLesson(lesson.id)}>{lessonLocked?<LockKeyhole size={16}/>:completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>{lesson.title}</strong><small>{lesson.duration} · {lesson.instructor}</small></span>{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</button>];
+                          if(checkpoint){const passed=learner.completedCheckpointIds.includes(checkpoint.id);const ready=checkpoint.lessonIds.every((id)=>completed.has(id));rows.push(<button type="button" key={checkpoint.id} className={`checkpoint-map-row ${activeCheckpoint?.id===checkpoint.id?'active ':''}${passed?'passed':ready?'ready':'locked'}`} onClick={()=>startCheckpoint(checkpoint.id)}>{passed?<CheckCircle2 size={17}/>:ready?<ListChecks size={17}/>:<LockKeyhole size={16}/>}<span><strong>Checkpoint {checkpoint.number}: {checkpoint.title}</strong><small>{checkpoint.questions.length} questions · {passed?'Passed':ready?'Ready':'Complete the lesson group'}</small></span><ChevronRight size={15}/></button>);}
+                          return rows;
+                        })}</div>}
                       </section>
                     );
                   })}
@@ -937,7 +1077,22 @@ export default function CourseApp() {
               </aside>
               {moduleDrawerOpen && <button className="drawer-scrim" type="button" aria-label="Close course map" onClick={() => setModuleDrawerOpen(false)} />}
 
-              <article className="lesson-canvas">
+              {activeCheckpoint&&activeCheckpointModule?<CheckpointWorkspace
+                checkpoint={activeCheckpoint}
+                moduleNumber={activeCheckpointModule.number}
+                moduleTitle={activeCheckpointModule.title}
+                checkpointTotal={assessmentBank.checkpointsByModule[activeCheckpoint.moduleId].length}
+                progress={learner.flashcardProgress}
+                bestScore={learner.checkpointQuizBestScores[activeCheckpoint.id]??0}
+                completed={learner.completedCheckpointIds.includes(activeCheckpoint.id)}
+                onRateCard={rateFlashcard}
+                onEvidence={recordEvidence}
+                onOpenLesson={loadLesson}
+                onComplete={completeCheckpointQuiz}
+                onContinue={continueAfterCheckpoint}
+                onBack={()=>loadLesson(activeCheckpoint.throughLessonId)}
+                continueLabel={checkpointNextLesson?'Continue to next lesson group':'View progress'}
+              />:<article className="lesson-canvas">
                 {returnLesson && returnLesson.id !== activeLesson.id && <button type="button" className="secondary-button foundation-return" onClick={()=>{chooseLesson(returnLesson.id);setLessonTab(returnLesson.tab);setReturnLesson(null);}}><ChevronLeft size={18}/> Return to {lessonLookup.get(returnLesson.id)?.title}</button>}
                 <div className="lesson-topline">
                   <button className="mobile-module-button" type="button" onClick={() => setModuleDrawerOpen(true)}><Menu size={19} /> Course map</button>
@@ -995,6 +1150,7 @@ export default function CourseApp() {
                       connectedLessonFlow
                       mode={assessmentMode}
                       onModeChange={setAssessmentMode}
+                      assessmentLabel="Lesson quiz"
                       flashcards={activeAssessment.flashcards}
                       questions={activeAssessment.questions}
                       progress={learner.flashcardProgress}
@@ -1006,15 +1162,15 @@ export default function CourseApp() {
                       onPractice={revealPractice}
                       onCompleteQuiz={completeLessonQuiz}
                       onContinue={continueAfterLessonAssessment}
-                      continueLabel={activeLesson.id === allLessons.at(-1)?.id ? 'Review progress' : 'Continue to next lesson'}
+                      continueLabel={activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)?'Take required checkpoint':activeLesson.id===allLessons.at(-1)?.id?'Review progress':'Continue to next lesson'}
                     />
                     <details className="lesson-practice-reveal" open={practiceOpen} onToggle={event=>setPracticeOpen(event.currentTarget.open)}><summary>Worked examples and investigations</summary>{lessonTab==='quiz'&&practiceOpen&&<PracticeWorkspace key={activeLesson.id} lessonId={activeLesson.id} calculation={activePractice.calculation} cases={activePractice.cases} onEvidence={recordEvidence} evidence={learner.evidence}/>}</details>
                   </div>
 
 
                 </div>
-                <footer className="lesson-next-card"><div><span>Next lesson</span><h3>{allLessons[allLessons.findIndex((lesson) => lesson.id === activeLesson.id) + 1]?.title ?? 'Course complete'}</h3></div><button type="button" onClick={() => goRelative(1)} disabled={activeLesson.id === allLessons.at(-1)?.id}>Continue <ArrowRight size={18} /></button></footer>
-              </article>
+                {activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)?<footer className="lesson-next-card checkpoint-next"><div><span>Required next</span><h3>Checkpoint {activeBoundaryCheckpoint.number}: {activeBoundaryCheckpoint.title}</h3><small>{activeBoundaryCheckpoint.questions.length} cumulative questions · 80% to continue</small></div><button type="button" onClick={()=>startCheckpoint(activeBoundaryCheckpoint.id)}>Start checkpoint <ArrowRight size={18}/></button></footer>:<footer className="lesson-next-card"><div><span>Next lesson</span><h3>{allLessons[allLessons.findIndex((lesson)=>lesson.id===activeLesson.id)+1]?.title??'Course complete'}</h3></div><button type="button" onClick={()=>goRelative(1)} disabled={activeLesson.id===allLessons.at(-1)?.id}>Continue <ArrowRight size={18}/></button></footer>}
+              </article>}
             </div>
           )}
           {view === 'toolkit' && <LearningToolkit query={toolQuery} onQueryChange={setToolQuery} onLesson={chooseLesson} onPractice={openPractice} />}
@@ -1022,7 +1178,7 @@ export default function CourseApp() {
             <div className="page progress-page">
               <EvidenceOverview events={learner.evidence} onLesson={openPractice}/>
               <section className="progress-hero"><div><span className="eyebrow"><BarChart3 size={16} /> Your learning record</span><h1>Your progress.</h1><p>Track completed lessons, quiz results and study time.</p></div><div className="overall-ring" style={{ '--progress': `${overallPercent * 3.6}deg` } as CSSProperties}><span><b>{overallPercent}%</b><small>video course</small></span></div></section>
-              <section className="stat-grid progress-stats"><article><span className="stat-icon copper"><CirclePlay size={21} /></span><div><b>{Math.floor(completedSeconds / 3600)}h {Math.round((completedSeconds % 3600) / 60)}m</b><p>Video time completed</p></div></article><article><span className="stat-icon cyan"><BookOpen size={21} /></span><div><b>{learner.completedLessonAssessmentIds.length}<small> / {allLessons.length}</small></b><p>Recognition checks passed</p></div></article><article><span className="stat-icon green"><RotateCcw size={21} /></span><div><b>{dueFlashcards.length}</b><p>Flashcards due for review</p></div></article><article><span className="stat-icon amber"><Award size={21} /></span><div><b>{learner.completedModuleAssessmentIds.length}<small> / {course.modules.length}</small></b><p>Module checks passed</p></div></article></section>
+              <section className="stat-grid progress-stats"><article><span className="stat-icon copper"><CirclePlay size={21} /></span><div><b>{Math.floor(completedSeconds / 3600)}h {Math.round((completedSeconds % 3600) / 60)}m</b><p>Video time completed</p></div></article><article><span className="stat-icon cyan"><BookOpen size={21} /></span><div><b>{learner.completedLessonAssessmentIds.length}<small> / {allLessons.length}</small></b><p>Lesson quizzes passed</p></div></article><article><span className="stat-icon green"><RotateCcw size={21} /></span><div><b>{dueFlashcards.length}</b><p>Flashcards due for review</p></div></article><article><span className="stat-icon amber"><LockKeyhole size={21} /></span><div><b>{learner.completedCheckpointIds.length}<small> / {assessmentBank.checkpointList.length}</small></b><p>Required checkpoints passed</p></div></article></section>
               <details className="mastery-centre" open={reviewQueueOpen || undefined}>
                 <summary>Module quizzes &amp; flashcard review</summary>
                 <section className="review-queue-banner"><span className="review-queue-icon"><RotateCcw size={25} /></span><div><span className="eyebrow neutral">Flashcards</span><h3>{dueFlashcards.length ? `${dueFlashcards.length} cards due` : 'No cards due today'}</h3><p>{dueFlashcards.length ? 'Retrieve up to five ideas in this focused session.' : 'Review a lesson to add cards.'}</p></div><button type="button" disabled={!dueReviewCards.length} onClick={() => { if(reviewQueueOpen){setReviewQueueOpen(false);setReviewSession([]);}else startReview(); }}>{reviewQueueOpen ? 'Close review' : 'Start due review'} <ArrowRight size={17} /></button></section>

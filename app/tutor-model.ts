@@ -64,7 +64,7 @@ export function isProgressBackup(value: unknown, lessonIds: Set<string>): boolea
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
   const input = value as Record<string, unknown>;
   return Array.isArray(input.completedLessonIds) && typeof input.activeLessonId === 'string'
-    && lessonIds.has(input.activeLessonId) && (input.schemaVersion === undefined || (typeof input.schemaVersion === 'number' && Number.isInteger(input.schemaVersion) && input.schemaVersion >= 1 && input.schemaVersion <= 4));
+    && lessonIds.has(input.activeLessonId) && (input.schemaVersion === undefined || (typeof input.schemaVersion === 'number' && Number.isInteger(input.schemaVersion) && input.schemaVersion >= 1 && input.schemaVersion <= 5));
 }
 export type RecallRecord = { streak: number; dueAt: string; lastReviewedAt?: string };
 export function scheduleRecall(previous: RecallRecord | undefined, knew: boolean, now = new Date()): RecallRecord {

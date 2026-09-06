@@ -30,12 +30,15 @@ type AssessmentPanelProps = {
   connectedLessonFlow?: boolean;
   mode?: AssessmentMode;
   onModeChange?: (mode: AssessmentMode) => void;
+  assessmentLabel?: string;
+  requirePassToContinue?: boolean;
+  showFlashcards?: boolean;
 };
 
 export default function AssessmentPanel({
   title, eyebrow, description, flashcards, questions, progress, bestScore, completed,
   onRateCard, onEvidence, onOpenLesson, onPractice, onCompleteQuiz, onContinue, continueLabel = 'Continue learning', connectedLessonFlow = false,
-  mode: controlledMode, onModeChange,
+  mode: controlledMode, onModeChange, assessmentLabel = 'Quiz', requirePassToContinue = false, showFlashcards = true,
 }: AssessmentPanelProps) {
   const [internalMode, setInternalMode] = useState<AssessmentMode>('cards');
   const mode = controlledMode ?? internalMode;
@@ -157,8 +160,8 @@ export default function AssessmentPanel({
 
     {mode === 'quiz' && finished && <div className="quiz-finish">
       <div className="score-ring" role="img" aria-label={`${score} out of ${quizQuestions.length} correct`} style={{ background: `conic-gradient(${score >= passMark ? '#43cb83' : '#ff914d'} ${score / quizQuestions.length * 360}deg, #e7edf1 0)` }}><span><b>{Math.round(score / quizQuestions.length * 100)}%</b><small>{score}/{quizQuestions.length} correct</small></span></div>
-      <div><h2>{score >= passMark ? 'Lesson quiz passed.' : 'Keep building your understanding.'}</h2><p>{score >= passMark ? 'You reached 80%. Apply the idea in a worked example, then return to it later.' : `You need ${passMark} correct to pass. Review the missed ideas, then try again.`}</p><span className="quiz-best"><Award size={17} /> Best: {Math.max(bestScore, score)}/{quizQuestions.length}{completed ? ' · Passed previously' : ''}</span>{onPractice&&<button className="primary-button" type="button" onClick={onPractice}>Apply this lesson <ArrowRight size={17}/></button>}</div>
-      <div className="quiz-finish-actions"><button type="button" className="secondary-button" onClick={() => changeMode('cards')}><BookOpen size={17} /> Flashcards</button><button type="button" className="secondary-button" onClick={restartQuiz}><RotateCcw size={17} /> Try again</button>{onContinue && <button type="button" className="primary-button" onClick={onContinue}>{continueLabel}<ArrowRight size={17} /></button>}</div>
+      <div><h2>{score >= passMark ? `${assessmentLabel} passed.` : 'Keep building your understanding.'}</h2><p>{score >= passMark ? 'You reached 80%. Continue while the ideas are fresh.' : `You need ${passMark} correct to pass. Review the missed ideas, then try again.`}</p><span className="quiz-best"><Award size={17} /> Best: {Math.max(bestScore, score)}/{quizQuestions.length}{completed ? ' · Passed previously' : ''}</span>{onPractice&&<button className="primary-button" type="button" onClick={onPractice}>Apply this lesson <ArrowRight size={17}/></button>}</div>
+      <div className="quiz-finish-actions">{showFlashcards&&<button type="button" className="secondary-button" onClick={() => changeMode('cards')}><BookOpen size={17} /> Flashcards</button>}<button type="button" className="secondary-button" onClick={restartQuiz}><RotateCcw size={17} /> Try again</button>{onContinue&&(!requirePassToContinue||score>=passMark)&&<button type="button" className="primary-button" onClick={onContinue}>{continueLabel}<ArrowRight size={17} /></button>}</div>
     </div>}
   </section>;
 }

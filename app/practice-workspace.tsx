@@ -7,6 +7,7 @@ import { calendarDay } from './tutor-model';
 import LoopVisual from './loop-visual';
 import { lessonGuides } from './lesson-guides';
 import ConceptVisual from './concept-visual';
+import Formula from './formula';
 
 type Props = { lessonId:string; calculation?:Calculation; cases:FaultCase[]; onEvidence:(input:EvidenceInput)=>void; evidence:LearningEvidence[] };
 function CalculationStudio({ spec, lessonId, onEvidence, evidence }: { spec:Calculation } & Pick<Props,'lessonId'|'onEvidence'|'evidence'>) {
@@ -26,11 +27,11 @@ function CalculationStudio({ spec, lessonId, onEvidence, evidence }: { spec:Calc
   return <section className="calculation-coach" aria-label={spec.title}>
     <span className="eyebrow neutral">{stage==='worked'?'See an example':stage==='guided'?'Try with help':'Choose your answer'}</span><h2>{spec.title}</h2>
     <p className="practice-question">{problem.prompt}</p>
-    {stage==='worked'?<><div className="worked-solution"><Lightbulb size={21}/><div><strong>Step by step</strong><p>{problem.hint}</p><p>{problem.working}</p></div></div><button className="primary-button" type="button" onClick={()=>begin('guided')}>Try a similar question <ArrowRight size={17}/></button><button className="text-action" type="button" onClick={()=>begin('independent')}>Try without the hint</button></>:<>
+    {stage==='worked'?<><div className="worked-solution"><Lightbulb size={21}/><div><strong>Step by step</strong><p>{problem.hint}</p><Formula tex={problem.workingTex} block /></div></div><button className="primary-button" type="button" onClick={()=>begin('guided')}>Try a similar question <ArrowRight size={17}/></button><button className="text-action" type="button" onClick={()=>begin('independent')}>Try without the hint</button></>:<>
       {(stage==='guided'||hint)&&<p className="practice-hint">{problem.hint}</p>}
       <div className="case-options">{choices.map((choice,index)=><button type="button" key={`${choice.value}-${choice.unit}`} disabled={selected!==null} aria-pressed={selected===index} className={selected===index?(index===answer?'correct':'incorrect'):''} onClick={()=>choose(index)}><span>{String.fromCharCode(65+index)}</span>{choice.value} {choice.unit}</button>)}</div>
       {selected===null&&stage==='independent'&&!hint&&<button type="button" className="text-action" onClick={()=>setHint(true)}>Show a hint</button>}
-      {selected!==null&&<div className={`tutor-feedback ${selected===answer?'success':''}`} role="status"><strong>{selected===answer?'Correct.':'Let’s work it through.'}</strong><p>{checkCalculation(problem,choices[selected].value,choices[selected].unit).feedback}</p><p>{problem.working}</p><p>{problem.transfer}</p><button className="primary-button" type="button" onClick={()=>begin('independent')}>Try another question <ArrowRight size={17}/></button></div>}
+      {selected!==null&&<div className={`tutor-feedback ${selected===answer?'success':''}`} role="status"><strong>{selected===answer?'Correct.':'Let’s work it through.'}</strong><p>{checkCalculation(problem,choices[selected].value,choices[selected].unit).feedback}</p><Formula tex={problem.workingTex} block /><p>{problem.transfer}</p><button className="primary-button" type="button" onClick={()=>begin('independent')}>Try another question <ArrowRight size={17}/></button></div>}
       <button type="button" className="text-action" onClick={()=>setStage('worked')}>See the worked example</button>
     </>}
     {spec.id==='loop'&&<LoopVisual/>}

@@ -5,9 +5,10 @@ import { lessonKnowledge, lessonById, lessonsForTerm, type KnowledgeTerm } from 
 import { topicsForLesson } from './standards-data';
 import { learningSnapshot, type LearningEvidence, type EvidenceInput } from './tutor-model';
 import type { LessonGuide } from './lesson-guides';
+import Formula from './formula';
 
 export function ContextTerm({item,onLesson}:{item:KnowledgeTerm;onLesson:(id:string)=>void}){
-  return <details className="context-term"><summary>{item.term}{item.unit&&<small>{item.unit}</small>}</summary><p>{item.definition}</p>{item.formula&&<p className="term-formula">{item.formula}</p>}{item.contrast&&<p><strong>Keep the distinction:</strong> {item.contrast}</p>}<div className="term-lesson-links">{lessonsForTerm(item.term).slice(0,3).map(lesson=><button type="button" key={lesson.id} onClick={()=>onLesson(lesson.id)}>{lesson.title}<ArrowRight size={15}/></button>)}</div></details>;
+  return <details className="context-term"><summary>{item.term}{item.unit&&<small>{item.unit}</small>}</summary><p>{item.definition}</p>{item.formulaTex?<div className="term-formula"><Formula tex={item.formulaTex} block />{item.formulaNote&&<small>{item.formulaNote}</small>}</div>:item.formula&&<p className="term-formula">{item.formula}</p>}{item.contrast&&<p><strong>Keep the distinction:</strong> {item.contrast}</p>}<div className="term-lesson-links">{lessonsForTerm(item.term).slice(0,3).map(lesson=><button type="button" key={lesson.id} onClick={()=>onLesson(lesson.id)}>{lesson.title}<ArrowRight size={15}/></button>)}</div></details>;
 }
 export function LessonCompass({lessonId,guide,watched,onEvidence,onLesson}:{lessonId:string;guide:LessonGuide;watched:boolean;onEvidence:(input:EvidenceInput)=>void;onLesson:(id:string)=>void}){
   const knowledge=lessonKnowledge[lessonId];
