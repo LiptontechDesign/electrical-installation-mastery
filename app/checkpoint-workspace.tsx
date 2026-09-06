@@ -4,7 +4,7 @@ import { ArrowLeft, CheckCircle2, ChevronDown, LockKeyhole } from 'lucide-react'
 import type { CheckpointAssessment } from './assessment-data';
 import AssessmentPanel from './assessment-panel';
 import course from './course-curriculum';
-import type { EvidenceInput } from './tutor-model';
+import type { EvidenceInput, QuizRecord } from './tutor-model';
 
 type FlashcardProgress = Record<string, { streak: number; dueAt: string }>;
 
@@ -15,6 +15,7 @@ type CheckpointWorkspaceProps = {
   checkpointTotal: number;
   progress: FlashcardProgress;
   bestScore: number;
+  quizRecord?: QuizRecord;
   completed: boolean;
   onRateCard: (cardId: string, knew: boolean) => void;
   onEvidence: (input: EvidenceInput) => void;
@@ -34,6 +35,7 @@ export default function CheckpointWorkspace({
   checkpointTotal,
   progress,
   bestScore,
+  quizRecord,
   completed,
   onRateCard,
   onEvidence,
@@ -57,7 +59,7 @@ export default function CheckpointWorkspace({
     </header>
     <details className="checkpoint-scope">
       <summary><span>New lessons in this checkpoint</span><small>{checkpoint.newLessonIds.length} lessons</small><ChevronDown size={18}/></summary>
-      <ol>{checkpoint.newLessonIds.map((lessonId)=><li key={lessonId}>{lessonLookup.get(lessonId)?.title}</li>)}</ol>
+      <ol>{checkpoint.newLessonIds.map((lessonId)=>{const lesson=lessonLookup.get(lessonId);return <li key={lessonId}>Lesson {String(lesson?.number??'').padStart(2,'0')} · {lesson?.title}</li>;})}</ol>
     </details>
     <AssessmentPanel
       key={checkpoint.id}
@@ -73,6 +75,7 @@ export default function CheckpointWorkspace({
       questions={checkpoint.questions}
       progress={progress}
       bestScore={bestScore}
+      quizRecord={quizRecord}
       completed={completed}
       onRateCard={onRateCard}
       onEvidence={onEvidence}

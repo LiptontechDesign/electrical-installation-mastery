@@ -64,7 +64,40 @@ export function isProgressBackup(value: unknown, lessonIds: Set<string>): boolea
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
   const input = value as Record<string, unknown>;
   return Array.isArray(input.completedLessonIds) && typeof input.activeLessonId === 'string'
-    && lessonIds.has(input.activeLessonId) && (input.schemaVersion === undefined || (typeof input.schemaVersion === 'number' && Number.isInteger(input.schemaVersion) && input.schemaVersion >= 1 && input.schemaVersion <= 5));
+    && lessonIds.has(input.activeLessonId) && (input.schemaVersion === undefined || (typeof input.schemaVersion === 'number' && Number.isInteger(input.schemaVersion) && input.schemaVersion >= 1 && input.schemaVersion <= 6));
+}
+export type QuizRecord = {
+  bestScore: number;
+  bestTotal: number;
+  latestScore: number;
+  latestTotal: number;
+  attempts: number;
+  lastAttemptAt: string;
+};
+export function recordQuizAttempt(previous: QuizRecord | undefined, score: number, total: number, at = new Date().toISOString()): QuizRecord {
+  if (!Number.isInteger(score) || !Number.isInteger(total) || total < 1 || score < 0 || score > total || !Number.isFinite(Date.parse(at))) throw new RangeError('Quiz scores require valid whole-number marks, a positive total and a valid date.');
+  const isNewBest = !previous || score / total > previous.bestScore / previous.bestTotal;
+  return {
+    bestScore: isNewBest ? score : previous.bestScore,
+    bestTotal: isNewBest ? total : previous.bestTotal,
+    latestScore: score,
+    latestTotal: total,
+    attempts: Math.min(10000,(previous?.attempts ?? 0)+1),
+    lastAttemptAt: at,
+  };
+}
+export function validQuizRecords(value: unknown, validIds: Set<string>): Record<string, QuizRecord> {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  return Object.fromEntries(Object.entries(value).filter(([id,item]) => {
+    if (!validIds.has(id) || !item || typeof item !== 'object' || Array.isArray(item)) return false;
+    const record=item as Partial<QuizRecord>;
+    return Number.isInteger(record.bestScore) && Number.isInteger(record.bestTotal) && Number.isInteger(record.latestScore) && Number.isInteger(record.latestTotal)
+      && Number.isInteger(record.attempts) && (record.attempts??0)>=1 && (record.attempts??0)<=10000
+      && (record.bestTotal??0)>=1 && (record.latestTotal??0)>=1
+      && (record.bestScore??-1)>=0 && (record.bestScore??0)<=(record.bestTotal??0)
+      && (record.latestScore??-1)>=0 && (record.latestScore??0)<=(record.latestTotal??0)
+      && typeof record.lastAttemptAt==='string' && Number.isFinite(Date.parse(record.lastAttemptAt));
+  })) as Record<string,QuizRecord>;
 }
 export type RecallRecord = { streak: number; dueAt: string; lastReviewedAt?: string };
 export function scheduleRecall(previous: RecallRecord | undefined, knew: boolean, now = new Date()): RecallRecord {

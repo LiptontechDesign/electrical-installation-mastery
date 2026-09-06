@@ -5,7 +5,7 @@ import { ArrowRight, Award, BookOpen, BrainCircuit, Check, ChevronLeft, ChevronR
 import type { AssessmentQuestion, Flashcard } from './assessment-data';
 import ConceptVisual from './concept-visual';
 import { lessonKnowledge, lessonById } from './knowledge-graph';
-import type { EvidenceInput } from './tutor-model';
+import type { EvidenceInput, QuizRecord } from './tutor-model';
 import { calendarDay } from './tutor-model';
 
 export type FlashcardProgress = Record<string, { streak: number; dueAt: string }>;
@@ -19,6 +19,7 @@ type AssessmentPanelProps = {
   questions: AssessmentQuestion[];
   progress: FlashcardProgress;
   bestScore: number;
+  quizRecord?: QuizRecord;
   completed: boolean;
   onRateCard: (cardId: string, knew: boolean) => void;
   onEvidence?: (input: EvidenceInput) => void;
@@ -36,7 +37,7 @@ type AssessmentPanelProps = {
 };
 
 export default function AssessmentPanel({
-  title, eyebrow, description, flashcards, questions, progress, bestScore, completed,
+  title, eyebrow, description, flashcards, questions, progress, bestScore, quizRecord, completed,
   onRateCard, onEvidence, onOpenLesson, onPractice, onCompleteQuiz, onContinue, continueLabel = 'Continue learning', connectedLessonFlow = false,
   mode: controlledMode, onModeChange, assessmentLabel = 'Quiz', requirePassToContinue = false, showFlashcards = true,
 }: AssessmentPanelProps) {
@@ -50,6 +51,9 @@ export default function AssessmentPanel({
   const [finished, setFinished] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [difficulty, setDifficulty] = useState<Record<number, string>>({});
+  const [initialAttemptCount] = useState(()=>quizRecord?.attempts??0);
+  const [completedSubmissions, setCompletedSubmissions] = useState(0);
+  const [passedBeforeResult, setPassedBeforeResult] = useState(false);
   const questionHeading = useRef<HTMLHeadingElement>(null);
   const quizQuestions = useMemo(()=>{
     if(!questions.length||attempt===0)return questions;
@@ -70,6 +74,13 @@ export default function AssessmentPanel({
   const knownCount = Object.values(ratings).filter(Boolean).length;
   const reviewCount = Object.values(ratings).filter((knew) => !knew).length;
   const dueCount = flashcards.filter((item) => !progress[item.id] || progress[item.id].dueAt <= calendarDay()).length;
+  const recordBeatsLegacy=Boolean(quizRecord&&quizRecord.bestScore/quizRecord.bestTotal>=bestScore/Math.max(1,questions.length));
+  const recordedBestScore=recordBeatsLegacy?quizRecord!.bestScore:bestScore;
+  const recordedBestTotal=recordBeatsLegacy?quizRecord!.bestTotal:questions.length;
+  const currentIsBest=quizQuestions.length>0&&score/quizQuestions.length>recordedBestScore/Math.max(1,recordedBestTotal);
+  const visibleBestScore=currentIsBest?score:recordedBestScore;
+  const visibleBestTotal=currentIsBest?quizQuestions.length:recordedBestTotal;
+  const visibleAttempts=Math.max(quizRecord?.attempts??0,initialAttemptCount+completedSubmissions);
   const Icon = card?.kind.includes('check') ? ShieldCheck : card?.kind === 'Application' ? Lightbulb : BrainCircuit;
 
   const changeMode = (next: AssessmentMode) => { setInternalMode(next); onModeChange?.(next); };
@@ -97,6 +108,8 @@ export default function AssessmentPanel({
       window.requestAnimationFrame(() => questionHeading.current?.focus());
       return;
     }
+    setPassedBeforeResult(completed);
+    setCompletedSubmissions((value)=>value+1);
     setFinished(true);
     onCompleteQuiz(score, quizQuestions.length);
   };
@@ -128,6 +141,7 @@ export default function AssessmentPanel({
     </div>}
 
     {mode === 'quiz' && !finished && question && <div className="assessment-quiz">
+      {(quizRecord||bestScore>0)&&<div className="quiz-prior-record" aria-label="Previous quiz record">{quizRecord&&<span>Latest {quizRecord.latestScore}/{quizRecord.latestTotal}</span>}<span>{quizRecord?'Best':'Previous best'} {recordedBestScore}/{recordedBestTotal}</span>{quizRecord&&<span>{quizRecord.attempts} recorded {quizRecord.attempts===1?'attempt':'attempts'}</span>}</div>}
       <div className="session-heading"><h2>Question {questionIndex + 1}<span> / {quizQuestions.length}</span></h2><span>{score} correct · {passMark} to pass</span></div>
       <div className="quiz-map" aria-hidden="true">{quizQuestions.map((item, index) => <span key={item.id} className={`${index === questionIndex ? 'current' : ''} ${answers[index] === undefined ? '' : answers[index] === item.answer ? 'known' : 'again'}`} />)}</div>
       {!connectedLessonFlow && <p className="assessment-question-source">{question.lessonTitle}</p>}
@@ -160,8 +174,8 @@ export default function AssessmentPanel({
 
     {mode === 'quiz' && finished && <div className="quiz-finish">
       <div className="score-ring" role="img" aria-label={`${score} out of ${quizQuestions.length} correct`} style={{ background: `conic-gradient(${score >= passMark ? '#43cb83' : '#ff914d'} ${score / quizQuestions.length * 360}deg, #e7edf1 0)` }}><span><b>{Math.round(score / quizQuestions.length * 100)}%</b><small>{score}/{quizQuestions.length} correct</small></span></div>
-      <div><h2>{score >= passMark ? `${assessmentLabel} passed.` : 'Keep building your understanding.'}</h2><p>{score >= passMark ? 'You reached 80%. Continue while the ideas are fresh.' : `You need ${passMark} correct to pass. Review the missed ideas, then try again.`}</p><span className="quiz-best"><Award size={17} /> Best: {Math.max(bestScore, score)}/{quizQuestions.length}{completed ? ' · Passed previously' : ''}</span>{onPractice&&<button className="primary-button" type="button" onClick={onPractice}>Apply this lesson <ArrowRight size={17}/></button>}</div>
-      <div className="quiz-finish-actions">{showFlashcards&&<button type="button" className="secondary-button" onClick={() => changeMode('cards')}><BookOpen size={17} /> Flashcards</button>}<button type="button" className="secondary-button" onClick={restartQuiz}><RotateCcw size={17} /> Try again</button>{onContinue&&(!requirePassToContinue||score>=passMark)&&<button type="button" className="primary-button" onClick={onContinue}>{continueLabel}<ArrowRight size={17} /></button>}</div>
+      <div><h2>{score >= passMark ? `${assessmentLabel} passed.` : 'Keep building your understanding.'}</h2><p>{score >= passMark ? 'You reached 80%. Continue while the ideas are fresh.' : passedBeforeResult ? `Latest: ${score}/${quizQuestions.length}. Your earlier pass remains saved; review the missed ideas and retry.` : `You need ${passMark} correct to pass. Review the missed ideas, then try again.`}</p><div className="quiz-score-record"><span><RotateCcw size={16}/> Latest <strong>{score}/{quizQuestions.length}</strong></span><span><Award size={16}/> Best <strong>{visibleBestScore}/{visibleBestTotal}</strong></span><span>{visibleAttempts} recorded {visibleAttempts===1?'attempt':'attempts'}{passedBeforeResult?' · Passed previously':''}</span></div>{onPractice&&<button className="primary-button" type="button" onClick={onPractice}>Apply this lesson <ArrowRight size={17}/></button>}</div>
+      <div className="quiz-finish-actions">{showFlashcards&&<button type="button" className="secondary-button" onClick={() => changeMode('cards')}><BookOpen size={17} /> Flashcards</button>}<button type="button" className="secondary-button" onClick={restartQuiz}><RotateCcw size={17} /> Try again</button>{onContinue&&(!requirePassToContinue||score>=passMark||passedBeforeResult||completed)&&<button type="button" className="primary-button" onClick={onContinue}>{continueLabel}<ArrowRight size={17} /></button>}</div>
     </div>}
   </section>;
 }

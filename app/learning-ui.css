@@ -64,6 +64,17 @@
 .focused-assessment .assessment-feedback { margin-top: 18px; }
 .focused-assessment .assessment-feedback p { margin-bottom: 0; font-size: 16px; }
 .question-kind { display: inline-flex; margin: 0 0 9px; border-radius: 99px; background: #eef5f6; color: #246d77; padding: 5px 9px; font-size: 11px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
+.quiz-prior-record { display: flex; flex-wrap: wrap; gap: 7px; margin: -2px 0 17px; }
+.quiz-prior-record span { border-radius: 99px; background: #eef3f5; color: #526875; padding: 6px 10px; font-size: 12px; font-weight: 750; }
+.quiz-score-record { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; color: #526875; font-size: 13px; }
+.quiz-score-record span { display: inline-flex; align-items: center; gap: 5px; }
+.quiz-score-record strong { color: #176b4d; }
+.topic-pill.lesson-sequence { background: var(--navy-2); color: var(--cyan); }
+.lesson-row-state { display: flex; align-items: center; gap: 6px; }
+.lesson-row-state svg { color: var(--copper); }
+.quiz-score-chip { border-radius: 99px; padding: 4px 6px; font-size: 10px; font-weight: 850; white-space: nowrap; }
+.quiz-score-chip.passed { background: #dff3e9; color: #176447; }
+.quiz-score-chip.review { background: #fff0da; color: #8b4c09; }
 
 /* Required cumulative checkpoints */
 .accordion-lessons button.locked { color: #8b969f; }
@@ -94,7 +105,6 @@
 .score-ring small { font-size: 14px; color: var(--muted); }
 .quiz-finish h2 { margin: 0; font-size: 26px; }
 .quiz-finish p { font-size: 16px; color: var(--muted); }
-.quiz-best { display: flex; align-items: center; gap: 6px; color: #14744c; font-size: 14px; }
 .quiz-finish-actions { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
 .concept-visual { border: 1px solid #cddfe2; border-radius: 12px; padding: 16px 18px; background: #f7fbfc; margin-top: 20px; }
 .concept-visual > summary { cursor: pointer; color: #1e6470; font-size: 14px; font-weight: 800; }
@@ -228,7 +238,7 @@
   .lesson-tabs button { flex-direction: column; font-size: 13px; }
   .term-grid { grid-template-columns: 1fr; }
   .quiz-finish { grid-template-columns: 1fr; justify-items: center; text-align: center; }
-  .quiz-best { justify-content: center; }
+  .quiz-score-record { justify-content: center; }
   .editable-values { grid-template-columns: 1fr; }
   .circuit-model { gap: 4px; }
   .circuit-model span { padding: 10px 6px; font-size: 13px; }
