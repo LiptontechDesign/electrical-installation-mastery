@@ -355,7 +355,7 @@ export const module14 = M(
         'Why can a charger with built-in open-PEN protection still require a different earthing decision on a supply?',
       ),
       {
-        regulationStatus: 'PME/open-PEN requirements are contextual only. Determine the supply earthing arrangement and apply current local/IEC EV charging and manufacturer protection requirements.',
+        regulationStatus: 'Determine the supply earthing arrangement, then apply BS 7671 Section 722 and the actual charging-equipment manufacturer’s protection requirements.',
       },
     ),
     L(

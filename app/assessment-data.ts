@@ -1,8 +1,9 @@
 import type { LessonGuide } from './lesson-guides';
-import { topicsForLesson } from './standards-data';
-import { standardsChecks } from './standards-checks';
+import { hasCuratedStandard, topicsForLesson } from './standards-data';
+import { standardsChecks, type StandardsCheck } from './standards-checks';
 import { connectionChecks } from './connection-assessments';
 import { conceptDistractors } from './concept-distractors';
+import { electricalTerms, lessonKnowledge, type KnowledgeTerm } from './knowledge-graph';
 
 export type Flashcard = {
   id: string;
@@ -24,6 +25,7 @@ export type AssessmentQuestion = {
   options: string[];
   answer: number;
   explanation: string;
+  feedback?: string[];
   kind: 'Recall' | 'Application' | 'Safety check' | 'Standards check';
 };
 
@@ -74,6 +76,22 @@ function rotateCorrectOption(correct: string, distractors: string[], seed: numbe
   return { options, answer };
 }
 
+function rotateStandardsCheck(check: StandardsCheck, seed: number) {
+  const correct = { option: check.options[check.answer], feedback: check.feedback[check.answer] };
+  const alternatives = check.options
+    .map((option, index) => ({ option, feedback: check.feedback[index], index }))
+    .filter((item) => item.index !== check.answer)
+    .map(({ option, feedback }) => ({ option, feedback }));
+  const answer = seed % 4;
+  const ordered = [...alternatives];
+  ordered.splice(answer, 0, correct);
+  return {
+    options: ordered.map((item) => item.option),
+    feedback: ordered.map((item) => item.feedback),
+    answer,
+  };
+}
+
 function cleanSentence(value: string) {
   return value.trim().replace(/[.?!]+$/, '');
 }
@@ -120,6 +138,64 @@ function baseVerb(value: string) {
 
 function subjectUsesDo(subject: string) {
   return /\band\b/i.test(subject) || (/s$/i.test(subject) && !/(ss|us)$/i.test(subject));
+}
+
+const actionPrompts: Record<string, string> = {
+  check: 'What must be checked in this lesson?',
+  test: 'What must be tested in this lesson?',
+  confirm: 'What must be confirmed in this lesson?',
+  verify: 'What must be verified in this lesson?',
+  read: 'What information must be read before applying this lesson?',
+  record: 'What must be recorded when applying this lesson?',
+  scan: 'What must be checked before the work starts?',
+  keep: 'What must be kept correctly controlled?',
+  plan: 'What must be planned?',
+  allow: 'What allowances are required?',
+  restore: 'What must be restored before the work is complete?',
+  coordinate: 'What must be coordinated?',
+  place: 'What must be considered when positioning equipment?',
+  position: 'What must be considered when positioning equipment?',
+  use: 'What should be used?',
+  compare: 'What must be compared?',
+  distinguish: 'What must be distinguished?',
+  separate: 'What must be kept separate?',
+  establish: 'What must be established before work starts?',
+  terminate: 'What is required for a correct termination?',
+  apply: 'What should be applied in this situation?',
+  understand: 'What should you understand from this lesson?',
+  provide: 'What must be provided?',
+  inspect: 'What should be inspected?',
+  match: 'What must be correctly matched?',
+  start: 'What should you start with?',
+  layer: 'How should the lighting be arranged?',
+  light: 'What should the lighting illuminate?',
+  assess: 'What must be assessed?',
+  reserve: 'What space or capacity should be reserved?',
+  trace: 'Which path should you trace?',
+  locate: 'What must be located?',
+  evaluate: 'What conditions must be evaluated?',
+  maintain: 'What must be maintained?',
+  preserve: 'What must be preserved?',
+  follow: 'Which path or sequence should be followed?',
+  relate: 'What relationship should be understood?',
+  size: 'What must be considered when sizing the system?',
+  map: 'What parts of the system should be mapped?',
+  commission: 'What must be commissioned and verified?',
+  fit: 'What must be fitted correctly?',
+  group: 'What should be grouped together?',
+  configure: 'What must be configured?',
+  identify: 'What must be identified?',
+};
+
+function imperativeQuestion(sentence: string, topic: string) {
+  const action = sentence.match(/^(Choose|Select|Check|Test|Confirm|Verify|Read|Record|Scan|Keep|Plan|Allow|Restore|Coordinate|Place|Position|Use|Compare|Distinguish|Separate|Establish|Terminate|Apply|Understand|Provide|Inspect|Match|Start|Layer|Light|Assess|Reserve|Trace|Locate|Evaluate|Maintain|Preserve|Follow|Relate|Size|Map|Commission|Fit|Group|Configure|Identify)\b/i)?.[1]?.toLocaleLowerCase();
+  if (!action) return undefined;
+  if (action === 'choose' || action === 'select') {
+    const object = sentence.replace(/^(Choose|Select)\s+/i, '').split(/\s+(?:for|from|according to|based on)\s+/i)[0];
+    return { prompt: `What must be considered when ${action === 'choose' ? 'choosing' : 'selecting'} ${object.toLocaleLowerCase()}?`, answer: sentence, statement: sentence };
+  }
+  const prompt = actionPrompts[action]?.replace('this lesson', `“${topic}”`);
+  return prompt ? { prompt, answer: sentence, statement: sentence } : undefined;
 }
 
 function directConceptQuestion(concept: string, topic: string) {
@@ -171,6 +247,20 @@ function directConceptQuestion(concept: string, topic: string) {
       statement: sentence,
     };
   }
+  const imperative = imperativeQuestion(sentence, topic);
+  if (imperative) return imperative;
+
+  const qualifiedModal = sentence.match(/^(.+?)\s+(must|should)\s+(not\s+)?((?:safely|correctly)\s+)?([a-z]+)\s+(.+)$/i);
+  if (qualifiedModal && (qualifiedModal[3] || qualifiedModal[4])) {
+    const object = cleanSentence(qualifiedModal[6]);
+    const prepositionalObject = object.match(/^(on|with|to|from|for|against|within|at|through|between|under|over|into|by)\s+(.+)$/i);
+    return {
+      prompt: `What ${qualifiedModal[2].toLocaleLowerCase()} ${qualifiedModal[1].toLocaleLowerCase()} ${qualifiedModal[3] ?? ''}${qualifiedModal[4] ?? ''}${baseVerb(qualifiedModal[5])}${prepositionalObject ? ` ${prepositionalObject[1].toLocaleLowerCase()}` : ''}?`,
+      answer: prepositionalObject ? cleanSentence(prepositionalObject[2]) : object,
+      statement: sentence,
+    };
+  }
+
   const reason = sentence.match(/^(.+?)\s+(is|are)\s+(.+?)\s+because\s+(.+)$/i);
   if (reason) return { prompt: `Why ${reason[2]} ${reason[1].toLocaleLowerCase()} ${reason[3]}?`, answer: cleanSentence(reason[4]), statement: sentence };
   let match = sentence.match(/^(.+?)\s+before\s+(.+)$/i);
@@ -287,6 +377,18 @@ function directConceptQuestion(concept: string, topic: string) {
   match = sentence.match(/^(.+?)\s+matters?\s+(.+)$/i);
   if (match) return { prompt: `When does ${match[1].toLocaleLowerCase()} matter?`, answer: cleanSentence(match[2]), statement: sentence };
 
+  match = sentence.match(/^(.+?)\s+(must|should|needs? to|has to)\s+(.+)$/i);
+  if (match && match[1].split(/\s+/).length <= 10) {
+    const modal = /^(must|should)$/i.test(match[2]) ? match[2].toLocaleLowerCase() : undefined;
+    return {
+      prompt: modal && !/^be\b/i.test(match[3])
+        ? `What ${modal} ${match[1].toLocaleLowerCase()} do?`
+        : `What is required of ${match[1].toLocaleLowerCase()}?`,
+      answer: modal && !/^be\b/i.test(match[3]) ? cleanSentence(match[3]) : `${match[2]} ${cleanSentence(match[3])}`,
+      statement: sentence,
+    };
+  }
+
   match = sentence.match(/^(.+?)\s+(represent|represents|scale|scales|find|finds|manage|manages|link|links|pass|passes|remove|removes|measure|measures|convert|converts|induce|induces|cause|causes|reverse|reverses|determine|determines|describe|describes|count|counts|use|uses|give|gives|carry|carries|supply|supplies|keep|keeps|show|shows|identify|identifies|add|adds|increase|increases|equal|equals|combine|combines|compare|compares|minimize|minimizes|make|makes|isolate|isolates|affect|affects|divide|divides|surround|surrounds|terminate|terminates|reach|reaches|cancel|cancels|replace|replaces|open|opens|disconnect|disconnects|establish|establishes|detect|detects|limit|limits|share|shares|protect|protects|control|controls|respond|responds|create|creates|produce|produces|form|forms|store|stores|oppose|opposes|guide|guides|allow|allows|require|requires|provide|provides|support|supports|reduce|reduces|connect|connects|contribute|contributes|cover|covers|influence|influences|prevent|prevents|catch|catches|return|returns|maintain|maintains|change|changes|govern|governs|transfer|transfers|accommodate|accommodates|soften|softens|seat|seats|preserve|preserves|improve|improves|seal|seals|complete|completes|ensure|ensures|avoid|avoids|hold|holds|set|sets|switch|switches|interrupt|interrupts|operate|operates|include|includes|exclude|excludes|tolerate|tolerates|demand|demands|exceed|exceeds|take|takes|flow|flows|melt|melts|check|checks|define|defines|shape|shapes|modify|modifies|leave|leaves|release|releases|estimate|estimates|assume|assumes|deliver|delivers|shift|shifts|distribute|distributes|explain|explains|emphasise|emphasises|emphasize|emphasizes|simplify|simplifies|reveal|reveals|confirm|confirms|indicate|indicates|permit|permits|override|overrides|prove|proves|inform|informs|distinguish|distinguishes|narrow|narrows|communicate|communicates|reflect|reflects|constrain|constrains|address|addresses|enable|enables|offer|offers|solve|solves|serve|serves|follow|follows|coordinate|coordinates|decide|decides)\s+(.+)$/i);
   if (match) {
     const subject = cleanSentence(match[1]);
@@ -301,64 +403,6 @@ function directConceptQuestion(concept: string, topic: string) {
 
   match = sentence.match(/^(.+?)\s+(creates|produces|forms|stores|shares|adds|opposes|guides|intensifies)\s+(.+)$/i);
   if (match) return { prompt: `What does ${match[1].toLocaleLowerCase()} ${baseVerb(match[2])}?`, answer: cleanSentence(match[3]), statement: sentence };
-
-  const action = sentence.match(/^(Choose|Select|Check|Test|Confirm|Verify|Read|Record|Scan|Keep|Plan|Allow|Restore|Coordinate|Place|Use|Compare|Distinguish|Separate|Establish|Terminate|Apply|Understand|Provide|Inspect|Match|Start|Layer|Light|Assess|Reserve|Trace|Locate|Evaluate|Maintain|Preserve|Follow|Relate|Size|Map|Commission|Fit)\b/i)?.[1]?.toLocaleLowerCase();
-  if (action === 'choose' || action === 'select') {
-    const object = sentence.replace(/^(Choose|Select)\s+/i, '').split(/\s+(?:for|from|according to|based on)\s+/i)[0];
-    return { prompt: `What must be considered when ${action === 'choose' ? 'choosing' : 'selecting'} ${object.toLocaleLowerCase()}?`, answer: sentence, statement: sentence };
-  }
-  const actionPrompts: Record<string, string> = {
-    check: `What must be checked in “${topic}”?`,
-    test: `What must be tested in “${topic}”?`,
-    confirm: `What must be confirmed in “${topic}”?`,
-    verify: `What must be verified in “${topic}”?`,
-    read: `What information must be read before applying “${topic}”?`,
-    record: `What must be recorded when applying “${topic}”?`,
-    scan: `What must be checked before the work in “${topic}” starts?`,
-    keep: `What must be kept correctly controlled in “${topic}”?`,
-    plan: `What must be planned in “${topic}”?`,
-    allow: `What allowances are required in “${topic}”?`,
-    restore: `What must be restored before the work is complete?`,
-    coordinate: `What must be coordinated in “${topic}”?`,
-    place: `What must be considered when positioning equipment in “${topic}”?`,
-    use: `What should be used in “${topic}”?`,
-    compare: `What must be compared in “${topic}”?`,
-    distinguish: `What must be distinguished in “${topic}”?`,
-    separate: `What must be kept separate in “${topic}”?`,
-    establish: 'What must be established before work starts?',
-    terminate: 'What is required for a correct termination?',
-    apply: 'What should be applied in this situation?',
-    understand: 'What should you understand from this lesson?',
-    provide: 'What must be provided?',
-    inspect: 'What should be inspected?',
-    match: 'What must be correctly matched?',
-    start: 'What should you start with?',
-    layer: 'How should the lighting be arranged?',
-    light: 'What should the lighting illuminate?',
-    assess: 'What must be assessed?',
-    reserve: 'What space or capacity should be reserved?',
-    trace: 'Which path should you trace?',
-    locate: 'What must be located?',
-    evaluate: 'What conditions must be evaluated?',
-    maintain: 'What must be maintained?',
-    preserve: 'What must be preserved?',
-    follow: 'Which path or sequence should be followed?',
-    relate: 'What relationship should be understood?',
-    size: 'What must be considered when sizing the system?',
-    map: 'What parts of the system should be mapped?',
-    commission: 'What must be commissioned and verified?',
-    fit: 'What must be fitted correctly?',
-  };
-  if (action && actionPrompts[action]) return { prompt: actionPrompts[action], answer: sentence, statement: sentence };
-
-  match = sentence.match(/^(.+?)\s+(must|should|needs? to|has to)\s+(.+)$/i);
-  if (match && match[1].split(/\s+/).length <= 10) {
-    return {
-      prompt: `What is required of ${match[1].toLocaleLowerCase()}?`,
-      answer: `${match[2]} ${cleanSentence(match[3])}`,
-      statement: sentence,
-    };
-  }
 
   match = sentence.match(/^(.+?)\s+(is|are|means)\s+(.+)$/i);
   if (match && match[1].split(/\s+/).length <= 16 && !/\b(?:while|but)\b|,/.test(match[1])) {
@@ -375,7 +419,7 @@ function directConceptQuestion(concept: string, topic: string) {
   }
 
   return {
-    prompt: 'How would you explain this lesson point in your own words?',
+    prompt: 'Which statement best explains this lesson point?',
     answer: sentence,
     statement: sentence,
   };
@@ -397,6 +441,24 @@ function unsafeDistractors() {
   ];
 }
 
+function contextualDistractors(pool: string[], correct: string, seed: number) {
+  const alternatives = unique(pool).filter((item) => item !== correct);
+  if (!alternatives.length) return unsafeDistractors();
+  return Array.from({ length: Math.min(3, alternatives.length) }, (_, index) => alternatives[(seed + index) % alternatives.length]);
+}
+
+function lessonTerms(lessonId: string) {
+  const linkedNames = new Set((lessonKnowledge[lessonId]?.terms ?? []).map((item) => item.term));
+  return electricalTerms.filter((item) => linkedNames.has(item.term)).slice(0, 2);
+}
+
+function termDefinitionDistractors(selected: KnowledgeTerm) {
+  return unique([
+    ...electricalTerms.filter((item) => item.category === selected.category && item.term !== selected.term).map((item) => item.definition),
+    ...electricalTerms.filter((item) => item.category !== selected.category).map((item) => item.definition),
+  ]).filter((definition) => definition !== selected.definition).slice(0, 3);
+}
+
 function groupedLessonSelection<T>(groups: T[][], limit: number) {
   const availableGroups = groups.filter((group) => group.length > 0);
   if (!availableGroups.length) return [];
@@ -411,17 +473,75 @@ function groupedLessonSelection<T>(groups: T[][], limit: number) {
   }).slice(0, limit);
 }
 
+function roundRobinQuestions(groups: AssessmentQuestion[][], limit: number, kind?: AssessmentQuestion['kind']) {
+  const priority = kind === 'Application'
+    ? groups.flatMap((group) => group.filter((question) => question.kind === kind && question.id.includes('-connection-'))).slice(0, limit)
+    : [];
+  const priorityIds = new Set(priority.map((question) => question.id));
+  const queues = groups.map((group) => group.filter((question) => (!kind || question.kind === kind) && !priorityIds.has(question.id)));
+  const selected: AssessmentQuestion[] = [...priority];
+  let depth = 0;
+  while (selected.length < limit && queues.some((queue) => depth < queue.length)) {
+    for (const queue of queues) {
+      const question = queue[depth];
+      if (question) selected.push(question);
+      if (selected.length === limit) break;
+    }
+    depth += 1;
+  }
+  return selected;
+}
+
+function balancedModuleQuestions(groups: AssessmentQuestion[][], limit: number) {
+  const total = groups.reduce((count, group) => count + group.length, 0);
+  const target = Math.min(limit, total);
+  const quotas: Record<AssessmentQuestion['kind'], number> = {
+    Recall: Math.floor(target * 0.5),
+    Application: Math.floor(target * 0.2),
+    'Safety check': Math.floor(target * 0.15),
+    'Standards check': target - Math.floor(target * 0.5) - Math.floor(target * 0.2) - Math.floor(target * 0.15),
+  };
+  const kindOrder: AssessmentQuestion['kind'][] = ['Recall', 'Application', 'Safety check', 'Standards check'];
+  const buckets = Object.fromEntries(kindOrder.map((kind) => [kind, roundRobinQuestions(groups, quotas[kind], kind)])) as Record<AssessmentQuestion['kind'], AssessmentQuestion[]>;
+  const selected: AssessmentQuestion[] = [];
+  const selectedIds = new Set<string>();
+  let depth = 0;
+  while (selected.length < target && kindOrder.some((kind) => depth < buckets[kind].length)) {
+    for (const kind of kindOrder) {
+      const question = buckets[kind][depth];
+      if (question) {
+        selected.push(question);
+        selectedIds.add(question.id);
+      }
+    }
+    depth += 1;
+  }
+  if (selected.length < target) {
+    for (const question of roundRobinQuestions(groups.map((group) => group.filter((item) => !selectedIds.has(item.id))), target - selected.length)) {
+      selected.push(question);
+      selectedIds.add(question.id);
+    }
+  }
+  return selected.slice(0, target);
+}
+
 export function buildAssessmentBank(modules: readonly CourseModule[], guides: Record<string, LessonGuide>) {
   const lessons: Record<string, LessonAssessment> = {};
   const moduleAssessments: Record<string, ModuleAssessment> = {};
 
   modules.forEach((module) => {
+    const moduleRememberPool = module.lessons.map((item)=>guides[item.id]?.remember).filter((item):item is string=>Boolean(item));
+    const modulePracticePool = module.lessons.map((item)=>guides[item.id]?.practicalConnection).filter((item):item is string=>Boolean(item)).map(firstSentence);
     module.lessons.forEach((lesson, lessonIndex) => {
       const guide = guides[lesson.id];
       if (!guide) throw new Error(`Lesson ${lesson.id} cannot build an assessment without a video-specific teaching guide.`);
       if (guide.keyConcepts.length < 3) throw new Error(`Lesson ${lesson.id} needs at least three specific key concepts.`);
       const lessonFocus = lesson.title;
       const conceptQuestions = guide.keyConcepts.map((concept) => directConceptQuestion(concept, lessonFocus));
+      const primaryTerms = lessonTerms(lesson.id);
+      const standardTopic = lesson.regulationSensitive || hasCuratedStandard(lesson.id)
+        ? topicsForLesson(`${lesson.title} ${guide.summary}`, lesson.id).find((topic) => topic.id !== 'basic-protection')
+        : undefined;
       const flashcards: Flashcard[] = [
         ...guide.keyConcepts.map((concept, conceptIndex) => {
           const conceptQuestion = conceptQuestions[conceptIndex];
@@ -446,8 +566,14 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         },
       ];
 
-      if (lesson.regulationSensitive) {
-        const standardTopic = topicsForLesson(`${lesson.title} ${guide.summary}`)[0];
+      primaryTerms.forEach((term,termIndex)=>flashcards.push({
+        id: `${lesson.id}-term-${termIndex+1}`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
+        kind: 'Core idea',
+        front: `What does “${term.term}” mean in this lesson?`,
+        back: term.definition,
+      }));
+
+      if (standardTopic) {
         const standardCheck = standardsChecks[standardTopic.id];
         flashcards.push({
           id: `${lesson.id}-standard`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
@@ -475,27 +601,38 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
 
       });
 
-      const rememberChoice = rotateCorrectOption(guide.remember, unsafeDistractors(), lessonIndex + 5);
+      primaryTerms.forEach((term,termIndex)=>{
+        const choice = rotateCorrectOption(term.definition, termDefinitionDistractors(term), lessonIndex + termIndex + 4);
+        questions.push({
+          id: `${lesson.id}-q-term-${termIndex+1}`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id,
+          cardId: `${lesson.id}-term-${termIndex+1}`,
+          prompt: `Which definition best matches “${term.term}”?`,
+          kind: 'Recall',
+          ...choice,
+          explanation: `${term.term}: ${term.definition}${term.contrast?` ${term.contrast}`:''}`,
+        });
+      });
+
+      const rememberChoice = rotateCorrectOption(guide.remember, contextualDistractors(moduleRememberPool,guide.remember,lessonIndex), lessonIndex + 5);
       questions.push({
         id: `${lesson.id}-q-remember`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-remember`,
-        prompt: 'Which rule from this lesson should you remember?',
+        prompt: `Which statement is the key safety or reliability priority in “${lesson.title}”?`,
         kind: 'Safety check',
         ...rememberChoice,
         explanation: guide.remember,
       });
 
       const practicalAnswer = firstSentence(guide.practicalConnection);
-      const practiceChoice = rotateCorrectOption(practicalAnswer, unsafeDistractors(), lessonIndex + 6);
+      const practiceChoice = rotateCorrectOption(practicalAnswer, contextualDistractors(modulePracticePool,practicalAnswer,lessonIndex+1), lessonIndex + 6);
       questions.push({
         id: `${lesson.id}-q-practice`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-practice`,
-        prompt: 'Which activity best applies what this lesson taught?',
+        prompt: `Which activity best applies “${lesson.title}”?`,
         kind: 'Application',
         ...practiceChoice,
         explanation: practicalAnswer,
       });
 
-      if (lesson.regulationSensitive) {
-        const standardTopic = topicsForLesson(`${lesson.title} ${guide.summary}`)[0];
+      if (standardTopic) {
         const standardCheck = standardsChecks[standardTopic.id];
         const correct = standardCheck?.options[standardCheck.answer] ?? firstSentence(standardTopic.principle);
         const distractors = standardCheck?.options.filter((_, index) => index !== standardCheck.answer) ?? [
@@ -503,7 +640,9 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
           'Anyone may carry out specialised electrical work after seeing one demonstration.',
           'Only the equipment colour and appearance need to be checked before installation.',
         ];
-        const choice = rotateCorrectOption(correct, distractors, lessonIndex + 7);
+        const choice = standardCheck
+          ? rotateStandardsCheck(standardCheck, lessonIndex + 7)
+          : rotateCorrectOption(correct, distractors, lessonIndex + 7);
         questions.push({
           id: `${lesson.id}-q-standard`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId: `${lesson.id}-standard`,
           prompt: standardCheck?.prompt ?? 'Which installation principle connects to this lesson?',
@@ -538,7 +677,10 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       moduleId: module.id,
       title: module.title,
       flashcards: groupedLessonSelection(lessonAssessments.map((assessment) => [...assessment.flashcards.filter(card => card.id.includes('-connection-')), ...assessment.flashcards.filter(card => !card.id.includes('-connection-'))]), 40),
-      questions: groupedLessonSelection(lessonAssessments.map((assessment) => [...assessment.questions.filter(question => question.id.includes('-connection-')), ...assessment.questions.filter(question => !question.id.includes('-connection-'))]), 50),
+      questions: balancedModuleQuestions(lessonAssessments.map((assessment) => [
+        ...assessment.questions.filter((question) => question.id.includes('-connection-')),
+        ...assessment.questions.filter((question) => !question.id.includes('-connection-')),
+      ]), 50),
     };
   });
 

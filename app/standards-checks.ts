@@ -57,4 +57,34 @@ export const standardsChecks: Record<string, StandardsCheck> = {
     answer: 0,
     feedback: ['Correct. Each operating mode can change the conditions on which protection depends.', 'Similar voltage does not imply the same available fault current or earthing arrangement.', 'Functional continuity does not establish fault protection.', 'Inverter fault-current behaviour depends on the actual equipment and system design.'],
   },
+  'termination-quality': {
+    prompt: 'Which observation best supports an acceptable accessory termination? ',
+    options: ['The connected load operates.', 'The conductors are fully engaged, free from undue strain and enclosed without exposed copper.', 'The faceplate hides the cable entry.', 'The terminal screws were tightened without inspecting conductor position.'],
+    answer: 1,
+    feedback: ['Operation alone does not reveal loose, strained or exposed conductors.', 'Correct. The connection and enclosure must be assessed together.', 'A faceplate can hide a poor termination; it does not correct one.', 'Tightening without checking engagement can clamp insulation or miss strands.'],
+  },
+  'ring-final-alteration': {
+    prompt: 'What must be established before adding a socket or spur to an existing ring final circuit?',
+    options: ['Only that two cables enter the nearest socket.', 'Only that the new socket operates.', 'That the existing circuit and protective arrangements are adequate, followed by inspection and testing of the alteration.', 'That the circuit is labelled as a ring on the consumer unit.'],
+    answer: 2,
+    feedback: ['Two cables do not prove ring continuity or circuit identity.', 'Operation does not establish continuity or protective conditions.', 'Correct. Existing adequacy and completed-work verification are separate required decisions.', 'A label is useful but is not electrical evidence of the circuit condition.'],
+  },
+  'outdoor-sockets': {
+    prompt: 'Which design statement is correct for a 230 V, 13 A socket intended for outdoor equipment?',
+    options: ['A weatherproof lid replaces the need to assess additional protection.', 'A 30 mA RCD within the scope of Regulation 411.3.3 is one requirement; the route, equipment and fault protection still need separate checks.', 'Any indoor socket is suitable when mounted inside a shed.', 'A functional test proves the outdoor circuit is safe.'],
+    answer: 1,
+    feedback: ['Ingress protection and additional protection address different hazards.', 'Correct. Apply the RCD requirement without losing the other design and verification checks.', 'A shed location does not remove environmental and use considerations.', 'Operation does not establish the protective path, RCD performance or environmental suitability.'],
+  },
+  'bath-shower-equipment': {
+    prompt: 'What should guide the position and selection of equipment for an electric shower?',
+    options: ['The nearest convenient wall position alone.', 'RCD protection alone.', 'The bathroom zone, equipment suitability and IP rating, product instructions, circuit protection and isolation arrangement together.', 'Whether the equipment colour matches the room.'],
+    answer: 2,
+    feedback: ['Convenience cannot replace the Section 701 assessment.', 'RCD protection does not remove zoning and equipment requirements.', 'Correct. Treat the zone and the complete protective arrangement as one coordinated decision.', 'Appearance does not establish electrical suitability.'],
+  },
+  'swa-support': {
+    prompt: 'How should a clipping distance for an SWA cable route be selected?',
+    options: ['Use one familiar distance for every SWA size and route.', 'Use the actual cable, route, environment and manufacturer support data so the cable is not damaged or left straining its entries.', 'Clip only at each end when the cable is armoured.', 'Choose the widest spacing that looks straight from a distance.'],
+    answer: 1,
+    feedback: ['BS 7671 does not give one universal SWA clipping interval.', 'Correct. Support spacing follows the actual mechanical and environmental conditions.', 'Armour does not remove the need for adequate support.', 'Appearance alone does not assess sag, load or strain at glands.'],
+  },
 };

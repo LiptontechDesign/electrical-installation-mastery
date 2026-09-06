@@ -131,7 +131,7 @@ export const module12 = M(
       'ADVANCED DESIGN',
       'Professional body',
       G(
-        'CIBSE presents the Society of Light and Lighting handbook as a structured professional reference covering both the measurable and human sides of lighting. Use the webinar to understand how illuminance, uniformity, glare, colour, daylight, controls, energy, maintenance and application guidance fit into one design process. The handbook is a BS-based reference, so its figures are valuable study material but must be checked against the project brief, applicable local standards and the authority having jurisdiction.',
+        'CIBSE presents the Society of Light and Lighting handbook as a structured professional reference covering both the measurable and human sides of lighting. Use the webinar to understand how illuminance, uniformity, glare, colour, daylight, controls, energy, maintenance and application guidance fit into one design process. Treat every figure within the scope stated by its source, then check it against the project brief and the current BS or BS EN document named for that design decision.',
         [
           'Professional design combines quantitative and qualitative criteria.',
           'Application guidance depends on the task and occupants.',

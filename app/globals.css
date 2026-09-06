@@ -456,7 +456,7 @@ kbd {
 .complete-button.completed { background: #dff6e9; color: #17633c; box-shadow: none; }
 .complete-button.full { width: 100%; margin-top: 16px; }
 
-.lesson-tabs { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--line); margin-top: 16px; }
+.lesson-tabs { display: grid; grid-template-columns: repeat(2,1fr); border-bottom: 1px solid var(--line); margin-top: 16px; }
 .lesson-tabs button { position: relative; display: flex; min-height: 54px; align-items: center; justify-content: center; gap: 8px; background: transparent; color: var(--muted); font-size: 14px; font-weight: 800; }
 .lesson-tabs button.active { color: var(--ink); }
 .lesson-tabs button.active::after { content: ""; position: absolute; right: 14%; bottom: -1px; left: 14%; height: 3px; border-radius: 99px 99px 0 0; background: var(--copper); }

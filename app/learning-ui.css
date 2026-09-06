@@ -1,28 +1,35 @@
 /* Focused lesson workspace */
 [hidden] { display: none !important; }
-.lesson-tabs { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); }
+.lesson-tabs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
 .lesson-tabs button { justify-content: center; min-width: 0; }
-.lesson-overview { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: clamp(20px,3vw,32px); }
-.overview-summary { margin: 0; color: var(--ink); font-size: 18px; line-height: 1.75; max-width: 80ch; }
-.overview-takeaways { list-style: none; display: grid; gap: 14px; padding: 0; margin: 24px 0; }
-.overview-takeaways:empty { display: none; }
-.overview-takeaways li { display: flex; align-items: start; gap: 12px; font-size: 16px; }
-.overview-takeaways svg { flex-shrink: 0; margin-top: 4px; color: #14855b; }
-.overview-application { margin-top: 24px; padding: 18px 20px; border-left: 3px solid var(--cyan); background: #f0f8f9; }
-.overview-application strong { font-size: 14px; color: #20626d; }
-.overview-application p { margin: 5px 0 0; font-size: 16px; }
-.lesson-extra { border-bottom: 1px solid var(--line); padding: 18px 0; }
-.lesson-extra summary { cursor: pointer; font-size: 14px; font-weight: 750; color: var(--muted); }
-.lesson-extra p { font-size: 16px; margin: 12px 0 0; }
-.confidence-inline { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding-top: 20px; font-size: 14px; color: var(--muted); }
-.confidence-inline > div { display: flex; flex-wrap: wrap; gap: 6px; }
-.confidence-inline button { min-height: 42px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; background: white; font-size: 14px; }
-.confidence-inline button[aria-pressed=true] { background: #e3f5ec; border-color: #16805a; color: #126846; }
+.lesson-overview { border: 0; border-radius: 0; background: transparent; padding: 0; }
+.overview-flow { display: grid; gap: 18px; }
+.overview-application { display: flex; align-items: flex-start; gap: 15px; margin: 0; border: 1px solid #cfe0e4; border-radius: 16px; background: #f2f9fa; padding: clamp(20px,3vw,28px); }
+.overview-section-icon { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border-radius: 12px; background: #d6f2f5; color: #0f6f7a; }
+.overview-application h2 { margin: 7px 0 8px; font-size: clamp(20px,2.4vw,25px); letter-spacing: -.03em; }
+.overview-application p { max-width: 76ch; margin: 0; color: #405562; font-size: 16px; line-height: 1.65; }
+.overview-quiz-cta { display: flex; min-height: 94px; align-items: center; justify-content: space-between; gap: 24px; border: 0; border-radius: 16px; background: var(--navy-2); color: #f7fbfd; padding: 20px 24px; text-align: left; box-shadow: 0 12px 30px rgba(10,30,47,.16); }
+.overview-quiz-cta > span { display: grid; gap: 5px; }
+.overview-quiz-cta > span:last-child { display: flex; grid-auto-flow: column; align-items: center; gap: 9px; color: var(--cyan); font-size: 14px; font-weight: 750; }
+.overview-quiz-cta small { color: #aebfca; font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.overview-quiz-cta strong { font-size: clamp(20px,2.5vw,25px); letter-spacing: -.025em; }
+.overview-support { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.overview-support > summary { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 15px; padding: 16px 22px; cursor: pointer; list-style: none; }
+.overview-support > summary::-webkit-details-marker { display: none; }
+.overview-support > summary > span { display: flex; align-items: center; gap: 12px; }
+.overview-support > summary > span > svg { color: #2e7882; }
+.overview-support > summary span span { display: grid; gap: 3px; }
+.overview-support > summary strong { font-size: 16px; }
+.overview-support > summary small { color: var(--muted); font-size: 13px; font-weight: 500; }
+.overview-support[open] > summary { border-bottom: 1px solid var(--line); }
+.overview-support[open] > summary > svg { transform: rotate(180deg); }
+.overview-support-body { display: grid; gap: 0; padding: 4px 22px 22px; }
 
 /* Assessments: one activity, one clear next action */
 .focused-assessment { box-shadow: none; border-radius: 18px; }
 .compact-assessment-heading { padding: 22px 26px 8px; }
 .compact-assessment-heading h2 { margin: 6px 0 14px; font-size: 24px; }
+.compact-assessment-heading p { margin: -6px 0 12px; color: var(--muted); font-size: 14px; }
 .session-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
 .session-heading h2 { margin: 0; font-size: 20px; letter-spacing: -.025em; }
 .session-heading h2 span { color: var(--muted); font-weight: 500; }
@@ -56,6 +63,7 @@
 .focused-assessment .assessment-options button > svg { margin-top: 5px; }
 .focused-assessment .assessment-feedback { margin-top: 18px; }
 .focused-assessment .assessment-feedback p { margin-bottom: 0; font-size: 16px; }
+.question-kind { display: inline-flex; margin: 0 0 9px; border-radius: 99px; background: #eef5f6; color: #246d77; padding: 5px 9px; font-size: 11px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
 .quiz-finish { display: grid; grid-template-columns: 150px minmax(0,1fr); align-items: center; gap: 28px; padding: 36px; }
 .score-ring { width: 150px; height: 150px; padding: 10px; border-radius: 50%; }
 .score-ring > span { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; background: white; border-radius: 50%; }
@@ -162,6 +170,13 @@
   .term-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width: 760px) {
+  .overview-flow { gap: 14px; }
+  .overview-application { padding: 18px; }
+  .overview-application .overview-section-icon { width: 38px; height: 38px; flex-basis: 38px; }
+  .overview-quiz-cta { min-height: 0; align-items: flex-start; flex-direction: column; gap: 14px; padding: 20px; }
+  .overview-support > summary { padding: 15px 17px; }
+  .overview-support > summary small { display: none; }
+  .overview-support-body { padding: 2px 16px 16px; }
   .formula-studio { grid-template-columns: 1fr; }
   .editable-values { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .quantity-control:nth-child(3) { grid-column: 1 / -1; }

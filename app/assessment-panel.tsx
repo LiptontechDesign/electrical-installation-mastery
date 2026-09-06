@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { ArrowRight, Award, BookOpen, BrainCircuit, Check, ChevronLeft, ChevronRight, Circle, Lightbulb, ListChecks, RotateCcw, ShieldCheck, X } from 'lucide-react';
 import type { AssessmentQuestion, Flashcard } from './assessment-data';
 import ConceptVisual from './concept-visual';
@@ -33,7 +33,7 @@ type AssessmentPanelProps = {
 };
 
 export default function AssessmentPanel({
-  title, eyebrow, flashcards, questions, progress, bestScore, completed,
+  title, eyebrow, description, flashcards, questions, progress, bestScore, completed,
   onRateCard, onEvidence, onOpenLesson, onPractice, onCompleteQuiz, onContinue, continueLabel = 'Continue learning', connectedLessonFlow = false,
   mode: controlledMode, onModeChange,
 }: AssessmentPanelProps) {
@@ -48,11 +48,22 @@ export default function AssessmentPanel({
   const [attempt, setAttempt] = useState(0);
   const [difficulty, setDifficulty] = useState<Record<number, string>>({});
   const questionHeading = useRef<HTMLHeadingElement>(null);
+  const quizQuestions = useMemo(()=>{
+    if(!questions.length||attempt===0)return questions;
+    const optionShift=attempt%4;
+    const rotated=questions.map((item)=>{
+      const options=[...item.options.slice(optionShift),...item.options.slice(0,optionShift)];
+      const feedback=item.feedback?[...item.feedback.slice(optionShift),...item.feedback.slice(0,optionShift)]:undefined;
+      return {...item,options,feedback,answer:(item.answer-optionShift+4)%4};
+    });
+    const questionShift=attempt%rotated.length;
+    return [...rotated.slice(questionShift),...rotated.slice(0,questionShift)];
+  },[attempt,questions]);
   const card = flashcards[cardIndex];
-  const question = questions[questionIndex];
+  const question = quizQuestions[questionIndex];
   const revealed = answers[questionIndex] !== undefined;
-  const score = Object.entries(answers).filter(([index, selected]) => questions[Number(index)]?.answer === selected).length;
-  const passMark = Math.ceil(questions.length * 0.8);
+  const score = Object.entries(answers).filter(([index, selected]) => quizQuestions[Number(index)]?.answer === selected).length;
+  const passMark = Math.ceil(quizQuestions.length * 0.8);
   const knownCount = Object.values(ratings).filter(Boolean).length;
   const reviewCount = Object.values(ratings).filter((knew) => !knew).length;
   const dueCount = flashcards.filter((item) => !progress[item.id] || progress[item.id].dueAt <= calendarDay()).length;
@@ -72,23 +83,24 @@ export default function AssessmentPanel({
   const answerQuestion = (answer: number) => {
     if (revealed || !question) return;
     setAnswers((current) => ({ ...current, [questionIndex]: answer }));
-    onEvidence?.({lessonId:question.lessonId,conceptId:question.cardId,activityId:question.id,dimension:'recognition',correct:answer===question.answer,assisted:attempt>0});
-    if (answer !== question.answer) onRateCard(question.cardId, false);
+    const dimension = question.kind === 'Application' ? 'application' : question.kind === 'Standards check' ? 'standards' : question.kind === 'Safety check' ? 'diagnosis' : 'recognition';
+    onEvidence?.({lessonId:question.lessonId,conceptId:question.cardId,activityId:question.id,dimension,correct:answer===question.answer,assisted:attempt>0});
+    if (answer !== question.answer && flashcards.some((item)=>item.id===question.cardId)) onRateCard(question.cardId, false);
   };
   const nextQuestion = () => {
     if (!revealed) return;
-    if (questionIndex < questions.length - 1) {
+    if (questionIndex < quizQuestions.length - 1) {
       setQuestionIndex((current) => current + 1);
       window.requestAnimationFrame(() => questionHeading.current?.focus());
       return;
     }
     setFinished(true);
-    onCompleteQuiz(score, questions.length);
+    onCompleteQuiz(score, quizQuestions.length);
   };
   const restartQuiz = () => { setQuestionIndex(0); setAnswers({}); setFinished(false); setAttempt(value=>value+1); setDifficulty({}); };
 
   return <section className="assessment-panel focused-assessment" aria-label={mode === 'cards' ? 'Flashcards' : 'Quiz'}>
-    {!connectedLessonFlow && <header className="compact-assessment-heading"><span className="eyebrow neutral">{eyebrow}</span><h2>{title}</h2></header>}
+    {!connectedLessonFlow && <header className="compact-assessment-heading"><span className="eyebrow neutral">{eyebrow}</span><h2>{title}</h2><p>{description}</p></header>}
     {controlledMode === undefined && <nav className="assessment-mode-tabs" aria-label="Choose review mode">
       <button type="button" aria-pressed={mode === 'cards'} className={mode === 'cards' ? 'active' : ''} onClick={() => changeMode('cards')}><BookOpen size={18} /> Flashcards</button>
       <button type="button" aria-pressed={mode === 'quiz'} className={mode === 'quiz' ? 'active' : ''} onClick={() => changeMode('quiz')}><ListChecks size={18} /> Quiz</button>
@@ -113,10 +125,10 @@ export default function AssessmentPanel({
     </div>}
 
     {mode === 'quiz' && !finished && question && <div className="assessment-quiz">
-      <p className="source-caption">Recognition check · try recalling the answer before reading the choices. Application is assessed separately.</p>
-      <div className="session-heading"><h2>Question {questionIndex + 1}<span> / {questions.length}</span></h2><span>{score} correct · {passMark} to pass</span></div>
-      <div className="quiz-map" aria-hidden="true">{questions.map((item, index) => <span key={item.id} className={`${index === questionIndex ? 'current' : ''} ${answers[index] === undefined ? '' : answers[index] === item.answer ? 'known' : 'again'}`} />)}</div>
+      <div className="session-heading"><h2>Question {questionIndex + 1}<span> / {quizQuestions.length}</span></h2><span>{score} correct · {passMark} to pass</span></div>
+      <div className="quiz-map" aria-hidden="true">{quizQuestions.map((item, index) => <span key={item.id} className={`${index === questionIndex ? 'current' : ''} ${answers[index] === undefined ? '' : answers[index] === item.answer ? 'known' : 'again'}`} />)}</div>
       {!connectedLessonFlow && <p className="assessment-question-source">{question.lessonTitle}</p>}
+      <span className="question-kind">{question.kind}</span>
       <h3 ref={questionHeading} tabIndex={-1}>{question.prompt}</h3>
       <div className="assessment-options">{question.options.map((option, index) => {
         const selected = answers[questionIndex] === index;
@@ -125,27 +137,27 @@ export default function AssessmentPanel({
       })}</div>
       {revealed && <div className={answers[questionIndex] === question.answer ? 'assessment-feedback correct' : 'assessment-feedback'} role="status" aria-live="polite">
         {answers[questionIndex] === question.answer ? <Check size={22} /> : <RotateCcw size={22} />}
-        <div><strong>{answers[questionIndex] === question.answer ? 'Correct' : 'Not quite — the correct answer is highlighted.'}</strong><p>{question.explanation}</p></div>
+        <div><strong>{answers[questionIndex] === question.answer ? 'Correct' : 'Not quite — the correct answer is highlighted.'}</strong><p>{question.feedback?.[answers[questionIndex]] ?? question.explanation}</p></div>
       </div>}
       {revealed && <ConceptVisual key={question.lessonId} lessonId={question.lessonId} />}
-      {revealed && answers[questionIndex] !== question.answer && <div className="diagnostic-help">
-        <h4>Which part needs another explanation?</h4><p>A wrong choice alone cannot tell us why. Choose the part that felt uncertain.</p>
+      {revealed && answers[questionIndex] !== question.answer && <details className="diagnostic-help">
+        <summary>Help me understand this answer</summary><p>Choose the part that felt uncertain.</p>
         <div className="diagnostic-choices">{['The terminology','The relationship or formula','The procedure or safety condition','An earlier idea'].map(reason=><button type="button" key={reason} aria-pressed={difficulty[questionIndex]===reason} onClick={()=>{setDifficulty(current=>({...current,[questionIndex]:reason}));onEvidence?.({lessonId:question.lessonId,conceptId:question.cardId,activityId:question.id,dimension:'recognition',correct:false,assisted:false,misconception:`Self-reported difficulty: ${reason.toLowerCase()}`});}}>{reason}</button>)}</div>
         {difficulty[questionIndex]&&<div className="diagnostic-response" role="status">
           <strong>{difficulty[questionIndex]==='The terminology'?'Separate the words before the rule':difficulty[questionIndex]==='The relationship or formula'?'Start with the quantities':difficulty[questionIndex]==='An earlier idea'?'Rebuild the foundation':'Explain the reason for the sequence'}</strong>
-          <p>{difficulty[questionIndex]==='The terminology'?'Name each component or quantity in the question, then explain its function without using the abbreviation.':difficulty[questionIndex]==='The relationship or formula'?'Identify what is given and what must be found. Sketch the path or relationship, then check the units before substituting numbers.':difficulty[questionIndex]==='An earlier idea'?'Use an explicit prerequisite below, then return and explain this answer in your own words.':'Ask what hazard or failure each step prevents. A procedure is easier to reconstruct when its purpose is clear.'}</p>
+          <p>{difficulty[questionIndex]==='The terminology'?'Match each term to the component or quantity it names before choosing again.':difficulty[questionIndex]==='The relationship or formula'?'Identify what is given and what must be found. Check the units before choosing the relationship.':difficulty[questionIndex]==='An earlier idea'?'Review the foundation below, then return to this choice.':'Link each step to the hazard or failure it prevents, then choose again.'}</p>
           {difficulty[questionIndex]==='The terminology'&&lessonKnowledge[question.lessonId]?.terms.slice(0,3).map(term=><p key={term.term}><strong>{term.term}:</strong> {term.definition}{term.contrast&&` ${term.contrast}`}</p>)}
           {onOpenLesson&&lessonKnowledge[question.lessonId]?.prerequisites.map(id=><button className="text-action" type="button" key={id} onClick={()=>onOpenLesson(id)}>Revisit: {lessonById.get(id)?.title}<ArrowRight size={16}/></button>)}
           {onPractice&&<button className="secondary-button" type="button" onClick={onPractice}>Try a worked example or investigation</button>}
           <p>Then try a fresh question. An immediate retry is recorded as supported practice.</p>
         </div>}
-      </div>}
-      <div className="assessment-quiz-actions"><button type="button" onClick={restartQuiz}><RotateCcw size={17} /> Restart</button><button type="button" className="primary-button" disabled={!revealed} onClick={nextQuestion}>{questionIndex === questions.length - 1 ? 'See results' : 'Next question'} <ArrowRight size={17} /></button></div>
+      </details>}
+      <div className="assessment-quiz-actions"><button type="button" onClick={restartQuiz}><RotateCcw size={17} /> Restart</button><button type="button" className="primary-button" disabled={!revealed} onClick={nextQuestion}>{questionIndex === quizQuestions.length - 1 ? 'See results' : 'Next question'} <ArrowRight size={17} /></button></div>
     </div>}
 
     {mode === 'quiz' && finished && <div className="quiz-finish">
-      <div className="score-ring" role="img" aria-label={`${score} out of ${questions.length} correct`} style={{ background: `conic-gradient(${score >= passMark ? '#43cb83' : '#ff914d'} ${score / questions.length * 360}deg, #e7edf1 0)` }}><span><b>{Math.round(score / questions.length * 100)}%</b><small>{score}/{questions.length} correct</small></span></div>
-      <div><h2>{score >= passMark ? 'Recognition check passed.' : 'Keep building your understanding.'}</h2><p>{score >= passMark ? 'You reached 80%. Now apply the idea and retrieve it again later.' : `You need ${passMark} correct to pass. Work through the missed ideas before retrying.`}</p><span className="quiz-best"><Award size={17} /> Best: {Math.max(bestScore, score)}/{questions.length}{completed ? ' · Passed previously' : ''}</span><p className="source-caption">A quiz pass is one piece of learning evidence, not proof of practical competence.</p>{onPractice&&<button className="primary-button" type="button" onClick={onPractice}>Apply this lesson <ArrowRight size={17}/></button>}</div>
+      <div className="score-ring" role="img" aria-label={`${score} out of ${quizQuestions.length} correct`} style={{ background: `conic-gradient(${score >= passMark ? '#43cb83' : '#ff914d'} ${score / quizQuestions.length * 360}deg, #e7edf1 0)` }}><span><b>{Math.round(score / quizQuestions.length * 100)}%</b><small>{score}/{quizQuestions.length} correct</small></span></div>
+      <div><h2>{score >= passMark ? 'Lesson quiz passed.' : 'Keep building your understanding.'}</h2><p>{score >= passMark ? 'You reached 80%. Apply the idea in a worked example, then return to it later.' : `You need ${passMark} correct to pass. Review the missed ideas, then try again.`}</p><span className="quiz-best"><Award size={17} /> Best: {Math.max(bestScore, score)}/{quizQuestions.length}{completed ? ' · Passed previously' : ''}</span>{onPractice&&<button className="primary-button" type="button" onClick={onPractice}>Apply this lesson <ArrowRight size={17}/></button>}</div>
       <div className="quiz-finish-actions"><button type="button" className="secondary-button" onClick={() => changeMode('cards')}><BookOpen size={17} /> Flashcards</button><button type="button" className="secondary-button" onClick={restartQuiz}><RotateCcw size={17} /> Try again</button>{onContinue && <button type="button" className="primary-button" onClick={onContinue}>{continueLabel}<ArrowRight size={17} /></button>}</div>
     </div>}
   </section>;

@@ -1,5 +1,5 @@
 .my-books-button{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;font-weight:650;font-size:.86rem;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink)}
-.lesson-reading{margin:28px 0;padding-top:26px;border-top:1px solid var(--line)}
+.lesson-reading{margin:0;padding:22px 0 0;border-top:1px solid var(--line)}
 .reading-heading>span{display:flex;align-items:center;gap:8px;font-size:.76rem;font-weight:750;text-transform:uppercase;letter-spacing:.09em;color:#56706c}
 .reading-heading h2{margin:10px 0 12px;font-size:1.55rem;line-height:1.25;letter-spacing:-.035em}
 .lesson-reading>p{max-width:74ch;color:#445663;line-height:1.7}

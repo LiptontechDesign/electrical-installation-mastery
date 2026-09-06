@@ -17,21 +17,18 @@ import { bookCompanions, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
 import { buildAssessmentBank } from './assessment-data';
-import LessonReading from './lesson-reading';
-import { readingForLesson, type Reading } from './books-data';
-import { lessonConnections } from './lesson-connections-data';
+import LessonOverview from './lesson-overview';
+import type { Reading } from './books-data';
 import { appendEvidence, validEvidence, isProgressBackup, scheduleRecall, calendarDay, nextLearningAction, type LearningEvidence, type EvidenceInput } from './tutor-model';
 import { electricalTerms, matchingTerms } from './knowledge-graph';
 import { standardsTopics, standardSources } from './standards-data';
 import { practiceForLesson } from './practice-data';
-import { LessonCompass, LessonTerms, StandardsLearning, EvidenceOverview } from './tutor-panels';
+import { EvidenceOverview } from './tutor-panels';
 import { useDialogFocus } from './use-dialog-focus';
 
 const PracticeWorkspace = dynamic(() => import('./practice-workspace'), { loading: () => <p role="status">Preparing your practice…</p> });
 
 const BookReader = dynamic(() => import('./book-reader'), { ssr: false });
-const LessonConnection = dynamic(() => import('./lesson-connection'));
-
 const LearningToolkit = dynamic(() => import('./learning-toolkit'), {
   loading: () => <div className="page" role="status">Loading toolkit…</div>,
 });
@@ -737,11 +734,6 @@ export default function CourseApp() {
     setToast(isSaved ? 'Bookmark removed.' : 'Lesson saved to your notebook.');
   };
 
-  const setConfidence = (rating: 1 | 2 | 3) => {
-    setLearner((current) => ({ ...current, confidence: { ...current.confidence, [activeLesson.id]: rating }, updatedAt: new Date().toISOString() }));
-    setToast('Confidence check saved on this device.');
-  };
-
   const rateFlashcard = (cardId: string, knew: boolean) => {
     setLearner((current) => {
       const previous = current.flashcardProgress[cardId];
@@ -776,6 +768,7 @@ export default function CourseApp() {
     setLearner((current) => ({
       ...withStudyMinutes(current, Math.max(5, Math.ceil(total / 2))),
       lessonQuizBestScores: { ...current.lessonQuizBestScores, [activeLesson.id]: Math.max(current.lessonQuizBestScores[activeLesson.id] ?? 0, score) },
+      confidence: { ...current.confidence, [activeLesson.id]: passed ? 3 : 1 },
       completedLessonAssessmentIds: passed && !current.completedLessonAssessmentIds.includes(activeLesson.id)
         ? [...current.completedLessonAssessmentIds, activeLesson.id]
         : current.completedLessonAssessmentIds,
@@ -979,16 +972,17 @@ export default function CourseApp() {
 
                 <div className="lesson-tab-content">
                   <section id="lesson-overview" role="tabpanel" aria-labelledby="lesson-tab-overview" hidden={lessonTab !== 'overview'} className="lesson-overview">
-                    <LessonCompass key={`compass-${activeLesson.id}-${completed.has(activeLesson.id)}`} lessonId={activeLesson.id} guide={activeGuide} watched={completed.has(activeLesson.id)} onEvidence={recordEvidence} onLesson={revisitFoundation} onPractice={()=>setLessonTab('quiz')}/>
-                    <span className="source-caption">Lesson synthesis · existing teaching guide</span>
-                    <p className="overview-summary">{activeGuide.summary}</p>
-                    <ul className="overview-takeaways">{activeGuide.keyConcepts.filter((concept) => !activeGuide.summary.toLocaleLowerCase().includes(concept.replace(/[.!?]$/, '').toLocaleLowerCase())).map((concept) => <li key={concept}><CheckCircle2 size={18} /><span>{concept}</span></li>)}</ul>
-                    <LessonTerms lessonId={activeLesson.id} onLesson={revisitFoundation}/>
-                    {lessonConnections[activeLesson.id] && <LessonConnection key={activeLesson.id} connection={lessonConnections[activeLesson.id]} />}
-                    {readingForLesson(activeLesson.id) ? <LessonReading key={activeLesson.id} lessonId={activeLesson.id} onRead={reading => setBookReader({ reading })} /> : <div className="overview-application"><strong>Put it into context</strong><p>{activeGuide.practicalConnection}</p></div>}
-                    <StandardsLearning text={activeLearningText} lessonId={activeLesson.id} onEvidence={recordEvidence}/>
-                    <details className="lesson-extra"><summary>Before you begin</summary><p>{activeLesson.prerequisite}</p></details>
-                    <div className="confidence-inline"><span>How well do you understand this?</span><div>{([1, 2, 3] as const).map((rating) => <button key={rating} type="button" aria-pressed={learner.confidence[activeLesson.id] === rating} onClick={() => setConfidence(rating)}>{rating === 1 ? 'Revisit' : rating === 2 ? 'Getting there' : 'Can explain'}</button>)}</div></div>
+                    <LessonOverview
+                      lessonId={activeLesson.id}
+                      guide={activeGuide}
+                      watched={completed.has(activeLesson.id)}
+                      learningText={activeLearningText}
+                      questionCount={activeAssessment.questions.length}
+                      onEvidence={recordEvidence}
+                      onLesson={revisitFoundation}
+                      onQuiz={()=>{setAssessmentMode('quiz');setLessonTab('quiz');}}
+                      onRead={reading=>setBookReader({reading})}
+                    />
                   </section>
 
                   <div id="lesson-assessment" role="tabpanel" aria-labelledby="lesson-tab-quiz" hidden={lessonTab !== 'quiz'}>
@@ -1078,7 +1072,7 @@ export default function CourseApp() {
               </details>
               <div className="progress-layout">
                 <section className="module-progress-panel"><div className="section-heading compact"><div><span className="eyebrow neutral">Video pathway</span><h2>Module progress</h2></div></div><div className="module-progress-list">{course.modules.map((module) => { const done = moduleCompletedCount(module); const modulePercent = percent(done, module.lessons.length); return <button type="button" key={module.id} onClick={() => chooseModule(module)}><span className="module-index">{pad(module.number)}</span><span className="module-progress-copy"><strong>{module.title}</strong><small>{done} of {module.lessons.length} lessons</small><span className="progress-line"><i style={{ width: `${modulePercent}%` }} /></span></span><b>{modulePercent}%</b><ChevronRight size={18} /></button>; })}</div></section>
-                <aside className="progress-side"><section className="goal-card"><div className="goal-card-head"><Target size={22} /><span>Weekly study goal</span></div><b>{weekMinutes}<small> / {learner.weeklyGoalMinutes} minutes</small></b><div className="progress-line"><span style={{ width: `${weekPercent}%` }} /></div><label><span>Set a weekly goal</span><input type="range" min="30" max="1200" step="30" value={learner.weeklyGoalMinutes} onChange={(event) => setLearner((current) => ({ ...current, weeklyGoalMinutes: Math.max(30, Math.min(1200, Number(event.target.value) || 30)), updatedAt: new Date().toISOString() }))} /><small>minutes</small></label></section><section className="mastery-card"><span className="eyebrow neutral">Confidence snapshot</span><h3>{Object.values(learner.confidence).filter((value) => value === 3).length} lessons you can explain</h3><p>{Object.values(learner.confidence).filter((value) => value === 1).length} marked for review · {learner.bookmarkedLessonIds.length} saved · {Object.values(learner.notes).filter(Boolean).length} with notes.</p><button type="button" onClick={() => navigate('learn')}>Continue building mastery <ArrowRight size={17} /></button></section><section className="backup-card"><Database size={22} /><div><strong>Keep your progress safe</strong><p>Progress is device-local. Download a backup before changing browser or computer.</p></div><button type="button" onClick={exportProgress}><Download size={17} /> Download backup</button></section></aside>
+                <aside className="progress-side"><section className="goal-card"><div className="goal-card-head"><Target size={22} /><span>Weekly study goal</span></div><b>{weekMinutes}<small> / {learner.weeklyGoalMinutes} minutes</small></b><div className="progress-line"><span style={{ width: `${weekPercent}%` }} /></div><label><span>Set a weekly goal</span><input type="range" min="30" max="1200" step="30" value={learner.weeklyGoalMinutes} onChange={(event) => setLearner((current) => ({ ...current, weeklyGoalMinutes: Math.max(30, Math.min(1200, Number(event.target.value) || 30)), updatedAt: new Date().toISOString() }))} /><small>minutes</small></label></section><section className="mastery-card"><span className="eyebrow neutral">Quiz snapshot</span><h3>{learner.completedLessonAssessmentIds.length} lesson quizzes passed</h3><p>{Math.max(0,Object.keys(learner.lessonQuizBestScores).length-learner.completedLessonAssessmentIds.length)} ready to retry · {learner.bookmarkedLessonIds.length} saved lessons.</p><button type="button" onClick={() => navigate('learn')}>Continue building mastery <ArrowRight size={17} /></button></section><section className="backup-card"><Database size={22} /><div><strong>Keep your progress safe</strong><p>Progress is device-local. Download a backup before changing browser or computer.</p></div><button type="button" onClick={exportProgress}><Download size={17} /> Download backup</button></section></aside>
               </div>
             </div>
           )}

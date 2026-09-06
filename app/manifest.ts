@@ -14,6 +14,6 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: '#08111d',
     theme_color: '#08111d',
     categories: ['education', 'utilities'],
-    lang: 'en-KE',
+    lang: 'en-GB',
   };
 }

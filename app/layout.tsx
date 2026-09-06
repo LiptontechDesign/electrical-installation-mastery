@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_KE',
+    locale: 'en_GB',
     url: '/',
     siteName: PRODUCT_NAME,
     title: PRODUCT_NAME,
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-KE">
+    <html lang="en-GB">
       <body>{children}</body>
     </html>
   );

@@ -104,7 +104,7 @@ export const lessonConnections: Record<string, LessonConnection> = {
   },
   'p08-periodic': {
     title: 'Interpret an older case using current evidence',
-    points: ['An installation’s age or compliance with an earlier edition does not alone establish danger. Start with the actual observation, protective measure, condition and risk.', 'Keep new-work certification separate from condition reporting. Record extent, limitations, measurements and remedial recommendations using the applicable local procedure.'],
+    points: ['An installation’s age or compliance with an earlier edition does not alone establish danger. Start with the actual observation, protective measure, condition and risk.', 'Keep new-work certification separate from condition reporting. Record the extent, limitations, measurements and remedial recommendations using the applicable BS 7671 model form and reporting procedure.'],
     question: 'If a video labels a defect C2, can that label be copied into another installation’s report?',
     answer: 'No. EICR codes are conclusions about a particular observed risk. Establish the facts and use current applicable reporting guidance. Record the observed defect, its safety implication and the required action.',
     source: { title: 'IET: applying amendments to existing installations', url: 'https://electrical.theiet.org/wiring-matters/years/2026/109-april-2026/mythbuster-13-the-four-amendments-to-the-rumour-mill/' },
