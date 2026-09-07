@@ -7,6 +7,7 @@ import { electricalTerms, lessonKnowledge, type KnowledgeTerm } from './knowledg
 import { checkpointPlan } from './checkpoint-plan';
 import { standaloneCheckpointQuestion } from './checkpoint-questions';
 import { recallExtras } from './recall-extras';
+import { teachingForQuestion, type AnswerTeaching } from './answer-teaching';
 
 export type Flashcard = {
   id: string;
@@ -29,6 +30,7 @@ export type AssessmentQuestion = {
   answer: number;
   explanation: string;
   feedback?: string[];
+  teaching?: AnswerTeaching;
   kind: 'Recall' | 'Application' | 'Safety check' | 'Standards check';
 };
 
@@ -706,10 +708,14 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       }
       const clearQuestions = questions
         .filter(question => !/-q-(remember|practice)$/.test(question.id))
-        .map(standaloneCheckpointQuestion);
+        .map(standaloneCheckpointQuestion)
+        .map(question => ({ ...question,
+          explanation: (question.id.includes('-q-term-') ? question.options[question.answer] : question.explanation).replace(/^Correct\.\s*/, ''),
+          teaching: teachingForQuestion(question),
+        }));
       const clearCards = flashcards.filter(card => !/-(remember|practice)$/.test(card.id)).map(card => {
         const question = clearQuestions.find(item => item.cardId === card.id);
-        return question ? { ...card, front: question.prompt, back: question.explanation } : card;
+        return question ? { ...card, front: question.prompt, back: `${question.explanation}\n\n${question.teaching.reasoning}` } : card;
       });
       lessons[lesson.id] = { lessonId: lesson.id, moduleId: module.id, flashcards: clearCards, questions: clearQuestions };
 

@@ -153,7 +153,14 @@ export default function AssessmentPanel({
       })}</div>
       {revealed && <div className={answers[questionIndex] === question.answer ? 'assessment-feedback correct' : 'assessment-feedback'} role="status" aria-live="polite">
         {answers[questionIndex] === question.answer ? <Check size={22} /> : <RotateCcw size={22} />}
-        <div><strong>{answers[questionIndex] === question.answer ? 'Correct' : 'Not quite — the correct answer is highlighted.'}</strong><p>{question.feedback?.[answers[questionIndex]] ?? question.explanation}</p></div>
+        <div><strong>{answers[questionIndex] === question.answer ? 'Correct' : 'Not quite — the correct answer is highlighted.'}</strong>
+          {question.feedback?.[answers[questionIndex]] && answers[questionIndex] !== question.answer && <p>{question.feedback[answers[questionIndex]]}</p>}
+          <p>{question.explanation.replace(/^Correct\.\s*/, '')}</p>
+          {question.teaching && <>
+            <p>{question.teaching.reasoning}</p>
+            <details key={question.id} className="answer-application"><summary>See it in practice</summary><p>{question.teaching.application}</p></details>
+          </>}
+        </div>
       </div>}
       {revealed && <ConceptVisual key={question.lessonId} lessonId={question.lessonId} />}
       {revealed && answers[questionIndex] !== question.answer && <details className="diagnostic-help">

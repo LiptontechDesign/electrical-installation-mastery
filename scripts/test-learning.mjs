@@ -53,7 +53,7 @@ assert.ok(toolkitHtml.includes('Adjust voltage'));
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 globalThis.window = { requestAnimationFrame: (callback) => callback() };
 const cards = [1, 2].map((i) => ({ id: `c${i}`, lessonId: 'p01-l01', lessonTitle: 'Atomic particles', moduleId: 'm1', front: i === 1 ? 'What charge does a proton carry?' : 'What charge does an electron carry?', back: i === 1 ? 'Positive' : 'Negative', kind: 'Core idea' }));
-const questions = cards.map((card, i) => ({ id: `q${i}`, lessonId: card.lessonId, lessonTitle: card.lessonTitle, moduleId: 'm1', cardId: card.id, prompt: card.front, options: ['Positive', 'Negative'], answer: i, explanation: card.back, kind: 'Recall' }));
+const questions = cards.map((card, i) => ({ id: `q${i}`, lessonId: card.lessonId, lessonTitle: card.lessonTitle, moduleId: 'm1', cardId: card.id, prompt: card.front, options: ['Positive', 'Negative'], answer: i, explanation: card.back, kind: 'Recall', teaching:{reasoning:'Mobile electrons carry charge through metal while the nuclei stay in place.',application:'A copper cable carries current through the movement of mobile electrons.'} }));
 const recorded = [], attempts = [], changes = [], continued = [];
 const priorQuizRecord={bestScore:2,bestTotal:2,latestScore:2,latestTotal:2,attempts:3,lastAttemptAt:'2026-09-01T10:00:00Z'};
 const props = { title: 'Atomic particles', eyebrow: 'Lesson recap', description: '', flashcards: cards, questions, progress: {}, bestScore: 2, quizRecord:priorQuizRecord, completed: true, connectedLessonFlow: true, requirePassToContinue:true, onRateCard: (...args) => recorded.push(args), onCompleteQuiz: (...args) => attempts.push(args), onModeChange: (mode) => changes.push(mode), onContinue:()=>continued.push(true) };
@@ -64,6 +64,10 @@ const button = (label) => tree.root.findAllByType('button').find((node) => text(
 assert.ok(text(tree.toJSON()).includes('Best 2/2'), 'Legacy raw marks cannot override a saved score and denominator after the question count changes');
 assert.equal(tree.root.findAll((node) => node.type === 'nav').length, 0, 'No nested tabs for lesson assessments');
 await act(async () => button('BNegative').props.onClick());
+assert.ok(text(tree.toJSON()).includes(questions[0].teaching.reasoning), 'An incorrect response still explains the correct principle');
+const application=tree.root.findAllByType('details').find(node=>node.props.className==='answer-application');
+assert.ok(application && !application.props.open, 'Practical detail starts collapsed to keep the feedback focused');
+assert.ok(text(application).includes(questions[0].teaching.application), 'The optional example is available inside the app');
 assert.deepEqual(recorded, [['c1', false]], 'Wrong answers are queued for review');
 await act(async () => tree.update(h(AssessmentPanel, { ...props, mode: 'cards' })));
 await act(async () => tree.root.findByProps({ 'aria-label': 'Reveal answer' }).props.onClick());
@@ -73,6 +77,7 @@ assert.equal(button('BNegative').props.disabled, true, 'Previously answered ques
 await act(async () => button('Next question').props.onClick());
 assert.ok(text(tree.toJSON()).includes('Question 2'));
 await act(async () => button('BNegative').props.onClick());
+assert.ok(text(tree.toJSON()).includes(questions[1].teaching.reasoning), 'A correct response also reinforces the principle');
 await act(async () => button('See results').props.onClick());
 assert.deepEqual(attempts, [[1, 2]], 'Complete quiz records the correct score once');
 const resultText=text(tree.toJSON());

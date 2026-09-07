@@ -27,6 +27,10 @@ assert.equal(new Set(lessons.map(lesson => lesson.videoId)).size, lessons.length
 const bank = buildAssessmentBank(course.modules, lessonGuides);
 for (const assessment of Object.values(bank.lessons)) {
   for (const question of assessment.questions) {
+    assert.ok(question.teaching?.reasoning.length > 35, `${question.id} explains the underlying principle`);
+    assert.ok(question.teaching?.application.length > 35, `${question.id} connects the principle to an example`);
+    assert.notEqual(question.teaching.reasoning, question.explanation, `${question.id} adds reasoning rather than repeating the answer`);
+    assert.ok(!/[“”"]|this lesson|this video/.test(question.teaching.reasoning + question.teaching.application), `${question.id} teaching stands alone`);
     assert.ok(!/[“”"]|this lesson|lesson point|this video|in this situation|Which factors matter here/i.test(question.prompt), `${question.id} is independently understandable`);
     assert.ok(!/-q-(remember|practice)$/.test(question.id), 'Quizzes test concepts rather than a video title');
     assert.equal(new Set(question.options).size, 4, `${question.id} has four distinct choices`);

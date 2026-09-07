@@ -63,6 +63,10 @@
 .focused-assessment .assessment-options button > svg { margin-top: 5px; }
 .focused-assessment .assessment-feedback { margin-top: 18px; }
 .focused-assessment .assessment-feedback p { margin-bottom: 0; font-size: 16px; }
+.focused-assessment .assessment-feedback p + p { margin-top: 12px; }
+.answer-application { margin-top: 14px; border-top: 1px solid currentColor; padding-top: 10px; }
+.answer-application summary { cursor: pointer; font-size: 14px; font-weight: 700; }
+.recall-copy { white-space: pre-line; }
 .question-kind { display: inline-flex; margin: 0 0 9px; border-radius: 99px; background: #eef5f6; color: #246d77; padding: 5px 9px; font-size: 11px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
 .quiz-prior-record { display: flex; flex-wrap: wrap; gap: 7px; margin: -2px 0 17px; }
 .quiz-prior-record span { border-radius: 99px; background: #eef3f5; color: #526875; padding: 6px 10px; font-size: 12px; font-weight: 750; }
