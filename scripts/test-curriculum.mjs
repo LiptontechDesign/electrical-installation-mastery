@@ -36,7 +36,16 @@ for (const assessment of Object.values(bank.lessons)) {
     assert.equal(new Set(question.options).size, 4, `${question.id} has four distinct choices`);
     assert.ok(question.options.every(option => !/[“”"]/.test(option)), `${question.id} choices do not quote lesson wording`);
     assert.ok(question.options.every(option => !['The result stays the same regardless of the circuit conditions.', 'The opposite relationship always applies.', 'Appearance alone gives the answer.'].includes(option)), `${question.id} uses specific choices`);
+    assert.equal(question.design?.diagnostics.length, question.options.length, `${question.id} has a diagnostic for every option`);
+    assert.equal(question.design?.diagnostics[question.answer], null, `${question.id} marks only the correct model as correct`);
+    question.design?.diagnostics.forEach((diagnostic, index) => {
+      if (index !== question.answer) {
+        assert.ok(diagnostic?.diagnosis.length > 30, `${question.id}/${index} explains the selected misconception`);
+        assert.ok(diagnostic?.repair.length > 35, `${question.id}/${index} provides a repair explanation`);
+      }
+    });
   }
+  assert.ok(assessment.flashcards.some(card => card.id === `${assessment.lessonId}-overview-retrieval`), `${assessment.lessonId} has an exact overview retrieval card`);
 }
 assert.equal(bank.allFlashcards.filter(card => card.front === 'How would you explain this lesson point in your own words?').length, 0, 'Every recall prompt names a specific concept');
 const oldBank = buildAssessmentBank(oldModules, lessonGuides, { includeCheckpoints:false });

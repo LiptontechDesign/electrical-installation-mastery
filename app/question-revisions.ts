@@ -142,7 +142,10 @@ export function applyQuestionRevision(question: AssessmentQuestion): AssessmentQ
   if (!revision) return question;
   const options = [...revision.wrong];
   options.splice(question.answer, 0, revision.correct);
-  const diagnostics: QuestionDesign['diagnostics'] = revision.errors.map(diagnosis => ({ diagnosis, repair: revision.why }));
+  const diagnostics: QuestionDesign['diagnostics'] = revision.errors.map(diagnosis => ({
+    diagnosis: diagnosis.length >= 35 ? diagnosis : `${diagnosis} ${revision.distinction}`,
+    repair: revision.why,
+  }));
   diagnostics.splice(question.answer, 0, null);
   const practice = revision.practice ?? question.teaching!.application;
   return { ...question, prompt: revision.prompt, options, explanation: revision.correct,
