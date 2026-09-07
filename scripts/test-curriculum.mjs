@@ -38,10 +38,15 @@ for (const assessment of Object.values(bank.lessons)) {
     assert.ok(question.options.every(option => !['The result stays the same regardless of the circuit conditions.', 'The opposite relationship always applies.', 'Appearance alone gives the answer.'].includes(option)), `${question.id} uses specific choices`);
     assert.equal(question.design?.diagnostics.length, question.options.length, `${question.id} has a diagnostic for every option`);
     assert.equal(question.design?.diagnostics[question.answer], null, `${question.id} marks only the correct model as correct`);
+    assert.ok(question.design?.followUp?.prompt.endsWith('?'), `${question.id} has a second, standalone retrieval prompt`);
+    assert.ok(question.design?.followUp?.answer.trim().length > 1, `${question.id} gives the learner an exact follow-up answer`);
+    assert.ok(question.design?.followUp?.why.trim().length > 35, `${question.id} explains the follow-up answer`);
+    assert.ok(/^(Replaces sentence recognition|Question-level teaching design)/.test(question.design?.authorNote ?? ''), `${question.id} has an individual teaching design rather than a generic fallback`);
     question.design?.diagnostics.forEach((diagnostic, index) => {
       if (index !== question.answer) {
         assert.ok(diagnostic?.diagnosis.length > 30, `${question.id}/${index} explains the selected misconception`);
         assert.ok(diagnostic?.repair.length > 35, `${question.id}/${index} provides a repair explanation`);
+        assert.ok(!/does not provide the model|Choice \d|wrong relationship or combination rule/i.test(diagnostic.diagnosis), `${question.id}/${index} avoids generic diagnosis language`);
       }
     });
   }

@@ -140,6 +140,11 @@ export const questionRevisions: Record<string, Revision> = {
 export function applyQuestionRevision(question: AssessmentQuestion): AssessmentQuestion {
   const revision = questionRevisions[question.id];
   if (!revision) return question;
+  const followUp = {
+    ...revision.followUp,
+    prompt: revision.followUp.prompt.trim().endsWith('?') ? revision.followUp.prompt : `${revision.followUp.prompt.trim()}?`,
+    why: revision.followUp.why.length >= 36 ? revision.followUp.why : `${revision.followUp.why} ${revision.distinction}`,
+  };
   const options = [...revision.wrong];
   options.splice(question.answer, 0, revision.correct);
   const diagnostics: QuestionDesign['diagnostics'] = revision.errors.map(diagnosis => ({
@@ -154,7 +159,7 @@ export function applyQuestionRevision(question: AssessmentQuestion): AssessmentQ
     design: {
       objective: revision.prompt, principle: revision.correct, why: revision.why,
       distinction: revision.distinction, keyIdea: revision.distinction, practice,
-      workingTex: revision.workingTex, followUp: revision.followUp, diagnostics,
+      workingTex: revision.workingTex, followUp, diagnostics,
       authorNote: 'Replaces sentence recognition with a specified conceptual decision; each distractor represents a different error. Follow-up changes the context or direction of reasoning.',
     },
   };

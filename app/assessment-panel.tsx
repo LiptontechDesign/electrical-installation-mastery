@@ -159,7 +159,7 @@ export default function AssessmentPanel({
         {answers[questionIndex] === question.answer ? <Check size={22} /> : <RotateCcw size={22} />}
         <div><strong>{answers[questionIndex] === question.answer ? 'Correct' : 'Let’s correct the model'}</strong>
           {answers[questionIndex] !== question.answer && (question.design?.diagnostics[answers[questionIndex]]
-            ? <p className="misconception-diagnosis"><LearningText text={question.design.diagnostics[answers[questionIndex]]!.diagnosis} /></p>
+            ? <>{question.design.diagnostics[answers[questionIndex]]!.partlyRight && <p className="misconception-partly-right"><strong>What you have right:</strong> <LearningText text={question.design.diagnostics[answers[questionIndex]]!.partlyRight!} /></p>}<p className="misconception-diagnosis"><LearningText text={question.design.diagnostics[answers[questionIndex]]!.diagnosis} /></p></>
             : question.feedback?.[answers[questionIndex]] && <p>{question.feedback[answers[questionIndex]]}</p>)}
           <p className="answer-principle"><LearningText text={question.design?.principle ?? question.options[question.answer]} /></p>
           {!question.design && question.kind === 'Application' && question.explanation !== question.options[question.answer] && <p><LearningText text={question.explanation} /></p>}

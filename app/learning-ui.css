@@ -266,4 +266,5 @@
 .flashcard-explanation { padding: 18px 4px; max-width: 72ch; line-height: 1.7; }
 .flashcard-explanation summary { cursor: pointer; font-weight: 600; }
 .misconception-diagnosis { border-left: 3px solid #bc6a32; padding-left: 12px; }
+.misconception-partly-right { color: #5c4b38 !important; }
 .retrieval-step .math-block, .assessment-feedback .math-block { overflow-x: auto; max-width: 100%; }

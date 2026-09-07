@@ -11,6 +11,7 @@ import { teachingForQuestion, type AnswerTeaching } from './answer-teaching';
 import { overviewAnswers, overviewWorking, overviewPrompts } from './overview-answers';
 import type { QuestionDesign } from './learning-design';
 import { applyQuestionRevision } from './question-revisions';
+import { authorQuestion } from './question-authoring';
 
 export type Flashcard = {
   id: string;
@@ -83,49 +84,19 @@ function unique(values: string[]) {
   return [...new Set(values.map((value) => value.trim()).filter(Boolean))];
 }
 
-function feedbackForAlternative(question: AssessmentQuestion, option: string, index: number) {
-  const existing = question.feedback?.[index]?.trim();
-  if (existing && index !== question.answer) return existing;
-  const lower = option.toLowerCase();
-  const correction = question.kind === 'Standards check'
-    ? 'The relevant requirement must be checked against the actual installation and its stated conditions.'
-    : question.kind === 'Safety check'
-      ? 'Normal operation or a single observation cannot replace the required safe method and evidence.'
-      : question.kind === 'Application'
-        ? 'The practical decision must follow the governing relationship and the actual circuit conditions.'
-        : 'The electrical relationship must match the quantity or condition in the question.';
-  if (/\b(always|never|only|every|any|regardless|automatically)\b/.test(lower)) return `This treats one condition as a universal rule. ${correction}`;
-  if (/\b(appearance|colour|color|looks|works|operates|function)\b/.test(lower)) return `Appearance or normal operation does not establish the condition being tested. ${correction}`;
-  if (/\b(same|equal|average|sum|add|subtract|multiply|divide|reciprocal)\b/.test(lower)) return `This uses the wrong relationship or combination rule for the stated quantities. ${correction}`;
-  if (/\b(volts?|amperes?|ohms?|watts?|joules?|coulombs?|hertz|seconds?|metres?|milliamperes?)\b/.test(lower)) return `This mixes a quantity, unit, or relationship with the one required here. ${correction}`;
-  return `This does not provide the model needed for the question. ${correction}`;
-}
-
-/** Every learner choice must have a direct repair path. */
+/** Every learner choice must arrive with its own authored repair path. */
 function completeQuestionDesign(question: AssessmentQuestion): AssessmentQuestion {
-  const existing = question.design;
-  if (existing?.diagnostics.length === question.options.length
-    && existing.diagnostics.every((item, index) => index === question.answer ? item === null : Boolean(item?.diagnosis && item?.repair))) return question;
-  const why = existing?.why ?? (question.kind === 'Application' ? question.explanation : question.teaching?.reasoning ?? question.explanation);
-  const diagnostics = question.options.map((option, index) => index === question.answer ? null : {
-    diagnosis: feedbackForAlternative(question, option, index),
-    repair: why,
-  });
-  return {
-    ...question,
-    design: {
-      objective: existing?.objective ?? question.prompt,
-      principle: existing?.principle ?? question.options[question.answer],
-      why,
-      distinction: existing?.distinction,
-      keyIdea: existing?.keyIdea ?? question.explanation,
-      practice: existing?.practice ?? question.teaching?.application ?? question.explanation,
-      workingTex: existing?.workingTex,
-      followUp: existing?.followUp,
-      diagnostics,
-      authorNote: existing?.authorNote ?? 'Learner choices are checked for a relationship, unit, evidence, safety, or standards misconception; the selected error receives a repair explanation.',
-    },
-  };
+  const design = question.design;
+  const complete = design
+    && design.followUp?.prompt.trim()
+    && design.followUp.answer.trim()
+    && design.followUp.why.trim()
+    && design.diagnostics.length === question.options.length
+    && design.diagnostics.every((item, index) => index === question.answer
+      ? item === null
+      : Boolean(item?.diagnosis.trim() && item.repair.trim()));
+  if (!complete) throw new Error(`Question ${question.id} is missing a question-specific teaching design.`);
+  return question;
 }
 
 function rotateCorrectOption(correct: string, distractors: string[], seed: number) {
@@ -762,7 +733,10 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         .map(question => ({ ...question,
           explanation: (question.id.includes('-q-term-') ? question.options[question.answer] : question.explanation).replace(/^Correct\.\s*/, ''),
           teaching: teachingForQuestion(question),
-        })).map(applyQuestionRevision).map(completeQuestionDesign);
+        }))
+        .map(applyQuestionRevision)
+        .map(question => authorQuestion(question, guide))
+        .map(completeQuestionDesign);
       const clearCards = flashcards.filter(card => !/-(remember|practice)$/.test(card.id)).map(card => {
         const question = clearQuestions.find(item => item.cardId === card.id);
         return question ? { ...card, front: question.prompt, back: question.options[question.answer], design: question.design ?? {
