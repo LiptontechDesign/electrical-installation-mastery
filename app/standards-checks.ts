@@ -5,9 +5,9 @@ export type StandardsCheck = { prompt: string; options: string[]; answer: number
 export const standardsChecks: Record<string, StandardsCheck> = {
   'bathroom-sockets': {
     prompt: 'Which statement correctly applies to an ordinary 230 V 13 A socket-outlet in a bathroom?',
-    options: ['It may be anywhere if it has a cover.', 'It may be in zone 2 when protected by an RCD.', 'It must be at least 3 m horizontally from the boundary of zone 1.', 'It is treated the same as a compliant shaver supply.'],
+    options: ['It may be immediately outside zone 2 if its enclosure is splash-resistant.', 'It may be in zone 2 when protected by an RCD.', 'It must be at least 3 m horizontally from the boundary of zone 1.', 'It is treated the same as a compliant shaver supply.'],
     answer: 2,
-    feedback: ['A cover does not remove the Section 701 location limit.', 'RCD protection does not remove the socket location limit.', 'Correct. Measure horizontally from the boundary of zone 1.', 'A shaver supply is a different, limited-purpose accessory.'],
+    feedback: ['Being outside zone 2 is not the same as meeting the specified socket distance from zone 1.', 'RCD protection does not remove the socket location limit.', 'Correct. Measure horizontally from the boundary of zone 1.', 'A shaver supply is a different, limited-purpose accessory.'],
   },
   'kitchen-placement': {
     prompt: 'Which statement correctly describes a socket position near a kitchen sink?',
@@ -17,15 +17,15 @@ export const standardsChecks: Record<string, StandardsCheck> = {
   },
   'accessory-height': {
     prompt: 'Which statement correctly describes general switch and socket mounting height?',
-    options: ['BS 7671 sets 450–1200 mm for every installation.', 'All sockets must be exactly 450 mm above the floor.', 'Height is chosen only from the electrician’s preference.', 'BS 7671 has no single general height; Approved Document M gives 450–1200 mm for relevant new dwellings in England.'],
+    options: ['BS 7671 sets 450–1200 mm for every installation.', 'All sockets must be exactly 450 mm above the floor.', 'The same accessibility band applies automatically to every alteration in an existing building.', 'BS 7671 has no single general height; Approved Document M gives 450–1200 mm for relevant new dwellings in England.'],
     answer: 3,
-    feedback: ['The 450–1200 mm band comes from accessibility guidance with a defined scope.', 'The guidance is a band, not one exact socket height.', 'Project requirements, accessibility and intended use must be considered.', 'Correct. Keep the source and its scope attached to the number.'],
+    feedback: ['The 450–1200 mm band comes from accessibility guidance with a defined scope.', 'The guidance is a band, not one exact socket height.', 'The accessibility guidance has a defined scope; an existing-building alteration needs its own applicable requirements checked.', 'Correct. Keep the source and its scope attached to the number.'],
   },
   'fault-protection': {
     prompt: 'A calculated Zs is lower than a value copied from an old worksheet. What is still needed before accepting the comparison?',
-    options: ['Only the worksheet author’s signature.', 'The actual protective device, applicable edition and limit, disconnection requirement and temperature basis.', 'Only confirmation that Ze was included.', 'Only a functional test of the connected load.'],
+    options: ['Confirmation that the worksheet uses the same breaker ampere rating.', 'The actual protective device, applicable edition and limit, disconnection requirement and temperature basis.', 'Only confirmation that Ze was included.', 'Confirmation that the room-temperature measurement is lower than the operating-temperature limit.'],
     answer: 1,
-    feedback: ['A signature does not establish which limit or conditions were used.', 'Correct. A numerical comparison is meaningful only when its source and conditions match the circuit.', 'Including Ze is necessary for the model but does not validate the acceptance criterion.', 'Operation of the load does not validate the protective-device comparison.'],
+    feedback: ['Matching ampere ratings does not establish the same operating characteristic, disconnection condition or temperature basis.', 'Correct. A numerical comparison is meaningful only when its source and conditions match the circuit.', 'Including Ze is necessary for the model but does not validate the acceptance criterion.', 'A cool measured value and an operating-temperature limit need a compatible temperature basis before comparison.'],
   },
   residual: {
     prompt: 'An RCCB test button operates correctly. Which conclusion is supported by this observation alone?',
@@ -41,9 +41,9 @@ export const standardsChecks: Record<string, StandardsCheck> = {
   },
   'safe-testing': {
     prompt: 'A proposed live measurement and a planned dead-test method could answer the same question. What should guide the method selection?',
-    options: ['Use the live method because it produces a reading faster.', 'Prefer the least hazardous effective method, with suitable equipment and the required safe conditions.', 'Use whichever method the last video demonstrated.', 'Use an ordinary multimeter without checking its category rating.'],
+    options: ['Use the live method because it produces a reading faster.', 'Prefer the least hazardous effective method, with suitable equipment and the required safe conditions.', 'Use the live method because dead tests cannot provide evidence about circuit continuity.', 'Use either method once the instrument’s displayed voltage range exceeds nominal supply voltage.'],
     answer: 1,
-    feedback: ['Speed alone does not justify exposing someone to live conductors.', 'Correct. Establish what evidence is needed and avoid unnecessary live testing.', 'The actual circuit and investigation conditions determine whether a demonstrated method is suitable.', 'Test equipment must suit the system and foreseeable transient conditions.'],
+    feedback: ['Speed alone does not justify exposing someone to live conductors.', 'Correct. Establish what evidence is needed and avoid unnecessary live testing.', 'Suitable dead continuity tests can provide evidence about the conducting path; live exposure is not inherently required.', 'Voltage range alone does not establish suitable transient category, leads, protection or safe working conditions.'],
   },
   verification: {
     prompt: 'A circuit works and the recorded tests pass, but a relevant inspection defect remains unresolved. What can be concluded?',
@@ -77,14 +77,14 @@ export const standardsChecks: Record<string, StandardsCheck> = {
   },
   'bath-shower-equipment': {
     prompt: 'What should guide the position and selection of equipment for an electric shower?',
-    options: ['The nearest convenient wall position alone.', 'RCD protection alone.', 'The bathroom zone, equipment suitability and IP rating, product instructions, circuit protection and isolation arrangement together.', 'Whether the equipment colour matches the room.'],
+    options: ['A position outside direct spray, without establishing the bathroom zone.', 'RCD protection alone.', 'The bathroom zone, equipment suitability and IP rating, product instructions, circuit protection and isolation arrangement together.', 'The enclosure’s IP rating, treating it as approval for use in any bathroom zone.'],
     answer: 2,
-    feedback: ['Convenience cannot replace the Section 701 assessment.', 'RCD protection does not remove zoning and equipment requirements.', 'Correct. Treat the zone and the complete protective arrangement as one coordinated decision.', 'Appearance does not establish electrical suitability.'],
+    feedback: ['Distance from visible spray does not establish zone boundaries or the complete equipment requirements.', 'RCD protection does not remove zoning and equipment requirements.', 'Correct. Treat the zone and the complete protective arrangement as one coordinated decision.', 'An IP rating addresses ingress; it does not by itself establish that a type of equipment is permitted and suitable in a particular zone.'],
   },
   'swa-support': {
     prompt: 'How should a clipping distance for an SWA cable route be selected?',
-    options: ['Use one familiar distance for every SWA size and route.', 'Use the actual cable, route, environment and manufacturer support data so the cable is not damaged or left straining its entries.', 'Clip only at each end when the cable is armoured.', 'Choose the widest spacing that looks straight from a distance.'],
+    options: ['Use one familiar distance for every SWA size and route.', 'Use the actual cable, route, environment and manufacturer support data so the cable is not damaged or left straining its entries.', 'Use support data for a smaller, lighter cable because both products have steel armour.', 'Use horizontal support spacing unchanged on a vertical run of the same cable.'],
     answer: 1,
-    feedback: ['BS 7671 does not give one universal SWA clipping interval.', 'Correct. Support spacing follows the actual mechanical and environmental conditions.', 'Armour does not remove the need for adequate support.', 'Appearance alone does not assess sag, load or strain at glands.'],
+    feedback: ['BS 7671 does not give one universal SWA clipping interval.', 'Correct. Support spacing follows the actual mechanical and environmental conditions.', 'Cable weight and diameter affect the mechanical support requirement; shared armour type does not make the data interchangeable.', 'Orientation changes support loading; confirm the spacing and fixing method for the actual vertical route.'],
   },
 };

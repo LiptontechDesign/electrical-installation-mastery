@@ -250,3 +250,20 @@
 @media (prefers-reduced-motion: reduce) {
   .recall-card, .power-factor-track > span { transition: none; }
 }
+.overview-orientation { padding: 4px 0 12px; max-width: 72ch; }
+.overview-orientation p { font-size: 1.05rem; line-height: 1.7; margin: 10px 0 0; }
+.retrieval-step { padding: 24px 0; border-top: 1px solid #dce6eb; }
+.retrieval-step h3 { font-size: 1.18rem; line-height: 1.55; max-width: 64ch; margin: 12px 0; }
+.retrieval-cue { color: #5c6e78; font-size: .9rem; }
+.retrieval-answer { margin-top: 18px; max-width: 72ch; line-height: 1.7; }
+.retrieval-result, .answer-principle { font-weight: 650; color: #123b35; }
+.retrieval-answer .button-row { margin-top: 18px; }
+.overview-trap { border-top: 1px solid #dce6eb; padding: 18px 0; line-height: 1.65; }
+.overview-trap summary { cursor: pointer; font-weight: 650; }
+.overview-trap p { max-width: 72ch; }
+.overview-equation { margin: 16px 0; overflow-x: auto; }
+.overview-equation p { color: #5c6e78; font-size: .9rem; }
+.flashcard-explanation { padding: 18px 4px; max-width: 72ch; line-height: 1.7; }
+.flashcard-explanation summary { cursor: pointer; font-weight: 600; }
+.misconception-diagnosis { border-left: 3px solid #bc6a32; padding-left: 12px; }
+.retrieval-step .math-block, .assessment-feedback .math-block { overflow-x: auto; max-width: 100%; }

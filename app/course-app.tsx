@@ -1184,11 +1184,13 @@ export default function CourseApp() {
                 <div className="lesson-tab-content">
                   <section id="lesson-overview" role="tabpanel" aria-labelledby="lesson-tab-overview" hidden={lessonTab !== 'overview'} className="lesson-overview">
                     <LessonOverview
+                      key={activeLesson.id}
                       lessonId={activeLesson.id}
                       guide={activeGuide}
                       watched={completed.has(activeLesson.id)}
                       learningText={activeLearningText}
-                      questionCount={activeAssessment.questions.length}
+                      questions={activeAssessment.questions}
+                      onRateCard={rateFlashcard}
                       onEvidence={recordEvidence}
                       onLesson={revisitFoundation}
                       onQuiz={()=>{setAssessmentMode('quiz');setLessonTab('quiz');}}

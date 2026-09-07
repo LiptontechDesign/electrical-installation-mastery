@@ -8,6 +8,9 @@ import { checkpointPlan } from './checkpoint-plan';
 import { standaloneCheckpointQuestion } from './checkpoint-questions';
 import { recallExtras } from './recall-extras';
 import { teachingForQuestion, type AnswerTeaching } from './answer-teaching';
+import { overviewAnswers, overviewWorking, overviewPrompts } from './overview-answers';
+import type { QuestionDesign } from './learning-design';
+import { applyQuestionRevision } from './question-revisions';
 
 export type Flashcard = {
   id: string;
@@ -16,6 +19,7 @@ export type Flashcard = {
   moduleId: string;
   front: string;
   back: string;
+  design?: QuestionDesign;
   kind: 'Core idea' | 'Application' | 'Safety check' | 'Standards check';
 };
 
@@ -31,6 +35,7 @@ export type AssessmentQuestion = {
   explanation: string;
   feedback?: string[];
   teaching?: AnswerTeaching;
+  design?: QuestionDesign;
   kind: 'Recall' | 'Application' | 'Safety check' | 'Standards check';
 };
 
@@ -563,7 +568,7 @@ function checkpointQuestions(groups: AssessmentQuestion[][], checkpointNumber: n
   const selectedIds = new Set(coverage.map((question) => question.id));
   const remaining = groups.map((group) => group.filter((question) => !selectedIds.has(question.id)));
   const fill = balancedModuleQuestions(remaining, Math.max(0, target - coverage.length));
-  return [...coverage, ...fill].slice(0, target).map(standaloneCheckpointQuestion);
+  return [...coverage, ...fill].slice(0, target);
 }
 
 export function buildAssessmentBank(modules: readonly CourseModule[], guides: Record<string, LessonGuide>, options: { includeCheckpoints?: boolean } = {}) {
@@ -712,10 +717,19 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         .map(question => ({ ...question,
           explanation: (question.id.includes('-q-term-') ? question.options[question.answer] : question.explanation).replace(/^Correct\.\s*/, ''),
           teaching: teachingForQuestion(question),
-        }));
+        })).map(applyQuestionRevision);
       const clearCards = flashcards.filter(card => !/-(remember|practice)$/.test(card.id)).map(card => {
         const question = clearQuestions.find(item => item.cardId === card.id);
-        return question ? { ...card, front: question.prompt, back: `${question.explanation}\n\n${question.teaching.reasoning}` } : card;
+        return question ? { ...card, front: question.prompt, back: question.options[question.answer], design: question.design ?? {
+          objective: question.prompt, principle: question.options[question.answer], why: question.kind === 'Application' ? question.explanation : question.teaching!.reasoning,
+          keyIdea: question.explanation, practice: question.teaching!.application, diagnostics: [],
+          authorNote: 'Existing item; reasoning and practical example separated from the answer.',
+        } } : card;
+      });
+      if (!overviewAnswers[lesson.id]) throw new Error('Missing exact overview answer: ' + lesson.id);
+      clearCards.push({ id: lesson.id + '-overview-retrieval', lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, kind: 'Application',
+        front: overviewPrompts[lesson.id] ?? guide.checkYourself, back: overviewAnswers[lesson.id],
+        design: { objective: overviewPrompts[lesson.id] ?? guide.checkYourself, principle: overviewAnswers[lesson.id], why: clearQuestions[0].teaching!.reasoning, keyIdea: guide.remember, practice: clearQuestions[0].teaching!.application, workingTex: overviewWorking[lesson.id], diagnostics: [], authorNote: 'Independent retrieval prompt with an authored answer; self-rating schedules this exact card.' },
       });
       lessons[lesson.id] = { lessonId: lesson.id, moduleId: module.id, flashcards: clearCards, questions: clearQuestions };
 

@@ -63,7 +63,7 @@ const text = (node) => typeof node === 'string' || typeof node === 'number' ? St
 const button = (label) => tree.root.findAllByType('button').find((node) => text(node).replace(/\s+/g, ' ').trim() === label);
 assert.ok(text(tree.toJSON()).includes('Best 2/2'), 'Legacy raw marks cannot override a saved score and denominator after the question count changes');
 assert.equal(tree.root.findAll((node) => node.type === 'nav').length, 0, 'No nested tabs for lesson assessments');
-await act(async () => button('BNegative').props.onClick());
+await act(async () => tree.root.findAllByProps({className:'option-copy'}).find(node=>text(node)==='Negative').parent.props.onClick());
 assert.ok(text(tree.toJSON()).includes(questions[0].teaching.reasoning), 'An incorrect response still explains the correct principle');
 const application=tree.root.findAllByType('details').find(node=>node.props.className==='answer-application');
 assert.ok(application && !application.props.open, 'Practical detail starts collapsed to keep the feedback focused');

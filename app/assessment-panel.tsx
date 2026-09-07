@@ -4,7 +4,10 @@ import { useMemo, useRef, useState } from 'react';
 import { ArrowRight, Award, BookOpen, BrainCircuit, Check, ChevronLeft, ChevronRight, Circle, Lightbulb, ListChecks, RotateCcw, ShieldCheck, X } from 'lucide-react';
 import type { AssessmentQuestion, Flashcard } from './assessment-data';
 import ConceptVisual from './concept-visual';
-import { lessonKnowledge, lessonById } from './knowledge-graph';
+import { shuffleQuestion } from './learning-design';
+import LearningText from './learning-text';
+import Formula from './formula';
+import RetrievalReveal from './retrieval-reveal';
 import type { EvidenceInput, QuizRecord } from './tutor-model';
 import { calendarDay } from './tutor-model';
 
@@ -38,7 +41,7 @@ type AssessmentPanelProps = {
 
 export default function AssessmentPanel({
   title, eyebrow, description, flashcards, questions, progress, bestScore, quizRecord, completed,
-  onRateCard, onEvidence, onOpenLesson, onPractice, onCompleteQuiz, onContinue, continueLabel = 'Continue learning', connectedLessonFlow = false,
+  onRateCard, onEvidence, onPractice, onCompleteQuiz, onContinue, continueLabel = 'Continue learning', connectedLessonFlow = false,
   mode: controlledMode, onModeChange, assessmentLabel = 'Quiz', requirePassToContinue = false, showFlashcards = true,
 }: AssessmentPanelProps) {
   const [internalMode, setInternalMode] = useState<AssessmentMode>('cards');
@@ -50,22 +53,17 @@ export default function AssessmentPanel({
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [finished, setFinished] = useState(false);
   const [attempt, setAttempt] = useState(0);
-  const [difficulty, setDifficulty] = useState<Record<number, string>>({});
   const [initialAttemptCount] = useState(()=>quizRecord?.attempts??0);
   const [completedSubmissions, setCompletedSubmissions] = useState(0);
   const [passedBeforeResult, setPassedBeforeResult] = useState(false);
   const questionHeading = useRef<HTMLHeadingElement>(null);
-  const quizQuestions = useMemo(()=>{
-    if(!questions.length||attempt===0)return questions;
-    const optionShift=attempt%4;
-    const rotated=questions.map((item)=>{
-      const options=[...item.options.slice(optionShift),...item.options.slice(0,optionShift)];
-      const feedback=item.feedback?[...item.feedback.slice(optionShift),...item.feedback.slice(0,optionShift)]:undefined;
-      return {...item,options,feedback,answer:(item.answer-optionShift+4)%4};
-    });
-    const questionShift=attempt%rotated.length;
-    return [...rotated.slice(questionShift),...rotated.slice(0,questionShift)];
-  },[attempt,questions]);
+  const quizQuestions = useMemo(() => {
+    // Feedback and choices stay together on every attempt, including the first.
+    const shuffled = questions.map(question => shuffleQuestion(question, attempt));
+    if (attempt === 0) return shuffled;
+    const offset = attempt % Math.max(1, shuffled.length);
+    return [...shuffled.slice(offset), ...shuffled.slice(0, offset)];
+  }, [attempt, questions]);
   const card = flashcards[cardIndex];
   const question = quizQuestions[questionIndex];
   const revealed = answers[questionIndex] !== undefined;
@@ -97,7 +95,7 @@ export default function AssessmentPanel({
     if (revealed || !question) return;
     setAnswers((current) => ({ ...current, [questionIndex]: answer }));
     const dimension = question.kind === 'Application' ? 'application' : question.kind === 'Standards check' ? 'standards' : question.kind === 'Safety check' ? 'diagnosis' : 'recognition';
-    onEvidence?.({lessonId:question.lessonId,conceptId:question.cardId,activityId:question.id,dimension,correct:answer===question.answer,assisted:attempt>0});
+    onEvidence?.({lessonId:question.lessonId,conceptId:question.cardId,activityId:question.id,dimension,correct:answer===question.answer,assisted:attempt>0,misconception:question.design?.diagnostics[answer]?.diagnosis});
     if (answer !== question.answer && flashcards.some((item)=>item.id===question.cardId)) onRateCard(question.cardId, false);
   };
   const nextQuestion = () => {
@@ -112,7 +110,7 @@ export default function AssessmentPanel({
     setFinished(true);
     onCompleteQuiz(score, quizQuestions.length);
   };
-  const restartQuiz = () => { setQuestionIndex(0); setAnswers({}); setFinished(false); setAttempt(value=>value+1); setDifficulty({}); };
+  const restartQuiz = () => { setQuestionIndex(0); setAnswers({}); setFinished(false); setAttempt(value=>value+1); };
 
   return <section className="assessment-panel focused-assessment" aria-label={mode === 'cards' ? 'Flashcards' : 'Quiz'}>
     {!connectedLessonFlow && <header className="compact-assessment-heading"><span className="eyebrow neutral">{eyebrow}</span><h2>{title}</h2><p>{description}</p></header>}
@@ -127,15 +125,21 @@ export default function AssessmentPanel({
       <button type="button" className={`recall-card ${cardRevealed ? 'revealed' : ''}`} aria-label={cardRevealed ? 'Hide answer' : 'Reveal answer'} aria-pressed={cardRevealed} onClick={() => setCardRevealed((current) => !current)}>
         <span className="recall-card-meta"><span>{cardRevealed ? 'Answer' : card.kind}</span><Icon size={26} /></span>
         {!connectedLessonFlow && <span className="recall-source">{card.lessonTitle}</span>}
-        <span className="recall-copy" aria-live="polite">{cardRevealed ? card.back : card.front}</span>
+        <span className="recall-copy" aria-live="polite"><LearningText text={cardRevealed ? card.back : card.front} /></span>
         <span className="recall-hint">{cardRevealed ? 'How did you do?' : 'Think it through, then tap to reveal.'}</span>
       </button>
       <div className="flashcard-actions">
         <button type="button" className="card-nav" disabled={cardIndex === 0} onClick={() => chooseCard(cardIndex - 1)}><ChevronLeft size={18} /> Previous</button>
-        {cardRevealed ? <div className="card-rating"><button type="button" className="again" onClick={() => rateCard(false)}><RotateCcw size={18} /> Revisit</button><button type="button" className="got-it" onClick={() => rateCard(true)}><Check size={18} /> Got it</button></div> : <button type="button" className="reveal-card" onClick={() => setCardRevealed(true)}>Show answer</button>}
+        {cardRevealed ? <div className="card-rating"><button type="button" className="again" onClick={() => rateCard(false)}><RotateCcw size={18} /> Need another look</button><button type="button" className="got-it" onClick={() => rateCard(true)}><Check size={18} /> Got it</button></div> : <button type="button" className="reveal-card" onClick={() => setCardRevealed(true)}>Show answer</button>}
         <button type="button" className="card-nav" disabled={cardIndex === flashcards.length - 1} onClick={() => chooseCard(cardIndex + 1)}>Next <ChevronRight size={18} /></button>
       </div>
       <div className="recall-tally" role="status"><span><Check size={16} /> {knownCount} recalled</span><span><RotateCcw size={16} /> {reviewCount} to revisit</span><button type="button" onClick={() => changeMode('quiz')}>Take the quiz <ArrowRight size={16} /></button></div>
+      {cardRevealed && card.design && <div className="flashcard-explanation">
+        {card.design.workingTex && <Formula tex={card.design.workingTex} block />}
+        <p><strong>Why:</strong> <LearningText text={card.design.why} /></p>
+        {card.design.distinction && <p><strong>Keep separate:</strong> <LearningText text={card.design.distinction} /></p>}
+        <details key={card.id}><summary>In practice</summary><p><LearningText text={card.design.practice} /></p></details>
+      </div>}
       {cardRevealed && <ConceptVisual key={card.lessonId} lessonId={card.lessonId} />}
     </div>}
 
@@ -145,36 +149,32 @@ export default function AssessmentPanel({
       <div className="quiz-map" aria-hidden="true">{quizQuestions.map((item, index) => <span key={item.id} className={`${index === questionIndex ? 'current' : ''} ${answers[index] === undefined ? '' : answers[index] === item.answer ? 'known' : 'again'}`} />)}</div>
       {!connectedLessonFlow && <p className="assessment-question-source">{question.lessonTitle}</p>}
       <span className="question-kind">{question.kind}</span>
-      <h3 ref={questionHeading} tabIndex={-1}>{question.prompt}</h3>
+      <h3 ref={questionHeading} tabIndex={-1}><LearningText text={question.prompt} /></h3>
       <div className="assessment-options">{question.options.map((option, index) => {
         const selected = answers[questionIndex] === index;
         const correct = question.answer === index;
-        return <button type="button" key={`${question.id}-${index}`} disabled={revealed} className={`${selected ? 'selected' : ''} ${revealed && correct ? 'correct' : ''} ${revealed && selected && !correct ? 'incorrect' : ''}`} onClick={() => answerQuestion(index)}><span>{String.fromCharCode(65 + index)}</span><span className="option-copy">{option}</span>{revealed && correct ? <Check size={20} aria-label="Correct answer" /> : revealed && selected ? <X size={20} aria-label="Incorrect answer" /> : <Circle size={18} aria-hidden="true" />}</button>;
+        return <button type="button" key={`${question.id}-${index}`} disabled={revealed} className={`${selected ? 'selected' : ''} ${revealed && correct ? 'correct' : ''} ${revealed && selected && !correct ? 'incorrect' : ''}`} onClick={() => answerQuestion(index)}><span>{String.fromCharCode(65 + index)}</span><span className="option-copy"><LearningText text={option} /></span>{revealed && correct ? <Check size={20} aria-label="Correct answer" /> : revealed && selected ? <X size={20} aria-label="Incorrect answer" /> : <Circle size={18} aria-hidden="true" />}</button>;
       })}</div>
       {revealed && <div className={answers[questionIndex] === question.answer ? 'assessment-feedback correct' : 'assessment-feedback'} role="status" aria-live="polite">
         {answers[questionIndex] === question.answer ? <Check size={22} /> : <RotateCcw size={22} />}
-        <div><strong>{answers[questionIndex] === question.answer ? 'Correct' : 'Not quite — the correct answer is highlighted.'}</strong>
-          {question.feedback?.[answers[questionIndex]] && answers[questionIndex] !== question.answer && <p>{question.feedback[answers[questionIndex]]}</p>}
-          <p>{question.explanation.replace(/^Correct\.\s*/, '')}</p>
+        <div><strong>{answers[questionIndex] === question.answer ? 'Correct' : 'Let’s correct the model'}</strong>
+          {answers[questionIndex] !== question.answer && (question.design?.diagnostics[answers[questionIndex]]
+            ? <p className="misconception-diagnosis"><LearningText text={question.design.diagnostics[answers[questionIndex]]!.diagnosis} /></p>
+            : question.feedback?.[answers[questionIndex]] && <p>{question.feedback[answers[questionIndex]]}</p>)}
+          <p className="answer-principle"><LearningText text={question.design?.principle ?? question.options[question.answer]} /></p>
+          {!question.design && question.kind === 'Application' && question.explanation !== question.options[question.answer] && <p><LearningText text={question.explanation} /></p>}
+          {question.design?.workingTex && <Formula tex={question.design.workingTex} block />}
           {question.teaching && <>
-            <p>{question.teaching.reasoning}</p>
-            <details key={question.id} className="answer-application"><summary>See it in practice</summary><p>{question.teaching.application}</p></details>
+            <p><strong>Why:</strong> <LearningText text={question.design?.why ?? question.teaching.reasoning} /></p>
+            {question.design?.distinction && <p><strong>Keep separate:</strong> <LearningText text={question.design.distinction} /></p>}
+            <details key={question.id} className="answer-application"><summary>See it in practice</summary><p><LearningText text={question.design?.practice ?? question.teaching.application} /></p></details>
           </>}
         </div>
       </div>}
-      {revealed && <ConceptVisual key={question.lessonId} lessonId={question.lessonId} />}
-      {revealed && answers[questionIndex] !== question.answer && <details className="diagnostic-help">
-        <summary>Help me understand this answer</summary><p>Choose the part that felt uncertain.</p>
-        <div className="diagnostic-choices">{['The terminology','The relationship or formula','The procedure or safety condition','An earlier idea'].map(reason=><button type="button" key={reason} aria-pressed={difficulty[questionIndex]===reason} onClick={()=>{setDifficulty(current=>({...current,[questionIndex]:reason}));onEvidence?.({lessonId:question.lessonId,conceptId:question.cardId,activityId:question.id,dimension:'recognition',correct:false,assisted:false,misconception:`Self-reported difficulty: ${reason.toLowerCase()}`});}}>{reason}</button>)}</div>
-        {difficulty[questionIndex]&&<div className="diagnostic-response" role="status">
-          <strong>{difficulty[questionIndex]==='The terminology'?'Separate the words before the rule':difficulty[questionIndex]==='The relationship or formula'?'Start with the quantities':difficulty[questionIndex]==='An earlier idea'?'Rebuild the foundation':'Explain the reason for the sequence'}</strong>
-          <p>{difficulty[questionIndex]==='The terminology'?'Match each term to the component or quantity it names before choosing again.':difficulty[questionIndex]==='The relationship or formula'?'Identify what is given and what must be found. Check the units before choosing the relationship.':difficulty[questionIndex]==='An earlier idea'?'Review the foundation below, then return to this choice.':'Link each step to the hazard or failure it prevents, then choose again.'}</p>
-          {difficulty[questionIndex]==='The terminology'&&lessonKnowledge[question.lessonId]?.terms.slice(0,3).map(term=><p key={term.term}><strong>{term.term}:</strong> {term.definition}{term.contrast&&` ${term.contrast}`}</p>)}
-          {onOpenLesson&&lessonKnowledge[question.lessonId]?.prerequisites.map(id=><button className="text-action" type="button" key={id} onClick={()=>onOpenLesson(id)}>Revisit: {lessonById.get(id)?.title}<ArrowRight size={16}/></button>)}
-          {onPractice&&<button className="secondary-button" type="button" onClick={onPractice}>Try a worked example or investigation</button>}
-          <p>Then try a fresh question. An immediate retry is recorded as supported practice.</p>
-        </div>}
-      </details>}
+      {revealed && question.design?.followUp && <RetrievalReveal key={question.id} item={question.design.followUp} label="Try a different situation" onRate={recalled => {
+        if (!recalled) onRateCard(question.cardId, false);
+        onEvidence?.({ lessonId: question.lessonId, conceptId: question.cardId, activityId: question.id + ':transfer', dimension: 'recall', correct: recalled, assisted: true });
+      }} />}
       <div className="assessment-quiz-actions"><button type="button" onClick={restartQuiz}><RotateCcw size={17} /> Restart</button><button type="button" className="primary-button" disabled={!revealed} onClick={nextQuestion}>{questionIndex === quizQuestions.length - 1 ? 'See results' : 'Next question'} <ArrowRight size={17} /></button></div>
     </div>}
 

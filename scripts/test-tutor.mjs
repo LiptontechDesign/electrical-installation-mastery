@@ -6,14 +6,14 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { act, create } from 'react-test-renderer';
 
 await mkdir('work/tutor-tests', { recursive: true });
-await build({ entryPoints: ['app/tutor-model.ts', 'app/practice-data.ts', 'app/knowledge-graph.ts', 'app/standards-data.ts', 'app/standards-checks.ts', 'app/tutor-panels.tsx', 'app/lesson-guides.ts', 'app/assessment-data.ts', 'app/course-curriculum.ts', 'app/loop-visual.tsx', 'app/practice-workspace.tsx'], outdir: 'work/tutor-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
+await build({ entryPoints: ['app/lesson-overview.tsx', 'app/tutor-model.ts', 'app/practice-data.ts', 'app/knowledge-graph.ts', 'app/standards-data.ts', 'app/standards-checks.ts', 'app/tutor-panels.tsx', 'app/lesson-guides.ts', 'app/assessment-data.ts', 'app/course-curriculum.ts', 'app/loop-visual.tsx', 'app/practice-workspace.tsx'], outdir: 'work/tutor-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
 const model = await import('../work/tutor-tests/tutor-model.js');
 const practice = await import('../work/tutor-tests/practice-data.js');
 const graph = await import('../work/tutor-tests/knowledge-graph.js');
 const standards = await import('../work/tutor-tests/standards-data.js');
 const { loopModel } = await import('../work/tutor-tests/loop-visual.js');
 const { default: Workspace } = await import('../work/tutor-tests/practice-workspace.js');
-const panels = await import('../work/tutor-tests/tutor-panels.js');
+const {default: Overview} = await import('../work/tutor-tests/lesson-overview.js');
 const { lessonGuides } = await import('../work/tutor-tests/lesson-guides.js');
 const { standardsChecks } = await import('../work/tutor-tests/standards-checks.js');
 const { default: course } = await import('../work/tutor-tests/course-curriculum.js');
@@ -106,8 +106,7 @@ assert.ok(bank.lessons['p11-v2-l06'].questions.some(question => question.prompt.
 assert.ok(bank.lessons['p11-v2-l09'].questions.some(question => question.prompt.includes('bathroom')),'Bathroom socket rule is included in the lesson quiz');
 for(const lesson of graph.lessonById.values()) {
   const guide=lessonGuides[lesson.id];
-  const teaching=renderToStaticMarkup(h(panels.LessonCompass,{lessonId:lesson.id,guide,watched:false,onEvidence(){},onLesson(){},onPractice(){}}))
-    +renderToStaticMarkup(h(panels.StandardsLearning,{lessonId:lesson.id,text:`${lesson.title} ${guide.summary}`,onEvidence(){}}))
+  const teaching=renderToStaticMarkup(h(Overview,{lessonId:lesson.id,guide,watched:true,learningText:lesson.title,questions:bank.lessons[lesson.id].questions,onEvidence(){},onLesson(){},onRateCard(){},onRead(){},onQuiz(){}}))
     +renderToStaticMarkup(h(Workspace,{lessonId:lesson.id,...practice.practiceForLesson(`${lesson.title} ${guide.summary}`),evidence:[],onEvidence(){}}));
   assert.ok(!/<textarea|type="(?:text|number)"/.test(teaching),`${lesson.id}: learning requires no typing`);
   assert.ok(!/href="https?:/.test(teaching),`${lesson.id}: explanations remain in app`);
