@@ -5,6 +5,8 @@ import { connectionChecks } from './connection-assessments';
 import { conceptDistractors } from './concept-distractors';
 import { electricalTerms, lessonKnowledge, type KnowledgeTerm } from './knowledge-graph';
 import { checkpointPlan } from './checkpoint-plan';
+import { standaloneCheckpointQuestion } from './checkpoint-questions';
+import { recallExtras } from './recall-extras';
 
 export type Flashcard = {
   id: string;
@@ -539,6 +541,7 @@ function balancedModuleQuestions(groups: AssessmentQuestion[][], limit: number) 
 }
 
 function checkpointQuestions(groups: AssessmentQuestion[][], checkpointNumber: number, newGroupSize: number) {
+  groups = groups.map(group => group.filter(question => !/-q-(remember|practice)$/.test(question.id)));
   const target = Math.min(30, Math.max(10, groups.length * 2));
   const preferredKinds: AssessmentQuestion['kind'][] = ['Recall', 'Application', 'Safety check', 'Standards check'];
   const newGroupStart = Math.max(0,groups.length-newGroupSize);
@@ -558,7 +561,7 @@ function checkpointQuestions(groups: AssessmentQuestion[][], checkpointNumber: n
   const selectedIds = new Set(coverage.map((question) => question.id));
   const remaining = groups.map((group) => group.filter((question) => !selectedIds.has(question.id)));
   const fill = balancedModuleQuestions(remaining, Math.max(0, target - coverage.length));
-  return [...coverage, ...fill].slice(0, target);
+  return [...coverage, ...fill].slice(0, target).map(standaloneCheckpointQuestion);
 }
 
 export function buildAssessmentBank(modules: readonly CourseModule[], guides: Record<string, LessonGuide>, options: { includeCheckpoints?: boolean } = {}) {
@@ -695,12 +698,25 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         flashcards.push({ id: cardId, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, front: check.prompt, back: check.explanation, kind: 'Application' });
         questions.push({ id: `${cardId}-question`, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, cardId, prompt: check.prompt, ...rotateCorrectOption(check.correct, check.distractors, lessonIndex + 8), explanation: check.explanation, kind: 'Application' });
       }
-      lessons[lesson.id] = { lessonId: lesson.id, moduleId: module.id, flashcards, questions };
+      const extra = recallExtras[lesson.id];
+      if (extra) {
+        const cardId = `${lesson.id}-transfer-recall`;
+        flashcards.push({ id: cardId, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, front: extra.prompt, back: extra.explanation, kind: 'Application' });
+        questions.push({ id: `${cardId}-question`, cardId, lessonId: lesson.id, lessonTitle: lesson.title, moduleId: module.id, prompt: extra.prompt, explanation: extra.explanation, kind: 'Application', ...rotateCorrectOption(extra.correct, extra.distractors, lessonIndex + 9) });
+      }
+      const clearQuestions = questions
+        .filter(question => !/-q-(remember|practice)$/.test(question.id))
+        .map(standaloneCheckpointQuestion);
+      const clearCards = flashcards.filter(card => !/-(remember|practice)$/.test(card.id)).map(card => {
+        const question = clearQuestions.find(item => item.cardId === card.id);
+        return question ? { ...card, front: question.prompt, back: question.explanation } : card;
+      });
+      lessons[lesson.id] = { lessonId: lesson.id, moduleId: module.id, flashcards: clearCards, questions: clearQuestions };
 
-      if (flashcards.length < 5 || questions.length < 5) {
+      if (clearCards.length < 5 || clearQuestions.length < 5) {
         throw new Error(`Lesson ${lesson.id} does not contain enough retrieval practice.`);
       }
-      questions.forEach((question) => {
+      clearQuestions.forEach((question) => {
         if (question.options.length !== 4 || unique(question.options).length !== 4) {
           throw new Error(`Question ${question.id} must have four distinct answer choices.`);
         }

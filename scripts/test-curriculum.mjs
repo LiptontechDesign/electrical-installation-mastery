@@ -25,6 +25,15 @@ assert.equal(course.modules.length, 16);
 assert.equal(lessons.length, 246);
 assert.equal(new Set(lessons.map(lesson => lesson.videoId)).size, lessons.length, 'No repeated video');
 const bank = buildAssessmentBank(course.modules, lessonGuides);
+for (const assessment of Object.values(bank.lessons)) {
+  for (const question of assessment.questions) {
+    assert.ok(!/[“”"]|this lesson|lesson point|this video|in this situation|Which factors matter here/i.test(question.prompt), `${question.id} is independently understandable`);
+    assert.ok(!/-q-(remember|practice)$/.test(question.id), 'Quizzes test concepts rather than a video title');
+    assert.equal(new Set(question.options).size, 4, `${question.id} has four distinct choices`);
+    assert.ok(question.options.every(option => !/[“”"]/.test(option)), `${question.id} choices do not quote lesson wording`);
+    assert.ok(question.options.every(option => !['The result stays the same regardless of the circuit conditions.', 'The opposite relationship always applies.', 'Appearance alone gives the answer.'].includes(option)), `${question.id} uses specific choices`);
+  }
+}
 assert.equal(bank.allFlashcards.filter(card => card.front === 'How would you explain this lesson point in your own words?').length, 0, 'Every recall prompt names a specific concept');
 const oldBank = buildAssessmentBank(oldModules, lessonGuides, { includeCheckpoints:false });
 for (const courseModule of oldModules) for (const lesson of courseModule.lessons) {

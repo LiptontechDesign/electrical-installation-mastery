@@ -74,9 +74,8 @@ export default function AssessmentPanel({
   const knownCount = Object.values(ratings).filter(Boolean).length;
   const reviewCount = Object.values(ratings).filter((knew) => !knew).length;
   const dueCount = flashcards.filter((item) => !progress[item.id] || progress[item.id].dueAt <= calendarDay()).length;
-  const recordBeatsLegacy=Boolean(quizRecord&&quizRecord.bestScore/quizRecord.bestTotal>=bestScore/Math.max(1,questions.length));
-  const recordedBestScore=recordBeatsLegacy?quizRecord!.bestScore:bestScore;
-  const recordedBestTotal=recordBeatsLegacy?quizRecord!.bestTotal:questions.length;
+  const recordedBestScore=quizRecord?.bestScore??0;
+  const recordedBestTotal=quizRecord?.bestTotal??questions.length;
   const currentIsBest=quizQuestions.length>0&&score/quizQuestions.length>recordedBestScore/Math.max(1,recordedBestTotal);
   const visibleBestScore=currentIsBest?score:recordedBestScore;
   const visibleBestTotal=currentIsBest?quizQuestions.length:recordedBestTotal;
@@ -141,7 +140,7 @@ export default function AssessmentPanel({
     </div>}
 
     {mode === 'quiz' && !finished && question && <div className="assessment-quiz">
-      {(quizRecord||bestScore>0)&&<div className="quiz-prior-record" aria-label="Previous quiz record">{quizRecord&&<span>Latest {quizRecord.latestScore}/{quizRecord.latestTotal}</span>}<span>{quizRecord?'Best':'Previous best'} {recordedBestScore}/{recordedBestTotal}</span>{quizRecord&&<span>{quizRecord.attempts} recorded {quizRecord.attempts===1?'attempt':'attempts'}</span>}</div>}
+      {(quizRecord||bestScore>0)&&<div className="quiz-prior-record" aria-label="Previous quiz record">{quizRecord?<><span>Latest {quizRecord.latestScore}/{quizRecord.latestTotal}</span><span>Best {recordedBestScore}/{recordedBestTotal}</span><span>{quizRecord.attempts} recorded {quizRecord.attempts===1?'attempt':'attempts'}</span></>:<span>Earlier quiz: {bestScore} correct</span>}</div>}
       <div className="session-heading"><h2>Question {questionIndex + 1}<span> / {quizQuestions.length}</span></h2><span>{score} correct · {passMark} to pass</span></div>
       <div className="quiz-map" aria-hidden="true">{quizQuestions.map((item, index) => <span key={item.id} className={`${index === questionIndex ? 'current' : ''} ${answers[index] === undefined ? '' : answers[index] === item.answer ? 'known' : 'again'}`} />)}</div>
       {!connectedLessonFlow && <p className="assessment-question-source">{question.lessonTitle}</p>}
