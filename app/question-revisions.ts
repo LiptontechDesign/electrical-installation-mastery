@@ -1,6 +1,7 @@
 import type { AssessmentQuestion } from './assessment-data';
 import type { QuestionDesign, Retrieval } from './learning-design';
 import { foundationRevisions } from './foundation-revisions';
+import { moduleTwoRevisions } from './module-two-revisions';
 
 export type Revision = {
   prompt: string; correct: string;
@@ -11,6 +12,7 @@ export type Revision = {
 };
 export const questionRevisions: Record<string, Revision> = {
   ...foundationRevisions,
+  ...moduleTwoRevisions,
   'p01-l01-q-concept-1': {
     prompt: 'A neutral atom gains one electron without changing its nucleus. What happens to its net charge?',
     correct: 'It becomes negative because it has more electrons than protons.',
