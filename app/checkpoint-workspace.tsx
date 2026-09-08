@@ -23,6 +23,7 @@ type CheckpointWorkspaceProps = {
   onComplete: (score: number, total: number) => void;
   onContinue: () => void;
   onBack: () => void;
+  onRecap?: () => void;
   continueLabel: string;
 };
 
@@ -43,6 +44,7 @@ export default function CheckpointWorkspace({
   onComplete,
   onContinue,
   onBack,
+  onRecap,
   continueLabel,
 }: CheckpointWorkspaceProps) {
   const throughLesson=lessonLookup.get(checkpoint.throughLessonId);
@@ -57,6 +59,7 @@ export default function CheckpointWorkspace({
       </div>
       {completed&&<span className="checkpoint-passed"><CheckCircle2 size={17}/> Passed</span>}
     </header>
+    {onRecap&&<button type="button" className="checkpoint-back module-recap-checkpoint" onClick={onRecap}>Open this module’s recap book</button>}
     <details className="checkpoint-scope">
       <summary><span>New lessons in this checkpoint</span><small>{checkpoint.newLessonIds.length} lessons</small><ChevronDown size={18}/></summary>
       <ol>{checkpoint.newLessonIds.map((lessonId)=>{const lesson=lessonLookup.get(lessonId);return <li key={lessonId}>Lesson {String(lesson?.number??'').padStart(2,'0')} · {lesson?.title}</li>;})}</ol>

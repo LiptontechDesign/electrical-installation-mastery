@@ -1,4 +1,7 @@
 :root {
+  --recap-accent: #097887;
+  --recap-panel: #e9f5f8;
+  --recap-border: #bed5df;
   --ink: #17212b;
   --muted: #5b6978;
   --line: #dce2e8;
@@ -1150,3 +1153,112 @@ kbd {
 .browsing-controls p { margin: 10px 0; }
 .browsing-controls .switch-track { flex-shrink: 0; }
 .resume-unfinished { display: flex; align-items: center; gap: 8px; min-height: 40px; color: #34583e; font-size: 13px; font-weight: 600; text-align: left; }
+
+.module-recap-link { margin-top: 12px; border-top: 2px solid var(--recap-accent) !important; background: var(--recap-panel) !important; color: #164354 !important; }
+.overview-terminology { padding: 16px 20px; background: #edf5f6; border: 1px solid #c9dfe1; border-radius: 12px; color: #243d47; }
+.overview-terminology summary { cursor: pointer; font-weight: 650; }
+.overview-terminology dl { display: grid; gap: 16px; margin: 20px 0 12px; }
+.overview-terminology dt { font-weight: 650; }
+.overview-terminology dd { margin: 5px 0 0; line-height: 1.65; }
+.overview-terminology > p { font-size: .875rem; color: #52656b; }
+.course-topic-group { margin: 8px 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.course-topic-group > summary { padding: 12px; cursor: pointer; background: #edf3f6; color: #254456; font-size: .875rem; font-weight: 650; }
+.course-topic-group > summary small { display: block; margin: 4px 0 0 16px; color: #53646d; font-size: .875rem; font-weight: 400; }
+.module-recap-checkpoint { padding: 12px 16px; background: var(--recap-panel); border-radius: 8px; }
+.module-recap-end { margin: 24px 0; display: flex; align-items: center; gap: 18px; padding: 24px; background: var(--navy-2); color: white; border-radius: 16px; border-left: 5px solid var(--cyan); }
+.module-recap-end > div { flex: 1; }
+.module-recap-end span { font-size: .875rem; color: var(--cyan); }
+.module-recap-end h2 { margin: 6px 0; font-size: 1.4rem; }
+.module-recap-end p { margin: 0; color: #c6d9e6; }
+.module-recap-end button { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--copper); border-radius: 8px; color: #17212b; font-weight: 700; }
+.module-recap, .recap-loading { position: fixed; inset: 0; z-index: 200; background: #dce6ed; }
+.recap-loading { display: grid; place-items: center; }
+.recap-screen { height: 100%; height: 100dvh; display: flex; flex-direction: column; }
+.recap-toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 28px; background: var(--navy-2); color: white; }
+.recap-toolbar h1 { font-size: clamp(1rem,2vw,1.5rem); margin: 4px 0 0; line-height: 1.3; }
+.recap-kicker { display: block; font-size: .875rem; font-weight: 700; letter-spacing: .045em; color: var(--recap-accent); }
+.recap-toolbar .recap-kicker { color: var(--cyan); }
+.recap-tools { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.recap-tools button { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 12px; background: #20374b; color: white; border: 1px solid #476077; border-radius: 8px; font-size: .875rem; }
+.recap-reading-area { flex: 1; min-height: 0; overflow-y: auto; padding: 14px 28px 24px; scrollbar-gutter: stable; }
+.recap-safety { max-width: 1150px; margin: 0 auto 14px; color: #354b60; font-size: .875rem; line-height: 1.5; }
+.recap-spread { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; background: white; box-shadow: 0 12px 30px #152d4421; border: 1px solid var(--recap-border); border-radius: 4px 14px 14px 4px; overflow: hidden; }
+.recap-paper { padding: clamp(22px,3vw,40px); }
+.recap-principles { border-top: 5px solid var(--recap-accent); }
+.recap-principles h2 { margin: 12px 0 16px; font-size: clamp(1.45rem,2.4vw,2rem); line-height: 1.2; letter-spacing: -.02em; }
+.recap-lead { color: #354c5d; font-size: 1rem; line-height: 1.7; }
+.recap-notes { margin: 22px 0 0; display: grid; gap: 20px; }
+.recap-notes dt { font-size: 1rem; font-weight: 750; display: flex; gap: 10px; align-items: baseline; }
+.recap-notes dt span { color: var(--recap-accent); font-size: .875rem; font-variant-numeric: tabular-nums; }
+.recap-notes dd { margin: 5px 0 0 30px; line-height: 1.65; font-size: 1rem; color: #354c5d; }
+.recap-connections { border-top: 5px solid var(--copper); border-left: 1px solid var(--recap-border); background: linear-gradient(90deg,#d5e5ea 0,#f0f7fa 18px); }
+.recap-visual { margin: 28px 0 20px; }
+.recap-visual ul, .recap-visual ol { padding: 0; margin: 0; list-style: none; display: grid; gap: 12px; }
+.recap-visual li { padding: 16px 18px; border-radius: 8px; background: white; border-left: 4px solid var(--recap-accent); color: #183c50; font-size: 1rem; line-height: 1.5; overflow-wrap: anywhere; }
+.recap-visual.equation li { font-size: clamp(1rem,1.4vw,1.2rem); font-weight: 650; font-variant-numeric: tabular-nums; }
+.recap-visual.compare li:nth-child(2) { border-left-color: #be631f; }
+.recap-visual.compare li:nth-child(3) { border-left-color: #6053a1; }
+.recap-visual.flow ol { counter-reset: step; gap: 22px; }
+.recap-visual.flow li { counter-increment: step; position: relative; padding-left: 44px; }
+.recap-visual.flow li:before { content: counter(step); position: absolute; left: 16px; font-weight: 750; color: var(--recap-accent); }
+.recap-visual.flow li:not(:last-child):after { content: '↓'; position: absolute; bottom: -25px; left: 50%; color: var(--recap-accent); }
+.recap-caption { line-height: 1.7; color: #354c5d; }
+.recap-caution { padding: 14px 16px; border: 1px solid #d9aa61; border-left: 4px solid #b36a16; border-radius: 6px; background: #fff4df; color: #61400e; }
+.recap-caution strong { display: block; font-size: .875rem; margin-bottom: 6px; }
+.recap-caution p { margin: 0; font-size: 1rem; line-height: 1.6; }
+.recap-source-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--recap-border); color: #415c6d; font-size: .875rem; }
+.recap-sources { max-width: 1150px; margin: 16px auto 0; border: 1px solid var(--recap-border); background: white; border-radius: 8px; }
+.recap-sources summary { padding: 14px 18px; cursor: pointer; font-weight: 650; font-size: .875rem; }
+.recap-sources summary span { display: block; font-weight: 400; margin: 4px 0 0 18px; color: #51616f; }
+.recap-sources ul { list-style: none; padding: 0 18px; margin: 0; }
+.recap-sources li { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 0; border-top: 1px solid var(--line); }
+.recap-sources a { font-size: .875rem; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.recap-sources a svg { display: inline; vertical-align: middle; margin-left: 6px; }
+.recap-sources small { display: block; font-size: .875rem; color: #51616f; margin-top: 5px; }
+.recap-watched { display: flex; align-items: center; gap: 6px; font-size: .875rem; flex-shrink: 0; color: #315947; }
+.recap-pagination { display: grid; grid-template-columns: 1fr minmax(90px,220px) 1fr; gap: 20px; align-items: center; padding: 14px 28px max(14px,env(safe-area-inset-bottom)); background: white; border-top: 1px solid var(--recap-border); flex-shrink: 0; }
+.recap-pagination button { display: flex; align-items: center; gap: 8px; padding: 12px 18px; min-height: 44px; background: var(--navy-2); color: white; border-radius: 8px; width: fit-content; font-size: .875rem; }
+.recap-pagination button:last-child { justify-self: end; }
+.recap-pagination p { font-size: .875rem; margin: 0 0 5px; text-align: center; }
+.recap-progress { display: block; height: 3px; background: #d6e4eb; }
+.recap-progress i { display: block; height: 100%; background: var(--recap-accent); }
+.recap-contents { position: absolute; right: 20px; top: 95px; z-index: 1; width: min(440px,calc(100% - 40px)); max-height: 65dvh; overflow-y: auto; background: white; border: 1px solid var(--recap-border); border-radius: 12px; box-shadow: var(--shadow-lg); padding: 10px; }
+.recap-contents ol { margin: 0; padding: 0; list-style: none; }
+.recap-contents button { display: flex; gap: 12px; padding: 12px; width: 100%; background: transparent; border-radius: 6px; font-size: .875rem; text-align: left; min-height: 44px; }
+.recap-contents button span { color: var(--recap-accent); font-weight: 700; }
+.recap-contents button[aria-current] { background: var(--recap-panel); }
+.recap-print { display: none; }
+@media (max-width: 760px) {
+  .recap-toolbar { align-items: flex-start; flex-direction: column; gap: 12px; padding: 14px 16px; }
+  .recap-tools { width: 100%; }
+  .recap-tools button:last-child { margin-left: auto; }
+  .recap-reading-area { padding: 14px 12px 18px; }
+  .recap-spread { grid-template-columns: 1fr; }
+  .recap-paper { padding: 22px; }
+  .recap-connections { border-left: 0; background: #f0f7fa; }
+  .recap-contents { top: 150px; }
+  .recap-pagination { padding: 10px 12px max(10px,env(safe-area-inset-bottom)); gap: 8px; grid-template-columns: 1fr auto 1fr; }
+  .recap-pagination button { padding: 10px; gap: 4px; }
+  .recap-pagination button svg { width: 16px; }
+  .recap-pagination p { font-size: .875rem; }
+  .recap-sources li { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .module-recap-end { flex-wrap: wrap; }
+  .module-recap-end > div { min-width: 180px; }
+}
+@media print {
+  body:has(.module-recap) { background: white; overflow: visible !important; }
+  body:has(.module-recap) .app-shell { display: block; }
+  .app-shell:has(.module-recap) > :not(.module-recap) { display: none !important; }
+  .module-recap { position: static; background: white; display: block; }
+  .recap-screen { display: none !important; }
+  .recap-print { display: block; color: #17212b; }
+  .recap-print > header { break-after: page; padding: 24px; }
+  .recap-print > article { break-before: page; }
+  .recap-print .recap-spread { display: block; box-shadow: none; border: 0; border-radius: 0; }
+  .recap-print .recap-paper { padding: 14px; background: white; border: 0; }
+  .recap-print .recap-notes > div, .recap-print .recap-visual li { break-inside: avoid; }
+  .recap-print .recap-visual { margin: 12px 0; }
+  .recap-print .recap-source-note { display: none; }
+  .recap-print-sources { font-size: 10pt; padding: 14px; overflow-wrap: anywhere; }
+  .recap-print-sources li { margin-bottom: 8px; }
+}

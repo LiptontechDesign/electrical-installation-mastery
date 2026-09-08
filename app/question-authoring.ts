@@ -20,8 +20,7 @@ function targetTerm(question: AssessmentQuestion) {
 
 function strengthenedPrompt(question: AssessmentQuestion) {
   const answer = sentence(question.options[question.answer]);
-  const notBe = question.prompt.match(/^What can (.+) not be\?$/i);
-  if (notBe) return `Why should ${notBe[1].toLocaleLowerCase()} not be ${answer.toLocaleLowerCase()}?`;
+  // Never build a question stem by inserting its correct answer.
 
   const mustBe = question.prompt.match(/^What must (.+) be\?$/i);
   if (mustBe && answer.length < 120) return `What must ${mustBe[1].toLocaleLowerCase()} be to meet this requirement?`;

@@ -6,7 +6,7 @@
   "newQuestions": 150,
   "newFlashcards": 180,
   "requiredCheckpoints": 68,
-  "inheritedGeneratedItems": 1355,
+  "inheritedGeneratedItems": 1344,
   "findings": [
     {
       "lessonId": "p01-l01",
@@ -808,20 +808,6 @@
     },
     {
       "lessonId": "p01-pf-visual",
-      "questionId": "p01-pf-visual-q-concept-2",
-      "prompt": "What does reactive power represent, and what is its unit?",
-      "options": [
-        "Real power P transfers energy to useful work and losses and is measured in watts",
-        "Reactive power Q describes energy exchanged with electric and magnetic fields and is measured in var",
-        "Apparent power S combines RMS voltage and current and is measured in volt-amperes",
-        "Improving displacement power factor can reduce supply current at unchanged real power; it does not remove the energy the load needs"
-      ],
-      "answer": 1,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about Power Factor: See Real, Reactive and Apparent Power?"
-    },
-    {
-      "lessonId": "p01-pf-visual",
       "questionId": "p01-pf-visual-q-concept-3",
       "prompt": "Which quantities determine apparent power, and what is its unit?",
       "options": [
@@ -957,20 +943,6 @@
         "Real power is measured in amperes."
       ],
       "answer": 0,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale?"
-    },
-    {
-      "lessonId": "p06-l14",
-      "questionId": "p06-l14-q-concept-2",
-      "prompt": "What does reactive power represent, and what is its unit?",
-      "options": [
-        "Real power performs useful work and is measured in watts",
-        "Reactive power exchanges energy with fields and is measured in vars",
-        "Apparent power combines real and reactive components in volt-amperes",
-        "Reactive power is measured in ohms."
-      ],
-      "answer": 1,
       "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
       "followUp": "Without the answer choices, what is the key point to recall about Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale?"
     },
@@ -2931,20 +2903,6 @@
         "Manufacturer torque values govern terminal tightening rather than personal feel"
       ],
       "answer": 0,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about Connecting up a Consumer Unit Wired in PVC Singles - Fitting MCBs and Using a Torque Screwdriver?"
-    },
-    {
-      "lessonId": "p03-l12",
-      "questionId": "p03-l12-q-concept-3",
-      "prompt": "What must protective devices do?",
-      "options": [
-        "Each circuit conductor must terminate at its corresponding device and bar",
-        "match the designed circuit and prospective fault duty",
-        "Routing should remain identifiable without stressing insulation or terminal connections",
-        "Manufacturer torque values govern terminal tightening rather than personal feel"
-      ],
-      "answer": 1,
       "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
       "followUp": "Without the answer choices, what is the key point to recall about Connecting up a Consumer Unit Wired in PVC Singles - Fitting MCBs and Using a Torque Screwdriver?"
     },
@@ -6142,20 +6100,6 @@
     },
     {
       "lessonId": "p06-l11",
-      "questionId": "p06-l11-q-concept-2",
-      "prompt": "What does maximum demand estimate?",
-      "options": [
-        "Connected load is the total rating of all installed equipment",
-        "Maximum demand estimates the greatest load expected at one time",
-        "Diversity recognizes that many loads do not operate simultaneously",
-        "Maximum demand is the sum of all possible fault currents."
-      ],
-      "answer": 1,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about Maximum Demand and Diversity Calculation Explained - BS 7671 On-Site Guide Appendix A?"
-    },
-    {
-      "lessonId": "p06-l11",
       "questionId": "p06-l11-q-concept-3",
       "prompt": "Why is diversity considered when estimating maximum demand?",
       "options": [
@@ -8312,20 +8256,6 @@
     },
     {
       "lessonId": "p08-l03",
-      "questionId": "p08-l03-q-concept-3",
-      "prompt": "What can parallel metallic paths do?",
-      "options": [
-        "hide a loose bonding conductor",
-        "Bonding limits dangerous touch-voltage differences during an electrical fault",
-        "Long test leads must be compensated before low-resistance measurement",
-        "Visual inspection should confirm conductor route, size, and termination"
-      ],
-      "answer": 0,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about Measuring the Continuity (Resistance in Ohms) of the Protective Bonding Conductor to Water and Gas?"
-    },
-    {
-      "lessonId": "p08-l03",
       "questionId": "p08-l03-q-concept-4",
       "prompt": "What should be inspected on a protective bonding conductor?",
       "options": [
@@ -8405,20 +8335,6 @@
         "Continuity testing establishes only the conductor colour."
       ],
       "answer": 0,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about How to Test the Protective Bonding Conductor - Testing and Fault Finding Hints and Tips - AM2 & AM2S?"
-    },
-    {
-      "lessonId": "p05-l09",
-      "questionId": "p05-l09-q-concept-3",
-      "prompt": "What can parallel metallic paths do?",
-      "options": [
-        "Visual inspection should confirm identification, routing, size, and sound connections",
-        "make a defective conductor appear satisfactory",
-        "Low-resistance continuity testing checks the bonding path end to end",
-        "Parallel paths cannot affect a continuity result."
-      ],
-      "answer": 1,
       "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
       "followUp": "Without the answer choices, what is the key point to recall about How to Test the Protective Bonding Conductor - Testing and Fault Finding Hints and Tips - AM2 & AM2S?"
     },
@@ -9077,20 +8993,6 @@
         "Live loop testing requires strict exposure and instrument controls"
       ],
       "answer": 2,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about External Earth Fault Loop Impedance Ze Test - How to Remove Parallel Earth Paths - Live Testing?"
-    },
-    {
-      "lessonId": "p08-l08",
-      "questionId": "p08-l08-q-concept-2",
-      "prompt": "What can parallel metallic paths do?",
-      "options": [
-        "Ze covers the external loop before final-circuit conductor resistance",
-        "Earthing conductors must be restored and securely verified after testing",
-        "Live loop testing requires strict exposure and instrument controls",
-        "make the measured impedance appear lower"
-      ],
-      "answer": 3,
       "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
       "followUp": "Without the answer choices, what is the key point to recall about External Earth Fault Loop Impedance Ze Test - How to Remove Parallel Earth Paths - Live Testing?"
     },
@@ -11154,20 +11056,6 @@
     },
     {
       "lessonId": "p10-l09",
-      "questionId": "p10-l09-q-concept-2",
-      "prompt": "What does maximum demand estimate?",
-      "options": [
-        "Connected load assumes everything operates at rated power simultaneously",
-        "Diversity reflects that many loads do not operate together",
-        "The greatest credible load expected to operate at one time.",
-        "Power factor links useful kilowatts with supplied kilovolt-amperes"
-      ],
-      "answer": 2,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about Electrical Load Estimation - Why Do We Need It In Electrical Design Of Projects ??"
-    },
-    {
-      "lessonId": "p10-l09",
       "questionId": "p10-l09-q-concept-3",
       "prompt": "Why is maximum demand often lower than total connected load?",
       "options": [
@@ -11826,20 +11714,6 @@
     },
     {
       "lessonId": "p10-l02",
-      "questionId": "p10-l02-q-concept-2",
-      "prompt": "What must protective devices do?",
-      "options": [
-        "Pre-work tests reveal defects that a new board will not cure",
-        "suit circuit characteristics and prospective fault current",
-        "Neutral arrangements must match the selected residual-current protection scheme",
-        "Manufacturer-approved assemblies preserve device coordination and enclosure ratings"
-      ],
-      "answer": 1,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about On-Site Consumer Unit Change (Fuse Board or Fuse Box Change) Includes Live and Dead Testing?"
-    },
-    {
-      "lessonId": "p10-l02",
       "questionId": "p10-l02-q-concept-3",
       "prompt": "What must neutral arrangements do?",
       "options": [
@@ -12297,20 +12171,6 @@
         "Protective devices must coordinate with conductors and available fault current"
       ],
       "answer": 2,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about IS THIS THE WORST THREE PHASE WIRING YOU'VE EVER SEEN - Does it need a rewire??"
-    },
-    {
-      "lessonId": "p10-l08",
-      "questionId": "p10-l08-q-concept-4",
-      "prompt": "What must protective devices do?",
-      "options": [
-        "Visual disorder can indicate problems but does not quantify electrical safety",
-        "Testing reveals hidden continuity, insulation, polarity, and loop defects",
-        "Heat damage often points to overload or high-resistance connections",
-        "coordinate with conductors and available fault current"
-      ],
-      "answer": 3,
       "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
       "followUp": "Without the answer choices, what is the key point to recall about IS THIS THE WORST THREE PHASE WIRING YOU'VE EVER SEEN - Does it need a rewire??"
     },
@@ -13445,20 +13305,6 @@
         "mechanically and electrically match the holder"
       ],
       "answer": 3,
-      "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
-      "followUp": "Without the answer choices, what is the key point to recall about Lamp Technologies, Caps and Practical LED Selection?"
-    },
-    {
-      "lessonId": "p12-v2-l01",
-      "questionId": "p12-v2-l01-q-concept-3",
-      "prompt": "Why should brightness and appearance not be selected from watts alone?",
-      "options": [
-        "selected from watts alone",
-        "Lamp technology changes efficiency, heat output and service life",
-        "The lamp cap must mechanically and electrically match the holder",
-        "Replacement availability and product quality affect maintainability"
-      ],
-      "answer": 0,
       "reason": "Generated follow-up/diagnostic path remains; requires individual transcript-based editorial review.",
       "followUp": "Without the answer choices, what is the key point to recall about Lamp Technologies, Caps and Practical LED Selection?"
     },

@@ -18,7 +18,9 @@
     "predev": "node scripts/prepare-reader.mjs",
     "prebuild": "node scripts/prepare-reader.mjs",
     "test:books": "node scripts/test-books.mjs",
-    "test:curriculum": "node scripts/test-curriculum.mjs"
+    "test:curriculum": "node scripts/test-curriculum.mjs",
+    "test:recaps": "node scripts/test-module-recaps.mjs",
+    "audit:course": "node scripts/audit-course-integrity.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.8.0",

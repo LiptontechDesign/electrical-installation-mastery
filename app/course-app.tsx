@@ -28,6 +28,7 @@ import { EvidenceOverview } from './tutor-panels';
 import { useDialogFocus } from './use-dialog-focus';
 
 const PracticeWorkspace = dynamic(() => import('./practice-workspace'), { loading: () => <p role="status">Preparing your practice…</p> });
+const ModuleRecap = dynamic(() => import('./module-recap'), { loading: () => <p role="status" className="recap-loading">Opening module recap…</p> });
 
 const BookReader = dynamic(() => import('./book-reader'), { ssr: false });
 const LearningToolkit = dynamic(() => import('./learning-toolkit'), {
@@ -46,7 +47,7 @@ type AutoNextState = {
 
 type FlashcardLearningState = Record<string, { streak: number; dueAt: string; lastReviewedAt?: string }>;
 
-type YouTubePlayerInstance = { destroy: () => void };
+type YouTubePlayerInstance = { destroy: () => void; pauseVideo?: () => void };
 type YouTubeApi = {
   Player: new (element: HTMLIFrameElement, options: {
     events: {
@@ -284,6 +285,7 @@ export default function CourseApp() {
   const [searchQuery, setSearchQuery] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [bookReader, setBookReader] = useState<{ reading?: Reading } | null>(null);
+  const [recapModuleId,setRecapModuleId] = useState<string|null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
   const [toast, setToast] = useState('');
   const [selectedMasteryModuleId, setSelectedMasteryModuleId] = useState(course.modules[0].id);
@@ -1024,6 +1026,13 @@ export default function CourseApp() {
 
   const resetProgress = () => { setLearner(initialLearnerState); setActiveCheckpointId(null); setStorageBlocked(false); setReviewSession([]); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
   const moduleCompletedCount = (module: CourseModule) => module.lessons.filter((lesson) => completed.has(lesson.id)).length;
+  const openModuleRecap = (moduleId:string) => {
+    cancelAutoNext(false);
+    playerBindingRef.current?.player.pauseVideo?.();
+    setAutoPlayLessonId(null);
+    setModuleDrawerOpen(false);
+    setRecapModuleId(moduleId);
+  };
 
   const browsingControls = (
     <section className="browsing-controls" aria-label="Learning navigation">
@@ -1138,7 +1147,8 @@ export default function CourseApp() {
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => setOpenModuleId(isOpen ? '' : module.id)} aria-expanded={isOpen}>
                           <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos · {assessmentBank.checkpointsByModule[module.id].filter((checkpoint)=>passedCheckpoints.has(checkpoint.id)).length}/{assessmentBank.checkpointsByModule[module.id].length} checkpoints</small></span><ChevronDown size={18} />
                         </button>
-                        {isOpen && <div className="accordion-lessons">{module.lessons.flatMap((lesson) => {
+                        {isOpen && <div className="accordion-lessons">{assessmentBank.checkpointsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.newLessonIds.includes(activeLesson.id)||activeCheckpoint?.id===group.id||undefined}><summary><span>{group.number}. {group.title}</span><small>{group.newLessonIds.filter(id=>completed.has(id)).length}/{group.newLessonIds.length} watched</small></summary>{group.newLessonIds.flatMap((lessonId) => {
+                          const lesson=lessonLookup.get(lessonId)!;
                           const checkpoint=checkpointAfterLesson.get(lesson.id);
                           const lessonLocked=!learner.freeBrowseEnabled&&Boolean(checkpointBeforeLesson(lesson.id,learner.completedCheckpointIds));
                           const lessonRecord=learner.quizRecords[quizRecordId('lesson',lesson.id)];
@@ -1146,7 +1156,7 @@ export default function CourseApp() {
                           const rows=[<button type="button" key={lesson.id} className={`${activeLesson.id===lesson.id&&!activeCheckpoint?'active ':''}${lessonLocked?'locked':''}`} onClick={()=>chooseLesson(lesson.id)}>{lessonLocked?<LockKeyhole size={16}/>:completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lesson.duration} · {lesson.instructor}</small></span>{(bookmarked.has(lesson.id)||latestLessonScore!==undefined)&&<div className="lesson-row-state">{latestLessonScore!==undefined&&<span className={`quiz-score-chip ${latestLessonScore>=80?'passed':'review'}`}>Q {latestLessonScore}%</span>}{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
                           if(checkpoint){const passed=passedCheckpoints.has(checkpoint.id);const ready=checkpoint.lessonIds.every((id)=>completed.has(id));const latest=quizPercentage(learner.quizRecords[quizRecordId('checkpoint',checkpoint.id)]);rows.push(<button type="button" key={checkpoint.id} className={`checkpoint-map-row ${activeCheckpoint?.id===checkpoint.id?'active ':''}${passed?'passed':ready?'ready':'locked'}`} onClick={()=>startCheckpoint(checkpoint.id)}>{passed?<CheckCircle2 size={17}/>:ready?<ListChecks size={17}/>:<LockKeyhole size={16}/>}<span><strong>Checkpoint {checkpoint.number}: {checkpoint.title}</strong><small>{checkpoint.questions.length} questions · {passed?'Passed':ready?'Ready':'Complete the lesson group'}{latest!==undefined?` · Latest ${latest}%`:''}</small></span><ChevronRight size={15}/></button>);}
                           return rows;
-                        })}</div>}
+                        })}</details>)}<button type="button" className="module-recap-link" onClick={()=>openModuleRecap(module.id)}><BookOpen size={19}/><span><strong>Module recap book</strong><small>Key ideas · relationships · source videos</small></span><ChevronRight size={17}/></button></div>}
                       </section>
                     );
                   })}
@@ -1168,6 +1178,7 @@ export default function CourseApp() {
                 onOpenLesson={loadLesson}
                 onComplete={completeCheckpointQuiz}
                 onContinue={continueAfterCheckpoint}
+                onRecap={activeCheckpoint.throughLessonId===activeCheckpointModule.lessons.at(-1)?.id?()=>openModuleRecap(activeCheckpoint.moduleId):undefined}
                 onBack={()=>loadLesson(activeCheckpoint.throughLessonId)}
                 continueLabel={checkpointNextLesson?'Continue to next lesson group':'View progress'}
               />:<article className="lesson-canvas">
@@ -1250,6 +1261,7 @@ export default function CourseApp() {
 
 
                 </div>
+                {activeLesson.id===location.module.lessons.at(-1)?.id&&<section className="module-recap-end"><BookOpen size={28}/><div><span>Module {pad(location.module.number)} · Keep the essentials</span><h2>Your module recap book</h2><p>Turn through the key ideas, relationships and practical distinctions from this module’s videos.</p></div><button type="button" onClick={()=>openModuleRecap(location.module.id)}>Open recap <ArrowRight size={18}/></button></section>}
                 {activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)&&<footer className="lesson-next-card checkpoint-next"><div><span>{learner.freeBrowseEnabled?'Checkpoint still unfinished':'Required next'}</span><h3>Checkpoint {activeBoundaryCheckpoint.number}: {activeBoundaryCheckpoint.title}</h3><small>{activeBoundaryCheckpoint.questions.length} cumulative questions · 80% to pass</small></div><button type="button" onClick={()=>startCheckpoint(activeBoundaryCheckpoint.id)}>Start checkpoint <ArrowRight size={18}/></button></footer>}
                 {(learner.freeBrowseEnabled||!activeBoundaryCheckpoint||learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id))&&<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'End of video sequence'}</span><h3>{activeNextLesson?.title??'Check your progress for unfinished work'}</h3></div><button type="button" onClick={()=>activeNextLesson?goRelative(1):navigate('progress')}>{activeNextLesson?'Continue':'View progress'} <ArrowRight size={18}/></button></footer>}
               </article>}
@@ -1344,6 +1356,7 @@ export default function CourseApp() {
       )}
       {toast && <div className="toast" role="status" aria-live="polite"><CheckCircle2 size={19} /><span>{toast}</span></div>}
       {bookReader && <BookReader initialReading={bookReader.reading} onClose={() => setBookReader(null)} />}
+      {recapModuleId&&<ModuleRecap key={recapModuleId} moduleId={recapModuleId} completedLessonIds={learner.completedLessonIds} onClose={()=>setRecapModuleId(null)}/>}
     </div>
   );
 }

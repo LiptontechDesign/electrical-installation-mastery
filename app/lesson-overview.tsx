@@ -18,6 +18,7 @@ import LessonConnection from './lesson-connection';
 import LessonReading from './lesson-reading';
 import type { EvidenceInput } from './tutor-model';
 import { LessonTerms, StandardsLearning } from './tutor-panels';
+import { terminologyForLesson } from './lesson-terminology';
 
 type LessonOverviewProps = {
   lessonId: string;
@@ -59,6 +60,7 @@ export default function LessonOverview({
   const trapIndex = before.design?.diagnostics.findIndex(item => item !== null) ?? -1;
   const trap = trapIndex >= 0 ? before.design!.diagnostics[trapIndex] : null;
   const knowledge = lessonKnowledge[lessonId];
+  const terminology = terminologyForLesson(guide.keyConcepts.join(' '));
   const rate = (recalled: boolean) => {
     onRateCard(lessonId + '-overview-retrieval', recalled);
     onEvidence({ lessonId, conceptId: lessonId + '-overview-retrieval', activityId: lessonId + ':overview', dimension: 'recall', correct: recalled, assisted: false });
@@ -77,6 +79,7 @@ export default function LessonOverview({
         {sourceClarifications[lessonId] && <p><strong>Keep this distinction:</strong> <LearningText text={sourceClarifications[lessonId]} /></p>}
       </section>
       <RetrievalReveal key={target.id} item={retrieval} onRate={rate} />
+      {terminology.length>0&&<details className="overview-terminology"><summary>Connect the terms used in this lesson</summary><dl>{terminology.map(item=><div key={item.term}><dt>{item.term}</dt><dd>{item.meaning}</dd></div>)}</dl><p>Alternative names are shown together; different quantities are kept distinct.</p></details>}
       {trap && <details className="overview-trap"><summary>Common trap</summary><p><strong>Tempting explanation:</strong> <LearningText text={before.options[trapIndex]} /></p><p><strong>Where it breaks:</strong> <LearningText text={trap.diagnosis} /></p><p><strong>Correct model:</strong> <LearningText text={before.design!.why} /></p></details>}
       <section className="overview-application" aria-labelledby="practical-application-title"><span className="overview-section-icon"><Lightbulb size={20} /></span><div><span className="eyebrow neutral">Put it into practice</span><h2 id="practical-application-title">Use the idea</h2><p><LearningText text={target.design?.practice ?? target.teaching?.application ?? guide.practicalConnection} /></p></div></section>
       <StandardsLearning text={learningText} lessonId={lessonId} relevantOnly />
