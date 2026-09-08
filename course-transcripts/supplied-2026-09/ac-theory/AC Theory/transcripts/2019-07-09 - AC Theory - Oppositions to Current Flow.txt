@@ -1,0 +1,380 @@
+# AC Theory - Oppositions to Current Flow
+# https://www.youtube.com/watch?v=IJP2s3P-SB4
+
+[Music] so first of all let's just consider the difference between AC and DC electricity now let's bear in mind that current is simply a flow of electrons around a circuit so with a DC supply such as we've got on the screen here when we trigger the electrical circuit to turn something on in this case we've got a lamp you can see from the animation that the electrons are just going in one direction around the circuit and they keep going the same way round and around the circuit however when we start looking at AC electricity such as we've got connected up here we can see that actually when we turn this circuit on when we start this working can you see there that the electrons are constantly changing direction now we've got this one going quite slowly and it kind of shows that the lamp would be turning on and off as the current was changing direction in reality in practice when we look at the electricity that we use for our lights for our socket supplies and around our installation around the country we can see that that's operating at a frequency of 50 Hertz so this is actually happening much quicker so it's changing its direction going through one full cycle of change 50 times every second so in reality something like an incandescent lamp with a filament in it it doesn't have time to cool down before it goes off so we're showing an extreme view of AC electricity so that's the fundamental difference between DC and AC and DC the electrons keep going one way around the circuit in a see the current is constantly changing direction so to help us to understand how AC affects our three different kinds of lobe we're first of all going to consider what happens to our three kinds of load when we run DC current through them so let's just have a quick look that's some stuff here we're going to represent our three different loads on the board so hopefully from a previous video you can remember these are sorry first of all we've got our resistive load which is going to look something like this and then we've got our second kind of load which is our inductive load that looks something like that and then finally we've got our capacitive load which looks like that so we've got our resistive load our inductive load and our capacitive load now when we pass DC current through a resistive load as current flows three there one of the three effects of electricity becomes apparent as current flows through the resistor it generates Heat now we can use that for a number of things as we said in a previous video mostly where we're using heating but also in incandescent lamps where we want to produce light from that heat so there we can see as DC current flows through the resistive load it generates Heat and we use that heat for some purpose now when DC current flows through an inductor an interesting thing happens when the DC current flows through here it also has a magnetic effect a magnetic field is developed around the conductor and when we wrap that conductor into a coil like we do an inductive load that magnetic field is intensified and strengthened and we end up with a magnetic field that appears around the coil looking something like that this magnetic field looks similar to the magnetic field surrounding a bar magnet and it will have a north and a South Pole that looks something like this now in a capacitive load when we pass DC current through a capacitive load this behaves in possibly the most interesting way because what happens is that electrons will be forced into the circuit and those electrons start to pile up on one plate of the capacitor remembering that capacitor is basically two plates of a conductive material that are held very very close to each other but not allowed to touch and so when we apply a DC current to this electrons pile up onto one of the plates and then if we disconnect the DC load those electrons will remain on there because there is now a slight attraction between the negatively charged plate where the electrons have piled up and the electrons will have been removed from this side of the plate and therefore this will become slightly positively charged and therefore there is kind of an attraction between those and the electrons will stay where they are so what that actually means in practice for a capacitor is that current will start to flow around the circuit however once this capacitor becomes charged to the same potential as the supply voltage it stops charging so current stops flowing so in a DC circuit it looks like it allows current to flow for a period of time and then it will stop the current from flowing after a period of time so that's a really important concept to understand when we start thinking about how this affects our AC supplies so that's what's happening with our DC supply so we'll just label that up this column represents DC okay so now what we're going to do is we're going to consider what happens to our three types of load when we pass AC current through them now remember that means that in the AC circuit the current is constantly changing its direction so let's consider this when we've got AC connected up to a resistor such as we've got here from the resistive loads point of view it doesn't actually matter really which way the current is flowing through it because when the current flows through this way it's going to get hot it's going to give off the heat that we require all the light that we require and when the current changes direction and goes back the other way it's going to continue giving off that same amount of heat it doesn't matter which way the current flows so actually the resistive load is not really going to change its operation based on whether it's got DC or AC flowing through it now the interesting thing starts to occur when we consider what's happening inside an inductive load connected to an AC supply so here we've got our coil which is the inductive load and again remember this is basically what's happening inside a transformer inside the choke of a switch start fresh and light fitting inside the cause of a motor now when we pass AC current through here a magnetic field still appears around this coil okay however the behavior of the coil is now very very different because the current flows first in this direction through the coil we end up with a North Pole air and a South Pole air but then when the current changes direction and goes back the other way the poles of that magnetic field will actually change positions they'll end up swapping over like that in addition to this because an AC waveform looks something like that what that means is that the current is constantly rising and falling then changing direction rising and falling again so what that means is that the strength of the magnetic field follows the amount of current applied and therefore the strength of the magnetic field is constantly getting stronger and then weaker and then stronger and weaker with opposite polarity now this is a really important effect and it's actually the way that a transformer operates because in a previous video we showed what happened when you pass the conductor through a magnetic field we generated electricity inside the conductor if we held the conductor still and pass the magnetic field through the conductor instead we would still generate electricity inside the conductor so if we were to put another coil close to that one as this magnetic field expands and collapses it's going to cut across this winding here so we've got a magnetic field that is moving past the conductor now when we get a magnetic field moving past the conductor we generate electricity inside the conductor and so this coil generates electricity in this coil and that's the basic operation of a transformer now one interesting thing to note about this is that the current coming out of here would look like that now that might seem like a very insignificant thing this is something called Lenz's law but it's really really important to understanding how this coil introduces a new kind of opposition to current flow so as the applied current is in the positive direction the induced current will be in the negative direction now that's going to become really important because if you think back to our threatened light we didn't have a second coil inside there if you think about the circuit diagram we just had one coil and that brings us to a very interesting position so if we go back to our fresh and light fitting where we had the choke where we had the inductor or the ballast we didn't have this secondary coil in there so that didn't exist however what we did have was just one coil now this brings us to a really interesting position because we've still got a magnetic field that is expanding and collapsing and that magnetic field is still going to cut back across the coil that made it in the first place so now we've got a situation where we've got a magnetic field expanding and collapsing and cutting across a conductor so what that means what's going to happen inside this coil well if we're going to generate electricity back inside the coil that is creating the magnetic field in the first place now that brings us to a really interesting thought because the electricity that we're creating back inside this coil the waveform for it will look like this so what that means is that when current is trying to flow that way from our applied current the induced current or the current that we're creating back inside here is going to try and go in the opposite direction so what that means is that we end up with a current that is trying to oppose the applied current so can you see now we've got a new kind of opposition to current flow that is not being caused by the resistive part of the circuit it's not being caused by a resistor it's not the nature of the material it's the fact that we've got a magnetic field generating current back inside the coil that created it in the first place we give this new type of opposition to current flow a special name and we call that inductive reactance and we represent it with two letters we represent it with a capital X and then in the subscript next to it we put a little capital L in a subscript to show that that is reactants created by an inductor it's the opposition to current flow created by an inductive load so now let's talk about our capacitive load we've already established the type of opposition to current flow that an AC resistive load provides that is obviously just resistance based on the material of the resistor we've seen that the inductor produces inductive reactance which is a new kind of opposition to current flow and now we're going to have a look at how our capacitor behaves so if we've got a capacitor connected into the circuit like that when we connected this to a DC supply we saw that current would flow for a little while and then it would stop once that that capacitor reached the same potential as the supply voltage now when we apply an AC supply to a capacitor there's different factors that come into play now so as the current is going one way around the circuit electrons will start to pile up onto one of the plates now if the capacitor reaches the same potential as the supply voltage then what's going to happen is that current will then stopped flowing but then when the AC current changes its direction the electrons are then attracted back the other way they ping off one side of the capacitor and start piling up on the other so if you've got a capacitor that very quickly reaches the same potential as the supply voltage then current is going to kind of flow for a bit and then stop for a bit and then flow for a bit and then stop for a bit if you make the capacitor so that it takes a long time to charge up it will seem like current is flowing for a long time it might not even stop flowing and so what we end up with is we end up with a new kind of opposition to current flow and that opposition to current flow is created by a capacitor and we call it capacitive reactance and it's based on the frequency of the circuit so how quickly the electrons are changing direction and it's also based on how long it takes this capacitor to fill up with electrons we're going to do a whole series of videos on capacitance in the future hopefully we're just doing a very brief overview here for the time being it's enough to know that we've now got another kind of opposition to current flow created by a capacitor we call it capacitive reactance and once again it's not dependent on the resistive nature of the circuit and it's not dependent on a coil is dependent on a capacitor and we represent it with a capital X which means reactants and then we put a little C in the subscript next to the capital X to indicate that it is capacitive reactance so in this video we've seen that when we apply a DC load to a circuit the loads that we connect while the behaviors are similar when we introduce an AC supply onto those same loads we start to get a very different effect going on and it produces new kinds of opposition to current flow so let's fill in the next line of our worksheet we can see that the opposition to current flow produced by resistive load is obviously resistance and we measure that in ohms the type of opposition to current flow produced by an inductor we call that inductive reactance and that is also measured in ohms and then finally we have the type of opposition to current flow produced by a capacitive load and that is called capacitive reactance and believe it or not it's also measured in ohms so we can see there now we've got three new kinds of opposition to current flow and this is going to become really important when we start to discuss the total opposition to current flow in a circuit and then we'll finally hopefully be able to understand a little bit more deeply some of the electrical tests that we carry out when we're in the workplace so as always thank you very much for watching [Music]
+
+
+[00:02] [Music]
+[00:08] so first of all let's just consider the
+[00:11] difference between AC and DC electricity
+[00:14] now let's bear in mind that current is
+[00:17] simply a flow of electrons around a
+[00:20] circuit so with a DC supply such as
+[00:23] we've got on the screen here when we
+[00:26] trigger the electrical circuit to turn
+[00:28] something on in this case we've got a
+[00:30] lamp you can see from the animation that
+[00:32] the electrons are just going in one
+[00:35] direction around the circuit and they
+[00:37] keep going the same way round and around
+[00:39] the circuit however when we start
+[00:42] looking at AC electricity such as we've
+[00:46] got connected up here we can see that
+[00:49] actually when we turn this circuit on
+[00:52] when we start this working can you see
+[00:55] there that the electrons are constantly
+[00:57] changing direction now we've got this
+[00:59] one going quite slowly and it kind of
+[01:02] shows that the lamp would be turning on
+[01:04] and off as the current was changing
+[01:06] direction in reality in practice when we
+[01:10] look at the electricity that we use for
+[01:12] our lights for our socket supplies and
+[01:14] around our installation around the
+[01:17] country we can see that that's operating
+[01:19] at a frequency of 50 Hertz so this is
+[01:22] actually happening much quicker so it's
+[01:24] changing its direction going through one
+[01:27] full cycle of change 50 times every
+[01:29] second
+[01:30] so in reality something like an
+[01:33] incandescent lamp with a filament in it
+[01:35] it doesn't have time to cool down before
+[01:37] it goes off so we're showing an extreme
+[01:38] view of AC electricity so that's the
+[01:42] fundamental difference between DC and AC
+[01:45] and DC the electrons keep going one way
+[01:47] around the circuit in a see the current
+[01:50] is constantly changing direction so to
+[01:56] help us to understand how AC affects our
+[01:59] three different kinds of lobe we're
+[02:00] first of all going to consider what
+[02:01] happens to our three kinds of load when
+[02:03] we run DC current through them so let's
+[02:06] just have a quick look that's some stuff
+[02:08] here we're going to represent our three
+[02:09] different loads on the board so
+[02:10] hopefully from a previous video you can
+[02:12] remember
+[02:13] these are sorry first of all we've got
+[02:15] our resistive load which is going to
+[02:19] look something like this and then we've
+[02:22] got our second kind of load which is our
+[02:24] inductive load that looks something like
+[02:28] that and then finally we've got our
+[02:30] capacitive load which looks like that so
+[02:36] we've got our resistive load our
+[02:37] inductive load and our capacitive load
+[02:40] now when we pass DC current through a
+[02:43] resistive load as current flows three
+[02:46] there one of the three effects of
+[02:48] electricity becomes apparent as current
+[02:50] flows through the resistor it generates
+[02:53] Heat now we can use that for a number of
+[02:55] things as we said in a previous video
+[02:57] mostly where we're using heating but
+[02:59] also in incandescent lamps where we want
+[03:01] to produce light from that heat so there
+[03:04] we can see as DC current flows through
+[03:06] the resistive load it generates Heat and
+[03:09] we use that heat for some purpose now
+[03:12] when DC current flows through an
+[03:14] inductor an interesting thing happens
+[03:17] when the DC current flows through here
+[03:20] it also has a magnetic effect a magnetic
+[03:24] field is developed around the conductor
+[03:27] and when we wrap that conductor into a
+[03:30] coil like we do an inductive load that
+[03:33] magnetic field is intensified and
+[03:35] strengthened and we end up with a
+[03:37] magnetic field that appears around the
+[03:39] coil looking something like that this
+[03:42] magnetic field looks similar to the
+[03:44] magnetic field surrounding a bar magnet
+[03:45] and it will have a north and a South
+[03:48] Pole that looks something like this now
+[03:52] in a capacitive load when we pass DC
+[03:54] current through a capacitive load this
+[03:56] behaves in possibly the most interesting
+[03:58] way because what happens is that
+[04:00] electrons will be forced into the
+[04:03] circuit and those electrons start to
+[04:05] pile up on one plate of the capacitor
+[04:08] remembering that capacitor is basically
+[04:11] two plates of a conductive material that
+[04:14] are held very very close to each other
+[04:15] but not allowed to touch and so when we
+[04:19] apply a DC current to this electrons
+[04:20] pile up onto one of the plates and then
+[04:23] if we disconnect the DC
+[04:24] load those electrons will remain on
+[04:27] there because there is now a slight
+[04:28] attraction between the negatively
+[04:31] charged plate where the electrons have
+[04:32] piled up and the electrons will have
+[04:34] been removed from this side of the plate
+[04:37] and therefore this will become slightly
+[04:39] positively charged and therefore there
+[04:42] is kind of an attraction between those
+[04:43] and the electrons will stay where they
+[04:45] are so what that actually means in
+[04:48] practice for a capacitor is that current
+[04:51] will start to flow around the circuit
+[04:54] however once this capacitor becomes
+[04:57] charged to the same potential as the
+[04:59] supply voltage it stops charging so
+[05:02] current stops flowing so in a DC circuit
+[05:05] it looks like it allows current to flow
+[05:08] for a period of time and then it will
+[05:11] stop the current from flowing after a
+[05:13] period of time so that's a really
+[05:15] important concept to understand when we
+[05:18] start thinking about how this affects
+[05:19] our AC supplies so that's what's
+[05:23] happening with our DC supply so we'll
+[05:26] just label that up this column
+[05:27] represents DC okay so now what we're
+[05:33] going to do is we're going to consider
+[05:34] what happens to our three types of load
+[05:36] when we pass AC current through them now
+[05:38] remember that means that in the AC
+[05:40] circuit the current is constantly
+[05:42] changing its direction so let's consider
+[05:45] this when we've got AC connected up to a
+[05:49] resistor such as we've got here from the
+[05:53] resistive loads point of view it doesn't
+[05:55] actually matter really which way the
+[05:57] current is flowing through it because
+[05:59] when the current flows through this way
+[06:01] it's going to get hot it's going to give
+[06:03] off the heat that we require all the
+[06:04] light that we require and when the
+[06:06] current changes direction and goes back
+[06:07] the other way
+[06:08] it's going to continue giving off that
+[06:10] same amount of heat it doesn't matter
+[06:12] which way the current flows so actually
+[06:15] the resistive load is not really going
+[06:18] to change its operation based on whether
+[06:20] it's got DC or AC flowing through it now
+[06:24] the interesting thing starts to occur
+[06:26] when we consider what's happening inside
+[06:28] an inductive load connected to an AC
+[06:31] supply
+[06:33] so here we've got our coil which is the
+[06:36] inductive load and again remember this
+[06:38] is basically what's happening inside a
+[06:40] transformer inside the choke of a switch
+[06:43] start fresh and light fitting inside the
+[06:46] cause of a motor now when we pass AC
+[06:49] current through here a magnetic field
+[06:51] still appears around this coil okay
+[06:57] however the behavior of the coil is now
+[07:01] very very different because the current
+[07:03] flows first in this direction through
+[07:06] the coil we end up with a North Pole air
+[07:08] and a South Pole air but then when the
+[07:11] current changes direction and goes back
+[07:13] the other way the poles of that magnetic
+[07:16] field will actually change positions
+[07:19] they'll end up swapping over like that
+[07:21] in addition to this because an AC
+[07:24] waveform looks something like that
+[07:27] what that means is that the current is
+[07:29] constantly rising and falling then
+[07:32] changing direction rising and falling
+[07:35] again so what that means is that the
+[07:38] strength of the magnetic field follows
+[07:41] the amount of current applied and
+[07:43] therefore the strength of the magnetic
+[07:45] field is constantly getting stronger and
+[07:47] then weaker and then stronger and weaker
+[07:49] with opposite polarity now this is a
+[07:53] really important effect and it's
+[07:54] actually the way that a transformer
+[07:56] operates because in a previous video we
+[07:59] showed what happened when you pass the
+[08:01] conductor through a magnetic field we
+[08:03] generated electricity inside the
+[08:05] conductor if we held the conductor still
+[08:07] and pass the magnetic field through the
+[08:10] conductor instead we would still
+[08:12] generate electricity inside the
+[08:14] conductor so if we were to put another
+[08:17] coil close to that one as this magnetic
+[08:22] field expands and collapses it's going
+[08:25] to cut across this winding here so we've
+[08:28] got a magnetic field that is moving past
+[08:30] the conductor now when we get a magnetic
+[08:32] field moving past the conductor we
+[08:34] generate electricity inside the
+[08:36] conductor and so this coil generates
+[08:39] electricity in this coil and that's the
+[08:41] basic operation of a transformer now one
+[08:45] interesting thing to note about this
+[08:47] is that the current coming out of here
+[08:50] would look like that now that might seem
+[08:53] like a very insignificant thing this is
+[08:55] something called Lenz's law but it's
+[08:57] really really important to understanding
+[08:59] how this coil introduces a new kind of
+[09:03] opposition to current flow so as the
+[09:07] applied current is in the positive
+[09:11] direction the induced current will be in
+[09:14] the negative direction now that's going
+[09:17] to become really important because if
+[09:19] you think back to our threatened light
+[09:22] we didn't have a second coil inside
+[09:25] there if you think about the circuit
+[09:26] diagram we just had one coil and that
+[09:29] brings us to a very interesting position
+[09:32] so if we go back to our fresh and light
+[09:34] fitting where we had the choke where we
+[09:36] had the inductor or the ballast we
+[09:38] didn't have this secondary coil in there
+[09:41] so that didn't exist however what we did
+[09:45] have was just one coil now this brings
+[09:49] us to a really interesting position
+[09:50] because we've still got a magnetic field
+[09:52] that is expanding and collapsing and
+[09:54] that
+[09:56] magnetic field is still going to cut
+[09:59] back across the coil that made it in the
+[10:03] first place so now we've got a situation
+[10:05] where we've got a magnetic field
+[10:07] expanding and collapsing and cutting
+[10:10] across a conductor so what that means
+[10:12] what's going to happen inside this coil
+[10:15] well if we're going to generate
+[10:17] electricity back inside the coil that is
+[10:21] creating the magnetic field in the first
+[10:22] place now that brings us to a really
+[10:25] interesting thought because the
+[10:27] electricity that we're creating back
+[10:29] inside this coil the waveform for it
+[10:31] will look like this so what that means
+[10:34] is that when current is trying to flow
+[10:36] that way from our applied current the
+[10:41] induced current or the current that
+[10:43] we're creating back inside here is going
+[10:46] to try and go in the opposite direction
+[10:49] so what that means is that we end up
+[10:52] with a current that is trying to oppose
+[10:54] the applied current so can you see now
+[10:57] we've got a new kind
+[11:00] of opposition to current flow that is
+[11:03] not being caused by the resistive part
+[11:06] of the circuit it's not being caused by
+[11:08] a resistor it's not the nature of the
+[11:09] material it's the fact that we've got a
+[11:11] magnetic field generating current back
+[11:13] inside the coil that created it in the
+[11:16] first place we give this new type of
+[11:18] opposition to current flow a special
+[11:21] name and we call that inductive
+[11:24] reactance and we represent it with two
+[11:28] letters we represent it with a capital X
+[11:30] and then in the subscript next to it we
+[11:33] put a little capital L in a subscript to
+[11:36] show that that is reactants created by
+[11:39] an inductor it's the opposition to
+[11:42] current flow created by an inductive
+[11:45] load so now let's talk about our
+[11:50] capacitive load we've already
+[11:51] established the type of opposition to
+[11:53] current flow that an AC resistive load
+[11:56] provides that is obviously just
+[11:57] resistance based on the material of the
+[12:00] resistor we've seen that the inductor
+[12:03] produces inductive reactance which is a
+[12:06] new kind of opposition to current flow
+[12:08] and now we're going to have a look at
+[12:10] how our capacitor behaves so if we've
+[12:12] got a capacitor connected into the
+[12:15] circuit like that when we connected this
+[12:20] to a DC supply we saw that current would
+[12:22] flow for a little while and then it
+[12:24] would stop once that that capacitor
+[12:27] reached the same potential as the supply
+[12:29] voltage now when we apply an AC supply
+[12:32] to a capacitor there's different factors
+[12:37] that come into play now so as the
+[12:39] current is going one way around the
+[12:41] circuit electrons will start to pile up
+[12:43] onto one of the plates now if the
+[12:48] capacitor reaches the same potential as
+[12:51] the supply voltage then what's going to
+[12:56] happen is that current will then stopped
+[12:58] flowing but then when the AC
+[13:02] current changes its direction the
+[13:04] electrons are then attracted back the
+[13:06] other way they ping off one side of the
+[13:08] capacitor and start piling up on the
+[13:10] other
+[13:11] so if you've got a capacitor that very
+[13:14] quickly reaches the same potential as
+[13:16] the supply voltage then current is going
+[13:19] to kind of flow for a bit and then stop
+[13:21] for a bit and then flow for a bit and
+[13:23] then stop for a bit if you make the
+[13:25] capacitor so that it takes a long time
+[13:26] to charge up it will seem like current
+[13:29] is flowing for a long time it might not
+[13:31] even stop flowing and so what we end up
+[13:34] with is we end up with a new kind of
+[13:36] opposition to current flow and that
+[13:38] opposition to current flow is created by
+[13:40] a capacitor and we call it capacitive
+[13:43] reactance and it's based on the
+[13:47] frequency of the circuit so how quickly
+[13:49] the electrons are changing direction and
+[13:51] it's also based on how long it takes
+[13:53] this capacitor to fill up with electrons
+[13:56] we're going to do a whole series of
+[13:57] videos on capacitance in the future
+[13:59] hopefully we're just doing a very brief
+[14:01] overview here for the time being it's
+[14:03] enough to know that we've now got
+[14:04] another kind of opposition to current
+[14:06] flow created by a capacitor we call it
+[14:09] capacitive reactance and once again it's
+[14:12] not dependent on the resistive nature of
+[14:14] the circuit and it's not dependent on a
+[14:16] coil is dependent on a capacitor and we
+[14:19] represent it with a capital X which
+[14:21] means reactants and then we put a little
+[14:24] C in the subscript next to the capital X
+[14:26] to indicate that it is capacitive
+[14:28] reactance so in this video we've seen
+[14:33] that when we apply a DC load to a
+[14:37] circuit the loads that we connect while
+[14:40] the behaviors are similar when we
+[14:43] introduce an AC supply onto those same
+[14:45] loads we start to get a very different
+[14:47] effect going on and it produces new
+[14:50] kinds of opposition to current flow so
+[14:53] let's fill in the next line of our
+[14:55] worksheet we can see that the opposition
+[14:59] to current flow produced by resistive
+[15:01] load is obviously resistance and we
+[15:03] measure that in ohms the type of
+[15:06] opposition to current flow produced by
+[15:08] an inductor we call that inductive
+[15:11] reactance and that is also measured in
+[15:15] ohms and then finally we have the type
+[15:18] of opposition to current flow produced
+[15:20] by a capacitive load and that is called
+[15:22] capacitive reactance
+[15:24] and believe it or not it's also measured
+[15:26] in ohms so we can see there now we've
+[15:28] got three new kinds of opposition to
+[15:30] current flow and this is going to become
+[15:32] really important when we start to
+[15:34] discuss the total opposition to current
+[15:36] flow in a circuit and then we'll finally
+[15:38] hopefully be able to understand a little
+[15:40] bit more deeply some of the electrical
+[15:42] tests that we carry out when we're in
+[15:44] the workplace so as always thank you
+[15:47] very much for watching
+[15:52] [Music]

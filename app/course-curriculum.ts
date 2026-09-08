@@ -1,31 +1,32 @@
 import baseCourse from './course-data.json';
 import courseExtension from './course-extension-data';
 import { gapLessons } from './course-gap-data';
+import { suppliedLessons } from './supplied-lessons';
 import { formatStudyDuration, formatVideoDuration, type SourceKind } from './course-extension/builders';
 
 type BaseLesson = (typeof baseCourse.modules)[number]['lessons'][number];
 export type CurriculumLesson = Omit<BaseLesson, 'prerequisite'> & { prerequisite: string; sourceKind?: SourceKind };
 const originalModules = [...baseCourse.modules, ...courseExtension.modules];
 const catalogue = new Map<string, CurriculumLesson>(originalModules.flatMap(module => module.lessons.map(lesson => [lesson.id, { ...lesson, prerequisite: lesson.prerequisite ?? '' }] as const)));
-for (const { guide, ...lesson } of gapLessons) {
+for (const { guide, ...lesson } of [...gapLessons, ...suppliedLessons]) {
   if (catalogue.has(lesson.id)) throw new Error(`Duplicate lesson: ${lesson.id}`);
-  catalogue.set(lesson.id, { ...lesson, number: 0, url: `https://www.youtube.com/watch?v=${lesson.videoId}`, duration: formatVideoDuration(lesson.durationSeconds), rationale: guide.summary, prerequisite: '', regulationSensitive: lesson.regulationSensitive ?? true, regulationStatus: lesson.regulationStatus ?? '' });
+  catalogue.set(lesson.id, { ...lesson, number: 0, url: `https://www.youtube.com/watch?v=${lesson.videoId}`, duration: `${lesson.id.startsWith('supp-') ? '≈ ' : ''}${formatVideoDuration(lesson.durationSeconds)}`, rationale: guide.summary, prerequisite: '', regulationSensitive: lesson.regulationSensitive ?? true, regulationStatus: lesson.regulationStatus ?? '' });
 }
 const range = (prefix: string, first: number, last: number) => Array.from({ length: last - first + 1 }, (_, i) => `${prefix}${String(first + i).padStart(2, '0')}`);
 
 // Stable lesson IDs preserve notes, bookmarks, completed lessons and flashcard IDs.
 // This is the single ordering used by the website, assessments and source audits.
 const order: Record<string, string[]> = {
-  'module-01': [...range('p01-l', 1, 23), 'p01-transformers', 'p01-l24', 'p01-l25', 'p01-pf-visual', 'p01-l26', 'p01-l27', 'p06-l14', 'p03-l14', ...range('p01-l', 28, 31)],
+  'module-01': [...range('p01-l', 1, 7), 'supp-resistance-01', 'supp-resistance-02', 'p06-l06', 'supp-resistance-04', 'supp-resistance-05', 'supp-resistance-06', ...range('p01-l', 8, 18), 'supp-ac-theory-01', 'supp-ac-theory-02', ...range('p01-l', 19, 22), 'supp-ac-theory-06', 'supp-ac-theory-07', 'p01-l25', 'supp-ac-theory-08', 'supp-ac-theory-09', 'supp-ac-theory-10', 'supp-ac-theory-11', 'supp-ac-theory-12', 'supp-ac-theory-14', 'supp-ac-theory-15', 'p01-l24', 'supp-ac-theory-13', 'p01-l27', 'p01-pf-visual', 'p01-l26', 'supp-ac-theory-23', 'p01-l23', 'supp-ac-theory-21', 'supp-ac-theory-22', 'supp-ac-theory-24', 'supp-ac-theory-25', 'p06-l14', 'p01-transformers', 'p03-l14', ...range('p01-l', 28, 31)],
   'module-02': [...range('p02-l', 1, 8), ...range('p07-l', 13, 15), 'p02-l10', 'p02-l11'],
   'module-03': ['p16-l01', 'p03-l01', 'p03-l02', 'p16-l02', ...range('p03-l', 3, 11), 'p03-l13', 'p03-l12'],
   'module-04': ['p04-l02', 'p04-l03', 'p04-l01', ...range('p04-l', 4, 12), 'p16-l03', ...range('p04-l', 13, 18)],
   'module-05': ['p05-l01', 'p05-l08', 'p05-l10', ...range('p05-l', 2, 7), ...range('p05-l', 11, 15), 'p05-spd'],
-  'module-06': [...range('p07-l', 1, 5), 'p06-l13', 'p06-l01', 'p06-l11', 'p06-l12', 'p06-l02', 'p06-l03', 'p06-l06', 'p06-l04', 'p06-l10', 'p06-l05', 'p06-l07', 'p06-l08', 'p06-l09', 'p06-l15'],
+  'module-06': [...range('p07-l', 1, 5), 'p06-l13', 'p06-l01', 'p06-l11', 'p06-l12', 'p06-l02', 'p06-l03', 'p06-l04', 'p06-l10', 'p06-l05', 'p06-l07', 'p06-l08', 'p06-l09', 'p06-l15'],
   'module-07': ['p08-l01', 'p07-induction', 'p04-l21', 'p04-l19', 'p04-l20', 'p07-star-delta', 'p07-vfd', ...range('p07-l', 6, 9), 'p07-l16'],
   'module-08': ['p08-l02', 'p08-l03', 'p05-l09', 'p08-l04', 'p08-l05', 'p08-l16', 'p08-l06', 'p08-l07', 'p02-l09', 'p08-l08', 'p08-l09', 'p08-l17', ...range('p08-l', 10, 15), 'p08-periodic', 'p16-l09'],
   'module-10': ['p10-l09', 'p10-l10', 'p16-l04', 'p10-l03', 'p10-l04', 'p16-l05', 'p10-l01', 'p10-l02', ...range('p10-l', 5, 8)],
-  'module-12': ['p12-v2-l02', 'p12-v2-l01', ...range('p07-l', 10, 12), ...originalModules[11].lessons.slice(2).map(lesson => lesson.id)],
+  'module-12': ['p12-v2-l02', 'p12-v2-l01', ...range('supp-lighting-', 1, 5), ...range('p07-l', 10, 12), 'supp-lighting-09', 'supp-lighting-10', 'supp-lighting-12', ...originalModules[11].lessons.slice(2).map(lesson => lesson.id)],
   'module-14': ['p14-l01', 'p14-v2-l02', 'p14-v2-l03', 'p14-v2-l09', 'p14-v2-l04', 'p14-v2-l05', 'p14-v2-l06', 'p14-v2-l07', 'p14-l02', 'p14-v2-l10', 'p14-v2-l11', 'p14-l07', 'p14-v2-l13', 'p14-v2-l14', 'p14-l08', 'p14-v2-l16'],
   'module-16': ['p16-l06', 'p16-l07', 'p16-l08'],
 };

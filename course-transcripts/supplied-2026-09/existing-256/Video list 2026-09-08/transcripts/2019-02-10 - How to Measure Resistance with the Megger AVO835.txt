@@ -1,0 +1,229 @@
+# How to Measure Resistance with the Megger AVO835
+# https://www.youtube.com/watch?v=l4xhlm9s-Lc
+
+[Music] hello and welcome for this electrical principals training video in this video we're going to see how to set up our mega AVO 8:35 multimeter in order to measure resistance so we're going to plug some resistors into our lock tronics board and we're going to bring the camera in and we're gonna see how we measure that resistance and also explained away while we may not be quite getting the results that we expect so we'll bring the camera in and we'll see what we're doing so the first thing we need to consider is how to set up our multimeter so as we said we're using the mega AVO 8 3 5 this lovely meter that mega gave to us and what we're going to do is we're just going to see how to set this up to measure resistance so first of all we want to turn the dial to the correct setting so if we work our way around the dial here we can see that when we get to this point we get the amiga symbol and of course from our studies in electrical science we know that that is the symbol that we use to represent resistance so we'll dial that round to that symbol now what you can see on the screen here at the top is that we're currently in the auto range so again this is just going to measure the resistance and it's going to find its own range to suit the value so if you want to change the range that it's measuring at we simply press the range button to select our own now we'll demonstrate this become a little bit clearer when we actually start measuring resistances but when we press the range button we can see the auto disappears and then we're now in the ohms range we press it again we go to the killer ohms range and if we want to go back to Auto ranging we just do a long press on range and the auto will come up and you can see that because it's currently trying to measure resistance and there's nothing connected across the terminals it's automatically gone to its highest range setting so what we'll do is we'll make sure we've got the leads in the right place so we always have a lead in the common so we'll pop our black lead into the common air and then we've got our voltage terminal here which is also marked up if you look here with the little make a symbol again symbolizing resistance so we'll plug our second read in there now we've got the meter set up and ready to go we'll bring in our lock tronics board we'll plug some resistors in and we'll have a look at what values we get in so we've got our electronics board ready to go we've already plugged in a 12 ohm resistor and if we just have a quick look at the back of this resistor you can see there that it's got these colored bands on there now we're going to talk in another video about what those bands mean but we're quite interested in just one of these and we're going to have a little look in a moment at this final band here because that explains something quite interesting about what's going to be happening when we measure resistance so I'll plug that back in we've got our meter set up and ready to go so we'll hook I leads up and we'll see what resistance we're getting on our meter very good so you can see there that the meter is measuring eleven point nine one nine to go so it's automatically sets itself to the correct range which is just ohms because this is in the ohms range and it's giving us our reading there now you may be looking at this reading and thinking why is that not coming out at exactly 12 ohms well the reason for that there's a couple of reasons but the main one is that when we look at the back of the resistor here when we consider this resistor these are manufactured by the million so as they come off a production line it's very difficult to get every single resistor to have exactly the same value exactly in this case 12 ohms and so when resistors are manufactured they're manufactured within a tolerance range so there is an upper value that the resistor can get to and there is a lower value that the resistor can get to now when we look at the back of this resistor we can see that this last band here is actually a gold colored band now that gold colored band indicates the tolerance of this resistor and different tolerances have different colors and again we'll cover this in much more detail in another video but at the moment we can see this gold band and that means that this resistor has a 5% tolerance so it can be 5% above 12 it can be 5% below 12 and still be acceptable so when you start to think about those values you can see that the reading we were getting of about eleven point nine is actually well within that tolerance so we've got a good quality resistor here so we've got a mystery resistor value here we're not sure what this is but what we're going to do is we're going to use our multimeter to measure that resistance and then we'll see if we can figure out what size of resistor it is so let's hook this into the multimeter so on the multimeter now we can see it's auto-ranging and now it's given us this value it's not 0.985 now do you think that when I reveal the value of this resistor it's going to be printed on there naught point nine eight five kilo ohms well that would be a very specific resistor value so actually what will happen is we've got to again think about our tolerances so when we look at this number nor point nine eight five kilohms what number is that quite close to in reality well let's reveal the resistor and we'll have a look so we can see there we've actually got a one killer ohm resistor again allowing for the tolerance of the resistor we can see that we're coming in quite comfortably within the five percent value that's allowed so this is actually a 1 kilo ohm resistor that we're measuring at just under 1 kilo ohm naught point 984 so we'll have one more go at this we can see here we've got another mystery resistor value we'll plug in our meter and we'll see if we can figure out what the resistor value is here so we'll hook this in on that side and that side and we can see there we're coming out at nought point 509 two mega ohms okay so when you think about that we've got naught point 509 two mega ohms so that's somewhere around nought point five of a mega ohm so let's reveal the mystery resistor and see if that's what we're coming out with okay so we're actually coming out with five hundred kilo ohms now at first glance that might seem a little bit of odds with what we're seeing on the meter but when you think about your multiples and submultiples you can see here that 500 kilo ohms would be 500 thousand ohms and because here we've got naught point 5 of a mega ohm that is half a million ohms we can see that that is actually 500,000 ohms as well so we can see there that the reading on the meter the value of the resistor actually match perfectly which is really good again we've gone slightly over this time so we've got our 5% above value that we've got to stay within but we're well within that and that's really good now one more interesting thing about this is if we have a look at the back of this resistor carrier we can see that we've actually got two resistors okay now these two resistors have been connected together in a specific way from a previous video hopefully we know how these resistors are connected they are connected in parallel so they are connected in parallel so using your knowledge from resistors in parallel we should be able to figure out what the value of each of those resistors actually is so when we stop and think about it for a moment we know if we've got two resistors of the same value connected in parallel the total resistance is half of one of the resistors so if we double 500 kilotons will actually come up with one mega ohm yeah so we've got two resistors there of one mega ohm value connected in parallel which gives us a resistance of 500 kilo ohms so you can see that we don't have to manufacture every single conceivable size of resistor because we can combine them to give us other values as well so in summary we've seen how to set up the multimeter we've seen the value of the auto range function on here where it will automatically select the correct range whether that's mega ohms Killer ohms or ohms and we've also seen that we won't get perfect values of resistance on our resistors due to manufacturers tolerances so thank you very much for watching [Music] you [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome for this electrical
+[00:11] principals training video in this video
+[00:13] we're going to see how to set up our
+[00:15] mega AVO 8:35 multimeter in order to
+[00:19] measure resistance so we're going to
+[00:21] plug some resistors into our lock
+[00:22] tronics board and we're going to bring
+[00:23] the camera in and we're gonna see how we
+[00:25] measure that resistance and also
+[00:27] explained away while we may not be quite
+[00:29] getting the results that we expect so
+[00:31] we'll bring the camera in and we'll see
+[00:32] what we're doing so the first thing we
+[00:38] need to consider is how to set up our
+[00:39] multimeter so as we said we're using the
+[00:42] mega AVO 8 3 5 this lovely meter that
+[00:45] mega gave to us and what we're going to
+[00:47] do is we're just going to see how to set
+[00:48] this up to measure resistance so first
+[00:51] of all we want to turn the dial to the
+[00:52] correct setting so if we work our way
+[00:55] around the dial here we can see that
+[00:57] when we get to this point we get the
+[00:58] amiga symbol and of course from our
+[01:00] studies in electrical science we know
+[01:02] that that is the symbol that we use to
+[01:04] represent resistance so we'll dial that
+[01:07] round to that symbol now what you can
+[01:10] see on the screen here at the top is
+[01:12] that we're currently in the auto range
+[01:15] so again this is just going to measure
+[01:17] the resistance and it's going to find
+[01:21] its own range to suit the value so if
+[01:25] you want to change the range that it's
+[01:26] measuring at we simply press the range
+[01:28] button to select our own now we'll
+[01:30] demonstrate this become a little bit
+[01:32] clearer when we actually start measuring
+[01:33] resistances but when we press the range
+[01:35] button we can see the auto disappears
+[01:37] and then we're now in the ohms range we
+[01:41] press it again we go to the killer ohms
+[01:43] range and if we want to go back to Auto
+[01:45] ranging we just do a long press on range
+[01:47] and the auto will come up and you can
+[01:49] see that because it's currently trying
+[01:51] to measure resistance and there's
+[01:53] nothing connected across the terminals
+[01:54] it's automatically gone to its highest
+[01:56] range setting so what we'll do is we'll
+[01:58] make sure we've got the leads in the
+[02:00] right place so we always have a lead in
+[02:02] the common so we'll pop our black lead
+[02:04] into the common air and then we've got
+[02:07] our voltage terminal here which is also
+[02:10] marked up if you look here with the
+[02:12] little make a symbol again symbolizing
+[02:14] resistance so we'll plug our second read
+[02:15] in there now we've got the meter set up
+[02:18] and ready to go we'll bring in our lock
+[02:20] tronics board we'll plug some resistors
+[02:21] in and we'll have a look at what values
+[02:23] we get in so we've got our electronics
+[02:30] board ready to go
+[02:31] we've already plugged in a 12 ohm
+[02:32] resistor and if we just have a quick
+[02:34] look at the back of this resistor you
+[02:35] can see there that it's got these
+[02:37] colored bands on there now we're going
+[02:38] to talk in another video about what
+[02:40] those bands mean but we're quite
+[02:42] interested in just one of these and
+[02:43] we're going to have a little look in a
+[02:45] moment at this final band here because
+[02:48] that explains something quite
+[02:49] interesting about what's going to be
+[02:52] happening when we measure resistance so
+[02:53] I'll plug that back in we've got our
+[02:55] meter set up and ready to go so we'll
+[02:57] hook I leads up and we'll see what
+[03:00] resistance we're getting on our meter
+[03:03] very good so you can see there that the
+[03:05] meter is measuring eleven point nine one
+[03:09] nine to go so it's automatically sets
+[03:12] itself to the correct range which is
+[03:14] just ohms because this is in the ohms
+[03:16] range and it's giving us our reading
+[03:19] there now you may be looking at this
+[03:21] reading and thinking why is that not
+[03:23] coming out at exactly 12 ohms well the
+[03:26] reason for that there's a couple of
+[03:28] reasons but the main one is that when we
+[03:30] look at the back of the resistor here
+[03:32] when we consider this resistor these are
+[03:34] manufactured by the million so as they
+[03:36] come off a production line it's very
+[03:38] difficult to get every single
+[03:40] resistor to have exactly the same value
+[03:43] exactly in this case 12 ohms and so when
+[03:48] resistors are manufactured they're
+[03:49] manufactured within a tolerance range so
+[03:52] there is an upper value that the
+[03:54] resistor can get to and there is a lower
+[03:55] value that the resistor can get to now
+[03:58] when we look at the back of this
+[03:59] resistor we can see that this last band
+[04:02] here is actually a gold colored band now
+[04:07] that gold colored band indicates the
+[04:09] tolerance of this resistor and different
+[04:11] tolerances have different colors and
+[04:13] again we'll cover this in much more
+[04:15] detail in another video but at the
+[04:17] moment we can see this gold band and
+[04:18] that means that this resistor has a 5%
+[04:21] tolerance so it can be 5% above 12
+[04:26] it can be 5% below 12 and still be
+[04:29] acceptable so when you start to think
+[04:30] about those values you can see that the
+[04:32] reading we were getting of about eleven
+[04:34] point nine is actually well within that
+[04:36] tolerance so we've got a good quality
+[04:37] resistor here so we've got a mystery
+[04:42] resistor value here we're not sure what
+[04:44] this is but what we're going to do is
+[04:46] we're going to use our multimeter to
+[04:48] measure that resistance and then we'll
+[04:50] see if we can figure out what size of
+[04:52] resistor it is so let's hook this into
+[04:55] the multimeter so on the multimeter now
+[04:59] we can see it's auto-ranging and now
+[05:00] it's given us this value it's not 0.985
+[05:03] now do you think that when I reveal the
+[05:06] value of this resistor it's going to be
+[05:08] printed on there naught point nine eight
+[05:10] five kilo ohms well that would be a very
+[05:14] specific resistor value so actually
+[05:17] what will happen is we've got to again
+[05:18] think about our tolerances so when we
+[05:21] look at this number nor point nine eight
+[05:23] five kilohms what number is that quite
+[05:26] close to in reality well let's reveal
+[05:30] the resistor and we'll have a look so we
+[05:34] can see there we've actually got a one
+[05:36] killer ohm resistor again allowing for
+[05:39] the tolerance of the resistor we can see
+[05:41] that we're coming in quite comfortably
+[05:43] within the five percent value that's
+[05:47] allowed so this is actually a 1 kilo ohm
+[05:49] resistor that we're measuring at just
+[05:51] under 1 kilo ohm naught point 984 so
+[05:55] we'll have one more go at this we can
+[05:57] see here we've got another mystery
+[05:58] resistor value we'll plug in our meter
+[06:01] and we'll see if we can figure out what
+[06:02] the resistor value is here so we'll hook
+[06:04] this in on that side and that side and
+[06:09] we can see there we're coming out at
+[06:10] nought point 509 two mega ohms okay so
+[06:15] when you think about that we've got
+[06:16] naught point 509 two mega ohms so that's
+[06:20] somewhere around nought point five of a
+[06:25] mega ohm so let's reveal the mystery
+[06:28] resistor and see if that's what we're
+[06:29] coming out with okay so we're actually
+[06:33] coming out with five hundred kilo ohms
+[06:35] now at first glance that might seem a
+[06:37] little bit of odds with what we're
+[06:38] seeing on the meter
+[06:39] but when you think about your multiples
+[06:42] and submultiples you can see here that
+[06:44] 500 kilo ohms would be 500 thousand ohms
+[06:48] and because here we've got naught point
+[06:51] 5 of a mega ohm that is half a million
+[06:56] ohms we can see that that is actually
+[06:58] 500,000 ohms as well
+[07:00] so we can see there that the reading on
+[07:03] the meter the value of the resistor
+[07:05] actually match perfectly which is really
+[07:08] good again we've gone slightly over this
+[07:10] time so we've got our 5% above value
+[07:13] that we've got to stay within but we're
+[07:14] well within that and that's really good
+[07:16] now one more interesting thing about
+[07:18] this is if we have a look at the back of
+[07:20] this resistor carrier we can see that
+[07:22] we've actually got two resistors okay
+[07:25] now these two resistors have been
+[07:26] connected together in a specific way
+[07:28] from a previous video hopefully we know
+[07:30] how these resistors are connected they
+[07:32] are connected in parallel so they are
+[07:36] connected in parallel so using your
+[07:39] knowledge from resistors in parallel we
+[07:41] should be able to figure out what the
+[07:42] value of each of those resistors
+[07:44] actually is so when we stop and think
+[07:47] about it for a moment we know if we've
+[07:48] got two resistors of the same value
+[07:50] connected in parallel the total
+[07:52] resistance is half of one of the
+[07:54] resistors so if we double 500 kilotons
+[07:58] will actually come up with one mega ohm
+[08:02] yeah so we've got two resistors there of
+[08:05] one mega ohm value connected in parallel
+[08:07] which gives us a resistance of 500 kilo
+[08:11] ohms so you can see that we don't have
+[08:12] to manufacture every single conceivable
+[08:14] size of resistor because we can combine
+[08:18] them to give us other values as well so
+[08:24] in summary we've seen how to set up the
+[08:26] multimeter we've seen the value of the
+[08:29] auto range function on here where it
+[08:30] will automatically select the correct
+[08:32] range whether that's mega ohms Killer
+[08:34] ohms or ohms and we've also seen that we
+[08:37] won't get perfect values of resistance
+[08:39] on our resistors due to manufacturers
+[08:42] tolerances so thank you very much for
+[08:44] watching
+[08:47] [Music]
+[08:50] you
+[08:51] [Music]

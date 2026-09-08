@@ -1,0 +1,123 @@
+# THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES
+# https://www.youtube.com/watch?v=MNy60muYklo
+
+we're back on site here at parc Eirin in the Rhondda valley to look at the first fix of the property behind us now keen viewers will already spot there is one major significant difference on this property and it is supplied by three phase power and to help us understand the thinking behind this i've got Cuan Rowlands here from Western Power so why have Western Power Distribution decided to go for three fares a standard on new build properties well i think as we can see with these properties here we've got low carbon technologies all throughout heat pumps battery storage electric vehicle charges and as we know from the government's plans and strategies that's the way we're going so for us we need to make sure that our customers are ready to decarbonize as and when they can so by offering three-phase supplies uh we can ensure that the power is there sort of as and when our customers need it yeah okay so you're quite unique in terms of network operators (DNO) because the other ones we've seen you might be lucky and you might just get a slightly thicker supply cable so why what really drove the internal thinking on the three phase instead of just offering thicker cable well i think with three phases by offering the three separate phases what we can do we can keep the network balanced and offer um 400 volts 300 amps if necessary and we can also roll that phase throughout whatever housing estate that we've got to keep it balanced reduce losses on the network and that in turn then is better for our customers and our network as well okay now this property here we've already looked at in the first video and i'll put a link in the description for that we've got three phase ev charges on these properties and we've never seen them deployed at scale like we have on this estate they're all three-phase so everyone can charge it 22 kilowatts which is fantastic for anyone who does lots of miles i can tell you the rest of the property and this intrigued us is how that is managed that three phase so everything is single phase equipment but split across the different phases but from what we've seen the hob is always say on l2 how you're ensuring that that balance you know a tea time when everybody's trying to cook is is maintained across the three phases so so yeah for us it was important to uh work with zero on this project and sort of understand how best we could sort of set these houses up and wire them up to make it as easy as possible as i mentioned we want to make sure the network is balanced so by keeping everything in-house on the same phases and by rolling it at the meter here we can make sure that we balance the network throughout the housing estate and as i mentioned the losses are reduced and it's much better for for our network and customers as well yeah so in the future um you know if i want uh a 27 i'm not in one of these fantastic new homes and i want a 22 kilowatt charger at home is that possible to get that supply upgraded yeah the western power distribution um subject to qualifying for it as you mentioned sort of installing a low-carbon technology that meets the requirements then yes we will look to install or upgrade your single phase supply to a three-phase supply so that as i mentioned earlier our customers can decarbonize as and when they need to whether that be with a 22 kilowatt charger or a heat pump and so on yeah so really you are ahead of the other dns you're future-proofing your network to go and see how gary's getting on with the rest of the first fix we saw in our previous video the consumer unit well it wasn't was it was a distribution board in a two-bed dwelling i've got one very similar okay the layout is exactly the same just the configuration is slightly different i'm going to take a closer look what's going on inside here but already you can say to yourself this isn't our standard domestic dwelling fuse board and there's a lot more going on inside it let's take a closer look start with the means of isolation here three-phase and neutral main switch and in these installations as we've seen where gordon's been at the mains end we've got a steel wire on the cable from there feeding the distribution board we said in a previous video it's essential that we have surge type 2 surge protection device installed we know the amount of electronic equipment in here the last thing we want is that spike and therefore causing damage those devices i'm sure we could do a risk assessment and remove the need for that but for me it's essential it's in here so from this section here as we saw previously these circuits here feed the railed system above us and this means that we've got a standard configuration pretty much across all the properties here where we're using obviously our three phases are l1 l2 and l3 feeding up to circuits at the top here on the rail system now it might be that every single lighting circuit is on l1 the brown phase and what they do is they mix it in the actual cutout or where the metering is they rotate their phases there so we don't have all properties having the hob say on l2 because obviously that wouldn't balance it from the point of western power when we talk about metering as we did before at the bottom of the panel so we come down and look at the meter in sections here we take a deep dive into the meter and it's not just the overall power consumption from the kilowatt hour meter that gordon's got at his end that we're actually breaking down each element of the system so we can forensically measure the power say for the ground source heat pump on its own we could look at say the energy from the regulated and unregulated loads and we said that regulated loads were things that we knew were fixed values the lighting the immersion heater and unregulated loads were things like the socket outlets because obviously we could plug in at different times in different loads nice to see and also almost essential now is it individual rcd protections for circuits so we've got these Wylex AFDDs RCBOs for some of the circuits not all of them are protected by AFDDs but if we look here this one is the rcbo afd type it's also an a type rcd it's rated at 30 milliamps so it offers obviously our additional protection as well we've got our standard a-type rcds as well for some of the other circuits the panel might have come pre-configured from wireless but we can already see that this is a significant step up from standard consume units in domestic dwellings and with that step up obviously the electrician's knowledge has got to follow that as well so let's have a look at the first fix wiring where that enormous distribution board's going to end up in this cupboard here so here's our incoming supply from the meter box outside it's a 25 millimeter four core armored cable there's a separate cpc for that there's another armor cable that goes out for our uh ev charge point and then here's the conventional wiring for the house so that's the usual things we'd expect to find the ring man the lighting circuit the supply to the hob interestingly on this property, this is all in low smoke and fume cable so we see the white the white twin and earth here but then the striking difference with this property is when it comes to data wiring so we've got actually two data networks there's one for the customer so that's you know so you can have the uh yeah your wi-fi router and obviously a smart tv plugged into a data network and then there's a completely separate data network that we've got in these purple cables here that go out to the uh harvest the data from the low carbon technology so there's one for the battery system there's one for the smart hot water cylinder there's a separate one for the metering associated with the hot water cylinder another one for the ground source heat pump so lots of data and let's not forget one app to that ev charger because they all obviously have to be smart that data network sits completely separate to the one that's supplying the customer's house and that gets its data input from this fiber optic cable here that connects up with all the properties so again all the properties on this estate can work in unison as part of a smart grid system uh the control box is already in for the brains of the operation that we saw again we don't look in there because that's all hush hush what's actually going on in there um and then our thermostats the last thing there's a separate RS485 network where they're all again wired in a series boss again back into that box to do the control for the heating and finally under the stairs so we're looking for the shoe box and here's the space where the shoe box will go is our supply to our ground source heat pump and there's the floor and return from the from the system which again is buried deep underground outside and shared between a number of properties as i walk around this installation there's lots of elements of the circuitry that i could install comfortably and there's elements that i find really challenging at the moment i'm not joined by dan from Sero what's your role within the company dan so currently i install and commission the sales system inside a new belt and i also oversee the installations of the stereo system for retrofitting okay so that sounds really complicated what's your background so my background is plenty of heating i worked as a plumber for nine years and then i saw the opportunity to sort of get ahead of the game when uh all the gas started being phased out so from there then i joined Sero and did a bit of upskilling okay so i think there it's grasped the words there saw the opportunity and decided to change your skill sets you've still got your gas background and you've now effectively controlling this system the bit that maybe the electrician would find difficult or uncomfortable with maybe from there the current skill sets is it a challenge you think it's worth taking on 100 um the way the way housing is going uh this stuff's gonna be coming in thick and fast um i mean if i as a plumber can pick up the installations um within 11 months um and be comfortable supervising people doing it then any electrician if they put their mind to it will be where we'll find it easy now i never thought i'd see a two bed semi with a three-phase supply going into it any more than i'd hear a plumber has retrained and reskilled in order to install electrical systems yeah now let's just reiterate that plumber retraining as an electrician because of the opportunity now all the time of year plumbers make all the money but now it has flipped over the electrification of heat transport is a tremendous opportunity in our previous video we saw how this whole house works together as a smart energy system we've now seen the first fix in the next video we're going to look at how all of the houses on this estate are one huge energy asset and how that's controlled as always we're interested in your feedbacks and your comments what did you spot on that first fix as we walked around what questions you got for us leave them in the comments below and we'll get back to as many as we can
+
+
+[00:04] we're back on site here at parc Eirin in the Rhondda valley to look at the first fix of the property
+[00:09] behind us now keen viewers will already spot there is one major significant difference on this
+[00:14] property and it is supplied by three phase power and to help us understand the thinking behind
+[00:21] this i've got Cuan Rowlands here from Western Power so why have Western Power Distribution decided to go for three fares
+[00:27] a standard on new build properties well i think as we can see with these properties here we've
+[00:32] got low carbon technologies all throughout heat pumps battery storage electric vehicle charges
+[00:38] and as we know from the government's plans and strategies that's the way we're going
+[00:42] so for us we need to make sure that our customers are ready to decarbonize as and when they can so
+[00:48] by offering three-phase supplies uh we can ensure that the power is there sort of as and when our
+[00:53] customers need it yeah okay so you're quite unique in terms of network operators (DNO) because the other
+[00:58] ones we've seen you might be lucky and you might just get a slightly thicker supply cable so why
+[01:04] what really drove the internal thinking on the three phase instead of just offering thicker cable
+[01:09] well i think with three phases by offering the three separate phases
+[01:13] what we can do we can keep the network balanced and offer um 400 volts 300 amps if necessary
+[01:21] and we can also roll that phase throughout whatever housing estate that we've got to keep
+[01:26] it balanced reduce losses on the network and that in turn then is better for our customers and our
+[01:31] network as well okay now this property here we've already looked at in the first video and i'll put
+[01:36] a link in the description for that we've got three phase ev charges on these properties and we've
+[01:41] never seen them deployed at scale like we have on this estate they're all three-phase so everyone
+[01:46] can charge it 22 kilowatts which is fantastic for anyone who does lots of miles i can tell you
+[01:52] the rest of the property and this intrigued us is how that is managed that three phase so everything
+[01:58] is single phase equipment but split across the different phases
+[02:02] but from what we've seen the hob is always say on l2 how you're ensuring that that balance you know
+[02:08] a tea time when everybody's trying to cook is is maintained across the three phases so
+[02:13] so yeah for us it was important to uh work with zero on this project and sort of understand how
+[02:18] best we could sort of set these houses up and wire them up to make it as easy as possible
+[02:23] as i mentioned we want to make sure the network is balanced so by keeping everything in-house
+[02:28] on the same phases and by rolling it at the meter here we can make sure that we balance the network
+[02:33] throughout the housing estate and as i mentioned the losses are reduced and it's much better for
+[02:37] for our network and customers as well yeah so in the future um you know if i want uh a 27 i'm not
+[02:45] in one of these fantastic new homes and i want a 22 kilowatt charger at home is that possible to
+[02:50] get that supply upgraded yeah the western power distribution um subject to qualifying for it as
+[02:56] you mentioned sort of installing a low-carbon technology that meets the requirements then yes
+[03:01] we will look to install or upgrade your single phase supply to a three-phase supply so that as
+[03:08] i mentioned earlier our customers can decarbonize as and when they need to whether that be with a
+[03:12] 22 kilowatt charger or a heat pump and so on yeah so really you are ahead of the other dns
+[03:19] you're future-proofing your network to go and see how gary's getting on with the rest of the first
+[03:23] fix we saw in our previous video the consumer unit well it wasn't was it was a distribution
+[03:27] board in a two-bed dwelling i've got one very similar okay the layout is exactly the same just
+[03:33] the configuration is slightly different i'm going to take a closer look what's going on inside here
+[03:37] but already you can say to yourself this isn't our standard domestic dwelling fuse board and
+[03:43] there's a lot more going on inside it let's take a closer look start with the means of isolation here
+[03:48] three-phase and neutral main switch and in these installations as we've seen where gordon's been at
+[03:52] the mains end we've got a steel wire on the cable from there feeding the distribution board we said
+[03:59] in a previous video it's essential that we have surge type 2 surge protection device installed
+[04:05] we know the amount of electronic equipment in here the last thing we want is that spike and therefore
+[04:10] causing damage those devices i'm sure we could do a risk assessment and remove the need for that but
+[04:14] for me it's essential it's in here so from this section here as we saw previously these circuits
+[04:21] here feed the railed system above us and this means that we've got a standard configuration
+[04:27] pretty much across all the properties here where we're using obviously our three phases are l1 l2
+[04:33] and l3 feeding up to circuits at the top here on the rail system now it might be that every single
+[04:40] lighting circuit is on l1 the brown phase and what they do is they mix it in the actual cutout
+[04:46] or where the metering is they rotate their phases there so we don't have all properties having the
+[04:51] hob say on l2 because obviously that wouldn't balance it from the point of western power
+[04:57] when we talk about metering as we did before at the bottom of the panel so we come down and
+[05:01] look at the meter in sections here we take a deep dive into the meter and it's not just the overall
+[05:07] power consumption from the kilowatt hour meter that gordon's got at his end that we're actually
+[05:12] breaking down each element of the system so we can forensically measure the power say
+[05:18] for the ground source heat pump on its own we could look at say the energy from the regulated
+[05:24] and unregulated loads and we said that regulated loads were things that we knew were fixed values
+[05:30] the lighting the immersion heater and unregulated loads were things like the socket outlets because
+[05:35] obviously we could plug in at different times in different loads nice to see and also
+[05:40] almost essential now is it individual rcd protections for circuits so we've got these
+[05:45] Wylex AFDDs RCBOs for some of the circuits not all of them are protected by AFDDs but if
+[05:52] we look here this one is the rcbo afd type it's also an a type rcd it's rated at 30 milliamps so
+[05:59] it offers obviously our additional protection as well we've got our standard a-type rcds as well
+[06:05] for some of the other circuits the panel might have come pre-configured from wireless but we
+[06:10] can already see that this is a significant step up from standard consume units in domestic dwellings
+[06:16] and with that step up obviously the electrician's knowledge has got to follow that as well so let's
+[06:20] have a look at the first fix wiring where that enormous distribution board's going to end up in
+[06:25] this cupboard here so here's our incoming supply from the meter box outside it's a 25 millimeter
+[06:32] four core armored cable there's a separate cpc for that there's another armor cable that goes out
+[06:38] for our uh ev charge point and then here's the conventional wiring for the house so that's
+[06:43] the usual things we'd expect to find the ring man the lighting circuit the supply to the hob
+[06:48] interestingly on this property, this is all in low smoke and fume cable so we see the white
+[06:53] the white twin and earth here but then the striking difference with this property is when
+[06:59] it comes to data wiring so we've got actually two data networks there's one for the customer
+[07:05] so that's you know so you can have the uh yeah your wi-fi router and obviously a smart tv
+[07:10] plugged into a data network and then there's a completely separate data network that we've got
+[07:14] in these purple cables here that go out to the uh harvest the data from the low carbon technology
+[07:21] so there's one for the battery system there's one for the smart hot water cylinder there's a
+[07:25] separate one for the metering associated with the hot water cylinder another one for the
+[07:31] ground source heat pump so lots of data and let's not forget one app to that ev charger because they
+[07:36] all obviously have to be smart that data network sits completely separate to the one that's
+[07:42] supplying the customer's house and that gets its data input from this fiber optic cable here
+[07:49] that connects up with all the properties so again all the properties on this estate can
+[07:54] work in unison as part of a smart grid system uh the control box is already in for the brains of
+[08:01] the operation that we saw again we don't look in there because that's all hush hush what's actually
+[08:05] going on in there um and then our thermostats the last thing there's a separate RS485
+[08:10] network where they're all again wired in a series boss again back into that box to do the control
+[08:16] for the heating and finally under the stairs so we're looking for the shoe box and here's the
+[08:21] space where the shoe box will go is our supply to our ground source heat pump and there's the floor
+[08:27] and return from the from the system which again is buried deep underground outside and shared
+[08:34] between a number of properties as i walk around this installation there's lots of elements of
+[08:37] the circuitry that i could install comfortably and there's elements that i find really challenging at
+[08:42] the moment i'm not joined by dan from Sero what's your role within the company dan so currently i
+[08:47] install and commission the sales system inside a new belt and i also oversee the installations of
+[08:54] the stereo system for retrofitting okay so that sounds really complicated what's your background
+[09:00] so my background is plenty of heating i worked as a plumber for nine years and then i saw the
+[09:05] opportunity to sort of get ahead of the game when uh all the gas started being phased out so from
+[09:12] there then i joined Sero and did a bit of upskilling okay so i think there it's grasped
+[09:18] the words there saw the opportunity and decided to change your skill sets you've still got your gas
+[09:23] background and you've now effectively controlling this system the bit that maybe the electrician
+[09:29] would find difficult or uncomfortable with maybe from there the current skill sets is it
+[09:34] a challenge you think it's worth taking on 100 um the way the way housing is going uh this stuff's
+[09:39] gonna be coming in thick and fast um i mean if i as a plumber can pick up the installations um
+[09:47] within 11 months um and be comfortable supervising people doing it then any electrician if they put
+[09:53] their mind to it will be where we'll find it easy now i never thought i'd see a two bed semi with a
+[10:00] three-phase supply going into it any more than i'd hear a plumber has retrained and reskilled
+[10:05] in order to install electrical systems yeah now let's just reiterate that plumber retraining as an
+[10:10] electrician because of the opportunity now all the time of year plumbers make all the money but now
+[10:14] it has flipped over the electrification of heat transport is a tremendous opportunity in
+[10:20] our previous video we saw how this whole house works together as a smart energy system we've
+[10:26] now seen the first fix in the next video we're going to look at how all of the houses on this
+[10:32] estate are one huge energy asset and how that's controlled as always we're interested in your
+[10:37] feedbacks and your comments what did you spot on that first fix as we walked around what questions
+[10:41] you got for us leave them in the comments below and we'll get back to as many as we can

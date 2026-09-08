@@ -1,0 +1,278 @@
+# How to Find Ohm's Law From a Simple Circuit
+# https://www.youtube.com/watch?v=mYtogaIV6ZE
+
+[Music] welcome to this electrical principals training video in a previous video in this series we looked at the general relationship between voltage current and resistance in a DC circuit in this video we're going to formalize that relationship we're going to set up an experiment where we will measure voltage and current very carefully being applied to a resistor and we're going to see what the relationship is between them we're going to use this information to generate an all-important formula for electricians the formula we're going to generate will be really important for you being able to pass your exams but it's also going to be absolutely critical when you become an electrician when you're working on-site for example if you need to calculate fault current within a circuit then you'll be able to use this formula to do so if we only take one formula away from our time on college this is the one that we need to remember it's absolutely critical so what we're going to do we're going to bring the camera in and we're going to set up our circuit and we're going to try and generate this all-important formula so as we said in this video we're going to connect up a DC power supply to a resistor and we're going to measure the current flowing around this circuit what we're then going to do is look at the values that we've got and we're going to generate a very important formula from this information to help us understand the relationship more clearly between voltage current and resistance in a DC circuit so we've got a 10 ohm resistor connected into the circuit and we're currently applying a voltage to it so let's set up our multimeter over here to measure voltage and we'll measure the voltage that's being applied to the circuit so I've got a lead in the common terminal as we always do on a multimeter and we've got another lead in the terminal marked with a V because we're going to be measuring voltage so I'm then going to twist this round to measure DC volts now I'm going to be a around about two volts so I'm going to go to the 20 volt range so that I don't overshoot the reading on here so I'll connect my leads into the circuit so there's one side connected and there's the other side connected and what we're going to do here is we're going to measure the voltage so let's try powering this up and see what reading we get so we can see there that we've got exactly two volts being applied to this circuit so what we're now going to do is set up our other multimeter to measure current now we're going to set this one up to the DC current range now I think I know roughly the reading that I'm going to be getting so I'm going to make sure that my ammeter can measure within the range that I think we're going to be getting so I've got it set to measure 10 amps DC and we'll see what reading we get now it's really important to remember when we connect up a voltmeter we connect it up in parallel with the circuit when we connect up an ammeter we connect it in series with the circuit so for this part I'm going to remove a link from the circuit and then I'm going to connect up my ammeter and measure what the current is flowing around the circuits or see what that is now so you can see there that we are currently measuring - not 0.19 amps now it's interesting that's come out as a negative value now the reason for that is that the leads here are connected back to front if you like so all we've got to do to correct that is flip our leads over we send the current flowing through the ammeter in the other direction now and you can see that this has come out as a positive reading it's the same value give or take but you can see there that we've got a positive reading now instead so if you ever get a negative reading when you're doing one of these experiments all you've done is just got your leads in the wrong way around and you just need to flip them over the - just indicates a change of direction of the current so this has worked out really quite beautifully you can see here that we're applying around 2 volts just ever so slightly over worry about that little bit so we're applying around 2 volts to the circuit we're applying that voltage to a 10 ohm resistor and we're coming out with naught point 2 of an ampere so let's just think about those numbers and let's see if we can find a relationship between them so first of all let's just think about the three things that we're dealing with we're dealing with current voltage and resistance now we need to remember what the different mathematical symbols are for these three different things so let's deal with current first of all so to represent current when we're doing maths we use a capital I so I means current this comes from the original French research into electricity where I stood for intensity discharge which is what we now call current which is why we represent it with an eye so I equals current and of course we measure current in amperes the unit symbol for that is a capital a we then have voltage voltage is of course measured in volts and it's represented mathematically by a capital V so V equals voltage that is measured in volts and represented with the unit symbol capital V again and then finally we have resistance now mathematically we represent resistance with a capital R so R equals resistance we measure resistance in ohms named for George Simon ohm and we represent ohms with a unit symbol we represent that with the Greek letter Omega so let's have a think about the values that we got when we did our experiment so we got three values in we we said that the current which we represent with the capital I was equal to naught point two amp ere's we noted that the voltage represented by V is equal to 2 volts and we said that the resistance represented by an R was equal to 10 ohms so there we've got our three values now when George Simon ohms started doing his research into electricity he discovered that there's a relationship between these three things within an electrical circuit and what he basically said was that the current in a circuit is directly proportional to the voltage and that the current is inversely proportional to the resistance so let's just think about what that means in slightly simpler terms basically what Ohm's law states is that if you increase the voltage in a circuit you will increase the current that flows it also states that if you increase the resistance that flows in a circuit you will decrease the current that flows which makes perfect sense doesn't it here we're increasing the electrical push therefore more current will flow if we increase the resistance or how much the circuit is trying to stop the current from flowing then less current will flow which makes perfect sense but what we can then do is that we can take that relationship and we can put it into a formula or a mathematical formula and that looks like this we've got AI is equal to V divided by R or I equals V over R now you might have heard this before expressed in different ways you might have heard it expressed as V equals IR or something like that that's not incorrect but this is the best way to remember Ohm's law I equals V over R because this represents what's happening in the real world generally speaking we're taking some kind of resistance and that could represent one of many loads in a typical electrical installation anything that produces heat is generally a resistive load and we apply a voltage to that resistive load and again in installation terms that's normally 230 volts by applying that voltage to that resistance we cause a current to flow so you can see here that the current that results from applying a voltage to a resistor can be found by performing this calculation I equals B so try and remember this formula in this way this is a really important formula I equals B over R so let's put the numbers in that we measured within our circuit and see if the calculation works so we've got a equals B over R and then we're going to continue this on I is equal to the two volts that we applied to our circuit divided by the ten ohms of the resistor and if we do that calculation 2 divided by 10 we end up finding that I is equal to naught point 2 amperes like that so I equals V over R therefore I equals 2/10 therefore I equals Northpoint to amperes and we can start to see can't we that actually this formula starts to make a lot of sense with what we looked at in the previous video that if we increase voltage we increase current that's why the voltage has to be on the top of this formula if we make this number bigger we're making the number that we are dividing larger and if you have a bigger number up here you're going to get a bigger number over here likewise we said that if you increase resistance you decrease current that's why the resistance value has to go on the bottom of this formula because as we make this number at the bottom bigger as we make this dividing them the bigger we end up with less on this side as the answer so we end up with a smaller result so we can see from this that all of this makes perfect sense in connection with the things that we've discussed so as we increase voltage we increase current as we increase resistance we decrease current and that is what gives us this beautiful formula I equals V over R and how we can calculate current within a circuit so we've used our experiment here to generate that really really important formula it's one of the most important things that you'll need to remember for your electrical principals unit that you're doing on your course you must remember Ohm's law I is equal to V divided by R I equals V over R if you struggling to remember this keep watching this video this formula down on a post-it notes tickets on my way you're gonna see it regularly so that you can get this formula absolutely logged into your head because it's absolutely critical for electricians that we remember that form you know we're going to be using it all the time on site when we're calculating fault current when we're doing various things like that so it really really does matter so let's bear that formula in mind I equals V over R and we hope this video as always has been some help [Music]
+
+
+[00:02] [Music]
+[00:08] welcome to this electrical principals
+[00:10] training video in a previous video in
+[00:12] this series we looked at the general
+[00:14] relationship between voltage current and
+[00:16] resistance in a DC circuit in this video
+[00:20] we're going to formalize that
+[00:22] relationship we're going to set up an
+[00:24] experiment where we will measure voltage
+[00:26] and current very carefully being applied
+[00:29] to a resistor and we're going to see
+[00:31] what the relationship is between them
+[00:33] we're going to use this information to
+[00:34] generate an all-important formula for
+[00:38] electricians the formula we're going to
+[00:41] generate will be really important for
+[00:42] you being able to pass your exams but
+[00:44] it's also going to be absolutely
+[00:46] critical when you become an electrician
+[00:47] when you're working on-site for example
+[00:50] if you need to calculate fault current
+[00:52] within a circuit then you'll be able to
+[00:54] use this formula to do so if we only
+[00:56] take one formula away from our time on
+[00:58] college this is the one that we need to
+[01:00] remember it's absolutely critical so
+[01:03] what we're going to do we're going to
+[01:04] bring the camera in and we're going to
+[01:06] set up our circuit and we're going to
+[01:08] try and generate this all-important
+[01:10] formula so as we said in this video
+[01:16] we're going to connect up a DC power
+[01:18] supply to a resistor and we're going to
+[01:22] measure the current flowing around this
+[01:24] circuit what we're then going to do is
+[01:26] look at the values that we've got and
+[01:28] we're going to generate a very important
+[01:30] formula from this information to help us
+[01:33] understand the relationship more clearly
+[01:34] between voltage current and resistance
+[01:37] in a DC circuit so we've got a 10 ohm
+[01:41] resistor connected into the circuit and
+[01:43] we're currently applying a voltage to it
+[01:46] so let's set up our multimeter over here
+[01:49] to measure voltage and we'll measure the
+[01:51] voltage that's being applied to the
+[01:53] circuit so I've got a lead in the common
+[01:56] terminal as we always do on a multimeter
+[01:58] and we've got another lead in the
+[02:01] terminal marked with a V because we're
+[02:03] going to be measuring voltage so I'm
+[02:05] then going to twist this round to
+[02:08] measure DC volts now I'm going to be a
+[02:11] around about two volts so I'm going to
+[02:13] go to the 20 volt range so that I don't
+[02:15] overshoot the reading on here
+[02:18] so I'll connect my leads into the
+[02:19] circuit so there's one side connected
+[02:23] and there's the other side connected and
+[02:26] what we're going to do here is we're
+[02:28] going to measure the voltage so let's
+[02:30] try powering this up and see what
+[02:31] reading we get so we can see there that
+[02:35] we've got exactly two volts being
+[02:38] applied to this circuit so what we're
+[02:42] now going to do is set up our other
+[02:44] multimeter to measure current now we're
+[02:47] going to set this one up to the DC
+[02:49] current range now I think I know roughly
+[02:52] the reading that I'm going to be getting
+[02:53] so I'm going to make sure that my
+[02:55] ammeter
+[02:56] can measure within the range that I
+[02:58] think we're going to be getting so I've
+[02:59] got it set to measure 10 amps DC and
+[03:02] we'll see what reading we get now it's
+[03:04] really important to remember when we
+[03:05] connect up a voltmeter we connect it up
+[03:08] in parallel with the circuit when we
+[03:12] connect up an ammeter we connect it in
+[03:15] series with the circuit so for this part
+[03:17] I'm going to remove a link from the
+[03:20] circuit and then I'm going to connect up
+[03:24] my ammeter and measure what the current
+[03:29] is flowing around the circuits or see
+[03:31] what that is now so you can see there
+[03:35] that we are currently measuring - not
+[03:38] 0.19 amps now it's interesting that's
+[03:41] come out as a negative value now the
+[03:43] reason for that is that the leads here
+[03:45] are connected back to front if you like
+[03:49] so all we've got to do to correct that
+[03:50] is flip our leads over we send the
+[03:54] current flowing through the ammeter in
+[03:56] the other direction now and you can see
+[03:59] that this has come out as a positive
+[04:00] reading it's the same value give or take
+[04:02] but you can see there that we've got a
+[04:05] positive reading now instead so if you
+[04:07] ever get a negative reading when you're
+[04:08] doing one of these experiments all
+[04:09] you've done is just got your leads in
+[04:11] the wrong way around and you just need
+[04:12] to flip them over the - just indicates a
+[04:14] change of direction of the current so
+[04:17] this has worked out really quite
+[04:18] beautifully you can see here that we're
+[04:20] applying around 2 volts just ever so
+[04:22] slightly over
+[04:23] worry about that little bit so we're
+[04:25] applying around 2 volts to the circuit
+[04:27] we're applying that voltage to a 10 ohm
+[04:30] resistor and we're coming out with
+[04:32] naught point 2 of an ampere so let's
+[04:36] just think about those numbers and let's
+[04:38] see if we can find a relationship
+[04:40] between them so first of all let's just
+[04:44] think about the three things that we're
+[04:46] dealing with we're dealing with current
+[04:48] voltage and resistance now we need to
+[04:52] remember what the different mathematical
+[04:55] symbols are for these three different
+[04:57] things so let's deal with current first
+[05:00] of all so to represent current when
+[05:01] we're doing maths we use a capital I so
+[05:05] I means current this comes from the
+[05:09] original French research into
+[05:11] electricity where I stood for intensity
+[05:14] discharge which is what we now call
+[05:16] current which is why we represent it
+[05:18] with an eye so I equals current and of
+[05:22] course we measure current in amperes the
+[05:25] unit symbol for that is a capital a we
+[05:28] then have voltage voltage is of course
+[05:32] measured in volts and it's represented
+[05:34] mathematically by a capital V so V
+[05:37] equals voltage that is measured in volts
+[05:41] and represented with the unit symbol
+[05:44] capital V again and then finally we have
+[05:48] resistance now mathematically we
+[05:50] represent resistance with a capital R so
+[05:53] R equals resistance we measure
+[05:56] resistance in ohms named for George
+[05:59] Simon ohm and we represent ohms with a
+[06:04] unit symbol we represent that with the
+[06:06] Greek letter Omega so let's have a think
+[06:11] about the values that we got when we did
+[06:12] our experiment so we got three values in
+[06:16] we we said that the current which we
+[06:18] represent with the capital I was equal
+[06:21] to naught point two amp ere's we noted
+[06:25] that the voltage represented by V is
+[06:28] equal to 2 volts and we said that the
+[06:35] resistance represented by an R
+[06:37] was equal to 10 ohms so there we've got
+[06:41] our three values now when George Simon
+[06:45] ohms started doing his research into
+[06:47] electricity
+[06:48] he discovered that there's a
+[06:50] relationship between these three things
+[06:52] within an electrical circuit and what he
+[06:54] basically said was that the current in a
+[06:58] circuit is directly proportional to the
+[07:01] voltage and that the current is
+[07:03] inversely proportional to the resistance
+[07:06] so let's just think about what that
+[07:08] means in slightly simpler terms
+[07:10] basically what Ohm's law states is that
+[07:13] if you increase the voltage in a circuit
+[07:14] you will increase the current that flows
+[07:17] it also states that if you increase the
+[07:20] resistance that flows in a circuit you
+[07:22] will decrease the current that flows
+[07:24] which makes perfect sense doesn't it
+[07:26] here we're increasing the electrical
+[07:29] push therefore more current will flow if
+[07:31] we increase the resistance or how much
+[07:33] the circuit is trying to stop the
+[07:35] current from flowing then less current
+[07:37] will flow which makes perfect sense but
+[07:40] what we can then do is that we can take
+[07:42] that relationship and we can put it into
+[07:45] a formula or a mathematical formula and
+[07:48] that looks like this we've got AI is
+[07:51] equal to V divided by R or I equals V
+[07:57] over R now you might have heard this
+[07:59] before expressed in different ways you
+[08:01] might have heard it expressed as V
+[08:02] equals IR or something like that
+[08:05] that's not incorrect but this is the
+[08:08] best way to remember Ohm's law I equals
+[08:11] V over R because this represents what's
+[08:13] happening in the real world generally
+[08:15] speaking we're taking some kind of
+[08:17] resistance and that could represent one
+[08:19] of many loads in a typical electrical
+[08:22] installation anything that produces heat
+[08:24] is generally a resistive load and we
+[08:27] apply a voltage to that resistive load
+[08:29] and again in installation terms that's
+[08:32] normally 230 volts by applying that
+[08:36] voltage to that resistance we cause a
+[08:38] current to flow so you can see here that
+[08:41] the current that results from applying a
+[08:44] voltage to a resistor can be found by
+[08:48] performing this calculation I equals B
+[08:51] so try and remember this formula in this
+[08:54] way this is a really important formula I
+[08:57] equals B over R so let's put the numbers
+[09:00] in that we measured within our circuit
+[09:02] and see if the calculation works so
+[09:04] we've got a equals B over R and then
+[09:06] we're going to continue this on I is
+[09:09] equal to the two volts that we applied
+[09:13] to our circuit divided by the ten ohms
+[09:16] of the resistor and if we do that
+[09:18] calculation 2 divided by 10 we end up
+[09:22] finding that I is equal to naught point
+[09:24] 2 amperes like that so I equals V over R
+[09:29] therefore I equals 2/10 therefore I
+[09:33] equals Northpoint to amperes and we can
+[09:37] start to see can't we that actually this
+[09:39] formula starts to make a lot of sense
+[09:40] with what we looked at in the previous
+[09:41] video that if we increase voltage we
+[09:45] increase current that's why the voltage
+[09:47] has to be on the top of this formula if
+[09:50] we make this number bigger we're making
+[09:52] the number that we are dividing larger
+[09:54] and if you have a bigger number up here
+[09:56] you're going to get a bigger number over
+[09:59] here likewise we said that if you
+[10:01] increase resistance you decrease current
+[10:04] that's why the resistance value has to
+[10:06] go on the bottom of this formula because
+[10:08] as we make this number at the bottom
+[10:11] bigger as we make this dividing them the
+[10:13] bigger we end up with less on this side
+[10:18] as the answer so we end up with a
+[10:19] smaller result so we can see from this
+[10:22] that all of this makes perfect sense in
+[10:24] connection with the things that we've
+[10:25] discussed so as we increase voltage we
+[10:28] increase current as we increase
+[10:30] resistance we decrease current and that
+[10:33] is what gives us this beautiful formula
+[10:34] I equals V over R and how we can
+[10:37] calculate current within a circuit so
+[10:42] we've used our experiment here to
+[10:44] generate that really really important
+[10:47] formula it's one of the most important
+[10:49] things that you'll need to remember for
+[10:51] your electrical principals unit that
+[10:53] you're doing on your course you must
+[10:55] remember Ohm's law I is equal to V
+[10:58] divided by R I equals V over R if you
+[11:02] struggling to remember this keep
+[11:03] watching this video
+[11:05] this formula down on a post-it notes
+[11:06] tickets on my way you're gonna see it
+[11:08] regularly so that you can get this
+[11:10] formula absolutely logged into your head because
+[11:13] it's absolutely critical for
+[11:14] electricians that we remember that form
+[11:16] you know we're going to be using it all
+[11:17] the time on site when we're calculating
+[11:19] fault current when we're doing various
+[11:21] things like that so it really really
+[11:23] does matter so let's bear that formula
+[11:26] in mind I equals V over R and we hope
+[11:29] this video as always has been some help
+[11:35] [Music]

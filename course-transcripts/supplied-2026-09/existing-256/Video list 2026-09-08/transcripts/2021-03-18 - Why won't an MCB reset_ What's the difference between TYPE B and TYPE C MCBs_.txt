@@ -1,0 +1,64 @@
+# Why won't an MCB reset? What's the difference between TYPE B and TYPE C MCBs?
+# https://www.youtube.com/watch?v=sYDsESq5q9c
+
+in this video we'll be figuring out some of the reasons that an mcb may not reset after it's tripped as well as touching on the difference between a b type and a c type circuit breaker now there's a couple of different reasons why an mcb either won't turn on after it's tripped or keeps on tripping whenever you turn it on first of all i'm sure we've all come across those mcbs that have operated at the right time they've cleared a fault and then they just won't reset afterwards but why won't they reset well there's a few reasons that this may be happening the first most obvious reason is that the fault actually hasn't been cleared it's still in the system so if the fault either in the cabling or the equipment is still there then the mcb obviously won't reset now that's a bit of an obvious statement for an electrician and you're more than likely to have already cleared the fault before you attempt to reset the circuit breaker so is there another more subtle reason that the mcb won't reset well it may be that your mcb has experienced a fault that means it will never reset looking at table 7.2.71 of the onsite guide published by the iet we find that mcbs according to bs en 60898 have two values for their short circuit rating capacity the first is the icn or rated short circuit capacity and the second is the ics or service short circuit capacity what's the difference the rated short circuit capacity or icn is the maximum amount of current the circuit breaker can trip safely when a short circuit or fault of negligible impedance occurs this is generally a large amount of current and most mcbs will have a value of 6 000 amps or 10 000 amps now you can imagine that this is a lot of current to flow and if the value of fault current is more than this then the mcb may not disconnect the circuit with the fault safely for more information on how to make sure that this doesn't happen please check out our cpd package that we've created in association with Lewden on the subject of circuit protection it's totally free can be carried out at any time and is accredited by cpd uk you'll even receive a certificate to help monitor and verify that your cpd has taken place just click the link in the description below to check it out anyway coming back to our current subject if the icn value is how much current the mtb can safely disconnect what's the deal with the other rating the ics well remember this is the service short circuit capacity rather than the rated short circuit capacity and this indicates the amount of current that the mcb can disconnect and be relied upon to operate again after the fault has been cleared and the mcb reset looking at that table again we can see that for an mcb with a 10 kilo amp icn value the service short circuit capacity is only 7.5 kilo amps this means that if the mcb is protecting a circuit and a fault current with a value between 7.5 ka and 10 ka flows let's say 9 ka this current is below the rated short circuit capacity of the breaker which means it will disconnect safely however it's above the value of the service short circuit capacity of the circuit breaker which means it may not trip again in the future and indeed you may not even be able to reset the mcb it may just keep tripping off even when the circuit is healthy and actually the mcb will need replacing there is another reason that the mcb may keep tripping and this time it's not because the circuit has a fault or the circuit breaker has gone over its service short circuit capacity value or that the mcb is faulty it may simply be that the mcb and the load are mismatched what do we mean by this well mcbs that are manufactured according to bscn60898 come in three different types denoted by the letters b c and d there's no type a as it could get mixed up with the a for amps that comes after the rating on the breaker now traditionally some electricians will say that type b's are for domestic installations that you use type c's in commercial properties and type d's are to be used in industrial applications now there is a shred of truth in this but it's not actually the way that the different types are supposed to be used the type of mcb you use is determined by the type of load that you connect it to certain loads experience a phenomenon called inrush current now a load that has no inrush current is protected by a type b circuit breaker one that experiences a moderate amount of inrush current is protected by a type c and you'd use a type d circuit breaker to supply a load that experiences high values of inrush current so if you've got for example say a b type mcb protecting a load that should be protected by a c type then the inrush current could cause the mcb to trip every time the load is switched on so why does this myth about the domestic commercial and industrial applications of the different types of mcb persist and how do you know how much inrush current a load is likely to suffer from what's the downside to installing type c and type d mcbs and for that matter how do you ensure that the icn rating of your device is appropriate for the installation well you'll find the answers to these questions and more in our accredited cpd module on this subject where we take a deep dive into mcb protection including where the values for maximum earth fault loop impedance come from again please click the link in the description below to view the cpd module and receive your completion certificate now all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this video we'll be figuring out some of the reasons that an mcb may not reset after it's
+[00:04] tripped as well as touching on the difference between a b type and a c type circuit breaker
+[00:14] now there's a couple of different reasons why an mcb either won't turn on after it's tripped or
+[00:18] keeps on tripping whenever you turn it on first of all i'm sure we've all come across those mcbs
+[00:24] that have operated at the right time they've cleared a fault and then they just won't reset
+[00:29] afterwards but why won't they reset well there's a few reasons that this may be happening the first
+[00:34] most obvious reason is that the fault actually hasn't been cleared it's still in the system so if
+[00:39] the fault either in the cabling or the equipment is still there then the mcb obviously won't reset
+[00:44] now that's a bit of an obvious statement for an electrician and you're more than likely to have
+[00:48] already cleared the fault before you attempt to reset the circuit breaker so is there another
+[00:54] more subtle reason that the mcb won't reset well it may be that your mcb has experienced a fault
+[01:00] that means it will never reset looking at table 7.2.71 of the onsite guide published by the iet
+[01:07] we find that mcbs according to bs en 60898 have two values for their short circuit rating capacity
+[01:14] the first is the icn or rated short circuit capacity and the second is the ics or service
+[01:19] short circuit capacity what's the difference the rated short circuit capacity or icn is the maximum
+[01:25] amount of current the circuit breaker can trip safely when a short circuit or fault of negligible
+[01:31] impedance occurs this is generally a large amount of current and most mcbs will have a value of 6
+[01:36] 000 amps or 10 000 amps now you can imagine that this is a lot of current to flow and if the value
+[01:42] of fault current is more than this then the mcb may not disconnect the circuit with the fault
+[01:47] safely for more information on how to make sure that this doesn't happen please check out our
+[01:52] cpd package that we've created in association with Lewden on the subject of circuit protection
+[01:58] it's totally free can be carried out at any time and is accredited by cpd uk
+[02:03] you'll even receive a certificate to help monitor and verify that your cpd has taken place just
+[02:09] click the link in the description below to check it out anyway coming back to our current subject
+[02:15] if the icn value is how much current the mtb can safely disconnect what's the deal with the other
+[02:21] rating the ics well remember this is the service short circuit capacity rather than the rated
+[02:27] short circuit capacity and this indicates the amount of current that the mcb can disconnect
+[02:32] and be relied upon to operate again after the fault has been cleared and the mcb reset
+[02:39] looking at that table again we can see that for an mcb with a 10 kilo amp icn value the service
+[02:44] short circuit capacity is only 7.5 kilo amps this means that if the mcb is protecting a circuit and
+[02:50] a fault current with a value between 7.5 ka and 10 ka flows let's say 9 ka this current is below
+[02:56] the rated short circuit capacity of the breaker which means it will disconnect safely however it's
+[03:02] above the value of the service short circuit capacity of the circuit breaker which means
+[03:06] it may not trip again in the future and indeed you may not even be able to reset the mcb it may
+[03:12] just keep tripping off even when the circuit is healthy and actually the mcb will need replacing
+[03:18] there is another reason that the mcb may keep tripping and this time it's not because the
+[03:22] circuit has a fault or the circuit breaker has gone over its service short circuit capacity value
+[03:27] or that the mcb is faulty it may simply be that the mcb and the load are mismatched
+[03:33] what do we mean by this well mcbs that are manufactured according to bscn60898 come in three
+[03:39] different types denoted by the letters b c and d there's no type a as it could get mixed up with
+[03:45] the a for amps that comes after the rating on the breaker now traditionally some electricians will
+[03:50] say that type b's are for domestic installations that you use type c's in commercial properties
+[03:55] and type d's are to be used in industrial applications now there is a shred of truth
+[04:00] in this but it's not actually the way that the different types are supposed to be used the type
+[04:05] of mcb you use is determined by the type of load that you connect it to certain loads experience a
+[04:10] phenomenon called inrush current now a load that has no inrush current is protected by a type b
+[04:16] circuit breaker one that experiences a moderate amount of inrush current is protected by a type c
+[04:21] and you'd use a type d circuit breaker to supply a load that experiences high values of inrush
+[04:26] current so if you've got for example say a b type mcb protecting a load that should be protected by
+[04:31] a c type then the inrush current could cause the mcb to trip every time the load is switched on so
+[04:38] why does this myth about the domestic commercial and industrial applications of the different types
+[04:43] of mcb persist and how do you know how much inrush current a load is likely to suffer from
+[04:50] what's the downside to installing type c and type d mcbs and for that matter how do you ensure that
+[04:56] the icn rating of your device is appropriate for the installation well you'll find the answers to
+[05:01] these questions and more in our accredited cpd module on this subject where we take a deep dive
+[05:07] into mcb protection including where the values for maximum earth fault loop impedance come from again
+[05:13] please click the link in the description below to view the cpd module and receive your completion
+[05:18] certificate now all that remains in this video is to say thank you very much for watching

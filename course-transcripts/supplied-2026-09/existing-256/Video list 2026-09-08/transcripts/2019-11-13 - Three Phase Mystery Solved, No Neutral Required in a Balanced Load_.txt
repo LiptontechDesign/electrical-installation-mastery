@@ -1,0 +1,175 @@
+# Three Phase Mystery Solved, No Neutral Required in a Balanced Load?
+# https://www.youtube.com/watch?v=WZ4GG4GuSfQ
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue our research into three-phase electricity and we're going to hopefully start understanding why it was that in a previous video we could remove the neutral link from a three-phase system and still have the load powered up so we're going to get a little bit closer to understanding why that's happening in this video so in the last video we explained in some detail about the test rig that we've got set up here so we're not going to go through that again but we've made one significant change for this video instead of having lamps plugged in that we were seeing powered up and illuminated we've now got three heaters plugged into our three-phase system each of those heaters is made by the same manufacturer and they are all 2 kilowatts each so what that means is we've got three loads that are pretty much exactly the same plugged into our three-phase system now to start with we're just going to measure the current being drawn by one of the heaters and we're going to check what the current is in the line conductor and we're going to check what the current is in the neutral and hopefully from a previous video on how to use clamp meters we should be able to see what those values are and understand why they're behaving the way they are so let's do that now so first of all I'm going to power up my supply so you can see here the test rig that we were talking about in a previous video and now what I'm going to do is I'm going to turn on heater number one so this is on phase one which we refer to as l1 so if I turn my clamp meter on to measure current I'm just going to clip it over this lead and measure the current in there so we're getting about eight point four amperes there eight point four amperes now if I measure the current in the neutral what would you expect that to be at this point let's find out and there you can see again it's up to about 8.2 unpair so we've got the same current in the neutral as we've got flowing through l1 as we'd expect that to be now just to prove that there's nothing funny going on in this situation we're going to just double check those values for all three heaters so I'm going to turn on the l2 connection now and measure what we've got running through our second phase so again we've got eight point four eight point five empire's so allowing for the tolerances in the manufacturer of the heaters you can see that we're getting the same current flowing through l2 and once again we've got the same current flowing through the neutral for that conductor as well now just test l3 as well so imma turn this heater run and check the current flow through l3 and again we're getting that eight point three eight point four amp ere's quite nicely and then measure the neutral current again and we get in again the same current flowing through the neutral so we're quite comfortable with that what we're going to do next is we're going to build up to our understanding of how the current is behaving in the neutral in a couple of stages so first of all I'm going to turn two of the heaters on so I'm going to turn on l1 which is that and l2 which is there now again just measuring the current through here we've got eight point four amps coming from l1 we've got eight point three eight point four amps coming from l2 now what would you expect the neutral to be bearing in mind that the neutrals from all three of these sockets all come back through this cable here through this conductor here so the neutral current from that heater and from this heater are both flowing through this neutral now so what would you expect the current to be now at this point we normally get a range of answers from our learners but the most common one is well would you just add them together so you'd have about sixteen point seven amps somewhere around that value sixteen point eight so let's measure it and see what we get now that's interesting we get in 8.2 M pairs so actually we get in the same current as we had when we just had one heater connected that seems a little bit strange maybe let's make it even stranger we're now going to turn on the third heater so now we've got 8.4 amps going through l1 as you can see there we've got 8.4 am going through l2 as you can see there and we've got the same current flowing through l3 as you can see there so let's see what the neutral current is going to be what do you think it will be let's find out and look at that now we're getting zero amps flowing through here and actually if I remove that from the neutral conductor you can see that actually this has a little it's measuring a little bit of current isn't there at the moment anyway just because of the precision of this device so we've got naught point one amp ere's so you can see when I clip that on there we're actually measuring no current flowing through the neutral and that is the reason why on a previous video when we removed the neutral connection the three lamps we had plugged in continued to operate because actually there is no current flowing through the neutral in this circumstance we don't actually need the neutral but why is that happening so in order to really understand what's happening inside our neutral conductor and within our three-phase system we need to go back to the start of a three-phase system and look at how three-phase current is generated so let's have a look at that next so to really understand a three-phase system we need to go back and look at how three phases generated if you think about another video that featured on J Robinson training you'll remember that when we generate AC electricity we spin a loop of a conductor inside a magnetic field and that generates an AC waveform if we extract the electricity using what we call slip rings we've then also in another video looked at a cross-section of such a machine and saw how that cross-section actually related to the AC waveform that was being generated now we could do instead of just having a single loop inside our generator we could actually install three loops inside there and generate each strand of electricity separately and that would provide us with an AC waveform it would look something like this inside the machine with three conductors rotating around inside the magnetic field however on very large generators it's quite difficult to extract the electricity from inside the machine you need some fairly complex machinery and it can be quite a challenge to extract very large amounts of current from inside there that we'd need at a power generating station so instead of spinning conductors round inside a magnetic field we swap the positions of those two elements so it turns into something that looks a bit like this so now you can see what we're actually doing is we're spinning the magnetic field around inside the generator and the conductors are held in place around the outside of the generator and that makes it a lot easier to extract the electricity from the machine however as you can probably tell if we have a permanent magnet inside a generator that permanent magnet is going to be spinning around there's going to be a lot of vibration a lot of heat and over time that permanent magnet is going to lose its power so what we actually do is we use an electromagnet inside our generator and that electromagnet is powered by a DC supply and it generates a magnetic field in a very similar way to what a permanent magnet would look like we then rotate that electromagnet inside the generator exactly the same as we would a permanent magnet and we extract the electricity from inside there now if you look at the positions of the conductors around the outside of the generator you can see that they're all separated from each other a very specific angle because we've essentially got a circle which measures 360 degrees for one complete rotation the conductors are all separated from each other by 120 degrees and that's a really really important number especially when you're sitting there examples because you may well be asked that question what is the angle the conductors are separated by inside a three-phase system or possibly what is the angle of separation between the waveforms in an AC system the answer is a 120 degrees now if we take the same principle that we applied to generating our AC single-phase supply and turn it to our three-phase supply and we map the waveform that's produced you can see that we generate a waveform that now looks like this so you can see instead of just the single AC waveform we've now got three AC waveforms that are all separated from each other by a hundred and twenty degrees and that is what the three phase supply looks like coming out of the generator and it's very similar to what it looks like when that enters our supply that we've got in this experiment now as we said during the video once all of the currents meet together in the neutral of the three-phase supply for some reason we end up with zero amps in there well how can that be well let's just have a look at the three phase waveform that we produced now what we could do is view this as being the current waveform so we'll look at it from that point of view and we can make it so that each waveform is peaking at eight point four amps now very the negative people who know a lot about this will start to tell me off because I'm not using the RMS value but this is just to illustrate a point and will explain about RMS in a future video now if we look at any point on that three phase waveform you can see that all of the waveforms are peaking at about eight point four amp ere's if we pick any point along those three waveforms and put a line in on them and measure the currents at any moment in time we get three different values of current in each one of the conductors however if we add those three values together what do we get well you can see that by adding those three values together we actually end up with zero and what that means is that at any point along this three phase waveform the combined currents we add them together becomes zero amperes and that is the reason why when those currents all meet each other in the neutral connection of our system we end up with zero amps in the neutral and actually if you have what's called a balanced three-phase load which is what we've kind of simulated in this video you don't need a neutral in the system and that's the reason why a lot of motors don't have a neutral connection because you've got three windings in the motor that are all using the same power all drawing the same amount of current and therefore we can connect the other ends of those coils together and when those currents meet each other they just cancel each other out and we don't need a return path for that occurring so hopefully this video has shed a little bit of light on the matter of that disconnected neutral that we saw in a previous video and also helped us to understand how there can be zero amps running through the neutral and we've got a full load connected however it may well have raised a few more questions in your mind you might be wondering about some things we need to bear in mind that if we've got a three-phase system like we've got here if we're only connect up connecting up a single-phase load such as a heater a lighting circuit a socket circuit something like that then obviously we must have the neutral connected only when we've got a properly balanced load that we know is going to remain balanced such as the example of a motor can we get away without a neutral in this situation these three heaters would actually all get to heat and start clicking on and off at different times and that would change the amount of current that's flowing through the neutral so we still need a neutral in that circumstance what we need to do now is to start thinking about what happens when our loads are unbalanced all of the time so in other words if I had three heaters plugged in here that all had different power ratings then how would I start to calculate the neutral current in that circumstance well that's going to be covered in future videos and I'm actually going to show you several different ways that you can calculate that neutral current I'm going to show you the way that I like I'm going to show you some of the ways that perhaps are required for you to carry out by your awarding body depending who you doing your electrical studies under so at this point all that's left to say really is thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music] hello and welcome to this electrical
+[00:11] principals training video in this video we're going to continue our research
+[00:14] into three-phase electricity and we're going to hopefully start understanding
+[00:18] why it was that in a previous video we could remove the neutral link from a
+[00:22] three-phase system and still have the load powered up so we're going to get a
+[00:27] little bit closer to understanding why that's happening in this video so in the
+[00:32] last video we explained in some detail about the test rig that we've got set up
+[00:36] here so we're not going to go through that again but we've made one
+[00:38] significant change for this video instead of having lamps plugged in that
+[00:43] we were seeing powered up and illuminated we've now got three heaters
+[00:47] plugged into our three-phase system each of those heaters is made by the same
+[00:52] manufacturer and they are all 2 kilowatts each so what that means is
+[00:57] we've got three loads that are pretty much exactly the same plugged into our
+[01:01] three-phase system now to start with we're just going to measure the current
+[01:05] being drawn by one of the heaters and we're going to check what the current is
+[01:09] in the line conductor and we're going to check what the current is in the neutral
+[01:13] and hopefully from a previous video on how to use clamp meters we should be
+[01:17] able to see what those values are and understand why they're behaving the way
+[01:22] they are so let's do that now so first of all I'm going to power up my supply
+[01:27] so you can see here the test rig that we were talking about in a previous video
+[01:31] and now what I'm going to do is I'm going to turn on heater number one so
+[01:36] this is on phase one which we refer to as l1 so if I turn my clamp meter on to
+[01:43] measure current I'm just going to clip it over this lead and measure the
+[01:48] current in there so we're getting about eight point four amperes there eight
+[01:52] point four amperes now if I measure the current in the neutral what would you
+[01:57] expect that to be at this point let's find out
+[02:03] and there you can see again it's up to about 8.2 unpair so we've got the same
+[02:08] current in the neutral as we've got flowing through l1 as we'd expect that
+[02:12] to be now just to prove that there's nothing funny going on in this situation
+[02:20] we're going to just double check those values for all three heaters so I'm
+[02:24] going to turn on the l2 connection now and measure what we've got running
+[02:29] through our second phase so again we've got eight point four eight point five
+[02:34] empire's so allowing for the tolerances in the manufacturer of the heaters you
+[02:39] can see that we're getting the same current flowing through l2 and once
+[02:43] again we've got the same current flowing through the neutral for that conductor
+[02:48] as well now just test l3 as well so imma turn this heater run and check the
+[02:55] current flow through l3 and again we're getting that eight point three eight
+[02:59] point four amp ere's quite nicely and then measure the neutral current again
+[03:04] and we get in again the same current flowing through the neutral so we're
+[03:09] quite comfortable with that what we're going to do next is we're going to build
+[03:14] up to our understanding of how the current is behaving in the neutral in a
+[03:18] couple of stages so first of all I'm going to turn two of the heaters on so
+[03:22] I'm going to turn on l1 which is that and l2 which is there now again just
+[03:29] measuring the current through here we've got eight point four amps coming from l1
+[03:34] we've got eight point three eight point four amps coming from l2 now what would
+[03:42] you expect the neutral to be bearing in mind that the neutrals from all three of
+[03:46] these sockets all come back through this cable here through this conductor here
+[03:50] so the neutral current from that heater and from this heater are both flowing
+[03:56] through this neutral now so what would you expect the current to be now at this
+[04:00] point we normally get a range of answers from our learners but the most common
+[04:03] one is well would you just add them together so you'd have about sixteen
+[04:06] point seven amps somewhere around that value sixteen point eight so let's
+[04:10] measure it and see what we get
+[04:15] now that's interesting we get in 8.2 M pairs so actually we get in the same
+[04:21] current as we had when we just had one heater connected that seems a little bit
+[04:26] strange maybe let's make it even stranger we're now going to turn on the
+[04:31] third heater so now we've got 8.4 amps going through l1 as you can see there
+[04:37] we've got 8.4 am going through l2 as you can see there and we've got the same
+[04:43] current flowing through l3 as you can see there so let's see what the neutral
+[04:49] current is going to be what do you think it will be let's find out and look at
+[04:56] that now we're getting zero amps flowing
+[05:00] through here and actually if I remove that from the neutral conductor you can
+[05:03] see that actually this has a little it's measuring a little bit of current isn't
+[05:08] there at the moment anyway just because of the precision of this device so we've
+[05:11] got naught point one amp ere's so you can see when I clip that on there we're
+[05:15] actually measuring no current flowing through the neutral and that is the
+[05:20] reason why on a previous video when we removed the neutral connection the three
+[05:24] lamps we had plugged in continued to operate because actually there is no
+[05:28] current flowing through the neutral in this circumstance we don't actually need
+[05:34] the neutral but why is that happening so in order to really understand what's
+[05:39] happening inside our neutral conductor and within our three-phase system we
+[05:44] need to go back to the start of a three-phase system and look at how
+[05:47] three-phase current is generated so let's have a look at that next so to
+[05:52] really understand a three-phase system we need to go back and look at how three
+[05:57] phases generated if you think about another video that featured on J
+[06:01] Robinson training you'll remember that when we generate AC electricity we spin
+[06:07] a loop of a conductor inside a magnetic field and that generates an AC waveform
+[06:12] if we extract the electricity using what we call slip rings we've then also in
+[06:17] another video looked at a cross-section of such a machine and saw how that
+[06:21] cross-section actually related to the AC waveform that was being generated now
+[06:27] we could do instead of just having a single loop inside our generator we
+[06:32] could actually install three loops inside there and generate each strand of
+[06:37] electricity separately and that would provide us with an AC waveform it would
+[06:42] look something like this inside the machine with three conductors rotating
+[06:47] around inside the magnetic field however on very large generators it's
+[06:52] quite difficult to extract the electricity from inside the machine you
+[06:57] need some fairly complex machinery and it can be quite a challenge to extract
+[07:01] very large amounts of current from inside there that we'd need at a power
+[07:04] generating station so instead of spinning conductors round inside a
+[07:09] magnetic field we swap the positions of those two elements so it turns into
+[07:13] something that looks a bit like this so now you can see what we're actually
+[07:17] doing is we're spinning the magnetic field around inside the generator and
+[07:22] the conductors are held in place around the outside of the generator and that
+[07:25] makes it a lot easier to extract the electricity from the machine
+[07:29] however as you can probably tell if we have a permanent magnet inside a
+[07:35] generator that permanent magnet is going to be spinning around there's going to
+[07:38] be a lot of vibration a lot of heat and over time that permanent magnet is going
+[07:42] to lose its power so what we actually do is we use an electromagnet inside our
+[07:48] generator and that electromagnet is powered by a DC supply and it generates
+[07:54] a magnetic field in a very similar way to what a permanent magnet would look
+[07:58] like we then rotate that electromagnet inside the generator exactly the same as
+[08:04] we would a permanent magnet and we extract the electricity from inside
+[08:07] there now if you look at the positions of the conductors around the outside of
+[08:12] the generator you can see that they're all separated from each other a very
+[08:17] specific angle because we've essentially got a circle which measures 360 degrees
+[08:23] for one complete rotation the conductors are all separated from each other by 120
+[08:30] degrees and that's a really really important number especially when you're
+[08:34] sitting there examples because you may well be asked that question what is the
+[08:39] angle the conductors are separated by inside a
+[08:44] three-phase system or possibly what is the angle of separation between the
+[08:50] waveforms in an AC system the answer is a 120 degrees now if we take the same
+[08:56] principle that we applied to generating our AC single-phase supply and turn it
+[09:03] to our three-phase supply and we map the waveform that's produced you can see
+[09:09] that we generate a waveform that now looks like this so you can see instead
+[09:13] of just the single AC waveform we've now got three AC waveforms that are all
+[09:19] separated from each other by a hundred and twenty degrees and that is what the
+[09:25] three phase supply looks like coming out of the generator and it's very similar
+[09:29] to what it looks like when that enters our supply that we've got in this
+[09:34] experiment now as we said during the video once all of the currents meet
+[09:41] together in the neutral of the three-phase supply for some reason we
+[09:46] end up with zero amps in there well how can that be well let's just have a look
+[09:50] at the three phase waveform that we produced now what we could do is view
+[09:54] this as being the current waveform so we'll look at it from that point of view
+[09:57] and we can make it so that each waveform is peaking at eight point four amps now
+[10:03] very the negative people who know a lot about this will start to tell me off
+[10:07] because I'm not using the RMS value but this is just to illustrate a point and
+[10:10] will explain about RMS in a future video now if we look at any point on that
+[10:15] three phase waveform you can see that all of the waveforms are peaking at
+[10:20] about eight point four amp ere's if we pick any point along those three
+[10:25] waveforms and put a line in on them and measure the currents at any moment in
+[10:30] time we get three different values of current in each one of the conductors
+[10:35] however if we add those three values together what do we get well you can see
+[10:43] that by adding those three values together we actually end up with zero
+[10:48] and what that means is that at any point along this three phase waveform the
+[10:53] combined currents we add them together becomes zero
+[10:57] amperes and that is the reason why when those currents all meet each other in
+[11:01] the neutral connection of our system we end up with zero amps in the neutral and
+[11:09] actually if you have what's called a balanced three-phase load which is what
+[11:14] we've kind of simulated in this video you don't need a neutral in the system
+[11:18] and that's the reason why a lot of motors don't have a neutral connection
+[11:22] because you've got three windings in the motor that are all using the same power
+[11:26] all drawing the same amount of current and therefore we can connect the other
+[11:31] ends of those coils together and when those currents meet each other they just
+[11:36] cancel each other out and we don't need a return path for that occurring so
+[11:41] hopefully this video has shed a little bit of light on the matter of that
+[11:45] disconnected neutral that we saw in a previous video and also helped us to
+[11:49] understand how there can be zero amps running through the neutral and we've
+[11:54] got a full load connected however it may well have raised a few more questions in
+[11:59] your mind you might be wondering about some things we need to bear in mind that
+[12:03] if we've got a three-phase system like we've got here if we're only connect up
+[12:06] connecting up a single-phase load such as a heater a lighting circuit a socket
+[12:11] circuit something like that then obviously we must have the neutral
+[12:14] connected only when we've got a properly balanced load that we know is going to
+[12:19] remain balanced such as the example of a motor can we get away without a neutral
+[12:23] in this situation these three heaters would actually all get to heat and start
+[12:27] clicking on and off at different times and that would change the amount of
+[12:31] current that's flowing through the neutral so we still need a neutral in
+[12:34] that circumstance what we need to do now is to start thinking about what happens
+[12:39] when our loads are unbalanced all of the time so in other words if I had three
+[12:45] heaters plugged in here that all had different power ratings then how would I
+[12:49] start to calculate the neutral current in that circumstance well that's going
+[12:54] to be covered in future videos and I'm actually going to show you several
+[12:56] different ways that you can calculate that neutral current I'm going to show
+[12:59] you the way that I like I'm going to show you some of the ways that perhaps
+[13:03] are required for you to carry out by your awarding body depending who you
+[13:07] doing your electrical studies under so at this point all that's left to say
+[13:12] really is thank you very much for watching
+[13:16] [Music]
+[13:29] [Music]

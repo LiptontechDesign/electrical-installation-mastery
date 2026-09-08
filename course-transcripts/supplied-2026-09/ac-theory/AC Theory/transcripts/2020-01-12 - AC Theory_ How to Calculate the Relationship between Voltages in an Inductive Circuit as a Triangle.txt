@@ -1,0 +1,142 @@
+# AC Theory: How to Calculate the Relationship between Voltages in an Inductive Circuit as a Triangle
+# https://www.youtube.com/watch?v=spMt1O6yX6A
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering the subject of AC theory and we're going to build on previous videos where we've looked at phasor diagrams and how they help us to understand what's happening inside circuits that contain both resistive and inductive elements what we're going to do in this video is we're going to look at a more mathematically accurate relationship between the supply or total voltage put onto a circuit and the voltage across the inductor and the voltage across the resistor now the example that we've used in previous videos was that of a fresh ant lamp however what we're about to do does apply very much to that most common of inductive loads motors so a motor is basically just a big coil of copper wire that generates a magnetic field and in some way create turning motion so we can represent the kind of two parts of that coil in a drawing such as this the resistor represents the resistive part of the copper so the copper will have a certain amount of resistance which we can represent with the resistive symbol and of course the copper is coiled into a coil and so therefore we can represent the inductive part of a motor with the inductor symbol that we've got here now the values that have shown on the board here were taken from our experiment with the frightened plant because that gives us something to kind of think back to so you remember when we measured the voltage across the resistor we got 195 volts when we measured the voltage across the inductor we got 125 volts and yet the total voltage in the circuit was 248 volts now we know from very basic circuit theory that the voltages inside a series circuit should add up to give us our total voltage however we've tried to change our mindset a little bit now by thinking well we don't necessarily add the voltages together we combine the voltages and from information and from the information that we carried out on our AC Theory worksheet in a previous video we produced this phasor diagram and we drew that diagram to scale and we saw that the relationship between the resistive voltage the inductive voltage and the total voltage could be physically drawn on a board to scale and the values measured what we're going through in this video is going to look at how we can do this a little bit more accurately and see if the relationship between the voltages becomes any better when we calculate it as opposed to measuring it so let's get started with that now in order to understand this when we look at our phasor diagram there's a couple of really important things that we just need to bear in mind we've got our three different voltages all spread out on the board here and down here we've got the arrow that represents the current that's flowing into the circuit so this is the current flowing into the circuit that current arrow there and this is the voltage that's being applied to the circuit now I'm making this point here because as this next series of videos kind of develops and unravels you'll start to see the importance of the fact that the current here and the voltage here have a particular relationship so you can see that because this is an inductive load the current going into the circuit is out of phase with the voltage being applied to the circuit can you see that there is an angle between them and therefore the current and the voltage are out of phase not by 90 degrees because the circuit has some resistance to it it's not a purely inductive load as we looked at in a previous video so we can see that the current and the voltage are out of phase with each other by some angle and at the moment we don't know that angle but they are out of phase by some angle you see there that angle is called theta at this point we use the Greek letter theta to represent an unknown angle so what you'll remember when we drew this phasor diagram was that we used dashed lines in order to indicate the relationships between them so we had a dashed line that went parallel to the resistive voltage and that went across here like this and we also had a vertical dashed line that was parallel to the inductive voltage and that went up the ways this and where those two lines crossed over we saw that represented the point at which these two voltages combine and we could measure off the total voltage from that circuit now what we're going to do in this video is we're going to concentrate on the shape that is buried inside this phasor diagram so if you look very carefully you can see that buried inside here we have got a triangle and more than just having a triangle we've actually got a right-angled triangle that looks something like that so you see that triangle there what we're going to do is we're going to extract that triangle and we're going to use that to see the relationship between the voltages inside the circuit so we'll bring that up and we'll draw it up here this triangular shape but it's kind of hidden inside there so I'm going to draw it so it looks something like this I'm going to draw it so it looks something like this and just finish off the corners like so I feel like Bob Rost when I do this stuff okay I'm going to just get that line where I rested my hand filled in as well so if we look at that triangle now you can see that it bears the same sizes as the triangle that we've got down here so what does that mean well it means if we look at this you can see here that this side here represents the resistive voltage which is equal to 195 volts so VR is equal to 195 volts the length of this side VL is equal to 125 volts like that and we can see from here that this line here the total voltage is equal to 248 votes which looks something like that we've still got a right angle down here in this corner and we've still got this angle here which represents the angle theta so that angle there and that angle there have stayed the same and that's a really important point so the angle here actually represents how far out of phase the current and voltage are inside our present light circuit so now we can see that we've got a right angle triangle here we can start to do some interesting things with this so one of the things that we can do here is we can start to see the relationships between these three sides so in a right angle triangle hopefully remember from our days at school or if you are still at school hopefully we've been taught this that Pythagoras's theorem states that if the sides of this triangle are labeled as a B and C you might see different letters on different sides then we know from Pythagoras theorem that a squared plus B squared is equal to C squared like that now this is a really important theorem for electricians really really important because it actually relates to the way that these voltages are behaving inside any inductive load which is really quite amazing when you stop and think about it that a theorem that was discovered about triangles centuries ago applies really nicely and neatly to a modern day application of electricity it's absolutely mind-blowing so what we're going to do now is instead of having a squared plus B squared equals C squared we're going to replace these letters with their corresponding sides so you can see there that a will become V R squared and we're going to add that onto B which becomes V L squared and then we're going to add that we're gonna say that is equal to V T squared okay now generally speaking we're not always interested in finding V T squared or interesting finding V T by itself so in order to figure out what V T is by itself what we need to do is square root both sides because if we square root this side then the squaring disappears it's like it never happened and we need to square root that side because we must do the same thing to both sides so let's just pop the VT on this side and we'll say V T is equal to the square root of V R squared plus V L squared so we've got our formula there now that relates the different sides of the triangle to each other so we can put the numbers in we'll say that V T is equal to the square root of a hundred and ninety-five squared plus a hundred and twenty-five squared and what we'll do is we'll put that into our calculators and we'll figure out what that's going to come up as so I'll bring the calculator up on the screen now and I'm going to grab my calculator down here and we can see if we do the square root of 195 squared plus a hundred and 25 squared then the answer to that is going to come out at on the calculator we've come out with 230 one point six two so we've come out with an answer of 230 one point six two bolts so 230 one point six two volts which again we're not getting exactly the total voltage that we measured over here and we explained the reason for that in a previous video I don't know if you can remember it but it's because what we've got here we've treated this as the lamp of the frozen tight-fitting and the inductive part the chunk of the fresh and light fitting and actually this would also have some additional resistance so this voltage would not be a vertical line it would be leaning over this way a little bit so that's going to change the relationship ever slightly between those two voltages however the principle holds true the principle is good we've come out with a reasonable amount of accuracy we've also got a bear in mind that when we measured these we were doing them on old analog dials and so my reading of them might have been slightly off and that would change things also but we can see clearly the relationship between these values we've got 195 squared plus 125 squared if we square root that will give us the length of the hypotenuse of this triangle so that's how the voltages relate to each other mathematically in a future video we're going to see how we can now take this triangle and discover even more information from it including relating this to something that we call impedance so all that's left to say in this video is thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music] hello and welcome to this electrical
+[00:10] principals training video in this video we're going to continue considering the
+[00:14] subject of AC theory and we're going to build on previous videos where we've
+[00:19] looked at phasor diagrams and how they help us to understand what's happening
+[00:22] inside circuits that contain both resistive and inductive elements what
+[00:28] we're going to do in this video is we're going to look at a more mathematically
+[00:30] accurate relationship between the supply or total voltage put onto a circuit and
+[00:36] the voltage across the inductor and the voltage across the resistor now the
+[00:41] example that we've used in previous videos was that of a fresh ant lamp
+[00:44] however what we're about to do does apply very much to that most common of
+[00:48] inductive loads motors so a motor is basically just a big coil of copper wire
+[00:54] that generates a magnetic field and in some way create turning motion so we can
+[01:00] represent the kind of two parts of that coil in a drawing such as this the
+[01:06] resistor represents the resistive part of the copper so the copper will have a
+[01:11] certain amount of resistance which we can represent with the resistive symbol
+[01:15] and of course the copper is coiled into a coil and so therefore we can represent
+[01:22] the inductive part of a motor with the inductor symbol that we've got here now
+[01:32] the values that have shown on the board here were taken from our experiment with
+[01:35] the frightened plant because that gives us something to kind of think back to so
+[01:38] you remember when we measured the voltage across the resistor we got 195
+[01:42] volts when we measured the voltage across the inductor we got 125 volts and
+[01:47] yet the total voltage in the circuit was 248 volts now we know from very basic
+[01:52] circuit theory that the voltages inside a series circuit should add up to give
+[01:57] us our total voltage however we've tried to change our mindset a little bit now
+[02:01] by thinking well we don't necessarily add the voltages together we combine the
+[02:07] voltages and from information and from the information that we carried out on
+[02:11] our AC Theory worksheet in a previous video we produced this
+[02:15] phasor diagram and we drew that diagram to scale and we saw that the
+[02:19] relationship between the resistive voltage the inductive voltage and the
+[02:24] total voltage could be physically drawn on a board to scale and the values
+[02:29] measured what we're going through in this video is going to look at how we
+[02:33] can do this a little bit more accurately and see if the relationship between the
+[02:36] voltages becomes any better when we calculate it as opposed to measuring it
+[02:40] so let's get started with that now in order to understand this when we look at
+[02:45] our phasor diagram there's a couple of really important things that we just
+[02:48] need to bear in mind we've got our three different voltages all spread out on the
+[02:53] board here and down here we've got the arrow that represents the current that's
+[02:58] flowing into the circuit so this is the current flowing into the circuit that
+[03:03] current arrow there and this is the voltage that's being applied to the
+[03:07] circuit now I'm making this point here because as this next series of videos
+[03:11] kind of develops and unravels you'll start to see the importance of the fact
+[03:17] that the current here and the voltage here have a particular relationship so
+[03:20] you can see that because this is an inductive load the current going into
+[03:25] the circuit is out of phase with the voltage being applied to the circuit can
+[03:30] you see that there is an angle between them and therefore the current and the
+[03:34] voltage are out of phase not by 90 degrees because the circuit has some
+[03:39] resistance to it it's not a purely inductive load as we looked at in a
+[03:43] previous video so we can see that the current and the voltage are out of phase
+[03:47] with each other by some angle and at the moment we don't know that angle but they
+[03:51] are out of phase by some angle you see there that angle is called theta at this
+[03:56] point we use the Greek letter theta to represent an unknown angle
+[04:00] so what you'll remember when we drew this phasor diagram was that we used
+[04:05] dashed lines in order to indicate the relationships between them so we had a
+[04:09] dashed line that went parallel to the resistive voltage and that went across
+[04:14] here like this and we also had a vertical dashed line that was parallel
+[04:21] to the inductive voltage and that went up the ways
+[04:26] this and where those two lines crossed over we saw that represented the point
+[04:32] at which these two voltages combine and we could measure off the total voltage
+[04:36] from that circuit now what we're going to do in this video is we're going to
+[04:42] concentrate on the shape that is buried inside this phasor diagram so if you
+[04:46] look very carefully you can see that buried inside here we have got a
+[04:51] triangle and more than just having a triangle we've actually got a
+[04:56] right-angled triangle that looks something like that so you see that
+[05:00] triangle there what we're going to do is we're going to extract that triangle and
+[05:04] we're going to use that to see the relationship between the voltages inside
+[05:07] the circuit so we'll bring that up and we'll draw it up here this triangular
+[05:11] shape but it's kind of hidden inside there so I'm going to draw it so it
+[05:15] looks something like this I'm going to draw it so it looks something like this
+[05:26] and just finish off the corners like so I feel like Bob Rost when I do this
+[05:36] stuff okay I'm going to just get that line where I rested my hand filled in as
+[05:44] well
+[05:50] so if we look at that triangle now you can see that it bears the same sizes as
+[05:57] the triangle that we've got down here so what does that mean well it means if we
+[06:00] look at this you can see here that this side here represents the resistive
+[06:04] voltage which is equal to 195 volts so VR is equal to 195 volts the length of
+[06:13] this side VL is equal to 125 volts like that and we can see from here that this
+[06:23] line here the total voltage is equal to 248 votes which looks something like
+[06:30] that we've still got a right angle down here in this corner and we've still got
+[06:36] this angle here which represents the angle theta so that angle there and that
+[06:42] angle there have stayed the same and that's a really important point so the
+[06:46] angle here actually represents how far out of phase the current and voltage are
+[06:50] inside our present light circuit so now we can see that we've got a right angle
+[07:03] triangle here we can start to do some interesting things with this so one of
+[07:07] the things that we can do here is we can start to see the relationships between
+[07:10] these three sides so in a right angle triangle hopefully remember from our
+[07:17] days at school or if you are still at school hopefully we've been taught this
+[07:20] that Pythagoras's theorem states that if the sides of this triangle are labeled
+[07:27] as a B and C you might see different letters on different sides then we know
+[07:35] from Pythagoras theorem that a squared plus B squared is equal to C squared
+[07:41] like that now this is a really important theorem for electricians really really
+[07:46] important because it actually relates to the way that these voltages are behaving
+[07:50] inside any inductive load which is really quite amazing when you stop and
+[07:54] think about it that a theorem that was discovered about triangles centuries ago
+[07:58] applies really nicely and neatly to a modern day application of
+[08:03] electricity it's absolutely mind-blowing so what we're going to do now is instead
+[08:07] of having a squared plus B squared equals C squared we're going to replace
+[08:10] these letters with their corresponding sides so you can see there that a will
+[08:16] become V R squared and we're going to add that onto B which becomes V L
+[08:23] squared and then we're going to add that we're gonna say that is equal to V T
+[08:29] squared okay now generally speaking we're not always
+[08:34] interested in finding V T squared or interesting finding V T by itself so in
+[08:39] order to figure out what V T is by itself what we need to do is square root
+[08:43] both sides because if we square root this side then the squaring disappears
+[08:47] it's like it never happened and we need to square root that side
+[08:50] because we must do the same thing to both sides so let's just pop the VT on
+[08:54] this side and we'll say V T is equal to the square root of V R squared plus V L
+[09:02] squared so we've got our formula there now that relates the different sides of
+[09:08] the triangle to each other so we can put the numbers in we'll say that V T is
+[09:12] equal to the square root of a hundred and ninety-five squared plus a hundred
+[09:19] and twenty-five squared and what we'll do is we'll put that into our
+[09:24] calculators and we'll figure out what that's going to come up as so I'll bring
+[09:27] the calculator up on the screen now and I'm going to grab my calculator down
+[09:32] here and we can see if we do the square root of 195 squared plus a hundred and
+[09:40] 25 squared then the answer to that is going to come out at on the calculator
+[09:45] we've come out with 230 one point six two so we've come out with an answer of
+[09:53] 230 one point six two bolts so 230 one point six two volts which again we're
+[10:04] not getting exactly the total voltage that we measured over here and we
+[10:08] explained the reason for that in a previous video I don't know if you can
+[10:11] remember it but it's because what we've got here we've treated this as
+[10:15] the lamp of the frozen tight-fitting and the inductive part the chunk of the
+[10:20] fresh and light fitting and actually this would also have some additional
+[10:24] resistance so this voltage would not be a vertical line it would be leaning over
+[10:29] this way a little bit so that's going to change the relationship ever slightly
+[10:33] between those two voltages however the principle holds true the principle is
+[10:38] good we've come out with a reasonable amount of accuracy we've also got a bear
+[10:42] in mind that when we measured these we were doing them on old analog dials and
+[10:45] so my reading of them might have been slightly off and that would change
+[10:49] things also but we can see clearly the relationship between these values we've
+[10:53] got 195 squared plus 125 squared if we square root that will give us the length
+[10:59] of the hypotenuse of this triangle so that's how the voltages relate to each
+[11:04] other mathematically in a future video we're going to see how we can now take
+[11:09] this triangle and discover even more information from it including relating
+[11:14] this to something that we call impedance so all that's left to say in this video
+[11:18] is thank you very much for watching
+[11:23] [Music]
+[11:36] [Music]

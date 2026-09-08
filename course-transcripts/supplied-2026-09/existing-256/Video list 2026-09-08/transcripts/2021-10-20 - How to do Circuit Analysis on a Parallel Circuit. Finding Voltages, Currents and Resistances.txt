@@ -1,0 +1,646 @@
+# How to do Circuit Analysis on a Parallel Circuit. Finding Voltages, Currents and Resistances
+# https://www.youtube.com/watch?v=7jcdRn5qGio
+
+Hello and welcome to this electrical principles training video. In this video, we're going to continue considering resistors connected in parallel. Now, in previous videos, we've looked at how to calculate the total resistance when you've got resistors connected in parallel, just like we have on the board here. However, what we're going to be doing in this video is taking it up to the next level, and we're going to be carrying out a little bit of what's called circuit analysis on a parallel circuit. Now that might sound a little bit scary to start with but uh circuit analysis basically just means calculating all the different resistances, currents and voltages within a circuit and it's really quite straightforward once you learn the different stages. So this is going to make up a series of videos. So it'll probably be a little bit more than we can cover in one video. However, the information is really really important to us as electricians. Now you may be looking at this board and thinking, well this is a million miles away from anything that I do at work. I chuck cables in. I connect up light fittings. I connect up sockets. I run power to machines. It looks nothing like what you've got on the board here. Now, it's really important to bear in mind that this is representative of electrical science and principles. So, we're using it to illustrate points. And actually, this is intimately connected to the electrical work that you do on any construction site or in someone's home. Because 99% of the loads that you connect out there in the real world are connected in parallel just like this. This is very much like a lighting circuit that you may find in a typical property, whether that be domestic, uh, commercial or industrial. You'll find that the principle of what we're looking at here does indeed apply. So 99% of the circuits that you're connecting up out there in the real world is indeed connected in parallel. So this really is very important for fully qualified electricians and also for apprentice electricians or those who are studying electricity at school or college. So let's just have a little look at the circuit that we're dealing with here. So you can see on the board on the screen here that we've got our power supply down at the bottom. Now this is a DC power supply. However, the principles that we're going to consider will apply to DC circuits, but also it will apply to purely resistive AC circuits. So in other words, that's AC circuits that only have resistive loads connected. And again, if you're not sure about all the different loads, don't worry. Uh I've got other videos that cover that material, so you don't need to worry about that. Uh but we'll get to that a little bit further down the line. Now looking at the board in front of us here, you can see we've got the supply at the bottom here. We've got a switch. Now I'm just using this in order not to overload the resistors that I've got connected here. You can see that I've got an 18 ohm, a 27 ohm, and a 10 ohm resistor. And they are connected in parallel with each other. So the current that flows to this one is independent of the current that flows to this one is independent of the current that flows to this one. That's because they've all got their own path that they can take to each individual resistor. we're not passing current through one of the resistors in order to get to the next one. Now, obviously, we need to introduce a voltage into this circuit. So, you can see here we've got our power supply, and that's currently set to 12 VTs. Now, that's the reason why we need to be a little bit careful because the resistors on the backs of these units here are not really designed to take an awful lot of current, and I'm probably going to be passing more current through them than I should do. So, if you see anything here starting to smoke and uh melt and pop, then you know that I've left the circuit switched on for too long. So, we've got this set to 12 volts. So, we'll go and plug that in off screen. And we'll also plug it in down here as well. So, we'll just pop that into there. And that is now connected. Now, that's trying to push 12 volts through the circuit. But, as long as this switch remains in the off position, no voltage is applied to these resistors. So, at the minute, there's nothing happening inside the circuit. That invisible electricity is doing nothing. So, what we'll do now is we'll just connect up our meter here. So, you can see I'm going to set this to measure volts, as you can see, and we're going to set it to measure DC volts. So that's really important so that we get the right values. And then I'm going to put one lead into the common. And then the other lead just goes into the terminal marked with the V there. So that's going to measure our voltage. Now I'm working with extra low voltage here. So the risk of shock is minimal. Uh so obviously if this was a real circuit, you'd want to isolate everything every time you were taking uh a voltage measurement. But this voltage is low enough that it's not going to cause me any significant harm. So let's start having a look at this. So if I measure the voltage across the terminals of the incoming supply here, you can see there we've got 12.2 volts. Okay? So we'll call that 12.2 volts. Now if I move that and I measure the voltage across my first resistor, you can see that we've got no volts. And that is because I haven't turned the switch on yet. So when I operate the switch, you see there we're getting uh 10 volts this time. Okay. So, that's quite an interesting result already because we've seen we've got 12 volts at the start but 10 volts there. Now, why is that the case? Well, again, let's be thorough with our measurements. Let's go back to this point here and let's plug that in. And you can see we've got 12.2 volts. And if I press the button in there, you can see that actually the voltage drops down. Okay? So, we get closer to that 10.1 volts uh sort of value we had earlier. We're about 10 volts there. So, there's a very good reason for that. uh and we'll explain all that in a future video but for now we'll just take it we've read that the uh value of the uh voltage applied to this circuit is approximately 10 volts. We'll say it's around 10 10.1 something like that. And what we'll then find is that every uh point in the circuit every time we measure from one side of the circuit to the other we should find that we are getting roughly that same amount. So there we're getting about 9.7. And then as we get over to this point here, we may find that it's dropped again even more. So what are we getting there again? 9.6. That's dropping down a little bit. Now that's really interesting. You've got to bear in mind though that although that seems like a big change, we've gone from 10 to 9.6 volts. What's actually happened there is that we've only dropped down by point4 of a volt. So actually it's quite a small decrease in current. But the reason that that's happening is that we're getting further and further away from the source. And all of these little connectors here, they've all got a little bit of resistance that are all contributing to that voltage dropping off. And that's a really important concept actually for electricians. It's not one we're going to cover in a lot of detail in this video, but it is one that's really important for electricians. The concept of volt drop. Uh the idea that the further away you get from a source, the lower the voltage is. And there's a couple of other things that affect that as well. Really interesting subject. We'll cover that at a future point. Okay. So, for the sake of simplicity in this video, we're going to assume that we've got about 10 volts across each resistor when the load is turned on when we've got the circuit connected up. What we're going to do now is we're going to measure the current that flows into each individual uh resistor. So, these resistors, bear in mind, could be used to represent the load in an electrical circuit. So, we could use them to represent um uh light fittings uh or perhaps socket outlets or the power supplies to machinery. uh they are resistors in this case because it just is a set kind of load that draws a certain amount of current into it. However, uh for the purposes of illustration, we can imagine that these are light fittings or any other kind of electrical load and we'll get the same principle. So, we'll now set this to measure current. So, we're going to set that to measure DC current. And I'm just going to move the lead from one side to the other. Now, what you'll notice here is that I've changed the way that I've got the leads connected because what I'm now doing is I'm diverting the current out of the circuit through the meter and back into the circuit again. So, effectively, I've just kind of created like a big loop for the current to flow through that goes out of the circuit there. And the reason for that is that when you measure current, you have to measure it in series. So, earlier we were measuring the voltage in parallel. Now, we're measuring the current in series. And again, we've covered that in other videos also. So, let's see how much current is being drawn by this 18 ohm resistor here. So, we'll measure that again. Press that button briefly. And you can see there that we're getting about 0.55 of an ampere. So, there's about 0.55 amps flowing through there. Now, if I bring my calculator in, we can actually explain why that's happening. So, all that's happening here is we're relying on Ohm's law. Now, again, I've done other videos on Ohm's law, so please do go and check those out. But we know that in Ohm's law the current is equal to the voltage divided by the resistance. So in other words I= V / R. So the current flowing into that load is defined by the voltage across it divided by the resistance of the load. So I = V / R. So that gives us 10 V / 18 ohms like that. And when we do that calculation you see we come out with 5 9th. And actually what's really handy about that is if we press the SD button, you can see that gives us a value of 0.55 recurring, which is pretty much what we said it was from measurement. So that's worked out quite nicely. 0.55 amps flowing through there because of Ohm's law. Now, if we start to jiggle this round a little bit, we'll start to uh have a look at the next stage of this. We're going to measure the current that's flowing through this resistor here. Now, you can see we've got a higher value of resistance here. So, what do you think's going to happen to the current? Is it going to go up? Going to go down? Going to stay the same? Well, let's have a look. We've got our values here. So, we'll see what value of current we're getting. So, we'll press the button and we'll see how much current flows through this resistor now. So, you can see there we've got 37 amp 0.37 amps. And again you can see we've increased the resistance and therefore we have decreased the current which basically just falls exactly in line with what we'd expect from Ohm's law. Let's again just do the calculation. Now again bear in mind there might be a little bit of difference in these values because we're uh we're sort of using uh 10 volts and we saw it was slightly different earlier. We're just trying to keep it nice and simple for the purposes of this video. Uh, one thing I quite like to do on this calculator, the FX85 GTX, is to press the fraction button and then do my calculation that way. So, 10 / 27. So, remember I= V over R, 10 volt divided by 27 ohms is going to give us a value of 0.37 ohms. Uh, sorry, 0.37 amps, which is kind of beautiful cuz that's pretty much exactly what we measured. So, we're seeing that the math is working out really nicely here for me, which is good cuz often it doesn't. And then it's frustrating trying to explain about resistor tolerances and all that sort of stuff. So that's really good. We're seeing that happening. But can you see how we're getting different values of current in different places in the circuit? Now from our video on resistors connected in series, we saw that the current was the same everywhere in the circuit, but the voltage is changed across the different resistors. Whereas here we're seeing the opposite happening. What we're seeing here is that the voltage is staying pretty much the same throughout the circuit. It's about 10 volts in every position. However, the currents are different in different places. So, let's have a look at this one. Now, this one will be interesting. And uh I think this is the one that was probably the source of uh the smell and the smoke that I could see going earlier. So, we could see we've got a 10 ohm resistor here. So, what's going to happen to the current flowing into this resistor when we power it up? Is it going to be higher than it was for here? Higher than it was for here? Lower between the two? What do you think's going to happen to the current? Well, let's plug in the meter and find out. So, we've got our meter connected there. We've got the current flowing out of the circuit, through the meter, and back into the circuit again. So, what we've done is just removed that link and diverted the current out of the circuit so we can measure what it is. And now, what we'll find is let's make a prediction. So, we've got a voltage of 10 uh 10 volts. We've got a resistance of 10 ohms. So, we've got 10 divided by 10, which is going to give us 1 amp. So, we should have roughly 1 amp flowing through here. My guess is it will probably be a little bit below that. Probably be about 0.97 0.96, something like that. But, let's power it up and find out. So, if we press the button here, we'll see that we're getting 0.98 amps. So, pretty close to what we said. It was close to 1 amp. Again, I don't think you need to prove uh that 10 / 10 is equal to 1 on the calculator. And just bear in mind that 0.98 is very, very close to one. We're only like 0.02 amps of having a full 1 ampere there. Okay. So, we'll put our circuit back together and we're going to demonstrate a really important point here now and that is how the current behaves when it all meets up together. So, at the moment when we power this circuit up, we've got current flowing through this resistor here, through this resistor here, and through this one. And what's happening is that that current is flowing from the source through the switch through that section of wire there, and then it kind of branches off and goes through the resistor and then meets up back the other side and comes back around again. Now, what's interesting about that is that the current flowing through this one shares that path for part of its journey. It's only when it gets to here that that current splits off and the current feeding this resistor and this resistor carry on up the way here. And when it gets to this point, the current splits off again and the uh current flows off in that direction. So it goes off that way and the remaining current goes that way. So what that happens if we work backwards is that the three currents flowing into the circuit join up and actually the most amount of current in the circuit will be flowing through this bit here. And we can again we can prove that by measurement. So if we remove that link there and have a look at this. Now what's interesting about this bit is that we should find here that the current flowing through this bit of the circuit is exactly the same as it was there because it's just going up there and across there. So we'll just prove a point. We should have about that 1 ampere flowing through that bit. And indeed we do. We've got that 0.98 value. Okay. So now what we're going to do is we're going to see what the current value is a little bit further down the circuit. So I'll put that link back in. We'll remove that link there. Pop that one in there. And then when we hit the uh on button now, what we're going to find is that there's now current flowing. Just going to swap these around so we don't get a minus value, which would only add to the confusion. A minus value for DC current just indicates that the current is flowing the other way. So we just confuse the current there by sending it the wrong way through the meter. It'll still measure it, but it'll just give a minus value. So, the direction of current flow in a DC circuit is really important. So, what we should find now is that when we turn the circuit on, do you think at this point we'll have more current flowing through this link than we had through this link? Or do you think it will be less or do you think it'll be the same? Well, again, bear in mind what we said. The current flowing through this link is made up of the current being drawn by this load and the current being drawn by this load. So what we should find is that actually they should add together and give us that value there. So let's test it and see. So you can see there we're getting 1.35 which is about I think we had 0.37 amps flowing through there earlier and then we had about an amp there. So we've got about 1.35 amps about 1.37 which is what we'd expect it to be. In fact 0.98 plus 0.37 is uh that value of 1.35. So that's worked out really nicely again. So just to prove the point, if we now move our meter so that it is measuring from here to here. That's my meter getting excited and deciding that it's been on for long enough. Okay. So what we're going to do now is measure the current flowing through this section. And hopefully you've kind of followed the logical process and we should even be able to make an estimate of what this current will be. So if you remember our current values that we had were uh 10 / 18 which gave us 0.55. So we've got 0.55 flowing through there. 0.37 and 0.98. So if we add those values together 0.55 plus 0 37 plus 0.98 we should come out with about 1.9 amp. So, we should be measuring about 1.9 amp through there. So, let's see what happens here. Let's see if we get that value of 1.9 amp, which is the total of these currents all added together. So, again, just make sure we get the leads the right way round. We'll put that there. We'll put that there. And now, when we press the on switch, we should find that about 1.9 amps is flowing through that link. 1.9. Yeah, look at that. 1.9 amp. So, we're really happy with that as a result. So you can start to understand how a parallel circuit works. And actually we're starting to see some really important principles for our electrical installation work because actually if you think about it, this section of conductor here is like the first bit of cable that goes from the consumer unit out to the first load in a circuit. So obviously that is where most of the current is running through the cable and generally speaking that's where all the cables are bunched together and go into the consumer unit or the distribution board. So, kind of that's kind of a bit of a pinch point really when it comes to electrical design. So, there you've got all of the current and all of the uh cables all bunched together in the same place. Again, this isn't a design video, but it does start to show us some interesting things that we need to sort of watch out for and think about as part of our electrical installation work. Okay, so there is one other thing that we could do here and that is we could figure out what the total resistance of the circuit is and use that in order to figure out what that total resistance uh the total current flow into there rather should have been. So we can actually measure that if we remove our power supply temporarily and just take that out of there and what we can do is we can measure the total resistance of this circuit. So, if we put our leads in there and there so we're getting a pretty good idea of what the total resistance will be. And of course, it's really important to make sure you've got your leads in the right terminals as well, which is something that I always used to forget to do in lessons. And it would appear that I'm still continuing to forget to do that on video. So, nobody's perfect. So, now what we'll find is when we press the button this time is we'll actually find out what the total resistance of the circuit is. So, you can see there we're coming out with about 5.2 ohms. that seems to have settled down at it's probably about 5.25, which is why it's flicking between the two there. So, let's just do a very quick throwback to our uh resistors in parallel calculation. And hopefully you'll remember uh I showed this in a video. If we want to figure out what the total resistance of a circuit is, we simply do uh the value of the resistors. We do one over each value. And if you remember that button there, the x to the minus1 button, when you press that 18 to the minus1 is exactly the same as 1 over 18. Now again, if you're not sure what I'm talking about about 1 over 18 + 1 over whatever, then please go back and check the video on how to calculate resistors connected in parallel because that's really really important uh for finding total resistance. So this bit might be a little bit of gobbledegook to you if you don't know what I'm talking about if you've not seen that video. So 18 -1 + 27 -1 + 10 the -1. Remember that's 1 over 18 + 1 over 27 + 1 / 10. And when we find that out we get 0.1925. Now if we do 1 over that. So 1 over 0.1925 we should come out with the answer of 5.2 which is the value that we just measured. So the maths works out the circuit works out which is really nice. we're getting about the value that we thought we would do, which is really good. What we can then do is figure out what the total current flowing into the circuit would be based on the total resistance of the circuit. So again, just back to Ohm's law. So we'll say this is about 5.2. We'll round that off to if we do that 10 volts, which was the voltage that we had when we powered the supply up. Uh 10 uh divided by so I= V / R 10 / 5.2 two and we come out with 1.9 which is pretty much exactly the current that we measured uh it flowing into the circuit. So in this video what we've done is we've looked at a real circuit. We've connected up some resistors in parallel with each other and we've looked at how the voltage applied to the circuit is then applied to each of those values in turn each of those resistors in turn. We've seen how that voltage acting in conjunction with the resistor then starts to uh define how much current flows into each part of the circuit and how all of those currents then add up to give us the total current flowing into the circuit. And we've also kind of approached it from the other direction as well. We've calculated the total resistance of the circuit and we've used that as a almost like a double check to find the total current flowing into the circuit. So maths and science are working hand inand which is really pleasing. uh you know that I'm not lying to you. I'm proving it by practical experiment. However, when you're in your exams, uh when you're doing this in the classroom, you may not have the actual uh resistances in front of you to do the calculations with. However, uh what we're going to do in the next video is I'm going to walk you through how to do this uh on the whiteboard. We're going to pick some other numbers of resistance values. We'll do some calculations and then I'll take you through step by step how you perform these calculations to figure out what the individual currents are, what the total current is, what the uh total resistance of the circuit is, and what the total current based on the total resistance should be as well. And it should all kind of dovetail and come together really nice and neatly. So there we go folks, we've done our first bit of circuit analysis using a parallel circuit. As we say in the next video, we'll look at how to do this purely theoretically because that's what you may need to do in your exam. Please leave any questions and thoughts in the comments section below and I'll try and get back to those if I can do. But all that remains in this video is to say thank you very much for watching. [Music]
+
+
+[00:00] Hello and welcome to this electrical
+[00:01] principles training video. In this
+[00:03] video, we're going to continue
+[00:04] considering resistors connected in
+[00:06] parallel. Now, in previous videos, we've
+[00:09] looked at how to calculate the total
+[00:10] resistance when you've got resistors
+[00:12] connected in parallel, just like we have
+[00:13] on the board here. However, what we're
+[00:15] going to be doing in this video is
+[00:16] taking it up to the next level, and
+[00:18] we're going to be carrying out a little
+[00:19] bit of what's called circuit analysis on
+[00:22] a parallel circuit. Now that might sound
+[00:24] a little bit scary to start with but uh
+[00:26] circuit analysis basically just means
+[00:28] calculating all the different
+[00:30] resistances, currents and voltages
+[00:32] within a circuit and it's really quite
+[00:34] straightforward once you learn the
+[00:35] different stages. So this is going to
+[00:37] make up a series of videos. So it'll
+[00:39] probably be a little bit more than we
+[00:40] can cover in one video. However, the
+[00:42] information is really really important
+[00:45] to us as electricians. Now you may be
+[00:47] looking at this board and thinking, well
+[00:49] this is a million miles away from
+[00:50] anything that I do at work. I chuck
+[00:52] cables in. I connect up light fittings.
+[00:54] I connect up sockets. I run power to
+[00:56] machines. It looks nothing like what
+[00:57] you've got on the board here. Now, it's
+[00:59] really important to bear in mind that
+[01:00] this is representative of electrical
+[01:03] science and principles. So, we're using
+[01:05] it to illustrate points. And actually,
+[01:07] this is intimately connected to the
+[01:09] electrical work that you do on any
+[01:11] construction site or in someone's home.
+[01:14] Because 99% of the loads that you
+[01:16] connect out there in the real world are
+[01:18] connected in parallel just like this.
+[01:20] This is very much like a lighting
+[01:22] circuit that you may find in a typical
+[01:23] property, whether that be domestic, uh,
+[01:26] commercial or industrial. You'll find
+[01:28] that the principle of what we're looking
+[01:30] at here does indeed apply. So 99% of the
+[01:32] circuits that you're connecting up out
+[01:34] there in the real world is indeed
+[01:36] connected in parallel. So this really is
+[01:38] very important for fully qualified
+[01:40] electricians and also for apprentice
+[01:42] electricians or those who are studying
+[01:44] electricity at school or college. So
+[01:46] let's just have a little look at the
+[01:47] circuit that we're dealing with here. So
+[01:49] you can see on the board on the screen
+[01:50] here that we've got our power supply
+[01:52] down at the bottom. Now this is a DC
+[01:54] power supply. However, the principles
+[01:56] that we're going to consider will apply
+[01:57] to DC circuits, but also it will apply
+[02:00] to purely resistive AC circuits. So in
+[02:03] other words, that's AC circuits that
+[02:06] only have resistive loads connected. And
+[02:08] again, if you're not sure about all the
+[02:09] different loads, don't worry. Uh I've
+[02:11] got other videos that cover that
+[02:12] material, so you don't need to worry
+[02:13] about that. Uh but we'll get to that a
+[02:15] little bit further down the line. Now
+[02:18] looking at the board in front of us
+[02:19] here, you can see we've got the supply
+[02:20] at the bottom here. We've got a switch.
+[02:22] Now I'm just using this in order not to
+[02:24] overload the resistors that I've got
+[02:26] connected here. You can see that I've
+[02:28] got an 18 ohm, a 27 ohm, and a 10 ohm
+[02:31] resistor. And they are connected in
+[02:33] parallel with each other. So the current
+[02:35] that flows to this one is independent of
+[02:37] the current that flows to this one is
+[02:38] independent of the current that flows to
+[02:40] this one. That's because they've all got
+[02:41] their own path that they can take to
+[02:43] each individual resistor. we're not
+[02:45] passing current through one of the
+[02:47] resistors in order to get to the next
+[02:49] one. Now, obviously, we need to
+[02:50] introduce a voltage into this circuit.
+[02:52] So, you can see here we've got our power
+[02:54] supply, and that's currently set to 12
+[02:56] VTs. Now, that's the reason why we need
+[02:58] to be a little bit careful because the
+[02:59] resistors on the backs of these units
+[03:02] here are not really designed to take an
+[03:04] awful lot of current, and I'm probably
+[03:05] going to be passing more current through
+[03:06] them than I should do. So, if you see
+[03:08] anything here starting to smoke and uh
+[03:10] melt and pop, then you know that I've
+[03:12] left the circuit switched on for too
+[03:13] long. So, we've got this set to 12
+[03:15] volts. So, we'll go and plug that in off
+[03:16] screen. And we'll also plug it in down
+[03:19] here as well. So, we'll just pop that
+[03:21] into there. And that is now connected.
+[03:23] Now, that's trying to push 12 volts
+[03:25] through the circuit. But, as long as
+[03:26] this switch remains in the off position,
+[03:28] no voltage is applied to these
+[03:30] resistors. So, at the minute, there's
+[03:31] nothing happening inside the circuit.
+[03:33] That invisible electricity is doing
+[03:34] nothing. So, what we'll do now is we'll
+[03:36] just connect up our meter here. So, you
+[03:38] can see I'm going to set this to measure
+[03:40] volts, as you can see, and we're going
+[03:41] to set it to measure DC volts. So that's
+[03:43] really important so that we get the
+[03:45] right values. And then I'm going to put
+[03:47] one lead into the common. And then the
+[03:49] other lead just goes into the terminal
+[03:51] marked with the V there. So that's going
+[03:53] to measure our voltage. Now I'm working
+[03:55] with extra low voltage here. So the risk
+[03:58] of shock is minimal. Uh so obviously if
+[04:00] this was a real circuit, you'd want to
+[04:01] isolate everything every time you were
+[04:03] taking uh a voltage measurement. But
+[04:05] this voltage is low enough that it's not
+[04:07] going to cause me any significant harm.
+[04:09] So let's start having a look at this. So
+[04:11] if I measure the voltage across the
+[04:13] terminals of the incoming supply here,
+[04:16] you can see there we've got 12.2 volts.
+[04:19] Okay? So we'll call that 12.2 volts. Now
+[04:22] if I move that and I measure the voltage
+[04:25] across my first resistor, you can see
+[04:28] that we've got no volts. And that is
+[04:30] because I haven't turned the switch on
+[04:31] yet. So when I operate the switch, you
+[04:33] see there we're getting uh 10 volts this
+[04:36] time. Okay. So, that's quite an
+[04:37] interesting result already because we've
+[04:39] seen we've got 12 volts at the start but
+[04:41] 10 volts there. Now, why is that the
+[04:43] case? Well, again, let's be thorough
+[04:45] with our measurements. Let's go back to
+[04:47] this point here and let's plug that in.
+[04:50] And you can see we've got 12.2 volts.
+[04:52] And if I press the button in there, you
+[04:54] can see that actually the voltage drops
+[04:56] down. Okay? So, we get closer to that
+[04:59] 10.1 volts uh sort of value we had
+[05:02] earlier. We're about 10 volts there. So,
+[05:04] there's a very good reason for that. uh
+[05:05] and we'll explain all that in a future
+[05:07] video but for now we'll just take it
+[05:08] we've read that the uh value of the uh
+[05:11] voltage applied to this circuit is
+[05:14] approximately 10 volts. We'll say it's
+[05:16] around 10 10.1 something like that. And
+[05:18] what we'll then find is that every uh
+[05:21] point in the circuit every time we
+[05:22] measure from one side of the circuit to
+[05:24] the other we should find that we are
+[05:26] getting roughly that same amount. So
+[05:28] there we're getting about 9.7.
+[05:31] And then as we get over to this point
+[05:32] here, we may find that it's dropped
+[05:34] again even more. So what are we getting
+[05:36] there again? 9.6. That's dropping down a
+[05:40] little bit. Now that's really
+[05:41] interesting. You've got to bear in mind
+[05:43] though that although that seems like a
+[05:44] big change, we've gone from 10 to 9.6
+[05:47] volts. What's actually happened there is
+[05:49] that we've only dropped down by point4
+[05:51] of a volt. So actually it's quite a
+[05:53] small decrease in current. But the
+[05:55] reason that that's happening is that
+[05:56] we're getting further and further away
+[05:58] from the source. And all of these little
+[05:59] connectors here, they've all got a
+[06:01] little bit of resistance that are all
+[06:02] contributing to that voltage dropping
+[06:04] off. And that's a really important
+[06:06] concept actually for electricians. It's
+[06:07] not one we're going to cover in a lot of
+[06:08] detail in this video, but it is one
+[06:10] that's really important for
+[06:11] electricians. The concept of volt drop.
+[06:13] Uh the idea that the further away you
+[06:15] get from a source, the lower the voltage
+[06:17] is. And there's a couple of other things
+[06:18] that affect that as well. Really
+[06:20] interesting subject. We'll cover that at
+[06:22] a future point. Okay. So, for the sake
+[06:24] of simplicity in this video, we're going
+[06:26] to assume that we've got about 10 volts
+[06:28] across each resistor when the load is
+[06:30] turned on when we've got the circuit
+[06:31] connected up. What we're going to do now
+[06:33] is we're going to measure the current
+[06:35] that flows into each individual uh
+[06:38] resistor. So, these resistors, bear in
+[06:40] mind, could be used to represent the
+[06:42] load in an electrical circuit. So, we
+[06:44] could use them to represent
+[06:46] um uh light fittings uh or perhaps
+[06:50] socket outlets or the power supplies to
+[06:52] machinery. uh they are resistors in this
+[06:55] case because it just is a set kind of
+[06:57] load that draws a certain amount of
+[06:59] current into it. However, uh for the
+[07:01] purposes of illustration, we can imagine
+[07:03] that these are light fittings or any
+[07:05] other kind of electrical load and we'll
+[07:07] get the same principle. So, we'll now
+[07:10] set this to measure current. So, we're
+[07:12] going to set that to measure DC current.
+[07:14] And I'm just going to move the lead from
+[07:15] one side to the other. Now, what you'll
+[07:17] notice here is that I've changed the way
+[07:19] that I've got the leads connected
+[07:21] because what I'm now doing is I'm
+[07:23] diverting the current out of the circuit
+[07:26] through the meter and back into the
+[07:28] circuit again. So, effectively, I've
+[07:30] just kind of created like a big loop for
+[07:32] the current to flow through that goes
+[07:34] out of the circuit there. And the reason
+[07:36] for that is that when you measure
+[07:37] current, you have to measure it in
+[07:39] series. So, earlier we were measuring
+[07:41] the voltage in parallel. Now, we're
+[07:43] measuring the current in series. And
+[07:44] again, we've covered that in other
+[07:46] videos also. So, let's see how much
+[07:48] current is being drawn by this 18 ohm
+[07:50] resistor here. So, we'll measure that
+[07:53] again. Press that button briefly. And
+[07:55] you can see there that we're getting
+[07:56] about 0.55 of an ampere. So, there's
+[07:59] about 0.55 amps flowing through there.
+[08:02] Now, if I bring my calculator in, we can
+[08:04] actually explain why that's happening.
+[08:06] So, all that's happening here is we're
+[08:07] relying on Ohm's law. Now, again, I've
+[08:09] done other videos on Ohm's law, so
+[08:10] please do go and check those out. But we
+[08:12] know that in Ohm's law the current is
+[08:15] equal to the voltage divided by the
+[08:17] resistance. So in other words I= V / R.
+[08:19] So the current flowing into that load is
+[08:22] defined by the voltage across it divided
+[08:25] by the resistance of the load. So I = V
+[08:28] / R. So that gives us 10 V / 18 ohms
+[08:33] like that. And when we do that
+[08:35] calculation you see we come out with 5
+[08:37] 9th. And actually what's really handy
+[08:39] about that is if we press the SD button,
+[08:41] you can see that gives us a value of
+[08:42] 0.55 recurring, which is pretty much
+[08:45] what we said it was from measurement. So
+[08:47] that's worked out quite nicely. 0.55
+[08:49] amps flowing through there because of
+[08:51] Ohm's law. Now, if we start to jiggle
+[08:55] this round a little bit, we'll start to
+[08:57] uh have a look at the next stage of
+[08:59] this. We're going to measure the current
+[09:00] that's flowing through this resistor
+[09:02] here. Now, you can see we've got a
+[09:04] higher value of resistance here. So,
+[09:07] what do you think's going to happen to
+[09:08] the current? Is it going to go up? Going
+[09:09] to go down? Going to stay the same?
+[09:11] Well, let's have a look. We've got our
+[09:14] values here. So, we'll see what value of
+[09:16] current we're getting. So, we'll press
+[09:19] the button and we'll see how much
+[09:20] current flows through this resistor now.
+[09:22] So, you can see there we've got 37 amp
+[09:26] 0.37 amps. And again you can see we've
+[09:30] increased the resistance and therefore
+[09:32] we have decreased the current which
+[09:34] basically just falls exactly in line
+[09:36] with what we'd expect from Ohm's law.
+[09:38] Let's again just do the calculation. Now
+[09:40] again bear in mind there might be a
+[09:41] little bit of difference in these values
+[09:43] because we're uh we're sort of using uh
+[09:46] 10 volts and we saw it was slightly
+[09:47] different earlier. We're just trying to
+[09:48] keep it nice and simple for the purposes
+[09:50] of this video. Uh, one thing I quite
+[09:52] like to do on this calculator, the FX85
+[09:54] GTX, is to press the fraction button and
+[09:57] then do my calculation that way. So, 10
+[10:00] / 27. So, remember I= V over R, 10 volt
+[10:04] divided by 27 ohms is going to give us a
+[10:07] value of
+[10:08] 0.37
+[10:10] ohms. Uh, sorry, 0.37 amps, which is
+[10:13] kind of beautiful cuz that's pretty much
+[10:15] exactly what we measured. So, we're
+[10:16] seeing that the math is working out
+[10:17] really nicely here for me, which is good
+[10:19] cuz often it doesn't. And then it's
+[10:21] frustrating trying to explain about
+[10:22] resistor tolerances and all that sort of
+[10:24] stuff. So that's really good. We're
+[10:25] seeing that happening. But can you see
+[10:27] how we're getting different values of
+[10:30] current in different places in the
+[10:32] circuit? Now from our video on resistors
+[10:35] connected in series, we saw that the
+[10:37] current was the same everywhere in the
+[10:39] circuit, but the voltage is changed
+[10:41] across the different resistors. Whereas
+[10:43] here we're seeing the opposite
+[10:45] happening. What we're seeing here is
+[10:46] that the voltage is staying pretty much
+[10:49] the same throughout the circuit. It's
+[10:51] about 10 volts in every position.
+[10:53] However, the currents are different in
+[10:55] different places. So, let's have a look
+[10:57] at this one. Now, this one will be
+[10:58] interesting. And uh I think this is the
+[11:00] one that was probably the source of uh
+[11:02] the smell and the smoke that I could see
+[11:04] going earlier. So, we could see we've
+[11:07] got a 10 ohm resistor here. So, what's
+[11:09] going to happen to the current flowing
+[11:10] into this resistor when we power it up?
+[11:12] Is it going to be higher than it was for
+[11:15] here? Higher than it was for here? Lower
+[11:16] between the two? What do you think's
+[11:18] going to happen to the current? Well,
+[11:20] let's plug in the meter and find out.
+[11:23] So, we've got our
+[11:26] meter connected there. We've got the
+[11:28] current flowing out of the circuit,
+[11:30] through the meter, and back into the
+[11:32] circuit again. So, what we've done is
+[11:33] just removed that link and diverted the
+[11:35] current out of the circuit so we can
+[11:36] measure what it is. And now, what we'll
+[11:39] find is let's make a prediction. So,
+[11:41] we've got a voltage of 10 uh 10 volts.
+[11:45] We've got a resistance of 10 ohms. So,
+[11:47] we've got 10 divided by 10, which is
+[11:50] going to give us 1 amp. So, we should
+[11:52] have roughly 1 amp flowing through here.
+[11:55] My guess is it will probably be a little
+[11:56] bit below that. Probably be about 0.97
+[11:59] 0.96, something like that. But, let's
+[12:02] power it up and find out. So, if we
+[12:04] press the button here, we'll see that
+[12:06] we're getting 0.98 amps. So, pretty
+[12:10] close to what we said. It was close to 1
+[12:12] amp. Again, I don't think you need to
+[12:14] prove uh that 10 / 10 is equal to 1 on
+[12:17] the calculator. And just bear in mind
+[12:19] that 0.98 is very, very close to one.
+[12:23] We're only like 0.02
+[12:26] amps of having a full 1 ampere there.
+[12:29] Okay. So, we'll put our circuit back
+[12:31] together and we're going to demonstrate
+[12:32] a really important point here now and
+[12:35] that is how the current behaves when it
+[12:37] all meets up together. So, at the moment
+[12:39] when we power this circuit up, we've got
+[12:41] current flowing through this resistor
+[12:43] here, through this resistor here, and
+[12:44] through this one. And what's happening
+[12:46] is that that current is flowing from the
+[12:48] source through the switch through that
+[12:51] section of wire there, and then it kind
+[12:53] of branches off and goes through the
+[12:55] resistor and then meets up back the
+[12:56] other side and comes back around again.
+[12:59] Now, what's interesting about that is
+[13:01] that the current flowing through this
+[13:03] one shares that path for part of its
+[13:05] journey. It's only when it gets to here
+[13:07] that that current splits off and the
+[13:09] current feeding this resistor and this
+[13:11] resistor carry on up the way here. And
+[13:13] when it gets to this point, the current
+[13:15] splits off again and the uh current
+[13:18] flows off in that direction. So it goes
+[13:20] off that way and the remaining current
+[13:22] goes that way. So what that happens if
+[13:24] we work backwards is that the three
+[13:26] currents flowing into the circuit join
+[13:29] up and actually the most amount of
+[13:31] current in the circuit will be flowing
+[13:32] through this bit here. And we can again
+[13:34] we can prove that by measurement. So if
+[13:38] we remove that link there and have a
+[13:42] look at this. Now what's interesting
+[13:44] about this bit is that we should find
+[13:46] here that the current flowing through
+[13:48] this bit of the circuit is exactly the
+[13:50] same as it was there because it's just
+[13:51] going up there and across there. So
+[13:53] we'll just prove a point. We should have
+[13:54] about that 1 ampere flowing through that
+[13:56] bit. And indeed we do. We've got that
+[13:59] 0.98 value. Okay. So now what we're
+[14:03] going to do is we're going to see what
+[14:05] the current value is a little bit
+[14:08] further down the circuit. So I'll put
+[14:09] that link back in. We'll remove that
+[14:11] link there. Pop that one in there. And
+[14:14] then when we hit the uh on button now,
+[14:17] what we're going to find is that there's
+[14:18] now current flowing. Just going to swap
+[14:20] these around so we don't get a minus
+[14:22] value, which would only add to the
+[14:23] confusion. A minus value for DC current
+[14:26] just indicates that the current is
+[14:27] flowing the other way. So we just
+[14:28] confuse the current there by sending it
+[14:30] the wrong way through the meter. It'll
+[14:31] still measure it, but it'll just give a
+[14:32] minus value. So, the direction of
+[14:34] current flow in a DC circuit is really
+[14:36] important. So, what we should find now
+[14:39] is that when we turn the circuit on, do
+[14:41] you think at this point we'll have more
+[14:43] current flowing through this link than
+[14:45] we had through this link? Or do you
+[14:46] think it will be less or do you think
+[14:47] it'll be the same? Well, again, bear in
+[14:49] mind what we said. The current flowing
+[14:51] through this link is made up of the
+[14:53] current being drawn by this load and the
+[14:56] current being drawn by this load. So
+[14:58] what we should find is that actually
+[15:00] they should add together and give us
+[15:02] that value there. So let's test it and
+[15:04] see.
+[15:06] So you can see there we're getting 1.35
+[15:08] which is about I think we had 0.37 amps
+[15:11] flowing through there earlier and then
+[15:13] we had about an amp there. So we've got
+[15:15] about 1.35 amps about 1.37 which is what
+[15:19] we'd expect it to be. In fact 0.98 plus
+[15:22] 0.37 is uh that value of 1.35. So that's
+[15:27] worked out really nicely again. So just
+[15:30] to prove the point, if we now move our
+[15:33] meter so that it is measuring
+[15:37] from
+[15:40] here to here. That's my meter getting
+[15:44] excited and deciding that it's been on
+[15:46] for long enough. Okay. So what we're
+[15:47] going to do now is measure the current
+[15:49] flowing through this section. And
+[15:50] hopefully you've kind of followed the
+[15:52] logical process and we should even be
+[15:53] able to make an estimate of what this
+[15:55] current will be. So if you remember our
+[15:58] current values that we had were uh 10 /
+[16:03] 18 which gave us 0.55. So we've got 0.55
+[16:07] flowing through there. 0.37 and 0.98. So
+[16:11] if we add those values together 0.55
+[16:15] plus 0
+[16:18] 37 plus 0.98
+[16:21] we should come out with about 1.9 amp.
+[16:24] So, we should be measuring about 1.9 amp
+[16:26] through there. So, let's see what
+[16:28] happens here. Let's see if we get that
+[16:29] value of 1.9 amp, which is the total of
+[16:32] these currents all added together. So,
+[16:34] again, just make sure we get the leads
+[16:36] the right way round. We'll put that
+[16:37] there. We'll put that there. And now,
+[16:40] when we press the on switch, we should
+[16:41] find that about 1.9 amps is flowing
+[16:44] through that link.
+[16:46] 1.9. Yeah, look at that. 1.9 amp. So,
+[16:49] we're really happy with that as a
+[16:50] result. So you can start to understand
+[16:53] how a parallel circuit works. And
+[16:54] actually we're starting to see some
+[16:55] really important principles for our
+[16:57] electrical installation work because
+[16:58] actually if you think about it, this
+[17:00] section of conductor here is like the
+[17:04] first bit of cable that goes from the
+[17:06] consumer unit out to the first load in a
+[17:09] circuit. So obviously that is where most
+[17:11] of the current is running through the
+[17:12] cable and generally speaking that's
+[17:14] where all the cables are bunched
+[17:16] together and go into the consumer unit
+[17:18] or the distribution board. So, kind of
+[17:20] that's kind of a bit of a pinch point
+[17:22] really when it comes to electrical
+[17:23] design. So, there you've got all of the
+[17:25] current and all of the uh cables all
+[17:27] bunched together in the same place.
+[17:29] Again, this isn't a design video, but it
+[17:31] does start to show us some interesting
+[17:32] things that we need to sort of watch out
+[17:34] for and think about as part of our
+[17:37] electrical installation work. Okay, so
+[17:40] there is one other thing that we could
+[17:42] do here and that is we could figure out
+[17:44] what the total resistance of the circuit
+[17:46] is and use that in order to figure out
+[17:48] what that total resistance uh the total
+[17:50] current flow into there rather should
+[17:52] have been. So we can actually measure
+[17:54] that if we remove our power supply
+[17:56] temporarily and just take that out of
+[17:59] there and what we can do is we can
+[18:01] measure the total resistance of this
+[18:05] circuit. So, if we put our leads in
+[18:08] there and there so we're getting a
+[18:09] pretty good idea of what the total
+[18:11] resistance will be. And of course, it's
+[18:13] really important to make sure you've got
+[18:14] your leads in the right terminals as
+[18:15] well, which is something that I always
+[18:17] used to forget to do in lessons. And it
+[18:19] would appear that I'm still continuing
+[18:20] to forget to do that on video. So,
+[18:22] nobody's perfect. So, now what we'll
+[18:24] find is when we press the button this
+[18:26] time is we'll actually find out what the
+[18:27] total resistance of the circuit is. So,
+[18:29] you can see there we're coming out with
+[18:32] about 5.2 ohms. that seems to have
+[18:35] settled down at it's probably about
+[18:36] 5.25, which is why it's flicking between
+[18:38] the two there. So, let's just do a very
+[18:40] quick throwback to our uh resistors in
+[18:43] parallel calculation. And hopefully
+[18:45] you'll remember uh I showed this in a
+[18:47] video. If we want to figure out what the
+[18:49] total resistance of a circuit is, we
+[18:52] simply do uh the value of the resistors.
+[18:55] We do one over each value. And if you
+[18:57] remember that button there, the x to the
+[18:59] minus1 button, when you press that 18 to
+[19:02] the minus1 is exactly the same as 1 over
+[19:05] 18. Now again, if you're not sure what
+[19:07] I'm talking about about 1 over 18 + 1
+[19:10] over whatever, then please go back and
+[19:12] check the video on how to calculate
+[19:14] resistors connected in parallel because
+[19:16] that's really really important uh for
+[19:18] finding total resistance. So this bit
+[19:20] might be a little bit of gobbledegook to
+[19:21] you if you don't know what I'm talking
+[19:22] about if you've not seen that video. So
+[19:25] 18 -1 + 27 -1 + 10 the -1. Remember
+[19:30] that's 1 over 18 + 1 over 27 + 1 / 10.
+[19:35] And when we find that out we get 0.1925.
+[19:38] Now if we do 1 over that. So 1 over
+[19:42] 0.1925
+[19:44] we should come out with the answer of
+[19:46] 5.2 which is the value that we just
+[19:48] measured. So the maths works out the
+[19:51] circuit works out which is really nice.
+[19:52] we're getting about the value that we
+[19:54] thought we would do, which is really
+[19:55] good. What we can then do is figure out
+[19:58] what the total current flowing into the
+[20:00] circuit would be based on the total
+[20:01] resistance of the circuit. So again,
+[20:03] just back to Ohm's law. So we'll say
+[20:05] this is about 5.2. We'll round that off
+[20:08] to if we do that 10 volts, which was the
+[20:11] voltage that we had when we powered the
+[20:13] supply up. Uh 10 uh divided by so I= V /
+[20:17] R 10 / 5.2 two and we come out with 1.9
+[20:24] which is pretty much exactly the current
+[20:26] that we measured uh it flowing into the
+[20:28] circuit. So in this video what we've
+[20:30] done is we've looked at a real circuit.
+[20:32] We've connected up some resistors in
+[20:33] parallel with each other and we've
+[20:35] looked at how the voltage applied to the
+[20:37] circuit is then applied to each of those
+[20:39] values in turn each of those resistors
+[20:40] in turn. We've seen how that voltage
+[20:43] acting in conjunction with the resistor
+[20:45] then starts to uh define how much
+[20:47] current flows into each part of the
+[20:49] circuit and how all of those currents
+[20:51] then add up to give us the total current
+[20:53] flowing into the circuit. And we've also
+[20:55] kind of approached it from the other
+[20:56] direction as well. We've calculated the
+[20:58] total resistance of the circuit and
+[21:00] we've used that as a almost like a
+[21:01] double check to find the total current
+[21:04] flowing into the circuit. So maths and
+[21:06] science are working hand inand which is
+[21:08] really pleasing. uh you know that I'm
+[21:10] not lying to you. I'm proving it by
+[21:11] practical experiment. However, when
+[21:14] you're in your exams, uh when you're
+[21:15] doing this in the classroom, you may not
+[21:17] have the actual uh resistances in front
+[21:19] of you to do the calculations with.
+[21:21] However, uh what we're going to do in
+[21:23] the next video is I'm going to walk you
+[21:24] through how to do this uh on the
+[21:26] whiteboard. We're going to pick some
+[21:28] other numbers of resistance values.
+[21:29] We'll do some calculations and then I'll
+[21:32] take you through step by step how you
+[21:34] perform these calculations to figure out
+[21:36] what the individual currents are, what
+[21:38] the total current is, what the uh total
+[21:41] resistance of the circuit is, and what
+[21:43] the total current based on the total
+[21:45] resistance should be as well. And it
+[21:47] should all kind of dovetail and come
+[21:48] together really nice and neatly. So
+[21:50] there we go folks, we've done our first
+[21:52] bit of circuit analysis using a parallel
+[21:55] circuit. As we say in the next video,
+[21:57] we'll look at how to do this purely
+[21:58] theoretically because that's what you
+[21:59] may need to do in your exam. Please
+[22:01] leave any questions and thoughts in the
+[22:03] comments section below and I'll try and
+[22:04] get back to those if I can do. But all
+[22:06] that remains in this video is to say
+[22:08] thank you very much for watching.
+[22:16] [Music]

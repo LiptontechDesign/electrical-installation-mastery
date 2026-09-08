@@ -1,0 +1,406 @@
+# Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial
+# https://www.youtube.com/watch?v=XGMUpguNzao
+
+Hello everyone and welcome to this video. Today we are going to learn about electrical load calculation for a building. Electrical load calculation is an important step in designing the electrical system of any residential or commercial building. It helps us understand how much electrical power the building will need. So we can choose the right wiring, circuit breakers, and other equipment. In this video, I will explain the concepts in a simple and easy-to-understand way. So even if you are new to this topic, you will be able to follow along. Let's begin our journey into understanding electrical load calculations. Here we have a general single line diagram SLD of our project. This single line diagram is a simple representation of the entire electrical distribution system of a building. It shows how electricity flows from the main transformer to the main distribution board and then to different sub distribution boards on each floor. In this diagram, you can see that the power first comes from the main transformer. From there, it goes into the main distribution board or MDB. The MDB then supplies power to seven sub main distribution boards, also called SMDB. Each SMDB is responsible for one floor of the building. On every floor, the SMDB feeds three distribution boards, which are labeled as DB1, DB2, and DB3. These distribution boards supply electricity to lights, sockets, appliances, and other loads on that dedicated flats on each floor. After understanding the SLD, we will move to the next step, that is load estimation for each floor. Let's look at how we estimate the electrical load for each floor of the building. On every floor, we have two types of flats. One in numbers is type A flat and two in numbers are type B flats. To calculate the total load, we first need to find the load for each type of flat separately. So, first we do type A flat load calculation. For the type A flat, the estimated different appliances loads are small power sockets, 4,800 W, lighting, 1,440 W, kitchen, 2,940 W, air conditioners, 3,600 W, water heater, 1,500 W, washer, 400 W, pump, 750 W. If we sum them up, the total connected load for the type A flat becomes 15,430 W. Now it's a time to apply demand factor. Before applying, let me tell you what is demand factor. A demand factor is a multiplier used in electrical load calculations to reduce the total connected load to a more realistic value based on the fact that not all loads operate at their maximum rating at the same time. Applying the same demand factor of 0.8, the demand load becomes 12,344 W or we say 12.344 kW. After type A, we will do calculations for type B flat. For the type B flat, the load are for now lighting and power, 3,500 W, kitchen load, 2,150 W, air conditioners, 2,200 W, water heater, 1,000 W, washer, 400 W, and pump, 750 W. When we add all of these, the total connected load is 9,000 W. We apply a demand factor of 0.8, which gives us a demand load of 7,200 W or 7.2 kW. As we have calculated the all flats load for a floor, now we can calculate the total load of a floor by adding them up. So as per design, we know that each floor has one in numbers type A flat and two in numbers type B flats. So the total load for single floor is 12.344 kW + 14.4 kW = 26.744 kW. Up till now, we have calculated one floor's load. And we know that all floors are typical, so we can calculate the entire building load. Here it is. Since the building has seven floors, we multiply the floor load by seven. This gives us a total building load of 187.208 kW. Before moving next, we are missing one thing, which is common utilities load. Common utilities load refers to all the electrical loads in a building that are shared by all residents or users, rather than belonging to any one individual apartment or flat. So, here we assume that common utility load, which includes lighting, elevator, and escalator have almost 60 kW of total load. After applying demand factor of 0.9, the value comes as 54 kW. And by adding this value in total demand load of the entire building becomes 241.208 kW. Now we move to the next step, which is calculating the transformer size for the building. Up till this point, we have already calculated the total demand load of the entire residential building. From our previous calculations, the total demand load is 241.208 kW. To find the correct transformer size, we must convert this kW value into kVA because transformers are always rated in kVA. The formula for converting kW to kilovolt amperes is kilovolt amperes equals kW divided by power factor. Here we are using a power factor of 0.9, which is a common standard value for residential buildings. So after substituting the values, we get the new value 268 kilovolt amperes. This gives us the apparent power of the building. But in electrical design, we never select a transformer exactly equal to the calculated value. We must add a safety margin, usually around 20%, to allow for future load growth and to avoid overloading the transformer. So, we multiply 268 kilovolt amperes with 1.20 and get new value that is 321.61 kilovolt amperes. Now, the next step is to choose the nearest standard transformer rating available in the market. Since 321.61 kVA does not exist as a standard value, we select the next higher one. Therefore, the recommended transformer size for this building is 400 kilovolt amperes. This ensures safe operation, room for additional load in the future, and better performance of the electrical system. We have calculated the required loads and the transformer size. Now the next step is to calculate the distribution board sizing for each floor. So, in this section, we will calculate the distribution board sizing for each type of flat in the building. We have two types of flats, type A and type B. Let's start with type A, type A flat. The total load for a type A flat is 12.344 kW. To find the current, we use the formula. Current equals power times 1,000 divided by square root of three times voltage times power factor. After substituting the values, the calculated current comes out to be 19.08 amps. For safety, we add a 25% safety factor, which increases the current to 23.85 amps. So, the suitable main incoming breaker for a type A flat is a 32 amp DPNMCB. Now let's look at the outgoing breakers of the DB. These include different circuits such as lighting, five numbers of 10 amp here MCB, power sockets, five numbers of 16 amp here MCB, ACs, three numbers of 16 amp here MCB, kitchen, two numbers of 16 amp here MCB, water heater, two numbers of 20 amp here MCB, washer, one number of 16 amp here MCB, and at the end pump, one number of 16 amp MCB. When we total all the outgoing breakers, we get 19 circuits plus two spare, giving us 21 MCB. Since it is a three-phase DB, we divide the load equally across phases. 21 divided by three gives seven circuits per phase. So the load distribution becomes seven circuits on red phase, seven circuits on yellow phase, seven circuits on blue phase. After type A flat, next number is type B flats, which are two in numbers on each floor. So, let's calculate the DB size for type B. The total load for a type B flat is 7.2 kW. Using the same formula for current, we get 34.78 amps. After adding the 25% safety factor, the final current becomes 43.47 amps. So, the suitable main breaker for a type B flat is 50 amp SPN MCB. Next, we calculate the outgoing breakers of our appliances circuits, which are lighting, three numbers of 10 amp MCB, power sockets, three numbers of 16 amp MCB, AC, one number of 16 amp MCB, kitchen, one number of 16 amp MCB, water heater, one number of 16 amp MCB, washer, one number of 16 amp MCB, pump, one number of 16 amp MCB. This gives a total of 11 outgoing MCB plus two spare making 13 MCB in the DB. This completes the DB sizing for both type A and type B flats. Now, let's move on to the sub main distribution board, also known as the SMDB. We will calculate the SMDB size for each floor and then for the common utilities. SMDB sizing for Each floor of the building has three flats and the combined total load for one floor is 26.744 kW. We use the same current formula as before. Current equals power times 1,000 divided by the square root of three times voltage times power factor. Substituting the values gives a current of 41.34 amps. As always, we add a 25% safety factor. Therefore, the new value comes as 51.67 amps. So, the correct main incoming breaker for each floor's SMDB is 63 amp TPMCCB. Now, we check the outgoing breakers from the SMDB. One outgoing breaker for the type A flat DB using a 32 amp TPMCCB. Two outgoing breakers for the type B flat DBs using 50 amp SPMCCB. These outgoing breakers supply power from the SMDB to each flat on the floor. After floors SMDB sizing, we will calculate the size of SMDBs for common utilities. So, now let's calculate the SMDB size for the common utilities, which include the lighting, elevator, and escalator. The total load for all these utilities is 60 kW. Again, using the current formula, current comes as 92.75 amps. After adding the 25% safety margin, 92.75 * 1.25 = 115.93 amps. Therefore, the main incoming breaker for the common utility SMDB is 125 amp TPMCCB, next higher and standard size. And for the outgoing breakers, we are dividing the total load into three equal parts with each part taking 20 kW. This represents the loads for lighting, elevator, and escalator. Calculating the current for 20 kW comes 30.92 amps. With the safety factor, 30.92 * 1.25 = 38.65 amps. So, each outgoing breaker for the common utilities is rated as 50 amp TPMCCB. So, now we have a total of three outgoing breakers, one for each load category. After distribution boards and sub main distribution boards, now we have to calculate the size of main distribution board, which will be responsible to distribute power to all sub main distribution boards. So, here comes main distribution board MDB sizing. First, we calculate the total demand load for the complete building. Based on our previous calculations, the total connected load of the building is 241.208 kW. We are using a three-phase supply, so the voltage is 415 V and the power factor is taken as 0.9. To find the current, we use the standard three-phase current formula. Substituting the values, the current comes to approximately 372.86 amps. Adding safety factor, in electrical design, we always include a safety margin. Here, we consider a 25% safety factor to ensure reliability and future load expansion. So, 372.86 * 1.25 = 466 amps. Therefore, we select the next standard available rating, which is 500 amp triple pole MCCB for the main incoming breaker. Now, let's move to the outgoing breakers that supply power to the sub main distribution boards or SMDB. For our building, we have a total of eight SMDB, one for each of the seven floors and one for the common utility area. Earlier, we calculated the incoming current required for each SMDB. Based on that, we select suitable outgoing MCCBs from the MDB. For the seven floors, each SMDB was originally rated with a 63 amp breaker. And for the common utility SMDB, the calculated breaker rating was 125 amps. However, to ensure better safety and system reliability, we always select the outgoing breaker slightly higher than the breakers installed in the SMDB. Therefore, the final selection is seven numbers of 80 amp triple pole MCCB for the floor SMDB, one 150 amp three pole MCCB for the common utility SMDB. This ensures the MDB can safely supply power without nuisance tripping and keeps the entire distribution system stable. Now, that we have completed all the calculations for the electrical load, breaker sizing, and MDB or SMDB selection, the final step is to look at the single line diagram for the entire residential building. This SLD represents how power is distributed from the main transformer all the way up to each floor of the building. At the bottom, you can see the main transformer. From the transformer, power is supplied into the main distribution board or MDB. This MDB is the central point where all outgoing feeders are connected. From the MDB, power is distributed to eight different sub main distribution boards, one for each of the six residential floors, one for the ground floor, and one for the common utility area. Each SMDB then supplies power to the individual distribution boards or DBs located on every floor. In our design, each floor has three DB, DB1, DB2, and DB3, depending on dedicated load distribution for each flat on every floor. So, the complete flow of power looks like this. Transformer, MDB, SMDB, floor distribution boards, final circuits in each apartment or flats. This simplified representation helps us clearly understand the electrical network of the entire building without showing every wire or connection. With this, we have completed the full process of electrical load calculation and distribution board sizing for a residential building. I hope this step-by-step guide helps you understand how electrical designing is done professionally. Thank you for watching and I will see you in the next video.
+
+
+[00:01] Hello everyone and welcome to this
+[00:02] video. Today we are going to learn about
+[00:05] electrical load calculation for a
+[00:07] building.
+[00:08] Electrical load calculation is an
+[00:11] important step in designing the
+[00:12] electrical system of any residential or
+[00:15] commercial building. It helps us
+[00:18] understand how much electrical power the
+[00:20] building will need. So we can choose the
+[00:23] right wiring, circuit breakers, and
+[00:25] other equipment.
+[00:27] In this video, I will explain the
+[00:29] concepts in a simple and
+[00:31] easy-to-understand way.
+[00:33] So even if you are new to this topic,
+[00:36] you will be able to follow along.
+[00:38] Let's begin our journey into
+[00:40] understanding electrical load
+[00:42] calculations. Here we have a general
+[00:45] single line diagram SLD of our project.
+[00:49] This single line diagram is a simple
+[00:51] representation of the entire electrical
+[00:54] distribution system of a building. It
+[00:57] shows how electricity flows from the
+[00:59] main transformer to the main
+[01:01] distribution board and then to different
+[01:03] sub distribution boards on each floor.
+[01:07] In this diagram, you can see that the
+[01:09] power first comes from the main
+[01:11] transformer. From there, it goes into
+[01:14] the main distribution board or MDB. The
+[01:18] MDB then supplies power to seven sub
+[01:21] main distribution boards, also called
+[01:23] SMDB.
+[01:24] Each SMDB is responsible for one floor
+[01:28] of the building. On every floor, the
+[01:30] SMDB feeds three distribution boards,
+[01:33] which are labeled as DB1, DB2, and DB3.
+[01:38] These distribution boards supply
+[01:40] electricity to lights, sockets,
+[01:42] appliances, and other loads on that
+[01:44] dedicated flats on each floor. After
+[01:47] understanding the SLD, we will move to
+[01:49] the next step, that is load estimation
+[01:52] for each floor. Let's look at how we
+[01:54] estimate the electrical load for each
+[01:56] floor of the building. On every floor,
+[01:59] we have two types of flats. One in
+[02:01] numbers is type A flat and two in
+[02:04] numbers are type B flats.
+[02:06] To calculate the total load, we first
+[02:09] need to find the load for each type of
+[02:11] flat separately.
+[02:12] So, first we do type A flat load
+[02:15] calculation.
+[02:17] For the type A flat, the estimated
+[02:19] different appliances loads are
+[02:22] small power sockets, 4,800 W, lighting,
+[02:27] 1,440
+[02:29] W, kitchen, 2,940
+[02:33] W,
+[02:34] air conditioners, 3,600
+[02:37] W,
+[02:38] water heater, 1,500
+[02:41] W,
+[02:42] washer, 400 W,
+[02:45] pump, 750 W.
+[02:48] If we sum them up, the total connected
+[02:50] load for the type A flat becomes 15,430
+[02:55] W.
+[02:56] Now it's a time to apply demand factor.
+[03:00] Before applying,
+[03:02] let me tell you what is demand factor.
+[03:05] A demand factor is a multiplier used in
+[03:08] electrical load calculations to reduce
+[03:11] the total connected load to a more
+[03:13] realistic value based on the fact that
+[03:16] not all loads operate at their maximum
+[03:19] rating at the same time.
+[03:22] Applying the same demand factor of 0.8,
+[03:26] the demand load becomes 12,344
+[03:30] W or we say 12.344
+[03:33] kW. After type A, we will do
+[03:36] calculations for type B flat. For the
+[03:39] type B flat, the load are for now
+[03:42] lighting and power, 3,500 W,
+[03:45] kitchen load, 2,150
+[03:48] W, air conditioners, 2,200 W, water
+[03:53] heater, 1,000 W, washer, 400 W, and
+[03:58] pump, 750 W. When we add all of these,
+[04:03] the total connected load is 9,000 W.
+[04:07] We apply a demand factor of 0.8,
+[04:10] which gives us a demand load of 7,200
+[04:14] W or 7.2 kW. As we have calculated the
+[04:19] all flats load for a floor, now we can
+[04:21] calculate the total load of a floor by
+[04:23] adding them up. So as per design, we
+[04:26] know that each floor has one in numbers
+[04:28] type A flat and two in numbers type B
+[04:31] flats. So the total load for single
+[04:34] floor is 12.344 kW + 14.4 kW = 26.744
+[04:42] kW.
+[04:44] Up till now, we have calculated one
+[04:46] floor's load. And we know that all
+[04:49] floors are typical, so we can calculate
+[04:51] the entire building load. Here it is.
+[04:55] Since the building has seven floors, we
+[04:57] multiply the floor load by seven. This
+[05:00] gives us a total building load of
+[05:03] 187.208
+[05:05] kW. Before moving next, we are missing
+[05:08] one thing, which is common utilities
+[05:10] load. Common utilities load refers to
+[05:14] all the electrical loads in a building
+[05:16] that are shared by all residents or
+[05:18] users, rather than belonging to any one
+[05:21] individual apartment or flat. So, here
+[05:24] we assume that common utility load,
+[05:27] which includes lighting, elevator, and
+[05:29] escalator have almost 60 kW of total
+[05:32] load.
+[05:33] After applying demand factor of 0.9,
+[05:37] the value comes as 54 kW.
+[05:40] And by adding this value in total demand
+[05:43] load of the entire building becomes
+[05:46] 241.208
+[05:49] kW. Now we move to the next step, which
+[05:52] is calculating the transformer size for
+[05:54] the building. Up till this point, we
+[05:57] have already calculated the total demand
+[05:59] load of the entire residential building.
+[06:02] From our previous calculations, the
+[06:04] total demand load is 241.208
+[06:08] kW.
+[06:09] To find the correct transformer size, we
+[06:12] must convert this kW value into kVA
+[06:16] because transformers are always rated in
+[06:18] kVA.
+[06:20] The formula for converting kW to
+[06:22] kilovolt amperes is
+[06:24] kilovolt amperes equals kW divided by
+[06:28] power factor.
+[06:29] Here we are using a power factor of 0.9,
+[06:33] which is a common standard value for
+[06:35] residential buildings.
+[06:37] So after substituting the values, we get
+[06:40] the new value 268 kilovolt amperes.
+[06:45] This gives us the apparent power of the
+[06:47] building.
+[06:48] But in electrical design, we never
+[06:50] select a transformer exactly equal to
+[06:53] the calculated value.
+[06:55] We must add a safety margin,
+[06:57] usually around 20%, to allow for future
+[07:01] load growth and to avoid overloading the
+[07:04] transformer.
+[07:05] So, we multiply 268
+[07:09] kilovolt amperes with 1.20
+[07:13] and get new value that is 321.61
+[07:17] kilovolt amperes.
+[07:19] Now,
+[07:20] the next step is to choose the nearest
+[07:22] standard transformer rating available in
+[07:24] the market.
+[07:26] Since 321.61
+[07:28] kVA does not exist as a standard value,
+[07:31] we select the next higher one.
+[07:33] Therefore, the recommended transformer
+[07:36] size for this building is 400 kilovolt
+[07:39] amperes. This ensures safe operation,
+[07:43] room for additional load in the future,
+[07:45] and better performance of the electrical
+[07:47] system. We have calculated the required
+[07:49] loads and the transformer size. Now the
+[07:53] next step is to calculate the
+[07:54] distribution board sizing for each
+[07:57] floor. So,
+[07:59] in this section, we will calculate the
+[08:01] distribution board sizing for each type
+[08:04] of flat in the building.
+[08:06] We have two types of flats, type A and
+[08:09] type B. Let's start with type A, type A
+[08:12] flat.
+[08:13] The total load for a type A flat is
+[08:16] 12.344
+[08:17] kW.
+[08:19] To find the current, we use the formula.
+[08:21] Current equals power times 1,000 divided
+[08:25] by square root of three times voltage
+[08:28] times power factor.
+[08:30] After substituting the values, the
+[08:32] calculated current comes out to be 19.08
+[08:36] amps. For safety, we add a 25% safety
+[08:40] factor, which increases the current to
+[08:42] 23.85
+[08:44] amps. So, the suitable main incoming
+[08:47] breaker for a type A flat is a 32 amp
+[08:51] DPNMCB.
+[08:53] Now let's look at the outgoing breakers
+[08:55] of the DB. These include different
+[08:57] circuits such as lighting,
+[09:00] five numbers of 10 amp here MCB, power
+[09:03] sockets, five numbers of 16 amp here
+[09:06] MCB, ACs, three numbers of 16 amp here
+[09:11] MCB, kitchen, two numbers of 16 amp here
+[09:15] MCB, water heater, two numbers of 20 amp
+[09:18] here MCB, washer, one number of 16 amp
+[09:23] here MCB, and at the end pump, one
+[09:26] number of 16 amp MCB. When we total all
+[09:29] the outgoing breakers, we get 19
+[09:32] circuits plus two spare, giving us 21
+[09:35] MCB. Since it is a three-phase DB, we
+[09:38] divide the load equally across phases.
+[09:41] 21 divided by three gives seven circuits
+[09:43] per phase. So the load distribution
+[09:46] becomes seven circuits on red phase,
+[09:49] seven circuits on yellow phase, seven
+[09:51] circuits on blue phase. After type A
+[09:54] flat, next number is type B flats, which
+[09:58] are two in numbers on each floor. So,
+[10:01] let's calculate the DB size for type B.
+[10:04] The total load for a type B flat is 7.2
+[10:07] kW.
+[10:08] Using the same formula for current, we
+[10:11] get 34.78
+[10:13] amps. After adding the 25% safety
+[10:17] factor, the final current becomes 43.47
+[10:21] amps.
+[10:22] So, the suitable main breaker for a type
+[10:25] B flat is 50 amp SPN MCB. Next, we
+[10:30] calculate the outgoing breakers of our
+[10:32] appliances circuits, which are lighting,
+[10:35] three numbers of 10 amp MCB, power
+[10:37] sockets, three numbers of 16 amp MCB,
+[10:41] AC, one number of 16 amp MCB, kitchen,
+[10:46] one number of 16 amp MCB, water heater,
+[10:50] one number of 16 amp MCB, washer, one
+[10:54] number of 16 amp MCB, pump, one number
+[10:58] of 16 amp MCB. This gives a total of 11
+[11:02] outgoing MCB plus two spare making 13
+[11:05] MCB in the DB. This completes the DB
+[11:08] sizing for both type A and type B flats.
+[11:12] Now, let's move on to the sub main
+[11:14] distribution board, also known as the
+[11:16] SMDB. We will calculate the SMDB size
+[11:19] for each floor and then for the common
+[11:21] utilities. SMDB sizing for Each floor
+[11:26] of the building has three
+[11:28] flats and the combined total load for
+[11:30] one floor is 26.744
+[11:34] kW.
+[11:35] We use the same current formula as
+[11:37] before. Current equals power times 1,000
+[11:40] divided by the square root of three
+[11:42] times voltage times power factor.
+[11:46] Substituting the values gives a current
+[11:48] of 41.34
+[11:50] amps. As always, we add a 25% safety
+[11:54] factor. Therefore, the new value comes
+[11:57] as 51.67
+[11:59] amps. So, the correct main incoming
+[12:01] breaker for each floor's SMDB is 63 amp
+[12:05] TPMCCB.
+[12:08] Now, we check the outgoing breakers from
+[12:10] the SMDB. One outgoing breaker for the
+[12:13] type A flat DB using a 32 amp TPMCCB.
+[12:18] Two outgoing breakers for the type B
+[12:20] flat DBs using 50 amp SPMCCB.
+[12:25] These outgoing breakers supply power
+[12:27] from the SMDB to each flat on the floor.
+[12:31] After floors SMDB sizing, we will
+[12:34] calculate the size of SMDBs for common
+[12:37] utilities. So, now let's calculate the
+[12:40] SMDB size for the common utilities,
+[12:43] which include the lighting, elevator,
+[12:45] and escalator. The total load for all
+[12:48] these utilities is 60 kW. Again, using
+[12:53] the current formula, current comes as
+[12:55] 92.75
+[12:57] amps. After adding the 25% safety
+[13:00] margin, 92.75
+[13:03] * 1.25 = 115.93
+[13:07] amps.
+[13:08] Therefore, the main incoming breaker for
+[13:10] the common utility SMDB is 125
+[13:15] amp TPMCCB,
+[13:17] next higher and standard size. And for
+[13:20] the outgoing breakers, we are dividing
+[13:22] the total load into three equal parts
+[13:25] with each part taking 20 kW. This
+[13:28] represents the loads for lighting,
+[13:30] elevator, and escalator. Calculating the
+[13:33] current for 20 kW comes 30.92 amps.
+[13:37] With the safety factor, 30.92 * 1.25
+[13:43] = 38.65
+[13:45] amps. So, each outgoing breaker for the
+[13:49] common utilities is rated as
+[13:51] 50 amp TPMCCB.
+[13:55] So, now we have a total of three
+[13:57] outgoing breakers, one for each load
+[13:59] category. After distribution boards and
+[14:02] sub main distribution boards, now we
+[14:04] have to calculate the size of main
+[14:06] distribution board, which will be
+[14:08] responsible to distribute power to all
+[14:10] sub main distribution boards.
+[14:13] So, here comes main distribution board
+[14:15] MDB sizing. First, we calculate the
+[14:19] total demand load for the complete
+[14:21] building. Based on our previous
+[14:23] calculations, the total connected load
+[14:26] of the building is 241.208
+[14:30] kW. We are using a three-phase supply,
+[14:33] so the voltage is 415 V
+[14:36] and the power factor is taken as 0.9.
+[14:40] To find the current, we use the standard
+[14:43] three-phase current formula.
+[14:45] Substituting the values, the current
+[14:48] comes to approximately 372.86
+[14:52] amps.
+[14:53] Adding safety factor, in electrical
+[14:55] design, we always include a safety
+[14:58] margin.
+[14:59] Here, we consider a 25% safety factor to
+[15:03] ensure reliability and future load
+[15:06] expansion.
+[15:07] So, 372.86
+[15:10] * 1.25 = 466 amps. Therefore, we select
+[15:16] the next standard available rating,
+[15:18] which is 500 amp triple pole MCCB for
+[15:23] the main incoming breaker. Now, let's
+[15:25] move to the outgoing breakers that
+[15:28] supply power to the sub main
+[15:30] distribution boards or SMDB.
+[15:34] For our building, we have a total of
+[15:36] eight SMDB,
+[15:38] one for each of the seven floors and one
+[15:41] for the common utility area. Earlier, we
+[15:44] calculated the incoming current required
+[15:47] for each SMDB. Based on that, we select
+[15:50] suitable outgoing MCCBs from the MDB.
+[15:53] For the seven floors, each SMDB was
+[15:56] originally rated with a 63 amp breaker.
+[15:59] And for the common utility SMDB, the
+[16:01] calculated breaker rating was 125 amps.
+[16:05] However, to ensure better safety and
+[16:08] system reliability, we always select the
+[16:11] outgoing breaker slightly higher than
+[16:13] the breakers installed in the SMDB.
+[16:16] Therefore, the final selection is seven
+[16:19] numbers of 80 amp triple pole MCCB for
+[16:23] the floor SMDB, one 150 amp three pole
+[16:27] MCCB for the common utility SMDB.
+[16:31] This ensures the MDB can safely supply
+[16:34] power without nuisance tripping and
+[16:37] keeps the entire distribution system
+[16:39] stable. Now, that we have completed all
+[16:41] the calculations for the electrical
+[16:43] load, breaker sizing, and MDB or SMDB
+[16:48] selection, the final step is to look at
+[16:50] the single line diagram for the entire
+[16:52] residential building. This SLD
+[16:55] represents how power is distributed from
+[16:57] the main transformer all the way up to
+[17:00] each floor of the building. At the
+[17:02] bottom, you can see the main
+[17:03] transformer. From the transformer, power
+[17:06] is supplied into the main distribution
+[17:08] board or MDB. This MDB is the central
+[17:12] point where all outgoing feeders are
+[17:15] connected. From the MDB, power is
+[17:17] distributed to eight different sub main
+[17:20] distribution boards, one for each of the
+[17:22] six residential floors, one for the
+[17:25] ground floor, and one for the common
+[17:27] utility area. Each SMDB then supplies
+[17:30] power to the individual distribution
+[17:32] boards or DBs located on every floor. In
+[17:36] our design, each floor has three DB,
+[17:39] DB1, DB2, and DB3, depending on
+[17:43] dedicated load distribution for each
+[17:45] flat on every floor. So, the complete
+[17:48] flow of power looks like this.
+[17:50] Transformer, MDB, SMDB,
+[17:54] floor distribution boards, final
+[17:56] circuits in each apartment or flats.
+[18:00] This simplified representation helps us
+[18:02] clearly understand the electrical
+[18:04] network of the entire building without
+[18:06] showing every wire or connection. With
+[18:09] this, we have completed the full process
+[18:12] of electrical load calculation and
+[18:14] distribution board sizing for a
+[18:16] residential building.
+[18:18] I hope this step-by-step guide helps you
+[18:21] understand how electrical designing is
+[18:23] done professionally.
+[18:25] Thank you for watching and I will see
+[18:27] you in the next video.

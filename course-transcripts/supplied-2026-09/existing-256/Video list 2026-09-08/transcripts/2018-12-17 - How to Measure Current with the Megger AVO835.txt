@@ -1,0 +1,276 @@
+# How to Measure Current with the Megger AVO835
+# https://www.youtube.com/watch?v=fPxwrfci88U
+
+[Music] hello and welcome for this electrical principals training video in this video we're going to be looking at how to set up and use our multimeter now we're going to be using the beautiful Evo 835 which was given to us by mega for use in our videos and we're going to show you how to set this up and also more importantly how we should connect meters in order to measure various different values so we'll bring the camera in and we'll have a look at how we do this so we have here our mega AVO 835 this is a really really nice top of the range multimeter this has got an awful lot of functions I'm here and we're going to explore some of these as we go through now some of the more mature viewers who are watching at the moment may remember the old AVO meters this immediately reminded me of that these were very very early meters that were manufactured and AVO stood for amps volts and ohms so what we're going to do in a series of videos is we're going to look start off by looking at the a for amps we're going to do that first and then we'll produce future videos that explore the other functions on here going way beyond amps volts and ohms as well where we can look at lots and lots of very interesting things that this bit of kit does in that your meter will also likely do so let's get started so we're going to start off by measuring currents we're going to start off by measuring amps so if you look down here at the bottom of the meter we've got these four terminals now the really clever thing about the AVO 835 is that as you twist to the different settings what happens is that the terminals open up and block off that are required now that's really really handy because we can damage our multimeter quite badly if we set it up in the wrong way so first of all we'll turn to the milliamps range so with the milliamps range selected you can see down here we want to select the common now if your meter doesn't cover up the terminals that you don't need just look out for the setting here so you can see there's no mention of amps or current around this terminal here we've got 10 amps which is a much larger range and we're looking at we're looking at milliamps thousandths of an amp so we'll plug in here to the hundred milliamps and see what measure we get so we always have one lead in the common generally speaking that's the black so we'll plug that in there okay and we then put the red lead into the other terminal the one that we're going to be using okay so this is currently set up to measure milliamps now you'll notice that there is a white setting and a yellow setting so the white setting represents the initial value that it will be measuring okay so here we're in milliamps and then we can change to the yellow setting by pressing the mode button so here what we're going to do on the milliamp setting is we're going to select by pressing the mode button we're going to change it to the DC measurement okay so here we're now measuring DC so if you look up here yep you can see that says DC now instead of AC so that's going to give us a nice accurate reading so don't worry about the fact that this has got a little value on there let's put this into context that smudge that's telling his naught point 1/9 of a million so that's a tiny tiny little fraction of a thousandth of an amp okay so essentially that is now set to zero what will then do is use our leads okay now we're dealing with extra low voltage here because we've only got a 12 volt supply coming in but what we'll do is we'll keep the sheaths on the tips here to make sure just just for best practice really when we're measuring live stuff even though this this is not going to hurt us in any way so let's measure the current in this circuit now so we've got our circuit connected up we've got current flowing through this series circuit and what we're going to do is we're going to measure what that current is now this is a classic examine this is where the lecturer comes out in me we always get asked in exams how our ammeter is connected into a circuit and the answer is they're always connected in series now to achieve that what we need to do is we need to remove a link from the Kip okay so if again if you were doing this in the real world we may need to separate out a couple of wires and connect our ammeter up that way although there are other ways of measuring current as well which we'll learn about in a future video and then we persuade the current to leave the circuit go through the multimeter and then back into the circuit again so if we connect onto these two terminals here now we should get our current reading so there you can see we're getting one point one milli amps of current flowing through there on the DC setting so that's the current flow through this circuit so we've successfully measured current with our multimeter set up to measure DC just a point if we wanted to check the current on this side of the circuit what we would find is that we'd have exactly the same value so we could remove a link from this side and we'd measure the same current here current doesn't get used up in a circuit it's just a measure of how much electricity is flowing around the circuit at a time what we can now do is we'll pause and we'll switch over to an AC supply and then we'll see how we set up our meter to measure AC current so what we've done now is we've taken out our DC power supply and we've brought in an AC power supply now this is still in the extra low voltage range and I absolutely no risk from getting harmed or injured in any way from this connection but what we're going to do is we're going to show you how to set up your meter now to measure AC current so what we'll do is we'll have a look on the multimeter here now it's currently set up to measure DC obviously with your own multimeter you need to look at what it's capable of measuring and not some a meters won't have all the settings that this one does so it may not measure AC it may not measure DC you need to look at it but if it will measure both AC and DC what you'll need to do is you'll need to tell the multimeter what you are measuring whether it's DC or AC so again we press the mode button and now we've started cycling through the different options that are available on this setting here so now we're measuring frequency we're not going to measure that today we'll come back to that in future video and now we're measuring AC current so that's what we've got going on there so if we just pop that down there and again following exactly the same principle that we followed before we're going to connect up our meter in series with the circuit so a meters are connected in series remember that and we're going to measure the current flowing into the circuit and we're getting one point 4 milliamps there so we're getting one point 4 milliamps so that's our AC current measurement so we've changed our circuit about quite a bit now what we've got is just one resistor connected to our AC power supply now the reason I've left a link out here is that we're actually about to have a relatively large amount of current flowing into the circuit here and I don't want to damage the resistor there other ones damage that component so what we can look at doing here now is we can look at how do we change the multimeter in order to measure higher values of current first of all how would we know what range to start on now I know from my personal experience and from my maths that there's going to be way beyond the upper limit of this setting flowing through the circuit so it's going to be way more than 100 milliamps flowing through here and I could risk blowing a fuse within the multimeter which I don't want to damage my equipment I don't want to risk doing that so as a rule of thumb if you don't know what the value is going to be if you don't know what range or setting so have your multimeter on always start at the safest setting which in this case is the highest one so what we would do here is we would swap this over now a to measure amps instead of milliamps so now we've changed this round and notice when we do that this terminal will get now gets covered up and this one gets revealed so that's where we're going to pop our lead now so now we're into the amps range on our multimeter and what we'll do is we'll just measure this very quickly to say oh I want to melt my resistor so we'll measure this very quickly again we're connecting our multimeter up in series because we're measuring current and we're on the AC setting so we saw it for that we could do it for DC if we wanted and we'll just see what current flows okay so you can see there it's about 1.1 of an amp so that's the value that we're looking at there about 1.1 of an amp now you may have noticed that when we were carrying out that test that the meter briefly said o L now what that means is over limit in other words it's gone beyond the range of what it can measure now this multimeter will clearly measure up to 10 amps on this setting and we weren't measuring anywhere near 10 amps the reason it did that is that the meter is set on the auto-ranging function so what that means is that the multimeter it kind of will monitor how much current flows and then it will pick the most relevant range to show you the answer in so just for a minute it goes over the limit of what it initially knows and then it will settle back down to the correct value you can tell it what range you want it set into if you keep pressing the range button there you can see that what happens is the decimal point moves about so you can see there that that's gonna change the how many decimal points we get at the end of that value so if we're measuring very very small currents we'll be able to get quite a small reading out of that and if we want to go back into the auto-ranging mode just do a long press on the range button on this meter and that will return you to the auto mode so we've seen in this video how to set up a multimeter to measure current we know that the multimeter needs to be connected in series and we've just seen a couple of things that will hopefully help us not to damage our multimeter while we're carrying out this testing procedure so as always thank you for watching [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome for this electrical
+[00:10] principals training video in this video
+[00:12] we're going to be looking at how to set
+[00:14] up and use our multimeter now we're
+[00:16] going to be using the beautiful
+[00:18] Evo 835 which was given to us by mega
+[00:21] for use in our videos and we're going to
+[00:23] show you how to set this up and also
+[00:25] more importantly how we should connect
+[00:27] meters in order to measure various
+[00:29] different values so we'll bring the
+[00:31] camera in and we'll have a look at how
+[00:32] we do this so we have here our mega AVO
+[00:38] 835 this is a really really nice top of
+[00:41] the range multimeter this has got an
+[00:43] awful lot of functions I'm here and
+[00:45] we're going to explore some of these as
+[00:47] we go through now some of the more
+[00:49] mature viewers who are watching at the
+[00:51] moment may remember the old AVO meters
+[00:54] this immediately reminded me of that
+[00:56] these were very very early meters that
+[00:59] were manufactured and AVO stood for amps
+[01:03] volts and ohms so what we're going to do
+[01:05] in a series of videos is we're going to
+[01:07] look start off by looking at the a for
+[01:09] amps we're going to do that first and
+[01:11] then we'll produce future videos that
+[01:13] explore the other functions on here
+[01:15] going way beyond amps volts and ohms as
+[01:18] well where we can look at lots and lots
+[01:19] of very interesting things that this bit
+[01:21] of kit does in that your meter will also
+[01:24] likely do so let's get started
+[01:29] so we're going to start off by measuring
+[01:31] currents we're going to start off by
+[01:33] measuring amps so if you look down here
+[01:36] at the bottom of the meter we've got
+[01:38] these four terminals now the really
+[01:41] clever thing about the AVO 835 is
+[01:43] that as you twist to the different
+[01:46] settings what happens is that the
+[01:49] terminals open up and block off that are
+[01:50] required now that's really really handy
+[01:52] because we can damage our multimeter
+[01:54] quite badly if we set it up in the wrong
+[01:56] way so first of all we'll turn to the
+[02:00] milliamps range so with the milliamps
+[02:02] range selected you can see down here we
+[02:04] want to select the common now if your
+[02:06] meter doesn't cover up the terminals
+[02:08] that you don't need just look out for
+[02:11] the setting here so you can see
+[02:12] there's no mention of amps or current
+[02:15] around this terminal here we've got 10
+[02:18] amps which is a much larger range and
+[02:20] we're looking at we're looking at
+[02:21] milliamps thousandths of an amp so we'll
+[02:23] plug in here to the hundred milliamps
+[02:24] and see what measure we get so we always
+[02:27] have one lead in the common generally
+[02:30] speaking that's the black so we'll plug
+[02:33] that in there okay and we then put the
+[02:37] red lead into the other terminal the one
+[02:41] that we're going to be using okay so
+[02:43] this is currently set up to measure
+[02:45] milliamps now you'll notice that there
+[02:48] is a white setting and a yellow setting
+[02:50] so the white setting represents the
+[02:52] initial value that it will be measuring
+[02:55] okay so here we're in milliamps and then
+[02:58] we can change to the yellow setting by
+[03:00] pressing the mode button so here what
+[03:02] we're going to do on the milliamp
+[03:03] setting is we're going to select by
+[03:06] pressing the mode button we're going to
+[03:08] change it to the DC measurement okay so
+[03:11] here we're now measuring DC so if you
+[03:14] look up here yep you can see that says
+[03:17] DC now instead of AC so that's going to
+[03:20] give us a nice accurate reading so don't
+[03:24] worry about the fact that this has got a
+[03:25] little value on there let's put this
+[03:26] into context that smudge that's telling
+[03:28] his naught point 1/9 of a million so
+[03:31] that's a tiny tiny little fraction of a
+[03:33] thousandth of an amp okay so essentially
+[03:35] that is now set to zero what will then
+[03:37] do is use our leads okay
+[03:40] now we're dealing with extra low voltage
+[03:42] here because we've only got a 12 volt
+[03:44] supply coming in but what we'll do is
+[03:46] we'll keep the sheaths on the tips here
+[03:50] to make sure just just for best practice
+[03:52] really when we're measuring live stuff
+[03:54] even though this this is not going to
+[03:56] hurt us in any way so let's measure the
+[03:58] current in this circuit now so we've got
+[04:01] our circuit connected up we've got
+[04:02] current flowing through this series
+[04:03] circuit and what we're going to do is
+[04:05] we're going to measure what that current
+[04:07] is now this is a classic examine this is
+[04:11] where the lecturer comes out in me we
+[04:13] always get asked in exams how our
+[04:17] ammeter is connected into a circuit and
+[04:19] the answer is they're always connected
+[04:20] in series now to achieve that what we
+[04:23] need to do is we need to remove a link
+[04:25] from the Kip okay so if again if you were doing
+[04:27] this in the real world we may need to
+[04:29] separate out a couple of wires and
+[04:31] connect our ammeter up that way although
+[04:33] there are other ways of measuring
+[04:34] current as well which we'll learn about
+[04:36] in a future video and then we persuade
+[04:38] the current to leave the circuit go
+[04:40] through the multimeter and then back
+[04:42] into the circuit again so if we connect
+[04:45] onto these two terminals here now we
+[04:49] should get our current reading so there
+[04:52] you can see we're getting one point one
+[04:55] milli amps of current flowing through
+[04:57] there on the DC setting so that's the
+[05:00] current flow through this circuit so
+[05:03] we've successfully measured current with
+[05:05] our multimeter set up to measure DC just
+[05:09] a point if we wanted to check the
+[05:11] current on this side of the circuit what
+[05:14] we would find is that we'd have exactly
+[05:15] the same value so we could remove a link
+[05:17] from this side and we'd measure the same
+[05:19] current here current doesn't get used up
+[05:22] in a circuit it's just a measure of how
+[05:23] much electricity is flowing around the
+[05:26] circuit at a time what we can now do is
+[05:30] we'll pause and we'll switch over to an
+[05:33] AC supply and then we'll see how we set
+[05:35] up our meter to measure AC current so
+[05:40] what we've done now is we've taken out
+[05:42] our DC power supply and we've brought in
+[05:44] an AC power supply now this is still in
+[05:46] the extra low voltage range and I
+[05:49] absolutely no risk from getting harmed
+[05:51] or injured in any way from this
+[05:52] connection but what we're going to do is
+[05:54] we're going to show you how to set up
+[05:55] your meter now to measure AC current so
+[05:58] what we'll do is we'll have a look on
+[06:00] the multimeter here now it's currently
+[06:01] set up to measure DC obviously with your
+[06:04] own multimeter you need to look at what
+[06:05] it's capable of measuring and not some a
+[06:08] meters won't have all the settings that
+[06:11] this one does so it may not measure AC
+[06:13] it may not measure DC you need to look
+[06:15] at it but if it will measure both AC and
+[06:17] DC what you'll need to do is you'll need
+[06:19] to tell the multimeter what you are
+[06:22] measuring whether it's DC or AC so again
+[06:24] we press the mode button and now we've
+[06:26] started cycling through the different
+[06:28] options that are available on this
+[06:30] setting here so now we're measuring
+[06:31] frequency we're not going to measure
+[06:33] that today we'll come back to that in
+[06:34] future video
+[06:35] and now we're measuring AC current so
+[06:39] that's what we've got going on there so
+[06:41] if we just pop that down there and again
+[06:43] following exactly the same principle
+[06:45] that we followed before we're going to
+[06:46] connect up our meter in series with the
+[06:50] circuit so a meters are connected in
+[06:52] series remember that and we're going to
+[06:55] measure the current flowing into the
+[06:56] circuit and we're getting one point 4
+[06:59] milliamps there so we're getting one
+[07:01] point 4 milliamps so that's our AC
+[07:05] current measurement so we've changed our
+[07:10] circuit about quite a bit now what we've
+[07:12] got is just one resistor connected to
+[07:15] our AC power supply now the reason I've
+[07:18] left a link out here is that we're
+[07:19] actually about to have a relatively
+[07:21] large amount of current flowing into the
+[07:23] circuit here and I don't want to damage
+[07:25] the resistor there other ones damage
+[07:27] that component so what we can look at
+[07:29] doing here now is we can look at how do
+[07:32] we change the multimeter in order to
+[07:34] measure higher values of current first
+[07:37] of all how would we know what range to
+[07:39] start on now I know from my personal
+[07:40] experience and from my maths that
+[07:43] there's going to be way beyond the upper
+[07:46] limit of this setting flowing through
+[07:50] the circuit so it's going to be way more
+[07:51] than 100 milliamps flowing through here
+[07:53] and I could risk blowing a fuse within
+[07:55] the multimeter which I don't want to
+[07:56] damage my equipment I don't want to risk
+[07:58] doing that so as a rule of thumb if you
+[08:00] don't know what the value is going to be
+[08:02] if you don't know what range or setting
+[08:03] so have your multimeter on always start
+[08:06] at the safest setting which in this case
+[08:08] is the highest one so what we would do
+[08:10] here is we would swap this over now a to
+[08:12] measure amps instead of milliamps so now
+[08:15] we've changed this round and notice when
+[08:17] we do that this terminal will get now
+[08:19] gets covered up and this one gets
+[08:21] revealed so that's where we're going to
+[08:22] pop our lead now so now we're into the
+[08:27] amps range on our multimeter and what
+[08:31] we'll do is we'll just measure this very
+[08:32] quickly to say oh I want to melt my
+[08:34] resistor so we'll measure this very
+[08:36] quickly again we're connecting our
+[08:38] multimeter up in series because we're
+[08:40] measuring current and we're on the AC
+[08:42] setting so we saw it for that we could
+[08:44] do it for DC if we wanted and we'll just
+[08:46] see what current flows
+[08:48] okay so you can see there it's about 1.1
+[08:54] of an amp so that's the value that we're
+[08:56] looking at there about 1.1 of an amp now
+[08:59] you may have noticed that when we were
+[09:02] carrying out that test that the meter
+[09:04] briefly said o L now what that means is
+[09:06] over limit in other words it's gone
+[09:08] beyond the range of what it can measure
+[09:10] now this multimeter will clearly measure
+[09:12] up to 10 amps on this setting and we
+[09:14] weren't measuring anywhere near 10 amps
+[09:15] the reason it did that is that the meter
+[09:17] is set on the auto-ranging function so
+[09:20] what that means is that the multimeter
+[09:22] it kind of will monitor how much current
+[09:25] flows and then it will pick the most
+[09:27] relevant range to show you the answer in
+[09:29] so just for a minute it goes over the
+[09:32] limit of what it initially knows and
+[09:33] then it will settle back down to the
+[09:35] correct value you can tell it what range
+[09:37] you want it set into if you keep
+[09:39] pressing the range button there you can
+[09:41] see that what happens is the decimal
+[09:43] point moves about so you can see there
+[09:45] that that's gonna change the how many
+[09:48] decimal points we get at the end of that
+[09:50] value so if we're measuring very very
+[09:52] small currents we'll be able to get
+[09:53] quite a small reading out of that and if
+[09:55] we want to go back into the auto-ranging
+[09:58] mode just do a long press on the range
+[10:00] button on this meter and that will
+[10:02] return you to the auto mode so we've
+[10:05] seen in this video how to set up a
+[10:07] multimeter to measure current we know
+[10:09] that the multimeter needs to be
+[10:10] connected in series and we've just seen
+[10:12] a couple of things that will hopefully
+[10:13] help us not to damage our multimeter
+[10:16] while we're carrying out this testing
+[10:17] procedure so as always thank you for
+[10:20] watching
+[10:23] [Music]

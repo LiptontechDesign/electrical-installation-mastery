@@ -1,0 +1,346 @@
+# Bertrand's Paradox (with 3blue1brown) - Numberphile
+# https://www.youtube.com/watch?v=mZBwsm6B280
+
+So I want to tell you about a classic paradox in probability that is sort of a cautionary tale for students when they're about to hear a puzzle or they're setting up some kind of problem; Bertrand's paradox. There was a person who wrote this probability textbook, last name Bertrand. He mentioned in there why you have to be very careful with probabilities when infinity is involved. So what I'm going to do is have a circle and I'm going to draw a random chord somewhere in that circle. So a chord is something that just connects two different points on that circle right? What I want to ask is a certain question about the distribution of the length of this chord. You know, there's some kinds where if it just glances through the circle that length will be very short, if it went through the diameter that length would be very long. One of the most natural questions you might ask is something about the mean of that length; but that turns out to be a little on the messier side for the cleanliness of what Bertrand wanted to do. So instead he says, compare that length to the length of the sides of an equilateral triangle that's inscribed in that circle, which might seem kind of weird, like why are we talking about triangles? But it turns out to make the answer especially clean. So if we take some equilateral triangle where - forgive the fact that I'm a little curved in the side length there - and we call this side length something like s. What Bertrand asks is, what is the probability that the length of your random chord is bigger than the side lengths of that triangle? And we could get a little numerical about this: if we say that the circle has a radius of 1 then geometry students might remember their 30, 60, 90 triangles. This angle here is 30 degrees, this angle here is 60 degrees, and so this side length will be exactly one half, this side length will be square root of three halves. So we could also say if it's a unit circle what we're asking about is the probability that the length of our chord is bigger than the square root of 3? So just a simple question like anything else you might come across in some books, some list of exercises at the end; and let me show you how to solve it, it's really not that hard. Without loss of generality you can assume that the first point is one of the corners of the triangle, if it wasn't we could kind of rotate the triangle so that was the case. And then we weren't given any specifying information about the nature of the chord, so we'll assume that the next side is uniform somewhere around the circle. If the second point chosen was over there we would have a chord that's shorter than the side lengths of the triangle. If it fell into this kind of critical region on the opposite side of the triangle, up here, that region then the chord that you draw would be longer; and then similarly if it was on this other side it would be shorter. So probability student, they're doing their homework, they say what's the probability that this is longer? Not a problem, it is going to be exactly 1 in 3 because the circle's evenly divided into three pieces, there's only one of those pieces that will give you longer chords, said and done not an issue. - (Brady: So if) (any random chord, there's a one-third) (chance it's going to have that long-) - Yeah, yeah. No paradox to be found, in fact let's verify this empirically. I ran a simulation. Essentially what I do is I choose a random pair of points somewhere in the circle, I connect them and then I'm going to count whether or not that ends up longer than what we need, and then basically ask the proportion where that's the case. And I'll color it blue whenever it's longer, and then white whenever it's shorter. I'm just going to have to simulate a whole bunch, it'll do on the order of a thousand. And this ratio will be telling us what proportion of them are longer than the length we care about, and yeah it seems like it's going roughly on the order of one third so 0.33, kind of oscillating 0.34. So we did it theoretically, we did it empirically, we have an answer. So another student comes in, they're doing the same homework and they say, you know the funny thing about chords is that they are uniquely determined by their midpoint in the circle. So they say, if you give me a midpoint of the chord they say actually there's one and only one chord for which that would be the midpoint. You draw the line that's perpendicular to the radius between that midpoint and the center of the circle and that will give you one and only one chord. So then they go to their triangle and they try to reason, when is it the case that our chord is going to be shorter than the side lengths of that triangle? And what they can also do is come up with a pretty geometric argument where they think about the circle that's inscribed in that triangle - got sort of a deathly hallows vibe going on here. And what they're able to conclude is basically when the center of the chord is on the inside of that inscribed circle then the relevant chord is going to end up longer than the side length of the triangle, we can kind of see that there. But if the random midpoint that you chose was on the outside of that inscribed circle the chord you find will be shorter. And we simply say, okay, what is the size of that circle? And we actually drew one of our lengths earlier and concluded that it was one half. So we know this inner circle has a radius which is one half. So that inner circle has an area which is one-fourth, and you know, the probability of getting the chord that's longer is the probability of your randomly chosen midpoint falling into that smaller circle. So the answer to our question, that Bertrand posed, that you know l is greater than s is actually equal to one fourth. - (You're right!) Student circle's their answer, they turn in their homework and they say, for extra credit I'm going to simulate it. I'm going to choose a random point somewhere inside this circle and each time that I draw one of those points I'm going to draw the unique chord that has that point as a midpoint. I'm going to count up how many cases did I get where the chord was longer than the triangle point? How many was it shorter? See if it's roughly one quarter. And they do it and as they get around a thousand samples they see that, yeah, this is you know it's around 0.25. By randomness it looks like it happens to be a little bit above right now but certainly within the threshold you might want for a statistical distribution. They also get this kind of spider web pattern on the inside; although it does look a little bit different than our first students where you might notice the spiderweb is a little bit sparser in the middle of this one that we have in comparison to the older one that we had, the first student simulated it and things seemed a little bit more uniform in there. So it makes sense they got different answers, there was a different distribution at play. And so that's interesting that these two seemingly reasonable methods give you a different answer. But then this class actually has three students, and a third student has a different way of thinking about it, and maybe they'll be able to break the tie. And the way that person thinks about it is- you know the the chord that we draw, it's going to have kind of a random angle. The angle that it has between 0 and pi or 0 and 2pi, however you want to think about it, there's no reason to prefer any one of those. So the radial line that it's intersecting should just be chosen uniformly around the circle. And then there's no reason to think that the midpoint of your chord should be, you know, biased towards being on the center of this radial line or biased towards being the end, it should be chosen uniformly along this radial line. And so what they want to ask is, if we're choosing something uniform along this radial line, what's the probability that the corresponding chord is longer than the length we care about? And again you can kind of do a little pretty geometric argument here where, if we've got our triangle, same conclusion we had before where the length from the center of the circle directly down to one of the legs of the triangle perpendicular is one half. And so- I drew it a little bit poorly here where this side looks like it's shorter but that's that's a function of my bad drawing, if you do it more exactly. This portion where your chords are going to be longer than the relevant triangle side length, you know, if I choose one here draw the chord, you can just see it ends up longer than that triangle length - that should be one half of the time. And again, you know, they want to say hey I'm gonna check my homework, I've learned that sometimes I can't trust my theoretical results, and the way they do it is they choose a random radial line which I've colored in yellow then a random point along that line that I've given this sort of glowy yellow dot. And they do that a whole bunch of times, choosing a random line, choosing a random point along that chord; their expectation from their geometry and their theoretical reasoning here would be that this comes out to be around a half, but they want to run a thousand simulations just to see if that happens to be roughly true. And look! So what they got actually is really close to one half, and it feels pretty uniform. You know, you look at the spider web it seems nice and uniform. So this person they go they circle their answer and they say, Mr Bertrand- Professor Bertrand I've done my homework and I know with confidence now that the answer is one half. (I was convinced by all of them.) - They all seem pretty reasonable. So Bertrand's conclusion here was you have to be careful when probabilities with an infinite space are involved, because you don't know simply when someone says choose a random blank is that a well-defined notion? Because here I can have something where I say, choose a random chord; seems like a reasonable question to ask, and we've got three reasonable approaches that give you these different answers. Now this is a little bit worrying, because all the time in probability you start off some question or some model of the world by saying something like, you know, I want to choose a random number between zero and one. I say choose a random number and it's implicit that it's going to be some kind of uniform distribution and it's unambiguous what you mean by that randomness. Or you say, hey I've got a circle, I want you to choose a random point on that circle. Or I've got a sphere, you know, and I want you to choose a random point somewhere on the surface of that sphere. You know, I do this all the time in videos that I make, I start a puzzle I say choose four random points on the surface of a sphere, what's the probability that yada yada; the tetrahedron that connects them contains the center or some interesting puzzle you want to get to. Does the premise even make sense, right? Is it the case that when you say choose four random points there aren't two seemingly reasonable ways to go about that that turn out to be distinct in that they give you different numerical answers, but seemingly reasonable to each person who did it. The video I'm making right now, I say choose a random orientation of an object in 3D space and then yada yada question. How do we know it's reasonable to say choose a random orientation? So this is a little bit worrying that Bertrand could come up with this example where we get this ambiguity. So there's Bertrand's paradox, but you can probably guess Grant's got plenty more to say about it. Check out our second video, even more about Bertrand's paradox, where we go deeper. - But the unambiguous thing is honestly what I would have thought would be the- the worst of the three methods. - This was also made as a companion to Grant's own video about the average area of a cube's shadow. You'll find links to that in the usual places and of course on the 3blue1brown channel.
+
+
+[00:00] So I want to tell you about a classic
+[00:01] paradox in probability that is sort of a
+[00:04] cautionary tale for students when
+[00:05] they're about to hear a puzzle or
+[00:07] they're setting up some kind of problem;
+[00:09] Bertrand's paradox. There was a person
+[00:11] who wrote this probability textbook, last
+[00:13] name Bertrand. He mentioned in there why
+[00:14] you have to be very careful with
+[00:16] probabilities when infinity is involved.
+[00:18] So what I'm going to do is have a circle
+[00:20] and
+[00:21] I'm going to draw a random chord
+[00:23] somewhere in that circle. So a chord is
+[00:25] something that just connects two
+[00:26] different points on that circle right?
+[00:28] What I want to ask is a certain question
+[00:30] about the distribution of the length of
+[00:32] this chord. You know, there's some kinds
+[00:34] where if it just glances through the
+[00:36] circle that length will be very short, if
+[00:38] it went through the diameter that length
+[00:39] would be very long.
+[00:40] One of the most natural questions you
+[00:42] might ask is something about the mean of
+[00:44] that length; but that turns out to be a
+[00:46] little on the messier side for the
+[00:47] cleanliness of what Bertrand wanted to
+[00:49] do. So instead he says, compare that
+[00:52] length to the length of
+[00:54] the sides of an equilateral triangle
+[00:56] that's inscribed in that circle, which
+[00:58] might seem kind of weird, like why are we
+[01:00] talking about triangles? But it turns out
+[01:01] to make the answer especially clean. So
+[01:04] if we take some equilateral triangle
+[01:06] where - forgive the fact that I'm a little
+[01:08] curved in the side length there - and we
+[01:10] call this side length something like s.
+[01:12] What Bertrand asks is, what is the
+[01:14] probability that the length of your
+[01:15] random chord is bigger than the side
+[01:18] lengths of that triangle? And we could
+[01:19] get a little numerical about this: if
+[01:22] we say that the circle has a radius of
+[01:24] 1 then geometry students might
+[01:26] remember their 30, 60, 90 triangles. This
+[01:29] angle here is 30 degrees,
+[01:31] this angle here is 60 degrees, and so
+[01:35] this side length will be exactly one
+[01:36] half,
+[01:37] this side length will be square root of
+[01:39] three halves. So we could also say if
+[01:41] it's a unit circle what we're asking
+[01:42] about is the probability that the length
+[01:44] of our chord is bigger than the square
+[01:46] root of 3? So just a simple question
+[01:48] like anything else you might come across
+[01:49] in some books, some list of exercises at
+[01:51] the end; and let me show you how to solve
+[01:54] it, it's really not that hard. Without
+[01:55] loss of generality you can assume that
+[01:57] the first point is one of the corners of
+[01:59] the triangle, if it wasn't we could kind
+[02:00] of rotate the triangle so that was the
+[02:02] case.
+[02:03] And then we weren't given any specifying
+[02:05] information about the nature of the
+[02:06] chord, so we'll assume that the next side
+[02:08] is uniform somewhere around the circle.
+[02:11] If the second point chosen was over
+[02:13] there we would have a chord that's
+[02:15] shorter than the side lengths of the
+[02:16] triangle. If it fell into
+[02:19] this kind of critical region on the
+[02:20] opposite side of the triangle,
+[02:23] up here,
+[02:24] that region
+[02:26] then the chord that you draw would be
+[02:28] longer;
+[02:29] and then similarly if it was on this
+[02:30] other side it would be shorter. So
+[02:32] probability student, they're doing their
+[02:34] homework, they say what's the probability
+[02:35] that this is longer? Not a problem,
+[02:37] it is going to be exactly 1 in 3
+[02:39] because the circle's evenly divided into
+[02:41] three pieces, there's only one of
+[02:43] those pieces that will give you longer
+[02:44] chords, said and done not an issue. - (Brady: So if)
+[02:47] (any random chord, there's a one-third)
+[02:50] (chance it's going to have that long-) - Yeah,
+[02:52] yeah. No paradox to be found, in fact
+[02:55] let's verify this empirically. I ran a
+[02:57] simulation. Essentially what I do is I
+[02:59] choose a random pair of points somewhere
+[03:01] in the circle, I connect them and then
+[03:03] I'm going to count
+[03:04] whether or not that ends up longer than
+[03:06] what we need, and then basically ask the
+[03:08] proportion where that's the case. And
+[03:10] I'll color it blue whenever it's longer,
+[03:13] and then white whenever it's shorter. I'm
+[03:14] just going to have to simulate a whole
+[03:15] bunch, it'll do on the order of a
+[03:17] thousand. And this ratio will be telling
+[03:19] us what proportion of them are longer
+[03:21] than the length we care about, and yeah
+[03:23] it seems like it's going roughly on the
+[03:25] order of one third so 0.33, kind of
+[03:28] oscillating 0.34. So we did it
+[03:29] theoretically, we did it empirically, we
+[03:31] have an answer. So another student comes
+[03:33] in, they're doing the same homework and
+[03:34] they say, you know the funny thing about
+[03:35] chords is that they are uniquely
+[03:37] determined by their midpoint in the
+[03:39] circle.
+[03:41] So they say,
+[03:42] if you give me a midpoint of the chord
+[03:45] they say actually there's one and only
+[03:46] one chord
+[03:48] for which that would be the midpoint. You
+[03:49] draw the line that's perpendicular to
+[03:52] the radius between that midpoint and the
+[03:54] center of the circle
+[03:55] and that will give you one and only one
+[03:57] chord. So then they go to their triangle
+[03:59] and they try to reason, when is it the
+[04:00] case that our chord is going to be
+[04:03] shorter than the side lengths of that
+[04:04] triangle?
+[04:05] And
+[04:07] what they can
+[04:08] also do is come up with a pretty
+[04:09] geometric argument where they think
+[04:11] about the circle that's inscribed
+[04:14] in that triangle - got sort of a deathly
+[04:16] hallows vibe going on here. And what
+[04:18] they're able to conclude is basically
+[04:20] when the center of the chord is on the
+[04:23] inside of that inscribed circle
+[04:25] then
+[04:26] the relevant chord is going to end up
+[04:28] longer than the side length of the
+[04:30] triangle, we can kind of see that there.
+[04:31] But if the random midpoint that you
+[04:33] chose was on the outside of that
+[04:35] inscribed circle the chord you find will
+[04:37] be shorter.
+[04:39] And
+[04:40] we simply say, okay, what is the size of
+[04:42] that circle?
+[04:43] And
+[04:44] we actually drew one of our lengths
+[04:46] earlier and concluded that it was one
+[04:47] half. So we know this inner circle has a
+[04:50] radius which is one half. So that inner
+[04:52] circle has an area which is
+[04:54] one-fourth, and you know, the
+[04:57] probability of getting the chord that's
+[04:59] longer is the probability of your
+[05:01] randomly chosen midpoint falling into
+[05:03] that smaller circle. So the answer to our
+[05:06] question, that Bertrand posed,
+[05:08] that you know l is greater than s
+[05:10] is actually equal to one fourth. - (You're right!)
+[05:14] Student circle's their answer, they turn
+[05:15] in their homework and they say, for extra
+[05:17] credit I'm going to simulate it. I'm
+[05:19] going to choose a random point somewhere
+[05:21] inside this circle and each time that I
+[05:23] draw one of those points I'm going to
+[05:25] draw the unique chord that has that
+[05:27] point as a midpoint. I'm going to count
+[05:29] up how many cases did I get where the
+[05:31] chord was longer than the triangle point?
+[05:33] How many was it shorter? See if it's
+[05:35] roughly one quarter. And they do it and
+[05:37] as they get around a thousand samples
+[05:38] they see that, yeah, this is you know it's
+[05:40] around 0.25. By randomness it looks like
+[05:42] it happens to be a little bit above
+[05:44] right now but certainly within the
+[05:46] threshold you might want for a
+[05:48] statistical distribution. They also get
+[05:49] this kind of spider web pattern on the
+[05:51] inside; although it does look a little
+[05:53] bit different than our first students
+[05:55] where
+[05:56] you might notice the spiderweb is a
+[05:57] little bit sparser in the middle of this
+[06:00] one that we have in comparison to the
+[06:02] older one that we had, the first student
+[06:03] simulated it and things seemed a little
+[06:05] bit more uniform in there. So it makes
+[06:07] sense they got different answers, there
+[06:08] was a different distribution at play. And
+[06:10] so that's interesting that these two
+[06:12] seemingly reasonable methods give you a
+[06:14] different answer.
+[06:15] But then this class actually has three
+[06:17] students, and a third student has a
+[06:19] different way of thinking about it, and
+[06:21] maybe they'll be able to break the tie.
+[06:22] And the way that person thinks about it
+[06:24] is-
+[06:25] you know the the chord that we draw,
+[06:27] it's going to have kind of a random
+[06:28] angle. The angle that it has between 0
+[06:32] and pi or 0 and 2pi, however you want to
+[06:34] think about it, there's no reason to
+[06:35] prefer any one of those. So the radial
+[06:37] line that it's intersecting
+[06:39] should just be chosen uniformly around
+[06:41] the circle.
+[06:42] And then there's no reason to think that
+[06:44] the midpoint of your chord should be, you
+[06:47] know, biased towards being on the center
+[06:49] of this radial line or biased towards
+[06:50] being the end, it should be chosen
+[06:51] uniformly along this radial line.
+[06:54] And so what they want to ask is, if we're
+[06:56] choosing something uniform along this
+[06:58] radial line, what's the probability that
+[07:00] the corresponding chord is longer than
+[07:02] the length we care about?
+[07:03] And again you can kind of do a little
+[07:05] pretty geometric argument here
+[07:07] where,
+[07:09] if we've got our triangle,
+[07:12] same conclusion we had before where the
+[07:13] length from the center of the circle
+[07:16] directly down to one of the legs of the
+[07:17] triangle perpendicular
+[07:19] is one half.
+[07:21] And so-
+[07:22] I drew it a little bit poorly here where
+[07:23] this side looks like it's shorter but
+[07:24] that's that's a function of my bad
+[07:26] drawing, if you do it more exactly. This
+[07:29] portion where your chords are going to
+[07:30] be longer than the relevant triangle
+[07:32] side length, you know, if I choose one
+[07:34] here draw the chord,
+[07:35] you can just see it ends up longer than
+[07:37] that triangle length - that should be
+[07:39] one half of the time.
+[07:41] And again, you know, they want to say hey
+[07:42] I'm gonna check my homework, I've learned
+[07:45] that sometimes I can't trust my
+[07:46] theoretical results, and the way they do
+[07:48] it is they choose a random radial line
+[07:50] which I've colored in yellow then a
+[07:52] random point along that line that I've
+[07:53] given this sort of glowy yellow dot. And
+[07:55] they do that a whole bunch of times,
+[07:56] choosing a random line, choosing a random
+[07:58] point along that chord;
+[08:00] their expectation from their geometry
+[08:02] and their theoretical reasoning here
+[08:04] would be that this comes out to be
+[08:05] around a half, but they want to run a
+[08:07] thousand simulations just to see if that
+[08:09] happens to be roughly true. And look! So
+[08:11] what they got actually is really
+[08:13] close to one half,
+[08:14] and it feels pretty uniform. You know, you
+[08:16] look at the spider web it seems nice and
+[08:17] uniform.
+[08:18] So this person they go they circle their
+[08:20] answer and they say,
+[08:23] Mr Bertrand- Professor Bertrand I've done
+[08:25] my homework and I know with confidence
+[08:28] now that the answer is one half.
+[08:38] (I was convinced by all of them.) - They all
+[08:40] seem pretty reasonable. So Bertrand's
+[08:42] conclusion here was you have to be
+[08:44] careful when probabilities with an
+[08:45] infinite space are involved,
+[08:47] because you don't know
+[08:49] simply when someone says choose a random
+[08:51] blank is that a well-defined notion?
+[08:54] Because here I can have something where
+[08:55] I say, choose a random chord; seems like a
+[08:57] reasonable question to ask,
+[08:58] and we've got three reasonable
+[09:00] approaches that give you these different
+[09:01] answers. Now this is a little bit
+[09:03] worrying, because all the time in
+[09:04] probability you start off some question
+[09:07] or some model of the world by saying
+[09:09] something like, you know, I want to choose
+[09:11] a random number between zero and one.
+[09:13] I say choose a random number
+[09:15] and it's implicit that it's going to be
+[09:17] some kind of uniform distribution and
+[09:19] it's unambiguous what you mean by that
+[09:20] randomness. Or you say, hey I've got a
+[09:23] circle, I want you to choose a random
+[09:24] point on that circle.
+[09:26] Or I've got a sphere, you know, and I want
+[09:28] you to choose a random point somewhere
+[09:30] on the surface of that sphere. You know, I
+[09:31] do this all the time in videos that I
+[09:33] make, I start a puzzle I say choose four
+[09:36] random points on the surface of a sphere,
+[09:38] what's the probability that yada yada;
+[09:40] the tetrahedron that connects them
+[09:41] contains the center or some interesting
+[09:43] puzzle you want to get to. Does the
+[09:44] premise even make sense, right? Is it the
+[09:46] case that when you say choose four
+[09:48] random points there aren't two seemingly
+[09:50] reasonable ways to go about that that
+[09:52] turn out to be
+[09:53] distinct in that they give you different
+[09:54] numerical answers, but seemingly
+[09:56] reasonable to each person who did it. The
+[09:58] video I'm making right now, I say choose
+[10:00] a random orientation of an object in 3D
+[10:02] space and then yada yada question. How do
+[10:05] we know it's reasonable to say choose a
+[10:06] random orientation? So this is a little
+[10:09] bit worrying that Bertrand could come up
+[10:11] with this example where we get this
+[10:12] ambiguity.
+[10:14] So there's Bertrand's paradox, but you
+[10:16] can probably guess Grant's got plenty
+[10:18] more to say about it. Check out our
+[10:20] second video, even more about Bertrand's
+[10:22] paradox, where we go deeper. - But the
+[10:25] unambiguous thing is honestly what I
+[10:27] would have thought would be the- the
+[10:28] worst of the three methods. - This was also
+[10:30] made as a companion to Grant's own video
+[10:32] about the average area of a cube's
+[10:34] shadow. You'll find links to that in the
+[10:36] usual places and of course on the
+[10:38] 3blue1brown channel.

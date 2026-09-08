@@ -1,0 +1,214 @@
+# Mastering Electrical Design - Don't Miss This Step!
+# https://www.youtube.com/watch?v=rgh_0rxX61s
+
+in this q a video we're going to answer the question what is the first step in designing an electrical circuit now just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of electrical design they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD and you'll receive a certificate to prove that you completed the course now please bear in mind that this training package and series of videos is an introduction to electrical design we'll be covering some of the information for a simple circuit calculation using these and similar devices from BG electrical but there are other things to consider when performing calculations for circuits but we'll be covering this subject across a range of training modules so please keep checking our website to gain further insight into this topic there's a number of documents we'll be referring to through these videos bs7671 obviously the on-site guide also contains useful information but then there's the often overlooked and Incredibly valuable electrical installation design guide published by the IET as well and this book explains what our first step should be for simple installations and final circuits in chapter 2. throughout this series of videos we're going to be carrying out the design calculations required to figure out how to supply this nine kilowatt Fusion Comet electric boiler from the electric heating company often when people start talking about designing an electrical circuit they go piling straight into calculating design current but there's a really important step to take first which is to ask what you're connecting the circuit to specifically information about the supply to the property basically we need to gather the information that will make its way into the supply characteristics and earthing Arrangements section of the model electrical installation certificate in appendix 6 of bs7671 although the actual final recorded values on the certificate might alter slightly upon completion these are useful parameters to assume for our design work so we need to think about what type of earthing arrangement we've got the more common options will be TNS tncs and TT this is helpful because if we can't measure the external Earth volt Loop impedance we can find out by inquiry from the DSO if you're not sure just what we mean by Earth impedance will revisit this in more depth when we look at verifying our cable size is acceptable now chances are the DSO will quote the typical maximum values of 0.35 ohms for a tncs 0.8 ohms for a TN and 21 ohms for a TT system but it's interesting to note that the energy networks Association have now issued newer guidance that uses percentages to suggest what typical values will be these are quoted in the design guide as 0.34 ohms 90 of premises will have Ze lower than this 0.64 ohms 98 of premises will have Ze lower than this and over 0.64 ohms 2 percent of premises will have Ze higher than this value so a fairly different approach there but the design guide uses the typical maximum values of Earth volt Loop impedance based on the earthing arrangement in its calculations and it's a pretty good approach where you can't confirm what the value is as it is very much on the side of safety this information helps us to check that the Earth volt Loop impedance of the circuit will be accepted and that the protective device will be able to clear the prospective fault current safely in the event that something goes horribly wrong in the circuit completing the information in this box we'd assume a nominal voltage of 230 volts we know in reality that to comply with the electricity Supply quality and continuity regulations the voltage can be up to 10 higher than this at 253 volts and as low as six percent below the nominal at 216.2 volts however we generally carry out our design calculations at the nominal voltage of 230 volts so we've got a standardized value to work with as we can't predict or know what it will be on an installation and also it may well be subject to change we're also going to find as we progress through this training course that this particular situation where we're designing a circuit for this boiler throws up an interesting challenge when it comes to using 230 volts in doing our design current calculation but more on that in a future video we could then use Ohm's law to calculate the prospective fault current to go in this box here but if we use the very highest voltage of 253 volts in the lowest maximum Ze at 0.35 ohms we would find a fault current of around 723 amps this is quite a low value for fault current and pretty much any circuit protective device could clear this safely however the maximum rating for most switch gear is around 16 kilo amps to get this value there would need to be a zeddy of about 0.015 ohms which is a really low value for Ze in fact the prospective fault current is only likely to be around this value if the service cable from the Transformer to the property is less than two meters so you'd need to be living pretty much inside the supply Transformer enclosure to get a value that high and it drops off pretty rapidly as the supply cable and circuits beyond the origin get longer the design guide makes the interesting point that consumer units and fuse boards to bsen 61439-3 Annex ZB previously bscn60439-3 and xza are able to withstand the fault current for prospective fault levels up to 16 Ka when the electricity Distributors fuse is a type 2 fuse to bs88-3 rated at no more than 100 amps and that the standard 100 amp Distributors fuse installed by electricity companies will meet these requirements while the individual over current protective devices in the consumer unit or distribution board may not interrupt the fault current at high fault currents they will be able to carry the currents until the distribution company's fuse operates clearly it is better if as is usually the case the fault rating of the fuse or circuit breaker in the distribution board or consumer unit is of sufficient rating to clear the fault particularly false Downstream of the consumer unit fault levels are rarely as high as 16ka and rapidly decrease within the installation so in practice the fuses or circuit breaker is in the consumer unit will clear faults so even in the absolute worst case scenario of a 16ka prospective fault current the circuit protective equipment should be able to handle that large amount of current until 100 amp fuse in the suppliers cutout operates of course it's best practice to make sure the protective equipment can handle the fault current without relying on the supply fuse and it's unlikely that we'll ever hit that 16 Ka fault current in most domestic installations again we'll dive into prospective fault current in more depth in future content so if we assume these worst case scenario values for Earth fault Loop impedance and prospective fault current we can be sure our circuits and switch gear will comply and in fact it's these values the on-site guide uses for its standard circuits so there's a really good precedent for using them in our design so there we go that's the first thing we need to think about when it comes to designing an electrical circuit to find out how to calculate the design current for a circuit and specifically how much current this nine kilowatt Fusion Comet electric boiler will draw check out this video right here or click the link in the description below to watch it as part of our free training package to help you with your CPD and receive a certificate as well all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this q a video we're going to answer
+[00:01] the question what is the first step in
+[00:04] designing an electrical circuit now just
+[00:06] before we explain the answer to this
+[00:08] question Please be aware that this video
+[00:09] is one of a series that we've made on
+[00:11] the subject of electrical design they
+[00:13] can be viewed individually or you can
+[00:15] click the link in the description below
+[00:16] to view them as part of a free online
+[00:18] training package to help you with your
+[00:20] CPD and you'll receive a certificate to
+[00:22] prove that you completed the course now
+[00:24] please bear in mind that this training
+[00:26] package and series of videos is an
+[00:28] introduction to electrical design we'll
+[00:30] be covering some of the information for
+[00:31] a simple circuit calculation using these
+[00:33] and similar devices from BG electrical
+[00:36] but there are other things to consider
+[00:38] when performing calculations for
+[00:39] circuits but we'll be covering this
+[00:41] subject across a range of training
+[00:43] modules so please keep checking our
+[00:44] website to gain further insight into
+[00:46] this topic there's a number of documents
+[00:49] we'll be referring to through these
+[00:50] videos bs7671 obviously the on-site
+[00:53] guide also contains useful information
+[00:55] but then there's the often overlooked
+[00:57] and Incredibly valuable electrical
+[00:59] installation design guide published by
+[01:01] the IET as well and this book explains
+[01:03] what our first step should be for simple
+[01:05] installations and final circuits in
+[01:07] chapter 2. throughout this series of
+[01:10] videos we're going to be carrying out
+[01:11] the design calculations required to
+[01:13] figure out how to supply this nine
+[01:14] kilowatt Fusion Comet electric boiler
+[01:16] from the electric heating company often
+[01:18] when people start talking about
+[01:19] designing an electrical circuit they go
+[01:21] piling straight into calculating design
+[01:23] current but there's a really important
+[01:25] step to take first which is to ask what
+[01:27] you're connecting the circuit to
+[01:29] specifically information about the
+[01:31] supply to the property basically we need
+[01:34] to gather the information that will make
+[01:35] its way into the supply characteristics
+[01:37] and earthing Arrangements section of the
+[01:39] model electrical installation
+[01:40] certificate in appendix 6 of bs7671
+[01:43] although the actual final recorded
+[01:46] values on the certificate might alter
+[01:47] slightly upon completion these are
+[01:49] useful parameters to assume for our
+[01:51] design work so we need to think about
+[01:53] what type of earthing arrangement we've
+[01:55] got the more common options will be TNS
+[01:57] tncs and TT this is helpful because if
+[02:01] we can't measure the external Earth volt
+[02:02] Loop impedance we can find out by
+[02:04] inquiry from the DSO if you're not sure
+[02:07] just what we mean by Earth impedance
+[02:09] will revisit this in more depth when we
+[02:11] look at verifying our cable size is
+[02:13] acceptable now chances are the DSO will
+[02:16] quote the typical maximum values of 0.35
+[02:19] ohms for a tncs 0.8 ohms for a TN and 21
+[02:23] ohms for a TT system but it's
+[02:26] interesting to note that the energy
+[02:27] networks Association have now issued
+[02:29] newer guidance that uses percentages to
+[02:31] suggest what typical values will be
+[02:33] these are quoted in the design guide as
+[02:35] 0.34 ohms 90 of premises will have Ze
+[02:39] lower than this 0.64 ohms 98 of premises
+[02:43] will have Ze lower than this and over
+[02:46] 0.64 ohms 2 percent of premises will
+[02:49] have Ze higher than this value so a
+[02:51] fairly different approach there but the
+[02:53] design guide uses the typical maximum
+[02:55] values of Earth volt Loop impedance
+[02:56] based on the earthing arrangement in its
+[02:58] calculations and it's a pretty good
+[03:00] approach where you can't confirm what
+[03:01] the value is as it is very much on the
+[03:04] side of safety this information helps us
+[03:06] to check that the Earth volt Loop
+[03:07] impedance of the circuit will be
+[03:08] accepted and that the protective device
+[03:10] will be able to clear the prospective
+[03:12] fault current safely in the event that
+[03:14] something goes horribly wrong in the
+[03:16] circuit completing the information in
+[03:18] this box we'd assume a nominal voltage
+[03:20] of 230 volts we know in reality that to
+[03:23] comply with the electricity Supply
+[03:24] quality and continuity regulations the
+[03:26] voltage can be up to 10 higher than this
+[03:28] at 253 volts and as low as six percent
+[03:31] below the nominal at 216.2 volts however
+[03:36] we generally carry out our design
+[03:37] calculations at the nominal voltage of
+[03:40] 230 volts so we've got a standardized
+[03:42] value to work with as we can't predict
+[03:44] or know what it will be on an
+[03:45] installation and also it may well be
+[03:47] subject to change we're also going to
+[03:50] find as we progress through this
+[03:51] training course that this particular
+[03:53] situation where we're designing a
+[03:54] circuit for this boiler throws up an
+[03:57] interesting challenge when it comes to
+[03:58] using 230 volts in doing our design
+[04:01] current calculation but more on that in
+[04:03] a future video
+[04:04] we could then use Ohm's law to calculate
+[04:07] the prospective fault current to go in
+[04:08] this box here but if we use the very
+[04:10] highest voltage of 253 volts in the
+[04:13] lowest maximum Ze at 0.35 ohms we would
+[04:16] find a fault current of around 723 amps
+[04:19] this is quite a low value for fault
+[04:21] current and pretty much any circuit
+[04:22] protective device could clear this
+[04:24] safely however the maximum rating for
+[04:26] most switch gear is around 16 kilo amps
+[04:29] to get this value there would need to be
+[04:31] a zeddy of about
+[04:32] 0.015 ohms which is a really low value
+[04:35] for Ze in fact the prospective fault
+[04:37] current is only likely to be around this
+[04:39] value if the service cable from the
+[04:41] Transformer to the property is less than
+[04:43] two meters so you'd need to be living
+[04:45] pretty much inside the supply
+[04:47] Transformer enclosure to get a value
+[04:49] that high and it drops off pretty
+[04:50] rapidly as the supply cable and circuits
+[04:53] beyond the origin get longer the design
+[04:55] guide makes the interesting point that
+[04:57] consumer units and fuse boards to bsen
+[05:00] 61439-3 Annex ZB previously
+[05:04] bscn60439-3 and xza are able to
+[05:07] withstand the fault current for
+[05:09] prospective fault levels up to 16 Ka
+[05:11] when the electricity Distributors fuse
+[05:13] is a type 2 fuse to bs88-3 rated at no
+[05:17] more than 100 amps and that the standard
+[05:19] 100 amp Distributors fuse installed by
+[05:22] electricity companies will meet these
+[05:23] requirements while the individual over
+[05:25] current protective devices in the
+[05:27] consumer unit or distribution board may
+[05:29] not interrupt the fault current at high
+[05:30] fault currents they will be able to
+[05:32] carry the currents until the
+[05:33] distribution company's fuse operates
+[05:35] clearly it is better if as is usually
+[05:37] the case the fault rating of the fuse or
+[05:39] circuit breaker in the distribution
+[05:40] board or consumer unit is of sufficient
+[05:43] rating to clear the fault particularly
+[05:45] false Downstream of the consumer unit
+[05:47] fault levels are rarely as high as 16ka
+[05:50] and rapidly decrease within the
+[05:52] installation so in practice the fuses or
+[05:54] circuit breaker is in the consumer unit
+[05:56] will clear faults
+[05:57] so even in the absolute worst case
+[06:00] scenario of a 16ka prospective fault
+[06:02] current the circuit protective equipment
+[06:04] should be able to handle that large
+[06:06] amount of current until 100 amp fuse in
+[06:09] the suppliers cutout operates of course
+[06:11] it's best practice to make sure the
+[06:12] protective equipment can handle the
+[06:14] fault current without relying on the
+[06:15] supply fuse and it's unlikely that we'll
+[06:18] ever hit that 16 Ka fault current in
+[06:20] most domestic installations again we'll
+[06:22] dive into prospective fault current in
+[06:24] more depth in future content so if we
+[06:27] assume these worst case scenario values
+[06:29] for Earth fault Loop impedance and
+[06:30] prospective fault current we can be sure
+[06:32] our circuits and switch gear will comply
+[06:35] and in fact it's these values the
+[06:37] on-site guide uses for its standard
+[06:38] circuits so there's a really good
+[06:40] precedent for using them in our design
+[06:42] so there we go that's the first thing we
+[06:44] need to think about when it comes to
+[06:45] designing an electrical circuit to find
+[06:47] out how to calculate the design current
+[06:48] for a circuit and specifically how much
+[06:50] current this nine kilowatt Fusion Comet
+[06:52] electric boiler will draw check out this
+[06:54] video right here or click the link in
+[06:56] the description below to watch it as
+[06:57] part of our free training package to
+[06:59] help you with your CPD and receive a
+[07:01] certificate as well all that remains in
+[07:03] this video is to say thank you very much
+[07:04] for watching

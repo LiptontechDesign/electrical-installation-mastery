@@ -1,0 +1,98 @@
+# Single Phase Contactor - Connections Explained, Application plus the Current in the Coil and Load
+# https://www.youtube.com/watch?v=Ed3_zbZ0xaA
+
+so then Joe in front of us we've got this board um can you explain what we have on this board yeah so what we're doing in this video is we're going to look at a single phase contactor being controlled by a switch and how that is going to switch loads that are on a different circuit so in the previous video we looked at the principle of how a three phase contactor works like the three banks are like exactly yeah what we're going to do now is look at a kind of a simplified version of that so what we'll do is we'll bring the camera in we'll have a look at the components that we've got on the board and we'll have a chat about what they're all doing okay so going through the components of this board then Joe we've got the consumer unit the consumer unit we have the there's a box here what's inside this box so this is where we've housed the contactor uh so this will be a familiar box to people who've worked regularly on site it's a simple enclosure and inside there we've got our contactor installed that is going to be doing the switching of the lighting circuit in this case and through the we've got a one way switch here and then we've got the two loads there multiple loads there fantastic so as we come back to the uh to the consumer unit we've got a six amp circuit breaker here yep 230 volt coil so this this circuit breaker here is controlling a 230 volt coil sure so that's going to the coil of the contactor right so that circuit breaker is controlling the actual pulling in mechanism part that we looked at in the previous video yeah so from here it goes the line conductor comes through here down to the switch through the switch back up into the terminals A1 of the contactor and then back through A2 of the contactor fantastic to the neutral bar in here so the idea being when we operate the switch it closes that circuit it generates the magnetic field in the coil which operates the contactor and we should actually hear a little bit of a crunk when we turn that on yeah okay and then toss it we have this circuit breaker here and that one is controlling that's going through actual into the contactor so go to the inside of the contactor and then on the outgoing side of the contactor to the load in this case two lamps so what we've actually got is these loads are on a completely different circuit to the control circuit that is actually going to operate them correctly yeah so so this could be 10 15 20 amps and we've got a little 10 amp switch here operated by a 6 amp circuit breaker fantastic it can control a big heavy load off just a simple switch great so should we uh should we turn it on in a minute and have a look i think so okay then let's let's get this circuit live then so turn this rcd on and we'll just turn on the coil sure circuit breaker at the moment yeah so what we should now have is a situation where we can energize the coil but because we've not got the lighting circuit turned on the contacts will pull in and out but these won't operate correct okay yeah that's okay so what we'll do is we if we operate the switch we should hear the contactor pulling in and out so i'll try and do this quite gently so this the click of this doesn't overshadow it so listen for the clunk so that clunk is actually the contactor pulling in inside there and if we turn it off again we can hear it dropping out so the control switch is operating the contactor so the actual the contacts are coming into play but obviously the power no power is going over to load so nothing's going on great so power up the lighting circuit yeah okay so i'll turn this circuit break on good stuff you you have the honor in this case matt yeah okay so now again as joe said about the this is operating the coil and so we're going to turn the you'll hear the coil pulling in the contactor but in this in this instance now the power is being fed through the contactor and going through the actual load i've got two ammeters on here joe yeah what's that about so obviously this is something that we've constructed purely for the purpose of this video and this isn't something you generally see in an installation you may see some current measuring devices but this is purely for illustrative purposes you can see we've got two ammeters they're measuring milliamps so they're measuring thousandths of an amp so that's zero to 300 milliamps fantastic and then what we can see is that this top ammeter is measuring the current that's flowing through the coil so this is the current being drawn by the coil and the bottom one is the current being drawn by the actual lighting load itself so if we have a look at and just compare these directly what do you notice about the two values of current maps so so on this one obviously it's almost nothing at all so the the the current that's being drawn through that circuit is just it's it's not quite zero but it almost is whereas on this one it's over 250 milliamps yeah so so what we're doing is we're using a very very small amount of current to control a relatively large amount of current yeah yeah and interestingly it doesn't matter what the load is you could have 20 30 amps on there that one wouldn't alter that's fantastic and the benefit of that of course is that it means that we don't have to have really heavy duty switch gear for the actual functional switching part that people are going to interact with so we haven't got a massive 30 amp switch down here if we're switching a big 30 amp load that can be done remotely through the contactor okay and we put two our meters on that were both to the same scale so then you could see a good deflection on this one unfortunately you just don't see a very good deflection on that one but you can just about see it fantastic so inside this container then we have the two pole contactor and we have the two ammeters on that's on this here and here so just to explain how the contact is connected up so from the first circuit breaker that controls the coil that comes down through here into the common of the switch down below and then back up through into the a1 terminal which is this one here and that you access it via this screw so it says it's a1 terminal there it then comes out of the a2 terminal underneath by the neutral conductor which then comes back to the neutral bar this is wired up slightly different to how you might do it normally because we have installed an ammeter in series with this circuit as well so when when the circuit comes down into the switch and then it comes back out of the switch into the ammeter and then back from the ammeter into the coil and then back through a two to the neutral conductor we then have the terminals at the top and the terminals at the bottom the in and the outgoing so you have terminals one and two three and four so we have the line conductor coming from the other circuit breaker that comes into terminal one and comes out of terminal two then it goes off to the lighter to the actual load however again in this case as it comes out of here before it goes to the load in series we've got another ammeter and then it goes off to the load via the other output of the ammeter so this contact is rated at 20 amps it says it on here even though the load is only rated about 250 milliamps this is just to show how the contactor might look for the for this type of installation as you can see on this one we've also bought a neutral through the contactor this is something that you may or may not do depending on the installation but for this installation because we've got a two pole contactor we have also took the neutral through as well and obviously we have our cpc's that goes to all of the exposed conductive parts what's going on okay um it's it's not what it looks like no no we've um just been looking at this board here oh yeah but when we're gonna do a video one night yeah yeah yeah actually we've already done a video it's exactly what it looks like sorry guys okay so let's just summarize the video matt okay and so i think it's been a really good um a a good demonstration of just how the contactor works yeah i particularly like this bit yeah because on the previous video we couldn't actually uh when we did the theory of it we couldn't actually show you how much current was being drawn through the coil yeah which is really smart and actually we're going to use this rig in a future video to show the difference between the uh current drawn by led lighting uh and traditional uh filament lighting so that'll be good so should we uh guys do you want to come in and we'll we'll close the video down mate there we go do you wanna do you wanna kick us off it's your line yeah we hope that video has been
+
+
+[00:04] so then Joe in front of us we've got this board um can you explain what we have on this
+[00:09] board yeah so what we're doing in this video is we're going to look at a single phase contactor
+[00:14] being controlled by a switch and how that is going to switch loads that are on a
+[00:18] different circuit so in the previous video we looked at the principle of how a three phase
+[00:22] contactor works like the three banks are like exactly yeah what we're going to do now is look at
+[00:27] a kind of a simplified version of that so what we'll do is we'll bring the camera in
+[00:31] we'll have a look at the components that we've got on the board and we'll have a chat about
+[00:34] what they're all doing okay so going through the components of this board then Joe we've got the
+[00:38] consumer unit the consumer unit we have the there's a box here what's inside this box so
+[00:44] this is where we've housed the contactor uh so this will be a familiar box to people who've
+[00:48] worked regularly on site it's a simple enclosure and inside there we've got our contactor installed
+[00:54] that is going to be doing the switching of the lighting circuit in this case and through the
+[00:58] we've got a one way switch here and then we've got the two loads there multiple loads there fantastic
+[01:04] so as we come back to the uh to the consumer unit we've got a six amp circuit breaker here
+[01:10] yep 230 volt coil so this this circuit breaker here is controlling a 230 volt coil sure
+[01:17] so that's going to the coil of the contactor right so that circuit breaker is controlling the actual
+[01:24] pulling in mechanism part that we looked at in the previous video yeah so from here it goes the line
+[01:29] conductor comes through here down to the switch through the switch back up into the terminals
+[01:34] A1 of the contactor and then back through A2 of the contactor fantastic to the neutral bar in
+[01:41] here so the idea being when we operate the switch it closes that circuit it generates the magnetic
+[01:45] field in the coil which operates the contactor and we should actually hear a little bit of a crunk
+[01:50] when we turn that on yeah okay and then toss it we have this circuit breaker here and that one is
+[01:55] controlling that's going through actual into the contactor so go to the inside of the contactor and
+[02:01] then on the outgoing side of the contactor to the load in this case two lamps so what we've actually
+[02:06] got is these loads are on a completely different circuit to the control circuit that is actually
+[02:12] going to operate them correctly yeah so so this could be 10 15 20 amps and we've got a little
+[02:18] 10 amp switch here operated by a 6 amp circuit breaker fantastic it can control a big heavy load
+[02:24] off just a simple switch great so should we uh should we turn it on in a minute and have a look
+[02:28] i think so okay then let's let's get this circuit live then so turn this rcd on and we'll just turn
+[02:36] on the coil sure circuit breaker at the moment yeah so what we should now have is a situation
+[02:42] where we can energize the coil but because we've not got the lighting circuit turned on
+[02:46] the contacts will pull in and out but these won't operate correct okay yeah that's okay so what
+[02:51] we'll do is we if we operate the switch we should hear the contactor pulling in and out so i'll
+[02:55] try and do this quite gently so this the click of this doesn't overshadow it so listen for the clunk
+[03:01] so that clunk is actually the contactor pulling in inside there and if we turn it off again we
+[03:06] can hear it dropping out so the control switch is operating the contactor so the actual the contacts
+[03:13] are coming into play but obviously the power no power is going over to load so nothing's going on
+[03:19] great so power up the lighting circuit yeah okay so i'll turn this circuit break on good stuff
+[03:25] you you have the honor in this case matt yeah okay so now again as joe said about the this
+[03:30] is operating the coil and so we're going to turn the you'll hear the coil pulling in the contactor
+[03:38] but in this in this instance now the power is being fed through the contactor and going
+[03:43] through the actual load i've got two ammeters on here joe yeah what's that about so obviously
+[03:49] this is something that we've constructed purely for the purpose of this video and this isn't
+[03:52] something you generally see in an installation you may see some current measuring devices
+[03:58] but this is purely for illustrative purposes you can see we've got two ammeters they're measuring
+[04:03] milliamps so they're measuring thousandths of an amp so that's zero to 300 milliamps fantastic
+[04:09] and then what we can see is that this top ammeter is measuring the current that's flowing through
+[04:15] the coil so this is the current being drawn by the coil and the bottom one is the current being drawn
+[04:21] by the actual lighting load itself so if we have a look at and just compare these directly what do
+[04:26] you notice about the two values of current maps so so on this one obviously it's almost nothing
+[04:32] at all so the the the current that's being drawn through that circuit is just it's it's not quite
+[04:37] zero but it almost is whereas on this one it's over 250 milliamps yeah so so what we're doing is
+[04:44] we're using a very very small amount of current to control a relatively large amount of current yeah
+[04:50] yeah and interestingly it doesn't matter what the load is you could have 20 30 amps on there
+[04:55] that one wouldn't alter that's fantastic and the benefit of that of course is that it means
+[04:59] that we don't have to have really heavy duty switch gear for the actual functional switching
+[05:04] part that people are going to interact with so we haven't got a massive 30 amp switch down here if
+[05:09] we're switching a big 30 amp load that can be done remotely through the contactor okay and we put two
+[05:14] our meters on that were both to the same scale so then you could see a good deflection on this one
+[05:20] unfortunately you just don't see a very good deflection on that one but you can just about
+[05:24] see it fantastic so inside this container then we have the two pole contactor and we have the two
+[05:31] ammeters on that's on this here and here so just to explain how the contact is connected up so from
+[05:40] the first circuit breaker that controls the coil that comes down through here into the common of
+[05:46] the switch down below and then back up through into the a1 terminal which is this one here
+[05:54] and that you access it via this screw so it says it's a1 terminal there it then comes
+[06:00] out of the a2 terminal underneath by the neutral conductor which then comes back to the neutral bar
+[06:08] this is wired up slightly different to how you might do it normally because we have installed
+[06:12] an ammeter in series with this circuit as well so when when the circuit comes down into the switch
+[06:19] and then it comes back out of the switch into the ammeter and then back from the ammeter into the
+[06:24] coil and then back through a two to the neutral conductor we then have the terminals at the top
+[06:31] and the terminals at the bottom the in and the outgoing so you have terminals one and two three
+[06:38] and four so we have the line conductor coming from the other circuit breaker that comes into terminal
+[06:44] one and comes out of terminal two then it goes off to the lighter to the actual load however again in
+[06:53] this case as it comes out of here before it goes to the load in series we've got another ammeter
+[07:00] and then it goes off to the load via the other output of the ammeter so this contact is rated
+[07:05] at 20 amps it says it on here even though the load is only rated about 250 milliamps
+[07:11] this is just to show how the contactor might look for the for this type of installation
+[07:19] as you can see on this one we've also bought a neutral through the contactor
+[07:23] this is something that you may or may not do depending on the installation but for this
+[07:28] installation because we've got a two pole contactor we have also took the
+[07:32] neutral through as well and obviously we have our cpc's that goes to all of the
+[07:38] exposed conductive parts what's going on okay um it's it's not what it looks like no no we've um
+[07:46] just been looking at this board here oh yeah but when we're gonna do a video one night
+[07:49] yeah yeah yeah actually we've already done a video it's exactly what it looks like sorry guys
+[07:55] okay so let's just summarize the video matt okay and so i think it's been a really good um a a good
+[08:01] demonstration of just how the contactor works yeah i particularly like this bit
+[08:04] yeah because on the previous video we couldn't actually uh when we did the theory of it we
+[08:08] couldn't actually show you how much current was being drawn through the coil yeah which
+[08:12] is really smart and actually we're going to use this rig in a future video to show the difference
+[08:15] between the uh current drawn by led lighting uh and traditional uh filament lighting so that'll
+[08:21] be good so should we uh guys do you want to come in and we'll we'll close the video down mate
+[08:26] there we go do you wanna do you wanna kick us off it's your line yeah we hope that video has been

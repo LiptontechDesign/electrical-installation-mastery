@@ -1,0 +1,243 @@
+# How NOT to Test Your Solar Installation! - PV Checks
+# https://www.youtube.com/watch?v=yiuZkfuwzPs
+
+- Testing the DC side of a solar PV installation can be a tricky business and we've seen some interesting approaches when it comes to performing the short circuit test, including this one. So if you are not a fan of live working, and don't want to be replacing your multimeter probes every week, stick around as we're going to show you how you can easily test solar installations using this PVCHECKs multifunction solar tester from TIS. So first up, what tests do we actually need to perform? So turning to the IET Code of Practise for Grid-connected Solar Photovoltaic Systems 2nd Edition, yes, it has just been updated under Section 16.3, we can see a list of the minimum test requirements, which include continuity of earthing, and, or equipotential bonding conductors, a polarity test, string open circuit voltage test, string current test, and an insulation resistance test. This list is derived from EN62446. So if you're turning in from a nice sunny location, the tests are the same. They're also the tests that required in the UK to complete the MCS documentation. So let's get this PVCHECK tester are set up to perform all of those tests in one single operation. The tester has its connections at the top, the red terminal or R is for the positive string connection, while a black or end terminal is for the negative one. The green or E connection should be connected to the installation earth and the blue C connection should be connected to any bonded metalwork on the solar array. Additionally, there's also a separate current clamp to measure the string current that connects to the terminal mark IDC. The IIR terminal layer there, we'll explore later in the video, if you can't remember where the connections go. A long press of the help button brings up a handy connection reminder, a short press switches on and off the LCD backlight. Let's connect the tester to our solar test installation that we have here. And as with every eFIXX solar video, you can hear the rain outside. I'm gonna be performing the test from the inverter end. To do this, I have connected the continuity lead to our array framework using a wandering lead and the earth connection directly to the earth terminal of the inverter. The MC4 adapters, which are included, allow me to connect directly to the strings. To measure the current, switch on the battery powered current clamp, and click it round one of the string conductors. We are selecting the IVCK test, which will complete all of these tests in one operation. There are a few setup options to calibrate the test leads, which I've done because we're using the wandering lead. And you can also set other test parameters. BS7671 requires the insulation test to be formed at 500 volts DC with a minimum resistance of one megaohm. You can choose to skip the continuity test, which is useful for a lot of UK residential rooftop installations where mounting rails are not usually bonded. However, that is a good question to explore. Let me know in the comments when you should bond those mounting rails. Press the Go button, the test starts, and we can hear the internal relays clicking away. Now I can see the results for earth continuity and insulation resistance alongside a reading for the open circuit string voltage and short circuit current under the operating conditions we have here. Now the results don't show the polarity, and interestingly, the tester won't carry out the test if the wrong polarity is discovered, and I'll demonstrate this quickly by swapping over the test leads. So we've quickly proved that our installation is safe and ready to connect. However, we can't tell from the voltage and current measurements that the installation is performing as expected. This is where testing solar modules gets a little tricky. Now luckily we've had a break in the rain here, and I'm out in the yard taking a closer look at our solar modules. The data sheet values for solar modules are produced by controlled conditions known as standard test conditions or STC. This is the data that's shown on the modules rating plate. The values of power, voltage, and current are obtained when the panel is illuminated with the fixed power, typically a 1,000 watts per metre squared at a constant fixed temperature. Now, it's important to note that as soon as we move away from these STZ values, the voltage and current of the module will change significantly. So how these values change is shown on the I-V Curve, which is found on the manufacturer's data sheet. So with the parameters of a solar module changing constantly with sunlight, how can we be sure that our installation is performing properly? Now, we could take a manual reading of irradiance, that's the amount of solar energy falling on the panel and cross-reference this back to the I-V Curve, and then work out the expected value of voltage and current that we have for those operating conditions. However, the PVCHECK makes this easy as we can connect a dedicated irradiance metre to the IRR terminal, and automatically cross-reference back to the standard test condition values. However, before we can sit back, and let the tester do the work, we must add some more information about our solar module. Now, each solar module family has slightly different parameters, most of which can be obtained from the rating plate. Once the parameters are entered and stored, that can then be recalled for future use. So if you're regularly installing the same types of panel, that information is already there for you. The tester can hold the details of 20 different panel types. You can also download from a library of solar modules using the associated desktop software. We're using the Viridian Clearline 335 series panels. So let's enter the data that we can find on that rating plate. The maximum power for these modules is 335 watts. So I'm going to enter that, along with open circuit voltage, voltage, and current, when operating at maximum power, and the short circuit current, we also need to include the specified tolerance values of plus or minus 10%. The next three values for this module are found on the data sheet, which are the temperature coefficients. In other words, how the values change with temperature. Alpha is the change in short circuit current. Beta is the change in open circuit voltage and gamma is the change in power, all in degree Celsius. NOCT is the normal operating cell temperature, 45 degrees Celsius. In this case, we're using standard test conditions, and RS as the series resistance of the panels. So now I've loaded up my panel data, I'm ready to start the test. The irradiance metre needs to be positioned alongside the solar modules at the same inclination, so it's receiving exactly the same light that's hitting the panels. And as before, I've connected the voltage input to the strings and the current clamp around one of the string conductors. And we can already see an the instantaneous reading of irradiance switch on this gloomy, autumn day here in Skipton is way off those standard test conditions. The last thing we must do is tell the tester how many panels we have in our string, and we've got six here installed in our test installation. So again, we're going to run the IVCK test, and it looks like it's a pass for our installation. The previously blank rows for VOC at STC and ISC at STC have been populated, and they match within tolerance the rating plate values for our panels, demonstrating our installation is performing as expected. Any deviation in these values would cause a fail and could be due to things like shading issues, faulty panels, or wiring errors. I'll demonstrate a failure by removing two of the panels from our string. This would replicate the kind of mistake which can happen on a rooftop where multiple strings are installed in close proximity and perhaps a panel has been added to another string. Running the test this time, we get a firm no from the tester, and the values to the correlated STC are far away from the expected values. Now, I'm standing out here in the yard. It would be great to perform this test back at the inverter just from a practical perspective that it's easier to get access to those string connections, which when they're on a roof or if it's an in-roof system could be pretty tricky. But how do we get the value of our irradiance back to the tester. Luckily, the tester is also available with a wireless option for the irradiance metre. Just don't forget to remove it when you finish the installation, and before you take that scaffolding down. A few of the practical considerations. The tester is rated for string voltages up to a 1,000 volts, and current inputs of 15 amps. Storing the data in memory is a useful feature, particularly for larger installations that have multiple strings. This makes it easier to compare similar arrays and then also download that data using the optical port on the side of the tester, so that you can put it into the PVCHECK desktop software where it can then be used to produce test reports for the customer. You can also perform standalone tests for continuity and installation, which are useful for fault finding, and those initial setups of installations. And notice during this review that the results for the installation test were not stable, and in some tests fell under the one megaohm pass limit. So clearly not something we can live with. However, faults like this can be a challenge to track down. So in the linked video on screen now, I'll show you how you can literally find a needle in a haystack with this PV-ISOTEST unit. I've also left a link in the description where you can find out more information about the PVCHECK tester we've used in this video. If you've got any questions, then please let me know in the comments, and hopefully we can answer them in a future video, where hopefully for once it's not raining. (rain pouring) (thunder rumbling)
+
+
+[00:00] - Testing the DC side
+[00:01] of a solar PV installation can be a tricky business
+[00:05] and we've seen some interesting approaches
+[00:07] when it comes to performing the short circuit test,
+[00:10] including this one.
+[00:12] So if you are not a fan of live working,
+[00:14] and don't want to be replacing
+[00:15] your multimeter probes every week,
+[00:17] stick around as we're going to show you
+[00:19] how you can easily test solar installations
+[00:21] using this PVCHECKs multifunction solar tester from TIS.
+[00:26] So first up, what tests do we actually need to perform?
+[00:30] So turning to the IET Code of Practise
+[00:32] for Grid-connected Solar Photovoltaic Systems 2nd Edition,
+[00:37] yes, it has just been updated under Section 16.3,
+[00:41] we can see a list of the minimum test requirements,
+[00:44] which include continuity of earthing,
+[00:46] and, or equipotential bonding conductors,
+[00:50] a polarity test, string open circuit voltage test,
+[00:53] string current test, and an insulation resistance test.
+[00:57] This list is derived from EN62446.
+[01:01] So if you're turning in from a nice sunny location,
+[01:04] the tests are the same.
+[01:06] They're also the tests that required in the UK
+[01:09] to complete the MCS documentation.
+[01:11] So let's get this PVCHECK tester are set up
+[01:13] to perform all of those tests in one single operation.
+[01:17] The tester has its connections at the top,
+[01:19] the red terminal or R is for the positive string connection,
+[01:23] while a black or end terminal is for the negative one.
+[01:27] The green or E connection
+[01:28] should be connected to the installation earth
+[01:30] and the blue C connection should be connected
+[01:33] to any bonded metalwork on the solar array.
+[01:35] Additionally, there's also a separate current clamp
+[01:38] to measure the string current
+[01:40] that connects to the terminal mark IDC.
+[01:42] The IIR terminal layer there,
+[01:44] we'll explore later in the video,
+[01:46] if you can't remember where the connections go.
+[01:48] A long press of the help button
+[01:50] brings up a handy connection reminder,
+[01:52] a short press switches on and off the LCD backlight.
+[01:55] Let's connect the tester to our solar test installation
+[01:58] that we have here.
+[01:59] And as with every eFIXX solar video,
+[02:02] you can hear the rain outside.
+[02:03] I'm gonna be performing the test from the inverter end.
+[02:06] To do this, I have connected the continuity lead
+[02:08] to our array framework using a wandering lead
+[02:11] and the earth connection
+[02:13] directly to the earth terminal of the inverter.
+[02:16] The MC4 adapters, which are included,
+[02:18] allow me to connect directly to the strings.
+[02:20] To measure the current,
+[02:22] switch on the battery powered current clamp,
+[02:23] and click it round one of the string conductors.
+[02:26] We are selecting the IVCK test,
+[02:28] which will complete all of these tests in one operation.
+[02:31] There are a few setup options to calibrate the test leads,
+[02:34] which I've done because we're using the wandering lead.
+[02:37] And you can also set other test parameters.
+[02:40] BS7671 requires the insulation test to be formed
+[02:44] at 500 volts DC with a minimum resistance of one megaohm.
+[02:49] You can choose to skip the continuity test,
+[02:52] which is useful for a lot
+[02:53] of UK residential rooftop installations
+[02:55] where mounting rails are not usually bonded.
+[02:58] However, that is a good question to explore.
+[03:01] Let me know in the comments
+[03:02] when you should bond those mounting rails.
+[03:04] Press the Go button, the test starts,
+[03:06] and we can hear the internal relays clicking away.
+[03:09] Now I can see the results for earth continuity
+[03:12] and insulation resistance
+[03:14] alongside a reading for the open circuit string voltage
+[03:18] and short circuit current
+[03:19] under the operating conditions we have here.
+[03:22] Now the results don't show the polarity, and interestingly,
+[03:25] the tester won't carry out the test
+[03:28] if the wrong polarity is discovered,
+[03:30] and I'll demonstrate this quickly
+[03:32] by swapping over the test leads.
+[03:34] So we've quickly proved that our installation is safe
+[03:36] and ready to connect.
+[03:38] However, we can't tell from the voltage
+[03:40] and current measurements
+[03:42] that the installation is performing as expected.
+[03:44] This is where testing solar modules gets a little tricky.
+[03:48] Now luckily we've had a break in the rain here,
+[03:50] and I'm out in the yard taking a closer look
+[03:52] at our solar modules.
+[03:54] The data sheet values for solar modules
+[03:57] are produced by controlled conditions
+[03:59] known as standard test conditions or STC.
+[04:03] This is the data that's shown on the modules rating plate.
+[04:06] The values of power, voltage, and current
+[04:09] are obtained when the panel
+[04:11] is illuminated with the fixed power,
+[04:13] typically a 1,000 watts per metre squared
+[04:16] at a constant fixed temperature.
+[04:19] Now, it's important to note
+[04:20] that as soon as we move away from these STZ values,
+[04:24] the voltage and current of the module
+[04:26] will change significantly.
+[04:28] So how these values change is shown on the I-V Curve,
+[04:32] which is found on the manufacturer's data sheet.
+[04:34] So with the parameters of a solar module
+[04:36] changing constantly with sunlight,
+[04:38] how can we be sure
+[04:39] that our installation is performing properly?
+[04:42] Now, we could take a manual reading of irradiance,
+[04:46] that's the amount of solar energy falling on the panel
+[04:49] and cross-reference this back to the I-V Curve,
+[04:52] and then work out the expected value of voltage and current
+[04:56] that we have for those operating conditions.
+[04:59] However, the PVCHECK makes this easy
+[05:00] as we can connect a dedicated irradiance metre
+[05:03] to the IRR terminal,
+[05:05] and automatically cross-reference
+[05:07] back to the standard test condition values.
+[05:10] However, before we can sit back,
+[05:12] and let the tester do the work,
+[05:13] we must add some more information about our solar module.
+[05:17] Now, each solar module family
+[05:19] has slightly different parameters,
+[05:21] most of which can be obtained from the rating plate.
+[05:25] Once the parameters are entered and stored,
+[05:27] that can then be recalled for future use.
+[05:30] So if you're regularly installing the same types of panel,
+[05:33] that information is already there for you.
+[05:35] The tester can hold the details of 20 different panel types.
+[05:39] You can also download from a library of solar modules
+[05:43] using the associated desktop software.
+[05:46] We're using the Viridian Clearline 335 series panels.
+[05:50] So let's enter the data
+[05:52] that we can find on that rating plate.
+[05:54] The maximum power for these modules is 335 watts.
+[05:58] So I'm going to enter that,
+[05:59] along with open circuit voltage, voltage, and current,
+[06:02] when operating at maximum power,
+[06:04] and the short circuit current,
+[06:06] we also need to include the specified tolerance values
+[06:10] of plus or minus 10%.
+[06:12] The next three values for this module
+[06:14] are found on the data sheet,
+[06:16] which are the temperature coefficients.
+[06:18] In other words, how the values change with temperature.
+[06:22] Alpha is the change in short circuit current.
+[06:25] Beta is the change in open circuit voltage
+[06:28] and gamma is the change in power, all in degree Celsius.
+[06:33] NOCT is the normal operating cell temperature,
+[06:36] 45 degrees Celsius.
+[06:37] In this case, we're using standard test conditions,
+[06:40] and RS as the series resistance of the panels.
+[06:44] So now I've loaded up my panel data,
+[06:47] I'm ready to start the test.
+[06:48] The irradiance metre needs to be positioned
+[06:52] alongside the solar modules at the same inclination,
+[06:54] so it's receiving exactly the same light
+[06:56] that's hitting the panels.
+[06:58] And as before,
+[06:59] I've connected the voltage input to the strings
+[07:01] and the current clamp around one
+[07:03] of the string conductors.
+[07:04] And we can already see an the instantaneous reading
+[07:07] of irradiance switch on this gloomy, autumn day
+[07:10] here in Skipton
+[07:11] is way off those standard test conditions.
+[07:15] The last thing we must do is tell the tester
+[07:16] how many panels we have in our string,
+[07:18] and we've got six here installed in our test installation.
+[07:22] So again, we're going to run the IVCK test,
+[07:26] and it looks like it's a pass for our installation.
+[07:30] The previously blank rows for VOC at STC
+[07:33] and ISC at STC have been populated,
+[07:36] and they match within tolerance the rating plate values
+[07:39] for our panels,
+[07:40] demonstrating our installation is performing as expected.
+[07:44] Any deviation in these values would cause a fail
+[07:47] and could be due to things like shading issues,
+[07:50] faulty panels, or wiring errors.
+[07:52] I'll demonstrate a failure
+[07:54] by removing two of the panels from our string.
+[07:57] This would replicate the kind of mistake
+[07:59] which can happen on a rooftop
+[08:00] where multiple strings are installed in close proximity
+[08:04] and perhaps a panel has been added to another string.
+[08:08] Running the test this time,
+[08:09] we get a firm no from the tester,
+[08:11] and the values to the correlated STC
+[08:14] are far away from the expected values.
+[08:17] Now, I'm standing out here in the yard.
+[08:19] It would be great to perform this test back at the inverter
+[08:23] just from a practical perspective
+[08:25] that it's easier to get access to those string connections,
+[08:29] which when they're on a roof
+[08:30] or if it's an in-roof system could be pretty tricky.
+[08:33] But how do we get the value of our irradiance
+[08:37] back to the tester.
+[08:38] Luckily, the tester is also available with a wireless option
+[08:41] for the irradiance metre.
+[08:43] Just don't forget to remove it
+[08:45] when you finish the installation,
+[08:46] and before you take that scaffolding down.
+[08:49] A few of the practical considerations.
+[08:50] The tester is rated for string voltages up to a 1,000 volts,
+[08:54] and current inputs of 15 amps.
+[08:56] Storing the data in memory is a useful feature,
+[08:59] particularly for larger installations
+[09:01] that have multiple strings.
+[09:03] This makes it easier to compare similar arrays
+[09:06] and then also download that data
+[09:09] using the optical port on the side of the tester,
+[09:11] so that you can put it into the PVCHECK desktop software
+[09:15] where it can then be used
+[09:16] to produce test reports for the customer.
+[09:19] You can also perform standalone tests
+[09:21] for continuity and installation,
+[09:23] which are useful for fault finding,
+[09:25] and those initial setups of installations.
+[09:28] And notice during this review that the results
+[09:30] for the installation test were not stable,
+[09:32] and in some tests fell under the one megaohm pass limit.
+[09:35] So clearly not something we can live with.
+[09:38] However, faults like this can be a challenge to track down.
+[09:40] So in the linked video on screen now,
+[09:42] I'll show you how you can literally find
+[09:44] a needle in a haystack with this PV-ISOTEST unit.
+[09:48] I've also left a link in the description
+[09:51] where you can find out more information
+[09:53] about the PVCHECK tester we've used in this video.
+[09:56] If you've got any questions,
+[09:57] then please let me know in the comments,
+[09:59] and hopefully we can answer them in a future video,
+[10:02] where hopefully for once it's not raining.
+[10:06] (rain pouring) (thunder rumbling)

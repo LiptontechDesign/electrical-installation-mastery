@@ -1,0 +1,315 @@
+# Why do Purely Inductive and Capacitive Circuits Not Dissipate Any Power?
+# https://www.youtube.com/watch?v=nf1LD0qOcrg
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering the subject of AC theory and we're going to start exploring the subject of power in an AC circuit so in this first video we're just going to have a look at what happens to power in a purely resistive circuit and then we're going to see what happens as our circuit becomes more and more capacitive and more and more inductive so as you can see on the screen here we've got two sine waves so we're going to say that the red sine wave represents our voltage and the blue sine wave represents our current so you can see here this is a purely resistive circuit because the voltage and current are in phase with each other again if you're not sure what I'm talking about here by them being in phase then please watch a previous video in this series so we're going to say that our voltage waveform has a value of 5 volts and our current waveform has a value of 2 amps now we're using the peak values here we could use the RMS value and purists would argue that we should be using the RMS values but that's going to cause a little bit more confusing in this video than we need so the peak values will function perfectly fine for what we need to do here so hopefully from a previous video we're quite comfortable with the idea that if we've got a purely resistive circuit the voltage and the current will be in phase with each other if however we start to make our circuit more and more inductive we'll remember that the current will start to lag the voltage by a maximum of 90 degrees when the circuit becomes purely inductive so that's a circuit that has no resistance just inductance and we also are familiar with the idea that if we make our circuit increasingly capacitive until it gets to the point where it is purely capacitive that is a circuit that has no resistance and no inductance just purely capacitance we can see that the current will lead the voltage by 90 degrees so far so good now let's have a chat about how power is affected in our circuit again from a previous video endurance and training we'll know that the basic way that we calculate power in either a DC circuit or in an AC circuit that is purely resistive is to take the current and multiply it by the voltage now we could do that at every single point along this waveform so if we were to do that if we were to take the current here and multiply it by the voltage here we know that we'd come out with a value of zero watts so the current times the voltage here where they're both zero would give us zero watts but as we move along our waveform we can see that actually the voltage times by the current will get bigger and bigger and then drop off again until we get to this point here so we can see that we multiply the voltage by the current at various points along this waveform and when we get to this point here where we've got maximum voltage and maximum current we've got the maximum power represented as our waveform so two amps times 5 volts gives us 10 watts now what does your intuition tell you at this point is going to happen with our power waveform you may look at this and think well surely it will just follow the same line as the voltage in the current and it will drop below the x-axis well remember in an AC circuit when the voltage or the current goes below this x-axis what that indicates is not a lack or a debt of electricity although it's in a minus region of the graph all it indicates is that the current has changed its direction is now going the opposite way around the circuit however if our power waveform drops below the x-axis and comes down here that takes on a completely different meaning for a power waveform because what that would indicate is that actually we do have kind of a lack of power what it would actually indicate is that we are putting power back into the system again so instead of the system dissipating power we would actually be putting power back into the system now you can kind of see that for a resistive load like say a lamp or something like that that would be completely ludicrous because we would have to have some kind of Oh to lighten heat coming away from the lamp we would have to be supplying light and heat to the lamp in order to put power back into the system so logically that tells us that the power line cannot drop below the x-axis but actually mathematically this is supported for is also which is really nice because if we look at this logically here we've got a negative voltage and a negative current here in here and if we multiply two negative values together what happens well of course the output is positive so you can see here that when we get to the end of one full cycle of our AC waveform you can see that the power waveform represented by this green line has not actually at any point dropped below the horizontal x-axis so logically that makes sense and mathematically that makes sense which is quite beautiful and actually if we just extend this all the way along here you can see that actually the power is always positive so where we've got a purely resistive circuit the power is always positive the circuit is always dissipating power mostly in the form of heat and sometimes in the form of light as well now let's consider what happens when we make the circuit purely capacitive so let's take our waveform and move it across here so now this arrangement as you'll remember from a previous video indicates that we have a purely capacitive circuit the current is leading the voltage by 90 degrees in this circuit so let's start to think about what's going to happen with our power if we look at this we can see here we've got 0 x plus 2 so that means that our power waveform is going to start off at 0 just as it was before and at every point along this first part of the waveform you can see that we've always got a positive number x by a positive number so we end up with a positive waveform and when we get to this position on the graph you can see that the waveform has remained in the positive part of the graph so that indicates that power is being dissipated at that point however when we go past that point we can now see that the power has on negative for this part of the cycle and that is because from here onwards we've got a positive value multiplied by a negative value and when you multiply positive by a negative you get a negative value so this may seem to contradict everything that I've just said in the opening part of this video and that might seem a little bit confusing at first but actually what's happening here is we said that in a purely resistive circuit if the power line went below the horizontal x-axis we would have to be put in power back into the system well actually that's exactly what's happening inside our capacitor during this part of the cycle the capacitor is charging up so it's using power effectively but then during this part of the cycle the energy that was stored in our capacitor in the form of that electric charge kind of gets put back into the system again so the electrons will move out of the capacitor and back into the circuit indicating that it is now putting that stored energy back into the circuit again and so we end up with a negative power graph here then what happens is as we continue with the cycle you can see that the graph goes positive again so power is being used but then the power gets put back into the system again power is being used power gets put back into the system again and in reality that just keeps on going and going and going so you can see there now if I just switch off these two waveforms for the moment you can see we end up with a graph for the power that goes positive and negative and if you average out all of the points along this line you can see that actually what's happening is that a purely capacitive circuit is not dissipating any power so I'm sure you'll agree that's quite an interesting insight into the way that power behaves in a purely capacitive circuit now let's think about what happens if the circuit that we're dealing with is not purely capacitive but goes to the opposite extreme and becomes purely inductive now this is a much less realistic situation because as we know an inductor is a coil that coil will have a value of resistance due to the nature of how it's been made it's made up of of wire which will have a little bit of resistance and so it's very very difficult to get a purely inductive load there have been instances where we've managed to cool down conductors certain alloys down to absolute zero and effectively they lose all of their resistance at that point but that's not something that we can use practically in the real world for our machines in reality our inductive loads will always have a little bit of resistance but the principle holds true if we could get hold of a purely inductive circuit how would the power behave now well there's a bit of a spoiler on this one because as we start to show our power graph on here you can see that instantly it starts off in this negative area now bearing in mind that we've just kind of come in at a random position on this waveform it's not putting power back into the system that it doesn't already have obviously it would always have to have a little bit of power a little bit of energy stored in the coil to begin with but you can see we've got a negative value multiplied by a positive value which gives us a negative outcome and you can see here that the power graph is in the negative part of the cycle and then as we reveal some more of our graph you can see we get to this point and you can see that at this point the power has now become positive so the inductor is effectively storing a little bit of energy again in the form of the magnetic field that is generated around the coil and then when the current dies away or the voltage and the current follow the next part of the relationship as you can see here the voltage goes negative and the current is currently positive you can see that the energy that is stored inside that magnetic field when it collapses it kind of creates electricity back inside the coil and it goes back into the system again so the coil charges up with energy and then discharges the energy back into the circuit so you may notice some kind of using power and energy interchangeably in this presentation again we really should just be purely referring to power at this point because energy includes a time factor but the principle remains the same so you can see here that as we move along our waveform you can see there that we end up with this lovely pattern forming and let's just shut down those two and you can see that actually we've got a very similar looking waveform to the waveform that we had for a purely capacitive circuits just shifted along the x-axis there and you can see that again if we average out all the points along this power waveform that the average of that would actually be zero therefore a purely inductive load would not dissipate any power because it's constantly charging up the magnetic field and then discharging back into the circuit again so that's how power behaves in a purely resistive circuit in a purely capacitive circuit and a purely inductive circuit we've seen that in a purely capacitive and a purely inductive circuit the components that make up that circuit do not discharge any power they do not dissipate any power they are effectively power neutral all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're going to continue considering the
+[00:14] subject of AC theory and we're going to
+[00:16] start exploring the subject of power in
+[00:19] an AC circuit so in this first video
+[00:22] we're just going to have a look at what
+[00:24] happens to power in a purely resistive
+[00:27] circuit and then we're going to see what
+[00:29] happens as our circuit becomes more and
+[00:31] more capacitive and more and more
+[00:33] inductive so as you can see on the
+[00:36] screen here we've got two sine waves so
+[00:38] we're going to say that the red sine
+[00:40] wave represents our voltage and the blue
+[00:43] sine wave represents our current so you
+[00:45] can see here this is a purely resistive
+[00:46] circuit because the voltage and current
+[00:49] are in phase with each other again if
+[00:52] you're not sure what I'm talking about
+[00:53] here by them being in phase then please
+[00:55] watch a previous video in this series so
+[00:59] we're going to say that our voltage
+[01:00] waveform has a value of 5 volts and our
+[01:04] current waveform has a value of 2 amps
+[01:06] now we're using the peak values here we
+[01:09] could use the RMS value and purists
+[01:11] would argue that we should be using the
+[01:12] RMS values but that's going to cause a
+[01:14] little bit more confusing in this video
+[01:15] than we need so the peak values will
+[01:17] function perfectly fine for what we need
+[01:20] to do here so hopefully from a previous
+[01:23] video we're quite comfortable with the
+[01:24] idea that if we've got a purely
+[01:25] resistive circuit the voltage and the
+[01:28] current will be in phase with each other
+[01:30] if however we start to make our circuit
+[01:34] more and more inductive we'll remember
+[01:36] that the current will start to lag the
+[01:39] voltage by a maximum of 90 degrees when
+[01:43] the circuit becomes purely inductive so
+[01:45] that's a circuit that has no resistance
+[01:47] just inductance and we also are familiar
+[01:50] with the idea that if we make our
+[01:52] circuit increasingly capacitive until it
+[01:55] gets to the point where it is purely
+[01:56] capacitive that is a circuit that has no
+[02:00] resistance and no inductance just purely
+[02:02] capacitance we can see that the current
+[02:05] will lead the voltage by 90 degrees so
+[02:08] far so good
+[02:09] now let's have a chat about how power is
+[02:12] affected
+[02:13] in our circuit again from a previous
+[02:16] video endurance and training we'll know that
+[02:18] the basic way that we calculate power in
+[02:20] either a DC circuit or in an AC circuit
+[02:24] that is purely resistive is to take the
+[02:27] current and multiply it by the voltage
+[02:29] now we could do that at every single
+[02:32] point along this waveform so if we were
+[02:35] to do that if we were to take the
+[02:36] current here and multiply it by the
+[02:38] voltage here we know that we'd come out
+[02:40] with a value of zero watts so the
+[02:43] current times the voltage here where
+[02:44] they're both zero would give us zero
+[02:46] watts but as we move along our waveform
+[02:50] we can see that actually the voltage
+[02:53] times by the current will get bigger and
+[02:56] bigger and then drop off
+[02:57] again until we get to this point here so
+[03:00] we can see that we multiply the voltage
+[03:02] by the current at various points along
+[03:04] this waveform and when we get to this
+[03:06] point here where we've got maximum
+[03:08] voltage and maximum current we've got
+[03:10] the maximum power represented as our
+[03:12] waveform so two amps times 5 volts gives
+[03:15] us 10 watts now what does your intuition
+[03:18] tell you at this point is going to
+[03:20] happen with our power waveform you may
+[03:23] look at this and think well surely it
+[03:24] will just follow the same line as the
+[03:27] voltage in the current and it will drop
+[03:28] below the x-axis well remember in an AC
+[03:31] circuit when the voltage or the current
+[03:33] goes below this x-axis what that
+[03:36] indicates is not a lack or a debt of
+[03:38] electricity although it's in a minus
+[03:40] region of the graph all it indicates is
+[03:42] that the current has changed its
+[03:44] direction is now going the opposite way
+[03:46] around the circuit however if our power
+[03:50] waveform drops below the x-axis and
+[03:54] comes down here that takes on a
+[03:56] completely different meaning for a power
+[03:59] waveform because what that would
+[04:00] indicate is that actually we do have
+[04:02] kind of a lack of power what it would
+[04:05] actually indicate is that we are putting
+[04:06] power back into the system again so
+[04:09] instead of the system dissipating power
+[04:12] we would actually be putting power back
+[04:14] into the system now you can kind of see
+[04:17] that for a resistive load like say a
+[04:20] lamp or something like that that would
+[04:22] be completely ludicrous because we would
+[04:24] have to have some kind of Oh
+[04:26] to lighten heat coming away from the
+[04:29] lamp we would have to be supplying light
+[04:31] and heat to the lamp in order to put
+[04:33] power back into the system so logically
+[04:36] that tells us that the power line cannot
+[04:38] drop below the x-axis but actually
+[04:41] mathematically this is supported for is
+[04:43] also which is really nice because if we
+[04:45] look at this logically here we've got a
+[04:47] negative voltage and a negative current
+[04:50] here in here and if we multiply two
+[04:52] negative values together what happens
+[04:54] well of course the output is positive so
+[04:58] you can see here that when we get to the
+[05:01] end of one full cycle of our AC waveform
+[05:04] you can see that the power waveform
+[05:06] represented by this green line has not
+[05:09] actually at any point dropped below the
+[05:13] horizontal x-axis so logically that
+[05:16] makes sense and mathematically that
+[05:18] makes sense which is quite beautiful and
+[05:20] actually if we just extend this all the
+[05:21] way along here you can see that actually
+[05:24] the power is always positive so where
+[05:27] we've got a purely resistive circuit the
+[05:29] power is always positive the circuit is
+[05:31] always dissipating power mostly in the
+[05:35] form of heat and sometimes in the form
+[05:37] of light as well now let's consider what
+[05:40] happens when we make the circuit purely
+[05:42] capacitive so let's take our waveform
+[05:45] and move it across here so now this
+[05:48] arrangement as you'll remember from a
+[05:50] previous video indicates that we have a
+[05:52] purely capacitive circuit the current is
+[05:54] leading the voltage by 90 degrees in
+[05:57] this circuit so let's start to think
+[05:59] about what's going to happen with our
+[06:01] power if we look at this we can see here
+[06:03] we've got 0 x plus 2 so that means that
+[06:07] our power waveform is going to start off
+[06:09] at 0 just as it was before
+[06:11] and at every point along this first part
+[06:13] of the waveform you can see that we've
+[06:16] always got a positive number x by a
+[06:17] positive number so we end up with a
+[06:19] positive waveform and when we get to
+[06:22] this position on the graph you can see
+[06:24] that the waveform has remained in the
+[06:28] positive part of the graph so that
+[06:31] indicates that power is being dissipated
+[06:32] at that point however when we go past
+[06:35] that point we can now see that the power
+[06:38] has
+[06:39] on negative for this part of the cycle
+[06:42] and that is because from here onwards
+[06:45] we've got a positive value multiplied by
+[06:48] a negative value and when you multiply
+[06:51] positive by a negative you get a
+[06:52] negative value so this may seem to
+[06:56] contradict everything that I've just
+[06:57] said in the opening part of this video
+[06:59] and that might seem a little bit
+[07:00] confusing at first but actually what's
+[07:02] happening here is we said that in a
+[07:04] purely resistive circuit if the power
+[07:06] line went below the horizontal x-axis we
+[07:09] would have to be put in power back into
+[07:11] the system well actually that's exactly
+[07:13] what's happening inside our capacitor
+[07:15] during this part of the cycle the
+[07:18] capacitor is charging up so it's using
+[07:20] power effectively but then during this
+[07:24] part of the cycle the energy that was
+[07:26] stored in our capacitor in the form of
+[07:28] that electric charge kind of gets put
+[07:30] back into the system again so the
+[07:32] electrons will move out of the capacitor
+[07:34] and back into the circuit indicating
+[07:36] that it is now putting that stored
+[07:38] energy back into the circuit again and
+[07:41] so we end up with a negative power graph
+[07:45] here then what happens is as we continue
+[07:49] with the cycle you can see that the
+[07:51] graph goes positive again so power is
+[07:53] being used but then the power gets put
+[07:55] back into the system again power is
+[07:57] being used power gets put back into the
+[07:59] system again and in reality that just
+[08:02] keeps on going and going and going so
+[08:04] you can see there now if I just switch
+[08:07] off these two waveforms for the moment
+[08:09] you can see we end up with a graph for
+[08:11] the power that goes positive and
+[08:13] negative and if you average out all of
+[08:15] the points along this line you can see
+[08:18] that actually what's happening is that a
+[08:20] purely capacitive circuit is not
+[08:24] dissipating any power so I'm sure you'll
+[08:27] agree that's quite an interesting
+[08:28] insight into the way that power behaves
+[08:30] in a purely capacitive circuit now let's
+[08:32] think about what happens if the circuit
+[08:37] that we're dealing with is not purely
+[08:38] capacitive but goes to the opposite
+[08:40] extreme and becomes purely inductive now
+[08:43] this is a much less realistic situation
+[08:45] because as we know an inductor is a coil
+[08:47] that coil will have a value of
+[08:49] resistance due to the nature of how it's
+[08:51] been made it's made up of
+[08:53] of wire which will have a little bit of
+[08:54] resistance and so it's very very
+[08:56] difficult to get a purely inductive load
+[09:00] there have been instances where we've
+[09:02] managed to cool down conductors certain
+[09:06] alloys down to absolute zero and
+[09:08] effectively they lose all of their
+[09:10] resistance at that point but that's not
+[09:11] something that we can use practically in
+[09:14] the real world for our machines in
+[09:15] reality our inductive loads will always
+[09:18] have a little bit of resistance but the
+[09:20] principle holds true if we could get
+[09:22] hold of a purely inductive circuit how
+[09:25] would the power behave now well there's
+[09:27] a bit of a spoiler on this one because
+[09:29] as we start to show our power graph on
+[09:32] here you can see that instantly it starts off
+[09:35] in this negative area now bearing in
+[09:37] mind that we've just kind of come in at
+[09:38] a random position on this waveform it's
+[09:41] not putting power back into the system
+[09:43] that it doesn't already have obviously
+[09:44] it would always have to have a little
+[09:46] bit of power a little bit of energy
+[09:48] stored in the coil to begin with but you
+[09:51] can see we've got a negative value
+[09:52] multiplied by a positive value which
+[09:54] gives us a negative outcome and you can
+[09:57] see here that the power graph is in the
+[09:59] negative part of the cycle and then as
+[10:01] we reveal some more of our graph you can
+[10:04] see we get to this point and you can see
+[10:07] that at this point the power has now
+[10:09] become positive so the inductor is
+[10:12] effectively storing a little bit of
+[10:15] energy again in the form of the magnetic
+[10:17] field that is generated around the coil
+[10:20] and then when the current dies away or
+[10:22] the voltage and the current follow the
+[10:25] next part of the relationship as you can
+[10:26] see here the voltage goes negative and
+[10:28] the current is currently positive you
+[10:30] can see that the energy that is stored
+[10:32] inside that magnetic field when it
+[10:34] collapses it kind of creates electricity
+[10:37] back inside the coil and it goes back
+[10:40] into the system again so the coil
+[10:42] charges up with energy and then
+[10:44] discharges the energy back into the
+[10:46] circuit so you may notice some kind of
+[10:49] using power and energy interchangeably
+[10:51] in this presentation again we really
+[10:54] should just be purely referring to power
+[10:56] at this point because energy includes a
+[10:58] time factor but the principle remains
+[11:00] the same so you can see here that as we
+[11:02] move along our waveform you can see
+[11:05] there
+[11:06] that we end up with this lovely pattern
+[11:08] forming and let's just shut down those
+[11:11] two and you can see that actually we've
+[11:13] got a very similar looking waveform to
+[11:15] the waveform that we had for a purely
+[11:16] capacitive circuits just shifted along
+[11:18] the x-axis there and you can see that
+[11:20] again if we average out all the points
+[11:23] along this power waveform that the
+[11:25] average of that would actually be zero
+[11:27] therefore a purely inductive load would
+[11:31] not dissipate any power because it's
+[11:33] constantly charging up the magnetic
+[11:35] field and then discharging back into the
+[11:38] circuit again so that's how power
+[11:40] behaves in a purely resistive circuit in
+[11:43] a purely capacitive circuit and a purely
+[11:45] inductive circuit we've seen that in a
+[11:47] purely capacitive and a purely inductive
+[11:49] circuit the components that make up that
+[11:52] circuit do not discharge any power they
+[11:56] do not dissipate any power they are
+[11:58] effectively power neutral all that
+[12:01] remains in this video is to say thank
+[12:03] you very much for watching
+[12:06] [Music]
+[12:19] [Music]
+[12:25] [Music]

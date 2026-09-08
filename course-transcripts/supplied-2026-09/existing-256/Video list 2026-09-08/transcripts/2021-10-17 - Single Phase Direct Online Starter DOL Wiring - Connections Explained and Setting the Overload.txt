@@ -1,0 +1,101 @@
+# Single Phase Direct Online Starter DOL Wiring - Connections Explained and Setting the Overload
+# https://www.youtube.com/watch?v=PIaqmCxN9KU
+
+we are back in the workshop thank you Matt we are back in looking at motors today in a previous video presentation that Matt and Joe did we went through the connections in what Matt so that was a direct online starter single phase like the one that we have here and we just went through the basic layout of a online starter and the connections the numbers of the connections and where the basic wires went okay so that was on a whiteboard we showed how those connections should be made in a single phase direct online startup and then you develop that into another video where we looked at remote stop start yeah in this video presentation we've got a single-phase motor we've got a direct online start and remote stop start we're going to physically show you those connections that you drew before yes Matt yeah so with that in mind if i press the green button yep that should start very good if i press the red one again it should stop ah green one red one okay magic okay so single phase motor direct online we're going to bring the camera in super close Matt and i just want you to go through all of those connections that link back to your previous two videos fine so we've safely isolated the supply we've taken the cover off i've also disconnected the remote stop start element of this because the video that we looked at initially upstairs in the classroom with Matt and Joe had the direct online starter only and we added in the remote stop start so for this video we've disconnected the remote stop start and we're Matt's going to talk us through the connections going on in here so what's going on matt okay Gaz so we've got number one connection here and that's where our line supply comes in so our main live supply comes in to number one here okay and then it comes out on number two and directly down to the motor below okay so the motor is down here so we come out of number two with the line conductor down at the bottom yes we come in on number three with the neutral conductor we come out of number four yes and then it loops back round into number five okay i think we did that on the drawing quite well yes and then out on number six again to the motor below so we're coming out of two and six down to the motor below passing through the actual contact here yeah okay so we've got this box here and that is the overload relay okay and so that's where the that's why we go through we loop through all of the contacts with the neutral conductor to ensure that all of the overload relay is is being used okay that's the reason for it this overload itself can be changed it looks like we can unscrew it and take it out is it interchangeable with other overloads yeah so so this one is rated at approximately about 13 amps okay so so in so we can quite easily remove that and what we're here just for the AM2 and AM2S can you just remind me what this little little dial is doing here because i know on AM2S you have to fiddle around with that at some point so we'll just move this up and i think on the we do you've got a little arrow here okay arrow head and again just with a screwdriver you can just re you can just turn the this dial around okay to whatever setting you want it to be on so at the moment that's reading approximately let's say 10 amps okay so the motor that would be below normally on AM2S and AM2 there's a rated plate that you have to set your overload to or it could be in the specification moving forward they might even ask you to calculate but it's vitally important that we set the overload appropriate to the motor that we connect yes everybody's motor is different as well that's another key thing to remember thank you for that Matt so more connections for me please okay then so if you look on the line conductor where it comes in on number one we also have a as a loop across to number 13. okay and then from number 13 which is a normally open contact it then goes across to number 17. so it comes from the back at 13 loops forward to 17. number 17. okay so to take note that number one number 13 and number 17 are permanently live connections okay this is the start button yep okay so it's a normally open start button and so on the other side number 18 the connection then goes from 18 to number 14 which is the other side of the retaining contacts okay so we went from the front side 18 we swung a little cable back to the back side to number 14 yeah that's it so the start start button in this case is in parallel with the retaining contacts brilliant we then take a smaller cable so there is something slightly different on this one on the drawing we showed a separate stop button okay so on this one and on many um online starters the stop buttons are actually interconnected into the overload relay so the green button that i saw on the front of the actual director online starter is here that's this one and the red button is here is this one yeah for the stop okay so normally we if you look on the drawing upstairs we went from here to the stop button yeah and then out of the stop button into 95 or 96. okay yeah in this case we come directly from here going through all the way into 95. and are these links that are normally actually in the actual direct online starter it looks like that you know these have been added in afterwards do they come pre-linked or they you have to link them up yourself again when you buy an online starter it only comes with the actual contactor you buy the overload relay separate okay but the wiring is all there you just have to physically put the wiring in you just have to physically do the connections into 95 and 96 and that's what you're explaining to me that's brilliant yeah so from 96 so it comes through into 95 which is a normally closed contact right it comes in out of 96 yeah and then that comes all the way through and it's quite hard to see on here but terminals A1 which is the coil that's set back yeah this is set back here so that's a1 and we explained that on the other video presentation it's probably a little bit easier to see on a drawing that is in reality so you have to look in there look for A1 yeah A1 here and then on the other side A2 yeah which is the neutral connection then goes links across from the neutral into the neutral connection here so A2 being the other side of the coil so we've got to energize the coil so in other words we need line on A1 and we need a neutral on A2 and you've taken it from this front neutral connection out of number three and effectively swung between the two terminals that's it really important not to take a neutral from this termination because remember like we said on the video previously that goes through the contactor and for in order for the contact for this to be for this neutral to be operating your contact needs to be in play so that was number five we don't take it from number five we did that in the previous video presentation we come from effectively the permanent neutral which is in number three so on a is it A1 and A2 those terminals at the back yes so one of them's got a line connection one of them's got a neutral and effectively that creates a magnetic field that pulls in the contactor and the contactor is this thing here yeah if you as you push that in it physically pushes in and so now the contacts yeah okay yeah it's good yeah so it's in and then let go and now okay so that will that's what we hear don't we when we energize it and we don't that's the contact in other words the energization of a coil right right fantastic okay there's a couple other things um on this one that would like to just draw your attention to that we didn't maybe show upstairs okay is the CPC's yes so i think i represented the CPC connection um just with a little green square upstairs on the drawing but obviously the CPCs are it's paramount that the CPC's are all connected properly exposed conductive part CPC's are in the back we were concentrating obviously on the line and neutral connections and the importance of getting them correct but yeah you're right the CPC's need to be in there as well yeah so we also have so when we said about the normally cl normally closed 95 and 96 terminal yep when this trips if there's a if there's an overload for whatever reason on this particular type you can manually reset it okay so that's a reset button there if the motor was rated at 10 amps it had an overloaded condition maybe we put the motor into too much stress it started taking 15 16 amps it would obviously trip out but then we can manually reset it and set it right really good so if you watch matt's and joe's previous video on a direct online single face starter we've actually now come down in the workshop and shown you in situ the connections that were described in the drawings we can go on and add these in for remote stop start and that may be part of another presentation but for this one it was all about for our learners can they make the connections for a single phase direct online motor as shown upstairs and within the actual starter itself
+
+
+[00:00] we are back in the workshop thank you Matt we are back in looking at motors today
+[00:03] in a previous video presentation that Matt and Joe did we went through the connections in what
+[00:08] Matt so that was a direct online starter single phase like the one that we have here
+[00:12] and we just went through the basic layout of a online starter and the connections the
+[00:17] numbers of the connections and where the basic wires went okay so that was on a whiteboard we
+[00:21] showed how those connections should be made in a single phase direct online startup and then you
+[00:25] develop that into another video where we looked at remote stop start yeah in this video presentation
+[00:30] we've got a single-phase motor we've got a direct online start and remote stop start we're going to
+[00:33] physically show you those connections that you drew before yes Matt yeah so with that in mind
+[00:38] if i press the green button yep that should start very good if i press the red one again it should
+[00:43] stop ah green one red one okay magic okay so single phase motor direct online we're going to
+[00:50] bring the camera in super close Matt and i just want you to go through all of those connections
+[00:54] that link back to your previous two videos fine so we've safely isolated the supply we've taken the
+[00:59] cover off i've also disconnected the remote stop start element of this because the video that we
+[01:04] looked at initially upstairs in the classroom with Matt and Joe had the direct online starter only
+[01:09] and we added in the remote stop start so for this video we've disconnected the remote stop start
+[01:14] and we're Matt's going to talk us through the connections going on in here so what's going on
+[01:17] matt okay Gaz so we've got number one connection here and that's where our line supply comes in
+[01:22] so our main live supply comes in to number one here okay and then it comes out on number two
+[01:28] and directly down to the motor below okay so the motor is down here so we come out of number two
+[01:33] with the line conductor down at the bottom yes we come in on number three with the neutral conductor
+[01:39] we come out of number four yes and then it loops back round into number five okay i think we did
+[01:45] that on the drawing quite well yes and then out on number six again to the motor below so we're
+[01:50] coming out of two and six down to the motor below passing through the actual contact here yeah okay
+[01:56] so we've got this box here and that is the overload relay okay and so that's where the
+[02:03] that's why we go through we loop through all of the contacts with the neutral conductor to ensure
+[02:09] that all of the overload relay is is being used okay that's the reason for it this overload itself
+[02:14] can be changed it looks like we can unscrew it and take it out is it interchangeable with
+[02:17] other overloads yeah so so this one is rated at approximately about 13 amps okay so so in so we
+[02:23] can quite easily remove that and what we're here just for the AM2 and AM2S can you just remind me
+[02:28] what this little little dial is doing here because i know on AM2S you have to fiddle around with that
+[02:33] at some point so we'll just move this up and i think on the we do you've got a little arrow here
+[02:40] okay arrow head and again just with a screwdriver you can just re you can just turn the this dial
+[02:46] around okay to whatever setting you want it to be on so at the moment that's reading approximately
+[02:52] let's say 10 amps okay so the motor that would be below normally on AM2S and AM2 there's a rated
+[02:59] plate that you have to set your overload to or it could be in the specification moving forward they
+[03:03] might even ask you to calculate but it's vitally important that we set the overload appropriate
+[03:08] to the motor that we connect yes everybody's motor is different as well that's another key
+[03:11] thing to remember thank you for that Matt so more connections for me please okay then so
+[03:16] if you look on the line conductor where it comes in on number one we also have a as a
+[03:22] loop across to number 13. okay and then from number 13 which is a normally open contact
+[03:29] it then goes across to number 17. so it comes from the back at 13 loops forward to 17. number 17.
+[03:35] okay so to take note that number one number 13 and number 17 are permanently live connections okay
+[03:42] this is the start button yep okay so it's a normally open start button and so on the other
+[03:49] side number 18 the connection then goes from 18 to number 14 which is the other side of the retaining
+[03:57] contacts okay so we went from the front side 18 we swung a little cable back to the back side to
+[04:01] number 14 yeah that's it so the start start button in this case is in parallel with the retaining
+[04:07] contacts brilliant we then take a smaller cable so there is something slightly different on this one
+[04:14] on the drawing we showed a separate stop button okay so on this one and on many um online starters
+[04:21] the stop buttons are actually interconnected into the overload relay so the green button that i saw
+[04:28] on the front of the actual director online starter is here that's this one and the red button is here
+[04:32] is this one yeah for the stop okay so normally we if you look on the drawing upstairs we went from
+[04:38] here to the stop button yeah and then out of the stop button into 95 or 96. okay yeah in this case
+[04:45] we come directly from here going through all the way into 95. and are these links that are normally
+[04:52] actually in the actual direct online starter it looks like that you know these have been added
+[04:56] in afterwards do they come pre-linked or they you have to link them up yourself again when you buy
+[05:01] an online starter it only comes with the actual contactor you buy the overload relay separate
+[05:06] okay but the wiring is all there you just have to physically put the wiring in you just have
+[05:12] to physically do the connections into 95 and 96 and that's what you're explaining to me that's
+[05:16] brilliant yeah so from 96 so it comes through into 95 which is a normally closed contact right
+[05:24] it comes in out of 96 yeah and then that comes all the way through and it's quite hard to see on here
+[05:29] but terminals A1 which is the coil that's set back yeah this is set back here so that's a1
+[05:35] and we explained that on the other video presentation it's probably a little bit
+[05:38] easier to see on a drawing that is in reality so you have to look in there look for A1 yeah
+[05:41] A1 here and then on the other side A2 yeah which is the neutral connection then goes links across
+[05:51] from the neutral into the neutral connection here so A2 being the other side of the coil so we've
+[05:57] got to energize the coil so in other words we need line on A1 and we need a neutral on A2 and you've
+[06:02] taken it from this front neutral connection out of number three and effectively swung between the two
+[06:07] terminals that's it really important not to take a neutral from this termination because remember
+[06:12] like we said on the video previously that goes through the contactor and for in order for the
+[06:17] contact for this to be for this neutral to be operating your contact needs to be in play
+[06:23] so that was number five we don't take it from number five we did that in the previous video
+[06:26] presentation we come from effectively the permanent neutral which is in number three so
+[06:30] on a is it A1 and A2 those terminals at the back yes so one of them's got a line connection one of
+[06:35] them's got a neutral and effectively that creates a magnetic field that pulls in the contactor and
+[06:39] the contactor is this thing here yeah if you as you push that in it physically pushes in
+[06:45] and so now the contacts yeah okay yeah it's good yeah so it's in and then let go and now okay
+[06:51] so that will that's what we hear don't we when we energize it and we don't that's the contact
+[06:56] in other words the energization of a coil right right fantastic okay there's a couple other things
+[07:02] um on this one that would like to just draw your attention to that we didn't maybe show upstairs
+[07:07] okay is the CPC's yes so i think i represented the CPC connection um just with a little green square
+[07:14] upstairs on the drawing but obviously the CPCs are it's paramount that the CPC's are
+[07:19] all connected properly exposed conductive part CPC's are in the back we were concentrating
+[07:24] obviously on the line and neutral connections and the importance of
+[07:26] getting them correct but yeah you're right the CPC's need to be in there as well yeah
+[07:30] so we also have so when we said about the normally cl normally closed 95 and 96 terminal yep when
+[07:38] this trips if there's a if there's an overload for whatever reason on this particular type
+[07:44] you can manually reset it okay so that's a reset button there if the motor was rated at 10 amps it
+[07:50] had an overloaded condition maybe we put the motor into too much stress it started taking
+[07:55] 15 16 amps it would obviously trip out but then we can manually reset it and set it right really
+[08:00] good so if you watch matt's and joe's previous video on a direct online single face starter we've
+[08:06] actually now come down in the workshop and shown you in situ the connections that were described
+[08:11] in the drawings we can go on and add these in for remote stop start and that may be part of another
+[08:16] presentation but for this one it was all about for our learners can they make the connections
+[08:21] for a single phase direct online motor as shown upstairs and within the actual starter itself

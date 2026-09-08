@@ -12,6 +12,7 @@ import { ArrowRight, BookOpen, ChevronDown, Lightbulb } from 'lucide-react';
 import type { Reading } from './books-data';
 import { readingForLesson } from './books-data';
 import type { LessonGuide } from './lesson-guides';
+import { suppliedTeaching, sourceClarifications } from './supplied-lessons';
 import { lessonConnections } from './lesson-connections-data';
 import LessonConnection from './lesson-connection';
 import LessonReading from './lesson-reading';
@@ -45,6 +46,7 @@ export default function LessonOverview({
 }: LessonOverviewProps) {
   const reading = readingForLesson(lessonId);
   const connection = lessonConnections[lessonId];
+  const authored = suppliedTeaching[lessonId];
 
   const [showConsolidation, setShowConsolidation] = useState(false);
   const afterWatching = watched || showConsolidation;
@@ -53,7 +55,7 @@ export default function LessonOverview({
   const before = core[0] ?? target;
   const other = core.find(question => question.id !== target.id) ?? questions.find(question => question.id !== target.id)!;
   const bridge = target.design?.followUp ?? { prompt: other.prompt, answer: other.options[other.answer], why: other.design?.why ?? other.teaching?.reasoning ?? other.explanation, distinction: other.design?.distinction, workingTex: other.design?.workingTex };
-  const retrieval: Retrieval = { prompt: overviewPrompts[lessonId] ?? guide.checkYourself, answer: overviewAnswers[lessonId], why: target.design?.why ?? target.teaching?.reasoning ?? target.explanation, distinction: target.design?.distinction, workingTex: overviewWorking[lessonId] };
+  const retrieval: Retrieval = authored?.retrieval ?? { prompt: overviewPrompts[lessonId] ?? guide.checkYourself, answer: overviewAnswers[lessonId], why: target.design?.why ?? target.teaching?.reasoning ?? target.explanation, distinction: target.design?.distinction, workingTex: overviewWorking[lessonId] };
   const trapIndex = before.design?.diagnostics.findIndex(item => item !== null) ?? -1;
   const trap = trapIndex >= 0 ? before.design!.diagnostics[trapIndex] : null;
   const knowledge = lessonKnowledge[lessonId];
@@ -64,14 +66,15 @@ export default function LessonOverview({
   return <div className="overview-flow">
     <section className="overview-orientation"><span className="eyebrow neutral">Why this matters</span><p><LearningText text={overviewPurpose[lessonId] ?? guide.practicalConnection} /></p></section>
     {!afterWatching ? <section className="lesson-compass">
-      <span className="eyebrow neutral">Before you watch</span><h2><LearningText text={before.prompt} /></h2><p>Make a prediction. Look for the explanation as you watch.</p>
-      <div className="lesson-key-ideas"><span className="lesson-focus-label">Listen for</span><ol>{core.slice(1, 3).map((question, index) => <li key={question.id}><span>{index + 1}</span><p><LearningText text={question.prompt} /></p></li>)}</ol></div>
+      <span className="eyebrow neutral">Before you watch</span><h2><LearningText text={authored?.retrieval.prompt ?? before.prompt} /></h2><p>Make a prediction. Look for the explanation as you watch.</p>
+      <div className="lesson-key-ideas"><span className="lesson-focus-label">Listen for</span><ol>{core.slice(1, 3).map((question, index) => <li key={question.id}><span>{index + 1}</span><p><LearningText text={authored?.questions[index + 1].recall.prompt ?? question.prompt} /></p></li>)}</ol></div>
       <button type="button" className="secondary-button" onClick={() => setShowConsolidation(true)}>Open the learning review</button>
     </section> : <>
       <section className="lesson-compass after-video" aria-label="Lesson in one minute">
         <header className="lesson-guide-header"><div><span className="eyebrow neutral">Lesson in one minute</span><h2><LearningText text={overviewModels[lessonId] ?? guide.summary} /></h2></div></header>
         {overviewFormulas[lessonId] && <div className="overview-equation"><Formula tex={overviewFormulas[lessonId]} block /></div>}
         <div className="lesson-key-ideas"><span className="lesson-focus-label">Three key ideas</span><ol>{guide.keyConcepts.slice(0, 3).map((concept, index) => <li key={concept}><span>{index + 1}</span><p><LearningText text={concept} /></p></li>)}</ol></div>
+        {sourceClarifications[lessonId] && <p><strong>Keep this distinction:</strong> <LearningText text={sourceClarifications[lessonId]} /></p>}
       </section>
       <RetrievalReveal key={target.id} item={retrieval} onRate={rate} />
       {trap && <details className="overview-trap"><summary>Common trap</summary><p><strong>Tempting explanation:</strong> <LearningText text={before.options[trapIndex]} /></p><p><strong>Where it breaks:</strong> <LearningText text={trap.diagnosis} /></p><p><strong>Correct model:</strong> <LearningText text={before.design!.why} /></p></details>}

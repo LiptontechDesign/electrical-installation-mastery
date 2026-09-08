@@ -1,0 +1,198 @@
+# Small Earth Wire: Does Size Matter?
+# https://www.youtube.com/watch?v=GKdW9H_5NA4
+
+in this Q&A video we're going to answer the question why is the earth conductor in this cable so much smaller than the live and neutral just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of electrical design in association with BG electrical part of the Luceco group they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with the CPD and you'll receive a certificate to prove you've completed the course okay so first things first I'm going to be completely honest and say that I've deliberately used the wrong terms in the introduction for the conductors in this Cable in the context of supplying our 9 kW Fusion Comet electric boiler from the electric heating company here we should call them the line neutral and circuit protective conductor or CPC because well that's what they're called and so that's what we'll be referring to them as for the rest of this video we used the wrong words in the intro because very few people are searching for CPC sizes most will be using the term Earth so why is it then that the CPC in this cable is so much smaller than the line and neutral conductor well it's all to do with what's referred to as thermal constraints which is a term you should have heard or will hear at College during your training the answer is pretty simple in essence and then gets a little more complicated when it comes to proving that the circuit is safe if you think about it logically we size the line and neutral conductors against the amount of current that we expect to flow through them or that could could potentially flow through them we explained this process in the first part of this ongoing series of design so go and check that content out if you haven't already done so but the CPC shouldn't have any current flowing through it except for maybe a small acceptable amount on certain circuits but even this value will only be measured in milliamps so it makes sense that the CPC doesn't need to be as big as the line of neutral but is there ever a time when the CPC will need to conduct a large amount of current yes if you remember from the last video we said that if the line conductor comes into contact with the CPC then it causes what we call a fault of negligible impedance or very very low opposition to current flow and so a high current will flow down the line and then down the CPC one of the problems that this can cause is that large currents lead to lots of heat and if the CPC is too small it can't dissipate that heat safely so it could get too hot and start to fire or in extreme circumstances melt the copper wire that the CPC is made from leaving a very dangerous situation for anyone who touches the now live and accessible part that's what we mean by thermal constraint making sure the CPC is big enough to handle the fault current that will pass through it without causing further problems the good news is that the circuit protection that you've installed should respond to this very high current very quickly and operate thus disconnecting the fault from the electrical system so even though High current will flow in the event of a fault it won't flow for very long and it's for this reason that we can get away with a smaller conductor but how small is too small for the CPC well there's a couple of ways we can figure it out we find information on this in regulation group 543 Under The Heading protective conductors and subheading 543.1 cross-sectional area regulation 543.1.1 tells us that the cross-sectional area of every protective conductor other than a protective bonding conductor shall be one calculated in accordance with regulation 543.1.3 or two selected in accordance with regulation 543.1.4 so our CPC is not a bonding conductor and therefore it will need to be calculated with one of the methods outlined in the two regulations mentioned here the method in regulation 543.1.4 is far easier to perform so we'll check that out first that regulation reads where it is desired not to calculate the minimum cross-sectional area a protective conductor in accordance with regulation 543.1.3 and we're avoiding that for the time being because it's hard cross-sectional area may be determined in accordance with table 54.7 where the application of table 54.7 produces a non-standard size a conductor having a larger standard cross-sectional area shall be used we find this table just below the regulation and you can see that the left hand column is concerned with the cross-sectional area or CSA of the line conductor it assigns this value the letter S moving down the column we see that there are three broad groups the first is where s the CSA of the line conductor is less than or equal to the value of 16 square mm so conductor sizes up to and including 16 mil the second group is where s or CSA is over 16 square mm and less than or equal to 35 mil so that's line conductors over 16 mil up to and including 35 mil this actually only includes two standard conductor sizes 25 mil squared and 35 mil squared then the final group is anything over 35 mil in cross-sectional area to find the size of CPC we move over to the second and third column the second is for situations where the protective conductor and the line conductor are made of the same material the third column is used when they are different materials now you may be thinking when do we ever use a wiring system where the CPC is not made copper but it does happen quite frequently for example if you're installing a steel conduit system and using the metal of the tubes as the CPC the line conductors will be made of copper and the tube as the CPC is made of steel we'll examine column 3 in a little more detail in future design content so for now let's turn our attention to column two as that's where our twin and CPC sits you can see that for the first group of cables up to and including 16 mm squared the direction is that the CPC shall be S Square mm So What on earth does that mean well remember in this table s is the size of the line conductor in square mm and so what this Top Line is telling us is that if we've got a cable feeding a load that has a line conductor up to and including 16 mil in CSA then the CPC needs to be S or in other words the same size as the line conductor once we get to the second line we see that the requirement changes a little and now for cables with a line conductor above 16 mil up to an including 35 mil then the protective conductor should be at a minimum of 16 mm just as a standard size so now the CPC is getting smaller than the line conductor and finally the bottom line tells us that if the line conductor is above 35 mil then the CPC needs to be a minimum of S/2 or in other words at least half the size of the line conductor again we're seeing that the protective conductor can now be considerably smaller than and the line conductor for example if it's a 50 mm line conductor then the CPC could feasibly be a 25 m2 conductor so let's apply this principle to our electric boiler circuit and make sure that it complies if you cast your mind back to previous videos in this series you'll remember that the cable we're using is a 10 mm2 PVC insulated twin and CPC referring to table 54.7 you'll see that because it's less than 16 mm in size on the line conductor that it fits into the top row which means that our cpc should be the same size as the line conductor and therefore should be 10 mm2 but if you remember in the last video we looked this up in the data sheets and found that that CPC was just 4 Square mm in size so it doesn't even comply with the bottom row requirement of being half the size of the line conductor so our circuit doesn't comply with table 54.7 and so it doesn't comply with regulation 543.1.4 so what gives why is this cable even manufactured if it doesn't comply with this requirement well do you remember in regulation 543.1.1 it said that there are two options for calculating the size of the protective conductor we could select the conductor size using 543.1.4 and table 54.7 or we could calculate the conductor size in accordance with regulation 543.1.3 so the option we've just considered is clearly out so what happens if we use the other option let's look at regulation 543.1.3 and see what it directs us to do it reads the cross-sectional area where calculated shall be not less than the value determined by the following formula or shall be obtained by reference to BS 7454 then it introduces this rather formidable looking formula that we are going to absolutely own by the end of this video S equals the square root of I squared multiplied by T. divided by K it then tells us in a note that this equation is an adiabatic equation and is applicable for disconnection times not exceeding 5 Seconds you may hear this equation referred to as the adiabatic equation and it's because of this note adiabatic just refers to a process in thermodynamics where a process that should produce heat happens so quickly that no heat is transferred into or out of the system in the case of an earth Vault of negligible impedance the current flow is high enough to generate lots of heat which should then reduce the current flow a bit but the reality is that the circuit protective device responds so quickly that the conductor doesn't heat up as much as we should expect that of course is only true if the rest of the design process has been properly followed and the results of this equation are true for our circuit okay so let's break this equation down the regs now tell us what each letter means where s is the nominal cross-section area of the conductor in mm2 remember this equation and therefore the S are referring to the protective conductor now not the line conductor like it was in table 54.7 I is the value in Amperes RMS for AC of fault current for a fault of negligible impedance which can flow through the associated protective device due account being taken of the current limiting effect of the circuit impedances and the limiting capability I squared T of that protective device don't worry too much about the I Squared T value for now we'll explain that in more advanced content the key thing for now is that this I is the current that flows when the fault occurs and there therefore should be quite High T is the operating time of the protective device in seconds corresponding to the fault current I amperes so in other words how quickly the device trips when the fault current flows K is a factor taking account of the resistivity temperature coefficient and heat capacity of the conductor material and the appropriate initial and final temperatures so let's start finding the numbers for our circuit and populating this equation so we can figure out how big our circuit protective conductor needs to be I is the current that flows when the fault occurs if you think back to the previous video we found out what the opposition to current flow would be when the fault occurred at the end of the circuit we called this the Earth fault Loop impedance and calculated that it would be 0.48 ohms because this value is an opposition to current flow and is measured in ohms we can use it in ohms law to find the value of the current flow ohms law as an equation states that the current flow is equal to the voltage divided by the resistance we can modify this a little to state that the fault current will be equal to the nominal voltage of the circuit we use the symbol U0 for this in the regs divided by the impedance of the circuit or Zs so in our electric boiler circuit we divide the nominal voltage of 230 volts by the impedance of 0.48 ohms and that gives us just over 479 amps so we can put that into our adriabatic equation right here then we need to know how quick the protective device will disconnect the circuit when this much current flows we're using this MCB from the newly upgraded Fortress range from BG to protect our circuit the quickest way to find out how quickly the device will operate can be found in the graphs in appendix 3 of BS7671 these graphs contain the time current characteristics of various protective devices these just plot the time it takes for a device to trip point current flows through them so we find the correct graph we're using a type B circuit breaker forming to BSEN60898 so we need figure 3A4 the bottom axis shows the amount of current that flows you'll notice that the lines of division change value as we move along the axis that's because these are what's referred to as logarithmic graphs so the first chunk of lines represent 1 amp each then the next chunk are 10 amps each then 100 amps each and so on it's used in this case just to condense the graph size down if it stayed at 1 amp per division the reg book would need to be about five times taller to fit it in so let's just do a quick example to show how this graph Works say we wanted to find out how quickly the device would operate if 100 amps flow through it we'd find a 100 at the bottom then move up this line until we cross over the line that represents our circuit breaker we're using a 50 amp device so the 100 amp line tracks up and crosses the 50 amp line here moving across to the vertical time axis that shows that the device operating here between 100 and 200 seconds so probably about 175 seconds so what about our fault current of 479 amps well we keep going along the bottom axis we get to 200 then 300 400 and 479 will be about here now we track up to the 50 amp circuit breaker line and completely miss it so what will the value be well back in the old days these lines just used to all level off and go horizontal here at 0.1 seconds so that's the value that we would use for operating time now there's a little box that says if it's beyond this line we need to consult the manufacturer's let through energy I squared T data that's a bit outside the scope of this video so rest assured I checked with the manufacturer and it's okay to use the 0.1 second instantaneous value in this case so we can pop that into our equation then we need to find K remember this is just a constant that we get based on the material used as the CPC and its properties so where do we find that well let's look back to regulation 543.1.3 the regulation continues over the page and States values of K for protective conductors in various use or service are as given in tables 54.2 to 54.6 the values are based on the initial and final temperatures indicated in each table so we need to consult one of these tables to find the correct value but which one well each table has a description of the protective conductor so let's go through them table 54.2 is values of K for insulated protective conductors not Incorporated in a cable and not bunched with cables or for separate bare protective conductors in contact with cable covering but not bunched with cables where the assumed initial temperature is 30°C so it's not that one as our CPC is incorporated into the cable table 54.3 is values of K for protective conductor Incorporated in a cable or Bunch with cables where the assumed initial temperature is 70° C or greater that one sounds good as RCP is incorporated into the cable but let's just check the others table 54.4 is values of K for the sheath or armour of a cable as the protective conductor we don't have an armoured or metal sheath cable so we're not going to worry about that one table 54.5 is values of K for steel conduit ducting and trunking as the protective conductor again this isn't using the containment as the CPC and finally table 54.6 is values of K for Bare conductor where there is no risk of damage to any neighbouring material by the temperatures indicated while our CPC isn't insulated it is sheathed and combined in the cable so we're going to use table 54.3 as we suspected earlier our cable is PVC which has a thermoplastic insulation rated to withstand the conductor inside it getting up to 70° C so we'll use this column to get our K value the conductor material is copper not aluminium so we'll use this row to find the K value it gives us two figures one at 115 and the other at 103 so which one will we use well notice the little asterisk next to the 103 this indicates that we only use this figure if the conductor is over 300 mm2 so for our much smaller than this 4 mm conductor we're going to use the 115 value which goes into our formula here so now we've got all the numbers we need the formula looks like this s equals the square root of 479 amps squared multiplied by 0.1 seconds and then divided by 115 we come out with approximately 1.32 to two decimal places remember this value is the minimum size of protective conductor that we need to use to keep our circuit compliant obviously there's no such thing as a 1.32 MM2 conductor so what do we do regulation 543.1.3 concludes where the application of the formula produces a non-standard size as it always will a conductor having a larger standard cross-sectional area shall be used so we always go to the next standard size up in this case that would be 1.5 mm2 so our CPC needs to have a CSA of at least 1.5 mil it's a bit mad just how small we can make our CPC isn't it and if you remember we said that the CPC in our 10 mm cable had a CSA of 4 mm2 so because that's plenty big enough and getting a specialised cable with a 1.5 mil CPC would be wildly cost prohibitive and that if we did change it now that would affect our Earth Loop impedance value which would also change our fault current size which might change our tripping time and therefore our adriabatic equation would have a different outcome we might as well stick with the standard cable eh so there we go that's why the CPC in the cable is so much smaller than the line and neutral and how we confirm that the CPC we're using will in fact be big enough to cope with the fault current flowing through it in other words we've confirmed the thermal constraints for the protective conductor but you may be wondering after we've done all this calculation does the circuit require rcd protection and if it does how will that affect our calculations well to find out more about that check out this video right here or click the link in the description below to watch it as part of our free training package to help you with this CPD and you'll receive a certificate as well all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this Q&A video we're going to answer the question why is the earth conductor in this
+[00:04] cable so much smaller than the live and neutral just before we explain the answer
+[00:08] to this question Please be aware that this video is one of a series that we've made on the subject
+[00:12] of electrical design in association with BG electrical part of the Luceco group they can
+[00:17] be viewed individually or you can click the link in the description below to view them as part of
+[00:21] a free online training package to help you with the CPD and you'll receive a certificate to prove
+[00:26] you've completed the course okay so first things first I'm going to be completely honest and say
+[00:31] that I've deliberately used the wrong terms in the introduction for the conductors in this Cable
+[00:37] in the context of supplying our 9 kW Fusion Comet electric boiler from the electric heating company
+[00:42] here we should call them the line neutral and circuit protective conductor or CPC because well
+[00:50] that's what they're called and so that's what we'll be referring to them as for the rest of
+[00:53] this video we used the wrong words in the intro because very few people are searching for CPC
+[00:58] sizes most will be using the term Earth so why is it then that the CPC in this cable is so much
+[01:05] smaller than the line and neutral conductor well it's all to do with what's referred to as thermal
+[01:11] constraints which is a term you should have heard or will hear at College during your training the
+[01:16] answer is pretty simple in essence and then gets a little more complicated when it comes
+[01:19] to proving that the circuit is safe if you think about it logically we size the line and neutral
+[01:25] conductors against the amount of current that we expect to flow through them or that could could
+[01:30] potentially flow through them we explained this process in the first part of this ongoing series
+[01:34] of design so go and check that content out if you haven't already done so but the CPC shouldn't have
+[01:40] any current flowing through it except for maybe a small acceptable amount on certain circuits but
+[01:46] even this value will only be measured in milliamps so it makes sense that the CPC doesn't need to be
+[01:52] as big as the line of neutral but is there ever a time when the CPC will need to conduct a large
+[01:58] amount of current yes if you remember from the last video we said that if the line conductor
+[02:03] comes into contact with the CPC then it causes what we call a fault of negligible impedance or
+[02:10] very very low opposition to current flow and so a high current will flow down the line and then down
+[02:16] the CPC one of the problems that this can cause is that large currents lead to lots of heat and if
+[02:22] the CPC is too small it can't dissipate that heat safely so it could get too hot and start to fire
+[02:28] or in extreme circumstances melt the copper wire that the CPC is made from leaving a very dangerous
+[02:34] situation for anyone who touches the now live and accessible part that's what we mean by thermal
+[02:41] constraint making sure the CPC is big enough to handle the fault current that will pass through
+[02:45] it without causing further problems the good news is that the circuit protection that you've
+[02:50] installed should respond to this very high current very quickly and operate thus disconnecting the
+[02:55] fault from the electrical system so even though High current will flow in the event of a fault it
+[03:00] won't flow for very long and it's for this reason that we can get away with a smaller conductor but
+[03:07] how small is too small for the CPC well there's a couple of ways we can figure it out we find
+[03:12] information on this in regulation group 543 Under The Heading protective conductors and
+[03:18] subheading 543.1 cross-sectional area regulation 543.1.1 tells us that the cross-sectional area
+[03:26] of every protective conductor other than a protective bonding conductor shall be one
+[03:31] calculated in accordance with regulation 543.1.3 or two selected in accordance with regulation
+[03:38] 543.1.4 so our CPC is not a bonding conductor and therefore it will need to be calculated with one
+[03:46] of the methods outlined in the two regulations mentioned here the method in regulation 543.1.4
+[03:52] is far easier to perform so we'll check that out first that regulation reads where it is desired
+[03:57] not to calculate the minimum cross-sectional area a protective conductor in accordance with
+[04:01] regulation 543.1.3 and we're avoiding that for the time being because it's hard cross-sectional
+[04:07] area may be determined in accordance with table 54.7 where the application of table 54.7 produces
+[04:14] a non-standard size a conductor having a larger standard cross-sectional area shall be used we
+[04:20] find this table just below the regulation and you can see that the left hand column is concerned
+[04:25] with the cross-sectional area or CSA of the line conductor it assigns this value the letter
+[04:31] S moving down the column we see that there are three broad groups the first is where s the CSA
+[04:38] of the line conductor is less than or equal to the value of 16 square mm so conductor sizes up to and
+[04:47] including 16 mil the second group is where s or CSA is over 16 square mm and less than or equal to
+[04:55] 35 mil so that's line conductors over 16 mil up to and including 35 mil this actually only includes
+[05:03] two standard conductor sizes 25 mil squared and 35 mil squared then the final group is anything
+[05:09] over 35 mil in cross-sectional area to find the size of CPC we move over to the second and third
+[05:16] column the second is for situations where the protective conductor and the line conductor are
+[05:20] made of the same material the third column is used when they are different materials now you may be
+[05:26] thinking when do we ever use a wiring system where the CPC is not made copper but it does happen
+[05:31] quite frequently for example if you're installing a steel conduit system and using the metal of the
+[05:35] tubes as the CPC the line conductors will be made of copper and the tube as the CPC is made of steel
+[05:42] we'll examine column 3 in a little more detail in future design content so for now let's turn
+[05:47] our attention to column two as that's where our twin and CPC sits you can see that for the first
+[05:53] group of cables up to and including 16 mm squared the direction is that the CPC shall be S Square mm
+[06:01] So What on earth does that mean well remember in this table s is the size of the line conductor in
+[06:07] square mm and so what this Top Line is telling us is that if we've got a cable feeding a load
+[06:12] that has a line conductor up to and including 16 mil in CSA then the CPC needs to be S or in other
+[06:20] words the same size as the line conductor once we get to the second line we see that the requirement
+[06:26] changes a little and now for cables with a line conductor above 16 mil up to an including 35
+[06:31] mil then the protective conductor should be at a minimum of 16 mm just as a standard size so now
+[06:39] the CPC is getting smaller than the line conductor and finally the bottom line tells us that if the
+[06:45] line conductor is above 35 mil then the CPC needs to be a minimum of S/2 or in other words at least
+[06:53] half the size of the line conductor again we're seeing that the protective conductor can now be
+[06:58] considerably smaller than and the line conductor for example if it's a 50 mm line conductor then
+[07:04] the CPC could feasibly be a 25 m2 conductor so let's apply this principle to our electric boiler
+[07:10] circuit and make sure that it complies if you cast your mind back to previous videos in this
+[07:14] series you'll remember that the cable we're using is a 10 mm2 PVC insulated twin and CPC referring
+[07:21] to table 54.7 you'll see that because it's less than 16 mm in size on the line conductor that
+[07:27] it fits into the top row which means that our cpc should be the same size as the line conductor and
+[07:33] therefore should be 10 mm2 but if you remember in the last video we looked this up in the data
+[07:38] sheets and found that that CPC was just 4 Square mm in size so it doesn't even comply with the
+[07:44] bottom row requirement of being half the size of the line conductor so our circuit doesn't comply
+[07:50] with table 54.7 and so it doesn't comply with regulation 543.1.4 so what gives why is this cable
+[07:58] even manufactured if it doesn't comply with this requirement well do you remember in regulation
+[08:03] 543.1.1 it said that there are two options for calculating the size of the protective conductor
+[08:10] we could select the conductor size using 543.1.4 and table 54.7 or we could calculate the conductor
+[08:18] size in accordance with regulation 543.1.3 so the option we've just considered is clearly
+[08:24] out so what happens if we use the other option let's look at regulation 543.1.3 and see what it
+[08:31] directs us to do it reads the cross-sectional area where calculated shall be not less than
+[08:36] the value determined by the following formula or shall be obtained by reference to BS 7454 then it
+[08:43] introduces this rather formidable looking formula that we are going to absolutely own by the end of
+[08:49] this video S equals the square root of I squared multiplied by T. divided by K it then tells us
+[08:56] in a note that this equation is an adiabatic equation and is applicable for disconnection
+[09:01] times not exceeding 5 Seconds you may hear this equation referred to as the adiabatic equation and
+[09:08] it's because of this note adiabatic just refers to a process in thermodynamics where a process that
+[09:14] should produce heat happens so quickly that no heat is transferred into or out of the system in
+[09:20] the case of an earth Vault of negligible impedance the current flow is high enough to generate lots
+[09:24] of heat which should then reduce the current flow a bit but the reality is that the circuit
+[09:29] protective device responds so quickly that the conductor doesn't heat up as much as we should
+[09:33] expect that of course is only true if the rest of the design process has been properly followed
+[09:39] and the results of this equation are true for our circuit okay so let's break this equation down the
+[09:46] regs now tell us what each letter means where s is the nominal cross-section area of the conductor
+[09:51] in mm2 remember this equation and therefore the S are referring to the protective conductor now not
+[09:58] the line conductor like it was in table 54.7 I is the value in Amperes RMS for AC of fault current
+[10:05] for a fault of negligible impedance which can flow through the associated protective device
+[10:10] due account being taken of the current limiting effect of the circuit impedances and the limiting
+[10:15] capability I squared T of that protective device don't worry too much about the I Squared T value
+[10:22] for now we'll explain that in more advanced content the key thing for now is that this
+[10:26] I is the current that flows when the fault occurs and there therefore should be quite High T is the
+[10:32] operating time of the protective device in seconds corresponding to the fault current I amperes so in
+[10:37] other words how quickly the device trips when the fault current flows K is a factor taking account
+[10:43] of the resistivity temperature coefficient and heat capacity of the conductor material and the
+[10:48] appropriate initial and final temperatures so let's start finding the numbers for our circuit
+[10:54] and populating this equation so we can figure out how big our circuit protective conductor needs
+[10:59] to be I is the current that flows when the fault occurs if you think back to the previous video we
+[11:05] found out what the opposition to current flow would be when the fault occurred at the end
+[11:08] of the circuit we called this the Earth fault Loop impedance and calculated that it would be
+[11:13] 0.48 ohms because this value is an opposition to current flow and is measured in ohms we can
+[11:20] use it in ohms law to find the value of the current flow ohms law as an equation states
+[11:25] that the current flow is equal to the voltage divided by the resistance we can modify this a
+[11:31] little to state that the fault current will be equal to the nominal voltage of the circuit we
+[11:36] use the symbol U0 for this in the regs divided by the impedance of the circuit or Zs so in our
+[11:43] electric boiler circuit we divide the nominal voltage of 230 volts by the impedance of 0.48
+[11:49] ohms and that gives us just over 479 amps so we can put that into our adriabatic equation right
+[11:57] here then we need to know how quick the protective device will disconnect the circuit when this much
+[12:02] current flows we're using this MCB from the newly upgraded Fortress range from BG to protect our
+[12:07] circuit the quickest way to find out how quickly the device will operate can be found in the graphs
+[12:12] in appendix 3 of BS7671 these graphs contain the time current characteristics of various protective
+[12:19] devices these just plot the time it takes for a device to trip point current flows through them
+[12:25] so we find the correct graph we're using a type B circuit breaker forming to BSEN60898 so we need
+[12:32] figure 3A4 the bottom axis shows the amount of current that flows you'll notice that the lines
+[12:38] of division change value as we move along the axis that's because these are what's referred to
+[12:43] as logarithmic graphs so the first chunk of lines represent 1 amp each then the next chunk are 10
+[12:49] amps each then 100 amps each and so on it's used in this case just to condense the graph size down
+[12:54] if it stayed at 1 amp per division the reg book would need to be about five times taller to fit
+[12:59] it in so let's just do a quick example to show how this graph Works say we wanted to find out
+[13:04] how quickly the device would operate if 100 amps flow through it we'd find a 100 at the bottom then
+[13:09] move up this line until we cross over the line that represents our circuit breaker we're using
+[13:14] a 50 amp device so the 100 amp line tracks up and crosses the 50 amp line here moving across to the
+[13:21] vertical time axis that shows that the device operating here between 100 and 200 seconds so
+[13:27] probably about 175 seconds so what about our fault current of 479 amps well we keep going
+[13:34] along the bottom axis we get to 200 then 300 400 and 479 will be about here now we track up to the
+[13:43] 50 amp circuit breaker line and completely miss it so what will the value be well back in the old
+[13:49] days these lines just used to all level off and go horizontal here at 0.1 seconds so that's the
+[13:54] value that we would use for operating time now there's a little box that says if it's beyond
+[13:59] this line we need to consult the manufacturer's let through energy I squared T data that's a bit
+[14:04] outside the scope of this video so rest assured I checked with the manufacturer and it's okay to use
+[14:09] the 0.1 second instantaneous value in this case so we can pop that into our equation then we need
+[14:16] to find K remember this is just a constant that we get based on the material used as the CPC and its
+[14:23] properties so where do we find that well let's look back to regulation 543.1.3 the regulation
+[14:29] continues over the page and States values of K for protective conductors in various
+[14:33] use or service are as given in tables 54.2 to 54.6 the values are based on the initial and
+[14:40] final temperatures indicated in each table so we need to consult one of these tables to find the
+[14:46] correct value but which one well each table has a description of the protective conductor so let's
+[14:51] go through them table 54.2 is values of K for insulated protective conductors not Incorporated
+[14:59] in a cable and not bunched with cables or for separate bare protective conductors in contact
+[15:04] with cable covering but not bunched with cables where the assumed initial temperature is 30°C so
+[15:11] it's not that one as our CPC is incorporated into the cable table 54.3 is values of K for
+[15:18] protective conductor Incorporated in a cable or Bunch with cables where the assumed initial
+[15:24] temperature is 70° C or greater that one sounds good as RCP is incorporated into the cable but
+[15:31] let's just check the others table 54.4 is values of K for the sheath or armour of a cable as the
+[15:37] protective conductor we don't have an armoured or metal sheath cable so we're not going to
+[15:41] worry about that one table 54.5 is values of K for steel conduit ducting and trunking as the
+[15:48] protective conductor again this isn't using the containment as the CPC and finally table 54.6 is
+[15:55] values of K for Bare conductor where there is no risk of damage to any neighbouring material
+[16:00] by the temperatures indicated while our CPC isn't insulated it is sheathed and combined in the cable
+[16:07] so we're going to use table 54.3 as we suspected earlier our cable is PVC which has a thermoplastic
+[16:14] insulation rated to withstand the conductor inside it getting up to 70° C so we'll use this column to
+[16:20] get our K value the conductor material is copper not aluminium so we'll use this row to find the K
+[16:26] value it gives us two figures one at 115 and the other at 103 so which one will we use well notice
+[16:34] the little asterisk next to the 103 this indicates that we only use this figure if the conductor is
+[16:40] over 300 mm2 so for our much smaller than this 4 mm conductor we're going to use the 115 value
+[16:48] which goes into our formula here so now we've got all the numbers we need the formula looks like
+[16:54] this s equals the square root of 479 amps squared multiplied by 0.1 seconds and then divided by 115
+[17:04] we come out with approximately 1.32 to two decimal places remember this value is the minimum size of
+[17:12] protective conductor that we need to use to keep our circuit compliant obviously there's no such
+[17:17] thing as a 1.32 MM2 conductor so what do we do regulation 543.1.3 concludes where the application
+[17:25] of the formula produces a non-standard size as it always will a conductor having a larger standard
+[17:32] cross-sectional area shall be used so we always go to the next standard size up in this case that
+[17:39] would be 1.5 mm2 so our CPC needs to have a CSA of at least 1.5 mil it's a bit mad just how small we
+[17:49] can make our CPC isn't it and if you remember we said that the CPC in our 10 mm cable had a
+[17:54] CSA of 4 mm2 so because that's plenty big enough and getting a specialised cable with a 1.5 mil
+[18:01] CPC would be wildly cost prohibitive and that if we did change it now that would affect our Earth
+[18:07] Loop impedance value which would also change our fault current size which might change our tripping
+[18:11] time and therefore our adriabatic equation would have a different outcome we might as well stick
+[18:16] with the standard cable eh so there we go that's why the CPC in the cable is so much smaller than
+[18:23] the line and neutral and how we confirm that the CPC we're using will in fact be big enough to cope
+[18:28] with the fault current flowing through it in other words we've confirmed the thermal constraints for
+[18:33] the protective conductor but you may be wondering after we've done all this calculation does the
+[18:38] circuit require rcd protection and if it does how will that affect our calculations well to find out
+[18:44] more about that check out this video right here or click the link in the description below to
+[18:48] watch it as part of our free training package to help you with this CPD and you'll receive
+[18:52] a certificate as well all that remains in this video is to say thank you very much for watching

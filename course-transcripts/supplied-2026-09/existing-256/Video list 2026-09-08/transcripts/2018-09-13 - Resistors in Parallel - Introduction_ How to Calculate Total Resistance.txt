@@ -1,0 +1,269 @@
+# Resistors in Parallel - Introduction: How to Calculate Total Resistance
+# https://www.youtube.com/watch?v=48JBKN99Qcc
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to start looking at resistors connected in parallel with each other so this is a different way of connecting resistors to what we've looked at in previous videos regarding resistors in series we're going to consider first of all what happens when you connect resistors that have the same value as each other in parallel so what happens when we've got the same value resistors so we'll look at what happens when we connect two resistors in parallel with each other and three resistors in parallel with each other again we want to think about some practical application for this so connecting loads or resistors in parallel with each other is how the vast amount of circuits are installed so in the real world most loads are connected in parallel with each other for reasons that we'll discuss in another video but again we've got our locked Ronix boards set up ready to go we've got our multimeter that we're going to use to measure resistance so we'll get that set up and then we'll build some circuits so here we've got our multimeter on this multimeter today we're going to be use it to measure resistance now you remember from our SI units video that resistance is measured in ohms so we need to turn this to the ohms setting so on the multimeter if you look around the outside you've got various different settings that you can adjust it to there's lots of different multimeters available you'll have to get familiar with your own multimeter to know where the settings are but we're gonna be working on this range right here which is the ohm range you can see the little amiga symbol there and because we're going to be working with fairly low resistance values we're going to turn our setting to the lowest resistance measuring setting which is here at 200 ohms you can also have two thousand twenty K which is twenty thousand all the way up to two hundred mega ohms which is two hundred million but for our purposes today we're just going to look at two hundred ohms once you've found the correct setting turn the multimeter on using that switch there and that is now trying to measure resistance it can't measure anything at the moment because it doesn't have any lead setup so we always when we using a multimeter we always have one lead in the common terminal so that one will always have a common lead in it there and then you've got to look at the other terminals to figure out which are the one you're going to use so we've got a terminal marked 10a that's 10 amps we're measuring resistance we won't use that one this one is saying ma which is milliamps again we're not measuring current or cover that up and here we've got our voltage resistance and frequency terminal so that's the terminal we're going to use it's got the little own similar but it's all put one in there so currently the multimeter is effectively measuring a huge amount of resistance far beyond the 200 I'm maximum that it can measure but if I pop the two leads together you can see there that that is measuring near enough zero ohms naught point naught to two or three of an ohm so that's not going to affect our readings too much so now we've got our multimeter set up let's have a look at the actual circuits that we're going to be building so first of all let's explain just what we mean by a parallel circuit so a parallel circuit is a circuit where current doesn't have to pass through one load to get to another load so I'll see what we mean by that and let me build a parallel circuit here so we've got an 18 ohm resistor now in the series circuit we put the other resistor so that the current flowing through one had to flow through the other but if we place our 18 ohm resistor there instead and connect these two together like this if we were to connect a power supply to these two terminals here you can see that any current flowing into the circuit doesn't have to flow through one resistor and any other resistor it can simply flow through that resistor separately and through that resistor separately so these two loads are connected in what we call parallel so what we're trying to do on this video is figure out what is the total resistance of a parallel circuit so we've got two 18 ohm resistors connected in parallel with each other so what's the total resistance going to be now this can be a little bit confusing when we first start because we look at this and we think well I've taken 18 ohm resistor and I've added another 18 ohm resistor into the circuit so surely we're going to have something more than 18 ohms and we often get lots of different guesses come back when we ask students what the answer to this question is but what we can see is that if we measure the total resistance of this circuit we get quite an interesting answer we can see that the total resistance of this circuit is actually 9 ohms so that should be exactly 9 again we've got resistor tolerances which were spoken about in a different video but we've got 9 ohms there now that may at first glance seem a little bit confusing why is it that we're getting a smaller resistance than a total of these two resistors if you look we're asked to get a smaller resistance then either one of those resistors so why is that well the answer to that is that when you look at this what we've actually done is we've created an additional path for electricity to flow so if you imagine that this was like water in a pipe what we're doing is we've introduced a new branch where water can flow through that means more water can flow which means that this must providing less opposition to that flow so therefore the total resistance of this circuit is going to be smaller so we can see though there is a very simple relationship between these two values we've got two resistors at the same value and 18 and 18 and the total resistance is in nine arms so hopefully you can see that that 9 ohm value is simply half of one of the resistor values so this is a really good examine you may find you get a question where you have two resistors of the same value connected in parallel what's the total resistance you actually barely need to do a calculation you just need to half one of the resistors so we've got two of those so here we've got 9 ohms in total but what's going to happen now if we connect up a further 18 ohm resistor what do you think will happen to the total resistance of the circuits are going to increase will it decrease will it stay the same that's a look so if we connect another 18 ohm resistor in to the circuit and then connected up in parallel what we'll find is that the resistance has dropped down again and actually what we've got now is another very simple mathematical relationship between the total resistance for the circuit and the value of the resistors so this is now dropped down to six point four ohms mathematically speaking it should be exactly six but we don't live in a perfect world so it's never going to be quite perfect but we're about 6 ohms and again you can see that 6 is simply 1/3 of one of the resistors and actually we could keep going with this if we added a fourth resistor of the same value we'd end up with 18 divided by 4 which would give us 4 and 1/2 ohms and so on and so forth so the resistance value is going to keep dropping the more resistors that we add in parallel so just to prove that this works for any value of resistors connected in parallel with each other as long as they're the same we set up another circuit here now here we've got 2 10 ohm resistors connected in parallel remember this is a parallel circuit the current doesn't have to go through one resistor to get to the next one it's free to flow to each independently what we're going to do is we're going to measure the resistance of this circuit and see what the total resistance is going to be so based on what we've already done if we look at this we've got two 10 ohm resistors connected in parallel immediately you should be thinking well I know the total resistance is going to be smaller than either one of these so the total resistance should be less than 10 but also we know that we can calculate it a little bit more accurately we can say we've got two ten ohm resistors the total resistance will be half of one of the resistors so we've got 10 divided by two gives us five so if we turn the meter on now we should find that we've got a 5 ohm total resistance here and that's great so once again we're slightly over five but well within the tolerances of these resistors so we're happy with that so we can see clearly two resistors of the same value connected in parallel we end up with half of one of the resistor values let's again take that to the next step we'll connect in another 10 ohm resistor so we've got our 10 ohm resistor here that we're going to connect in so if we put this in we should get a specific value on the multimeter so once again let's just think this through before we connect it up we've got three resistors of the same value connected in parallel with each other so that means that the total resistance will be one third of one of the resistor values so we've got to think what's 10 divided by 3 slightly trickier but not a problem for you you're gonna be a genius electrician we've got 10 divided by 3 gives us 3.3 recurring yeah so 3 and 1/3 ohms so we should get somewhere around that on the screen bear in mind it might not be exactly 3.3 because a resistor tolerances let's see what value we go so we've come out at 3.8 so we were within 1/2 and I'm of the correct answer which is entirely acceptable in real world applications so hopefully that makes some sense now we've seen what happens as we connect more and more resistors in parallel the value gets smaller and smaller for total resistance and also we've got some rules that we can apply to where our resistors all have the same value [Music] you [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to start looking at
+[00:14] resistors connected in parallel with
+[00:16] each other so this is a different way of
+[00:18] connecting resistors to what we've
+[00:19] looked at in previous videos regarding
+[00:21] resistors in series we're going to
+[00:23] consider first of all what happens when
+[00:25] you connect resistors that have the same
+[00:27] value as each other in parallel so what
+[00:30] happens when we've got the same value
+[00:32] resistors so we'll look at what happens
+[00:35] when we connect two resistors in
+[00:36] parallel with each other and three
+[00:38] resistors in parallel with each other
+[00:39] again we want to think about some
+[00:41] practical application for this so
+[00:43] connecting loads or resistors in
+[00:45] parallel with each other
+[00:46] is how the vast amount of circuits are
+[00:49] installed so in the real world most
+[00:51] loads are connected in parallel with
+[00:53] each other for reasons that we'll
+[00:54] discuss in another video but again we've
+[00:56] got our locked Ronix boards set up ready
+[00:58] to go we've got our multimeter that
+[01:00] we're going to use to measure resistance
+[01:01] so we'll get that set up and then we'll
+[01:03] build some circuits so here we've got
+[01:07] our multimeter on this multimeter today
+[01:10] we're going to be use it to measure
+[01:11] resistance now you remember from our SI
+[01:13] units video that resistance is measured
+[01:15] in ohms so we need to turn this to the
+[01:18] ohms setting so on the multimeter if you
+[01:21] look around the outside you've got
+[01:22] various different settings that you can
+[01:24] adjust it to there's lots of different
+[01:26] multimeters available you'll have to get
+[01:27] familiar with your own multimeter to
+[01:29] know where the settings are but we're
+[01:31] gonna be working on this range right
+[01:32] here which is the ohm range you can see
+[01:35] the little amiga symbol there and
+[01:36] because we're going to be working with
+[01:38] fairly low resistance values we're going
+[01:40] to turn our setting to the lowest
+[01:43] resistance measuring setting which is
+[01:46] here at 200 ohms you can also have two
+[01:48] thousand twenty K which is twenty
+[01:50] thousand all the way up to two hundred
+[01:52] mega ohms which is two hundred million
+[01:55] but for our purposes today we're just
+[01:57] going to look at two hundred ohms once
+[02:00] you've found the correct setting turn
+[02:02] the multimeter on using that switch
+[02:04] there and that is now trying to measure
+[02:06] resistance it can't measure anything at
+[02:08] the moment because it doesn't have any
+[02:10] lead setup so we always when we
+[02:14] using a multimeter we always have one
+[02:17] lead in the common terminal so that one
+[02:19] will always have a common lead in it
+[02:22] there and then you've got to look at the
+[02:24] other terminals to figure out which are
+[02:25] the one you're going to use so we've got
+[02:27] a terminal marked 10a that's 10 amps
+[02:29] we're measuring resistance we won't use
+[02:30] that one this one is saying ma which is
+[02:34] milliamps again we're not measuring
+[02:35] current or cover that up and here we've
+[02:38] got our voltage resistance and frequency
+[02:42] terminal so that's the terminal we're
+[02:43] going to use it's got the little own
+[02:45] similar but it's all put one in there so
+[02:47] currently the multimeter is effectively
+[02:49] measuring a huge amount of resistance
+[02:51] far beyond the 200 I'm maximum that it
+[02:53] can measure but if I pop the two leads
+[02:56] together you can see there that that is
+[02:59] measuring near enough zero ohms naught
+[03:02] point naught to two or three of an ohm
+[03:04] so that's not going to affect our
+[03:05] readings too much so now we've got our
+[03:07] multimeter set up let's have a look at
+[03:09] the actual circuits that we're going to
+[03:11] be building so first of all let's
+[03:16] explain just what we mean by a parallel
+[03:18] circuit so a parallel circuit is a
+[03:21] circuit where current doesn't have to
+[03:24] pass through one load to get to another
+[03:26] load so I'll see what we mean by that
+[03:28] and let me build a parallel circuit here
+[03:30] so we've got an 18 ohm resistor now in
+[03:32] the series circuit we put the other
+[03:34] resistor so that the current flowing
+[03:37] through one had to flow through the
+[03:39] other but if we place our 18 ohm
+[03:41] resistor there instead and connect these
+[03:44] two together like this if we were to
+[03:48] connect a power supply to these two
+[03:52] terminals here you can see that any
+[03:54] current flowing into the circuit doesn't
+[03:56] have to flow through one resistor and
+[03:59] any other resistor it can simply flow
+[04:01] through that resistor separately and
+[04:03] through that resistor separately so
+[04:05] these two loads are connected in what we
+[04:07] call parallel so what we're trying to do
+[04:11] on this video is figure out what is the
+[04:15] total resistance of a parallel circuit
+[04:18] so we've got two 18 ohm resistors
+[04:20] connected in parallel with each other so
+[04:23] what's the total resistance going to be
+[04:25] now this can be a little bit confusing
+[04:28] when we first start because we look at
+[04:29] this and we think well I've taken 18 ohm
+[04:31] resistor and I've added another 18 ohm
+[04:33] resistor into the circuit so surely
+[04:35] we're going to have something more than
+[04:37] 18 ohms and we often get lots of
+[04:39] different guesses come back when we ask
+[04:41] students what the answer to this
+[04:42] question is but what we can see is that
+[04:46] if we measure the total resistance of
+[04:48] this circuit we get quite an interesting
+[04:53] answer we can see that the total
+[04:55] resistance of this circuit is actually 9
+[04:59] ohms so that should be exactly 9 again
+[05:01] we've got resistor tolerances which were
+[05:02] spoken about in a different video
+[05:03] but we've got 9 ohms there now that may
+[05:07] at first glance seem a little bit
+[05:09] confusing why is it that we're getting a
+[05:11] smaller resistance than a total of these
+[05:14] two resistors if you look we're asked to
+[05:16] get a smaller resistance then either one
+[05:18] of those resistors so why is that well
+[05:21] the answer to that is that when you look
+[05:22] at this what we've actually done is
+[05:23] we've created an additional path for
+[05:27] electricity to flow so if you imagine
+[05:29] that this was like water in a pipe what
+[05:31] we're doing is we've introduced a new
+[05:32] branch where water can flow through that
+[05:35] means more water can flow which means
+[05:37] that this must providing less opposition
+[05:40] to that flow so therefore the total
+[05:43] resistance of this circuit is going to
+[05:45] be smaller so we can see though there is
+[05:47] a very simple relationship between these
+[05:49] two values we've got two resistors at
+[05:50] the same value and 18 and 18 and the
+[05:53] total resistance is in nine arms so
+[05:55] hopefully you can see that that 9 ohm
+[05:57] value is simply half of one of the
+[06:02] resistor values so this is a really good
+[06:05] examine you may find you get a question
+[06:07] where you have two resistors of the same
+[06:10] value connected in parallel what's the
+[06:12] total resistance you actually barely
+[06:14] need to do a calculation you just need
+[06:16] to half one of the resistors so we've
+[06:17] got two of those so here we've got 9
+[06:21] ohms in total but what's going to happen
+[06:24] now if we connect up a further 18 ohm
+[06:28] resistor what do you think will happen
+[06:30] to the total resistance of the circuits
+[06:32] are going to increase will it decrease
+[06:33] will it stay the same that's a look so
+[06:36] if we connect another 18 ohm resistor in
+[06:38] to the circuit and then connected up in
+[06:41] parallel what we'll find is that the
+[06:46] resistance has dropped down again and
+[06:48] actually what we've got now is another
+[06:50] very simple mathematical relationship
+[06:52] between the total resistance for the
+[06:53] circuit and the value of the resistors
+[06:55] so this is now dropped down to six point
+[06:57] four ohms mathematically speaking it
+[06:59] should be exactly six but we don't live
+[07:01] in a perfect world so it's never going
+[07:02] to be quite perfect but we're about 6
+[07:04] ohms and again you can see that 6 is
+[07:08] simply 1/3 of one of the resistors and
+[07:11] actually we could keep going with this
+[07:12] if we added a fourth resistor of the
+[07:14] same value we'd end up with 18 divided
+[07:17] by 4 which would give us 4 and 1/2 ohms
+[07:19] and so on and so forth so the resistance
+[07:21] value is going to keep dropping the more
+[07:24] resistors that we add in parallel so
+[07:28] just to prove that this works for any
+[07:31] value of resistors connected in parallel
+[07:33] with each other as long as they're the
+[07:34] same we set up another circuit here now
+[07:36] here we've got 2 10 ohm resistors
+[07:38] connected in parallel remember this is a
+[07:41] parallel circuit the current doesn't
+[07:42] have to go through one resistor to get
+[07:44] to the next one it's free to flow to
+[07:46] each independently what we're going to
+[07:48] do is we're going to measure the
+[07:49] resistance of this circuit and see what
+[07:52] the total resistance is going to be so
+[07:54] based on what we've already done if we
+[07:56] look at this we've got two 10 ohm
+[07:57] resistors connected in parallel
+[07:59] immediately you should be thinking well
+[08:01] I know the total resistance is going to
+[08:04] be smaller than either one of these so
+[08:06] the total resistance should be less than
+[08:08] 10 but also we know that we can
+[08:10] calculate it a little bit more
+[08:11] accurately we can say we've got two ten
+[08:13] ohm resistors the total resistance will
+[08:15] be half of one of the resistors so we've
+[08:19] got 10 divided by two gives us five so
+[08:23] if we turn the meter on now we should
+[08:25] find that we've got a 5 ohm total
+[08:27] resistance here and that's great so once
+[08:30] again we're slightly over five but well
+[08:32] within the tolerances of these resistors
+[08:34] so we're happy with that so we can see
+[08:37] clearly two resistors of the same value
+[08:39] connected in parallel we end up with
+[08:41] half of one of the resistor values let's
+[08:45] again take that to the next step we'll
+[08:46] connect in another 10 ohm resistor
+[08:51] so we've got our 10 ohm resistor here
+[08:53] that we're going to connect in so if we
+[08:55] put this in we should get a specific
+[08:57] value on the multimeter so once again
+[08:59] let's just think this through before we
+[09:01] connect it up we've got three resistors
+[09:03] of the same value connected in parallel
+[09:06] with each other so that means that the
+[09:08] total resistance will be one third of
+[09:12] one of the resistor values so we've got
+[09:15] to think what's 10 divided by 3 slightly
+[09:17] trickier but not a problem for you
+[09:18] you're gonna be a genius electrician
+[09:20] we've got 10 divided by 3 gives us 3.3
+[09:24] recurring yeah so 3 and 1/3 ohms so we
+[09:27] should get somewhere around that on the
+[09:28] screen bear in mind it might not be
+[09:29] exactly 3.3 because a resistor
+[09:32] tolerances let's see what value we go so
+[09:37] we've come out at 3.8 so we were within
+[09:39] 1/2 and I'm of the correct answer which
+[09:41] is entirely acceptable in real world
+[09:43] applications so hopefully that makes
+[09:45] some sense now we've seen what happens
+[09:47] as we connect more and more resistors in
+[09:49] parallel the value gets smaller and
+[09:51] smaller for total resistance
+[09:52] and also we've got some rules that we
+[09:56] can apply to where our resistors all
+[09:58] have the same value
+[10:03] [Music]
+[10:06] you [Music]

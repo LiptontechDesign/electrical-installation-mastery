@@ -1,0 +1,58 @@
+# Maximum Demand and Diversity Calculation Explained - BS 7671 On-Site Guide Appendix A
+# https://www.youtube.com/watch?v=lGcsQ8mLI34
+
+so in today's video we're going to be looking at maximum demand and diversity and the method we're going to use really is from the on-site guide guidance notes 3 okay and it's actually quite a nice easy method in most cases just to give us a general idea of what the maximum demand is i like to use this method because especially when you're on site and you're filling out an EIC or an EICR you can you just use your calculator on your phone there's no crazy calculations to do as such obviously there's different methods of doing maximum diversity which we'll look at in further videos however this one is just a generic one which we're going to use so it's a house renovation it's only a little one bedroom house they currently have economy seven but the renovators want to get rid of the storage heaters and and put in electrical panel heaters in their place so what we're going to do is remove the economy 7 board and we're just going to replace the old board anyway and we're going to incorporate them circuits into the new board okay because they're already in place the testing has been done on them so the insulation resistance etcetera is fine so we're just going to prove that basically because we're now adding two extra circuits into a board okay it's 25 mil tails it is 100 amp cut out fuse we're just going to prove that it doesn't have an issue making issue with the maximum demand of the property so we've got the old circuits here and these are the new circuits okay most of them are the same as you can see there's just two extra 16 amp circuits and what we're going to do is the method from the onsite guide which basically we're going to take 100% of the largest circuit we have okay so in this installation is a 32 amp there's multiple of them so we'll just take one of them and then what we'll do is we'll do 40% of the remainder so we'll add up so if we took away that one we'll add up the rest of the circuits find 40% and then we'll add 100% to the 40% which will give us a maximum demand calculation and again this is just a nice easy method that you can use while you're on site using your calculator so just before we move on to actually doing our calculation just wanted to show you what these would equal if we didn't apply diversity so our maximum demand for the old set would be 140 amps and for the new setup would be 172 amps now that's not going to be any good to us because we have 100 amp cut out fuse however what we're going to do is we're going to apply diversity okay because not everything will be on 24 hours of the day every day of the year using its full load current okay so we're going to apply diversity and we'll see what that does to these values so as you can see what we've done first as we just sort of briefly talked about is we took a hundred percent of the largest circuit okay which is 32 amps we've then took 40% of the remainder of the circuits okay so 40% of the remainder of the circuits added together okay so 40% if we added all them circuits together not the 32 amps of the largest one we already took we would get 108 amps if we take 40% of 108 amps the easiest way to that is multiply 108 by 0.4 would give us 43.2 amps so if we added a larger circuit of 32 amps to the remainder of our circuits okay with the diversity included would actually give us 75.2 amps now for the the new layout with the extra circuits again we take 100% of the largest circuit 40% of the remainder again we add all of these together we don't add the largest circuit we've already took 40% of 140 amps which is what these equal to is actually 56 amps now okay so we've added two circuits but and you can see that it's actually increased from 43.2 to 56 so we add the 32 amps to the 56 amps which actually gives us a maximum demand including our diversity of 88 amps so as you can see it's a nice easy calculation one you can really do on your phone while you're on site um and we use this from the on-site guide and generally in a domestic dwelling we can do it this way as long as they're in court the circuits arrangements are in accordance with appendix h of the onsite guide so do we have a one ring final circuits etcetera so now we've done our calculations with applying diversity we can go back and look at the difference now so this is definitely a significant difference so 140 amps without applying diversity to our maximum demand and when we apply a form of diversity we get 75.2 and again down here for the new one this is one we're worried about the most okay just to make sure that we can do what we're we're proposing to do without diversity 172 amps however when we apply it it's actually only 88 amps okay so that means we can continue with our proposed plans it's not going to have too much of a major effect on the installation as always we hope this video has been some help
+
+
+[00:00] so in today's video we're going to be looking at maximum demand and diversity and the method we're
+[00:04] going to use really is from the on-site guide guidance notes 3 okay and it's actually quite
+[00:08] a nice easy method in most cases just to give us a general idea of what the maximum demand is
+[00:15] i like to use this method because especially when you're on site
+[00:19] and you're filling out an EIC or an EICR you can you just use your calculator on your phone
+[00:24] there's no crazy calculations to do as such obviously there's different methods
+[00:28] of doing maximum diversity which we'll look at in further videos however this one is just a generic
+[00:34] one which we're going to use so it's a house renovation it's only a little one bedroom house
+[00:40] they currently have economy seven but the renovators want to get rid of the storage
+[00:44] heaters and and put in electrical panel heaters in their place so what we're going
+[00:48] to do is remove the economy 7 board and we're just going to replace the old board anyway and
+[00:55] we're going to incorporate them circuits into the new board okay because they're already in place
+[01:02] the testing has been done on them so the insulation resistance etcetera is fine so
+[01:05] we're just going to prove that basically because we're now adding two extra circuits into a board
+[01:10] okay it's 25 mil tails it is 100 amp cut out fuse we're just going to prove that it doesn't
+[01:16] have an issue making issue with the maximum demand of the property so we've got the old circuits here
+[01:21] and these are the new circuits okay most of them are the same as you can see there's just two extra
+[01:25] 16 amp circuits and what we're going to do is the method from the onsite guide which basically
+[01:31] we're going to take 100% of the largest circuit we have okay so in this installation is a 32 amp
+[01:37] there's multiple of them so we'll just take one of them and then what we'll do is we'll do 40% of the
+[01:43] remainder so we'll add up so if we took away that one we'll add up the rest of the circuits find 40%
+[01:50] and then we'll add 100% to the 40% which will give us a maximum demand calculation and again
+[01:55] this is just a nice easy method that you can use while you're on site using your calculator
+[02:00] so just before we move on to actually doing our calculation just wanted to show you what these
+[02:04] would equal if we didn't apply diversity so our maximum demand for the old set would be 140 amps
+[02:11] and for the new setup would be 172 amps now that's not going to be any good to us because we have 100
+[02:17] amp cut out fuse however what we're going to do is we're going to apply diversity okay because not
+[02:21] everything will be on 24 hours of the day every day of the year using its full load current okay
+[02:27] so we're going to apply diversity and we'll see what that does to these
+[02:31] values so as you can see what we've done first as we just sort of briefly talked about
+[02:37] is we took a hundred percent of the largest circuit okay which is 32 amps we've then took
+[02:45] 40% of the remainder of the circuits okay so 40% of the remainder of the circuits added together
+[02:52] okay so 40% if we added all them circuits together not the 32 amps of the largest one we already took
+[03:00] we would get 108 amps if we take 40% of 108 amps the easiest way to that is multiply 108 by 0.4
+[03:08] would give us 43.2 amps so if we added a larger circuit of 32 amps to the remainder
+[03:15] of our circuits okay with the diversity included would actually give us 75.2 amps
+[03:22] now for the the new layout with the extra circuits again we take 100% of the largest circuit
+[03:29] 40% of the remainder again we add all of these together we don't add the largest circuit we've
+[03:36] already took 40% of 140 amps which is what these equal to is actually 56 amps now okay so we've
+[03:44] added two circuits but and you can see that it's actually increased from 43.2 to 56 so we add the
+[03:51] 32 amps to the 56 amps which actually gives us a maximum demand including our diversity
+[03:58] of 88 amps so as you can see it's a nice easy calculation one you can really do on your phone
+[04:03] while you're on site um and we use this from the on-site guide and generally in a domestic dwelling
+[04:09] we can do it this way as long as they're in court the circuits arrangements are in accordance with
+[04:15] appendix h of the onsite guide so do we have a one ring final circuits etcetera so now we've
+[04:20] done our calculations with applying diversity we can go back and look at the difference now so
+[04:27] this is definitely a significant difference so 140 amps without applying diversity to our maximum
+[04:33] demand and when we apply a form of diversity we get 75.2 and again down here for the new one
+[04:41] this is one we're worried about the most okay just to make sure that we can do what we're
+[04:46] we're proposing to do without diversity 172 amps however when we apply it it's actually
+[04:54] only 88 amps okay so that means we can continue with our proposed plans it's not going to have
+[05:00] too much of a major effect on the installation as always we hope this video has been some help

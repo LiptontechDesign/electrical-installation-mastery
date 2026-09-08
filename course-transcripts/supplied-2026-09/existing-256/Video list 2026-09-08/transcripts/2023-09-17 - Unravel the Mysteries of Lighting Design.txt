@@ -1,0 +1,666 @@
+# Unravel the Mysteries of Lighting Design
+# https://www.youtube.com/watch?v=qWoWcA_3zfU
+
+- Lighting is one of the most important yet most easily misunderstood areas of electrical work. So we've put together a free training package to help you with your CPD on this subject. This is the video from that training package that we've decided to release to our wider audience. We really hope that it helps your understanding of this subject. And if you'd like to complete the course and receive an accredited certificate to count towards your annual CPD requirement, then please do click the link in the description to take you to the relevant webpage. In this free training package to help you with your CPD, we're going to be looking at the subject of lighting design. Now, this is a vast and complex area of study, so we're going to focus in on a few key points in this module. We'll consider the following subjects: key terms and concepts in lighting, basic lighting calculations, the different types of lighting and their proper applications, and efficiency in lighting. And we're going to demonstrate some of these points using these great products from Robus. So let's dive straight in, because I'm sure like me, you've looked at all those different terms on lighting packaging and been deeply confused about what it all means. Well, it all starts with the simple candle. Now, these are not manufactured by Robus. For the vast majority of human history, artificial illumination was achieved by means of burning things, from bulrushes, through lamps with a reservoir of oil inside them, to candles made of solid fuels, like animal fat or beeswax with a wick, and even burning gas in street lights and people's homes. So when light was first created using electricity, it made sense to make reference to these preexisting technologies when measuring the output from these newfangled devices. This led to the use of a unit of measure called the candela. This unit used to be called brightness, but was later modified to become luminous intensity. It's a measurement of the amount of light that a source gives off in a particular direction, and it's really good for assessing how much light a point source like an electric lamp gives off. However, when you're looking at a fitting that gives off light from a bunch of different places, like a panel fitting or a long linear fitting, the candela is not quite as useful, and we turn to a different method of measurement called luminous flux. And this is by far the more common unit of measuring light output. It's a measurement of the total flow of light given off by a source in all directions. You've already probably seen the output of fittings expressed in lumens, and this is the unit that we measure luminous flux in. It has the benefit of simplifying electrical calculations, as you can figure out the total amount required for a whole space rather than just one point on a surface. Now, when light leaves are fitting, there's a number of different things that affect how much of that light actually reaches the surface that it's illuminating, and the biggest culprit is distance. Light behaves according to something called the inverse square law, which is a type of calculation found all over the place in physics, and we'll explain this in a bit more detail in a minute. But for now, it's enough to know that the further a light source is from the surface that it's illuminating, the lower the light level will be at that point. So to assess how well lit a surface is, we need another measurement of light, which is called illuminance. This is measured in a unit called lux, and this is the starting point of a lot of lighting design, as it is often a target to aim for when choosing how many lights to install. We'll have a look at how all these units tie together as calculations in a moment, but first, there's a couple of other ways of describing light with numbers that will impact on lighting designs. The first of these is glare. The basic concept of glare is that it's a comparison between how bright a light source is when compared with the background that it's shining in. You'll have seen it yourself. If you've ever noticed people driving around in the daytime with their headlights on, they don't seem very bright because the surrounding surfaces are already well illuminated by the sun. If, however, you see those exact same headlights at night, they can be quite dazzling. Same light source, but in a darker background, and so the glare effect is larger. In a lighting installation, glare can be calculated using this formula. Now, don't panic. You don't actually need to understand this, because there's software available that will do it for you. However, you can only calculate glare at any given point in a room. You can't calculate it for the room as a total. This is because it will change depending on the perspective of someone occupying the room, where they are, if they're sitting or standing, even where their eyes are pointing. To help lighting designers and installers to minimize glare, lighting manufacturers build and test their lights to minimize this effect. And you'll often see a label on a fitting that states it has a UGR, or Unified Glare Rating, of less than 19. Now, it's important to remember that there is no such thing as a light fitting that guarantees glare in a room will be less than 19. After all, if you stand directly under a light fitting and stare directly up at it, you're going to get glare. What this rating means is that the light has been designed so that if used in the correct application at typical heights and spacings, it will help the lighting designer to achieve a UGR of less than 19. Again, if you install a low-glare fitting pointing directly out of a wall at eye height, it will create a high value of glare, as this is not the intended use of that fitting. Another key way that we quantify light is by its color temperature. You may sometimes see this expressed as CCT, which stands for correlated color temperature. The correlated bit just means the LEDs have been selected to give off a particular value of color temperature that correlates to a more traditional value. This is measured in a unit called the kelvin, which is also the SI unit for measuring temperature in general. You may have experienced different color temperatures yourself if you've ever got two similar lamps or fittings together that have different temperatures without realizing. Even though they are both giving off white light, one may seem a bit more orangey than the other, and this is because they have different color temperatures. Typical values for this range from very warm, which is about 2,700 kelvin, warm at about 3,000 kelvin. Color temperature starts being classed as cool white at about 4,000 kelvin, then at about 6,500 it becomes daylight white. Obviously, values can vary between and outside these points, but these values have become a fairly reliable industry standard. Some light fittings, like this Ultimum Connect downlight, even allow you to tune your lighting to any point between 2,700 and 6,500 kelvin if any of those discreet temperatures don't suit your needs or if you want to use different values of temperature at different times. Finally for this section of the video, we will consider another value that you'll see on a fitting, called the CRI, or color rendering index. This is simply a measure of how good the light is at showing or rendering the true colors of objects. The CRI of a light source is measured on a scale of up to 100, where 100 is the very best at showing the true colors of an object. Natural sunlight will have a value of 100, and in terms of color rendering, all lighting is trying to emulate this. Again, you may have noticed this affecting clothes shops. When you're looking in a shop at a brand new jacket, the colors on it may seem to absolutely pop and look fantastic, so you buy it. But when you take it home and try it on in front of the mirror, it never seems to look quite as good. This is most likely because the lighting in the shop had lights with a higher color rendering index than your lights at home, as well as a different color temperature. Warm white sources tend to have more red wavelengths in the light they output and cool white sources tend to have more blue. An example going the other way is the old orangey sodium lights that used to be the standard for illuminating streets and roads. The light output from these had a horrendously low CRI, and it had the power to make reporting crimes just a little bit tricky. Yes, officer, the perp was wearing an orange top, orange trousers, and trainers, and drove away in an orange car. I describe him or her as being of medium build with orange skin. This led of course to the wrongful arrest of countless Oompa Loompas. Now, of course, LED street lighting has replaced this, leading to the complete eradication of crime. So we've got a grip on some of those basic terms, which is good. So let's think about how we apply some of them now. We said earlier that if we increase the distance from a light source to the surface or object that it's illuminating, then we decrease the value that it's illuminated to, and we said that this is to do with the inverse square law. Mathematically, we express that like this. Illuminance in lux is equal to the luminous intensity in candelas divided by the distance from source to the surface squared, or E equals I over d squared, for short. So this helps us to understand how light behaves. If we increase this number here, how bright the source is, we increase this number here, or how well illuminated the surface is. But if we increase this number down here, the distance from source to surface, the bigger this number gets, the lower this number here, the illuminance, becomes. And not only that, if we double the distance from source to surface, because we're squaring that number on the bottom, it won't just halve the illuminance, it will actually reduce it to a quarter of what it was. So the height of fitting is mounted at is a really big deal when it comes to getting the light level correct. Now, this calculation is helpful when it comes to understanding how light behaves, but for practical purposes, it only tells you the illumination at a point directly below the light source. If you move to either side of the light, the illuminance level will change. This is for two reasons. One, the distance from source to surface gets larger the further away from the light you get, and also the angle the light hits the surface at changes. This then requires the use of an additional formula called the cosine rule for lighting, which takes account of the angle. Now, these calculations combined are all good for large indoor spaces and outdoor lighting installations, but for smaller, more complex indoor spaces, we need a different method. This is because as well as light traveling directly from the source to surface, it also bounces off the internal walls, ceiling, and even the floor. All these surfaces will absorb and reflect different amounts of light. And then you add in windows where light will both exit and enter the space and our simple inverse square law becomes hopelessly overwhelmed. On top of that, the way the space is used will also make a huge difference to the lighting level. A sterile laboratory used to prepare medicine will produce a lot less dust on the light fittings than a carpenter's workshop, and the former will be much more regularly cleaned than the latter. Also, the style of the fitting will impact on how dust accumulates on it, leading to further variance in lighting output. So how do we allow for the impact of all these variables? Well, we do it by the use of another method, and this is where our other unit of light output, the lumen, comes in. Remember, this is the measurement of luminous flux, and we use the luminous flux method to figure out how much is needed. It involves the use of this formula. Luminous flux is equal to the required illuminance or lux level multiplied by the area of the space to be illuminated. This value is then divided by a factor that takes into account utilization of the space, which will include the reflective nature of the walls and what the space is used for, multiplied by a factor taking into account how well and how often the lighting is maintained. This can then be reduced to look like this. F equals E times A divided by U times M. These values on the bottom are always a number between zero and one. So if conditions are less than absolutely perfect, which would be room made of mirrors that was vacuum sealed and never used, then these two numbers multiplied together will always give you a decimal value. And when you divide by a decimal value, you end up with a bigger number than you started with. So the further these values get from the perfect one, the bigger this number gets, which means we need a higher quantity of lumens. The numbers on the top are multipliers, and so as they get bigger, they also make the outputs of the formula bigger, which remember, is the number of lumens required. So as the area of the calculated room or surface gets bigger, the lumens required gets bigger as well. Finally, we come to the required illuminance or lux level. This is found by consulting lighting guides like ones from the SLL. So here we're starting with a required level of lighting, multiplying it by the area of the space, and then dividing it by the factors for utilization and maintenance of the space. This then gives the lumens required for that particular environment. Manufacturers of light fittings will tell you how many lumens they give off, and so you can divide the number of lumens required by the lumen output of your fitting, and this will tell you how many fittings you need. Now, at this point, your options really open up. You could meet the lumen requirement by installing one massively powerful fitting in the middle of the ceiling and have the right amount of lighting, or you could flood the ceiling with loads of tiny little lights with smaller outputs. Which is best? Well, that leads us onto the next part of this presentation, which is the different types of lighting and their applications. Much like the electrical industry, lighting can be split into three broad categories, domestic or residential, commercial, and industrial. There is a little bit of an overlap between these, as even the most industrial environments are likely to have some office space and probably even a kitchen or something similar. In addition to this, lighting can be split into further categories, each of which can be represented in each of these environments. So in the downlight category, you'll find small recessed spotlights that are perfect for installing in domestic and residential properties. These are usually fire rated to help prevent the spread of fire and the collapse of ceilings that have rooms above them. But you'll also find in this category larger recessed fittings that may be more appropriate for installing in commercial properties, for use in corridors and ancillary rooms like kitchens and toilets and things like that. It's important that the correct fitting is used in the correct environment, as a light fitting in someone's home is likely to be used less and to be in a cleaner environment, as people tend to care for their homes and property more than they do at work. Also, a fitting design to be installed into a ceiling tile is not likely to have been tested and approved for its ability to prevent the spread of fire in a property. Speaking of ceiling tiles, we then move onto a subcategory of lighting most often associated with commercial installations, the panel light. These are the successors of fittings that would lay in a suspended ceiling grid and usually contain three or four fluorescent lights. Now of course, these have been superseded by LED fittings designed to take up the same amount of space and rest in the ceiling grid just like their fluorescent predecessors. These are often associated with office spaces and classrooms in older buildings. Examples of this will include the Atmos LED Panel. And they're a pretty simple concept, just lots of LEDs behind a diffuser to spread the light and make it so you're not staring at incredibly bright individual LEDs, and that makes these fittings a lot slimmer than their fluorescent forbears. A variation on this theme would be the Stellar LED Indirect Panel, which is designed not just to throw light directly downwards below, but instead is built to bounce light upwards from a central section and then uses wing type parts of the fitting to give a more diffused light that may help to reduce eye strain. Now, all of these fittings are perfect for where suspended ceilings are being used. However, there's been quite a shift in recent years for new buildings in these areas not to have suspended ceilings, but just to leave the concrete soffit of the floor above exposed. This is partly an exercise in reducing the build cost, but also because it can create a more pleasant environment to work in. The echoing, unpleasant sounds that would naturally ensue are minimized by installing big pads of acoustic material, and then suspended light fittings that send light both up and down. This is called direct/indirect lighting, the direct part being the light that shines down from the fitting and the indirect part being light that is emitted from the top of the fitting and then bounces down from the ceiling. This creates a much softer, diffused type of lighting, can reduce eye strain, while banishing the cave-like effect that a suspended ceiling with panel lights in can produce in a badly designed installation. A good example of this type of fitting is the Horizon from Robus, which starts out as a direct light only fitting if that's the way you want to use it, and can then be modified by means of these LED strip attachments to become direct/indirect lights that emit light downwards and bounces it off the ceiling above. This fitting also sits in a category called linear lighting. This type of luminaire has its origins in the days of fluorescent lighting, which would consist of long thin tubes that emitted light. Linear lighting can be used in many applications, from places already discussed where the horizon is perfect for ensuring good quality light, to places that are less frequently used or visited, such as storerooms, staircases, or similar. Examples of these from the Robus range include the Alexander and Caesar LED Battens. However, linear LED lighting can also be used in offices and schools, and even retail environments like supermarkets. An example for these types of application would be the Scholar and the Earl LED Batten respectively. Speaking of linear lighting also leads us nicely into our third overall category of environment, which is industrial. These are environments where the light fittings need to be a little more robust in terms of resistance to mechanical damage, but also to the ingress of moisture and even fending off attack by atmospheric chemicals. So to install linear lighting to areas like this will require the use of a sturdier type of fitting, often referred to as a corrosion-proof fitting, which is generally made of a tough plastic body which will prevent corrosion at the hands of moisture and airborne pollutants, and they also generally have higher IP ratings to prevent the ingress moisture to the inside of the fittings. Environments that would most likely suit this type of fitting are places like car parks, plant rooms, and garages, and fittings that represent this style are the Sultan and the Vulcan. Staying with our industrial theme, we now turn to the high-bay fitting. Again, this type of fitting has its origin in older technology, namely old metal-halide fittings, which were efficient and gave off a lot of light, but it wasn't a particularly pleasant light, and so the use of them was mainly in warehouses and factories. As the sources of light were so intense, they'd usually be mounted very high up under the roof of these buildings and spread light over a large area, hence the name high-bays. The advances that have been made in LED technology have allowed even these intense sources of high light output to be replaced by fittings that produce the same amount of light while using less energy. The compact nature of an LED as a source means that we've been able to move away from the old bulky rectangular fittings to much more compact and aesthetically pleasing luminaires like the Sonic4 from Robus. High-bay lighting is great for industrial buildings with high ceilings. However, if you have lower ceilings in say a warehouse with a mezzanine, then a high-bay fitting may be too intense when mounted at that height and a low-bay fitting would be more appropriate. This has a light output that is more diffused and spreads the light over a wider angle, making it more suitable to be mounted at a lower height. An example of this is the Kingston. Now, it's also really important that we acknowledge that these overall types of lighting are focused on providing suitable levels of light to entire rooms. However, it is possible that a lighting design that satisfies the requirements for a whole room could still cause problems to individuals in the room, if, for example, someone's desk is positioned in such a way that the person using that desk is between the light and the surface that they need to work on. In situations like this, it may be necessary to install localized lighting that overcomes this problem. One way to achieve this could be to use a localized LED strip light, such as the Earl LED Batten and mount it directly above desks while allowing the person there to have full control over it. This will then prevent them from having to work in their own shadow. So that's an overview of some of the different types of lighting. Now let's talk about a subject that's probably more pertinent at this point in history than it has ever been: the subject of energy efficiency. Old style incandescent lamps used to pass a current through a filament of some material, which would then heat up to the point where that filament would start to glow white hot and give off visible light. A neat solution, but one that was horribly inefficient, because the lamps actually ended up giving off more heat than they did light. Now, this could be slightly helpful for heating a property in the wintertime, but it was less than helpful in the summer when the excess heat was simply wasted. Discharge lighting, which is when current is passed through a gas, usually with some form of vaporized metal mixed in with it, produced more efficient forms of light. But these had downsides, including the use of dangerous and toxic elements such as mercury. Then the LED revolution took place, and in a very short period of time led to the removal from sale of most forms of incandescent lighting. And even now, several forms of fluorescent light are being phased out and will soon be illegal to sell. LED light sources are now the most efficient forms of artificial lighting that we've created, and most manufacturers have moved or are moving their products over to this type of light source. However, the way that LEDs work has thrown up some challenges when it comes to checking the efficiency of a light fitting. Now, we need to be a little careful about the terms that we use here. Efficiency is often misused in the context of lighting. Efficiency is really a comparison of output versus input expressed as a percentage, and it should use the same output of measurement for both values. So to put it in mechanical terms, the amount of power that a motor outputs compared with the amount of power that goes into it. So in lighting terms, there is such a thing as luminaire efficiency, which is a measurement of how much light a lamp outputs compared to how much light comes from luminaire with that lamp inside it. This is because not all of the light makes it out of the fitting. Some of the light is absorbed by the inner surfaces of the fitting or just bounces around inside it, and some of course is absorbed by the diffuser as it passes through it to the outside world. Because a light source changes electricity into light, we need a different way of measuring how well the light source does this. This different method of measurement is called the efficacy of a light source, and it's measured in lumens per watt. So it doesn't have its own name as a unit, although if anyone's watching from the International Committee of Weights and Measures, may I modestly suggest the Joe as being the unit for efficacy? Or perhaps not. However, not having a specific name actually helps us to understand the measurement a little more. As you can see, we can write lumens per watt like this, which actually shows us how to calculate the value. Take the light output from the source in lumens, divide it by the amount of power the fitting uses to achieve this, and there it is, you've got the value in lumens per watt. Knowing this is helpful because it gives us a base measurement that we can use to compare different fittings to each other. As well as this, many building requirements and regulations state minimum values of lumens per watt for individual fittings or the installation as a whole. So knowing this value helps us to make sure that our installations comply. You'll notice though that if we look at this light fitting from Robus, the Ultimum Fire Rated Downlight, you'll see that it's efficacy is expressed in lumens per circuit watt. This is a little different to lumens per watt because it's a measurement of how much power the fitting uses as a whole, including the internal circuitry, not just how much power the light source inside the fitting is using. This is an important distinction, because an LED installed in a light fitting uses a certain amount of power, but there's also circuitry within the fitting feeding the LED, and this also uses some power. So the lumens per circuit watt tells you the efficacy of the total fitting, not just the light source inside the fitting. And most regulatory requirements, like the building regs, express their requirements in lumens per circuit watt. So there we go. We've discussed some key terms and concepts in lighting, we've looked at basic lighting calculations, the different types of lighting and their applications, and considered the efficiency and efficacy of lighting installations. To complete this training module and receive your certificate, please continue on to answer the multiple choice questions. All that remains in this video is to say thank you very much for watching.
+
+
+[00:00] - Lighting is one of the most important
+[00:02] yet most easily misunderstood areas of electrical work.
+[00:04] So we've put together a free training package
+[00:07] to help you with your CPD on this subject.
+[00:10] This is the video from that training package
+[00:12] that we've decided to release to our wider audience.
+[00:15] We really hope that it helps
+[00:16] your understanding of this subject.
+[00:18] And if you'd like to complete the course
+[00:19] and receive an accredited certificate
+[00:21] to count towards your annual CPD requirement,
+[00:24] then please do click the link in the description
+[00:27] to take you to the relevant webpage.
+[00:30] In this free training package
+[00:31] to help you with your CPD,
+[00:33] we're going to be looking at the subject of lighting design.
+[00:36] Now, this is a vast and complex area of study,
+[00:40] so we're going to focus in
+[00:41] on a few key points in this module.
+[00:44] We'll consider the following subjects:
+[00:46] key terms and concepts in lighting,
+[00:49] basic lighting calculations,
+[00:51] the different types of lighting
+[00:53] and their proper applications,
+[00:55] and efficiency in lighting.
+[00:57] And we're going to demonstrate some of these points
+[00:58] using these great products from Robus.
+[01:00] So let's dive straight in, because I'm sure like me,
+[01:03] you've looked at all those different terms
+[01:04] on lighting packaging
+[01:05] and been deeply confused about what it all means.
+[01:08] Well, it all starts with the simple candle.
+[01:11] Now, these are not manufactured by Robus.
+[01:13] For the vast majority of human history,
+[01:16] artificial illumination was achieved
+[01:17] by means of burning things,
+[01:19] from bulrushes,
+[01:21] through lamps with a reservoir of oil inside them,
+[01:23] to candles made of solid fuels,
+[01:25] like animal fat or beeswax with a wick,
+[01:27] and even burning gas in street lights and people's homes.
+[01:31] So when light was first created using electricity,
+[01:34] it made sense to make reference
+[01:36] to these preexisting technologies
+[01:38] when measuring the output from these newfangled devices.
+[01:41] This led to the use of a unit of measure called the candela.
+[01:45] This unit used to be called brightness,
+[01:47] but was later modified to become luminous intensity.
+[01:51] It's a measurement of the amount of light
+[01:53] that a source gives off in a particular direction,
+[01:55] and it's really good for assessing how much light
+[01:57] a point source like an electric lamp gives off.
+[02:00] However, when you're looking at a fitting
+[02:01] that gives off light from a bunch of different places,
+[02:03] like a panel fitting or a long linear fitting,
+[02:06] the candela is not quite as useful,
+[02:08] and we turn to a different method of measurement
+[02:10] called luminous flux.
+[02:12] And this is by far the more common unit
+[02:14] of measuring light output.
+[02:15] It's a measurement of the total flow of light
+[02:18] given off by a source in all directions.
+[02:21] You've already probably seen the output
+[02:22] of fittings expressed in lumens,
+[02:24] and this is the unit that we measure luminous flux in.
+[02:27] It has the benefit of simplifying electrical calculations,
+[02:30] as you can figure out the total amount
+[02:32] required for a whole space
+[02:34] rather than just one point on a surface.
+[02:37] Now, when light leaves are fitting,
+[02:39] there's a number of different things
+[02:40] that affect how much of that light
+[02:41] actually reaches the surface that it's illuminating,
+[02:44] and the biggest culprit is distance.
+[02:47] Light behaves according to something
+[02:48] called the inverse square law,
+[02:50] which is a type of calculation
+[02:52] found all over the place in physics,
+[02:53] and we'll explain this in a bit more detail in a minute.
+[02:56] But for now, it's enough to know
+[02:57] that the further a light source is
+[03:00] from the surface that it's illuminating,
+[03:02] the lower the light level will be at that point.
+[03:05] So to assess how well lit a surface is,
+[03:07] we need another measurement of light,
+[03:08] which is called illuminance.
+[03:10] This is measured in a unit called lux,
+[03:12] and this is the starting point of a lot of lighting design,
+[03:16] as it is often a target to aim for
+[03:18] when choosing how many lights to install.
+[03:20] We'll have a look at how all these units tie together
+[03:22] as calculations in a moment,
+[03:24] but first, there's a couple of other ways
+[03:25] of describing light with numbers
+[03:27] that will impact on lighting designs.
+[03:29] The first of these is glare.
+[03:31] The basic concept of glare is that it's a comparison
+[03:34] between how bright a light source is
+[03:36] when compared with the background that it's shining in.
+[03:39] You'll have seen it yourself.
+[03:40] If you've ever noticed people
+[03:41] driving around in the daytime with their headlights on,
+[03:43] they don't seem very bright
+[03:45] because the surrounding surfaces
+[03:46] are already well illuminated by the sun.
+[03:49] If, however, you see those exact same headlights at night,
+[03:51] they can be quite dazzling.
+[03:53] Same light source, but in a darker background,
+[03:55] and so the glare effect is larger.
+[03:57] In a lighting installation,
+[03:59] glare can be calculated using this formula.
+[04:01] Now, don't panic.
+[04:02] You don't actually need to understand this,
+[04:04] because there's software available that will do it for you.
+[04:07] However, you can only calculate glare
+[04:09] at any given point in a room.
+[04:11] You can't calculate it for the room as a total.
+[04:14] This is because it will change depending on the perspective
+[04:16] of someone occupying the room,
+[04:18] where they are, if they're sitting or standing,
+[04:20] even where their eyes are pointing.
+[04:23] To help lighting designers and installers to minimize glare,
+[04:26] lighting manufacturers build and test their lights
+[04:29] to minimize this effect.
+[04:30] And you'll often see a label on a fitting
+[04:32] that states it has a UGR, or Unified Glare Rating,
+[04:36] of less than 19.
+[04:38] Now, it's important to remember
+[04:39] that there is no such thing as a light fitting
+[04:41] that guarantees glare in a room will be less than 19.
+[04:44] After all, if you stand directly under a light fitting
+[04:47] and stare directly up at it,
+[04:49] you're going to get glare.
+[04:51] What this rating means is that the light has been designed
+[04:53] so that if used in the correct application
+[04:55] at typical heights and spacings,
+[04:57] it will help the lighting designer
+[04:59] to achieve a UGR of less than 19.
+[05:02] Again, if you install a low-glare fitting
+[05:04] pointing directly out of a wall at eye height,
+[05:06] it will create a high value of glare,
+[05:08] as this is not the intended use of that fitting.
+[05:11] Another key way that we quantify light
+[05:13] is by its color temperature.
+[05:15] You may sometimes see this expressed as CCT,
+[05:17] which stands for correlated color temperature.
+[05:20] The correlated bit just means the LEDs have been selected
+[05:23] to give off a particular value of color temperature
+[05:25] that correlates to a more traditional value.
+[05:28] This is measured in a unit called the kelvin,
+[05:31] which is also the SI unit
+[05:32] for measuring temperature in general.
+[05:35] You may have experienced
+[05:36] different color temperatures yourself
+[05:37] if you've ever got two similar lamps or fittings together
+[05:39] that have different temperatures without realizing.
+[05:42] Even though they are both giving off white light,
+[05:45] one may seem a bit more orangey than the other,
+[05:47] and this is because they have different color temperatures.
+[05:51] Typical values for this range from very warm,
+[05:54] which is about 2,700 kelvin, warm at about 3,000 kelvin.
+[05:59] Color temperature starts being classed as cool white
+[06:02] at about 4,000 kelvin,
+[06:04] then at about 6,500 it becomes daylight white.
+[06:08] Obviously, values can vary between and outside these points,
+[06:11] but these values have become
+[06:12] a fairly reliable industry standard.
+[06:15] Some light fittings, like this Ultimum Connect downlight,
+[06:17] even allow you to tune your lighting
+[06:19] to any point between 2,700 and 6,500 kelvin
+[06:23] if any of those discreet temperatures don't suit your needs
+[06:26] or if you want to use different values of temperature
+[06:28] at different times.
+[06:29] Finally for this section of the video,
+[06:31] we will consider another value that you'll see on a fitting,
+[06:33] called the CRI, or color rendering index.
+[06:36] This is simply a measure of how good the light is
+[06:38] at showing or rendering the true colors of objects.
+[06:42] The CRI of a light source is measured
+[06:43] on a scale of up to 100,
+[06:45] where 100 is the very best
+[06:47] at showing the true colors of an object.
+[06:49] Natural sunlight will have a value of 100,
+[06:51] and in terms of color rendering,
+[06:53] all lighting is trying to emulate this.
+[06:55] Again, you may have noticed this affecting clothes shops.
+[06:57] When you're looking in a shop at a brand new jacket,
+[07:00] the colors on it may seem to absolutely pop
+[07:02] and look fantastic, so you buy it.
+[07:04] But when you take it home
+[07:05] and try it on in front of the mirror,
+[07:06] it never seems to look quite as good.
+[07:08] This is most likely because the lighting in the shop
+[07:10] had lights with a higher color rendering index
+[07:12] than your lights at home,
+[07:14] as well as a different color temperature.
+[07:16] Warm white sources tend to have
+[07:18] more red wavelengths in the light they output
+[07:20] and cool white sources tend to have more blue.
+[07:23] An example going the other way
+[07:25] is the old orangey sodium lights
+[07:27] that used to be the standard
+[07:28] for illuminating streets and roads.
+[07:30] The light output from these had a horrendously low CRI,
+[07:34] and it had the power to make reporting crimes
+[07:36] just a little bit tricky.
+[07:37] Yes, officer, the perp was wearing an orange top,
+[07:40] orange trousers, and trainers,
+[07:42] and drove away in an orange car.
+[07:44] I describe him or her as being of medium build
+[07:46] with orange skin.
+[07:48] This led of course to the wrongful arrest
+[07:49] of countless Oompa Loompas.
+[07:51] Now, of course, LED street lighting has replaced this,
+[07:54] leading to the complete eradication of crime.
+[07:57] So we've got a grip on some of those basic terms,
+[07:59] which is good.
+[08:00] So let's think about how we apply some of them now.
+[08:02] We said earlier that if we increase the distance
+[08:05] from a light source to the surface
+[08:06] or object that it's illuminating,
+[08:08] then we decrease the value that it's illuminated to,
+[08:11] and we said that this is to do with the inverse square law.
+[08:15] Mathematically, we express that like this.
+[08:18] Illuminance in lux is equal to
+[08:19] the luminous intensity in candelas
+[08:21] divided by the distance from source to the surface squared,
+[08:25] or E equals I over d squared, for short.
+[08:28] So this helps us to understand how light behaves.
+[08:31] If we increase this number here, how bright the source is,
+[08:34] we increase this number here,
+[08:36] or how well illuminated the surface is.
+[08:38] But if we increase this number down here,
+[08:40] the distance from source to surface,
+[08:42] the bigger this number gets,
+[08:43] the lower this number here, the illuminance, becomes.
+[08:46] And not only that,
+[08:47] if we double the distance from source to surface,
+[08:50] because we're squaring that number on the bottom,
+[08:53] it won't just halve the illuminance,
+[08:55] it will actually reduce it to a quarter of what it was.
+[08:58] So the height of fitting is mounted at is a really big deal
+[09:01] when it comes to getting the light level correct.
+[09:03] Now, this calculation is helpful
+[09:05] when it comes to understanding how light behaves,
+[09:07] but for practical purposes,
+[09:09] it only tells you the illumination at a point
+[09:11] directly below the light source.
+[09:13] If you move to either side of the light,
+[09:15] the illuminance level will change.
+[09:17] This is for two reasons.
+[09:18] One, the distance from source to surface gets larger
+[09:21] the further away from the light you get,
+[09:23] and also the angle the light hits the surface at changes.
+[09:26] This then requires the use of an additional formula
+[09:29] called the cosine rule for lighting,
+[09:31] which takes account of the angle.
+[09:33] Now, these calculations combined
+[09:35] are all good for large indoor spaces
+[09:37] and outdoor lighting installations,
+[09:38] but for smaller, more complex indoor spaces,
+[09:42] we need a different method.
+[09:43] This is because as well as light traveling directly
+[09:46] from the source to surface,
+[09:48] it also bounces off the internal walls,
+[09:50] ceiling, and even the floor.
+[09:52] All these surfaces will absorb and reflect
+[09:54] different amounts of light.
+[09:56] And then you add in windows
+[09:57] where light will both exit and enter the space
+[10:00] and our simple inverse square law
+[10:01] becomes hopelessly overwhelmed.
+[10:03] On top of that, the way the space is used
+[10:06] will also make a huge difference to the lighting level.
+[10:08] A sterile laboratory used to prepare medicine
+[10:10] will produce a lot less dust
+[10:12] on the light fittings than a carpenter's workshop,
+[10:15] and the former will be much more regularly cleaned
+[10:17] than the latter.
+[10:18] Also, the style of the fitting
+[10:20] will impact on how dust accumulates on it,
+[10:22] leading to further variance in lighting output.
+[10:25] So how do we allow for the impact of all these variables?
+[10:29] Well, we do it by the use of another method,
+[10:31] and this is where our other unit of light output,
+[10:33] the lumen, comes in.
+[10:35] Remember, this is the measurement of luminous flux,
+[10:38] and we use the luminous flux method
+[10:41] to figure out how much is needed.
+[10:43] It involves the use of this formula.
+[10:46] Luminous flux is equal to
+[10:48] the required illuminance or lux level
+[10:50] multiplied by the area of the space to be illuminated.
+[10:53] This value is then divided by a factor
+[10:55] that takes into account utilization of the space,
+[10:58] which will include the reflective nature of the walls
+[11:00] and what the space is used for,
+[11:02] multiplied by a factor taking into account
+[11:04] how well and how often the lighting is maintained.
+[11:07] This can then be reduced to look like this.
+[11:09] F equals E times A divided by U times M.
+[11:13] These values on the bottom
+[11:14] are always a number between zero and one.
+[11:16] So if conditions are less than absolutely perfect,
+[11:19] which would be room made of mirrors
+[11:22] that was vacuum sealed and never used,
+[11:24] then these two numbers multiplied together
+[11:26] will always give you a decimal value.
+[11:29] And when you divide by a decimal value,
+[11:31] you end up with a bigger number than you started with.
+[11:34] So the further these values get from the perfect one,
+[11:37] the bigger this number gets,
+[11:38] which means we need a higher quantity of lumens.
+[11:42] The numbers on the top are multipliers,
+[11:43] and so as they get bigger,
+[11:45] they also make the outputs of the formula bigger,
+[11:47] which remember, is the number of lumens required.
+[11:50] So as the area of the calculated room
+[11:52] or surface gets bigger,
+[11:53] the lumens required gets bigger as well.
+[11:56] Finally, we come to the required illuminance or lux level.
+[11:59] This is found by consulting lighting guides
+[12:01] like ones from the SLL.
+[12:03] So here we're starting with a required level of lighting,
+[12:06] multiplying it by the area of the space,
+[12:08] and then dividing it by the factors for utilization
+[12:11] and maintenance of the space.
+[12:13] This then gives the lumens required
+[12:14] for that particular environment.
+[12:17] Manufacturers of light fittings will tell you
+[12:19] how many lumens they give off,
+[12:20] and so you can divide the number of lumens required
+[12:23] by the lumen output of your fitting,
+[12:25] and this will tell you how many fittings you need.
+[12:28] Now, at this point, your options really open up.
+[12:30] You could meet the lumen requirement
+[12:32] by installing one massively powerful fitting
+[12:35] in the middle of the ceiling
+[12:36] and have the right amount of lighting,
+[12:37] or you could flood the ceiling
+[12:39] with loads of tiny little lights with smaller outputs.
+[12:42] Which is best?
+[12:43] Well, that leads us onto the next part of this presentation,
+[12:46] which is the different types of lighting
+[12:48] and their applications.
+[12:49] Much like the electrical industry,
+[12:50] lighting can be split into three broad categories,
+[12:53] domestic or residential, commercial, and industrial.
+[12:57] There is a little bit of an overlap between these,
+[12:59] as even the most industrial environments
+[13:01] are likely to have some office space
+[13:03] and probably even a kitchen or something similar.
+[13:06] In addition to this,
+[13:07] lighting can be split into further categories,
+[13:09] each of which can be represented
+[13:11] in each of these environments.
+[13:12] So in the downlight category,
+[13:14] you'll find small recessed spotlights
+[13:16] that are perfect for installing
+[13:17] in domestic and residential properties.
+[13:19] These are usually fire rated
+[13:21] to help prevent the spread of fire
+[13:23] and the collapse of ceilings that have rooms above them.
+[13:25] But you'll also find in this category
+[13:27] larger recessed fittings
+[13:29] that may be more appropriate
+[13:30] for installing in commercial properties,
+[13:32] for use in corridors and ancillary rooms
+[13:34] like kitchens and toilets and things like that.
+[13:37] It's important that the correct fitting
+[13:39] is used in the correct environment,
+[13:40] as a light fitting in someone's home
+[13:42] is likely to be used less
+[13:44] and to be in a cleaner environment,
+[13:45] as people tend to care for their homes and property
+[13:48] more than they do at work.
+[13:49] Also, a fitting design to be installed into a ceiling tile
+[13:53] is not likely to have been tested and approved
+[13:55] for its ability to prevent the spread of fire in a property.
+[13:59] Speaking of ceiling tiles,
+[14:00] we then move onto a subcategory of lighting
+[14:02] most often associated with commercial installations,
+[14:04] the panel light.
+[14:06] These are the successors of fittings
+[14:07] that would lay in a suspended ceiling grid
+[14:09] and usually contain three or four fluorescent lights.
+[14:12] Now of course,
+[14:13] these have been superseded by LED fittings
+[14:15] designed to take up the same amount of space
+[14:17] and rest in the ceiling grid
+[14:19] just like their fluorescent predecessors.
+[14:21] These are often associated with office spaces
+[14:24] and classrooms in older buildings.
+[14:25] Examples of this will include the Atmos LED Panel.
+[14:29] And they're a pretty simple concept,
+[14:30] just lots of LEDs behind a diffuser to spread the light
+[14:33] and make it so you're not staring
+[14:35] at incredibly bright individual LEDs,
+[14:37] and that makes these fittings a lot slimmer
+[14:40] than their fluorescent forbears.
+[14:42] A variation on this theme
+[14:43] would be the Stellar LED Indirect Panel,
+[14:46] which is designed not just to throw light
+[14:47] directly downwards below,
+[14:49] but instead is built to bounce light upwards
+[14:51] from a central section
+[14:52] and then uses wing type parts of the fitting
+[14:55] to give a more diffused light
+[14:56] that may help to reduce eye strain.
+[14:58] Now, all of these fittings are perfect
+[15:00] for where suspended ceilings are being used.
+[15:02] However, there's been quite a shift in recent years
+[15:04] for new buildings in these areas
+[15:06] not to have suspended ceilings,
+[15:07] but just to leave the concrete soffit
+[15:09] of the floor above exposed.
+[15:11] This is partly an exercise in reducing the build cost,
+[15:14] but also because it can create
+[15:16] a more pleasant environment to work in.
+[15:18] The echoing, unpleasant sounds that would naturally ensue
+[15:21] are minimized by installing big pads of acoustic material,
+[15:25] and then suspended light fittings
+[15:26] that send light both up and down.
+[15:29] This is called direct/indirect lighting,
+[15:31] the direct part being the light
+[15:33] that shines down from the fitting
+[15:35] and the indirect part being light
+[15:36] that is emitted from the top of the fitting
+[15:38] and then bounces down from the ceiling.
+[15:40] This creates a much softer, diffused type of lighting,
+[15:43] can reduce eye strain,
+[15:45] while banishing the cave-like effect
+[15:47] that a suspended ceiling with panel lights in
+[15:49] can produce in a badly designed installation.
+[15:52] A good example of this type of fitting
+[15:54] is the Horizon from Robus,
+[15:55] which starts out as a direct light only fitting
+[15:57] if that's the way you want to use it,
+[15:59] and can then be modified
+[16:00] by means of these LED strip attachments
+[16:03] to become direct/indirect lights that emit light downwards
+[16:06] and bounces it off the ceiling above.
+[16:09] This fitting also sits in a category called linear lighting.
+[16:12] This type of luminaire has its origins
+[16:14] in the days of fluorescent lighting,
+[16:16] which would consist of long thin tubes that emitted light.
+[16:19] Linear lighting can be used in many applications,
+[16:21] from places already discussed where the horizon is perfect
+[16:24] for ensuring good quality light,
+[16:26] to places that are less frequently used or visited,
+[16:29] such as storerooms, staircases, or similar.
+[16:32] Examples of these from the Robus range
+[16:34] include the Alexander and Caesar LED Battens.
+[16:37] However, linear LED lighting can also be used
+[16:40] in offices and schools,
+[16:41] and even retail environments like supermarkets.
+[16:44] An example for these types of application
+[16:46] would be the Scholar and the Earl LED Batten respectively.
+[16:50] Speaking of linear lighting also leads us nicely
+[16:52] into our third overall category of environment,
+[16:54] which is industrial.
+[16:56] These are environments where the light fittings
+[16:58] need to be a little more robust
+[16:59] in terms of resistance to mechanical damage,
+[17:01] but also to the ingress of moisture
+[17:03] and even fending off attack by atmospheric chemicals.
+[17:06] So to install linear lighting to areas like this
+[17:09] will require the use of a sturdier type of fitting,
+[17:11] often referred to as a corrosion-proof fitting,
+[17:13] which is generally made of a tough plastic body
+[17:16] which will prevent corrosion at the hands of moisture
+[17:18] and airborne pollutants,
+[17:19] and they also generally have higher IP ratings
+[17:22] to prevent the ingress moisture
+[17:23] to the inside of the fittings.
+[17:25] Environments that would most likely suit
+[17:27] this type of fitting are places
+[17:28] like car parks, plant rooms, and garages,
+[17:30] and fittings that represent this style
+[17:32] are the Sultan and the Vulcan.
+[17:34] Staying with our industrial theme,
+[17:36] we now turn to the high-bay fitting.
+[17:38] Again, this type of fitting
+[17:39] has its origin in older technology,
+[17:41] namely old metal-halide fittings,
+[17:43] which were efficient and gave off a lot of light,
+[17:46] but it wasn't a particularly pleasant light,
+[17:48] and so the use of them
+[17:49] was mainly in warehouses and factories.
+[17:52] As the sources of light were so intense,
+[17:54] they'd usually be mounted very high up
+[17:56] under the roof of these buildings
+[17:57] and spread light over a large area,
+[17:59] hence the name high-bays.
+[18:01] The advances that have been made in LED technology
+[18:04] have allowed even these intense sources of high light output
+[18:07] to be replaced by fittings
+[18:08] that produce the same amount of light
+[18:10] while using less energy.
+[18:12] The compact nature of an LED as a source
+[18:14] means that we've been able to move away
+[18:16] from the old bulky rectangular fittings
+[18:18] to much more compact
+[18:19] and aesthetically pleasing luminaires
+[18:22] like the Sonic4 from Robus.
+[18:24] High-bay lighting is great for industrial buildings
+[18:26] with high ceilings.
+[18:27] However, if you have lower ceilings
+[18:28] in say a warehouse with a mezzanine,
+[18:31] then a high-bay fitting may be too intense
+[18:33] when mounted at that height
+[18:34] and a low-bay fitting would be more appropriate.
+[18:37] This has a light output that is more diffused
+[18:39] and spreads the light over a wider angle,
+[18:41] making it more suitable to be mounted at a lower height.
+[18:45] An example of this is the Kingston.
+[18:47] Now, it's also really important that we acknowledge
+[18:49] that these overall types of lighting
+[18:51] are focused on providing
+[18:52] suitable levels of light to entire rooms.
+[18:55] However, it is possible that a lighting design
+[18:57] that satisfies the requirements for a whole room
+[18:59] could still cause problems to individuals in the room,
+[19:03] if, for example, someone's desk is positioned
+[19:05] in such a way that the person using that desk
+[19:07] is between the light
+[19:08] and the surface that they need to work on.
+[19:10] In situations like this,
+[19:11] it may be necessary to install localized lighting
+[19:14] that overcomes this problem.
+[19:15] One way to achieve this could be
+[19:17] to use a localized LED strip light,
+[19:19] such as the Earl LED Batten
+[19:21] and mount it directly above desks
+[19:23] while allowing the person there
+[19:24] to have full control over it.
+[19:27] This will then prevent them
+[19:28] from having to work in their own shadow.
+[19:30] So that's an overview of some of
+[19:31] the different types of lighting.
+[19:32] Now let's talk about a subject
+[19:34] that's probably more pertinent at this point in history
+[19:36] than it has ever been:
+[19:38] the subject of energy efficiency.
+[19:41] Old style incandescent lamps used to pass a current
+[19:43] through a filament of some material,
+[19:45] which would then heat up to the point
+[19:47] where that filament would start to glow white hot
+[19:49] and give off visible light.
+[19:51] A neat solution,
+[19:52] but one that was horribly inefficient,
+[19:54] because the lamps actually ended up
+[19:55] giving off more heat than they did light.
+[19:58] Now, this could be slightly helpful
+[20:00] for heating a property in the wintertime,
+[20:02] but it was less than helpful in the summer
+[20:03] when the excess heat was simply wasted.
+[20:07] Discharge lighting,
+[20:08] which is when current is passed through a gas,
+[20:10] usually with some form of vaporized metal mixed in with it,
+[20:13] produced more efficient forms of light.
+[20:15] But these had downsides,
+[20:17] including the use of dangerous
+[20:18] and toxic elements such as mercury.
+[20:21] Then the LED revolution took place,
+[20:23] and in a very short period of time
+[20:25] led to the removal from sale
+[20:26] of most forms of incandescent lighting.
+[20:29] And even now, several forms of fluorescent light
+[20:31] are being phased out and will soon be illegal to sell.
+[20:35] LED light sources are now the most efficient forms
+[20:37] of artificial lighting that we've created,
+[20:40] and most manufacturers have moved
+[20:41] or are moving their products over
+[20:43] to this type of light source.
+[20:45] However, the way that LEDs work
+[20:47] has thrown up some challenges
+[20:48] when it comes to checking the efficiency of a light fitting.
+[20:51] Now, we need to be a little careful
+[20:53] about the terms that we use here.
+[20:56] Efficiency is often misused in the context of lighting.
+[21:00] Efficiency is really a comparison
+[21:02] of output versus input expressed as a percentage,
+[21:05] and it should use the same output of measurement
+[21:08] for both values.
+[21:09] So to put it in mechanical terms,
+[21:11] the amount of power that a motor outputs
+[21:14] compared with the amount of power that goes into it.
+[21:17] So in lighting terms,
+[21:18] there is such a thing as luminaire efficiency,
+[21:21] which is a measurement of how much light a lamp outputs
+[21:24] compared to how much light
+[21:25] comes from luminaire with that lamp inside it.
+[21:28] This is because not all of the light
+[21:30] makes it out of the fitting.
+[21:32] Some of the light is absorbed
+[21:33] by the inner surfaces of the fitting
+[21:35] or just bounces around inside it,
+[21:37] and some of course is absorbed by the diffuser
+[21:39] as it passes through it to the outside world.
+[21:42] Because a light source changes electricity into light,
+[21:46] we need a different way of measuring
+[21:48] how well the light source does this.
+[21:50] This different method of measurement
+[21:51] is called the efficacy of a light source,
+[21:54] and it's measured in lumens per watt.
+[21:56] So it doesn't have its own name as a unit,
+[21:58] although if anyone's watching
+[22:00] from the International Committee of Weights and Measures,
+[22:02] may I modestly suggest the Joe
+[22:04] as being the unit for efficacy?
+[22:07] Or perhaps not.
+[22:08] However, not having a specific name
+[22:09] actually helps us to understand
+[22:11] the measurement a little more.
+[22:12] As you can see, we can write lumens per watt like this,
+[22:15] which actually shows us how to calculate the value.
+[22:18] Take the light output from the source in lumens,
+[22:21] divide it by the amount of power
+[22:23] the fitting uses to achieve this, and there it is,
+[22:25] you've got the value in lumens per watt.
+[22:28] Knowing this is helpful
+[22:29] because it gives us a base measurement that we can use
+[22:32] to compare different fittings to each other.
+[22:34] As well as this, many building requirements and regulations
+[22:37] state minimum values of lumens per watt
+[22:39] for individual fittings or the installation as a whole.
+[22:42] So knowing this value helps us
+[22:43] to make sure that our installations comply.
+[22:46] You'll notice though
+[22:47] that if we look at this light fitting from Robus,
+[22:49] the Ultimum Fire Rated Downlight,
+[22:51] you'll see that it's efficacy
+[22:52] is expressed in lumens per circuit watt.
+[22:55] This is a little different to lumens per watt
+[22:57] because it's a measurement of how much power
+[22:59] the fitting uses as a whole,
+[23:01] including the internal circuitry,
+[23:03] not just how much power the light source
+[23:05] inside the fitting is using.
+[23:07] This is an important distinction,
+[23:09] because an LED installed in a light fitting
+[23:11] uses a certain amount of power,
+[23:13] but there's also circuitry within the fitting
+[23:15] feeding the LED, and this also uses some power.
+[23:18] So the lumens per circuit watt
+[23:20] tells you the efficacy of the total fitting,
+[23:23] not just the light source inside the fitting.
+[23:26] And most regulatory requirements, like the building regs,
+[23:28] express their requirements in lumens per circuit watt.
+[23:32] So there we go. We've discussed some key terms and concepts in lighting,
+[23:35] we've looked at basic lighting calculations,
+[23:37] the different types of lighting and their applications,
+[23:40] and considered the efficiency
+[23:41] and efficacy of lighting installations.
+[23:44] To complete this training module
+[23:45] and receive your certificate,
+[23:47] please continue on to answer the multiple choice questions.
+[23:50] All that remains in this video
+[23:51] is to say thank you very much for watching.

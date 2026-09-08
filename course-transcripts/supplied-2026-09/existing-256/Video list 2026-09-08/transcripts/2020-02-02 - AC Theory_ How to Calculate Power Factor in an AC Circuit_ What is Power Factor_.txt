@@ -1,0 +1,338 @@
+# AC Theory: How to Calculate Power Factor in an AC Circuit: What is Power Factor?
+# https://www.youtube.com/watch?v=xp6Rv5cUQG8
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering the subject of AC theory and in particular we're going to start focusing on the subject of power factor now you'll notice on the board behind me there's an awful lot of math spread out and things that we've been talking about over the past three or four videos now some of that information is going to be really important and help us to understand the more complex parts of power factor that will come unto a little bit later but for starters let's just think about this term power factor what is it well to put it simply power factor is basically a bad thing that happens inside AC circuits it's caused generally speaking by inductive loads so that's things like motors transformers anything that has a coil of wire in it that's connected to an AC supply the bad thing that power factor is describing is the fact that inductive loads and it is generally inductive loads that caused this to happen inductive loads caused voltage and current inside an AC circuit to fall out of phase with each other up here we have a drawing of our fresh and light circuit that we did an experiment on many videos ago and you can see here that we've got a resistive load and an inductive load connected to each other this could also represent just what's happening inside the coil of a motor so the call of the motor can be broken into two parts the resistive part which is the copper wire that makes the coil up and the inductive part which is caused by wrapping that copper conductor into a coil now the inductive part of the circuit causes the voltage and the current to fall out of phase with each other and when you look at the combination of the two elements of the inductive load you can see here we end up with this situation where current and voltage are no longer in phase with each other we can see here that the current flowing into the sir it is lagging the voltage that is being applied to the circuit so they in other words if you would think this is a waveform the current is rising and falling a little bit after the voltage is rising and falling so why is that such a bad thing well if you think back to other videos in this series we saw that if the current is left in this lagging position we're actually using more current than we need to in order to power the circuit why is that a bad thing well again if we work our way back through the videos and we think about our power triangle we saw that this line here represented the amount of power that the circuit was using as a total and you can see here that the bigger this angle gets the bigger this angle is going to get and if this angle gets bigger and bigger and bigger this side gets longer and longer and longer and the consequence of that is that we end up drawing more and more current into the circuit and because we draw more current into the circuit the electricity companies charges more for the electricity that we use now not only do they charge is a bit more because we're using more power but because if you have a very large installation and you're drawing an awful lot of power from the installation that installation has a poor power factor that means that your installation is physically pulling more current into the building than it needs to now because of that the electricity company has to provide bigger transformers bigger cutouts bigger switch equipment bigger cables to feed your installation and because of that they don't just charge you because you're using more power but they charge you because you're using more current than you need to you are placing strain on the electrical infrastructure feeding your building and that becomes costly to the electricity provider and therefore they find you for it they will actually charge you more money so it's very much within our interests to try and get the current and the voltage to fall back into phase with each other to make sure again if we think of them as a wave diagram that they are rising and falling in perfect synchronisation with each other as much as we possibly can so that's the simple explanation of power factor it's a bad thing that happens it's normally caused by inductive loads it causes voltage and current to fall out of phase with each other and when that happens we draw more current into the building than we need to and this results in is paying higher bills for our electricity but what we can do is we can actually start to quantify power factor we can actually start to put a number on it we can measure what the value of power factor will be how do we do that well remember we said that power factor is an indication of how far out of phase voltage and current are now we can represent that instead of using an angle between the voltage in the current we can use a different method of doing that and that different method is the power factor so how do we calculate it where does it come from well let's have a look at this we've got here three different triangles that all describe what's happening inside our flat and like fitting and what we're seeing is that in every case this angle this angle and this angle are all exactly the same and those three angles are the same as this angle which is how far the current is lagging the voltage now what we can do is we can start to get an indication of how far it's lagging by performing some very simple calculations and what we do is basically we take this side of the voltage triangle VR and we divide it by VT so let's start to put that down in writing I'm going to pop it down here so we can say that the power factor will be equal to the VR this side of the triangle divided by VT that side of the triangle so the resistive voltage divided by the total voltage so we could actually calculate what the power factor of our frozen light actually was however because these triangles are all in proportion with each other actually we can calculate the power factor in other ways so we could say the power factor is equal to the resistance of the circuit divided by the impedance of the circuit so we could say that power factor is also equal to resistance divided by impedance and that will also give us our power factor we could even use this triangle and again we just used this side we could say it's equal to the true power in watts divided by the apparent power in volt amperes so let's put that down we've got the true power in watts divided by the volt ampere is divided by the apparent power so power factor is also equal to true power over apparent power now what's interesting about each one of these is that actually for each triangle we've taken the same side and divided it by the same side we've taken this bottom side here and divided it by the long side up here now because we're always going to have a smaller number here divided by a large number that means that our power factor is always going to be a number somewhere between 0 and 1 now that's a very important kind of clue to help you with your exam questions power factor is always a value between 0 & 1 if you ever get a power factor that is over 1 then you've done something wrong with your calculations so if you get an exam question that's multiple choice and only one of the values for power factor is between 0 & 1 that's the 1 so we can start to eliminate wrong answers quite easily however what we can also do is we can start to bring a little bit of trigonometry into this now so if we look at our triangles here here's the angle that we're interested in remembering that that represents how far out of phase the voltage and current are so in trigonometry this side has a special name it is next to the angle that we're interested in and therefore we can call this side the adjacent so this is the adjacent side the adjacent so this side is the adjacent this side is also the adjacent and this side is also the adjacent this long side here is what we call in trigonometry the hypotenuse the rock there the long side of the right angle triangle so every time we do a calculation to find the power factor of a circuit or a load we are taking the adjacent side and we're dividing it by the hypotenuse okay we've got the adjacent are that side divided by the impedance Zed the hypotenuse so we've got the side next to the angle divided by the long side of the angle so that's what we're looking at there so what that means is that every single time we do this we are saying that we are doing the adjacent divided by the hypotenuse so the adjacent divided by the hypotenuse now in trigonometry if you take the adjacent of a right angle triangle and divide it by the hypotenuse of that triangle you come up with one of the three trigonometric identities and of course we know that the adjacent divided by the hypotenuse if you think back to your school days anything saw Kat Toa that you've got the cat bit in the middle which means that cosine of theta is equal to the adjacent divided by the hypotenuse what we're actually doing here is every time we're finding the cosine of the angle theta and here's our angle theta so can you see if we kind of work our way along here we can see that the power factor is equal to the cosine of theta and the cosine of theta theta is the angle that the current and the voltage are out of phase by so that is why that angle which is the same as that angle that angle and angle are also important because the cosine of that angle tells us what the power factor is now if you get your calculator and you type in what is the cosine of zero it will spit the answer back as being one so that means that when the angle between the voltage and the current is zero is nothing then that means that the power factor is one and that is the best power factor that you can hope for so a power factor of one means that the current and voltage are perfectly in phase and there is no leading or lagging element in your circuit likewise if it were possible for the voltage and currents who fall completely out of phase with each other 90 degrees so in other words for this to become a purely inductive circuit then you would have a power factor of zero because the cosine of 90 is zero so that would be the worst possible power factor that could exist so there we can see how as the voltage in the current fall out to phase with each other it makes the power factor get gradually worse and worse how do we bring them back into phase and an inductive circuit well if you remember in a previous video in this series we saw what happened when you connected a capacitor into the circuit the capacitor generates inductive reactance but it generates inductive reactance that works in the opposite direction to the inductive reactance caused by the inductor and that causes this side of the triangle to get smaller and smaller and smaller which means that ultimately the voltage and the current are coming back into phase with each other and when the voltage and current come back in phase with each other we have corrected the poor power factor and that's where that expression power factor correction capacitor comes from so hopefully from this video you started to develop your understanding of power factor again that simple explanation power factor is a bad thing it is generally caused by inductive loads and it means that the voltage and the current are falling out of phase with each other that causes the circuit to use more current than it needs to and that means that your energy bills will be higher and that your electricity bill will also include fines by the energy company for the extra current that you're drawing however the good news is that the power factor can be corrected by installing a capacitor into the circuit which will bring the voltage and current back into phase with each other and getting a power factor closer to one what we're going to do in future videos is we're going to take all the information that we've looked at in the previous videos and we're going to analyze a coil we're going to measure some very basic things about it just voltage and current and from that we are going to be able to couch like many many more complicated things regarding that coil including its inductive reactance its power factor its phase angle however the voltage and current are out of phase with each other and lots of other things as well so for this video all that remains to say is thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're going to continue considering the
+[00:14] subject of AC theory and in particular
+[00:17] we're going to start focusing on the
+[00:18] subject of power factor now you'll
+[00:21] notice on the board behind me there's an
+[00:23] awful lot of math spread out and things
+[00:25] that we've been talking about over the
+[00:26] past three or four videos now some of
+[00:28] that information is going to be really
+[00:30] important and help us to understand the
+[00:32] more complex parts of power factor that
+[00:34] will come unto a little bit later but
+[00:36] for starters let's just think about this
+[00:38] term power factor what is it well to put
+[00:43] it simply power factor is basically a
+[00:45] bad thing that happens inside AC
+[00:49] circuits it's caused generally speaking
+[00:52] by inductive loads so that's things like
+[00:55] motors transformers anything that has a
+[00:58] coil of wire in it that's connected to
+[01:00] an AC supply the bad thing that power
+[01:05] factor is describing is the fact that
+[01:08] inductive loads and it is generally
+[01:10] inductive loads that caused this to
+[01:12] happen inductive loads caused voltage
+[01:15] and current inside an AC circuit to fall
+[01:19] out of phase with each other up here we
+[01:22] have a drawing of our fresh and light
+[01:24] circuit that we did an experiment on
+[01:26] many videos ago and you can see here
+[01:29] that we've got a resistive load and an
+[01:31] inductive load connected to each other
+[01:34] this could also represent just what's
+[01:36] happening inside the coil of a motor so
+[01:39] the call of the motor can be broken into
+[01:41] two parts the resistive part which is
+[01:42] the copper wire that makes the coil up
+[01:45] and the inductive part which is caused
+[01:47] by wrapping that copper conductor into a
+[01:50] coil now the inductive part of the
+[01:53] circuit causes the voltage and the
+[01:56] current to fall out of phase with each
+[01:58] other and when you look at the
+[01:59] combination of the two elements of the
+[02:01] inductive load you can see here we end
+[02:03] up with this situation where current and
+[02:06] voltage are no longer in phase with each
+[02:10] other we can see here that the current
+[02:11] flowing into the sir
+[02:13] it is lagging the voltage that is being
+[02:17] applied to the circuit so they in other
+[02:20] words if you would think this is a
+[02:21] waveform the current is rising and
+[02:24] falling a little bit after the voltage
+[02:27] is rising and falling so why is that
+[02:31] such a bad thing well if you think back
+[02:33] to other videos in this series we saw
+[02:35] that if the current is left in this
+[02:39] lagging position we're actually using
+[02:41] more current than we need to in order to
+[02:44] power the circuit why is that a bad
+[02:46] thing well again if we work our way back
+[02:48] through the videos and we think about
+[02:50] our power triangle we saw that this line
+[02:53] here represented the amount of power
+[02:55] that the circuit was using as a total
+[02:58] and you can see here that the bigger
+[02:59] this angle gets the bigger this angle is
+[03:03] going to get and if this angle gets
+[03:04] bigger and bigger and bigger this side
+[03:06] gets longer and longer and longer and
+[03:07] the consequence of that is that we end
+[03:10] up drawing more and more current into
+[03:13] the circuit and because we draw more
+[03:15] current into the circuit the electricity
+[03:17] companies charges more for the
+[03:20] electricity that we use now not only do
+[03:23] they charge is a bit more because we're
+[03:24] using more power but because if you have
+[03:27] a very large installation and you're
+[03:30] drawing an awful lot of power from the
+[03:33] installation that installation has a
+[03:35] poor power factor that means that your
+[03:37] installation is physically pulling more
+[03:39] current into the building than it needs
+[03:42] to now because of that the electricity
+[03:45] company has to provide bigger
+[03:46] transformers bigger cutouts bigger
+[03:49] switch equipment bigger cables to feed
+[03:51] your installation and because of that
+[03:53] they don't just charge you because
+[03:55] you're using more power but they charge
+[03:57] you because you're using more current
+[03:58] than you need to you are placing strain
+[04:01] on the electrical infrastructure feeding
+[04:04] your building and that becomes costly to
+[04:07] the electricity provider and therefore
+[04:08] they find you for it they will actually
+[04:10] charge you more money so it's very much
+[04:14] within our interests to try and get the
+[04:16] current and the voltage to fall back
+[04:18] into phase with each other to make sure
+[04:20] again if we think of them as a wave
+[04:21] diagram that they are rising and falling
+[04:24] in
+[04:25] perfect synchronisation with each other
+[04:27] as much as we possibly can so that's the
+[04:31] simple explanation of power factor it's
+[04:33] a bad thing that happens it's normally
+[04:35] caused by inductive loads it causes
+[04:37] voltage and current to fall out of phase
+[04:39] with each other and when that happens we
+[04:41] draw more current into the building than
+[04:43] we need to and this results in is paying
+[04:45] higher bills for our electricity but
+[04:49] what we can do is we can actually start
+[04:51] to quantify power factor we can actually
+[04:53] start to put a number on it we can
+[04:55] measure what the value of power factor
+[04:58] will be how do we do that well remember
+[05:01] we said that power factor is an
+[05:02] indication of how far out of phase
+[05:04] voltage and current are now we can
+[05:07] represent that instead of using an angle
+[05:09] between the voltage in the current we
+[05:10] can use a different method of doing that
+[05:13] and that different method is the power
+[05:15] factor so how do we calculate it where
+[05:19] does it come from well let's have a look
+[05:21] at this we've got here three different
+[05:24] triangles that all describe what's
+[05:26] happening inside our flat and like
+[05:29] fitting and what we're seeing is that in
+[05:31] every case this angle this angle and
+[05:34] this angle are all exactly the same and
+[05:37] those three angles are the same as this
+[05:39] angle which is how far the current is
+[05:41] lagging the voltage now what we can do
+[05:44] is we can start to get an indication of
+[05:45] how far it's lagging by performing some
+[05:49] very simple calculations and what we do
+[05:51] is basically we take this side of the
+[05:54] voltage triangle VR and we divide it by
+[05:57] VT so let's start to put that down in
+[06:00] writing I'm going to pop it down here so
+[06:02] we can say that the power factor will be
+[06:07] equal to the VR this side of the
+[06:11] triangle divided by VT that side of the
+[06:14] triangle so the resistive voltage
+[06:16] divided by the total voltage so we could
+[06:18] actually calculate what the power factor
+[06:21] of our frozen light actually was however
+[06:24] because these triangles are all in
+[06:26] proportion with each other actually we
+[06:28] can calculate the power factor in other
+[06:30] ways so we could say the power factor is
+[06:32] equal to the resistance of the circuit
+[06:35] divided by the impedance of the circuit
+[06:38] so we could say that
+[06:39] power factor is also equal to resistance
+[06:42] divided by impedance and that will also
+[06:45] give us our power factor we could even
+[06:48] use this triangle and again we just used
+[06:51] this side we could say it's equal to the
+[06:53] true power in watts divided by the
+[06:55] apparent power in volt amperes so let's
+[06:57] put that down we've got the true power
+[06:59] in watts divided by the volt ampere is
+[07:04] divided by the apparent power so power
+[07:06] factor is also equal to true power over
+[07:09] apparent power now what's interesting
+[07:12] about each one of these is that actually
+[07:14] for each triangle we've taken the same
+[07:17] side and divided it by the same side
+[07:20] we've taken this bottom side here and
+[07:22] divided it by the long side up here now
+[07:25] because we're always going to have a
+[07:26] smaller number here divided by a large
+[07:28] number that means that our power factor
+[07:30] is always going to be a number somewhere
+[07:33] between 0 and 1 now that's a very
+[07:37] important kind of clue to help you with
+[07:39] your exam questions power factor is
+[07:41] always a value between 0 & 1 if you ever
+[07:43] get a power factor that is over 1 then
+[07:46] you've done something wrong with your
+[07:47] calculations so if you get an exam
+[07:49] question that's multiple choice and only
+[07:51] one of the values for power factor is
+[07:52] between 0 & 1
+[07:53] that's the 1 so we can start to
+[07:56] eliminate wrong answers quite easily
+[07:58] however what we can also do is we can
+[08:02] start to bring a little bit of
+[08:03] trigonometry into this now so if we look
+[08:05] at our triangles here here's the angle
+[08:08] that we're interested in remembering
+[08:10] that that represents how far out of
+[08:12] phase the voltage and current are so in
+[08:14] trigonometry this side has a special
+[08:17] name it is next to the angle that we're
+[08:20] interested in and therefore we can call
+[08:22] this side the adjacent so this is the
+[08:25] adjacent side the adjacent so this side
+[08:30] is the adjacent this side is also the
+[08:32] adjacent and this side is also the
+[08:34] adjacent this long side here is what we
+[08:37] call in trigonometry the hypotenuse the
+[08:41] rock there the long side
+[08:43] of the right angle triangle so every
+[08:45] time we do a calculation to find the
+[08:47] power factor of a circuit or a load we
+[08:51] are taking the adjacent side
+[08:53] and we're dividing it by the hypotenuse
+[08:55] okay we've got the adjacent are that
+[08:57] side divided by the impedance Zed the
+[09:00] hypotenuse so we've got the side next to
+[09:02] the angle divided by the long side of
+[09:05] the angle so that's what we're looking
+[09:06] at there so what that means is that
+[09:08] every single time we do this we are
+[09:11] saying that we are doing the adjacent
+[09:14] divided by the hypotenuse so the
+[09:18] adjacent divided by the hypotenuse now
+[09:20] in trigonometry if you take the adjacent
+[09:24] of a right angle triangle and divide it
+[09:26] by the hypotenuse of that triangle you
+[09:28] come up with one of the three
+[09:29] trigonometric identities and of course
+[09:33] we know that the adjacent divided by the
+[09:35] hypotenuse if you think back to your
+[09:36] school days anything saw Kat Toa that
+[09:40] you've got the cat bit in the middle
+[09:41] which means that cosine of theta is
+[09:43] equal to the adjacent divided by the
+[09:46] hypotenuse what we're actually doing
+[09:48] here is every time we're finding the
+[09:50] cosine of the angle theta and here's our
+[09:55] angle theta so can you see if we kind of
+[09:57] work our way along here we can see that
+[09:58] the power factor is equal to the cosine
+[10:02] of theta and the cosine of theta theta
+[10:06] is the angle that the current and the
+[10:09] voltage are out of phase by so that is
+[10:12] why that angle which is the same as that
+[10:14] angle that angle and angle are also
+[10:17] important because the cosine of that
+[10:20] angle tells us what the power factor is
+[10:23] now if you get your calculator and you
+[10:27] type in what is the cosine of zero it
+[10:32] will spit the answer back as being one
+[10:35] so that means that when the angle
+[10:39] between the voltage and the current is
+[10:41] zero is nothing then that means that the
+[10:45] power factor is one and that is the best
+[10:48] power factor that you can hope for so a
+[10:51] power factor of one means that the
+[10:53] current and voltage are perfectly in
+[10:54] phase and there is no leading or lagging
+[10:57] element in your circuit likewise if it
+[11:01] were possible for the voltage and
+[11:03] currents who fall completely out of
+[11:05] phase with each other
+[11:06] 90 degrees so in other words for this to
+[11:08] become a purely inductive circuit then
+[11:11] you would have a power factor of zero
+[11:13] because the cosine of 90 is zero so that
+[11:18] would be the worst possible power factor
+[11:20] that could exist so there we can see how
+[11:24] as the voltage in the current fall out
+[11:26] to phase with each other
+[11:27] it makes the power factor get gradually
+[11:30] worse and worse how do we bring them
+[11:32] back into phase and an inductive circuit
+[11:35] well if you remember in a previous video
+[11:37] in this series we saw what happened when
+[11:39] you connected a capacitor into the
+[11:41] circuit the capacitor generates
+[11:44] inductive reactance but it generates
+[11:46] inductive reactance that works in the
+[11:48] opposite direction to the inductive
+[11:51] reactance caused by the inductor and
+[11:53] that causes this side of the triangle to
+[11:56] get smaller and smaller and smaller
+[11:58] which means that ultimately the voltage
+[12:01] and the current are coming back into
+[12:03] phase with each other and when the
+[12:05] voltage and current come back in phase
+[12:06] with each other we have corrected the
+[12:09] poor power factor and that's where that
+[12:11] expression power factor correction
+[12:13] capacitor comes from so hopefully from
+[12:18] this video you started to develop your
+[12:20] understanding of power factor again that
+[12:23] simple explanation power factor is a bad
+[12:25] thing it is generally caused by
+[12:27] inductive loads and it means that the
+[12:30] voltage and the current are falling out
+[12:32] of phase with each other that causes the
+[12:34] circuit to use more current than it
+[12:35] needs to and that means that your energy
+[12:38] bills will be higher and that your
+[12:39] electricity bill will also include fines
+[12:43] by the energy company for the extra
+[12:45] current that you're drawing however the
+[12:48] good news is that the power factor can
+[12:50] be corrected by installing a capacitor
+[12:53] into the circuit which will bring the
+[12:55] voltage and current back into phase with
+[12:57] each other and getting a power factor
+[12:58] closer to one what we're going to do in
+[13:02] future videos is we're going to take all
+[13:04] the information that we've looked at in
+[13:05] the previous videos and we're going to
+[13:07] analyze a coil we're going to measure
+[13:09] some very basic things about it just
+[13:12] voltage and current and from that we are
+[13:14] going to be able to couch
+[13:15] like many many more complicated things
+[13:17] regarding that coil including its
+[13:19] inductive reactance its power factor its
+[13:22] phase angle however the voltage and
+[13:24] current are out of phase with each other
+[13:25] and lots of other things as well so for
+[13:28] this video all that remains to say is
+[13:30] thank you very much for watching
+[13:34] [Music]
+[13:47] [Music]
+[13:53] [Music]

@@ -1,0 +1,159 @@
+# Understanding Earthing Arrangements - TNCS, TT, TNS
+# https://www.youtube.com/watch?v=NdVm9JPi06U
+
+- Ah, hello there. And welcome to eFIXX Question Time with me, Joe Hammond. You caught me reading one of my favorite bits in the regulations. Part three, Earthing Arrangements. Now, I do love reading about those different arrangements and how they affect the electrical system, which actually reminds me of a question I got sent the other day from Nathan, and he asked, "Hi Joe. I'm a second-year apprentice, and I was on a job carrying out an EICR. My electrician shouted through, 'What is the earthing system?' Problem was, I couldn't remember. I know we've covered it at college but I can never remember the different types and why they're different, and why that even matters. My electrician tells me it's one of the first things you need to check on any job. Is he right? Yours gratefully, Nathan." Now, Nathan, that is a great question and your electrician is right. It's really important that we know and understand the different earthing arrangements on an installation. But what are they? Well, the most common types we have are a TN-C-S, that's Terre Neutral Combined Separate, TN-S, Terre Neutral Separate, and TT, Terre Terre. A good way to visualize these systems is to imagine the journey the cable takes from the substation, that could be the green box at the end of the street or the gray transformer on the telegraph pole, to the installation itself. So, let's start with TN-C-S systems. Now, the cable comes from the substation, underground, normally, and it has two live conductors, a line and a neutral. The neutral is connected to an earth stake at the substation, which is in turn, connected to the center point of the star transformer. And when the cable reaches the installation, an earthing conductor is connected to the neutral. In that, the earth and neutral combine. Now, that's where the C comes from. The earthing conductor then separates, that's the S. What this connection allows is what we call a fault path, whereby if in the installation a fault occurred, where the line, the neutral, or line and earth touched one another, a current will be present in the neutral or earth. Now, this current would then flow down the neutral under the ground, all the way back to the transformer where it's connected to the star point, then travel back down the line conductor all the way to the installation where it would go through the protective device and hopefully, there'll be enough current for the device to trip. We call this the earth fault loop path. Now, on a TN-S system, the earth fault loop path differs slightly, whereby the line and neutral travel from the substation and the neutral is still connected to the star point of the transformer. However, a separate earth is also provided. Normally, it's the outer sheathing of the cable. Now, this incidentally is how I remembered my earthing arrangements when I was at college, with the TN-S and the S standing for sheathing. It doesn't, it stands for separate, but that's just how I remembered it. Now, you tend to find the method of wiring on older installations, but it can be used in more specialist locations such as garage forecourts or factories, which may have their very own substation. Now, as the earth is relying on the outer sheathing of the cable and the outer sheathing of that cable is sometimes made of lead, the resistance that the fault path has to travel is slightly higher. So although it's okay, it does mean that protected devices need to be carefully selected to make sure they trip in time if a fault was to occur. Now finally, TT systems is where only a line and a neutral conductor is sent into the installation, and we have to provide our own means of earthing. Now, this is normally done with an earth rod. The neutral at the transformer is connected to the general mass of earth. However, if a fault was to occur, then that fault current has to travel through the property's earth rod through the ground into the earth's stake at the transformer, back along the line to hopefully trip the protective device. This, though, could take some time as the conditions of the ground can alter with the seasons, wet days and dry days, so we tend to provide more protection for these systems. A time-delayed RCD would be a good example of this. Now, these are not the most reliable methods which is why the maximum permitted impedances are higher, but TT systems are becoming less common now. They are still out there, but in more rural locations. Now, by knowing what our earthing arrangement is, we're able to determine what resistances are permitted on our circuit and compare these to BS 7671. Now, TN-S systems have lower resistances, therefore higher fault currents which means our protected devices can trip in time, and TN-S and TT have higher resistances, thus lower current and that could impact the tripping times. What is really important, though, is that every installation is checked and compared to appendix four of BS 7671 to ensure that the circuits conform to the maximum permitted impedances or Zs-es. Now, this is a huge area of electrical installations and there isn't enough time in this video to squeeze everything in, so be sure to check out our other videos and free CPD on the website. So, there we have it. Now, be sure to check out our other videos on this fascinating and important subject. And if you are in a bind, why not check out Gary and Richard's video on fitting the Schneider Easy9 Multi Row Compact Board. Now, that is well worth a watch. But that's it from me. If you have a question, then please feel free to drop us a line in the comments below, email, social media, or contact us at efixx.co.uk. Now, if you don't mind, I'm going to continue reading into how best to test one's earth rod. Bye-bye for now.
+
+
+[00:00] - Ah, hello there.
+[00:01] And welcome to eFIXX Question Time with me, Joe Hammond.
+[00:06] You caught me reading one of my favorite bits
+[00:08] in the regulations.
+[00:09] Part three, Earthing Arrangements.
+[00:12] Now, I do love reading about those different arrangements
+[00:15] and how they affect the electrical system,
+[00:17] which actually reminds me of a question
+[00:19] I got sent the other day from Nathan,
+[00:22] and he asked,
+[00:23] "Hi Joe. I'm a second-year apprentice,
+[00:26] and I was on a job carrying out an EICR.
+[00:28] My electrician shouted through,
+[00:30] 'What is the earthing system?'
+[00:32] Problem was, I couldn't remember.
+[00:35] I know we've covered it at college
+[00:36] but I can never remember the different types
+[00:38] and why they're different,
+[00:39] and why that even matters.
+[00:41] My electrician tells me it's one of the first things
+[00:43] you need to check on any job.
+[00:45] Is he right?
+[00:46] Yours gratefully, Nathan."
+[00:48] Now, Nathan, that is a great question
+[00:50] and your electrician is right.
+[00:51] It's really important that we know and understand
+[00:55] the different earthing arrangements on an installation.
+[00:57] But what are they?
+[00:59] Well, the most common types we have
+[01:01] are a TN-C-S, that's Terre Neutral Combined Separate,
+[01:05] TN-S, Terre Neutral Separate,
+[01:08] and TT, Terre Terre.
+[01:10] A good way to visualize these systems
+[01:11] is to imagine the journey
+[01:13] the cable takes from the substation,
+[01:15] that could be the green box at the end of the street
+[01:17] or the gray transformer on the telegraph pole,
+[01:20] to the installation itself.
+[01:22] So, let's start with TN-C-S systems.
+[01:25] Now, the cable comes from the substation,
+[01:27] underground, normally,
+[01:28] and it has two live conductors,
+[01:30] a line and a neutral.
+[01:32] The neutral is connected to an earth stake
+[01:34] at the substation,
+[01:36] which is in turn,
+[01:37] connected to the center point of the star transformer.
+[01:40] And when the cable reaches the installation,
+[01:42] an earthing conductor is connected to the neutral.
+[01:46] In that, the earth and neutral combine.
+[01:49] Now, that's where the C comes from.
+[01:51] The earthing conductor then separates, that's the S.
+[01:54] What this connection allows is what we call a fault path,
+[01:58] whereby if in the installation a fault occurred,
+[02:01] where the line, the neutral,
+[02:03] or line and earth touched one another,
+[02:05] a current will be present in the neutral or earth.
+[02:08] Now, this current would then flow down the neutral
+[02:10] under the ground,
+[02:12] all the way back to the transformer
+[02:13] where it's connected to the star point,
+[02:16] then travel back down the line conductor
+[02:19] all the way to the installation
+[02:20] where it would go through the protective device
+[02:23] and hopefully,
+[02:24] there'll be enough current for the device to trip.
+[02:27] We call this the earth fault loop path.
+[02:30] Now, on a TN-S system,
+[02:32] the earth fault loop path differs slightly,
+[02:34] whereby the line and neutral travel from the substation
+[02:37] and the neutral is still connected
+[02:39] to the star point of the transformer.
+[02:42] However, a separate earth is also provided.
+[02:45] Normally, it's the outer sheathing of the cable.
+[02:48] Now, this incidentally
+[02:49] is how I remembered my earthing arrangements
+[02:51] when I was at college,
+[02:52] with the TN-S and the S standing for sheathing.
+[02:56] It doesn't, it stands for separate,
+[02:58] but that's just how I remembered it.
+[03:00] Now, you tend to find the method of wiring
+[03:02] on older installations,
+[03:03] but it can be used in more specialist locations
+[03:06] such as garage forecourts or factories,
+[03:08] which may have their very own substation.
+[03:10] Now, as the earth is relying
+[03:11] on the outer sheathing of the cable
+[03:14] and the outer sheathing of that cable
+[03:16] is sometimes made of lead,
+[03:18] the resistance that the fault path has to travel
+[03:20] is slightly higher.
+[03:21] So although it's okay,
+[03:23] it does mean that protected devices
+[03:25] need to be carefully selected
+[03:27] to make sure they trip in time
+[03:28] if a fault was to occur.
+[03:31] Now finally, TT systems
+[03:34] is where only a line and a neutral conductor
+[03:37] is sent into the installation,
+[03:40] and we have to provide our own means of earthing.
+[03:43] Now, this is normally done with an earth rod.
+[03:46] The neutral at the transformer
+[03:47] is connected to the general mass of earth.
+[03:49] However, if a fault was to occur,
+[03:51] then that fault current has to travel
+[03:53] through the property's earth rod through the ground
+[03:57] into the earth's stake at the transformer,
+[04:00] back along the line to hopefully trip the protective device.
+[04:04] This, though, could take some time
+[04:06] as the conditions of the ground can alter with the seasons,
+[04:09] wet days and dry days,
+[04:10] so we tend to provide more protection for these systems.
+[04:14] A time-delayed RCD would be a good example of this.
+[04:17] Now, these are not the most reliable methods
+[04:20] which is why the maximum permitted impedances are higher,
+[04:24] but TT systems are becoming less common now.
+[04:28] They are still out there, but in more rural locations.
+[04:32] Now, by knowing what our earthing arrangement is,
+[04:34] we're able to determine what resistances
+[04:36] are permitted on our circuit
+[04:38] and compare these to BS 7671.
+[04:42] Now, TN-S systems have lower resistances,
+[04:44] therefore higher fault currents
+[04:46] which means our protected devices can trip in time,
+[04:49] and TN-S and TT have higher resistances,
+[04:53] thus lower current and that could impact the tripping times.
+[04:57] What is really important, though,
+[04:59] is that every installation is checked and compared
+[05:03] to appendix four of BS 7671
+[05:06] to ensure that the circuits conform
+[05:08] to the maximum permitted impedances or Zs-es.
+[05:12] Now, this is a huge area of electrical installations
+[05:15] and there isn't enough time in this video
+[05:17] to squeeze everything in,
+[05:19] so be sure to check out our other videos
+[05:21] and free CPD on the website.
+[05:24] So, there we have it.
+[05:25] Now, be sure to check out our other videos
+[05:27] on this fascinating and important subject.
+[05:29] And if you are in a bind,
+[05:31] why not check out Gary and Richard's video
+[05:33] on fitting the Schneider Easy9 Multi Row Compact Board.
+[05:36] Now, that is well worth a watch.
+[05:38] But that's it from me.
+[05:39] If you have a question,
+[05:40] then please feel free to drop us a line
+[05:42] in the comments below,
+[05:43] email, social media,
+[05:45] or contact us at efixx.co.uk.
+[05:49] Now, if you don't mind,
+[05:51] I'm going to continue reading
+[05:52] into how best to test one's earth rod.
+[05:57] Bye-bye for now.

@@ -77,6 +77,7 @@ type LearnerState = {
   studyMinutesByDate: Record<string, number>;
   weeklyGoalMinutes: number;
   autoNextEnabled: boolean;
+  freeBrowseEnabled: boolean;
   reviewBeforeNext: boolean;
   flashcardProgress: FlashcardLearningState;
   lessonQuizBestScores: Record<string, number>;
@@ -128,6 +129,7 @@ const initialLearnerState: LearnerState = {
   studyMinutesByDate: {},
   weeklyGoalMinutes: 180,
   autoNextEnabled: true,
+  freeBrowseEnabled: false,
   reviewBeforeNext: true,
   flashcardProgress: {},
   lessonQuizBestScores: {},
@@ -199,6 +201,7 @@ function clampState(value: unknown): LearnerState {
     weeklyGoalMinutes: typeof input.weeklyGoalMinutes === 'number'
       ? Math.max(30, Math.min(1200, Math.round(input.weeklyGoalMinutes))) : 180,
     autoNextEnabled: typeof input.autoNextEnabled === 'boolean' ? input.autoNextEnabled : true,
+    freeBrowseEnabled: input.freeBrowseEnabled === true,
     reviewBeforeNext: typeof input.reviewBeforeNext === 'boolean' ? input.reviewBeforeNext : true,
     flashcardProgress,
     lessonQuizBestScores,
@@ -394,7 +397,7 @@ export default function CourseApp() {
   autoAdvanceRef.current = (fromLessonId, nextLessonId) => {
     if (learner.activeLessonId !== fromLessonId) return;
     const checkpoint = checkpointAfterLesson.get(fromLessonId);
-    if (checkpoint && !learner.completedCheckpointIds.includes(checkpoint.id)) {
+    if (!learner.freeBrowseEnabled && checkpoint && !learner.completedCheckpointIds.includes(checkpoint.id)) {
       pendingAutoNextRef.current=null;
       autoNextStateRef.current=null;
       setAutoNextState(null);
@@ -520,7 +523,7 @@ export default function CourseApp() {
     if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
       nextState = { ...nextState, activeLessonId: hashId };
     }
-    const blocker = checkpointBeforeLesson(nextState.activeLessonId,nextState.completedCheckpointIds);
+    const blocker = nextState.freeBrowseEnabled ? undefined : checkpointBeforeLesson(nextState.activeLessonId,nextState.completedCheckpointIds);
     if(blocker){
       const watched=new Set(nextState.completedLessonIds);
       const missingLessonId=blocker.lessonIds.find((lessonId)=>!watched.has(lessonId));
@@ -833,13 +836,14 @@ export default function CourseApp() {
   const startCheckpoint = (checkpointId: string) => {
     const targetIndex=assessmentBank.checkpointList.findIndex((checkpoint)=>checkpoint.id===checkpointId);
     if(targetIndex<0)return;
+    if(learner.freeBrowseEnabled){resolveCheckpoint(assessmentBank.checkpointList[targetIndex]);return;}
     const passed=new Set(learner.completedCheckpointIds);
     const required=assessmentBank.checkpointList.slice(0,targetIndex+1).find((checkpoint)=>!passed.has(checkpoint.id));
     resolveCheckpoint(required??assessmentBank.checkpointList[targetIndex]);
   };
 
   const chooseLesson = (lessonId: string) => {
-    const blocker=checkpointBeforeLesson(lessonId,learner.completedCheckpointIds);
+    const blocker=learner.freeBrowseEnabled ? undefined : checkpointBeforeLesson(lessonId,learner.completedCheckpointIds);
     if(blocker){
       resolveCheckpoint(blocker);
       if(blocker.lessonIds.every((id)=>completed.has(id)))setToast(`Pass “${blocker.title}” to unlock the next lesson group.`);
@@ -849,6 +853,7 @@ export default function CourseApp() {
   };
 
   const chooseModule = (module: CourseModule) => {
+    if(learner.freeBrowseEnabled){loadLesson(module.lessons.find((lesson)=>!completed.has(lesson.id))?.id??module.lessons[0].id);return;}
     for(const lesson of module.lessons){
       if(!completed.has(lesson.id)){chooseLesson(lesson.id);return;}
       const checkpoint=checkpointAfterLesson.get(lesson.id);
@@ -972,7 +977,7 @@ export default function CourseApp() {
   };
 
   const continueAfterLessonAssessment = () => {
-    if(activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)){
+    if(!learner.freeBrowseEnabled&&activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)){
       startCheckpoint(activeBoundaryCheckpoint.id);
       return;
     }
@@ -1019,6 +1024,21 @@ export default function CourseApp() {
 
   const resetProgress = () => { setLearner(initialLearnerState); setActiveCheckpointId(null); setStorageBlocked(false); setReviewSession([]); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
   const moduleCompletedCount = (module: CourseModule) => module.lessons.filter((lesson) => completed.has(lesson.id)).length;
+
+  const browsingControls = (
+    <section className="browsing-controls" aria-label="Learning navigation">
+      <button type="button" className="settings-switch" role="switch" aria-checked={learner.freeBrowseEnabled} onClick={() => {
+        cancelAutoNext(false);
+        setLearner((current) => ({...current, freeBrowseEnabled: !current.freeBrowseEnabled, updatedAt: new Date().toISOString()}));
+        setToast(learner.freeBrowseEnabled ? 'Guided sequence restored. Your progress is unchanged.' : 'Browse any video. Skipped work stays incomplete.');
+      }}>
+        <SkipForward size={19}/><span><strong>Browse freely</strong><small>{learner.freeBrowseEnabled ? 'On · Open any module or video' : 'Off · Follow the guided sequence'}</small></span>
+        <span className={`switch-track ${learner.freeBrowseEnabled ? 'on' : ''}`} aria-hidden="true"><i/></span>
+      </button>
+      <p>Opening a lesson never marks it complete. Checkpoints still require their own lesson group and a passing score.</p>
+      {nextRequiredItem && <button type="button" className="resume-unfinished" onClick={() => nextRequiredItem.kind === 'lesson' ? chooseLesson(nextRequiredItem.lesson.id) : startCheckpoint(nextRequiredItem.checkpoint.id)}><RotateCcw size={16}/> Resume unfinished work</button>}
+    </section>
+  );
 
   return (
     <div className="app-shell">
@@ -1091,6 +1111,7 @@ export default function CourseApp() {
               <section className="home-course">
                 <div className="home-primary-column">
                   <div className="section-heading compact"><div><h2>Course modules</h2></div></div>
+                  {browsingControls}
                   <div className="module-card-grid">
                     {course.modules.map((module) => {
                       const tracking=moduleTracking(module);
@@ -1106,6 +1127,7 @@ export default function CourseApp() {
             <div className="learn-page">
               <aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
                 <div className="drawer-heading"><div><span className="eyebrow neutral">Video course</span><h2>Course map</h2></div><button type="button" onClick={() => setModuleDrawerOpen(false)} aria-label="Close course map"><X size={21} /></button></div>
+                {browsingControls}
                 <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required items</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>
                 <nav>
                   {course.modules.map((module) => {
@@ -1118,7 +1140,7 @@ export default function CourseApp() {
                         </button>
                         {isOpen && <div className="accordion-lessons">{module.lessons.flatMap((lesson) => {
                           const checkpoint=checkpointAfterLesson.get(lesson.id);
-                          const lessonLocked=Boolean(checkpointBeforeLesson(lesson.id,learner.completedCheckpointIds));
+                          const lessonLocked=!learner.freeBrowseEnabled&&Boolean(checkpointBeforeLesson(lesson.id,learner.completedCheckpointIds));
                           const lessonRecord=learner.quizRecords[quizRecordId('lesson',lesson.id)];
                           const latestLessonScore=quizPercentage(lessonRecord);
                           const rows=[<button type="button" key={lesson.id} className={`${activeLesson.id===lesson.id&&!activeCheckpoint?'active ':''}${lessonLocked?'locked':''}`} onClick={()=>chooseLesson(lesson.id)}>{lessonLocked?<LockKeyhole size={16}/>:completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lesson.duration} · {lesson.instructor}</small></span>{(bookmarked.has(lesson.id)||latestLessonScore!==undefined)&&<div className="lesson-row-state">{latestLessonScore!==undefined&&<span className={`quiz-score-chip ${latestLessonScore>=80?'passed':'review'}`}>Q {latestLessonScore}%</span>}{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
@@ -1228,7 +1250,8 @@ export default function CourseApp() {
 
 
                 </div>
-                {activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)?<footer className="lesson-next-card checkpoint-next"><div><span>Required next</span><h3>Checkpoint {activeBoundaryCheckpoint.number}: {activeBoundaryCheckpoint.title}</h3><small>{activeBoundaryCheckpoint.questions.length} cumulative questions · 80% to continue</small></div><button type="button" onClick={()=>startCheckpoint(activeBoundaryCheckpoint.id)}>Start checkpoint <ArrowRight size={18}/></button></footer>:<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'Course complete'}</span><h3>{activeNextLesson?.title??'All video lessons complete'}</h3></div><button type="button" onClick={()=>goRelative(1)} disabled={!activeNextLesson}>Continue <ArrowRight size={18}/></button></footer>}
+                {activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)&&<footer className="lesson-next-card checkpoint-next"><div><span>{learner.freeBrowseEnabled?'Checkpoint still unfinished':'Required next'}</span><h3>Checkpoint {activeBoundaryCheckpoint.number}: {activeBoundaryCheckpoint.title}</h3><small>{activeBoundaryCheckpoint.questions.length} cumulative questions · 80% to pass</small></div><button type="button" onClick={()=>startCheckpoint(activeBoundaryCheckpoint.id)}>Start checkpoint <ArrowRight size={18}/></button></footer>}
+                {(learner.freeBrowseEnabled||!activeBoundaryCheckpoint||learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id))&&<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'End of video sequence'}</span><h3>{activeNextLesson?.title??'Check your progress for unfinished work'}</h3></div><button type="button" onClick={()=>activeNextLesson?goRelative(1):navigate('progress')}>{activeNextLesson?'Continue':'View progress'} <ArrowRight size={18}/></button></footer>}
               </article>}
             </div>
           )}

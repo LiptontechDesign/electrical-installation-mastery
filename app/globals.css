@@ -1141,3 +1141,12 @@ kbd {
 .phase-order i { font-style: normal; }
 .connection-exercise button { min-height: 44px; padding: 10px 14px; border-radius: 8px; background: #476b52; color: white; font-weight: 600; }
 .connection-authorities { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px !important; }
+
+.browsing-controls { padding: 14px; margin-bottom: 16px; border: 1px solid #d9dfda; border-radius: 12px; background: #f4f7f3; }
+.browsing-controls .settings-switch { display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; }
+.browsing-controls .settings-switch > span:first-of-type { flex: 1; min-width: 0; }
+.browsing-controls strong, .browsing-controls small { display: block; }
+.browsing-controls small, .browsing-controls p { font-size: 12px; line-height: 1.5; color: #526057; }
+.browsing-controls p { margin: 10px 0; }
+.browsing-controls .switch-track { flex-shrink: 0; }
+.resume-unfinished { display: flex; align-items: center; gap: 8px; min-height: 40px; color: #34583e; font-size: 13px; font-weight: 600; text-align: left; }

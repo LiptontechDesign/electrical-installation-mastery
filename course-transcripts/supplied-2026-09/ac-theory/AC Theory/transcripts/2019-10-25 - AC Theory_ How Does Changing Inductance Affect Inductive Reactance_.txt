@@ -1,0 +1,223 @@
+# AC Theory: How Does Changing Inductance Affect Inductive Reactance?
+# https://www.youtube.com/watch?v=Cp9dV_mkjVM
+
+[Music] hello and welcome to this electrical principals training video in this video we're continuing our research into AC theory and in particular the nature of inductive reactance now remember that is the opposition to current flow that is created by a coil when connected to an AC supply in the previous video in this series we looked at how changing the frequency applied to the coil changed the inductive reactance or opposition to current flow inside that circuit what we're going to do in this video is we're going to look at what happens when we vary the inductance of the coil and how that affects inductive reactance or the opposition to current flow in the circuit what we're then going to do is we're going to tie all the information that we've seen in the previous video and in this video together to give us a really important mathematical formula that we're going to be using in an awful lot of our electrical science and it's a really important formula to take into your exams with you to have in your head so that you know how to apply it when you get into the exam so stay tuned until that point in the video let's get started so just to recap we saw in the previous video that an increase in frequency has led to a reduction in current and if current is reducing the opposition to current flow must be increasing so we can see that clear relationship in an inductive circuit if we increase frequency we increase the opposition to current flow so now we're going to swap out our inductive load for another inductive load so again although the chances of getting any kind of shock from this are absolutely minimal we'll always make sure we work in as safely as we can so I've now taken out the 47 million revalue and I've put in a two hundred milli Henry value of inductor so this has a higher value of inductance and all that means is that it is better at inducing current back inside itself now that's an important point because that will hopefully help you to understand what happens to the opposition to current flow when we power this back up again so remember we have increased the inductance therefore this inductor is better at inducing current back in itself than this inductor was so let's just think about it when I put the power back onto the circuit what do you think is going to happen to our current flow let's find out so we've got our circuit back on I'll switch our multimeter back on so that's interesting can you see now what's happened to the current the current has dropped so again let's work through that relationship we've increased the amount of inductance that has decreased the current flow and we know from Ohm's law that if you decrease current you must have increased the opposition to current flow so therefore by increasing the inductance we have increased the opposition to current flow and just to reiterate the point again what's going to happen to the opposition to current flow as we increase the frequency let's increase the frequency so now we're at somewhere around a hundred Hertz and you can see there that the current flow is just starting to drop down a little bit so as we're increasing frequency we're reducing current so we must be increasing opposition to current flow let's go to a much bigger value and you can see that once again the current flow has dropped right down again so we've got those two very clear relationships in mind in an inductive circuit if you increase frequency you increase the opposition to current flow if you increase the inductance of the circuit you also increase the opposition to current flow so at this point in the video what we need to do is we need to bring all this information together to create a new mathematical formula and this is what we're going to record in our box on our worksheet so the formula looks something like this I'm going to give you the formula and then we'll break it down and look at the different things that are in it the formula is XL is equal to 2 pi FL now we've got a few different things in there a couple of which we haven't actually mentioned yet so we'll talk about what those mean momentarily first things first the symbol at start Excel you'll notice it's a capital X and a capital L but the L is in the subscript and XL represents inductive reactance the X is reactants the L indicates that it is inductive reactants we've then got this new part that we've just brought in seemingly out of nowhere 2 pi now we know that pi is a mathematical constant and actually 2 pi is a very important mathematical constant and if you think back to perhaps your school days when you were looking into information about circles that value of 2 pi might seem quite familiar to you because it's actually the way that you find the circumference of a circle 2 PI R so that mathematical constant 2 pi you might be thinking well that's ok 4 circles what has it got to do with AC electricity well if you think back to the previous couple of videos in this series when we were looking at how AC waveforms are generated we saw that an AC waveform is generated by turning under in a circular motion inside a generator and therefore we need to have that 2pi piece of information to represent one complete revolution one run around the circumference if you like of an AC waveform so in this formula that will always be the same you will always simply have 2pi as the mathematical constant we then come on to the letter F you'll notice it's a lowercase F which hopefully by this point we know represents frequency frequency of course is measured in hertz and we give it the unit symbol H Z and then finally we've got the mathematical symbol capital L we know that that stands for inductance and we know that inductance is measured in henries and we give it the mathematical symbol H now we've brought this formula into play but as always I think it's really important to get under the skin of the formula to try and think about exactly what it means the reason that the formula looks like this XL equals two times pi times F times L is very simply because of the relationship that we saw in our experiment we saw that if you increase frequency you increase the opposition to current flow therefore the frequency F is a multiplier we also show that if you increase inductance how good the coil is generating electricity back inside itself we increase the opposition to current flow so therefore the inductance L must also be a multiplier just as a personal point I hope everybody is seeing the value of these excellent electronics kits from matrix TSL they helped to bring math mathematical and electrical science to life in a way that is very very difficult without very specific components to do that so once again we highly rate these pieces of kit we think they're very valuable for learning and we hope that through the course of the videos that I've been creating it really helps you to to understand that so in this video we've seen some really really important information we've seen the things that contribute to inductive reactance remember that's the opposite into current flow created by an inductor so now we can fill in this box in our worksheet and we're gonna put in the formula of the things that contribute to inductive reactants and it looks like this XL bow an in mind that the L is capital but in the subscript is equal to two times pi times F times L where F is the frequency of the AC waveform and the capital L is the inductance of the coil that we've connected up so that formula is really really important and you may be expected to do some calculations with that in your exam so try and get that down on a formula sheet get it into your memory so when you sit your exam you've got it there ready to go remember if we increase the frequency in an AC circuit it increases the inductive reactance in other words it makes it harder for current to flow and if we increase the inductance in the coil if we increase L it will also increase inductive reactance thereby making it harder for current to flow around the circuit thank you very much for watching [Music] [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're continuing our research into AC
+[00:15] theory and in particular the nature of
+[00:17] inductive reactance now remember that is
+[00:20] the opposition to current flow that is
+[00:22] created by a coil when connected to an
+[00:25] AC supply in the previous video in this
+[00:27] series we looked at how changing the
+[00:29] frequency applied to the coil changed
+[00:32] the inductive reactance
+[00:34] or opposition to current flow inside
+[00:36] that circuit what we're going to do in
+[00:38] this video is we're going to look at
+[00:40] what happens when we vary the inductance
+[00:42] of the coil and how that affects
+[00:44] inductive reactance or the opposition to
+[00:47] current flow in the circuit what we're
+[00:50] then going to do is we're going to tie
+[00:52] all the information that we've seen in
+[00:53] the previous video and in this video
+[00:55] together to give us a really important
+[00:57] mathematical formula that we're going to
+[00:59] be using in an awful lot of our
+[01:01] electrical science and it's a really
+[01:03] important formula to take into
+[01:05] your exams with you to have in your head
+[01:06] so that you know how to apply it when
+[01:08] you get into the exam so stay tuned
+[01:10] until that point in the video let's get
+[01:13] started
+[01:15] so just to recap we saw in the previous
+[01:17] video that an increase in frequency has
+[01:21] led to a reduction in current and if
+[01:24] current is reducing the opposition to
+[01:27] current flow must be increasing so we
+[01:30] can see that clear relationship in an
+[01:33] inductive circuit if we increase
+[01:35] frequency we increase the opposition to
+[01:38] current flow so now we're going to swap
+[01:42] out our inductive load for another
+[01:44] inductive load so again although the
+[01:47] chances of getting any kind of shock
+[01:48] from this are absolutely minimal we'll
+[01:52] always make sure we work in as safely as
+[01:54] we can so I've now taken out the 47
+[01:56] million revalue and I've put in a two
+[01:58] hundred milli Henry value of inductor so
+[02:01] this has a higher value of inductance
+[02:03] and all that means is that it is better
+[02:05] at inducing current back inside itself
+[02:08] now that's an important point because
+[02:10] that will hopefully help you to
+[02:12] understand what happens to the
+[02:14] opposition to current flow when we power
+[02:15] this back up again so remember we have
+[02:18] increased the inductance therefore this
+[02:21] inductor is better at inducing current
+[02:24] back in itself than this inductor was so
+[02:28] let's just think about it when I put the
+[02:29] power back onto the circuit what do you
+[02:31] think is going to happen to our current
+[02:33] flow let's find out so we've got our
+[02:39] circuit back on I'll switch our
+[02:41] multimeter back on so that's interesting
+[02:44] can you see now what's happened to the
+[02:46] current the current has dropped so again
+[02:49] let's work through that relationship
+[02:50] we've increased the amount of inductance
+[02:53] that has decreased the current flow and
+[02:57] we know from Ohm's law that if you
+[02:59] decrease current you must have increased
+[03:01] the opposition to current flow so
+[03:05] therefore by increasing the inductance
+[03:08] we have increased the opposition to
+[03:11] current flow and just to reiterate the
+[03:14] point again what's going to happen to
+[03:16] the opposition to current flow as we
+[03:18] increase the frequency let's increase
+[03:21] the frequency so now we're at somewhere
+[03:25] around
+[03:26] a hundred Hertz and you can see there
+[03:28] that the current flow is just starting
+[03:31] to drop down a little bit so as we're
+[03:33] increasing frequency we're reducing
+[03:35] current so we must be increasing
+[03:37] opposition to current flow let's go to a
+[03:40] much bigger value and you can see that
+[03:42] once again the current flow has dropped
+[03:44] right down again so we've got those two
+[03:46] very clear relationships in mind in an
+[03:50] inductive circuit if you increase
+[03:52] frequency you increase the opposition to
+[03:54] current flow if you increase the
+[03:58] inductance of the circuit you also
+[04:01] increase the opposition to current flow
+[04:06] so at this point in the video what we
+[04:08] need to do is we need to bring all this
+[04:09] information together to create a new
+[04:11] mathematical formula and this is what
+[04:13] we're going to record in our box on our
+[04:15] worksheet so the formula looks something
+[04:18] like this I'm going to give you the
+[04:20] formula and then we'll break it down and
+[04:21] look at the different things that are in
+[04:22] it the formula is XL is equal to 2 pi FL
+[04:27] now we've got a few different things in
+[04:30] there a couple of which we haven't
+[04:31] actually mentioned yet so we'll talk
+[04:32] about what those mean momentarily first
+[04:35] things first the symbol at start Excel
+[04:38] you'll notice it's a capital X and a
+[04:39] capital L but the L is in the subscript
+[04:42] and XL represents inductive reactance
+[04:46] the X is reactants the L indicates that
+[04:48] it is inductive reactants
+[04:53] we've then got this new part that we've
+[04:55] just brought in seemingly out of nowhere
+[04:57] 2 pi now we know that pi is a
+[05:01] mathematical constant and actually 2 pi
+[05:03] is a very important mathematical
+[05:04] constant and if you think back to
+[05:07] perhaps your school days when you were
+[05:09] looking into information about circles
+[05:11] that value of 2 pi might seem quite
+[05:13] familiar to you because it's actually
+[05:14] the way that you find the circumference
+[05:16] of a circle 2 PI R so that mathematical
+[05:20] constant 2 pi you might be thinking well
+[05:22] that's ok 4 circles what has it got to
+[05:24] do with AC electricity well if you think
+[05:27] back to the previous couple of videos in
+[05:30] this series when we were looking at how
+[05:31] AC waveforms are generated we saw that
+[05:34] an AC waveform is generated by turning
+[05:37] under in a circular motion inside a generator
+[05:41] and therefore we need to have that 2pi
+[05:44] piece of information to represent one
+[05:47] complete revolution one run around the
+[05:49] circumference if you like of an AC
+[05:52] waveform so in this formula that will
+[05:55] always be the same you will always
+[05:57] simply have 2pi as the mathematical
+[06:00] constant we then come on to the letter F
+[06:03] you'll notice it's a lowercase F which
+[06:05] hopefully by this point we know
+[06:07] represents frequency frequency of course
+[06:10] is measured in hertz and we give it the
+[06:12] unit symbol H Z and then finally we've
+[06:17] got the mathematical symbol capital L we
+[06:20] know that that stands for inductance and
+[06:22] we know that inductance is measured in
+[06:24] henries and we give it the mathematical
+[06:27] symbol H now we've brought this formula
+[06:31] into play but as always I think it's
+[06:32] really important to get under the skin
+[06:34] of the formula to try and think about
+[06:36] exactly what it means the reason that
+[06:38] the formula looks like this XL equals
+[06:40] two times pi times F times L is very
+[06:44] simply because of the relationship that
+[06:45] we saw in our experiment we saw that if
+[06:48] you increase frequency you increase the
+[06:51] opposition to current flow therefore the
+[06:54] frequency F is a multiplier we also show
+[06:58] that if you increase inductance how good
+[07:01] the coil is generating electricity back
+[07:03] inside itself we increase the opposition
+[07:07] to current flow so therefore the inductance L must also
+[07:11] be a multiplier just as a personal point
+[07:16] I hope everybody is seeing the value of
+[07:18] these excellent electronics kits from
+[07:20] matrix TSL they helped to bring math
+[07:22] mathematical and electrical science to
+[07:25] life in a way that is very very
+[07:26] difficult without very specific
+[07:28] components to do that so once again we
+[07:31] highly rate these pieces of kit we think
+[07:33] they're very valuable for learning and
+[07:35] we hope that through the course of the
+[07:36] videos that I've been creating it really
+[07:38] helps you to to understand that so in
+[07:42] this video we've seen some really really
+[07:45] important information we've seen the
+[07:46] things that contribute to inductive
+[07:49] reactance remember that's the opposite
+[07:51] into current flow created by an inductor
+[07:54] so now we can fill in this box in our
+[07:57] worksheet and we're gonna put in the
+[07:59] formula of the things that contribute to
+[08:01] inductive reactants and it looks like
+[08:02] this XL bow an in mind that the L is
+[08:05] capital but in the subscript is equal to
+[08:08] two times pi times F times L where F is
+[08:13] the frequency of the AC waveform and the
+[08:16] capital L is the inductance of the coil
+[08:20] that we've connected up so that formula
+[08:22] is really really important and you may
+[08:24] be expected to do some calculations with
+[08:26] that in your exam so try and get that
+[08:29] down on a formula sheet get it into your
+[08:31] memory so when you sit your exam you've
+[08:33] got it there ready to go
+[08:34] remember if we increase the frequency in
+[08:37] an AC circuit it increases the inductive
+[08:40] reactance in other words it makes it
+[08:42] harder for current to flow and if we
+[08:44] increase the inductance in the coil if
+[08:47] we increase L it will also increase
+[08:49] inductive reactance thereby making it
+[08:52] harder for current to flow around the
+[08:54] circuit thank you very much for watching
+[08:59] [Music]
+[09:12] [Music]
+[09:32] [Music]
+[09:40] [Music]

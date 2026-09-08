@@ -1,0 +1,115 @@
+# Testing for External Earth Fault Loop Impedance (Ze) When You Have a Main Earthing Terminal (MET)
+# https://www.youtube.com/watch?v=nz3scSSg3ZU
+
+This video is all about reminding you to remove parallel earth path when testing for AM2S we've got a three-phase supply we've got our three cut out fuses our neutral and earth link together our earthing arrangement for this system is TN-C-S removing parallel earth paths for your true value of external earth fault loop impedance in this case would require us to remove the left-hand conductor and test between that disconnected conductor and L1 L2 and L3 and record the highest reading there is a link on this one special MET where you could remove the link because on the right hand side you have a conductor going to the bonded steel framework of the building and the other one goes into the distribution board i'm going to show you the very end of this presentation now Matt carried out his external earth fault loop impedance test where he didn't have an MET but it's likely you will have an MET AM2 or AM2S so it's about removing the parallel path and testing the true value of the external earth fault loop impedance to do that you'll need to disconnect in this case the conductor on the left hand side and test between that disconnected removing the parallel earth paths and L1 L2 and L3 and recording that reading as the highest one of those readings as your true value for Ze external earth fault loop impedance i'll show you in a minute some drawings of how this would happen before Matt shows you the physical test but it's the MET that's important look at your installation if you have an MET you need to remove those parallel earth paths when carrying out safely your external earth fault loop impedance test so let's break down what we could have at AM2 AM2S AM2E main supply on the left-hand side TN-C-S TN-S earthing arrangement whatever it is and we've got an MET now in the video i'm going to show you at the end of this one Matt didn't have an MET he had all the bonding conductors and the earthing conductor and within the distribution board we can see there metallic water metallic gas it might be metallic structure of the building offering parallel earth paths so removing the earthing conductor within the distribution board wouldn't remove those parallel earth paths so you're going to have to remove it from somewhere else before doing our external earth fault loop impedance exactly the same rules apply turn off the supply notify people and all the other stuff that we have to do but it's removing those parallel earth paths i want to concentrate on in this video so what we've got now is we've zoomed in to the MET the main earth terminal and you can see there the bottom conductor coming in from the left-hand side brings the earth in from the supply source and a single earthing conductor then into the distribution board and our bonding conductors are on the right hand side in this case going off to gas and water that are metallic incoming therefore offering a parallel earth path because they'll be connected to the greater mass of earth being a metallic water pipe and a metallic gas pipe so you have to remove those parallel earth parts for a true Ze reading to do that you disconnect the 16 mm whatever size it is earth in conductor as i've shown there which is the incoming one from the main supply with that disconnected remembering the board needs to be isolated etcetera before disconnecting it we can now test from the disconnected earthing conductor possibly 16 mm or greater to the board itself's individual lines to get our true external earth fault loop impedance by removing it from the MET you remove the parallel earth paths created by the metallic water gas structure the building etc let's see that test i've connected on to my disconnected earthing conductor and L1 and i would perform my earth fault loop impedance test and remember the reading i would then move it on to L2 and repeat the test again remember this is at the bottom of the main switch with the board isolated so it's the only live part within the board and i would remember that reading so i would test between the earthing conductor L2 as an external earth fault loop impedance remember the reading before i move on and test L3 L3 now my disconnected earth and conductor are tested and i remember the highest of those three readings and the highest reading would be recorded as my Ze value my external earth fault loop impedance of this distribution board and you note all parallel earth paths are removed because the earthing conductor was removed from the MET we're now going to watch Matt perform the external earth fault loop impedance test on a three-phase distribution board where the earthing conductor and bonding were all within the distribution board but remember to look at your AM2 or AM2S rig to see if there was an MET there a main earth in terminal if there was you're going to need to perform the test as i've just described this is a real treat for the channel we're back out with big sexy Matt O'Dell and we're going to try today to go through some of those tests that are going to be required for AM2 and AM2S and which one you're going to pick out first that we'll have a go at so in particular we've got three phase board so we can do the um earth fault loop impedance yes external uh following and then the PFC yeah so that they're really crucial for AM2S AM2 and well if AM2E if you're doing the experience route as well and we're going to make sure that we don't miss out apart especially now we've got a three-phase board because often at colleges they're working on single-phase installations aren't they yes yeah so it's a three-phase experience and maybe our learners don't always get the the hands-on experience with yeah so we've got permission in order to isolate the supply here we're going to go through it in the correct process which means we're going to knock off first of all the breakers before doing the main switch we're going to remove the cover and then we're going to show first of all external earth fault loop impedance and then prospective fault currents yes okay so you're not some breakers off then for me okay and so we've got the single phase breakers here so we'll start turning those off and so you can start seeing some lights go off yeah i'll just show that because we're working in the world's most terriblest place aren't we today look at that okay so yeah whip some off so just do a single phase so the lighting's just gone off in here you want them to stay on just for now no no we'll turn everything off we'll do it properly and so then we've got our three phase breakers so that's a blower a compressor okay a three-phase supply to another board there to the office board we've turned off a lot of the local loads as well so we're not actually got loads of stuff on full load on for the breakers and then obviously we can do that and so that looks like all the loads have been taken off yeah and we're going to do the main switch off here now it's quite happy just to turn the main switch off okay so we're going to get the cover off and we'll look at doing these tests described at the start of the video okay so the board's off the cover's off and we're now going to carry out the external earth fault loop impedance just remind me why i'm going to disconnect the earthing conductor which is here okay so yes this is the main earthing conductor so if we was not to disconnect it then we'd be having a problem with parallel earth paths via like the extraneous conductive parts through the bonding and stuff like that so we want to know the external earth loop impedance and so by removing this earth that is just the external nothing internal okay and we've got another thing range and i said of TN-C-S so what's the maximum reading for that for the external on a PME or TN-C-S it's 0.35 ohms okay okay so earthing conductors out we're just going to drop this off so yeah we've got the earth out still care because obviously the bottom side of this is live there is no remote isolator here you might find an AM2 AM2S there might be another isolator that you can actually turn this off before removing it but we're in the real world here so they're now live at the bottom of that switch and it's red yellow blue and not brown black grey and we're going to set up our instrument now in order to carry out that external fault loop impedance so we've set our megger MFT 1730 up to L-PE and you're going to do it on the three lead low and that's what you've selected to do on we could have done it on high because there's no rcds but you think that this would probably be the standard practice to get used to matt is that right when we've got so many uh rcds around um that we go for the low settings okay yeah right okay you want to probe on for me so we can see the okay so we've got some exposed disconnected earth there so we get a good get a nice good connection onto there and then we've got the neutral terminal here and then we've got our three phases there so let's just move that one out of the way so again it's an automatic test so go on to the neutral terminal first and then we'll just probe on to the first line conductor and as you can see there the machine is automatically detected voltage and it takes a few seconds because we're on the low uh one yep just fine so persevere and wait for our result so as you can see there 0.08 that's it we're finished pack up and we're ready to go is that right matt no so that's on one of the phases so obviously there's three phases so we'll just repeat that same process on the next phase so again because we're going between neutral and the phase it's detecting a single phase voltage so i think it's about 240 volts in here of the three readings we take which one are we going to record so it's just the highest reading okay so we've got remember 0.08 now we've got 0.09 so that's now the highest one and then we'll probe back on if you notice every time i physically take your probes back off right already exactly the same as we do for obviously supply polarity in safe isolation yeah right 0.08 of a ohm so we've carried out the external fault loop impedance test there we've got three readings you said you're going to record the highest one in your test paperwork okay we'll remove the earthing conductor just remind me again we'll remove that so purely for parallel earth paths we want the external earth fault loop impedance and so that is the external earth that
+
+
+[00:00] This video is all about reminding you to remove parallel earth path when testing for AM2S
+[00:06] we've got a three-phase supply we've got our three cut out fuses our neutral and earth link together
+[00:10] our earthing arrangement for this system is TN-C-S removing parallel earth paths for your true value
+[00:18] of external earth fault loop impedance in this case would require us to remove the left-hand
+[00:22] conductor and test between that disconnected conductor and L1 L2 and L3 and record the highest
+[00:28] reading there is a link on this one special MET where you could remove the link because on
+[00:32] the right hand side you have a conductor going to the bonded steel framework of the building
+[00:37] and the other one goes into the distribution board i'm going to show you the very end of this
+[00:41] presentation now Matt carried out his external earth fault loop impedance test where he didn't
+[00:45] have an MET but it's likely you will have an MET AM2 or AM2S so it's about removing the parallel
+[00:52] path and testing the true value of the external earth fault loop impedance to do that you'll need
+[00:58] to disconnect in this case the conductor on the left hand side and test between that disconnected
+[01:03] removing the parallel earth paths and L1 L2 and L3 and recording that reading as the highest
+[01:10] one of those readings as your true value for Ze external earth fault loop impedance i'll show you
+[01:16] in a minute some drawings of how this would happen before Matt shows you the physical test but it's
+[01:21] the MET that's important look at your installation if you have an MET you need to remove those
+[01:27] parallel earth paths when carrying out safely your external earth fault loop impedance test
+[01:34] so let's break down what we could have at AM2 AM2S AM2E main supply on the left-hand side TN-C-S TN-S
+[01:42] earthing arrangement whatever it is and we've got an MET now in the video i'm going to show you at
+[01:46] the end of this one Matt didn't have an MET he had all the bonding conductors and the earthing
+[01:51] conductor and within the distribution board we can see there metallic water metallic gas it might be
+[01:56] metallic structure of the building offering parallel earth paths so removing the earthing
+[02:02] conductor within the distribution board wouldn't remove those parallel earth paths so you're going
+[02:06] to have to remove it from somewhere else before doing our external earth fault loop impedance
+[02:12] exactly the same rules apply turn off the supply notify people and all the other stuff that we have
+[02:16] to do but it's removing those parallel earth paths i want to concentrate on in this video
+[02:22] so what we've got now is we've zoomed in to the MET the main earth terminal and you can see there
+[02:27] the bottom conductor coming in from the left-hand side brings the earth in from the supply source
+[02:32] and a single earthing conductor then into the distribution board and our bonding conductors are
+[02:37] on the right hand side in this case going off to gas and water that are metallic incoming therefore
+[02:43] offering a parallel earth path because they'll be connected to the greater mass of earth being
+[02:48] a metallic water pipe and a metallic gas pipe so you have to remove those parallel earth parts
+[02:54] for a true Ze reading to do that you disconnect the 16 mm whatever size it is earth in conductor
+[03:02] as i've shown there which is the incoming one from the main supply with that disconnected remembering
+[03:08] the board needs to be isolated etcetera before disconnecting it we can now test from the
+[03:13] disconnected earthing conductor possibly 16 mm or greater to the board itself's individual lines to
+[03:20] get our true external earth fault loop impedance by removing it from the MET you remove the
+[03:27] parallel earth paths created by the metallic water gas structure the building etc let's see that test
+[03:35] i've connected on to my disconnected earthing conductor and L1 and i would perform my earth
+[03:41] fault loop impedance test and remember the reading i would then move it on to L2 and repeat the test
+[03:48] again remember this is at the bottom of the main switch with the board isolated so it's the only
+[03:53] live part within the board and i would remember that reading so i would test between the earthing
+[03:57] conductor L2 as an external earth fault loop impedance remember the reading before i move
+[04:03] on and test L3 L3 now my disconnected earth and conductor are tested and i remember the highest of
+[04:10] those three readings and the highest reading would be recorded as my Ze value my external earth fault
+[04:18] loop impedance of this distribution board and you note all parallel earth paths are removed because
+[04:23] the earthing conductor was removed from the MET we're now going to watch Matt perform the external
+[04:29] earth fault loop impedance test on a three-phase distribution board where the earthing conductor
+[04:34] and bonding were all within the distribution board but remember to look at your AM2 or AM2S
+[04:39] rig to see if there was an MET there a main earth in terminal if there was you're going to need to
+[04:45] perform the test as i've just described this is a real treat for the channel we're back out with big
+[04:50] sexy Matt O'Dell and we're going to try today to go through some of those tests that are going to
+[04:54] be required for AM2 and AM2S and which one you're going to pick out first that we'll have a go at
+[04:59] so in particular we've got three phase board so we can do the um earth fault loop impedance yes
+[05:04] external uh following and then the PFC yeah so that they're really crucial for AM2S AM2 and well
+[05:10] if AM2E if you're doing the experience route as well and we're going to make sure that we
+[05:14] don't miss out apart especially now we've got a three-phase board because often at colleges
+[05:19] they're working on single-phase installations aren't they yes yeah so it's a three-phase
+[05:23] experience and maybe our learners don't always get the the hands-on experience with yeah so we've got
+[05:28] permission in order to isolate the supply here we're going to go through it in the correct
+[05:31] process which means we're going to knock off first of all the breakers before doing the main switch
+[05:35] we're going to remove the cover and then we're going to show first of all external earth
+[05:38] fault loop impedance and then prospective fault currents yes okay so you're not some breakers off
+[05:42] then for me okay and so we've got the single phase breakers here so we'll start turning those off
+[05:47] and so you can start seeing some lights go off yeah i'll just show that because we're working in
+[05:50] the world's most terriblest place aren't we today look at that okay so yeah whip some off so just do
+[05:56] a single phase so the lighting's just gone off in here you want them to stay on just for now no no
+[06:01] we'll turn everything off we'll do it properly and so then we've got our three phase breakers
+[06:05] so that's a blower a compressor okay a three-phase supply to another board there to the office board
+[06:14] we've turned off a lot of the local loads as well so we're not actually got loads of stuff on full
+[06:17] load on for the breakers and then obviously we can do that and so that looks like all the loads have
+[06:22] been taken off yeah and we're going to do the main switch off here now it's quite happy just to turn
+[06:27] the main switch off okay so we're going to get the cover off and we'll look at doing these tests
+[06:31] described at the start of the video okay so the board's off the cover's off and we're now going
+[06:36] to carry out the external earth fault loop impedance just remind me why i'm going to
+[06:38] disconnect the earthing conductor which is here okay so yes this is the main earthing conductor
+[06:43] so if we was not to disconnect it then we'd be having a problem with parallel earth paths
+[06:49] via like the extraneous conductive parts through the bonding and stuff like that so we want to know
+[06:55] the external earth loop impedance and so by removing this earth that is just the external
+[07:01] nothing internal okay and we've got another thing range and i said of TN-C-S so what's
+[07:06] the maximum reading for that for the external on a PME or TN-C-S it's 0.35 ohms okay okay so
+[07:16] earthing conductors out we're just going to drop this off so yeah we've got the earth out still
+[07:20] care because obviously the bottom side of this is live there is no remote isolator here you might
+[07:25] find an AM2 AM2S there might be another isolator that you can actually turn this off before
+[07:30] removing it but we're in the real world here so they're now live at the bottom of that switch
+[07:34] and it's red yellow blue and not brown black grey and we're going to set up our instrument now
+[07:39] in order to carry out that external fault loop impedance so we've set our megger MFT 1730 up to
+[07:46] L-PE and you're going to do it on the three lead low and that's what you've selected to do on we
+[07:51] could have done it on high because there's no rcds but you think that this would probably
+[07:55] be the standard practice to get used to matt is that right when we've got so many uh rcds around
+[08:01] um that we go for the low settings okay yeah right okay you want to probe on for me so we can see the
+[08:07] okay so we've got some exposed disconnected earth there so we get a good get a nice good connection
+[08:12] onto there and then we've got the neutral terminal here and then we've got our three
+[08:17] phases there so let's just move that one out of the way so again it's an automatic test
+[08:22] so go on to the neutral terminal first and then we'll just probe on to the first line conductor
+[08:28] and as you can see there the machine is automatically detected voltage and it takes a
+[08:34] few seconds because we're on the low uh one yep just fine so persevere and wait for our result
+[08:43] so as you can see there 0.08 that's it we're finished pack up and we're ready to go is that
+[08:48] right matt no so that's on one of the phases so obviously there's three phases so we'll
+[08:52] just repeat that same process on the next phase so again because we're going between neutral
+[08:59] and the phase it's detecting a single phase voltage so i think it's about 240 volts in here
+[09:05] of the three readings we take which one are we going to record so it's just the highest
+[09:09] reading okay so we've got remember 0.08 now we've got 0.09 so that's now the highest one
+[09:15] and then we'll probe back on if you notice every time i physically take your probes back off
+[09:24] right already exactly the same as we do for obviously supply polarity in safe isolation
+[09:28] yeah right 0.08 of a ohm so we've carried out the external fault loop impedance test there
+[09:33] we've got three readings you said you're going to record the highest one in your test paperwork okay
+[09:37] we'll remove the earthing conductor just remind me again we'll remove that so purely for parallel
+[09:41] earth paths we want the external earth fault loop impedance and so that is the external earth that

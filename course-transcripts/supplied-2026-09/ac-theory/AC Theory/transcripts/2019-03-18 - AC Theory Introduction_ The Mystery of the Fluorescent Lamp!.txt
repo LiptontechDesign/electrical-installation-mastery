@@ -1,0 +1,399 @@
+# AC Theory Introduction: The Mystery of the Fluorescent Lamp!
+# https://www.youtube.com/watch?v=T96RePPLnMs
+
+[Music] hello and welcome to this electrical principles training video in this video we're going to start to explore the subject of AC theory now this is a subject that envelops an awful lot of different areas of electrical science including the really important subject of power factor now this is a subject that lot of people get a little bit nervous about studying they get a little bit confused by they think that it's very complicated and difficult to understand let me assure you that it is not difficult to understand at all however we do need to understand certain mathematical principles including Pythagoras and a little bit of trigonometry so if you haven't already done so please go and watch the videos that I've shot on those subjects so this is going to be a series of videos starting off with an initial subject and then we move on to other things it's not something that we can explain in the space of a 10 15 minute video this will take a little while to explain and it will tie on lots of different areas of electrical science so for the first time in a long time we're going to have a worksheet that goes along with this video so please download that worksheet and maybe print it off and fill it in as we go along it looks a little bit like this okay and what we're going to do is in this series of videos we're going to keep referring back to this work sheet and I'd like you as we go through this series to fill in the different information as we go along so that by the time we finished the initial series you'll have a completed worksheet with all the information on that you need which we will then refer back to in order to explore and understand this subject a little bit more deeply so why do we need to explore this subject why is it so important well what we're going to do in this first video is we're going to set kind of a mystery that needs to be solved we're going to analyze a fluorescent light and we're going look at how it behaves and particularly how voltage and current are behaving as it operates this is going to help us to set the groundwork for understanding AC theory the different loads that we can connect and also how they affect each other and the voltage in the current in the circuit so what we'll do is we'll set up our experiment we'll have a look at the florescent light we'll measure various voltages and currents and then we'll see how we can start explaining this strange phenomenon that we're going to witness inside this circuit so we've got our fluorescent light here and what we're going to do is we're going to perform an experiment on this and try to figure out in a later video what's going on with some of the strange readings that we're going to be taking in this video we are not going to explain the function of the fluorescent light how the different parts operate but we do need to be able to identify various components within there so let's have a look at our fluorescent light fit in for starters so you'll notice first of all that uh this doesn't have a lid on it and that is entirely okay because we're doing this under controlled conditions in a safe environment obviously we'd never normally power up uh flent light without the lid on like this but we're under controlled conditions so we're okay so looking at this light fitting there's some really important parts that we need to be able to identify the first part of is this so this is the part that produces the light this is the tube now in effect this is just like a giant resistive load so that's what we're looking at here we've just got a big resistor here so we can show that on our circuit diagram what we've also got is what's commonly referred to as the choke it's also sometimes referred to as the ballast uh and it's actually a type of inductor now again these Expressions that we're coming up with resistors inductors Etc will all be explained in a little bit more detail in this series of videos we just need to be able to identify them at the moment so let's just stick with those two components initially so we've got the choke which is an inductor and we've got the lamp which is a resistor and we're going to connect those two together in series with each other so the current flowing through the choke will then flow through the lamp once it's ignited now in addition to those two components we've got a third very important component inside this light fitting which is this one here this is a capacitor and we commonly refer to this in a light fitting of this type as a power factor correction capacitor and we're going to explore that expression power factor and power factor correction again through this series of videos now the capacitor is connected into the circuit in a slightly different way it's connected up in parallel with our choke and our lamp so we've got that connected in parallel and we can show that on the circuit diagram so it looks something like this now the one item that we wouldn't normally find on a fluorescent light fitting of this kind is what we've got over here this switch here has been specially installed in order to control the power factor correction capacitor so this connects and disconnects the power factor correction capacitor we wouldn't see that normally on a light fitting but we're going to use it here for demonstration purposes so the first thing we're going to do is we're going to power up our circuit and we're going to measure what the voltages are across various parts of this circuit so I'm going to connect my lamp up and I'm going to power up and then we'll see what's happening inside here now the first thing that we're going to have a look at here is our input voltage before we go any further though just a word on safety on this rig that we've got set up here we've got uh lots and lots of live Parts some of them are more exposed than we would normally have them uh I'm working safely I'm connect connected to a very very safe Supply and I would strongly recommend that you don't attempt any of this at home because you might wind up giving yourself a fairly serious electric shock and possibly even electrocute yourself so please don't try this at home so the first thing that we're interested in is we're going to have a look at what our input voltage is so I'm going to use my mega Avo 835 to measure the input voltage okay and you can see there that we've got a value of 200 48 volts so obviously we'd expect this to be 230 that's our nominal voltage but of course we know we're allowed certain tolerances within that value and we've got here uh 248 it's hovering around it so we're well within the tolerance that we should be so that's our input voltage so we'll draw that onto our circuit diagram so we can see there there's our input voltage what we're going to do now is we're going to measure the voltages across the series part of the circuit so first of all we're going to measure the voltage across the choke now when we start doing this I'm going to go back to my old analog instrument because the choke due to its nature can sometimes deliver spikes of voltage which can be quite damaging to electronic equipment now I'm sure that my mega here would be able to cope with that but as it's a very expensive piece of Kit I really don't want to risk damaging it in any way so I'm going to go back to my old analog meter at this stage so I'm going to turn the power off because I want to make sure that I'm making any changes in a safe way so what I'm going to do here is I'm going to remove my mega instrument I'm just going pop those leads there out of the way and then I'm going to connect up my old analog instrument here and we're going to get a reading on that so I'll just ask my glamorous assistant if he can change the setting on the uh camera here so that we can have a look at the value we get on our voltage meter so let's power the light fitting back up again and we'll have a look at the voltage across the choke here so we can see the voltage across the choke uh we're just between 120 and 130 volts there so we're on 125 volts so I shall put that onto the circuit diagram so we can see that there so now if we start to analyze the circuit a little bit from what we know of series circuits we should be able to understand that if we've got 248 volts going into the circuit and then we've got 125 volts across the choke then what would be the voltage that we'd expect to get across the resistor across this next part of the circuit here well of course we'd simply do 248 take away 125 which is going to give us 123 volts so what I'm going to do now is I'm going to move my voltmeter from the choke and I'm going to measure across the lamp now and find out what the voltage is there and we're expecting to get somewhere around 123 volts so let's have a look at that okay so if I glass my glamorous assistant to power that back up for me okay so that's interesting we were expecting to get 123 volts okay and what we've actually found is if we have a look at our voltmeter now we are measuring just under 200 so we perhaps call that uh 100 95 Okay so we've actually got a very funny reading here if we look at our circuit diagram we're putting in 248 volts and then when we measure the voltage across the choke and measure the voltage across the lamp it looks like we've got More Voltage inside the circuit than we're putting into it now that seems like a very odd thing and at first glance it seems to defy the laws of physics however there is more going on here because of course we are connected to an a C Supply so there's deeper things going on here now again we're not necessarily in this video going to explain why that's happening because we don't yet have all the information that we need in order to answer that question we need to understand our loads in a bit more depth and we need to understand some mathematical Concepts in a bit more depth so we'll be able to use this information to explain exactly why those voltages seem to add up to more than the input voltage the next curious thing that we're going to look at is we're going to look at the currents so again I shall ask one of my assistants here to move the camera over and we'll look at our input Uh current here so what we've got here uh I've just taken the power factor correction capacitor out of the circuit but the first thing to note is that when we turn that switch on and off can you see that it has absolutely no effect on the operation of the lamp at all it's not changing how bright it is it's not changing how much light it gives off it makes absolutely no no difference to the function of the circuit at all so let's leave the power factor correction capacitor out of the circuit for now so it's disconnected and let's have a look at what's going on with our currents so we'll get a current reading uh from our ameter so what this is measuring at the minute this is telling us how much current is flowing through the choke and through the lamp now we can take this to be at this stage the current flowing into the circuit Okay so so this is how much current is flowing into the circuit so we can see on our drawing that the current flowing into the circuit and the current flowing through the lamp and the choke are exactly the same now it's quite interesting at this stage because what we're going to do now is we're going to introduce the capacitor into the circuit now the capacitor is going to draw some current through it and therefore we'd expect because it's connected in parallel with the circuit we'd expect however much current is flowing through the capacitor to simply be added onto this value here so currently flowing into the circuit we've got uh 0.6 let's have a look here so that's 07 and this is split into 1 two 3 four five divisions so that's going to be 0.64 of an amp roughly so we've got 0.64 amps flowing into the circuit okay what we're going to do now is go over to our power factor correction capacitor and we're going to introduce that into the circuit and have a look at what that reading is so if we could perhaps move the camera over to the uh power factor correction capacitor so this ameter over on this side is going to tell us how much current is flowing into the power factor correction capacitor okay so at the minute it's disconnected from the circuit there is absolutely no current flowing through there so what we'll do is we'll switch the power factor correction capacitor on and we'll see just exactly uh how much current is going to be uh flowing into them okay so that's about as comfortable as we're going to get with that needle so if we have a look here we're getting 0.6 just over 0.6 again we're sort of 0.63 there so now we've got 0.63 amps flowing into the circuit that's being drawn by the capacitor so we might rationally expect that the current flowing through the choke and the lamp and the current flowing through the capacitor at the point where they meet in the circuit we'd expect them just to join together and give us the total circuit current so we'd be talking somewhere around 1.2 1.3 amps if we were to add those two values together however if we bring the camera back over to our ameter that is measuring the total current flowing into the circuit we'll see that something interesting has happened over here so can you see what's happened to the current flowing into the circuit we've actually reduced it so now we've got 0 maybe 39 amps flowing into the circuit now so somehow by connecting this capacitor into the circuit which is drawing current so we've not changed anything here we can see that we're actually now drawing less current into the circuit than we were before so somehow adding more current into the circuit has reduced the amount of current that the circuit is using now that's our first first glimpse into the Mysterious World of power factor correction and actually when we start to understand how these individual loads are behaving and what they're doing then it's all going to click into place and we're going to understand exactly why the current is behaving in what seems like an odd fashion and we're also going to see how this benefits us so please stay tuned to the rest of the videos in this series because in each one we're going to build on our understanding of AC theory and there'll come a point where we will completely understand what's going on on with power factor correction and these strange voltages and currents thank you very much for watching [Music]
+
+
+[00:02] [Music]
+[00:10] hello and welcome to this electrical
+[00:11] principles training video in this video
+[00:14] we're going to start to explore the
+[00:16] subject of AC theory now this is a
+[00:20] subject that envelops an awful lot of
+[00:22] different areas of electrical science
+[00:25] including the really important subject
+[00:27] of power factor now this is a subject
+[00:29] that lot of people get a little bit
+[00:30] nervous about studying they get a little
+[00:32] bit confused by they think that it's
+[00:34] very complicated and difficult to
+[00:36] understand let me assure you that it is
+[00:38] not difficult to understand at all
+[00:41] however we do need to understand certain
+[00:44] mathematical principles including
+[00:46] Pythagoras and a little bit of
+[00:47] trigonometry so if you haven't already
+[00:49] done so please go and watch the videos
+[00:51] that I've shot on those
+[00:53] subjects so this is going to be a series
+[00:56] of videos starting off with an initial
+[00:59] subject and then we move on to other
+[01:00] things it's not something that we can
+[01:02] explain in the space of a 10 15 minute
+[01:05] video this will take a little while to
+[01:07] explain and it will tie on lots of
+[01:09] different areas of electrical science so
+[01:13] for the first time in a long time we're
+[01:15] going to have a worksheet that goes
+[01:17] along with this video so please download
+[01:19] that worksheet and maybe print it off
+[01:20] and fill it in as we go along it looks a
+[01:22] little bit like
+[01:25] this okay and what we're going to do is
+[01:27] in this series of videos we're going to
+[01:28] keep referring back to this work sheet
+[01:30] and I'd like you as we go through this
+[01:32] series to fill in the different
+[01:34] information as we go along so that by
+[01:36] the time we finished the initial series
+[01:38] you'll have a completed worksheet with
+[01:39] all the information on that you need
+[01:41] which we will then refer back to in
+[01:43] order to explore and understand this
+[01:45] subject a little bit more
+[01:47] deeply so why do we need to explore this
+[01:50] subject why is it so important well what
+[01:52] we're going to do in this first video is
+[01:53] we're going to set kind of a mystery
+[01:55] that needs to be solved we're going to
+[01:57] analyze a fluorescent light and we're
+[01:59] going look at how it behaves and
+[02:01] particularly how voltage and current are
+[02:03] behaving as it operates this is going to
+[02:07] help us to set the groundwork for
+[02:09] understanding AC theory the different
+[02:11] loads that we can connect and also how
+[02:14] they affect each other and the voltage
+[02:16] in the current in the circuit so what
+[02:17] we'll do is we'll set up our experiment
+[02:20] we'll have a look at the florescent
+[02:21] light we'll measure various voltages and
+[02:24] currents and then we'll see how we can
+[02:25] start explaining this strange phenomenon
+[02:29] that we're going to witness inside this
+[02:32] circuit so we've got our fluorescent
+[02:34] light here and what we're going to do is
+[02:35] we're going to perform an experiment on
+[02:37] this and try to figure out in a later
+[02:39] video what's going on with some of the
+[02:41] strange readings that we're going to be
+[02:43] taking in this video we are not going to
+[02:46] explain the function of the fluorescent
+[02:48] light how the different parts operate
+[02:49] but we do need to be able to identify
+[02:52] various components within there so let's
+[02:54] have a look at our fluorescent light fit
+[02:55] in for starters so you'll notice first
+[02:58] of all that uh this doesn't have a lid
+[03:00] on it and that is entirely okay because
+[03:02] we're doing this under controlled
+[03:03] conditions in a safe environment
+[03:05] obviously we'd never normally power up
+[03:07] uh flent light without the lid on like
+[03:09] this but we're under controlled
+[03:11] conditions so we're okay so looking at
+[03:14] this light fitting there's some really
+[03:17] important parts that we need to be able
+[03:19] to identify the first part of is this so
+[03:21] this is the part that produces the light
+[03:23] this is the tube now in effect this is
+[03:26] just like a giant resistive load so
+[03:29] that's what we're looking at here we've
+[03:30] just got a big resistor here so we can
+[03:33] show that on our circuit
+[03:35] diagram what we've also got is what's
+[03:38] commonly referred to as the choke it's
+[03:41] also sometimes referred to as the
+[03:42] ballast uh and it's actually a type of
+[03:44] inductor now again these Expressions
+[03:47] that we're coming up with resistors
+[03:48] inductors Etc will all be explained in a
+[03:51] little bit more detail in this series of
+[03:52] videos we just need to be able to
+[03:53] identify them at the moment so let's
+[03:56] just stick with those two components
+[03:58] initially so we've got the choke which
+[04:00] is an inductor and we've got the lamp
+[04:02] which is a resistor and we're going to
+[04:04] connect those two together in series
+[04:07] with each other so the current flowing
+[04:09] through the choke will then flow through
+[04:12] the lamp once it's
+[04:14] ignited now in addition to those two
+[04:17] components we've got a third very
+[04:19] important component inside this light
+[04:20] fitting which is this one here this is a
+[04:23] capacitor and we commonly refer to this
+[04:25] in a light fitting of this type as a
+[04:27] power factor correction capacitor and
+[04:30] we're going to explore that expression
+[04:33] power factor and power factor correction
+[04:35] again through this series of videos now
+[04:38] the capacitor is connected into the
+[04:39] circuit in a slightly different way it's
+[04:41] connected up in parallel with our choke
+[04:45] and our lamp so we've got that connected
+[04:47] in parallel and we can show that on the
+[04:49] circuit diagram so it looks something
+[04:50] like
+[04:51] this now the one item that we wouldn't
+[04:53] normally find on a fluorescent light
+[04:55] fitting of this kind is what we've got
+[04:58] over here this switch here has been
+[05:00] specially installed in order to control
+[05:03] the power factor correction capacitor so
+[05:05] this connects and disconnects the power
+[05:07] factor correction capacitor we wouldn't
+[05:08] see that normally on a light fitting but
+[05:10] we're going to use it here for
+[05:12] demonstration
+[05:14] purposes so the first thing we're going
+[05:15] to do is we're going to power up our
+[05:17] circuit and we're going to measure what
+[05:19] the voltages are across various parts of
+[05:23] this circuit so I'm going to connect my
+[05:24] lamp up and I'm going to power up and
+[05:26] then we'll see what's happening inside
+[05:28] here
+[05:43] now the first thing that we're going to
+[05:45] have a look at here is our input voltage
+[05:47] before we go any further though just a
+[05:48] word on safety on this rig that we've
+[05:51] got set up here we've got uh lots and
+[05:53] lots of live Parts some of them are more
+[05:55] exposed than we would normally have them
+[05:58] uh I'm working safely I'm connect
+[05:59] connected to a very very safe Supply and
+[06:02] I would strongly recommend that you
+[06:03] don't attempt any of this at home
+[06:06] because you might wind up giving
+[06:07] yourself a fairly serious electric shock
+[06:09] and possibly even electrocute yourself
+[06:11] so please don't try this at home so the
+[06:14] first thing that we're interested in is
+[06:16] we're going to have a look at what our
+[06:18] input voltage is so I'm going to use my
+[06:21] mega Avo 835 to measure the input
+[06:24] voltage okay and you can see there that
+[06:27] we've got a value of 200
+[06:30] 48 volts so obviously we'd expect this
+[06:32] to be 230 that's our nominal voltage but
+[06:35] of course we know we're allowed certain
+[06:37] tolerances within that value and we've
+[06:39] got here uh 248 it's hovering around it
+[06:43] so we're well within the tolerance that
+[06:44] we should be so that's our input voltage
+[06:47] so we'll draw that onto our circuit
+[06:49] diagram so we can see there there's our
+[06:51] input voltage what we're going to do now
+[06:54] is we're going to measure the voltages
+[06:57] across the series part of the circuit so
+[07:00] first of all we're going to measure the
+[07:01] voltage across the choke now when we
+[07:03] start doing this I'm going to go back to
+[07:05] my old analog instrument because the
+[07:08] choke due to its nature can sometimes
+[07:09] deliver spikes of voltage which can be
+[07:11] quite damaging to electronic equipment
+[07:13] now I'm sure that my mega here would be
+[07:16] able to cope with that but as it's a
+[07:18] very expensive piece of Kit I really
+[07:19] don't want to risk damaging it in any
+[07:21] way so I'm going to go back to my old
+[07:23] analog meter at this stage so I'm going
+[07:25] to turn the power off because I want to
+[07:26] make sure that I'm making any changes in
+[07:28] a safe way
+[07:39] so what I'm going to do here is I'm
+[07:41] going to
+[07:42] remove my mega instrument I'm just going
+[07:45] pop those leads there out of the way and
+[07:47] then I'm going to connect up my old
+[07:50] analog instrument here and we're going
+[07:52] to get a reading on that so I'll just
+[07:55] ask my glamorous assistant if he can
+[07:58] change the setting on the
+[08:00] uh camera here so that we can have a
+[08:01] look at the value we get on our voltage
+[08:04] meter so let's power the light fitting
+[08:06] back up again and we'll have a look at
+[08:08] the voltage across the choke
+[08:17] here so we can see the voltage across
+[08:20] the choke uh we're just between 120 and
+[08:25] 130 volts there so we're on 125 volts so
+[08:28] I shall put that onto the circuit
+[08:31] diagram so we can see that there so now
+[08:34] if we start to analyze the circuit a
+[08:35] little bit from what we know of series
+[08:37] circuits we should be able to understand
+[08:40] that if we've got 248 volts going into
+[08:44] the circuit and then we've got
+[08:48] 125 volts across the choke then what
+[08:53] would be the voltage that we'd expect to
+[08:54] get across the resistor across this next
+[08:57] part of the circuit here
+[09:00] well of course we'd simply do 248 take
+[09:02] away 125 which is going to give us 123
+[09:06] volts so what I'm going to do now is I'm
+[09:08] going to move my voltmeter from the
+[09:11] choke and I'm going to measure across
+[09:13] the lamp now and find out what the
+[09:14] voltage is there and we're expecting to
+[09:16] get somewhere around 123 volts so let's
+[09:20] have a look at that
+[09:36] okay so if I glass my glamorous
+[09:37] assistant to power that back up for
+[09:43] me okay so that's interesting we were
+[09:45] expecting to get 123 volts okay and what
+[09:49] we've actually found is if we have a
+[09:52] look at our voltmeter now we are
+[09:54] measuring just under 200 so we perhaps
+[09:57] call that uh 100
+[10:00] 95 Okay so we've actually got a very
+[10:04] funny reading here if we look at
+[10:05] our circuit diagram we're putting in 248
+[10:09] volts and then when we measure the
+[10:10] voltage across the choke and measure the
+[10:12] voltage across the lamp it looks like
+[10:15] we've got More Voltage inside the
+[10:17] circuit than we're putting into it now
+[10:19] that seems like a very odd thing and at
+[10:21] first glance it seems to defy the laws
+[10:22] of physics however there is more going
+[10:26] on here because of course we are
+[10:27] connected to an a C Supply so there's
+[10:31] deeper things going on here now again
+[10:34] we're not necessarily in this video
+[10:35] going to explain why that's happening
+[10:37] because we don't yet have all the
+[10:38] information that we need in order to
+[10:39] answer that question we need to
+[10:41] understand our loads in a bit more depth
+[10:44] and we need to understand some
+[10:45] mathematical Concepts in a bit more
+[10:46] depth so we'll be able to use this
+[10:48] information to explain exactly why those
+[10:51] voltages seem to add up to more than the
+[10:54] input
+[10:55] voltage the next curious thing that
+[10:57] we're going to look at is we're going to
+[10:58] look at the currents so again I shall
+[11:00] ask one of my assistants here to move
+[11:03] the camera over and we'll look at our
+[11:05] input Uh current here so what we've got
+[11:09] here uh I've just taken the power factor
+[11:11] correction capacitor out of the circuit
+[11:13] but the first thing to note is that when
+[11:15] we turn that switch on and off can you
+[11:19] see that it has absolutely no effect on
+[11:22] the operation of the lamp at all it's
+[11:24] not changing how bright it is it's not
+[11:25] changing how much light it gives off it
+[11:28] makes absolutely no no difference to the
+[11:30] function of the circuit at all so let's
+[11:33] leave the power factor correction
+[11:35] capacitor out of the circuit for now so
+[11:37] it's disconnected and let's have a look
+[11:39] at what's going on with our currents so
+[11:41] we'll get a current reading uh from our
+[11:45] ameter so what this is measuring at the
+[11:47] minute this is telling us how much
+[11:49] current is flowing through the choke and
+[11:52] through the lamp now we can take this to
+[11:55] be at this stage the current flowing
+[11:57] into the circuit Okay so so this is how
+[11:59] much current is flowing into the circuit
+[12:02] so we can see on our drawing that the
+[12:04] current flowing into the circuit and the
+[12:06] current flowing through the lamp and the
+[12:08] choke are exactly the same now it's
+[12:11] quite interesting at this stage because
+[12:13] what we're going to do now is we're
+[12:15] going to introduce the capacitor into
+[12:17] the circuit now the capacitor is going
+[12:20] to draw some current through it and
+[12:22] therefore we'd expect because it's
+[12:23] connected in parallel with the circuit
+[12:25] we'd expect however much current is
+[12:26] flowing through the capacitor to simply
+[12:28] be added onto this value here so
+[12:31] currently flowing into the circuit we've
+[12:33] got uh
+[12:35] 0.6 let's have a look here so that's
+[12:39] 07 and this is split into 1 two 3 four
+[12:42] five divisions so that's going to be
+[12:45] 0.64 of an amp roughly so we've got 0.64
+[12:49] amps flowing into the circuit okay what
+[12:51] we're going to do now is go over to our
+[12:55] power factor correction capacitor and
+[12:58] we're going to introduce that into the
+[13:00] circuit and have a look at what that
+[13:01] reading is so if we could perhaps move
+[13:03] the camera over to the uh power factor
+[13:06] correction
+[13:08] capacitor so this ameter over on this
+[13:11] side is going to tell us how much
+[13:13] current is flowing into the power factor
+[13:15] correction
+[13:18] capacitor okay so at the minute it's
+[13:21] disconnected from the circuit there is
+[13:23] absolutely no current flowing through
+[13:25] there so what we'll do is we'll switch
+[13:27] the power factor correction capacitor on
+[13:29] and we'll see just exactly uh how much
+[13:32] current is going to be uh flowing into
+[13:35] them okay so that's about as comfortable
+[13:38] as we're going to get with that needle
+[13:39] so if we have a look here we're getting
+[13:42] 0.6 just over 0.6 again we're sort of
+[13:45] 0.63 there so now we've got 0.63 amps
+[13:48] flowing into the circuit that's being
+[13:50] drawn by the capacitor so we might
+[13:53] rationally expect that the current
+[13:55] flowing through the choke and the lamp
+[13:58] and the current flowing through the
+[14:00] capacitor at the point where they meet
+[14:02] in the circuit we'd expect them just to
+[14:03] join together and give us the total
+[14:05] circuit current so we'd be talking
+[14:07] somewhere around 1.2 1.3 amps if we were
+[14:10] to add those two values together however
+[14:13] if we bring the camera back over to our
+[14:17] ameter that is measuring the total
+[14:20] current flowing into the circuit we'll
+[14:22] see that something interesting has
+[14:24] happened over
+[14:26] here so can you see what's happened to
+[14:28] the current flowing into the circuit
+[14:30] we've actually reduced it so now we've
+[14:33] got
+[14:34] 0 maybe 39 amps flowing into the circuit
+[14:39] now so somehow by connecting this
+[14:42] capacitor into the circuit which is
+[14:44] drawing current so we've not changed
+[14:45] anything here we can see that we're
+[14:48] actually now drawing less current into
+[14:50] the circuit than we were before so
+[14:52] somehow adding more current into the
+[14:54] circuit has reduced the amount of
+[14:56] current that the circuit is using now
+[14:58] that's our first first glimpse into the
+[14:59] Mysterious World of power factor
+[15:01] correction and actually when we start to
+[15:03] understand how these individual loads
+[15:05] are behaving and what they're doing then
+[15:07] it's all going to click into place and
+[15:09] we're going to understand exactly why
+[15:12] the current is behaving in what seems
+[15:13] like an odd fashion and we're also going
+[15:15] to see how this benefits us so please
+[15:18] stay tuned to the rest of the videos in
+[15:20] this series because in each one we're
+[15:22] going to build on our understanding of
+[15:24] AC theory and there'll come a point
+[15:26] where we will completely understand
+[15:28] what's going on on with power factor
+[15:30] correction and these strange voltages
+[15:32] and currents thank you very much for
+[15:34] watching
+[15:37] [Music]

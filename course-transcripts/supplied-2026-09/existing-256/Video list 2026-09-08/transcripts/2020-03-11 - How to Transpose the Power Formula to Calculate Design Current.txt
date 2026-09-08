@@ -1,0 +1,282 @@
+# How to Transpose the Power Formula to Calculate Design Current
+# https://www.youtube.com/watch?v=yQLL1k6vT3s
+
+[Music] hello and welcome to this electrical principals training video in a previous video in this series we looked at the basic power formula and where that comes from we saw there was a definite relationship between power current and voltage and you can see that laid out on the screen here what we're going to do in this video is we're going to continue considering this subject of the basic power formula but we're going to transpose that formula and then use it in a different way to show just how important this formula is to our electrical design and installation work so let's head down to the workshop and we'll outline how we're going to achieve this in this video so we saw very clearly from the calculations that we just did in the classroom that there is a relationship a mathematical relationship between power current and voltage now that's very interesting it's important to know that for our exams because we may be asked questions such as which of these four formulas is the one for calculating power or which one of these formulas is the one for calculating current using power and voltage we may even be given a voltage and a current and V has to calculate what the power would be and those are all very important but actually this is a really critical calculation that we need to understand for our electrical installation work why is that well let me paint you a scenario what happens when a customer calls you up and says I'd like you to come round please and fit my new shower for me certainly you say what size is the shower and they say well it measures about 40 centimeters by 20 centimeters you all have a good laugh and then you clear it up and ask for the power rating of the shower now what's quite interesting it is that on that shower it won't tell you the current that it's expected to draw but it will tell you the power rating now you need to know the current that that shower is going to draw or so that you can start thinking about what size cable do I need to install what size breaker do I need to put in will the supply be able to deliver that amount of current and the way that we do that is we use the transposed version of the power formula that we looked at in the class in order to calculate how much current is going to flow and that really is the starting point for figuring out your installation of that circuit that's going into that property now just so you know when you come across this in your design unit it might look a little bit different to this it might say something like IB will be the subject with a little B in the subscript and that's the symbol that we use to indicate that we're calculating what we call design current in other words the current that we expect to flow when we do the design work for an installation so as it so happens I have a shower here and so what we're going to do is we're going to head back up to the classroom and we're going to do a quick demonstration on how to figure out how much current this shower will draw when we're doing the design work for that circuit so I've unboxed the shower this is the Triton Dominica I think this might be a slightly older model of shower it's sat in my garage for over five years now so it might be discontinued I'm not sure but what we're looking at here what we're really interested in in the first instance is the power rating of the shower because we need to know that in order to calculate the current which is kind of the endgame of this little portion of the video so this frighten shower has a power rating you can see on the bottom here of 8.5 kilowatts so 8.5 kilowatts is our power so that's the first piece of information that we need so we've got that on there 8.5 kilowatts now we're trying to find the current in this video so we want to know what is the current going to be drawn by this shower so I equal something we don't know what yet and we're also interested in in order to calculate that current we'll need to know what the voltage that's being supplied to it is now in the case of the voltage we know that we state the value of the voltage the nominal voltage in the UK is 230 volts 230 volts we know that we can find that varying it can go up or down from that value but generally speaking when you do design work we use the nominal voltage so the voltage that we say our electricity is supply that which is 230 volts so we need to find the currents now what I'm going to do is I'm going to show you how to transpose the formula and then I'm going to show you the common method that everybody uses to carry out transposition of this kind of formula I don't really like doing it the second way because while it's got its value and it's good if you kind of you get stuck and it can help you to transpose things quite quickly it doesn't help you to build up your transposition skills which is something that I think has electrical learners as electricians transposition is something that we need to get good at really so let's figure out how we're going to change this formula around to find the current of this shower so we start off from our formula P is equal to I times by UV we want to make either subject now generally speaking when I do transposition the way I look at it is I think if I want to get this by itself I need to figure out what I'm doing to that and then I need to do the opposite now this is an easy one because there's only one stage where you've got multiple things happening to that eye that's where it gets a little bit tricky but this is nice and easy so at the minute we are taking eye and we are timesing it by V and then just think to yourself what is the opposite of timesing by V well the opposite of timesing by V is very simply two divided by V so I'll let out like this P is equal to I times V and then we're going to do the opposite function which is two divided by V and when we do something to one side we have to do it to the other in order to keep the truth of this equal statement in place so we've got I times V divided by V and then when we look at that we think well if I times by a number and then divide by that number I get back to where I started from doesn't matter what the number is if I times by three and then I divide by three I get back to the original number that I was multiplying so again let's let's just volley some random numbers in here if I make this two in this three two times three gives us six and then if I divide by three I get back to the original two so it's like this bit never happened another way that you can view this as well is if you look at just that part there by itself if you're doing V divided by V you're doing a number divided by itself and apart from 0 any number divided by itself will always give you 1 so it's like we've got that I and we're timesing it by 1 and we know that when we multiply by 1 it makes absolutely no difference to the number stays the same so in effect what we're left with we can imagine that this times by V divided by V never actually happened which leaves us with our nice neat formula P over V is equal to I and there's our transposed formula and again because my OCD won't let me leave this alone I have to put it down as I equals P over V it's always good to have a subject on the left so there we go there's our transposed formula now just in case you're looking at that and thinking well I'm not sure I could do that there is a transposition video on the way so don't worry about that there will be further help on this what you can do is you can use the triangle method for transposing your formula how does that work well if we put a triangle on the board that looks like this and then put a line there and a line there and then if we say that P goes there I goes there and V goes there this line represents a division function and this line represents a multiplication function so if I want to find the power I cover up the P and I'm left with I times V if I want to find I I cover up I and I'm left with P divided by V which is the formula that we found by our kind of more strenuous transposition method and then if I want to find out what V is if I want to find a voltage in a circuit I can use P divided by I so that's going to leave me with P divided by I so that's a method for using transposition like so I'm not a big fan of it because I think it's a bit of a crutch and if you can get away from using that and figure out how to do transposition properly you'll equip yourself with skills that will come in really handy when the formula gets much more complicated and doesn't sit quite so comfortably inside a triangle so whichever way you do it we've got our formula I equals P over V so we know what P it's we know what V is so the next thing we can do is very simply put these values into our calculation so we can say now that I will be equal to 8 now because this is eight point five killer what's the killer means thousand I like to think you can swap that out four times ten to the power of three and you could just put that straight into the calculation but that times 10 to the 3 means move the decimal point one two three spaces and it becomes eight thousand five hundred like that divided by 230 so there's our power there's our voltage and that's going to give us our current just a little word on this as we mentioned if you are doing this for design work if you're doing this in the real world what you'll find is that this will actually be called I be like that I'll have a little B in the subscript IB is equal to eight thousand five hundred divided by 213 that just means design current so it's the current that you're going to base the design of your circuit on so let's do that calculation 8,500 divided by 230 so we've got there eight thousand five hundred divided by 230 and that gives us a value of thirty six point nine six so I've got thirty six point nine six amps so the current that our shower is going to draw according to our design calculation will be thirty six point nine six amp ere's that's how much current that circuit is going to draw so in this video we've seen how critically important this formula is to electricians because when we transpose it it gives us a formula that we can use for our design calculations in our real-world installation work which is obviously super helpful so all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in a previous
+[00:12] video in this series we looked at the
+[00:14] basic power formula and where that comes
+[00:17] from we saw there was a definite
+[00:18] relationship between power current and
+[00:21] voltage and you can see that laid out on
+[00:23] the screen here what we're going to do
+[00:25] in this video is we're going to continue
+[00:27] considering this subject of the basic
+[00:28] power formula but we're going to
+[00:30] transpose that formula and then use it
+[00:33] in a different way to show just how
+[00:35] important this formula is to our
+[00:37] electrical design and installation work
+[00:40] so let's head down to the workshop and
+[00:41] we'll outline how we're going to achieve
+[00:43] this in this video so we saw very
+[00:47] clearly from the calculations that we
+[00:48] just did in the classroom that there is
+[00:50] a relationship a mathematical
+[00:52] relationship between power current and
+[00:54] voltage now that's very interesting it's
+[00:57] important to know that for our exams
+[00:58] because we may be asked questions such
+[00:59] as which of these four formulas is the
+[01:02] one for calculating power or which one
+[01:05] of these formulas is the one for
+[01:07] calculating current using power and
+[01:09] voltage we may even be given a voltage
+[01:12] and a current and V has to calculate
+[01:14] what the power would be and those are
+[01:16] all very important but actually this is
+[01:18] a really critical calculation that we
+[01:21] need to understand for our electrical
+[01:23] installation work why is that well let
+[01:26] me paint you a scenario what happens
+[01:28] when a customer calls you up and says
+[01:30] I'd like you to come round please and
+[01:31] fit my new shower for me certainly you
+[01:34] say what size is the shower and they say
+[01:37] well it measures about 40 centimeters by
+[01:39] 20 centimeters you all have a good laugh
+[01:41] and then you clear it up and ask for the
+[01:42] power rating of the shower now what's
+[01:45] quite interesting it is that on that
+[01:46] shower it won't tell you the current
+[01:48] that it's expected to draw but it will
+[01:51] tell you the power rating now you need
+[01:54] to know the current that that shower is
+[01:56] going to draw or so that you can start
+[01:58] thinking about what size cable do I need
+[02:01] to install what size breaker do I need
+[02:03] to put in will the supply be able to
+[02:05] deliver that amount of current and the
+[02:07] way that we do that is we use the
+[02:09] transposed version of the power formula
+[02:12] that we looked at in the class
+[02:13] in order to calculate how much current
+[02:16] is going to flow and that really is the
+[02:18] starting point for figuring out your
+[02:21] installation of that circuit that's
+[02:24] going into that property now just so you
+[02:27] know when you come across this in your
+[02:28] design unit it might look a little bit
+[02:30] different to this it might say something
+[02:31] like IB will be the subject with a
+[02:34] little B in the subscript and that's the
+[02:37] symbol that we use to indicate that
+[02:39] we're calculating what we call design
+[02:41] current in other words the current that
+[02:43] we expect to flow when we do the design
+[02:45] work for an installation so as it so
+[02:49] happens I have a shower here and so what
+[02:51] we're going to do is we're going to head
+[02:52] back up to the classroom and we're going
+[02:54] to do a quick demonstration on how to
+[02:55] figure out how much current this shower
+[02:58] will draw when we're doing the design
+[03:00] work for that circuit so I've unboxed
+[03:04] the shower this is the Triton Dominica I
+[03:06] think this might be a slightly older
+[03:07] model of shower it's sat in my garage
+[03:09] for over five years now so it might be
+[03:12] discontinued I'm not sure but what we're
+[03:14] looking at here what we're really
+[03:15] interested in in the first instance is
+[03:17] the power rating of the shower because
+[03:19] we need to know that in order to
+[03:21] calculate the current which is kind of
+[03:23] the endgame of this little portion of
+[03:24] the video so this frighten shower has a
+[03:28] power rating you can see on the bottom
+[03:29] here of 8.5 kilowatts so 8.5 kilowatts
+[03:34] is our power so that's the first piece
+[03:36] of information that we need so we've got
+[03:40] that on there
+[03:41] 8.5 kilowatts now we're trying to find
+[03:44] the current in this video so we want to
+[03:47] know what is the current going to be
+[03:48] drawn by this shower so I equal
+[03:51] something we don't know what yet and
+[03:53] we're also interested in in order to
+[03:56] calculate that current we'll need to
+[03:57] know what the voltage that's being
+[03:59] supplied to it is now in the case of the
+[04:01] voltage we know that we state the value
+[04:05] of the voltage the nominal voltage in
+[04:07] the UK is 230 volts 230 volts we know
+[04:13] that we can find that varying it can go
+[04:15] up or down from that value but generally
+[04:17] speaking when you do design work we use
+[04:19] the nominal voltage so the voltage that
+[04:21] we say our electricity is supply that
+[04:23] which is 230 volts
+[04:26] so we need to find the currents now what
+[04:29] I'm going to do is I'm going to show you
+[04:30] how to transpose the formula and then
+[04:33] I'm going to show you the common method
+[04:34] that everybody uses to carry out
+[04:37] transposition of this kind of formula I
+[04:38] don't really like doing it the second
+[04:41] way because while it's got its value and
+[04:44] it's good if you kind of you get stuck
+[04:46] and it can help you to transpose things
+[04:48] quite quickly it doesn't help you to
+[04:50] build up your transposition skills which
+[04:52] is something that I think has electrical
+[04:55] learners as electricians transposition
+[04:57] is something that we need to get good at
+[04:59] really so let's figure out how we're
+[05:02] going to change this formula around to
+[05:04] find the current of this shower so we
+[05:07] start off from our formula P is equal to
+[05:09] I times by UV we want to make either
+[05:14] subject now generally speaking when I do
+[05:17] transposition the way I look at it is I
+[05:19] think if I want to get this by itself I
+[05:22] need to figure out what I'm doing to
+[05:24] that and then I need to do the opposite
+[05:25] now this is an easy one because there's
+[05:27] only one stage where you've got multiple
+[05:29] things happening to that eye that's
+[05:30] where it gets a little bit tricky but
+[05:32] this is nice and easy so at the minute
+[05:34] we are taking eye and we are timesing it
+[05:37] by V and then just think to yourself
+[05:39] what is the opposite of timesing by V
+[05:42] well the opposite of timesing by V is
+[05:45] very simply two divided by V so I'll let
+[05:48] out like this P is equal to I times V
+[05:50] and then we're going to do the opposite
+[05:53] function which is two divided by V and
+[05:57] when we do something to one side we have
+[06:00] to do it to the other in order to keep
+[06:02] the truth of this equal statement in
+[06:04] place so we've got I times V divided by
+[06:07] V and then when we look at that we think
+[06:08] well if I times by a number and then
+[06:11] divide by that number I get back to
+[06:13] where I started from doesn't matter what
+[06:14] the number is if I times by three and
+[06:18] then I divide by three I get back to the
+[06:21] original number that I was multiplying
+[06:22] so again let's let's just volley some
+[06:25] random numbers in here if I make this
+[06:27] two in this three two times three gives
+[06:29] us six and then if I divide by three I
+[06:31] get back to the original two so it's
+[06:34] like this bit never happened another way
+[06:37] that you can view this as well is if you
+[06:39] look at just that part there by itself if you're
+[06:43] doing V divided by V you're doing a
+[06:45] number divided by itself and apart from
+[06:48] 0 any number divided by itself will
+[06:50] always give you 1 so it's like we've got
+[06:53] that I and we're timesing it by 1 and we
+[06:55] know that when we multiply by 1 it makes
+[06:57] absolutely no difference to the number
+[06:59] stays the same so in effect
+[07:01] what we're left with we can imagine that
+[07:03] this times by V divided by V never
+[07:06] actually happened which leaves us with
+[07:07] our nice neat formula P over V is equal
+[07:13] to I and there's our transposed formula
+[07:16] and again because my OCD won't let me
+[07:19] leave this alone I have to put it down
+[07:20] as I equals P over V it's always good to
+[07:24] have a subject on the left so there we
+[07:25] go there's our transposed formula now
+[07:28] just in case you're looking at that and
+[07:29] thinking well I'm not sure I could do
+[07:31] that there is a transposition video on
+[07:33] the way so don't worry about that there
+[07:34] will be further help on this what you
+[07:36] can do is you can use the triangle
+[07:38] method for transposing your formula how
+[07:41] does that work well if we put a triangle
+[07:44] on the board that looks like this and
+[07:46] then put a line there and a line there
+[07:49] and then if we say that P goes there I
+[07:52] goes there and V goes there this line
+[07:56] represents a division function and this
+[07:59] line represents a multiplication
+[08:00] function so if I want to find the power
+[08:02] I cover up the P and I'm left with I
+[08:06] times V if I want to find I I cover up I
+[08:11] and I'm left with P divided by V which
+[08:15] is the formula that we found by our kind
+[08:18] of more strenuous transposition method
+[08:21] and then if I want to find out what V is
+[08:23] if I want to find a voltage in a circuit
+[08:24] I can use P divided by I so that's going
+[08:28] to leave me with P divided by I so
+[08:30] that's a method for using transposition
+[08:34] like so I'm not a big fan of it because
+[08:36] I think it's a bit of a crutch
+[08:38] and if you can get away from using that
+[08:39] and figure out how to do transposition
+[08:41] properly you'll equip yourself with
+[08:43] skills that will come in really handy
+[08:44] when the formula gets much more
+[08:46] complicated and doesn't sit quite so
+[08:48] comfortably inside a triangle
+[08:51] so whichever way you do it we've got our
+[08:54] formula I equals P over V so we know
+[08:58] what P it's we know what V is so the
+[09:00] next thing we can do is very simply put
+[09:02] these values into our calculation so we
+[09:05] can say now that I will be equal to 8
+[09:09] now because this is eight point five
+[09:11] killer
+[09:12] what's the killer means thousand I like
+[09:15] to think you can swap that out four
+[09:16] times ten to the power of three and you
+[09:19] could just put that straight into the
+[09:20] calculation but that times 10 to the 3
+[09:22] means move the decimal point one two
+[09:24] three spaces and it becomes eight
+[09:26] thousand five hundred like that divided
+[09:30] by 230 so there's our power
+[09:34] there's our voltage and that's going to
+[09:36] give us our current just a little word
+[09:38] on this as we mentioned if you are doing
+[09:42] this for design work if you're doing
+[09:44] this in the real world what you'll find
+[09:46] is that this will actually be called I
+[09:47] be like that I'll have a little B in the
+[09:50] subscript IB is equal to eight thousand
+[09:53] five hundred divided by 213 that just
+[09:55] means design current so it's the current
+[09:57] that you're going to base the design of
+[10:00] your circuit on so let's do that
+[10:03] calculation 8,500 divided by 230 so
+[10:08] we've got there eight thousand five
+[10:09] hundred divided by 230 and that gives us
+[10:13] a value of thirty six point nine six so
+[10:18] I've got thirty six point nine six amps
+[10:20] so the current that our shower is going
+[10:24] to draw according to our design
+[10:26] calculation will be thirty six point
+[10:29] nine six amp ere's that's how much
+[10:33] current that circuit is going to draw so
+[10:36] in this video we've seen how critically
+[10:38] important this formula is to
+[10:40] electricians because when we transpose
+[10:42] it it gives us a formula that we can use
+[10:44] for our design calculations in our
+[10:47] real-world installation work which is
+[10:50] obviously super helpful so all that
+[10:52] remains in this video is to say thank
+[10:54] you very much for watching
+[10:57] [Music]
+[11:10] [Music]
+[11:17] [Music]

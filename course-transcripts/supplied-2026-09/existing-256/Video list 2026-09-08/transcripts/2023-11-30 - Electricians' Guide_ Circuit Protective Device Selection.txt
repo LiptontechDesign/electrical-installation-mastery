@@ -1,0 +1,224 @@
+# Electricians' Guide: Circuit Protective Device Selection
+# https://www.youtube.com/watch?v=y5mQPAHajQI
+
+in this q a video we're going to answer the question how is the correct protective device for a circuit selected now just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of circuit design they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD and you'll even receive a certificate to prove that you've completed the course now in the previous video we calculated our design current and now that we've got our design current it's time to think about what we use it for remember the design current is simply how much current the circuit will draw under normal circumstances and so we can use this to select the correct protective device the on-site guide published by the IET States in appendix F that I N must be greater than or equal to IB so what's this I with the lowercase n in the subscript all about well that means nominal current and it's the rated current of the protective device in other words it's the number you see on the front of a circuit breaker as in 6 16 20 or 32 and so on sometimes people think this is the amount of current that it takes to make the fuse or circuit breaker to trip but this isn't quite accurate it's actually the amount of current the circuit breaker will allow to pass through it forever without ever tripping so it makes sense that the breaker needs to be equal to or bigger than the current flowing through it to make the load work or it's going to trip every time you turn it on there's also this really helpful image in the electrical design guide published by the IET that shows the relationship between the various components of the electrical design process starting with the design current IB on the left and showing that the nominal rating of the protective device should be bigger as we move along the arrow to the right so we need to select an appropriately sized device from the range of protective devices from BG electrical we're going to stick to mcbs for this task because although it's still not unheard of to use fuses for the protection of final circuits it's becoming increasingly very unlikely that they'll be used for final circuits on new installations apart from certain Niche applications so if the nominal rating of the MCB needs to be equal to or bigger than the design current we need to find the closest MCB above that value so we could consult a table of Maximum Earth volt Loop impedances in either bs7671 or the on-site guide and find the appropriate MCB size from there however just a quick word of warning not all manufacturers of mcbs make all the sizes listed there so for example if we look at table B6 in the on-site guide we find that there's a list of mcbs across the top of the table there and while this table isn't designed to act as a guide for circuit breaker sizes but rather maximum Earth Loop impedances it is a very helpful reference in a previous video in this series we started designing an electrical circuit supplying this Fusion Comet electric boiler from the electric heating company and we calculated that it would draw 39.13 amps the next size up from that design current is a 40 amp breaker and so that would be our Natural Choice of circuit breaker however at this point we're going to go on a quick side quest to discuss an interesting point you'll notice that the design current is very close to the nominal rating of the circuit breaker which in theory isn't really a problem however if you look at the technical data for this boiler you can see that the recommendation is that it's protected by a 50 amp MCB so why is there a suggestion to go up to this larger sized MCB well it's because we've calculated the design current using the nominal voltage which is the correct thing to do however in this instance because the load is purely resistive if the real life voltage connected to the load it's higher than the nominal value it will cause more current to flow so this could cause the current to go over 40 amps now this is unlikely to trip the MCB but it's not ideal so a bit of engineering judgment here would suggest that it might be wise to go up an MCB size the next size up is 45 amps now it so happens that professional Brands like BG electrical do make a 45 amp MCB however not all manufacturers make this size a breaker and The Boilermaker knows this and therefore has suggested that a 50 amp MTB is the way to go now this is a little bit of a fringe case as the design current isn't typically this tight to the MCB size but it really highlights one of the most important things about electrical design which is to gather as much data as you can about the installation sometimes pieces of information like this from the load manufacturer can make the difference between a successful design and one that causes unexpected issues further down the line so which way are we going to go in this case are we going to stick to the black and white rules laid out in the IET books or are we going to go with what the manufacturer says well we need to keep in mind that a lot of the books published by the IET have the word guide or guidance in the title as in on-site guide electrical design guide guidance note one and that's important while the information in these books is valuable and working from this information will help keep our installation safe and compliant there may be times when we go a bit beyond what they say in fact bs7671 States in regulation 134.1.1 that the installation of electrical equipment shall take account of Manufacturers instruct so we do need to factor in what the manufacturer says as well in this specific case I've looked at the calculations using both sizes of MCB both the 40 and the 50. and with some additional factors that we're going to discuss in the next video in this series it actually doesn't make any difference to the size of cable that we're going to install so I'm going to stick with the manufacturer's recommendation and go with the 50 amp MCB now back to the main quest taking another look at that table B6 in the on-site guide we could also consider that there's three different types of MCB the b c and d type the key difference between these types is the time they take to respond to large amounts of current flowing through them in the event of a short circuit where a line in neutral or line and line touch each other and an earth fault of negligible impedance which is basically where a line of Earth conduct to touch each other a b type circuit breaker will disconnect the circuit much more quickly in the event of this happening than the c-type which in turn reacts faster than the d-type deciding which of these you install boils down to the type of load you're supplying loads like Motors and certain types of lighting draw a large amount of current for a brief period when first turned on the B type sees this as a fault and will disconnect the circuit even though there is no fault as the C and D type are slower to respond to this large but very brief current they are less likely to trip when protecting a circuit feeding this kind of load there's guidance given in table 7.272 as to the kinds of load each circuit breaker type will protect so type C's are for small motors fluorescent lighting we should mention LED lighting also has quite large but incredibly brief inrush currents and most manufacturers will tell you the maximum number of LED fittings that should be connected to each type of breaker d-types are for highly inductive loads with large inrush currents such as x-ray machines large Transformers and welding machines because our electric boiler here is a purely resistive heating load there's no inrush current to worry about and so we can use a b-type MCB so there we go we now know how to select the correct protective device for a circuit to find out what the rating factors of a circuit are check out this video right here or click the link in the description below to watch it as part of our free training package to help you with your CPD and receive a certificate as well all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this q a video we're going to answer
+[00:01] the question how is the correct
+[00:03] protective device for a circuit selected
+[00:05] now just before we explain the answer to
+[00:07] this question Please be aware that this
+[00:09] video is one of a series that we've made
+[00:10] on the subject of circuit design they
+[00:13] can be viewed individually or you can
+[00:15] click the link in the description below
+[00:16] to view them as part of a free online
+[00:18] training package to help you with your
+[00:20] CPD and you'll even receive a
+[00:21] certificate to prove that you've
+[00:23] completed the course
+[00:24] now in the previous video we calculated
+[00:27] our design current and now that we've
+[00:28] got our design current it's time to
+[00:30] think about what we use it for remember
+[00:32] the design current is simply how much
+[00:34] current the circuit will draw under
+[00:36] normal circumstances and so we can use
+[00:38] this to select the correct protective
+[00:40] device the on-site guide published by
+[00:42] the IET States in appendix F that I N
+[00:45] must be greater than or equal to IB so
+[00:49] what's this I with the lowercase n in
+[00:51] the subscript all about well that means
+[00:54] nominal current and it's the rated
+[00:56] current of the protective device in
+[00:57] other words it's the number you see on
+[01:00] the front of a circuit breaker as in 6
+[01:01] 16 20 or 32 and so on sometimes people
+[01:05] think this is the amount of current that
+[01:06] it takes to make the fuse or circuit
+[01:08] breaker to trip but this isn't quite
+[01:10] accurate it's actually the amount of
+[01:13] current the circuit breaker will allow
+[01:14] to pass through it forever without ever
+[01:16] tripping so it makes sense that the
+[01:19] breaker needs to be equal to or bigger
+[01:21] than the current flowing through it to
+[01:22] make the load work or it's going to trip
+[01:24] every time you turn it on there's also
+[01:27] this really helpful image in the
+[01:28] electrical design guide published by the
+[01:29] IET that shows the relationship between
+[01:31] the various components of the electrical
+[01:33] design process starting with the design
+[01:35] current IB on the left and showing that
+[01:38] the nominal rating of the protective
+[01:39] device should be bigger as we move along
+[01:42] the arrow to the right
+[01:43] so we need to select an appropriately
+[01:46] sized device from the range of
+[01:47] protective devices from BG electrical
+[01:49] we're going to stick to mcbs for this
+[01:52] task because although it's still not
+[01:53] unheard of to use fuses for the
+[01:54] protection of final circuits it's
+[01:56] becoming increasingly very unlikely that
+[01:59] they'll be used for final circuits on
+[02:00] new installations apart from certain
+[02:02] Niche applications so if the nominal
+[02:05] rating of the MCB needs to be equal to
+[02:07] or bigger than the design current we
+[02:09] need to find the closest MCB above that
+[02:12] value so we could consult a table of
+[02:14] Maximum Earth volt Loop impedances in
+[02:16] either bs7671 or the on-site guide and
+[02:19] find the appropriate MCB size from there
+[02:22] however just a quick word of warning not
+[02:24] all manufacturers of mcbs make all the
+[02:27] sizes listed there so for example if we
+[02:29] look at table B6 in the on-site guide we
+[02:31] find that there's a list of mcbs across
+[02:33] the top of the table there and while
+[02:35] this table isn't designed to act as a
+[02:37] guide for circuit breaker sizes but
+[02:39] rather maximum Earth Loop impedances it
+[02:41] is a very helpful reference in a
+[02:44] previous video in this series we started
+[02:46] designing an electrical circuit
+[02:47] supplying this Fusion Comet electric
+[02:49] boiler from the electric heating company
+[02:51] and we calculated that it would draw
+[02:54] 39.13 amps the next size up from that
+[02:57] design current is a 40 amp breaker and
+[02:59] so that would be our Natural Choice of
+[03:01] circuit breaker however at this point
+[03:03] we're going to go on a quick side quest
+[03:05] to discuss an interesting point you'll
+[03:08] notice that the design current is very
+[03:10] close to the nominal rating of the
+[03:12] circuit breaker which in theory isn't
+[03:14] really a problem however if you look at
+[03:16] the technical data for this boiler you
+[03:18] can see that the recommendation is that
+[03:20] it's protected by a 50 amp MCB so why is
+[03:24] there a suggestion to go up to this
+[03:25] larger sized MCB well it's because we've
+[03:29] calculated the design current using the
+[03:30] nominal voltage which is the correct
+[03:32] thing to do however in this instance
+[03:34] because the load is purely resistive if
+[03:37] the real life voltage connected to the
+[03:38] load it's higher than the nominal value
+[03:40] it will cause more current to flow so
+[03:42] this could cause the current to go over
+[03:44] 40 amps now this is unlikely to trip the
+[03:47] MCB but it's not ideal so a bit of
+[03:50] engineering judgment here would suggest
+[03:51] that it might be wise to go up an MCB
+[03:53] size the next size up is 45 amps now it
+[03:56] so happens that professional Brands like
+[03:58] BG electrical do make a 45 amp MCB
+[04:01] however not all manufacturers make this
+[04:03] size a breaker and The Boilermaker knows
+[04:05] this and therefore has suggested that a
+[04:07] 50 amp MTB is the way to go now this is
+[04:11] a little bit of a fringe case as the
+[04:13] design current isn't typically this
+[04:14] tight to the MCB size but it really
+[04:17] highlights one of the most important
+[04:18] things about electrical design which is
+[04:20] to gather as much data as you can about
+[04:22] the installation sometimes pieces of
+[04:24] information like this from the load
+[04:25] manufacturer can make the difference
+[04:27] between a successful design and one that
+[04:29] causes unexpected issues further down
+[04:31] the line so which way are we going to go
+[04:33] in this case are we going to stick to
+[04:35] the black and white rules laid out in
+[04:37] the IET books or are we going to go with
+[04:39] what the manufacturer says well we need
+[04:41] to keep in mind that a lot of the books
+[04:43] published by the IET have the word guide
+[04:44] or guidance in the title as in on-site
+[04:47] guide electrical design guide guidance
+[04:50] note one and that's important while the
+[04:52] information in these books is valuable
+[04:54] and working from this information will
+[04:55] help keep our installation safe and
+[04:57] compliant there may be times when we go
+[04:59] a bit beyond what they say in fact
+[05:01] bs7671 States in regulation 134.1.1 that
+[05:04] the installation of electrical equipment
+[05:07] shall take account of Manufacturers
+[05:09] instruct
+[05:10] so we do need to factor in what the
+[05:13] manufacturer says as well in this
+[05:15] specific case I've looked at the
+[05:17] calculations using both sizes of MCB
+[05:19] both the 40 and the 50. and with some
+[05:22] additional factors that we're going to
+[05:23] discuss in the next video in this series
+[05:24] it actually doesn't make any difference
+[05:26] to the size of cable that we're going to
+[05:27] install so I'm going to stick with the
+[05:30] manufacturer's recommendation and go
+[05:31] with the 50 amp MCB now back to the main
+[05:34] quest
+[05:35] taking another look at that table B6 in
+[05:38] the on-site guide we could also consider
+[05:40] that there's three different types of
+[05:41] MCB the b c and d type the key
+[05:44] difference between these types is the
+[05:46] time they take to respond to large
+[05:47] amounts of current flowing through them
+[05:49] in the event of a short circuit where a
+[05:51] line in neutral or line and line touch
+[05:52] each other and an earth fault of
+[05:54] negligible impedance which is basically
+[05:56] where a line of Earth conduct to touch
+[05:58] each other a b type circuit breaker will
+[06:00] disconnect the circuit much more quickly
+[06:01] in the event of this happening than the
+[06:03] c-type which in turn reacts faster than
+[06:05] the d-type deciding which of these you
+[06:08] install boils down to the type of load
+[06:09] you're supplying loads like Motors and
+[06:11] certain types of lighting draw a large
+[06:13] amount of current for a brief period
+[06:15] when first turned on the B type sees
+[06:17] this as a fault and will disconnect the
+[06:18] circuit even though there is no fault as
+[06:21] the C and D type are slower to respond
+[06:23] to this large but very brief current
+[06:25] they are less likely to trip when
+[06:27] protecting a circuit feeding this kind
+[06:28] of load there's guidance given in table
+[06:31] 7.272 as to the kinds of load each
+[06:34] circuit breaker type will protect so
+[06:36] type C's are for small motors
+[06:38] fluorescent lighting we should mention
+[06:39] LED lighting also has quite large but
+[06:42] incredibly brief inrush currents and
+[06:44] most manufacturers will tell you the
+[06:45] maximum number of LED fittings that
+[06:47] should be connected to each type of
+[06:48] breaker d-types are for highly inductive
+[06:51] loads with large inrush currents such as
+[06:53] x-ray machines large Transformers and
+[06:56] welding machines because our electric
+[06:58] boiler here is a purely resistive
+[07:00] heating load there's no inrush current
+[07:02] to worry about and so we can use a
+[07:04] b-type MCB so there we go we now know
+[07:06] how to select the correct protective
+[07:08] device for a circuit to find out what
+[07:10] the rating factors of a circuit are
+[07:11] check out this video right here or click
+[07:13] the link in the description below to
+[07:15] watch it as part of our free training
+[07:16] package to help you with your CPD and
+[07:19] receive a certificate as well all that
+[07:20] remains in this video is to say thank
+[07:22] you very much for watching

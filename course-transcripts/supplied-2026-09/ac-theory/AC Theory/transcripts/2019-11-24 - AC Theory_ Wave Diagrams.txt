@@ -1,0 +1,260 @@
+# AC Theory: Wave Diagrams
+# https://www.youtube.com/watch?v=_XNvQ44feqA
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering the subject of AC theory and we're going to continue filling in our worksheet as you can see on the screen here we're going to be concentrating on the line here that talks about waveforms and wave diagrams and we're going to be seeing how current and voltage waveforms are affected by our three different loads those resistive inductive and capacitive loads so if you haven't already done so please click the link in the description below to download the worksheet and if you want any further information on AC theory then please check out the playlist that I've created that shows these videos in the correct order so let's have a look at those waveforms so as you can see on the screen here I've got two waveforms representing what's going on inside our peer resistive load you can see here we've got the voltage waveform which I've outlined in red and here you can see we've got the current waveform which I've outlined in blue now when we look at these two waveforms it's a very very interesting situation because what you can see is that the voltage and the current are rising and falling in perfect what we could call unity the technical expression for this is that the voltage and the current are in phase now what that means is that they are both hitting the same kind of significant points along their waveform along their cycle at the same moment in time so if we look here we can see that the current waveform is at zero so it's at zero amps and the voltage waveform is also there at zero volts and then when the voltage waveform hits its maximum positive peak you can see there that it's at its maximum at 90 degrees and the current is reaching its maximum of one also at 90 degrees now these are just values that I've just put on here for the sake of convenience to show what the waveform is doing so here the voltage waveform is peaking at 2 volts and the current waveform is peaking at 1 ampere and then we can follow that through and we can see that these all line up with each other so once we get to the maximum negative peak that the current and voltage waveforms are reaching they're both reaching that at 270 degrees before they both tail off over here at 360 degrees they're both at 0 and then the cycle starts again now so far so simple and what we can do is we can take this kind of image from the screen here this waveform of the voltage in the current and we can transfer that into our worksheet so we'll fill in the first box on the worksheet for this video and it looks a little bit like we've got on the screen now so that's going to sit in there so I suggest you pause the video and copy that up and into your worksheet so at this point this is a very simple looking exercise the waveforms line up with each other as we might expect we'd expect when the voltages as a peak the current will also be at a peak with that seems like normal behavior for an AC circuit however when we start to look deeper into this we start to find out that actually these two waveforms that current waveform and the voltage waveform can start to fall out of phase with each other and that starts to look a little bit like this we can actually see that the current waveform can start to fall so that it is out of unity with the voltage waveform and it can actually end up going in either direction like this now what causes this to happen is starting to bring into our circuits those other types of load so for example if we have a purely inductive load then the voltage and the current waveform will look like this now this is significant because what's happened is that the current is still rising and falling at the same rate as the voltage so it still got the same frequency as each other however they are hitting their significant points at completely different times now and what we can see we can actually look at that so when the voltage waveform is at zero here's when we're at zero volts you can see that actually the current waveform is down here at its maximum negative peak and actually if we look along the x-axis for when the current waveform hits zero it happens here at 90 degrees now that's a really important thing to understand the fact that the current is actually kind of fallen behind the voltage and we have a special name for that relationship and as the video progresses that will become a little bit more obvious why we say this but what we say is that in a purely inductive circuit the current lags the voltage by 90 degrees so if we look over here at another significant point on the current and voltage waveform you can see that the current is reaching its maximum positive peak at 180 degrees whereas the voltage reaches its maximum positive peak at 90 degrees so the difference between these two values 90 and 180 is obviously 90 degrees so you see the current is reaching its maximum positive peak 90 degrees after the voltage has reached its maximum positive peak so that's the kind of wave form relationship between current and voltage that's what it looks like when we express this as a wave for a purely inductive circuit now remember that is a circuit that contains no resistance and no capacitance now if you think about this logically for a moment you can see that actually you'll never get a perfect inductor you'll never get a pure inductor because if you think about what we said the structure of an inductor looks like in the previous video we basically said it's just a coil of copper wire that's all an inductive load is at its kind of fundamental level so of course because of the very nature of its structure because it's made out of a piece of generally speaking copper wire that copper wire will always have some amount of resistance however small it might be will always have some value of resistance and so that means that in practice you will never get this exactly 90 degree lagging relationship between the current and the voltage however for the purposes of our understanding and developing our deep-rooted understanding of AC theory we need to just consider the fact acknowledge the fact that in a purely inductive circuit the current lags the voltage by 90 degrees so now what we can do is we can take what we've got on the screen here we can take this kind of relationship and we can drop that into our worksheet now this one's a little bit tricky to draw out so what I suggest you do is when you draw this draw your voltage sine wave in there and then just line up the significant points so at the start of the graph the current will be at its maximum negative value when the voltage is reaching its maximum positive peak you can put that mark in just here to show that the current waveform is at zero and then just keep on marking off all of these significant points on the current wave and then join them up with each other it might take a couple of attempts but if you mark out kind of these five significant points on your worksheet you'll be able to draw that in and that will help you to understand the way that current and voltage behaviors a waveform so now let's think about this logically what do you think is going to happen if we consider a purely capacitive load so now we're moving away from the purely resistive we're moving away from the purely inductive and we're looking at a purely capacitive load what do you think is going to happen to the relationship between the voltage and the current now well you don't need to wait in suspense because we'll have a look now we can see that as the circuit becomes more and more capacitive the current goes in the opposite direction like that until we get to this point here where what we've gotten on screen now is a representation of what's happening with a purely capacitive circuit so that's a circuit that has no resistance and no inductance and you can see that now the current is actually kind of reaching its significant points before the voltage is reaching the same significant point so you can see here that when the current is at its maximum positive the voltage is at zero and the voltage doesn't reach its maximum positive point until ninety degrees after the current has reached its maximum positive point now the name we give to this relationship or the way we describe this relationship is we say that the current leads the voltage by 90 degrees so the current is leading the voltage by 90 degrees in a purely capacitive circuit so what we can do now is we can copy that down into our worksheet and it'll go into the box looking something like this and the same kind of tips apply what you want to do is just have the significant points on here marked for the voltage and the current waveforms so that you can then mark that in so draw the voltage waveform first and then line up these significant points along here and you'll be able to copy that down into your worksheet to help you visualize what's happening with the waveform diagram now the reason the current and the voltage start to fall out of phase with each other in inductive and capacitive circuits is kind of a little bit more advanced than we'd normally look at for the purposes of the course that we're looking at the minute ball in a future video we will consider the reasons why that happens so our worksheet should now look like this we can see there we've got our three different waveforms and in the next video in this series we're going to look at how we can describe those waveforms as phasor diagrams thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:13] we're going to continue considering the
+[00:14] subject of AC theory and we're going to
+[00:17] continue filling in our worksheet as you
+[00:19] can see on the screen here we're going
+[00:21] to be concentrating on the line here
+[00:23] that talks about waveforms and wave
+[00:25] diagrams and we're going to be seeing
+[00:27] how current and voltage waveforms are
+[00:30] affected by our three different loads
+[00:32] those resistive inductive and capacitive
+[00:34] loads so if you haven't already done so
+[00:37] please click the link in the description
+[00:39] below to download the worksheet and if
+[00:41] you want any further information on AC
+[00:43] theory then please check out the
+[00:45] playlist that I've created that shows
+[00:46] these videos in the correct order so
+[00:49] let's have a look at those waveforms
+[00:55] so as you can see on the screen here
+[00:58] I've got two waveforms representing
+[01:00] what's going on inside our peer
+[01:02] resistive load you can see here we've
+[01:04] got the voltage waveform which I've
+[01:06] outlined in red and here you can see
+[01:08] we've got the current waveform which
+[01:10] I've outlined in blue now when we look
+[01:13] at these two waveforms it's a very very
+[01:16] interesting situation because what you
+[01:17] can see is that the voltage and the
+[01:19] current are rising and falling in
+[01:22] perfect what we could call unity the
+[01:25] technical expression for this is that
+[01:27] the voltage and the current are in phase
+[01:29] now what that means is that they are
+[01:32] both hitting the same kind of
+[01:34] significant points along their waveform
+[01:37] along their cycle at the same moment in
+[01:40] time so if we look here we can see that
+[01:42] the current waveform is at zero so it's
+[01:46] at zero amps and the voltage waveform is
+[01:49] also there at zero volts and then when
+[01:53] the voltage waveform hits its maximum
+[01:54] positive peak you can see there that
+[01:58] it's at its maximum at 90 degrees and
+[02:00] the current is reaching its maximum of
+[02:02] one also at 90 degrees now these are
+[02:05] just values that I've just put on here
+[02:07] for the sake of convenience to show what
+[02:09] the waveform is doing so here the
+[02:10] voltage waveform is peaking at 2 volts
+[02:12] and the current waveform is peaking at 1
+[02:15] ampere and then we can follow that
+[02:17] through and we can see that these all
+[02:18] line up with each other so once we get
+[02:20] to the maximum negative peak that the
+[02:23] current and voltage waveforms are
+[02:25] reaching they're both reaching that at
+[02:27] 270 degrees before they both tail off
+[02:30] over here at 360 degrees they're both at
+[02:34] 0 and then the cycle starts again now so
+[02:37] far so simple and what we can do is we
+[02:40] can take this kind of image from the
+[02:43] screen here this waveform of the voltage
+[02:45] in the current and we can transfer that
+[02:47] into our worksheet so we'll fill in the
+[02:49] first box on the worksheet for this
+[02:50] video and it looks a little bit like
+[02:52] we've got on the screen now so that's
+[02:55] going to sit in there so I suggest you
+[02:57] pause the video and copy that up and
+[02:59] into your worksheet so at this point
+[03:04] this is a very simple looking exercise
+[03:06] the waveforms
+[03:07] line up with each other as we might
+[03:09] expect we'd expect when the voltages as
+[03:11] a peak the current will also be at a
+[03:13] peak with that seems like normal
+[03:14] behavior for an AC circuit however when
+[03:18] we start to look deeper into this we
+[03:20] start to find out that actually these
+[03:22] two waveforms that current waveform and
+[03:25] the voltage waveform can start to fall
+[03:27] out of phase with each other and that
+[03:30] starts to look a little bit like this we
+[03:32] can actually see that the current
+[03:33] waveform can start to fall so that it is
+[03:38] out of unity with the voltage waveform
+[03:40] and it can actually end up going in
+[03:42] either direction like this now what
+[03:46] causes this to happen is starting to
+[03:49] bring into our circuits those other
+[03:51] types of load so for example if we have
+[03:55] a purely inductive load then the voltage
+[03:59] and the current waveform will look like
+[04:01] this now this is significant because
+[04:04] what's happened is that the current is
+[04:07] still rising and falling at the same
+[04:09] rate as the voltage so it still got the
+[04:12] same frequency as each other
+[04:14] however they are hitting their
+[04:16] significant points at completely
+[04:18] different times now and what we can see
+[04:21] we can actually look at that so when the
+[04:22] voltage waveform is at zero here's when
+[04:25] we're at zero volts you can see that
+[04:27] actually the current waveform is down
+[04:30] here at its maximum negative peak and
+[04:33] actually if we look along the x-axis for
+[04:37] when the current waveform hits zero it
+[04:40] happens here at 90 degrees now that's a
+[04:44] really important thing to understand the
+[04:46] fact that the current is actually kind
+[04:49] of fallen behind the voltage and we have
+[04:52] a special name for that relationship and
+[04:54] as the video progresses that will become
+[04:56] a little bit more obvious why we say
+[04:58] this but what we say is that in a purely
+[05:01] inductive circuit the current lags the
+[05:04] voltage by 90 degrees
+[05:07] so if we look over here at another
+[05:11] significant point on the current and
+[05:12] voltage waveform you can see that the
+[05:14] current is reaching its maximum positive
+[05:17] peak at 180 degrees whereas the voltage
+[05:21] reaches its maximum positive peak at 90
+[05:24] degrees so the difference between these
+[05:27] two values 90 and 180 is obviously 90
+[05:31] degrees so you see the current is
+[05:33] reaching its maximum positive peak 90
+[05:36] degrees after the voltage has reached
+[05:38] its maximum positive peak so that's the
+[05:43] kind of wave form relationship between
+[05:45] current and voltage that's what it looks
+[05:46] like when we express this as a wave for
+[05:49] a purely inductive circuit now remember
+[05:51] that is a circuit that contains no
+[05:53] resistance and no capacitance now if you
+[05:57] think about this logically for a moment
+[05:58] you can see that actually you'll never
+[06:01] get a perfect inductor you'll never get
+[06:03] a pure inductor because if you think
+[06:05] about what we said the structure of an
+[06:07] inductor looks like in the previous
+[06:08] video we basically said it's just a coil
+[06:10] of copper wire that's all an inductive
+[06:13] load is at its kind of fundamental level
+[06:16] so of course because of the very nature
+[06:18] of its structure because it's made out
+[06:20] of a piece of generally speaking copper
+[06:23] wire that copper wire will always have
+[06:26] some amount of resistance however small
+[06:28] it might be will always have some value
+[06:30] of resistance and so that means that in
+[06:33] practice you will never get this exactly
+[06:36] 90 degree
+[06:37] lagging relationship between the current
+[06:39] and the voltage however for the purposes
+[06:41] of our understanding and developing our
+[06:45] deep-rooted understanding of AC theory
+[06:48] we need to just consider the fact
+[06:51] acknowledge the fact that in a purely
+[06:54] inductive circuit the current lags the
+[06:56] voltage by 90 degrees so now what we can
+[07:00] do is we can take what we've got on the
+[07:02] screen here we can take this kind of
+[07:03] relationship and we can drop that into
+[07:06] our worksheet now this one's a little
+[07:07] bit tricky to draw out so what I suggest
+[07:10] you do is when you draw this draw your
+[07:11] voltage sine wave in there and then just
+[07:14] line up the significant points so at the
+[07:17] start of the graph the current will be
+[07:19] at its maximum negative value when the
+[07:21] voltage is reaching its maximum positive
+[07:23] peak you can put that mark in just here
+[07:26] to show that the current waveform is at
+[07:29] zero and then just keep on marking off
+[07:31] all of these significant points on the
+[07:33] current wave and then join them up with each other it
+[07:36] might take a couple of attempts but if
+[07:38] you mark out kind of these five
+[07:40] significant points on your worksheet
+[07:43] you'll be able to draw that in and that
+[07:45] will help you to understand the way that
+[07:47] current and voltage behaviors a waveform
+[07:50] so now let's think about this logically
+[07:52] what do you think is going to happen if
+[07:54] we consider a purely capacitive load so
+[08:00] now we're moving away from the purely
+[08:01] resistive we're moving away from the
+[08:03] purely inductive and we're looking at a
+[08:05] purely capacitive load what do you think
+[08:07] is going to happen to the relationship
+[08:09] between the voltage and the current now
+[08:10] well you don't need to wait in suspense
+[08:12] because we'll have a look now we can see
+[08:14] that as the circuit becomes more and
+[08:17] more capacitive the current goes in the
+[08:21] opposite direction like that until we
+[08:23] get to this point here where what we've
+[08:25] gotten on screen now is a representation
+[08:27] of what's happening with a purely
+[08:29] capacitive circuit so that's a circuit
+[08:32] that has no resistance and no inductance
+[08:34] and you can see that now the current is
+[08:36] actually kind of reaching its
+[08:39] significant points before the voltage is
+[08:42] reaching the same significant point so
+[08:45] you can see here that when the current
+[08:46] is at its maximum positive the voltage
+[08:48] is at zero and the voltage doesn't reach
+[08:51] its maximum positive point until ninety
+[08:54] degrees after the current has reached
+[08:55] its maximum positive point now the name
+[09:00] we give to this relationship or the way
+[09:02] we describe this relationship is we say
+[09:04] that the current leads the voltage by 90
+[09:07] degrees so the current is leading the
+[09:09] voltage by 90 degrees in a purely
+[09:12] capacitive circuit so what we can do now
+[09:16] is we can copy that down into our
+[09:17] worksheet and it'll go into the box
+[09:19] looking something like this and the same
+[09:22] kind of tips apply what you want to do
+[09:24] is just have the significant points on
+[09:26] here marked for the voltage and the
+[09:29] current waveforms so that you can then
+[09:32] mark that in so draw the voltage
+[09:33] waveform first and then line up these
+[09:35] significant points along here and you'll
+[09:37] be able to copy that down into your
+[09:38] worksheet to help you visualize what's
+[09:40] happening with the waveform diagram now
+[09:43] the reason
+[09:45] the current and the voltage start to
+[09:46] fall out of phase with each other in
+[09:48] inductive and capacitive circuits is
+[09:50] kind of a little bit more advanced than
+[09:52] we'd normally look at for the purposes
+[09:54] of the course that we're looking at the
+[09:56] minute ball in a future video we will
+[09:58] consider the reasons why that happens
+[10:00] so our worksheet should now look like
+[10:03] this we can see there we've got our
+[10:05] three different waveforms and in the
+[10:07] next video in this series we're going to
+[10:09] look at how we can describe those
+[10:10] waveforms as phasor diagrams thank you
+[10:14] very much for watching
+[10:17] [Music]
+[10:27] [Music]

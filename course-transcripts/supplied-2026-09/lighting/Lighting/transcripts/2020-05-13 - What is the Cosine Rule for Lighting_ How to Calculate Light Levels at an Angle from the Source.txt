@@ -1,0 +1,228 @@
+# What is the Cosine Rule for Lighting? How to Calculate Light Levels at an Angle from the Source
+# https://www.youtube.com/watch?v=hqaLQLTaMew
+
+[Music] hello and welcome to this electrical principals training video in a previous video in this series we looked at the inverse square law for lighting and that looked something like this e is equal to I divided by d squared and if you remember I was the luminous intensity how bright the light horse was e was the illuminance in other words how brightly lit a surface was and B was the distance between source and surface and we kind of analyzed this formula we played with numbers with it and we saw the way that those numbers impacted on the total light level now if you haven't watched those videos please go back and watch them because it's going to help you to understand what we discuss in this video a little bit more and in this video we're going to discuss what happens to the light level as you get further and further away from being directly underneath the light so in previous videos we've calculated the light level at this point here directly below the light fitting and many people have asked quite rightly well how do we figure out what difference does it make as we get to a position where we're not directly under the lights maybe the light is now coming down an angle instead of perpendicular as it is there and that's what we're going to explore now we're going to have a look at something that is referred to as the cosine rule okay so this is the cosine rule and if you go to google and type in cosine rule then you'll get lots of other things that relate to triangles but not necessarily specifically this so if you type in cosine rule for illuminance okay or cosine rule for lighting or something like that then you'll come out with more information on the correct thing that you're searching for so as you search for more information just bear in mind that's gonna help you out enormously with this subject okay so we've said that this is the cosine rule for illuminance okay so where does the cosine part come in well we've already mentioned that the light shining from here to here is hitting the surface at an angle and that really is the angle that we're interested in now this might seem a little bit contradictory what I'm about to tell you okay but just bear with me because it will make sense as we go through this so what we're interested in really is the light level over here so we're interested in the angle that the light is hitting the surface out now most people would look at that drawing and go okay so we're interested in that angle there we're not what we're interested in is the angle from perpendicular okay the angle from perpendicular so in other words is the angle here okay so how far from perpendicular the light is hitting the surface out so that is the angle that we're interested in now when you do your exams and assessments at college and your worksheets you won't see that angle marked up or mentioned what you will see marked up and mentioned is this angle here okay so that's the angle that were interesting but the good thing is is that both of these angles are actually exactly the same so this angle and this angle are the same because you've got a parallel line here to this one here when I was at school this was referred to as a z angle I don't know if they've kind of changed the wording on that now but basically what it means is if you've got two parallel lines and then another line crossing over them the angles formed by those lines will be the same so in other words that angle is the same as the angle so while it's this angle that is affecting how brightly lit that surface is we can transfer its qualities from here up to here so we can actually use this angle and that's the one that you'll see marked up in your essays and assignments even though it's actually this one that we're kind of interested in that's making the difference so why would this angle make a difference what impact does that have on our lighting well let me illustrate now this is not a perfect explanation okay but it does kind of give us an insight into what's going on here now in the previous video we calculated light levels directly below the light source in other words we calculated the light level directly at the center of this pool of light here now as you get further and further away from the center the light level gets lower and lower and lower and obviously it cuts off here because of the shape of the torch head and the lens that's in there and all that sort of stuff however let me illustrate what's actually happening as we increase this angle which is the same as this angle watch what happens to the field of light here the pool of light here watch what happens so as we change the angle that the light is shining on the surface on can you see what's happened to the pool of light now can you see how over this side we've got this kind of fuzzy edge and actually you can see that the light level is dropping off significantly now there's two reasons for that the first one is that we're getting further and further away from the light source and we know that as this number gets bigger and bigger this number gets smaller and smaller effectively we're increasing the distance from source to surface however there's something else happening look at the overall pool of light what do you notice about it from there to there what happens to that pool of light well the area that it covers gets bigger and of course we the area is getting bigger it means that the same amount of light is effectively falling on a larger area which means that we're actually losing light level on that surface because it's more spread out effectively and so the angle that this light is shining onto the surface at will get massively increased and this kind of effect is being a crease it is being carried out on lots of little points all over this area of lighting all over this pool of lighting but that's what's going on you can see as we make the angle bigger and bigger it covers a larger and larger area which means that the overall illuminance gets lower and lower especially the further away you get from the center so let's put that back to where it was and turn that up okay and let's have a little think about how this is going to impact on our calculation because what we need to do now is we need to modify our original calculation what we're going to do is instead of just having our U divided by d squared we're going to add something else onto this top line and that something else is times by the cosine of theta okay now you may be thinking well why the cosine of theta why is that having an impact what we're going to do is we're going to do a couple of examples which hopefully will show that this does work this is true and then we'll take it to an extreme point that kind of reveals a very deep truth about this formula and the way that it works so let's have a look at the drawing that we put on the board earlier now we've got some information here we know that this is equal to 1500 candelas so we've got a light source here that is equal to 1500 candelas you have to figure my writing there so we've got 1500 candelas and we have got a distance from source to surface of four meters okay so we've got a distance of four meters what we've also got here is some more information required so we're gonna have to add on to this some more distances now I'm not just going to make these numbers up these numbers actually matter so I'll stick those on to the board now okay so if we wanted to figure out what the light level was here at this position we'll call this e1 illuminance for position one and we'll call this e to the illuminance at position two if I wanted to calculate the value here that would be really easy because all I've got to do is do ru divided by d squared so that's nice and straightforward but if I want to figure out what the light level is over here I'm missing a piece of information because I can't use this value for the distance anymore because the distance from source to surface is longer here now in some questions that you'll get in kind of harder exams at higher levels you'll be given a small amount of information and you'll have to apply some pythagoras maybe to try and figure out what some missing values are before you can solve the calculation we're not going to do that in this case I'm going to give you the numbers okay so in this case this side here is going to be five meters long and we'll call that d2 so we'll say that's five meters long and I'm not even gonna ask you to figure out what the angle is I'm going to tell you what the angle is so the angle is thirty six point eight seven degrees okay so I'll put that there theta is equal to thirty six point eight seven degrees okay so we've got everything we need now to be able to figure out what the illuminance is here and what the illuminance is here so let's do this first of all now this is going to look a bit weird when I write this down for the first time so just bear with me I'm going to put e1 so that's the illuminance at position one how brightly lit that point is is equal to I the light source times by the cosine of theta divided by in this case it's going to be D 1 squared okay now you might be looking the same thing in more yeu do we have cos theta there what's cause feet are all over about well if we look at this we've got 1,500 times by the cosine of theta so what's theater when we're looking directly below the light source here well this angle would effectively shrink down to zero wouldn't it that angle would become nothing because there's no deviation from perpendicular there it's just coming straight down so that angle would become zero so we can actually put cosine of zero into our calculation there and then we're going to divide that by four squared distance one squared so let's put some some other numbers in here just to just to make this a little bit more interesting we'll put in 1500 times by the cosine of theta now when you put the cosine of sorry that should say cosine of zero my apologies okay so when you put the cosine of zero into your calculation no okay what you'll find is that the cosine of zero is actually equal to one so the cosine of zero is equal to one so this becomes 1 so what effect does that one have on our overall calculation well it has absolutely no effect does it it doesn't change anything it doesn't change this top number and so actually it's almost like that doesn't exist which effectively is the effect we want it to have because we're just looking directly below the light 15 like we were in previous videos so we don't want this number to affect this particular calculation so that will be 1,500 divided by 16 if I was feeling braver how would do that in my head but I'm not so when 1,500 times 1/16 is going to give us 93 0.75 looks like that 90 3.75 looks what we've been got is we're going to think about well what's the light level at position e 2 okay so let's try and figure out what the light level will be there so we go the light level at e 2 will be equal to I times by the cosine of theta divided by in this case it's going to change its going to become D 2 squared so we're interested in this distance here so let's try and figure out what's going on with up so 1,500 times by the cosine of thirty six point eight seven divided by in this case it's going to be five squared so again let's kind of put an extra stage into our calculation here let's figure this out if we do 1,500 times by and then we want to figure out what the cosine of thirty six point eight seven is so we go cos thirty six point eight seven and remember we're just saying to the calculator what is the cosine value of the angle thirty six point eight seven degrees and they'll spit the number back out is now the actual value what it absolutely should be based on the sides of this triangle is not point eight so that comes out at naught point seven nine nine nine nine I think that we can call that not point eight count with that yeah so we'll call that fifteen hundred times by not point eight divided by five squared is 25 okay so we've got fifteen hundred times by not point eight divided by 25 so can you see now that this number has now become a number that is less than one now when you multiply by a number that is between zero and one the effect of that is to make the number that you are multiplying smaller so 1500 times by not point eight is a smaller number than 1500 in fact it's 1200 so let's just confirm that on the calculator 1500 times by not 0.8 is 1200 so becomes 1200 divided by 25 and 1200 divided by 25 is going to give us 48 so we've got 48 looks so in other words our like level a position II one is ninety three point seven five looks and our like level at position II 2 is 48 looks so it's not quite but it's almost halved its dropped down significantly from there to there just by taking a short walk from position 1 to position 2 here so why is that happened well there's two reasons number one we've got a little bit further away from the light source and we know from previous videos that a small change in the distance can result in a quite a big change in the light level down at the surface that we're measuring on and the other thing that's changed it is the light is now hitting the surface at an angle so just like we demonstrated earlier on with our torch instead of shining directly onto the surface it's shining at an angle which means that the light level overall is reduced at every single point within that pool of light so that's why the light level has almost but not quite hard from here to here now if we kind of take this logic to an extreme we find kind of a hidden interesting truth in this if we were to consider let's say that this light fitting is giving out light levels sort of in a semicircular kind of a semi-spherical field effectively so it's coming down across that way and literally out the side as well if we were to increase that angle there to 90 degrees then what would happen to the illuminance when that ray of light hit the surface that we're measuring it on well of course it's it's never going to hit that surface is it because when this gets round to 90 degrees the light is traveling parallel to the surface and so it's never going to hit it I'm sure lots of people will tell me about the nature of gravity and how it can bend light and effectively you'll never get a parallel path and stuff like that but we're not worrying about that we're just talking about it in theory here and so if we did that the number that we would put in here would become cos 90 and what is the cosine value of 90 degrees put it into a calculator and you'll find out so the cosine of 90 degrees is zero which means that the light level here would become x by zero the cosine value would become zero so we'd have 1,500 times zero and of course when you multiply anything by zero it becomes zero which means that none of that light would ever actually hit the surface which makes sense because it's traveling parallel to the surface so just that a nice little extra kind of hidden insight into the way this works and that's why we use the cosine values effectively so hopefully from this video we've seen the value of understanding this formula we've seen that by modifying our inverse square law formula to include the cosine of the angle theta which is actually this angle here but we can treat it as being this angle here we can calculate what the illuminance will be at this point here and this is a like a real classic exam question whichever kind of field of Electrical study you're doing this is a real classic question to figure out the lighting values at two points and actually in some level three courses it gets even trickier than this and we will develop this idea a little bit further now what we're going to find as this unfolds and as future videos takers a little bit further into these calculations and it gets a little bit more complicated we're going to start to realize that actually using this method for calculating light levels is a little bit limited and there are one or two problems with it however what we're going to be doing then is looking at an alternative way of calculating light levels on surfaces however that is for a much future video from this video take away that formula try and get that embedded in your head and try and remember that this is the angle that we'll be using the values of in our calculations we'll look at some slightly more complex ways of doing this in future videos but for now all that remains to be said is thank you very much fortune [Music] [Music] [Music]
+
+
+[00:02] [Music] hello and welcome to this electrical
+[00:10] principals training video in a previous video in this series we looked at the
+[00:13] inverse square law for lighting and that looked something like this e is equal to
+[00:19] I divided by d squared and if you remember I was the luminous intensity
+[00:26] how bright the light horse was e was the illuminance in other words how brightly
+[00:31] lit a surface was and B was the distance between source and surface and we kind
+[00:37] of analyzed this formula we played with numbers with it and we saw the way that
+[00:40] those numbers impacted on the total light level now if you haven't watched
+[00:45] those videos please go back and watch them because it's going to help you to
+[00:48] understand what we discuss in this video a little bit more and in this video
+[00:52] we're going to discuss what happens to the light level as you get further and
+[00:56] further away from being directly underneath the light so in previous
+[01:00] videos we've calculated the light level at this point here directly below the
+[01:04] light fitting and many people have asked quite rightly well how do we figure out
+[01:08] what difference does it make as we get to a position where we're not directly
+[01:12] under the lights maybe the light is now coming down an angle instead of
+[01:16] perpendicular as it is there and that's what we're going to explore now we're
+[01:21] going to have a look at something that is referred to as the cosine rule okay
+[01:27] so this is the cosine rule and if you go to google and type in cosine rule then
+[01:34] you'll get lots of other things that relate to triangles but not necessarily
+[01:37] specifically this so if you type in cosine rule for illuminance okay or
+[01:44] cosine rule for lighting or something like that then you'll come out with more
+[01:48] information on the correct thing that you're searching for so as you search
+[01:52] for more information just bear in mind that's gonna help you out enormously
+[01:55] with this subject okay so we've said that this is the cosine rule for
+[02:00] illuminance okay so where does the cosine part come in well we've already
+[02:06] mentioned that the light shining from here to here is hitting the surface at
+[02:10] an angle and that really is the angle that we're interested in now this
+[02:17] might seem a little bit contradictory what I'm about to tell you okay but just
+[02:21] bear with me because it will make sense as we go through this so what we're
+[02:25] interested in really is the light level over here so we're interested in the
+[02:32] angle that the light is hitting the surface out now most people would look
+[02:37] at that drawing and go okay so we're interested in that angle there we're not
+[02:41] what we're interested in is the angle from perpendicular okay the angle from
+[02:48] perpendicular so in other words is the angle here okay so how far from
+[02:56] perpendicular the light is hitting the surface out so that is the angle that
+[03:01] we're interested in now when you do your exams and assessments at college and
+[03:06] your worksheets you won't see that angle marked up or mentioned what you will see
+[03:12] marked up and mentioned is this angle here okay so that's the angle that were
+[03:18] interesting but the good thing is is that both of these angles are actually
+[03:21] exactly the same so this angle and this angle are the same because you've got a
+[03:26] parallel line here to this one here when I was at school this was referred to as
+[03:31] a z angle I don't know if they've kind of changed the wording on that now but
+[03:35] basically what it means is if you've got two parallel lines and then another line
+[03:38] crossing over them the angles formed by those lines will be the same so in other
+[03:44] words that angle is the same as the angle so while it's this angle that is
+[03:48] affecting how brightly lit that surface is we can transfer its qualities from
+[03:53] here up to here so we can actually use this angle and that's the one that
+[03:58] you'll see marked up in your essays and assignments even though it's actually
+[04:01] this one that we're kind of interested in that's making the difference so why
+[04:06] would this angle make a difference what impact does that have on our lighting
+[04:11] well let me illustrate now this is not a perfect explanation okay but it does
+[04:16] kind of give us an insight into what's going on here now in the previous video
+[04:20] we calculated light levels directly below the light source in other words we
+[04:24] calculated the light level directly at the center of this pool of
+[04:29] light here now as you get further and further away from the center the light
+[04:33] level gets lower and lower and lower and obviously it cuts off here because of
+[04:37] the shape of the torch head and the lens that's in there and all that sort of
+[04:40] stuff however let me illustrate what's actually happening as we increase this
+[04:46] angle which is the same as this angle watch what happens to the field of light
+[04:51] here the pool of light here watch what happens so as we change the angle that
+[04:56] the light is shining on the surface on can you see what's happened to the pool
+[04:59] of light now can you see how over this side we've got this kind of fuzzy edge
+[05:03] and actually you can see that the light level is dropping off significantly now
+[05:08] there's two reasons for that the first one is that we're getting further and
+[05:11] further away from the light source and we know that as this number gets bigger
+[05:15] and bigger this number gets smaller and smaller effectively we're increasing the
+[05:18] distance from source to surface however there's something else happening look at
+[05:23] the overall pool of light what do you notice about it from there to there what
+[05:29] happens to that pool of light well the area that it covers gets bigger and of
+[05:33] course we the area is getting bigger it means that the same amount of light is
+[05:38] effectively falling on a larger area which means that we're actually losing
+[05:41] light level on that surface because it's more spread out effectively and so the
+[05:48] angle that this light is shining onto the surface at will get massively
+[05:53] increased and this kind of effect is being a crease it is being carried out
+[05:57] on lots of little points all over this area of lighting all over this pool of
+[06:02] lighting but that's what's going on you can see as we make the angle bigger and
+[06:05] bigger it covers a larger and larger area which means that the overall
+[06:09] illuminance gets lower and lower especially the further away you get from
+[06:14] the center so let's put that back to where it was and turn that up okay and
+[06:21] let's have a little think about how this is going to impact on our calculation
+[06:26] because what we need to do now is we need to modify our original calculation
+[06:30] what we're going to do is instead of just having our U divided by d squared
+[06:35] we're going to add something else onto this top line and that something else is
+[06:40] times by the cosine of theta okay now you may be thinking well why the cosine
+[06:48] of theta why is that having an impact what we're going to do is we're going to
+[06:52] do a couple of examples which hopefully will show that this does work this is
+[06:56] true and then we'll take it to an extreme point that kind of reveals a
+[07:01] very deep truth about this formula and the way that it works so let's have a
+[07:06] look at the drawing that we put on the board earlier now we've got some
+[07:08] information here we know that this is equal to 1500 candelas so we've got a
+[07:13] light source here that is equal to 1500 candelas you have to figure my writing
+[07:18] there so we've got 1500 candelas and we have got a distance from source to
+[07:23] surface of four meters okay so we've got a distance of four meters what we've
+[07:29] also got here is some more information required so we're gonna have to add on
+[07:36] to this some more distances now I'm not just going to make these numbers up
+[07:40] these numbers actually matter so I'll stick those on to the board now okay so
+[07:44] if we wanted to figure out what the light level was here at this position
+[07:47] we'll call this e1 illuminance for position one and we'll call this e to
+[07:53] the illuminance at position two if I wanted to calculate the value here that
+[07:57] would be really easy because all I've got to do is do ru divided by d squared
+[08:03] so that's nice and straightforward but if I want to figure out what the light
+[08:06] level is over here I'm missing a piece of information because I can't use this
+[08:09] value for the distance anymore because the distance from source to surface is
+[08:14] longer here now in some questions that you'll get in kind of harder exams at
+[08:20] higher levels you'll be given a small amount of information and you'll have to
+[08:24] apply some pythagoras maybe to try and figure out what some missing values are
+[08:27] before you can solve the calculation we're not going to do that in this case
+[08:31] I'm going to give you the numbers okay so in this case this side here is going
+[08:35] to be five meters long and we'll call that d2 so we'll say that's five meters
+[08:41] long and I'm not even gonna ask you to figure out what the angle is I'm going
+[08:44] to tell you what the angle is so the angle is thirty six point eight seven
+[08:47] degrees okay so I'll put that there theta is
+[08:51] equal to thirty six point eight seven degrees okay so we've got
+[08:56] everything we need now to be able to figure out what the illuminance is here
+[09:00] and what the illuminance is here so let's do this first of all now this is
+[09:06] going to look a bit weird when I write this down for the first time so just
+[09:09] bear with me I'm going to put e1 so that's the illuminance at position one
+[09:14] how brightly lit that point is is equal to I the light source times by the
+[09:20] cosine of theta divided by in this case it's going to be D 1 squared okay now
+[09:28] you might be looking the same thing in more yeu do we have cos theta there
+[09:31] what's cause feet are all over about well if we look at this we've got 1,500
+[09:36] times by the cosine of theta so what's theater when we're looking directly
+[09:41] below the light source here well this angle would effectively shrink down to
+[09:47] zero wouldn't it that angle would become nothing because there's no deviation
+[09:52] from perpendicular there it's just coming straight down so that angle would
+[09:55] become zero so we can actually put cosine of zero into our calculation
+[10:02] there and then we're going to divide that by four squared distance one
+[10:06] squared so let's put some some other numbers in here just to just to make
+[10:10] this a little bit more interesting we'll put in 1500 times by the cosine of theta
+[10:16] now when you put the cosine of sorry that should say cosine of zero my
+[10:20] apologies okay so when you put the cosine of zero into your calculation no
+[10:28] okay what you'll find is that the cosine of zero is actually equal to one so the
+[10:33] cosine of zero is equal to one so this becomes 1 so what effect does that one
+[10:39] have on our overall calculation well it has absolutely no effect does it it
+[10:44] doesn't change anything it doesn't change this top number and so
+[10:48] actually it's almost like that doesn't exist which effectively is the effect we
+[10:52] want it to have because we're just looking directly below the light 15 like
+[10:55] we were in previous videos so we don't want this number to affect this
+[10:59] particular calculation so that will be 1,500 divided by 16 if I was feeling
+[11:05] braver how would do that in my head but I'm not so when
+[11:09] 1,500 times 1/16 is going to give us 93 0.75 looks like that 90 3.75 looks what
+[11:23] we've been got is we're going to think about well what's the light level at
+[11:26] position e 2 okay so let's try and figure out what the light level will be
+[11:31] there so we go the light level at e 2 will be equal to I times by the cosine
+[11:39] of theta divided by in this case it's going to change its going to become D 2
+[11:43] squared so we're interested in this distance here so let's try and figure
+[11:48] out what's going on with up so 1,500 times by the cosine of thirty six point
+[11:56] eight seven divided by in this case it's going to be five squared so again let's
+[12:03] kind of put an extra stage into our calculation here let's figure this out
+[12:06] if we do 1,500 times by and then we want to figure out what the cosine of thirty
+[12:13] six point eight seven is so we go cos thirty six point eight seven and
+[12:18] remember we're just saying to the calculator what is the cosine value of
+[12:22] the angle thirty six point eight seven degrees and they'll spit the number back
+[12:25] out is now the actual value what it absolutely should be based on the sides
+[12:30] of this triangle is not point eight so that comes out at naught point seven
+[12:35] nine nine nine nine I think that we can call that not point eight count with
+[12:38] that yeah so we'll call that fifteen hundred times by not point eight divided
+[12:43] by five squared is 25 okay so we've got fifteen hundred times
+[12:50] by not point eight divided by 25 so can you see now that this number has now
+[12:54] become a number that is less than one now when you multiply by a number that
+[12:59] is between zero and one the effect of that is to make the number that you are
+[13:05] multiplying smaller so 1500 times by not point eight is a smaller number than
+[13:11] 1500 in fact it's 1200 so let's just confirm that on the calculator 1500
+[13:18] times by not 0.8 is 1200 so becomes 1200 divided by 25 and 1200
+[13:25] divided by 25 is going to give us 48 so we've got 48 looks so in other words our
+[13:34] like level a position II one is ninety three point seven five looks and our
+[13:40] like level at position II 2 is 48 looks so it's not quite but it's almost halved
+[13:47] its dropped down significantly from there to there just by taking a short
+[13:51] walk from position 1 to position 2 here so why is that happened well there's two
+[13:58] reasons number one we've got a little bit further away from the light source
+[14:01] and we know from previous videos that a small change in the distance can result
+[14:05] in a quite a big change in the light level down at the surface that we're
+[14:11] measuring on and the other thing that's changed it is the light is now hitting
+[14:15] the surface at an angle so just like we demonstrated earlier on with our torch
+[14:18] instead of shining directly onto the surface it's shining at an angle which
+[14:23] means that the light level overall is reduced at every single point within
+[14:27] that pool of light so that's why the light level has almost but not quite
+[14:33] hard from here to here now if we kind of take this logic to an extreme we find
+[14:40] kind of a hidden interesting truth in this if we were to consider let's say
+[14:44] that this light fitting is giving out light levels sort of in a semicircular
+[14:50] kind of a semi-spherical field effectively so it's coming down across
+[14:55] that way and literally out the side as well if we were to increase that angle
+[15:00] there to 90 degrees then what would happen to the illuminance when that ray
+[15:05] of light hit the surface that we're measuring it on well of course it's it's
+[15:11] never going to hit that surface is it because when this gets round to 90
+[15:14] degrees the light is traveling parallel to the surface and so it's never going
+[15:20] to hit it I'm sure lots of people will tell me about the nature of gravity and
+[15:24] how it can bend light and effectively you'll never get a parallel path and
+[15:28] stuff like that but we're not worrying about that we're just talking about it
+[15:30] in theory here and so if we did that the number that we would put in here
+[15:36] would become cos 90 and what is the cosine value of 90 degrees put it into a
+[15:45] calculator and you'll find out so the cosine of 90 degrees is zero which means
+[15:52] that the light level here would become x by zero the cosine value would become
+[15:58] zero so we'd have 1,500 times zero and of course when you multiply anything by
+[16:02] zero it becomes zero which means that none of that light would ever actually
+[16:09] hit the surface which makes sense because it's traveling parallel to the
+[16:13] surface so just that a nice little extra kind of hidden insight into the way this
+[16:17] works and that's why we use the cosine values effectively so hopefully from
+[16:23] this video we've seen the value of understanding this formula we've seen
+[16:28] that by modifying our inverse square law formula to include the cosine of the
+[16:33] angle theta which is actually this angle here but we can treat it as being this
+[16:38] angle here we can calculate what the illuminance will be at this point here
+[16:43] and this is a like a real classic exam question whichever kind of field of
+[16:48] Electrical study you're doing this is a real classic question to figure out the
+[16:54] lighting values at two points and actually in some level three courses
+[16:58] it gets even trickier than this and we will develop this idea a little bit
+[17:02] further now what we're going to find as this unfolds and as future videos takers
+[17:07] a little bit further into these calculations and it gets a little bit
+[17:10] more complicated we're going to start to realize that actually using this method
+[17:14] for calculating light levels is a little bit limited and there are one or two
+[17:18] problems with it however what we're going to be doing then is looking at an
+[17:22] alternative way of calculating light levels on surfaces however that is for a
+[17:28] much future video from this video take away that formula try and get that
+[17:32] embedded in your head and try and remember that this is the angle that
+[17:36] we'll be using the values of in our calculations we'll look at some slightly
+[17:40] more complex ways of doing this in future videos but for now all that
+[17:44] remains to be said is thank you very much
+[17:47] fortune
+[17:50] [Music]
+[18:03] [Music]
+[18:09] [Music]

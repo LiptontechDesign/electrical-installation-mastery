@@ -1,0 +1,181 @@
+# How to Find the Power Formula Number 2 for Electrical Circuits, Calculating Power Without Voltage
+# https://www.youtube.com/watch?v=xqanURIKnng
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering our subject of power in a previous video in this series we looked at the basic power formula which if you remember went in the following way we simply said that to find the power in a circuit represented by the letter P that would be equal to the current multiplied by the voltage so P is equal to I times V and we proved by practical experimentation that that was accurate what we're going to do in this video is we're going to take our basic power formula and we're going to combine it with a very familiar formula that we know from previous videos in order to create our second power formula we're then going to perform a practical experiment to prove that that new formula actually works in the real world and we might have a think about maybe why our results don't come out exactly the same the first or second time so let's have a look at how we're going to create our second power formula we're going to start from this position we know that P is equal to I times V and I always like to refer to this as the basic or first power formula but what we also want to do now is tie in Ohm's law into this basically what we're going to do is we're going to figure out a way that we can calculate power without knowing the supply voltage okay so let's have a look at how we can do this so in order to do this we need to have another formula which we're very familiar with which is Ohm's law I equals B divided by R now what we're going to look at here is what happens when we start to manipulate this formula so first of all we're going to rearrange this formula we're going to transpose it to make V the subject now hopefully if you've been following my videos for a little while you'll be familiar with how I go about transposing formula so let's just kind of dive in at the deep end a little bit here and if you're not too sure that you can follow this then please watch my video on transposing formula which is coming very soon we've got first of all I equals V over R so we want to get this V by itself we want to make that the subject and at the moment we've got that V and we are dividing it by R now when we want to isolate a letter we have to look at what we're doing to that letter and then do the opposite function so here V is being divided by R and the opposite of dividing by r is to multiply by r so we times both sides by r which on this side ends up being i times R and on this side ends up being V and we've looked at that in a couple of different videos how that works now obviously I need to have the subject on the left because my brain won't let me leave that alone if I try and leave it on the right so I always write it out with a subject on the Left V is equal to I times R now at this point we need to kind of take a step back and think about what this formula actually means even actually just taking this away from an electrical kind of standpoint and just looking at it in pure mathematical terms because we've been using calculators for so very long now there's become a little bit of a tendency I've noticed with my learners that they see the equal sign on their calculator as the kind of enter button the work this out for me button they give me the answer button but actually that button has more power well rather that symbol on that button has more power than that so if we go back to basics and look at that symbol there and think what does that mean well that symbol means is the same as is the same as so what this is saying is that V is exactly the same as I times R they are the same thing well that's interesting but how does that help us out in the context of this video well what we can do is we can take our basic power formula which if you'll remember was P is equal to I times by V and what we can do now is we can take this V here and we can swap it out for something that is exactly the same as it and we've just shown that V is exactly the same as I times R so what that means is that we can write this as P equals I and then instead of timesing by V I'm going to times it by what V is exactly the same as I times R so can you see this I has just remained in the formula and this V has now turned into I times R because V and I times R mean exactly the same thing so what that means is we've got a situation where we've got P equals I times I times R now that's a little bit kind of clunky in terms of how that's been written out so we would gather the terms here so we're doing I times I and we know that when you multiply something by itself it becomes I squared like that so we've got P equals I squared multiplied by R and that is our second power formula so we've now got power formula number two so let's put that over here we've got power formula number two is P equals I squared now we're going to have a little chat in a few moments about what this is useful for what it can tell us but before we do that it may look like these are two completely different formulas they may look completely different but what we're going to do now is we're going to head down to workshop we're going to take some measurements on one of our heaters that we used in the previous video and we're going to prove that actually these two formulas mean the same thing they work out in the same way as long as you've got the correct values to put in here so let's head over to the workshop now so just to prove that our new calculation actually works what we're going to do is we're going to use our two kilowatt heating load that we used in a previous video we're going to measure its internal resistance and then we're going to perform the calculation to see if our new formula works we already know how much current list draws from another video in this series so let's use our mega AVO 835 we'll measure the resistance of the heating element here so we'll clip that on there and when we measure that we see we're coming out with twenty six point one six ohms so that's twenty six point one 6 ohms it's hovering around out there so let's take those numbers back up to the classroom and we'll have a look at whether that formula actually works or not so down in the workshop we saw that our heater had an internal resistance R was equal to twenty six point one six ohms and we also saw that the current that was flowing through that heater and we're taking this value from the previous video where we did this test in the previous video the current flowing into the heater had a value of eight point four amperes so eight point four amperes and bear in mind that what we're trying to find in all of this is our value for power we're trying to figure out what the power is in this question so in order to calculate this we're going to use our second power formula so we're going to say that P is equal to I squared R so that means that we're going to do eight point four squared and then we're going to times it by twenty six point one six so if we put that into our calculator now we're going to go eight point four squared multiplied by twenty six point one six and that's giving us a total power of 1845 point eight watts okay so we've got 1845 point eight what's now if you remember that heater that we used was a two kilowatt heater so we had two kilowatts there you may also be thinking about in the video prior to this we actually came out with a power rating a little bit above two kilowatts here we're a little bit below two kilowatts so we just below two thousand here so why do you think that might be why do you think we might have a slightly lower value here than we measured or calculated in the previous video well to help us understand that let's head back down to the workshop and we'll have a little bit of a further explanation so why is it then that our calculation came out a little bit lower than we were expecting it to with the numbers that we took before well if you think about it logically when we measured the current in a previous video that was flowing through this heater the heater was connected to the supply so there was electricity actually flowing through it now the heating element inside here is just a piece of conductive material and we know that when you pass current through a conductor it starts to heat up and we also know that for most materials as the heat of the material gets higher the resistance gets higher also so if you increase the temperature of the conductor you actually increase the resistance of it so what I've done now is I've had this heater plugged in for a few minutes and it's got really quite toasty now so it's dissipating a lot of heat that's why I've removed the mega instrument from leaning against it I didn't want to damage my tester what I'm now going to do is disconnect this from the supply and then we're going to measure the resistance of this now that it's got a little bit hotter so let's see what's happened with the value so I'll unplug this so that is now starting to cool down so we'll measure this nice and quickly so we get as accurate a result as we can so once again we're going to measure the resistance of the heating element by just connecting across the line and neutral of the pins there and we'll let the test to do its thing and you can see there that it's coming out at twenty seven point zero five ohms and you can see there actually what's happening is that will probably start to drop down a little bit now as it gets cooler so we can assume that when that was hot it was at least twenty seven point oh five ohms so what we're going to do is we're going to now take that value back up to the classroom and we're going to do the calculation that we need to to figure out if we've got this a little bit more accurate now so this was the value that we calculated when the heater was cold now let's have a look at the value that we calculate when the heater has had current flowing through it and the heating element has got hot and increased it's resistance a little bit we start off from the same point P equals I squared R notice that every single time I do a calculation I write down the formula and that helps me to remember all the formulas that we need to know for electrical science and we're going to put in the same current eight point four we're going to square that and then we're going to times that by our new resistance that we just measured down in the workshop of 27.0 5 ohms so let's put that into the calculator and see what come out with 8.4 squared times by 27 point zero five so we've got eight point four squared times by 27 point zero five and that is now coming out at 1908 what 1908 watts so that's a slightly more realistic value and again we get an even closer to that two kilowatt value that we know our heater is rated at and the slightly higher than two kilowatts value that we calculated in the previous video so what purpose does this formula actually serve it's interesting to see that we've got another kind of way of calculating power but what uses it well this formula can be used before telling us how much power is wasted by a conductor during its operation and a classic example of this is if you have a transformer that transformer has a coil of wire inside it that acts as an inductor and that coil of copper wire has a certain value of resistance and we pass current through now we know that when you pass current through a transformer when you use a transformer it starts to get hot part of the reason for that is you've got current flowing through a resistance the resistance of the winding of the coil there so if we take the resistance of the coil and times it by the current flowing through the coil squared it will actually tell you how much power is being lost by that transformer in the form of heat due to the copper winding there are other reasons why transformers get hot and waste energy but this is the one that relies on the resistance of the copper so we could also apply that actually to simply conductors feeding loads in a building and it's worth noting as well it because this eye is squared if you double the amount of current flowing through a conductor you actually quadruple the amount of heat that it dissipates and of course we know that cables getting hot is one of the main things that witch trying to reduce or prevent from causing a problem in our electrical installation work so understanding what this formula is actually telling is that the more current you pass through conduct to the more power it wastes in the form of heat the hotter it gets and that that kind of action is exponential then that leads us to understand even more deeply how important it is to perform our calculations carefully when we're designing and then installing our electrical circuits so there's our second power formula that's the takeaway from this video we need to remember that formula for our exams and for the real world and all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music] hello and welcome to this electrical
+[00:10] principals training video in this video we're going to continue considering our
+[00:13] subject of power in a previous video in this series we looked at the basic power
+[00:18] formula which if you remember went in the following way we simply said that to
+[00:22] find the power in a circuit represented by the letter P that would be equal to
+[00:26] the current multiplied by the voltage so P is equal to I times V and we proved by
+[00:33] practical experimentation that that was accurate what we're going to do in this
+[00:37] video is we're going to take our basic power formula and we're going to combine
+[00:42] it with a very familiar formula that we know from previous videos in order to
+[00:46] create our second power formula we're then going to perform a practical
+[00:51] experiment to prove that that new formula actually works in the real world
+[00:56] and we might have a think about maybe why our results don't come out exactly
+[00:59] the same the first or second time so let's have a look at how we're going to
+[01:04] create our second power formula we're going to start from this position we
+[01:09] know that P is equal to I times V and I always like to refer to this as the
+[01:12] basic or first power formula but what we also want to do now is tie in Ohm's law
+[01:18] into this basically what we're going to do is we're going to figure out a way
+[01:21] that we can calculate power without knowing the supply voltage okay so let's
+[01:27] have a look at how we can do this so in order to do this we need to have another
+[01:31] formula which we're very familiar with which is Ohm's law I equals B divided by
+[01:37] R now what we're going to look at here is what happens when we start to
+[01:42] manipulate this formula so first of all we're going to rearrange this formula
+[01:46] we're going to transpose it to make V the subject now hopefully if you've been
+[01:50] following my videos for a little while you'll be familiar with how I go about
+[01:54] transposing formula so let's just kind of dive in at the deep end a little bit
+[01:58] here and if you're not too sure that you can follow this then please watch my
+[02:02] video on transposing formula which is coming very soon we've got first of all
+[02:07] I equals V over R so we want to get this V by itself we want to make that the
+[02:11] subject and at the moment we've got that V and
+[02:14] we are dividing it by R now when we want to isolate a letter we have to look at
+[02:20] what we're doing to that letter and then do the opposite function so here V is
+[02:24] being divided by R and the opposite of dividing by r is to multiply by r so we
+[02:33] times both sides by r which on this side ends up being i times R and on this side
+[02:39] ends up being V and we've looked at that in a couple of different videos how that
+[02:43] works now obviously I need to have the subject on the left because my brain
+[02:49] won't let me leave that alone if I try and leave it on the right so I always
+[02:52] write it out with a subject on the Left V is equal to I times R now at this
+[02:57] point we need to kind of take a step back and think about what this formula
+[03:03] actually means even actually just taking this away from an electrical kind of
+[03:07] standpoint and just looking at it in pure mathematical terms because we've
+[03:13] been using calculators for so very long now there's become a little bit of a
+[03:16] tendency I've noticed with my learners that they see the equal sign on their
+[03:21] calculator as the kind of enter button the work this out for me button they
+[03:27] give me the answer button but actually that button has more power well rather
+[03:31] that symbol on that button has more power than that so if we go back to
+[03:35] basics and look at that symbol there and think what does that mean well that
+[03:40] symbol means is the same as is the same as so what this is saying is that V is
+[03:46] exactly the same as I times R they are the same thing well that's interesting
+[03:53] but how does that help us out in the context of this video well what we can
+[03:57] do is we can take our basic power formula which if you'll remember was P
+[04:02] is equal to I times by V and what we can do now is we can take this V here and we
+[04:11] can swap it out for something that is exactly the same as it and we've just
+[04:15] shown that V is exactly the same as I times R so what that means is that we
+[04:24] can write this as P equals I and then instead of timesing by V I'm
+[04:28] going to times it by what V is exactly the same as I times R so can you see
+[04:35] this I has just remained in the formula and this V has now turned into I times R
+[04:42] because V and I times R mean exactly the same thing
+[04:47] so what that means is we've got a situation where we've got P equals I
+[04:50] times I times R now that's a little bit kind of clunky in terms of how that's
+[04:55] been written out so we would gather the terms here so we're doing I times I and
+[05:00] we know that when you multiply something by itself it becomes I squared like that
+[05:06] so we've got P equals I squared multiplied by R and that is our second
+[05:13] power formula so we've now got power formula number two so let's put that
+[05:18] over here we've got power formula number two is P equals I squared now we're
+[05:27] going to have a little chat in a few moments about what this is useful for
+[05:30] what it can tell us but before we do that it may look like these are two
+[05:34] completely different formulas they may look completely different but what we're
+[05:38] going to do now is we're going to head down to workshop we're going to take
+[05:40] some measurements on one of our heaters that we used in the previous video and
+[05:43] we're going to prove that actually these two formulas mean the same thing they
+[05:47] work out in the same way as long as you've got the correct values to put in
+[05:51] here so let's head over to the workshop now so just to prove that our new
+[05:56] calculation actually works what we're going to do is we're going to use our
+[05:59] two kilowatt heating load that we used in a previous video we're going to
+[06:03] measure its internal resistance and then we're going to perform the calculation
+[06:06] to see if our new formula works we already know how much current list draws
+[06:10] from another video in this series so let's use our mega AVO 835 we'll measure
+[06:15] the resistance of the heating element here so we'll clip that on there and
+[06:19] when we measure that we see we're coming out
+[06:24] with twenty six point one six ohms so that's twenty six point one 6 ohms it's
+[06:30] hovering around out there so let's take those numbers back up to the classroom
+[06:34] and we'll have a look at whether that formula actually works or not
+[06:40] so down in the workshop we saw that our heater had an internal resistance R was
+[06:47] equal to twenty six point one six ohms and we also saw that the current that
+[06:57] was flowing through that heater and we're taking this value from the
+[07:00] previous video where we did this test in the previous video the current flowing
+[07:05] into the heater had a value of eight point four amperes so eight point four
+[07:10] amperes and bear in mind that what we're trying to find in all of this is our
+[07:15] value for power we're trying to figure out what the power is in this question
+[07:19] so in order to calculate this we're going to use our second power formula so
+[07:24] we're going to say that P is equal to I squared R so that means that we're going
+[07:29] to do eight point four squared and then we're going to times it by twenty six
+[07:35] point one six so if we put that into our calculator now we're going to go eight
+[07:42] point four squared multiplied by twenty six point one six and that's giving us a
+[07:47] total power of 1845 point eight watts okay so we've got 1845 point eight
+[08:01] what's now if you remember that heater that we used was a two kilowatt heater
+[08:06] so we had two kilowatts there you may also be thinking about in the video
+[08:09] prior to this we actually came out with a power rating a little bit above two
+[08:15] kilowatts here we're a little bit below two kilowatts so we just below two
+[08:19] thousand here so why do you think that might be why do you think we might have
+[08:23] a slightly lower value here than we measured or calculated in the previous
+[08:28] video well to help us understand that let's head back down to the workshop and
+[08:33] we'll have a little bit of a further explanation so why is it then that our
+[08:39] calculation came out a little bit lower than we were expecting it to with the
+[08:43] numbers that we took before well if you think about it logically when we
+[08:46] measured the current in a previous video that was flowing through this heater the
+[08:51] heater was connected to the supply so there was electricity
+[08:55] actually flowing through it now the heating element inside here is just a
+[08:59] piece of conductive material and we know that when you pass current through a
+[09:02] conductor it starts to heat up and we also know that for most materials as the
+[09:08] heat of the material gets higher the resistance gets higher also so if you
+[09:14] increase the temperature of the conductor you actually increase the
+[09:18] resistance of it so what I've done now is I've had this heater plugged in for a
+[09:21] few minutes and it's got really quite toasty now so it's dissipating a lot of
+[09:25] heat that's why I've removed the mega
+[09:27] instrument from leaning against it I didn't want to damage my tester what I'm
+[09:31] now going to do is disconnect this from the supply and then we're going to
+[09:35] measure the resistance of this now that it's got a little bit hotter so let's
+[09:40] see what's happened with the value so I'll unplug this so that is now starting
+[09:46] to cool down so we'll measure this nice and quickly so we get as accurate a
+[09:50] result as we can so once again we're going to measure the resistance of the
+[09:54] heating element by just connecting across the line and neutral of the pins
+[09:58] there and we'll let the test to do its thing and you can see there that it's
+[10:03] coming out at twenty seven point zero five ohms and you can see there actually
+[10:09] what's happening is that will probably start to drop down a little bit now as
+[10:13] it gets cooler so we can assume that when that was hot it was at least twenty
+[10:17] seven point oh five ohms so what we're going to do is we're going to now take
+[10:21] that value back up to the classroom and we're going to do the calculation that
+[10:26] we need to to figure out if we've got this a little bit more accurate now so
+[10:31] this was the value that we calculated when the heater was cold now let's have
+[10:36] a look at the value that we calculate when the heater has had current flowing
+[10:40] through it and the heating element has got hot and increased it's resistance a
+[10:43] little bit we start off from the same point P equals I squared R notice that
+[10:48] every single time I do a calculation I write down the formula and that helps me
+[10:52] to remember all the formulas that we need to know for electrical science and
+[10:57] we're going to put in the same current eight point four we're going to square
+[11:00] that and then we're going to times that by our new resistance that we just
+[11:04] measured down in the workshop of 27.0 5 ohms so let's put that into the
+[11:11] calculator and see what come out with 8.4 squared times by 27 point zero five
+[11:17] so we've got eight point four squared times by 27 point zero five and that is
+[11:25] now coming out at 1908 what 1908 watts so that's a slightly more realistic
+[11:35] value and again we get an even closer to that two kilowatt value that we know our
+[11:41] heater is rated at and the slightly higher than two kilowatts value that we
+[11:46] calculated in the previous video so what purpose does this formula actually serve
+[11:52] it's interesting to see that we've got another kind of way of calculating power
+[11:56] but what uses it well this formula can be used before telling us how much power
+[12:02] is wasted by a conductor during its operation and a classic example of this
+[12:06] is if you have a transformer that transformer has a coil of wire inside it
+[12:12] that acts as an inductor and that coil of copper wire has a certain value of
+[12:18] resistance and we pass current through now we know that when you pass current
+[12:24] through a transformer when you use a transformer it starts to get hot part of
+[12:28] the reason for that is you've got current flowing through a resistance the
+[12:32] resistance of the winding of the coil there so if we take the resistance of
+[12:37] the coil and times it by the current flowing through the coil squared it will
+[12:42] actually tell you how much power is being lost by that transformer in the
+[12:46] form of heat due to the copper winding there are other reasons why transformers
+[12:51] get hot and waste energy but this is the one that relies on the resistance of the
+[12:56] copper so we could also apply that actually to simply conductors feeding
+[13:02] loads in a building and it's worth noting as well it because this eye is
+[13:05] squared if you double the amount of current flowing through a conductor you
+[13:10] actually quadruple the amount of heat that it dissipates and of course we know
+[13:15] that cables getting hot is one of the main things that witch
+[13:18] trying to reduce or prevent from causing a problem in our electrical installation
+[13:23] work so understanding what this formula is actually telling is that the more
+[13:27] current you pass through conduct to the more power it wastes in the form of heat
+[13:30] the hotter it gets and that that kind of action is exponential then that leads us
+[13:36] to understand even more deeply how important it is to perform our
+[13:40] calculations carefully when we're designing and then installing our
+[13:45] electrical circuits so there's our second power formula that's the takeaway
+[13:49] from this video we need to remember that formula for our exams and for the real
+[13:53] world and all that remains in this video is to say thank you very much for
+[13:57] watching
+[14:00] [Music]
+[14:13] [Music]
+[14:19] [Music]

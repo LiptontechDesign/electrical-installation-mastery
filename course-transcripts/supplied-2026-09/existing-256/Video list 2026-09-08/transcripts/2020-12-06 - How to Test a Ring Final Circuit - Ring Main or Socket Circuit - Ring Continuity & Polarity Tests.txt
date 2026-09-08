@@ -1,0 +1,177 @@
+# How to Test a Ring Final Circuit - Ring Main or Socket Circuit - Ring Continuity & Polarity Tests
+# https://www.youtube.com/watch?v=UesYHVsZD-E
+
+back in the electrical workshop i am back with Marcus so what are we up to Marcus so today we're going to look at our second dead test Gaz which is continuity of our ring final circuit okay i've done a few videos on the channel before with a few popular misconceptions because it's the way i teach it we're going to go through by the letter of the law this time oh yeah okay so we're going to carry out the ring final circuit test stage by stage we've got a white board all set up to do our calculations we've got another fancy white board that joe brings in with the yeah we're going to we're going to do it by pen and by hand so we're going to bring it bring the camera in we're going to we're already isolated there is no supply in the installation we've got our cables all out we'll show you how we've identified our conductors and then you'll set about how many stages to the test three stages okay it's all set about stage one okay let's get in front of the comments before we get there this is a training rig these come in and out hundreds of times in a week and obviously they look like this we're not concerned about that we're concerned about doing our end-to-end tests in order that we start proving a ring final circuit we've shown you how to set up a our Megger mft many times on the channel this is a level three video so we're not going to show you this time how to set it up we're ready to go and we're going to concentrate on doing these stage 1 readings and i'm going to record it on the board this way so first of all we obviously have stage 1 of continuity of our ring final circuit now the values we obtain from this are our little r1 our little rn and our little r2 so as i'm going along after we're going to have to record these one for a calculation we're going to need for the later stages and also these will appear on our schedule of test results so i'm going to go between my line conductors first okay and by doing this test we're confirming we have a ring final circuit and i get a reading of one ohm i'm then going to go between my little for my little rn between my neutral conductors and because they're the same length and the same cross-sectional area i should actually get around the same reading now there's been a misconception sometimes in regards to a plus or minus allowance of 0.05 now that is actually for this stage not for the later stage 2 and stage 3. so is that within my 0.05 tolerance of 1 ohm it is so i'm happy that 0.98 ohms is satisfactory i'm now going to go on to my cpcs now the thing to note here is because we've got it wired in twin and cpc cable our cpc is sized at 1.5 millimeter squared and our line and neutral conductor so our live conductor is a 2.5 millimeter squared now what that means is we would expect the cpc end to end values to be 1.67 times greater than that of our live conductors so if we did the calculation one ohm times 1.67 we should get a value of 1.67 ohms difficult maths are loving your style Marcus normally joe's thing i'm not very good at maths we've got 1.68 again i would be happy with that oh and it's just dropped to 1.67 ohms so so again it's spot on them and one of the things i like when i deliver this in the classroom is learners find it magical when that calculations actually work now by doing that that is our stage one complete and again we are confirming now that we have a ring final circuit and we're recording that on our schedule of test results and we're going to use them for the later stages in our figure of 8 test so that's stage one of the ring final circuit test done i've recorded on the whiteboard these results you've given we'll do a calculation in a minute we're now going to be linking opposite conductors to each other it's quite easy to see them in twin and cpc which is one set of three and which is one set of three but you've also done something extra in order to identify the conductor's Marcus yes what we've done is we've actually added a little black mark with a black marker pen to one set of the legs for easier identification i love that there's one on there one on there and one on there of a set of three and it makes it very easy when we start doing this figure of eight test next so why i've been busy doing some calculations on the whiteboard marcus has joined together opposite line opposite neutral opposite line opposite neutral okay so we've got one side here with a black dot on the actual neutral and one black dot on the line conducted to confirm their opposites what do you do now for me so the first thing we're going to do is we're going to take our first measurement and when we look at the calculations this should line up with our calculation so we know what to expect we're going to take that from the connector blocks itself before we go around the circuit plugging in with our socket adapter okay so i've done a calculation and it may have popped up on the screen or not but i did a calculation i've got this as rounded up 0.5 so that's quite nice however at this stage i would normally say oh it's got to be within 0.05 of the reading that we calculated but that's not the case we know that no yeah that is for stage one this one now is important when we plug round we we know we should know what to expect as general wear and tear and what maybe is a high resistive joint that could cause issues when it comes to ADS and things like that i always kept mine within that value of reading which i've done in previous videos because it's a great reference point for learners but we've grown up now this is a level three video so we've got a reading there we expect to replicate a very similar read in all our socket outlets is that correct it is correct a check okay so you've got your probes in your hand i see you've gone for the fuse connection unit first i can only see one cable so what's going on now so i've gone for the fuse connection first of all just for the simple factors i had my probes connected in my tester anyway okay as you can see so rather than keep chopping and changing i'm just going to come to this first when i've took the front cover off like you said you notice you only see one set of cables so this indicates to me at this point that it's actually a spur off of one of these existing socket outlets so i'm going to check it here first remembering that because it's a spur i've actually added in resistance to the circuit so i expect this to be higher than my calculated value for my big r1 and my big rn okay so let's have a little look and it is yeah so that's considerably more than the calculated 0.5 and i measured i think it was zero point five one yeah yeah so that's logical because it's come from a socket that should have that value and added the resistance of the additional cable we believe at am2 and am2s there is a ring final circuit with a fuse connection unit on the ring yes it's vitally important that you take the cover off and test the fuse connection unit whether it be the assessments we do at college or the one for am2 or am2s where you going to next marcus so what i'm going to do is i'm going to swap over my leads now to a plug-in adapter and then i'm going to go around the ring final circuit plugging into all the outlets so off-camera me and marcus have set our instrument up i've got the red and blue into the top of my instrument and Marcus has got the plug-in end and what we're doing now marcus so now we're going to go around and plug into all of our socket outlets while i'm doing this i'm going to ensure that i'm operating the switch this is confirming part polarity now by this i mean we're identifying that the bottom two contacts are line or neutral however at this stage we're not confirming that they're in the correct position so i'm going to operate the switches so we've got a spot i'm reading there yeah this is incredible and i'm going to both sides now it's important to remember that for our big r1 and our big rn we don't actually record this on the schedule test results itself however i believe it's good practice and i always do it on site is on the back of the scheduled test results i write all three stages down and it helps the next electrician who comes along they can see that you what the value should be it's a little higher on this one is there anything we can do maybe to improve the electrical contact there yeah it could just be a slight sign that the contacts are becoming worn oh perfect and now it's gone back to normal the reason we have a problem here on college is that we never really have any current going through them and any uh you know voltage across the pins do we they don't self clean as such making them breaking arcs etc woo really high very high so we can plug in and out a few times we've got some contact cleaner but but again that is still a bit too high for me i would replace that socket outlet should we try the contact cleaner to show what we mean behind that yep okay you actually put some contact cleaner on there like that oh as if by magic fantastic that's again because these never get used and they never get the in and out of a regular plugged up or a voltage across them wow a little higher slightly too high that magic contact cleaner is coming out come on let's try a little squirt of that see what happens okay so i've got some contact cleaner thank you to one of my students who brought that in it's still a little bit high no that's great yeah it's close enough to be happy with that result okay brilliant yeah and again now for our stage two between line and neutral i'm happy with all of the results that we've got from these socket outlets so next Marcus so we're going to link together opposite line and opposite cpc in our consumer unit and repeat the test yes we are and that's going to be our stage three of our ring final continuity test let's move to consumer unit next so i can see you've changed over in the consumer unit now we've got opposite line and opposite cpc to opposite line opposite cpc we're going to take a measurement across here i can tell you that i calculated this to be 0.67 so let's see what the measured value is okay so we're going to go across our connector blocks again we've got 0.63 ohms okay that's fine again that is close enough for me okay that's fine and ignore the the other things that we've talked about that's fine we're going to be moving on and where you're going to start doing your first test out so we're going to go back to our fuse connection unit and test there because we've got our probes in the tester already ready when you're under marcus yeah so we're gonna go onto our fuse connection unit first but this time going between line and cpc now remember that the highest reading we obtain now from this stage is going to be recorded on our scheduled test results we've got 0.88 ohms we know it's going to probably be the highest because it's the spurred point it is yes so we've added that resistance like we said earlier it's going to be high how did you prove polarity of that outlet so of this outlet because i've got the front cover off i can actually visually confirm polarity which is what i've done the line conductor is going in the line terminal the neutral conductor's going in the neutral terminal and the cpc is going in the cpc terminal okay we need to change it over now in order to be able to plug into each of the socket outlets so we'll change the leads over for the next stage yep so a small issue in the edit we've lost some footage so i'm just going to interject this footage marcus who's gone enough to take his kid swimming fair play to him marcus has carried out the continuity cpc test here between line and cpc he got a reading of 0.88 ohms we're going to repeat the test at all the socket outlets we've already tested between line and neutral we're now testing between line and cpc we'll complete the polarity test we will record the highest reading we expect all the ones on the ring to be very similar readings so let's go around we've got reading of 0.66 i think our calculated reading was 0.67 operate the switch leave the switch in the on position for the installation resistance test so round i go 0.66 operate the switch reading settles in going to read in our 0.66 operate switch leave the switch in the on position and round we go okay fractionally higher that's fine goes off comes back on yep wonderful off it goes back on round to the next one turn it off back on again we've got the old contact spray if we get any issues remembering the highest reading it's currently still here all fraction high there we'll try this a couple of times a little bit higher let's operate the switch see what happens yep that's fine settle down go to the next one again yeah fine operate switch okay so we test between line and neutral as part polarity we're tested between line and cpc we've now confirmed the positions of the pins first test between the two live conductors the second one between line and cpc by proving both of those we've completed the polarity test at the front we've left the switches on the on position ready for insulation resistance the reading we just achieved when we're testing between opposite line to opposite cpc opposite line to opposite cpc is the reading that we're going to record of the highest value all the readings on the ring final circuit were very similar and we expect that the reading at the spur which has been taken from a socket outlet and spurred from it had a height reading of 0.88 that's the one we're recording our test paperwork let's cut to the test paperwork and see how i'm going to record the results me and marcus achieved let's add our test results in little r1 was one ohm little rn was 0.98 little r2 was 1.67 our highest r1 plus r2 was 0.88 and we did the polarity with the tick so while marcus was busy going around the socket outlets and explained how to carry out the test Gary Vordeman was here on the board here we recorded our little r1 our little rn a little our two readings yeah stage absolutely and then i took and did the calculations that you described in the video yeah these are numbers i came up with a little bit of rounding up and i would have said in previous videos that these readings here that i calculated i'd expect to see every socket on a ring final circuit yeah and i've said in previous video presentations i'd like to keep within that 0.05 is that a requirement no it's actually not so the 0.05 is in relation to stage one so our end-to-end conductors of conductors that have the same cross-sectional area what i was trying to do and we had a discussion 18 years ago about this when i first came in we were trying to give our learners a reference point for a socket on a ring final circuit and it should be within that number it doesn't have to be we saw some worn sockets today wasn't it fantastic that when we used a bit of a bit of contact uh yeah magic magic spray that we actually saw those readings full however if you couldn't get a reading to fall on a front plate you're getting a really high reading what you're gonna do about it Marcus so again you'd further investigate into the back it could be a spur it could be a loose connection or it could just be the fact of wear and tear and you would replace the front of the socket okay i think that's a really good piece of advice i think we've overcome some of those popular misconceptions that i've almost introduced in some of my videos because of my historic teaching back in the all those years so it's wonderful doing on board isn't it he's going to keep producing testing and fault finding videos for you
+
+
+[00:00] back in the electrical workshop i am back with Marcus so what are we up to Marcus so
+[00:03] today we're going to look at our second dead test Gaz which is continuity of our ring final circuit
+[00:08] okay i've done a few videos on the channel before with a few popular misconceptions because it's
+[00:12] the way i teach it we're going to go through by the letter of the law this time oh yeah okay so
+[00:17] we're going to carry out the ring final circuit test stage by stage we've got a white board all
+[00:20] set up to do our calculations we've got another fancy white board that joe brings in with the yeah
+[00:24] we're going to we're going to do it by pen and by hand so we're going to bring it bring the camera
+[00:28] in we're going to we're already isolated there is no supply in the installation we've got our
+[00:31] cables all out we'll show you how we've identified our conductors and then you'll set about how many
+[00:36] stages to the test three stages okay it's all set about stage one okay let's get in front of the
+[00:40] comments before we get there this is a training rig these come in and out hundreds of times in
+[00:44] a week and obviously they look like this we're not concerned about that we're concerned about
+[00:49] doing our end-to-end tests in order that we start proving a ring final circuit we've shown you how
+[00:54] to set up a our Megger mft many times on the channel this is a level three video so we're
+[00:58] not going to show you this time how to set it up we're ready to go and we're going to concentrate
+[01:01] on doing these stage 1 readings and i'm going to record it on the board this way so first of all we
+[01:06] obviously have stage 1 of continuity of our ring final circuit now the values we obtain from this
+[01:11] are our little r1 our little rn and our little r2 so as i'm going along after we're going to
+[01:17] have to record these one for a calculation we're going to need for the later stages and also these
+[01:21] will appear on our schedule of test results so i'm going to go between my line conductors first okay
+[01:29] and by doing this test we're confirming we have a ring final circuit and i get a reading of one ohm
+[01:37] i'm then going to go between my little for my little rn between my neutral conductors
+[01:43] and because they're the same length and the same cross-sectional area i should actually get around
+[01:48] the same reading now there's been a misconception sometimes in regards to a plus or minus allowance
+[01:54] of 0.05 now that is actually for this stage not for the later stage 2 and stage 3. so
+[02:01] is that within my 0.05 tolerance of 1 ohm it is so i'm happy that 0.98 ohms is satisfactory
+[02:12] i'm now going to go on to my cpcs now the thing to note here is because we've got it wired in twin
+[02:16] and cpc cable our cpc is sized at 1.5 millimeter squared and our line and neutral conductor so our
+[02:22] live conductor is a 2.5 millimeter squared now what that means is we would expect the cpc end to
+[02:28] end values to be 1.67 times greater than that of our live conductors so if we did the calculation
+[02:36] one ohm times 1.67 we should get a value of 1.67 ohms difficult maths are loving your style Marcus
+[02:45] normally joe's thing i'm not very good at maths we've got 1.68 again
+[02:49] i would be happy with that oh and it's just dropped to 1.67 ohms so
+[02:52] so again it's spot on them and one of the things i like when i deliver this in the classroom is
+[02:57] learners find it magical when that calculations actually work
+[03:04] now by doing that that is our stage one complete and again we are confirming now
+[03:07] that we have a ring final circuit and we're recording that on our schedule
+[03:10] of test results and we're going to use them for the later stages in our figure of 8 test
+[03:17] so that's stage one of the ring final circuit test done i've recorded on the whiteboard these results
+[03:21] you've given we'll do a calculation in a minute we're now going to be linking opposite conductors
+[03:25] to each other it's quite easy to see them in twin and cpc which is one set of three and which is one
+[03:29] set of three but you've also done something extra in order to identify the conductor's Marcus yes
+[03:33] what we've done is we've actually added a little black mark with a black marker pen to one set of
+[03:37] the legs for easier identification i love that there's one on there one on there and one on
+[03:41] there of a set of three and it makes it very easy when we start doing this figure of eight test next
+[03:47] so why i've been busy doing some calculations on the whiteboard marcus has joined together
+[03:52] opposite line opposite neutral opposite line opposite neutral okay so we've got one side
+[03:56] here with a black dot on the actual neutral and one black dot on the line conducted to confirm
+[04:01] their opposites what do you do now for me so the first thing we're going to do is we're going to
+[04:05] take our first measurement and when we look at the calculations this should line up with our
+[04:08] calculation so we know what to expect we're going to take that from the connector blocks itself
+[04:12] before we go around the circuit plugging in with our socket adapter okay so i've done a calculation
+[04:18] and it may have popped up on the screen or not but i did a calculation i've got this as
+[04:21] rounded up 0.5 so that's quite nice however at this stage i would normally say oh it's got to
+[04:28] be within 0.05 of the reading that we calculated but that's not the case we know that no yeah
+[04:32] that is for stage one this one now is important when we plug round we
+[04:36] we know we should know what to expect as general wear and tear and what maybe is a high resistive
+[04:41] joint that could cause issues when it comes to ADS and things like that i always kept mine
+[04:45] within that value of reading which i've done in previous videos because it's a great reference
+[04:49] point for learners but we've grown up now this is a level three video so we've got a reading there
+[04:54] we expect to replicate a very similar read in all our socket outlets is that correct it is correct a
+[04:59] check okay so you've got your probes in your hand i see you've gone for the fuse connection unit
+[05:03] first i can only see one cable so what's going on now so i've gone for the fuse connection first of
+[05:07] all just for the simple factors i had my probes connected in my tester anyway okay as you can
+[05:13] see so rather than keep chopping and changing i'm just going to come to this first when i've took
+[05:17] the front cover off like you said you notice you only see one set of cables so this indicates to
+[05:21] me at this point that it's actually a spur off of one of these existing socket outlets so i'm going
+[05:26] to check it here first remembering that because it's a spur i've actually added in resistance to
+[05:30] the circuit so i expect this to be higher than my calculated value for my big r1 and my big rn
+[05:36] okay so let's have a little look and it is yeah so that's considerably more than the calculated
+[05:41] 0.5 and i measured i think it was zero point five one yeah yeah so that's logical because it's come
+[05:47] from a socket that should have that value and added the resistance of the additional cable
+[05:52] we believe at am2 and am2s there is a ring final circuit with a fuse connection unit on the ring
+[05:57] yes it's vitally important that you take the cover off and test the fuse connection unit whether it
+[06:01] be the assessments we do at college or the one for am2 or am2s where you going to next marcus so
+[06:06] what i'm going to do is i'm going to swap over my leads now to a plug-in adapter and then i'm going
+[06:11] to go around the ring final circuit plugging into all the outlets so off-camera me and marcus have
+[06:16] set our instrument up i've got the red and blue into the top of my instrument and Marcus has got
+[06:20] the plug-in end and what we're doing now marcus so now we're going to go around and plug into
+[06:24] all of our socket outlets while i'm doing this i'm going to ensure that i'm operating the switch this
+[06:28] is confirming part polarity now by this i mean we're identifying that the bottom two contacts are
+[06:34] line or neutral however at this stage we're not confirming that they're in the correct position
+[06:39] so i'm going to operate the switches so we've got a spot i'm reading there yeah this is incredible
+[06:47] and i'm going to both sides now it's important to remember that for our big r1 and our big rn
+[06:51] we don't actually record this on the schedule test results itself however
+[06:55] i believe it's good practice and i always do it on site is on the back of the scheduled test results
+[07:00] i write all three stages down and it helps the next electrician who comes along they can see
+[07:05] that you what the value should be it's a little higher on this one is there anything we can do
+[07:09] maybe to improve the electrical contact there yeah it could just be a slight sign that the
+[07:14] contacts are becoming worn oh perfect and now it's gone back to normal the reason we have a
+[07:18] problem here on college is that we never really have any current going through them and any uh
+[07:21] you know voltage across the pins do we they don't self clean as such making them breaking arcs etc
+[07:27] woo really high very high so we can plug in and out a few times we've got some contact cleaner but
+[07:35] but again that is still a bit too high for me i would replace that socket outlet
+[07:38] should we try the contact cleaner to show what we mean behind that yep
+[07:48] okay you actually put some contact cleaner on there like that oh as if by magic
+[07:55] fantastic that's again because these never get used and they never get
+[07:58] the in and out of a regular plugged up or a voltage across them wow
+[08:10] a little higher slightly too high
+[08:14] that magic contact cleaner is coming out come on let's try a little squirt of that see what happens
+[08:18] okay so i've got some contact cleaner thank you to one of my students who brought that in
+[08:24] it's still a little bit high no that's great yeah
+[08:28] it's close enough to be happy with that result okay brilliant
+[08:34] yeah and again now for our stage two between line and neutral
+[08:38] i'm happy with all of the results that we've got from these socket outlets
+[08:41] so next Marcus so we're going to link together opposite line and opposite cpc in our consumer
+[08:45] unit and repeat the test yes we are and that's going to be our stage three of our ring final
+[08:49] continuity test let's move to consumer unit next so i can see you've changed over in the consumer
+[08:54] unit now we've got opposite line and opposite cpc to opposite line opposite cpc we're going
+[08:59] to take a measurement across here i can tell you that i calculated this to be 0.67 so let's
+[09:04] see what the measured value is okay so we're going to go across our connector blocks again
+[09:11] we've got 0.63 ohms okay that's fine again that is close enough for me okay that's fine and
+[09:16] ignore the the other things that we've talked about that's fine we're going to be moving on
+[09:19] and where you're going to start doing your first test out so we're going to go back to our fuse
+[09:23] connection unit and test there because we've got our probes in the tester already ready when you're
+[09:27] under marcus yeah so we're gonna go onto our fuse connection unit first but this time going between
+[09:31] line and cpc now remember that the highest reading we obtain now from this stage is
+[09:36] going to be recorded on our scheduled test results we've got 0.88 ohms we know it's going to probably
+[09:42] be the highest because it's the spurred point it is yes so we've added that resistance like we said
+[09:46] earlier it's going to be high how did you prove polarity of that outlet so of this outlet because
+[09:51] i've got the front cover off i can actually visually confirm polarity which is what i've done
+[09:55] the line conductor is going in the line terminal the neutral conductor's going in the neutral
+[10:00] terminal and the cpc is going in the cpc terminal okay we need to change it over now in order to be
+[10:06] able to plug into each of the socket outlets so we'll change the leads over for the next stage yep
+[10:11] so a small issue in the edit we've lost some footage so i'm just going to interject this
+[10:14] footage marcus who's gone enough to take his kid swimming fair play to him marcus has carried out
+[10:18] the continuity cpc test here between line and cpc he got a reading of 0.88 ohms we're going
+[10:27] to repeat the test at all the socket outlets we've already tested between line and neutral we're now
+[10:31] testing between line and cpc we'll complete the polarity test we will record the highest reading
+[10:36] we expect all the ones on the ring to be very similar readings so let's go around we've got
+[10:42] reading of 0.66 i think our calculated reading was 0.67 operate the switch leave the switch in the
+[10:49] on position for the installation resistance test so round i go 0.66 operate the switch
+[10:59] reading settles in going to read in our 0.66 operate switch
+[11:05] leave the switch in the on position and round we go
+[11:09] okay fractionally higher that's fine goes off comes back on
+[11:16] yep wonderful off it goes back on round to the next one
+[11:24] turn it off back on again we've got the old contact spray if we get any issues
+[11:32] remembering the highest reading it's currently still here
+[11:36] all fraction high there we'll try this a couple of times
+[11:41] a little bit higher let's operate the switch see what happens
+[11:46] yep that's fine settle down go to the next one again yeah fine operate switch
+[11:54] okay so we test between line and neutral as part polarity we're tested between line and cpc
+[12:02] we've now confirmed the positions of the pins first test between the two live conductors the
+[12:07] second one between line and cpc by proving both of those we've completed the polarity test at the
+[12:11] front we've left the switches on the on position ready for insulation resistance the reading we
+[12:17] just achieved when we're testing between opposite line to opposite cpc opposite line to opposite cpc
+[12:22] is the reading that we're going to record of the highest value all the readings on the ring final
+[12:26] circuit were very similar and we expect that the reading at the spur which has been taken from a
+[12:32] socket outlet and spurred from it had a height reading of 0.88 that's the one we're recording
+[12:37] our test paperwork let's cut to the test paperwork and see how i'm going to record the results me and
+[12:42] marcus achieved let's add our test results in little r1 was one ohm little rn was 0.98 little
+[12:48] r2 was 1.67 our highest r1 plus r2 was 0.88 and we did the polarity with the tick so while marcus
+[12:56] was busy going around the socket outlets and explained how to carry out the test Gary Vordeman
+[13:00] was here on the board here we recorded our little r1 our little rn a little our two readings yeah
+[13:06] stage absolutely and then i took and did the calculations that you described in the video
+[13:11] yeah these are numbers i came up with a little bit of rounding up and i would have said in previous
+[13:16] videos that these readings here that i calculated i'd expect to see every socket on a ring final
+[13:20] circuit yeah and i've said in previous video presentations i'd like to keep within that 0.05
+[13:26] is that a requirement no it's actually not so the 0.05 is in relation to stage one so our
+[13:31] end-to-end conductors of conductors that have the same cross-sectional area what i was trying to do
+[13:36] and we had a discussion 18 years ago about this when i first came in we were trying to give our
+[13:40] learners a reference point for a socket on a ring final circuit and it should be within that number
+[13:46] it doesn't have to be we saw some worn sockets today wasn't it fantastic that when we used a bit
+[13:50] of a bit of contact uh yeah magic magic spray that we actually saw those readings full however if you
+[13:57] couldn't get a reading to fall on a front plate you're getting a really high reading what you're
+[14:00] gonna do about it Marcus so again you'd further investigate into the back it could be a spur it
+[14:04] could be a loose connection or it could just be the fact of wear and tear and you would replace
+[14:08] the front of the socket okay i think that's a really good piece of advice i think we've
+[14:12] overcome some of those popular misconceptions that i've almost introduced in some of my
+[14:16] videos because of my historic teaching back in the all those years so it's wonderful doing on
+[14:21] board isn't it he's going to keep producing testing and fault finding videos for you

@@ -1,0 +1,114 @@
+# Understanding Your Three-Phase Distribution Board
+# https://www.youtube.com/watch?v=27QIQAvOF9k
+
+Did you know you can complete an electrical apprenticeship at college and become fully qualified without ever installing a three-phase distribution board crazy right that begs the question where do electricians actually learn how to install these boards maybe it's from a mentor during their apprenticeship carefully guiding them through the process or perhaps it's from someone in plant maintenance which can sometimes mean picking up a mix of good practices and bad habits whether you're an apprentice looking to deepen your knowledge or a domestic installer starting to explore three-phase applications let's take a closer look at a typical three-phase board for this journey we'll check out the Eris Pro range available from Yesss Electrical let's dive in and build your confidence with three-phase boards if you are tuning in from overseas let us know what you think of the UK approach to three-phase wiring compared to what you do I've got a question that divides the electrical industry and also the team eFIXX within enclosures like this do you strip twist and double over your connections or do you straight strip them and insert them into the terminals three-phase boards also known as type B TPN triple pole and neutral boards feature a specific specific bus bar Arrangement where outgoing circuit breakers are vertically aligned these boards are commonly used across a range of settings including industrial facilities retail spaces and occasionally in larger Residential Properties and if you're moving up from installing residential consumer units there are several key differences to consider one of the main distinctions is how the size of the board is specified for example this is a 12-way board meaning it can support 12 outgoing 3 phase circuits however despite having a three-phase input it can also Supply single phase circuits when used for single phase circuits it can accommodate up to 36 outgoing circuits offering greater versatility and of course it can be a combination of three phase and single phase circuits now we understand the number of ways in a distribution board when it's three-phase I can tell you the Eris range goes from 4 to 24 Ways the three-phase range actually comes off the back of an incredibly successful Eris Pro consumer range of single phase consumer units which also have an extensive range of MCBs RCDs and AFDDs within them and both are exclusive to Yesss electrical at the input of the board there is typically a main switch designed to disconnect all outgoing circuits this switch may either be a three pole device disconnecting only the line conductors or a three pole & neutral switch which disconnects all live conductors including the neutral the choice of switch depends on the nature of the incoming Supply and the designer's preferences for more details on this topic we've created a separate video and you can find the link in the description this Eris board has a rated current of 125 amps once the supply passes through the main switch the line conductors are distributed to the outgoing circuits via internal copper bus bars arranged in an L1 L2 L3 configuration unlike residential consumer units three-phase boards come with pre-connected bus bar wiring this means you only need to attach the incoming and outgoing devices to the exposed bus bar tabs simplifying the installation process the neutral connection is routed from the incoming switch to a neutral bar typically made of brass positioned on either side of the board in boards with a three Poole switch the neutral connection often includes a removable link allowing for isolation during maintenance the neutral bar is insulated from the metal chassis as the neutral conductor is classified as a live conductor the neutral bar is further designed to be touch proof on many boards ensuring added safety each side of the board also houses a brass Earth bar which connects to the Circuit protective conductor smaller incoming Supply cables are connected directly to the Earth bar while larger cross-section cables are secured using a bolt connection these Earth bars are directly bonded to the steel chassis eliminating the need for additional interconnections however some electricians may still recommend connecting them together as a best practice unlike Rick are you the type of electrician that would take an earth connection from this bolt to this earth bar to this earth bar and to this bolt this setup of neutral and Earth bars is the most common configuration though certain manufacturers may position them at the top of the board for design variations next to the main switch is a dedicated position for installing a surge protection device SPD the installation process requires connecting the SPD to an MCB in one of the outgoing ways ensuring protection when the device reaches the end of its lifespan the SPD must also be connected to the Earth and neutral bars minimising the length of the earth connection is crucial to ensure Optimal Performance during a surge event the neutral and Earth bars are numbered to correspond with the outgoing circuits simplifying testing inspection and maintenance for best practice connecting the neutral and Earth conductors to the terminal matching the circuit's outgoing number is recommended for example when connecting a three-phase circuit to the bus bar on tabs 1 2 and 3 the neutral and Earth conductors should be connected to screw Terminal 1 similarly for a circuit going out on tabs four five and six the neutral and Earth conductors should be connected to screw terminal 4 in a three-phase circuit some setups like those powering Motors don't always need a neutral conductor why in a balanced three-phase Supply the currents to neutral cancel each other out adding up to zero don't just take our word for it check out the link in the description for a video that breaks it down let's take a closer look at circuit protection devices at first glance single pole devices might seem similar to those used in residential consumer units but a key distinction lies in their fault current ratings residential devices typically have a 6 kW fault current rating while industrial applications where fault currents can be significantly higher require devices rated at 10 kiloamps they are also tested to work in more arduous environments in industrial applications such as factories triple pole devices are essentially three single pole devices mechanically linked together this design ensures that all line conductors are disconnected simultaneously if one phase in a three-phase circuit is overloaded or develops a fault in the past when fuses were commonly used for circuit protection losing one phase of a three-phase supply was a common fault condition RCBOs residual current breaker with overcurrent are often paired with MCBs miniature circuit breakers to provide enhanced protection for outgoing circuits particularly for socket Outlets rated at 32 amps or less in industrial environments however MCBs are more commonly used this is because industrial loads typically consist of fixed equipment like machinery and the cabling methods often do not require additional protective measures MCBs in these boards can handle ratings of up to 63 amps RCBOs used in industrial boards generally resemble those found in residential consumer units featuring a flying lead for the neutral connection many still rely on a functional Earth which must be connected to the Earth bar when installing RCBOs it's important to carefully choose the circuit locations to ensure the flying lead is long enough to reach both the Earth and neutral bars three-phase boards offer a flexible solution for organising outgoing circuits in mixed boards containing both single-phase and three-phase circuits it can be beneficial to group three-phase circuits on one side and single-phase circuits on the other special attention should be given to circuits that experience continuous rated loads over extended periods as the heat generated can impact the performance of nearby devices to mitigate this it may be wise to space out devices or position them next to circuits with lower continuous loads for three-phase devices it is considered best practice to follow a logical sequence of L1 L2 and L3 however it is possible to install devices that do not adhere to this sequence which could inadvertently cause phase rotation be mindful of a few key details especially the wiring colours if you're like me and have been around long enough to remember the old phase colours red yellow and blue were much easier to identify unfortunately with standardisation we now have brown black and grey once the wiring's been installed often the customer decides to think about energy monitoring coz if you can measure it you can save it and Eris range has got you covered there as well with the ability to have an extension box can house contactors metering equipment as well as time clocks but if it's space you need it's the cable entry box that you can also bolt onto these both systems work exactly the same undo the easy plate with the bolts and put it into position giving you way more flexibility than you had initially on the first install it's also worth noting that a three-phase circuit could be wired entirely with brown conductors identified only at the terminations additionally in a board supplying single phase loads such as a circuit supplied by L2 black phase the outgoing circuit is likely wired using brown always double check to avoid confusion devices are easily fitted to the bus bar tabs along with all terminals the manufacturer's torque settings should be followed these can often be found printed on the device at a minimum any unused slots in the board should be covered with insulating caps to ensure all live Parts meet the IP2X standard for finger proof safety similarly covers must also be fingerproof once replaced which means blanks must be fitted to any unused slots Additionally the top surface must comply with IP4X or IPXXD standards as outlined Rick's got one more circuit to install but if it this you're interested in looking and converting this into a singlephase consumer unit which brings in the afdd protection as well check out the video on screen there
+
+
+[00:00] Did you know you can complete an electrical apprenticeship at college and become fully
+[00:03] qualified without ever installing a three-phase distribution board crazy right that begs the
+[00:08] question where do electricians actually learn how to install these boards maybe it's from a mentor
+[00:12] during their apprenticeship carefully guiding them through the process or perhaps it's from
+[00:16] someone in plant maintenance which can sometimes mean picking up a mix of good practices and bad
+[00:21] habits whether you're an apprentice looking to deepen your knowledge or a domestic installer
+[00:25] starting to explore three-phase applications let's take a closer look at a typical three-phase board
+[00:30] for this journey we'll check out the Eris Pro range available from Yesss Electrical let's dive
+[00:35] in and build your confidence with three-phase boards if you are tuning in from overseas let
+[00:39] us know what you think of the UK approach to three-phase wiring compared to what you
+[00:42] do I've got a question that divides the electrical industry and also the team eFIXX within enclosures
+[00:47] like this do you strip twist and double over your connections or do you straight strip them
+[00:52] and insert them into the terminals three-phase boards also known as type B TPN triple pole and
+[00:58] neutral boards feature a specific specific bus bar Arrangement where outgoing circuit
+[01:02] breakers are vertically aligned these boards are commonly used across a range of settings
+[01:06] including industrial facilities retail spaces and occasionally in larger Residential Properties and
+[01:11] if you're moving up from installing residential consumer units there are several key differences
+[01:15] to consider one of the main distinctions is how the size of the board is specified for example
+[01:20] this is a 12-way board meaning it can support 12 outgoing 3 phase circuits however despite having
+[01:25] a three-phase input it can also Supply single phase circuits when used for single phase circuits
+[01:31] it can accommodate up to 36 outgoing circuits offering greater versatility and of course it can
+[01:36] be a combination of three phase and single phase circuits now we understand the number of ways in
+[01:41] a distribution board when it's three-phase I can tell you the Eris range goes from 4 to 24 Ways the
+[01:46] three-phase range actually comes off the back of an incredibly successful Eris Pro consumer range
+[01:50] of single phase consumer units which also have an extensive range of MCBs RCDs and AFDDs within
+[01:56] them and both are exclusive to Yesss electrical at the input of the board there is typically a
+[02:01] main switch designed to disconnect all outgoing circuits this switch may either be a three pole
+[02:06] device disconnecting only the line conductors or a three pole & neutral switch which disconnects
+[02:12] all live conductors including the neutral the choice of switch depends on the nature of the
+[02:16] incoming Supply and the designer's preferences for more details on this topic we've created a
+[02:21] separate video and you can find the link in the description this Eris board has a rated current
+[02:25] of 125 amps once the supply passes through the main switch the line conductors are distributed
+[02:31] to the outgoing circuits via internal copper bus bars arranged in an L1 L2 L3 configuration
+[02:37] unlike residential consumer units three-phase boards come with pre-connected bus bar wiring
+[02:42] this means you only need to attach the incoming and outgoing devices to the exposed bus bar tabs
+[02:46] simplifying the installation process the neutral connection is routed from the incoming switch to a
+[02:51] neutral bar typically made of brass positioned on either side of the board in boards with a
+[02:55] three Poole switch the neutral connection often includes a removable link allowing for isolation
+[03:00] during maintenance the neutral bar is insulated from the metal chassis as the neutral conductor is
+[03:05] classified as a live conductor the neutral bar is further designed to be touch proof on many boards
+[03:10] ensuring added safety each side of the board also houses a brass Earth bar which connects to
+[03:15] the Circuit protective conductor smaller incoming Supply cables are connected directly to the Earth
+[03:20] bar while larger cross-section cables are secured using a bolt connection these Earth bars are
+[03:24] directly bonded to the steel chassis eliminating the need for additional interconnections however
+[03:29] some electricians may still recommend connecting them together as a best practice unlike Rick are
+[03:34] you the type of electrician that would take an earth connection from this bolt to this earth
+[03:38] bar to this earth bar and to this bolt this setup of neutral and Earth bars is the most
+[03:43] common configuration though certain manufacturers may position them at the top of the board for
+[03:47] design variations next to the main switch is a dedicated position for installing a surge
+[03:52] protection device SPD the installation process requires connecting the SPD to an MCB in one of
+[03:57] the outgoing ways ensuring protection when the device reaches the end of its lifespan the SPD
+[04:02] must also be connected to the Earth and neutral bars minimising the length of the earth connection
+[04:06] is crucial to ensure Optimal Performance during a surge event the neutral and Earth bars are
+[04:11] numbered to correspond with the outgoing circuits simplifying testing inspection and maintenance
+[04:16] for best practice connecting the neutral and Earth conductors to the terminal matching the circuit's
+[04:20] outgoing number is recommended for example when connecting a three-phase circuit to the bus bar
+[04:25] on tabs 1 2 and 3 the neutral and Earth conductors should be connected to screw Terminal 1 similarly
+[04:30] for a circuit going out on tabs four five and six the neutral and Earth conductors should be
+[04:35] connected to screw terminal 4 in a three-phase circuit some setups like those powering Motors
+[04:40] don't always need a neutral conductor why in a balanced three-phase Supply the currents to
+[04:44] neutral cancel each other out adding up to zero don't just take our word for it check out the link
+[04:49] in the description for a video that breaks it down let's take a closer look at circuit protection
+[04:53] devices at first glance single pole devices might seem similar to those used in residential consumer
+[04:58] units but a key distinction lies in their fault current ratings residential devices
+[05:02] typically have a 6 kW fault current rating while industrial applications where fault currents can
+[05:07] be significantly higher require devices rated at 10 kiloamps they are also tested to work in more
+[05:13] arduous environments in industrial applications such as factories triple pole devices are
+[05:18] essentially three single pole devices mechanically linked together this design ensures that all line
+[05:23] conductors are disconnected simultaneously if one phase in a three-phase circuit is overloaded
+[05:28] or develops a fault in the past when fuses were commonly used for circuit protection losing one
+[05:33] phase of a three-phase supply was a common fault condition RCBOs residual current breaker with
+[05:38] overcurrent are often paired with MCBs miniature circuit breakers to provide enhanced protection
+[05:43] for outgoing circuits particularly for socket Outlets rated at 32 amps or less in industrial
+[05:48] environments however MCBs are more commonly used this is because industrial loads typically consist
+[05:54] of fixed equipment like machinery and the cabling methods often do not require additional protective
+[05:58] measures MCBs in these boards can handle ratings of up to 63 amps RCBOs used in industrial boards
+[06:04] generally resemble those found in residential consumer units featuring a flying lead for the
+[06:08] neutral connection many still rely on a functional Earth which must be connected to the Earth bar
+[06:12] when installing RCBOs it's important to carefully choose the circuit locations to ensure the flying
+[06:17] lead is long enough to reach both the Earth and neutral bars three-phase boards offer a flexible
+[06:22] solution for organising outgoing circuits in mixed boards containing both single-phase and
+[06:27] three-phase circuits it can be beneficial to group three-phase circuits on one side and
+[06:31] single-phase circuits on the other special attention should be given to circuits that
+[06:34] experience continuous rated loads over extended periods as the heat generated can impact the
+[06:39] performance of nearby devices to mitigate this it may be wise to space out devices or position them
+[06:44] next to circuits with lower continuous loads for three-phase devices it is considered best
+[06:49] practice to follow a logical sequence of L1 L2 and L3 however it is possible to install
+[06:54] devices that do not adhere to this sequence which could inadvertently cause phase rotation
+[06:59] be mindful of a few key details especially the wiring colours if you're like me and have been
+[07:03] around long enough to remember the old phase colours red yellow and blue were much easier
+[07:07] to identify unfortunately with standardisation we now have brown black and grey once the wiring's
+[07:12] been installed often the customer decides to think about energy monitoring coz if you can
+[07:16] measure it you can save it and Eris range has got you covered there as well with the ability
+[07:19] to have an extension box can house contactors metering equipment as well as time clocks but
+[07:24] if it's space you need it's the cable entry box that you can also bolt onto these both systems
+[07:28] work exactly the same undo the easy plate with the bolts and put it into position giving you
+[07:32] way more flexibility than you had initially on the first install it's also worth noting
+[07:37] that a three-phase circuit could be wired entirely with brown conductors identified
+[07:41] only at the terminations additionally in a board supplying single phase loads such as a circuit
+[07:45] supplied by L2 black phase the outgoing circuit is likely wired using brown always double check
+[07:51] to avoid confusion devices are easily fitted to the bus bar tabs along with all terminals
+[07:55] the manufacturer's torque settings should be followed these can often be found printed on
+[07:59] the device at a minimum any unused slots in the board should be covered with insulating caps to
+[08:04] ensure all live Parts meet the IP2X standard for finger proof safety similarly covers must also
+[08:09] be fingerproof once replaced which means blanks must be fitted to any unused slots Additionally
+[08:15] the top surface must comply with IP4X or IPXXD standards as outlined Rick's got one more circuit
+[08:21] to install but if it this you're interested in looking and converting this into a singlephase
+[08:25] consumer unit which brings in the afdd protection as well check out the video on screen there

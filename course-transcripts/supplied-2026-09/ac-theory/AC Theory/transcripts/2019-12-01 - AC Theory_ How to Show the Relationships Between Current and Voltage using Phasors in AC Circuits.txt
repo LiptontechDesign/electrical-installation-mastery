@@ -1,0 +1,301 @@
+# AC Theory: How to Show the Relationships Between Current and Voltage using Phasors in AC Circuits
+# https://www.youtube.com/watch?v=_F1jzaGgtXw
+
+[Music] hello and welcome to the select core principals training video in this video we're going to continue our series on AC theory now in the last video in this series we look to what happens to current and voltage inside capacitive and inductive loads and also in resistive loads and we represented those relationships using wave forms now what we're going to do in this video is introduce the concept of phasers now a phaser is basically just an arrow that represents a quantity it has a length and it has a direction and that's going to be really really important in terms of what we're looking at with our AC theory because again we're going to look at the relationship between current and voltage in resistive capacitive and inductive circuits but instead of representing those relationships with waveforms we're going to represent them with phases and these phases are going to be absolutely critical to as understanding that mystery that we set so many videos ago when we spoke about the mystery of the fluorescent lamp stay on until the end of the video to look for a handy reminder that's going to help you to memorize the relationships between current and voltage in inductive and capacitive circuits and that's a really handy mnemonic that's going to help us out both in our practice and also in passing our exams so let's go and have a look at what these phases look like so what we're going to do now is we're going to look at another way that we can represent the relationship between the voltage and the current in an AC circuit for our different kinds of load we've represented it as a waveform what we're going to do now is represent it as a phasor diagram now a phasor diagram is basically showing this exact same relationship that we've just looked at but it shows it using arrows instead of a waveform but actually those arrows are very very closely related to the waveform so let's have a look at that next so we saw in a previous video in this series how this rotating conductor inside a magnetic field generates an AC waveform and if you haven't seen that I strongly recommend that you go and watch that video because that's going to help you out enormously and understanding this next part of this video what we're going to be looking at here is how we can map across the positions of the voltage and current on our waveform from the position that the conductor kind of takes up inside here but we're kind of gonna move away from thinking about that this has been an actual conductor and this is more a representation of what's happening with the voltage in the current inside our circuits so let me move this around a little bit and you can start to see how we map this across so when the rotation of the machine is in this position you can see here that there is zero current being generated inside the circuit so we can map that across to our graph and we've got zero degrees there if I just move this around just a little bit so if I move this around to here now it starts to become a little bit clearer as the AC supply rotates further and further to cutting through the lines of magnetic flux here at 90 degrees we can see that we're generating a higher and higher voltage inside that piece of generating equipment that's going out to our circuit likewise the same thing is happening with the current as we get closer and closer to 90 degrees the current is getting higher and higher once we reach that kind of 90-degree mark about there we can see that we've reached a peak point of our voltage and current so they're both peaking at the same point and then as it continues around you can see that the voltage and current are rising and falling in perfect unity they are rising and falling in phase with each other so what we've got here in this left-hand part of the drawing we've got here kind of two lines one of them representing how the voltage is behaving and one of them representing how the current is behaving and the current one is kind of on top of the voltage one because these two phase are arrows in this case are both rotating in unity they are in phase so in other words one is piled up on top of the other so we can represent that in the next row down in our worksheet as a phasor diagram that looks like this so we've dropped got a line that represents the voltage in the circuit and then we've got a line sitting on top of that an arrow sitting on top of that that represents the current in the circuit and then we imagine that they are both rotating around this point here with we draw an arrow then show it's rotating anti-clockwise so you can see how that phasor diagram has kind of been produced from this representation of how our supply is behaving now this starts to get interesting now when we start to look at how our phasor diagram behaves in a purely inductive load so let's bring that up now so as you can see here we've got a slightly different position we've got a line here that represents how our voltage is behaving when the rotation is at zero degrees and then we've got a line here representing how the current is behaving when our rotation is at zero degrees from the voltages point of view and look at what happens as I start to move this rotation of the generating equipment around look at what's going on can you see there the voltage is just about to reach its peak at 90 degrees there it is and notice what's happened to the current at this point can you see that the current has now reached its minimum value so it's now at zero and then as the circuit continues round the voltage starts to fall but the current actually starts to rise okay now it's a bit bizarre to think of the voltage and the current is falling out of phase with each other so at this point we just kind of need to acknowledge that that's what happens that that is the case and you can see that the key point to this part of the video is understanding really how the waveform diagram relates to our phasor diagram and hopefully as this rotates around you can see what's going on that because that current is lagging the voltage by what angle did which though it was 90 degrees as you can see there between the voltage and the current that is the waveform that we've got going on there you can see as we bring this background to this point now we've completed one full revolution and it's created the waveform that we were looking at previously you can see that the current is lagging the voltage and now from this part of this diagram we can extract the phasor diagram that'll go onto our worksheet so you can see we've got a horizontal arrow representing the voltage and then we draw a arrow lagging that by 90 degrees so it's going to point straight down and that arrow represents the current and they are separated by an angle of 90 degrees and again we imagine that they are rotating around each other at this point here and that they are rotating anti-clockwise so you can see that the current as it rotates is always lagging behind the voltage by 90 degrees so once again we can see here that we've got this setup that we're familiar with from previous videos and we can see here we've got a line that represents how our voltage is behaving and we've got a line that represents how our current is behaving and as you can see as this starts to rotate you can see it maps across to our wave diagram so when the voltage is now at its maximum peak you can see that the current has dropped off to zero as this continues to rotate round you can see there we get one complete waveform out of this and you can see that the phasor diagram is very closely related to the waveform diagram in fact it's just a different way of representing how the current and the voltage are behaving inside this circuit and now we've got a purely capacitive circuit we can see that the current leads the voltage by 90 degrees so if we just set that running you can see that the current as it rotates is always ahead of the voltage which means that on the wave diagram you can see that the current is reaching its significant points before the voltage is reaching the same significant point so the currents are peak here and then 90 degrees later the voltage is in a peak there so we can now take that waveform diagram convert it into a phasor diagram and that phasor diagram can go into our worksheet in this box so we have a horizontal line to represent the voltage and then pointing straight up at 90 degrees to the voltage arrow we draw our current arrow and that current arrow is leading the voltage by 90 degrees if we consider the phasor diagram is rotating around this point here and we come to the whole thing is rotating anti-clockwise so the bottom line just to remind us here just to fill this in the bottom line of our worksheet is the relationship between the current and the voltage in the purely resistive circuit the current and the voltage are in phase in a purely inductive circuit that's a circuit that has no resistance and low capacitance just inductance we can see the current is lagging the voltage by 90 degrees and we can also see that in the purely capacitive circuit the current is leading the voltage by 90 degrees and the wave diagram and the phasor diagram are just different ways of representing that relationship but the phasor diagram is going to come in extremely useful when it comes to solving the mystery of the fluorescent lamp which is where this series of videos began what feels like a long long time ago now at the bottom of our worksheet we have the word civil now you might be wondering why I've printed the word civil at the bottom of this worksheet it's partly a reminder of what to do with our comments down in the below the video here but it's actually a memory aid that helps us to remember the relationship between current and voltage inside capacitive and inductive circuits so if you look at the word civil if we take just the first three letters of that you can see we've got C I V so we've got the C at the start which stands for capacitance that is the mathematical symbol for capacitance and immediately following that C we've got an I and we've got a V and they are in that order so the current represented by I is coming before the voltage represented by the V and so that helps us to remember that in a capacitive circuit current comes before voltage or current leads voltage so if we have a capacitive circuit we say is a leading circuit and then if we look at the back half of the word we've got the three letters V I L now the L stands for inductance so when we see the mathematical symbol capital L we think of inductance and if you look at just the last three letters of the word you can see that the current comes after the voltage so in the purely inductive circuit represented by the L the current comes after the voltage or to put it more accurately so we say that the current lags the voltage so that words civil is just a handy memory aid to help us remember the relationships between current and voltage in a capacitive and octave circuit thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to the select core
+[00:10] principals training video in this video
+[00:12] we're going to continue our series on AC
+[00:15] theory now in the last video in this
+[00:18] series we look to what happens to
+[00:20] current and voltage inside capacitive
+[00:22] and inductive loads and also in
+[00:24] resistive loads and we represented those
+[00:27] relationships using wave forms now what
+[00:29] we're going to do in this video is
+[00:30] introduce the concept of phasers now a
+[00:33] phaser is basically just an arrow that
+[00:35] represents a quantity it has a length
+[00:38] and it has a direction and that's going
+[00:40] to be really really important in terms
+[00:42] of what we're looking at with our AC
+[00:44] theory because again we're going to look
+[00:46] at the relationship between current and
+[00:48] voltage in resistive capacitive and
+[00:50] inductive circuits but instead of
+[00:52] representing those relationships with
+[00:53] waveforms we're going to represent them
+[00:56] with phases and these phases are going
+[00:58] to be absolutely critical to as
+[01:00] understanding that mystery that we set
+[01:02] so many videos ago when we spoke about
+[01:04] the mystery of the fluorescent lamp stay
+[01:07] on until the end of the video to look
+[01:08] for a handy reminder that's going to
+[01:11] help you to memorize the relationships
+[01:13] between current and voltage in inductive
+[01:15] and capacitive circuits and that's a
+[01:17] really handy mnemonic that's going to
+[01:19] help us out both in our practice and
+[01:21] also in passing our exams so let's go
+[01:24] and have a look at what these phases
+[01:26] look like
+[01:29] so what we're going to do now is we're
+[01:32] going to look at another way that we can
+[01:34] represent the relationship between the
+[01:35] voltage and the current in an AC circuit
+[01:38] for our different kinds of load we've
+[01:40] represented it as a waveform what we're
+[01:42] going to do now is represent it as a
+[01:44] phasor diagram now a phasor diagram is
+[01:49] basically showing this exact same
+[01:52] relationship that we've just looked at
+[01:53] but it shows it using arrows instead of
+[01:57] a waveform but actually those arrows are
+[02:01] very very closely related to the
+[02:03] waveform so let's have a look at that
+[02:05] next so we saw in a previous video in
+[02:08] this series how this rotating conductor
+[02:12] inside a magnetic field generates an AC
+[02:15] waveform and if you haven't seen that I
+[02:17] strongly recommend that you go and watch
+[02:18] that video because that's going to help
+[02:20] you out enormously and understanding
+[02:22] this next part of this video what we're
+[02:24] going to be looking at here is how we
+[02:27] can map across the positions of the
+[02:30] voltage and current on our waveform from
+[02:32] the position that the conductor kind of
+[02:35] takes up inside here but we're kind of
+[02:36] gonna move away from thinking about that
+[02:38] this has been an actual conductor and
+[02:40] this is more a representation of what's
+[02:41] happening with the voltage in the
+[02:43] current inside our circuits so let me
+[02:47] move this around a little bit and you
+[02:48] can start to see how we map this across
+[02:50] so when the rotation of the machine is
+[02:54] in this position you can see here that
+[02:57] there is zero current being generated
+[02:59] inside the circuit so we can map that
+[03:02] across to our graph and we've got zero
+[03:04] degrees there if I just move this around
+[03:07] just a little bit so if I move this
+[03:09] around to here now it starts to become a
+[03:12] little bit clearer as the AC supply
+[03:17] rotates further and further to cutting
+[03:20] through the lines of magnetic flux here
+[03:22] at 90 degrees we can see that we're
+[03:25] generating a higher and higher voltage
+[03:27] inside that piece of generating
+[03:30] equipment that's going out to our
+[03:31] circuit likewise the same thing is
+[03:34] happening with the current as we get
+[03:35] closer and closer to 90 degrees the
+[03:37] current is getting higher and higher
+[03:38] once we reach that kind of 90-degree
+[03:42] mark about
+[03:43] there we can see that we've reached a
+[03:45] peak point of our voltage and current so
+[03:49] they're both peaking at the same point
+[03:50] and then as it continues around you can
+[03:54] see that the voltage and current are
+[03:55] rising and falling in perfect unity they
+[03:58] are rising and falling in phase with
+[04:01] each other so what we've got here in
+[04:04] this left-hand part of the drawing we've
+[04:06] got here kind of two lines one of them
+[04:08] representing how the voltage is behaving
+[04:10] and one of them representing how the
+[04:13] current is behaving and the current one
+[04:14] is kind of on top of the voltage one
+[04:17] because these two phase are arrows in
+[04:22] this case are both rotating in unity
+[04:25] they are in phase so in other words one
+[04:27] is piled up on top of the other so we
+[04:30] can represent that in the next row down
+[04:32] in our worksheet as a phasor diagram
+[04:35] that looks like this so we've dropped
+[04:38] got a line that represents the voltage
+[04:40] in the circuit and then we've got a line
+[04:43] sitting on top of that an arrow sitting
+[04:45] on top of that that represents the
+[04:46] current in the circuit and then we
+[04:49] imagine that they are both rotating
+[04:50] around this point here with we draw an
+[04:56] arrow then show it's rotating
+[04:57] anti-clockwise so you can see how that
+[04:59] phasor diagram has kind of been produced
+[05:01] from this representation of how our
+[05:06] supply is behaving now this starts to
+[05:11] get interesting now when we start to
+[05:12] look at how our phasor diagram behaves
+[05:15] in a purely inductive load so let's
+[05:18] bring that up now
+[05:21] so as you can see here we've got a
+[05:22] slightly different position we've got a
+[05:24] line here that represents how our
+[05:26] voltage is behaving when the rotation is
+[05:29] at zero degrees and then we've got a
+[05:31] line here representing how the current
+[05:33] is behaving when our rotation is at zero
+[05:38] degrees from the voltages point of view
+[05:39] and look at what happens as I start to
+[05:42] move this rotation of the generating
+[05:45] equipment around look at what's going on
+[05:47] can you see there the voltage is just
+[05:50] about to reach its peak at 90 degrees
+[05:51] there it is and notice what's happened
+[05:54] to the current at this point can you see
+[05:56] that the current has now reached its
+[05:59] minimum value so it's now at zero and
+[06:02] then as the circuit continues round the
+[06:05] voltage starts to fall but the current
+[06:07] actually starts to rise okay
+[06:11] now it's a bit bizarre to think of the
+[06:13] voltage and the current is falling out
+[06:14] of phase with each other so at this
+[06:16] point we just kind of need to
+[06:17] acknowledge that that's what happens
+[06:19] that that is the case and you can see
+[06:21] that the key point to this part of the
+[06:23] video is understanding really how the
+[06:25] waveform diagram relates to our phasor
+[06:28] diagram and hopefully as this rotates
+[06:31] around you can see what's going on that
+[06:33] because that current is lagging the
+[06:34] voltage by what angle did which though
+[06:37] it was 90 degrees as you can see there
+[06:39] between the voltage and the current that
+[06:41] is the waveform that we've got going on
+[06:43] there you can see as we bring this
+[06:45] background to this point now we've
+[06:46] completed one full revolution and it's
+[06:49] created the waveform that we were
+[06:51] looking at previously you can see that
+[06:54] the current is lagging the voltage and
+[06:56] now from this part of this diagram we
+[07:00] can extract the phasor diagram that'll
+[07:02] go onto our worksheet so you can see
+[07:04] we've got a horizontal arrow
+[07:06] representing the voltage and then we
+[07:09] draw a arrow lagging that by 90 degrees
+[07:13] so it's going to point straight down and
+[07:14] that arrow represents the current and
+[07:17] they are separated by an angle of 90
+[07:20] degrees and again we imagine that they
+[07:22] are rotating around each other at this
+[07:25] point here and that they are rotating
+[07:29] anti-clockwise so you can see that the
+[07:31] current as it rotates is always lagging
+[07:33] behind the voltage
+[07:35] by 90 degrees so once again we can see
+[07:39] here that we've got this setup that
+[07:42] we're familiar with from previous videos
+[07:43] and we can see here we've got a line
+[07:46] that represents how our voltage is
+[07:47] behaving and we've got a line that
+[07:49] represents how our current is behaving
+[07:51] and as you can see as this starts to
+[07:53] rotate you can see it maps across to our
+[07:58] wave diagram so when the voltage is now
+[08:01] at its maximum peak you can see that the
+[08:04] current has dropped off to zero as this
+[08:07] continues to rotate round you can see
+[08:09] there we get one complete waveform out
+[08:12] of this and you can see that the phasor
+[08:15] diagram is very closely related to the
+[08:18] waveform diagram in fact it's just a
+[08:20] different way of representing how the
+[08:22] current and the voltage are behaving
+[08:24] inside this circuit and now we've got a
+[08:26] purely capacitive circuit we can see
+[08:29] that the current leads the voltage by 90
+[08:32] degrees so if we just set that running
+[08:35] you can see that the current as it
+[08:37] rotates is always ahead of the voltage
+[08:40] which means that on the wave diagram you
+[08:43] can see that the current is reaching its
+[08:45] significant points before the voltage is
+[08:47] reaching the same significant point so
+[08:50] the currents are peak here and then 90
+[08:52] degrees later the voltage is in a peak
+[08:54] there so we can now take that waveform
+[08:59] diagram convert it into a phasor diagram
+[09:01] and that phasor diagram can go into our
+[09:04] worksheet in this box so we have a
+[09:05] horizontal line to represent the voltage
+[09:07] and then pointing straight up at 90
+[09:10] degrees to the voltage arrow we draw our
+[09:13] current arrow and that current arrow is
+[09:16] leading the voltage by 90 degrees if we
+[09:19] consider the phasor diagram is rotating
+[09:22] around this point here and we come to
+[09:24] the whole thing is rotating
+[09:25] anti-clockwise so the bottom line just
+[09:29] to remind us here just to fill this in
+[09:31] the bottom line of our worksheet is the
+[09:33] relationship between the current and the
+[09:35] voltage in the purely resistive circuit
+[09:37] the current and the voltage are in phase
+[09:40] in a purely inductive circuit that's a
+[09:43] circuit that has no resistance and low
+[09:45] capacitance just inductance we can see
+[09:48] the current is lagging the voltage by 90
+[09:51] degrees and we can also see that in the
+[09:54] purely capacitive circuit the current is
+[09:56] leading the voltage by 90 degrees and
+[09:59] the wave diagram and the phasor diagram
+[10:01] are just different ways of representing
+[10:03] that relationship but the phasor diagram
+[10:06] is going to come in extremely useful
+[10:08] when it comes to solving the mystery of
+[10:09] the fluorescent lamp which is where this
+[10:12] series of videos began what feels like a
+[10:14] long long time ago now at the bottom of
+[10:18] our worksheet we have the word civil now
+[10:20] you might be wondering why I've printed
+[10:22] the word civil at the bottom of this
+[10:23] worksheet it's partly a reminder of what
+[10:26] to do with our comments down in the
+[10:28] below the video here but it's actually a
+[10:31] memory aid that helps us to remember the
+[10:33] relationship between current and voltage
+[10:36] inside capacitive and inductive circuits
+[10:39] so if you look at the word civil if we
+[10:41] take just the first three letters of
+[10:43] that you can see we've got C I V so
+[10:46] we've got the C at the start which
+[10:48] stands for capacitance that is the
+[10:50] mathematical symbol for capacitance and
+[10:52] immediately following that C we've got
+[10:55] an I and we've got a V and they are in
+[10:58] that order so the current represented by
+[11:01] I is coming before the voltage
+[11:03] represented by the V and so that helps
+[11:06] us to remember that in a capacitive
+[11:08] circuit current comes before voltage or
+[11:12] current leads voltage so if we have a
+[11:16] capacitive circuit we say is a leading
+[11:18] circuit and then if we look at the back
+[11:21] half of the word we've got the three
+[11:22] letters V I L now the L stands for
+[11:27] inductance so when we see the
+[11:30] mathematical symbol capital L we think
+[11:32] of inductance and if you look at just
+[11:35] the last three letters of the word you
+[11:36] can see that the current comes after the
+[11:40] voltage so in the purely inductive
+[11:42] circuit represented by the L the current
+[11:45] comes after the voltage or to put it
+[11:47] more accurately so we say that the
+[11:49] current lags the voltage so that words
+[11:52] civil is just a handy memory aid to help
+[11:55] us remember the relationships between
+[11:56] current and voltage in a capacitive and
+[12:00] octave circuit thank you very much for
+[12:02] watching
+[12:06] [Music]
+[12:15] [Music]

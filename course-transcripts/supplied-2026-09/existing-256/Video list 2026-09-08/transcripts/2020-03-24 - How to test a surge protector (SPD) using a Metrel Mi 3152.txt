@@ -1,0 +1,209 @@
+# How to test a surge protector (SPD) using a Metrel Mi 3152
+# https://www.youtube.com/watch?v=N-ocwOCoPfE
+
+so Connor would note scary you've got your glasses on so obviously today is going to be a very technical presentation what we're going to cover in this video we're going to look at type 2 SB days and is there anything we can do as electricians to prove they're actually working now that's an interesting question isn't it cuz generally speaking we fit in SPD we return occasionally have a little look in the window to see if it's been activated at any point however what we're going to do today is show that you can actually test to see if the SPD is triggering at the voltage that we expected - ok and we've looked at the material 31:52 before we went through ten of its top features and we noticed in there that one of them was to check the varistor element of an SPD absolutely so we're gonna bring the camera in we're gonna show you the test taking place and we're gonna explain what some of those results actually mean so I can see you've turned on your material 3152 Joe can you navigate to the right section in order to test this Forester for me absolutely so we go into the single tests menu so I'll just tap on the screen there this lovely touchscreen function and the single test menu that we want to go into then is actually the ISO menu now in Europe insulation resistance is referred to as isolation so here we go into the ISO menu which is the insulation resistance menu effectively and here we've got here our option to go into the vista tests so we can head into there now so we saw in our previous video that we did on the material 3152 that you'd have a help screen by pressing the question mark you did that for me joy absolutely so if we press that little question mark button there it takes us to the help menu and this is showing us very clearly how we need to connect our leads together so at the minute we've got the three leads just hanging individually here but the screen is clearly showing that we need to connect our Neutral lead and our earth lead together so we're just gonna plug those two together like that to make one connection and then we're going to connect our probes onto the end of there so we'll put our line one on there and the one to the earth connection there like that okay it's a dead test Joe obviously the tips don't need to form 2 GS 38 so those tips are ready to go absolutely so we do have shrouds for these if we wanted to do live testing with them but it's not necessary in this case so with our test lead setup then Joe obviously we must go back to the main master screen is that correct absolutely so we can either press the back button here or we can press on the touchscreen that's hot corner there and that brings us back to our forest and menu screen okay so we now got to work out what we're testing between we're testing between which conductors in order to perform the test so we're gonna be testing the varistor that is connected up inside our surge protection device and the varistor is going to be connected across the line and the neutral connection not the line and earth we're going to test between line and neutral and is there a reading that we'll expect to get for this so we're expecting the reading for the AC voltage to be above the UC value of 275 volts okay I know that is that the same one every device or do they change with devices no it'll vary from device to device and basically what this voltage reading is telling us here is the voltage that the varistor will be kind of triggered at to start conducting current through itself in order to reduce the effect of a surge in electricity okay the judges carry out the test absolutely so we're just going to put one of our probes into the line terminal of our surge protection device and the other probe into the neutral and obviously we've taken all necessary precautions to make sure this consume unit is dead it's actually never been connected up to anything live so we're happy that we were working safely here so all we've got to do now is press the start button the play button here which will start the virus to test and all this is doing is just applying a DC voltage through the surge protection device and it's measuring at what voltage one milliamp flows between the line and neutral connection inside here so that's the point at which the virus that starts to conduct electricity and allow it to suppress the surge so you can see there that we've got two interesting values so first of all we've got UDC now that's the DC voltage that the tester has applied at 430 volts and then that has been calculated - givers a you AC or AC voltage of 269 volts and that's the value that were interested in because that is the value at which this surge protection device starts to allow more than one milliamp to trickle through the the wrister that is inside the surge protection device so we were expecting a value of two hundred and seventy five volts and we've come up with the value very close to that of two hundred and sixty nine volts so we know that the varistor is working correctly I think to prove a point joke would be worth as testing a different type to SPD with a different you see voltage range yeah let's head over to the bench and we'll test a moment okay we've changed a different type to SPD and I can now see the you see value here is actually 350 volts so you're telling me I expect this reading up here to be very close to that value joke yeah absolutely so it's the same principle that we applied before we're going to connect up our probes onto the line and the neutral terminal so this is a little bit confusing sometimes because we might think that this SPD here is connected between line and protective earth but it's actually not it's connected between line and neutral so we're testing across this device here effectively and when we press the start button on here we should see a value somewhere in the region of 350 volts so let's run the test and see what happens so you can see that we've actually come out with 330 volts AC so bear in mind it's testing with DC voltage and then it's doing an internal calculation to tell us what the AC voltage is and remember this is the voltage at which the device is letting one milliamp start to flow through it and that one milliamp is kind of a standard testing value that is used with surge protection devices now again we'd expect to get 350 volts as described on the front of the surge protection device but we're coming out with 330 volts so again we working within a tolerance we don't expect it to be exactly the same but we can see there that this device is definitely starting to trigger when the voltage across this surge protection device starts to rise above 330 volts I think we've clearly proved there in this case using a type 2 SPD that you can actually prove the functional element of the wrist eject absolutely now we're not saying that this is a required test under BS 7 6 7 1 we think it falls perhaps and the functional testing and maybe it's something that as the regulations develop and the surge protection market continues to grow we might see some more official guidance on this but from my point of view I always want to make sure that the things that I install work correctly that they're doing the job I expect them today and if you have this feature on your tester why would you not use it and is it a brand new feature on the 3152 J now this test functions been around for 15 years at least inside the material tester so that is pretty impressive the fact that they've been catering to that surge protection market for such a long time and I think we can clearly say we love the material 3152 we really do
+
+
+[00:04] so Connor would note scary you've got
+[00:05] your glasses on so obviously today is
+[00:07] going to be a very technical
+[00:08] presentation what we're going to cover
+[00:09] in this video we're going to look at
+[00:10] type 2 SB days and is there anything we
+[00:13] can do as electricians to prove they're
+[00:14] actually working now that's an
+[00:15] interesting question isn't it cuz
+[00:16] generally speaking we fit in SPD we
+[00:18] return occasionally have a little look
+[00:20] in the window to see if it's been
+[00:21] activated at any point however what
+[00:23] we're going to do today is show that you
+[00:24] can actually test to see if the SPD is
+[00:27] triggering at the voltage that we
+[00:29] expected - ok and we've looked at the
+[00:31] material 31:52 before we went through
+[00:33] ten of its top features and we noticed
+[00:35] in there that one of them was to check
+[00:36] the varistor element of an SPD
+[00:38] absolutely so we're gonna bring the
+[00:40] camera in we're gonna show you the test
+[00:42] taking place and we're gonna explain
+[00:43] what some of those results actually mean
+[00:44] so I can see you've turned on your
+[00:46] material 3152 Joe can you navigate to
+[00:48] the right section in order to test this
+[00:50] Forester for me absolutely so we go into
+[00:52] the single tests menu so I'll just tap
+[00:53] on the screen there this lovely
+[00:55] touchscreen function and the single test
+[00:57] menu that we want to go into then is
+[00:59] actually the ISO menu now in Europe
+[01:02] insulation resistance is referred to as
+[01:04] isolation so here we go into the ISO
+[01:07] menu which is the insulation resistance
+[01:09] menu effectively and here we've got here
+[01:12] our option to go into the vista tests so
+[01:15] we can head into there now so we saw in
+[01:16] our previous video that we did on the
+[01:18] material 3152 that you'd have a help
+[01:20] screen by pressing the question mark you
+[01:22] did that for me joy absolutely so if we
+[01:23] press that little question mark button
+[01:25] there it takes us to the help menu and
+[01:27] this is showing us very clearly how we
+[01:28] need to connect our leads together so at
+[01:30] the minute we've got the three leads
+[01:31] just hanging individually here but the
+[01:34] screen is clearly showing that we need
+[01:35] to connect our Neutral lead and our
+[01:38] earth lead together so we're just gonna
+[01:40] plug those two together like that to
+[01:42] make one connection and then we're going
+[01:44] to connect our probes onto the end of
+[01:47] there so we'll put our line one on there
+[01:49] and the one
+[01:50] to the earth connection there like that
+[01:53] okay it's a dead test Joe obviously the
+[01:55] tips don't need to form 2 GS 38 so those
+[01:58] tips are ready to go absolutely so we do
+[02:00] have shrouds for these if we wanted to
+[02:02] do live testing with them but it's not
+[02:04] necessary in this case so with our test
+[02:06] lead setup then Joe obviously we must go
+[02:08] back to the main master screen is that
+[02:10] correct absolutely so we can either
+[02:11] press the back button here or we can
+[02:13] press on the touchscreen that's hot
+[02:14] corner there and that brings us back to
+[02:16] our forest and menu screen okay so we
+[02:18] now got to work out what we're testing
+[02:20] between we're testing between which
+[02:21] conductors in order to perform the test
+[02:23] so we're gonna be testing the varistor
+[02:25] that is connected up inside our surge
+[02:27] protection device and the varistor is
+[02:29] going to be connected across the line
+[02:30] and the neutral connection not the line
+[02:33] and earth we're going to test between
+[02:34] line and neutral and is there a reading
+[02:37] that we'll expect to get for this so
+[02:40] we're expecting the reading for the AC
+[02:43] voltage to be above the UC value of 275
+[02:48] volts okay I know that is that the same
+[02:50] one every device or do they change with
+[02:52] devices no it'll vary from device to
+[02:54] device and basically what this voltage
+[02:56] reading is telling us here is the
+[02:58] voltage that the varistor will be kind
+[03:01] of triggered at to start conducting
+[03:03] current through itself in order to
+[03:05] reduce the effect of a surge in
+[03:08] electricity okay the judges carry out
+[03:10] the test
+[03:11] absolutely so we're just going to put
+[03:12] one of our probes into the line terminal
+[03:14] of our surge protection device and the
+[03:17] other probe into the neutral and
+[03:18] obviously we've taken all necessary
+[03:20] precautions to make sure this consume
+[03:21] unit is dead it's actually never been
+[03:23] connected up to anything live so we're
+[03:25] happy that we were working safely here
+[03:26] so all we've got to do now is press the
+[03:28] start button the play button here which
+[03:31] will start the virus to test and all
+[03:33] this is doing is just applying a DC
+[03:35] voltage through the surge protection
+[03:37] device and it's measuring at what
+[03:40] voltage one milliamp flows between the
+[03:42] line and neutral connection inside here
+[03:44] so that's the point at which the virus
+[03:46] that starts to conduct electricity and
+[03:48] allow it to suppress the surge so you
+[03:51] can see there that we've got two
+[03:53] interesting values so first of all we've
+[03:55] got UDC
+[03:56] now that's the DC voltage that the
+[03:58] tester has applied at 430 volts and then
+[04:01] that has been calculated
+[04:03] - givers a you AC or AC voltage of 269
+[04:08] volts and that's the value that were
+[04:10] interested in because that is the value
+[04:12] at which this surge protection device
+[04:13] starts to allow more than one milliamp
+[04:16] to trickle through the the wrister that
+[04:19] is inside the surge protection device so
+[04:22] we were expecting a value of two hundred
+[04:25] and seventy five volts and we've come up
+[04:27] with the value very close to that of two
+[04:29] hundred and sixty nine volts so we know
+[04:31] that the varistor is working correctly I
+[04:33] think to prove a point joke would be
+[04:35] worth as testing a different type to SPD
+[04:37] with a different you see voltage range
+[04:40] yeah let's head over to the bench and
+[04:42] we'll test a moment okay we've changed a
+[04:45] different type to SPD and I can now see
+[04:47] the you see value here is actually 350
+[04:51] volts so you're telling me I expect this
+[04:52] reading up here to be very close to that
+[04:54] value joke yeah absolutely so it's the
+[04:56] same principle that we applied before
+[04:57] we're going to connect up our probes
+[04:59] onto the line and the neutral terminal
+[05:02] so this is a little bit confusing
+[05:03] sometimes because we might think that
+[05:05] this SPD here is connected between line
+[05:07] and protective earth but it's actually
+[05:09] not it's connected between line and
+[05:11] neutral so we're testing across this
+[05:14] device here effectively and when we
+[05:16] press the start button on here we should
+[05:18] see a value somewhere in the region of
+[05:21] 350 volts so let's run the test and see
+[05:24] what happens
+[05:29] so you can see that we've actually come
+[05:31] out with 330 volts AC so bear in mind
+[05:34] it's testing with DC voltage and then
+[05:36] it's doing an internal calculation to
+[05:38] tell us what the AC voltage is and
+[05:41] remember this is the voltage at which
+[05:42] the device is letting one milliamp start
+[05:45] to flow through it and that one milliamp
+[05:47] is kind of a standard testing value that
+[05:50] is used with surge protection devices
+[05:52] now again we'd expect to get 350 volts
+[05:55] as described on the front of the surge
+[05:56] protection device but we're coming out
+[05:58] with 330 volts so again we working
+[06:01] within a tolerance we don't expect it to
+[06:02] be exactly the same but we can see there
+[06:04] that this device is definitely starting
+[06:06] to trigger when the voltage across this
+[06:09] surge protection device starts to rise
+[06:11] above 330 volts
+[06:13] I think we've clearly proved there in
+[06:15] this case using a type 2 SPD that you
+[06:17] can actually prove the functional
+[06:18] element of the wrist eject absolutely
+[06:20] now we're not saying that this is a
+[06:21] required test under BS 7 6 7 1 we think
+[06:24] it falls perhaps and the functional
+[06:25] testing and maybe it's something that as
+[06:27] the regulations develop and the surge
+[06:28] protection market continues to grow we
+[06:31] might see some more official guidance on
+[06:32] this but from my point of view I always
+[06:34] want to make sure that the things that I
+[06:35] install work correctly that they're
+[06:37] doing the job I expect them today and if
+[06:39] you have this feature on your tester why
+[06:41] would you not use it and is it a brand
+[06:42] new feature on the 3152 J now this test
+[06:44] functions been around for 15 years at
+[06:46] least inside the material tester so that
+[06:48] is pretty impressive the fact that
+[06:49] they've been catering to that surge
+[06:50] protection market for such a long time
+[06:52] and I think we can clearly say we love
+[06:54] the material 3152 we really do

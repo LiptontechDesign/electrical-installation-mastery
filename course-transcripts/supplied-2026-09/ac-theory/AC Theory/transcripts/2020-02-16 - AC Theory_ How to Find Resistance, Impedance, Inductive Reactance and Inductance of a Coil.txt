@@ -1,0 +1,184 @@
+# AC Theory: How to Find Resistance, Impedance, Inductive Reactance and Inductance of a Coil
+# https://www.youtube.com/watch?v=vNJllbHrzII
+
+[Music] hello and welcome to this electrical principals training video in a previous video we looked at what happens when we connect a coil to a DC circuit and then how it changes when it's connected to an AC circuit and we took various readings of voltage and current from that what we're going to do in this video is we're going to bring the camera in and we're going to use those values that we recorded in order to calculate lots and lots of different things about the coil that we connected in to the circuit so we'll bring the camera in we'll remind ourselves what those values were and then we'll carry out those calculations so as we said in the introduction in a previous video in this series we took down just a few readings from those two circuits that we used we took down the value of the DC voltage which was 15 point 5 volts we took down the voltage of the AC circuit and if you remember we tuned these values so that we ended up with them being equal so we had fifteen and a half volts RMS for the AC voltage we then measured the DC current which came out at 132 milliamps and then we moved the coil onto the AC circuit and we measured the AC current which came out at thirty three point six milliamps okay now the one piece of information that we don't currently have and I'll give it to you now is that the frequency of the AC waveform that we connected to this circuit had a periodic time so a periodic time of 20 Mille seconds in other words it was taking 20 milliseconds for that waveform to do one complete cycle of the AC waveform now it's incredible to think that just from these values we are going to be able to calculate so much information about that coil that we used on that job in the previous video we're going to be able to calculate its resistance its impedance its inductive reactance we'll be able to calculate the inductance of the coil the power factor of the coil the phase angle and also the capacitance of the capacitor that would be needed to correct the power factor in this circuit so an awful lot of information can be got from just these few numbers so first things first let's figure out how we can calculate the resistance of the coil okay so how can we calculate the resistance of the coil well of course we know that in a DC circuit Ohm's law states that I is equal to V over R now what we're going to do is we're going to transpose this formula and in order to do that we need to do this in a couple of stages so first of all we will multiply both sides by r so we end up with the three times both sides by r this side becomes I times R and if we times this side by R and then divide it by our we end up with just B by itself and then if we want to say therefore if I want the R by itself I need to do the opposite of timesing by I which is to divide both sides by I so I end up with R is equal to V divided by I now the only thing that we just need to be a little bit careful about here is we need to make sure that we're using the right voltage and the right current so we're gonna be a little bit more specific here and we're going to say that R is equal to the DC voltage divided by the DC current and that's going to tell us what resistance the coil has so let's just think about that if I do the DC voltage fifteen point five volts divided by the DC current which was a hundred and thirty-two milliamps so there's two ways we could do that we could put that as naught point two one three two or we can do it 132 times ten to the minus three so we could either just divide this number by a thousand to turn it into amps or we can tack on the times ten to the minus three so let's put that into our calculator fifteen point five divided by one hundred and thirty two times ten to the power of minus three of the power of minus three which gives us a hundred and seventeen point four - and of course this is in ohms so we've got 117 point 4 2 ohms like that so that coil has a resistance of 117 0.42 ohms now we can actually check that by bringing our circuit back in and as you can see here we've got the coil that we used in the previous video so I'm going to set up my mega Evo 8 3 5 to measure the resistance of the coil I've just taken the coil out of the circuit basically so we can just see that the circuit isn't making any difference to our readings we're just going to purely measure the resistance of the coil by itself so there's one we've connected and as the other lead connected and now what we're going to do is we're going to measure the resistance across this coil so just let it do its auto-ranging thing and you can see that we're coming out at about 114 ohms it says naught point 1 1 4 because it's measuring in kilo ohms currently so if we multiply that number by a thousand we end up with a hundred and fourteen ohms which is very very close to the value of one hundred and seventeen point four two ohms that we calculated that it would be so we're really happy with that reading and it proves that the maths actually does work the reason there might be that slight difference there may be some tolerance within the equipment maybe the fact that the coil got a little bit warm while we were doing the test which would affect its resistance those things might be the reason why this values a little bit higher than we've actually measured there now the next thing we're going to do is we're going to measure the impedance of the coil so we'll measure the impedance of the coil so to calculate the impedance of the coil we're simply going to reuse Ohm's law in fact we can use this exact same formula that we used last time but here we were calculating the resistance which is the opposition to current flow in a DC circuit what we're going to look at in this case is we're going to look at the impedance so we replace R with Z because that is the total opposition to current flow in an AC circuit and we're going to put in here instead we're going to use V AC so the AC voltage divided by the AC current so that's what we're going to use here so we're going to say that fifteen point five divided by 33 point 6 milliamps so that's 33 point six times ten to the minus three we're going to figure out what the impedance of the coil is when we connected it to our AC circuit so fifteen point five divided by thirty three point six and then we just press the times turn to the button minus three so this number that it puts in after the times ten is the power that we're raising that 10 to and again it's exactly the same as dividing this number by thousand so we end up with four hundred and sixty one point three reams so we'll write that down four hundred and sixty one point three homes it is not milliamps of a button so four hundred and sixty one point three ohms so what we've noticed is that when we connect this coil up to an AC circuit the total opposition to current flow becomes much larger quite a significant amount analogy I explain the reason why that was in the last video in this series so now we know the total opposition to current flow in the AC circuit we can now use that to figure out what the inductive reactance of the coil will be so let's try and figure that out now so we're going to try and figure out what is the inductive reactance of the coil so the inductive reactance and the way that we're going to do that is we are going to start off by remembering formula from Pythagoras which is that the impedance squared in the AC circuit is equal to the resistance squared plus the inductive reactance squared now we're not interested in finding Zed squared we're interesting in finding XL squared so what we've got to do is get rid of this R squared first of all now at the minute we are adding R squared not because of this plus symbol but because there's a little missing plus symbol here one of our little ghost symbols so the opposite of adding R squared is to subtract r-squared and now just this week a learner asked me does it matter which side the subject goes on and the answer is mathematically no it makes no difference to the answer but it's quite nice from a kind of convention point of view to have the subject on the left hand side so let's just transpose the formula so we end up with Z squared minus R squared from both sides and if we subtract R squared from this side we're just left with Excel squared and then of course we're not interested in finding Excel squared we're interesting in finding Excel by itself so what we need to do is the opposite of squaring which is square rooting so we are going to say that is equal to Z squared minus R squared and then Square rooted is the same as Excel so we'll just put that down here by itself Excel equals the square root of Z squared minus R squared and as you can see there we've got our formula ready to go so now all we've got to do is put in the numbers that we've already found so we'll say that XL is equal to the square root of some numbers to put in here so we've got to the square root of four hundred and sixty one point three squared minus one hundred and seventeen point four two squared so let's put that into the calculator and see what our inductive reactance is the square root of four hundred sixty one point three squared take away one hundred and seventeen point four two squared is equal to four hundred and forty six point one ohms four hundred and forty six point one irons so the reactive part of that coil offers an opposition to current flow equal to four hundred and forty six point one ohms so we've got that value in place now and now we can use that to figure out some more information about our coil so the next thing we can figure out is the inductance of the coil so now we can find the inductance of the coil remember this is just the quality of how good a coil is inducing a current either back in itself or into another coil so we will hopefully remember from previous videos in this series that the inductive reactance of a coil is equal to two times pi times the frequency of the circuit times by L so L being the inductance of the coil now before we go through this part of transposing this formula what we need to think about is do we have all the information here well we've got Excel so that's great two pi will always be the same that's a mathematical constant do we know the frequency of this circuit well no we don't do we know the inductance of the coil that's what we're trying to find so we're missing this piece of information but if you remember from the start of the video we said that the periodic time of the circuit of the AC supply was 20 milliseconds now the frequency is how many times a complete cycle is completed in the space of one second so what that means is we basically need to know how many of these cycles are there in the space of one second if it takes twenty milliseconds to do one cycle which is what a periodic time is how many of these are there in one second so that leads us to quite a nice neat situation where we can say that the frequency of an AC supply is equal to one effectively one second divided by whatever the periodic time is so we can put that in here one divided by 20 now bear in mind it's milliseconds so we're going to do times ten to the minus three which is the same as dividing by a thousand so we put that into our calculator now one over twenty times ten to the minus three and we are going to come out there with 50 which makes sense because we had this connected into a plug socket and we know that in the UK we operate on a frequency of 50 Hertz so the frequency of this circuit is equal to 50 Hertz so now we've got the value we can put in here so we know this we know this we know this we don't know this so we're going to transpose the formula to make L the subject now people sometimes get little bit confused when they're doing more than one transposition within a formula the easy way to look at this is look at L that's what we try find and then what are we doing to l well we're multiplying L by this whole chunk here just by everything that we've got right there so then we just ask ourselves well what's the opposite of timesing by that big chunk well surely it's to divide by that big chunk whatever is in there so that leads us for the conclusion that we divide both sides by that big chunk to PI F and if we divide this side by that big chunk it just vanishes and we're left with L by itself so again let's put L into the subject on the left-hand side just because that's how much people are comfortable with formulas finishing up and we're gonna volley into here now our values so we found Excel earlier four hundred and forty six point one and we're dividing that by two pi F which is two times pi times 50 so we'll put into our calculator four hundred and forty six point 1 divided by two times pi times 50 and what do we come out with we come out with one point four to Henry's effectively so we've got four hundred and forty six point one divided by two times pi times 50 so therefore the answer to this part of the question is one point four although to Henry's so there we go so we found out that the inductance of the coil is one point four to Henry's so we've already discovered a lot of information about our coil and in the following video we're going to look at information regarding power factor phase angles and power factor correction thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music] hello and welcome to this electrical
+[00:10] principals training video in a previous video we looked at what happens when we
+[00:14] connect a coil to a DC circuit and then how it changes when it's connected to an
+[00:19] AC circuit and we took various readings of voltage and current from that what
+[00:25] we're going to do in this video is we're going to bring the camera in and we're
+[00:27] going to use those values that we recorded in order to calculate lots and
+[00:32] lots of different things about the coil that we connected in to the circuit so
+[00:36] we'll bring the camera in we'll remind ourselves what those values were and
+[00:39] then we'll carry out those calculations so as we said in the introduction in a
+[00:46] previous video in this series we took down just a few readings from those two
+[00:49] circuits that we used we took down the value of the DC voltage which was 15
+[00:56] point 5 volts we took down the voltage of the AC circuit and if you remember we
+[01:02] tuned these values so that we ended up with them being equal so we had fifteen
+[01:06] and a half volts RMS for the AC voltage we then measured the DC current which
+[01:13] came out at 132 milliamps and then we moved the coil onto the AC circuit and
+[01:20] we measured the AC current which came out at thirty three point six milliamps
+[01:27] okay now the one piece of information that we don't currently have and I'll
+[01:31] give it to you now is that the frequency of the AC waveform that we connected to
+[01:36] this circuit had a periodic time so a periodic time of 20 Mille seconds in
+[01:44] other words it was taking 20 milliseconds for that waveform to do one
+[01:48] complete cycle of the AC waveform now it's incredible to think that just from
+[01:53] these values we are going to be able to calculate so much information about that
+[01:58] coil that we used on that job in the previous video we're going to be able to
+[02:03] calculate its resistance its impedance its inductive reactance we'll be able to
+[02:09] calculate the inductance of the coil the power factor of the coil the phase angle
+[02:15] and also the capacitance of the capacitor that would be needed to
+[02:20] correct the power factor in this circuit so an awful lot of information can be
+[02:24] got from just these few numbers so first things first let's figure out how we can
+[02:30] calculate the resistance of the coil okay so how can we calculate the
+[02:36] resistance of the coil well of course we know that in a DC circuit Ohm's law
+[02:42] states that I is equal to V over R now what we're going to do is we're going to
+[02:46] transpose this formula and in order to do that we need to do this in a couple
+[02:51] of stages so first of all we will multiply both sides by r so we end up
+[02:57] with the three times both sides by r this side becomes I times R and if we
+[03:04] times this side by R and then divide it by our we end up with just B by itself
+[03:08] and then if we want to say therefore if I want the R by itself I need to do the
+[03:14] opposite of timesing by I which is to divide both sides by I so I end up with
+[03:19] R is equal to V divided by I now the only thing that we just need to be a
+[03:24] little bit careful about here is we need to make sure that we're using the right
+[03:27] voltage and the right current so we're gonna be a little bit more specific here
+[03:31] and we're going to say that R is equal to the DC voltage divided by the DC
+[03:37] current and that's going to tell us what resistance the coil has so let's just
+[03:43] think about that if I do the DC voltage fifteen point five volts divided by the
+[03:50] DC current which was a hundred and thirty-two milliamps so there's two ways
+[03:55] we could do that we could put that as naught point two one three two or we can
+[03:59] do it 132 times ten to the minus three so we could either just divide this
+[04:03] number by a thousand to turn it into amps or we can tack on the times ten to
+[04:07] the minus three so let's put that into our calculator fifteen point five
+[04:12] divided by one hundred and thirty two times ten to the power of minus three of
+[04:19] the power of minus three which gives us a hundred and seventeen
+[04:24] point four - and of course this is in ohms so we've got 117 point 4 2 ohms
+[04:30] like that so that coil has a resistance of 117 0.42 ohms now we can actually
+[04:39] check that by bringing our circuit back in and as you can see here we've got the
+[04:45] coil that we used in the previous video so I'm going to set up my mega Evo 8 3 5
+[04:52] to measure the resistance of the coil I've just taken the coil out of the
+[04:56] circuit basically so we can just see that the circuit isn't making any
+[05:03] difference to our readings we're just going to purely measure the resistance
+[05:07] of the coil by itself so there's one we've connected and as the other lead
+[05:13] connected and now what we're going to do is we're going to measure the resistance
+[05:15] across this coil so just let it do its auto-ranging thing and you can see that
+[05:22] we're coming out at about 114 ohms it says naught point 1 1 4 because it's
+[05:28] measuring in kilo ohms currently so if we multiply that number by a thousand we
+[05:33] end up with a hundred and fourteen ohms which is very very close to the value of
+[05:40] one hundred and seventeen point four two ohms that we calculated that it would be
+[05:44] so we're really happy with that reading and it proves that the maths actually
+[05:48] does work the reason there might be that slight difference there may be some
+[05:52] tolerance within the equipment maybe the fact that the coil got a little bit warm
+[05:57] while we were doing the test which would affect its resistance those things might
+[06:00] be the reason why this values a little bit higher than we've actually measured
+[06:03] there now the next thing we're going to do is we're going to measure the
+[06:06] impedance of the coil so we'll measure the impedance of the
+[06:11] coil so to calculate the impedance of the coil we're simply going to reuse
+[06:17] Ohm's law in fact we can use this exact same formula that we used last time but
+[06:21] here we were calculating the resistance which is the opposition to current flow
+[06:24] in a DC circuit what we're going to look at in this case is we're going to look
+[06:28] at the impedance so we replace R with Z because that is the total opposition to
+[06:34] current flow in an AC circuit and we're going to put in here
+[06:38] instead we're going to use V AC so the AC voltage divided by the AC current so
+[06:46] that's what we're going to use here so we're going to say that fifteen point
+[06:51] five divided by 33 point 6 milliamps so that's 33 point six times ten to the
+[06:58] minus three we're going to figure out what the impedance of the coil is when
+[07:03] we connected it to our AC circuit so fifteen point five divided by thirty
+[07:07] three point six and then we just press the times turn to the button minus three
+[07:12] so this number that it puts in after the times ten is the power that we're
+[07:16] raising that 10 to and again it's exactly the same as dividing this number
+[07:20] by thousand so we end up with four hundred and sixty one point three reams
+[07:28] so we'll write that down four hundred and sixty one point three homes it is
+[07:38] not milliamps of a button so four hundred and sixty one point three ohms
+[07:43] so what we've noticed is that when we connect this coil up to an AC circuit
+[07:47] the total opposition to current flow becomes much larger quite a significant
+[07:53] amount analogy I explain the reason why that was in the last video in this
+[07:57] series so now we know the total opposition to current flow in the AC
+[08:02] circuit we can now use that to figure out what the inductive reactance of the
+[08:06] coil will be so let's try and figure that out now so we're going to try and
+[08:10] figure out what is the inductive reactance of the coil so the inductive
+[08:16] reactance and the way that we're going to do that is we are going to start off
+[08:20] by remembering formula from Pythagoras which is that the impedance squared in
+[08:25] the AC circuit is equal to the resistance squared plus the inductive
+[08:30] reactance squared now we're not interested in finding Zed squared we're
+[08:33] interesting in finding XL squared so what we've got to do is get rid of this
+[08:38] R squared first of all now at the minute we are adding R squared not because of
+[08:42] this plus symbol but because there's a little missing plus symbol here one of
+[08:46] our little ghost symbols so the opposite of adding R squared is to subtract
+[08:50] r-squared and now just this week a learner asked me does it matter which
+[08:55] side the subject goes on and the answer is mathematically no it makes no
+[08:59] difference to the answer but it's quite nice from a kind of convention point of
+[09:03] view to have the subject on the left hand side so let's just transpose the
+[09:08] formula so we end up with Z squared minus R squared from both sides and if
+[09:13] we subtract R squared from this side we're just left with Excel squared and
+[09:17] then of course we're not interested in finding Excel squared we're interesting
+[09:21] in finding Excel by itself so what we need to do is the opposite of squaring
+[09:26] which is square rooting so we are going to say that is equal to Z squared minus
+[09:31] R squared and then Square rooted is the same as Excel so we'll just put that
+[09:37] down here by itself Excel equals the square root of Z squared minus R squared
+[09:43] and as you can see there we've got our formula ready to go so now all we've got
+[09:48] to do is put in the numbers that we've already found so we'll say that XL is
+[09:53] equal to the square root of some numbers to put in here so we've got to the
+[09:58] square root of four hundred and sixty one point three squared minus one
+[10:04] hundred and seventeen point four two squared so let's put that into the
+[10:09] calculator and see what our inductive reactance is the square root of four
+[10:12] hundred sixty one point three squared take away one hundred and seventeen
+[10:16] point four two squared is equal to four hundred and forty six point one ohms
+[10:24] four hundred and forty six point one irons so the reactive part of that coil
+[10:30] offers an opposition to current flow equal to four hundred and forty six
+[10:35] point one ohms so we've got that value in place now and now we can use that to
+[10:42] figure out some more information about our coil so the next thing we can figure
+[10:47] out is the inductance of the coil so now we can find the inductance of the coil
+[10:53] remember this is just the quality of how good a coil is inducing a current either
+[10:57] back in itself or into another coil so we will hopefully remember from
+[11:04] previous videos in this series that the inductive reactance of a coil is equal
+[11:09] to two times pi times the frequency of the circuit times by L so L being the
+[11:15] inductance of the coil now before we go through this part of transposing this
+[11:21] formula what we need to think about is do we have all the information here well
+[11:24] we've got Excel so that's great two pi will always be the same that's a
+[11:28] mathematical constant do we know the frequency of this circuit well no we
+[11:34] don't do we know the inductance of the coil that's what we're trying to find so
+[11:38] we're missing this piece of information but if you remember from the start of
+[11:42] the video we said that the periodic time of the circuit of the AC supply was 20
+[11:48] milliseconds now the frequency is how many times a complete cycle is completed
+[11:54] in the space of one second so what that means is we basically need to know how
+[11:58] many of these cycles are there in the space of one second if it takes twenty
+[12:03] milliseconds to do one cycle which is what a periodic time is how many of
+[12:07] these are there in one second so that leads us to quite a nice neat situation
+[12:12] where we can say that the frequency of an AC supply is equal to one effectively
+[12:18] one second divided by whatever the periodic time is so we can put that in
+[12:24] here one divided by 20 now bear in mind it's
+[12:28] milliseconds so we're going to do times ten to the minus three which is the same
+[12:32] as dividing by a thousand so we put that into our calculator now one over twenty
+[12:38] times ten to the minus three and we are going to come out there with 50 which
+[12:43] makes sense because we had this connected into a plug socket and we know
+[12:46] that in the UK we operate on a frequency of 50 Hertz so the frequency of this
+[12:51] circuit is equal to 50 Hertz so now we've got the value we can put in here
+[12:59] so we know this we know this we know this we don't know this so we're going
+[13:03] to transpose the formula to make L the subject now people sometimes get little
+[13:07] bit confused when they're doing more than one transposition within a formula
+[13:12] the easy way to look at this is look at L that's what we try
+[13:16] find and then what are we doing to l well we're multiplying L by this whole
+[13:21] chunk here just by everything that we've got right there so then we just ask
+[13:27] ourselves well what's the opposite of timesing by that big chunk well surely
+[13:31] it's to divide by that big chunk whatever is in there
+[13:34] so that leads us for the conclusion that we divide both sides by that big chunk
+[13:39] to PI F and if we divide this side by that big chunk it just vanishes and
+[13:44] we're left with L by itself so again let's put L into the subject on the
+[13:50] left-hand side just because that's how much people are comfortable with
+[13:53] formulas finishing up and we're gonna volley into here now our values so we
+[13:58] found Excel earlier four hundred and forty six point one and we're dividing
+[14:03] that by two pi F which is two times pi times 50 so we'll put into our
+[14:10] calculator four hundred and forty six point 1 divided by two times pi times 50
+[14:19] and what do we come out with we come out with one point four to Henry's
+[14:27] effectively so we've got four hundred and forty six point one divided by two
+[14:30] times pi times 50 so therefore the answer to this part of the question is
+[14:35] one point four although to Henry's so there we go so we found out that the
+[14:42] inductance of the coil is one point four to Henry's so we've already discovered a
+[14:47] lot of information about our coil and in the following video we're going to look
+[14:52] at information regarding power factor phase angles and power factor correction
+[14:57] thank you very much for watching
+[15:02] [Music]
+[15:15] [Music]

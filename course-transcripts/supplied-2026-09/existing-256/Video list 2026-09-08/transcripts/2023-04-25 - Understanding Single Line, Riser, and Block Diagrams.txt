@@ -1,0 +1,267 @@
+# Understanding Single Line, Riser, and Block Diagrams
+# https://www.youtube.com/watch?v=alRPR_oevqY
+
+hey I want to talk about single line diagrams block diagrams and risers uh like there's some question as to why you use one or the other what the difference is and like what kind of information goes into each specific thing so I'm just going to go over a couple example diagrams and show you what to put on them and what to look for and what they're used for so let's just get right into it all right so I have a couple single line diagrams to start off with and single line diagrams are a simple representation of an electrical distribution system using a single line to identify the feeder from a source to a load so hence why they're called single lines they're also called one lines some people call them one line single line or stuff like that so that's what this is so we have here a double-ended substation and well technically switch gear there's no Transformer we have a double-ended switch gear and we have our loads coming in so there's some things that you can see off of a single line diagram such as like where to reference for the extension of this diagram so like here for example you can say you can see that for normal Power we're referring to a different drawing for a different substation and then it tells you what type of feeder comes in so this is an underground duck Bank other things that you can see off of a single line diagram are so idle items such as SPD surge protection devices though this is a lightning arrester so that's why LA and it comes into some metering so facility meter and there's Breakers so this is your main breaker and other things you can tell just from the way things are drawn for example this breaker has these little triangles so they're called stabs and essentially what that means that it's a draw out breaker that means it's a big compartment that you can crank you know the whole thing out so you can draw this breaker out of the unit so that's what that means it's a draw breaker if you were to go down to um something like this for example these are bolt-on Breakers you see that they don't have those stabs like the other ones so this honestly might be a mistake these uh oh no these might be bolt-on Breakers but yeah so most of the loads that are serving from a switch gear tend to be drop Breakers and then when you get down to a switchboard which is on a different drawing a switchboard tends to have bolt-on Breakers so some important information that you can get off of the equipment are the location the name and then you'll you'll be able to put notes on a single line diagram which is better than a panel schedule so if you were to just make a panel schedule for a switch gear you'd be missing a ton of information so for example this is the bus and it tells you how many amperage what the voltage how many phases how many wires and well this sometimes says bus a or bus B so like you can split a main Thai Main switch gear in half and like this is side A and this is side B that way people know like where the feeder runs to the exact number of Breakers and spaces and Spares is exactly what's ordered so um you see here that we have what like six break or one two three four five six seven seven breakers in a space that's exactly what gets ordered on the um submittal when it comes in so the breakers themselves also have more information than a panel schedule so here we have the frame size specified so 2000 amp frame 2000 amp trip and um this is a electronic trip so there's like a unit in the breaker that you can trip it at different um settings so like for example here the main breaker it's a 6000 amp frame but you can trip it at 5400 amp and then you can see there's other information that's relevant to this breaker so for example this is lsig long short instantaneous and ground so that's like a special feature of the breaker it also tells you if you want 100 rated or series rated and then this is electronically operated and normally closed so like here you can see we actually have four Breakers in this whole setup right here so we have two Mains that are normally closed and then we actually have two ties um actually one of these tends to be close but anyways this tells you normally open normally open normally open and then these main Breakers are normally closed so under normal circumstances this switch gear will operate in half like the left half and the right half they don't they're not tied together but if for some reason you lose like you know this fee coming in you can open this breaker and then close these ties and then this Source right here will pick up the whole switch gear so that's a lot of good information that you can put on a single line diagram that you typically wouldn't show on a panel schedule or even a riser diagram or a block diagram so we'll get to those later the Riser diagram and block diagram are simplified versions of this type of drawing and you want to show different types of information in those so single line diagram has a lot of small granular details so you can see here that we have a whole bunch of notes so sheet note you know sheet note one basis of design tells you exactly what we had in mind when designing the switch gear so notes two and three they could have operation notes we even have like the normal standby generator switching you know which ones to shut off and which ones to switch over in what order there's uh let's see there are feeders to some transfer panels essentially that's essentially what this is so there's certain things that you can say on a single line diagram such as key interlocked and that means that only one of these Breakers can open at at one time one stays open the other one's closed so again you can see here normally closed normally open uh the so the continuation symbol is important to pay attention to there's multiple ways to do this I've seen it where the tag on the this end versus what you see on the other end so uh let's see if we can find an example so here we see one it's so this is sequential one three five seven and then the other side is even so two four six eight but for example this one number one the first feeder of this switch gear goes to light safety one ATS one so if we go down here to Life Safety uh knife safety one ats-1 so here it is so this this feeder continues and picks up here so you see that this is the identical to the one up here right here some people do it backwards so like up here it would say one and then this would say the source n or on the the load end so like this would actually say LS1 ats-1 you could there's multiple ways I've seen it done as long as you're consistent I guess you could follow along but this is what we happen to do on this project so you match this symbol at LS1 ATS one see this drawing so go down here and here it is one np1 MD swg1 so that's the same symbol so that means that it comes through here and it feeds this ATS so you'll see a lot of that on a single line diagram where they'll say they'll send the power to a reference and then the other reference picks up from another drawing so just make sure that that's consistent if you're drawing it and ask your engineer on record or your company QA person like what's the standard so figure that out and you'll end up using that a lot let me jump to another diagram the other reason that I like to use single line diagram for like mechanical equipment or Process Equipment is because we need to specify disconnects vfds and other you know Transformers and you know things that are hard to specify in a panel schedule so if we drill into this distribution panel right here you can see that this is drawn like the switch gear you have your Source come in this one doesn't have a main breaker but we have your surge protection device your bus and then your Breakers feeding mechanical load so here we can specify that a vfd is to be provided before you get to the motor and here we also specify the different types of conductors and Note 7 pretty sure specify that this is a vfd cable so like you can put a lot of information for the contractor to bid and build off of on a single line diagram so if we jump down here to for example this one here you can specify a Transformer after the breaker and then this is your panel board so like once you get to this level of detail this is like a branch panel so everything after that is just single pole to a receptacle or to a light switch or something so like from here on down you could just show a panel schedule you don't have to show a single line diagram for everything so the diagram usually stops at a point where it's simple enough that we don't need to specify all of this stuff here so let's just jump over to you know single line number three this is kind of an extreme case we have this is mechanical this is all mechanical so we have air handlers out the Wazoo here so from here it just goes on and on and on and it specifies exactly which vfd we have to tag for the vfd and what air handler it goes to so that's like the huge reason that we would use a single line diagram this happens to be just a distribution panel but um you would single line motor control centers switchboards switch or substation switch gears like the big stuff that you want to specify all the little intricate details of that equipment so draw single line diagram for that just cleanliness wise you'll notice that we like to keep everything evenly spaced so I can already see right here this space for some reason is bigger than this space keep it consistent like if it's inch and three quarters do inch and three quarters all the way down and everything should line up so like this is our feeder tag I don't know why it's up here and not like right here like it should be centered on centered so whatever the space difference between that Center here space difference Center there just make it look nice and don't be all hajipaji um like sometimes it's this stuff like here it wind it up when you can if you absolutely can't then okay at least this is consistent so I can take this this is not bad um other things is just you see how there's different colors to everything so if you look at layer you can see that we have all the buses on yellow equipment is cyan feeder size you know you get the idea um put everything on the correct layer so that it's just more organized and if you if you have everything just like the same color it's actually hard to even read so like imagine this looking like this like that's that's not the easiest thing to decipher right grant it when you PDF it it's all black and white anyways but if you're working in CAD you know you know take advantage of the colors all right so we're just gonna undo that so that's my third example I think my fourth example oh I don't have layers set up okay everything's the same color all right um here let me show you a trick so if you want to bring all your layers from one drawing to the other uh go into your layers oh this is already set up well anyways go into your layers and you can do new and you can say export it to a new CAD or something like that hit okay and then close that hit save and then go over to your new diagram so from here you go over to you go into layers as well or layer yeah you go into layer and then um nope I said it wrong you go to layers with an s there we go so here we want to import this so import from diagram three and let's do let's do the top one sure that's the one I just made so import that click on it and then hit restore so there we go we just brought all of our layer Colors Over yeah that's a little easier okay so this is just continuation you see how everything comes in from like the switchboard or the switch gear so that that's how you reference things so you go to drawing e5005 find nsp1 switch gear one and look for tag number five so that's where you can figure out the breaker that is connected to Upstream so same thing here you have your um uh same thing here you have your distribution panels detailed out we have our location our switch size our fuse size clean room fixture and you know it specifies the equipment that you are connected to same thing keep going down yeah all the same stuff all right let's jump over to a riser diagram so Riser diagram is different in that it shows the elevation of the building so it's like you know imagine it rising up the building so that's where the name comes from over here we have an example Riser diagram from a different project and you can see here that we have such designation as basement first floor second floor third floor and penthouse so this is a bit more detailed in that it it resembles a little bit of a single line diagram in this Riser diagram but essentially we want it to show this vertical bus way so this is a 1000 amp 208 123 phase four wire plug-in bus duct or bus duck bus way same thing and there you can show this running vertically and we have it designed such that we have bus plugs in here going to panels and distribution boards so from here you can see that the first floor has two distribution boards and we have you know two Branch panels out of each distribution board um of this one has four so similar features here so like from here on oops so from here on down looks like um a single line diagram but if you were to keep going up you'll see that each floor has more and more information with the floor indicated so a riser diagram can be simpler than that like you don't have to draw out the distribution Port board if you really wanted to you could I guess blank this out and then have your single line separate so like your Riser diagram would literally just be you know a tap off of your busway to a distribution and then you'd have your branch panel beneath that and then you can reference to a single line for more information for this project it just made sense to put it on here so we put all the information such as the panel name where it is this note sl3 wherever it is sl3 calls for enqueue type panel board and Nema 1 enclosure so it's like a basis of a design I expect squared E I guess for this one so that's the kind of information I put here um you have your 22 000 AIC available in Rush current so that way uh when they order it they can have the appropriate short circuit current rating so like this is if you had I believe it's like a three-phase fault or something um the amount of current that can pass through at a given time so the higher that is the more robust your panel board and Breakers have to be so that it doesn't explode so like if you if you had 65 000 AIC at this location but you only spec a panel board that is up to 22 000 and you had a big short inside the panel board you could literally have your Breakers explode and it could kill someone so that's important information to put on here so you have your AIC information up here you have your bus size and all that good stuff down here then you can specify your Breakers and for some reason we didn't have spare breakers on this distribution panel I always put spares in spaces whenever I can but that's your Riser diagram so so from here we can go even simpler and that's what the block diagram is for so a block diagram looks like this and um what's with our layers man it's I hate looking at something that's all the same color all right well not worth it for this case a block diagram has a little bit of a riser flavor to this you can see that we have first second third and fourth but um we also have some room so you can see like this is blocked out outside so grade is up here at second level so this is ungrade we have a red line dividing utility versus a client owned equipment and then all this stuff comes underground to our main electrical room so the main electrical room has a more detailed block diagram and it picks up where this drops off so this tells you like in room 1408 we have this distribution panel and then you can kind of see that this is a stack so we have like a um four electrical closets stacked on top each other in one spot so that way we can have like a vertical feeder that just runs through everything and it just picks up all these panels uh this stack over here is over the main electrical room so you know gives you a little bit of an idea of how the whole system is arranged and then we have these random spaces that are kind of like out in the west side of the building we couldn't really stack them so that's just where it is so the detail level for this is that you just reference so like here references this block diagram and it says like it goes to I don't know this one here has two feeders so two feeders coming from the switch gear 3 and switch gear four going to this distribution panel one and then you know it just keeps feeding down so block diagram is easy for someone that's not electrically Savvy to follow along a little bit better like out here you can see we have two Utility Services coming in we have a distribution switch gear out there and with there's three substations one of these substations is dedicated to the fire pump I mean that's pretty easy for someone to follow along looks like we have some voltages listed so like you know from here you can see that our generators are 480 277 um I think we left out sizing yeah like here we don't bother saying the size because it's already stated on the single line diagram but you can see that it they're located outside they feed underground into the main electrical room so there's really good areas for wow that was a big note there's really good scenarios where you would use a single line diagram or Riser diagram or a block diagram so there's like all these different flavors of diagrams that you can use and it just takes time to get to know them all but once you get to use them a couple times you'll understand like if someone asks you for a distribution for panel board you know that you draw a single line diagram the panel board itself just give them a panel schedule and if they want to know where it is give them a riser diagram all right hopefully that wasn't too confusing um please ask questions if you want more in-depth review of like just the Riser diagram or something if there's any discussions to be had go check us out on Discord and if you want to draw this up in Revit check out this video here I'm proud probably more fluent in CAD so maybe I'll make a video on that okay thanks for watching I'll see you guys next time bye [Music] foreign foreign
+
+
+[00:00] hey I want to talk about single line diagrams block diagrams and risers uh
+[00:05] like there's some question as to why you use one or the other what the difference
+[00:10] is and like what kind of information goes into each specific thing so I'm
+[00:14] just going to go over a couple example diagrams and show you what to put on
+[00:20] them and what to look for and what they're used for so let's just get right
+[00:24] into it
+[00:27] all right so I have a couple single line diagrams to start off with and single
+[00:31] line diagrams are a simple representation of an electrical
+[00:35] distribution system using a single line to identify the feeder from a source to
+[00:41] a load so hence why they're called single lines they're also called one
+[00:43] lines some people call them one line single line or stuff like that so that's
+[00:48] what this is so we have here a double-ended substation and well
+[00:53] technically switch gear there's no Transformer we have a double-ended
+[00:56] switch gear and we have our loads coming in so there's some things that you can
+[01:02] see off of a single line diagram such as like where to reference for the
+[01:08] extension of this diagram so like here for example you can say you can see that
+[01:13] for normal Power we're referring to a different drawing for a different
+[01:16] substation and then it tells you what type of feeder comes in so this is an
+[01:21] underground duck Bank other things that you can see off of a single line diagram
+[01:25] are so idle items such as SPD surge protection devices though this is a
+[01:30] lightning arrester so that's why LA and it comes into some metering so facility
+[01:36] meter and there's Breakers so this is your main breaker and other things you
+[01:41] can tell just from the way things are drawn for example this breaker has these
+[01:45] little triangles so they're called stabs and essentially what that means that
+[01:50] it's a draw out breaker that means it's a big compartment that you can crank you
+[01:54] know the whole thing out so you can draw this breaker out of the unit so that's
+[01:58] what that means it's a draw breaker if you were to go down to
+[02:02] um something like this for example these are bolt-on Breakers you see that they
+[02:07] don't have those stabs like the other ones so this honestly might be a mistake
+[02:11] these uh oh no these might be bolt-on Breakers but yeah so most of the loads
+[02:17] that are serving from a switch gear tend to be drop Breakers and then when you
+[02:21] get down to a switchboard which is on a different drawing a switchboard tends to
+[02:26] have bolt-on Breakers so some important information that you
+[02:31] can get off of the equipment are the location the name and then you'll you'll
+[02:37] be able to put notes on a single line diagram which is better than a panel
+[02:41] schedule so if you were to just make a panel schedule for a switch gear you'd
+[02:46] be missing a ton of information so for example this is the bus and it tells you
+[02:52] how many amperage what the voltage how many phases how many wires and well this
+[02:58] sometimes says bus a or bus B so like you can split a main Thai Main switch
+[03:04] gear in half and like this is side A and this is side B that way people know like
+[03:08] where the feeder runs to the exact number of Breakers and spaces
+[03:13] and Spares is exactly what's ordered so um you see here that we have what like
+[03:18] six break or one two three four five six seven seven breakers in a space that's
+[03:24] exactly what gets ordered on the um submittal when it comes in so the
+[03:30] breakers themselves also have more information than a panel schedule so
+[03:33] here we have the frame size specified so 2000 amp frame 2000 amp trip and um this
+[03:41] is a electronic trip so there's like a unit in the breaker that you can trip it
+[03:45] at different um settings so like for example here the
+[03:49] main breaker it's a 6000 amp frame but you can trip it at 5400 amp and then you
+[03:54] can see there's other information that's relevant to this breaker so for example
+[03:59] this is lsig long short instantaneous and ground so that's like a special
+[04:03] feature of the breaker it also tells you if you want 100 rated or series rated
+[04:09] and then this is electronically operated and normally closed so like here you can
+[04:15] see we actually have four Breakers in this
+[04:18] whole setup right here so we have two Mains that are normally closed and then
+[04:22] we actually have two ties um actually one of these
+[04:28] tends to be close but anyways this tells you normally open normally open normally
+[04:33] open and then these main Breakers are normally closed so under normal
+[04:37] circumstances this switch gear will operate in half like the left half and
+[04:41] the right half they don't they're not tied together but if for some reason you
+[04:45] lose like you know this fee coming in you can open this breaker and then close
+[04:49] these ties and then this Source right here will pick up the whole switch gear
+[04:54] so that's a lot of good information that you can put on a single line diagram
+[04:58] that you typically wouldn't show on a panel schedule or even a riser diagram
+[05:02] or a block diagram so we'll get to those later the Riser diagram and block
+[05:06] diagram are simplified versions of this type of drawing and you want to show
+[05:11] different types of information in those so single line diagram has a lot of
+[05:16] small granular details so you can see here that we have a whole bunch of notes
+[05:21] so sheet note you know sheet note one basis of design
+[05:26] tells you exactly what we had in mind when designing the switch gear so notes
+[05:30] two and three they could have operation notes we even have like the normal
+[05:36] standby generator switching you know which ones to shut off and which ones to
+[05:40] switch over in what order there's uh let's see
+[05:45] there are feeders to some
+[05:50] transfer panels essentially that's essentially what this is so there's
+[05:54] certain things that you can say on a single line diagram such as key
+[05:57] interlocked and that means that only one of these Breakers can open at at one
+[06:01] time one stays open the other one's closed so again you can see here
+[06:04] normally closed normally open uh the so the continuation symbol is
+[06:10] important to pay attention to there's multiple ways to do this I've seen it
+[06:16] where the tag on the this end versus what you see on the other end so uh
+[06:23] let's see if we can find an example so here we see one it's so this is
+[06:28] sequential one three five seven and then the other side is even so two four six
+[06:33] eight but for example this one number one
+[06:37] the first feeder of this switch gear goes to light safety one ATS one so if
+[06:44] we go down here to Life Safety uh knife safety
+[06:50] one ats-1 so here it is so this this feeder continues and picks up here so
+[06:55] you see that this is the identical to the one up here right here some people
+[07:01] do it backwards so like up here it would say one and then this would say the
+[07:07] source n or on the the load end so like this would actually say LS1 ats-1
+[07:15] you could there's multiple ways I've seen it done as long as you're
+[07:18] consistent I guess you could follow along but this is what we happen to do
+[07:22] on this project so you match this symbol at LS1 ATS one see this drawing so go
+[07:29] down here and here it is one np1 MD swg1 so that's
+[07:36] the same symbol so that means that it comes through here and it feeds this ATS
+[07:40] so you'll see a lot of that on a single line diagram where they'll say they'll
+[07:43] send the power to a reference and then the other reference picks up from
+[07:47] another drawing so just make sure that that's consistent if you're drawing it
+[07:51] and ask your engineer on record or your company QA person like what's the
+[07:58] standard so figure that out and you'll end up using that a lot let me jump to
+[08:02] another diagram the other reason that I like to use
+[08:06] single line diagram for like mechanical equipment or Process Equipment is
+[08:10] because we need to specify disconnects vfds and other you know Transformers and
+[08:16] you know things that are hard to specify in a panel schedule so if we drill into
+[08:20] this distribution panel right here you can see that this is drawn like the
+[08:25] switch gear you have your Source come in this one doesn't have a main breaker but
+[08:28] we have your surge protection device your bus and then your Breakers feeding
+[08:33] mechanical load so here we can specify that a vfd is to be provided before you
+[08:39] get to the motor and here we also specify the different types of
+[08:43] conductors and Note 7 pretty sure specify that this is a vfd cable so like
+[08:49] you can put a lot of information for the contractor to bid and build off of on a
+[08:53] single line diagram so if we jump down here to for example this one here you
+[08:59] can specify a Transformer after the breaker and then this is your panel
+[09:04] board so like once you get to this level of detail this is like a branch panel so
+[09:09] everything after that is just single pole to a receptacle or to a light
+[09:13] switch or something so like from here on down you could just show a panel
+[09:18] schedule you don't have to show a single line diagram for everything so the
+[09:22] diagram usually stops at a point where it's simple enough that we don't need to
+[09:27] specify all of this stuff here so let's just jump over to you know single line
+[09:32] number three this is kind of an extreme case we have this is mechanical this is
+[09:37] all mechanical so we have air handlers out the Wazoo here so from here it just
+[09:41] goes on and on and on and it specifies exactly which vfd we have to tag for the
+[09:47] vfd and what air handler it goes to so that's like the huge reason that we
+[09:53] would use a single line diagram this happens to be just a distribution panel
+[09:57] but um you would single line motor control centers switchboards switch or
+[10:03] substation switch gears like the big stuff that you want to specify all the
+[10:08] little intricate details of that equipment so draw single line diagram
+[10:12] for that just cleanliness wise you'll notice that
+[10:16] we like to keep everything evenly spaced so I can already see right here this
+[10:20] space for some reason is bigger than this space
+[10:23] keep it consistent like if it's inch and three quarters do inch and three
+[10:27] quarters all the way down and everything should line up so like this is our
+[10:32] feeder tag I don't know why it's up here and not like right here like it should
+[10:36] be centered on centered so whatever the space difference between that Center
+[10:39] here space difference Center there just make it look nice and don't be all
+[10:44] hajipaji um like sometimes it's this stuff like
+[10:48] here it wind it up when you can if you
+[10:52] absolutely can't then okay at least this is consistent so I can take this this is
+[10:56] not bad um other things is just you see how
+[11:00] there's different colors to everything so if you look at layer you can see that
+[11:04] we have all the buses on yellow equipment is
+[11:08] cyan feeder size you know you get the idea
+[11:12] um put everything on the correct layer so that it's just more organized and if
+[11:17] you if you have everything just like the same color it's actually hard to even
+[11:22] read so like imagine this looking like
+[11:27] this like that's that's not the easiest thing
+[11:31] to decipher right grant it when you PDF it it's all black and white anyways but
+[11:35] if you're working in CAD you know you know take advantage of the colors all
+[11:38] right so we're just gonna undo that so that's my third example I think my
+[11:44] fourth example oh I don't have layers set up
+[11:49] okay everything's the same color all right um here let me show you a trick so
+[11:53] if you want to bring all your layers from one drawing to the other uh go into
+[11:58] your layers oh this is already set up well anyways go into your layers and you
+[12:03] can do new and you can say export it to a new CAD or something like that hit
+[12:09] okay and then close that
+[12:12] hit save and then go over to your new diagram so
+[12:17] from here you go over to you go into layers as well or layer yeah you go into
+[12:22] layer and then
+[12:25] um nope I said it wrong you go to layers with an s
+[12:30] there we go so here we want to import this so import from diagram three
+[12:37] and let's do let's do the top one sure that's the one
+[12:41] I just made so import that click on it and then hit restore so there we go we
+[12:47] just brought all of our layer Colors Over yeah
+[12:51] that's a little easier okay so this is just continuation you
+[12:56] see how everything comes in from like the switchboard or the switch gear so
+[13:00] that that's how you reference things so you go to drawing e5005 find nsp1 switch
+[13:06] gear one and look for tag number five so that's where you can figure out the
+[13:10] breaker that is connected to Upstream so same thing here you have your
+[13:15] um uh same thing here you have your
+[13:18] distribution panels detailed out we have our location our switch size our fuse
+[13:24] size clean room fixture and you know it specifies the equipment that you are
+[13:30] connected to same thing keep going down yeah all the
+[13:34] same stuff all right let's jump over to a riser diagram so Riser diagram is
+[13:38] different in that it shows the elevation of the building so it's like you know
+[13:42] imagine it rising up the building so that's where the name comes from over
+[13:48] here we have an example Riser diagram from a different project and you can see
+[13:53] here that we have such designation as basement first floor second floor third
+[14:00] floor and penthouse so this is a bit more detailed in that
+[14:06] it it resembles a little bit of a single line diagram in this Riser diagram but
+[14:10] essentially we want it to show this vertical bus way so this is a 1000 amp
+[14:16] 208 123 phase four wire plug-in bus duct or bus duck bus way same thing and there
+[14:23] you can show this running vertically and we have it
+[14:28] designed such that we have bus plugs in here going to panels and distribution
+[14:32] boards so from here you can see that the first floor has two distribution boards
+[14:38] and we have you know two Branch panels out of each distribution board
+[14:43] um of this one has four so similar features here so like from here on oops
+[14:48] so from here on down looks like um a single line diagram but if you were
+[14:53] to keep going up you'll see that each floor has more and more information with
+[14:59] the floor indicated so a riser diagram can be simpler than
+[15:04] that like you don't have to draw out the distribution Port board if you really
+[15:09] wanted to you could I guess blank this out and then have your single line
+[15:12] separate so like your Riser diagram would literally just be you know a tap
+[15:17] off of your busway to a distribution and then you'd have your branch panel
+[15:21] beneath that and then you can reference to a single line for more information
+[15:26] for this project it just made sense to put it on here so we put all the
+[15:30] information such as the panel name where it is this note sl3
+[15:37] wherever it is sl3 calls for enqueue type panel board and Nema 1
+[15:43] enclosure so it's like a basis of a design I expect squared E I guess for
+[15:48] this one so that's the kind of information I put
+[15:52] here um you have your 22 000 AIC available in
+[15:57] Rush current so that way uh when they order it they can have the appropriate
+[16:01] short circuit current rating so like this is if you had I believe it's like a
+[16:06] three-phase fault or something um the amount of current that can pass
+[16:11] through at a given time so the higher that is the more robust your panel board
+[16:16] and Breakers have to be so that it doesn't explode so like if you if you
+[16:21] had 65 000 AIC at this location but you only spec a panel board that is up to 22
+[16:28] 000 and you had a big short inside the panel board you could literally have
+[16:32] your Breakers explode and it could kill someone so that's important information
+[16:36] to put on here so you have your AIC information up here you have your bus
+[16:40] size and all that good stuff down here then you can specify your Breakers and
+[16:45] for some reason we didn't have spare breakers on this distribution panel I
+[16:49] always put spares in spaces whenever I can but that's your Riser diagram so so
+[16:56] from here we can go even simpler and that's what the block diagram is for
+[17:02] so a block diagram looks like this and um what's with our layers man it's I
+[17:09] hate looking at something that's all the same color
+[17:11] all right well not worth it for this case a block
+[17:15] diagram has a little bit of a riser flavor to this you can see that we have
+[17:20] first second third and fourth but um we also have some room so you can
+[17:25] see like this is blocked out outside so grade is up here at second level so this
+[17:32] is ungrade we have a red line dividing utility versus a client owned equipment
+[17:37] and then all this stuff comes underground to our main electrical room
+[17:42] so the main electrical room has a more detailed block diagram and it picks up
+[17:47] where this drops off so this tells you like in room 1408 we
+[17:53] have this distribution panel and then you can kind of see that this is a stack
+[17:58] so we have like a um four electrical closets stacked on
+[18:02] top each other in one spot so that way we can have like a vertical feeder that
+[18:05] just runs through everything and it just picks up all these panels uh this stack
+[18:10] over here is over the main electrical room so you know gives you a little bit
+[18:14] of an idea of how the whole system is arranged and then we have these random
+[18:18] spaces that are kind of like out in the west side of the building we couldn't
+[18:22] really stack them so that's just where it is
+[18:25] so the detail level for this is that you just reference so like here references
+[18:30] this block diagram and it says like it goes to
+[18:34] I don't know this one here has two feeders so two feeders coming from the
+[18:38] switch gear 3 and switch gear four going to this distribution panel one and then
+[18:44] you know it just keeps feeding down so block diagram is easy for someone
+[18:48] that's not electrically Savvy to follow along a little bit better like out here
+[18:52] you can see we have two Utility Services coming in we have a distribution switch
+[18:57] gear out there and with there's three substations one of these substations is
+[19:02] dedicated to the fire pump I mean that's pretty easy for someone to follow along
+[19:06] looks like we have some voltages listed so like you know from here you can see
+[19:11] that our generators are 480 277 um
+[19:16] I think we left out sizing yeah like here we don't bother saying the size
+[19:20] because it's already stated on the single line diagram
+[19:23] but you can see that it they're located outside they feed underground into the
+[19:28] main electrical room so there's really good areas for wow that was a big note
+[19:35] there's really good scenarios where you would use a single line diagram or Riser
+[19:41] diagram or a block diagram so there's like all these different flavors of
+[19:45] diagrams that you can use and it just takes time to get to know them all but
+[19:51] once you get to use them a couple times you'll understand like if someone asks
+[19:55] you for a distribution for panel board you know that you draw a single line
+[19:59] diagram the panel board itself just give them a panel schedule and if they want
+[20:03] to know where it is give them a riser diagram all right hopefully that wasn't
+[20:06] too confusing um please ask questions if you want more
+[20:10] in-depth review of like just the Riser diagram or something if there's any
+[20:16] discussions to be had go check us out on Discord and if you want to draw this up
+[20:20] in Revit check out this video here I'm proud probably more fluent in CAD so
+[20:25] maybe I'll make a video on that okay thanks for watching I'll see you guys
+[20:29] next time bye
+[20:33] [Music] foreign
+[20:40] foreign

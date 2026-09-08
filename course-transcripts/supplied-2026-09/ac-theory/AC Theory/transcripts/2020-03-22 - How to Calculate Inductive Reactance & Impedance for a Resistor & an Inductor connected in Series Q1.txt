@@ -1,0 +1,618 @@
+# How to Calculate Inductive Reactance & Impedance for a Resistor & an Inductor connected in Series Q1
+# https://www.youtube.com/watch?v=X6wgItLg1m8
+
+[Music] hello and welcome to this electrical principals training video this video is designed to be used in conjunction with the worksheet that you'll find in the link below we're going to answer question 1 from that worksheet so if you haven't already done so and please click the link download the worksheet and either have a go at it first or follow along and then try the next question so we're going to read the question and then we'll have a look at how we figure out what the answer is so the question on the worksheet tells us that the circuit you can see on your screens here is that of a coil which is being fed by a 240 volt 60 Hertz supply so what we've got here is a coil so this could be the coil of a motor or it could be the coil of a transformer or perhaps the coil of a contactor or something like that and it's been broken down into its two component parts we've got the resistance of the coil that makes up the winding and then we've got the inductance of the coil so we've got those two qualities separated out and shown as two separate components but in reality this represents just the coil by itself now it's important when you're answering questions like this to extract as much information from the question as you possibly can so if we start off by looking at this we can see we've got here a 20 ohm resistor so we know that R is equal to 20 ohms and we've got a fifty five point seven million REE inductor so L equals fifty five point seven million Rees but in reading the wording of the question we're also told that we've got a voltage of 240 volts so we'll put that in there the voltage is equal to 240 volts we're also told in the question that we've got a frequency of 60 Hertz so we'll put that on here as well so we've got a frequency of 60 Hertz so that you can see that's all the information that the question gives us now we're going to work through the parts of the question and try and figure out what the answers are so the first question asks is to find the inductive reactance of the circuit so in other words we're trying to figure out what the opposition to current flow is that's caused by the coil so in order to do that we're going to have to use our formula for inductive reactance and that looks like this we've got for part 1 of this we've got X L is equal to 2 pi F L like that so we're trying to figure out what the inductive reactance is and this is the formula that we're going to use 2 pi f L if at any point through this video you find yourself not knowing what I'm talking about so if you don't know what inductive reactance is if you don't know what this formula is or where that's come from then please go and watch a video in the series of videos called AC theory on my channel and that's going to help you to dig a little deeper into this subject and figure out what these different values actually mean for now though let's start populating this formula with the numbers so we've got here 2 pi FL so we're going to put in our values so 2 pi just stays as a constant I always like to use pi as the actual value of pi on my calculator rather than shortening it to 3.14 or something like that so we'll leave that as pi and then we're going to times it by the frequency of the circuit and the frequency of the circuit in this case is 60 Hertz so we're going to times that by 60 and then we're going to times that by the inductance of the coil so here you can see the inductance up here is fifty five point seven million Rees so we'll put that on the end fifty five point seven now at this point because this is in milli henries and everything else that we're dealing with is in the base unit so this is in Hertz not milli hurts or kilohertz or anything like that we need to change this into the base unit as well now what we're going to do for that is we're going to whack on the end of here times 10 to the minus three so all we've done we've just taken the little lowercase M off there and replaced it with this times ten to the minus three and what that does this is like an instruction that tells you to move the decimal point one two three places in that direction now we could write that down as naught point naught 5 five seven but what we're going to do is we're just going to put it into the calculator as times 10 to the minus 3 because it eliminates mistakes from moving that decimal point around so if you haven't already done so again please watch the video regarding multiples and submultiples because that will help you out so what we'll do now is we'll grab the calculator and we'll put our numbers into the calculator so I've got my casio FX 85 GT plus up on the screen now you should be able to see that so we've got two times and to get PI just press shift and then PI which is down at the bottom of the calculator times that by 60 and then times up by fifty five point seven now at this point on your calculator don't be tempted to start pressing x ten one zero and then putting the power in because again it's easy to make mistake so the bottom of the calculator those times 10 to the power of X so just press that button and then whatever the next number is you put in it treats that as the power so here we'll go minus three like that so haven't put that into the calculator it equals and we get a value of twenty point nine nine eight now I'm happy to round that off to a value of 21 in this case because we're so close to 21 that it makes sense that that's the answer is looking for so we've found from that the answer for the first part of the question is 21 and please whatever you do having gone to all the trouble of figuring out the answer to this question do not forget to put your unit on the end of that now when I'm teaching my learner's I always make it really clear to them it's very important especially for this kind of question that you show you're working out as a bare minimum go formula numbers answer every single time formula numbers answer and that's the way that you'll start actually to get these formulas drilled into your mind and also it helps an awful lot when it comes to marketing because you teach them I'll be able to give you marks where perhaps they couldn't if you just put down the wrong answer okay so the next part of the question asks is what is the total circuit impedance so we're going to try and find the total impedance of the circuit now remember impedance is just another type of opposition to current flow it's the total opposition to current flow in the circuit and it's a combination of resistance and reactance so well how do we combine these well what we do is we say for part two of this we use a bit of Pythagoras theorem we say that the value Z squared and Z is our value for impedance is equal to R squared + XL squared like that and what we're going to do in this case is we're going to rearrange this a little bit just to make Z the subject so the minute Zed squared is the subject so we look at this and we think right I'm currently squaring Zed what's the opposite of squaring Zed well it's to say that Z is equal to the square root of R squared + x-l squared now please don't fall into the trap at this point of thinking if I'm square rooting this I can lose the squares off here that's not true if we were multiplying these numbers together that would be true but because we are adding these two values together we can't lose those squares so don't be tempted to think oh I don't need to square those numbers now I've square rooted that side they don't cancel out and that's really important so we've got our formula let's put the numbers in so for this question we've got a value of 20 ohms for the resistance so that's 20 squared which we're getting from the question that we had originally plus our value of XL which is what we calculated here so we've got 20 squared plus 21 squared and then that is going to give us a value of again we could work through every stage of this and you may want to do that if you're so inclined just to prove to yourself that you're getting it right stage by stage but I'm going to show you how to put it into the calculator nice and simply so we just press the square root button and we say that is the square root of 20 squared plus 21 squared so we've got 20 squared plus 21 squared and when we put into the calculator we find that the answer is 29 so our value for impedance in this circuit is 29 homes so you can see there we've now got the total circuit impedance the total opposition to current flow of this circuit okay so part 3 of the question asks us to try and find an impedance triangle for this it wants us to draw an impedance triangle to scale now obviously when I do this on the board I'm going to use quite a large scale so when you're doing this on paper you want to find a scale that's going to make it fit onto your paper so for this one probably what a good scale for you to do if you're doing this at home is to say that maybe one centimeter equals 100 because then that's a very simple kind of conversion to do you're just going to draw one centimeter for every ohm so that line for example would be 21 centimeters long only is a slightly different scale for mine so we've got values here we're drawing the impedance triangle so we need all the values of opposition to current flow from this circuit so we're going to have 20 ohms in there we're going to have 21 ohms in there and we going to have 20 are in the ohms in there so I think what I'll do to make this fit nicely on the board I'm going to draw this to a scale of I think I would 2 centimeters equals 1 ohm so just a little point here again if you're producing a scale drawing then please make sure that you write your scale down so I'm going to say that every 2 centimeters I draw is equal to 1 ohm and that's just going to help you out when you do your conversions of numbers and things so having figured out what a suitable scale is going to be for this question I'm now going to start drawing my impedance triangle so because it's an impedance triangle I need all the opposition's to current flow within the circuit so I've got a resistance of 20 ohms I've got an inductive reactance of 21 ohms and I've got an impedance of 29 ohms so I'm going to draw first of all my line to represent the resistance and I'm going to draw that down here now this line will be however long the resistance is so I've got 20 ohms on my scale and I look at this and go how do I get from that side to that side well I need to times that number by 2 to get to there so I've got 20 ohms now times that by 2 gives me 40 centimeters so I'm going to draw a line 40 centimeters long so that's going to go along there like that so that line is 40 centimeters long and then I am going to label this up so this is really quite important that we do this we say that this is the resistance so that's the R and that is 20 ohms so that's how long that is and then I'm going to draw my inductive reactance next now because this is an inductive triangle I'm going to draw it pointing up the ways for a series circuit so I'm going to put that there like that and I'm going to draw my ninety degree angle there so I always put my right angle on the right of my impedance triangles because it's easy to remember it that way so I put my right angle on the right and then I'm gonna draw a line here that will be whatever length I need it to be to represent the inductive reactance so resistance is the horizontal line the reactance is the vertical line in this case it's inductive so I'm going to have it pointing up inductor points up so that's what we've got there and I'm going to do this at the appropriate length so I've got 21 Ohm's for my inductive reactants so to get from this side to this side at times by 2 so 21 times by 2 becomes 42 so that's gonna go shooting off that way at 42 centimeters make sure I've got that nicely lined up and there's my nice 42 centimeter line there so this side now represents the inductive reactance so X L is equal to in this case we've got 21 Ohm's and then what we're going to do is we're going to draw our impedance line in now what what we should find at this stage is that because this is a right-angled triangle and because we've used Pythagoras's theorem to get the value of impedance what we should find is that if we measure the distance from here to here to represent the third side of our triangle the impedance of the circuit we should come out at whatever this will be so 29 ohms 29 times by 2 to get to this side becomes 58 centimeters and if I look on my triangle here look at that that's beautiful exactly 58 centimeters so that is really rather lovely that's worked out really well so that makes me very happy it turns out that that mathematical theorem that's been around for centuries is entirely accurate as if we were ever in any doubt very good so we can see there that's our impedance triangle I'll write the Z on here Z is equal to 29 Ohm's now if this the kind of question that's likely to come up in your exam just have a word with your teacher and ask them how they want that to be presented they might want specific information I'm here they might want you to write the lengths of the triangle down they might want you to write impedance rather than Zed so just ask them what information they want I also like to see on here this angle marked as theta because that's going to become important a little bit later on okay so the next part of the question asks is to calculate how much current is going to flow into the circuit so how much current will flow into the circuit now for this obviously we're going to use Ohm's law so let's have a look at this we've got part four here so we know that Ohm's law is I equals V over R so that's one of our formulas that we need to remember that's very important but in this case what we're doing is because we're trying to find the total current that flows into the circuit the total current what that means is we've got to think about what the total opposition to current flow will because that will define how much current flows so in this case we're actually we're not going to use ie equals V over R we're going to use I equals V over Z okay I equals V over Z now at this point in the question we've only got one voltage in the circuit and that is the voltage that we find at the supply or the total voltage so what we're going to do I'm just going to modify what I've got written on my drawing there just to make sure that we're clear that here we are using the supply voltage or the total voltage as it sometimes referred to in this circuit the reasons for that will become clear as we progress through this question so we're trying to find the current we know that current is equal to V over R in this case we're doing the same calculation but instead of R which would be appropriate for a DC circuit or a purely resistive circuit we're going to use Z because we've got some inductive reactance which is increasing that value so we put that calculation in now vs over Zed so we're going to put in 240 and we're going to divide that by the total opposition to current flow in the circuit which is the pedan switch is what we calculated down here so there we've got Z is equal to 29 ohms so we've got 240 divided by 29 so 240 divided by 29 is going to give us 8.27 586 + change so we're going to say we'll round that off to two decimal places there's a reasonable value so I've got eight point two eight amp ere's so there we've got eight point two eight amp ere's so that is our current that's flowing into the circuit so we've now found the current flowing into the circuit and we can use that to find some other stuff so now we know how much current is flowing into the circuit in total we can figure out what the voltage across the resistor and the inductor is going to be and that's what part five of the question asks us to find so we can look at this and think what is the voltage across here going to be so what voltage are we going to have across here and we'll label that up as V R so that's the voltage across the resistive part of the circuit so we want to find out what that is and we also want to find out what the voltage across the inductor of the circuit so there we've got VL so that's what we're looking for next now to find the voltage across a load or the voltage in a circuit if we know the current flowing through the load and we know the resistance of the load or the opposition to current flow of the load we can calculate what the voltage will be and we start from there old faithful lovely dependable Ohm's law I equals V over R but we want to get V by itself we want to make V the subject so what we say at this point is that if we want to make V the subject we need to get V by itself currently we've got V and we are dividing it by R so we do the opposite function instead of dividing by r we times by r so we end up with I times R is equal to and because we on this side divided by R and then times by r it's like that function never happened it cancels itself out and we end up with just V by itself now of course this no good for my OCD I always like to have the subject on the left otherwise it really bothers me so we'll just turn that around the other way v equals I times R now in this case we're going to do two calculations we're going to figure out what the resistive voltage is first of all so we're going to figure out that now the current we're going to use is just the current that's flowing through the whole circuit it's a series circuit so the current is the same everywhere it's constant throughout so that means that there must be a big enough voltage across this resistor to push whatever current is flowing through there through so the current flowing through is eight point two eight so let's figure out how much voltage is required to push eight point two eight amps through that 20 ohm resistor we've used 20 ohms because we're looking at the resistance value and that's the value of the resistor so eight point two eight times twenty so we'll just volley that into the calculator again eight point two eight times twenty is equal to one hundred and sixty five point six so we've got one hundred and sixty five point six volts so that is the resistive voltage so the voltage at this point here is one hundred and sixty five point six now we go one hundred and sixty five point six volts and now actually we just do the same thing again to find the voltage across the inductor the load across the inductor but instead of using VR we're going to use VL so VL is equal to I times bi and in this case we're not going to use the value of R because we're not worried now about the opposition to current flow caused by the resistor we're interested in the opposition to current flow caused by the inductive part of the circuit so we're going to use the inductive reactance XL which we calculated many many steps ago so we've got I times XL so that becomes eight point two eight multiplied by 21 in this case because that is the value of the inductive reactance in this circuit so eight point two eight times twenty one so again we'll do that on the calculator eight point two eight times by twenty one is going to give us a hundred and seventy-three point eight so that's one hundred and seventy-three point eight eight volts now at this point the more eagle-eyed among you will notice that that value added to that value does not give you the total voltage for the circuit and that's because they are related to each other again by Pythagoras now we don't need to do anything with that for the purposes of this question but what we do need to do is just be aware of that if you're not sure why they don't add up to give the total voltage then please go and watch another video on this channel okay so now we can start to think about part six of the question and part six asks us to find the power factor for the circuit v1 so we've got part six and we want to think about what the power factor is going to be now the power factor in this case there's several ways that we can calculate it but we can calculate it from information that we've already found in this question so remember power factor is equal to this side of the triangle divided by this side of the triangle so we've got in this case R divided by Z so that's a very common way for calculating power factor so the power factor is equal to R divided by Z and our divided by said in this case is going to give us 20 divided by 29 so when we do 20 divided by 29 we'll get our answer so 20 divided by 29 gives us not point six eight nine so we'll round that off if we ran after three decimal places we're going to end up with not point six nine as an answer so the power factor in this case the power factor is equal to naught two point six nine now remember for power factor we have no units it's just a ratio of this side of the triangle to this side of the triangle there's lots of other triangles we could use for this we could use the power triangle we could use the voltage triangle but in this case we've got this information we've calculated it so that's the method we use the question doesn't call for this we could also figure out what the phase angle is from that information we could figure out what this angle is here which represents how far out of phase the voltage and current are but that's not required for this question and finally we've got part seven and part seven asks us to find the true power of the circuit so to find the true power of the kit 4 part 7 we're going to perform the following calculation so part 7 asks us to find the true power so the true power is equal to and we know that normally we do voltage times current but in this case we're going to do the volts times by the amps and in this case we're probably thinking about which voltage do I used I've only got one current so that should be pretty straightforward we're going to do the resistive voltage so that's the voltage across the resistor times by the current because remember the true power if we were to draw a power triangle for this circuit the true power would sit on this side which is the same side as the resistive part of the circuit so the true power is the power that's taken by the resistive part of the circuit so we're going to do in this case we're going to do the resistive voltage which we calculated was one hundred and sixty five point six so we've got hundred sixty five point six times by the current flowing through the circuit which we calculated as being eight point two eight M so we times that by eight point two eight and that's going to give us our answer so we've got 165 point six times by eight point two eight and that gives us our total power for the circuit is 1371 we could continue to run off but I think in this case were okay to do it to no decimal places 1371 it's true power so it's measured in watts so there we've got our true power for the circuit and that is actually all that this question asks is to find there's lots of other information we could take away from this question lots of other things we could find out about this circuit but that is all that this question asks for so thank you very much for watching and stay tuned for question two [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video this video is
+[00:13] designed to be used in conjunction with
+[00:15] the worksheet that you'll find in the
+[00:16] link below we're going to answer
+[00:18] question 1 from that worksheet so if you
+[00:20] haven't already done so and please click
+[00:22] the link download the worksheet and
+[00:24] either have a go at it first or follow
+[00:26] along and then try the next question so
+[00:28] we're going to read the question and
+[00:29] then we'll have a look at how we figure
+[00:31] out what the answer is so the question
+[00:33] on the worksheet tells us that the
+[00:35] circuit you can see on your screens here
+[00:36] is that of a coil which is being fed by
+[00:39] a 240 volt 60 Hertz supply so what we've
+[00:44] got here is a coil so this could be the
+[00:46] coil of a motor or it could be the coil
+[00:48] of a transformer or perhaps the coil of
+[00:50] a contactor or something like that and
+[00:52] it's been broken down into its two
+[00:54] component parts we've got the resistance
+[00:56] of the coil that makes up the winding
+[00:58] and then we've got the inductance of the
+[01:00] coil so we've got those two qualities
+[01:02] separated out and shown as two separate
+[01:04] components but in reality this
+[01:06] represents just the coil by itself now
+[01:09] it's important when you're answering
+[01:10] questions like this to extract as much
+[01:13] information from the question as you
+[01:14] possibly can so if we start off by
+[01:16] looking at this we can see we've got
+[01:18] here a 20 ohm resistor so we know that R
+[01:21] is equal to 20 ohms and we've got a
+[01:23] fifty five point seven million REE
+[01:25] inductor so L equals fifty five point
+[01:28] seven million Rees but in reading the
+[01:30] wording of the question we're also told
+[01:32] that we've got a voltage of 240 volts so
+[01:36] we'll put that in there the voltage is
+[01:37] equal to 240 volts we're also told in
+[01:42] the question that we've got a frequency
+[01:44] of 60 Hertz so we'll put that on here as
+[01:46] well so we've got a frequency of 60
+[01:49] Hertz so that you can see that's all the
+[01:52] information that the question gives us
+[01:54] now we're going to work through the
+[01:55] parts of the question and try and figure
+[01:57] out what the answers are so the first
+[02:00] question asks is to find the inductive
+[02:02] reactance of the circuit so in other
+[02:04] words we're trying to figure out what
+[02:05] the opposition to current flow is that's
+[02:07] caused by the coil so in order to do
+[02:11] that we're going to have to use our
+[02:12] formula for
+[02:13] inductive reactance and that looks like
+[02:15] this we've got for part 1 of this we've
+[02:19] got X L is equal to 2 pi F L like that
+[02:25] so we're trying to figure out what the
+[02:27] inductive reactance is and this is the
+[02:30] formula that we're going to use 2 pi f L
+[02:32] if at any point through this video you
+[02:34] find yourself not knowing what I'm
+[02:35] talking about so if you don't know what
+[02:36] inductive reactance is if you don't know
+[02:38] what this formula is or where that's
+[02:40] come from then please go and watch a
+[02:42] video in the series of videos called AC
+[02:44] theory on my channel and that's going to
+[02:46] help you to dig a little deeper into
+[02:48] this subject and figure out what these
+[02:49] different values actually mean for now
+[02:52] though let's start populating this
+[02:53] formula with the numbers so we've got
+[02:56] here 2 pi FL so we're going to put in
+[02:58] our values so 2 pi just stays as a
+[03:00] constant I always like to use pi as the
+[03:03] actual value of pi on my calculator
+[03:05] rather than shortening it to 3.14 or
+[03:07] something like that so we'll leave that
+[03:09] as pi and then we're going to times it
+[03:11] by the frequency of the circuit and the
+[03:13] frequency of the circuit in this case is
+[03:15] 60 Hertz so we're going to times that by
+[03:18] 60 and then we're going to times that by
+[03:20] the inductance of the coil so here you
+[03:24] can see the inductance up here is fifty
+[03:27] five point seven million Rees so we'll
+[03:29] put that on the end fifty five point
+[03:31] seven now at this point because this is
+[03:33] in milli henries and everything else
+[03:36] that we're dealing with is in the base
+[03:37] unit so this is in Hertz not milli hurts
+[03:40] or kilohertz or anything like that we
+[03:42] need to change this into the base unit
+[03:44] as well now what we're going to do for
+[03:46] that is we're going to whack on the end
+[03:47] of here times 10 to the minus three so
+[03:51] all we've done we've just taken the
+[03:53] little lowercase M off there and
+[03:55] replaced it with this times ten to the
+[03:57] minus three and what that does this is
+[03:59] like an instruction that tells you to
+[04:02] move the decimal point one two three
+[04:05] places in that direction now we could
+[04:07] write that down as naught point naught 5
+[04:09] five seven but what we're going to do is
+[04:11] we're just going to put it into the
+[04:12] calculator as times 10 to the minus 3
+[04:14] because it eliminates mistakes from
+[04:17] moving that decimal point around so if
+[04:19] you haven't already done so again please
+[04:21] watch the video regarding multiples and
+[04:23] submultiples because that will
+[04:25] help you out so what we'll do now is
+[04:27] we'll grab the calculator and we'll put
+[04:29] our numbers into the calculator so I've
+[04:32] got my casio FX 85 GT plus up on the
+[04:35] screen now you should be able to see
+[04:36] that so we've got two times and to get
+[04:39] PI just press shift and then PI which is
+[04:42] down at the bottom of the calculator
+[04:43] times that by 60 and then times up by
+[04:47] fifty five point seven now at this point
+[04:49] on your calculator don't be tempted to
+[04:51] start pressing x ten one zero and then
+[04:54] putting the power in because again it's
+[04:56] easy to make mistake so the bottom of
+[04:57] the calculator those times 10 to the
+[04:59] power of X so just press that button and
+[05:01] then whatever the next number is you put
+[05:04] in it treats that as the power so here
+[05:06] we'll go minus three like that
+[05:08] so haven't put that into the calculator
+[05:10] it equals and we get a value of twenty
+[05:13] point nine nine eight now I'm happy to
+[05:16] round that off to a value of 21 in this
+[05:18] case because we're so close to 21 that
+[05:21] it makes sense that that's the answer is
+[05:23] looking for so we've found from that
+[05:25] the answer for the first part of
+[05:26] the question is 21 and please whatever
+[05:31] you do having gone to all the trouble of
+[05:32] figuring out the answer to this question
+[05:34] do not forget to put your unit on the
+[05:37] end of that now when I'm teaching my
+[05:39] learner's I always make it really clear
+[05:40] to them it's very important especially
+[05:41] for this kind of question that you show
+[05:44] you're working out as a bare minimum go
+[05:46] formula numbers answer every single time
+[05:50] formula numbers answer and that's the
+[05:52] way that you'll start actually to get
+[05:55] these formulas drilled into your mind
+[05:56] and also it helps an awful lot when it
+[05:59] comes to marketing because you teach
+[06:00] them I'll be able to give you marks
+[06:01] where perhaps they couldn't if you just
+[06:03] put down the wrong answer okay so the
+[06:07] next part of the question asks is what
+[06:08] is the total circuit impedance so we're
+[06:11] going to try and find the total
+[06:12] impedance of the circuit now remember
+[06:14] impedance is just another type of
+[06:15] opposition to current flow it's the
+[06:17] total opposition to current flow in the
+[06:19] circuit and it's a combination of
+[06:21] resistance and reactance so well how do
+[06:25] we combine these well what we do is we
+[06:26] say for part two of this we use a bit of
+[06:30] Pythagoras theorem we say that the value
+[06:33] Z squared and Z is our value for
+[06:36] impedance
+[06:38] is equal to R squared + XL squared like
+[06:44] that and what we're going to do in this
+[06:45] case is we're going to rearrange this a
+[06:47] little bit just to make Z the subject so
+[06:49] the minute Zed squared is the subject so
+[06:52] we look at this and we think right I'm
+[06:53] currently squaring Zed what's the
+[06:55] opposite of squaring Zed well it's to
+[06:57] say that Z is equal to the square root
+[06:59] of R squared + x-l squared now please
+[07:05] don't fall into the trap at this point
+[07:06] of thinking if I'm square rooting this I
+[07:08] can lose the squares off here that's not
+[07:10] true if we were multiplying these
+[07:12] numbers together that would be true but
+[07:14] because we are adding these two values
+[07:16] together we can't lose those squares so
+[07:18] don't be tempted to think oh I don't
+[07:19] need to square those numbers now I've
+[07:22] square rooted that side they don't
+[07:23] cancel out and that's really important
+[07:25] so we've got our formula let's put the
+[07:27] numbers in so for this question we've
+[07:29] got a value of 20 ohms for the
+[07:32] resistance so that's 20 squared which
+[07:34] we're getting from the question that we
+[07:36] had originally plus our value of XL
+[07:39] which is what we calculated here so
+[07:41] we've got 20 squared plus 21 squared and
+[07:44] then that is going to give us a value of
+[07:47] again we could work through every stage
+[07:50] of this and you may want to do that if
+[07:52] you're so inclined just to prove to
+[07:53] yourself that you're getting it right
+[07:54] stage by stage but I'm going to show you
+[07:56] how to put it into the calculator nice
+[07:58] and simply so we just press the square
+[08:00] root button and we say that is the
+[08:03] square root of 20 squared plus 21
+[08:07] squared so we've got 20 squared plus 21
+[08:11] squared and when we put into the
+[08:14] calculator we find that the answer is 29
+[08:18] so our value for impedance in this
+[08:20] circuit is 29 homes so you can see there
+[08:24] we've now got the total circuit
+[08:27] impedance the total opposition to
+[08:29] current flow of this circuit okay so
+[08:33] part 3 of the question asks us to try
+[08:35] and find an impedance triangle for this
+[08:37] it wants us to draw an impedance
+[08:39] triangle to scale now obviously when I
+[08:41] do this on the board I'm going to use
+[08:42] quite a large scale so when you're doing
+[08:44] this on paper you want to find a scale
+[08:46] that's going to make it fit onto your
+[08:47] paper so for this one probably what a
+[08:49] good scale for you to do if
+[08:51] you're doing this at home is to say that
+[08:53] maybe one centimeter equals 100 because
+[08:57] then that's a very simple kind of
+[08:59] conversion to do you're just going to
+[09:00] draw one centimeter for every ohm so
+[09:03] that line for example would be 21
+[09:06] centimeters long only is a slightly
+[09:08] different scale for mine so we've got
+[09:11] values here we're drawing the impedance
+[09:13] triangle so we need all the values of
+[09:15] opposition to current flow from this
+[09:16] circuit so we're going to have 20 ohms
+[09:18] in there we're going to have 21 ohms in
+[09:20] there and we going to have 20 are in the
+[09:22] ohms in there so I think what I'll do to
+[09:24] make this fit nicely on the board I'm
+[09:26] going to draw this to a scale of I think
+[09:30] I would 2 centimeters equals 1 ohm so
+[09:35] just a little point here again if you're
+[09:37] producing a scale drawing then please
+[09:39] make sure that you write your scale down
+[09:41] so I'm going to say that every 2
+[09:42] centimeters I draw is equal to 1 ohm and
+[09:46] that's just going to help you out when
+[09:48] you do your conversions of numbers and
+[09:50] things so having figured out what a
+[09:51] suitable scale is going to be for this
+[09:53] question I'm now going to start drawing
+[09:55] my impedance triangle so because it's an
+[09:58] impedance triangle I need all the
+[09:59] opposition's to current flow within the
+[10:01] circuit so I've got a resistance of 20
+[10:03] ohms I've got an inductive reactance of
+[10:05] 21 ohms and I've got an impedance of 29
+[10:07] ohms so I'm going to draw first of all
+[10:10] my line to represent the resistance and
+[10:13] I'm going to draw that down here now
+[10:15] this line will be however long the
+[10:19] resistance is so I've got 20 ohms on my
+[10:21] scale and I look at this and go how do I
+[10:23] get from that side to that side well I
+[10:25] need to times that number by 2 to get to
+[10:28] there so I've got 20 ohms now times that
+[10:30] by 2 gives me 40 centimeters so I'm
+[10:34] going to draw a line 40 centimeters long
+[10:36] so that's going to go along there like
+[10:37] that so that line is 40 centimeters long
+[10:41] and then I am going to label this up so
+[10:45] this is really quite important that we
+[10:46] do this we say that this is the
+[10:48] resistance so that's the R and that is
+[10:50] 20 ohms so that's how long that is and
+[10:53] then I'm going to draw my inductive
+[10:58] reactance next now because this is an
+[11:00] inductive
+[11:01] triangle I'm going to draw it pointing
+[11:04] up the ways for a series circuit so I'm
+[11:07] going to put that there like that and
+[11:08] I'm going to draw my ninety degree angle
+[11:12] there so I always put my right angle on
+[11:14] the right of my impedance triangles
+[11:17] because it's easy to remember it that
+[11:19] way so I put my right angle on the right
+[11:21] and then I'm gonna draw a line here that
+[11:23] will be whatever length I need it to be
+[11:26] to represent the inductive reactance so
+[11:28] resistance is the horizontal line the
+[11:30] reactance is the vertical line in this
+[11:33] case it's inductive so I'm going to have
+[11:34] it pointing up inductor points up so
+[11:36] that's what we've got there and I'm
+[11:38] going to do this at the appropriate
+[11:40] length so I've got 21
+[11:42] Ohm's for my inductive reactants so to
+[11:45] get from this side to this side at times
+[11:46] by 2 so 21 times by 2 becomes 42 so
+[11:50] that's gonna go shooting off that way at
+[11:53] 42 centimeters make sure I've got that
+[11:55] nicely lined up and there's my nice 42
+[12:00] centimeter line there so this side now
+[12:03] represents the inductive reactance so X
+[12:05] L is equal to in this case we've got 21
+[12:11] Ohm's and then what we're going to do is
+[12:14] we're going to draw our impedance line
+[12:15] in now what what we should find at this
+[12:17] stage is that because this is a
+[12:19] right-angled triangle and because we've
+[12:21] used Pythagoras's theorem to get the
+[12:23] value of impedance what we should find
+[12:25] is that if we measure the distance from
+[12:28] here to here to represent the third side
+[12:30] of our triangle the impedance of the
+[12:33] circuit we should come out at whatever
+[12:36] this will be so 29 ohms
+[12:39] 29 times by 2 to get to this side
+[12:41] becomes 58 centimeters and if I look on
+[12:46] my triangle here look at that that's
+[12:48] beautiful
+[12:49] exactly 58 centimeters so that is really
+[12:52] rather lovely that's worked out really
+[12:55] well so that makes me very happy
+[12:57] it turns out that that mathematical
+[13:00] theorem that's been around for centuries
+[13:02] is entirely accurate as if we were ever
+[13:05] in any doubt very good so we can see
+[13:08] there that's our impedance triangle I'll
+[13:09] write the Z on here Z is equal to 29
+[13:12] Ohm's now if this
+[13:15] the kind of question that's likely to
+[13:16] come up in your exam just have a word
+[13:17] with your teacher and ask them how they
+[13:19] want that to be presented they might
+[13:21] want specific information I'm here they
+[13:23] might want you to write the lengths of
+[13:24] the triangle down they might want you to
+[13:26] write impedance rather than Zed so just
+[13:29] ask them what information they want I
+[13:31] also like to see on here this angle
+[13:33] marked as theta because that's going to
+[13:36] become important a little bit later on
+[13:38] okay so the next part of the question
+[13:40] asks is to calculate how much current is
+[13:42] going to flow into the circuit so how
+[13:44] much current will flow into the circuit
+[13:47] now for this obviously we're going to
+[13:50] use Ohm's law so let's have a look at
+[13:52] this we've got part four here so we know
+[13:56] that Ohm's law is I equals V over R so
+[13:59] that's one of our formulas that we need
+[14:01] to remember that's very important but in
+[14:03] this case what we're doing is because
+[14:04] we're trying to find the total current
+[14:07] that flows into the circuit the total
+[14:09] current what that means is we've got to
+[14:12] think about what the total opposition to
+[14:14] current flow will because that will
+[14:16] define how much current flows so in this
+[14:19] case we're actually we're not going to
+[14:20] use ie equals V over R we're going to
+[14:23] use I equals V over Z okay I equals V
+[14:28] over Z now at this point in the question
+[14:31] we've only got one voltage in the
+[14:33] circuit and that is the voltage that we
+[14:36] find at the supply or the total voltage
+[14:38] so what we're going to do I'm just going
+[14:39] to modify what I've got written on my
+[14:42] drawing there just to make sure that
+[14:44] we're clear that here we are using the
+[14:46] supply voltage or the total voltage as
+[14:49] it sometimes referred to in this circuit
+[14:51] the reasons for that will become clear
+[14:53] as we progress through this question so
+[14:55] we're trying to find the current we know
+[14:57] that current is equal to V over R in
+[15:00] this case we're doing the same
+[15:01] calculation but instead of R which would
+[15:04] be appropriate for a DC circuit or a
+[15:06] purely resistive circuit we're going to
+[15:08] use Z because we've got some inductive
+[15:11] reactance which is increasing that value
+[15:12] so we put that calculation in now vs
+[15:15] over Zed so we're going to put in 240
+[15:19] and we're going to divide that by the
+[15:21] total opposition to current flow in the
+[15:23] circuit which is the
+[15:25] pedan switch is what we calculated down
+[15:27] here so there we've got Z is equal to 29
+[15:32] ohms so we've got 240 divided by 29
+[15:36] so 240 divided by 29 is going to give us
+[15:43] 8.27 586 + change so we're going to say
+[15:46] we'll round that off to two decimal
+[15:48] places there's a reasonable value so
+[15:50] I've got eight point two eight amp ere's
+[15:54] so there we've got eight point two eight
+[15:56] amp ere's so that is our current that's
+[15:58] flowing into the circuit so we've now
+[16:01] found the current flowing into the
+[16:02] circuit and we can use that to find some
+[16:05] other stuff so now we know how much
+[16:07] current is flowing into the circuit in
+[16:08] total we can figure out what the voltage
+[16:11] across the resistor and the inductor is
+[16:13] going to be and that's what part five of
+[16:15] the question asks us to find so we can
+[16:17] look at this and think what is the
+[16:18] voltage across here going to be so what
+[16:21] voltage are we going to have across here
+[16:23] and we'll label that up as V R so that's
+[16:26] the voltage across the resistive part of
+[16:29] the circuit so we want to find out what
+[16:31] that is and we also want to find out
+[16:33] what the voltage across the inductor of
+[16:36] the circuit so there we've got VL so
+[16:39] that's what we're looking for
+[16:40] next now to find the voltage across a
+[16:44] load or the voltage in a circuit if we
+[16:46] know the current flowing through the
+[16:48] load and we know the resistance of the
+[16:51] load or the opposition to current flow
+[16:53] of the load we can calculate what the
+[16:55] voltage will be and we start from there
+[16:58] old faithful lovely dependable Ohm's law
+[17:01] I equals V over R but we want to get V
+[17:04] by itself we want to make V the subject
+[17:07] so what we say at this point is that if
+[17:09] we want to make V the subject we need to
+[17:10] get V by itself currently we've got V
+[17:13] and we are dividing it by R so we do the
+[17:16] opposite function instead of dividing by
+[17:18] r we times by r so we end up with I
+[17:22] times R is equal to and because we on
+[17:27] this side divided by R and then times by
+[17:29] r it's like that function never happened
+[17:32] it cancels itself out and we end up with
+[17:34] just V by itself now of course this
+[17:37] no good for my OCD I always like to have
+[17:38] the subject on the left otherwise it
+[17:40] really bothers me so we'll just turn
+[17:42] that around the other way
+[17:43] v equals I times R now in this case
+[17:46] we're going to do two calculations we're
+[17:47] going to figure out what the resistive
+[17:49] voltage is first of all so we're going
+[17:52] to figure out that now the current we're
+[17:53] going to use is just the current that's
+[17:55] flowing through the whole circuit it's a
+[17:57] series circuit so the current is the
+[17:59] same everywhere it's constant throughout
+[18:01] so that means that there must be a big
+[18:03] enough voltage across this resistor to
+[18:06] push whatever current is flowing through
+[18:07] there through so the current flowing
+[18:10] through is eight point two eight so
+[18:12] let's figure out how much voltage is
+[18:13] required to push eight point two eight
+[18:15] amps through that 20 ohm resistor we've
+[18:19] used 20 ohms because we're looking at
+[18:21] the resistance value and that's the
+[18:23] value of the resistor so eight point two
+[18:25] eight times twenty so we'll just volley
+[18:27] that into the calculator again eight
+[18:29] point two eight times twenty is equal to
+[18:33] one hundred and sixty five point six so
+[18:36] we've got one hundred and sixty five
+[18:37] point six volts so that is the resistive
+[18:41] voltage so the voltage at this point
+[18:43] here is one hundred and sixty five point
+[18:46] six now we go one hundred and sixty five
+[18:50] point six volts and now actually we just
+[18:52] do the same thing again to find the
+[18:54] voltage across the inductor the load
+[18:56] across the inductor but instead of using
+[18:59] VR we're going to use VL so VL is equal
+[19:03] to I times bi and in this case we're not
+[19:07] going to use the value of R because
+[19:09] we're not worried now about the
+[19:11] opposition to current flow caused by the
+[19:13] resistor we're interested in the
+[19:15] opposition to current flow caused by the
+[19:16] inductive part of the circuit so we're
+[19:18] going to use the inductive reactance XL
+[19:22] which we calculated many many steps ago
+[19:25] so we've got I times XL so that becomes
+[19:28] eight point two eight multiplied by 21
+[19:34] in this case because that is the value
+[19:35] of the inductive reactance in this
+[19:38] circuit so eight point two eight times
+[19:40] twenty one so again we'll do that on the
+[19:42] calculator eight point two eight times
+[19:44] by twenty one is going to give us a
+[19:47] hundred and seventy-three point eight
+[19:49] so that's one hundred and
+[19:51] seventy-three point eight eight volts
+[19:54] now at this point the more eagle-eyed
+[19:56] among you will notice that that value
+[19:58] added to that value does not give you
+[20:01] the total voltage for the circuit and
+[20:03] that's because they are related to each
+[20:05] other again by Pythagoras now we don't
+[20:07] need to do anything with that
+[20:08] for the purposes of this question but
+[20:10] what we do need to do is just be aware
+[20:12] of that if you're not sure why they
+[20:14] don't add up to give the total voltage
+[20:15] then please go and watch another video
+[20:17] on this channel okay so now we can start
+[20:21] to think about part six of the question
+[20:23] and part six asks us to find the power
+[20:25] factor for the circuit v1 so we've got
+[20:28] part six and we want to think about what
+[20:30] the power factor is going to be now the
+[20:32] power factor in this case there's
+[20:33] several ways that we can calculate it
+[20:35] but we can calculate it from information
+[20:37] that we've already found in this
+[20:39] question so remember power factor is
+[20:41] equal to this side of the triangle
+[20:43] divided by this side of the triangle so
+[20:47] we've got in this case R divided by Z so
+[20:50] that's a very common way for calculating
+[20:52] power factor so the power factor is
+[20:55] equal to R divided by Z and our divided
+[20:58] by said in this case is going to give us
+[21:00] 20 divided by 29 so when we do 20
+[21:04] divided by 29 we'll get our answer so 20
+[21:07] divided by 29 gives us not point six
+[21:12] eight nine so we'll round that off if we
+[21:15] ran after three decimal places we're
+[21:17] going to end up with not point six nine
+[21:19] as an answer so the power factor in this
+[21:21] case the power factor is equal to naught
+[21:24] two point six nine now remember for
+[21:27] power factor we have no units it's just
+[21:30] a ratio of this side of the triangle to
+[21:33] this side of the triangle there's lots
+[21:34] of other triangles we could use for this
+[21:36] we could use the power triangle we could
+[21:37] use the voltage triangle but in this
+[21:39] case we've got this information we've
+[21:40] calculated it so that's the method we
+[21:42] use the question doesn't call for this
+[21:44] we could also figure out what the phase
+[21:45] angle is from that information we could
+[21:47] figure out what this angle is here which
+[21:49] represents how far out of phase the
+[21:50] voltage and current are but that's not
+[21:52] required for this question and finally
+[21:55] we've got part seven and part seven asks
+[21:57] us to find the true power of the circuit
+[22:00] so to find the true power of the
+[22:02] kit 4 part 7 we're going to perform the
+[22:06] following calculation so part 7 asks us
+[22:10] to find the true power so the true power
+[22:12] is equal to and we know that normally we
+[22:16] do voltage times current but in this
+[22:18] case we're going to do the volts times
+[22:21] by the amps and in this case we're
+[22:25] probably thinking about which voltage do
+[22:26] I used I've only got one current so that
+[22:28] should be pretty straightforward we're
+[22:29] going to do the resistive voltage so
+[22:33] that's the voltage across the resistor
+[22:34] times by the current because remember
+[22:36] the true power if we were to draw a
+[22:38] power triangle for this circuit the true
+[22:40] power would sit on this side which is
+[22:42] the same side as the resistive part of
+[22:45] the circuit so the true power is the
+[22:47] power that's taken by the resistive part
+[22:48] of the circuit so we're going to do in
+[22:51] this case we're going to do the
+[22:53] resistive voltage which we calculated
+[22:56] was one hundred and sixty five point six
+[22:57] so we've got hundred sixty five point
+[22:59] six times by the current flowing through
+[23:01] the circuit which we calculated as being
+[23:03] eight point two eight M so we times that
+[23:06] by eight point two eight and that's
+[23:08] going to give us our answer so we've got
+[23:10] 165 point six times by eight point two
+[23:14] eight and that gives us our total power
+[23:18] for the circuit is 1371 we could
+[23:22] continue to run off but I think in this
+[23:24] case were okay to do it to no decimal
+[23:26] places 1371 it's true power
+[23:29] so it's measured in watts so there we've
+[23:32] got our true power for the circuit and
+[23:35] that is actually all that this question
+[23:37] asks is to find there's lots of other
+[23:38] information we could take away from this
+[23:40] question lots of other things we could
+[23:41] find out about this circuit but that is
+[23:43] all that this question asks for so thank
+[23:46] you very much for watching and stay
+[23:48] tuned for question two
+[23:52] [Music]
+[24:05] [Music]
+[24:11] [Music]

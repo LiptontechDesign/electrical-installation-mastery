@@ -1,0 +1,502 @@
+# UK 3-Way Smart Dimmer Sonoff MINI-DIM Matter & No-Neutral Solution
+# https://www.youtube.com/watch?v=nEpOpzAzgFs
+
+[music] [music] [music] [music] >> Hello everyone. Welcome back to my project box. Now today I would like to take a look at this brand new little dimmer module from Sonoff. This is the Sonoff mini dim and it comes in two versions. It comes in a Zigbee version and a matter version and today we're going to take a look at the matter version. And what I'd like to do is wire this up to a traditional British lighting circuit. In particular, two or three-way lighting used over here in the UK. Now this will allow you to take your existing light switch and turn it into a smart dimmer. So we want to make two or three-way smart dim lighting using your existing light switches. Um now this does require a neutral to function. So you can't really put it by the light switch um over here in the UK because normally there's no neutral um behind a light switch in the UK unless you have a new build then they do tend to put the neutral there. But using the loop in wiring method which is traditionally used in the UK, it's quite simple really because we can put this up by the light fixture and it makes two or three-way lighting wiring really easy. So let's take a look at how we can do that and join me. It's going to be really simple. I'll guide you through it. No worries. Now the British loop in at the ceiling rose or three-plate system is quite simple really. The supply of live and neutral comes from the consumer unit and hops over from one ceiling rows to the next feeding the next ceiling rows. So, it's just junction boxes essentially carrying the power from one ceiling rows to the next. And then the live feed drops down to the switch and then comes back up as a switch live to switch the light bulb on and off. Now, we can connect the Sonoff Mini Dim to a single light switch, two two-way lighting, or even an intermediate switch with three-way lighting. It really doesn't matter. With this wiring method, it's dead simple. We can disconnect the black strapper wire. We simply don't need it for this application. Now, we need to replace the old light switches with retractive press switches, also called momentary switches. And you can get these from a local supplier like Toolstation or Screwfix, and they're no more expensive than a normal light switch. Let's bring in the Sonoff Mini Dim so we can wire it up to our ceiling rows junction box. Now, we can wire it up using a few short lengths of wire. So, we just need to give it a live and neutral supply, and we take our live supply from the loop in live terminal, and then and neutral supply from the neutral terminal. Now, we take the switch live out of its terminal and stick it directly into the S2 terminal on the Sonoff. And in its place, we hook up a wire and we stick it into the output terminal marked zero, which is the dim output. It really is that easy to wire up the Sonoff Mini Dim to a UK three-way light switch. And now you've got it fully dimmable and smart as well. Now, if you're wondering why we're replacing the switches with the push button style, it's because the old switches were simply turning the lights on and off, and we want the dimming function as well. In order to get the dimming function, it's kind of press and hold to dim up, and press and hold to dim down, and short press for on and off. So, using the push button style switches is the easiest and most convenient way to achieve fully dimmable three-way lighting with a Sonoff Mini Dim. It's worth remembering that if you have an intermediate switch, and when you remove it to replace it with a push button switch, the two strapper pairs need to be joined together. So, basically, the two gray ends go together, and the two brown ends go together to make a continuous parallel strapper line along all the switches. So, now I think we should um connect up the Sonoff Mini Dim to a working three-way lighting circuit. So, I've made up a demonstration board, so we can see how to wire it in for real. So, this is my mock-up of a British three-way lighting circuit complete with circuit breaker that is in the fuse board. And it's uh switch at the bottom of the stairs, switch in the middle landing, and switch at the top of the stairs. So, you have three places where you can turn the lights on and off. And this is the junction box that's inside the pendant light. So, here we have our loop in junction box. And this is our common neutral terminal, and our common live terminal called the loop in terminal, and this is the terminal for the switched live coming from the switch, which feeds the pendant light. And you have these little hooks here as a strain relief. So, when the bulb hangs and the lamp shade hangs, it doesn't directly pull on these terminals here. It It actually pulls on these hooks here. So, they're like strain relief hooks. And what we're going to be doing is we take our um Sonoff Mini Dim, and we're going to be wiring it up to these terminals here using some short lengths of flexible wire. So, at the moment we have these um normal on-off style switches. And this one is an intermediate switch, which is a little bit different. It crosses over the polarity. So, this one has four terminals. But, what we're going to do is is we're going to replace this simple on-off switch with a um retractive press, which is like a push button that releases each time you take your finger away. So, we're going to put three of these in parallel. So, first we're going to go to our consumer unit. And this is a 6-amp MCB, just like the one you might find in your consumer unit. And we're going to turn the power off to make it safe. And then we're going to replace all these switches with the the retractive press type. So, I'm going to remove these switches and replace it with the this type. Sonoff screwdriver. Thank you, Sonoff. So, now we're going to put in our push button switches. Because we're not going to use this black wire that goes across here. This is a continuous black wire going across. We'll just going to put a little um terminal block on it to make it safe. It's literally just left disconnected. The next thing we have to do is we have to make sure that these two go together in a switch. And these two go together in a switch. So, we have continuous strappers going across. So, basically the gray wire runs across continuously. And the brown wire runs across continuously. So, they're going to go together into our uh press switch. So, it's going to be um that one and that one. Next, um we have to make sure that our incoming uh live supply goes to the one wire. And the switch live out goes to the other wire. So, they stay together. They stay together. So, they're going to go into um this terminal and that terminal. So, we're going to be using that terminal and that terminal. I really wish they had the push-in connectors on the switches like they have in Europe. Right. So, if we turn the power back on, um what we have now is a temporary switch. Whereas, if you press it, the light is on. If you let go, the light is off. So, pretty useless, really. It's like playing a a really silly piano. Now, we can wire in the Sonoff Mini Dim using these little short lengths of stranded wire. They're nice and flexible. So, first we give it a live neutral supply. So, a live and neutral. And then we put our live into the live terminal. And then the neutral into the neutral terminal. We now have a live supply and a neutral supply. So, next what we want to do is connect our switch live from the light switch to S2. So, we take it out of its terminal. And we stick it straight into S2. And then the zero output, the dimmable output goes to here, which is for the light bulb. So, we now have a live supply and neutral supply. From our switch we have a switch input to S2. And the output from our zero terminal, which is dimmable goes to this terminal, which connects the light bulb. Now, the original cover won't fit now. But that's okay. We can use one of these covers. Um this is a European style pendant light cover. And this will fit over here comfortably. Now, if you can't get hold of these, you can get them um online from the usual suspects um like AliExpress or eBay um because they used throughout Europe and they normally come complete as a pendant set with a a screw bulb um style pendant. And they're not too expensive. Of course, you just want this bit, but you can use this as well to put your fancy um decorative screw type bulbs on. And this should fit over this nicely. So, this should fit over the whole lot perfectly. And you just have to tug on the cable and tighten the grub screw. >> [clears throat] >> Now, you have it nicely covered. Right, let's give it a test. Now, I know I'm probably stating the obvious here, but make sure you use an LED light bulb that's fully dimmable. So, top of the stairs, turn the lights off. Bottom of the stairs, turn the lights on. Lights off again. Lights on. And dim dim down. Now, they're on the lowest level. >> And now you have your traditional light switches fully smart and dimmable. Dimmer switch to minimum. Sure, setting the dimmer switch brightness to 5%. Dimmer switch to 50%. Sure, setting the dimmer switch brightness to 50%. Dimmer switch off. All right, turning the dimmer switch off. The camera really isn't doing this justice. It's not showing you the variation in brightness properly, but you get the general idea. Dimmer switch to 100%. Okay, setting the dimmer switch brightness to 100%. Dimmer switch to 30%. Okay, setting the dimmer switch brightness to 30%. Because different LED light bulbs have so much variation in their brightness, some calibration is required in the eWeLink app. This is quite normal from one LED light bulb to another to operate quite differently in their brightness curves. Dimmer switch to 100%. Sure, setting the dimmer switch brightness to 100%. Dimmer switch to minimum. Okay, setting the dimmer switch brightness to 5%. It's important in the settings to change to momentary switch type, otherwise the switch won't work properly. Now, you might be wondering why I said um you can turn your original light switch into a smart dimmer using the Sonoff Mini Dimmer. But, what I actually did was I replaced the light switches with this press type. Now, in reality, it is possible to convert this into the press type, and I'll show you how to do that. Because these two are basically identical. They look identical in every way. And there's only one small difference. Let me show you. I'll open them up so you can see. So, these two switches are identical in nearly every way apart from the fact that this one says press on it, and this one clicks up and down and releases, and this one stays in either position. They look exactly the same. But, the main difference really is the fact that um this one has a spring that makes it return. And this one simply has the spring omitted. There's the little retaining um pin that holds the spring and the bottom retaining pin that holds the spring. But, that's the only thing that makes this into But, that's the only thing that makes this into a retractive press switch. So, if you can't get hold of these, it's possible to take your existing switch, if you got one of these, and just put a spring in it. Now, unfortunately, I didn't have the right spring, and I couldn't get any of my springs to to work. But, I found quite a neat solution that works really well and is repeatable. I took some silicone sealant. There was a tube of mine where the silicone was all gone hard, and I cut this little triangle of soft silicone. And it can be any color. It can be clear, black, white, whatever. Like bathroom silicone sealant. And what you do is you simply wedge it underneath. And it kind of hooks in in the back there, and it won't go anywhere. Make sure it's nice and aligned. And now you have exactly the same thing. And silicone is very durable, and it retains its springiness basically forever. So, if you can't get the right switch, you can convert your existing light switch into a retractive press switch theoretically. And I have actually done this with my switches, because I don't like this press that it says in the front. So, I just made my own silicone spring for them and changed them all over. And it works great. These two work exactly the same now. Only difference is this one has a metal spring. And this one has a little silicone triangle spring. But once that spring's in there, it's not going anywhere. Cuz it's kind of held in place by that little plastic hook and the fact that it's triangular shaped and when you put it into its switch holding it can't go anywhere. It's kind of trapped in there. So that's a neat little hack to make your existing light switch into a retract press switch or push to make switch. Homemade silicone spring. And it works great. I've I've it's fully repeatable. I've made myself several of these little triangles and they don't have to be precise. Obviously the bigger you make it the more force the spring has. So yes, you can make your existing three-way light switches into fully smart dimmer switches. So is it worth doing? Well, that's entirely up to you. These are very cheap to buy but if you're like me and you like to hack with things and modify things then yeah, go ahead. It's really just a silicone spring. It's not going to do any harm to the switch. So it's not going to cause any electrical problems. So yeah, give it a try. The worst thing that could happen is the switch doesn't work. I think it's just cheaper to buy these switches. They cost nothing really. Yeah, so in conclusion, I'm so glad Sonoff finally brought out a matter Wi-Fi dimmer. I just like the idea of matter, you know, the fact that you don't have to rely on some server on the other side of the world to control your smart devices. Um and you know, it kind of future proofs it because if the company goes out of business or their app is no longer supported or you know, there's they their servers shut down for whatever reason, at least this can be controlled by any device locally or whatever, you know. Um and yes, the Zigbee version technically could be locally controlled as well. But I just like the idea of Wi-Fi only without, you know, having to deal with all the Zigbee hub and stuff. I think this is quite universal. Um so that's quite good and there's more and more devices on Matter nowadays and Sonoff is really sort of increasing their Matter range and the support for Matter. So that's about it for this video. If you would like to try the Sonoff mini dim for yourself, you can use my link in the description and use my coupon code to get a 10% discount. I think it's a neat little device and um it's well worth a try. So thanks for watching, guys, and I hope to see you guys in the next one. >> [music]
+
+
+[00:06] [music]
+[00:13] [music]
+[00:19] [music]
+[00:26] [music]
+[00:30] >> Hello everyone.
+[00:31] Welcome back to my project box.
+[00:33] Now today I would like to take a look at
+[00:35] this brand new little dimmer module from
+[00:37] Sonoff.
+[00:38] This is the Sonoff mini dim and it comes
+[00:41] in two versions. It comes in a Zigbee
+[00:43] version
+[00:45] and a matter version and today we're
+[00:47] going to take a look at the matter
+[00:48] version.
+[00:49] And what I'd like to do is wire this up
+[00:52] to a traditional British lighting
+[00:54] circuit. In particular, two or three-way
+[00:56] lighting used over here in the UK.
+[00:59] Now this will allow you to take your
+[01:01] existing light switch and turn it into a
+[01:04] smart dimmer. So we want to make
+[01:06] two or three-way smart dim lighting
+[01:09] using your existing light switches.
+[01:12] Um now this does require a neutral to
+[01:15] function. So you can't really put it by
+[01:18] the light switch um over here in the UK
+[01:20] because normally there's no neutral um
+[01:22] behind a light switch in the UK unless
+[01:25] you have a new build then they do tend
+[01:26] to put the neutral there.
+[01:28] But using the loop in wiring method
+[01:30] which is traditionally used in the UK,
+[01:32] it's quite simple really because we can
+[01:34] put this up by the light fixture and it
+[01:35] makes two or three-way lighting wiring
+[01:38] really easy. So
+[01:40] let's take a look at how we can do that
+[01:41] and join me. It's going to be really
+[01:43] simple. I'll guide you through it. No
+[01:45] worries.
+[01:48] Now the British loop in at the ceiling
+[01:50] rose or three-plate system
+[01:52] is quite simple really.
+[01:54] The supply of live and neutral comes
+[01:56] from the consumer unit and hops over
+[01:58] from one ceiling rows to the next
+[02:00] feeding the next ceiling rows. So, it's
+[02:03] just junction boxes essentially carrying
+[02:05] the power from one ceiling rows to the
+[02:06] next.
+[02:07] And then the live feed drops down to the
+[02:09] switch and then comes back up as a
+[02:11] switch live to switch the light bulb on
+[02:13] and off.
+[02:14] Now, we can connect the Sonoff Mini Dim
+[02:16] to a single light switch,
+[02:18] two two-way lighting,
+[02:21] or even an intermediate switch with
+[02:23] three-way lighting. It really doesn't
+[02:25] matter. With this wiring method, it's
+[02:27] dead simple. We can disconnect the black
+[02:29] strapper wire. We simply don't need it
+[02:31] for this application. Now, we need to
+[02:33] replace the old light switches with
+[02:36] retractive press switches, also called
+[02:38] momentary switches. And you can get
+[02:40] these from a local supplier like
+[02:42] Toolstation or Screwfix, and they're no
+[02:44] more expensive than a normal light
+[02:46] switch.
+[02:48] Let's bring in the Sonoff Mini Dim so we
+[02:50] can wire it up to our ceiling rows
+[02:52] junction box. Now, we can wire it up
+[02:54] using a few short lengths of wire.
+[02:57] So, we just need to give it a live and
+[02:58] neutral supply, and we take our live
+[03:00] supply from the loop in live terminal,
+[03:04] and then and neutral supply from the
+[03:06] neutral terminal.
+[03:07] Now, we take the switch live out of its
+[03:09] terminal
+[03:10] and stick it directly into the S2
+[03:13] terminal on the Sonoff. And in its
+[03:15] place, we hook up a wire
+[03:17] and we stick it into the output terminal
+[03:19] marked zero, which is the dim output.
+[03:22] It really is that easy to wire up the
+[03:24] Sonoff Mini Dim to a UK three-way light
+[03:27] switch. And now you've got it fully
+[03:29] dimmable and smart as well.
+[03:32] Now, if you're wondering why we're
+[03:33] replacing the switches with the push
+[03:35] button style, it's because
+[03:37] the old switches were simply turning the
+[03:39] lights on and off, and we want the
+[03:41] dimming function as well. In order to
+[03:43] get the dimming function, it's kind of
+[03:45] press and hold to dim up, and press and
+[03:48] hold to dim down, and short press for on
+[03:51] and off. So, using the push button style
+[03:53] switches is the easiest and most
+[03:55] convenient way to achieve fully dimmable
+[03:58] three-way lighting with a Sonoff Mini
+[04:00] Dim.
+[04:01] It's worth remembering that if you have
+[04:02] an intermediate switch, and when you
+[04:05] remove it to replace it with a push
+[04:06] button switch, the two strapper pairs
+[04:09] need to be joined together. So,
+[04:10] basically, the two gray ends go
+[04:12] together, and the two brown ends go
+[04:14] together to make a continuous parallel
+[04:17] strapper line along all the switches.
+[04:20] So, now I think we should um connect up
+[04:22] the Sonoff Mini Dim to a working
+[04:25] three-way lighting circuit. So, I've
+[04:27] made up a demonstration board, so we can
+[04:29] see how to wire it in for real.
+[04:32] So, this is my mock-up of a British
+[04:35] three-way lighting circuit complete with
+[04:37] circuit breaker that is in the fuse
+[04:39] board.
+[04:41] And it's uh switch at the bottom of the
+[04:44] stairs, switch in the middle landing,
+[04:46] and switch at the top of the stairs. So,
+[04:48] you have three places where you can turn
+[04:51] the lights on and off.
+[04:53] And this is the junction box that's
+[04:56] inside the pendant light.
+[05:02] So, here we have our loop in junction
+[05:04] box.
+[05:05] And this is our common neutral terminal,
+[05:08] and our common live terminal called the
+[05:09] loop in terminal,
+[05:11] and this is the terminal for the
+[05:13] switched live coming from the switch,
+[05:15] which feeds the
+[05:17] pendant light.
+[05:19] And you have these little hooks here as
+[05:21] a strain relief. So, when the bulb hangs
+[05:23] and the lamp shade hangs, it doesn't
+[05:25] directly pull
+[05:27] on these terminals here. It It actually
+[05:29] pulls on these hooks here. So, they're
+[05:31] like strain relief hooks.
+[05:33] And what we're going to be doing is we
+[05:34] take our um Sonoff Mini Dim, and we're
+[05:38] going to be wiring it up to these
+[05:39] terminals here
+[05:41] using some short lengths of flexible
+[05:44] wire.
+[05:48] So, at the moment we have these um
+[05:50] normal on-off style switches.
+[05:54] And this one is an intermediate switch,
+[05:56] which is a little bit different. It
+[05:57] crosses over
+[05:59] the polarity.
+[06:01] So, this one has four terminals.
+[06:05] But, what we're going to do is is we're
+[06:06] going to replace this simple on-off
+[06:07] switch
+[06:09] with a um
+[06:11] retractive press, which is like a push
+[06:13] button
+[06:14] that releases each time you take your
+[06:16] finger away.
+[06:18] So, we're going to put three of these in
+[06:19] parallel.
+[06:21] So, first we're going to go to our
+[06:23] consumer unit.
+[06:25] And this is a 6-amp MCB, just like the
+[06:27] one you might find in your consumer
+[06:29] unit.
+[06:30] And we're going to turn the power off to
+[06:31] make it safe.
+[06:32] And then we're going to replace all
+[06:34] these switches with the the retractive
+[06:36] press type.
+[06:39] So, I'm going to remove these switches
+[06:41] and replace it with the this type.
+[06:52] Sonoff screwdriver. Thank you, Sonoff.
+[07:10] So, now we're going to put in our
+[07:12] push button switches.
+[07:15] Because we're not going to use this
+[07:16] black wire that goes across here.
+[07:18] This is a continuous black wire going
+[07:20] across.
+[07:22] We'll just going to put a little um
+[07:24] terminal block on it to make it safe.
+[07:28] It's literally just left disconnected.
+[07:36] The next thing we have to do
+[07:37] is we have to make sure that
+[07:40] these two go together in a switch.
+[07:42] And these two go together in a switch.
+[07:44] So, we have continuous strappers going
+[07:46] across.
+[07:48] So, basically the gray wire runs across
+[07:50] continuously.
+[07:52] And the brown wire runs across
+[07:54] continuously.
+[07:57] So, they're going to go together into
+[07:58] our uh press switch.
+[08:01] So, it's going to be um
+[08:04] that one and that one.
+[08:10] Next, um
+[08:11] we have to make sure that our incoming
+[08:14] uh live supply goes to the one wire.
+[08:18] And the switch live out goes to the
+[08:20] other wire. So, they stay together. They
+[08:22] stay together. So, they're going to go
+[08:23] into
+[08:24] um
+[08:25] this terminal and that terminal.
+[08:38] So, we're going to be using that
+[08:40] terminal and that terminal.
+[08:49] I really wish they had
+[08:51] the push-in connectors on the switches
+[08:53] like they have in Europe.
+[09:13] Right. So, if we turn the power back on,
+[09:16] um what we have now is a temporary
+[09:19] switch. Whereas, if you press it, the
+[09:21] light is on. If you let go, the light is
+[09:23] off.
+[09:24] So,
+[09:25] pretty useless, really. It's like
+[09:27] playing a
+[09:29] a really silly piano.
+[09:32] Now, we can wire in the Sonoff Mini Dim
+[09:35] using these little short lengths of
+[09:37] stranded wire.
+[09:39] They're nice and flexible.
+[09:41] So, first we give it a live neutral
+[09:43] supply. So,
+[09:45] a live
+[09:49] and neutral.
+[09:56] And then we put our
+[09:58] live into the live terminal.
+[10:08] And then the neutral into the neutral
+[10:09] terminal.
+[10:16] We now have a live supply
+[10:19] and a neutral supply.
+[10:21] So, next what we want to do is connect
+[10:25] our switch live from the light switch
+[10:28] to S2.
+[10:29] So, we take it out of its terminal.
+[10:35] And we stick it straight into S2.
+[10:42] And then the zero output, the dimmable
+[10:44] output
+[10:45] goes to here, which is for the light
+[10:48] bulb.
+[11:09] So, we now have
+[11:11] a live supply
+[11:12] and neutral supply.
+[11:16] From our switch we have a switch input
+[11:18] to S2.
+[11:20] And the output from our zero terminal,
+[11:23] which is dimmable
+[11:25] goes to this terminal, which connects
+[11:27] the light bulb.
+[11:28] Now, the original cover
+[11:32] won't fit now.
+[11:33] But that's okay. We can use one of these
+[11:35] covers. Um
+[11:37] this is a European style pendant light
+[11:39] cover.
+[11:41] And this will fit over here comfortably.
+[11:44] Now, if you can't get hold of these, you
+[11:46] can get them um online from the usual
+[11:49] suspects um like AliExpress or eBay
+[11:52] um
+[11:53] because they used throughout Europe and
+[11:56] they normally come complete as a pendant
+[11:58] set with a a screw bulb um style
+[12:03] pendant.
+[12:04] And they're not too expensive. Of
+[12:06] course, you just want this bit, but you
+[12:07] can use this as well to put your fancy
+[12:09] um
+[12:10] decorative screw type bulbs on.
+[12:13] And this should fit over this nicely.
+[12:24] So, this should fit over the whole lot
+[12:26] perfectly.
+[12:28] And you just have to
+[12:30] tug on the cable
+[12:32] and tighten the grub screw.
+[12:33] >> [clears throat]
+[12:36] >> Now, you have it nicely covered.
+[12:40] Right, let's give it a test.
+[12:43] Now, I know I'm probably stating the
+[12:44] obvious here, but make sure you use an
+[12:46] LED light bulb that's fully dimmable.
+[12:52] So, top of the stairs,
+[12:55] turn the lights off.
+[12:57] Bottom of the stairs, turn the lights
+[12:59] on.
+[13:04] Lights off again.
+[13:08] Lights on.
+[13:11] And dim dim down.
+[13:16] Now, they're on the lowest level.
+[13:45] >> And now you have your traditional light
+[13:47] switches
+[13:48] fully smart and dimmable.
+[13:56] Dimmer switch to minimum.
+[14:00] Sure, setting the dimmer switch
+[14:02] brightness to 5%.
+[14:05] Dimmer switch to 50%.
+[14:10] Sure, setting the dimmer switch
+[14:12] brightness to 50%.
+[14:14] Dimmer switch off.
+[14:18] All right, turning the dimmer switch
+[14:20] off.
+[14:21] The camera really isn't doing this
+[14:23] justice. It's not showing you the
+[14:25] variation in brightness properly, but
+[14:27] you get the general idea.
+[14:31] Dimmer switch to 100%.
+[14:36] Okay, setting the dimmer switch
+[14:38] brightness to 100%.
+[14:40] Dimmer switch to 30%.
+[14:45] Okay, setting the dimmer switch
+[14:46] brightness to 30%.
+[14:49] Because different LED light bulbs have
+[14:51] so much variation in their brightness,
+[14:54] some calibration is required in the
+[14:56] eWeLink app. This is quite normal from
+[14:59] one LED light bulb to another to operate
+[15:01] quite differently in their brightness
+[15:03] curves.
+[15:04] Dimmer switch to 100%.
+[15:08] Sure, setting the dimmer switch
+[15:10] brightness to 100%.
+[15:13] Dimmer switch to minimum.
+[15:17] Okay, setting the dimmer switch
+[15:19] brightness to 5%.
+[15:21] It's important in the settings to change
+[15:23] to momentary switch type, otherwise the
+[15:26] switch won't work properly.
+[15:27] Now, you might be wondering why I said
+[15:30] um you can turn your original light
+[15:33] switch into a smart dimmer
+[15:35] using the Sonoff Mini Dimmer.
+[15:38] But, what I actually did was I replaced
+[15:40] the light switches with this press type.
+[15:44] Now, in reality, it is possible to
+[15:47] convert this into the press type, and
+[15:49] I'll show you how to do that. Because
+[15:51] these two are basically identical. They
+[15:54] look identical in every way.
+[15:56] And there's only one small difference.
+[15:58] Let me show you. I'll open them up so
+[15:59] you can see.
+[16:10] So, these two switches are identical in
+[16:12] nearly every way
+[16:14] apart from the fact that this one says
+[16:16] press on it, and this one
+[16:18] clicks up and down and releases, and
+[16:21] this one stays in either position.
+[16:23] They look exactly the same.
+[16:29] But, the main difference really
+[16:31] is the fact that um
+[16:33] this one has a spring
+[16:36] that makes it return.
+[16:40] And this one simply has the spring
+[16:42] omitted. There's the little retaining um
+[16:44] pin that holds the spring
+[16:47] and the bottom retaining pin that holds
+[16:48] the spring.
+[16:51] But, that's the only thing that makes
+[16:52] this into
+[16:55] But, that's the only thing that makes
+[16:56] this into a retractive press switch.
+[17:00] So, if you can't get hold of these, it's
+[17:02] possible to take your existing switch,
+[17:04] if you got one of these,
+[17:06] and just put a spring in it.
+[17:09] Now, unfortunately, I didn't have the
+[17:10] right spring, and I couldn't get any of
+[17:12] my springs to to work.
+[17:14] But, I found quite a neat solution that
+[17:16] works really well and
+[17:18] is repeatable.
+[17:21] I took some silicone sealant. There was
+[17:23] a tube of mine where the silicone was
+[17:26] all gone hard, and I cut this little
+[17:28] triangle of soft silicone.
+[17:32] And it can be any color. It can be
+[17:33] clear, black, white, whatever. Like
+[17:36] bathroom silicone sealant.
+[17:38] And what you do is you simply
+[17:40] wedge it underneath.
+[17:53] And it kind of hooks in in the back
+[17:54] there, and it won't go anywhere.
+[17:57] Make sure it's nice and aligned.
+[18:05] And now
+[18:07] you have exactly the same thing.
+[18:09] And silicone is very durable, and it
+[18:10] retains its springiness basically
+[18:12] forever.
+[18:14] So, if you can't get the right switch,
+[18:17] you can convert your existing light
+[18:19] switch into a retractive press switch
+[18:23] theoretically.
+[18:25] And I have actually done this with my
+[18:26] switches, because I don't like this
+[18:27] press that it says in the front.
+[18:30] So, I just made my own silicone spring
+[18:32] for them
+[18:34] and changed them all over.
+[18:36] And it works great.
+[18:40] These two work exactly the same now.
+[18:54] Only difference is this one has a metal
+[18:55] spring.
+[18:59] And this one has
+[19:01] a little silicone triangle spring.
+[19:03] But once that spring's in there, it's
+[19:05] not going anywhere.
+[19:06] Cuz it's kind of held in place by that
+[19:09] little plastic hook
+[19:11] and the fact that it's triangular shaped
+[19:14] and when you put it into its switch
+[19:16] holding it can't go anywhere. It's kind
+[19:18] of trapped in there.
+[19:24] So that's a neat little hack to make
+[19:26] your existing light switch into a
+[19:28] retract press switch or push to make
+[19:30] switch.
+[19:32] Homemade silicone spring.
+[19:35] And it works great. I've I've it's fully
+[19:38] repeatable.
+[19:40] I've made myself several of these little
+[19:42] triangles
+[19:44] and they don't have to be precise.
+[19:45] Obviously the bigger you make it
+[19:48] the more force the spring has.
+[19:50] So yes, you can make your existing
+[19:53] three-way light switches into fully
+[19:55] smart dimmer switches.
+[19:58] So is it worth doing?
+[20:02] Well,
+[20:03] that's entirely up to you. These are
+[20:05] very cheap to buy
+[20:07] but if you're like me and you like to
+[20:08] hack with things and modify things then
+[20:10] yeah, go ahead.
+[20:12] It's really just a silicone spring. It's
+[20:15] not going to do any harm to the switch.
+[20:17] So it's not going to cause any
+[20:19] electrical problems.
+[20:21] So yeah, give it a try.
+[20:25] The worst thing that could happen is the
+[20:26] switch doesn't work.
+[20:28] I think it's just
+[20:30] cheaper to buy
+[20:31] these switches.
+[20:33] They cost nothing really.
+[20:38] Yeah, so in conclusion,
+[20:41] I'm so glad Sonoff finally brought out a
+[20:44] matter Wi-Fi dimmer.
+[20:46] I just like the idea of matter, you
+[20:48] know, the fact that you don't have to
+[20:49] rely
+[20:50] on some server on the other side of the
+[20:52] world to control your smart devices.
+[20:55] Um and you know, it kind of future
+[20:57] proofs it because
+[20:58] if the company goes out of business
+[21:01] or their app is no longer supported or
+[21:04] you know, there's they their servers
+[21:06] shut down for whatever reason, at least
+[21:08] this can be controlled by any device
+[21:11] locally or whatever, you know.
+[21:13] Um and yes, the Zigbee version
+[21:15] technically
+[21:17] could be locally controlled as well.
+[21:19] But I just like the idea of Wi-Fi only
+[21:21] without, you know, having to deal with
+[21:23] all the Zigbee hub and stuff.
+[21:26] I think this is quite universal.
+[21:28] Um so that's quite good and there's more
+[21:30] and more devices on Matter nowadays and
+[21:32] Sonoff is really sort of increasing
+[21:34] their Matter range and the support for
+[21:36] Matter.
+[21:39] So that's about it for this video. If
+[21:41] you would like to try the Sonoff mini
+[21:43] dim for yourself, you can use my link in
+[21:45] the description
+[21:46] and use my coupon code to get a 10%
+[21:49] discount.
+[21:51] I think it's a neat little device
+[21:53] and um
+[21:54] it's well worth a try.
+[21:57] So thanks for watching, guys, and I hope
+[22:00] to see you guys in the next one.
+[22:10] >> [music]

@@ -1,0 +1,1741 @@
+# CAT and Genny Training Webinar: Signal Application — How to Get the Best Out of Your Genny4
+# https://www.youtube.com/watch?v=ghlb9u8YTIk
+
+Let's get this fired up. Here we go. So, with a transmitter, there are two main ways of using it. Okay, two main ways. We can break them down further, but the two main ways are connection and induction. Connection is, as it says, is when we're hooking it up to something, typically using our direct connection leads or or a signal clamp or or a plug-in adapter. But it connection is when we're putting something in the port of the Jenny. Okay, we're sticking something in. Induction is when we just use the box on its own. And that's where you may have seen it being used where we just sit the box on top of something. Okay, we can break that down further into into these four little scenarios. Connection, clamp, plug connector, and induction. Okay, one of the main ways that we use it, one of the things that we uh teach people guys is that we always start with the Jenny. Okay, so obviously you're going to check your plans, you're going to do your visual check and everything else, but in terms of operating modes, start with the Jenny first and let's go for known services. One of the terms that I sometimes get frustrated with is this talk all the time about cable avoidance. And I think we need to be talking more about um uh cable location. We can't avoid something until we've located it. And that's the mindset I think we should have on site is is we're not just going to do a passive scan and see if there's a signal there. We're going to actively go out and and and look for these cables and find. So with the direct connection at the top guys, just just to explain how this works for anybody that's new to it. In fact, on that subject, let me just check this poll just to see experience. Yeah, 84% trained, 15% not. Okay. So, if you look at this picture on the top left hand side, uh we have our transmitter here, our Jenny, and we've hooked up to this valve on this metal pipe. We've placed an earth in the ground. And and in very simple terms, what's happening is we're creating an electrical circuit which then gives off a magnetic field that we can detect and it's kind of doing this. So, it's coming down here and then it's returning through here. Okay. I'm going to keep my drawings very simple today. But what you do need to understand a little bit is that we when I draw these pictures and diagrams out, we talk about the signal going in one direction. the truth is it's an AC signal. So it's actually going in both in both directions. It's going backwards and forwards. Okay. But just for easy diagrams and explanations, we draw it going one way. But as I said, it's kind of going, you know, backwards and forwards on that. Okay. So that's how how we typically use direct connection. We've then got the signal clamp, which is what we put to put it around an exposed cable, maybe an exposed cable in a in a tri hole or in a chamber, that kind of stuff. Plug connected down here to go in a domestic socket. Um, don't use that as often as people used to. And then we got the induction method. Okay, guys. Um, bit is it all making sense so far? everyone following me? I always worry when the chat goes quiet. The one of the biggest problems with doing webinars is I can't see your faces. So, I don't know whether you're looking confused, interested, or asleep. So, I'll just jump in now and again and ask you for a bit of feedback. I've just got somebody that can't get in the room, guys. Just give me one second. Let me see if I can get them in because it is the last one of these today. So, I don't want to make sure if somebody wants to get in, they can jump on it. Send somebody a direct link to jump straight in. Sorry. Great stuff, guys. Right. So, let's move on then. So, the [clears throat] the the first method we're going to use is is is connection. And this is where we're going to start talking a bit about the methodology that we're going to do. I'm a great believer in doing street lighting first. I think it's it's it's good that we should get people into into the habit, if you like, of working through a methodical process when we're trying to find buried utilities. I think it's a really good habit to get into that we start with a street lighting and and there is a reason behind that and and it's about time. So, let me just expand on a couple of things, guys. We're going to use our journey to trace the street lighting and in remember guys, this is UK based. If you if you're tuning in from overseas, just bear that in mind. We're talking about UK networks, but there will be similarities. The street lighting works in one of two ways in the UK typically. It's a TED off system um or it's a loop in loop out system as you can see on the diagram there. So TED system at the bottom first of all that simply means is that the same LV main cable in the street that feeds the houses. We have branches coming off to each of the properties. It also feeds the lighting as well. So it's teed off the LV main to feed the lighting columns. Okay. And the top one is what we call a loopin loop out system. And this is typically where we have a dedicated street light cable that kind of comes in and out like this. Okay, the two systems. Sometimes you don't know till you get to site which one of the which one it is. Sometimes the plans will give you a clue. Not always. Sometimes you just don't know until you get there and start locating stuff. All right. So, let me just go back to that same point of why are we doing it first? Imagine this is just a very basic typical street scene. Uh we we arrive at this site and we've got an excavation to do and the thought process should be. We know we've got a main LV. We know we've got three house services. We know we've got lighting cables. We need to find them. As I said before, guys, what we don't do is just start, you know, doing power and radio scans. We're going to go and actively find these. So, so with that in mind, what I want to do now is is locate all these cables with my transmitter. And what I could do is hook my Jenny up to each of these buildings to to apply a signal down to these in turn. So I'm doing, you know, one, two, three. That locates this. And that could take me about 20 minutes to do that. After I've done that, [clears throat] I then hook up to my lighting column. And what I suddenly realize now is that because it's a TED system, the signal goes down here, it goes up here, and they even pick up these. So, what have I just done there, guys? Just wasted 20 minutes. If I'd done the lighting column in the first place, I'd have found all that. So, I'm just trying to save a little bit of time. Now, guys, I want to be clear. Even if it's a T system, you might not find all that. Okay? Sometimes you'll click on that column, you'll only find the lighting. Sometimes you'll click on the column, you'll get the tail under the LV, and you won't pick up the house services. But my point is let's first of all see what we can detect off that column and it might just um make life a bit easier for us. Might save us a little bit of time. Does that make sense to everyone guys? Okay, are you with me on that? And that's why we generally typically do do lighting first. Okay. Right. So, we've talked about our first step. Let's now look at it in a bit bit of detail now of of of how we actually do it, guys. So, this is this is us hooking up to our lamp column meter. So, for anyone that doesn't know guys, very straightforwardly, we get the transmitter, we hook it on, and we and we earth it. One of the things that I've not got time to go into in a great deal of detail on these sessions is the new Gen 4 series. Now, they actually send out two frequencies. Okay? So, that Jenny is kicking out 33 kHz and 131 kHz simultaneously. And when you put your cat on Jenny mode, um the best way to describe it is when you've got it turned up quite high, you'll often hear both frequencies. And then when you turn it down, you hear whichever one's coming through the best. If you guys have been using CAT 4 on Jenny mode, you you might have noticed that sometimes you hear different noises, different tones, and it's all to do with these these simultaneous dual frequencies. What the 131 kHz allows us to do is because it's high frequency, it jumps gaps. So, some of you might have seen little tricks where you can wrap it around the pole and things like that. If anybody's seen that before, you seen that before, guys? Wrapping it around. So, it's quite a new technique this and the industry kind of went a bit mad with it. But I will say that on a metal column, it's better to connect. Okay. Is anyone else's screen frozen? Rachel, if you can hear me and your screen's frozen, try reconnecting. Is everybody else still still there? Okay. So, so just to summarize guys, yes, wrapping it around works, but if you have got a metal column, connect on. I tend to use wraparound techniques more for like concrete columns and stuff like that. And even then, sometimes you might struggle. Okay, so that's how we actually hook up to a column. We're hooked up here and we've got our pin in. Now, I want to ask you a question, guys. It's always very interesting asking this question on training courses. Where do you put the earth? So, we've hooked up to the column. Where do we put this? How far away does it go? What angle does it go at? Does it actually matter? Do we just stick it in the ground? Give me some thoughts on the Earth, guys. And and I said, the reason it's interesting is when I ask this question, I I get loads of different answers. There doesn't seem to be any consistency um on where this goes. What's your thoughts on it? So what what I want to just while you're answering that guys, what I want to talk to you about actually is there kind of is no correct position as such, but what I think we're missing um a lot out there is is understanding of what effect it has. Okay. It does different things depending on where you put it and we need to take these into consideration when we're when we're hooking up. Yeah. I think you're cheating, David. I I'm sure you've been on the call with me before. Let's look at a few examples. See if we got any more answers coming in away. Mixture of stuff there coming through, guys. Okay, let me just show you a couple of things then guys. So, um, by the way guys, my drawing's a bit crap, so just bear with me while I draw you some of these diagrams out. If we look at um, a lighting column, so this is a plan view looking from above and imagine looking down um, and we've got our lighting column here. If we get our Jenny and we hook up and we put it quite far away, let's say two or three meters away. So, this is the Earth wire. Now, I'm I'm pretty sure that you would all agree, wouldn't you, that this earth wire is giving off a massive signal. Yeah. Agree with that? So, in other words, what what effect what this means in the real world is that I can't go here with my locator. If I go in that area with my locator, I'm going to pick up the earth wire, not the cable. If the lighting cable happens to be in that area, I'm not going to be able to pick it up properly. So, what this means in turn is I have to move further away from the column. So instead of doing that, consider this. That's our lighting column. We get the Jenny. We hook up and we put the Earth really close. Everything's tight to the column now. Everything's really, really close. And I can now do a nice tight circle around that with my locator. And it doesn't matter which way that cables goes, I can still locate it. People often ask me, how close to a column can you work to, guys? It It's more about where's your Earth? Yeah. Have you got that stretched out miles away and it's and it's interfering with what you're doing? so put it nice and close on the column. Okay, that make sense guys? Happy with that? There are reasons for moving it further away and we will cover them later, guys. But for now, just consider that. And the al thing I want to touch on, guys, is we're still using like old habits from years ago. The anyone remembers the old handbag jennies? the the old the older Jenny's you did have to move it right out at 90 degrees to get a signal but you don't these modern jennies are fantastic. Jenny 4 is a cracking jenny. Okay, you don't need to do it with these now. You'll get buckets of signal uh down that lighting cable just by putting it close like that. Okay, you don't have to go far away and then you can work really tight in there as well with that lighting column. Okay, so hopefully you're okay with that. The other thing that I want to start discussing with you now and we do go off on tangents here guys because um we need to look at each step of this but we're going to talk about how far a Jenny signal will travel. So again I'll throw that question to you guys. How far will the Jenny signal go? Now you guys using high-end kit frequency difference make will affect that. But think about single frequency. Now think about only having one frequency to choose from. What else would affect how far your Jenny signal travels down something? Just one more point while you answer that question, guys. If you can't get the pin in the ground, if you're on tarmac or concrete, you can earth it with some water. So, this example here, just stick the pin on the floor and um and pour some water on it. [bell] It doesn't have to be sparkling water. Any liquid will do. I'll let you use your imagination on what type of liquids have been used in the past. Okay, so we start again. So, we're still on that same question, guys. The answers haven't come through yet. The problem, we've got so many on today, the delay is a little bit worse, I think. But, um, anyway, I'm going to move on. Before we start answering that question of how far that Jenny signal will travel, we need to start understanding a few more basic elements first about about what that signal is doing and where it's going and why. So I want to give you a few examples here guys. We've we've hooked up to this column now and we've put we've put our earth in. Okay, we're again we're going to keep this very very basic now guys. So these figures will not be exactly scientifically correct. It's just an easy way of understanding it. But if we look at the signal on this cable, let's say we have 100%. Just for easy maths. Okay? And what I mean by that is if we had two cables coming out of the lamp column, 50/50. Okay? So hopefully you're with me on that. All right? So this this 100% now is going to come down here. It's going to hit this. Okay? And what's it going to do here, guys? So 100% has hit this. What's going to happen now? I know there's a few pauses because of the questions, but I think it's important we we keep this interactive as I said. So, I'll just deal with the delay a little bit. What's going to happen down here? Okay. The signal is going to split, isn't it? Okay. It's going to go both ways along that cable. What we have to now consider though is how much will it split? Will it go 50/50? Okay. And all this now depends on what we call the path of least resistance basically. So so somebody said said 50/50. Okay, that signal is trying to get back to the earth. Okay, so now let's just backtrack. Again, we're still talking about how far a Jenny signal will travel. Okay, let's just backtrack a little bit now and look at the difference between tracing a pipe and tracing a cable. You might be able to relate to this in the real world, guys. When you put signal onto that cable, it is an insulated cable. So effectively what that signal is trying to do, remember this guys, that signal is trying to get from A to B. That's the best way to understand it. All right? So that signal is coming down this insulated cable. The cable's insulated, remember? So it needs to get off the cable. It needs a contact with ground to get off. So what it's actually looking for is an earth. Yeah. Exact spot on. Yeah. So, just imagine this. It's going to come down here, down here, up into there. That electric cable is bonded to the metal pipes underneath and comes down and it comes back. Does that make sense, guys? Again. All right. So, it's it's kind of got to run down it, you know, to the next lamp column or or a point in the ground. Now, consider this. What if that was a metal pipe? What is the difference? Well, a metal pipe, most metal pipes anyway, not all, um, are in contact with ground, aren't they? there's no insulation on them. So if that was a metal pipe, that signal is going to travel along it, but all the time it can leak off and come back. So, so to translate that to real world tracing, what you tend to find is that when you're tracing a pipe, as you walk along the pipe, the signal's dying off very rapidly. You've got to keep compensating for that by by turning your sensitivity control up. When you're tracing a cable, you you tend to find it's much more constant. One of the things that come up as well was from Joe, the condition of the LV main. Absolutely. Yeah. You sometimes find with these old mains where the the insulation's a bit corroded and stuff, it leaks off much quicker. Yeah. It's a bit more like a pipe. Does that make sense, Joe? I think that's what you're referring to on that. Okay. Yeah. And sometimes it's not just a case of of jumping, Zach. It's just coming back down something else. Um so so so think about um return paths. Yeah, that signal is getting back to here. If there's something else going this way that's a conductor, it will travel down that as a path of least resistance. Yeah. So that's why we can get um um signals kind of jumping if you like, you know. And also don't forget guys what it can also do here. Let me let me show you this. Yeah. Think about this one. So that signal is going to come down here, up here, into that house, down on the metal pipe, back out on the metal pipe, and down the metal pipe. Yeah, that can happen. Does happen generally. Generally, it's much weaker though. Yeah, especially because the pipe's deeper as well, typically. Okay. All right. Also, back to what said about pipes, guys. Bigger pipe, the the harder it is to get distance down it. Can you see that? Because you've got more surface area in contact with ground, so it leaks off quicker. So, have you experienced that before, guys? Have you have you ever noticed the difference between tracing a pipe, tracing a cable, and it's down to the the insulation. And if anybody's ever traced a high pressure gas pipe, trace it for for a considerable distance. So that kind of is um contradicts my argument. Yeah. But there's a difference because a high pressure gas pipe is insulated. It's coated. You see? So we go further. Okay. Is everyone with me so far, guys? Yeah. Let me know I'm making sense and I'll move on. So, so we've talked about pipes and cables. Yeah. Now, let's go back to our signal splitting now. Talk about that a little bit. So, if you remember what we had, we had this signal coming down here. Now, remember this is back on this insulated cable now, isn't it? Yeah. It gets to here. What's it going to do? It's going to split, but as we said, might not be 50/50. It's going to go where the better earth is. So, let's say, for example, we have a substation down here. Substation's got a massive earth mat underneath it. Which way is it want to go? Which way is it want it going to want want to go? It's want it's going to want to go left. So, what we might find here is we've got 7030. I don't want to over complicate it, but I'm just trying to be clear not to expect 50/50. There's um just outside our office here, there's a substation near some terrace houses. You hook your Jenny up to those terrorist houses and all of your signal, 100% of that signal goes towards a sub. It's very, very hard to get signal to go back up the other way. Okay. Okay. So, we're going to use 50/50 as an example, guys. And and and and the other thing on this, guys, it's always a fine line with with these sessions. I'm trying to share with you as much as I can, but not make it too technical and boring. It's very important, I think, that the guys on the ground understand this because if I follow this up here, let me let me let me just kind of show you. If I follow this up here and it takes me around here. Yeah, that's my trace line if you like. But when I get to this point here, can you see where I'm drawing the X? When when I kind of get around this corner, I notice that my signal has dropped. I've lost signal. What does that tell me? It tells me that even though the big signal, if you like, is taking me around to the left, even though that's the route I followed, because I've lost a little bit of signal there, where's that signal gone? And that then sets alarm bells off actually. Is it a bend or is it a Tjunction? Do you see what I mean? Has it has it come off somewhere? And and that's why I'm a massive fan of of manual gain and manual sensitivity and stuff. I think we can see a lot more when we're using that. So, so anyway, um oops, sorry. [clears throat] Let me go back to this. I will get there in a minute, guys, with this signal splitting. We will we will get back to that. So, we've got down here. And guys, we're going to use 50/50 as as an example. Um, so 50's gone that way and 50's gone that way. So, that 50 is going to go up here. And then what's it going to do here, guys? Yeah, same thing again. It's going to split. But this is what again you need to consider. How much signal will that property take? What does it depend on? It depends on the earth. Modern houses in the UK with plastic pipes, you typically use a PME system. Again, I've not got time to tell you all about it, guys, but essentially it means that modern houses in the UK with that have plastic pipes, so even though I say modern, it could be 10 years old. they do not have a physical ground at the house. If there is no physical ground at that house, it will take hardly any signal, possibly even none. If it's an old house with metal pipes underneath it, those metal pipes under your house act as an earth. It will take some of your signal. So, let's just keep it simple, guys. We'll we'll pretend these are old houses. I've got 50 here. That's taken, let's say, 25. I've got 25 left. That's taken half of that again. I've got 12 and a half left. So, let's go back to the original question that prompted this. How far will the Jenny signal go? Can you see what's happening? As I go up here, guys, every house is taking away half my signal. I'm not going to trace very far up that'll be made, am I? So, can you see that the more branches that come off that take signal away, the less distance you can trace? So, imagine the difference between a terrace street with houses very close together and a big posh street where there's massive mansions. Can you see the difference that you'll have there? Also guys, think about this. If these were modern houses that didn't have an earth, how much signal would they have taken? Very, very little. So, you'd have much more signal here and you could potentially trace further. Okay, these are all factors we need to think about when we're when we're trying to get the best out of this journey when we're out there. Guys, [snorts] any questions on that, guys? Hopefully, it all makes sense. I hope. Let's look at a couple of real examples and some things we need to consider. What what what I find quite a lot is that we we're getting people to use the transmitter more. But the next step, if you like, I think is is getting them to understand it a little bit more and to use it um in different ways. I think a lot of people are just are just doing stuff like off the lamp column for instance. I see that quite a lot. Um, and I want to show you some problems with that. Again, talking about, you know, the signal strength and stuff. Let's just look at um um a typical house scenario. Brian saying he's froze. Okay, everyone else is all right. Check sensitive. So, let's just look at a very typical example, guys. I've got a house. I've got an LV main and an LV service. And I've got a lighting column here. Okay. If I connect my Jenny onto here, think about what we talked about before, guys. We got 100% on this 50. The house takes 10 and I've got 40 left. Hopefully that makes sense. So to visualize this, what we're trying to say here is that the Jenny signal on the LV main is big and the Jenny signal on the host service is small. What that usually means is that I can find the house service here, but then when I start to follow it down here, okay, I can't quite get it accurately where it meets the main. Yeah. Now, this is where we have to consider what are we doing in this street. So, thinking about somebody that's digging a hole and excavating, if they're excavating over here, I would personally argue that that's enough. And what I mean by that is they know where the house service is and they know that it's not near their excavation. So the point where it exactly meets that main is a bit irrelevant really. So I I would say that that's fine. That's enough. Yeah, we we're happy that we found the house service, it's not what we're digging. However, what if we was digging here? If we had to dig near that house service, I would argue that that's not enough. That level of accuracy to me isn't isn't good enough. So, what we do instead I shouldn't have deleted the whole lot, but I did. That's our house again. Same thing. So, if this Oh, sorry. Something's fell. We're back. Yeah. So, if we click on the house instead of the column, can you see what's going to happen now? We've got 100% on here and then we've got the weaker signal, the 50/50 if we call it 50/50 on the on the other main. So now it becomes easier to trace this to here. Okay, another example quickly and and I want to show you how important this is. I've got a little example of this in relation to um cable strikes that have happened in the past. Imagine this scenario. We have a house. This is the garden wall if you like. So this bit here is like the driveway. Okay. Then we have the LV main with the service coming out of the house then running parallel and then back onto it. That's not uncommon that guys. Does that picture make sense guys? First of all, just chuck me a yes in there. Okay. Doesn't look right to me, but hopefully you get the idea. This is the this is the cable. Yeah. Land column here. So, clip on the column 100% on this 50. That takes 10 and I've got 40 here. Okay. Now, we scan across here and we find that cable on the driveway. No problem. We then follow it down. But then when we get to here, what do you think happens? Now, we end up on here. As far as we're concerned, that meets the main here because we can't see that 10 when it's next to the 40 because it's so close. We can see the 10 up here because there's nothing bigger that's right next to it. If that makes sense, guys. But when we put that 10 next to the 40, becomes very difficult to see the 10. Not impossible. So, typically that's the kind of cables that get hit. However, if we apply the signal to the property, the signal on this one now is 100. You see that the signal on this one is 50. We've completely reversed the situation. The big signal now is on the service, not on the main. It makes it easier even even when you've got them coming across and looping back on, it's much easier to work off that. So if you if you are, you know, out out on site with the guys and you're in charge of teams, just try and encourage them, you know, to think um about where they're actually applying that Jenny signal. Okay, the Jenny's great, fantastic, but we we have to understand that it's not it's not magic, you know, there's still limitations with it that we need to understand. Any questions on that, guys? again. Hope hope everyone's all right with that. So difficult not seeing your faces but hope everyone understands that. The other thing that's also important as well and I come across this quite a lot going back to this one we talked about. Do you remember we talked about how that at each of these joints we're losing half the signal. And this is why we do not teach zigzag scans. Zigzag scans are outdated in my opinion. We shouldn't be doing it anymore. What we should be teaching people to do is to find that cable or the pipe or whatever and trace it and follow it and notice signal change. Because if you're walking up here with your locator and your signal suddenly drops, what does that tell us? We've lost half our signal. Why have we lost it? There's a branch. I see this with a lot of the guys on site. they they'll be tracing a cable along, they suddenly lose half the signal um and they just turn it back up and carry on. There's no thought process there as to as to um why that has happened if that makes sense, guys. >> Yeah, Jake, exactly. I mean, we're just talking actually locating it with a cat. My job is to teach you to be able to get the best out of locators, but yeah, definitely try holes in that, of course. Any questions, guys, so far, feel free to chuck them in um in the box. If you've got anything you want to ask, anything you want to expand on, let's go back to the earth position. Okay, we talked about um you know, putting it near a lamp column, but you remember what we said with a with a cable with a lighting column because it's insulated, it's kind of got to run down it, hasn't it? It's got it's got to flow down it. So, but remember we said about pipes. pipes are not insulated. So, we need to consider a few things. If if this is our metal gas pipe, this is looking from above plan view or a metal water pipe. If we hook the jenny up and put the earth quite close here, what if what what we're effectively doing there is we're encouraging the signal to jump off. Remember, with a cable, it's more difficult because of the insulation, but the pipe we can lose a lot of signal here. So when you talk about moving the earth further away, if I put the earth further away, I basically trace further. So simple as that, guys. Um, radio detection sell the yellow extension reels, guys. And if you do a lot of pipe tracing, they're certainly worth getting because they can help you. Now, in radio detections instruction book, it'll tell you to put the earth at 90°. Um, which is what I've done here, but I think we need to think about it more. I tend to not use it at 90, and I'll explain why. At 90 degrees, 50% of my signal will go that way and 50 will go that way. But most people, we're only tracing one way at once. So in effect, what you're actually doing now is wasting half of that signal going the wrong way. So if you think about doing this, if you put your Earth this way, like on a 45, I might get 70 going that way. You get the idea? So I can kind of direct it to to which way I want it to go by by al altering the angle of the earth. Okay? Also, think about this. If you've got a house up here with a service pipe to it and I want to trace that by connecting onto here. If I put it this way or this way. Yeah, it's going to want to do that. But if I put it that way, it's going to want to run up it. I think some of you said you were on water leakage, I think, or water repairs. So, you maybe got to trace, you know, metal water services. Consider a couple of things with this guys. You've got a house, you got a water service coming out. If you hook up to the inside there and put the earth at the back, your signal don't want to run down that pipe. You know, think about, you know, angling your earth down to where the water man is. Yeah. Your signal is trying to get to that pin. Put the pin where you're trying to trace it. Do you all understand that, guys? Just going to have a minute and um a little drink. So, give me some feedback on that if you're all okay with it. Anything you want me to expand on? While you're while you're answering that, guys, just want to show you the problem with sometimes extending your earth out. And again, we've got this in the street outside. Um, so that's our pipe and we hook up to the pipe and put the earth down here and we get signal along here, but we've also got an electric cable coming like this and we get signal down that. Now, in reality, this should give us the strongest signal in reality. Okay? However, we have to consider depth. That pipe is a meter and a half deep. That cable is 0.5 meters deep from the surface with our locator. This one is now the strongest signal. For you guys using 8000s, this is where your current direction comes in and your current measurement comes in. Okay, they're the benefits of high-end locators. But what we do here, guys, is if we if we short earth pin. Yeah, if we move that from there and we actually what we do here is we there's actually a rim around the box like a valve lid. We actually earth to that. So nice and tight in and that decreases massively the amount of signal on this. So So the takeaway from that I guess guys is the earth position is important but there's no set place to put it. Think about what you're trying to do. Think about moving it. Try it in different positions and all that kind of stuff. Okay, during this session guys, you've heard me talking a lot about hooking up to hoses to get a signal on the electric cable. I just want to show you some little tips of how we do that. We don't need to use a plug-in adapter. So, around a building, there's a few things that you're looking for. You're looking for a boiler, light, tap, gas riser, gas meter. If you hook your Jenny up to any of these things because of the crossbonding inside the house, you'll trace the electric. Sometimes confuses people this guys, but here we've got a gas entry inside properties. Gas pipes have to be metal by law. We've hooked up here earth with some water. The signal can't travel back down the plastic. It's got to go in the house on the metal. And the metal, of course, is bonded to the electric, so it comes back on the electric. So, I know it sounds backwards, but by clipping on somebody's gas entry, you will get a really good trace on the electric service and the main. So, for you guys that are surveyors, if you if you're trying to, you know, locate the LB main down a foot path, go and find a nearby building, nearby house, get hooked up to it, get a signal on it. Make your life so much easier. Gas meters are great, guys. Got an outside gas meter, just hook up to the inlet like here. If you can't get it that, open the lid and clip on there. Outside lights, again, metal, just hook up to them. These are really good guys as well. Got a blow up on a boiler. Hook your hook your genu lead on that. You'll get a perfect trace on the electric. Works really well. There's loads of ways of tracing domestic services, guys. Loads of ways um around properties. I've done all sorts of stuff utilizing the crossbonding taps as well. The problem with a tap is you can sometimes get um inside plastic water. Just give me a minute. I'm boiling in here. I'm just going to open the window. It's suddenly gone warm. It's freezing in here this morning. It's boiling now. Okay. So, all the all these ways of um the tracing guy. Well, I want I want to you you Cat 4 users in particularly guys if you use Cat 4 um have you ever had a situation with the Cat 4? It's one of the biggest complaints we get about the Cat 4 this actually. Um, have you ever had a situation, particularly on Jenny mode, where the cat's been quite erratic? And what I mean by that is you've you've turned the sensitivity control up just a fraction and you've got full signal and then you try and just back it down a tiny bit and you end up with no signal. You can't kind of get your needle in the middle. It's either all on or it's all off. Has anybody ever had that experience with a with a cat before? Oh, got some nice fresh air coming through. That's nice. So, the reason for it and and it's the same with other locators as well, guys. We're talking about cat 4 is the re or the there are a few reasons, but the main reason that typically happens is that you have too much signal on the utility. The signal is too strong, basically, and it makes the cat behave quite erratically. And this is a problem with all the kind of historical training that a lot of people have had. They talk quite a lot about make sure you get a really good earth and stick that pin right in and make sure you get a really good drop in tone. And it's not true, guys. You know, we don't want bucket loads of signal on there. We we just want enough to be able to locate it. Put too much signal down it and it causes us problems. So, if you look on the video now, what I want you to see on here is I'm watch my finger how much it moves and then watch the sensitive watch the needle here and you'll see what I mean. It's either full or it's off. I can't get it in the middle here. So, let me just play this for you. There's no comments coming back in about that Cat 4. So, maybe you've not had it, but oops. So to correct it, we turn the power down. And the easiest way of turning the power down is by pulling that earth out. You'll see now that it fixes it. [bell] See that, guys? Okay. If it's if it's especially wet as well, um if it's especially wet, you can sometimes just pull it out and just stick it on the on the floor. You guys still there? So, that's how we can put a signal onto a onto a house service. And the other good thing that we can do with this is there's a few little tricks we can do um with a with a cat 4, which I like. You remember we talked about it being dual frequency and when it's turned up quite high, you'll hear the hear the two frequencies and stuff. So, let me just show you what I'm doing here. I've I've basically got the house here. Yeah. With the service coming out and then the LV main like this. So, I've got 100% I've connected onto here. By the way, I've got 100% here and then 50/50. And when when you have this, you get quite a unique thing that happens on the joint. And I'm going to show you. So on the video, this works with with with most locators as well, guys. Um, so on the video, I am now locating the LV main. So just to be clear, guys, if you look at my drawing, I'm here at the moment. Yeah. Pacing that way. I'm going to find the LV main. And once I found it, I'm going to turn the sensitivity control up until I can hear both frequencies coming through as a little reference point. So you'll see now I'm going to crank that ride up using the manual again, hear the change in tone, stop turning, walk forward. The signal will drop to zero. When I carry on walking, it will come back up. I will now reverse. And that point there where it drops to zero is the joint. I turn the other way. Now that is the house surface. Okay. So that's a neat little trick you can do. Of course guys, you remember with this that obviously when we're doing this training normally we do the theory and then we go and do the practical outside. So we kind of show people the theory and science behind it and then we go out and practice it. I can't do that with you guys. You'll have to go out and practice on your own and see if you can see if you can have a go with these techniques. You you you might remember mentioned before about the again the dual frequency coming from this transmitter. The 131 is really cool. There's some really cool little tricks we can do with it. Um, again, not got loads of time to go into massive amounts of detail, but with 131, we can make it jump gaps. We call it capacitance effect. So, there's no kind of physical metaltometal connection here. We're using the the the transmitter leads uh to make signals jump onto something else. So, on the left is on somebody's sky cable, Sky TV, that puts a signal into the house through the sky box back out on the LV. This one is on a BT cable coming down a pole. And this one's a BT cable into somebody's house. Loads of ways we can use capacitance techniques, guys. For you guys that are using RD8000s, you can do the same thing. You'll just need to ensure that your transmitter is set to 131. On a G4, remember it's kicking out both at the same time. Bit simpler. This is a BT cable coming out of a property. [screaming] Very, very hard to trace these guys. You'll certainly not get them without a Jenny, but you need to consider how you apply the Jenny signal. Just hold it on like that. That's all you have to do. And then some smart ass always says, "What if you're on your own?" So on this one, I've shown I've solitated on bit of water for the earth just to show you can still do it on your own with a bit of effort. And that's me tracing it out. Last little one, guys. This is me tracing out an LV service. Listen to the tone from the cat. You're hearing the high frequency coming through the one through one. And just watch how I've done this. Go back to there. And you'll see that this is actually a plastic light, guys. If you remember a metal light, I'd click on plastic light. Just wrap it around about three times. Again, if you're using 98,000131. Okay, guys. I'm just going to grab some water because I'm read and have a little minute. So, just um let me know if it's all making sense so far. Um and if you've got any questions, just got my water up. Cool. Everyone's good. No questions. Hope that means you're understanding it. So So now we've we've looked at I just want to relate this back to our method. Now, if you think about what we've done so far, we've we've hopefully been in our street and we've located all the lighting and then we've located all the LV services and we've also started to locate some of the LV mains. So, we're concentrating on the on the electrics. Yeah. Um, sorry, siren. What we also need to now consider is is multiple LV mates. Um, and I'm going to show you some examples. Now, I know Rebecca's here with us, so she'll probably recognize this drawing. This is some stuff I put up there, Livingston, and it's a little example that we use. So, if you're not familiar with Scottish power plans, the LV is brown and the um HV is red. if you kind of imagine here, we've got four cables, two HV, two LV. The caton power and radio doesn't make any sense of that. You just get a signal everywhere. Let's ignore the HV for now and let's focus on how we can find those two LV cables accurately. If using the techniques I've just shown you about hooking up to a building, if we hook up to host six, the majority of the Jenny signal will be on the top cable so we can locate it. We then hook up to host number five, the majority gen signal will be on the bottom cable we can locate it. So we're going to use our plans to help us. Yeah, we're going to look at the plans to help us plan our attack if you like of where we're going to apply the Jenny signal. This is a UKPN drawing for Kent and it is if you're not used to plans guys it can be confusing. Each region in the UK has different standards of plans and different colors. So whereas you just saw on that one Scottish Power used brown as LV down in Kent UKPN used green. People often look at that and think it's cable TV but it's not. So there's two LV mains here. The cat on its own again only finds one on both power and radio. We need to find them both. So let's zoom out. take a step back and look at these cables in more detail. What we can see, so imagine we're digging here, but what we actually see down here is the split. So where does this house get its power from? Top or bottom cable? And where does this house get its power from? Top or bottom cable? You get the idea, guys? So by applying my Jenny signal here first and then here second, I locate those two cables really easily. I could even use the columns here, guys. But it's the it's a principle is what I'm talking about about using your plans to help you, you know, think outside the box. Forgive the pun a little bit, but we focus too much on the excavation sometimes without thinking about what might run through it and how we get a signal onto it. The other thing that I want to touch on here is depth. So a lot of the cat 4s now a plus version have depth estim estimation on it. And I know that for some companies out there, they don't like the guys having depth. In fact, there's a training course going on next door. We had a conversation about depth before. What we have to understand though is that depth isn't just to see how deep something is before we excavate. It gives me a lot more information than that. So on this example here, what actually happens is, so remember the mindset again. We're digging a hole here, but I'm not going to start excavating until I found both those cables with my locator. Okay? We hook up to this house and we trace this cable and we get an X marks the spot. Then we hook up to this house. We trace this cable, but it's actually in the exact same position. Bang on the same mark. So your first thought is kind of am I am I'm a am I tracing the same cable again? Is it actually split? Do you know what I mean? Is it two separate cables there? However, when I was hooked up to house number one at this X here, I did a depth estimate on the cat and it was 600 mil. When I'm hooked up to house number 14 over here, even though the locate is in the same place, the depth is now telling me it's 300 mil. Do you understand what that's telling me? It's telling me that I have found both those cables. The reason the mark is in the same place is because they're on top of each other. Do you all understand that, guys? Please just give me a yes if you're okay with that. So, depth has its uses. Yeah, I can give you another 10 reasons why depth's important, guys, but we haven't got time on this session. There's many reasons for it, not just to see how deep something is before we dig on it. Similar one here, guys. This is Western power. Again, blue LV. So, imagine that we're excavating here. We've got two LV mains to find. Okay. What does a cat do on power and radio? Find one. So, how do we find them both? Because sometimes people say, "Well, it's all right you're saying that, Pete, but my plans don't show house services, right? Doesn't matter, does it? Where does this house get its power from? Yeah. And where does this house get its power from? We don't need the house services on there to for, you know, to to tell us. It's pretty obvious, isn't it? So, we hook up to this house and we trace that one and then this one and we trace that one. So, hope hopefully guys that makes sense. But what I'm trying to get here is we need to plan the survey a little bit. We need to use our plans and look at which where is the best place to put that jenny going to be? And remember what the session's called. How do we get the best out of the Jenny? And this is how we do that. So, so we we we then back to our process, guys. Sorry. You know, we've hopefully now done all the LV. Yeah, we've located it all. Now, we're going to move on to the coms. And this is where our signal fan comes in, guys. So, signal fan and we place that around the cable like this. So, typically speaking, you know, BT, cable TV. On this session, guys, I'm not going to get into the rights and wrongs of lifting lids, okay? All I would say is just, you know, refer to your own um company policies and procedures, etc. for that, okay? I'm not going to get open up a debate on that, guys. So, but that's what we use the clamp for. Okay. So, we've located the lighting, we've done the LV, we've now located the BT, and we've done the cable TV. So, can you see what we're doing now? We're building up this picture layer by layer. Okay, this is what I mean about location, not avoidance. Okay, we're we're hooking up to stuff and and and getting it marked out. We then move on to induction, which is where we just use the box. If I can get this to work. I want to be clear though with induction. Last resort, we should exhaust all connection and clamping options before we move on to induction. This is another issue, guys, with the cat data download that I'm seeing is that because the guys know that we're going to download the cats and see how much Jenny usage they're doing, they're just banging it on induction, some of them, and sticking it 10 meters down the footpath and leaving the thing bloody running for an hour just to get usage up. So, so we need we need to ensure that we're we're still applying these connection methods and current methods. There's a couple of issues with induction. Okay, it works, but there's a couple of issues you have to be aware of. Okay, number one, we've talked a lot about the benefits of this Gen 4 having simultaneous dual frequency, kicking out 33 and 131 at the same time. 131 is high frequency. Remember, high frequency is very good on cables that aren't earth very well, things like coms cables, that kind of stuff. Yeah. When we use induction, we don't get 131. We only get 33. So you you're restricting yourself if you like the vagina. You're not getting the best out of it. Okay, that's the first point. The second thing you need to consider is that it's not selective. So just just to rewind for that doesn't know guys, sorry, just some of the basics. Plug the leads into the Jenny, it's on connection. All the signal is sent out down the leads or the clamp. When you disconnect the leads, it's on induction and we get this kind of herbone signal if you like coming out from the jenny like you can see on the slide basically. So, it's been emitted from the Jenny and then we sit that down over a buried pipe or cable and it throws a signal onto it. Okay. You need to be 10 meters away with your cat though. Now, if you're less than 10 meters away, you'll pick up a direct signal from the Jenny, which is what we don't want. So, if if we look here, I can you guess what I'm doing there, guys? I'm trying to locate the BT. Yeah. So, I'm suspecting because you know this box is here. I'm suspecting there's a BT here. I'm trying to do it. I would not advise you do this unless you absolutely have to, guys. Okay? Because you can quite often get it wrong. This is outside our office. Again, I'm actually up here somewhere. There's a power cable that runs down here parallel with that BT. Which do you think is the best conductor, the BT or the power cable? Importantly, which has got the better earth on it? Remember what we're doing with this Jenny signal? Of course, it's the power cable, guys. So, even though the Jenny sat above the BT, that signal goes for that. The problem with that is that you're 10 meters away down that footpath tracing the power cable, but you think you're tracing the BT. I have lost count of how many sites I've been to on a site visit and I've seen the BT and the power cable marked in the same place and as soon as I see that now on site alarm bells start going off because I start thinking how have they located that BT and quite often you find they've induced onto it like this and they've not actually located the BT they've just relocated the power again okay so quite often with BT guys the only way of doing it is to lift and clamp okay even With induction, we can sometimes struggle. HV cables, guys. HV are the hardest cables to detect. Again, guys, it's a short mini session. I can't go into all the reasons why we do in the full course. Typically speaking, you guys might have experienced this. You tend to get stronger power signals off LV than you do off HV. HV is normally deeper. The biggest issue with HV is working on a connected journey to it. For most of us guys that can't get in in subs, Yeah, Joe, absolutely. Um, semi-cable TV is always being shell. Um, so we we can't connect onto it. Um, so the only option we've got with HV a lot of the time is it is induction. It's the only option we've got. But the problem is this guys, look at this footpath LV HV deeper. Yeah. So even when the Jenny's here, can you see what's going to happen? We end up lighting this thing up. So that's why it can be very tricky with HV sometimes. So what we do is this, guys. This is back to that UKPN drawing. So remember on this guys, the green is LB, the red's HB. We're proposing to excavate here. The cat only finds the LB. No matter where I put this Jenny, I only found the LB. All these examples are show I'm showing you guys. I've worked here and done this. Okay? So the real basically, so we can't pick it up. So what we do like before, we zoom out. Let's have a look. What we can see over here is this separation. If I apply my Jenny signal here onto the HV, I can now locate it back down here. That make sense, guys? Because the LV is not kind of blocking it if you like anymore. So, what we try and do with HV, I know you can't always do this, is try and find a bit of separation, maybe a road crossing or something like that. Again, guys, hope you're okay with that. That makes sense. Same here, guys. Excavating here, we we induce here. What I often do, guys, is do HV last. And it's very tempting to think, oh, we got HV, we'll do it first. But do it last because, and the reason for that is simple. You've already got stuff marked up. So, if you do accidentally induce onto another utility, you know you've done it because you're picking up the same thing again. You see what I mean? Okay. You all happy so far, guys? All making sense? I hope. Any questions? Okay. Next question I want to ask you guys is, um, have you heard of a twoman sweep before? Twoman parallel cat and Jenny sweep. Have you heard of one? I want to know if have you been trained to do that or have you done it? Is it something that you do? Give me some feedback on that and we'll have a discussion about that. While you're answering that question, guys, I want to show you something. Wait, I'm going to put my full video thing up there for a minute, guys. [snorts] Um, hello. When you're when you're using a locator on induction, you know, you've got to be 10 meters away from the transmitter. Um, just going to jump up for a second while I show you this. Hopefully, you can still hear me. Even even when you're even when you're 10 meters from the transmitter, you can still pick up a direct signal to the locator. So quite often what happens is your gen is 10 meters away. There is actually no utility there, but the cat's still giving you a signal or your locator's still giving you a signal and it looks just like a cable as well. You'll move it backwards and forwards and it'll look just like a signal, but it's actually airborne. So one of the things I want to quickly show you is how you test for that. So if you imagine that I'm stood here with my locator and my ch is 10 meters away that way and I'm getting a signal. I'm thinking to myself, is that signal coming from an underground utility or is it coming directly from the transmitter? And the simple way to tell is by lifting the locator and pointing it towards the transmitter. If I lift and my signal increases, it's coming from the transmitter. If I lift and my signal decreases, it's coming from underground. And that's a very simple way how you can tell where your signal is coming from. >> [clears throat] >> Okay guys, so we're we're we're getting um we're getting kind of towards the end of our survey now. We've done all our connecting and stuff, aren't we? And clamping and things. So this is where we talk about the kind of final induction techniques. And the reason I brought up the twoman sweep is I know a lot of people have been taught to do this and I have some concerns with it. It's a technique that's still being taught and I think we just have to be careful. First of all, for anyone that doesn't know, let me explain what one is. Still using induction. If you imagine that I've got a foot path here and I've got my excavation here. Okay. The idea of a twoman sweep is the the cat is here, if you like, and the jenny's here. So, I've got somebody with the cat and somebody with the Jenny. And the idea is at the same time they walk together across. So imagine them both walking together. And the idea is that if there's anything coming across here, they'll hit it at the same time. Okay? Hopefully that makes sense, guys. Now, the problem with this is that I wouldn't recommend doing it in a footpath or a carriageway. And let me explain why. It's not bad for road crossings, I guess, and stuff, but what we could potentially have in a footpath is a cable that does that. And that's not uncommon, guys. You know, it's changing position in the footpath. You imagine you're here with your cat and your Jenny's here and you walk across at the same time. In the in the starting position, the cat isn't going to detect it because the Jenny's not on it. Then you walk together, but by the time the Jenny's on it, the cat's not. You see that? Okay. So, that's that's that's one of the potential downfalls of a twoman sweep is that if a cable changes position between the cat and the Jenny, you can miss it. You see, so the technique that I teach people to do is is what's called a blind induction sweep. We're going to come to that shortly, Joe. Um, hang on. Have a look at the picture there, guys, or the six pictures. Uh, you'll see that the Jenny's in a different position on each one of the six pictures. So, what I want you to do is just kind of keep that in your head if you like. just memorize that picture and then let's transfer it to the to the real world. If if that's [clears throat] my foot path again, now this could be a carriageway, guys. I keep using footpath, but it could be a carriageway. Doesn't matter. That's the bit that I'm interested in. I'm going to go 10 meters away because that's how far away my Jenny has to be. And I put the Jenny over the curb with a handle like that. And I scan across. Then I put the Jenny here and scan. Then here and scan. If you think about the pictures before you here, scan here and scan it. It effectively does exactly the same thing as a twoman speed. But what it does do, it accounts for anything that doesn't run straight. Because as long as I scan the whole width of that on each gen position, even if a cable runs diagonally, I'm still going to find it. Just give me some feedback on that. Does that make sense? And you can see the difference between that and the two by one. 2x1's good for big areas, but footpass carriageways. I tend to think I call it a blind induction sweep. Some people call it footprint sweep or something, but that's what I I think is is a is a better way in that situation. Let's just finish off then talking about our method that we talked about. Do you remember we did seems like ages ago now? We did the lighting, we did the LV services, the L mains, the coms, we've done pipes, you know, we're locating all these things one at a time and this is kind of the last thing that we do. Um the final thing that I does the orientation of the journey to the direction of service have any effect? Yes. Um Luke, it's got to be in line with it. So the handle of the Jenny has to be in line with the the utility. Roughly though, 45 degrees, you'll still be fine. Okay. Yeah. So yeah, roughly handled in line. Yeah. I think what I think I think what you're getting is if he's running diagonally under the gen, will you still get it? And yeah, you you will it's it's not bang on in line. The final thing we can do with the Jenny, guys, is nulling out. And I think this is what somebody was referring to before about putting it on it on it on on its side. Um there's many many reasons why we null out, guys. Um I I can't go through all of them again, but I'm going to give you one example. Do you remember we talked about the HV situation that we had before? And you remember we said we had the LV here and the HV here. Okay, possibly something else here, but that's a HP. [clears throat] And can you see that no matter where I put the Jenny, I can't get signal on this, it's either going to be hitting that or it's going to be hitting that. Yeah. So, our plans are telling us there's HV there. Okay. Um, but we can't find it. We We've tried passive molds. We've tried induction, can't find it. This could be. Now, this is what I was talking before, guys, about well, you might want to look at your plans though and find some separation. Do you remember we talked about that just a little while ago? But let's say you can't. Your plans are showing you that the HV and the LV are together all the way up that foot path. So what you might want to try is nulling out the LV. Look at the signal on the Jenny on either side. You can see that dead zone there. If I tip the Jenny on its side like this, I've now got that, haven't I? Make sense? So if I put the Jenny on it side over the LV main, the one the one I keep finding, the one I don't want to find anymore, it's blocking everything else. It cancels that out and throws signal down. and hopefully lights up the um the HV for you. So that's um yeah, that's why we and we guys there you go. That was my session on how to get the best out of the Jenny. I hope it was worthwhile. Um, has anyone got any questions or anything else you'd like me to expand on to? I'm not in a rush to get off at the minute. So, if there's anything you want me to cover while I'm here, I will do. Give me some feedback, guys. Was it all right? Did the software look all right? Was the content okay and stuff? Let me know what you thought. I hope it was a useful use of um what we've been just over an hour and stuff. So, hope it wasn't a waste of your time. Thanks guys. Yeah, no worries, Alison. Catch you later. Thanks, Tom. Thanks, Phil. Cheers. Uh, what's Luke saying? Any advice for a fencing contractor? Working at two or three different small sites a week and sourcing drawings isn't always easy. Uh, Luke, drop me an email. Probably be easier. We have a nata about that so I can get exactly what you're going going on about. Send me an email. I'll happily give you a ring, Luke, and have have a chat with you. Thanks, Jake. Thanks for the feedback. Cheers, David. Thanks, Brian. I don't think there's any questions coming in, guys. So, um, if it's okay with you, I'm going to go and have a little tinkle. I have got another one coming up. I think at one. Is it one or half one? Can't remember. Don't know if anybody else is any on that one. It's the last one I'm doing and we're going to be having a chat about power and radio and just um some of the problems if you rely too much on passive modes. You can probably tell I'm a massive fan of the Jenning. Okay. So, so yeah, if you're on that one at one, I'll see you then, guys. If not, I'm going to turn my video off now, guys. Um thanks again and I'll catch you later. Uh Brian, I'm still here. Earththing problems. Um not sure what you mean. Again, Brian, just drop us an email if you wanted to just go into anything a bit more detail. I'm going to have to shoot because I'm desperate for the toilet now, guys. So, um I'll catch you later.
+
+
+[00:10] Let's get this fired up. Here we go. So,
+[00:12] with a transmitter, there are two main
+[00:14] ways of using it. Okay, two main ways.
+[00:16] We can break them down further, but the
+[00:18] two main ways are connection and
+[00:20] induction. Connection is, as it says, is
+[00:23] when we're hooking it up to something,
+[00:24] typically using our direct connection
+[00:26] leads or or a signal clamp or or a
+[00:29] plug-in adapter. But it connection is
+[00:31] when we're putting something in the port
+[00:32] of the Jenny. Okay, we're sticking
+[00:34] something in. Induction is when we just
+[00:37] use the box on its own. And that's where
+[00:38] you may have seen it being used where we
+[00:40] just sit the box on top of something.
+[00:42] Okay, we can break that down further
+[00:44] into into these four little scenarios.
+[00:46] Connection, clamp, plug connector, and
+[00:48] induction.
+[00:50] Okay, one of the main ways that we use
+[00:51] it,
+[00:53] one of the things that we uh teach
+[00:55] people guys is that we always start with
+[00:57] the Jenny. Okay, so obviously you're
+[01:00] going to check your plans, you're going
+[01:02] to do your visual check and everything
+[01:03] else, but in terms of operating modes,
+[01:06] start with the Jenny first and let's go
+[01:09] for known services. One of the terms
+[01:11] that I sometimes get frustrated with is
+[01:13] this talk all the time about cable
+[01:14] avoidance. And I think we need to be
+[01:16] talking more about um uh cable location.
+[01:21] We can't avoid something until we've
+[01:22] located it. And that's the mindset I
+[01:24] think we should have on site is is we're
+[01:25] not just going to do a passive scan and
+[01:26] see if there's a signal there. We're
+[01:28] going to actively go out and and and
+[01:30] look for these cables and find. So with
+[01:32] the direct connection at the top guys,
+[01:34] just just to explain how this works for
+[01:35] anybody that's new to it. In fact, on
+[01:37] that subject, let me just check this
+[01:38] poll just to see experience. Yeah, 84%
+[01:41] trained, 15% not. Okay. So, if you look
+[01:45] at this picture on the top left hand
+[01:46] side, uh we have our transmitter here,
+[01:48] our Jenny,
+[01:51] and we've hooked up to this valve on
+[01:52] this metal pipe. We've placed an earth
+[01:55] in the ground. And and in very simple
+[01:56] terms, what's happening is we're
+[01:58] creating an electrical circuit which
+[02:00] then gives off a magnetic field that we
+[02:02] can detect and it's kind of doing this.
+[02:03] So, it's coming down here and then it's
+[02:04] returning through here. Okay. I'm going
+[02:07] to keep my drawings very simple today.
+[02:08] But what you do need to understand a
+[02:10] little bit is that we when I draw these
+[02:13] pictures and diagrams out, we talk about
+[02:14] the signal going in one direction. the
+[02:17] truth is it's an AC signal. So it's
+[02:19] actually going in both in both
+[02:21] directions. It's going backwards and
+[02:22] forwards.
+[02:24] Okay. But just for easy diagrams and
+[02:27] explanations, we draw it going one way.
+[02:29] But as I said, it's kind of going, you
+[02:30] know, backwards and forwards on that.
+[02:32] Okay. So that's how how we typically use
+[02:34] direct connection. We've then got the
+[02:35] signal clamp, which is what we put to
+[02:36] put it around an exposed cable, maybe an
+[02:39] exposed cable in a in a tri hole or in a
+[02:41] chamber, that kind of stuff. Plug
+[02:42] connected down here to go in a domestic
+[02:44] socket. Um, don't use that as often as
+[02:48] people used to. And then we got the
+[02:49] induction method. Okay, guys. Um, bit is
+[02:51] it all making sense so far? everyone
+[02:53] following me? I always worry
+[02:55] when the chat goes quiet. The one of the
+[02:56] biggest problems with doing webinars is
+[02:58] I can't see your faces. So, I don't know
+[03:00] whether you're looking confused,
+[03:02] interested, or asleep. So, I'll just
+[03:04] jump in now and again and ask you for a
+[03:07] bit of feedback. I've just got somebody
+[03:08] that can't get in the room, guys. Just
+[03:09] give me one second. Let me see if I can
+[03:11] get them in because it is the last one
+[03:13] of these today. So, I don't want to make
+[03:14] sure if somebody wants to get in, they
+[03:16] can jump on it.
+[03:28] Send somebody a direct link to jump
+[03:30] straight in.
+[03:37] Sorry.
+[03:39] Great stuff, guys. Right. So, let's move
+[03:41] on then. So, the [clears throat] the the
+[03:43] first method we're going to use is is is
+[03:46] connection. And this is where we're
+[03:47] going to start talking a bit about the
+[03:49] methodology that we're going to do.
+[03:52] I'm a great believer in doing street
+[03:53] lighting first. I think it's it's it's
+[03:56] good that we should get people into into
+[03:58] the habit, if you like, of working
+[03:59] through a methodical process when we're
+[04:01] trying to find buried utilities. I think
+[04:03] it's a really good habit to get into
+[04:04] that we start with a street lighting
+[04:07] and and there is a reason behind that
+[04:08] and and it's about time. So, let me just
+[04:10] expand on a couple of things, guys.
+[04:13] We're going to use our journey to trace
+[04:14] the street lighting and in remember
+[04:16] guys, this is UK based. If you if you're
+[04:18] tuning in from overseas, just bear that
+[04:20] in mind. We're talking about UK
+[04:21] networks, but there will be
+[04:22] similarities. The street lighting works
+[04:24] in one of two ways in the UK typically.
+[04:26] It's a TED off system um or it's a loop
+[04:29] in loop out system as you can see on the
+[04:31] diagram there. So TED system at the
+[04:33] bottom first of all that simply means is
+[04:35] that the same LV main cable in the
+[04:38] street that feeds the houses. We have
+[04:40] branches coming off to each of the
+[04:41] properties. It also feeds the lighting
+[04:43] as well. So it's teed off the LV main to
+[04:46] feed the lighting columns. Okay. And the
+[04:48] top one is what we call a loopin loop
+[04:50] out system. And this is typically where
+[04:51] we have a dedicated street light cable
+[04:54] that kind of comes in and out like this.
+[04:56] Okay,
+[04:58] the two systems. Sometimes you don't
+[05:00] know till you get to site which one of
+[05:02] the which one it is. Sometimes the plans
+[05:04] will give you a clue. Not always.
+[05:06] Sometimes you just don't know until you
+[05:07] get there and start locating stuff. All
+[05:08] right. So, let me just go back to that
+[05:10] same point of why are we doing it first?
+[05:12] Imagine this is just a very basic
+[05:14] typical street scene.
+[05:16] Uh we we arrive at this site and we've
+[05:18] got an excavation to do and the thought
+[05:20] process should be.
+[05:23] We know we've got a main LV. We know
+[05:25] we've got three house services. We know
+[05:26] we've got lighting cables. We need to
+[05:28] find them. As I said before, guys, what
+[05:29] we don't do is just start, you know,
+[05:31] doing power and radio scans. We're going
+[05:33] to go and actively find these. So, so
+[05:35] with that in mind, what I want to do now
+[05:37] is is locate all these cables with my
+[05:39] transmitter. And what I could do is hook
+[05:42] my Jenny up to each of these buildings
+[05:45] to to apply a signal down to these in
+[05:47] turn. So I'm doing, you know, one, two,
+[05:49] three. That locates this. And that could
+[05:52] take me about 20 minutes to do that.
+[05:55] After I've done that, [clears throat] I
+[05:57] then hook up to my lighting column. And
+[06:00] what I suddenly realize now is that
+[06:02] because it's a TED system, the signal
+[06:04] goes down here, it goes up here, and
+[06:07] they even pick up these. So, what have I
+[06:10] just done there, guys?
+[06:12] Just wasted 20 minutes. If I'd done the
+[06:14] lighting column in the first place, I'd
+[06:15] have found all that. So, I'm just trying
+[06:17] to save a little bit of time. Now, guys,
+[06:19] I want to be clear. Even if it's a T
+[06:21] system, you might not find all that.
+[06:23] Okay? Sometimes you'll click on that
+[06:25] column, you'll only find the lighting.
+[06:26] Sometimes you'll click on the column,
+[06:27] you'll get the tail under the LV, and
+[06:29] you won't pick up the house services.
+[06:30] But my point is let's first of all see
+[06:33] what we can detect off that column and
+[06:36] it might just um make life a bit easier
+[06:39] for us. Might save us a little bit of
+[06:40] time. Does that make sense to everyone
+[06:43] guys? Okay, are you with me on that? And
+[06:46] that's why we generally typically do do
+[06:49] lighting first.
+[07:02] Okay. Right. So,
+[07:05] we've talked about our first step. Let's
+[07:07] now look at it in a bit bit of detail
+[07:08] now of of of how we actually do it,
+[07:10] guys.
+[07:13] So, this is this is us hooking up to our
+[07:15] lamp column meter. So, for anyone that
+[07:16] doesn't know guys, very
+[07:17] straightforwardly, we get the
+[07:18] transmitter, we hook it on, and we and
+[07:20] we earth it. One of the things that I've
+[07:22] not got time to go into in a great deal
+[07:24] of detail on these sessions is the new
+[07:26] Gen 4 series. Now, they actually send
+[07:29] out two frequencies.
+[07:31] Okay? So, that Jenny is kicking out 33
+[07:33] kHz and 131 kHz simultaneously.
+[07:37] And when you put your cat on Jenny mode,
+[07:39] um the best way to describe it is when
+[07:41] you've got it turned up quite high,
+[07:42] you'll often hear both frequencies. And
+[07:44] then when you turn it down, you hear
+[07:45] whichever one's coming through the best.
+[07:47] If you guys have been using CAT 4 on
+[07:49] Jenny mode, you you might have noticed
+[07:50] that sometimes you hear different
+[07:51] noises, different tones, and it's all to
+[07:54] do with these these simultaneous dual
+[07:55] frequencies. What the 131 kHz allows us
+[07:58] to do is because it's high frequency, it
+[08:01] jumps gaps. So, some of you might have
+[08:03] seen little tricks where you can wrap it
+[08:05] around the pole and things like that. If
+[08:07] anybody's seen that before, you seen
+[08:08] that before, guys? Wrapping it around.
+[08:09] So, it's quite a new technique this and
+[08:11] the industry kind of went a bit mad
+[08:13] with it. But I will say that on a metal
+[08:16] column, it's better to connect. Okay.
+[08:20] Is anyone else's screen frozen? Rachel,
+[08:22] if you can hear me and your screen's
+[08:23] frozen, try reconnecting. Is everybody
+[08:24] else still still there?
+[08:27] Okay. So, so just to summarize guys,
+[08:29] yes, wrapping it around works, but if
+[08:31] you have got a metal column,
+[08:33] connect on. I tend to use wraparound
+[08:35] techniques more for like concrete
+[08:37] columns and stuff like that. And even
+[08:38] then, sometimes you might struggle.
+[08:39] Okay, so that's how we actually hook up
+[08:40] to a column. We're hooked up here and
+[08:42] we've got our pin in. Now, I want to ask
+[08:44] you a question, guys. It's always very
+[08:47] interesting asking this question on
+[08:49] training courses. Where do you put the
+[08:51] earth? So, we've hooked up to the
+[08:53] column. Where do we put this? How far
+[08:55] away does it go? What angle does it go
+[08:58] at? Does it actually matter? Do we just
+[09:00] stick it in the ground? Give me some
+[09:01] thoughts on the Earth, guys. And and I
+[09:03] said, the reason it's interesting is
+[09:04] when I ask this question, I I get loads
+[09:06] of different answers. There doesn't seem
+[09:08] to be any consistency um on where this
+[09:10] goes. What's your thoughts on it?
+[09:23] So what what I want to just while you're
+[09:24] answering that guys, what I want to talk
+[09:26] to you about actually is
+[09:28] there kind of is no correct position as
+[09:30] such, but what I think we're missing um
+[09:32] a lot out there is is understanding of
+[09:34] what effect it has. Okay. It does
+[09:37] different things depending on where you
+[09:39] put it and we need to take these into
+[09:40] consideration when we're when we're
+[09:41] hooking up. Yeah. I think you're
+[09:43] cheating, David. I I'm sure you've been
+[09:44] on the call with me before.
+[09:49] Let's look at a few examples.
+[09:59] See if we got any more answers coming in
+[10:03] away. Mixture of stuff there coming
+[10:05] through, guys.
+[10:11] Okay, let me just show you a couple of
+[10:12] things then guys. So, um, by the way
+[10:14] guys, my drawing's a bit crap, so just
+[10:16] bear with me while I draw you some of
+[10:18] these diagrams out.
+[10:20] If we look at um, a lighting column, so
+[10:22] this is a plan view looking from above
+[10:24] and imagine looking down um, and we've
+[10:25] got our lighting column here. If we get
+[10:28] our Jenny and we hook up and we put it
+[10:29] quite far away, let's say two or three
+[10:31] meters away. So, this is the Earth wire.
+[10:32] Now, I'm I'm pretty sure that you would
+[10:36] all agree, wouldn't you,
+[10:39] that this earth wire is giving off a
+[10:41] massive signal.
+[10:43] Yeah. Agree with that? So, in other
+[10:45] words, what what effect what this means
+[10:47] in the real world is that I can't go
+[10:48] here with my locator. If I go in that
+[10:51] area with my locator, I'm going to pick
+[10:52] up the earth wire, not the cable. If the
+[10:54] lighting cable happens to be in that
+[10:56] area, I'm not going to be able to pick it up properly. So, what this means in
+[10:59] turn is I have to move further away from
+[11:00] the column. So instead of doing that,
+[11:04] consider this.
+[11:08] That's our lighting column. We get the
+[11:10] Jenny. We hook up and we put the Earth
+[11:12] really close.
+[11:15] Everything's tight to the column now.
+[11:16] Everything's really, really close. And I
+[11:18] can now do a nice tight circle around
+[11:19] that with my locator. And it doesn't
+[11:21] matter which way that cables goes, I can
+[11:23] still locate it. People often ask me,
+[11:25] how close to a column can you work to,
+[11:27] guys? It It's more about where's your
+[11:30] Earth? Yeah. Have you got that stretched
+[11:32] out miles away and it's and it's
+[11:33] interfering with what you're doing? so
+[11:37] put it nice and close on the column.
+[11:42] Okay, that make sense guys? Happy with
+[11:44] that?
+[11:46] There are reasons for moving it further
+[11:48] away and we will cover them later, guys.
+[11:49] But for now, just consider that. And the
+[11:51] al thing I want to touch on, guys, is
+[11:53] we're still using like old habits from
+[11:55] years ago. The anyone remembers the old
+[11:57] handbag jennies? the the old the older
+[11:59] Jenny's you did have to move it right
+[12:02] out at 90 degrees to get a signal but
+[12:04] you don't these modern jennies are
+[12:06] fantastic. Jenny 4 is a cracking jenny.
+[12:08] Okay, you don't need to do it with these
+[12:09] now. You'll get buckets of signal uh
+[12:12] down that lighting cable just by putting
+[12:14] it close like that. Okay, you don't have
+[12:16] to go far away and then you can work
+[12:18] really tight in there as well with that
+[12:19] lighting column. Okay, so
+[12:22] hopefully you're okay with that. The
+[12:24] other thing that I want to start
+[12:25] discussing with you now and we do go off
+[12:27] on tangents here guys because um we need
+[12:29] to look at each step of this but we're
+[12:31] going to talk about how far a Jenny
+[12:32] signal will travel. So again I'll throw
+[12:34] that question to you guys. How far will
+[12:36] the Jenny signal go? Now you guys using
+[12:38] high-end kit frequency difference make
+[12:42] will affect that. But think about single
+[12:43] frequency. Now think about only having
+[12:45] one frequency to choose from. What else
+[12:48] would affect how far your Jenny signal
+[12:50] travels down something?
+[12:53] Just one more point while you answer
+[12:55] that question, guys. If you can't get
+[12:56] the pin in the ground, if you're on
+[12:58] tarmac or concrete, you can earth it
+[13:00] with some water. So, this example here,
+[13:03] just stick the pin on the floor
+[13:06] and um and pour some water on it.
+[13:09] [bell]
+[13:11] It doesn't have to be sparkling water.
+[13:14] Any liquid will do. I'll let you use
+[13:16] your imagination on what type of liquids
+[13:17] have been used in the past.
+[13:33] Okay, so we start again.
+[13:38] So, we're still on that same question,
+[13:40] guys. The answers haven't come through
+[13:41] yet. The problem, we've got so many on
+[13:43] today, the delay is a little bit worse,
+[13:44] I think. But, um, anyway, I'm going to
+[13:46] move on. Before we start
+[13:48] answering that question of how far that
+[13:50] Jenny signal will travel, we need to
+[13:51] start understanding a few more basic
+[13:54] elements first about about what that
+[13:55] signal is doing and where it's going and
+[13:57] why. So I want to give you a few
+[13:59] examples here guys.
+[14:08] We've we've hooked up to this column now
+[14:10] and we've put we've put our earth in.
+[14:12] Okay,
+[14:13] we're again we're going to keep this
+[14:14] very very basic now guys. So these
+[14:16] figures will not be exactly
+[14:18] scientifically correct. It's just an
+[14:19] easy way of understanding it. But if we
+[14:21] look at the signal on this cable, let's
+[14:23] say we have 100%. Just for easy maths.
+[14:26] Okay?
+[14:28] And what I mean by that is if we had two
+[14:30] cables coming out of the lamp column,
+[14:33] 50/50.
+[14:34] Okay? So hopefully you're with me on
+[14:35] that. All right? So this this 100% now
+[14:39] is going to come down here. It's going
+[14:40] to hit this. Okay? And what's it going
+[14:42] to do here, guys? So 100% has hit this.
+[14:45] What's going to happen now? I know
+[14:47] there's a few pauses because of the
+[14:49] questions, but I think it's important we
+[14:51] we keep this interactive as I said. So,
+[14:52] I'll just deal with the delay a little
+[14:54] bit. What's going to happen down here?
+[14:59] Okay. The signal is going to split,
+[15:01] isn't it? Okay. It's going to go both
+[15:03] ways along that cable.
+[15:05] What we have to now consider though is
+[15:08] how much will it split? Will it go
+[15:10] 50/50?
+[15:12] Okay.
+[15:16] And all this now depends on what we call
+[15:17] the path of least resistance basically.
+[15:19] So so somebody said said 50/50.
+[15:23] Okay, that signal is trying to get back
+[15:24] to the earth. Okay, so now let's just
+[15:26] backtrack. Again, we're still talking
+[15:29] about how far a Jenny signal will
+[15:30] travel. Okay, let's just backtrack a
+[15:33] little bit now and look at the
+[15:34] difference between tracing a pipe and
+[15:36] tracing a cable. You might be able to
+[15:39] relate to this in the real world, guys.
+[15:42] When you put signal
+[15:44] onto that cable,
+[15:49] it is an insulated cable. So effectively
+[15:52] what that signal is trying to do,
+[15:53] remember this guys, that signal is
+[15:55] trying to get from A to B. That's the
+[15:58] best way to understand it. All right? So
+[16:00] that signal is coming down this
+[16:01] insulated cable. The cable's insulated,
+[16:03] remember? So it needs to get off the
+[16:05] cable. It needs a contact with ground to
+[16:07] get off. So what it's actually looking
+[16:08] for is an earth.
+[16:10] Yeah. Exact spot on. Yeah. So, just
+[16:13] imagine this. It's going to come down
+[16:14] here, down here, up into there. That
+[16:16] electric cable is bonded to the metal
+[16:18] pipes underneath and comes down and it
+[16:20] comes back. Does that make sense, guys?
+[16:23] Again. All right. So, it's it's kind of
+[16:25] got to run down it, you know, to the
+[16:26] next lamp column or or a point in the
+[16:28] ground. Now, consider this. What if that
+[16:31] was a metal pipe? What is the
+[16:32] difference? Well, a metal pipe, most
+[16:36] metal pipes anyway, not all, um, are in
+[16:39] contact with ground, aren't they?
+[16:40] there's no insulation on them. So if
+[16:42] that was a metal pipe, that signal
+[16:45] is going to travel along it, but all the
+[16:47] time it can leak off and come back.
+[16:51] So, so to translate that to real world
+[16:53] tracing, what you tend to find is that
+[16:55] when you're tracing a pipe, as you walk
+[16:58] along the pipe, the signal's dying off
+[17:00] very rapidly. You've got to keep
+[17:01] compensating for that by by turning your
+[17:03] sensitivity control up. When you're
+[17:05] tracing a cable, you you tend to find
+[17:07] it's much more constant. One of the
+[17:09] things that come up as well was from
+[17:10] Joe, the condition of the LV main.
+[17:11] Absolutely. Yeah. You sometimes find
+[17:13] with these old mains where the the
+[17:15] insulation's a bit corroded and stuff,
+[17:17] it leaks off much quicker. Yeah. It's a
+[17:19] bit more like a pipe. Does that make
+[17:20] sense, Joe? I think that's what you're
+[17:22] referring to on that. Okay.
+[17:28] Yeah. And sometimes it's not just a case
+[17:30] of of jumping, Zach. It's just coming
+[17:32] back down something else. Um so so so
+[17:35] think about um return paths. Yeah, that
+[17:38] signal is getting back to here. If
+[17:40] there's something else going this way
+[17:41] that's a conductor, it will travel down
+[17:43] that as a path of least resistance.
+[17:46] Yeah. So that's why we can get um um
+[17:49] signals kind of jumping if you like, you
+[17:50] know. And also don't forget guys what it
+[17:52] can also do here. Let me let me show you
+[17:53] this.
+[17:55] Yeah. Think about this one. So that
+[17:59] signal is going to come down here, up
+[18:01] here, into that house, down on the metal
+[18:03] pipe, back out on the metal pipe, and
+[18:05] down the metal pipe.
+[18:07] Yeah, that can happen. Does happen
+[18:11] generally. Generally, it's much weaker
+[18:12] though. Yeah, especially because the
+[18:14] pipe's deeper as well, typically. Okay.
+[18:17] All right.
+[18:19] Also, back to what said about pipes,
+[18:21] guys. Bigger pipe, the the harder it is
+[18:25] to get distance down it. Can you see
+[18:26] that? Because you've got more surface
+[18:27] area in contact with ground, so it leaks
+[18:29] off quicker. So, have you experienced
+[18:32] that before, guys? Have you have you
+[18:33] ever noticed the difference between
+[18:34] tracing a pipe, tracing a cable, and
+[18:36] it's down to the the insulation. And if
+[18:38] anybody's ever traced a high pressure
+[18:39] gas pipe, trace it for for a
+[18:42] considerable distance. So that kind of
+[18:45] is um contradicts my argument. Yeah. But
+[18:49] there's a difference because a high
+[18:51] pressure gas pipe is insulated. It's
+[18:53] coated. You see? So we go further. Okay.
+[18:56] Is everyone with me so far, guys? Yeah.
+[19:00] Let me know I'm making sense and I'll
+[19:01] move on. So, so we've talked about pipes
+[19:03] and cables. Yeah. Now, let's go back to
+[19:04] our signal splitting now. Talk about
+[19:07] that a little bit. So, if you remember
+[19:09] what we had, we had this signal coming
+[19:11] down here. Now, remember this is back on
+[19:12] this insulated cable now, isn't it?
+[19:14] Yeah. It gets to here. What's it going
+[19:17] to do? It's going to split, but as we
+[19:19] said, might not be 50/50. It's going to
+[19:21] go where the better earth is. So, let's
+[19:23] say, for example, we have a substation
+[19:25] down here. Substation's got a massive
+[19:28] earth mat underneath it. Which way is it
+[19:30] want to go? Which way is it want it
+[19:32] going to want want to go? It's want it's
+[19:34] going to want to go left. So, what we
+[19:35] might find here is we've got 7030.
+[19:38] I don't want to over complicate it, but
+[19:41] I'm just trying to be clear not to
+[19:43] expect 50/50.
+[19:45] There's um just outside our office here,
+[19:47] there's a substation near some terrace
+[19:49] houses. You hook your Jenny up to those
+[19:51] terrorist houses and all of your signal,
+[19:53] 100% of that signal goes towards a sub.
+[19:57] It's very, very hard to get signal to go
+[19:58] back up the other way. Okay.
+[20:08] Okay. So, we're going to use 50/50 as an
+[20:11] example, guys.
+[20:15] And and and and the other thing on this,
+[20:17] guys, it's always a fine line with with
+[20:20] these sessions. I'm trying to share with
+[20:21] you as much as I can, but not make it
+[20:22] too technical and boring. It's very
+[20:24] important, I think, that the guys on the
+[20:26] ground understand this because if I
+[20:28] follow this up here, let me let me let
+[20:30] me just kind of show you. If I follow
+[20:33] this up here and it takes me around
+[20:35] here. Yeah, that's my trace line if you
+[20:39] like. But when I get to this point here,
+[20:41] can you see where I'm drawing the X?
+[20:43] When when I kind of get around this
+[20:44] corner, I notice that my signal has
+[20:47] dropped.
+[20:48] I've lost
+[20:50] signal. What does that tell me? It tells
+[20:53] me that even though the big signal, if
+[20:55] you like, is taking me around to the
+[20:56] left, even though that's the route I
+[20:58] followed, because I've lost a little bit
+[21:00] of signal there, where's that signal
+[21:02] gone?
+[21:04] And that then sets alarm bells off
+[21:06] actually. Is it a bend or is it a
+[21:07] Tjunction? Do you see what I mean? Has
+[21:09] it has it come off somewhere? And and
+[21:11] that's why I'm a massive fan of of
+[21:13] manual gain and manual sensitivity and
+[21:15] stuff. I think we can see a lot more
+[21:17] when we're using that. So, so anyway, um
+[21:24] oops, sorry. [clears throat] Let me go
+[21:26] back to this.
+[21:29] I will get there in a minute, guys, with
+[21:30] this signal splitting. We will we will
+[21:32] get back to that. So, we've got
+[21:34] down here. And guys, we're
+[21:36] going to use 50/50 as as an example. Um,
+[21:38] so 50's gone that way and 50's gone that
+[21:41] way. So, that 50 is going to go up here.
+[21:43] And then what's it going to do here,
+[21:44] guys?
+[21:46] Yeah, same thing again. It's going to
+[21:47] split. But this is what again you need
+[21:50] to consider. How much signal will that
+[21:54] property take? What does it depend on?
+[21:58] It depends on the earth.
+[22:01] Modern houses in the UK with plastic
+[22:03] pipes, you typically use a PME system.
+[22:06] Again, I've not got time to tell you all
+[22:08] about it, guys, but essentially it means
+[22:09] that modern houses in the UK with that
+[22:11] have plastic pipes, so even though I say
+[22:13] modern, it could be 10 years old. they
+[22:15] do not have a physical ground at the
+[22:16] house. If there is no physical ground at
+[22:18] that house, it will take hardly any
+[22:20] signal, possibly even none. If it's an
+[22:24] old house with metal pipes underneath
+[22:25] it, those metal pipes under your house
+[22:27] act as an earth. It will take some of
+[22:29] your signal. So, let's just keep it
+[22:30] simple, guys. We'll we'll pretend these
+[22:32] are old houses. I've got 50 here. That's
+[22:36] taken, let's say, 25. I've got 25 left.
+[22:38] That's taken half of that again. I've
+[22:40] got 12 and a half left.
+[22:44] So, let's go back to the original
+[22:45] question that prompted this. How far
+[22:47] will the Jenny signal go? Can you see
+[22:49] what's happening? As I go up here, guys,
+[22:52] every house is taking away half my
+[22:54] signal. I'm not going to trace very far
+[22:56] up that'll be made, am I? So, can you
+[22:59] see that the more branches that come off
+[23:00] that take signal away, the less distance
+[23:02] you can trace? So, imagine the
+[23:05] difference between a terrace street with
+[23:06] houses very close together and a big
+[23:08] posh street where there's massive
+[23:09] mansions. Can you see the difference
+[23:10] that you'll have there? Also guys, think
+[23:13] about this. If these were modern houses
+[23:16] that didn't have an earth, how much
+[23:18] signal would they have taken?
+[23:20] Very, very little. So, you'd have much
+[23:22] more signal here and you could
+[23:24] potentially trace further.
+[23:27] Okay, these are all factors we need to
+[23:30] think about when we're when we're trying
+[23:31] to get the best out of this journey when
+[23:32] we're out there. Guys, [snorts]
+[23:34] any questions on that, guys?
+[23:36] Hopefully, it all makes sense. I hope.
+[23:49] Let's look at a couple of real examples
+[23:51] and some things we need to consider.
+[23:53] What what what I find quite a lot is
+[23:55] that we we're getting people to use the
+[23:57] transmitter more. But the next step, if
+[24:00] you like, I think is is getting them to
+[24:02] understand it a little bit more and to
+[24:03] use it um in different ways. I think a
+[24:06] lot of people are just are just doing
+[24:07] stuff like off the lamp column for
+[24:08] instance. I see that quite a lot.
+[24:12] Um, and I want to show you some problems
+[24:14] with that. Again, talking about, you
+[24:15] know, the signal strength and stuff.
+[24:20] Let's just look at um um a typical house
+[24:23] scenario. Brian saying he's froze. Okay,
+[24:26] everyone else is all right. Check
+[24:27] sensitive. So, let's just look at a very
+[24:29] typical example, guys. I've got a house.
+[24:32] I've got an LV main and an LV service.
+[24:34] And I've got a lighting column here.
+[24:36] Okay.
+[24:39] If I connect my Jenny onto here, think
+[24:42] about what we talked about before, guys.
+[24:43] We got 100% on this
+[24:46] 50. The house takes 10 and I've got 40
+[24:50] left. Hopefully that makes sense. So to
+[24:53] visualize this, what we're trying to say
+[24:55] here is that the Jenny signal on the LV
+[24:57] main is big and the Jenny signal on the
+[25:01] host service is small. What that usually
+[25:04] means is that I can find the house
+[25:05] service here, but then when I start to
+[25:08] follow it down here,
+[25:11] okay, I can't quite get it accurately
+[25:14] where it meets the main. Yeah. Now, this
+[25:17] is where we have to consider what are we
+[25:19] doing in this street. So, thinking about
+[25:21] somebody that's digging a hole and
+[25:22] excavating, if they're excavating over
+[25:25] here, I would personally argue that
+[25:27] that's enough.
+[25:29] And what I mean by that is they know
+[25:31] where the house service is and they know
+[25:33] that it's not near their excavation. So
+[25:35] the point where it exactly meets that
+[25:37] main is a bit irrelevant really. So I I
+[25:39] would say that that's fine. That's
+[25:40] enough. Yeah, we we're happy that we
+[25:43] found the house service, it's not what
+[25:44] we're digging. However, what if we was
+[25:45] digging here? If we had to dig near that
+[25:48] house service, I would argue that that's
+[25:50] not enough. That level of accuracy to me
+[25:53] isn't isn't good enough. So,
+[25:57] what we do instead I shouldn't have
+[25:59] deleted the whole lot, but I did. That's
+[26:02] our house again. Same thing. So, if this
+[26:05] Oh,
+[26:07] sorry. Something's fell.
+[26:13] We're back. Yeah. So, if we click on the
+[26:15] house instead of the column, can you see
+[26:17] what's going to happen now? We've got
+[26:19] 100% on here and then we've got the
+[26:22] weaker signal, the 50/50 if we call it
+[26:24] 50/50 on the on the other main. So now
+[26:27] it becomes easier to trace this to here.
+[26:29] Okay,
+[26:33] another example quickly and and I want
+[26:35] to show you how important this is. I've
+[26:36] got a little example of this in relation
+[26:38] to um cable strikes that have happened
+[26:41] in the past. Imagine this scenario. We
+[26:43] have a house.
+[26:46] This is the garden wall if you like. So
+[26:48] this bit here is like the driveway.
+[26:50] Okay. Then we have the LV main with the
+[26:54] service coming out of the house then
+[26:56] running parallel and then back onto it.
+[26:58] That's not uncommon that guys. Does that
+[27:00] picture make sense guys? First of all,
+[27:01] just chuck me a yes in there. Okay.
+[27:03] Doesn't look right to me, but hopefully
+[27:05] you get the idea. This is the this is
+[27:06] the cable. Yeah. Land column here. So,
+[27:09] clip on the column 100% on this 50. That
+[27:15] takes 10 and I've got 40 here.
+[27:19] Okay. Now, we scan across here and we
+[27:21] find that cable on the driveway. No
+[27:23] problem. We then follow it down. But
+[27:26] then when we get to here, what do you
+[27:27] think happens? Now,
+[27:30] we end up on here. As far as we're
+[27:32] concerned, that meets the main here
+[27:34] because we can't see that 10 when it's
+[27:36] next to the 40 because it's so close. We
+[27:39] can see the 10 up here because there's
+[27:42] nothing bigger that's right next to it.
+[27:43] If that makes sense, guys. But when we
+[27:44] put that 10 next to the 40, becomes very
+[27:47] difficult to see the 10. Not impossible.
+[27:49] So, typically that's the kind of cables
+[27:51] that get hit. However, if we apply the
+[27:53] signal to the property, the signal on
+[27:56] this one now is 100. You see that the
+[28:00] signal on this one is 50. We've
+[28:01] completely reversed the situation. The
+[28:04] big signal now is on the service, not on
+[28:05] the main. It makes it easier even even
+[28:07] when you've got them coming across and
+[28:09] looping back on, it's much easier to
+[28:10] work off that.
+[28:13] So if you if you are, you know, out out
+[28:14] on site with the guys and you're in
+[28:16] charge of teams, just try and encourage
+[28:18] them, you know, to think um about where
+[28:21] they're actually applying that Jenny
+[28:22] signal. Okay,
+[28:25] the Jenny's great, fantastic, but we we
+[28:28] have to understand that it's not it's
+[28:29] not magic, you know, there's still
+[28:31] limitations with it that we need to
+[28:32] understand. Any questions on that, guys?
+[28:34] again. Hope hope everyone's all right
+[28:36] with that. So difficult not seeing your
+[28:38] faces but hope everyone understands
+[28:40] that.
+[28:44] The other thing that's also important as
+[28:45] well and I come across this quite a lot
+[28:47] going back to this one we talked about.
+[28:49] Do you remember we talked about how that
+[28:50] at each of these joints we're losing
+[28:52] half the signal.
+[28:54] And this is why we do not teach zigzag
+[28:56] scans. Zigzag scans are outdated in my
+[28:59] opinion. We shouldn't be doing it
+[29:00] anymore. What we should be teaching
+[29:02] people to do is to find that cable or
+[29:04] the pipe or whatever and trace it and
+[29:06] follow it and notice signal change.
+[29:08] Because if you're walking up here with
+[29:10] your locator
+[29:12] and your signal suddenly drops,
+[29:16] what does that tell us?
+[29:18] We've lost half our signal. Why have we
+[29:20] lost it? There's a branch. I see this
+[29:22] with a lot of the guys on site. they
+[29:24] they'll be tracing a cable along, they
+[29:26] suddenly lose half the signal
+[29:29] um and they just turn it back up and
+[29:31] carry on. There's no thought process
+[29:32] there as to as to um why that has
+[29:35] happened if that makes sense, guys.
+[29:41] >> Yeah, Jake, exactly. I mean, we're just
+[29:43] talking actually locating it with a cat.
+[29:45] My job is to teach you to be able to get
+[29:46] the best out of locators, but yeah,
+[29:48] definitely try holes in that, of course.
+[29:52] Any
+[29:54] questions, guys, so far, feel free to
+[29:56] chuck them in um in the box. If you've
+[29:59] got anything you want to ask, anything
+[30:00] you want to expand on,
+[30:05] let's go back to the earth position.
+[30:07] Okay, we talked about um you know,
+[30:10] putting it near a lamp column, but you
+[30:12] remember what we said with a with a
+[30:13] cable with a lighting column because
+[30:15] it's insulated, it's kind of got to run
+[30:16] down it, hasn't it? It's got it's got to
+[30:18] flow down it. So, but
+[30:20] remember we said about pipes. pipes are
+[30:21] not insulated. So, we need to consider a
+[30:24] few things. If if this is our metal gas
+[30:27] pipe, this is looking from above plan
+[30:29] view or a metal water pipe. If we hook
+[30:32] the jenny up and put the earth quite
+[30:34] close here, what if what what we're
+[30:36] effectively doing there is we're
+[30:38] encouraging the signal to jump off.
+[30:40] Remember, with a cable, it's more
+[30:42] difficult because of the insulation, but
+[30:43] the pipe we can lose a lot of signal
+[30:45] here. So when you talk about moving the
+[30:48] earth further away, if I put the earth
+[30:50] further away, I basically trace further.
+[30:52] So simple as that, guys.
+[30:55] Um, radio detection sell the yellow
+[30:58] extension reels, guys. And if you do a
+[30:59] lot of pipe tracing, they're certainly
+[31:00] worth getting because they can help you.
+[31:02] Now, in radio detections instruction
+[31:04] book, it'll tell you to put the earth at
+[31:06] 90°.
+[31:07] Um, which is what I've done here, but
+[31:09] I think we need to think about it
+[31:11] more. I tend to not use it at 90, and
+[31:12] I'll explain why. At 90 degrees, 50% of
+[31:15] my signal will go that way and 50 will
+[31:17] go that way. But most people, we're only
+[31:20] tracing one way at once. So in effect,
+[31:22] what you're actually doing now is
+[31:23] wasting half of that signal going the
+[31:25] wrong way. So if you think about doing
+[31:27] this, if you put your Earth this way,
+[31:30] like on a 45, I might get 70 going that
+[31:33] way. You get the idea? So I can kind of
+[31:34] direct it to to which way I want it to
+[31:36] go by by al altering the angle of the
+[31:39] earth.
+[31:40] Okay? Also, think about this. If you've
+[31:42] got a house up here with a service pipe
+[31:45] to it and I want to trace that by
+[31:48] connecting onto here. If I put it this
+[31:50] way or this way. Yeah, it's going to
+[31:53] want to do that. But if I put it that
+[31:55] way, it's going to want to run up it. I
+[31:58] think some of you said you were on water
+[31:59] leakage, I think, or water repairs. So,
+[32:01] you maybe got to trace, you know, metal
+[32:03] water services. Consider a couple of
+[32:06] things with this guys. You've got a
+[32:08] house, you got a water service coming
+[32:10] out. If you hook up to the inside there
+[32:11] and put the earth at the back, your
+[32:13] signal don't want to run down that pipe.
+[32:16] You know, think about, you know, angling
+[32:18] your earth down to where the water man
+[32:20] is. Yeah. Your signal is trying to get
+[32:22] to that pin. Put the pin where you're
+[32:23] trying to trace it. Do you all
+[32:25] understand that, guys? Just going to
+[32:27] have a minute and um a little drink. So,
+[32:29] give me some feedback on that if you're
+[32:31] all okay with it. Anything you want me
+[32:32] to expand on?
+[32:36] While you're while you're answering
+[32:37] that, guys, just want to show you the
+[32:39] problem with sometimes extending your
+[32:41] earth out. And again, we've got this in
+[32:43] the street outside. Um,
+[32:46] so that's our pipe and we hook up to the
+[32:50] pipe and put the earth down here and we
+[32:51] get signal along here, but we've also
+[32:54] got an electric cable coming like this
+[32:56] and we get signal down that. Now, in
+[32:58] reality, this should give us the
+[33:00] strongest signal in reality.
+[33:03] Okay? However, we have to consider
+[33:05] depth. That pipe is a meter and a half
+[33:08] deep. That cable is 0.5 meters deep from
+[33:11] the surface with our locator. This one
+[33:13] is now the strongest signal.
+[33:16] For you guys using 8000s, this is where
+[33:18] your current direction comes in and your
+[33:19] current measurement comes in. Okay,
+[33:22] they're the benefits of high-end
+[33:23] locators. But what we do here, guys, is
+[33:25] if we if we short earth pin. Yeah, if we
+[33:29] move that from there and we actually
+[33:31] what we do here is we there's actually a
+[33:32] rim around the box like a valve lid. We
+[33:35] actually earth to that. So nice and
+[33:36] tight in and that decreases massively
+[33:39] the amount of signal on this. So So the
+[33:41] takeaway from that I guess guys is
+[33:44] the earth position is important but
+[33:46] there's no set place to put it. Think
+[33:49] about what you're trying to do. Think
+[33:50] about moving it. Try it in different
+[33:52] positions and all that kind of stuff.
+[33:54] Okay,
+[34:00] during this session guys, you've heard
+[34:02] me talking a lot about hooking up to
+[34:04] hoses to get a signal on the electric
+[34:05] cable. I just want to show you some
+[34:07] little tips of how we do that. We don't
+[34:09] need to use a plug-in adapter. So,
+[34:11] around a building, there's a few things
+[34:13] that you're looking for. You're looking
+[34:14] for a boiler, light, tap, gas riser, gas
+[34:18] meter. If you hook your Jenny up to any
+[34:20] of these things because of the
+[34:21] crossbonding inside the house, you'll
+[34:22] trace the electric.
+[34:25] Sometimes confuses people this guys, but
+[34:27] here we've got a gas entry inside
+[34:29] properties. Gas pipes have to be metal
+[34:31] by law. We've hooked up here earth with
+[34:34] some water. The signal can't travel back
+[34:36] down the plastic. It's got to go in the
+[34:37] house on the metal. And the metal, of
+[34:39] course, is bonded to the electric, so it
+[34:41] comes back on the electric. So, I know
+[34:43] it sounds backwards, but by clipping on
+[34:44] somebody's gas entry, you will get a
+[34:46] really good trace on the electric
+[34:48] service and the main. So, for you guys
+[34:49] that are surveyors, if you if you're
+[34:51] trying to, you know, locate the LB main
+[34:53] down a foot path, go and find a nearby
+[34:55] building, nearby house, get hooked up to
+[34:57] it, get a signal on it. Make your life
+[34:59] so much easier.
+[35:01] Gas meters are great, guys. Got an
+[35:02] outside gas meter, just hook up to the
+[35:04] inlet like here. If you can't get it
+[35:06] that, open the lid and clip on there.
+[35:09] Outside lights, again, metal, just hook
+[35:11] up to them. These are really good guys
+[35:13] as well. Got a blow up on a boiler. Hook
+[35:14] your hook your genu lead on that. You'll
+[35:16] get a perfect trace on the electric.
+[35:18] Works really well.
+[35:21] There's loads of ways of tracing
+[35:22] domestic services, guys. Loads of ways
+[35:25] um around properties. I've done all
+[35:27] sorts of stuff utilizing the
+[35:28] crossbonding taps as well. The problem
+[35:30] with a tap is you can sometimes get um
+[35:33] inside plastic water. Just give me a
+[35:35] minute. I'm boiling in here. I'm just
+[35:36] going to open the window. It's suddenly
+[35:37] gone warm.
+[35:50] It's freezing in here this morning. It's
+[35:51] boiling now.
+[35:54] Okay. So, all the all these ways of um
+[35:57] the tracing guy. Well, I want I want to
+[35:59] you you Cat 4 users in particularly guys
+[36:02] if you use Cat 4 um have you ever had a
+[36:05] situation with the Cat 4? It's one of
+[36:06] the biggest complaints we get about the
+[36:08] Cat 4 this actually. Um, have you ever
+[36:10] had a situation, particularly on Jenny
+[36:11] mode, where the cat's been quite
+[36:13] erratic? And what I mean by that is
+[36:15] you've you've turned the sensitivity
+[36:16] control up just a fraction and you've
+[36:18] got full signal and then you try and
+[36:20] just back it down a tiny bit and you end
+[36:22] up with no signal. You can't kind of get
+[36:24] your needle in the middle. It's either
+[36:25] all on or it's all off. Has anybody ever
+[36:27] had that experience with a with a cat
+[36:29] before?
+[36:37] Oh, got some nice fresh air coming
+[36:39] through. That's nice.
+[36:43] So,
+[36:44] the reason for it and and it's the same
+[36:46] with other locators as well, guys. We're
+[36:48] talking about cat 4 is the re or the
+[36:50] there are a few reasons, but the main
+[36:52] reason that typically happens is that
+[36:54] you have too much signal on the utility.
+[36:57] The signal is too strong, basically, and
+[36:59] it makes the cat behave quite
+[37:00] erratically.
+[37:02] And this is a problem with all the kind
+[37:03] of historical training that a lot of
+[37:05] people have had. They talk quite a lot
+[37:06] about make sure you get a really good
+[37:08] earth and stick that pin right in and
+[37:10] make sure you get a really good drop in
+[37:11] tone. And it's not true, guys. You know,
+[37:14] we don't want bucket loads of signal on
+[37:16] there. We we just want enough to be able
+[37:17] to locate it. Put too much signal down
+[37:20] it and it causes us problems. So, if you
+[37:22] look on the video now, what I want you
+[37:24] to see on here is I'm watch my finger
+[37:26] how much it moves and then watch the
+[37:28] sensitive watch the needle here and
+[37:30] you'll see what I mean. It's either full
+[37:32] or it's off. I can't get it in the
+[37:33] middle here. So, let me just play this
+[37:36] for you.
+[37:39] There's no comments coming back in about
+[37:40] that Cat 4. So, maybe you've not had it,
+[37:42] but oops.
+[37:59] So to correct it, we turn the power
+[38:02] down. And the easiest way of turning the
+[38:03] power down is by pulling that earth out.
+[38:11] You'll see now that it fixes it.
+[38:18] [bell]
+[38:20] See that, guys? Okay.
+[38:23] If it's if it's especially wet as well,
+[38:25] um if it's especially wet, you can
+[38:28] sometimes just pull it out and just
+[38:29] stick it on the on the floor. You guys
+[38:31] still there?
+[38:38] So, that's how we can put a signal onto
+[38:40] a onto a house service. And the other
+[38:42] good thing that we can do with this is
+[38:43] there's a few little tricks we can do um
+[38:45] with a with a cat 4, which I like. You
+[38:47] remember we talked about it being dual
+[38:48] frequency and when it's turned up quite
+[38:50] high, you'll hear the hear the two
+[38:52] frequencies and stuff. So, let me just
+[38:53] show you what I'm doing here. I've I've
+[38:55] basically got the house here.
+[38:58] Yeah. With the service coming out and
+[39:00] then the LV main like this. So, I've got
+[39:03] 100% I've connected onto here. By the
+[39:05] way, I've got 100% here and then 50/50.
+[39:07] And when when you have this, you get
+[39:10] quite a unique thing that happens on the
+[39:12] joint. And I'm going to show you. So on
+[39:15] the video,
+[39:17] this works with with with most locators
+[39:18] as well, guys. Um, so on the video, I am
+[39:22] now locating the LV main. So just to be
+[39:24] clear, guys, if you look at my drawing,
+[39:26] I'm here at the moment. Yeah.
+[39:30] Pacing that way. I'm going to find the
+[39:32] LV main. And once I found it, I'm going
+[39:34] to turn the sensitivity control up until
+[39:36] I can hear both frequencies coming
+[39:38] through as a little reference point.
+[39:42] So you'll see now I'm going to crank
+[39:43] that ride up using the manual again,
+[39:48] hear the change in tone, stop turning,
+[39:50] walk forward. The signal will drop to
+[39:52] zero. When I carry on walking, it will
+[39:54] come back up. I will now reverse.
+[39:58] And that point there where it drops to
+[40:00] zero is the joint. I turn the other way.
+[40:02] Now that is the house surface. Okay. So
+[40:05] that's a neat little trick you can do.
+[40:08] Of course guys, you remember with this
+[40:10] that obviously when we're doing this
+[40:11] training normally we do the theory and
+[40:13] then we go and do the practical outside.
+[40:14] So we kind of show people the theory and
+[40:17] science behind it and then we go out and
+[40:19] practice it. I can't do that with you
+[40:20] guys. You'll have to go out and practice
+[40:22] on your own and see if you can see if
+[40:24] you can have a go with these techniques.
+[40:26] You you you might remember mentioned
+[40:28] before about the again the dual
+[40:30] frequency coming from this transmitter.
+[40:31] The 131 is really cool. There's some
+[40:33] really cool little tricks we can do with
+[40:34] it. Um, again, not got loads of time to
+[40:36] go into massive amounts of detail, but
+[40:38] with 131, we can make it jump gaps. We
+[40:40] call it capacitance effect. So, there's
+[40:43] no kind of physical metaltometal
+[40:45] connection here. We're using the the the
+[40:47] transmitter leads uh to make signals
+[40:49] jump onto something else. So, on the
+[40:51] left is on somebody's sky cable, Sky TV,
+[40:54] that puts a signal into the house
+[40:56] through the sky box back out on the LV.
+[40:58] This one is on a BT cable coming down a
+[41:00] pole. And this one's a BT cable into
+[41:02] somebody's house. Loads of ways we can
+[41:04] use capacitance techniques, guys. For
+[41:06] you guys that are using RD8000s, you can
+[41:08] do the same thing. You'll just need to
+[41:10] ensure that your transmitter is set to
+[41:12] 131. On a G4, remember it's kicking out
+[41:14] both at the same time. Bit simpler. This
+[41:17] is a BT cable coming out of a property.
+[41:20] [screaming]
+[41:21] Very, very hard to trace these guys.
+[41:23] You'll certainly not get them without a
+[41:24] Jenny, but you need to consider how you
+[41:25] apply the Jenny signal.
+[41:29] Just hold it on like that. That's all
+[41:30] you have to do. And then some smart ass
+[41:33] always says, "What if you're on your
+[41:34] own?" So on this one, I've shown I've
+[41:36] solitated on bit of water for the earth
+[41:38] just to show you can still do it on your
+[41:39] own with a bit of effort. And that's me
+[41:42] tracing it out.
+[41:48] Last little one, guys. This is me
+[41:49] tracing out an LV service. Listen to the
+[41:52] tone from the cat. You're hearing the
+[41:53] high frequency coming through the one
+[41:55] through one.
+[41:56] And just watch how I've done this. Go
+[41:58] back to there. And you'll see that this
+[42:00] is actually a plastic light, guys. If
+[42:02] you remember a metal light, I'd click on
+[42:04] plastic light. Just wrap it around about
+[42:06] three times. Again, if you're using
+[42:07] 98,000131.
+[42:12] Okay, guys. I'm just going to grab some
+[42:14] water because I'm read and have a little
+[42:15] minute. So, just um let me know if it's
+[42:18] all making sense so far. Um and if
+[42:21] you've got any questions, just got my
+[42:23] water up.
+[42:36] Cool.
+[42:55] Everyone's good. No questions.
+[42:59] Hope that means you're understanding it.
+[43:00] So So now we've we've looked at I just
+[43:02] want to relate this back to our method.
+[43:04] Now, if you think about what we've done
+[43:05] so far, we've we've hopefully been in
+[43:07] our street and we've located all the
+[43:09] lighting and then we've located all the
+[43:11] LV services and we've also started to
+[43:13] locate some of the LV mains. So, we're
+[43:15] concentrating on the on the electrics.
+[43:16] Yeah. Um, sorry, siren.
+[43:23] What we also need to now consider is is
+[43:26] multiple LV mates.
+[43:28] Um, and I'm going to show you some
+[43:31] examples. Now, I know Rebecca's here
+[43:32] with us, so she'll probably recognize
+[43:34] this drawing. This is some stuff I put
+[43:35] up there, Livingston, and it's a little
+[43:37] example that we use. So, if you're not
+[43:39] familiar with Scottish power plans, the
+[43:41] LV is brown and the um HV is red. if you
+[43:44] kind of imagine here, we've got
+[43:47] four cables, two HV, two LV. The caton
+[43:51] power and radio doesn't make any sense
+[43:52] of that. You just get a signal
+[43:54] everywhere. Let's ignore the HV for now
+[43:56] and let's focus on how we can find those
+[43:58] two LV cables accurately.
+[44:00] If using the techniques I've just shown
+[44:02] you about hooking up to a building, if
+[44:04] we hook up to host six, the majority of
+[44:06] the Jenny signal will be on the top
+[44:07] cable so we can locate it. We then hook
+[44:10] up to host number five, the majority gen
+[44:12] signal will be on the bottom cable we
+[44:13] can locate it. So we're going to use our
+[44:16] plans to help us. Yeah, we're going to
+[44:18] look at the plans to help us plan our
+[44:20] attack if you like of where we're going
+[44:22] to apply the Jenny signal.
+[44:25] This is a UKPN drawing for Kent and it
+[44:28] is if you're not used to plans guys it
+[44:30] can be confusing. Each region in the UK
+[44:32] has different standards of plans and
+[44:34] different colors. So whereas you just
+[44:36] saw on that one Scottish Power used
+[44:38] brown as LV down in Kent UKPN used
+[44:41] green. People often look at that and
+[44:43] think it's cable TV but it's not. So
+[44:45] there's two LV mains here. The cat on
+[44:47] its own again only finds one on both
+[44:50] power and radio. We need to find them
+[44:51] both. So let's zoom out. take a step
+[44:54] back and look at these cables in more
+[44:55] detail. What we can see, so imagine
+[44:57] we're digging here, but what we actually
+[44:59] see down here is the split. So where
+[45:01] does this house get its power from? Top
+[45:03] or bottom cable? And where does this
+[45:04] house get its power from? Top or bottom
+[45:06] cable? You get the idea, guys? So by
+[45:08] applying my Jenny signal here first and
+[45:10] then here second, I locate those two
+[45:12] cables really easily. I could even use
+[45:15] the columns here, guys. But it's the
+[45:17] it's a principle is what I'm talking
+[45:18] about about using your plans to help
+[45:21] you, you know, think outside the box.
+[45:23] Forgive the pun a little bit, but we
+[45:24] focus too much on the excavation
+[45:26] sometimes without thinking about what
+[45:28] might run through it and how we get a
+[45:29] signal onto it.
+[45:34] The other thing that I want to touch on
+[45:36] here is depth. So a lot of the cat 4s
+[45:38] now a plus version have depth estim
+[45:40] estimation on it. And I know that for
+[45:42] some companies out there, they don't
+[45:43] like the guys having depth. In fact,
+[45:45] there's a training course going on next
+[45:46] door. We had a conversation about depth
+[45:48] before. What we have to understand
+[45:50] though is that depth isn't just to see
+[45:51] how deep something is before we
+[45:53] excavate. It gives me a lot more
+[45:55] information than that.
+[45:57] So on this example here, what actually
+[46:00] happens is, so remember the mindset
+[46:02] again. We're digging a hole here, but
+[46:04] I'm not going to start excavating until
+[46:05] I found both those cables with my
+[46:07] locator.
+[46:08] Okay? We hook up to this house and we
+[46:10] trace this cable and we get an X marks
+[46:12] the spot. Then we hook up to this house.
+[46:15] We trace this cable, but it's actually
+[46:16] in the exact same position. Bang on the
+[46:20] same mark.
+[46:21] So your first thought is kind of am I am
+[46:24] I'm a am I tracing the same cable again?
+[46:26] Is it actually split? Do you know what I
+[46:28] mean? Is it two separate cables there?
+[46:30] However, when I was hooked up to house
+[46:33] number one at this X here, I did a depth
+[46:36] estimate on the cat and it was 600 mil.
+[46:39] When I'm hooked up to house number 14
+[46:41] over here, even though the locate is in
+[46:45] the same place, the depth is now telling
+[46:47] me it's 300 mil. Do you understand what
+[46:50] that's telling me? It's telling me that
+[46:51] I have found both those cables. The
+[46:53] reason the mark is in the same place is
+[46:55] because they're on top of each other. Do
+[46:57] you all understand that, guys? Please
+[46:58] just give me a yes if you're okay with
+[47:00] that.
+[47:02] So, depth has its uses. Yeah, I can give
+[47:05] you another 10 reasons why depth's
+[47:07] important, guys, but we haven't got time
+[47:08] on this session. There's many reasons
+[47:10] for it, not just to see how deep
+[47:11] something is before we dig on it.
+[47:14] Similar one here, guys. This is Western
+[47:15] power. Again, blue LV. So, imagine that
+[47:19] we're excavating here. We've got two LV
+[47:21] mains to find. Okay. What does a cat do
+[47:24] on power and radio? Find one. So, how do
+[47:26] we find them both? Because sometimes
+[47:28] people say, "Well, it's all right you're
+[47:29] saying that, Pete, but my plans don't
+[47:30] show house services,
+[47:32] right? Doesn't matter, does it? Where
+[47:34] does this house get its power from?
+[47:37] Yeah. And where does this house get its
+[47:39] power from? We don't need the house
+[47:40] services on there to for, you know, to
+[47:42] to tell us. It's pretty obvious, isn't
+[47:44] it? So, we hook up to this house and we
+[47:46] trace that one and then this one and we
+[47:47] trace that one. So, hope hopefully guys
+[47:50] that makes sense. But what I'm trying to
+[47:51] get here is we need to plan the survey a
+[47:53] little bit. We need to use our plans and
+[47:56] look at which where is the best place to
+[47:59] put that jenny going to be? And remember
+[48:00] what the session's called. How do we get
+[48:02] the best out of the Jenny? And this is
+[48:03] how we do that.
+[48:11] So, so we we we then back to our
+[48:14] process, guys. Sorry. You know, we've
+[48:16] hopefully now done all the LV.
+[48:18] Yeah, we've located it all.
+[48:21] Now, we're going to move on to the coms.
+[48:22] And this is where our signal fan comes
+[48:24] in, guys. So, signal fan and we place
+[48:26] that around the cable like this. So,
+[48:28] typically speaking, you know, BT, cable
+[48:30] TV. On this session, guys, I'm not going
+[48:32] to get into the rights and wrongs of
+[48:33] lifting lids, okay? All I would say is
+[48:35] just, you know, refer to your own um
+[48:38] company policies and procedures, etc.
+[48:40] for that, okay? I'm not going to get
+[48:42] open up a debate on that, guys.
+[48:47] So, but that's what we use the clamp
+[48:48] for. Okay.
+[48:52] So, we've located the lighting, we've
+[48:54] done the LV, we've now located the BT,
+[48:57] and we've done the cable TV. So, can you
+[48:58] see what we're doing now? We're building
+[48:59] up this picture layer by layer. Okay,
+[49:02] this is what I mean about location, not
+[49:03] avoidance. Okay, we're we're hooking up
+[49:05] to stuff and and and getting it marked
+[49:07] out.
+[49:09] We then move on to induction, which is
+[49:11] where we just use the box. If I can get
+[49:14] this to work.
+[49:16] I want to be clear though with
+[49:17] induction. Last resort, we should
+[49:21] exhaust all connection and clamping
+[49:22] options before we move on to induction.
+[49:26] This is another issue, guys, with the
+[49:27] cat data download that I'm seeing is
+[49:29] that because the guys know that we're
+[49:31] going to download the cats and see how
+[49:32] much Jenny usage they're doing, they're
+[49:33] just banging it on induction, some of
+[49:35] them, and sticking it 10 meters down the
+[49:36] footpath and leaving the thing bloody
+[49:37] running for an hour just to get usage
+[49:39] up. So, so we need we need to ensure
+[49:42] that we're we're still applying these
+[49:43] connection methods and current methods.
+[49:47] There's a couple of issues with
+[49:48] induction. Okay, it works, but there's a
+[49:51] couple of issues you have to be aware
+[49:52] of. Okay, number one, we've talked a lot
+[49:55] about the benefits of this Gen 4 having
+[49:57] simultaneous dual frequency, kicking out
+[49:59] 33 and 131 at the same time. 131 is high
+[50:02] frequency. Remember, high frequency is
+[50:04] very good on cables that aren't earth
+[50:06] very well, things like coms cables, that
+[50:08] kind of stuff. Yeah.
+[50:11] When we use induction, we don't get 131.
+[50:14] We only get 33. So you you're
+[50:16] restricting yourself if you like the
+[50:17] vagina. You're not getting the best out
+[50:18] of it. Okay, that's the first point. The
+[50:22] second thing you need to consider is
+[50:23] that it's not selective. So just just to
+[50:25] rewind for that doesn't know guys,
+[50:26] sorry, just some of the basics. Plug the
+[50:28] leads into the Jenny, it's on
+[50:29] connection. All the signal is sent out
+[50:31] down the leads or the clamp. When you
+[50:33] disconnect the leads, it's on induction
+[50:35] and we get this kind of herbone signal
+[50:37] if you like coming out from the jenny
+[50:39] like you can see on the slide basically.
+[50:41] So, it's been emitted from the Jenny and
+[50:43] then we sit that down over a buried pipe
+[50:45] or cable and it throws a signal onto it.
+[50:47] Okay.
+[50:49] You need to be 10 meters away with your
+[50:51] cat though. Now, if you're less than 10
+[50:53] meters away, you'll pick up a direct
+[50:54] signal from the Jenny, which is what we
+[50:56] don't want.
+[50:59] So, if if we look here,
+[51:02] I can you guess what I'm doing there,
+[51:04] guys?
+[51:06] I'm trying to locate the BT. Yeah. So,
+[51:08] I'm suspecting because you know this box
+[51:10] is here. I'm suspecting there's a BT
+[51:13] here. I'm trying to do it.
+[51:15] I would not advise you do this unless
+[51:17] you absolutely have to, guys. Okay?
+[51:19] Because you can quite often get it
+[51:21] wrong.
+[51:23] This is outside our office. Again, I'm
+[51:26] actually up here somewhere.
+[51:31] There's a power cable that runs down
+[51:32] here parallel with that BT. Which do you
+[51:34] think is the best conductor, the BT or
+[51:37] the power cable? Importantly, which has
+[51:40] got the better earth on it? Remember
+[51:41] what we're doing with this Jenny signal?
+[51:43] Of course, it's the power cable, guys.
+[51:44] So, even though the Jenny sat above the
+[51:46] BT, that signal goes for that. The
+[51:49] problem with that is that you're 10
+[51:51] meters away down that footpath tracing
+[51:53] the power cable, but you think you're
+[51:55] tracing the BT. I have lost count of how
+[51:58] many sites I've been to on a site visit
+[52:00] and I've seen the BT and the power cable
+[52:02] marked in the same place and as soon as
+[52:05] I see that now on site alarm bells start
+[52:07] going off because I start thinking how
+[52:09] have they located that BT and quite
+[52:11] often you find they've induced onto it
+[52:13] like this and they've not actually
+[52:14] located the BT they've just relocated
+[52:16] the power again okay so quite often with
+[52:21] BT guys the only way of doing it is to
+[52:22] lift and clamp okay even With induction,
+[52:26] we can sometimes struggle.
+[52:31] HV cables, guys. HV are the hardest
+[52:33] cables to detect. Again, guys, it's a
+[52:35] short mini session. I can't go into all
+[52:36] the reasons why we do in the full
+[52:38] course. Typically speaking, you guys
+[52:40] might have experienced this. You tend to
+[52:41] get stronger power signals off LV than
+[52:43] you do off HV. HV is normally deeper.
+[52:46] The biggest issue with HV is working on
+[52:48] a connected journey to it. For most of
+[52:49] us guys that can't get in in subs,
+[52:56] Yeah, Joe, absolutely. Um, semi-cable TV
+[52:59] is always being shell. Um, so we we
+[53:01] can't connect onto it.
+[53:03] Um, so the only option we've got with HV
+[53:06] a lot of the time is it is induction.
+[53:07] It's the only option we've got. But the
+[53:09] problem is this guys, look at this
+[53:11] footpath LV HV deeper. Yeah. So even
+[53:15] when the Jenny's here, can you see
+[53:17] what's going to happen? We end up
+[53:18] lighting this thing up.
+[53:20] So that's why it can be very tricky with
+[53:22] HV sometimes. So what we do is this,
+[53:24] guys. This is back to that UKPN drawing.
+[53:27] So remember on this guys, the green is
+[53:28] LB, the red's HB. We're proposing to
+[53:31] excavate here. The cat only finds the
+[53:34] LB. No matter where I put this Jenny, I
+[53:36] only found the LB. All these examples
+[53:38] are show I'm showing you guys. I've
+[53:40] worked here and done this. Okay? So the
+[53:43] real basically, so we can't pick it up.
+[53:45] So what we do like before, we zoom out.
+[53:47] Let's have a look. What we can see over
+[53:49] here is this separation. If I apply my
+[53:52] Jenny signal here onto the HV,
+[53:56] I can now locate it back down here. That
+[53:58] make sense, guys? Because the LV is not
+[54:00] kind of blocking it if you like anymore.
+[54:02] So, what we try and do with HV, I know
+[54:04] you can't always do this, is try and
+[54:05] find a bit of separation, maybe a road
+[54:08] crossing or something like that. Again,
+[54:10] guys, hope you're okay with that. That
+[54:11] makes sense. Same here, guys. Excavating
+[54:13] here,
+[54:15] we we induce here.
+[54:18] What I often do, guys, is do HV last.
+[54:21] And it's very tempting to think, oh, we
+[54:22] got HV, we'll do it first. But do it
+[54:24] last because, and the reason for that is
+[54:26] simple. You've already got stuff marked
+[54:27] up. So, if you do accidentally induce
+[54:29] onto another utility, you know you've
+[54:31] done it because you're picking up the
+[54:32] same thing again. You see what I mean?
+[54:35] Okay. You all happy so far, guys? All
+[54:37] making sense? I hope. Any questions?
+[54:40] Okay. Next question I want to ask you
+[54:41] guys is, um, have you heard of a twoman
+[54:44] sweep before? Twoman parallel cat and
+[54:45] Jenny sweep. Have you heard of one? I
+[54:48] want to know if have you been trained to
+[54:50] do that or have you done it? Is it
+[54:51] something that you do? Give me some
+[54:52] feedback on that and we'll have a
+[54:53] discussion about that. While you're
+[54:55] answering that question, guys, I want to
+[54:56] show you something.
+[54:58] Wait, I'm going to put my full video
+[55:00] thing up there for a minute, guys.
+[55:03] [snorts]
+[55:04] Um, hello. When you're when you're using
+[55:07] a locator on induction, you know, you've
+[55:09] got to be 10 meters away from the
+[55:10] transmitter. Um, just going to jump up
+[55:13] for a second while I show you this.
+[55:15] Hopefully, you can still hear me.
+[55:18] Even even when you're even when you're
+[55:20] 10 meters from the transmitter, you can
+[55:22] still pick up a direct signal to the
+[55:24] locator. So quite often what happens is
+[55:26] your gen is 10 meters away. There is
+[55:29] actually no utility there, but the cat's
+[55:31] still giving you a signal or your
+[55:32] locator's still giving you a signal and
+[55:35] it looks just like a cable as well.
+[55:36] You'll move it backwards and forwards
+[55:38] and it'll look just like a signal, but
+[55:39] it's actually airborne. So one of the
+[55:41] things I want to quickly show you is how
+[55:42] you test for that. So if you imagine
+[55:45] that I'm stood here with my locator and
+[55:47] my ch is 10 meters away that way and I'm
+[55:49] getting a signal. I'm thinking to
+[55:51] myself, is that signal coming from an
+[55:53] underground utility or is it coming
+[55:55] directly from the transmitter? And the
+[55:57] simple way to tell is by lifting the
+[55:59] locator and pointing it towards the
+[56:00] transmitter. If I lift and my signal
+[56:03] increases, it's coming from the
+[56:05] transmitter. If I lift and my signal
+[56:08] decreases, it's coming from underground.
+[56:10] And that's a very simple way how you can
+[56:11] tell where your signal is coming from.
+[56:19] >> [clears throat]
+[56:23] >> Okay guys, so we're we're we're getting
+[56:25] um we're getting kind of towards the end
+[56:27] of our survey now. We've done all our
+[56:30] connecting and stuff, aren't we? And
+[56:31] clamping and things. So this is where we
+[56:32] talk about the kind of final induction
+[56:34] techniques. And the reason I brought up
+[56:35] the twoman sweep is I know a lot of
+[56:37] people have been taught to do this and I
+[56:39] have some concerns with it. It's a
+[56:40] technique that's still being taught and
+[56:43] I think we just have to be careful.
+[56:44] First of all, for anyone that doesn't
+[56:46] know, let me explain what one is.
+[56:50] Still using induction. If you imagine
+[56:52] that I've got a foot path here and I've
+[56:54] got my excavation here.
+[56:57] Okay. The idea of a twoman sweep is the
+[57:00] the cat is here, if you like, and
+[57:02] the jenny's here. So, I've got somebody
+[57:04] with the cat and somebody with the
+[57:05] Jenny. And the idea is at the same time
+[57:07] they walk together across. So imagine
+[57:10] them both walking together. And the idea
+[57:12] is that if there's anything coming
+[57:13] across here, they'll hit it at the same
+[57:16] time. Okay? Hopefully that makes sense,
+[57:19] guys. Now, the problem with this is that
+[57:22] I wouldn't recommend doing it in a
+[57:24] footpath or a carriageway.
+[57:27] And let me explain why.
+[57:30] It's not bad for road crossings, I
+[57:32] guess, and stuff, but what we could
+[57:34] potentially have in a footpath is a
+[57:36] cable that does that.
+[57:38] And that's not uncommon, guys. You know,
+[57:40] it's changing position in the footpath.
+[57:42] You imagine you're here with your cat
+[57:43] and your Jenny's here and you walk
+[57:46] across at the same time. In the in the
+[57:48] starting position, the cat isn't going
+[57:50] to detect it because the Jenny's not on
+[57:52] it.
+[57:54] Then you walk together, but by the time
+[57:56] the Jenny's on it, the cat's not. You
+[57:58] see that?
+[58:00] Okay. So, that's that's that's one of
+[58:02] the potential downfalls of a twoman
+[58:04] sweep is that if a cable changes
+[58:05] position between the cat and the Jenny,
+[58:07] you can miss it. You see, so the
+[58:09] technique that I teach people to do is
+[58:11] is what's called a blind induction
+[58:13] sweep. We're going to come to that
+[58:15] shortly, Joe.
+[58:19] Um, hang on.
+[58:22] Have a look at the picture there, guys,
+[58:24] or the six pictures. Uh, you'll see that
+[58:26] the Jenny's in a different position on
+[58:28] each one of the six pictures. So, what I
+[58:31] want you to do is just kind of keep that
+[58:32] in your head if you like. just memorize
+[58:34] that picture and then let's transfer it
+[58:36] to the to the real world.
+[58:40] If if that's [clears throat] my foot
+[58:41] path again, now this could be a
+[58:43] carriageway, guys. I keep using
+[58:44] footpath, but it could be a carriageway.
+[58:45] Doesn't matter. That's the bit that I'm
+[58:47] interested in. I'm going to go 10 meters
+[58:50] away because that's how far away my
+[58:52] Jenny has to be. And I put the Jenny
+[58:53] over the curb with a handle like that.
+[58:55] And I scan across. Then I put the Jenny
+[58:57] here and scan. Then here and scan. If
+[58:59] you think about the pictures before you
+[59:02] here, scan here and scan it. It
+[59:05] effectively does exactly the same thing
+[59:06] as a twoman speed. But what it does do,
+[59:08] it accounts for anything that doesn't
+[59:10] run straight. Because as long as I scan
+[59:12] the whole width of that on each gen
+[59:14] position, even if a cable runs
+[59:16] diagonally, I'm still going to find it.
+[59:20] Just give me some feedback on that. Does
+[59:22] that make sense? And you can see the
+[59:23] difference between that and the two by
+[59:24] one. 2x1's good for big areas, but
+[59:26] footpass carriageways. I tend to think I
+[59:28] call it a blind induction sweep. Some
+[59:30] people call it footprint sweep or
+[59:31] something, but that's what I I think is
+[59:34] is a is a better way in that situation.
+[59:38] Let's just finish off then talking about
+[59:39] our method that we talked about. Do you
+[59:41] remember we did seems like ages ago now?
+[59:43] We did the lighting, we did the LV
+[59:45] services, the L mains, the coms, we've
+[59:47] done pipes, you know, we're locating all
+[59:50] these things one at a time and this is
+[59:51] kind of the last thing that we do.
+[59:54] Um the final thing that I
+[59:58] does the orientation of the journey to
+[01:00:00] the direction of service have any
+[01:00:01] effect? Yes. Um Luke, it's got to be in
+[01:00:03] line with it. So the handle of the Jenny
+[01:00:04] has to be in line with the the utility.
+[01:00:07] Roughly though, 45 degrees, you'll still
+[01:00:09] be fine. Okay. Yeah. So yeah, roughly
+[01:00:12] handled in line.
+[01:00:18] Yeah. I think what I think I think what
+[01:00:20] you're getting is if he's running diagonally under the gen, will you still
+[01:00:22] get it? And yeah, you you will it's it's
+[01:00:24] not bang on in line.
+[01:00:27] The final thing we can do with the
+[01:00:28] Jenny, guys, is nulling out. And I think
+[01:00:29] this is what somebody was referring to
+[01:00:31] before about putting it on it on it on
+[01:00:32] on its side. Um there's many many
+[01:00:35] reasons why we null out, guys. Um I I
+[01:00:38] can't go through all of them again, but
+[01:00:40] I'm going to give you one example. Do
+[01:00:41] you remember we talked about the HV
+[01:00:43] situation that we had before? And you
+[01:00:45] remember we said we had the LV here and
+[01:00:47] the HV here.
+[01:00:50] Okay, possibly something else here, but
+[01:00:51] that's a HP. [clears throat]
+[01:00:53] And can you see that no matter where I
+[01:00:55] put the Jenny, I can't get signal on
+[01:00:58] this, it's either going to be hitting
+[01:00:59] that or it's going to be hitting that.
+[01:01:01] Yeah.
+[01:01:03] So, our plans are telling us there's HV
+[01:01:06] there. Okay. Um, but we can't find it.
+[01:01:11] We We've tried passive molds. We've
+[01:01:12] tried induction, can't find it. This
+[01:01:14] could be. Now, this is what I was
+[01:01:15] talking before, guys, about well, you
+[01:01:16] might want to look at your plans though
+[01:01:17] and find some separation. Do you
+[01:01:19] remember we talked about that just a
+[01:01:21] little while ago? But let's say you
+[01:01:22] can't. Your plans are showing you that
+[01:01:23] the HV and the LV are together all the
+[01:01:25] way up that foot path. So what you might
+[01:01:27] want to try is nulling out the LV. Look
+[01:01:29] at the signal on the Jenny on either
+[01:01:30] side. You can see that dead zone there.
+[01:01:33] If I tip the Jenny on its side like
+[01:01:35] this, I've now got that, haven't I? Make
+[01:01:37] sense? So if I put the Jenny on it side
+[01:01:40] over the LV main, the one the one I keep
+[01:01:42] finding, the one I don't want to find
+[01:01:43] anymore, it's blocking everything else.
+[01:01:45] It cancels that out and throws signal
+[01:01:48] down.
+[01:01:49] and hopefully lights up the um the HV
+[01:01:53] for you. So that's um yeah, that's why
+[01:01:56] we and we guys
+[01:02:08] there you go. That was my session on how
+[01:02:10] to get the best out of the Jenny. I hope
+[01:02:12] it was worthwhile.
+[01:02:14] Um, has anyone got any questions or
+[01:02:16] anything else you'd like me to expand on
+[01:02:18] to? I'm not in a rush to get off at the
+[01:02:20] minute. So, if there's anything you want
+[01:02:21] me to cover while I'm here, I will do.
+[01:02:23] Give me some feedback, guys. Was it all
+[01:02:25] right? Did the software look all right?
+[01:02:27] Was the content okay and stuff? Let me
+[01:02:29] know what you thought. I hope it was a
+[01:02:30] useful use of um what we've been just
+[01:02:34] over an hour and stuff. So, hope it
+[01:02:36] wasn't a waste of your time.
+[01:02:56] Thanks guys.
+[01:03:10] Yeah, no worries, Alison. Catch you
+[01:03:11] later.
+[01:03:14] Thanks, Tom.
+[01:03:24] Thanks, Phil. Cheers.
+[01:03:32] Uh, what's Luke saying? Any advice for a
+[01:03:34] fencing contractor? Working at two or
+[01:03:36] three different small sites a week and
+[01:03:37] sourcing drawings isn't always easy. Uh,
+[01:03:39] Luke, drop me an email. Probably be
+[01:03:41] easier. We have a nata about that so I
+[01:03:43] can get exactly what you're going going
+[01:03:44] on about. Send me an email. I'll happily
+[01:03:47] give you a ring, Luke, and have have a
+[01:03:48] chat with you.
+[01:03:51] Thanks, Jake. Thanks for the feedback.
+[01:03:53] Cheers, David.
+[01:03:56] Thanks, Brian.
+[01:04:00] I don't think there's any questions
+[01:04:01] coming in, guys. So, um, if it's okay
+[01:04:03] with you, I'm going to go and have a
+[01:04:04] little tinkle. I have got another one
+[01:04:06] coming up. I think at one. Is it one or
+[01:04:08] half one? Can't remember. Don't know if
+[01:04:10] anybody else is any on that one. It's
+[01:04:12] the last one I'm doing and we're going
+[01:04:13] to be having a chat about power and
+[01:04:15] radio and just um some of the problems
+[01:04:17] if you rely too much on passive modes.
+[01:04:21] You can probably tell I'm a massive fan
+[01:04:22] of the Jenning. Okay. So, so yeah, if
+[01:04:24] you're on that one at one, I'll see you
+[01:04:26] then, guys. If not, I'm going to turn my
+[01:04:27] video off now, guys. Um thanks again and
+[01:04:31] I'll catch you later.
+[01:04:42] Uh Brian, I'm still here. Earththing
+[01:04:44] problems.
+[01:04:46] Um
+[01:04:49] not sure what you mean. Again, Brian,
+[01:04:51] just drop us an email if you wanted to
+[01:04:52] just go into anything a bit more detail.
+[01:04:54] I'm going to have to shoot because I'm
+[01:04:55] desperate for the toilet now, guys. So,
+[01:04:57] um I'll catch you later.

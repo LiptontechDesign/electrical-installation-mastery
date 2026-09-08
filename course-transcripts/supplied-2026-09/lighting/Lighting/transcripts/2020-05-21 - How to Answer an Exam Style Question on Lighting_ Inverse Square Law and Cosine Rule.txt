@@ -1,0 +1,391 @@
+# How to Answer an Exam Style Question on Lighting: Inverse Square Law and Cosine Rule
+# https://www.youtube.com/watch?v=_RhX5Mfm0tU
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue building on our understanding of the laws of illumination and in this case we're actually going to look at a typical examine that may well come up in your exams so we need to know how to answer this type of question it won't be exactly like this but it'll be somewhere along these lines so you can see on the board here and again you might expect to get this in an exam you might have a drawing that looks a bit like this we've got a point of illumination up here that has luminous intensity of 2000 candelas it's clearly mounted at a height of 2.1 meters and you can see here that we've got these dotted lines indicating the direction that the light is traveling in and the question is find the illuminance directly below the lamp at point a and point B now I'm always telling my learners to read the question carefully and unfortunately sometimes this gets a little bit lost in translation because they kind of stop reading at this point here so they say find the illuminance directly below the lamp and so they try and figure out what the illuminance is right there and that starts to cause them some problems so in this case we've got to think about what the question means clearly we're not interested in what the illuminance level is directly underneath the lamp there it means in a straight line down in other words perpendicularly below the lamp so that's what we're looking at there so we want to find out what the light level is at Point a and what the light level is at point B we've got two values for length here we've got the height that the fitting is mounted at 2.1 meters and we've also got the distance between point a and point b is 2 meters so we need to start working out how we're going to do this so let's do the easy bit first we can easily figure out what the level of illumination is directly below the lamp at Point a here that's nice and easy we just have to use the inverse square law and of course we've looked at the inverse square law in previous videos so hopefully by this stage if you've been following the videos you'll know that what we're looking for is the inverse square law so if we want to find the illuminance at Point a then we're going to use this calculation I divided by the squared so we're going to do that calculation so it's just a matter of putting the numbers in we're going to say we've got a luminous intensity the eye there how bright the light sources of 2,000 candelas so we're going to do 2,000 and then we're going to divide that by d squared remember D is the distance from source to surface so in this case we're looking at this 2 point 1 meter distance here so 2,000 divided by 2 point 1 and remember we've got to square that distance in order to get the right answer so we'll stick that into the calculator and see what we come out with mm I'd like to use the fraction button for this 2 divided by 2 point 1 squared and that comes out at 453 point five one four hundred and fifty three point five one and remember the unit for illuminance in this case at Point a is 453 point five one looks like that so we figured out what the illuminance is at Point a that erected below the lamp and now we've got to try and figure out what the illuminance is at point B over here so there's going to be some things that change because we've now got the light source is no longer just shining the light straight down and hitting the surface at a right angle it's actually coming down and hitting it at some angle here remember the angle that we're interested in is actually the angle from perpendicular so it's the angle there but you remember in a previous video we said we can actually consider it to be that angle there so let's think about the formula that we're going to use so I'll change my pen color just so we can keep it fresh we're going to try and figure out what the illuminance is now at point B so we've got the illuminance at point B is I and because we're now shining the lighter an angle down we can say well that is AI x cos theta so this is the cosine rule for lighting that we're looking at here and again we're going to divide that by d squared so almost the same calculation again we've just factored in this cos theta the angle now a couple of things that we need to be careful of here that's going to kind of trip us up if we don't exercise a little bit of caution one of them is the value that we're going to use for the distance okay so again we don't want to get confused and keep thinking that it's the height here is the distance from source to surface so in other words we've got to find this length here in order to put that into our calculation to figure out what the illuminance is at point B so that value there will be this distance from source to surface along here so we've not been given that value so we've not been given that number and that means we're going to have to figure it out so before we can do this calculation we've got to do some kind of supplementary calculations before we get there so let's have a think about how we're going to do that let's try and find out what the value for the distance is first of all so looking at this shape here you can see we've got a right-angled triangle okay so this is hitting perpendicular to the surface so that is clearly a right angle and we're interested in the length of this side here so hopefully again if you've been following my series of videos carefully you'll know that what we're going to have to do here is apply some pythagoras theorem to try and figure out how long that line is how long that distance is so it simply becomes a matter of doing some Pythagoras so we've got a squared plus B squared is equal to C squared and that's our old friend Pythagoras they're a lovely formula that we've looked at before and we've just got to think about what kind of sides we're dealing with here so it might be an idea just to label these up we'll just call this maybe a and we'll call this B and we'll call this C and this is the side that we're trying to find a long side there and that's how we can kind of relate it to Pythagoras's theorem of course we're going to use D for distance which is that length there but for Pythagoras's theorem sake we'll just call it C for now so we're going to put the numbers in here so a is two point one squared plus B which is two squared is equal to C squared and of course we're not actually interested in finding what C squared is we're interested in finding out what C itself is so in order to do that we would square root both sides so the square root of 2 point 1 squared plus 2 squared will be equal to our value for C so we can just stick this straight into the calculator exactly as it's laid out here okay so again I'll show you how to do that I actually already know what the answer for this is going to be so I'll admit that rather than pretending to do this in my head and just amazing you I'll try and be honest so we've got the square root of 2 point 1 squared so we can press the square root button plus 2 squared like that so once we put into the calculator we hit the equals button and we come out with 2.9 so our value for C is 2.9 so that means that this distance here is actually 2.9 meters there we go so that's 2.9 meters so we know that this is the length we're interested in the distance from source to surface so we're going to be able to put that into our calculation here okay so let's do that now let's put that bit of the calculation in so we've got the illuminance at point B will be equal to R we know that number 2,000 times by the cosine of theta we'll come back to that in a minute divided by this distance here 2.9 squared 2.9 squared okay so before we can complete the calculation we need to put in this value for the cosine of theta now this at first glance it might seem a little bit tricky because we've not got the angle here however for this question we don't actually need the angle we could figure it out we could use trigonometry to try and figure out what the angle is but actually we we don't need to do that we don't need to know what that angle is all we need to know is what is the code sine of that angle and again if you think back to your trigonometry and again if you've not watched my video on trigonometry then please go back and do so because it's going to massively help you out here hopefully you'll remember that the cosine of theta so if we want to find the cosine of an angle theta we need to do a particular calculation and that calculation is the adjacent divided by the hypotenuse now if you don't know where this formulas suddenly sprung from fully formed then please go and watch my videos on trigonometry and Pythagoras's theorem because they're going to help you massively with this part of the course and to be honest pretty much everything that we look at in electrical science has triangles buried in it somewhere so understanding Pythagoras and trigonometry is really really important so got the cosine of theta is equal to the adjacent divided by the hypotenuse going back to our drawing again we now need to figure out well which side is the adjacent and which side is the hypotenuse it's very easy to say identify the hypotenuse it's always the longest side of the right angled triangle and it's always opposite the right angle so that's the hypotenuse 2.9 however we need to know what the adjacent side is so which one of these sides is the adjacent well to know that we have to know which of the angles we're interested in and remember we said that we're actually interested in this angle here how far from perpendicular the light beam is hitting the surface at but we also said that actually because of the laws of angles and geometry we could consider it to be this angle here so this is the angle theta that is going to affect the illumination level here so because that's the angle we're interested in we can now identify the adjacent side of the triangle and the adjacent side of the triangle is next to the angle so we are adjacent or next to the angle therefore this side is the adjacent ignore the fact that that says a that's a complete coincidence okay it could've easily I could have labeled these up the other way around and this still would have worked but that side there is the adjacent in to that angle so we've got our adjacent we've got our hypotenuse we can put them into our calculation so the cosine of theta is equal to the adjacent which has a value of two point one divided by the hypotenuse which has a value of 2.9 so therefore we can now figure out what the cosine of theta is going to be so let's put that into our calculator two point one divided by two point nine is going to give us naught point seven two four okay so three decimal places is reasonable for this kind of level of trigonometry that we're doing here so let me just double check that nore point seven two four okay so we've got there our cosine of theta value so that is the cosine of theta now at this point we could play around with this and figure out what the angle is we could find the inverse cosine of that value and that would tell us what the angle was effectively however we don't need to do that we don't need to know what this angle is because actually all we'd end up doing is finding out what the angle is and then putting it in here as cos theta so can you see what we've done is we need to put in the cosine of theta into our calculation to get the answer out and we have found the cosine of theta there don't get mixed up and think this is the angle this is the cosine of that angle which means that actually we can just swap out the cosine of theta here for this number so therefore we're going to stick into our calculation now naught point seven two four because that number is the cosine of theta we don't need to put cos in front of that that's gonna throw a calculation off again that is the cosine of theta I think I've made that point clear enough now so what we're going to now do is just perform this calculation and figure out what the illuminance at Point beers by sticking this into our calculator again I like to use the fraction button so we've got two thousand times by not 0.72 four divided by two point nine squared so two thousand times not point seven two or / 2.9 squared and that's going to give us an illuminance of a hundred and seventy two point one that's going to come out 0.18 looks if we round that off to two decimal places happy days so we've completed the question successfully we've figured out what the illuminance at Point a is four hundred fifty three point five one Lux and we figured out what the illuminance at point B is a hundred and seventy two point one eight looks so we've gone from this kind of quite innocent looking question you can see there's quite a bit of work involved in getting those answers this is the easy part there's some easy points to be had there if this question comes up in your assessment but then we've kind of to get to this answer we need to do a bit of Pythagoras and a bit of troga trigonometry as well but actually if you can kind of just follow the logical process of what we've looked at here so don't get too bogged down in sort of what it all means actually all we've done is figure out what that number is that was quite straightforward with a bit of Pythagoras and then we needed to figure out what that number was and actually that was quite straightforward as well just using a little bit of trigonometry so hopefully that's kind of taken some of the fear out of this question I've seen it appear before where it's phrased as this is like a tabletop a lamp it's illuminating a tabletop and it's saying what is the value of illuminance at the middle of the table and at the edge of the table but it's exactly the same principle as to what we've done here so hopefully we can follow that process now if any of this is kind of alien or new go and watch my other videos on this and if you've not quite grasped this the first time round then watch it again and just go through it stage by stage until it becomes clear quite often we don't understand things on the first pass and it takes a couple of attempts and that's absolutely not a problem I always say I never really understood AC theory the first time I looked at it took many years for it to finally click and for me to actually start understanding it so sometimes these things take time but all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're going to continue building on our
+[00:14] understanding of the laws of
+[00:15] illumination and in this case we're
+[00:17] actually going to look at a typical
+[00:18] examine that may well come up in your
+[00:21] exams so we need to know how to answer
+[00:23] this type of question it won't be
+[00:25] exactly like this but it'll be somewhere
+[00:27] along these lines so you can see on the
+[00:29] board here and again you might expect to
+[00:31] get this in an exam you might have a
+[00:32] drawing that looks a bit like this we've
+[00:34] got a point of illumination up here that
+[00:37] has luminous intensity of 2000 candelas
+[00:40] it's clearly mounted at a height of 2.1
+[00:43] meters and you can see here that we've
+[00:45] got these dotted lines indicating the
+[00:48] direction that the light is traveling in
+[00:50] and the question is find the illuminance
+[00:52] directly below the lamp at point a and
+[00:54] point B now I'm always telling my
+[00:58] learners to read the question carefully
+[01:00] and unfortunately sometimes this gets a
+[01:03] little bit lost in translation because
+[01:05] they kind of stop reading at this point
+[01:07] here so they say find the illuminance
+[01:09] directly below the lamp and so they try
+[01:11] and figure out what the illuminance is
+[01:13] right there and that starts to cause
+[01:15] them some problems so in this case we've
+[01:18] got to think about what the question
+[01:19] means clearly we're not interested in
+[01:20] what the illuminance level is directly
+[01:23] underneath the lamp there it means in a
+[01:26] straight line down in other words
+[01:28] perpendicularly below the lamp so that's
+[01:31] what we're looking at there so we want
+[01:33] to find out what the light level is at
+[01:34] Point a and what the light level is at
+[01:36] point B we've got two values for length
+[01:40] here we've got the height that the
+[01:41] fitting is mounted at 2.1 meters and
+[01:44] we've also got the distance between
+[01:46] point a and point b is 2 meters so we
+[01:49] need to start working out how we're
+[01:51] going to do this so let's do the easy
+[01:53] bit first we can easily figure out what
+[01:56] the level of illumination is directly
+[01:59] below the lamp at Point a here that's
+[02:01] nice and easy we just have to use the
+[02:03] inverse square law and of course we've
+[02:06] looked at the inverse square law in
+[02:07] previous videos so hopefully by this
+[02:09] stage if you've been following the
+[02:10] videos
+[02:11] you'll know that what we're looking for
+[02:13] is the inverse square law so if we want
+[02:15] to find the illuminance at Point a then
+[02:18] we're going to use this calculation I
+[02:21] divided by the squared so we're going to
+[02:25] do that calculation so it's just a
+[02:27] matter of putting the numbers in we're
+[02:28] going to say we've got a luminous
+[02:31] intensity the eye there how bright the
+[02:33] light sources of 2,000 candelas so we're
+[02:36] going to do 2,000 and then we're going
+[02:38] to divide that by d squared remember D
+[02:40] is the distance from source to surface
+[02:43] so in this case we're looking at this 2
+[02:47] point 1 meter distance here so 2,000
+[02:50] divided by 2 point 1 and remember we've
+[02:52] got to square that distance in order to
+[02:55] get the right answer so we'll stick that
+[02:58] into the calculator and see what we come
+[02:59] out with mm I'd like to use the fraction
+[03:04] button for this 2 divided by 2 point 1
+[03:06] squared and that comes out at 453 point
+[03:12] five one four hundred and fifty three
+[03:15] point five one and remember the unit for
+[03:19] illuminance in this case at Point a is
+[03:23] 453 point five one looks like that so we
+[03:27] figured out what the illuminance is at
+[03:29] Point a that erected below the lamp and
+[03:31] now we've got to try and figure out what
+[03:33] the illuminance is at point B over here
+[03:36] so there's going to be some things that
+[03:39] change because we've now got the light
+[03:41] source is no longer just shining the
+[03:43] light straight down and hitting the
+[03:45] surface at a right angle it's actually
+[03:47] coming down and hitting it at some angle
+[03:50] here remember the angle that we're
+[03:51] interested in is actually the angle from
+[03:54] perpendicular so it's the angle there
+[03:56] but you remember in a previous video we
+[03:58] said we can actually consider it to be
+[04:00] that angle there so let's think about
+[04:03] the formula that we're going to use so
+[04:05] I'll change my pen color just so we can
+[04:06] keep it fresh we're going to try and
+[04:09] figure out what the illuminance is now
+[04:11] at point B so we've got the illuminance
+[04:15] at point B is I and because we're now
+[04:21] shining the lighter an angle down
+[04:23] we can say well that is AI x cos theta
+[04:28] so this is the cosine rule for lighting
+[04:30] that we're looking at here and again
+[04:32] we're going to divide that by d squared
+[04:34] so almost the same calculation again
+[04:36] we've just factored in this cos theta
+[04:39] the angle now a couple of things that we
+[04:42] need to be careful of here that's going
+[04:43] to kind of trip us up if we don't
+[04:45] exercise a little bit of caution one of
+[04:47] them is the value that we're going to
+[04:48] use for the distance okay so again we
+[04:52] don't want to get confused and keep
+[04:53] thinking that it's the height here is
+[04:54] the distance from source to surface so
+[04:57] in other words we've got to find this
+[04:59] length here in order to put that into
+[05:02] our calculation to figure out what the
+[05:05] illuminance is at point B so that value
+[05:07] there will be this distance from source
+[05:09] to surface along here so we've not been
+[05:13] given that value so we've not been given
+[05:15] that number and that means we're going
+[05:16] to have to figure it out so before we
+[05:18] can do this calculation we've got to do
+[05:20] some kind of supplementary calculations
+[05:22] before we get there so let's have a
+[05:24] think about how we're going to do that
+[05:25] let's try and find out what the value
+[05:27] for the distance is first of all so
+[05:31] looking at this shape here you can see
+[05:33] we've got a right-angled triangle okay
+[05:35] so this is hitting perpendicular to the
+[05:38] surface so that is clearly a right angle
+[05:41] and we're interested in the length of
+[05:44] this side here so hopefully again if
+[05:46] you've been following my series of
+[05:48] videos carefully you'll know that what
+[05:50] we're going to have to do here is apply
+[05:51] some pythagoras theorem to try and
+[05:54] figure out how long that line is how
+[05:56] long that distance is so it simply
+[05:59] becomes a matter of doing some
+[06:00] Pythagoras so we've got a squared plus B
+[06:03] squared is equal to C squared and that's
+[06:07] our old friend Pythagoras they're a
+[06:09] lovely formula that we've looked at
+[06:10] before and we've just got to think about
+[06:12] what kind of sides we're dealing with
+[06:14] here so it might be an idea just to
+[06:16] label these up we'll just call this
+[06:17] maybe a and we'll call this B and we'll
+[06:20] call this C and this is the side that
+[06:22] we're trying to find a long side there
+[06:24] and that's how we can kind of relate it
+[06:26] to Pythagoras's theorem of course we're
+[06:28] going to use D for distance which is
+[06:30] that length there but for Pythagoras's
+[06:33] theorem sake we'll just call it C for
+[06:34] now so we're going to put the numbers in
+[06:36] here so
+[06:37] a is two point one squared plus B which
+[06:42] is two squared is equal to C squared and
+[06:47] of course we're not actually interested
+[06:49] in finding what C squared is we're
+[06:50] interested in finding out what C itself
+[06:53] is so in order to do that we would
+[06:55] square root both sides so the square
+[06:57] root of 2 point 1 squared plus 2 squared
+[07:00] will be equal to our value for C so we
+[07:05] can just stick this straight into the
+[07:07] calculator exactly as it's laid out here
+[07:09] okay so again I'll show you how to do
+[07:11] that I actually already know what the
+[07:12] answer for this is going to be so I'll
+[07:15] admit that rather than pretending to do
+[07:16] this in my head and just amazing you
+[07:18] I'll try and be honest so we've got the
+[07:20] square root of 2 point 1 squared so we
+[07:23] can press the square root button plus 2
+[07:26] squared like that so once we put into
+[07:29] the calculator we hit the equals button
+[07:31] and we come out with 2.9 so our value
+[07:36] for C is 2.9 so that means that this
+[07:40] distance here is actually 2.9 meters
+[07:46] there we go so that's 2.9 meters so we
+[07:50] know that this is the length we're
+[07:53] interested in the distance from source
+[07:54] to surface so we're going to be able to
+[07:56] put that into our calculation here okay
+[07:59] so let's do that now let's put that bit
+[08:01] of the calculation in so we've got the
+[08:06] illuminance at point B will be equal to
+[08:09] R we know that number 2,000 times by the
+[08:14] cosine of theta we'll come back to that
+[08:16] in a minute divided by this distance
+[08:19] here 2.9 squared 2.9 squared okay so
+[08:24] before we can complete the calculation
+[08:26] we need to put in this value for the
+[08:28] cosine of theta now this at first glance
+[08:33] it might seem a little bit tricky
+[08:34] because we've not got the angle here
+[08:36] however for this question we don't
+[08:38] actually need the angle we could figure
+[08:41] it out we could use trigonometry to try
+[08:42] and figure out what the angle is but
+[08:44] actually we we don't need to do that we
+[08:46] don't need to know what that angle is
+[08:48] all we need to know is what is the code
+[08:50] sine of that angle and again if you
+[08:53] think back to your trigonometry and
+[08:55] again if you've not watched my video on
+[08:57] trigonometry then please go back and do
+[08:58] so because it's going to massively help
+[08:59] you out here hopefully you'll remember
+[09:02] that the cosine of theta so if we want
+[09:06] to find the cosine of an angle theta we
+[09:10] need to do a particular calculation and
+[09:12] that calculation is the adjacent divided
+[09:17] by the hypotenuse now if you don't know
+[09:20] where this formulas suddenly sprung from
+[09:22] fully formed then please go and watch my
+[09:24] videos on trigonometry and Pythagoras's
+[09:26] theorem because they're going to help
+[09:28] you massively with this part of the
+[09:30] course and to be honest pretty much
+[09:31] everything that we look at in electrical
+[09:34] science has triangles buried in it
+[09:36] somewhere so understanding Pythagoras
+[09:38] and trigonometry is really really
+[09:39] important so got the cosine of theta is
+[09:42] equal to the adjacent divided by the
+[09:44] hypotenuse going back to our drawing
+[09:47] again we now need to figure out well
+[09:49] which side is the adjacent and which
+[09:50] side is the hypotenuse it's very easy to
+[09:53] say identify the hypotenuse it's always
+[09:55] the longest side of the right angled
+[09:56] triangle and it's always opposite the
+[09:59] right angle so that's the hypotenuse 2.9
+[10:01] however we need to know what the
+[10:03] adjacent side is so which one of these
+[10:06] sides is the adjacent well to know that
+[10:09] we have to know which of the angles
+[10:11] we're interested in and remember we said
+[10:14] that we're actually interested in this
+[10:16] angle here how far from perpendicular
+[10:19] the light beam is hitting the surface at
+[10:21] but we also said that actually because
+[10:23] of the laws of angles and geometry we
+[10:26] could consider it to be this angle here
+[10:28] so this is the angle theta that is going
+[10:31] to affect the illumination level here so
+[10:36] because that's the angle we're
+[10:37] interested in we can now identify the
+[10:40] adjacent side of the triangle and the
+[10:42] adjacent side of the triangle is next to
+[10:45] the angle so we are adjacent or next to
+[10:48] the angle therefore this side is the
+[10:51] adjacent ignore the fact that that says
+[10:54] a that's a complete coincidence okay it
+[10:57] could've easily I could have labeled
+[10:58] these up the other way around and this
+[11:00] still would have worked but that side
+[11:02] there is the adjacent in
+[11:04] to that angle so we've got our adjacent
+[11:07] we've got our hypotenuse we can put them
+[11:09] into our calculation so the cosine of
+[11:11] theta is equal to the adjacent which has
+[11:15] a value of two point one divided by the
+[11:18] hypotenuse which has a value of 2.9 so
+[11:22] therefore we can now figure out what the
+[11:24] cosine of theta is going to be so let's
+[11:27] put that into our calculator two point
+[11:29] one divided by two point nine is going
+[11:34] to give us naught point seven two four
+[11:37] okay so three decimal places is
+[11:39] reasonable for this kind of level of
+[11:41] trigonometry that we're doing here so
+[11:43] let me just double check that
+[11:44] nore point seven two four okay so we've
+[11:49] got there our cosine of theta value so
+[11:53] that is the cosine of theta now at this
+[11:59] point we could play around with this and
+[12:01] figure out what the angle is we could
+[12:03] find the inverse cosine of that value
+[12:06] and that would tell us what the angle
+[12:07] was effectively however we don't need to
+[12:10] do that we don't need to know what this
+[12:12] angle is because actually all we'd end
+[12:13] up doing is finding out what the angle
+[12:15] is and then putting it in here as cos
+[12:18] theta so can you see what we've done is
+[12:20] we need to put in the cosine of theta
+[12:22] into our calculation to get the answer
+[12:25] out and we have found the cosine of
+[12:28] theta there don't get mixed up and think
+[12:30] this is the angle this is the cosine of
+[12:31] that angle which means that actually we
+[12:35] can just swap out the cosine of theta
+[12:37] here for this number so therefore we're
+[12:40] going to stick into our calculation now
+[12:42] naught point seven two four because that
+[12:46] number is the cosine of theta we don't
+[12:50] need to put cos in front of that that's
+[12:51] gonna throw a calculation off again that
+[12:53] is the cosine of theta I think I've made
+[12:57] that point clear enough now so what
+[12:59] we're going to now do is just perform
+[13:00] this calculation and figure out what the
+[13:03] illuminance at Point beers by sticking
+[13:05] this into our calculator again I like to
+[13:07] use the fraction button so we've got two
+[13:09] thousand times by not 0.72 four divided
+[13:14] by two point nine squared so two
+[13:16] thousand times not point seven two
+[13:18] or / 2.9 squared and that's going to
+[13:21] give us an illuminance of a hundred and
+[13:24] seventy two point one that's going to
+[13:28] come out 0.18 looks if we round that off
+[13:31] to two decimal places happy days so
+[13:34] we've completed the question
+[13:36] successfully we've figured out what the
+[13:38] illuminance at Point a is four hundred
+[13:40] fifty three point five one Lux and we
+[13:43] figured out what the illuminance at
+[13:44] point B is a hundred and seventy two
+[13:46] point one eight looks so we've gone from
+[13:50] this kind of quite innocent looking
+[13:51] question you can see there's quite a bit
+[13:53] of work involved in getting those
+[13:54] answers this is the easy part there's
+[13:56] some easy points to be had there if this
+[13:57] question comes up in your assessment but
+[13:59] then we've kind of to get to this answer
+[14:01] we need to do a bit of Pythagoras and a
+[14:03] bit of troga trigonometry as well but
+[14:06] actually if you can kind of just follow
+[14:08] the logical process of what we've looked
+[14:10] at here so don't get too bogged down in
+[14:12] sort of what it all means
+[14:14] actually all we've done is figure out
+[14:17] what that number is that was quite
+[14:19] straightforward with a bit of Pythagoras
+[14:20] and then we needed to figure out what
+[14:22] that number was and actually that was
+[14:23] quite straightforward as well just using
+[14:25] a little bit of trigonometry so
+[14:27] hopefully that's kind of taken some of
+[14:28] the fear out of this question I've seen
+[14:30] it appear before where it's phrased as
+[14:33] this is like a tabletop a lamp it's
+[14:36] illuminating a tabletop and it's saying
+[14:38] what is the value of illuminance at the
+[14:40] middle of the table and at the edge of
+[14:41] the table but it's exactly the same
+[14:43] principle as to what we've done here so
+[14:46] hopefully we can follow that process now
+[14:48] if any of this is kind of alien or new
+[14:51] go and watch my other videos on this and
+[14:53] if you've not quite grasped this the
+[14:55] first time round then watch it again and
+[14:58] just go through it stage by stage until
+[15:00] it becomes clear quite often we don't
+[15:02] understand things on the first pass and
+[15:03] it takes a couple of attempts and that's
+[15:05] absolutely not a problem
+[15:06] I always say I never really understood
+[15:08] AC theory the first time I looked at it
+[15:10] took many years for it to finally click
+[15:12] and for me to actually start
+[15:14] understanding it so sometimes these
+[15:15] things take time but all that remains in
+[15:18] this video is to say thank you very much
+[15:20] for watching
+[15:23] [Music]
+[15:36] [Music]
+[15:42] [Music]

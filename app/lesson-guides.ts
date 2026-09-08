@@ -3,6 +3,7 @@ import guides04to06 from './lesson-guides-04-06.json';
 import guides07to10 from './lesson-guides-07-10.json';
 import { extensionGuides } from './course-extension-data';
 import { gapGuides } from './course-gap-data';
+import { suppliedGuides } from './supplied-lessons';
 
 export type LessonGuide = {
   summary: string;
@@ -18,4 +19,5 @@ export const lessonGuides: Record<string, LessonGuide> = {
   ...guides07to10,
   ...extensionGuides,
   ...gapGuides,
+  ...suppliedGuides,
 };

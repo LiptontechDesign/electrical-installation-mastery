@@ -1,0 +1,280 @@
+# AC Theory: The Mystery of the Coil
+# https://www.youtube.com/watch?v=LXpXDga-7xM
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to consider what happens to a coil when it's connected to a DC supply and to an AC supply we're going to carrying out an experiment in the early stages and we'll see something interesting that happens between the two different supplies when it's applied to this coil and then we're going to figure out why that's happening and then do some calculations to tell us some key information about what's happening with this coil so just to explain the setup that we've got going on here we've got a DC supply connected up over here now normally with the lock Tronics kit you would plug your DC supply into the front of this I've got a different supply coming in this time so I need to very accurately control the voltage that's being supplied to this but I've got this left in just so that you can see that this is the DC supply and then down here we've got an AC supply now the first thing that we need to do is we need to make sure that the DC supply and the AC supply correspond to each other so we need to make sure that they're the same and we're going to make sure that they're the same when they're connected and Load so we'll bring the load in connect it up and we'll measure the voltages and make sure that they are both the same so we're just going to complete these two circuits by bringing these two additional points in there and then I'm going to connect up the coil across the two supplies so first of all I'm going to connect it to the AC supply and just make sure that we're absolutely 100% switched on there and then I'm going to measure the voltage that we're applying to this coil now the sharp-eyed among you may have noticed that what we've got here is actually a transformer so we've got a 2 to 1 transformer connected in this configuration but we're not really interested in the output side of this transformer for this experiment we're simply using the primary side the input side just to kind of help us understand what's happening when we connect this coil to the 2 different types of supply so ignore the fact that it's got a secondary winding that's not going to make any difference to what we're doing here we're just using this because it is a coil that will give us some nice readings that we can translate so let's figure out what the voltage is going to be now in order to do that I'm going to set up my mega AVO eight three five and I'm going to connect this up so that I've got the voltage across here in parallel so I'm going to connect my voltmeter in parallel so first of all just make sure that it's on AC which it is and then I'll just connect it up across the two ends there and you can see that what we measure in there is 15 point 5 volts yeah so fifteen and a half volts we're going to go with so I'm just going to make a note of that so we've got the AC voltage is 15 point 5 volts I just make a note of that because we'll need that information in a moment right now let's do the DC current so I'm going to disconnect my test equipment I'm going to move my coil over to here and then I'm going to change the settings on my multimeter so it's measuring AC at the moment if I press the mode button it changes it to DC so I'm going to now measure the DC voltage that we've got across here so I measure from there to there and there's nothing there because have antenna Supply on yet so it let's turn the supply on and you can see though that we've got 13 volts but what I really want to do is I want to make sure that what we get here is an accurate reading so I'm going to change this to 15 volts I'm just going to tune this up so that we're applying 15 volts to our coil so there we go 15 point 5 volts so we're happy with that right so we will now disconnect our meter and we're just going to disconnect the coil as well so to make this as fair a test as possible so we've got 15 and a half volts DC and 15 and a half volts AC now bear in mind this is 15 and a half volts AC and that is the RMS value which basically means that this is 15 and a half volts which is equivalent in AC to 15 and a half volts in DC we use the RMS value of a sea to compare AC to DC supplies so these are equivalent supplies in terms of their voltage settings what we're going to do now is we're going to have a look at inserting our coil into the circuit and we're going to measure the current that flows through it for the DC supply and for the AC supply so let's set that up now so I'm going to connect up my coil so current is going to pass through here through my mega which I'm now going to turn into an ammeter so I'm going to change this to measure and pears so that's now set to measure amperes I'm going to plug that in that side and when I connect this up into the circuit we should get a current reading so let's look that in and see what current reading we get and it doesn't help that we're in AC so I need to change that to DC again and see what the reason is that we get so we get 132 milliamps so that's 132 million so the current on the DC is a hundred and thirty-two milliamps now we're going to move the coil on to the DC supply so that's now connected up into the DC supply and we're going to measure the current flow through there but before we measure that just think about this we've got the same coil connected to the same voltage outputs to the equivalent voltage outputs this is DC and this is AC so the same coil connected to the same voltage what would you think that the current would be here do you think it will be higher do you think it will be lower do you think it will be the same well let's plug it in and we'll figure out what we're going to get so I'm going to connect up here now this is set to AC so we'll change that to AC there and we'll measure what the current employees so the current flow through here now is 33 point 6 milliamps so now we've got 33 point 6 milliamps so that is interesting because we've got the same voltage connected to the same coil the only difference is this is DC and this is AC and yet for some reason we are getting a much smaller current flowing through the coil when we've got it connected up to an AC supply now why do you think that is well to answer that question we need to think about the difference between AC and DC electricity let's take our coil and plug it back into the DC supply now try and visualize what's happening with the DC supply we've got current flowing through here through the coil and back out of the circuit again and in a DC supply the current keeps going the same way all the times just always go in in the same direction now what that means is that around this coil a magnetic field will appear but that magnetic field will just stay still it's not fluctuating it's not moving it's not reversing polarity and therefore as far as the supply is concerned this isn't doing anything else to the electricity however if we take this coil and we connect it to the AC supply what we've now got is a situation where the current is flowing backwards and forwards through the coil what difference does that make well think about what's happening with the magnetic field around this coil it's expanding and collapsing and expanding and collapsing all the time and as it expands and collapses it cuts back across the coil that created it in the first place and as it cuts back across the coil that created it in the first place it generates electricity back inside there but the current that's generated back inside the coil is trying to push in the opposite direction to the current that is creating it in the first place so what we've got is two currents that are trying to oppose each other they're going in opposite directions now the effect of that is that the applied current is always larger than the generated current and that means that the applied current will always kind of win however it will be much reduced so the current flowing through the circuit gets smaller and that's the type of opposition to current flow that we've discussed in another video in this series called induct of reactants so when the coil is connected to a DC supply it has no inductive reactance because the magnetic field around this coil just stays still however when we move this coil into an AC supply what happens then is that the coil generates inductive reactance a new type of opposition at a current flow and that combines with the resistance that is inside the coil to create impedance which is the total opposition to current flow inside an AC circuit so when we connect our coil up to the DC supply we only have the resistance of the coil causing an opposition to current flow however when we connect it into the AC supply we have the combined effect of resistance and inductive reactance and that creates impedance and because it includes the resistance of the coil the impedance in this circuit will be bigger than the resistance in this circuit so because we have a bigger opposition to current flow in the coil when it's connected to the AC supply than we do when it's connected to the DC supply it means that less current flows around the AC circuit now what's absolutely remarkable about this is we've recorded kind of three different numbers we've recorded the voltage and we said it was the same for the AC and the DC circuit and we've recorded two different currents now if I just give you one more piece of information if I tell you that this circuit the AC supply to this circuit has a time period of 20 milliseconds we can calculate now an enormous amount of information about this coil in fact you wouldn't believe the amount of stuff we can calculate about it just based on four different numbers we're going to be able to calculate the resistance of the coil the impedance of the coil the inductive reactance of the coil the inductance of it we'll be able to calculate the power factor of this circuit the phase angle of it will be able to produce a waveform to show the relationship between the voltage and the current inside this circuit we'll also be able to figure out what size capacitor we need to install in here in order to correct the power factor so we can extract a huge amount of information just based on those four numbers and we'll take care of that in our next video [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:13] we're going to consider what happens to
+[00:15] a coil when it's connected to a DC
+[00:17] supply and to an AC supply we're going
+[00:21] to carrying out an experiment in the
+[00:22] early stages and we'll see something
+[00:24] interesting that happens between the two
+[00:26] different supplies when it's applied to
+[00:27] this coil and then we're going to figure
+[00:29] out why that's happening and then do
+[00:31] some calculations to tell us some key
+[00:33] information about what's happening with
+[00:35] this coil so just to explain the setup
+[00:38] that we've got going on here we've got a
+[00:40] DC supply connected up over here now
+[00:42] normally with the lock Tronics kit you
+[00:44] would plug your DC supply into the front
+[00:46] of this I've got a different supply
+[00:47] coming in this time so I need to very
+[00:49] accurately control the voltage that's
+[00:52] being supplied to this but I've got this
+[00:54] left in just so that you can see that
+[00:56] this is the DC supply and then down here
+[00:58] we've got an AC supply now the first
+[01:01] thing that we need to do is we need to
+[01:02] make sure that the DC supply and the AC
+[01:05] supply correspond to each other so we
+[01:07] need to make sure that they're the same
+[01:08] and we're going to make sure that
+[01:10] they're the same when they're connected
+[01:11] and Load so we'll bring the load in
+[01:14] connect it up and we'll measure the
+[01:16] voltages and make sure that they are
+[01:18] both the same so we're just going to
+[01:20] complete these two circuits by bringing
+[01:22] these two additional points in there and
+[01:25] then I'm going to connect up the coil
+[01:27] across the two supplies so first of all
+[01:29] I'm going to connect it to the AC supply
+[01:33] and just make sure that we're absolutely
+[01:35] 100% switched on there and then I'm
+[01:38] going to measure the voltage that we're
+[01:40] applying to this coil now the sharp-eyed
+[01:44] among you may have noticed that what
+[01:46] we've got here is actually a transformer
+[01:47] so we've got a 2 to 1 transformer
+[01:50] connected in this configuration but
+[01:52] we're not really interested in the
+[01:53] output side of this transformer for this
+[01:55] experiment we're simply using the
+[01:57] primary side the input side just to kind
+[01:59] of help us understand what's happening
+[02:02] when we connect this coil to the 2
+[02:03] different types of supply so ignore the
+[02:06] fact that it's got a secondary winding
+[02:07] that's not going to make any difference
+[02:08] to what we're doing here we're just
+[02:10] using this because it is a coil
+[02:12] that will give us some nice readings
+[02:13] that we can translate so let's figure
+[02:16] out what the voltage is going to be now
+[02:20] in order to do that I'm going to set up
+[02:21] my mega AVO eight three five and I'm
+[02:24] going to connect this up so that I've
+[02:26] got the voltage across here in parallel
+[02:32] so I'm going to connect my voltmeter in
+[02:33] parallel so first of all just make sure
+[02:36] that it's on AC which it is and then
+[02:38] I'll just connect it up across the two
+[02:40] ends there and you can see that what we
+[02:44] measure in there is 15 point 5 volts
+[02:47] yeah so fifteen and a half volts we're
+[02:49] going to go with so I'm just going to
+[02:50] make a note of that so we've got the AC
+[02:53] voltage is 15 point 5 volts I just make
+[02:58] a note of that because we'll need that
+[02:59] information in a moment right now let's
+[03:02] do the DC current so I'm going to
+[03:05] disconnect my test equipment I'm going
+[03:08] to move my coil over to here and then
+[03:11] I'm going to change the settings on my
+[03:15] multimeter so it's measuring AC at the
+[03:17] moment if I press the mode button it
+[03:19] changes it to DC so I'm going to now
+[03:22] measure the DC voltage that we've got
+[03:24] across here so I measure from there to
+[03:27] there and there's nothing there because
+[03:29] have antenna Supply on yet so it let's
+[03:31] turn the supply on and you can see
+[03:34] though that we've got 13 volts but what
+[03:36] I really want to do is I want to make
+[03:37] sure that what we get here is an
+[03:40] accurate reading so I'm going to change
+[03:42] this to 15 volts I'm just going to tune
+[03:46] this up so that we're applying 15 volts
+[03:48] to our coil so there we go 15 point 5
+[03:53] volts so we're happy with that right so
+[03:55] we will now disconnect our meter and
+[03:59] we're just going to disconnect the coil
+[04:01] as well so to make this as fair a test
+[04:02] as possible so we've got 15 and a half
+[04:06] volts DC and 15 and a half volts AC now
+[04:09] bear in mind this is 15 and a half volts
+[04:11] AC and that is the RMS value which
+[04:14] basically means that this is 15 and a
+[04:18] half volts which is equivalent in AC to
+[04:20] 15 and a half volts in DC we use the RMS
+[04:24] value of a sea to compare AC to DC supplies so
+[04:29] these are equivalent supplies in terms
+[04:31] of their voltage settings what we're
+[04:36] going to do now is we're going to have a
+[04:38] look at inserting our coil into the
+[04:41] circuit and we're going to measure the
+[04:43] current that flows through it for the DC
+[04:45] supply and for the AC supply so let's
+[04:48] set that up now so I'm going to connect
+[04:51] up my coil so current is going to pass
+[04:53] through here through my mega which I'm
+[04:56] now going to turn into an ammeter so I'm
+[04:59] going to change this to measure and
+[05:01] pears so that's now set to measure
+[05:03] amperes I'm going to plug that in that
+[05:06] side and when I connect this up into the
+[05:08] circuit we should get a current reading
+[05:11] so let's look that in and see what
+[05:13] current reading we get and it doesn't
+[05:16] help that we're in AC so I need to
+[05:17] change that to DC again and see what the
+[05:20] reason is that we get so we get 132
+[05:24] milliamps so that's 132 million so the
+[05:29] current on the DC is a hundred and
+[05:32] thirty-two milliamps now we're going to
+[05:37] move the coil on to the DC supply so
+[05:41] that's now connected up into the DC
+[05:43] supply and we're going to measure the
+[05:44] current flow through there but before we
+[05:46] measure that just think about this we've
+[05:49] got the same coil connected to the same
+[05:52] voltage outputs to the equivalent
+[05:53] voltage outputs this is DC and this is
+[05:56] AC so the same coil connected to the
+[05:59] same voltage what would you think that
+[06:03] the current would be here do you think
+[06:04] it will be higher do you think it will
+[06:06] be lower do you think it will be the
+[06:07] same well let's plug it in and we'll
+[06:11] figure out what we're going to get so
+[06:13] I'm going to connect up here now this is
+[06:17] set to AC so we'll change that to AC
+[06:20] there and we'll measure what the current
+[06:22] employees so the current flow through
+[06:24] here now is 33 point 6 milliamps so now
+[06:32] we've got 33 point 6 milliamps
+[06:38] so that is interesting because we've got
+[06:42] the same voltage connected to the same
+[06:44] coil the only difference is this is DC
+[06:46] and this is AC and yet for some reason
+[06:48] we are getting a much smaller current
+[06:51] flowing through the coil when we've got
+[06:53] it connected up to an AC supply now why
+[06:56] do you think that is well to answer that
+[07:00] question we need to think about the
+[07:01] difference between AC and DC electricity
+[07:04] let's take our coil and plug it back
+[07:07] into the DC supply now try and visualize
+[07:10] what's happening with the DC supply
+[07:12] we've got current flowing through here
+[07:14] through the coil and back out of the
+[07:16] circuit again and in a DC supply the
+[07:18] current keeps going the same way all the
+[07:20] times just always go in in the same
+[07:22] direction now what that means is that
+[07:24] around this coil a magnetic field will
+[07:27] appear but that magnetic field will just
+[07:29] stay still it's not fluctuating it's not
+[07:32] moving it's not reversing polarity and
+[07:34] therefore as far as the supply is
+[07:36] concerned this isn't doing anything else
+[07:39] to the electricity however if we take
+[07:42] this coil and we connect it to the AC
+[07:46] supply what we've now got is a situation
+[07:49] where the current is flowing backwards
+[07:51] and forwards through the coil what
+[07:53] difference does that make
+[07:55] well think about what's happening with
+[07:58] the magnetic field around this coil it's
+[08:00] expanding and collapsing and expanding
+[08:01] and collapsing all the time and as it
+[08:03] expands and collapses it cuts back
+[08:05] across the coil that created it in the
+[08:08] first place and as it cuts back across
+[08:10] the coil that created it in the first
+[08:12] place it generates electricity back
+[08:14] inside there but the current that's
+[08:17] generated back inside the coil is trying
+[08:19] to push in the opposite direction to the
+[08:22] current that is creating it in the first
+[08:24] place
+[08:25] so what we've got is two currents that
+[08:27] are trying to oppose each other they're
+[08:28] going in opposite directions now the
+[08:31] effect of that is that the applied
+[08:32] current is always larger than the
+[08:34] generated current
+[08:35] and that means that the applied current
+[08:37] will always kind of win however it will
+[08:40] be much reduced so the current flowing
+[08:43] through the circuit gets smaller and
+[08:45] that's the type of opposition to current
+[08:47] flow that we've discussed in another
+[08:48] video in this series called induct
+[08:51] of reactants so when the coil is
+[08:53] connected to a DC supply it has no
+[08:57] inductive reactance because the magnetic
+[08:59] field around this coil just stays still
+[09:02] however when we move this coil into an
+[09:05] AC supply what happens then is that the
+[09:09] coil generates inductive reactance a new
+[09:12] type of opposition at a current flow and
+[09:15] that combines with the resistance that
+[09:17] is inside the coil to create impedance
+[09:20] which is the total opposition to current
+[09:23] flow inside an AC circuit so when we
+[09:26] connect our coil up to the DC supply we
+[09:31] only have the resistance of the coil
+[09:33] causing an opposition to current flow
+[09:35] however when we connect it into the AC
+[09:38] supply we have the combined effect of
+[09:40] resistance and inductive reactance and
+[09:43] that creates impedance and because it
+[09:46] includes the resistance of the coil the
+[09:49] impedance in this circuit will be bigger
+[09:51] than the resistance in this circuit so
+[09:58] because we have a bigger opposition to
+[10:00] current flow in the coil when it's
+[10:02] connected to the AC supply than we do
+[10:04] when it's connected to the DC supply it
+[10:07] means that less current flows around the
+[10:10] AC circuit now what's absolutely
+[10:17] remarkable about this is we've recorded
+[10:20] kind of three different numbers we've
+[10:24] recorded the voltage and we said it was
+[10:26] the same for the AC and the DC circuit
+[10:29] and we've recorded two different
+[10:30] currents now if I just give you one more
+[10:33] piece of information if I tell you that
+[10:35] this circuit the AC supply to this
+[10:38] circuit has a time period of 20
+[10:42] milliseconds we can calculate now an
+[10:45] enormous amount of information about
+[10:48] this coil in fact you wouldn't believe
+[10:50] the amount of stuff we can calculate
+[10:51] about it just based on four different
+[10:53] numbers we're going to be able to
+[10:56] calculate the resistance of the coil the
+[10:58] impedance of the coil the inductive
+[11:00] reactance of the coil the inductance of
+[11:03] it we'll be able to calculate the
+[11:04] power factor of this circuit the phase
+[11:06] angle of it will be able to produce a
+[11:08] waveform to show the relationship
+[11:10] between the voltage and the current
+[11:11] inside this circuit we'll also be able
+[11:15] to figure out what size capacitor we
+[11:17] need to install in here in order to
+[11:19] correct the power factor so we can
+[11:21] extract a huge amount of information
+[11:23] just based on those four numbers and
+[11:27] we'll take care of that in our next
+[11:28] video
+[11:32] [Music]
+[11:45] [Music]

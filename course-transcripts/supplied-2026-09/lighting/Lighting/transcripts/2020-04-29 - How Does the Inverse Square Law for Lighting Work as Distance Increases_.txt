@@ -1,0 +1,265 @@
+# How Does the Inverse Square Law for Lighting Work as Distance Increases?
+# https://www.youtube.com/watch?v=Y_b6MwGP1zA
+
+[Music] hello and welcome to this electrical principals training video in a previous video in this series we started to consider the subject of lighting and we started to discuss the inverse square law and we looked at this formula here and we broke it down into its component parts so just a brief reminder eye is the luminous intensity of a light source in other words how bright it is how much light it's giving off in the given direction and then we've got D which is the distance that the light sources from the surface that it's illuminating and then finally we've got e which is the illuminance in other words how brightly lit a given surface is and then we teased out that we were going to do an experiment to help us to understand the significance of this equation of this formula and we were going to do that with the light that we've got mounted on top of this tripod here so what we're going to do now is explain how this experiment will help us to gain a deeper insight into this calculation so what's the consequence of having this squared here well actually it leads us to a very interesting thought within the world of lighting design so I've set up an experiment here for is to have a little look at and what we got is we've got a light source that is illuminating a surface as you can see here so this torch is casting a pool of light onto this surface now what's quite interesting about this is if we mark out the kind of diameter of that pool of light if we look at what the distance is from one side to the other and again this is about the point where the light really starts to drop off so we'll use that as a kind of reference point what we can do is we can actually measure that distance and figure out what area is being illuminated there so if we figure out what that area being illuminated is so we'll put that there and measure that up you might not be able to see that on the camera but that is 26 centimeters so that's 26 centimeters now for the sake of clarity at this point I'm going to keep this all in centimeters rather than converting two meters and of course that means that the radius of this circle ah is going to be equal to thirteen centimeters so we'll keep everything in centimeters at this stage just in order to simplify this a little bit so that means we can now figure out what the area of the whiteboard is being illuminated at this point so let's just very quickly do that calculation hopefully remember from school that area is equal to PI R squared so we can say it's equal to pi times 13 squared which means this is going to be equal to PI times 169 and if we put that into the calculator will find that pi times 169 is going to give us 530 point 9 3 will go with 530 point 9 3 centimeters squared so that's the area that's being illuminated by the torch at the moment now the really important thing is to understand that the distance from the surface to the light is going to really define what happens with our light levels so we're going to measure that now and we're measuring this and we're finding that is coming out at 17 centimeters and that's coming out at 17 centimeters there so the distance from the light source to the surface that's being illuminated is 17 centimeters so when we look at it like that in those terms we can say that this distance away when the distance is equal to 17 centimeters the area being illuminated is 530 point 9 3 centimeters squared so now what we're going to do and this is the critical point is we're going to double the distance that the light source is from the surface that it's illuminating so we're going to move this back until it's now measuring 34 centimeters away so we've got that now at 34 centimeters and we're just getting that as close to that as we can so now we've doubled the distance that the light source is away from the surface that it's illuminating let's have a think about what's happened to this area here now the area has clearly got larger so as we've moved the light further away the area that that light is covering has got larger but how much larger well let's figure that out so if we look again at the diameter of this circle here this pool of light that's being cast and if we measure that up we should find that that is yeah there it is so you can see we're now at a distance of 52 centimeters so I look at what's happened to the diameter it's gone from 26 centimeters to 52 centimeters and also what's really interesting about that is it means that the radius has also doubled so the radius is now up to 26 centimeters so our new radius our new radius is 26 centimeters okay so when the distance from the light source to the surface that's being illuminated has doubled when that's gone from 17 up to 34 centimeters what's gonna have happened to the area well the radius has doubled the diameter has doubled so what do things happen to the area let's do the calculation a is equal to PI R squared and then we find that that is equal to pi times by the radius 26 centimeters squared so that means that if we put that into our calculator we're going to say that pi times body 26 squared comes to 2,000 123 123 0.72 centimeters so centimeter square so that's interesting we can see we've doubled the radius we've doubled the diameter but what we haven't doubled is the area because if this had doubled we'd expect that to be somewhere around a thousand and sixty or a thousand and sixty one plus change centimeters squared so why has this not in fact doubled and in fact what has it done well actually it's quadrupled if we take this number five hundred and thirty point nine three and times it by four we should find it comes out at two thousand one hundred and twenty three point seven two so actually when we double the distance that the light sources from the surface that it's illuminating we don't just double the area that's being illuminated we actually quadruple the area that's being illuminated why is that significant well again let's really dig into this formula and start to try and unravel it a little bit more so we've got e is equal to I over d squared I is how bright the light source is having tense the light sources so if we double how bright the light sources what's going to happen to our illuminance how brightly lit the surface is it's going to double but if we double the distance that the light source is from the surface what's going to happen to our illuminance well because we've got this squared effect on the bottom here and that has to be squared because we've seen what happens to the area that's being lit here if we double the distance that the light source is from a surface that's being illuminated we don't just half this value we actually quarter the value so if you double the height that a light fitting is from the surface that it's illuminating we don't just half how brightly lit that surface is we actually reduce that to a quarter of what the original value was so can you see that actually a small change in the distance from source to surface can actually result in a massive change in the illuminance level in how brightly lit that sir so that's a really key point in understanding this formula we're gonna do some calculations with this in a future video but can you see here we've got e is equal to I over d squared u double how bright the light source is you double how brightly lit the surfaces but if you double how far away the light is from the surface that it's illuminating we don't just half this value we actually quarter this value and actually that logic continues to apply so if we triple the distance that the light source is from the surface that it's illuminating we don't just reduce the illuminance the how brightly lit the surfaces to a third it would actually become a ninth of how brightly lit it was originally and likewise if we were to quadruple that you would only have a 16th of the illuminance on that surface and the reason for that is that as we move this further and further away the amount of area that that light has to cover gets bigger and bigger but it doesn't just double it increases by a term we use exponentially which means it actually increases by the square of the distance that we increase it by so key points to take away from this video and we're gonna look at this and a little bit more depth in a future video we'll do some calculations and try and understand in a little bit more detail exactly what this formula is telling is key things to take away try and get this formula logged in your brain that's an important one that you'll need to take into an exam with you e is equal to I over d squared remember what these mean II is the illuminance how brightly lit ur surfaces I is the luminous intensity how powerful a light source is how intense a light sources D is the distance from the light source to the surface illuminance is measured in Lux luminous intensity is measured in candelas and obviously distance is measured in meters your the key thing to take away from this video is that if we double the distance that our light source is from the surface that it's illuminating we actually quarter the light level on that surface and that's something that comes up quite regularly in exam so try and commit that to memory we'll go into this in a lot more depth in future videos we'll build on this form your a little bit more there's also another formula that we need to look at called the cosine rule for lighting and then we start to look at how we really perform these calculations in a more realistic real-life setting so until that time all that remains to be said is thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in a previous
+[00:12] video in this series we started to
+[00:13] consider the subject of lighting and we
+[00:15] started to discuss the inverse square
+[00:17] law and we looked at this formula here
+[00:19] and we broke it down into its component
+[00:21] parts so just a brief reminder eye is
+[00:23] the luminous intensity of a light source
+[00:26] in other words how bright it is how much
+[00:27] light it's giving off in the given
+[00:29] direction and then we've got D which is
+[00:32] the distance that the light sources from
+[00:35] the surface that it's illuminating and
+[00:37] then finally we've got e which is the
+[00:39] illuminance in other words how brightly
+[00:42] lit a given surface is and then we
+[00:45] teased out that we were going to do an
+[00:46] experiment to help us to understand the
+[00:48] significance of this equation of this
+[00:51] formula and we were going to do that
+[00:53] with the light that we've got mounted on
+[00:55] top of this tripod here so what we're
+[00:58] going to do now is explain how this
+[01:00] experiment will help us to gain a deeper
+[01:02] insight into this calculation so what's
+[01:06] the consequence of having this squared
+[01:07] here well actually it leads us to a very
+[01:10] interesting thought within the world of
+[01:12] lighting design so I've set up an
+[01:15] experiment here for is to have a little
+[01:17] look at and what we got is we've got a
+[01:19] light source that is illuminating a
+[01:22] surface as you can see here so this
+[01:23] torch is casting a pool of light onto
+[01:26] this surface now what's quite
+[01:28] interesting about this is if we mark out
+[01:31] the kind of diameter of that pool of
+[01:37] light if we look at what the distance is
+[01:39] from one side to the other and again
+[01:40] this is about the point where the light
+[01:42] really starts to drop off so we'll use
+[01:44] that as a kind of reference point what
+[01:46] we can do is we can actually measure
+[01:48] that distance and figure out what area
+[01:51] is being illuminated there so if we
+[01:54] figure out what that area being
+[01:56] illuminated is so we'll put that there
+[01:58] and measure that up you might not be
+[02:00] able to see that on the camera but that
+[02:02] is 26 centimeters so that's 26
+[02:06] centimeters now for the sake of clarity
+[02:08] at this point I'm going to keep this all
+[02:09] in centimeters rather than converting
+[02:12] two meters and of course that means that
+[02:13] the radius of this circle ah is going to
+[02:17] be equal to thirteen centimeters so
+[02:20] we'll keep everything in centimeters at
+[02:23] this stage just in order to simplify
+[02:25] this a little bit so that means we can
+[02:27] now figure out what the area of the
+[02:30] whiteboard is being illuminated at this
+[02:32] point so let's just very quickly do that
+[02:33] calculation hopefully remember from
+[02:35] school that area is equal to PI R
+[02:37] squared so we can say it's equal to pi
+[02:40] times 13 squared which means this is
+[02:43] going to be equal to PI times 169 and if
+[02:47] we put that into the calculator will
+[02:50] find that pi times 169 is going to give
+[02:57] us 530 point 9 3 will go with 530 point
+[03:04] 9 3 centimeters squared so that's the
+[03:07] area that's being illuminated by the
+[03:10] torch at the moment now the really
+[03:12] important thing is to understand that
+[03:14] the distance from the surface to the
+[03:17] light is going to really define what
+[03:19] happens with our light levels so we're
+[03:21] going to measure that now and we're
+[03:24] measuring this and we're finding that
+[03:26] is coming out at 17 centimeters and
+[03:33] that's coming out at 17 centimeters
+[03:36] there so the distance from the light
+[03:39] source to the surface that's being
+[03:41] illuminated is 17 centimeters so when we
+[03:46] look at it like that in those terms we
+[03:48] can say that this distance away when the
+[03:51] distance is equal to 17 centimeters the
+[03:56] area being illuminated is 530 point 9 3
+[04:00] centimeters squared so now what we're
+[04:03] going to do and this is the critical
+[04:05] point is we're going to double the
+[04:06] distance that the light source is from
+[04:09] the surface that it's illuminating so
+[04:11] we're going to move this back until it's
+[04:14] now measuring
+[04:17] 34 centimeters away so we've got that
+[04:20] now at 34 centimeters and we're just
+[04:24] getting that as close to that as we can
+[04:27] so now we've doubled the distance that
+[04:30] the light source is away from the
+[04:31] surface that it's illuminating let's
+[04:33] have a think about what's happened to
+[04:35] this area here now the area has clearly
+[04:37] got larger so as we've moved the light
+[04:38] further away the area that that light is
+[04:41] covering has got larger but how much
+[04:44] larger well let's figure that out so if
+[04:46] we look again at the diameter of this
+[04:50] circle here this pool of light that's
+[04:52] being cast and if we measure that up we
+[04:55] should find that that is yeah there it
+[04:59] is so you can see we're now at a
+[05:01] distance of 52 centimeters so I look at
+[05:06] what's happened to the diameter it's
+[05:08] gone from 26 centimeters to 52
+[05:12] centimeters and also what's really
+[05:14] interesting about that is it means that
+[05:15] the radius has also doubled so the
+[05:18] radius is now up to 26 centimeters so
+[05:23] our new radius our new radius is 26
+[05:28] centimeters okay so when the distance
+[05:32] from the light source to the surface
+[05:36] that's being illuminated has doubled
+[05:39] when that's gone from 17 up to 34
+[05:43] centimeters what's gonna have happened
+[05:47] to the area well the radius has doubled
+[05:49] the diameter has doubled so what do
+[05:51] things happen to the area let's do the
+[05:53] calculation a is equal to PI R squared
+[05:58] and then we find that that is equal to
+[06:00] pi times by the radius 26 centimeters
+[06:04] squared so that means that if we put
+[06:07] that into our calculator we're going to
+[06:10] say that pi times body 26 squared comes
+[06:14] to 2,000 123 123 0.72 centimeters
+[06:29] so centimeter square so that's
+[06:34] interesting we can see we've doubled the
+[06:37] radius we've doubled the diameter but
+[06:40] what we haven't doubled is the area
+[06:42] because if this had doubled we'd expect
+[06:43] that to be somewhere around a thousand
+[06:45] and sixty or a thousand and sixty one
+[06:47] plus change centimeters squared so why
+[06:52] has this not in fact doubled and in fact
+[06:55] what has it done
+[06:56] well actually it's quadrupled if we take
+[07:01] this number five hundred and thirty
+[07:02] point nine three and times it by four
+[07:05] we should find it comes out at two
+[07:08] thousand one hundred and twenty three
+[07:10] point seven two so actually when we
+[07:14] double the distance that the light
+[07:16] sources from the surface that it's
+[07:17] illuminating we don't just double the
+[07:20] area that's being illuminated we
+[07:23] actually quadruple the area that's being
+[07:25] illuminated why is that significant well
+[07:28] again let's really dig into this formula
+[07:30] and start to try and unravel it a little
+[07:32] bit more so we've got e is equal to I
+[07:34] over d squared I is how bright the light
+[07:37] source is having tense the light sources
+[07:39] so if we double how bright the light
+[07:41] sources what's going to happen to our
+[07:44] illuminance how brightly lit the surface
+[07:46] is it's going to double but if we double
+[07:49] the distance that the light source is
+[07:51] from the surface what's going to happen
+[07:54] to our illuminance well because we've
+[07:57] got this squared effect on the bottom
+[07:59] here and that has to be squared because
+[08:01] we've seen what happens to the area
+[08:03] that's being lit here if we double the
+[08:07] distance that the light source is from a
+[08:09] surface that's being illuminated we
+[08:10] don't just half this value we actually
+[08:14] quarter the value so if you double the
+[08:17] height that a light fitting is from the
+[08:19] surface that it's illuminating we don't
+[08:21] just half how brightly lit that surface
+[08:23] is we actually reduce that to a quarter
+[08:27] of what the original value was so can
+[08:30] you see that actually a small change in
+[08:32] the distance from source to surface can
+[08:35] actually result in a massive change in
+[08:37] the illuminance level in how brightly
+[08:40] lit that sir
+[08:41] so that's a really key point in
+[08:44] understanding this formula we're gonna
+[08:46] do some calculations with this in a
+[08:47] future video but can you see here we've
+[08:50] got e is equal to I over d squared u
+[08:52] double how bright the light source is
+[08:54] you double how brightly lit the surfaces
+[08:56] but if you double how far away the light
+[08:59] is from the surface that it's
+[09:01] illuminating we don't just half this
+[09:04] value we actually quarter this value and
+[09:06] actually that logic continues to apply
+[09:09] so if we triple the distance that the
+[09:12] light source is from the surface that
+[09:13] it's illuminating we don't just reduce
+[09:17] the illuminance the how brightly lit the
+[09:20] surfaces to a third it would actually
+[09:22] become a ninth of how brightly lit it
+[09:25] was originally and likewise if we were
+[09:27] to quadruple that you would only have a
+[09:29] 16th of the illuminance on that surface
+[09:32] and the reason for that is that as we
+[09:34] move this further and further away the
+[09:36] amount of area that that light has to
+[09:39] cover gets bigger and bigger but it
+[09:41] doesn't just double it increases by a
+[09:43] term we use exponentially which means it
+[09:45] actually increases by the square of the
+[09:48] distance that we increase it by so key
+[09:52] points to take away from this video and
+[09:54] we're gonna look at this and a little
+[09:55] bit more depth in a future video we'll
+[09:56] do some calculations and try and
+[09:57] understand in a little bit more detail
+[09:59] exactly what this formula is telling is
+[10:01] key things to take away try and get this
+[10:03] formula logged in your brain that's an
+[10:05] important one that you'll need to take
+[10:06] into an exam with you e is equal to I
+[10:08] over d squared remember what these mean
+[10:11] II is the illuminance how brightly lit
+[10:13] ur surfaces I is the luminous intensity
+[10:16] how powerful a light source is how
+[10:18] intense a light sources D is the
+[10:22] distance from the light source to the
+[10:24] surface illuminance is measured in Lux
+[10:27] luminous intensity is measured in
+[10:29] candelas and obviously distance is
+[10:32] measured in meters your the key thing to
+[10:34] take away from this video is that if we
+[10:36] double the distance that our light
+[10:38] source is from the surface that it's
+[10:40] illuminating we actually quarter the
+[10:43] light level on that surface and that's
+[10:45] something that comes up quite regularly
+[10:47] in exam so try and commit that to memory
+[10:49] we'll go into this in a lot more depth
+[10:51] in future videos we'll build on this
+[10:53] form your a little bit more there's also
+[10:54] another
+[10:55] formula that we need to look at called
+[10:56] the cosine rule for lighting and then we
+[10:58] start to look at how we really perform
+[11:01] these calculations in a more realistic
+[11:03] real-life setting so until that time all
+[11:06] that remains to be said is thank you
+[11:08] very much for watching
+[11:11] [Music]
+[11:24] [Music]
+[11:30] [Music]

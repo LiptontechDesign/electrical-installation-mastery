@@ -1,0 +1,630 @@
+# Lighting Sensor Wiring with Override Facility
+# https://www.youtube.com/watch?v=s0G2DnI6spA
+
+hello I'm JW this Simon have a look at how you Worr up motion sensors so that's the PIR or passive infrared it also applies to other types like microwave sensors and also the luck sensors that just turn lights on when it gets dark and obviously turns off when it's daylight so all these things were at pretty much the same way so I'm gonna have a look how that's done and also how you could wire in an additional switch for an override so you can have the lights a turned off and not work at all absolutely useful for maintenance or whatever have them turn on so you only work on the sensor but then also have another switch or another combination of switches so that you have them on permanently if some reason you wanted them to be saying on for an extended time so it's a couple of ways of doing that have a look at these on the diagram muster for that and I've also done the diagrams on the website as well so you can find those at flame port comm link to that in the description to this video as well now here this is a photocell or a light sensor and the two of these is that this is the actual sensing part three tones on the bottom here they go into this socket arrangement here this is the wall bracket for the socket and then just got three terms on the bottom there to connect the wiring into the circuit and these ones they just turn the lights on it gets dark and then turn off again when it's daylight so fairly standard item there and you can actually place the top here separately so if this breaks you can just swap it for another one without having to change the wiring and in terms of the actual that connections there what I've got is pretty typical for these and the other types of motion sensor as well so got lion and neutral connections there and those need to have permanent power sort of thing actually functions and then third connection is the switched output so all happens there is that when the lights are off this isn't connected to anything and when the lights turn on just connects the line and the output there so since you like a normal switch two terminals not connected or they are connected so shows your output there that would go through your lights and this doesn't have an earth connection as most of these things don't however you do need to bring an earth connection to the actual fitting here requirement in the SMC 7-1 terms of assembling these this goes on the wall somewhere this is just a cork gasket there it just fits in like that while it's coming the bottom just put a sort of cable glam there that's a piece of flex or whatever coming out now just sits in the top and there are screws which secure that in position and then the top just plugs into that socket there with a three terminal so it's best racing and twist and you'll see that these are different sizes so it only fits into the top one way around so essentially now we're going like that press down and then just twists and locks into position now that was a photocell they're just sensors the light level and switches things on and off when it's dark in terms of the motion sensors there's two common types there one which is the PIR which is passive infrared and then the other type is a microwave both while up in exactly the same way the difference between these is that the PIR is what I'll call the more traditional model the word passive indicates that it doesn't actually send out anything into the environment all it happens there is that if there's an object moving in front of it which is emitting infrared so that's like a person or anything that's sort of heated compared to the background then that infrared radiation goes through the front and it's detected by a sensor chip inside and the way that configured is there's a set of lenses on the front so as an object is moving it's emitting infrared the infrared goes through two of the lenses and it apparently moves across the sensor inside so it can detect very different so although they have sort of regions where you can obviously walk through it will detect that it's not sending out beams or anything it's purely the warmth or infrared radiation coming off of the person or animal or whatever else including that cars obviously because they also get hot it just goes onto the sensor and it's detected so passive in Fred's only detect things which are warmer than the background so they're not going to check normally things like trees and leaves blowing in the wind because generally I get away the same natural temperature as the background at this reason these are normally suited outside so obviously only want to actually activate it when they say a person there or say the vehicle or something like that microwave sensor on the other hand are not passive you might call those sort of active as a micro sensor does actually send out a signal into the environment it's in the microwave region and then it looks for the reflections coming back from that and if you have something moving then it can detect that the sealer cover has changed slightly so micro sensor will react to anything that's moving whether or not it's the same temperature as the background so generally using a microwave sensor outside is a bad idea because it will literally react to everything that moves including a tree or hedge moving about in the wind or pretty much anything else so if that's what you want well absolutely find that generally is not what you're going to want at all but say in terms of wiring these up they'll work pretty much the same another warning about the microwave ones is that because it's a very high frequency radio signals coming out it can pass through things like glass and it costs a path through thin doors and even certain types of war as well so if you put into a hallway you may find it walking in the room next to it actually it will trigger the sensor as well it was because the signal can actually pass through the wall and still be reflected back and if you stick one on the ceiling yes it can actually go through the ceiling into the room upstairs and various other annoyances so we'll just be aware of that with a microwave type and say the pattern Freddie's idea from outside but again only reacts to heated objects so no good if you just want it to react to anything that was moving now a fairly long time ago and you can actually buy passive infrared detectors and normally they were attached to those dreadful 500 lights and they had a sort of an override feature built in and the deal was that if you turn the switch on and off site twice in quick succession then the light will stay on permanently until you therefore turn it off again but so those things aren't particularly common now in fact I've not seen one for many years and certainly they're gonna say buy things like a separate sensor then that typically they don't actually include that feature and of course even when they included it was rubbish anyhow and one problem that is if you had a bit of a wonky supply say lived out in the country something if the supply was interrupted for a fraction of a second then it could actually result in your outside lights staying on all day and didn't want them to so that was a kind of an override feature that was a bit rubbish and they don't seem to make that type any longer now of course you can't buy floodlights and the light with the sensors built-in and those may be suitable in some cases but in a lot of instances they're not a particularly good solution because quite often we find that to get the sensor covering the area you want gen results in the floodlight blazing horizontally or even up in the sky and you put the lights of pointing down at the floor where it should be unfortunately sensor also does the same so it does really work so we're going to show here is how to do it with a separate sensor but nevertheless you have the same principles apply to one with it's sort of built in assuming all the terminals are available so first of all then obviously those the sensor itself so we'll just draw that in over here and typically it's gonna have four terminals inside we call this a PIR sensor if there's a microwave or a photocell exactly the same so line a neutral which is going to be the permanent supply so obviously you needed for the thing to operate there'll be a switched line output and this is the one which you activated and connects to the light or lights that you've got a normally I'll be some kind of earth turtle inside although most of these are made of plastic so they don't actually need it themselves it's just there to provide that sort of termination for the wire so that's how we've got that in terms of what you can do inside there's a couple of choices first we're gonna show is if you have to use two switches so what you would need there is a normal two gang switch on the wall so I'll draw that in now here's a two gang switch and this is also two ways switch and what we're looking at here is the back of it so these are actually the terminals on the back here and just quick reminder how these work you've got your common turn at the bottom here and it's highly connected to say that one one switch in the position it's connected to that one over there so it's either these all these and the same without it's test separate to switch those all those there - never connected together if you're an idiot on the switch box which is probably recommended because let me do only have a single K which are the light a lot of lights as if you fitted these things you'll know that when you come to put on the wall there's really only room for very small amount of wiring in the back so keeping the wiring up the actual light fitting to a minimum is generally recommended and the same can apply to a lot of the sensors they only have a small amount of space so say will do all the wiring behind the switcher box here now in terms of the incoming supply we're gonna need a couple of extra terminals so we'll just draw that here and another one here so not before neutral and the earth connections and incoming supply we can have that coming in like this so the earth will go into the Sun like that and then our neutral supply can come in soo eternal here those could be screw blocks or the way go whatever connectors you want to use now the incoming line we can actually bring in to the common of one of these switches there and what these switches will be is one of them will be on and off so it's often nothing works on it can either be overridden or on the sensor and then the second switch here would be for automatic operation so it only works on the sensor or permanently on if you wanted that now just quickly drawing the other wise here so from here they're gonna have a cable going over to the center there so the earth wire there that will just go to the earth terminal fairly obvious there we also of course need a neutral to go to the sensor because otherwise it won't actually work so straighten over there as well and in terms of our light or light fittings and we'll just draw one of those here and again they gotta have the same connections in there so just three of those again you could extend this to more like fittings if you want to just draw one in this case so neutral for the lights yeah that we just come across straight into the neutral terminal and again our erstwhile will come across the earth chairman of the light as well so nothing particularly surprising there it's just connecting the neutrals together connecting the answer together from our supply which is over here now the Lyons is where the actual involved party as though it's relatively straightforward so although just got the supply coming into here so that this switch here can either come out here or here depending on what we want so we want an off position so in what I can actually connect this term to anything so when the switch is in a position nothing is powered so that will be the everything off choice and if in the on position we want the actual PIR sensor to have some power so have one wire from here and that will go over to the lion input on the sensor so when that's on which would basically put a wire between here Center has power and also operate and hopefully send things if it was going past now the next thing we need is to connect the output from this center here and we need to actually connect it over to the light now we could just shove it over to the light there but of course that's not very practical because first of all that would just be a single floating that in the middle of space and also on that override feature so when the sensor detects movement this will be switched on to the line there so basically those two linked together we can actually bring this one back we're going back to the thermal of this switch over here now we're going to here is 4 cores here so that is basically one cable certainly for smaller say domestic type of installations that would be a three core and earth type of cable just the three there and then the earth is all the CPC as the fourth conductor now if this is actually switched on cost me this to connect to the light so this one is where the other wire from the light would connect to so line in the light there come back and connect to that same terminal there and it's perfect I put two into the same switch terminal no slides which is so easily accept - why is that so in this configuration this switch doesn't actually do anything at the moment earth or neutrals just connect through to the relevant places and again the cable here with gas is just a normal three core cable or twin an earth whatever you want to use her line neutral and earth there I sort of benefit about the like fitting you've only got that single cable and if you wanted to go to another one it's just extend those three to another like fitting and then you want it with to use my fitting which again isn't too bad to fit into the back of most of them so with the switch off nothing actually works with the switch on power goes that sensor if the sensors detected movement then that comes back here and just goes out to the like fitting so no problem with that if that's all you wanted you could actually just connect these inside with another terminal block just have a single switch absolutely fine however we often override as well so this switch here we can actually use it as an override just by adding an extra piece of wire now have this on permanently what we need to do is to connect the light fitting here the line to the supply permanently and we can actually use this switch for that so what we can do is connect from here to here on the back of the switch so just linking me I'll put there to the input of this one so again with this switch off like that nothing is actually gonna work so no power yet so anything this is the on position this ternal here is also apparently live as well so that this switch is now the override so in this position this is only connected via the PIR sensor but if we just move the switch over to this position this piece is now connected to the incoming supply permanently and that's your override notice it also connects that to the output of the PIR but again that doesn't matter because that's only a switch line anyhow so then this switch becomes on and off for everything and this one becomes automatic when it's the sent set and basically on all the time and so you can do all of this in the back of the switch normally going to switch link between the two two wires at the top there and then just the extra terminals there for the neutral the earth or CPC and the other benefit of doing this with a separate sensor so you can put the sensor in a different position to a light because in many cases you want people to be walking across the sensor so it actually works correctly but that doesn't necessarily mean it's also the same position where you want the lights to be fitted so they can go in several locations and of course you can also have multiple lights as well if you want it so that's how to do it with two separate switch is the fairly common arrangement takes you going switches are pretty much available everywhere and very commonly available in pretty much any style you would want now another way to do it is to use a single switch so let's just draw that switch in here and this switch is what's called a center off with two positions so you only has a single actual switch on the front there three terms on the back line there so this you've got common l1 and l2 and the deal with these switches is they have three positions in one position common in l1 are connected together then it's got a center position where nothing is connected together and then in the bottom position common and l2 are connected together so it's similar to a normal two way switch but it has an additional center off position where nothing is connected so of course the center off position is the position we're gonna use here for everything off and then we've got one position at the top for on the automatic sensor and one off bottom for manual override these times switches not as commonly available they're normally available in a sort of a grid arrangement way by the switch and the place and everything separately but nevertheless they can be found and certainly is a bit of a more tidy situation if you just have a single switch rather than two of them now just as before we're gonna need those extra terminals for the neutral and the CPC there and we'll have a supply coming in here just as we did before so again as before the neutral just comes into the terminal the back of the switch there and the CPC or the earth comes in to the terminal there as well now in this particular case the line coming in goes to the center or common terminal there now I'll just draw in the PIR sensor there so do this out so we had it previously so the cbc is to basically just go through to the light or lights now and of course the other one goes over to the sense we have over there and I'll call that a passive infrared version that microwave whatever else all works the same neutrals again just go over to the appropriate neutral terminal in the light there and also over to the neutral on the sensor circuits again exactly the same now in this particular case we want again have power going to the sensor but we're not power going to the sensor when it's in the automatic position so we say that the top position here was Auto so have the power coming out of there on the line and then that will go over to the supply to the sensor so when the switch is in the up position those two are connected power goes the sensors have center operates and then when obviously it detects movement this terminal here becomes live and that's the one we want to go over to our light so yeah we could just put it there but that's not going to work in reality so what we can do is bring it back to the box and we can use the l2 on the switch just to join that together and of course we need to come from l2 and over to our light or lights that we have over here now this is actually the complete circuit including the override so just as we had before this here is one cable probably that three corner for three cords CPC type of thing and again this here is again one cable just the three cause in it so it could be that twin earth or just flex or something like that so the way this works is that when these two are connected together in the opposition the supply comes in here powers up the sensor sensor detects movement when we've selected this thing together here power comes back on the Y here we're just using a scissor pace convenient terminal to get it together and it goes back out to the light or lights and the lights turn on in the tenth position nothing it's connected here so power dozen actually go anywhere just stops there so the sense doesn't work and neither to the lights and then in the over eye position which is the bottom these two are linked together so the powers coming in goes onto this terminal here and go straight to the light so that stays on permanently now in that position if we just draw that in the sensor supply isn't actually connected to anything however the switch line here is now this isn't a problem on the vast majority of sensors because on most of these they actually have a relay between here and of course if there's no power going in on this then there's no connection between this and any of the other parts now there are electronic sensors or they're certainly used to be at one time they're not particularly common now so in a very rare case that it might cause some problem if you connected here and it was one of the electronic switching types but that's highly implausible because basically these are live terminals anyway when it's a normal use so 99% the time that's not going to cause any problem and certainly it's got a relay inside and you can tell it's got that so when we move the front it you'll hear the relay click on and off that won't be a problem at all but just mention that there there might be some weird center out there where if you just connect one and not the other it might cause some kind of problem or even damage it but say I think that's exceptionally unlikely so just as you have the other one all of this is essentially in the back of the switch inside the house a single cable coming in cable goes out to the light or lights and then cable goes out to the sensor and again you put these where of yours most convenient and appropriate rather than having them stuck in the same position and neither of them vertically working optimally so it's look there at wiring up a sensor and it doesn't have to be a any particular kind of sensor so they all wear up pretty much the same it's just a power supply and the switched output so microwave passives read all the photocell or pretty much the same doesn't have to be outside either that can also be used for things inside so got a room with a microwave sensor in it then absolutely fine to use the same arrangement so obviously it's automatic off or on permanently although in certain inside if you're gonna put that in I'd see us putting the override switch somewhere else or what each would like a key or something so that you don't see people turning it on and leaving on because that we all see kind of eliminate the point of having the sensor in the first place now pictures for the things they are on the website as well so say link to that in the description and they're obviously somewhat better drawn than those and drawn things we just looked at and final point there is about the type of the sensors their microwave sensors are generally better for use inside because they only react to things moving if you put a passive infrared inside there was a problem there because they had a radiator on the wall when the radio too heats up and the warm air starts rising off of it that can be easily enough to trigger a PIR sensor and of course that would work and nobody was in the room where's microwave ones are not actually sensitive to that and a converter you don't normally want to put them over sensor outside because it literally reacts to anything that's moving so if the wind blows and say a dustbin fell over or something or the trees or whatever move then it's kind of a triggering all the time and that's gonna be really annoying so Passavant red outside is much better because then they only react to warm objects moving so people animals and vehicles and so on so you can use either in any place but generally it's better to do it that way around so that's it for this video until next time thanks for watching
+
+
+[00:03] hello I'm JW this Simon have a look at
+[00:06] how you Worr up motion sensors so that's
+[00:09] the PIR or passive infrared it also
+[00:12] applies to other types like microwave
+[00:13] sensors and also the luck sensors that
+[00:16] just turn lights on when it gets dark
+[00:18] and obviously turns off when it's
+[00:20] daylight so all these things were at
+[00:22] pretty much the same way so I'm gonna
+[00:23] have a look how that's done and also how
+[00:25] you could wire in an additional switch
+[00:27] for an override so you can have the
+[00:29] lights a turned off and not work at all
+[00:31] absolutely useful for maintenance or
+[00:33] whatever have them turn on so you only
+[00:35] work on the sensor but then also have
+[00:37] another switch or another combination of
+[00:39] switches so that you have them on
+[00:40] permanently if some reason you wanted
+[00:42] them to be saying on for an extended
+[00:44] time so it's a couple of ways of doing
+[00:46] that have a look at these on the diagram
+[00:48] muster for that and I've also done the
+[00:50] diagrams on the website as well so you
+[00:53] can find those at flame port comm link
+[00:55] to that in the description to this video
+[00:57] as well now here this is a photocell or
+[01:03] a light sensor and the two of these is
+[01:05] that this is the actual sensing part
+[01:08] three tones on the bottom here they go
+[01:11] into this socket arrangement here this
+[01:13] is the wall bracket for the socket and
+[01:15] then just got three terms on the bottom
+[01:17] there to connect the wiring into the
+[01:19] circuit and these ones they just turn
+[01:21] the lights on it gets dark and then turn
+[01:24] off again when it's daylight so fairly
+[01:26] standard item there and you can actually
+[01:28] place the top here separately so if this
+[01:30] breaks you can just swap it for another
+[01:31] one
+[01:32] without having to change the wiring and
+[01:34] in terms of the actual that connections
+[01:37] there what I've got is pretty typical
+[01:38] for these and the other types of motion
+[01:40] sensor as well so got lion and neutral
+[01:44] connections there and those need to have
+[01:45] permanent power sort of thing actually
+[01:47] functions and then third connection is
+[01:49] the switched output so all happens there
+[01:52] is that when the lights are off this
+[01:54] isn't connected to anything and when the
+[01:56] lights turn on just connects the line
+[01:57] and the output there so since you like a
+[02:00] normal switch two terminals not
+[02:02] connected or they are connected so shows
+[02:05] your output there that would go through
+[02:06] your lights and this doesn't have an
+[02:10] earth connection as most of these things
+[02:11] don't however you do need to bring an
+[02:13] earth connection to the actual fitting
+[02:15] here
+[02:16] requirement in the SMC 7-1 terms of
+[02:19] assembling these this goes on the wall
+[02:20] somewhere
+[02:21] this is just a cork gasket there it just
+[02:24] fits in like that while it's coming the
+[02:27] bottom just put a sort of cable glam
+[02:29] there that's a piece of flex or whatever
+[02:30] coming out now just sits in the top and
+[02:34] there are screws which secure that in
+[02:36] position and then the top just plugs
+[02:39] into that socket there with a three
+[02:41] terminal so it's best racing and twist
+[02:42] and you'll see that these are different
+[02:45] sizes so it only fits into the top one
+[02:48] way around so essentially now we're
+[02:51] going like that press down and then just
+[02:53] twists and locks into position now that
+[02:58] was a photocell they're just sensors the
+[03:00] light level and switches things on and
+[03:01] off when it's dark in terms of the
+[03:04] motion sensors there's two common types
+[03:05] there one which is the PIR which is
+[03:10] passive infrared and then the other type
+[03:13] is a microwave both while up in exactly
+[03:18] the same way the difference between
+[03:20] these is that the PIR is what I'll call
+[03:23] the more traditional model the word
+[03:25] passive indicates that it doesn't
+[03:26] actually send out anything into the
+[03:28] environment all it happens there is that
+[03:30] if there's an object moving in front of
+[03:32] it which is emitting infrared so that's
+[03:33] like a person or anything that's sort of
+[03:35] heated compared to the background then
+[03:38] that infrared radiation goes through the
+[03:41] front and it's detected by a sensor chip
+[03:43] inside and the way that configured is
+[03:46] there's a set of lenses on the front so
+[03:48] as an object is moving it's emitting
+[03:49] infrared the infrared goes through two
+[03:52] of the lenses and it apparently moves
+[03:53] across the sensor inside so it can
+[03:55] detect very different so although they
+[03:58] have sort of regions where you can
+[04:00] obviously walk through it will detect
+[04:02] that it's not sending out beams or
+[04:04] anything it's purely the
+[04:05] warmth or infrared radiation coming off
+[04:08] of the person or animal or whatever else
+[04:09] including that cars obviously because
+[04:11] they also get hot it just goes onto the
+[04:13] sensor and it's detected so passive in
+[04:16] Fred's only detect things which are
+[04:18] warmer than the background so they're
+[04:20] not going to check normally things like
+[04:21] trees and leaves blowing in the wind
+[04:23] because generally I get away the same
+[04:25] natural temperature as the background at
+[04:28] this reason these are normally suited
+[04:30] outside so obviously only want to
+[04:32] actually activate it when they say a
+[04:34] person there or say the vehicle or
+[04:35] something like that
+[04:37] microwave sensor on the other hand are
+[04:39] not passive you might call those sort of
+[04:42] active as a micro sensor does actually
+[04:45] send out a signal into the environment
+[04:47] it's in the microwave region and then it
+[04:49] looks for the reflections coming back
+[04:50] from that and if you have something
+[04:52] moving then it can detect that the
+[04:54] sealer cover has changed slightly so
+[04:57] micro sensor will react to anything
+[04:58] that's moving whether or not it's the
+[05:00] same temperature as the background so
+[05:02] generally using a microwave sensor
+[05:03] outside is a bad idea because it will
+[05:05] literally react to everything that moves
+[05:07] including a tree or hedge moving about
+[05:09] in the wind or pretty much anything else
+[05:11] so if that's what you want well
+[05:13] absolutely find that generally is not
+[05:15] what you're going to want at all but say
+[05:19] in terms of wiring these up they'll work
+[05:21] pretty much the same another warning
+[05:23] about the microwave ones is that because
+[05:24] it's a very high frequency radio signals
+[05:27] coming out it can pass through things
+[05:29] like glass
+[05:30] and it costs a path through thin doors
+[05:32] and even certain types of war as well so
+[05:35] if you put into a hallway
+[05:37] you may find it walking in the room next
+[05:38] to it actually it will trigger the
+[05:40] sensor as well it was because the signal
+[05:42] can actually pass through the wall and
+[05:43] still be reflected back and if you stick
+[05:46] one on the ceiling yes it can actually
+[05:48] go through the ceiling into the room
+[05:49] upstairs and various other annoyances so
+[05:52] we'll just be aware of that with a
+[05:53] microwave type and say the pattern
+[05:55] Freddie's idea from outside but again
+[05:56] only reacts to heated objects so no good
+[06:00] if you just want it to react to anything
+[06:02] that was moving now a fairly long time
+[06:05] ago and you can actually buy passive
+[06:08] infrared detectors and normally they
+[06:09] were attached to those dreadful 500
+[06:11] lights and they had a sort of an
+[06:13] override feature built in and the deal
+[06:15] was that if you turn the switch on and
+[06:17] off site twice in quick succession then
+[06:19] the light will stay on permanently until
+[06:21] you therefore turn it off again but so
+[06:24] those things aren't particularly common
+[06:25] now in fact I've not seen one for many
+[06:27] years and certainly they're gonna say
+[06:29] buy things like a separate sensor then
+[06:31] that typically they don't actually
+[06:32] include that feature and of course even
+[06:34] when they included it was rubbish anyhow
+[06:35] and one problem that is if you had a
+[06:38] bit of a wonky supply say lived out in
+[06:40] the country something if the supply was
+[06:41] interrupted for a fraction of a second
+[06:43] then it could actually result in your
+[06:45] outside lights staying on all day and
+[06:46] didn't want them to so that was a kind
+[06:49] of an override feature that was a bit
+[06:51] rubbish and they don't seem to make that
+[06:53] type any longer now of course you can't
+[06:56] buy floodlights and the light with the
+[06:57] sensors built-in and those may be
+[07:00] suitable in some cases but in a lot of
+[07:01] instances they're not a particularly
+[07:03] good solution because quite often we
+[07:05] find that to get the sensor covering the
+[07:07] area you want gen results in the
+[07:09] floodlight blazing horizontally or even
+[07:11] up in the sky and you put the lights of
+[07:13] pointing down at the floor where it
+[07:15] should be unfortunately sensor also does the same
+[07:17] so it does really work so we're going to
+[07:19] show here is how to do it with a
+[07:20] separate sensor but nevertheless you
+[07:23] have the same principles apply to one
+[07:24] with it's sort of built in assuming all
+[07:26] the terminals are available so first of
+[07:30] all then obviously those the sensor
+[07:32] itself so we'll just draw that in over
+[07:34] here and typically it's gonna have four
+[07:37] terminals inside
+[07:40] we call this a PIR sensor if there's a
+[07:42] microwave or a photocell exactly the
+[07:45] same so line a neutral which is going to
+[07:48] be the permanent supply so obviously you
+[07:50] needed for the thing to operate there'll
+[07:52] be a switched line output and this is
+[07:54] the one which you activated and connects
+[07:56] to the light or lights that you've got a
+[07:58] normally I'll be some kind of earth
+[08:00] turtle inside although most of these are
+[08:02] made of plastic so they don't actually
+[08:03] need it themselves it's just there to
+[08:05] provide that sort of termination for the
+[08:08] wire so that's how we've got that in
+[08:12] terms of what you can do inside there's
+[08:13] a couple of choices first we're gonna
+[08:15] show is if you have to use two switches
+[08:17] so what you would need there is a normal
+[08:19] two gang switch on the wall so I'll draw
+[08:22] that in now here's a two gang switch and
+[08:25] this is also two ways switch and what
+[08:27] we're looking at here is the back of it
+[08:28] so these are actually the terminals on
+[08:30] the back here and just quick reminder
+[08:32] how these work you've got your common
+[08:34] turn at the bottom here and it's highly
+[08:36] connected to say that one one switch in
+[08:39] the position it's connected to that one
+[08:41] over there so it's either these all
+[08:44] these and the same without it's test
+[08:45] separate to switch those all those there
+[08:48] - never connected together if you're an
+[08:50] idiot on the switch box which is
+[08:52] probably recommended because let me do
+[08:54] only have a single K which are the light
+[08:55] a lot of lights as if you fitted these
+[08:57] things you'll know that when you come to
+[08:59] put on the wall there's really only room
+[09:00] for very small amount of wiring in the
+[09:02] back so keeping the wiring up the actual
+[09:04] light fitting to a minimum is generally
+[09:06] recommended and the same can apply to a
+[09:08] lot of the sensors they only have a
+[09:09] small amount of space
+[09:10] so say will do all the wiring behind the
+[09:12] switcher box here now in terms of the
+[09:16] incoming supply we're gonna need a
+[09:17] couple of extra terminals so we'll just
+[09:19] draw that here and another one here so
+[09:23] not before neutral and the earth
+[09:24] connections and incoming supply we can
+[09:27] have that coming in like this so the
+[09:29] earth will go into the Sun like that
+[09:32] and then our neutral supply can come in
+[09:35] soo eternal here those could be screw
+[09:37] blocks or the way go whatever connectors
+[09:40] you want to use now the incoming line we
+[09:43] can actually bring in to the common of
+[09:45] one of these switches there and what
+[09:50] these switches will be is one of them
+[09:51] will be on and off so it's often nothing
+[09:52] works on it can either be overridden or
+[09:54] on the sensor and then the second switch
+[09:57] here would be for automatic operation so
+[10:00] it only works on the sensor or
+[10:02] permanently on if you wanted that now
+[10:05] just quickly drawing the other wise here
+[10:07] so from here they're gonna have a cable
+[10:09] going over to the center there so the
+[10:11] earth wire there that will just go to
+[10:13] the earth terminal fairly obvious there
+[10:16] we also of course need a neutral to go
+[10:18] to the sensor because otherwise it won't
+[10:20] actually work so straighten over there
+[10:23] as well
+[10:24] and in terms of our light or light
+[10:26] fittings and we'll just draw one of
+[10:28] those here and again they gotta have the
+[10:30] same connections in there so just three
+[10:33] of those again you could extend this to
+[10:36] more like fittings if you want to just
+[10:37] draw one in this case so neutral for the
+[10:40] lights yeah that we just come across
+[10:42] straight into the neutral terminal and
+[10:46] again our erstwhile will come across the
+[10:49] earth chairman of the light as well so
+[10:52] nothing particularly surprising there
+[10:53] it's just connecting the neutrals
+[10:54] together connecting the answer together
+[10:57] from our supply which is over here now
+[11:00] the Lyons is where the actual involved
+[11:05] party as though it's relatively
+[11:06] straightforward so although just got the
+[11:08] supply coming into here so that this
+[11:10] switch here can either come out here or
+[11:13] here depending on what we want so we
+[11:15] want an off position so in what I can
+[11:17] actually connect this term to anything
+[11:19] so when the switch is in a position
+[11:20] nothing is powered so that will be the
+[11:22] everything off choice and if in the on
+[11:26] position we want the actual PIR sensor
+[11:29] to have some power so have one wire from
+[11:31] here and that will go over to the lion
+[11:36] input on the sensor so when that's on
+[11:40] which would basically put a wire between
+[11:41] here Center has power and also operate
+[11:44] and hopefully send things if it was
+[11:47] going past now the next thing we need is
+[11:50] to connect the output from this center
+[11:51] here and we need to actually connect it
+[11:53] over to the light now we could just
+[11:55] shove it over to the light there but of
+[11:57] course that's not very practical because
+[11:58] first of all that would just be a single
+[12:00] floating that in the middle of space and
+[12:02] also on that override feature so when
+[12:05] the sensor detects movement this will be
+[12:06] switched on to the line there so
+[12:09] basically those two linked together we
+[12:12] can actually bring this one back we're
+[12:15] going back to the thermal of this switch
+[12:16] over here now we're going to here is 4
+[12:22] cores here so that is basically one
+[12:24] cable certainly for smaller say domestic
+[12:29] type of installations that would be a
+[12:31] three core and earth type of cable just
+[12:35] the three there and then the earth is
+[12:36] all the CPC as the fourth conductor now
+[12:41] if this is actually switched on cost me
+[12:44] this to connect to the light so this one
+[12:46] is where the other wire from the light
+[12:48] would connect to so line in the light
+[12:51] there come back and connect to that same
+[12:54] terminal there and it's perfect I put
+[12:56] two into the same switch terminal no
+[12:58] slides which is so easily accept - why
+[13:01] is that so in this configuration this
+[13:04] switch doesn't actually do anything at
+[13:05] the moment earth or neutrals just
+[13:08] connect through to the relevant places
+[13:10] and again the cable here with gas is
+[13:12] just a normal three core cable or twin
+[13:15] an earth whatever you want to use her
+[13:16] line neutral and earth there I sort of
+[13:18] benefit about the like fitting you've
+[13:20] only got that single cable and if you
+[13:22] wanted to go to another one it's just
+[13:23] extend those three to another like
+[13:25] fitting and then you want it with to use
+[13:27] my fitting which again isn't too bad to
+[13:30] fit into the back of most of them so
+[13:33] with the switch off nothing actually
+[13:34] works with the switch on power goes that
+[13:37] sensor if the sensors detected movement
+[13:39] then that comes back here and just goes
+[13:41] out to the like fitting so no problem
+[13:44] with that if that's all you wanted you
+[13:46] could actually just connect these inside
+[13:47] with another terminal block just have a
+[13:49] single switch absolutely fine however we
+[13:53] often override as well so this switch
+[13:55] here we can actually use it as an
+[13:57] override just by adding an extra piece
+[13:59] of wire now have this on permanently
+[14:01] what we need to do is to connect the
+[14:03] light fitting here the line to the
+[14:06] supply permanently and we can actually
+[14:08] use this switch for that so what we can
+[14:10] do is connect from here to here on the
+[14:14] back of the switch so just linking me
+[14:16] I'll put there to the input of this one
+[14:18] so again with this switch off like that
+[14:21] nothing is actually gonna work so no
+[14:24] power yet so anything this is the on
+[14:27] position this ternal here is also
+[14:29] apparently live as well so that this
+[14:32] switch is now the override so in this
+[14:34] position this is only connected via the
+[14:39] PIR sensor but if we just move the
+[14:41] switch over to this position this piece
+[14:44] is now connected to the incoming supply
+[14:46] permanently and that's your override
+[14:48] notice it also connects that to the
+[14:50] output of the PIR but again that doesn't
+[14:53] matter because that's only a switch line
+[14:54] anyhow so then this switch becomes on
+[14:59] and off for everything and this one
+[15:01] becomes automatic when it's the sent set
+[15:04] and basically on all the time and so you
+[15:08] can do all of this in the back of the
+[15:09] switch normally going to switch link
+[15:13] between the two two wires at the top
+[15:15] there and then just the extra terminals
+[15:17] there for the neutral
+[15:18] the earth or CPC and the other benefit
+[15:22] of doing this with a separate sensor so
+[15:24] you can put the sensor in a different
+[15:25] position to a light because in many
+[15:27] cases you want people to be walking
+[15:28] across the sensor so it actually works
+[15:31] correctly but that doesn't necessarily
+[15:33] mean it's also the same position where
+[15:34] you want the lights to be fitted so they
+[15:36] can go in several locations and of
+[15:38] course you can also have multiple lights
+[15:39] as well if you want it so that's how to
+[15:43] do it with two separate switch is the
+[15:45] fairly common arrangement takes you
+[15:46] going switches are pretty much available
+[15:47] everywhere and very commonly available
+[15:50] in pretty much any style you would want
+[15:52] now another way to do it is to use a
+[15:55] single switch so let's just draw that
+[15:58] switch in here and this switch is what's
+[16:01] called a center off with two positions
+[16:04] so you only has a single actual switch
+[16:07] on the front there three terms on the
+[16:09] back line there so this you've got
+[16:13] common l1 and l2 and the deal with these
+[16:18] switches is they have three positions in
+[16:21] one position common in l1 are connected
+[16:24] together then it's got a center position
+[16:26] where nothing is connected together and
+[16:28] then in the bottom position common and
+[16:30] l2 are connected together so it's
+[16:33] similar to a normal two way switch but
+[16:35] it has an additional center off position
+[16:37] where nothing is connected so of course
+[16:39] the center off position is the position
+[16:41] we're gonna use here for everything off
+[16:42] and then we've got one position at the
+[16:44] top for on the automatic sensor and one
+[16:48] off bottom for manual override these
+[16:51] times switches not as commonly available
+[16:52] they're normally available in a sort of
+[16:54] a grid arrangement way by the switch and
+[16:56] the place and everything separately but
+[16:58] nevertheless they can be found and
+[16:59] certainly is a bit of a more tidy
+[17:01] situation if you just have a single
+[17:02] switch rather than two of them now just
+[17:05] as before we're gonna need those extra
+[17:06] terminals for the neutral and the CPC
+[17:11] there and we'll have a supply coming in
+[17:14] here just as we did before so again as
+[17:19] before the neutral just comes into the
+[17:22] terminal the back of the switch there
+[17:23] and the CPC or the earth comes in
+[17:26] to the terminal there as well now in
+[17:29] this particular case the line coming in
+[17:32] goes to the center or common terminal
+[17:35] there now I'll just draw in the PIR
+[17:40] sensor there so do this out so we had it
+[17:43] previously so the cbc is to basically
+[17:46] just go through to the light or lights
+[17:48] now and of course the other one goes
+[17:50] over to the sense we have over there and
+[17:56] I'll call that a passive infrared
+[17:57] version that microwave whatever else all
+[18:00] works the same neutrals again just go
+[18:03] over to the appropriate neutral terminal
+[18:06] in the light there and also over to the
+[18:09] neutral on the sensor circuits again
+[18:12] exactly the same now in this particular
+[18:14] case we want again have power going to
+[18:17] the sensor but we're not power going to
+[18:19] the sensor when it's in the automatic
+[18:20] position so we say that the top position
+[18:22] here was Auto so have the power coming
+[18:25] out of there on the line and then that
+[18:27] will go over to the supply to the sensor
+[18:32] so when the switch is in the up position
+[18:33] those two are connected power goes the
+[18:37] sensors have center operates and then
+[18:39] when obviously it detects movement this
+[18:42] terminal here becomes live and that's
+[18:44] the one we want to go over to our light
+[18:46] so yeah we could just put it there but
+[18:48] that's not going to work in reality so
+[18:49] what we can do is bring it back to the
+[18:50] box and we can use the l2 on the switch
+[18:55] just to join that together and of course
+[18:57] we need to come from l2 and over to our
+[19:00] light or lights that we have over here
+[19:04] now this is actually the complete
+[19:06] circuit including the override so just
+[19:08] as we had before this here is one cable
+[19:14] probably that three corner for three
+[19:16] cords CPC type of thing
+[19:18] and again this here is again one cable
+[19:21] just the three cause in it so it could
+[19:23] be that twin earth or just flex or
+[19:26] something like that so the way this
+[19:30] works is that when these two are
+[19:32] connected together in the opposition the
+[19:34] supply comes in here powers up the
+[19:36] sensor sensor detects movement when
+[19:39] we've selected this
+[19:40] thing together here power comes back on
+[19:43] the Y here we're just using a scissor
+[19:45] pace convenient terminal to get it
+[19:46] together and it goes back out to the
+[19:48] light or lights and the lights turn on
+[19:51] in the tenth position nothing it's
+[19:53] connected here so power dozen actually
+[19:55] go anywhere just stops there so the
+[19:57] sense doesn't work and neither to the
+[19:58] lights and then in the over eye position
+[20:01] which is the bottom these two are linked
+[20:04] together so the powers coming in goes
+[20:06] onto this terminal here and go straight
+[20:07] to the light so that stays on
+[20:09] permanently now in that position if we
+[20:12] just draw that in the sensor supply
+[20:16] isn't actually connected to anything
+[20:18] however the switch line here is now this
+[20:21] isn't a problem on the vast majority of
+[20:23] sensors because on most of these they
+[20:25] actually have a relay between here and
+[20:28] of course if there's no power going in
+[20:29] on this then there's no connection
+[20:31] between this and any of the other parts
+[20:32] now there are electronic sensors or
+[20:35] they're certainly used to be at one time
+[20:36] they're not particularly common now so
+[20:39] in a very rare case that it might cause
+[20:41] some problem if you connected here and
+[20:43] it was one of the electronic switching
+[20:45] types but that's highly implausible
+[20:46] because basically these are live
+[20:48] terminals anyway when it's a normal use
+[20:50] so 99% the time that's not going to
+[20:53] cause any problem and certainly it's got
+[20:55] a relay inside and you can tell it's got
+[20:57] that so when we move the front it you'll
+[20:58] hear the relay click on and off that
+[21:01] won't be a problem at all but just
+[21:04] mention that there there might be some
+[21:05] weird center out there where if you just
+[21:07] connect one and not the other it might
+[21:08] cause some kind of problem or even
+[21:09] damage it but say I think that's
+[21:12] exceptionally unlikely so just as you
+[21:15] have the other one all of this is
+[21:17] essentially in the back of the switch
+[21:20] inside the house a single cable coming
+[21:22] in cable goes out to the light or lights
+[21:25] and then cable goes out to the sensor
+[21:27] and again you put these where of yours
+[21:28] most convenient and appropriate rather
+[21:30] than having them stuck in the same
+[21:32] position and neither of them vertically
+[21:33] working optimally so it's look there at
+[21:38] wiring up a sensor and it doesn't have
+[21:41] to be a any particular kind of sensor so
+[21:43] they all wear up pretty much the same
+[21:44] it's just a power supply and the
+[21:47] switched output so microwave passives
+[21:49] read all the photocell or pretty much
+[21:52] the same
+[21:53] doesn't have to be outside either that
+[21:55] can also be used for things inside so
+[21:57] got a room with a microwave sensor in it
+[21:59] then absolutely fine to use the same
+[22:01] arrangement so obviously it's automatic
+[22:04] off or on permanently although in
+[22:06] certain inside if you're gonna put that
+[22:08] in I'd see us putting the override
+[22:09] switch somewhere else
+[22:10] or what each would like a key or
+[22:11] something so that you don't see people
+[22:13] turning it on and leaving on because
+[22:14] that we all see kind of
+[22:16] eliminate the point of having the sensor
+[22:17] in the first place now pictures for the
+[22:21] things they are on the website as well
+[22:23] so say link to that in the description
+[22:25] and they're obviously somewhat better
+[22:27] drawn than those and drawn things we
+[22:30] just looked at and final point there is
+[22:33] about the type of the sensors their
+[22:34] microwave sensors are generally better
+[22:37] for use inside because they only react
+[22:39] to things moving if you put a passive
+[22:42] infrared inside there was a problem
+[22:44] there because they had a radiator on the
+[22:45] wall when the radio too heats up and the
+[22:47] warm air starts rising off of it that
+[22:48] can be easily enough to trigger a PIR
+[22:51] sensor and of course that would work and
+[22:53] nobody was in the room
+[22:54] where's microwave ones are not actually
+[22:57] sensitive to that and a converter you
+[22:59] don't normally want to put them over
+[23:00] sensor outside because it literally
+[23:02] reacts to anything that's moving so if
+[23:04] the wind blows and say a dustbin fell
+[23:06] over or something or the trees or
+[23:08] whatever move then it's kind of a
+[23:09] triggering all the time and that's gonna
+[23:11] be really annoying so Passavant red
+[23:14] outside is much better because then they
+[23:15] only react to warm objects moving so
+[23:18] people animals and vehicles and so on so
+[23:22] you can use either in any place but
+[23:24] generally it's better to do it that way
+[23:26] around so that's it for this video until
+[23:29] next time thanks for watching

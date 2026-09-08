@@ -1,0 +1,142 @@
+# LIVE Testing on a 3 Phase Dis-Board - External Earth Fault Loop Impedance Ze, PEFC, PSCC AM2 & AM2S
+# https://www.youtube.com/watch?v=IeWoLUIKuJw
+
+so this is a real treat for the channel we are back out with BIG SEXY Matt O'Dell and we are going to try today to go through some of those tests that are going to be required for AM2 and AM2S and which one you're going to pick out first that we'll have a go at so in particular we've got three phase boards so we can do the um earth fault loop impedance yes external earth fault loop impedance then the PFC yeah so they're really crucial for AM2S AM2 and well if AM2E if you're doing the experience route as well and we're going to make sure that we don't miss out a part especially now we've got a three-phase board because of colleges they're working on single phase installations aren't they yes yeah so it's a three-phase experience and maybe our learners don't always get the the hands-on experience with yeah so we've got permission in order to isolate the supply here and we're going to go through it in the correct process which means we're going to knock off first of all the breakers before doing the main switch we're going to remove the cover and then we're going to show first of all external fault loop impedance and then prospective fault current yes okay so you're knocking breakers off then formula okay and so we've got the single phase breakers here so we'll start turning those off and so you can start seeing some lights go off yeah i'll just show that because we're working in the world's most terriblest place aren't we today look at that okay so yeah whip some off so let's just do the single phase so the lighting's just gone off in here do you want them to stay on just for now no no we'll turn everything off we'll do it properly and so then we've got our three phase breakers so that's a blower a compressor a three phase supply to another board there to the office board we turned off a lot of the local loads as well so we're not actually got loads of stuff on full load on for the breakers and then obviously we can do that and so that looks like all the loads have been taken off yeah and we're going to do the main switch are we now it's quite happy just to turn the main switch off okay so we're going to get the cover off and we'll look at doing these tests described at the start of the video okay so the board's off the cover's off and we're now going to carry out the external earth fault loop impedance just remind me where i'm going to disconnect the earthing conductor which is here okay so yeah this is the main earth in conductor so if we was not to disconnect it then we'd be having a problem with parallel earth paths via the likes of extraneous conductive parts through the bonding and stuff like that so we want to know the external earth fault loop impedance and so by removing this earth that is just the external nothing internal okay and we've got an earthing range and i said of TN-C-S so what's the maximum reading for that for the external on a PME or TN-C-S it's 0.35 ohms okay okay so the earthing conductor is out we're just going to drop this off all right so yeah we've got the earth out still care because obviously the bottom side of this is live there is no remote isolator here you might find an AM2 AM2S there might be another isolator that you can actually turn this off before removing it but we're in the real world here so they're now live at the bottom of that switch and it's red yellow blue and not brown black grey and we're going to set up our instrument now in order to carry out that external earth fault loop impedance so we've set our megger MFT 1730 up to L-PE and you're gonna do it on the three lead low and that's what you've selected to do it on we could have done it on high because there's no RCDs but you think that this would probably be the standard practice to get used to matt is that right when we've got so many uh RCDs around um that we go for the low settings okay yeah right okay you want to probe on for me so we can see the okay so we've got some exposed disconnected earth there so we'll get a good get a nice good connection onto there and then we've got the neutral terminal here and then we've got our three phases there so let's just move that one out of the way so again it's an automatic test so go on to the neutral terminal first and then we'll just probe onto the first line conductor and as you can see there the machine is automatically detected voltage and it takes a few seconds because we're on the low uh one yep just fine so we'll persevere and wait for our result so as you can see there 0.08 that's it we're finished pack up we're ready to go is that right matt no so that's on one of the phases so obviously there's three phases so we'll just repeat that same process on the next phase so again because we're going between neutral and the phase it's detecting a single phase voltage so i think it's about 240 volts in here of the three readings we take which one are we going to record so it's just the highest reading okay so we've got remember we've got 0.08 now we've got 0.09 so that's now the highest one and then we'll probe back on if you notice every time i physically take your probes back off in the right order exactly the same as we do for obviously supply polarity in safe isolation yeah right 0.08 of an ohm so okay we've carried out the external fault loop impedance test there we've got three readings you said you're going to record the highest one in your test paperwork okay we'll remove the earth and conduct just remind me again we'll remove that so purely for parallel earth paths we want the external earth fault loop impedance and so that is the external earth that goes back to the supply transformer good so that is the that is the one that has to be removed okay we're going to move on in a second to do prospective current yeah we've reconnected the uh earthing conductor just there because obviously we need all the parallel earth paths in order to our prospective earth fault and short-circuit current so we're going to start off by doing our prospective earth fault current i see you've set your instrument there to two lead high and you're over there is that on PE is it L-PE yeah okay on the actual megger 1730 okay if you're on a probe on we're not expecting this necessary to be a reading we use and we'll explain that later on in the video when we go through doing between line and neutrals and then we'll have a little chat at the end and a little rule of thumb will suggest yeah okay okay so get our good connection onto the earth bar there yeah and again it's on the two lead high automatic test okay so we're going to go through this and we've got to remember these but not necessarily worry too much phase one was 2.3 okay that's 2320 amps okay phase two okay 2130 amps and phase 3 okay and phase three and two point one okay so we're gonna go on now and do the similar test but this time between the line conductors to the neutral and then we'll have a little chat about this rule of thumb is we're going to turn it over so that's now to LL and LN yes and we're on 2 lead does it mean we now have to change our leads in the back of the instrument as well yeah so so again um this time we're going to be using these two leads here so in this case we're just going to use the the red and the black okay so yeah that's a key point to mention because sometimes people change their leads around in there don't they so we're going to now just be using our two leads yeah so so again we're just going to probe on to the neutral conductor yeah and then on to the line conductor and again you can see it's picked up a voltage voltage there as we're testing now then we come back it should come through a little quicker it has so that's two thousand seven hundred and twenty amps okay okay again that's phase one so we'll make a note of that we'll go on to phase two again there's a voltage picked up okay sometimes you have funny things like that happen where so that's uh 1972 yeah 70 amps yeah sorry apologize so we suggested throughout that video there is a rule of thumb when we're doing a three-phase supply we know at college often you're working on single-phase installations and when you get your am2 am2s am2e it all can be a bit confusing but we're going to solve that confusion now of all the readings we've got we look at the highest one on my right and thinking Matt between our line and neutral and we do mathematically what with that before we record it so so we simply it's easy calculation just double it ok always going to take the highest reading and double through and record it on our test paperwork because what could we have as a fault in a three-phase system so so what we've done is we is with the measure the measurements we have took as if it's between sort of earth and phase and or neutral phase but the worst case would be if it was between phases yes so in other words a fault was between a couple of line conductors or three line conductors we get the most amount of fault current flowing yeah and therefore we need to prove that our device can actually clear that fault okay so you'll be looking at the mains end and working out the prospective fault current of that device but when you're recording on your paperwork you take your highest reading between your line conductor and neutral and double it through our reading was i think roughly 2.7 2.7 i'll correct it slightly but it's near enough 2.7 and you double that in your math suggest that's how many just over five uh five kilo amps five point four kilowatts thank you very much Matthew yes he's managed to get through on the maths so it's 5.4 kilo amps would be recorded on my test paperwork okay and that's really important for am2 am2s am2e that you double that number and people have actually dropped you know i don't suggest failed because you you get minor marks as you go along that's an easy one not to forget isn't it and again just just to think about it with with the circuit breakers as well they are rated at often six kilo amps or ten kilo amps so that does have an effect on on the size of the of the type of circuit breaker you're using whether it's a six kilo amp or a ten kilo amp yeah and we've looked at that in other video presentations as well however we're going to carry on a little bit further because it could be that your AM2 and AM2S gets developed and your test instrument actually allows you to carry out between line conductors and will give us that reading so for this part of the video we're going to carry on and see what the actual short circuit between live conductors is yes yeah so we've kept the instrument in the same position here but we're actually now going to be testing between the two line conductors uh let's do that then Matthew so again this time it's important to use the um this setup that there's the setting with this one and this one here yeah okay so again it's just set on the two lead high yeah exactly where it were before and it did say didn't we we saw before it says L and L doesn't it there yeah and so again we just probe on to so this this time we're going to go between phase one and phase two and you can see there it picks up the voltage and that's 3280 okay we move okay we'll go between phase two and phase three okay yeah people are saying this is nowhere near when we recorded we'll just explain that a little bit in a moment so that's 2790. that's it and then we'll go between phase one and phase three and that's four thousand one hundred hundred cents now the thinking behind that is obviously we've got a TN-C-S earthing system here yeah we've got a neutral and earth connected together and all the rest of it and we'll go into a bit more detail on that in a different video we've just got to remember that rule of doubling through our readings that we suggested earlier so thank you matt for showing us that and we believe that's key information done with your am2 and am2s etc so at the end of the video remember to double through the reading that you got when you tested between the line conductor and neutral the highest value and record it into perspective fault current as the the qualification maybe develops it might be a case if they are allowing you actually to measure between two line conductors and if that's the case obviously you record the highest of those three readings we've got there it wasn't exactly doubled through was it well it wasn't exactly but yes yeah but it was it was it is a rule of thumb and again if you want more detail on that in the future we'll produce a video that can help you understand why that is as always what we've got to say at this point it's been a long time what we've got to say what are we saying okay i hope this video has been some help we do you
+
+
+[00:00] so this is a real treat for the channel we are back out with BIG SEXY Matt O'Dell and we are
+[00:03] going to try today to go through some of those tests that are going to be required for AM2 and
+[00:07] AM2S and which one you're going to pick out first that we'll have a go at so in particular we've got
+[00:11] three phase boards so we can do the um earth fault loop impedance yes external earth fault
+[00:16] loop impedance then the PFC yeah so they're really crucial for AM2S AM2 and well if AM2E
+[00:23] if you're doing the experience route as well and we're going to make sure that we don't miss out a
+[00:27] part especially now we've got a three-phase board because of colleges they're working on single
+[00:31] phase installations aren't they yes yeah so it's a three-phase experience and maybe our learners
+[00:36] don't always get the the hands-on experience with yeah so we've got permission in order to isolate
+[00:41] the supply here and we're going to go through it in the correct process which means we're going
+[00:44] to knock off first of all the breakers before doing the main switch we're going to remove the
+[00:48] cover and then we're going to show first of all external fault loop impedance and then prospective
+[00:51] fault current yes okay so you're knocking breakers off then formula okay and so we've got the single
+[00:55] phase breakers here so we'll start turning those off and so you can start seeing some lights go off
+[01:00] yeah i'll just show that because we're working in the world's most terriblest place aren't we
+[01:04] today look at that okay so yeah whip some off so let's just do the single phase so the lighting's
+[01:10] just gone off in here do you want them to stay on just for now no no we'll turn everything off we'll
+[01:14] do it properly and so then we've got our three phase breakers so that's a blower a compressor
+[01:20] a three phase supply to another board there to the office board we turned off a lot of
+[01:26] the local loads as well so we're not actually got loads of stuff on full load on for the breakers
+[01:30] and then obviously we can do that and so that looks like all the loads have been taken off
+[01:35] yeah and we're going to do the main switch are we now it's quite happy just to turn
+[01:39] the main switch off okay so we're going to get the cover off and we'll look at doing these tests
+[01:42] described at the start of the video okay so the board's off the cover's off and we're now going to
+[01:47] carry out the external earth fault loop impedance just remind me where i'm going to disconnect the
+[01:51] earthing conductor which is here okay so yeah this is the main earth in conductor so if we was not to
+[01:57] disconnect it then we'd be having a problem with parallel earth paths via the likes of extraneous
+[02:02] conductive parts through the bonding and stuff like that so we want to know the
+[02:07] external earth fault loop impedance and so by removing this earth that is just the external
+[02:13] nothing internal okay and we've got an earthing range and i said of TN-C-S so what's the maximum
+[02:19] reading for that for the external on a PME or TN-C-S it's 0.35 ohms okay okay so the earthing
+[02:28] conductor is out we're just going to drop this off all right so yeah we've got the earth out
+[02:32] still care because obviously the bottom side of this is live there is no remote isolator
+[02:36] here you might find an AM2 AM2S there might be another isolator that you can actually turn this
+[02:40] off before removing it but we're in the real world here so they're now live at the bottom
+[02:45] of that switch and it's red yellow blue and not brown black grey and we're going to set up our
+[02:49] instrument now in order to carry out that external earth fault loop impedance so we've set our megger
+[02:55] MFT 1730 up to L-PE and you're gonna do it on the three lead low and that's what you've selected to
+[03:02] do it on we could have done it on high because there's no RCDs but you think that this would
+[03:06] probably be the standard practice to get used to matt is that right when we've got so many uh RCDs
+[03:12] around um that we go for the low settings okay yeah right okay you want to probe on for me so
+[03:18] we can see the okay so we've got some exposed disconnected earth there so we'll get a good
+[03:23] get a nice good connection onto there and then we've got the neutral terminal here and then we've
+[03:28] got our three phases there so let's just move that one out of the way so again it's an automatic test
+[03:34] so go on to the neutral terminal first and then we'll just probe onto the first line
+[03:39] conductor and as you can see there the machine is automatically detected voltage and it takes a few
+[03:46] seconds because we're on the low uh one yep just fine so we'll persevere and wait for our result
+[03:55] so as you can see there 0.08 that's it we're finished pack up we're ready to go is that
+[04:00] right matt no so that's on one of the phases so obviously there's three phases so we'll
+[04:04] just repeat that same process on the next phase so again because we're going between neutral
+[04:10] and the phase it's detecting a single phase voltage so i think it's about 240 volts in here
+[04:17] of the three readings we take which one are we going to record so it's just the highest
+[04:21] reading okay so we've got remember we've got 0.08 now we've got 0.09 so that's now the highest one
+[04:27] and then we'll probe back on if you notice every time i physically take your probes back off in
+[04:35] the right order exactly the same as we do for obviously supply polarity in safe isolation yeah
+[04:40] right 0.08 of an ohm so okay we've carried out the external fault loop impedance test there
+[04:45] we've got three readings you said you're going to record the highest one in your test paperwork
+[04:48] okay we'll remove the earth and conduct just remind me again we'll remove that so purely for
+[04:52] parallel earth paths we want the external earth fault loop impedance and so that is
+[04:56] the external earth that goes back to the supply transformer good so that is the that is the one
+[05:02] that has to be removed okay we're going to move on in a second to do prospective current yeah
+[05:07] we've reconnected the uh earthing conductor just there because obviously we need all the parallel
+[05:11] earth paths in order to our prospective earth fault and short-circuit current so we're going
+[05:16] to start off by doing our prospective earth fault current i see you've set your instrument there to
+[05:20] two lead high and you're over there is that on PE is it L-PE yeah okay on the actual megger 1730
+[05:29] okay if you're on a probe on we're not expecting this necessary to be a reading we use and we'll
+[05:33] explain that later on in the video when we go through doing between line and neutrals and then
+[05:38] we'll have a little chat at the end and a little rule of thumb will suggest yeah okay okay so get
+[05:42] our good connection onto the earth bar there yeah and again it's on the two lead high automatic test
+[05:49] okay so we're going to go through this and we've got to remember these but not necessarily
+[05:54] worry too much phase one was 2.3 okay that's 2320 amps okay phase two
+[06:10] okay 2130 amps and phase 3 okay and phase three
+[06:20] and two point one okay so we're gonna go on now and do the similar test but this time between the
+[06:24] line conductors to the neutral and then we'll have a little chat about this rule of thumb
+[06:28] is we're going to turn it over so that's now to LL and LN yes and we're on 2 lead does it mean
+[06:34] we now have to change our leads in the back of the instrument as well yeah so so again um
+[06:40] this time we're going to be using these two leads here so in this case we're just going to use the
+[06:46] the red and the black okay so yeah that's a key point to mention because sometimes people change
+[06:50] their leads around in there don't they so we're going to now just be using our two leads yeah so
+[06:54] so again we're just going to probe on to the neutral conductor yeah and then on to the line
+[06:59] conductor and again you can see it's picked up a voltage voltage there as we're testing now then we
+[07:04] come back it should come through a little quicker it has so that's two thousand seven hundred and
+[07:10] twenty amps okay okay again that's phase one so we'll make a note of that we'll go on to phase two
+[07:20] again there's a voltage picked up
+[07:28] okay sometimes you have funny things like that happen where so that's uh 1972 yeah 70 amps yeah
+[07:36] sorry apologize so we suggested throughout that video there is a rule of thumb when we're doing a
+[07:41] three-phase supply we know at college often you're working on single-phase installations and when
+[07:45] you get your am2 am2s am2e it all can be a bit confusing but we're going to solve that confusion
+[07:51] now of all the readings we've got we look at the highest one on my right and thinking Matt between
+[07:56] our line and neutral and we do mathematically what with that before we record it so so we simply it's
+[08:01] easy calculation just double it ok always going to take the highest reading and double through
+[08:06] and record it on our test paperwork because what could we have as a fault in a three-phase system
+[08:10] so so what we've done is we is with the measure the measurements we have took as if it's between
+[08:15] sort of earth and phase and or neutral phase but the worst case would be if it was between phases
+[08:20] yes so in other words a fault was between a couple of line conductors or three line conductors we get
+[08:24] the most amount of fault current flowing yeah and therefore we need to prove that our device
+[08:30] can actually clear that fault okay so you'll be looking at the mains end and working out the
+[08:34] prospective fault current of that device but when you're recording on your paperwork you take your
+[08:38] highest reading between your line conductor and neutral and double it through our reading was i
+[08:41] think roughly 2.7 2.7 i'll correct it slightly but it's near enough 2.7 and you double that
+[08:47] in your math suggest that's how many just over five uh five kilo amps five point four kilowatts
+[08:51] thank you very much Matthew yes he's managed to get through on the maths so it's 5.4 kilo amps
+[08:55] would be recorded on my test paperwork okay and that's really important for am2 am2s am2e that you
+[09:01] double that number and people have actually dropped you know i don't suggest failed because
+[09:06] you you get minor marks as you go along that's an easy one not to forget isn't it and again just
+[09:12] just to think about it with with the circuit breakers as well they are rated at often six kilo
+[09:17] amps or ten kilo amps so that does have an effect on on the size of the of the type of circuit
+[09:22] breaker you're using whether it's a six kilo amp or a ten kilo amp yeah and we've looked at that in
+[09:26] other video presentations as well however we're going to carry on a little bit further because
+[09:30] it could be that your AM2 and AM2S gets developed and your test instrument actually allows you to
+[09:35] carry out between line conductors and will give us that reading so for this part of the video we're
+[09:40] going to carry on and see what the actual short circuit between live conductors is yes yeah so
+[09:44] we've kept the instrument in the same position here but we're actually now going to be testing
+[09:48] between the two line conductors uh let's do that then Matthew so again this time it's important to
+[09:55] use the um this setup that there's the setting with this one and this one here yeah okay so again
+[10:02] it's just set on the two lead high yeah exactly where it were before and it did say didn't we we
+[10:05] saw before it says L and L doesn't it there yeah and so again we just probe on to so this this
+[10:12] time we're going to go between phase one and phase two and you can see there it picks up the voltage
+[10:19] and that's 3280 okay we move okay we'll go between phase two and phase three okay yeah
+[10:27] people are saying this is nowhere near when we recorded we'll just explain that a little
+[10:31] bit in a moment so that's 2790. that's it and then we'll go between phase one and phase three
+[10:41] and that's four thousand one hundred hundred cents now the thinking behind that is obviously we've
+[10:46] got a TN-C-S earthing system here yeah we've got a neutral and earth connected together
+[10:51] and all the rest of it and we'll go into a bit more detail on that in a different video
+[10:55] we've just got to remember that rule of doubling through our readings that we suggested earlier
+[11:01] so thank you matt for showing us that and we believe that's key information done with your
+[11:04] am2 and am2s etc so at the end of the video remember to double through the reading that
+[11:10] you got when you tested between the line conductor and neutral the highest value and
+[11:14] record it into perspective fault current as the the qualification maybe develops it might be a
+[11:19] case if they are allowing you actually to measure between two line conductors and if that's the case
+[11:23] obviously you record the highest of those three readings we've got there it wasn't exactly doubled
+[11:28] through was it well it wasn't exactly but yes yeah but it was it was it is a rule of thumb
+[11:32] and again if you want more detail on that in the future we'll produce a video that can
+[11:35] help you understand why that is as always what we've got to say at this point it's been a long
+[11:39] time what we've got to say what are we saying okay i hope this video has been some help we do
+[11:53] you

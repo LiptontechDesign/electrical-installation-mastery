@@ -1,0 +1,196 @@
+# Resistors Connected in Series - Introduction to Circuit Theory - Electrical Science and Principles
+# https://www.youtube.com/watch?v=bivddd3pua8
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to be considering resistors connected in series so this is an introduction to this subject what we're going to be using is our LOC tronics board with its clipping resistors that we're going to connect up in series we're going to use our multimeter so I'll get that set up in a minute and what we're going to be looking at is what happens when you connect resistors in series with each other so we're just going to consider two resistors to start off with and then we'll look at some more advanced material in the next video what we want to think about as always when we do our electrical principles is where do we apply this in our real-world obviously we need to know this information to pass exams but we also want to know how does it fit in to being an electrician and in the real world you might come across loads that are connected in series with each other for example with decorative lights that you might have strung around your garden they may well be a series of lamps connected in series with each other so that's some application let's have a look at setting up our multimeter so here we've got our multimeter on this multimeter today we're going to be use it to measure resistance now you remember from our SI units video that resistance is measured in ohms so we need to turn this to the ohms setting so on the multimeter if you look around the outside you've got various different settings that you can adjust it to there's lots of different multimeters available you'll have to get familiar with your own multimeter to know where the settings are but we're gonna be working on this range right here which is the ohm range you can see the little amiga symbol there and because we're going to be working with fairly low resistance values we're going to turn our setting to the lowest resistance measuring setting which is here at 200 items you can also have two thousand twenty K which is twenty thousand all the way up to two hundred mega ohms which is two hundred million but for our purposes today we're just going to look at two hundred ohms once you've found the correct setting turn the multimeter on using that switch there and that is now trying to measure resistance it can't measure anything at the moment because it doesn't have any leads set up so we always when we're using a multimeter we always have one lead in the common terminal so that one will always have a common lead in it there and then you've got to look at the other terminals to figure out which are the one you're going to use so we've got a terminal marked 10a that's ten amps we're measuring resistance we won't use that one this one is saying ma which is milli amps again we're not measuring current or cover that up and here we've got our voltage resistance and frequency terminal so that's the terminal we're going to use it's got the little ohm symbol above it's all put one in there so currently the multimeter is effectively measuring a huge amount of resistance far beyond the 200 ohm maximum that it can measure but if I pop the two leads together you can see there that that is measuring near enough zero ohms naught point naught to two or three of an ohm so that's not going to affect our reading this too much so now we've got our multimeter set up let's have a look at the actual circuits that we're going to be building so this videos we've said is about Siri circuits so to investigate our series circuit we're going to use the equipment we've got set up here we've got our lock tronics board which we're going to build our circuit with and we've also got our multimeter that we just set up to read resistance which of course is measured in ohms let's keep repeating that until we remember it so what we're going to do is we're going to use these little plugin components to build our circuit so you can see here you've got the symbol for a resistor which is marked on there and the little 18 ohms in there is telling us that this is an 18 ohm resistor if we just fling that around you can see what's going on on the back we've got our resistor soldered on to this carrier and you can see here's a banded color coding we're not going to talk in this video about what that means but suffice to say an experienced electrician will know that that is an 18 ohm resistor so we're going to build our circuit let's plug this into the board first of all and we'll prove that this is an 18 ohm resistor beyond shadow of a doubt by just measuring the resistance from one side to the other so let's plug that in there and see what that looks like so you can see on the screen there we're measuring 17.9 ohms now you may be surprised to learn that that's not exactly 18 ohms but that's how resistors are manufactured they're manufactured within intolerance and actually that's quite nicely just settled on 18 ohms there but don't be surprised if it's not exactly the value it might be a little bit more or a little bit less so what is a series circuit well a series circuit is a circuit where the current flowing around the circuit has to flow through one load before it reaches another load so here current if we were to connect this up to a supply current would flow through one resistor and then it would flow through the next resistor and that's what we call a series circuit so what do you think the total resistance of this small series circuit that we've built here would be well you might be thinking various things but let's plug in our multimeter and see what reading we get so if we measure from one side to the other we can see there that we're measuring 35.7 it looks it's settling on 35.7 homes now if we just round that up a little bit we'll see that that's actually 36 ohms and if you look at this logically you can see that 36 is a result of adding 18 to 18 so 18 plus 18 gives us 36 so we could continue to add resistors in series with this circuit and what do you think would happen as we add more and more resistors into the circuit well let's have a look and see what happens so we're going to add another 18 ohm resistor into the circuit so there's our next 18 ohm resistor we've now got three resistors connected in series with each other let's plug our multimeter in and see what reading we're getting now hopefully your maths is strong enough that you can see what we get in here is 54 ohms which is a really nice result and what we've got here is 18 plus 18 plus 18 gives us 54 ohms so from this we can see that there's a very simple relationship between the value of the resistors and the total resistance of the circuit and we can write that out mathematically in the following way r/t which is total resistance is equal to r1 plus r2 plus r3 so those are just the values of the resistors so to say RT equals r1 plus r2 plus r3 which gives us RT equals 18 ohms plus 18 ohms plus 18 ohms which would be our T equals 54 ohms so that's what we've got going on there hopefully that makes some sense to you and we can see that a series circuit is a very simple relationship between the resistors in the circuit and the total resistance thank you very much for watching [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to be considering resistors
+[00:15] connected in series so this is an
+[00:17] introduction to this subject what we're
+[00:19] going to be using is our LOC tronics
+[00:20] board with its clipping resistors that
+[00:23] we're going to connect up in series
+[00:24] we're going to use our multimeter so
+[00:26] I'll get that set up in a minute and
+[00:27] what we're going to be looking at is
+[00:29] what happens when you connect resistors
+[00:31] in series with each other so we're just
+[00:33] going to consider two resistors to start
+[00:35] off with and then we'll look at some
+[00:36] more advanced material in the next video
+[00:39] what we want to think about as always
+[00:41] when we do our electrical principles is
+[00:42] where do we apply this in our real-world
+[00:44] obviously we need to know this
+[00:46] information to pass exams but we also
+[00:47] want to know how does it fit in to being
+[00:49] an electrician and in the real world you
+[00:53] might come across loads that are
+[00:55] connected in series with each other for
+[00:57] example with decorative lights that you
+[01:00] might have strung around your garden
+[01:01] they may well be a series of lamps
+[01:04] connected in series with each other so
+[01:07] that's some application let's have a
+[01:08] look at setting up our multimeter
+[01:12] so here we've got our multimeter on this
+[01:16] multimeter today we're going to be use
+[01:17] it to measure resistance now you
+[01:19] remember from our SI units video that
+[01:21] resistance is measured in ohms so we
+[01:24] need to turn this to the ohms setting so
+[01:27] on the multimeter if you look around the
+[01:28] outside you've got various different
+[01:29] settings that you can adjust it to
+[01:31] there's lots of different multimeters
+[01:33] available you'll have to get familiar
+[01:34] with your own multimeter to know where
+[01:37] the settings are but we're gonna be
+[01:38] working on this range right here which
+[01:40] is the ohm range you can see the little
+[01:42] amiga symbol there and because we're
+[01:44] going to be working with fairly low
+[01:45] resistance values we're going to turn
+[01:47] our setting to the lowest resistance
+[01:51] measuring setting which is here at 200
+[01:54] items you can also have two thousand
+[01:55] twenty K which is twenty thousand all
+[01:58] the way up to two hundred mega ohms
+[02:00] which is two hundred million but for our
+[02:02] purposes today we're just going to look
+[02:04] at two hundred ohms once you've found
+[02:07] the correct setting turn the multimeter
+[02:09] on using that switch there and that is
+[02:12] now trying to measure resistance it
+[02:14] can't measure anything at the moment
+[02:15] because it doesn't have any leads set up
+[02:17] so we always when we're using a
+[02:21] multimeter we always have one lead in
+[02:24] the common terminal so that one will
+[02:26] always have a common lead in it there
+[02:29] and then you've got to look at the other
+[02:31] terminals to figure out which are the
+[02:32] one you're going to use so we've got a
+[02:33] terminal marked 10a that's ten amps
+[02:35] we're measuring resistance we won't use
+[02:37] that one this one is saying ma which is
+[02:41] milli amps again we're not measuring
+[02:42] current or cover that up and here we've
+[02:45] got our voltage resistance and frequency
+[02:49] terminal so that's the terminal we're
+[02:50] going to use it's got the little ohm
+[02:51] symbol above it's all put one in there
+[02:53] so currently the multimeter is
+[02:55] effectively measuring a huge amount of
+[02:58] resistance far beyond the 200 ohm
+[03:00] maximum that it can measure but if I pop
+[03:02] the two leads together you can see there
+[03:05] that that is measuring near enough zero
+[03:08] ohms naught point naught to two or three
+[03:10] of an ohm so that's not going to affect
+[03:12] our reading this too much so now we've
+[03:14] got our multimeter set up let's have a
+[03:16] look at the actual circuits that we're
+[03:17] going to be building
+[03:22] so this videos we've said is about Siri
+[03:24] circuits so to investigate our series
+[03:27] circuit we're going to use the equipment
+[03:28] we've got set up here we've got our lock
+[03:29] tronics board which we're going to build
+[03:31] our circuit with and we've also got our
+[03:33] multimeter that we just set up to read
+[03:35] resistance which of course is measured
+[03:37] in ohms let's keep repeating that until
+[03:39] we remember it so what we're going to do
+[03:42] is we're going to use these little
+[03:43] plugin components to build our circuit
+[03:45] so you can see here you've got the
+[03:46] symbol for a resistor which is marked on
+[03:49] there and the little 18 ohms in there is
+[03:52] telling us that this is an 18 ohm
+[03:53] resistor if we just fling that around
+[03:55] you can see what's going on on the back
+[03:56] we've got our resistor soldered on to
+[04:00] this carrier and you can see here's a
+[04:03] banded color coding we're not going to
+[04:05] talk in this video about what that means
+[04:06] but suffice to say an experienced
+[04:09] electrician will know that that is an 18
+[04:10] ohm resistor so we're going to build our
+[04:13] circuit let's plug this into the board
+[04:16] first of all and we'll prove that this
+[04:19] is an 18 ohm resistor beyond shadow of a
+[04:21] doubt by just measuring the resistance
+[04:23] from one side to the other so let's plug
+[04:26] that in there and see what that looks
+[04:27] like so you can see on the screen there
+[04:30] we're measuring 17.9 ohms now you may be
+[04:32] surprised to learn that that's not
+[04:33] exactly 18 ohms but that's how resistors
+[04:36] are manufactured they're manufactured
+[04:38] within intolerance and actually that's
+[04:40] quite nicely just settled on 18 ohms
+[04:42] there but don't be surprised if it's not
+[04:43] exactly the value it might be a little
+[04:45] bit more or a little bit less so what is
+[04:48] a series circuit well a series circuit
+[04:51] is a circuit where the current flowing
+[04:54] around the circuit has to flow through
+[04:57] one load before it reaches another load
+[05:00] so here current if we were to connect
+[05:03] this up to a supply current would flow
+[05:05] through one resistor and then it would
+[05:08] flow through the next resistor and
+[05:10] that's what we call a series circuit so
+[05:13] what do you think the total resistance
+[05:15] of this small series circuit that we've
+[05:18] built here would be well you might be
+[05:21] thinking various things but let's plug
+[05:23] in our multimeter and see what reading
+[05:25] we get so if we measure from one side to
+[05:27] the other we can see there that we're
+[05:31] measuring 35.7 it looks
+[05:35] it's settling on 35.7 homes now if we
+[05:39] just round that up a little bit we'll
+[05:41] see that that's actually 36 ohms and if
+[05:45] you look at this logically you can see
+[05:46] that 36 is a result of adding 18 to 18
+[05:51] so 18 plus 18 gives us 36 so we could
+[05:55] continue to add resistors in series with
+[05:58] this circuit and what do you think would
+[06:00] happen as we add more and more resistors
+[06:01] into the circuit well let's have a look
+[06:04] and see what happens so we're going to
+[06:06] add another 18 ohm resistor into the
+[06:09] circuit so there's our next 18 ohm
+[06:11] resistor we've now got three resistors
+[06:13] connected in series with each other
+[06:16] let's plug our multimeter in and see
+[06:19] what reading we're getting now hopefully
+[06:21] your maths is strong enough that you can
+[06:24] see what we get in here is 54 ohms which
+[06:26] is a really nice result and what we've
+[06:28] got here is 18 plus 18 plus 18 gives us
+[06:32] 54 ohms so from this we can see that
+[06:36] there's a very simple relationship
+[06:38] between the value of the resistors and
+[06:40] the total resistance of the circuit and
+[06:43] we can write that out mathematically in
+[06:45] the following way
+[06:46] r/t which is total resistance is equal
+[06:49] to r1 plus r2 plus r3 so those are just
+[06:54] the values of the resistors so to say RT
+[06:56] equals r1 plus r2 plus r3 which gives us
+[07:01] RT equals 18 ohms plus 18 ohms plus 18
+[07:06] ohms which would be our T equals 54 ohms
+[07:10] so that's what we've got going on there
+[07:12] hopefully that makes some sense to you
+[07:14] and we can see that a series circuit is
+[07:17] a very simple relationship between the
+[07:19] resistors in the circuit and the total
+[07:21] resistance thank you very much for
+[07:23] watching
+[07:27] [Music]

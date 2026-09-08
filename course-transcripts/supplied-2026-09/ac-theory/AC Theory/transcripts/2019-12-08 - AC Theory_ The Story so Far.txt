@@ -1,0 +1,265 @@
+# AC Theory: The Story so Far
+# https://www.youtube.com/watch?v=iec-1Z5Zvgs
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to have a summary of some of the material that we've covered so far when we've been discussing AC theory now if you remember many videos back we started to discuss the mystery of the fluorescent lamp and we saw that voltages and currents inside that fluorescent lamp were behaving rather strangely and since then we've discussed various different aspects of AC theory and we filled in the worksheet as we've gone along the worksheet that you can see on your screen here now it's obviously that's covered quite a lot of ground and quite a lot of material over those videos so what we're going to do is just encapsulate that information just have a recap of everything that we've covered so far and have a look at the worksheet as we go along because this worksheet now provides us with a lot of the information that we need to bring together those different elements and try and figure out why that fluorescent lamp was behaving so very strangely when we measured the voltages and the currents inside it so let's summarize line by line you'll remember that in AC Theory there are three different kinds of load those loads are resistive inductive and capacitive and we've discussed the types of loads that they represent resistive loads are generally ones that are found to be used in heating elements and things like that inductive loads or anything where a coil is involved especially motors transformers and certain old-fashioned light fittings flash and light fittings and then we've got the capacitive load many loads tend not to be capacitive in nature however we use capacitive loads to correct a problem caused by inductive loads on the next line down we've got our symbols that we use to represent those three different types of load for resistive loads we use our for inductive loads we use a capital L and for capacitive loads a capital C the next line down we look at the different types of symbol that we can use so we can see here the symbol for a resistive load which is the generally accepted symbol for a resistor we've then got the symbol for an inductive load to presenter coil and then we've got to the symbol used to represent a capacitive load which again reflects the structure of the capacitor of two conductive plates that held close to each other but don't touch each other we then looked at the unit that we measure each of these things in so resistive load resistance is measured in ohms inductive loads are measured in henries and remember that inductance that we measure in Henry's is very simply a measure of how good a coil is at generating electricity back in itself or inside another coil and then we've got the capacitive loads capacitance is measured in farad's and of course that's a measure of an indication of how much charge a capacitor can store we've then got the different types of opposition to current that these three loads represent so a resistive load obviously presents resistance but then in an inductive load we saw in a previous video that inductive loads produce a new kind of opposition to current flow and we call that new kind of opposition to current flow inductive reactance if you'd like to know more about any of these subjects then please go back and watch the earlier videos in this playlist and please have a look at what inductive reactance means and where it comes from but for the time being all we need to know is that inductive loads produce an opposition to current flow that is called inductive reactance and then capacitive loads produce another kind of opposition to current flow again that we call capacitive reactance and all three of these things are measured in ohms we then looked at the calculations that we use in order to figure out what these opposition's to current flow are in our different loads for for resistance we have R equals Rho times L over a or resistivity times length divided by cross sectional area for inductive reactance we have XL is equal to 2 pi FL and we looked at what all those symbols mean including F for frequency XL being the symbol used to represent inductive reactance and then we've got the calculation to help us find capacitive reactance XC is equal to one over two pi F see so that's interesting because the bottom of that formula looks very similar to the calculation for finding inductive reactants however it's one over it's so much like the inverse of that and that leads us to some quite interesting conclusions that we'll have a little look at a little bit later on we then moved on to consider how voltage and current behave when these three types of load are connected so in a purely resistive load that is a load that has no capacitance and no inductance at all we can see that the voltage and the current are in phase and we can represent that with a wave diagram that looks something like this so you can see there that kind of all the key points along that waveform the voltage and the current are all reaching those key points at the same moment in time so when the voltage is at zero the current is at zero when the voltage is its maximum positive peak the current is at its maximum positive peak and so on and so forth but when we look at the wave diagram for a purely inductive load remember this is a load that has no resistance and no capacitance it is purely inductive we can see that the voltage and current kind of start to fall out of harmony with each other and in fact we end up with a situation where the current in the inductive load is reaching its key points on its waveform at different times to the voltage waveform you can see that when the voltage reaches its maximum positive peak the current doesn't reach its maximum positive peak until further along the wave diagram indicating this relationship that we refer to as current lagging voltage or a lagging circuit then when we look at the purely capacitive load one that has no inductance and no resistance we find that the relationship has changed a little bit and now we find that the current is now leading the voltage in other words it is reaching its significant points on its waveform before the voltage reaches is so you'll see that the current reaches its maximum positive peak before the voltage reaches its maximum positive peak we then moved on to represent these relationships in a completely different way so we used wave diagrams initially and then we moved on to use phasor diagrams and we saw the relationship in the video that we shot and phasor diagrams the relationship between the phasor diagram and the wave diagram but actually they're still expressing the same relationships between voltage and current so you can see that for our phasor diagram that represents the purely resistive load you can see that the current and voltage are in phase in other words they are rotating in exactly the same positions when we move on to look at the purely inductive load we can see that the voltage arrow remains horizontal but then the current arrow points downwards and that's because we imagine that the phasor diagram is rotating around the point where the two arrows join in an anti-clockwise direction so that means that if you put yourself at kind of the 12 o'clock position the voltage will reach you before the current reaches you as it rotates around and it's just indicating the relationship between the voltage and the current again the current is lagging the voltage in the inductive load we then we want to look at the capacitive load and in the purely capacitive load we can see that the arrow is now pointing in the opposite way for the current so the voltage remains horizontal but the current is pointing straight up and again if we put ourselves kind of at the 11 o'clock position on the on the phasor diagram if you like if you put your finger on there and Majan that it's rotating around the point whether to our rose meat you can see that the current will pass your finger and then 90 degrees later the voltage will pass your finger and so that represents that the current is leading the voltage in the bottom line we then summarize these relationships in the following way we say that in the purely resistive load current and voltage are in phase we say that in the purely inductive load the current lags the voltage by 90 degrees and in the purely capacitive circuit we say that the current leads the voltage by 90 degrees and now we've got our handy mnemonic at the bottom there are memory aid of civil showing that in the capacitive circuit current comes before voltage whereas in the inductive circuit current comes after voltage again helping us to understand that leading lagging relationship so hopefully you have before you a completed work sheet that looks like this if you have I suggest you pause the video now download the worksheet and fill it all in so that you've got all this information on a bit of paper in front of you because in our next video we're going to start discussing what happens when we connect different types of load in different ways so we'll look at resistors and inductors in series with each other we'll look at resistors and capacitors in series with each other and we'll also look at those types of load connected in parallel and see how that affects the relationships between the current and the voltage so please make sure you've got the worksheet filled in I hope this has been helpful to you as a brief summary before we dive into the next section regarding AC theory thank you very much for watching [Music] you [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to have a summary of some of
+[00:16] the material that we've covered so far
+[00:17] when we've been discussing AC theory now
+[00:21] if you remember many videos back we
+[00:23] started to discuss the mystery of the
+[00:25] fluorescent lamp and we saw that
+[00:26] voltages and currents inside that
+[00:28] fluorescent lamp were behaving rather
+[00:30] strangely and since then we've discussed
+[00:32] various different aspects of AC theory
+[00:35] and we filled in the worksheet as we've
+[00:36] gone along the worksheet that you can
+[00:38] see on your screen here now it's
+[00:41] obviously that's covered quite a lot of
+[00:42] ground and quite a lot of material over
+[00:44] those videos so what we're going to do
+[00:45] is just encapsulate that information
+[00:47] just have a recap of everything that
+[00:49] we've covered so far and have a look at
+[00:51] the worksheet as we go along because
+[00:52] this worksheet now provides us with a
+[00:54] lot of the information that we need to
+[00:56] bring together those different elements
+[00:58] and try and figure out why that
+[01:00] fluorescent lamp was behaving so very
+[01:01] strangely when we measured the voltages
+[01:03] and the currents inside it so let's
+[01:07] summarize line by line you'll remember
+[01:09] that in AC Theory there are three
+[01:12] different kinds of load those loads are
+[01:14] resistive inductive and capacitive and
+[01:17] we've discussed the types of loads that
+[01:19] they represent resistive loads are
+[01:21] generally ones that are found to be used
+[01:24] in heating elements and things like that
+[01:26] inductive loads or anything where a coil
+[01:28] is involved especially motors
+[01:29] transformers and certain old-fashioned
+[01:33] light fittings flash and light fittings
+[01:34] and then we've got the capacitive load
+[01:37] many loads tend not to be capacitive in
+[01:39] nature however we use capacitive loads
+[01:41] to correct a problem caused by inductive
+[01:44] loads on the next line down we've got
+[01:46] our symbols that we use to represent
+[01:49] those three different types of load for
+[01:51] resistive loads we use our for inductive
+[01:53] loads we use a capital L and for
+[01:55] capacitive loads a capital C the next
+[01:59] line down we look at the different types
+[02:00] of symbol that we can use so we can see
+[02:02] here the symbol for a resistive load
+[02:04] which is the generally accepted symbol
+[02:07] for a resistor we've then got the symbol
+[02:10] for an inductive load to
+[02:12] presenter coil and then we've got to the
+[02:14] symbol used to represent a capacitive
+[02:16] load which again reflects the structure
+[02:18] of the capacitor of two conductive
+[02:20] plates that held close to each other but
+[02:22] don't touch each other we then looked at
+[02:25] the unit that we measure each of these
+[02:27] things in so resistive load resistance
+[02:30] is measured in ohms inductive loads are
+[02:33] measured in henries and remember that
+[02:35] inductance that we measure in Henry's is
+[02:38] very simply a measure of how good a coil
+[02:41] is at generating electricity back in
+[02:43] itself or inside another coil and then
+[02:46] we've got the capacitive loads
+[02:48] capacitance is measured in farad's and
+[02:51] of course that's a measure of an
+[02:53] indication of how much charge a
+[02:55] capacitor can store we've then got the
+[02:59] different types of opposition to current
+[03:01] that these three loads represent so a
+[03:04] resistive load obviously presents resistance but then
+[03:08] in an inductive load we saw in a
+[03:10] previous video that inductive loads
+[03:12] produce a new kind of opposition to
+[03:14] current flow and we call that new kind
+[03:16] of opposition to current flow inductive
+[03:18] reactance if you'd like to know more
+[03:20] about any of these subjects then please
+[03:21] go back and watch the earlier videos in
+[03:23] this playlist and please have a look at
+[03:25] what inductive reactance means and where
+[03:28] it comes from but for the time being all
+[03:30] we need to know is that inductive loads
+[03:32] produce an opposition to current flow
+[03:34] that is called inductive reactance and
+[03:36] then capacitive loads produce another
+[03:39] kind of opposition to current flow again
+[03:40] that we call capacitive reactance and
+[03:43] all three of these things are measured
+[03:45] in ohms we then looked at the
+[03:48] calculations that we use in order to
+[03:51] figure out what these opposition's to
+[03:52] current flow are in our different loads
+[03:53] for for resistance we have R equals Rho
+[03:56] times L over a or resistivity times
+[03:59] length divided by cross sectional area
+[04:01] for inductive reactance we have XL is
+[04:05] equal to 2 pi FL and we looked at what
+[04:08] all those symbols mean including F for
+[04:10] frequency XL being the symbol used to
+[04:12] represent inductive reactance and then
+[04:15] we've got the calculation to help us
+[04:17] find capacitive reactance XC is equal to
+[04:20] one over two pi F
+[04:23] see so that's interesting because the
+[04:25] bottom of that formula looks very
+[04:26] similar to the calculation for finding
+[04:28] inductive reactants however it's one
+[04:31] over it's so much like the inverse of
+[04:33] that and that leads us to some quite
+[04:35] interesting conclusions that we'll have
+[04:36] a little look at a little bit later on
+[04:39] we then moved on to consider how voltage
+[04:42] and current behave when these three
+[04:44] types of load are connected so in a
+[04:46] purely resistive load that is a load
+[04:48] that has no capacitance and no
+[04:49] inductance at all we can see that the
+[04:52] voltage and the current are in phase and
+[04:54] we can represent that with a wave
+[04:56] diagram that looks something like this
+[04:59] so you can see there that kind of all
+[05:01] the key points along that waveform the
+[05:05] voltage and the current are all reaching
+[05:06] those key points at the same moment in
+[05:08] time so when the voltage is at zero the
+[05:11] current is at zero when the voltage is
+[05:12] its maximum positive peak the current is
+[05:14] at its maximum positive peak and so on
+[05:16] and so forth but when we look at the
+[05:19] wave diagram for a purely inductive load
+[05:21] remember this is a load that has no
+[05:23] resistance and no capacitance it is
+[05:25] purely inductive we can see that the
+[05:27] voltage and current kind of start to
+[05:29] fall out of harmony with each other and
+[05:30] in fact we end up with a situation where
+[05:33] the current in the inductive load is
+[05:36] reaching its key points on its waveform
+[05:38] at different times to the voltage
+[05:42] waveform you can see that when the
+[05:44] voltage reaches its maximum positive
+[05:46] peak the current doesn't reach its
+[05:48] maximum positive peak until further
+[05:51] along the wave diagram indicating this
+[05:54] relationship that we refer to as current
+[05:56] lagging voltage or a lagging circuit
+[06:00] then when we look at the purely
+[06:03] capacitive load one that has no
+[06:04] inductance and no resistance we find
+[06:07] that the relationship has changed a
+[06:09] little bit and now we find that the
+[06:11] current is now leading the voltage in
+[06:13] other words it is reaching its
+[06:15] significant points on its waveform
+[06:16] before the voltage reaches is so you'll
+[06:19] see that the current reaches its maximum
+[06:22] positive peak before the voltage reaches
+[06:24] its maximum positive peak we then moved
+[06:28] on to represent these relationships in a
+[06:31] completely different way so we used wave
+[06:32] diagrams initially and then we moved on
+[06:34] to use phasor diagrams
+[06:36] and we saw the relationship in the video
+[06:38] that we shot and phasor diagrams the
+[06:39] relationship between the phasor diagram
+[06:41] and the wave diagram but actually
+[06:43] they're still expressing the same
+[06:45] relationships between voltage and
+[06:46] current so you can see that for our
+[06:48] phasor diagram that represents the
+[06:50] purely resistive load you can see that
+[06:52] the current and voltage are in phase in
+[06:55] other words they are rotating in exactly
+[06:57] the same positions when we move on to
+[07:00] look at the purely inductive load we can
+[07:02] see that the voltage arrow remains
+[07:03] horizontal but then the current arrow
+[07:06] points downwards and that's because we
+[07:08] imagine that the phasor diagram is
+[07:10] rotating around the point where the two
+[07:12] arrows join in an anti-clockwise
+[07:14] direction so that means that if you put
+[07:17] yourself at kind of the 12 o'clock
+[07:20] position the voltage will reach you
+[07:22] before the current reaches you as it
+[07:24] rotates around and it's just indicating
+[07:26] the relationship between the voltage and
+[07:28] the current again the current is lagging
+[07:30] the voltage in the inductive load we
+[07:33] then we want to look at the capacitive
+[07:35] load and in the purely capacitive load
+[07:37] we can see that the arrow is now
+[07:39] pointing in the opposite way for the
+[07:41] current so the voltage remains
+[07:42] horizontal but the current is pointing
+[07:44] straight up and again if we put
+[07:46] ourselves kind of at the 11 o'clock
+[07:49] position on the on the phasor diagram if
+[07:51] you like if you put your finger on there
+[07:53] and Majan that it's rotating around the
+[07:55] point whether to our rose meat you can
+[07:57] see that the current will pass your
+[07:58] finger and then 90 degrees later the
+[08:01] voltage will pass your finger and so
+[08:03] that represents that the current is
+[08:04] leading the voltage in the bottom line
+[08:08] we then summarize these relationships in
+[08:10] the following way we say that in the
+[08:13] purely resistive load current and
+[08:14] voltage are in phase we say that in the
+[08:17] purely inductive load the current lags
+[08:20] the voltage by 90 degrees and in the
+[08:23] purely capacitive circuit we say that
+[08:25] the current leads the voltage by 90
+[08:28] degrees and now we've got our handy
+[08:30] mnemonic at the bottom there are memory
+[08:32] aid of civil showing that in the
+[08:33] capacitive circuit current comes before
+[08:35] voltage whereas in the inductive circuit
+[08:37] current comes after voltage again
+[08:40] helping us to understand that leading
+[08:42] lagging relationship so hopefully you
+[08:45] have before you a completed work sheet
+[08:47] that looks like this if you have
+[08:49] I suggest you pause the video now
+[08:50] download the worksheet and fill it all
+[08:52] in so that you've got all this
+[08:53] information on a bit of paper in front
+[08:55] of you because in our next video we're
+[08:58] going to start discussing what happens
+[09:00] when we connect different types of load
+[09:03] in different ways so we'll look at
+[09:05] resistors and inductors in series with
+[09:08] each other we'll look at resistors and capacitors
+[09:10] in series with each other and we'll also
+[09:12] look at those types of load connected in
+[09:14] parallel and see how that affects the
+[09:16] relationships between the current and
+[09:18] the voltage so please make sure you've
+[09:20] got the worksheet filled in I hope this
+[09:22] has been helpful to you as a brief
+[09:23] summary before we dive into the next
+[09:25] section regarding AC theory thank you
+[09:28] very much for watching
+[09:32] [Music]
+[09:35] you
+[09:36] [Music]
+[09:45] [Music]
+[09:51] [Music]

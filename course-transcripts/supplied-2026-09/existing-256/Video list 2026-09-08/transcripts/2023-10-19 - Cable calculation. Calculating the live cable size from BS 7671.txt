@@ -1,0 +1,326 @@
+# Cable calculation. Calculating the live cable size from BS 7671
+# https://www.youtube.com/watch?v=wAcqKNBxy-w
+
+hi everyone today's video is a cable calculation more aimed at the level three student we are only going to be using the bs7671 we won't be using the on-site guide today so on your screen you can see our question um a few things that we need to be a little bit a wary of here now we've it says there that it is 400 volts and we've got SWA cable so being three phase there is a different way of calculating the IB and because it is SWA cable we need to ensure we're looking at the correct tables within bs7671 so let's get start started on this one so I'm going to read through the question and we're going to write down all of the information that we need to complete our cable calculation so let's start from the beginning so a circuit supplying a 9 kilow so there's our power to power is 9,400 volts volts is 400 and it is to be wide in SWA SWA 70° thermoplastic click direct there's our install method C direct length 43 M uh cable will pass through a thermal insulated wall of 100 Mil so there's C 100 Mil and the ambient temperature is 35 let's c a 35° c uh protection is by a type c circuit breaker to bcn 6898 so that's our protected device who wants me to use a type c MCB and that is all of the information that our question gives us that's all we need so let's get on with our cable calculation so our first step IB now if you've gone on to the website and you've downloaded the cable calculation guide we are going to be doing steps one to eight and step one tells you all of the different ways of working out the IB so when we've got a three-phase circuit our IB will be 9,000 over < TK 3 * 400 so that's our Vols so that's power div divide < TK of 3 * volts when you punch this into your calculator be wary that you don't end up Square rooting the whole of the bottom part you don't want to square root the times 400 as well and with some rounding that comes in at 12.99 so we'll round that to 13 amp our next step is selecting our I so we know we've got to use a type cmcb now we need to find out what size what amp rating MCB is closest 13 amps or closest to so we need our little shopping list again and now I plenty of places to find these this information in bs7671 I like to use the uh Max Zs tables for this one I'm going going to look for mcbs I'm going to look at table 41.3 on page 68 and the middle color the middle row so of this table is Type C circuit breakers to BN 60898 and rcbos and we look along the uh First Column under type c mcbs and it 610 1620 they're my amp ratings so I've got a 16 amp and that is table 41.3 reference that so I have 16 amp type c MCB that was table 41.3 our next step is to work out the I Zed and we need all of the C factors for that so let's do our first one that was CI now all of the C factors in your BS 767 one they're right towards the back they are in appendix for our C factors and the annoyingly the CI value is a couple of pages before all of the others so we are on page 423 and you can see the table here cable surrounded by thermal instulation CI so we have 100 Mil of insulation and our dting factor is 0.78 so let's drop that down that was 0.78 and we need to reference that so that was appendix 4 and that was 2.6 regulation 2.6 in appendix 4 our next C Factor was CA again we're in appendix 4 now I'm looking at page 441 the top table table 4 B1 rating Factor ca for Ambient Air Temperature our Ambient Air Temperature for this question was 35° so go down column 1 35° and over to column 3 which is 70° thermoplastic cable and we find our daating Factor 0.94 so let's go write that down 0.94 and we reference the table that was table four be one now to gain those valuable extra marks in your cable calculation question we always have CF now remember if you have a BS 3036 protected device your C fact your CF factor is 0.725 and it does tell you that that in the onsite guide H sorry in the bs7671 um that is in your symbols section we've got uh on page 64 it tells you um where to look so we've got top of page um 46 s we've got CF rating factor for semi-enclosed fuse to BS 3036 and it says appendix for section three that's where it gives you that information hopefully that's something you'll start to Remember by now on level three so if we are not using a uh 3036 our CF factor is always one now we can't really reference that so I have just put not a BS 3036 that's why we know it's one so now we can do our i z so our i z is i n over all of our C factors so let's drop that equation down so it's 16 over 0.78 * 0.94 * 1 now I'm fully aware by adding this one at the bottom 16 1 will not change 16 1 = 1 = 16 sorry but we're trying to gain as many marks as we can so that's why I always put it in and punch that into your calculator and you will get 21 82 amps now we need to find our it and we need it 22 amps or above so go to our it tables our it tables right towards the back from our it Tab and they start on page 448 our it tables and we need to go along and find the table that says um SWA so let's start by having a little look so we've got single core on Armored multi core non- armored single core non armored and we' have now multicore armor cable so I'm on page 454 multicore armored 70° thermoplastic insulated cables now we were our reference method we were click direct with reference method C so we're looking at columns two and three column two says single phase column 3 says three phase so we are looking at column three and we wanted 23 or above so we got down I immediately I find or the second one down is 25 and I go along to column one to find the conductor cross-sectional area and that is 2.5 so let's put my on side guide over let's drop these numbers down so I T equals 25 and I had 2.5 little cable that table refen a table was 4 d 4 D4 a now we need the mvam so we go back to our onsite guide H sorry back to our bs7671 to the top table they come as a pair top page this one is my it pays below will be my mvam for my volt drop so I am looking at the top row we've got cross-sectional area two core cable DC two core cable single phase and then column four says three phase three or four core cable three phase so we're looking at this last we are in column four and we go down to our 2.5 mil cable and we see our mvam value is 15 so let's CH that down so we've got MV a equals 15 that was table 4 D4 B now we can move on to our volt drop now the volt drop formula isn't written down in a big book bs7671 like it is in the on-site guide hopefully you can just start remember it by now so our volt drop is mvam time IB time length over a th000 drop so let's input those values of so we say again I uh vult drop equals IB which was um sorry MVM sorry which is 15 times our IB which is 13 times the length which was 43 over a th000 punch that into your calculator you get 8.39 volts now is this Vault drop allowed it does seem pretty high um in the big book b 7671 it does tell you about volt drop uh on append or in appendix 4 so let's go to appendix 4 appendix 4 um and it was around this page here we go yeah straight on it yeah page 430 and we've got this our volt drop table table 4 a b and it says low voltage installations supplied directly from a public low voltage distribution system lighting is 3% other use is 5% so we are uh not doing lighting because we're doing a three-phase system a three-phase circuit don't get a three-phase lighting circuit so we are 5% so let's chop that down so 5% of our voltage remember we have 400 so 5% of 400 is 20 let's make a little note so max allowed so that's the bottom of the page Max allowed is 20 volts that's correct brilliant we can now move on to our next step Turn the Page now our last our last bit of cable calculation remember it's not really a formula it's more like a statement isn't it I B is equal to or less than i n which is equal to or less than i t let's input our value so that was 13 and S 16 our i n was 25 i t so was 25 5 so is 13 equal to or less than 16 which it is and 16 = to or less than 25 it is that is correct and there we have it so our correct size cable for this question would be 2.5 mil life and that is how we do cable calculations just using the bs7671 thank you for watching the video remember we've got plenty of other videos on all of the other tests that you can do and there are also many videos on C calculations and all sorts of things that you're going to need to know to complete level two and level three in electrical installation now if you want my tabs that I have on my bs7671 visit the website electrical student. co.uk where you can purchase those also on the website loads of free stuff loads of practice tests mock exam questions and such like working with electrical installation guys remember be safe most importantly listen to your lectures he or she definitely knows best take care guys see you soon
+
+
+[00:07] hi everyone today's video is a cable
+[00:11] calculation more aimed at the level
+[00:14] three student we are only going to be
+[00:16] using the bs7671
+[00:18] we won't be using the on-site guide
+[00:21] today so on your screen you can see our
+[00:25] question um a few things that we need to
+[00:28] be a little bit a wary of here now we've
+[00:30] it says there that it is 400 volts and
+[00:33] we've got SWA cable so being three phase
+[00:38] there is a different way of calculating
+[00:40] the IB and because it is SWA cable we
+[00:43] need to ensure we're looking at the
+[00:45] correct tables within bs7671
+[00:49] so let's get start started on this one
+[00:52] so I'm going to read through the
+[00:53] question and we're going to write down
+[00:54] all of the information that we need to
+[00:57] complete our cable calculation
+[01:00] so let's start from the beginning so a
+[01:02] circuit supplying a 9 kilow so there's
+[01:05] our
+[01:06] power to
+[01:08] power is
+[01:12] 9,400 volts volts is
+[01:15] 400 and it is to be wide in
+[01:19] SWA SWA 70° thermoplastic click
+[01:26] direct there's our install method
+[01:32] C direct length 43
+[01:37] M uh cable will pass through a thermal
+[01:40] insulated wall of 100 Mil so there's
+[01:45] C 100
+[01:48] Mil and the ambient temperature is 35
+[01:51] let's c
+[01:54] a 35° c uh protection is by a type c
+[02:00] circuit breaker to bcn
+[02:03] 6898 so that's our protected device who
+[02:06] wants me to use
+[02:08] a type
+[02:12] c
+[02:15] MCB and that is all of the information
+[02:18] that our question gives us that's all we
+[02:19] need so let's get on with our cable
+[02:21] calculation so our first
+[02:25] step
+[02:27] IB now if you've gone on to the website
+[02:29] and you've downloaded the cable
+[02:31] calculation
+[02:32] guide we are going to be doing steps one
+[02:34] to eight and step one tells you all of
+[02:38] the different ways of working out the
+[02:40] IB so when we've got a three-phase
+[02:43] circuit our
+[02:47] IB will be
+[02:51] 9,000 over < TK 3 *
+[02:54] 400 so that's our Vols so that's power
+[02:59] div divide < TK of 3 *
+[03:02] volts when you punch this into your
+[03:05] calculator be wary that you don't end up
+[03:08] Square rooting the whole of the bottom
+[03:10] part you don't want to square root the
+[03:12] times 400 as
+[03:16] well and with some rounding that comes
+[03:19] in at
+[03:20] 12.99 so we'll round that to 13
+[03:26] amp our next step is selecting our
+[03:31] I so we know we've got to use a type
+[03:35] cmcb now we need to find out what size
+[03:38] what amp rating MCB is closest 13 amps
+[03:43] or closest to so we need our little
+[03:44] shopping list
+[03:45] again and now I plenty of places to find
+[03:49] these this information in bs7671 I like
+[03:53] to use the uh Max Zs
+[03:57] tables for this one I'm going going to
+[03:59] look for mcbs I'm going to look at table
+[04:02] 41.3 on page
+[04:05] 68 and the middle color the middle row
+[04:09] so of this table is Type C circuit
+[04:11] breakers to BN 60898 and
+[04:15] rcbos and we look along the uh First
+[04:19] Column under type c mcbs and it 610 1620
+[04:24] they're my amp ratings so I've got a 16
+[04:28] amp and that is table
+[04:32] 41.3 reference that so I have 16
+[04:39] amp type
+[04:43] c
+[04:46] MCB that was
+[04:48] table
+[04:55] 41.3 our next step is to work out the I
+[04:59] Zed and we need all of the C factors for
+[05:03] that so let's do our first one that was
+[05:09] CI
+[05:12] now all of the C factors in your BS
+[05:16] 767 one they're right towards the back
+[05:19] they are in appendix
+[05:23] for our C
+[05:27] factors and the
+[05:30] annoyingly the CI value is a couple of
+[05:34] pages before all of the
+[05:38] others so we are on page
+[05:44] 423 and you can see the table here cable
+[05:47] surrounded by thermal instulation
+[05:50] CI so we have 100 Mil of insulation and
+[05:55] our dting factor is
+[05:58] 0.78
+[06:00] so let's drop that
+[06:04] down that was
+[06:09] 0.78 and we need to reference that so
+[06:14] that was appendix
+[06:17] 4 and that was
+[06:22] 2.6 regulation 2.6 in appendix
+[06:25] 4 our next C Factor was CA
+[06:32] again we're in appendix
+[06:39] 4 now I'm looking at page
+[06:45] 441 the top table table 4 B1 rating
+[06:49] Factor ca for Ambient Air
+[06:52] Temperature our Ambient Air Temperature
+[06:54] for this question was 35° so go down
+[06:57] column 1 35°
+[07:00] and over to column 3 which is 70°
+[07:03] thermoplastic cable and we find our
+[07:06] daating Factor
+[07:11] 0.94 so let's go write that
+[07:15] down
+[07:19] 0.94 and we reference the
+[07:23] table that was
+[07:26] table
+[07:28] four be
+[07:32] one now to gain those valuable extra
+[07:36] marks in your cable calculation question
+[07:40] we always have
+[07:44] CF now remember if you have a BS
+[07:48] 3036 protected device your C fact your
+[07:52] CF factor is
+[07:57] 0.725 and it does tell you that that in
+[08:00] the onsite guide H sorry in the bs7671
+[08:05] um that
+[08:08] is in your
+[08:13] symbols
+[08:16] section we've got uh on page 64 it tells
+[08:21] you um where to look so we've got top of
+[08:25] page um 46 s we've got CF rating factor
+[08:30] for semi-enclosed
+[08:31] fuse to BS
+[08:34] 3036 and it says appendix for section
+[08:39] three that's where it gives you that
+[08:41] information hopefully that's something
+[08:43] you'll start to Remember by now on level
+[08:45] three so if we are not using
+[08:49] a uh
+[08:51] 3036 our CF factor is always
+[08:56] one now we can't really reference that
+[08:59] so I have just put
+[09:01] not a BS
+[09:06] 3036 that's why we know it's
+[09:09] one so now we can do our i
+[09:15] z so our i z is i n over all of our C
+[09:23] factors so let's drop that equation down
+[09:27] so it's 16 over 0.78 *
+[09:32] 0.94 *
+[09:36] 1 now I'm fully aware by adding this one
+[09:39] at the bottom 16 1 will not change 16 1
+[09:44] = 1 = 16
+[09:46] sorry but we're trying to gain as many
+[09:48] marks as we can so that's why I always
+[09:50] put it in and punch that into your
+[09:53] calculator and you will get
+[09:58] 21
+[10:00] 82
+[10:04] amps now we need to find our
+[10:06] it and we need it 22 amps or above so go
+[10:13] to our it
+[10:15] tables our it tables right towards the
+[10:18] back from our it
+[10:21] Tab and they start on page 448 our it
+[10:27] tables and we need to go along and find
+[10:30] the table that says um
+[10:36] SWA so let's start by having a little
+[10:39] look so we've
+[10:41] got single core on Armored multi core
+[10:45] non-
+[10:47] armored single core non armored and we'
+[10:51] have now
+[10:53] multicore armor cable so I'm on page
+[10:58] 454
+[11:01] multicore armored 70°
+[11:03] thermoplastic insulated
+[11:06] cables now we were our reference method
+[11:10] we were click direct with reference
+[11:11] method
+[11:12] C so we're looking at columns two and
+[11:16] three column two says single phase
+[11:18] column 3 says three phase so we are
+[11:20] looking at column
+[11:23] three and we wanted
+[11:26] 23 or above so we got down I immediately
+[11:30] I find or the second one down is
+[11:33] 25 and I go along to column one to find
+[11:37] the conductor cross-sectional area and
+[11:40] that is
+[11:42] 2.5 so let's put my on side guide over
+[11:45] let's drop these numbers down so I
+[11:49] T
+[11:51] equals
+[11:54] 25 and I had
+[11:57] 2.5
+[11:59] little
+[12:02] cable that table refen a
+[12:06] table was 4
+[12:09] d 4 D4
+[12:14] a now we need the mvam so we go back to
+[12:18] our onsite guide H sorry back to our
+[12:20] bs7671 to the top table they come as a
+[12:24] pair top page this one is my it pays
+[12:28] below will be my mvam for my volt
+[12:34] drop so I am looking at the top row
+[12:38] we've got cross-sectional area two core
+[12:41] cable DC two core cable single phase and
+[12:45] then column four says three phase three
+[12:49] or four core cable three phase so we're
+[12:52] looking at this last we are in column
+[12:55] four and we go down to our 2.5 mil
+[13:00] cable and we see our mvam value is
+[13:05] 15 so let's CH that down so we've
+[13:09] got
+[13:12] MV
+[13:15] a equals
+[13:19] 15 that was
+[13:22] table
+[13:24] 4
+[13:26] D4 B
+[13:33] now we can move on to our volt
+[13:36] drop now the volt drop formula isn't
+[13:40] written down in a big book bs7671 like
+[13:45] it is in the on-site guide hopefully you
+[13:50] can just start remember it by now so our
+[13:51] volt drop is mvam time IB time length
+[13:56] over a
+[13:57] th000
+[14:02] drop so let's input those
+[14:05] values of so we say again I uh vult drop
+[14:09] equals
+[14:11] IB which
+[14:13] was
+[14:15] um sorry MVM sorry which is
+[14:20] 15 times our IB which is
+[14:23] 13 times the length which was
+[14:27] 43 over a
+[14:35] th000 punch that into your
+[14:38] calculator you get
+[14:42] 8.39
+[14:46] volts now is this Vault drop allowed it
+[14:50] does seem pretty
+[14:53] high
+[14:55] um in the big book b 7671 it does tell
+[15:00] you about volt drop uh on append or in
+[15:04] appendix
+[15:05] 4 so let's go to appendix
+[15:10] 4 appendix
+[15:12] 4 um and it was around this page here we
+[15:16] go yeah straight on it yeah page
+[15:20] 430 and we've got this our volt drop
+[15:23] table table 4 a
+[15:26] b and it says
+[15:29] low voltage installations supplied
+[15:31] directly from a public low voltage
+[15:32] distribution system lighting is 3% other
+[15:36] use is
+[15:38] 5% so we are uh not doing lighting
+[15:42] because we're doing a three-phase system
+[15:45] a three-phase circuit don't get a
+[15:46] three-phase lighting
+[15:48] circuit so we are
+[15:51] 5% so
+[15:53] let's chop that down so 5% of our
+[15:58] voltage remember we have
+[16:00] 400 so 5% of 400 is 20 let's make a
+[16:05] little note so max allowed so that's the
+[16:10] bottom of the page Max allowed is 20
+[16:15] volts that's correct brilliant we can
+[16:17] now move on to our next
+[16:20] step Turn the Page now our
+[16:24] last our last bit of cable
+[16:27] calculation remember it's not really a
+[16:29] formula it's more like a statement isn't
+[16:31] it I B is equal to or less than i
+[16:35] n which is equal to or less than i
+[16:41] t let's input our value so that was
+[16:46] 13 and S
+[16:49] 16 our i
+[16:52] n was
+[16:56] 25 i t so was 25 5 so is 13 equal to or
+[17:01] less than 16 which it is and 16 = to or
+[17:04] less than
+[17:06] 25 it is that is
+[17:10] correct and there we have it so our
+[17:13] correct size cable for this
+[17:17] question would be 2.5 mil life and that
+[17:21] is how we do cable
+[17:23] calculations just using the bs7671
+[17:29] thank you for watching the video
+[17:31] remember we've got plenty of other
+[17:32] videos on all of the other tests that
+[17:34] you can do and there are also many
+[17:36] videos on C calculations and all sorts
+[17:39] of things that you're going to need to
+[17:40] know to complete level two and level
+[17:42] three in electrical installation now if
+[17:45] you want my tabs that I have on my
+[17:48] bs7671 visit the website electrical
+[17:50] student. co.uk where you can purchase
+[17:53] those also on the website loads of free
+[17:56] stuff loads of practice tests mock exam
+[17:59] questions and such like working with
+[18:01] electrical installation guys remember be
+[18:04] safe most importantly listen to your
+[18:07] lectures he or she definitely knows best
+[18:11] take care guys see you
+[18:27] soon

@@ -1,0 +1,81 @@
+# Measuring Prospective Fault Current (PFC) at the Origin of a Single Phase Supply (Live Test)
+# https://www.youtube.com/watch?v=E6tOWa86dGE
+
+in this presentation we look at carrying out the perspective fault current at the origin of the installation to come to the mains end whoever got the metering equipment and the consumer unit and we're gonna measure the maximum amount of fault current that could flow if there was a fault in this part of the installation earth fault loop impedances are carried out at the furthest point of radial circuits the mid point of ring final circuits to work out if there would be enough fault current at that position in order to operate an overcurrent protection device but this is to see if it can handle a fault current of its highest value therefore the prospective fault current measurement will be done within the consumer unit itself so this test is going to prove whether our over current protection device at the origin so the incoming cutout fuse and individual circuit breakers can carry and withstand the fault current at the point of origin so in other words if there was a fault here in the position where had its lowest impedance therefore the maximum amount of fault current can the overcurrent protection device clear that fault without causing potentially the overcurrent protection device in this case to arc across and continue to carry current or destroy the circuit breaker so again it arcs across and continues to work so we need to see if that fault current can be cleared under fault conditions by taking a measurement the fault current that can be withstand from the cutout fuse depends on its type we've got a BS 1361 type two fuse in this installation however it could be and stayed on the side here we've got a BS 88 type two fuse and the current that they can withstand and fault conditions is different you need to look in BS 7671 for confirmation the fuse here in our cutout can withstand fault currents up to 33 kA this one here the BS 88 can go up to thirty one point five ka and our over current protection devices in this installation are up to 6 kA so that's the amount of fault current they can withstand but it needs to be measured in order to prove they can withstand that fault current at the origin itself so we're gonna carry on that test before we start the test obviously we're going to need to isolate the consumer unit and remove the cover isolation for the main double pole switch or linked main switch here and as always I do it off load so turn off the individual circuit breakers for the installation the RCD's as well and now we can turn the main switch off offload we can remove the cover and then re-energize the circuit in order to carry out the PFC test the prospective fault current test we're going to take several PFC readings from inside the consumer unit one for the incoming cutout and one for the overcurrent protection devices we're gonna do both short-circuit so if we were doing the one for the incoming fuse between the top here of the tails we knew between line and neutral and we're going to do between line and earth for the perspective earth fault current noting down the highest of the two readings we're going to repeat the process on top of a circuit breaker going between line and neutral bar for short circuit and line and earth bar for prospective earth fault current again noting the highest of the two readings remembering we can't exceed a fault current of 33 kA 33,000 amps for the over current protection device in this installation and these are 6 kA breakers therefore we can not exceed 6,000 amps above the top of the circuit breaker let's make those measurements so I've removed a consumer unit cover and I'm now ready to do my test first of all the test between line and neutral at the top of the linked main or double pole switch for a short circuit and then between line and the earth bar for the earth fault recording the highest of the two readings MFT needs to be set down into first of all loop between line and neutral and as we going between line and neutral for a loop test we need it in the red and blue sections at the top as always I'm going to probe on the least dangerous conductor first being neutral then line off the line and off the neutral and then repeat the process between line and the earth bar the consumer unit can now be energized and I can probe on for the test so neutral first followed by line I'm looking at the reading at the top of the machine being 312 amps off the line and off the neutral I now need to move my lead down one into the green section and move it up to do a test between line and protective earth and again I'm going on the least dangerous one first let's just change you back to 2 lead 2 lead hi so we're going to go between line and earth bar probing on the least dangerous first in the earth bar and then the line bar itself reading 424 amps take it off the line bar and off the earth bar so we're gonna record the highest of those two readings which was a perspective earth fault current of 424 amps often is higher between the line and earth because you'll have things such as the bonding conductors to extraneous conductive parts such as water gas oil and framework of the building however you do record the highest one whichever is in this case it was between line and the protective conductor it also was considerably less than the maximum of 33,000 amps for the incoming fuse so we satisfied that part of the test will now go on and do a test on the top of the circuit breaker next I've reset my instrument back between the line and neutral and moved my probe into the blue section at the top of the instrument turn on my RCCB and turn on the circuit breaker in to test it wouldn't matter which of the circuit breakers we selected probe on again the least dangerous first being neutral on to the top of the line we've got three hundred and thirty two amps off the line and then off the neutral set it round between now line and protective earth move across my probe but this time I'm going to need to be in the low setting because I have got my RCCB in circuit so again earth connection first followed by the top of the line takes a moment got 311 so we can see this time the higher reading was between the line and neutral and that's the one that we'll need to make a mental note of these over current protection devices have a 6000 and breaking capacity and we know we're near even 400 amps with our tests so obviously they're acceptable we will talk about the serviceable rating of the devices as we move through the classroom so we've managed to carry out the prospective fault current at the top of the switch and the switch to the earth connection top of the breaker between neutral and earth in order to prove that both can handle the current and the fault conditions in this case we've making sure the the incoming supply fuse can handle anything up to 33,000 amps we were considering less and the circuit breakers themselves can handle anything up to 6,000 amps and again we were considerably less so we've carried out the
+
+
+[00:01] in this presentation we look at carrying out the perspective fault current at the origin of the
+[00:06] installation to come to the mains end whoever got the metering equipment and the consumer
+[00:11] unit and we're gonna measure the maximum amount of fault current that could flow if there was a
+[00:16] fault in this part of the installation earth fault loop impedances are carried out at the
+[00:21] furthest point of radial circuits the mid point of ring final circuits to work out if there would
+[00:26] be enough fault current at that position in order to operate an overcurrent protection
+[00:30] device but this is to see if it can handle a fault current of its highest value therefore
+[00:36] the prospective fault current measurement will be done within the consumer unit itself so this
+[00:42] test is going to prove whether our over current protection device at the origin so the incoming
+[00:46] cutout fuse and individual circuit breakers can carry and withstand the fault current at the
+[00:54] point of origin so in other words if there was a fault here in the position where had its lowest
+[00:58] impedance therefore the maximum amount of fault current can the overcurrent protection device
+[01:02] clear that fault without causing potentially the overcurrent protection device in this case to arc
+[01:08] across and continue to carry current or destroy the circuit breaker so again it arcs across and
+[01:15] continues to work so we need to see if that fault current can be cleared under fault conditions by
+[01:20] taking a measurement the fault current that can be withstand from the cutout fuse depends on its
+[01:25] type we've got a BS 1361 type two fuse in this installation however it could be and stayed on
+[01:33] the side here we've got a BS 88 type two fuse and the current that they can withstand and
+[01:38] fault conditions is different you need to look in BS 7671 for confirmation the fuse here in our
+[01:45] cutout can withstand fault currents up to 33 kA this one here the BS 88 can go up to thirty one
+[01:51] point five ka and our over current protection devices in this installation are up to 6 kA
+[01:58] so that's the amount of fault current they can withstand but it needs to be measured in order
+[02:04] to prove they can withstand that fault current at the origin itself so we're gonna carry on that
+[02:08] test before we start the test obviously we're going to need to isolate the consumer unit and
+[02:13] remove the cover isolation for the main double pole switch or linked main switch here and as
+[02:19] always I do it off load so turn off the individual circuit breakers for the installation the RCD's
+[02:26] as well and now we can turn the main switch off offload we can remove the cover and then
+[02:33] re-energize the circuit in order to carry out the PFC test the prospective fault current test we're
+[02:38] going to take several PFC readings from inside the consumer unit one for the incoming cutout
+[02:43] and one for the overcurrent protection devices we're gonna do both short-circuit so if we were
+[02:48] doing the one for the incoming fuse between the top here of the tails we knew between line and
+[02:54] neutral and we're going to do between line and earth for the perspective earth fault current
+[02:59] noting down the highest of the two readings we're going to repeat the process on top of
+[03:04] a circuit breaker going between line and neutral bar for short circuit and line and earth bar for
+[03:11] prospective earth fault current again noting the highest of the two readings remembering
+[03:16] we can't exceed a fault current of 33 kA 33,000 amps for the over current protection device in
+[03:23] this installation and these are 6 kA breakers therefore we can not exceed 6,000 amps above
+[03:28] the top of the circuit breaker let's make those measurements so I've removed a consumer unit cover
+[03:34] and I'm now ready to do my test first of all the test between line and neutral at the top of the
+[03:39] linked main or double pole switch for a short circuit and then between line and the earth bar
+[03:44] for the earth fault recording the highest of the two readings MFT needs to be set down into first
+[03:50] of all loop between line and neutral and as we going between line and neutral for a loop test
+[03:55] we need it in the red and blue sections at the top as always I'm going to probe on the least
+[03:59] dangerous conductor first being neutral then line off the line and off the neutral and then
+[04:03] repeat the process between line and the earth bar the consumer unit can now be energized and I can
+[04:09] probe on for the test so neutral first followed by line I'm looking at the reading at the top of
+[04:18] the machine being 312 amps off the line and off the neutral I now need to move my lead down one
+[04:25] into the green section and move it up to do a test between line and protective earth and again I'm
+[04:32] going on the least dangerous one first let's just change you back to 2 lead 2 lead hi so we're going
+[04:37] to go between line and earth bar probing on the least dangerous first in the earth bar and then
+[04:42] the line bar itself reading 424 amps take it off the line bar and off the earth bar so we're gonna
+[04:55] record the highest of those two readings which was a perspective earth fault current of 424 amps
+[05:01] often is higher between the line and earth because you'll have things such as the bonding conductors
+[05:08] to extraneous conductive parts such as water gas oil and framework of the building however you do
+[05:14] record the highest one whichever is in this case it was between line and the protective
+[05:20] conductor it also was considerably less than the maximum of 33,000 amps for the incoming fuse so
+[05:27] we satisfied that part of the test will now go on and do a test on the top of the circuit breaker
+[05:32] next I've reset my instrument back between the line and neutral and moved my probe into the
+[05:36] blue section at the top of the instrument turn on my RCCB and turn on the circuit breaker in
+[05:41] to test it wouldn't matter which of the circuit breakers we selected probe on again the least
+[05:45] dangerous first being neutral on to the top of the line we've got three hundred and thirty two
+[05:55] amps off the line and then off the neutral set it round between now line and protective
+[06:01] earth move across my probe but this time I'm going to need to be in the low setting because
+[06:06] I have got my RCCB in circuit so again earth connection first followed by the top of the line
+[06:21] takes a moment
+[06:26] got 311 so we can see this time the higher reading was between the line and neutral
+[06:33] and that's the one that we'll need to make a mental note of these over current protection
+[06:37] devices have a 6000 and breaking capacity and we know we're near even 400 amps with
+[06:45] our tests so obviously they're acceptable we will talk about the serviceable rating of the
+[06:50] devices as we move through the classroom so we've managed to carry out the prospective
+[06:54] fault current at the top of the switch and the switch to the earth connection top of
+[06:58] the breaker between neutral and earth in order to prove that both can handle the current and
+[07:04] the fault conditions in this case we've making sure the the incoming supply fuse can handle
+[07:11] anything up to 33,000 amps we were considering less and the circuit breakers themselves can
+[07:16] handle anything up to 6,000 amps and again we were considerably less so we've carried out the

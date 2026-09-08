@@ -1,0 +1,150 @@
+# AC Theory: Solving the Mystery of the Fluorescent Lamp
+# https://www.youtube.com/watch?v=lCYGX1scCc4
+
+[Music] hello and welcome to this electrical principals training video in this video we are going to finally solve the mystery of the fluorescent lamp well at least we're going to solve part of the mystery if you remember when we shot the original video we found that inside this Russian lamp there were some rather strange things going on we saw that when we measured the voltages the voltages that were inside the Russian light fitting did not add up to the voltage that we were applying to the flushing lamp let's just cut to that footage and have a little look at that now so please don't try this at home so the first thing that we're interested in is we're going to have a look at what our input voltage is so I'm going to use my mega AVO 835 to measure the input voltage okay and you can see there that we've got a value of 248 volts so obviously we'll expect this to be 230 that's our nominal voltage but of course we know we're allowed certain tolerances within that value and we've got here 248 it's hovering around it so we're well within the tolerance that we should be so that's our input voltage so we'll draw that on to our circuit diagram so you can see there there's our input voltage what we're going to do now is we're going to measure the voltages across the series part of the circuit so first of all we're going to measure the voltage across the choke now when we start doing this I'm going to go back to my old analog instrument so let's power the light fitting back up again and we'll have a look at the voltage across the Chokey so we can see the voltage across the choke we're just between a hundred and twenty and a hundred and thirty volts there so we're on a hundred and twenty five volts so I shall put that onto the circuit diagram so we can see that there okay so for us my glamorous assistant to power that back up for me okay so that's interesting we were expecting to get a hundred and twenty three volts okay and what we've actually found is if we have a look at our volt meter now we are measuring just under two hundred so we perhaps call that a hundred and ninety five okay so we've actually got a very very funny reading here if we look at our circuit diagram we're putting in two hundred and forty eight volts and then when we measure the voltage across the choke and measure the voltage across the lamp it looks like we've got more voltage inside the circuit than we're putting into it now that seems like a very odd thing and at first glance it seems to defy the laws of physics however there is more going on here because of course we are connected to an a/c supply so there's deeper things going on here so we can see that strange behavior going on with those voltages there and how they don't seem to add up properly we also had some issues with the current as well behaving in a slightly strange way but we're going to cover that in the next video in this series if you need to recap on any of this material I think it's really important that you go back and watch the original mystery of the first Atlantic video now so that you're fully up to speed with what was going on inside there now since the initial release of that video we've been through a long series of videos covering AC theory and we've gathered lots and lots of information and all of that information ended up on a worksheet that we filled in over the course of several videos and you can see an image of that worksheet here hopefully from the previous video in this series you've got that completely filled in we did a quick summary of that to make sure that we had all the boxes completed and what we're going to do is we're going to use some information from that worksheet to help us solve the mystery of the fluorescent lamp so what we're going to do now is we're going to have a look at the sir get diagram that was produced for the fluorescent lamp in that original video and we're gonna start figuring out what's going on with these voltages and how we can get them to make sense so let's cut to that now so here you can see you've got the circuit diagram for the fresh and lamp you can see that we've got the choke here which of course we now know when we look at the symbol for that choke we know that that is an inductive load and we've got the symbol representing the lamp and we can see that that is a resistive load now for the time being we're considering the frozen lamp as it is without the capacitor connected so we're just looking at the choke and the lamp connected in series with each other so we've got our two voltages and we've got our supply voltage but for some reason these don't seem to add up to each other so how can we kind of make this make sense well the answer lies the secret lies inside the phasor diagrams so let's have a look at our resistive load first of all so here's our lamp and you can see that if we draw the phasor diagram underneath the lamp there remember what that phasor diagram would look like it's a resistive load so current and voltage are in phase so we can just draw the phasor diagram as it is on our sheet and we can just fill it in underneath the circuit there what we can then do is look across at our inductive load now in the inductive load we know that current is lagging voltage and so the phasor diagram will look something like this now a key point at this stage to bear in mind is that we're looking at a series circuit so the inductor and the resistor are connected in series with each other now we know from previous videos that in a series circuit the current is constant so however much current we put into the system the same amount of current will appear every where within that system so what that means is that the current is constant now because the current is constant what we're going to do is we're just going to tweak our phasor diagram for the inductive loads slightly by rotating it now you'll see as we rotate it to this position that the current is still very much lagging the voltage all we've done now is we've made current what we call the reference phase and that's a really important point because it helps us to correlate what's happening with these voltages that's going to start to click things into place so we've clearly got on the screen there you can see our two separate phasor diagrams now what we want to think about is what does the phasor diagram for the circuit as a whole look like well in order to understand that what we need to do is we need to combine the two phasor diagrams so let's bring the resistive phasor diagram down to here like this we'll put that there and then what we're going to do is we're going to lay on top of that one our phasor diagram for our inductive load so we're going to bring that down and we're going to put that on top of the resistive phasor diagram now notice we don't need to do anything with the currents we don't need to add the current in the inductor to the current in the resistor because those currents are the same current so we don't need to add those together it's the same current what we're really interested in now is the voltages look at the relationship between the voltage of the resistor which we've now labeled up as V with an R in the subscript and look at the inductive voltage which we've now labeled up with a V with an L in the subscript how would you describe the relationships between these two voltages well wouldn't you say that the relationship between these two voltages is that they are out of phase with each other we can see that there is some relationship between them where they are no longer in phase now that's a really interesting and really key point because actually that helps us to understand how these two voltages inside the series circuit relate to the supply voltage that we're putting into the circuit the way I like to illustrate this is is this we've got effectively two arrows that are pointing in different directions now imagine that these were arrows representing a force acting on an object let's say there's a little object at the point where the two arrows join and we're trying to pull that in two different directions with our forces well which direction would that object go in it wouldn't follow one arrow or the other exactly what would happen is those forces would balance out and actually the object would move off in a diagonal position now we could map exactly how much force that object would experience by completing this phasor diagram and actually exactly the same things happening with our voltages so let's do this let's draw a parallel line to our resistive voltage at the end of the inductive voltage arrow so we draw a parallel line as you can see here now let's draw a parallel vertical line to the inductive voltage and that's going to go up this side here and then let's have a think about this if we join the point where the two arrows meet to the point where the two parallel lines meet we get a third arrow now we said if this was an object being moved by forces that would represent the force acting on that object we could kind of use it to figure out how far the object would move but here we're dealing with voltages so what do you think this new arrow might represent well surely that new arrow represents the supply voltage the total voltage that we are applying to this system so actually what we need to do now is we need to modify our thinking it's true that the resistive voltage added to the inductive voltage does not equal the supply voltage however when we combine the effect of those two arrows of those two voltages we can see that actually they give us a third voltage which is slightly more than either one of the voltages but actually comes to represent the total voltage in the circuit now what's really interesting about this is actually we can draw this to scale and we can see what that value of the supply voltage will be and we'll have a look at doing that in our next video so from this video we've solved the first part of the mystery of the fluorescent lamp we've seen why those voltages did not add up inside the flashing lamp to give us the voltage that was being applied to the fluorescent lamp and it's because the voltage across the choke and the voltage across the lamp are out of phase with each other and we also saw that combining those two values would indeed give us the total voltage being applied to the circuit so in our next video we'll look at producing that scale drawing to show a more accurate relationship between the three voltages that we measured inside the circuit and then we'll go on to have a look at how the current was behaving inside our arson lamp thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music] hello and welcome to this electrical
+[00:10] principals training video in this video we are going to finally solve the
+[00:14] mystery of the fluorescent lamp well at least we're going to solve part of the
+[00:18] mystery if you remember when we shot the original video we found that inside this
+[00:22] Russian lamp there were some rather strange things going on we saw that when
+[00:26] we measured the voltages the voltages that were inside the Russian light
+[00:30] fitting did not add up to the voltage that we were applying to the flushing
+[00:34] lamp let's just cut to that footage and have a little look at that now so please
+[00:40] don't try this at home so the first thing that we're interested in is we're
+[00:44] going to have a look at what our input voltage is so I'm going to use my mega
+[00:49] AVO 835 to measure the input voltage okay and you can see there that we've
+[00:55] got a value of 248 volts so obviously we'll expect this to be 230 that's our
+[01:02] nominal voltage but of course we know we're allowed certain tolerances within
+[01:05] that value and we've got here 248 it's hovering around it so we're
+[01:11] well within the tolerance that we should be so that's our input voltage so we'll
+[01:15] draw that on to our circuit diagram so you can see there there's our input
+[01:19] voltage what we're going to do now is we're going to measure the voltages
+[01:24] across the series part of the circuit so first of all we're going to measure the
+[01:29] voltage across the choke now when we start doing this I'm going to go back to
+[01:33] my old analog instrument so let's power the light fitting back up again and
+[01:37] we'll have a look at the voltage across the Chokey
+[01:48] so we can see the voltage across the choke we're just between a hundred and
+[01:53] twenty and a hundred and thirty volts there so we're on a hundred and twenty
+[01:57] five volts so I shall put that onto the circuit diagram so we can see that there
+[02:04] okay so for us my glamorous assistant to power that back up for me okay so that's
+[02:13] interesting we were expecting to get a hundred and twenty three volts okay and
+[02:18] what we've actually found is if we have a look at our volt meter now we are
+[02:23] measuring just under two hundred so we perhaps call that a hundred and ninety
+[02:29] five okay so we've actually got a very very funny
+[02:33] reading here if we look at our circuit diagram we're putting in two hundred and
+[02:37] forty eight volts and then when we measure the voltage across the choke and
+[02:40] measure the voltage across the lamp it looks like we've got more voltage inside
+[02:45] the circuit than we're putting into it now that seems like a very odd thing and
+[02:49] at first glance it seems to defy the laws of physics however there is more
+[02:54] going on here because of course we are connected to an a/c supply
+[02:59] so there's deeper things going on here so we can see that strange behavior
+[03:04] going on with those voltages there and how they don't seem to add up properly
+[03:07] we also had some issues with the current as well behaving in a slightly strange
+[03:11] way but we're going to cover that in the next video in this series if you need to
+[03:16] recap on any of this material I think it's really important that you go back
+[03:18] and watch the original mystery of the first Atlantic video now so that you're
+[03:21] fully up to speed with what was going on inside there now since the initial
+[03:27] release of that video we've been through a long series of videos covering AC
+[03:30] theory and we've gathered lots and lots of information and all of that
+[03:33] information ended up on a worksheet that we filled in over the course of several
+[03:37] videos and you can see an image of that worksheet here hopefully from the
+[03:41] previous video in this series you've got that completely filled in we did a quick
+[03:45] summary of that to make sure that we had all the boxes completed and what we're
+[03:48] going to do is we're going to use some information from that worksheet to help
+[03:51] us solve the mystery of the fluorescent lamp so what we're going to do now is
+[03:57] we're going to have a look at the sir get diagram that was produced for the
+[04:00] fluorescent lamp in that original video and we're gonna start figuring out
+[04:03] what's going on with these voltages and how we can get them to make sense so
+[04:08] let's cut to that now so here you can see you've got the circuit diagram for
+[04:13] the fresh and lamp you can see that we've got the choke here which of course
+[04:16] we now know when we look at the symbol for that choke we know that that is an
+[04:20] inductive load and we've got the symbol representing the lamp and we can see
+[04:24] that that is a resistive load now for the time being we're considering the
+[04:29] frozen lamp as it is without the capacitor connected so we're just
+[04:32] looking at the choke and the lamp connected in series with each other so
+[04:37] we've got our two voltages and we've got our supply voltage but for some reason
+[04:41] these don't seem to add up to each other so how can we kind of make this make
+[04:45] sense well the answer lies the secret lies inside the phasor diagrams so let's
+[04:52] have a look at our resistive load first of all so here's our lamp and you can
+[04:57] see that if we draw the phasor diagram underneath the lamp there remember what
+[05:01] that phasor diagram would look like it's a resistive load so current and voltage
+[05:05] are in phase so we can just draw the phasor diagram as it is on our sheet and
+[05:10] we can just fill it in underneath the circuit there what we can then do is
+[05:15] look across at our inductive load now in the inductive load we know that current
+[05:21] is lagging voltage and so the phasor diagram will look something like this
+[05:26] now a key point at this stage to bear in mind is that we're looking at a series
+[05:32] circuit so the inductor and the resistor are connected in series with each other
+[05:37] now we know from previous videos that in a series circuit the current is constant
+[05:43] so however much current we put into the system the same amount of current will
+[05:47] appear every where within that system so what that means is that the current is
+[05:52] constant now because the current is constant what we're going to do is we're
+[05:55] just going to tweak our phasor diagram for the inductive loads slightly by
+[05:59] rotating it now you'll see as we rotate it to this position that the current is
+[06:04] still very much lagging the voltage all we've done now is we've made current
+[06:09] what we call the reference phase and that's a really important point
+[06:12] because it helps us to correlate what's happening with these voltages that's
+[06:16] going to start to click things into place so we've clearly got on the screen
+[06:20] there you can see our two separate phasor diagrams now what we want to
+[06:25] think about is what does the phasor diagram for the circuit as a whole look
+[06:28] like well in order to understand that what we need to do is we need to combine
+[06:32] the two phasor diagrams so let's bring the resistive phasor diagram down to
+[06:37] here like this we'll put that there and then what we're going to do is we're
+[06:40] going to lay on top of that one our phasor diagram for our inductive
+[06:44] load so we're going to bring that down and we're going to put that on top of
+[06:48] the resistive phasor diagram now notice we don't need to do anything with the
+[06:52] currents we don't need to add the current in the inductor to the current
+[06:56] in the resistor because those currents are the same current so we don't need to
+[07:00] add those together it's the same current what we're really interested in now is
+[07:04] the voltages look at the relationship between the voltage of the resistor
+[07:09] which we've now labeled up as V with an R in the subscript and look at the
+[07:14] inductive voltage which we've now labeled up with a V with an L in the
+[07:19] subscript how would you describe the relationships between these two voltages
+[07:24] well wouldn't you say that the relationship between these two voltages
+[07:28] is that they are out of phase with each other we can see that there is some
+[07:34] relationship between them where they are no longer in phase now that's a really
+[07:39] interesting and really key point because actually that helps us to
+[07:43] understand how these two voltages inside the series circuit relate to the supply
+[07:48] voltage that we're putting into the circuit the way I like to illustrate
+[07:52] this is is this we've got effectively two arrows that are pointing in
+[07:56] different directions now imagine that these were arrows
+[07:59] representing a force acting on an object let's say there's a little object at the
+[08:04] point where the two arrows join and we're trying to pull that in two
+[08:08] different directions with our forces well which direction would that object
+[08:13] go in it wouldn't follow one arrow or the other exactly what would happen is
+[08:17] those forces would balance out and actually the object would move off in a
+[08:21] diagonal position now we could map exactly how much force that object would
+[08:26] experience by completing this phasor diagram and actually exactly the same
+[08:32] things happening with our voltages so let's do this let's draw a parallel line
+[08:35] to our resistive voltage at the end of the inductive voltage arrow so we draw a
+[08:42] parallel line as you can see here now let's draw a parallel vertical line to
+[08:47] the inductive voltage and that's going to go up this side here and then let's
+[08:53] have a think about this if we join the point where the two arrows meet to the
+[08:59] point where the two parallel lines meet we get a third arrow now we said if this
+[09:03] was an object being moved by forces that would represent the force acting on that
+[09:06] object we could kind of use it to figure out how far the object would move but
+[09:11] here we're dealing with voltages so what do you think this new arrow might
+[09:15] represent well surely that new arrow represents the supply voltage the total
+[09:23] voltage that we are applying to this system so actually what we need to do
+[09:27] now is we need to modify our thinking it's true that the resistive voltage
+[09:31] added to the inductive voltage does not equal the supply voltage however when we
+[09:37] combine the effect of those two arrows of those two voltages we can see that
+[09:43] actually they give us a third voltage which is slightly more than either one
+[09:48] of the voltages but actually comes to represent the total voltage in the
+[09:52] circuit now what's really interesting about this is actually we can draw this
+[09:56] to scale and we can see what that value of the supply voltage will be and we'll
+[10:02] have a look at doing that in our next video so from this video we've solved
+[10:07] the first part of the mystery of the fluorescent lamp we've seen why those
+[10:11] voltages did not add up inside the flashing lamp to give us the voltage
+[10:16] that was being applied to the fluorescent lamp and it's because the
+[10:20] voltage across the choke and the voltage across the lamp are out of phase with
+[10:25] each other and we also saw that combining those two values would indeed
+[10:29] give us the total voltage being applied to the circuit so in our next video
+[10:35] we'll look at producing that scale drawing to show a more
+[10:38] accurate relationship between the three voltages that we measured inside the
+[10:42] circuit and then we'll go on to have a look at how the current was behaving
+[10:46] inside our arson lamp thank you very much for watching
+[10:54] [Music]
+[11:06] [Music]
+[11:13] [Music]

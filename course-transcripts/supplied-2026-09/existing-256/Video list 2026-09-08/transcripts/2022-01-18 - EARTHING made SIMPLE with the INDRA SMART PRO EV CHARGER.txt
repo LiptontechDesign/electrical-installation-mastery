@@ -1,0 +1,255 @@
+# EARTHING made SIMPLE with the INDRA SMART PRO EV CHARGER
+# https://www.youtube.com/watch?v=o7heO1ENqKw
+
+in this the second in a series of training videos we're going to look at how to set up your indra smart pro charger that we installed in the previous video and we're going to really focus in on earthing arrangements at this point it's important to note that this is a training video for experienced qualified electricians not a diy video for homeowners this is a complex and potentially dangerous area of electrical installation requiring the use of calibrated test equipment and not something that should be undertaken by amateurs okay so you've looked at the incoming supply and verified its suitability you've selected the location for the charger and you've selected the correct type of rcd if you haven't done any of this or understand the significance of why to do it then it may be time to go and watch the first video in this series now in this video we're going to look at why the earthing arrangements for an ev charger is so critical we found some information about this in regulation 722.411.4 point under the heading tn systems where we read a pme earthing facility shall not be used as the means of earthing for the protective conductor contact of a charging point located outdoors or that might reasonably be expected to be used to charge a vehicle located outdoors unless one of the following methods is used now we'll get to those methods in just a moment but first of all why is this regulation in here why are we worried about pme earthing for charging evs well first of all let's remind ourselves what a pme earthing arrangement is in a tncs system the connection with earth is brought to a property by combining it with the neutral conductor once it reaches the building the neutral and earth conductors are split and then remain separate within the electrical installation and that's where we get tncs from terror or earth and neutral combined and then separate now if we lose that combined neutral and earth connection in the supply cable then a big problem occurs basically because the current no longer has a return path the voltage on the neutral rises to 230 volts and because the neutral and earth are connected at the origin all the exposed conductive parts that are connected to the main earthing terminal in the property will rise to 230 volts as well now if someone touches an exposed conductive part and makes a connection to the literal earth that we walk around on then this could well be enough to give them a lethal shock as the current finds its way back to the transformer down the road inside a property the only place that this is likely to happen is if you touch a metal object that has a good connection to the literal earth like say an incoming water or gas pipe or a piece of structural steel that is embedded into the ground and that's why we connect these items to the main earthing terminal of a property via a bonding cable it's not in case the pipes become live it's to make sure that they do become live in this type of event if every piece of metal work that can be touched at the same time becomes live at 230 volts then there's no difference in voltage between them and you can't get a shock if you touch them so if i have 230 volts in my left hand and 230 volts in my right hand there's zero volts difference between them hence no current flow and no shock to try and minimise the chances of losing the combined neutral and earth connection outside the property there's a couple of precautions that the dno take one is to use a concentric cable where the line conductor is in the middle of the cable and the combined neutral on earth is wrapped around the outside this means if anyone accidentally cuts through the cable with say a shovel the line conductor is likely to be disconnected before the neutral and earth meaning that the metal work in the property won't go live another precaution is that along the length of the supply cable the combined neutral on earth is physically connected to the literal earth that we walk around on via electrodes or rods as we call them along its length this precaution is what's called protective multiple earthing or pme but what has this got to do with ev charging well one issue is that the only place that one of these pme rods is actually installed and connected is where the supply cable to a property comes off the main cable in the road they're not really installed along the length of the standalone cable to your property so if the combined neutral and earth connection in the torpedo joint in the road becomes disconnected and this does happen sometimes then we've got a big problem as all the exposed conductive parts of the installation become live now inside the building a person probably won't have a good connection to earth and anything that brings an earth connection into the property is bonded so there's no massive drama there however a person stood outside on the actual literal earth may well have a decent connection to the planet and if they're stood by a massive piece of metal that's just become live at 230 volts like a charging electric vehicle that person is about to have a very bad day if they touch that car and it doesn't need to be a great connection to earth either 50 milliamps of current for 50 milliseconds is enough to kill a person and also no rcd currently available will detect this problem and disconnect the circuit so it's with good reason that bs7671 says we can't supply an ev charge point for charging a car outside with a cable relying on a pme arrangement for its earth connection but enough about the problem what's the solution well the simplest option is to install the charging point in a position where the car can only be charged indoors such as a garage or similar of course this is not always going to be possible or indeed enforceable so under the original version of the 18th edition many installers opted to disconnect the connection from the pme to the charging point and instead connect the earth terminal of the charging point to an earth electrode however hammering an earth electrode into the ground is fraught with hazards from hidden services such as gas water and electricity supplies and achieving a low enough resistance is also challenging so bs 76m1 allows for some other options instead and indeed it was the proliferation of solutions to this very problem that triggered the issuing of amendment one and amendment one contains this interesting point in note 6 where we read creating a tt earthing system for charging equipment or the whole installation as an alternative to using a pme earthing facility with one of methods one to five above may not be an appropriate solution due to the inability to provide sufficient separation from buried metal work connected to the supply pen conductor so we're being very much discouraged from using an earth electrode in the way just outlined the reason for this is that if the earth electrode for the charging point goes into the ground just next to a piece of earth metal work from the building such as a gas or water pipe or structural steel then it's possible the electrode could be so close to that bonded metal work that in the event of losing the combined neutral and earth conductor to the property the earth electrode could become live due to touching or even just being in the proximity of the building metalwork so it's pretty clear that we're being discouraged from using an earth rod for this reason however there may be another reason to use an earth electrode as we'll see a little bit later okay so enough about the problem let's talk solutions and how the indra smart pro can be used in this regard indra use a proprietary solution they refer to as pests that addresses the most common problems in ev charger installation pests is an acronym for pen fault earthing simultaneous contact and touch voltage so let's look at how the smart pro charger addresses these issues in the back of the charger here there's this little selector switch that changes the function of the charger from what's referred to as mode a to mode b now this is nothing to do with mode one two or three charging or anything like that it's to do with how the requirements for regulation 722.411.4.1 are met as stated earlier in the video that regulation reads a pme earthing facility shall not be used as the means of earthing for the protective conductor contact of a charging point located outdoors or that might reasonably be expected to be used to charge a vehicle located outdoors unless one of the following methods is used first of all we need to bear in mind that this is referring to a tncs system using protective multiple earthing therefore if you're connecting to a tns or tt system then you don't need to apply any of the inlets that follow and critically the switch on the charger pcb must be set to mode a but what about those pme systems what changes then indent one states that you can connect an ev charger to a pme system if the charging point forms part of a three-phase installation that also supplies loads other than for electric vehicle charging and because of the characteristics of the load of the installation the maximum voltage between the main earthing terminal of the installation and earth in the event of an open circuit fault in the pen conductor of the low voltage network supplying the installation does not exceed 70 volts rms so an example of this would be perhaps a commercial installation with a three-phase supply to the property under this circumstance the mode switch would be set to a again inlet 2 gives us another example of acceptable use if the main earthing terminal of the installation is connected to an installation earth electrode by a protective conductor complying with regulation 544.1.1 the resistance of the earth electrode to earth shall be such that the maximum voltage between the main earthing terminal of the installation and earth in the event of an open circuit fault in the pen conductor of the low voltage network supplying the installation does not exceed 70 volts rms again if you're installing a charger in this scenario then you need to set the switch in the back to mode a all the scenarios discussed so far have two things in common number one they are not the most common types of situation where you'll be installing an ev charge point and two they do not require the use of a reference earth electrode now what is an earth reference electrode i hear you cry well let's look to the next indent to give us a clue it states protection against electric shock is provided by a device which electrically disconnects the vehicle from the live conductors of the supply and from protective earth in accordance with regulation 543.3.101 indent two within five seconds in the event of the voltage between the circuit protective conductor and earth exceeding 70 volts rms due to an open circuit fault in the pen conductor of the low voltage network the device need not operate if the voltage exceeds 70 volts rms for less than four seconds the device shall provide isolation and be selected in accordance with table 537.4 closing or resetting of the device shall be possible only if the voltage between the circuit protective conductor on earth does not exceed 70 volts rms equivalent means of functionality could be included within the charging equipment so to translate in this method a device monitors the voltage between the circuit protective conductor of the ev charging unit and earth remembering that is the literal earth that we walk around on now this makes sense because the cpc of the circuit is effectively connected to the bodywork of the car so what this method is doing is measuring the voltage that could reasonably be expected to appear across a person touching the car and the literal earth if this value goes over 70 volts it will disconnect the circuit in less than five seconds you'll see this value of 70 volts a lot in this section of the reg and it may throw you off at first because what we normally refer to as touch voltage is 50 volts and that's the value of voltage that in theory won't kill you if you touch it so why we allowed a so-called touch voltage of 70 volts in an ev charging installation well the reason is that 50 volts touch voltage is the value someone could experience from hand to hand with current passing across the chest and through the heart generally we'd expect a person receiving a shock from a charging electric vehicle to get that shock from a hand to a foot as these are the parts in contact with the car and the earth this path will generally have a higher resistance and the current will be less likely to pass through the heart meaning a slightly higher voltage could theoretically be tolerated so how does the device spoken of in this regulation achieve this monitoring well some further information is found in the annex to this section in a722.4 i'll read this from the courage endem as there was a slight mistake in the original now bear in mind when we read pen fault in this paragraph we're talking about the loss of that combined neutral and earth conductor regulation 722.411.4.1 indent 3 describes a device that measures the voltage between the circuit protective conductor of the electric vehicle charging equipment and earth during a pen failure in the supply network the neutral of a tncs supply is no longer considered to be reliably connected to earth and the device that measures the voltages between the following points will fail to provide equivalent safety to the device described in regulation 722.411.4.1 indent 3. in then 1 the circuit protective conductor in neutral indent 2 the circuit protective conductor and the consumer's main earthing terminal so this monitoring device can't just be connected across the conductors mentioned in those two indents there as it wouldn't reliably measure the voltage from cpc to earth so what's the solution well let's just have a look at part a of a722.4 as part b is concerned with a three-phase system it reads suitable arrangements include measurement of the voltage between either a the circuit protective conductor and a suitable measurement earth electrode so this method requires connecting to an earth electrode so the device can measure between the cpc and the earth or what we can sort of think of as the hand and the foot so if we're back to using an earth electrode does that mean that we've just gone full circle and now we've got all the issues that come with driving an earth rod blindly into the ground well no the earth electrode here is a reference electrode it's not there as the main earth connection of the circuit so that means that a much shorter earth rod can be put into the ground to tell the device what the voltage of the earth is in that particular position the paragraph in a722.4 goes on to outline some precautions of the electrode positioning to make sure the voltage on the electrode isn't affected by any bonded building metal work entering the ground near the rod for many domestic properties though you'll find plastic incomers for the gas and water and very likely no structural steel work either so it's not too much of a problem the indra smart pro charger allows you to use this method and has a terminal for connecting the reference earth electrode as you can see here so it's simply a matter of driving the earth reference electrode home near to where the charger is installed obviously a measure of caution still needs to be taken when driving an electrode into the earth and the longer the rod the better however it can be achieved with a shorter rod as long as you achieve a resistance of 600 ohms at one meter as this connection is not on earth an equipotential bond a cpc or a functional earth is defined by bs7671 indra recommend connecting with either a four mil or six mil solar cable which is generally black in color it's also important to keep the earth reference away from any existing connections to the greater mass of earth such as may be found near the incoming supply or any extraneous conductive parts the reason for this is that under fault conditions the rising voltage on these items can cause a rising voltage on the reference electrode and reduce the effectiveness of the charger monitoring the potential difference between the cpc and the earth again this shows how the indra smart pro charger is a cut above the rest as it actually will disconnect the charger at 30 volts instead of the maximum permissible 70 volts from bs7671 this helps to mitigate the effects of this voltage rise on the reference earth under fault conditions as you normally would with an earth rod securely connect the cable to the clamp at the top of the rod and pop the termination into a suitable enclosure however there are some circumstances where it simply isn't feasible to use an earth reference electrode maybe you can't confirm the lack of underground services which could become damaged or you'd have to drill through perhaps a huge slab of concrete or pavement to get to the general mass of earth there is another way of meeting regulation 722.411.4.1 and unsurprisingly the indra smart pro will accommodate this method as well indent 4 reads protection against electric shock in a single phase installation is provided by a device which electrically disconnects the vehicle from the live conductors of the supply and from protective earth in accordance with regulation 543.3 0.101 indent 2 within 5 seconds in the event of the utilization voltage at the charging point between the line and neutral conductors being greater than 253 volts or less than 207 volts the device shall provide isolation and be selected in accordance with table 537.4 equivalent means of functionality could be included within the charging equipment closing or resetting of the device shall be possible only if the voltage between line and neutral conductors is in the range 207 to 253 volts rms so this is a slightly simpler approach that doesn't require a reference earth electrode and relies on the measurement of the voltage between line and neutral remember if there's a pen fault and the combined neutral and earth conductor becomes disconnected then the voltage on the neutral will rise to be around the same as the line conductor meaning that a voltage measurement between the two will be much lower than when a healthy supply is maintained so if the voltage between line and neutral goes above 253 volts or below 207 volts then the device will disconnect the supply to the circuit it's connected to the regulation says that this device can be incorporated into the charging unit itself and this is exactly what's been done on the indra smart pro charger the really clever thing about this charger is that you can set it to meet the requirements of all of these indents as long as it's on the correct setting if you're using it to comply with indent 4 then you'll need to set the switch to mode b personally if i was installing this charger i'd always go for the reference earth electrode option wherever possible but in situations where it may not be i'd then fall back on the indent four solution the reason being that indent four infers a pen fault and are raising the voltage between the car body work and the earth whereas the indent three option actually measures it at the 70 volts value it's worth noting as well that both of these approaches state that the protection must disconnect the live conductors so that's the line and the neutral as well as the protective conductor which is fairly unusual in the wiring regulations but makes perfect sense when you consider that it's the protective conductor that's causing the body of the vehicle to become live in this instance another thing that sets this charger apart from others on the market is the management of nuisance tripping many devices will comply with indents one and two from regulation 722.411.4.1 as well as installations with tns or tt earthing arrangements however because of the way they offer pen fault protection by complying with the requirements for indent 4 they can be overly sensitive to natural voltage fluctuations for example on a brand new housing estate the first houses that are built and connected to a new transformer may have a slightly higher voltage than usual then a small natural fluctuation will be seen as a pen fault and for many products on the market they'll disconnect the charger another example of where this could happen is if there's a high presence of renewable energy sources locally such as banks of solar pvs or wind turbines either on the property or close to it the indra smart pro takes advantage of the fact that the reg allows for a period of four seconds to pass before the device operates in the event of a pen fault taking advantage of this period allows the device to filter out those brief high voltages that would disconnect charges from other brands this also has the advantage that in the event of a proper pen fault the charger has a soft shutdown function which means that it will turn the charger off in a controlled fashion it's a bit like the difference between shutting your pc down properly versus turning it off at the wall shutting down properly allows the computer to protect itself and ensure the continued smooth running of the electronics the same principle applies to this very clever charger for this video there's just one final thing to consider and that is the risk of simultaneous contact this is one area that's taken a little bit of a back seat in the world of ev charger installation however it is still very very pertinent the problem arises when you have two metallic items connected to the supplies earthing arrangement that's been stalled outside the equipotential zone the classic example is maybe a tap and a light fitting if there's a rising potential between these items then it's possible to get a shot between them if you touch both at the same time now obviously there's a very real possibility of this happening if you have the car charging on the driveway and there's an outside tap nearby if you've installed the indra charger with the earth reference electrode and the switch in the back on mode a thus complying with indent three of the reg that we've looked at in this video then this will prevent any shock from occurring in this instance if you've installed the charger under circumstances where regulation 722.411.4 does not apply and you're using mode a or if you're using mode b without the earth reference electrode then the risk of simultaneous contact must be managed locally perhaps by inserting a piece of plastic pipe into the pipe work supplying the tap to ensure that the bodywork of the car and any local exposed or extraneous conductive parts of the installation cannot be touched simultaneously so there we go in this video we've looked at the importance of complying with that critical regulation regarding pme arrangements in electric vehicles and whether to use mode a or mode b in the charger depending on the local circumstances we've also seen how the indra charger will reduce the incidences of nuisance tripping and the importance of removing the possibility of simultaneous contact between the ev and other earth accessories in the area in the next video in this series we're going to look at the connection and commissioning of the chargepoint to make sure that it's set up for the best possible customer experience all that remains in this video is to say thank you very much for watching you
+
+
+[00:00] in this the second in a series of training videos we're going to look at how to set up
+[00:03] your indra smart pro charger that we installed in the previous video and we're going to really
+[00:08] focus in on earthing arrangements at this point it's important to note that this is
+[00:13] a training video for experienced qualified electricians not a diy video for homeowners
+[00:18] this is a complex and potentially dangerous area of electrical installation requiring
+[00:22] the use of calibrated test equipment and not something that should be undertaken by amateurs
+[00:32] okay so you've looked at the incoming supply and verified its suitability
+[00:36] you've selected the location for the charger and you've selected the correct type of rcd
+[00:41] if you haven't done any of this or understand the significance of why to do it then it may be time
+[00:45] to go and watch the first video in this series now in this video we're going to look at why the
+[00:49] earthing arrangements for an ev charger is so critical we found some information about this
+[00:55] in regulation 722.411.4 point under the heading tn systems where we read a pme earthing facility
+[01:02] shall not be used as the means of earthing for the protective conductor contact of a charging point
+[01:07] located outdoors or that might reasonably be expected to be used to charge a vehicle
+[01:12] located outdoors unless one of the following methods is used
+[01:17] now we'll get to those methods in just a moment but first of all why is this regulation in here
+[01:22] why are we worried about pme earthing for charging evs well first of all let's remind ourselves what
+[01:27] a pme earthing arrangement is in a tncs system the connection with earth is brought to a property
+[01:33] by combining it with the neutral conductor once it reaches the building the neutral
+[01:37] and earth conductors are split and then remain separate within the electrical installation and
+[01:42] that's where we get tncs from terror or earth and neutral combined and then separate now if we lose
+[01:50] that combined neutral and earth connection in the supply cable then a big problem occurs basically
+[01:54] because the current no longer has a return path the voltage on the neutral rises to 230 volts
+[02:00] and because the neutral and earth are connected at the origin all the exposed conductive parts
+[02:04] that are connected to the main earthing terminal in the property will rise to 230 volts as well
+[02:10] now if someone touches an exposed conductive part and makes a connection to the literal earth that
+[02:14] we walk around on then this could well be enough to give them a lethal shock as the current finds
+[02:19] its way back to the transformer down the road inside a property the only place that this is
+[02:24] likely to happen is if you touch a metal object that has a good connection to the literal earth
+[02:30] like say an incoming water or gas pipe or a piece of structural steel that is embedded into the
+[02:35] ground and that's why we connect these items to the main earthing terminal of a property via a
+[02:40] bonding cable it's not in case the pipes become live it's to make sure that they do become live
+[02:46] in this type of event if every piece of metal work that can be touched at the same time becomes
+[02:50] live at 230 volts then there's no difference in voltage between them and you can't get a shock
+[02:56] if you touch them so if i have 230 volts in my left hand and 230 volts in my right hand
+[03:01] there's zero volts difference between them hence no current flow and no shock to try and minimise
+[03:06] the chances of losing the combined neutral and earth connection outside the property there's a
+[03:10] couple of precautions that the dno take one is to use a concentric cable where the line conductor
+[03:15] is in the middle of the cable and the combined neutral on earth is wrapped around the outside
+[03:20] this means if anyone accidentally cuts through the cable with say a shovel the line conductor is
+[03:26] likely to be disconnected before the neutral and earth meaning that the metal work in the property
+[03:31] won't go live another precaution is that along the length of the supply cable the combined neutral on
+[03:37] earth is physically connected to the literal earth that we walk around on via electrodes or rods as
+[03:43] we call them along its length this precaution is what's called protective multiple earthing or pme
+[03:49] but what has this got to do with ev charging well one issue is that the only place that one of these
+[03:54] pme rods is actually installed and connected is where the supply cable to a property comes off
+[03:59] the main cable in the road they're not really installed along the length of the standalone
+[04:04] cable to your property so if the combined neutral and earth connection in the torpedo joint in the
+[04:09] road becomes disconnected and this does happen sometimes then we've got a big problem as all the
+[04:14] exposed conductive parts of the installation become live now inside the building a person
+[04:19] probably won't have a good connection to earth and anything that brings an earth connection into
+[04:23] the property is bonded so there's no massive drama there however a person stood outside on the actual
+[04:28] literal earth may well have a decent connection to the planet and if they're stood by a massive piece
+[04:33] of metal that's just become live at 230 volts like a charging electric vehicle that person is
+[04:38] about to have a very bad day if they touch that car and it doesn't need to be a great connection
+[04:42] to earth either 50 milliamps of current for 50 milliseconds is enough to kill a person
+[04:47] and also no rcd currently available will detect this problem and disconnect the circuit so it's
+[04:52] with good reason that bs7671 says we can't supply an ev charge point for charging a car outside with
+[04:58] a cable relying on a pme arrangement for its earth connection but enough about the problem
+[05:02] what's the solution well the simplest option is to install the charging point in a position
+[05:06] where the car can only be charged indoors such as a garage or similar of course this is not
+[05:11] always going to be possible or indeed enforceable so under the original version of the 18th edition
+[05:16] many installers opted to disconnect the connection from the pme to the charging point
+[05:20] and instead connect the earth terminal of the charging point to an earth electrode
+[05:24] however hammering an earth electrode into the ground is fraught with hazards from
+[05:28] hidden services such as gas water and electricity supplies and achieving a low enough resistance is
+[05:33] also challenging so bs 76m1 allows for some other options instead and indeed it was the
+[05:38] proliferation of solutions to this very problem that triggered the issuing of amendment one and
+[05:43] amendment one contains this interesting point in note 6 where we read creating a tt earthing system
+[05:49] for charging equipment or the whole installation as an alternative to using a pme earthing facility
+[05:54] with one of methods one to five above may not be an appropriate solution due to the inability to
+[05:59] provide sufficient separation from buried metal work connected to the supply pen conductor so
+[06:05] we're being very much discouraged from using an earth electrode in the way just outlined
+[06:09] the reason for this is that if the earth electrode for the charging point goes into the ground
+[06:14] just next to a piece of earth metal work from the building such as a gas or water pipe or structural
+[06:19] steel then it's possible the electrode could be so close to that bonded metal work that in the event
+[06:25] of losing the combined neutral and earth conductor to the property the earth electrode could become
+[06:30] live due to touching or even just being in the proximity of the building metalwork so it's
+[06:36] pretty clear that we're being discouraged from using an earth rod for this reason however there
+[06:40] may be another reason to use an earth electrode as we'll see a little bit later okay so enough
+[06:45] about the problem let's talk solutions and how the indra smart pro can be used in this regard
+[06:51] indra use a proprietary solution they refer to as pests that addresses the most common problems
+[06:56] in ev charger installation pests is an acronym for pen fault earthing simultaneous contact and
+[07:02] touch voltage so let's look at how the smart pro charger addresses these issues in the back of the
+[07:07] charger here there's this little selector switch that changes the function of the charger from
+[07:11] what's referred to as mode a to mode b now this is nothing to do with mode one two or three charging
+[07:16] or anything like that it's to do with how the requirements for regulation 722.411.4.1 are met
+[07:22] as stated earlier in the video that regulation reads a pme earthing facility shall not be used as
+[07:28] the means of earthing for the protective conductor contact of a charging point located outdoors or
+[07:32] that might reasonably be expected to be used to charge a vehicle located outdoors unless one of
+[07:38] the following methods is used first of all we need to bear in mind that this is referring to
+[07:42] a tncs system using protective multiple earthing therefore if you're connecting to a tns or tt
+[07:48] system then you don't need to apply any of the inlets that follow and critically the switch on
+[07:53] the charger pcb must be set to mode a but what about those pme systems what changes then indent
+[08:00] one states that you can connect an ev charger to a pme system if the charging point forms part of
+[08:05] a three-phase installation that also supplies loads other than for electric vehicle charging
+[08:10] and because of the characteristics of the load of the installation the maximum voltage between
+[08:14] the main earthing terminal of the installation and earth in the event of an open circuit fault in the
+[08:19] pen conductor of the low voltage network supplying the installation does not exceed 70 volts rms so
+[08:27] an example of this would be perhaps a commercial installation with a three-phase supply to the
+[08:30] property under this circumstance the mode switch would be set to a again inlet 2 gives us another
+[08:36] example of acceptable use if the main earthing terminal of the installation is connected to
+[08:41] an installation earth electrode by a protective conductor complying with regulation 544.1.1 the
+[08:48] resistance of the earth electrode to earth shall be such that the maximum voltage between the main
+[08:52] earthing terminal of the installation and earth in the event of an open circuit fault in the pen
+[08:57] conductor of the low voltage network supplying the installation does not exceed 70 volts rms again if
+[09:04] you're installing a charger in this scenario then you need to set the switch in the back to mode a
+[09:10] all the scenarios discussed so far have two things in common number one they are not the most common
+[09:14] types of situation where you'll be installing an ev charge point and two they do not require
+[09:19] the use of a reference earth electrode now what is an earth reference electrode i hear you cry
+[09:25] well let's look to the next indent to give us a clue it states protection against electric
+[09:30] shock is provided by a device which electrically disconnects the vehicle from the live conductors
+[09:34] of the supply and from protective earth in accordance with regulation 543.3.101 indent two
+[09:42] within five seconds in the event of the voltage between the circuit protective conductor and earth
+[09:47] exceeding 70 volts rms due to an open circuit fault in the pen conductor of the low voltage
+[09:51] network the device need not operate if the voltage exceeds 70 volts rms for less than four seconds
+[09:58] the device shall provide isolation and be selected in accordance with table 537.4
+[10:03] closing or resetting of the device shall be possible only if the voltage between the circuit
+[10:06] protective conductor on earth does not exceed 70 volts rms equivalent means of functionality could
+[10:12] be included within the charging equipment so to translate in this method a device monitors the
+[10:19] voltage between the circuit protective conductor of the ev charging unit and earth remembering that
+[10:24] is the literal earth that we walk around on now this makes sense because the cpc of the circuit
+[10:30] is effectively connected to the bodywork of the car so what this method is doing is measuring
+[10:34] the voltage that could reasonably be expected to appear across a person touching the car
+[10:39] and the literal earth if this value goes over 70 volts it will disconnect the circuit in less than
+[10:44] five seconds you'll see this value of 70 volts a lot in this section of the reg and it may throw
+[10:48] you off at first because what we normally refer to as touch voltage is 50 volts and that's the
+[10:53] value of voltage that in theory won't kill you if you touch it so why we allowed a so-called touch
+[10:58] voltage of 70 volts in an ev charging installation well the reason is that 50 volts touch voltage is
+[11:04] the value someone could experience from hand to hand with current passing across the chest and
+[11:09] through the heart generally we'd expect a person receiving a shock from a charging electric vehicle
+[11:14] to get that shock from a hand to a foot as these are the parts in contact with the car and the
+[11:20] earth this path will generally have a higher resistance and the current will be less likely
+[11:24] to pass through the heart meaning a slightly higher voltage could theoretically be tolerated
+[11:29] so how does the device spoken of in this regulation achieve this monitoring
+[11:33] well some further information is found in the annex to this section in
+[11:36] a722.4 i'll read this from the courage endem as there was a slight mistake in the original
+[11:42] now bear in mind when we read pen fault in this paragraph we're talking about the loss
+[11:46] of that combined neutral and earth conductor regulation 722.411.4.1 indent 3 describes a
+[11:53] device that measures the voltage between the circuit protective conductor of the electric
+[11:56] vehicle charging equipment and earth during a pen failure in the supply network the neutral of a
+[12:02] tncs supply is no longer considered to be reliably connected to earth and the device that measures
+[12:07] the voltages between the following points will fail to provide equivalent safety to the device
+[12:12] described in regulation 722.411.4.1 indent 3. in then 1 the circuit protective conductor in neutral
+[12:19] indent 2 the circuit protective conductor and the consumer's main earthing terminal
+[12:25] so this monitoring device can't just be connected across the conductors mentioned in those two
+[12:29] indents there as it wouldn't reliably measure the voltage from cpc to earth so what's the solution
+[12:36] well let's just have a look at part a of a722.4 as part b is concerned with a three-phase system
+[12:42] it reads suitable arrangements include measurement of the voltage between either
+[12:46] a the circuit protective conductor and a suitable measurement earth electrode so this method
+[12:52] requires connecting to an earth electrode so the device can measure between the cpc
+[12:57] and the earth or what we can sort of think of as the hand and the foot so if we're back to using
+[13:02] an earth electrode does that mean that we've just gone full circle and now we've got all the issues
+[13:06] that come with driving an earth rod blindly into the ground well no the earth electrode here is a
+[13:12] reference electrode it's not there as the main earth connection of the circuit so that means
+[13:17] that a much shorter earth rod can be put into the ground to tell the device what the voltage of the
+[13:21] earth is in that particular position the paragraph in a722.4 goes on to outline some precautions of
+[13:27] the electrode positioning to make sure the voltage on the electrode isn't affected by
+[13:31] any bonded building metal work entering the ground near the rod for many domestic properties though
+[13:35] you'll find plastic incomers for the gas and water and very likely no structural steel work either
+[13:41] so it's not too much of a problem the indra smart pro charger allows you to use this method and has
+[13:47] a terminal for connecting the reference earth electrode as you can see here so it's simply a
+[13:52] matter of driving the earth reference electrode home near to where the charger is installed
+[13:57] obviously a measure of caution still needs to be taken when driving an electrode into the earth
+[14:02] and the longer the rod the better however it can be achieved with a shorter rod as long as
+[14:08] you achieve a resistance of 600 ohms at one meter as this connection is not on earth an
+[14:14] equipotential bond a cpc or a functional earth is defined by bs7671 indra recommend connecting with
+[14:20] either a four mil or six mil solar cable which is generally black in color it's also important to
+[14:25] keep the earth reference away from any existing connections to the greater mass of earth such
+[14:29] as may be found near the incoming supply or any extraneous conductive parts the reason for this
+[14:35] is that under fault conditions the rising voltage on these items can cause a rising voltage on the
+[14:39] reference electrode and reduce the effectiveness of the charger monitoring the potential difference
+[14:44] between the cpc and the earth again this shows how the indra smart pro charger is a cut above the
+[14:50] rest as it actually will disconnect the charger at 30 volts instead of the maximum permissible
+[14:55] 70 volts from bs7671 this helps to mitigate the effects of this voltage rise on the reference
+[15:00] earth under fault conditions as you normally would with an earth rod securely connect the
+[15:04] cable to the clamp at the top of the rod and pop the termination into a suitable enclosure
+[15:10] however there are some circumstances where it simply isn't feasible to use an earth reference
+[15:15] electrode maybe you can't confirm the lack of underground services which could become damaged
+[15:20] or you'd have to drill through perhaps a huge slab of concrete or pavement
+[15:24] to get to the general mass of earth there is another way of meeting regulation 722.411.4.1
+[15:31] and unsurprisingly the indra smart pro will accommodate this method as well indent 4 reads
+[15:37] protection against electric shock in a single phase installation is provided by a device which
+[15:41] electrically disconnects the vehicle from the live conductors of the supply and from protective earth
+[15:47] in accordance with regulation 543.3 0.101 indent 2 within 5 seconds in the event of the utilization
+[15:54] voltage at the charging point between the line and neutral conductors being greater than 253 volts
+[16:00] or less than 207 volts the device shall provide isolation and be selected in accordance with table
+[16:06] 537.4 equivalent means of functionality could be included within the charging equipment closing or
+[16:11] resetting of the device shall be possible only if the voltage between line and neutral conductors
+[16:16] is in the range 207 to 253 volts rms so this is a slightly simpler approach that doesn't
+[16:22] require a reference earth electrode and relies on the measurement of the voltage between line
+[16:26] and neutral remember if there's a pen fault and the combined neutral and earth conductor becomes
+[16:31] disconnected then the voltage on the neutral will rise to be around the same as the line conductor
+[16:36] meaning that a voltage measurement between the two will be much lower than when a healthy supply is
+[16:41] maintained so if the voltage between line and neutral goes above 253 volts or below 207 volts
+[16:48] then the device will disconnect the supply to the circuit it's connected to the regulation
+[16:53] says that this device can be incorporated into the charging unit itself and this is exactly
+[16:57] what's been done on the indra smart pro charger the really clever thing about this charger is that
+[17:01] you can set it to meet the requirements of all of these indents as long as it's on the correct
+[17:06] setting if you're using it to comply with indent 4 then you'll need to set the switch to mode b
+[17:13] personally if i was installing this charger i'd always go for the reference earth electrode
+[17:16] option wherever possible but in situations where it may not be i'd then fall back on the indent
+[17:21] four solution the reason being that indent four infers a pen fault and are raising the voltage
+[17:26] between the car body work and the earth whereas the indent three option actually measures it
+[17:31] at the 70 volts value it's worth noting as well that both of these approaches state that the
+[17:35] protection must disconnect the live conductors so that's the line and the neutral as well as the
+[17:41] protective conductor which is fairly unusual in the wiring regulations but makes perfect
+[17:45] sense when you consider that it's the protective conductor that's causing the body of the vehicle
+[17:49] to become live in this instance another thing that sets this charger apart from others on the
+[17:55] market is the management of nuisance tripping many devices will comply with indents one and two from
+[18:00] regulation 722.411.4.1 as well as installations with tns or tt earthing arrangements however
+[18:07] because of the way they offer pen fault protection by complying with the requirements for indent 4
+[18:12] they can be overly sensitive to natural voltage fluctuations for example on a brand new housing
+[18:17] estate the first houses that are built and connected to a new transformer may have a slightly
+[18:21] higher voltage than usual then a small natural fluctuation will be seen as a pen fault and for
+[18:27] many products on the market they'll disconnect the charger another example of where this could happen
+[18:31] is if there's a high presence of renewable energy sources locally such as banks of solar pvs or wind
+[18:37] turbines either on the property or close to it the indra smart pro takes advantage of the fact
+[18:43] that the reg allows for a period of four seconds to pass before the device operates in the event of
+[18:48] a pen fault taking advantage of this period allows the device to filter out those brief high voltages
+[18:53] that would disconnect charges from other brands this also has the advantage that in the event of
+[18:57] a proper pen fault the charger has a soft shutdown function which means that it will turn the charger
+[19:02] off in a controlled fashion it's a bit like the difference between shutting your pc down properly
+[19:08] versus turning it off at the wall shutting down properly allows the computer to protect itself
+[19:13] and ensure the continued smooth running of the electronics the same principle applies to this
+[19:18] very clever charger for this video there's just one final thing to consider and that is the risk
+[19:24] of simultaneous contact this is one area that's taken a little bit of a back seat in the world
+[19:29] of ev charger installation however it is still very very pertinent the problem arises when you
+[19:34] have two metallic items connected to the supplies earthing arrangement that's been stalled outside
+[19:39] the equipotential zone the classic example is maybe a tap and a light fitting if there's a
+[19:44] rising potential between these items then it's possible to get a shot between them if you touch
+[19:48] both at the same time now obviously there's a very real possibility of this happening if you have
+[19:53] the car charging on the driveway and there's an outside tap nearby if you've installed the indra
+[19:58] charger with the earth reference electrode and the switch in the back on mode a thus complying
+[20:02] with indent three of the reg that we've looked at in this video then this will prevent any
+[20:06] shock from occurring in this instance if you've installed the charger under circumstances where
+[20:11] regulation 722.411.4 does not apply and you're using mode a or if you're using mode b without
+[20:18] the earth reference electrode then the risk of simultaneous contact must be managed locally
+[20:24] perhaps by inserting a piece of plastic pipe into the pipe work supplying the tap to ensure
+[20:29] that the bodywork of the car and any local exposed or extraneous conductive parts of the installation
+[20:34] cannot be touched simultaneously so there we go in this video we've looked at the importance
+[20:39] of complying with that critical regulation regarding pme arrangements in electric vehicles
+[20:43] and whether to use mode a or mode b in the charger depending on the local circumstances
+[20:49] we've also seen how the indra charger will reduce the incidences of nuisance tripping
+[20:53] and the importance of removing the possibility of simultaneous contact between the ev and other
+[20:58] earth accessories in the area in the next video in this series we're going to look at the connection
+[21:04] and commissioning of the chargepoint to make sure that it's set up for the best possible customer
+[21:09] experience all that remains in this video is to say thank you very much for watching
+[21:19] you

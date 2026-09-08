@@ -1,0 +1,237 @@
+# What is a UPS and how does it work?
+# https://www.youtube.com/watch?v=ZhGQAaen59E
+
+Excuse me, can I help you? Well, I guess I'm looking for a battery backup, but there's just so many to choose from, and there is a huge difference in cost. Is it just the battery life or technical ratings that make them more expensive? Or am I missing something? Well, the battery life and technical specs certainly play into it. But to be honest, there are different types of uninterruptible power supplies or UPS designs that you can buy. And the type you choose along with the way they react to power issues is really what makes them so different in design and cost. Here, let me give you a couple examples. Uninterruptible power supplies or UPSs have been around for many years, and with the advent of electronic loads like computers that need to be protected from power anomalies, UPSs have found their way into data centers, our businesses, industrial applications and even our homes. While the physical products may look similar, there are significant design variations and UPSs that make them different. You may wonder why one UPS is $50 and one with very similar electrical specifications of voltage power and battery life, maybe $500. In this video, we will highlight what those differences are and explain why you may not always need the $500 UPS... but why you sometimes do. The first step in selecting UPS is to determine the voltage and power ratings of the unit and how long you need to back up the load or what your powering with the UPS. Understanding the load rating should provide enough information to properly size the kilowatt or KVA ratings and any over sizing that may be required for your application. Remember, the primary benefit of a UPS is that it's a battery backup that restores power to your computer or other critical loads during a disruption of power from the utility or your primary source of power. However, the more advanced UPSs go well beyond just providing a battery backup. They can filter out some very damaging and disruptive problems that may go undetected by a standard battery backup system. For this reason, we break down the types of UPSs into three categories. First is the offline or standby UPS. This is a very basic battery backup system that waits for something bad to happen. And then once it senses a sag swell or full interruption, that exceeds a predefined limit, it turns off the utility power connection and switches the load over to an inverter fed by a battery. The inverter converts DC power of the battery to AC to feed your loads. Once power is restored to an acceptable level for an acceptable period of time, the battery connection is turned off and the utility connection is turned back on. All of this switching is done with electronic switches that operate very quickly before the loads can drop off. Line interactive UPSs are very similar to the standby UPSs, but they also provide long term voltage regulation. For example, if the voltage in your house was running at 106 volts instead of 120, the line interactive UPS would regulate the voltage back to a level very close to 120 volts. These units can also provide overvoltage protection, meaning that if your voltage was 131 volts, it would pull the voltage back down to 120 as well. However, if the voltage exceeds a significant under voltage or over voltage or is fully interrupted, the ups would switch over to the battery just like the standby ups. Again, this would all happen very quickly before most loads would even know that the power source had been transferred. Note that both the standby and line interactive UPS batteries are charged as needed from the normal utility source when it's available. Finally, the online or double conversion UPS is a significantly different design, especially on the front end or the input to the UPS. Basically, what happens inside a double conversion UPS is the input AC voltage is converted to DC with a rectifier and then the DC is converted back to a clean sinusoidal 60 hertz AC waveform with an inverter, hence the term double conversion. Like the other two types of ups, there's a battery connected to the DC bus, but in this one the battery charges and discharges without disconnection from the source. The input and output voltages are completely isolated from each other, allowing the UPS to clean the voltage for the load. It will not disrupt the power during the transition to the battery or the transition back from the battery. This UPS can clean up other problems with the source voltage like electrical noise frequency variations, switching transients and harmonics because it's always in the circuit feeding the load through the rectifier and inverter. In order to fully understand all of these power quality issues. We've created a summary table that shows the IEEE definitions for each of the events or issues that these UPSs correct. You may have heard of some Eaton UPSs using a 3, 5, or 9 series designation. This 3,5,9 refers to the number of power quality problems the UPSs can solve. So a 3 series is a standby UPS. A 5 series is a line interactive UPS and a 9 series is a double conversion. We have a simple demo here at the PSEC where we show the basic differences between these three types of UPSs. When the source voltage goes away and comes back 2 seconds later, watch how two of the lights flicker and one remains solid. The solid one is the online or double conversion UPS. The other two also flicker when they return back from the battery to normal operation. If you're unsure of which type of ups you have, you can do a simple test. Plug a light into the output and watch the light as you unplug the source. If the light flickers, you have an offline or line interactive UPS. If not, it's a double conversion UPS. To show the additional benefits of a line interactive UPS or to distinguish it from a standby UPS. You would need a meter or variable source to show how an under voltage or an overvoltage causes the UPS to react. So how can an offline or line interactive UPS turn off the power and turn on the battery so quickly that our computers don't drop out? The answer is that UPSs use electronic switches. The key for success, though, is that computer manufacturers follow a design criteria called the ITIC curve. So the computer power suppliers have enough ride through to last a little more than 160 hertz electrical cycle or about 20 milliseconds. The standby and line interactive UPSs will transition to battery well within 4 milliseconds or about a quarter of a cycle. This transition is quick enough that the computer doesn't even realize there's a loss of power. This also allows them to be more efficient, but the tradeoff is less power conditioning for the loads. For some special loads in manufacturing processes or other applications that don't follow the ITIC curve or where power quality is very poor, a double conversion ups may be needed. In many of these applications the loss of control power for small components requires a full shutdown and significant time to restart the process. To really understand the design and components of a double conversion, or online UPS, we like to make the comparison with a variable frequency driver or VFD. Both have a rectifier to convert from AC to DC. Both have a DC bus with a smoothing capacitor to minimize ripple and both have an inverter to convert from DC back to AC. However, there are two main differences between a VFD and a UPS. The UPS also has a battery on a DC bus alongside the capacitor for outage protection, but the UPS always operates at 60 hertz in and 60 hertz out. The VFD adjusts the output frequency to control the motor speed during normal operation as well as startup and shutdown. That's why we call them variable frequency or variable speed drives. You wouldn't buy the VFD just to start a motor and run at 60 hertz because the switching losses of the rectifier and inverter would cost you more money than running it across a line with the contactor. However, you do this with the UPS and forgo the losses for the benefit of reliability. Historically, UPSs were very lossy, 88% to 92% efficiency for example. But today you can buy a double conversion UPS with efficiencies well into the high 90’s allowing double conversion to be a cost effective solution. Based on the three types of UPS topologies: standby, line interactive and double conversion, what should you select for your application? Simple answer is that it depends. The standby units are typically best for home security, entertainment systems, routers and home computers. They typically offer a low cost and adequate protection level for basic applications. If the utility voltage is unstable and frequently runs high or low, a line interactive UPS may be the right choice, especially with industrial and manufacturing equipment. For both the standby and line interactive UPSs the operating cost, in other words, the cost of losses is relatively very low and makes these a good choice for many applications. And finally, for situations where there's a risk of disruption for more extreme power quality situations like voltage harmonic distortion, utility capacitor switching events or other issues, a double conversion UPS is probably the best option for your application. These are the considerations that you typically have to make for single phase applications. Note that if you buy an offline or line interactive UPS and the supply voltage is poor, which often happens on a weak utility source, or when you're running on a generator, the UPS may stay on the battery and drain the battery because the sensing doesn't like the wave shape or level of the source voltage. In this case, you may drop the load if the battery runs out of charge. For larger 3 phase applications, most UPSs are double conversion units. However, newer technology UPSs, like Eaton’s 93PM and 9395, offer full double conversion and complete isolation from primary to secondary, but also offer higher efficiency modes like Energy Saver or Variable Module Management. These units act like high speed hybrid versions of line interactive and double conversion UPSs, but react in less than 2 milliseconds to ensure computer power supplies are protected even during a full power outage. Although these units are highly efficient running in double conversion mode, you can save additional money by operating with these higher efficiency modes for larger systems. Beyond the topologies, the battery systems that go with these UPSs have gone from traditional led acid to much smaller, lighter and longer life lithium ion batteries. Therefore, today, when you're shopping for a new UPS, it may be 40% of the size and weight of a previous model with the same electrical ratings and battery life. The duration of the battery runtime is usually in the range of 5 to 15 minutes, but it can be increased if more is needed. If UPS is lightly loaded, you will get much more runtime out of the battery. For larger systems, most times, the battery duration must simply bridge the gap between the power outage and the startup of a standby generator. Today, for special applications like E-houses, machine builders, or even gamers, we have a lot of variations in these UPSs to choose from. Some of these UPSs have a different form factor, like the din rail mounted UPSs and 24 volt battery back ups that machine builders use inside control cabinets or MCCs. But essentially, they're all variations of the three basic UPS types. To learn more about the types of UPSs that are available and considerations that will help you decide on which UPS is right for your application, contact us or your local Eaton representative to schedule a visit to one of Eaton's Power Systems Experience Centers today.
+
+
+[00:16] Excuse me, can I help you?
+[00:18] Well, I guess I'm looking for a battery backup,
+[00:21] but there's just so many to choose from, and there is a huge difference in cost.
+[00:26] Is it just the battery life or technical ratings that make them more expensive?
+[00:31] Or am I missing something?
+[00:33] Well, the battery life and technical specs certainly play into it.
+[00:36] But to be honest, there are different types
+[00:37] of uninterruptible power supplies or UPS designs that you can buy.
+[00:40] And the type you choose along with the way they react to power
+[00:43] issues is really what makes them so different in design and cost.
+[00:47] Here, let me give you a couple examples.
+[00:49] Uninterruptible power supplies or UPSs
+[00:52] have been around for many years,
+[00:53] and with the advent of electronic loads like computers that need to be protected
+[00:58] from power anomalies, UPSs have found their way into data centers,
+[01:02] our businesses, industrial applications and even our homes.
+[01:07] While the physical products may look similar,
+[01:09] there are significant design variations and UPSs that make them different.
+[01:14] You may wonder why one UPS is $50 and one with very similar
+[01:18] electrical specifications of voltage power and battery life, maybe $500.
+[01:24] In this video, we will highlight what those differences are and explain
+[01:28] why you may not always need the $500 UPS... but why you sometimes do.
+[01:34] The first step in selecting UPS is to determine the voltage
+[01:37] and power ratings of the unit and how long you need to back up the load
+[01:41] or what your powering with the UPS.
+[01:44] Understanding the load rating should provide
+[01:46] enough information to properly size the kilowatt or KVA ratings
+[01:50] and any over sizing that may be required for your application.
+[01:54] Remember, the primary benefit of a UPS
+[01:57] is that it's a battery backup
+[01:59] that restores power to your computer or other critical loads during a
+[02:03] disruption of power from the utility or your primary source of power.
+[02:07] However, the more advanced UPSs go
+[02:10] well beyond just providing a battery backup.
+[02:13] They can filter out some very damaging and disruptive problems
+[02:16] that may go undetected by a standard battery backup system.
+[02:20] For this reason, we break down the types of UPSs into three categories.
+[02:25] First is the offline or standby UPS.
+[02:28] This is a very basic battery backup system that waits for something bad to happen.
+[02:32] And then once it senses a sag
+[02:33] swell or full interruption, that exceeds a predefined limit,
+[02:37] it turns off the utility power connection and switches
+[02:40] the load over to an inverter fed by a battery.
+[02:43] The inverter converts DC power
+[02:45] of the battery to AC to feed your loads.
+[02:48] Once power is restored
+[02:49] to an acceptable level
+[02:51] for an acceptable period of time, the battery connection is turned off
+[02:55] and the utility connection is turned back on.
+[02:58] All of this switching is done with electronic switches
+[03:00] that operate very quickly
+[03:02] before the loads can drop off.
+[03:04] Line interactive UPSs are very similar
+[03:06] to the standby UPSs,
+[03:08] but they also provide long term voltage regulation.
+[03:11] For example, if the voltage in your house was running at 106 volts instead of 120,
+[03:16] the line interactive UPS
+[03:18] would regulate the voltage back to a level very close to 120 volts.
+[03:22] These units can also provide overvoltage protection, meaning that if your voltage
+[03:27] was 131 volts, it would pull the voltage back down to 120 as well.
+[03:31] However, if the voltage exceeds a significant
+[03:34] under voltage or over voltage or is fully interrupted,
+[03:38] the ups would switch over to the battery just like the standby ups.
+[03:42] Again, this would all happen
+[03:44] very quickly before most loads
+[03:45] would even know that the power source
+[03:46] had been transferred.
+[03:48] Note that both the standby and line interactive UPS batteries are charged
+[03:52] as needed from the normal utility source when it's available.
+[03:57] Finally, the online or double conversion
+[03:59] UPS is a significantly different design,
+[04:01] especially on the front end
+[04:03] or the input to the UPS.
+[04:05] Basically, what happens inside
+[04:06] a double conversion UPS is the input AC
+[04:09] voltage is converted to DC with a rectifier
+[04:12] and then the DC is converted
+[04:14] back to a clean sinusoidal 60 hertz
+[04:16] AC waveform with an inverter,
+[04:18] hence the term double conversion.
+[04:21] Like the other two types of ups, there's a battery
+[04:23] connected to the DC bus, but in this one
+[04:26] the battery charges and discharges without disconnection from the source.
+[04:31] The input and output voltages are completely isolated
+[04:34] from each other, allowing the UPS to clean the voltage for the load.
+[04:38] It will not disrupt the power
+[04:39] during the transition to the battery
+[04:41] or the transition back from the battery.
+[04:44] This UPS can clean up other problems with the source voltage
+[04:47] like electrical noise frequency variations,
+[04:50] switching transients and harmonics because it's always in the circuit
+[04:54] feeding the load through the rectifier and inverter.
+[04:57] In order to fully understand all of these power quality issues.
+[05:01] We've created a summary table that shows the IEEE definitions
+[05:04] for each of the events
+[05:06] or issues that these UPSs correct.
+[05:23] You may have heard of some Eaton UPSs using a 3, 5,
+[05:26] or 9 series designation.
+[05:28] This 3,5,9 refers to the number of power quality problems the UPSs can solve.
+[05:33] So a 3 series is a standby UPS.
+[05:35] A 5 series is a line interactive UPS
+[05:38] and a 9 series is a double conversion.
+[05:40] We have a simple demo here at the PSEC
+[05:42] where we show the basic differences between these three types of UPSs.
+[05:47] When the source voltage goes away and comes back 2 seconds later,
+[05:50] watch how two of the lights flicker and one remains solid.
+[05:54] The solid one is the online
+[05:56] or double conversion UPS.
+[05:58] The other two also flicker when they return back from the battery
+[06:01] to normal operation.
+[06:03] If you're unsure of which type of ups you have, you can do a simple test.
+[06:07] Plug a light into the output and watch the light as you unplug the source.
+[06:11] If the light flickers, you have an offline or line interactive UPS.
+[06:15] If not, it's a double conversion UPS.
+[06:17] To show the additional benefits
+[06:19] of a line interactive UPS or to distinguish it from a standby UPS.
+[06:25] You would need a meter or variable source to show how an under voltage
+[06:28] or an overvoltage causes the UPS to react.
+[06:32] So how can an offline or line interactive UPS turn off the power
+[06:36] and turn on the battery so quickly that our computers don't drop out?
+[06:41] The answer is that UPSs use
+[06:42] electronic switches.
+[06:44] The key for success, though, is that computer manufacturers
+[06:48] follow a design criteria called the ITIC curve.
+[06:51] So the computer power suppliers have enough ride through to last
+[06:54] a little more than 160 hertz electrical cycle or about 20 milliseconds.
+[07:00] The standby and line interactive UPSs will transition to battery
+[07:03] well within 4 milliseconds or about a quarter of a cycle.
+[07:08] This transition is quick enough
+[07:10] that the computer doesn't even realize there's a loss of power.
+[07:13] This also allows them to be more efficient,
+[07:15] but the tradeoff is less power conditioning for the loads.
+[07:19] For some special loads in manufacturing processes or other applications
+[07:23] that don't follow the ITIC curve or where power quality is very poor,
+[07:28] a double conversion ups may be needed.
+[07:31] In many of these applications
+[07:32] the loss of control power for small components requires
+[07:36] a full shutdown and significant time to restart the process.
+[07:40] To really understand the design
+[07:41] and components of a double conversion,
+[07:43] or online UPS,
+[07:45] we like to make the comparison
+[07:46] with a variable frequency driver or VFD.
+[07:49] Both have a rectifier to convert from AC to DC.
+[07:52] Both have a DC bus with a smoothing capacitor to minimize
+[07:56] ripple and both have an inverter to convert from DC back to AC.
+[08:00] However, there are two main differences between a VFD and a UPS.
+[08:05] The UPS also has a battery on a DC bus alongside the capacitor for outage
+[08:10] protection, but the UPS always operates at 60 hertz in and 60 hertz out.
+[08:16] The VFD adjusts the output frequency to control the motor
+[08:19] speed during normal operation as well as startup and shutdown.
+[08:23] That's why we call them variable frequency or variable speed drives.
+[08:26] You wouldn't buy the VFD just to start a motor
+[08:29] and run at 60 hertz because the switching
+[08:31] losses of the rectifier and inverter
+[08:33] would cost you more money than running it
+[08:35] across a line with the contactor.
+[08:37] However, you do this with the UPS and forgo the losses
+[08:41] for the benefit of reliability.
+[08:44] Historically, UPSs
+[08:45] were very lossy, 88% to 92% efficiency for example.
+[08:49] But today you can buy a double conversion UPS with efficiencies well into the high
+[08:54] 90’s allowing double conversion to be a cost effective solution.
+[08:57] Based on the three types of UPS topologies:
+[09:00] standby, line interactive and double conversion,
+[09:03] what should you select for your application?
+[09:06] Simple answer is that it depends. The standby units are typically best
+[09:10] for home security, entertainment systems,
+[09:12] routers and home computers.
+[09:15] They typically offer a low cost and adequate protection level
+[09:18] for basic applications.
+[09:20] If the utility voltage is unstable
+[09:23] and frequently runs high or low, a line interactive UPS may be the right choice,
+[09:27] especially with industrial and manufacturing equipment.
+[09:31] For both the standby and line interactive UPSs the operating cost,
+[09:36] in other words, the cost of losses is relatively very low
+[09:40] and makes these a good choice for many applications.
+[09:43] And finally, for situations where there's a risk of disruption
+[09:46] for more extreme power quality situations like voltage harmonic distortion,
+[09:50] utility capacitor switching events or other issues,
+[09:52] a double conversion UPS is probably the best option for your application.
+[09:57] These are the considerations that you typically have to make
+[09:59] for single phase applications.
+[10:02] Note that if you buy an offline or line interactive UPS and the supply voltage
+[10:06] is poor, which often happens on a weak utility source,
+[10:09] or when you're running on a generator, the UPS may stay on the battery
+[10:13] and drain the battery
+[10:14] because the sensing doesn't
+[10:15] like the wave shape
+[10:17] or level of the source voltage.
+[10:19] In this case, you may drop the load
+[10:20] if the battery runs out of charge.
+[10:22] For larger 3 phase applications,
+[10:24] most UPSs are double conversion units.
+[10:27] However, newer technology UPSs,
+[10:29] like Eaton’s 93PM and 9395,
+[10:32] offer full double conversion and complete
+[10:34] isolation from primary to secondary,
+[10:36] but also offer higher efficiency modes
+[10:39] like Energy Saver or Variable Module Management.
+[10:42] These units act like high speed hybrid versions of line interactive and double
+[10:46] conversion UPSs, but react in less than 2
+[10:48] milliseconds to ensure
+[10:50] computer power supplies are protected even during a full power outage.
+[10:55] Although these units are highly efficient running in double conversion mode,
+[10:58] you can save additional money
+[10:59] by operating with these higher efficiency modes for larger systems.
+[11:04] Beyond the topologies, the battery systems
+[11:06] that go with these UPSs have gone
+[11:08] from traditional led acid
+[11:10] to much smaller, lighter and longer life lithium ion batteries.
+[11:14] Therefore, today, when you're shopping for a new UPS,
+[11:17] it may be 40% of the size and weight of a previous model
+[11:21] with the same electrical ratings and battery life.
+[11:24] The duration of the battery
+[11:26] runtime is usually in the range
+[11:27] of 5 to 15 minutes, but it can be increased if more is needed.
+[11:32] If UPS is lightly
+[11:33] loaded, you will get much more runtime out of the battery.
+[11:37] For larger systems, most times, the battery duration must simply bridge
+[11:41] the gap between the power outage and the startup of a standby generator.
+[11:46] Today, for special applications like E-houses, machine builders, or even gamers,
+[11:50] we have a lot of variations in these UPSs to choose from.
+[11:54] Some of these UPSs have a different form factor,
+[11:57] like the din rail mounted UPSs and 24 volt battery back ups
+[12:00] that machine builders use inside control cabinets or MCCs.
+[12:04] But essentially, they're all variations of the three basic UPS types.
+[12:09] To learn more about the types of UPSs that are available and considerations
+[12:13] that will help you decide on which UPS is right for your application,
+[12:16] contact us or your local Eaton representative to schedule a visit
+[12:20] to one of Eaton's Power Systems Experience Centers today.

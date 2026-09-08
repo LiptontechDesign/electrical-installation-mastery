@@ -1,0 +1,142 @@
+# How to Identify the Different Parts of a Sine Wave, Calculate Frequency and Periodic Time
+# https://www.youtube.com/watch?v=YbkE937rsbw
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering the subject of AC electricity and in particular we're going to analyze an AC waveform and identify some of the key parts on there so that we can be more familiar with it and also so that we can answer some of those key exam questions that we may come across so first things first let's bring up on the screen a typical AC sine wave so you can see there that we've got that familiar wave form that familiar shape that we've looked at many many times before now at this point we're particularly interested in just one section of this waveform so we know that it keeps on going off to either side of the graph that we've got on the screen right now but what we're going to do is we're just going to consider one little element of it to start with so we just look in this part of the AC waveform now when you look at the AC waveform like this you can see that it starts at 0 it rises to a maximum positive value it then drops off back to 0 again goes back to a maximum negative value and then returns to 0 after it's been through every point on that waveform and got back to where it started from we could say that the waveform has completed one full cycle so that is one full cycle now bearing that expression in mind is going to become very important later on in the video when we talk about frequency so let's have a look at some of the parts of this we're interested in some key elements of it so we can see here that there is a point where it reaches a maximum positive value and we can indicate that by bringing on to the screen now this line here so we can see that the distance from the horizontal axis the x-axis up to the peak is represented by this blue line here and this is referred to as the peak value of the waveform so we can show that that goes and matches up with the peak value right there not point two-five there we can see it's reaching the peak value so this is what's referred to as the peak value what you'll also realize though is that this waveform has to peak values it's got a maximum positive peak and it's got a maximum negative peak as well now remember in an AC circuit this sine wave indicates the behavior of the voltage in the current and when we enter the negative part of the cycle we mustn't think of that as being somehow a smaller amount of electricity or a lack of electricity of course when we think about minus figures we normally think about debt we've got a lack of something but when we're looking at an AC sine wave when we're looking at this particular waveform we know that the negative part of the cycle just indicates that the current has simply changed direction so this peak down here that you can see represents just as much electricity flowing as we've got at this peak up here it's just in the opposite direction around the circuit if we now bring in a extension of the line that we just looked at so we can see here that we've got an extended line we can see that the top of this line reaches the positive peak at that point in there and the bottom of the line reaches the negative peak at that value there so the distance from the top of this line to the bottom of this line in other words the distance from the positive peak to the negative peak vertically has its own special name as well we refer to that as the peak to peak value now you may also hear this peak value referred to as amplitude that is also an expression that's used but it's more common in an electrical installation to refer to that as the peak value so there's two important things the peak value and the peak to peak value and it's very important when we're talking about the peak to peak value many people think that it is the distance horizontally from this point here over to this point here or even potentially if we just change our waveform slightly people get confused and think that the peak to peak value is the distance from here to here on the same positive peak and may even indicate that on a drawing in an exam if you get asked an exam question to indicate whether peak to peak value is it's the vertical distance from here to here not the horizontal distance from here so here so please bear that in mind if that kind of question comes up in an exam setting so now we'll turn off our peak to peak line there so that that's not cluttering up the screen and now we can start to think about something else we said initially that if we have a starting point a maximum peak back to zero a negative we come back to zero again then that is one full cycle now in previous videos in this series we've considered the horizontal x-axis to represent a turning angle we saw how this waveform is generated from rotating a conductor inside a magnetic field and we saw that the x axis represented an angle that had been passed through now for the purposes of the graph that we've got here we're going to consider now this x axis this horizontal axis to represent time passing by so the time it takes to get from here at zero to here at one is one second so for the waveform that we've currently got on the screen you can see that one complete cycle is completed in the space of one second and the number of cycles that occur in the space of one second is what we refer to as the frequency of the waveform and frequency of course is measured in Hertz so we can start now to adjust our waveform and see how that affects the frequency if we make our waveform so that it completes two full cycles in the space of one second so you see there we're going from zero to maximum positive zero to maximum negative to zero we're doing that twice in the space of one second well that means now is we have a frequency of two Hertz and likewise we could continue to adjust this so we could set this to any value we wanted so here we're completing that waveform ten times in a second which means that we have got ten cycles per second which gives us a frequency of ten Hertz again a typical exam question may be how would you define frequency and the answer in this context is it is the number of complete cycles per second of an AC waveform now another thing that were particularly interested in with this waveform if we set our frequency back down to one again is how long it takes for one waveform to be completed so here we can see that one waveform is completed in the space of one second therefore we say that this waveform has a periodic time of one second in other words it takes one second for one complete cycle to be completed if we now change the frequency of this waveform to two you can see there we're completing two cycles in the space of one second so the question that naturally arises is what is the periodic time of this waveform well the periodic time of this waveform is going to be the time it takes to get from zero to maximum positive to zero to maximum negative and to zero again and you can see there that that is taking place in half of a second not 0.5 of a second so therefore the periodic time of this waveform is not 0.5 of a second now there are it's a relationship between these values between frequency and periodic time so if we go over to the blackboard now we'll put that formula up on the board so you can see there the formula that we're interested in is f equals 1 over T with a little p in the subscript which stands for periodic time so again if we break this down we can see that the F in this formula stands for frequency we can see that the T with a P in the subscript indicates periodic time and we've got this number 1 that is above the line here so what do you think that one represents well in the context of this video that one as we've seen represents the time passing of 1 second so the frequency of a wave form is equal to 1 second divided by the periodic time of the wave form which kind of makes sense when you think about it because if we look back to the graph now you can see here that if we've got a periodic time for this wave form of Nohr two point five seconds at this point here nor point five seconds we can see that that one second if we divide it by the number of nought point fives that are in that one second we know that we're going to get an answer of two therefore one divided by the periodic time 1 divided by not point five gives us a frequency of two and we can start to adjust the frequency and see that will still hold true so here we've got a frequency of four we've got four complete cycles in space of one second and we can see there that the periodic time of this waveform is naught point two five one second divided by not 0.25 will give us a frequency of four now if you know a thing or two about maths you will now know that there is an alternative rearrangement of this formula and it will look like this on the blackboard that TP will be equal to one divided by F so you can see here that all we've done is just swapped those two values over the periodic time and the frequency which again makes perfect sense if we look at the wave form on the screen now we can see that we've got a frequency here of four Hertz and if we do one second divided by four we end up with naught point two five therefore one divided by a frequency of four will give us naught point two five seconds so once again we can see very clearly on the screen if we go back to the blackboard that relationship TP is equal to one divided by F which means that we have a situation where F stands for frequency measured in Hertz and T P stands for periodic time which is measured in seconds and we assign that the unit symbol s so just some key points to take away from this video we've seen the definitions of the peak value of an AC waveform the peak to peak value of an AC waveform don't forget frequency is measured in hertz and it's the number of cycles per second of an AC waveform and that the periodic time is the time taken for one complete cycle of the waveform all it remains for this video is to say thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music] hello and welcome to this electrical
+[00:10] principals training video in this video we're going to continue considering the
+[00:14] subject of AC electricity and in particular we're going to analyze an AC
+[00:19] waveform and identify some of the key parts on there so that we can be more
+[00:23] familiar with it and also so that we can answer some of those key exam questions
+[00:28] that we may come across so first things first let's bring up on the screen a
+[00:33] typical AC sine wave so you can see there that we've got that familiar wave
+[00:39] form that familiar shape that we've looked at many many times before now at
+[00:43] this point we're particularly interested in just one section of this waveform so
+[00:47] we know that it keeps on going off to either side of the graph that we've got
+[00:50] on the screen right now but what we're going to do is we're just going to
+[00:53] consider one little element of it to start with so we just look in this part
+[00:59] of the AC waveform now when you look at the AC waveform like this you can see
+[01:04] that it starts at 0 it rises to a maximum positive value it then drops off
+[01:10] back to 0 again goes back to a maximum negative value and then returns to 0
+[01:17] after it's been through every point on that waveform and got back to where it
+[01:22] started from we could say that the waveform has
+[01:25] completed one full cycle so that is one full cycle now bearing that expression
+[01:32] in mind is going to become very important later on in the video when we
+[01:35] talk about frequency so let's have a look at some of the parts of this we're
+[01:41] interested in some key elements of it so we can see here that there is a point
+[01:45] where it reaches a maximum positive value and we can indicate that by
+[01:50] bringing on to the screen now this line here so we can see that the distance
+[01:56] from the horizontal axis the x-axis up to the peak is represented by this blue
+[02:02] line here and this is referred to as the peak value of the waveform so we can
+[02:08] show that that goes and matches up with the peak value right there
+[02:13] not point two-five there we can see it's reaching the peak value so this is
+[02:18] what's referred to as the peak value what you'll also realize though is that
+[02:23] this waveform has to peak values it's got a maximum positive peak and it's got
+[02:27] a maximum negative peak as well now remember in an AC circuit this sine wave
+[02:33] indicates the behavior of the voltage in the current and when we enter the
+[02:37] negative part of the cycle we mustn't think of that as being somehow a smaller
+[02:42] amount of electricity or a lack of electricity of course when we think
+[02:46] about minus figures we normally think about debt we've got a lack of something
+[02:50] but when we're looking at an AC sine wave when we're looking at this
+[02:54] particular waveform we know that the negative part of the cycle just
+[02:59] indicates that the current has simply changed direction so this peak down here
+[03:04] that you can see represents just as much electricity flowing as we've got at this
+[03:09] peak up here it's just in the opposite direction around the circuit if we now
+[03:15] bring in a extension of the line that we just looked at so we can see here that
+[03:20] we've got an extended line we can see that the top of this line reaches the
+[03:25] positive peak at that point in there and the bottom of the line reaches the
+[03:29] negative peak at that value there so the distance from the top of this line to
+[03:35] the bottom of this line in other words the distance from the positive peak to
+[03:39] the negative peak vertically has its own special name as well we refer to that as
+[03:45] the peak to peak value now you may also hear this peak value referred to as
+[03:50] amplitude that is also an expression that's used but it's more common in an
+[03:54] electrical installation to refer to that as the peak value so there's two
+[03:58] important things the peak value and the peak to peak value and it's very
+[04:02] important when we're talking about the peak to peak value many people think
+[04:05] that it is the distance horizontally from this point here over to this point
+[04:09] here or even potentially if we just change our waveform slightly people get
+[04:15] confused and think that the peak to peak value is the distance from here to here
+[04:20] on the same positive peak and may even indicate that on a drawing in an exam if
+[04:25] you get asked an exam question to indicate whether
+[04:28] peak to peak value is it's the vertical distance from here to here not the
+[04:32] horizontal distance from here so here so please bear that in mind if that kind of
+[04:37] question comes up in an exam setting so now we'll turn off our peak to peak line
+[04:43] there so that that's not cluttering up the screen and now we can start to think
+[04:47] about something else we said initially that if we have a starting point a
+[04:53] maximum peak back to zero a negative we come back to zero again then that is one
+[04:58] full cycle now in previous videos in this series we've considered the
+[05:02] horizontal x-axis to represent a turning angle we saw how this waveform is
+[05:08] generated from rotating a conductor inside a magnetic field and we saw that
+[05:13] the x axis represented an angle that had been passed through now for the purposes
+[05:19] of the graph that we've got here we're going to consider now this x axis this
+[05:22] horizontal axis to represent time passing by so the time it takes to get
+[05:28] from here at zero to here at one is one second so for the waveform that we've
+[05:34] currently got on the screen you can see that one complete cycle is completed in
+[05:39] the space of one second and the number of cycles that occur in the space of one
+[05:46] second is what we refer to as the frequency of the waveform and frequency
+[05:51] of course is measured in Hertz so we can start now to adjust our waveform and see
+[05:58] how that affects the frequency if we make our waveform so that it completes
+[06:02] two full cycles in the space of one second so you see there we're going from
+[06:08] zero to maximum positive zero to maximum negative to zero we're doing that twice
+[06:12] in the space of one second well that means now is we have a
+[06:16] frequency of two Hertz and likewise we could continue to adjust this so we
+[06:22] could set this to any value we wanted so here we're completing that waveform ten
+[06:27] times in a second which means that we have got ten cycles per second which
+[06:32] gives us a frequency of ten Hertz again a typical exam question may be how
+[06:38] would you define frequency and the answer in this context
+[06:42] is it is the number of complete cycles per second of an AC waveform now another
+[06:48] thing that were particularly interested in with this waveform if we set our
+[06:52] frequency back down to one again is how long it takes for one waveform to be
+[06:58] completed so here we can see that one waveform is completed in the space of
+[07:03] one second therefore we say that this waveform has a periodic time of one
+[07:10] second in other words it takes one second for
+[07:13] one complete cycle to be completed if we now change the frequency of this
+[07:20] waveform to two you can see there we're completing two cycles in the space of
+[07:24] one second so the question that naturally arises is what is the periodic
+[07:29] time of this waveform well the periodic time of this waveform
+[07:32] is going to be the time it takes to get from zero to maximum positive to zero to
+[07:37] maximum negative and to zero again and you can see there that that is taking
+[07:41] place in half of a second not 0.5 of a second
+[07:46] so therefore the periodic time of this waveform is not 0.5 of a second now
+[07:54] there are it's a relationship between these values between frequency and
+[07:58] periodic time so if we go over to the blackboard now we'll put that formula up
+[08:03] on the board so you can see there the formula that we're interested in is f
+[08:06] equals 1 over T with a little p in the subscript which stands for periodic time
+[08:12] so again if we break this down we can see that the F in this formula stands
+[08:16] for frequency we can see that the T with a P in the subscript indicates periodic
+[08:23] time and we've got this number 1 that is above the line here so what do you think
+[08:27] that one represents well in the context of this video that one as we've seen
+[08:32] represents the time passing of 1 second so the frequency of a wave form is equal
+[08:39] to 1 second divided by the periodic time of the wave form which kind of makes
+[08:45] sense when you think about it because if we look back to the graph now you can
+[08:48] see here that if we've got a periodic time for this wave form of Nohr
+[08:53] two point five seconds at this point here nor point five seconds we can see
+[08:58] that that one second if we divide it by the number of nought point fives that
+[09:03] are in that one second we know that we're going to get an answer of two
+[09:06] therefore one divided by the periodic time 1 divided by not point five gives
+[09:11] us a frequency of two and we can start to adjust the frequency and see that
+[09:16] will still hold true so here we've got a frequency of four we've got four
+[09:20] complete cycles in space of one second and we can see there that the periodic
+[09:24] time of this waveform is naught point two five one second divided by not 0.25
+[09:31] will give us a frequency of four now if you know a thing or two about maths you
+[09:36] will now know that there is an alternative rearrangement of this
+[09:39] formula and it will look like this on the blackboard that TP will be equal to
+[09:44] one divided by F so you can see here that all we've done is just swapped
+[09:50] those two values over the periodic time and the frequency which again makes
+[09:55] perfect sense if we look at the wave form on the screen now we can see that
+[09:58] we've got a frequency here of four Hertz and if we do one second divided by four
+[10:05] we end up with naught point two five therefore one divided by a frequency of
+[10:10] four will give us naught point two five seconds so once again we can see very
+[10:16] clearly on the screen if we go back to the blackboard that relationship TP is
+[10:19] equal to one divided by F which means that we have a situation where F stands
+[10:26] for frequency measured in Hertz and T P stands for periodic time which is
+[10:33] measured in seconds and we assign that the unit symbol s so just some key
+[10:39] points to take away from this video we've seen the definitions of the peak
+[10:42] value of an AC waveform the peak to peak value of an AC waveform
+[10:47] don't forget frequency is measured in hertz and it's the number of cycles per
+[10:51] second of an AC waveform and that the periodic time is the time taken for one
+[10:56] complete cycle of the waveform all it remains for this video is to say thank
+[11:01] you very much for watching
+[11:05] [Music]
+[11:17] [Music]

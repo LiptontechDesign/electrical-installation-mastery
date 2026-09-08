@@ -1,0 +1,182 @@
+# What is the Relationship Between Voltage, Resistance and Current?
+# https://www.youtube.com/watch?v=zu-l3tq7oHU
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to start looking at very simple DC circuits and quite specifically we're going to look at what happens to the current inside a circuit as we change the voltage that we've applied to it and when we change the resistance within the circuit we're going to see how the current behaves now this is really important out in the real world when were installing circuits and when we're designing them because we need to be able to calculate how much current will flow through them under different conditions but also it's really important that we understand what we're doing here so that we can pass our exams now this is going to lead onto additional material additional videos regarding specific mathematical formulas that we need to know about so hopefully this will be very very helpful so we've got our locked Ronix board ready to go with our plugin components we've got our DC power supply that we've rigged up here this is how we're going to change the input voltage into the circuit so we will adjust voltage and resistance and we'll see how that affects the measured current let's get started so as we said we're just going to very briefly investigate in this video what happens to current in a DC circuit as we change the value of resistance within the circuit and as we change the voltage applied so let's have a quick look at this then so first of all we've got our power supply over here so this device is outputting a DC voltage for us and we can set this to whatever value we want up to 30 volts I've got this set to about 2 volts at the moment so I'm just going to plug in my meter to double-check that voltage output so I'm going to set this to measure volts and I'm going to test and make sure that I've got about 2 volts coming out of there that's great so I've got 2 volts coming out of my power supply so now what I'm going to do is I'm going to take those 2 volts that I've got coming out of the power supply and I'm going to connect them into our circuit so here we've got a circuit that we've connected our two volt supply up to we're connecting this to a 10 ohm resistor and we're going to see how much current is flowing around the circuit here so in order to measure how much current we've got flowing around the circuit we now need to connect our multimeter in now it's currently set to measure DC voltage but what I'm going to do now is spin this around and set it to measure DC current so this is now measuring DC current now a key point to remember from this video is that when we connect up an ammeter we connect an ammeter in series with the load so what that means is that we're going to take a link out of this circuit because what we need to do is divert the current out of the circuit it needs to go through the meter and then back into the circuit again now it's of note that I'm measuring the current over here because actually in this circuit it wouldn't matter where I measure current if I measured it over here or over here I'm going to get exactly the same value in both places so let's have a look at this so first of all I'm going to make sure that I've got my leads in the right terminal so we always have one in the common now I've got this set to measure up to 10 amps because it might just go above the 200 milliamps range so we'll just double-check this so we'll plug this into our 10 amp socket as well and then we'll connect this into the circuit so as you can see there we've got our current measurement so we've got current flowing now out of the circuit through the meter and back into the circuit again so the meter is forming part of the circuit and we are measuring naught point 1 9 amps naught point 1 9 amps so we'll keep this set up as it is and we're just going to tweak one very important thing so currently we've got 10 ohms connected into the circuit we're going to remove that 10 ohm resistor notice now the circuit has been broken there is no current flowing what I'm going to do is I'm gonna put in a larger value of resistance so in this case I'm going to put in an 18 own resistor let's see what happens to our current as we put in the larger value of resistance so as you can see there the resistance has increased and the current has decreased so as we've increased the resistance the current has gone up by a little bit up to naught point 1 1 now let's move back and have a quick look at a slightly different value of resistor so we're going to remove our 18 ohm resistor and in its place we're going to put a 27 ohm resistor and look at that we've increased the resistance again and once again the current has dropped down so by increasing the resistance in the circuit we can see that the current is decreasing so what we're going to do now is look at the other thing that we can change in this circuit so we change the resistance but what we haven't changed is the input voltage down here this has been 2 volts throughout the whole of this experiment so let's go back to our original 10 ohm resistor and we should get back to our original value there okay so we're somewhere close what we're now going to do is we're going to look at what happens as we increase the voltage so what we'll do now is we'll change our voltage from our power supply here we're going to change that so I'm going to increase the voltage now we won't worry too much about what the exact value is here but you'll see from this needle that I'm going to increase the voltage now as the voltage increases watch what happens to the current so I'm going to increase the voltage what do you think is going to happen to the current let's see so as the voltage is creeping up and up and up you can see that the current is also creeping up and so that leads us to another nice relationship as we increase voltage we increase current so just to summarize the key points from this video we can see that as we kept voltage the same into the circuit but increased the resistance the current reduced so by increasing resistance we reduce current when we kept the resistance the same but we increased the voltage inputs when we change the voltage input we could see that what was happening was that the current was increasing so just to summarize if you increase voltage you increase current if you increase resistance you decrease current the other key point is to remember from this video is that when you connect an ammeter you connect it up in series in the next video we'll put this on a slightly more mathematical footing and we'll come up with a formula that will help us to understand how we can actually calculate what the current will be in these circuits [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to start looking at very
+[00:15] simple DC circuits and quite
+[00:17] specifically we're going to look at what
+[00:19] happens to the current inside a circuit
+[00:22] as we change the voltage that we've
+[00:24] applied to it and when we change the
+[00:26] resistance within the circuit we're
+[00:28] going to see how the current behaves now
+[00:30] this is really important out in the real
+[00:32] world when were installing circuits and
+[00:34] when we're designing them because we
+[00:35] need to be able to calculate how much
+[00:36] current will flow through them under
+[00:38] different conditions but also it's
+[00:41] really important that we understand what
+[00:42] we're doing here so that we can pass our
+[00:44] exams now this is going to lead onto
+[00:46] additional material additional videos
+[00:48] regarding specific mathematical formulas
+[00:50] that we need to know about so hopefully
+[00:53] this will be very very helpful so we've
+[00:55] got our locked Ronix board ready to go
+[00:57] with our plugin components we've got our
+[01:00] DC power supply that we've rigged up
+[01:02] here this is how we're going to change
+[01:03] the input voltage into the circuit so we
+[01:07] will adjust voltage and resistance and
+[01:10] we'll see how that affects the measured
+[01:12] current let's get started so as we said
+[01:19] we're just going to very briefly
+[01:20] investigate in this video what happens
+[01:22] to current in a DC circuit as we change
+[01:26] the value of resistance within the
+[01:28] circuit and as we change the voltage
+[01:30] applied so let's have a quick look at
+[01:32] this then so first of all we've got our
+[01:34] power supply over here so this device is
+[01:37] outputting a DC voltage for us and we
+[01:39] can set this to whatever value we want
+[01:41] up to 30 volts I've got this set to
+[01:44] about 2 volts at the moment so I'm just
+[01:47] going to plug in my meter to
+[01:50] double-check that voltage output so I'm
+[01:52] going to set this to measure volts and
+[01:55] I'm going to test and make sure that
+[01:58] I've got about 2 volts coming out of
+[02:00] there that's great so I've got 2 volts
+[02:02] coming out of my power supply so now
+[02:07] what I'm going to do is I'm going to
+[02:08] take those 2 volts that I've got coming
+[02:10] out of the power supply and I'm going to
+[02:12] connect them into our
+[02:13] circuit so here we've got a circuit that
+[02:17] we've connected our two volt supply up
+[02:19] to we're connecting this to a 10 ohm
+[02:21] resistor and we're going to see how much
+[02:23] current is flowing around the circuit
+[02:26] here so in order to measure how much
+[02:30] current we've got flowing around the
+[02:31] circuit we now need to connect our
+[02:33] multimeter in now it's currently set to
+[02:35] measure DC voltage but what I'm going to
+[02:37] do now is spin this around and set it to
+[02:40] measure DC current so this is now
+[02:43] measuring DC current now a key point to
+[02:45] remember from this video is that when we
+[02:47] connect up an ammeter we connect an
+[02:50] ammeter in series with the load so what
+[02:54] that means is that we're going to take a
+[02:56] link out of this circuit because what we
+[02:58] need to do is divert the current out of
+[03:01] the circuit it needs to go through the
+[03:03] meter and then back into the circuit
+[03:06] again now it's of note that I'm
+[03:08] measuring the current over here because
+[03:10] actually in this circuit it wouldn't
+[03:12] matter where I measure current if I
+[03:13] measured it over here or over here I'm
+[03:16] going to get exactly the same value in
+[03:19] both places so let's have a look at this
+[03:21] so first of all I'm going to make sure
+[03:23] that I've got my leads in the right
+[03:25] terminal so we always have one in the
+[03:27] common now I've got this set to measure
+[03:29] up to 10 amps because it might just go
+[03:34] above the 200 milliamps range so we'll
+[03:36] just double-check this so we'll plug
+[03:38] this into our 10 amp socket as well and
+[03:41] then we'll connect this into the circuit
+[03:50] so as you can see there we've got our
+[03:54] current measurement so we've got current
+[03:56] flowing now out of the circuit through
+[03:58] the meter and back into the circuit
+[03:59] again so the meter is forming part of
+[04:02] the circuit and we are measuring naught
+[04:05] point 1 9 amps naught point 1 9 amps so
+[04:09] we'll keep this set up as it is and
+[04:11] we're just going to tweak one very
+[04:13] important thing so currently we've got
+[04:15] 10 ohms connected into the circuit we're
+[04:18] going to remove that 10 ohm resistor
+[04:21] notice now the circuit has been broken
+[04:23] there is no current flowing
+[04:25] what I'm going to do is I'm gonna put in
+[04:26] a larger value of resistance so in this
+[04:29] case I'm going to put in an 18 own
+[04:31] resistor let's see what happens to our
+[04:34] current as we put in the larger value of
+[04:37] resistance so as you can see there the
+[04:42] resistance has increased and the current
+[04:46] has decreased so as we've increased the
+[04:49] resistance the current has gone up by a
+[04:52] little bit up to naught point 1 1 now
+[04:55] let's move back and have a quick look at
+[04:57] a slightly different value of resistor
+[04:59] so we're going to remove our 18 ohm
+[05:00] resistor and in its place we're going to
+[05:03] put a 27 ohm resistor and look at that
+[05:07] we've increased the resistance again and
+[05:10] once again the current has dropped down
+[05:12] so by increasing the resistance in the
+[05:14] circuit we can see that the current is
+[05:16] decreasing so what we're going to do now
+[05:21] is look at the other thing that we can
+[05:23] change in this circuit so we change the
+[05:25] resistance but what we haven't changed
+[05:27] is the input voltage down here this has
+[05:30] been 2 volts throughout the whole of
+[05:32] this experiment so let's go back to our
+[05:34] original 10 ohm resistor and we should
+[05:38] get back to our original value there
+[05:41] okay so we're somewhere close what we're
+[05:43] now going to do is we're going to look
+[05:45] at what happens as we increase the
+[05:48] voltage so what we'll do now is we'll
+[05:50] change our voltage from our power supply
+[05:53] here we're going to change that so I'm
+[05:56] going to increase the voltage now we
+[05:58] won't worry too much about what the
+[05:59] exact value is here but you'll see from
+[06:01] this needle that I'm going to increase
+[06:02] the voltage now as the voltage increases
+[06:05] watch what happens to the current so I'm
+[06:10] going to increase the voltage what do
+[06:12] you think is going to happen to the current let's see so as the voltage is
+[06:18] creeping up and up and up you can see
+[06:21] that the current is also creeping up and
+[06:26] so that leads us to another nice
+[06:28] relationship as we increase voltage we
+[06:31] increase current so just to summarize
+[06:35] the key points from this video we can
+[06:37] see that as we kept
+[06:39] voltage the same into the circuit but
+[06:42] increased the resistance the current
+[06:44] reduced so by increasing resistance we
+[06:47] reduce current when we kept the
+[06:50] resistance the same but we increased the
+[06:53] voltage inputs when we change the
+[06:55] voltage input we could see that what was
+[06:58] happening was that the current was
+[07:00] increasing so just to summarize if you
+[07:03] increase voltage you increase current if
+[07:06] you increase resistance you decrease
+[07:10] current the other key point is to
+[07:12] remember from this video is that when
+[07:14] you connect an ammeter you connect it up
+[07:16] in series in the next video we'll put
+[07:19] this on a slightly more mathematical
+[07:21] footing and we'll come up with a formula
+[07:22] that will help us to understand how we
+[07:24] can actually calculate what the current
+[07:27] will be in these circuits
+[07:31] [Music]

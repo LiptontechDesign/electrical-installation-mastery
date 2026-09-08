@@ -1,0 +1,605 @@
+# The Complete Guide to MCBs - Miniature Circuit Breakers
+# https://www.youtube.com/watch?v=iVZhVeFoSfk
+
+- The MCB or miniature circuit breaker has now become the fundamental means of protecting our electrical circuits. However, along with this rise in popularity has also come a rise in misunderstandings as to how they work and what they will and won't protect against. In order to bust some myths from industry about MCBs wide open and to explain them simply and clearly, we created a free training package to help you with your CPD. This is a video from that training package that we've decided to release to our wider audience. We really hope it helps your understanding of this subject and if you'd like to complete the course and receive an accredited certificate towards your annual CPD, then please click the link in the description to take you to the relevant webpage. Please note that all the information in this video is taken from the original 18th Edition of the Wiring Regulations unless otherwise stated. It's always a good idea to check the latest version, depending on when you're watching this. In this CPD package, we'll be looking at circuit protection in its various forms and we'll be illustrating some of the key points using these components from Lewden. Now, first of all, let's get right down to fundamentals and think about what we need to protect our circuits from. When we install a conductor and run electricity through it, the conductor starts to get hot. Now, generally speaking, this isn't damaging to the conductor itself. Copper wires can carry a surprisingly high amount of current before it literally melts. However, the heat can cause damage to the circuit in other ways, such as melting the insulation that surrounds the conductors and the heat can even damage the fabric of the building, even igniting a fire, and it's these things that we need to protect against. So what's likely to cause this overheating of a conductor? Well, there's a couple of main ways that this could happen. The first is that the circuit could become overloaded by having too many loads connected. Now, this isn't likely to happen for every circuit. For example, a lighting circuit with a fixed number of fittings connected is never likely to become overloaded. However, it is possible that this could happen for a circuit feeding a number of socket outlets as it's difficult to predict exactly what will be plugged in or it could happen on a distribution circuit with lots of smaller circuits connected, however it happens. If too many loads are connected to a circuit, then too much current can flow through the conductors, causing overheating and leading to the situations that we described earlier. Another way that a conductor can become overheated is by a fault. Now, this can occur in one of two ways. There can be a short circuit, which is where two live conductors touch each other, so a line and neutral in the single face circuit or two lines in a three-face circuit or there can be an earth fault of negligible impedance where a live conductor makes an earth connection in some way. That expression, negligible impedance is an important one. Let's try and unravel it a bit. Negligible in this context just means really, really small and impedance can kind of be thought of as resistance in an AC circuit. More accurately, it's the total opposition to current flow in an AC circuit. So an earth fault of negligible impedance just means line on earth touching each other to create a circuit with a really small resistance. There are earth faults with higher impedances, such as when a person gets a shock to earth, but that will require a different device for protection called an RCD. For more information on this subject, please see a separate CPD we've created on that subject in association with Lewden. So we need to protect against overload and faults of negligible impedance. The device most commonly used to protect against these types of fault is the miniature circuit breaker, which is normally referred to as an MCB, but how does it offer this protection? Well, to understand this a little better, we're going to look inside an MCB. In here, you can see that there's a couple of different components that will make the device operate. The current flows through here across this strip, which is bimetallic and it also flows through this coil here. Now, these two components are actually monitoring for two different kinds of fault. The bimetallic strip looks out for overload and the coil is monitoring for faults, but why are there two different components for this? Well, it's because we want the device to behave differently when the different faults occur. Think about it, if a circuit ever gets overloaded, it's likely to only be overloaded for a short period of time and probably only quite occasionally. Now, in the real world, this short period of occasional overload is very unlikely to cause any damage to either the cable or the property. So you don't want the protective device to overreact when there's no real danger. Bearing in mind, of course, that small sustained overloads can be damaging to an installation and should be corrected at the design stage. So how does the bimetallic strip protect against overload without overreacting? Well, as it's bimetallic, it's made up of two different pieces of metal joined together. The two metals expand at different rates when they get hot and because they're joined together, this means that one side of the strip expands more than the other side, causing the strip to bend. Once this bending reaches a certain point, the breaker trips and disconnects the outgoing circuit. This is what's referred to as the thermal part of the circuit breaker. It's relying on the temperature caused by the current to protect the circuit. Now, this means that the bimetallic strip is relatively slow to react. It takes a bit of time for this bending process to happen, but it does happen more quickly when the current is higher. So this means that if the current goes a little bit too high for just a little while, the breaker won't trip, but what about if way too much current flows? For example, if the fault of negligible impedance that we mentioned earlier occurs. While Ohm's Law tells us that if you decrease resistance, you increase current. So when a fault of negligible impedance or very low resistance occurs, in this case, potentially hundreds or even thousands of amps could be flowing through the circuit, and this is going to cause the conductors to heat up really quickly, causing damage to the cables and possibly even starting a fire. Now, under this circumstance, we don't want to rely on the bimetallic strips slowly bending and thinking about tripping at some distant point in the future. We want that circuit disconnecting as quickly as possible and that's where the other component in the MTB comes into play and that's this coil that you can see here. So what does this do? Well, one of the other things that happens when electricity flows through a conductor is that a magnetic field appears around the conductor. If that conductor is wrapped into a coil, it creates a more intense magnetic field that looks a bit like the magnetic field around a bar magnet. This can be used to attract a piece of magnetic material into the coil, this type of setup is usually referred to as a solanoid. Now, the strength of the magnetic field depends on the amount of current flowing through the conductor. The more current, the stronger the magnetic field. When a fault of negligible impedance occurs and huge current flows, the magnetic field around the coil becomes very strong, very quickly, and that magnetic field attracts this plunger into the coil, tripping the breaker and disconnecting the coil at incredible speed. In fact, the speed at which it must disconnect in the event of a fault given in section 411.3.2 of BS 7671, and typical values include 0.4 seconds for a circuit fed from a TN supply up to and including 63 amp for sockets or 32 amps for fixed connected current using equipment and five seconds for a distribution circuit. The values are slightly lower for TT systems, but you can see that most circuits need to disconnect very quickly in the event of a fault. So you can see that the MCB uses two different components internally to protect against different kinds of fault, clever, isn't it? Now, we can actually see this behavior displayed in BS 7671 in Appendix 3, and we'll look first of all at Figure 3A4. This graph shows what's often called the time current characteristics of a circuit breaker and it's basically telling us how quickly a type B circuit breaker will operate when a certain amount of current flows through it. So let's take the 6 amp breaker as an example. Now, just before we start analyzing this graph, it's important to understand that this graph is drawn with what's called a logarithmic scale. Sometimes this is referred to as a log-log scale. Now, this kind of scale has some truly beautiful mathematical properties that are beyond the scope of this video, but basically, it's used here because it allows us to get a lot of information into a compact graph. All you've got to bear in mind is that looking along the bottom here, you can see that the scale changes as you move along. So the first section goes up in ones, the second goes up in tens, then hundreds, and so on. So you just need to make sure you take that into account when reading off values from it. Now, looking at our 6 amp MCB, you can see it's made up of two distinct parts. The first is this curving section and the second is this straight part here. The curving part represents the tripping action caused by the thermal protection of the breaker in the bimetallic strip and the straight part here is the magnetic protection formed by the electromagnetic coil. If we look at the line of current representing 6 amps here, you can see that it doesn't meet our 6 amp circuit breaker, which is what you'd expect because 6 amps is the nominal current of the circuit breaker. In other words, it's how much current can pass through it without ever causing it to trip, but let's see what happens when 9 amps flows through the MCB. You can see it's taking 2,000 seconds to trip, that's just over half an hour, so we definitely can't accuse the MCB of overreacting. If we crank the current up a bit to 20 amps, you can see there that the MCB is now going to trip in 30 seconds, which is appreciably quicker, and once we're up to 30 amps, which is five times the nominal current and important value, we've hit the magnetic part of the MCB and it's going to trip in 0.1 second or instantaneously. So we can see how useful this graph will be in telling us the disconnection time of a circuit, but it also nicely leads into a discussion of the different types of MCB, in other words, types B, C, and D. Now, you'll sometimes hear people say that type B is for domestic work, type C is for commercial application, and type D is for industrial installations. Now, there is a kernel of truth on this and table 7.2.7ii in the Onsite Guide at first glance seems to bear this out, but that's not what determines what types of MCB we install, and in fact, looking more closely at the table, we see a hint of a deeper story where it references fluorescent lighting, motors, transformers, and other loads. Now, let's explore this by comparing the time curve graphs of a type B to a type C. We can see that the thermal curvy part is fairly similar at the top, but the bottom end is kind of anchored to the straight magnetic part, which is much further to the right, showing that it's going to take more current to make the device trip instantaneously. 60 amps, in the case of the 6 amp MCB or 10 times the nominal rating. So it requires a worse fault to make it trip quickly when a fault occurs. Also, if we flip the page in BS 7671, we see that a D type curve is even further to the right, requiring 120 amps to get it to disconnect instantaneously. So you can kind of understand why people may feel the need to keep these types of MCBs out of people's homes. So if type C and D need more current to operate quickly in the event of a fault, then what is the point of them and why might people think they're required in commercial or industrial installations? Well, it boils down to what kind of load they're protecting. In electrical installation, there's two main types of load, one is resistive and the other is inductive. Resistive loads include most common heating devices, so older and candescent lamps, panel heaters, kettles, ovens, most hubs, and things like that. Then you have inductive loads, these are loads that contain coils of wire, so things like motors, transformers, and old fluorescent lighting. Now, when you connect to resistive load to the electrical supply, it starts drawing the current it requires and will continue to pull the same amount of current until it turns off. However, inductive loads change their opposition to current flow when they start up. They start off as just a coil of low resistance connected to the supply. This causes a lot of current to flow to the load initially, but then because an inductive load is a coil, it quickly develops what's called inductive reactants, which also opposes current flow into the coil, thus reducing the current that the machine draws. This phenomenon is often referred to as inrush current and its value can be quite high, often 20 times higher than the running current. So if a motor draws 12 amps under normal operation, the inrush current could be, let's say 15 times that for a split second. So if you've protected the circuit feeding that motor with say a B type 20 amp circuit breaker, for a brief moment, 180 amps will flow through that breaker. Looking at how our B20 MCB will behave when 180 amps flows, we can see it will trip within 0.1 of a second. So if we swap the B type MCB out for a C type, then we can see that when 180 amps flows, it's going to take somewhere in the region of six seconds to trip, more than enough time for the motor to drop down to its running current. So why does this slight misunderstanding about type B for domestic, type C for commercial, and type D for industrial persist? Well, because of the types of load that are connected in these environments, it's pretty unusual to have heavy motors connected in your home unless you have some pretty specific hobbies or perhaps a (indistinct) with a retracting tennis court/missile silo. However, that's not to say that you'll never need to install a C type in a domestic property. I used to live in a house that had been rewired with radial socket circuits instead of rings and one day, I treated myself to a brand new chop saw. I brought it home, plugged it in, and pretty much every other time I started it up, it would trip the MCB of the circuit it was connected to. Now, the problem didn't lie with a faulty chop saw, it lay with the B type circuit breaker feeding it. The inrush current into the motor of the saw was tripping the MCB, so I got the MCB swapped over for a C type and it prevented this problem. So if CND types prevent problems with inrush current as discussed, then why don't we just install D types everywhere and then we never need to worry about inrush current no matter what the load is. Well, as we know in this life and in particular in the electrical industry, you don't get something for nothing. So what are we losing in order to avoid nuisance tripping from inrush current? Well, if we think back to our graphs that we looked at earlier, remember that it takes a higher current to achieve that instantaneous disconnection time that we need under fault conditions. So in order to guarantee that a high enough current will flow when say an earth fault of negligible impedance occurs, we need to make sure that that impedance is indeed negligible enough. In other words, what changes is our maximum earth fault loop impedance value or ZS value? Turning to table 41.3, we can see there we've got the maximum earth fault loop impedance values for circuit breakers that ensures our circuits will achieve 0.4 second and five seconds disconnection times. Let's stick with the 20 amp circuit breaker that we were using as an example earlier. If it's a B type, then the maximum ZS value is 2.19 ohms. However, if we decide to change the breaker to a C type, you can see that the maximum ZS is now reduced to 1.09 ohms, then if we change it to a D type, we can see that to achieve a 0.4 second disconnection time, you've got a maximum ZS of 0.55 ohms, but why is that? Well, the thing that connects the graphs we looked at earlier and the table we're looking at here is Ohm's Law. Now, if you look at Ohm's Law and the best way to remember it is as you can see on the screen here, you'll remember that current is inversely proportional to resistance. In other words, when resistance goes up, current goes down. Likewise, when resistance goes down, current goes up. Now, we apply this principle when an earth vault occurs to find the amount of current that will flow or the prospective fault current by taking the nominal voltage and dividing it by the impedance of the circuit. So the formula looks a bit more like this now. The worst place for the fault to occur in order to disconnect quickly is at the furthest point electrically as this is where the impedance will be the highest. Now, looking back to table 3A4, we can see there that to disconnect our B20 circuit breaker in 0.4 seconds, we need 100 amps to flow. So that means in the very worst circumstances, the circuit can't have an impedance of more than 2.3 ohms because according to Ohm's Law, 230 volts divided by 2.3 ohms gives us that 100 amps. Then looking at the C20 MTB in figure 3A5, you can see that we are going to need 200 amps to get it to disconnect in 0.4 seconds. So to get that amount of current to flow, we'll need to make sure that the impedance of the circuit doesn't go above 1.15 ohms because 230 volts divided by 1.15 ohms gives us 200 amps. Can you see where we're going next? Looking at a 20-amp type D, you can see that to achieve a disconnection time of 0.4 seconds, we actually need to have a current flow of 400 amps. Now, to get that value out of Ohm's Law, we need to divide 230 volts by 0.575 ohms. So by installing a type C or type D circuit breaker, we're gaining the ability to withstand inrush current by sacrificing the amount of impedance that the circuit can contain. The real life impact of this is that we may need to reduce the impedance of the circuit of the design stage by perhaps reducing the length of the circuit, which is generally impractical as electrical designers usually don't make cables longer than they need to be or more likely increasing the cross-sectional areas of the conductors. Now, just a small point here, I'm sure that the eagle-eyed among you may well have spotted that the values that I calculated didn't match up with the values in table 41.3, and that's because these values have an additional calculation done to them using a factor called Cmin, which has a value of 0.95. So taking the three numbers that I calculated from Ohm's Law and multiplying them by this factor of 0.95, we come out with the three values that are found in table 41.3, allowing for rounding to two decimal places. So why is this used to reduce these values even further? Well, of course, we've performed our Ohm's Law calculation using the nominal UK voltage of 230 volts. However, this value can fluctuate up as well as down. So that means that our circuit we're calculating for may be connected to a voltage of as low as 216 volts. If that's the case, then when a fault occurs, according to Ohm's Law, the current flow will be lower, meaning that the device could react more slowly. By applying a correction factor of 0.95 to the ZS value, it means that the maximum earth fault loop impedance will have to be smaller still, thus allowing circuits to remain compliant even if they're connected to a supply with a lower than typical voltage. Now, one really interesting point arises when we look at manufacturer's data compared with the information in BS 7671 for the time it takes MCBs to react when too much current is flowing. If we look at this graph here that's been published by Lewden, we can see that rather than a single line showing how the MCB will behave, there's kind of a zone instead and what does this indicate? Well, BSCN 60898-1 outlines testing criteria for MCBs to make sure that they perform to acceptable requirements. However, rather than setting specific values that the MCBs must meet, they set an upper and a lower limit. So for a B type MCB, it must operate instantaneously when a current between three times and five times the nominal rating of the breaker passes through it. However, the ZS values and the time curve characteristics in BSM 6 and 1 are based on the worst case five times nominal current rating, but manufacturers can engineer their MCBs to operate anywhere within that gap. Now, the closer that curve gets to the three times line, the less current needed to trip the device instantaneously, and therefore, because of Ohm's Law, the maximum allowable ZS can actually go up. So if we look at the maximum allowable ZS value for a B20, as we said earlier, according to BS 7671, the value is 2.19 ohms, but in the manufacturer's data from Lewden, their B20 can have a value up to 3.29 ohms to achieve an 0.4 second disconnection time. This means the connected circuit could be a bit longer or perhaps even have a smaller CPC as long as other requirements such as thermal constraints are met. So now. we've established the physical operating differences between different types of MCB. Let's talk a little more about the applications of these different MCB types. The best way to ensure that your MCB won't trip when using a piece of equipment with inrush current is simply to find out what the inrush current is likely to be from the manufacturer of the load that you're connecting and then checking where that current value is on the time current graphs we looked at earlier. However, there are some generic recommendations. Type B MCBs are most suitable for loads that are purely resistive, like most heating loads. Type C MCBs are appropriate for inductive loads such as small motors and old fluorescent lighting circuits, especially where banks have fluorescent lights are turning on together. Type D MCBs are most suitable for heavy inductive loads such as large transformers, x-ray machines, and industrial welding equipment. There's also a little caveat to bear in mind with LED lighting. LEDs do experience inrush current, which can be quite high, which generally only lasts for a very, very short period of time. However, they can trip a B type MCB. Now, we're not talking here about the LED lamps that you'd be installing to a domestic property, but rather things like panel or linear lighting in an office or a warehouse. Good manufacturers will help you out here by stating how many of a specific fitting can be connected to a B, C, or D type MCB without causing it to trip when switch done. This number of fittings can often be surprisingly small when compared to the amount that you might think you could install based on running current alone, and many unwary electrician has been caught out by installing too many LED lights to a circuit, finding the MCB tripping, and then having to rethink the circuit design after the event. Now, so far we've spoken about what happens when a fault occurs at the end of a circuit, as this is the worst case scenario for getting a circuit breaker to operate in the times required by BS 7671. However, there's also another worst case scenario position for a circuit breaker to operate, and that is when a fault occurs right here in a consumer unit or a circuit breaker close to the origin of an installation. Now, at this point, there's no real fear that the fault current won't be high enough to disconnect in the given time. Because the earth fault loop impedance here is so low, it'll create a huge fault current. However, that huge fault current can then become a problem in its own right. The reason being that if too much current passes through a protective device, it can struggle to disconnect the circuit safely, perhaps even causing damage as it attempts to disconnect or even leading to a situation where an arc can pass across the disconnected contact inside the MCB. Now, for that reason, MCBs have a rated short circuit capacity printed on them. This is referred to in the regs as ICN and indicates the maximum fault current that the circuit breaker can interrupt safely. Most circuit breakers have this value printed on them somewhere often in a little box like you can see here. Now, there's a couple of different ratings normally available. One rated at 6,000 amps and one at 10,000 amps, so why the difference? Well, similar to the different types, you'll often hear that 6,000 amp MCBs are for domestic properties and the 10,000 amps are for commercial and industrial and again, there is kind of a grain of truth in this because it's not likely that in a domestic situation, the fault current is likely to be above 6,000 amps due to the nominal voltage being only 230 volts. However, in a commercial or industrial setting, the installation is likely to be closer to the supply transformer giving a lower ZS value coupled with a higher voltage of 400 volts on a three-phase system, which combined to create a higher fault current. Of course, the right thing to do is to calculate the prospective fault current at the design stage, specify the correct rating, and then confirm through testing on the installation that the ICN rating of the MCB is suitable for the application. It's also important to bear in mind that the ICN rating of a device is the current it will safely disconnect. However, an MCB also has a value called the service short circuit capacity or ICS, which is the maximum fault current the breaker can interrupt safely without loss of performance. In other words, it's how much current it can break and then be guaranteed to trip again the next time there's a fault. According to table 7.2.71 in the Onsite Guide for an MCB with an ICN value of 6 kiloamps, the ICS value is also 6 kiloamps. However, on a 10kA MCB, the ICS rating is 7.5kA, meaning that if your prospective fault current is between 7.5 and 10kA, the MCB may need replacing if a fault occurs in the board. So there we go, we've looked at circuit protection, we've looked at how MCBs work, the differences between B, C, and D type MCBs, and the rated short circuit capacity of them, and we can clearly see that the Lewden range of circuit protection, including its comfortably roomy enclosures has a device to suit every installation. We hope that information was helpful to you, and once again, if you'd now like to complete the training package by answering a few multiple choice questions, then please click the link in the description below and do please check out the rest of our free training packages on the KnowHow page of our website, efixx.co.uk. Thank you very much for watching.
+
+
+[00:00] - The MCB or miniature circuit breaker has now become
+[00:02] the fundamental means of protecting our electrical circuits.
+[00:06] However, along with this rise in popularity has also come
+[00:08] a rise in misunderstandings as to how they work
+[00:11] and what they will and won't protect against.
+[00:13] In order to bust some myths from industry
+[00:15] about MCBs wide open and to explain them simply and clearly,
+[00:19] we created a free training package
+[00:21] to help you with your CPD.
+[00:23] This is a video from that training package
+[00:25] that we've decided to release to our wider audience.
+[00:27] We really hope it helps your understanding of this subject
+[00:29] and if you'd like to complete the course and receive
+[00:31] an accredited certificate towards your annual CPD,
+[00:34] then please click the link in the description
+[00:36] to take you to the relevant webpage.
+[00:38] Please note that all the information in this video is taken
+[00:40] from the original 18th Edition of the Wiring Regulations
+[00:43] unless otherwise stated.
+[00:45] It's always a good idea to check the latest version,
+[00:46] depending on when you're watching this.
+[00:48] In this CPD package, we'll be looking at circuit protection
+[00:51] in its various forms and we'll be illustrating
+[00:54] some of the key points using these components from Lewden.
+[00:58] Now, first of all, let's get right down to fundamentals
+[01:01] and think about what we need to protect our circuits from.
+[01:04] When we install a conductor and run electricity through it,
+[01:07] the conductor starts to get hot.
+[01:10] Now, generally speaking,
+[01:11] this isn't damaging to the conductor itself.
+[01:14] Copper wires can carry a surprisingly high amount of current
+[01:17] before it literally melts.
+[01:19] However, the heat can cause damage to the circuit
+[01:21] in other ways, such as melting the insulation
+[01:24] that surrounds the conductors and the heat can even damage
+[01:27] the fabric of the building, even igniting a fire,
+[01:30] and it's these things that we need to protect against.
+[01:34] So what's likely to cause this overheating of a conductor?
+[01:38] Well, there's a couple of main ways that this could happen.
+[01:40] The first is that the circuit could become overloaded
+[01:43] by having too many loads connected.
+[01:46] Now, this isn't likely to happen for every circuit.
+[01:48] For example, a lighting circuit with a fixed number
+[01:51] of fittings connected is never likely to become overloaded.
+[01:55] However, it is possible that this could happen
+[01:56] for a circuit feeding a number of socket outlets
+[01:59] as it's difficult to predict exactly what will be plugged in
+[02:01] or it could happen on a distribution circuit
+[02:04] with lots of smaller circuits connected, however it happens.
+[02:08] If too many loads are connected to a circuit,
+[02:10] then too much current can flow through the conductors,
+[02:12] causing overheating and leading to the situations
+[02:15] that we described earlier.
+[02:17] Another way that a conductor can become overheated is
+[02:20] by a fault.
+[02:21] Now, this can occur in one of two ways.
+[02:23] There can be a short circuit,
+[02:25] which is where two live conductors touch each other,
+[02:27] so a line and neutral in the single face circuit
+[02:29] or two lines in a three-face circuit
+[02:32] or there can be an earth fault of negligible impedance
+[02:36] where a live conductor makes an earth connection
+[02:38] in some way.
+[02:40] That expression, negligible impedance is an important one.
+[02:43] Let's try and unravel it a bit.
+[02:44] Negligible in this context just means really, really small
+[02:48] and impedance can kind of be thought of as resistance
+[02:51] in an AC circuit.
+[02:52] More accurately, it's the total opposition to current flow
+[02:55] in an AC circuit.
+[02:56] So an earth fault of negligible impedance just means
+[02:59] line on earth touching each other to create a circuit
+[03:02] with a really small resistance.
+[03:04] There are earth faults with higher impedances,
+[03:06] such as when a person gets a shock to earth,
+[03:08] but that will require a different device
+[03:10] for protection called an RCD.
+[03:12] For more information on this subject,
+[03:14] please see a separate CPD we've created on that subject
+[03:17] in association with Lewden.
+[03:19] So we need to protect against overload and faults
+[03:21] of negligible impedance.
+[03:23] The device most commonly used to protect against these types
+[03:25] of fault is the miniature circuit breaker,
+[03:28] which is normally referred to as an MCB,
+[03:31] but how does it offer this protection?
+[03:33] Well, to understand this a little better,
+[03:35] we're going to look inside an MCB.
+[03:37] In here, you can see that there's a couple
+[03:38] of different components that will make the device operate.
+[03:42] The current flows through here across this strip,
+[03:44] which is bimetallic and it also flows
+[03:47] through this coil here.
+[03:49] Now, these two components are actually monitoring
+[03:51] for two different kinds of fault.
+[03:53] The bimetallic strip looks out for overload
+[03:55] and the coil is monitoring for faults,
+[03:58] but why are there two different components for this?
+[04:01] Well, it's because we want the device to behave differently
+[04:03] when the different faults occur.
+[04:05] Think about it, if a circuit ever gets overloaded,
+[04:08] it's likely to only be overloaded for a short period of time
+[04:11] and probably only quite occasionally.
+[04:13] Now, in the real world,
+[04:14] this short period of occasional overload is very unlikely
+[04:17] to cause any damage to either the cable or the property.
+[04:20] So you don't want the protective device to overreact
+[04:23] when there's no real danger.
+[04:25] Bearing in mind, of course,
+[04:26] that small sustained overloads can be damaging
+[04:28] to an installation and should be corrected
+[04:30] at the design stage.
+[04:33] So how does the bimetallic strip protect against overload
+[04:35] without overreacting?
+[04:38] Well, as it's bimetallic, it's made up
+[04:40] of two different pieces of metal joined together.
+[04:43] The two metals expand at different rates when they get hot
+[04:45] and because they're joined together,
+[04:47] this means that one side of the strip expands more
+[04:49] than the other side, causing the strip to bend.
+[04:53] Once this bending reaches a certain point,
+[04:55] the breaker trips and disconnects the outgoing circuit.
+[04:58] This is what's referred to as the thermal part
+[05:01] of the circuit breaker.
+[05:02] It's relying on the temperature caused by the current
+[05:05] to protect the circuit.
+[05:06] Now, this means that the bimetallic strip is
+[05:08] relatively slow to react.
+[05:09] It takes a bit of time for this bending process to happen,
+[05:12] but it does happen more quickly when the current is higher.
+[05:15] So this means that if the current goes a little bit too high
+[05:18] for just a little while, the breaker won't trip,
+[05:21] but what about if way too much current flows?
+[05:24] For example, if the fault of negligible impedance
+[05:26] that we mentioned earlier occurs.
+[05:28] While Ohm's Law tells us that if you decrease resistance,
+[05:31] you increase current.
+[05:32] So when a fault of negligible impedance
+[05:34] or very low resistance occurs,
+[05:36] in this case, potentially hundreds or even thousands
+[05:39] of amps could be flowing through the circuit,
+[05:41] and this is going to cause the conductors
+[05:43] to heat up really quickly, causing damage to the cables
+[05:47] and possibly even starting a fire.
+[05:49] Now, under this circumstance, we don't want to rely
+[05:52] on the bimetallic strips slowly bending
+[05:54] and thinking about tripping at some distant point
+[05:56] in the future.
+[05:58] We want that circuit disconnecting as quickly as possible
+[06:02] and that's where the other component in the MTB comes
+[06:04] into play and that's this coil that you can see here.
+[06:07] So what does this do?
+[06:09] Well, one of the other things that happens
+[06:10] when electricity flows through a conductor is
+[06:12] that a magnetic field appears around the conductor.
+[06:15] If that conductor is wrapped into a coil,
+[06:17] it creates a more intense magnetic field that looks a bit
+[06:20] like the magnetic field around a bar magnet.
+[06:23] This can be used to attract a piece of magnetic material
+[06:26] into the coil, this type of setup is usually referred
+[06:29] to as a solanoid.
+[06:30] Now, the strength of the magnetic field depends
+[06:32] on the amount of current flowing through the conductor.
+[06:35] The more current, the stronger the magnetic field.
+[06:39] When a fault of negligible impedance occurs
+[06:41] and huge current flows, the magnetic field
+[06:44] around the coil becomes very strong, very quickly,
+[06:47] and that magnetic field attracts this plunger into the coil,
+[06:51] tripping the breaker and disconnecting the coil
+[06:53] at incredible speed.
+[06:55] In fact, the speed at which it must disconnect in the event
+[06:57] of a fault given in section 411.3.2 of BS 7671,
+[07:01] and typical values include 0.4 seconds for a circuit fed
+[07:04] from a TN supply up to and including 63 amp for sockets
+[07:07] or 32 amps for fixed connected current using equipment
+[07:10] and five seconds for a distribution circuit.
+[07:13] The values are slightly lower for TT systems,
+[07:15] but you can see that most circuits need
+[07:17] to disconnect very quickly in the event of a fault.
+[07:21] So you can see that the MCB uses
+[07:22] two different components internally
+[07:24] to protect against different kinds of fault,
+[07:26] clever, isn't it?
+[07:28] Now, we can actually see this behavior displayed
+[07:30] in BS 7671 in Appendix 3, and we'll look first of all
+[07:33] at Figure 3A4.
+[07:35] This graph shows what's often called
+[07:37] the time current characteristics of a circuit breaker
+[07:39] and it's basically telling us how quickly
+[07:41] a type B circuit breaker will operate
+[07:43] when a certain amount of current flows through it.
+[07:45] So let's take the 6 amp breaker as an example.
+[07:48] Now, just before we start analyzing this graph,
+[07:49] it's important to understand that this graph is drawn
+[07:52] with what's called a logarithmic scale.
+[07:55] Sometimes this is referred to as a log-log scale.
+[07:58] Now, this kind of scale has
+[07:59] some truly beautiful mathematical properties
+[08:01] that are beyond the scope of this video,
+[08:03] but basically, it's used here because it allows us to get
+[08:05] a lot of information into a compact graph.
+[08:09] All you've got to bear in mind is that looking along
+[08:11] the bottom here, you can see that the scale changes
+[08:14] as you move along.
+[08:15] So the first section goes up in ones,
+[08:17] the second goes up in tens, then hundreds, and so on.
+[08:20] So you just need to make sure you take that into account
+[08:23] when reading off values from it.
+[08:25] Now, looking at our 6 amp MCB,
+[08:27] you can see it's made up of two distinct parts.
+[08:29] The first is this curving section
+[08:31] and the second is this straight part here.
+[08:34] The curving part represents the tripping action caused
+[08:36] by the thermal protection of the breaker
+[08:38] in the bimetallic strip and the straight part here is
+[08:42] the magnetic protection formed by the electromagnetic coil.
+[08:46] If we look at the line of current representing
+[08:47] 6 amps here, you can see that it doesn't meet
+[08:49] our 6 amp circuit breaker, which is what you'd expect
+[08:53] because 6 amps is the nominal current
+[08:55] of the circuit breaker.
+[08:57] In other words, it's how much current can pass through it
+[08:59] without ever causing it to trip, but let's see what happens
+[09:02] when 9 amps flows through the MCB.
+[09:05] You can see it's taking 2,000 seconds to trip,
+[09:07] that's just over half an hour,
+[09:09] so we definitely can't accuse the MCB of overreacting.
+[09:12] If we crank the current up a bit to 20 amps,
+[09:13] you can see there that the MCB is now going to trip
+[09:16] in 30 seconds, which is appreciably quicker,
+[09:18] and once we're up to 30 amps,
+[09:20] which is five times the nominal current and important value,
+[09:23] we've hit the magnetic part of the MCB and it's going
+[09:26] to trip in 0.1 second or instantaneously.
+[09:29] So we can see how useful this graph will be
+[09:32] in telling us the disconnection time of a circuit,
+[09:34] but it also nicely leads into a discussion
+[09:36] of the different types of MCB,
+[09:38] in other words, types B, C, and D.
+[09:40] Now, you'll sometimes hear people say that type B is
+[09:43] for domestic work, type C is for commercial application,
+[09:46] and type D is for industrial installations.
+[09:48] Now, there is a kernel of truth on this
+[09:50] and table 7.2.7ii in the Onsite Guide at first glance seems
+[09:54] to bear this out, but that's not what determines
+[09:56] what types of MCB we install, and in fact,
+[09:59] looking more closely at the table,
+[10:01] we see a hint of a deeper story
+[10:03] where it references fluorescent lighting,
+[10:05] motors, transformers, and other loads.
+[10:08] Now, let's explore this by comparing the time curve graphs
+[10:11] of a type B to a type C.
+[10:13] We can see that the thermal curvy part is fairly similar
+[10:16] at the top, but the bottom end is kind of anchored
+[10:18] to the straight magnetic part,
+[10:20] which is much further to the right,
+[10:22] showing that it's going to take more current
+[10:24] to make the device trip instantaneously.
+[10:26] 60 amps, in the case of the 6 amp MCB or 10 times
+[10:30] the nominal rating.
+[10:31] So it requires a worse fault to make it trip quickly
+[10:34] when a fault occurs.
+[10:35] Also, if we flip the page in BS 7671,
+[10:38] we see that a D type curve is even further to the right,
+[10:41] requiring 120 amps to get it to disconnect instantaneously.
+[10:46] So you can kind of understand why people may feel the need
+[10:48] to keep these types of MCBs out of people's homes.
+[10:52] So if type C and D need more current to operate quickly
+[10:54] in the event of a fault, then what is the point of them
+[10:57] and why might people think they're required
+[10:59] in commercial or industrial installations?
+[11:02] Well, it boils down to what kind of load they're protecting.
+[11:05] In electrical installation, there's two main types of load,
+[11:07] one is resistive and the other is inductive.
+[11:11] Resistive loads include most common heating devices,
+[11:14] so older and candescent lamps, panel heaters, kettles,
+[11:17] ovens, most hubs, and things like that.
+[11:19] Then you have inductive loads,
+[11:21] these are loads that contain coils of wire,
+[11:23] so things like motors, transformers,
+[11:25] and old fluorescent lighting.
+[11:27] Now, when you connect to resistive load
+[11:29] to the electrical supply,
+[11:30] it starts drawing the current it requires
+[11:32] and will continue to pull the same amount of current
+[11:34] until it turns off.
+[11:36] However, inductive loads change their opposition
+[11:39] to current flow when they start up.
+[11:41] They start off as just a coil of low resistance connected
+[11:44] to the supply.
+[11:45] This causes a lot of current to flow to the load initially,
+[11:48] but then because an inductive load is a coil,
+[11:50] it quickly develops what's called inductive reactants,
+[11:53] which also opposes current flow into the coil,
+[11:56] thus reducing the current that the machine draws.
+[12:00] This phenomenon is often referred to as inrush current
+[12:02] and its value can be quite high,
+[12:04] often 20 times higher than the running current.
+[12:07] So if a motor draws 12 amps under normal operation,
+[12:10] the inrush current could be, let's say 15 times that
+[12:13] for a split second.
+[12:15] So if you've protected the circuit feeding that motor
+[12:17] with say a B type 20 amp circuit breaker,
+[12:20] for a brief moment, 180 amps will flow through that breaker.
+[12:24] Looking at how our B20 MCB will behave when 180 amps flows,
+[12:28] we can see it will trip within 0.1 of a second.
+[12:31] So if we swap the B type MCB out for a C type,
+[12:34] then we can see that when 180 amps flows, it's going to take
+[12:36] somewhere in the region of six seconds to trip,
+[12:39] more than enough time for the motor to drop down
+[12:42] to its running current.
+[12:44] So why does this slight misunderstanding
+[12:45] about type B for domestic, type C for commercial,
+[12:47] and type D for industrial persist?
+[12:50] Well, because of the types of load that are connected
+[12:52] in these environments, it's pretty unusual
+[12:55] to have heavy motors connected in your home unless you have
+[12:58] some pretty specific hobbies or perhaps a (indistinct)
+[13:01] with a retracting tennis court/missile silo.
+[13:05] However, that's not to say that you'll never need to install
+[13:08] a C type in a domestic property.
+[13:10] I used to live in a house that had been rewired
+[13:12] with radial socket circuits instead of rings
+[13:14] and one day, I treated myself to a brand new chop saw.
+[13:18] I brought it home, plugged it in,
+[13:20] and pretty much every other time I started it up,
+[13:22] it would trip the MCB of the circuit it was connected to.
+[13:26] Now, the problem didn't lie with a faulty chop saw,
+[13:28] it lay with the B type circuit breaker feeding it.
+[13:32] The inrush current into the motor of the saw was tripping
+[13:35] the MCB, so I got the MCB swapped over for a C type
+[13:39] and it prevented this problem.
+[13:41] So if CND types prevent problems with inrush current
+[13:44] as discussed, then why don't we just install
+[13:45] D types everywhere and then we never need to worry
+[13:48] about inrush current no matter what the load is.
+[13:51] Well, as we know in this life and in particular
+[13:53] in the electrical industry,
+[13:54] you don't get something for nothing.
+[13:57] So what are we losing in order to avoid nuisance tripping
+[14:00] from inrush current?
+[14:02] Well, if we think back to our graphs
+[14:03] that we looked at earlier,
+[14:05] remember that it takes a higher current to achieve
+[14:07] that instantaneous disconnection time that we need
+[14:10] under fault conditions.
+[14:12] So in order to guarantee
+[14:14] that a high enough current will flow when say an earth fault
+[14:17] of negligible impedance occurs, we need to make sure
+[14:20] that that impedance is indeed negligible enough.
+[14:24] In other words,
+[14:25] what changes is our maximum earth fault loop impedance value
+[14:28] or ZS value?
+[14:31] Turning to table 41.3, we can see there
+[14:33] we've got the maximum earth fault loop impedance values
+[14:36] for circuit breakers that ensures our
+[14:38] circuits will achieve 0.4 second
+[14:40] and five seconds disconnection times.
+[14:43] Let's stick with the 20 amp circuit breaker
+[14:45] that we were using as an example earlier.
+[14:47] If it's a B type, then the maximum ZS value is 2.19 ohms.
+[14:51] However, if we decide to change the breaker to a C type,
+[14:54] you can see that the maximum ZS is now reduced to 1.09 ohms,
+[14:58] then if we change it to a D type, we can see that to achieve
+[15:01] a 0.4 second disconnection time,
+[15:03] you've got a maximum ZS of 0.55 ohms, but why is that?
+[15:08] Well, the thing that connects the graphs we looked
+[15:10] at earlier and the table we're looking at here is Ohm's Law.
+[15:14] Now, if you look at Ohm's Law and the best way
+[15:16] to remember it is as you can see on the screen here,
+[15:18] you'll remember that current is inversely proportional
+[15:22] to resistance.
+[15:23] In other words, when resistance goes up, current goes down.
+[15:26] Likewise, when resistance goes down, current goes up.
+[15:30] Now, we apply this principle when an earth vault occurs
+[15:32] to find the amount of current that will flow
+[15:34] or the prospective fault current
+[15:36] by taking the nominal voltage and dividing it
+[15:38] by the impedance of the circuit.
+[15:40] So the formula looks a bit more like this now.
+[15:44] The worst place for the fault to occur in order
+[15:46] to disconnect quickly is at the furthest point electrically
+[15:49] as this is where the impedance will be the highest.
+[15:52] Now, looking back to table 3A4,
+[15:54] we can see there that to disconnect our B20 circuit breaker
+[15:58] in 0.4 seconds, we need 100 amps to flow.
+[16:01] So that means in the very worst circumstances,
+[16:03] the circuit can't have an impedance of more than 2.3 ohms
+[16:07] because according to Ohm's Law,
+[16:09] 230 volts divided by 2.3 ohms gives us that 100 amps.
+[16:13] Then looking at the C20 MTB in figure 3A5,
+[16:16] you can see that we are going to need 200 amps
+[16:19] to get it to disconnect in 0.4 seconds.
+[16:21] So to get that amount of current to flow,
+[16:23] we'll need to make sure that the impedance
+[16:24] of the circuit doesn't go above 1.15 ohms
+[16:27] because 230 volts divided by 1.15 ohms gives us 200 amps.
+[16:32] Can you see where we're going next?
+[16:34] Looking at a 20-amp type D, you can see that to achieve
+[16:36] a disconnection time of 0.4 seconds,
+[16:39] we actually need to have a current flow of 400 amps.
+[16:42] Now, to get that value out of Ohm's Law,
+[16:44] we need to divide 230 volts by 0.575 ohms.
+[16:49] So by installing a type C or type D circuit breaker,
+[16:51] we're gaining the ability to withstand inrush current
+[16:54] by sacrificing the amount of impedance
+[16:56] that the circuit can contain.
+[16:59] The real life impact of this is that we may need to reduce
+[17:01] the impedance of the circuit of the design stage
+[17:03] by perhaps reducing the length of the circuit,
+[17:05] which is generally impractical as electrical designers
+[17:08] usually don't make cables longer than they need to be
+[17:11] or more likely increasing the cross-sectional areas
+[17:14] of the conductors.
+[17:17] Now, just a small point here,
+[17:18] I'm sure that the eagle-eyed among you may well have spotted
+[17:21] that the values that I calculated didn't match up
+[17:24] with the values in table 41.3,
+[17:27] and that's because these values have
+[17:28] an additional calculation done to them using a factor called
+[17:31] Cmin, which has a value of 0.95.
+[17:34] So taking the three numbers that I calculated from Ohm's Law
+[17:37] and multiplying them by this factor of 0.95,
+[17:40] we come out with the three values that are found
+[17:42] in table 41.3, allowing for rounding to two decimal places.
+[17:47] So why is this used to reduce these values even further?
+[17:50] Well, of course, we've performed our Ohm's Law calculation
+[17:52] using the nominal UK voltage of 230 volts.
+[17:55] However, this value can fluctuate up as well as down.
+[17:58] So that means that our circuit we're calculating
+[18:00] for may be connected to a voltage of as low as 216 volts.
+[18:05] If that's the case, then when a fault occurs,
+[18:07] according to Ohm's Law, the current flow will be lower,
+[18:10] meaning that the device could react more slowly.
+[18:13] By applying a correction factor of 0.95 to the ZS value,
+[18:16] it means that the maximum earth fault loop impedance
+[18:18] will have to be smaller still, thus allowing circuits
+[18:21] to remain compliant even if they're connected to a supply
+[18:23] with a lower than typical voltage.
+[18:27] Now, one really interesting point arises when we look
+[18:29] at manufacturer's data compared with the information
+[18:32] in BS 7671 for the time it takes MCBs to react
+[18:36] when too much current is flowing.
+[18:38] If we look at this graph here that's been published
+[18:40] by Lewden, we can see that rather than a single line showing
+[18:43] how the MCB will behave, there's kind of a zone instead
+[18:48] and what does this indicate?
+[18:50] Well, BSCN 60898-1 outlines testing criteria for MCBs
+[18:54] to make sure that they perform to acceptable requirements.
+[18:57] However, rather than setting specific values
+[18:59] that the MCBs must meet,
+[19:01] they set an upper and a lower limit.
+[19:03] So for a B type MCB, it must operate instantaneously
+[19:06] when a current between three times and five times
+[19:09] the nominal rating of the breaker passes through it.
+[19:12] However, the ZS values and the time curve characteristics
+[19:15] in BSM 6 and 1 are based on the worst case
+[19:18] five times nominal current rating,
+[19:20] but manufacturers can engineer their MCBs
+[19:23] to operate anywhere within that gap.
+[19:25] Now, the closer that curve gets to the three times line,
+[19:29] the less current needed to trip the device instantaneously,
+[19:32] and therefore, because of Ohm's Law,
+[19:34] the maximum allowable ZS can actually go up.
+[19:38] So if we look at the maximum allowable ZS value
+[19:40] for a B20, as we said earlier, according to BS 7671,
+[19:43] the value is 2.19 ohms,
+[19:46] but in the manufacturer's data from Lewden,
+[19:48] their B20 can have a value up to 3.29 ohms
+[19:52] to achieve an 0.4 second disconnection time.
+[19:54] This means the connected circuit could be a bit longer
+[19:57] or perhaps even have a smaller CPC as long
+[19:59] as other requirements such as thermal constraints are met.
+[20:04] So now. we've established the physical operating differences
+[20:07] between different types of MCB.
+[20:09] Let's talk a little more about the applications
+[20:12] of these different MCB types.
+[20:15] The best way to ensure that your MCB won't trip
+[20:17] when using a piece of equipment with inrush current is
+[20:19] simply to find out what the inrush current is likely to be
+[20:22] from the manufacturer of the load that you're connecting
+[20:25] and then checking where that current value is
+[20:28] on the time current graphs we looked at earlier.
+[20:31] However, there are some generic recommendations.
+[20:33] Type B MCBs are most suitable for loads
+[20:36] that are purely resistive, like most heating loads.
+[20:39] Type C MCBs are appropriate for inductive loads
+[20:42] such as small motors and old fluorescent lighting circuits,
+[20:45] especially where banks have fluorescent lights are turning
+[20:48] on together.
+[20:49] Type D MCBs are most suitable for heavy inductive loads
+[20:53] such as large transformers, x-ray machines,
+[20:56] and industrial welding equipment.
+[20:59] There's also a little caveat to bear in mind
+[21:01] with LED lighting.
+[21:02] LEDs do experience inrush current,
+[21:04] which can be quite high, which generally only lasts
+[21:07] for a very, very short period of time.
+[21:09] However, they can trip a B type MCB.
+[21:12] Now, we're not talking here about the LED lamps
+[21:14] that you'd be installing to a domestic property,
+[21:16] but rather things like panel or linear lighting
+[21:19] in an office or a warehouse.
+[21:21] Good manufacturers will help you out here by stating
+[21:23] how many of a specific fitting can be connected
+[21:25] to a B, C, or D type MCB without causing it to trip
+[21:29] when switch done.
+[21:31] This number of fittings can often be surprisingly small
+[21:33] when compared to the amount that you might think
+[21:35] you could install based on running current alone,
+[21:38] and many unwary electrician has been caught out
+[21:42] by installing too many LED lights to a circuit,
+[21:45] finding the MCB tripping, and then having to rethink
+[21:48] the circuit design after the event.
+[21:51] Now, so far we've spoken about what happens
+[21:53] when a fault occurs at the end of a circuit,
+[21:56] as this is the worst case scenario for getting
+[21:58] a circuit breaker to operate in the times required
+[22:01] by BS 7671.
+[22:03] However, there's also another worst case scenario position
+[22:05] for a circuit breaker to operate,
+[22:07] and that is when a fault occurs right here
+[22:10] in a consumer unit or a circuit breaker close to the origin
+[22:13] of an installation.
+[22:15] Now, at this point, there's no real fear
+[22:18] that the fault current won't be high enough
+[22:20] to disconnect in the given time.
+[22:21] Because the earth fault loop impedance here is so low,
+[22:24] it'll create a huge fault current.
+[22:27] However, that huge fault current can then become
+[22:30] a problem in its own right.
+[22:31] The reason being that if too much current passes
+[22:34] through a protective device,
+[22:35] it can struggle to disconnect the circuit safely,
+[22:38] perhaps even causing damage as it attempts to disconnect
+[22:41] or even leading to a situation where an arc can pass across
+[22:44] the disconnected contact inside the MCB.
+[22:48] Now, for that reason,
+[22:49] MCBs have a rated short circuit capacity printed on them.
+[22:52] This is referred to in the regs as ICN
+[22:55] and indicates the maximum fault current
+[22:57] that the circuit breaker can interrupt safely.
+[23:00] Most circuit breakers have this value printed on them
+[23:02] somewhere often in a little box like you can see here.
+[23:06] Now, there's a couple
+[23:07] of different ratings normally available.
+[23:08] One rated at 6,000 amps and one at 10,000 amps,
+[23:12] so why the difference?
+[23:13] Well, similar to the different types,
+[23:15] you'll often hear that 6,000 amp MCBs are
+[23:17] for domestic properties and the 10,000 amps are
+[23:19] for commercial and industrial and again,
+[23:22] there is kind of a grain of truth in this
+[23:23] because it's not likely that in a domestic situation,
+[23:27] the fault current is likely to be above 6,000 amps
+[23:30] due to the nominal voltage being only 230 volts.
+[23:33] However, in a commercial or industrial setting,
+[23:35] the installation is likely to be closer
+[23:37] to the supply transformer giving a lower ZS value coupled
+[23:40] with a higher voltage of 400 volts on a three-phase system,
+[23:44] which combined to create a higher fault current.
+[23:47] Of course, the right thing to do is to calculate
+[23:49] the prospective fault current at the design stage,
+[23:52] specify the correct rating, and then confirm through testing
+[23:55] on the installation that the ICN rating of the MCB is
+[23:59] suitable for the application.
+[24:02] It's also important to bear in mind that the ICN rating
+[24:04] of a device is the current it will safely disconnect.
+[24:07] However, an MCB also has a value called
+[24:09] the service short circuit capacity or ICS,
+[24:13] which is the maximum fault current
+[24:15] the breaker can interrupt safely
+[24:16] without loss of performance.
+[24:19] In other words, it's how much current it can break
+[24:21] and then be guaranteed to trip again
+[24:23] the next time there's a fault.
+[24:25] According to table 7.2.71 in the Onsite Guide for an MCB
+[24:29] with an ICN value of 6 kiloamps,
+[24:31] the ICS value is also 6 kiloamps.
+[24:34] However, on a 10kA MCB, the ICS rating is 7.5kA,
+[24:37] meaning that if your prospective fault current is
+[24:39] between 7.5 and 10kA, the MCB may need replacing
+[24:43] if a fault occurs in the board.
+[24:45] So there we go, we've looked at circuit protection,
+[24:48] we've looked at how MCBs work,
+[24:49] the differences between B, C, and D type MCBs,
+[24:52] and the rated short circuit capacity of them,
+[24:55] and we can clearly see that the Lewden range
+[24:57] of circuit protection,
+[24:58] including its comfortably roomy enclosures has a device
+[25:01] to suit every installation.
+[25:03] We hope that information was helpful to you, and once again,
+[25:05] if you'd now like to complete the training package
+[25:07] by answering a few multiple choice questions,
+[25:09] then please click the link in the description below
+[25:11] and do please check out
+[25:12] the rest of our free training packages on the KnowHow page
+[25:15] of our website, efixx.co.uk.
+[25:17] Thank you very much for watching.

@@ -1,0 +1,80 @@
+# Earthing vs. Bonding: What's the Difference?
+# https://www.youtube.com/watch?v=_e1wDq23-w0
+
+earthing and bonding is a term that we often hear in the electrical industry however earthing and bonding are actually two different things I'm James Curnow and in this video I'm going to be asking the question what is the difference between earthing and bonding so first let's have a look at earthing if we look in part two of BS7671 and one we can see that Earthling is defined as connection of the exposed conductive parts of an installation to the main earthing terminal of that installation an exposed conductive parts are defined as a conductive part of equipment which can be touched and which is not normally live but which can become live under fault conditions regulation 411.3.1.1 states that exposed conductive parts shall be connected to a protective conductor under the specific conditions for each type of system of earthing as specified in sections 411.4 to 411.6 also that conductors for protective earthing shall comply with chapter 54 in BS7671 examples of exposed conductive parts includes things like metal wiring accessories metal light fittings metal back boxes appliances the metal casing and appliance such as a cooker for example also the armor of an SWA cable is an exposed conductive part so even if it hasn't been used as a CPC it still needs to be earthed so earthing exposed conductive parts is to provide protection against electric shock under fault conditions so for example if the line conductor was to come into contact with a metal casing of an appliance the circuit protective conductor will provide a path for the current to flow to disconnect the protective device within the disconnecting time and remove the danger the requirements for earthing can be found in chapter 54 of BS7671 now let's have a look at bonding if we look again at part two of BS7671 you may notice that there isn't a definition for the word bonding but we can see that equipotential bonding is defined as an electrical connection maintaining various exposed conductive parts and extraneous conductive parts at substantially the same potential so what is an extraneous conductive part an extraneous conductive part is defined in BS7671 as a conductive part liable to introduce a potential generally Earth potential and not forming part of the installation regulation 411.3.1.2 states that in each consumer's installation within a building extraneous conductive parts liable to introduce a dangerous potential difference shall be connected to the main earthing terminal by protective conductors complying with chapter 54 examples of extraneous conductive parts include things like metal water pipes metal gas pipes structural steel lightning protection conductors oil heating pipes and so on the reason for bonding extraneous conductive parts is to ensure that there are no differences in potential between them under fault conditions so if you imagine the incoming services in a typical house let's say you have a TN electrical system which has an earthing arrangement provided by the DNO then you have an incoming water point and gas pipe which are both metal the metal pipes that come out of the ground will have the ability to introduce an Earth potential and so we bond them back to the main earthing terminal and this is to maintain exposed conductive parts and extraneous conductive parts at substantially the same potential it's important to note that there are other examples of extraneous connected parts other than those listed in BS7671 or on a condition report for example a conductive part that is common between more than one installation would be considered to be extraneous such as communal heating pipe work that serves more than one property for example also other metal pipe work that is in contact with the general mass of Earth would be extraneous now I once had a situation where I was doing an inspection on a property and the incoming water main to the ground floor flat was bonded however there was a second pipe that came out of the ground and ran up the wall to the first floor flat above the second pipe was the water main for the flat above and this was also an extraneous conducted part firstly because it was in contact with the general mass of Earth and secondly because it passed through more than one property and was likely connected to the earthing arrangements for the flat above so this is an example of an extraneous conductive part that may not be obvious at first and so it is important to remember the difference between earthing and bonding when determining where we need to apply protective bonding the requirements for protective bonding can be found in chapter 54 of BS7671 and there are different requirements for different types of earthing system so be sure to check that out so to recap earthing is provided to expose conductive parts which are part of the electrical installation and equipotential bonding is provided to extraneous conductive parts which are not part of the electrical installation this is to ensure that both exposed and extraneous conductive parts are at substantially the same potential at this point I think it would be a good idea for me to mention supplementary bonding which is slightly different supplementary equipotential bonding is a method of providing additional protection against electric shock and supplementary bonding is applied to both exposed and extraneous conductive parts and the requirements for this can be found in regulation 415.2 and in part 7 of BS7671 for special locations now if you're an older Sparky like me you will know that supplementary bonding is something that has changed quite a lot over the years and you'll remember that supplementary bonding is something that we always had to install to at bathrooms and shower rooms until a previous change to section 701 for rooms containing a bath or shower which permitted supplementary bonding to be emitted in locations containing a bath or shower as long as circuits comply with the disconnecting time RCD protection is installed and extraneous connected parts are connected to the protective equipotential bonding however it's important to note that supplementary bonding is still included in BS7671 and there are some special locations where supplementary bonding cannot be emitted for example supplementary bonding is required in swimming pools and other basins agricultural and horticultural premises conducting locations with restricted movement medical locations and temporary electrical installations for structures amusement devices and booths at fairgrounds amusement parks and services to give just a few examples my advice is that if you know that you're going to be working somewhere that is a special location in BS7671 have a read of part seven for special locations now staying on the subject of bonding in a previous video here on the eFIXX channel Joe Robinson asks the question should I bond a ceiling grid and if you haven't seen that video please see that after this video thanks for watching
+
+
+[00:00] earthing and bonding is a term that we often hear in the electrical industry however earthing and
+[00:03] bonding are actually two different things I'm James Curnow and in this video I'm going to be
+[00:07] asking the question what is the difference between earthing and bonding so first let's have a look at
+[00:12] earthing if we look in part two of BS7671 and one we can see that Earthling is defined as connection
+[00:18] of the exposed conductive parts of an installation to the main earthing terminal of that installation
+[00:23] an exposed conductive parts are defined as a conductive part of equipment which can be
+[00:29] touched and which is not normally live but which can become live under fault conditions regulation
+[00:36] 411.3.1.1 states that exposed conductive parts shall be connected to a protective conductor
+[00:43] under the specific conditions for each type of system of earthing as specified in sections 411.4
+[00:49] to 411.6 also that conductors for protective earthing shall comply with chapter 54 in BS7671
+[00:58] examples of exposed conductive parts includes things like metal wiring accessories metal light
+[01:03] fittings metal back boxes appliances the metal casing and appliance such as a cooker for example
+[01:08] also the armor of an SWA cable is an exposed conductive part so even if it hasn't been used
+[01:14] as a CPC it still needs to be earthed so earthing exposed conductive parts is to provide protection
+[01:19] against electric shock under fault conditions so for example if the line conductor was to come into
+[01:25] contact with a metal casing of an appliance the circuit protective conductor will provide
+[01:29] a path for the current to flow to disconnect the protective device within the disconnecting
+[01:34] time and remove the danger the requirements for earthing can be found in chapter 54 of BS7671
+[01:41] now let's have a look at bonding if we look again at part two of BS7671 you may notice
+[01:46] that there isn't a definition for the word bonding but we can see that equipotential
+[01:51] bonding is defined as an electrical connection maintaining various exposed conductive parts and
+[01:58] extraneous conductive parts at substantially the same potential so what is an extraneous
+[02:03] conductive part an extraneous conductive part is defined in BS7671 as a conductive part
+[02:09] liable to introduce a potential generally Earth potential and not forming part of the installation
+[02:16] regulation 411.3.1.2 states that in each consumer's installation within
+[02:21] a building extraneous conductive parts liable to introduce a dangerous potential difference shall
+[02:27] be connected to the main earthing terminal by protective conductors complying with chapter 54
+[02:33] examples of extraneous conductive parts include things like metal water pipes metal gas pipes
+[02:38] structural steel lightning protection conductors oil heating pipes and so on the reason for bonding
+[02:44] extraneous conductive parts is to ensure that there are no differences in potential between
+[02:48] them under fault conditions so if you imagine the incoming services in a typical house let's
+[02:54] say you have a TN electrical system which has an earthing arrangement provided by the DNO
+[03:00] then you have an incoming water point and gas pipe which are both metal the metal pipes that come out
+[03:05] of the ground will have the ability to introduce an Earth potential and so we bond them back to
+[03:10] the main earthing terminal and this is to maintain exposed conductive parts and extraneous conductive
+[03:15] parts at substantially the same potential it's important to note that there are other examples
+[03:21] of extraneous connected parts other than those listed in BS7671 or on a condition report for
+[03:26] example a conductive part that is common between more than one installation would be considered to
+[03:32] be extraneous such as communal heating pipe work that serves more than one property for example
+[03:38] also other metal pipe work that is in contact with the general mass of Earth would be extraneous now
+[03:44] I once had a situation where I was doing an inspection on a property and the incoming
+[03:49] water main to the ground floor flat was bonded however there was a second pipe that came out
+[03:53] of the ground and ran up the wall to the first floor flat above the second pipe was the water
+[03:58] main for the flat above and this was also an extraneous conducted part firstly because it
+[04:02] was in contact with the general mass of Earth and secondly because it passed through more than one
+[04:06] property and was likely connected to the earthing arrangements for the flat above so this is an
+[04:10] example of an extraneous conductive part that may not be obvious at first and so it is important
+[04:15] to remember the difference between earthing and bonding when determining where we need to apply
+[04:20] protective bonding the requirements for protective bonding can be found in chapter 54 of BS7671 and
+[04:26] there are different requirements for different types of earthing system so be sure to check that
+[04:30] out so to recap earthing is provided to expose conductive parts which are part of the electrical
+[04:37] installation and equipotential bonding is provided to extraneous conductive parts which are not part
+[04:43] of the electrical installation this is to ensure that both exposed and extraneous conductive parts
+[04:48] are at substantially the same potential at this point I think it would be a good idea for me to
+[04:53] mention supplementary bonding which is slightly different supplementary equipotential bonding
+[04:57] is a method of providing additional protection against electric shock and supplementary bonding
+[05:02] is applied to both exposed and extraneous conductive parts and the requirements for
+[05:07] this can be found in regulation 415.2 and in part 7 of BS7671 for special locations
+[05:14] now if you're an older Sparky like me you will know that supplementary bonding is something that
+[05:18] has changed quite a lot over the years and you'll remember that supplementary bonding is something
+[05:22] that we always had to install to at bathrooms and shower rooms until a previous change to section
+[05:27] 701 for rooms containing a bath or shower which permitted supplementary bonding to be emitted in
+[05:33] locations containing a bath or shower as long as circuits comply with the disconnecting time
+[05:38] RCD protection is installed and extraneous connected parts are connected to the protective
+[05:43] equipotential bonding however it's important to note that supplementary bonding is still
+[05:48] included in BS7671 and there are some special locations where supplementary bonding cannot
+[05:54] be emitted for example supplementary bonding is required in swimming pools and other basins
+[06:01] agricultural and horticultural premises conducting locations with restricted movement medical
+[06:07] locations and temporary electrical installations for structures amusement devices and booths at
+[06:14] fairgrounds amusement parks and services to give just a few examples my advice is that if you know
+[06:19] that you're going to be working somewhere that is a special location in BS7671 have a read of
+[06:24] part seven for special locations now staying on the subject of bonding in a previous video
+[06:29] here on the eFIXX channel Joe Robinson asks the question should I bond a ceiling grid and
+[06:33] if you haven't seen that video please see that after this video thanks for watching

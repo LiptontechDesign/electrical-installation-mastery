@@ -1,0 +1,295 @@
+# Power Factor Explained - The basics what is power factor pf
+# https://www.youtube.com/watch?v=Tv_7XWf96gg
+
+Hey there guys. Paul here from TheEngineeringMindset.com In this video, we're going to be discussing power factor, we're going to start off really easily with some simple analogies to help you understand the basics, and then we'll advance it into electrical engineering terms with some work examples as well as looking at what is power factor, what is a good and bad power factor, what causes bad power factor, and how to fix bad power factor. So what is power factor? Power factor is a unitless number using alternating current circuits. It can be used to refer to a single piece of equipment such as an induction motor or through electricity consumption of an entire building. In either case, it represents the ratio between true power and apparent power. The formula being PF equals KW divided by kVa. So what does that mean? My favourite analogy to explain this is to use the beer analogy. We pay for beer by the glass, but inside the glass there is both beer and foam. The more beer we have, the less foam there will be, so we get very good value for money. If there is a lot of foam, then there's not a lot of beer, and so we're not getting very good value for money. The beer represents our true power or kW, our kilowatts. This is the useful stuff you want and need. This is what does the work. The foam represents our reactive power, or our kVar, Kilovolt-Amps Reactives. This is the useless stuff, there will always be some, we have to pay for it, we can't use it so we don't really want much of it. It does actually have a use and a purpose, but we'll see why later in the video. The combination of these kW are kilowatts and the kVar are Kilovolts-Amp Reactive, is our apparent power or our kVA, meaning the kilovolt amps. Power factor is therefore the ratio of useful power or true power in kilowatts, or kW divided by what we're charged for in kVA, kilovolt-amps. So it's telling us how much value for money we're getting for the power we consume. If we briefly touch on electrical engineering, and I will keep this part brief, then we might see this express as a power triangle. In this case I'll draw it as leading power factor as it's easier to visualize. The beer or true power is the adjacent line. Then we have the foam which is the reactive power on the opposite. Then for the hypotenuse side, which is the longest side, we have the apparent power. This is at an angle from the true power, the angle is known as theta. You see as the reactive power or the foam increases then so does the apparent power of the kVA. WE could then use trigonometry to calculate this triangle. I won't in this video as I'm just covering the basics, so we'll just see the formulas you need, but we'll do some calculations and worked examples later in this video. If we look at a typical residential electricity bill, then we'll typically see just a fee for the amount of kilowatts hours used, because the power factor and the electricity consumption will be very low. So the electricity companies tend to not worry about this. However on commercial and industrial electricity invoices, especially buildings with smart or interval electricity meters, then we'll likely see charges and information for the amount of kilowatts, kilowatt hours, kilovolt amps, and kilovolts-amps reactive used. Large buildings in particular will often see reactive power charges in there. But this depends on the electricity supplier, and the agreement they have with the consumer. They reason they charge a penalty for this is because when large consumers have bad power factors, they're increasing the current flow through the electricity network, and causing voltage drops, which reduces the supplier's distribution capacity and has a knock on effect for the other customers. Cable are rated to handle a certain amount of current flowing for them. So if a lot of large consumers connect with bad power factor, then the cables could overload. It could also struggle to meet the demands and the capacity agreements, and then no new customers will be able to connect, until they either replace the cables, or install additional cables. Reactive power charges occur when the power factor of a building falls below a certain level. This level is defined by the electricity supplier, but it typically starts around 0.95 and below. A perfect power factor would be one, however in reality, this is almost impossible to achieve. We'll come back to this part later in the video. In large commercial buildings, the overall power factor is likely to sit in the following categories. Good power factor is generally between one and 0.95 Poor power factor is anything from 0.95 and 0.85. Bad power factor is anything below 0.85. Commercial office buildings are usually somewhere between 0.98 and 0.92. Industrial buildings could be as low as 0.7. We'll look out what causes this shortly. Let's first have a look at an example. If we compare two induction motors, that both have an output of 10 kilowatts, and are connected to a three phase 415/50 hertz supplier, one has a power factor of 0.87, and the other with the power factor of 0.92. Both motors will deliver 10 kilowatts of work, but the first motor has a lower power factor compared to the second one. Meaning we're not getting as much value for money. The first motor will need to draw 11.5 kVA from the electricity grid to provide the 10 kilowatts of power, the second motor will need to draw just 10.9 kVA from the electricity grid to provide the same 10 kilowatts of power. This means the first motor has 5.7kVAr and the second motor has just 4.3kVArs Remember our kilowatts is the beer, and that's the useful stuff. The kVArs are the foam, that's the not so useful stuff. The kVA is what we're going to pay for, and that's the kilowatts and the kVAr combined. How did I calculate that? For kVA I use kilowatts divided by power factor so 10 divided by 0.87 to get 11.5 kVa. For kVAr I use the square root of kVA squared, subtract kilowatts squared. So the square root of 11.5 kVA squared minus 10 kilowatts squared. We could've also found the power factor from the kilowatt and the kVA, using 10 kilowatt divided by 11.5 kVA. We could've found the kilowatts from the power factor and the kVA using 0.87 divided by 11.5 kVA to get 10. So what causes poor power factor? In most cases the power factor is affected by inductive loads. If we have a purely resistive load, such as an electrical resistive heater, then the voltage and the current wave forms would be in sync or very close. They would both pass through their maximum and minimum point and then pass through the zero axis at the same time. The power factor in this case is one, which is perfect. If we drew a phaser diagram, then the voltage and and current would be parallel. So all the energy drawn from the electricity supply goes into doing work. In this case creating heat. But if we took an inductive load, such as an induction motor, then the coils magnetic field holds back the current and results in the phase shift where the voltage and the current waveforms fall out of sync with each other, so the current passes through the zero point after the voltage. This is referred to as a lagging power factor. Earlier in the video, I said the foam or the kVAr is useless. That's not exactly true. You actually need some reactive power to create and maintain the magnetic field which rotates the motor. The reactive power is wasted in the sense that we get no work from it. But we still have to pay for it although we do need it to be able to do the work in the first place. If we drew a phaser diagram for a purely inductive load, then the current would be at an angle below the voltage line. Meaning not all the electricity consumed is doing work. If we took a purely capacitive load, then the opposite happens to the inductive load. The voltage and current are out of phase, except this time the voltage is held back. This causes leading power factor. Again this will mean that not all of the electricity being used is being used to do work. But we still have to pay for it regardless. If we drew a phaser diagram for a purely capacitive load, then the current line will be at an angle above the voltage line, as it's leading. Correcting poor power factor. What can we do to correct poor power factor and reactive power charges? In most case we come across lagging power factor caused by inductive loads. To correct poor power factor, we can add capacitors or inductors to the circuit, which will realign the current back into phase and bring the power factor closer to one. If we have a lagging power factor, caused by high inductive loads in the circuit, then we add capacitors. If we have a leading power factor, caused by high capacitive loads, then we add an inductive load to the circuit. These need to be calculated, and we'll see some example calculations of this at the end of the video. So why should we fix poor power factor? Poor power factor means you need to draw more power from the electricity network to do the same amount of work, therefore the cables need to be larger so the installation is going to cost more money. If the power factor becomes too low, then the electricity supplier might charge you a penalty fee or reactive power charge. Poor power factor can cause losses in the equipment, like transformers, and leads to high heat gains. It can lead to voltage drops and can even reduce the life expectancy of equipment in extreme scenarios. Capacitor calculations for power factor correction. Let's look at a simplified example of calculating the size of a capacitor to improve the power factor of a load. The building has a three phase power supply and has a total load of 50 kilowatts of work. It also has a power factor of 0.78, but we want it to be 0.96 to avoid penalty charges. Currently the building has a total apparent power or kVA value of 64.1 kVA and we find that by just dividing the kilowatts, 50 kilowatts by the power factor of 0.78. It also has a reactive power of 40.1 kVAr. We find that by taking the square root of the kVA squared and subtracting it from the kilowatts squared. So take the squared root of 64.1 squared minus 50 kilowatts squared. Then we calculate what the value should be if we had a power factor of 0.96. SO our apparent power should be 52.1 kVA. We find that from 50 kilowatts divided by 0.96 power factor. Then we find our reactive power which is the square root of the kVA squared minus the kilowatts squared. So the square root of 52.1 kVA squared minus 50 kilowatts squared which gives us 14.6 kVAr. The capacitor therefore needs to make up the difference between these. So 40.1 kVAr minus 14.6 kVAr which equals a 25.5 kVAr capacitor. Okay guys, that's it for this video, but if you want to continue your learning, check out these videos here. I'll catch you there for the next lesson. Leave you questions in the comments section down below, and don't forget to follow us on Facebook, Instagram, Twitter, as well as TheEngineeringmindset.com.
+
+
+[00:04] Hey there guys.
+[00:05] Paul here from TheEngineeringMindset.com
+[00:07] In this video, we're going to be discussing
+[00:09] power factor, we're going to start off really
+[00:12] easily with some simple analogies
+[00:13] to help you understand the basics, and then
+[00:15] we'll advance it into electrical
+[00:17] engineering terms with some work examples
+[00:19] as well as looking at what is power factor,
+[00:21] what is a good and bad power factor,
+[00:24] what causes bad power factor,
+[00:26] and how to fix bad power factor.
+[00:28] So what is power factor?
+[00:30] Power factor is a unitless number
+[00:32] using alternating current circuits.
+[00:34] It can be used to refer to a single piece of
+[00:36] equipment such as an induction motor or through
+[00:39] electricity consumption of an entire building.
+[00:42] In either case, it represents the ratio between
+[00:44] true power and apparent power.
+[00:46] The formula being PF equals KW divided by kVa.
+[00:50] So what does that mean?
+[00:52] My favourite analogy to explain this
+[00:54] is to use the beer analogy.
+[00:56] We pay for beer by the glass, but inside the glass
+[00:59] there is both beer and foam.
+[01:01] The more beer we have, the less foam there will be, so
+[01:03] we get very good value for money.
+[01:05] If there is a lot of foam, then there's not a lot of beer,
+[01:08] and so we're not getting very good value for money.
+[01:10] The beer represents our true power or kW, our kilowatts.
+[01:14] This is the useful stuff you want and need.
+[01:16] This is what does the work.
+[01:18] The foam represents our reactive power, or our
+[01:20] kVar, Kilovolt-Amps Reactives.
+[01:24] This is the useless stuff, there will always
+[01:26] be some, we have to pay for it, we can't use it
+[01:28] so we don't really want much of it.
+[01:30] It does actually have a use and a purpose,
+[01:33] but we'll see why later in the video.
+[01:35] The combination of these kW are kilowatts
+[01:38] and the kVar are Kilovolts-Amp Reactive,
+[01:41] is our apparent power or our kVA, meaning
+[01:44] the kilovolt amps.
+[01:45] Power factor is therefore
+[01:46] the ratio of useful power or true power
+[01:50] in kilowatts, or kW divided by what we're
+[01:52] charged for in kVA, kilovolt-amps.
+[01:55] So it's telling us how much value for money
+[01:58] we're getting for the power we consume.
+[02:00] If we briefly touch on electrical engineering,
+[02:03] and I will keep this part brief, then we might
+[02:05] see this express as a power triangle.
+[02:07] In this case I'll draw it as leading
+[02:09] power factor as it's easier to visualize.
+[02:12] The beer or true power is the adjacent line.
+[02:15] Then we have the foam which is the reactive
+[02:16] power on the opposite.
+[02:18] Then for the hypotenuse side, which is the
+[02:20] longest side, we have the apparent power.
+[02:23] This is at an angle from the true power, the
+[02:25] angle is known as theta.
+[02:26] You see as the reactive power or the foam
+[02:29] increases then so does the apparent power
+[02:31] of the kVA.
+[02:33] WE could then use trigonometry
+[02:34] to calculate this triangle.
+[02:35] I won't in this video as I'm just covering the basics,
+[02:38] so we'll just see the formulas you need,
+[02:40] but we'll do some calculations
+[02:41] and worked examples later in this video.
+[02:44] If we look at a typical residential
+[02:46] electricity bill, then we'll typically see
+[02:48] just a fee for the amount of kilowatts
+[02:49] hours used, because the power factor
+[02:51] and the electricity consumption will
+[02:53] be very low.
+[02:54] So the electricity companies
+[02:55] tend to not worry about this.
+[02:57] However on commercial and industrial electricity invoices,
+[03:00] especially buildings with smart
+[03:02] or interval electricity meters, then we'll
+[03:04] likely see charges and information
+[03:06] for the amount of kilowatts, kilowatt hours,
+[03:08] kilovolt amps, and kilovolts-amps reactive used.
+[03:11] Large buildings in particular will often
+[03:13] see reactive power charges in there.
+[03:15] But this depends on the electricity supplier,
+[03:17] and the agreement they have with the consumer.
+[03:19] They reason they charge a penalty for this
+[03:21] is because when large consumers have bad
+[03:23] power factors, they're increasing
+[03:25] the current flow through
+[03:26] the electricity network, and causing voltage drops,
+[03:29] which reduces the supplier's distribution
+[03:31] capacity and has a knock on effect
+[03:34] for the other customers.
+[03:35] Cable are rated to handle
+[03:38] a certain amount of current flowing for them.
+[03:39] So if a lot of large consumers connect
+[03:41] with bad power factor, then the cables could overload.
+[03:45] It could also struggle
+[03:46] to meet the demands and the capacity agreements,
+[03:48] and then no new customers will be able
+[03:49] to connect, until they either replace the cables,
+[03:52] or install additional cables.
+[03:54] Reactive power charges occur when the
+[03:56] power factor of a building falls below
+[03:58] a certain level.
+[03:59] This level is defined by
+[04:01] the electricity supplier, but it typically
+[04:03] starts around 0.95 and below.
+[04:06] A perfect power factor would be one, however
+[04:08] in reality, this is almost impossible to achieve.
+[04:11] We'll come back to this part
+[04:12] later in the video.
+[04:14] In large commercial buildings, the overall
+[04:16] power factor is likely to sit
+[04:18] in the following categories.
+[04:19] Good power factor is generally between one and 0.95
+[04:24] Poor power factor is anything from 0.95 and 0.85.
+[04:28] Bad power factor is anything below 0.85.
+[04:32] Commercial office buildings are usually somewhere
+[04:34] between 0.98 and 0.92.
+[04:37] Industrial buildings could be as low as 0.7.
+[04:40] We'll look out what causes this shortly.
+[04:43] Let's first have a look at an example.
+[04:46] If we compare two induction motors, that
+[04:49] both have an output of 10 kilowatts, and are
+[04:51] connected to a three phase 415/50 hertz supplier,
+[04:54] one has a power factor of 0.87, and the other
+[04:58] with the power factor of 0.92.
+[05:00] Both motors will deliver 10 kilowatts of work,
+[05:03] but the first motor has a lower power factor
+[05:05] compared to the second one.
+[05:07] Meaning we're not getting as much value for money.
+[05:10] The first motor will need to draw
+[05:11] 11.5 kVA from the electricity grid to provide
+[05:15] the 10 kilowatts of power, the second motor
+[05:18] will need to draw just 10.9 kVA from
+[05:20] the electricity grid to provide
+[05:22] the same 10 kilowatts of power.
+[05:23] This means the first motor has 5.7kVAr
+[05:27] and the second motor has just 4.3kVArs
+[05:30] Remember our kilowatts is the beer,
+[05:32] and that's the useful stuff.
+[05:33] The kVArs are the foam, that's the not so useful stuff.
+[05:36] The kVA is what we're going to pay for,
+[05:39] and that's the kilowatts and the kVAr combined.
+[05:42] How did I calculate that?
+[05:43] For kVA I use kilowatts divided by power factor
+[05:46] so 10 divided by 0.87 to get 11.5 kVa.
+[05:51] For kVAr I use the square root of kVA squared,
+[05:54] subtract kilowatts squared.
+[05:56] So the square root
+[05:57] of 11.5 kVA squared minus 10 kilowatts squared.
+[06:00] We could've also found the power factor
+[06:02] from the kilowatt and the kVA, using
+[06:04] 10 kilowatt divided by 11.5 kVA.
+[06:07] We could've found the kilowatts from
+[06:09] the power factor and the kVA using 0.87
+[06:12] divided by 11.5 kVA to get 10.
+[06:16] So what causes poor power factor?
+[06:18] In most cases the power factor
+[06:20] is affected by inductive loads.
+[06:23] If we have a purely resistive load, such as
+[06:25] an electrical resistive heater, then the voltage
+[06:27] and the current wave forms would be in sync
+[06:29] or very close.
+[06:31] They would both pass through their maximum
+[06:33] and minimum point and then pass through
+[06:35] the zero axis at the same time.
+[06:37] The power factor in this case is one,
+[06:39] which is perfect.
+[06:41] If we drew a phaser diagram, then the voltage and
+[06:43] and current would be parallel.
+[06:45] So all the energy drawn from the electricity
+[06:47] supply goes into doing work.
+[06:50] In this case creating heat.
+[06:53] But if we took an inductive load, such as
+[06:55] an induction motor, then the coils
+[06:57] magnetic field holds back the current and results
+[07:00] in the phase shift where the voltage
+[07:01] and the current waveforms fall out of sync
+[07:04] with each other, so the current passes
+[07:06] through the zero point after the voltage.
+[07:09] This is referred to as a lagging power factor.
+[07:12] Earlier in the video,
+[07:13] I said the foam or the kVAr is useless.
+[07:16] That's not exactly true.
+[07:18] You actually need some reactive power to create
+[07:20] and maintain the magnetic field
+[07:22] which rotates the motor.
+[07:24] The reactive power is wasted in the sense
+[07:26] that we get no work from it.
+[07:27] But we still have to pay for it although we do need it
+[07:30] to be able to do the work in the first place.
+[07:33] If we drew a phaser diagram for a purely
+[07:35] inductive load, then the current would be at an
+[07:37] angle below the voltage line.
+[07:39] Meaning not all the electricity consumed is doing work.
+[07:43] If we took a purely capacitive load,
+[07:45] then the opposite happens
+[07:46] to the inductive load.
+[07:48] The voltage and current are out of phase, except
+[07:50] this time the voltage is held back.
+[07:53] This causes leading power factor.
+[07:55] Again this will mean that not all of the
+[07:57] electricity being used is being used to do work.
+[08:00] But we still have to pay for it regardless.
+[08:03] If we drew a phaser diagram for a
+[08:04] purely capacitive load, then the current line
+[08:07] will be at an angle above the voltage line,
+[08:09] as it's leading.
+[08:12] Correcting poor power factor.
+[08:14] What can we do to correct poor power factor
+[08:17] and reactive power charges?
+[08:19] In most case we come across lagging power factor
+[08:21] caused by inductive loads.
+[08:23] To correct poor power
+[08:24] factor, we can add capacitors or inductors to
+[08:27] the circuit, which will realign the current back
+[08:29] into phase and bring the power factor
+[08:31] closer to one.
+[08:32] If we have a lagging power factor, caused by
+[08:34] high inductive loads in the circuit,
+[08:36] then we add capacitors.
+[08:38] If we have a leading power
+[08:39] factor, caused by high capacitive loads, then we
+[08:42] add an inductive load to the circuit.
+[08:44] These need to be calculated, and we'll see
+[08:46] some example calculations of this
+[08:47] at the end of the video.
+[08:49] So why should we fix poor power factor?
+[08:51] Poor power factor means you need to draw more
+[08:53] power from the electricity network
+[08:55] to do the same amount of work, therefore
+[08:57] the cables need to be larger so the installation
+[09:00] is going to cost more money.
+[09:01] If the power factor becomes too low,
+[09:03] then the electricity supplier might charge you
+[09:05] a penalty fee or reactive power charge.
+[09:08] Poor power factor can cause losses
+[09:10] in the equipment, like transformers,
+[09:11] and leads to high heat gains.
+[09:13] It can lead to voltage drops and can even reduce
+[09:15] the life expectancy of equipment
+[09:17] in extreme scenarios.
+[09:19] Capacitor calculations for power factor correction.
+[09:23] Let's look at a simplified example of calculating
+[09:26] the size of a capacitor to improve
+[09:27] the power factor of a load.
+[09:30] The building has a three phase power supply
+[09:32] and has a total load of 50 kilowatts of work.
+[09:35] It also has a power factor of 0.78, but we
+[09:38] want it to be 0.96 to avoid penalty charges.
+[09:42] Currently the building has a total apparent power
+[09:44] or kVA value of 64.1 kVA and we find that
+[09:49] by just dividing the kilowatts, 50 kilowatts
+[09:52] by the power factor of 0.78.
+[09:54] It also has a reactive power of 40.1 kVAr.
+[09:58] We find that by taking the square root of the
+[10:00] kVA squared and subtracting it from
+[10:03] the kilowatts squared.
+[10:04] So take the squared root
+[10:06] of 64.1 squared minus 50 kilowatts squared.
+[10:09] Then we calculate what the value should be
+[10:11] if we had a power factor of 0.96.
+[10:14] SO our apparent power should be 52.1 kVA.
+[10:18] We find that from 50 kilowatts divided by
+[10:21] 0.96 power factor.
+[10:23] Then we find our reactive power which is
+[10:25] the square root of the kVA squared
+[10:27] minus the kilowatts squared.
+[10:29] So the square root
+[10:30] of 52.1 kVA squared minus 50 kilowatts squared
+[10:34] which gives us 14.6 kVAr.
+[10:37] The capacitor therefore
+[10:38] needs to make up the difference between these.
+[10:40] So 40.1 kVAr minus 14.6 kVAr which equals
+[10:45] a 25.5 kVAr capacitor.
+[10:48] Okay guys, that's it for this video,
+[10:50] but if you want to continue your learning,
+[10:52] check out these videos here.
+[10:53] I'll catch you there for the next lesson.
+[10:55] Leave you questions in
+[10:56] the comments section down below, and don't forget
+[10:57] to follow us on Facebook, Instagram, Twitter,
+[11:00] as well as TheEngineeringmindset.com.

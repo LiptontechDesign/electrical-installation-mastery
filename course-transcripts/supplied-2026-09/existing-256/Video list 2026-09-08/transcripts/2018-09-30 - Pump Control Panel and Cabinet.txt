@@ -1,0 +1,501 @@
+# Pump Control Panel and Cabinet
+# https://www.youtube.com/watch?v=Ny9Cut_oJC0
+
+hello I'm JW and today when I look at this control panel now with this we've seen in the videos previously they see where I was engraved and cut on the CNC machine and what see here's basis picture of the finished panel and it's all been wired up on the back as well so we're gonna show ya just do a quick test on this thing to make sure all the wiring is in the correct place and the base indicates and switches do what they are supposed to do and after that we'll see some pictures of it in its final installation and obviously what it's actually for and how this thing actually works by just testing this panel which I just wired up at the back and I've got all the wires here on the table there's quite a lot of us here these will connect to the rest of the equipment which of course is not here because that's obviously where this thing is going to be installed so just checking that we've got all the Y's in the quick places so when we get to the other end and connect these something doesn't blow up and flames come out of it so let's just switch on here so we've got the off indicator which is what we want it's in the off position these two here represent the pump so should see 24 volts here when the pump is theoretically on which should also coincide with these lamps here being on the pumps are not 24 volt ones of course this runs two contactors which then switch the pumps are now about two and a half kilowatt pumps each so also it can't be switched directly so if we turn to the on position and the green one should come on and the one goes off now we can go to manual we should be able to get one of the pumps on assuming we attach the demand wires together which we can let's just switch over to B and a manually and if we go to the automatic choice then we should be able to get that switch on the other two we've got there which we can and in the manual position that should do absolutely nothing which is what it does and in the auto position that should also do nothing which is what we want over there trip lines which should illuminate wind faults occur on these three which they do and let's see how they should all work in various combinations as well so that's fine if we put one pump on permanently we can see the voltage on the Humvee is on there so that's fine and when there's no tomorrow not the other one that will drop away if we connect the other one then we should see Horta John a which we do so it'd be fine and I've got a manual with no demand that we shouldn't see anything at all we should just see pump a come-on without the twenty faults there won't be we should get the 24 volts there which drops away when the demand is not required we should far we can have both at the same time because yep let's use one breaks before the other one actually switch is on and the opposition we should get anything else we don't it's fine anything else Emmanuel we don't get anything when the thing is on because the other one is disconnected okay that one then we'll get a like that which is the right hand meter then if we have a demand on the other one and the auto switch up then we should get a there we go so that's fine that position that would nothing that should still be top a which it is so that's all fine so we have it so it's all working so I can have a taken away and in stored belongs now what this is actually for is a set of pumps and these are actually for water and this is a pitch here of the original control panel this dates from 2003 so it's about 15 years old and as you can see there's gotta be a brown tape stuck on the front there because at least half of this is actually broken and doesn't work anymore and the other half that does work whilst going somewhat intermittent so it worked perfectly well most of the time then of course sometimes it wouldn't work at all and not working at all involved it basically turning on the pump continuously and running it 24 hours a day seven days a week which Chelsea wasted a vast amount of electricity as well as course wearing things out prematurely and originally it sir had the two pumps there and the two switches on either side were basically select between off in the same position manual which was kind of useless because he just ran continuously and also of course was the normal operating position now the point of these is that this particular building doesn't have absolutely good main water supply and the actual supply coming in from the road only has a pressure in the reason of 1.82 bar which though is within the legal requirements is actually pretty poor and this also a four-story building so by the time I get up to the top floor at least one bar that pressure has been lost in plea to the fact of the height of it so on the top floor at worst times the only gonna get sort of less than one bar of pressure on the mains water unfortunately it's pretty feeble so what was basically here is two pumps and a large water tank which you see in this picture is the blue thing behind the cabinet and base that fills up from the mains there's two pumps on the floor you know there when anyone turns on a tap or whatever else in the building the pump will switch on obviously provide a much better pressure to the various outlets now this particular panel originally had a rather complicated and unnecessary electronic controller and having actually dismantled the thing we see here the inside of the cabinet the controller used to be at the top in the center there where that round time of thing is now been fitted and it appears that it was actually designed to control at least six individual pumps because the thing was far too complicated it had at least six relays on the controller board there was actually two circuit boards one stacked on top of the other and it was a whole pile of wiring in here which basically went to empty on used terminal blocks towards the bottom right of the picture here so although this was probably designed for six of these it was only running two of them and thus a half of the controller board was actually broken was up being at the right hand switch when it was putting Otto the pump would have actually run continuously and didn't actually turn on/off at all Entei now one listen to the left hand one is broken as well and also having times of doing that well now the original pressure center this was a electronic type which basically gave an output current between 4 and 20 milliamps and pursuing that was interpreted by the board and it's microcontroller whatever to turn that those on and off as desired that's just for two pumps that's far too complicated so base what we're doing here is removing most of the contents this cabinet disposing and most of the wiring a fair amount of which you can see is on the floor there and there's another pile of that torso to the right out of frame there and what we're gonna do instead of having that electronic sensor and some useless tronic control board with no doubt some custom control firmware in there it's gonna throw all that away and it's tipped that we're going to use a pressure switch here's a picture of babysit the switch we're going to use and it essentially connects to the water supply thready connection on the bottom and then there's a cable goes on the other side there and what happens here is that it will switch on when the pressure falls below a set threshold that will turn the pump on and then when the pressure reaches a higher level then the pumpkin will turn off and that's pretty much all we need we're also going to fit this pressure gauge here just for indication just to show what the system pressure is the existing system does have one but unfortunately it's much smaller than this one it's also broken and it's filled with rusty water and it's not semantics upside down at the back so you can't even see the thing without groveling on the floor using a torch so they'll fail there die whoever installed that you can see the new control panel on the door on the right hand side there that's basically the back view so it's just to fit it through a hole in the front panel and secured with some screws now here's a look at the inside of the cabinet so at once all the wiring was completed and that what we've got here it's entries most of this was already in here and at the top there what's missing is the electronic controller which essentially filled pretty much the whole of the top section there that's been removed and this time of thing has been put in instead and what I've got here is basically the mains power comes in at the bottom left and we've got that isolator switch there that goes through to the thing on the front panel basically just turn on off the mains there for the whole thing so comes in at the bottom they only blue and rate wives there and the Earth's go to that sort of bar in the middle there's also nothing stirred over towards the right and then bizarrely there's another earthing stirred just to it further over on the side and then there's an additional one on the gland plate at the bottom an another one going over to the door so it means power comes in there this is 240 volts a single-phase and the power comes out of the switch on that red and black wire and that goes up to the two devices directly above and these are over load trips for the two motors so essentially what these will do is that if the motor draws too much current for too long these things will disconnect and therefore cut power to that particular motor like preventing it from being a sire or something like that so the power goes through those and then from there the power comes out of those at the bottom of them and goes to the two contactors which you see at the bottom left and the bottom Center and from the bottom of those you can see those wires coming out which go to the two individual pumps now that's actually a shielded cable whoever hit it before has not done a percent ly good job of actually doing the wiring there that basically just sort of taken a bit of the braid off side with the earth wire and just probably tape over the top not all that that's how it is so that's how it will be staying now in terms of the control on this what we've got there is at the top right there's a transformer and this takes in the mains voltage 240 volts on the black and red wires and it outputs 24 volts AC and comes out on there's two white wires at the top there and we've actually got that coming down to those terminal blocks in the center row there towards the right-hand side so basically those is basically we call these zero volts and the other one is the plus 24 and then from those turned the blocks we've got wires going across to if there's other devices on the right-hand side in the middle row see that a circuit breaker and that's actually on the 24 volt AC line so that if anything was say to short out or some fault occurred on the 24 circuitry that will trip and disconnect that side of it also to avoid the transformer basically melting and sitting on fire and you'll see there's another circuit breaker over to the left side of the center row and out actually for the mains input which goes to the transformer so it's another two am one so I better got protection on both sides of the actual transformer there now the way they turn out operates is that everything in terms of control is 24 volts AC and that also comes in that little transform at the top right previously had some 12-volt parts as well which came from the electronic deal but so is basically throwing those away so once you turned on from the switch on the front panel how will go to the various part in this and whether the actual pumping is required or not is determined by the pressure switch we can see at the bottom left of the picture here so essentially the pressure falls below a set level that will basically close a switch inside and then that will come back into the control cabinet and that goes via the timer switch on the top left there and essentially what this does is just intervals it changes between pumps 1 & 2 or a and D as they're labeled here and then from that the 24 volts goes to the two contactors at the bottom left and bottom center so depending on the position at the timer it will either switch on pump a or pump B and that turns on the mains supply to the particular pump these people in the region of 2 kilowatts each themselves don't need the contact us to do that if one of the pumps should say take too much current or overload so the motor was stalled or the rotor jammed or something then the appropriate trip in the middle there will let you take this no actually just cut the mains power to the pump and in order so we can know that this has happened on those particular trips have also used one of the auxiliary contacts now we can see those here just with those orange wiring so what we have there those are normally open contacts so no connection in normal operation if thing is tripped or basically turned off by that thing on the front loader we join together and that will connect 2000 volts AC and that gives you an indication on the red indicator on the front panel and that's the same for both pumps a and B now there is a manual option on the switch on the front panel and all that does is basically disconnects that timer at the top which is basically changeover switch and instead of that it just puts another switch in the circuit on the front panel so you can as man who's select from Pompeii or be as required and that's really only there so if one of the pumps had to be taken away for repairs or maintenance you can only keep the system running but only using one of the pumps that's there so it is a convenience factor for when maintenance is required and the other thing we've got there in the center there in the center rail we've actually got a small relay again this is 24 volt AC thing as well and in normal operation that relay coil is powered and it's actually powered via a sensor in the tank which is that blue thing behind and that sensor is normally closed and the unit on that's gonna open is if for some reason the tank actually ran out of water so there was some problem with the filling of it or whatever so in all operation that relays closed and the reader has to set two contacts one of which in the powered state will be closed and that actually connects to the 24 supply to the contactors and the other one is normally open so in a normal state that doesn't do anything so what would happen if the tank ran out of water that relay would no longer have any power and the contacts would either closed or open depending on which say it was the result would be that the contactors no longer get any 24 volts supply so neither pump is actually going to work and the other set would then close and provide 20 volts ac to a red indicator on the front panel and I've taught me to see here with the pump water low so again I would indicate there was a problem with the water supply and of course prevent the pumps running so that we don't have them running without any water in which course would very quickly destroy them I think while these pumps cost the best part of a thousand pounds each that's something you definitely don't want to happen other stuff in there we've got to say the Turner blocks in the middle right there just for the 0 and 24 volts supply and those terminal box at the bottom are now mostly unused because say they weren't actually used before they were said load of wires going in from the electronic controller we've pretty much nothing connected on the other side so just using the few over at the right hand side there for the inputs from the actual pressure switch and also the water we'll switch in the tank as well here's Vav finish panel and it's actually turned on and working and as you can see there the new panel baseet a so the whole front of the existing cabinet now we put that extra text on the bottom basic instructions for the operation on it and also to switch it to manual if some major problem occurred and you want to switch over to the main supply only which I though is not any good it can of course we use and people to still get water if there was some major problem now we can see also in this picture the blue large item behind all of that is actually the water tank itself it's at least 1 meter in each direction so it's over a thousand liters of capacity there and below that on the left we can see the pressure vessel or the expansion vessel and that's just sitting on the bottom there and to the bottom right we can actually see the two pumps there are those black objects they are absolutely very similar they once been replaced more recently one is original so they're not quite the same in design and on the bottom of the kernel they were going to see the pressure switch there and then the pressure gauge they are just for indication only to give a visual indication of what the pressure in the system actually is and the rest of in that picture there's a few vowels and leavers there was gonna be used to switch over to main supply only and therefore not use either pump if that was required so that's the deal with that and you may be wondering why we didn't just buy a new electronic controller for the particular panel we have and the reason being is that being from 2003 the particular control panel is no longer available and hasn't asked you in available for many years so you can't just sort of pop it and buy one even when it was available it was in the many hundreds of pounds price range and it appears to be far too complex for this system anyhow there is allegedly a replacement but as with a lot of these replacements it's not a direct swapping and just put the wires NEC with GWAR as a fair-minded next to work as well so in the end it was just easier and then suitably cheaper just to put and I'm sure that press the switch there which is various on and off and that doesn't tell perfectly well the only thing this new system doesn't have it doesn't have a capacity to run both pumps at the same time should the need arise if there was some huge demand for water that could be anything on a later date if need is that says been in this state of only one pump actually working for the last five years plus and nobody complained up to that point so yeah that's not really any issue for this particular installation so that's it for this particular video and apart this video was already put out on Facebook so you may have seen that already and if not then their details of that are in the video description and they also put pictures of various things on Instagram and Twitter so again do toss those in the description as well and also if you want to see videos before anybody else then you can do so now patreon and all these services it's JW flame so until next time thanks for watching
+
+
+[00:03] hello I'm JW and today when I look at
+[00:06] this control panel now with this we've
+[00:08] seen in the videos previously they see
+[00:11] where I was engraved and cut on the CNC
+[00:13] machine and what see here's basis
+[00:16] picture of the finished panel and it's
+[00:18] all been wired up on the back as well so
+[00:20] we're gonna show ya just do a quick test
+[00:22] on this thing to make sure all the
+[00:24] wiring is in the correct place and the
+[00:25] base indicates and switches do what they
+[00:27] are supposed to do and after that we'll
+[00:30] see some pictures of it in its final
+[00:32] installation and obviously what it's
+[00:34] actually for and how this thing actually
+[00:35] works by just testing this panel which I
+[00:39] just wired up at the back and I've got
+[00:42] all the wires here on the table there's
+[00:45] quite a lot of us here these will
+[00:46] connect to the rest of the equipment
+[00:47] which of course is not here because
+[00:48] that's obviously where this thing is
+[00:50] going to be installed so just checking
+[00:53] that we've got all the Y's in the quick
+[00:54] places so when we get to the other end
+[00:55] and connect these something doesn't blow
+[00:57] up and flames come out of it so let's
+[00:59] just switch on here so we've got the off
+[01:02] indicator which is what we want it's in
+[01:03] the off position
+[01:04] these two here represent the pump so
+[01:06] should see 24 volts here when the pump
+[01:08] is theoretically on which should also
+[01:10] coincide with these lamps here being on
+[01:12] the pumps are not 24 volt ones of course
+[01:14] this runs two contactors which then
+[01:16] switch the pumps are now about two and a
+[01:19] half kilowatt pumps each so also it
+[01:21] can't be switched directly so if we turn
+[01:25] to the on position and the green one
+[01:26] should come on and the one goes off now
+[01:29] we can go to manual we should be able to
+[01:33] get one of the pumps on assuming we
+[01:34] attach the demand wires together which
+[01:38] we can let's just switch over to B and a
+[01:41] manually and if we go to the automatic
+[01:43] choice then we should be able to get
+[01:46] that switch on the other two we've got
+[01:49] there which we can and in the manual
+[01:54] position that should do absolutely
+[01:55] nothing which is what it does and in the
+[02:00] auto position that should also do
+[02:05] nothing which is what we want over there
+[02:08] trip lines which should illuminate wind
+[02:10] faults occur on these three
+[02:15] which they do and let's see how they
+[02:18] should all work in various combinations
+[02:22] as well so that's fine if we put one
+[02:27] pump on permanently we can see the
+[02:30] voltage on the Humvee is on there so
+[02:35] that's fine and when there's no tomorrow
+[02:38] not the other one that will drop away if
+[02:42] we connect the other one then we should
+[02:44] see Horta John a which we do so it'd be
+[02:50] fine and I've got a manual with no
+[02:52] demand that we shouldn't see anything at
+[02:53] all we should just see pump a come-on
+[02:56] without the twenty faults there won't be
+[02:59] we should get the 24 volts there which
+[03:01] drops away when the demand is not
+[03:03] required we should far we can have both
+[03:07] at the same time because yep let's use
+[03:09] one breaks before the other one actually
+[03:11] switch is on and the opposition we
+[03:15] should get anything else we don't it's
+[03:19] fine
+[03:20] anything else Emmanuel we don't get
+[03:21] anything when the thing is on because
+[03:24] the other one is disconnected okay that
+[03:28] one then we'll get a like that which is
+[03:33] the right hand meter then if we have a
+[03:37] demand on the other one and the auto
+[03:39] switch up then we should get a there we
+[03:44] go so that's fine that position that
+[03:48] would nothing that should still be top a
+[03:51] which it is so that's all fine so we
+[03:55] have it so it's all working so I can
+[03:59] have a taken away and in stored belongs
+[04:03] now what this is actually for is a set
+[04:05] of pumps and these are actually for
+[04:07] water and this is a pitch here of the
+[04:10] original control panel this dates from
+[04:13] 2003 so it's about 15 years old
+[04:15] and as you can see there's gotta be a
+[04:17] brown tape stuck on the front there
+[04:19] because at least half of this is
+[04:20] actually broken and doesn't work anymore
+[04:22] and the other half that does work whilst
+[04:25] going somewhat intermittent so it worked
+[04:27] perfectly well most of the time
+[04:28] then of course sometimes it wouldn't
+[04:29] work at all and not working at all
+[04:31] involved it basically turning on the
+[04:33] pump continuously and running it 24
+[04:35] hours a day seven days a week which
+[04:37] Chelsea wasted a vast amount of
+[04:39] electricity as well as course wearing
+[04:41] things out prematurely and originally it
+[04:44] sir had the two pumps there and the two
+[04:47] switches on either side were basically
+[04:48] select between off in the same position
+[04:51] manual which was kind of useless because
+[04:53] he just ran continuously and also of
+[04:55] course was the normal operating position
+[04:57] now the point of these is that this
+[04:59] particular building doesn't have
+[05:01] absolutely good main water supply and
+[05:03] the actual supply coming in from the
+[05:05] road only has a pressure in the reason
+[05:07] of 1.82 bar which though is within the
+[05:10] legal requirements is actually pretty
+[05:13] poor and this also a four-story building
+[05:15] so by the time I get up to the top floor
+[05:16] at least one bar that pressure has been
+[05:18] lost in plea to the fact of the height
+[05:20] of it so on the top floor at worst times
+[05:22] the only gonna get sort of less than one
+[05:23] bar of pressure on the mains water
+[05:25] unfortunately it's pretty feeble so what
+[05:29] was basically here is two pumps and a
+[05:31] large water tank which you see in this
+[05:33] picture is the blue thing behind the
+[05:35] cabinet and base that fills up from the
+[05:37] mains there's two pumps on the floor you
+[05:40] know there when anyone turns on a tap or
+[05:41] whatever else in the building the pump
+[05:44] will switch on obviously provide a much
+[05:46] better pressure to the various outlets
+[05:49] now this particular panel originally had
+[05:51] a rather complicated and unnecessary
+[05:53] electronic controller and having
+[05:55] actually dismantled the thing we see
+[05:57] here the inside of the cabinet the
+[05:59] controller used to be at the top in the
+[06:01] center there where that round time of
+[06:03] thing is now been fitted and it appears
+[06:05] that it was actually designed to control
+[06:07] at least six individual pumps because
+[06:10] the thing was far too complicated it had
+[06:13] at least six relays on the controller
+[06:15] board there was actually two circuit
+[06:17] boards one stacked on top of the other
+[06:18] and it was a whole pile of wiring in
+[06:20] here which basically went to empty on
+[06:22] used terminal blocks towards the bottom
+[06:24] right of the picture here so although
+[06:27] this was probably designed for six of
+[06:29] these it was only running two of them
+[06:31] and thus a half of the controller board
+[06:33] was actually broken was up being at the
+[06:35] right hand switch when it was putting
+[06:36] Otto the pump would have actually run
+[06:38] continuously and didn't actually
+[06:40] turn on/off at all Entei now one listen
+[06:43] to the left hand one is broken as well
+[06:44] and also having times of doing that well
+[06:49] now the original pressure center this
+[06:51] was a electronic type which basically
+[06:53] gave an output current between 4 and 20
+[06:55] milliamps and pursuing that was
+[06:57] interpreted by the board and it's
+[06:59] microcontroller whatever to turn that
+[07:01] those on and off as desired that's just
+[07:04] for two pumps that's far too complicated
+[07:05] so base what we're doing here is
+[07:07] removing most of the contents this
+[07:08] cabinet disposing and most of the wiring
+[07:11] a fair amount of which you can see is on
+[07:12] the floor there and there's another pile
+[07:14] of that torso to the right out of frame
+[07:15] there and what we're gonna do instead of
+[07:18] having that electronic sensor and some
+[07:19] useless tronic control board with no
+[07:22] doubt some custom control firmware in
+[07:24] there it's gonna throw all that away and
+[07:27] it's tipped that we're going to use a
+[07:28] pressure switch here's a picture of
+[07:30] babysit the switch we're going to use
+[07:31] and it essentially connects to the water
+[07:34] supply thready connection on the bottom
+[07:36] and then there's a cable goes on the
+[07:37] other side there and what happens here
+[07:40] is that it will switch on when the
+[07:42] pressure falls below a set threshold
+[07:44] that will turn the pump on and then when
+[07:47] the pressure reaches a higher level then
+[07:49] the pumpkin will turn off and that's
+[07:51] pretty much all we need we're also going
+[07:54] to fit this pressure gauge here just for
+[07:56] indication just to show what the system
+[07:58] pressure is the existing system does
+[08:01] have one but unfortunately it's much
+[08:03] smaller than this one it's also broken
+[08:05] and it's filled with rusty water and
+[08:08] it's not semantics upside down at the
+[08:09] back so you can't even see the thing
+[08:11] without groveling on the floor using a
+[08:12] torch so they'll fail there die whoever
+[08:15] installed that you can see the new
+[08:18] control panel on the door on the right
+[08:20] hand side there that's basically the
+[08:22] back view so it's just to fit it through
+[08:23] a hole in the front panel and secured
+[08:26] with some screws now here's a look at
+[08:29] the inside of the cabinet so at once all
+[08:31] the wiring was completed and that what
+[08:33] we've got here it's entries most of this
+[08:35] was already in here and at the top there
+[08:37] what's missing is the electronic
+[08:39] controller which essentially filled
+[08:41] pretty much the whole of the top section
+[08:43] there that's been removed and this time
+[08:46] of thing has been put in instead and
+[08:48] what I've got here is basically the
+[08:50] mains power comes in at the bottom left
+[08:52] and we've got that isolator switch there
+[08:54] that goes through to the thing on the
+[08:55] front panel basically just turn on off
+[08:57] the mains there for the whole thing so
+[09:00] comes in at the bottom they only blue
+[09:01] and rate wives there and the Earth's go
+[09:05] to that sort of bar in the middle
+[09:06] there's also nothing stirred over
+[09:07] towards the right and then bizarrely
+[09:09] there's another earthing stirred just to
+[09:11] it further over on the side and then
+[09:13] there's an additional one on the gland
+[09:14] plate at the bottom an another one going
+[09:16] over to the door so it means power comes
+[09:19] in there this is 240 volts a
+[09:21] single-phase and the power comes out of
+[09:23] the switch on that red and black wire
+[09:25] and that goes up to the two devices
+[09:28] directly above and these are over load
+[09:30] trips for the two motors so essentially
+[09:33] what these will do is that if the motor
+[09:35] draws too much current for too long
+[09:37] these things will disconnect and
+[09:38] therefore cut power to that particular
+[09:41] motor like preventing it from being a
+[09:43] sire or something like that so the power
+[09:46] goes through those and then from there
+[09:48] the power comes out of those at the
+[09:50] bottom of them and goes to the two
+[09:52] contactors which you see at the bottom
+[09:54] left and the bottom Center and from the
+[09:58] bottom of those you can see those wires
+[09:59] coming out which go to the two
+[10:01] individual pumps now that's actually a
+[10:03] shielded cable whoever hit it before has
+[10:05] not done a percent ly good job of
+[10:07] actually doing the wiring there that
+[10:09] basically just sort of taken a bit of
+[10:10] the braid off side with the earth wire
+[10:12] and just probably tape over the top not
+[10:16] all that that's how it is so that's how
+[10:18] it will be staying now in terms of the
+[10:21] control on this what we've got there is
+[10:23] at the top right there's a transformer
+[10:25] and this takes in the mains voltage 240
+[10:28] volts on the black and red wires and it
+[10:30] outputs 24 volts AC and comes out on
+[10:33] there's two white wires at the top there
+[10:35] and we've actually got that coming down
+[10:38] to those terminal blocks in the center
+[10:40] row there towards the right-hand side so
+[10:42] basically those is basically we call
+[10:44] these zero volts and the other one is
+[10:45] the plus 24 and then from those turned
+[10:48] the blocks we've got wires going across
+[10:49] to if there's other devices on the
+[10:53] right-hand side in the middle row see
+[10:55] that a circuit breaker and that's
+[10:56] actually on the 24 volt AC line so that
+[10:59] if anything was say to short out or some
+[11:02] fault occurred on the 24 circuitry that
+[11:04] will trip and disconnect that side of it
+[11:07] also to avoid the transformer basically
+[11:08] melting and sitting on fire
+[11:10] and you'll see there's another circuit
+[11:12] breaker over to the left side of the
+[11:13] center row and out actually for the
+[11:15] mains input which goes to the
+[11:17] transformer so it's another two am one
+[11:19] so I better got protection on both sides
+[11:21] of the actual transformer there now the
+[11:25] way they turn out operates is that
+[11:27] everything in terms of control is 24
+[11:29] volts AC and that also comes in that
+[11:31] little transform at the top right
+[11:33] previously had some 12-volt parts as
+[11:35] well which came from the electronic deal
+[11:37] but so is basically throwing those away
+[11:39] so once you turned on from the switch on
+[11:43] the front panel how will go to the various part in this
+[11:46] and whether the actual pumping is
+[11:48] required or not is determined by the
+[11:50] pressure switch we can see at the bottom
+[11:51] left of the picture here so essentially
+[11:54] the pressure falls below a set level
+[11:55] that will basically close a switch
+[11:57] inside and then that will come back into
+[12:00] the control cabinet and that goes via
+[12:03] the timer switch on the top left there
+[12:06] and essentially what this does is just
+[12:08] intervals it changes between pumps 1 & 2
+[12:10] or a and D as they're labeled here and
+[12:12] then from that the 24 volts goes to the
+[12:16] two contactors at the bottom left and
+[12:19] bottom center so depending on the
+[12:21] position at the timer it will either
+[12:22] switch on pump a or pump B and that
+[12:25] turns on the mains supply to the
+[12:26] particular pump these people in the
+[12:29] region of 2 kilowatts each themselves
+[12:30] don't need the contact us to do that if
+[12:34] one of the pumps should say take too
+[12:36] much current or overload so the motor
+[12:37] was stalled or the rotor jammed or
+[12:39] something then the appropriate trip in
+[12:42] the middle there will let you take this
+[12:43] no actually just cut the mains power to
+[12:46] the pump and in order so we can know
+[12:49] that this has happened on those
+[12:50] particular trips have also used one of
+[12:52] the auxiliary contacts now we can see
+[12:54] those here just with those orange wiring
+[12:56] so what we have there those are normally
+[12:58] open contacts so no connection in normal
+[13:00] operation if thing is tripped or
+[13:02] basically turned off by that thing on
+[13:04] the front loader we join together and
+[13:06] that will connect 2000 volts AC and that
+[13:08] gives you an indication on the red
+[13:09] indicator on the front panel and that's
+[13:13] the same for both pumps a and B now
+[13:16] there is a manual option on the switch
+[13:17] on the front panel and all that does is
+[13:19] basically disconnects that
+[13:20] timer at the top which is basically
+[13:22] changeover switch and instead of that it
+[13:24] just puts another switch in the circuit
+[13:25] on the front panel so you can as man
+[13:27] who's select from Pompeii or be as
+[13:28] required and that's really only there so
+[13:31] if one of the pumps had to be taken away
+[13:32] for repairs or maintenance you can only
+[13:35] keep the system running but only using
+[13:36] one of the pumps that's there so it is a
+[13:39] convenience factor for when maintenance
+[13:41] is required and the other thing we've
+[13:43] got there in the center there in the
+[13:45] center rail we've actually got a small
+[13:47] relay again this is 24 volt AC thing as
+[13:51] well and in normal operation that relay
+[13:54] coil is powered and it's actually
+[13:56] powered via a sensor in the tank which
+[13:59] is that blue thing behind and that
+[14:01] sensor is normally closed and the unit
+[14:03] on that's gonna open is if for some
+[14:05] reason the tank actually ran out of
+[14:06] water so there was some problem with the
+[14:08] filling of it or whatever
+[14:10] so in all operation that relays closed
+[14:12] and the reader has to set two contacts
+[14:15] one of which in the powered state will
+[14:17] be closed and that actually connects to
+[14:19] the 24 supply to the contactors and the
+[14:23] other one is normally open so in a
+[14:25] normal state that doesn't do anything
+[14:26] so what would happen if the tank ran out
+[14:29] of water that relay would no longer have
+[14:31] any power and the contacts would either
+[14:33] closed or open depending on which say it
+[14:34] was the result would be that the
+[14:37] contactors no longer get any 24 volts
+[14:39] supply so neither pump is actually going
+[14:41] to work and the other set would then
+[14:43] close and provide 20 volts ac to a red
+[14:46] indicator on the front panel and I've
+[14:48] taught me to see here with the pump
+[14:50] water low so again I would indicate
+[14:52] there was a problem with the water
+[14:53] supply and of course prevent the pumps
+[14:55] running so that we don't have them
+[14:57] running without any water in which
+[14:58] course would very quickly destroy them I
+[15:01] think while these pumps cost the best
+[15:02] part of a thousand pounds each that's
+[15:04] something you definitely don't want to
+[15:05] happen other stuff in there we've got to
+[15:08] say the Turner blocks in the middle
+[15:09] right there just for the 0 and 24 volts
+[15:12] supply and those terminal box at the
+[15:15] bottom are now mostly unused because say
+[15:18] they weren't actually used before they
+[15:19] were said load of wires going in from
+[15:20] the electronic controller
+[15:21] we've pretty much nothing connected on
+[15:23] the other side so just using the few
+[15:25] over at the right hand side there for
+[15:27] the inputs from the actual pressure
+[15:29] switch and also the water
+[15:31] we'll switch in the tank as well here's
+[15:35] Vav finish panel and it's actually
+[15:37] turned on and working and as you can see
+[15:39] there the new panel baseet a so the
+[15:41] whole front of the existing cabinet now
+[15:44] we put that extra text on the bottom
+[15:45] basic instructions for the operation on
+[15:48] it and also to switch it to manual if
+[15:49] some major problem occurred and you want
+[15:52] to switch over to the main supply only
+[15:53] which I though is not any good it can of
+[15:55] course we use and people to still get
+[15:57] water if there was some major problem
+[15:59] now we can see also in this picture the
+[16:02] blue large item behind all of that is
+[16:04] actually the water tank itself it's at
+[16:07] least 1 meter in each direction so it's
+[16:09] over a thousand liters of capacity there
+[16:12] and below that on the left we can see
+[16:14] the pressure vessel or the expansion
+[16:16] vessel and that's just sitting on the
+[16:18] bottom there and to the bottom right we
+[16:20] can actually see the two pumps there are
+[16:21] those black objects they are absolutely
+[16:23] very similar they once been replaced
+[16:25] more recently one is original so they're
+[16:28] not quite the same in design and on the
+[16:31] bottom of the kernel they were going to
+[16:32] see the pressure switch there and then
+[16:33] the pressure gauge they are just for
+[16:35] indication only to give a visual
+[16:37] indication of what the pressure in the
+[16:39] system actually is and the rest of in
+[16:42] that picture there's a few vowels and
+[16:44] leavers there was gonna be used to
+[16:45] switch over to main supply only and
+[16:47] therefore not use either pump if that
+[16:49] was required so that's the deal with
+[16:54] that and you may be wondering why we
+[16:55] didn't just buy a new electronic
+[16:56] controller for the particular panel we
+[16:57] have and the reason being is that being
+[16:59] from 2003 the particular control panel
+[17:02] is no longer available and hasn't asked
+[17:04] you in available for many years so you
+[17:06] can't just sort of pop it and buy one
+[17:07] even when it was available it was in the
+[17:09] many hundreds of pounds price range and
+[17:12] it appears to be far too complex for
+[17:14] this system anyhow there is allegedly a
+[17:16] replacement but as with a lot of these
+[17:18] replacements it's not a direct swapping
+[17:20] and just put the wires NEC with GWAR as
+[17:22] a fair-minded next to work as well so in
+[17:24] the end it was just easier and then
+[17:26] suitably cheaper just to put and I'm
+[17:28] sure that press the switch there which
+[17:29] is various on and off and that doesn't
+[17:32] tell perfectly well the only thing this
+[17:34] new system doesn't have it doesn't have
+[17:35] a capacity to run both pumps at the same
+[17:37] time should the need arise if there was
+[17:40] some huge demand for water
+[17:42] that could be anything on a later date
+[17:43] if need is that says been in this state
+[17:46] of only one pump actually working for
+[17:48] the last five years plus and nobody
+[17:50] complained up to that point so yeah
+[17:52] that's not really any issue for this
+[17:54] particular installation so that's it for
+[17:57] this particular video and apart this
+[17:59] video was already put out on Facebook so
+[18:01] you may have seen that already and if
+[18:03] not then their details of that are in
+[18:06] the video description and they also put
+[18:08] pictures of various things on Instagram
+[18:10] and Twitter so again do toss those in
+[18:13] the description as well and also if you
+[18:16] want to see videos before anybody else
+[18:17] then you can do so now patreon and all
+[18:20] these services it's JW flame so until
+[18:24] next time thanks for watching

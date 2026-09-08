@@ -12,6 +12,7 @@ import { overviewAnswers, overviewWorking, overviewPrompts } from './overview-an
 import type { QuestionDesign } from './learning-design';
 import { applyQuestionRevision } from './question-revisions';
 import { authorQuestion } from './question-authoring';
+import { suppliedAssessment } from './supplied-assessments';
 
 export type Flashcard = {
   id: string;
@@ -597,6 +598,11 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
     const moduleRememberPool = module.lessons.map((item)=>guides[item.id]?.remember).filter((item):item is string=>Boolean(item));
     const modulePracticePool = module.lessons.map((item)=>guides[item.id]?.practicalConnection).filter((item):item is string=>Boolean(item)).map(firstSentence);
     module.lessons.forEach((lesson, lessonIndex) => {
+      const authored = suppliedAssessment(lesson, module.id);
+      if (authored) {
+        lessons[lesson.id] = authored;
+        return;
+      }
       const guide = guides[lesson.id];
       if (!guide) throw new Error(`Lesson ${lesson.id} cannot build an assessment without a video-specific teaching guide.`);
       if (guide.keyConcepts.length < 3) throw new Error(`Lesson ${lesson.id} needs at least three specific key concepts.`);
@@ -789,7 +795,10 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       const cumulativeLessons = module.lessons.slice(0, boundary + 1);
       const newLessons = module.lessons.slice(previousBoundary + 1, boundary + 1);
       previousBoundary = boundary;
-      const id = `${module.id}-checkpoint-${checkpointIndex + 1}`;
+      // Do not let a saved pass for an old numeric checkpoint unlock a new
+      // topic group. The first two Module 1 scopes and other modules are intact.
+      const expandedScope = (module.id === 'module-01' && checkpointIndex >= 2) || module.id === 'module-12';
+      const id = `${module.id}-checkpoint-${checkpointIndex + 1}${expandedScope ? '-supplied-202609' : ''}`;
       const assessment: CheckpointAssessment = {
         id,
         moduleId: module.id,

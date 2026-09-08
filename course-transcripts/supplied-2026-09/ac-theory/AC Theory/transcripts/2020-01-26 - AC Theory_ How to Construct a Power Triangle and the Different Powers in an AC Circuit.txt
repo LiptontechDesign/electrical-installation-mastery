@@ -1,0 +1,269 @@
+# AC Theory: How to Construct a Power Triangle and the Different Powers in an AC Circuit
+# https://www.youtube.com/watch?v=6YC2_Ir-d2w
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering AC theory and in particular we're going to talk about the different types of power that are found in circuits that are connected to AC supplies so we're already starting to get familiar with the idea that we can have different types of a unit so we've spoken previously about different types of opposition to current flow and in fact in the previous video in this series we found that they bore a very strong relationship to each other what we're going to do in this video is we're going to continue building on this information that we've looked at in the past two or three videos and figure out what are different kinds of power ah stay tuned to the end for some help with typical exam questions and things that you might come across in connection with this and understand that the next stage of this is where we finally get around to talking about power factor which is a really really important part of AC theory that will be in the following video so let's have a little look at what we've got on the board here now so we had our front lighting circuit which a long time ago videos wise we looked at measuring voltages and currents inside that and we represented that here we've got the resistive part of the fluorescent light the actual tube itself here we've got the inductive part of the fluorescent light which is the choke and when you saw that the voltages were behaving strangely but we were able to kind of figure out how those voltages were behaving by the use of a phasor diagram if any of this seems completely alien to and you have no idea what I'm talking about please go back and watch the previous videos because it will really help your deep-seated understanding of AC theory and help you build up to understand power factor from there we produced a right angle triangle that we saw was buried inside here with the voltages on different sides and we realize that if we divided each of these voltages by the current flowing through the circuit we would get the different types of opposition to current flow that are found within the circuit what we're going to do in this video is we're going to change things up a little bit we are now going to instead of dividing the voltages by the current we're going to take all of these voltages and this time we are going to create a new triangle based on the fact that we're going to multiply all of those voltages by the current that is flowing through the circuit so let's just think about it logically if you take a voltage and you times it by a current what do you get well you find power don't you we know that power is equal to current times voltage so that leads us to be able to construct a new triangle the proportions of which remain the same as these two triangles however the lengths of the sides would change if we were going to do this mathematically accurately so let's get our third triangle drawn on the board let's have a look at that so here's our third triangle here and this third triangle try and get that as level as we can under the circumstances we'll draw like that and like that and like that okay and what's again important to bear in mind number one is that you should really have nice straight lines and triangles because my OCD won't allow me to what's important to bear in mind is that the proportions of this triangle stay the same what do we mean by that well what we mean is that this angle here which we will call theta for the time being this angle theta this angle is the same as this angle is the same as this angle which is the same as this angle which comes from a current being out of phase with the supply voltage that angle is really really important to help us understand power factor and we'll explain why in future videos so let's just think now about our triangle and trying to figure out what each side represents if we take the voltage across the resistor which is the voltage here if we take the voltage across the resistor and times it by the current flowing through that resistor it will tell us what this is and this side represents something that we refer to as the true power so this is the true power of the circuit and give that the unit symbol capital W for watts now if we take the voltage across the inductor so that's a VL the voltage across the inductor of the circuit and times that by the current flowing through that coil what we'll find is that we get something that we refer to as the reactive power so this is the reactive power now the reactive power is measured in what we call reactive volt amperes okay so reactive volt amp ere's and that is shortened down to the unit symbol V a with a lowercase R in the subscript so we've got V a R these are sometimes referred to as VARs just a point worth noting is that often these will be referred to as kilowatts or Killa VARs or K VARs you may hear it referred to as and that just means that it's been put into the kilo multiple in other words it's talking in multiples of a thousand but it means exactly the same thing so then what happens if we take our total voltage and multiply it by the current flowing into the circuit well if we do that we find what we call the apparent power the apparent power so apparent power is measured in what we call volt amperes and we give that the unit symbol V a so again we're used to thinking in terms of something perhaps being 3000 watts or 3 kilowatts but it might also have a reactive power of 1500 VARs or VAR s or that might be one point five kilo var as it might be referred to us and the apparent power you may have heard this when you talk about large transformers you might talk about kv8 of a transformer the KVA rating and that is the total power that it's able to deliver so again we've got this idea we've seen that on this triangle this side represented the total opposition to current flow in the circuit this side of the triangle represents total amount of power that the circuit is dissipating now that's a really important number because it's this side of the triangle that your electricity company bill you for and what's quite interesting is that as this reactive power gets bigger and bigger and bigger what's going to happen to our apparent power well that's gonna get bigger and bigger as well which means you're going to start getting charged more and more by the electricity company they'll also do some other charges to you as well which we'll talk about in the power factor video but here you can see we've got our three different kinds of power let's just define these very quickly true power so that is the useful power that the system is using is based basically on the resistive part of the circuit and it is the useful power reactive power is wasted power it's the power being used by either the inductive part of the circuit or possibly the capacitive part of the circuit and it is the wasted energy or the wasted power I should say within the circuit and then we've got our apparent power and our apparent power is the total amount of power that the circuit is dissipating it's a combination of true power and reactive power so it's the total amount of power this is sometimes likened to a glass of beer a lot particularly like this analogy it doesn't quite explain the relationships between these things properly but just as a rough metaphor it's not too bad the true power represents the amount of drinkable beer that you have the reactive power represents the head on the glass of beer obviously the bit that isn't of no use to you and the apparent power is what is the glass in total so it's the true power plus the reactive power that's not a very good analogy it kind of helps you to understand that you can have something part of which is not very useful to you but it doesn't explain the mathematical relationship behind these three powers very clearly because as we saw in previous videos we've got our relationships between the voltages here that can be expressed using pythagoras we've got our relationships between the opposition's two current flow in the circuit which can also expressed by pythagoras and amazingly we can also use this to explain the relationships between the powers in the circuit so we would say that the apparent power in volt amperes squared is equal to the true power squared plus the reactive power squared and of course if we want to figure out what just the apparent power is by itself we would say that is VA is equal to the square root of W squared plus V a R squared so let's just think about those all-important exam questions things that you might get asked you might be asked what is the definition of one of these types of power what is the definition of reactive power what causes reactive power in a circuit of course that's an inductive or capacitive load you might also be given the true power of a circuit the reactive power of the circuit and the apparent power is the thing that you're trying to find and of course we would just use the Pythagorean theorem for that what we're going to do in a future video is we're going to break a coil down into its component parts we're going to do some measurements on it and we're going to see how we can calculate all of the different elements of that coil including how much power it's using and what the reactive power and the true power is now in our next video we're going to have a look at power factor in a bit more depth we're going to have a look at exactly what power factor is how it relates to all of this information that we've developed over the past three or four videos and why it's so important not just to electricians but also to their clients very importantly all that remains for this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're going to continue considering AC
+[00:14] theory and in particular we're going to
+[00:17] talk about the different types of power
+[00:18] that are found in circuits that are
+[00:20] connected to AC supplies so we're
+[00:23] already starting to get familiar with
+[00:24] the idea that we can have different
+[00:26] types of a unit so we've spoken
+[00:27] previously about different types of
+[00:30] opposition to current flow and in fact
+[00:32] in the previous video in this series we
+[00:34] found that they bore a very strong
+[00:36] relationship to each other what we're
+[00:38] going to do in this video is we're going
+[00:39] to continue building on this information
+[00:42] that we've looked at in the past two or
+[00:43] three videos and figure out what are
+[00:45] different kinds of power ah stay tuned
+[00:48] to the end for some help with typical
+[00:50] exam questions and things that you might
+[00:52] come across in connection with this and
+[00:55] understand that the next stage of this
+[00:57] is where we finally get around to
+[00:59] talking about power factor which is a
+[01:01] really really important part of AC
+[01:03] theory that will be in the following
+[01:06] video so let's have a little look at
+[01:08] what we've got on the board here now so
+[01:10] we had our front lighting circuit which
+[01:13] a long time ago videos wise we looked at
+[01:16] measuring voltages and currents inside
+[01:19] that and we represented that here we've
+[01:20] got the resistive part of the
+[01:22] fluorescent light the actual tube itself
+[01:23] here we've got the inductive part of the
+[01:26] fluorescent light which is the choke and
+[01:27] when you saw that the voltages were
+[01:29] behaving strangely but we were able to
+[01:31] kind of figure out how those voltages
+[01:34] were behaving by the use of a phasor
+[01:36] diagram if any of this seems completely
+[01:38] alien to and you have no idea what I'm
+[01:40] talking about please go back and watch
+[01:42] the previous videos because it will
+[01:44] really help your deep-seated
+[01:45] understanding of AC theory and help you
+[01:48] build up to understand power factor from
+[01:52] there we produced a right angle triangle
+[01:54] that we saw was buried inside here with
+[01:55] the voltages on different sides and we
+[01:57] realize that if we divided each of these
+[01:59] voltages by the current flowing through
+[02:01] the circuit we would get the different
+[02:03] types of opposition to current flow that
+[02:05] are found within the circuit what we're
+[02:08] going to do in this video is we're going
+[02:09] to change things up a little bit we are
+[02:11] now going to
+[02:13] instead of dividing the voltages by the
+[02:15] current we're going to take all of these
+[02:18] voltages and this time we are going to
+[02:21] create a new triangle based on the fact
+[02:23] that we're going to multiply all of
+[02:26] those voltages by the current that is
+[02:28] flowing through the circuit so let's
+[02:31] just think about it logically if you
+[02:32] take a voltage and you times it by a
+[02:35] current what do you get well you find
+[02:38] power don't you we know that power is
+[02:40] equal to current times voltage so that
+[02:45] leads us to be able to construct a new
+[02:46] triangle the proportions of which remain
+[02:49] the same as these two triangles
+[02:51] however the lengths of the sides would
+[02:53] change if we were going to do this
+[02:54] mathematically accurately so let's get
+[02:56] our third triangle drawn on the board
+[02:59] let's have a look at that so here's our
+[03:02] third triangle here and this third
+[03:05] triangle try and get that as level as we
+[03:08] can under the circumstances we'll draw
+[03:11] like that and like that and like that
+[03:20] okay and what's again important to bear
+[03:24] in mind number one is that you should
+[03:27] really have nice straight lines and
+[03:29] triangles because my OCD won't allow me
+[03:32] to what's important to bear in mind is
+[03:38] that the proportions of this triangle
+[03:40] stay the same what do we mean by that
+[03:41] well what we mean is that this angle
+[03:45] here which we will call theta for the
+[03:47] time being this angle theta this angle
+[03:50] is the same as this angle is the same as
+[03:53] this angle which is the same as this
+[03:55] angle which comes from a current being
+[03:56] out of phase with the supply voltage
+[03:59] that angle is really really important to
+[04:02] help us understand power factor and
+[04:03] we'll explain why in future videos
+[04:07] so let's just think now about our
+[04:10] triangle and trying to figure out what
+[04:12] each side represents if we take the
+[04:14] voltage across the resistor which is the
+[04:17] voltage here if we take the voltage
+[04:18] across the resistor and times it by the
+[04:20] current flowing through that resistor it
+[04:22] will tell us what this
+[04:24] is and this side represents something
+[04:27] that we refer to as the true power so
+[04:31] this is the true power of the circuit
+[04:36] and give that the unit symbol capital W
+[04:40] for watts now if we take the voltage
+[04:45] across the inductor so that's a VL the
+[04:47] voltage across the inductor of the
+[04:49] circuit and times that by the current
+[04:51] flowing through that coil what we'll
+[04:53] find is that we get something that we
+[04:55] refer to as the reactive power so this
+[04:59] is the reactive power now the reactive
+[05:02] power is measured in what we call
+[05:04] reactive volt amperes
+[05:06] okay so reactive volt amp ere's and that
+[05:09] is shortened down to the unit symbol V a
+[05:12] with a lowercase R in the subscript so
+[05:16] we've got V a R these are sometimes
+[05:18] referred to as VARs just a point worth
+[05:21] noting is that often these will be
+[05:23] referred to as kilowatts or Killa VARs
+[05:26] or K VARs you may hear it referred to as
+[05:28] and that just means that it's been put
+[05:30] into the kilo multiple in other words
+[05:33] it's talking in multiples of a thousand
+[05:35] but it means exactly the same thing so
+[05:39] then what happens if we take our total
+[05:40] voltage and multiply it by the current
+[05:43] flowing into the circuit well if we do
+[05:45] that we find what we call the apparent
+[05:48] power the apparent power so apparent
+[05:54] power is measured in what we call volt
+[05:56] amperes and we give that the unit symbol
+[05:58] V a so again we're used to thinking in
+[06:01] terms of something perhaps being 3000
+[06:04] watts or 3 kilowatts but it might also
+[06:06] have a reactive power of 1500 VARs or
+[06:11] VAR s or that might be one point five
+[06:13] kilo var as it might be referred to us
+[06:15] and the apparent power you may have
+[06:18] heard this when you talk about large
+[06:20] transformers you might talk about kv8 of
+[06:22] a transformer the KVA rating and that is
+[06:25] the total power that it's able to
+[06:26] deliver so again we've got this idea
+[06:28] we've seen that on this triangle this
+[06:32] side represented the total opposition to
+[06:34] current flow in the circuit this side of
+[06:37] the triangle represents
+[06:38] total amount of power that the circuit
+[06:41] is dissipating now that's a really
+[06:43] important number because it's this side
+[06:46] of the triangle that your electricity
+[06:49] company bill you for and what's quite
+[06:52] interesting is that as this reactive
+[06:54] power gets bigger and bigger and bigger
+[06:56] what's going to happen to our apparent
+[06:58] power well that's gonna get bigger and
+[07:00] bigger as well which means
+[07:01] you're going to start getting charged
+[07:02] more and more by the electricity company
+[07:04] they'll also do some other charges to
+[07:08] you as well which we'll talk about in
+[07:09] the power factor video but here you can
+[07:11] see we've got our three different kinds
+[07:12] of power let's just define these very
+[07:14] quickly true power so that is the useful
+[07:18] power that the system is using is based
+[07:21] basically on the resistive part of the
+[07:22] circuit and it is the useful power
+[07:26] reactive power is wasted power it's the
+[07:30] power being used by either the inductive
+[07:33] part of the circuit or possibly the
+[07:34] capacitive part of the circuit and it is
+[07:36] the wasted energy or the wasted power I
+[07:40] should say within the circuit and then
+[07:43] we've got our apparent power and our
+[07:45] apparent power is the total amount of
+[07:47] power that the circuit is dissipating
+[07:50] it's a combination of true power and
+[07:52] reactive power so it's the total amount
+[07:55] of power this is sometimes likened to a
+[07:58] glass of beer a lot particularly like
+[07:59] this analogy it doesn't quite explain
+[08:02] the relationships between these things
+[08:03] properly but just as a rough metaphor
+[08:06] it's not too bad the true power
+[08:08] represents the amount of drinkable beer
+[08:11] that you have the reactive power
+[08:13] represents the head on the glass of beer
+[08:16] obviously the bit that isn't of no use
+[08:18] to you and the apparent power is what is
+[08:21] the glass in total so it's the true
+[08:23] power plus the reactive power that's not
+[08:26] a very good analogy it kind of helps you
+[08:28] to understand that you can have
+[08:29] something part of which is not very
+[08:31] useful to you but it doesn't explain the
+[08:33] mathematical relationship behind these
+[08:35] three powers very clearly because as we
+[08:37] saw in previous videos we've got our
+[08:41] relationships between the voltages here
+[08:43] that can be expressed using pythagoras
+[08:45] we've got our relationships between the
+[08:48] opposition's two current flow in the
+[08:50] circuit which can also
+[08:51] expressed by pythagoras and amazingly we
+[08:55] can also use this to explain the
+[08:59] relationships between the powers in the
+[09:00] circuit so we would say that the
+[09:03] apparent power in volt amperes squared
+[09:07] is equal to the true power squared plus
+[09:11] the reactive power squared and of course
+[09:15] if we want to figure out what just the
+[09:16] apparent power is by itself we would say
+[09:19] that is VA is equal to the square root
+[09:21] of W squared plus V a R squared so let's
+[09:28] just think about those all-important
+[09:29] exam questions things that you might get
+[09:31] asked you might be asked what is the
+[09:33] definition of one of these types of
+[09:35] power what is the definition of reactive
+[09:37] power
+[09:38] what causes reactive power in a circuit
+[09:40] of course that's an inductive or
+[09:41] capacitive load you might also be given
+[09:44] the true power of a circuit the reactive
+[09:46] power of the circuit and the apparent
+[09:47] power is the thing that you're trying to
+[09:49] find and of course we would just use the
+[09:53] Pythagorean theorem for that what we're
+[09:56] going to do in a future video is we're
+[09:57] going to break a coil down into its
+[09:59] component parts we're going to do some
+[10:00] measurements on it and we're going to
+[10:01] see how we can calculate all of the
+[10:04] different elements of that coil
+[10:05] including how much power it's using and
+[10:08] what the reactive power and the true
+[10:10] power is now in our next video we're
+[10:13] going to have a look at power factor in
+[10:16] a bit more depth we're going to have a
+[10:17] look at exactly what power factor is how
+[10:21] it relates to all of this information
+[10:22] that we've developed over the past three
+[10:24] or four videos and why it's so important
+[10:26] not just to electricians but also to
+[10:28] their clients very importantly all that
+[10:31] remains for this video is to say thank
+[10:33] you very much for watching
+[10:37] [Music]
+[10:50] [Music]
+[10:56] [Music]

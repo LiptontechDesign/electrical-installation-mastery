@@ -1,0 +1,238 @@
+# AC Theory: How Does Frequency Affect Inductive Reactance?
+# https://www.youtube.com/watch?v=c9C1Etd8qek
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue our series on AC theory in a previous video we've looked at the different types of opposition to current flow that exist in AC circuits and what we're going to do now we start breaking those down a little bit and looking at the mathematical formulas that define them but in order to find out what they are we're going to carry out an experiment to figure out what contributes to inductive reactance now hopefully you've already got your work sheet downloaded for you to be able to continue filling in and we're now working on this row here so here we're looking at the opposition calculation our first type of load was resistance and of course we know from previous videos Andre Robinson training the things that contribute to the resistance of a conductor so we can go back and watch that video and fill in this box but I'll put the formula in now it hopefully will be familiar to you R equals Rho times L over a those are the factors that contribute to the resistance of a conductor but what we're going to look at in this video is what contributes to the reactance of an inductor or in other words inductive reactance now let's remember that inductive reactance is simply another form of opposition to current flow in an AC circuit is trying to stop the current from flowing so we've got a circuit all set up and ready to go first of all we're just going to illustrate a point about how we're going to measure what's happening inside our circuit with the opposition to current flow and then we'll get stuck into figuring out what contributes to inductive reactance let's have a look so we've got an experiment set up here and this is slightly more complicated than our usual experiments but it's not quite as complicated as it first looks so we've got first of all an AC supply connected up to this circuit now what's special about this AC supply is I can change the frequency of it so if we look on our oscilloscope over here you can see we've got an AC wave being put into the circuit and on this device which is a function generator I can actually change the frequency of the waveform so you can see there that I'm increasing the frequency and you can see that we're getting more and more waves happening within the same period of time so I'll put that back so it's just about at 50 Hertz again because that's a value that we're all very familiar with here in the UK with our 50 Hertz AC supply now we've shown in this video that we're going to look at inductive reactance and you'll notice that on our board here we don't have an inductor connected up anywhere at all what we do have is a variable resistor and what we're going to do with this variable resistor is we're going to use this just to illustrate a point because we want to investigate what's happening with the opposition to current flow in a circuit that is live now there's one or two challenges with that so what we're going to do is we're going to measure the current flowing through the circuit and we're going to use that value of current and how it changes to infer how the opposition to current flow is behaving let me illustrate if I switch my mega AVO 835 to measure milliamps you can see we're currently measuring nine point seven eight milliamps now if I start to change the resistance or the opposition to current flow of this circuit you can see that the current is increasing so the more I twist this dial here the more the current goes up now if we think back to Ohm's law if current is increasing then that means that resistance or opposition to current flow must be decreasing so let's just bear that in mind if the current goes up the opposition to current flow must be going down now just to prove a point here what we're going to do is we're going to adjust the frequency that's being applied to the circuit so I'm going to change the frequency and watch what happens to the current as I change frequency so I am changing the frequency is increasing now you can see there some tiny tiny little movement of the current but bearing in mind that we're talking here about point zero one of a million so a tiny tiny little fraction of an amp as I changed the frequency you can see it's not really impacting on the current flowing through there so that indicates that changing the frequency on a purely resistive circuit isn't actually really changing anything to do with the opposition to current flow it's not increasing or decreasing the current flow and we could change that enormously we could now put this up to quite a large value and you can see that we're still hovering around that 23 milliamp region so the frequency is massively increased now we're at somewhere around 1,100 Hertz and actually the current hasn't changed one bit so we'll bring that back down to our normal steady 50 Hertz so we'll put that down to 50 Hertz now and we can see that changing the frequency doesn't really impact on the current flow in a purely resistive circuit now let's think about what happens inside an inductive circuit so now let's set up our inductive circuit and to do this although there's absolutely minimal risk of receiving any kind of shock from this I'm just going to make the circuit go dead so I'm going to strip out all the resistance from the circuit and I'm going to leave this as close to being a purely inductive circuit as I possibly can so we've got an inductor connected in there and I'm just going to connect a link into there and we've got our circuit set up so you can see here we've got the symbol for an inductive load this is a forty seven million REE inductor so what we're going to do now is we're going to see what factors will affect the opposition to current flow in this inductive circuit now so let's power the circuit back up now I'll switch the circuit back on again okay and there's our AC supply reconnected and now we've got the current flowing through our 47 million REE inductor so you can see here that we're sitting at about 20 milliamps now what we're going to do now is start adjusting the frequency into the circuit see how it affects the in flow and from that we can infer how it's affecting the opposition to current flow within the circuit so let's start turning the frequency up so you can see on our oscilloscope the frequency is increasing okay so we've seen perhaps a little bit of a change there but let's go for quite a big change now we'll change this up so we're now at 110 Hertz let's times that by 10 so now we're at 1,100 Hertz and look at that you can see now quite a significant change in the current flow we're now looking at just around 10 milliamps so let's just think it through we increased the frequency and as we increase the frequency we saw that the current dropped and from Ohm's law we know that if current is decreasing opposition to current flow you must be increasing so now let's kind of cut out that middle connecting part and just think if we increase frequency we increase the opposition to current flow so in an inductive circuit if we increase the frequency we make it harder for the current to flow around the circuit therefore the opposition to current flow must be increasing and in an inductive circuit we call that opposition to current flow inductive reactance so just to prove the point and just to emphasize this it's really important what do you think will happen if I increase the frequency to this circuit one more time what's going to happen to the current flow and what will happen to the opposition to current flow well let's have a look and find out so let's change this now to a really high value and you can see on the screen here the frequencies got so high now that the oscilloscope on its current settings can't actually measure the waveform I could just adjust that just by changing the time division so you can see there the waveform comes into view but we've kind of decreased the value that each one of these little squares has just as a minor point now but the key point the thing we're really interested in what's happened to our current flow well we can see that it's dropped down again and it's dropped down quite significantly now we're down to 1.3 million so once again an increase in frequency has led to a reduction in current and if current is reducing the opposition to current flow must be increasing so we can see that clear relationship in an inductive circuit if we increase frequency we increase the opposition to current flow in the next video in this series we're going to have a look at how changing the inductance of the coil will also affect the opposition to current flow or inductive reactance thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're going to continue our series on AC
+[00:14] theory in a previous video we've looked
+[00:17] at the different types of opposition to
+[00:19] current flow that exist in AC circuits
+[00:21] and what we're going to do now we start
+[00:23] breaking those down a little bit and
+[00:25] looking at the mathematical formulas
+[00:27] that define them but in order to find
+[00:29] out what they are we're going to carry
+[00:30] out an experiment to figure out what
+[00:32] contributes to inductive reactance now
+[00:36] hopefully you've already got your work
+[00:37] sheet downloaded for you to be able to
+[00:39] continue filling in and we're now
+[00:41] working on this row here so here we're
+[00:45] looking at the opposition calculation
+[00:47] our first type of load was resistance
+[00:50] and of course we know from previous
+[00:52] videos Andre Robinson training the
+[00:55] things that contribute to the resistance
+[00:57] of a conductor so we can go back and
+[01:00] watch that video and fill in this box
+[01:01] but I'll put the formula in now it
+[01:03] hopefully will be familiar to you R
+[01:05] equals Rho times L over a those are the
+[01:09] factors that contribute to the
+[01:11] resistance of a conductor but what we're
+[01:14] going to look at in this video is what
+[01:16] contributes to the reactance of an
+[01:19] inductor or in other words inductive
+[01:22] reactance now let's remember that
+[01:25] inductive reactance is simply another
+[01:27] form of opposition to current flow in an
+[01:30] AC circuit is trying to stop the current
+[01:33] from flowing so we've got a circuit all
+[01:37] set up and ready to go first of all
+[01:38] we're just going to illustrate a point
+[01:40] about how we're going to measure what's
+[01:43] happening inside our circuit with the
+[01:44] opposition to current flow and then
+[01:46] we'll get stuck into figuring out what
+[01:47] contributes to inductive reactance let's
+[01:49] have a look so we've got an experiment
+[01:52] set up here and this is slightly more
+[01:54] complicated than our usual experiments
+[01:56] but it's not quite as complicated as it
+[01:59] first looks so we've got first of all an
+[02:01] AC supply connected up to this circuit
+[02:04] now what's special about this AC supply
+[02:06] is I can change the frequency of it so
+[02:09] if we look on our oscilloscope over here
+[02:11] you can see we've got an AC wave
+[02:13] being put into the circuit and on this
+[02:16] device which is a function generator I
+[02:19] can actually change the frequency of the
+[02:22] waveform so you can see there that I'm
+[02:24] increasing the frequency and you can see
+[02:27] that we're getting more and more waves
+[02:28] happening within the same period of time
+[02:31] so I'll put that back so it's just about
+[02:33] at 50 Hertz again because that's a value
+[02:36] that we're all very familiar with here
+[02:38] in the UK with our 50 Hertz AC supply
+[02:43] now we've shown in this video that we're
+[02:45] going to look at inductive reactance and
+[02:47] you'll notice that on our board here we
+[02:49] don't have an inductor connected up
+[02:51] anywhere at all what we do have is a
+[02:54] variable resistor and what we're going
+[02:56] to do with this variable resistor is
+[02:58] we're going to use this just to
+[03:00] illustrate a point because we want to
+[03:02] investigate what's happening with the
+[03:04] opposition to current flow in a circuit
+[03:06] that is live now there's one or two
+[03:08] challenges with that so what we're going
+[03:10] to do is we're going to measure the
+[03:12] current flowing through the circuit and
+[03:14] we're going to use that value of current
+[03:17] and how it changes to infer how the
+[03:21] opposition to current flow is behaving
+[03:23] let me illustrate if I switch my mega
+[03:27] AVO 835 to measure milliamps you can see
+[03:31] we're currently measuring nine point
+[03:33] seven eight milliamps now if I start to
+[03:35] change the resistance or the opposition
+[03:37] to current flow of this circuit you can
+[03:40] see that the current is increasing so
+[03:45] the more I twist this dial here the more
+[03:49] the current goes up now if we think back
+[03:51] to Ohm's law if current is increasing
+[03:55] then that means that resistance or
+[03:58] opposition to current flow must be
+[04:01] decreasing so let's just bear that in
+[04:04] mind if the current goes up the
+[04:06] opposition to current flow must be going
+[04:08] down now just to prove a point here what
+[04:12] we're going to do is we're going to
+[04:13] adjust the frequency that's being
+[04:15] applied to the circuit so I'm going to
+[04:18] change the frequency and watch what
+[04:19] happens to the current as I change
+[04:21] frequency so I am changing the frequency
+[04:24] is increasing now you can
+[04:27] see there
+[04:28] some tiny tiny little movement of the
+[04:30] current but bearing in mind that we're
+[04:32] talking here about point zero one of a
+[04:35] million so a tiny tiny little fraction
+[04:37] of an amp as I changed the frequency you
+[04:40] can see it's not really impacting on the
+[04:43] current flowing through there so that
+[04:45] indicates that changing the frequency on
+[04:48] a purely resistive circuit isn't
+[04:50] actually really changing anything to do
+[04:53] with the opposition to current flow it's
+[04:54] not increasing or decreasing the current
+[04:56] flow and we could change that enormously
+[04:58] we could now put this up to quite a
+[05:00] large value and you can see that we're
+[05:02] still hovering around that 23 milliamp
+[05:06] region so the frequency is massively
+[05:08] increased now we're at somewhere around
+[05:10] 1,100 Hertz and actually the current
+[05:13] hasn't changed one bit so we'll bring
+[05:15] that back down to our normal steady 50
+[05:19] Hertz so we'll put that down to 50 Hertz
+[05:22] now and we can see that changing the
+[05:24] frequency doesn't really impact on the
+[05:26] current flow in a purely resistive
+[05:27] circuit now let's think about what
+[05:30] happens inside an inductive circuit so
+[05:35] now let's set up our inductive circuit
+[05:37] and to do this although there's absolutely minimal risk
+[05:39] of receiving any kind of shock from this
+[05:41] I'm just going to make the circuit go
+[05:43] dead so I'm going to strip out all the
+[05:45] resistance from the circuit and I'm
+[05:48] going to leave this as close to being a
+[05:50] purely inductive circuit as I possibly
+[05:52] can so we've got an inductor connected
+[05:55] in there and I'm just going to connect a
+[05:57] link into there and we've got our
+[06:00] circuit set up so you can see here we've
+[06:02] got the symbol for an inductive load
+[06:03] this is a forty seven million REE
+[06:05] inductor so what we're going to do now
+[06:08] is we're going to see what factors will
+[06:10] affect the opposition to current flow in
+[06:12] this inductive circuit now so let's
+[06:16] power the circuit back up now I'll
+[06:18] switch the circuit back on again okay
+[06:22] and there's our AC supply reconnected
+[06:25] and now we've got the current flowing
+[06:27] through our 47 million REE inductor so
+[06:32] you can see here that we're sitting at
+[06:34] about 20 milliamps now what we're going
+[06:37] to do now is start adjusting the
+[06:38] frequency into the circuit see how it
+[06:41] affects the
+[06:42] in flow and from that we can infer how
+[06:44] it's affecting the opposition to current
+[06:46] flow within the circuit so let's start
+[06:49] turning the frequency up so you can see
+[06:51] on our oscilloscope the frequency is
+[06:53] increasing okay so we've seen perhaps a
+[06:56] little bit of a change there but let's
+[06:58] go for quite a big change now we'll
+[06:59] change this up so we're now at 110 Hertz
+[07:03] let's times that by 10 so now we're at
+[07:08] 1,100 Hertz and look at that you can see
+[07:11] now quite a significant change in the
+[07:13] current flow we're now looking at just
+[07:16] around 10 milliamps so let's just think
+[07:19] it through we increased the frequency
+[07:22] and as we increase the frequency we saw
+[07:26] that the current dropped and from Ohm's
+[07:29] law we know that if current is
+[07:30] decreasing opposition to current flow
+[07:33] you must be increasing so now let's kind
+[07:36] of cut out that middle connecting part
+[07:38] and just think if we increase frequency
+[07:41] we increase the opposition to current
+[07:44] flow so in an inductive circuit if we
+[07:47] increase the frequency we make it harder
+[07:50] for the current to flow around the
+[07:52] circuit therefore the opposition to
+[07:54] current flow must be increasing and in
+[07:56] an inductive circuit we call that
+[07:58] opposition to current flow inductive
+[08:00] reactance so just to prove the point and
+[08:04] just to emphasize this it's really
+[08:06] important what do you think will happen
+[08:08] if I increase the frequency to this
+[08:11] circuit one more time what's going to
+[08:13] happen to the current flow and what will
+[08:14] happen to the opposition to current flow
+[08:18] well let's have a look and find out so
+[08:21] let's change this now to a really high
+[08:23] value and you can see on the screen here
+[08:25] the frequencies got so high now that the
+[08:28] oscilloscope on its current settings
+[08:30] can't actually measure the waveform I
+[08:32] could just adjust that just by changing
+[08:34] the time division so you can see there
+[08:36] the waveform comes into view but we've
+[08:39] kind of decreased the value that each
+[08:42] one of these little squares has just as
+[08:44] a minor point now but the key point the
+[08:46] thing we're really interested in what's
+[08:47] happened to our current flow well we can
+[08:51] see that it's dropped down again and
+[08:52] it's dropped down quite significantly
+[08:54] now we're down to
+[08:55] 1.3 million so once again an increase in
+[08:59] frequency has led to a reduction in
+[09:02] current and if current is reducing the
+[09:06] opposition to current flow must be
+[09:08] increasing so we can see that clear
+[09:11] relationship in an inductive circuit if
+[09:13] we increase frequency we increase the
+[09:17] opposition to current flow in the next
+[09:20] video in this series we're going to have
+[09:22] a look at how changing the inductance of
+[09:24] the coil will also affect the opposition
+[09:27] to current flow or inductive reactance
+[09:28] thank you very much for watching
+[09:33] [Music]
+[09:46] [Music]

@@ -1,0 +1,444 @@
+# Variable Frequency Drives Explained - VFD Basics IGBT inverter
+# https://www.youtube.com/watch?v=yEPe7RDtkgo
+
+[Applause] hey there guys paul here from the engineering mindset.com in this video we're going to be looking at vfds we'll be starting from the basics to understand how they work remember electricity is dangerous and can be fatal you should be qualified and competent to carry out any electrical work if you work in hvac then you need to check out the inverter compressors by denfos who have kindly sponsored this video when used in combination with variable speed technology like the vfds we're going to cover in today's video they make your entire hvac unit more efficient saving you and your customers money if you want to learn more danfoss has several e-lessons and case stories for you to check out you can find links those in the video description down below vfd stands for variable frequency drive and they look something like this you might also hear them referred to with ac drives or variable speed drives and that's because they are used to control the rotational speed of an ac motor we find ac motors and vfds used in all industries but especially hvac for example we can find them used to control a compressor's speed in a refrigeration system and that allows us to closely match the cooling demand which will result in significant energy savings traditionally we would have had to use a fixed speed compressor now these simply just turn on and off and that results in poor control and higher inrush currents we also find them used to control things such as pumps and fans in hvac systems to allow us to unlock energy savings and improve performance and control the vfd unit is connected into the motor's electrical supply the unit can vary the frequency of the electricity being supplied to drive the motor and by varying this we can control the rotational speed of the motor therefore we have our variable frequency drive to understand how a vfd works we first need to understand some fundamentals of electricity there are two types of electricity and the first one we're going to look at is dc or direct current this is the simplest type and we get this from batteries solar panels etc you can think of dc like a river with a current of water flowing in just one direction with dc the electrons just flow in a single direction now i'm animating this using electron flow which is from the negative to the positive but you might be used to seeing conventional current which is from positive to negative electron flow is what's actually occurring conventional was the original theory and it's still used widely today just be aware of the two theories and which one we're using for electricity to flow we need to complete the circuit the electricity will then always try to get back to its source when we use an oscilloscope to look at the electrical waveform of dc we get this flat line at the maximum voltage in the positive region if we cut the power the line drops to zero if we turn it on and off repeatedly then we get a square wave pattern between zero and maximum if we pulse the switch to open and close over different lengths of time then we would get a pulsating pattern the other type of electricity is ac or alternating current this type is what you'll get from the outlets in your homes and places of work with this type of electricity the electrons within the copper wire constantly reverse and flow forwards backwards forwards backwards etc you can think of this type like the tide of the sea which flows in and out between two maximum points the high tide and the low tide if we follow the copper wires back to the generator the wires are connected to some coils of wire which sit within the generator inside a basic generator we find a magnet at the center which is rotating the magnet has a north and south pole or you can think of it as a positive and negative half the electrons in the wire are negatively charged and as you may already know magnets push or pull depending on the polarity as the magnets rotate past the coil the positive and negative half are going to therefore push and pull the electrons within the copper coils and these will also move them through the connected copper wires the magnetic field of the magnet varies in intensity and we can actually see the magnetic field lines by sprinkling some iron filings over a magnet so as the magnet rotates past the coil will experience a change in intensity of the magnetic field and this will be from zero up to its maximum intensity and then as it passes the coil it will decrease again back to zero then the negative half comes in and pulls the electrons backwards with the same change in intensity each full rotation of the magnet will therefore produce this wave pattern known as a sine wave the voltage is not constant in this type of electricity instead it repeatedly moves from zero up to its peak then back to zero then through the negative peak and finally back to zero again frequency refers to how many times this ac sine wave repeats per second in north america and a few other parts of the world we find 60 hertz electricity at the outlet now this means that the sine wave repeats 60 times per second and as each wave has a positive and a negative half this means that the polarity will therefore reverse 120 times per second in the rest of the world we mostly find 50 hertz electricity so the sine wave therefore repeats 50 times per second and therefore the current reverses 100 times per second we also have single phase and three phase electricity with single phase we have a connection to just a single phase of the generator so we have therefore just one sine wave but with three phase electricity we have a connection to all three phases the phases are coils of wire which are inserted into the generator 120 degrees apart from the previous this means the coils experience the peak of the rotating magnetic field at different times this gives us our three phases each with a different sine wave slightly out of sync from the previous remember electricity wants to get back to its source to complete a circuit as the current is flowing forwards and backwards at different times in each of the phases we can essentially connect the phases together and the current will move between the different phases as the polarity of each phase moves forwards and backwards at a different time any excess will flow in the neutral back to the source if needed and that's only if it's unbalanced with single phase we have these large gaps between the peaks but with three phase these can be combined to fill in the gap and therefore deliver more power in north america you'll also find split phase systems in residential installations and these have two hot wires and a neutral this is a single phase supply which is just split in half at the transformer we've covered that in great detail previously do check it out links down below we install the vfd into the power supply of an ac motor this is usually a three phase supplier for most applications now i'm going to color these phases in red yellow and blue simply because i think it's easier to see but each country uses a different color code just be aware of this the three phases enter the vfd and connect to the rectifier consists of multiple diodes connected in parallel diodes only allow electricity to flow in one direction and block it coming back in the opposite direction as ac flows forwards and backwards we control the path it can take and this gives us a rough dc output the rough dc electricity now flows into the second part which is the dc bus this is the filter that uses capacitors and or inductors to smooth out the rectified dc into a clean smooth constant dc voltage it does this by releasing electrons during the gaps to smooth out the ripple the now smooth dc then flows into the final section which is the inverter consists of a number of electronic switches known as igbts these open and close in pairs to control the flow of electricity by controlling the path which electricity takes and how long it flows in the different paths we can produce ac electricity from a dc source let's have a look at that now in detail we will consider the first part of the vfd which is the rectifier in this part we find six diodes in parallel i'll title these one to six as follows each of the three phases is connected to one pair of diodes as we know electricity needs to get back to its source to complete the circuit so in this setup the current will flow through the load and back to the source using another phase remember it can do this because the current in each phase flows forwards and backwards at a different time we'll see this in detail in just a moment the load can be anything a lamp a motor or an entire circuit in this case it will just represent the rest of our vfd circuit the electricity will continue to alternate in the supply phases but the diodes will only allow the peak phase to pass and will block the others so i'm just going to animate these ones okay let's see this in action phase one is first this comes in and can only flow in one direction which is through diode one it then passes through the load once the current passes through the load it will then need to get back to the source and as phase two is in the negative half of its cycle the current will flow through diode 6 into phase 2. in the next segment we see the current is still flowing in phase 1 and diode 1 but now phase 3 is in its negative half so the current switches and the flow returns through this phase via diode 2. in the next segment phase 2 is approaching its peak so the current now flows through this phase and through diode 3. it then flows through the load and back into phase 3 via diode 2. in the next segment the current flow is still in phase 2 via diode 3 but phase 1 is now at its negative peak so the current will flow through diode 4 back into phase 1. in the next segment we see that phase three is now approaching its positive peak so the current flows through this phase via diode five then flows through the load and then returns via diode four into phase one finally the current flows through phase 3 via diode 5 through the load and then back into phase 2 via diode 6. this cycle just repeats constantly like this the oscilloscope for the three-phase supply we'll see three sine waves for the ac electricity but the oscilloscope on the load will see this as a rough dc electricity with some ripples in it now we need to smooth out those ripples to clean up the dc electricity for this we connect a capacitor across the positive and the negative this capacitor is like a storage tank and will absorb electrons when there is excess and it will inject electrons when there is a reduction this will therefore smooth out the ripples in the dc electricity to a nice smooth signal on the oscilloscope we have covered capacitors in great detail previously do check that video out links down below now that we have clean dc we're ready to turn that back into precisely controlled ac at variable frequency and for that we need an inverter is basically a number of igbts which are switches that can turn on and off super fast i'm going to animate this using some simple switches instead of igbts just to make it easier to visualize i'll number these switches as follows to get our three phases we need to open and close switches in pairs to direct the flow of current from our supplier and a return pass that way the connected motor will experience alternating current remember ac is where the current reverses so if we took a lamp and connected it to some switches and a dc power source we can control the direction of current through the lamp by opening and closing switches in the right order therefore the lamp experiences alternating current even though it's coming from a dc supplier for the three-phase supply we time the switches to simulate the three phases let's see how this works first of all we close switches one and six this will give us phase one to phase two then we close which is one and two this will give us phase one to phase three then we close which is three and two this will give us phase two and phase three then we close switches three and four that will give us phase two and one then we close switches five and four and this will give us phase three and phase one and finally we close which is five and six and this will give us phase three and phase two this cycle repeats again and again like so if we check this with the oscilloscope we now have a pattern that looks like ac sine wave although it's just a little bit square this will work fine for some applications but not all so how can we improve this do you remember earlier in the video i said we can open and close the switch at different speeds and durations to change the waveform well we can do that with this too what we do is use a controller to rapidly open and close the switches multiple times per cycle in a pulsating pattern each pulse bearing in width this is known as pulse width modulation the cycle is broken up into multiple smaller segments each segment has a total amount of current that could flow but by rapidly pulsating the switches we control the amount of flow occurring per segment this will result in an average current per segment and we can see that this increases and decreases thus giving us a wave pattern the load therefore experiences a sine wave the more segments we have the closer it will mimic a sine wave we can control the output voltage by controlling how long the switches are closed for so we could for example output 240 volts or 120 volts just by trimming the opening and closing times we can control the frequency by controlling the timing of the switches so we could for example output 60 hertz 50 hertz or 30 hertz whatever is needed for the application remember by controlling the frequency we control the rotational speed of the motor so coming back to our vfd circuit we're going to use the controller to rapidly open and close the switches to vary the output frequency and voltage so by combining the rectifier the filter and the inverter we therefore get our variable frequency drive and this is what is used to control the speed of electrical motors and unlock energy savings in all sorts of systems okay guys that's it for this video but to continue your learning then check out one of the videos on screen now and i'll catch you there for the next lesson don't forget to follow us on facebook twitter instagram linkedin as well as the engineeringmindset.com
+
+
+[00:02] [Applause]
+[00:04] hey there guys paul here from the
+[00:05] engineering mindset.com
+[00:07] in this video we're going to be looking
+[00:09] at vfds we'll be starting from the
+[00:11] basics to understand how they work
+[00:14] remember electricity is dangerous and
+[00:16] can be fatal you should be qualified and
+[00:17] competent to carry out any electrical
+[00:19] work
+[00:20] if you work in hvac then you need to
+[00:22] check out the inverter compressors by
+[00:24] denfos who have kindly sponsored this
+[00:25] video
+[00:26] when used in combination with variable
+[00:28] speed technology like the vfds we're
+[00:30] going to cover in today's video they
+[00:32] make your entire hvac unit more
+[00:34] efficient saving you and your customers
+[00:36] money
+[00:37] if you want to learn more danfoss has
+[00:38] several e-lessons and case stories for
+[00:40] you to check out you can find links
+[00:42] those in the video description down
+[00:44] below
+[00:47] vfd stands for variable frequency drive
+[00:49] and they look something like this
+[00:51] you might also hear them referred to
+[00:53] with ac drives or variable speed drives
+[00:56] and that's because they are used to
+[00:57] control the rotational speed of an ac
+[00:59] motor
+[01:00] we find ac motors and vfds used in all
+[01:03] industries but especially hvac
+[01:06] for example we can find them used to
+[01:08] control a compressor's speed in a
+[01:09] refrigeration system and that allows us
+[01:12] to closely match the cooling demand
+[01:14] which will result in significant energy
+[01:16] savings
+[01:17] traditionally we would have had to use a
+[01:19] fixed speed compressor now these simply
+[01:21] just turn on and off and that results in
+[01:23] poor control and higher inrush currents
+[01:25] we also find them used to control things
+[01:27] such as pumps and fans in hvac systems
+[01:29] to allow us to unlock energy savings and
+[01:31] improve performance and control
+[01:34] the vfd unit is connected into the
+[01:36] motor's electrical supply
+[01:38] the unit can vary the frequency of the
+[01:40] electricity being supplied to drive the
+[01:42] motor and by varying this we can control
+[01:44] the rotational speed of the motor
+[01:47] therefore we have our variable frequency
+[01:49] drive
+[01:50] to understand how a vfd works we first
+[01:52] need to understand some fundamentals of
+[01:54] electricity
+[01:58] there are two types of electricity and
+[02:00] the first one we're going to look at is
+[02:01] dc or direct current this is the
+[02:04] simplest type and we get this from
+[02:06] batteries solar panels etc
+[02:08] you can think of dc like a river with a
+[02:10] current of water flowing in just one
+[02:12] direction
+[02:13] with dc the electrons just flow in a
+[02:15] single direction
+[02:16] now i'm animating this using electron
+[02:18] flow which is from the negative to the
+[02:20] positive but you might be used to seeing
+[02:22] conventional current which is from
+[02:24] positive to negative
+[02:26] electron flow is what's actually
+[02:27] occurring conventional was the original
+[02:29] theory and it's still used widely today
+[02:31] just be aware of the two theories and
+[02:32] which one we're using
+[02:34] for electricity to flow we need to
+[02:36] complete the circuit the electricity
+[02:38] will then always try to get back to its
+[02:40] source
+[02:41] when we use an oscilloscope to look at
+[02:43] the electrical waveform of dc we get
+[02:45] this flat line at the maximum voltage in
+[02:48] the positive region if we cut the power
+[02:51] the line drops to zero
+[02:53] if we turn it on and off repeatedly then
+[02:55] we get a square wave pattern between
+[02:57] zero and maximum
+[02:59] if we pulse the switch to open and close
+[03:01] over different lengths of time then we
+[03:03] would get a pulsating pattern
+[03:07] the other type of electricity is ac or
+[03:10] alternating current
+[03:12] this type is what you'll get from the
+[03:13] outlets in your homes and places of work
+[03:16] with this type of electricity the
+[03:17] electrons within the copper wire
+[03:19] constantly reverse and flow forwards
+[03:21] backwards forwards backwards etc
+[03:24] you can think of this type like the tide
+[03:26] of the sea which flows in and out
+[03:28] between two maximum points the high tide
+[03:30] and the low tide if we follow the copper
+[03:33] wires back to the generator the wires
+[03:35] are connected to some coils of wire
+[03:37] which sit within the generator
+[03:39] inside a basic generator we find a
+[03:41] magnet at the center which is rotating
+[03:44] the magnet has a north and south pole or
+[03:46] you can think of it as a positive and
+[03:48] negative half
+[03:50] the electrons in the wire are negatively
+[03:52] charged
+[03:53] and as you may already know magnets push
+[03:55] or pull depending on the polarity
+[03:58] as the magnets rotate past the coil the
+[04:00] positive and negative half are going to
+[04:02] therefore push and pull the electrons
+[04:04] within the copper coils and these will
+[04:06] also move them through the connected
+[04:08] copper wires
+[04:09] the magnetic field of the magnet varies
+[04:12] in intensity
+[04:14] and we can actually see the magnetic
+[04:15] field lines by sprinkling some iron
+[04:17] filings over a magnet
+[04:19] so as the magnet rotates past the coil
+[04:22] will experience a change in
+[04:24] intensity of the magnetic field and this
+[04:26] will be from zero up to its maximum
+[04:28] intensity
+[04:29] and then as it passes the coil it will
+[04:31] decrease again back to zero then the
+[04:33] negative half comes in and pulls the
+[04:35] electrons backwards with the same change
+[04:37] in intensity
+[04:39] each full rotation of the magnet will
+[04:41] therefore produce this wave pattern
+[04:43] known as a sine wave
+[04:45] the voltage is not constant in this type
+[04:47] of electricity
+[04:48] instead it repeatedly moves from zero up
+[04:51] to its peak then back to zero then
+[04:54] through the negative peak and finally
+[04:55] back to zero again
+[05:00] frequency refers to how many times this
+[05:02] ac sine wave repeats per second
+[05:05] in north america and a few other parts
+[05:07] of the world we find 60 hertz
+[05:09] electricity at the outlet now this means
+[05:11] that the sine wave repeats 60 times per
+[05:13] second and as each wave has a positive
+[05:16] and a negative half this means that the
+[05:18] polarity will therefore reverse 120
+[05:21] times per second
+[05:23] in the rest of the world we mostly find
+[05:25] 50 hertz electricity
+[05:27] so the sine wave therefore repeats 50
+[05:29] times per second and therefore the
+[05:31] current reverses 100 times per second
+[05:37] we also have single phase and three
+[05:39] phase electricity
+[05:41] with single phase we have a connection
+[05:43] to just a single phase of the generator
+[05:45] so we have therefore just one sine wave
+[05:49] but with three phase electricity we have
+[05:51] a connection to all three phases
+[05:54] the phases are coils of wire which are
+[05:56] inserted into the generator 120 degrees
+[05:59] apart from the previous
+[06:01] this means the coils experience the peak
+[06:03] of the rotating magnetic field at
+[06:04] different times
+[06:06] this gives us our three phases each with
+[06:08] a different sine wave slightly out of
+[06:10] sync from the previous
+[06:12] remember electricity wants to get back
+[06:14] to its source to complete a circuit
+[06:16] as the current is flowing forwards and
+[06:18] backwards at different times in each of
+[06:20] the phases
+[06:21] we can essentially connect the phases
+[06:23] together and the current will move
+[06:24] between the different phases as the
+[06:26] polarity of each phase moves forwards
+[06:28] and backwards at a different time
+[06:32] any excess will flow in the neutral back
+[06:34] to the source if needed and that's only
+[06:36] if it's unbalanced
+[06:38] with single phase we have these large
+[06:40] gaps between the peaks but with three
+[06:42] phase these can be combined to fill in
+[06:44] the gap and therefore deliver more power
+[06:47] in north america you'll also find split
+[06:49] phase systems in residential
+[06:51] installations and these have two hot
+[06:52] wires and a neutral
+[06:54] this is a single phase supply which is
+[06:56] just split in half at the transformer
+[06:59] we've covered that in great detail
+[07:00] previously do check it out links down
+[07:02] below
+[07:05] we install the vfd into the power supply
+[07:07] of an ac motor
+[07:09] this is usually a three phase supplier
+[07:11] for most applications
+[07:12] now i'm going to color these phases in
+[07:14] red yellow and blue simply because i
+[07:16] think it's easier to see but each
+[07:18] country uses a different color code just
+[07:20] be aware of this
+[07:22] the three phases enter the vfd and
+[07:24] connect to the rectifier
+[07:26] consists of multiple
+[07:28] diodes connected in parallel diodes only
+[07:30] allow electricity to flow in one
+[07:32] direction and block it coming back in
+[07:34] the opposite direction
+[07:36] as ac flows forwards and backwards we
+[07:38] control the path it can take and this
+[07:40] gives us a rough dc
+[07:42] output the rough dc electricity now
+[07:45] flows into the second part which is the
+[07:47] dc bus
+[07:49] this is the filter that uses capacitors
+[07:51] and or inductors to smooth out the
+[07:53] rectified dc into a clean smooth
+[07:56] constant dc voltage it does this by
+[07:58] releasing electrons during the gaps to
+[08:00] smooth out the ripple
+[08:03] the now smooth dc then flows into the
+[08:05] final section which is the inverter
+[08:08] consists of a number of
+[08:10] electronic switches known as igbts
+[08:13] these open and close in pairs to control
+[08:15] the flow of electricity
+[08:17] by controlling the path which
+[08:18] electricity takes and how long it flows
+[08:21] in the different paths we can produce ac
+[08:23] electricity from a dc source let's have
+[08:26] a look at that now in detail
+[08:30] we will consider the first part of the
+[08:31] vfd which is the rectifier
+[08:34] in this part we find six diodes in
+[08:36] parallel i'll title these one to six as
+[08:38] follows
+[08:39] each of the three phases is connected to
+[08:41] one pair of diodes
+[08:43] as we know electricity needs to get back
+[08:45] to its source to complete the circuit
+[08:48] so in this setup the current will flow
+[08:50] through the load and back to the source
+[08:52] using another phase remember it can do
+[08:54] this because the current in each phase
+[08:56] flows forwards and backwards at a
+[08:58] different time
+[08:59] we'll see this in detail in just a
+[09:01] moment
+[09:02] the load can be anything a lamp a motor
+[09:04] or an entire circuit
+[09:06] in this case it will just represent the
+[09:08] rest of our vfd circuit
+[09:10] the electricity will continue to
+[09:12] alternate in the supply phases but the
+[09:14] diodes will only allow the peak phase to
+[09:16] pass and will block the others so i'm
+[09:18] just going to animate these ones okay
+[09:20] let's see this in action phase one is
+[09:22] first this comes in and can only flow in
+[09:25] one direction which is through diode one
+[09:27] it then passes through the load once the
+[09:30] current passes through the load it will
+[09:31] then need to get back to the source and
+[09:33] as phase two is in the negative half of
+[09:35] its cycle the current will flow through
+[09:38] diode 6 into phase 2.
+[09:40] in the next segment we see the current
+[09:42] is still flowing in phase 1 and diode 1
+[09:44] but now phase 3 is in its negative half
+[09:47] so the current switches and the flow
+[09:49] returns through this phase via diode 2.
+[09:53] in the next segment phase 2 is
+[09:54] approaching its peak so the current now
+[09:56] flows through this phase and through
+[09:58] diode 3.
+[09:59] it then flows through the load and back
+[10:01] into phase 3 via diode 2.
+[10:04] in the next segment the current flow is
+[10:06] still in phase 2 via diode 3 but phase 1
+[10:09] is now at its negative peak so the
+[10:11] current will flow through diode 4 back
+[10:14] into phase 1.
+[10:16] in the next segment we see that phase
+[10:17] three is now approaching its positive
+[10:19] peak
+[10:20] so the current flows through this phase
+[10:22] via diode five then flows through the
+[10:25] load and then returns via diode four
+[10:27] into phase one
+[10:29] finally the current flows through phase
+[10:31] 3 via diode 5 through the load and then
+[10:34] back into phase 2 via diode 6.
+[10:37] this cycle just repeats constantly like
+[10:39] this
+[10:43] the oscilloscope for the three-phase
+[10:45] supply we'll see three sine waves for
+[10:47] the ac electricity
+[10:49] but the oscilloscope on the load will
+[10:50] see this as a rough dc electricity with
+[10:53] some ripples in it
+[10:54] now we need to smooth out those ripples
+[10:56] to clean up the dc electricity
+[10:58] for this we connect a capacitor across
+[11:00] the positive and the negative
+[11:03] this capacitor is like a storage tank
+[11:05] and will absorb electrons when there is
+[11:07] excess and it will inject electrons when
+[11:08] there is a reduction
+[11:10] this will therefore smooth out the
+[11:12] ripples in the dc electricity to a nice
+[11:14] smooth signal on the oscilloscope
+[11:17] we have covered capacitors in great
+[11:18] detail previously do check that video
+[11:20] out links down below
+[11:22] now that we have clean dc we're ready to
+[11:25] turn that back into precisely controlled
+[11:27] ac at variable frequency
+[11:29] and for that we need an inverter
+[11:32] is basically a number of
+[11:33] igbts which are switches that can turn
+[11:36] on and off super fast
+[11:38] i'm going to animate this using some
+[11:40] simple switches instead of igbts just to
+[11:43] make it easier to visualize
+[11:44] i'll number these switches as follows
+[11:47] to get our three phases we need to open
+[11:49] and close switches in pairs to direct
+[11:51] the flow of current from our supplier
+[11:53] and a return pass
+[11:55] that way the connected motor will
+[11:57] experience alternating current
+[11:59] remember ac is where the current
+[12:01] reverses
+[12:02] so if we took a lamp and connected it to
+[12:04] some switches and a dc power source
+[12:06] we can control the direction of current
+[12:08] through the lamp by opening and closing
+[12:10] switches in the right order
+[12:12] therefore the lamp experiences
+[12:14] alternating current even though it's
+[12:15] coming from a dc supplier
+[12:18] for the three-phase supply we time the
+[12:20] switches to simulate the three phases
+[12:22] let's see how this works
+[12:24] first of all we close switches one and
+[12:26] six this will give us phase one to phase
+[12:29] two
+[12:30] then we close which is one and two this
+[12:32] will give us phase one to phase three
+[12:36] then we close which is three and two
+[12:38] this will give us phase two and phase
+[12:40] three
+[12:42] then we close switches three and four
+[12:44] that will give us phase two and one
+[12:48] then we close switches five and four and
+[12:50] this will give us phase three and phase
+[12:52] one
+[12:54] and finally we close which is five and
+[12:56] six and this will give us phase three
+[12:58] and phase two
+[13:00] this cycle repeats again and again like
+[13:02] so
+[13:06] if we check this with the oscilloscope
+[13:07] we now have a pattern that looks like ac
+[13:10] sine wave although it's just a little
+[13:12] bit square
+[13:13] this will work fine for some
+[13:14] applications but not all so how can we
+[13:17] improve this
+[13:18] do you remember earlier in the video i
+[13:20] said we can open and close the switch at
+[13:22] different speeds and durations to change
+[13:24] the waveform
+[13:26] well we can do that with this too
+[13:28] what we do is use a controller to
+[13:30] rapidly open and close the switches
+[13:32] multiple times per cycle in a pulsating
+[13:35] pattern each pulse bearing in width
+[13:38] this is known as pulse width modulation
+[13:40] the cycle is broken up into multiple
+[13:42] smaller segments
+[13:44] each segment has a total amount of
+[13:46] current that could flow
+[13:48] but by rapidly pulsating the switches we
+[13:50] control the amount of flow occurring per
+[13:52] segment
+[13:54] this will result in an average current
+[13:56] per segment
+[13:57] and we can see that this increases and
+[13:59] decreases thus giving us a wave pattern
+[14:03] the load therefore experiences a sine
+[14:05] wave
+[14:06] the more segments we have the closer it
+[14:08] will mimic a sine wave
+[14:10] we can control the output voltage by
+[14:12] controlling how long the switches are
+[14:14] closed for
+[14:15] so we could for example output 240 volts
+[14:18] or 120 volts just by trimming the
+[14:21] opening and closing times
+[14:23] we can control the frequency by
+[14:25] controlling the timing of the switches
+[14:28] so we could for example output 60 hertz
+[14:30] 50 hertz or 30 hertz whatever is needed
+[14:33] for the application
+[14:35] remember by controlling the frequency we
+[14:37] control the rotational speed of the
+[14:38] motor
+[14:40] so coming back to our vfd circuit we're
+[14:42] going to use the controller to rapidly
+[14:44] open and close the switches to vary the
+[14:46] output frequency and voltage
+[14:48] so by combining the rectifier the filter
+[14:51] and the inverter we therefore get our
+[14:53] variable frequency drive
+[14:55] and this is what is used to control the
+[14:56] speed of electrical motors and unlock
+[14:58] energy savings in all sorts of systems
+[15:01] okay guys that's it for this video but
+[15:03] to continue your learning then check out
+[15:04] one of the videos on screen now and i'll
+[15:06] catch you there for the next lesson
+[15:08] don't forget to follow us on facebook
+[15:10] twitter instagram linkedin as well as
+[15:11] the engineeringmindset.com

@@ -1,0 +1,508 @@
+# How to Calculate Light Levels when Using Multiple Sources of Illumination Exam Question 2
+# https://www.youtube.com/watch?v=zCCW2K6qaYM
+
+[Music] hello and welcome to this electrical principals training video this video is designed to be used in conjunction with the worksheet you'll find a link to that worksheet in the description below so please click on the link and download that and have a look at that before you watch the rest of the video what we're going to do is we're going to answer the second question from that worksheet and on the worksheet you'll see laid out the question that we've got here and what we're being asked to do for this question is to calculate the illumination levels at point P 1 and at Point P 2 now this is a slightly trickier question because as you can see we've got two light sources one here and we've got two lighting points to calculate as well so there's quite a bit of calculation work that needs to go into this calculation so the first thing I do on this question is I'd make sure exactly which light fitting I'm talking about that I know which one I'm talking about so I would label these up first of all I'd call this one maybe I a or something like that so that gives me my aluminous sorry my luminous intensity at that point is 1500 candelas and I'd call this one I with a being the subscript to tell me that my luminous intensity at this point is 1200 candelas now at first glance this may look a little bit overwhelming because we've got to figure out how much light at this point is coming from there and from there and then we've got to do the same so it looks like there's a lot of calculations to do so what I would do is first of all I'd break this down into almost two questions so I'd start off by thinking well I've got a light point here in here and I want to figure out what the light level is at that point there so I just sketch that out again and just show myself exactly what I'm trying to figure out so immediately that starts to look a little bit friendlier so we've got our luminous intensity at source a which is 1500 candelas and then we've got our luminous intensity at position B which is 1200 candelas and then we're trying to figure out what the light level is at point one the other important thing I'm here to note is the measurements that we've got so this is two point four meters these light fittings amounted to point four meters off the ground because we don't have another measurement here we can assume that that's mounted at two point four meters the same as that one there so let's have a look at what the light level at this point here is going to be we'll bring over our one point five meter distance there and our two point two meter distance there and just put two point four meters there as well so I do that just to help me kind of visualize what's going on so what I would do now is I would look at this and think right I need to figure out what the illumination level at Point P 1 is going to be and there's going to be two things that contribute to that the first thing that's going to contribute to that is the light source a so I want to know what is the illuminance level at Point P one that's being caused by light source a so I just do that so the illuminance at position one from light source a that's what I'd be looking at there and in order to calculate that we need to use the following formula we need to say that I multiplied by the cosine of theta divided by d squared so if any of this is looking unfamiliar to you then please go back and watch the previous videos that I've done on lighting because it's going to help you to understand what this capital e means what the eye means and all those different things so please go back and watch that video if you've not already done so now at this point the temptation is to start putting all the numbers in so we'll say we've got eye well we know what I is a position a it's 1500 candelas and just to avoid confusing it off you could even put little a there and the subscript just so you remember that that's the one that you're dealing with and then we're going to multiply this by cos theta well what's this cos theta where's that coming from well cos theta is the angle that is formed here so it's the angle there which is going to affect the amount of light that hits point p1 there so we don't yet know what that angle is we need to figure that out we also don't know what this value for D squared is or what the value for D will be D is the distance from the light source to the point that we're calculating so it's this distance here and we don't know that yet so we need to find two pieces of information to put into here now fortunately using a little bit of pythagoras and a little bit of trigonometry we're well able to do that so let's do that first let's figure out what this side here is going to be so we've got a right-angled triangle so that's a right-angled triangle we could label these sides up a B and C and we know from Pythagoras that a squared plus B squared is equal to C squared like that so if we want to figure out what the value of C is going to be the formula will look like this C is equal to the square root of a squared plus B squared so now we can put our numbers in we've got the square root of 2.4 squared plus 1.5 squared so we can put that into our calculator and come out with the answer so let's Wally that into the calculator now we've got the square root of 2.4 squared plus 1.5 squared and that's going to give us an answer of 2.8 3 meters so we'll round after 2 decimal places 2.8 3 meters so that's what we're looking at there so the distance from this light source to this point here is 2.8 3 meters right so that's great so now we know actually what the distance from the light source to the point that we're calculating is it's 2.8 3 so we can put that into our illumination calculation so we can put that in here 2.8 3 squared we then need to figure out what the value for the cosine of theta is going to be now again if you haven't already watched my videos on trigonometry then please do so because it will help you to understand what's about to happen next we're interested in this angle here and we want to know what the cosine of that angle is so we know from our trigonometry that the cosine of theta is equal to the adjacent divided by the hypotenuse and the adjacent divided by the hypotenuse which side are we talking about here well we're interested in this angle so this side here which is next to the angle is the adjacent and the long side is the hypotenuse so we're going to do two point four divided by two point eight three and three point four divided by two point eight three is going to give us our cosine value so we'll put that into the calculator next two point four divided by two point eight three and that gives us a value of naught point eight four eight we'll go for three decimal places is normally a reasonable value to round off for when you're doing anything involving trigonometry so now we know the cosine of theta is not point eight four eight so we'll stick that into our illuminants calculation so we've got naught point four eight here's the value that we're going to play a man out so I'll stick that they're not point eight four eight and we're now in a position where we can figure out what the illuminance at this point here is that's being caused by light source a so we've just got to do 1,500 times by naught point eight four eight and then we're going to divide that by two point eight three squared and that's going to give us a value of 150 eight point eight two so that's 150 eight point eight two and of course we're measuring illuminance and that is measured in looks so we put LX on the end there so that's the first of really four calculations that we're going to have to do in order to figure out all of the answer to this question what is the illuminance at Point P one and what ceiling it's a point P two what we'll do now is we'll figure out what the illuminance is at Point P one that's being caused by light source B so really what we're going to do now it's just a repetition of what we've done already so we're going to figure out what is the illuminance at point one that is being caused by the light source be there so we're gonna put in our same formula except we're going to be interested in light source B we're going to times that by the cosine of theta and we're going to divide that by d squared and really we just need to go through exactly the same process again we don't know what the cosine of theta is yet and we don't know what the distance is going to be from the light source to the point so we'll figure it out so this is hopefully reasonably straightforward and simple all we've got to do is acknowledge that buried in this drawing just here there is a right-angled triangle and that right-angled triangle has sides which again we can call a B and C and we want to know the length of side C so it's just a matter of doing some Pythagoras again so we say that a squared plus B squared is equal to C squared and that's going to give us our answer once we've transposed it to say that C is equal to the square root of a squared plus B squared so we now put this into our calculation we've got the square root of a which is 2.4 I'm going to square that and then we're going to add on to that B squared which is 2 point 2 squared so we've got 2.4 squared plus 2 point 2 squared and then square rooted and we're going to figure out what the answer to that it's so the square root of 2 point 4 squared plus 2 point 2 squared gives us a value of 3 point 2 6 meters will go with there so 3 point 2 6 meters there we go so now we know what the distance from light source B to point 1 is and we know that that value is 3 point 2 6 meters so we'll be able to put that into our calculation in a minute now let's figure out what the cosine of this angle is going to be so once again we're interested in this angle here and this angle here again we're going to call that theta we could probably label these up differently if we weren't going through the process one thing at a time but we know what the angle discussing at the moment so we're going to say that the cosine of theta is equal to the adjacent over the hypotenuse again so the cosine of theta is equal to the adjacent over the hypotenuse which is equal to in this case the adjacent the side next to the angle is 2.4 and the hypotenuse which is this long side here we just calculated was three point two six so we're going to put that into our calculators now two point four divided by three point two six gives us a cosine value of naught point seven three six nor point seven three six so that means we can now complete this calculation we can now go back to our original calculation here which is I times cos theta R over D squared and we can put all these numbers in so we can say that we've got the value for IB which is lightsource be here one thousand two hundred multiplied by the cosine of theta which we figured out is naught point seven three six divided by the distance squared and the distance was three point two six so we've got three point two six squared so let's put this into our calculators 1200 x naught point seven three six and put that over three point two six squared and that gives us a total of eighty three point one looks so there we go we can see now what the illumination level at Point P one is that's being caused by light source B so to figure out what the total illuminance is at Point P one we've simply just got to add those values together so the total illuminance at Point P 1 will be the illuminance at Point P one from light source a added to the illuminance at Point P one from light source B so that means we just basically add those values together so we're just going to do one hundred and fifty eight point eight to one hundred and fifty eight point eight two and we're going to add to that eighty three point one looks so we add eighty three point one looks so we'll do that calculation one hundred fifty eight two point eight two plus eighty three point one and that is going to give us a value of two hundred and forty-one point nine two so the total illumination level at Point P one is two hundred and forty-one point nine two looks so now all we've got to do is repeat this process to figure out what the illuminance level at Point P two is so now we figure out what the illuminance level at Point P one is we'll move on and figure out what the illuminance at Point P two is so here again just do a little sketch of the drawing so to try and remove as many of these lines as possible and if we look at this we can see that we've got a light source up here that has a value of 1200 candelas and that is shining down on to point P to here so that's nice that means that we've got a nice easy calculation to do there we've also got a light source over here which is like source a and that has a luminous intensity of 1500 candelas this light source is shining directly down on here and this light source is shining like that except in a straight line so that's what we're looking at there we'll just kick the values onto there so that's two point four meters this here is two point four meters high as well and now we will need to know at some point the distance from that light source over to here horizontally so that's just that value added to that value so this will be three point seven meters so the distance from here to here will be three point seven meters so again let's have a look at this we need to figure out what the total illuminance is so we'll start off by saying what's the illuminance at Point P two that's caused by light a you will start with like position a so we just use the same formula that we used last time we've got I multiplied by the cosine of theta divided by D squared so here we've got light source a is the one that we're interested in start putting the numbers in one thousand five hundred times by we don't know what the cosine of theta is yet divided by we don't know what the value for D is yet however we can figure it out because again if we look at what we've got here we have got a right-angled triangle with an angle up here and this is the angle that we're going to be interested in so we'll label that theta for a moment and then here we've got side a side B and side C so in order to figure out what the distance from the light source to the point that we're illuminating is going to be we will do a little bit of Pythagoras again we will say that a squared plus B squared is equal to C squared and when we transpose that we know that C is equal to the square root of a squared plus B squared so let's kick the numbers in we've got the square root of two point four squared plus three point seven squared and we can now put that into the calculator and figure out what the answer to that is going to be so we've got two point four squared plus three point seven squared and of course we're going to square root the answer to that so the total answer once Square rooted is four point four one so the distance here is going to be four point four one meters so this value here four point four one meters so that's all good we've got a distance from point A to at this point here that we're calculating the value of the illuminance at and we've got four point four one meters so that's all good we can now put that into the bottom of our formula four point four one and of course on this formula we square that bottom number due to the use of the inverse square law again watch a different video for that if you don't know what that is what we're then going to do is we're going to look at figuring out what the cosine of this angle theta is going to be so we say that the cosine of theta is equal to the adjacent divided by the hypotenuse once again we're interested in this angle so this is the adjacent because it's next to the angle and this is the hypotenuse because it's the long side so we're going to say that that is equal to two point four divided by four point four one and when we do that calculation two point four divided by four point four one we come out with an answer of naught point five four four so that's not point five four so there we go so there's our cosine value which we can now stick into our illuminants calculation nor point five four four okay so we've got all the numbers we need we can now perform this calculation and figure out what the illuminance is at this point here being caused by this light fitting here so let's put into the calculator one thousand five hundred times by naught point five four four and then we're going to divide that by four point four one squared and that gives us 40 one point nine five we've come out with that forty one point nine five and rarely left that will be 41.96 so to two decimal places that's 41.96 looks and now all that remains is we need to figure out what the illuminance is at this point here being caused by this light fitting now after all that maths we've done after all that pythagoras and trigonometry this is just a nice wine down to the calculation like slipping into a nice hot bath after a hard day's work so what we're going to say here is that the illuminance at Point 2 that's caused by light source B is going to be I divided by d squared we've managed to get rid of the cosine of theta because actually there is no angle here this is just a vertical you could actually argue that the angle is zero degrees and what's quite interesting about that is the cosine of theta is one so if we were to put times one on the top of this it would make no difference to the outcome of our answer I love when mats work so beautifully so we're going to say then we've got light source B so we need this Val 1200 divided by the distance squared and the distance is simply the distance from the light source to the point that we're illuminating so that's 2.4 squared so we've got 1200 divided by 3 point 4 squared and that gives us a total answer of 200 8.3 looks so the illuminance level at Point 2 caused by light source B is 200 8.3 looks once again the final thing that we've got to do just for the sake of completing this question correctly and showing the right answer is to figure out what the illuminance is at Point P 2 in total so we'll take the illuminance level at Point P 2 from light source a and we'll add it to the illuminance from point 2 from light source B so we've put our numbers in here so we've got this number here 41.96 41.96 and we're going to add to that 208 point three so that's two hundred and eight point three so let's do that calculation 41.96 and we're going to add to that 208 point three and that brings us to a total of 250 point two six so now we know that the illuminance level at position two is 250 point two six looks and that was the answer that we were trying to get to so all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video this video is
+[00:13] designed to be used in conjunction with
+[00:14] the worksheet you'll find a link to that
+[00:16] worksheet in the description below so
+[00:17] please click on the link and download
+[00:19] that and have a look at that before you
+[00:21] watch the rest of the video what we're
+[00:23] going to do is we're going to answer the
+[00:24] second question from that worksheet and
+[00:26] on the worksheet you'll see laid out the
+[00:29] question that we've got here and what
+[00:30] we're being asked to do for this
+[00:31] question is to calculate the
+[00:33] illumination levels at point P 1 and at
+[00:36] Point P 2 now this is a slightly
+[00:39] trickier question because as you can see
+[00:41] we've got two light sources one here and
+[00:44] we've got two lighting
+[00:46] points to calculate as well so there's
+[00:48] quite a bit of calculation work that
+[00:50] needs to go into this calculation so the
+[00:53] first thing I do on this question is I'd
+[00:55] make sure exactly which light fitting
+[00:58] I'm talking about that I know which one
+[01:00] I'm talking about so I would label these
+[01:02] up first of all I'd call this one maybe
+[01:05] I a or something like that so that gives
+[01:09] me my aluminous sorry my luminous
+[01:12] intensity at that point is 1500 candelas
+[01:15] and I'd call this one I with a being the
+[01:18] subscript to tell me that my luminous
+[01:20] intensity at this point is 1200 candelas
+[01:24] now at first glance this may look a
+[01:26] little bit overwhelming because we've
+[01:27] got to figure out how much light at this
+[01:30] point is coming from there and from
+[01:32] there and then we've got to do the same
+[01:33] so it looks like there's a lot of
+[01:34] calculations to do so what I would do is
+[01:37] first of all I'd break this down into
+[01:38] almost two questions so I'd start off by
+[01:41] thinking well I've got a light point
+[01:42] here in here and I want to figure out
+[01:45] what the light level is at that point
+[01:46] there so I just sketch that out again
+[01:48] and just show myself exactly what I'm
+[01:52] trying to figure out so immediately that
+[01:54] starts to look a little bit friendlier
+[01:55] so we've got our luminous intensity at
+[01:59] source a which is 1500 candelas and then
+[02:04] we've got our luminous intensity at
+[02:06] position B which is 1200 candelas and
+[02:10] then we're trying to figure out what the
+[02:11] light level is
+[02:13] at point one the other important thing
+[02:15] I'm here to note is the measurements
+[02:18] that we've got so this is two point four
+[02:19] meters these light fittings amounted to
+[02:21] point four meters off the ground because
+[02:23] we don't have another measurement here
+[02:25] we can assume that that's mounted at two
+[02:27] point four meters the same as that one
+[02:29] there so let's have a look at what the
+[02:31] light level at this point here is going
+[02:33] to be we'll bring over our one point
+[02:35] five meter distance there and our two
+[02:38] point two meter distance there and just
+[02:40] put two point four meters there as well
+[02:42] so I do that just to help me kind of
+[02:44] visualize what's going on so what I
+[02:48] would do now is I would look at this and
+[02:50] think right I need to figure out what
+[02:52] the illumination level at Point P 1 is
+[02:55] going to be and there's going to be two
+[02:56] things that contribute to that the first
+[02:59] thing that's going to contribute to that
+[03:00] is the light source a so I want to know
+[03:03] what is the illuminance level at Point P
+[03:09] one that's being caused by light source
+[03:13] a so I just do that
+[03:16] so the illuminance at position one from
+[03:21] light source a that's what I'd be
+[03:23] looking at there and in order to
+[03:24] calculate that we need to use the
+[03:26] following formula we need to say that I
+[03:28] multiplied by the cosine of theta
+[03:32] divided by d squared so if any of this
+[03:36] is looking unfamiliar to you then please
+[03:38] go back and watch the previous videos
+[03:40] that I've done on lighting because it's
+[03:42] going to help you to understand what
+[03:43] this capital e means what the eye means
+[03:46] and all those different things so please
+[03:48] go back and watch that video if you've
+[03:49] not already done so now at this point
+[03:51] the temptation is to start putting all
+[03:52] the numbers in so we'll say we've got
+[03:54] eye well we know what I is a position a
+[03:57] it's 1500 candelas and just to avoid
+[04:01] confusing it off you could even put
+[04:02] little a there and the subscript just so
+[04:04] you remember that that's the one that
+[04:05] you're dealing with and then we're going
+[04:07] to multiply this by cos theta well
+[04:09] what's this cos theta where's that
+[04:11] coming from well cos theta is the angle that is
+[04:15] formed here so it's the angle there
+[04:19] which is going to affect the amount of
+[04:21] light that hits point p1 there
+[04:23] so we don't yet know what that angle is
+[04:26] we need to figure that out we also don't
+[04:29] know what this value for D squared is or
+[04:32] what the value for D will be D is the
+[04:35] distance from the light source to the
+[04:37] point that we're calculating so it's
+[04:39] this distance here and we don't know
+[04:40] that yet
+[04:41] so we need to find two pieces of
+[04:44] information to put into here now
+[04:46] fortunately using a little bit of
+[04:48] pythagoras and a little bit of
+[04:49] trigonometry we're well able to do that
+[04:51] so let's do that first let's figure out
+[04:53] what this side here is going to be so
+[04:56] we've got a right-angled triangle so
+[04:59] that's a right-angled triangle we could
+[05:00] label these sides up a B and C and we
+[05:05] know from Pythagoras that a squared plus
+[05:08] B squared is equal to C squared like
+[05:11] that so if we want to figure out what
+[05:12] the value of C is going to be the
+[05:15] formula will look like this C is equal
+[05:18] to the square root of a squared plus B
+[05:21] squared so now we can put our numbers in
+[05:24] we've got the square root of 2.4 squared
+[05:28] plus 1.5 squared so we can put that into
+[05:33] our calculator and come out with the
+[05:36] answer so let's Wally that into the
+[05:38] calculator now we've got the square root
+[05:39] of 2.4 squared plus 1.5 squared and
+[05:45] that's going to give us an answer of 2.8
+[05:48] 3 meters so we'll round after 2 decimal
+[05:51] places
+[05:52] 2.8 3 meters so that's what we're
+[05:56] looking at there so the distance from
+[05:59] this light source to this point here is
+[06:02] 2.8 3 meters right so that's great so
+[06:07] now we know actually what the distance
+[06:09] from the light source to the point that
+[06:11] we're calculating is it's 2.8 3 so we
+[06:13] can put that into our illumination
+[06:17] calculation so we can put that in here
+[06:19] 2.8 3 squared we then need to figure out
+[06:24] what the value for the cosine of theta
+[06:27] is going to be now again if you haven't
+[06:29] already watched my videos on
+[06:31] trigonometry then please do so because
+[06:33] it will help you to understand what's
+[06:34] about to happen next
+[06:35] we're interested in this angle here and
+[06:38] we want to know what the cosine of that
+[06:40] angle is so we know from our
+[06:42] trigonometry that the cosine of theta is
+[06:44] equal to the adjacent divided by the
+[06:49] hypotenuse and the adjacent divided by
+[06:52] the hypotenuse which side are we talking
+[06:54] about here well we're interested in this
+[06:56] angle so this side here which is next to
+[06:59] the angle is the adjacent and the long
+[07:02] side is the hypotenuse so we're going to
+[07:04] do two point four divided by two point
+[07:07] eight three and three point four divided
+[07:10] by two point eight three is going to
+[07:12] give us our cosine value so we'll put
+[07:13] that into the calculator next two point
+[07:16] four divided by two point eight three
+[07:18] and that gives us a value of naught
+[07:21] point eight four eight we'll go for
+[07:23] three decimal places is normally a
+[07:25] reasonable value to round off for when
+[07:28] you're doing anything involving
+[07:29] trigonometry so now we know the cosine
+[07:31] of theta is not point eight four eight
+[07:34] so we'll stick that into our illuminants
+[07:37] calculation so we've got naught point
+[07:40] four eight here's the value that we're
+[07:42] going to play a man out so I'll stick
+[07:44] that they're not point eight four eight
+[07:47] and we're now in a position where we can
+[07:50] figure out what the illuminance at this
+[07:52] point here is that's being caused by
+[07:54] light source a so we've just got to do
+[07:58] 1,500 times by naught point eight four
+[08:01] eight and then we're going to divide
+[08:02] that by two point eight three squared
+[08:05] and that's going to give us a value of
+[08:08] 150 eight point eight two so that's 150
+[08:13] eight point eight two and of course
+[08:17] we're measuring illuminance and that is
+[08:19] measured in looks so we put LX on the
+[08:22] end there so that's the first of really
+[08:25] four calculations that we're going to
+[08:26] have to do in order to figure out all of
+[08:29] the answer to this question what is the
+[08:31] illuminance at Point P one and what
+[08:32] ceiling it's a point P two what we'll do
+[08:34] now is we'll figure out what the
+[08:36] illuminance is at Point P one that's
+[08:39] being caused by light source B so really
+[08:43] what we're going to do now it's just a
+[08:44] repetition of what we've done already so
+[08:46] we're going to figure out what is the
+[08:47] illuminance
+[08:49] at point one that is being caused by the
+[08:53] light source be there so we're gonna put
+[08:55] in our same formula except we're going
+[08:57] to be interested in light source B we're
+[08:59] going to times that by the cosine of
+[09:01] theta and we're going to divide that by
+[09:04] d squared and really we just need to go
+[09:06] through exactly the same process again
+[09:08] we don't know what the cosine of theta
+[09:11] is yet and we don't know what the
+[09:13] distance is going to be from the light
+[09:15] source to the point so we'll figure it
+[09:17] out so this is hopefully reasonably
+[09:20] straightforward and simple all we've got
+[09:22] to do is acknowledge that buried in this
+[09:24] drawing just here there is a
+[09:27] right-angled triangle and that
+[09:29] right-angled triangle has sides which
+[09:32] again we can call a B and C and we want
+[09:36] to know the length of side C so it's
+[09:38] just a matter of doing some Pythagoras
+[09:39] again so we say that a squared plus B
+[09:43] squared is equal to C squared and that's
+[09:46] going to give us our answer
+[09:48] once we've transposed it to say that C
+[09:50] is equal to the square root of a squared
+[09:53] plus B squared so we now put this into
+[09:56] our calculation we've got the square
+[09:58] root of a which is 2.4 I'm going to
+[10:01] square that and then we're going to add
+[10:03] on to that B squared which is 2 point 2
+[10:06] squared so we've got 2.4 squared plus 2
+[10:10] point 2 squared and then square rooted
+[10:12] and we're going to figure out what the
+[10:14] answer to that it's so the square root
+[10:16] of 2 point 4 squared plus 2 point 2
+[10:20] squared gives us a value of 3 point 2 6
+[10:25] meters will go with there so 3 point 2 6
+[10:28] meters there we go
+[10:31] so now we know what the distance from
+[10:34] light source B to point 1 is and we know
+[10:37] that that value is 3 point 2 6 meters so
+[10:40] we'll be able to put that into our
+[10:41] calculation in a minute now let's figure
+[10:43] out what the cosine of this angle is
+[10:47] going to be so once again we're
+[10:49] interested in this angle here and this
+[10:51] angle here again we're going to call
+[10:53] that theta we could probably label these
+[10:55] up differently if we weren't going
+[10:57] through the process one thing at a time
+[10:58] but we know what the angle
+[11:01] discussing at the moment so we're going
+[11:03] to say that the cosine of theta is equal
+[11:08] to the adjacent over the hypotenuse
+[11:10] again so the cosine of theta is equal to
+[11:14] the adjacent over the hypotenuse which
+[11:16] is equal to in this case the adjacent
+[11:19] the side next to the angle is 2.4 and
+[11:23] the hypotenuse which is this long side
+[11:26] here we just calculated was three point
+[11:28] two six so we're going to put that into
+[11:31] our calculators now two point four
+[11:34] divided by three point two six gives us
+[11:37] a cosine value of naught point seven
+[11:39] three six nor point seven three six so
+[11:43] that means we can now complete this
+[11:46] calculation we can now go back to our
+[11:49] original calculation here which is I
+[11:52] times cos theta R over D squared and we
+[11:54] can put all these numbers in so we can
+[11:56] say that we've got the value for IB
+[11:58] which is lightsource be here one
+[12:01] thousand two hundred multiplied by the
+[12:03] cosine of theta which we figured out is
+[12:05] naught point seven three six divided by
+[12:09] the distance squared and the distance
+[12:11] was three point two six so we've got
+[12:14] three point two six squared so let's put
+[12:15] this into our calculators 1200 x naught
+[12:19] point seven three six and put that over
+[12:22] three point two six squared and that
+[12:25] gives us a total of eighty three point
+[12:29] one looks so there we go we can see now
+[12:34] what the illumination level at Point P
+[12:37] one is that's being caused by light
+[12:39] source B so to figure out what the total
+[12:41] illuminance is at Point P one we've
+[12:44] simply just got to add those values
+[12:46] together so the total illuminance at
+[12:48] Point P 1 will be the illuminance at
+[12:52] Point P one from light source a added to
+[12:57] the illuminance at Point P one from
+[13:01] light source B so that means we just
+[13:03] basically add those values together so
+[13:05] we're just going to do one hundred and
+[13:06] fifty eight point eight to one hundred
+[13:09] and fifty eight point eight two and
+[13:12] we're going to add
+[13:14] to that eighty three point one looks so
+[13:17] we add eighty three point one looks so
+[13:21] we'll do that calculation one hundred
+[13:24] fifty eight two point eight two plus
+[13:26] eighty three point one and that is going
+[13:30] to give us a value of two hundred and
+[13:31] forty-one point nine two so the total
+[13:34] illumination level at Point P one is two
+[13:37] hundred and forty-one point nine two
+[13:39] looks so now all we've got to do is
+[13:43] repeat this process to figure out what
+[13:45] the illuminance level at Point P two is
+[13:49] so now we figure out what the
+[13:51] illuminance level at Point P one is
+[13:52] we'll move on and figure out what the
+[13:54] illuminance at Point P two is so here
+[13:57] again just do a little sketch of the
+[13:59] drawing so to try and remove as many of
+[14:00] these lines as possible and if we look
+[14:03] at this we can see that we've got a
+[14:04] light source up here that has a value of
+[14:09] 1200 candelas and that is shining down
+[14:14] on to point P to here so that's nice
+[14:16] that means that we've got a nice easy
+[14:18] calculation to do there we've also got a
+[14:20] light source over here which is like
+[14:22] source a and that has a luminous
+[14:26] intensity of 1500 candelas this light
+[14:30] source is shining directly down on here
+[14:32] and this light source is shining like
+[14:35] that except in a straight line so that's
+[14:38] what we're looking at there we'll just
+[14:39] kick the values onto there so that's two
+[14:41] point four meters this here is two point
+[14:44] four meters high as well and now we will
+[14:47] need to know at some point the distance
+[14:48] from that light source over to here
+[14:50] horizontally so that's just that value
+[14:53] added to that value so this will be
+[14:55] three point seven meters so the distance
+[14:58] from here to here will be three point
+[15:01] seven meters so again let's have a look
+[15:05] at this we need to figure out what the
+[15:07] total illuminance is so we'll start off
+[15:09] by saying what's the illuminance at
+[15:11] Point P two that's caused by light a you
+[15:16] will start with like position a so we
+[15:19] just use the same formula that we used
+[15:20] last time we've got I multiplied by the
+[15:24] cosine of theta divided by D
+[15:27] squared so here we've got light source a
+[15:30] is the one that we're interested in
+[15:32] start putting the numbers in one
+[15:34] thousand five hundred times by we don't
+[15:37] know what the cosine of theta is yet
+[15:38] divided by we don't know what the value
+[15:41] for D is yet however we can figure it
+[15:44] out because again if we look at what
+[15:46] we've got here we have got a
+[15:49] right-angled triangle with an angle up
+[15:52] here and this is the angle that we're
+[15:53] going to be interested in so we'll label
+[15:55] that theta for a moment and then here
+[15:57] we've got side a side B and side C so in
+[16:03] order to figure out what the distance
+[16:05] from the light source to the point that
+[16:08] we're illuminating is going to be we
+[16:10] will do a little bit of Pythagoras again
+[16:12] we will say that a squared plus B
+[16:13] squared is equal to C squared and when
+[16:17] we transpose that we know that C is
+[16:19] equal to the square root of a squared
+[16:21] plus B squared so let's kick the numbers
+[16:24] in we've got the square root of two
+[16:26] point four squared plus three point
+[16:30] seven squared and we can now put that
+[16:33] into the calculator and figure out what
+[16:35] the answer to that is going to be so
+[16:36] we've got two point four squared plus
+[16:41] three point seven squared and of course
+[16:44] we're going to square root the answer to
+[16:46] that so the total answer once Square
+[16:48] rooted is four point four one so the
+[16:51] distance here is going to be four point
+[16:54] four one meters so this value here four
+[16:58] point four one meters so that's all good
+[17:02] we've got a distance from point A to at
+[17:06] this point here that we're calculating
+[17:08] the value of the illuminance at and
+[17:10] we've got four point four one meters so
+[17:12] that's all good we can now put that into
+[17:14] the bottom of our formula four point
+[17:15] four one and of course on this formula
+[17:20] we square that bottom number due to the
+[17:22] use of the inverse square law again
+[17:24] watch a different video for that if you
+[17:26] don't know what that is
+[17:27] what we're then going to do is we're
+[17:29] going to look at figuring out what the
+[17:31] cosine of this angle theta is going to
+[17:33] be so we say that the cosine of theta is
+[17:37] equal to the adjacent
+[17:41] divided by the hypotenuse once again
+[17:44] we're interested in this angle so this
+[17:46] is the adjacent because it's next to the
+[17:47] angle and this is the hypotenuse because
+[17:50] it's the long side so we're going to say
+[17:52] that that is equal to two point four
+[17:54] divided by four point four one and when
+[17:58] we do that calculation two point four
+[17:59] divided by four point four one we come
+[18:03] out with an answer of naught point five
+[18:06] four four so that's not point five four
+[18:11] so there we go so there's our
+[18:14] cosine value which we can now stick into
+[18:16] our illuminants calculation nor point
+[18:20] five four four okay so we've got all the
+[18:24] numbers we need we can now perform this
+[18:26] calculation and figure out what the
+[18:28] illuminance is at this point here being
+[18:30] caused by this light fitting here so
+[18:32] let's put into the calculator one
+[18:34] thousand five hundred times by naught
+[18:37] point five four four and then we're
+[18:39] going to divide that by four point four
+[18:41] one squared and that gives us 40 one
+[18:44] point nine five we've come out with that
+[18:48] forty one point nine five and rarely
+[18:51] left that will be 41.96 so to two
+[18:55] decimal places that's 41.96 looks and
+[18:59] now all that remains is we need to
+[19:02] figure out what the illuminance is at
+[19:04] this point here being caused by this
+[19:06] light fitting now after all that maths
+[19:08] we've done after all that pythagoras and
+[19:10] trigonometry this is just a nice wine
+[19:12] down to the calculation like slipping
+[19:14] into a nice hot bath after a hard day's
+[19:16] work so what we're going to say here is
+[19:18] that the illuminance at Point 2 that's
+[19:22] caused by light source B is going to be
+[19:25] I divided by d squared we've managed to
+[19:30] get rid of the cosine of theta because
+[19:31] actually there is no angle here this is
+[19:33] just a vertical you could actually argue
+[19:35] that the angle is zero degrees and
+[19:37] what's quite interesting about that is
+[19:38] the cosine of theta is one so if we were
+[19:41] to put times one on the top of this it
+[19:43] would make no difference to the outcome
+[19:44] of our answer I love when mats work so
+[19:47] beautifully so we're going to say then
+[19:49] we've got light source B so we need this
+[19:53] Val
+[19:55] 1200 divided by the distance squared and
+[19:58] the distance is simply the distance from
+[20:00] the light source to the point that we're
+[20:02] illuminating so that's 2.4 squared so
+[20:06] we've got 1200 divided by 3 point 4
+[20:10] squared and that gives us a total answer
+[20:12] of 200 8.3 looks so the illuminance
+[20:18] level at Point 2 caused by light source
+[20:21] B is 200 8.3 looks once again the final
+[20:25] thing that we've got to do just for the
+[20:28] sake of completing this question
+[20:29] correctly and showing the right answer
+[20:32] is to figure out what the illuminance is
+[20:34] at Point P 2 in total so we'll take the
+[20:38] illuminance level at Point P 2 from
+[20:40] light source a and we'll add it to the
+[20:42] illuminance from point 2 from light
+[20:46] source B so we've put our numbers in
+[20:48] here so we've got this number here 41.96
+[20:53] 41.96 and we're going to add to that 208
+[20:57] point three so that's two hundred and
+[21:00] eight point three so let's do that
+[21:03] calculation 41.96 and we're going to add
+[21:07] to that 208 point three and that brings
+[21:11] us to a total of 250 point two six so
+[21:15] now we know that the illuminance level
+[21:18] at position two is 250 point two six
+[21:24] looks and that was the answer that we
+[21:27] were trying to get to so all that
+[21:29] remains in this video is to say thank
+[21:31] you very much for watching
+[21:34] [Music]
+[21:47] [Music]
+[21:53] [Music]

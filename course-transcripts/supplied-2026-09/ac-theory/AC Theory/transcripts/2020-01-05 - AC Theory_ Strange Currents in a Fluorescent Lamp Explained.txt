@@ -1,0 +1,354 @@
+# AC Theory: Strange Currents in a Fluorescent Lamp Explained
+# https://www.youtube.com/watch?v=HHVaJx4hQII
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue our research into the fluorescent lamp and figuring out what was going on with the voltages and the currents inside it in previous videos we've solved the mystery of how we appear to have more voltage inside the fitting than we had being applied to it in this video we're going to have a look at what's happening with those currents because if you remember from our original video the mystery of the fluorescent lamp when we turned the capacitor in the circuit on and off although we were introducing more current into the circuit the current actually fell let's just cut back to that footage to remind ourselves what it looks like okay so this is how much current is flowing into the circuit so we can see on our drawing that the current flowing into the circuit and the current flowing through the lamp and the choke are exactly the same now it's quite interesting at this stage because what we're going to do now is we're going to introduce the capacitor into the circuit now the capacitor is going to draw some current through it and therefore we'd expect because it's connected in parallel with the circuit we'd expect however much current is flowing through the capacitor to simply be added on to this value here so currently flowing into the circuit we've got a nought point six that's a look here so that's not point seven and this is split into one two three four five divisions so that's going to be nought point six four of an amp roughly so we've got nought point six four amps flowing into the circuit okay what we're going to do now is go over to our power factor correction capacitor and we're going to introduce that into the circuit and have a look at what that reading is so if we could perhaps move the camera over to the power factor correction capacitor so this ammeter over on this side is going to tell us how much current is flowing into the power factor correction capacitor okay so at the minute it's disconnected from the circuit there is absolutely no current flowing through there so what we'll do is we'll switch the power factor correction capacitor on and we'll see just exactly how much current is going to be flowing into them okay so that's about as comfortable as we're going to get with that needle so if we have a look here we're getting naught point six just over naught point six again we're sort of not 0.63 there so now we've got naught point six three amps flowing into the circuit that's being drawn by the capacitor so we might rationally expect that the current flowing through the choke and the lamp and the current flowing through the capacitor at the point where they meet in the circuit we'd expect them just to join together and give us the total circuit current so we'd be talking somewhere around 1.2 1.3 amps if we were to add those two values together however if we bring the camera back over to our ammeter that is measuring the total current flowing into the circuit we'll see that something interesting has happened over here so can you see what's happened to the current flowing into the circuit we've actually reduced it so now we've got naught point maybe 3 9 amps flowing into the circuit now so somehow by connecting this capacitor into the circuit which is drawing current so we've not changed anything here we can see that we're actually now drawing less current into the circuit than we were before so somehow adding more current into the circuit has reduced the amount of current that the circuit is using so you can clearly see from that footage that when we introduced the capacitor into the circuit it started to draw current into the circuit but we saw that in total the current flowing into the fresh and light fitting as a whole actually reduced so how can that be how can it be that drawing more current within the circuit actually leads to less current flowing into the circuit well again we can explain this by using our phasor diagrams so let's have a look at our original drawing from a previous video so this is how we left our circuit diagram of the present light in a previous video you can see there that we've got the voltages been clearly shown out of phase across the lamp pipe and across choke the voltage across the lamp being represented by V R because that's the resistive part of the circuit and the voltage across the choke being represented by V L because that is the inductive part of the circuit male notice on this drawing that there's no capacitor connected so we don't have a capacitor in circuit at the moment so let's fill that in the drawing now so you can see clearly there's our capacitor now let's have a look at what's actually happening here so we've got our phasor diagrams for the resistive part the load and the inductive part of the load and you can see there that for those we used the current as the reference phasor the reason for that is that those two elements combined to form a series circuit which means that the current flowing through there was constant however now you can see that the capacitor has been connected in parallel now you could achieve a similar effect by connecting the capacitor in series with those other two loads but in practical terms agree to our two problems and so the capacitor gets connected in parallel now what that means is that if we compare the phasor diagram for the capacitor to the phasor diagram that we created for the resistive and inductive part of the circuit what that means is that we actually need to modify our original phasor diagram a little bit and that's because now we're considering what's happening with the voltage and the current inside the capacitor but of course we've got it connected in parallel so that means that we're no longer going to use the current as the reference phasor we're now going to use the voltage as the reference phasor so what we're going to do is we're going to rotate our original phasor diagram a little bit and you can see there that it's rotated around so that now the supply voltage the total voltage flowing into the circuit is our reference phasor now the reason for that will become clear in a moment so now let's have a think about what our phasor diagram for our capacitor is going to look like so we're going to use the voltages the reference phasor and if you remember back to the videos where we looked at the leading and lagging nature of capacitive and inductive loads and filled work sheet you'll remember that in a capacitive circuit the current leads the voltage so what that means is if we draw the voltage as a horizontal arrow and bear in mind that arrow will just be the same length as the supply voltage because whatever voltage were applying to the circuit is being applied to the capacitor because it's in parallel you can see there that the voltage is horizontal for the capacitor and the current where will that be pointing if it's leading well it will point directly up on it at 90 degrees to our voltage arrow and of course that means that the current is leading the voltage now if you're not sure about these expressions I'm using leading and lagging and please go back and watch at least the summary video for AC theory where we made sure that our work sheet was completely filled in so now this starts to get really interesting when we now combine our capacitor phasor diagram with our phasor diagram for our original circuit with the lamp and the choke connected in series so we'll bring that down and we will lay that phase diagram from our capacitor on top of our original phasor diagram now you can see just like with the currents in the previous video we don't need to add the two voltages together because they are the same the voltage applied to the circuit is the voltage applied to the capacitor but now notice what's happened with our current we've now got a current arrow the current flowing into the capacitor pointing directly upwards on our phasor diagram so now we're back to an interesting situation you can see there that our current flowing into the capacitor and the current flowing into the rest of the circuit which we will now call I our L because it is the current flowing into the resistive and inductive part of the circuit you can see that those two have fallen out of phase with each other now we can show what happens when those two currents combine if you remember in the voltages video it's like if you imagine a little object at the point where the two current arrows meet and imagine that it's got two forces on it one trying to drag it off down to the right and one trying to drag it straight up what's going to happen to that object well it's gonna get kind of dragged off to the right a little bit isn't it and actually what we can do is we can map out exactly which direction that object would move in and effectively how far it would move now we're not dealing with a moving object we're dealing with current but the principle stays the same when those two currents meet at the point where the capacitor joins the circuit they join together and they have an effect on each other they have kind of an influence on each other and they kind of modify each other so that when they join in the current that's flowing into the circuit they've actually become slightly different now we can do that by mapping our parallel lines to the two currents so let's do that now let's draw a parallel line to the current that flows into the resistive and inductive part of the circuit so we'll draw a parallel line there so that's following parallel to that one and then we will draw a parallel line from the end of the resistive and inductive current that is parallel to the capacitive current so it goes directly up like that now do you remember the important point where those two lines cross if we draw a new arrow from the point where the two lines cross to the point where the two arrows originally met each other we can see there that we get a new arrow that represents current and what do you think that arrow represents well of course it represents the combining of those two currents which means that it represents the amount of current that's flowing into the circuit now the critical point the really interesting point is look at what's happened to the length of that arrow can you see that when we didn't have the capacitor connected the arrow was a certain length but now we've connected the capacitor and those two currents have combined and affected each other we can see that the new current flowing into the circuit has actually been reduced so now there is literally less current flowing into the circuit than there was before and that explains why when we measured our currents in the previous video we saw that when you connect the capacitor into the circuit even it's drawing current into the circuit the current as a total actually reduces it's because the current flowing through the resistive and inductive part of the circuit and the current flowing through the capacitor are out of phase with each other so there we have it we've solved the mystery of the fluorescent lamp we now know why the voltages were adding up to more voltage than we were applying to the circuit we found how drawing more current into the circuit seemed to reduce the amount of current flowing into the circuit we now understand that a little bit better than we did before thanks to our understanding of AC theory and those phasor diagrams that we drew now one of the amazing things about our understanding of this process is if you think about the original video that we shot on this where we were turning the capacitor in and out of the circuit and therefore reducing the current flowing into the lamp the operation of the lamp didn't change it stayed at the same brightness so we were actually getting the same light output for less current and if we're drawing less current into the circuit that means we were using less power now what we've touched on here is we've kind of started to dig away at the surface of a subject called power factor correction now this is something that you may well have heard about and hopefully it's something that you might already know a little bit about what we're going to do in the ongoing series of these videos is we're going to dig into power factor in a little bit more depth it's a really important subject it can save us an awful lot of running costs an awful lot of energy and therefore is an important thing to carry out and understand so we'll look about over the following videos to come however before we get to that there's some more information that we can draw out of our studies of this fluorescent lamp an AC theory so we're going to continue on to look at things like impedance different kinds of power and that all-important power factor so we've got some really exciting stuff coming up so all that remains to say in this video is thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:13] we're going to continue our research
+[00:14] into the fluorescent lamp and figuring
+[00:17] out what was going on with the voltages
+[00:18] and the currents inside it in previous
+[00:20] videos we've solved the mystery of how
+[00:22] we appear to have more voltage inside
+[00:24] the fitting than we had being applied to
+[00:26] it in this video we're going to have a
+[00:29] look at what's happening with those
+[00:30] currents because if you remember from
+[00:32] our original video the mystery of the
+[00:34] fluorescent lamp when we turned the
+[00:37] capacitor in the circuit on and off
+[00:39] although we were introducing more
+[00:41] current into the circuit the current
+[00:44] actually fell let's just cut back to
+[00:46] that footage to remind ourselves what it
+[00:47] looks like okay so this is how much
+[00:50] current is flowing into the circuit so
+[00:52] we can see on our drawing that the
+[00:54] current flowing into the circuit and the
+[00:56] current flowing through the lamp and the
+[00:58] choke are exactly the same now it's
+[01:02] quite interesting at this stage because
+[01:03] what we're going to do now is we're
+[01:05] going to introduce the capacitor into
+[01:08] the circuit now the capacitor is going
+[01:10] to draw some current through it and
+[01:12] therefore we'd expect because it's
+[01:14] connected in parallel with the circuit
+[01:15] we'd expect however much current is
+[01:17] flowing through the capacitor to simply
+[01:19] be added on to this value here so
+[01:21] currently flowing into the circuit we've
+[01:24] got a nought point six that's a look
+[01:27] here so that's not point seven and this
+[01:31] is split into one two three four five
+[01:33] divisions so that's going to be nought
+[01:35] point six four of an amp roughly so
+[01:38] we've got nought point six four amps
+[01:39] flowing into the circuit okay what we're
+[01:42] going to do now is go over to our power
+[01:46] factor correction capacitor and we're
+[01:49] going to introduce that into the circuit
+[01:51] and have a look at what that reading is
+[01:52] so if we could perhaps move the camera
+[01:54] over to the power factor correction
+[01:57] capacitor so this ammeter over on this
+[02:02] side is going to tell us how much
+[02:03] current is flowing into the power factor
+[02:06] correction capacitor okay so at the
+[02:11] minute it's disconnected from the
+[02:13] circuit there is absolutely no current
+[02:15] flowing through there so what we'll do
+[02:16] is we'll switch the power factor
+[02:17] correction capacitor
+[02:18] on and we'll see just exactly how much
+[02:22] current is going to be flowing into them
+[02:26] okay so that's about as comfortable as
+[02:28] we're going to get with that needle so
+[02:30] if we have a look here we're getting
+[02:31] naught point six just over naught point
+[02:34] six again we're sort of not 0.63 there
+[02:36] so now we've got naught point six three
+[02:38] amps flowing into the circuit that's
+[02:40] being drawn by the capacitor so we might
+[02:43] rationally expect that the current
+[02:46] flowing through the choke and the lamp
+[02:48] and the current flowing through the
+[02:50] capacitor at the point where they meet
+[02:52] in the circuit we'd expect them just to
+[02:54] join together and give us the total
+[02:56] circuit current so we'd be talking
+[02:57] somewhere around 1.2 1.3 amps if we were
+[03:00] to add those two values together however
+[03:03] if we bring the camera back over to our
+[03:07] ammeter that is measuring the total
+[03:10] current flowing into the circuit we'll
+[03:13] see that something interesting has
+[03:14] happened over here so can you see what's
+[03:18] happened to the current flowing into the
+[03:20] circuit we've actually reduced it so now
+[03:23] we've got naught point maybe 3 9 amps
+[03:28] flowing into the circuit now so somehow
+[03:31] by connecting this capacitor into the
+[03:33] circuit which is drawing current so
+[03:35] we've not changed anything here we can
+[03:37] see that we're actually now drawing less
+[03:40] current into the circuit than we were
+[03:41] before so somehow adding more current
+[03:44] into the circuit has reduced the amount
+[03:46] of current that the circuit is using so
+[03:49] you can clearly see from that footage
+[03:51] that when we introduced the capacitor
+[03:53] into the circuit it started to draw
+[03:55] current into the circuit but we saw that
+[03:57] in total the current flowing into the
+[04:01] fresh and light fitting as a whole
+[04:03] actually reduced so how can that be how
+[04:06] can it be that drawing more current
+[04:07] within the circuit actually leads to
+[04:10] less current flowing into the circuit
+[04:12] well again we can explain this by using
+[04:16] our phasor diagrams so let's have a look
+[04:18] at our original drawing from a previous
+[04:21] video so this is how we left our circuit
+[04:24] diagram of the present light in a
+[04:26] previous video you can see there that
+[04:28] we've got the voltages been clearly
+[04:30] shown out of phase across the lamp pipe
+[04:31] and across
+[04:32] choke the voltage across the lamp being
+[04:35] represented by V R because that's the
+[04:37] resistive part of the circuit and the
+[04:39] voltage across the choke being
+[04:40] represented by V L because that is the
+[04:44] inductive part of the circuit male
+[04:47] notice on this drawing that there's no
+[04:49] capacitor connected so we don't have a
+[04:51] capacitor in circuit at the moment so
+[04:52] let's fill that in the drawing now so
+[04:55] you can see clearly there's our
+[04:56] capacitor now let's have a look at
+[04:59] what's actually happening here so we've
+[05:01] got our phasor diagrams for the
+[05:04] resistive part the load and the
+[05:06] inductive part of the load and you can
+[05:07] see there that for those we used the
+[05:10] current as the reference phasor the
+[05:13] reason for that is that those two
+[05:15] elements combined to form a series
+[05:17] circuit which means that the current
+[05:19] flowing through there was constant
+[05:21] however now you can see that the
+[05:22] capacitor has been connected in parallel
+[05:25] now you could achieve a similar effect
+[05:29] by connecting the capacitor in series
+[05:30] with those other two loads but in
+[05:32] practical terms agree to our two
+[05:34] problems and so the capacitor gets
+[05:36] connected in parallel now what that
+[05:39] means is that if we compare the phasor
+[05:42] diagram for the capacitor to the phasor
+[05:45] diagram that we created for the
+[05:48] resistive and inductive part of the
+[05:50] circuit what that means is that we
+[05:52] actually need to modify our original
+[05:54] phasor diagram a little bit and that's
+[05:56] because now we're considering what's
+[05:57] happening with the voltage and the
+[05:58] current inside the capacitor but of
+[06:01] course we've got it connected in
+[06:02] parallel so that means that we're no
+[06:04] longer going to use the current as the
+[06:05] reference phasor we're now going to use
+[06:07] the voltage as the reference phasor so
+[06:10] what we're going to do is we're going to
+[06:12] rotate our original phasor diagram a
+[06:14] little bit and you can see there that
+[06:16] it's rotated around so that now the
+[06:20] supply voltage the total voltage flowing
+[06:22] into the circuit is our reference phasor
+[06:25] now the reason for that will become
+[06:27] clear in a moment so now let's have a
+[06:31] think about what our phasor diagram for
+[06:34] our capacitor is going to look like so
+[06:36] we're going to use the voltages the
+[06:37] reference phasor and if you remember
+[06:39] back to the videos where we looked at
+[06:41] the leading and lagging nature of
+[06:43] capacitive and inductive loads and
+[06:45] filled
+[06:46] work sheet you'll remember that in a
+[06:49] capacitive circuit the current leads the
+[06:52] voltage so what that means is if we draw
+[06:55] the voltage as a horizontal arrow and
+[06:57] bear in mind that arrow will just be the
+[06:59] same length as the supply voltage
+[07:01] because whatever voltage were applying
+[07:03] to the circuit is being applied to the
+[07:05] capacitor because it's in parallel you
+[07:07] can see there that the voltage is
+[07:09] horizontal for the capacitor and the
+[07:11] current where will that be pointing if
+[07:13] it's leading well it will point directly
+[07:16] up on it at 90 degrees to our voltage
+[07:19] arrow and of course that means that the
+[07:22] current is leading the voltage now if
+[07:25] you're not sure about these expressions
+[07:26] I'm using leading and lagging and please
+[07:28] go back and watch at least the summary
+[07:30] video for AC theory where we made sure
+[07:32] that our work sheet was completely
+[07:34] filled in so now this starts to get
+[07:36] really interesting when we now combine
+[07:38] our capacitor phasor diagram with our
+[07:42] phasor diagram for our original circuit
+[07:45] with the lamp and the choke connected in
+[07:48] series so we'll bring that down and we
+[07:50] will lay that phase diagram from our
+[07:53] capacitor on top of our original phasor
+[07:55] diagram now you can see just like with
+[07:58] the currents in the previous video we
+[08:00] don't need to add the two voltages
+[08:02] together because they are the same the
+[08:04] voltage applied to the circuit is the
+[08:06] voltage applied to the capacitor but now
+[08:09] notice what's happened with our current
+[08:10] we've now got a current arrow the
+[08:12] current flowing into the capacitor
+[08:13] pointing directly upwards on our phasor
+[08:17] diagram so now we're back to an
+[08:20] interesting situation you can see there
+[08:22] that our current flowing into the
+[08:24] capacitor and the current flowing into
+[08:27] the rest of the circuit which we will
+[08:28] now call I our L because it is the
+[08:32] current flowing into the resistive and
+[08:33] inductive part of the circuit you can
+[08:35] see that those two have fallen out of
+[08:38] phase with each other now we can show
+[08:42] what happens when those two currents
+[08:44] combine if you remember in the voltages
+[08:45] video it's like if you imagine a little
+[08:48] object at the point where the two
+[08:50] current arrows meet and imagine that
+[08:53] it's got two forces on it one trying to
+[08:54] drag it off down to the right and one
+[08:57] trying to drag it straight up what's
+[08:59] going to happen to that object well it's gonna get kind
+[09:01] of dragged off to the right a little bit
+[09:03] isn't it and actually what we can do is
+[09:06] we can map out exactly which direction
+[09:08] that object would move in and
+[09:10] effectively how far it would move now
+[09:12] we're not dealing with a moving object
+[09:13] we're dealing with current but the
+[09:15] principle stays the same when those two
+[09:18] currents meet at the point where the
+[09:20] capacitor joins the circuit they join
+[09:24] together and they have an effect on each
+[09:26] other they have kind of an influence on
+[09:27] each other and they kind of modify each
+[09:29] other so that when they join in the
+[09:32] current that's flowing into the circuit
+[09:34] they've actually become slightly
+[09:36] different now we can do that by mapping
+[09:38] our parallel lines to the two currents
+[09:40] so let's do that now let's draw a
+[09:42] parallel line to the current that flows
+[09:44] into the resistive and inductive part of
+[09:47] the circuit so we'll draw a parallel
+[09:49] line there so that's following parallel
+[09:51] to that one and then we will draw a
+[09:53] parallel line from the end of the
+[09:55] resistive and inductive current that is
+[09:59] parallel to the capacitive current so it
+[10:01] goes directly up like that now do you
+[10:04] remember the important point where those
+[10:06] two lines cross if we draw a new arrow
+[10:09] from the point where the two lines cross
+[10:12] to the point where the two arrows
+[10:15] originally met each other we can see
+[10:18] there that we get a new arrow that
+[10:20] represents current and what do you think
+[10:22] that arrow represents well of course it
+[10:27] represents the combining of those two
+[10:29] currents which means that it represents
+[10:31] the amount of current that's flowing
+[10:32] into the circuit now the critical point
+[10:35] the really interesting point is look at
+[10:38] what's happened to the length of that
+[10:41] arrow can you see that when we didn't
+[10:43] have the capacitor connected the arrow
+[10:45] was a certain length but now we've
+[10:47] connected the capacitor and those two
+[10:49] currents have combined and affected each
+[10:51] other we can see that the new current
+[10:54] flowing into the circuit has actually
+[10:57] been reduced so now there is literally
+[11:00] less current flowing into the circuit
+[11:03] than there was before and that explains
+[11:06] why when we measured our currents in the
+[11:09] previous video we saw that when you
+[11:11] connect the capacitor into the circuit
+[11:12] even
+[11:13] it's drawing current into the circuit
+[11:15] the current as a total actually reduces
+[11:18] it's because the current flowing through
+[11:19] the resistive and inductive part of the
+[11:21] circuit and the current flowing through
+[11:23] the capacitor are out of phase with each
+[11:26] other
+[11:27] so there we have it we've solved the
+[11:30] mystery of the fluorescent lamp we now
+[11:32] know why the voltages were adding up to
+[11:35] more voltage than we were applying to
+[11:37] the circuit we found how drawing more
+[11:39] current into the circuit seemed to
+[11:41] reduce the amount of current flowing
+[11:42] into the circuit we now understand that
+[11:45] a little bit better than we did before
+[11:46] thanks to our understanding of AC theory
+[11:49] and those phasor diagrams that we drew
+[11:52] now one of the amazing things about our
+[11:54] understanding of this process is if you
+[11:56] think about the original video that we
+[11:58] shot on this where we were turning the
+[11:59] capacitor in and out of the circuit and
+[12:01] therefore reducing the current flowing
+[12:04] into the lamp the operation of the lamp
+[12:06] didn't change it stayed at the same
+[12:07] brightness so we were actually getting
+[12:09] the same light output for less current
+[12:12] and if we're drawing less current into
+[12:13] the circuit that means we were using
+[12:15] less power now what we've touched on
+[12:18] here is we've kind of started to dig
+[12:20] away at the surface of a subject called
+[12:22] power factor correction now this is
+[12:24] something that you may well have heard
+[12:26] about and hopefully it's something that
+[12:27] you might already know a little bit
+[12:29] about what we're going to do in the
+[12:31] ongoing series of these videos is we're
+[12:33] going to dig into power factor in a
+[12:34] little bit more depth it's a really
+[12:36] important subject it can save us an
+[12:38] awful lot of running costs an awful lot
+[12:41] of energy and therefore is an important
+[12:43] thing to carry out and understand so
+[12:45] we'll look about over the following
+[12:46] videos to come however before we get to
+[12:48] that there's some more information that
+[12:51] we can draw out of our studies of this
+[12:53] fluorescent lamp an AC theory so we're
+[12:55] going to continue on to look at things
+[12:57] like impedance different kinds of power
+[13:00] and that all-important
+[13:02] power factor so we've got some really
+[13:04] exciting stuff coming up so all that
+[13:06] remains to say in this video is thank
+[13:09] you very much for watching
+[13:13] [Music]
+[13:26] [Music]

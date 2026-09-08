@@ -1,0 +1,270 @@
+# AC Theory: How to Draw a Phasor Diagram for an Inductive Load to Scale
+# https://www.youtube.com/watch?v=dOt3GhjLhJo
+
+[Music] hello and welcome to this electrical principals training video in a previous video in this series we continued our studies into AC theory and we started to solve the mystery of the fluorescent lamp we figured out why it was that the voltages inside this fluorescent lamp were behaving rather strangely and we started to realize that we could understand what was going on there if we understand that the voltages across the lamp and across the choke were out of phase with each other and we represented that with a phasor diagram what we're going to do in this video is we're going to look at constructing a scale drawing of what's happening with the voltages inside our fluorescent light now this is quite an important skill it may be something that you requested to do in an exam but it will also help to really reinforce your understanding of how it can be that we've got more voltage inside the present light than we're applying to the fluorescent light and again it all boils back down to those all-important phases so let's cut over to the whiteboard and have a look at constructing our scale phasor diagram so let's have a go at drawing our phasor diagram to scale now I'm working on the whiteboard here so I'm going to use a fairly large scale if you want to repeat this at home you might want to use a slightly smaller scale you might even want to something like 1 volt is equal to one millimeter that might give you a reasonably nice scale to do an a4 piece of paper but what I'm going to do is I'm going to work to 1 volt so one volt is going to be equal to 4 millimeters and what I'm also going to do is just put on the board here the values that we recorded in our original mystery of the fluorescent lamp video so the voltage that we measured across the resistor so notice we've got V with an R in a subscript to indicate the voltage across the resistor is equal to 195 volts we then found that the L which is the voltage across the inductor was equal to 125 volts and then we found that the total voltage when we measured that was 248 volts so that was the supply voltage or the total voltage that we were putting into the circuit so what we're going to do first of all is we're going to draw to scale our resistive voltage 195 volts so in order to help me achieve that I'm just going to first of all use my spirit level so they get a nice level line at the bottom here and then we'll measure it up and make sure it's the right size so let's have a look at this so we are going to do a line that's sort of matches up with these points here so it's nice and level so we've got a nice level line to start with and then what we're going to do is draw a line on here now my resistive voltage is 195 volts so I need to do 195 times by 4 and 195 times by 4 is going to give us 780 so that's 78 centimeters so I'm going to line this up here and I'm gonna draw 78 centimeters okay so I'll draw 78 centimeters going along here like this so there we go there's 78 so there's 78 there and I'm gonna draw a line that follows that along there so that line there represents my resistive voltage so that line there represents my VR so it looks a little bit like that so there we go that line represents our resistive voltage what we're going to do now is we're going to figure out where our inductive voltage is going to go and in order to do that I'm going to draw a line coming off here at 90 degrees so I'm gonna get my protractor here and I'm going to draw a line coming up this way at 90 degrees like that and that line will also want to work to the same scale so we are looking at the inductive voltage which is 125 volts 125 times by 4 is going to give me 500 millimeters so that's 50 centimeters so that's going to come here and just managed to miss my writing now it pleases me greatly so there we go well let's put that one in there so that is now 50 centimeters long and that is our inductive voltage and that of course represents a value of 125 volts so now in the previous part of this video we saw that we can combine these two lines together to find our supply voltage so let's see how close we get here let's have a look at this so what I'm going to do is I'm going to draw a parallel line to VL and VR so I'm going to offset from the end of here I'm going to come off at 90 degrees from the end of my inductive voltage arrow I'm gonna put a little mark just there after I'm finished dropping my pen lid so I'm gonna put a little mark there and then I'm going to just do a dashed line that just goes off in that direction doesn't matter how long I make this line the only thing that kind of is reasonably important is that we go beyond the line at the bottom there so I'm just going to draw a dashed line going along here like so so there's the line that is parallel to my resistive voltage and then I'm going to do the same thing down this side so again just to make sure that this is accurate as I can get it we've got there and off the end of my resistive voltage I'm going to come up at 90 degrees again and then just do a nice dashed line that overlaps my first dashed line so that's going to look like this come across like that okay and you can see that at this point here these two lines overlap each other now at that point there where those two lines overlap if we map from this corner up to this corner we will find our total voltage or our supply voltage into the system so let's get that drawn on let's find out what that's going to be so we're going to draw a line from there to there okay this is a queue as we can and draw our new voltage arrow in there like that so there's our new voltage era which is the combined voltage across the resistor and the voltage across the inductor and that gives us our total voltage or VT now what's really interesting is that actually we could measure this line and that would tell us exactly how long this would be so let's have a look at that so we've got there 97 centimeters that's coming out of so night so no 92 centimeters so this arrow here is 92 centimeters long so that is 920 millimeters and if we want to figure out what our voltage is we go from this side of the ratio to that side so we're going to say we do 920 divided by 4 and of course 920 divided by 4 is going to give us 230 now that is not intentional in order to match what we say our supply voltages in this country the nominal voltage because actually would have been nice if we were closer to two hundred and forty eight volts however we've come with a reasonably close figure of 230 volts there so what's interesting about that is that when you look at this value here is that the reason that that number and that number don't match each other exactly the kind of the clue to that is hidden in this arrow because we are assuming that the inductor inside our frightened light is a perfect inductor that it has no resistance but of course we know that's not true because the inductor in our fresh and light has a copper coil inside of us what makes it an inductor and that copper coil has a measure of resistance so in reality this arrow wouldn't necessarily be pointing at 90 degrees it would be over this way a little bit and that's that would have the effect of making this arrow be a little bit longer which would match up with this however for the purposes of understanding the principle of what's going on inside of Russian light we assumed that it was a perfect inductor so that's the principle that we're looking at we can draw our phasor diagrams to scale measure them and use that to extract information in a future video we'll see how we can use a more mathematically accurate method of figuring out what the total voltage would be involving the theorem of a particular mathematician so we'll look at that in a future video so there we have it we've seen part of the solution to the mystery of the fluorescent lamp we've figured out why those voltages didn't add up to the supply voltage inside the fluorescent lamp but what we've seen is that if we just change our thinking just a little bit and think well what if I combine those voltages I combine the effect of those voltages well then we see that there is a relationship we also saw that the relationship wasn't perfect we saw that the voltage produced wasn't exactly the same from our scale diagram as the voltage that we measured putting into the flush in light and the reason for that is that basically what we're dealing with here are imperfect components all of the rules that we've been through have spoken about purely inductive loads we don't have a purely inductive load here what we've got here is a load that is a real-world inductor it has a measure of inductance but because it's made up of a coil of copper wire which has a value of resistance it's not a pure inductor which means that we can't assume that the current is lagging the voltage by exactly 90 degrees but what we have seen is the principle of what's happening inside this circuit and actually this principle applies to all inductive loads and what's really interesting is that the circuit diagram that we saw of the resistor connected to the inductor in series we can actually use that to represent an inductive load just entirely by itself so we could use that to represent the coil of a motor because the coil of a motor is an inductive load but it also has a certain amount of resistance so you can split those two values in the same coil into two separate components the inductive part and the resistive part and we can use that to calculate what's going on inside our motors and other inductive loads as well so we've solved part of the mystery but not the whole mystery we've still got to try and figure out what was going on with those strange currents so we're going to do that in the next video thank you very much for watching [Music] you [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in a previous
+[00:13] video in this series we continued our
+[00:15] studies into AC theory and we started to
+[00:17] solve the mystery of the fluorescent
+[00:19] lamp we figured out why it was that the
+[00:22] voltages inside this fluorescent lamp
+[00:24] were behaving rather strangely and we
+[00:27] started to realize that we could
+[00:28] understand what was going on there if we
+[00:30] understand that the voltages across the
+[00:31] lamp and across the choke were out of
+[00:34] phase with each other and we represented
+[00:36] that with a phasor diagram what we're
+[00:39] going to do in this video is we're going
+[00:40] to look at constructing a scale drawing
+[00:43] of what's happening with the voltages
+[00:46] inside our fluorescent light now this is
+[00:49] quite an important skill it may be
+[00:50] something that you requested to do in an
+[00:51] exam but it will also help to really
+[00:53] reinforce your understanding of how it
+[00:55] can be that we've got more voltage
+[00:58] inside the present light than we're
+[01:00] applying to the fluorescent light and
+[01:02] again it all boils back down to those
+[01:04] all-important phases so let's cut over
+[01:07] to the whiteboard and have a look at
+[01:08] constructing our scale phasor diagram so
+[01:13] let's have a go at drawing our phasor
+[01:15] diagram to scale now I'm working on the
+[01:17] whiteboard here so I'm going to use a
+[01:18] fairly large scale if you want to repeat
+[01:20] this at home you might want to use a
+[01:21] slightly smaller scale you might even
+[01:23] want to something like 1 volt is equal
+[01:25] to one millimeter that might give you a
+[01:27] reasonably nice scale to do an a4 piece
+[01:30] of paper but what I'm going to do is I'm
+[01:32] going to work to 1 volt so one volt is
+[01:35] going to be equal to 4 millimeters and
+[01:38] what I'm also going to do is just put on
+[01:41] the board here the values that we
+[01:42] recorded in our original mystery of the
+[01:44] fluorescent lamp video so the voltage
+[01:47] that we measured across the resistor so
+[01:49] notice we've got V with an R in a
+[01:51] subscript to indicate the voltage across
+[01:52] the resistor is equal to 195 volts we
+[01:58] then found that the L which is the
+[02:01] voltage across the inductor was equal to
+[02:05] 125 volts and then we found that the
+[02:08] total voltage when we measured that was
+[02:13] 248 volts so that was the supply voltage
+[02:15] or the total voltage that we were
+[02:17] putting into the circuit so what we're
+[02:20] going to do first of all is we're going
+[02:21] to draw to scale our resistive voltage
+[02:25] 195 volts so in order to help me achieve
+[02:29] that I'm just going to first of all use
+[02:33] my spirit level so they get a nice level
+[02:36] line at the bottom here and then we'll
+[02:37] measure it up and make sure it's the
+[02:38] right size so let's have a look at this
+[02:41] so we are going to do a line that's sort
+[02:47] of matches up with these points here so
+[02:52] it's nice and level so we've got a nice
+[02:54] level line to start with and then what
+[02:57] we're going to do is draw a line on here
+[02:59] now my resistive voltage is 195 volts so
+[03:03] I need to do 195 times by 4 and 195
+[03:08] times by 4 is going to give us 780 so
+[03:14] that's 78 centimeters so I'm going to
+[03:18] line this up here and I'm gonna draw 78
+[03:21] centimeters
+[03:23] okay so I'll draw 78 centimeters going
+[03:26] along here like this so there we go
+[03:30] there's 78 so there's 78 there and I'm
+[03:35] gonna draw a line that follows that
+[03:37] along there so that line there
+[03:40] represents my resistive voltage so that
+[03:43] line there represents my VR so it looks
+[03:46] a little bit like that so there we go
+[03:48] that line represents our resistive
+[03:49] voltage what we're going to do now is
+[03:51] we're going to figure out where our
+[03:53] inductive voltage is going to go and in
+[03:56] order to do that I'm going to draw a
+[03:58] line coming off here at 90 degrees so
+[04:00] I'm gonna get my protractor here and I'm
+[04:03] going to draw a line coming up this way
+[04:05] at 90 degrees like that and that line
+[04:09] will also want to work to the same scale
+[04:11] so we are looking at the inductive
+[04:14] voltage which is 125 volts 125 times by
+[04:18] 4 is going to give me 500 millimeters so
+[04:22] that's 50 centimeters so that's going to
+[04:24] come
+[04:25] here and just managed to miss my writing
+[04:30] now it pleases me greatly so there we go
+[04:32] well let's put that one in there so that
+[04:35] is now 50 centimeters long and that is
+[04:39] our inductive voltage and that of course
+[04:42] represents a value of 125 volts so now
+[04:48] in the previous part of this video we
+[04:49] saw that we can combine these two lines
+[04:52] together to find our supply voltage so
+[04:54] let's see how close we get here let's
+[04:58] have a look at this so what I'm going to
+[04:59] do is I'm going to draw a parallel line
+[05:01] to VL and VR so I'm going to offset from
+[05:07] the end of here I'm going to come off at
+[05:08] 90 degrees from the end of my inductive
+[05:13] voltage arrow I'm gonna put a little
+[05:16] mark just there after I'm finished
+[05:19] dropping my pen lid so I'm gonna put a
+[05:21] little mark there and then I'm going to
+[05:23] just do a dashed line that just goes off
+[05:26] in that direction doesn't matter how
+[05:27] long I make this line the only thing
+[05:30] that kind of is reasonably important is
+[05:33] that we go beyond the line at the bottom
+[05:35] there so I'm just going to draw a dashed
+[05:39] line going along here like so so there's
+[05:46] the line that is parallel to my
+[05:48] resistive voltage and then I'm going to
+[05:50] do the same thing down this side so
+[05:53] again just to make sure that this is
+[05:54] accurate as I can get it
+[05:55] we've got there and off the end of my
+[06:02] resistive voltage I'm going to come up
+[06:03] at 90 degrees again and then just do a
+[06:06] nice dashed line that overlaps my first
+[06:09] dashed line so that's going to look like
+[06:11] this come across like that okay and you
+[06:18] can see that at this point here these
+[06:22] two lines overlap each other now at that
+[06:25] point there where those two lines
+[06:27] overlap if we map from this corner up to
+[06:30] this corner we will find our total
+[06:33] voltage or our supply voltage into the
+[06:35] system so let's get that drawn on
+[06:38] let's find out what that's going to be
+[06:39] so we're going to draw a line from there
+[06:45] to there okay this is a queue as we can
+[06:50] and draw our new voltage arrow in there
+[06:57] like that so there's our new voltage era
+[07:02] which is the combined voltage across the
+[07:04] resistor and the voltage across the
+[07:06] inductor and that gives us our total
+[07:08] voltage or VT now what's really
+[07:11] interesting is that actually we could
+[07:13] measure this line and that would tell us
+[07:15] exactly how long this would be so let's
+[07:22] have a look at that so we've got there
+[07:24] 97 centimeters that's coming out of so
+[07:28] night so no 92 centimeters so this arrow
+[07:31] here is 92 centimeters long
+[07:35] so that is 920 millimeters and if we
+[07:39] want to figure out what our voltage is
+[07:41] we go from this side of the ratio to
+[07:43] that side so we're going to say we do
+[07:44] 920 divided by 4 and of course 920
+[07:48] divided by 4 is going to give us 230 now
+[07:54] that is not intentional in order to
+[07:56] match what we say our supply voltages in
+[07:58] this country the nominal voltage because
+[08:00] actually would have been nice if we were
+[08:01] closer to two hundred and forty eight
+[08:03] volts
+[08:04] however we've come with a reasonably
+[08:07] close figure of 230 volts there so
+[08:12] what's interesting about that is that
+[08:13] when you look at this value here is that
+[08:17] the reason that that number and that
+[08:20] number don't match each other exactly
+[08:22] the kind of the clue to that is hidden
+[08:24] in this arrow because we are assuming
+[08:27] that the inductor inside our frightened
+[08:29] light is a perfect inductor that it has
+[08:32] no resistance but of course we know
+[08:34] that's not true because the inductor in
+[08:36] our fresh and light has a copper coil
+[08:39] inside of us what makes it an inductor
+[08:41] and that copper coil has a measure of
+[08:43] resistance so in reality this arrow
+[08:46] wouldn't necessarily be pointing at 90
+[08:47] degrees it would be over this way a
+[08:49] little bit and that's
+[08:50] that would have the effect of making
+[08:51] this arrow be a little bit longer which
+[08:54] would match up with this however for the
+[08:56] purposes of understanding the principle
+[08:58] of what's going on inside of Russian
+[09:00] light we assumed that it was a perfect
+[09:03] inductor so that's the principle that
+[09:05] we're looking at we can draw our phasor
+[09:06] diagrams to scale measure them and use
+[09:09] that to extract information in a future
+[09:11] video we'll see how we can use a more
+[09:14] mathematically accurate method of
+[09:15] figuring out what the total voltage
+[09:17] would be involving the theorem of a
+[09:21] particular mathematician so we'll look
+[09:23] at that in a future video so there we
+[09:28] have it we've seen part of the solution
+[09:30] to the mystery of the fluorescent lamp
+[09:32] we've figured out why those voltages
+[09:34] didn't add up to the supply voltage
+[09:36] inside the fluorescent lamp but what
+[09:39] we've seen is that if we just change our
+[09:40] thinking just a little bit and think
+[09:41] well what if I combine those voltages I
+[09:44] combine the effect of those voltages
+[09:46] well then we see that there is a
+[09:48] relationship we also saw that the
+[09:50] relationship wasn't perfect we saw that
+[09:52] the voltage produced wasn't exactly the
+[09:54] same from our scale diagram as the
+[09:56] voltage that we measured putting into
+[09:57] the flush in light and the reason for
+[09:59] that is that basically what we're
+[10:01] dealing with here are imperfect
+[10:02] components all of the rules that we've
+[10:04] been through have spoken about purely
+[10:05] inductive loads we don't have a purely
+[10:08] inductive load here what we've got here
+[10:09] is a load that is a real-world inductor
+[10:13] it has a measure of inductance but
+[10:15] because it's made up of a coil of copper
+[10:17] wire which has a value of resistance
+[10:19] it's not a pure inductor which means
+[10:22] that we can't assume that the current is
+[10:24] lagging the voltage by exactly 90
+[10:26] degrees but what we have seen is the
+[10:28] principle of what's happening inside
+[10:30] this circuit and actually this principle
+[10:33] applies to all inductive loads and
+[10:35] what's really interesting is that the
+[10:37] circuit diagram that we saw of the
+[10:39] resistor connected to the inductor in
+[10:42] series we can actually use that to
+[10:44] represent an inductive load just
+[10:46] entirely by itself so we could use that
+[10:48] to represent the coil of a motor because
+[10:50] the coil of a motor is an inductive load
+[10:52] but it also has a certain amount of
+[10:54] resistance so you can split those two
+[10:56] values in the same coil into two
+[10:59] separate components the inductive part
+[11:00] and the resistive part and we can use
+[11:03] that to calculate
+[11:04] what's going on inside our motors and
+[11:07] other inductive loads as well so we've
+[11:10] solved part of the mystery but not the
+[11:12] whole mystery we've still got to try and
+[11:13] figure out what was going on with those
+[11:14] strange currents so we're going to do
+[11:16] that in the next video thank you very
+[11:18] much for watching
+[11:22] [Music]
+[11:25] you [Music]
+[11:35] [Music]

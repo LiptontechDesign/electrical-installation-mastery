@@ -6,8 +6,9 @@ A mobile-friendly, self-paced electrical installation course designed around lon
 
 ## What has been built
 
-- **246 sequenced video lessons across 16 modules:** the existing 239 lessons plus seven targeted additions; safety, three-phase theory, motors, calculations and verification now follow a clearer dependency order. See [the course review](docs/COURSE_FLOW_REVIEW.md).
+- **276 sequenced video lessons across 16 modules:** the previous 246 lessons plus 30 missing supplied AC, resistance/resistivity and lighting videos. The additions contain 150 explicitly authored questions and 180 retrieval cards. See [the September additions and audit](docs/SUPPLIED_LESSON_REVIEW.md).
 - **Embedded YouTube learning:** lessons play inside the course without requiring a separate playlist or paid video hosting.
+- **Optional free browsing:** switch on Browse freely from Home or the Learn course map to open any module or video. Guided sequencing remains the default. Resume unfinished work returns to the earliest unwatched video or unpassed checkpoint; skipping never changes completion records. The preference survives reloads and progress backups. Checkpoints still require their own lesson group and an 80% pass.
 - **Reliable optional auto-next:** a completed video is marked finished and the next lesson loads after a five-second countdown. The learner can cancel, select another lesson or switch auto-next off. Fullscreen playback is handled without removing the active player unexpectedly.
 - **Lesson teaching guides:** every video has a concise summary, key concepts, points to remember and practical connections.
 - **Lesson-specific retrieval practice:** 1,580 flashcards and 1,580 quiz questions include new worked applications. Optional explanations and three interactive exercises appear inside the existing Overview tab.
@@ -93,7 +94,7 @@ npm run audit:transcripts
 
 September 2026 verified coverage:
 
-- 246 unique videos, 16 modules and complete lesson-guide/assessment coverage
+- 276 unique videos, 16 modules and complete lesson-guide/assessment coverage
 - All 239 original lesson and flashcard identities preserved
 - Seven new videos checked against publicly indexed creator captions and metadata
 - 1,746 flashcards
@@ -101,7 +102,7 @@ September 2026 verified coverage:
 - 0 generic title-based recall prompts
 - 0 overlong flashcard questions or answers
 
-The transcript archive is bundled in `course-transcripts/`, so a normal clone includes the source evidence used by the course audit. It contains transcript text for 245 videos and an explicit `no_captions` manifest record for the one video without public captions. The default audit checks all 246 course records; `node scripts/audit-transcript-assessments.mjs --new-only` checks only the seven added gap lessons. Vocabulary overlap is an evidence-coverage check, not proof of technical accuracy. Original guides and the current author/manufacturer references are reviewed separately; copied captions are not published by the site.
+The transcript archive is bundled in `course-transcripts/`, so a normal clone includes the source evidence used by the course audit. It contains transcript text for 275 active videos and an explicit `no_captions` record for one video. The default audit checks all 276 course records; `node scripts/audit-transcript-assessments.mjs --new-only` retains its historical scope of the seven earlier gap lessons. Run `node scripts/test-supplied-learning.mjs` for the 30 supplied additions and a course-wide generated-content audit. Vocabulary overlap is evidence coverage, not proof of technical accuracy or individual authorship. The course-wide audit currently identifies 1,355 inherited questions with generated follow-ups or diagnostics requiring editorial review. Captions are source evidence and are not published in the site UI.
 
 ## Safety and standards
 
@@ -114,7 +115,7 @@ This is an educational course, not an electrical licence or authorisation to und
 - `app/course-extension-data.ts` — combines and validates extension modules.
 - `app/course-curriculum.ts` — canonical ordering, module descriptions and totals used by the website and audits.
 - `app/course-gap-data.ts` — seven accepted video additions and original guides.
-- `course-transcripts/` — bundled transcript archive and the complete 246-video source manifest.
+- `course-transcripts/` — bundled transcript archives and the complete 276-video source manifest.
 - `app/lesson-connections-data.ts` — concise calculation and concept explanations with primary sources.
 - `app/lesson-connection.tsx` — optional explanations and interactive learning exercises.
 - `scripts/test-curriculum.mjs` — progress-identity, prerequisite, assessment and exercise checks.

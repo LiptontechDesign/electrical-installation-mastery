@@ -1,0 +1,315 @@
+# AC Theory: How Does Changing Frequency and Capacitance Affect Capacitive Reactance
+# https://www.youtube.com/watch?v=t5PyB5yuugE
+
+[Music] hello and welcome to the spectacle principals training video in this video we're going to consider the subject of AC theory in this continuing series and we're going to be looking particularly at capacitive reactance and what makes it up now in a previous video we considered inductive reactance and where that came from and what contributed to it and we're going to do the same thing now for capacitive reactance in the previous video which I strongly recommend that you go back and watch now if you haven't already done so we performed an initial experiment where we looked at how adjusting the opposition to current flow in a circuit changed the current flowing to it and thereby how analyzing the current flowing into the circuit we could determine what was happening with the opposition to current flow we're not going to repeat that experiment in this video so if you haven't already done so please go back and watch the video on inductive reactance even if it's just the first few moments so that you understand how we're using the current to analyze the opposition to current flow so we'll bring the camera in we'll set the experimenter and we'll see those contributing factors to capacitive reactance so we brought the camera in and we've set up a very simple circuit here now you can see that what got connected is a 1 nano farad capacitor so bear in mind that generally speaking when we're dealing with values of capacitance we're dealing with very very small values of capacitance so 1 nano farad is a very tiny amount of capacitance indeed it's the equivalent of one billionth of a farad so it's a tiny tiny little amount we've got our multimeter set up to measure current and you can see that we've got our function generator and our oscilloscope set up so that we can see what's happening with the waveform now in this video we're going to make some quite large jumps with the frequency so that we can see the effect that it's having a little bit more clearly and also just bear in mind that what we're doing is we're measuring the current and by analyzing the way that the current behaves we can use that to infer how the opposition to current flow in this circuit is behaving we've got a purely capacitive circuit that's the circuit that only has capacitance no inductance and no resistance of course we know there is a tiny little bit of resistance in the connecting wires however this is as close to a pure capacitive load as we can get so first of all what we're going to do is have a look at the value that we've got on our multimeter so you can see there is hovering at around naught point naught 5 milliamps and what we're going to do is we're going to start changing the frequency so first of all I'm going to multiply the frequency by 10 so I'm going to make the frequency considerably larger so we're now somewhere around two thousand Hertz you can see that that has jumped a little bit it's now at naught point naught six but it's stabilized at naught point naught six let's increase the frequency massively let yet again so now we're going to go up to 20,000 Hertz over at twenty kilohertz and we can see that the current is increasing now let's just think logically about what that means we have increased the frequency and when we increase the frequency we see that the current increases and we know from Ohm's law that if you increase current you must be decreasing the opposition to current flow so again cutting that middle chunk out of that train of logic we can see that by increasing the frequency we actually decrease the opposition to current flow in a purely capacitive circuit so hopefully you can remember from the inductive reactance video how that was behaving and you can see that we've got an opposite form of behavior now so this is behaving in the opposite fashion so that's what happens in the capacitive circuit when we increase frequency we decrease the opposition to current flow let's take the frequency back down to our starting value which was somewhere around 200 Hertz and what we're going to do now is we're going to change the amount of capacitance that we've got connected into the circuit and see how that affects the opposition to current flow so having seen the way that the frequency affects the opposition to current flow in a purely capacitive circuit we're now going to look at how changing the capacitance of this circuit will affect the opposition to current flow so I'm going to take this one nano farad capacitor I'm going to remove it and I'm going to insert in there a 470 nano farad capacitor so you can see that I am increasing the capacitance here by 470 times almost 500 times what is your instinct tell you is going to happen to the current and therefore to the opposition to current flow what do you think well let's find out we're going to insert the 470 nano farad capacitor into the circuit and let's see what happens to the value you can see there that the current has now gone up to 1.3 eight milliamps 1.3 eight million so you can see there we have increased the capacitance of the circuit the current has increased and we know from our law if we increase current it must be that we are decreasing the opposition to current flow so again let's cut that middle bit of that chain of logic out we can see that by increasing capacitance we are decreasing the opposition to current flow so just to reinforce this point we'll take out our 470 nano farad capacitor and we will put in a 1 micro farad capacitor so now we've gone up another step of capacitance we've increased the capacitance yet again and now we're up to 1 micro farad so what we've actually done at this stage is we've effectively doubled the capacitance that's going in here so let's just turn the meter back on and we're going to insert our capacitor now so you can see there we're now up to 2.9 1 milliamps so once again an increase in capacitance has resulted in an increase in current and we know from Ohm's law if we increase current it must be that we are reducing opposition to current so by increase in capacitance we reduce the opposition to current flow in a purely capacitive circuit let's bear in mind that in this circuit we are considering the opposition's current flow because it's purely capacitive we consider that to be capacitive reactance that's the name that we give to that so let's just reinforce our initial point what's going to happen to the current and therefore the opposition to current flow as we increase the frequency so again I'll multiply the frequency by 10 we're now up to somewhere around 2000 Hertz and you can see that the opposition to current flows change because the current has changed so the current is now 2 23 point 2 4 milliamps so you can see there's an interesting relationship we've increased the frequency by 10 times and you can see that the current has changed by approximately 10 times as well give or take a little bit of Tolerance so we've increased the frequency which has increased the current we know from Ohm's law if we increase the current we reduce the opposition to current flow so just to reinforce that point increasing frequency reduces the opposition to current flow in a purely capacitive circuit so having discovered these relationships in a verbal manner what we need to be able to do now is to think about how we are going to put that into a mathematical formula so as always we'll show you the formula and then we'll break it down and explain what it means so the formula will look like this XC is equal to 1 divided by 2 pi FC now hopefully some of this formula should look a little bit familiar to you already we've discussed 2 pi FL before and you can see we've got something that looks a little bit similar on the right-hand side of the formula there but let's break it down from left to right we've got X C bearing in mind that the X is a capital X with a capital C but in the subscript of that particular unit and XC is the capacitive reactance of the circuit capacitive reactance is measured in ohms because it's a type of opposition to current flow and so we give it the unit symbol moving on to the other side of the formula we've got that value two pi if you remember the inductive reactance video that we looked at we saw that that comes from the fact that when we generate AC it's normally made by rotating a machine round in a circle and of course we know that 2 pi relates to the radius of a circle and its relationship to its circumference so that value just remains the same 2 pi that will never change for this formula it's a mathematical constant we've then got F and this is a lowercase F which stands for frequency and the frequency of course is measured in Hertz and we assign it the unit symbol H Zed the final part of this formula is a capital C that capital C stands for capacitance and capacitance we know is measured in farad's and therefore we assign it the mathematical symbol F and that's a capital F for the unit symbol just bear in mind that capacitance is generally a very very small value and therefore you'll often see some kind of sub multiple in front of the F we hit milli micro nano or even Pico so now we know where the different bits of the formula mean let's think about what the mathematical insight is on this notice that the whole of the right-hand side of the formula has this 1 divided by on the bottom of it and that means that the frequency the F and the capacitance C are actually dividers in this formula although we're multiplying that bottom line together because they're all on the bottom line they all act as dividers so what that means is that we can see the relationship that we described in words if you think about changing the F if we make the F on the bottom line bigger we make the value of that bottom line bigger so we have a bigger number that we're dividing by if you take 1 and divide it by a bigger and bigger number what happens is that the answer to that equation becomes smaller and smaller and smaller so by increasing frequency on the right-hand side of the formula we can see that it will actually decrease the capacity of reactants on the left-hand side of the formula and we saw that relationship in action on our board also with capacitance that's also a divider in this mathematical formula which means that as we make that number bigger we make that bottom line bigger which means that we divide by a larger and larger number which means that the left-hand side will get smaller and smaller and again we saw that relationship on the board when we were increasing capacitance we were decreasing the opposition to current flow so in conclusion we've seen some really important things in this video let's just recap to make sure that we've got them very clear in our minds we saw that by increasing the frequency connected to a purely capacitive circuit we saw that the opposition to current flow which in this circuit is called capacitive reactance fell ok so increasing frequency reduces the opposition to current flow in a capacitive circuit we also saw that if you increase capacitance you also reduce the opposition to current flow so increasing capacitance reduces capacitive reactance and we've got that all-important formula that we need to commit to memory XC is equal to 1 over 2 pi F C and at this stage we want to make sure that we get that filled in in the relevant row on our worksheet and it goes in the box as shown here thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to the spectacle
+[00:10] principals training video in this video
+[00:13] we're going to consider the subject of
+[00:14] AC theory in this continuing series and
+[00:17] we're going to be looking particularly
+[00:19] at capacitive reactance and what makes
+[00:22] it up now in a previous video we
+[00:24] considered inductive reactance and where
+[00:27] that came from and what contributed to
+[00:29] it and we're going to do the same thing
+[00:31] now for capacitive reactance in the
+[00:33] previous video which I strongly
+[00:35] recommend that you go back and watch now
+[00:36] if you haven't already done so we
+[00:38] performed an initial experiment where we
+[00:40] looked at how adjusting the opposition
+[00:43] to current flow in a circuit changed the
+[00:46] current flowing to it and thereby how
+[00:48] analyzing the current flowing into the
+[00:51] circuit we could determine what was
+[00:53] happening with the opposition to current
+[00:54] flow we're not going to repeat that
+[00:56] experiment in this video so if you
+[00:57] haven't already done so please go back
+[01:00] and watch the video on inductive
+[01:01] reactance even if it's just the first
+[01:03] few moments so that you understand how
+[01:05] we're using the current to analyze the
+[01:07] opposition to current flow so we'll
+[01:10] bring the camera in we'll set the
+[01:11] experimenter and we'll see those
+[01:13] contributing factors to capacitive
+[01:15] reactance so we brought the camera in
+[01:19] and we've set up a very simple circuit
+[01:22] here now you can see that what got
+[01:24] connected is a 1 nano farad capacitor so
+[01:27] bear in mind that generally speaking
+[01:28] when we're dealing with values of
+[01:30] capacitance we're dealing with very very
+[01:32] small values of capacitance so 1 nano
+[01:36] farad is a very tiny amount of
+[01:38] capacitance indeed it's the equivalent
+[01:40] of one billionth of a farad so it's a
+[01:43] tiny tiny little amount we've got our
+[01:46] multimeter set up to measure current and
+[01:48] you can see that we've got our function
+[01:51] generator and our oscilloscope set up so
+[01:54] that we can see what's happening with
+[01:56] the waveform now in this video we're
+[01:58] going to make some quite large jumps
+[02:00] with the frequency so that we can see
+[02:01] the effect that it's having a little bit
+[02:03] more clearly and also just bear in mind
+[02:06] that what we're doing is we're measuring
+[02:07] the current and by analyzing the way
+[02:10] that the current behaves we can use that
+[02:12] to infer
+[02:13] how the opposition to current flow in
+[02:15] this circuit is behaving we've got a
+[02:17] purely capacitive circuit that's the
+[02:19] circuit that only has capacitance no
+[02:21] inductance and no resistance of course
+[02:24] we know there is a tiny little bit of
+[02:25] resistance in the connecting wires
+[02:26] however this is as close to a pure
+[02:30] capacitive load as we can get so first
+[02:34] of all what we're going to do is have a
+[02:35] look at the value that we've got on our
+[02:36] multimeter so you can see there is
+[02:38] hovering at around naught point naught 5
+[02:40] milliamps and what we're going to do is
+[02:42] we're going to start changing the
+[02:44] frequency so first of all I'm going to
+[02:46] multiply the frequency by 10 so I'm
+[02:49] going to make the frequency considerably
+[02:50] larger so we're now somewhere around two
+[02:54] thousand Hertz you can see that that has
+[02:57] jumped a little bit it's now at naught
+[03:00] point naught six but it's stabilized at
+[03:01] naught point naught six let's increase
+[03:04] the frequency massively let yet again so
+[03:06] now we're going to go up to 20,000 Hertz
+[03:10] over at twenty kilohertz and we can see
+[03:13] that the current is increasing now let's
+[03:16] just think logically about what that
+[03:18] means we have increased the frequency
+[03:21] and when we increase the frequency we
+[03:25] see that the current increases and we
+[03:27] know from Ohm's law that if you increase
+[03:31] current you must be decreasing the
+[03:35] opposition to current flow so again
+[03:38] cutting that middle chunk out of that
+[03:39] train of logic we can see that by
+[03:42] increasing the frequency we actually
+[03:45] decrease the opposition to current flow
+[03:48] in a purely capacitive circuit so
+[03:51] hopefully you can remember from the
+[03:53] inductive reactance video how that was
+[03:55] behaving and you can see that we've got
+[03:57] an opposite form of behavior now so this
+[03:59] is behaving in the opposite fashion so
+[04:03] that's what happens in the capacitive
+[04:05] circuit when we increase frequency we
+[04:08] decrease the opposition to current flow
+[04:10] let's take the frequency back down to
+[04:13] our starting value which was somewhere
+[04:15] around 200 Hertz and what we're going to
+[04:17] do now is we're going to change the
+[04:19] amount of capacitance that we've got
+[04:20] connected into the circuit and see how
+[04:23] that affects the opposition to current
+[04:24] flow
+[04:26] so having seen the way that the
+[04:28] frequency affects the opposition to
+[04:29] current flow in a purely capacitive
+[04:31] circuit we're now going to look at how
+[04:33] changing the capacitance of this circuit
+[04:37] will affect the opposition to current
+[04:38] flow so I'm going to take this one nano
+[04:41] farad capacitor I'm going to remove it
+[04:43] and I'm going to insert in there a 470
+[04:46] nano farad capacitor so you can see that
+[04:49] I am increasing the capacitance here by
+[04:52] 470 times almost 500 times what is your
+[04:56] instinct tell you is going to happen to
+[04:58] the current and therefore to the
+[05:00] opposition to current flow what do you
+[05:02] think well let's find out we're going to
+[05:05] insert the 470 nano farad capacitor into
+[05:08] the circuit and let's see what happens
+[05:11] to the value you can see there that the
+[05:14] current has now gone up to 1.3 eight
+[05:18] milliamps 1.3 eight million so you can
+[05:21] see there we have increased the
+[05:24] capacitance of the circuit the current
+[05:27] has increased and we know from our law
+[05:29] if we increase current it must be that
+[05:32] we are decreasing the opposition to
+[05:35] current flow so again let's cut that
+[05:37] middle bit of that chain of logic out we
+[05:39] can see that by increasing capacitance
+[05:42] we are decreasing the opposition to
+[05:46] current flow so just to reinforce this
+[05:49] point we'll take out our 470 nano farad
+[05:52] capacitor and we will put in a 1 micro
+[05:56] farad capacitor so now we've gone up
+[05:59] another step of capacitance we've
+[06:00] increased the capacitance yet again and
+[06:02] now we're up to 1 micro farad so what
+[06:06] we've actually done at this stage is
+[06:07] we've effectively doubled the
+[06:09] capacitance that's going in here so
+[06:12] let's just turn the meter back on and
+[06:15] we're going to insert our capacitor now
+[06:20] so you can see there we're now up to 2.9
+[06:23] 1 milliamps so once again an increase in
+[06:27] capacitance has resulted in an increase
+[06:31] in current and we know from Ohm's law if
+[06:33] we increase current it must be that we
+[06:36] are reducing opposition to current
+[06:38] so by increase in capacitance we reduce
+[06:41] the opposition to current flow in a
+[06:43] purely capacitive circuit let's bear in
+[06:46] mind that in this circuit we are
+[06:49] considering the opposition's current
+[06:51] flow because it's purely capacitive we
+[06:53] consider that to be capacitive reactance
+[06:55] that's the name that we give to that so
+[06:59] let's just reinforce our initial point
+[07:01] what's going to happen to the current
+[07:03] and therefore the opposition to current
+[07:04] flow as we increase the frequency so
+[07:08] again I'll multiply the frequency by 10
+[07:10] we're now up to somewhere around 2000
+[07:14] Hertz and you can see that the
+[07:16] opposition to current flows change
+[07:18] because the current has changed so the
+[07:20] current is now 2 23 point 2 4 milliamps
+[07:23] so you can see there's an interesting
+[07:25] relationship we've increased the
+[07:27] frequency by 10 times and you can see
+[07:30] that the current has changed by
+[07:32] approximately 10 times as well give or
+[07:34] take a little bit of Tolerance so we've
+[07:37] increased the frequency which has
+[07:39] increased the current we know from Ohm's
+[07:41] law if we increase the current we reduce
+[07:44] the opposition to current flow so just
+[07:46] to reinforce that point increasing
+[07:48] frequency reduces the opposition to
+[07:51] current flow in a purely capacitive
+[07:52] circuit so having discovered these
+[07:55] relationships in a verbal manner what we
+[07:57] need to be able to do now is to think
+[07:59] about how we are going to put that into
+[08:01] a mathematical formula so as always
+[08:05] we'll show you the formula and then
+[08:07] we'll break it down and explain what it
+[08:08] means so the formula will look like this
+[08:11] XC is equal to 1 divided by 2 pi FC now
+[08:18] hopefully some of this formula should
+[08:19] look a little bit familiar to you
+[08:21] already we've discussed 2 pi FL before
+[08:24] and you can see we've got something that
+[08:25] looks a little bit similar on the
+[08:27] right-hand side of the formula there but
+[08:29] let's break it down from left to right
+[08:30] we've got X C bearing in mind that the X
+[08:33] is a capital X with a capital C but in
+[08:35] the subscript of that particular unit
+[08:38] and XC is the capacitive reactance of
+[08:42] the circuit capacitive reactance is
+[08:45] measured in ohms because it's a type of
+[08:47] opposition to current flow and so we
+[08:49] give it the unit symbol
+[08:51] moving on to the other side of the
+[08:53] formula we've got that value two pi if
+[08:55] you remember the inductive reactance
+[08:57] video that we looked at we saw that that
+[08:59] comes from the fact that when we
+[09:00] generate AC it's normally made by
+[09:03] rotating a machine round in a circle and
+[09:07] of course we know that 2 pi relates to
+[09:09] the radius of a circle and its
+[09:11] relationship to its circumference so
+[09:16] that value just remains the same 2 pi
+[09:17] that will never change for this formula
+[09:19] it's a mathematical constant we've then
+[09:22] got F and this is a lowercase F which
+[09:24] stands for frequency and the frequency
+[09:26] of course is measured in Hertz and we
+[09:30] assign it the unit symbol H Zed the
+[09:33] final part of this formula is a capital
+[09:36] C that capital C stands for capacitance
+[09:39] and capacitance we know is measured in
+[09:41] farad's and therefore we assign it the
+[09:44] mathematical symbol F and that's a
+[09:46] capital F for the unit symbol just bear
+[09:49] in mind that capacitance is generally a
+[09:51] very very small value and therefore
+[09:53] you'll often see some kind of sub
+[09:55] multiple in front of the F we hit milli
+[09:58] micro nano or even Pico so now we know
+[10:02] where the different bits of the formula
+[10:04] mean let's think about what the
+[10:05] mathematical insight is on this notice
+[10:09] that the whole of the right-hand side of
+[10:11] the formula has this 1 divided by on the
+[10:14] bottom of it and that means that the
+[10:15] frequency the F and the capacitance C
+[10:19] are actually dividers in this formula
+[10:22] although we're multiplying that bottom
+[10:23] line together because they're all on the
+[10:25] bottom line they all act as dividers so
+[10:27] what that means is that we can see the
+[10:30] relationship that we described in words
+[10:32] if you think about changing the F if we
+[10:34] make the F on the bottom line bigger we
+[10:38] make the value of that bottom line
+[10:39] bigger so we have a bigger number that
+[10:41] we're dividing by if you take 1 and
+[10:43] divide it by a bigger and bigger number
+[10:45] what happens is that the answer to that
+[10:48] equation becomes smaller and smaller and
+[10:51] smaller
+[10:52] so by increasing frequency on the
+[10:54] right-hand side of the formula we can
+[10:56] see that it will actually decrease the
+[10:59] capacity of reactants on the left-hand
+[11:01] side of the formula and we saw that
+[11:02] relationship in action
+[11:03] on our board also with capacitance
+[11:06] that's also a divider in this
+[11:08] mathematical formula which means that as
+[11:10] we make that number bigger we make that
+[11:12] bottom line bigger which means that we
+[11:14] divide by a larger and larger number
+[11:17] which means that the left-hand side will
+[11:19] get smaller and smaller and again we saw
+[11:20] that relationship on the board when we
+[11:23] were increasing capacitance we were
+[11:26] decreasing the opposition to current
+[11:28] flow
+[11:30] so in conclusion we've seen some really
+[11:33] important things in this video let's
+[11:35] just recap to make sure that we've got
+[11:37] them very clear in our minds we saw that
+[11:39] by increasing the frequency connected to
+[11:41] a purely capacitive circuit we saw that
+[11:44] the opposition to current flow which in
+[11:46] this circuit is called capacitive
+[11:48] reactance fell ok so increasing
+[11:51] frequency reduces the opposition to
+[11:54] current flow in a capacitive circuit we
+[11:56] also saw that if you increase
+[11:57] capacitance you also reduce the
+[12:00] opposition to current flow so increasing
+[12:03] capacitance reduces capacitive reactance
+[12:06] and we've got that all-important formula
+[12:09] that we need to commit to memory XC is
+[12:12] equal to 1 over 2 pi F C and at this
+[12:17] stage we want to make sure that we get
+[12:18] that filled in in the relevant row on
+[12:21] our worksheet and it goes in the box as
+[12:24] shown here thank you very much for
+[12:26] watching
+[12:29] [Music]
+[12:39] [Music]

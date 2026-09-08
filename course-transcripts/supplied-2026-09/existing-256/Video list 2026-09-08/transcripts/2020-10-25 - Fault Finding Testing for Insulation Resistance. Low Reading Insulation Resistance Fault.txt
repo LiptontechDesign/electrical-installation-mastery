@@ -1,0 +1,249 @@
+# Fault Finding Testing for Insulation Resistance. Low Reading Insulation Resistance Fault
+# https://www.youtube.com/watch?v=cDbYrW7ByBA
+
+So I've just jumped in with Marcus. Marcus is just about to carry out the insulation resistance test on the rig behind us. Can you talk us through what's happened before we get to this point in the testing procedure? Yeah. So I've took the necessary stages of making sure there's no loads in the circuit. We've left all the switches in the on position and also on the socket outlets as well. We've also ensured that there's no sensitive electronic equipment such as RCDs switched on in the board. We don't want to damage them. Okay. So that means that we're ready to do the insulation resistance test as far as we're concerned. Now, on the channel previously, we've only really seen one circuit being insulated resistance tested. So, it's going to be really good if I can bring the camera in and watch and we'll do it on the whole board overall. Well, this is a first for the channel. Nice and close in for the insulation resistance of a whole installation. Marcus, do you want to talk us through what you're doing? Yeah. So, first I'm going to set my test instrument up and we're going to set it to 500 volts DC. Now, on this installation, I can clearly see that I've removed all the loads. We have a small test rig. If we had a bigger installation, we might find it necessary to do it at 250 volts first just to make sure we have actually eliminated all of the sensitive electronic equipment from the circuit. That's a really good tip. Thank you for that. So, I've set it to 500 volts DC. I'm going to go to my earth bar first. And what I'm going to do now is I'm just going to work my way across the circuit breakers and go in that sequence. So, I'm now going between line and CPC. And we're getting a reading greater than the machine can read. Is that greater than 999 megga ohms? It is. So what we're looking for now is to make sure that we're not going below our tolerances of 1 megga ohm. Further investigation would then be required if it was below 2 megga ohms. And obviously we now know that if it's a new installation, it needs to be above 20 megga ohms. And this is effectively a brand new installation for our learners. Yeah. Yes, it is. Yeah. So, you happy with those results you got between the line conductor and the earth bar? Yeah. So, we've obviously had a reading greater than 999 megga ohm. So, we're happy with that. So, now I'm going to test this circuit between line and neutral. Okay. Got a little bit of uh moving around now cuz we've got three neutral bars up there, haven't we? Yeah. So, greater than 999 for that circuit. Okay. More than happy with that. And that circuit is non RCD because it's in a steel rounder cable as a submitted. Is that correct? It is. Yeah, we've imitated a supply in a garage. Okay, brilliant. We're then going to go on to the next neutral bar. And now we're going to have to make sure that our circuits we're going to test in between are on the right RCD neutral bar. Okay, great. So again then greater than 999 megga. Okay. Oh. Ah, we have a problem. Now we are below our tolerance of our acceptable value which is 1 megga oh. So we've actually got.56 megga ohms and we said if it's a brand new installation we'd expect that to be over 20. We're Olympic distance away from there. So ju just stop and just take a breather there for me. So we've got an issue between is that the lighting circuits line and neutral. Is that correct? Yes, that's correct. Yeah. It could be first and foremost you're thinking oh I might have left something in a lamp or something. Maybe a neon indicator for a loft light or something like that. That's not the case. We've we can clearly see our installation in front of us. So, what's your thinking, Marcus? So, it looks to me maybe the cable started to break down. So, what we're going to have to do is we're going to have to logically break down the circuit whilst reperforming our insulation resistance test so we can actually locate where our problem lies within the circuit and then rectify the problem. So, because it's a brand new installation, it could have been that a cable's been installed in the wall, been pinched maybe back against uh something that's causing to break down the insulation. So, it's not breaking down over time because it's brand new. It may have been physically how it was installed at that time. Talk me through a lighting circuit in the real world when I pull the camera back next and how we might investigate this fault. But for this bit, can you just carry on and complete the insulation resistance test of the other circuits for me? Yeah, of course. So, now I'm going to go on to the last neutral bar because this one is the common one for this RCD. Okay. And we're going to test these circuits. So, again, happy with that. Okay. And again happy with that. So we have identified that so far our only issue is with this lighting circuit between line and neutral. Have you got any other test to carry out? I see you've done the protective conductor and line. You've done the neutral and lines or any others. So now we're going to have to do between neutral and earth. Okay. So we're going to go on to our earth bar. CPCs are connected. Yeah. And now we're going to test the common neutral bars separately. Okay. Yep. Before anyone discusses the connections in there, this is a rig that's used loads of times every single day of the week. Yeah. Right. So, we have only got that one issue. There's no other circuits we got to further investigate. No. So, I think if we pull back, we'll have an oral chat about what we think we could do to solve this problem. Thanks, Marcus. So, you promised us, Marcus, you'd look into a series of videos on fault finding. This fault here is pretty difficult for us to break down for that lighting circuit. But it's because the way the test rigs are set up, we can't actually do that. So the student would have found that fault and indicated to us maybe the insulation resistance was too low for the installation itself. Just a word of warning to remember. It's actually the overall insulation resistance of all the circuits in the board that should be greater than 1 megga ohm. We had an individual circuit of less than one which would have meant the overall insulation resistance was less than the 1 megga ohms. If we use our parallel circuit maths that Joe Robinson training videos have been doing, do you agree? Yeah. If we had for instance five circuits with greater than 999 megga ohms and one circuit say with 2 megga ohms, what would be the overall insulation resistance? So it'd be lower than the 2 megga ohms. Uh because they're all in parallel. It goes back to that. Yeah. So check out Joe Robinson for resistors in parallel. It applies here in the actual electrical workshop we're carrying out this test. Let's go back to lighting circuit. Imagine I'm in a house, four bed house. the upstairs lighting circuit's got an issue just like we've done there where maybe a cable's been tracked or a lower insulation resistance test than expected. Talk me through some of the ways I could look at finding that fault. So, one way you could look at finding that fault is what we could actually do is we we could make a an educated guess where we believe halfway of that circuit is. So, then what we could do is we could disconnect one half of the circuit from the system and then reperform our insulation resistance test. Now, if we got a low reading again, we would know up until that point is where our problem lies. If we got a reading greater than nine and nine, we know that it's after that point. So then what we can do is start systematically using that process to break down the circuit in half again and find it that way. I like that. So you go to what you think's probably the middle light. You take out the line and neutral supplying probably the neutral bar and loop if it's using the conventional three plate method. We take those out and perform the insulation resistance test again. And if it shoots up high, we're halfway there. I like you like your thinking behind that. So Marcus has continued to put out on YouTube some more fault finding videos, but for now, Marcus, do you think we've covered everything we need to do? Yeah, I think so. I think we'll we'll start introducing more fault finding videos and and touching back on insulation resistance and different ways we can use insulation resistance for borrowed neutrals, etc. Well, I like the sound of that. So, we got to finish it, mate. We hope this video has been some help.
+
+
+[00:00] So I've just jumped in with Marcus.
+[00:01] Marcus is just about to carry out the
+[00:02] insulation resistance test on the rig
+[00:04] behind us. Can you talk us through
+[00:06] what's happened before we get to this
+[00:07] point in the testing procedure?
+[00:08] Yeah. So I've took the necessary stages
+[00:10] of making sure there's no loads in the
+[00:12] circuit. We've left all the switches in
+[00:13] the on position and also on the socket
+[00:15] outlets as well. We've also ensured that
+[00:17] there's no sensitive electronic
+[00:19] equipment such as RCDs switched on in
+[00:21] the board. We don't want to damage them.
+[00:22] Okay. So that means that we're ready to
+[00:24] do the insulation resistance test as far
+[00:25] as we're concerned. Now, on the channel
+[00:27] previously, we've only really seen one
+[00:29] circuit being insulated resistance
+[00:30] tested. So, it's going to be really good
+[00:31] if I can bring the camera in and watch
+[00:33] and we'll do it on the whole board
+[00:35] overall.
+[00:36] Well, this is a first for the channel.
+[00:38] Nice and close in for the insulation
+[00:39] resistance of a whole installation.
+[00:41] Marcus, do you want to talk us through
+[00:42] what you're doing? Yeah. So, first I'm going to set my test
+[00:44] instrument up and we're going to set it
+[00:46] to 500 volts DC. Now, on this
+[00:50] installation, I can clearly see that
+[00:52] I've removed all the loads. We have a
+[00:53] small test rig. If we had a bigger
+[00:55] installation, we might find it necessary
+[00:57] to do it at 250 volts first just to make
+[00:59] sure we have actually eliminated all of
+[01:01] the sensitive electronic equipment from
+[01:02] the circuit.
+[01:03] That's a really good tip. Thank you for
+[01:04] that. So, I've set it to 500 volts DC.
+[01:08] I'm going to go to my earth bar first.
+[01:09] And what I'm going to do now is I'm just
+[01:11] going to work my way across the circuit
+[01:12] breakers and go in that sequence.
+[01:15] So, I'm now going between line and CPC.
+[01:24] And we're getting a reading greater than
+[01:26] the machine can read. Is that greater
+[01:27] than 999 megga ohms?
+[01:28] It is. So what we're looking for now is
+[01:30] to make sure that we're not going below
+[01:32] our tolerances of 1 megga ohm. Further
+[01:36] investigation would then be required if
+[01:37] it was below 2 megga ohms. And obviously
+[01:39] we now know that if it's a new
+[01:41] installation, it needs to be above 20
+[01:43] megga ohms.
+[01:44] And this is effectively a brand new
+[01:45] installation for our learners. Yeah.
+[01:47] Yes, it is. Yeah. So, you happy with
+[01:49] those results you got between the line
+[01:50] conductor and the earth bar?
+[01:52] Yeah. So, we've obviously had a reading
+[01:53] greater than 999 megga ohm. So, we're
+[01:55] happy with that.
+[01:57] So, now I'm going to test this circuit
+[01:58] between line and neutral.
+[02:00] Okay.
+[02:02] Got a little bit of uh moving around now
+[02:04] cuz we've got three neutral bars up
+[02:05] there, haven't we?
+[02:06] Yeah.
+[02:10] So, greater than 999 for that circuit.
+[02:12] Okay. More than happy with that.
+[02:14] And that circuit is non RCD because it's
+[02:15] in a steel rounder cable as a submitted.
+[02:17] Is that correct?
+[02:18] It is. Yeah, we've imitated a supply in
+[02:20] a garage. Okay, brilliant.
+[02:22] We're then going to go on to the next
+[02:24] neutral bar. And now we're going to have
+[02:26] to make sure that our circuits we're
+[02:28] going to test in between are on the
+[02:30] right RCD neutral bar.
+[02:32] Okay,
+[02:38] great. So again then greater than 999 megga.
+[02:40] Okay.
+[02:43] Oh.
+[02:44] Ah, we have a problem. Now we are below
+[02:46] our tolerance of our acceptable value
+[02:48] which is 1 megga oh. So we've actually
+[02:51] got.56 megga ohms
+[02:52] and we said if it's a brand new
+[02:54] installation we'd expect that to be over
+[02:55] 20. We're Olympic distance away from
+[02:57] there. So ju just stop and just take a
+[03:00] breather there for me. So we've got an
+[03:02] issue between is that the lighting
+[03:03] circuits line and neutral. Is that
+[03:05] correct? Yes, that's correct. Yeah.
+[03:06] It could be first and foremost you're
+[03:08] thinking oh I might have left something
+[03:09] in a lamp or something. Maybe a neon
+[03:12] indicator for a loft light or something
+[03:13] like that. That's not the case. We've we
+[03:16] can clearly see our installation in
+[03:17] front of us. So, what's your thinking,
+[03:19] Marcus?
+[03:20] So, it looks to me maybe the cable
+[03:22] started to break down. So, what we're
+[03:23] going to have to do is we're going to
+[03:24] have to logically break down the circuit
+[03:27] whilst reperforming our insulation
+[03:28] resistance test so we can actually
+[03:30] locate where our problem lies within the
+[03:33] circuit and then rectify the problem.
+[03:35] So, because it's a brand new
+[03:36] installation, it could have been that a
+[03:37] cable's been installed in the wall, been
+[03:38] pinched maybe back against uh something
+[03:41] that's causing to break down the
+[03:42] insulation. So, it's not breaking down
+[03:44] over time because it's brand new. It may
+[03:45] have been physically how it was
+[03:47] installed at that time.
+[03:48] Talk me through a lighting circuit in
+[03:50] the real world when I pull the camera
+[03:52] back next and how we might investigate
+[03:54] this fault.
+[03:55] But for this bit, can you just carry on
+[03:56] and complete the insulation resistance
+[03:58] test of the other circuits for me?
+[03:59] Yeah, of course. So, now I'm going to go
+[04:00] on to the last neutral bar because this
+[04:02] one is the common one for this RCD.
+[04:04] Okay.
+[04:05] And we're going to test these circuits.
+[04:09] So, again, happy with that.
+[04:12] Okay.
+[04:14] And again happy with that. So we have
+[04:16] identified that so far our only issue is
+[04:18] with this lighting circuit between line
+[04:20] and neutral. Have you got any other test to carry
+[04:22] out? I see you've done the protective
+[04:23] conductor and line. You've done the
+[04:25] neutral and lines or any others.
+[04:26] So now we're going to have to do between
+[04:28] neutral and earth. Okay. So we're going
+[04:29] to go on to our earth bar.
+[04:31] CPCs are connected.
+[04:32] Yeah.
+[04:34] And now we're going to test the common
+[04:37] neutral bars separately. Okay. Yep.
+[04:40] Before
+[04:43] anyone discusses the connections in
+[04:45] there, this is a rig that's used loads
+[04:47] of times every single day of the week.
+[04:48] Yeah. Right. So, we have only got that
+[04:51] one issue. There's no other circuits we
+[04:52] got to further investigate. No.
+[04:53] So, I think if we pull back, we'll have
+[04:55] an oral chat about what we think we
+[04:56] could do to solve this problem. Thanks,
+[04:58] Marcus.
+[05:00] So, you promised us, Marcus, you'd look
+[05:01] into a series of videos on fault
+[05:03] finding. This fault here is pretty
+[05:05] difficult for us to break down for that
+[05:07] lighting circuit. But
+[05:08] it's because the way the test rigs are
+[05:09] set up, we can't actually do that.
+[05:11] So the student would have found that
+[05:13] fault and indicated to us maybe the
+[05:14] insulation resistance was too low for
+[05:16] the installation itself.
+[05:17] Just a word of warning to remember. It's
+[05:19] actually the overall insulation
+[05:20] resistance of all the circuits in the
+[05:22] board that should be greater than 1
+[05:24] megga ohm. We had an individual circuit
+[05:26] of less than one which would have meant
+[05:28] the overall insulation resistance was
+[05:29] less than the 1 megga ohms. If we use
+[05:31] our parallel circuit maths that Joe
+[05:33] Robinson training videos have been
+[05:34] doing, do you agree? Yeah.
+[05:35] If we had for instance five circuits
+[05:38] with greater than 999 megga ohms and one
+[05:40] circuit say with 2 megga ohms,
+[05:42] what would be the overall insulation
+[05:44] resistance? So it'd be lower than the 2 megga ohms.
+[05:46] Uh because they're all in parallel. It
+[05:47] goes back to that. Yeah. So check out
+[05:48] Joe Robinson for resistors in parallel.
+[05:50] It applies here in the actual electrical
+[05:52] workshop we're carrying out this test.
+[05:54] Let's go back to lighting circuit.
+[05:55] Imagine I'm in a house, four bed house.
+[05:57] the upstairs lighting circuit's got an
+[05:58] issue just like we've done there where
+[05:59] maybe a cable's been tracked or a lower
+[06:01] insulation resistance test than
+[06:02] expected.
+[06:03] Talk me through some of the ways I could
+[06:04] look at finding that fault.
+[06:06] So, one way you could look at finding
+[06:07] that fault is what we could actually do
+[06:09] is we we could make a an educated guess
+[06:12] where we believe halfway of that circuit
+[06:14] is.
+[06:15] So, then what we could do is we could
+[06:16] disconnect one half of the circuit from
+[06:18] the system and then reperform our
+[06:20] insulation resistance test. Now, if we
+[06:21] got a low reading again, we would know
+[06:23] up until that point is where our problem
+[06:25] lies. If we got a reading greater than
+[06:27] nine and nine, we know that it's after
+[06:28] that point. So then what we can do is
+[06:30] start systematically using that process
+[06:32] to break down the circuit in half again
+[06:34] and find it that way.
+[06:35] I like that. So you go to what you
+[06:37] think's probably the middle light. You
+[06:38] take out the line and neutral supplying
+[06:40] probably the neutral bar and loop if
+[06:42] it's using the conventional three plate
+[06:43] method. We take those out and perform
+[06:45] the insulation resistance test again.
+[06:46] And if it shoots up high, we're halfway
+[06:48] there. I like you like your thinking
+[06:50] behind that. So Marcus has continued to
+[06:52] put out on YouTube some more fault
+[06:55] finding videos, but for now, Marcus, do
+[06:56] you think we've covered everything we
+[06:57] need to do? Yeah, I think so. I think we'll we'll
+[06:59] start introducing more fault finding
+[07:00] videos and and touching back on
+[07:02] insulation resistance and different ways
+[07:04] we can use insulation resistance for
+[07:06] borrowed neutrals, etc.
+[07:07] Well, I like the sound of that. So, we
+[07:08] got to finish it, mate.
+[07:10] We hope this video has been some help.

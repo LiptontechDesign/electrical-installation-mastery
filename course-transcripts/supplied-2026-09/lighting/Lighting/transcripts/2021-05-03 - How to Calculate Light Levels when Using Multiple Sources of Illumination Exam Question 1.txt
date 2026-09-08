@@ -1,0 +1,285 @@
+# How to Calculate Light Levels when Using Multiple Sources of Illumination Exam Question 1
+# https://www.youtube.com/watch?v=N0ohNNAJoKc
+
+[Music] Hello and welcome to this electrical principles training video. This video is designed to be used in conjunction with the worksheet that you'll find in the description below. So, please click the link there and find your way to the worksheet. Download it and have a look at it and then we'll work through the answer to the question on there together. So you'll see from that question that we've got the drawing that you can see on the board here. And what this is indicating is that we've got two sources of light. So we've got a source of light here and we've got a source of light here that are shining down onto this surface. And the question asks us to calculate what the illuminance will be at position A and at position B. Now, this is a little more challenging than some questions that we've looked at in a previous video because for this we're going to have to figure out uh two different values of illuminance and then combine them. Now, at first glance, this looks a little bit daunting, but actually what I would recommend you do is just break it down so that you view it as almost two separate questions. What's the illuminance at point A and what's the illuminance at point B? So in order to aid us with that, what I would do is just start off by drawing a sketch of the first question effectively. So we want to know what's the illuminance at point A. So we've got a light source here and we've got a light source over here. So this doesn't needs to be accurate. It's just a sketch shining down on a surface and we want to know what's the illumination at that point there. So we've got the light shining down from there and we've got the light shining down onto there. So all we've got to do actually is figure out what the illumination level is there and we've got two light sources that are providing that illumination. So we'll just take these one at a time nice and simply. Now what I would also do just to make things clearer for myself is I would label these up as two different values. So here I indicate that this is luminous intensity number one like that. So I can see that that is I1. And here this would be luminous intensity number two. So that's I2 there. And that helps us to identify which luminous intensity we're talking about. Okay. So let's figure this out. First of all, we've got to figure out what's the uh light level here that this light fitting is responsible for. So this light fitting has a value of 1,500 candelas. So what's really nice about this is we can just use our very basic uh inverse square law in order to calculate this. So the first thing that we'll do is we'll figure out how much of the illuminance here this uh position at I1 is responsible for. So this light fitting how much illuminance is that causing here. For that we just need to use the inverse square law which looks like this. We have E which we know is the illuminance is equal to I the luminous intensity divided by D squared. For a more thorough breakdown of that formula, how we get to it and what it means, please watch a previous video in this series. But what we're going to do here is we're just going to perform this calculation. So we've got I is the luminous intensity from this position. So bearing in mind here, we're trying to find the uh illuminance at position A. And I'd say here, put a little one there as well because we're going to have two values that we create for the illuminance at point A. And then we need to add them together. So this is the uh illuminance that this light fitting number one, is responsible for producing. So we put our numbers in. So we've got uh this will be I1. So we've got 1,500 divided by the distance squared. And in this case, remember the distance is always the distance from the light fitting to the point that it is illuminating. So here we've got 1500 / 2.4 squared. So 1,500 / 2.4 2. If we put that into our calculator, then we come out with 1,500 / 2.4^ squared and we end up with 260.42. We'll round it off to that's two decimal places. 260.42. And bear in mind that illuminance is measured in looks. So that's 260.42 looks. So that's the illuminance at this position that is being created by this light fitting. However, that's not the total illuminance here because we've also got some light coming from this direction. Now, this is where this little sketch might come in quite handy because when we look at this drawing, we might be thinking, well, how do I figure out what that distance there is going to be? Well, it's pretty straightforward to do that, and this drawing will help us to achieve it. So, we've now got a light source that is shining light down onto a point, but that point is now at an angle away from the light source. So, it's not shining directly down. We're not interested in the light level there. We're interested in the light level all the way over here. So, we need to know what this angle here is. So, in order to facilitate that, we need to modify our inverse square law and turn it into the cosine rule for lighting. So we end up with a formula that looks a bit like this. We end up with E A2 this time. So this is the illuminance at position A created by light source number two is equal to I multiplied by the cosine of theta / d^ 2. So the formula is almost exactly the same but we've just lobbed in this time cos theta. Now, now again, for a more thorough explanation of where that comes from, what it means, and how it affects our lighting levels, please watch a previous video in this series. Now, at this point, we can start populating the formula with the values that we've got already. So, we know what our value for I will be. So, this will be I2 in this case. So, that's the luminous intensity coming from this position. So, that's 2,00. And then we hit a bit of a brick wall because we can't actually go any further with that. We can't put in uh the cosine of theta cuz we don't know what that is yet. If we put our division in, can we insert d^ squ? Remember d is the distance from the light fitting to the point that it is illuminating. So we don't know what that is for this either. But what we can do is we can start to figure some of that stuff out now. So if we just have a quick look at this, we can figure out first of all what the distance is from the light fitting to the point that it's illuminating. And to do that, we need to understand that we've actually got a right angle triangle buried in here. While we're not interested in the light level at this point, that is a vertical value, which is the same as this vertical value over here. So this side is 2.4 m. And we know the length of this side. That's simply the distance from a over to here. So that's 3.2 + 2.8, which is going to give us a value of 6 m. So now we've got two sides of a right angle triangle. There's our right angle just there. So we can now use Pythagoras's theorem to calculate the value for distance. So we normally think of this as being d for the purposes of this kind of calculation. That's the distance from the light fitting to the point that it's illuminating. Uh but if we were to view kind of classic Pythagorean theorem, we'd view this as being perhaps a b and c like that. So we know from Pythagoras that a^2 + b^2 is equal to c^ 2. So a^2 + b^2 is equal to c^ 2. So we want to find c by itself. So we'll just uh modify this a little bit. We'll say therefore c is equal to the square root of a 2 + b ^ 2. And we could actually at this point even just just in case we're getting a little bit confused here, we're trying to find the distance from the light fitting to the point that we're illuminating. That's the distance D, which we could also describe as being the distance C. So to find our distance that we're going to put into the calculation, we're going to use Pythagoras's theorem that looks like this. So whatever value we get for C, that will give us the value for D. So let's put some numbers in. we end up with the square root of our distances. So we've got 6^ squared. So that's our distance from there to there plus 2.4 squared. And then of course the whole thing gets square rooted. So let's put that into the calculator. The square t of 6 2 + 2.4 squared and we come out with 6.46 m. So we'll go with two decimal places again. 6.46 m. So the distance from here to here we now know is 6.46 m. So that's our value that we're going to use for D. So what that means now is we could put this into our formula here. So we know that the distance there is 6.46 m. So we can volley that into our uh illuminance calculation. So there we've got 6.46 46. Tell you what, I'll keep it purple so you can see where that value has come from. It's the same color as that there. 6.46. And of course, we're going to square that because it follows similar uh principles as the inverse square law. Okay. So, we still need to figure out what the cosine of theta is going to be. Now, to figure out what the cosine of theta is, we need to understand uh where we will find theta, where that angle is. And the angle that we're interested in is this angle right here. So that there is going to be our angle theta. So how do we find the coine of an angle? Well, the cosine of an angle, you'll remember from your trigonometry, the cosine of theta is equal to the adjacent divided by the hypotenuse. So we've got the adjacent divided by the hypotenuse. And when we do adjacent divided by hypotenuse for this one, we've just got to think about which sides of this triangle we're talking about. So this is the angle that makes this side the opposite because it is opposite the angle and it makes this side the adjacent because it is next to or adjacent to the angle. So this side becomes our adjacent. So that gives us 2.4 and then we're going to divide that by the hypotenuse which we just calculated as 6.46. So 2.4 / 6.46 46 gives us 0.372. So I like to work to about three decimal places when I'm doing uh anything involving trigonometry. So 0.372. So that is our value for the cosine of theta. Now notice we have found here the cosine of theta. We have not found the angle theta by itself. A common mistake is for learners to pop here cause 0.372 which is not going to give you a very um useful answer. It's completely wrong. So what we're going to look at here is we're going to look at just putting 0.372 in there just as the cosine of theta. We've already found it. That is not theta. It is the cosine of theta. So we just volley it into there. So that now enables us to move on and complete our calculation. So we can see that we're going to end up with 200 * 0.372 / 6.46^ 2. Now for this kind of calculation I like to use the fraction button on my Casio FX85 GT+. So I do 200 * 0.372 and then I'm going to divide that by 6.46^ squared and that's going to come out at 17.83 looks. So we've got 17.83 looks. So all that remains for this calculation is now just to add these uh values together. So we can say that the total uh illuminance. So the total illuminance at position a the total will be equal to uh the illuminance from position uh light position one plus the illuminance from light position 2 which gives us 260.42 plus 17.83 and that's going to lead us to our answer. So 260.42 + 17.83 gives us a total illuminance at position A. So that's this position here of 278.25. And of course that is lux. Remember to put our SR units in. So we've answered half of this question. We've answered the first part of the question. We found the total illuminance at position A. And now if it was me again, I'd just treat this next part as a completely separate question. Let's calculate the illuminance at position B. So as I said before, what I'd do at this stage is I'd just start this as almost a separate question. I just now consider that part to be completed. And now I want to calculate the illuminance level at position B. So again, I'm just going to do a little sketch of what that looks like just to help me visualize what I'm doing here. I've got a light fitting there where I've got a value of I1 is 1,500 candelas. I've got a light fitting here which is position number two which is 2,000 candelas. And then I want to know what the illumination level is down here at point B on this horizontal surface. So I'm interested in the illumination coming that way and I'm interested in the illumination coming that way. So, we're going to be able to calculate what the lighting level is, the illuminance is at position B. Now, you can see for this calculation that we've got uh it's a little bit trickier, but actually it's almost exactly the same as we've done already. The only difference is that we don't have any kind of vertical uh light position to consider. So our first calculation which is going to be the illuminance at position B from light source one will be our cosine rule because the light is shining down at an angle. So we've got luminous intensity I times by the cosine of theta / d^ 2. Once again we can kind of start putting the uh calculations into this. So we can put in the numbers we know. We've got 1,500 times by we don't yet know what cos theta is divided by the distance squared and we don't know what the distance is yet. So we need to repeat some calculations that we did from the first part of the question. So the first thing that we need to figure out for this is what is the distance from uh position one light position one down to uh the point B that's being illuminated. So we want to know what is this distance here. Okay. So, uh, in this case, we're trying to find that distance. So, what we'll say again is we've got to use Pythagoras. So, we know that's a very wobbly line. We'll try that again. So, we know uh what the height is. So, that's the same height as it was before, 2.4 m. And we know the distance from here to here because it's the distance from there to there. So, that's 3.2 m. So we can now calculate what the uh distance from the light fitting to position B will be using the same principle from before. So in classic Pythagorean theory, we'd kind of consider these sides to be a b and c. So we would say that side c is equal to the square root of a 2 + b ^ 2. And we know that that is going to give us our distance d from like position one to position b. So we'll volley our numbers into here now. So we've got the square of 2.4^ 2 + 3.2 2. And when we perform that calculation, we'll get our answer. So we got the calculator. The square root of 2.4^ 2 + 3.2 2 is going to give us a rather neat answer. It won't happen like this every time I design this question specifically this way. Is equal to 4 m. So that distance there is 4 m. So in order to uh pop this into the calculation now we just put that in there. So we've got a value of 4 squared. So that's all well and good. And now we know how long the hypotenuse of this right angle triangle is. We can figure out what the uh value uh of the cosine will be. So we'll get our cosine value popped on now. So we're going to find that the cosine the cosine of theta will be equal to the adjacent divided by the hypotenuse. And we can see there that we've got this angle here which is theta which means that we're interested in the adjacent here the 2.4 m and the hypotenuse the 4 m. So we've got 2.4 / 4 and 2.4 / 4. If I wasn't on camera, I would have figured that out in my head. 0.6. So, we've got 0.6. I didn't want to crack under the pressure. So, we've got 1500 times by our cosine of theta. And the cosine of theta is 0.6. So, now we're in a position where we can pop that into our calculator and figure out what the answer is going to be. So, we've got there 1500 times by 0.6 and we're going to divide that whole thing by 4^ 2. So that's 14 sorry 1,500 uh times by 0.6 all over 4^ squared which is going to give us an answer of 56.25. So that comes out at 56.25 25 looks. And then it's basically just a matter of repeating that whole pro process for uh the light at position B, the illumination at position B uh being caused by the light source I2. So we'll just whip through that process again. So in order to do that, we need to calculate uh the illuminance level at position B from light source number two. And that is going to be once again I uh times by the cosine of theta. So again that's going to be I2 that will be I uh one up here. So that's I1 and then we're going to divide down here by d 2. So we'll volley that in. I2 is 2,000 candelas. So we've got 2,00 times by the cosine of theta. We don't know what that is yet. We're about to calculate that. We don't know what d^ 2 is either. This value here for the distance from I2 to the position B that's being illuminated will be a different value from this value for distance the 4 m there. However, the same principle applies again. So we can consider this we're looking at a right angle triangle and that right angle triangle uh sits in this position. So it goes from there down to there. We know what the height of this is cuz the light fittings are mounted at the same height, 2.4 m. We know this distance here. It's the position from there to there. So that's 2.8. And therefore, if we label these up internally, A, B, and C, we can just do a repetition of Pythagoras's theorem to find out the distance from here to here. So we're going to say that the distance is equal to uh that will be c which is equal to a^ 2 + b ^ 2 square rooted. So we put the numbers in we've got the square root of 2.4 2 + 2.8 2 and when we calculate that the square of 2.4 2 + 2.8 2 we come out with uh 3.6 6 9 will go for to two decimal places 3.69. So now we know the distance from here to here is 3.69 m and we can put that into our calculation here. 3.69 squared. Yeah. So we square that value. Now we need to do our calculation for the cosine of theta. So we're going to figure out what the cosine of theta is next. So once again, we need to just identify which angle we're talking about. And hopefully we realize by now that the angle that we're going to need here is this angle here, angle theta. And we're going to figure out what the cosine of theta will be. So the cosine of theta will be equal to the adjacent divided by the hypotenuse. So which side's the adjacent? Which side's the hypotenuse? This is the adjacent because it is next to the angle. This is the hypotenuse because it's the longest side of the right angle triangle. So, we're going to do 2.4 again divided by this time the hypotenuse on this side, which we just calculated was 3.69 m. So, there we've got 2.4 / 3.69 and that's going to give us 0.65. So, we've got 0.65. The next number is a zero and the number after that is a four. So even if we were to round that up to three decimal places, we'd still get 0.65. So we can put that number into our formula here, 0.65. And then we can put that into our calculator and figure out what the illuminance at position B is that's being caused by light source number two. So we'll put that into the calculator. 2,00* by 0.65 65 / 3.69^ squared. And when we hit the equals button, we get 95.48 looks. So that's 95.48 looks. And then finally, to figure out what the total illuminance is at position B, all we've got to do is just add these two figures together. So to find the total illuminance E at position B, the total illuminance there is going to be the illuminance at position B caused by light fitting number one plus the illuminance at light position number B position B caused by light uh source number two. So we just add those two values together. So we've got 56.25 plus 95.48 48 and that will give us our final answer 56.25 + 95.48 which is going to be 151.73 151.73 looks. So we've got our total light level illuminance at position B and we've got our total illuminance at light position A. So all remains for this video is to say thank you very much for watching. [Music] [Music] Ah.
+
+
+[00:02] [Music]
+[00:09] Hello and welcome to this electrical principles training video. This video is
+[00:12] designed to be used in conjunction with the worksheet that you'll find in the
+[00:15] description below. So, please click the link there and find your way to the
+[00:18] worksheet. Download it and have a look at it and then we'll work through the
+[00:22] answer to the question on there together.
+[00:25] So you'll see from that question that we've got the drawing that you can see
+[00:28] on the board here. And what this is indicating is that we've got two sources
+[00:32] of light. So we've got a source of light here and we've got a source of light
+[00:35] here that are shining down onto this surface. And the question asks us to
+[00:40] calculate what the illuminance will be at position A and at position B. Now,
+[00:46] this is a little more challenging than some questions that we've looked at in a
+[00:49] previous video because for this we're going to have to figure out uh two
+[00:53] different values of illuminance and then combine them. Now, at first glance, this
+[00:57] looks a little bit daunting, but actually what I would recommend you do
+[01:00] is just break it down so that you view it as almost two separate questions.
+[01:04] What's the illuminance at point A and what's the illuminance at point B?
+[01:10] So in order to aid us with that, what I would do is just start off by drawing a
+[01:14] sketch of the first question effectively. So we want to know what's
+[01:18] the illuminance at point A. So we've got a light source here and we've got a
+[01:22] light source over here. So this doesn't needs to be accurate. It's just a sketch
+[01:26] shining down on a surface and we want to know what's the illumination at that
+[01:30] point there. So we've got the light shining down from there and we've got
+[01:33] the light shining down onto there. So all we've got to do actually is figure
+[01:37] out what the illumination level is there and we've got two light sources that are
+[01:42] providing that illumination. So we'll just take these one at a time nice and
+[01:46] simply. Now what I would also do just to make things clearer for myself is I
+[01:52] would label these up as two different values. So here I indicate that this is
+[01:56] luminous intensity number one like that. So I can see that that is I1. And here
+[02:02] this would be luminous intensity number two. So that's I2 there. And that helps
+[02:08] us to identify which luminous intensity we're talking about. Okay. So let's
+[02:13] figure this out. First of all, we've got to figure out what's the uh light level
+[02:17] here that this light fitting is responsible for. So this light fitting
+[02:21] has a value of 1,500 candelas. So what's really nice about this is we can just
+[02:26] use our very basic uh inverse square law in order to calculate this. So the first
+[02:32] thing that we'll do is we'll figure out how much of the illuminance here this uh
+[02:36] position at I1 is responsible for. So this light fitting how much illuminance
+[02:40] is that causing here. For that we just need to use the inverse square law which
+[02:44] looks like this. We have E which we know is the illuminance is equal to I the
+[02:50] luminous intensity divided by D squared. For a more thorough breakdown of that
+[02:55] formula, how we get to it and what it means, please watch a previous video in
+[02:59] this series. But what we're going to do here is we're just going to perform this
+[03:02] calculation. So we've got I is the luminous intensity from this position.
+[03:07] So bearing in mind here, we're trying to find the uh illuminance at position A.
+[03:12] And I'd say here, put a little one there as well because we're going to have two
+[03:16] values that we create for the illuminance at point A. And then we need
+[03:20] to add them together. So this is the uh illuminance that this light fitting
+[03:24] number one, is responsible for producing. So we put our numbers in.
+[03:29] So we've got uh this will be I1. So we've got 1,500
+[03:34] divided by the distance squared. And in this case, remember the distance is
+[03:38] always the distance from the light fitting to the point that it is
+[03:42] illuminating. So here we've got 1500 / 2.4
+[03:47] squared. So 1,500 / 2.4 2. If we put that into our calculator,
+[03:55] then we come out with 1,500 / 2.4^ squared and we end up with 260.42.
+[04:05] We'll round it off to that's two decimal places. 260.42.
+[04:10] And bear in mind that illuminance is measured in looks. So that's 260.42
+[04:16] looks. So that's the illuminance at this position that is being created by this
+[04:22] light fitting. However, that's not the total illuminance here because we've
+[04:25] also got some light coming from this direction. Now, this is where this
+[04:29] little sketch might come in quite handy because when we look at this drawing, we
+[04:33] might be thinking, well, how do I figure out what that distance there is going to
+[04:37] be? Well, it's pretty straightforward to do that, and this drawing will help us
+[04:41] to achieve it. So, we've now got a light source that is shining light down onto a
+[04:46] point, but that point is now at an angle away from the light source. So, it's not
+[04:51] shining directly down. We're not interested in the light level there.
+[04:54] We're interested in the light level all the way over here. So, we need to know
+[04:58] what this angle here is. So, in order to facilitate that, we need to modify our
+[05:05] inverse square law and turn it into the cosine rule for lighting. So we end up
+[05:10] with a formula that looks a bit like this. We end up with E A2 this time. So
+[05:16] this is the illuminance at position A created by light source number two is
+[05:21] equal to I multiplied by the cosine of theta / d^ 2. So the formula is almost
+[05:30] exactly the same but we've just lobbed in this time cos theta. Now, now again,
+[05:35] for a more thorough explanation of where that comes from, what it means, and how
+[05:39] it affects our lighting levels, please watch a previous video in this series.
+[05:43] Now, at this point, we can start populating the formula with the values
+[05:47] that we've got already. So, we know what our value for I will be. So, this will
+[05:50] be I2 in this case. So, that's the luminous intensity coming from this
+[05:55] position. So, that's 2,00. And then we hit a bit of a brick wall because we
+[06:00] can't actually go any further with that. We can't put in uh the cosine of theta
+[06:04] cuz we don't know what that is yet. If we put our division in, can we insert d^
+[06:09] squ? Remember d is the distance from the light fitting to the point that it is
+[06:14] illuminating. So we don't know what that is for this either. But what we can do
+[06:18] is we can start to figure some of that stuff out now. So if we just have a
+[06:22] quick look at this, we can figure out first of all what the distance is from
+[06:27] the light fitting to the point that it's illuminating. And to do that, we need to
+[06:30] understand that we've actually got a right angle triangle buried in here.
+[06:35] While we're not interested in the light level at this point, that is a vertical
+[06:38] value, which is the same as this vertical value over here. So this side
+[06:42] is 2.4 m. And we know the length of this side.
+[06:48] That's simply the distance from a over to here. So that's 3.2 + 2.8, which is
+[06:55] going to give us a value of 6 m. So now we've got two sides of a right angle
+[07:01] triangle. There's our right angle just there. So we can now use Pythagoras's
+[07:06] theorem to calculate the value for distance. So we normally think of this
+[07:10] as being d for the purposes of this kind of calculation. That's the distance from
+[07:15] the light fitting to the point that it's illuminating. Uh but if we were to view
+[07:19] kind of classic Pythagorean theorem, we'd view this as being perhaps a b and
+[07:25] c like that. So we know from Pythagoras that a^2 + b^2 is equal to c^ 2. So a^2
+[07:35] + b^2 is equal to c^ 2. So we want to find c by itself. So we'll just uh
+[07:40] modify this a little bit. We'll say therefore c is equal to the square root
+[07:46] of a 2 + b ^ 2. And we could actually at this point even just just in case we're
+[07:52] getting a little bit confused here, we're trying to find the distance from
+[07:56] the light fitting to the point that we're illuminating. That's the distance
+[08:00] D, which we could also describe as being the distance C. So to find our distance
+[08:05] that we're going to put into the calculation, we're going to use
+[08:08] Pythagoras's theorem that looks like this. So whatever value we get for C,
+[08:12] that will give us the value for D. So let's put some numbers in. we end up
+[08:18] with the square root of our distances. So we've got 6^ squared. So that's our
+[08:25] distance from there to there plus 2.4 squared. And then of course the whole
+[08:30] thing gets square rooted. So let's put that into the calculator. The square t
+[08:34] of 6 2 + 2.4 squared and we come out with 6.46
+[08:43] m. So we'll go with two decimal places again. 6.46
+[08:49] m. So the distance from here to here we now know is 6.46 m.
+[08:57] So that's our value that we're going to use for D. So what that means now is we
+[09:02] could put this into our formula here. So we know that the distance there is 6.46
+[09:08] m. So we can volley that into our uh illuminance calculation. So there we've
+[09:14] got 6.46 46. Tell you what, I'll keep it purple so you can see where that value
+[09:19] has come from. It's the same color as that there. 6.46.
+[09:23] And of course, we're going to square that because it follows similar uh
+[09:27] principles as the inverse square law. Okay. So, we still need to figure out
+[09:31] what the cosine of theta is going to be. Now, to figure out what the cosine of
+[09:34] theta is, we need to understand uh where we will find theta, where that angle is.
+[09:40] And the angle that we're interested in is this angle right here. So that there
+[09:45] is going to be our angle theta. So how do we find the coine of an angle? Well,
+[09:51] the cosine of an angle, you'll remember from your trigonometry, the cosine of
+[09:55] theta is equal to the adjacent divided by the hypotenuse. So we've got
+[10:02] the adjacent divided by the hypotenuse. And when we do adjacent divided by
+[10:06] hypotenuse for this one, we've just got to think about which sides of this
+[10:09] triangle we're talking about. So this is the angle that makes this side the
+[10:13] opposite because it is opposite the angle and it makes this side the
+[10:17] adjacent because it is next to or adjacent to the angle. So this side
+[10:22] becomes our adjacent. So that gives us 2.4
+[10:27] and then we're going to divide that by the hypotenuse which we just calculated
+[10:30] as 6.46. So 2.4 / 6.46 46
+[10:38] gives us
+[10:41] 0.372. So I like to work to about three decimal
+[10:45] places when I'm doing uh anything involving trigonometry. So 0.372.
+[10:51] So that is our value for the cosine of theta. Now notice we have found here the
+[10:56] cosine of theta. We have not found the angle theta by itself. A common mistake
+[11:01] is for learners to pop here cause 0.372 which is not going to give you a very
+[11:06] um useful answer. It's completely wrong. So what we're going to look at
+[11:11] here is we're going to look at just putting 0.372
+[11:16] in there just as the cosine of theta. We've already found it. That is not
+[11:20] theta. It is the cosine of theta. So we just volley it into there. So that now
+[11:24] enables us to move on and complete our calculation. So we can see that we're
+[11:28] going to end up with 200 * 0.372 / 6.46^ 2. Now for this kind of calculation I
+[11:36] like to use the fraction button on my Casio FX85 GT+. So I do 200 * 0.372
+[11:46] and then I'm going to divide that by 6.46^
+[11:49] squared and that's going to come out at 17.83
+[11:55] looks. So we've got 17.83 looks. So all that remains for this
+[12:01] calculation is now just to add these uh values together. So we can say that the
+[12:07] total uh illuminance. So the total illuminance at position a the total will
+[12:14] be equal to uh the illuminance from position uh light position one plus the
+[12:21] illuminance from light position 2 which gives us 260.42
+[12:28] plus 17.83 and that's going to lead us to our
+[12:32] answer. So 260.42
+[12:36] + 17.83 gives us a total illuminance at position
+[12:42] A. So that's this position here of 278.25.
+[12:51] And of course that is lux. Remember to put our SR units in. So we've answered
+[12:57] half of this question. We've answered the first part of the question. We found
+[12:59] the total illuminance at position A. And now if it was me again, I'd just treat
+[13:04] this next part as a completely separate question. Let's calculate the
+[13:07] illuminance at position B. So as I said before, what I'd do at this stage is I'd
+[13:12] just start this as almost a separate question. I just now consider that part
+[13:16] to be completed. And now I want to calculate the illuminance level at
+[13:22] position B. So again, I'm just going to do a little sketch of what that looks
+[13:25] like just to help me visualize what I'm doing here. I've got a light fitting
+[13:29] there where I've got a value of I1 is 1,500 candelas. I've got a light fitting
+[13:37] here which is position number two which is 2,000 candelas. And then I want to
+[13:44] know what the illumination level is down here at point B on this horizontal
+[13:50] surface. So I'm interested in the illumination coming that way and I'm
+[13:54] interested in the illumination coming that way. So, we're going to be able to
+[13:58] calculate what the lighting level is, the illuminance is at position B. Now,
+[14:04] you can see for this calculation that we've got uh it's a little bit trickier,
+[14:08] but actually it's almost exactly the same as we've done already. The only
+[14:11] difference is that we don't have any kind of vertical uh light position to
+[14:17] consider. So our first calculation which is going to be the illuminance at
+[14:21] position B from light source one will be our cosine rule because the light is
+[14:27] shining down at an angle. So we've got luminous intensity I times by the cosine
+[14:33] of theta / d^ 2. Once again we can kind of start putting the uh calculations
+[14:41] into this. So we can put in the numbers we know. We've got 1,500
+[14:45] times by we don't yet know what cos theta is divided by the distance squared
+[14:50] and we don't know what the distance is yet. So we need to repeat some
+[14:53] calculations that we did from the first part of the question. So the first thing
+[14:57] that we need to figure out for this is what is the distance from uh position
+[15:03] one light position one down to uh the point B that's being illuminated. So we
+[15:08] want to know what is this distance here. Okay. So, uh, in this case, we're trying
+[15:14] to find that distance. So, what we'll say again is we've got to use
+[15:18] Pythagoras. So, we know that's a very wobbly line. We'll try that again. So,
+[15:23] we know uh what the height is. So, that's the
+[15:26] same height as it was before, 2.4 m. And we know the distance from here to
+[15:32] here because it's the distance from there to there. So, that's 3.2
+[15:37] m. So we can now calculate what the uh distance from the light fitting to
+[15:42] position B will be using the same principle from before. So in classic
+[15:46] Pythagorean theory, we'd kind of consider these sides to be a b and c. So
+[15:51] we would say that side c is equal to the square root of a 2 + b ^ 2. And we know
+[15:59] that that is going to give us our distance d from like position one to
+[16:03] position b. So we'll volley our numbers into here now. So we've got the
+[16:08] square of 2.4^ 2 + 3.2 2. And when we perform that calculation, we'll get
+[16:16] our answer. So we got the calculator. The square
+[16:20] root of 2.4^ 2 + 3.2 2 is going to give us a rather neat answer. It won't happen
+[16:29] like this every time I design this question specifically this way. Is equal
+[16:32] to 4 m. So that distance there is 4 m. So in order to uh pop this into the
+[16:41] calculation now we just put that in there. So we've got a value of 4
+[16:44] squared. So that's all well and good. And now we know how long the hypotenuse
+[16:48] of this right angle triangle is. We can figure out what the uh value uh of the
+[16:55] cosine will be. So we'll get our cosine value popped on now. So we're going to
+[17:01] find that the cosine the cosine of theta will be equal to the
+[17:07] adjacent divided by the hypotenuse.
+[17:12] And we can see there that we've got this angle here which is theta which means
+[17:16] that we're interested in the adjacent here the 2.4 m and the hypotenuse the 4
+[17:21] m. So we've got 2.4 / 4 and 2.4 / 4. If I wasn't on camera, I would have figured
+[17:30] that out in my head. 0.6. So, we've got 0.6.
+[17:34] I didn't want to crack under the pressure. So, we've got 1500 times by
+[17:38] our cosine of theta. And the cosine of theta is 0.6.
+[17:42] So, now we're in a position where we can pop that into our calculator and figure
+[17:46] out what the answer is going to be. So, we've got there 1500
+[17:52] times by 0.6 and we're going to divide that whole thing by 4^ 2. So that's 14
+[18:00] sorry 1,500 uh times by 0.6
+[18:06] all over 4^ squared which is going to give us an answer of 56.25.
+[18:11] So that comes out at 56.25 25 looks. And then it's basically just a matter of
+[18:18] repeating that whole pro process for uh the light at position B, the
+[18:23] illumination at position B uh being caused by the light source I2. So we'll
+[18:29] just whip through that process again. So in order to do that, we need to
+[18:33] calculate uh the illuminance level at position B from light source number two.
+[18:39] And that is going to be once again I uh times by the cosine of theta. So again
+[18:46] that's going to be I2 that will be I uh one up here. So that's I1 and then we're
+[18:53] going to divide down here by d 2. So we'll volley that in.
+[18:58] I2 is 2,000 candelas. So we've got 2,00 times by the cosine of theta. We don't
+[19:05] know what that is yet. We're about to calculate that. We don't know what d^ 2
+[19:08] is either. This value here for the distance from I2 to the position B
+[19:14] that's being illuminated will be a different value from this value for
+[19:19] distance the 4 m there. However, the same principle applies again. So we can
+[19:23] consider this we're looking at a right angle triangle and that right angle
+[19:28] triangle uh sits in this position. So it goes from there down to there. We know
+[19:35] what the height of this is cuz the light fittings are mounted at the same height,
+[19:38] 2.4 m. We know this distance here. It's the position from there to there. So
+[19:44] that's 2.8. And therefore, if we label these up
+[19:48] internally, A, B, and C, we can just do a repetition of Pythagoras's theorem to
+[19:54] find out the distance from here to here. So we're going to say that the distance
+[19:58] is equal to uh that will be c which is equal to a^ 2 + b ^ 2 square rooted. So
+[20:07] we put the numbers in we've got the square root of 2.4 2 + 2.8 2 and when we
+[20:16] calculate that the square of 2.4 2 + 2.8 2 we come out with uh 3.6 6 9 will
+[20:28] go for to two decimal places 3.69.
+[20:33] So now we know the distance from here to here is 3.69 m and we can put that into
+[20:39] our calculation here. 3.69 squared. Yeah. So we square that value.
+[20:45] Now we need to do our calculation for the cosine of theta. So we're going to
+[20:50] figure out what the cosine of theta is next. So once again, we need to just
+[20:54] identify which angle we're talking about. And hopefully we realize by now
+[20:58] that the angle that we're going to need here is this angle here, angle theta.
+[21:04] And we're going to figure out what the cosine of theta will be. So the cosine
+[21:07] of theta will be equal to the adjacent divided by the hypotenuse. So which
+[21:14] side's the adjacent? Which side's the hypotenuse? This is the adjacent because
+[21:18] it is next to the angle. This is the hypotenuse because it's the longest side
+[21:23] of the right angle triangle. So, we're going to do 2.4 again divided by this
+[21:29] time the hypotenuse on this side, which we just calculated was 3.69 m.
+[21:38] So, there we've got 2.4 / 3.69 and that's going to give us 0.65.
+[21:47] So, we've got 0.65. The next number is a zero and the number
+[21:52] after that is a four. So even if we were to round that up to three decimal
+[21:55] places, we'd still get 0.65. So we can put that number into our
+[22:00] formula here, 0.65. And then we can put that into our
+[22:05] calculator and figure out what the illuminance at position B is that's
+[22:10] being caused by light source number two. So we'll put that into the calculator.
+[22:14] 2,00* by 0.65 65 / 3.69^ squared. And when we
+[22:22] hit the equals button, we get 95.48 looks. So that's 95.48
+[22:32] looks. And then finally, to figure out what the
+[22:36] total illuminance is at position B, all we've got to do is just add these two
+[22:41] figures together. So to find the total illuminance E at position B, the total
+[22:47] illuminance there is going to be the illuminance at position B caused by
+[22:51] light fitting number one plus the illuminance at light position number B
+[22:57] position B caused by light uh source number two. So we just add those two
+[23:02] values together. So we've got 56.25 plus 95.48 48 and that will give us our
+[23:11] final answer 56.25 + 95.48
+[23:16] which is going to be 151.73 151.73
+[23:23] looks. So we've got our total light level illuminance at position B and
+[23:30] we've got our total illuminance at light position A. So all remains for this
+[23:35] video is to say thank you very much for watching.
+[23:41] [Music]
+[23:54] [Music]
+[23:59] Ah.

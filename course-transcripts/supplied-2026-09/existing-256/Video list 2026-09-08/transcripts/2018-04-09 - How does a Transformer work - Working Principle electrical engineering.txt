@@ -1,0 +1,191 @@
+# How does a Transformer work - Working Principle electrical engineering
+# https://www.youtube.com/watch?v=UchitHGF4n8
+
+Hey there guys, Paul here from TheEngineeringMindset.com. In this video, we're going to be looking at how transformers work. Now this follows on from our series on electrical engineering, so do check out the other videos if you've not done so already. Links are in the video description below. Coming up, we'll be looking at how to create a magnetic field with electricity, and why only an alternating current can be used in transformers. How a basic transformer works, then we'll look at step up and step down transformers, and finally, we'll finish on three phase transformers. Now there are two types of electricity, AC and DC. But transformers can only work using AC, or Alternating Current. And if you don't know the difference between these two, then please, first of all, watch the video on electricity basics first. Again, you can find links to these videos, and other useful videos, in the video description below. When we connect an AC generator to a closed loop of cable, a current will able to flow through this cable, and the direction of the current will alternate backwards and forwards, with the rotation of the generator. The alternation means that the current reaches it's maximum and minimum point during the cycle, which gives it its sine wave pattern when connected to an oscilloscope. Now you can think of this as the tide of the sea as it changes direction, and reaches its maximum and minimum point. As the current flows through the cable, it will emit a magnetic field. If we pass DC current through the cable, the magnetic field will remain constant. But, if we pass AC current through the cable, then the magnetic field will increase and decrease in strength, and changes polarity as the current changes direction. If we place multiple cables together and pass current through them, then the magnetic fields will combine to create a stronger magnetic field. If we then wrap the cable into a coil, the magnetic field will become even stronger. If we then place a second coil in close proximity to the first coil, and then we pass AC, alternating current, through the the first coil, then the magnetic field it creates will induce a current into the second coil. And this magnetic force will push and pull on the free electrons forcing them to move. The key component here is that the magnetic field is changing polarity as well as intensity. This change in intensity and direction of the magnetic field constantly disturbs the free electrons in a secondary coil, and this forces them to move. This movement is known as electromotive force or EMF. Electromotive force does not occur when we pass DC current through the primary coil, and that's because the magnetic field is constant, so the electrons are not being forced to move. The only time it will cause EMF is very briefly when the primary circuit is open and closed or when the voltage is increased or decreased. And that's because these actions result in a change to the magnetic field. Therefore, we use alternating current as this change occurs constantly. Now, the problem with this setup is that a lot of the magnetic field from the primary side is being wasted because it's not in range of the secondary coil. So, to fix this engineers place a core of ferromagnetic material such as iron, in a loop between the primary and secondary coils. Now, this loop guides the magnetic field along a path to the secondary coil, so that they will share the magnetic field and this makes the transformer much more efficient. Now, the use of an iron core is not a perfect solution, some energy will be lost through something known as Eddy currents, where the current swells around the core and this heats up the transformer, and this means that the energy is lost as heat. To reduce this engineers use laminated sheets of iron to form the core, and this greatly reduces the Eddy currents. Transformers are manufactured to be step up or step down transformers, and these are used to increase or decrease the voltage simply by using a different number of turns within the coil on a secondary side. In a step up transformer the voltage is increased in the secondary coil, and this will mean that the current will decrease. But don't worry too much right now about why that occurs. We'll look at this in a later electrical engineering video. To increase the voltage in a step up transformer, we just need to add more turns to the coil on the secondary side than the primary side. In a step down transformer, the voltage is decreased in the secondary coil which means that the current increases. To do this we just use less turns in the coil on the secondary side compared to the primary side. For example, a power station needs to transport the electricity it is generated, over to a city some distance away. The power station will use a step up transformer to increase the voltage and reduce the current, as this will reduce the losses for the long transmission cables. Then, once it reaches a city, this will need to be reduced to make it safe and usable by buildings and homes, so there will need to be a step down transformer. The Transformers for commercial buildings and power stations are usually in a three phase configuration. You'll see this placed around your cities and towns, and they'll look something like this. These three phase transformers can be made from either three separate transformers that are wired together, or they can be built into one large unit with a shared iron core. In this set up, the coils will typically sit concentrically within one another with a higher voltage coil on the outside and the lower voltage coil sitting on the inside. Now these coils are insulated from one another, so that only the magnetic field will pass between the two coils. To connect the two sides there are many different configurations, but one of the most commonly used, is to connect the coils in a configuration known as Delta Wye, sometimes referred to as delta star. This refers to the primary side being wired in the Delta configuration and the secondary side being wired in a wire configuration. The centre point of the wye side where all three connectors meet, is often grounded which allows for neutral line to also be connected. we'll cover transformer connections and calculations in other more advanced videos as this can get quite complex, so for now, simply focus on how they work to build your base knowledge. Okay, that's it for this video. Thank you very much for watching. I hope you've enjoyed this and it has helped you. If so then please don't forget to like, subscribe and share this video. You can also follow us on Facebook, Instagram, Twitter and Google Plus as well as our website, TheEngineeringMindset.com. (upbeat music)
+
+
+[00:04] Hey there guys,
+[00:05] Paul here from TheEngineeringMindset.com.
+[00:07] In this video, we're going to be looking at how transformers work.
+[00:10] Now this follows on from our series
+[00:11] on electrical engineering,
+[00:13] so do check out the other videos
+[00:14] if you've not done so already.
+[00:16] Links are in the video description below.
+[00:18] Coming up,
+[00:19] we'll be looking at how to create a magnetic field
+[00:21] with electricity,
+[00:22] and why only an alternating current can be used
+[00:24] in transformers.
+[00:25] How a basic transformer works,
+[00:27] then we'll look at step up and step down transformers,
+[00:30] and finally,
+[00:31] we'll finish on three phase transformers.
+[00:34] Now there are two types of electricity,
+[00:36] AC and DC.
+[00:37] But transformers can only work using AC,
+[00:39] or Alternating Current.
+[00:41] And if you don't know the difference between these two,
+[00:43] then please, first of all, watch the video
+[00:45] on electricity basics first.
+[00:47] Again, you can find links to these videos,
+[00:49] and other useful videos,
+[00:50] in the video description below.
+[00:53] When we connect an AC generator
+[00:55] to a closed loop of cable,
+[00:56] a current will able to flow through this cable,
+[00:59] and the direction of the current will alternate
+[01:01] backwards and forwards,
+[01:02] with the rotation of the generator.
+[01:06] The alternation means that the current reaches it's maximum
+[01:08] and minimum point during the cycle,
+[01:10] which gives it its sine wave pattern
+[01:12] when connected to an oscilloscope.
+[01:14] Now you can think of this as the tide of the sea
+[01:16] as it changes direction,
+[01:17] and reaches its maximum
+[01:19] and minimum point.
+[01:21] As the current flows through the cable,
+[01:23] it will emit a magnetic field.
+[01:25] If we pass DC current through the cable,
+[01:28] the magnetic field will remain constant.
+[01:30] But, if we pass AC current through the cable,
+[01:32] then the magnetic field will increase
+[01:34] and decrease in strength,
+[01:36] and changes polarity
+[01:37] as the current changes direction.
+[01:40] If we place multiple cables together
+[01:42] and pass current through them,
+[01:44] then the magnetic fields will combine
+[01:46] to create a stronger magnetic field.
+[01:48] If we then wrap the cable into a coil,
+[01:50] the magnetic field will become even stronger.
+[01:53] If we then place a second coil in close proximity
+[01:56] to the first coil,
+[01:57] and then we pass AC, alternating current,
+[01:59] through the the first coil,
+[02:01] then the magnetic field it creates
+[02:02] will induce a current into the second coil.
+[02:05] And this magnetic force will push and pull
+[02:07] on the free electrons forcing them to move.
+[02:12] The key component here is that the magnetic field
+[02:14] is changing polarity as well as intensity.
+[02:17] This change in intensity
+[02:19] and direction of the magnetic field
+[02:20] constantly disturbs the free electrons in a secondary coil,
+[02:24] and this forces them to move.
+[02:26] This movement is known as electromotive force or EMF.
+[02:31] Electromotive force does not occur
+[02:33] when we pass DC current through the primary coil,
+[02:36] and that's because the magnetic field is constant,
+[02:38] so the electrons are not being forced to move.
+[02:41] The only time it will cause EMF is very briefly
+[02:44] when the primary circuit is open and closed
+[02:47] or when the voltage is increased or decreased.
+[02:49] And that's because these actions result in a change
+[02:52] to the magnetic field.
+[02:53] Therefore, we use alternating current
+[02:55] as this change occurs constantly.
+[02:59] Now, the problem with this setup
+[03:01] is that a lot of the magnetic field from the primary side
+[03:03] is being wasted
+[03:04] because it's not in range of the secondary coil.
+[03:07] So, to fix this engineers place a core
+[03:10] of ferromagnetic material such as iron,
+[03:12] in a loop between the primary
+[03:14] and secondary coils.
+[03:15] Now, this loop guides the magnetic field along a path
+[03:18] to the secondary coil,
+[03:19] so that they will share the magnetic field
+[03:22] and this makes the transformer much more efficient.
+[03:25] Now, the use of an iron core is not a perfect solution,
+[03:28] some energy will be lost
+[03:30] through something known as Eddy currents,
+[03:32] where the current swells around the core
+[03:34] and this heats up the transformer,
+[03:36] and this means that the energy is lost as heat.
+[03:39] To reduce this engineers use laminated sheets of iron
+[03:42] to form the core,
+[03:43] and this greatly reduces the Eddy currents.
+[03:46] Transformers are manufactured to be step up
+[03:49] or step down transformers,
+[03:51] and these are used to increase
+[03:52] or decrease the voltage
+[03:53] simply by using a different number of turns
+[03:56] within the coil on a secondary side.
+[03:59] In a step up transformer
+[04:00] the voltage is increased in the secondary coil,
+[04:03] and this will mean that the current will decrease.
+[04:05] But don't worry too much right now
+[04:07] about why that occurs.
+[04:08] We'll look at this in a later electrical engineering video.
+[04:11] To increase the voltage in a step up transformer,
+[04:13] we just need to add more turns to the coil
+[04:16] on the secondary side
+[04:17] than the primary side.
+[04:18] In a step down transformer,
+[04:20] the voltage is decreased in the secondary coil
+[04:22] which means that the current increases.
+[04:24] To do this we just use less turns in the coil
+[04:27] on the secondary side compared to the primary side.
+[04:30] For example,
+[04:31] a power station needs to transport the electricity
+[04:34] it is generated,
+[04:35] over to a city some distance away.
+[04:37] The power station will use a step up transformer
+[04:39] to increase the voltage
+[04:41] and reduce the current,
+[04:42] as this will reduce the losses
+[04:44] for the long transmission cables.
+[04:46] Then, once it reaches a city,
+[04:47] this will need to be reduced
+[04:49] to make it safe
+[04:50] and usable by buildings and homes,
+[04:51] so there will need to be a step down transformer.
+[04:55] The Transformers for commercial buildings
+[04:57] and power stations
+[04:58] are usually in a three phase configuration.
+[05:01] You'll see this placed around your cities and towns,
+[05:03] and they'll look something like this.
+[05:05] These three phase transformers can be made from either
+[05:08] three separate transformers that are wired together,
+[05:11] or they can be built into one large unit
+[05:13] with a shared iron core.
+[05:16] In this set up, the coils will typically sit concentrically
+[05:19] within one another
+[05:20] with a higher voltage coil on the outside
+[05:22] and the lower voltage coil sitting on the inside.
+[05:25] Now these coils are insulated from one another,
+[05:27] so that only the magnetic field will pass
+[05:30] between the two coils.
+[05:32] To connect the two sides
+[05:33] there are many different configurations,
+[05:35] but one of the most commonly used,
+[05:37] is to connect the coils in a configuration
+[05:39] known as Delta Wye,
+[05:41] sometimes referred to as delta star.
+[05:44] This refers to the primary side being wired
+[05:46] in the Delta configuration
+[05:47] and the secondary side being wired
+[05:49] in a wire configuration.
+[05:50] The centre point of the wye side
+[05:52] where all three connectors meet,
+[05:54] is often grounded
+[05:55] which allows for neutral line to also be connected.
+[05:59] we'll cover transformer connections
+[06:01] and calculations in other more advanced videos
+[06:03] as this can get quite complex,
+[06:05] so for now, simply focus on how they work
+[06:07] to build your base knowledge.
+[06:10] Okay, that's it for this video.
+[06:12] Thank you very much for watching.
+[06:13] I hope you've enjoyed this
+[06:14] and it has helped you.
+[06:15] If so then please don't forget to like, subscribe
+[06:17] and share this video.
+[06:18] You can also follow us on Facebook,
+[06:20] Instagram, Twitter
+[06:21] and Google Plus
+[06:22] as well as our website,
+[06:23] TheEngineeringMindset.com.
+[06:25] (upbeat music)

@@ -1,0 +1,303 @@
+# How to Calculate the Resistivity of a Material: Nichrome
+# https://www.youtube.com/watch?v=Gy2u6W8IyCg
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering our subjects of resistance and resistivity and what we're going to do is we're going to take our resistivity formula that we found in another video and we're going to use it and rearrange it in order to find the resistivity of a material so I've got here two samples of different materials mounted onto locked Ronix components and what we can be able to do here is we're gonna be able to measure the resistance of these and then use the information on these components to figure out what the resistivity of a material is if you're not sure what I'm talking about when I say resistivity I want to talk about resistance then please go back and watch another video in this series which will explain those terms in a little bit more depth for now let's bring the camera in and let's have a look at taking some measurements on our locked Ronix board so what we've got here are two different samples of two different metals and these metals are nick chrome and constantan these are two different alloys now these both have different properties but what we're interested in here is the resistivity of these specific materials so we could talk in another video about constantan and how good it is at not changing its resistance as its temperature changes that makes it very very useful product in certain thermal applications but what we're going to do is we're going to measure the resistance of these conductors and then we're going to have a look at the information that's contained on these components and use those to help us calculate what the resistivity of this material is so as you can see on the new chrome material you can see there that we've got a cross-sectional area of this conductor that's wrapped around inside here we can see that that has a cross section area of 0.2 1 millimeters and what's quite impressive is there's actually half a meter 500 millimetres of this conductor wrapped around inside here so we've got 0.2 1 millimeters squared as the cross-sectional area and 500 millimeters as the length so we're going to measure the resistance of this conductor first of all so I'm going to set my mega over eight three five up to measure resistance so I've got that set there to measure resistance and then what I'm going to do is I'm going to connect this from one side of the component to the other so I'm gonna connect that from there so there and that will give us the resistance of that particular component and that's coming out at and it's hovering around three point six we'll call that three point six ohms so what we can do now is we can have a look at a calculation that's going to help us to figure out what the resistivity of this material is so let's do that now okay so let's figure out what the resistivity are of nichrome is so here's our component that we're going to be using and we can see that we've got some information on here so first of all we measured the resistance of the component as being three point six ohms so we've got three point six ohms for the resistance we've got the length of the conductor which is 500 millimeters and we've got the cross-sectional area of the conductor which is not 0.21 millimeters squared so just a kind of a note on these values before we start lobbing these into our formula what we've got to think about is the fact that we've got these sub multiples here so we've got these prefixes before the unit so we've got millimeter and millimeters squared now when we see milli we think a thousandth but what we can do is we can take that little m there that lowercase M and we can swap it out for a power of 10 so we can make that 500 times by 10 to the power of minus three and all this is doing is it's it's like almost like a coding instruction where it says take the decimal point and move it three places so we're going to move the decimal point one two three places now you might want to think about this value as being naught point five but I'd really urge you if you're getting involved in the electrical industry in any way or engineering or anything like that please get used to using these because you can put this into your calculator and it will actually save you messing around moving decimal points about and putting very long numbers into your calculator so we'll do that in this video we'll get used to using our powers of 10 our engineering notation now we might look at the cross sectional area and think well surely this is also going to be milli so this will also be times 10 to the minus 3 and that is a trap that an awful lot of people fall into there are a thousand millimeters in a meter but in a meter squared there are a million millimeters squared so we're not thinking about thousandths we're thinking about millionths and to represent millionths as a power of 10 we do it as times 10 to the power of minus 6 like that the next thing we need to do is dredge up from our memory the mathematical formula that we use for calculating the resistance of a conductor based on length cross section area and resistivity and in a previous video we saw that this is equal to it's R is equal to Rho which is resistivity times by the length of the conductor divided by the cross sectional area of the conductor now I think it's a good idea when you're doing any kind of mathematical question like this to put down all of the information that you're given and then think about what you are trying to find so here we're trying to find Rho we're trying to find the resistivity of this material NIC Rome so that's what we're trying to do now here we're not trying to find R we already know what R it is we're trying to find Rho we're trying to find the resistivity of this material so what that means that we're going to have to do is we're going to have to transpose this formula now we're not going to go into masses of depth on how to do transposition here but what we are going to do is just look at it very simply so we want to get rid of everything on this side apart from the Rho we want to get the Rho by itself that sort of the plan now when we do transposition look at the order you would do this in if you're going to put numbers into it so if you're going to put numbers in here let's say you had 2 times 3/4 something like that then you would take this number you would times it by this number and then you would divide it by this number this is the last thing you do so when you transpose just do things in the reverse order so instead of dividing by a we're going to multiply both sides by a so this side will become R times a like that and if we divide by a number and then multiply by that same number it's like that action never happens so that cancels out so we end up with Rho times L so we've got R times a is equal to Rho times L now bear in mind here when we're doing this that if you have two letters or two symbols or a number and a letter next to each other with no symbol between them that means multiply so we're going to multiply those together so we're still trying to get Rho by itself in a minute we've got Rho and we are timesing it by L so now we're going to do the opposite of timesing by L which is 2 divided by L and that becomes R times a divided by L on this side and if we times by L and then divide by L we end up with just Rho by itself so there's our formula now normally we like to have the subject on the Left doesn't make any difference to the mass but it will make a big difference to the purists so let's get the row on the left there so the next stage is to start firing in some numbers so let's start swapping these symbols out for numbers so we've got a capital R which is resistance and that's going to be three point six and then we're going to times that by a which is the cross-sectional area which is this number here that we've used the power of 10 on so that'll be naught point 2 1 times by 10 to the power of minus 6 and then we're going to divide that by the length of the conductor which is 500 times 10 to the minus 3 they might look and I think well why not just write that as a naught point 5 because that's what that means absolutely you could do that but I like using the powers because if you enter the habit of using them it becomes a lot easier and will help you out in other ways so let's bring our calculator in and we'll have a look at how to put this into the calculator so in a slight break from the norm I'm not using the casio FX 85 gt+ for this I'm using the casio FX 83 DT plus like the 85 GT plus only - not so good right so let's have a look at this so we're going to put this into our calculator if you press this button here this creates a fraction for you and then you can start volleying the numbers in three point six times by not point to one so we can just put point two one don't need to put the zero in it will do that for us and then when we come to the power of ten we don't put in times ten like that we put in this button here this is the power of ten button so that's times ten to the power of and then whatever number you put in after this now it will treat as the power so we just put minus six so use that button don't be tempted to start doing times ten to the power of because that can cause some confusing results and then we're going to move the cursor down and do five hundred times by ten to the power of minus three and if we hit equals now we can see we've got our value there of naught point naught naught naught naught one five one two so that number is not much good to is really that's not a very nice number to use but on your calculator you've got this beautiful button here marked Eng and normally when I asked my learners what that stands for on the calculator their first response is English and there's not an awful lot of English going on our calculator here so it's not translation but it stands for engineering notation so if we press that it puts it into the nearest engineering notation value that it can so here we've got one point five one two times ten to the minus six and this is resistivity so its measured in ohm meters but what again we can do is one point five one two times ten to the minus six doesn't mean a lot when you're looking it up in engineering documents or as the answer to a question so we're going to take this times ten to the minus six out of here and we're just going to replace it with its submultiple symbol and times 10 to the minus six means micro so we've got one point five one two micro ohm meters and that is the resistivity of nekron and if you look that value up on most websites for the resistivity of nichrome this is sort of at the top end of the value that you'll find quoted for that so allowing for the fact that we have a little bit of resistance inside the leads of the tester and various connections between those devices you can see there that that is a very acceptable reading so we now know the resistivity of NIC Rome let's go and take some measurements of our constantan and we'll take a look at that in our next video thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:13] we're going to continue considering our
+[00:14] subjects of resistance and resistivity
+[00:16] and what we're going to do is we're
+[00:18] going to take our resistivity formula
+[00:20] that we found in another video and we're
+[00:22] going to use it and rearrange it in
+[00:24] order to find the resistivity of a
+[00:26] material so I've got here two samples of
+[00:29] different materials mounted onto locked
+[00:31] Ronix components and what we can be able
+[00:33] to do here is we're gonna be able to
+[00:34] measure the resistance of these and then
+[00:36] use the information on these components
+[00:38] to figure out what the resistivity of a
+[00:40] material is if you're not sure what I'm
+[00:43] talking about when I say resistivity I
+[00:44] want to talk about resistance then
+[00:46] please go back and watch another video
+[00:48] in this series which will explain those
+[00:49] terms in a little bit more depth for now
+[00:52] let's bring the camera in and let's have
+[00:54] a look at taking some measurements on
+[00:55] our locked Ronix board so what we've got
+[01:01] here are two different samples of two
+[01:04] different metals and these metals are
+[01:07] nick chrome and constantan these are two
+[01:10] different alloys now these both have
+[01:14] different properties but what we're
+[01:15] interested in here is the resistivity of
+[01:17] these specific materials so we could
+[01:20] talk in another video about constantan
+[01:22] and how good it is at not changing its
+[01:24] resistance as its temperature changes
+[01:26] that makes it very very useful product
+[01:27] in certain thermal applications but what
+[01:30] we're going to do is we're going to measure the resistance of these
+[01:32] conductors and then we're going to have
+[01:33] a look at the information that's
+[01:34] contained on these components and use
+[01:37] those to help us calculate what the
+[01:39] resistivity of this material is so as
+[01:44] you can see on the new chrome material
+[01:46] you can see there that we've got a
+[01:49] cross-sectional area of this conductor
+[01:51] that's wrapped around inside here we can
+[01:54] see that that has a cross section area
+[01:56] of 0.2 1 millimeters and what's quite
+[02:00] impressive is there's actually half a
+[02:01] meter 500 millimetres of this conductor
+[02:04] wrapped around inside here so we've got
+[02:06] 0.2 1 millimeters squared as the
+[02:09] cross-sectional area and 500 millimeters
+[02:11] as the length so we're going to measure
+[02:14] the resistance of this conductor first
+[02:17] of all so I'm going to set my mega over
+[02:19] eight three five up to measure
+[02:21] resistance so I've got that set there to
+[02:23] measure resistance and then what I'm
+[02:25] going to do is I'm going to connect this
+[02:28] from one side of the component to the
+[02:29] other so I'm gonna connect that from
+[02:31] there so there and that will give us the
+[02:34] resistance of that particular component
+[02:36] and that's coming out at and it's
+[02:38] hovering around three point six we'll
+[02:40] call that three point six ohms so what
+[02:44] we can do now is we can have a look at a
+[02:46] calculation that's going to help us to
+[02:49] figure out what the resistivity of this
+[02:51] material is so let's do that now okay so
+[02:55] let's figure out what the resistivity
+[02:56] are of nichrome is so here's our
+[02:59] component that we're going to be using
+[03:01] and we can see that we've got some
+[03:03] information on here so first of all we
+[03:05] measured the resistance of the component
+[03:08] as being three point six ohms so we've
+[03:12] got three point six ohms for the
+[03:14] resistance we've got the length of the
+[03:17] conductor which is 500 millimeters and
+[03:21] we've got the cross-sectional area of
+[03:24] the conductor which is not 0.21
+[03:27] millimeters squared so just a kind of a
+[03:31] note on these values before we start
+[03:33] lobbing these into our formula what
+[03:36] we've got to think about is the fact
+[03:37] that we've got these sub multiples here
+[03:40] so we've got these prefixes before the
+[03:42] unit so we've got millimeter and
+[03:44] millimeters squared now when we see
+[03:47] milli we think a thousandth but what we
+[03:51] can do is we can take that little m
+[03:53] there that lowercase M and we can swap
+[03:56] it out for a power of 10 so we can make
+[03:58] that 500 times by 10 to the power of
+[04:02] minus three and all this is doing is
+[04:05] it's it's like almost like a coding
+[04:07] instruction where it says take the
+[04:08] decimal point and move it three places
+[04:11] so we're going to move the decimal point
+[04:12] one two three places now you might want
+[04:16] to think about this value as being
+[04:18] naught point five but I'd really urge
+[04:19] you if you're getting involved in the
+[04:21] electrical industry in any way or
+[04:22] engineering or anything like that
+[04:23] please get used to using these because
+[04:26] you can put this into your calculator
+[04:27] and it will actually save you messing
+[04:29] around moving decimal points about and
+[04:31] putting very long numbers into your calculator
+[04:34] so we'll do that in this video we'll get
+[04:36] used to using our powers of 10 our
+[04:39] engineering notation now we might look
+[04:42] at the cross sectional area and think
+[04:44] well surely this is also going to be
+[04:46] milli so this will also be times 10 to
+[04:48] the minus 3 and that is a trap that an
+[04:50] awful lot of people fall into there are
+[04:54] a thousand millimeters in a meter but in
+[04:58] a meter squared there are a million
+[05:00] millimeters squared so we're not
+[05:03] thinking about thousandths we're
+[05:05] thinking about millionths and to
+[05:07] represent millionths as a power of 10 we
+[05:10] do it as times 10 to the power of minus
+[05:13] 6 like that the next thing we need to do
+[05:16] is dredge up from our memory the
+[05:18] mathematical formula that we use for
+[05:19] calculating the resistance of a
+[05:22] conductor based on length cross section
+[05:24] area and resistivity and in a previous
+[05:27] video we saw that this is equal to it's
+[05:29] R is equal to Rho which is resistivity
+[05:33] times by the length of the conductor
+[05:35] divided by the cross sectional area of
+[05:38] the conductor now I think it's a good
+[05:41] idea when you're doing any kind of
+[05:42] mathematical question like this to put
+[05:43] down all of the information that you're
+[05:45] given and then think about what you are
+[05:48] trying to find so here we're trying to
+[05:50] find Rho we're trying to find the
+[05:51] resistivity of this material NIC Rome so
+[05:57] that's what we're trying to do now here
+[05:59] we're not trying to find R we already
+[06:01] know what R it is we're trying to find
+[06:03] Rho we're trying to find the resistivity
+[06:05] of this material so what that means that
+[06:08] we're going to have to do is we're going
+[06:09] to have to transpose this formula now
+[06:11] we're not going to go into masses of
+[06:13] depth on how to do transposition here
+[06:15] but what we are going to do is just look
+[06:16] at it very simply so we want to get rid
+[06:19] of everything on this side apart from
+[06:21] the Rho we want to get the Rho by itself
+[06:23] that sort of the plan now when we do
+[06:25] transposition look at the order you
+[06:27] would do this in if you're going to put
+[06:29] numbers into it so if you're going to
+[06:30] put numbers in here let's say you had 2
+[06:33] times 3/4 something like that then you
+[06:36] would take this number you would times
+[06:38] it by this number and then you would
+[06:40] divide it by this number this is the
+[06:42] last thing you do so when you transpose
+[06:44] just
+[06:45] do things in the reverse order so
+[06:46] instead of dividing by a we're going to
+[06:48] multiply both sides by a so this side
+[06:51] will become R times a like that
+[06:54] and if we divide by a number and then
+[06:57] multiply by that same number it's like
+[06:59] that action never happens so that
+[07:01] cancels out so we end up with Rho times
+[07:04] L so we've got R times a is equal to Rho
+[07:07] times L now bear in mind here when we're
+[07:09] doing this that if you have two letters
+[07:11] or two symbols or a number and a letter
+[07:15] next to each other with no symbol
+[07:17] between them that means multiply so
+[07:18] we're going to multiply those together
+[07:20] so we're still trying to get Rho by
+[07:22] itself in a minute we've got Rho and we
+[07:24] are timesing it by L so now we're going
+[07:27] to do the opposite of timesing by L
+[07:29] which is 2 divided by L and that becomes
+[07:31] R times a divided by L on this side and
+[07:35] if we times by L and then divide by L we
+[07:37] end up with just Rho by itself so
+[07:40] there's our formula now normally we like
+[07:43] to have the subject on the Left doesn't
+[07:45] make any difference to the mass but it
+[07:47] will make a big difference to the
+[07:49] purists so let's get the row on the left
+[07:52] there so the next stage is to start
+[07:54] firing in some numbers so let's start
+[08:00] swapping these symbols out for numbers
+[08:02] so we've got a capital R which is
+[08:04] resistance and that's going to be three
+[08:06] point six and then we're going to times
+[08:09] that by a which is the cross-sectional
+[08:11] area which is this number here that
+[08:14] we've used the power of 10 on so that'll
+[08:16] be naught point 2 1 times by 10 to the
+[08:19] power of minus 6 and then we're going to
+[08:21] divide that by the length of the
+[08:23] conductor which is 500 times 10 to the
+[08:27] minus 3 they might look and I think well
+[08:30] why not just write that as a naught
+[08:31] point 5 because that's what that means
+[08:32] absolutely you could do that
+[08:34] but I like using the powers because if
+[08:36] you enter the habit of using them it
+[08:38] becomes a lot easier and will help you
+[08:40] out in other ways so let's bring our
+[08:42] calculator in and we'll have a look at
+[08:44] how to put this into the calculator so
+[08:46] in a slight break from the norm I'm not
+[08:49] using the casio FX 85 gt+ for this I'm
+[08:51] using the casio FX 83 DT plus like the
+[08:55] 85 GT plus only
+[08:57] - not so good right so let's have a look
+[08:59] at this so we're going to put this into
+[09:01] our calculator if you press this button
+[09:03] here this creates a fraction for you and
+[09:06] then you can start volleying the numbers
+[09:08] in three point six times by not point to
+[09:12] one so we can just put point two one
+[09:14] don't need to put the zero in it will do
+[09:16] that for us and then when we come to the
+[09:18] power of ten we don't put in times ten
+[09:20] like that we put in this button here
+[09:23] this is the power of ten button so
+[09:26] that's times ten to the power of and
+[09:28] then whatever number you put in after
+[09:30] this now it will treat as the power so
+[09:33] we just put minus six so use that button
+[09:36] don't be tempted to start doing times
+[09:37] ten to the power of because that can
+[09:39] cause some confusing results and then
+[09:42] we're going to move the cursor down and
+[09:43] do five hundred times by ten to the
+[09:46] power of minus three and if we hit
+[09:49] equals now we can see we've got our
+[09:51] value there of naught point naught
+[09:53] naught naught naught one five one
+[09:55] two
+[09:57] so that number is not much good to is
+[09:59] really that's not a very nice number to
+[10:02] use but on your calculator you've got
+[10:04] this beautiful button here marked Eng
+[10:06] and normally when I asked my learners
+[10:08] what that stands for on the calculator
+[10:09] their first response is English and
+[10:12] there's not an awful lot of English
+[10:13] going on our calculator here so it's not
+[10:15] translation but it stands for
+[10:17] engineering notation so if we press that
+[10:20] it puts it into the nearest engineering
+[10:23] notation value that it can so here we've
+[10:26] got one point five one two times ten to
+[10:31] the minus six and this is resistivity so
+[10:34] its measured in ohm meters but what
+[10:36] again we can do is one point five one
+[10:38] two times ten to the minus six doesn't
+[10:40] mean a lot when you're looking it up in
+[10:41] engineering documents or as the answer
+[10:43] to a question so we're going to take
+[10:45] this times ten to the minus six out of
+[10:47] here and we're just going to replace it
+[10:49] with its submultiple symbol and times 10
+[10:52] to the minus six means
+[10:53] micro so we've got one point five one
+[10:56] two micro ohm meters and that is the
+[11:01] resistivity of nekron and if you look
+[11:06] that value up on most websites for the
+[11:09] resistivity
+[11:10] of nichrome this is sort of at the top
+[11:11] end of the value that you'll find quoted
+[11:14] for that so allowing for the fact that
+[11:16] we have a little bit of resistance inside the leads of the tester and
+[11:19] various connections between those
+[11:21] devices you can see there that that is a
+[11:23] very acceptable reading so we now know
+[11:26] the resistivity of NIC Rome let's go and
+[11:28] take some measurements of our constantan
+[11:30] and we'll take a look at that in our
+[11:32] next video thank you very much for
+[11:34] watching
+[11:37] [Music]
+[11:50] [Music]
+[11:56] [Music]

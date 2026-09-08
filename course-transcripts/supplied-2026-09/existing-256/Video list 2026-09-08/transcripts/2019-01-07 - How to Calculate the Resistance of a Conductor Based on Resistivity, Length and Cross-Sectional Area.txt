@@ -1,0 +1,285 @@
+# How to Calculate the Resistance of a Conductor Based on Resistivity, Length and Cross-Sectional Area
+# https://www.youtube.com/watch?v=eJzgj9oHA3E
+
+[Music] hello and welcome to this electrical principal straightening video in this video we're going to be considering the subject of resistance and resistivity in a little bit more detail so in a previous couple of videos we looked at the things that could affect the resistance of a conductor we considered length cross sectional area and temperature for this video we're going to zoom in very closely on to length and cross sectional area and we're also going to consider the resistivity of copper so what we're going to do is we're going to use those three elements to calculate the resistance of a drum of cable in this case we've got 100 meters of six millimeter squared cable we're going to perform a calculation and we're going to figure out what the resistance of this drum of cable is now as always we like to tie our electrical principles into our real-world installation work when we're installing cables in the workplace before we even get the drum cable off the van we should be calculating what the resistance of our conductors will be so for example when we measure our r1 plus r2 value in a workshop at the design stage before a cable ever gets installed we should have calculated what that r1 plus r2 measurement will be once we've installed the cable in the back of your on-site guide you'll find a table error in appendix I which discusses the resistance of different sizes of copper conductor and aluminium conductor and that ties in very very closely with what we're going to be considering in this video so what we'll do we'll do some calculations we'll make sure that we've got our SI units right and then we'll measure the resistance of the drum of cable and see if our calculation is correct so let's see if we can calculate the resistance of our conductor so there's a few things we just need to think about before we actually start doing this calculation and that's how we're going to perform the calculations so we're going to need to know four things so first of all we start off with resistance now the mathematical symbol for resistance is our a capital R that gives us resistance and of course resistance is measured in ohms and has the unit symbol Omega we then have the resistivity of the material now resistivity we use the mathematical symbol Rho so Rho is resistivity is measured in ohm meters and we just combine the two symbols there Omega and M notice that this is ohm meters not ohms per meter that's something very different indeed so ohm meters is the unit for resistivity we've then got L and L is the length of the conductor so we're interested in the length of the conductor of course this is going to be measured in meters with the unit symbol M and then finally we have the cross sectional area and for the cross sectional area we're going to use a capital A for area and that's going to be measured in square meters and for that we use an M to the power of 2 or M Squared 4 meters squared so those are the four things that we're going to be playing around with in this calculation in this formula so for this calculation we're going to be using the following formula we've got R is equal to Rho times by L divided by a so there's our formula that we're going to be using now we've said that the resistivity of copper so the row for copper is the resistivity of copper is equal to 17 point two now notice this is important micro ohm millimeters now of course we're going to be dealing with the base unit for this this is currently in micro-millimeters we need to convert it into ohm meters so there's a couple of things that we just need to be a little bit careful about here we've got the MU symbol for micro now Micro means millionth which means we need to divide this number by a million or we can tack on the end of it simplify it in our calculator as we can change this two times ten to the power of minus six times ten to the minus six and then we've got this lowercase M in front of the meter symbol so this means milli or thousandths so we'd need to divide this number again by a thousand or we can just simply replace this with times ten to the minus three and again that's going to be really nice and simple when we put it into our calculator now because we're effectively taking this number and doing times ten to the minus six and then times 10 to the minus 3 if you're familiar with your laws of indices and if not please feel free to watch the video that I've recorded on this subject then all we've got to do is add these two powers together so that leaves us with row is equal to seventeen point two times ten to the minus nine and that is now in the base unit of ohm millimetres o millimeters so what we've actually done is we've divided this effectively by a billion and turned it into a much smaller number notice though this number and this number represent exactly the same amount of resistivity so they represent the same amount we've just expressed it in a slightly different way the other thing that we just need to be a little bit cautious about when we're doing this is the cross sectional area so the area in this question is we're dealing with a conductor that is six millimeters squared so we've got six millimeters squared of cable here now generally speaking where we see this lowercase M our brains immediately go well that's going to be times ten to the minus three however in this instance because we're dealing with area it doesn't quite work that way if you think about a metre squared which would look like this so let's say that this is a meter squared so it measures a meter by meter if on this side we've got one meter that is equal to a thousand millimeters so that is a thousand millimeters so one millimeter is a thousandth of a meter same on this side we've got one meter is equal to one thousand millimeters one thousand millimeters now what that means is that this side is made up of a thousand millimeters and this side is made up of a thousand milliliters if we find the area of this square in meters squared we end up with 1 times 1 which gives us 1 meter squared 1 meter squared now if we find the area of this square in millimeters squared what we actually end up doing is a thousand times by a thousand now a thousand times by a thousand is obviously going to give us 1 million millimeters squared so here we've got 1 million millimeters squared okay so we've got a million millimeters squared here within 1 meter squared so actually 1 millimeter squared is not a thousandth of a meter squared it is a millionth of a meter squared so what that means is that actually this will not be used we're not going to use times 10 to the minus 3 we're going to use in this case we're going to take that m and we're going to replace it with times 10 to the minus 6 so the area is actually equal to 6 times 10 to the minus 6 so we'll just tidy this up a little bit and then we'll continue with the couch so the actual area here is going to be equal to six times ten to the minus six like that so now let's perform our calculation and see what we come out with so we're going to take our formula R equals Rho times L over a and then we're going to put all the individual numbers in so we've got resistivity is equal to seventeen point two times by 10 to the minus nine and then we're going to times that by the length of the conductor and the drumming question is a hundred meters long so we times in that by 100 we don't need to do anything to this number cuz it's already in the base unit of meters and then what we're going to do is we're going to take that and we're going to divide it by six times 10 to the power of minus six so what that ends up looking like will be this if we go over to our casio FX 85 gt+ now we can see what that will be now again this is the nicest way of putting this into the calculator we can do it like this we just press the fraction button there so we can put it in exactly as it appears in our calculation and avoid any errors so notice we go 17 point two and then we press this button down here this is our times 10 to the power of button and then we need to make it into minus 9 so that's our resistivity value entered now when we start doing the next bit it ignores now the times 10 to the minus 9 it won't multiply that by what we're about to do here it performs the next part of the calculation times by 100 and then we're going to divide that by 6 times 10 to the minus 6 notice that Oddity normally when we see milli we change that into -3 but because this is in millimeters squared it becomes times 10 to the minus 6 so if we hit equals now we'll get our answer out and we can see there that our answer is going to be not 0.28 6 ohms nor point to 8 it's actually not 0.286 or occurring what we'll probably do here though is we will ran this off to do two decimal places because that's the precision that our equipment will measure to so we'll go naught point two around that up this number is closer to is above five so we're going to round this up and that becomes not point two nine ohms so we should get a resistance on our cable of naught point two nine ohms so now we'll go over back to our drum of cable we'll measure it up and we'll see if we get naught point two nine ohms or something very close to it so we've got our drum of cable all ready to go it's a hundred meters of six millimeters squared conductor so this is just in single so there's only one conductor one core for us to worry about our calculation that we did told us that we should be getting a resistance for this conductor of not 0.286 recurring of an ohm we've got our mega multi function tester ready to go the tester won't read to three decimal places only goes as far as two decimal places and so we expect the meter to round this value off two it will be point two nine of an ohm if we've done our calculations correctly so we've got this measuring so we'll just reveal what the reading on the meter is and as you can see there we're getting a reading of naught point two nine of an ohm so that's what the the value of resistance of this drum of cable is so we've seen how we can use that very important formula R equals Rho times L over a to calculate the resistance of a conductor we can use that to calculate values of resistance for any cross sectional area any length of conductor and any material of conductor and we can use that to make sure that our circuits are going to be designed and installed properly and that they keep the installation safe thank you very much for watching [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principal straightening video in this
+[00:12] video we're going to be considering the
+[00:13] subject of resistance and resistivity in
+[00:16] a little bit more detail so in a
+[00:18] previous couple of videos we looked at
+[00:20] the things that could affect the
+[00:21] resistance of a conductor we considered
+[00:24] length cross sectional area and
+[00:26] temperature for this video we're going
+[00:28] to zoom in very closely on to length and
+[00:31] cross sectional area and we're also
+[00:33] going to consider the resistivity of
+[00:35] copper so what we're going to do is
+[00:37] we're going to use those three elements
+[00:39] to calculate the resistance of a drum of
+[00:43] cable in this case we've got 100 meters
+[00:45] of six millimeter squared cable we're
+[00:48] going to perform a calculation and we're
+[00:50] going to figure out what the resistance
+[00:51] of this drum of cable is now as always
+[00:54] we like to tie our electrical principles
+[00:57] into our real-world installation work
+[00:59] when we're installing cables in the
+[01:01] workplace before we even get the drum
+[01:03] cable off the van we should be
+[01:05] calculating what the resistance of our
+[01:08] conductors will be so for example when
+[01:11] we measure our r1 plus r2 value in a
+[01:13] workshop at the design stage before a
+[01:15] cable ever gets installed we should have
+[01:18] calculated what that r1 plus r2
+[01:20] measurement will be once we've installed
+[01:22] the cable in the back of your on-site
+[01:25] guide you'll find a table error in
+[01:26] appendix I which discusses the
+[01:29] resistance of different sizes of copper
+[01:31] conductor and aluminium conductor and
+[01:33] that ties in very very closely with what
+[01:36] we're going to be considering in this
+[01:37] video so what we'll do we'll do some
+[01:40] calculations we'll make sure that we've
+[01:42] got our SI units right and then we'll
+[01:44] measure the resistance of the drum of
+[01:46] cable and see if our calculation is
+[01:48] correct
+[01:51] so let's see if we can calculate the
+[01:54] resistance of our conductor so there's a
+[01:58] few things we just need to think about
+[01:59] before we actually start doing this
+[02:01] calculation and that's how we're going
+[02:03] to perform the calculations so we're
+[02:05] going to need to know four things so
+[02:07] first of all we start off with
+[02:09] resistance now the mathematical symbol
+[02:11] for resistance is our a capital R that
+[02:15] gives us resistance and of course
+[02:17] resistance is measured in ohms and has
+[02:19] the unit symbol Omega we then have the
+[02:23] resistivity of the material
+[02:26] now resistivity we use the mathematical
+[02:29] symbol Rho so Rho is resistivity
+[02:33] is measured in ohm meters
+[02:36] and we just combine the two symbols
+[02:39] there Omega and M notice that this is
+[02:42] ohm meters not ohms per meter that's
+[02:45] something very different indeed so ohm
+[02:47] meters is the unit for resistivity we've
+[02:51] then got L and L is the length of the
+[02:55] conductor so we're interested in the
+[02:57] length of the conductor of course this
+[02:59] is going to be measured in meters with
+[03:02] the unit symbol M and then finally we
+[03:05] have the cross sectional area and for
+[03:08] the cross sectional area we're going to
+[03:10] use a capital A for area and that's
+[03:13] going to be measured in square meters
+[03:15] and for that we use an M to the power of
+[03:19] 2 or M Squared 4 meters squared so those
+[03:22] are the four things that we're going to
+[03:24] be playing around with in this
+[03:26] calculation in this formula so for this
+[03:29] calculation we're going to be using the
+[03:31] following formula we've got R is equal
+[03:34] to Rho times by L divided by a so
+[03:40] there's our formula that we're going to
+[03:41] be using now we've said that the
+[03:43] resistivity of copper so the row for
+[03:46] copper is the resistivity of copper is
+[03:48] equal to 17 point two now notice this is
+[03:53] important micro ohm millimeters
+[03:59] now of course we're going to be dealing
+[04:01] with the base unit for this this is
+[04:04] currently in micro-millimeters we need
+[04:06] to convert it into ohm meters so there's
+[04:09] a couple of things that we just need to
+[04:10] be a little bit careful about here
+[04:12] we've got the MU symbol for micro
+[04:15] now Micro means millionth which means we
+[04:18] need to divide this number by a million
+[04:20] or we can tack on the end of it simplify
+[04:22] it in our calculator as we can change
+[04:25] this two times ten to the power of minus
+[04:30] six times ten to the minus six and then
+[04:34] we've got this lowercase M in front of
+[04:37] the meter symbol so this means milli or
+[04:39] thousandths so we'd need to divide this
+[04:41] number again by a thousand or we can
+[04:44] just simply replace this with times ten
+[04:48] to the minus three and again that's
+[04:51] going to be really nice and simple when
+[04:52] we put it into our calculator now
+[04:55] because we're effectively taking this
+[04:56] number and doing times ten to the minus
+[04:58] six and then times 10 to the minus 3 if
+[05:01] you're familiar with your laws of
+[05:03] indices and if not please feel free to
+[05:04] watch the video that I've recorded on
+[05:06] this subject then all we've got to do is
+[05:08] add these two powers together so that
+[05:11] leaves us with row is equal to seventeen
+[05:15] point two times ten to the minus nine
+[05:20] and that is now in the base unit of ohm
+[05:24] millimetres o millimeters so what we've
+[05:27] actually done is we've divided this
+[05:28] effectively by a billion and turned it
+[05:31] into a much smaller number notice though
+[05:33] this number and this number represent
+[05:36] exactly the same amount of resistivity
+[05:38] so they represent the same amount we've
+[05:41] just expressed it in a slightly
+[05:42] different way the other thing that we
+[05:44] just need to be a little bit cautious
+[05:46] about when we're doing this is the cross
+[05:48] sectional area so the area in this
+[05:51] question is we're dealing with a
+[05:54] conductor that is six millimeters
+[05:57] squared so we've got six millimeters
+[06:00] squared of cable here now generally
+[06:04] speaking where we see this lowercase M
+[06:06] our brains immediately go well that's
+[06:09] going to be times ten to the minus three
+[06:11] however in this instance because we're
+[06:15] dealing with area it doesn't quite work
+[06:18] that way if you think about a metre squared which
+[06:25] would look like this
+[06:27] so let's say that this is a meter
+[06:30] squared so it measures a meter by meter
+[06:31] if on this side we've got one meter that
+[06:35] is equal to a thousand millimeters so
+[06:40] that is a thousand millimeters so one
+[06:43] millimeter is a thousandth of a meter
+[06:45] same on this side we've got one meter is
+[06:48] equal to one thousand millimeters one
+[06:54] thousand millimeters now what that means
+[06:58] is that this side is made up of a
+[07:01] thousand millimeters and this side is
+[07:03] made up of a thousand milliliters if we
+[07:04] find the area of this square in meters
+[07:09] squared we end up with 1 times 1 which
+[07:13] gives us 1 meter squared 1 meter squared
+[07:18] now if we find the area of this square
+[07:21] in millimeters squared what we actually
+[07:26] end up doing is a thousand times by a
+[07:30] thousand now a thousand times by a
+[07:33] thousand is obviously going to give us 1
+[07:37] million millimeters squared so here
+[07:42] we've got 1 million millimeters squared
+[07:46] okay so we've got a million millimeters
+[07:50] squared here within 1 meter squared so
+[07:52] actually 1 millimeter squared is not a
+[07:55] thousandth of a meter squared
+[07:57] it is a millionth of a meter squared so
+[08:00] what that means is that actually this
+[08:02] will not be used we're not going to use
+[08:04] times 10 to the minus 3 we're going to
+[08:07] use in this case we're going to take
+[08:08] that m and we're going to replace it
+[08:10] with times 10 to the minus 6 so the area
+[08:15] is actually equal to 6 times 10 to the
+[08:19] minus 6 so we'll just tidy this up a
+[08:22] little bit and then we'll continue with
+[08:24] the couch
+[08:27] so the actual area here is going to be
+[08:30] equal to six times ten to the minus six
+[08:35] like that
+[08:36] so now let's perform our calculation and
+[08:39] see what we come out with so we're going
+[08:41] to take our formula R equals Rho times L
+[08:45] over a and then we're going to put all
+[08:48] the individual numbers in so we've got
+[08:50] resistivity is equal to seventeen point
+[08:53] two times by 10 to the minus nine and
+[08:59] then we're going to times that by the
+[09:01] length of the conductor and the drumming
+[09:03] question is a hundred meters long so we
+[09:05] times in that by 100 we don't need to do
+[09:07] anything to this number cuz it's already
+[09:09] in the base unit of meters and then what
+[09:11] we're going to do is we're going to take
+[09:12] that and we're going to divide it by six
+[09:15] times 10 to the power of minus six so
+[09:20] what that ends up looking like will be
+[09:21] this if we go over to our casio FX 85
+[09:24] gt+ now we can see what that will be now
+[09:27] again this is the nicest way of putting
+[09:28] this into the calculator we can do it
+[09:30] like this we just press the fraction
+[09:32] button there so we can put it in exactly
+[09:33] as it appears in our calculation and
+[09:36] avoid any errors so notice we go 17
+[09:39] point two and then we press this button
+[09:42] down here this is our times 10 to the
+[09:44] power of button and then we need to make
+[09:46] it into minus 9 so that's our
+[09:50] resistivity value entered now when we
+[09:52] start doing the next bit it ignores now
+[09:55] the times 10 to the minus 9 it won't
+[09:58] multiply that by what we're about to do
+[09:59] here it performs the next part of the
+[10:01] calculation times by 100 and then we're
+[10:04] going to divide that by 6 times 10 to
+[10:08] the minus 6 notice that Oddity normally
+[10:11] when we see milli we change that into -3
+[10:14] but because this is in millimeters
+[10:17] squared it becomes times 10 to the minus
+[10:20] 6 so if we hit equals now we'll get our
+[10:22] answer out and we can see there that our
+[10:25] answer is going to be not 0.28 6 ohms
+[10:31] nor point to 8 it's actually not 0.286
+[10:34] or occurring
+[10:36] what we'll probably do here though is we
+[10:39] will ran this off to do two decimal
+[10:41] places because that's the precision that
+[10:45] our equipment will measure to so we'll
+[10:47] go naught point two around that up this
+[10:51] number is closer to is above five so
+[10:54] we're going to round this up and that
+[10:56] becomes not point two nine ohms so we
+[11:00] should get a resistance on our cable of
+[11:02] naught point two nine ohms so now we'll
+[11:05] go over back to our drum of cable we'll
+[11:07] measure it up and we'll see if we get
+[11:09] naught point two nine ohms or something
+[11:11] very close to it so we've got our drum
+[11:15] of cable all ready to go it's a hundred
+[11:18] meters of six millimeters squared
+[11:20] conductor so this is just in single so
+[11:22] there's only one conductor one core for
+[11:24] us to worry about our calculation that
+[11:27] we did told us that we should be getting
+[11:29] a resistance for this conductor of not
+[11:31] 0.286 recurring of an ohm we've got our
+[11:35] mega multi function tester ready to go
+[11:37] the tester won't read to three decimal
+[11:40] places only goes as far as two decimal
+[11:42] places and so we expect the meter to
+[11:45] round this value off two it will be
+[11:48] point two nine of an ohm if we've done
+[11:50] our calculations correctly so we've got
+[11:52] this measuring so we'll just reveal what
+[11:55] the reading on the meter is and as you
+[11:59] can see there we're getting a reading of
+[12:01] naught point two nine of an ohm so
+[12:04] that's what the the value of resistance
+[12:07] of this drum of cable is so we've seen
+[12:10] how we can use that very important
+[12:12] formula R equals Rho times L over a to
+[12:15] calculate the resistance of a conductor
+[12:17] we can use that to calculate values of
+[12:21] resistance for any cross sectional area
+[12:23] any length of conductor and any material
+[12:26] of conductor and we can use that to make
+[12:28] sure that our circuits are going to be
+[12:30] designed and installed properly and that
+[12:32] they keep the installation safe thank
+[12:35] you very much for watching
+[12:38] [Music]

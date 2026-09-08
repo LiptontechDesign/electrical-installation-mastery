@@ -1,0 +1,338 @@
+# AC Theory: How to Calculate Power Factor, Phase Angle & Power Factor Correction Capacitor of a Coil
+# https://www.youtube.com/watch?v=2pRKalO5g7w
+
+[Music] hello and welcome to this electrical principals training video in a previous video in this series we looked at what happened when we took coil and connected it to a DC supply and then to an AC supply we took various readings of voltage and current you can see those on the screen in the top left hand corner and then we proceeded to calculate the resistance of the coil the impedance of the coil the inductive reactants and the inductance of the coil in this video we're going to continue our calculations and figure out what the power factor of the coil was the phase angle will also produce a graph of that phase angle between the voltage and the current and then we'll figure out what size of capacitor we would need to install if we wanted to correct that power factor so let's get on with the rest of our calculations the next thing we're going to do is to try and calculate the power factor now the power factor of a circuit is very easy to find as long as you know two of the values relating to the circuit the way that we'll do it in this circuit because we don't have we've not broken the AC voltage down into its resistive voltage and it's inductive voltage but we do know the resistance and the impedance so that means that we can use this formula the power factor is equal to R over said at this point if any of this looks unfamiliar to you if this is being kind of lobbed at you from nowhere then please go back and watch my AC Theory playlist that features on my channel because this is going to really help you out understanding where all of these formulas have come from this is kind of the application of lots and lots of previous information so let's find our power factor so we've got a hundred and seventeen point four two divided by four hundred and sixty one point three so again we'll pop that into the calculator one hundred and seventeen point four two divided by four hundred and sixty one point three and that comes out looking like naught point two five so you can see there that we have got a really really poor power factor in this circuit we have got naught point two five for our power factor which is very very poor indeed that is a quite terrible power factor I think I'll do at this stage if I run it up to three decimal places because that's going to make the next stage a little bit more accurate so look at the for the number three is a five so that means we're going to round this up to become five so we've got naught point two five five as the power factor now remember that there is no units on power factor it's just a ratio and effectively it's the ratio between two sides of a triangle which brings is really nice and neatly on to the next part of the calculation the next part of the calculation is to try and find the phase angle now the phase angle is the angle that the voltage and the current are out of phase by so this is an inductive circuit so we know that the current is lagging the voltage so what that means is that we can use some information that we've calculated so far to figure out what the phase angle is and that information actually comes from here because what we did here was we used the value of resistance divided by the value of impedance and actually if you remember back to a previous video in this series you'll remember that we can represent the relationships between resistance reactants and impedance in an AC circuit by using a right angle triangle now at this point here we're interested in this angle because this angle here is also the same angle that the current and voltage are out of phase by so what that means is that when we did our divided by Z we actually did the adjacent of this triangle divided by the hypotenuse again if you're not sure about your trigonometry please go watch my video that I made on that and it'll hopefully help you to understand what we do in here a little bit more now it's worth noting that power factor is also equal to the cosine of theta theta being the angle that current and voltage are out of phase by so what that means is that if we want to find the angle of this we know that the cosine of theta which is the same as the power factor and the power factor is not point two five five so what that means is that if we want to find the angle theta we need to carry out the following kind of transposition what we're going to do is we're going to find the inverse cosine of not point two five five like that so that's what we're going to find here the inverse cosine of not point two five now what this means is that those of you who perhaps went to school a number of years ago may remember that before the advent of scientific calculators we had books that were absolutely full of pages and pages of angles with columns next to them that showed you their sine values their cosine values in their tangent values and you'd look up this value in the table not 0.255 or as near as you could get to it and then you would scan across the columns and look at what the angle theta was well in a way all of that information is now contained in our calculators so what we do is we press shift and we press cos and that brings up this symbol here sometimes this is referred to is the inverse cosine or the arc cosine but what we're going to do here is we're just basically asking the calculator please can you tell me what is the angle that has a cosine of not point two five five and the calculator will figure out what that is and it will tell us that theta is equal to seventy five point and let's go with two degrees so this angle here is seventy five point two degrees and the angle that the voltage and the current are out of phase by so here's our voltage and here's our current so this is the voltage into the circuit and the current that is flowing into the circuit there out of phase by seventy five point two degrees not going to scale so now we know the phase angle we know how far the current is lagging the voltage by in this circuit so now we figured out the phase angle that's occurring within our coil that angle between the voltage in the current in our circuit what we can now do is represent that on a graph as a wave diagram so I'm using the graphing calculator at desmos comm and I'm going to show you how we can set this up to show what's happening with the voltage and the current inside our circuit so if I first of all just changed the settings click on this little spanner here and change the settings to degrees so that's the first thing that we're going to do now we want to show this happening across let's say three full cycles so we'll go from minus 10 degrees on the x-axis to this point which will be if we put that at 1100 that takes us past the 1080 that would represent three full rotations and on the y-axis on this graph we're not going to worry too much about the vertical values about the peak values of our waveforms we're just interesting in showing that phase shift so if we go from minus let's say minus 1.5 on the y axis up to 1.5 we've now got the stage set so that we can create our waveform on here so we'll just close the spanner down and then we'll type the formulas into the bars over here so first of all to create a sine wave if we just type in y equals the sine of X so what that's doing is it's taking every sort of angle along the x axis and treating it as an angle in degrees and then it's finding the sine of that value and plotting it as the Y value so we could use this to represent our voltage waveform so if we now want to put in our current waveform we simply type in y equals the sine of X again and you can see that's created this green waveform I'd like it to be blue I don't know why I just always used blue for my current values so there we go we've got our current waveform in blue now and what we're gonna do here is show that there is a lagging phase angle of seventy five point two degrees so if we put in minus seventy five point two now you'll notice that the blue waveform is completely disappeared and what's happened is it's been moved way down the graph so if we were to go way down here we'd find that all the way down at the bottom so what we can do instead of just completely losing away four million actually being of any value if we put our x- 75.2 in brackets you can see that we've created our current waveform and what you can see happening here is there we've got our voltage waveform peaking at 90 degrees and our current waveform is now peaking at a hundred and sixty five point two degrees which means that the current waveform is hitting all of its kind of significant points seventy five point two degrees after the voltage waveform has hit it's kind of significant point in realities all the points it's just very obvious when you look at two points that really stand out on the graph so you can see here if we do one hundred and sixty-five point to take away ninety we end up with a phase angle here a difference between the waveforms of seventy five point two degrees so now we could print that out or we could take a screenshot of that and annotate it if we wanted to and therefore we've got a copy of our waveform the final thing that we need to do now is figure out if we want to correct this terrible power factor and bring the current and the voltage back into phase with each other we need to figure out what size capacitor to connect in to this circuit now we can do that by let's say we want to find the capacitance the first thing that we need to acknowledge and remember is that if we had a capacitive circuit then it would look something like this okay and we would have our value for XC here so this is still resistance this is still impedance but the capacitive reactance pointing the opposite direction to the inductive reactance so what that means is that our capacitance if we want to know what capacitive reactances for the circuit to counteract the inductive reactance we have to acknowledge the capacitive reactance and inductive reactance need to be the same and if you remember from a previous video to calculate capacity reactants we use the formula that looks like this 1 over 2 pi FC now we want to get C by itself so we're not interested in X C we already know that we know the frequency we know these constants we want to know what C is so to do that first of all we think right what's happening with this C well at the minute it's kind of trapped under here as a divider so what that means we've got to do is we've got to multiply both sides by this whole chunk under here so what we're going to do is we're going to multiply both sides by that big chunk so we end up with X C times 2 pi times F times C would be equal to 1 and then we want to get C by itself well at the minute on this side we are multiplying C by this whole chunk so the opposite of multiplying by this whole chunk is to divide by that whole chunk which brings us to this point C is equal to 1 over X C 2 pi F and now we can put our numbers into that calculation so we end up with C is equal to 1 over X C had a value of the same as Excel and Excel was 446 point one so we times up by 2 times up by PI and then times that by the frequency of 50 and that's going to give us our answer so there we go we can do 1 over 2 times pi times 50 and I've learnt to put the X in so I'll go back and put that now 446 point 1 and there goes our answer now what's interesting about this is the calculator has returned this in the proper way it said one point four to seven times 10 to the minus 5 but we don't have kind of an engineering prefix that corresponds to times 10 to the minus 5 so what we need to do is we push this beautiful little button on our calculator marked Eng all of my learners initially think that that means English which it absolutely does not okay it means engineering and when we do that we end up with 14 point two seven and that's times ten to the minus six so we replace that with the symbol micro and of course that's in Ference so if we were to connect two capacitor into this circuit that had a value of fourteen point two seven micro farad's we would correct this poor power factor and that would give us a circuit that was operating much more efficiently and actually we'd find that it reduced the current flow into the circuit as well so I'm sure you'll agree we have produced an awful lot of information just based on some measures of voltage and current and also the periodic time which we we kind of already know the frequency and so it's amazing just what you can find out about from a coil just by having a couple of AC and DC supplies and then performing some very clever measurements and calculations thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in a previous
+[00:13] video in this series we looked at what
+[00:15] happened when we took coil and connected
+[00:17] it to a DC supply and then to an AC
+[00:20] supply we took various readings of
+[00:22] voltage and current you can see those on
+[00:24] the screen in the top left hand corner
+[00:25] and then we proceeded to calculate the
+[00:28] resistance of the coil the impedance of
+[00:30] the coil the inductive reactants and the
+[00:33] inductance of the coil in this video
+[00:35] we're going to continue our calculations
+[00:37] and figure out what the power factor of
+[00:39] the coil was the phase angle will also
+[00:42] produce a graph of that phase angle
+[00:45] between the voltage and the current and
+[00:47] then we'll figure out what size of
+[00:49] capacitor we would need to install if we
+[00:51] wanted to correct that power factor so
+[00:53] let's get on with the rest of our
+[00:54] calculations the next thing we're going
+[00:58] to do is to try and calculate the power
+[00:59] factor now the power factor of a circuit
+[01:05] is very easy to find as long as you know
+[01:06] two of the values relating to the
+[01:08] circuit the way that we'll do it in this
+[01:10] circuit because we don't have we've not
+[01:13] broken the AC voltage down into its
+[01:15] resistive voltage and it's inductive
+[01:18] voltage but we do know the resistance
+[01:20] and the impedance so that means that we
+[01:22] can use this formula the power factor is
+[01:24] equal to R over said at this point if
+[01:29] any of this looks unfamiliar to you if
+[01:31] this is being kind of lobbed at you from
+[01:33] nowhere then please go back and watch my
+[01:35] AC Theory playlist that features on my
+[01:37] channel because this is going to really
+[01:39] help you out understanding where all of
+[01:41] these formulas have come from this is
+[01:43] kind of the application of lots and lots
+[01:45] of previous information so let's find
+[01:48] our power factor so we've got a hundred
+[01:51] and seventeen point four two divided by
+[01:54] four hundred and sixty one point three
+[01:58] so again we'll pop that into the
+[01:59] calculator one hundred and seventeen
+[02:01] point four two divided by four hundred
+[02:04] and sixty one point three and that comes
+[02:07] out looking like naught point two
+[02:11] five so you can see there that we have
+[02:13] got a really really poor power factor in
+[02:16] this circuit we have got naught point
+[02:20] two five for our power factor which is
+[02:24] very very poor indeed that is a quite
+[02:27] terrible power factor I think I'll do at
+[02:29] this stage if I run it up to three
+[02:30] decimal places because that's going to
+[02:32] make the next stage a little bit more
+[02:33] accurate so look at the for the number
+[02:35] three is a five so that means we're
+[02:37] going to round this up to become five so
+[02:39] we've got naught point two five five as
+[02:42] the power factor now remember that there
+[02:44] is no units on power factor it's just a
+[02:45] ratio and effectively it's the ratio
+[02:48] between two sides of a triangle which
+[02:50] brings is really nice and neatly on to
+[02:52] the next part of the calculation the
+[02:54] next part of the calculation is to try
+[02:57] and find the phase angle now the phase
+[03:00] angle is the angle that the voltage and
+[03:02] the current are out of phase by so this
+[03:06] is an inductive circuit so we know that
+[03:07] the current is lagging the voltage so
+[03:11] what that means is that we can use some
+[03:14] information that we've calculated so far
+[03:16] to figure out what the phase angle is
+[03:18] and that information actually comes from
+[03:20] here because what we did here was we
+[03:21] used the value of resistance divided by
+[03:25] the value of impedance and actually if
+[03:27] you remember back to a previous video in
+[03:28] this series you'll remember that we can
+[03:30] represent the relationships between
+[03:32] resistance reactants and impedance in an
+[03:35] AC circuit by using a right angle
+[03:37] triangle now at this point here we're
+[03:41] interested in this angle because this
+[03:43] angle here is also the same angle that
+[03:45] the current and voltage are out of phase
+[03:47] by so what that means is that when we
+[03:50] did our divided by Z we actually did the
+[03:52] adjacent of this triangle divided by the
+[03:55] hypotenuse again if you're not sure
+[03:57] about your trigonometry please go watch
+[03:58] my video that I made on that and it'll
+[04:00] hopefully help you to understand what we
+[04:02] do in here a little bit more now it's
+[04:04] worth noting that power factor is also
+[04:07] equal to the cosine of theta theta being
+[04:11] the angle that current and voltage are
+[04:12] out of phase by so what that means is
+[04:16] that if we want to find the
+[04:19] angle of this we know that the cosine of
+[04:23] theta which is the same as the power
+[04:25] factor and the power factor is not point
+[04:28] two five five so what that means is that
+[04:32] if we want to find the angle theta we
+[04:35] need to carry out the following kind of
+[04:37] transposition what we're going to do is
+[04:40] we're going to find the inverse cosine
+[04:42] of not point two five five like that so
+[04:46] that's what we're going to find here the
+[04:48] inverse cosine of not point two five
+[04:49] now what this means is that those
+[04:51] of you who perhaps went to school a
+[04:53] number of years ago may remember that
+[04:55] before the advent of scientific
+[04:57] calculators we had books that were
+[05:00] absolutely full of pages and pages of
+[05:02] angles with columns next to them that
+[05:05] showed you their sine values their
+[05:07] cosine values in their tangent values
+[05:09] and you'd look up this value in the
+[05:12] table not 0.255 or as near as you could
+[05:14] get to it and then you would scan across
+[05:16] the columns and look at what the angle
+[05:18] theta was well in a way all of that
+[05:21] information is now contained in our
+[05:23] calculators so what we do is we press
+[05:25] shift and we press cos and that brings
+[05:28] up this symbol here sometimes this is
+[05:29] referred to is the inverse cosine or the
+[05:31] arc cosine but what we're going to do
+[05:34] here is we're just basically asking the
+[05:36] calculator please can you tell me what
+[05:38] is the angle that has a cosine of not
+[05:42] point two five five and the calculator
+[05:45] will figure out what that is and it will
+[05:48] tell us that theta is equal to seventy
+[05:51] five point and let's go with two degrees
+[05:55] so this angle here is seventy five point
+[05:58] two degrees and the angle that the
+[06:00] voltage and the current are out of phase
+[06:03] by so here's our voltage and here's our
+[06:06] current so this is the voltage into the
+[06:08] circuit and the current that is flowing
+[06:09] into the circuit there out of phase by
+[06:13] seventy five point two degrees not going
+[06:15] to scale so now we know the phase angle
+[06:18] we know how far the current is lagging
+[06:19] the voltage by in this circuit so now we
+[06:22] figured out the phase angle that's
+[06:23] occurring within our coil that angle
+[06:25] between the voltage in the current in
+[06:27] our circuit what we can now do is
+[06:29] represent that
+[06:30] on a graph as a wave diagram so I'm
+[06:33] using the graphing calculator at desmos
+[06:36] comm and I'm going to show you how we
+[06:38] can set this up to show what's happening
+[06:40] with the voltage and the current inside
+[06:42] our circuit so if I first of all just
+[06:46] changed the settings click on this
+[06:47] little spanner here and change the
+[06:48] settings to degrees so that's the first
+[06:52] thing that we're going to do now we want
+[06:53] to show this happening across let's say
+[06:56] three full cycles so we'll go from minus
+[06:59] 10 degrees on the x-axis to this point
+[07:03] which will be if we put that at 1100
+[07:06] that takes us past the 1080 that would
+[07:09] represent three full rotations and on
+[07:13] the y-axis on this graph we're not going
+[07:15] to worry too much about the vertical
+[07:18] values about the peak values of our
+[07:21] waveforms we're just interesting in
+[07:22] showing that phase shift so if we go
+[07:25] from minus let's say minus 1.5 on the y
+[07:30] axis up to 1.5 we've now got the stage
+[07:34] set so that we can create our waveform
+[07:38] on here so we'll just close the spanner
+[07:40] down and then we'll type the formulas
+[07:42] into the bars over here so first of all
+[07:45] to create a sine wave if we just type in
+[07:47] y equals the sine of X so what that's
+[07:51] doing is it's taking every sort of angle
+[07:54] along the x axis and treating it as an
+[07:57] angle in degrees and then it's finding
+[07:59] the sine of that value and plotting it
+[08:02] as the Y value so we could use this to
+[08:07] represent our voltage waveform so if we
+[08:10] now want to put in our current waveform
+[08:11] we simply type in y equals the sine of X
+[08:14] again and you can see that's created
+[08:17] this green waveform I'd like it to be
+[08:18] blue I don't know why I just always used
+[08:20] blue for my current values so there we
+[08:22] go we've got our current waveform in
+[08:24] blue now and what we're gonna do here is
+[08:27] show that there is a lagging phase angle
+[08:30] of seventy five point two degrees so if
+[08:33] we put in minus seventy five point two
+[08:36] now you'll notice that the blue waveform
+[08:38] is completely disappeared and what's
+[08:39] happened is it's been moved way down the
+[08:42] graph so if we were to go way down here
+[08:44] we'd find that all the way down at the
+[08:46] bottom so what we can do instead of just
+[08:50] completely losing away four million
+[08:52] actually being of any value if we put
+[08:54] our x- 75.2 in brackets you can see that
+[09:00] we've created our current waveform and
+[09:03] what you can see happening here is there
+[09:05] we've got our voltage waveform peaking
+[09:09] at 90 degrees and our current waveform
+[09:12] is now peaking at a hundred and sixty
+[09:15] five point two degrees which means that
+[09:18] the current waveform is hitting all of
+[09:20] its kind of significant points seventy
+[09:23] five point two degrees after the voltage
+[09:26] waveform has hit it's kind of
+[09:29] significant point in realities all the
+[09:32] points it's just very obvious when you
+[09:33] look at two points that really stand out
+[09:35] on the graph so you can see here if we
+[09:37] do one hundred and sixty-five point to
+[09:39] take away ninety we end up with a phase
+[09:43] angle here a difference between the
+[09:45] waveforms of seventy five point two
+[09:47] degrees so now we could print that out
+[09:50] or we could take a screenshot of that
+[09:52] and annotate it if we wanted to and
+[09:54] therefore we've got a copy of our
+[09:57] waveform the final thing that we need to
+[10:01] do now is figure out if we want to
+[10:03] correct this terrible power factor and
+[10:05] bring the current and the voltage back
+[10:06] into phase with each other we need to
+[10:08] figure out what size capacitor to
+[10:11] connect in to this circuit now we can do
+[10:13] that by let's say we want to find the
+[10:16] capacitance the first thing that we need
+[10:18] to acknowledge and remember is that if
+[10:20] we had a capacitive circuit then it
+[10:23] would look something like this
+[10:25] okay and we would have our value for XC
+[10:27] here so this is still resistance this is
+[10:29] still impedance but the capacitive
+[10:32] reactance pointing the opposite
+[10:34] direction to the inductive reactance so
+[10:37] what that means is that our capacitance
+[10:41] if we want to know what capacitive
+[10:43] reactances for the circuit to counteract
+[10:45] the inductive reactance we have to
+[10:47] acknowledge the capacitive reactance and
+[10:49] inductive reactance need to be the same
+[10:51] and if you remember from a previous
+[10:52] video to calculate capacity
+[10:54] reactants we use the formula that looks
+[10:56] like this 1 over 2 pi FC now we want to
+[11:01] get C by itself so we're not interested
+[11:04] in X C we already know that we know the
+[11:05] frequency we know these constants we
+[11:08] want to know what C is so to do that
+[11:10] first of all we think right what's
+[11:13] happening with this C well at the minute
+[11:15] it's kind of trapped under here as a
+[11:17] divider so what that means we've got to
+[11:19] do is we've got to multiply both sides
+[11:21] by this whole chunk under here so what
+[11:24] we're going to do is we're going to
+[11:25] multiply both sides by that big chunk so
+[11:28] we end up with X C times 2 pi times F
+[11:31] times C would be equal to 1 and then we
+[11:34] want to get C by itself well at the
+[11:36] minute on this side we are multiplying C
+[11:39] by this whole chunk so the opposite of
+[11:42] multiplying by this whole chunk is to
+[11:44] divide by that whole chunk which brings
+[11:46] us to this point C is equal to 1 over X
+[11:50] C 2 pi F and now we can put our numbers
+[11:56] into that calculation so we end up with
+[11:58] C is equal to 1 over X C had a value of
+[12:04] the same as Excel and Excel was 446
+[12:09] point one so we times up by 2 times up
+[12:13] by PI and then times that by the
+[12:15] frequency of 50 and that's going to give
+[12:18] us our answer so there we go we can do 1
+[12:21] over 2 times pi times 50 and I've learnt
+[12:30] to put the X in so I'll go back and put
+[12:31] that now 446 point 1 and there goes our
+[12:35] answer now what's interesting about this
+[12:37] is the calculator has returned this in
+[12:39] the proper way it said one point four to
+[12:41] seven times 10 to the minus 5 but we
+[12:45] don't have kind of an engineering prefix
+[12:48] that corresponds to times 10 to the
+[12:50] minus 5 so what we need to do is we push
+[12:52] this beautiful little button on our
+[12:53] calculator marked Eng all of my learners
+[12:56] initially think that that means English
+[12:58] which it absolutely does not okay it
+[13:01] means engineering and when we do that we
+[13:04] end up with 14
+[13:06] point two seven and that's times ten to
+[13:11] the minus six so we replace that with
+[13:13] the symbol micro and of course that's in
+[13:16] Ference so if we were to connect two
+[13:18] capacitor into this circuit that had a
+[13:21] value of fourteen point two seven micro
+[13:23] farad's we would correct this poor power
+[13:25] factor and that would give us a circuit
+[13:28] that was operating much more efficiently
+[13:30] and actually we'd find that it reduced
+[13:32] the current flow into the circuit as
+[13:34] well so I'm sure you'll agree we have
+[13:36] produced an awful lot of information
+[13:38] just based on some measures of voltage
+[13:40] and current and also the periodic time
+[13:43] which we we kind of already know the
+[13:44] frequency and so it's amazing just what
+[13:46] you can find out about from a coil just
+[13:48] by having a couple of AC and DC supplies
+[13:52] and then performing some very clever
+[13:53] measurements and calculations thank you
+[13:56] very much for watching
+[14:00] [Music]
+[14:13] [Music]

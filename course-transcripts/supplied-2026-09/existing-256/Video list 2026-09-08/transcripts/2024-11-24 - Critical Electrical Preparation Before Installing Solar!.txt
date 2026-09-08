@@ -1,0 +1,449 @@
+# Critical Electrical Preparation Before Installing Solar!
+# https://www.youtube.com/watch?v=fMM-EPRKNhw
+
+- So we have reached the final video in this series made in association with Sunsynk. In video one, we explored energy consumption, and how we can use it to estimate a property's usage, and look at ways of reducing some of that consumption. In video two, we used the data from our energy consumption tables and calculated the self-consumption of the property, so we could see if fitting solar panels was a worthwhile choice. Video three, we looked at different size inverters and battery sets to increase the self-consumption and reduce our reliance on the grid. Video four was where we explored the different locations we can put the equipment for our solar system with the pros and cons of each location discussed. In this video, we will be focusing on the electrical installation and the regulations and requirements needed, when installing a solar and battery system. In this video, we're gonna be exploring the following topics; cable sizes, fault currents, RCD protection, volt drop, isolation, cable runs, and labelling requirements. So, starting with the cable supplying the inverter. We can carry out a cable calculation to determine the size of the cross-sectional area of the cable needed. The manufacturer will also give guidance on the cable size. However, this does not account for cable length and volt drop, so we do need to consider that different manufacturers, will have different recommendations for cable size. But if we look at Suns Sync for their 3.6 kilowatt inverter, it states, "A cable cross-sectional area, should be four millimetre squared." Our installation will be installed in ducting, which is going into the garage, and we'll be using the EV Ultra from Doncaster cables. Referring to appendix four of BS 7671, table 4E4A says, "A 4 ml cable, has a current carrying capacity of 43 amps." As our inverter will only draw 16 amps, then this cable will be okay. For the DC cabling from the solar array, the same rules apply. We need to consider the load the cable will carry from the solar array, the length of the run, and how it's going to be installed. RPV array has a peak output of 4.5 kilowatts with a potential voltage off the panels of 350 volts. This gives us a current of 12.8 amps that we can expect from the array at its peak. We can refer to appendix four again, and as we're going to be using this PV Ultra cable which has tinned copper conductors, we need to refer to table 4E2A for multi-core 90 degree cable. Reference method C and single phase DC, shows a four millimetre squared can carry 45 amps, so we'll certainly meet the current-carrying capacity, required for the solar array, and allow for any additional panels, should they be fitted in the future. Manufacturers will normally supply the cables for the batteries to the inverter, and they will come with moulded plugs, which can be fitted into the sockets on the battery and the inverter. If we do need to extend the cables for the batteries, we can by getting the extension kits from the manufacturers, if those batteries are a little further away. If we have multiple batteries, we have to ensure that the cables are the same length, and this is so that the battery is discharge equally, and so that they age at the same time, and this will prolong the life of the battery. Next, we're gonna look at the fault currents that we're likely to experience in a solar PV array with a battery storage system, starting with the AC supply to the inverter. This follows the usual parameters that we need to follow, protection against electric shock, thermal constraints, and overload protection, ensuring the cable run is suitable. Cables are sized appropriately, and predictive devices are installed, all of which is covered in chapter 41 of BS 7671. But the DC side from the PV array and the batteries can create fault currents and this needs to be accounted for. Solar panels can short circuit. This is perhaps when the positive and negative conductors have inadvertently come into contact with each other. However, protection for this, is not necessarily a requirement on the installation, but why is this? This is because manufacturers, instal insulation monitoring devices, which monitors the PV array, and if a breakdown in insulation was detected, the inverter can isolate the panels automatically, and send an alert message to the owner and installer. The overload protection and isolation for batteries is slightly different to the PV array. Batteries can produce very high short circuit currents. This is due to the very low resistances we find in battery chemistry. Because of this, we need to instal DC-rated protective devices, like the ones shown here, and they need to be rated accordingly. Our battery has a short circuit capacity of 350 amps, and this can be found in the manufacturer's guidance as are the few sizes which it states, need to be 100 amps. So we have seen how we can protect the installation and the cables within it, but what about those additional protection requirements? We use RCDs to provide additional protection, against electric shocks in electrical circuits, but do we need to instal an RCD on the circuit which supplies the inverter? The code of practise for grid-connected solar photovoltaic system says in 8.8, "In a grid-connected PV system, there is no fundamental requirement to fit an RCD to the circuit that feeds the inverter. However, in some circumstances, an RCD may be required by BS 7671 due to the nature of the circuit, for example, where unprotected cables are buried within a wall at an insufficient depth." There is differing guidance on whether we should be installing RCDs on solar circuits, and this is explored in a technical bulletin published by Beama on the connection of RCDs and RCBOs on micro-generation circuits. In Beama's publication, it recognises that there is differing guidance on whether we should instal a solar circuit on the load side of an RCCB, and due to this differing guidance, it advises designers to decide on which method to use for new installations and for electrical inspectors to determine a suitable classification code for a shared circuit on the RCCB. One of the issues with installing a circuit on the load side of an RCCB is the device itself. Many RCCBs, RCDs and RCBOs, need to be able to distinguish the difference, between the load and the supply. For example, if we look at this split load consumer unit here with an MCB feeding the inverter, the current flows from the supply through the RCCB supply termination, and to the inverter. But when the PVRA is generating and the inverter is sending current from the inverter to the supply, it is flowing through the load terminals of the RCCB. The RCCB has clear markings showing where we should connect the load and supply terminations. So when we are feeding back to towards the supply, it is going through the RCCB the wrong way. With current flowing in the opposite direction, it could render the RCCB permanently inoperable. This guidance from Beama is clear. Under no circumstances is it acceptable to connect any power supply, e.g. battery storage, PV systems, EV to home, a micro-generator or grid supply to load terminals of a unidirectional device. It is highly likely that many PV batteries, EV and micro-generation installations have been installed on unidirectional RCDs, RCBOs, and even MCBs. So be sure to advise your customers appropriately if you come across this issue. Bidirectional RCBOs and MCBs are available from manufacturers, and as well as being double-polled to switch all live conductors, they will operate if current is flowing away from the inverter towards the supply. But if you're unsure about any of the protective devices that you are fitting, then it's advice to contact the manufacturer. Many inverter manufacturers, also fit residual monitoring devices in their units, which give that additional protection. The Sunsynk inverter we are using, has a residual current monitoring unit, and I asked something about the residual current monitoring devices in their inverters. The RCMU monitors AC and DC residual currents. The inverters meet the requirements specified in DIN VDE 0100-712 and IEC 60364-7-712, that they are not able to feed in DC residual currents, due to their design. For all inverters, sudden changes in residual current greater than or equal to 30 milliamps will cause inverters to disconnect from the grid. Regarding the types of RCBOs that are required from type A to B, we have made a video on this topic. Once we have considered the volt protection and additional protection, and the size and type of cable, we need to make sure the volt drop is acceptable. However, the voltage drop for an inverter is very different to the normal 5% allowed volt drop that is acceptable on traditional power circuits. Voltage drop is a phenomenon which happens in all electrical circuits, and is something we have to account for. You may recall from appendix four of BS 7671 that the allowable volt drop in a power circuit is 5%, and in lighting, it's 3%. But if we have a look at this note here from the code of practise for grid-connected solar systems, it says, "Appendix four, section 6.4 of BS 7671, are not relevant to solar PV inverter circuits, and exceed the recommendations of many inverter manufacturers." So what are those recommendations, and why? Well, each manufacturer may be different and their guidance needs to be consulted, but we can get some answers from the code of practise, which says, "Cables are size to minimise voltage drop to ensure that the voltage at the inverter terminals, is close to that of the main connection point." If the voltage difference is too large, the inverter may be prone to nuisance tripping at times where the grid voltage is high, while the grid voltage may be within its statutory limits, than the voltage that will be seen at the inverter, which may be above the trip point. For the majority of domestic installations, a maximum volt drop of 1% between the point of supply and the inverter is recommended. However, the larger more complex installations with longer cable runs, a voltage drop above 1% may be justified economically." So we need to try and achieve a volt drop of 1%, so the inverter doesn't trip. So how does our installation stack up? Our installation has a run length of 15 metres from the consumer unit to the inverter. So let's see what the voltage drop is across the run. Referring to appendix four of BS 7671, table 4E4B, our cable has a voltage drop of 12 millivolts per amp per metre. So putting that together, 12 millivolts multiplied by 16 amps, which is the load of the inverter, multiplied by 15, will give us a voltage drop of 2.9 volts. So as our acceptable volt drop is 1% of 230 volts, so 2.3 volts, our volt drop is slightly higher. A six millimetre squared cable has a volt drop of 1.8 volts that falls within the 1% range, that is acceptable from the code of practise. So what can we do? The manufacturers will all offer guidance as to what the voltage ranges of the inverters are, and if the volt drop is acceptable. As we are using the Sunsynk inverter, I contacted them and they said that, "The volt drop for the four millimetre squared cable is okay for the inverter as they use the 1% as a worse case scenario." IS food for thought though? Certainly, on some of the longer cable runs to inverters that are out there, we need to consider vol drop on the DC side as well. If batteries are located a distance away from the inverter, then we won't get the efficiency of the DC conversion to AC from the inverter as the voltage will have dropped, which will impact the AC output. This is why guidance says that, "Batteries need to be located as close as possible to the inverter, and why manufacturers supply pre-made battery leads to plug them in." This is because the manufacturer is ensuring that the batteries and inverter are working at their optimum level. The installation of isolators is also a requirement of BS 7671, and the manufacturer's guidance. But what part of the installation needs to have an isolator? The need to be able to isolate sections of any electrical installation is as important as ensuring our cables, have two layers of installation. But in a solar PV system, it can sometimes be confusing where and what isolators are required to ensure ongoing maintenance and to make sure a customer is able to isolate the supply if required. So let's have a look at some of the standard components used in a solar array, and battery system, and where we would normally find an isolator. Starting with the AC side, we are coming outta the 60898 or 61009 MCB or RCBO. The regulations do say that, "We can use MCBs and RCBOs as isolators." However, the regulations also say, "We need to switch all life conductors." This includes the neutral, so an MCB may not be sufficient on its own, and if the RCBO is single pole, this will not meet the regulatory requirements. Because of this, we should instal a rotary isolator to BSEN 60947-3 in a suitable location, either next to the inverter or if the inverter is located in a location not accessible, we need to instal it so it can be operated in the event of any issues with the system. An isolator is also required for the batteries from the inverter, and needs to be located between the inverter and the protective devices of the batteries. It is also critical that we use DC-rated isolators, due to the significant arc flash, which occurs when switching DC components. Finally, an isolator for the PV array. This has been covered by Gordon in a separate video where he goes into more detail about why we should not be installing DC isolators on the PV array if the inverter has its own isolator on the chassis, not to mention the ability to remove the MC4 connectors which requires a tool. Let's have a look now at how we can instal cables for the AC and DC side of the installation. So all cables need to be selected in accordance with BS 7671, and need to ensure that volt drop is as low as possible, a topic we discussed earlier. But when selecting a suitable run for the cables, the same considerations need to be made for our solar system, as with any other electrical circuit. So if we're installing AC cables that are being buried, we need to ensure that they are being buried at a suitable depth, are protected against mechanical damage, and ensure additional measures are taken to limit access by rodents, rabbits, and squirrels. It does say exactly that in the code of practise. The cables which are coming from the PV array need to be protected and contained together. You may find yourself with four cables, which make up two strings, and it can be a temptation to instal these cables in conduit or trunking. However, conduit and trunking capacities need to be considered, and you may find that four four-millimeter-squared PV cables will be too much for a 20 or a 25 millimetre conduit. Doncaster cables have produced the PV Ultra, which combines all four conductors into one cable, and can be easily clipped to a surface direct to the inverter. If you have to instal cables overhead, then a suitable continuity wire suitably supported and rated to take the weight is required. Our installation will be installed in ducting to go out to the garage. So now we've considered how the cables are gonna be installed, we now need to include our notices and warnings. With any PV installation, we have to make sure that labels are clearly visible for homeowners and future electricians who may work on the installation. So on or near, the incoming supply or consumer unit and multiple supplies warning notice with details where the isolated are located, and where they are located is mandated as well in the code of practise, which says, "DC cables should be labelled PV array live during daylight, or equivalent with labelling required every 50 to 100 metres considered sufficient, but different installations with more complex cable runs may need additional labels." These instruction notices warn us that solar PV is on the roof, and that live parts can remain energised after isolation. Depending on the location, we may need to instal additional labels, but one of the most important labels to take note off for me is this one, do not disconnect under load. When we break a DC circuit under load, it can create a flashover similar to a welding arc. If you are in a loft which is not well lit, your pupils will be dilated to allow more light in, and a sudden arc can burn your retinas and potentially lead to issues with your vision and damage, which would be irreversible. So be sure to instal warning labels in suitable locations and follow those warnings. When we are planning to instal a solar PV system with battery storage, it can be a complex and daunting task when we consider all the elements that need to be explored. The journey from the presale agreement to the electrical installation certificate and handover, is a long one with many areas that need to be covered, but should we still be daunted by this? The MCS in their solar guidance, has offered electricians a walkthrough guide on the steps and processes of the installation of a solar array. With battery storage and guidance from the code of practise, further supports electricians in ensuring that installations are compliant with current regulations and standards. Furthermore, manufacturers are supporting electricians with product demos, training, and 24-hour support on equipment and installations, meaning the step into solar and battery installations, is becoming a smart one, so should you add solar and battery storage to your skillset? If we consider the UK's move to net zero, and the number of installations being installed, across the country, it is my view that any electrician not moving into this market, may be left behind. The electrification of households and businesses, is only going to get bigger, so perhaps now is the right time to get on board and add solar and batteries to your skillset. Our installation will be getting underway shortly as the customer has agreed to the work, and we are now at the point of scheduling all the works in, and I'm looking forward to having another customer who is going to benefit from solar and battery storage to reduce their bills and improve their green credentials. We have now reached the end of our series of videos on the installation of a solar PV system with battery storage. So answer the multiple choice questions that follow, and then you'll be able to access your CPD certificate. But for me, is bye-bye for now.
+
+
+[00:00] - So we have reached the final video in this series made
+[00:03] in association with Sunsynk.
+[00:05] In video one, we explored energy consumption,
+[00:08] and how we can use it to estimate a property's usage,
+[00:11] and look at ways of reducing some of that consumption.
+[00:14] In video two, we used the data
+[00:16] from our energy consumption tables
+[00:18] and calculated the self-consumption of the property,
+[00:21] so we could see
+[00:22] if fitting solar panels was a worthwhile choice.
+[00:25] Video three, we looked at different size inverters
+[00:28] and battery sets to increase the self-consumption
+[00:31] and reduce our reliance on the grid.
+[00:33] Video four was where we explored the different locations
+[00:36] we can put the equipment for our solar system
+[00:39] with the pros and cons of each location discussed.
+[00:42] In this video, we will be focusing
+[00:44] on the electrical installation
+[00:46] and the regulations and requirements needed,
+[00:48] when installing a solar and battery system.
+[00:51] In this video,
+[00:52] we're gonna be exploring the following topics;
+[00:54] cable sizes, fault currents,
+[00:57] RCD protection, volt drop, isolation,
+[01:00] cable runs, and labelling requirements.
+[01:03] So, starting with the cable supplying the inverter.
+[01:07] We can carry out a cable calculation
+[01:09] to determine the size of the cross-sectional area
+[01:12] of the cable needed.
+[01:13] The manufacturer will also give guidance on the cable size.
+[01:16] However, this does not account
+[01:18] for cable length and volt drop,
+[01:20] so we do need to consider that different manufacturers,
+[01:23] will have different recommendations for cable size.
+[01:26] But if we look at Suns Sync for their 3.6 kilowatt inverter,
+[01:30] it states, "A cable cross-sectional area,
+[01:32] should be four millimetre squared."
+[01:35] Our installation will be installed in ducting,
+[01:37] which is going into the garage,
+[01:39] and we'll be using the EV Ultra from Doncaster cables.
+[01:42] Referring to appendix four of BS 7671,
+[01:45] table 4E4A says, "A 4 ml cable,
+[01:49] has a current carrying capacity of 43 amps."
+[01:53] As our inverter will only draw 16 amps,
+[01:55] then this cable will be okay.
+[01:57] For the DC cabling from the solar array,
+[02:00] the same rules apply.
+[02:01] We need to consider the load the cable will carry
+[02:04] from the solar array, the length of the run,
+[02:06] and how it's going to be installed.
+[02:08] RPV array has a peak output of 4.5 kilowatts
+[02:12] with a potential voltage off the panels of 350 volts.
+[02:16] This gives us a current of 12.8 amps
+[02:18] that we can expect from the array at its peak.
+[02:21] We can refer to appendix four again,
+[02:24] and as we're going to be using this PV Ultra cable
+[02:27] which has tinned copper conductors,
+[02:29] we need to refer to table 4E2A
+[02:32] for multi-core 90 degree cable.
+[02:35] Reference method C and single phase DC,
+[02:38] shows a four millimetre squared can carry 45 amps,
+[02:42] so we'll certainly meet the current-carrying capacity,
+[02:45] required for the solar array,
+[02:48] and allow for any additional panels,
+[02:50] should they be fitted in the future.
+[02:52] Manufacturers will normally supply the cables
+[02:55] for the batteries to the inverter,
+[02:57] and they will come with moulded plugs,
+[02:58] which can be fitted into the sockets
+[03:00] on the battery and the inverter.
+[03:02] If we do need to extend the cables for the batteries,
+[03:05] we can by getting the extension kits from the manufacturers,
+[03:09] if those batteries are a little further away.
+[03:12] If we have multiple batteries,
+[03:13] we have to ensure that the cables are the same length,
+[03:16] and this is so that the battery is discharge equally,
+[03:19] and so that they age at the same time,
+[03:21] and this will prolong the life of the battery.
+[03:24] Next, we're gonna look at the fault currents
+[03:25] that we're likely to experience in a solar PV array
+[03:28] with a battery storage system,
+[03:30] starting with the AC supply to the inverter.
+[03:33] This follows the usual parameters that we need to follow,
+[03:36] protection against electric shock,
+[03:38] thermal constraints, and overload protection,
+[03:41] ensuring the cable run is suitable.
+[03:43] Cables are sized appropriately,
+[03:45] and predictive devices are installed,
+[03:47] all of which is covered in chapter 41 of BS 7671.
+[03:51] But the DC side from the PV array
+[03:53] and the batteries can create fault currents
+[03:56] and this needs to be accounted for.
+[03:58] Solar panels can short circuit.
+[04:00] This is perhaps when the positive
+[04:02] and negative conductors have inadvertently come into contact
+[04:05] with each other.
+[04:06] However, protection for this,
+[04:07] is not necessarily a requirement on the installation,
+[04:10] but why is this?
+[04:11] This is because manufacturers,
+[04:12] instal insulation monitoring devices,
+[04:15] which monitors the PV array,
+[04:17] and if a breakdown in insulation was detected,
+[04:20] the inverter can isolate the panels automatically,
+[04:23] and send an alert message to the owner and installer.
+[04:27] The overload protection and isolation
+[04:29] for batteries is slightly different to the PV array.
+[04:32] Batteries can produce very high short circuit currents.
+[04:35] This is due to the very low resistances
+[04:37] we find in battery chemistry.
+[04:40] Because of this, we need to instal DC-rated protective devices,
+[04:43] like the ones shown here,
+[04:45] and they need to be rated accordingly.
+[04:47] Our battery has a short circuit capacity of 350 amps,
+[04:52] and this can be found in the manufacturer's guidance
+[04:55] as are the few sizes which it states, need to be 100 amps.
+[04:59] So we have seen how we can protect the installation
+[05:02] and the cables within it,
+[05:04] but what about those additional protection requirements?
+[05:07] We use RCDs to provide additional protection,
+[05:10] against electric shocks in electrical circuits,
+[05:13] but do we need to instal an RCD on the circuit
+[05:16] which supplies the inverter?
+[05:18] The code of practise
+[05:19] for grid-connected solar photovoltaic system says in 8.8,
+[05:24] "In a grid-connected PV system,
+[05:26] there is no fundamental requirement
+[05:29] to fit an RCD to the circuit that feeds the inverter.
+[05:33] However, in some circumstances,
+[05:35] an RCD may be required by BS 7671 due to the nature
+[05:40] of the circuit, for example,
+[05:42] where unprotected cables are buried within a wall
+[05:45] at an insufficient depth."
+[05:46] There is differing guidance
+[05:48] on whether we should be installing RCDs on solar circuits,
+[05:51] and this is explored in a technical bulletin published
+[05:54] by Beama on the connection of RCDs and RCBOs
+[05:58] on micro-generation circuits.
+[06:00] In Beama's publication,
+[06:01] it recognises that there is differing guidance
+[06:04] on whether we should instal a solar circuit
+[06:06] on the load side of an RCCB,
+[06:09] and due to this differing guidance,
+[06:11] it advises designers to decide on which method to use
+[06:14] for new installations and for electrical inspectors
+[06:18] to determine a suitable classification code
+[06:20] for a shared circuit on the RCCB.
+[06:24] One of the issues with installing a circuit
+[06:26] on the load side of an RCCB is the device itself.
+[06:30] Many RCCBs, RCDs and RCBOs,
+[06:35] need to be able to distinguish the difference,
+[06:37] between the load and the supply.
+[06:39] For example, if we look
+[06:40] at this split load consumer unit here
+[06:43] with an MCB feeding the inverter,
+[06:45] the current flows from the supply
+[06:47] through the RCCB supply termination, and to the inverter.
+[06:51] But when the PVRA is generating
+[06:53] and the inverter is sending current
+[06:55] from the inverter to the supply,
+[06:57] it is flowing through the load terminals of the RCCB.
+[07:02] The RCCB has clear markings showing
+[07:04] where we should connect the load and supply terminations.
+[07:08] So when we are feeding back to towards the supply,
+[07:11] it is going through the RCCB the wrong way.
+[07:14] With current flowing in the opposite direction,
+[07:16] it could render the RCCB permanently inoperable.
+[07:20] This guidance from Beama is clear.
+[07:23] Under no circumstances is it acceptable
+[07:26] to connect any power supply, e.g. battery storage,
+[07:30] PV systems, EV to home, a micro-generator or grid supply
+[07:34] to load terminals of a unidirectional device.
+[07:38] It is highly likely that many PV batteries,
+[07:41] EV and micro-generation installations have been installed
+[07:45] on unidirectional RCDs, RCBOs, and even MCBs.
+[07:50] So be sure to advise your customers appropriately
+[07:53] if you come across this issue.
+[07:56] Bidirectional RCBOs and MCBs are available
+[07:59] from manufacturers, and as well as being double-polled
+[08:02] to switch all live conductors,
+[08:04] they will operate if current is flowing away
+[08:07] from the inverter towards the supply.
+[08:09] But if you're unsure about any of the protective devices
+[08:12] that you are fitting,
+[08:13] then it's advice to contact the manufacturer.
+[08:16] Many inverter manufacturers,
+[08:17] also fit residual monitoring devices in their units,
+[08:20] which give that additional protection.
+[08:23] The Sunsynk inverter we are using,
+[08:25] has a residual current monitoring unit,
+[08:27] and I asked something
+[08:29] about the residual current monitoring devices
+[08:31] in their inverters.
+[08:32] The RCMU monitors AC and DC residual currents.
+[08:37] The inverters meet the requirements specified
+[08:39] in DIN VDE 0100-712 and IEC 60364-7-712,
+[08:48] that they are not able to feed in DC residual currents,
+[08:52] due to their design.
+[08:54] For all inverters,
+[08:55] sudden changes in residual current greater than
+[08:57] or equal to 30 milliamps will cause inverters
+[09:00] to disconnect from the grid.
+[09:02] Regarding the types of RCBOs that are required
+[09:05] from type A to B, we have made a video on this topic.
+[09:09] Once we have considered the volt protection
+[09:11] and additional protection,
+[09:13] and the size and type of cable,
+[09:15] we need to make sure the volt drop is acceptable.
+[09:18] However, the voltage drop for an inverter is very different
+[09:21] to the normal 5% allowed volt drop
+[09:24] that is acceptable on traditional power circuits.
+[09:27] Voltage drop is a phenomenon
+[09:29] which happens in all electrical circuits,
+[09:31] and is something we have to account for.
+[09:33] You may recall from appendix four of BS 7671
+[09:37] that the allowable volt drop in a power circuit is 5%,
+[09:41] and in lighting, it's 3%.
+[09:43] But if we have a look at this note here
+[09:46] from the code of practise for grid-connected solar systems,
+[09:50] it says, "Appendix four, section 6.4 of BS 7671,
+[09:55] are not relevant to solar PV inverter circuits,
+[09:58] and exceed the recommendations
+[10:01] of many inverter manufacturers."
+[10:03] So what are those recommendations, and why?
+[10:06] Well, each manufacturer may be different
+[10:08] and their guidance needs to be consulted,
+[10:10] but we can get some answers from the code of practise,
+[10:13] which says, "Cables are size to minimise voltage drop
+[10:16] to ensure that the voltage at the inverter terminals,
+[10:19] is close to that of the main connection point."
+[10:22] If the voltage difference is too large,
+[10:24] the inverter may be prone to nuisance tripping at times
+[10:28] where the grid voltage is high,
+[10:30] while the grid voltage may be within its statutory limits,
+[10:33] than the voltage that will be seen at the inverter,
+[10:36] which may be above the trip point.
+[10:38] For the majority of domestic installations,
+[10:41] a maximum volt drop of 1% between the point of supply
+[10:45] and the inverter is recommended.
+[10:47] However, the larger more complex installations
+[10:50] with longer cable runs,
+[10:52] a voltage drop above 1% may be justified economically."
+[10:56] So we need to try and achieve a volt drop of 1%,
+[10:59] so the inverter doesn't trip.
+[11:01] So how does our installation stack up?
+[11:03] Our installation has a run length of 15 metres
+[11:06] from the consumer unit to the inverter.
+[11:08] So let's see what the voltage drop is across the run.
+[11:11] Referring to appendix four of BS 7671,
+[11:14] table 4E4B, our cable has a voltage drop
+[11:17] of 12 millivolts per amp per metre.
+[11:20] So putting that together,
+[11:22] 12 millivolts multiplied by 16 amps,
+[11:24] which is the load of the inverter,
+[11:26] multiplied by 15, will give us a voltage drop of 2.9 volts.
+[11:32] So as our acceptable volt drop is 1% of 230 volts,
+[11:36] so 2.3 volts, our volt drop is slightly higher.
+[11:41] A six millimetre squared cable has a volt drop of 1.8 volts
+[11:44] that falls within the 1% range,
+[11:46] that is acceptable from the code of practise.
+[11:49] So what can we do?
+[11:51] The manufacturers will all offer guidance
+[11:53] as to what the voltage ranges of the inverters are,
+[11:56] and if the volt drop is acceptable.
+[11:58] As we are using the Sunsynk inverter,
+[12:00] I contacted them and they said that,
+[12:02] "The volt drop for the four millimetre squared cable is okay
+[12:05] for the inverter as they use the 1%
+[12:08] as a worse case scenario."
+[12:09] IS food for thought though?
+[12:11] Certainly, on some of the longer cable runs to inverters
+[12:14] that are out there,
+[12:15] we need to consider vol drop on the DC side as well.
+[12:18] If batteries are located a distance away from the inverter,
+[12:21] then we won't get the efficiency of the DC conversion to AC
+[12:26] from the inverter as the voltage will have dropped,
+[12:28] which will impact the AC output.
+[12:31] This is why guidance says that,
+[12:33] "Batteries need to be located
+[12:34] as close as possible to the inverter,
+[12:37] and why manufacturers supply pre-made battery leads
+[12:40] to plug them in."
+[12:41] This is because the manufacturer is ensuring
+[12:43] that the batteries and inverter are working
+[12:45] at their optimum level.
+[12:46] The installation of isolators is also a requirement
+[12:49] of BS 7671, and the manufacturer's guidance.
+[12:53] But what part of the installation needs to have an isolator?
+[12:57] The need to be able to isolate sections
+[12:58] of any electrical installation is
+[13:00] as important as ensuring our cables,
+[13:02] have two layers of installation.
+[13:04] But in a solar PV system, it can sometimes be confusing
+[13:08] where and what isolators are required
+[13:10] to ensure ongoing maintenance
+[13:12] and to make sure a customer is able
+[13:14] to isolate the supply if required.
+[13:17] So let's have a look at some of the standard components used
+[13:20] in a solar array, and battery system,
+[13:22] and where we would normally find an isolator.
+[13:24] Starting with the AC side,
+[13:26] we are coming outta the 60898 or 61009 MCB or RCBO.
+[13:32] The regulations do say that,
+[13:33] "We can use MCBs and RCBOs as isolators."
+[13:38] However, the regulations also say,
+[13:40] "We need to switch all life conductors."
+[13:42] This includes the neutral,
+[13:44] so an MCB may not be sufficient on its own,
+[13:47] and if the RCBO is single pole,
+[13:49] this will not meet the regulatory requirements.
+[13:52] Because of this, we should instal a rotary isolator
+[13:55] to BSEN 60947-3 in a suitable location,
+[14:00] either next to the inverter or if the inverter is located
+[14:04] in a location not accessible,
+[14:06] we need to instal it so it can be operated
+[14:09] in the event of any issues with the system.
+[14:12] An isolator is also required for the batteries
+[14:14] from the inverter,
+[14:16] and needs to be located between the inverter
+[14:18] and the protective devices of the batteries.
+[14:21] It is also critical that we use DC-rated isolators,
+[14:24] due to the significant arc flash,
+[14:27] which occurs when switching DC components.
+[14:30] Finally, an isolator for the PV array.
+[14:32] This has been covered by Gordon in a separate video
+[14:35] where he goes into more detail
+[14:37] about why we should not be installing DC isolators
+[14:40] on the PV array if the inverter has its own isolator
+[14:44] on the chassis, not to mention the ability
+[14:47] to remove the MC4 connectors which requires a tool.
+[14:51] Let's have a look now at how we can instal cables
+[14:53] for the AC and DC side of the installation.
+[14:56] So all cables need to be selected
+[14:58] in accordance with BS 7671,
+[15:01] and need to ensure that volt drop is as low as possible,
+[15:04] a topic we discussed earlier.
+[15:06] But when selecting a suitable run for the cables,
+[15:09] the same considerations need to be made
+[15:11] for our solar system, as with any other electrical circuit.
+[15:15] So if we're installing AC cables that are being buried,
+[15:18] we need to ensure that they are being buried
+[15:20] at a suitable depth,
+[15:21] are protected against mechanical damage,
+[15:24] and ensure additional measures are taken to limit access
+[15:27] by rodents, rabbits, and squirrels.
+[15:30] It does say exactly that in the code of practise.
+[15:33] The cables which are coming from the PV array need
+[15:36] to be protected and contained together.
+[15:38] You may find yourself with four cables,
+[15:40] which make up two strings, and it can be a temptation
+[15:43] to instal these cables in conduit or trunking.
+[15:46] However, conduit and trunking capacities need
+[15:48] to be considered, and you may find
+[15:50] that four four-millimeter-squared PV cables will be too much
+[15:55] for a 20 or a 25 millimetre conduit.
+[15:58] Doncaster cables have produced the PV Ultra,
+[16:00] which combines all four conductors into one cable,
+[16:03] and can be easily clipped to a surface direct
+[16:06] to the inverter.
+[16:07] If you have to instal cables overhead,
+[16:09] then a suitable continuity wire suitably supported
+[16:13] and rated to take the weight is required.
+[16:16] Our installation will be installed
+[16:17] in ducting to go out to the garage.
+[16:19] So now we've considered
+[16:20] how the cables are gonna be installed,
+[16:22] we now need to include our notices and warnings.
+[16:25] With any PV installation,
+[16:26] we have to make sure that labels are clearly visible
+[16:30] for homeowners and future electricians
+[16:31] who may work on the installation.
+[16:33] So on or near, the incoming supply or consumer unit
+[16:37] and multiple supplies warning notice with details
+[16:39] where the isolated are located,
+[16:41] and where they are located is mandated as well
+[16:43] in the code of practise, which says,
+[16:45] "DC cables should be labelled PV array live during daylight,
+[16:50] or equivalent with labelling required every 50
+[16:52] to 100 metres considered sufficient,
+[16:55] but different installations
+[16:56] with more complex cable runs may need additional labels."
+[17:00] These instruction notices warn us
+[17:01] that solar PV is on the roof,
+[17:03] and that live parts can remain energised after isolation.
+[17:07] Depending on the location,
+[17:08] we may need to instal additional labels,
+[17:11] but one of the most important labels
+[17:13] to take note off for me is this one,
+[17:15] do not disconnect under load.
+[17:17] When we break a DC circuit under load,
+[17:19] it can create a flashover similar to a welding arc.
+[17:23] If you are in a loft which is not well lit,
+[17:25] your pupils will be dilated to allow more light in,
+[17:28] and a sudden arc can burn your retinas
+[17:30] and potentially lead to issues with your vision and damage,
+[17:33] which would be irreversible.
+[17:35] So be sure to instal warning labels in suitable locations
+[17:38] and follow those warnings.
+[17:40] When we are planning to instal a solar PV system
+[17:43] with battery storage,
+[17:44] it can be a complex and daunting task when
+[17:47] we consider all the elements that need to be explored.
+[17:50] The journey from the presale agreement
+[17:52] to the electrical installation certificate and handover,
+[17:56] is a long one with many areas that need to be covered,
+[17:59] but should we still be daunted by this?
+[18:02] The MCS in their solar guidance,
+[18:04] has offered electricians a walkthrough guide
+[18:07] on the steps and processes of the installation
+[18:10] of a solar array.
+[18:12] With battery storage and guidance
+[18:14] from the code of practise,
+[18:15] further supports electricians in ensuring
+[18:18] that installations are compliant
+[18:20] with current regulations and standards.
+[18:23] Furthermore, manufacturers are supporting electricians
+[18:25] with product demos, training,
+[18:27] and 24-hour support on equipment and installations,
+[18:31] meaning the step into solar and battery installations,
+[18:34] is becoming a smart one,
+[18:36] so should you add solar and battery storage
+[18:38] to your skillset?
+[18:39] If we consider the UK's move to net zero,
+[18:42] and the number of installations being installed,
+[18:44] across the country,
+[18:45] it is my view that any electrician not moving
+[18:48] into this market, may be left behind.
+[18:51] The electrification of households and businesses,
+[18:53] is only going to get bigger,
+[18:55] so perhaps now is the right time to get on board
+[18:58] and add solar and batteries to your skillset.
+[19:01] Our installation will be getting underway shortly
+[19:03] as the customer has agreed to the work,
+[19:05] and we are now at the point of scheduling all the works in,
+[19:08] and I'm looking forward to having another customer
+[19:11] who is going to benefit from solar and battery storage
+[19:14] to reduce their bills and improve their green credentials.
+[19:18] We have now reached the end of our series of videos
+[19:20] on the installation of a solar PV system
+[19:23] with battery storage.
+[19:24] So answer the multiple choice questions that follow,
+[19:27] and then you'll be able to access your CPD certificate.
+[19:31] But for me, is bye-bye for now.

@@ -1,0 +1,772 @@
+# Options, Tips and Tricks for DSX Twisted Pair and Certifiber OLTS Test Setup.
+# https://www.youtube.com/watch?v=fmzxSC_2SD8
+
+that's it first attendant good morning right [Music] okay good morning everybody my name's Nigel hedges I'm here together with a robb girl who's muted at the moment but he is present I can see him to deliver you a little update or update bouncing a little presentation on setting up a basic setup of the DSX and the certifiber pro cable tester and five optical law states respectively I've called it tips tricks and options and certainly I hope you'll you'll be able to pick up a couple of things that are of interest or reviews to you this presentation is aimed primarily at our installer and end-user customers and yeah there are a couple of things that are worth looking into so without further ado let's let's get started presentation is being recorded as are the questions and answers and will be available for review after the event and if you have any questions please bang them in the question and answer box which you'll find at the bottom of your screen and we'll monitor them and hopefully he and I will be able to answer all of them at the end of the presentation so when we think about setting up for testing we need to get the correct results there is no point in in going out spending a lot of time and therefore some money on producing test results which are then not as we would wish them and when I say as we wish them I mean are they acceptable to everybody concerned are they acceptable to the end client are they've already signed up for and are they acceptable to the warranty provider if there's a warranty involved are they acceptable to the system manufacturer do they if you encounter any issues do they reveal sufficient information for the cable system manufactured to be able to look at them and make sense of them also when we're setting up for testing it's really important to ensure that we've done the necessary preach X so does the tester have current calibration do we have the correct test accessories to hand and do we know exactly what we're supposed to be testing and I'll come back to that in a second but first I want to take a word a moment to talk a little bit about calibration and tester accuracy and calibration go hand-in-hand our industry specifies a accuracy requirement for each tester and in order to ensure that that accuracy is maintained the unit should be irrespective whether it's our tester or somebody else's should be calibrated in accordance with the manufacturer's instructions I view calibration very much as a cornerstone of the circle of confidence and the circle of confidence to me is very much sorry just a second you and the circular confidence is very much a to do with the relationship between the client or the end customer the clients consultant if he exists because it is his role to assess and agree on the accuracy of the test results the warranty provider of the system manufacturer because essentially it's his product which is being installed and therefore he is the one who is offering the warranty and therefore it's his money wishes at risk then the system distributor or reseller because he's the one who usually gets it in the neck from the Installer when it doesn't happen and last but not least fluke networks is also there because it's our tester which is going to be in the mix for getting the test results right so together with the Installer and the client the end customer the consultants the warranty provider and the distributor we all have a concern with the test results being correct and therefore the accuracy and the calibration of the tester is key to what we're trying to achieve when we talk about calibration we look to a calibration service and a calibration certificate which should include a clear indication of where the test certificate comes from where the testing was done and you can see not only is there a Tektronix and a flute logo at the top but down the bottom we have Luke Netherlands the BV happens to be where our service facility is so the test certificate should clearly show its origin it should clearly show the date of calibration and it should show the date that the calibration is next due and last but not least on the one page it should have an authorized signature from the metrology or the head of laboratory who is involved then we get to the detail of the test certificate the calibration certificate and we should be able to see down here that this particular certificate is of the found lift type that means that when the tester was received for calibration it was tested was found to be within specification and therefore we did not have to adjust it so it came in in spec it goes out in spec there is no change the other thing which appears on the test certificate is an indication of the standards and test equipment that were used for the calibration itself so down here right at the bottom this is on page two you can see what was used which set of verification artifacts was used the serial number and the date that they are valid until so we have a lot of data relating to the performance of the calibration and then when we look at the actual test result itself we should see every measured parameter shown so here we have the first page of this test report and what you're looking at is a graph of performance against frequency the orange line is the worst-case allowable performance for in this case for a level 4 tester and the blue line is the actual performance of this particular instrument this is a DSS 5000 and as you can see for near-end crosstalk this is common to differential near in crosstalk common mode return loss and then also for return loss and standard TCL which is transverse convergence loss insertion loss every parameter is within specification and comfortably so and we even have a third page which includes foreign crosstalk again we're comfortably within spec loop resistance which obviously doesn't have a graph because it's easy measurement and resistance in balanced or unbalanced all shown all relevant all important to the test results that we are trying to achieve so if you have a calibration report which does not include all of this data you really have to bear you really have to question the validity of the report and we see it a number of a number of so-called calibration reports which appear which do not include near and crosstalk do not include return loss and frankly if you don't include those two parameters which are the two which are most commonly likely to fail after why map if you don't include the calibration data on those two parameters what is the point of using a calibration service magmatic so once we're certain that we have the measured parameters all displayed and that the unit is in spec we can move on to planning our testing and one of the things we need to do is make sure that we have the preparation in place and I created this installation testing setup worksheet together with a couple of my installer customers and to try to cover off the things that tend to get forgotten or tend not to be passed necessarily from project manager to the field engineers who are actually going to do the work so we've got some basic data here like contract reference customer name site when we expect to start testing useful to ensure that the tester has been is calibrated and is in calibration and then it has a current version of firmware installed together with the date of that approximate number of links why would we include the approximate number of links well because it's important to know because it will determine how long it takes to complete the testing in the first instance secondly it also determines whether or not we need to apply more than one tester or possibly more than one set of permanent link adapters when we're testing twisted-pair which test regime are we following are we testing on behalf of the client are we testing on behalf of the client with a warranty or are we using our own in-house test procedure if it's a client who is the client contact is there a warranty being offered if so who is the warranty provider and therefore where is the warranty contact and what is his telephone number what is the warranty test spec required to be this is all data that goes toward making sure we get the tester setup right because getting the tester set up wrong makes for messes makes for lost time lost time is lost money so we want to be certain that we've got something sensible going on the cable type involved cat5e six six a seven seven a and cat eight little note here that says cat seven requires different permanent link and channel adapter doesn't say and channel but it requires different connectivity because cat seven and cat 7a use Tara connectors or GG forty five and we have to address those differently the construction of the cable is it unshielded unshielded twisted-pair unshielded with a foil foil with an unshielded cable foil foiled or shielded foil twisted pair and obviously we have all of those different types to be considered and anything apart from you UTP is automatically going to switch on the shield integrity test which is crucial and obviously if you're testing cat eight you do require a DSX 8000 and so you need to have that if the cable is a named cable so if for instance it's a Panduit cable or a consecrated cable or a Leviton cable then it's worth having the name in there because the manufacturers will be very pleased to see that on the test reports useful to know the nominal velocity of propagation of the cable which does vary quite a lot depending on cable construction we see everything from about 67% to about 79% in terms of nominal velocity of propagation that means the speed of the cable very is massively depending on how its constructed then the test limit are we going to test 2t i-a which is the category 5e 6 6a are we going to test it iso or en which are the class de ei and F and FA or are we going to test to something completely different or are we going to use an application test if we're going to use an application test what application are we testing for so why are we testing for 10-gigabit compliance for instance that's an option or gigabit compliance are we interested in power over ethernet compliance these are all things to be considered when we're talking about that and then the test method itself are we testing the permanent link so patch panel applet to telecoms applet on the wall are we testing the channel so the same thing but including patch cords are we testing the modular plug terminated link which is patch panel connection at one end rj45 male plug at the other or are we testing an end-to-end link which we typically only find in industrial ethernet environments but end-to-end links and modular plug terminated links need patch cord adapters so once again we are asking the question in advance do we have the right accessories to test what we need to test and then last but not least we have the cable IDs is there a list in existence yes or no if there is where is it what's the file location and if not then are we testing to a sequence if we are does the sequence start with what and what is it end with so all of this data is stuff that it really helps us to have before we start fooling around with the tester itself this is the top half of a page the second half is the fiber variant in this case I've filled it in a little bit with some some jokey stuff so we've got a contract reference we've got a customer we've got a site we've got a project manager sort of we've got four hundred and eighty pairs to be tested important stuff we only got one day to do the testing which with four hundred and eighty pairs is quite reasonable when was the tester calibrated what version of firmware are we running what is the test regime in this case we're going to run a warranty test is the warranty being offered yes who's the warranty provider and who is the contact there what is the test speck what is the cable type in this case it's Om for label trade name and the connector type in this case is Sierra Charlie the important thing about Sierra Charlie Foxtrot Charlie Sierra tango is that you need different input connectors for your fiber tester and you need different test reference cords so do we have these are they available if they're not available then you are going to have a very unhappy time when you get the site so you need to be certain that they're their test limit that we're using is ISO and we're testing for loss length we're going to use the N face inspection unit as well and we're going to test bi-directionally we're not using the OTDR in this particular case but we do have two connections a leg and two splices per leg which is pretty much difficult yes as far as the cable IDs are concerned we don't have a list which is third but we do have a sequence start and a sequence end so we can use those to set up the tester now all of that data is really quite crucial and I'm certain those of you who have loads of experience with this will be looking at it and going yet that stuff's obvious and he forgot X or Y I challenge you over the next 20 minutes or so to work out what the X and the y are what did I forget to put on this testing wet setup worksheet answers in the QA or in the chat Rob will monitor it and he won't tell me what they are so now that we know that we have that all of that data we can now move in the direction of setting the tester up we can do this in one of two ways and the one that I'm not going to use today is the linkware live cloud service those of you who attended previous webinars will know that there's quite a lot of capability in linkware life I'm going to do it directly on the front panel of the tester and just to make life exciting I am going to go back to this page and I'm going to add the instrument players do that you don't have to look at my ugly face all morning and I can move this onto the page yeah and with a bit of luck Rob will tell me if you can't see the VNC vira sorry the instrument display which is on screen at the moment okay note thanks for and so we've that in front of me instead and we can now create our new project so first thing I'm going to do is I'm going to change the project I'm going to have a new project and it's going to be called it's going to be called you you you you going to be called Mary's cakes it's going to have the contract number in there because it makes it easier to track what we are doing so there we go that is the very first thing the operator is me for the sake of this will smooth operator cuz that's what I am and the test setup that we are going to use obviously there are no results left this is a new test we're going to edit the standard test setup which is on the page and the cable type that we're going to be using let's have a look at that obviously we have lots and lots and lots of cable types let's have a quick look at manufacturers so for example we have cables from lots and lots of people you [Music] you hopefully you you guys recognize most of these people or at least some of them and looking for you know the time just because I can and here are all of the Leviton tables which they have declared to us purely a bit of interest if you if you find yourself looking for a manufacturer specific table and it doesn't appear in the list please first and foremost make sure that you have the correct manufacturer name know because some of them appear under different names and second please be aware that this list is compiled by the manufacturer and provided to us and we added as as a service we are not responsible for maintaining the list that is the manufacturers role he does that kind of thing so if it doesn't appear our apologies there needs to be some work done so in this case I'm going to go generic and we're going to go for a cat 6a SFTP no we're not we're going to go for an f nu T P so that's foiled on the outside unshielded in the middle and the normal velocity of propagation default to 74 percent for this particular cable the shield test defaults on so we are automatically testing for the presence continuity and quality of the shield the test limit that we're going to apply we've got a lot of them and in this particular case we are going to test for you class ei ISO class ei because it's a warranted job and in this particular case as you can see we have options we can test for the permanent link to connector class ei plus p OE or plus all or just the bog standard test now plus POA means we include the tests specifically required for power over ethernet compliance testing the plus all means that we include all of the advanced parameters for cable quality which have been defined as a result of the arrival of cat ate my default is always to test for plus p OE and what i would say is that if you find you are having issues with supplied cable i would switch on plus all because it gives the manufacturer and warranty provider of the cabling system the ability to look into as much detail as they possibly might need so in this case we're going to go plus PR e store plot data is always on because we never don't store plot data and couple of things and here is an option in the HD TDR on h dt DX those are our diagnostic functions so you have the ability to switch them switch it on 4th pass/fail I'm sorry for fail or star pass only and which is when you really need the Diagnostics you can opt to run it for all auto tests which will add about a second and hard to the test and save time or you can opt to run it never running it never saves you no time at all unless you get failed in which case it saves you a second and a half if you have dodgy cable I would select all auto tests because then you can provide your cable manufacturer with a full set of test results both pass and fail and what the cable looks like all the way down so in this case we're going to leave it as fail and star pass only because that makes not a sense and the applet configuration is t568b be for britain a for america and we're in britain so we are doing the t568b thing so i can hit save and fundamentally i am now ready to go test them there's nothing else i need to add except for the cable IDs and the cable IDs need a new ID set so i can enter my first cable ID here and because i'm this 6a there we go we go cab a: you panel 0-1 / 0 1 you the last cable ID is going to be cab D panel zero five so these are all cat 6a test results we have four cabinets each cabinet has five panels in it and we have 24 ports per panel if that seems unrealistic then my apologies obviously you can have as many cable ID lists as you like so you could have a separate one for each cabinet if you needed to it's entirely up to you so once we've done that we hit done and I can have a quick review here and here are the cable IDs as you can see going panel 1 1 2 3 24 I can scroll up here and then we get panel 2 and you go halfway yeah cabbie cab C and D all of that data is there and then we hit save and here potentially is one more tip and that is down on the bottom here you'll see there is something called next ID double O 1 is the default table ID list which exists in every project and since we don't want to need one to use it I'm going to delete it and the tester is now forced to use the cable IDs that I gave it which my point of view is a damn good idea now that is a copper test setup it's taken me a sum total of 6 minutes and 40 seconds including the fooling around time but the important thing is that had I had my testing worksheet in front of me it would have been quicker and easier and I would have had very few decisions to make because all of the answers would have been on the sheet and we can do another one for for the fiber setup so this is this is the fiber setup so I can go new test and in this case we're going to change to the certifiber pro and it's a cord unit and it is a test a smart remote test bi-directional yes we're going to do bi-directional testing the fiber type is om for once again I have lots of different options I have manufacturer specific ones I have generic ones so we're going with the generic om4 and the test limit that we're going to apply is ISO and in this case iso/iec 1472 3-3 the 2014 edition is the relevant one the reference method well interestingly ISO only allows you a one jumper reference though we're going to doing a one jumper reference and you go back page the connector type is Sierra Charlie and the number of connections and splices is two and two according to my page so that's what we're allowing for and we can hit done while we're on this page let me just show you when it comes to test limits we do have the option of vendor tests limit and the vendor test limit at the moment the only vendor who have signed up to a customer to a custom test limit is calm scope and those of you who are calm scoped installers will find that we have system X field terminated and system X instant patch options built into the tester so we can go to field terminated and we now have to specify how many SCO ST or LC connectors we have how many splices and the jumper reference and we can configure a very specific test which is 100% in accordance with system X comma scope system X's published loss calculator so the loss calculator that we used to have in an Excel spreadsheet still do and also exist as a tablet and mobile phone app is now included in the test exactly as calm scope specified it so it works exactly the same way and it is internally reliable and what we now have in nine eight seven six five zero six twenty twenty Mary's cakes is we now have two test setups one for the fiber one for the copper and what we need to add is a new ID set and this is going to be called for you I did say slash you come on spell channel-01 snow caddy panel six six and forty-eight and in this case these are fiber test results and I am reminded that there is loss length testing to do but there is also fiber inspection to do so we use the same cable IDs for both for both ends we can review the cable IDs there's one thousand one hundred and fifty two of them which is rather more than the four eighty I said in the number of tears however which is what it is and we hit save and we now have to cable ID sets I quite like the idea of using the cable designation so om4 cat6a whatever at the front end of the cable IDs if you're allowed to and because it helps identify what type of test was off you have so these are pointers options you do not have to use the cable ID set function but if you do the likelihood of getting incorrect cable IDs is much reduced obviously if you have a lot of fails then it does make life a little bit more exciting but generally speaking I would suggest that this is the best option to follow if you can so all of that data is now in the project I can go home on the tester and here is our project ready to use if we decide we're going to test the fiber first then if we touch where it says the test setup on the page you can choose the fiber setup first if I do the tester will complain that it doesn't have fiber module fitted so I won't you there and but we are fundamentally good to go the only thing that is worth checking at the top of the screen here is that the date and time are correct which they pretty much are and information and we are running version 6.55 the limits version is 7.5 and if we want to check the modules the module calibration date which is the bit we care about is here and see that my tester requires calibration but then mine is a demo unit only obviously yours ok so as far as setting the tester up for copper and fiber testing is concerned I suppose the one thing we ought to do is we ought to add one more test and that is the end phase inspection test so if we go here we go fiber inspector Pro and say test type fiber inspector wear the test Amit is concerned we have options we can inspect and document only which means we take a photo over the N face when we think it looks lovely and clean and we include that in the test report all we can apply the IEC six one three hundred - three - thirty five addition to which is the current edition of the standard n phase condition standard and for the purposes of this I'm going to go document only the end type is a single fiber with this unit to also check multiple fibers so we're going with the end fiber and we say done we say save and we are ready to go so there we go I'm setting the tester up I hope I haven't gone too fast and I apologize that you can't see where I'm pushing but it is very logical one step at a time the only thing I would say is when you change the cable type from cat6a which is the default in both the DSX 5000 and 8000 and in the 600 when you change the cable type you must also change the test limit because the test limit defaults to cat6a as well and if you're a testing cat 5e cable to a cat 6a limit you will get 100% fails and I do get irregular calls from people who immediately ask me what's wrong with the test because everything's failing and fundamentally the answer is to change the cable type but you did not change the test limit so just be aware of that and one last thing that I wanted to show you while we're on the instrument is [Music] you and this is the set of test results from the webinar which I ran a couple of weeks ago and what I wanted to show you specifically was this this is the test reference cords this is the part of the process after setting the reference when you're testing fiber this is the part that confirms that the test reference cords are in adequate condition to carry out the test and the important thing here is there are two important things one of them is that the loss is extremely low which is good because it means the end phases are in very good condition the second is that there is a measured length and the measured length should be around two meters and it indicates that I did install the second test cord before I hit the TRC verification button if you do not install the second cord then you will have no length measured and your warranty provider will pick this up in about half a heartbeat and will reject your test results because you did not set the test reference cords up properly before you started right so ladies and gents boys and girls I'm not even sure that we have any ladies I think that that is probably sufficient from a tips tricks and options point of view and I thank you for attending I thank you for staying awake I am very happy to answer any questions that we may have we had one question one question Nigel yes would you forward across to the attendees the copy of your copper and fiber Excel setup sheet and I said that answered the question saying that you'll send it to all attendees after the presentation 55 pounds each because I'm not cheap so that Bellavia will be winging its way across to all the attendees yes no problem at all it is it is one sheet and obviously you can add to it adjust it as you see fit did anybody spot the bit that's not on this on the sheet nobody answered well fair enough short answer is there was no p OE option or plus all option on the on the sheet because i didn't get around to adding them last night when it was late okay um if there are no other questions I'm happy to answer anything that comes up I will say thank you all very much indeed for attending and on whatever you're there and yeah I will thank you very much indeed and say have a great rest of the week it's Thursday so there's only Friday to go take care stay healthy stay sane Rob and I are doing our best to do both of those and look forward to seeing you next time we have a webinar all the very best thanks guys there we go that's it
+
+
+[00:02] that's it
+[00:05] first attendant good morning
+[01:47] right
+[01:51] [Music]
+[02:34] okay good morning everybody my name's
+[02:37] Nigel hedges I'm here together with a
+[02:38] robb girl who's muted at the moment but
+[02:41] he is present I can see him to deliver
+[02:44] you a little update or update bouncing a
+[02:47] little presentation on setting up a
+[02:50] basic setup of the DSX and the
+[02:53] certifiber pro cable tester and five
+[02:58] optical law states respectively I've
+[03:02] called it tips tricks and options and
+[03:04] certainly I hope you'll you'll be able
+[03:06] to pick up a couple of things that are
+[03:08] of interest or reviews to you
+[03:10] this presentation is aimed primarily at
+[03:14] our installer and end-user customers and
+[03:20] yeah there are a couple of things that
+[03:22] are worth looking into so without
+[03:26] further ado let's let's get started
+[03:34] presentation is being recorded as are
+[03:37] the questions and answers and will be
+[03:40] available for review after the event and
+[03:43] if you have any questions please bang
+[03:47] them in the question and answer box
+[03:50] which you'll find at the bottom of your
+[03:52] screen
+[03:53] and we'll monitor them and hopefully he
+[03:56] and I will be able to answer all of them
+[03:58] at the end of the presentation so when
+[04:02] we think about setting up for testing we
+[04:06] need to get the correct results there is
+[04:08] no point in in going out spending a lot
+[04:11] of time and therefore some money on
+[04:13] producing test results which are then
+[04:16] not as we would wish them and when I say
+[04:20] as we wish them I mean are they
+[04:22] acceptable to everybody concerned are
+[04:24] they acceptable to the end client are
+[04:26] they've already signed up for and are
+[04:29] they acceptable to the warranty provider
+[04:31] if there's a warranty involved are they
+[04:34] acceptable to the system manufacturer do
+[04:36] they if you encounter any issues do they
+[04:39] reveal sufficient information for the
+[04:41] cable system manufactured to be able to
+[04:43] look at them and make sense of them
+[04:47] also when we're setting up for testing
+[04:49] it's really important to ensure that
+[04:51] we've done the necessary preach X so
+[04:53] does the tester have current calibration
+[04:56] do we have the correct test accessories
+[04:59] to hand and do we know exactly what
+[05:02] we're supposed to be testing and I'll
+[05:04] come back to that in a second but first
+[05:06] I want to take a word a moment to talk a
+[05:09] little bit about calibration and tester
+[05:14] accuracy and calibration go hand-in-hand
+[05:18] our industry specifies a accuracy
+[05:21] requirement for each tester and in order
+[05:25] to ensure that that accuracy is
+[05:27] maintained the unit should be
+[05:29] irrespective whether it's our tester or
+[05:31] somebody else's should be calibrated in
+[05:34] accordance with the manufacturer's
+[05:35] instructions
+[05:37] I view calibration very much as a
+[05:40] cornerstone of the circle of confidence
+[05:42] and the circle of confidence to me is
+[05:44] very much sorry just a second
+[05:50] you
+[05:55] and the circular confidence is very much
+[06:00] a to do with the relationship between
+[06:03] the client or the end customer the
+[06:09] clients consultant if he exists because
+[06:12] it is his role to assess and agree on
+[06:18] the accuracy of the test results
+[06:21] the warranty provider of the system
+[06:23] manufacturer because essentially it's
+[06:25] his product which is being installed and
+[06:29] therefore he is the one who is offering
+[06:31] the warranty and therefore it's his
+[06:33] money wishes at risk then the system
+[06:35] distributor or reseller because he's the
+[06:39] one who usually gets it in the neck from
+[06:41] the Installer when it doesn't happen and
+[06:46] last but not least fluke networks is
+[06:50] also there because it's our tester which
+[06:54] is going to be in the mix for getting
+[06:58] the test results right so together with
+[07:02] the Installer and the client the end
+[07:05] customer the consultants the warranty
+[07:07] provider and the distributor we all have
+[07:10] a concern with the test results being
+[07:13] correct and therefore the accuracy and
+[07:15] the calibration of the tester is key to
+[07:18] what we're trying to achieve when we
+[07:21] talk about calibration we look to a
+[07:26] calibration service and a calibration
+[07:28] certificate which should include a clear
+[07:35] indication of where the test certificate
+[07:38] comes from where the testing was done
+[07:40] and you can see not only is there a
+[07:43] Tektronix and a flute logo at the top
+[07:44] but down the bottom we have Luke
+[07:46] Netherlands the BV happens to be where
+[07:49] our service facility is so the test
+[07:52] certificate should clearly show its
+[07:54] origin it should clearly show the date
+[07:56] of calibration and it should show the
+[08:00] date that the calibration is next due
+[08:02] and last but not least on the
+[08:05] one page it should have an authorized
+[08:08] signature from the metrology or the head
+[08:10] of laboratory who is involved then we
+[08:15] get to the detail of the test
+[08:18] certificate the calibration certificate
+[08:19] and we should be able to see down here
+[08:24] that this particular certificate is of
+[08:29] the found lift type that means that when
+[08:34] the tester was received for calibration
+[08:36] it was tested was found to be within
+[08:38] specification and therefore we did not
+[08:41] have to adjust it so it came in in spec
+[08:45] it goes out in spec there is no change
+[08:49] the other thing which appears on the
+[08:51] test certificate is an indication of the
+[08:54] standards and test equipment that were
+[08:56] used for the calibration itself so down
+[08:59] here right at the bottom this is on page
+[09:01] two you can see what was used which set
+[09:05] of verification artifacts was used the
+[09:10] serial number and the date that they are
+[09:13] valid until so we have a lot of data
+[09:17] relating to the performance of the
+[09:21] calibration and then when we look at the
+[09:23] actual test result itself we should see
+[09:26] every measured parameter shown so here
+[09:30] we have the first page of this test
+[09:34] report and what you're looking at is a
+[09:36] graph of performance against frequency
+[09:40] the orange line is the worst-case
+[09:44] allowable performance for in this case
+[09:47] for a level 4 tester and the blue line
+[09:50] is the actual performance of this
+[09:54] particular instrument this is a DSS 5000
+[09:58] and as you can see for near-end
+[10:01] crosstalk this is common to differential
+[10:05] near in crosstalk common mode return
+[10:07] loss and then also for return loss and
+[10:11] standard TCL which is transverse
+[10:14] convergence loss insertion loss every
+[10:18] parameter is within specification and comfortably
+[10:22] so and we even have a third page which
+[10:27] includes foreign crosstalk again we're
+[10:30] comfortably within spec loop resistance
+[10:33] which obviously doesn't have a graph
+[10:36] because it's easy measurement and
+[10:38] resistance in balanced or unbalanced all
+[10:43] shown all relevant all important to the
+[10:48] test results that we are trying to
+[10:49] achieve so if you have a calibration
+[10:53] report which does not include all of
+[10:55] this data you really have to bear you
+[10:58] really have to question
+[11:01] the validity of the report and we see it
+[11:04] a number of a number of so-called
+[11:07] calibration reports which appear which
+[11:11] do not include near and crosstalk do not
+[11:13] include return loss and frankly if you
+[11:15] don't include those two parameters which
+[11:18] are the two which are most commonly
+[11:20] likely to fail after why map if you
+[11:24] don't include the calibration data on
+[11:26] those two parameters what is the point
+[11:28] of using a calibration service magmatic
+[11:35] so once we're certain that we have the
+[11:40] measured parameters all displayed and
+[11:42] that the unit is in spec we can move on
+[11:46] to planning our testing and one of the
+[11:52] things we need to do is make sure that
+[11:53] we have the preparation in place and I
+[11:55] created this installation testing setup
+[11:59] worksheet together with a couple of my
+[12:03] installer customers and to try to cover
+[12:07] off the things that tend to get
+[12:11] forgotten or tend not to be passed
+[12:14] necessarily from project manager to the
+[12:18] field engineers who are actually going
+[12:19] to do the work so we've got some basic
+[12:22] data here like contract reference
+[12:24] customer name site when we expect to
+[12:28] start testing useful to ensure that the
+[12:31] tester has been is calibrated and is in
+[12:34] calibration and then it has a current
+[12:38] version of firmware installed together
+[12:41] with the date of that approximate number
+[12:46] of links why would we include the
+[12:48] approximate number of links well because
+[12:51] it's important to know because it will
+[12:54] determine how long it takes to complete
+[12:56] the testing in the first instance
+[12:58] secondly it also determines whether or
+[13:01] not we need to apply more than one
+[13:03] tester or possibly more than one set of
+[13:06] permanent link adapters
+[13:08] when we're testing twisted-pair which
+[13:11] test regime are we following are we
+[13:13] testing on behalf of the client are we
+[13:16] testing on behalf of the client with a
+[13:18] warranty or are we using our own
+[13:20] in-house test procedure if it's a client
+[13:25] who is the client contact is there a
+[13:28] warranty being offered if so who is the
+[13:30] warranty provider and therefore where is
+[13:32] the warranty contact and what is his
+[13:34] telephone number
+[13:35] what is the warranty test spec required
+[13:37] to be this is all data that goes toward
+[13:40] making sure we get the tester setup
+[13:42] right because getting the tester set up
+[13:45] wrong makes for messes makes for lost
+[13:49] time lost time is lost money so we want
+[13:52] to be certain that we've got something
+[13:54] sensible going on the cable type
+[13:58] involved cat5e six six a seven seven a
+[14:01] and cat
+[14:02] eight little note here that says cat
+[14:05] seven requires different permanent link
+[14:07] and channel adapter doesn't say and
+[14:08] channel but it requires different
+[14:10] connectivity because cat seven and cat
+[14:13] 7a use Tara connectors or GG forty five
+[14:17] and we have to address those differently
+[14:19] the construction of the cable is it
+[14:22] unshielded unshielded twisted-pair
+[14:24] unshielded with a foil foil with an
+[14:28] unshielded cable foil foiled or shielded
+[14:31] foil twisted pair and obviously we have
+[14:37] all of those different types to be
+[14:41] considered and anything apart from you
+[14:44] UTP is automatically going to switch on
+[14:47] the shield integrity test which is
+[14:50] crucial and obviously if you're testing
+[14:53] cat eight you do require a DSX 8000 and
+[14:56] so you need to have that if the cable is
+[15:00] a named cable so if for instance it's a
+[15:03] Panduit cable or a consecrated cable or
+[15:05] a Leviton cable then it's worth having
+[15:07] the name in there because the
+[15:09] manufacturers will be very pleased to
+[15:10] see that on the test reports useful to
+[15:14] know the nominal velocity of propagation
+[15:16] of the cable which does vary quite a lot
+[15:19] depending on cable construction we see
+[15:21] everything from about 67% to about 79%
+[15:26] in terms of nominal velocity of
+[15:29] propagation that means the speed of the
+[15:31] cable very is massively depending on how
+[15:33] its constructed then the test limit are
+[15:38] we going to test 2t i-a which is the
+[15:41] category 5e 6 6a are we going to test it
+[15:44] iso or en which are the class de ei and
+[15:50] F and FA or are we going to test to
+[15:54] something completely different or are we
+[15:56] going to use an application test if
+[15:58] we're going to use an application test
+[16:00] what application are we testing for so
+[16:03] why are we testing for 10-gigabit
+[16:05] compliance for instance that's an option
+[16:08] or gigabit compliance are we interested
+[16:13] in power over ethernet compliance these
+[16:15] are all things to be considered when
+[16:18] we're talking about that and then the
+[16:20] test method itself are we testing the
+[16:22] permanent link so patch panel applet to
+[16:28] telecoms applet on the wall are we
+[16:31] testing the channel so the same thing
+[16:33] but including patch cords are we testing
+[16:36] the modular plug terminated link which
+[16:38] is patch panel connection at one end
+[16:41] rj45 male plug at the other or are we
+[16:45] testing an end-to-end link which we
+[16:47] typically only find in industrial
+[16:49] ethernet environments but end-to-end
+[16:51] links and modular plug terminated links
+[16:54] need patch cord adapters so once again
+[16:57] we are asking the question in advance do
+[17:00] we have the right accessories to test
+[17:02] what we need to test and then last but
+[17:05] not least we have the cable IDs is there
+[17:08] a list in existence yes or no if there
+[17:11] is where is it what's the file location
+[17:12] and if not then are we testing to a
+[17:18] sequence if we are does the sequence
+[17:21] start with what and what is it end with
+[17:23] so all of this data is stuff that it
+[17:27] really helps us to have before we start
+[17:29] fooling around with the tester itself
+[17:33] this is the top half of a page the
+[17:35] second half is the fiber variant in this
+[17:39] case I've filled it in a little bit with
+[17:41] some some jokey stuff so we've got
+[17:45] a contract reference we've got a
+[17:47] customer we've got a site we've got a
+[17:50] project manager sort of we've got four
+[17:54] hundred and eighty pairs to be tested
+[17:56] important stuff
+[17:58] we only got one day to do the testing
+[18:01] which with four hundred and eighty pairs
+[18:02] is quite reasonable
+[18:04] when was the tester calibrated what
+[18:07] version of firmware are we running what
+[18:10] is the test regime in this case we're
+[18:12] going to run a warranty test is the
+[18:17] warranty being offered yes who's the
+[18:19] warranty provider and who is the contact
+[18:22] there what is the test speck what is the
+[18:25] cable type in this case it's Om for
+[18:29] label trade name and the connector type
+[18:32] in this case is Sierra Charlie the
+[18:36] important thing about Sierra Charlie
+[18:38] Foxtrot Charlie Sierra tango is that you
+[18:41] need different input connectors for your
+[18:45] fiber tester and you need different test
+[18:48] reference cords so do we have these are
+[18:51] they available if they're not available
+[18:53] then you are going to have a very
+[18:56] unhappy time when you get the site so
+[18:57] you need to be certain that they're
+[18:59] their test limit that we're using is ISO
+[19:03] and we're testing for loss length we're
+[19:06] going to use the N face inspection unit
+[19:09] as well and we're going to test
+[19:11] bi-directionally we're not using the
+[19:14] OTDR in this particular case but we do
+[19:18] have two connections a leg and two
+[19:22] splices per leg which is pretty much
+[19:24] difficult yes as far as the cable IDs
+[19:27] are concerned we don't have a list which
+[19:30] is third but we do have a sequence start
+[19:34] and a sequence end so we can use those
+[19:37] to set up the tester now all of that
+[19:39] data is really quite crucial and I'm
+[19:41] certain those of you who have loads of
+[19:44] experience with this will be looking at
+[19:45] it and going yet
+[19:46] that stuff's obvious and he forgot X or
+[19:49] Y I challenge you over the next 20
+[19:53] minutes or so to work out what the X and
+[19:56] the y are what did I forget to put on
+[19:58] this testing wet setup worksheet answers
+[20:02] in the QA or in the chat Rob will
+[20:05] monitor it and he won't tell me what
+[20:08] they are so now that we know that we
+[20:12] have that all of that data we can now
+[20:15] move in the direction of setting the
+[20:19] tester up we can do this in one of two
+[20:21] ways and the one that I'm not going to
+[20:23] use today is the linkware live cloud
+[20:25] service those of you who attended
+[20:28] previous webinars will know that there's
+[20:31] quite a lot of capability in linkware
+[20:36] life I'm going to do it directly on the
+[20:38] front panel of the tester and just to
+[20:41] make life exciting I am going to go back
+[20:46] to this page and I'm going to add
+[20:52] the instrument players do that you don't
+[20:57] have to look at my ugly face all morning
+[20:59] and I can move this onto the page yeah
+[21:06] and with a bit of luck Rob will tell me
+[21:08] if you can't see the VNC vira
+[21:13] sorry the instrument display which is on
+[21:17] screen at the moment okay note thanks
+[21:20] for and so we've that in front of me
+[21:26] instead and we can now create our new
+[21:35] project so first thing I'm going to do
+[21:37] is I'm going to change the project I'm
+[21:38] going to have a new project and it's
+[21:41] going to be called
+[21:48] it's going to be called
+[21:54] you
+[22:00] you
+[22:04] you
+[22:14] you
+[22:19] going to be called Mary's cakes
+[22:23] it's going to have the
+[22:28] contract number in there because it
+[22:31] makes it easier to track what we are
+[22:33] doing so there we go
+[22:35] that is the very first thing the
+[22:37] operator is me
+[22:42] for the sake of this will
+[22:44] smooth operator cuz that's what I am and
+[22:46] the test setup that we are going to use
+[22:50] obviously there are no results left this
+[22:52] is a new test we're going to edit the
+[22:54] standard test setup which is on the page
+[22:56] and the cable type that we're going to
+[23:01] be using let's have a look at that
+[23:03] obviously we have lots and lots and lots
+[23:06] of cable types let's have a quick look
+[23:08] at manufacturers so for example we have
+[23:13] cables from lots and lots of people
+[23:20] you
+[23:27] [Music]
+[23:31] you
+[23:34] hopefully you you guys recognize most of
+[23:37] these people or at least some of them
+[23:38] and looking for
+[23:42] you know the time just because I can and
+[23:47] here are all of the Leviton tables which
+[23:50] they have declared to us purely a bit of
+[23:53] interest if you if you find yourself
+[23:55] looking for a manufacturer specific
+[23:58] table and it doesn't appear in the list
+[24:01] please first and foremost make sure that
+[24:04] you have the correct manufacturer name
+[24:07] know because some of them appear under
+[24:09] different names and second please be
+[24:12] aware that this list is compiled by the
+[24:14] manufacturer and provided to us and we
+[24:18] added as as a service we are not
+[24:22] responsible for maintaining the list
+[24:23] that is the manufacturers role he does
+[24:26] that kind of thing so if it doesn't
+[24:30] appear our apologies there needs to be
+[24:32] some work done so in this case I'm going
+[24:35] to go generic
+[24:37] and we're going to go for a cat 6a SFTP
+[24:42] no we're not we're going to go for an f
+[24:44] nu T P so that's foiled on the outside
+[24:48] unshielded in the middle and the normal
+[24:52] velocity of propagation default to 74
+[24:55] percent for this particular cable the
+[24:57] shield test defaults on so we are
+[25:00] automatically testing for the presence
+[25:02] continuity and quality of the shield the
+[25:07] test limit that we're going to apply
+[25:11] we've got a lot of them and in this
+[25:15] particular case we are going to test for
+[25:20] you
+[25:25] class ei ISO class ei because it's a
+[25:29] warranted job and in this particular
+[25:33] case as you can see we have options we
+[25:35] can test for the permanent link to
+[25:38] connector class ei plus p OE or plus all
+[25:45] or just the bog standard test now plus
+[25:48] POA means we include the tests
+[25:50] specifically required for power over
+[25:53] ethernet compliance testing the plus all
+[25:57] means that we include all of the
+[26:00] advanced parameters for cable quality
+[26:03] which have been defined as a result of
+[26:07] the arrival of cat ate my default is
+[26:17] always to test for plus p OE and what i
+[26:21] would say is that if you find you are
+[26:23] having issues with supplied cable i
+[26:28] would switch on plus all because it
+[26:32] gives the manufacturer and warranty
+[26:35] provider of the cabling system the
+[26:37] ability to look into as much detail as
+[26:39] they possibly might need so in this case
+[26:42] we're going to go plus PR e store plot
+[26:47] data is always on because we never don't
+[26:51] store plot data and couple of things and
+[26:55] here is an option in the HD TDR on h dt
+[26:59] DX those are our diagnostic functions so
+[27:03] you have the ability to switch them
+[27:05] switch it on 4th pass/fail I'm sorry for
+[27:09] fail or star pass only and which is when
+[27:12] you really need the Diagnostics you can
+[27:15] opt to run it for all auto tests which
+[27:18] will add about a second and hard to the
+[27:21] test and save time or you can opt to run
+[27:24] it never running it never saves you no
+[27:28] time at all unless you get failed in
+[27:32] which case it saves you a second and a
+[27:34] half
+[27:35] if you have dodgy cable I would select
+[27:38] all auto tests because then you can
+[27:42] provide your cable manufacturer with a
+[27:46] full set of test results both pass and
+[27:49] fail and what the cable looks like all
+[27:52] the way down so in this case we're going
+[27:53] to leave it as fail and star pass only
+[27:57] because that makes not a sense and the
+[28:01] applet configuration is t568b be for
+[28:07] britain a for america and we're in
+[28:11] britain so we are doing the t568b thing
+[28:14] so i can hit save and fundamentally i am
+[28:20] now ready to go test them there's
+[28:23] nothing else i need to add except for
+[28:26] the cable IDs and the cable IDs need a
+[28:31] new ID set so i can enter my first cable
+[28:37] ID here and because i'm
+[28:43] this
+[28:45] 6a there we go
+[28:51] we go cab a
+[29:00] :
+[29:07] you
+[29:08] panel 0-1
+[29:14] / 0 1
+[29:21] you
+[29:29] the last cable ID is going to be cab D
+[29:33] panel zero five so these are all cat 6a
+[29:47] test results we have four cabinets
+[29:49] each cabinet has five panels in it and
+[29:51] we have 24 ports per panel if that seems
+[29:58] unrealistic then my apologies obviously
+[30:02] you can have as many cable ID lists as
+[30:04] you like so you could have a separate
+[30:08] one for each cabinet if you needed to
+[30:10] it's entirely up to you so once we've
+[30:14] done that we hit done and I can have a
+[30:19] quick review here and here are the cable
+[30:27] IDs as you can see going panel 1 1 2 3
+[30:32] 24 I can scroll up here and then we get
+[30:37] panel 2 and you go halfway yeah cabbie
+[30:43] cab C and D all of that data is there
+[30:49] and then we hit save and here
+[30:52] potentially is one more tip and that is
+[30:58] down on the bottom here you'll see there
+[31:00] is something called next ID double O 1
+[31:03] is the default table
+[31:07] ID list which exists in every project
+[31:10] and since we don't want to need one to
+[31:14] use it I'm going to delete it and the
+[31:18] tester is now forced to use the cable
+[31:21] IDs that I gave it which
+[31:24] my point of view is a damn good idea now
+[31:28] that is a copper test setup it's taken
+[31:32] me a sum total of 6 minutes and 40
+[31:35] seconds including the fooling around
+[31:38] time but the important thing is that had
+[31:42] I had my testing worksheet in front of
+[31:46] me it would have been quicker and easier
+[31:48] and I would have had very few decisions
+[31:51] to make because all of the answers would
+[31:53] have been on the sheet and we can do
+[31:57] another one for for the fiber setup so
+[32:17] this is
+[32:22] this is the fiber setup so I can go new
+[32:25] test and in this case we're going to
+[32:30] change to the certifiber pro and it's a
+[32:37] cord unit and it is a test a smart
+[32:42] remote test bi-directional yes we're
+[32:46] going to do bi-directional testing the
+[32:50] fiber type is om for once again I have
+[32:59] lots of different options
+[33:01] I have manufacturer specific ones I have
+[33:05] generic ones so we're going with the
+[33:07] generic om4 and the test limit that
+[33:12] we're going to apply is ISO
+[33:16] and in this case iso/iec 1472 3-3 the
+[33:22] 2014 edition is the relevant one the
+[33:28] reference method well interestingly ISO
+[33:36] only allows you a one jumper reference
+[33:39] though we're going to doing a one jumper
+[33:42] reference and you go back page the
+[33:45] connector type is Sierra Charlie and the
+[33:50] number of connections and splices is two
+[33:52] and two according to my page so that's
+[33:58] what we're allowing for and we can hit
+[34:05] done while we're on this page let me
+[34:11] just show you when it comes to test
+[34:13] limits we do have the option of
+[34:21] vendor tests limit and the vendor test
+[34:24] limit at the moment the only vendor who
+[34:26] have signed up to a customer to a custom
+[34:29] test limit is calm scope and those of
+[34:31] you who are calm scoped installers will
+[34:33] find that we have system X field
+[34:37] terminated and system X instant patch
+[34:39] options built into the tester so we can
+[34:42] go to field terminated and we now
+[34:47] have to specify how many SCO ST or LC
+[34:52] connectors we have how many splices and
+[34:54] the jumper reference and we can
+[34:58] configure a very specific test which is
+[35:03] 100% in accordance with system X comma
+[35:08] scope system X's published loss
+[35:11] calculator so the loss calculator that
+[35:14] we used to have in an Excel spreadsheet
+[35:15] still do and also exist as a tablet and
+[35:20] mobile phone app is now included in the
+[35:23] test exactly as calm scope specified it
+[35:26] so it works exactly the same way and it
+[35:29] is internally reliable and what we now
+[35:48] have in nine eight seven six five zero
+[35:51] six twenty twenty Mary's cakes is we now
+[35:55] have two test setups one for the fiber
+[35:59] one for the copper and what we need to
+[36:02] add is a new ID set and this is going to
+[36:07] be called for
+[36:15] you
+[36:20] I did say slash
+[36:35] you
+[36:42] come on spell
+[36:52] channel-01
+[36:56] snow
+[37:13] caddy panel six
+[37:24] six and forty-eight and in this case
+[37:39] these are fiber test results and I am
+[37:43] reminded that there is loss length
+[37:45] testing to do but there is also fiber
+[37:48] inspection to do so we use the same
+[37:50] cable IDs for both for both ends we can
+[37:55] review the cable IDs there's one
+[37:59] thousand one hundred and fifty two of
+[38:01] them which is rather more than the four
+[38:02] eighty I said in the number of tears
+[38:05] however which is what it is and we hit
+[38:10] save
+[38:13] and we now have
+[38:18] to cable ID sets I quite like the idea
+[38:21] of using the cable designation so om4
+[38:26] cat6a whatever at the front end of the
+[38:29] cable IDs if you're allowed to and
+[38:31] because it helps identify what type of
+[38:34] test was off you have so these are
+[38:40] pointers options you do not have to use
+[38:43] the cable ID set function but if you do
+[38:46] the likelihood of getting incorrect
+[38:48] cable IDs is much reduced obviously if
+[38:54] you have a lot of fails then it does
+[38:56] make life a little bit more exciting but
+[38:59] generally speaking I would suggest that
+[39:02] this is the best option to follow if you
+[39:08] can so all of that data is now in the
+[39:12] project I can go home on the tester and
+[39:17] here is our project ready to use if we
+[39:21] decide we're going to test the fiber
+[39:22] first then if we touch where it says the
+[39:25] test setup on the page you can choose
+[39:28] the fiber setup first if I do the tester
+[39:31] will complain that it doesn't have fiber
+[39:33] module fitted so I won't you there and
+[39:36] but we are fundamentally good to go the
+[39:39] only thing that is worth checking at the
+[39:42] top of the screen here is that the date
+[39:44] and time are correct which they pretty
+[39:46] much are and
+[39:55] information and we are running version
+[40:00] 6.55 the limits version is 7.5 and if we
+[40:05] want to check the modules the module
+[40:08] calibration date which is the bit we
+[40:10] care about is here and see that my
+[40:16] tester requires calibration but then
+[40:18] mine is a demo unit only obviously yours
+[40:25] ok
+[40:32] so as far as setting the tester up for
+[40:35] copper and fiber testing is concerned I
+[40:38] suppose the one thing we ought to do is
+[40:40] we ought to add
+[40:43] one more test and that is the end phase
+[40:48] inspection test so if we go here we go
+[40:50] fiber inspector Pro and say test type
+[40:54] fiber inspector wear the test Amit is
+[40:56] concerned we have options we can inspect
+[41:02] and document only which means we take a
+[41:05] photo over the N face when we think it
+[41:07] looks lovely and clean and we include
+[41:10] that in the test report all we can apply
+[41:12] the IEC six one three hundred - three -
+[41:16] thirty five addition to which is the
+[41:19] current edition of the standard n phase
+[41:23] condition standard and for the purposes
+[41:26] of this I'm going to go document only
+[41:30] the end type is a single fiber
+[41:38] with this unit to also check multiple
+[41:43] fibers so we're going with the end fiber
+[41:46] and we say done we say save and we are
+[41:50] ready to go so there we go I'm setting
+[41:57] the tester up I hope I haven't gone too
+[42:01] fast and I apologize that you can't see
+[42:03] where I'm pushing but it is very logical
+[42:08] one step at a time the only thing I
+[42:10] would say is when you
+[42:15] change the cable type from cat6a which
+[42:19] is the default in both the DSX 5000 and
+[42:21] 8000 and in the 600 when you change the
+[42:25] cable type you must also change the test
+[42:28] limit because the test limit defaults to
+[42:31] cat6a as well and if you're a testing
+[42:34] cat 5e cable to a cat 6a limit you will
+[42:38] get 100% fails and I do get irregular
+[42:44] calls from people who immediately ask me
+[42:49] what's wrong with the test because
+[42:50] everything's failing and fundamentally
+[42:54] the answer is to change the cable type
+[42:56] but you did not change the test limit so
+[43:00] just be aware of that and one last thing
+[43:05] that I wanted to show you while we're on
+[43:07] the instrument is
+[43:09] [Music]
+[43:15] you
+[43:19] and this is the set of test results from
+[43:22] the webinar which I ran a couple of
+[43:25] weeks ago and what I wanted to show you
+[43:30] specifically was this this is the test
+[43:34] reference cords
+[43:36] this is the part of the process after
+[43:40] setting the reference when you're
+[43:42] testing fiber this is the part that
+[43:45] confirms that the test reference cords
+[43:48] are in adequate condition to carry out
+[43:52] the test and the important thing here is
+[43:55] there are two important things one of
+[43:57] them is that the loss is extremely low
+[43:59] which is good because it means the end
+[44:01] phases are in very good condition the
+[44:03] second is that there is a measured
+[44:05] length and the measured length should be
+[44:10] around two meters and it indicates that
+[44:14] I did install the second test cord
+[44:17] before I hit the TRC verification button
+[44:21] if you do not install the second cord
+[44:25] then you will have no length measured
+[44:28] and your warranty provider will pick
+[44:30] this up in about half a heartbeat and
+[44:33] will reject your test results because
+[44:36] you did not set the test reference cords
+[44:39] up properly before you started right so
+[44:47] ladies and gents boys and girls I'm not
+[44:51] even sure that we have any ladies
+[44:58] I think that that is probably sufficient
+[45:05] from a tips tricks and options point of
+[45:10] view and I thank you for attending I
+[45:15] thank you for staying awake I am very
+[45:21] happy to answer any questions that we
+[45:25] may have we had one question one
+[45:34] question Nigel yes would you forward
+[45:37] across to the attendees the copy of your
+[45:40] copper and fiber Excel setup sheet and I
+[45:43] said that answered the question saying
+[45:45] that you'll send it to all attendees
+[45:47] after the presentation 55 pounds each
+[45:51] because I'm not cheap so that Bellavia
+[45:55] will be winging its way across to all
+[45:57] the attendees yes no problem at all it
+[46:00] is it is one sheet and obviously you can
+[46:03] add to it adjust it as you see
+[46:06] fit
+[46:07] did anybody spot the bit that's not on
+[46:08] this on the sheet nobody answered
+[46:13] well fair enough
+[46:16] short answer is there was no p OE option
+[46:21] or plus all option on the on the sheet
+[46:24] because i didn't get around to adding
+[46:26] them last night when it was late okay um
+[46:31] if there are no other questions I'm
+[46:35] happy to answer anything that comes up I
+[46:41] will say thank you all very much indeed
+[46:44] for attending and on whatever you're
+[46:47] there and yeah I will thank you
+[46:56] very much indeed and say have a great
+[47:00] rest of the week it's Thursday so
+[47:02] there's only Friday to go take care stay
+[47:07] healthy stay sane Rob and I are doing
+[47:11] our best to do both of those and look
+[47:13] forward to seeing you next time we have
+[47:15] a webinar all the very best thanks guys
+[47:23] there we go that's it

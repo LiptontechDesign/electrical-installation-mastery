@@ -1,0 +1,588 @@
+# 3 Phase: How to Calculate Line Voltage, Phase Voltage, Line Current & Phase Current in Star & Delta
+# https://www.youtube.com/watch?v=ky7cs1NYvCI
+
+[Music] hello and welcome to this electrical principals training video this video is designed to be used in conjunction with the worksheet that you'll find the link to in the description below so if you haven't already done so please click that link download the worksheet and then follow through the questions as we go have a go answering them yourselves and then check your answers against the worked example I'll show you on the board so let's get started by answering question one so question one tells us that three identical resistive loads of 25 ohms are connected in star to a 415 volt supply and we're asked to calculate the phase voltage the line current and the phase current so let's just put down the detail of what we already know we told that it's a 415 volt supply so we know that the voltage between any of two of those phases will be 415 volts so between there and there we've got 415 volts with this kind of question it's always a good idea to at least sketch out an image of what you're calculating it'll just help you to formulate your thoughts and visualize what you're trying to do we also need to list what the resistance of the circuit is so here we can see that the resistance of this is equal to 25 ohms so each one of those is worth 25 ohms so we've got that clearly on the board it's a good idea with this kind of question to always just do a little sketch of what you're calculating and to write down as much information on there as you can so in this case we already know what the line voltage and the resistance is so we'll just make a list of the things we know we already know that the resistance is 25 ohms so R is equal to 25 ohms and we know that the line voltage VL is equal to 400 and 15 volts if this is new to you this idea of line voltage and the other thing we're going to talk about phase voltage line current and phase current then please go and watch a previous video in this series on three-phase because it's going to help you to understand the maths that we're about to do now so this stage will write up what we're trying to find so we need to know what the phase voltage is so that's one thing that we're going to try and find we also want to know what the line current and the phase current is so we'll write those up as well so we'll say that the line current and the phase current are equal to something so we'll try and find the phase current and we'll try and figure out what the line current is going to be also so we'll write that on there il is equal to so those are the things that we're trying to find so what calculations do we need to do to find those answers well let's try and figure it out first of all we know the line voltage and we want to find the phase voltage so this is really the first step to answering this question because we need to know what voltage is acting across the load so that we can figure out how much current is being pushed through the load so here we're going to say that the phase voltage let's calculate that so the phase voltage will be equal to the line voltage VL divided by the square root of 3 now again if that formula is new to you then please go and watch a previous video in this series because it'll help you to figure out where that's coming from that's all we've got to do is just put the numbers in so we'll say that VL is equal to four hundred and fifteen volts and the square root of three is just a mathematical constant that stays in this calculation so we've got four hundred and fifteen divided by the square root of three so we'll put that into our calculator four hundred and fifteen divided by the square root of three and that's gonna give us two hundred and thirty nine point six volts so we've got two hundred and thirty nine point six volts there we go so we figured out what the phase voltage is sort of put that in there two hundred and thirty nine point six volts happy days now we need to try and figure out what the phase current is so this piece of information is absolutely critical now because we know that the voltage across that load the phase voltage VP is equal to two thirty nine point six volts there and we want to know how much current is that pushing through the load remember the current through the load is the phase current so that's what we're looking at there so let's perform the next stage of the calculation we want to know what the phase current is we know what the voltage being applied to that load is and we also know what the resistance of that load is so we can use those with some nice Ohm's law IP is equal to V over R bearing in mind that the V we're going to be using is the phase of voltage V P because that's the voltage that is acting on the load by itself so if we now put the numbers in we've got two hundred and thirty nine point six which is the value we just calculated divided by that resistance of twenty five so two hundred and thirty nine point six divided by twenty five I'll put that into the calculator two hundred and thirty nine point six divided by twenty five and that gives us a value of nine point five eight two ran off to amp ere's nine point five eight and pairs so now we know how much current is flowing through that load it is nine point five eight amp ere's so we can fill it in here as our answer nine point five eight amp ere's and now we want to know what the line current is going to be now hopefully from a previous video you remember what the relationship is between line current and phase current in a star connected load we know that the phase current is the current flowing through the load and the line current is the current flowing through any one of the supply lines so we can now say we can perform the calculation I L is equal to I P and that's pretty much the simplest formula that you'll ever use in electrical science because line current and phase current are the same value in a star connected load so we can now say that that is equal to nine point five eight amperes so that's a nice easy answer to do we've got nine point five eight pairs and that is question one on this worksheet completed so question two on the worksheet asks the same loads of 25 ohms are now connected in Delta to a 415 volt supply calculate the phase voltage the line current and the phase current so we've got the same load 25 ohms connected to the same value of line voltage of 415 volts and once again we're going to calculate the phase voltage the line current and the phase current so let's follow the principles outlined in the first question we're going to fill in what we know on the drawing so we know that VL again is 415 volts so we've got VL is equal to 400 and 15 volts and we know that the resistors are each worth 25 ohms so we know that this resistor here is 25 ohms so I'll put that in there 25 ohms so that resistor has a value of 25 ohms and now we can start to calculate the things that we need to find so by putting in the information we already know we know that the resistance is equal to 25 ohms so we're happy with that we know that the line voltage is equal to 400 and 15 volts and once again we're asked to find a phase voltage VP so the phase voltage is equal to something we don't know yet know what the phase current IP is equal to we don't know what yet and the line current is equal to again we don't know what that's going to be so we want to find that and figure out what that's going to be so let's do some calculations so the first thing we need to figure out is what is the value of the phase voltage so once again VP is equal to now again we're in Delta so the rules have changed and in a delta connected load we know that VP is equal to V L so once again we can do that lovely simple calculation where VP is equal to VL which is 415 volts so the voltage that we find across our resistor is 415 volts so we can put that in 415 volts there and that of course is your phase voltage is equal to that value so that's nice and simple as a starting point the next thing that we need to find is our phase current so our phase current IEP once again using a little bit of Ohm's law we've got V and divided by R and again this V is the phase voltage the voltage across the load so therefore VP is 415 volts this time divided by 25 and 415 divided by 25 if we just put that into our calculator I should be able to figure out oh my head I think it's sixteen point six I'm just quickly verify that 415 divided by 25 is sixteen point six happy days so we've got there sixteen point six amperes so that is the phase current that's the current that is flowing through that load there now obviously the line current is the current that flows down the supply line and the current that flows down the supply line splits off some of it goes that way and some of it goes that way so the line current is going to be bigger than the phase current how much bigger well if you've not watched the previous video then we'll tell you now so the line current will be equal to the phase current multiplied by importantly that kind of really important number that we use for three-phase systems the square root of three so the phase current times by root three will give us the line current so if we perform that calculation now sixteen point six times by the square root of three we'll get our value of phase of line current sorry so sixteen point six times by the square root of three gives us a value of twenty eight point seven five amps so now we've got twenty eight point seven five amperes happy days so now if it was me I just go back and just fill these numbers in here so the phase voltage was equal to four hundred and fifteen volts it's a nice easy calculation that one the phase current is equal to sixteen point six amperes so that's that one now sixteen point six amperes and then the line current is equal to twenty eight point seven five amperes twenty eight point seven five so that completes question two we found all the information that we needed to but just an interesting little point here if you look at these systems we've got the same resistors connected in star and then connected in Delta and look what happens to the current that flows into the system so here we have nine point five eight amperes and here we've got twenty eight point seven five or what's the number that relates those two together if we lose twenty eight point seven five divided by nine point five eight now bearing in mind we've rounded these numbers off so there might be a little bit of variance here but if we look at that you can see that we come out with practically three so we can say that if you take the same load and connect it in star and then connect it in Delta the amount of current that flows into the system will be three times as much so now let's answer question three of this worksheet so in question three we're told that we have three identical resistive loads of 50 ohms connected to each other in star so here we've got the resistance of this is equal to 50 ohms so each one of these has a value of 50 ohms and then the question tells us that those 50 ohm resistors are connected in star to a 400 volt supply so that will be 400 volts there so we've got a line voltage of 400 volts so here's the things that we either know or are going to find so the resistance in this question is 50 ohms so we can put that in there we've got 50 ohms and the line voltage we know is 400 volts so 400 volts and now we need to find the phase voltage the phase current and the line current so let's have a look figuring out what these are so first of all we need to know what the phase voltage is going to be so we say that VP is equal to VL divided by root three so we end up with four hundred divided by root three and they should come up with a reasonably familiar number when we put this into the calculator so we've got four hundred divided by the square root of three which is equal to two hundred and thirty point nine volts so two hundred and thirty point nine volts for that one which is a nice value which is instantly recognizable is pretty much the voltage that we state are single-phase supplies out in the UK so we've got two hundred and thirty point nine volts there so we can say we've now found the phase voltage we then want to move on and calculate the phase current so the phase current is found by the following process we just use a bit of Ohm's law the phase voltage is obviously the voltage across the load we know that from a previous video and we know that to calculate the phase current we use a bit of Ohm's law IP is equal to VP over R notice we're using the phase voltage because the phase voltage is the voltage across the load so that's the one that defines the current flow through the load so we're going to do two hundred and thirty point nine which is what we just calculated divided by fifty for our values so we're going to do two hundred and thirty point nine divided by 50 so two hundred and thirty point nine divided by fifty and that's going to give us four point six one eight as an answer so for 0.618 amp ere's so there's our answer so how much current is going to flow through the load four point six one eight amps and then figure out what the line current is going to be this really could not be any easier because all we've got to do at this point is remember that in the star connected load the line current which is the current flowing into the circuit through any one of the supply lines is exactly the same as the phase current which makes sense because the current flowing through this load must be coming down this line here so therefore we can say that the line current will be equal to four point six one eight amp ere's happy days sore volley that in there four point six one eight amp ere's so that answers question three of this worksheet so question four of this worksheet asks the same loads of 50 ohms are connected in Delta to a 400 volt supply and then we're asked to calculate the phase voltage the line current and the phase current so once again just as we had in question three we've got a resistance of 50 ohms so those are resistor value R equals 50 ohms and the 50 ohm resistor has now been connected in Delta in this system and it's connected once again to that 400 volt supply so the line voltage the voltage between any two of the supply lines is 400 volts so listed down here we've got all of the values that we're trying to find or that we already know so we know that the resistance in this circuit is equal to 50 ohms connected across each phase and we know that here we've got VL which is equal to 400 volts so that's 400 volts which is going to go in there we then need to calculate the phase voltage the phase current and the line current so we'll try and calculate those now and again the really nice easy part about this to start with is that the phase voltage is exactly the same as the line voltage in the delta connected load so we can say that the phase voltage is equal to the line voltage which means that the phase voltage is equal to 400 volts if only all maths were this easy you know so we can put that in there 400 volts we then need to go on and calculate what our phase current will be and the phase current remember is the current that flows through the load so it's dependent on the voltage that is applied to the load and the voltage that is applied to the load is 400 volts so we're just going to use some simple Ohm's law Reagan IP the phase current is equal to VP that phase voltage the voltage across the load divided by the resistance of the resistor so we've got their VP over R so we're going to do 400 / 50 and I don't think it's really worth putting into the calculator is it 400 divided by 50 is gonna give us 8 num pairs of current flow so now we've found our current and we can stick that in here 8 amp ere's next we need to find our line current and if you remember from the previous answer the line current is equal to the phase current multiplied by that very important number root 3 so line current is equal to phase current times by root 3 so we've got 8 times by the square root of 3 and if you do that calculation 8 times the square root of 3 you will get the answer to the line current so 8 times root 3 which is going to give us 13 point eight six amperes so there we've got thirteen point eight two six amperes so that's the answer to question four we've now found our line current thirteen point six eight amps so we can see there that the resistance is 50 ohms the line voltage is 400 volts the phase voltage is 400 volts phase current 8 amps and line current 13 point 6 8 amps so now let's answer question 5 and our worksheet question 5 states that three identical resistive loads of 220 ohms are connected in star to a 440 volt supply so let's fill in the information that we already know we know that we've got a resistive value here are equal to 220 ohms and we know that we've got that connected to a three-phase supply so we know that VL is 440 volts V L is equal to 440 volts bearing in mind that's the voltage between any two of the supply lines so we'll fill out information up here as well we know that VL is 440 volts and we know that the resistance is also equal to 220 ohms and the question asks is to go on to state the phase voltage the phase current and the line current so let's work through this question and get our answers so first of all we need to find that the phase voltage so we're going to say that VP bearing in mind that this is a star connected load and we know that in a star connected load VL divided by root three will give us our phase voltage so therefore we need to be able to stick these numbers in accurately so 440 divided by the square root of 3 will get us to our answer so put that into the calculator we've got 440 divided by the square root of three and four hundred and forty divided by the square root of three gives us two hundred and fifty four volts 254 we'll leave that if we run off to one decimal place that's a zero so 254 volts is perfectly acceptable as an answer so there's our number 254 volts for our phase voltage bearing in mind that the phase voltage is the voltage across the load and therefore that is the voltage that we'll need to figure out what our phase current is the current through the load because the current through the load is dependent on the voltage across the load so we move on now to start calculating the phase current and that's really nice and easily done because for the phase current we're just gonna use a little bit of Ohm's law I P the phase current is equal to the phase voltage VP divided by the resistance R so we're just going to put this into the calculation now and we know that that will be 254 this value here divided by 220 so 254 divided by 220 gives us an answer of 1.15 amp ere's one point one five amperes now that we know that the phase current is 1.15 amps we can use that now to calculate what the line current is going to be and again if you haven't got the idea by this stage hopefully we'll be able to correct you now we know that the line current in a star connected system so I L is equal to I P and that's the end of the statement those values are the same a star connected system so therefore our line current il will be - 1.15 amp ere's so we now know that the line current is 1.15 amps nice and simple okay so now let's workout question 6 on our worksheet in question 6 tells us that the same load from question 5 of 220 ohms are connected in Delta to a 440 volt supply so we know we've got resistances here of 220 ohms so we can just put that on the drawing and we know that our line voltage VL is 440 volts the only difference in this question being that we've got it connected now in Delta instead of in star so VL is equal to 440 volts there so again we'll put that in fee information here this is the part where I record what I already know from the question 440 volts for the line voltage and 220 ohms for the resistance and then I just make a note of the things that I'm trying to find so that when I've completed all my calculations I can fill this in and I've got my answers laid out nice and neatly and if you can manage the structure you're working that nice neat way then your lecturer will love you forever so let's have a look now at finding the first part of our question which is the phase voltage it's always nice to start off with an easy calculation and a delta connected load V P and V L have exactly the same value so there we've got the phase voltage will be equal to 440 volts nice simple couch there no problem then we move on to start calculating the phase current and the phase current we rely on Ohm's law to find that so I P the phase current is equal to V over R but bearing in mind that the amount of current flowing through the load which is the phase current will be dependent on the voltage that is applied to the load the phase voltage so that's going to be 440 divided by 220 so I've realized that there's a reason that I chose these numbers because it makes this calculation really nice and easy so we can see there that forward and 40 divided by 220 gives us 2 amperes for our phase current in the Delta connected system what we don't need to do once we filled that in on a list of definitive answers is find the line current and the line current is a very simple relationship between a phase current and a line current in a delta connected system the line current il is equal to the phase current IP multiplied by the square root of three so il is equal to IP times root 3 so we've got two M pairs for our phase current times by the square root of 3 and once again if we put that into our calculators 2 times root 3 so 2 times root 3 that gives us three point four six amperes three point four six and pairs so I'll put that onto our list of definitive answers three point four six and there you can see that we've answered question six now we've got our phase voltage our phase current and our line current so all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video this video is
+[00:12] designed to be used in conjunction with
+[00:14] the worksheet that you'll find the link
+[00:16] to in the description below so if you
+[00:17] haven't already done so please click
+[00:19] that link download the worksheet and
+[00:21] then follow through the questions as we
+[00:22] go have a go answering them yourselves
+[00:24] and then check your answers against the
+[00:26] worked example I'll show you on the
+[00:28] board so let's get started by answering
+[00:31] question one so question one tells us
+[00:34] that three identical resistive loads of
+[00:36] 25 ohms are connected in star to a 415
+[00:40] volt supply and we're asked to calculate
+[00:42] the phase voltage the line current and
+[00:44] the phase current so let's just put down
+[00:46] the detail of what we already know we
+[00:49] told that it's a 415 volt supply so we
+[00:52] know that the voltage between any of two
+[00:55] of those phases will be 415 volts so
+[00:59] between there and there we've got 415
+[01:03] volts with this kind of question it's
+[01:05] always a good idea to at least sketch
+[01:06] out an image of what you're calculating
+[01:08] it'll just help you to formulate your
+[01:09] thoughts and visualize what you're
+[01:11] trying to do we also need to list what
+[01:14] the resistance of the circuit is so here
+[01:16] we can see that the resistance of this
+[01:18] is equal to 25 ohms so each one of those
+[01:22] is worth 25 ohms so we've got that
+[01:24] clearly on the board it's a good idea
+[01:26] with this kind of question to always
+[01:27] just do a little sketch of what you're
+[01:28] calculating and to write down as much
+[01:30] information on there as you can so in
+[01:33] this case we already know what the line
+[01:35] voltage and the resistance is so we'll
+[01:38] just make a list of the things we know
+[01:39] we already know that the resistance is
+[01:41] 25 ohms so R is equal to 25 ohms and we
+[01:47] know that the line voltage VL is equal
+[01:50] to 400 and 15 volts if this is new to
+[01:54] you this idea of line voltage and the
+[01:56] other thing we're going to talk about
+[01:57] phase voltage line current and phase
+[01:59] current then please go and watch a
+[02:01] previous video in this series on
+[02:03] three-phase because it's going to help
+[02:04] you to understand the maths that we're
+[02:06] about to do now so this stage will write
+[02:09] up what we're trying to find so we need
+[02:11] to know what the phase voltage is so
+[02:14] that's one thing that we're going to try
+[02:16] and find we also want to know what the
+[02:19] line current and the phase current is so
+[02:21] we'll write those up as well so we'll
+[02:23] say that the line current and the phase
+[02:27] current are equal to something so we'll
+[02:29] try and find the phase current and we'll
+[02:31] try and figure out what the line current
+[02:34] is going to be also so we'll write that
+[02:36] on there il is equal to so those are the
+[02:40] things that we're trying to find
+[02:42] so what calculations do we need to do to
+[02:44] find those answers well let's try and
+[02:47] figure it out first of all we know the
+[02:50] line voltage and we want to find the
+[02:51] phase voltage so this is really the
+[02:53] first step to answering this question
+[02:54] because we need to know what voltage is
+[02:56] acting across the load so that we can
+[02:59] figure out how much current is being
+[03:00] pushed through the load so here we're
+[03:03] going to say that the phase voltage
+[03:07] let's calculate that so the phase
+[03:09] voltage will be equal to the line
+[03:13] voltage VL divided by the square root of
+[03:17] 3 now again if that formula is new to
+[03:20] you then please go and watch a previous
+[03:22] video in this series because it'll help
+[03:24] you to figure out where that's coming
+[03:25] from that's all we've got to do is just
+[03:27] put the numbers in so we'll say that VL
+[03:30] is equal to four hundred and fifteen
+[03:32] volts and the square root of three is
+[03:34] just a mathematical constant that stays
+[03:36] in this calculation so we've got four
+[03:38] hundred and fifteen divided by the
+[03:39] square root of three so we'll put that
+[03:41] into our calculator four hundred and
+[03:44] fifteen divided by the square root of
+[03:46] three and that's gonna give us two
+[03:49] hundred and thirty nine point six volts
+[03:52] so we've got two hundred and thirty nine
+[03:54] point six volts there we go so we
+[03:58] figured out what the phase voltage is
+[04:00] sort of put that in there two hundred
+[04:02] and thirty nine point six volts happy
+[04:07] days now we need to try and figure out
+[04:10] what the phase current is so this piece
+[04:12] of information is absolutely critical
+[04:13] now because we know that the voltage
+[04:15] across that load the phase voltage VP is
+[04:18] equal to two
+[04:20] thirty nine point six volts there and we
+[04:24] want to know how much current is that
+[04:27] pushing through the load remember the
+[04:29] current through the load is the phase
+[04:31] current so that's what we're looking at
+[04:33] there
+[04:34] so let's perform the next stage of the
+[04:37] calculation we want to know what the
+[04:39] phase current is we know what the
+[04:42] voltage being applied to that load is
+[04:44] and we also know what the resistance of
+[04:46] that load is so we can use those with
+[04:49] some nice Ohm's law IP is equal to V
+[04:53] over R bearing in mind that the V we're
+[04:56] going to be using is the phase of
+[04:58] voltage V P because that's the voltage
+[05:01] that is acting on the load by itself so
+[05:04] if we now put the numbers in we've got
+[05:06] two hundred and thirty nine point six
+[05:08] which is the value we just calculated
+[05:10] divided by that resistance of twenty
+[05:13] five so two hundred and thirty nine
+[05:15] point six divided by twenty five I'll
+[05:18] put that into the calculator two hundred
+[05:21] and thirty nine point six divided by
+[05:23] twenty five and that gives us a value of
+[05:27] nine point five eight two ran off to amp
+[05:31] ere's nine point five eight and pairs so
+[05:35] now we know how much current is flowing
+[05:36] through that load it is nine point five
+[05:41] eight amp ere's so we can fill it in
+[05:43] here as our answer nine point five eight
+[05:46] amp ere's and now we want to know what
+[05:49] the line current is going to be now
+[05:52] hopefully from a previous video you
+[05:53] remember what the relationship is
+[05:54] between line current and phase current
+[05:57] in a star connected load we know that
+[05:59] the phase current is the current flowing
+[06:01] through the load and the line current is
+[06:03] the current flowing through any one of
+[06:04] the supply lines so we can now say we
+[06:07] can perform the calculation I L is equal
+[06:11] to I P and that's pretty much the
+[06:15] simplest formula that you'll ever use in
+[06:17] electrical science because line current
+[06:19] and phase current are the same value in
+[06:22] a star connected load so we can now say
+[06:25] that that is equal to nine point five
+[06:28] eight amperes so that's a nice easy
+[06:31] answer to do we've got nine point five
+[06:34] eight pairs and that is question one on
+[06:37] this worksheet completed so question two
+[06:40] on the worksheet asks the same loads of
+[06:42] 25 ohms are now connected in Delta to a
+[06:45] 415 volt supply calculate the phase
+[06:47] voltage the line current and the phase
+[06:49] current so we've got the same load 25
+[06:52] ohms connected to the same value of line
+[06:54] voltage of 415 volts and once again
+[06:57] we're going to calculate the phase
+[06:58] voltage the line current and the phase
+[07:00] current so let's follow the principles
+[07:02] outlined in the first question we're
+[07:04] going to fill in what we know on the
+[07:05] drawing so we know that VL again is 415
+[07:09] volts so we've got VL is equal to 400
+[07:14] and 15 volts and we know that the
+[07:18] resistors are each worth 25 ohms so we
+[07:22] know that this resistor here is 25 ohms
+[07:26] so I'll put that in there 25 ohms so
+[07:30] that resistor has a value of 25 ohms and
+[07:33] now we can start to calculate the things
+[07:35] that we need to find so by putting in
+[07:37] the information we already know we know
+[07:39] that the resistance is equal to 25 ohms
+[07:41] so we're happy with that we know that
+[07:44] the line voltage is equal to 400 and 15
+[07:48] volts and once again we're asked to find
+[07:51] a phase voltage VP so the phase voltage
+[07:55] is equal to something we don't know yet
+[07:57] know what the phase current IP is equal
+[08:03] to we don't know what yet and the line
+[08:06] current is equal to again we don't know
+[08:10] what that's going to be so we want to
+[08:12] find that and figure out what that's
+[08:14] going to be so let's do some
+[08:17] calculations so the first thing we need
+[08:20] to figure out is what is the value of
+[08:22] the phase voltage so once again VP is
+[08:24] equal to now again we're in Delta so the
+[08:27] rules have changed and in a delta
+[08:29] connected load we know that VP is equal
+[08:32] to V L so once again we can do that
+[08:35] lovely simple calculation where VP is
+[08:37] equal to VL which is 415 volts so the
+[08:42] voltage that we find across our resistor
+[08:44] is 415 volts so we can put that in
+[08:48] 415 volts there and that of course is
+[08:52] your phase voltage is equal to that
+[08:55] value so that's nice and simple as a
+[08:57] starting point the next thing that we
+[08:59] need to find is our phase current so our
+[09:02] phase current IEP once again using a
+[09:06] little bit of Ohm's law
+[09:07] we've got V and divided by R and again
+[09:10] this V is the phase voltage the voltage
+[09:13] across the load
+[09:15] so therefore VP is 415 volts this time
+[09:20] divided by 25 and 415 divided by 25 if
+[09:25] we just put that into our calculator I
+[09:27] should be able to figure out oh my head
+[09:28] I think it's sixteen point six I'm just
+[09:30] quickly verify that 415 divided by 25 is
+[09:34] sixteen point six happy days so we've
+[09:37] got there sixteen point six amperes
+[09:40] so that is the
+[09:43] phase current that's the current that is
+[09:46] flowing through that load there
+[09:49] now obviously the line current is the
+[09:51] current that flows down the supply line
+[09:53] and the current that flows down the
+[09:55] supply line splits off some of it goes
+[09:58] that way and some of it goes that way so
+[10:00] the line current is going to be bigger
+[10:01] than the phase current how much bigger
+[10:03] well if you've not watched the previous
+[10:05] video then we'll tell you now so the
+[10:08] line current will be equal to the phase
+[10:11] current multiplied by importantly that
+[10:14] kind of really important number that we
+[10:17] use for three-phase systems the square
+[10:20] root of three so the phase current times
+[10:22] by root three will give us the line
+[10:25] current so if we perform that
+[10:27] calculation now sixteen point six times
+[10:30] by the square root of three we'll get
+[10:33] our value of phase of line current sorry
+[10:36] so sixteen point six times by the square
+[10:40] root of three gives us a value of twenty
+[10:43] eight point seven five amps so now we've
+[10:47] got twenty eight point seven five
+[10:50] amperes happy days so now if it was me I
+[10:54] just go back and just fill these numbers
+[10:56] in here so the phase voltage was equal
+[10:58] to four hundred and fifteen volts
+[11:01] it's a nice easy calculation that one
+[11:03] the phase current is equal to sixteen
+[11:07] point six amperes so that's that one now
+[11:10] sixteen point six amperes and then the
+[11:15] line current is equal to twenty eight
+[11:18] point seven five amperes twenty eight
+[11:27] point seven five so that completes
+[11:32] question two we found all the
+[11:33] information that we needed to but just
+[11:35] an interesting little point here if you
+[11:37] look at these systems we've got the same
+[11:40] resistors connected in star and then
+[11:42] connected in Delta and look what happens
+[11:45] to the current that flows into the
+[11:47] system so here we have nine point five
+[11:49] eight amperes and here we've got twenty
+[11:51] eight point seven five or what's the
+[11:54] number that relates those two together
+[11:55] if we lose twenty eight point seven five
+[11:58] divided by nine point five eight now
+[12:00] bearing in mind we've rounded these
+[12:01] numbers off so there might be a little
+[12:03] bit of variance here but if we look at
+[12:06] that you can see that we come out with
+[12:07] practically three so we can say that if
+[12:12] you take the same load and connect it in
+[12:15] star and then connect it in Delta the
+[12:17] amount of current that flows into the
+[12:18] system will be three times as much so
+[12:24] now let's answer question three of this
+[12:26] worksheet so in question three we're
+[12:27] told that we have three identical
+[12:29] resistive loads of 50 ohms connected to
+[12:32] each other in star so here we've got the
+[12:35] resistance of this is equal to 50 ohms
+[12:37] so each one of these has a value of 50
+[12:40] ohms and then the question tells us that
+[12:42] those 50 ohm resistors are connected in
+[12:44] star to a 400 volt supply so that will
+[12:47] be 400 volts there so we've got a line
+[12:50] voltage of 400 volts so here's the
+[12:54] things that we either know or are going
+[12:56] to find so the resistance in this
+[12:58] question is 50 ohms so we can put that
+[13:01] in there we've got 50 ohms and the line
+[13:03] voltage we know is 400 volts so 400
+[13:08] volts and now we need to find the phase
+[13:10] voltage the phase current and the line
+[13:12] current so let's have a look
+[13:14] figuring out what these are so first of
+[13:16] all we need to know what the phase
+[13:18] voltage is going to be so we say that VP
+[13:21] is equal to VL divided by root three so
+[13:27] we end up with four hundred divided by
+[13:29] root three and they should come up with
+[13:31] a reasonably familiar number when we put
+[13:33] this into the calculator so we've got
+[13:35] four hundred divided by the square root
+[13:38] of three which is equal to two hundred
+[13:40] and thirty point nine volts so two
+[13:44] hundred and thirty point nine volts for
+[13:47] that one which is a nice value which is
+[13:50] instantly recognizable is pretty much
+[13:51] the voltage that we state are
+[13:54] single-phase supplies out in the UK so
+[13:56] we've got two hundred and thirty point
+[13:58] nine volts there so we can say we've now
+[14:02] found the phase voltage we then want to
+[14:06] move on and calculate the phase current
+[14:08] so the phase current is found by the
+[14:11] following process we just use a bit of
+[14:13] Ohm's law the phase voltage is obviously
+[14:15] the voltage across the load we know that
+[14:17] from a previous video and we know that
+[14:19] to calculate the phase current we use a
+[14:22] bit of Ohm's law IP is equal to VP over
+[14:26] R notice we're using the phase voltage
+[14:28] because the phase voltage is the voltage
+[14:31] across the load so that's the one that
+[14:33] defines the current flow through the
+[14:35] load so we're going to do two hundred
+[14:37] and thirty point nine which is what we
+[14:40] just calculated divided by fifty for our
+[14:43] values so we're going to do two hundred
+[14:45] and thirty point nine divided by 50 so
+[14:48] two hundred and thirty point nine
+[14:49] divided by fifty and that's going to
+[14:52] give us four point six one eight as an
+[14:55] answer so for 0.618 amp ere's so there's
+[15:01] our answer so how much current is going
+[15:03] to flow through the load four point six
+[15:06] one eight amps and then figure out what
+[15:09] the line current is going to be this
+[15:11] really could not be any easier because
+[15:13] all we've got to do at this point is
+[15:14] remember that in the star connected load
+[15:16] the line current which is the current
+[15:18] flowing into the circuit through any one
+[15:21] of the supply lines is exactly the same
+[15:24] as the phase current which makes sense
+[15:26] because the current flowing
+[15:27] through this load must be coming down
+[15:29] this line here so therefore we can say
+[15:31] that the line current will be equal to
+[15:33] four point six one eight amp ere's happy
+[15:37] days sore volley that in there four
+[15:39] point six one eight amp ere's so that
+[15:42] answers question three of this worksheet
+[15:45] so question four of this worksheet asks
+[15:48] the same loads of 50 ohms are connected
+[15:50] in Delta to a 400 volt supply and then
+[15:52] we're asked to calculate the phase
+[15:54] voltage the line current and the phase
+[15:55] current so once again just as we had in
+[15:58] question three we've got a resistance of
+[16:00] 50 ohms so those are resistor value R
+[16:02] equals 50 ohms and the 50 ohm resistor
+[16:08] has now been connected in Delta in this
+[16:10] system and it's connected once again to
+[16:13] that 400 volt supply so the line voltage
+[16:16] the voltage between any two of the
+[16:17] supply lines is 400 volts so listed down
+[16:21] here we've got all of the values that
+[16:23] we're trying to find or that we already
+[16:24] know so we know that the resistance in
+[16:27] this circuit is equal to 50 ohms
+[16:28] connected across each phase and we know
+[16:31] that here we've got VL which is equal to
+[16:35] 400 volts so that's 400 volts which is
+[16:38] going to go in there we then need to
+[16:40] calculate the phase voltage the phase
+[16:42] current and the line current so we'll
+[16:44] try and calculate those now and again
+[16:47] the really nice easy part about this to
+[16:49] start with is that the phase voltage is
+[16:51] exactly the same as the line voltage in
+[16:54] the delta connected load so we can say
+[16:55] that the phase voltage is equal to the
+[16:58] line voltage which means that the phase
+[17:00] voltage is equal to 400 volts if only
+[17:03] all maths were this easy you know so we
+[17:05] can put that in there 400 volts we then
+[17:09] need to go on and calculate what our
+[17:11] phase current will be and the phase
+[17:13] current remember is the current that
+[17:15] flows through the load so it's dependent
+[17:17] on the voltage that is applied to the
+[17:20] load and the voltage that is applied to
+[17:22] the load is 400 volts so we're just
+[17:24] going to use some simple Ohm's law
+[17:25] Reagan IP the phase current is equal to
+[17:28] VP that phase voltage the voltage across
+[17:31] the load divided by the resistance of
+[17:33] the resistor so we've got their VP over
+[17:38] R so we're going to do 400
+[17:41] / 50 and I don't think it's really worth
+[17:45] putting into the calculator is it 400
+[17:46] divided by 50 is gonna give us 8 num
+[17:48] pairs of current flow so now we've found
+[17:51] our current and we can stick that in
+[17:52] here 8 amp ere's next we need to find
+[17:56] our line current and if you remember
+[17:59] from the previous answer the line
+[18:01] current is equal to the phase current
+[18:04] multiplied by that very important number
+[18:07] root 3 so line current is equal to phase
+[18:11] current times by root 3 so we've got 8
+[18:13] times by the square root of 3 and if you
+[18:17] do that calculation 8 times the square
+[18:19] root of 3 you will get the answer to the
+[18:23] line current so 8 times root 3 which is
+[18:27] going to give us 13 point eight six
+[18:31] amperes so there we've got thirteen
+[18:33] point eight two six amperes so that's
+[18:37] the answer to question four we've now
+[18:40] found our line current thirteen point
+[18:44] six eight amps so we can see there that
+[18:47] the resistance is 50 ohms the line
+[18:49] voltage is 400 volts the phase voltage
+[18:51] is 400 volts phase current 8 amps and
+[18:53] line current 13 point 6 8 amps so now
+[18:59] let's answer question 5 and our
+[19:00] worksheet question 5 states that three
+[19:02] identical resistive loads of 220 ohms
+[19:04] are connected in star to a 440 volt
+[19:07] supply so let's fill in the information
+[19:10] that we already know we know that we've
+[19:11] got a resistive value here are equal to
+[19:16] 220 ohms and we know that we've got that
+[19:19] connected to a three-phase supply so we
+[19:22] know that VL is 440 volts V L is equal
+[19:27] to 440 volts bearing in mind that's the
+[19:29] voltage between any two of the supply
+[19:32] lines so we'll fill out information up
+[19:34] here as well
+[19:35] we know that VL is 440 volts and we know
+[19:38] that the resistance is also equal to 220
+[19:43] ohms and the question asks is to go on
+[19:46] to state the phase voltage the phase
+[19:48] current and the line current so let's
+[19:51] work through this question and get our
+[19:54] answers so first of all we need to find that the
+[19:56] phase voltage so we're going to say that
+[19:57] VP bearing in mind that this is a star
+[20:01] connected load and we know that in a
+[20:02] star connected load VL divided by root
+[20:05] three will give us our phase voltage so
+[20:09] therefore we need to be able to stick
+[20:10] these numbers in accurately so 440
+[20:13] divided by the square root of 3 will get
+[20:16] us to our answer so put that into the
+[20:19] calculator
+[20:20] we've got 440 divided by the square root
+[20:22] of three and four hundred and forty
+[20:24] divided by the square root of three
+[20:25] gives us two hundred and fifty four
+[20:28] volts 254 we'll leave that if we run off
+[20:33] to one decimal place that's a zero so
+[20:35] 254 volts is perfectly acceptable as an
+[20:38] answer so there's our number 254 volts
+[20:42] for our phase voltage bearing in mind
+[20:45] that the phase voltage is the voltage
+[20:46] across the load and therefore that is
+[20:49] the voltage that we'll need to figure
+[20:51] out what our phase current is the
+[20:53] current through the load because the
+[20:55] current through the load is dependent on
+[20:57] the voltage across the load so we move
+[21:00] on now to start calculating the phase
+[21:02] current and that's really nice and
+[21:03] easily done because for the phase
+[21:05] current we're just gonna use a little
+[21:06] bit of Ohm's law I P the phase current
+[21:10] is equal to the phase voltage VP divided
+[21:13] by the resistance R so we're just going
+[21:16] to put this into the calculation now and
+[21:18] we know that that will be 254 this value
+[21:23] here divided by 220 so 254 divided by
+[21:30] 220 gives us an answer of 1.15 amp ere's
+[21:35] one point one five amperes now that we
+[21:40] know that the phase current is 1.15 amps
+[21:43] we can use that now to calculate what
+[21:46] the line current is going to be and
+[21:48] again if you haven't got the idea by
+[21:49] this stage hopefully we'll be able to
+[21:51] correct you now we know that the line
+[21:53] current in a star connected system so I
+[21:56] L is equal to I P and that's the end of
+[22:01] the statement those values are the same a star
+[22:03] connected system so therefore our line
+[22:06] current il will be
+[22:07] - 1.15 amp ere's so we now know that the
+[22:12] line current is 1.15 amps
+[22:15] nice and simple okay so now let's
+[22:19] workout question 6 on our worksheet in
+[22:21] question 6 tells us that the same load
+[22:23] from question 5 of 220 ohms are
+[22:26] connected in Delta to a 440 volt supply
+[22:29] so we know we've got resistances here of
+[22:34] 220 ohms so we can just put that on the
+[22:36] drawing and we know that our line
+[22:38] voltage VL is 440 volts the only
+[22:42] difference in this question being that
+[22:44] we've got it connected now in Delta
+[22:46] instead of in star so VL is equal to 440
+[22:51] volts there so again we'll put that in
+[22:53] fee information here this is the part
+[22:55] where I record what I already know from
+[22:57] the question 440 volts for the line
+[22:59] voltage and 220 ohms for the resistance
+[23:04] and then I just make a note of the
+[23:06] things that I'm trying to find so that
+[23:08] when I've completed all my calculations
+[23:09] I can fill this in and I've got my
+[23:11] answers laid out nice and neatly and if
+[23:13] you can manage the structure you're
+[23:15] working that nice neat way then your
+[23:16] lecturer will love you forever so let's
+[23:19] have a look now at finding the first
+[23:21] part of our question which is the phase
+[23:22] voltage it's always nice to start off
+[23:25] with an easy calculation and a delta
+[23:27] connected load V P and V L have exactly
+[23:31] the same value so there we've got the
+[23:33] phase voltage will be equal to 440 volts
+[23:37] nice simple couch there no problem then
+[23:41] we move on to start calculating the
+[23:43] phase current and the phase current we
+[23:45] rely on Ohm's law to find that so I P
+[23:48] the phase current is equal to V over R
+[23:51] but bearing in mind that the amount of
+[23:54] current flowing through the load which
+[23:55] is the phase current will be dependent
+[23:57] on the voltage that is applied to the
+[23:59] load the phase voltage so that's going
+[24:01] to be 440 divided by 220 so I've
+[24:07] realized that there's a reason that I
+[24:08] chose these numbers because it makes
+[24:09] this calculation really nice and easy so
+[24:11] we can see there that forward and 40
+[24:13] divided by 220 gives us 2 amperes for
+[24:16] our phase current in the Delta connected
+[24:19] system what we don't need to do
+[24:21] once we filled that in on a list of
+[24:24] definitive answers is find the line
+[24:27] current and the line current is a very
+[24:30] simple relationship between a phase
+[24:32] current and a line current in a delta
+[24:33] connected system the line current il is
+[24:36] equal to the phase current IP multiplied
+[24:40] by the square root of three so il is
+[24:43] equal to IP times root 3 so we've got
+[24:46] two M pairs for our phase current times
+[24:49] by the square root of 3 and once again
+[24:52] if we put that into our calculators 2
+[24:55] times root 3 so 2 times root 3 that
+[25:03] gives us three point four six amperes
+[25:07] three point four six and pairs so I'll
+[25:12] put that onto our list of definitive
+[25:13] answers three point four six and there
+[25:18] you can see that we've answered question
+[25:20] six now we've got our phase voltage our
+[25:22] phase current and our line current so
+[25:26] all that remains in this video is to say
+[25:28] thank you very much for watching
+[25:32] [Music]
+[25:45] [Music]
+[25:52] [Music]

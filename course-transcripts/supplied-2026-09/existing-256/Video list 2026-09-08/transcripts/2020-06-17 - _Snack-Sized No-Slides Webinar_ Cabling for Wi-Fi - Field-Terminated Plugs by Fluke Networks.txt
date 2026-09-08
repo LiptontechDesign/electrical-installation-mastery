@@ -1,0 +1,644 @@
+# "Snack-Sized No-Slides Webinar": Cabling for Wi-Fi - Field-Terminated Plugs by Fluke Networks
+# https://www.youtube.com/watch?v=xBedi46dLco
+
+first before we go and this is a little bit of a silly thing we've called this the snack size webinar and my wife was really excited to finally get a product that was actually snack sized so I appreciate that all right today I like this subject there's some confusion about it it's gonna be quick and some questions and I've tried to walk through a demonstration it's going to address the questions about how we terminate these newfangled links now in the past we were used to our length having an outlet on one end and outlet under your desk and then an outlet on the other end at the patch panel just easier for me to carry links around like this now what we've seen over the years is that some people are installing an access point and an access point just needs you to plug in the cable and they have said because this is an access point or perhaps a video camera or some device that is not easily located maybe up in the top corner of the room people have said I certainly want to use an administration point at my patch panel but could I just put a plug on the far end of this link well this model had not been accepted in the past but we're gonna take a look at how would we test this model because it's popular now what we're going to be working with today is our they try and move these quietly we're going to be working with our versiv cable test platform and we're going to be using the PSX 8000 model this could be a DSX 5000 either the 5000 or the 8000 are capable of running these tests now I have a special gift for some of you out there every once in a while the factory says hey could you try out this new thing we're working on so we're looking at some new screens and it still has the plastic on it yes so I thought I would just let you all appreciate that moment alright moving right along we're going to take a look at our link and we're going to be looking at the difference between channel adapters patch quad adapters and permanent link adapters we're using a permanent link cable when we're doing a permanent link test we have this very specialized plug on the end of our permanent link adapter that it's a very high performance and very specific performance so when this is made it into the jack this would be in the patch panel we're going to start our test right here we're not going to include the cable that's attached and we're going to measure the mated next of this plug in jack now on the far end we're going to use a channel adapter and a channel adapter per the design of the standard does not include the made it next of the plug into the jack because generally what we're going to be using is a factory-made patch cord if you're using a factory-made patch cord when this was made in the factory they plugged it into a patch cord adapter and in the patch cord adapter we're going to include the mated next of this plug in Jack you'll see that the patch cord adapter is similar to a channel adapter except you can tell that the connectors a little bit different this is a very specialized connector has very specific performance there's a different one for category six category 6a and even category five they're not backwards compatible so let's go to where we are today we're gonna take our channel adapter plug into our channel adapter plug our channel adapter into our tester and so that you can see what's happening on the screen over here I've got an image of the screen over there on the left and let's push test to start oh no I need to use either two permanent link or two Channel adapters if I run a channel test it says wait a minute I'm not happy with this connector on the far end well I'm not going to continue because that is incorrect and if I choose a permanent link test and hit test now oh how about that it's checking for the remote oh I was gonna say that I forgot to turn on the remote but I did that on purpose to show you that the tester will actually turn on the remote if we leap it off so we'll just find the remote here for a moment I'm guessing that once it finds the load it's gonna say wait a minute this adapter is wrong for this test limit please read your error messages no I'm not going to continue because I know that those test results will not be accepted if I use a permanent link adapter on one end and a channel and the other so we've asked the Standards Committee to get ready for this new model where I have a plug on one end and a jack on the other and come up with test limits but standards committees take a lot of time there are a lot of people involved and they want to make sure they get it absolutely right while we were waiting for the MPT L limits bixie came together and said hey here's a limit that we could use the modular one connector permanent link so here's a modular one connector permanent link limit and we'll push test to start and now we this limit allows us to use the permanent link adapter on one end and the channel adapter on the other but when the Standards Committee got to this they said no we don't like that because we are not measuring the mated next of this field installed plug now I would say it probably did pretty good job installing that especially considering I don't do that every day but what we found is that it is very difficult to properly crimp on this ice cube and still get category 6 or especially not category 6 8 performance so when the standard Committee came out with their limit the modular plug terminated link limit what they said is we should use a patch cord adapter so that we can measure the performance of this field crimped on connector so let me just slide this into my tester here now we're gonna need to change the test limit and the limit that we're going to use is the modular plug terminated link now I'm using the plus POA limits because fairly often my wireless access point or my camera might be powered over this exact same line if the outlets in a difficult location I don't want to have to run a power cord up to there as well so when we run this test we're looking very carefully at the quality of the termination and what we're gonna see uh-oh generating Diagnostics this is not passing you'll see that we are feeling near-end crosstalk now will this link work will this link support 10 megabits Ethernet yeah sure of course but the idea of the standard is not for today it is for tomorrow it is for the future it is for when applications we can't even conceive of today have been developed so what we've seen from several manufacturers is they're coming out with a fancier field installable field installable plug that is going to have the performance that we're looking for so let's switch our connection here and now we're going to run the test on this link that has well just a better performing connector how do I know that it is a better performing connector let's test it so I will fix this one later and let's push test to start here alright here goes here it's running and and Wade runs all the drama Hey look at that we're passing and we're not passing by a little bit you may have noticed we're failing next 63 of next we are passing dramatically you'll see that return loss has a letter I we'll be on the test later the reason we have a letter I well my sample link is kind of short so we didn't get three DB of insertion loss but we can see that the return loss is also passing quite a bit here alright so we've seen that my hand mate link did not pass the MPT L limits and this fancy field installable connector did work but what we needed was this patch cord adapter well not everybody has a patch cord adapter and I wanted to go to a little bit of a fun place where we talk about alternative solutions some of the manufacturers who have these fancy high-performance field installable connectors have said that they will accept test results for their warranty if you use a high quality coupler on the far end together with a permanent link adapter now this is not a here is a cheap run-of-the-mill coupler this is really a high-performance coupler so what they are suggesting as an alternative people ask me this question hey this manufacturer that manufacturer is saying that it's okay to test the cable in this way okay they are the ones who are going to issue the warranty they can test it any way that they want however the standard does not allow this what I wanted to show you that this can be worked so here we have this high-performance coupler I'm gonna change my test limit here and we're gonna run a permanent link test again I'm going to use the plus p OE limits because I want to make sure that we have good resistance a good resistance on balance performance and let's run the test here now yes this is going to work darn it because we're using their solution and look at that 70 of next everything's working fine but I can't recommend this solution for everyone due to the following if you're not using and again they're the ones we're going to issue the warranty with they're high quality component but challenge that I found is if I try to test my hand crimped connector with this high quality coupler and let's plug in our permanent link adapter to the other end here when we plug in the front link adapter I'll just save that test result and we'll hit test now the issue that's going to happen here maybe it'll happen as Mark likes to say we're doing this live there we go we've got an issue we're generating diagnostics and the issue that we're finding is here there we go we're failing next again the next on this hand terminated connector is not so good now I know it's the same terminated connector but the question comes up when we go to fault info fault info is saying take a look at the connector and because we're having a next issue do we use TDR or TDX yep next we'll use TD X and this is showing us very clearly on the far end that we have all right trust me it's clear it's showing us that we have a lot of next we have a lot of next year on the forint connector and the issue becomes is that the coupler or is this the connector that came out so summarizing here and what I want to say is when you are running a modular plug terminated link test the correct way to used to do the test is with a permanent link adapter on one end and then the patch cord adapter of the category you are testing that could be category 6 category 6a you want to use the adapter on the far end as always when we finish here I'm just going to send these test results up to the cloud once they get to the cloud it will be the responsibility of my project manager to evaluate the test results make sure they're working properly and perhaps a consultant wants to look at those test results as well make sure that everything is in order hey why don't I toss the ball over to my consultant so he can take a look at those and dramatically we're gonna switch over to Avery how are you doing today Adrienne Adrienne is gonna find his mute button yeah I find the meet button alright Jim can you see my linkware screen I can yes sweet it's working it's good when a plan comes together okay so this is link we're PC anybody uses our products is very familiar with this one I've got access jim has given me access to his projects I believe this is the right project June 10 snack-sized and BTL do you click okay and I've got five results to import let's import them all and see what we see bingo so yeah we got all the various ones here now the reason why we're doing this little bit is not to promote linkware live but mojo proposed promotes social distancing although we're taking it extreme today we are about 50 miles apart I'm upon Fidalgo Island here just north of Everett in Washington State and the reason why we're doing this is that first test that Jim did there I can look at my adapter here and here we see the Deus Ex peel a permanent link adapter and here we see the channel adapter and so if I see a mix of those the first thing I'm going to be doing is going like why do I have a mix there and if I see this test limit count 6 mod 1 Connect permanent link oh that must be a wireless access point there must be a link where my horizontal cable is terminated with an rj45 so that's ok however if I was to look at the permanent link limit here and I saw two different links here then I would be definitely making a phone call and the reason why we keep harping on about linkware live is if you tell your text to rope upload the results on a regular basis during the day if there are any errors being made or you don't like what you are seeing you can pick up the phone call call him and say hey stop don't wait until all the end of the project and eventually you get the results the clients moved in and then you discover you don't want like what you're looking at here you can actually follow this as this guy so the technician goes along during the testing so this is easier to fix well yeah I mean there are occasions where it's like great the furnitures gone in a false floor Nonis chapter removes a floor tile to get access now you have to remove furniture I mean it just it just becomes impossible so this is a way to actually just it's not real time as such but it's pretty darn close to real time so with that said we are at the end of our snack-sized webinar so um let's open it up to questions Jim one of the questions that came up was when you ran the test the first time on the return loss you got that eye for information and could you just explain just very quickly what that's all about or maybe more even more importantly perhaps we refer to the topic so that maybe someone could go and read up on it or because I know it's a lot it's a good question and I appreciate people paying that much attention the issue is something around the 3db rule and please feel free to hop into our our trustee webpage and here I'll share this with you on our web page in our knowledge base you would be able to look up information about the 3db role and that will explain exactly what's happening there basically what happens is until we get to three DB of insertion loss we're not going to start measuring return loss that's ed so where I have the very short link that purple link is very short I don't get to 3 DB of insertion loss so that means that I'm not going to measure return loss that helps us out especially on longer cables good question all right we did get a question from a customer wondering if there's a ability to transfer KitKat's through the cabling we do not have a test for that yet for sure there's another question about isn't there a maximum length of cable I think we kind of touched on that a little bit but is there a minimum length of cable I think is what the session was asking about you know is there a minimum length of cake to contest and still be accurate I'll take that question the short and curlies of that is is it's not an accuracy issue it's a math issue and so if you have a really short link you have two connectors in close proximity and if those connectors are of how can I say value performance unless they are terminated perfectly there's a real possibility you could actually end up failing that link and it's not because of the tester is just because of the math in fact if you read the cat6a standard when they do their modeling for limits they actually model the shortest link as 10 meters so then you go like well Adriana you tell me that the shortest link I can have is 10 meters or 33 feet no with a minimally compliant connector yes once you get below 10 meters things can get tricky unless the terminations are perfect so you know when those connector manufacturers tell you that their connector is so much better than the standard pay attention to that because if your design involves links that are less than 10 meters then using one of those value connectors or minimally comply connectors and minimally blank cable can result in a marginal pass or even a fail at that stage so again I'm the manufacturer I'm going to tell you it's not the tester it's not an accuracy issue it's purely a math issue and how they calculated the limit lines and if you go and talk to the manufacturers the ones with the better than performing a value connectors the one with the really good connectors they will give you minimum distances such as three point three meters or rare bagdana Vedran around about ten feet so the good connectors out there yeah down to about three point three meters ten feet you should be okay but note that termination needs to be pretty darn good if your design involves less than that and have a conversation with that manufacturer before you do that you know you bring up a good point there a lot of times people will ask us to compare what product works better in which and which product is less better and people will automatically go to a 9-year a hundred meter link to see if it passes thinking that's the most difficult but really you should take a look at along a medium and as you're seeing a short link because the short link will really allow the performance of the connectors to show up yeah I mean we've done what we call these Bake off's where we've been invited in where a customer is actually this is very clever bought the cable bought the connectors of the vendors they're considering and they get their installer to terminate those connectors and you know we say well go for the shortest link ten feet go for the longest link 295 feet and somewhere in between and go and test those links because yes the 295 feet values the worst-case scenario for insertion loss but it's not necessarily the worst case scenario for near and crosstalk typically if your cables good the worst case scenario from there on crosstalk is going to be on the shorter links why you have two connectors in close proximity thank you that's a that was very good one other question we had is why do you have 6a modules that are not backwards compatible with cat 6 or cat 5e referring to of course the cats core or adapters well it is the performance of this Jack this very specialized patch cord jack it's only made by one manufacturer and it has very specialized performance and it turns out that that performance is not vac competitive we I don't see your video by the way much yeah yeah absolutely what I was showing here I was a missed the best part of it um what I was saying is here's our channel adapter and here are the patch cord adapters and this Jack that's in the patch cord adapters it's only made by one manufacturer is very specialized and has very particular performance and it turns out it's not backwards compatible the objective of this of the standards body when they were developing this was not ease of use that was not interoperable 'ti their objective was to make sure the people are using the best possible components now what I wanted to show here I've been using cat6 and the reason I'm using cat6 is I wanted to show this is not passing category six so it's not going to pass category 6a but when we're doing our installations of access points the standard is very clear on the recommendation of using category six and actually two category category six limits a category six limits I'm using two category 6a outlets for each wireless access point because we are looking to the future and we know that in the future guess what we're going to want to go faster with our wireless access points so they're building more of a road than we require for today and if everything plays out exactly right here and I'm pushing it because we've been doing real well you'll see that these field terminated designed to be field installed plugs actually have pretty good performance and look at that with passing here in crosstalk if I can jump in there there's a there's another reason why it was done like this and there's some interesting history when they first started doing patch core testing we had a five E and a six Jack and we allowed you to test a 5e cable with that cat6 patch cord adapter and because we were trying to be customer friendly and then he pointed out that actually created a situation when you put a cat 5e plug into a cat 6 jack the performance is going to look better than when you put that 5e plug into a 5-year jack remember we're trying to find the performance of that plug so the short and curlies of that is is if we allow you to put that from the v jack into say a 6 or a 6 8 patch cord adapter we would potentially be giving you a false path pass and and that's the reason why he was done it was done it's like oh yeah it was fluke they wanted to sell three different patch cord adapters no and there was some that conversation I think was around about 2004 2003 and he got ugly really quickly because it was the manufacturers that actually started jumping on a sinkhole like no you can't do that because you could have a poorly terminated rj45 plug 5e and even though it's poorly terminated when you plug it into a cat6 patch cord adapter app at the actual patch cord adapter helps bump up that performance to create a pass and so that's why it has to be like with like good question we always get and I'll leave it to you guys to figure out the best way to answer it but the question is what brands produce the high end field installable connectors oh we are not gonna go there so we we are agnostic and I always say this to customers when asked about this and bake-offs and reason why customers do these bake-offs and comparisons is you can read the datasheet Oh as Jim always says trust but verify so you may see a performance sheet for the perc fantastic but can you get that performance every time get the person who's installing it your tech or yourself terminate their rj45 plug on that horizontal cable plug it into the tester and actually see what performance you get now I'm not suggesting you can't trust the cabling vendors and their rj45 plugs what I'm saying is trust but verify see if it works for you terminating an rj45 is not the easiest thing in the world to do and let's check the check to performance see if it works for you I mean Jim did that I mean he's like going well I'll tell him you're telling me this is Phil terminated cat6a block is really good all right well Jim terminated it I mean nothing special about the termination it's just typical workmanship and we plug it in and we saw a CVS 6dv on an ear and cross the formants 60b margin what does that mean well 6 DB is a factor of 2 so on that link that Jim tested his performance is twice what the standard requires great that gives me grateful that gives me a great film actor / hey this plug terminated in the real world will actually give me really good performance and it's not just about performance of course there's all the other things that go with it like obey the availability what discount structure you're gonna get when you buy that there's all those other considerations as well but I really encourage people to actually terminate products and test it and see what they're seeing in terms of performance you know Adrienne another point on that too is that different vendors have different ways of make of addressing that issue in terms of you know how you connect it together and actually getting a few and trying them out way to see which ones are going to be easy to install absolutely and I think you know we've we've we've hit the 30 minute mark and I think we agreed that we weren't going to take anybody else's time up so I'll hand it back to you mark okay if you do have any other questions or if you would like to to talk to us go ahead and reach out to us you can go to our website which Jim is demonstrating right here we do have a ton of articles under our knowledge base which we kind of covered there that's under our support hole down there you go knowledgebase and if you would like to reach out to us you could actually just send an email to info at networks comm with your questions and we can have somebody get back to you and help you understand the questions you're trying to answer and on behalf of Jim and Adrian I'd like to thank you all for attending have a great day
+
+
+[00:00] first before we go and this is a little
+[00:02] bit of a silly thing we've called this
+[00:03] the snack size webinar and my wife was
+[00:06] really excited to finally get a product
+[00:08] that was actually snack sized so I
+[00:11] appreciate that
+[00:13] all right today I like this subject
+[00:16] there's some confusion about it it's
+[00:18] gonna be quick and some questions and
+[00:21] I've tried to walk through a demonstration it's going to address the
+[00:24] questions about how we terminate these
+[00:27] newfangled links now in the past we were
+[00:31] used to our length having an outlet on
+[00:36] one end and outlet under your desk and
+[00:38] then an outlet on the other end at the
+[00:40] patch panel just easier for me to carry
+[00:43] links around like this now what we've
+[00:46] seen over the years is that some people
+[00:48] are installing an access point and an
+[00:51] access point just needs you to plug in
+[00:53] the cable and they have said because
+[00:55] this is an access point or perhaps a
+[00:57] video camera or some device that is not
+[01:01] easily located maybe up in the top
+[01:03] corner of the room people have said I
+[01:06] certainly want to use an administration
+[01:08] point at my patch panel but could I just
+[01:12] put a plug on the far end of this link
+[01:14] well this model had not been accepted in
+[01:18] the past but we're gonna take a look at
+[01:20] how would we test this model because
+[01:22] it's popular now what we're going to be
+[01:26] working with today is our they try and
+[01:29] move these quietly we're going to be
+[01:31] working with our versiv cable test
+[01:35] platform and we're going to be using the
+[01:38] PSX 8000 model this could be a DSX 5000
+[01:43] either the 5000 or the 8000 are capable
+[01:47] of running these tests now I have a
+[01:50] special gift for some of you out there
+[01:53] every once in a while the factory says
+[01:55] hey could you try out this new thing
+[01:57] we're working on
+[01:58] so we're looking at some new screens and
+[02:01] it still has the plastic on it yes so I
+[02:05] thought I would just let you all
+[02:06] appreciate that moment alright moving
+[02:10] right along
+[02:12] we're going to take a look at our link
+[02:15] and we're going to be looking at the
+[02:17] difference between channel adapters
+[02:19] patch quad adapters and permanent link
+[02:23] adapters we're using a permanent link
+[02:28] cable
+[02:31] when we're doing a permanent link test
+[02:33] we have this very specialized plug on
+[02:37] the end of our permanent link adapter
+[02:39] that it's a very high performance and
+[02:41] very specific performance so when this
+[02:43] is made it into the jack this would be
+[02:45] in the patch panel we're going to start
+[02:47] our test right here we're not going to
+[02:50] include the cable that's attached and
+[02:52] we're going to measure the mated next of
+[02:54] this plug in jack now on the far end
+[02:58] we're going to use a channel adapter and
+[03:00] a channel adapter per the design of the
+[03:04] standard does not include the made it
+[03:07] next of the plug into the jack because
+[03:10] generally what we're going to be using
+[03:12] is a factory-made patch cord if you're
+[03:15] using a factory-made patch cord when
+[03:18] this was made in the factory they
+[03:20] plugged it into a patch cord adapter and
+[03:23] in the patch cord adapter we're going to
+[03:26] include the mated next of this plug in
+[03:29] Jack you'll see that the patch cord
+[03:31] adapter is similar to a channel adapter
+[03:34] except you can tell that the connectors
+[03:37] a little bit different this is a very
+[03:39] specialized connector has very specific
+[03:42] performance there's a different one for
+[03:44] category six category 6a and even
+[03:47] category five they're not backwards
+[03:49] compatible so let's go to where we are
+[03:53] today we're gonna take our channel
+[03:54] adapter plug into our channel adapter
+[03:57] plug our channel adapter into our tester
+[03:59] and so that you can see what's happening
+[04:02] on the screen over here I've got an
+[04:04] image of the screen over there on the
+[04:06] left and let's push test to start oh no
+[04:10] I need to use either two permanent link
+[04:14] or two Channel adapters if I run a
+[04:17] channel test it says wait a minute I'm
+[04:19] not happy with this connector on the far
+[04:23] end well I'm not going to continue
+[04:24] because
+[04:25] that is incorrect and if I choose a
+[04:28] permanent link test and hit test now oh
+[04:32] how about that it's checking for the
+[04:35] remote oh I was gonna say that I forgot
+[04:39] to turn on the remote but I did that on
+[04:41] purpose to show you that the tester will
+[04:44] actually turn on the remote if we leap
+[04:46] it off so we'll just find the remote
+[04:48] here for a moment I'm guessing that once
+[04:50] it finds the load it's gonna say wait a
+[04:52] minute this adapter is wrong for this
+[04:56] test limit please read your error
+[04:58] messages no I'm not going to continue
+[05:01] because I know that those test results
+[05:05] will not be accepted if I use a
+[05:06] permanent link adapter on one end and a
+[05:08] channel and the other so we've asked the
+[05:12] Standards Committee to get ready for
+[05:15] this new model where I have a plug on
+[05:17] one end and a jack on the other and come
+[05:20] up with test limits but standards
+[05:22] committees take a lot of time there are
+[05:24] a lot of people involved and they want
+[05:26] to make sure they get it absolutely
+[05:28] right while we were waiting for the MPT
+[05:31] L limits bixie came together and said
+[05:35] hey here's a limit that we could use the
+[05:38] modular one connector permanent link so
+[05:41] here's a modular one connector permanent
+[05:43] link limit and we'll push test to start
+[05:46] and now we this limit allows us to use
+[05:50] the permanent link adapter on one end
+[05:53] and the channel adapter on the other but
+[05:57] when the Standards Committee got to this
+[05:58] they said no we don't like that because
+[06:02] we are not measuring the mated next of
+[06:06] this field installed plug now I would
+[06:09] say it probably did pretty good job
+[06:11] installing that especially considering I
+[06:13] don't do that every day but what we
+[06:15] found is that it is very difficult to
+[06:18] properly crimp on this ice cube and
+[06:22] still get category 6 or especially not
+[06:26] category 6 8 performance so when the
+[06:30] standard Committee came out with their
+[06:32] limit the modular plug terminated link
+[06:34] limit what they said is we should use a
+[06:37] patch cord adapter
+[06:38] so that we can measure the performance
+[06:41] of this field crimped on connector so
+[06:45] let me just slide this into my tester
+[06:47] here now we're gonna need to change the
+[06:49] test limit and the limit that we're
+[06:51] going to use is the modular plug
+[06:54] terminated link now I'm using the plus
+[06:57] POA limits because fairly often my
+[07:00] wireless access point or my camera might
+[07:03] be powered over this exact same line if
+[07:06] the outlets in a difficult location I
+[07:08] don't want to have to run a power cord
+[07:10] up to there as well so when we run this
+[07:13] test we're looking very carefully at the
+[07:16] quality of the termination and what
+[07:19] we're gonna see uh-oh generating
+[07:21] Diagnostics this is not passing you'll
+[07:25] see that we are feeling near-end
+[07:27] crosstalk now will this link work will
+[07:31] this link support 10 megabits Ethernet
+[07:33] yeah sure of course but the idea of the
+[07:37] standard is not for today it is for
+[07:41] tomorrow it is for the future it is for
+[07:44] when applications we can't even conceive
+[07:46] of today have been developed so what
+[07:50] we've seen from several manufacturers is
+[07:52] they're coming out with a fancier field
+[07:56] installable field installable plug that
+[08:00] is going to have the performance that
+[08:01] we're looking for so let's switch our
+[08:04] connection here and now we're going to
+[08:08] run the test on this link that has well
+[08:13] just a better performing connector how
+[08:15] do I know that it is a better performing
+[08:17] connector let's test it so I will fix
+[08:22] this one later and let's push test to
+[08:25] start here alright here goes here it's
+[08:30] running and and Wade runs all the drama
+[08:35] Hey look at that we're passing and we're
+[08:39] not passing by a little bit you may have
+[08:41] noticed we're failing next 63 of next we
+[08:46] are passing dramatically you'll see that
+[08:49] return loss has a letter I
+[08:51] we'll be on the test later the reason we
+[08:54] have a letter I well my sample link is
+[08:56] kind of short so we didn't get three DB
+[09:00] of insertion loss but we can see that
+[09:02] the return loss is also passing quite a
+[09:05] bit here alright so we've seen that my
+[09:10] hand mate link did not pass the MPT L
+[09:14] limits and this fancy field installable
+[09:17] connector did work but what we needed
+[09:20] was this patch cord adapter
+[09:22] well not everybody has a patch cord
+[09:26] adapter and I wanted to go to a little
+[09:28] bit of a fun place where we talk about
+[09:31] alternative solutions some of the
+[09:33] manufacturers who have these fancy
+[09:37] high-performance field installable
+[09:38] connectors have said that they will
+[09:42] accept test results for their warranty
+[09:45] if you use a high quality coupler on the
+[09:49] far end together with a permanent link
+[09:52] adapter now this is not a here is a
+[09:55] cheap run-of-the-mill coupler this is
+[09:58] really a high-performance coupler so
+[10:00] what they are suggesting as an
+[10:02] alternative people ask me this question
+[10:04] hey this manufacturer that manufacturer
+[10:07] is saying that it's okay to test the
+[10:09] cable in this way okay they are the ones
+[10:13] who are going to issue the warranty they
+[10:15] can test it any way that they want
+[10:17] however the standard does not allow this
+[10:19] what I wanted to show you that this can
+[10:22] be worked so here we have this
+[10:24] high-performance coupler I'm gonna
+[10:26] change my test limit here and we're
+[10:29] gonna run a permanent link test again
+[10:31] I'm going to use the plus p OE limits
+[10:34] because I want to make sure that we have
+[10:35] good resistance a good resistance on
+[10:37] balance performance and let's run the
+[10:40] test here now yes this is going to work
+[10:43] darn it because we're using their
+[10:48] solution and look at that 70 of next
+[10:51] everything's working fine but I can't
+[10:54] recommend this solution for everyone
+[10:57] due to the following if you're not using
+[11:00] and again they're the ones we're going
+[11:02] to issue the warranty with they're high
+[11:04] quality component
+[11:05] but challenge that I found is if I try
+[11:09] to test my hand crimped connector with
+[11:13] this high quality coupler and let's plug
+[11:18] in our permanent link adapter to the
+[11:19] other end here when we plug in the front
+[11:22] link adapter I'll just save that test
+[11:24] result and we'll hit test now the issue
+[11:28] that's going to happen here maybe it'll
+[11:30] happen as Mark likes to say we're doing
+[11:33] this live there we go we've got an issue
+[11:35] we're generating diagnostics and the
+[11:39] issue that we're finding is here there
+[11:45] we go we're failing next again the next
+[11:48] on this hand terminated connector is not
+[11:50] so good now I know it's the same
+[11:52] terminated connector but the question
+[11:55] comes up when we go to fault info fault
+[11:58] info is saying take a look at the
+[12:00] connector and because we're having a
+[12:02] next issue do we use TDR or TDX
+[12:06] yep next we'll use TD X and this is
+[12:10] showing us very clearly on the far end
+[12:13] that we have all right trust me it's
+[12:17] clear it's showing us that we have a lot
+[12:20] of next we have a lot of next year on
+[12:24] the forint connector and the issue
+[12:26] becomes is that the coupler or is this
+[12:30] the connector that came out so
+[12:33] summarizing here and what I want to say
+[12:37] is when you are running a modular plug
+[12:40] terminated link test the correct way to
+[12:43] used to do the test is with a permanent
+[12:46] link adapter on one end and then the
+[12:49] patch cord adapter of the category you
+[12:52] are testing that could be category 6
+[12:55] category 6a you want to use the adapter
+[12:58] on the far end as always when we finish
+[13:02] here I'm just going to send these test
+[13:04] results up to the cloud once they get to
+[13:07] the cloud it will be the responsibility
+[13:09] of my project manager to evaluate the
+[13:12] test results make sure they're working
+[13:14] properly and perhaps a consultant wants
+[13:17] to look at those test results as well
+[13:19] make sure that everything is in order
+[13:21] hey why don't I toss the ball over to my
+[13:23] consultant so he can take a look at
+[13:24] those and dramatically we're gonna
+[13:30] switch over to Avery how are you doing
+[13:32] today Adrienne Adrienne is gonna find
+[13:37] his mute button yeah I find the meet
+[13:39] button alright Jim can you see my
+[13:44] linkware screen I can yes sweet it's
+[13:48] working it's good when a plan comes
+[13:50] together okay so this is link we're PC
+[13:53] anybody uses our products is very
+[13:55] familiar with this one I've got access
+[13:58] jim has given me access to his projects
+[14:00] I believe this is the right project June
+[14:03] 10 snack-sized and BTL do you click okay
+[14:07] and I've got five results to import
+[14:10] let's import them all and see what we
+[14:13] see
+[14:15] bingo so yeah we got all the various
+[14:17] ones here now the reason why we're doing
+[14:19] this little bit is not to promote
+[14:21] linkware live but mojo proposed promotes
+[14:25] social distancing although we're taking
+[14:27] it extreme today we are about 50 miles
+[14:29] apart I'm upon Fidalgo Island here just north
+[14:32] of Everett in Washington State and the
+[14:36] reason why we're doing this is that
+[14:39] first test that Jim did there I can look
+[14:42] at my adapter here and here we see the
+[14:44] Deus Ex peel a permanent link adapter
+[14:47] and here we see the channel adapter and
+[14:49] so if I see a mix of those the first
+[14:52] thing I'm going to be doing is going
+[14:54] like why do I have a mix there and if I
+[14:59] see this test limit count 6 mod 1
+[15:01] Connect permanent link oh that must be a
+[15:05] wireless access point there must be a
+[15:07] link where my horizontal cable is
+[15:09] terminated with an rj45 so that's ok
+[15:12] however if I was to look at the
+[15:15] permanent link limit here and I saw two
+[15:17] different links here then I would be
+[15:20] definitely making a phone call and the
+[15:22] reason why we keep harping on about
+[15:24] linkware live is if you tell your text
+[15:27] to rope upload the results on a regular
+[15:30] basis during the day
+[15:32] if there are any errors being made or
+[15:34] you don't like what you are seeing you
+[15:37] can pick up the phone call call him and
+[15:39] say hey stop
+[15:40] don't wait until all the end of the
+[15:42] project and eventually you get the
+[15:44] results the clients moved in and then
+[15:46] you discover you don't want like what
+[15:48] you're looking at here you can actually
+[15:50] follow this as this guy so the
+[15:51] technician goes along during the testing
+[15:53] so this is easier to fix well yeah I
+[15:58] mean there are occasions where it's like
+[16:00] great the furnitures gone in a false
+[16:02] floor Nonis chapter removes a floor tile
+[16:04] to get access now you have to remove
+[16:06] furniture I mean it just it just becomes
+[16:08] impossible so this is a way to actually
+[16:10] just it's not real time as such but it's
+[16:12] pretty darn close to real time so with
+[16:15] that said we are at the end of our
+[16:18] snack-sized webinar so um let's open it
+[16:21] up to questions Jim one of the questions
+[16:24] that came up was when you ran the test
+[16:27] the first time on the return loss you
+[16:29] got that eye for information and could
+[16:33] you just explain just very quickly what
+[16:35] that's all about or maybe more even more
+[16:37] importantly perhaps we refer to the
+[16:41] topic so that maybe someone could go and
+[16:43] read up on it or because I know it's a
+[16:45] lot it's a good question and I
+[16:48] appreciate people paying that much
+[16:50] attention the issue is something around
+[16:53] the 3db rule and please feel free to hop
+[16:57] into our our trustee webpage and here
+[17:00] I'll share this with you on our web page
+[17:02] in our knowledge base you would be able
+[17:05] to look up information about the 3db
+[17:07] role and that will explain exactly
+[17:10] what's happening there basically what
+[17:12] happens is until we get to three DB of
+[17:16] insertion loss we're not going to start
+[17:19] measuring return loss that's ed so where
+[17:22] I have the very short link that purple
+[17:25] link is very short I don't get to 3 DB
+[17:28] of insertion loss so that means that I'm
+[17:32] not going to measure return loss that
+[17:35] helps us out especially on longer cables
+[17:37] good question all right we did get a
+[17:41] question from a customer wondering if
+[17:43] there's a ability to
+[17:46] transfer KitKat's through the cabling we
+[17:49] do not have a test for that yet for sure
+[17:53] there's another question about isn't
+[17:55] there a maximum length of cable I think
+[17:57] we kind of touched on that a little bit
+[17:58] but is there a minimum length of cable I
+[18:01] think is what the session was asking
+[18:03] about you know is there a minimum length
+[18:05] of cake to contest and still be accurate
+[18:08] I'll take that question the short and
+[18:12] curlies of that is is it's not an
+[18:14] accuracy issue it's a math issue and so
+[18:17] if you have a really short link you have
+[18:20] two connectors in close proximity and if
+[18:24] those connectors are of how can I say
+[18:27] value performance unless they are
+[18:32] terminated perfectly there's a real
+[18:34] possibility you could actually end up
+[18:36] failing that link and it's not because
+[18:39] of the tester is just because of the
+[18:42] math in fact if you read the cat6a
+[18:45] standard when they do their modeling for
+[18:47] limits they actually model the shortest
+[18:50] link as 10 meters so then you go like
+[18:53] well Adriana you tell me that the
+[18:55] shortest link I can have is 10 meters or
+[18:57] 33 feet no with a minimally compliant
+[19:02] connector yes once you get below 10
+[19:05] meters things can get tricky unless the
+[19:08] terminations are perfect so you know
+[19:10] when those connector manufacturers tell
+[19:12] you that their connector is so much
+[19:14] better than the standard pay attention
+[19:17] to that because if your design involves
+[19:19] links that are less than 10 meters then
+[19:22] using one of those value connectors or
+[19:25] minimally comply connectors and
+[19:26] minimally blank cable can result in a
+[19:30] marginal pass or even a fail at that
+[19:34] stage so again
+[19:36] I'm the manufacturer I'm going to tell
+[19:37] you it's not the tester it's not an
+[19:39] accuracy issue it's purely a math issue
+[19:42] and how they calculated the limit lines
+[19:44] and if you go and talk to the
+[19:46] manufacturers the ones with the better
+[19:50] than performing a value connectors the
+[19:52] one with the really good connectors they
+[19:54] will give you minimum distances such as
+[19:56] three point three meters or rare
+[19:59] bagdana Vedran around about ten feet so
+[20:03] the good connectors out there yeah down
+[20:07] to about three point three meters ten
+[20:09] feet you should be okay but note that
+[20:11] termination needs to be pretty darn good
+[20:13] if your design involves less than that
+[20:16] and have a conversation with that
+[20:19] manufacturer before you do that you know
+[20:22] you bring up a good point there a lot of
+[20:23] times people will ask us to compare what
+[20:26] product works better in which and which
+[20:28] product is less better and people will
+[20:32] automatically go to a 9-year a hundred
+[20:34] meter link to see if it passes thinking
+[20:36] that's the most difficult but really you
+[20:37] should take a look at along a medium and
+[20:39] as you're seeing a short link because
+[20:42] the short link will really allow the
+[20:44] performance of the connectors to show up
+[20:46] yeah I mean we've done what we call
+[20:48] these Bake off's where we've been
+[20:50] invited in where a customer is actually
+[20:52] this is very clever bought the cable
+[20:54] bought the connectors of the vendors
+[20:56] they're considering and they get their
+[20:59] installer to terminate those connectors
+[21:01] and you know we say well go for the
+[21:03] shortest link ten feet go for the
+[21:05] longest link 295 feet and somewhere in
+[21:08] between and go and test those links
+[21:12] because yes the 295 feet values the
+[21:17] worst-case scenario
+[21:19] for insertion loss but it's not
+[21:21] necessarily the worst case scenario for
+[21:23] near and crosstalk typically if your
+[21:26] cables good the worst case scenario from
+[21:29] there on crosstalk is going to be on the
+[21:30] shorter links why you have two
+[21:32] connectors in close proximity thank you
+[21:38] that's a that was very good one other
+[21:41] question we had is why do you have 6a
+[21:46] modules that are not backwards
+[21:48] compatible with cat 6 or cat 5e
+[21:52] referring to of course the cats core or
+[21:54] adapters well it is the performance of
+[21:58] this Jack this very specialized patch
+[22:01] cord jack it's only made by one
+[22:03] manufacturer and it has very specialized
+[22:06] performance and it turns out that that
+[22:09] performance is not vac
+[22:12] competitive we I don't see your video by
+[22:16] the way much yeah yeah absolutely what I
+[22:21] was showing here I was a missed the best
+[22:23] part of it um what I was saying is
+[22:26] here's our channel adapter and here are
+[22:27] the patch cord adapters and this Jack
+[22:30] that's in the patch cord adapters it's
+[22:33] only made by one manufacturer is very
+[22:35] specialized
+[22:36] and has very particular performance and
+[22:38] it turns out it's not backwards
+[22:41] compatible the objective of this of the
+[22:44] standards body when they were developing
+[22:45] this was not ease of use that was not
+[22:49] interoperable 'ti their objective was to
+[22:51] make sure the people are using the best
+[22:54] possible components now what I wanted to
+[22:56] show here I've been using cat6 and the
+[23:00] reason I'm using cat6 is I wanted to
+[23:02] show this is not passing category six so
+[23:06] it's not going to pass category 6a but
+[23:09] when we're doing our installations of
+[23:11] access points the standard is very clear
+[23:14] on the recommendation of using category
+[23:16] six and actually two category category
+[23:21] six limits a category six limits I'm
+[23:24] using two category 6a outlets for each
+[23:30] wireless access point because we are
+[23:33] looking to the future and we know that
+[23:36] in the future guess what we're going to
+[23:39] want to go faster with our wireless
+[23:41] access points so they're building more
+[23:44] of a road than we require for today
+[23:46] and if everything plays out exactly
+[23:48] right here and I'm pushing it because
+[23:50] we've been doing real well you'll see
+[23:52] that these field terminated designed to
+[23:55] be field installed plugs actually have
+[23:57] pretty good performance and look at that
+[23:59] with passing here in crosstalk if I can
+[24:05] jump in there there's a there's another
+[24:07] reason why it was done like this and
+[24:09] there's some interesting history when
+[24:12] they first started doing patch core
+[24:14] testing we had a five E and a six Jack
+[24:17] and we allowed you to test a 5e cable
+[24:22] with that cat6 patch cord adapter and
+[24:26] because we were trying to be customer
+[24:28] friendly and then he pointed out that
+[24:31] actually created a situation when
+[24:34] you put a cat 5e plug into a cat 6 jack
+[24:39] the performance is going to look better
+[24:42] than when you put that 5e plug into a
+[24:45] 5-year jack remember we're trying to
+[24:48] find the performance of that plug so the
+[24:51] short and curlies of that is is if we
+[24:54] allow you to put that from the v jack
+[24:57] into say a 6 or a 6 8 patch cord adapter
+[25:00] we would potentially be giving you a
+[25:03] false path pass and and that's the
+[25:07] reason why he was done it was done it's
+[25:09] like oh yeah it was fluke they wanted to
+[25:11] sell three different patch cord adapters
+[25:13] no and there was some that conversation
+[25:17] I think was around about 2004 2003 and
+[25:20] he got ugly really quickly because it
+[25:23] was the manufacturers that actually
+[25:25] started jumping on a sinkhole like no
+[25:27] you can't do that because you could have
+[25:29] a poorly terminated rj45 plug 5e and
+[25:34] even though it's poorly terminated when
+[25:37] you plug it into a cat6 patch cord
+[25:39] adapter
+[25:40] app at the actual patch cord adapter
+[25:42] helps bump up that performance to create
+[25:45] a pass and so that's why it has to be
+[25:48] like with like good question we always
+[25:54] get and I'll leave it to you guys to
+[25:56] figure out the best way to answer it but
+[25:58] the question is what brands produce the
+[26:00] high end field installable connectors oh
+[26:04] we are not gonna go there so we we are
+[26:08] agnostic and I always say this to
+[26:12] customers when asked about this and
+[26:15] bake-offs and reason why customers do
+[26:17] these bake-offs and comparisons is you
+[26:20] can read the datasheet Oh as Jim always
+[26:24] says trust but verify so you may see a
+[26:28] performance sheet for the perc fantastic
+[26:32] but can you get that performance every
+[26:35] time get the person who's installing it
+[26:37] your tech or yourself terminate their
+[26:41] rj45 plug on that horizontal cable plug
+[26:44] it into the tester and actually see what
+[26:47] performance you get now I'm not
+[26:49] suggesting you can't trust the cabling
+[26:52] vendors and their rj45 plugs what I'm
+[26:55] saying is trust but verify see if it
+[26:59] works for you terminating an rj45 is not
+[27:03] the easiest thing in the world to do and
+[27:06] let's check the check to performance see
+[27:09] if it works for you I mean Jim did that
+[27:11] I mean he's like going well I'll tell
+[27:13] him you're telling me this is Phil
+[27:15] terminated cat6a block is really good
+[27:18] all right well Jim terminated it I mean
+[27:22] nothing special about the termination
+[27:24] it's just typical workmanship and we
+[27:26] plug it in and we saw a CVS 6dv on an
+[27:30] ear and cross the formants 60b margin
+[27:33] what does that mean well 6 DB is a
+[27:35] factor of 2 so on that link that Jim
+[27:38] tested his performance is twice what the
+[27:42] standard requires great that gives me
+[27:44] grateful that gives me a great film
+[27:46] actor / hey this plug terminated in the
+[27:49] real world will actually give me really
+[27:51] good performance and it's not just about
+[27:54] performance of course there's all the
+[27:56] other things that go with it like obey
+[27:58] the availability what discount structure
+[28:01] you're gonna get when you buy that
+[28:02] there's all those other considerations
+[28:03] as well but I really encourage people to
+[28:06] actually terminate products and test it
+[28:09] and see what they're seeing in terms of
+[28:11] performance you know Adrienne another
+[28:14] point on that too is that different
+[28:16] vendors have different ways of make of
+[28:20] addressing that issue in terms of you
+[28:22] know how you connect it together and
+[28:24] actually getting a few and trying them
+[28:26] out way to see which ones are going to
+[28:28] be easy to install absolutely and I
+[28:32] think you know we've we've we've hit the
+[28:35] 30 minute mark and I think we agreed
+[28:36] that we weren't going to take anybody
+[28:38] else's time up so I'll hand it back to
+[28:41] you mark okay if you do have any other
+[28:44] questions or if you would like to to
+[28:47] talk to us go ahead and reach out to us
+[28:49] you
+[28:50] can go to our website which Jim is
+[28:52] demonstrating right here we do have a
+[28:55] ton of articles under our knowledge base
+[28:57] which we kind of covered there that's
+[28:59] under our support hole down there
+[29:02] you go knowledgebase and if you
+[29:04] would like to reach out to us you could
+[29:07] actually just send an email to info at
+[29:09] networks comm with your questions and we
+[29:13] can have somebody get back to you and
+[29:14] help you understand the questions you're
+[29:16] trying to answer and on behalf of Jim
+[29:19] and Adrian I'd like to thank you all for
+[29:22] attending have a great day

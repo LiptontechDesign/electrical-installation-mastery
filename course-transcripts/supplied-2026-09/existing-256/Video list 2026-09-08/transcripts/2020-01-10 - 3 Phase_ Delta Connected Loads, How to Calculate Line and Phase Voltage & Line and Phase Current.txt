@@ -1,0 +1,405 @@
+# 3 Phase: Delta Connected Loads, How to Calculate Line and Phase Voltage & Line and Phase Current
+# https://www.youtube.com/watch?v=7slCHGpfHtg
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering the subject of three-phase and more specifically we're going to look at the relationships between line voltage and phase voltage and line current and phase current inside a delta connected three phase load so we've got our training rig ready to go let's bring the camera in and we'll have a little look at what we're doing here so on our simulated three phase load here you can see we've got three loads again these loads can be used to represent perhaps the three windings of a motor obviously there's some inductive effect to take care of there but we'll look at that in a later video and you can see that what makes this a delta connection is if we look at each individual load you can see it's got two connections traditionally we think of those as being the line and neutral connections but here you can see that every resistor one of the connections is connected to another side of another resistor and the other side of that resistor is connected to the other side of that resistor and so on and so forth this is called the Delta Connection because when it's laid out in this kind of diagram form like we've got here it looks a bit like the Greek letter Delta which is triangular in shape but it's very important to bear in mind that again if you open up something like a transformer or a motor or something that has a delta connection inside it it won't be physically laid out as a triangle the loads will actually just be side by side next to each other or perhaps arranged around the frame of a motor and it is the way that we connect the ends of the loads together that makes it a delta connection so if you remember in a previous video in this series on star connected loads we defined the different voltages and currents that we find inside a three-phase connected load so we have our phase voltage our line voltage we have our phase current and we have our line current so let's just remind ourselves of those definitions because we define them in such a way that it would work for both star and Delta so the line voltage is the voltage between any two supply lines so that means we could measure the voltage between l1 and l2 or between l1 and l3 or between l2 and l3 they will give us similar readings we will get the line voltage now we define the phase voltage as being the voltage across the load in the star connected system that meant measuring the voltage between line and neutral effectively but what do you notice about this delta connected load what's missing there's no neutral the neutral isn't required in here and in fact there's absolutely nowhere for us to connect it up so we defined our phase voltage as being the voltage across the load and that's why this definition comes in so useful now because we don't have to worry about that missing neutral we've got here the voltage across the load so we could measure it across here or across here and understanding that is going to help us to understand the relationship between line voltage and phase voltage in this Delta connected system moving on now we've got our line current and our phase current so remember the line current is still the same definition as it was before it's the current that flows through the supply line and you can see I've left these little loops here so I can get my trip on a meter over that to measure the currents and the phase current is the current that flows through the load so I can measure that at any one of these three loops I can measure the current through the load and that will give me my phase current so now what we're going to do is we're going to power the rig up we're going to put power onto it and then we're going to measure those voltages and currents and then we'll explain what the relationships between them are now we need to work a little bit more quickly than usual when I'm doing this particular connection because now we've connected in Delta these resistors get even hotter than they did in the star video and we don't want this to burst into flames live on camera this isn't that kind of video so here we've got a rather lovely mega AVO 835 which we can use to measure the voltages in the system so I'm going to set this to measure AC voltage and you can see here that I've got my long small probes connected to my test leads which is going to allow me to access the live parts in a safe fashion please don't attempt to recreate this at home there's a lot of heat involved here we're dealing with three-phase electricity which is either more lethal than single-phase electricity so please don't try this at home this has been done under controlled conditions so without further ado we'll power up the circuits on connecting any three-phase supply to my circuit now so current is now flowing through the system so the first thing I'll do is I will measure the line voltage so I measure that by connecting across here and here and Vargo in making these connectors leave you with a nice little testing terminal in that and if we look at the voltage on the screen there you can see we're getting 430 volts now we'd expect that to be 400 volts in a three-phase system however we know we've got our tolerances of plus 10 and minus 6% so we're well within that tolerance there now we're going to go and we're going to measure the phase voltage so let's measure that now now needs to be a little bit careful Hix need to get under these shrouds that are on here and let's have a look so you can see there that we're now measuring again 430 volts so that's quite a nice reading that we again so you can see there that the line voltage and the phase voltage inside a delta connected load are the same now when you think about that logically that actually makes quite a lot of sense I've powered this off now you can see that if I measure the phase voltage across here in here there's no difference between measuring the voltage there and measuring the voltage with my probes here and here and likewise there's no difference then between measuring the voltage between here and here or here in here or anywhere along the length of this up to this point so you can see there that the phase voltage is the same as the line voltage so now we're going to measure the current inside our system and to do that we're going to use our rather lovely mega DCM 305 II now this is normally used for measuring leakage current inside installations but the value of it here is that it will measure a very low current quite accurately which is perfect for this system because we're dealing with quite small currents as you can see there it's actually going to be measuring in milliamps so that's what we're looking at here so let's power this up and as I've just discovered my cost these resistors get unbelievably hot so I'm gonna try and keep my fingers away from contact with those but let's measure the phase current first of all so we could measure it here here or down here they will all give us the phase current and they should all be the same so let's measure the phase current at this point so if I measure the phase current there you can see there we're getting one hundred and twenty-nine point four million thereabouts so that's our phase current so what do you think is going to happen to our line current do you think it'd be the same as the phase current do you think it'll be higher do you think it'll be lower well let's take a measurement and let's find out so if we put our ammeter over there now you can see that we're coming out with two hundred and twenty five point one milliamps two hundred twenty-five point one Williams so we're actually getting a higher current here than we had over here now that kind of makes sense because the current flowing through this line conductor isn't just the current flowing through this load it's also part of the current flowing through this load so these currents combine to give us the value here but as you can probably see from those two numbers that we just measured it's not a matter of just adding those two values together we can't just double this value to get that value there is a number that relates them to each other and if you've already seen the star video hopefully you know what that number is so at this point we're going to go over to the whiteboard we'll have a look at a diagram of this and we'll have a look at those all-important relationships between voltages and currents inside a delta connected load so you can see on the screen here we've got our delta connected load drawn out and what we can do now is we can fill in our individual voltages and currents so first of all we measured a line voltage of 430 volts so we've got that there and we measured the phase voltage across the load as also being 430 volts now again it might seem a little bit strange but this stage just for the sake of thoroughness we're going to write down the relationship between those two values in the delta connected load the line voltage VL is equal to the phase voltage they are exactly the same value now let's put in our currents so our phase current flowing through the load we measured as a hundred and twenty nine point four Millie and our line current that was flowing through the supply line we measured at two hundred and twenty five point one milli amps so you can see those are the two currents that we measured inside our delta connected load so what we're going to do now is we're going to look at the relationships between these two currents so you can see here that this current is bigger than this current so clearly I L is going to be I P multiplied by something now if you remember from the star connected video we know that the number that connects these two values together is going to be the same as it was from there and that number that we need to remember is the square root of three you might see this simplified to one point seven three two but I think it's easier just to remember this as root three we're not going to go into an exam without a calculator for our electrical science and principles and therefore we'll have access to a square root button and we'll be able to figure out what that is so let's see if this actually works let's put this into the calculator so we'll put the numbers in we've got a hundred and twenty nine point four which is what we measured and we're timesing that remember by the square root of three so let's put that into our calculator and see what it comes out as so we'll bring the calculator up now so we'll put these numbers into our calculator and we're going to come out with a hundred and twenty nine point four times by the square root of three and that's going to give us an answer of two hundred and twenty-four point one two milliamps and as you can see that is incredibly close to the value that we were looking for which was two hundred and twenty five point one so you can see there we're within a thousandth of an amp accuracy so you can see very clearly the relationship between the line voltage and the phase voltage in the Delta Connection and between the line current and the phase current in the Delta Connection we can see that that calculation came out at two hundred and twenty four point one milli amps so let's have a little summary of this video so let's just have a little recap of what we've looked at in this video we saw that in a delta connected system we have the same definitions of line voltage phase voltage line current and phase current so the line voltage is the voltage between any two lines the phase voltage is the voltage across the load the line current is the current flowing through any one of the supply lines and the phase current is the current flowing through the load so try and remember those definitions because it will help you to identify the voltages and currents that you might see in a diagram in an exam type question we also saw the mathematical relationships between the voltages and currents so we saw that for the delta connected load the line voltage is equal to the phase voltage and we also saw that the line current is equal to the phase current times by that really important number the square root of three you may end up using one point seven three two is an approximation for that but for my money it's as easy just to put root 3 into your calculator than trying to remember one point seven three two so just to give you a typical example you might be told that in a delta connected load the phase voltage is 400 volts and then you'll be asked what is the line voltage on that load and you would have to then identify it in a delta connected load line voltage is the same as phase voltage so you would find 400 volts is the correct answer if it's multiple choice even if you're doing this as part of a written type exam it's a good idea just to write that down as a formula VL equals VP and then put your numbers in because it shows deep understanding of the subject under consideration now it may feel at this point that over the last two videos we've kind of launched a lot of information we've looked at four new formulas effectively and it can be quite tricky to remember these way to do this is first of all to think about your star connected load so in a star connected load we know that there are two different kinds of voltage we know that in a three-phase system you get two kinds of voltage and we know that those are roughly 400 volts and 230 volts so that gives you an idea that in a star connected load 400 volts is the larger voltage the line voltage and if we're trying to make the phase voltage get bigger we'd have to times it by the square root of three in order to make it bigger and turn it into that larger line voltage and just as a way of remembering it if you're multiplying one of the values the voltage or the current by root three then the other value whatever it is just stays the same so for a star connected load the line current is the same as the phase current and then when we look at a delta connected loads those relationships just swap over the line voltage becomes the same as the phase voltage and therefore the line current is equal to the phase current times by the square root of three so actually you can almost extract this for yourself remember the root three try and remember the definitions and try and remember that in the star connected load you've got two different kinds of voltage and when you do that the rest of it kind of falls into place if you remember for the delta connected load we just swap the relationships over so there's plenty more materials come on three-phase so stay tuned for more if you have any questions and please leave them in the comments below and I'll try my best to answer them either in the comments or as a separate video if possible and at this point all that's left to say is thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to continue considering the
+[00:15] subject of three-phase and more
+[00:17] specifically we're going to look at the
+[00:18] relationships between line voltage and
+[00:20] phase voltage and line current and phase
+[00:23] current inside a delta connected three
+[00:26] phase load so we've got our training rig
+[00:28] ready to go let's bring the camera in
+[00:30] and we'll have a little look at what
+[00:31] we're doing here so on our simulated
+[00:34] three phase load here you can see we've
+[00:36] got three loads again these loads can be
+[00:38] used to represent perhaps the three
+[00:40] windings of a motor obviously there's
+[00:42] some inductive effect to take care of
+[00:44] there but we'll look at that in a later
+[00:45] video and you can see that what makes
+[00:47] this a delta connection is if we look at
+[00:49] each individual load you can see it's
+[00:50] got two connections traditionally we
+[00:52] think of those as being the line and
+[00:53] neutral connections but here you can see
+[00:56] that every resistor one of the
+[00:58] connections is connected to another side
+[01:00] of another resistor and the other side
+[01:02] of that resistor is connected to the
+[01:04] other side of that resistor and so on
+[01:05] and so forth this is called the Delta
+[01:08] Connection because when it's laid out in
+[01:10] this kind of diagram form like we've got
+[01:13] here it looks a bit like the Greek
+[01:14] letter Delta which is triangular in
+[01:17] shape but it's very important to bear in
+[01:19] mind that again if you open up something
+[01:21] like a transformer or a motor or
+[01:23] something that has a delta connection
+[01:25] inside it it won't be physically laid
+[01:27] out as a triangle the loads will
+[01:30] actually just be side by side next to
+[01:31] each other or perhaps arranged around
+[01:32] the frame of a motor and it is the way
+[01:35] that we connect the ends of the loads
+[01:37] together that makes it a delta
+[01:39] connection so if you remember in a
+[01:42] previous video in this series on star
+[01:44] connected loads we defined the different
+[01:48] voltages and currents that we find
+[01:49] inside a three-phase connected load so
+[01:52] we have our phase voltage our line
+[01:55] voltage we have our phase current and we
+[01:58] have our line current so let's just
+[02:00] remind ourselves of those definitions
+[02:01] because we define them in such a way
+[02:02] that it would work for both star and
+[02:04] Delta so the line voltage is the voltage
+[02:08] between any two supply lines so that
+[02:11] means we could measure the voltage
+[02:12] between l1
+[02:13] and l2 or between l1 and l3 or between
+[02:16] l2 and l3 they will give us similar
+[02:20] readings we will get the line voltage
+[02:22] now we define the phase voltage as being
+[02:26] the voltage across the load in the star
+[02:28] connected system that meant measuring
+[02:30] the voltage between line and neutral
+[02:32] effectively but what do you notice about
+[02:34] this delta connected load what's missing
+[02:37] there's no neutral the neutral isn't
+[02:40] required in here and in fact there's
+[02:41] absolutely nowhere for us to connect it
+[02:43] up so we defined our phase voltage as
+[02:45] being the voltage across the load and
+[02:49] that's why this definition comes in so
+[02:51] useful now because we don't have to
+[02:52] worry about that missing neutral we've
+[02:54] got here the voltage across the load so
+[02:58] we could measure it across here or
+[02:59] across here and
+[03:01] understanding that is going to help us
+[03:03] to understand the relationship between
+[03:04] line voltage and phase voltage in this
+[03:07] Delta connected system moving on now
+[03:10] we've got our line current and our phase
+[03:12] current so remember the line current is
+[03:15] still the same definition as it was
+[03:16] before it's the current that flows
+[03:17] through the supply line and you can see
+[03:20] I've left these little loops here so I
+[03:21] can get my trip on a meter over that to
+[03:24] measure the currents and the phase
+[03:26] current is the current that flows
+[03:27] through the load so I can measure that
+[03:31] at any one of these three loops I can
+[03:33] measure the current through the load and
+[03:35] that will give me my phase current so
+[03:38] now what we're going to do is we're
+[03:39] going to power the rig up we're going to
+[03:41] put power onto it and then we're going
+[03:43] to measure those voltages and currents
+[03:45] and then we'll explain what the
+[03:47] relationships between them are now we
+[03:48] need to work a little bit more quickly
+[03:49] than usual
+[03:50] when I'm doing this particular
+[03:52] connection because now we've connected
+[03:54] in Delta these resistors get even hotter
+[03:56] than they did in the star video and we
+[03:58] don't want this to burst into flames
+[03:59] live on camera this isn't that kind of
+[04:01] video so here we've got a rather lovely
+[04:05] mega AVO 835 which we can use to measure
+[04:07] the voltages in the system so I'm going
+[04:09] to set this to measure AC voltage and
+[04:12] you can see here that I've got my long
+[04:14] small probes connected to my test leads
+[04:17] which is going to allow me to access the
+[04:18] live parts in a safe fashion please
+[04:21] don't attempt to recreate this at home
+[04:22] there's a lot of heat involved here
+[04:24] we're dealing with three-phase
+[04:25] electricity which is either
+[04:27] more lethal than single-phase
+[04:28] electricity so please don't try this at
+[04:30] home this has been done under controlled
+[04:32] conditions so without further ado we'll
+[04:35] power up the circuits on connecting any
+[04:38] three-phase supply to my circuit now so
+[04:41] current is now flowing through the
+[04:42] system so the first thing I'll do is I
+[04:44] will measure the line voltage so I
+[04:46] measure that by connecting across here
+[04:48] and here
+[04:49] and Vargo in making these connectors
+[04:51] leave you with a nice little testing
+[04:53] terminal in that and if we look at the
+[04:55] voltage on the screen there you can see
+[04:57] we're getting 430 volts now we'd expect
+[05:01] that to be 400 volts in a three-phase
+[05:04] system however we know we've got our
+[05:06] tolerances of plus 10 and minus 6% so
+[05:09] we're well within that tolerance there
+[05:11] now we're going to go and we're going to
+[05:13] measure the phase voltage so let's
+[05:16] measure that now now needs to be a
+[05:17] little bit careful Hix need to get under
+[05:19] these shrouds that are on here and let's
+[05:22] have a look so you can see there that
+[05:28] we're now measuring again 430 volts so
+[05:31] that's quite a nice reading that we
+[05:33] again so you can see there that the line
+[05:37] voltage and the phase voltage inside a
+[05:40] delta connected load are the same now
+[05:43] when you think about that logically that
+[05:44] actually makes quite a lot of sense I've
+[05:46] powered this off now you can see that if
+[05:47] I measure the phase voltage across here
+[05:49] in here there's no difference between
+[05:51] measuring the voltage there and
+[05:53] measuring the voltage with my probes
+[05:54] here and here and likewise there's no
+[05:57] difference then between measuring the
+[05:58] voltage between here and here or here in
+[06:00] here or anywhere along the length of
+[06:03] this up to this point so you can see
+[06:05] there that the phase voltage is the same
+[06:08] as the line voltage so now we're going
+[06:13] to measure the current inside our system
+[06:15] and to do that we're going to use our
+[06:17] rather lovely mega DCM 305 II now this
+[06:21] is normally used for measuring leakage
+[06:22] current inside installations but the
+[06:25] value of it here is that it will measure
+[06:26] a very low current quite accurately
+[06:28] which is perfect for this system because
+[06:30] we're dealing with quite small currents
+[06:31] as you can see there it's actually going
+[06:33] to be measuring in milliamps so that's
+[06:35] what we're looking at here so let's
+[06:37] power this up and as I've just
+[06:39] discovered
+[06:40] my cost these resistors get unbelievably
+[06:42] hot so I'm gonna try and keep my fingers
+[06:44] away from contact with those but let's
+[06:46] measure the phase current first of all
+[06:48] so we could measure it here here or down
+[06:51] here they will all give us the phase
+[06:53] current and they should all be the same
+[06:55] so let's measure the phase current at
+[06:57] this point so if I measure the phase
+[07:00] current there you can see there we're
+[07:03] getting one hundred and twenty-nine
+[07:04] point four million thereabouts so that's
+[07:07] our phase current so what do you think
+[07:11] is going to happen to our line current
+[07:13] do you think it'd be the same as the
+[07:15] phase current do you think it'll be
+[07:16] higher do you think it'll be lower well
+[07:19] let's take a measurement and let's find
+[07:20] out so if we put our ammeter over there
+[07:24] now you can see that we're coming out
+[07:26] with two hundred and twenty five point
+[07:30] one milliamps two hundred twenty-five
+[07:32] point one Williams so we're actually
+[07:34] getting a higher current here than we
+[07:37] had over here now that kind of makes
+[07:39] sense because the current flowing
+[07:40] through this line conductor isn't just
+[07:43] the current flowing through this load
+[07:44] it's also part of the current flowing
+[07:46] through this load so these currents
+[07:48] combine to give us the value here but as
+[07:51] you can probably see from those two
+[07:52] numbers that we just measured it's not a
+[07:54] matter of just adding those two values
+[07:56] together we can't just double this value
+[07:59] to get that value there is a number that
+[08:02] relates them to each other and if you've
+[08:04] already seen the star video hopefully
+[08:05] you know what that number is so at this
+[08:08] point we're going to go over to the
+[08:09] whiteboard we'll have a look at a
+[08:10] diagram of this and we'll have a look at
+[08:12] those all-important relationships
+[08:13] between voltages and currents inside a
+[08:16] delta connected load so you can see on
+[08:19] the screen here we've got our delta
+[08:21] connected load drawn out and what we can
+[08:24] do now is we can fill in our individual
+[08:26] voltages and currents so first of all we
+[08:28] measured a line voltage of 430 volts so
+[08:33] we've got that there and we measured the
+[08:35] phase voltage across the load as also
+[08:37] being 430 volts now again it might seem
+[08:41] a little bit strange but this stage just
+[08:43] for the sake of thoroughness we're going
+[08:44] to write down the relationship between
+[08:46] those two values in the delta connected
+[08:48] load the line voltage VL is equal to the
+[08:52] phase voltage
+[08:53] they are exactly the same value now
+[08:57] let's put in our currents so our phase
+[09:00] current flowing through the load we
+[09:03] measured as a hundred and twenty nine
+[09:06] point four
+[09:08] Millie and our line current that was
+[09:11] flowing through the supply line we
+[09:13] measured at two hundred and twenty five
+[09:16] point one milli amps so you can see
+[09:20] those are the two currents that we
+[09:22] measured inside our delta connected load
+[09:26] so what we're going to do now is we're
+[09:29] going to look at the relationships
+[09:30] between these two currents so you can
+[09:32] see here that this current is bigger
+[09:33] than this current so clearly I L is
+[09:38] going to be I P multiplied by something
+[09:44] now if you remember from the star
+[09:47] connected video we know that the number
+[09:49] that connects these two values together
+[09:52] is going to be the same as it was from
+[09:54] there and that number that we need to
+[09:56] remember is the square root of three you
+[09:59] might see this simplified to one point
+[10:01] seven three two but I think it's easier
+[10:03] just to remember this as root three
+[10:05] we're not going to go into an exam
+[10:06] without a calculator for our electrical
+[10:08] science and principles and therefore
+[10:10] we'll have access to a square root
+[10:11] button and we'll be able to figure out
+[10:13] what that is so let's see if this
+[10:15] actually works let's put this into the
+[10:17] calculator so we'll put the numbers in
+[10:19] we've got a hundred and twenty nine
+[10:22] point four which is what we measured and
+[10:24] we're timesing that remember by the
+[10:26] square root of three so let's put that
+[10:29] into our calculator and see what it
+[10:30] comes out as so we'll bring the
+[10:32] calculator up now so we'll put these
+[10:34] numbers into our calculator and we're
+[10:36] going to come out with a hundred and
+[10:38] twenty nine point four times by the
+[10:45] square root of three and that's going to
+[10:49] give us an answer of two hundred and
+[10:51] twenty-four point one two milliamps and
+[10:55] as you can see that is incredibly close
+[10:58] to the value that we were looking for
+[11:00] which was two hundred and twenty five
+[11:02] point one so you can see there we're
+[11:05] within a thousandth of an amp
+[11:07] accuracy so you can see very clearly the
+[11:09] relationship between the line voltage
+[11:12] and the phase voltage in the Delta
+[11:13] Connection and between the line current
+[11:16] and the phase current in the Delta
+[11:18] Connection we can see that that
+[11:19] calculation came out at two hundred and
+[11:22] twenty four point one milli amps so
+[11:26] let's have a little summary of this
+[11:28] video so let's just have a little recap
+[11:31] of what we've looked at in this video we
+[11:33] saw that in a delta connected system we
+[11:35] have the same definitions of line
+[11:37] voltage phase voltage line current and
+[11:40] phase current so the line voltage is the
+[11:42] voltage between any two lines the phase
+[11:45] voltage is the voltage across the load
+[11:47] the line current is the current flowing
+[11:50] through any one of the supply lines and
+[11:51] the phase current is the current flowing
+[11:54] through the load so try and remember
+[11:56] those definitions because it will help
+[11:57] you to identify the voltages and
+[11:59] currents that you might see in a diagram
+[12:01] in an exam type question we also saw the
+[12:05] mathematical relationships between the
+[12:07] voltages and currents so we saw that for
+[12:09] the delta connected load the line
+[12:11] voltage is equal to the phase voltage
+[12:14] and we also saw that the line current is
+[12:17] equal to the phase current times by that
+[12:20] really important number the square root
+[12:22] of three you may end up using one point
+[12:26] seven three two is an approximation for
+[12:27] that but for my money it's as easy just
+[12:29] to put root 3 into your calculator than
+[12:32] trying to remember one point seven three
+[12:34] two so just to give you a typical
+[12:36] example you might be told that in a
+[12:38] delta connected load the phase voltage
+[12:40] is 400 volts and then you'll be asked
+[12:43] what is the line voltage on that load
+[12:46] and you would have to then identify it
+[12:48] in a delta connected load line voltage
+[12:50] is the same as phase voltage so you
+[12:52] would find 400 volts is the correct
+[12:54] answer if it's multiple choice even if
+[12:56] you're doing this as part of a written
+[12:57] type exam it's a good idea just to write
+[12:59] that down as a formula VL equals VP and
+[13:02] then put your numbers in because it
+[13:04] shows deep understanding of the subject
+[13:06] under consideration now it may feel at
+[13:09] this point that over the last two videos
+[13:11] we've kind of launched a lot of
+[13:12] information we've looked at four new
+[13:16] formulas effectively and it can be quite
+[13:18] tricky to remember these
+[13:20] way to do this is first of all to think
+[13:22] about your star connected load so in a
+[13:24] star connected load we know that there
+[13:27] are two different kinds of voltage we
+[13:29] know that in a three-phase system you
+[13:30] get two kinds of voltage and we know
+[13:32] that those are roughly 400 volts and 230
+[13:35] volts so that gives you an idea that in
+[13:38] a star connected load 400 volts is the
+[13:40] larger voltage the line voltage and if
+[13:43] we're trying to make the phase voltage
+[13:45] get bigger
+[13:46] we'd have to times it by the square root
+[13:48] of three in order to make it bigger and
+[13:50] turn it into that larger line voltage
+[13:53] and just as a way of remembering it if
+[13:55] you're multiplying one of the values the
+[13:57] voltage or the current by root three
+[13:59] then the other value whatever it is just
+[14:02] stays the same so for a star connected
+[14:04] load the line current is the same as the
+[14:07] phase current and then when we look at a
+[14:09] delta connected loads those
+[14:11] relationships just swap over the line
+[14:14] voltage becomes the same as the phase
+[14:15] voltage and therefore the line current
+[14:18] is equal to the phase current times by
+[14:20] the square root of three so actually you
+[14:23] can almost extract this for yourself
+[14:24] remember the root three try and remember
+[14:26] the definitions and try and remember
+[14:28] that in the star connected load you've
+[14:30] got two different kinds of voltage and
+[14:33] when you do that the rest of it kind of
+[14:35] falls into place if you remember for the
+[14:36] delta connected load we just swap the
+[14:38] relationships over so there's plenty
+[14:40] more materials come on three-phase so
+[14:43] stay tuned for more if you have any
+[14:44] questions and please leave them in the
+[14:45] comments below and I'll try my best to
+[14:47] answer them either in the comments or as
+[14:49] a separate video if possible and at this
+[14:51] point all that's left to say is thank
+[14:53] you very much for watching
+[14:59] [Music]
+[15:12] [Music]

@@ -1,0 +1,56 @@
+# How Does an RCD Work? Explained using the Matrix Locktronics Kit
+# https://www.youtube.com/watch?v=MfQAoPOKil8
+
+[Music] so we've got Alistair with us from matrix today he's been demonstrating some of the kit that they produce the lock tronics boards absolutely fantastic kit that you're familiar with from my videos and what we've got here this one looks a little bit complicated at first sight but it's demonstrating how an RCD operates so here we've got our little RC D unit and over here we've got our over current protection in the form of a resettable fuse here now what's really good about this setup the way that this has been laid out is it can simulate an earth fault showing how the RCD will operate but it will also help us to understand that you also have to have overcurrent protection in place as well so if we look at what's going on here we've got our power supply here we've got the power supply then runs through the RCD and back out the other side again remember an RCD basically works by monitoring how much current flows down the line conductor and how much flow is back down the neutral and then it just checks that those two values are the same if there's an imbalance it knows that current is flowing somewhere it shouldn't be either to earth or through a person and then it will trip so let's have a look at what we've got going on the rest of the circuit so the line comes out this way through the switches to the lumps and then back there in the neutral and out of the circuit so we can see that any current flowing through here flows back through the neutral and maintains the balance on the RCD however we've got here a simulated fault so this is going to divert current out of the circuit and then back the other side of the RCD so this is something that we don't want to happen in a circuit it's simulating an earth fault so here if we switch in this one killer ohm earth volt what will happen is current will start to flow around this bit of the circuit and watch what happens to the RCD component if we press this so the lumps have gone off and the RCD has gone into fault mode so it's detected an imbalance so is current flowing down the line and some of it was flowing back to here instead of through the RCD so it's in imbalance and it stripped so we can reset that with the reset button on the RCD very similar to what you'd find in your home or in your commercial or industrial installation depending on the load what's really clever now is we can simulate what happens if we get a short-circuit so here the current is going to flow from the line directly to the neutral and it's going to operate one of the devices keep your eye on the green LED there if it's green that means it's working fine let's just pop that under there so again the circuit has tripped but look the RCD hasn't tripped now that's nothing wrong with the RCD it's doing its job it's doing exactly what it should be doing but what's happened now is that because there is a lot of current flowing down the line and back out the neutral again the RCD is happy because even though there's a lot of current it's balanced there's the same amount in the line as there is in the neutral but what's changed now is that the over current has tripped so what a beautifully elegant way of explaining how an RCD works it's looking for an imbalance in the current flow down the line and back down the neutral again but also how important it is that if we install our CD protection that also has to be some kind of over current protection as well for 99.9% of cases so what a lovely neat experiment that is and I hope that this has been of some value so again thank you very much - Alistair thank you - matrix and we look forward to seeing a lot more of this kit in future videos [Music]
+
+
+[00:02] [Music] so we've got Alistair with us from
+[00:10] matrix today he's been demonstrating some of the kit that they produce the
+[00:14] lock tronics boards absolutely fantastic kit that you're familiar with from my
+[00:18] videos and what we've got here this one looks a little bit complicated at first
+[00:22] sight but it's demonstrating how an RCD operates so here we've got our little RC
+[00:27] D unit and over here we've got our over current protection in the form of a
+[00:32] resettable fuse here now what's really good about this setup the way that this
+[00:36] has been laid out is it can simulate an earth fault showing how the RCD will
+[00:40] operate but it will also help us to understand that you also have to have
+[00:45] overcurrent protection in place as well so if we look at what's going on here
+[00:50] we've got our power supply here we've got the power supply then runs through
+[00:54] the RCD and back out the other side again remember an RCD basically works by
+[01:00] monitoring how much current flows down the line conductor and how much flow is
+[01:04] back down the neutral and then it just checks that those two values are the
+[01:08] same if there's an imbalance it knows that current is flowing somewhere it
+[01:11] shouldn't be either to earth or through a person and then it will trip so let's
+[01:16] have a look at what we've got going on the rest of the circuit so the line
+[01:19] comes out this way through the switches to the lumps and then back there in the
+[01:23] neutral and out of the circuit so we can see that any current flowing through
+[01:26] here flows back through the neutral and maintains the balance on the RCD however
+[01:32] we've got here a simulated fault so this is going to divert current out of the
+[01:37] circuit and then back the other side of the RCD so this is something that we
+[01:42] don't want to happen in a circuit it's simulating an earth fault so here if we
+[01:47] switch in this one killer ohm earth volt what will happen is current will start
+[01:52] to flow around this bit of the circuit and watch what happens to the RCD
+[01:55] component if we press this so the lumps have gone off and the RCD has gone into
+[02:02] fault mode so it's detected an imbalance so is current flowing down the line and
+[02:06] some of it was flowing back to here instead of through the RCD so it's in
+[02:12] imbalance and it stripped so we can reset that
+[02:15] with the reset button on the RCD very similar to what you'd find in your home
+[02:18] or in your commercial or industrial installation depending on the load
+[02:22] what's really clever now is we can simulate what happens if we get a
+[02:26] short-circuit so here the current is going to flow from the line directly to
+[02:31] the neutral and it's going to operate one of the devices keep your eye on the
+[02:38] green LED there if it's green that means it's working fine let's just pop that
+[02:42] under there so again the circuit has tripped but look the RCD hasn't tripped
+[02:49] now that's nothing wrong with the RCD it's doing its job it's doing exactly
+[02:52] what it should be doing but what's happened now is that because there is a
+[02:56] lot of current flowing down the line and back out the neutral again the RCD is
+[03:00] happy because even though there's a lot of current it's balanced there's the
+[03:04] same amount in the line as there is in the neutral but what's changed now is
+[03:07] that the over current has tripped so what a beautifully elegant way of
+[03:12] explaining how an RCD works it's looking for an imbalance in the current flow
+[03:16] down the line and back down the neutral again but also how important it is that
+[03:21] if we install our CD protection that also has to be some kind of over current
+[03:26] protection as well for 99.9% of cases so what a lovely neat experiment that is
+[03:34] and I hope that this has been of some value so again thank you very much -
+[03:38] Alistair thank you - matrix and we look forward to seeing a lot more of this kit
+[03:43] in future videos
+[03:46] [Music]

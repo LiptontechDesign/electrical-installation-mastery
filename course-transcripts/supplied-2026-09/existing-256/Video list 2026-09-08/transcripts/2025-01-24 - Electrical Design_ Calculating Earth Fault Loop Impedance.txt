@@ -1,0 +1,142 @@
+# Electrical Design: Calculating Earth Fault Loop Impedance
+# https://www.youtube.com/watch?v=q3rSnVEJ7kA
+
+in this Q&A video we're going to answer the question how do you calculate Earth Vault Loop impedance for a circuit just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of electrical design in association with BG electrical part of the Luceco group they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD and you'll receive a certificate to prove that you've completed the course so first of all what is Earth fault Loop impedance and why do we care about it well let's keep in mind that we're trying to design a circuit that is safe and will protect properties and people from the dangers that come as part and parcel of an electrical circuit the primary danger that we're concerned with is the heat that the current running through the cable can cause in previous videos we showed how to select a cable that wouldn't overheat and start a fire during normal use but what about when something goes wrong let's say a fault occurs and the line conductor comes into contact with the circuit protective conductor via an exposed conductive part well that's the Earth Fault part of Earth fault Loop impedance so what's the loop part about well this describes the path that the current caused by the Earth Vault will run through it consists of the line conductor in the supply cable to the property the meter Tails any sub Mains and then the line conductor of the circuit in question then there's the fault itself the CPC back to the main Earth terminal the earthing conductor either to the Supply's means of earthing or the Earth electrode and then the path back to the supply Transformer either through the literal Earth that we walk around on or through the supply cable then the circuit is completed through the winding of the supply Transformer that our property is ultimately connected to so you can see that it forms a great big loop hence Earth fault Loop but what about the impedance part well the simple way to understand impedance is that it's just another type of opposition to current flow it's similar to resistance but it takes into account the extra opposition caused by coils in AC circuits and because the transformer feeding the property is a big old coil it adds some opposition to the current flow in the form of inductive reactants impedance is the total opposition to current flow in an AC circuit it's still measured in ohms just like resistance and it does largely the same thing in that it tries to stop the current from flowing so that's why we call this value Earth fault Loop impedance but why do we care about it well the fault we've just described is referred to as a fault of negligible impedance in other words it's a fault that causes a very low opposition to current flow now if someone happened to be touching that exposed conductive part when the fault occurred they could receive an electric shock and be injured or even killed and so we want the protective device to disconnect the circuit very quickly now if the installation is a TN system you can see that the loop we just described is largely made up of lots of different conductors all of which will have a low opposition to current flow this is a good thing because if a fault occurs the low opposition to current flow will cause a high current flow and generally speaking the higher the current the quicker the protective device will trip in fact the regs require this tripping time in the event of a fault of negligible impedance to be really low if we look at chapter 41 of BS7671 we can see we're dealing with protection against electric shock and regulation 411.3.2 tells us that disconnection time stated in table 41.1 shall be applied to final circuits with a rated current not exceeding one 63 amps with one or more socket outlets and two 32 amps supplying only fixed connected current using equipment so circuits up to and including 63 amp for sockets and up to and including 32 amps for fixed equipment need to disconnect in the event of a fault within the time limits from table 41.1 our circuit applying this 9 kilowatt Fusion Comet electric boiler from the electric heating company has a rated current of 50 amps and therefore won't need to comply with the values in this table however it's good to know what they are so looking at that table you can see that a circuit with a nominal voltage of 230 volts ac would fall under the times in this column this is where the vast majority of final circuits will fall in the UK and so for a TN system you can see the circuit would need to disconnect in 0.4 seconds and for a TT system the time is 0.2 seconds but our circuit doesn't fall within the limits described in regulation 411.3.2.2 so how quickly will this need to disconnect well we find the answer in regulation 411.3.2.3 it reads in a TN system a disconnection time not exceeding 5 seconds is permitted for a distribution circuit and for a circuit not covered by regulation 411.3.2.2 we've seen that the cost of the current rating of our circuit at 50 amps it's not covered by the regulation stated there that we read a moment ago and so our circuit can disconnect within a whopping 5 seconds it's a fairly common question as to why larger circuits and distribution circuits can take longer to disconnect after all this section is all about protection against electric shock and someone getting a shock for 5 seconds is going to know about it the answer isn't simple and it's beyond the scope of this video but it's basically a bit of a compromise between several factors including selectivity and touch voltages however in the case of this circuit it's actually not going to make any difference as it will disconnect within 0.4 seconds anyway electrical design is fun no anyway we want a low earth Vault Loop impedance in order to cause a high current flow to operate the protective device quickly that's the basic principle that we're trying to achieve here so how do we do it well first of all we need to figure out what the highest Earth fault Loop impedance of the circuit will be because this is the worst case scenario for this kind of fault this will be found at the point in the circuit that has the highest length of conductors from the protective device in our electric boiler circuit that's really simple because there's only one load however if we're wiring up our lighting circuit with lots of branches off it to different fittings the length from loads to protective device will vary anyway we know that our circuit is 20 metres long and so that's the value that we'll use to figure out the Earth fault Loop impedance of our circuit we need to use this formula Zs = Ze + (R1 + R2) in this formula Z means impedance so we've got two different types of impedance in our formula Zs is the total Earth Loop impedance and what we're trying to find Ze is the impedance of the earth Vault Loop path that is external to the building hence the e in the subscript R1 is the resistance of the line conductor and R2 is the resistance of the CPC these values when combined will give us the total impedance of every bit of the earth fault Loop path so we're going to find the Zs value and we need the Ze first of all we can find this in a couple of ways if it's an existing installation we could measure it with a multifunction tester if it's a new installation and we don't have that information or if the supply cable hasn't even been installed yet we could ring up the DNO and ask them what the value is sometimes they'll give you a specific value from their records but most of the time they'll just quote from a list of standard values which are the maximum values they're allowed to supply you with at the origin for a TNCS system like we've got that value is not 0.35 ohms for 100 amp supply for a TNS it's 0.8 ohms there's no set value for a TT system if you're on this Arrangement it's basically because the DNO have refused to provide you with an Earth at your intake you'll often see a value of 200 ohms banded around for TT systems but it's a little more complex than that more on this in a later video keep in mind as well that these values are generally for 100 amp cutouts there's different values for higher ratings of incoming fuse so if you assume that you'll be quoted the maximum value and work with those figures your real life Earth Vault Loop impedance will usually be lower in reality which is better for the purposes of this calculation Okay so we've got a Ze of 0.35 what about the values for R1 and R2 well we can calculate what these values will be for our circuit using the on-site guide specifically information in appendix I and table i1 in table i1 we find the resistance values per meter of conductor for loads of different sizes you'll notice there's a column for line conductors and protective conductors the very top line gives us the values for a 1 mm conductor and has a dash in the protective conductor column the value of resistance given here therefore is just for the line conductor by itself however if you're running a cable that combines both the line and CPC into a single cable they're going to be pretty much the same length and therefore you can calculate the resistances of the conductors together that's why in our formula R1 and R2 are in the same brackets we can figure that out as one number so let's do that for our cable we're installing a 10 mil twin and CPC cable so that means the line conductor has a cross-sectional area of 10 mm squared however table i1 gives us a number of options for the size of CPC we're combining it with namely 4, 6 and 10 mm so which one do we use well if we look at the data sheet for our 10 mm cable from Doncaster Cables we can see it's got a 4 mm squared CPC so that's the figure that we're going to use so our value of resistance per meter of cable is 6.44 notice milliohms per meter so we take this number and we multiply it by the length of the circuit at 20 M this gives us a value of 128.8 but keep in mind this is in milliohms to change it to ohms we'll need to divide this by 1000 which gives us 0.128 ohms as most test meters will measure to two decimal places I'm going to round it off to 0.13 ohms so plugging this into our formula gives us 0.35 ohms for the Ze and 0.13 ohms for the R1 + R2 value adding them together we find that the total Earth volt Loop impedance for our circuit as designed is 0.48 ohms so will this be enough to trip our circuit within the 5 Seconds required should a fault occur well there's two ways to figure this out I'm going to show you the simple way and hold the more complicated way back until we discuss the adiabatic equation in the next video the easy way is to look up the maximum permissible Zs values in bs7671 we find them in tables 41.2 to 41.5 each of these tables covers a different type of protective device as our circuit is protected by one of these BG Fortress mcbs we'll be using table 41.3 you can see in the title of that table it includes circuit breakers and the individual headings within the table State these values are for devices conforming to BSEN60898 which is the MCB that we're using we're using a type B50 amp MCB so we look at the top set of numbers and move along this row until we find the 50 amp value then looking below it we see the maximum permissible Zs value of a circuit fed by one of these Breakers is 0.87 ohms our calculated value was 0.48 ohms and so because this is less than the maximum value of 0.87 ohms we know that this MCB will trip within the time limits discussed earlier a couple of points to not about this table first of all these numbers go in this zigzag fashion purely so that they don't run into their neighbours and cause confusion with the numbers merging together also do you remember earlier we were agonising over the fact that our big Hefty boiler circuit didn't need to trip in 0.4 seconds but rather 5 seconds and that was causing us a little bit of a worry well if you look at the row for the type D MCB you can see that it shows the two Zs values for the different times of 0.4 seconds and 5 Seconds but it only shows one value for the types C and B why is this well it's because when a fault of negligible impedance occurs on a circuit protected by these mcbs the type C and the type B the breakers are so responsive that they trip within 0.4 seconds anyway in fact they trip within 0.1 seconds but more on this in the next video so there we go that's how you calculate the Earth volt Loop impedance of a circuit but you may be wondering what's that adiabatic equation that I mentioned a while ago what's that all about well to find out more about that check out this video right here or click the link in the description below to view it as part of our free training package to help you with your cpd and you'll receive a certificate as well all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this Q&A video we're going to answer the question how do you calculate Earth Vault Loop
+[00:04] impedance for a circuit just before we explain the answer to this question Please be aware that this
+[00:08] video is one of a series that we've made on the subject of electrical design in association with
+[00:13] BG electrical part of the Luceco group they can be viewed individually or you can click the link
+[00:17] in the description below to view them as part of a free online training package to help you
+[00:22] with your CPD and you'll receive a certificate to prove that you've completed the course so
+[00:27] first of all what is Earth fault Loop impedance and why do we care about it well let's keep in
+[00:31] mind that we're trying to design a circuit that is safe and will protect properties and people
+[00:35] from the dangers that come as part and parcel of an electrical circuit the primary danger that
+[00:40] we're concerned with is the heat that the current running through the cable can cause in previous
+[00:45] videos we showed how to select a cable that wouldn't overheat and start a fire during normal
+[00:49] use but what about when something goes wrong let's say a fault occurs and the line conductor
+[00:54] comes into contact with the circuit protective conductor via an exposed conductive part well
+[01:00] that's the Earth Fault part of Earth fault Loop impedance so what's the loop part about well
+[01:06] this describes the path that the current caused by the Earth Vault will run through it consists
+[01:10] of the line conductor in the supply cable to the property the meter Tails any sub Mains and then
+[01:16] the line conductor of the circuit in question then there's the fault itself the CPC back to
+[01:21] the main Earth terminal the earthing conductor either to the Supply's means of earthing or the
+[01:26] Earth electrode and then the path back to the supply Transformer either through the literal
+[01:31] Earth that we walk around on or through the supply cable then the circuit is completed
+[01:36] through the winding of the supply Transformer that our property is ultimately connected to so
+[01:40] you can see that it forms a great big loop hence Earth fault Loop but what about the impedance part
+[01:47] well the simple way to understand impedance is that it's just another type of opposition
+[01:51] to current flow it's similar to resistance but it takes into account the extra opposition caused by
+[01:57] coils in AC circuits and because the transformer feeding the property is a big old coil it adds
+[02:03] some opposition to the current flow in the form of inductive reactants impedance is the total
+[02:08] opposition to current flow in an AC circuit it's still measured in ohms just like resistance and
+[02:14] it does largely the same thing in that it tries to stop the current from flowing so that's why
+[02:19] we call this value Earth fault Loop impedance but why do we care about it well the fault we've just
+[02:26] described is referred to as a fault of negligible impedance in other words it's a fault that causes
+[02:31] a very low opposition to current flow now if someone happened to be touching that exposed
+[02:36] conductive part when the fault occurred they could receive an electric shock and be injured or even
+[02:41] killed and so we want the protective device to disconnect the circuit very quickly now if the
+[02:46] installation is a TN system you can see that the loop we just described is largely made up of lots
+[02:52] of different conductors all of which will have a low opposition to current flow this is a good
+[02:56] thing because if a fault occurs the low opposition to current flow will cause a high current flow and
+[03:01] generally speaking the higher the current the quicker the protective device will trip in fact
+[03:06] the regs require this tripping time in the event of a fault of negligible impedance to
+[03:11] be really low if we look at chapter 41 of BS7671 we can see we're dealing with protection against
+[03:18] electric shock and regulation 411.3.2 tells us that disconnection time stated in table 41.1 shall
+[03:27] be applied to final circuits with a rated current not exceeding one 63 amps with one or more socket
+[03:33] outlets and two 32 amps supplying only fixed connected current using equipment so circuits
+[03:40] up to and including 63 amp for sockets and up to and including 32 amps for fixed equipment need
+[03:47] to disconnect in the event of a fault within the time limits from table 41.1 our circuit applying
+[03:53] this 9 kilowatt Fusion Comet electric boiler from the electric heating company has a rated current
+[03:59] of 50 amps and therefore won't need to comply with the values in this table however it's good
+[04:04] to know what they are so looking at that table you can see that a circuit with a nominal voltage of
+[04:08] 230 volts ac would fall under the times in this column this is where the vast majority of final
+[04:14] circuits will fall in the UK and so for a TN system you can see the circuit would need to
+[04:19] disconnect in 0.4 seconds and for a TT system the time is 0.2 seconds but our circuit doesn't fall
+[04:28] within the limits described in regulation 411.3.2.2 so how quickly will this need to
+[04:33] disconnect well we find the answer in regulation 411.3.2.3 it reads in a TN system a disconnection
+[04:42] time not exceeding 5 seconds is permitted for a distribution circuit and for a circuit not
+[04:48] covered by regulation 411.3.2.2 we've seen that the cost of the current rating of our circuit at
+[04:55] 50 amps it's not covered by the regulation stated there that we read a moment ago and so our circuit
+[05:00] can disconnect within a whopping 5 seconds it's a fairly common question as to why larger circuits
+[05:06] and distribution circuits can take longer to disconnect after all this section is all about
+[05:11] protection against electric shock and someone getting a shock for 5 seconds is going to know
+[05:16] about it the answer isn't simple and it's beyond the scope of this video but it's basically a bit
+[05:21] of a compromise between several factors including selectivity and touch voltages however in the
+[05:27] case of this circuit it's actually not going to make any difference as it will disconnect
+[05:31] within 0.4 seconds anyway electrical design is fun no anyway we want a low earth Vault Loop
+[05:38] impedance in order to cause a high current flow to operate the protective device quickly that's
+[05:43] the basic principle that we're trying to achieve here so how do we do it well first of all we need
+[05:49] to figure out what the highest Earth fault Loop impedance of the circuit will be because this is
+[05:53] the worst case scenario for this kind of fault this will be found at the point in the circuit
+[05:58] that has the highest length of conductors from the protective device in our electric boiler
+[06:02] circuit that's really simple because there's only one load however if we're wiring up our
+[06:06] lighting circuit with lots of branches off it to different fittings the length from loads to
+[06:10] protective device will vary anyway we know that our circuit is 20 metres long and so that's the
+[06:16] value that we'll use to figure out the Earth fault Loop impedance of our circuit we need to use this
+[06:22] formula Zs = Ze + (R1 + R2) in this formula Z means impedance so we've got two different types
+[06:30] of impedance in our formula Zs is the total Earth Loop impedance and what we're trying to
+[06:35] find Ze is the impedance of the earth Vault Loop path that is external to the building hence the
+[06:41] e in the subscript R1 is the resistance of the line conductor and R2 is the resistance of the
+[06:48] CPC these values when combined will give us the total impedance of every bit of the earth fault
+[06:54] Loop path so we're going to find the Zs value and we need the Ze first of all we can find this in a
+[07:02] couple of ways if it's an existing installation we could measure it with a multifunction tester
+[07:07] if it's a new installation and we don't have that information or if the supply cable hasn't
+[07:11] even been installed yet we could ring up the DNO and ask them what the value is sometimes they'll
+[07:16] give you a specific value from their records but most of the time they'll just quote from a list
+[07:21] of standard values which are the maximum values they're allowed to supply you with at the origin
+[07:26] for a TNCS system like we've got that value is not 0.35 ohms for 100 amp supply for a TNS it's
+[07:33] 0.8 ohms there's no set value for a TT system if you're on this Arrangement it's basically
+[07:39] because the DNO have refused to provide you with an Earth at your intake you'll often see a value
+[07:44] of 200 ohms banded around for TT systems but it's a little more complex than that more on
+[07:49] this in a later video keep in mind as well that these values are generally for 100 amp cutouts
+[07:55] there's different values for higher ratings of incoming fuse so if you assume that you'll
+[08:00] be quoted the maximum value and work with those figures your real life Earth Vault Loop impedance
+[08:05] will usually be lower in reality which is better for the purposes of this calculation Okay so we've
+[08:11] got a Ze of 0.35 what about the values for R1 and R2 well we can calculate what these values
+[08:18] will be for our circuit using the on-site guide specifically information in appendix I and table
+[08:23] i1 in table i1 we find the resistance values per meter of conductor for loads of different sizes
+[08:30] you'll notice there's a column for line conductors and protective conductors the very top line gives
+[08:35] us the values for a 1 mm conductor and has a dash in the protective conductor column the value of
+[08:41] resistance given here therefore is just for the line conductor by itself however if you're running
+[08:46] a cable that combines both the line and CPC into a single cable they're going to be pretty much the
+[08:51] same length and therefore you can calculate the resistances of the conductors together that's why
+[08:57] in our formula R1 and R2 are in the same brackets we can figure that out as one number so let's do
+[09:03] that for our cable we're installing a 10 mil twin and CPC cable so that means the line conductor has
+[09:09] a cross-sectional area of 10 mm squared however table i1 gives us a number of options for the size
+[09:15] of CPC we're combining it with namely 4, 6 and 10 mm so which one do we use well if we look at the
+[09:23] data sheet for our 10 mm cable from Doncaster Cables we can see it's got a 4 mm squared CPC
+[09:29] so that's the figure that we're going to use so our value of resistance per meter of cable is 6.44
+[09:36] notice milliohms per meter so we take this number and we multiply it by the length of the circuit
+[09:42] at 20 M this gives us a value of 128.8 but keep in mind this is in milliohms to change it to ohms
+[09:52] we'll need to divide this by 1000 which gives us 0.128 ohms as most test meters will measure
+[09:58] to two decimal places I'm going to round it off to 0.13 ohms so plugging this into our formula
+[10:05] gives us 0.35 ohms for the Ze and 0.13 ohms for the R1 + R2 value adding them together we find
+[10:13] that the total Earth volt Loop impedance for our circuit as designed is 0.48 ohms so will this be
+[10:21] enough to trip our circuit within the 5 Seconds required should a fault occur well there's two
+[10:26] ways to figure this out I'm going to show you the simple way and hold the more complicated way back
+[10:31] until we discuss the adiabatic equation in the next video the easy way is to look up the maximum
+[10:36] permissible Zs values in bs7671 we find them in tables 41.2 to 41.5 each of these tables covers
+[10:44] a different type of protective device as our circuit is protected by one of these BG Fortress
+[10:49] mcbs we'll be using table 41.3 you can see in the title of that table it includes circuit breakers
+[10:55] and the individual headings within the table State these values are for devices conforming to
+[11:00] BSEN60898 which is the MCB that we're using we're using a type B50 amp MCB so we look at the top set
+[11:08] of numbers and move along this row until we find the 50 amp value then looking below it we see the
+[11:14] maximum permissible Zs value of a circuit fed by one of these Breakers is 0.87 ohms our calculated
+[11:22] value was 0.48 ohms and so because this is less than the maximum value of 0.87 ohms we know
+[11:29] that this MCB will trip within the time limits discussed earlier a couple of points to not about
+[11:34] this table first of all these numbers go in this zigzag fashion purely so that they don't run into
+[11:38] their neighbours and cause confusion with the numbers merging together also do you remember
+[11:43] earlier we were agonising over the fact that our big Hefty boiler circuit didn't need to trip in
+[11:47] 0.4 seconds but rather 5 seconds and that was causing us a little bit of a worry well if you
+[11:53] look at the row for the type D MCB you can see that it shows the two Zs values for the different
+[11:58] times of 0.4 seconds and 5 Seconds but it only shows one value for the types C and B why is
+[12:06] this well it's because when a fault of negligible impedance occurs on a circuit protected by these
+[12:11] mcbs the type C and the type B the breakers are so responsive that they trip within 0.4 seconds
+[12:18] anyway in fact they trip within 0.1 seconds but more on this in the next video so there we
+[12:24] go that's how you calculate the Earth volt Loop impedance of a circuit but you may be wondering
+[12:28] what's that adiabatic equation that I mentioned a while ago what's that all about well to find out
+[12:33] more about that check out this video right here or click the link in the description below to
+[12:37] view it as part of our free training package to help you with your cpd and you'll receive
+[12:41] a certificate as well all that remains in this video is to say thank you very much for watching

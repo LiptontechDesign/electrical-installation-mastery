@@ -1,0 +1,72 @@
+# ELECTRICIANS Q&A: CABLE TRAY GROUPING FACTOR CALCULATIONS
+# https://www.youtube.com/watch?v=FRsUKYAKpLY
+
+in this q a video we'll be answering the question when calculating grouping for a cable tray do i need to count every cable on there now this question relates to numerous videos that gordon and gary have made on cable tray and basket from Atkore so check those videos out to see more details of those items but in this video we're going to look at a technical question relating to grouping factor on cable tray and basket now we all know why grouping factors are important ultimately when current passes through a conductor it generates heat if excessive this heat can cause the insulation on the conductor to break down and in some cases cause damage to the fabric of the building and may even start fire so if a cable needs to carry more current we install a larger cable it's not just that the copper is physically capable of carrying more current a cable with a larger cross-sectional area can dissipate its heat more effectively so managing the safe dissipation of this heat is absolutely critical to making sure that our installations are safe now when we install cables together onto a tray the fact that the cables are touching or even just in close proximity means that they can't dissipate their heaters effectively because the heat from each cable will affect its neighbours this means that the cable cannot be allowed to get as hot as it could do if it was by itself table 4c1 and vs7671 gives a factor that gets used to effectively increase the maximum current a cable must be able to carry and in reality this results in needing a cable with a larger cross-sectional area so let's look at an example if we've got eight cables fixed to a tray feeding eight lighting circuits we look at item three of table four c1 in the wiring regs and track across to find the column marked eight looking at where they intersect we've got a value of 0.72 now this factor goes into a calculation that helps us to determine conductor size and it looks like this i t must be greater than or equal to i n divided by c g in this formula i t is the tabulated value of current that the cable can carry tabulated just means in a table by the way i n is the nominal rating of the circuit protective device and cg is the grouping factor that we just found now there's a whole load of other rating factors that we can put under here to keep the grouping factor company but we'll cover those in other videos so if we're considering this lighting circuit protected by a 10 amp mtv then the cable we install must be able to carry more than 10 divided by 0.72 so 13.9 amps and then we'd select the correct cable accordingly but is that the end of the story in this case do we really need to use all eight cables to figure out our grouping vector well there is a way that may allow us to discount some of those conductors note 9 to the table sheds a little bit of light on this it reads if due to known operating conditions a cable is expected to carry not more than 30 of its grouped rating it may be ignored for the purpose of obtaining the rating factor for the rest of the group so in other words if the cross-sectional area of the cable is bigger than it needs to be which sometimes happens to make the circuit have a compliant vault drop or earth fault loop impedance value then we may not need to include it in our calculation for grouping this is because the circuit is not drawing enough to make the cable hot enough to cause a problem but there's two points just to be careful about first of all this is only applicable if there are known operating conditions in other words you know what the circuit is feeding and that it is not likely to change so a socket circuit would not be a suitable candidate for this allowance but a lighting circuit with a fixed and known number of lights on might also notice it read not more than 30 percent of its grouped rating what does this mean well the note continues for example a group of n loaded cables would normally require a group rating factor of cg applied to the tabulated i t however if m cables in the group carry loads which are not greater than 0.3 cg it ampers the other cables can be sized by using the group rating factor corresponding to n minus m cables so let's try to unravel that one suddenly this note is telling us that the grouping factor needs to be applied to the tabulated current carrying capacity of the cable but earlier we applied the grouping factor to the nominal rating of the protective device so what's going on there well looking back to our formula from earlier if we transpose it we'll find that the current carrying capacity multiplied by our grouping factor must be greater than the nominal rating of the protective device which kind of makes sense as we want the cable to be able to carry more current in the conditions it's installed in than the protective device will allow to flow so if as it says in the final sentence of the note the grouping factor times the tabulated current carrying capacity times 0.3 for the 30 is higher than the current expected to flow then you don't need to count that cable in your grouping calculation so if your tabulated current carrying capacity was 17 amps multiplied by the grouping factor of 0.72 and by 0.3 and you get 3.672 if the circuit should never draw more than that value of current for instance if it's feeding a fixed amount of light fittings then you don't need to include it in your grouping factor value now that's all well and good however amazingly it's only scraping the surface of grouping and there's lots of other things to bear in mind also such as the fact that note 1 states that the values in table 4 c1 are only applicable to uniform groups of cables equally loaded so the question arises what about when you have groups of cables that are non-uniform and unequally loaded well that's the subject of a future video but we've made a good start here as always we want to hear from you do you use grouping factors in your electrical work or has note 9 to table 4c1 ever made a difference to an installation that you've been designing or installing whatever your thoughts or questions on this subject please leave them in the comments below and as always thank you very much for watching
+
+
+[00:00] in this q a video we'll be answering the question when calculating grouping for a cable tray
+[00:04] do i need to count every cable on there
+[00:12] now this question relates to numerous videos that gordon and gary have made on cable tray and basket
+[00:16] from Atkore so check those videos out to see more details of those items but in this video we're
+[00:22] going to look at a technical question relating to grouping factor on cable tray and basket now
+[00:27] we all know why grouping factors are important ultimately when current passes through a conductor
+[00:31] it generates heat if excessive this heat can cause the insulation on the conductor to break down
+[00:36] and in some cases cause damage to the fabric of the building and may even start fire so if
+[00:42] a cable needs to carry more current we install a larger cable it's not just that the copper
+[00:47] is physically capable of carrying more current a cable with a larger cross-sectional area can
+[00:51] dissipate its heat more effectively so managing the safe dissipation of this heat is absolutely
+[00:55] critical to making sure that our installations are safe now when we install cables together onto
+[01:00] a tray the fact that the cables are touching or even just in close proximity means that they can't
+[01:05] dissipate their heaters effectively because the heat from each cable will affect its neighbours
+[01:10] this means that the cable cannot be allowed to get as hot as it could do if it was by itself
+[01:14] table 4c1 and vs7671 gives a factor that gets used to effectively increase the maximum current
+[01:19] a cable must be able to carry and in reality this results in needing a cable with a larger
+[01:24] cross-sectional area so let's look at an example if we've got eight cables fixed to a tray feeding
+[01:30] eight lighting circuits we look at item three of table four c1 in the wiring regs and track across
+[01:35] to find the column marked eight looking at where they intersect we've got a value of 0.72 now this
+[01:40] factor goes into a calculation that helps us to determine conductor size and it looks like this
+[01:45] i t must be greater than or equal to i n divided by c g in this formula i t is the tabulated value
+[01:54] of current that the cable can carry tabulated just means in a table by the way i n is the nominal
+[02:00] rating of the circuit protective device and cg is the grouping factor that we just found now there's
+[02:05] a whole load of other rating factors that we can put under here to keep the grouping factor company
+[02:09] but we'll cover those in other videos so if we're considering this lighting circuit protected by a
+[02:13] 10 amp mtv then the cable we install must be able to carry more than 10 divided by 0.72 so 13.9 amps
+[02:20] and then we'd select the correct cable accordingly but is that the end of the story in this case do
+[02:26] we really need to use all eight cables to figure out our grouping vector well there is a way that
+[02:30] may allow us to discount some of those conductors note 9 to the table sheds a little bit of light on
+[02:35] this it reads if due to known operating conditions a cable is expected to carry not more than 30
+[02:41] of its grouped rating it may be ignored for the purpose of obtaining the rating factor
+[02:45] for the rest of the group so in other words if the cross-sectional area of the cable is bigger
+[02:50] than it needs to be which sometimes happens to make the circuit have a compliant vault drop or
+[02:54] earth fault loop impedance value then we may not need to include it in our calculation for grouping
+[03:00] this is because the circuit is not drawing enough to make the cable hot enough to cause a problem
+[03:05] but there's two points just to be careful about first of all this is only applicable if there
+[03:09] are known operating conditions in other words you know what the circuit is feeding and that it is
+[03:15] not likely to change so a socket circuit would not be a suitable candidate for this allowance
+[03:19] but a lighting circuit with a fixed and known number of lights on might also notice it read
+[03:25] not more than 30 percent of its grouped rating what does this mean well the note continues for
+[03:30] example a group of n loaded cables would normally require a group rating factor of cg applied to the
+[03:36] tabulated i t however if m cables in the group carry loads which are not greater than 0.3 cg
+[03:42] it ampers the other cables can be sized by using the group rating factor corresponding to n
+[03:48] minus m cables so let's try to unravel that one suddenly this note is telling us that
+[03:53] the grouping factor needs to be applied to the tabulated current carrying capacity of the cable
+[03:57] but earlier we applied the grouping factor to the nominal rating of the protective device
+[04:01] so what's going on there well looking back to our formula from earlier if we transpose it we'll find
+[04:06] that the current carrying capacity multiplied by our grouping factor must be greater than the
+[04:11] nominal rating of the protective device which kind of makes sense as we want the cable to be
+[04:15] able to carry more current in the conditions it's installed in than the protective device will allow
+[04:20] to flow so if as it says in the final sentence of the note the grouping factor times the tabulated
+[04:25] current carrying capacity times 0.3 for the 30 is higher than the current expected to flow then you
+[04:32] don't need to count that cable in your grouping calculation so if your tabulated current carrying
+[04:36] capacity was 17 amps multiplied by the grouping factor of 0.72 and by 0.3 and you get 3.672 if
+[04:44] the circuit should never draw more than that value of current for instance if it's feeding a
+[04:48] fixed amount of light fittings then you don't need to include it in your grouping factor value now
+[04:53] that's all well and good however amazingly it's only scraping the surface of grouping and there's
+[04:58] lots of other things to bear in mind also such as the fact that note 1 states that the values in
+[05:02] table 4 c1 are only applicable to uniform groups of cables equally loaded so the question arises
+[05:09] what about when you have groups of cables that are non-uniform and unequally loaded well that's the
+[05:14] subject of a future video but we've made a good start here as always we want to hear from you do
+[05:18] you use grouping factors in your electrical work or has note 9 to table 4c1 ever made a difference
+[05:24] to an installation that you've been designing or installing whatever your thoughts or questions on
+[05:28] this subject please leave them in the comments below and as always thank you very much for
+[05:34] watching

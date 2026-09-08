@@ -1,0 +1,126 @@
+# RCDs & Earth Fault Loop Impedance: The Hidden Connection!
+# https://www.youtube.com/watch?v=2ClZKN1Qxaw
+
+in this Q&A video we're going to answer the question how does using an rcd affect my Earth fault Loop impedance just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of electrical design made in association with BG electrical part of the Luceco group they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with this CPD and you'll receive a certificate to prove you've completed the course why are we asking this question well throughout this design process we've protected our Circuit by using an MCB and based all our calculations around that but does our circuit need rcd protection and if so how does that affect all of our carefully crafted calculations particularly when it comes to the Earth fault Loop impedance of our circuit the last few amendments and additions of the wiring Rags have increased the stringency of requirements for circuits to be protected by an rcd and it's becoming increasingly common for the circuit to be protected by an individual rcbo to cut down impacts of permissible leakage currents while the gold standard for rcd protection is individual rcbos split load boards can still be made compliant by the way I've made a video Elsewhere on our Channel explaining how to do it if you're curious but what specific regulations might affect our electric boiler circuit and make it require rcd protection well there may be a tendency to think that this 9 kW Fusion Comet electric boiler from the electric heating company would require an rcd because it's heating water and of course we get a bit jittery around areas where water and electricity mix but actually there's no requirement to use one just because it's an electric boiler we may feel inclined to do so because if we Supply an electric shower in a bathroom there is very clear direction to protect that with an rcd we find that in part 7 on special locations and specifically chapter 701 which is all about bathrooms and shower rooms and contains regulation 701.4.1.3.3 additional protection by rcds it reads additional protection by the use of one or more rcds having the characteristics specified in regulation 415.1.1 shall be provided for low voltage circuits one serving the location so this would of course include an electric shower but also two passing through zones one and or two not serving the location so there is a fringe but unlikely case where boiler could be cited in the bathroom but also where the cable feeding it could pass through Zone one or two of a bathroom and then it would require an rcd to protect it but we're not doing that with our boiler another reason it may require rcd protection is the way that the cable supplying it is installed this is highlighted for is in regulation 522.6.202 a cable installed in a wall or partition at a depth of less than 50mm from a surface of the wall or partition Shall One be installed in a Zone within 150 mil from the top of the wall or partition or within 150 mil of an angle formed by two adjoining walls or partitions where the cable is connected to a point accessory or switch gear on any surface of the wall or partition the cable may be installed in a Zone either horizontally or vertically to the point accessory or switch gear where the location of the accessory point or switch gear can be determined from the reverse side a Zone formed on one side of a wall of 100 Mil thickness or less or partition of 100 Mil thickness or less extends to the reverse side or to comply with regulation 522.6.204 so let's pick that apart if our twin and CPC cable is buried in a wall but not deeper than 50 mil we have to comply with either indent one or indent two of this regulation this is because if a cable is buried in a wall there is a chance that it could be drilled into or nailed into by someone who doesn't know what they're doing or sometimes by someone who does know what they're doing so we need to protect this person from themselves and the electricity in the cable by either of these indents if we opt for indent two it directs over the page of the regs to a list of options for preventing the nail or screw from piercing the cable this includes things like using armoured cable Earth steel containment and some other options these options are a bit extreme especially in domestic environments and the increased cost of installing them is pretty prohibitive so going back to the first reg indent one is the easiest option we need to keep our cables within the zones mentioned here and again we've covered that information elsewhere so we won't repeat it here but there's a little bit of further information after indent 2 where it says where indent one but not indent 2 applies the cable shall be provided with additional protection by means of an rcd having the characteristics specified in regulation 415.1.1 so if our PVC insulated twin and CPC cable is buried less than 50 mil deep in the wall and doesn't have any extra mechanical protection as stated earlier we need to provide additional protection in the form of an rcd this is in place so that if someone accident drills or Nails into a cable the rcd will protect them if they receive a shock from that cable to Earth the same information applies in the following regulation for cables buried at any depth in a wall made of metallic Parts if it doesn't have extra mechanical protection moving to the regulation specified there 415.1.1 we read the use of rcds with a rated residual operating current not exceeding 30 milliamps is recognised in AC systems as additional protection in the event of failure of the provision for basic protection And or the provision for fault protection or carelessness by users so we' need to use an rcd to protect our cable if it's buried in the wall if you remember way back in part one of this training module we stated that this cable would be surface mounted or clip direct along its entire length and isn't buried in a wall so it doesn't require rcd protection this was a very deliberate choice that I made so that I could explain clearly how to do simple circuit design and demonstrate the use of MCB protection because if we do use an rcd for additional protection it can change some of our values along the way how well let's just toy with this design a little bit and say that it does need an rcd to protect it what's the impact of that the main one is that it will massively change our maximum allowed Earth fault Loop impedance do you remember in the previous couple of videos we looked at how quickly the circuit would need to trip in the event of an earth fault of negligible impedance or what we can think of as kind of very very low resistance the speed of trip is determined by the amount of current flowing through the breaker which in turn is determined by the impedance or opposition to current flow in the circuit when the fault occurs well now we've changed the characteristics of that protective device and made it much more sensitive to fault current meaning that it only takes a tiny amount of current to make the device trip in the event of an earth fault namely just 30 milliamps or 30,000ths of an amp flowing to Earth either by the live conductors touching the protective conductor or by it passing through a human to Earth because it only takes a tiny amount of fault current to make the device operate very quickly this means that the impedance of the circuit when the fault occurs can be absolutely huge this is confirmed for as in regulation 411.4.204 which states where an rcd is used to satisfy the requirements of Regulation 411.3.3.2, 411.3.2.3 or 411.3.2.4 these Regs are to do with disconnection times of different circuits in different systems the maximum values of Earth Vault Loop impedance in table 41.5 may be applied for non- delayed rcds to BSEN61008-1 and BSEN61009-1 for a nominal voltage UO of 230 volts so although our rcd is being used for additional protection not fault protection it could be argued that we no longer have to refer to the tables we looked at previously to get our maximum permissible Earth Fault Loop impedance but we can use the simplified values in table 41.5 what does that tell us well if we're using a 30 milliamp rcd then the maximum Earth Loop impedance can be as high as 1,667 ohms that's a huge figure and could theoretically lead to circuits that are kilometres long would that be okay well the use of this table comes with a couple of caviats first of all the rest of the design has to work so if we have a ridiculously long circuit then the volt drop would probably be too high in the first place and the load may not operate properly then there's a bit of Regulation 4111.4.204 that we handily skipped over earlier it concludes by saying in such cases in other words where we're using an rcd to achieve disconnection times an overcurrent protective device shall provide protection against overload current and fault current in accordance with chapter 43 so this is a bit of a nudge to remind us that there's more than one type of fault current that can affect our circuit using an rcd gives us confidence that our circuit will disconnect in the event of an earth fault where a live and protective conductor touch but what about when two live conductors like a line and a neutral touch the fault that we normally call a short circuit an rcd by itself won't bat an eyelid when that happens it won't even think about tripping an rcbo will operate but if we've made our circuit way too long in order to take advantage of that mad 1,667 ohm maximum Earth volt Loop impedance the short circuit current may not be high enough to disconnect the circuit quickly and the cable could overheat and start a fire pretty much the opposite of what we're aiming for with our installations so how do we make sure that our circuits stay safe for all types of fault if we end up using an rcd for additional protection well the best way is to keep in mind that the rcd in most cases is there for just that additional protection if you design the circuit using the process we've outlined in this series of Nine videos now first of all doing all the calculations using an MCB as a protective device then swapping it out at the end for the equivalent rcbo then it should still meet all the other requirements for overload short circuit and Earth fault protection if you do want to dive straight in and use the rcd for Earth fault protection then you can use the same principles that we used in a previous video to calculate the Earth fault Loop impedance but instead apply it to the total impedance of the line and neutral conductors instead this will verify that the short circuit fault current will operate the protective device and disconnect the faulty circuit within the required times this is usually something that we do for a TT system where we'd expect quite High Earth Loop impedances but that's a whole future training package in itself so there we go that's some reasons why we may need to protect our circuit with an rcd and how that will affect our circuit design but you may be wondering should this circuit be protected by an AFDD well to find out more about that check out this video right here or click the link in the description below to watch it as part of our free online training package to help you with this CPD and you'll receive a certificate as well all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this Q&A video we're going to answer the question how does using an rcd affect my Earth
+[00:05] fault Loop impedance just before we explain the answer to this question Please be aware that this
+[00:09] video is one of a series that we've made on the subject of electrical design made in association
+[00:13] with BG electrical part of the Luceco group they can be viewed individually or you can click the
+[00:18] link in the description below to view them as part of a free online training package to help you with
+[00:22] this CPD and you'll receive a certificate to prove you've completed the course why are we
+[00:27] asking this question well throughout this design process we've protected our Circuit by using an
+[00:32] MCB and based all our calculations around that but does our circuit need rcd protection and if so how
+[00:39] does that affect all of our carefully crafted calculations particularly when it comes to the
+[00:43] Earth fault Loop impedance of our circuit the last few amendments and additions of the wiring
+[00:48] Rags have increased the stringency of requirements for circuits to be protected by an rcd and it's
+[00:53] becoming increasingly common for the circuit to be protected by an individual rcbo to cut
+[00:58] down impacts of permissible leakage currents while the gold standard for rcd protection is
+[01:03] individual rcbos split load boards can still be made compliant by the way I've made a video
+[01:09] Elsewhere on our Channel explaining how to do it if you're curious but what specific regulations
+[01:14] might affect our electric boiler circuit and make it require rcd protection well there may
+[01:19] be a tendency to think that this 9 kW Fusion Comet electric boiler from the electric heating company
+[01:24] would require an rcd because it's heating water and of course we get a bit jittery around areas
+[01:30] where water and electricity mix but actually there's no requirement to use one just because
+[01:35] it's an electric boiler we may feel inclined to do so because if we Supply an electric shower in a
+[01:40] bathroom there is very clear direction to protect that with an rcd we find that in part 7 on special
+[01:46] locations and specifically chapter 701 which is all about bathrooms and shower rooms and contains
+[01:52] regulation 701.4.1.3.3 additional protection by rcds it reads additional protection by the
+[02:00] use of one or more rcds having the characteristics specified in regulation 415.1.1 shall be provided
+[02:07] for low voltage circuits one serving the location so this would of course include an electric shower
+[02:13] but also two passing through zones one and or two not serving the location so there is a fringe but
+[02:21] unlikely case where boiler could be cited in the bathroom but also where the cable feeding it could
+[02:26] pass through Zone one or two of a bathroom and then it would require an rcd to protect it but
+[02:31] we're not doing that with our boiler another reason it may require rcd protection is the way
+[02:36] that the cable supplying it is installed this is highlighted for is in regulation
+[02:40] 522.6.202 a cable installed in a wall or partition at a depth of less than 50mm from a surface of the
+[02:47] wall or partition Shall One be installed in a Zone within 150 mil from the top of the wall or
+[02:53] partition or within 150 mil of an angle formed by two adjoining walls or partitions where the cable
+[02:59] is connected to a point accessory or switch gear on any surface of the wall or partition the cable
+[03:05] may be installed in a Zone either horizontally or vertically to the point accessory or switch gear
+[03:11] where the location of the accessory point or switch gear can be determined from the
+[03:15] reverse side a Zone formed on one side of a wall of 100 Mil thickness or less or partition of 100
+[03:21] Mil thickness or less extends to the reverse side or to comply with regulation 522.6.204 so
+[03:29] let's pick that apart if our twin and CPC cable is buried in a wall but not deeper than 50 mil
+[03:35] we have to comply with either indent one or indent two of this regulation this is because if a cable
+[03:42] is buried in a wall there is a chance that it could be drilled into or nailed into by someone
+[03:46] who doesn't know what they're doing or sometimes by someone who does know what they're doing so
+[03:51] we need to protect this person from themselves and the electricity in the cable by either of
+[03:56] these indents if we opt for indent two it directs over the page of the regs to a list of options for
+[04:01] preventing the nail or screw from piercing the cable this includes things like using armoured
+[04:06] cable Earth steel containment and some other options these options are a bit extreme especially
+[04:12] in domestic environments and the increased cost of installing them is pretty prohibitive so going
+[04:17] back to the first reg indent one is the easiest option we need to keep our cables within the
+[04:23] zones mentioned here and again we've covered that information elsewhere so we won't repeat it here
+[04:27] but there's a little bit of further information after indent 2 where it says where indent one
+[04:33] but not indent 2 applies the cable shall be provided with additional protection by means
+[04:37] of an rcd having the characteristics specified in regulation 415.1.1 so if our PVC insulated
+[04:46] twin and CPC cable is buried less than 50 mil deep in the wall and doesn't have any extra mechanical
+[04:52] protection as stated earlier we need to provide additional protection in the form of an rcd this
+[04:58] is in place so that if someone accident drills or Nails into a cable the rcd will protect them if
+[05:03] they receive a shock from that cable to Earth the same information applies in the following
+[05:08] regulation for cables buried at any depth in a wall made of metallic Parts if it doesn't
+[05:12] have extra mechanical protection moving to the regulation specified there 415.1.1 we read the use
+[05:20] of rcds with a rated residual operating current not exceeding 30 milliamps is recognised in AC
+[05:25] systems as additional protection in the event of failure of the provision for basic protection And
+[05:31] or the provision for fault protection or carelessness by users so we' need to use
+[05:37] an rcd to protect our cable if it's buried in the wall if you remember way back in part one of this
+[05:43] training module we stated that this cable would be surface mounted or clip direct along its entire
+[05:48] length and isn't buried in a wall so it doesn't require rcd protection this was a very deliberate
+[05:54] choice that I made so that I could explain clearly how to do simple circuit design and demonstrate
+[05:59] the use of MCB protection because if we do use an rcd for additional protection it can change some
+[06:06] of our values along the way how well let's just toy with this design a little bit and say that it
+[06:11] does need an rcd to protect it what's the impact of that the main one is that it will massively
+[06:17] change our maximum allowed Earth fault Loop impedance do you remember in the previous couple
+[06:22] of videos we looked at how quickly the circuit would need to trip in the event of an earth fault
+[06:25] of negligible impedance or what we can think of as kind of very very low resistance the speed of trip
+[06:31] is determined by the amount of current flowing through the breaker which in turn is determined
+[06:36] by the impedance or opposition to current flow in the circuit when the fault occurs well now we've
+[06:41] changed the characteristics of that protective device and made it much more sensitive to fault
+[06:46] current meaning that it only takes a tiny amount of current to make the device trip in the event
+[06:51] of an earth fault namely just 30 milliamps or 30,000ths of an amp flowing to Earth either by the
+[06:58] live conductors touching the protective conductor or by it passing through a human to Earth because
+[07:04] it only takes a tiny amount of fault current to make the device operate very quickly this means
+[07:08] that the impedance of the circuit when the fault occurs can be absolutely huge this is confirmed
+[07:14] for as in regulation 411.4.204 which states where an rcd is used to satisfy the requirements of
+[07:21] Regulation 411.3.3.2, 411.3.2.3 or 411.3.2.4 these Regs are to do with disconnection times
+[07:30] of different circuits in different systems the maximum values of Earth Vault Loop impedance in
+[07:36] table 41.5 may be applied for non- delayed rcds to BSEN61008-1 and BSEN61009-1 for a nominal voltage
+[07:46] UO of 230 volts so although our rcd is being used for additional protection not fault protection it
+[07:55] could be argued that we no longer have to refer to the tables we looked at previously to get
+[07:59] our maximum permissible Earth Fault Loop impedance but we can use the simplified values in table 41.5
+[08:06] what does that tell us well if we're using a 30 milliamp rcd then the maximum Earth Loop impedance
+[08:13] can be as high as 1,667 ohms that's a huge figure and could theoretically lead to circuits that are
+[08:22] kilometres long would that be okay well the use of this table comes with a couple of caviats first of
+[08:28] all the rest of the design has to work so if we have a ridiculously long circuit then the volt
+[08:34] drop would probably be too high in the first place and the load may not operate properly then there's
+[08:39] a bit of Regulation 4111.4.204 that we handily skipped over earlier it concludes by saying in
+[08:45] such cases in other words where we're using an rcd to achieve disconnection times an overcurrent
+[08:51] protective device shall provide protection against overload current and fault current
+[08:55] in accordance with chapter 43 so this is a bit of a nudge to remind us that there's more than one
+[09:01] type of fault current that can affect our circuit using an rcd gives us confidence that our circuit
+[09:06] will disconnect in the event of an earth fault where a live and protective conductor touch but
+[09:11] what about when two live conductors like a line and a neutral touch the fault that we normally
+[09:15] call a short circuit an rcd by itself won't bat an eyelid when that happens it won't even think
+[09:21] about tripping an rcbo will operate but if we've made our circuit way too long in order to take
+[09:27] advantage of that mad 1,667 ohm maximum Earth volt Loop impedance the short circuit current may not
+[09:34] be high enough to disconnect the circuit quickly and the cable could overheat and start a fire
+[09:40] pretty much the opposite of what we're aiming for with our installations so how do we make sure that
+[09:45] our circuits stay safe for all types of fault if we end up using an rcd for additional protection
+[09:51] well the best way is to keep in mind that the rcd in most cases is there for just that additional
+[09:57] protection if you design the circuit using the process we've outlined in this series of Nine
+[10:01] videos now first of all doing all the calculations using an MCB as a protective device then swapping
+[10:07] it out at the end for the equivalent rcbo then it should still meet all the other requirements for
+[10:13] overload short circuit and Earth fault protection if you do want to dive straight in and use the rcd
+[10:19] for Earth fault protection then you can use the same principles that we used in a previous video
+[10:23] to calculate the Earth fault Loop impedance but instead apply it to the total impedance
+[10:27] of the line and neutral conductors instead this will verify that the short circuit fault current
+[10:33] will operate the protective device and disconnect the faulty circuit within the required times this
+[10:38] is usually something that we do for a TT system where we'd expect quite High Earth Loop impedances
+[10:44] but that's a whole future training package in itself so there we go that's some reasons
+[10:48] why we may need to protect our circuit with an rcd and how that will affect our circuit design
+[10:53] but you may be wondering should this circuit be protected by an AFDD well to find out more about
+[10:59] that check out this video right here or click the link in the description below to watch it
+[11:03] as part of our free online training package to help you with this CPD and you'll receive
+[11:08] a certificate as well all that remains in this video is to say thank you very much for watching

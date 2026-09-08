@@ -1,0 +1,70 @@
+# How to Carryout the RCD Ramp Test - Why Does my RCD Keep Tripping
+# https://www.youtube.com/watch?v=Mxv3OVVjANs
+
+so in this video today okay we're going to be looking at the RCD ramp test now this part of any EICR and the customer said that every now and then the one with the big yellow button okay trip sometimes so can we sort of look into it while we're here now we've done the insulation resistance test okay so sometimes when you have a device that's tripping you would maybe go to an insulation resistance test to make sure if it was an overcurrent protective device that there's no shorts between line and neutral or there's nothing between line and CPC or line and earth or neutral and earth being an RCD now they've come back absolutely fine so our next point of call okay is going to be the ramp test which we can use not necessarily for initial verification okay there there's no necessity for it however it is a handy test to do when we're talking about fault find it now this is a live test okay so all precautions need to be taken GS38 insulated tools etc PPE however even though it's a live test i still have managed to isolate as much as i can in the board okay just to take away a little bit of the risk now it's not going to take away all of it however by not having absolutely everything in their live when i don't need it to be it's going to help me do this live test a little bit safer okay now we're going to do it at the RCD itself okay as manufacturers specify you should do it at the RCD with no loads and with the ramp test you're not really going to want the loads on anyway because we need to find out what the RCD is actually tripping at in terms of how much current it's going to take to disconnect this RCD without any electronic devices in circuit which are maybe giving natural earth leakage okay which might reduce that reading we're going to get now all we're going to do is we've probed onto the earth bar okay and on our test here as you can see we've got the usual half times one times five times an auto which you can watch that in a different video that'll appear on the screen now but we're actually going to go to this symbol over here okay which is indicating a ramp test we select the milliamp rating of the RCD which is 30 milliamps again this installation all we're going to do okay is we're going to go on the load side of the RCD it will show us the voltage and now what it's actually doing is it's not giving us a time as you can see it's given us 21 milliamps so the testers is slowly ramping up the the current in stages to find out exactly what milliamp will disconnect this RCD and usually we think oh it's a 30 milliamp RCD it's going to disconnect at 30 milliamps it's rarely the case that you get it that high is usually around i find 22 23 this one is showing us 21 milliamps we'll do it on both sides of the cycle so now we're on 180 degrees we'll re-energize the RCD and we'll do this again now obviously that was 21 milliamps so we wouldn't really expect there to be a problem and we have 21 milliamps again okay and that's there or thereabouts on what we want it to be now if that had come back slightly lower let's say 13 14 milliamps then we might want to question actually is the RCD tripping intermittently because of all the electronic devices in the circuits now on a small domestic dwelling like this that wouldn't massively be too much of a problem not saying this wouldn't be the case but you'd have to see what is actually installed here but this is why BS7671 states that we're only allowed a maximum of 30 percent of the rated residual current of the RCD so this one that being 30 milliamps okay of natural earth leakage on any one RCD so that would mean we're on this installation actually on this RCD only allowed nine milliamps of natural earth leakage before we'd have to think about splitting the circuits up and that is another benefit of an RCBO really because actually this RCD has four circuits on it so that nine that thirty percent comes from all of these whereas if these were individual RCBO's only the individual circuit would have the 30 not all added together now if this come to let's say 13 milliamps okay you might think oh well that's still not too much of an issue but let's say that 9 milliamps okay we had used that 30 percent that when everything's actually turned on it means the RCD effectively already has there's already nine milliamps of earth leakage okay which the RCD is detecting if he's tripping about 13 milliamps that means it's right on the edge and it's only looking for another sort of four milliamps before it starts to disconnect we have to look at the whole installation of how it's installed now this RCD is fine okay the insulation resistance test come back fine the RCD ramp test okay remember we're not looking at times we're looking at the amount of current it's going to take to disconnect it has come back fine also so our next step maybe would be a clamp meter okay so we can turn everything on in the installation and find actually on these four circuits how much natural earth leakage is being used again a small property like this probably not going to be a massive deal it's also important to say to the customer okay i've done these checks okay let's assume we've done the clamp on ammeter and we've checked the natural earth leakage and it's fine again usually when an RCD is tripping it is usually down to a faulty appliance so this is where you can maybe talk to the client or the customer and say let's get a bit more information is it happening at a certain time is it where you've plugged in an appliance does it sort of fall when that happens if not maybe over the next few weeks keep a sort of list stock or keep an eye out for all these things you know are using is happening at a certain time is it happening when you're using certain appliances is it happening when you're using too many appliances together okay and then call me back and we can sort of come back and and have a look at that generally nine times out of ten in my experience it is down to a faulty appliance somewhere as always we hope this video has been some help
+
+
+[00:00] so in this video today okay we're going to be looking at the RCD ramp test now this part of
+[00:04] any EICR and the customer said that every now and then the one with the big yellow button
+[00:08] okay trip sometimes so can we sort of look into it while we're here now we've done the insulation
+[00:13] resistance test okay so sometimes when you have a device that's tripping you would maybe go to an
+[00:18] insulation resistance test to make sure if it was an overcurrent protective device that there's no
+[00:23] shorts between line and neutral or there's nothing between line and CPC or line and earth or neutral
+[00:28] and earth being an RCD now they've come back absolutely fine so our next point of call okay
+[00:33] is going to be the ramp test which we can use not necessarily for initial verification
+[00:38] okay there there's no necessity for it however it is a handy test to do when we're talking about
+[00:44] fault find it now this is a live test okay so all precautions need to be taken GS38 insulated tools
+[00:51] etc PPE however even though it's a live test i still have managed to isolate as much as i can in
+[00:57] the board okay just to take away a little bit of the risk now it's not going to take away all of it
+[01:02] however by not having absolutely everything in their live when i don't need it to be
+[01:06] it's going to help me do this live test a little bit safer okay now we're going to do it at the RCD
+[01:11] itself okay as manufacturers specify you should do it at the RCD with no loads and with the ramp test
+[01:17] you're not really going to want the loads on anyway because we need to find out what the
+[01:22] RCD is actually tripping at in terms of how much current it's going to take to disconnect this RCD
+[01:28] without any electronic devices in circuit which are maybe giving natural earth leakage okay which
+[01:35] might reduce that reading we're going to get now all we're going to do is we've probed onto
+[01:40] the earth bar okay and on our test here as you can see we've got the usual half times one times
+[01:46] five times an auto which you can watch that in a different video that'll appear on the screen now
+[01:52] but we're actually going to go to this symbol over here okay which is indicating a ramp
+[01:56] test we select the milliamp rating of the RCD which is 30 milliamps again this installation
+[02:02] all we're going to do okay is we're going to go on the load side of the RCD
+[02:08] it will show us the voltage and now what it's actually doing is it's not giving us a time as
+[02:13] you can see it's given us 21 milliamps so the testers is slowly ramping up the
+[02:18] the current in stages to find out exactly what milliamp will disconnect this RCD and usually
+[02:25] we think oh it's a 30 milliamp RCD it's going to disconnect at 30 milliamps it's rarely the
+[02:30] case that you get it that high is usually around i find 22 23 this one is showing us 21 milliamps
+[02:37] we'll do it on both sides of the cycle so now we're on 180 degrees we'll re-energize the RCD
+[02:46] and we'll do this again now obviously that was 21 milliamps so we wouldn't really expect there to be
+[02:54] a problem and we have 21 milliamps again okay and that's there or thereabouts on what we want it to
+[03:00] be now if that had come back slightly lower let's say 13 14 milliamps then we might want to question
+[03:06] actually is the RCD tripping intermittently because of all the electronic devices in the
+[03:12] circuits now on a small domestic dwelling like this that wouldn't massively be too much of a
+[03:17] problem not saying this wouldn't be the case but you'd have to see what is actually installed here
+[03:21] but this is why BS7671 states that we're only allowed a maximum of 30 percent of the rated
+[03:27] residual current of the RCD so this one that being 30 milliamps okay of natural
+[03:33] earth leakage on any one RCD so that would mean we're on this installation actually on this RCD
+[03:39] only allowed nine milliamps of natural earth leakage before we'd have to think about splitting
+[03:44] the circuits up and that is another benefit of an RCBO really because actually this RCD has four
+[03:51] circuits on it so that nine that thirty percent comes from all of these whereas if these were
+[03:56] individual RCBO's only the individual circuit would have the 30 not all added together now
+[04:04] if this come to let's say 13 milliamps okay you might think oh well that's still not too much of
+[04:09] an issue but let's say that 9 milliamps okay we had used that 30 percent that when everything's
+[04:15] actually turned on it means the RCD effectively already has there's already nine milliamps of
+[04:20] earth leakage okay which the RCD is detecting if he's tripping about 13 milliamps that means
+[04:26] it's right on the edge and it's only looking for another sort of four milliamps before it
+[04:30] starts to disconnect we have to look at the whole installation of how it's installed now this RCD
+[04:36] is fine okay the insulation resistance test come back fine the RCD ramp test okay remember we're
+[04:42] not looking at times we're looking at the amount of current it's going to take to disconnect it has
+[04:46] come back fine also so our next step maybe would be a clamp meter okay so we can turn everything
+[04:53] on in the installation and find actually on these four circuits how much natural earth
+[04:57] leakage is being used again a small property like this probably not going to be a massive deal it's
+[05:02] also important to say to the customer okay i've done these checks okay let's assume we've done the
+[05:07] clamp on ammeter and we've checked the natural earth leakage and it's fine again usually when
+[05:12] an RCD is tripping it is usually down to a faulty appliance so this is where you can maybe talk to
+[05:17] the client or the customer and say let's get a bit more information is it happening at a certain time
+[05:22] is it where you've plugged in an appliance does it sort of fall when that happens if not maybe
+[05:28] over the next few weeks keep a sort of list stock or keep an eye out for all these things you know
+[05:33] are using is happening at a certain time is it happening when you're using certain appliances is
+[05:37] it happening when you're using too many appliances together okay and then call me back and we can
+[05:41] sort of come back and and have a look at that generally nine times out of ten in my experience
+[05:48] it is down to a faulty appliance somewhere as always we hope this video has been some help

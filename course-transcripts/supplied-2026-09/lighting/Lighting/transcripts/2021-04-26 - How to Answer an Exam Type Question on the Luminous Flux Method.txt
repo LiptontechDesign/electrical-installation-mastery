@@ -1,0 +1,292 @@
+# How to Answer an Exam Type Question on the Luminous Flux Method
+# https://www.youtube.com/watch?v=2fFKkIZVwt0
+
+[Music] hello and welcome to this electrical principals training video this video is designed to be used in conjunction with a worksheet that you'll find in the description below so please click the link and download the worksheet and have a look at that if you haven't already done so we're going to make start by answering the question on this worksheet which reads a classroom measuring seven and a half meters by 6 meters needs illuminating to an acceptable level for evening class use the fitting to be used is a 230 volts Russian fitting using two number 1200 millimeter tubes rated at 36 watts per tube these tubes have an efficacy of 75 lumens per watt the room has a maintenance factor of not 0.75 and a utilization factor of not 0.7 how many luminaires will be required and how much current will they draw so an awful lot of information there an awful lot of numbers so how are we going to go about solving this question well to answer this question we need to use our luminous flux method so we start from the position where we write that down so we've got F is equal to e times by a divided by u times by M so if you haven't already watched the video that explains how the luminous flux method works and what each part of this means then please go back and watch that video before continuing with this question and what we're going to do now is just have a run through how we answer this specific question in this case okay so let's have a little rundown of the question here and see what we actually already know about this formula so what do we already know well we already know what the value for e will be so the value for e in this question is going to be the value of illuminance that's required to light a classroom up to a suitable level for evening class use and the guideline for that is generally recommended to be 500 lux so that is the level of illuminance that we're aiming for in this question we then need to know what the area of this room is going to be so we need to figure well what a is going to be and we can do that by simply multiplying the length of the room by its width so therefore the area will be equal to seven and a half times six so that's seven point five times by six and again if the pressure wasn't on if it wasn't in a video I'd probably be able to figure this out pretty quick so that's going to be 45 yep saying that comes to 45 meters squared so now we know what our area is and the question just simply states what the utilization factor and the maintenance factor is going to be so the utilization factor according to the question is equal to not point seven and the maintenance factor and we don't have any units for the utilization factor or the maintenance factor is going to be naught point seven five so that's what we're looking at there nor point seven for the utilization and not point seven five for the maintenance factor so that's nice and easy we've got all the numbers that we need lined up straight away to figure out how much luminous flux we need to illuminate this room to the correct level so now let's just carry on with our calculation so we've got values here of 500 for the illuminance level times by 45 for the area divided by naught point seven for the utilization factor times by naught point seven five for the maintenance factor so we'll stick that into the calculator and of course if you're using the Casio FX 85 GT plus like I am it's really nice and easy to do because you just use the fraction button 500 times by four points sorry 45 divided by not point seven times by not point seven five and when we've performed that calculation we find that we need a value of forty two thousand eight hundred and fifty-seven I'm not gonna worry too much about the decimal points at this stage because that's actually quite a small kind of proportion of the overall number here so we're not going to gain an awful lot by going beyond that so I'm gonna round that off to no decimal places so that brings us to that value 42,000 857 lumens so that's the amount of luminous flux that we need to illuminate this room to the required level now what we need to know is we need to figure out how much luminous flux each light fitting gives out as a total now that might seem a little bit confusing from the numbers that we've got so far but let's just see if we can figure out what that's going to be so what we're going to do is we're going to say that the total luminous flux of one light fitting so the luminous flux from one light fitting is going to be equal to two tubes because there's two tubes per fitting multiplied by the lumens per watt so multiplied by 75 so we've got 75 lumens per watt and then we times that by the number of what's that the light fitting uses so each tube uses 36 so you can see there this bit of the equation 75 times 36 that tells us how much luminous flux each tube emits and then multiplying that by 2 will give us how much luminous flux the fitting as a whole gives out and obviously there's kind of other factors that would come into play here the type of light fitting and all sorts of things that would come into play but we're trying to answer a question here that will hopefully help us out with an exam rather than a real-life question why we just get the total luminous flux output for the light fitting as a whole so we've got 2 times 75 times 36 and that's going to give us the total luminous flux that each one of these light fittings gives out so well may recall that f out yeah so we can see there that's the amount we need so let's do two times 75 times by 36 and 2 times 75 times 36 tells us that each one of those fittings gives an output of 5,400 lumens so from here hopefully it's a fairly obvious step what we need to do in order to figure out the amount of light fittings we know how much luminous flux we need in total and we know how much luminous flux each light fitting gives off so therefore if we take the total required and divide it by the number of loom / fitting that should tell us how many fittings we require so let's do that calculation now so the number of fittings will be equal to 42 thousand 857 divided by five thousand four hundred so let's do that calculation 42,000 857 divided by five thousand four hundred is equal to now this isn't interesting on so we've got seven point nine three now bear in mind here we're trying to think about how many light fittings we need so if we tried to ring up the wholesaler and ask them to fenders seven point nine three light fittings they'd be curious to know how they're supposed to send you point nine three of a light fitting ninety percent of a larger thing so what we'll do here is we will always round this number up to the nearest whole number so that means we will have eight fittings so there we go we've answered one critical part of the question now we know that for this room we are going to need eight light fittings now the next part of this question asks is to figure out how much current those fittings are going to draw so in other words we need to find the design current for this circuit now this is an interesting one because you may instantly think well I can figure this out fairly easily the first thing we need to know is how much power in total is this circuit this lighting circuit in this room going to draw so that's quite easy we know that there are eight fittings multiplied by 36 watts per tube multiplied by two tubes so that's going to give us the total power rating of this room so we do 2 times 36 times 8 so 8 times 36 times 2 gives us 576 watts so that room is going to draw 576 watts of power it's going to dissipate that amount of power in the room so at this point you might think well this is nice and easy to find the design current which from your electrical installation you'll know I be equal to the power divided by the voltage and in this case we'll be using the voltage stated in the question which is 230 volts but what would actually got to do for this because this is a lighting circuit and because we are using fluorescent lighting fluorescent lighting is a type of discharge lighting and that means that we've got to apply the rules that we find in the on-site guide published by the IET for the UK now in Appendix A which concerns itself with finding maximum demand and diversity table a1 gives us some guidance on the lighting circuit and the current demand thereof now we know the exact power that the circuit is going to be drawing however there's a note here on lighting outlets that says final circuits for discharge lighting must be arranged so as to be capable of carrying the total steady current viz that of the lamps and any associated control gear and also their harmonic currents now the next bits really important we're more exact information is not available the demand in volt amp ere's is to be taken as the rated lamp watts which is what we found here and that is to be multiplied by not less than 1.8 so in other words because we don't know what the power factor of this fluorescent light fitting is because we don't have that specific information given to us in the question we have to take this assumption of 1.8 as a multiplier so that's what we're going to do now we're going to take that value and we're going to complete this calculations so we're going to say that this will be equal to 576 so there's your lamp power rating and we're going to times that by 1.8 for this discharge circuit again in real life you would be able to get the most specific information on this which means that you might not have to apply this 1.8 rating factor but again we're hopefully getting ready for an exam question and the exam will expect us to use that 1.8 if you're unsure about this then please speak to your electrical lecture about it before you go into your exam to know whether you are expected or not to apply this value if this kind of question should happen to come up but I would expect my learners to use this value of 1.8 and then we going to divide that by the nominal voltage of 230 volts so we've got here five hundred and seventy six times by one point eight and then we're going to divide that by 230 and that's going to give us an answer of four point five will run off to two decimal places four point five one amperes so this circuit is going to draw four-and-a-half amps from eight fittings so that's the values that we're looking for so we've answered the first part of the question we found the number of light fittings needed and we've answered the second part of the question because we now know how much current that circuit needs to be designed to withstand so all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video this video is
+[00:12] designed to be used in conjunction with
+[00:13] a worksheet that you'll find in the
+[00:15] description below so please click the
+[00:16] link and download the worksheet and have
+[00:18] a look at that if you haven't already
+[00:19] done so we're going to make start by
+[00:21] answering the question on this worksheet
+[00:23] which reads a classroom measuring seven
+[00:25] and a half meters by 6 meters needs
+[00:27] illuminating to an acceptable level for
+[00:29] evening class use the fitting to be used
+[00:32] is a 230 volts Russian fitting using two
+[00:35] number 1200 millimeter tubes rated at 36
+[00:39] watts per tube these tubes have an
+[00:41] efficacy of 75 lumens per watt the room
+[00:44] has a maintenance factor of not 0.75 and
+[00:46] a utilization factor of not 0.7 how many
+[00:49] luminaires will be required and how much
+[00:52] current will they draw so an awful lot
+[00:54] of information there an awful lot of
+[00:56] numbers so how are we going to go about
+[00:58] solving this question well to answer
+[01:01] this question we need to use our
+[01:02] luminous flux method so we start from
+[01:06] the position where we write that down so
+[01:07] we've got F is equal to e times by a
+[01:13] divided by u times by M so if you
+[01:18] haven't already watched the video that
+[01:19] explains how the luminous flux method
+[01:21] works and what each part of this means
+[01:22] then please go back and watch that video
+[01:24] before continuing with this question and
+[01:26] what we're going to do now is just have
+[01:28] a run through how we answer this
+[01:30] specific question in this case okay so
+[01:33] let's have a little rundown of the
+[01:35] question here and see what we actually
+[01:37] already know about this formula so what
+[01:40] do we already know well we already know
+[01:42] what the value for e will be so the
+[01:46] value for e in this question is going to
+[01:49] be the value of illuminance that's
+[01:51] required to light a classroom up to a
+[01:53] suitable level for evening class use and
+[01:56] the guideline for that is generally
+[01:58] recommended to be 500 lux
+[02:01] so that is the level of illuminance that
+[02:04] we're aiming for in this question we
+[02:07] then need to know what the area of this
+[02:09] room is going to be so we need to figure
+[02:11] well what a is going to be and we can do
+[02:14] that by simply multiplying the length of
+[02:16] the room by its width
+[02:17] so therefore the area will be equal to
+[02:20] seven and a half times six
+[02:22] so that's seven point five times by six
+[02:24] and again if the pressure wasn't on if
+[02:26] it wasn't in a video I'd probably be
+[02:27] able to figure this out pretty quick so
+[02:29] that's going to be 45 yep saying that
+[02:33] comes to 45 meters squared so now we
+[02:36] know what our area is and the question
+[02:40] just simply states what the utilization
+[02:42] factor and the maintenance factor is
+[02:44] going to be so the utilization factor
+[02:46] according to the question is equal to
+[02:50] not point seven and the maintenance
+[02:55] factor and we don't have any units for
+[02:57] the utilization factor or the
+[02:59] maintenance factor is going to be naught
+[03:01] point seven five so that's what we're
+[03:03] looking at there nor point seven for the
+[03:05] utilization and not point seven five for
+[03:08] the maintenance factor so that's nice
+[03:10] and easy we've got all the numbers that
+[03:11] we need lined up straight away to figure
+[03:13] out how much luminous flux we need to
+[03:16] illuminate this room to the correct
+[03:17] level so now let's just carry on with
+[03:19] our calculation so we've got values here
+[03:22] of 500 for the illuminance level times
+[03:28] by 45 for the area divided by naught
+[03:33] point seven for the utilization factor
+[03:35] times by naught point seven five for the
+[03:39] maintenance factor so we'll stick that
+[03:41] into the calculator and of course if
+[03:43] you're using the Casio FX 85 GT plus
+[03:45] like I am it's really nice and easy to
+[03:48] do because you just use the fraction
+[03:49] button 500 times by four points sorry 45
+[03:52] divided by not point seven times by not
+[03:55] point seven five and when we've
+[03:58] performed that calculation we find that
+[04:00] we need a value of forty two thousand
+[04:06] eight hundred and fifty-seven I'm not
+[04:10] gonna worry too much about the decimal
+[04:11] points at this stage because that's
+[04:12] actually quite a small kind of
+[04:14] proportion of the overall number here so
+[04:16] we're not going to gain an awful lot by
+[04:17] going beyond that so I'm gonna round
+[04:19] that off to no decimal places so that
+[04:21] brings us
+[04:22] to that value 42,000 857 lumens so
+[04:26] that's the amount of luminous flux that
+[04:28] we need to illuminate this room to the
+[04:30] required level now what we need to know
+[04:33] is we need to figure out how much
+[04:35] luminous flux each light fitting gives
+[04:38] out as a total now that might seem a
+[04:40] little bit confusing from the numbers
+[04:41] that we've got so far but let's just see
+[04:43] if we can figure out what that's going
+[04:45] to be so what we're going to do is we're
+[04:48] going to say that the total luminous
+[04:49] flux of one light fitting so the
+[04:52] luminous flux from one light fitting is
+[04:54] going to be equal to two tubes because
+[04:58] there's two tubes per fitting multiplied
+[05:01] by the lumens per watt so multiplied by
+[05:05] 75 so we've got 75 lumens per watt and
+[05:10] then we times that by the number of
+[05:11] what's that the light fitting uses so
+[05:14] each tube uses 36 so you can see there
+[05:18] this bit of the equation
+[05:19] 75 times 36 that tells us how much
+[05:22] luminous flux each tube emits and then
+[05:24] multiplying that by 2 will give us how
+[05:27] much luminous flux the fitting as a
+[05:29] whole gives out and obviously there's
+[05:31] kind of other factors that would
+[05:33] come into play here the type of light
+[05:34] fitting and all sorts of things that
+[05:35] would come into play but we're trying to
+[05:38] answer a question here that will
+[05:40] hopefully help us out with an exam
+[05:41] rather than a real-life question why we
+[05:43] just get the total luminous flux output
+[05:46] for the light fitting as a whole so
+[05:48] we've got 2 times 75 times 36 and that's
+[05:51] going to give us the total luminous flux
+[05:54] that each one of these light fittings
+[05:55] gives out so well may recall that f out
+[05:59] yeah so we can see there that's the
+[06:01] amount we need so let's do two times 75
+[06:04] times by 36 and 2 times 75 times 36
+[06:08] tells us that each one of those fittings
+[06:09] gives an output of 5,400 lumens so from
+[06:14] here hopefully it's a fairly obvious
+[06:16] step what we need to do in order to
+[06:19] figure out the amount of light fittings
+[06:22] we know how much luminous flux we need
+[06:25] in total and we know how much luminous
+[06:28] flux each light fitting gives off so
+[06:30] therefore if we take the total required
+[06:32] and divide it by the number of loom
+[06:34] / fitting that should tell us how many
+[06:36] fittings we require so let's do that
+[06:38] calculation now so the number of
+[06:41] fittings will be equal to 42 thousand
+[06:52] 857 divided by five thousand four
+[06:56] hundred so let's do that calculation
+[06:59] 42,000 857 divided by five thousand four
+[07:03] hundred is equal to now this isn't
+[07:06] interesting on so we've got seven point
+[07:07] nine three now bear in mind here we're
+[07:10] trying to think about how many light
+[07:13] fittings we need so if we tried to ring
+[07:15] up the wholesaler and ask them to
+[07:16] fenders seven point nine three light
+[07:18] fittings they'd be curious to know how
+[07:20] they're supposed to send you point nine
+[07:22] three of a light fitting ninety percent
+[07:23] of a larger thing so what we'll do here
+[07:25] is we will always round this number up
+[07:27] to the nearest whole number so that
+[07:30] means we will have eight fittings so
+[07:33] there we go we've answered one critical
+[07:35] part of the question now we know that
+[07:37] for this room we are going to need eight
+[07:40] light fittings now the next part of this
+[07:43] question asks is to figure out how much
+[07:46] current those fittings are going to draw
+[07:48] so in other words we need to find the
+[07:49] design current for this circuit now this
+[07:52] is an interesting one because you may
+[07:54] instantly think well I can figure this
+[07:56] out fairly easily the first thing we
+[07:57] need to know is how much power in total
+[08:01] is this circuit this lighting circuit in
+[08:05] this room going to draw so that's quite
+[08:07] easy we know that there are eight
+[08:08] fittings multiplied by 36 watts per tube
+[08:14] multiplied by two tubes so that's going
+[08:17] to give us the total power rating of
+[08:19] this room so we do 2 times 36 times 8 so
+[08:24] 8 times 36 times 2 gives us 576 watts so
+[08:31] that room is going to draw 576 watts of
+[08:36] power it's going to dissipate that
+[08:37] amount of power in the room so at this
+[08:41] point you might think well this is nice
+[08:42] and easy to find the design current
+[08:44] which from your electrical installation
+[08:45] you'll know I be
+[08:48] equal to the power divided by the
+[08:52] voltage and in this case we'll be using
+[08:54] the voltage stated in the question which
+[08:56] is 230 volts but what would actually got
+[08:59] to do for this because this is a
+[09:00] lighting circuit and because we are
+[09:02] using fluorescent lighting fluorescent
+[09:04] lighting is a type of discharge lighting
+[09:06] and that means that we've got to apply
+[09:09] the rules that we find in the on-site
+[09:11] guide published by the IET for the UK
+[09:14] now in Appendix A which concerns itself
+[09:17] with finding maximum demand and
+[09:18] diversity table a1 gives us some
+[09:21] guidance on the lighting circuit and the
+[09:23] current demand thereof now we know the
+[09:27] exact power that the circuit is going to
+[09:28] be drawing however there's a note here
+[09:30] on lighting outlets that says final
+[09:33] circuits for discharge lighting must be
+[09:35] arranged so as to be capable of carrying
+[09:36] the total steady current viz that of the
+[09:39] lamps and any associated control gear
+[09:41] and also their harmonic currents now the
+[09:44] next bits really important we're more
+[09:46] exact information is not available the
+[09:48] demand in volt amp ere's is to be taken
+[09:51] as the rated lamp watts which is what we
+[09:54] found here and that is to be multiplied
+[09:57] by not less than 1.8 so in other words
+[10:02] because we don't know what the power
+[10:04] factor of this fluorescent light fitting
+[10:06] is because we don't have that specific
+[10:08] information given to us in the question
+[10:10] we have to take this assumption of 1.8
+[10:13] as a multiplier so that's what we're
+[10:15] going to do now we're going to take that
+[10:16] value and we're going to complete this
+[10:18] calculations so we're going to say that
+[10:20] this will be equal to 576
+[10:22] so there's your lamp power rating and
+[10:25] we're going to times that by 1.8 for
+[10:27] this discharge circuit again in real
+[10:30] life you would be able to get the most
+[10:31] specific information on this which means
+[10:33] that you might not have to apply this
+[10:34] 1.8 rating factor but again we're
+[10:37] hopefully getting ready for an exam
+[10:39] question and the exam will expect us to
+[10:41] use that 1.8 if you're unsure about this
+[10:45] then please speak to your electrical
+[10:46] lecture about it before you go into your
+[10:48] exam to know whether you are expected or
+[10:49] not to apply this value if this kind of
+[10:52] question should happen to come up but I
+[10:54] would expect my learners to use this
+[10:56] value of 1.8
+[10:58] and then we going to divide that by the
+[10:59] nominal voltage of 230 volts so we've
+[11:04] got here five hundred and seventy six
+[11:06] times by one point eight and then we're
+[11:08] going to divide that by 230 and that's
+[11:11] going to give us an answer of four point
+[11:15] five will run off to two decimal places
+[11:18] four point five one amperes so this
+[11:23] circuit is going to draw four-and-a-half
+[11:25] amps from eight fittings so that's the
+[11:28] values that we're looking for so we've
+[11:30] answered the first part of the question
+[11:31] we found the number of light fittings
+[11:32] needed and we've answered the second
+[11:34] part of the question because we now know
+[11:35] how much current that circuit needs to
+[11:38] be designed to withstand so all that
+[11:41] remains in this video is to say thank
+[11:42] you very much for watching
+[11:46] [Music]
+[11:59] [Music]
+[12:06] [Music]

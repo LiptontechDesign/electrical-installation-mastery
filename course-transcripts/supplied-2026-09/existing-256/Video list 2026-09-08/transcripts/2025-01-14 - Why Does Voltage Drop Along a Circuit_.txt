@@ -1,0 +1,133 @@
+# Why Does Voltage Drop Along a Circuit?
+# https://www.youtube.com/watch?v=CP6noiQp79I
+
+In this Q&A video we're going to answer the question how do you calculate volt drop for a circuit now just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of electrical design in association with BG electrical part of the Luceco group they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD and you'll receive a certificate to prove that you've completed the course this is also the first video in the second part of this series so if you want to learn electrical design from scratch go and check out part one the link is also below okay so as this is part two of the electrical design package we've made and it may have been a while since you looked at the previous one we'll just do a quick recap on the scenario and the numbers that we're working with we're carrying out the design of an electrical circuit feeding this 9 kW Fusion Comet electric boiler from the Electric Heating Company the boiler is rated at 9 kWs we're using a 50 amp type B MCB from The Fortress range by BG electrical to protect the 10 mm2 Twin and CPC cable if you're interested in how we've arrived at these values then please do go and check out part one of this ongoing series as it will help your understanding of the next steps in the design process so we know that the MCB will allow the current to pass through itself without tripping under normal operating circumstances and we know that the cable will be able to take that amount of current but there's still some checks to be made on the cable we've selected to make sure that the load will operate correctly under normal running conditions the first of these is the volt drop ask any electrician apprentice or someone vaguely connected to the electrical industry and they'll tell you that the singlephase voltage is 230 volts in the UK this is correct in that it's the nominal voltage in other words it's the value that we aim to have delivered to properties but in reality it can be higher than this or lower when it arrives at our installation from the DNO it also will then vary within the property depending on a number of factors whatever voltage we measure across the incoming terminals of our consumer unit we will always get less at different points in our installation because of the volt drop if current is flowing through a conductor it must have a difference in voltage between any two points in that conductor we tend to think of the line conductor being at 230 volts and the neutral at 0 volts and therefore when we connect a load between them current will flow through the load due to the difference in electrical pressure between those two conductors but we could take our line conductor and just consider a short length of it say a section a meter long if current is flowing through this meter long section then there must be a difference in voltage between the two points in it a metre apart this difference in voltage can be found very simply by rearranging ohms law this formula starts off in this format I = V / R or current equals voltage divided by resistance this is the preferred way to remember this formula as it explains what we usually do in the real world we connect a resistance or load to a voltage and that causes current to flow which in turn makes the load operate correctly however to understand volt drop properly we need to rearrange this formula to make V the subject the simplest way to do this is to use the ohms law triangle with V at the top and I and R down at the bottom here to make V the subject we're left with I and R at the bottom here and because they're next to each other we multiply them so that leaves us with V = I * R or voltage equals current times resistance now I'm going to use some exaggerated numbers here to help us understand this a bit better let's say we've got 10 amps running through this conductor and the cable has a resistance of 2 ohms plugging those numbers into our calculation gives us V = 10 amps * 2 ohms which gives us 20 volts so to push our 10 amps of current through this conductor there has to be a difference of 20 volts between this point and this point if we double the length of our conductor then we're going to lose 40 volts between the start and end point and actually that logic keeps going for every meter we add in length to this Supply conductor we're going to lose 20 volts from the supply voltage now this could mean that if we've got a long circuit here then the voltage at the end of the circuit simply can't push the current through the load and it won't operate as it should do if it was a light at the end it would glow dimly if it was a motor it would run slowly or possibly not at all if it's an electric boiler then it might not heat the water enough now we've exaggerated the resistance of the conductor here to illustrate the point and to deepen our understanding of vault drop in reality the resistance of our conductors feeding the circuit is very very low that's why we use conductive materials for our well conductors so the volt drop our circuits experience in the real world are generally much smaller than this so how do we figure out what the Vault drop will be and how do we know if it's acceptable or not well the good news is that all that messing around with Ohms law we just did has already been done for you by the IET in the regs and the on-site guide when we were selecting the cable size for our circuit feeding this 9 kW Fusion Comet electric boiler we looked at table F6 in the on-site guide to select the 10 mm squared conductor in the very right hand column of this box we find column 8 which is labeled voltage drop the values in this column are given in a value called millivolts per amp per meter so for each size of cable we get a value which represents how many millivolts it takes to push one amp down 1 metre of that size cable you can see that the smaller conductors have higher values of Millivolts per amp meter that get progressively smaller as the cross-sectional area of the conductors gets bigger this is because as cross-sectional area goes up in size the resistance of the conductor comes down and so it takes less voltage to push current through the conductor clever stuff but how does this figure relate to our design process of the circuit well looking at the cable we selected which is 10 mm squared we find a value in column 8 of 4.4 millivolts we said this was the amount of voltage it takes to push 1 amp through 1 metre of cable but our circuit is longer than 1 metre and it's drawing much more than one amp so we use the real well values of current and length of cable for our circuit the current in this case is the design current of the circuit which we calculated in video two of part one of this series that came out at 39.13 amps The length of the circuit hasn't been considered yet and it's really important for this stage of the process and the stage coming in the next video You can find the length of the circuit by measuring the real world route with a tape measure this is generally the preferred method when adding a circuit to an existing installation if it's a new property then you can measure the length off the building plan using Tools in CAD drawings for our boiler circuit the cable is 20 M long so we take our value from table F6 of 4.4 Millivolts and multiply it by the design current of 39.13 Amps and then multiply by the length of 20 metres this gives us the value 3443.44 but remember that this is in Mill volts to find the value in volts we just divide the answer by 1,000 giving us 3.44 volts plus change so if the voltage at the consumer unit was 230 volts the voltage at the boiler terminals would be 230 minus 3.44 giving us 226.56 Volts so the next question has to be so what is this value or will our customer be taking cold showers well there's two ways to figure out if its acceptable or not the first is to use guidance from the IET under heading 10.3.10 of the on-site guide we find information on verifying volt drop and it directs is that the requirements for voltage drop are deemed to be met where the voltage drop between the origin and the relevant piece of equipment does not exceed the value stated in appendix 4 of BS7671 it goes on appendix 4 paragraph 6.4 gives maximum values of voltage drop for both lighting and other uses and depending upon whether the installation is supplied directly from an LV distribution system or from a private LV Supply these values are mentioned elsewhere in the on-site guide but we're going to look at them in bs7671 as there's some information that helps us to gain a deeper understanding of this subject so looking at appendix 4 paragraph 6.4 of bs7671 we find this information the voltage drop between the origin of an installation and any load point should not be greater than the values in the table below expressed with respect to the value of the nominal voltage of the installation the table has two rows Row one is for low voltage installation supplied directly from a public low voltage distribution system which is to say installations that are connected to an external Supply from the National Grid row two is for low voltage installations supplied from private LV Supply so someone who's maybe working off- grid with generators or a PV installation we'll focus on Row one here for lighting circuits this table gives us a value of 3% volt drop from the nominal voltage and for all of the uses the value goes up to 5% the lower value for lighting is a bit of a throwback to older discharged lighting technology that was a bit more sensitive to voltage change and might not strike if the voltage was too low so this is pretty simple our circuit isn't for lighting and so we can lose up to 5% of the nominal voltage in the supply circuit to find 5% of 230 volts we simply divide 230 by 100 this gives us 1% of the value which is 2.3 Volts and then we multiply this by 5 which gives us 11.5 Volts I'll leave you to figure out what the 3% value for lighting is hint it's 6.9 Volts our volt drop was 3.44 volts this is well below the 11.5 volts we could get up to and so all seems well right well yes and no there's a little more to Volt drop than these simple blanket values given to us in the regs book and the onsite guide section 52 of the Regs covers the selection and erection of wiring systems and regulation subgroup 525 relates to voltage drop here we find this information in regulation 525.1 which reads in the absence of any other consideration under normal service conditions the voltage at the terminals of any fixed current using equipment shall be greater than the lower limit corresponding to the product standard relevant to the equipment so if there is a product standard for the kit being supplied then the volt drop for the circuit should comply with that standard regulation 525.201 adds where fixed current using equipment is not the subject of a product standard the voltage at the terminal shall be such as not to impair the safe functioning of that equipment so how do you determine that the volt drop doesn't stop the kit from working properly and safely well regulation 525.202 does give us this option the above requirements are deemed to be satisfied if the voltage dropped between the origin of the installation usually the supply Terminals and a socket Outlet or the terminals of fixed current using equipment does not exceed that stated in appendix 4 Section 6.4 so if we're within those values we just considered in appendix 4 then we should be okay but really the answer is to consult the manufacturer's information they'll contain Direction on the voltage range that their equipment will work within if you make sure your circuit complies with this then you should be fine so there we go that's how we calculate volt drop for a circuit but you may be wondering what Earth Fault Loop impedance is all about well to find that more check out this video right here or click the link in the description to watch it as part of our free training package to help with your CPD and you'll receive a certificate as well all that remains in this video is to say thank you very much for watching
+
+
+[00:00] In this Q&A video we're going to answer the question how do you calculate volt drop for a
+[00:04] circuit now just before we explain the answer to this question Please be aware that this
+[00:08] video is one of a series that we've made on the subject of electrical design in association with
+[00:13] BG electrical part of the Luceco group they can be viewed individually or you can click the link
+[00:18] in the description below to view them as part of a free online training package to help you with your
+[00:22] CPD and you'll receive a certificate to prove that you've completed the course this is also the first
+[00:27] video in the second part of this series so if you want to learn electrical design from scratch go
+[00:32] and check out part one the link is also below okay so as this is part two of the electrical
+[00:37] design package we've made and it may have been a while since you looked at the previous one we'll
+[00:41] just do a quick recap on the scenario and the numbers that we're working with we're carrying
+[00:45] out the design of an electrical circuit feeding this 9 kW Fusion Comet electric boiler from the
+[00:50] Electric Heating Company the boiler is rated at 9 kWs we're using a 50 amp type B MCB from The
+[00:56] Fortress range by BG electrical to protect the 10 mm2 Twin and CPC cable if you're interested in how
+[01:03] we've arrived at these values then please do go and check out part one of this ongoing series as
+[01:08] it will help your understanding of the next steps in the design process so we know that the MCB will
+[01:14] allow the current to pass through itself without tripping under normal operating circumstances and
+[01:19] we know that the cable will be able to take that amount of current but there's still some checks to
+[01:23] be made on the cable we've selected to make sure that the load will operate correctly under normal
+[01:28] running conditions the first of these is the volt drop ask any electrician apprentice or someone
+[01:34] vaguely connected to the electrical industry and they'll tell you that the singlephase voltage is
+[01:38] 230 volts in the UK this is correct in that it's the nominal voltage in other words it's the value
+[01:45] that we aim to have delivered to properties but in reality it can be higher than this or lower
+[01:50] when it arrives at our installation from the DNO it also will then vary within the property
+[01:55] depending on a number of factors whatever voltage we measure across the incoming terminals of our
+[01:59] consumer unit we will always get less at different points in our installation because of the volt
+[02:05] drop if current is flowing through a conductor it must have a difference in voltage between any two
+[02:10] points in that conductor we tend to think of the line conductor being at 230 volts and the neutral
+[02:16] at 0 volts and therefore when we connect a load between them current will flow through
+[02:20] the load due to the difference in electrical pressure between those two conductors but we
+[02:24] could take our line conductor and just consider a short length of it say a section a meter long
+[02:30] if current is flowing through this meter long section then there must be a difference in voltage
+[02:34] between the two points in it a metre apart this difference in voltage can be found very simply by
+[02:40] rearranging ohms law this formula starts off in this format I = V / R or current equals voltage
+[02:47] divided by resistance this is the preferred way to remember this formula as it explains
+[02:51] what we usually do in the real world we connect a resistance or load to a voltage and that causes
+[02:57] current to flow which in turn makes the load operate correctly however to understand volt
+[03:02] drop properly we need to rearrange this formula to make V the subject the simplest way to do this
+[03:08] is to use the ohms law triangle with V at the top and I and R down at the bottom here to make V the
+[03:14] subject we're left with I and R at the bottom here and because they're next to each other we multiply
+[03:19] them so that leaves us with V = I * R or voltage equals current times resistance now I'm going to
+[03:27] use some exaggerated numbers here to help us understand this a bit better let's say we've
+[03:31] got 10 amps running through this conductor and the cable has a resistance of 2 ohms plugging those
+[03:37] numbers into our calculation gives us V = 10 amps * 2 ohms which gives us 20 volts so to push our
+[03:45] 10 amps of current through this conductor there has to be a difference of 20 volts between this
+[03:50] point and this point if we double the length of our conductor then we're going to lose 40 volts
+[03:56] between the start and end point and actually that logic keeps going for every meter we add
+[04:00] in length to this Supply conductor we're going to lose 20 volts from the supply voltage now
+[04:06] this could mean that if we've got a long circuit here then the voltage at the end of the circuit
+[04:10] simply can't push the current through the load and it won't operate as it should do if it was
+[04:16] a light at the end it would glow dimly if it was a motor it would run slowly or possibly not
+[04:20] at all if it's an electric boiler then it might not heat the water enough now we've exaggerated
+[04:25] the resistance of the conductor here to illustrate the point and to deepen our understanding of vault
+[04:30] drop in reality the resistance of our conductors feeding the circuit is very very low that's why we
+[04:35] use conductive materials for our well conductors so the volt drop our circuits experience in the
+[04:41] real world are generally much smaller than this so how do we figure out what the Vault drop will be
+[04:47] and how do we know if it's acceptable or not well the good news is that all that messing around with
+[04:52] Ohms law we just did has already been done for you by the IET in the regs and the on-site guide
+[04:57] when we were selecting the cable size for our circuit feeding this 9 kW Fusion Comet electric
+[05:01] boiler we looked at table F6 in the on-site guide to select the 10 mm squared conductor
+[05:07] in the very right hand column of this box we find column 8 which is labeled voltage drop the
+[05:13] values in this column are given in a value called millivolts per amp per meter so for each size of
+[05:20] cable we get a value which represents how many millivolts it takes to push one amp down 1 metre
+[05:26] of that size cable you can see that the smaller conductors have higher values of Millivolts per
+[05:31] amp meter that get progressively smaller as the cross-sectional area of the conductors gets bigger
+[05:36] this is because as cross-sectional area goes up in size the resistance of the conductor comes
+[05:41] down and so it takes less voltage to push current through the conductor clever stuff but how does
+[05:47] this figure relate to our design process of the circuit well looking at the cable we selected
+[05:52] which is 10 mm squared we find a value in column 8 of 4.4 millivolts we said this was the amount of
+[05:59] voltage it takes to push 1 amp through 1 metre of cable but our circuit is longer than 1 metre and
+[06:04] it's drawing much more than one amp so we use the real well values of current and length of cable
+[06:09] for our circuit the current in this case is the design current of the circuit which we calculated
+[06:14] in video two of part one of this series that came out at 39.13 amps The length of the circuit hasn't
+[06:29] been considered yet and it's really important for this stage of the process and the stage coming in the next video You can find the length of the circuit by measuring the real world route with
+[06:30] a tape measure this is generally the preferred method when adding a circuit to an existing
+[06:33] installation if it's a new property then you can measure the length off the building plan
+[06:38] using Tools in CAD drawings for our boiler circuit the cable is 20 M long so we take our value from
+[06:44] table F6 of 4.4 Millivolts and multiply it by the design current of 39.13 Amps and then multiply by
+[06:59] the length of 20 metres this gives us the value 3443.44 but remember that this is in Mill volts to
+[07:01] find the value in volts we just divide the answer by 1,000 giving us 3.44 volts plus change so if
+[07:07] the voltage at the consumer unit was 230 volts the voltage at the boiler terminals would be 230 minus
+[07:14] 3.44 giving us 226.56 Volts so the next question has to be so what is this value or will our
+[07:22] customer be taking cold showers well there's two ways to figure out if its acceptable or not the
+[07:29] first is to use guidance from the IET under heading 10.3.10 of the on-site guide we find
+[07:34] information on verifying volt drop and it directs is that the requirements for voltage drop are
+[07:40] deemed to be met where the voltage drop between the origin and the relevant piece of equipment
+[07:44] does not exceed the value stated in appendix 4 of BS7671 it goes on appendix 4 paragraph
+[07:51] 6.4 gives maximum values of voltage drop for both lighting and other uses and depending
+[07:57] upon whether the installation is supplied directly from an LV distribution system or from a private
+[08:02] LV Supply these values are mentioned elsewhere in the on-site guide but we're going to look at
+[08:07] them in bs7671 as there's some information that helps us to gain a deeper understanding of this
+[08:11] subject so looking at appendix 4 paragraph 6.4 of bs7671 we find this information the voltage drop
+[08:20] between the origin of an installation and any load point should not be greater than the values in the
+[08:25] table below expressed with respect to the value of the nominal voltage of the installation the
+[08:30] table has two rows Row one is for low voltage installation supplied directly from a public
+[08:35] low voltage distribution system which is to say installations that are connected to an external
+[08:40] Supply from the National Grid row two is for low voltage installations supplied from private LV
+[08:46] Supply so someone who's maybe working off- grid with generators or a PV installation we'll focus
+[08:52] on Row one here for lighting circuits this table gives us a value of 3% volt drop from the nominal
+[08:57] voltage and for all of the uses the value goes up to 5% the lower value for lighting is a bit
+[09:04] of a throwback to older discharged lighting technology that was a bit more sensitive to
+[09:08] voltage change and might not strike if the voltage was too low so this is pretty simple our circuit
+[09:14] isn't for lighting and so we can lose up to 5% of the nominal voltage in the supply circuit to
+[09:19] find 5% of 230 volts we simply divide 230 by 100 this gives us 1% of the value which is 2.3 Volts
+[09:27] and then we multiply this by 5 which gives us 11.5 Volts I'll leave you to figure out
+[09:33] what the 3% value for lighting is hint it's 6.9 Volts our volt drop was 3.44 volts this is well
+[09:40] below the 11.5 volts we could get up to and so all seems well right well yes and no there's a little
+[09:47] more to Volt drop than these simple blanket values given to us in the regs book and the onsite guide
+[09:53] section 52 of the Regs covers the selection and erection of wiring systems and regulation subgroup
+[09:58] 525 relates to voltage drop here we find this information in regulation 525.1 which reads in the
+[10:05] absence of any other consideration under normal service conditions the voltage at the terminals
+[10:10] of any fixed current using equipment shall be greater than the lower limit corresponding to
+[10:15] the product standard relevant to the equipment so if there is a product standard for the kit being
+[10:21] supplied then the volt drop for the circuit should comply with that standard regulation 525.201 adds
+[10:27] where fixed current using equipment is not the subject of a product standard the voltage at the
+[10:32] terminal shall be such as not to impair the safe functioning of that equipment so how do
+[10:37] you determine that the volt drop doesn't stop the kit from working properly and safely well
+[10:42] regulation 525.202 does give us this option the above requirements are deemed to be satisfied
+[10:48] if the voltage dropped between the origin of the installation usually the supply Terminals and a
+[10:53] socket Outlet or the terminals of fixed current using equipment does not exceed that stated in
+[10:58] appendix 4 Section 6.4 so if we're within those values we just considered in appendix 4 then
+[11:04] we should be okay but really the answer is to consult the manufacturer's information they'll
+[11:09] contain Direction on the voltage range that their equipment will work within if you make sure your
+[11:13] circuit complies with this then you should be fine so there we go that's how we calculate volt
+[11:18] drop for a circuit but you may be wondering what Earth Fault Loop impedance is all about well to
+[11:23] find that more check out this video right here or click the link in the description to watch
+[11:27] it as part of our free training package to help with your CPD and you'll receive
+[11:31] a certificate as well all that remains in this video is to say thank you very much for watching
