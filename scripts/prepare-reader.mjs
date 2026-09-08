@@ -1,4 +1,5 @@
 import { cp, mkdir } from 'node:fs/promises';
+import './prepare-recap-transcripts.mjs';
 const base = new URL('../', import.meta.url);
 const target = new URL('public/pdfjs/', base);
 await mkdir(target, { recursive: true });

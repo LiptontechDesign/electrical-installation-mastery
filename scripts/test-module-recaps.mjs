@@ -6,13 +6,16 @@ import {createElement as h} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {act,create} from 'react-test-renderer';
 
-await build({entryPoints:['app/module-recaps.ts','app/module-recap.tsx','app/course-curriculum.ts','app/assessment-data.ts','app/lesson-guides.ts','app/course-editorial-revisions.ts','app/lesson-terminology.ts'],outdir:'work/recap-tests',bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic'});
+await build({entryPoints:['app/module-recaps.ts','app/module-recap.tsx','app/recap-math.tsx','app/foundation-vocabulary-revisions.ts','app/course-curriculum.ts','app/assessment-data.ts','app/lesson-guides.ts','app/course-editorial-revisions.ts','app/lesson-terminology.ts'],outdir:'work/recap-tests',bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic'});
 const {recapBooks}=await import('../work/recap-tests/module-recaps.js');
 const {default:ModuleRecap}=await import('../work/recap-tests/module-recap.js');
 const {default:course}=await import('../work/recap-tests/course-curriculum.js');
 const {buildAssessmentBank}=await import('../work/recap-tests/assessment-data.js');
 const {lessonGuides}=await import('../work/recap-tests/lesson-guides.js');
 const {courseEditorialRevisions}=await import('../work/recap-tests/course-editorial-revisions.js');
+const {foundationVocabularyRevisions}=await import('../work/recap-tests/foundation-vocabulary-revisions.js');
+const {recapEquations,RecapLine}=await import('../work/recap-tests/recap-math.js');
+for(const line of Object.keys(recapEquations))assert.ok(renderToStaticMarkup(h(RecapLine,{line})).includes('<math'),'Valid LaTeX and accessible MathML: '+line);
 const {terminologyForLesson}=await import('../work/recap-tests/lesson-terminology.js');
 const bank=buildAssessmentBank(course.modules,lessonGuides);
 assert.equal(recapBooks.length,16);
@@ -25,6 +28,9 @@ assert.deepEqual(sources.filter(s=>!s.transcript).map(s=>s.id),['p04-l03']);
 for(const source of sources.filter(s=>s.transcript)){
   const text=readFileSync('course-transcripts/'+source.file,'utf8').replaceAll('\r\n','\n');
   assert.equal(createHash('sha256').update(text).digest('hex'),source.sha256,source.id+': source fingerprint');
+  const id=new URL(source.url).searchParams.get('v');
+  const published=JSON.parse(readFileSync('public/recap-transcripts/'+id+'.json','utf8'));
+  assert.equal(published.text,text,'Complete supplied source preserved: '+source.id);
 }
 for(const book of recapBooks){
   const module=course.modules.find(m=>m.id===book.id);
@@ -40,7 +46,7 @@ for(const book of recapBooks){
     for(const lesson of chapter.lessons)assert.ok(html.includes(lesson.url.replaceAll('&','&amp;')),'Print includes every source URL');
   }
 }
-for(const [id,revision] of Object.entries(courseEditorialRevisions)){
+for(const [id,revision] of Object.entries({...courseEditorialRevisions,...foundationVocabularyRevisions})){
   const question=Object.values(bank.lessons).flatMap(l=>l.questions).find(q=>q.id===id);
   assert.ok(question,id+' exists');
   assert.equal(question.prompt,revision.prompt);
@@ -67,6 +73,21 @@ await act(async()=>{tree=create(h(ModuleRecap,{moduleId:recapBooks[0].id,onClose
 assert.equal(document.body.style.overflow,'hidden');
 assert.equal(button('Previous').props.disabled,true);
 assert.equal(status(),`Chapter 1 of ${recapBooks[0].chapters.length}`);
+const play=tree.root.findAllByType('button').find(n=>n.props.className==='recap-source-play');
+await act(async()=>play.props.onClick());
+assert.equal(tree.root.findByProps({className:'recap-screen'}).props.inert,true);
+const player=tree.root.findByType('iframe');
+assert.ok(player.props.src.startsWith('https://www.youtube-nocookie.com/embed/'));
+assert.ok(player.props.allowFullScreen);
+await click('Close source video');
+assert.equal(tree.root.findAllByType('iframe').length,0,'Closing unmounts the player and stops playback');
+assert.equal(status(),`Chapter 1 of ${recapBooks[0].chapters.length}`,'Returns to the same chapter');
+await click(`Detailed lesson notes · ${recapBooks[0].chapters[0].lessons.length} lessons`);
+assert.equal(tree.root.findAllByProps({'aria-label':'Detailed lesson notes'}).length,1);
+const chooser=tree.root.findByType('select');
+await act(async()=>chooser.props.onChange({target:{value:'1'}}));
+assert.equal(tree.root.findByType('select').props.value,1);
+await click('Chapter summary');
 await click('Next');
 assert.equal(status(),`Chapter 2 of ${recapBooks[0].chapters.length}`);
 await click('Previous');
@@ -88,4 +109,4 @@ await key('Escape');assert.equal(closed,1);
 assert.deepEqual(completed,['p01-l01'],'Recap does not mutate learner completion');
 await act(async()=>tree.unmount());
 assert.equal(document.body.style.overflow,'auto','Closing restores scroll');
-console.log('Recaps: 16 books, 68 chapters, 276 unique lesson sources, 275 transcript fingerprints; print content, navigation, bounds, keyboard, unchanged completion and 11 editorial revisions passed.');
+console.log('Recaps: 16 books, 68 chapters; LaTeX, embedded player open/close, print sources, navigation, unchanged completion and 20 editorial revisions passed.');

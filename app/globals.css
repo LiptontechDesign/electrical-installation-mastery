@@ -1173,24 +1173,24 @@ kbd {
 .module-recap-end button { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--copper); border-radius: 8px; color: #17212b; font-weight: 700; }
 .module-recap, .recap-loading { position: fixed; inset: 0; z-index: 200; background: #dce6ed; }
 .recap-loading { display: grid; place-items: center; }
-.recap-screen { height: 100%; height: 100dvh; display: flex; flex-direction: column; }
+.recap-screen { max-height: 100dvh; display: flex; flex-direction: column; max-width: 1440px; margin-inline: auto; background: #eef4f7; }
 .recap-toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 28px; background: var(--navy-2); color: white; }
 .recap-toolbar h1 { font-size: clamp(1rem,2vw,1.5rem); margin: 4px 0 0; line-height: 1.3; }
 .recap-kicker { display: block; font-size: .875rem; font-weight: 700; letter-spacing: .045em; color: var(--recap-accent); }
 .recap-toolbar .recap-kicker { color: var(--cyan); }
 .recap-tools { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .recap-tools button { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 12px; background: #20374b; color: white; border: 1px solid #476077; border-radius: 8px; font-size: .875rem; }
-.recap-reading-area { flex: 1; min-height: 0; overflow-y: auto; padding: 14px 28px 24px; scrollbar-gutter: stable; }
+.recap-reading-area { flex: 0 1 auto; min-height: 0; overflow-y: auto; padding: 24px 28px; scrollbar-gutter: stable; }
 .recap-safety { max-width: 1150px; margin: 0 auto 14px; color: #354b60; font-size: .875rem; line-height: 1.5; }
 .recap-spread { max-width: 1150px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 1fr; background: white; box-shadow: 0 12px 30px #152d4421; border: 1px solid var(--recap-border); border-radius: 4px 14px 14px 4px; overflow: hidden; }
 .recap-paper { padding: clamp(22px,3vw,40px); }
 .recap-principles { border-top: 5px solid var(--recap-accent); }
 .recap-principles h2 { margin: 12px 0 16px; font-size: clamp(1.45rem,2.4vw,2rem); line-height: 1.2; letter-spacing: -.02em; }
-.recap-lead { color: #354c5d; font-size: 1rem; line-height: 1.7; }
+.recap-lead { color: #354c5d; font-size: 1.125rem; line-height: 1.7; }
 .recap-notes { margin: 22px 0 0; display: grid; gap: 20px; }
-.recap-notes dt { font-size: 1rem; font-weight: 750; display: flex; gap: 10px; align-items: baseline; }
+.recap-notes dt { font-size: 1.125rem; font-weight: 750; display: flex; gap: 10px; align-items: baseline; }
 .recap-notes dt span { color: var(--recap-accent); font-size: .875rem; font-variant-numeric: tabular-nums; }
-.recap-notes dd { margin: 5px 0 0 30px; line-height: 1.65; font-size: 1rem; color: #354c5d; }
+.recap-notes dd { margin: 7px 0 0 30px; line-height: 1.65; font-size: 1.125rem; color: #354c5d; }
 .recap-connections { border-top: 5px solid var(--copper); border-left: 1px solid var(--recap-border); background: linear-gradient(90deg,#d5e5ea 0,#f0f7fa 18px); }
 .recap-visual { margin: 28px 0 20px; }
 .recap-visual ul, .recap-visual ol { padding: 0; margin: 0; list-style: none; display: grid; gap: 12px; }
@@ -1228,6 +1228,58 @@ kbd {
 .recap-contents button span { color: var(--recap-accent); font-weight: 700; }
 .recap-contents button[aria-current] { background: var(--recap-panel); }
 .recap-print { display: none; }
+.recap-view-switch { display: flex; gap: 8px; max-width: 1150px; margin: 0 auto 16px; flex-wrap: wrap; }
+.recap-view-switch button { padding: 12px 18px; font-size: 1rem; background: white; color: #21475a; border: 1px solid #becfd8; border-radius: 8px; }
+.recap-view-switch button[aria-pressed="true"] { background: #123649; color: white; border-color: #123649; }
+.recap-detailed-notes { max-width: 1150px; margin: auto; background: white; border: 1px solid var(--recap-border); border-radius: 12px; overflow: hidden; }
+.recap-detailed-notes > header { padding: 24px 30px; background: #e9f3f6; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.recap-detailed-notes h2 { margin: 6px 0; font-size: 1.5rem; }
+.recap-detailed-notes header p { line-height: 1.6; margin: 8px 0 0; }
+.recap-detailed-notes label { display: grid; align-content: center; gap: 8px; font-size: .875rem; font-weight: 650; min-width: 0; }
+.recap-detailed-notes select { width: 100%; min-width: 0; font: inherit; padding: 12px; border: 1px solid #acbec8; border-radius: 6px; background: white; color: #163c50; }
+.recap-lesson-copy { display: grid; grid-template-columns: 1.15fr 1fr; }
+.recap-lesson-copy > section { min-width: 0; padding: 30px; }
+.recap-lesson-copy > section + section { background: #f5f8fa; border-left: 1px solid #d7e3e9; }
+.recap-lesson-copy h3 { font-size: 1.3rem; line-height: 1.4; margin: 12px 0 18px; }
+.recap-lesson-copy h4 { margin: 24px 0 8px; font-size: 1.05rem; }
+.recap-lesson-copy p,.recap-lesson-copy li { font-size: 1.1rem; line-height: 1.75; color: #304d5d; }
+.recap-lesson-copy ol { padding-left: 22px; display: grid; gap: 14px; }
+.recap-note-answer { padding: 16px; border: 1px solid #c4d6dc; border-radius: 8px; background: white; }
+.recap-note-answer summary { cursor: pointer; font-size: 1rem; font-weight: 650; }
+.recap-lesson-copy .math-block { display: block; overflow-x: auto; max-width: 100%; }
+.recap-note-actions,.recap-note-pagination,.recap-transcript nav { padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid #d5e2e9; }
+.recap-note-actions button,.recap-note-pagination button,.recap-transcript button { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 6px; background: #e8f1f5; color: #123c50; font-size: .9375rem; }
+.recap-transcript { border-top: 1px solid #cbdce4; padding: 20px 30px; background: #f8fafb; }
+.recap-transcript > p { font-size: .875rem; line-height: 1.6; color: #596975; }
+.recap-transcript-text { max-width: 76ch; margin: 22px auto; font-size: 1.1rem; line-height: 1.9; white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width:760px) {
+ .recap-detailed-notes > header,.recap-lesson-copy { grid-template-columns: 1fr; }
+ .recap-lesson-copy > section,.recap-detailed-notes > header { padding: 22px; }
+ .recap-lesson-copy > section + section { border-left: 0; border-top: 1px solid #d7e3e9; }
+ .recap-note-pagination { justify-content: center; }
+ .recap-note-pagination span { order: -1; width: 100%; text-align: center; }
+}
+.recap-equation-label { display: block; font-size: .875rem; font-weight: 600; margin-bottom: 8px; color: #536873; }
+.recap-visual .math-block { display: block; max-width: 100%; overflow-x: auto; padding-block: 4px; }
+.recap-visual .katex-display { margin: .3em 0; }
+.recap-visual .katex { font-size: 1.16em; }
+.recap-paper { min-width: 0; }
+.recap-triangle { margin: 0 0 20px; }
+.recap-triangle svg { display: block; width: 100%; max-height: 240px; overflow: visible; }
+.recap-triangle text { font-family: Georgia, serif; font-size: 18px; fill: #243e52; }
+.recap-triangle figcaption { font-size: .875rem; line-height: 1.5; color: #526775; }
+.recap-source-play { display: flex; gap: 10px; align-items: center; text-align: left; color: #164a61; background: transparent; font-size: 1rem; line-height: 1.5; padding: 6px 0; }
+.recap-source-play svg { flex-shrink: 0; }
+.recap-source-play:hover { text-decoration: underline; text-underline-offset: 3px; }
+.recap-video-overlay { position: fixed; inset: 0; z-index: 220; display: grid; align-items: center; padding: 24px; background: #071523e8; overflow-y: auto; }
+.recap-video-window { width: min(1100px,100%); margin: auto; background: #fff; color: #223d50; border-radius: 14px; overflow: hidden; }
+.recap-video-window header { display: flex; gap: 20px; align-items: flex-start; justify-content: space-between; padding: 20px 24px; }
+.recap-video-window h2 { font-size: 1.2rem; line-height: 1.4; margin: 6px 0 0; }
+.recap-video-window button { flex-shrink: 0; padding: 10px; border-radius: 8px; background: #eaf2f5; color: #17394d; }
+.recap-video-window iframe { display: block; width: 100%; aspect-ratio: 16/9; border: 0; background: #071523; }
+.recap-video-window footer { padding: 14px 24px 20px; font-size: .875rem; line-height: 1.6; }
+.recap-video-window footer p { margin: 0 0 8px; }
+.recap-video-window footer a { display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; }
 @media (max-width: 760px) {
   .recap-toolbar { align-items: flex-start; flex-direction: column; gap: 12px; padding: 14px 16px; }
   .recap-tools { width: 100%; }
@@ -1246,6 +1298,12 @@ kbd {
   .module-recap-end > div { min-width: 180px; }
 }
 @media print {
+  .recap-print-lesson { break-before: page; }
+  .recap-print .recap-lesson-copy { display: block; }
+  .recap-print .recap-lesson-copy > section { padding: 14px; background: white; border: 0; }
+  .recap-print .recap-note-answer > * { display: block; }
+  .recap-print .recap-note-answer::details-content { content-visibility: visible; display: block; }
+  .recap-video-overlay { display: none !important; }
   body:has(.module-recap) { background: white; overflow: visible !important; }
   body:has(.module-recap) .app-shell { display: block; }
   .app-shell:has(.module-recap) > :not(.module-recap) { display: none !important; }

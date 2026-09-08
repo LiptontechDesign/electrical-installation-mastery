@@ -3,6 +3,7 @@ import type { QuestionDesign, Retrieval } from './learning-design';
 import { foundationRevisions } from './foundation-revisions';
 import { moduleTwoRevisions } from './module-two-revisions';
 import { courseEditorialRevisions } from './course-editorial-revisions';
+import { foundationVocabularyRevisions } from './foundation-vocabulary-revisions';
 
 export type Revision = {
   prompt: string; correct: string;
@@ -15,6 +16,7 @@ export const questionRevisions: Record<string, Revision> = {
   ...foundationRevisions,
   ...moduleTwoRevisions,
   ...courseEditorialRevisions,
+  ...foundationVocabularyRevisions,
   'p01-l01-q-concept-1': {
     prompt: 'A neutral atom gains one electron without changing its nucleus. What happens to its net charge?',
     correct: 'It becomes negative because it has more electrons than protons.',

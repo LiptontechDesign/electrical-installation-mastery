@@ -37,7 +37,7 @@ const report={
    standards:questionDuplicates.filter(g=>g.occurrences.every(q=>q.id.endsWith('-q-standard'))).length,
    other:questionDuplicates.filter(g=>!g.occurrences.every(q=>q.id.includes('-q-term-'))&&!g.occurrences.every(q=>q.id.endsWith('-q-standard'))).length,
  },
- editorialStatus:'Eleven core questions and their linked cards were individually revised. Remaining repeated glossary and standards stems are disclosed, not disguised by inserting lesson titles. A complete bespoke rewrite of inherited assessment content remains outstanding.',
+ editorialStatus:'Twenty questions and their linked cards were individually revised in the recap/editorial passes: eleven core items and nine foundation vocabulary items. Remaining repeated glossary and standards stems are disclosed, not disguised by inserting lesson titles. A complete bespoke rewrite of inherited assessment content remains outstanding.',
  moduleFlow:course.modules.map(m=>({id:m.id,title:m.title,lessons:m.lessons.length,chapters:recapBooks.find(b=>b.id===m.id).chapters.map(c=>({title:c.title,lessons:c.lessons.map(l=>l.id)}))})),
  interpretation:'Canonical lesson/video duplicates are errors. Similar titles are review candidates, not proof of duplication. Checkpoints and module revision deliberately reuse canonical assessment items and are excluded from duplicate-question counting.',
 };
