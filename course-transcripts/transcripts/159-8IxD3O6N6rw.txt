@@ -1,0 +1,55 @@
+# Will it WORK - Using a Clamp Meter for Fault Finding
+# https://www.youtube.com/watch?v=8IxD3O6N6rw
+
+the rig itself set it out as a dummy installation perhaps a domestic one with a couple of circuits a lighting radial circuit and a ring final circuit the idea being to show how you can trace an intermittent fault that's not tripping while you're there so we have our main incoming here circuits out to ring final your lighting circuits and the fault that we're going to find is going to be mimicked by a socket tester fantastic okay we start by turning it on within 10 seconds the claim I make is that you'll know what you're looking for four okay depending on what this reading is doing we'll show you exactly what what the fault is now at the moment you can see part from the last digit it is a fixed reading that would mean it's Electronics okay if I disconnect the socket tester you'll see that reading will drop away okay so that is what is causing it it's electronic if it was actually a fault the reading you would expect to see would be flashing around as that is there uh right okay so the number would just be just be jumping around all over the only thing I can tell you with probably won't be above 22 23 milliamps which is where the RCD would normally trip we're going to try and find that 1.2 value that is sitting on there at the moment we start by disconnecting all of the circuits turning them off okay you can see that reading drops away then turn them on individually with that one it's still dropping so it's not that circuit we put that one on and straight away there's that reading fantastic so we'd know from looking this is the B32 so we know this is the is now the ring final circuit if it was RCBO in the board you could just simply check at the top of each circuit of course the line neutral line neutral side by side and you can see there it's not the lighting circuit because that's dropping away if I then put it on the ring final circuit there's that 1.2 1.3 reading seeing there on on the uh four cables going away we now know that it's on the ring final circuit okay so the problem with rings is the current doesn't only go one way around the ring so when you start trying to trace the fault if you just went in as it was and going onto the cables behind the socket you can see that we got a reading there of almost 0.4 and we've got a reading on that side of sort of just over the 0.9 value so add the two together it comes up with the 1.3 that we know this is creating so the best bet is to actually split the ring at this stage I've just put in an isolator switch just so that I can do it without leaving live ends anywhere that has now created two radials so if we go in at this point you can see there that reading's dropping away so it's not on this leg sure so if this was an actual installation with things plugged in and everything we've already eliminated every other circuit by the ring final we've also now eliminated this half of the ring including anything that's plugged in okay so we now have just got this one leg Yeah now when you're using the clamp meter it will only indicate what's happening down line so if you then go in and split the ring again I'll put it in at that point there and you can see the reading's dropping away so it's not beyond that point right okay so we know we've got to get closer to the board closer to the board so we go in at this point and if it goes you can see there's that reading so it has to be between that point there and that point there fantastic and as we look hey presto there it is brilliant okay so obviously when you're actually doing the testing out in the field you'll be dropping sockets off to get to these cables I've got them exposed when we talk about splitting the ring um what you'll find you perhaps it's a kitchen ring make yourself up a breakout lead okay which is this device here when you come to the socket where you're actually going to split the ring it's worth considering unplugging whatever appliances are in there plugging this in plugging the appliance into the end you might just be lucky and when you go into the breakout find that you found the that way okay so but you eliminate anything that's plugged in at the socket where you're splitting it fantastic so what you've done there obviously taking the the Earth Earth out cuz if we clamped it around the whole thing would obviously find that all the currents in there would be balanced wouldn't they just drop away non the wiser yeah so that's that's a that's a nice idea that's very good little breakout you might just be lucky probably unlucky and find out it's the kettle that you've just unplugged so when you finish the job you don't get a cup of tea tragic tragic but that's intermittent thought finding just made simple for you
+
+
+[00:00] the rig itself set it out as a dummy installation perhaps a domestic one with a couple of circuits
+[00:05] a lighting radial circuit and a ring final circuit the idea being to show how you can trace
+[00:11] an intermittent fault that's not tripping while you're there so we have our main incoming here
+[00:15] circuits out to ring final your lighting circuits and the fault that we're going to find is going to
+[00:21] be mimicked by a socket tester fantastic okay we start by turning it on within 10 seconds the claim
+[00:27] I make is that you'll know what you're looking for four okay depending on what this reading is
+[00:32] doing we'll show you exactly what what the fault is now at the moment you can see part from the
+[00:38] last digit it is a fixed reading that would mean it's Electronics okay if I disconnect the socket
+[00:44] tester you'll see that reading will drop away okay so that is what is causing it it's electronic if
+[00:49] it was actually a fault the reading you would expect to see would be flashing around as that
+[00:54] is there uh right okay so the number would just be just be jumping around all over the only thing I
+[00:58] can tell you with probably won't be above 22 23 milliamps which is where the RCD would normally
+[01:04] trip we're going to try and find that 1.2 value that is sitting on there at the moment we start
+[01:09] by disconnecting all of the circuits turning them off okay you can see that reading drops away then
+[01:15] turn them on individually with that one it's still dropping so it's not that circuit we put
+[01:19] that one on and straight away there's that reading fantastic so we'd know from looking
+[01:24] this is the B32 so we know this is the is now the ring final circuit if it was RCBO in the board you
+[01:31] could just simply check at the top of each circuit of course the line neutral line neutral side by
+[01:36] side and you can see there it's not the lighting circuit because that's dropping away if I then
+[01:41] put it on the ring final circuit there's that 1.2 1.3 reading seeing there on on the uh four cables
+[01:49] going away we now know that it's on the ring final circuit okay so the problem with rings
+[01:53] is the current doesn't only go one way around the ring so when you start trying to trace the fault
+[01:59] if you just went in as it was and going onto the cables behind the socket you can see that we got
+[02:03] a reading there of almost 0.4 and we've got a reading on that side of sort of just over the
+[02:09] 0.9 value so add the two together it comes up with the 1.3 that we know this is creating so the best
+[02:16] bet is to actually split the ring at this stage I've just put in an isolator switch just so that
+[02:20] I can do it without leaving live ends anywhere that has now created two radials so if we go in
+[02:26] at this point you can see there that reading's dropping away so it's not on this leg sure so
+[02:32] if this was an actual installation with things plugged in and everything we've already eliminated
+[02:37] every other circuit by the ring final we've also now eliminated this half of the ring including
+[02:42] anything that's plugged in okay so we now have just got this one leg Yeah now when you're using
+[02:48] the clamp meter it will only indicate what's happening down line so if you then go in and
+[02:53] split the ring again I'll put it in at that point there and you can see the reading's dropping away
+[02:59] so it's not beyond that point right okay so we know we've got to get closer to the board closer
+[03:03] to the board so we go in at this point and if it goes you can see there's that reading so it has to
+[03:10] be between that point there and that point there fantastic and as we look hey presto there it is
+[03:16] brilliant okay so obviously when you're actually doing the testing out in the field you'll be
+[03:21] dropping sockets off to get to these cables I've got them exposed when we talk about splitting the
+[03:25] ring um what you'll find you perhaps it's a kitchen ring make yourself up a breakout lead
+[03:32] okay which is this device here when you come to the socket where you're actually going to
+[03:36] split the ring it's worth considering unplugging whatever appliances are in there plugging this
+[03:42] in plugging the appliance into the end you might just be lucky and when you go into the breakout
+[03:48] find that you found the that way okay so but you eliminate anything that's plugged in at the
+[03:53] socket where you're splitting it fantastic so what you've done there obviously taking the the Earth
+[03:57] Earth out cuz if we clamped it around the whole thing would obviously find that all the currents
+[04:01] in there would be balanced wouldn't they just drop away non the wiser yeah so that's that's a that's
+[04:06] a nice idea that's very good little breakout you might just be lucky probably unlucky and find out
+[04:11] it's the kettle that you've just unplugged so when you finish the job you don't get a cup of
+[04:14] tea tragic tragic but that's intermittent thought finding just made simple for you

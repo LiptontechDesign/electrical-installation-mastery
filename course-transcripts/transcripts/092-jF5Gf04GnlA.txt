@@ -1,0 +1,116 @@
+# How to Calculate Total Earth Fault Loop Impedance - Applying a Temperature Factor to R1 + R2
+# https://www.youtube.com/watch?v=jF5Gf04GnlA
+
+so in today's video we're going to look at calculating our total earth fault loop impedance okay effectively our Zs now we know the formula for that is Zs equals Ze plus R1 + R2 okay now usually what we would do is we'd measure R1 and R2 add it to our Ze which would give us our Zs now we're going to look at it slightly different now from a designer's point of view when we measure R1 and R2 let's say in an electrical workshop the ambient temperature probably is around 20 degrees okay so quite a low ambient temperature now when we're actually in an installation there's going to be a lot of factors that will change that temperature of the conductors in the cable okay so what we're able to do as designers is we can apply a factor okay from the On-Site Guide which we can calculate our R1 and R2 at its maximum operating temperature of the cable so for thermoplastic will be 70 degrees thermosetting will be 90 degrees and what that actually allows us to do is when we're looking at the tables in BS7671 with our maximum Zs values okay we use to finding the 80 value but when we apply this temperature factor okay to allow for the fact that it could be operating at a higher temperature we can actually use the hundred percent values that we have in BS7671 so we're going to go on and look at the calculation where we can find these factors and how we produce that calculation to allow us to prove that as a designer okay we're going to look at how we can calculate Zs remember Zs is the earth fault loop impedance for the entire system okay and part of the design process is normally we would maybe measure that wouldn't we but part of the design process is we need to confirm that our circuits and the cables we've selected okay still comply with the Zs values in BS7671 now i know normally we would take 80% of them values to make sure they comply however for the design purposes we use the values in BS7671 not the On-Site Guide okay so we need to be able to confirm that once the system is installed it's going to comply with the requirements of BS7671 so that ADS is in place etc so we're just going to look at how we can calculate Zs if you remember Zs so our earth fault loop impedance system equals Ze external our fault loop impedance plus R1 plus R2 it might be for design assignments etc you know the Ze because it might be that you've obtained that from the DNO so you might be as a designer you know that there's going to be a TN-C-S earth arrangement in there so they give you a Ze of 0.35 being the maximum they might be able to give you a different value to that normally give you the maximum that would mean if we have the Ze we need to know how to calculate our R1 and R2 of our circuits okay so we're going to look at how we can calculate that and that is by this equation here okay so R1 and R2 okay remember R1 being in relation to the line conductor R2 being in relation to the CPC the circuit protective conductor equals million per meter and we're going to look where we can get them from in the On-Site Guide multiplied by the length multiplied by the temperature factor okay and we'll look at different ambient temperatures that we need to apply certain factors to to get our R1 and R2 and then obviously because we have milliohms here we need to divide it by a thousand so what we're going to do is we're going to move forward and we're going to look at exactly how we can calculate our R1 and R2 so that we can incorporate into this equation here so we're going to use this equation to get this and then once we have this and we have this here so once we have the R1 R2 and the Ze then we'll be able to use that to calculate our Zs okay so look we're going to look into this equation here okay so R1 plus R2 line plus CPC the resistance of them equals milliohms per meter times length times multiplied by the temperature factor and then we divide that by a thousand and now we're going to look at how we can do this and we're going to use the On-Site Guide to this so you're going to need the On-Site Guide now which has been given some simple stages here the circuit is wired in 2.5 millimeter squared PVC PVC twin and CPC cable and it is 25 meters in length so we're going to calculate the R1 R2 based on this information we've been given for this circuit in particular now first of all we're going to concentrate on the milliohm per meter so this is the resistance the amount of resistance per meter in a copper conductor and we're going to use the On-Site Guide for this if we come to our On-Site Guide and we're in appendix i okay table i1 which is on a page 196 as you can see now as you can see this gives us the values of resistance per meter for copper and aluminium conductors at 20 degrees Celsius let's go back to our our scenario so we have 2.5 millimeter squared PVC twin and CPC cable so when i come to this table okay an appendix i I obviously have a twin CPC cable therefore in that cable i have line neutral and CPC okay so we both have the line conductor and the protective conductor so we know that 2.5 millimeter square twin CPC cable has a 1.5 CPC so what we're going to do is we're going to find the line conductor first we know it's 2.5 and they're here then we're going to match that to the corresponding protective conductor where we know we have a 1.5 millimeter squared CPC so as you can see here i've got 2.5 and 1.5 that gives me a milliohm per meter value of 19.51 enter that into here so we know we have 19.51 now the length has the length being given to us yes as is 25 meters okay 19.51 multiplied by 25 then we have to look at the temperature factor in and we're going to do this look at the factors in the On-Site Guide now if we go back to appendix i and we go over to 197 we'll see here that we've got ambient temperature multipliers okay for table i1 so for verification purposes the designer will need to give the values of the line and circuit conductor resistances at the ambient temperature expected during the test now what i want to point you toward here table i3 gives the multipliers to be applied to the values given in table i1 the purpose of calculating the resistance at maximum operating temperature of the line conductors and or circuit effective conductors in order to determine compliance with as applicable the earth fault loop impedance of table 41.2 table 41.3 table 41.4 BS7671 now you know we spoke about the 80% values before in BS7671 we said we would have to find the 80% values that's because then values in BS7671 are taken at 100% maximum operating temperature therefore when we're calculating our Zs or our R1 R2 for design purposes we need to do in accordance with them tables therefore we're gonna have to apply the factors from table i3 okay which is on page 198 so i have a twin and CPC cable is that going to be not incorporated in a cable or not punched or is it going to be incorporated in a cable or bunch okay so if you think about it the conductors they are incorporated in a cable aren't they okay now we know that twin and CPC cable is 70 degrees C okay or we're we're going to assume that it's thermoplastic which means we need to apply temperature factor of 1.20 because it is thermoplastic PVC and it is incorporated in a cable so our conductors are incorporated in the cable together so then we're going to add in our temperature factor 1.20 and then we're gonna calculate that equation that puts into our calculator so we have 19.51 multiply some of that's the milliohm per meter that's the value of resistance given to us from the On-Site Guide for a copper conductor we have 2.5 line conductor and a 1.5 protective conductor we're going to multiply that by the length 25 and then we're going to multiply that by a temperature factor remember because we in the design process and we're using the On-Site Guide in accordance with BS7671 the values that are stated in BS7671 a hundred percent values therefore we use table i3 okay multiply by 1.20 gives us 585.3 and then remember because this is milliohms we must then divide it by a thousand get back to our base value but gives us a value of 0.58 okay and if we want to round it up we could go 0.59 so in fact if we come back to here and we do this calculation 0.59 ohms oh if we go back to here now we have our R1 and R2 okay let's just say for argument's sake that my Ze is given to me as 0.76 okay it's TN-S earth arrangement 0.76 so what i can actually do is now do this calculation so i can do take my Ze which was given to me 0.76 plus my R1 and R2 okay which was 0.59 and that will actually give me the Zs for my circuit so what i can do okay is go to my calculator 0.76 add 0.59 give me a total Zs for that circuit of 1.35 ohms one we've calculated our Zs okay and it come out at 1.35 ohms let's say the circuit we had designed already okay we had chose it was a an A3 radial circuit so it was a 20 amp circuit breaker BSEN60898 we would then come to BS7671 okay and we'd come to table 41.3 and as you can see this this has our maximum fault loop impedance and it's on page 62. we obviously have other tables which are for different overcurrent protection devices so we've got fuses to BS88-2 etc okay so we've got a type B 20 amp 60898 circuit breaker we've come to this table here and as you can see here we have type B circuit breakers to BSEN60898 and the over current characteristics of our RCBO's is to be a BSEN61009 so we'd come here we'd pick the rating that we chosen for our over current protection device which we would have done in previous calculations and we said it was a 20 amp okay and then we looked at our maximum permittable Zs value okay to achieve disconnection connection times 2.19 and as you can see we've got our calculated Zs is 1.35 ohms and our maximum permits will be in 2.19 therefore is an acceptable value we we can say that in the event of a fault okay under ADS conditions our overcurrent protection device complies with the relevant circuit details of the maximum permittable fault loop imprdance
+
+
+[00:00] so in today's video we're going to look at calculating our total earth fault loop impedance
+[00:04] okay effectively our Zs now we know the formula for that is Zs equals Ze plus R1 + R2 okay now
+[00:11] usually what we would do is we'd measure R1 and R2 add it to our Ze which would give us our Zs now
+[00:17] we're going to look at it slightly different now from a designer's point of view when we measure
+[00:21] R1 and R2 let's say in an electrical workshop the ambient temperature probably is around 20
+[00:26] degrees okay so quite a low ambient temperature now when we're actually in an installation there's
+[00:31] going to be a lot of factors that will change that temperature of the conductors in the cable
+[00:36] okay so what we're able to do as designers is we can apply a factor okay from the On-Site Guide
+[00:44] which we can calculate our R1 and R2 at its maximum operating temperature of the cable so
+[00:50] for thermoplastic will be 70 degrees thermosetting will be 90 degrees and what that actually allows
+[00:56] us to do is when we're looking at the tables in BS7671 with our maximum Zs values okay we use
+[01:04] to finding the 80 value but when we apply this temperature factor okay to allow for the fact that
+[01:10] it could be operating at a higher temperature we can actually use the hundred percent values that
+[01:16] we have in BS7671 so we're going to go on and look at the calculation where we can find these factors
+[01:22] and how we produce that calculation to allow us to prove that as a designer okay we're going to
+[01:28] look at how we can calculate Zs remember Zs is the earth fault loop impedance for the entire system
+[01:35] okay and part of the design process is normally we would maybe measure that wouldn't we but part of
+[01:40] the design process is we need to confirm that our circuits and the cables we've selected okay still
+[01:46] comply with the Zs values in BS7671 now i know normally we would take 80% of them values to make
+[01:51] sure they comply however for the design purposes we use the values in BS7671 not the On-Site Guide
+[01:57] okay so we need to be able to confirm that once the system is installed it's going to comply
+[02:02] with the requirements of BS7671 so that ADS is in place etc so we're just going to look at how we
+[02:07] can calculate Zs if you remember Zs so our earth fault loop impedance system equals Ze external our
+[02:14] fault loop impedance plus R1 plus R2 it might be for design assignments etc you know the Ze because
+[02:22] it might be that you've obtained that from the DNO so you might be as a designer you know that
+[02:26] there's going to be a TN-C-S earth arrangement in there so they give you a Ze of 0.35
+[02:31] being the maximum they might be able to give you a different value to that normally give you the
+[02:35] maximum that would mean if we have the Ze we need to know how to calculate our R1 and R2
+[02:42] of our circuits okay so we're going to look at how we can calculate that and that is by this
+[02:46] equation here okay so R1 and R2 okay remember R1 being in relation to the line conductor
+[02:52] R2 being in relation to the CPC the circuit protective conductor equals million per meter
+[02:57] and we're going to look where we can get them from in the On-Site Guide multiplied by the length
+[03:02] multiplied by the temperature factor okay and we'll look at different ambient temperatures that
+[03:06] we need to apply certain factors to to get our R1 and R2 and then obviously because we have milliohms
+[03:12] here we need to divide it by a thousand so what we're going to do is we're going to move forward
+[03:16] and we're going to look at exactly how we can calculate our R1 and R2 so that we can incorporate
+[03:21] into this equation here so we're going to use this equation to get this and then once we have this
+[03:27] and we have this here so once we have the R1 R2 and the Ze then we'll be able to use that to
+[03:32] calculate our Zs okay so look we're going to look into this equation here okay so R1 plus R2 line
+[03:39] plus CPC the resistance of them equals milliohms per meter times length times multiplied by the
+[03:46] temperature factor and then we divide that by a thousand and now we're going to look at how we can
+[03:50] do this and we're going to use the On-Site Guide to this so you're going to need the On-Site Guide
+[03:53] now which has been given some simple stages here the circuit is wired in 2.5 millimeter squared
+[03:58] PVC PVC twin and CPC cable and it is 25 meters in length so we're going to calculate the R1
+[04:04] R2 based on this information we've been given for this circuit in particular now first of all we're
+[04:08] going to concentrate on the milliohm per meter so this is the resistance the amount of resistance
+[04:13] per meter in a copper conductor and we're going to use the On-Site Guide for this if we come to
+[04:18] our On-Site Guide and we're in appendix i okay table i1 which is on a page 196 as you can see
+[04:24] now as you can see this gives us the values of resistance per meter for copper and aluminium
+[04:30] conductors at 20 degrees Celsius let's go back to our our scenario so we have 2.5 millimeter squared
+[04:39] PVC twin and CPC cable so when i come to this table okay an appendix i I obviously have a twin
+[04:46] CPC cable therefore in that cable i have line neutral and CPC okay so we both have the line
+[04:52] conductor and the protective conductor so we know that 2.5 millimeter square twin CPC cable has a
+[04:58] 1.5 CPC so what we're going to do is we're going to find the line conductor first we know it's 2.5
+[05:05] and they're here then we're going to match that to the corresponding protective conductor
+[05:10] where we know we have a 1.5 millimeter squared CPC so as you can see here i've got 2.5
+[05:17] and 1.5 that gives me a milliohm per meter value of 19.51 enter that into here so we know we have 19.51
+[05:30] now the length has the length being given to us yes as is 25 meters okay
+[05:34] 19.51 multiplied by 25 then we have to look at the temperature factor in and we're going to do this
+[05:41] look at the factors in the On-Site Guide now if we go back to appendix i and we go over to 197
+[05:47] we'll see here that we've got ambient temperature multipliers okay for table i1 so for verification
+[05:54] purposes the designer will need to give the values of the line and circuit conductor resistances at
+[05:58] the ambient temperature expected during the test now what i want to point you toward here table i3
+[06:04] gives the multipliers to be applied to the values given in table i1 the purpose of calculating the
+[06:10] resistance at maximum operating temperature of the line conductors and or circuit effective
+[06:14] conductors in order to determine compliance with as applicable the earth fault loop impedance of
+[06:20] table 41.2 table 41.3 table 41.4 BS7671 now you know we spoke about the 80% values before in BS7671
+[06:29] we said we would have to find the 80% values that's because then values in BS7671 are taken
+[06:35] at 100% maximum operating temperature therefore when we're calculating our Zs or our R1 R2 for
+[06:42] design purposes we need to do in accordance with them tables therefore we're gonna have to
+[06:47] apply the factors from table i3 okay which is on page 198 so i have a twin and CPC cable
+[06:54] is that going to be not incorporated in a cable or not punched or is it going to be incorporated in
+[06:59] a cable or bunch okay so if you think about it the conductors they are incorporated in
+[07:04] a cable aren't they okay now we know that twin and CPC cable is 70 degrees C okay or we're
+[07:11] we're going to assume that it's thermoplastic which means we need to apply temperature factor
+[07:16] of 1.20 because it is thermoplastic PVC and it is incorporated in a cable so our conductors
+[07:23] are incorporated in the cable together so then we're going to add in our temperature factor
+[07:28] 1.20 and then we're gonna calculate that equation that puts into our calculator so we have 19.51
+[07:40] multiply some of that's the milliohm per meter that's the value of resistance
+[07:43] given to us from the On-Site Guide for a copper conductor we have 2.5
+[07:49] line conductor and a 1.5 protective conductor we're going to multiply that by the length 25
+[07:56] and then we're going to multiply that by a temperature factor remember because we
+[08:00] in the design process and we're using the On-Site Guide in accordance with BS7671 the values that
+[08:06] are stated in BS7671 a hundred percent values therefore we use table i3 okay multiply by 1.20
+[08:17] gives us 585.3 and then remember because this is milliohms we must then divide it
+[08:23] by a thousand get back to our base value but gives us a value of 0.58 okay and if we want
+[08:33] to round it up we could go 0.59 so in fact if we come back to here and we do this calculation
+[08:43] 0.59 ohms oh if we go back to here now we have our R1 and R2 okay let's just say
+[08:54] for argument's sake that my Ze is given to me as 0.76 okay it's TN-S earth arrangement 0.76
+[09:03] so what i can actually do is now do this calculation so i can do
+[09:06] take my Ze which was given to me 0.76 plus my R1 and R2 okay which was 0.59 and that will
+[09:16] actually give me the Zs for my circuit so what i can do okay is go to my calculator
+[09:25] 0.76
+[09:29] add 0.59
+[09:33] give me a total Zs for that circuit of 1.35 ohms
+[09:40] one
+[09:42] we've calculated our Zs okay and it come out at 1.35 ohms let's say the circuit we had
+[09:47] designed already okay we had chose it was a an A3 radial circuit so it was a 20 amp
+[09:54] circuit breaker BSEN60898 we would then come to BS7671 okay and we'd come to table 41.3 and as
+[10:03] you can see this this has our maximum fault loop impedance and it's on page 62. we obviously have
+[10:09] other tables which are for different overcurrent protection devices so we've got fuses to BS88-2
+[10:16] etc okay so we've got a type B 20 amp 60898 circuit breaker we've come to this table here
+[10:25] and as you can see here we have type B circuit breakers to BSEN60898 and the over current
+[10:30] characteristics of our RCBO's is to be a BSEN61009 so we'd come here we'd pick the rating that we
+[10:37] chosen for our over current protection device which we would have done in previous calculations and we
+[10:43] said it was a 20 amp okay and then we looked at our maximum permittable Zs value okay to achieve
+[10:48] disconnection connection times 2.19 and as you can see we've got our calculated Zs is 1.35 ohms
+[10:56] and our maximum permits will be in 2.19 therefore is an acceptable value we
+[11:03] we can say that in the event of a fault okay under ADS conditions our overcurrent protection device
+[11:09] complies with the relevant circuit details of the maximum permittable fault loop imprdance

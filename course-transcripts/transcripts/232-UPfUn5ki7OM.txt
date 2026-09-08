@@ -1,0 +1,226 @@
+# Inside the Victron MultiPlus & a Detailed Explanation of How It Works
+# https://www.youtube.com/watch?v=UPfUn5ki7OM
+
+In this video, we meet up with Johannes from Victron Energy at a local distributor 'Midland Chandlers' and take a look inside a MultiPlus inverter and find out how it works. Well, a lot of people ask how a MultiPlus is working and basically also how you make from DC power you make it AC voltage, how we do that. Well at Victron Energy we do that at a specific way: we have a platform of typology, how we make an AC sine wave converter. And we use that typology throughout all the range that we have: so the inverters, the small ones, to the larger ones but also the charger inverters called 'Multi', but also the big 'Quattros' are actually quite the same, they all have the same platform in how they work on DC to AC conversion. What we do we make the inverter a voltage source and a voltage source makes the current flow according to the voltage: so we make a voltage, let's say 230 volts, and if you connect a load to it then automatically the current will flow, so that's how we do that. So we create a voltage and then secondary on that is the current." And it does that with a full FET power bridge: this is that full FET power bridge and a FET all these black components what you see over there, is actually a switch: a switch is actually the same as what you have as a light switch: if you control it, you can switch the light on, and if you control it the other way around, the light goes off again. By changing the switching length of our FET's, we can change the voltage what's on the output and also reverse the polarities, we can also go, do the other way around. So we can make the positive sine wave by length of switching, and also the negative sine wave by the length of the switching. Well that switching is done on a 20 kilohertz signal, that means 20 thousand times per second, we switch from one particular point to the other point, so the sine wave is very accurate on average, the sine wave from an inverter is as accurate or even more accurate, than what's coming out of your socket at home, because we have the source right there and we don't have any noise from other appliances or from neighbourss. So, the inverter makes a perfect sine wave, well the perfect sine wave is coming from the battery, and the battery is, well normally let's say 12 volts, that makes the sine wave less than 12 volts, because you can never go higher than that. So the sine wave you are creating on the output of that switching of these FET's is about 8 to 10 volts. So then you have a 10 volts AC sine wave. Well, in order to be able to use that, you use a transformer, and these transformers boost up the voltage from that low voltage, from the 8 to 10 volts, up to 230 volts. If you would like to have a 120 volt inverter, we have the same power pack, but then we use a different transformer, because then we go to a different voltage. So, the low voltage switching and the low voltage transformer creates for us a 12 volt to 230 volt inverter. That's the same in the complete range. All our inverters work with a full FET bridge and a full FET bridge is looking like this: there are a number of FET's in the FET bridge and a FET is actually the same as a light switch. If you control the FET you can make it start conducting, or you can make it stop conducting. All these FET's are being connected to the controller, to the control board. The control board is making with a PVM signal, so with a smaller or a longer signal when the FET's should be opened or when the FET's should be closed. On this side you have the battery which has a plus and a minus, and the plus is connected to the FET bridge on this side and the minus is connected on the other side. This is the DC input side of the FET bridge and also you have the AC output side which is looking like this. The FET's are being controlled in pairs: that means this FET belongs to that FET, so in the first occasion when you have a PVM signal on this FET, so a very small opening signal, then you'll have the plus going through here, this side to the other side and it will travel back to the battery. The next moment, the signal is a little bit longer, that means the average voltage on the FET base will go up from here to there to there, depending on the length of the PVM signal. So at the end, the PVM signal is so far, so wide that the FET's are completely open so you're at the max of your sine wave and then of course the signal's getting smaller again, that means the average voltage will go down to zero. If you dare, this pair of FET's is being stopped to be controlled, and then the other two are being controlled, that means exactly the same happens but then with reversed polarity, because if this one and that one is controlled, the plus will not travel to this FET, but will travel to the other one so the voltage goes through here and then back to the battery. That means you have the same as in the positive sine wave but then you have the negative sine wave and then something like this happens. So, you're creating from a DC voltage from your battery, an AC voltage on the output from the FET bridge. Well, if this is a 12 volt battery, 12 volt DC, then on the other side you have about 8 to 10 volts AC. This is the principle of making AC from DC. Of course, this voltage is not useable for household appliances, so what we do is we connect on this side a transformer, and that transformer has a ratio between incoming windings and outgoing windings and with that we can boost up the voltage from 12 volts to let's say 230 volts. If we would need an inverter to make for 110 volts, we simply change the windings in the transformer, so with another transformer we could also make 120 volts. If you have an inverter like this, you can have the energy from your battery through your electronics, through your transformer to the output, but of course, this can also work the other way around, because you also want to charge the batteries with the same electronics that you have as the inverter. Well, in order to do that, we have an input and that input is connected on this side and you can now connect your grid power to that, let's say this is 230 volts AC. If you connect that directly onto the output of the inverter, well most likely you would have fireworks because these two aren't matched, that means that the sine wave which is coming in on this side is not exactly the same as the sine wave that the inverter is making. So what's happening then is that the controller, which is reading the voltage of the incoming power, is matching the inverter power to the incoming power. And if these two are matching a hundred percent, so both in frequency but also in voltage, then these two are being joined. The joining is done by a relay, that relay is mounted over here. So the converter is listening to what's coming in from the grid and then synchronises its own inverter, it controls the frequency but also the voltage to what's going in and if these two are exactly the same then you're able to connect these two together, you can join the input from your grid to the output of the inverter. So if you have a generator, which happens to be cold and it is not very stable, then it can take a long while to be able to synchronise and to lock on that incoming power. As soon as there is a lock between these two, then the relay will close. So what you see here is the AC input and output and and the DC input and output and also the control terminals, we look at the other side, you can see the power supply from DC and the also power supply from AC, that means that the unit will start up when you have AC but you don't have DC, but it will also start up when you have DC but you don't have AC. So on both occasions it will work. So also without the battery the unit will start up for itself. Of course, it will measure the power you get from the AC input, and can also control the power assist or the charging according to what it's measuring here. On this side, there's the large relay and that's the relay which connects the input and output together when the inverter is synchronised with each other. So this one is giving you the big click when the unit is starting to charge. The inverter is controlled in such a way that the switching of the FET's is done so that the frequency but also the height of the voltage is exactly the same as what comes in. If these two are exactly the same, then you are able to join the input and the output, that means the inverter is fully in parallel with the incoming power. If you have done that, you will hear the click: sometimes it takes ten seconds, sometimes even twenty seconds before that click is there, because that's the time the inverter needs to be able to synchronise to the grid. So the further the grid is away from the power the inverter is making, the longer it takes before you hear that click. If you would have a generator with a not-so-stable voltage, or a voltage which is much higher, or a frequency that is further away from the inverter frequency, then it could also take longer, maximum at about two minutes you should hear that click. Once that click is there, so you have joined the input power to the output power of the inverter, then the inverter starts acting in a new role, what's happening then is that the voltage of the inverter is controlled to a lower level and if you control it to a lower level that means you have two voltage sources running in parallel and the energy will flow to the power source which has the lowest voltage, well in this case then, the inverter because the inverter tries to get its voltage lower, of course it cannot do that because it cannot lower the grid voltage, but it gets a lower potential, so the energy will flow from the grid towards the inverter into your batteries, so that's how you charge the batteries. So the current of charging is done by regulating the voltage of the inverter, so the lower the voltage of the inverter is, the more charge current you will have towards your battery, so we control that also by inverter power. Then the next step of course, you can also stop charging if you have the inverter running at exactly the same voltage as the incoming power, the charge will just stop. The next step is, of course, if you don't have enough power from your grid and you want to do extra, so you want to help the grid adding energy from your battery on top of the power what you're getting your grid, then your inverter can also boost its own power voltage and if that's the case then, of course, the energy from the battery is being added to the energy from your incoming power, well that's called "Power Assist", so you can help energy from your battery to overcome start-up power from your air-conditioning or from your refrigerator or whatever. That's, of course, a temporary thing because that uses battery power. When you have done power-assist, then the next logical step would be to charge your battery again, because then you refill what you used to start up that power. So you can help with power-assist, you can help overcome the shortness of your generator, so if your generator is not powerful enough to start up things, the power-assist can help, but also in marinas, when you have limited power from your marina, what you want to do, make a cup of coffee, or you have your microwave on which is more than what your marina can supply to you, then you can use power assist as well. The Multis, the inverters and also the Quattros use the same typology, that means the way we do that is exactly the same, and also the 12 volt, 24 volt and also the 48 volt models have the same way of doing it. The difference between these units is the models of FET's what we use, one FET is made for a 12 volt system, the other is made for a 24 volt system and so on. A FET is a small component, and that small component can do about 50 to 100 amps, that means if you want to have a powerful inverter, you have these FET's in parallel: you cannot have too much in parallel because you also have to drive them at the same time, so the switching of the 20 kilowatt switching should be equal on all FET's. So in our units, we have 6 FET's in parallel, that's about the same for all our inverters and all our charger-inverters. If you want to have a more powerful inverter than that, we can parallel these units also, and simply what we do then is we tell the "neighbour" unit to do exactly the same as the master unit, so then we have the double inverter power, but also the double charge power and also, of course the double transfer power, so everything becomes double. Next step to that is also that we can shift frequency between these, and that means you can make a 3-phase system, so if you have 120 degrees phase shift between the units, you can have a stand-alone unit working together with another stand-alone unit, and another stand-alone unit, the 3 of them create a 3-phase system. So the unit itself does exactly the same as a stand-alone unit, just listens to what the neighbour is doing. Every inverter has an idle power, and idle power means that it uses energy from the battery while it's on, so if it's making 230 volts, even though you don't use the 230 volts, it does take energy from the battery. The power is caused by the switching of the FET's, just like switching a light switch, it doesn't take a lot of energy to switch a light on, but if you have to do it 20 thousand times a second, then all of a sudden, it does take energy to do that. So, the more you switch, the more energy also is lost in the FET's itself, but also in the transformer because the transformer changes in polarity all the time, it changes from plus to minus, so changing polarity in a transformer takes energy, switching the FET's 20 thousand times a second, and then also a row of FET's takes also energy. So, if you want to prevent using a lot of energy while doing nothing with your energy system, you should find the right inverter for your load. The bigger your inverter is, the more losses you will have, because the transformer is larger and also the FET's that you're switching are more powerful. So you use more energy to keep a bigger inverter running than a smaller inverter running. If you make a selection on which inverter you use, you start at which load you have, you have a look at those loads you have on board, and look at what kind of loads they are on average, but also which kind of loads they are at the start-up/ peak power behaviour, and what they need to be powered up. Well you take an average of that, because normally speaking we don't have everything on at the same time, about 70 percent of what you have installed should be able to be covered by your inverter (that's about the size of your inverter). But also the capacity of your battery determines how big your converter can be, because an inverter converts energy from your battery to AC, but it cannot create energy, so you need to fill with energy from your battery. If your battery is not able to fill the inverter with power, well then there's no point in having a larger inverter because it's all about balance, the inverter and your battery and your loads should be in balance with each other. A bigger inverter is nice because if you have a inverter on board the tendency to use more than what you would normally do is quite logical, a lot of people do that, but don't overdo it because you will drain your batteries un-needed. Also, if you're not on board, switch off your inverter charger to charger only, because then you're able to charge your batteries but you will not unnecessarily make 230 volts and drain your battery while you're not connected to the grid. In the inverter, in all our Multis and our Quattros, we have a power-save mode called AES ("Automatic Energy Saving"), Automatic Energy Saving has two modes: one mode is surge mode and surge mode means every second you get 1 sine wave that means that a lot of that 20 kilohertz switching of these FET's is prevented, because instead of making 50 hertz, you only make 1, that means you do 49 switches less. So you do less polling of your transformer and also less switching of your FET's. That means you use less power from your battery while you're in idle mode. The negative side of that of course is you only have 1 hertz per second, that means that appliances that do use a frequency to be there like a clock for your microwave and so on, they will not run anymore because they're missing that 49 hertz, so that clock will stop, so it's good for your night rest, it's not so good for your microwave. The other one is modified sine wave and modified sine wave, although the word does make it look a little bit different, it's not that it's a modified sine wave, it's a less-accurate sine wave, we do less switching, and that means we have a less accurate way of making our sine wave, so instead of doing the 20 kilohertz switching, we switch less and switching less means we use less power. Well, for a 3 kilowatt unit like this, the idle power when it's completely on is about 15 watts, when you do modified sine wave it's about 12 watts, and if you do the surge mode, it's about 8 watts and at 8 watts it's mainly the power supply, to get the processors inside running, and do a little bit of the switching of the FET's. So you can step these 3 together. It detects Well, for a 3 kilowatt unit like this, the idle power when it's completely on is about 15 watts, when you do modified sine wave it's about 12 watts, and if you do the search mode, it's about 8 watts and at 8 watts it's mainly the power supply, to get the processors inside running, to get the processors inside running, and do a little bit of the switching of the FET's. So you can step these 3 together. It detects when there is power connected to it, when there is power connected to it, and of course when you have the surge mode it looks at it every second, so if there is power that second, the unit will switch completely on, and there you go again, in modified sine wave there's also a level that it goes from the modified sine wave to the full sine wave at a specific level. What we can do with our inverters is that you can remotely control them so you can do that with a panel with a multi-control panel, or you can do that a little more advanced with a colour control panel so you also have the display so you can see what's going on in your system, but you can also use any potential for your remote switch if you want to that, you can include that in your XXXX, you can even do that on Bluetooth and nowadays we have also the ability to connect the unit to your phone and that means with your phone you can also change that. On top of that, what you can also choose for, is to switch off the fan, sometimes at night you want the unit to run because you need 230 volts, but you don't want to hear the fan, you want it to be as quiet as possible, so you also have the ability to switch off the fan at night or on a specific load if you want to do that. So you can connect a timer to it to have your fan controlled or you can do that on power what you use.
+
+
+[00:01] In this video, we meet up with Johannes from
+[00:03] Victron Energy at a local distributor 'Midland Chandlers' and take a look inside a MultiPlus
+[00:10] inverter and find out how it works.
+[00:13] Well, a lot of people ask how a MultiPlus is working and basically also how you make
+[00:17] from DC power you make it AC voltage, how we do that. Well at Victron Energy we do that
+[00:22] at a specific way: we have a platform of typology, how we make an AC sine wave converter. And
+[00:30] we use that typology throughout all the range that we have: so the inverters, the small
+[00:35] ones, to the larger ones but also the charger inverters called 'Multi', but also the big
+[00:41] 'Quattros' are actually quite the same, they all have the same platform in how they work
+[00:46] on DC to AC conversion.
+[00:53] What we do we make the inverter a voltage source and a voltage source makes the current
+[01:00] flow according to the voltage: so we make a voltage, let's say 230 volts, and if you
+[01:05] connect a load to it then automatically the current will flow, so that's how we do that.
+[01:10] So we create a voltage and then secondary on that is the current."
+[01:15] And it does that with a full FET power bridge:
+[01:20] this is that full FET power bridge and a FET all these black components what you see
+[01:25] over there, is actually a switch: a switch is actually the same as what you have as a
+[01:29] light switch: if you control it, you can switch the light on, and if you control it the other
+[01:34] way around, the light goes off again. By changing the switching length of our FET's, we can
+[01:39] change the voltage what's on the output and also reverse the polarities, we can also go,
+[01:45] do the other way around. So we can make the positive sine wave by length of switching,
+[01:49] and also the negative sine wave by the length of the switching. Well that switching is done
+[01:54] on a 20 kilohertz signal, that means 20 thousand times per second, we switch from one particular
+[02:03] point to the other point, so the sine wave is very accurate on average, the sine wave
+[02:08] from an inverter is as accurate or even more accurate, than what's coming out of your socket
+[02:12] at home, because we have the source right there and we don't have any noise from other
+[02:18] appliances or from neighbourss. So, the inverter makes a perfect sine wave, well the perfect
+[02:24] sine wave is coming from the battery, and the battery is, well normally let's say 12
+[02:28] volts, that makes the sine wave less than 12 volts, because you can never go higher
+[02:32] than that. So the sine wave you are creating on the output of that switching of these FET's
+[02:37] is about 8 to 10 volts. So then you have a 10 volts AC sine wave. Well, in order to be
+[02:44] able to use that, you use a transformer, and these transformers boost up the voltage from
+[02:50] that low voltage, from the 8 to 10 volts, up to 230 volts. If you would like to have
+[02:55] a 120 volt inverter, we have the same power pack, but then we use a different transformer,
+[03:01] because then we go to a different voltage. So, the low voltage switching and the low
+[03:08] voltage transformer creates for us a 12 volt to 230 volt inverter. That's the same in the
+[03:15] complete range.
+[03:21] All our inverters work with a full FET bridge
+[03:24] and a full FET bridge is looking like this: there are a number of FET's in the FET bridge
+[03:30] and a FET is actually the same as a light switch. If you control the FET you can make
+[03:34] it start conducting, or you can make it stop conducting. All these FET's are being connected
+[03:40] to the controller, to the control board. The control board is making with a PVM signal,
+[03:47] so with a smaller or a longer signal when the FET's should be opened or when the FET's
+[03:52] should be closed. On this side you have the battery which has a plus and a minus, and
+[03:58] the plus is connected to the FET bridge on this side and the minus is connected on the other
+[04:03] side. This is the DC input side of the FET bridge and also you have the AC output side
+[04:09] which is looking like this. The FET's are being controlled in pairs: that means this
+[04:16] FET belongs to that FET, so in the first occasion when you have a PVM signal on this FET, so
+[04:22] a very small opening signal, then you'll have the plus going through here, this side to the
+[04:28] other side and it will travel back to the battery. The next moment, the signal is a
+[04:34] little bit longer, that means the average voltage on the FET base will go up from here
+[04:39] to there to there, depending on the length of the PVM signal. So at the end, the PVM
+[04:46] signal is so far, so wide that the FET's are completely open so you're at the max of your
+[04:51] sine wave and then of course the signal's getting smaller again, that means the average
+[04:57] voltage will go down to zero. If you dare, this pair of FET's is being stopped to be
+[05:03] controlled, and then the other two are being controlled, that means exactly the same happens
+[05:08] but then with reversed polarity, because if this one and that one is controlled, the plus
+[05:13] will not travel to this FET, but will travel to the other one so the voltage goes through
+[05:18] here and then back to the battery. That means you have the same as in the positive sine
+[05:24] wave but then you have the negative sine wave and then something like this happens. So,
+[05:29] you're creating from a DC voltage from your battery, an AC voltage on the output from
+[05:34] the FET bridge. Well, if this is a 12 volt battery, 12 volt DC, then on the other side
+[05:40] you have about 8 to 10 volts AC. This is the principle of making AC from DC. Of course,
+[05:49] this voltage is not useable for household appliances, so what we do is we connect on this
+[05:55] side a transformer, and that transformer has a ratio between incoming windings and outgoing
+[06:00] windings and with that we can boost up the voltage from 12 volts to let's say 230 volts. If
+[06:09] we would need an inverter to make for 110 volts, we simply change the windings in the
+[06:14] transformer, so with another transformer we could also make 120 volts. If you have an
+[06:19] inverter like this, you can have the energy from your battery through your electronics,
+[06:24] through your transformer to the output, but of course, this can also work the other way
+[06:28] around, because you also want to charge the batteries with the same electronics that you
+[06:32] have as the inverter. Well, in order to do that, we have an input and that input is connected
+[06:37] on this side and you can now connect your grid power to that, let's say this is 230
+[06:42] volts AC. If you connect that directly onto the output of the inverter, well most likely
+[06:47] you would have fireworks because these two aren't matched, that means that the sine wave
+[06:51] which is coming in on this side is not exactly the same as the sine wave that the inverter
+[06:56] is making. So what's happening then is that the controller, which is reading the voltage
+[07:00] of the incoming power, is matching the inverter power to the incoming power. And if these
+[07:05] two are matching a hundred percent, so both in frequency but also in voltage, then these
+[07:10] two are being joined. The joining is done by a relay, that relay is mounted over here.
+[07:19] So the converter is listening to what's coming in from the grid and then synchronises its
+[07:24] own inverter, it controls the frequency but also the voltage to what's going in and if
+[07:30] these two are exactly the same then you're able to connect these two together, you can
+[07:35] join the input from your grid to the output of the inverter. So if you have a generator,
+[07:40] which happens to be cold and it is not very stable, then it can take a long while to be
+[07:45] able to synchronise and to lock on that incoming power. As soon as there is a lock between
+[07:50] these two, then the relay will close. So what you see here is the AC input and output and
+[07:56] and the DC input and output and also the control terminals, we look at the other side, you
+[08:01] can see the power supply from DC and the also power supply from AC, that means that the
+[08:05] unit will start up when you have AC but you don't have DC, but it will also start up when
+[08:10] you have DC but you don't have AC. So on both occasions it will work. So also without the
+[08:15] battery the unit will start up for itself. Of course, it will measure the power you get
+[08:20] from the AC input, and can also control the power assist or the charging according to
+[08:26] what it's measuring here. On this side, there's the large relay and that's the relay which
+[08:31] connects the input and output together when the inverter is synchronised with each other.
+[08:36] So this one is giving you the big click when the unit is starting to charge. The inverter
+[08:42] is controlled in such a way that the switching of the FET's is done so that the frequency
+[08:48] but also the height of the voltage is exactly the same as what comes in. If these two are
+[08:53] exactly the same, then you are able to join the input and the output, that means the inverter is
+[08:59] fully in parallel with the incoming power. If you have done that, you will hear the click:
+[09:04] sometimes it takes ten seconds, sometimes even twenty seconds before that click is there,
+[09:09] because that's the time the inverter needs to be able to synchronise to the grid. So the further
+[09:14] the grid is away from the power the inverter is making, the longer it takes before you
+[09:18] hear that click. If you would have a generator with a not-so-stable voltage, or a voltage
+[09:23] which is much higher, or a frequency that is further away from the inverter frequency,
+[09:28] then it could also take longer, maximum at about two minutes you should hear that
+[09:33] click. Once that click is there, so you have joined the input power to the output power
+[09:38] of the inverter, then the inverter starts acting in a new role, what's happening then
+[09:42] is that the voltage of the inverter is controlled to a lower level and if you control it to
+[09:47] a lower level that means you have two voltage sources running in parallel and the energy
+[09:52] will flow to the power source which has the lowest voltage, well in this case then, the
+[09:56] inverter because the inverter tries to get its voltage lower, of course it cannot do
+[10:01] that because it cannot lower the grid voltage, but it gets a lower potential, so the energy
+[10:05] will flow from the grid towards the inverter into your batteries, so that's how you charge
+[10:11] the batteries. So the current of charging is done by regulating the voltage of the inverter,
+[10:17] so the lower the voltage of the inverter is, the more charge current you will have towards
+[10:22] your battery, so we control that also by inverter power. Then the next step of course,
+[10:28] you can also stop charging if you have the inverter running at exactly the same voltage
+[10:32] as the incoming power, the charge will just stop. The next step is, of course, if you
+[10:38] don't have enough power from your grid and you want to do extra, so you want to help
+[10:42] the grid adding energy from your battery on top of the power what you're getting your
+[10:46] grid, then your inverter can also boost its own power voltage and if that's the case then,
+[10:53] of course, the energy from the battery is being added to the energy from your incoming
+[10:57] power, well that's called "Power Assist", so you can help energy from your battery to
+[11:01] overcome start-up power from your air-conditioning or from your refrigerator or whatever. That's,
+[11:07] of course, a temporary thing because that uses battery power. When you have done power-assist,
+[11:13] then the next logical step would be to charge your battery again, because then you refill
+[11:18] what you used to start up that power. So you can help with power-assist, you can help overcome
+[11:24] the shortness of your generator, so if your generator is not powerful enough to start
+[11:28] up things, the power-assist can help, but also in marinas, when you have limited power
+[11:32] from your marina, what you want to do, make a cup of coffee, or you have your microwave
+[11:37] on which is more than what your marina can supply to you, then you can use power assist as well.
+[11:43] The Multis, the inverters and also the Quattros use the same typology, that means the way
+[11:50] we do that is exactly the same, and also the 12 volt, 24 volt and also the 48 volt models have the
+[11:55] same way of doing it. The difference between these units is the models of FET's what we
+[12:00] use, one FET is made for a 12 volt system, the other is made for a 24 volt system and
+[12:05] so on. A FET is a small component, and that small component can do about 50 to 100 amps,
+[12:12] that means if you want to have a powerful inverter, you have these FET's in parallel:
+[12:16] you cannot have too much in parallel because you also have to drive them at the same time,
+[12:20] so the switching of the 20 kilowatt switching should be equal on all FET's. So in our units,
+[12:26] we have 6 FET's in parallel, that's about the same for all our inverters and all our charger-inverters.
+[12:34] If you want to have a more powerful inverter than that, we can parallel these units also,
+[12:39] and simply what we do then is we tell the "neighbour" unit to do exactly the same as
+[12:44] the master unit, so then we have the double inverter power, but also the double charge
+[12:48] power and also, of course the double transfer power, so everything becomes double. Next
+[12:53] step to that is also that we can shift frequency between these, and that means you can make
+[12:58] a 3-phase system, so if you have 120 degrees phase shift between the units, you can have
+[13:03] a stand-alone unit working together with another stand-alone unit, and another stand-alone
+[13:07] unit, the 3 of them create a 3-phase system. So the unit itself does exactly the same as
+[13:13] a stand-alone unit, just listens to what the neighbour is doing. Every inverter has an
+[13:18] idle power, and idle power means that it uses energy from the battery while it's on, so
+[13:23] if it's making 230 volts, even though you don't use the 230 volts, it does take energy
+[13:28] from the battery. The power is caused by the switching of the FET's, just like switching
+[13:34] a light switch, it doesn't take a lot of energy to switch a light on, but if you have to do
+[13:38] it 20 thousand times a second, then all of a sudden, it does take energy to do that.
+[13:43] So, the more you switch, the more energy also is lost in the FET's itself, but also in the
+[13:49] transformer because the transformer changes in polarity all the time, it changes from
+[13:55] plus to minus, so changing polarity in a transformer takes energy, switching the FET's 20 thousand
+[14:00] times a second, and then also a row of FET's takes also energy. So, if you want to prevent
+[14:06] using a lot of energy while doing nothing with your energy system, you should find the
+[14:12] right inverter for your load. The bigger your inverter is, the more losses you will have,
+[14:17] because the transformer is larger and also the FET's that you're switching are more powerful.
+[14:22] So you use more energy to keep a bigger inverter running than a smaller inverter running. If
+[14:27] you make a selection on which inverter you use, you start at which load you have, you
+[14:32] have a look at those loads you have on board, and look at what kind of loads they are on
+[14:38] average, but also which kind of loads they are at the start-up/ peak power behaviour,
+[14:43] and what they need to be powered up. Well you take an average of that, because normally speaking
+[14:48] we don't have everything on at the same time, about 70 percent of what you have installed
+[14:53] should be able to be covered by your inverter (that's about the size of your inverter).
+[14:57] But also the capacity of your battery determines how big your converter can be, because an
+[15:02] inverter converts energy from your battery to AC, but it cannot create energy, so you
+[15:08] need to fill with energy from your battery. If your battery is not able to fill the inverter
+[15:12] with power, well then there's no point in having a larger inverter because it's all
+[15:16] about balance, the inverter and your battery and your loads should be in balance with each
+[15:21] other. A bigger inverter is nice because if you have a inverter on board the tendency
+[15:25] to use more than what you would normally do is quite logical, a lot of people do that,
+[15:31] but don't overdo it because you will drain your batteries un-needed. Also, if you're
+[15:37] not on board, switch off your inverter charger to charger only, because then you're able
+[15:42] to charge your batteries but you will not unnecessarily make 230 volts and drain your battery while
+[15:47] you're not connected to the grid. In the inverter, in all our Multis and our Quattros, we have a
+[15:54] power-save mode called AES ("Automatic Energy Saving"), Automatic Energy Saving has two
+[15:59] modes: one mode is surge mode and surge mode means every second you get 1 sine wave that
+[16:05] means that a lot of that 20 kilohertz switching of these FET's is prevented, because instead
+[16:09] of making 50 hertz, you only make 1, that means you do 49 switches less. So you do less
+[16:17] polling of your transformer and also less switching of your FET's. That means you use less power
+[16:24] from your battery while you're in idle mode. The negative side of that of course is you
+[16:28] only have 1 hertz per second, that means that appliances that do use a frequency to be there
+[16:35] like a clock for your microwave and so on, they will not run anymore because they're
+[16:39] missing that 49 hertz, so that clock will stop, so it's good for your night rest, it's
+[16:43] not so good for your microwave. The other one is modified sine wave and modified sine
+[16:48] wave, although the word does make it look a little bit different, it's not that it's a modified
+[16:55] sine wave, it's a less-accurate sine wave, we do less switching, and that means we have
+[16:59] a less accurate way of making our sine wave, so instead of doing the 20 kilohertz switching,
+[17:04] we switch less and switching less means we use less power. Well, for a 3 kilowatt unit
+[17:09] like this, the idle power when it's completely on is about 15 watts, when you do modified
+[17:16] sine wave it's about 12 watts, and if you do the surge mode, it's about 8 watts and
+[17:21] at 8 watts it's mainly the power supply, to get the processors inside running, and do
+[17:27] a little bit of the switching of the FET's. So you can step these 3 together. It detects
+[17:31] Well, for a 3 kilowatt unit like this, the idle power when it's completely on is about 15 watts,
+[17:37] when you do modified sine wave it's about 12 watts,
+[17:41] and if you do the search mode, it's about 8 watts and at 8 watts it's mainly the power supply,
+[17:46] to get the processors inside running, to get the processors inside running,
+[17:49] and do a little bit of the switching of the FET's.
+[17:51] So you can step these 3 together.
+[17:54] It detects when there is power connected to it,
+[17:55] when there is power connected to it, and of course when you have the surge mode it looks
+[17:58] at it every second, so if there is power that second, the unit will switch completely on,
+[18:04] and there you go again, in modified sine wave there's also a level that it goes from the
+[18:08] modified sine wave to the full sine wave at a specific level. What we can do with our
+[18:12] inverters is that you can remotely control them so you can do that with a panel with
+[18:16] a multi-control panel, or you can do that a little more advanced with a colour control
+[18:20] panel so you also have the display so you can see what's going on in your system, but
+[18:24] you can also use any potential for your remote switch if you want to that, you can include
+[18:29] that in your XXXX, you can even do that on Bluetooth and nowadays we have also the ability to connect
+[18:35] the unit to your phone and that means with your phone you can also change that. On top
+[18:40] of that, what you can also choose for, is to switch off the fan, sometimes at night
+[18:44] you want the unit to run because you need 230 volts, but you don't want to hear the
+[18:48] fan, you want it to be as quiet as possible, so you also have the ability to switch off
+[18:53] the fan at night or on a specific load if you want to do that. So you can connect a
+[18:58] timer to it to have your fan controlled or you can do that on power what you use.

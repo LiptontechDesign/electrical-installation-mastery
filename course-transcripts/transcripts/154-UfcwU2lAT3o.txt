@@ -1,0 +1,70 @@
+# Electrical Fault Finding - Borrowed Neutral and an RCD
+# https://www.youtube.com/watch?v=UfcwU2lAT3o
+
+we've had quite a few problems with this board so I'll show you some of the things that I've had to do to get around it looking at the board most of the wires as you can see it came through this trunking and it was just I mean the trunking itself was just bulging full of cables I've tried to pull most of them out but they are so sort of twisted and it's just such a mess but I've just done my best for now just to get the job done and we'll have to come back and make sure it's all tidy later well tomorrow I'll be coming back as you can see you know I've put the armored cables in um i haven't put the shrouds down or anything like that everything's all pretty tight and stuff like that so yeah it's a Hager board um obviously you've got a couple of ring circuits you've got socket circuits up on a little workbench up there you've got sockets down there you've got a few sockets here got a socket there and into the canteen and office area they're now all on our RCBO's as our office lights and the workshop lights so I had a real game with this light and circuit and as you can see inside this lighting circuit we've got one and a half mil cable and then we've got a two and a half mil and two 1.5 mil cables now that's how it was when I took the old one out but obviously I was able to think what the why it was it been done like that and I'll explain it took me a long time to find why it has been done like that but I'll explain that in a minute we've got some I'll put four Breakers in there just for where we've got two convectors two convector heaters um one two this this one and this one the ones that are turned off notice they're both on phase one because they're convector heaters which are part of the storage heater system and the storage heaters are on the nighttime economy 7 which is fed on the meter on the far right and they come off phase one so the storage heaters which there's only two of them like I said they've also got a permanent supply going to them for the convector heater so during the day you can turn them on and that will give a bit of extra heat because this single phase board comes off phase one or L1 I've also took the two convector supplies off L1 as well now they weren't on it like that before again this was always our one phase one but these came off phase two and phase three so working on the storage units in the future potentially you could be working there with a potential of 400 volts there between the two phases whereas now they just have the two single phases because they are on L1 okay come back over to this time switch and we've got a um little thermostat on the wall and the time switch there and again I've had a problem with this so if we turn around and you can see over there that green unit is a heater now when I first came here I thought it was a three-phase heater um but it turns out I don't think it is I'd just be fair I had to look at it properly you can see there's a little isolation rotary isolator there I can't get to it yet um but what I have done is I did undo the two socket the two junction boxes on view there and I could see the wires I could see the wires coming through I could tell that it wasn't three phase which I initially thought it was let's go back to the time switch the thermostat and then I've got these three wires here now these three wires initially were in with the which one was it the light in circuit so the main the main lights as you can see up there these wires were wired up into the lighting circuit as well and like I said there's also a 2.5 millimeter cable there um as well as the as well as the 1.5 now this has took me quite a while to to work out what's happened but anyway you can see the conduit it goes over there for the light and then the conduit follows down and then that eventually goes down to that switch that won't be isolator switch to that heater what's happened is if you just if you look under there we can't see under there but there's a couple of wires uh these wires here go up through there and what I believe is this wire here the 2.5 goes over to that heater and at no point has a neutral been taken over to that heater um so yeah so there's no neutral going to it's just live conductors um and then obviously that heater does need a neutral to work and then what they've done is there's a junction box up there and I have taken a neutral from the lighting circuit so there we have a heater which is a completely different um you know electrical piece of equipment to the lighting which I believe is this one here but I haven't disconnected it yet just because I'm I'm still trying to work things out with it and the neutral for it has come off this same lighting circuit now it's really it might say it sounds simple but it really it's been a real problem trying to work out how this has all been done again going back to the time switch the time switch is there it's used to control and the thermostat which used to control the heater they don't really use it anymore so it's not actually a problem and it is actually I think it is turned off anyway so it's not really a problem but what happens is with the time switch obviously when um um you know when when the time switch or the thermostat kicks in the heat would normally come on and these are the control wires for those items there but what I'm saying is the the biggest problem is is I can't get the um I can't have the heater working on the lighting circuit I can't have the heat on its own RCBO as well as the lights on a RCBO so um I suppose we could get away with not having the lights on an RCBO in a place like this but I'd rather have them done like that just for convenience so hopefully I'll come back tomorrow should all be okay
+
+
+[00:00] we've had quite a few problems with this board so I'll show you some of the things that I've
+[00:05] had to do to get around it looking at the board most of the wires as you can see it came through
+[00:11] this trunking and it was just I mean the trunking itself was just bulging full of cables I've tried
+[00:16] to pull most of them out but they are so sort of twisted and it's just such a mess but I've
+[00:21] just done my best for now just to get the job done and we'll have to come back and make sure
+[00:25] it's all tidy later well tomorrow I'll be coming back as you can see you know I've put the armored
+[00:31] cables in um i haven't put the shrouds down or anything like that everything's all pretty
+[00:35] tight and stuff like that so yeah it's a Hager board um obviously you've got a couple of ring
+[00:40] circuits you've got socket circuits up on a little workbench up there you've got sockets
+[00:45] down there you've got a few sockets here got a socket there and into the canteen and office area
+[00:53] they're now all on our RCBO's as our office lights and the workshop lights so I had a
+[01:00] real game with this light and circuit and as you can see inside this lighting circuit we've got
+[01:04] one and a half mil cable and then we've got a two and a half mil and two 1.5 mil cables
+[01:11] now that's how it was when I took the old one out but obviously I was able to think what the
+[01:17] why it was it been done like that and I'll explain it took me a long time to find why
+[01:22] it has been done like that but I'll explain that in a minute we've got some I'll put four
+[01:27] Breakers in there just for where we've got two convectors two convector heaters
+[01:34] um one two this this one and this one the ones that are turned off notice they're both on
+[01:39] phase one because they're convector heaters which are part of the storage heater system
+[01:45] and the storage heaters are on the nighttime economy 7 which is fed on the meter
+[01:51] on the far right and they come off phase one so the storage heaters which there's only two of
+[01:57] them like I said they've also got a permanent supply going to them for the convector heater
+[02:03] so during the day you can turn them on and that will give a bit of extra heat because this single
+[02:09] phase board comes off phase one or L1 I've also took the two convector supplies off L1 as well
+[02:16] now they weren't on it like that before again this was always our one phase one but these
+[02:22] came off phase two and phase three so working on the storage units in the future potentially you
+[02:27] could be working there with a potential of 400 volts there between the two phases whereas now
+[02:32] they just have the two single phases because they are on L1 okay come back over to this time switch
+[02:41] and we've got a um little thermostat on the wall and the time switch there and again I've had a
+[02:48] problem with this so if we turn around and you can see over there that green unit is a heater now
+[02:56] when I first came here I thought it was a three-phase heater
+[03:03] um but it turns out I don't think it is I'd just be fair I had to look at it properly
+[03:07] you can see there's a little isolation rotary isolator there I can't get to it yet
+[03:14] um but what I have done is I did undo the two socket the two junction boxes on view there
+[03:21] and I could see the wires I could see the wires coming through I could tell that it wasn't three
+[03:27] phase which I initially thought it was let's go back to the time switch the thermostat and then
+[03:34] I've got these three wires here now these three wires initially were in with the which one was it
+[03:42] the light in circuit so the main the main lights as you can see up there these wires were wired
+[03:50] up into the lighting circuit as well and like I said there's also a 2.5 millimeter cable there
+[03:56] um as well as the as well as the 1.5
+[04:02] now this has took me quite a while to to work out what's happened but anyway you can see the
+[04:08] conduit it goes over there for the light and then the conduit follows down and then that
+[04:12] eventually goes down to that switch that won't be isolator switch to that heater what's happened is
+[04:20] if you just if you look under there we can't see under there but there's a couple of wires uh these
+[04:25] wires here go up through there and what I believe is this wire here the 2.5 goes over to that heater
+[04:36] and at no point has a neutral been taken over to that heater
+[04:42] um so yeah so there's no neutral going to it's just live conductors
+[04:48] um and then obviously that heater does need a neutral to work and then what they've done
+[04:55] is there's a junction box up there and I have taken a neutral from the
+[05:01] lighting circuit so there we have a heater which is a completely different
+[05:07] um you know electrical piece of equipment to the lighting which I believe is this one here
+[05:14] but I haven't disconnected it yet just because I'm I'm still trying to work things out with it
+[05:19] and the neutral for it has come off this same lighting circuit now it's really it might say
+[05:29] it sounds simple but it really it's been a real problem trying to work out how this has all been
+[05:34] done again going back to the time switch the time switch is there it's used to control and
+[05:40] the thermostat which used to control the heater they don't really use it anymore so it's not
+[05:45] actually a problem and it is actually I think it is turned off anyway so it's not really a problem
+[05:51] but what happens is with the time switch obviously when um um you know when when the time switch or
+[05:59] the thermostat kicks in the heat would normally come on and these are the control wires for
+[06:03] those items there but what I'm saying is the the biggest problem is is I can't get the
+[06:11] um I can't have the heater working on the lighting circuit I can't have the heat on its own RCBO
+[06:19] as well as the lights on a RCBO so um I suppose we could get away with not
+[06:28] having the lights on an RCBO in a place like this but I'd rather have them done
+[06:33] like that just for convenience so hopefully I'll come back tomorrow should all be okay

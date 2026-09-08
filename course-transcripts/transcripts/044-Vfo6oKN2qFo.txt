@@ -1,0 +1,356 @@
+# ELECTRICAL ENGINEER Explains Single Line Diagrams
+# https://www.youtube.com/watch?v=Vfo6oKN2qFo
+
+so what is a oneline diagram also called single line diagram and why do we use them in the electrical construction industry here is an example of a large oneline diagram for a 30 story multi-use apartment building and this is page one out of six you can see it gets very busy you can learn how to read these understand these and eventually even create these but to do that we're going to start at the beginning by the way if this is is the first time we've met hello my name is Rob and I typically make electrical Revit videos but today I wanted to depart from that and give you more of a general electrical tutorial so I hope you enjoy let's get right into it a oneline diagram is basically a type of electrical diagram created for electrical power distribution systems that simplifies a complex wiring diagram or a schematic diag diagram like I'm showing you here by showing the topology or the arrangement of an electrical distribution system with yes single lines representing multiple wires so here is a very basic standard diagram if you will a lot of us learned electrical circuits from you know it has the typical battery and maybe a fuse that goes through a switch with wires connected to a little LED light and it shows the return path so this you know demonstrates that electricity needs a circuit to flow and you can learn things like volts and amps and watts from this kind of diagram so this is a schematic because it's showing individual wires and individual pieces from this we can develop actually a oneline diagram even for this simple system so let me just go over here and show you let's turn this diagram sideways to get a different look at it so here it is I've just turned it 90° so that I have the source of power at the top and then down at the bottom of this diagram I have the load this is what consumes the power and so we have the same pieces a fuse going through a switch down to the load and coming back on this negative wire this is a DC system so again simple system but now let's see what happens if we try to represent this as a one line diagram we're going to combine these wires into a single line and you'll see what I mean so here we have the same pieces we have the source a battery now we've combined the plus and the minus wiring into just a single line we show a fuse we show the switch and it's a single pole switch and we show the wires and we show the load all with a single line to read this you have to have the knowledge and understand that this line represents more than one wire maybe it's a conduit maybe it's a cable maybe it's a bundle but it's representing multiple wires and you have to know that this switch only switches the in this case the positive lead not both it's only one pole it's only switching one wire you know there's two wires in here with this note this fuse only protects the positive lead and this again just understood if these things need to be clarified you can also have a wiring diagram for certain pieces of this just to clarify it but overall this represents the source and loads and distribution in between simply if you're getting some value out of this video I'd sure appreciate you hitting that thumbs up like button down below and if you want to see more electrical only content hit that subscribe I appreciate that back to the video now let me jump to a little different diagram so this diagram looks similar to what we just looked at but I've switched it over to a 120 volt AC Supply so this would be more like what you would see in your home here in the US or even in a commercial building our hot or line to neutral voltage is 120 volt so this is a simple diagram of that we have in this case now a 15 amp single pole circuit breaker that protects the hot wire we have wire we've given a size 12 gauge wire and then we have just a receptacle just one piece of a duplex receptacle this could be a duplex right now it's just a Simplex but it shows the wire connected to the hot lead and it shows n neutral connected to the neutral lead and then we even have a ground wire running alongside to connect to the ground lead and this calls out a 15 amp recepticle it's ready for 120 volts and all of the pieces are called out again this works fine for a simple system we can show a wiring what happens if we turn it on its side just like we did before now we have a 120 volt Source up here now this Source could be your electrical panel your fuse box further up from that is a Transformer out on a pole or out on a pad and the source above that comes from the power lines that go all the way back to the wind farm or the solar farm or or even the hydroelectric Dam so this is just representing the source connection the local source of power that we are using and then it shows again the breaker wires the load and all the way back with neutral and ground like we did before let us convert this to a single line representation there we go we have a source we have the circuit breaker a line simply going down to this receptacle which represents our load and then we've called out that this is actually an NM cable commonly called RX with two number 14s and a number 14 ground so again this is a oneline diagram representation of this 120 volt singlephase two-wire we don't count the ground two- wire system so let's jump into a larger system so here we're starting to get a little more complicated but if we break this down you will see what we have here this is representing a three-phase panel board in say a small commercial building it's just a 200 amp system your house would be similar but it would only be two phases instead of three this is a schematic or you know Wire by wire view of this system and what I've got here is the internals of the panel board with three bus bars a b and c we have a neutral bus bar and a ground bus bar they are bonded together because this is the main panel and then tapping off of each of these phase bus bars are circuit breakers one goes off to the left one goes off to the right and then phase B same thing and I've only shown one circuit a 20 amp single pole circuit breaker with number 12 wires feeding in parallel five receptacles so we have the wires All In Parallel these are cables going out to all the wires and we have the neutral wire here and we have the ground wire here this gets complicated and takes up some real estate on this View and it's just a single C circuit now these panels can have multiple multiple circuits we can have 24 circuits 30 circuits 42 even 84 circuits can you imagine trying to draw every single wire every single device and this is only showing six circuit breakers so you can see that wire by wire method just is not feasible for a system and this is just one panel get to a building that has 50 panels you can see where I'm coming from so let's work our way towards doing some shorthand for this is so here's a diagram again bump it out a little bit same diagram but I've colorcoded some pieces so what we typically do in the electrical construction industry we'll typically break this kind of system into two pieces you have green which is the distribution system how do we distribute the electrical power throughout the facility or the campus or the city the green stuff will be shown on a oneline diagram and then the load end of things the hot the neutral the ground and all of its connections will be shown on a floor plan view typically so we take this system and break it into two pieces so let's look at the red part of this the actual circuiting of the receptacles and I'll pop into a floor plan View and you can see for example here what I have here is symbols now this little symbol here is symbol for a panel it's got the little door open it's got a little clearance Zone in front of it for maintenance and it's called panel a and this just shows 1 2 3 4 five these are receptacle symbols so we have five receptacles all connected together and the little arrow is a home run back to the panel a and it says it's panel a circuit one and these little tick marks little lines are representing the wire that are inside this conduit or cable and and these can be represented different ways but this one here with the with the dot on it is the ground wire and the long wire is the neutral and the short wire is the hot wire or phase wire so this is kind of a oneline representation of the actual circuiting out in the building and so we show the loads this way and then to show the distribution side let's go back to our diagrams the distribution side we use the one line diagram so here is that simple Source in this case we have a utility pull mounted Transformers a bank of those to give us 208 y20 volt 3phase system a four wire system and it's going through a meter self-contained meter base so we say what size that is and this shows that we have actually a conduit in this situation we have a 2-in conduit with four number three o AWG gauge wires and a number six ground and that comes into this symbol this box is a symbol for a panel panel a and I even have a symbol for the main circuit breaker that is contained within that panel to protect this panel and so from this diagram you can easily see how the power goes from The Source down through the meter down to the panel and then it will go out to the loads which we show on the floor plan now we can take this a step further and if we have multiple panels in a commercial building for example then we would go one step further with this on line diagram and that's when we get to this guy here so this is a complete building electrical distribution system again we have a source up here and this ends up being a utility pad mounted Transformer the Big Green Box sitting on a pad and it feeds into what's called a CT can a current Transformer can that the utility uses to run their meter so they can charge you for your electricity comes through the service lateral which is given a tag which refers to a feeder schedule so an 800 D4 would represent an 800 amp four wire feeder and it will tell you what size all those wires are so I don't have to repeat them over and over on this diagram and then this comes into the main distribution board which is a large panel that in this case has a main circuit break breaker protecting this entire bus and then tapping off that bus are actually these are symbols for switches and fuses instead of circuit breakers this board in this case more of a switch board than a panel has four fuse switches and these feed different panels panel a b and c and they're different sizes you can see different fuse sizes different feeder wiring sizes the single line represents multiple wires inside a conduit or cable and then down here sometimes instead of showing all of the loads in the floor plan view we'll take some of the larger loads like an elevator or a large Chiller or something like that and we will actually show that here on the on line diagram so that we can show all of these feeders in the one diagram and there's mixtures of this some people will mix this up and and show some smaller loads but the general idea is we want the actual distribution system to be represented here in this oneline diagram and then to represent what happens inside of this panel we have one more piece that we show in our drawings and that's a a schedule of the panel called a panel schedule so if I click here this is a panel Branch panel a and it gives some electrical information up top the voltages and phases and amps things like that and then this is a representation of all in this case 42 circuits and and it tells Circuit by Circuit circuit one what is that serving the receptacles in the main room that's a 20 amp trip rating 20 amp setting for that breaker it's a one Poole breaker and there's 900 volt amps or pretty much 900 watts on that circuit it's added up all those receptacles and this would be shown for each circuit so this is the third piece of that wiring diagram that we looked at for the panel now what else can we put on this diagram besides just sizing and things like that here and I've done it in red is called the available fault current it is the short circuit amps this is 16 Ka or 16,000 amps Sim just means symmetrical it's it's a technical term for what the waveform looks like but the idea is if you take these wires and connect them all together to make a short circuit you will be drawing up to 16,000 amps instead of the 800 amps that is rated for this is another thing that we put onto these one nine diagrams so that equipment and switches can be rated for that short circuit available and if you'd like to learn more about electrical distribution specifically in the Revit software take a look at this video on the screen and you can learn how to connect Transformers and double tapped secondaries and feed through lugs and all the different types of distribution so until next time [Music]
+
+
+[00:00] so what is a oneline diagram also called
+[00:02] single line diagram and why do we use
+[00:05] them in the electrical construction
+[00:07] industry here is an example of a large
+[00:10] oneline diagram for a 30 story multi-use
+[00:14] apartment building and this is page one
+[00:17] out of six you can see it gets very busy
+[00:20] you can learn how to read these
+[00:23] understand these and eventually even
+[00:24] create these but to do that we're going
+[00:27] to start at the beginning by the way if
+[00:29] this is is the first time we've met
+[00:31] hello my name is Rob and I typically
+[00:33] make electrical Revit videos but today I
+[00:35] wanted to depart from that and give you
+[00:37] more of a general electrical tutorial so
+[00:41] I hope you enjoy let's get right into
+[00:47] it a oneline diagram is basically a type
+[00:50] of electrical diagram created for
+[00:53] electrical power distribution systems
+[00:55] that simplifies a complex wiring diagram
+[00:58] or a schematic diag diagram like I'm
+[01:00] showing you here by showing the topology
+[01:03] or the arrangement of an electrical
+[01:06] distribution system with yes single
+[01:09] lines representing multiple wires so
+[01:12] here is a very basic standard diagram if
+[01:16] you will a lot of us learned electrical
+[01:18] circuits from you know it has the
+[01:20] typical battery and maybe a fuse that
+[01:23] goes through a switch with wires
+[01:26] connected to a little LED light and it
+[01:29] shows the return path so this you know
+[01:31] demonstrates that electricity needs a
+[01:34] circuit to flow and you can learn things
+[01:36] like volts and amps and watts from this
+[01:39] kind of diagram so this is a
+[01:41] schematic because it's showing
+[01:43] individual wires and individual pieces
+[01:46] from this we can develop actually a
+[01:49] oneline diagram even for this simple
+[01:51] system so let me just go over here and
+[01:53] show you let's turn this diagram
+[01:56] sideways to get a different look at it
+[02:00] so here it is I've just turned it 90° so
+[02:04] that I have the source of power at the
+[02:08] top and then down at the bottom of this
+[02:10] diagram I have the load this is what
+[02:13] consumes the power and so we have the
+[02:16] same pieces a fuse going through a
+[02:17] switch down to the load and coming back
+[02:20] on this negative wire this is a DC
+[02:22] system so again simple system but now
+[02:26] let's see what happens if we try to
+[02:27] represent this as a one line diagram
+[02:30] we're going to combine these wires into
+[02:33] a single
+[02:34] line and you'll see what I mean so here
+[02:38] we have the same pieces we have the
+[02:40] source a battery now we've combined the
+[02:43] plus and the minus wiring into just a
+[02:45] single line we show a fuse we show the
+[02:49] switch and it's a single pole switch and
+[02:53] we show the wires and we show the load
+[02:56] all with a single line to read this you
+[02:58] have to have the knowledge and
+[03:00] understand that this line represents
+[03:03] more than one wire maybe it's a conduit
+[03:06] maybe it's a cable maybe it's a bundle
+[03:08] but it's representing multiple wires and
+[03:11] you have to know that this switch only
+[03:13] switches the in this case the positive
+[03:16] lead not both it's only one pole it's
+[03:18] only switching one wire you know there's
+[03:21] two wires in here with this note this
+[03:24] fuse only protects the positive lead and
+[03:26] this again just understood if these
+[03:28] things need to be clarified
+[03:30] you can also have a wiring diagram for
+[03:32] certain pieces of this just to clarify
+[03:35] it but overall this represents the
+[03:38] source and loads and distribution in
+[03:41] between
+[03:43] simply if you're getting some value out
+[03:45] of this video I'd sure appreciate you
+[03:47] hitting that thumbs up like button down
+[03:48] below and if you want to see more
+[03:50] electrical only content hit that
+[03:53] subscribe I appreciate that back to the
+[03:56] video now let me jump to a little
+[03:58] different diagram
+[04:00] so this diagram looks similar to what we
+[04:02] just looked at but I've switched it over
+[04:04] to a 120 volt AC Supply so this would be
+[04:08] more like what you would see in your
+[04:09] home here in the US or even in a
+[04:12] commercial building our hot or line to
+[04:16] neutral voltage is 120 volt so this is a
+[04:19] simple diagram of that we have in this
+[04:22] case now a 15 amp single pole circuit
+[04:25] breaker that protects the hot wire we
+[04:29] have wire we've given a size 12 gauge
+[04:32] wire and then we have just a receptacle
+[04:34] just one piece of a duplex receptacle
+[04:36] this could be a duplex right now it's
+[04:38] just a Simplex but it shows the wire
+[04:40] connected to the hot lead and it shows n
+[04:43] neutral connected to the neutral lead
+[04:46] and then we even have a ground wire
+[04:48] running
+[04:49] alongside to connect to the ground lead
+[04:53] and this calls out a 15 amp recepticle
+[04:55] it's ready for 120 volts and all of the
+[04:57] pieces are called out again this works
+[05:00] fine for a simple system we can show a
+[05:02] wiring what happens if we turn it on its
+[05:06] side just like we did before now we have
+[05:09] a 120 volt Source up here now this
+[05:11] Source could be your electrical panel
+[05:14] your fuse box further up from that is a
+[05:17] Transformer out on a pole or out on a
+[05:19] pad and the source above that comes from
+[05:22] the power lines that go all the way back
+[05:24] to the wind farm or the solar farm or or
+[05:26] even the hydroelectric Dam so this is
+[05:30] just representing the source connection
+[05:31] the local source of power that we are
+[05:35] using and then it shows again the
+[05:38] breaker wires the
+[05:40] load and all the way back with neutral
+[05:43] and ground like we did before let us
+[05:45] convert this to a single line
+[05:46] representation there we go we have a
+[05:49] source we have the circuit breaker a
+[05:52] line simply going down to this
+[05:54] receptacle which represents our load and
+[05:56] then we've called out that this is
+[05:57] actually an NM cable commonly called RX
+[06:01] with two number 14s and a number 14
+[06:03] ground so again this is a oneline
+[06:05] diagram representation of this 120 volt
+[06:08] singlephase two-wire we don't count the
+[06:11] ground two- wire system so let's jump
+[06:13] into a larger system so here we're
+[06:16] starting to get a little more
+[06:17] complicated but if we break this down
+[06:19] you will see what we have here this is
+[06:22] representing a
+[06:24] three-phase panel
+[06:27] board in say a small commercial building
+[06:31] it's just a 200 amp system your house
+[06:34] would be similar but it would only be
+[06:35] two phases instead of three this is a
+[06:37] schematic or you know Wire by wire view
+[06:41] of this system and what I've got here is
+[06:43] the internals of the panel board with
+[06:45] three bus bars a b and c we have a
+[06:47] neutral bus bar and a ground bus bar
+[06:49] they are bonded together because this is
+[06:51] the main panel and then tapping off of
+[06:54] each of these phase bus bars are circuit
+[06:57] breakers one goes off to the left one
+[06:58] goes off to the right and then phase B
+[07:00] same thing and I've only shown one
+[07:03] circuit a 20 amp single pole circuit
+[07:05] breaker with number 12 wires feeding in
+[07:09] parallel five receptacles so we have the
+[07:12] wires All In Parallel these are cables
+[07:14] going out to all the wires and we have
+[07:17] the neutral wire here and we have the
+[07:20] ground wire
+[07:22] here this gets complicated and takes up
+[07:25] some real estate on this View and it's
+[07:28] just a single C circuit now these panels
+[07:31] can have multiple multiple circuits we
+[07:34] can have 24 circuits 30 circuits 42 even
+[07:37] 84 circuits can you imagine trying to
+[07:40] draw every single wire every single
+[07:43] device and this is only showing six
+[07:45] circuit breakers so you can see that
+[07:47] wire by wire method just is not feasible
+[07:50] for a system and this is just one panel
+[07:52] get to a building that has 50 panels you
+[07:55] can see where I'm coming from so let's
+[07:57] work our way towards doing some
+[07:58] shorthand for this is so here's a
+[08:00] diagram
+[08:03] again bump it out a little bit same
+[08:06] diagram but I've colorcoded some pieces
+[08:09] so what we typically do in the
+[08:10] electrical construction industry we'll
+[08:12] typically break this kind of system into
+[08:15] two pieces you have green which is the
+[08:19] distribution system how do we distribute
+[08:21] the electrical power throughout the
+[08:23] facility or the campus or the city the
+[08:27] green stuff will be shown on a oneline
+[08:30] diagram and then the load end of
+[08:33] things the hot the neutral the ground
+[08:37] and all of its connections will be shown
+[08:39] on a floor plan view typically so we
+[08:42] take this system and break it into two
+[08:44] pieces so let's look at the red part of
+[08:46] this the actual circuiting of the
+[08:48] receptacles and I'll pop into a floor
+[08:50] plan View and you can see for example
+[08:54] here what I have here is symbols now
+[08:57] this little symbol here is symbol for a
+[08:59] panel it's got the little door open it's
+[09:02] got a little clearance Zone in front of
+[09:03] it for maintenance and it's called panel
+[09:07] a and this just shows 1 2 3 4 five these
+[09:11] are receptacle
+[09:13] symbols so we have five receptacles all
+[09:16] connected together and the little arrow
+[09:20] is a home run back to the panel a and it
+[09:22] says it's panel a circuit one and these
+[09:26] little tick marks little lines are
+[09:28] representing the wire that are inside
+[09:30] this conduit or cable and and these can
+[09:32] be represented different ways but this
+[09:34] one here with the with the dot on it is
+[09:36] the ground wire and the long wire is the
+[09:38] neutral and the short wire is the hot
+[09:39] wire or phase wire so this is kind of a
+[09:42] oneline
+[09:44] representation of the actual circuiting
+[09:46] out in the building and so we show the
+[09:48] loads this way and then to show the
+[09:52] distribution
+[09:54] side let's go back to our diagrams the
+[09:56] distribution side we use the one line
+[09:59] diagram so here is that simple Source in
+[10:04] this case we have a utility pull mounted
+[10:06] Transformers a bank of those to give us
+[10:08] 208 y20 volt 3phase system a four wire
+[10:13] system and it's going through a meter
+[10:17] self-contained meter base so we say what
+[10:19] size that is and this shows that we have
+[10:22] actually a conduit in this situation we
+[10:23] have a 2-in conduit with four number
+[10:25] three o AWG gauge wires and a number six
+[10:30] ground and that comes into this symbol
+[10:33] this box is a symbol for a panel panel a
+[10:37] and I even have a symbol for the main
+[10:39] circuit breaker that is contained within
+[10:42] that panel to protect this panel and so
+[10:44] from this diagram you can easily see how
+[10:47] the power goes from The Source down
+[10:52] through the meter down to the panel and
+[10:54] then it will go out to the loads which
+[10:55] we show on the floor plan now we can
+[10:57] take this a step further and if we have
+[10:59] multiple panels in a commercial building
+[11:02] for
+[11:03] example then we would go one step
+[11:05] further with this on line
+[11:07] diagram and that's when we get to this
+[11:10] guy
+[11:11] here so this is a complete building
+[11:14] electrical distribution system again we
+[11:16] have a source up here and this ends up
+[11:18] being a utility pad mounted Transformer
+[11:20] the Big Green Box sitting on a pad and
+[11:23] it feeds into what's called a CT can a
+[11:26] current Transformer can that the utility
+[11:28] uses to run their meter so they can
+[11:30] charge you for your
+[11:31] electricity comes through the service
+[11:34] lateral which is given a tag which
+[11:37] refers to a feeder schedule so an 800 D4
+[11:42] would represent an 800 amp four wire
+[11:45] feeder and it will tell you what size
+[11:47] all those wires are so I don't have to
+[11:48] repeat them over and over on this
+[11:51] diagram and then this comes into the
+[11:53] main distribution board which is a large
+[11:56] panel that in this case has a main
+[11:58] circuit break breaker protecting this
+[12:00] entire bus and then tapping off that bus
+[12:04] are actually these are symbols for
+[12:06] switches and fuses instead of circuit
+[12:09] breakers this board in this case more of
+[12:12] a switch board than a panel has four
+[12:14] fuse switches and these feed different
+[12:17] panels panel a b and c and they're
+[12:19] different sizes you can see different
+[12:21] fuse sizes different feeder wiring sizes
+[12:24] the single line represents multiple
+[12:26] wires inside a conduit or cable
+[12:29] and then down here sometimes instead of
+[12:32] showing all of the loads in the floor
+[12:35] plan view we'll take some of the larger
+[12:37] loads like an elevator or a large
+[12:40] Chiller or something like that and we
+[12:42] will actually show that here on the on
+[12:44] line diagram so that we can show all of
+[12:47] these feeders in the one diagram and
+[12:50] there's mixtures of this some people
+[12:52] will mix this up and and show some
+[12:54] smaller loads but the general idea is we
+[12:57] want the actual distribution system to
+[12:59] be represented here in this oneline
+[13:02] diagram and then to represent what
+[13:04] happens inside of this panel we have one
+[13:07] more piece that we show in our drawings
+[13:08] and that's a a schedule of the panel
+[13:10] called a panel schedule so if I click
+[13:12] here this is a panel Branch panel a and
+[13:17] it gives some electrical information up
+[13:19] top the voltages and phases and amps
+[13:21] things like that and then this is a
+[13:24] representation of all in this case 42
+[13:27] circuits and and it tells Circuit by
+[13:30] Circuit circuit one what is that serving
+[13:32] the receptacles in the main room
+[13:34] that's a 20 amp trip rating 20 amp
+[13:38] setting for that breaker it's a one
+[13:40] Poole breaker and there's 900 volt amps
+[13:42] or pretty much 900 watts on that circuit
+[13:45] it's added up all those receptacles and
+[13:48] this would be shown for each circuit so
+[13:50] this is the third piece of that wiring
+[13:52] diagram that we looked at for the panel
+[13:55] now what else can we put on this diagram
+[13:56] besides just sizing and things like that
+[13:59] here and I've done it in red is called
+[14:01] the available fault current it is the
+[14:04] short circuit amps this is 16 Ka or
+[14:08] 16,000 amps Sim just means symmetrical
+[14:11] it's it's a technical term for what the
+[14:13] waveform looks like but the idea is if
+[14:16] you take these wires and connect them
+[14:18] all together to make a short circuit you
+[14:21] will be drawing up to 16,000 amps
+[14:25] instead of the 800 amps that is rated
+[14:27] for this is another thing that we put
+[14:29] onto these one nine diagrams so that
+[14:31] equipment and switches can be rated for
+[14:33] that short circuit
+[14:35] available and if you'd like to learn
+[14:37] more about electrical distribution
+[14:39] specifically in the Revit software take
+[14:42] a look at this video on the screen and
+[14:43] you can learn how to connect
+[14:45] Transformers and double tapped
+[14:48] secondaries and feed through lugs and
+[14:50] all the different types of distribution
+[14:52] so until next time
+[14:55] [Music]

@@ -1,0 +1,451 @@
+# Voltage Drop in Electrical Circuits
+# https://www.youtube.com/watch?v=hPHLxi9qBH8
+
+hello I'm JW and not in the usual place today because so it's going to do a practical demonstration and it's videos about voltage drop so what I've got on the surface behind there is the fluke measuring device which will show the mains voltage just plug into the socket on the wall behind and also got an electric kettle there plugged into the same outlet and of course as our in the kitchen have also got some other appliances such as a toaster and electric oven all of which are connected to the same circuit as well there's actually on the other side but because we've all seen what toasters and ovens look like so let's go in and have a look a bit closer and see what's actually gonna be happening so what we've got here then this fluke test meter and we have to connect it to the line and neutral here I'm just displaying the voltage here and volts so it worked 220 or so at the moment and the frequency of the bottom here 50.1 are though that's not particularly important or concentrating on the voltage for this particular one so at the moment I sort of region of sort of 220 221 or so and the seat is bearing a fair bit and that's entirely normal and we would expect and what we need Catalan and see what happens to the voltage here so in the mouse or the region of two to one and we switch on and I see straight away it's actually dropped down to around to 11 up to 10 and if I switch off they get all began you see it comes up again to the sort of to 2219 sort of area so it seems to be about ten volts is disappearing every time the kettle is turned on so yeah mitts or 220 there switch on and we're down to 212 and then if we switch off it comes back up to 220 so certainly the voltage is dropping and clearly it's about 10 volts in this particular case now what we can also do is to switch on some other appliances here in the kitchen and that's what a toaster over here without sight but it's got two sections so again got the voltage there sort of two to four or so and if I turn the toaster on we'll see that the voltage turnover on downs of two to one and if I put the other side of the toaster on and then now we rounds around to eighteen and what we've got behind me here is the oven so if I turn the other on we'll see if the voltage is now dropped to 10 or 208 or so and if what the kettle on as well see now we're down to around 202 so that's going to go a drop from where we started and if I turn off the various appliances here so we just turn off half the toaster so to come up by a couple of olt there and then that's the rest of the toaster so what's up 205 and we just switch off the oven they're going to 13 and it was finally the kettle let me get back to that sort of 2 22 23 sort of area and even though it's all switched off now you'll also notice that the voltage is still fluctuating and moving around all over the place now this is purely for the fact that other appliances are being turned on and off elsewhere in the area so not just in the building here back to course it next door and the people across the street and so on so the voltage is changing all the time as various loads are switched on and off so let's have a look at how this actually works and that will also go back to the whiteboard in the usual place so in the kitchen there we saw that as the load increased the voltage we were getting decreased and in the case of that one they actually decreased considerable amount so let's just draw at the circuit we have there so since we've got our main supply from the electricity company so that's 230 volts and then of course I have wires from there I went through to the kitchen and then in the kitchen we had the kettle and there's other things and a kettle is just a heating element which is essentially a resistor and in the case of the kettle there it was actually rated at about 2.3 kilowatts so it's around 2300 watts it's very typical rating for an electric kettle so line here and the neutral here what it does actually matter of course it's an AC circuit now it just happens that a 2.3 kilowatt kettle on a 230 volt supply it works out that the resistance of the heating element inside the kettle is actually 23 ohms and the current that would have been flowing in the circuit in that instance is just the voltage divided by the resistance so 230 divided by 23 so you would have had a cone here of around 10 m/s so that's what I said perfectly fine and of course just a normal resistor there obviously the current flows through and that heats up because the question is where is this voltage reduction occurring because the answer is that this model of a circuit is completely wrong and totally useless because it makes a rather large and obvious assumption and it assumes that the wires here and of course returning here have no resistance at all so fed to these zero ohms in these wires and of course this isn't true at all because the was made of copper copper has some kind of resistance so although this is tipping out so it's drawn with the load here and the voltage there nothing between completely inaccurate and doesn't represent the real world at all so the real situation is of course these do have some kind of resistance and the purposes of this example we'll say the wire here has a resistance of a naught point 5 ohms and of course the other Y here's the same length so I will also have a resistance of noir point 5 ohms so this changes the situation considerably because the total resistance in the circuit now is not 23 anymore 23 here in the element we've also got half here and half here so the total is half half and 23 so the total resistance is now 24 ohms so we'll just get rid of all of this here so I've got 24 ohms in total and if we do the calculation again it's the current which would flow again the voltage with supplying at this end is still the same as 230 volts but we're now supplying it to a 24 ohm total resistance in the circuit rather than just assuming it was only the element at the end there so 24 ohms and again it's the same as before so it's 230 divided by 24 so the current we're now going to get through there is actually nine point five eight amps so it's quite a bit less than the 10 amps that we assumed would have been flowing in the first instance now because we know the current flowing through the circuit is nine point five eight amps this is a simple circuit so of course the current flowing all parts of it will be the same so going to be nine point five eight amps here and here and of course through the heating element as well and we can now work out while the voltage would be across the heating element here now so before this is actually a 23 ohm element and of course the total of 24 is that plus the two halves there and to get voltage we're going to multiply the current here which is nine point five eight and multiply it by the various resistances so for the resistance of the element here we're actually going to get nine point five eight times 23 so that will give us a voltage here across the element of two hundred and twenty point four volts and then for the other two it's the same thing so nine point five eight multiplied by 0.5 ohms and that gives us four point eight volts here and of course it's the same here because it's the same value so another four point eight volts in there and of course these three all add up to 230 so forward eighty four one eight and two twenty point four so the total voltage here is still the same 230 but unlike that theoretical model where we assume that the wires had zero resistance the voltage is being divided amongst the various resistances in the circuit most of it is still here across the element of the appliance but of course a small amount is here on the actual wires and of course the other wire up here so the thought is that we have to getting about a 10 volt reduction in the voltage across the kettle when it's switched on so starting with 230 over here in the outlet of 220 or so across the kettle element and this effect will change primarily depending on the resistances of the wires that supply the appliance now 0.5 ohms is quite small that if you had save a long cables that went out of 200 meters Daniel garden to on those sort of outside sheds or office type things the resistance in those wires could become considerably greater than that and you might find it while the something got down to your garden office if you do secretary thin cabling you might find that there was many tens volts that mysteriously disappeared and of course that's all due to the higher resistance of the cables supplying that now an interesting side effect of this issue here is that the power of the kettle is not 2,300 Watts anymore because they've only got 220 point 4 volts there and it - turns out in this particular one that the power being dissipated in the kettle here is actually only around 2000 110 watts that's quite a bit less than its intended rating and the result of this reduced voltage here would just mean the kettle takes longer to boil and the rest of the energy that's being displaced in the wires which will heat up to a small degree as the current flows through them now will wires heat up by a little bit when they're in use that's not normally a problem and of course it would select the wires when designing the installation to minimise that effect but if these had fairly high resistances and you tend to put reasonable and have current through then it's quite so likely that these would get very hot possibly causing damage to the insulation now when the other appliances in the kitchen were being switched on they are all connected to the same circuit so it's empty what we were doing we're adding additional resistances here in parallel so that might save me the toaster there and of course we have the oven and there's other things could be added in and the result of this here is that you want to actually increase the current flowing in the circuit and therefore although these wires are coarse the same resistance with a greater current flowing here the voltage drop will actually increased simply due to that you're multiplying the resistance here by the current flowing through the circuit so of course higher current means a higher voltage will appear across the wires and therefore less across the various loads that you had installed there now this particular example here only deals with the resistances of the wires inside the building because in the real world this is not really correct accurate either so just get rid of all of this and it will draw that again because there's yet another effect to consider and if we draw in our kettle over here that fixed resistance there who are wires which go back to our fuse box or whatever and say 230 volts in there but of course these do not magically just appear in your house they of course have many things before that so prior to this you're going to have things like your electricity meter let's draw the in Isaiah box there and of course prior to this you're going to have wires which go back to the electricity supplier and they're going to go back to some kind of a transformer which is where the electricity is originally supplied from and of course as well as these wires here having a system snout of 0.5 ohms or so said they're the wires from the old meter to your a fuse box or whatever we'll also have a resistance in there even the meat itself will have a small resistance inside and of course the wires from your actual house to the transformer that is also have some kind of resistance in there as well because that's trillion at both of the conductors just as it's inside of the house and when you switch on the kettle here of course the current is going to flow through the entire circuit all the way back to the transformer and all of these individual resistances are all add up to ensure the voltage still reduces here even if you managed to connect this to write out the terms of the meter you're still going to see that reducing effect purely because of the resistances of the wiring and cabling from the transformer to your house and even after all that there's still another issue to consider and that's actually the transformer itself which course cannot supply an unlimited amount of power and clearly the internal windings to have some kind of resistance and that more accurate is going to be the impedance of the transformer buddy and that's going to have some effect and again contribute to the entire system there so regardless of what you're going to do there's always going to be some voltage lost within the cabling and the wires to your house and twenty switches on pretty much any load you're going to find that the voltage here actually reduces now of course when designing a circuit and selecting the appropriate sized cables it's important to take this into account as there are limits for the allowed voltage drop within an installation there's not really that you can do about the stuff prior to your house or the consumer unit so pretty much anything prior to this point is something that the electricity supply would have to deal with but certainly the wires within the circuit should be selected to ensure that the voltage drop is kept to a minimum and this will be based on the expected load to be placed on the circuit and of course the attack the distance far away so longer cables of course would have a higher resistance so if you don't have a low that's a considerable distance away it says qualification how to use larger cables than you would normally just to ensure that the voltage drop is kept to a minimum now the two percentages which are actually allowed for voltage drop within the installation and the first one these is actually five percent and that's pretty much for all circuits except for lighting circuits which are actually three percent so lighting and pretty much everything else and lighting had a low percentage simply the fact that if there's a reduction the voltage on the lighting circuit is gener going to be a lot more noticeable because things like lights might go dim or start flickering whatever in the case it's an electric kettle the only side effect is that the kettle would take slightly longer to boil being with only 5% that's not going to be really noticeable so not such a big deal that certainly lights it's very apparent if voltage drops by even say just a few volts now let's look at voltage drop and essentially it's just the resistance of the wires or the conductors which contribute to the total resistance on the circuit and of course those models which show just wires and then a load at the end are no nonsense because all wires have some kind of resistance general it's quite small in the order of less than one ohm but certainly it's definitely there and it does make a considerable difference in many cases now you can calculate the voltage drop like that for any circuit but in other cases generally have to do this and if you've got a copy of the on-site guide the yellow book at the moment then had inside whole list of alternative source standard circuits sort of thing you might find in a typical house or small commercial premises and it actually has the maximum links which are permitted for their circuits and in virtually every case the maximum length is limited simply by the voltage drop not exceeding the five percent or the three percent so in most cases you can't immediately look up the maximum length permitted and of course in the tour that's not exceeded and if it's going to be exceeded then you need to make the cabling larger to reduce the resistance of the conductor's Nicosia can still calculate it manually if you thought it was necessary and the - a section in the back of this same book which has details of that as well now the demonstration we show there did show the main tortillas going well below the legal limit of 216 and the effect of V of all struck there were significantly greater than they would normally be a normal house and this if it goes that particular house and in fact most of the ones in that street sold it to a fault at the moment where the cabling outside in the road is I defective or damaged or something and the voltage there does go all over the place quite often and certain times of the day mostly in the early evening it actually drops well below 200 LFL has been reported in the road and it we dug up in the fairly near future but use that particular building as it was a good demonstration of the effect that's certainly no normal house you shouldn't be seeing anything like that when you switch on the kettle so that's all for this time and the calculations on there for the resistance and amps and so on I will do another video on those separately so if that didn't mean a great deal to there with the different calculations then that will cover that at a later time but until then thanks for watching
+
+
+[00:03] hello I'm JW and not in the usual place
+[00:06] today because so it's going to do a
+[00:07] practical demonstration and it's videos
+[00:10] about voltage drop so what I've got on
+[00:12] the surface behind there is the fluke
+[00:13] measuring device which will show the
+[00:15] mains voltage just plug into the socket
+[00:18] on the wall behind and also got an
+[00:20] electric kettle there plugged into the
+[00:22] same outlet and of course as our in the
+[00:24] kitchen have also got some other
+[00:25] appliances such as a toaster and
+[00:27] electric oven all of which are connected
+[00:29] to the same circuit as well there's
+[00:32] actually on the other side but because
+[00:33] we've all seen what toasters and ovens
+[00:35] look like so let's go in and have a look
+[00:37] a bit closer and see what's actually
+[00:39] gonna be happening so what we've got
+[00:42] here then this fluke test meter and we
+[00:44] have to connect it to the line and
+[00:45] neutral here I'm just displaying the
+[00:47] voltage here and volts so it worked 220
+[00:50] or so at the moment and the frequency of
+[00:52] the bottom here 50.1 are though that's
+[00:54] not particularly important or
+[00:56] concentrating on the voltage for this
+[00:58] particular one so at the moment I sort
+[01:01] of region of sort of 220 221 or so and
+[01:04] the seat is bearing a fair bit and
+[01:05] that's entirely normal and we would
+[01:07] expect and what we need Catalan and see
+[01:10] what happens to the voltage here so in
+[01:12] the mouse or the region of two to one
+[01:14] and we switch on and I see straight away
+[01:18] it's actually dropped down to around to
+[01:20] 11 up to 10
+[01:23] and if I switch off they get all began
+[01:25] you see it comes up again to the sort of
+[01:27] to 2219 sort of area so it seems to be
+[01:31] about ten volts is disappearing every
+[01:33] time the kettle is turned on so yeah
+[01:35] mitts or 220 there switch on and we're
+[01:39] down to 212 and then if we switch off it
+[01:43] comes back up to 220 so certainly the
+[01:48] voltage is dropping and clearly it's
+[01:50] about 10 volts in this particular case
+[01:52] now what we can also do is to switch on
+[01:54] some other appliances here in the
+[01:56] kitchen and that's what a toaster over
+[01:57] here without sight but it's got two
+[02:00] sections so again got the voltage there
+[02:02] sort of two to four or so and if I turn
+[02:05] the toaster on we'll see that the
+[02:09] voltage turnover on downs of two to one
+[02:11] and if I put the other side of the
+[02:12] toaster on and then now we rounds around
+[02:15] to eighteen and what we've got behind me
+[02:18] here is the oven so if I turn the other
+[02:20] on we'll see if the voltage is now
+[02:23] dropped to 10 or 208 or so and if what
+[02:26] the kettle on as well see now we're down
+[02:29] to around 202 so that's going to go a
+[02:32] drop from where we started and if I turn
+[02:35] off the various appliances here so we
+[02:37] just turn off half the toaster so to
+[02:39] come up by a couple of olt there and
+[02:41] then that's the rest of the toaster so
+[02:44] what's up 205 and we just switch off the
+[02:46] oven they're going to 13 and it was
+[02:50] finally the kettle let me get back to
+[02:52] that sort of 2 22 23 sort of area and
+[02:58] even though it's all switched off now
+[02:59] you'll also notice that the voltage is
+[03:00] still fluctuating and moving around all
+[03:03] over the place now this is purely for
+[03:04] the fact that other appliances are being
+[03:06] turned on and off elsewhere in the area
+[03:08] so not just in the building here back to
+[03:10] course it next door and the people
+[03:11] across the street and so on so the
+[03:13] voltage is changing all the time as
+[03:16] various loads are switched on and off so
+[03:19] let's have a look at how this actually
+[03:20] works and that will also go back to the
+[03:22] whiteboard in the usual place so in the
+[03:27] kitchen there we saw that as the load
+[03:28] increased the voltage we were getting
+[03:30] decreased and in the case of that one
+[03:33] they actually decreased considerable
+[03:34] amount so
+[03:35] let's just draw at the circuit we have
+[03:37] there so since we've got our main supply
+[03:39] from the electricity company so that's
+[03:41] 230 volts and then of course I have
+[03:44] wires from there I went through to the
+[03:47] kitchen and then in the kitchen we had
+[03:51] the kettle and there's other things and
+[03:54] a kettle is just a heating element which
+[03:55] is essentially a resistor and in the
+[04:00] case of the kettle there it was actually
+[04:01] rated at about 2.3 kilowatts so it's
+[04:05] around 2300 watts it's very typical
+[04:11] rating for an electric kettle so line
+[04:15] here and the neutral here what it does
+[04:18] actually matter of course it's an AC
+[04:19] circuit now it just happens that a 2.3
+[04:23] kilowatt kettle on a 230 volt supply it
+[04:26] works out that the resistance of the
+[04:27] heating element inside the kettle is
+[04:29] actually 23 ohms and the current that
+[04:36] would have been flowing in the circuit
+[04:37] in that instance is just the voltage
+[04:40] divided by the resistance so 230 divided
+[04:43] by 23 so you would have had a cone here
+[04:46] of around 10 m/s so that's what I said
+[04:52] perfectly fine and of course just a
+[04:55] normal resistor there obviously the
+[04:57] current flows through and that heats up
+[04:59] because the question is where is this
+[05:02] voltage reduction occurring because the
+[05:04] answer is that this model of a circuit
+[05:06] is completely wrong and totally useless
+[05:08] because it makes a rather large and
+[05:10] obvious assumption and it assumes that
+[05:12] the wires here and of course returning
+[05:15] here have no resistance at all so fed to
+[05:18] these zero ohms in these wires and of
+[05:20] course this isn't true at all because
+[05:21] the was made of copper copper has some
+[05:24] kind of resistance so although this is
+[05:26] tipping out so it's drawn with the load
+[05:28] here and the voltage there nothing
+[05:30] between completely inaccurate and
+[05:32] doesn't represent the real world at all
+[05:34] so the real situation is of course these
+[05:37] do have some kind of resistance and the
+[05:39] purposes of this example we'll say the
+[05:41] wire here has a resistance of a naught
+[05:43] point 5 ohms and of course the other Y
+[05:47] here's the same length so
+[05:49] I will also have a resistance of noir
+[05:51] point 5 ohms so this changes the
+[05:56] situation considerably because the total
+[05:59] resistance in the circuit now is not 23
+[06:01] anymore
+[06:02] 23 here in the element we've also got
+[06:04] half here and half here so the total is
+[06:06] half half and 23 so the total resistance
+[06:10] is now 24 ohms so we'll just get rid of
+[06:14] all of this here so I've got 24 ohms in
+[06:20] total and if we do the calculation again
+[06:26] it's the current which would flow again
+[06:28] the voltage with supplying at this end
+[06:29] is still the same as 230 volts but we're
+[06:32] now supplying it to a 24 ohm total
+[06:35] resistance in the circuit rather than
+[06:37] just assuming it was only the element at
+[06:39] the end there so 24 ohms and again it's
+[06:42] the same as before so it's 230 divided
+[06:45] by 24 so the current we're now going to
+[06:48] get through there is actually nine point
+[06:52] five eight amps so it's quite a bit less
+[06:56] than the 10 amps that we assumed would
+[06:58] have been flowing in the first instance
+[07:00] now because we know the current flowing
+[07:02] through the circuit is nine point five
+[07:03] eight amps this is a simple circuit so
+[07:05] of course the current flowing all parts
+[07:07] of it will be the same so going to be
+[07:09] nine point five eight amps here and here
+[07:11] and of course through the heating
+[07:12] element as well and we can now work out
+[07:14] while the voltage would be across the
+[07:16] heating element here now so before this
+[07:19] is actually a 23 ohm element and of
+[07:23] course the total of 24 is that plus the
+[07:25] two halves there and to get voltage
+[07:28] we're going to multiply the current here
+[07:29] which is nine point five eight and
+[07:30] multiply it by the various resistances
+[07:33] so for the resistance of the element
+[07:35] here we're actually going to get nine
+[07:37] point five eight times 23 so that will
+[07:40] give us a voltage here across the
+[07:41] element of two hundred and twenty point
+[07:47] four volts and then for the other two
+[07:49] it's the same thing so nine point five
+[07:51] eight multiplied by 0.5 ohms and that
+[07:54] gives us four point eight volts here and
+[07:57] of course it's the same here because
+[07:59] it's the same value so another four
+[08:01] point eight volts
+[08:02] in there and of course these three all
+[08:05] add up to 230 so forward eighty four one
+[08:08] eight and two twenty point four so the
+[08:11] total voltage here is still the same 230
+[08:13] but unlike that theoretical model where
+[08:15] we assume that the wires had zero
+[08:17] resistance the voltage is being divided
+[08:19] amongst the various resistances in the
+[08:21] circuit most of it is still here across
+[08:24] the element of the appliance but of
+[08:26] course a small amount is here on the
+[08:28] actual wires and of course the other
+[08:30] wire up here so the thought is that we
+[08:33] have to getting about a 10 volt reduction in the voltage across the
+[08:35] kettle when it's switched on so starting
+[08:38] with 230 over here in the outlet of 220
+[08:40] or so across the kettle element and this
+[08:45] effect will change primarily depending
+[08:47] on the resistances of the wires that
+[08:50] supply the appliance now 0.5 ohms is
+[08:53] quite small that if you had save a long
+[08:55] cables that went out of 200 meters
+[08:58] Daniel garden to on those sort of
+[08:59] outside sheds or office type things the
+[09:02] resistance in those wires could become
+[09:03] considerably greater than that and you
+[09:06] might find it while the something got down to your garden office if you do
+[09:08] secretary thin cabling you might find
+[09:10] that there was many tens volts that
+[09:12] mysteriously disappeared and of course
+[09:14] that's all due to the higher resistance
+[09:17] of the cables supplying that now an
+[09:20] interesting side effect of this issue
+[09:21] here is that the power of the kettle is
+[09:23] not 2,300 Watts anymore because they've
+[09:26] only got 220 point 4 volts there and it
+[09:30] - turns out in this particular one that
+[09:31] the power being dissipated in the kettle
+[09:33] here is actually only around 2000 110
+[09:38] watts that's quite a bit less than its
+[09:40] intended rating and the result of this
+[09:43] reduced voltage here would just mean the
+[09:44] kettle takes longer to boil and the rest
+[09:48] of the energy that's being displaced in
+[09:49] the wires which will heat up to a small
+[09:52] degree as the current flows through them
+[09:56] now will wires heat up by a little bit
+[09:58] when they're in use that's not normally
+[09:59] a problem and of course it would select
+[10:01] the wires when designing the
+[10:02] installation to minimise that effect but
+[10:05] if these had fairly high resistances and
+[10:07] you tend to put reasonable and have
+[10:08] current through then it's quite so
+[10:10] likely that these would get very hot
+[10:11] possibly causing damage to the
+[10:13] insulation
+[10:15] now when the other appliances in the
+[10:17] kitchen were being switched on they are
+[10:18] all connected to the same circuit so
+[10:21] it's empty what we were doing we're
+[10:22] adding additional resistances here in
+[10:24] parallel so that might save me the
+[10:26] toaster there and of course we have the
+[10:28] oven and there's other things could be
+[10:30] added in and the result of this here is
+[10:32] that you want to actually increase the
+[10:33] current flowing in the circuit and
+[10:35] therefore although these wires are
+[10:37] coarse the same resistance with a
+[10:39] greater current flowing here the voltage
+[10:41] drop will actually increased simply due
+[10:44] to that you're multiplying the
+[10:45] resistance here by the current flowing
+[10:48] through the circuit so of course higher
+[10:50] current means a higher voltage will
+[10:52] appear across the wires and therefore
+[10:54] less across the various loads that you
+[10:56] had installed there now this particular
+[11:00] example here only deals with the
+[11:02] resistances of the wires inside the
+[11:04] building because in the real world this
+[11:06] is not really correct accurate either so
+[11:08] just get rid of all of this and it will
+[11:10] draw that again because there's yet
+[11:12] another effect to consider and if we
+[11:15] draw in our kettle over here that fixed
+[11:18] resistance there who are wires which go
+[11:21] back to our fuse box or whatever and say
+[11:28] 230 volts in there but of course these
+[11:31] do not magically just appear in your
+[11:32] house they of course have many things
+[11:34] before that so prior to this you're
+[11:36] going to have things like your
+[11:37] electricity meter let's draw the in
+[11:40] Isaiah box there and of course prior to
+[11:47] this you're going to have wires which go
+[11:49] back to the electricity supplier and
+[11:51] they're going to go back to some kind of
+[11:52] a transformer which is where the
+[11:54] electricity is originally supplied from
+[11:58] and of course as well as these wires
+[12:00] here having a system snout of 0.5 ohms
+[12:02] or so said they're the wires from the
+[12:06] old meter to your a fuse box or whatever
+[12:08] we'll also have a resistance in there
+[12:10] even the meat itself will have a small
+[12:13] resistance inside and of course the
+[12:15] wires from your actual house to the
+[12:17] transformer that is also have some kind
+[12:20] of resistance in there as well because
+[12:22] that's trillion at both of the
+[12:24] conductors just as it's inside
+[12:26] of the house and when you switch on the
+[12:31] kettle here of course the current is
+[12:32] going to flow through the entire circuit
+[12:34] all the way back to the transformer and
+[12:35] all of these individual resistances are
+[12:38] all add up to ensure the voltage still
+[12:40] reduces here even if you managed to
+[12:41] connect this to write out the terms of
+[12:43] the meter you're still going to see that
+[12:45] reducing effect purely because of the
+[12:47] resistances of the wiring and cabling
+[12:49] from the transformer to your house and
+[12:52] even after all that there's still
+[12:53] another issue to consider and that's
+[12:55] actually the transformer itself which
+[12:58] course cannot supply an unlimited amount
+[13:00] of power and clearly the internal
+[13:03] windings to have some kind of resistance
+[13:04] and that more accurate is going to be
+[13:06] the impedance of the transformer buddy
+[13:08] and that's going to have some effect and
+[13:09] again contribute to the entire system
+[13:12] there so regardless of what you're going
+[13:13] to do there's always going to be some
+[13:15] voltage lost within the cabling and the
+[13:18] wires to your house and twenty switches
+[13:20] on pretty much any load you're going to
+[13:22] find that the voltage here actually
+[13:23] reduces now of course when designing a
+[13:27] circuit and selecting the appropriate
+[13:28] sized cables it's important to take this
+[13:30] into account as there are limits for the
+[13:32] allowed voltage drop within an
+[13:34] installation there's not really that you
+[13:36] can do about the stuff prior to your
+[13:37] house or the consumer unit so pretty
+[13:40] much anything prior to this point is
+[13:41] something that the electricity supply
+[13:43] would have to deal with but certainly
+[13:46] the wires within the circuit should be
+[13:48] selected to ensure that the voltage drop
+[13:50] is kept to a minimum and this will be
+[13:52] based on the expected load to be placed
+[13:54] on the circuit and of course the attack
+[13:56] the distance far away so longer cables
+[13:58] of course would have a higher resistance
+[13:59] so if you don't have a low that's a
+[14:01] considerable distance away
+[14:03] it says qualification how to use larger
+[14:05] cables than you would normally just to
+[14:07] ensure that the voltage drop is kept to
+[14:09] a minimum now the two percentages which
+[14:12] are actually allowed for voltage drop
+[14:14] within the installation and the first
+[14:16] one these is actually five percent and
+[14:21] that's pretty much for all circuits
+[14:23] except for lighting circuits which are
+[14:27] actually three percent
+[14:34] so lighting and pretty much everything
+[14:39] else and lighting had a low percentage
+[14:41] simply the fact that if there's a
+[14:42] reduction the voltage on the lighting
+[14:44] circuit is gener going to be a lot more
+[14:46] noticeable because things like lights
+[14:47] might go dim or start flickering
+[14:48] whatever in the case it's an electric
+[14:51] kettle the only side effect is that the
+[14:53] kettle would take slightly longer to
+[14:54] boil being with only 5% that's not going
+[14:56] to be really noticeable so not such a
+[14:58] big deal that certainly lights it's very
+[15:00] apparent if voltage drops by even say
+[15:03] just a few volts now let's look at
+[15:06] voltage drop and essentially it's just
+[15:08] the resistance of the wires or the
+[15:10] conductors which contribute to the total
+[15:12] resistance on the circuit and of course
+[15:15] those models which show just wires and
+[15:16] then a load at the end are no nonsense
+[15:18] because all wires have some kind of
+[15:20] resistance general it's quite small in
+[15:22] the order of less than one ohm but
+[15:23] certainly it's definitely there and it
+[15:26] does make a considerable difference in
+[15:27] many cases now you can calculate the
+[15:29] voltage drop like that for any circuit
+[15:31] but in other cases generally have to do
+[15:33] this and if you've got a copy of the
+[15:35] on-site guide the yellow book at the
+[15:37] moment then had inside whole list of
+[15:40] alternative source standard circuits
+[15:43] sort of thing you might find in a
+[15:44] typical house or small commercial
+[15:46] premises and it actually has the maximum
+[15:48] links which are permitted for their
+[15:51] circuits and in virtually every case the
+[15:54] maximum length is limited simply by the
+[15:56] voltage drop not exceeding the five
+[15:59] percent or the three percent so in most
+[16:02] cases you can't immediately look up the
+[16:04] maximum length permitted and of course
+[16:06] in the tour that's not exceeded and if
+[16:07] it's going to be exceeded then you need
+[16:09] to make the cabling larger to reduce the
+[16:11] resistance of the conductor's Nicosia
+[16:13] can still calculate it manually if you
+[16:15] thought it was necessary and the - a
+[16:17] section in the back of this same book
+[16:19] which has details of that as well now
+[16:23] the demonstration we show there did show
+[16:25] the main tortillas going well below the
+[16:27] legal limit of 216 and the effect of V
+[16:31] of all struck there were significantly
+[16:32] greater than they would normally be a
+[16:33] normal house and this if it goes that
+[16:35] particular house and in fact most of the
+[16:37] ones in that street sold it to a fault
+[16:40] at the moment where the cabling outside
+[16:42] in the road is I
+[16:43] defective or damaged or something and
+[16:45] the voltage there does go all over the
+[16:47] place quite often and certain times of
+[16:50] the day mostly in the early evening it
+[16:52] actually drops well below 200
+[16:54] LFL has been reported in the road and it
+[16:57] we dug up in the fairly near future but
+[16:59] use that particular building as it was a
+[17:01] good demonstration of the effect that's
+[17:03] certainly no normal house you shouldn't
+[17:05] be seeing anything like that when you
+[17:07] switch on the kettle so that's all for
+[17:10] this time and the calculations on there
+[17:12] for the resistance and amps and so on I
+[17:15] will do another video on those
+[17:16] separately so if that didn't mean a
+[17:18] great deal to there with the different
+[17:20] calculations then that will cover that
+[17:21] at a later time but until then thanks
+[17:25] for watching

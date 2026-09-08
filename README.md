@@ -96,12 +96,12 @@ September 2026 verified coverage:
 - 246 unique videos, 16 modules and complete lesson-guide/assessment coverage
 - All 239 original lesson and flashcard identities preserved
 - Seven new videos checked against publicly indexed creator captions and metadata
-- 1,580 flashcards
-- 1,580 quiz questions
+- 1,746 flashcards
+- 1,500 quiz questions
 - 0 generic title-based recall prompts
 - 0 overlong flashcard questions or answers
 
-The transcript archive is maintained outside this repository. The historical archive was unavailable in the September review checkout; this review does not claim a fresh full-course transcript audit. Run `node scripts/audit-transcript-assessments.mjs --new-only` to explicitly audit the seven new caption records. The default command remains strict and requires all 246 archived records. Vocabulary overlap is an evidence-coverage check, not proof of technical accuracy. Original guides and the current author/manufacturer references are reviewed separately; copied captions are not published by the site.
+The transcript archive is bundled in `course-transcripts/`, so a normal clone includes the source evidence used by the course audit. It contains transcript text for 245 videos and an explicit `no_captions` manifest record for the one video without public captions. The default audit checks all 246 course records; `node scripts/audit-transcript-assessments.mjs --new-only` checks only the seven added gap lessons. Vocabulary overlap is an evidence-coverage check, not proof of technical accuracy. Original guides and the current author/manufacturer references are reviewed separately; copied captions are not published by the site.
 
 ## Safety and standards
 
@@ -114,6 +114,7 @@ This is an educational course, not an electrical licence or authorisation to und
 - `app/course-extension-data.ts` — combines and validates extension modules.
 - `app/course-curriculum.ts` — canonical ordering, module descriptions and totals used by the website and audits.
 - `app/course-gap-data.ts` — seven accepted video additions and original guides.
+- `course-transcripts/` — bundled transcript archive and the complete 246-video source manifest.
 - `app/lesson-connections-data.ts` — concise calculation and concept explanations with primary sources.
 - `app/lesson-connection.tsx` — optional explanations and interactive learning exercises.
 - `scripts/test-curriculum.mjs` — progress-identity, prerequisite, assessment and exercise checks.

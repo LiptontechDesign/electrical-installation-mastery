@@ -1,0 +1,253 @@
+# Automatic transfer switch (ATS) fundamentals | Eaton PSEC
+# https://www.youtube.com/watch?v=yjphp4SBkSA
+
+Our modern world relies on one thing more than any other, uninterrupted power. Power to run hospitals. Power to deliver clean drinking water to our homes. Power to operate 911 call centers and power to distribute electronic data, the lifeblood of our digital age. These critical needs and many more, depend on continuous power that is typically provided by a public utility. And when an emergency arises, power is supplied by a standby source, such as a backup generator. Making the switch over from utility power to standby power is the job of a transfer switch. Transfer switches come in different sizes based on their electrical ratings. Low amperage designs are relatively small and suited for mounting to a wall or other vertical surface. Higher amperage ratings require a larger enclosure, oftentimes mounted to a concrete pad that can accommodate copper buss and a greater number of cables connecting the power sources and electrical load. All power consumed by the circuit connected to the transfer switch output is defined as the electrical load, or more simply, the load. Common examples are lights, computers, heating and cooling systems, and elevators. Transfer switch operation can be automatic, non-automatic or manual. An automatic transfer switch, or ATS, is an intelligent electrically operated device that is self-acting. It is equipped with microprocessor control logic that constantly monitors the voltage and frequency of normal and alternate power sources. Upon detecting a failure of the normal power source an ATS will automatically transfer the load to the alternate power source. In some cases, transferring the load to the alternate source is postponed for a few seconds until voltage and frequency fall within a prescribed range. This is common for diesel generators that must start and reach rated speed. As a general rule, an ATS will automatically retransfer the load back to the normal power source once it is restored. A non-automatic transfer switch is an electrically operated device that is not self-acting and requires a human operator to initiate a load transfer. This can be accomplished using a push button or selector switch. A manual transfer switch is a manually operated device that is not self-acting and requires a human operator to initiate and execute a load transfer. An example of manual operation is cranking a handle. The portion of the transfer switch that is physically responsible for carrying the rated electrical current, and shifting the load connection between power sources is the switching mechanism. There are two types of switching mechanism technologies for an electromechanical transfer switch, contactor and circuit breaker. This does not apply to static transfer switches. The contactor type is a single device comprised of two sets of main contacts that will remain open or closed until commanded to change state. A main contact can be thought of as a light switch in a home. Flipping the switch on closes the contact and provides power to the light. Flipping it off opens the contact and removes power. An advantage of the contactor type is its commonality in single housing design. Disadvantages are it should not be operated manually under load and does not provide overcurrent protection. Overcurrent protection is a safety mechanism that protects the load from experiencing an abnormal condition, such as a short circuit that can be dangerous. The circuit breaker type is comprised of two circuit breakers, each with a set of main contacts that must be commanded to open and close, but can self open to protect the circuit when equipped with a trip response. Advantages of this type are built in overcurrent protection, use in selective coordination applications, and in some cases, the ability to be mounted in a cassette for easy replacement. Circuit breakers that do not include a trip response behave more like a contactor. The traditional transfer switch system configuration or arrangement includes an electric utility service and a diesel engine generator that serve as normal and alternate power sources. The normal source is the one the load is connected to during normal conditions. The alternate source serves as the backup or emergency power source. This system arrangement is often referred to as a standby generator system, where a single generator or multiple generator sets operating in parallel serve as the alternate source. Critical facilities with the standby generator system will sometimes include provisions for a second or temporary generator to serve as a redundant backup that can be used during periods of inclement weather, or when scheduled maintenance is being performed on the first or permanent generator. A second system arrangement employs two utility sources. The two sources can be independent of each other, which requires the public utility to provide dual electric services, or they can originate from a single electric service that is distributed through redundant paths within a facility. When a single electric service exists, this can be altered to added standby generator source. The generator can be dedicated for use by a single transfer switch or shared among multiple transfer switches, governed by a priority control scheme. Transfer switches at times are applied between two generator sets for prime power use, often at remote installations. In such cases, one generator is required to run continuously for extended periods of time. To equally share run time source power is periodically alternated between the generator sets. While all the arrangement types discussed have been shown to use utility and generator sources, consulting engineers are increasingly incorporating nontraditional power sources such as solar arrays, wind turbines, battery storage units, and fuel cells into power distribution system design. Transfer switches shift the load connection between the normal and alternate power sources in two basic ways. Open or closed transition. An open transition is a break-before-make transfer, that is, the transfer switch breaks the load connection to one power source before making a connection to the other power source. This is accomplished by opening a first set of main contacts before closing a second set. There are two open transition subtypes, delayed and in-phase. An open delayed transition pauses between opening one set of main contacts and closing the other set of main contacts. The delay period lasts a preset amount of time, typically a few seconds, that is fixed or adjustable. Alternatively, the delay period can be based on the amount of time it takes the voltage, measured at the load, to decay below an adjustable threshold. For example, a threshold set at 20% of nominal voltage equates to 96V for a 480 volt system. Introducing a time delay into the transition sequence can prevent a high level of instantaneous current from developing. When an inductive load is reconnected to a non-synchronized power source. This can occur when a residual voltage is briefly maintained at the load due to the generator effect created by a rotating motor, or by the stored energy released from a transformer winding. An advantage of an open transition is the transfer can be initiated automatically or manually, and does not require the two power sources to be electrically synchronized. Disadvantages, the load will experience a brief interruption in power during the delay period, unless there is a stored energy system, such as an uninterruptible power supply or UPS located downstream of the transfer switch. With the UPS, critical electronic loads that are sensitive to short power disturbances can be protected during the transition. An open in phase transition uses solid state control logic to rapidly execute an open transition at the precise moment. It expects the normal and alternate power sources to be synchronized in phase voltage and frequency. If synchronization does not occur within a predefined time span, some transfer switches will default automatically to a delay transition as a failsafe. An advantage of an open in-phase transition is a rapid transfer that minimizes power interruption to the load. The disadvantage is a transfer cannot be manually initiated because synchronization is needed. A closed transition is a make-before-break transfer, and that the transfer switch momentarily makes or closes both sets of main contacts prior to breaking or opening one set. ATS’s configured for close transition initiate a transfer when both power sources are closely synchronized in phase, voltage, and frequency. Since this transition type briefly overlaps closure of the main contacts, the load receives continuous power throughout the transfer process. The overlap period when both sources are simultaneously connected to the load or paralleled, lasts no more than 100 milliseconds. To comply with product safety and local utility interconnect requirements. It's important to note that a closed transition is not possible unless both sources are available. The advantages of this transition type are critical loads can continue to operate without an interruption in power. During a retransfer, loaded generator testing, or in preparation of maintenance. Disadvantages of a closed transition or its cost premium relative to an open transition type, and the need for automatic control logic to anticipate source synchronization and management of the paralleling time limit. For three phase power applications requiring that the neutral conductor be switched, transfer switches can be configured with a fully rated fourth power pole that performs identical to the ABC phase polls. For a single phase or split phase applications, a fully rated third pole can be configured. A switch neutral is commonly used when the power source is feeding a transfer switch on both grounded. In this scenario, both sources are said to be separately derived. Using a switch neutral inhibits ground current from flowing between the power sources via the neutral conductor. This prevents nuisance tripping and or desensitizing the ground fault sensing system. For an in-depth discussion on this topic check out Eaton's white paper entitled 3-pole and 4-pole Transfer Switch Switching Characteristics. Facilities with a single utility service and a single generator will often require inputs to be specifically rated for use at the service entrance to ensure that loads can quickly and safely shift to alternate power if utility power is interrupted. Service entrance, as the name implies, is the point where power supplied by an electric utility enters a facility. Oftentimes, non-critical loads are inhibited or shed from connection to the alternate power source. To avoid overloading the generator, which may be sized to provide backup power to critical loads only. A service entrance rated transfer switch must include integral overcurrent protection and a disconnect means, as required by NFPA 70, the National Electric Code. In some instances, it must also include ground fault protection and or a means to reduce arc energy for increased work or safety. Automatic transfer switches require regular inspection, maintenance and test to ensure their continued reliability, especially in mission critical systems. A common way to facilitate these activities is to utilize an ATS fitted with a bypass switch, and when combined in a single assembly, this is referred to as a bypass isolation ATS. The purpose of the bypass switch is to reroute the flow of current through a redundant path so the ATS can be isolated from the electrical circuit without interrupting power to load. The bypass switch can be automatic, which rapidly restores power without human intervention, or it can be manual, which requires constant monitoring and supervision by a qualified person when the ATS is isolated for service or test. The industry product safety standard governing low-voltage transfer switch equipment is UL 1008, to ensure a minimum level of reliability. The standard requires that all transfer switches listed to apply the UL 1008 mark meet rigorous construction criteria and performance testing, regardless of the design type. The battery of performance tests conducted include under voltage, overvoltage overload, dielectric temperature rise, endurance, and withstand closing current, which emulates a short circuit condition. Not all transfer equipment in the marketplace is listed to UL 1008. Transfer schemes are commonly found in switchgear and switch board assemblies utilizing circuit breaker pairs, but it's important to understand that if the transfer equipment does not bear the UL 1008 listed mark, it has not been evaluated and tested to the standard. When applying a transfer switch for use in a power distribution system consideration must be given to its withstand closing current rating or WCR to ensure system integrity and reliability. The UL 1008 standard permits transfer switches to be marked with one or more short circuit and or short time WCRs that are specific to an overcurrent protection device type or model. Examples of overcurrent protection devices are circuit breakers and fuses. Transfer switches with multiple WCR ratings provide greater application flexibility. The WCR represents a transfer switches capability to ride out a fault condition until the overcurrent protective device that is internal to the transfer switch assembly or is located externally upstream, opens and clears the fault. The WCR applicable up to a maximum voltage, is given in thousands of amps and must be equal to or greater than the available fault current calculated at the location of the transfer switch in the electrical circuit. The available fault current is the maximum amount of current provided by the system that will flow through the transfer switch if the load terminals are shorted by a metallic conductor, otherwise known as a bolted fault. In some instances, a WCR will be qualified by a maximum time duration. Understanding the different withstand close and current ratings for a transfer switch and how to apply them is important because many of the system types outlined in article 700 of the National Electric Code require a transfer switch to be field marked with its short circuit current rating. For a more comprehensive discussion of WCR ratings, I invite you to watch Eaton's short two minute video entitled Short Circuit WCRs. To learn more about automatic transfer switches. Please visit Eaton.com/ATS or to interact with them and see them in operation, contact us or your local Eaton representative to schedule a visit to one of Eaton's Power Systems Experience Centers today.
+
+
+[00:17] Our modern world relies on one thing more than any other,
+[00:20] uninterrupted power.
+[00:21] Power to run hospitals.
+[00:23] Power to deliver clean drinking water to our homes.
+[00:26] Power to operate 911 call centers
+[00:28] and power to distribute electronic data, the lifeblood of our digital age.
+[00:33] These critical needs and many more, depend on continuous power
+[00:36] that is typically provided by a public utility.
+[00:39] And when an emergency arises, power is supplied
+[00:42] by a standby source, such as a backup generator.
+[00:45] Making the switch over from utility power
+[00:47] to standby power is the job of a transfer switch.
+[00:50] Transfer switches come in different sizes based on their electrical ratings.
+[00:54] Low amperage designs are relatively small and suited
+[00:57] for mounting to a wall or other vertical surface.
+[01:00] Higher amperage ratings require a larger enclosure, oftentimes
+[01:04] mounted to a concrete pad that can accommodate copper buss
+[01:07] and a greater number of cables connecting the power sources and electrical load.
+[01:11] All power consumed by the circuit connected to the transfer switch output
+[01:15] is defined as the electrical load, or more simply, the load.
+[01:19] Common examples are lights, computers, heating and cooling systems, and elevators.
+[01:25] Transfer switch operation can be automatic, non-automatic or manual.
+[01:29] An automatic transfer switch, or ATS,
+[01:31] is an intelligent electrically operated device that is self-acting.
+[01:35] It is equipped with microprocessor control logic that constantly monitors
+[01:38] the voltage and frequency of normal and alternate power sources.
+[01:43] Upon detecting a failure of the normal power source
+[01:46] an ATS will automatically transfer the load to the alternate power source.
+[01:50] In some cases, transferring the load to the alternate source
+[01:54] is postponed for a few seconds
+[01:56] until voltage and frequency fall within a prescribed range.
+[02:00] This is common for diesel generators that must start and reach rated speed.
+[02:04] As a general rule, an ATS will automatically retransfer
+[02:07] the load back to the normal power source once it is restored.
+[02:11] A non-automatic transfer switch is an electrically operated device
+[02:14] that is not self-acting and requires a human operator to initiate a load transfer.
+[02:20] This can be accomplished using a push button or selector switch.
+[02:23] A manual transfer switch is a manually operated device that is not self-acting
+[02:28] and requires a human operator to initiate and execute a load transfer.
+[02:33] An example of manual operation is cranking a handle.
+[02:37] The portion of the transfer switch
+[02:38] that is physically responsible for carrying the rated electrical current,
+[02:42] and shifting the load connection between power sources is the switching mechanism.
+[02:46] There are two types of switching mechanism technologies
+[02:49] for an electromechanical transfer switch, contactor and circuit breaker.
+[02:53] This does not apply to static transfer switches.
+[02:56] The contactor type is a single device comprised of two sets of main contacts
+[03:00] that will remain open or closed until commanded to change state.
+[03:05] A main contact can be thought of as a light switch in a home.
+[03:08] Flipping the switch on closes the contact and provides power to the light.
+[03:12] Flipping it off opens the contact and removes power.
+[03:16] An advantage of the contactor type is its commonality in single housing design.
+[03:21] Disadvantages are it should not be operated
+[03:24] manually under load and does not provide overcurrent protection.
+[03:28] Overcurrent protection is a safety mechanism
+[03:30] that protects the load from experiencing an abnormal condition,
+[03:34] such as a short circuit that can be dangerous.
+[03:37] The circuit breaker type is comprised of two circuit breakers,
+[03:41] each with a set of main contacts that must be commanded to open and close,
+[03:44] but can self open to protect the circuit when equipped with a trip response.
+[03:49] Advantages of this type are built in overcurrent protection,
+[03:52] use in selective coordination applications,
+[03:55] and in some cases, the ability
+[03:57] to be mounted in a cassette for easy replacement.
+[04:00] Circuit breakers that do not include a trip response behave more like a contactor.
+[04:05] The traditional transfer switch system configuration or arrangement
+[04:09] includes an electric utility service
+[04:11] and a diesel engine generator that serve as normal and alternate power sources.
+[04:16] The normal source is the one the load is connected to during normal conditions.
+[04:21] The alternate source serves as the backup or emergency power source.
+[04:25] This system arrangement is often referred to as a standby generator system,
+[04:30] where a single generator or multiple generator sets
+[04:33] operating in parallel serve as the alternate source.
+[04:36] Critical facilities with the standby generator system will sometimes
+[04:40] include provisions for a second or temporary generator to serve as a redundant backup
+[04:45] that can be used during periods of inclement weather, or when scheduled
+[04:48] maintenance is being performed on the first or permanent generator.
+[04:52] A second system arrangement employs two utility sources.
+[04:56] The two sources can be independent of each other, which requires
+[04:59] the public utility to provide dual electric services,
+[05:02] or they can originate from a single electric service
+[05:05] that is distributed through redundant paths within a facility.
+[05:08] When a single electric service exists, this can be altered to added
+[05:12] standby generator source.
+[05:14] The generator can be dedicated for use by a single transfer switch or shared
+[05:18] among multiple transfer switches, governed by a priority control scheme.
+[05:22] Transfer switches at times are applied between two generator
+[05:24] sets for prime power use, often at remote installations.
+[05:28] In such cases, one generator is required to run continuously
+[05:32] for extended periods of time.
+[05:34] To equally share run time
+[05:36] source power is periodically alternated between the generator sets.
+[05:40] While all the arrangement types discussed have been shown to use utility
+[05:43] and generator sources, consulting engineers are increasingly incorporating
+[05:46] nontraditional power sources such as solar arrays, wind turbines,
+[05:51] battery storage units, and fuel cells into power distribution system design.
+[05:55] Transfer switches shift the load connection between the normal
+[05:58] and alternate power sources in two basic ways.
+[06:01] Open or closed transition.
+[06:03] An open transition is a break-before-make transfer,
+[06:07] that is, the transfer switch breaks the load connection to one power source
+[06:11] before making a connection to the other power source.
+[06:14] This is accomplished by opening a first set of main contacts
+[06:17] before closing a second set.
+[06:19] There are two open transition subtypes, delayed and in-phase.
+[06:23] An open delayed transition pauses between opening one
+[06:26] set of main contacts and closing the other set of main contacts.
+[06:30] The delay period lasts a preset amount of time,
+[06:33] typically a few seconds, that is fixed or adjustable.
+[06:37] Alternatively, the delay period can be based on the amount of time
+[06:40] it takes the voltage, measured at the load, to decay below an adjustable threshold.
+[06:46] For example, a threshold set at 20% of nominal voltage
+[06:50] equates to 96V for a 480 volt system.
+[06:53] Introducing a time delay into the transition
+[06:56] sequence can prevent a high level of instantaneous current from developing.
+[06:59] When an inductive load is reconnected to a non-synchronized power source.
+[07:04] This can occur when a residual voltage is briefly maintained
+[07:08] at the load due to the generator effect created by a rotating motor,
+[07:12] or by the stored energy released from a transformer winding.
+[07:16] An advantage of an open transition is the transfer can be initiated
+[07:19] automatically or manually, and does not require
+[07:23] the two power sources to be electrically synchronized.
+[07:26] Disadvantages,
+[07:27] the load will experience a brief interruption in power
+[07:30] during the delay period, unless there is a stored energy system,
+[07:34] such as an uninterruptible power supply or UPS
+[07:37] located downstream of the transfer switch.
+[07:40] With the UPS, critical electronic loads that are sensitive
+[07:44] to short power disturbances can be protected during the transition.
+[07:48] An open in phase transition uses solid state control logic
+[07:52] to rapidly execute an open transition at the precise moment.
+[07:56] It expects the normal and alternate power sources to be synchronized
+[07:59] in phase voltage and frequency.
+[08:03] If synchronization does not occur within a predefined time span, some transfer
+[08:08] switches will default automatically to a delay transition as a failsafe.
+[08:12] An advantage of an open in-phase transition
+[08:15] is a rapid transfer that minimizes power interruption to the load.
+[08:19] The disadvantage is a transfer cannot be manually initiated
+[08:23] because synchronization is needed.
+[08:24] A closed transition is a make-before-break transfer,
+[08:28] and that the transfer switch momentarily makes or closes
+[08:31] both sets of main contacts prior to breaking or opening one set.
+[08:35] ATS’s configured for close transition
+[08:38] initiate a transfer when both power sources are closely
+[08:40] synchronized in phase, voltage, and frequency.
+[08:43] Since this transition type briefly overlaps closure of the main contacts,
+[08:48] the load receives continuous power throughout the transfer process.
+[08:52] The overlap period when both sources are simultaneously
+[08:56] connected to the load or paralleled, lasts no more than 100 milliseconds.
+[09:00] To comply with product safety and local utility interconnect requirements.
+[09:05] It's important to note that a closed transition is not possible
+[09:08] unless both sources are available.
+[09:10] The advantages of this transition type are
+[09:12] critical loads can continue to operate without an interruption in power.
+[09:17] During a retransfer, loaded generator testing, or in preparation of maintenance.
+[09:22] Disadvantages of a closed transition or its cost premium relative
+[09:25] to an open transition type, and the need for automatic control logic
+[09:30] to anticipate source synchronization and management of the paralleling time limit.
+[09:34] For three phase power applications requiring that the neutral conductor
+[09:38] be switched,
+[09:39] transfer switches can be configured with a fully rated fourth
+[09:42] power pole that performs identical to the ABC phase polls.
+[09:46] For a single phase or split phase applications,
+[09:49] a fully rated third pole can be configured.
+[09:52] A switch neutral is commonly used when the power source
+[09:54] is feeding a transfer switch on both grounded.
+[09:57] In this scenario, both sources are said to be separately derived.
+[10:02] Using a switch neutral inhibits ground current
+[10:04] from flowing between the power sources via the neutral conductor.
+[10:08] This prevents nuisance tripping
+[10:10] and or desensitizing the ground fault sensing system.
+[10:14] For an in-depth discussion on this topic
+[10:16] check out Eaton's white paper entitled
+[10:18] 3-pole and 4-pole Transfer Switch Switching Characteristics.
+[10:22] Facilities with a single utility service and a single generator will often require
+[10:26] inputs to be specifically rated for use at the service entrance
+[10:30] to ensure that loads can quickly and safely shift
+[10:33] to alternate power if utility power is interrupted.
+[10:37] Service entrance, as the name implies,
+[10:39] is the point where power supplied by an electric utility enters a facility.
+[10:44] Oftentimes, non-critical loads are inhibited
+[10:46] or shed from connection to the alternate power source.
+[10:50] To avoid overloading the generator, which may be sized to provide backup power
+[10:54] to critical loads only.
+[10:55] A service entrance rated transfer switch must include
+[10:58] integral overcurrent protection and a disconnect means, as required
+[11:01] by NFPA 70, the National Electric Code.
+[11:05] In some instances, it must also include ground fault protection
+[11:08] and or a means to reduce arc energy for increased work or safety.
+[11:12] Automatic transfer switches require regular inspection, maintenance and test
+[11:16] to ensure their continued reliability, especially in mission critical systems.
+[11:21] A common way to facilitate these activities is to utilize an ATS
+[11:25] fitted with a bypass switch, and when combined in a single assembly,
+[11:29] this is referred to as a bypass isolation ATS.
+[11:33] The purpose of the bypass switch is to reroute the flow of current
+[11:36] through a redundant path so the ATS can be isolated
+[11:39] from the electrical circuit without interrupting power to load.
+[11:44] The bypass switch can be automatic,
+[11:45] which rapidly restores power without human intervention,
+[11:49] or it can be manual, which requires constant monitoring and supervision
+[11:54] by a qualified person when the ATS is isolated for service or test.
+[11:58] The industry product safety standard governing low-voltage transfer
+[12:01] switch equipment is UL 1008, to ensure a minimum level of reliability.
+[12:06] The standard requires that all transfer switches
+[12:09] listed to apply the UL 1008 mark
+[12:12] meet rigorous construction criteria and performance testing,
+[12:15] regardless of the design type. The battery of performance tests
+[12:19] conducted include under voltage, overvoltage
+[12:23] overload, dielectric temperature rise, endurance,
+[12:28] and withstand closing current, which emulates a short circuit condition.
+[12:32] Not all transfer equipment in the marketplace is listed to UL 1008.
+[12:36] Transfer schemes are commonly found in switchgear and switch board assemblies
+[12:40] utilizing circuit breaker pairs, but it's important to understand
+[12:43] that if the transfer equipment does not bear the UL 1008 listed mark,
+[12:47] it has not been evaluated and tested to the standard.
+[12:51] When applying a transfer switch for use in a power distribution system
+[12:54] consideration must be given to its withstand closing current rating or WCR
+[12:59] to ensure system integrity and reliability.
+[13:03] The UL 1008 standard permits transfer switches to be marked with one
+[13:07] or more short circuit and or short time WCRs
+[13:11] that are specific to an overcurrent protection device type or model.
+[13:15] Examples of overcurrent protection devices are circuit breakers and fuses.
+[13:19] Transfer switches with multiple WCR ratings provide
+[13:23] greater application flexibility.
+[13:25] The WCR represents a transfer switches capability to ride out a fault condition
+[13:29] until the overcurrent protective device that is internal to the transfer switch
+[13:33] assembly or is located externally upstream, opens and clears the fault.
+[13:39] The WCR applicable up to a maximum voltage, is given in thousands of amps
+[13:43] and must be equal to or greater than the available fault current
+[13:47] calculated at the location of the transfer switch in the electrical circuit.
+[13:52] The available fault current is the maximum amount of current
+[13:54] provided by the system that will flow through the transfer switch
+[13:58] if the load terminals are shorted
+[13:59] by a metallic conductor, otherwise known as a bolted fault.
+[14:04] In some instances, a WCR will be qualified by a maximum time duration.
+[14:08] Understanding the different withstand close and current ratings
+[14:11] for a transfer switch and how to apply them is important
+[14:14] because many of the system types
+[14:15] outlined in article 700 of the National Electric Code require a transfer
+[14:20] switch to be field marked with its short circuit current rating.
+[14:24] For a more comprehensive discussion of WCR ratings, I invite you to watch
+[14:28] Eaton's short two minute video entitled Short Circuit WCRs.
+[14:33] To learn more about automatic transfer switches.
+[14:35] Please visit Eaton.com/ATS
+[14:38] or to interact with them and see them in operation,
+[14:41] contact us or your local Eaton representative
+[14:44] to schedule a visit to one of Eaton's Power Systems Experience Centers today.

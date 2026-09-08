@@ -1,0 +1,63 @@
+# What's the difference between an RCD and an RCBO? - Circuit protection.
+# https://www.youtube.com/watch?v=eWaNJ-VD5m0
+
+in this electricians q&A video we're going to answer the question what's the difference between an rcd and an rcbo so let's make sure first of all that we make really clear what we're discussing here rcd stands for residual current device and is not any one single device but rather it refers to a family of devices including the rccb and the rcbo as well as some others but these are the two that we're going to focus on here rccb stands for residual current circuit breaker and rcbo stands for residual current breaker with over current so a better question would probably be what's the difference between an rccb and an rcbo now we'll answer that in a moment but if you're interested in circuit protection and the role that an rcd can play in that then please check out the free accredited cpd module we've made in association with bg lucico you can access it by clicking the link in the description below it's completely free and you can access it at any time that suits you and upon successful completion you'll receive a certificate and be able to count it towards your annual cpd requirement but back to our question the difference between an rccb and an rcbo well first of all let's think about how an rcd works we've got a diagram here of an rcd which is the basic device that we've mostly been installing for years and years inside the rcd the line conductor wraps around this toroidal or ring-shaped piece of soft iron it then goes off and feeds the load the neutral from the load then returns and wraps around the other side of the toroidal core and returns to the source of supply now at the same time wrapped around the core there's this third coil that feeds a tripping device that connects to the switching contacts in the line and neutral connections now when the circuit is healthy the current passes through the line and the same amount of current comes back down the neutral again as the current passes through the coil around the core it generates a magnetic field around the coil but because the same amount of current is passing through the neutral coil at the bottom a magnetic field is created around this coil that is equal but has an opposite direction to the magnetic field around the line conductor now the upshot of this is that the two fields effectively cancel each other out but if an earth fault occurs and the current flowing back through the neutral is slightly smaller this makes the neutral magnetic field slightly weaker than the one around the line conductor so now this slightly stronger magnetic field is able to generate a small amount of current into the tripping coil using the exact same principles that you'll find in the operation of say a transformer if the difference in current in the line in neutral is big enough the current generated in the tripping coil will be enough to trigger the tripping device and disconnect the circuit but let me ask you this now if a short circuit was to take place so if the line in neutral conductors were to touch each other would the rcd trip well a huge amount of current would flow down the line conductor across the short and back down the neutral again but the key point is that that current would be of the same magnitude in the line and in the neutral conductor therefore the strength of the magnetic fields the current creates in the core would be equal and no current would be induced into the tripping coil and the rcd would not trip at all it simply isn't designed to operate under this kind of circumstance and that is essentially what an rccb manufactured to meet the requirements of bsn61008 is doing it has no facility to detect an overcurrent from a short circuit or an overloaded circuit however if we add one to our bscn number we get bsen 61.009 and that is the standard that an rcbo is manufactured to remember what the o stands for over current so this clever little device monitors for earth faults as we outlined earlier but it also contains the components for detecting an overload caused by connecting too many loads to a circuit and also when large currents flow due to a short circuit so to summarize an rccb is most likely to conform to bsn61008 and will protect against earth faults such as when a line and cpc come into contact with each other or someone gets a shock to earth it has no overcurrent protection which is why you usually see them as the rcd protection in a split load board used in conjunction with mcbs to give the over current protection an rcbo is most likely to conform with bsn6109 and offers protection against earth faults shocks to earth overload and short circuit protection so there we go that is the fundamental difference between an rccb and an rcbo explained but what specific regulations pertain to the use of rcds in an installation is there any way we can remove rcd protection from circuits and stay compliant with bs7671 and what's with these rcd types a and ac well you'll find the answers to these questions and more in our accredited cpd module on this subject where we take a look at circuit protection as a whole under the 18th edition of the regs including why meter tails shouldn't be over three meters long again click the link below to view the cpd module and receive your completion certificate all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this electricians q&A video we're going to answer the question what's the difference between an rcd
+[00:05] and an rcbo
+[00:11] so let's make sure first of all that we make really clear what we're discussing here
+[00:16] rcd stands for residual current device and is not any one single device but rather it refers
+[00:22] to a family of devices including the rccb and the rcbo as well as some others but these are the two
+[00:29] that we're going to focus on here rccb stands for residual current circuit breaker and rcbo stands
+[00:35] for residual current breaker with over current so a better question would probably be what's the
+[00:40] difference between an rccb and an rcbo now we'll answer that in a moment but if you're interested
+[00:46] in circuit protection and the role that an rcd can play in that then please check out the free
+[00:50] accredited cpd module we've made in association with bg lucico you can access it by clicking the
+[00:56] link in the description below it's completely free and you can access it at any time that suits you
+[01:01] and upon successful completion you'll receive a certificate and be able to count it towards
+[01:05] your annual cpd requirement but back to our question the difference between an rccb
+[01:12] and an rcbo well first of all let's think about how an rcd works we've got a diagram here of an
+[01:17] rcd which is the basic device that we've mostly been installing for years and years
+[01:22] inside the rcd the line conductor wraps around this toroidal or ring-shaped piece of soft iron
+[01:27] it then goes off and feeds the load the neutral from the load then returns and wraps around the
+[01:32] other side of the toroidal core and returns to the source of supply now at the same time wrapped
+[01:38] around the core there's this third coil that feeds a tripping device that connects to the switching
+[01:42] contacts in the line and neutral connections now when the circuit is healthy the current
+[01:48] passes through the line and the same amount of current comes back down the neutral again as the
+[01:53] current passes through the coil around the core it generates a magnetic field around the coil
+[01:58] but because the same amount of current is passing through the neutral coil at the bottom
+[02:03] a magnetic field is created around this coil that is equal but has an opposite direction to the
+[02:09] magnetic field around the line conductor now the upshot of this is that the two fields effectively
+[02:15] cancel each other out but if an earth fault occurs and the current flowing back through the
+[02:20] neutral is slightly smaller this makes the neutral magnetic field slightly weaker than the one around
+[02:26] the line conductor so now this slightly stronger magnetic field is able to generate a small amount
+[02:32] of current into the tripping coil using the exact same principles that you'll find in the
+[02:37] operation of say a transformer if the difference in current in the line in neutral is big enough
+[02:43] the current generated in the tripping coil will be enough to trigger the tripping device
+[02:47] and disconnect the circuit but let me ask you this now if a short circuit was to take place
+[02:54] so if the line in neutral conductors were to touch each other would the rcd trip
+[02:59] well a huge amount of current would flow down the line conductor across the short and back
+[03:03] down the neutral again but the key point is that that current would be of the same magnitude in
+[03:08] the line and in the neutral conductor therefore the strength of the magnetic fields the current
+[03:12] creates in the core would be equal and no current would be induced into the tripping coil and the
+[03:18] rcd would not trip at all it simply isn't designed to operate under this kind of circumstance and
+[03:24] that is essentially what an rccb manufactured to meet the requirements of bsn61008 is doing it has
+[03:31] no facility to detect an overcurrent from a short circuit or an overloaded circuit however if we add
+[03:37] one to our bscn number we get bsen 61.009 and that is the standard that an rcbo is manufactured to
+[03:43] remember what the o stands for over current so this clever little device monitors for earth
+[03:48] faults as we outlined earlier but it also contains the components for detecting an overload caused by
+[03:53] connecting too many loads to a circuit and also when large currents flow due to a short circuit
+[03:59] so to summarize an rccb is most likely to conform to bsn61008 and will protect against earth faults
+[04:05] such as when a line and cpc come into contact with each other or someone gets a shock to earth
+[04:10] it has no overcurrent protection which is why you usually see them as the rcd protection in a split
+[04:15] load board used in conjunction with mcbs to give the over current protection an rcbo is most likely
+[04:21] to conform with bsn6109 and offers protection against earth faults shocks to earth overload
+[04:27] and short circuit protection so there we go that is the fundamental difference between an rccb and
+[04:32] an rcbo explained but what specific regulations pertain to the use of rcds in an installation
+[04:39] is there any way we can remove rcd protection from circuits and stay compliant with bs7671 and
+[04:45] what's with these rcd types a and ac well you'll find the answers to these questions and more in
+[04:50] our accredited cpd module on this subject where we take a look at circuit protection as a whole
+[04:55] under the 18th edition of the regs including why meter tails shouldn't be over three meters long
+[05:00] again click the link below to view the cpd module and receive your completion certificate
+[05:05] all that remains in this video is to say thank you very much for watching

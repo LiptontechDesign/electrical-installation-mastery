@@ -1,0 +1,346 @@
+# How Electric Motors Work - 3 phase AC induction motors ac motor
+# https://www.youtube.com/watch?v=59HBoIXzX_c
+
+this is an electrical motor is one of the most important devices ever to be invented these motors are used everywhere from pumping the water we drink to powering elevators and cranes even cooling nuclear power stations so we are going to look inside one and learn in detail exactly how they work in this video which is sponsored by the Great Courses plus visit the link in the video description to start a free trial and get access to some truly great online courses the induction motor will look something like this they turn electrical energy into mechanical energy which we can use to drive pumps fans compressors gears pulley Etc almost all the parts are held inside the main housing at the front we find the shaft this is the part that rotates and we can connect things like pumps gears and pulley to this to do work for us at the back we find the fan and a protective cover the fan is connected to the shaft and so it rotates whenever the motor operates that's because the induction motor can produce a lot of heat when in operation so the fan blows ambient air over the casing to cool it down if the induction motor became too hot the insulation of the internal electrical coils will melt this will cause a short circuit and the motor will destroy itself the fins on the side of the enclosure help to increase the surface area and that lets us remove more unwanted heat the shaft is supported by some bearings which sit inside the front as well as the rear Shields the bearings help the shaft rotate smoothly and also hold it in position inside the housing we find the stator the stator is stationary and does not rotate this consists of a number of copper wires which are wrapped into coils between the slots positioned around the inner perimeter the copper wires are coated with a special enamel which electrically insulates the wires from each other this means electricity has to flow through the entire coil otherwise it would take the shortest path possible and we'll see why that's important a little later in this video now this is a three-phase induction motor so we have three separated sets of coils in the stator the ends of each set will connect with the terminals within the electrical terminal box we will also see how these are connected a little later in this video when connected to the electrical supply the STA generates a rotating electromagnetic field connected to the shaft is the rotor in this case it's a squirrel cage type rotor it's called a squirrel cage because it has two end Rings which are connected by some bars and these will all rotate together this design is similar to a small cage or an exercise wheel used by a pet hamster or even a squirrel the squirrel cage is fitted with a number of laminated steel sheets these sheets will help concentrate the magnetic field into the bars sheets are used instead of a solid piece of metal as this improves the efficiency by reducing the size of the Eddy currents in the rotor when the rotor is placed inside the stator and the stator is connected to an electrical power supply the rotor will begin to rotate so how does this work when electricity passes through a wire an electromagnetic field is generated around the wire we can see this by placing some compasses around the wire the comp compes will rotate to align with this magnetic field if the direction of current is reversed the magnetic field also reverses and so the compasses will change direction the magnetic field of the wire is pulling and pushing the compass dials just like if we slide two bar magnets towards each other they will either be attracted or repelled we can even use one magnet to rotate another or we could also rotate the magnet by changing the intensity of the magnetic field around it if we place a wire in a magnetic field and pass a current through it the magnetic field of the wire will interact with the permanent magnet's magnetic field and the wire will therefore experience a force this force will move the wire either upwards or downwards depending on the direction of current and the polarity of the magnetic fields if we wrap the wi into a coil the electromagnetic field becomes stronger the coil will produce a North and South Pole just like a permanent magnet we call these coils of wire an inductor when we pass an alternating current Through the Wire the electrons will be constantly changing direction between flowing forwards and backwards so the magnetic field will also expand and collapse and the polarity reverses each time when we place another separated coil in close proximity and complete the circuit the electromagnetic field will induce a current in the second coil we can connect two coils together and place them opposite each other to create a larger magnetic field if we placed a closed loop of wire inside this large magnetic field we will induce a current in the loop as we know when we pass a current through a wire it generates a magnetic field and we also know the magnetic fields will push or pull each other when they interact so this Loop of wire will also generate a magnetic field and this will interact with the larger magnetic field each side of the coil will experience opposing forces which causes it to rotate this Loop is therefore our rotor and the coils are therefore our sta the rotor will only rotate until it aligns with the STA coils at this point it will likely get stuck as the induced current reverses with the coil to overcome this we need to introduce another set of coils in the stator we must connect these to another phase the electrons flow in this phase at a slightly different time so the electromagnetic field will also therefore change in strength as well as polarity at a slightly different time this will force the rotor to rotate inside the induction motor we have three separated coils which are used to produce a rotational electromagnetic field when we pass an alternating current through each coil the coils will produce an electromagnetic field which changes in intensity as well as polarity as the electrons change direction but if we were to connect each coil to a different phase then the electrons in each coil will change the Direction at a different time this means the polarity and intensity of the magnetic field will also occur at a different time to distribute this magnetic field we need to rotate the coil sets 120° from the previous phase we then combine these into the stator the magnetic field varies in strength and polarity between the coils which combine to produce the effect of a rotating magnetic field we saw earlier in this video that current can be induced into a second coil when in close proximity the bars of the squirrel cage are shorted at each end which therefore creates multiple Loops or coils each bar therefore induces a current and creates a magnetic field the magnetic field of the rotor bars interacts with the magnetic field of the stator the rotor Bar's magnetic field is attracted to the magnetic field of the stator as the magnetic field is rotating the rotor will therefore also rotate in the same direction as the magnetic field to try and align with it but it will never be able to fully catch up the bars of the rotor are often skewed this helps distribute the magnetic field across multiple bars and stops the motor being able to align and jam the stator contains all of the coils are winding used to create the rotating electromagnetic field when electricity is passed through the wires to power the coils we find an electrical terminal box on the top or sometimes on the side inside this box we have six electrical terminals each terminal has a corresponding letter and number we have U1 V1 and W1 then W2 U2 and V2 we have our phase one one coil connected to the two U terminals then the phase 2 coils which are connected to the two V Terminals and lastly the phase 3 coil which is connected to the two w terminals notice that the electrical terminals are arranged in a different configuration on one side to the other we will see why that is in just a moment we now bring in our three-phase power supply and connect these to their respective terminals for the most to run we need to complete the circuit and there are two ways to do this the first way is the Delta configuration for this we connect across the terminals U1 to W2 V1 to U2 and W1 to V2 this will give us our Delta configuration now when we provide AC current through the phases we see that electricity flows from one phase to another as the direction of AC power reverses in each phase at a different time that is why we have the terminals in different Arrangements in the terminal box because we can easily connect across and allow electricity to flow between the phases as the electrons reverse at different times the other way we can connect the terminals is to use the star or Y configuration in this method we connect between W2 U2 and V2 on only one side this will give us our star or Y equivalent connection now when we pass electricity through the phases we see the electrons are shared between the terminals of the phases due to their design differences the amount of current flowing in the star and Delta configuration is very different and we're going to see some calculations for these towards the end of this video but first I want to tell you about the Great Courses plus all of our viewers can get a free trial right now by visiting the Great Courses plus.com sleng engineering mindset the Great Courses plus is an OnDemand learning platform that lets you binge watch lectures and courses they have over 13,000 videos by industry experts on everything from science maths history and even cooking personally my favorite is their engineering lectures and their course on inventions that change the world as a fan of this channel I'm certain you'll also find these interesting too so do check those out they add new content every month and you can watch as many videos as you want from your TV tablet laptop or phone just click the link in the video description down below to start your free trial today let's have a look at the difference between the star and Delta configurations let's say we have the motor connected in Delta with a supply voltage of 400 Vol that means when we use a Multimeter to measure the voltage between any two phases we will get a reading of 400 volts we call this our line toline voltage now if we measure across the two ends of a coil we again see the line toline voltage of 400 volts let's say each coil has a resistance or impedance as this is alternating current of 20 ohms that means we will get a current reading on the coil of 20 amps we can calculate that from 400 Vol divided by 20 ohms which is 20 amps but the current in the line will be different it will be 34.6 amps we get that from 20 amps multiplied by the square < TK of 3 which is 34.6 amps that's because each phase is connected to two coils now if we look at the star or Y configuration we again have a line to line voltage of 400 volt we see that if we measure between any two phases but with the star configuration all our coils are connected together and meet at the star point or neutral point it's from this point that we can run a neutral wire if needed so this time when we measure the voltage across the ends of any coil we get a lower voltage of 230 Vols that's because the phase isn't directly connected to two coils like in the Delta configuration one end of the coil is connected to a phase but the other is connected to a shared point so the voltage is therefore shared the voltage is less as one phase is always in Reverse we can calculate this by 400 volts divided by the square OT of three which is 230 volts as the voltage is less the current will be two if this coil also has an impedance of 20 ohms then 230 volt ided by 20 amps equals 11.5 amps the line current will also therefore be the same at 11.5 amp so we can see from the Delta configuration the coil is exposed to the full 400 volts between two phases but the star configuration is only exposed to 230 volts between the phase and the neutral point so the star uses less voltage and less current compared to the Delta version okay that's it for this video but to continue learning about electrical engineering check out one of the videos on screen now and I'll catch you there for the next lesson don't forget to follow us on Facebook Instagram LinkedIn as well as the engineering mindset.com com
+
+
+[00:00] this is an electrical motor is one of
+[00:03] the most important devices ever to be
+[00:06] invented these motors are used
+[00:09] everywhere from pumping the water we
+[00:11] drink to powering elevators and cranes
+[00:14] even cooling nuclear power stations so
+[00:18] we are going to look inside one and
+[00:20] learn in detail exactly how they work in
+[00:23] this video which is sponsored by the
+[00:25] Great Courses plus visit the link in the
+[00:28] video description to start a free trial
+[00:30] and get access to some truly great
+[00:32] online courses the induction motor will
+[00:35] look something like this they turn
+[00:38] electrical energy into mechanical energy
+[00:41] which we can use to drive pumps fans
+[00:44] compressors gears pulley Etc almost all
+[00:47] the parts are held inside the main
+[00:50] housing at the front we find the shaft
+[00:54] this is the part that rotates and we can
+[00:56] connect things like pumps gears and
+[00:58] pulley to this to do work for us at the
+[01:02] back we find the fan and a protective
+[01:05] cover the fan is connected to the shaft
+[01:08] and so it rotates whenever the motor
+[01:11] operates that's because the induction
+[01:13] motor can produce a lot of heat when in
+[01:16] operation so the fan blows ambient air
+[01:19] over the casing to cool it down if the
+[01:22] induction motor became too hot the
+[01:25] insulation of the internal electrical
+[01:27] coils will melt this will cause a short
+[01:30] circuit and the motor will destroy
+[01:33] itself the fins on the side of the
+[01:35] enclosure help to increase the surface
+[01:37] area and that lets us remove more
+[01:40] unwanted
+[01:41] heat the shaft is supported by some
+[01:44] bearings which sit inside the front as
+[01:47] well as the rear Shields the bearings
+[01:50] help the shaft rotate smoothly and also
+[01:52] hold it in
+[01:54] position inside the housing we find the
+[01:56] stator the stator is stationary and does
+[01:59] not
+[02:00] rotate this consists of a number of
+[02:02] copper wires which are wrapped into
+[02:04] coils between the slots positioned
+[02:07] around the inner perimeter the copper
+[02:09] wires are coated with a special enamel
+[02:12] which electrically insulates the wires
+[02:14] from each other this means electricity
+[02:17] has to flow through the entire coil
+[02:20] otherwise it would take the shortest
+[02:22] path possible and we'll see why that's
+[02:25] important a little later in this video
+[02:28] now this is a three-phase induction
+[02:30] motor so we have three separated sets of
+[02:34] coils in the stator the ends of each set
+[02:38] will connect with the terminals within
+[02:40] the electrical terminal box we will also
+[02:42] see how these are connected a little
+[02:44] later in this video when connected to
+[02:47] the electrical supply the STA generates
+[02:50] a rotating electromagnetic
+[02:53] field connected to the shaft is the
+[02:55] rotor in this case it's a squirrel cage
+[02:59] type rotor
+[03:00] it's called a squirrel cage because it
+[03:02] has two end Rings which are connected by
+[03:05] some bars and these will all rotate
+[03:08] together this design is similar to a
+[03:11] small cage or an exercise wheel used by
+[03:14] a pet hamster or even a squirrel the
+[03:16] squirrel cage is fitted with a number of
+[03:19] laminated steel
+[03:20] sheets these sheets will help
+[03:22] concentrate the magnetic field into the
+[03:25] bars sheets are used instead of a solid
+[03:28] piece of metal as this improves the
+[03:30] efficiency by reducing the size of the
+[03:33] Eddy currents in the rotor when the
+[03:35] rotor is placed inside the stator and
+[03:38] the stator is connected to an electrical
+[03:40] power supply the rotor will begin to
+[03:43] rotate so how does this
+[03:47] work when electricity passes through a
+[03:50] wire an electromagnetic field is
+[03:53] generated around the wire we can see
+[03:56] this by placing some compasses around
+[03:58] the wire the comp compes will rotate to
+[04:01] align with this magnetic
+[04:03] field if the direction of current is
+[04:05] reversed the magnetic field also
+[04:08] reverses and so the compasses will
+[04:10] change
+[04:11] direction the magnetic field of the wire
+[04:14] is pulling and pushing the compass dials
+[04:17] just like if we slide two bar magnets
+[04:19] towards each other they will either be
+[04:21] attracted or
+[04:23] repelled we can even use one magnet to
+[04:26] rotate another or we could also rotate
+[04:29] the magnet by changing the intensity of
+[04:32] the magnetic field around it if we place
+[04:35] a wire in a magnetic field and pass a
+[04:38] current through it the magnetic field of
+[04:41] the wire will interact with the
+[04:43] permanent magnet's magnetic field and
+[04:46] the wire will therefore experience a
+[04:48] force this force will move the wire
+[04:51] either upwards or downwards depending on
+[04:54] the direction of current and the
+[04:56] polarity of the magnetic fields if we
+[04:59] wrap the wi into a coil the
+[05:01] electromagnetic field becomes stronger
+[05:04] the coil will produce a North and South
+[05:06] Pole just like a permanent magnet we
+[05:09] call these coils of wire an inductor
+[05:12] when we pass an alternating current
+[05:14] Through the Wire the electrons will be
+[05:16] constantly changing direction between
+[05:18] flowing forwards and backwards so the
+[05:21] magnetic field will also expand and
+[05:24] collapse and the polarity reverses each
+[05:27] time when we place another separated
+[05:30] coil in close proximity and complete the
+[05:33] circuit the electromagnetic field will
+[05:36] induce a current in the second
+[05:39] coil we can connect two coils together
+[05:43] and place them opposite each other to
+[05:45] create a larger magnetic
+[05:48] field if we placed a closed loop of wire
+[05:51] inside this large magnetic field we will
+[05:54] induce a current in the loop as we know
+[05:58] when we pass a current through a wire it
+[06:00] generates a magnetic field and we also
+[06:03] know the magnetic fields will push or
+[06:06] pull each other when they interact so
+[06:09] this Loop of wire will also generate a
+[06:11] magnetic field and this will interact
+[06:14] with the larger magnetic field each side
+[06:17] of the coil will experience opposing
+[06:19] forces which causes it to rotate this
+[06:22] Loop is therefore our rotor and the
+[06:24] coils are therefore our sta the rotor
+[06:28] will only rotate until it aligns with
+[06:31] the STA coils at this point it will
+[06:34] likely get stuck as the induced current
+[06:36] reverses with the coil to overcome this
+[06:39] we need to introduce another set of
+[06:41] coils in the stator we must connect
+[06:44] these to another phase the electrons
+[06:46] flow in this phase at a slightly
+[06:49] different time so the electromagnetic
+[06:52] field will also therefore change in
+[06:54] strength as well as polarity at a
+[06:57] slightly different time this will force
+[07:00] the rotor to rotate inside the induction
+[07:03] motor we have three separated coils
+[07:06] which are used to produce a rotational
+[07:08] electromagnetic field when we pass an
+[07:11] alternating current through each coil
+[07:13] the coils will produce an
+[07:15] electromagnetic field which changes in
+[07:17] intensity as well as polarity as the
+[07:20] electrons change direction but if we
+[07:23] were to connect each coil to a different
+[07:26] phase then the electrons in each coil
+[07:28] will change the Direction at a different
+[07:31] time this means the polarity and
+[07:33] intensity of the magnetic field will
+[07:36] also occur at a different time to
+[07:39] distribute this magnetic field we need
+[07:41] to rotate the coil sets
+[07:44] 120° from the previous phase we then
+[07:47] combine these into the stator the
+[07:49] magnetic field varies in strength and
+[07:51] polarity between the coils which combine
+[07:54] to produce the effect of a rotating
+[07:57] magnetic field we saw earlier in this
+[08:00] video that current can be induced into a
+[08:03] second coil when in close proximity the
+[08:06] bars of the squirrel cage are shorted at
+[08:08] each end which therefore creates
+[08:10] multiple Loops or coils each bar
+[08:13] therefore induces a current and creates
+[08:16] a magnetic field the magnetic field of
+[08:19] the rotor bars interacts with the
+[08:21] magnetic field of the stator the rotor
+[08:24] Bar's magnetic field is attracted to the
+[08:27] magnetic field of the stator
+[08:30] as the magnetic field is rotating the
+[08:32] rotor will therefore also rotate in the
+[08:36] same direction as the magnetic field to
+[08:38] try and align with it but it will never
+[08:41] be able to fully catch up the bars of
+[08:44] the rotor are often skewed this helps
+[08:47] distribute the magnetic field across
+[08:49] multiple bars and stops the motor being
+[08:52] able to align and
+[08:55] jam the stator contains all of the coils
+[08:58] are winding used to create the rotating
+[09:01] electromagnetic field when electricity
+[09:04] is passed through the wires to power the
+[09:07] coils we find an electrical terminal box
+[09:10] on the top or sometimes on the side
+[09:13] inside this box we have six electrical
+[09:15] terminals each terminal has a
+[09:18] corresponding letter and number we have
+[09:21] U1 V1 and W1 then W2 U2 and
+[09:27] V2 we have our phase one one coil
+[09:30] connected to the two U
+[09:32] terminals then the phase 2 coils which
+[09:35] are connected to the two V Terminals and
+[09:38] lastly the phase 3 coil which is
+[09:40] connected to the two w terminals notice
+[09:44] that the electrical terminals are
+[09:45] arranged in a different configuration on
+[09:48] one side to the other we will see why
+[09:51] that is in just a moment we now bring in
+[09:54] our three-phase power supply and connect
+[09:56] these to their respective terminals for
+[09:59] the most to run we need to complete the
+[10:01] circuit and there are two ways to do
+[10:03] this the first way is the Delta
+[10:07] configuration for this we connect across
+[10:09] the terminals U1 to W2 V1 to U2 and W1
+[10:15] to V2 this will give us our Delta
+[10:19] configuration now when we provide AC
+[10:22] current through the phases we see that
+[10:24] electricity flows from one phase to
+[10:27] another as the direction of AC power
+[10:30] reverses in each phase at a different
+[10:33] time that is why we have the terminals
+[10:36] in different Arrangements in the
+[10:37] terminal box because we can easily
+[10:41] connect across and allow electricity to
+[10:43] flow between the phases as the electrons
+[10:46] reverse at different
+[10:48] times the other way we can connect the
+[10:50] terminals is to use the star or Y
+[10:54] configuration in this method we connect
+[10:57] between W2 U2 and V2 on only one
+[11:02] side this will give us our star or Y
+[11:05] equivalent
+[11:07] connection now when we pass electricity
+[11:10] through the phases we see the electrons
+[11:12] are shared between the terminals of the
+[11:15] phases due to their design differences
+[11:18] the amount of current flowing in the
+[11:20] star and Delta configuration is very
+[11:22] different and we're going to see some
+[11:24] calculations for these towards the end
+[11:27] of this video but first I want to tell
+[11:29] you about the Great Courses plus all of
+[11:32] our viewers can get a free trial right
+[11:34] now by visiting the Great Courses
+[11:37] plus.com sleng engineering mindset the
+[11:40] Great Courses plus is an OnDemand
+[11:42] learning platform that lets you binge
+[11:45] watch lectures and courses they have
+[11:47] over 13,000 videos by industry experts
+[11:51] on everything from science maths history
+[11:54] and even cooking personally my favorite
+[11:57] is their engineering lectures and their
+[11:59] course on inventions that change the
+[12:01] world as a fan of this channel I'm
+[12:03] certain you'll also find these
+[12:05] interesting too so do check those out
+[12:08] they add new content every month and you
+[12:10] can watch as many videos as you want
+[12:12] from your TV tablet laptop or phone just
+[12:16] click the link in the video description
+[12:17] down below to start your free trial
+[12:21] today let's have a look at the
+[12:23] difference between the star and Delta
+[12:27] configurations let's say we have the
+[12:29] motor connected in Delta with a supply
+[12:32] voltage of 400 Vol that means when we
+[12:35] use a Multimeter to measure the voltage
+[12:38] between any two phases we will get a
+[12:40] reading of 400 volts we call this our
+[12:44] line toline voltage now if we measure
+[12:47] across the two ends of a coil we again
+[12:50] see the line toline voltage of 400 volts
+[12:54] let's say each coil has a resistance or
+[12:57] impedance as this is alternating current
+[13:00] of 20 ohms that means we will get a
+[13:03] current reading on the coil of 20 amps
+[13:07] we can calculate that from 400 Vol
+[13:09] divided by 20 ohms which is 20 amps but
+[13:14] the current in the line will be
+[13:15] different it will be 34.6 amps we get
+[13:20] that from 20 amps multiplied by the
+[13:23] square < TK of 3 which is 34.6 amps
+[13:27] that's because each phase is connected
+[13:30] to two
+[13:31] coils now if we look at the star or Y
+[13:35] configuration we again have a line to
+[13:37] line voltage of 400 volt we see that if
+[13:41] we measure between any two phases but
+[13:44] with the star configuration all our
+[13:47] coils are connected together and meet at
+[13:49] the star point or neutral point it's
+[13:53] from this point that we can run a
+[13:54] neutral wire if needed so this time when
+[13:58] we measure the voltage across the ends
+[14:00] of any coil we get a lower voltage of
+[14:04] 230 Vols that's because the phase isn't
+[14:08] directly connected to two coils like in
+[14:10] the Delta
+[14:11] configuration one end of the coil is
+[14:14] connected to a phase but the other is
+[14:16] connected to a shared point so the
+[14:19] voltage is therefore shared the voltage
+[14:22] is less as one phase is always in
+[14:25] Reverse we can calculate this by 400
+[14:28] volts divided by the square OT of three
+[14:31] which is 230 volts as the voltage is
+[14:35] less the current will be two if this
+[14:38] coil also has an impedance of 20 ohms
+[14:41] then 230 volt ided by 20 amps equals
+[14:46] 11.5 amps the line current will also
+[14:49] therefore be the same at 11.5
+[14:53] amp so we can see from the Delta
+[14:56] configuration the coil is exposed to the
+[14:58] full 400 volts between two phases but
+[15:02] the star configuration is only exposed
+[15:04] to 230 volts between the phase and the
+[15:07] neutral point so the star uses less
+[15:10] voltage and less current compared to the
+[15:12] Delta version okay that's it for this
+[15:15] video but to continue learning about
+[15:17] electrical engineering check out one of
+[15:19] the videos on screen now and I'll catch
+[15:21] you there for the next lesson don't
+[15:23] forget to follow us on Facebook
+[15:25] Instagram LinkedIn as well as the
+[15:27] engineering mindset.com com

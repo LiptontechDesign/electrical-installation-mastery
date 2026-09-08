@@ -1,0 +1,319 @@
+# How to Calculate Power in an Electrical Circuit, Where Does the Power Formula Come From?
+# https://www.youtube.com/watch?v=9omx07AKH5Q
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to consider the subject of power we're going to perform a practical experiment to help us figure out what the formula to calculate power is we're going to discuss just how important it is to understand this formula and where it comes from for electricians everywhere and we're also going to look at some typical exam questions that you may get asked during your assessment so we've got our rig all set up ready to go we'll carry out the practical experiment and then we'll see how we can get the formula from that so in our calculation we're going to take some values of voltage current and power and see how they relate to each other but it's important we make the point here that the information about to look out is true for DC Circuit's and also for AC circuits that are purely resistive so that circuits that don't include any inductance or capacitance when we start to put those things into our AC circuits the rules for calculating power change ever so slightly and we'll have a look at how that changes in a future video so first of all let's just have a think about the load that we're going to be connecting we're going to look at a few different loads the first one is a 1 kilowatt heating load so again this is dissipating power in the form of heat and it has a power rating of 1 kilowatt we're now going to measure first of all the voltage that we've got connected up to our load because we need that information so we'll turn our multimeter or clamp meter here to measure voltage and that we're going to connect up across the line and the neutral so we're connecting in parallel across the load this is just a convenient point to access the electricity here and what we'll do is we'll power that up and we'll turn the load on and you can see there that the voltage that we get in is 244 point 3 volts so that's the voltage that we get in there now if I turn this off and disconnect my leads from here and from here and then what we'll do is will power up again set this to measure current and we can see there that the current is 4.2 amp ere's so we've got our information there for our first load one kilowatt and those measurements of voltage and current and what we'll do is we'll have a look at those in a moment on the whiteboard and see how they relate to each other so we'll disconnect this load now we'll turn that off and isolate the power to make sure that no one's going to get hurt and then what we're going to do is we're going to connect up our second load now the second load we've got connected up is a two kilowatt heater so again a purely resistive load and it has a value of 2,000 watts so let's measure the voltage and the current again we'll record those values and then we'll have a look at how they relate to each other in the moment so we'll measure once again across the line and the neutral and that we will power the circuit up and turn the load on and you can see there we get in 242 243 point one volts now that settle down so 243 point one volts is the value that we'll use so we'll just switch that off disconnect it and isolate it so that we can remove our probe safely and then we will set our ammeter to measure current so our meter is now measuring current will power the circuit back up again and we will have a look at this and you can see that the current now flowing is eight point four amps so we've got eight point four amps flowing into this circuit so that's the amount of current that this load is taking again I'll turn that off and more isolate what we're going to do now is have a look at a third load now for our third load we're going to make another little change again we're actually going to look at an extra low-voltage circuit so we're going to measure the voltage and the current that's on the outgoing side of this transformer get some values and see if that makes any difference to our power calculation so again let's plug in here and we will power this circuit up so we'll power it up and turn it on so you can see over here we've got three lamps illuminated and those have a combined power rating of a hundred and fifty watts so each one of those is 50 watts they are have a combined value of 150 watts so that's our power value for this part of the circuit let's again go back and measure the voltage and we're measuring the voltage on the output side of this transformer so we'll see what the voltage is going to be there now even though I'm dealing with extra low-voltage I still like to be safe so I'm just going to turn off the circuit breaker while I connect this up so we'll measure the voltage output on the outgoing side of the transformer here okay so I'll power that up and we'll see what we get and I don't know if you can quite see that there but we are measuring 12.1 volts so we've got twelve point one volts coming out of there so again we'll just disconnect that take our leads off change this so that it sets up to measure current and we will power this up and then measure the amount of current flowing into the circuit here so let's have a look at this we can see here that the current we're measuring is eleven point one amp ere's so we've got some different voltage and current values now so we'll have a little look at how these relate to each other let's head up to the classroom go to the whiteboard and see how those values relate to each other so you can see here we've got the values that we recorded down in a workshop we've got those clearly laid out on the board here here's the values that we recorded for our first heater our second heater and our extra low-voltage lights so looking at the numbers laid out now can you see a relationship between those numbers is anything starting to jump out at you well maybe if we sort of look at the difference between these numbers that might help if you look here we doubled the power for our second heater we went from 1,000 watts up to 2,000 watts and noticed what happened to the current the current went from 4.2 amps to 8.4 amps so we can see that by doubling the power of the heater we actually doubled the current that was flowing to it so there's a clear relationship if we increase the power we increase the current that flows and that's obviously very significant for our electrical design work when we start thinking about designing circuits but let's put this onto a slightly more mathematical footing now if you look at these numbers here we've got a thousand watts two hundred and forty four point three volts and four point two amperes is the relationship between those three numbers well it might not be immediately obvious so let's look at it this way let's say that voltage is about two hundred and fifty volts when you look at it there and the current that we've got there is about four amps so can you see a relationship now is it possible that if we have four amps multiplied by 250 volts that would give us 1,000 watts why yes it would so we can see can't we that there is a relationship between power current and voltage and that leads us to the first of three power formulae now you'll notice I often say formulae is the plural for formula so we're I'm talking about more than one formula I'll say formula technically that's the right way of doing it but I guarantee at some point I will say formulas so please feel free to comment below every time you notice one of those so what we're going to do here is going to have a look at formalizing that relationship so if we say that the power in the circuit the parent circuit P is equal to I the current multiplied by V the voltage so that is our power formula and this is what I often refer to as the basic power formula if you take the current and times it by the voltage you will get the power let's see if that's accurate with our slightly more accurate numbers that we measured from the workshop downstairs so we've got four point two for the current and we're going to times up by two hundred and forty four point three and we'll see what we come out with as an answer so when we do that calculation we find that we get 1026 point zero six watts so let's write that out on here so we've got power is equal to four point two times by two hundred and forty four point three and therefore the power that we've calculated is 1020 6.06 watts so why is it then that we've not come out with exactly a thousand watts well really what that boils down to is the fact that we've probably got some issues with manufacturers tolerances here so this won't be exactly a 1 kilowatt heater it would have been made in a factory mass-produced and there will be tolerances within that manufacturing process so rather than it being exactly a thousand watts we've got 1026 watts as the power being dissipated by that it may also be that we've got slightly more voltage connected to it than the heater was designed to take which would also increase the current flow and therefore cause the power to be a little bit higher but again when you look at this value compared with that value we're within a three percent tolerance so that really is quite reasonable so will we find that our formula works for the rest of the examples that we did well let's have a look at it shall we so first of all we've got here power is equal to current times voltage notice I'm got that habit of always putting my formula down I've written it just there I've written it here again this is the way we start to remember them by writing them down again and again let's do the calculation put the numbers in P is equal to I eight point four times by two hundred and forty three point one and again if you think of this as being eight times 250 which those numbers are very close to of course that's going to come out at two thousand isn't it so let's see what our numbers come out of here I suspect this will be even closer than it was before eight point four times two hundred and forty three point one and we come out with two thousand and forty two point zero four so the power being dissipated by that heater was two thousand forty two point zero four watts so again for similar reasons that we discussed on the previous example the value is slightly higher than what we were expecting it to be but we can see the relationship we can see the importance of this calculation now our final one was an interesting one because of course here we were dealing with a lower voltage a much lower voltage than we looked at in the previous examples so let's see if this relationships holds true we've got 12 point one volts and we've got 11.1 em so let's see if the power is correct for what we calculated there so we're going to put our numbers in we've got P is equal to I times by V which is equal to in eleven point one times by twelve point one and when we do that calculation eleven point one times by twelve point one we come out with a value of one hundred and thirty-four point three one so you can see there that's come out reasonably close to our 150 Watts again with manufacturers tolerances and also the fact that we've got this connected up to a transformer as well causes us some differences but you can see that the principle holds true we're very very close to our value of 150 watts that we were expecting to get so just to expand a little bit on why this formula is so important P equals I times V we're going to head back down to the workshop and have a little look at some more information down there so that we can understand why it is that we need to know this formula not just to be able to pass our exams but also to help us with our very important installation work as well and we'll have a look at that in our next video all that remains now is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're going to consider the subject of
+[00:13] power we're going to perform a practical
+[00:16] experiment to help us figure out what
+[00:18] the formula to calculate power is we're
+[00:20] going to discuss just how important it
+[00:22] is to understand this formula and where
+[00:25] it comes from for electricians
+[00:27] everywhere and we're also going to look
+[00:30] at some typical exam questions that you
+[00:31] may get asked during your assessment so
+[00:34] we've got our rig all set up ready to go
+[00:36] we'll carry out the practical experiment
+[00:37] and then we'll see how we can get the
+[00:39] formula from that so in our calculation
+[00:41] we're going to take some values of
+[00:42] voltage current and power and see how
+[00:45] they relate to each other but it's
+[00:46] important we make the point here that
+[00:47] the information about to look out is
+[00:49] true for DC Circuit's and also for AC
+[00:52] circuits that are purely resistive so
+[00:55] that circuits that don't include any
+[00:56] inductance or capacitance when we start
+[00:59] to put those things into our AC circuits
+[01:01] the rules for calculating power change
+[01:03] ever so slightly and we'll have a look
+[01:05] at how that changes in a future video so
+[01:09] first of all let's just have a think
+[01:11] about the load that we're going to be
+[01:12] connecting we're going to look at a few
+[01:13] different loads the first one is a 1
+[01:15] kilowatt heating load so again this is
+[01:18] dissipating power in the form of heat
+[01:20] and it has a power rating of 1 kilowatt
+[01:23] we're now going to measure first of all
+[01:25] the voltage that we've got connected up
+[01:27] to our load because we need that
+[01:30] information so we'll turn our multimeter
+[01:33] or clamp meter here to measure voltage
+[01:34] and that we're going to connect up
+[01:37] across the line and the neutral so we're
+[01:39] connecting in parallel across the load
+[01:41] this is just a convenient point to
+[01:42] access the electricity here and what
+[01:46] we'll do is we'll power that up and
+[01:47] we'll turn the load on and you can see
+[01:50] there that the voltage that we get in is
+[01:54] 244 point 3 volts so that's the voltage
+[01:57] that we get in there now if I turn this
+[02:01] off and disconnect my leads from here
+[02:05] and from here and then what we'll do is
+[02:07] will power up again set this to measure
+[02:09] current and we can see there
+[02:12] that the current is 4.2 amp ere's so
+[02:19] we've got our information there for our
+[02:20] first load one kilowatt and those
+[02:23] measurements of voltage and current and
+[02:24] what we'll do is we'll have a look at
+[02:26] those in a moment on the whiteboard and
+[02:28] see how they relate to each other so
+[02:31] we'll disconnect this load now we'll
+[02:32] turn that off and isolate the power to
+[02:35] make sure that no one's going to get
+[02:36] hurt and then what we're going to do is
+[02:37] we're going to connect up our second
+[02:39] load
+[02:40] now the second load we've got connected
+[02:42] up is a two kilowatt heater so again a
+[02:44] purely resistive load and it has a value
+[02:46] of 2,000 watts so let's measure the
+[02:49] voltage and the current again we'll
+[02:51] record those values and then we'll have
+[02:52] a look at how they relate to each other
+[02:54] in the moment so we'll measure once
+[02:56] again across the line and the neutral
+[02:58] and that we will power the circuit up
+[03:02] and turn the load on and you can see
+[03:04] there we get in 242 243 point one volts
+[03:10] now that settle down so 243 point one
+[03:14] volts is the value that we'll use so
+[03:17] we'll just switch that off disconnect it
+[03:19] and isolate it so that we can remove our
+[03:21] probe safely and then we will set our
+[03:25] ammeter to measure current so our meter
+[03:28] is now measuring current will power the
+[03:30] circuit back up again and we will have a
+[03:34] look at this and you can see that the
+[03:35] current now flowing is eight point four
+[03:38] amps so we've got eight point four amps
+[03:40] flowing into this circuit so that's the
+[03:43] amount of current that this load is
+[03:44] taking again I'll turn that off and more
+[03:47] isolate what we're going to do now is
+[03:49] have a look at a third load now for our
+[03:53] third load we're going to make another
+[03:54] little change again we're actually going
+[03:56] to look at an extra low-voltage circuit
+[03:58] so we're going to measure the voltage
+[03:59] and the current that's on the outgoing
+[04:01] side of this transformer get some values
+[04:04] and see if that makes any difference to
+[04:05] our power calculation so again let's
+[04:08] plug in here and we will power this
+[04:11] circuit up so we'll power it up and turn
+[04:15] it on so you can see over here we've got
+[04:17] three lamps illuminated and those have a
+[04:20] combined power rating of a hundred and
+[04:23] fifty watts so each one of those is 50
+[04:24] watts
+[04:25] they are have a combined value of 150
+[04:29] watts so that's our power value for this
+[04:31] part of the circuit let's again go back
+[04:34] and measure the voltage and we're
+[04:36] measuring the voltage on the output side
+[04:38] of this transformer so we'll see what
+[04:40] the voltage is going to be there now
+[04:42] even though I'm dealing with extra
+[04:43] low-voltage I still like to be safe so
+[04:45] I'm just going to turn off the circuit
+[04:48] breaker while I connect this up so we'll
+[04:50] measure the voltage output on the
+[04:52] outgoing side of the transformer here
+[04:56] okay so I'll power that up and we'll see
+[04:58] what we get and I don't know if you can
+[05:08] quite see that there but we are
+[05:09] measuring 12.1 volts so we've got twelve
+[05:12] point one volts coming out of there so
+[05:14] again we'll just disconnect that take
+[05:17] our leads off change this so that it
+[05:19] sets up to measure current and we will
+[05:25] power this up and then measure the
+[05:28] amount of current flowing into the
+[05:30] circuit here so let's have a look at
+[05:32] this we can see here that the current
+[05:34] we're measuring is eleven point one amp
+[05:38] ere's so we've got some different
+[05:40] voltage and current values now so we'll
+[05:43] have a little look at how these relate
+[05:45] to each other let's head up to the
+[05:46] classroom go to the whiteboard and see
+[05:48] how those values relate to each other so
+[05:52] you can see here we've got the values
+[05:53] that we recorded down in a workshop
+[05:54] we've got those clearly laid out on the
+[05:56] board here here's the values that we
+[05:58] recorded for our first heater our second
+[06:00] heater and our extra low-voltage lights
+[06:03] so looking at the numbers laid out now
+[06:05] can you see a relationship between those
+[06:07] numbers is anything starting to jump out
+[06:09] at you well maybe if we sort of look at
+[06:11] the difference between these numbers
+[06:13] that might help if you look here we
+[06:15] doubled the power for our second heater
+[06:18] we went from 1,000 watts up to 2,000
+[06:21] watts and noticed what happened to the
+[06:24] current the current went from 4.2 amps
+[06:26] to 8.4 amps so we can see that by
+[06:29] doubling the power of the heater
+[06:32] we actually doubled the current that was
+[06:34] flowing to it so there's a clear
+[06:36] relationship if we increase the power
+[06:38] we increase the current that flows and
+[06:41] that's obviously very significant for
+[06:42] our electrical design work when we start
+[06:44] thinking about designing circuits but
+[06:47] let's put this onto a slightly more
+[06:48] mathematical footing now if you look at
+[06:51] these numbers here we've got a thousand
+[06:52] watts two hundred and forty four point
+[06:54] three volts and four point two amperes
+[06:56] is the relationship between those three
+[06:59] numbers well it might not be immediately
+[07:02] obvious so let's look at it this way
+[07:04] let's say that voltage is about two
+[07:06] hundred and fifty volts when you look at
+[07:08] it there and the current that we've got
+[07:10] there is about four amps so can you see
+[07:13] a relationship now is it possible that
+[07:16] if we have four amps multiplied by 250
+[07:20] volts that would give us 1,000 watts why
+[07:24] yes it would so we can see can't we that
+[07:26] there is a relationship between power
+[07:28] current and voltage and that leads us to
+[07:31] the first of three power formulae now
+[07:36] you'll notice I often say formulae is
+[07:38] the plural for formula so we're I'm
+[07:40] talking about more than one formula I'll
+[07:42] say formula technically that's the right
+[07:44] way of doing it but I guarantee at some
+[07:46] point I will say formulas so please feel
+[07:48] free to comment below every time you
+[07:49] notice one of those so what we're going
+[07:51] to do here is going to have a look at
+[07:53] formalizing that relationship so if we
+[07:55] say that the power in the circuit the
+[07:59] parent circuit P is equal to I the
+[08:04] current multiplied by V the voltage so
+[08:07] that is our power formula and this is
+[08:10] what I often refer to as the basic power
+[08:13] formula if you take the current and
+[08:15] times it by the voltage you will get the
+[08:17] power let's see if that's accurate with
+[08:19] our slightly more accurate numbers that
+[08:21] we measured from the workshop downstairs
+[08:23] so we've got four point two for the
+[08:25] current and we're going to times up by
+[08:27] two hundred and forty four point three
+[08:29] and we'll see what we come out with as
+[08:32] an answer so when we do that calculation
+[08:33] we find that we get 1026 point zero six
+[08:38] watts so let's write that out on here so
+[08:40] we've got power is equal to four point
+[08:43] two times by two hundred and forty four
+[08:47] point three and therefore the power that
+[08:50] we've calculated
+[08:52] is 1020 6.06
+[08:57] watts so why is it then that we've not
+[08:59] come out with exactly a thousand watts
+[09:02] well really what that boils down to is
+[09:04] the fact that we've probably got some
+[09:06] issues with manufacturers tolerances
+[09:08] here so this won't be exactly a 1
+[09:10] kilowatt heater it would have been made
+[09:12] in a factory mass-produced and there
+[09:14] will be tolerances within that
+[09:15] manufacturing process so rather than it
+[09:18] being exactly a thousand watts we've got
+[09:20] 1026 watts as the power being dissipated
+[09:24] by that it may also be that we've got
+[09:26] slightly more voltage connected to it
+[09:27] than the heater was designed to take
+[09:30] which would also increase the current
+[09:32] flow and therefore cause the power to be
+[09:35] a little bit higher but again when you
+[09:36] look at this value compared with that
+[09:38] value we're within a three percent
+[09:41] tolerance so that really is quite
+[09:42] reasonable so will we find that our
+[09:45] formula works for the rest of the
+[09:47] examples that we did well let's have a
+[09:48] look at it shall we so first of all
+[09:50] we've got here power is equal to current
+[09:54] times voltage notice I'm got that habit
+[09:56] of always putting my formula down I've
+[09:58] written it just there I've written it
+[09:59] here again this is the way we start to
+[10:01] remember them by writing them down again
+[10:03] and again let's do the calculation put
+[10:05] the numbers in P is equal to I eight
+[10:08] point four times by two hundred and
+[10:11] forty three point one and again if you
+[10:13] think of this as being eight times 250
+[10:16] which those numbers are very close to of
+[10:18] course that's going to come out at two
+[10:20] thousand isn't it so let's see what our
+[10:21] numbers come out of here I suspect this
+[10:23] will be even closer than it was before
+[10:25] eight point four times two hundred and
+[10:27] forty three point one and we come out
+[10:31] with two thousand and forty two point
+[10:34] zero four so the power being dissipated
+[10:37] by that heater was two thousand forty
+[10:40] two point zero four watts so again for
+[10:44] similar reasons that we discussed on the
+[10:45] previous example the value is slightly
+[10:48] higher than what we were expecting it to
+[10:49] be but we can see the relationship we
+[10:51] can see the importance of this
+[10:54] calculation now our final one was an
+[10:57] interesting one because of course here
+[10:58] we were dealing with a lower voltage a
+[11:00] much lower voltage than we looked at in
+[11:02] the previous examples so let's see if
+[11:04] this relationships
+[11:05] holds true we've got 12 point one volts
+[11:07] and we've got 11.1 em so let's see if
+[11:10] the power is correct for what we
+[11:12] calculated there so we're going to put
+[11:14] our numbers in we've got P is equal to I
+[11:17] times by V which is equal to in eleven
+[11:23] point one times by twelve point one and
+[11:27] when we do that calculation eleven point
+[11:30] one times by twelve point one we come
+[11:33] out with a value of one hundred and
+[11:35] thirty-four point three one so you can
+[11:44] see there that's come out reasonably
+[11:45] close to our 150 Watts again with
+[11:47] manufacturers tolerances and also the
+[11:50] fact that we've got this connected up to
+[11:51] a transformer as well causes us some
+[11:54] differences but you can see that the
+[11:56] principle holds true we're very very
+[11:57] close to our value of 150 watts that we
+[12:01] were expecting to get so just to expand
+[12:04] a little bit on why this formula is so
+[12:06] important P equals I times V we're going
+[12:09] to head back down to the workshop and
+[12:10] have a little look at some more
+[12:12] information down there so that we can
+[12:14] understand why it is that we need to
+[12:15] know this formula not just to be able to
+[12:17] pass our exams but also to help us with
+[12:20] our very important installation work as
+[12:23] well and we'll have a look at that in
+[12:25] our next video all that remains now is
+[12:27] to say thank you very much for watching
+[12:32] [Music]
+[12:45] [Music]
+[12:51] [Music]

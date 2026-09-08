@@ -1,11 +1,11 @@
 param(
-  [string]$TranscriptRoot = (Join-Path (Split-Path $PSScriptRoot -Parent) '..\course-transcripts'),
+  [string]$TranscriptRoot = (Join-Path (Split-Path $PSScriptRoot -Parent) 'course-transcripts'),
   [int]$StartAt = 1
 )
 
 $ErrorActionPreference = 'Stop'
 $TranscriptRoot = [System.IO.Path]::GetFullPath($TranscriptRoot)
-$manifestPath = Join-Path $TranscriptRoot 'manifest.json'
+$manifestPath = Join-Path $TranscriptRoot 'course-manifest.json'
 $statusPath = Join-Path $TranscriptRoot 'status.json'
 $failurePath = Join-Path $TranscriptRoot 'failures.json'
 

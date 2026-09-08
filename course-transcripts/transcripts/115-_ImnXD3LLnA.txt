@@ -1,0 +1,422 @@
+# Questions from Viewers: How to Calculate Volt Drop based on the Resistivity of a Conductor
+# https://www.youtube.com/watch?v=_ImnXD3LLnA
+
+[Music] hello and welcome to this electrical principles training video in this video we're going to answer a question that's coming from a viewer and it's a question that i just absolutely love and it's one that i wanted to do as a video because it kind of combines different elements of electrical science that we've looked at in other videos and puts them into kind of a real practical working example of why these electrical principles are so very very important so the question that's come in and it's coming from sam she asks i have a motor a 230 volt supply that takes 45 amps twin aluminium conductors 40 meters long with a cross-sectional area of 16 millimeters squared we have to take the resistivity of aluminium as 2.65 times 10 to the minus 8. it wants us to find the voltage at the terminals of the motor i'm not sure how to do this but i was wondering if i do the resistivity equation and then apply ohm's law and subtract that from the supply voltage so you're very much on the right track sam but there's just kind of a couple of things that we need to think about here now as i say i really love this question i think the reason i love it so much is that it takes um some important principles and it helps us to use them in a real life example so you can see here we've got the situation that's described in the question here we've got a load here that's coming from a supply a certain voltage it's passing down these conductors and it's passing through the load and back down the circuit again and we want to know what the volt drop is across here because if the vault drop is too high then certain loads won't work properly they won't work to their kind of full potential which obviously we want to try and make sure that they do now the thing to bear in mind with this is that we tend to think of conductors as just carrying the electricity from the supply to the load and that's the job done however any conductor however good it is as a conductor always has a certain amount of resistance so what we can do is we can replace those conductors with resistor symbols like this so we can just pop these in here like so and there you can see we've actually got the resistor here which now represents the resistance of the supply conductor here so this is probably the line conductor at the top and that represents the resistance of that line conductor likewise at the bottom we're also going to have a certain amount of resistance within that conductor and if they're of equal length and the same size and the same material then these two resistors will be of equal value now it's normally at this point that learners kind of say whoa where have these resistors come from we don't go wiring resistors into our circuits in the real world well not in the sense that you normally think of a resistor as being a little electronic component that perhaps you've got from rs but actually you do connect a resistor into the circuit because that is the resistance of the supply conductor so we can see we've got that represented there now when we step back and look at this perhaps in a little bit more detail now you can see that we've actually got three resistors in the circuit we've got the resistance of the line conductor the resistance of the load and the resistance of the neutral conductor and all of those are going to contribute to the way that this circuit operates so that being the question uh how can we kind of help to visualize this because very often learners kind of struggle to see that this is three resistors connected in series with each other we may be perhaps as long as we may be a little bit more used to seeing circuits that are connected up maybe a little bit like this so you've got a resistor connected to another resistor like that and then another one connected like that so you can see there now we've got three resistors all connected in series with each other and we can complete the circuit by just popping these conductors in here so again we're going to assume that these don't have any resistance these bits because we're just looking at this from a kind of mathematical point of view now so there we go we've got our circuit perhaps connected up a little bit more how we used to see in it maybe in our worksheets maybe in our assessment papers so there we go we've got our three resistors connected in series but we're still in the exact same situation we're in before we've got the resistance of the line conductor the resistance of the load and the resistance of the neutral conductor so what do we do now well now we start to add some numbers into the circuit so let's do just that let's have a look at the numbers that sam gave was in her question so we've got a motor at 230 volt supply that takes 45 amps so we know that there is 45 amps flowing through the circuit here so we know that i is equal to 45 amperes we also know that we've got a supply voltage down here the voltage there is 230 volts like that so that's our supply voltage uh what else do we know we also know we don't yet know the resistance of any of these resistor values but that's okay because we can figure these ones out so remember this is the resistance of the line conductor this is the resistance of the neutral they'll be the same and we can actually calculate that so let's do that let's figure out what the resistance of this resistor is here so in order to calculate the resistance of a conductor based on its resistivity cross-sectional area and length we use this formula and again if this is the first time you're seeing this then i suggest you go and watch the video that i've made in fact a series of videos that i've made on resistance and resistivity so we've got rho times l over a resistivity times length divided by cross sectional area so we put some numbers in here we can figure this out we know that the resistivity of the material from the question is 2.65 times 10 to the minus 8. so we've got 2.65 times 10 to the minus 8. so that's the resistivity of aluminium as given in this question and then we've also got the length of the conductors so that's 40 meters now again the question isn't incredibly explicit about this but it says the conductors are 40 meters long which makes me think that it's a 40 millimeter sorry 40 meter long twin cable so we'll assume that the length there is 40 meters and then the cross-sectional area of the conductor is 16 millimeters squared now this is an interesting one because normally where we see 16 uh millimeters normally with millimeters we do times 10 to the minus 3 but because this is millimeters squared we're going to do times 10 to the minus 6. okay and all we've got to do now is just volume into the calculator so we're going to do 2.65 2.65 so i like to press the fraction button in order to put it just as it is on the whiteboard here 2.65 use the times 10 to the power of button down at the bottom minus eight and then we're going to times that by 40 and then we're going to divide that by 16 times 10 to the minus six and see what we get so we come out there with 0.0625 so we've got 0.06 625 ohms which is an incredibly uh precise number there that we've got there okay so that's the five decimal points again i didn't see anything in the question about decimal points so we'll just use the whole thing for now so we now know that this resistor has a resistance of so we'll call this r1 has a resistance of 0.0625 ohms which is super helpful but we also know that this resistor has a resistance of the same value so we'll call this resistor 3 is equal to 0.06625 ohms as well and i can squeeze the ohms on that one so that's handy so there we go so that's the resistance of that one and the resistance of that one so again just reread the question carefully the question once is to find the voltage at the terminals of the motor so in other words we want to know what is the voltage across here what's the voltage across that well again hopefully we can figure this out without too much aggro we want to know what is the voltage going to be across this load here so we want to know what's the voltage going to be there so here's our voltmeter bring that in i want to know what's the voltage across there so that's the question that we're aiming for what's the voltage there the easiest way to figure this out at this stage is to figure out what the vault drop is across each of these and then simply take those voltages away from our total voltage and that will tell us what the voltage across the terminals of our motor is so remember this load here simply represents the motor okay so let's have a look at calculating what the vault drop is across this resistor okay so what's the voltage across here going to be so we'll just show our voltmeter there just so that we're being super accurate so we want to know what is the vault drop across this little fella here going to be we'll figure that out right so what we're going to do now is we're going to use a little bit of ohm's law as sama initially suggested in her question so ohm's law we know we remember it as i equals v over r i'm very specific about that when i'm teaching that that's how i like learners to remember this because this is the real life representation of what we do in a circuit but here we want to make v the subject so the easiest way of doing that is to think right at the minute i've got v i'm dividing it by r the opposite of dividing by r is to times by r and if i times both sides by r it cancels down on this side and appears over here so it ends up looking like this i times r equals v but that's not a very nice way around writing it so we'll write it the right way around which is like that v equals i times r like that so 45 amps is flowing through this part of the circuit it's a series circuit so we know that the current is constant throughout the whole circuit so there's 45 amps flowing through this resistor 45 amps flowing through this resistor and 45 amps flowing through this resistor so what that means is that we're going to be able to calculate what the vault drop is across here because there must be a voltage across this resistor that is capable of pushing 45 amps through that resistor remember it's a very very small value because it represents the supply conductor to the load so therefore it's going to have a very low resistance as you can see there so all we've got to do now is just put our numbers in so the current is constant so we're just going to use that 45 amps that is everywhere in this series circuit wherever we measure it we'd get 45 amps and then we're just going to times it by this resistance here so we're going to times that by naught point naught 6625 and that's going to give us our answer so we've got 45 times 0.066625 and that gives us an answer of 2.98 again we've got 125 volts but i think we'd probably be okay to round this off to two decimal places so we've got 2.98 volts so the voltage across this resistor here which bear in mind represents the supply conductor is equal to 2.98 volts so in other words we're losing 2.98 volts across this resistor here we're going to lose exactly the same amount of resistance across sorry exactly the same amount of voltage across this resistor here because it's got the same value as that one so what that means is that we're going to end up simply adding these two values together so we've got a volt drop here of 2.98 volts if we just add those two values together so we've got 2.98 and we're going to times that by 2 because we're just adding the voltage here and the voltage here together which is going to give us 5.99 volts and that is the volt drop across this circuit so we're losing 2.98 here 2.98 here which gives us a total vault drop for this circuit of 5.96 volt so when you do your vault drop calculation for a real circuit that you're installing this is essentially what you're doing this bit simplified a little bit by the values in the on-site guide for the different resistances of different copper sizes that kind of makes it a little bit easier for you but it's the exact same principle that we're looking at so now to calculate the total voltage uh across the motor here so we'll call this i don't know we'll call that v let's say m for motor we're going to say that that is equal to 230 volts the supply voltage minus the 5.96 volts that we got across the motor there so 230 minus 5.96 is going to give us i'll do this in my head real quick so i'll probably get this wrong 224.04 volts and there's your answer the volt drop across the motor is 224.04 volts that is the voltage that you would get at the terminal of that motor if you were to measure that value with a voltmeter so as you can see i hope you can understand why i like that question so much because it combines ohm's law resistivity equations and puts it into a real life setting i think that's an absolutely fantastic question and uh quite a good practice one to have a little go at and see if you can get to the same value so that's how we do that calculation and all that remains in this video is to say thank you very much for watching
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:10] principles training video
+[00:12] in this video we're going to answer a
+[00:14] question that's coming from a viewer
+[00:15] and it's a question that i just
+[00:17] absolutely love and it's one that i
+[00:18] wanted to do
+[00:19] as a video because it kind of combines
+[00:22] different elements of
+[00:24] electrical science that we've looked at
+[00:25] in other videos and puts them into kind
+[00:27] of a real
+[00:29] practical working example of why these
+[00:32] electrical principles are so very very
+[00:34] important so the question that's come in
+[00:37] and it's coming from sam she asks i have
+[00:40] a motor a 230 volt supply
+[00:42] that takes 45 amps twin aluminium
+[00:46] conductors 40 meters long with a
+[00:48] cross-sectional area of 16 millimeters
+[00:50] squared
+[00:51] we have to take the resistivity of
+[00:52] aluminium as 2.65
+[00:55] times 10 to the minus 8. it wants us to
+[00:58] find the voltage at the terminals of the
+[01:00] motor i'm not sure how to do this
+[01:02] but i was wondering if i do the
+[01:03] resistivity equation and then apply
+[01:05] ohm's law and subtract that from the
+[01:07] supply voltage
+[01:08] so you're very much on the right track
+[01:10] sam but there's just kind of
+[01:12] a couple of things that we need to think
+[01:13] about here now as i say
+[01:15] i really love this question i think the
+[01:16] reason i love it so much is that
+[01:18] it takes um some important principles
+[01:21] and it helps us to use them
+[01:22] in a real life example so you can see
+[01:25] here we've got the
+[01:26] situation that's described in the
+[01:28] question here we've got
+[01:29] a load here that's coming from a supply
+[01:31] a certain voltage
+[01:33] it's passing down these conductors and
+[01:35] it's passing
+[01:36] through the load and back down the
+[01:37] circuit again and we want to know
+[01:39] what the volt drop is across here
+[01:41] because if the vault drop is too high
+[01:43] then certain loads won't work properly
+[01:45] they won't work to their kind of full
+[01:47] potential which obviously we want to try
+[01:48] and make sure that they do
+[01:51] now the thing to bear in mind with this
+[01:53] is that we tend to think of conductors
+[01:56] as just carrying the electricity from
+[01:57] the supply to the load and that's the
+[01:59] job done
+[02:00] however any conductor however good it is
+[02:04] as a conductor always has
+[02:06] a certain amount of resistance so what
+[02:07] we can do is
+[02:09] we can replace those conductors with
+[02:12] resistor symbols like this so we can
+[02:15] just pop these in here
+[02:17] like so and there you can see we've
+[02:20] actually got
+[02:22] the resistor here which now represents
+[02:25] the resistance of the supply conductor here
+[02:27] so this is probably the line conductor
+[02:29] at the top
+[02:30] and that represents the resistance of
+[02:32] that line conductor
+[02:33] likewise at the bottom we're also going
+[02:36] to have
+[02:38] a certain amount of resistance within
+[02:40] that conductor and if they're of equal
+[02:42] length and the same size and
+[02:44] the same material then these two
+[02:46] resistors will be
+[02:47] of equal value now it's normally at this
+[02:50] point that
+[02:51] learners kind of say whoa where have
+[02:52] these resistors come from we don't go
+[02:54] wiring resistors
+[02:55] into our circuits in the real world well
+[02:58] not in the sense that you normally think
+[03:00] of a resistor as being a little
+[03:01] electronic component that
+[03:02] perhaps you've got from rs but actually
+[03:06] you do connect a resistor into the
+[03:09] circuit because that is the resistance
+[03:11] of the supply conductor so we can see
+[03:14] we've got that represented there
+[03:16] now when we step back and look at this
+[03:18] perhaps in a little bit more detail now
+[03:20] you can see that we've actually got
+[03:22] three resistors in the circuit we've got
+[03:24] the resistance of
+[03:25] the line conductor the resistance of the
+[03:28] load
+[03:29] and the resistance of the neutral
+[03:30] conductor and all of those
+[03:32] are going to contribute to the way that
+[03:34] this circuit
+[03:35] operates so that being the question
+[03:39] uh how can we kind of help to visualize
+[03:41] this because very often
+[03:43] learners kind of struggle to see that
+[03:44] this is three resistors connected in
+[03:47] series with each other we may be perhaps
+[03:50] as long as we may be a little bit more
+[03:52] used to seeing
+[03:53] circuits that are connected up maybe a
+[03:54] little bit like this so you've got
+[03:57] a resistor connected to another resistor
+[04:00] like that
+[04:01] and then another one connected
+[04:05] like that so you can see there now we've
+[04:07] got three resistors
+[04:08] all connected in series with each other
+[04:11] and we can complete the circuit by just
+[04:13] popping these conductors in here so
+[04:15] again we're going to assume that these
+[04:17] don't have any resistance these bits
+[04:19] because we're just looking at this from
+[04:20] a
+[04:21] kind of mathematical point of view now
+[04:24] so there we go we've got our circuit
+[04:27] perhaps connected up
+[04:29] a little bit more how we used to see in
+[04:31] it maybe in our worksheets
+[04:33] maybe in our assessment papers
+[04:36] so there we go we've got our three
+[04:39] resistors connected in series but we're
+[04:40] still in the exact same situation we're
+[04:42] in before we've got the resistance of the line
+[04:44] conductor
+[04:46] the resistance of the load and the
+[04:47] resistance of the neutral conductor
+[04:49] so what do we do now well now we start
+[04:52] to add some numbers
+[04:53] into the circuit so let's do just that
+[04:55] let's have a look
+[04:56] at the numbers that sam gave was in her
+[04:58] question so we've got
+[05:00] a motor at 230 volt supply that takes 45
+[05:04] amps so we know
+[05:05] that there is 45 amps flowing
+[05:08] through the circuit here so we know that
+[05:11] i
+[05:12] is equal to 45 amperes
+[05:15] we also know that we've got a supply
+[05:17] voltage down here
+[05:19] the voltage there is 230
+[05:23] volts like that so that's our supply
+[05:25] voltage
+[05:26] uh what else do we know we also know we
+[05:29] don't yet
+[05:30] know the resistance of any of these
+[05:33] resistor values but that's okay because
+[05:35] we can figure these ones out so remember this
+[05:38] is the resistance of the line conductor
+[05:39] this is the resistance of the neutral
+[05:41] they'll be the same
+[05:42] and we can actually calculate that so
+[05:45] let's do that let's figure out what the
+[05:47] resistance of this resistor is here so
+[05:51] in order to calculate the resistance of
+[05:54] a conductor based on its
+[05:55] resistivity cross-sectional area and
+[05:57] length we use this formula
+[06:00] and again if this is the first time
+[06:01] you're seeing this then i suggest you go
+[06:03] and watch the video that i've made
+[06:05] in fact a series of videos that i've
+[06:06] made on resistance and resistivity
+[06:09] so we've got rho times l over a
+[06:12] resistivity times length divided by
+[06:15] cross sectional area
+[06:16] so we put some numbers in here we can
+[06:18] figure this out we know that the
+[06:19] resistivity
+[06:20] of the material from the question is
+[06:23] 2.65 times 10 to the minus 8.
+[06:26] so we've got 2.65 times 10 to the minus
+[06:30] 8. so that's the resistivity of
+[06:33] aluminium as given in this question
+[06:37] and then we've also got the length of
+[06:40] the conductors
+[06:41] so that's 40 meters now again the
+[06:44] question isn't incredibly explicit about
+[06:46] this but
+[06:48] it says the conductors are 40 meters
+[06:50] long
+[06:51] which makes me think that it's a 40
+[06:54] millimeter
+[06:55] sorry 40 meter long twin cable so we'll
+[06:58] assume that the length there
+[07:00] is 40 meters and then the
+[07:02] cross-sectional area of the conductor
+[07:04] is 16 millimeters squared now this is an
+[07:08] interesting one because normally where
+[07:09] we see
+[07:10] 16 uh millimeters
+[07:13] normally with millimeters we do times 10
+[07:15] to the minus 3
+[07:17] but because this is millimeters squared
+[07:20] we're going to do times 10
+[07:21] to the minus 6. okay and all we've got
+[07:24] to do now is just
+[07:25] volume into the calculator so we're
+[07:27] going to do
+[07:28] 2.65 2.65
+[07:32] so i like to press the fraction button
+[07:34] in order to put it just as it is
+[07:36] on the whiteboard here 2.65 use the
+[07:39] times 10 to the power of button down at
+[07:40] the bottom
+[07:42] minus eight and then we're going to
+[07:43] times that by 40
+[07:45] and then we're going to divide that by
+[07:47] 16 times 10 to the minus six and see
+[07:49] what we get
+[07:50] so we come out there with 0.0625
+[07:56] so we've got 0.06
+[08:02] 625 ohms
+[08:05] which is an incredibly uh precise number
+[08:08] there that we've got there
+[08:10] okay so that's the five decimal points
+[08:12] again i didn't see anything in the
+[08:14] question about decimal points so we'll just use
+[08:16] the whole thing for now
+[08:18] so we now know that this resistor
+[08:21] has a resistance of so we'll call this
+[08:24] r1
+[08:25] has a resistance of 0.0625
+[08:31] ohms which is super helpful but we also
+[08:34] know that this resistor has a resistance
+[08:36] of the same value
+[08:37] so we'll call this resistor 3 is equal
+[08:39] to 0.06625
+[08:43] ohms as well and i can squeeze the ohms
+[08:45] on that one so that's handy
+[08:47] so there we go so that's the resistance
+[08:49] of that one and the resistance of that
+[08:50] one
+[08:51] so again just reread the question
+[08:53] carefully the question once is to find
+[08:55] the voltage at the terminals of the
+[08:57] motor
+[08:58] so in other words we want to know what
+[09:00] is the voltage across here what's the
+[09:01] voltage across that
+[09:03] well again hopefully we can figure this
+[09:06] out without too much
+[09:07] aggro we want to know what is the
+[09:10] voltage going to be across
+[09:14] this load here so we want to know what's
+[09:17] the voltage going to be there
+[09:20] so here's our voltmeter bring that in
+[09:23] i want to know what's the voltage across
+[09:25] there so that's the question
+[09:27] that we're aiming for what's the voltage
+[09:30] there
+[09:32] the easiest way to figure this out at
+[09:33] this stage is to figure out what the
+[09:35] vault drop is across
+[09:36] each of these and then simply take those
+[09:38] voltages
+[09:39] away from our total voltage and that
+[09:41] will tell us what the voltage across the
+[09:42] terminals
+[09:43] of our motor is so remember this load
+[09:46] here simply represents the motor
+[09:50] okay so let's have a look at calculating
+[09:52] what the vault drop is
+[09:53] across this resistor okay
+[09:57] so what's the voltage across here going
+[10:00] to be so we'll just show our voltmeter there
+[10:03] just so that we're being
+[10:04] super accurate so we want to know what
+[10:07] is the vault drop across this little fella here
+[10:10] going to be
+[10:11] we'll figure that out right so
+[10:15] what we're going to do now is we're
+[10:17] going to use a little bit of ohm's law
+[10:19] as sama initially suggested in her
+[10:22] question
+[10:23] so ohm's law we know we remember it as i
+[10:26] equals v over r i'm very specific about
+[10:29] that when i'm teaching that that's how i
+[10:30] like learners to remember this because
+[10:32] this is the real life representation of
+[10:34] what we do in a circuit
+[10:35] but here we want to make v the subject
+[10:38] so the easiest way of doing that is to
+[10:40] think right at the minute i've got v
+[10:41] i'm dividing it by r the opposite of
+[10:44] dividing by
+[10:45] r is to times by r and if i times both
+[10:48] sides by r
+[10:49] it cancels down on this side and appears
+[10:51] over here so it ends up looking like
+[10:53] this
+[10:54] i times r equals v
+[10:57] but that's not a very nice way around
+[10:58] writing it so we'll write it the right
+[11:00] way around which is like that
+[11:01] v equals i times r like that
+[11:05] so 45 amps is flowing through this part
+[11:09] of the circuit it's a series circuit so we know that
+[11:11] the current is
+[11:12] constant throughout the whole circuit so
+[11:14] there's 45 amps flowing through this
+[11:16] resistor
+[11:17] 45 amps flowing through this resistor
+[11:19] and 45 amps flowing through this
+[11:20] resistor
+[11:21] so what that means is that we're going
+[11:23] to be able to calculate
+[11:26] what the vault drop is across here
+[11:28] because there must be a voltage across
+[11:30] this resistor that is capable
+[11:33] of pushing 45 amps through that resistor
+[11:36] remember it's a very very small value
+[11:38] because it represents the supply
+[11:40] conductor to the load
+[11:42] so therefore it's going to have a very
+[11:44] low resistance as you can see there
+[11:46] so all we've got to do now is just put
+[11:48] our numbers in so the current is
+[11:49] constant so we're just going to use that
+[11:50] 45
+[11:51] amps that is everywhere in this series
+[11:54] circuit wherever we measure it we'd get
+[11:56] 45 amps and then we're just going to
+[11:58] times it by
+[11:59] this resistance here so we're going to
+[12:01] times that by
+[12:02] naught point naught 6625
+[12:06] and that's going to give us our answer
+[12:08] so we've got
+[12:10] 45 times 0.066625
+[12:15] and that gives us an answer of
+[12:19] 2.98 again we've got 125 volts but i
+[12:23] think we'd probably be okay to round
+[12:25] this off to two decimal places so we've
+[12:27] got 2.98
+[12:29] volts so the voltage across
+[12:33] this resistor here which bear in mind
+[12:35] represents the supply conductor
+[12:37] is equal to 2.98 volts so in other words
+[12:41] we're losing 2.98 volts across this
+[12:44] resistor here
+[12:46] we're going to lose exactly the same
+[12:47] amount of resistance across
+[12:49] sorry exactly the same amount of voltage
+[12:50] across this resistor here because it's
+[12:52] got the same value
+[12:53] as that one so what that means is that
+[12:56] we're going to end up
+[12:57] simply adding these two values together
+[13:00] so we've got a volt drop here of 2.98 volts
+[13:06] if we just add those two values together
+[13:09] so we've got 2.98 and we're going to
+[13:12] times that by 2 because we're just
+[13:14] adding the voltage here and the voltage here
+[13:16] together which is going to give us
+[13:18] 5.99 volts
+[13:22] and that is the volt drop across this
+[13:25] circuit
+[13:26] so we're losing 2.98 here 2.98 here
+[13:29] which gives us a total vault drop for
+[13:31] this circuit of 5.96 volt so when you do
+[13:34] your vault drop calculation for a real
+[13:36] circuit that you're installing
+[13:38] this is essentially what you're doing
+[13:40] this bit simplified a little bit by the
+[13:42] values in the on-site guide
+[13:43] for the different resistances of
+[13:47] different copper
+[13:48] sizes that kind of makes it a little bit
+[13:49] easier for you but it's the exact same
+[13:51] principle that we're looking at
+[13:53] so now to calculate the total voltage uh
+[13:56] across the motor here so we'll call this
+[13:58] i don't know we'll call that v let's say
+[14:00] m for motor
+[14:02] we're going to say that that is equal to
+[14:05] 230 volts the supply voltage
+[14:08] minus the 5.96 volts that we got
+[14:12] across the motor there so 230 minus 5.96
+[14:16] is going to give us i'll do this in my
+[14:18] head real quick so i'll probably get
+[14:19] this wrong 224.04
+[14:24] volts and there's your answer the volt
+[14:27] drop across the motor is 224.04 volts
+[14:33] that is the voltage that you would get
+[14:34] at the terminal of that motor
+[14:36] if you were to measure that value with a
+[14:38] voltmeter
+[14:40] so as you can see i hope you can
+[14:42] understand why i like that question so
+[14:44] much because it combines ohm's law
+[14:45] resistivity equations and puts it into a
+[14:48] real life setting i think that's an
+[14:49] absolutely fantastic question
+[14:51] and uh quite a good practice one to have
+[14:53] a little go at
+[14:54] and see if you can get to the same value
+[14:57] so that's how we do that calculation
+[14:59] and all that remains in this video is to
+[15:00] say thank you very much for watching

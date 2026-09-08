@@ -1,0 +1,399 @@
+# Different Types of Protective Devices BS 3036, BS 1361, BSEN 60898 and BS 88 Fuses
+# https://www.youtube.com/watch?v=rijmYhVeUNs
+
+So, we're going to look at the overcurren protection devices that will be covered on our course and in our coursework material. We're going to look at the rewable fuse, the BS 3036 semi-encloed rewable fuse. We're going to look at the BS um 1361 cartridge fuse. Going to look at the BSEN 60898 circuit breaker in this presentation along with the high rupturing capacity BS88s. So, first we'll have a look at this semi-encclosed rewirble fuse uh BS3036. Um, often taken out now in domestic dwellings, distribution boards being changed, upgraded from plastic to metal, and the overcurren protection devices are often also upgraded to circuit breakers, but they can still be installed and they can still be widely found in commercial industrial installations. These rewable fuses, BS306 semi-encloed fuses, all come with a very similar design. If I pull out a 5 amp rewirable fuse, okay, denoted by color white as well. We're going to get to that in part of the presentation as well. It looks very similar in construction to the 30 amp rewable fuse, except when you turn them over, you can see the brass pins on the 5 amps are considerably smaller than those of the 30 amp design. This causes some issues because people tend to when rewiring these fuses go for the first fuse element they find. So if the lighting circuit is disconnected or the socket circuit is disconnected, whichever fuse wire is found in the cupboard tends to be the one that's reinserted uh into the actual rewable fuse itself. So as we turn it over, you can see a fuse element is attached between the two brass pins in this case right at 5 amps. But if the customer was desperate to get the lights back on, are they paying that much attention when they get the fuse wire element out of the cupboard? And this one rated at 15 looks very similar. If they were to place it between the two brass pins by inserting it through and attaching it to the two screws, the lighting circuit's likely to come back on as long as the fault's been cleared. Therefore, the customer's happy. The problem being now we've got potentially a lighting circuit fuse not at 5 amps and considerably higher. In this case, this would be 15. Therefore, we're running the risk of shock fire and explosions in the installation. And you look at the pins, you can see that one is designed to carry considerably more current than the other. So the actual construction is not designed to carry any more than the rated value of it in this case being 5 amps. Some other considerations for rewable fuse is the fact that the fuse element is open to the air therefore liable to deteriorate. Also because it's not enclosed completely when it's carrying too much current or an overcurren or a shortcircuit current. Obviously the fuse element itself is going to get very hot. The heat's going to cause the element to break obviously through melting because some of the heat can escape. That means it's not uh the most precise device that you could get. They have fusing factors all the devices we're going to look at. And the fusing factor for rewable fuses, in this case a 5 amp one, all the rewable fuses have a fusing factor of two. That means it will take twice the current in this case 10 amps in order to cause operation of the device. Because of this poor fusing factor, when we later in our course notes looking at designing circuits and perhaps the designer for some reason has chosen to use a rewable fuse or the circuit has been extended which is protected by a rewable fuse, we must take into consideration a correction factor for using this type of device of 0.725. We'll come up with that in a later set of notes in the classroom. One of the early take-home tasks I'll be setting my learners at my college is to look at their distribution board. Look at their earthing arrangement as well. Take some photographs. Earthing arrangements are covered in two of my other presentations looking at TNS and TNCS earthing arrangements. I would also expect my students to be looking at their distribution board or distribution boards of friends. I'd like to think that we could find a distribution board that had an older style overcurren protection devices where they bearable fuses or cartridge fuses using the color scheme. So, we've got a white carrier, white dotted fuse for 5 amps. We've got blue for 15. We've got yellow to represent 20. And finally, we've got red to represent 30. And they're the sort of things that we need to start looking at and noting in the real world. We're also going to need to know the perspective shortcircuit breaking capacity. In other words, the amount of current under fault conditions that the device can handle and clear and not cause, for instance, the fuse wire element to melt, remelt across, actually not disconnecting the circuit, but resolidify and obviously become a fuse element that's still connected between the pins. The rewable fuse can withstand any between 1 and 4,000 amps under fault conditions. One of my previous presentations looks at PFC measuring an installation. However, you need to know the S1A, S2A, and S4A of the actual fuse wire element itself. One being for a,000 amps, two being for 2,000 amps, and four being for 4,000 amps that it can clear under short circuit faults. However, even on the fuse wire element itself, I cannot find S1A, etc. So, you always have to presume the lowest rated. So, in other words, a thousand amps. These can only clear faults up to a,000 amps. And when you're testing for PFC, you need to confirm that the prospective shortcircuit current won't exceed a thousand amps as these devices will fail in that part of the installation. Many of the negatives to go with rewable fuses, there must be some advantages. Uh they used to be very cheap. Now they're not because nobody uses them. So they're more expensive to buy than circuit breakers. So that's a an old cliche exam question when the advantage of using a rewirable fuse is that it's inexpensive. That's not the case anymore. I would suggest probably the only advantage is it doesn't have any moving parts. Therefore, not having a moving part doesn't need to be functional tested. Also, not having a moving parts that they can't fail. So, the mechanism within it cannot fail because there is not one. So, I'd suggest the exam might say that they're cheap. I suggest their only advantage is there's no moving parts. Therefore, they cannot fail. Going to look at the BS1361 cartridge fuse. Uh, physically looks very similar to the BS362 plug top fuse. Okay. Okay, so not to get confused with the two. So these are BS361s. We've got the same color carrier bases. So if this got a red carrier base here, we'd have a 30 amp BS 1361 cartridge using attached to it. And we've got the white base being a 5 amp. When we physically open up a 5 amp BS361 fuse, you can see it almost looks like a plug top fuse in construction. Same design, two metal end caps, a ceramic or glass body. Okay, this one having a glass body, this one having a ceramic body, and a fuse wire element is encased between the end caps. So, still a piece of copper wire as before, but this time because it's encased within the actual physical enclosure, obviously when it generates heat under fault conditions, the heat is with withheld within the actual vessel itself, causing the fuse wire element to to melt a lot a lot quicker than in a rewable fuse. It's a more accurate device. Therefore, doesn't have a fusing factor of two, which was attributed to the rewable fuse. It has a fusing factor of less than 1.5. So, in other words, a 5 amp uh cartridge fuse BS 1361 will take 7.5 amps in order to operate. When these are used domestically, they cannot be interchanged. So, if that one being a 5 amp one and we've got a 20 amp one here, we can see physically the 20 amp is bigger. So customers when they're replacing these can only really physically replace it with the correct physical type of BS361 because it wouldn't go between the actual pins themselves. The only problem is what tends to happen is people tend to bridge between the two with a piece of fuse wire when these have actually operated because they're likely to have more chance of having these kicking around in a a cupboard at home than they are replacement fuses. Replacement fuses can be quite expensive. We may be talking6 to replace a 20 amp fuse BS1361 where the fuse wire element would be taxed between the two circuit comes back on customers happy and we're back down the risk of massive shock fire and explosions within the installation. To summarize the BS361 then comparing it to a rewable fuse, it's a more accurate device with a 1.5 fusing factor or less. We know that the element itself is encased in a glass or ceramic body with two metal end caps, meaning that the element is not liable to deteriorate. We know that the elements um and bodies need to be replaced correctly. They're physically different sizes as we move through the amp ratings and that customers can be uh have a tendency to replace a wire across them in order to get their circuits back on. We know that this is obviously unacceptable, creating a massive risk of shot fire and explosions. And one thing electricians should be looking out for when they're out there in industry. But overall, the device should not be shunned. Can be installed for brand new circuits. And in commercial industrial installations, the cartridge fuse will be a common overcurren protection device. So looking at the BSEN 60898 circuit breaker, we tend to have a love affair with these in the electrical industry. Many advantages to using them, one or two disadvantages. Okay, so the circuit breakers themselves run slightly different amp ratings. So we don't have a five, we have a six, 16, 20, and 32. Very similar to what we saw before with the 5, 15, 20, and 30 for all other devices. We also have now a letter coding against the circuit breaker. These being in this case B6, 16s, B20, and B32s. They're all BT type circuit breakers. We can also have C type circuit breakers and DT type circuit breakers. We'll go into some detail in the course about know the design and selecting either B's, C's or D's, but just quickly domestically you'd have a BT type circuit breaker where there's lots of inductive loads such as a commercial office with a florescent light fittings you'd probably have a C type circuit breaker where you have highly inductive loads like welding equipment, some air conditioning units, you'd have a DT type circuit breaker. We'll add a little bit more detail as we move through the course on those. Circuit breakers also have a fusing factor of 1.5 or less. Manufacturers will tell you exactly the fusing factor for those. So a more precise device than a rewable fuse seen in the first section. Characteristics of the fuse have been set by the manufacturer and we cannot tamper with these in any way. So in other words, it's a sealed unit meaning that once it's operated, the device will go into the off position vine. The fault has been cleared. We should be able to reset that. We will look at in a set of notes about the prospective fault current that these can clear and clear safely. There is a case that sometimes if it's a massive fault current that these have had to clear that the actual device would need to be replaced. That's something that industry teams to ignore the fact that they always believe that a circuit breaker can be just reset. There is an instance where they need to be replaced because of the amount of fault current they have cleared. We'll cover that in a set of notes in the classroom. Circuit breaker has physical moving parts. therefore requires to be functionally tested. So in other words, you must turn your breaker from the on position to the off, see the circuit go off, and re-energize it to prove functionality. In other words, it actually turns on and off. We've got a clearsided circuit breaker here, and we can see two other features that we'll discuss in the classroom. It has a bimetal strip and a coil here. And we've seen in previous studies in the classroom that a conductor carrying current will create a magnetic field around it. If we put that into a coil, okay, we increase the strength of the magnetic field and we use both the bimetal strip and the fact that a conductor will create a magnetic field within the basic principles of a circuit breaker. When you overload the circuit breaker, in other words, ask it to carry more current than it's designed to do. So, it's rated for this one at 20 amps. Fusing factor would be 1.5 times that. So, roughly 30 amps. But we're looking at the bimetal strip at the top here. When we ask it to carry more than its 20 amps starts to get warm, that bimetal strip eventually over time will cause the disconnection of the circuit. Where there's a short circuit of negligible impedance or an earth fault in circuit, the massive current creates a massive magnetic field here. So the circuit breaker could be carrying hundreds or thousands of amps for a small duration. Creates a massive magnetic field causing the mechanism to operate. So you got two ways in which it operates. overload through the biometal strip and the magnetic field created around this coil creates such a strong magnetic field it pulls the mechanism a Rolls-Royce of fuses really now we're looking at the high ruring capacity uh BS88 fuses okay these are generally the ones that be the mains incoming position of a large installation they are highly robust so physically you couldn't damage that fuse very strong fuse also it's very good at distinguishing between short term um inrush currents by turning on inductive loads and distinguishing that between actual fault currents and therefore causing operation. The fuse wire elements built in here are often made of silver. Okay. And often of a constructional design not straight through but of a either perforated or shaped fuse element. So not just a straight fuse wire going through that clever design um and construction meaning that is a very precise device. It's often filled with a quartz filler or silica sand in there again for when the actual fault occurs. The actual temperature is held around it making it a more precise device. The heat isn't allowed to escape. The the quartz filler or silica sand helps be a more precise device. Not really much disadvantage of using a um BS88 fuse. perhaps the expense of them, you know, they can be vastly expensive because of the the Rolls-Royce style design that they've got. So, that's our first look at the four overcurren protection devices covered on our course. There's more information to add in other video presentations. There'll be all more information to be added in the classroom.
+
+
+[00:03] So, we're going to look at the
+[00:05] overcurren protection devices that will
+[00:07] be covered on our course and in our
+[00:08] coursework material. We're going to look
+[00:09] at the rewable fuse, the BS 3036
+[00:13] semi-encloed rewable fuse. We're going
+[00:15] to look at the BS um 1361 cartridge
+[00:18] fuse. Going to look at the BSEN 60898
+[00:22] circuit breaker in this presentation
+[00:24] along with the high rupturing capacity
+[00:25] BS88s.
+[00:27] So, first we'll have a look at this
+[00:28] semi-encclosed rewirble fuse uh BS3036.
+[00:33] Um, often taken out now in domestic
+[00:35] dwellings, distribution boards being
+[00:36] changed, upgraded from plastic to metal,
+[00:39] and the overcurren protection devices
+[00:40] are often also upgraded to circuit
+[00:42] breakers, but they can still be
+[00:44] installed and they can still be widely
+[00:46] found in commercial industrial
+[00:48] installations. These rewable fuses,
+[00:50] BS306
+[00:52] semi-encloed fuses, all come with a very
+[00:54] similar design. If I pull out a 5 amp
+[00:56] rewirable fuse, okay, denoted by color
+[00:59] white as well. We're going to get to
+[01:00] that in part of the presentation as
+[01:01] well. It looks very similar in
+[01:03] construction to the 30 amp rewable fuse,
+[01:06] except when you turn them over, you can
+[01:08] see the brass pins on the 5 amps are
+[01:11] considerably smaller than those of the
+[01:13] 30 amp design. This causes some issues
+[01:16] because people tend to when rewiring
+[01:18] these fuses go for the first fuse
+[01:20] element they find. So if the lighting
+[01:22] circuit is disconnected or the socket
+[01:23] circuit is disconnected, whichever fuse
+[01:25] wire is found in the cupboard tends to
+[01:27] be the one that's reinserted uh into the
+[01:29] actual rewable fuse itself. So as we
+[01:31] turn it over, you can see a fuse element
+[01:33] is attached between the two brass pins
+[01:35] in this case right at 5 amps. But if the
+[01:38] customer was desperate to get the lights
+[01:39] back on, are they paying that much
+[01:40] attention when they get the fuse wire
+[01:43] element out of the cupboard? And this
+[01:45] one rated at 15 looks very similar. If
+[01:47] they were to place it between the two
+[01:49] brass pins by inserting it through and
+[01:50] attaching it to the two screws, the
+[01:52] lighting circuit's likely to come back
+[01:54] on as long as the fault's been cleared.
+[01:56] Therefore, the customer's happy. The
+[01:57] problem being now we've got potentially
+[01:59] a lighting circuit fuse not at 5 amps
+[02:01] and considerably higher. In this case,
+[02:03] this would be 15. Therefore, we're
+[02:05] running the risk of shock fire and
+[02:07] explosions in the installation. And you
+[02:09] look at the pins, you can see that one
+[02:11] is designed to carry considerably more
+[02:13] current than the other. So the actual
+[02:14] construction is not designed to carry
+[02:16] any more than the rated value of it in
+[02:18] this case being 5 amps. Some other
+[02:21] considerations for rewable fuse is the
+[02:24] fact that the fuse element is open to
+[02:25] the air therefore liable to deteriorate.
+[02:28] Also because it's not enclosed
+[02:30] completely when it's carrying too much
+[02:32] current or an overcurren or a
+[02:34] shortcircuit current. Obviously the fuse
+[02:35] element itself is going to get very hot.
+[02:38] The heat's going to cause the element to
+[02:39] break obviously through melting because
+[02:41] some of the heat can escape. That means
+[02:43] it's not uh the most precise device that
+[02:46] you could get. They have fusing factors
+[02:49] all the devices we're going to look at.
+[02:50] And the fusing factor for rewable fuses,
+[02:53] in this case a 5 amp one, all the
+[02:55] rewable fuses have a fusing factor of
+[02:57] two. That means it will take twice the
+[03:00] current in this case 10 amps in order to
+[03:03] cause operation of the device. Because
+[03:05] of this poor fusing factor, when we
+[03:08] later in our course notes looking at
+[03:10] designing circuits and perhaps the
+[03:11] designer for some reason has chosen to
+[03:13] use a rewable fuse or the circuit has
+[03:15] been extended which is protected by a
+[03:17] rewable fuse, we must take into
+[03:19] consideration a correction factor for
+[03:21] using this type of device of 0.725.
+[03:26] We'll come up with that in a later set
+[03:28] of notes in the classroom. One of the
+[03:30] early take-home tasks I'll be setting my
+[03:32] learners at my college is to look at
+[03:34] their distribution board. Look at their
+[03:36] earthing arrangement as well. Take some
+[03:38] photographs. Earthing arrangements are
+[03:40] covered in two of my other presentations
+[03:42] looking at TNS and TNCS earthing
+[03:44] arrangements. I would also expect my
+[03:46] students to be looking at their
+[03:47] distribution board or distribution
+[03:48] boards of friends. I'd like to think
+[03:50] that we could find a distribution board
+[03:52] that had an older style overcurren
+[03:54] protection devices where they bearable
+[03:56] fuses or cartridge fuses using the color
+[03:58] scheme. So, we've got a white carrier,
+[04:00] white dotted fuse for 5 amps. We've got
+[04:03] blue for 15. We've got yellow to
+[04:06] represent 20. And finally, we've got red
+[04:09] to represent 30. And they're the sort of
+[04:11] things that we need to start looking at
+[04:13] and noting in the real world. We're also
+[04:15] going to need to know the perspective
+[04:16] shortcircuit breaking capacity. In other
+[04:18] words, the amount of current under fault
+[04:20] conditions that the device can handle
+[04:22] and clear and not cause, for instance,
+[04:24] the fuse wire element to melt, remelt
+[04:26] across, actually not disconnecting the
+[04:28] circuit, but resolidify and obviously
+[04:31] become a fuse element that's still
+[04:32] connected between the pins. The rewable
+[04:35] fuse can withstand any between 1 and
+[04:37] 4,000 amps under fault conditions. One
+[04:40] of my previous presentations looks at
+[04:42] PFC measuring an installation. However,
+[04:45] you need to know the S1A,
+[04:47] S2A, and S4A of the actual fuse wire
+[04:51] element itself. One being for a,000
+[04:53] amps, two being for 2,000 amps, and four
+[04:55] being for 4,000 amps that it can clear
+[04:58] under short circuit faults. However,
+[05:00] even on the fuse wire element itself, I
+[05:02] cannot find S1A, etc. So, you always
+[05:05] have to presume the lowest rated. So, in
+[05:07] other words, a thousand amps. These can
+[05:09] only clear faults up to a,000 amps. And
+[05:11] when you're testing for PFC, you need to
+[05:14] confirm that the prospective
+[05:16] shortcircuit current won't exceed a
+[05:18] thousand amps as these devices will fail
+[05:20] in that part of the installation.
+[05:23] Many of the negatives to go with rewable
+[05:24] fuses, there must be some advantages. Uh
+[05:27] they used to be very cheap. Now they're
+[05:29] not because nobody uses them. So they're
+[05:30] more expensive to buy than circuit
+[05:31] breakers. So that's a an old cliche exam
+[05:34] question when the advantage of using a
+[05:36] rewirable fuse is that it's inexpensive.
+[05:38] That's not the case anymore. I would
+[05:39] suggest probably the only advantage is
+[05:41] it doesn't have any moving parts.
+[05:43] Therefore, not having a moving part
+[05:45] doesn't need to be functional tested.
+[05:46] Also, not having a moving parts that
+[05:48] they can't fail. So, the mechanism
+[05:50] within it cannot fail because there is
+[05:52] not one. So, I'd suggest the exam might
+[05:54] say that they're cheap. I suggest their
+[05:56] only advantage is there's no moving
+[05:58] parts. Therefore, they cannot fail.
+[06:00] Going to look at the BS1361
+[06:03] cartridge fuse. Uh, physically looks
+[06:05] very similar to the BS362 plug top fuse.
+[06:08] Okay. Okay, so not to get confused with
+[06:10] the two. So these are BS361s.
+[06:13] We've got the same color carrier bases.
+[06:15] So if this got a red carrier base here,
+[06:17] we'd have a 30 amp BS 1361 cartridge
+[06:19] using attached to it. And we've got the
+[06:21] white base being a 5 amp. When we
+[06:22] physically open up a 5 amp BS361 fuse,
+[06:26] you can see it almost looks like a plug
+[06:28] top fuse in construction. Same design,
+[06:30] two metal end caps, a ceramic or glass
+[06:33] body. Okay, this one having a glass
+[06:35] body, this one having a ceramic body,
+[06:37] and a fuse wire element is encased
+[06:39] between the end caps. So, still a piece
+[06:41] of copper wire as before, but this time
+[06:44] because it's encased within the actual
+[06:46] physical enclosure, obviously when it
+[06:48] generates heat under fault conditions,
+[06:50] the heat is with withheld within the
+[06:52] actual vessel itself, causing the fuse
+[06:54] wire element to to melt a lot a lot
+[06:57] quicker than in a rewable fuse. It's a
+[06:59] more accurate device. Therefore, doesn't
+[07:01] have a fusing factor of two, which was
+[07:03] attributed to the rewable fuse. It has a
+[07:05] fusing factor of less than 1.5. So, in
+[07:08] other words, a 5 amp uh cartridge fuse
+[07:11] BS 1361 will take 7.5 amps in order to
+[07:15] operate. When these are used
+[07:17] domestically, they cannot be
+[07:19] interchanged. So, if that one being a 5
+[07:21] amp one and we've got a 20 amp one here,
+[07:23] we can see physically the 20 amp is
+[07:25] bigger. So customers when they're
+[07:26] replacing these can only really
+[07:28] physically replace it with the correct
+[07:30] physical type of BS361 because it
+[07:33] wouldn't go between the actual pins
+[07:34] themselves. The only problem is what
+[07:36] tends to happen is people tend to bridge
+[07:38] between the two with a piece of fuse
+[07:39] wire when these have actually operated
+[07:42] because they're likely to have more
+[07:43] chance of having these kicking around in
+[07:44] a a cupboard at home than they are
+[07:46] replacement fuses. Replacement fuses can
+[07:48] be quite expensive. We may be talking6
+[07:50] to replace a 20 amp fuse BS1361 where
+[07:53] the fuse wire element would be taxed
+[07:55] between the two circuit comes back on
+[07:57] customers happy and we're back down the
+[07:59] risk of massive shock fire and
+[08:01] explosions within the installation. To
+[08:04] summarize the BS361 then comparing it to
+[08:06] a rewable fuse, it's a more accurate
+[08:08] device with a 1.5 fusing factor or less.
+[08:12] We know that the element itself is
+[08:14] encased in a glass or ceramic body with
+[08:16] two metal end caps, meaning that the
+[08:18] element is not liable to deteriorate. We
+[08:20] know that the elements um and bodies
+[08:23] need to be replaced correctly. They're
+[08:26] physically different sizes as we move
+[08:27] through the amp ratings and that
+[08:29] customers can be uh have a tendency to
+[08:33] replace a wire across them in order to
+[08:35] get their circuits back on. We know that
+[08:37] this is obviously unacceptable, creating
+[08:39] a massive risk of shot fire and
+[08:40] explosions. And one thing electricians
+[08:42] should be looking out for when they're
+[08:43] out there in industry. But overall, the
+[08:45] device should not be shunned. Can be
+[08:47] installed for brand new circuits. And in
+[08:49] commercial industrial installations, the
+[08:51] cartridge fuse will be a common
+[08:53] overcurren protection device. So looking
+[08:56] at the BSEN 60898 circuit breaker, we
+[09:00] tend to have a love affair with these in
+[09:01] the electrical industry. Many advantages
+[09:03] to using them, one or two disadvantages.
+[09:06] Okay, so the circuit breakers themselves
+[09:07] run slightly different amp ratings. So
+[09:10] we don't have a five, we have a six, 16,
+[09:13] 20, and 32. Very similar to what we saw
+[09:15] before with the 5, 15, 20, and 30 for
+[09:18] all other devices. We also have now a
+[09:21] letter coding against the circuit
+[09:23] breaker. These being in this case B6,
+[09:25] 16s, B20, and B32s. They're all BT type
+[09:28] circuit breakers. We can also have C
+[09:31] type circuit breakers and DT type
+[09:33] circuit breakers. We'll go into some
+[09:35] detail in the course about know the
+[09:37] design and selecting either B's, C's or
+[09:40] D's, but just quickly domestically you'd
+[09:42] have a BT type circuit breaker where
+[09:44] there's lots of inductive loads such as
+[09:46] a commercial office with a florescent
+[09:49] light fittings you'd probably have a C
+[09:50] type circuit breaker where you have
+[09:52] highly inductive loads like welding
+[09:54] equipment, some air conditioning units,
+[09:56] you'd have a DT type circuit breaker.
+[09:58] We'll add a little bit more detail as we
+[10:00] move through the course on those.
+[10:01] Circuit breakers also have a fusing
+[10:03] factor of 1.5 or less. Manufacturers
+[10:05] will tell you exactly the fusing factor
+[10:07] for those. So a more precise device than
+[10:09] a rewable fuse seen in the first
+[10:11] section. Characteristics of the fuse
+[10:13] have been set by the manufacturer and we
+[10:15] cannot tamper with these in any way. So
+[10:16] in other words, it's a sealed unit
+[10:18] meaning that once it's operated, the
+[10:20] device will go into the off position
+[10:22] vine. The fault has been cleared. We
+[10:24] should be able to reset that. We will
+[10:26] look at in a set of notes about the
+[10:28] prospective fault current that these can
+[10:30] clear and clear safely. There is a case
+[10:33] that sometimes if it's a massive fault
+[10:35] current that these have had to clear
+[10:36] that the actual device would need to be
+[10:38] replaced. That's something that industry
+[10:39] teams to ignore the fact that they
+[10:41] always believe that a circuit breaker
+[10:43] can be just reset. There is an instance
+[10:45] where they need to be replaced because
+[10:47] of the amount of fault current they have
+[10:48] cleared. We'll cover that in a set of
+[10:49] notes in the classroom.
+[10:52] Circuit breaker has physical moving
+[10:54] parts. therefore requires to be
+[10:56] functionally tested. So in other words,
+[10:57] you must turn your breaker from the on
+[10:59] position to the off, see the circuit go
+[11:01] off, and re-energize it to prove
+[11:03] functionality. In other words, it
+[11:04] actually turns on and off. We've got a
+[11:06] clearsided circuit breaker here, and we
+[11:08] can see two other features that we'll
+[11:09] discuss in the classroom. It has a
+[11:11] bimetal strip and a coil here. And we've
+[11:15] seen in previous studies in the
+[11:16] classroom that a conductor carrying
+[11:18] current will create a magnetic field
+[11:20] around it. If we put that into a coil,
+[11:23] okay, we increase the strength of the
+[11:24] magnetic field and we use both the
+[11:26] bimetal strip and the fact that a
+[11:29] conductor will create a magnetic field
+[11:31] within the basic principles of a circuit
+[11:33] breaker. When you overload the circuit
+[11:35] breaker, in other words, ask it to carry
+[11:37] more current than it's designed to do.
+[11:38] So, it's rated for this one at 20 amps.
+[11:41] Fusing factor would be 1.5 times that.
+[11:43] So, roughly 30 amps. But we're looking
+[11:45] at the bimetal strip at the top here.
+[11:48] When we ask it to carry more than its 20
+[11:50] amps starts to get warm, that bimetal
+[11:52] strip eventually over time will cause
+[11:54] the disconnection of the circuit. Where
+[11:56] there's a short circuit of negligible
+[11:59] impedance or an earth fault in circuit,
+[12:02] the massive current creates a massive
+[12:04] magnetic field here. So the circuit
+[12:06] breaker could be carrying hundreds or
+[12:08] thousands of amps for a small duration.
+[12:10] Creates a massive magnetic field causing
+[12:13] the mechanism to operate. So you got two
+[12:15] ways in which it operates. overload
+[12:17] through the biometal strip and the
+[12:19] magnetic field created around this coil
+[12:21] creates such a strong magnetic field it
+[12:23] pulls the mechanism a Rolls-Royce of
+[12:25] fuses really now we're looking at the
+[12:26] high ruring capacity
+[12:28] uh BS88 fuses okay these are generally
+[12:32] the ones that be the mains incoming
+[12:35] position of a large installation they
+[12:37] are highly robust so physically you
+[12:40] couldn't damage that fuse very strong
+[12:42] fuse also it's very good at
+[12:44] distinguishing between short term um
+[12:46] inrush currents by turning on inductive
+[12:49] loads and distinguishing that between
+[12:51] actual fault currents and therefore
+[12:53] causing operation. The fuse wire
+[12:55] elements built in here are often made of
+[12:58] silver. Okay. And often of a
+[13:00] constructional design not straight
+[13:02] through but of a either perforated or
+[13:05] shaped fuse element. So not just a
+[13:07] straight fuse wire going through that
+[13:09] clever design um and construction
+[13:11] meaning that is a very precise device.
+[13:14] It's often filled with a quartz filler
+[13:16] or silica sand in there again for when
+[13:20] the actual fault occurs. The actual
+[13:23] temperature is held around it making it
+[13:26] a more precise device. The heat isn't
+[13:28] allowed to escape. The the quartz filler
+[13:30] or silica sand helps be a more precise
+[13:33] device. Not really much disadvantage of
+[13:36] using a um BS88 fuse. perhaps the
+[13:39] expense of them, you know, they can be
+[13:40] vastly expensive because of the the
+[13:42] Rolls-Royce style design that they've
+[13:43] got. So, that's our first look at the
+[13:46] four overcurren protection devices
+[13:47] covered on our course. There's more
+[13:49] information to add in other video
+[13:50] presentations. There'll be all more
+[13:52] information to be added in the
+[13:53] classroom.

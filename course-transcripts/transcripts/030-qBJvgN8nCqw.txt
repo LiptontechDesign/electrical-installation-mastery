@@ -1,0 +1,509 @@
+# Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale
+# https://www.youtube.com/watch?v=qBJvgN8nCqw
+
+[Music] hello and welcome to this electrical principals training video in a previous video we answered a question from a viewer that had been sent in via Instagram now since then we have been literally inundated with a question that has come in also on Instagram and this time it's from always struggle with these instagram names DM see it FC one hopefully I'm pronouncing that correctly and his question is hi Joe could you explain how to find out the answer to a question from one of my mock papers please draw and label a suitable power triangle to scale and calculate the power factor for a three kilowatt load which draws 22 amps from a 230 volt supply thanks Dave great question absolutely love this question so we're going to answer that now now generally speaking the best thing to do with this kind of question is to write down everything that the question has given you and then try and figure out what it's asking you to find and I generally do this with all of the questions I get asked in exams and assessments so let's have a look at this so we've got first of all it tells us that we've got a three kilowatt load so we know that the power in this question is three kilowatts okay now that's interesting for a couple of reasons number one it's in kilowatts so that's the first thing and also we're told that the unit here is in watts so that means that this value must be the true power so this is the true power from the circuit in other words the resistive part of this load it then tells us that it's drawing 22 amps from a 230 volt supply so we've got 22 amps and the voltage is 230 volts okay and ultimately what we're trying to find here is a power factor and a power triangle to scale so we all know what the power factor is that's going to be important and we also need to draw a power triangle to scale so we need to draw that as well okay so there's what we need to achieve in this question okay so if we want to find out the power factor there's a few different ways that we can do this and actually there's a there's kind of a couple of ways that we could approach this question but I'm going to take you the way that I would do it if you've got another way of doing it absolutely fine again it's always worth just checking with your teacher that if there's a preferred method that they want you to use that you're using that method and also how much detail they want you to go into so I'll show as much detail as I can here so that you don't miss out on anything like that so let's figure out first of all how to find the power factor so power factor there's a few ways we could calculate that but in this case if we want to find the power factor because we're dealing with powers that's fairly obvious here we would do the true power in watts or kilowatts we'll put it in kilowatts seen as that's what the question started often divided by the apparent power in kilovolt amperes so there we've got the true power divided by the apparent power again if you're not sure where this formulas sprung from or why this is the way it is or even what power factor is then please go back and watch some of my videos on AC theory if it's a completely new subject go and watch my AC Theory playlist so that's going to massively helped you out with understanding this subject so in order to calculate the power factor here we've got the true power we know that that is three kilowatts and because in this case we're finding power factor which is actually just a ratio if we keep everything in the killer multiple then we should be okay so in order to find the apparent power to go on the bottom that's what we're missing at the moment so how do we actually calculate the apparent power how are we going to do that so apparent power how do we calculate that well it's finally apparent power it's very simple we just find the current flowing into the circuit and multiply it by the voltage being applied to the circuit because her parent power is the result of the total current multiplied by the total voltage so in this case we're simply going to do 22 times by 230 and 22 times by 213 that's one question I should probably be able to do in my head but I'm under pressure on camera so I'm not going to attempt it is 5060 so there we go we've got 5060 volt-amperes and we're going to change that into kilovolt ampere so that will become five point zero six now I think I'm pretty sure that the teacher who set this question probably wanted that to come out at five I think and I think when we draw this to scale it'll be so close to five whatever scale we use that we could probably treat it at that but we'll put it in as accurately as we can so five point zero six and in this case that is killer volt amperes we've got in so we've just divided that by a thousand to turn it from volt amperes into killer volt amp ere's so what we've got to do now is do three divided by five point zero six and that's going to give us our power factor and again if you're not sure what power factor is please go back and watch my videos about it so power factor is just an indication of how efficiently an inductive load is working generally speaking that's what we can consider it to be so three divided by five point zero six so we come out with not point five nine but I'm going to do this to three decimal places here not point five nine three now it's interesting on the calculation you can see that there's actually a little dot above the five and many people fall into the trap of thinking that means that that five is recurring but actually if there's numbers coming after it that can't recur because this positions taken up by a number what you actually find if you scroll to the end of that number and it's quite a long number in this case there's another number at the end with a dot above it and it means that that whole chunk of numbers then repeats and repeats forever not just the one number that has the dot above it so just a little bit of bonus material for you there so power factor is equal to naught point five nine three so how does this help us now to answer the rest of the question we've solved one part of the question we've found our power factor so we can kind of scrub that bit out now and say that the power factor is equal to naught point five nine three so we have here that notice there's no units being put on there that's because power factor is simply a ratio is not a unit in the sense of having a letter that we put on the end of that so it's not measured in anything it's just a ratio so not point five nine three is the power factor what do we do that information now well what we need to do next is we need to draw the power triangle to scale again there's a couple of different ways that we could do this for people who are familiar with Pythagoras they probably can already see kind of the dimensions of this triangle how it's going to end up being but again let me take you through the process because it may be that when you get into your exam it's not quite as nice and neat as it appears in this question so what I would do at this stage is I would take that power factor and I would use it to figure out what the phase angle is now the phase angle is actually a measurement of how far out of phase the voltage and current is in the circuit again please go back and watch some more videos if you have no idea what that means but it is also the angle that we're going to use when we construct our power triangle so that's where it's going to come in really handy so how do we change this power factor that we've got here into an angle well it's very simple it's handy if we remember that the power factor in a circuit is equal to the cosine of theta the cosine of the angle in the corner of our triangle so in a moment we're going to draw to scale a triangle that looks something like this so this is just a rough sketch at the moment it's a right-angled triangle it's an inductive loads it's a motor so we've drawn the triangle pointing up in duct point up and we're interested in this angle here theta we need to be able to draw that angle really in order to draw this triangle to scale so the power factor of the circuit is equal to the cosine of that angle theta well how does that help us out well we've just said that power factor is equal to the cosine of theta so power factor is equal to the cosine of theta which is equal to naught point five nine three so now what we need to do is we need to figure out what the angle theta is and in order to do that we need to rearrange this formula now when we do this to find the angle this becomes theta is equal to the inverse cosine and we write it like that cos ^ -1 sometimes you'll see this referred to as the arc cause of a value of nought 2.59 3 now we can actually perform that function on the calculator and actually all the calculator is doing is it's just looking up effectively in kind of a table of values it's finding this value not 0.5 9 3 and it's saying the angle that has a cosine of naught point 5 9 3 is this so let's put it into the calculator and see what that looks like so we've got theta is equal to so in order to do this we press shift and then the cosine button and that brings up cosine to the -1 just like we've got here and then we put the number in not 0.59 3 now remember all we're doing is we st. the calculator please tell me the angle that has a cosine value of not 0.5 9 3 and when we hit the equals button it tells us that angle is 50 3 point 6 3 degrees okay so we've got fifty three point six three degrees so we now know that this angle here in the corner of our right-angled triangle is going to be fifty three point six three degrees so that's super helpful because now we can draw that now obviously we're going to struggle to draw accurately 53 point six three degrees so we're probably going to aim to get an angle somewhere just above 53 and sort of closer to 54 than it is to 53 but again when we're dealing with that kind of level of accuracy we can be reasonable with ourselves okay so how do we draw our power triangle to scale well it's not a bad idea actually just to do a very quick sketch of it here just so that you can familiarize yourself with what it's going to look like so let's try and remember what goes on the three sides of our power triangle we've got here the true power and then the so the true power is always the horizontal side and then the long side the hypotenuse of the right triangle that is always the apparent power and as you can see we've already calculated what that apparent power will be we've already found out that it's five point zero six KVA then we're going to figure out what this side is here and this side is the reactive power so that's the long side of the right-angled triangle okay so about the apparent power of the true power and the reactive power so to start drawing our triangle we need to draw one of these sides and in this case we're going to start with the true power cuz that was a value that we were given right at the very start of the question so that's a good value to start with so we need to draw a horizontal line but we need to draw it to scale okay so we need to make sure that it is not aligned with a random value for length that it's a very specific value for length so what you need to do before you start drawing this is to figure out what scale you're going to use so in this case I'm going to say that one kilowatt is equal to ten centimeters now when you do this on your bit of paper for your mock exam or few real exam you're obviously gonna use a smaller scale because it won't fit on your rifle a bit of paper if you try and draw it to this scale so I'm going to use one kilowatt equals ten centimeters you might use something like 1 kilowatt equals 5 centimeters or something like that but the principle stays the same even if the size of the triangle is slightly different so we look at this and we think how do we get from this side to this side how do I turn my power value into a length value and the answer is we look at this and go how do I get from here to here well how do we change a 1 into a 10 it's very simple isn't it we just times by 10 1 times 10 gives us 10 so if I want to draw a line that represents my true power to scale I need to take my true power of 3 kilowatts and I need to times it by 10 and that's going to turn it into my length measurement so in this case that's going to give me 30 centimeters so there we go so my line that represents my true power will be 30 centimeters long so I'm gonna get my ruler here and I'm going to draw this on the board I'm gonna pop it down here and try and get this reasonably level and going to draw this 30 centimeters long so there we go so the distance from there to there is 30 centimeters that's nice and this side represents my true power so it's quite important at this stage that we think about speaking to our teacher about how much information they need us to put on here to get the maximum points for the question so my take on it is that really you can't put too much information on this triangle if you miss something off it may be the crucial thing that the teacher needed to see if you put all the information on here that you can think of then actually you've probably covered your back and showing the information that you need to so just think about what this side represents we need to label it up that's going to help so we've got the true power and the true power in this circuit is equal to 3 kilowatts and then I'd also put on here the length of this side here I'd say that that is equal to 30 centimeters showing my working out of how I got to 30 centimeters up here again very important but I've just included it down here so that there's as much information on this triangle as we can possibly get now again there's a couple of ways that we could do this now however we've gone to the trouble of finding the angle so let's use that angle 53.6 3 degrees and we're gonna put on there and we're gonna pop that on the end there like that and then we're gonna come around here 0 10 20 30 40 50 so we're looking at the inside ring of numbers here because we're starting from zero lined up with our line there so there's 50 and then we go 51 52 53 and there's 54 so we want to be just kind of just past halfway between those two so again if you can achieve this level of accuracy in your drawing then you're doing very very well when you're working with a tiny little protractor it gets a little bit trickier so there's fifty three point six three degrees so we'll take that off there and then what we're gonna do here is we're going to show that this side here will represent the apparent power gonna go black to my blue pen to stay consistent and I think I might need to just take that up a little bit actually alright so there we go that should get us somewhere where we need to be so this side of the triangle I could kind of measure this out to exactly the right length if I wanted to but actually I don't need to so I can box a little bit clever here which is helpful just fill in my blue line next I don't like things getting scuffed and now all I've got to do is to fill in the remaining side of my triangle and of course we know that this angle here will be a right angle 90 degrees so we just popped right on there and we bring that around to there like that lined up and we're at 90 degrees just there so that's nice so then all I've got to do is just pop that on there pop that on there and it looks like I need to extend my parent power side just a little bit there we go look at that nearly there we go and we'll just wipe that bit off and there we go that is actually the angles drawn to scale I'll show that is a right angle again label it up make sure you show as much information as you can I'm going to show this angle here I've gone to all the trouble of calculating it so I'm going to show the teacher how clever I am by putting the angle in there fifty three point six three degrees and then I'm going to label up the rest of the sides as I've already done so I know that this side here is the apparent power is the apparent power and I know that has a value of five point zero six KVA from my calculations earlier and what I should find when I measure this is that actually using the scale we should find that this value in centimeters that I've got here which is yep just just over fifty yeah so that's maybe yeah fifty maybe point six it's it's very very close so there we can say that that is basically fifty centimeters so we're very much in the ballpark there of what we're expecting to be so that's 50 centimeters which is nice and if we go back to our scale we know that the apparent power is 50 centimeters so it's 50 centimeters long and then we look at this and we think well how do I get from a centimeter value back to a power of value how do I get from this side to this side well how do I get from ten to one I'll just divide by ten no night 10 divided by 10 gives me 1 so therefore 50 centimeters divided by 10 will give me 5 K V a and we could see that the value we're aiming for was five point zero six kPa so we were really really close with the accuracy of this drawing which considering I'm working on a whiteboard with giant tools is not such a bad result really so I've never finished doing this now I just need to label up this side this is obviously the reactive power so I'll figure out what the reactive power is and we'll write that down in a moment so again in order to do that we could we could do some Pythagoras to figure it out no problem or we can just simply measure it here so this side here is 40 centimeters long so we've got a length is 40 centimeters and again if we want to figure out what that is in in this case we kvar that we'll figure it out in we just again think right I've got a length how do I get to power I do this number divided by 10 will give me that number so therefore we do 40 divided by 10 will give me 4 K VARs like that so we've got 4 K bars there we go and I don't think we've missed anything off the drawing so we've got the sides labeled up we've shown their lengths and we've also shown what values they represent we've shown working out so that we understand how the scale triangle works and this is the way that we've chosen to do it by finding the angle there is another way of doing it and again to my mind they're they're equal there's no real difference between them this is just the method I happen to prefer again check that your teacher is happy with this method but that is how I would answer that question so I've found the power factor as we were to find at the start not 0.59 three and I've also drawn a power triangle to scale fully labeled up showing what each side is what values each side represents and how long they are physically so hopefully that answered your question Dave and I hope that that has been helpful to you all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:09] principals training video in a previous
+[00:11] video we answered a question from a
+[00:13] viewer that had been sent in via
+[00:15] Instagram now since then we have been
+[00:16] literally inundated with a question that
+[00:20] has come in also on Instagram and this
+[00:22] time it's from always struggle with
+[00:24] these instagram names DM see it FC one
+[00:28] hopefully I'm pronouncing that correctly
+[00:30] and his question is hi Joe could you
+[00:33] explain how to find out the answer to a
+[00:35] question from one of my mock papers
+[00:37] please draw and label a suitable power
+[00:40] triangle to scale and calculate the
+[00:42] power factor for a three kilowatt load
+[00:44] which draws 22 amps from a 230 volt
+[00:48] supply thanks Dave
+[00:50] great question absolutely love this
+[00:52] question so we're going to answer that
+[00:54] now now generally speaking the best
+[00:56] thing to do with this kind of question
+[00:57] is to write down everything that the
+[00:59] question has given you and then try and
+[01:00] figure out what it's asking you to find
+[01:02] and I generally do this with all of the
+[01:04] questions I get asked in exams and
+[01:07] assessments so let's have a look at this
+[01:09] so we've got first of all it tells us
+[01:10] that we've got a three kilowatt load so
+[01:13] we know that the power in this question
+[01:15] is three kilowatts okay now that's
+[01:19] interesting for a couple of reasons
+[01:20] number one it's in kilowatts so that's
+[01:22] the first thing and also we're told that
+[01:26] the unit here is in watts so that means
+[01:29] that this value must be the true power
+[01:33] so this is the true power from the
+[01:37] circuit in other words the resistive
+[01:39] part of this load it then tells us that
+[01:42] it's drawing 22 amps from a 230 volt
+[01:45] supply so we've got 22 amps and the
+[01:51] voltage is 230 volts okay and ultimately
+[01:56] what we're trying to find here is a
+[01:59] power factor and a power triangle to
+[02:02] scale so we all know what the power
+[02:03] factor is that's going to be important
+[02:05] and we also need to draw a power
+[02:07] triangle to scale so we need to draw
+[02:09] that as well okay so
+[02:13] there's what we need to achieve in this
+[02:15] question okay so if we want to find out
+[02:18] the power factor there's a few different
+[02:21] ways that we can do this and actually
+[02:22] there's a there's kind of a couple of
+[02:24] ways that we could approach this
+[02:25] question but I'm going to take you the
+[02:27] way that I would do it if you've got
+[02:29] another way of doing it absolutely fine
+[02:30] again it's always worth just checking
+[02:32] with your teacher that if there's a
+[02:33] preferred method that they want you to
+[02:35] use that you're using that method and
+[02:36] also how much detail they want you to go
+[02:39] into so I'll show as much detail as I
+[02:40] can here so that you don't miss out on
+[02:43] anything like that so let's figure out
+[02:44] first of all how to find the power
+[02:46] factor so power factor there's a few
+[02:49] ways we could calculate that but in this
+[02:51] case if we want to find the power factor
+[02:53] because we're dealing with powers that's
+[02:55] fairly obvious here we would do the true
+[02:59] power in watts or kilowatts we'll put it
+[03:02] in kilowatts seen as that's what the
+[03:03] question started often divided by the
+[03:07] apparent power in kilovolt amperes so
+[03:10] there we've got the true power divided
+[03:13] by the apparent power again if you're
+[03:14] not sure where this formulas sprung from
+[03:16] or why this is the way it is or even
+[03:17] what power factor is then please go back
+[03:20] and watch some of my videos on AC theory
+[03:22] if it's a completely new subject go and
+[03:25] watch my AC Theory playlist so that's
+[03:26] going to massively helped you out with
+[03:27] understanding this subject so in order
+[03:31] to calculate the power factor here we've
+[03:33] got the true power we know that that is
+[03:35] three kilowatts and because in this case
+[03:38] we're finding power factor which is
+[03:41] actually just a ratio if we keep
+[03:43] everything in the killer multiple then
+[03:46] we should be okay so in order to find
+[03:49] the apparent power to go on the bottom
+[03:51] that's what we're missing at the moment
+[03:52] so how do we actually calculate the
+[03:55] apparent power how are we going to do
+[03:57] that so apparent power how do we
+[04:00] calculate that well it's finally
+[04:02] apparent power it's very simple we just
+[04:04] find the current flowing into the
+[04:07] circuit and multiply it by the voltage
+[04:09] being applied to the circuit because her
+[04:10] parent power is the result of the total
+[04:13] current multiplied by the total voltage
+[04:16] so in this case we're simply going to do
+[04:19] 22 times by 230 and 22 times by 213
+[04:25] that's one
+[04:26] question I should probably be able to do
+[04:28] in my head but I'm under pressure on
+[04:30] camera so I'm not going to attempt it is
+[04:33] 5060 so there we go we've got 5060
+[04:38] volt-amperes and we're going to change
+[04:41] that into kilovolt ampere so that will
+[04:43] become five point zero six now I think
+[04:47] I'm pretty sure that the teacher who set
+[04:50] this question probably wanted that to
+[04:52] come out at five I think and I think
+[04:54] when we draw this to scale
+[04:55] it'll be so close to five whatever scale
+[04:58] we use that we could probably treat it
+[05:00] at that but we'll put it in as
+[05:01] accurately as we can so five point zero
+[05:03] six and in this case that is killer
+[05:06] volt amperes we've got in so we've just
+[05:08] divided that by a thousand to turn it
+[05:10] from volt amperes into killer volt amp
+[05:13] ere's so what we've got to do now is do
+[05:15] three divided by five point zero six and
+[05:18] that's going to give us our power factor
+[05:21] and again if you're not sure what power
+[05:22] factor is please go back and watch my
+[05:24] videos about it so power factor is just
+[05:26] an indication of how efficiently an
+[05:29] inductive load is working generally
+[05:31] speaking that's what we can consider it
+[05:33] to be so three divided by five point
+[05:36] zero six so we come out with not point
+[05:40] five nine but I'm going to do this to
+[05:42] three decimal places here not point five
+[05:45] nine three now it's interesting on the
+[05:48] calculation you can see that there's
+[05:50] actually a little dot above the five and
+[05:52] many people fall into the trap of
+[05:54] thinking that means that that five is
+[05:55] recurring but actually if there's
+[05:57] numbers coming after it that can't recur
+[05:59] because this positions taken up by a
+[06:01] number what you actually find if you
+[06:03] scroll to the end of that number and
+[06:05] it's quite a long number in this case
+[06:06] there's another number at the end with a
+[06:08] dot above it and it means that that
+[06:10] whole chunk of numbers then repeats and
+[06:13] repeats forever not just the
+[06:15] one number that has the dot above it so
+[06:18] just a little bit of bonus material for
+[06:20] you there so power factor is equal to
+[06:22] naught point five nine three so how does
+[06:25] this help us now to answer the rest of
+[06:28] the question we've solved one part of
+[06:29] the question we've found our power
+[06:31] factor so we can kind of scrub that bit
+[06:34] out now and say that the power factor is
+[06:35] equal to naught point five nine three so
+[06:39] we have here that
+[06:40] notice there's no units being put on
+[06:42] there that's because power factor is
+[06:43] simply a ratio is not a unit in the
+[06:47] sense of having a letter that we put on
+[06:51] the end of that so it's not measured in
+[06:52] anything it's just a ratio so not point
+[06:55] five nine three is the power factor what
+[06:57] do we do that information now well what
+[07:00] we need to do next is we need to draw
+[07:01] the power triangle to scale again
+[07:04] there's a couple of different ways that
+[07:05] we could do this for people who are
+[07:07] familiar with Pythagoras they probably
+[07:09] can already see kind of the dimensions
+[07:11] of this triangle how it's going to end
+[07:12] up being but again let me take you
+[07:14] through the process because it may be
+[07:15] that when you get into your exam it's
+[07:17] not quite as nice and neat as it appears
+[07:20] in this question so what I would do at
+[07:23] this stage is I would take that power
+[07:25] factor and I would use it to figure out
+[07:28] what the phase angle is now the phase
+[07:32] angle is actually a measurement of how
+[07:34] far out of phase the voltage and current
+[07:35] is in the circuit again please go back
+[07:38] and watch some more videos if you have
+[07:39] no idea what that means
+[07:40] but it is also the angle that we're
+[07:43] going to use when we construct our power
+[07:45] triangle so that's where it's going to
+[07:47] come in really handy so how do we change
+[07:50] this power factor that we've got here
+[07:52] into an angle well it's very simple it's
+[07:56] handy if we remember that the power
+[07:57] factor in a circuit is equal to the
+[08:01] cosine of theta the cosine of the angle
+[08:04] in the corner of our triangle so in a
+[08:07] moment we're going to draw to scale a
+[08:09] triangle that looks something like this
+[08:12] so this is just a rough sketch at the
+[08:14] moment it's a right-angled triangle it's
+[08:16] an inductive loads it's a motor so we've
+[08:19] drawn the triangle pointing up in duct
+[08:21] point up and we're interested in this
+[08:24] angle here theta we need to be able to
+[08:27] draw that angle really in order to draw
+[08:29] this triangle to scale so the power
+[08:32] factor of the circuit is equal to the
+[08:35] cosine of that angle theta well how does
+[08:39] that help us out well we've just said
+[08:42] that power factor is equal to the cosine
+[08:44] of theta so power factor is equal to the
+[08:46] cosine of theta which is equal to naught
+[08:49] point five nine three so now what we
+[08:52] need to do is
+[08:53] we need to figure out what the angle
+[08:54] theta is and in order to do that we need
+[08:57] to rearrange this formula now when we do
+[09:00] this to find the angle this becomes
+[09:01] theta is equal to the inverse cosine and
+[09:06] we write it like that cos ^ -1 sometimes
+[09:09] you'll see this referred to as the arc
+[09:11] cause of a value of nought 2.59 3 now we
+[09:17] can actually perform that function on
+[09:18] the calculator and actually all the
+[09:19] calculator is doing is it's just looking
+[09:22] up effectively in kind of a table of
+[09:25] values it's finding this value not 0.5 9
+[09:27] 3 and it's saying the angle that has a
+[09:30] cosine of naught point 5 9 3 is this so
+[09:34] let's put it into the calculator and see
+[09:36] what that looks like so we've got theta
+[09:38] is equal to so in order to do this we
+[09:43] press shift and then the cosine button
+[09:46] and that brings up cosine to the -1 just
+[09:49] like we've got here and then we put the
+[09:51] number in not 0.59 3 now remember all
+[09:54] we're doing is we st. the calculator
+[09:55] please tell me the angle that has a
+[09:58] cosine value of not 0.5 9 3 and when we
+[10:01] hit the equals button it tells us that
+[10:03] angle is 50 3 point 6 3 degrees okay so
+[10:08] we've got fifty three point six three
+[10:12] degrees so we now know that this angle
+[10:16] here in the corner of our right-angled
+[10:18] triangle is going to be fifty three
+[10:20] point six three degrees so that's super
+[10:23] helpful because now we can draw that now
+[10:26] obviously we're going to struggle to
+[10:27] draw accurately 53 point six three
+[10:29] degrees so we're probably going to aim
+[10:32] to get an angle somewhere just above 53
+[10:34] and sort of closer to 54 than it is to
+[10:37] 53 but again when we're dealing with
+[10:39] that kind of level of accuracy we can be
+[10:42] reasonable with ourselves okay so how do
+[10:43] we draw our power triangle to scale well
+[10:46] it's not a bad idea actually just to do
+[10:48] a very quick sketch of it here just so
+[10:49] that you can familiarize yourself with
+[10:51] what it's going to look like so let's
+[10:53] try and remember what goes on the three
+[10:54] sides of our power triangle we've got
+[10:57] here the true power and then the so the
+[11:02] true power is always the horizontal side
+[11:03] and then the long side the hypotenuse of
+[11:06] the right
+[11:07] triangle that is always the apparent
+[11:09] power and as you can see we've already
+[11:11] calculated what that apparent power will
+[11:14] be we've already found out that it's
+[11:16] five point zero six KVA then we're going
+[11:19] to figure out what this side is here and
+[11:21] this side is the reactive power so
+[11:23] that's the long side of the right-angled
+[11:26] triangle okay so about the apparent
+[11:27] power of the true power and the reactive
+[11:28] power so to start drawing our triangle
+[11:31] we need to draw one of these sides and
+[11:33] in this case we're going to start with
+[11:35] the true power cuz that was a value that
+[11:36] we were given right at the very start of
+[11:39] the question so that's a good value to
+[11:40] start with so we need to draw a
+[11:42] horizontal line but we need to draw it
+[11:44] to scale okay so we need to make sure
+[11:46] that it is not aligned with a random
+[11:48] value for length that it's a very
+[11:50] specific value for length so what you
+[11:52] need to do before you start drawing this
+[11:54] is to figure out what scale you're going
+[11:56] to use so in this case I'm going to say
+[11:59] that one kilowatt is equal to ten
+[12:03] centimeters now when you do this on your
+[12:05] bit of paper for your mock exam or few
+[12:07] real exam you're obviously gonna use a
+[12:10] smaller scale because it won't fit on
+[12:12] your rifle a bit of paper if you try and
+[12:13] draw it to this scale so I'm going to
+[12:15] use one kilowatt equals ten centimeters
+[12:17] you might use something like 1 kilowatt
+[12:19] equals 5 centimeters or something like
+[12:21] that but the principle stays the same
+[12:22] even if the size of the triangle is
+[12:25] slightly different so we look at this
+[12:27] and we think how do we get from this
+[12:29] side to this side how do I turn my power
+[12:32] value into a length value and the answer
+[12:37] is we look at this and go how do I get
+[12:38] from here to here well how do we change
+[12:40] a 1 into a 10 it's very simple isn't it
+[12:43] we just times by 10 1 times 10 gives us
+[12:46] 10 so if I want to draw a line that
+[12:49] represents my true power to scale I need
+[12:52] to take my true power of 3 kilowatts and
+[12:55] I need to times it by 10 and that's
+[12:59] going to turn it into my length
+[13:01] measurement so in this case that's going
+[13:02] to give me 30 centimeters so there we go
+[13:07] so my line that represents my true power
+[13:09] will be 30 centimeters long so I'm gonna
+[13:13] get my ruler here and I'm going to draw
+[13:15] this on the board I'm gonna pop it down
+[13:16] here and try and get this reasonably
+[13:18] level and
+[13:19] going to draw this 30 centimeters long
+[13:22] so there we go so the distance from
+[13:23] there to there is 30 centimeters that's
+[13:28] nice and this side represents my true
+[13:31] power so it's quite important at this
+[13:33] stage that we think about speaking to
+[13:37] our teacher about how much information
+[13:39] they need us to put on here to get the
+[13:41] maximum points for the question so my
+[13:44] take on it is that really you can't put
+[13:46] too much information on this triangle if
+[13:48] you miss something off it may be the
+[13:49] crucial thing that the teacher needed to
+[13:51] see if you put all the information on
+[13:53] here that you can think of then actually
+[13:55] you've probably covered your back and
+[13:56] showing the information that you need to
+[13:58] so just think about what this side
+[14:00] represents we need to label it up that's
+[14:02] going to help so we've got the true
+[14:04] power and the true power in this circuit
+[14:07] is equal to 3 kilowatts and then I'd
+[14:11] also put on here the length of this side
+[14:13] here I'd say that that is equal to 30
+[14:15] centimeters showing my working out of
+[14:17] how I got to 30 centimeters up here
+[14:19] again very important but I've just
+[14:21] included it down here so that there's as
+[14:23] much information on this triangle as we
+[14:25] can possibly get now again there's a
+[14:27] couple of ways that we could do this now
+[14:28] however we've gone to the trouble of
+[14:29] finding the angle so let's use that
+[14:31] angle 53.6 3 degrees and we're gonna put
+[14:36] on there and we're gonna pop that on the
+[14:39] end there like that and then we're gonna
+[14:42] come around here 0 10 20 30 40 50 so
+[14:46] we're looking at the inside ring of
+[14:47] numbers here because we're starting from
+[14:49] zero lined up with our line there so
+[14:52] there's 50 and then we go 51 52 53 and
+[14:56] there's 54 so we want to be just kind of
+[14:59] just past halfway between those two so
+[15:02] again if you can achieve this level of
+[15:03] accuracy in your drawing then you're
+[15:05] doing very very well when you're working
+[15:07] with a tiny little protractor it gets a
+[15:09] little bit trickier so there's fifty
+[15:11] three point six three degrees so we'll
+[15:14] take that off there and then what we're
+[15:16] gonna do here is we're going to show
+[15:18] that this side here will represent the
+[15:22] apparent power gonna go black to my blue
+[15:25] pen to stay consistent
+[15:28] and I think I might need to just take
+[15:31] that up a little bit actually alright so
+[15:35] there we go that should get us somewhere where we
+[15:37] need to be so this side of the triangle
+[15:39] I could kind of measure this out to
+[15:41] exactly the right length if I wanted to
+[15:43] but actually I don't need to so I can
+[15:46] box a little bit clever here which is
+[15:47] helpful just fill in my blue line next I
+[15:51] don't like things getting scuffed and
+[15:53] now all I've got to do is to fill in the
+[15:55] remaining side of my triangle and of
+[15:57] course we know that this angle here will
+[15:59] be a right angle 90 degrees so we just
+[16:02] popped right on there and we bring that
+[16:05] around to there like that lined up and
+[16:10] we're at 90 degrees just there so that's
+[16:14] nice so then all I've got to do is just
+[16:17] pop that on there pop that on there and
+[16:20] it looks like I need to extend my parent
+[16:23] power side just a little bit there we go
+[16:28] look at that nearly there
+[16:30] we go and we'll just wipe that bit
+[16:33] off and there we go that is actually the
+[16:35] angles drawn to scale I'll show that
+[16:38] is a right angle again label it up
+[16:40] make sure you show as much information
+[16:42] as you can I'm going to show this angle
+[16:44] here I've gone to all the trouble of
+[16:45] calculating it so I'm going to show the
+[16:47] teacher how clever I am by putting the
+[16:49] angle in there fifty three point six
+[16:51] three degrees and then I'm going to
+[16:52] label up the rest of the sides as I've
+[16:55] already done so I know that this side
+[16:57] here is the apparent power is the
+[17:01] apparent power and I know that has a
+[17:05] value of five point zero six KVA
+[17:09] from my calculations earlier and what I
+[17:12] should find when I measure this is that
+[17:14] actually using the scale we should find
+[17:16] that this value in centimeters that I've
+[17:20] got here which is yep just just over
+[17:26] fifty yeah so that's maybe yeah fifty
+[17:30] maybe point six it's it's very very
+[17:33] close so there we can say that that is
+[17:35] basically fifty centimeters so we're
+[17:39] very much in the ballpark there of what
+[17:41] we're expecting to be so that's 50 centimeters which is nice
+[17:44] and if we go back to our scale we know
+[17:47] that the apparent power is 50
+[17:49] centimeters so it's 50 centimeters long
+[17:52] and then we look at this and we think
+[17:54] well how do I get from a centimeter
+[17:55] value back to a power of value how do I
+[17:57] get from this side to this side well how
+[18:00] do I get from ten to one I'll just
+[18:01] divide by ten no night 10 divided by 10
+[18:04] gives me 1 so therefore 50 centimeters
+[18:06] divided by 10 will give me 5 K V a and
+[18:12] we could see that the value we're aiming
+[18:13] for was five point zero six kPa so we
+[18:17] were really really close with the
+[18:19] accuracy of this drawing which
+[18:20] considering I'm working on a whiteboard
+[18:22] with giant tools is not such a bad
+[18:25] result really so I've never finished
+[18:27] doing this now I just need to label up
+[18:29] this side this is obviously the reactive
+[18:31] power so I'll figure out what the
+[18:34] reactive power is and we'll write that
+[18:38] down in a moment so again in order to do
+[18:41] that we could we could do some
+[18:42] Pythagoras to figure it out no problem
+[18:44] or we can just simply measure it here so
+[18:47] this side here is 40 centimeters long so
+[18:51] we've got a length is 40 centimeters and
+[18:54] again if we want to figure out what that
+[18:56] is in in this case we kvar that we'll
+[19:02] figure it out in we just again think
+[19:04] right I've got a length how do I get to
+[19:06] power I do this number divided by 10
+[19:09] will give me that number so therefore we
+[19:11] do 40 divided by 10 will give me 4 K
+[19:17] VARs like that so we've got 4 K bars
+[19:22] there we go
+[19:23] and I don't think we've missed anything
+[19:25] off the drawing so we've got the sides
+[19:26] labeled up we've shown their lengths and
+[19:28] we've also shown what values they
+[19:31] represent we've shown working out so
+[19:33] that we understand how the scale
+[19:34] triangle works and this is the way that
+[19:36] we've chosen to do it by finding the
+[19:38] angle there is another way of doing it
+[19:39] and again to my mind they're they're
+[19:42] equal there's no real difference between
+[19:44] them this is just the method I happen to
+[19:46] prefer again check that your teacher is
+[19:48] happy with this method but that is how I
+[19:51] would answer that question so I've found
+[19:53] the power factor as we were
+[19:54] to find at the start not 0.59 three and
+[19:56] I've also drawn a power triangle to
+[19:59] scale fully labeled up showing what each
+[20:01] side is what values each side represents
+[20:04] and how long they are physically so
+[20:06] hopefully that answered your question
+[20:08] Dave and I hope that that has been
+[20:11] helpful to you all that remains in this
+[20:13] video is to say thank you very much for
+[20:15] watching
+[20:18] [Music]
+[20:31] [Music]
+[20:37] [Music]

@@ -1,0 +1,183 @@
+# HOW TO INSTALL AN EV CHARGER - INDRA SMART PRO
+# https://www.youtube.com/watch?v=QCmZKEJNa5E
+
+in this the first in a series of training videos we're going to look at how to install this smart pro ev charger from indra at this point it's important to note that this is a training video for experienced qualified electricians not a diy video for homeowners this is a complex and potentially dangerous area of electrical installation requiring the use of calibrated test equipment and not something that should be undertaken by amateurs one of the first decisions that you need to make when looking at installing one of these smart pro chargers is which version will you go for there's three smart pro models available which are defined by their connection method the first choice is simply between tethered and untethered now this means that if you go for a tethered version you have the connector for the electric vehicle on the end of a long heavy duty flexible lead and if you go for untethered then the connection to the vehicle is simply made via an extension lead with a plug on one end and a connector on the other if the customer prefers a tethered connection so they don't have to go rummaging around in the boot for the cable then there's two further options available which are actually defined by the connector for the vehicle there's either a type 1 connection or a type 2 connection the difference between these connectors is type 1 is for single phase use only and is most often found on cars in asia much less so in europe older generations of electrical vehicles also tend to use this type of connector a type 2 connector allows connection to a three-phase supply if one is available or to a single-phase supply if not and this is the standard connection for electric vehicles in european countries if the customer already has their electric vehicle or is taking delivery of one soon then it's simply a matter of matching the type of connector to the car if in doubt it's probably best to go for a type 2 connector as this is the most likely one to be in the car and should the vehicle happen to have a type 1 connection you can always use an adapter the untethered version comes with a type 2 socket for the reasons just outlined so let's have a look at this charging unit here see what's in the box and how that's going to relate to our installation first of all there's the charger itself which is a good looking bit of kit i'm sure you'll agree once it's got the cover on there it looks fantastic and it's got the socket tucked up inside there to help prevent moisture ingress now that neatly brings us to our first point which is that one of the biggest enemies of ev charge points is moisture think about it you're installing an electrical connector that needs to handle a lot of current featuring some really delicate electronic components inside it generally it's going in an outdoor environment which in the uk winter means rain lots of rain but then in the summer more rain it's a recipe for trouble if the ip rating for a piece of equipment isn't sound so indra have designed their charger in a clever way that minimizes entry points for water and part of doing that is the next bit out of the box this bracket this mounts on the wall and then the charger fits onto it and is held in place using this fixing point which has an embedded brass nut in the body but crucially doesn't pierce into the inside of the unit meaning there's no fixing holes through the back of the enclosure thus reducing the chances of moisture ingress genius the next thing out of the box is the current transformer which is an absolutely critical part of the installation and takes us nicely to the origin of the installation where there's some serious considerations that we need to make first of all we need to look at the supply coming into the property starting with the incoming cable is it likely that this is a looped supply is there a cable going from here to another property or is this property at the end of a row of houses that might be looped if so it's time to get in touch with the local dno and you'll likely need to arrange a new supply to be installed with them you'll also need to check the incoming cable isn't damaged where you can see it and that there's no exposed live parts on there then there's the earthing arrangement is it tns tncs or tt if it's tns or tt then the install will be very different than if it's a tncs arrangement with pme like we've got here the brilliant thing about the smart pro charger is that you can install it on any of these earthing arrangements and set it up in a number of different ways to comply with a number of different regulations in section 722 of bs7671 we'll go into much greater depth on this in the next video in this series and also check out our free accredited cpd on ev charging to get some deeper insight into this subject you'll find that on the know-how tab on efix.co.uk however for now we'll say that the best way to set up this charger is with a reference earth electrode it can be done without but using it will give a safer install than many other charges on the market now before you start panicking about installing earth electrodes we're not talking about installing a monster one deep in the ground like we've got here worrying about what's below and struggling to get down to a low resistance level we're talking about a reference earth electrode and that's one that's about 300 millimeters long and easily installed like the one you can see here you'll also need to look at the existing metering equipment to make sure there's no damage or signs of overheating or poor connections again if you find that you'll need to contact the local dno to get it fixed now the current transformer brought is here and there's one critical component to have a look at in connection with this and that is the incoming fuse size very often it'll say 100 amps on the fuse holder but it may be smaller in reality again best to check with the local dno who are normally pretty helpful with this kind of information the reason this is so critical is that you're about to hook up a very heavy load to the installation possibly the biggest sustained load the property will ever experience some showers may draw more current but they will be energized for much shorter periods so with this new load connected on top of the existing demand there's a very real possibility that you can overload the incoming fuse so if it's a 60 amp supply it's possible with an electric hub oven and some other connected loads along with the ev to overload this fuse and that's where this current transformer comes in this simply clips around the incoming line conductor and connects to the charger via a data cable this then tells the charger how much current installation is drawing you can then alter the settings in the charger to tell it the maximum amount of current the property can draw and the charger then monitors how much current the whole installation is drawing and it can then control how much current is going into the car this means that the property can never become overloaded due to the ev charging as long as the setup is done correctly and we'll cover how to do that in a future video this feature is referred to as load curtailment and is an important feature in the design process because just keeping the current below the nominal rating of the suppliers cut-out fuse isn't the only thing we need to consider we also need to take into account the effect that increased load will have on the supply network locally as part of your design process for the charger installation you'll need to do a calculation for maximum demand and handling bs7671 allows you to take load curtailment into account when performing your calculation for maximum demand as you can see here in regulation 722.311.201 load curtailment including load reduction or disconnection either automatically or manually may be taken into account when determining maximum demand of the installation or part thereof the reason this maximum demand value calculation is so important is it will define when you need to contact the energy supplier notice that's when not if any time you install a new ev charge point you need to let the energy networks association know about it this is achieved by the uk power networks website and can be done either online or via a downloadable form now if your calculation for maximum demand is less than 60 amps then you can install the ev charger and complete the notification process within 28 days bear in mind that 60 amp maximum demand can include your load curtailment so setting the charger to never draw more than 60 amps means that you don't have to complete the notification process beforehand if your maximum demand is between 60 and 100 amps you must notify the energy networks association before carrying out the work and they should let you know if the work can go ahead within 10 days of receiving the notification above 100 amps the situation becomes a little more complex and an extra set of guidelines kicks in however it's unlikely a typical domestic property would be above this value so you can see how important this current transformer is for monitoring and controlling current flow you can see looking at the back of the transformer that we've got a connector that will accommodate an ethernet style plug which is pretty handy for a couple of reasons one is that it allows you to use a data cable to make the connection opening up the option for an ev ultra style cable or similar which will give us a connection from the charger to the current transformer and also a hardwired connection to the internet we'll be looking at ways to achieve that in detail a little further down the line but it leads us nicely into looking at the next thing in the box which is this wireless cellular dongle so this can be used to connect your charger to the internet if you don't want a hardwired connection and it's so simple it just plugs into the little extension lead that's in this box and then plugs into the top of the motherboard in the charger of course the use of this may not be appropriate in all areas as it will depend on the availability of the mobile phone networks and so you may prefer to hardwire it to a router or another option that we'll explore in a future video while it's not strictly speaking essential to have an internet connection for the charger to work it will need to be connected to the internet to qualify for the ozef grant and you gain so much functionality by having it connected to the internet so now we've unboxed the charger and thought about some preliminary site requirements we can start to think about the installation the very first thing you should do is to inspect the charger out of the box and make sure that it hasn't become damaged in transit and then the next thing is to open the installer app and scan the qr code on the side of the charger and this will verify that the device format is valid the device is registered and the device is available the location you install the charger is very important it needs to be accessible installed in a position where it's not likely to be damaged by the vehicle and mounted with the socket outlet or connector holster between 0.75 and 1.2 meters above the ground once you know where it's going to be you need to install the cable now every installation is different and we're not going to go through the whole selection for sizing but there's a couple of things that may help you out most installations will have the consumer unit somewhere near the meter which means that the mains cable and the cable that you'll require for the current transformer will be going to roughly the same place now if you don't want to rely on the mobile phone network for your internet connection you can make a hardwired connection instead this is achieved via a data cable from the charger to your router however you're going to be really lucky if the router is in the same area of the house as the consumer unit and the meter so if you decide to use a cable such as the ev ultra from doncaster which incorporates the data cable inside it then you'll need to run a data cable from where the ev ultra terminates one solution would be to terminate the ev ultra into an adaptable box near to the consumer unit take the mains cables on into the consumer unit and then use the adaptable box to extend the data connection to the router but there are easier ways of achieving this than messing around with additional data cables one example would be to use a power line adapter now this is a simple system that enables a network connection to be made via mains cabling you could simply plug an adapter into a socket next to your router then plug another one near the consumer unit and connect your ev charger data cable into it much simpler and very convenient now for quite a while many manufacturers were incorporating rcd protection into their charging units however this led to concerns and difficulties surrounding selectivity and the like and so many are now choosing not to include rcd protection in their charges so you'll need rcd protection for this circuit definitely for the charger and possibly for the cable depending on how it's installed so what kind of rcd to go for well information in regulation group 722.531.3 tells us what we need to make sure of first of all 722.531.3.1 tells us that rcds shall disconnect all live conductors so that means that a single pole rcbo is not acceptable for an ev charger the rcd must disconnect the line and the neutral conductors so if you're using an rcbo make sure it will do that next regulation 722.531.3.101 states unless supplied by a circuit using the protective measure of electrical separation each charging point incorporating a socket outlet or vehicle connector complying with the bscn62196 series shall be protected by an rcd having a rated residual operating current not exceeding 30 milliamps so that's fairly straightforward it needs to be a 30 milliamp rcd but the regulation continues except we're provided by the ev charging equipment protection against dc fault current shall be provided by one an rcd type b or 2 an rcd type a or type f in conjunction with a residual direct current detecting device or rdcdd complying with bs iec 62955 as appropriate to the nature of the residual and superimposed currents and recommendation of the manufacturer of the charging equipment so we could install a type b rcd or rcbo in here however they're still not very common and fairly expensive so the far more common option is to install a type a device at the consumer unit however if we do that the regulation requires us to also provide a residual direct current detecting device this is a bit of kit that monitors how much direct current or dc is being injected back into the system by the charging vehicle if the amount goes too high in this case six milliamps then the device will disconnect the circuit the reason for this is if the amount of dc in the system goes over six milliamps it can prevent the taipei rcd from working properly in the event of a fault now before you go scouring the market to find one of these residual direct current detecting devices you can rest easy because this device is incorporated into the charger so it's already in place and just in case you're wondering if it's acceptable to have the rcd protection and the dc protection in two different places note 3 to the regulation we just looked at states an rcd type a or type f in conjunction with an rdc ddd can be arranged with the rdcdd inside the ev charging equipment and the taipei or type f rcd upstream in either the charging equipment or the installation so this is a perfectly acceptable arrangement okay we've had a look in the box at the smart pro charger from indra and the accessories that come with it we've considered some of the critical points and areas to be considered prior to installation including the incoming supply maximum demand and load curtailment notifying the relevant authorities the existing installation the cabling and a couple of options for connecting to the internet in our next video we'll look at terminating and connecting the cable into the charger delve deeper into the regs particularly looking at penfold protection and the ways that this very clever charger can help you to comply with those requirements including a further consideration of that earth reference electrode and how it will help you to produce the safest possible installation so stay tuned for that for more information on the regulations and requirements for ev charger installation please check out our free accredited cpd module on the know-how page of efix.co.uk and all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this the first in a series of training videos we're going to look at how to install
+[00:04] this smart pro ev charger from indra at this point it's important to note that this is
+[00:08] a training video for experienced qualified electricians not a diy video for homeowners
+[00:14] this is a complex and potentially dangerous area of electrical installation requiring
+[00:17] the use of calibrated test equipment and not something that should be undertaken by amateurs
+[00:27] one of the first decisions that you need to make when looking at installing one of these smart pro
+[00:31] chargers is which version will you go for there's three smart pro models available which are defined
+[00:36] by their connection method the first choice is simply between tethered and untethered now this
+[00:42] means that if you go for a tethered version you have the connector for the electric vehicle on
+[00:47] the end of a long heavy duty flexible lead and if you go for untethered then the connection to the
+[00:53] vehicle is simply made via an extension lead with a plug on one end and a connector on the other
+[00:58] if the customer prefers a tethered connection so they don't have to go rummaging around in
+[01:02] the boot for the cable then there's two further options available which are actually defined by
+[01:06] the connector for the vehicle there's either a type 1 connection or a type 2 connection
+[01:12] the difference between these connectors is type 1 is for single phase use only and is most often
+[01:17] found on cars in asia much less so in europe older generations of electrical vehicles also tend to
+[01:22] use this type of connector a type 2 connector allows connection to a three-phase supply if one
+[01:26] is available or to a single-phase supply if not and this is the standard connection for electric
+[01:31] vehicles in european countries if the customer already has their electric vehicle or is taking
+[01:36] delivery of one soon then it's simply a matter of matching the type of connector to the car
+[01:41] if in doubt it's probably best to go for a type 2 connector as this is the most likely one to be in
+[01:46] the car and should the vehicle happen to have a type 1 connection you can always use an adapter
+[01:51] the untethered version comes with a type 2 socket for the reasons just outlined so let's have a look
+[01:56] at this charging unit here see what's in the box and how that's going to relate to our installation
+[02:01] first of all there's the charger itself which is a good looking bit of kit i'm sure you'll agree once
+[02:06] it's got the cover on there it looks fantastic and it's got the socket tucked up inside there
+[02:10] to help prevent moisture ingress now that neatly brings us to our first point which is that one
+[02:14] of the biggest enemies of ev charge points is moisture think about it you're installing an
+[02:20] electrical connector that needs to handle a lot of current featuring some really delicate electronic
+[02:24] components inside it generally it's going in an outdoor environment which in the uk winter means
+[02:30] rain lots of rain but then in the summer more rain it's a recipe for trouble if the ip rating
+[02:36] for a piece of equipment isn't sound so indra have designed their charger in a clever way
+[02:40] that minimizes entry points for water and part of doing that is the next bit out of the box
+[02:45] this bracket this mounts on the wall and then the charger fits onto it and is held in place using
+[02:51] this fixing point which has an embedded brass nut in the body but crucially doesn't pierce into the
+[02:57] inside of the unit meaning there's no fixing holes through the back of the enclosure thus
+[03:01] reducing the chances of moisture ingress genius the next thing out of the box is the current
+[03:06] transformer which is an absolutely critical part of the installation and takes us nicely
+[03:10] to the origin of the installation where there's some serious considerations that we need to make
+[03:15] first of all we need to look at the supply coming into the property starting with the incoming cable
+[03:20] is it likely that this is a looped supply is there a cable going from here to another property or is
+[03:24] this property at the end of a row of houses that might be looped if so it's time to get in touch
+[03:29] with the local dno and you'll likely need to arrange a new supply to be installed with them
+[03:34] you'll also need to check the incoming cable isn't damaged where you can see it
+[03:37] and that there's no exposed live parts on there then there's the earthing arrangement
+[03:41] is it tns tncs or tt if it's tns or tt then the install will be very different than if
+[03:48] it's a tncs arrangement with pme like we've got here the brilliant thing about the smart
+[03:52] pro charger is that you can install it on any of these earthing arrangements and set it up in a
+[03:56] number of different ways to comply with a number of different regulations in section 722 of bs7671
+[04:02] we'll go into much greater depth on this in the next video in this series and also check out our
+[04:06] free accredited cpd on ev charging to get some deeper insight into this subject you'll find that
+[04:12] on the know-how tab on efix.co.uk however for now we'll say that the best way to set up this charger
+[04:18] is with a reference earth electrode it can be done without but using it will give a safer
+[04:22] install than many other charges on the market now before you start panicking about installing earth
+[04:27] electrodes we're not talking about installing a monster one deep in the ground like we've got here
+[04:31] worrying about what's below and struggling to get down to a low resistance level
+[04:35] we're talking about a reference earth electrode and that's one that's about 300 millimeters long
+[04:40] and easily installed like the one you can see here you'll also need to look at the existing
+[04:45] metering equipment to make sure there's no damage or signs of overheating or poor connections again
+[04:49] if you find that you'll need to contact the local dno to get it fixed now the current transformer
+[04:54] brought is here and there's one critical component to have a look at in connection with this and that
+[04:59] is the incoming fuse size very often it'll say 100 amps on the fuse holder but it may be smaller in
+[05:04] reality again best to check with the local dno who are normally pretty helpful with this kind
+[05:08] of information the reason this is so critical is that you're about to hook up a very heavy
+[05:13] load to the installation possibly the biggest sustained load the property will ever experience
+[05:18] some showers may draw more current but they will be energized for much shorter periods
+[05:22] so with this new load connected on top of the existing demand there's a very real possibility
+[05:26] that you can overload the incoming fuse so if it's a 60 amp supply it's possible with an electric hub
+[05:31] oven and some other connected loads along with the ev to overload this fuse and that's where this
+[05:36] current transformer comes in this simply clips around the incoming line conductor and connects to
+[05:42] the charger via a data cable this then tells the charger how much current installation is drawing
+[05:47] you can then alter the settings in the charger to tell it the maximum amount of current the
+[05:51] property can draw and the charger then monitors how much current the whole installation is drawing
+[05:56] and it can then control how much current is going into the car this means that the
+[06:00] property can never become overloaded due to the ev charging as long as the setup is done correctly
+[06:06] and we'll cover how to do that in a future video this feature is referred to as load curtailment
+[06:12] and is an important feature in the design process because just keeping the current below the nominal
+[06:16] rating of the suppliers cut-out fuse isn't the only thing we need to consider we also need to
+[06:21] take into account the effect that increased load will have on the supply network locally as part of
+[06:26] your design process for the charger installation you'll need to do a calculation for maximum demand
+[06:31] and handling bs7671 allows you to take load curtailment into account when performing your
+[06:35] calculation for maximum demand as you can see here in regulation 722.311.201
+[06:42] load curtailment including load reduction or disconnection either automatically or manually
+[06:47] may be taken into account when determining maximum demand of the installation or part
+[06:51] thereof the reason this maximum demand value calculation is so important is it
+[06:55] will define when you need to contact the energy supplier notice that's when not if any time you
+[07:02] install a new ev charge point you need to let the energy networks association know about it this is
+[07:07] achieved by the uk power networks website and can be done either online or via a downloadable form
+[07:12] now if your calculation for maximum demand is less than 60 amps then you can install the ev charger
+[07:18] and complete the notification process within 28 days bear in mind that 60 amp maximum demand can
+[07:23] include your load curtailment so setting the charger to never draw more than 60 amps means
+[07:28] that you don't have to complete the notification process beforehand if your maximum demand is
+[07:32] between 60 and 100 amps you must notify the energy networks association before carrying out the work
+[07:37] and they should let you know if the work can go ahead within 10 days of receiving the notification
+[07:42] above 100 amps the situation becomes a little more complex and an extra set of guidelines kicks in
+[07:47] however it's unlikely a typical domestic property would be above this value so you
+[07:52] can see how important this current transformer is for monitoring and controlling current flow
+[07:57] you can see looking at the back of the transformer that we've got a connector that will accommodate
+[08:01] an ethernet style plug which is pretty handy for a couple of reasons one is that it allows you to
+[08:06] use a data cable to make the connection opening up the option for an ev ultra style cable or similar
+[08:12] which will give us a connection from the charger to the current transformer
+[08:15] and also a hardwired connection to the internet we'll be looking at ways to achieve that in detail
+[08:21] a little further down the line but it leads us nicely into looking at the next thing in the box
+[08:25] which is this wireless cellular dongle so this can be used to connect your charger to the internet
+[08:31] if you don't want a hardwired connection and it's so simple it just plugs into the little
+[08:35] extension lead that's in this box and then plugs into the top of the motherboard in the charger
+[08:40] of course the use of this may not be appropriate in all areas as it will depend on the availability
+[08:44] of the mobile phone networks and so you may prefer to hardwire it to a router or another option that
+[08:49] we'll explore in a future video while it's not strictly speaking essential to have an internet
+[08:54] connection for the charger to work it will need to be connected to the internet to qualify for the
+[08:58] ozef grant and you gain so much functionality by having it connected to the internet so now we've
+[09:04] unboxed the charger and thought about some preliminary site requirements we can start
+[09:09] to think about the installation the very first thing you should do is to inspect the charger
+[09:13] out of the box and make sure that it hasn't become damaged in transit and then the next thing is to
+[09:18] open the installer app and scan the qr code on the side of the charger and this will verify that the
+[09:23] device format is valid the device is registered and the device is available the location you
+[09:28] install the charger is very important it needs to be accessible installed in a position where
+[09:33] it's not likely to be damaged by the vehicle and mounted with the socket outlet or connector
+[09:37] holster between 0.75 and 1.2 meters above the ground once you know where it's going to be you
+[09:43] need to install the cable now every installation is different and we're not going to go through the
+[09:47] whole selection for sizing but there's a couple of things that may help you out most installations
+[09:52] will have the consumer unit somewhere near the meter which means that the mains cable and the
+[09:56] cable that you'll require for the current transformer will be going to roughly the
+[10:00] same place now if you don't want to rely on the mobile phone network for your internet connection
+[10:06] you can make a hardwired connection instead this is achieved via a data cable from the charger to
+[10:11] your router however you're going to be really lucky if the router is in the same area of the
+[10:16] house as the consumer unit and the meter so if you decide to use a cable such as the ev ultra from
+[10:21] doncaster which incorporates the data cable inside it then you'll need to run a data cable from where
+[10:26] the ev ultra terminates one solution would be to terminate the ev ultra into an adaptable box
+[10:32] near to the consumer unit take the mains cables on into the consumer unit and then use the adaptable
+[10:37] box to extend the data connection to the router but there are easier ways of achieving this than
+[10:42] messing around with additional data cables one example would be to use a power line adapter
+[10:47] now this is a simple system that enables a network connection to be made via mains cabling you could
+[10:52] simply plug an adapter into a socket next to your router then plug another one near the consumer
+[10:57] unit and connect your ev charger data cable into it much simpler and very convenient now for quite
+[11:04] a while many manufacturers were incorporating rcd protection into their charging units however this
+[11:09] led to concerns and difficulties surrounding selectivity and the like and so many are now
+[11:13] choosing not to include rcd protection in their charges so you'll need rcd protection for this
+[11:19] circuit definitely for the charger and possibly for the cable depending on how it's installed
+[11:24] so what kind of rcd to go for well information in regulation group 722.531.3 tells us what we
+[11:30] need to make sure of first of all 722.531.3.1 tells us that rcds shall disconnect all live
+[11:38] conductors so that means that a single pole rcbo is not acceptable for an ev charger the rcd must
+[11:45] disconnect the line and the neutral conductors so if you're using an rcbo make sure it will do that
+[11:50] next regulation 722.531.3.101 states unless supplied by a circuit using the protective measure
+[11:57] of electrical separation each charging point incorporating a socket outlet or vehicle connector
+[12:02] complying with the bscn62196 series shall be protected by an rcd having a rated residual
+[12:08] operating current not exceeding 30 milliamps so that's fairly straightforward it needs to
+[12:13] be a 30 milliamp rcd but the regulation continues except we're provided by the ev charging equipment
+[12:19] protection against dc fault current shall be provided by one an rcd type b or 2 an rcd type
+[12:26] a or type f in conjunction with a residual direct current detecting device or rdcdd complying with
+[12:32] bs iec 62955 as appropriate to the nature of the residual and superimposed currents
+[12:38] and recommendation of the manufacturer of the charging equipment so we could install a type
+[12:43] b rcd or rcbo in here however they're still not very common and fairly expensive so the far more
+[12:48] common option is to install a type a device at the consumer unit however if we do that
+[12:53] the regulation requires us to also provide a residual direct current detecting device
+[12:58] this is a bit of kit that monitors how much direct current or dc is being injected back into
+[13:03] the system by the charging vehicle if the amount goes too high in this case six milliamps then the
+[13:08] device will disconnect the circuit the reason for this is if the amount of dc in the system
+[13:13] goes over six milliamps it can prevent the taipei rcd from working properly in the event of a fault
+[13:18] now before you go scouring the market to find one of these residual direct current detecting devices
+[13:23] you can rest easy because this device is incorporated into the charger so it's already
+[13:28] in place and just in case you're wondering if it's acceptable to have the rcd protection and the dc
+[13:33] protection in two different places note 3 to the regulation we just looked at states
+[13:38] an rcd type a or type f in conjunction with an rdc ddd can be arranged with the rdcdd inside
+[13:45] the ev charging equipment and the taipei or type f rcd upstream in either the charging equipment
+[13:51] or the installation so this is a perfectly acceptable arrangement okay we've had a look
+[13:55] in the box at the smart pro charger from indra and the accessories that come with it we've
+[13:59] considered some of the critical points and areas to be considered prior to installation including
+[14:04] the incoming supply maximum demand and load curtailment notifying the relevant authorities the
+[14:10] existing installation the cabling and a couple of options for connecting to the internet in our next
+[14:15] video we'll look at terminating and connecting the cable into the charger delve deeper into the regs
+[14:20] particularly looking at penfold protection and the ways that this very clever charger can help you to
+[14:25] comply with those requirements including a further consideration of that earth reference electrode
+[14:31] and how it will help you to produce the safest possible installation so stay tuned for that
+[14:36] for more information on the regulations and requirements for ev charger installation
+[14:40] please check out our free accredited cpd module on the know-how page of efix.co.uk
+[14:45] and all that remains in this video is to say thank you very much for watching

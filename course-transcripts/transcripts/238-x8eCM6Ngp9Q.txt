@@ -1,0 +1,247 @@
+# EV CHARGER INSTALLATION PART 3: CONNECTIONS includes CT Hack!
+# https://www.youtube.com/watch?v=x8eCM6Ngp9Q
+
+in this the third in a series of training videos we're going to continue looking at how to install the smart pro ev charger from indra and we're going to look in depth at connecting and commissioning the charger now at this point it's really important to note that this is a training video for experienced qualified electricians it's not a diy video for homeowners this is a complex and potentially dangerous area of electrical installation requiring the use of calibrated test equipment and it's not something that should be undertaken by amateurs in previous videos we looked at some installation pointers for your indra smart pro ev charger and we took a deep dive into the regs regarding earthing arrangements and how the charger can be set up to comply with different situations so if you haven't already done so please do go and watch those two videos because they contain critical information for your install so your charger is unboxed and mounted and you've checked out your incoming supply and where the charger will be fed from let's think now about the type of cable that we're going to feed it with of course it's critical these days especially where the ozef grant is concerned that ev charges are connected to the internet so as well as a power supply we may also need to think about a data cable now there's a couple of different options here if you're in an area where the mobile phone network is strong and reliable then you can use the 4g dongle provided by indra to make that connection to the internet installing this dongle couldn't be easier all you need to do is connect the provided usb extension lead into the usb connection and you'll find that on the pcb right here and at this point you want to take real care to make sure that you don't knock and damage any of the delicate components on the pcb and also make sure that you get the right angle bend of the extension lead the right way round and that's going to make your life much easier when it comes to routing that cable into its final resting position then connect the other end of the extension lead to the dongle like so and then you're going to cable tie the usb socket onto the cable tie mount like so so just pop that on the back and then insert the cable tie like so and pull that up nice and tight there so we pop that onto the socket of the usb not onto the dongle and then it's just a matter of peeling off the backing on there and then inserting this up into the top left hand corner so it sits nice and neatly and tidily out of the way and then we'll just keep that cable mounted over onto the right hand side here to prevent that from getting any damage when we put the lid back in the moment and actually 4g internet connection installed however if the signal in the installation area is a little bit patchy and unreliable then you may want to think about a hard wired connection and again there's a couple of ways that you could do this you could install a standalone data cable from the charger to the router and then make the end up into an ethernet plug which then simply connects to the top of the little pcb here where we saw the 4g dongle a moment ago of course you could run a pre-terminated patch lead-in for this purpose however you'd need to cut the plug off and then reconnect either in the charger or possibly within the property near the router either way using jelly crimps will help you to maintain a good connection for the data cable and we'll demonstrate how to use those a little bit later in the video however there is another way of getting the data cable to this unit which reduces the number of holes that you'd have to drill through the base of it and that reduces the chances of moisture ingress and that is to use a combined power and data cable such as this ev ultra from doncaster cables which has been designed with pretty much this exact application in mind it comes in either three core or five core for single and three phase supplies and a choice of either a two core data cable perfect if you're using the 4g dongle and only the connection to the current transformer at the origin or as we're going to demonstrate in this case incorporating an eight core data cable which we can use to make both an internet connection and connect the current transformer the first step is just to run the ev ultra cable from the location of the charger to the consumer unit that we're going to use to supply the circuit at the charger if we look at the underside of here you can see that there's these dimples that act as drilling guides for bringing various cables in the top left dimple is the one that we need to drill to bring the mains cable through the enclosure in the correct position so let's do that now then we need to install a stuffing gland to help maintain the correct ip rating of the enclosure and then we'll bring the cable through there we're using this special gland here from hilec which only requires access to one side of the enclosure which can be super helpful in certain circumstances a little bit unusual in that the lock nut is on the outside of the gland and not the inside but as you can see once that's done up nice and tight that's going to seal against that and maintain that all-important ip rating excellent so now that's in we can bring the cable in and have a look at making the connections we'd recommend making the ct connection first this is simply done by taking the blue twisted pair from the cat5 cable and in this idc terminal you can see back here there's a terminal marked b e and one marked b e w e so we're going to connect the blue conductor into the terminal marked b e and the blue and white conductor into the terminal marked b e slash w e so we'll just get those into place and then using a punch down tool we simply connect those in nice and easily like so then while we're dealing with the data cable we can make the hardwired internet connection by connecting the remaining conductors into a data plug using your preferred crimping tool for this and then plugging it into the data socket at the top of this small pcb here now it's really important that we get these in the right order so looking at this from the top down effectively we've got here the brown and then the brown and white the green and then we missed two conductors and then we put in the green and white the orange and the orange and white and it's really important we get those in the right order and also that we leave those two connections in the middle there left without the blue conductors and we need to make sure that we miss those out so we'll just spin this around a little bit and then we'll use the crimping tool in order to just make that nice and secure there we go and that's our connection made and it's just then a matter of popping it into the top of the data port on the top there there we go that's our internet connection sorted the reason that we can use the blue conductors for the current transformer and not the internet connection is that the type of connection that this charger relies on doesn't use two of the four pairs in the data cable which is handy to know so having made the current transformer connection and the internet connection we can now have a look at the mains connection this is super easy because the charger incorporates these virgo lever style connectors so it's just a matter of trimming the conductors to the right length leaving a little slack for the next electrician and also for the ease of your own installation popping the conductor into the terminal and then moving the lever down to the terminated position so i'm sure you'll agree that that's really really nice and straightforward at this point it's also good to make absolutely sure that you've got the conductors into the correct terminals the line and neutral terminals are obviously pretty straightforward but then there's the terminals marked ref e and cpc now the cpc terminal is where you'll connect your incoming cpc from the supply cable that you've installed so that's going to go inside there just exactly the same as the line and the neutral conductor however the ref e terminal will be used if you're installing a reference earth electrode if you are then it's recommended that you use a four millimeter or six millimeter squared solar cable like those used for connecting photovoltaic panels together this will be run out to the position of the reference earth electrode and connected to the rod in the usual way at the charger you'll want to bring that through a hole drilled in the top middle dimple and again using an appropriately sized stuffing gland to provide cable retention and protection against the ingress of moisture when connecting this into the relevant terminal indra recommend the use of a ferrule crimp on the end of the solar cable there and bear in mind that this earth electrode connection is to give a reference value to earth for the charger only it's not relying on it as the fault path for the charger at this point it would also be a good idea to make sure the mode switch in the back of the charger is on the correct setting for the type of protection you've installed if you're not sure about these settings or whether you should be using an earth reference electrode or not then please check out the previous videos in this series as it's critical you understand the various options available to you with this charger once you've made all the connections to the charger you'll need to replace the cover another important point to observe at this stage is that the screws on the lid of the charger will need doing up to the correct torque setting failure to do this could lead to the ingress of moisture and the failure of the unit so a setting of two newton meters for the cover screws is required so we've set the top screwdriver to the correct value so now we can do the screws up until the screwdriver clicks on each one and then we'll be all good so i'll get the lid around from there and we'll pop that back making sure that we're not obviously compressing any cables or causing any damage in the back there and then it's just a matter of popping the screws in one at a time so we'll just demonstrate one so we know what it looks like when the torx screwdriver is at the correct setting so we'll pop that one in there we'll get that doing up and then once it reaches the correct level of torque the screwdriver will go tight and then it will click and that's it so that's now been done to the correct setting i'll put the other five in and then we'll put the rest of the cover on then the cover simply clips into place and there's two security torx screws on the bottom here and they do up to a torque setting of one newton meter each so once we've done that the charger is all installed and then we can go and have a look at the other end of the cable so the mains connection is straightforward we've just taken them straight into the rcbo that we selected in the first video in this series and then the data cable we've diverted down to this back box that i've mounted underneath the consumer unit and from there i've taken a data cable down to the incoming supply position where we installed the current transformer in the first video now at the back box what we're going to do is we're going to connect the blue twisted pair from the ev ultra cable to the blue twisted pair in the cable to the current transformer and we're going to do that using gel connectors so these are really good because you don't need to do any stripping and they make a really good permanent connection so we'll just connect the two blue and white conductors together so we just push them in until we reach the far side and then we just squeeze down the top of that and that is those connected there we go make sure you push it down really firmly and then we'll connect out the blue cores so again push them in as far as they'll go and then give them a really good squeeze and that will make the connection for you there we go so they're now connected through that's our current transformer connection made and we can just tuck that in the back of the box there now what we're going to do next is we're going to install the data cable front onto here so we're going to put the data socket onto the front of here so using the remaining cords that come from the ev charge point we're going to connect those into the back of here using a punch down tool in the normal method so we'll get that on and then we'll flip back to the other camera then at the current transformer position we'll pop another data plug on the end of the cable and connect it to the current transformer now all we've got to do is finalize the internet connection it'll be great if the router for the property just happened to be in this position because we could just use a patch lead to join the data point to the router but as is so often the case it just isn't so again we could take a standalone cable to the router pop a data plug on either end and connect it to the router and our data socket or if it's a bit of a stretch to run a cable to the router and let's face it they're not always in the most easily accessible positions for a cable this ev charger will actually operate with a power line adapter now this is a piece of kit that will actually transmit your internet connection over the mains cables in your property so if you have a socket outlet in the region of the consumer unit you can simply plug a power line adapter into the socket outlet at the consumer unit and another one where you've got your router plugged in and then connect the router to the adapter via a patch lead and then connect your ev data point here to the adapter at this end like so and the internet connection will now pass along the mains cable joining those two adapters together and there you go you've got an internet connection obviously there's a few different ways of achieving these connections but we think this is the best overall balance between ease of install and minimal disruption to the property once the circuit is installed and the usual dead tests have been carried out you'll need to check that the ev charge point behaves as it would when an ev is connected for charging and under certain conditions this is achieved by connecting an ev test adapter and checking how the charger responds basically we're fooling the charger into thinking that an ev is connected plugging in the adapter we start by setting the pp dial to the correct charging level for a domestic installation this is likely to be 32 amps unless it's been set to a lower value due to the nature of the incoming supply size or other restraints then with the cp dial in position a the charger shouldn't register any connection to an ev we've then got two options for the next step and the way we twist the dial depends on the type of charger that we're testing whether it is an actively vented system or not now the indra smart pro doesn't employ active venting and so i'll set the dial to be on the unvented side and this is now simulating an ev being plugged in but not charging and at this point the charger should lock the plug into place and as you can see that can't be removed now and the indicator on the charger here isn't showing any charging process now moving the cp dial to c we're simulating a charging ev and the charger has changed its status to charging and that's verified on the ev test adapter by illuminating this led here now when we move the cp dial to position e or press the button mark t depending on the tester that we're using this is simulating a fault with the electric vehicle and it should cause the charger to see that fault and disconnect the supply to the ev or in this case the test adapter and now we can see that that's worked nicely next you'd move on to the usual live tests for a new circuit and to make these tests as safe as possible you can again use the test adapter to make a safe and easy connection to the live conductors just making sure that the cp dial is set to position c for this so the ev charger connects the socket outlet to the supply now we've completed the testing for this charger we're going to look at the commissioning procedure with the app now the first thing to bear in mind is that the app is not downloaded by visiting the app store or the play store as you might expect but rather by contacting indra and requesting access to it this is because indra are currently very focused on building partnerships with installers rather than just releasing their charges onto the wholesale market for just anyone to install this means that if you're installing a charger then the work should have been pre-arranged and scheduled with information such as a customer name and address and this is really important as you'll see in a moment you'll be able to access the relevant pages for commissioning first of all you need to access the find a customer home page and then enter their last name and postcode of the installation the relevant customer information should then appear and you can select continue if the search is blank then double check that the information has been correctly entered and if it's still blank then contact whoever scheduled the job for you and this person will be able to add the new customer to the system obviously if you're working for yourself then you can be set up with the necessary permissions to add a new customer yourself once you've found the correct details and click continue you'll be able to add a charger this is most easily done by scanning the qr code on the side of the charger and this is the smaller one that's on the same label as the mac address if for any reason the camera on your device isn't working or it doesn't have a camera you can always enter the mac address manually by clicking here scanning the qr code or entering the mac address will validate the id format check the device has been pre-registered and check that the device is not currently associated with another account this can happen if the charger has been recycled from an old customer account once these checks have been done and all the boxes are showing a tick you can click continue to move on to the next stage now this is to set the maximum house load depending on both the dna fuse rating and what you've stated the maximum demand to be in the paperwork you've submitted to the dno you'll assign the relevant value if you're not sure what the fuse rating is you should select the 60 amp value to avoid blowing the main incoming fuse next you can enter the vehicle information this is really important for maximizing the benefits of the smart features in the charger such as ready buy times and scheduling so add the make the model and the battery capacity and if the battery capacity isn't listed you can add it in manually if the homeowner doesn't have an ev yet or isn't sure of the details they must be reminded on handover to add the information in the customer app at this stage you can also access confirmation that the charger and attached devices are performing as expected this is in the telemetry section as you can see here once you've been through this procedure you will get a commission summary if the details are all correct you can mark the job complete and if anything needs changing on this page you can do so by clicking the edit button next to each section now before we hit complete on the commissioning process there's one more thing we need to do and that is to calibrate the current transformers now this is absolutely critical if load curtailment has been applied or if there is micro generation being used there's three different ways that it can be done and we're going to demonstrate dynamic load calibration and fixed load calibration in this video for dynamic load calibration you'll need an electric vehicle with a battery charge lower than 90 after confirming that calibration is required on the app you'll need to plug the ev in at the same time you'll need to connect a clamp meter around the incoming supply where the current transformer sits and take a reading from there then once the charger has completed its calibration process you'll be prompted to enter the value from the clamp meter the app will then confirm that the internal power readings are within five percent of the manual reading if this is achieved the app will give you a summary of the calibration process if not you may want to check it again a couple of times and if it's still not getting under five percent you'll need to check your ct connections along the run of the cable and make any improvements you can if you don't have an ev10 then you'll need to use a slightly different method called fixed load calibration for this method you'll need a fixed known load such as a kettle or a heater rated at least two kilowatts i'm going to be using this 2 kilowatt space heater for my test for this one you need to disconnect all of the loads in the house with the possible exception of the router if you're relying on it for your internet connection plug your fixed load to the ev adapter connect your ev test adapter to the charger and the cp dial to a or b so no load is being applied then press and hold the boost button on the charger until it's beeped six times this is how you trigger the fixed load calibration process now release the button and wait for a minimum of 30 seconds then switch the cp dial to c to connect the supply to the socket outlet wait another 30 seconds and then check the percentage difference from here there's three outcomes if the reading is below 5 difference all is well and the charger can be put into service if the reading is between 5 and 50 then the charger will rely on calibration post commissioning this happens automatically at a time that is unlikely to disrupt the homeowner and will happen within three weeks of completing commissioning but you must point out to the customer that until this has happened they may encounter some small errors when using some of the smart features in the charger and the data from the charger may not be fully accurate if the calibration result is over 50 then this should trigger you to check out the cabling and connections to the current transformer to bring the value down to at least below 50 but preferably below 5 once the commissioning and calibration process is completed the customer will receive a welcome email that will give them access to the customer app giving them information about and control over their charger and there you go that's the connection and commissioning of your indra smart pro charger complete and ready to hand over to the customer in the fourth and final video in this series we'll be looking at some frequently asked questions and troubleshooting for your charger all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this the third in a series of training videos we're going to continue looking at
+[00:03] how to install the smart pro ev charger from indra and we're going to look in depth at
+[00:08] connecting and commissioning the charger now at this point it's really important to note that
+[00:12] this is a training video for experienced qualified electricians it's not a diy video for homeowners
+[00:19] this is a complex and potentially dangerous area of electrical installation requiring the
+[00:23] use of calibrated test equipment and it's not something that should be undertaken by amateurs
+[00:33] in previous videos we looked at some installation pointers for your indra smart pro ev charger and
+[00:38] we took a deep dive into the regs regarding earthing arrangements and how the charger can
+[00:42] be set up to comply with different situations so if you haven't already done so please do go
+[00:47] and watch those two videos because they contain critical information for your install so your
+[00:52] charger is unboxed and mounted and you've checked out your incoming supply and where the charger
+[00:56] will be fed from let's think now about the type of cable that we're going to feed it with of course
+[01:01] it's critical these days especially where the ozef grant is concerned that ev charges are connected
+[01:06] to the internet so as well as a power supply we may also need to think about a data cable
+[01:10] now there's a couple of different options here if you're in an area where the mobile phone network
+[01:14] is strong and reliable then you can use the 4g dongle provided by indra to make that connection
+[01:19] to the internet installing this dongle couldn't be easier all you need to do is connect the provided
+[01:23] usb extension lead into the usb connection and you'll find that on the pcb right here and at this
+[01:30] point you want to take real care to make sure that you don't knock and damage any of the delicate
+[01:34] components on the pcb and also make sure that you get the right angle bend of the extension lead the
+[01:39] right way round and that's going to make your life much easier when it comes to routing that cable
+[01:43] into its final resting position then connect the other end of the extension lead to the dongle
+[01:49] like so and then you're going to cable tie the usb socket onto the cable tie mount like so so just
+[01:57] pop that on the back and then insert the cable tie like so and pull that up nice and tight there
+[02:05] so we pop that onto the socket of the usb not onto the dongle and then it's just a matter of
+[02:12] peeling off the backing on there and then inserting this up into the top left hand
+[02:18] corner so it sits nice and neatly and tidily out of the way and then we'll just keep that
+[02:23] cable mounted over onto the right hand side here to prevent that from getting any damage
+[02:28] when we put the lid back in the moment and actually 4g internet connection installed
+[02:33] however if the signal in the installation area is a little bit patchy and unreliable
+[02:37] then you may want to think about a hard wired connection and again there's a couple of ways that
+[02:41] you could do this you could install a standalone data cable from the charger to the router and
+[02:45] then make the end up into an ethernet plug which then simply connects to the top of the little pcb
+[02:50] here where we saw the 4g dongle a moment ago of course you could run a pre-terminated patch
+[02:54] lead-in for this purpose however you'd need to cut the plug off and then reconnect either
+[02:58] in the charger or possibly within the property near the router either way using jelly crimps
+[03:02] will help you to maintain a good connection for the data cable and we'll demonstrate how to use
+[03:06] those a little bit later in the video however there is another way of getting the data cable
+[03:10] to this unit which reduces the number of holes that you'd have to drill through the base of it
+[03:14] and that reduces the chances of moisture ingress and that is to use a combined power and data cable
+[03:20] such as this ev ultra from doncaster cables which has been designed with pretty much this exact
+[03:25] application in mind it comes in either three core or five core for single and three phase supplies
+[03:30] and a choice of either a two core data cable perfect if you're using the 4g dongle and only
+[03:35] the connection to the current transformer at the origin or as we're going to demonstrate in this
+[03:39] case incorporating an eight core data cable which we can use to make both an internet connection
+[03:44] and connect the current transformer the first step is just to run the ev ultra cable from the
+[03:49] location of the charger to the consumer unit that we're going to use to supply the circuit
+[03:54] at the charger if we look at the underside of here you can see that there's these dimples that act as
+[03:58] drilling guides for bringing various cables in the top left dimple is the one that we need to drill
+[04:04] to bring the mains cable through the enclosure in the correct position so let's do that now then we
+[04:10] need to install a stuffing gland to help maintain the correct ip rating of the enclosure and then
+[04:14] we'll bring the cable through there we're using this special gland here from hilec which only
+[04:18] requires access to one side of the enclosure which can be super helpful in certain circumstances a
+[04:25] little bit unusual in that the lock nut is on the outside of the gland and not the inside but as you
+[04:30] can see once that's done up nice and tight that's going to seal against that and maintain that
+[04:34] all-important ip rating excellent so now that's in we can bring the cable in and have a look at
+[04:40] making the connections we'd recommend making the ct connection first this is simply done by taking
+[04:45] the blue twisted pair from the cat5 cable and in this idc terminal you can see back here there's
+[04:50] a terminal marked b e and one marked b e w e so we're going to connect the blue conductor into
+[04:58] the terminal marked b e and the blue and white conductor into the terminal marked b e slash w e
+[05:05] so we'll just get those into place and then using a punch down tool we simply connect those in
+[05:12] nice and easily like so then while we're dealing with the data cable we can make the hardwired
+[05:18] internet connection by connecting the remaining conductors into a data plug using your preferred
+[05:23] crimping tool for this and then plugging it into the data socket at the top of this small pcb
+[05:28] here now it's really important that we get these in the right order so looking at this from the top
+[05:33] down effectively we've got here the brown and then the brown and white the green and then we missed
+[05:38] two conductors and then we put in the green and white the orange and the orange and white and it's
+[05:44] really important we get those in the right order and also that we leave those two connections in
+[05:48] the middle there left without the blue conductors and we need to make sure that we miss those out
+[05:53] so we'll just spin this around a little bit and then we'll use the crimping tool in order to just
+[06:00] make that nice and secure there we go and that's our connection made and it's just then a matter
+[06:08] of popping it into the top of the data port on the top there there we go that's our internet
+[06:14] connection sorted the reason that we can use the blue conductors for the current transformer
+[06:18] and not the internet connection is that the type of connection that this charger relies
+[06:22] on doesn't use two of the four pairs in the data cable which is handy to know so having made the
+[06:27] current transformer connection and the internet connection we can now have a look at the mains
+[06:31] connection this is super easy because the charger incorporates these virgo lever style connectors so
+[06:36] it's just a matter of trimming the conductors to the right length leaving a little slack for the
+[06:40] next electrician and also for the ease of your own installation popping the conductor into the
+[06:45] terminal and then moving the lever down to the terminated position so i'm sure you'll agree that
+[06:50] that's really really nice and straightforward at this point it's also good to make absolutely sure
+[06:56] that you've got the conductors into the correct terminals the line and neutral terminals are
+[07:00] obviously pretty straightforward but then there's the terminals marked ref e and cpc now the cpc
+[07:07] terminal is where you'll connect your incoming cpc from the supply cable that you've installed
+[07:12] so that's going to go inside there just exactly the same as the line and the neutral conductor
+[07:19] however the ref e terminal will be used if you're installing a reference earth electrode if you
+[07:25] are then it's recommended that you use a four millimeter or six millimeter squared solar cable
+[07:31] like those used for connecting photovoltaic panels together this will be run out to the position of
+[07:36] the reference earth electrode and connected to the rod in the usual way at the charger you'll
+[07:40] want to bring that through a hole drilled in the top middle dimple and again using an appropriately
+[07:45] sized stuffing gland to provide cable retention and protection against the ingress of moisture
+[07:50] when connecting this into the relevant terminal indra recommend the use of a ferrule crimp
+[07:54] on the end of the solar cable there and bear in mind that this earth electrode connection is to
+[07:59] give a reference value to earth for the charger only it's not relying on it as the fault path
+[08:04] for the charger at this point it would also be a good idea to make sure the mode switch in the back
+[08:09] of the charger is on the correct setting for the type of protection you've installed if you're not
+[08:13] sure about these settings or whether you should be using an earth reference electrode or not
+[08:17] then please check out the previous videos in this series as it's critical you understand the various
+[08:21] options available to you with this charger once you've made all the connections to the
+[08:25] charger you'll need to replace the cover another important point to observe at this stage is that
+[08:29] the screws on the lid of the charger will need doing up to the correct torque setting failure
+[08:33] to do this could lead to the ingress of moisture and the failure of the unit so a setting of two
+[08:38] newton meters for the cover screws is required so we've set the top screwdriver to the correct value
+[08:44] so now we can do the screws up until the screwdriver clicks on each one and then we'll
+[08:50] be all good so i'll get the lid around from there and we'll pop that back making sure that we're not
+[08:56] obviously compressing any cables or causing any damage in the back there
+[09:01] and then it's just a matter of popping the screws in one at a time so
+[09:05] we'll just demonstrate one so we know what it looks like when the torx screwdriver is at the
+[09:10] correct setting so we'll pop that one in there we'll get that doing up and then once it reaches
+[09:18] the correct level of torque the screwdriver will go tight and then it will
+[09:25] click and that's it so that's now been done to the correct setting i'll put the other five in
+[09:30] and then we'll put the rest of the cover on then the cover simply clips into place
+[09:35] and there's two security torx screws on the bottom here and they do up to a torque setting
+[09:40] of one newton meter each so once we've done that the charger is all installed and then we can go
+[09:45] and have a look at the other end of the cable so the mains connection is straightforward we've just
+[09:50] taken them straight into the rcbo that we selected in the first video in this series and then the
+[09:55] data cable we've diverted down to this back box that i've mounted underneath the consumer unit
+[10:01] and from there i've taken a data cable down to the incoming supply position where we installed the
+[10:06] current transformer in the first video now at the back box what we're going to do is we're going to
+[10:11] connect the blue twisted pair from the ev ultra cable to the blue twisted pair in the cable to
+[10:16] the current transformer and we're going to do that using gel connectors so these are really
+[10:22] good because you don't need to do any stripping and they make a really good permanent connection
+[10:26] so we'll just connect the two blue and white conductors together so we just push them in until
+[10:34] we reach the far side and then we just squeeze down the top of that and that is those connected
+[10:44] there we go make sure you push it down really firmly and then we'll connect out the blue cores
+[10:51] so again push them in as far as they'll go and then give them a really good squeeze and that
+[10:57] will make the connection for you there we go so they're now connected through that's our current
+[11:03] transformer connection made and we can just tuck that in the back of the box there now what we're
+[11:08] going to do next is we're going to install the data cable front onto here so we're going to put
+[11:16] the data socket onto the front of here so using the remaining cords that come
+[11:20] from the ev charge point we're going to connect those into the back of here using a punch down
+[11:26] tool in the normal method so we'll get that on and then we'll flip back to the other camera then at
+[11:31] the current transformer position we'll pop another data plug on the end of the cable and connect it
+[11:35] to the current transformer now all we've got to do is finalize the internet connection
+[11:40] it'll be great if the router for the property just happened to be in this position because
+[11:44] we could just use a patch lead to join the data point to the router but as is so often the case
+[11:49] it just isn't so again we could take a standalone cable to the router pop a data plug on either end
+[11:55] and connect it to the router and our data socket or if it's a bit of a stretch to run a cable to
+[12:00] the router and let's face it they're not always in the most easily accessible positions for a cable
+[12:05] this ev charger will actually operate with a power line adapter now this is a piece
+[12:10] of kit that will actually transmit your internet connection over the mains cables in your property
+[12:15] so if you have a socket outlet in the region of the consumer unit you can simply plug a power line
+[12:19] adapter into the socket outlet at the consumer unit and another one where you've got your router
+[12:24] plugged in and then connect the router to the adapter via a patch lead and then connect your ev
+[12:30] data point here to the adapter at this end like so and the internet connection will now pass
+[12:37] along the mains cable joining those two adapters together and there you go you've got an internet
+[12:41] connection obviously there's a few different ways of achieving these connections but we think this
+[12:45] is the best overall balance between ease of install and minimal disruption to the property
+[12:49] once the circuit is installed and the usual dead tests have been carried out you'll need to check
+[12:53] that the ev charge point behaves as it would when an ev is connected for charging and under certain
+[12:58] conditions this is achieved by connecting an ev test adapter and checking how the charger responds
+[13:04] basically we're fooling the charger into thinking that an ev is connected plugging in the adapter
+[13:09] we start by setting the pp dial to the correct charging level for a domestic installation this
+[13:13] is likely to be 32 amps unless it's been set to a lower value due to the nature of the incoming
+[13:18] supply size or other restraints then with the cp dial in position a the charger shouldn't
+[13:23] register any connection to an ev we've then got two options for the next step and the way we twist
+[13:27] the dial depends on the type of charger that we're testing whether it is an actively vented system
+[13:32] or not now the indra smart pro doesn't employ active venting and so i'll set the dial to be
+[13:36] on the unvented side and this is now simulating an ev being plugged in but not charging and at
+[13:42] this point the charger should lock the plug into place and as you can see that can't be
+[13:45] removed now and the indicator on the charger here isn't showing any charging process now moving the
+[13:51] cp dial to c we're simulating a charging ev and the charger has changed its status to charging
+[13:56] and that's verified on the ev test adapter by illuminating this led here now when we move
+[14:01] the cp dial to position e or press the button mark t depending on the tester that we're using
+[14:05] this is simulating a fault with the electric vehicle and it should cause the charger to see
+[14:09] that fault and disconnect the supply to the ev or in this case the test adapter and now we can see
+[14:14] that that's worked nicely next you'd move on to the usual live tests for a new circuit and
+[14:19] to make these tests as safe as possible you can again use the test adapter to make a safe and easy
+[14:23] connection to the live conductors just making sure that the cp dial is set to position c for this
+[14:29] so the ev charger connects the socket outlet to the supply now we've completed the testing
+[14:33] for this charger we're going to look at the commissioning procedure with the app
+[14:37] now the first thing to bear in mind is that the app is not downloaded by visiting the app store
+[14:42] or the play store as you might expect but rather by contacting indra and requesting access to it
+[14:47] this is because indra are currently very focused on building partnerships with installers
+[14:51] rather than just releasing their charges onto the wholesale market for just anyone to install
+[14:55] this means that if you're installing a charger then the work should have been pre-arranged and
+[15:00] scheduled with information such as a customer name and address and this is really important as
+[15:05] you'll see in a moment you'll be able to access the relevant pages for commissioning first of
+[15:09] all you need to access the find a customer home page and then enter their last name and
+[15:13] postcode of the installation the relevant customer information should then appear and you can select
+[15:19] continue if the search is blank then double check that the information has been correctly entered
+[15:24] and if it's still blank then contact whoever scheduled the job for you and this person
+[15:28] will be able to add the new customer to the system obviously if you're working for yourself
+[15:33] then you can be set up with the necessary permissions to add a new customer yourself
+[15:37] once you've found the correct details and click continue you'll be able to add a charger
+[15:41] this is most easily done by scanning the qr code on the side of the charger and this is the smaller
+[15:46] one that's on the same label as the mac address if for any reason the camera on your device isn't
+[15:51] working or it doesn't have a camera you can always enter the mac address manually by clicking here
+[15:56] scanning the qr code or entering the mac address will validate the id format
+[16:01] check the device has been pre-registered and check that the device is not currently associated with
+[16:05] another account this can happen if the charger has been recycled from an old customer account
+[16:10] once these checks have been done and all the boxes are showing a tick you can click continue to
+[16:15] move on to the next stage now this is to set the maximum house load depending on both the dna fuse
+[16:20] rating and what you've stated the maximum demand to be in the paperwork you've submitted to the dno
+[16:24] you'll assign the relevant value if you're not sure what the fuse rating is you should select the
+[16:29] 60 amp value to avoid blowing the main incoming fuse next you can enter the vehicle information
+[16:34] this is really important for maximizing the benefits of the smart features in the charger
+[16:38] such as ready buy times and scheduling so add the make the model and the battery capacity and if the
+[16:44] battery capacity isn't listed you can add it in manually if the homeowner doesn't have an ev yet
+[16:49] or isn't sure of the details they must be reminded on handover to add the information in the customer
+[16:54] app at this stage you can also access confirmation that the charger and attached devices are
+[16:58] performing as expected this is in the telemetry section as you can see here once you've been
+[17:02] through this procedure you will get a commission summary if the details are all correct you can
+[17:07] mark the job complete and if anything needs changing on this page you can do so by clicking
+[17:11] the edit button next to each section now before we hit complete on the commissioning process
+[17:17] there's one more thing we need to do and that is to calibrate the current transformers now this is
+[17:22] absolutely critical if load curtailment has been applied or if there is micro generation being used
+[17:28] there's three different ways that it can be done and we're going to demonstrate dynamic
+[17:31] load calibration and fixed load calibration in this video for dynamic load calibration you'll
+[17:36] need an electric vehicle with a battery charge lower than 90 after confirming that calibration
+[17:41] is required on the app you'll need to plug the ev in at the same time you'll need to connect
+[17:46] a clamp meter around the incoming supply where the current transformer sits and take a reading
+[17:50] from there then once the charger has completed its calibration process you'll be prompted to
+[17:55] enter the value from the clamp meter the app will then confirm that the internal power readings are
+[18:00] within five percent of the manual reading if this is achieved the app will give you a summary of the
+[18:05] calibration process if not you may want to check it again a couple of times and if it's still not
+[18:09] getting under five percent you'll need to check your ct connections along the run of the cable
+[18:14] and make any improvements you can if you don't have an ev10 then you'll need to use a slightly
+[18:18] different method called fixed load calibration for this method you'll need a fixed known load
+[18:23] such as a kettle or a heater rated at least two kilowatts i'm going to be using this 2 kilowatt
+[18:27] space heater for my test for this one you need to disconnect all of the loads in the house with the
+[18:31] possible exception of the router if you're relying on it for your internet connection
+[18:34] plug your fixed load to the ev adapter connect your ev test adapter to the charger and the cp
+[18:39] dial to a or b so no load is being applied then press and hold the boost button on the
+[18:45] charger until it's beeped six times this is how you trigger the fixed load calibration process
+[18:50] now release the button and wait for a minimum of 30 seconds then switch the cp dial to c to connect
+[18:55] the supply to the socket outlet wait another 30 seconds and then check the percentage difference
+[19:01] from here there's three outcomes if the reading is below 5 difference all is well and the charger can
+[19:05] be put into service if the reading is between 5 and 50 then the charger will rely on calibration
+[19:11] post commissioning this happens automatically at a time that is unlikely to disrupt the homeowner
+[19:15] and will happen within three weeks of completing commissioning but you must point out to the
+[19:19] customer that until this has happened they may encounter some small errors when using
+[19:23] some of the smart features in the charger and the data from the charger may not be fully accurate
+[19:28] if the calibration result is over 50 then this should trigger you to check out the cabling and
+[19:33] connections to the current transformer to bring the value down to at least below 50 but preferably
+[19:38] below 5 once the commissioning and calibration process is completed the customer will receive
+[19:43] a welcome email that will give them access to the customer app giving them information about
+[19:48] and control over their charger and there you go that's the connection and commissioning of
+[19:52] your indra smart pro charger complete and ready to hand over to the customer in the fourth and final
+[19:58] video in this series we'll be looking at some frequently asked questions and troubleshooting
+[20:02] for your charger all that remains in this video is to say thank you very much for watching

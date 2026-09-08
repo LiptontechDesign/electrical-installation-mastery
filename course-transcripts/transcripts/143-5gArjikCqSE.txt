@@ -1,0 +1,108 @@
+# Earth Electrode Testing for Beginners
+# https://www.youtube.com/watch?v=5gArjikCqSE
+
+Earth electrode testing. Is it really that complicated? Well, no. But it is often misunderstood, and that misunderstanding can cause real problems. In this series of videos, we're going to shine a light on earth electrode resistance testing, what the test actually does, why it matters, and how to carry it out properly, answering some of the most common questions that we see, like why can't we just do an earth fault loop test and call it done, can getting the electrode wet actually improve the readings, can this disc really be as good as driving in a rod, and can you slap a substation anywhere? All of that is to come. But in this video, we're diving straight in at the beginning, the basics of earth electrode resistance testing, what the test is, how it's carried out, and what the results are actually telling you. We are going to be doing a real-world E1 test using this dedicated earth electrode resistance tester from Chauvin Arnoux, and we're going to be showing the fall-of-potential method step by step. We will also cover how the results are taken from multiple readings and how that average value is recorded. But before we get into testing, we need to be clear about what we're actually testing. An earth electrode is simply a conductive part that is intentionally connected to the general mass of earth. Its job is to provide a path for fault current to leave the installation and return to the source. In many installations, the electrical distributor or DNO supplies that earth for us. But in a TT, they do not. TT stands for terra-terra, and terra is Latin for earth. So a TT is basically one terra at the source and another terra at the supply. A TT system is used where the distributor cannot guarantee the continuity of a protective conductor. That might be because the supply is delivered by an overhead line or because of the location: construction sites, caravan parks, marinas, temporary supplies. In these situations, the Electricity Safety, Quality and Continuity Regulations do not allow a PME supply to be used. So the supplier does not give you an earth. That responsibility sits with the consumer, and the way the consumer provides the earth is by installing an earth electrode. Generators are another good example. If a generator is installed for standby purposes and the main supply is lost, the generator starts and takes over. At that point the distributor may be working on the supply system, so the generator must have its own independent earth. Again, this is achieved by using an earth electrode. So when people hear the term earth electrode, they may picture a metal rod driven into the ground. But it's not the only form an earth electrode can take. Historically, water pipes have been used, structural steel has been used, copper tape, buried mesh, and foundation earthing systems. All of these are forms of earth electrodes. The common factor is not the shape of the material. It is the contact that it makes with earth. Because an earth electrode is only as effective as the ground that it's connected to, and that's why we need to test it. So what happens when a fault occurs, and how does that overcurrent protective device know when to trip when it does? Well, for that we need to understand the earth fault loop path. When a fault occurs, perhaps in an appliance, the fault current travels back through the earthing conductor, back to the supply transformer, through the windings, and back down the line conductor to disconnect the overcurrent protective device, and on a TN system do all that within 0.4 of a second. The difference here is TN, terra-neutral. This is where the earth conductor and neutral are combined, which makes a more secure path back to the source. TT does not have that. When a fault occurs in a TT system, current leaves the installation through the earth electrode. It does not vanish into the ground. Instead it spreads out through the soil around the electrode. Think of it like ripples in a pond. The current spreads out in all directions through the surrounding earth. Eventually the fault current is picked up by the source earth at the transformer or substation. From there the fault path continues back through the supply network and finally back along the line conductor. If everything is working as it should, the process allows the protective device to disconnect the supply automatically. So the ground is part of the fault path. Different ground conditions allow that current to spread more easily than others. But I'm going to be diving into that in a later video on soil resistivity and site surveys. For now, all you need to take away is this. If the soil affects how current spreads, then it affects how well the earthing system works. But if we're just testing the earth fault loop path, can't we just do an earth fault loop impedance test? It's a fair question. The earth fault loop impedance test measures the earth fault loop path, but an earth electrode resistance test focuses on the performance of the earth electrode itself and how it interacts with the ground. A loop test can give you a number, and it is an important test to do to determine the disconnection time, but it does not isolate the earth electrode. But to show you how to test, I've dropped into Lincoln College with some very enthusiastic volunteers to take you through the process of the fall-of-potential method of earth electrode resistance testing. Let's start with the electrode itself. In this case we are using a driven earth rod installed vertically into the ground, and depth matters here. The electrode needs to be deep enough to make good contact with stable soil, not just the loose material at the surface. In practice, this often means driving the rod down until only the inspection point is accessible. You may even need to extend the rod to drive down deeper to hit more stable soil, but we will only know that once we test. But before we test anything, the installation must be made safe. For this test we're using the CA6424 from Chauvin Arnoux. It can carry out both two-pole resistance tests and three-pole earth measurements, even in high resistivity ground, with measurements ranging up to 50 kilo-ohms. It also allows us to measure voltage up to 600 volts, which is important when working on live sites or shared environments. It makes the probe positioning for the test easy as well with 52, 62 and 72%, but more on that in a sec. The CA6424 can also measure leakage current from as low as 0.5 milliamps, which becomes important later when we start talking about protection and RCDs. All of the controls on the front panel are real quality, so you can operate it easily even with gloves on. The screen is backlit and split into three displays so you can see the measurement results, any errors and supporting information at the same time. There are also clear indicators. An LED warns if a hazardous voltage is present, and a noise symbol shows when external voltages could affect the reading. Okay, on with the test. We are doing the fall-of-potential or E1 test. For our example, we're going to take an average reading of the tests and calculate what our mean average is. So we hammer in the first electrode, and it needs to go deep enough to not be a trip hazard and to hit stable soil. It might be that you have to attach additional electrodes to go deeper or place them parallel to each other at 1 m spacings. This electrode went in a treat, and we managed to get it three electrodes deep, which is a depth of 3.6 m. Top tip, make a note of the electrode depth and leave it in the inspection chamber so the next tester isn't guessing how deep it's gone. So now we need to put in our first test probe. This is the current probe, normally referred to as C2. The C stands for current. This needs to go ten times the distance of the depth of the electrode under test. So in our case, 36 m. It may not always be possible to get this distance depending on the site, but as long as we get as far away as possible the result should be reliable. Just don't go jumping into people's gardens. Top tip, make sure all of the leads are laid out and not left in loops. This way you won't get magnetic interference when testing. Next we need to put the potential probe in, in this case P2, between the electrode under test and the current probe C2. And it's really important that this is done in line with the current probe. But at what distance? Well the common view is that it goes halfway between the electrode under test and the current probe, when actually the distance should be just over half the distance at 62%. We will find out why it's 62% in the next video. Okay, so 62% of 36 m is 22 m. So that's where we place our potential probe and measure, and we grab our readings and make a note of it. Next we go to 72%. This moves the potential probe 10% closer to the current probe, a distance of 3.6 m and a total of 26 m from the electrode under test, and we take that measurement. Finally we go to 52%. This is around 18 m from the electrode under test, and we take the final reading. So now we have all three readings. We can calculate the mean average. To do this we add them together and divide by the number of values we have, in this case three. This gave us a mean average of 118 ohms. Oh, and did you know that this video is available as a free CPD? You can head over to eFIXX Trainer Central where you can bag yourself a certificate. I've left links in the description. So there we have it. In the next video we're going to find out what these readings actually mean and if they fall within agreed limits, as well as finding out if this outdoor office needs an earth electrode. Click the video on screen to find out.
+
+
+[00:00] Earth electrode testing. Is it really that complicated? Well, no. But it is often
+[00:04] misunderstood, and that misunderstanding can cause real problems. In this series of videos,
+[00:08] we're going to shine a light on earth electrode resistance testing, what the test actually does,
+[00:12] why it matters, and how to carry it out properly, answering some of the most common questions that
+[00:16] we see, like why can't we just do an earth fault loop test and call it done, can getting the
+[00:21] electrode wet actually improve the readings, can this disc really be as good as driving in a rod,
+[00:26] and can you slap a substation anywhere? All of that is to come. But in this video,
+[00:29] we're diving straight in at the beginning, the basics of earth electrode resistance testing,
+[00:34] what the test is, how it's carried out, and what the results are actually telling you. We are
+[00:38] going to be doing a real-world E1 test using this dedicated earth electrode resistance tester from
+[00:43] Chauvin Arnoux, and we're going to be showing the fall-of-potential method step by step. We
+[00:48] will also cover how the results are taken from multiple readings and how that average value is
+[00:52] recorded. But before we get into testing, we need to be clear about what we're actually testing. An
+[00:57] earth electrode is simply a conductive part that is intentionally connected to the general mass
+[01:01] of earth. Its job is to provide a path for fault current to leave the installation and
+[01:06] return to the source. In many installations, the electrical distributor or DNO supplies that earth
+[01:11] for us. But in a TT, they do not. TT stands for terra-terra, and terra is Latin for earth. So a TT
+[01:18] is basically one terra at the source and another terra at the supply. A TT system is used where
+[01:24] the distributor cannot guarantee the continuity of a protective conductor. That might be because
+[01:28] the supply is delivered by an overhead line or because of the location: construction sites,
+[01:33] caravan parks, marinas, temporary supplies. In these situations, the Electricity Safety,
+[01:38] Quality and Continuity Regulations do not allow a PME supply to be used. So the supplier does not
+[01:44] give you an earth. That responsibility sits with the consumer, and the way the consumer
+[01:47] provides the earth is by installing an earth electrode. Generators are another good example.
+[01:51] If a generator is installed for standby purposes and the main supply is lost, the generator starts
+[01:56] and takes over. At that point the distributor may be working on the supply system, so the generator
+[02:02] must have its own independent earth. Again, this is achieved by using an earth electrode. So when
+[02:06] people hear the term earth electrode, they may picture a metal rod driven into the ground. But
+[02:11] it's not the only form an earth electrode can take. Historically, water pipes have been used,
+[02:16] structural steel has been used, copper tape, buried mesh, and foundation earthing systems. All
+[02:21] of these are forms of earth electrodes. The common factor is not the shape of the material. It is the
+[02:26] contact that it makes with earth. Because an earth electrode is only as effective as the ground that
+[02:31] it's connected to, and that's why we need to test it. So what happens when a fault occurs, and how
+[02:36] does that overcurrent protective device know when to trip when it does? Well, for that we need to
+[02:40] understand the earth fault loop path. When a fault occurs, perhaps in an appliance, the fault current
+[02:44] travels back through the earthing conductor, back to the supply transformer, through the windings,
+[02:48] and back down the line conductor to disconnect the overcurrent protective device, and on a TN system
+[02:53] do all that within 0.4 of a second. The difference here is TN, terra-neutral. This is where the earth
+[03:00] conductor and neutral are combined, which makes a more secure path back to the source. TT does
+[03:04] not have that. When a fault occurs in a TT system, current leaves the installation through the earth
+[03:09] electrode. It does not vanish into the ground. Instead it spreads out through the soil around
+[03:14] the electrode. Think of it like ripples in a pond. The current spreads out in all directions through
+[03:19] the surrounding earth. Eventually the fault current is picked up by the source earth at
+[03:23] the transformer or substation. From there the fault path continues back through the supply
+[03:27] network and finally back along the line conductor. If everything is working as it should, the process
+[03:32] allows the protective device to disconnect the supply automatically. So the ground is part of
+[03:37] the fault path. Different ground conditions allow that current to spread more easily than others.
+[03:41] But I'm going to be diving into that in a later video on soil resistivity and site surveys. For
+[03:46] now, all you need to take away is this. If the soil affects how current spreads, then
+[03:49] it affects how well the earthing system works. But if we're just testing the earth fault loop path,
+[03:54] can't we just do an earth fault loop impedance test? It's a fair question. The earth fault loop
+[03:58] impedance test measures the earth fault loop path, but an earth electrode resistance test focuses on
+[04:03] the performance of the earth electrode itself and how it interacts with the ground. A loop
+[04:08] test can give you a number, and it is an important test to do to determine the disconnection time,
+[04:12] but it does not isolate the earth electrode. But to show you how to test, I've dropped into
+[04:16] Lincoln College with some very enthusiastic volunteers to take you through the process
+[04:20] of the fall-of-potential method of earth electrode resistance testing. Let's start with the electrode
+[04:25] itself. In this case we are using a driven earth rod installed vertically into the ground,
+[04:29] and depth matters here. The electrode needs to be deep enough to make good contact with stable soil,
+[04:34] not just the loose material at the surface. In practice, this often means driving the rod down
+[04:39] until only the inspection point is accessible. You may even need to extend the rod to drive
+[04:43] down deeper to hit more stable soil, but we will only know that once we test. But before we test
+[04:48] anything, the installation must be made safe. For this test we're using the CA6424 from Chauvin
+[04:54] Arnoux. It can carry out both two-pole resistance tests and three-pole earth measurements, even in
+[05:00] high resistivity ground, with measurements ranging up to 50 kilo-ohms. It also allows us to measure
+[05:05] voltage up to 600 volts, which is important when working on live sites or shared environments. It
+[05:11] makes the probe positioning for the test easy as well with 52, 62 and 72%, but more
+[05:16] on that in a sec. The CA6424 can also measure leakage current from as low as 0.5 milliamps,
+[05:23] which becomes important later when we start talking about protection and RCDs. All of the
+[05:27] controls on the front panel are real quality, so you can operate it easily even with gloves
+[05:31] on. The screen is backlit and split into three displays so you can see the measurement results,
+[05:36] any errors and supporting information at the same time. There are also clear indicators.
+[05:41] An LED warns if a hazardous voltage is present, and a noise symbol shows when external voltages
+[05:45] could affect the reading. Okay, on with the test. We are doing the fall-of-potential or
+[05:50] E1 test. For our example, we're going to take an average reading of the tests and calculate what
+[05:55] our mean average is. So we hammer in the first electrode, and it needs to go deep enough to not
+[06:00] be a trip hazard and to hit stable soil. It might be that you have to attach additional electrodes
+[06:04] to go deeper or place them parallel to each other at 1 m spacings. This electrode went in a treat,
+[06:10] and we managed to get it three electrodes deep, which is a depth of 3.6 m. Top tip, make a note of
+[06:18] the electrode depth and leave it in the inspection chamber so the next tester isn't guessing how
+[06:22] deep it's gone. So now we need to put in our first test probe. This is the current probe,
+[06:26] normally referred to as C2. The C stands for current. This needs to go ten times
+[06:30] the distance of the depth of the electrode under test. So in our case, 36 m. It may not always be
+[06:36] possible to get this distance depending on the site, but as long as we get as far away
+[06:40] as possible the result should be reliable. Just don't go jumping into people's gardens. Top tip,
+[06:48] make sure all of the leads are laid out and not left in loops. This way you won't get magnetic
+[06:54] interference when testing. Next we need to put the potential probe in, in this case P2,
+[06:59] between the electrode under test and the current probe C2. And it's really important that this is
+[07:04] done in line with the current probe. But at what distance? Well the common view is that it goes
+[07:08] halfway between the electrode under test and the current probe, when actually the distance should
+[07:13] be just over half the distance at 62%. We will find out why it's 62% in the next video. Okay,
+[07:19] so 62% of 36 m is 22 m. So that's where we place our potential probe and measure, and we grab our
+[07:26] readings and make a note of it. Next we go to 72%. This moves the potential probe 10% closer
+[07:31] to the current probe, a distance of 3.6 m and a total of 26 m from the electrode under test,
+[07:38] and we take that measurement. Finally we go to 52%. This is around 18 m from the electrode under
+[07:44] test, and we take the final reading. So now we have all three readings. We can calculate the
+[07:48] mean average. To do this we add them together and divide by the number of values we have,
+[07:53] in this case three. This gave us a mean average of 118 ohms. Oh, and did you know that this video
+[07:59] is available as a free CPD? You can head over to eFIXX Trainer Central where you can bag yourself
+[08:02] a certificate. I've left links in the description. So there we have it. In the next video we're going
+[08:06] to find out what these readings actually mean and if they fall within agreed limits, as well as
+[08:10] finding out if this outdoor office needs an earth electrode. Click the video on screen to find out.

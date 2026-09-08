@@ -1,0 +1,41 @@
+# BS 7671 Testing RCD’s - Regardless of the Type of RCD Test it as if it is an AC RCD at x1 ONLY
+# https://www.youtube.com/watch?v=zIPgYcLdQZE
+
+so i've come to a property today to do an EICR um as you can see it's probably a little bit echoey because they are renovating it and they're having it decorated etc so i just thought it was a good opportunity to get a video in um based on the new update for BS7671 so Amendment 2 has now dropped and there's a change to how we test our RCD so what i'm going to do is i'm just going to walk through what that change means to us and how it affects us and how we perform this test so one of the changes in BS7671 as we said earlier was how we test our RCDs so now they're they've added a little note that short states regardless of which type of RCD we have remember we're pushing towards type A's now and BS7671 has started to update to that as well um even if we have a type A we can still test it with the type AC setting on our tester and it also states that regardless of additional protection fault protection etc we can deem effectiveness of the RCD by testing it at one times its I delta n so we have a 30 milliamp RCD here in this installation so my I delta n is 30 milliamps okay so now actually we're going to test it at one times and that is enough for us to deem it as effective okay so all i'm going to do is i'm going to test the RCD here at source and remember this is a live test so i do have GS38 probes etcetera now that's disconnected in 28.6 milliseconds i'm going to re-energize the RCD and i'm going to switch this to the other side of the cycle and remember i'm testing it up one times it's I delta n and that is disconnected at 18.9 milliseconds so with them disconnection times it's also important to know that in the note in BS7671 it talks about when we test it at one times it's I delta n value for a non-delay type RCD which is what we have here in the installation that it must disconnect within 300 milliseconds so according to BS7671 Amendment 2 we have now deemed this RCD as effective because we have tested it one times its I delta n so we've tested at 30 milliamps and the result was less than 300 milliseconds it's always important to remember though that BS7671 is the minimum requirement so what i will do as part of this EICR is i will still go and test it at times five um the amendment hasn't dropped a long time ago so you know it's going to take a while for people to get used to different methods um but i will still probably test it times one its value times five times half and then we will use the test button to make sure the test button is effective so again just to recap according to BS 7671 Amendment 2 we now only have to test on the AC setting of our tester regardless of the type of RCD and also we only have to test it times when it's I delta n it's I delta n for this particular RCD being 30 milliamps so we test it at 30 milliamps and as long as it disconnects within 300 milliseconds we can deem that as a an effective RCD okay remember again it is the minimum requirement for us as electricians to follow BS7671 so if you choose to still test it at times five times half etc like i will then that is entirely your judgment um i probably will still continue to do that maybe from a force of habit and just going that little bit extra yeah so i hope this video has been some help
+
+
+[00:00] so i've come to a property today to do an EICR um as you can see it's probably a little bit echoey
+[00:04] because they are renovating it and they're having it decorated etc so i just thought it was a good
+[00:09] opportunity to get a video in um based on the new update for BS7671 so Amendment 2 has now dropped
+[00:16] and there's a change to how we test our RCD so what i'm going to do is i'm just going to walk
+[00:21] through what that change means to us and how it affects us and how we perform this test so one of
+[00:27] the changes in BS7671 as we said earlier was how we test our RCDs so now they're they've added a
+[00:32] little note that short states regardless of which type of RCD we have remember we're pushing towards
+[00:38] type A's now and BS7671 has started to update to that as well um even if we have a type A we can
+[00:45] still test it with the type AC setting on our tester and it also states that regardless of
+[00:52] additional protection fault protection etc we can deem effectiveness of the RCD by testing it at
+[00:57] one times its I delta n so we have a 30 milliamp RCD here in this installation so my I delta n is
+[01:03] 30 milliamps okay so now actually we're going to test it at one times and that is enough for
+[01:10] us to deem it as effective okay so all i'm going to do is i'm going to test the RCD here at source
+[01:18] and remember this is a live test so i do have GS38 probes etcetera
+[01:26] now that's disconnected in 28.6 milliseconds
+[01:30] i'm going to re-energize the RCD and i'm going to switch this to the other side of the cycle
+[01:38] and remember i'm testing it up one times it's I delta n
+[01:43] and that is disconnected at 18.9 milliseconds so with them disconnection times it's also
+[01:49] important to know that in the note in BS7671 it talks about when we test it at one times
+[01:56] it's I delta n value for a non-delay type RCD which is what we have here in the installation
+[02:02] that it must disconnect within 300 milliseconds so according to BS7671 Amendment 2 we have now
+[02:10] deemed this RCD as effective because we have tested it one times its I delta n so we've
+[02:15] tested at 30 milliamps and the result was less than 300 milliseconds it's always important
+[02:21] to remember though that BS7671 is the minimum requirement so what i will do as part of this
+[02:27] EICR is i will still go and test it at times five um the amendment hasn't dropped a long time ago so
+[02:35] you know it's going to take a while for people to get used to different methods um but i will still
+[02:39] probably test it times one its value times five times half and then we will use the test button to
+[02:45] make sure the test button is effective so again just to recap according to BS 7671 Amendment 2
+[02:51] we now only have to test on the AC setting of our tester regardless of the type of RCD and also we
+[03:00] only have to test it times when it's I delta n it's I delta n for this particular RCD being
+[03:06] 30 milliamps so we test it at 30 milliamps and as long as it disconnects within 300 milliseconds we
+[03:12] can deem that as a an effective RCD okay remember again it is the minimum requirement for us as
+[03:19] electricians to follow BS7671 so if you choose to still test it at times five times half etc like
+[03:25] i will then that is entirely your judgment um i probably will still continue to do that maybe from
+[03:31] a force of habit and just going that little bit extra yeah so i hope this video has been some help

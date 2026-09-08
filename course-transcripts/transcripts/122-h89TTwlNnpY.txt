@@ -1,0 +1,279 @@
+# Star Delta Starter Explained - Working Principle
+# https://www.youtube.com/watch?v=h89TTwlNnpY
+
+Hey there guys, Paul here from TheEngineeringMindset.com. In this video, we're going to be learning how Star Delta Starters work for three-phase induction motors. Remember, electricity is dangerous and can be fatal. You should be qualified and competent to carry out any electrical work. Now this is a real-world Star Delta Starter. And by the end of this video, you will be able to tell me what each part does and how the whole system works together. Now for this video, I'm going to be using the old red-yellow-blue colour coding for the phases simply because I think it's easier to see. However, I will also show you versions with colours used in the US, EU, UK and Australia a little later into this video. Three-phase motors are used in almost every commercial and industrial building. Inside a three-phase induction motor we have three separated coils which are used to produce a rotating magnetic field. When we pass an AC current through each coil, the coil will produce a magnetic field which changes in intensity as well as polarity as the electrons change direction. But, if we were to connect each coil to a different phase, then the electrons in each phase will change direction between forwards and backwards at different times compared to the other phases. This means that the magnetic field will change in intensity and polarity at a different time compared to the other phases. To distribute this magnetic field, we need to rotate the coils 120 degrees from the last phase and then combine these into the motors stator to produce the rotating magnetic field. This rotating magnetic field will cause the rotor which sits inside the coils, to spin. And we can then use this to drive fans, pumps, et cetera. On the top, or sometimes on the side of the motor, we have an electrical terminal box. I'll just move that box here to make it easier to see. Inside this electrical terminal box, we have six electrical terminals. Each terminal has a corresponding letter and number. We have U-one, V-one, and W-one and then W-two, U-two, and V-two. We have our phase-one coil connected the two U-terminals. We then have the phase-two coil connected to the two V-terminals. And then we have the phase-three coil which is connected to the two W-terminals. Here's a real-world example of an induction motor's electrical terminal box. Now I'm going to test your understanding of this a little later into this video. Notice the coil terminals are in a different arrangement from the top-side to the bottom-side. We'll see why that is in just a moment. We now bring in the three-phase power supply and connect these to their respective terminals. We always connect the supply side to terminals U-one, V-one and W-one. Now for the motor to run, we need to complete the circuit. And there are two ways to do this. The first way is the Delta configuration. For this, we connect across the terminals from U-one to W-two, V-one to U-two and W-one to V-two. This will give us our Delta configuration. Now when we pass an AC current through the phases, we see that electricity flows from one phase into another as the direction of AC power reverses in each phase at a different time. That's why we have the terminals at different arrangements because we can connect across and allow electricity to flow between the phases as electrons reverse direction at different times. By the way, if you want to learn more about how three-phase electricity works, then we've covered this in great detail in our previous videos. Do check those out. Links are in the video description down below. Now the other way that we can connect the terminals, is to use the Star configuration. In this method, we connect between W-two, U-two and V-two on only one side of the motor terminals. This will give us our Star-equivalent design. Now when we pass AC current through the coils, we see that the electrons are shared between the phases at the terminals. So looking again at this real-world example of the motor terminals, can you tell me which method is being used? Three, two, one, correct, it's the Delta configuration. The two ways we just saw of configuring the motor in Star or Delta are fixed methods. To change them, we have to physically cut the power, open the motor terminals, and then rearrange them. Now this isn't exactly practical to do. So how can we automate this? To do this, we need to use some contactors. Now they come in various designs. But if we look inside one, then the basic operation is just a switch that can either make or break a circuit to control the flow of electricity in all three phases simultaneously. So we take our main contactor and then we connect our three-phase supply to one side and then we connect the other side to the respective terminals within the induction motor's electrical terminal box. We then take a second contactor which will be used for our Delta circuit and we feed our three phases into this also. From here, we connect our phase-one to terminal V-two, which is the phase-two coil. Then we connect our phase-two to terminal W-two, which is the phase-three coil. And finally, we connect our phase-three wire to the U-two terminal, which is the phase-one coil. Now we take another contactor, which will be use for our Star circuit, and we connect our three phase power into this. On the top, we just connect all three phases together. I will just remove the casing of the contactors so we can see what's happening inside. Now we start in the Star configuration. And to do that, we activate both the main and Star contactor terminals so that they close to complete the circuit. Now when we pass electricity through the circuit, the electricity passes through each phase and coil and then out through the motor terminals and into the Star contactor where the path of the electrons is shared. This allows them the flow in and out of another phase as the direction of each phase changes. The Star connection method will run for a few seconds before switching over to Delta. For the Delta connection, we disconnect the Star contactor and then close the Delta connection. This all happens very quickly. Now we have the electricity flowing in but it splits direction. It flows into both the main as well as the Delta contactor. The electricity in the main contactor path will flow into the motor coils. And the electricity which took the Delta contactor route will flow to the opposite side of the motor terminals. Each will then flow between the different phases as they reverse direction. To control the change over from Star to Delta contactors, we simply use a timer to control this. This will automatically change the configuration over after a set amount of time. Additionally, there are more advanced versions which will monitor the Amps or motor speed. If you are in the US, then you might find these colours being used. This is for a 208-volt three-phase supply but the colours will be different if you're using a 480-volt, three-phase supplier. In the UK, EU and Australia, you'll find these colours used for the phases. If you're in the UK, then you're probably still gonna come across versions with the red, yellow, blue colours being used. This is an old outdated colour system. But old installations are still gonna exist. So coming back to the real-world photo of a Star Delta Starter, can you tell me which part is which? Three, two, one, correct. This is the main contactor, this is the Delta contactor, this is the Star contactor and this is the timer. Notice on the Star contactor, they've just connected two wires into the same terminal to create that Star point. So why then do we use Star Delta Starters? We use the Star Delta Starter to reduce the in-rush current when the motor starts. When a large induction motor starts in Delta, the starting current can be over five times higher than the full load current which occurs when the motor stabilizes and runs normally. This huge surge in current will cause lots of problems. The building's electrical system will be hit by this sudden large demand. The electrical infrastructure will rapidly increase in temperature leading to component failure and even electrical fires. The sudden large demand causes voltage drops throughout the building's electrical system. This can be visually seen because the lights will dim. This can cause many problems for sensitive equipment such as computers, servers and safety systems. So to reduce the starting current, we simply need to reduce the starting voltage. The Star configuration will reduce the coil voltage to around 58% compared to the Delta configuration. A lower voltage will lead to a lower current. Current in the coil while in Star configuration will be around 33% of the Delta configuration. This will also lead to a reduction in torque. The Star configuration torque will also be around 33% compared to Delta. So let's look at a simplified basic example of what's happening here to understand it further. Now let's say we have the motor connected in Delta with a typical European supply voltage of 400 volts. That means when we use a multimeter to measure the voltage between any two phases, we will get a reading of 400 volts. We call this a line-to-line voltage. By the way, if you don't have a multimeter, then I highly recommend you get one for your tool kit. It's an essential piece of kit for any electrical fault finding and building your understanding of electricity. Links down below for which one to get and from where. Now if we measure across the two ends of a coil, we again measure the line-to-line voltage of 400 volts. Let's say each coil has a resistance or impedance as this is AC-power of 20 Ohms. That means we will get a current reading on the coil of 20 Amps. We can calculate that from 400 volts divided by 20 Ohms which equals 20 Amps. But the current in a line will be different. It will be 34.6 Amps and we get that from 20 Amps divided by the square root of three which gives us 34.6 Amps. That's because the phase is connected to the two coils. Now if we look at a Star configuration, we again have a line-to-line voltage of 400 Volts and we see that if we measure between any two phases. But, with a Star configuration, all our coils meet at the Star point or the neutral point. It's from this point that we can run a neutral line if we need to. So this time when we measure the voltage across the ends of any coil, we get a lower value of 230 Volts. That's because the coil isn't directly connected between two phases like the Delta version was. One end is connected to the phase, but the other end is connected to the share point or the neutral point. So the voltage is therefore shared and will be less because one phase is always in reverse. We can see the 230 Volt reading by dividing 400 Volts by the square root of three which gives us 230 Volts. As the voltage is less, the current will be too. If the coil is again 20 Ohms of resistance or impedance, then the current is calculated by 230 Volts divided by 20 Ohms which is 11.5 Amps. The line current in this design will also therefore be 11.5 Amps. So we can see with a Delta connection, the coil is exposed to the full 400 Volts between two phases. But the Star connection is only exposed to 230 Volts between the phase and the neutral point. So we can see that the Star uses less voltage and therefore less current compared to the Delta version. And that is why we use it first. Okay guys, that's it for this video. But to continue your learning, then check out one of the videos on screen now and I'll catch you there for the next lesson.
+
+
+[00:03] Hey there guys, Paul here from TheEngineeringMindset.com.
+[00:07] In this video, we're going to be learning
+[00:09] how Star Delta Starters work
+[00:10] for three-phase induction motors.
+[00:13] Remember, electricity is dangerous and can be fatal.
+[00:16] You should be qualified and competent
+[00:17] to carry out any electrical work.
+[00:20] Now this is a real-world Star Delta Starter.
+[00:23] And by the end of this video,
+[00:24] you will be able to tell me what each part does
+[00:27] and how the whole system works together.
+[00:29] Now for this video, I'm going to be using
+[00:31] the old red-yellow-blue colour coding for the phases
+[00:34] simply because I think it's easier to see.
+[00:36] However, I will also show you versions
+[00:38] with colours used in the US, EU, UK and Australia
+[00:42] a little later into this video.
+[00:44] Three-phase motors are used in almost every
+[00:46] commercial and industrial building.
+[00:48] Inside a three-phase induction motor
+[00:50] we have three separated coils
+[00:52] which are used to produce a rotating magnetic field.
+[00:56] When we pass an AC current through each coil,
+[00:58] the coil will produce a magnetic field
+[01:01] which changes in intensity as well as polarity
+[01:04] as the electrons change direction.
+[01:06] But, if we were to connect each coil to a different phase,
+[01:09] then the electrons in each phase
+[01:11] will change direction between forwards and backwards
+[01:14] at different times compared to the other phases.
+[01:17] This means that the magnetic field
+[01:19] will change in intensity and polarity at a different time
+[01:22] compared to the other phases.
+[01:24] To distribute this magnetic field,
+[01:25] we need to rotate the coils 120 degrees
+[01:28] from the last phase and then combine these
+[01:30] into the motors stator to produce
+[01:32] the rotating magnetic field.
+[01:34] This rotating magnetic field will cause the rotor
+[01:37] which sits inside the coils, to spin.
+[01:40] And we can then use this to drive fans, pumps, et cetera.
+[01:43] On the top, or sometimes on the side of the motor,
+[01:46] we have an electrical terminal box.
+[01:48] I'll just move that box here to make it easier to see.
+[01:51] Inside this electrical terminal box,
+[01:52] we have six electrical terminals.
+[01:54] Each terminal has a corresponding letter and number.
+[01:57] We have U-one, V-one, and W-one
+[02:00] and then W-two, U-two, and V-two.
+[02:02] We have our phase-one coil connected the two U-terminals.
+[02:06] We then have the phase-two coil connected
+[02:08] to the two V-terminals.
+[02:10] And then we have the phase-three coil
+[02:12] which is connected to the two W-terminals.
+[02:14] Here's a real-world example of an induction motor's
+[02:17] electrical terminal box.
+[02:19] Now I'm going to test your understanding of this
+[02:20] a little later into this video.
+[02:22] Notice the coil terminals are in a different arrangement
+[02:25] from the top-side to the bottom-side.
+[02:28] We'll see why that is in just a moment.
+[02:30] We now bring in the three-phase power supply
+[02:32] and connect these to their respective terminals.
+[02:35] We always connect the supply side
+[02:37] to terminals U-one, V-one and W-one.
+[02:40] Now for the motor to run, we need to complete the circuit.
+[02:43] And there are two ways to do this.
+[02:45] The first way is the Delta configuration.
+[02:47] For this, we connect across the terminals
+[02:49] from U-one to W-two, V-one to U-two and W-one to V-two.
+[02:54] This will give us our Delta configuration.
+[02:57] Now when we pass an AC current through the phases,
+[02:59] we see that electricity flows from one phase into another
+[03:03] as the direction of AC power reverses
+[03:05] in each phase at a different time.
+[03:07] That's why we have the terminals at different arrangements
+[03:10] because we can connect across and allow electricity
+[03:12] to flow between the phases
+[03:14] as electrons reverse direction at different times.
+[03:17] By the way, if you want to learn more
+[03:19] about how three-phase electricity works,
+[03:21] then we've covered this in great detail
+[03:22] in our previous videos.
+[03:24] Do check those out. Links are in the video description down below.
+[03:27] Now the other way that we can connect the terminals,
+[03:29] is to use the Star configuration.
+[03:31] In this method, we connect between W-two, U-two and V-two
+[03:35] on only one side of the motor terminals.
+[03:38] This will give us our Star-equivalent design.
+[03:40] Now when we pass AC current through the coils,
+[03:43] we see that the electrons are shared
+[03:44] between the phases at the terminals.
+[03:47] So looking again at this real-world example
+[03:50] of the motor terminals,
+[03:51] can you tell me which method is being used?
+[03:53] Three, two, one, correct, it's the Delta configuration.
+[03:59] The two ways we just saw of configuring the motor
+[04:01] in Star or Delta are fixed methods.
+[04:04] To change them, we have to physically cut the power,
+[04:07] open the motor terminals, and then rearrange them.
+[04:09] Now this isn't exactly practical to do.
+[04:12] So how can we automate this?
+[04:13] To do this, we need to use some contactors.
+[04:16] Now they come in various designs.
+[04:17] But if we look inside one, then the basic operation
+[04:20] is just a switch that can either make or break a circuit
+[04:23] to control the flow of electricity
+[04:25] in all three phases simultaneously.
+[04:28] So we take our main contactor
+[04:29] and then we connect our three-phase supply to one side
+[04:32] and then we connect the other side
+[04:34] to the respective terminals within the induction motor's
+[04:36] electrical terminal box.
+[04:38] We then take a second contactor
+[04:40] which will be used for our Delta circuit
+[04:42] and we feed our three phases into this also.
+[04:45] From here, we connect our phase-one to terminal V-two,
+[04:48] which is the phase-two coil.
+[04:50] Then we connect our phase-two to terminal W-two,
+[04:53] which is the phase-three coil.
+[04:55] And finally, we connect our phase-three wire
+[04:58] to the U-two terminal, which is the phase-one coil.
+[05:01] Now we take another contactor,
+[05:03] which will be use for our Star circuit,
+[05:05] and we connect our three phase power into this.
+[05:07] On the top, we just connect all three phases together.
+[05:11] I will just remove the casing of the contactors
+[05:13] so we can see what's happening inside.
+[05:15] Now we start in the Star configuration.
+[05:17] And to do that, we activate both
+[05:19] the main and Star contactor terminals
+[05:21] so that they close to complete the circuit.
+[05:24] Now when we pass electricity through the circuit,
+[05:26] the electricity passes through each phase and coil
+[05:29] and then out through the motor terminals
+[05:31] and into the Star contactor
+[05:33] where the path of the electrons is shared.
+[05:35] This allows them the flow in and out of another phase
+[05:37] as the direction of each phase changes.
+[05:40] The Star connection method will run for a few seconds
+[05:42] before switching over to Delta.
+[05:44] For the Delta connection, we disconnect the Star contactor
+[05:47] and then close the Delta connection.
+[05:50] This all happens very quickly.
+[05:52] Now we have the electricity flowing in
+[05:54] but it splits direction.
+[05:55] It flows into both the main as well as the Delta contactor.
+[05:59] The electricity in the main contactor path
+[06:01] will flow into the motor coils.
+[06:03] And the electricity which took the Delta contactor route
+[06:06] will flow to the opposite side of the motor terminals.
+[06:08] Each will then flow between the different phases
+[06:11] as they reverse direction.
+[06:12] To control the change over from Star to Delta contactors,
+[06:16] we simply use a timer to control this.
+[06:18] This will automatically change the configuration over
+[06:21] after a set amount of time.
+[06:22] Additionally, there are more advanced versions
+[06:25] which will monitor the Amps or motor speed.
+[06:27] If you are in the US, then you might find
+[06:29] these colours being used.
+[06:31] This is for a 208-volt three-phase supply
+[06:33] but the colours will be different
+[06:35] if you're using a 480-volt, three-phase supplier.
+[06:38] In the UK, EU and Australia, you'll find these colours
+[06:41] used for the phases.
+[06:42] If you're in the UK, then you're probably
+[06:43] still gonna come across versions
+[06:45] with the red, yellow, blue colours being used.
+[06:47] This is an old outdated colour system.
+[06:49] But old installations are still gonna exist.
+[06:52] So coming back to the real-world photo
+[06:54] of a Star Delta Starter, can you tell me
+[06:56] which part is which?
+[06:57] Three, two, one, correct.
+[07:01] This is the main contactor, this is the Delta contactor,
+[07:04] this is the Star contactor and this is the timer.
+[07:07] Notice on the Star contactor,
+[07:09] they've just connected two wires into the same terminal
+[07:11] to create that Star point.
+[07:13] So why then do we use Star Delta Starters?
+[07:16] We use the Star Delta Starter to reduce
+[07:18] the in-rush current when the motor starts.
+[07:20] When a large induction motor starts in Delta,
+[07:23] the starting current can be over five times higher
+[07:25] than the full load current which occurs
+[07:27] when the motor stabilizes and runs normally.
+[07:30] This huge surge in current will cause lots of problems.
+[07:33] The building's electrical system will be hit
+[07:35] by this sudden large demand.
+[07:37] The electrical infrastructure
+[07:38] will rapidly increase in temperature
+[07:40] leading to component failure and even electrical fires.
+[07:43] The sudden large demand causes voltage drops
+[07:46] throughout the building's electrical system.
+[07:48] This can be visually seen because the lights will dim.
+[07:51] This can cause many problems for sensitive equipment
+[07:53] such as computers, servers and safety systems.
+[07:56] So to reduce the starting current,
+[07:57] we simply need to reduce the starting voltage.
+[08:00] The Star configuration will reduce the coil voltage
+[08:03] to around 58% compared to the Delta configuration.
+[08:06] A lower voltage will lead to a lower current.
+[08:09] Current in the coil while in Star configuration
+[08:11] will be around 33% of the Delta configuration.
+[08:14] This will also lead to a reduction in torque.
+[08:17] The Star configuration torque
+[08:18] will also be around 33% compared to Delta.
+[08:22] So let's look at a simplified basic example
+[08:24] of what's happening here to understand it further.
+[08:27] Now let's say we have the motor connected in Delta
+[08:29] with a typical European supply voltage of 400 volts.
+[08:33] That means when we use a multimeter
+[08:34] to measure the voltage between any two phases,
+[08:37] we will get a reading of 400 volts.
+[08:40] We call this a line-to-line voltage.
+[08:42] By the way, if you don't have a multimeter,
+[08:44] then I highly recommend you get one for your tool kit.
+[08:46] It's an essential piece of kit
+[08:48] for any electrical fault finding
+[08:49] and building your understanding of electricity.
+[08:51] Links down below for which one to get and from where.
+[08:54] Now if we measure across the two ends of a coil,
+[08:57] we again measure the line-to-line voltage of 400 volts.
+[09:00] Let's say each coil has a resistance or impedance
+[09:03] as this is AC-power of 20 Ohms.
+[09:06] That means we will get a current reading
+[09:08] on the coil of 20 Amps.
+[09:10] We can calculate that from 400 volts
+[09:12] divided by 20 Ohms which equals 20 Amps.
+[09:15] But the current in a line will be different.
+[09:17] It will be 34.6 Amps and we get that from
+[09:20] 20 Amps divided by the square root of three
+[09:23] which gives us 34.6 Amps.
+[09:25] That's because the phase is connected to the two coils.
+[09:28] Now if we look at a Star configuration,
+[09:30] we again have a line-to-line voltage of 400 Volts
+[09:33] and we see that if we measure between any two phases.
+[09:36] But, with a Star configuration,
+[09:38] all our coils meet at the Star point or the neutral point.
+[09:42] It's from this point that we can run
+[09:43] a neutral line if we need to.
+[09:45] So this time when we measure the voltage
+[09:47] across the ends of any coil,
+[09:49] we get a lower value of 230 Volts.
+[09:52] That's because the coil isn't directly connected
+[09:54] between two phases like the Delta version was.
+[09:57] One end is connected to the phase,
+[09:59] but the other end is connected
+[10:00] to the share point or the neutral point.
+[10:02] So the voltage is therefore shared
+[10:04] and will be less because one phase is always in reverse.
+[10:07] We can see the 230 Volt reading
+[10:09] by dividing 400 Volts by the square root of three
+[10:12] which gives us 230 Volts.
+[10:14] As the voltage is less, the current will be too.
+[10:16] If the coil is again 20 Ohms of resistance or impedance,
+[10:20] then the current is calculated by 230 Volts
+[10:23] divided by 20 Ohms which is 11.5 Amps.
+[10:26] The line current in this design
+[10:28] will also therefore be 11.5 Amps.
+[10:30] So we can see with a Delta connection,
+[10:32] the coil is exposed to the full 400 Volts
+[10:35] between two phases.
+[10:36] But the Star connection is only exposed
+[10:38] to 230 Volts between the phase and the neutral point.
+[10:41] So we can see that the Star uses less voltage
+[10:44] and therefore less current compared to the Delta version.
+[10:47] And that is why we use it first.
+[10:49] Okay guys, that's it for this video.
+[10:50] But to continue your learning,
+[10:51] then check out one of the videos on screen now
+[10:54] and I'll catch you there for the next lesson.

@@ -1,11 +1,15 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createServer } from 'vite';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const transcriptRoot = resolve(projectRoot, '..', 'course-transcripts');
+const transcriptRoot = resolve(projectRoot, 'course-transcripts');
 const manifest = JSON.parse(readFileSync(join(transcriptRoot, 'manifest.json'), 'utf8'));
+
+function manifestVideoId(video) {
+  return video.videoId ?? video.video_id;
+}
 
 function filesBelow(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -47,24 +51,37 @@ try {
   const assessmentBank = buildAssessmentBank(course.modules, lessonGuides);
   const failures = [];
   const liveLessons = course.modules.flatMap(module => module.lessons);
+  const lessonsByVideoId = new Map(liveLessons.map(lesson => [lesson.videoId, lesson]));
   for (const lesson of liveLessons) {
-    if (!manifest.videos.some(video => video.lessonId === lesson.id && video.videoId === lesson.videoId)) failures.push({ lessonId: lesson.id, reason: 'live lesson absent from transcript manifest' });
+    if (!manifest.videos.some(video => manifestVideoId(video) === lesson.videoId)) failures.push({ lessonId: lesson.id, reason: 'live lesson absent from transcript manifest' });
   }
   if (manifest.videos.length !== liveLessons.length) failures.push({ reason: 'manifest and live curriculum counts differ' });
   // Explicit partial audit for a checkout without the historical local archive.
   // The default remains a strict audit of every live lesson.
   const newOnly = process.argv.includes('--new-only');
   const newIds = new Set(gapLessons.map(lesson => lesson.id));
-  const videosToAudit = newOnly ? manifest.videos.filter(video => newIds.has(video.lessonId)) : manifest.videos;
+  const videosToAudit = newOnly
+    ? manifest.videos.filter(video => newIds.has(lessonsByVideoId.get(manifestVideoId(video))?.id))
+    : manifest.videos;
   let visualOnly = 0;
 
   for (const video of videosToAudit) {
-    const marker = ` - ${video.lessonId} - `;
-    const transcriptPath = transcriptFiles.find((path) => path.includes(marker));
-    const guide = lessonGuides[video.lessonId];
+    const lesson = lessonsByVideoId.get(manifestVideoId(video));
+    const lessonId = lesson?.id;
+    const archivedPath = video.output_file ? resolve(transcriptRoot, video.output_file) : undefined;
+    const marker = lessonId ? ` - ${lessonId} - ` : '';
+    const transcriptPath = archivedPath && existsSync(archivedPath)
+      ? archivedPath
+      : transcriptFiles.find((path) => marker && path.includes(marker));
+    const guide = lessonId ? lessonGuides[lessonId] : undefined;
+
+    if (video.status === 'no_captions') {
+      visualOnly += 1;
+      continue;
+    }
 
     if (!transcriptPath || !guide) {
-      failures.push({ lessonId: video.lessonId, reason: transcriptPath ? 'missing guide' : 'missing transcript' });
+      failures.push({ lessonId: lessonId ?? manifestVideoId(video), reason: transcriptPath ? 'missing guide' : 'missing transcript' });
       continue;
     }
 
@@ -80,7 +97,7 @@ try {
 
     if (evidenceWords.length < 2) {
       failures.push({
-        lessonId: video.lessonId,
+        lessonId,
         reason: 'teaching guide has insufficient transcript vocabulary overlap',
         transcript: relative(transcriptRoot, transcriptPath),
       });

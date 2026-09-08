@@ -1,0 +1,380 @@
+# INDRA SMART PRO EV CHARGER INSTALLATION TROUBLE SHOOTING & FAQ's
+# https://www.youtube.com/watch?v=7unMAv89nwU
+
+in this the fourth in a series of training videos we're going to conclude our installation of the smart pro ev charger from indra and we're going to look at some common questions and troubleshooting tips about the installed charger now at this point it's important to note that this is a training video for experienced qualified electricians not a diy video for homeowners this is a complex and potentially dangerous area of electrical installation requiring the use of calibrated test equipment and it's not something that should be undertaken by amateurs in previous videos we looked at the entire installation process for your indra smart pro ev charger from mounting right through to commissioning so if you haven't already done so please go and watch those videos because they contain critical information for your install first of all let's have a look at the front of the panel and see what the leds there are telling you or the customer first of all there's the most obvious situation where all the leds are switched off this simply means that the charger is off and has no power so clearly there's an issue with the supply before the charger your usual fault finding process will come into effect here so you'll check that the circuit breaker or rcbo supplying the circuit is on and if it's tripped you'll check the supply cable and make sure that all connections are correct in the very unlikely event that everything is okay with the supply and the unit is still showing blank leds then it's time to contact the customer services team at indra if the primary led on the front here is illuminated in a steady non-flashing white then your charger is in steady state operational mode this means it's connected via the internet to the caluza platform and will charge an ev according to the schedules and protocols that have been assigned when the primary led is blue in color that means that it's in steady state override mode all this means is that the boost button on the front has been pressed and the unit is now charging the connected ev at full power temporarily overriding any settings that have been made in connection with scheduling and tariffs if the primary led glows orange then the charger is in steady state solar match mode which means it's using micro-generated on-site electricity to charge up the electric vehicle now when the primary led is lit up in solid red as in it's not flashing it means the charger is in a permanent steady state fault mode which indicates that the unit has encountered a major error and needs to experience a hard reset which is achieved by disconnecting the supply to the charger and reinstating it the easiest way to do this is to operate the mcb or rcbo feeding the charger off and then on again if the red light doesn't reappear the fault has been cleared if however it continues to illuminate red then again it's time to contact the customer service staff at tindra if the led is flashing red then it means the charger has a temporary fault the solution is the same as previously stated try resetting the charger by turning it off and on at the mcb or rcbo and if the fault doesn't clear then again contact the customer service staff at indra if the primary led is flashing purple when you first power up or after a power cycle boot then it means the charging unit is now powering up and running its startup sequence after about 10 seconds this process should stop and the charger will settle into its normal function if the led keeps flashing purple after the startup sequence then it means that the charger cannot communicate with kalooza the pattern that the led flashes on and off informs you of the nature of the fault one repeating flash means that the charger is connected to the internet but can't connect with kalooza and it's time to contact customer support if the charger is flashing twice repeatedly then there is a problem with the connection to your router you need to check all the connecting cables are plugged in that there's nothing wrong with the ethernet cable and you can also check that other devices in the home are connected to the internet or try restarting the router if the led is flashing purple three or more times on a repeated cycle then there's probably a problem with the router itself again check that any other devices in the property are connected to the internet via the router and also try restarting the router and finally if the led is flashing blue then it means that a software update is in progress and the charge point is downloading a software update from caluza it's really important that you don't disconnect the charger from the internet while the download and update is in progress so just expanding on a couple of those points why might the charger be struggling to make a connection to the internet well there's a few reasons which will depend on how you've made the internet connection remember we've covered these options in detail on a previous video so make sure you watch that for further information if you're relying on the 4g dongle in the back of the unit here then it may be that the signal in the area that the charge point has been installed is too sketchy to make a reliable connection if this is the case then you may need to think about making a hard-wired connection instead using one of the methods outlined previously if you already have a hardwired connection then it's a good idea to double check any connections made using a cable tester in the first instance and then if there's any issues found double checking any joints or connections that you've made in the cable to make sure they haven't worked loose or made a poor joint if everything is in order with the hardwired connection then the problem may be with the router in which case a reset by turning it off and on again may help and if this doesn't work then it may be worth checking with the internet service provider to make sure there's nothing wrong with the network external to the property another curious problem we may come across is the mcb or rcbo tripping out for what appears to be no reason as in there's no obvious fault occurring what could be the cause for this well there is one possibility that you may not have come across before and it's to do with the nature of the load up until the emergence of ev charges domestic properties without electric space heating tend to use fairly small amounts of electricity and only large loads were generally connected for short periods two cases in point here are the electric shower and the other is the electric hub an electric shower is a potentially heavy load but would only draw current for a short period of time probably around 10 or 15 minutes an electric hub may draw a large amount of current however even if all the rings are in use once they get to heat they're then switching on and off at different times which may only partially overlap for short periods and so even these fairly large seeming loads don't draw a lot of current for sustained periods and so an ev charge point presents a unique electrical load because when the charger is drawing the full amount of current that it can for maximum charging this could represent a lot of current flowing for a long period of time now this can create an unusual effect in mcbs and rcbos because they rely on a bimetallic strip to monitor how much current is flowing through them and to trip when too much flows this works because the bi-metallic strip is heated up by the current passing through it too much heat means too much current which trips the device so if the circuit breaker is in an area of increased ambient temperature or if it's being affected by the heat dissipated by the breakers either side of it or if it's not able to dissipate its own heat properly when combined with a load that's drawing a high current for a long period of time then it may trip at a lower current value than its nominal rating so if you've installed a device with a 32 amp rating then it may trip even though no fault is present so at the design stage it may be a good idea to install a device with a slightly higher rating than normal to overcome this issue so maybe a 40 amp mcb making sure of course that the cable installed is sized appropriately another common experience that you may have is the charger going into fault mode during the testing procedure this is most likely caused when you switch from mode b to mode c on the ev test adapter now this isn't a fault remember mode b is when the test adapter is tricking the charger into thinking that there's an ev plugged in but not charging when you go to mode c the test adapter is telling the charger that an ev is plugged in and needs connecting to the mains due to the way the standards for ev charge points are written there needs to be a delay between switching from mode b to mode c and this delay allows the charger to acknowledge the presence of an electric vehicle before connecting it to the supply so if you find that when switching from mode b to mode c on the test adapter the charge point goes into fault mode just wait in mode b for a few seconds before switching to mode c if you find the charger isn't connecting when you switch into mode c it may be that you're trying to test during a peak period during peak periods the charger will deliberately not connect the supply to the ev in order to minimize people being charged peak period prices for the electricity used if this is the case then simply hit the boost button and it will override this setting meaning that the tests can continue to be carried out you may also find when carrying out your rcd testing that the charger doesn't allow you to reconnect the supply to the ev adapter very quickly in between tests again this is because the smart pro charge point has a clever feature called home alone which is a mode the device goes into when it can't connect to the internet this keeps the accuracy of the energy monitoring of the charge point at a high level and the charge point will reconnect to the internet but remains in home alone mode until it does so this has the result that you may be waiting a few minutes each time you reset the rcd for the charger to reconnect the supply and allow you to carry out the next test again this isn't a problem with the charger it's just going into home alone mode which at all the times you want rcd testing is a really great feature in order to speed up your rcd testing you can just hit the boost button and this will override the home alone function allowing you to carry out the next test in the series much more quickly you may also find yourself in a position where the charger is tripping again when there's no obvious sign of a fault so what else could be happening well this may be happening if you've installed the charger to comply with indent4 of regulation 722.411.4.1 this method uses a device in the charger which monitors the value of the voltage supplied to the charger if it goes above or below a certain value the charger infers that a pen fault has occurred and disconnects the charger for safety purposes however as experienced electricians know the voltages supplied to different properties vary quite substantially depending on a number of different factors so it may be that events that wouldn't affect the charger under normal circumstances could cause it to trip so let's say that the voltage to the property is on the low end of acceptable to start with then we apply a large load to the supply like a charging ev maybe perhaps also dinners on and someone's in the shower this would all represent a short-term large current being connected and of course we know that the higher the current drawn by a circuit the larger the vault drop on the circuit and it means that the voltage at the supply point may be pushed even lower meaning that the voltage at the charger may well drop low enough to be seen as a pen fault and disconnect the charger as well as this it's also possible that the voltage may be too high to the property this can depend on a wide range of factors including how close you are to the local transformer and if the taps on that transformer have been changed due to loads being added to the network locally or it may be too high if there's any renewable sources of electricity operating nearby if it is exceptionally high or low the local dno can be contacted and they will often place a monitoring device on site or by using data from indra and they'll make a decision whether to lower or lift the voltage to the property by altering transformer taps locally now this can be a little bit of a long-winded process so if voltage measurements show that the supply voltage is too high or too low and there's no other indication that a proper pen fault is occurring then it may be that the method of complying with regulation 722.411.4.1 is not suitable for this installation and an earth reference electrode is required with the charger setup to use protection method a which is the recommended way of installing this charger as it offers the best protection now if you're not sure what the different methods are of complying with this regulation or the different protection modes then please do go back and watch the preceding videos in this training series and also check out the free training package that we've created on the installation of ev charge points to help you with your continuing professional development or cpd you'll find this information on the know-how page of our website efix.co.uk or by clicking the link in the description below so there you go that's some of the common situations that you may come across while working with and installing the indra smart pro charger following the information you've been provided with your installation should run very smoothly while you work with this very smartest of smart chargers all that remains in this series of videos is to say thank you very much for watching you
+
+
+[00:00] in this the fourth in a series of
+[00:01] training videos we're going to conclude
+[00:03] our installation of the smart pro ev
+[00:05] charger from indra and we're going to
+[00:06] look at some common questions and
+[00:08] troubleshooting tips about the installed
+[00:10] charger now at this point it's important
+[00:12] to note that this is a training video
+[00:14] for experienced qualified electricians
+[00:16] not a diy video for homeowners this is a
+[00:19] complex and potentially dangerous area
+[00:21] of electrical installation requiring the
+[00:23] use of calibrated test equipment and
+[00:25] it's not something that should be
+[00:26] undertaken by amateurs
+[00:33] in previous videos we looked at the
+[00:34] entire installation process for your
+[00:36] indra smart pro ev charger from mounting
+[00:38] right through to commissioning so if you
+[00:40] haven't already done so please go and
+[00:42] watch those videos because they contain
+[00:44] critical information for your install
+[00:46] first of all let's have a look at the
+[00:47] front of the panel and see what the leds
+[00:49] there are telling you or the customer
+[00:51] first of all there's the most obvious
+[00:53] situation where all the leds are
+[00:55] switched off this simply means that the
+[00:56] charger is off and has no power so
+[00:58] clearly there's an issue with the supply
+[01:00] before the charger your usual fault
+[01:02] finding process will come into effect
+[01:04] here so you'll check that the circuit
+[01:05] breaker or rcbo supplying the circuit is
+[01:08] on and if it's tripped you'll check the
+[01:10] supply cable and make sure that all
+[01:11] connections are correct in the very
+[01:14] unlikely event that everything is okay
+[01:15] with the supply and the unit is still
+[01:17] showing blank leds then it's time to
+[01:19] contact the customer services team at
+[01:21] indra
+[01:22] if the primary led on the front here is
+[01:24] illuminated in a steady non-flashing
+[01:26] white then your charger is in steady
+[01:28] state operational mode this means it's
+[01:30] connected via the internet to the caluza
+[01:32] platform and will charge an ev according
+[01:34] to the schedules and protocols that have
+[01:36] been assigned
+[01:37] when the primary led is blue in color
+[01:40] that means that it's in steady state
+[01:42] override mode all this means is that the
+[01:44] boost button on the front has been
+[01:45] pressed and the unit is now charging the
+[01:47] connected ev at full power temporarily
+[01:49] overriding any settings that have been
+[01:51] made in connection with scheduling and
+[01:53] tariffs
+[01:54] if the primary led glows orange then the
+[01:56] charger is in steady state solar match
+[01:59] mode which means it's using
+[02:00] micro-generated on-site electricity to
+[02:03] charge up the electric vehicle now when
+[02:05] the primary led is lit up in solid red
+[02:07] as in it's not flashing it means the
+[02:09] charger is in a permanent steady state
+[02:11] fault mode which indicates that the unit
+[02:13] has encountered a major error and needs
+[02:15] to experience a hard reset which is
+[02:17] achieved by disconnecting the supply to
+[02:19] the charger and reinstating it the
+[02:21] easiest way to do this is to operate the
+[02:23] mcb or rcbo feeding the charger off and
+[02:26] then on again if the red light doesn't
+[02:28] reappear the fault has been cleared if
+[02:30] however it continues to illuminate red
+[02:32] then again it's time to contact the
+[02:33] customer service staff at tindra if the
+[02:36] led is flashing red then it means the
+[02:38] charger has a temporary fault the
+[02:40] solution is the same as previously
+[02:41] stated try resetting the charger by
+[02:43] turning it off and on at the mcb or rcbo
+[02:45] and if the fault doesn't clear then
+[02:46] again contact the customer service staff
+[02:48] at indra if the primary led is flashing
+[02:51] purple when you first power up or after
+[02:53] a power cycle boot then it means the
+[02:55] charging unit is now powering up and
+[02:57] running its startup sequence after about
+[02:59] 10 seconds this process should stop and
+[03:01] the charger will settle into its normal
+[03:03] function if the led keeps flashing
+[03:05] purple after the startup sequence then
+[03:07] it means that the charger cannot
+[03:09] communicate with kalooza the pattern
+[03:10] that the led flashes on and off informs
+[03:13] you of the nature of the fault one
+[03:15] repeating flash means that the charger
+[03:16] is connected to the internet but can't
+[03:18] connect with kalooza and it's time to
+[03:20] contact customer support if the charger
+[03:22] is flashing twice repeatedly then there
+[03:25] is a problem with the connection to your
+[03:27] router you need to check all the
+[03:28] connecting cables are plugged in that
+[03:30] there's nothing wrong with the ethernet
+[03:31] cable and you can also check that other
+[03:33] devices in the home are connected to the
+[03:34] internet or try restarting the router
+[03:37] if the led is flashing purple three or
+[03:39] more times on a repeated cycle then
+[03:41] there's probably a problem with the
+[03:43] router itself again check that any other
+[03:45] devices in the property are connected to
+[03:47] the internet via the router and also try
+[03:49] restarting the router
+[03:51] and finally if the led is flashing blue
+[03:53] then it means that a software update is
+[03:55] in progress and the charge point is
+[03:56] downloading a software update from
+[03:58] caluza it's really important that you
+[04:00] don't disconnect the charger from the
+[04:01] internet while the download and update
+[04:03] is in progress so just expanding on a
+[04:05] couple of those points why might the
+[04:06] charger be struggling to make a
+[04:08] connection to the internet well there's
+[04:10] a few reasons which will depend on how
+[04:12] you've made the internet connection
+[04:13] remember we've covered these options in
+[04:15] detail on a previous video so make sure
+[04:17] you watch that for further information
+[04:19] if you're relying on the 4g dongle in
+[04:21] the back of the unit here then it may be
+[04:22] that the signal in the area that the
+[04:24] charge point has been installed is too
+[04:25] sketchy to make a reliable connection if
+[04:28] this is the case then you may need to
+[04:29] think about making a hard-wired
+[04:31] connection instead using one of the
+[04:32] methods outlined previously
+[04:35] if you already have a hardwired
+[04:36] connection then it's a good idea to
+[04:37] double check any connections made using
+[04:39] a cable tester in the first instance and
+[04:42] then if there's any issues found double
+[04:43] checking any joints or connections that
+[04:45] you've made in the cable to make sure
+[04:47] they haven't worked loose or made a poor
+[04:49] joint
+[04:50] if everything is in order with the
+[04:51] hardwired connection then the problem
+[04:53] may be with the router in which case a
+[04:55] reset by turning it off and on again may
+[04:57] help and if this doesn't work then it
+[04:59] may be worth checking with the internet
+[05:01] service provider to make sure there's
+[05:02] nothing wrong with the network external
+[05:04] to the property
+[05:06] another curious problem we may come
+[05:07] across is the mcb or rcbo tripping out
+[05:10] for what appears to be no reason as in
+[05:12] there's no obvious fault occurring what
+[05:14] could be the cause for this
+[05:16] well there is one possibility that you
+[05:18] may not have come across before and it's
+[05:19] to do with the nature of the load
+[05:21] up until the emergence of ev charges
+[05:23] domestic properties without electric
+[05:24] space heating tend to use fairly small
+[05:26] amounts of electricity and only large
+[05:28] loads were generally connected for short
+[05:30] periods two cases in point here are the
+[05:33] electric shower and the other is the
+[05:34] electric hub an electric shower is a
+[05:36] potentially heavy load but would only
+[05:38] draw current for a short period of time
+[05:40] probably around 10 or 15 minutes an
+[05:42] electric hub may draw a large amount of
+[05:44] current however even if all the rings
+[05:46] are in use once they get to heat they're
+[05:48] then switching on and off at different
+[05:49] times which may only partially overlap
+[05:51] for short periods and so even these
+[05:54] fairly large seeming loads don't draw a
+[05:56] lot of current for sustained periods and
+[05:58] so an ev charge point presents a unique
+[06:00] electrical load because when the charger
+[06:02] is drawing the full amount of current
+[06:03] that it can for maximum charging this
+[06:05] could represent a lot of current flowing
+[06:07] for a long period of time
+[06:09] now this can create an unusual effect in
+[06:11] mcbs and rcbos because they rely on a
+[06:13] bimetallic strip to monitor how much
+[06:15] current is flowing through them and to
+[06:17] trip when too much flows this works
+[06:19] because the bi-metallic strip is heated
+[06:21] up by the current passing through it too
+[06:23] much heat means too much current which
+[06:25] trips the device so if the circuit
+[06:27] breaker is in an area of increased
+[06:29] ambient temperature or if it's being
+[06:30] affected by the heat dissipated by the
+[06:32] breakers either side of it or if it's
+[06:34] not able to dissipate its own heat
+[06:36] properly when combined with a load
+[06:38] that's drawing a high current for a long
+[06:39] period of time then it may trip at a
+[06:41] lower current value than its nominal
+[06:43] rating so if you've installed a device
+[06:45] with a 32 amp rating then it may trip
+[06:47] even though no fault is present so at
+[06:49] the design stage it may be a good idea
+[06:51] to install a device with a slightly
+[06:53] higher rating than normal to overcome
+[06:55] this issue so maybe a 40 amp mcb making
+[06:58] sure of course that the cable installed
+[07:00] is sized appropriately another common
+[07:02] experience that you may have is the
+[07:03] charger going into fault mode during the
+[07:05] testing procedure this is most likely
+[07:08] caused when you switch from mode b to
+[07:09] mode c on the ev test adapter now this
+[07:12] isn't a fault remember mode b is when
+[07:15] the test adapter is tricking the charger
+[07:17] into thinking that there's an ev plugged
+[07:18] in but not charging when you go to mode
+[07:21] c the test adapter is telling the
+[07:23] charger that an ev is plugged in and
+[07:25] needs connecting to the mains due to the
+[07:27] way the standards for ev charge points
+[07:29] are written there needs to be a delay
+[07:30] between switching from mode b to mode c
+[07:33] and this delay allows the charger to
+[07:35] acknowledge the presence of an electric
+[07:36] vehicle before connecting it to the
+[07:38] supply so if you find that when
+[07:40] switching from mode b to mode c on the
+[07:42] test adapter the charge point goes into
+[07:43] fault mode just wait in mode b for a few
+[07:46] seconds before switching to mode c
+[07:49] if you find the charger isn't connecting
+[07:50] when you switch into mode c it may be
+[07:52] that you're trying to test during a peak
+[07:54] period during peak periods the charger
+[07:56] will deliberately not connect the supply
+[07:58] to the ev in order to minimize people
+[08:00] being charged peak period prices for the
+[08:02] electricity used
+[08:04] if this is the case then simply hit the
+[08:05] boost button and it will override this
+[08:07] setting meaning that the tests can
+[08:09] continue to be carried out
+[08:11] you may also find when carrying out your
+[08:13] rcd testing that the charger doesn't
+[08:15] allow you to reconnect the supply to the
+[08:17] ev adapter very quickly in between tests
+[08:20] again this is because the smart pro
+[08:21] charge point has a clever feature called
+[08:23] home alone which is a mode the device
+[08:25] goes into when it can't connect to the
+[08:27] internet this keeps the accuracy of the
+[08:29] energy monitoring of the charge point at
+[08:31] a high level and the charge point will
+[08:33] reconnect to the internet but remains in
+[08:35] home alone mode until it does so
+[08:37] this has the result that you may be
+[08:39] waiting a few minutes each time you
+[08:40] reset the rcd for the charger to
+[08:42] reconnect the supply and allow you to
+[08:44] carry out the next test
+[08:46] again this isn't a problem with the
+[08:47] charger it's just going into home alone
+[08:49] mode which at all the times you want rcd
+[08:51] testing is a really great feature in
+[08:54] order to speed up your rcd testing you
+[08:56] can just hit the boost button and this
+[08:58] will override the home alone function
+[08:59] allowing you to carry out the next test
+[09:01] in the series much more quickly
+[09:03] you may also find yourself in a position
+[09:05] where the charger is tripping again when
+[09:07] there's no obvious sign of a fault so
+[09:08] what else could be happening well this
+[09:10] may be happening if you've installed the
+[09:12] charger to comply with indent4 of
+[09:14] regulation 722.411.4.1
+[09:17] this method uses a device in the charger
+[09:19] which monitors the value of the voltage
+[09:20] supplied to the charger if it goes above
+[09:23] or below a certain value the charger
+[09:24] infers that a pen fault has occurred and
+[09:27] disconnects the charger for safety
+[09:28] purposes however as experienced
+[09:30] electricians know the voltages supplied
+[09:32] to different properties vary quite
+[09:33] substantially depending on a number of
+[09:35] different factors so it may be that
+[09:36] events that wouldn't affect the charger
+[09:38] under normal circumstances could cause
+[09:40] it to trip so let's say that the voltage
+[09:41] to the property is on the low end of
+[09:43] acceptable to start with then we apply a
+[09:45] large load to the supply like a charging
+[09:47] ev maybe perhaps also dinners on and
+[09:50] someone's in the shower this would all
+[09:52] represent a short-term large current
+[09:54] being connected and of course we know
+[09:55] that the higher the current drawn by a
+[09:57] circuit the larger the vault drop on the
+[09:58] circuit and it means that the voltage at
+[10:01] the supply point may be pushed even
+[10:03] lower meaning that the voltage at the
+[10:04] charger may well drop low enough to be
+[10:07] seen as a pen fault and disconnect the
+[10:09] charger
+[10:10] as well as this it's also possible that
+[10:12] the voltage may be too high to the
+[10:14] property this can depend on a wide range
+[10:16] of factors including how close you are
+[10:18] to the local transformer and if the taps
+[10:20] on that transformer have been changed
+[10:21] due to loads being added to the network
+[10:23] locally or it may be too high if there's
+[10:25] any renewable sources of electricity
+[10:27] operating nearby
+[10:29] if it is exceptionally high or low the
+[10:31] local dno can be contacted and they will
+[10:33] often place a monitoring device on site
+[10:35] or by using data from indra and they'll
+[10:38] make a decision whether to lower or lift
+[10:40] the voltage to the property by altering
+[10:42] transformer taps locally now this can be
+[10:44] a little bit of a long-winded process so
+[10:46] if voltage measurements show that the
+[10:47] supply voltage is too high or too low
+[10:50] and there's no other indication that a
+[10:51] proper pen fault is occurring then it
+[10:53] may be that the method of complying with
+[10:54] regulation
+[10:56] 722.411.4.1 is not suitable for this
+[10:59] installation and an earth reference
+[11:00] electrode is required with the charger
+[11:02] setup to use protection method a which
+[11:05] is the recommended way of installing
+[11:06] this charger as it offers the best
+[11:08] protection
+[11:09] now if you're not sure what the
+[11:10] different methods are of complying with
+[11:12] this regulation or the different
+[11:13] protection modes then please do go back
+[11:15] and watch the preceding videos in this
+[11:17] training series and also check out the
+[11:19] free training package that we've created
+[11:21] on the installation of ev charge points
+[11:23] to help you with your continuing
+[11:25] professional development or cpd you'll
+[11:27] find this information on the know-how
+[11:29] page of our website efix.co.uk
+[11:31] or by clicking the link in the
+[11:32] description below so there you go that's
+[11:35] some of the common situations that you
+[11:36] may come across while working with and
+[11:38] installing the indra smart pro charger
+[11:41] following the information you've been
+[11:42] provided with your installation should
+[11:44] run very smoothly while you work with
+[11:46] this very smartest of smart chargers all
+[11:49] that remains in this series of videos is
+[11:51] to say thank you very much for watching
+[11:58] you

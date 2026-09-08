@@ -1,0 +1,295 @@
+# AC Theory: Why is AC Called a Sine Wave?
+# https://www.youtube.com/watch?v=kUIrN6jNrxo
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to consider the question why does an AC waveform take the shape of a sine wave now in the previous video in this series we looked at the machine that you can see on the screen in front of you now a very simple single loop AC generator you can tell it's an AC generator because it's got slip rings on the end of the output there we then took our simple machine and we took a cross-section of it such as you can see on the screen now and what we're going to do now is transfer into a slightly different software still looking at a cross-section of our simple machine but this time we're going to see exactly how it produces a sine wave so now we're looking at a slightly different set of operations I'm using the excellent desmos dot-com graphing website which is a truly spectacular piece of software on the internet free for use if you ever have a hankering to draw graphs and I'm going to use this to illustrate why we produce a sine wave from an AC machine so on the screen you can see we've got kind of a representation of our cross section we've got our north magnetic pole up here we've got our south magnetic pole down here and here you can see the conductors of our machines so here we've got one of the conductors it would loop around the back there away from it and here's the other conductor so we're looking at cross section of this these black lines here represent the lines of magnetic flux ground from the north to the South Pole and what we're going to do now is try and figure out where this sine wave comes from so an important thing to bear in mind is that the fraction of time the moment of time that we've got here that we've kind of frozen you can see that the conductor of this travels again in an anti-clockwise direction as we spin the loop around in that way you can see that for this moment in time this brief moment the conductor is actually traveling in the same direction as the lines of magnetic flux just for a fraction of a moment of time it's going in the same direction as the lines of magnetic flux and what that means is that actually it doesn't produce any electricity it has to pass through the lines of magnetic flux he has to cut through them in this direction to produce electricity at this point it's producing no current however as we start to move the loop around a little bit the conductor starts to cut through the lines of magnetic flux more and more close to 90 degrees so by the time we've got to this point it's starting to cut through the lines of magnetic flux closer to 90 degrees so we can actually map that out so when we weren't cutting through the lines of magnetic flux at all we had zero current but if we shift the angle so it's cutting through the lines of magnetic flux a little bit more clearly a little bit more directly we start to produce some current inside the conductor and actually we can map that across all we've done is just run a straight line from the middle of the conductor and just made a point here so if this is at say about 15 degrees and we mark 15 degrees here we could join that point up to show how the current is rising as it gets closer and closer to cutting through here at 90 degrees as this continues to get closer and closer to cutting through 90 you can see we're getting a higher and higher current being produced until we get to this point here where we are cutting through the lines of magnetic flux at the absolute most efficient we're cutting through at 90 degrees we've reached our maximum value of current flowing inside that conductor as the loop continues to rotate you can see there that the conductor starts to cut through the lines of magnetic flux further and further away from 90 degrees the angle is getting more and more oblique and as we get back to this point here you can see that in the conductor as we get to this point the current is back down to zero again so we've got no current flowing through the conductor as cuts through the lines of magnetic flux at zero degrees so we've got no current flowing again over here now we saw in the earlier video that as we continue to rotate the direction of the current flow changes well let's see if that continues to happen here as we go past the zero degrees cutting through the lines of magnetic flux and we get down to this point here you can see we're still producing a current now this is the point where people start to get little bit confused because here we're in the negative part of the graph and normally when we think of a negative number it means there's a lack of something or a debt of something but that's not the case here we've still got a current that is continuing to rise and the fact that it's in the negative part of the graph just indicates that the electricity has changed its direction so when we get down to the bottom bit of the graph and the conductor is cutting through the lines of magnetic flux at 90 degrees again you can see we've got another peak so we've still got the most amount of current flowing at this point but now it's flowing the other way around the circuit as we saw in the earlier part of the video so if we now continue this back to its starting position we can see that actually we get back to zero degrees and sorry we get back to cutting through the lines of magnetic flux at 0 degrees and we have absolutely no current flowing so you can see the shape there is this lovely curvy shape and this shape is what's called a sinusoidal waveform and you may know it as a sine wave and this is the wave form that electricity takes and this is going to be really important as we continue to delve into AC theory to understand exactly why certain graphs behave in the way that they do and we're going to come back to this graph and use it to illustrate other points as well now what we can do is we can actually start this graph running we can get it so that it's continually spinning around and you can see that once it gets back to its starting point the wave form just starts again and as you can probably appreciate as this spins around faster and faster more and more waveforms which helps to leave this quite nicely into subjects of frequency and periodic time in a future video the final kind of mystery of this video is why do we call that waveform a sine wave well you may have seen information when you're at school doing studies about trigonometry which relates to triangles and you may have come across that expression sine and if you remember the sine of an angle it relates to right-angled triangles and it is the ratio of the opposite to the hypotenuse so where do we have triangles connected with this lovely curvy waveform here it might be difficult to spot any triangles in here and why we call this a sine wave well let's just bring the cursor back to this point here so if you look carefully there is actually a triangle hidden inside this circle here can you spot it so it's actually a triangle that goes from the center of the circle along this line here to the center of the conductor and then drops down to here and goes back again so there is a right-angled triangle buried inside there so there's our triangle that's hidden inside our rotating shape that we've created here so the fact that this triangle is hidden inside here is really significant so let's make this really accurate now I want to make this angle here 30 degrees so I'm going to turn that into 30 degrees now so I'll just type that in over here so that angle is now at exactly 30 degrees and what that means is that we could actually figure out what the value of the sine of that angle is so the easiest way to do it is on our calculator so I bring up our lovely casio FX 85 gt+ and it will say what the sine of 30 is so the sine of 30 is 1/2 or not 0.5 now why is that significant well one thing that we haven't spoken about with this triangle is that the length of this side the hypotenuse is one unit long so it's just one long now if you want to find the sine of the angle of a right-angled triangle you take the opposite and you divide it by the hypotenuse but because the hypotenuse is always going to be one in this triangle whatever position of rotation that we're in we can see that actually the value of the opposite will always give us the value of the sine of this angle so that means that if we measure the distance from here to here we would find that distance would be not 0.5 and so likewise the distance from here to here is not 0.5 which means that at this point the waveform has reached half its height so when this is at 30 degrees the sine of 30 is not 0.5 so the current waveform is at not 0.5 of its maximum height and actually we should be able to confirm that you see there so we can see that the Y value here the height of that position is not 0.5 which is the sine of the angle here of the triangle if you're not sure about sines cosines tangents and trigonometry please watch another one of my videos that explains those trigonometric identities in a bit more detail but let's just change the position of this just a couple more times so if we now change this so that we're at 45 degrees so we round to 45 degrees now we can see there that we've got a height of north point 707 and that number is really important in electrical science nor 0.707 because it actually helps us to understand the relationship between an AC waveform and a DC waveform but more on that in another video and you can see here that the waveform is now at naught point 707 of its maximum height and if we go to our calculator and we ask the calculator what is the sine of 45 so sine of 45 is root 2 over 2 which if you change that into its decimal form see there is not 0.707 and then if we continue to rotate our conductor in our generator and we move that around now so that it is at 90 degrees so here we've got our maximum current being produced so here we've got effectively the current is a 1 at its maximum value 1 there the Y value is 1 so we're at 90 degrees so if we ask our calculator what the sine of 90 is this has reached 90 degrees we can see there we get 1 so in other words that one just represents it's at its maximum value and that is why we call this beautiful waveform that's produced by a rotating piece of machinery that is the exact reason why we refer to this as a sine wave so if we just prove one more time as this turns around and around we get this absolutely beautiful sine wave being produced and it all relates to the fact that we've got a right-angled triangle buried inside that machine at all times so I hope this video has been of some assistance to you and hopefully it will help you to understand in a little bit more detail some wave diagrams and phasor diagrams that we'll be looking at in a future video thank you very much [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principals training video in this video
+[00:12] we're going to consider the question why
+[00:14] does an AC waveform take the shape of a
+[00:18] sine wave now in the previous video in
+[00:21] this series we looked at the machine
+[00:23] that you can see on the screen in front
+[00:24] of you now a very simple single loop AC
+[00:28] generator you can tell it's an AC
+[00:30] generator because it's got slip rings on
+[00:32] the end of the output there we then took
+[00:36] our simple machine and we took a
+[00:38] cross-section of it such as you can see
+[00:40] on the screen now and what we're going
+[00:42] to do now is transfer into a slightly
+[00:44] different software still looking at a
+[00:47] cross-section of our simple machine but
+[00:50] this time we're going to see exactly how
+[00:53] it produces a sine wave so now we're
+[00:58] looking at a slightly different set of
+[01:00] operations I'm using the excellent
+[01:03] desmos dot-com graphing website which is
+[01:06] a truly spectacular piece of software on
+[01:09] the internet free for use if you ever
+[01:11] have a hankering to draw graphs and I'm
+[01:14] going to use this to illustrate why we
+[01:15] produce a sine wave from an AC machine
+[01:18] so on the screen you can see we've got
+[01:20] kind of a representation of our cross
+[01:22] section we've got our north magnetic
+[01:23] pole up here we've got our south
+[01:26] magnetic pole down here and here you can
+[01:28] see the conductors of our machines so
+[01:32] here we've got one of the conductors it
+[01:35] would loop around the back there away
+[01:37] from it and here's the other conductor
+[01:39] so we're looking at cross section of
+[01:40] this these black lines here represent
+[01:44] the lines of magnetic flux ground from
+[01:46] the north to the South Pole and what
+[01:48] we're going to do now is try and figure
+[01:49] out where this sine wave comes from so
+[01:53] an important thing to bear in mind is
+[01:54] that the fraction of time the moment of
+[01:57] time that we've got here that we've kind
+[01:59] of frozen you can see that the conductor
+[02:01] of this travels again in an
+[02:03] anti-clockwise direction as we spin the
+[02:05] loop around in that way you can see that
+[02:08] for this moment in time this brief
+[02:09] moment the conductor is actually
+[02:11] traveling
+[02:12] in the same direction as the lines of
+[02:15] magnetic flux just for a fraction of a
+[02:17] moment of time it's going in the same
+[02:19] direction as the lines of magnetic flux
+[02:21] and what that means is that actually it
+[02:23] doesn't produce any electricity it has
+[02:25] to pass through the lines of magnetic
+[02:27] flux he has to cut through them in this
+[02:29] direction to produce electricity at this
+[02:31] point it's producing no current however
+[02:34] as we start to move the loop around a
+[02:38] little bit the conductor starts to cut through the
+[02:41] lines of magnetic flux more and more
+[02:42] close to 90 degrees so by the time we've
+[02:45] got to this point it's starting to cut
+[02:47] through the lines of magnetic flux
+[02:49] closer to 90 degrees so we can actually
+[02:52] map that out so when we weren't cutting
+[02:55] through the lines of magnetic flux at
+[02:56] all
+[02:57] we had zero current but if we shift the
+[03:00] angle so it's cutting through the lines
+[03:02] of magnetic flux a little bit more
+[03:03] clearly a little bit more directly we
+[03:06] start to produce some current inside the
+[03:09] conductor and actually we can map that
+[03:11] across all we've done is just run a
+[03:12] straight line from the middle of the
+[03:13] conductor and just made a point here so
+[03:15] if this is at say about 15 degrees and
+[03:18] we mark 15 degrees here we could join
+[03:20] that point up to show how the current is
+[03:23] rising as it gets closer and closer to
+[03:25] cutting through here at 90 degrees as
+[03:27] this continues to get closer and closer
+[03:31] to cutting through 90 you can see we're
+[03:33] getting a higher and higher current
+[03:36] being produced until we get to this
+[03:37] point here where we are cutting through
+[03:40] the lines of magnetic flux at the
+[03:41] absolute most efficient we're cutting
+[03:44] through at 90 degrees we've reached our
+[03:46] maximum value of current flowing inside
+[03:50] that conductor as the loop continues to
+[03:54] rotate you can see there that the
+[03:58] conductor starts to cut through the
+[04:00] lines of magnetic flux further and
+[04:02] further away from 90 degrees the angle
+[04:03] is getting more and more oblique and as
+[04:06] we get back to this point here you can
+[04:08] see that in the conductor as we get to
+[04:11] this point the current is back down to
+[04:14] zero again so we've got no current
+[04:17] flowing through the conductor as
+[04:19] cuts through the lines of magnetic flux
+[04:21] at zero degrees so we've got no current
+[04:24] flowing again over here now we saw in
+[04:28] the earlier video that as we continue to
+[04:31] rotate the direction of the current flow
+[04:33] changes well let's see if that continues
+[04:35] to happen here as we go past the zero
+[04:38] degrees cutting through the lines of
+[04:41] magnetic flux and we get down to this
+[04:43] point here you can see we're still
+[04:44] producing a current now this is the
+[04:47] point where people start to get little
+[04:48] bit confused because here we're in the
+[04:50] negative part of the graph and normally
+[04:52] when we think of a negative number it
+[04:54] means there's a lack of something or a
+[04:56] debt of something but that's not the
+[04:58] case here we've still got a current that
+[05:01] is continuing to rise and the fact that
+[05:03] it's in the negative part of the graph
+[05:05] just indicates that the electricity has
+[05:08] changed its direction so when we get
+[05:10] down to the bottom bit of the graph and
+[05:12] the conductor is cutting through the
+[05:15] lines of magnetic flux at 90 degrees
+[05:17] again you can see we've got another peak
+[05:19] so we've still got the most amount of
+[05:22] current flowing at this point but now
+[05:24] it's flowing the other way around the
+[05:26] circuit as we saw in the earlier part of
+[05:28] the video so if we now continue this
+[05:30] back to its starting position we can see
+[05:34] that actually we get back to zero
+[05:37] degrees and sorry we get back to cutting
+[05:41] through the lines of magnetic flux at 0
+[05:43] degrees and we have absolutely no
+[05:45] current flowing so you can see the shape
+[05:48] there is this lovely curvy shape and
+[05:51] this shape is what's called a sinusoidal
+[05:54] waveform and you may know it as a sine
+[05:57] wave and this is the wave form that
+[06:00] electricity takes and this is going to
+[06:02] be really important as we continue to
+[06:04] delve into AC theory to understand
+[06:07] exactly why certain graphs behave in the
+[06:11] way that they do and we're going to come
+[06:12] back to this graph and use it to
+[06:14] illustrate other points as well now what
+[06:17] we can do is we can actually start this
+[06:18] graph running we can get it so that it's
+[06:20] continually spinning around and you can
+[06:22] see that once it gets back to its
+[06:24] starting point the wave form just starts
+[06:26] again and as you can probably appreciate
+[06:28] as this spins around faster and faster
+[06:31] more and more waveforms which helps to
+[06:34] leave this quite nicely into subjects of
+[06:35] frequency and periodic time in a future
+[06:38] video
+[06:39] the final kind of mystery of this video
+[06:42] is why do we call that waveform a sine
+[06:45] wave well you may have seen information
+[06:49] when you're at school doing studies
+[06:50] about trigonometry which relates to
+[06:52] triangles and you may have come across
+[06:54] that expression sine and if you remember
+[06:56] the sine of an angle it relates to
+[07:01] right-angled triangles and it is the
+[07:03] ratio of the opposite to the hypotenuse
+[07:06] so where do we have triangles connected
+[07:09] with this lovely curvy waveform here it
+[07:12] might be difficult to spot any triangles
+[07:14] in here and why we call this a sine wave
+[07:15] well let's just bring the cursor back to
+[07:20] this point here so if you look carefully
+[07:22] there is actually a triangle hidden
+[07:25] inside this circle here can you spot it
+[07:31] so it's actually a triangle that goes
+[07:34] from the center of the circle along this
+[07:36] line here to the center of the conductor
+[07:38] and then drops down to here and goes
+[07:41] back again so there is a right-angled
+[07:43] triangle buried inside there so there's
+[07:48] our triangle that's hidden inside our
+[07:50] rotating shape that we've created here
+[07:52] so the fact that this triangle is hidden
+[07:55] inside here is really significant so
+[07:56] let's make this really accurate now I
+[07:57] want to make this angle here 30 degrees
+[08:00] so I'm going to turn that into 30
+[08:02] degrees now so I'll just type that in
+[08:06] over here so that angle is now at
+[08:11] exactly 30 degrees and what that means
+[08:15] is that we could actually figure out
+[08:18] what the value of the sine of that angle
+[08:21] is so the easiest way to do it is on our
+[08:23] calculator so I bring up our lovely
+[08:26] casio FX 85 gt+
+[08:28] and it will say what the sine of 30 is
+[08:32] so the sine of 30 is 1/2 or not 0.5 now
+[08:38] why is that significant well one thing
+[08:41] that we haven't spoken about with this
+[08:44] triangle is that the length of this side
+[08:46] the hypotenuse is one unit long so it's
+[08:49] just one long now if you want to find
+[08:52] the sine of the angle of a right-angled
+[08:56] triangle you take the opposite and you
+[08:59] divide it by the hypotenuse
+[09:00] but because the hypotenuse is always
+[09:03] going to be one in this triangle
+[09:05] whatever position of rotation that we're
+[09:08] in we can see that actually the value of
+[09:12] the opposite will always give us the
+[09:15] value of the sine of this angle so that
+[09:17] means that if we measure the distance
+[09:19] from here to here we would find that
+[09:22] distance would be not 0.5 and so
+[09:24] likewise the distance from here to here
+[09:26] is not 0.5 which means that at this
+[09:28] point the waveform has reached half its
+[09:32] height so when this is at 30 degrees the
+[09:34] sine of 30 is not 0.5 so the current
+[09:37] waveform is at not 0.5 of its maximum
+[09:39] height and actually we should be able to
+[09:42] confirm that you see there so we can see
+[09:45] that the Y value here the height of that
+[09:48] position is not 0.5 which is the sine of
+[09:51] the angle here of the triangle if you're
+[09:54] not sure about sines cosines tangents
+[09:57] and trigonometry please watch another
+[09:59] one of my videos that explains those
+[10:01] trigonometric identities in a bit more
+[10:03] detail but let's just change the
+[10:06] position of this just a couple more
+[10:07] times so if we now change this so that
+[10:10] we're at 45 degrees so we round to 45
+[10:14] degrees now we can see there that we've
+[10:17] got a height of north point 707 and that
+[10:22] number is really important in electrical
+[10:24] science nor 0.707
+[10:26] because it actually helps us to
+[10:29] understand the relationship between an
+[10:30] AC waveform and a DC waveform but more
+[10:33] on that in another video and you can see
+[10:35] here that the waveform is now at naught
+[10:37] point 707 of its maximum height and if
+[10:41] we go to our calculator and we ask the
+[10:44] calculator what is the sine of 45 so
+[10:49] sine of 45 is root 2 over 2 which if you
+[10:53] change that into its decimal form
+[10:55] see there is not 0.707 and then if we
+[10:59] continue to rotate our conductor in our
+[11:04] generator and we move that around now so
+[11:07] that it is at 90 degrees so here we've
+[11:10] got our maximum current being produced
+[11:12] so here we've got effectively the
+[11:15] current is a 1 at its maximum value 1
+[11:18] there the Y value is 1 so we're at 90
+[11:20] degrees so if we ask our calculator what
+[11:22] the sine of 90 is this has reached 90
+[11:25] degrees we can see there we get 1 so in
+[11:27] other words that one just represents
+[11:29] it's at its maximum value and that is
+[11:32] why we call this beautiful waveform
+[11:35] that's produced by a rotating piece of
+[11:36] machinery
+[11:37] that is the exact reason why we refer to
+[11:40] this as a sine wave so if we just prove
+[11:45] one more time as this turns around and
+[11:49] around we get this absolutely
+[11:52] beautiful sine wave being produced and
+[11:55] it all relates to the fact that we've
+[11:57] got a right-angled triangle buried
+[11:59] inside that machine at all times so I
+[12:04] hope this video has been of some
+[12:06] assistance to you and hopefully it will
+[12:08] help you to understand in a little bit
+[12:09] more detail some wave diagrams and
+[12:11] phasor diagrams that we'll be looking at
+[12:13] in a future video thank you very much
+[12:18] [Music]
+[12:31] [Music]

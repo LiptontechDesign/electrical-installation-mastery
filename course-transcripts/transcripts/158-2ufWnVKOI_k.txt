@@ -1,0 +1,89 @@
+# Fault Finding - Storage Heater NOT Getting HOT
+# https://www.youtube.com/watch?v=2ufWnVKOI_k
+
+so I'm out this morning to try and fix this storage heater I've already been out here once so I know what the problem is but I'm just going to go through some of the things that hopefully might help people in the future so straight away isolated there it's also on economy 7 so it only comes on at night time I think it's a Creda storage eater so if you look underneath you'll see two little screws one being there and the other one being just over there first of all we need to undo those so once you undo those two screws at the bottom the the front cover just off and then you're faced with this panel here now at the moment I can touch it there and it's really quite cold but if I touch it along here the temperature difference is massive so at the moment the element here I've removed it cuz it was a faulty element but to remove this cover there's just um a couple of the outside screws that we need to take off so we've got this panel off now and we've got the storage heat bricks on show as you can see so we've got four sets that means that we've got um four sets of elements and again just got a little sort of temperature gun so I know this element was the faulty element anyway I've already done the diagnosis like last week but either way at the moment the element's not here so when I got to the storage heater this is how it was and again it's isolated there it's on an off peak Supply anyway so what I did I quickly undone that I put it on a 13 amp plug to get it all back live again and so if you look underneath here you can see that's where the elements All Connect into and so when I was doing the fault diagnosis the first first thing I checked was that there was 2 30 volt at each element and there was I sort of had my ideas that this element under here was the faulty element because it was cold and so one of the things that you can always use is a little thermometer like this so again if I just measure the temperature of the bricks there that's reading about 84° which is obviously quite a lot but as I move over to the elements that I know that are working it soon goes up so obviously that's reading 250° there and it's reading 162 there and 119 there and then obviously just 89 88 there so either way I know this is the faulty element because I've checked the other elements and they are all working but obviously sometimes the heat is moving down to the coldest SP spot but that should all be a nice even temperature all the way across obviously the element's not there cuz I've removed it last week I'm just going to recheck this element as as well cuz that was quite a low temperature so we'll check that and I'll show you how I check it to make sure that it's working okay okay so the element is in place you can see where it is so just talking about how these storage heaters work is basically the element obviously heats up and it's surrounded by bricks which is then surrounded by insulation idea of these are is that they're called nighttime storage HS the element heats up at night time on the cheaper electricity it heats the bricks up which are very dense material they hold the heat really well and during the day the idea is that they are still hot and just talking about a couple of the other functions on the top here got the control there which is for the thermostat and then this control here is for the Boost function and so what the Boost function is it lifts this little flap up so if we operate that boost function it will lift this flap up here and what that does there is that allows the heat to come out of that Gap so normally it should be left closed but what people often do they turn the Boost function to maximum which then opens this and so the idea of that is that in the evening if you want a little bit of extra heat you can open the Boost function which will then allow some of the heat that's being stored in here to come out and come out into the room but what you must remember to do is at the end of the evening before you go to bed is to close that off if we look at the element there I'm just going to show you some of the fault diagnosis on the elements how to find out whether they are faulty or not okay so I've just probed on to the bottom of the elements there as you can see and the resistance of that element is showing at 64.1 ohms now if I measure all three elements that will all read the same now when the faulty element was in here that also read the same resistance because all I'm doing this element was in place this also read a nice low acceptable reading even though if I took the element out it was reading 999 ohms which is obviously maximum resistance and the reason because of that is that it's simply you've got four resistors here parallel so later on I'll draw a picture and we'll do some calculations to sort of show the resistance in parallel the rule that we always know the overall resistance of the circuit will be less than the lowest resistance so even though we had 999 ohms these three elements are reading a normal resistance so it's always going to be lower than the lowest resistance so even though this was a faulty element I'm not going to pick anything up at all by taking the reading From Below there I've been told before that's how you fault find when you're doing elements like this and it really isn't you have to remove the element to measure what the resistance is so all I'm doing now is this is the actual faulty element that I took out and as you can see I'm measuring the resistance of it and that's read 999 OHS that shows that that is the faulty element CU there's no path through it for the electricity to flowing when it was in situ I'm not actually measuring the resistance of the element I'm measuring the resistance of the circuit just while I've got this second one exposed I am just going to check the resistance of that one as well just to make sure that is okay so again that's the second element now I never checked that one pre previously but I did have suspicion that that was faulty the reason I didn't check it cuz I knew that I was going to come back here and take it apart again so as you can see there that's also reading 999 ohms so again I'll check the others and see what they're like but because of the temperature of the bricks was so much more that side I think they'll be okay but I will just check okay so this is one of the spare elements that I've bought with me today and so we know that we've got two faulty elements down there I've checked the elements on this side they're both okay this is is a good element that I'm going to put in and the resistance of that is R 71 ohms 72 73 ohms whatever they are and so we know that that's a good element so that's the one that I'm going to put in again remember these are wired up in parallel with each other and so this is got a set resistance of 72 ohms so now what we'll do is when I get home I'll do another video and I'm going to draw out a circuit doing a parallel circuit and just explain again the importance of understanding parallel circuits when you're at college and how it is sort of being applied in the real world okay so what I'm doing now I'm just going to Probe on to anywhere and that's measuring the overall resistance of the circuit which is interesting that's 17.4 ohms okay so I can check the resistance anywhere on that circuit and because these are in parallel anywhere I'll check the resistance it's measuring the overall resistance of the circuit okay so the storage heater is all put back together now we'll turn the switch on for so it comes on tonight and again that's all working another way when you are doing find and you can also use the clamp on am meter and you can work out what the current is going through the circuit obviously if the elements are faulty there were not enough current we'll be going through to again but that's not something that we're going to do today but again hopefully that should all come on and be working tonight
+
+
+[00:00] so I'm out this morning to try and fix this storage heater I've already been out here once
+[00:05] so I know what the problem is but I'm just going to go through some of the things that hopefully
+[00:09] might help people in the future so straight away isolated there it's also on economy 7 so
+[00:14] it only comes on at night time I think it's a Creda storage eater so if you look underneath
+[00:19] you'll see two little screws one being there and the other one being just over there first of all
+[00:24] we need to undo those so once you undo those two screws at the bottom the the front cover just
+[00:30] off and then you're faced with this panel here now at the moment I can touch it there and it's
+[00:35] really quite cold but if I touch it along here the temperature difference is massive so at the
+[00:41] moment the element here I've removed it cuz it was a faulty element but to remove this cover
+[00:45] there's just um a couple of the outside screws that we need to take off so we've got this panel
+[00:51] off now and we've got the storage heat bricks on show as you can see so we've got four sets that
+[00:55] means that we've got um four sets of elements and again just got a little sort of temperature gun so
+[01:00] I know this element was the faulty element anyway I've already done the diagnosis like last week but
+[01:06] either way at the moment the element's not here so when I got to the storage heater this is how
+[01:09] it was and again it's isolated there it's on an off peak Supply anyway so what I did I quickly
+[01:16] undone that I put it on a 13 amp plug to get it all back live again and so if you look underneath
+[01:22] here you can see that's where the elements All Connect into and so when I was doing the fault
+[01:28] diagnosis the first first thing I checked was that there was 2 30 volt at each element and there was
+[01:33] I sort of had my ideas that this element under here was the faulty element because it was cold
+[01:38] and so one of the things that you can always use is a little thermometer like this so again if I
+[01:43] just measure the temperature of the bricks there that's reading about 84° which is obviously quite
+[01:49] a lot but as I move over to the elements that I know that are working it soon goes up so obviously
+[01:58] that's reading 250° there and it's reading 162 there and 119 there and then obviously just 89
+[02:10] 88 there so either way I know this is the faulty element because I've checked the other elements
+[02:15] and they are all working but obviously sometimes the heat is moving down to the coldest SP spot
+[02:22] but that should all be a nice even temperature all the way across obviously the element's not
+[02:26] there cuz I've removed it last week I'm just going to recheck this element as as well cuz
+[02:31] that was quite a low temperature so we'll check that and I'll show you how I check it to make
+[02:35] sure that it's working okay okay so the element is in place you can see where it is so just talking
+[02:41] about how these storage heaters work is basically the element obviously heats up and it's surrounded
+[02:46] by bricks which is then surrounded by insulation idea of these are is that they're called nighttime
+[02:50] storage HS the element heats up at night time on the cheaper electricity it heats the bricks up
+[02:54] which are very dense material they hold the heat really well and during the day the idea is that
+[02:59] they are still hot and just talking about a couple of the other functions on the top here got the
+[03:05] control there which is for the thermostat and then this control here is for the Boost function and so
+[03:12] what the Boost function is it lifts this little flap up so if we operate that boost function it
+[03:19] will lift this flap up here and what that does there is that allows the heat to come out of that
+[03:26] Gap so normally it should be left closed but what people often do they turn the Boost function to
+[03:31] maximum which then opens this and so the idea of that is that in the evening if you want a
+[03:37] little bit of extra heat you can open the Boost function which will then allow some of the heat
+[03:42] that's being stored in here to come out and come out into the room but what you must remember to
+[03:48] do is at the end of the evening before you go to bed is to close that off if we look at the
+[03:53] element there I'm just going to show you some of the fault diagnosis on the elements how to find
+[03:58] out whether they are faulty or not okay so I've just probed on to the bottom of the elements there
+[04:03] as you can see and the resistance of that element is showing at 64.1 ohms now if I measure all three
+[04:09] elements that will all read the same now when the faulty element was in here that also read the
+[04:14] same resistance because all I'm doing this element was in place this also read a nice low acceptable
+[04:19] reading even though if I took the element out it was reading 999 ohms which is obviously maximum
+[04:25] resistance and the reason because of that is that it's simply you've got four resistors here
+[04:29] parallel so later on I'll draw a picture and we'll do some calculations to sort of show the
+[04:34] resistance in parallel the rule that we always know the overall resistance of the circuit will
+[04:39] be less than the lowest resistance so even though we had 999 ohms these three elements are reading a
+[04:45] normal resistance so it's always going to be lower than the lowest resistance so even though this was
+[04:50] a faulty element I'm not going to pick anything up at all by taking the reading From Below there
+[04:55] I've been told before that's how you fault find when you're doing elements like this and it really
+[04:59] isn't you have to remove the element to measure what the resistance is so all I'm doing now is
+[05:03] this is the actual faulty element that I took out and as you can see I'm measuring the resistance of
+[05:08] it and that's read 999 OHS that shows that that is the faulty element CU there's no path through
+[05:13] it for the electricity to flowing when it was in situ I'm not actually measuring the resistance
+[05:18] of the element I'm measuring the resistance of the circuit just while I've got this second one
+[05:22] exposed I am just going to check the resistance of that one as well just to make sure that is okay
+[05:26] so again that's the second element now I never checked that one pre previously but I did have
+[05:30] suspicion that that was faulty the reason I didn't check it cuz I knew that I was going to come back
+[05:34] here and take it apart again so as you can see there that's also reading 999 ohms so again I'll
+[05:41] check the others and see what they're like but because of the temperature of the bricks was so
+[05:45] much more that side I think they'll be okay but I will just check okay so this is one of
+[05:49] the spare elements that I've bought with me today and so we know that we've got two faulty elements
+[05:54] down there I've checked the elements on this side they're both okay this is is a good element that
+[06:00] I'm going to put in and the resistance of that is R 71 ohms 72 73 ohms whatever they are and
+[06:06] so we know that that's a good element so that's the one that I'm going to put in again remember
+[06:10] these are wired up in parallel with each other and so this is got a set resistance of 72 ohms
+[06:15] so now what we'll do is when I get home I'll do another video and I'm going to draw out a
+[06:19] circuit doing a parallel circuit and just explain again the importance of understanding parallel
+[06:25] circuits when you're at college and how it is sort of being applied in the real world
+[06:30] okay so what I'm doing now I'm just going to Probe on to anywhere and that's measuring the
+[06:34] overall resistance of the circuit which is interesting that's 17.4 ohms okay so I can
+[06:40] check the resistance anywhere on that circuit and because these are in parallel anywhere I'll
+[06:45] check the resistance it's measuring the overall resistance of the circuit okay so the storage
+[06:49] heater is all put back together now we'll turn the switch on for so it comes on tonight and again
+[06:57] that's all working another way when you are doing find and you can also use the clamp on am meter
+[07:02] and you can work out what the current is going through the circuit obviously if the elements
+[07:06] are faulty there were not enough current we'll be going through to again but that's not something
+[07:09] that we're going to do today but again hopefully that should all come on and be working tonight

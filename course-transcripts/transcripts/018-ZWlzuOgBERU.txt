@@ -1,0 +1,305 @@
+# Magnets and Magnetism: How to Create Electricity and Calculate Induced EMF
+# https://www.youtube.com/watch?v=ZWlzuOgBERU
+
+[Music] hello and welcome to this electrical principles training video in this video we're going to discuss a really really important concept one that's known as electromagnetic induction now that sounds like quite a daunting uh expression for what we're going to consider it's actually a very simple concept but a crucially important one because it underpins an awful lot of other subjects that we need to understand really well so I strongly recommend that you watch this video maybe a couple of times until you fully grasp the concept of what we're discussing so electromagnetic induction underpins many other electrical subjects it underpins generation uh the principle of inductors Transformers a very very similar principle also defines how a motor works so you can see this is a really really important subject that we want to fully understand there will be a mathematical formula produced this is an important one for exams you'll really need to remember this so let's get started and we'll see what that is so let's have a quick discussion of what we've got here here we've got our very powerful permanent magnet uh now you'll notice that I've removed all electronic devices as far as possible uh away from this so that they don't get damaged I've not got any credit cards near here or digital watches cuz this magnet is so powerful it could seriously damage those we've also got here a galvanometer now a Galvan ometer is a device that measures electrical charge but it has the added Advantage because it's an analog needle there we're going to see this needle moving but you'll notice that it's aligned right down the middle at zero because not only will this tell you how much charge is Flowing it also tells you which direction the charge is Flowing as well which is very clever uh so it will deflect either to uh the right or to the left when we move this through so the basic concept that we're looking at here is how do we make electricity well we know that one of the three effects of electricity is the magnetic effect and actually this is the way that we generate something like 98% of the electricity that we use is by using the magnetic effect of electricity and this is the basic but very very important principle when you move an electrical conductor through a magnetic field it generates electricity inside the conductor so a very very simple concept but a vital important one so remember that when we pass a conductor through a magnetic field we get electricity generated inside the conductor because what's happening is that as we pass the conductor through the magnetic field the magnetic field influences the electrons that sit around the copper atoms and push them around the circuit so first of all let's just see this in action now this is going to be a very small deflection that we see on the needle but if I take the conductor and I pass it through the magnetic field you you can see there that the needle will deflect slightly so for that brief instant when the conductor was moving electricity was flowing through this conductor let's pull it back up the other way watch the needle and again a very slight deflection going on there so obviously we're only generating microscopic amounts of electricity at this point but that's absolutely fine because it demonstrates the principle now how do you think I could get this setup that we've got here to generate more electricity a higher amount of electricity well there's a couple of things we can do watch the needle closely if I move the conductor very slowly through the magnetic field you'll see it barely deflects at all it's just a very slight movement of the needle there however if I move it very quickly we get quite a big jump of the needle okay so that's one thing that we can change in order to make more electricity in the conductor we can increase the speed or technically accurate the velocity that the cable or the conductor is moving at the other thing we can do is increase how much of the conductor passes through the magnetic field at any point now obviously we can't make our permanent magnet any bigger because that would be very difficult and it would also uh make uh for very very large generators very unwieldy generators but what we can do instead is instead of trying to make the the magnetic field bigger we can actually pass more more conductor through the magnetic field so if we take our conductor here and wrap it into a loop like this this is the tricky part if we take our conductor and wrap it into a loop so now what I've done is I've got four lots of conductor all together at the same point now if I pass this through the magnetic field again let's let's move it slowly first of all if I move it slowly can you see there that even just with that slow movement we're getting a very large deflection of the needle compared with what it was before if I now combine the higher length of the conductor and also uh faster movement watch what happens to the needle now so this is tricky Watch What Happens now we're getting a really quite large deflection of the needle there so what you can see we've done here is a couple of things so we've changed how much length of conductor is passing through the magnetic field so as we increase the length of the conductor passing through the magnetic field we increased the amount of electricity that was flowing through there the other thing that we did was as we increased the velocity of the conductor passing through the magnetic field we also increased the amount of electricity that was being induced inside our conductor so that gives us two very easy relationships between the induced electricity or what we call induced EMF and and the length of the conductor and the velocity of the conductor so we can see that length and velocity are directly proportional to the amount of induced EMF increase either one of those things you increase the induced EMF there's one more thing that we could potentially change we're not going to be able to do it here but we could change the density of the magnetic field so what we could do is change how strong this permanent magnet is we could put in a very weak magnet and that would produce less electricity or we could put in an even stronger magnetic field and that would produce even more electricity so again we can see that the magnetic flux density is also directly proportional to the induced EMF now what we're going to do now is tie that all into a nice mathematical formula and that will help us to do a little bit of maths so first of all let's try and get our heads around this new form for that we've just introduced we've got E equals B LV now there's no mathematical operation between the three letters b LV so when they're written together like that that just means multiply them together so we've got B * L * V let's figure out what each one of these means so e is equal to electromotive force which we also know as a type of voltage and that is measured in volts and that's the voltage that is created inside the conductor when we move move it through the magnetic field we've then got B now B is the magnetic flux density so that's the uh density of the magnetic flux uh in between the poles of the magnet and that is measured in Teslas we've then got L which is the length of the conductor that actually passes through the magnetic field that's measured in meters and then finally we've got V4 velocity which is measured in me/ second and that's the velocity that the conductor is moving up so I'm going to make some numbers up and we're going to do a calculation so first of all let's get our calculation down our formula down we've got e is equal to b l v like that so there's our formula what we're then going to do is we're just going to assign some random numbers to this so I'm going to say in this case b is going to be equal to two Teslas I'm going to say l is equal to.5 of a meter so that's half a meter and V is going to be equal to let's say 5 m per second so that's what we've got there so we put our numbers that we're using into our calculation so we've got e is equal to blv notice I'm going to lay out the formula every time I do a calculation which is going to help me to remember it so we've got e is now equal to two Teslas Times by 0.5 m Times by 5 m/s so that's what we've got there so we got 2 * 0.5 * five and that is going to give us a total of five volts so e is equal to 5 volts that's what we've got there so you can clearly see if we increase any one of these values so if we increase the magnetic flux density if we increase the length or if we increase the velocity we'll we see an increase in our overall induced voltage so that means that the induced voltage is directly proportional to magnetic flux density length of the conductor and the velocity of the conductor and we actually saw this in action when we increased the velocity of the conductor we saw an increase in the induced EMF when we increased the length of the conductor passing through the magnetic field we saw an increase in the induced EMF so we know that this is going to work one thing just to watch out for as always when we're doing calculations like this if we were to get one of these numbers uh with a multiple or sub multiple in front of it we would need to change it back into the base unit so for example if this was written as 500 mm if we put 500 in here that would give us a wildly inflated uh voltage which we would never find inside that uh calculation so we need to change it from millimeters into the base unit of meters such as we've got here so let's just summarize exactly what we've looked at today there's a few key points that we want to take away from here if we move a conductor through a magnetic field we generate electricity in the conductor that's a very important Point another very important point to bear in mind is our mathematical formula that we've just learned about E equals B LV so if we increase the strength of the magnetic field if we increase the length of the conductor if we increase the velocity that the conductor is moving at through the magnetic field we increase the induced EMF the amount of electricity inside the conductor another key point to bear in mind is that we watched when we were moving the conductor through the magnetic field we saw that the needle deflected but if you're watching very carefully you'll have noticed that it actually deflects in opposite directions so when we move the conductor up through the magnetic field it deflects one way and when we move the conductor back down it deflects the other way now that is a key point to understanding how AC electricity operates in AC electricity the current is constantly changing its direction it's going first one way and then the other way around the circuit as indicated by the needle now this is a very common exam question what's the effect on a galvanometer as we move a conductor up and down through a magnetic field and of course the galvanometer will deflect first in One Direction and then in the other direction so that's a really important point to remember so as always we hope this video has has been some help [Music]
+
+
+[00:02] [Music]
+[00:10] hello and welcome to this electrical
+[00:11] principles training video in this video
+[00:13] we're going to discuss a really really
+[00:15] important concept one that's known as
+[00:17] electromagnetic induction now that
+[00:20] sounds like quite a daunting uh
+[00:22] expression for what we're going to
+[00:23] consider it's actually a very simple
+[00:25] concept but a crucially important one
+[00:27] because it underpins an awful lot of
+[00:30] other subjects that we need to
+[00:31] understand really well so I strongly
+[00:33] recommend that you watch this video
+[00:34] maybe a couple of times until you fully
+[00:36] grasp the concept of what we're
+[00:38] discussing so electromagnetic induction
+[00:41] underpins many other electrical subjects
+[00:43] it underpins generation uh the principle
+[00:46] of inductors Transformers a very very
+[00:49] similar principle also defines how a
+[00:51] motor works so you can see this is a
+[00:53] really really important subject that we
+[00:55] want to fully understand there will be a
+[00:58] mathematical formula produced this is an
+[01:00] important one for exams you'll really
+[01:01] need to remember this so let's get
+[01:03] started and we'll see what that
+[01:07] is so let's have a quick discussion of
+[01:10] what we've got here here we've got our
+[01:12] very powerful permanent magnet uh now
+[01:15] you'll notice that I've removed all
+[01:16] electronic devices as far as possible uh
+[01:19] away from this so that they don't get
+[01:20] damaged I've not got any credit cards
+[01:22] near here or digital watches cuz this
+[01:24] magnet is so powerful it could seriously
+[01:26] damage those we've also got here a
+[01:28] galvanometer now a Galvan ometer is a
+[01:30] device that measures electrical charge
+[01:32] but it has the added Advantage because
+[01:34] it's an analog needle there we're going
+[01:36] to see this needle moving but you'll
+[01:38] notice that it's aligned right down the
+[01:39] middle at zero because not only will
+[01:42] this tell you how much charge is Flowing
+[01:44] it also tells you which direction the
+[01:47] charge is Flowing as well which is very
+[01:49] clever uh so it will deflect either to
+[01:52] uh the right or to the left when we move
+[01:55] this through so the basic concept that
+[01:57] we're looking at here is how do we make
+[02:01] electricity well we know that one of the
+[02:03] three effects of electricity is the
+[02:05] magnetic effect and actually this is the
+[02:07] way that we generate something like 98%
+[02:09] of the electricity that we use is by
+[02:12] using the magnetic effect of electricity
+[02:14] and this is the basic but very very
+[02:16] important principle when you move an
+[02:20] electrical conductor through a magnetic
+[02:22] field it generates electricity inside
+[02:25] the conductor so a very very simple
+[02:28] concept but a vital important one so
+[02:30] remember that when we pass a conductor
+[02:34] through a magnetic field we get
+[02:36] electricity generated inside the
+[02:38] conductor because what's happening is
+[02:40] that as we pass the conductor through
+[02:41] the magnetic field the magnetic field
+[02:44] influences the electrons that sit around
+[02:46] the copper atoms and push them around
+[02:48] the circuit so first of all let's just
+[02:50] see this in action now this is going to
+[02:52] be a very small deflection that we see
+[02:53] on the needle but if I take the
+[02:55] conductor and I pass it through the
+[02:58] magnetic field you you can see there
+[03:00] that the needle will deflect slightly so
+[03:03] for that brief instant when the
+[03:04] conductor was moving electricity was
+[03:06] flowing through this conductor let's
+[03:08] pull it back up the other way watch the
+[03:10] needle and again a very slight
+[03:13] deflection going on there so obviously
+[03:14] we're only generating microscopic
+[03:16] amounts of electricity at this point but
+[03:19] that's absolutely fine because it
+[03:20] demonstrates the principle now how do
+[03:22] you think I could get this setup that
+[03:25] we've got here to generate more
+[03:28] electricity a higher amount of
+[03:30] electricity well there's a couple of
+[03:32] things we can do watch the needle
+[03:34] closely if I move the conductor very
+[03:36] slowly through the magnetic field you'll
+[03:39] see it barely deflects at all it's just
+[03:42] a very slight movement of the needle
+[03:44] there however if I move it very quickly
+[03:47] we get quite a big jump of the needle
+[03:51] okay so that's one thing that we can
+[03:53] change in order to make more electricity
+[03:56] in the conductor we can increase the
+[03:58] speed or technically accurate the
+[04:01] velocity that the cable or the conductor
+[04:04] is moving at the other thing we can do
+[04:07] is increase how much of the conductor
+[04:09] passes through the magnetic field at any
+[04:12] point now obviously we can't make our
+[04:14] permanent magnet any bigger because that
+[04:16] would be very difficult and it would
+[04:18] also uh make uh for very very large
+[04:21] generators very unwieldy generators but
+[04:23] what we can do instead is instead of
+[04:25] trying to make the the magnetic field
+[04:27] bigger we can actually pass more more
+[04:30] conductor through the magnetic field so
+[04:33] if we take our conductor here and wrap
+[04:37] it into a loop like this this is the
+[04:39] tricky
+[04:40] part if we take our conductor and wrap
+[04:43] it into a loop so now what I've done is
+[04:45] I've got four lots of conductor all
+[04:49] together at the same point now if I pass
+[04:51] this through the magnetic field again
+[04:53] let's let's move it slowly first of all
+[04:56] if I move it slowly can you see there
+[04:59] that even just with that slow movement
+[05:00] we're getting a very large deflection of
+[05:02] the needle compared with what it was
+[05:04] before if I now combine the higher
+[05:07] length of the conductor and also uh
+[05:10] faster movement watch what happens to
+[05:11] the needle
+[05:13] now so this is tricky Watch What Happens
+[05:17] now we're getting a really quite large
+[05:20] deflection of the needle
+[05:23] there so what you can see we've done
+[05:26] here is a couple of things so we've
+[05:28] changed how much length of conductor is
+[05:31] passing through the magnetic field so as
+[05:33] we increase the length of the conductor
+[05:35] passing through the magnetic field we
+[05:37] increased the amount of electricity that
+[05:39] was flowing through there the other
+[05:41] thing that we did was as we increased
+[05:43] the velocity of the conductor passing
+[05:44] through the magnetic field we also
+[05:46] increased the amount of electricity that
+[05:48] was being induced inside our conductor
+[05:51] so that gives us two very easy
+[05:53] relationships between the induced
+[05:56] electricity or what we call induced EMF
+[05:59] and and the length of the conductor and
+[06:02] the velocity of the conductor so we can
+[06:04] see that length and velocity are
+[06:06] directly proportional to the amount of
+[06:09] induced EMF increase either one of those
+[06:11] things you increase the induced EMF
+[06:14] there's one more thing that we could
+[06:16] potentially change we're not going to be
+[06:17] able to do it here but we could change
+[06:20] the density of the magnetic field so
+[06:24] what we could do is change how strong
+[06:27] this permanent magnet is we could put in
+[06:29] a very
+[06:30] weak magnet and that would produce less
+[06:32] electricity or we could put in an even
+[06:35] stronger magnetic field and that would
+[06:37] produce even more electricity so again
+[06:40] we can see that the magnetic flux
+[06:42] density is also directly proportional to
+[06:46] the induced EMF now what we're going to
+[06:48] do now is tie that all into a nice
+[06:50] mathematical formula and that will help
+[06:52] us to do a little bit of
+[06:55] maths so first of all let's try and get
+[06:58] our heads around this new form for that
+[06:59] we've just introduced we've got E equals
+[07:02] B LV now there's no mathematical
+[07:05] operation between the three letters b LV
+[07:08] so when they're written together like
+[07:09] that that just means multiply them
+[07:11] together so we've got B * L * V let's
+[07:15] figure out what each one of these means
+[07:16] so e is equal to electromotive force
+[07:20] which we also know as a type of voltage
+[07:23] and that is measured in volts and that's
+[07:25] the voltage that is created inside the
+[07:28] conductor when we move move it through
+[07:29] the magnetic field we've then got B now
+[07:33] B is the magnetic flux density so that's
+[07:37] the uh density of the magnetic flux uh
+[07:40] in between the poles of the magnet and
+[07:42] that is measured in Teslas we've then
+[07:45] got L which is the length of the
+[07:47] conductor that actually passes through
+[07:49] the magnetic field that's measured in
+[07:50] meters and then finally we've got V4
+[07:53] velocity which is measured in me/ second
+[07:57] and that's the velocity that the
+[07:58] conductor is moving up so I'm going to
+[08:02] make some numbers up and we're going to
+[08:04] do a calculation so first of all let's
+[08:06] get our calculation down our formula
+[08:08] down we've got e is equal to b l v like
+[08:12] that so there's our formula what we're
+[08:14] then going to do is we're just going to
+[08:15] assign some random numbers to this so
+[08:17] I'm going to say in this case b is going
+[08:19] to be equal to two
+[08:23] Teslas I'm going to say l is equal to
+[08:27] .5 of a meter so that's half a meter and
+[08:31] V is going to be equal to let's say 5 m
+[08:36] per second so that's what we've got
+[08:39] there so we put our numbers that we're
+[08:42] using into our calculation so we've got
+[08:44] e is equal to blv notice I'm going to
+[08:47] lay out the formula every time I do a
+[08:49] calculation which is going to help me to
+[08:50] remember it so we've got e is now equal
+[08:53] to two Teslas Times by
+[08:57] 0.5 m Times by 5 m/s so that's what
+[09:02] we've got there so we got 2 * 0.5 * five
+[09:08] and that is going to give us a total of
+[09:12] five volts so e is equal to 5 volts
+[09:16] that's what we've got there so you can
+[09:19] clearly see if we increase any one of
+[09:21] these values so if we increase the
+[09:23] magnetic flux density if we increase the
+[09:26] length or if we increase the velocity
+[09:29] we'll we see an increase in our overall
+[09:31] induced voltage so that means that the
+[09:36] induced voltage is directly proportional
+[09:38] to magnetic flux density length of the
+[09:40] conductor and the velocity of the
+[09:42] conductor and we actually saw this in
+[09:44] action when we increased the velocity of
+[09:46] the conductor we saw an increase in the
+[09:48] induced EMF when we increased the length
+[09:51] of the conductor passing through the
+[09:52] magnetic field we saw an increase in the
+[09:55] induced EMF so we know that this is
+[09:57] going to work one thing just to watch
+[09:59] out for as always when we're doing
+[10:01] calculations like this if we were to get
+[10:03] one of these numbers uh with a multiple
+[10:06] or sub multiple in front of it we would
+[10:07] need to change it back into the base
+[10:09] unit so for example if this was written
+[10:11] as 500 mm if we put 500 in here that
+[10:15] would give us a wildly inflated uh
+[10:18] voltage which we would never find inside
+[10:20] that uh calculation so we need to change
+[10:23] it from millimeters into the base unit
+[10:25] of meters such as we've got here
+[10:29] so let's just summarize exactly what
+[10:31] we've looked at today there's a few key
+[10:33] points that we want to take away from
+[10:34] here if we move a conductor through a
+[10:37] magnetic field we generate electricity
+[10:39] in the conductor that's a very important
+[10:41] Point another very important point to
+[10:43] bear in mind is our mathematical formula
+[10:45] that we've just learned about E equals B
+[10:48] LV so if we increase the strength of the
+[10:51] magnetic field if we increase the length
+[10:53] of the conductor if we increase the
+[10:55] velocity that the conductor is moving at
+[10:56] through the magnetic field we increase
+[10:59] the induced EMF the amount of
+[11:01] electricity inside the
+[11:03] conductor another key point to bear in
+[11:05] mind is that we watched when we were
+[11:08] moving the conductor through the
+[11:10] magnetic field we saw that the needle
+[11:12] deflected but if you're watching very
+[11:14] carefully you'll have noticed that it
+[11:15] actually deflects in opposite directions
+[11:18] so when we move the conductor up through
+[11:20] the magnetic field it deflects one way
+[11:22] and when we move the conductor back down
+[11:25] it deflects the other way now that is a
+[11:27] key point to understanding how AC
+[11:31] electricity operates in AC electricity
+[11:33] the current is constantly changing its
+[11:35] direction it's going first one way and
+[11:37] then the other way around the circuit as
+[11:39] indicated by the needle now this is a
+[11:41] very common exam question what's the
+[11:43] effect on a galvanometer as we move a
+[11:46] conductor up and down through a magnetic
+[11:48] field and of course the galvanometer
+[11:50] will deflect first in One Direction and
+[11:52] then in the other direction so that's a
+[11:54] really important point to remember so as
+[11:56] always we hope this video has has been
+[11:59] some help
+[12:03] [Music]

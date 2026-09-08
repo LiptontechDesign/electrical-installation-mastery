@@ -1,0 +1,105 @@
+# How to Find a Fault on a Ring Final Circuit (Sockets) Help for AM2 & AM2S Testing and Fault Finding
+# https://www.youtube.com/watch?v=7-xM85kLGlQ
+
+Gaz we're going to be looking at fault funding on that dreaded ring final circuit okay so we've gone systematically through our dead testing and done continuity of CPC of the circuits we've got to the ring final circuit and which test is that not sequence that's test number two okay and where are you finding the issue so we find out on stage one of our continuity of our ring final circuit okay which is that end-to-end test between line neutral and cpc okay I'm which one no you got issue with so our line and CPC values were fine okay what we would expect with the calculations we produced but it was our neutrals that we had no readings we have an open circuit on our end to end on our neutrals true okay often at asses pieces for EAL and City and Guilds you have to identify the fault yes yeah yeah agreement not yet so it's probably a case of that might be you might say to you instructor I've had an open circuit on my neutrals have no continuity during stage one of the ring final circuit test and that might be enough for them to tick that off and then they might switch the fault out of circuit so you can carry on testing as normal okay that's good but we're gonna go on and we gonna see the faults I will show you that we're going to open ended circuit on the neutral and then we're gonna try and systematically find where it is yeah we are you look at the process to actually locate in the fault in the circuit itself not just at the consumer unit okay so we'll bring the camera a little bit closer you can see what we're up to and we see if we can identify the socket outlet that has caused us the issue okay then Marcus can you show us the test that you're gonna perform and hopefully this neutral issue that you suggested in the start of the video for me please yeah definitely Gaz so we're gonna do stage one of our continuity of our ring final circuit now that is our end-to-end values between line conductors neutral conductors and CPC conductors now I'm going to measure between my end to end for my line conductors remembering this is my little r1 reading and I get a reading of 1.01 ohms I'm gonna go into my cpc's next because this is twin and CPC cable so we would expect this to be one point six seven times greater than the reading we got from our end to end line conductors so if the maths is right this should be about one point six seven Wow pretty bang on I'm then going to do the end to end of my neutral conductors remembering that I should get a very similar result within 0.05 plus or minus of my line conductor because we have the same size cross-sectional area and we have the same length of conductor in circuit and when I've gone to my into ends you will see that I actually have no read in there so I have an open circuit you elaborate on what you mean by open circuit on the neutral yeah so the open circuit being where the cable was broken somewhere in the circuit so it might have come out the back of a socket out layer it might be broken in a wall where someone's damage the cable okay thank you okay then keyboard warriors this is a training rig and yes it looks a complete spiral mess in here these cables come in they go out they go in there come out five days a week so ok apologize for that in advance with that in mind Marcus I can see one set here from the ring final circuit on its own I can see the CPC and you've connected together the line and neutral what's you thinking behind that so what we've talking about about splitting into two radials that's what we've now done with identified both legs split them apart and we're doing continuity between our line and neutral remember we're not actually were necessarily worried about the values of the minute we're just using it as a means of identifying where the break in the circuit is so we've linked one leg together for line a neutral and left this one disconnected for the time being so then we're going to go round with our plug in tester we've got in the top of our tester is that a 1730 well you've got all the big stuff out and we've got in the top here we've got the conductors being the red and blue conductors in there and you're gonna measure at the socket outlets if I get to a socket outlet that has no neutral in it will they'll receive a reading no you want so we're trying to hunt down the missing reading we are for the time being okay pull back and have a look at that okay then so you've shrunk Marcus which is quite funny on camera what you didn't do for me now so what we're gonna do now is now we've linked them in the board line and neutral we're gonna systematically work our way around the circuit so plug in and I'm gonna check my tester see if I've got continuity between line and neutral and i have now a good thing about the radial is we can start to work out how maybe the circuits been wired through testing because as we go around we know that with added resistance into the circuit so the resistance should increase the further we get away okay so that's that's considerably further away than socket number one yeah there's no need to do both sides are like that your haven't bother doing both sides this is just a hunting fault thing yes so as you can see now I've got a good idea now that this is being wired this way okay because its going increasing in resistance again its increasing okay ah no reading and again I'm just gonna check this one and again no reading so what I'm gonna do now is I have a good idea that potentially these two aware one of our problems is okay now I could whip the fronts off and just check them too because don't have many sockets on however what I'm gonna do is I'm gonna link the other leg between line neutral and the consumer unit yeah and disconnect the leg we've already got connected and then when I test up one of these two I should actually get a reading up one I'm hoping and that would give me a reference point as to between two places where the fault bit occurring oh that's really good so if this was a really big ring final circuit yeah there might have been seven eight sockets now there would get nothing yeah we're gonna chase the fault the other way down the other leg I like it very good so let's go back to consumer unit in connector so back inside to consumer unit can see you've disconnected the connector block that was on this one here between line and neutral CPC still disconnected we come over here the CPC if this leg is disconnected the line and neutral are connected together and you're going to do what next so I'm gonna work my way back round the circuit for the sockets that I didn't have a reader okay so we'll go back and we're gonna put on two sockets to test and hopefully you're gonna magically identify the one with the forward yep okay they're magic Marcus find me that fault so now I've linked the other line and neutral from the other leg in the consumer unit I'm now gonna plug into my socket outlets that I didn't get a reading from before so I'm gonna go to this one first and as you can see I've got continuity between line and neutral and again this socket I do not have continuity now what that tells me is because I had continuity here and I have continuity hear my break is actually in between these two socket outlets so just from testing without having to take all the front covers off we've actually located between two reference points where that fault lies in the circuit now that could be in a wall it could be a joint box in the floor it could be the back of the socket outlet I'm not going to go and start ripping up floorboards before I check this socket outlet because this is my point of worry at a minute so let's take the front off and see if magic Marcus has found the fault so I'm just gonna whip the front off of the socket outlet that I believe could have the problem in again at this point I don't know the problem is in this socket out just from my point view I hope in buried in that wall because we're gonna take the rig off the wall yeah and again I can already see as I'm and screwing this and levering out my neutrals are actually popped out of the socket outlet so yeah what a great way to find the fault we know there's other methods of finding faults similar to this and when one neutrals connected and one is and for us this is at the level we're at with our level three learners in order to fault find and that was very well explained thank you Marcus so that was fascinating Marcus can you explain what's so important in a college environment yeah start to master testing and fault finding again Gaz our apprentices at the end of their five three five seven or two three five seven testing units they have an end point assessment they also have their am2 or am2s when you're doing your two three nine one all of these have a fault finding in element to them and we've got it in control conditions we have yes in the real world would we suggest as other ways to do this of course there is there's always another way to do it you know I'm not suggesting that we couldn't do it testing live and different other ways but for our apprentices they're not gonna have the opportunity to do that in their end point assessment so we show them the way to find through dead test alone be careful in the comments is what we're really saying that those are other ways of carrying this out this is a controlled environment within college and by all means share them with us you know everyone has different experiences and no fault is the same so it's good shall we end it yeah yes we hope this video has been some help
+
+
+[00:08] Gaz we're going to be looking at fault funding on that dreaded ring final circuit okay so we've gone
+[00:12] systematically through our dead testing and done continuity of CPC of the circuits we've got to
+[00:16] the ring final circuit and which test is that not sequence that's test number two okay and where are
+[00:20] you finding the issue so we find out on stage one of our continuity of our ring final circuit okay
+[00:24] which is that end-to-end test between line neutral and cpc okay I'm which one no you got issue with
+[00:28] so our line and CPC values were fine okay what we would expect with the calculations we produced but
+[00:34] it was our neutrals that we had no readings we have an open circuit on our end to end on our
+[00:38] neutrals true okay often at asses pieces for EAL and City and Guilds you have to identify the fault
+[00:44] yes yeah yeah agreement not yet so it's probably a case of that might be you might say to you
+[00:49] instructor I've had an open circuit on my neutrals have no continuity during stage one of the ring
+[00:54] final circuit test and that might be enough for them to tick that off and then they might switch
+[00:57] the fault out of circuit so you can carry on testing as normal okay that's good but we're
+[01:01] gonna go on and we gonna see the faults I will show you that we're going to open ended circuit
+[01:04] on the neutral and then we're gonna try and systematically find where it is yeah we are
+[01:07] you look at the process to actually locate in the fault in the circuit itself not just at the
+[01:11] consumer unit okay so we'll bring the camera a little bit closer you can see what we're up to
+[01:15] and we see if we can identify the socket outlet that has caused us the issue okay then Marcus can
+[01:19] you show us the test that you're gonna perform and hopefully this neutral issue that you suggested
+[01:23] in the start of the video for me please yeah definitely Gaz so we're gonna do stage one of
+[01:27] our continuity of our ring final circuit now that is our end-to-end values between line conductors
+[01:32] neutral conductors and CPC conductors now I'm going to measure between my end to end for my
+[01:37] line conductors remembering this is my little r1 reading and I get a reading of 1.01 ohms I'm gonna
+[01:45] go into my cpc's next because this is twin and CPC cable so we would expect this to be one point six
+[01:50] seven times greater than the reading we got from our end to end line conductors so if the maths is
+[01:56] right this should be about one point six seven Wow pretty bang on I'm then going to do the end
+[02:03] to end of my neutral conductors remembering that I should get a very similar result within 0.05
+[02:08] plus or minus of my line conductor because we have the same size cross-sectional area and we have the
+[02:13] same length of conductor in circuit and when I've gone to my into ends you will see that I actually
+[02:19] have no read in there so I have an open circuit you elaborate on what you mean by open circuit on
+[02:25] the neutral yeah so the open circuit being where the cable was broken somewhere in the circuit so
+[02:29] it might have come out the back of a socket out layer it might be broken in a wall where someone's
+[02:33] damage the cable okay thank you okay then keyboard warriors this is a training rig and yes it looks a
+[02:40] complete spiral mess in here these cables come in they go out they go in there come out five days a
+[02:45] week so ok apologize for that in advance with that in mind Marcus I can see one set here from the
+[02:51] ring final circuit on its own I can see the CPC and you've connected together the line and neutral
+[02:55] what's you thinking behind that so what we've talking about about splitting into two radials
+[03:00] that's what we've now done with identified both legs split them apart and we're doing continuity
+[03:05] between our line and neutral remember we're not actually were necessarily worried about the values
+[03:09] of the minute we're just using it as a means of identifying where the break in the circuit is so
+[03:14] we've linked one leg together for line a neutral and left this one disconnected for the time being
+[03:20] so then we're going to go round with our plug in tester we've got in the top of our tester is that
+[03:25] a 1730 well you've got all the big stuff out and we've got in the top here we've got the conductors
+[03:31] being the red and blue conductors in there and you're gonna measure at the socket outlets if
+[03:35] I get to a socket outlet that has no neutral in it will they'll receive a reading no you want so
+[03:40] we're trying to hunt down the missing reading we are for the time being okay pull back and
+[03:44] have a look at that okay then so you've shrunk Marcus which is quite funny on camera what you
+[03:48] didn't do for me now so what we're gonna do now is now we've linked them in the board line and
+[03:52] neutral we're gonna systematically work our way around the circuit so plug in and I'm gonna check
+[03:58] my tester see if I've got continuity between line and neutral and i have now a good thing about the
+[04:03] radial is we can start to work out how maybe the circuits been wired through testing because as
+[04:08] we go around we know that with added resistance into the circuit so the resistance should increase
+[04:14] the further we get away okay so that's that's considerably further away than socket number
+[04:18] one yeah there's no need to do both sides are like that your haven't bother doing both sides this is
+[04:22] just a hunting fault thing yes so as you can see now I've got a good idea now that this is being
+[04:27] wired this way okay because its going increasing in resistance again its increasing okay ah no
+[04:37] reading and again I'm just gonna check this one and again no reading so what I'm gonna do now
+[04:44] is I have a good idea that potentially these two aware one of our problems is okay now I could whip
+[04:51] the fronts off and just check them too because don't have many sockets on however what I'm gonna
+[04:55] do is I'm gonna link the other leg between line neutral and the consumer unit yeah and disconnect
+[05:01] the leg we've already got connected and then when I test up one of these two I should actually get a
+[05:05] reading up one I'm hoping and that would give me a reference point as to between two places where
+[05:10] the fault bit occurring oh that's really good so if this was a really big ring final circuit yeah
+[05:15] there might have been seven eight sockets now there would get nothing yeah we're gonna chase
+[05:18] the fault the other way down the other leg I like it very good so let's go back to consumer unit in
+[05:22] connector so back inside to consumer unit can see you've disconnected the connector block that was
+[05:26] on this one here between line and neutral CPC still disconnected we come over here the CPC if
+[05:30] this leg is disconnected the line and neutral are connected together and you're going to do
+[05:35] what next so I'm gonna work my way back round the circuit for the sockets that I didn't have
+[05:39] a reader okay so we'll go back and we're gonna put on two sockets to test and hopefully you're gonna
+[05:43] magically identify the one with the forward yep okay they're magic Marcus find me that fault so
+[05:50] now I've linked the other line and neutral from the other leg in the consumer unit I'm now gonna
+[05:54] plug into my socket outlets that I didn't get a reading from before so I'm gonna go to this
+[05:59] one first and as you can see I've got continuity between line and neutral and again this socket
+[06:09] I do not have continuity now what that tells me is because I had continuity here and I have
+[06:14] continuity hear my break is actually in between these two socket outlets so just from testing
+[06:21] without having to take all the front covers off we've actually located between two reference
+[06:26] points where that fault lies in the circuit now that could be in a wall it could be a joint box
+[06:30] in the floor it could be the back of the socket outlet I'm not going to go and start ripping up
+[06:34] floorboards before I check this socket outlet because this is my point of worry at a minute
+[06:39] so let's take the front off and see if magic Marcus has found the fault so I'm just gonna
+[06:44] whip the front off of the socket outlet that I believe could have the problem in again at this
+[06:49] point I don't know the problem is in this socket out just from my point view I hope in buried in
+[06:54] that wall because we're gonna take the rig off the wall yeah and again I can already see as I'm
+[07:02] and screwing this and levering out my neutrals are actually popped out of the socket outlet so
+[07:08] yeah what a great way to find the fault we know there's other methods of finding faults similar
+[07:12] to this and when one neutrals connected and one is and for us this is at the level we're at with our
+[07:16] level three learners in order to fault find and that was very well explained thank you Marcus so
+[07:21] that was fascinating Marcus can you explain what's so important in a college environment yeah start
+[07:25] to master testing and fault finding again Gaz our apprentices at the end of their five three five
+[07:30] seven or two three five seven testing units they have an end point assessment they also
+[07:34] have their am2 or am2s when you're doing your two three nine one all of these have a fault finding
+[07:39] in element to them and we've got it in control conditions we have yes in the real world would
+[07:43] we suggest as other ways to do this of course there is there's always another way to do it
+[07:46] you know I'm not suggesting that we couldn't do it testing live and different other ways
+[07:51] but for our apprentices they're not gonna have the opportunity to do that in their end point
+[07:55] assessment so we show them the way to find through dead test alone be careful in the comments is what
+[08:00] we're really saying that those are other ways of carrying this out this is a controlled environment
+[08:03] within college and by all means share them with us you know everyone has different experiences and no
+[08:07] fault is the same so it's good shall we end it yeah yes we hope this video has been some help

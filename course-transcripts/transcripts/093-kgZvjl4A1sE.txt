@@ -1,0 +1,70 @@
+# How to Calculate Total Earth Fault Loop Impedance Part 2 - Applying a Temperature Factor to R1 + R2
+# https://www.youtube.com/watch?v=kgZvjl4A1sE
+
+welcome to part two of how to calculate total earth fault loop impedance applying a temperature factor to our R1 plus R2 values if you haven't checked out the first video you can see the link to it in the corner of this screen as well as in the description below and i recommend you check that one out before you watch the second part because it builds on the knowledge that we acquired in that first video this video will help you with the design aspect of your electrical qualification and a little bit deeper understanding between the 80% and 100% values for total earth fault loop impedance expressed in BS7671 let's cut to Marcus where he completes the second of these calculations just again same calculation etcetera just using different parameters this time so as you see we've got a Ze of 0.24 ohms we're using a one millimeter squared twin and CPC cable um and the length is 35 meters okay so first of all we come back to this calculation remember R1 plus R2 equals so line and CPC okay the resistance value of our line in CPC circuit think back to testing equals million per meter okay so the amount of resistance in a copper or aluminium conductor per meter of that conductor times by the length multiplied by the temperature factor and divide by a thousand we're going to find our million per meter first okay remember we've got a one millimeter squared twin and CPC cable okay so we go back to Appendix i of the On-Site Guide and we come to table i1 which is on a page 196. we know we've got a one millimeter squared PVC PVC twin CPC cable okay therefore the line conductor is one millimeter squared and the protective conductor is also one millimeter squared so that gives us a million per meter as you can see here for R1 and R2 of 36.20 so if we input in here 36.20 we know the length okay is 35 meters and then the temperature factor okay we go back to the onsite guide and remember what table we're going to use because we're calculating against that of BS7671 and they have the maximum permissible fault loop impedance in tables 41.2 41.3 which we just looked at we have to use table i3 okay now when we come to table i3 remember now we're on a twin and CPC cable again therefore is incorporated in a cable thermoplastic okay and gives us a factor of 1.20 so when we go to here that again is going to be 1.20 i'm going to bring my calculator up okay 36.20 okay so that's the million per meter value multiply that by the length which is 35 multiply that by temperature factor remember we used incorporated in a cable or bunched with other cables so it might be singles in conduit they're bunched together okay the line conductor and the protective conductor then we're going to divide that by thousands because that was our million per meter so we want to bring it back to our base value that will give us a value of 1.52 ohms okay so actually R1 and R2 for that circuit is 1.52 ohms now we obviously we've got our R1 R2 now okay so get rid of this we've got our Ze and we've got now our calculation R1 plus R2 okay 1.52 ohms now think back to how we can calculate our Zs okay so we have Zs equals Ze plus R1 plus R2 so Zs equals zero point two four add R1 plus R2 which we've calculated to be 1.52 ohms and that would give us a Zs if we went to our calculator and we did zero 0.24 we add that to 1.52 that would give us a value of 1.76 ohms Zs would be 1.76 for that particular circuit now let's say that circuit one millimeter squared conductors okay is a lighting circuit okay and let's say that is type C six amp BSEN60898 circuit breaker okay so we're gonna go to BS7671 so we come to BS7671 table 41.3 okay and again this is our maximum fault loop impedance allowances okay this is what the maximum can be and remember we said it was a six amp BSEN60898 circuit breaker that was type C so we come to this table here okay we've got type C circuit breakers to BSEN60898 we had a six amp type C so we find the rating which is six here and then we look to the corresponding Zs value that is permissible to us for that circuit is 3.64 ohms we double check that with the value we got which was 1.76 ohms is below that value therefore deemed acceptable for the requirement of ADS and disconnection times given within that table again that's just another example of how we can calculate Zs remember Zs equals Ze plus R1 plus R2 we may be given the Ze it might be that we have to inquire about the Ze to the local DNO okay now they will give you like you said earlier maximum permissible so let's say you've got a TN-C-S as you say got the TN-C-S what is my um Ze okay all my external fault loop impedance that was a 0.35 ohms we then have to calculate our R1 R2 because remember at the design stages okay we haven't physically installed it we haven't physically measured it using our low reading oh meter we're only designing it so we calculate R1R2 by using this formula here R1 plus R2 equals million per meter R1 being the line R2 being the CPC so the resistance of that total loop there millions per meter okay that's the amount of resistance in millions per meter of a copper or aluminium cable we can find that using Appendix i of the On-Site Guide we multiply that by the length we then multiply that by the temperature vector and then we divide that by a thousand okay because we have millions here so we need to divide it by thousands to get the base number that will give us our R1 plus R2 we then add our Ze plus R1 R2 which will give us our Zs it's very important we then check it complies within tables 41.2 41.3 41.4 complies with the relevant circuit details of the maximum permittable fault loop impedance value
+
+
+[00:00] welcome to part two of how to calculate total earth fault loop impedance
+[00:04] applying a temperature factor to our R1 plus R2 values if you haven't checked out the first video
+[00:09] you can see the link to it in the corner of this screen as well as in the description below and
+[00:13] i recommend you check that one out before you watch the second part because it builds on the
+[00:17] knowledge that we acquired in that first video this video will help you with the design aspect
+[00:22] of your electrical qualification and a little bit deeper understanding between the 80% and
+[00:28] 100% values for total earth fault loop impedance expressed in BS7671 let's cut to Marcus where
+[00:35] he completes the second of these calculations just again same calculation etcetera just using
+[00:40] different parameters this time so as you see we've got a Ze of 0.24 ohms we're using a one millimeter
+[00:45] squared twin and CPC cable um and the length is 35 meters okay so first of all we come back to this
+[00:52] calculation remember R1 plus R2 equals so line and CPC okay the resistance value of our line in
+[00:57] CPC circuit think back to testing equals million per meter okay so the amount of resistance in a
+[01:04] copper or aluminium conductor per meter of that conductor times by the length multiplied by the
+[01:08] temperature factor and divide by a thousand we're going to find our million per meter first okay
+[01:13] remember we've got a one millimeter squared twin and CPC cable okay so we go back to Appendix i
+[01:20] of the On-Site Guide and we come to table i1 which is on a page 196. we know we've
+[01:25] got a one millimeter squared PVC PVC twin CPC cable okay therefore the line conductor is one
+[01:31] millimeter squared and the protective conductor is also one millimeter squared so that gives us
+[01:35] a million per meter as you can see here for R1 and R2 of 36.20 so if we input in here 36.20
+[01:48] we know the length okay is 35 meters and then the temperature factor okay we go back to the onsite
+[01:56] guide and remember what table we're going to use because we're calculating against that of BS7671
+[02:02] and they have the maximum permissible fault loop impedance in tables 41.2
+[02:07] 41.3 which we just looked at we have to use table i3 okay now
+[02:13] when we come to table i3 remember now we're on a twin and CPC cable again therefore
+[02:18] is incorporated in a cable thermoplastic okay and gives us a factor of 1.20 so when we go to
+[02:29] here that again is going to be
+[02:33] 1.20 i'm going to bring my calculator up okay 36.20
+[02:40] okay so that's the million per meter value multiply that by the length which is 35
+[02:46] multiply that by temperature factor remember we used incorporated in a cable or bunched
+[02:52] with other cables so it might be singles in conduit they're bunched together okay
+[02:57] the line conductor and the protective conductor then we're going to divide that by thousands
+[03:01] because that was our million per meter so we want to bring it back to our base value
+[03:08] that will give us a value of 1.52 ohms okay so actually R1 and R2 for that circuit
+[03:15] is 1.52 ohms now we obviously we've got our R1 R2 now okay
+[03:22] so get rid of this we've got our Ze and we've got now our calculation R1 plus R2 okay
+[03:35] 1.52 ohms now think back to how we can calculate our Zs okay so we have Zs equals Ze plus
+[03:49] R1 plus R2 so Zs equals zero point two four add R1 plus R2 which we've calculated to be
+[04:04] 1.52 ohms and that would give us a Zs if we went to our calculator and we did zero 0.24
+[04:15] we add that to 1.52
+[04:21] that would give us a value of 1.76 ohms
+[04:28] Zs would be 1.76 for that particular circuit now let's say that circuit
+[04:35] one millimeter squared conductors okay is a lighting circuit okay and let's say that is
+[04:41] type C six amp BSEN60898 circuit breaker okay so we're gonna go to BS7671 so we come to BS7671
+[04:51] table 41.3 okay and again this is our maximum fault loop impedance allowances okay this is what
+[04:59] the maximum can be and remember we said it was a six amp BSEN60898 circuit breaker that was type C
+[05:06] so we come to this table here okay we've got type C circuit breakers to BSEN60898 we had a six
+[05:13] amp type C so we find the rating which is six here and then we look to the corresponding Zs value
+[05:20] that is permissible to us for that circuit is 3.64 ohms we double check that with the value we got
+[05:27] which was 1.76 ohms is below that value therefore deemed acceptable for the requirement of ADS and
+[05:34] disconnection times given within that table again that's just another example of how we can
+[05:40] calculate Zs remember Zs equals Ze plus R1 plus R2 we may be given the Ze it might be that we have to
+[05:47] inquire about the Ze to the local DNO okay now they will give you like you said earlier maximum
+[05:52] permissible so let's say you've got a TN-C-S as you say got the TN-C-S what is my um Ze okay all
+[05:58] my external fault loop impedance that was a 0.35 ohms we then have to calculate our R1 R2 because
+[06:04] remember at the design stages okay we haven't physically installed it we haven't physically
+[06:09] measured it using our low reading oh meter we're only designing it so we calculate R1R2 by using
+[06:16] this formula here R1 plus R2 equals million per meter R1 being the line R2 being the CPC so the
+[06:23] resistance of that total loop there millions per meter okay that's the amount of resistance
+[06:28] in millions per meter of a copper or aluminium cable we can find that using Appendix i of the
+[06:35] On-Site Guide we multiply that by the length we then multiply that by the temperature vector
+[06:40] and then we divide that by a thousand okay because we have millions here so we need to divide it by
+[06:45] thousands to get the base number that will give us our R1 plus R2 we then add our Ze plus R1 R2 which
+[06:51] will give us our Zs it's very important we then check it complies within tables 41.2 41.3 41.4
+[06:59] complies with the relevant circuit details of the maximum permittable fault loop impedance value

@@ -1,0 +1,343 @@
+# How to program KNX: ETS5 Introduction Part 1 - Ivory Egg
+# https://www.youtube.com/watch?v=p-8FhDrLkxE
+
+hi my name is Mark from ivory egg and in this video we're gonna have a quick look at ETS we had to download it from and a quick look around the software so first thing to do go to my KNX dot org here you can manage your account with the KX association and you can purchase products you can get support and you can download software so if you haven't got an account yet you need to create one simple to do just fill in your details there's no cost associated if you have already got an account then login and then you'll get to a page that looks like this if you go to downloads you can download software versions you can get ETS so here we've got the ETS professional version which you can download directly also it ETS inside which you can use for configuring connect systems via an app for the smaller size installations and some of the other some other tools for manufacturer tools so download the software and then you're good to go once you've installed it you'll be faced with the ETS application now lots and lots going on with ETS it's obviously a very powerful software that can be used for all different types of installations so it takes a little bit of time to work out where everything is so we're going to take a look at some of the different pages and what's going on and we'll look at kind of commissioning projects and how to do that in a different video so on the main tab we have lots of information on the right here we have a news feed from the KNX association with all update with the things that are going on and also a new products feature where they'll be yeah just I didn't know highlighting new products that have been released to the market on the left here we have our project tab this is we will see projects we've we've created we can save and export projects and we can see different statuses you've got different options here you've got an archive so you can backup your projects and a link to ets inside if you were configuring projects with the more simpler ets inside software like I said which can be used for for smaller projects you have down here at the bottom right the version of ETS which we can also be used to update update update to the latest versions so we've got an update here waiting which is the master data which is one of the kind of background parts of ETS if you have a check for updates automatically it will always check it's up to date and then install them when it can we then have the license a little section which tells you the type of license now in the free version you download you can have five devices per project you can have so many projects as you want but only five devices per project when you install a dongle with a license like the full ETS professional license which I'm going to do now it will once it just detects the USB we can see now that the version has been changed to a professional version which means it's completely unlocked and I can do as larger projects as I want we can also see any licenses I have for apps and down here on the far right we have any apps that I've extolled using apps we can introduce additional functionality to ETS sometimes specifically for manufacturers but some other ones that are the KTX association apps so down here you can install them and then you'd have your license on your dongle will cover licensing in a separate video so here we have the main bus tab where you can see your different interfaces different Kanak sinced elations or detect any IP gateways or USB gateways I don't have any on the current network but you'll see them automatically come up here and we can change how we connect some devices that are sitting on the kxi opinion work for example you might want to download directly instead of doing it via the canings bus so there's an option for that and some different connection options here we can also see the monitor so you've got a group monitor which la enables you to see what's happening on a canings bus and this will link to the group traces of a project and then you've got bus monitor which will show you all of the traffic on the bus even if it's not linked to group addresses now whilst you can start the monitoring from here you'd normally look do it once you've opened a project so that the information shown is linked to the project so while you do have the option here it's not the normal way of doing that that would be via a project once you've got one loaded and the same with Diagnostics you can do the diagnostics features from within the project environment but these different setting like unloading a device which will take all the information from a device and blanket we do that by putting it into programming mode we can read information from a device by typing in the end of a dual address and then we can check if these devices in the system and program mode if this if an address is found we can even scan a line and find all of the devices so lots of different tools to make it easier to program so the next tab we have is the catalogs tab now there here is where you can find the products from different manufacturers and add them into the software you can add files manually if you go to manufacturers website you can download the database with their driver files and you can import them there's also the online catalog function which and finds them for you automatically but if you've got a new installation VTS the first thing you're going to need to do is select your marker and this tells it which it's it's the language and configures it so I've just start United Kingdom that will then link the online catalog to your to the right region your run so once you've set the market it's going to link to all different manufacturers that you've got selected and make those products products available to be added into a project now we can customize the online catalog if we go into the settings tab and then online catalog we can tell it which manufacturers we want to see here so we can select specific manufacturers to narrow down the products that we want to see an out online catalog instead of showing all of the KNX options we can also update it although it happens automatically with the with the default settings so really useful just to come in and have it do a quick check make sure you're only maybe simplify the view here or if you want to download all all manufacturers and have them available then fantastic most manufacturers now have their products in the online catalog but not all some of them you will still need to manually add the catalog files and put them here and then once you've got them in your catalog that's all you need to do if we click on a product we can see some device information here we can see the bus current which is useful for specification to know that make sure you're putting a power Supply sized correctly most manufacturers will have that information and we can also see some version information for the application it is also possible to export your catalog and you're able to export a defined a limited seat which can be quite useful if you've got engineers on site and they don't have access or you don't want them to be dealing with the whole online catalog you want to give them just a reduced function see it you can do that by exporting now this is online but you need to be online to download the product and to our project and the list may be visible when you're not online but to actually add them into project you do need to be online once they're in the project though that's an offline instance of that driver file any changes you make to it aren't linked back to the catalog at stand alone and finally we've got the sittings tab we've got there's lots of different things about presentation and how ATS looks you can remove the news and product information if you want from that front page you can you know have one on delete or not lots of different options for just how it looks you can change your default language as you can tell it where you're storing your your project archive just remember if you're storing your part project archive onto the same hard drive that ETS normally runs on it's not really backed up you really want this to be sharing into a some form of glad based service odds off the hard drive or backing up from this folder onto a USB or something physical that's on a separate machine you've got some they've got the troubleshooting and the Diagnostics tool if you've if you're having any issues with ETS and you want to raise a support ticket with the cane it's associated the first thing they'll ask you to do is to run the tool Diagnostics which just runs through the software makes sure everything's configured properly and generates a diagnostics file so that the KNX Association can offer you much quicker support I'd suggest running the Diagnostics before submitting your ticket in the first instance because it just saves that first step when you know they can ask for it just provide it straight away so there's some some different features in here for what you're logging but you'll only need to go into here if you've got some problems again and protects port the default settings are okay and if you need to change them you've got some shortcuts here for all different keyboard shortcuts which are really useful to customize or just to know that they're the year and the 80s programming environment has a huge amount of shortcuts and lots of different links and ways to do things personally I've never used the keyboard shortcuts because I've always found that visual options with an ET is sufficient but there's lots options if you need them and you can also configure label printing or add your own logos so when you create documentation from the project that's formatter than the way you want so the last thing we know we're just going to create a new project quickly just so we can see the project environment briefly we'll go through this in a separate video once we create a project it'll be we'll open the project to go back and forth from the project view to the main each year's of you heads heading there Green ETS up at the top left so we've just come back to the overview here we can click on a project and there's lots of information about the project we can give it a name number we can track when the project did started when it's due to finish we can even change the status of the overall project we can also do this individually within the actual project environment edit specific instances of items we can track the overall and we can add comments now this comment is for the main project comments it might be where you you know provide access details for the property or store the customers names that kind of information on here you can set a password this is a password for the project now you need this if you're using KNX secure and it's good to have this on your projects BECU case it's a password on individual products now I would strongly recommend not using this because if this information gets lost it that's almost impossible to recover the products definitely worth protecting protecting the project and looking at using KNX secure which which protects the the communication but locking individual projects down tends to cause more issues and the future from security this is where we can see any Kanak secure devices we do it we're using and we can link the appreciate keys from the product into the software which needs to be done we've got a project log and this is where we can use to track individual things that have happened such as creating created a new project this is where you can log what you've done on site track when you've completed things if you want I use it to just keep an overall view of what I've done on a project so added some new products or changed a few settings you don't want to go into the real fine detail but definitely worth adding and here and then finally you can store project files against the within the project so it might be floor plan layout that might be circuit schedules it might be other customer information that you can add them in here and then when you're do an export that's going to export it all as one package which can be really useful now we've created a new project we can see how to export them so you highlight the project and you would click export and then we can back up the project and virtually export it maybe transfer between ETS versions or ETS between engineers this would be different to the actual archiving of the project which is set up in the settings that's it for this quick tour of ATS if you've got any questions please post them in comments below please subscribe to our channel for other videos thanks for watching
+
+
+[00:04] hi my name is Mark from ivory egg and in
+[00:07] this video we're gonna have a quick look
+[00:09] at ETS we had to download it from and a
+[00:11] quick look around the software so first
+[00:13] thing to do go to my KNX dot org here
+[00:17] you can manage your account with the KX
+[00:21] association and you can purchase
+[00:23] products you can get support and you can
+[00:25] download software so if you haven't got
+[00:26] an account yet you need to create one
+[00:28] simple to do just fill in your details
+[00:30] there's no cost associated if you have
+[00:32] already got an account then login and
+[00:34] then you'll get to a page that looks
+[00:36] like this if you go to downloads you can
+[00:38] download software versions you can get
+[00:41] ETS so here we've got the ETS
+[00:43] professional version which you can
+[00:44] download directly also it ETS inside
+[00:47] which you can use for configuring
+[00:48] connect systems via an app for the
+[00:51] smaller size installations and some of
+[00:53] the other some other tools for
+[00:55] manufacturer tools so download the
+[00:57] software and then you're good to go
+[00:59] once you've installed it you'll be faced
+[01:01] with the ETS application now lots and
+[01:05] lots going on with ETS it's obviously a
+[01:07] very powerful software that can be used
+[01:09] for all different types of installations
+[01:10] so it takes a little bit of time to work
+[01:12] out where everything is so we're going
+[01:13] to take a look at some of the different
+[01:15] pages and what's going on and we'll look
+[01:17] at kind of commissioning projects and
+[01:19] how to do that in a different video so
+[01:21] on the main tab we have lots of
+[01:23] information on the right here we have a
+[01:25] news feed from the KNX association with
+[01:28] all update with the things that are
+[01:29] going on and also a new products feature
+[01:31] where they'll be yeah just I didn't know
+[01:34] highlighting new products that have been
+[01:35] released to the market on the left here
+[01:39] we have our project tab this is we will
+[01:40] see projects we've we've created we can
+[01:43] save and export projects and we can see
+[01:45] different statuses you've got different
+[01:48] options here you've got an archive so
+[01:49] you can backup your projects and a link
+[01:51] to ets inside if you were configuring
+[01:53] projects with the more simpler ets
+[01:55] inside software like I said which can be
+[01:58] used for for smaller projects you have
+[02:01] down here at the bottom right the
+[02:03] version of ETS which we can also be used
+[02:06] to update update update to the latest
+[02:09] versions so we've got an update here
+[02:11] waiting which is the master data which
+[02:14] is one of the kind of
+[02:15] background parts of ETS if you have a
+[02:17] check for updates automatically it will
+[02:19] always check it's up to date and then
+[02:21] install them when it can we then have
+[02:23] the license
+[02:25] a little section which tells you the
+[02:26] type of license now in the free version
+[02:28] you download you can have five devices
+[02:30] per project you can have so many
+[02:31] projects as you want but only five
+[02:33] devices per project when you install a
+[02:36] dongle with a license like the full ETS
+[02:38] professional license which I'm going to
+[02:39] do now it will once it just detects the
+[02:47] USB we can see now that the version has
+[02:50] been changed to a professional version
+[02:54] which means it's completely unlocked and
+[02:56] I can do as larger projects as I want we
+[02:59] can also see any licenses I have for
+[03:01] apps and down here on the far right we
+[03:03] have any apps that I've extolled using
+[03:05] apps we can introduce additional
+[03:07] functionality to ETS sometimes
+[03:10] specifically for manufacturers but some
+[03:12] other ones that are the KTX association
+[03:15] apps so down here you can install them
+[03:17] and then you'd have your license on your
+[03:18] dongle will cover licensing in a
+[03:20] separate video so here we have the main
+[03:23] bus tab where you can see your different
+[03:26] interfaces different Kanak sinced
+[03:28] elations or detect any IP gateways or
+[03:30] USB gateways I don't have any on the
+[03:32] current network but you'll see them
+[03:34] automatically come up here and we can
+[03:36] change how we connect some devices that
+[03:38] are sitting on the kxi opinion work for
+[03:40] example you might want to download
+[03:41] directly instead of doing it via the
+[03:43] canings bus so there's an option for
+[03:45] that and some different connection
+[03:47] options here we can also see the monitor
+[03:50] so you've got a group monitor which la
+[03:52] enables you to see what's happening on a
+[03:54] canings bus and this will link to the
+[03:57] group traces of a project and then
+[03:59] you've got bus monitor which will show
+[04:01] you all of the traffic on the bus even
+[04:03] if it's not linked to group addresses
+[04:04] now whilst you can start the monitoring
+[04:07] from here you'd normally look do it once
+[04:09] you've opened a project so that the
+[04:11] information shown is linked to the
+[04:13] project so while you do have the option
+[04:15] here it's not the normal way of doing
+[04:17] that that would be via a project once
+[04:19] you've got one loaded and the same with
+[04:21] Diagnostics you can do the diagnostics
+[04:23] features from within the project
+[04:24] environment but these different setting
+[04:27] like unloading a device which will take
+[04:29] all the information from a device and
+[04:31] blanket we do that by putting it into
+[04:33] programming mode we can read information
+[04:35] from a device by typing in the end of a
+[04:38] dual address and then we can check if
+[04:40] these devices in the system and program
+[04:42] mode if this if an address is found we
+[04:47] can even scan a line and find all of the
+[04:49] devices so lots of different tools to
+[04:50] make it easier to program so the next
+[04:53] tab we have is the catalogs tab now
+[04:55] there here is where you can find the
+[04:56] products from different manufacturers
+[04:59] and add them into the software you can
+[05:01] add files manually if you go to
+[05:04] manufacturers website you can download
+[05:05] the database with their driver files and
+[05:08] you can import them there's also the
+[05:10] online catalog function which and finds
+[05:13] them for you automatically but if you've
+[05:15] got a new installation VTS the first
+[05:17] thing you're going to need to do is
+[05:19] select your marker and this tells it
+[05:21] which it's it's the language and
+[05:23] configures it so I've just start United
+[05:26] Kingdom that will then link the online
+[05:30] catalog to your to the right region your
+[05:32] run so once you've set the market it's
+[05:35] going to link to all different
+[05:37] manufacturers that you've got selected
+[05:39] and make those products products
+[05:41] available to be added into a project now
+[05:44] we can customize the online catalog if
+[05:46] we go into the settings tab and then
+[05:48] online catalog we can tell it which
+[05:51] manufacturers we want to see here so we
+[05:54] can select specific manufacturers to
+[05:59] narrow down the products that we want to
+[06:01] see an out online catalog instead of
+[06:03] showing all of the KNX options we can
+[06:07] also update it although it happens
+[06:08] automatically with the with the default
+[06:11] settings so really useful just to come
+[06:13] in and have it do a quick check make
+[06:15] sure you're only maybe simplify the view
+[06:17] here or if you want to download all all
+[06:18] manufacturers and have them available
+[06:19] then fantastic most manufacturers now
+[06:22] have their products in the online
+[06:23] catalog but not all some of them you
+[06:26] will still need to manually add the
+[06:28] catalog files and put them here and then
+[06:30] once you've got them in your catalog
+[06:31] that's all you need to do if we click on
+[06:34] a product we can see some device
+[06:35] information here we can see the bus
+[06:37] current which is useful for
+[06:38] specification to know that make sure
+[06:40] you're putting a power
+[06:41] Supply sized correctly most
+[06:43] manufacturers will have that information
+[06:44] and we can also see some version
+[06:46] information for the application it is
+[06:49] also possible to export your catalog and
+[06:52] you're able to export a defined a
+[06:54] limited seat which can be quite useful
+[06:56] if you've got engineers on site and they
+[06:59] don't have access or you don't want them
+[07:02] to be dealing with the whole online
+[07:03] catalog you want to give them just a
+[07:05] reduced function see it you can do that
+[07:06] by exporting now this is online but you
+[07:11] need to be online to download the
+[07:13] product and to our project and the list
+[07:16] may be visible when you're not online
+[07:17] but to actually add them into project
+[07:19] you do need to be online once they're in
+[07:21] the project though that's an offline
+[07:23] instance of that driver file any changes
+[07:26] you make to it aren't linked back to the
+[07:27] catalog at stand alone and finally we've
+[07:31] got the sittings tab we've got there's
+[07:33] lots of different things about
+[07:34] presentation and how ATS looks you can
+[07:38] remove the news and product information
+[07:39] if you want from that front page you can
+[07:43] you know have one on delete or not lots
+[07:46] of different options for just how it
+[07:48] looks you can change your default
+[07:50] language as you can tell it where you're
+[07:53] storing your your project archive just
+[07:57] remember if you're storing your part
+[07:58] project archive onto the same hard drive
+[08:00] that ETS normally runs on it's not
+[08:02] really backed up you really want this to
+[08:04] be sharing into a some form of glad
+[08:06] based service odds off the hard drive or
+[08:08] backing up from this folder onto a USB
+[08:11] or something physical that's on a
+[08:12] separate machine you've got some they've
+[08:17] got the troubleshooting and the
+[08:18] Diagnostics tool if you've if you're
+[08:21] having any issues with ETS and you want
+[08:22] to raise a support ticket with the cane
+[08:24] it's associated
+[08:25] the first thing they'll ask you to do is
+[08:27] to run the tool Diagnostics which just
+[08:29] runs through the software makes sure
+[08:30] everything's configured properly and
+[08:32] generates a diagnostics file so that the
+[08:35] KNX Association can offer you much
+[08:37] quicker support
+[08:38] I'd suggest running the Diagnostics
+[08:41] before submitting your ticket in the
+[08:43] first instance because it just saves
+[08:44] that first step when you know they can
+[08:45] ask for it just provide it straight away
+[08:47] so there's some some different features
+[08:49] in here for what you're logging but
+[08:50] you'll only need to go into here if
+[08:52] you've got some problems
+[08:53] again and protects port the default
+[08:57] settings are okay and if you need to
+[08:59] change them you've got some shortcuts
+[09:01] here for all different keyboard
+[09:03] shortcuts which are really useful to
+[09:05] customize or just to know that they're
+[09:07] the year and the 80s programming
+[09:09] environment has a huge amount of
+[09:10] shortcuts and lots of different links
+[09:12] and ways to do things personally I've
+[09:15] never used the keyboard shortcuts
+[09:16] because I've always found that visual
+[09:17] options with an ET is sufficient but
+[09:20] there's lots options if you need them
+[09:21] and you can also configure label
+[09:23] printing or add your own logos so when
+[09:26] you create documentation from the
+[09:27] project that's formatter than the way
+[09:28] you want so the last thing we know we're
+[09:30] just going to create a new project
+[09:31] quickly just so we can see the project
+[09:34] environment briefly we'll go through
+[09:37] this in a separate video once we create
+[09:40] a project it'll be we'll open the
+[09:42] project to go back and forth from the
+[09:44] project view to the main each year's of
+[09:47] you heads heading there Green ETS up at
+[09:49] the top left so we've just come back to
+[09:51] the overview here we can click on a
+[09:54] project and there's lots of information
+[09:55] about the project we can give it a name
+[09:58] number we can track when the project did
+[10:00] started when it's due to finish we can
+[10:03] even change the status of the overall
+[10:05] project we can also do this individually
+[10:07] within the actual project environment
+[10:10] edit specific instances of items we can
+[10:13] track the overall and we can add
+[10:15] comments now this comment is for the
+[10:17] main project comments it might be where
+[10:19] you you know provide access details for
+[10:22] the property or store the customers
+[10:24] names that kind of information on here
+[10:27] you can set a password this is a
+[10:29] password for the project now you need
+[10:31] this if you're using KNX secure and it's
+[10:33] good to have this on your projects
+[10:36] BECU case it's a password on individual
+[10:39] products now I would strongly recommend
+[10:41] not using this because if this
+[10:43] information gets lost it that's almost
+[10:45] impossible to recover the products
+[10:47] definitely worth protecting protecting
+[10:49] the project and looking at using KNX
+[10:52] secure which which protects the the
+[10:54] communication but locking individual
+[10:57] projects down tends to cause more issues
+[10:59] and the future from security this is
+[11:04] where we can see any Kanak secure
+[11:05] devices we do it we're using and we can
+[11:08] link the appreciate keys from the
+[11:10] product into the software which needs to
+[11:13] be done we've got a project log and this
+[11:15] is where we can use to track individual
+[11:17] things that have happened such as
+[11:20] creating created a new project this is
+[11:25] where you can log what you've done on
+[11:26] site track when you've completed things
+[11:30] if you want I use it to just keep an
+[11:32] overall view of what I've done on a
+[11:34] project so added some new products or
+[11:36] changed a few settings you don't want to
+[11:38] go into the real fine detail but
+[11:40] definitely worth adding and here and
+[11:43] then finally you can store project files
+[11:45] against the within the project so it
+[11:49] might be floor plan layout that might be
+[11:51] circuit schedules it might be other
+[11:54] customer information that you can add
+[11:56] them in here and then when you're do an
+[11:57] export that's going to export it all as
+[11:59] one package which can be really useful
+[12:01] now we've created a new project we can
+[12:04] see how to export them so you highlight
+[12:06] the project and you would click export
+[12:08] and then we can back up the project and
+[12:10] virtually export it maybe transfer
+[12:13] between ETS versions or ETS between
+[12:16] engineers this would be different to the
+[12:19] actual archiving of the project which is
+[12:20] set up in the settings that's it for
+[12:23] this quick tour of ATS if you've got any
+[12:26] questions please post them in comments
+[12:27] below please subscribe to our channel
+[12:29] for other videos thanks for watching

@@ -1,0 +1,368 @@
+# The Problem With Standard Maximum Demand Methods
+# https://www.youtube.com/watch?v=PnagUPuFlak
+
+in this Q&A video we're going to answer the question how should I be calculating maximum demand now just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of circuit protection they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD and you'll receive a certificate to prove you've completed the course now this question has come about because we're starting to see more and more consume units from manufacturers that look like this one from luden paloli with two or even three rows of stacked protective devices and that leads us naturally to wonder if there's more and more circuits being installed does that mean that the maximum demand of our properties is going up and up well let's carry out a practical experiment to see how our normal approach to maximum demand actually Stacks up we're going to calculate what the value will be and then I'm going to monitor the power used by my installation and see what the value actually Peaks at during normal usage there's three different places that you'll find guidance on calculating maximum demand for a domestic installation like this one and that's the on-site guide guidance note one selection and erection and the electrical installation design guide calculations for electricians and designers and it's all pretty much exactly the same however I'm going to be quoting from both the on-site guide and the design guide as there's valuable information in both now this installation is pretty simple we've got an electric cooker two A1 ring final circuits one A2 radial circuit one A3 radial circuit an immersion heater oil filed heater two lighting circuits and a smoke alarm so how do we figure out the maximum demand for this installation well first of all we need to figure out what the total current demand will be for each circuit now for some of the circuits that's really easy for example the immersion heater is a fixed load of 3 KW so by using the power formula I equals P overv we find 3,000 / 230 is 13 amps so when it's on that's how much it's drawing the oil filled heater is simple as well 1,800 W divided 230 is 7.8 amps some of the other circuits are trickier though as the loads connected may vary but there is some direction in the design guide in table 3.1 which is the same as table A1 in the on-site guide but with one notable difference that we'll get to in a moment Row one of the table is for socket Outlets rated at anything apart from 2 amps or 13 amps we haven't got any in this installation but if we did we'd use the rated current as their current demand for 2 amp socket Outlets we'd be allowing 0.5 amps per outlet and then we come on to lighting Outlets the first line is the most important as it says we're to use the current equivalent to the connected load so if the installation has lighting accessories of a fixed value like these spots or these led strips then we can calculate the current based on those values but where we've got lamp holders like these ones the lamps can be swapped out for ones with differing values which will change our maximum demand calculation now there's a really interesting modification to the table in the design guide that's been brought in with the latest update to the Second Amendment and interestingly doesn't feature yet in the on-site guide or guidance Note One it reads conventionally a minimum of 100 watts per General lighting service lamp holder was assumed based on the use of incandescent lamps a far more moderate current of 30 watts per lamp holder may be more appropriate for GLS lamp holders in new installations since light emitting doodes are now the Preferred Product on the market and prior to that compact fluorescent lamps were in use for many years so finally that value of 100 watts per lamp holder is out the door and is now taking account of the reduced power ratings of LED lighting by suggesting an allowance of 30 watts per lamp holder personally I think this is still excessive but that's the suggested value the rest of that section just goes on to point out that caution needs to be taken due to inrush currence on LED fittings but again to be fair this is more directed at Commercial and Industrial installations where you'd have higher powered LED fittings in larger quantities the next row down relates to small incidental loads like electric clocks shaver Connections in bathrooms Bell Transformers and generally any equipment under 5 volt ERS in rating the only other loads that could fall into this category in this property are the smoke alarms and I've checked these ones from AO are only rated at 0.25 Watts when on standby so we can ignore them for the purposes of Maximum demand then we've got household cooking appliances the direction is to calculate the first 10 amps of the rated current 30% of the remainder and then add on 5 amps if there's a socket Outlet on the control unit so here we've got an oven and a hob on the same circuit so we can debate whether or that's appropriate elsewhere but it means we'll treat this as one Appliance in this situation the combined current rating of this Hub and oven is 39 amps so we take the first 10 amps and add it to 30% of the remaining current so that's 30% of 29 amps which is 8.7 amps and we don't need to add 5 amps for a socket Outlet as this cooker control doesn't have one so the current demand for this circuit is 18.7 amps then we've got at the bottom all of the stationary equipment which you just use the rated current for now you'll notice that there's no specific guidance in this table about how much current to allow for the socket circuits and the note attached in the first row just refers us to another section about standard circuits Without Really touching on maximum demand so how do we Factor this in well there's another stage to calculating maximum demand known as diversity which is where we make the very reasonable allowance that not all the loads will be on at the same time we can now apply similar principles to all the circuits in this installation by looking to table 3.2 although there is another sty little reminder about using this table in section 3.4.1 where it states the allowances for diversity in table 3.2 are for very specific situations and can only provide Guidance the figures given in the table may need to be increased or decreased depending on the particular circumstance so just a little reminder there that it's your responsibility to assess if it's appropriate to use the method outlined in this table or not a little corporate back covering as it were and as a reminder further down that the use of other method methods of estimating maximum demand is not precluded where specified by a competent electrical design engineer so let's look at the table and see how it works by applying the information to this property the table is split into four columns the first is the circuit type the second third and fourth are all different types of premises we're going to look at the First Column as it relates to individual household installations the first row is lighting and tells us to take 66% of the total current demand so I'll spare you the pain of following me around looking at all the different light fittings here and just say that on the ground floor we've got 575 watts of lighting which gives us a current demand of 2.5 amps on the first floor we've got just 150 wats which gives us 0.65 amps of current so we take 66% of those values to contribute to our final maximum demand figure that's 1.65 for the downstairs and 0.43 amps for the upstairs then we've got Heating and power so we'll use this line but there's more detailed information in the rows below so for cooking appliances we use the same formula as as we did earlier to get 18.7 amps we've got no Motors or instantaneous water heaters as there's no electric shower in this installation we do have a thermostatically controlled water heater in the form of this immersion heater there's no floor warming installation from row 7 and no thermal storage space heating from row eight so that's the figure so far but we've still got to accommodate those socket circuits they fall under row 9 standard arrangement of household and similar final circuits in accordance with appendix h of the on-site guide we're told in the second column to use 100% of the current demand of the largest circuit and 40% of the current demand of every other circuit but what is the current demand of a 32 amp ring final circuit we find the answer in the footnote indicated by the little Plus at the end of the description there and that footnote reads the current demand may be that estimated for example in accordance with table 3.1 where the circuit is a standard circuit for household or similar installations the current demand is the rated current of the overcurrent protective device of the circuit so in other words for a third 32 amp ring final circuit the current demand is 32 amps in this installation we've got two 32 amp ring final circuits so as instructed we'll take 100% of the current demand of the largest circuit which is 32 amps and then 40% of the other 32 amp circuit so in total the maximum demand of this property will be 107.1 18 amps or in other words more than the main incoming fuse to the property does that figure surprise you it surprised me if it's accurate then I really need to start prepping for deta prison at this point I figured it's time to start investigating just how much power my installation is using and to help me with this I've hooked up this energy meter that can monitor and record my energy usage and therefore help me to understand what the maximum power being used at any given time is so I've left this running and recording for a while we're in the depths of winter and there's a bit of a cold snap going on right now we've been using energy normally and I currently have one teenager in the house so normal means leaving every light in the house on and the Telly running while no one's watching we've enjoyed at least one roast dinner and everyone's showering habits remain the same so one tank of hot water heated off the boiler with the occasional boost of the immersion heater and I've discovered over this period that the very highest moment of electricity consumption occurred at about half 5 in the afternoon and the current being drawn was 39.2 amp way lower than the calculated value we did earlier so what gives well the main issue in all this is that the method of calculating maximum demand is not suitable in every situation for example in this house there's additional factors to take into account originally there was only 232 ing final circuits in the building these fed all the existing power hungry appliances including the fridge freezer washing machine tumble dryer and dishwasher between them when the kitchen was remodeled it was easier to wire up a new 20 amp radial circuit to feed three specific loads and the 32 amp radial was created in the garage to feed the washing machine and Tumble dryer so the total load in the property didn't change but by adding extra circuits the maximum demand calculation did also very specifically although there is a dedicated circuit for the heater I'm simply too tight to turn it on in short maximum demand is tricky so how can we be a little more accurate well the design guide itself acknowledge is when discussing complex installations that estimates of Maximum demand can really be made accurately and we've seen in this example that this is true even for simple installations however the design guide does show us one other option by showing an example in 3.4.1 point2 it gives the example of a simple installation and instead of breaking the circuits down line by line from table 3.2 it simply uses line n of that table to perform the calculation remember that's the line that shows the standard circuit Arrangements in appendix h of the on-site guide we tend to think of that section of the OSG as only referring to socket Outlet circuits however it also contains references to other standard circuits such as cookers and water and space heating it then goes on to calculate the example by using just line nine for all the circuits in that property so taking the cooker as the largest load and then finding 40% of the remaining loads even including the shower which which we tend to class as an instantaneous heater and don't allow any diversity for so let's apply the same principle to this property but let's say one of the Ring final circuits is the highest value so taking 100% of that and adding 40% of the remaining value gives us a total demand of 82.6 6 amp more reasonable in that it's at least dropped below the value of the main incoming fuse but still higher than monitoring the real installation shows so there's two methods of calculating maximum demand that give quite differing results and remember that the design guide also says the use of other methods of estimating maximum demand is not precluded where specified by a competent electrical design engineer so there's no one right way to calculate maximum demand but as with most things in life the more information you have the more data you can crunch the more likely you are to produce reasonable results so there we go that's a different take on maximum demand to find out what you need to do when your meter tails are over 3 m long check out this video right here or click the link in the description to watch it as part of our free training package to help you with your CPD and you'll receive a certificate as well all that remains in this video is to say thank you very much for watching
+
+
+[00:00] in this Q&A video we're going to answer
+[00:01] the question how should I be calculating
+[00:03] maximum demand now just before we
+[00:05] explain the answer to this question
+[00:07] Please be aware that this video is one
+[00:08] of a series that we've made on the
+[00:09] subject of circuit protection they can
+[00:11] be viewed individually or you can click
+[00:13] the link in the description below to
+[00:14] view them as part of a free online
+[00:16] training package to help you with your
+[00:17] CPD and you'll receive a certificate to
+[00:20] prove you've completed the course now
+[00:22] this question has come about because
+[00:23] we're starting to see more and more
+[00:25] consume units from manufacturers that
+[00:26] look like this one from luden paloli
+[00:29] with two or even three rows of stacked
+[00:31] protective devices and that leads us
+[00:33] naturally to wonder if there's more and
+[00:35] more circuits being installed does that
+[00:36] mean that the maximum demand of our
+[00:38] properties is going up and up well let's
+[00:41] carry out a practical experiment to see
+[00:43] how our normal approach to maximum
+[00:44] demand actually Stacks up we're going to
+[00:46] calculate what the value will be and
+[00:48] then I'm going to monitor the power used
+[00:50] by my installation and see what the
+[00:51] value actually Peaks at during normal
+[00:53] usage there's three different places
+[00:56] that you'll find guidance on calculating
+[00:57] maximum demand for a domestic
+[00:59] installation like this one and that's
+[01:00] the on-site guide guidance note one
+[01:02] selection and erection and the
+[01:03] electrical installation design guide
+[01:05] calculations for electricians and
+[01:07] designers and it's all pretty much
+[01:08] exactly the same however I'm going to be
+[01:10] quoting from both the on-site guide and
+[01:12] the design guide as there's valuable
+[01:14] information in both now this
+[01:16] installation is pretty simple we've got
+[01:18] an electric cooker two A1 ring final
+[01:20] circuits one A2 radial circuit one A3
+[01:24] radial circuit an immersion heater oil
+[01:26] filed heater two lighting circuits and a
+[01:29] smoke alarm so how do we figure out the
+[01:30] maximum demand for this installation
+[01:33] well first of all we need to figure out
+[01:35] what the total current demand will be
+[01:37] for each circuit now for some of the
+[01:38] circuits that's really easy for example
+[01:40] the immersion heater is a fixed load of
+[01:42] 3 KW so by using the power formula I
+[01:45] equals P overv we find 3,000 / 230 is 13
+[01:50] amps so when it's on that's how much
+[01:52] it's drawing the oil filled heater is
+[01:54] simple as well 1,800 W divided 230 is
+[01:59] 7.8 amps some of the other circuits are
+[02:01] trickier though as the loads connected
+[02:03] may vary but there is some direction in
+[02:06] the design guide in table 3.1 which is
+[02:08] the same as table A1 in the on-site
+[02:10] guide but with one notable difference
+[02:12] that we'll get to in a moment Row one of
+[02:14] the table is for socket Outlets rated at
+[02:17] anything apart from 2 amps or 13 amps we
+[02:19] haven't got any in this installation but
+[02:20] if we did we'd use the rated current as
+[02:23] their current demand for 2 amp socket
+[02:25] Outlets we'd be allowing 0.5 amps per
+[02:27] outlet and then we come on to lighting
+[02:29] Outlets the first line is the most
+[02:31] important as it says we're to use the
+[02:33] current equivalent to the connected load
+[02:35] so if the installation has lighting
+[02:36] accessories of a fixed value like these
+[02:38] spots or these led strips then we can
+[02:41] calculate the current based on those
+[02:42] values but where we've got lamp holders
+[02:45] like these ones the lamps can be swapped
+[02:47] out for ones with differing values which
+[02:48] will change our maximum demand
+[02:50] calculation now there's a really
+[02:52] interesting modification to the table in
+[02:54] the design guide that's been brought in
+[02:55] with the latest update to the Second
+[02:57] Amendment and interestingly doesn't
+[02:59] feature yet in the on-site guide or
+[03:01] guidance Note One it reads
+[03:03] conventionally a minimum of 100 watts
+[03:06] per General lighting service lamp holder
+[03:08] was assumed based on the use of
+[03:09] incandescent lamps a far more moderate
+[03:12] current of 30 watts per lamp holder may
+[03:14] be more appropriate for GLS lamp holders
+[03:16] in new installations since light
+[03:18] emitting doodes are now the Preferred
+[03:20] Product on the market and prior to that
+[03:22] compact fluorescent lamps were in use
+[03:24] for many years so finally that value of
+[03:26] 100 watts per lamp holder is out the
+[03:28] door and is now taking account of the
+[03:30] reduced power ratings of LED lighting by
+[03:32] suggesting an allowance of 30 watts per
+[03:35] lamp holder personally I think this is
+[03:36] still excessive but that's the suggested
+[03:38] value the rest of that section just goes
+[03:40] on to point out that caution needs to be
+[03:42] taken due to inrush currence on LED
+[03:44] fittings but again to be fair this is
+[03:46] more directed at Commercial and
+[03:48] Industrial installations where you'd
+[03:49] have higher powered LED fittings in
+[03:51] larger quantities the next row down
+[03:53] relates to small incidental loads like
+[03:55] electric clocks shaver Connections in
+[03:57] bathrooms Bell Transformers and
+[03:59] generally any equipment under 5 volt ERS
+[04:02] in rating the only other loads that
+[04:04] could fall into this category in this
+[04:05] property are the smoke alarms and I've
+[04:07] checked these ones from AO are only
+[04:09] rated at 0.25 Watts when on standby so
+[04:12] we can ignore them for the purposes of
+[04:13] Maximum demand then we've got household
+[04:16] cooking appliances the direction is to
+[04:17] calculate the first 10 amps of the rated
+[04:19] current 30% of the remainder and then
+[04:22] add on 5 amps if there's a socket Outlet
+[04:24] on the control unit so here we've got an
+[04:26] oven and a hob on the same circuit so we
+[04:28] can debate whether or that's appropriate
+[04:30] elsewhere but it means we'll treat this
+[04:32] as one Appliance in this situation the
+[04:35] combined current rating of this Hub and
+[04:37] oven is 39 amps so we take the first 10
+[04:39] amps and add it to 30% of the remaining
+[04:42] current so that's 30% of 29 amps which
+[04:44] is 8.7 amps and we don't need to add 5
+[04:47] amps for a socket Outlet as this cooker
+[04:48] control doesn't have one so the current
+[04:51] demand for this circuit is 18.7 amps
+[04:55] then we've got at the bottom all of the
+[04:56] stationary equipment which you just use
+[04:58] the rated current for now you'll notice
+[05:00] that there's no specific guidance in
+[05:02] this table about how much current to
+[05:04] allow for the socket circuits and the
+[05:05] note attached in the first row just
+[05:07] refers us to another section about
+[05:09] standard circuits Without Really
+[05:11] touching on maximum demand so how do we
+[05:13] Factor this in well there's another
+[05:15] stage to calculating maximum demand
+[05:16] known as diversity which is where we
+[05:18] make the very reasonable allowance that
+[05:20] not all the loads will be on at the same
+[05:22] time we can now apply similar principles
+[05:25] to all the circuits in this installation
+[05:26] by looking to table 3.2 although there
+[05:28] is another sty little reminder about
+[05:30] using this table in section 3.4.1 where
+[05:33] it states the allowances for diversity
+[05:35] in table 3.2 are for very specific
+[05:39] situations and can only provide Guidance
+[05:42] the figures given in the table may need
+[05:43] to be increased or decreased depending
+[05:46] on the particular circumstance so just a
+[05:48] little reminder there that it's your
+[05:49] responsibility to assess if it's
+[05:51] appropriate to use the method outlined
+[05:52] in this table or not a little corporate
+[05:55] back covering as it were and as a
+[05:56] reminder further down that the use of
+[05:59] other method methods of estimating
+[06:00] maximum demand is not precluded where
+[06:03] specified by a competent electrical
+[06:05] design engineer so let's look at the
+[06:07] table and see how it works by applying
+[06:09] the information to this property the
+[06:11] table is split into four columns the
+[06:13] first is the circuit type the second
+[06:15] third and fourth are all different types
+[06:16] of premises we're going to look at the
+[06:18] First Column as it relates to individual
+[06:20] household installations the first row is
+[06:22] lighting and tells us to take 66% of the
+[06:25] total current demand so I'll spare you
+[06:27] the pain of following me around looking
+[06:28] at all the different light fittings here
+[06:30] and just say that on the ground floor
+[06:31] we've got 575 watts of lighting which
+[06:34] gives us a current demand of 2.5 amps on
+[06:37] the first floor we've got just 150 wats
+[06:39] which gives us 0.65 amps of current so
+[06:42] we take 66% of those values to
+[06:45] contribute to our final maximum demand
+[06:46] figure that's 1.65 for the downstairs
+[06:49] and 0.43 amps for the upstairs then
+[06:52] we've got Heating and power so we'll use
+[06:54] this line but there's more detailed
+[06:56] information in the rows below so for
+[06:57] cooking appliances we use the same
+[06:58] formula as as we did earlier to get 18.7
+[07:01] amps we've got no Motors or
+[07:03] instantaneous water heaters as there's
+[07:04] no electric shower in this installation
+[07:06] we do have a thermostatically controlled
+[07:09] water heater in the form of this
+[07:10] immersion heater there's no floor
+[07:12] warming installation from row 7 and no
+[07:14] thermal storage space heating from row
+[07:16] eight so that's the figure so far but
+[07:18] we've still got to accommodate those
+[07:19] socket circuits they fall under row 9
+[07:22] standard arrangement of household and
+[07:24] similar final circuits in accordance
+[07:26] with appendix h of the on-site guide
+[07:28] we're told in the second column to use
+[07:30] 100% of the current demand of the
+[07:32] largest circuit and 40% of the current
+[07:34] demand of every other circuit but what
+[07:36] is the current demand of a 32 amp ring
+[07:38] final circuit we find the answer in the
+[07:40] footnote indicated by the little Plus at
+[07:42] the end of the description there and
+[07:44] that footnote reads the current demand
+[07:45] may be that estimated for example in
+[07:47] accordance with table 3.1 where the
+[07:50] circuit is a standard circuit for
+[07:51] household or similar installations the
+[07:53] current demand is the rated current of
+[07:55] the overcurrent protective device of the
+[07:57] circuit so in other words for a third 32
+[07:59] amp ring final circuit the current
+[08:01] demand is 32 amps in this installation
+[08:03] we've got two 32 amp ring final circuits
+[08:05] so as instructed we'll take 100% of the
+[08:08] current demand of the largest circuit
+[08:09] which is 32 amps and then 40% of the
+[08:12] other 32 amp circuit so in total the
+[08:14] maximum demand of this property will be
+[08:17] 107.1 18 amps or in other words more
+[08:19] than the main incoming fuse to the
+[08:21] property does that figure surprise you
+[08:23] it surprised me if it's accurate then I
+[08:25] really need to start prepping for deta
+[08:27] prison at this point I figured it's time
+[08:28] to start investigating just how much
+[08:30] power my installation is using and to
+[08:32] help me with this I've hooked up this
+[08:33] energy meter that can monitor and record
+[08:36] my energy usage and therefore help me to
+[08:38] understand what the maximum power being
+[08:39] used at any given time is so I've left
+[08:42] this running and recording for a while
+[08:43] we're in the depths of winter and
+[08:45] there's a bit of a cold snap going on
+[08:46] right now we've been using energy
+[08:48] normally and I currently have one
+[08:49] teenager in the house so normal means
+[08:51] leaving every light in the house on and
+[08:53] the Telly running while no one's
+[08:54] watching we've enjoyed at least one
+[08:56] roast dinner and everyone's showering
+[08:57] habits remain the same so one tank of
+[08:59] hot water heated off the boiler with the
+[09:01] occasional boost of the immersion heater
+[09:03] and I've discovered over this period
+[09:04] that the very highest moment of
+[09:06] electricity consumption occurred at
+[09:07] about half 5 in the afternoon and the
+[09:10] current being drawn was
+[09:12] 39.2 amp way lower than the calculated
+[09:15] value we did earlier so what gives well
+[09:18] the main issue in all this is that the
+[09:20] method of calculating maximum demand is
+[09:22] not suitable in every situation for
+[09:24] example in this house there's additional
+[09:25] factors to take into account originally
+[09:27] there was only 232 ing final circuits in
+[09:30] the building these fed all the existing
+[09:31] power hungry appliances including the
+[09:33] fridge freezer washing machine tumble
+[09:35] dryer and dishwasher between them when
+[09:38] the kitchen was remodeled it was easier
+[09:40] to wire up a new 20 amp radial circuit
+[09:42] to feed three specific loads and the 32
+[09:44] amp radial was created in the garage to
+[09:46] feed the washing machine and Tumble
+[09:48] dryer so the total load in the property
+[09:50] didn't change but by adding extra
+[09:52] circuits the maximum demand calculation
+[09:55] did also very specifically although
+[09:57] there is a dedicated circuit for the
+[09:59] heater I'm simply too tight to turn it
+[10:01] on in short maximum demand is tricky so
+[10:05] how can we be a little more accurate
+[10:07] well the design guide itself acknowledge
+[10:08] is when discussing complex installations
+[10:10] that estimates of Maximum demand can
+[10:13] really be made accurately and we've seen
+[10:15] in this example that this is true even
+[10:16] for simple installations however the
+[10:19] design guide does show us one other
+[10:20] option by showing an example in 3.4.1
+[10:22] point2 it gives the example of a simple
+[10:24] installation and instead of breaking the
+[10:26] circuits down line by line from table
+[10:28] 3.2
+[10:29] it simply uses line n of that table to
+[10:31] perform the calculation remember that's
+[10:33] the line that shows the standard circuit
+[10:35] Arrangements in appendix h of the
+[10:36] on-site guide we tend to think of that
+[10:38] section of the OSG as only referring to
+[10:41] socket Outlet circuits however it also
+[10:43] contains references to other standard
+[10:44] circuits such as cookers and water and
+[10:46] space heating it then goes on to
+[10:48] calculate the example by using just line
+[10:50] nine for all the circuits in that
+[10:52] property so taking the cooker as the
+[10:54] largest load and then finding 40% of the
+[10:57] remaining loads even including the
+[10:58] shower which which we tend to class as
+[10:59] an instantaneous heater and don't allow
+[11:01] any diversity for so let's apply the
+[11:03] same principle to this property but
+[11:05] let's say one of the Ring final circuits
+[11:07] is the highest value so taking 100% of
+[11:09] that and adding 40% of the remaining
+[11:12] value gives us a total demand of 82.6 6
+[11:15] amp more reasonable in that it's at
+[11:18] least dropped below the value of the
+[11:19] main incoming fuse but still higher than
+[11:21] monitoring the real installation shows
+[11:24] so there's two methods of calculating
+[11:26] maximum demand that give quite differing
+[11:27] results and remember that the design
+[11:29] guide also says the use of other methods
+[11:32] of estimating maximum demand is not
+[11:34] precluded where specified by a competent
+[11:37] electrical design engineer so there's no
+[11:40] one right way to calculate maximum
+[11:41] demand but as with most things in life
+[11:43] the more information you have the more
+[11:45] data you can crunch the more likely you
+[11:47] are to produce reasonable results so
+[11:50] there we go that's a different take on
+[11:51] maximum demand to find out what you need
+[11:53] to do when your meter tails are over 3 m
+[11:55] long check out this video right here or
+[11:57] click the link in the description to
+[11:59] watch it as part of our free training
+[12:00] package to help you with your CPD and
+[12:02] you'll receive a certificate as well all
+[12:04] that remains in this video is to say
+[12:05] thank you very much for watching

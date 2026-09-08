@@ -1,0 +1,292 @@
+# How Often Should You Test Emergency Lighting?
+# https://www.youtube.com/watch?v=0HrACbmECnI
+
+- In this Q and A video, we're going to answer the question, how do I carry out periodic tests of emergency lighting? Just before we explain the answer to this question, please be aware that this video is one of a series that we've made on the subject of emergency lighting in association with ROBUS. They can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD, and you'll receive a certificate to prove you've completed the course. Periodic inspection and testing of emergency lighting is one of those areas that contains a lot of received wisdom with various aspects of it changing over the years. For example, there's a persistent idea that every six months, the emergency lighting should be tested for half an hour or an hour to make sure that it's still working. Like all the best misunderstandings, there is a grain of truth to it. An older edition of BS 5266 from the last millennium, that makes you feel old, didn't it? Did contain this direction, but it was superseded by later additions of this standard. The "Electricians Guide to Emergency Lighting" actually calls attention to this and explains clearly why it's no longer required in chapter 6 on operation and maintenance. It states really clearly, "There is no requirement in BS 526 for a six-monthly, 30-minute test. This will only reduce the life of batteries and certain types of lamps." So, it's not required and could actually reduce the longevity of the installed fittings. So, just what is required then? Well, this chapter of the guide contains lots of helpful information. It's important to remember that there's two aspects to this process, inspection and testing. It's a fairly common characteristic of electricians to go piling into the testing process and assign inspection to a position of secondary importance, or even ignore it completely. But inspection is every bit as important as testing, and this is confirmed for us further along in chapter 6. Subheading 6.9.1 states that there should be a daily visual operational check. Of what exactly? It states, "Visual inspection of central control power supply indicators to check that the system is in an operational and ready condition. This does not require any testing and may be a duty of security patrols, et cetera." Notice that no testing is involved with this stage. It's purely inspection and it should be done every day. Now, the wording of this guidance is really interesting as well. Notice that it's only required for centrally controlled emergency lighting systems, not standalone fittings. Why is this? Well, it's one of those risk versus reality situations. In a large building, there could be hundreds of emergency lights spread across large areas. To go around and check that the little status indicator lamp on them is working every day would be like painting the Forth Bridge. By the time you were finished, it'd be time to start again. Paying someone full time to do this would not be cost-effective, and compared with the chances of one failing, not a massive reduction in risk. There is some further direction, though, where it states, "All members of staff should be encouraged to report any damage they notice at any time." So, a well-trained staff member working in the same area regularly who understands the value of emergency lighting will probably be in the best position to notice if a status LED has stopped working or if a fitting is damaged, even if they're not on the maintenance team. The value of inspection in action there. But of course, that's not to minimise the value of testing as well. In fact, there is a monthly test required for emergency lighting, and we find it under subheading 6.9.2 monthly installation functional check. It starts out with this intriguing statement, "If automatic testing is incorporated, the results of these automated tests must be recorded and reviewed, and retained for any future inspection." Some emergency light fittings and systems come with an automatic self-test system. This is a really clever process. The details vary from manufacturer to manufacturer. So let's illustrate using this simple three watt bulkhead from ROBUS. When it's first powered up, it charges itself up for 24 hours, and then it will perform a three-hour self-test to check that it can maintain its light output for that period of time. Then it will go back into its normal operating mode and charge itself up. After one month, it will perform a short self-test similar to the one that we're about to describe for manual testing. It does this by switching internally to battery power for 15 seconds. If the LEDs don't work for some reason, it can tell this by monitoring and measuring the circuitry inside itself. So that's great, but what if you, as the inspector and tester, don't happen to be watching it during those 15 seconds? After all, you might have a hundred of them to watch at the same time. Well, the light will communicate that all is well by flashing a yellow LED, specifically following the pattern of on for four seconds and then off for one second. It does this for five days and then reverts back to the usual comforting green glow of an LED. This five days will give you plenty of time to go around and check all the fittings in a building. If one of the lights detects a fault with itself, it will flash the yellow LED very quickly. On for 0.5 seconds and off for 0.5 seconds, so you know to investigate further. The self-test will also do the longer periodic test that we'll discuss in a second, and if you do happen to miss the flashing yellow LED in those five days, you can always press the test button on an individual fitting to check that it's in working order. However, it may be that we just have standard manual test fittings. In that case, the guide continues, "For manual systems, the following checks shall be carried out. A, by simulation of failure of the supply to the normal lighting, switch on in the emergency mode each luminaire and each internally illuminated sign for a period sufficient only to check that each lamp is illuminated. Note, the period of simulated failure needs to be sufficient to check that all the luminaires are illuminated, but not such as to impose a significant drain on the batteries." So, each emergency fitting should be put into emergency mode and a visual check made that the fitting has illuminated when in emergency mode. This can be achieved in a number of ways. Some emergency fittings have a built-in switch to cut the power to the fitting, or there may be what's called a key switch nearby with a thin slit in the front for a special key to operate it. This cuts the power to the fitting and so throws it into emergency mode. It's also possible to switch the MCB supplying the fitting off, although this is not always the most practical approach as the bracketed part of the direction there says the simulated failure only needs to last as long as it takes to check the fittings are illuminated. The fittings may be some distance away from the MCB feeding them, and therefore, they could be off for longer than necessary. The next part of the instruction tells us that, "B, at the end of this test period, the supply to the normal lighting is restored, and every indicator lamp or device checked to ensure that it is showing that the normal supply has been restored." So, you put the power back on and check that the fittings are charging again as they should be and as will be indicated by the green LED. And finally, "See any faults identified and any failed lamps must be repaired or replaced immediately." With the rise of the LED as a light source, failed lamps are becoming less common, but if the fittings haven't performed as expected, they'd need to be repaired or replaced without delay. Of course, if we're using a centrally supplied system, either with batteries or a generator, then the process is a little different as outlined in indent D, "For central supply systems, correct operation of the system monitors is checked. For standby supplies to central systems such as batteries and generators, checks are made on the standby supply as recommended by the supplier. Any failure of the generators to start must be rectified immediately." So, we can really see the importance of following the supplier's instructions there. And finally, a really critical point is found in point E. "The tests and results are recorded in the logbook." So, that's all well and good for monthly tests, but, of course, the battery supplying the fittings may work for brief periods, but perhaps not for the up to three hours that's required in certain areas. To prove that the fittings will work for this period, it is essential to carry out a bigger test on an annual basis. We find guidance on this in subheading 6.9. The guidance is broadly similar to the monthly tests, but with some additional points to consider. It starts with a brief mention of self-test fittings. "Where automatic testing facilities are installed, the results of the full rated duration tests shall be recorded." Again, this fitting from ROBUS will carry out a three-hour self-test after a year of use and indicate for five days afterwards by the flashing yellow LEDs that it is either passed or failed that test. Then for manual systems, we're told to simulate the failing of the main supply to the fittings for three hours and repair or replace any fittings that don't make it. This is usually down to battery issues, but it does add this thought-provoking note. "This full duration test must be carried out when it's convenient and safe to do so. For example, over the weekend. As after the test, the emergency lighting will not be available until it has recharged." That makes sense. If you did this first thing on a Monday and got it all powered back up for lunchtime and then there was a power cut, the batteries feeding the emergency fittings may not have sufficiently recharged to do another three hours should there then be a genuine emergency and a need for them to come on. Then the direction after this point is broadly the same as the monthly test. Power the lights back up and make sure they're working and recharging as they should be. Central supply systems should have the system monitors checked. The importance of following manufacturer's instructions for checks on batteries and generators during and after the test run, and complying with the requirements of ISO 8528-12 for generating sets. This international standard covers reciprocating internal combustion engine driven alternating current generating sets, and part 12 specifically covers emergency power supply to safety services. A discussion of this is outside the scope of this document, but the IET guide does point out that it would be wise to have the annual service of a generator just before this annual emergency lighting inspection and test, which makes sense, as then the generator will be working at its best for the test. The logbook would then be filled out as previously, but then there's an additional step in indent G. "A certificate is supplied to the person ordering the work and or responsible for the safety systems of the premises when the inspection and testing are carried out by an outside body." So, if the full duration annual test is carried out by an electrical contractor, then they would need to fill in a periodic inspection and test certificate, similar to the one for testing the electrical installation. So there we go. That's how we test emergency lighting systems. For more information on ROBUS products, check out this video right here or click the link in the description below to complete our free training package on emergency lighting to help you with the CPD, and you'll receive a certificate as well. For further information on emergency lighting from RBOUS, check out their latest catalogue or get in touch with them via email on info@robust.com. All that remains in this video is to say thank you very much for watching.
+
+
+[00:00] - In this Q and A video,
+[00:01] we're going to answer the question,
+[00:02] how do I carry out periodic tests of emergency lighting?
+[00:06] Just before we explain the answer to this question,
+[00:08] please be aware that this video is one of a series
+[00:10] that we've made on the subject of emergency lighting
+[00:13] in association with ROBUS.
+[00:15] They can be viewed individually
+[00:16] or you can click the link in the description below
+[00:18] to view them as part of a free online training package
+[00:20] to help you with your CPD,
+[00:22] and you'll receive a certificate
+[00:23] to prove you've completed the course.
+[00:25] Periodic inspection and testing of emergency lighting
+[00:28] is one of those areas that contains a lot of received wisdom
+[00:31] with various aspects of it changing over the years.
+[00:34] For example, there's a persistent idea
+[00:36] that every six months,
+[00:37] the emergency lighting should be tested for half an hour
+[00:39] or an hour to make sure that it's still working.
+[00:42] Like all the best misunderstandings,
+[00:43] there is a grain of truth to it.
+[00:45] An older edition of BS 5266 from the last millennium,
+[00:49] that makes you feel old, didn't it?
+[00:50] Did contain this direction, but it was superseded
+[00:53] by later additions of this standard.
+[00:55] The "Electricians Guide to Emergency Lighting"
+[00:57] actually calls attention to this and explains clearly
+[00:59] why it's no longer required in chapter 6
+[01:02] on operation and maintenance.
+[01:04] It states really clearly,
+[01:05] "There is no requirement in BS 526
+[01:08] for a six-monthly, 30-minute test.
+[01:11] This will only reduce the life of batteries
+[01:13] and certain types of lamps."
+[01:15] So, it's not required and could actually reduce
+[01:17] the longevity of the installed fittings.
+[01:19] So, just what is required then?
+[01:21] Well, this chapter of the guide contains lots
+[01:23] of helpful information.
+[01:24] It's important to remember that there's two aspects
+[01:26] to this process, inspection and testing.
+[01:30] It's a fairly common characteristic of electricians
+[01:32] to go piling into the testing process
+[01:34] and assign inspection to a position of secondary importance,
+[01:37] or even ignore it completely.
+[01:39] But inspection is every bit as important as testing,
+[01:42] and this is confirmed for us further along in chapter 6.
+[01:45] Subheading 6.9.1 states that there should be
+[01:48] a daily visual operational check.
+[01:50] Of what exactly?
+[01:52] It states, "Visual inspection
+[01:54] of central control power supply indicators to check
+[01:56] that the system is in an operational and ready condition.
+[02:00] This does not require any testing
+[02:01] and may be a duty of security patrols, et cetera."
+[02:04] Notice that no testing is involved with this stage.
+[02:07] It's purely inspection and it should be done every day.
+[02:11] Now, the wording of this guidance
+[02:12] is really interesting as well.
+[02:13] Notice that it's only required
+[02:14] for centrally controlled emergency lighting systems,
+[02:17] not standalone fittings.
+[02:19] Why is this?
+[02:20] Well, it's one of those risk versus reality situations.
+[02:23] In a large building, there could be hundreds
+[02:25] of emergency lights spread across large areas.
+[02:28] To go around and check that the little status indicator
+[02:31] lamp on them is working every day would be like painting
+[02:33] the Forth Bridge.
+[02:34] By the time you were finished, it'd be time to start again.
+[02:36] Paying someone full time
+[02:37] to do this would not be cost-effective,
+[02:39] and compared with the chances of one failing,
+[02:42] not a massive reduction in risk.
+[02:44] There is some further direction, though, where it states,
+[02:47] "All members of staff should be encouraged
+[02:49] to report any damage they notice at any time."
+[02:52] So, a well-trained staff member working in the same area
+[02:55] regularly who understands the value of emergency lighting
+[02:57] will probably be in the best position
+[02:59] to notice if a status LED has stopped working
+[03:02] or if a fitting is damaged,
+[03:03] even if they're not on the maintenance team.
+[03:06] The value of inspection in action there.
+[03:08] But of course, that's not to minimise the value
+[03:10] of testing as well.
+[03:11] In fact, there is a monthly test required
+[03:14] for emergency lighting, and we find it
+[03:15] under subheading 6.9.2
+[03:17] monthly installation functional check.
+[03:20] It starts out with this intriguing statement,
+[03:22] "If automatic testing is incorporated, the results
+[03:25] of these automated tests must be recorded and reviewed,
+[03:28] and retained for any future inspection."
+[03:32] Some emergency light fittings and systems
+[03:34] come with an automatic self-test system.
+[03:36] This is a really clever process.
+[03:38] The details vary from manufacturer to manufacturer.
+[03:40] So let's illustrate using this simple three watt
+[03:42] bulkhead from ROBUS.
+[03:44] When it's first powered up,
+[03:45] it charges itself up for 24 hours,
+[03:47] and then it will perform a three-hour self-test
+[03:49] to check that it can maintain its light output
+[03:51] for that period of time.
+[03:53] Then it will go back into its normal operating mode
+[03:55] and charge itself up.
+[03:57] After one month, it will perform a short self-test similar
+[03:59] to the one that we're about to describe for manual testing.
+[04:02] It does this by switching internally to battery power
+[04:05] for 15 seconds.
+[04:06] If the LEDs don't work for some reason, it can tell this
+[04:08] by monitoring and measuring the circuitry inside itself.
+[04:12] So that's great, but what if you,
+[04:13] as the inspector and tester,
+[04:15] don't happen to be watching it during those 15 seconds?
+[04:18] After all, you might have a hundred of them
+[04:19] to watch at the same time.
+[04:21] Well, the light will communicate that all is well
+[04:23] by flashing a yellow LED, specifically following the pattern
+[04:26] of on for four seconds and then off for one second.
+[04:30] It does this for five days
+[04:31] and then reverts back to the usual
+[04:33] comforting green glow of an LED.
+[04:35] This five days will give you plenty of time to go around
+[04:38] and check all the fittings in a building.
+[04:40] If one of the lights detects a fault with itself,
+[04:42] it will flash the yellow LED very quickly.
+[04:44] On for 0.5 seconds and off for 0.5 seconds,
+[04:48] so you know to investigate further.
+[04:50] The self-test will also do the longer periodic test
+[04:52] that we'll discuss in a second,
+[04:53] and if you do happen to miss the flashing yellow LED
+[04:56] in those five days, you can always press the test button
+[04:59] on an individual fitting to check
+[05:00] that it's in working order.
+[05:02] However, it may be that we just have
+[05:03] standard manual test fittings.
+[05:05] In that case, the guide continues,
+[05:07] "For manual systems, the following checks
+[05:10] shall be carried out. A, by simulation of failure of the supply
+[05:13] to the normal lighting, switch on in the emergency mode
+[05:16] each luminaire and each internally illuminated sign
+[05:20] for a period sufficient only to check
+[05:22] that each lamp is illuminated.
+[05:24] Note, the period of simulated failure needs to be sufficient
+[05:27] to check that all the luminaires are illuminated,
+[05:29] but not such as to impose a significant drain
+[05:32] on the batteries."
+[05:33] So, each emergency fitting should be put into emergency mode
+[05:36] and a visual check made that the fitting has illuminated
+[05:39] when in emergency mode.
+[05:41] This can be achieved in a number of ways.
+[05:43] Some emergency fittings have a built-in switch
+[05:45] to cut the power to the fitting,
+[05:46] or there may be what's called a key switch nearby
+[05:48] with a thin slit in the front
+[05:50] for a special key to operate it.
+[05:52] This cuts the power to the fitting
+[05:53] and so throws it into emergency mode.
+[05:56] It's also possible to switch the MCB supplying
+[05:58] the fitting off, although this is not always
+[06:00] the most practical approach
+[06:01] as the bracketed part of the direction there says
+[06:03] the simulated failure only needs to last as long as it takes
+[06:06] to check the fittings are illuminated.
+[06:08] The fittings may be some distance away
+[06:10] from the MCB feeding them, and therefore,
+[06:12] they could be off for longer than necessary.
+[06:14] The next part of the instruction tells us that,
+[06:16] "B, at the end of this test period,
+[06:18] the supply to the normal lighting is restored,
+[06:21] and every indicator lamp or device checked to ensure
+[06:24] that it is showing that the normal supply
+[06:26] has been restored."
+[06:27] So, you put the power back on
+[06:28] and check that the fittings are charging again
+[06:30] as they should be and as will be indicated by the green LED.
+[06:34] And finally, "See any faults identified
+[06:37] and any failed lamps must be repaired
+[06:39] or replaced immediately."
+[06:41] With the rise of the LED as a light source,
+[06:42] failed lamps are becoming less common,
+[06:44] but if the fittings haven't performed as expected,
+[06:46] they'd need to be repaired or replaced without delay.
+[06:49] Of course, if we're using a centrally supplied system,
+[06:52] either with batteries or a generator,
+[06:53] then the process is a little different
+[06:55] as outlined in indent D,
+[06:57] "For central supply systems,
+[06:58] correct operation of the system monitors is checked.
+[07:01] For standby supplies to central systems
+[07:03] such as batteries and generators,
+[07:05] checks are made on the standby supply
+[07:07] as recommended by the supplier.
+[07:09] Any failure of the generators
+[07:10] to start must be rectified immediately."
+[07:13] So, we can really see the importance
+[07:14] of following the supplier's instructions there.
+[07:16] And finally, a really critical point is found in point E.
+[07:20] "The tests and results are recorded in the logbook."
+[07:23] So, that's all well and good for monthly tests,
+[07:26] but, of course, the battery supplying the fittings
+[07:28] may work for brief periods,
+[07:30] but perhaps not for the up to three hours
+[07:32] that's required in certain areas.
+[07:34] To prove that the fittings will work for this period,
+[07:36] it is essential to carry out a bigger test
+[07:39] on an annual basis.
+[07:40] We find guidance on this in subheading 6.9.
+[07:43] The guidance is broadly similar to the monthly tests,
+[07:46] but with some additional points to consider.
+[07:48] It starts with a brief mention of self-test fittings.
+[07:51] "Where automatic testing facilities are installed,
+[07:54] the results of the full rated duration tests
+[07:56] shall be recorded."
+[07:58] Again, this fitting from ROBUS will carry out a three-hour
+[08:00] self-test after a year of use
+[08:02] and indicate for five days afterwards
+[08:03] by the flashing yellow LEDs that it is either passed
+[08:06] or failed that test.
+[08:08] Then for manual systems, we're told to simulate the failing
+[08:11] of the main supply to the fittings for three hours
+[08:13] and repair or replace any fittings that don't make it.
+[08:17] This is usually down to battery issues,
+[08:19] but it does add this thought-provoking note.
+[08:21] "This full duration test must be carried out
+[08:23] when it's convenient and safe to do so.
+[08:25] For example, over the weekend.
+[08:27] As after the test, the emergency lighting
+[08:29] will not be available until it has recharged."
+[08:32] That makes sense.
+[08:33] If you did this first thing on a Monday
+[08:35] and got it all powered back up for lunchtime
+[08:36] and then there was a power cut,
+[08:38] the batteries feeding the emergency fittings
+[08:40] may not have sufficiently recharged
+[08:42] to do another three hours
+[08:43] should there then be a genuine emergency
+[08:45] and a need for them to come on.
+[08:47] Then the direction after this point is broadly the same
+[08:50] as the monthly test.
+[08:51] Power the lights back up and make sure they're working
+[08:54] and recharging as they should be.
+[08:56] Central supply systems should have
+[08:57] the system monitors checked.
+[08:58] The importance of following manufacturer's instructions
+[09:01] for checks on batteries and generators during
+[09:03] and after the test run, and complying with the requirements
+[09:06] of ISO 8528-12 for generating sets.
+[09:09] This international standard covers reciprocating internal
+[09:12] combustion engine driven alternating
+[09:14] current generating sets,
+[09:16] and part 12 specifically covers emergency power supply
+[09:19] to safety services.
+[09:20] A discussion of this is outside the scope of this document,
+[09:23] but the IET guide does point out that it would be wise
+[09:26] to have the annual service of a generator just before
+[09:29] this annual emergency lighting inspection and test,
+[09:32] which makes sense, as then the generator will be working
+[09:34] at its best for the test.
+[09:36] The logbook would then be filled out as previously,
+[09:39] but then there's an additional step in indent G.
+[09:42] "A certificate is supplied to the person ordering the work
+[09:44] and or responsible for the safety systems
+[09:47] of the premises when the inspection
+[09:48] and testing are carried out by an outside body."
+[09:51] So, if the full duration annual test is carried out
+[09:54] by an electrical contractor,
+[09:56] then they would need to fill in
+[09:57] a periodic inspection and test certificate,
+[09:59] similar to the one for testing the electrical installation.
+[10:02] So there we go.
+[10:03] That's how we test emergency lighting systems.
+[10:05] For more information on ROBUS products,
+[10:06] check out this video right here
+[10:08] or click the link in the description below
+[10:10] to complete our free training package on emergency lighting
+[10:13] to help you with the CPD,
+[10:14] and you'll receive a certificate as well.
+[10:16] For further information on emergency lighting from RBOUS,
+[10:19] check out their latest catalogue
+[10:20] or get in touch with them via email on info@robust.com.
+[10:23] All that remains in this video is to say
+[10:25] thank you very much for watching.

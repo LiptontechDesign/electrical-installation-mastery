@@ -1,0 +1,314 @@
+# AC Theory: How to Calculate Impedance and Construct an Impedance Triangle
+# https://www.youtube.com/watch?v=6-Q-tMZi2fo
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering the subject of AC theory and we're going to build on the information that we've looked at in previous videos the key point to this video is we're going to hopefully figure out just what impedance is and where it comes from we're already familiar with the idea of an opposition to current flow we know that that can come in the form of resistance in a resistive circuit or it can come in other forms as well we saw in a previous video that opposition to current flow in a circuit can also come from inductive reactance and capacitive reactance and that's what you get when inductors and capacitors are connected to AC supplies what we haven't mentioned so far is where impedance comes from and what impedance is well first of all it's important to know that impedance is just another form of opposition to current flow and like all the other opposition's to current flow its measured in ohms but how does this subject of opposition's to current flow all of a sudden tie in with the information that we've been looking at in the previous series of videos if you remember we drew this circuit diagram to represent pretty much what's going on inside of Rawson light fitting we measured voltages from that we produced a phasor diagram and then from that we extracted this right angle triangle that related to the sides of this right angle triangle that you can see buried in the phasor diagram so why all of a sudden that we now start to talk about opposition's to current flow well all will become clear as first of all just have a little think about this triangle here we saw that this was comprised of the voltages that we measured inside our fluorescent lighting circuit what we're going to do now is we're going to adjust this triangle not in terms of its proportions but in terms of its dimensions now at this point we're not going to worry too much about what the actual numbers are we'll look at how we can calculate impedances and reactances for in have loads and capacitive loads in future videos but what we're going to see here is an important relationship so let's just look at this first of all let's just have a think about what we can do with this triangle now each side of this triangle represents a different voltage within our fresh and light circuit this represents the voltage across the resistive part of the load this represents the voltage across the inductive part of the load and this this side here represents the total voltage that's being applied to the circuit now what if we take a voltage and we divide it by the constant current that is flowing through this circuit what happens when you do voltage divided by current well hopefully your mind is busy scrambling through Ohm's law and trying to transpose the formula but what we find is that if we transpose Ohm's law to calculate V divided by I all that's left for that to be equal to is the resistance of the circuit so V divided by I is equal to the resistance so what we're going to do is we're going to take each side of this triangle we're gonna take this whole triangle and we are going to divide it by the constant current that is flowing through the circuit so let's think about that logically if I do this if I divide each side by the same number I'm going to end up with a triangle that has the same proportions but it will be physically smaller in size now we're not going to worry about drawing this one to scale but let's get our next triangle drawn up so I'm just gonna pop this one down here below here need to leave myself some space because there is a another triangle about to appear so let's try and get this as straight as possible and draw my right angle triangle right there and then just finish it off round the corner there okay so there's our right-angled try now the key thing that we need to understand at this stage and this won't be coming important why this is so important until a little bit further down the line but if we look here this angle is still the same now that is really really important so that angle is the same as that angle which is the same as this angle which is the angle between the current flowing into the circuit and the voltage applied to the circuit it will become a little bit more apparent as time goes on exactly why that is so important but let's just turn our attention back to this triangle for a moment here we've got VR now that is the voltage that we measured across the resistive part of our thrashing like circuit so if we take the voltage and we divide it by the current flowing through that load it will tell us what value of resistance that that part of the load has so in other words if we do V divided by I for this side of the triangle we find the resistance of the resistive part of the circuit so you can see here that that will tell us what value that resistor has what about though if we take this side of the triangle the inductive voltage the voltage across the inductor if we divide that by the current flowing through it what's that going to give us well V divided by I still gives us a form of opposition to current flow but in this instance the opposition to current flow is not the resistance of the circuit it is the inductive reactance of the circuit now again if any of these terms are unfamiliar to you please go back and watch previous videos in this series that cover things like inductive reactance so if we take this voltage and divide it by the current flowing through the circuit it will tell us what the inductive reactance is and inductive reactance we know the symbol is XL so that's X with a little L in the subscript there and that is equal to the inductive reactance so that we've got inductive reactance so now we know how much opposition to current flow is being formed by the choke inside our flesh and light fitting so that brings us on to an interesting question here in previous videos we've spoken about other forms of opposition to current flow we spoke about resistance we spoke about inductive reactance we spoke about capacitive reactance so this side of the triangle tells us what the total voltage being applied to the circuit now if we take the total voltage that's being applied to the circuit and divide it by the current that's flowing into the circuit what do you think that's going to give us now at this point a lot of my learners will say capacitive reactance because it's the only type of opposition to current flow that we've not mentioned so far but there's no capacitor in the circuit so it can't be capacitive reactance and what it actually is what it turns out to be is that this long side becomes the total opposition to current flow in the circuit so just as this is the total voltage if we divide that by the current we get the total opposition to current flow inside a circuit and the total opposition to current flow inside a circuit we call impedance so here we've got the long side of this triangle represents the impedance of the circuit and hopefully you already know which letter of the alphabet we used to represent impedance we use a capital Z so Z is equal to impedance now hopefully you've already heard this word impedance before let's just break it down a little bit impedance it is something that is trying to impede something else if you try and impede something it means you try and hold it back you try and stop it from making progress very much similar to the word resist if you try and resist something you try and hold it back you try and stop it from moving forwards so likewise impedance just means another type of opposition to current flow but it means the total opposition to current flow in an AC circuit and you may well have heard this word impedance when we talk about electrical testing on sight when we talk about earth fault loop impedance and when we talk about the maxximum earth fault loop impedance and of course we know that those things can be represented with a Zed we have ze external thought loop impedance Z s total thought loop impedance so we can start to see how this applies to our electrical installation work now hopefully we can start to understand what impedance is in a little bit more detail because if you think about earth fault loop impedance what are we talking about while we're talking about the path that electricity will take under earth fault conditions we know that the electricity flows down the the CPC through the earth conductor and then down to the transformer wherever that may be and then it flows through the transformer that's feeding your property it might be feeding several properties if it's a domestic installation or maybe just one property if it's a large installation and then the current has to flow through the coil so there is a coil in the transformer which introduces inductive reactants into the circuit and then the current has to flow back down the line conductor to complete the circuit so we can see there we're talking about impedance in a circuit the total opposition to current flow because we don't just have the resistance of the conductors to worry about we've also got to think about the inductive reactance created by the transformer coil so we're starting to understand now and a little bit more depth how this applies to our electrical installation work now just as we saw before there is also a relationship between these sides of the triangle and it's very similar to what we looked at in the previous video we need Pythagoras in order to understand this what I'm going to do first of all is just draw a line under that so we understand that we're looking at a new formula here so we can see from here we've got Zed is the hypotenuse the long side of the triangle and we can see that if this holds true from a previous video we know that Z squared must be equal to R squared plus X L squared and therefore if we're interested in Z by itself we will say that Z is equal to the square root of R squared plus X L squared so let's think about that all-important exam question if you're in an exam situation you might we ask the question what is the value of impedance of a coil if it's resistance is say 3 ohms and it's inductive reactances 4 ohms so these are just numbers that I'm making up off the top of my head here and if we perform this calculation what is the square root of 3 squared plus 4 squared well actually 3 squared is 9 4 squared is 16 9 plus 16 is 25 and then if we square root 25 we find that the impedance of that coil budget giving you a quick example of will become 5 ohms and therefore that would be the answer to that question so we're starting to build up a real kind of large repertoire of formulas and calculations that we need to be able to remember the key ones takeaway from this is that Z is equal to the square root of R squared + x-l squared hopefully from this video we've gained a little bit deeper understanding of what impedance means and also how important that is to us as electricians both in our practical work and also when we're trying to learn about electrical science and pass our exams in the next video we're going to see how much more information we can get from this we're going to continue this process along and we're going to have a look at what happens now when we think about multiplying by the current so we'll get to that in the next video for this video all that remains to be said is thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to continue considering the
+[00:15] subject of AC theory and we're going to
+[00:17] build on the information that we've
+[00:19] looked at in previous videos the key
+[00:21] point to this video is we're going to
+[00:23] hopefully figure out just what impedance
+[00:26] is and where it comes from we're already
+[00:29] familiar with the idea of an opposition
+[00:30] to current flow we know that that can
+[00:32] come in the form of resistance in a
+[00:34] resistive circuit or it can come in
+[00:36] other forms as well we saw in a previous
+[00:39] video that opposition to current flow in
+[00:41] a circuit can also come from inductive
+[00:44] reactance and capacitive reactance and
+[00:48] that's what you get when inductors and
+[00:50] capacitors are connected to AC supplies
+[00:54] what we haven't mentioned so far is
+[00:56] where impedance comes from and what
+[00:58] impedance is well first of all it's
+[01:01] important to know that impedance is just
+[01:03] another form of opposition to current
+[01:05] flow and like all the other opposition's
+[01:08] to current flow its measured in ohms but
+[01:13] how does this subject of opposition's to
+[01:15] current flow all of a sudden tie in with the
+[01:17] information that we've been looking at
+[01:19] in the previous series of videos if you
+[01:21] remember we drew this circuit diagram to
+[01:23] represent pretty much what's going on
+[01:25] inside of Rawson light fitting we
+[01:27] measured voltages from that we produced
+[01:30] a phasor diagram and then from that we
+[01:32] extracted this right angle triangle that
+[01:35] related to the sides of this right angle
+[01:38] triangle that you can see buried in the
+[01:39] phasor diagram so why all of a sudden
+[01:42] that we now start to talk about
+[01:43] opposition's to current flow well all
+[01:46] will become clear as first of all just
+[01:49] have a little think about this triangle
+[01:51] here we saw that this was comprised of
+[01:53] the voltages that we measured inside our
+[01:55] fluorescent lighting circuit what we're
+[01:57] going to do now is we're going to adjust
+[02:00] this triangle not in terms of its
+[02:02] proportions but in terms of its
+[02:04] dimensions now at this point we're not
+[02:06] going to worry too much about what the
+[02:07] actual numbers are we'll look at how we
+[02:09] can calculate impedances and reactances
+[02:12] for in
+[02:13] have loads and capacitive loads in
+[02:15] future videos but what we're going to
+[02:17] see here is an important relationship so
+[02:20] let's just look at this first of all
+[02:21] let's just have a think about what we
+[02:23] can do with this triangle now each side
+[02:25] of this triangle represents a different
+[02:27] voltage within our fresh and light
+[02:29] circuit this represents the voltage
+[02:31] across the resistive part of the load
+[02:33] this represents the voltage across the
+[02:37] inductive part of the load and this this
+[02:40] side here represents the total voltage
+[02:43] that's being applied to the circuit now
+[02:46] what if we take a voltage and we divide
+[02:50] it by the constant current that is
+[02:52] flowing through this circuit what
+[02:55] happens when you do voltage divided by
+[02:57] current well hopefully your mind is busy
+[03:00] scrambling through Ohm's law and trying
+[03:02] to transpose the formula but what we
+[03:05] find is that if we transpose Ohm's law
+[03:07] to calculate V divided by I all that's
+[03:11] left for that to be equal to is the
+[03:13] resistance of the circuit so V divided
+[03:17] by I is equal to the resistance so what
+[03:20] we're going to do is we're going to take
+[03:21] each side of this triangle we're gonna
+[03:23] take this whole triangle and we are
+[03:26] going to divide it by the constant
+[03:30] current that is flowing through the
+[03:32] circuit so let's think about that
+[03:34] logically
+[03:35] if I do this if I divide each side by
+[03:38] the same number I'm going to end up with
+[03:40] a triangle that has the same proportions
+[03:42] but it will be physically smaller in
+[03:45] size now we're not going to worry about
+[03:47] drawing this one to scale but let's get
+[03:49] our next triangle drawn up so I'm just
+[03:52] gonna pop this one down here below here
+[03:55] need to leave myself some space because
+[03:57] there is a another triangle about to
+[03:59] appear so let's try and get this as
+[04:02] straight as possible and draw my right
+[04:10] angle triangle right there and then just
+[04:14] finish it off round the corner there
+[04:17] okay so there's our right-angled try
+[04:21] now the key thing that we need to
+[04:25] understand at this stage and this won't
+[04:27] be coming important why this is so
+[04:29] important until a little bit further
+[04:31] down the line but if we look here this
+[04:33] angle is still the same now that is
+[04:37] really really important so that angle is
+[04:39] the same as that angle which is the same
+[04:42] as this angle which is the angle between
+[04:43] the current flowing into the circuit and
+[04:45] the voltage applied to the circuit it
+[04:49] will become a little bit more apparent
+[04:50] as time goes on exactly why that is so
+[04:53] important but let's just turn our
+[04:55] attention back to this triangle for a
+[04:57] moment here we've got VR now that is the
+[05:00] voltage that we measured across the
+[05:02] resistive part of our thrashing like
+[05:03] circuit so if we take the voltage and we
+[05:07] divide it by the current flowing through
+[05:08] that load it will tell us what value of
+[05:12] resistance that that part of the load
+[05:14] has so in other words if we do V divided
+[05:17] by I for this side of the triangle we
+[05:20] find the resistance of the resistive
+[05:24] part of the circuit so you can see here
+[05:26] that that will tell us what value that
+[05:28] resistor has what about though if we
+[05:32] take this side of the triangle the
+[05:35] inductive voltage the voltage across the
+[05:37] inductor if we divide that by the
+[05:40] current flowing through it what's that
+[05:42] going to give us well V divided by I
+[05:45] still gives us a form of opposition to
+[05:48] current flow but in this instance the
+[05:51] opposition to current flow is not the
+[05:53] resistance of the circuit it is the
+[05:56] inductive reactance of the circuit now
+[06:00] again if any of these terms are
+[06:02] unfamiliar to you please go back and
+[06:03] watch previous videos in this series
+[06:05] that cover things like inductive
+[06:08] reactance so if we take this voltage and
+[06:11] divide it by the current flowing through
+[06:12] the circuit it will tell us what the
+[06:15] inductive reactance is and inductive
+[06:17] reactance we know the symbol is XL so
+[06:20] that's X with a little L in the
+[06:22] subscript there and that is equal to the
+[06:25] inductive reactance so that we've got
+[06:29] inductive reactance so now we know how
+[06:33] much
+[06:34] opposition to current flow is being
+[06:35] formed by the choke inside our flesh and
+[06:38] light fitting so that brings us on to an
+[06:42] interesting question here in previous
+[06:44] videos we've spoken about other forms of
+[06:46] opposition to current flow we spoke
+[06:48] about resistance we spoke about
+[06:50] inductive reactance we spoke about
+[06:52] capacitive reactance so this side of the
+[06:55] triangle tells us what the total voltage
+[06:58] being applied to the circuit now if we
+[07:02] take the total voltage that's being
+[07:04] applied to the circuit and divide it by
+[07:06] the current that's flowing into the
+[07:07] circuit what do you think that's going
+[07:09] to give us now at this point a lot of my
+[07:12] learners will say capacitive reactance
+[07:14] because it's the only type of opposition
+[07:15] to current flow that we've not mentioned
+[07:16] so far but there's no capacitor in the
+[07:19] circuit so it can't be capacitive
+[07:20] reactance and what it actually is what
+[07:23] it turns out to be is that this long
+[07:25] side becomes the total opposition to
+[07:29] current flow in the circuit so just as
+[07:32] this is the total voltage if we divide
+[07:34] that by the current we get the total
+[07:38] opposition to current flow inside a
+[07:40] circuit and the total opposition to
+[07:43] current flow inside a circuit we call
+[07:45] impedance so here we've got the long
+[07:49] side of this triangle represents the
+[07:52] impedance of the circuit and hopefully
+[07:56] you already know which letter of the
+[07:58] alphabet we used to represent impedance
+[07:59] we use a capital Z so Z is equal to
+[08:05] impedance now hopefully you've already
+[08:08] heard this word impedance before let's
+[08:10] just break it down a little bit
+[08:12] impedance it is something that is trying
+[08:13] to impede something else if you try and
+[08:16] impede something it means you try and
+[08:17] hold it back you try and stop it
+[08:19] from making progress very much similar
+[08:21] to the word resist if you try and resist
+[08:23] something you try and hold it back you
+[08:26] try and stop it from moving forwards so
+[08:28] likewise impedance just means another
+[08:31] type of opposition to current flow but
+[08:33] it means the total opposition to current
+[08:35] flow in an AC circuit and you may well
+[08:39] have heard this word impedance when we
+[08:40] talk about electrical testing on sight
+[08:42] when we talk about earth fault loop
+[08:45] impedance and when we talk about the
+[08:48] maxximum earth fault loop impedance and
+[08:51] of course we know that those things can
+[08:53] be represented with a Zed we have ze
+[08:56] external thought loop impedance Z s
+[08:58] total thought loop impedance so we can
+[09:02] start to see how this applies to our
+[09:04] electrical installation work now
+[09:07] hopefully we can start to understand
+[09:08] what impedance is in a little bit more
+[09:11] detail because if you think about earth
+[09:12] fault loop impedance what are we talking
+[09:15] about while we're talking about the path
+[09:17] that electricity will take under earth
+[09:18] fault conditions we know that the
+[09:20] electricity flows down the the CPC
+[09:24] through the earth conductor and then
+[09:26] down to the transformer wherever that
+[09:28] may be and then it flows through the
+[09:30] transformer that's feeding your property
+[09:32] it might be feeding several properties
+[09:33] if it's a domestic installation or maybe
+[09:35] just one property if it's a large
+[09:36] installation and then the current has to
+[09:39] flow through the coil so there is a coil
+[09:41] in the transformer which introduces
+[09:43] inductive reactants into the circuit and
+[09:46] then the current has to flow back down
+[09:47] the line conductor to complete the
+[09:49] circuit so we can see there we're
+[09:51] talking about impedance in a circuit the
+[09:54] total opposition to current flow because
+[09:56] we don't just have the resistance of the
+[09:58] conductors to worry about we've also got
+[10:00] to think about the inductive reactance
+[10:01] created by the transformer coil so we're
+[10:05] starting to understand now and a little
+[10:06] bit more depth how this applies to our
+[10:10] electrical installation work now just as
+[10:13] we saw before there is also a
+[10:15] relationship between these sides of the
+[10:18] triangle and it's very similar to what
+[10:19] we looked at in the previous video we
+[10:21] need Pythagoras in order to understand
+[10:23] this what I'm going to do first of all
+[10:25] is just draw a line under that so we
+[10:26] understand that we're looking at a new
+[10:28] formula here so we can see from here
+[10:31] we've got Zed is the hypotenuse the long
+[10:33] side of the triangle and we can see that
+[10:36] if this holds true from a previous video
+[10:39] we know that Z squared must be equal to
+[10:42] R squared plus X L squared and therefore
+[10:47] if we're interested in Z by itself we
+[10:50] will say that Z is equal to the square
+[10:52] root of R squared plus X L squared so
+[10:57] let's think about that all-important
+[10:58] exam question if you're in an exam
+[11:00] situation you might
+[11:01] we ask the question what is the value of
+[11:04] impedance of a coil if it's resistance
+[11:07] is say 3 ohms and it's inductive
+[11:09] reactances 4 ohms so these are just
+[11:12] numbers that I'm making up off the top
+[11:13] of my head here and if we perform this
+[11:15] calculation what is the square root of 3
+[11:18] squared plus 4 squared
+[11:20] well actually 3 squared is 9 4 squared
+[11:23] is 16 9 plus 16 is 25 and then if we
+[11:28] square root 25 we find that the
+[11:30] impedance of that coil budget giving you
+[11:33] a quick example of will become 5 ohms
+[11:37] and therefore that would be the answer
+[11:38] to that question so we're starting to
+[11:41] build up a real kind of large repertoire
+[11:44] of formulas and calculations that we
+[11:47] need to be able to remember the key ones
+[11:49] takeaway from this is that Z is equal to
+[11:52] the square root of R squared + x-l
+[11:54] squared
+[11:55] hopefully from this video we've gained a
+[11:56] little bit deeper understanding of what
+[11:58] impedance means and also how important
+[12:00] that is to us as electricians both in
+[12:03] our practical work and also when we're
+[12:05] trying to learn about electrical science
+[12:07] and pass our exams in the next video
+[12:10] we're going to see how much more
+[12:11] information we can get from this we're
+[12:13] going to continue this process along and
+[12:15] we're going to have a look at what
+[12:16] happens now when we think about
+[12:17] multiplying by the current so we'll get
+[12:20] to that in the next video for this video
+[12:22] all that remains to be said is thank you
+[12:24] very much for watching
+[12:28] [Music]
+[12:41] [Music]
+[12:47] [Music]

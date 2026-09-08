@@ -1,0 +1,191 @@
+# Automatic Disconnection of Supply Explain - ADS
+# https://www.youtube.com/watch?v=SmUUKo22MKE
+
+so in this presentation we're going to look at the requirements for ADS automatic disconnection of supply it is not acceptable to have a fault in circuit that remains there for an extended period of time as there is a rise of risk of electric shock fire and explosions in the event of a fault we expect the circuit with the faulted it to automatically disconnect leaving all other circuits that are healthy obviously energized and still working in order for this to happen ads has to be in place and we're going to look at the requirements for ADS on this rig this rig is simulating an earthing arrangement which is TN-C-S and we're going to look at the conductors and how they are connected in order to comply with ADS we will also add in the IP ratings of electrical enclosures and talk about exposed and extraneous parts in order for ADS to apply we're go to look at the Main's end so we've simulated here our main's end and we've got our meter tails coming in from our cutout our cutout in this case has a 100 amp in it that could be 60 or 80 so the supply authorities have provided us this time with a 100 amp single phase cut out the 25 mm squared tails are in place it's a TN-C-S earthing Arrangement so the tails are 25 mm squared coming in from the supply Authority meter tails coming out from the meter are also 25 mm squared an entire consumer unit we have the green and yellow conductor from The supply Authority this one here is the earthing conductor and is 16 mm squared the 16 mm squared earthing conductor goes into in this case our main Earth terminal MET some installations don't have an MET and this 16 mil earthing conductor would come from the supply authorities directly into our Earth bar but in this instance and a lot of awarding bodies such as sitting guilds and EAL love to have an external MET main Earth terminal so our 16 mm2 Earth conductor comes in it's terminated into our main earthing terminal we go out into our consumer units again with an earthing conductor sized 16 mm squared so this conductor for all intents and purposes the same conductor is an earthing conductor in this installation from the MET we've got our protective bonding conductors which would go off around the installation to connect to gas water and oil in this case we've simulated the termination at a metallic water pipe and a metallic gas pipe the protective bonding conductors are 10 mm squared in size as a rule of thumb in a domestic this is unlikely never to be bigger than 10 mm squared and we size it off our incoming tails but it's worth bearing in mind if in a domestic dwelling the gas water oil Etc is more than 27 M away from the in this case main earthing terminal it needs to be increased in size very few domestic dwellings would have a water gas or oil pipe greater than 27 M our default position at college is that we have obviously 25 mm squared meter tails in domestic dwelling our earthing conductor is 16 mm squared and our protected bonding conductor is 10 mm squared as we move into industry and the incoming supply cable is far greater these conductors increase dramatically in size this is 100 amp domestic dwelling that we're simulating to our conductor sizes out 25 16 and 10 mm squared the protective bonding conductors in this case we're simulating going to gas and water are terminated it's difficult to see on here they have to be terminated with the clamp that says on their safety electrical connection do not remove has to be terminated within 600 mm of the incoming point so in other words consumer side so after a water stop tap after the gas meter within 600 mil of enter in that installation however if there is a Tee piece and they call it a branch in the regulations if there is a Tee piece in either gas or water pipe the clamp must be made before that if it is obviously under 600 mil so it's within 600 mil or before the first branch in order that we make these two connections there's oil obviously same principle applies so our protective bonding conductor in 10 mm squared goes off and connects to our gas and water pipes which are metallic in this case within 600 mil consumer side in the installation in the event of there being a fault to the metallic water pipe or metallic gas pipe we expect the circuit to disconnect we do not expect the voltage between bonded metal work to rise above 50 volts AC we expect automatic disconnection to occur as we rise up to that 50 volt value 50 volts is the touch voltage AC the point of which it starts to feel it as a human being it starts become uncomfortable we wouldn't want a voltage to appear in our pipe work so therefore once we're approaching that value we expect the circuit automatically disconnect what we also wouldn't want to do is if we had adjacent pipe work next to each other one of them being at zero volts potential and one of them being let's say 30 or 40 volts potential if the pipe work was close enough together what you create is an arc between the two pipe works and that arc if it was coming from the water pipe to The Gas Pipe could burn or mark away at the pipe causing it to eventually to rupture obviously the arc would then create a fire and also an explosion against the gas so remember ADS is trying to reduce the risk of three things shock fire and explosions so we bond our metal pipe work in order that we keep it at the same potential we wouldn't want that potential to rise above 50 volts AC but let's clarify that if this pipe here had a voltage in it say up to 50 volts and this pipe here was at zero volts potential and they were very close together there is a great chance that the voltage that appears here in the water pipe would make its way jump across the an arc onto the gas pipe eventually that arc could burn its way through the copper and then eventually ignite the gas within it so therefore not only when there's a voltage appears in a pipe there's a risk of electric shock if we create an arc the arc can cause a fire and if the arc goes to something that's highly flammable it's just as gas if it burns its way through obvious there's a massive risk of explosions so in order to reduce the risk of shock fire and explosions we must make sure that all bonded metal work is at the same potential in order to for ADS to apply we need the appropriate fuses in the appropriate places already suggested that the fuse here in the incoming cutout is 100 amps it could be 80 or it could be 60 we' got 100 amp cutout fuse 25 mil tails 16 mil earthing conductor into our consumer unit before entering I'm to confirm the IP rating IP stands for index of protection or International protection both of those can come up in our exam both for IP and what it stands for so we want the IP rate of this electrical enclosure and all electrical enclosures to follow the following rules the top surface of any electrical enclosure consumer unit cooker switch socket outlet must be IP4X in other words objects exceeding 1 mm cannot enter the top of any electrical enclosure what we're trying to do is prevent dust falling into the top of electrical enclosure and then building up so the IP rating of the top of all electrical enclosures must be IP4X the remainder so the sides and bottom sides and bottom of an electric enclosure must be IP2X objects exceeding 12 mm cannot enter that electrical enclosure what it's really suggesting for IP2X is that we cannot stick our index finger into the electrical enclosure includes the front surface as well so as we open up we can see the blanks are in place meaning that I cannot push my finger into any part of this electrical enclosure meaning the front surface also is IP2X we'll expand this knowledge as we move forward and we'll start calling IPXXB we'll distinguish the length of the finger and the width to be 80 mil long and 12 mil wide that can also not enter the electrical enclosure for the time being where we are in our studies to remember IP index of protection or International protection top surface is IP4X objects exceeding 1 mil cannot enter the sides bottom front are IP2X in order we apply to ADS all the circuits within the installation also automatically disconnect in the event of a fault so when we open up our consumer unit we can see we've got individual overcurrent protection devices in this case in the form of circuit breakers the main switch here is a linked main switch or double pole switch but will simultaneously turn off both live conductors when we operate the main switch it will turn off both line and neutral simultaneous at the same time to isolate the distribution board our individual overcurrent protection devices go off to feed cooker sockets lights and that the installation and need to be sized correctly often the lighting circuit is fused at 6 amps a ring final circuit at 32 a cooker circuit at 32 these overcurrent protection devices also have maximum disconnection times in the event of a fault the rule currently is circuits up to an including 32 amps must disconnect within 0.4 of a second circuits over 32 amps have a maximum disconnection time of 5 seconds so we've looked at the first conductor and protective bonding conductor also remember part of the earth family for ADS will be the individual circuit protective conductor cpc's that will go around the circuit to each individual accessory so they've got the cpc's in place as well so in the event of there being a fault in circuit potentially the cpc could become live and obviously disconnect the circuit and we expect all disconnection times to fall within either 0.4 or 5 seconds depending on the size of the actual device itself as we look at our lighting circuit we can see that switches and in this case batten lamp holders are all insulated so they're all plastic so in this case a cpc is actually connected within there actually not serving any purpose at the moment so I've got a cpc connecting hidden here but it's not serving any purpose however this can be changed or the switch can be changed for a metallic one that is an exposed conductive part or exposed conductive parts need connecting to the cpc in the event of an exposed conductive part becoming live we expect the circuit to automatically disconnect in order to reduce the risk of three things stated earlier shock fire and explosions so there is a cpc inside the switch as a cpc inside my batten lamp holder they're waiting for the fact that it could be changed for an exposed conductive part the socket outlet on this part of the circuit is metallic so they are exposed conductive parts so as well as being terminated into the actual termination in the socket outlet back so the the pin here at the front can be an earth pin that also is earthing the back box and front plate because these are exposed conductive parts in the event of this socket outlet that coming live it would be unreasonable for somebody to walk up and touch it and receive electric shock we expect the circuit to automatically disconnect before that happens under ADS it would so in the event of this exposed conductive part becoming live it would automatically disconnect the overcurrent protection device within the consumer unit within the specified time for a socket circuit on a ring final circuit fuse at 32 amps it will disconnect within a maximum of 0.4 seconds in order to reduce the risk of three things shock fire and explosions so with ADS in place in other words we've got the appropriate size fuse coming in at the incoming point and appropriate size fuses within the consumer unit we've got our earthing conductor in place and size correctly our protective bonding conductors if required off to our gas water or oil Etc and we've got our circuit protective conductor coming round ADS is in place but we can additionally protect the circuits and that's common place now in domestic dwellings is that additional protection will be offered by an RCD a residual current device rated at 30 milliamps or less that we have an RCD here and an RCD here and that's a split board so this RCD here rated of 30 milliamps protects a number of circuits going this way and this RCD here protects a number of circuits going that way so they have additional protection the RCD rated at 30 milliamps offers additional protection additional protection is required for socket outlets she a 13 amp socket outlet and currently in the regulations it says socket outlets up to 32 amps it isn't the rated value of the breaker this ring final circuit may be rated at 32 amps it's the rated value of the socket Outlet itself these are 13 amp socket outlets all socket outlets in the domestic dwelling are going to require additional protection by an RCD rated at 30 milliamps other additional protection will be required where cables are running stud walls so again if you've got lighting circuits cooker circuits Etc all running stud walls with no further protection additional protection would be required if you're not burying cables in the wall a depth of 50 mil or greater those circuits will need additional protection you can get round additional protection by an RCD by installing cable systems in a domestic dwelling such as steel wire armored mineral insulated in other words a wiring system with a metallic earth sheath would need to be wired like that rather than putting an additional protection via an RCD industry has deemed it's easier to additionally protect circuits in a domestic dwelling by an RCD rate of 30 mill amp and less rather than try and get around that in some instances we can't get around it socket outlets we can't they have to be additionally protected by an RCD because the socket outlet can be plugged inside and the lead taken outside so therefore all socket outlets need additional protection by an RCD also all circuits in a bathroom need additional protection by an RCD rated of 30 milliamps or less doesn't leave many circuits left in the house where we would for instance wire and steel armored to prevent additional protection or bury those cables 50 mil or greater in a wall the reason being we don't want someone to inadvertently screw into nail into cables that are buried in the wall creating a fault so to overcome that we either have to have an earth metal sheath such as steel armored or an MI cable would provide bury at 50 mil deep so we believe that they wouldn't be damaged in in vertically by somebody hanging a picture on the wall and hammering a nail in industry doesn't go down that route industry goes down the route domestically of additional protection for all circuits offered by an RCD rate of 30 milliamps or below so in order to comply to ADS we need the appropriate conductors from earthing conductor protective bonding conductor and the cpc's around the circuit are in place we need the appropriate overcurrent protection device for each circuit so in other words the fuse to be rated correctly we may offer additional protection for circuits which is very common place in domestic dwellings additional protections offered by an RCD rated at 30 milliamps or below we wouldn't want all circuits to disconnect at the same time so we either put several RCCB's in or we use RCBO's and we'll discuss that in a later presentation we know that exposed conductive parts such as metalclad sockets metallic light fittings metallic switches need to be connected to the circuit protective conductor so you think been coming live that they disconnect the circuit within the maximum times of either 0.4 four or 5 Seconds we've also got metallic water and gas pipes here which are extraneous conductive parts and again in the event of one of these becoming live we need to make sure the circuit disconnects we do not want the voltage between bonded parts to rise above 50 again we're trying to reduce the risk of three things being shock far and explosions we've also added in the fact that the IP rating the top of any electric enclosure must be IP4X object exceeding 1 mm cannot enter in other words dust really primarily and the rest being the side the bottom and the other side in front must have an IP rating of at least IP2X in real terms we cannot stick our index finger into those electrical enclosures we look to have active selectivity between our devices 100 amp incoming fuse for me here the rule of thumb is that if we move further downstream that we have devices a ratio of roughly 2:1 so if we've got a 100 amp fuse here in this installation the largest fuse in here is 32 amps or 40 amps perhaps circuit breaker feeding another circuit so you automatically got a ratio of 2 to1 moving for forward that's what we're going to be looking at in the set of notes on on fuses as well we'll look at the selectivity between devices but a good rule of thumb is two to one so as we move through so if you think the 32 amp ring final circuit fuse feeds a 13 amp socket the largest fuse inside the plug top is 13 amps again you've achieved that 2 to one or greater than ratio as a rule of thumb between fuses so in the event of plugging something in with a fault it should disconnect the plug top fuse and not disconnect the whole circuit by disconnecting the uh circuit breaker unless it's an earth fault and there's a good chance the RCD would have operated in that case so that's a little whistle top tour of ads and we've introduced IP ratings we've introduced extraneous conductive parts being non-electrical at metal such as the water pipe the gas pipe and the oil pipe we've introduced exposed conductive Parts metallic electrical so motor would be an exposed conductive part the oven would be an exposed conductive part metalclad socket metal light fit with be exposed conductive Parts I hope this one's been some help
+
+
+[00:00] so in this presentation we're going to look at the requirements for ADS automatic disconnection
+[00:04] of supply it is not acceptable to have a fault in circuit that remains there for an extended
+[00:10] period of time as there is a rise of risk of electric shock fire and explosions in the event
+[00:16] of a fault we expect the circuit with the faulted it to automatically disconnect leaving all other
+[00:22] circuits that are healthy obviously energized and still working in order for this to happen
+[00:27] ads has to be in place and we're going to look at the requirements for ADS on this rig this rig
+[00:32] is simulating an earthing arrangement which is TN-C-S and we're going to look at the conductors
+[00:39] and how they are connected in order to comply with ADS we will also add in the IP ratings of
+[00:44] electrical enclosures and talk about exposed and extraneous parts in order for ADS to apply we're
+[00:49] go to look at the Main's end so we've simulated here our main's end and we've got our meter tails
+[00:55] coming in from our cutout our cutout in this case has a 100 amp in it that could be 60 or 80 so the
+[01:02] supply authorities have provided us this time with a 100 amp single phase cut out the 25 mm
+[01:10] squared tails are in place it's a TN-C-S earthing Arrangement so the tails are 25 mm squared coming
+[01:17] in from the supply Authority meter tails coming out from the meter are also 25 mm squared an
+[01:23] entire consumer unit we have the green and yellow conductor from The supply Authority this one here
+[01:29] is the earthing conductor and is 16 mm squared the 16 mm squared earthing conductor goes into
+[01:37] in this case our main Earth terminal MET some installations don't have an MET and this 16 mil
+[01:44] earthing conductor would come from the supply authorities directly into our Earth bar but
+[01:50] in this instance and a lot of awarding bodies such as sitting guilds and EAL love to have an
+[01:55] external MET main Earth terminal so our 16 mm2 Earth conductor comes in it's terminated into
+[02:02] our main earthing terminal we go out into our consumer units again with an earthing conductor
+[02:08] sized 16 mm squared so this conductor for all intents and purposes the same conductor is an
+[02:14] earthing conductor in this installation from the MET we've got our protective bonding conductors
+[02:22] which would go off around the installation to connect to gas water and oil in this case we've
+[02:27] simulated the termination at a metallic water pipe and a metallic gas pipe the protective bonding
+[02:34] conductors are 10 mm squared in size as a rule of thumb in a domestic this is unlikely never to be
+[02:41] bigger than 10 mm squared and we size it off our incoming tails but it's worth bearing in mind if
+[02:47] in a domestic dwelling the gas water oil Etc is more than 27 M away from the in this case main
+[02:54] earthing terminal it needs to be increased in size very few domestic dwellings would have a water gas
+[03:00] or oil pipe greater than 27 M our default position at college is that we have obviously 25 mm squared
+[03:07] meter tails in domestic dwelling our earthing conductor is 16 mm squared and our protected
+[03:12] bonding conductor is 10 mm squared as we move into industry and the incoming supply cable is far
+[03:19] greater these conductors increase dramatically in size this is 100 amp domestic dwelling that we're
+[03:25] simulating to our conductor sizes out 25 16 and 10 mm squared the protective bonding conductors in
+[03:32] this case we're simulating going to gas and water are terminated it's difficult to see on here they
+[03:38] have to be terminated with the clamp that says on their safety electrical connection do not
+[03:43] remove has to be terminated within 600 mm of the incoming point so in other words consumer side so
+[03:50] after a water stop tap after the gas meter within 600 mil of enter in that installation however if
+[03:57] there is a Tee piece and they call it a branch in the regulations if there is a Tee piece in
+[04:02] either gas or water pipe the clamp must be made before that if it is obviously under 600 mil so
+[04:09] it's within 600 mil or before the first branch in order that we make these two connections
+[04:15] there's oil obviously same principle applies so our protective bonding conductor in 10 mm
+[04:19] squared goes off and connects to our gas and water pipes which are metallic in this case within 600
+[04:25] mil consumer side in the installation in the event of there being a fault to the metallic
+[04:31] water pipe or metallic gas pipe we expect the circuit to disconnect we do not expect the
+[04:37] voltage between bonded metal work to rise above 50 volts AC we expect automatic disconnection
+[04:44] to occur as we rise up to that 50 volt value 50 volts is the touch voltage AC the point of
+[04:50] which it starts to feel it as a human being it starts become uncomfortable we wouldn't want a
+[04:54] voltage to appear in our pipe work so therefore once we're approaching that value we expect the
+[04:59] circuit automatically disconnect what we also wouldn't want to do is if we had adjacent pipe
+[05:04] work next to each other one of them being at zero volts potential and one of them being let's say 30
+[05:10] or 40 volts potential if the pipe work was close enough together what you create is an arc between
+[05:16] the two pipe works and that arc if it was coming from the water pipe to The Gas Pipe could burn or
+[05:21] mark away at the pipe causing it to eventually to rupture obviously the arc would then create
+[05:27] a fire and also an explosion against the gas so remember ADS is trying to reduce the risk of three
+[05:32] things shock fire and explosions so we bond our metal pipe work in order that we keep it at the
+[05:38] same potential we wouldn't want that potential to rise above 50 volts AC but let's clarify that
+[05:44] if this pipe here had a voltage in it say up to 50 volts and this pipe here was at zero volts
+[05:50] potential and they were very close together there is a great chance that the voltage that appears
+[05:56] here in the water pipe would make its way jump across the an arc onto the gas pipe eventually
+[06:02] that arc could burn its way through the copper and then eventually ignite the gas within it so
+[06:07] therefore not only when there's a voltage appears in a pipe there's a risk of electric shock if we
+[06:12] create an arc the arc can cause a fire and if the arc goes to something that's highly flammable it's
+[06:17] just as gas if it burns its way through obvious there's a massive risk of explosions so in order
+[06:21] to reduce the risk of shock fire and explosions we must make sure that all bonded metal work is
+[06:26] at the same potential in order to for ADS to apply we need the appropriate fuses in the appropriate
+[06:33] places already suggested that the fuse here in the incoming cutout is 100 amps it could be 80 or
+[06:38] it could be 60 we' got 100 amp cutout fuse 25 mil tails 16 mil earthing conductor into our consumer
+[06:46] unit before entering I'm to confirm the IP rating IP stands for index of protection or International
+[06:53] protection both of those can come up in our exam both for IP and what it stands for so we
+[06:58] want the IP rate of this electrical enclosure and all electrical enclosures to follow the following
+[07:03] rules the top surface of any electrical enclosure consumer unit cooker switch socket outlet must be
+[07:10] IP4X in other words objects exceeding 1 mm cannot enter the top of any electrical enclosure what
+[07:17] we're trying to do is prevent dust falling into the top of electrical enclosure and then building
+[07:22] up so the IP rating of the top of all electrical enclosures must be IP4X the remainder so the
+[07:28] sides and bottom sides and bottom of an electric enclosure must be IP2X objects exceeding 12 mm
+[07:37] cannot enter that electrical enclosure what it's really suggesting for IP2X is that we cannot stick
+[07:42] our index finger into the electrical enclosure includes the front surface as well so as we
+[07:47] open up we can see the blanks are in place meaning that I cannot push my finger into any part of this
+[07:53] electrical enclosure meaning the front surface also is IP2X we'll expand this knowledge as we
+[07:59] move forward and we'll start calling IPXXB we'll distinguish the length of the finger and the width
+[08:05] to be 80 mil long and 12 mil wide that can also not enter the electrical enclosure for the time
+[08:11] being where we are in our studies to remember IP index of protection or International protection
+[08:17] top surface is IP4X objects exceeding 1 mil cannot enter the sides bottom front are IP2X
+[08:25] in order we apply to ADS all the circuits within the installation also automatically disconnect
+[08:31] in the event of a fault so when we open up our consumer unit we can see we've got individual
+[08:36] overcurrent protection devices in this case in the form of circuit breakers the main switch here
+[08:42] is a linked main switch or double pole switch but will simultaneously turn off both live conductors
+[08:50] when we operate the main switch it will turn off both line and neutral simultaneous at the
+[08:55] same time to isolate the distribution board our individual overcurrent protection devices
+[08:59] go off to feed cooker sockets lights and that the installation and need to be sized correctly
+[09:06] often the lighting circuit is fused at 6 amps a ring final circuit at 32 a cooker circuit at
+[09:10] 32 these overcurrent protection devices also have maximum disconnection times in the event
+[09:16] of a fault the rule currently is circuits up to an including 32 amps must disconnect within 0.4
+[09:22] of a second circuits over 32 amps have a maximum disconnection time of 5 seconds so we've looked
+[09:28] at the first conductor and protective bonding conductor also remember part of the earth family
+[09:33] for ADS will be the individual circuit protective conductor cpc's that will go around the circuit
+[09:40] to each individual accessory so they've got the cpc's in place as well so in the event of there
+[09:46] being a fault in circuit potentially the cpc could become live and obviously disconnect the circuit
+[09:51] and we expect all disconnection times to fall within either 0.4 or 5 seconds depending on the
+[09:55] size of the actual device itself as we look at our lighting circuit we can see that switches and in
+[10:00] this case batten lamp holders are all insulated so they're all plastic so in this case a cpc
+[10:05] is actually connected within there actually not serving any purpose at the moment so I've got a
+[10:12] cpc connecting hidden here but it's not serving any purpose however this can be changed or the
+[10:18] switch can be changed for a metallic one that is an exposed conductive part or exposed conductive
+[10:23] parts need connecting to the cpc in the event of an exposed conductive part becoming live we
+[10:28] expect the circuit to automatically disconnect in order to reduce the risk of three things stated
+[10:32] earlier shock fire and explosions so there is a cpc inside the switch as a cpc inside my batten
+[10:38] lamp holder they're waiting for the fact that it could be changed for an exposed conductive
+[10:43] part the socket outlet on this part of the circuit is metallic so they are exposed conductive parts
+[10:48] so as well as being terminated into the actual termination in the socket outlet back so the the
+[10:53] pin here at the front can be an earth pin that also is earthing the back box and front plate
+[10:58] because these are exposed conductive parts in the event of this socket outlet that coming live it
+[11:03] would be unreasonable for somebody to walk up and touch it and receive electric shock we expect the
+[11:08] circuit to automatically disconnect before that happens under ADS it would so in the event of
+[11:13] this exposed conductive part becoming live it would automatically disconnect the overcurrent
+[11:17] protection device within the consumer unit within the specified time for a socket circuit on a ring
+[11:23] final circuit fuse at 32 amps it will disconnect within a maximum of 0.4 seconds in order to
+[11:28] reduce the risk of three things shock fire and explosions so with ADS in place in other words
+[11:33] we've got the appropriate size fuse coming in at the incoming point and appropriate size
+[11:37] fuses within the consumer unit we've got our earthing conductor in place and size correctly
+[11:42] our protective bonding conductors if required off to our gas water or oil Etc and we've got
+[11:47] our circuit protective conductor coming round ADS is in place but we can additionally protect the
+[11:51] circuits and that's common place now in domestic dwellings is that additional protection will be
+[11:56] offered by an RCD a residual current device rated at 30 milliamps or less that we have an
+[12:03] RCD here and an RCD here and that's a split board so this RCD here rated of 30 milliamps protects a
+[12:10] number of circuits going this way and this RCD here protects a number of circuits going that
+[12:15] way so they have additional protection the RCD rated at 30 milliamps offers additional
+[12:20] protection additional protection is required for socket outlets she a 13 amp socket outlet
+[12:26] and currently in the regulations it says socket outlets up to 32 amps it isn't the rated value of
+[12:31] the breaker this ring final circuit may be rated at 32 amps it's the rated value of the socket
+[12:37] Outlet itself these are 13 amp socket outlets all socket outlets in the domestic dwelling are
+[12:42] going to require additional protection by an RCD rated at 30 milliamps other additional protection
+[12:47] will be required where cables are running stud walls so again if you've got lighting circuits
+[12:53] cooker circuits Etc all running stud walls with no further protection additional protection would
+[12:59] be required if you're not burying cables in the wall a depth of 50 mil or greater those
+[13:04] circuits will need additional protection you can get round additional protection by an RCD by
+[13:10] installing cable systems in a domestic dwelling such as steel wire armored mineral insulated in
+[13:15] other words a wiring system with a metallic earth sheath would need to be wired like that rather
+[13:20] than putting an additional protection via an RCD industry has deemed it's easier to additionally
+[13:26] protect circuits in a domestic dwelling by an RCD rate of 30 mill amp and less rather than try and
+[13:31] get around that in some instances we can't get around it socket outlets we can't they have to
+[13:36] be additionally protected by an RCD because the socket outlet can be plugged inside and the lead
+[13:42] taken outside so therefore all socket outlets need additional protection by an RCD also all circuits
+[13:47] in a bathroom need additional protection by an RCD rated of 30 milliamps or less doesn't leave
+[13:52] many circuits left in the house where we would for instance wire and steel armored to prevent
+[13:57] additional protection or bury those cables 50 mil or greater in a wall the reason being we don't
+[14:03] want someone to inadvertently screw into nail into cables that are buried in the wall creating
+[14:09] a fault so to overcome that we either have to have an earth metal sheath such as steel armored or an
+[14:14] MI cable would provide bury at 50 mil deep so we believe that they wouldn't be damaged in in
+[14:19] vertically by somebody hanging a picture on the wall and hammering a nail in industry doesn't go
+[14:23] down that route industry goes down the route domestically of additional protection for all
+[14:28] circuits offered by an RCD rate of 30 milliamps or below so in order to comply to ADS we need
+[14:33] the appropriate conductors from earthing conductor protective bonding conductor and the cpc's around
+[14:40] the circuit are in place we need the appropriate overcurrent protection device for each circuit
+[14:45] so in other words the fuse to be rated correctly we may offer additional protection for circuits
+[14:50] which is very common place in domestic dwellings additional protections offered by an RCD rated
+[14:55] at 30 milliamps or below we wouldn't want all circuits to disconnect at the same time so we
+[15:00] either put several RCCB's in or we use RCBO's and we'll discuss that in a later presentation
+[15:06] we know that exposed conductive parts such as metalclad sockets metallic light fittings
+[15:12] metallic switches need to be connected to the circuit protective conductor so you think been
+[15:17] coming live that they disconnect the circuit within the maximum times of either 0.4 four or
+[15:22] 5 Seconds we've also got metallic water and gas pipes here which are extraneous conductive parts
+[15:28] and again in the event of one of these becoming live we need to make sure the circuit disconnects
+[15:33] we do not want the voltage between bonded parts to rise above 50 again we're trying to reduce
+[15:38] the risk of three things being shock far and explosions we've also added in the fact that
+[15:43] the IP rating the top of any electric enclosure must be IP4X object exceeding 1 mm cannot enter
+[15:50] in other words dust really primarily and the rest being the side the bottom and the other side in
+[15:56] front must have an IP rating of at least IP2X in real terms we cannot stick our index finger into
+[16:02] those electrical enclosures we look to have active selectivity between our devices 100 amp incoming
+[16:08] fuse for me here the rule of thumb is that if we move further downstream that we have devices
+[16:13] a ratio of roughly 2:1 so if we've got a 100 amp fuse here in this installation the largest fuse in
+[16:20] here is 32 amps or 40 amps perhaps circuit breaker feeding another circuit so you automatically got
+[16:26] a ratio of 2 to1 moving for forward that's what we're going to be looking at in the set of notes
+[16:30] on on fuses as well we'll look at the selectivity between devices but a good rule of thumb is two to
+[16:35] one so as we move through so if you think the 32 amp ring final circuit fuse feeds a 13 amp socket
+[16:41] the largest fuse inside the plug top is 13 amps again you've achieved that 2 to one or greater
+[16:46] than ratio as a rule of thumb between fuses so in the event of plugging something in with a fault
+[16:50] it should disconnect the plug top fuse and not disconnect the whole circuit by disconnecting
+[16:55] the uh circuit breaker unless it's an earth fault and there's a good chance the RCD would
+[17:00] have operated in that case so that's a little whistle top tour of ads and we've introduced IP
+[17:05] ratings we've introduced extraneous conductive parts being non-electrical at metal such as the
+[17:11] water pipe the gas pipe and the oil pipe we've introduced exposed conductive Parts metallic
+[17:17] electrical so motor would be an exposed conductive part the oven would be an exposed conductive part
+[17:22] metalclad socket metal light fit with be exposed conductive Parts I hope this one's been some help

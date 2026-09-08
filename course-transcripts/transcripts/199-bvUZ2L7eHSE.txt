@@ -1,0 +1,597 @@
+# IP Ratings Explained: Water, Dust, Impact 💧IP66, IP67, IK10
+# https://www.youtube.com/watch?v=bvUZ2L7eHSE
+
+- Water, dust, and impact are three of the enemies that can make our beautiful, slick, and shiny electrical installations become unusable or even worse, dangerous. BS 7671 and other standards have some very stringent requirements for simple installations and even more for special locations. In order to make it very clear what IP and IK ratings are and how to keep your installation safe, secure, and compliant, we created a free training package to help you with your CPD. This is the video from that training package that we've decided to release to our wider audience. It's been fully updated to the second amendment of the 18th edition, and we really hope it helps your understanding of this subject. And if you'd like to complete the course and receive an accredited certificate to count towards your annual CPD requirement, then please click the link in the description to take you to the relevant webpage. In this CPD training package, we're gonna look at IP and IK ratings and how they affect electrical products we use in our electrical installations. We'll consider what IP means, what the numbers in the IP and IK code ratings mean, what the additional letters you sometimes see for IP ratings mean, how the tests for these ratings are carried out, and how these relate to various regulations in BS 7671. We'll demonstrate some of these key points using this equipment from Ludins. So watch this video tutorial, successfully complete the multiple choice review to validate your learning, and you'll receive your CPD UK accredited certification. So let's jump straight in with IP ratings. What are they and how do they affect your work? Well, let's start by establishing what IP actually stands for. Sometimes you'll hear it stands for ingress protection, which makes perfect sense considering what they cover. You may even hear it referred to as index of protection as in our list of protective properties. However, in the standard that defines IP ratings, which is IEC 60529, adopted in the UK as BSEN 60529, it's actually stated as standing for international protection, which sounds a bit more like what the Thunderbirds used to provide. However, that's what the standard tells us. Now, IP ratings relate to how good an enclosure is at stopping things from getting into it. It conveys this information in the form of a code made up of various numbers and letters. The code starts with IEP and is followed by at least two more symbols up to a total of four. The first symbol after the letter is IP relates to the protection against the ingress of solid objects. It's generally a number from zero to six or it may be an X. If an X appears in the code, that basically means that the enclosure has no rating for that type of protection. So an X in this first position means that the enclosure simply hasn't passed through any tests to see how good it is at preventing the ingress of solid objects. If there is a zero in this position, it means that the enclosure has no protection against contact and ingress objects. So that would be something like a large enclosure with the lid off. As the number gets larger, the level of protection increases. So if the first digit is a one, it means that the enclosure is protected against the entry of objects greater than 50 millimetres in diameter. This may seem like a fairly arbitrary sizing, but this part of the standard is designed around the human body and it's rated to prevent the entry of large parts of the body. The example normally given is the back of the hand. But it's worth noting that this rating is not designed to prevent deliberate access to a live part. So if you are actively trying to poke a finger in there, you'll be able to do so. The next level up is coded with a two and is designed to prevent accessive objects bigger than 12 and a half millimetres in diameter. Again, that may seem a bit arbitrary until we think again about the human body and realise that 12 and a half mil is just a bit smaller than the diameter of a typical human adult finger. So the implication is clear that this level of protection is designed to stop you from accessing live parts with your body. To test this out, there is actually a device which I like to think of as the British standard finger, and this can be poked in and around various enclosures to see if it can access any live parts. The next two levels of protection move away from considering the human body and starts to think about access by items that electricians may come commonly use. So a rating of three prevents access with objects greater than two and a half millimetres in diameter, so tools like screwdrivers and thicker wires. And a rating of four prevents anything with a diameter greater than one millimetre from getting into the enclosure. So this will cover the majority of screws and wires as well. Interestingly, the Wikipedia entry for IP ratings also states that this level of protection will prevent access by large amps. It's silent on the subject of small amps. After this level of protection, we move from considering access with parts that you may have contact with, and the standard starts to consider protection against dust. So a first digit of five means that the enclosure is dust protected, which means that dust can get into some extent, but not to the point where it's impacting on the proper operation of the equipment. Then finally, for the first digit, we land on a rating of six, which means that the equipment is dust tight, so no dust can get in at all. Now this test is pretty intense and it involves putting the piece of equipment into a test chamber with talcum powder and then blowing air around the chamber for up to eight hours before checking for the ingress of the talc into the enclosure. For this rating, the values are cumulative, which means that if an enclosure has a rating of four on the first digit, then it inherently must be protected against all the ratings below it, which kind of makes sense because if you can't get a one millimetre diameter wiring into the enclosure, then you'll struggle to get anything bigger in there too. So an enclosure with an IP rating of IP6X offers protection to all ratings below it for solid objects. So how does this tie into our installation work? Well, if we tend to be a 7671 and look at regulation 416.2.1 under the heading barriers or enclosures, we read that live parts shall be inside enclosures or behind barriers providing at least the degree of protection IP XXB or IP2X. So going back to our IP ratings, we can see that live parts must be not accessible to objects with a diameter greater than 12 and a half mil. We'll come back to that expression of IPXXB in a moment and see the significance of it. Now this is kind of a baseline regulation. And depending on the situation and environment, you may need to increase the level of IP rating. For example, in the next regulation along 416.2.2, we read a horizontal top surface of a barrier or enclosure which is readily accessible shall provide a degree of protection of at least IPXXD or IP4X. So the top surface must be protected against objects greater than one millimetre in diameter. Now moving on to the second digit of our IP code, this relates to the prevention of liquids entering the enclosure and has a slightly longer range with some slightly more complex elements. Once again, it may have an X instead of a number signifying that no testing has been carried out on the piece of equipment, and a rating of zero would suggest no protection against the ingress of water at all. A rating of one for the second digit is an indication that the item of equipment can prevent ingress of dripping water from a vertical direction. However, it's interesting to note that during testing, the enclosure must rotate at a rate of one revolution per minute for 10 minutes so that it receives water on the top surface at different positions, and a total amount of water corresponding to one millimetre of rainfall per minute must fall in the test. When we look at a rating of two for the second digit, this is a similar rating to one in that the test involves dripping water. However, the enclosure is now tilted at 15 degrees from the normal position it would be mounted in. This effectively simulates water falling at an angle, such as may happen when wind is affecting the way that rain falls from the sky. The test again lasts for 10 minutes with the position of the enclosure being placed at an angle of 15 degrees in four positions along two axes. The stringency of the test is also increased by having the water increased to the equivalent of three millimetres per minute. When we move up to a rating of three for the second digit, we find that we move from dripping water to spraying, and this increases the angle that the water strikes the enclosure up to any angle 60 degrees from the vertical. This is achieved either by an oscillating fixture or by using a spray nozzle with a counterbalance shield that creates a more erratic flow of water and thus checks the degree of protection from multiple angles. A rating of four moves on to splashing from any direction and again uses either an oscillating water fixture or a spray nozzle without a shield. This rating is one that we're probably quite familiar with because we find it again as a baseline for lots of requirements in BS 7671. For instance, if you turn to section 708, electrical installations in caravan and camping parks and similar locations, and look at regulations 708.512.1.2, presence of water, we find the following direction. Equipment shall be selected with a degree of protection of at least IPX4 in order to protect against water splashes. So electrical equipment installed in a caravan or camping park must be able to withstand splashes of water. Again, you'll find more stringent requirements elsewhere in the regs for different circumstances. Moving up the scale to ratings five and six for moisture ingress, we find that we move on to jets of water. So this is no longer water being sprinkled from above, but rather sprayed directly at the object with some force. A rating of five is tested by spraying the enclosure with a jet of water formed by a nozzle with a particular size for a time lasting for one minute per square metre that the surface area of the enclosure has, with a minimum time of at least three minutes. The big change in moving from IPX5 to IPX6 is the flow rate of the water being sprayed at the enclosure. A higher volume of water is sprayed under higher pressure from a larger nozzle to see if any water can make its way into the enclosure. Under both of these tests, the enclosure will change its position to ensure that water can't ingress from any direction. Now at this point, we divert from the standard that defines IP ratings and consider information from ISO 20653 as there is an even more stringent test that can be carried out with water jets. An enclosure that has passed this test is indicated by the designation IPX6, but then gets a K value on the end. The significant change in this rating is that the water pressure gets increased by a factor of 10, meaning that the enclosure is even more effective at keeping water jets out. At this point in our consideration, we want to make a really important point. For the protection against solid objects, we saw that if an enclosure had a rating of six, then it met the requirement for all the ratings. Below it, in other words, the coding was cumulative. For water, the same thing is true up to the point that we've just reached. So if an enclosure has a rating of IPX6, then it meets the requirements for all the ratings for one, two, three, and so on. However, after this point, the ratings lose this cumulative effect. So an enclosure with a rating of IPX7 does not automatically have the ratings prior to it approved. For this reason, good manufacturers will include in their data sheets more information on the IP ratings that the equipment conforms to. Great manufacturers will include this information on the product. As you can see here on this Ludin X-CEE industrial plug, it conforms to IP66/67/68 and 69. So why do we lose this cumulative effect to IPX7? Well, it's because the nature of the test changes completely. We go from spraying the water at the enclosure to submerging the enclosure in water to see how it performs. So an IPX7 rating requires the enclosure to have its lowest pointer to depth of one metre or the highest point 150 mil below the surface of the water. This makes sense because if the enclosure is over one metre tall, then it can't really be tested properly if part of the enclosure is sticking out of the water. The immersion must last for half an hour. An important point to note with both of the immersion test is that it's not a requirement to keep the water out entirely, but rather the water mustn't enter the enclosure in harmful quantities. The second immersion rating, which takes us up to IPX8 is slightly unusual in the list in that the requirements for passing can be agreed between tester and manufacturer. It is expected, however, that the depth of immersion and the time spent under the water will be greater than the requirement for IPX7, and it's possible the manufacturer will specify other environmental effects such as putting the enclosure through repeated changes in temperature before immersion, or even perhaps agitation of the water, or varying degrees of pressure to simulate depth. Obviously, it's in the interest of the manufacturer to agree tests that will simulate the expected environment the equipment will be installed in as failures of IP ratings only comes back to cause them problems, and they may need to produce the results of the testing at a later date. When specifying and/or installing an IP68 product, it's important that the specifier and/or installer checks what the test conditions for achieving the IP six eight rating were to satisfy themselves. It's suitable for the specific conditions that it's being installed to. Now, it used to be that the IP code ended at this point, however, an extra code was added in order to create equipment that could withstand additional external influences. Interestingly, this was caused by a need for equipment on road vehicles that require regular intensive cleaning like concrete mixes, but then found application in areas like automated car washes and industrial food processing. An IP rating of 69K was created and then adopted into IEC 60529. The test again increases the pressure by eight to 10 fold from IPX6, and also uses water heated to 80 degrees C to simulate the cleaning jets used in the areas mentioned. If a piece of equipment states that it has a rating of IPX9 like this, then it will also meet the requirements for IP69K. In addition to the numerical codes, there's also a couple of additional letters that may be included in the IP rating, and these are similar to the ratings for prevention of entry to solid objects, but with a heavier focus on access to hazardous parts rather than specific dimensions. The letters used are A, B, C, and D. A rating of A means hazardous parts cannot be accessed with the back of the human hand. B means the same, but for a finger. C means that tools can't access hazardous parts. And finally, D means they can't be accessed with a wire. If you cast your mind back to the regulation we read earlier in 416.2.1 under the heading barriers or enclosures, you'll remember that live parts shall be inside enclosures or behind barriers providing at least the degree of protection IPXXB or IP2X. So you can see there that we've got the mention of IPXXB, which means that the regulation isn't so concerned with preventing the ingress of solid objects, but rather preventing fingers from accessing hazardous, in our cases, electricians, that's live parts. And finally, for IP ratings, there's a list of little used supplementary letters that give some more options for describing the equipment. These are F meaning oil resistant, H to denote high voltage apparatus, M to indicate that during the water test, motion was involved, S showing that during the water test, the equipment was stationary, and finally, W to show that weather conditions were taken into account during testing. Moving away from IP ratings, we'll now consider IK ratings. Now you can kind of see that this is similar to the IP rating system just from the kind of initials alone. However, the second letter has changed to a K for kinetic, which I'm sure you'll remember is a type of energy, namely the energy of an object in motion. In this case, it's the motion of the test equipment. IEC 62262, adopted as BSEN 62262 for the UK, gives a list of IK ratings from IK00 to IK 10, which relate to different levels of protection against a certain amount of kinetic energy in joules. In other words, it's a way of measuring the amount of impact from an object that an enclosure can take. IK00 indicates that the equipment in question has no protection. IK01 shows that the equipment is protected against a weight of 0.25 kgs, falling from a height of 56 millimetres, which would deliver a kinetic energy of 0.14 joules. Now, because this probably means almost nothing to you, I'll demonstrate this to you using this pair of side cutters, which are about the right weight and drop them from the appropriate height. Now, it's very important at this stage to point out that this is absolutely not the accepted standardised way of testing an enclosure. There's all kinds of rules for what the test should consist of and we'll discuss that in a moment. But this will give you an idea of relative impact energy levels. Now, from IK01 to IK06, the weight remains the same and the heights that it gets dropped from changes. So for IK02, it gets dropped from a height of 80 mil, giving an impact energy of 0.2 joules. Then raised up to a height of 140 mil for an energy level of 0.35 joules to give an impact resistance rating of IK03. For IK04, the 0.25 kilogramme weight gets lifted to 200 millimetres, giving an energy level of 0.5 joules. Then up to 280 mil for IK05 and an energy delivered of 0.7 joules. Then IK06 takes us up to 400 mil in height to deliver an impact energy of one joule. When we jump to IK07, we have an impact energy of two joules by keeping the height of 400 mil from the previous test, but doubling the weight to 0.5 kilogrammes. So that's the equivalent of dropping this hammer onto the object from a height of 400 mil. Then we move on to IK08, and it's all changed as we drop 1.7 kilos of weight onto the piece of equipment from 300 mil. So let's show you the equivalent of that here using this really common combination of a rubber mallet and crimpers tied together, and that's delivering an impact energy of five joules. As you may realise by now, finding common items that you'll be familiar with of the right weight was a little challenging. Then moving up the scale, we get to IK09, which is all different again, this time we're dropping a weight of five kilos onto the enclosure from a height of 200 millimetres to deliver an impact energy of 10 joules. That's roughly the equivalent of this block pave here and box of screws combo. And finally, for IK10, we double the impact energy again to 20 joules by dropping our five kilogramme weight from double the height of the previous test now at 400 millimetres. Now, as we said, the testing is much more regulated than what we've been doing here, and there's various ways of achieving this. Three methods of testing are allowed in connection with impact ratings. These are pendulum hammer, which is essentially a choppy test, spring hammer, which is a tool where a spring loaded weight is retracted into the barrel of the equipment, placed on the enclosure to be tested and then released, and this effectively fires the weight into the object. And finally, the free fall hammer where a weight is placed inside a tube at the specific height and then dropped onto the unsuspecting enclosure below. The pendulum hammer can be used across all the IK rating tests. The spring hammer from IK01 to IK07 and the free fall hammer from IK07 to IK10. Another thing that varies between the tests is the radius of the striking element. As you can imagine, a large flat face would spread the impact over a larger area, and if the weight had a point on the end, it would concentrate the impact considerably. So this is standardised. The radius of the striking element for IK01 to IK06 is 10 millimetres. For IK07 and IKO eight, the radius is 25 millimetres. And for IK09 to IK10, a striking element of 50 mil must be used. But again, let's bring it back to electrical work. What is the impact, if you'll pardon the pun, of all of this on our electrical installation? Well, again, the regs has certain requirements for impact ratings. In fact, if we turn to appendix one of the regs, we find a table filled with British standards that are referenced in BS 7671. And on page 355, we find reference to BSEN 62262, which is the standard we've been considering for impact ratings. Next to it, we see references to three regulations, namely 708.512.2.1.3, which relates to caravan parks in similar and states, equipment installed in a campsite shall be protected against mechanical damage, impact of high severity AG3. Protection of the equipment shall be afforded by one or more of the following. The position or location shall be selected to avoid damage by any reasonably foreseeable impact. Local or general mechanical protection shall be provided. Equipment shall be installed that complies with a minimum degree of protection against the external mechanical impact of IK08. Another reference regulation is 709.512.2.1.4 indent three, which relates to marinas and is similar worded where it reads, equipment installed on or above a jetty, wharf, pier, or pontoon shall be protected against mechanical damage, impact of medium severity AG2. Protection shall be afforded by one or more of the following. Installing equipment complying with a minimum degree of protection for external mechanical impact IK08. So you can see there that the same requirement for IK08 equipment. And finally, we find regulation 722.512.2.203 which is in the section of the regs that deals with electric vehicle charging installations. And this is the only change that's been made to this CPD by amendment two of the 18th edition of BSEN 7671. It reads, equipment installed in public areas and car park sites shall be protected against mechanical damage, impact of high severity AG3. Protection of the equipment shall be afforded by one or more of the following. The position or location shall be selected to avoid damage by any reasonably foreseeable impact. Local or general mechanical protection shall be provided. Equipment shall be installed that complies with a minimum degree of protection against external mechanical impact of IK08 in accordance with the requirements of BSEN 62262. In the previous version of the regs, the impact was set at medium severity, so AG2, and the IK rating was on IK07, which was less stringent than that needed for marinas or caravan sites. Apparently in the meantime, EV drivers have proved themselves every bit as careless as boat drivers and caravan owners, as now they require high levels of impact protection too. And even this may not be enough, as we find in the document BSEN 61851-22, electric vehicle conductive charging system part 22, AC electric vehicle charging station. The AC electric vehicle charging station body shall not be damaged by mechanical impact. Compliance is checked according to the test procedure described in IEC 60068-2-75. Impact energy value 20 joules five kilos at 0.4 metres, which is the test carried out to achieve a protection value of IK10. So an even more stringent requirement there. So there we go. In the CPD module, we've looked at just what IP and IK ratings are, what they mean and how they're tested. We've also seen how this subject relates directly to our electrical installations and the considerations we need to make when carrying out work in environments at risk from the ingress of solid objects or liquids. We hope that information was helpful to you, and once again, if you'd now like to complete the training package by answering a few multiple choice questions, then please click the link in the description below, and do please check out the rest of our free training packages on the knowhow page of our website, efix.co.uk. All that remains in this video is to say thank you very much for watching.
+
+
+[00:00] - Water, dust, and impact are three of the enemies
+[00:02] that can make our beautiful, slick,
+[00:04] and shiny electrical installations
+[00:05] become unusable or even worse, dangerous.
+[00:08] BS 7671 and other standards
+[00:10] have some very stringent requirements
+[00:12] for simple installations
+[00:13] and even more for special locations.
+[00:15] In order to make it very clear what IP and IK ratings are
+[00:20] and how to keep your installation safe, secure,
+[00:22] and compliant, we created a free training package
+[00:25] to help you with your CPD.
+[00:26] This is the video from that training package
+[00:28] that we've decided to release to our wider audience.
+[00:30] It's been fully updated to the second amendment
+[00:32] of the 18th edition,
+[00:34] and we really hope it helps your understanding
+[00:35] of this subject.
+[00:36] And if you'd like to complete the course
+[00:38] and receive an accredited certificate
+[00:40] to count towards your annual CPD requirement,
+[00:42] then please click the link in the description to take you
+[00:45] to the relevant webpage.
+[00:47] In this CPD training package,
+[00:48] we're gonna look at IP and IK ratings
+[00:50] and how they affect electrical products we use
+[00:52] in our electrical installations.
+[00:54] We'll consider what IP means,
+[00:56] what the numbers in the IP and IK code ratings mean,
+[01:00] what the additional letters you sometimes see
+[01:02] for IP ratings mean,
+[01:04] how the tests for these ratings are carried out,
+[01:06] and how these relate to various regulations in BS 7671.
+[01:10] We'll demonstrate some of these key points
+[01:12] using this equipment from Ludins.
+[01:14] So watch this video tutorial,
+[01:15] successfully complete the multiple choice review
+[01:17] to validate your learning,
+[01:19] and you'll receive your CPD UK accredited certification.
+[01:22] So let's jump straight in with IP ratings.
+[01:25] What are they and how do they affect your work?
+[01:27] Well, let's start by establishing
+[01:29] what IP actually stands for.
+[01:31] Sometimes you'll hear it stands for ingress protection,
+[01:34] which makes perfect sense considering what they cover.
+[01:36] You may even hear it referred to as index of protection
+[01:39] as in our list of protective properties.
+[01:42] However, in the standard that defines IP ratings,
+[01:44] which is IEC 60529,
+[01:47] adopted in the UK as BSEN 60529,
+[01:50] it's actually stated as standing
+[01:51] for international protection,
+[01:53] which sounds a bit more like
+[01:54] what the Thunderbirds used to provide.
+[01:56] However, that's what the standard tells us.
+[01:58] Now, IP ratings relate to
+[01:59] how good an enclosure is at stopping things
+[02:01] from getting into it.
+[02:03] It conveys this information in the form of a code made up
+[02:05] of various numbers and letters.
+[02:07] The code starts with IEP
+[02:08] and is followed by at least two more symbols
+[02:10] up to a total of four.
+[02:12] The first symbol after the letter is IP relates
+[02:14] to the protection against the ingress of solid objects.
+[02:17] It's generally a number from zero to six
+[02:19] or it may be an X.
+[02:21] If an X appears in the code,
+[02:22] that basically means that the enclosure has no rating for
+[02:25] that type of protection.
+[02:26] So an X in this first position means
+[02:28] that the enclosure simply hasn't passed through any tests
+[02:31] to see how good it is at preventing
+[02:33] the ingress of solid objects.
+[02:35] If there is a zero in this position,
+[02:36] it means that the enclosure
+[02:37] has no protection against contact and ingress objects.
+[02:40] So that would be something
+[02:41] like a large enclosure with the lid off.
+[02:43] As the number gets larger,
+[02:44] the level of protection increases.
+[02:46] So if the first digit is a one,
+[02:48] it means that the enclosure is protected against the entry
+[02:50] of objects greater than 50 millimetres in diameter.
+[02:53] This may seem like a fairly arbitrary sizing,
+[02:56] but this part of the standard is designed
+[02:57] around the human body
+[02:58] and it's rated to prevent the entry
+[03:00] of large parts of the body.
+[03:01] The example normally given is the back of the hand.
+[03:04] But it's worth noting that this rating is not designed
+[03:07] to prevent deliberate access to a live part.
+[03:10] So if you are actively trying to poke a finger in there,
+[03:12] you'll be able to do so.
+[03:14] The next level up is coded with a two
+[03:16] and is designed to prevent accessive objects bigger than 12
+[03:18] and a half millimetres in diameter.
+[03:20] Again, that may seem a bit arbitrary
+[03:22] until we think again about the human body
+[03:24] and realise that 12 and a half mil
+[03:26] is just a bit smaller than the diameter
+[03:28] of a typical human adult finger.
+[03:30] So the implication is clear that this level
+[03:31] of protection is designed
+[03:33] to stop you from accessing live parts with your body.
+[03:36] To test this out, there is actually a device which I like
+[03:38] to think of as the British standard finger,
+[03:40] and this can be poked in
+[03:41] and around various enclosures
+[03:42] to see if it can access any live parts.
+[03:45] The next two levels of protection move away from considering
+[03:47] the human body and starts to think about access by items
+[03:51] that electricians may come commonly use.
+[03:53] So a rating of three prevents access
+[03:54] with objects greater than two
+[03:56] and a half millimetres in diameter,
+[03:57] so tools like screwdrivers and thicker wires.
+[04:01] And a rating of four prevents anything
+[04:02] with a diameter greater than one millimetre from
+[04:04] getting into the enclosure.
+[04:06] So this will cover the majority of screws and wires as well.
+[04:08] Interestingly, the Wikipedia entry
+[04:10] for IP ratings also states that this level
+[04:12] of protection will prevent access by large amps.
+[04:15] It's silent on the subject of small amps.
+[04:18] After this level of protection,
+[04:19] we move from considering access with parts
+[04:21] that you may have contact with,
+[04:23] and the standard starts to consider protection against dust.
+[04:26] So a first digit of five means
+[04:28] that the enclosure is dust protected,
+[04:29] which means that dust can get into some extent,
+[04:32] but not to the point where it's impacting on the proper
+[04:34] operation of the equipment.
+[04:36] Then finally, for the first digit,
+[04:37] we land on a rating of six,
+[04:39] which means that the equipment is dust tight,
+[04:41] so no dust can get in at all.
+[04:43] Now this test is pretty intense
+[04:44] and it involves putting the piece
+[04:45] of equipment into a test chamber with talcum powder
+[04:48] and then blowing air around the chamber for up
+[04:50] to eight hours before checking for the ingress
+[04:53] of the talc into the enclosure.
+[04:55] For this rating, the values are cumulative,
+[04:58] which means that if an enclosure has a rating
+[05:00] of four on the first digit,
+[05:02] then it inherently must be protected
+[05:03] against all the ratings below it,
+[05:05] which kind of makes sense
+[05:06] because if you can't get a one millimetre diameter wiring
+[05:09] into the enclosure,
+[05:10] then you'll struggle to get anything bigger in there too.
+[05:12] So an enclosure with an IP rating
+[05:14] of IP6X offers protection to all ratings below it
+[05:18] for solid objects.
+[05:20] So how does this tie into our installation work?
+[05:22] Well, if we tend to be a 7671
+[05:24] and look at regulation 416.2.1 under the heading
+[05:27] barriers or enclosures,
+[05:29] we read that live parts shall be inside enclosures
+[05:32] or behind barriers providing at least the degree
+[05:34] of protection IP XXB or IP2X.
+[05:37] So going back to our IP ratings,
+[05:39] we can see that live parts must be not accessible to objects
+[05:42] with a diameter greater than 12 and a half mil.
+[05:45] We'll come back to that expression of IPXXB in a moment
+[05:48] and see the significance of it.
+[05:50] Now this is kind of a baseline regulation.
+[05:52] And depending on the situation and environment,
+[05:54] you may need to increase the level of IP rating.
+[05:57] For example, in the next regulation along 416.2.2,
+[06:00] we read a horizontal top surface
+[06:02] of a barrier or enclosure which is readily accessible
+[06:05] shall provide a degree of protection
+[06:06] of at least IPXXD or IP4X.
+[06:10] So the top surface must be protected against objects greater
+[06:13] than one millimetre in diameter.
+[06:16] Now moving on to the second digit of our IP code,
+[06:18] this relates to the prevention
+[06:20] of liquids entering the enclosure
+[06:21] and has a slightly longer range
+[06:23] with some slightly more complex elements.
+[06:26] Once again, it may have an X instead of a number signifying
+[06:29] that no testing has been carried out
+[06:31] on the piece of equipment,
+[06:32] and a rating of zero would suggest no protection
+[06:34] against the ingress of water at all.
+[06:37] A rating of one for the second digit is an indication
+[06:40] that the item of equipment can prevent ingress
+[06:42] of dripping water from a vertical direction.
+[06:45] However, it's interesting to note that during testing,
+[06:47] the enclosure must rotate at a rate
+[06:49] of one revolution per minute for 10 minutes
+[06:52] so that it receives water
+[06:53] on the top surface at different positions,
+[06:55] and a total amount of water corresponding
+[06:57] to one millimetre
+[06:58] of rainfall per minute must fall in the test.
+[07:02] When we look at a rating of two for the second digit,
+[07:04] this is a similar rating to one in
+[07:06] that the test involves dripping water.
+[07:08] However, the enclosure is now tilted at 15 degrees
+[07:11] from the normal position it would be mounted in.
+[07:13] This effectively simulates water falling at an angle,
+[07:15] such as may happen when wind is affecting the way
+[07:18] that rain falls from the sky.
+[07:20] The test again lasts for 10 minutes with the position
+[07:22] of the enclosure being placed at an angle
+[07:24] of 15 degrees in four positions along two axes.
+[07:29] The stringency of the test is also increased
+[07:30] by having the water increased to the equivalent
+[07:32] of three millimetres per minute.
+[07:35] When we move up to a rating of three for the second digit,
+[07:37] we find that we move from dripping water to spraying,
+[07:40] and this increases the angle
+[07:41] that the water strikes the enclosure
+[07:43] up to any angle 60 degrees from the vertical.
+[07:46] This is achieved either by an oscillating fixture
+[07:48] or by using a spray nozzle with a counterbalance shield
+[07:51] that creates a more erratic flow of water
+[07:54] and thus checks the degree
+[07:55] of protection from multiple angles.
+[07:57] A rating of four moves on to splashing from any direction
+[08:01] and again uses either an oscillating water fixture
+[08:04] or a spray nozzle without a shield.
+[08:06] This rating is one that we're probably quite familiar with
+[08:08] because we find it again as a baseline
+[08:10] for lots of requirements in BS 7671.
+[08:13] For instance, if you turn to section 708,
+[08:15] electrical installations in caravan and camping parks
+[08:18] and similar locations,
+[08:19] and look at regulations 708.512.1.2, presence of water,
+[08:24] we find the following direction.
+[08:26] Equipment shall be selected
+[08:27] with a degree of protection of at least IPX4
+[08:30] in order to protect against water splashes.
+[08:33] So electrical equipment installed in a caravan
+[08:34] or camping park must be able to withstand splashes of water.
+[08:38] Again, you'll find more stringent requirements elsewhere
+[08:40] in the regs for different circumstances.
+[08:43] Moving up the scale to ratings five
+[08:45] and six for moisture ingress,
+[08:46] we find that we move on to jets of water.
+[08:49] So this is no longer water being sprinkled from above,
+[08:51] but rather sprayed directly at the object with some force.
+[08:55] A rating of five is tested by spraying the enclosure
+[08:57] with a jet of water formed by a nozzle
+[08:59] with a particular size for a time lasting
+[09:01] for one minute per square metre that the surface area
+[09:04] of the enclosure has,
+[09:06] with a minimum time of at least three minutes.
+[09:09] The big change in moving from IPX5
+[09:10] to IPX6 is the flow rate
+[09:13] of the water being sprayed at the enclosure.
+[09:15] A higher volume of water is sprayed under higher pressure
+[09:17] from a larger nozzle to see if any water
+[09:19] can make its way into the enclosure.
+[09:22] Under both of these tests,
+[09:23] the enclosure will change its position to ensure
+[09:25] that water can't ingress from any direction.
+[09:27] Now at this point,
+[09:28] we divert from the standard that defines IP ratings
+[09:31] and consider information from ISO 20653
+[09:35] as there is an even more stringent test
+[09:36] that can be carried out with water jets.
+[09:38] An enclosure that has passed this test is indicated
+[09:41] by the designation IPX6,
+[09:43] but then gets a K value on the end.
+[09:45] The significant change in this rating
+[09:47] is that the water pressure gets increased by a factor of 10,
+[09:50] meaning that the enclosure is even more effective
+[09:52] at keeping water jets out.
+[09:54] At this point in our consideration,
+[09:56] we want to make a really important point.
+[09:58] For the protection against solid objects,
+[09:59] we saw that if an enclosure had a rating of six,
+[10:02] then it met the requirement for all the ratings.
+[10:05] Below it, in other words, the coding was cumulative.
+[10:08] For water, the same thing is true
+[10:10] up to the point that we've just reached.
+[10:12] So if an enclosure has a rating of IPX6,
+[10:14] then it meets the requirements for all the ratings
+[10:16] for one, two, three, and so on.
+[10:19] However, after this point,
+[10:20] the ratings lose this cumulative effect.
+[10:22] So an enclosure with a rating
+[10:23] of IPX7 does not automatically have the ratings
+[10:27] prior to it approved.
+[10:29] For this reason, good manufacturers will include
+[10:31] in their data sheets more information on the IP ratings
+[10:33] that the equipment conforms to.
+[10:35] Great manufacturers will include
+[10:37] this information on the product.
+[10:38] As you can see here on this Ludin X-CEE industrial plug,
+[10:42] it conforms to IP66/67/68 and 69.
+[10:46] So why do we lose this cumulative effect to IPX7?
+[10:50] Well, it's because the nature
+[10:51] of the test changes completely.
+[10:52] We go from spraying the water at the enclosure
+[10:54] to submerging the enclosure in water to see how it performs.
+[10:58] So an IPX7 rating requires the enclosure
+[11:00] to have its lowest pointer to depth of one metre
+[11:03] or the highest point 150 mil below the surface of the water.
+[11:07] This makes sense because if the enclosure
+[11:08] is over one metre tall,
+[11:10] then it can't really be tested properly
+[11:12] if part of the enclosure is sticking out of the water.
+[11:14] The immersion must last for half an hour.
+[11:16] An important point to note with both
+[11:18] of the immersion test is that it's not a requirement
+[11:20] to keep the water out entirely,
+[11:22] but rather the water mustn't enter
+[11:23] the enclosure in harmful quantities.
+[11:26] The second immersion rating,
+[11:27] which takes us up to IPX8 is slightly unusual in the list
+[11:31] in that the requirements for passing can be agreed
+[11:33] between tester and manufacturer.
+[11:35] It is expected, however, that the depth of immersion
+[11:37] and the time spent under the water will be greater
+[11:39] than the requirement for IPX7,
+[11:42] and it's possible the manufacturer will specify other
+[11:44] environmental effects such as putting the enclosure
+[11:47] through repeated changes in temperature before immersion,
+[11:50] or even perhaps agitation of the water,
+[11:52] or varying degrees of pressure to simulate depth.
+[11:56] Obviously, it's in the interest of the manufacturer
+[11:57] to agree tests that will simulate the expected environment
+[12:00] the equipment will be installed in
+[12:02] as failures of IP ratings
+[12:04] only comes back to cause them problems,
+[12:06] and they may need to produce the results
+[12:07] of the testing at a later date.
+[12:10] When specifying and/or installing an IP68 product,
+[12:13] it's important that the specifier
+[12:15] and/or installer checks what the test conditions
+[12:18] for achieving the IP six eight rating were
+[12:20] to satisfy themselves.
+[12:22] It's suitable for the specific conditions
+[12:24] that it's being installed to.
+[12:26] Now, it used to be that the IP code ended at this point,
+[12:29] however, an extra code was added in order
+[12:31] to create equipment that could withstand
+[12:33] additional external influences.
+[12:35] Interestingly, this was caused by a need
+[12:36] for equipment on road vehicles
+[12:38] that require regular intensive cleaning like concrete mixes,
+[12:42] but then found application in areas like automated car
+[12:45] washes and industrial food processing.
+[12:48] An IP rating of 69K was created
+[12:50] and then adopted into IEC 60529.
+[12:54] The test again increases the pressure by eight
+[12:56] to 10 fold from IPX6,
+[12:58] and also uses water heated to 80 degrees C
+[13:00] to simulate the cleaning jets used in the areas mentioned.
+[13:03] If a piece of equipment states that it has a rating
+[13:05] of IPX9 like this,
+[13:07] then it will also meet the requirements for IP69K.
+[13:10] In addition to the numerical codes,
+[13:12] there's also a couple of additional letters
+[13:13] that may be included in the IP rating,
+[13:15] and these are similar to the ratings for prevention of entry
+[13:18] to solid objects, but with a heavier focus on access
+[13:21] to hazardous parts rather than specific dimensions.
+[13:25] The letters used are A, B, C, and D.
+[13:27] A rating of A means hazardous parts cannot be accessed
+[13:29] with the back of the human hand.
+[13:31] B means the same, but for a finger.
+[13:33] C means that tools can't access hazardous parts.
+[13:35] And finally, D means they can't be accessed with a wire.
+[13:39] If you cast your mind back to the regulation we read earlier
+[13:41] in 416.2.1 under the heading barriers or enclosures,
+[13:44] you'll remember that live parts shall be inside enclosures
+[13:48] or behind barriers providing at least the degree
+[13:50] of protection IPXXB or IP2X.
+[13:53] So you can see there that we've got the mention of IPXXB,
+[13:56] which means that the regulation isn't so concerned
+[13:58] with preventing the ingress of solid objects,
+[14:00] but rather preventing fingers from accessing hazardous,
+[14:03] in our cases, electricians, that's live parts.
+[14:07] And finally, for IP ratings,
+[14:08] there's a list of little used supplementary letters
+[14:10] that give some more options for describing the equipment.
+[14:13] These are F meaning oil resistant,
+[14:15] H to denote high voltage apparatus,
+[14:17] M to indicate that during the water test,
+[14:19] motion was involved,
+[14:21] S showing that during the water test,
+[14:22] the equipment was stationary,
+[14:24] and finally, W to show that weather conditions
+[14:26] were taken into account during testing.
+[14:29] Moving away from IP ratings, we'll now consider IK ratings.
+[14:33] Now you can kind of see that this is similar
+[14:35] to the IP rating system
+[14:36] just from the kind of initials alone.
+[14:38] However, the second letter has changed to a K for kinetic,
+[14:41] which I'm sure you'll remember is a type of energy,
+[14:43] namely the energy of an object in motion.
+[14:46] In this case, it's the motion of the test equipment.
+[14:49] IEC 62262, adopted as BSEN 62262 for the UK,
+[14:53] gives a list of IK ratings from IK00 to IK 10,
+[14:57] which relate to different levels
+[14:58] of protection against a certain amount
+[15:00] of kinetic energy in joules.
+[15:02] In other words, it's a way of measuring the amount
+[15:04] of impact from an object that an enclosure can take.
+[15:07] IK00 indicates that the equipment in question
+[15:10] has no protection.
+[15:11] IK01 shows that the equipment is protected against a weight
+[15:14] of 0.25 kgs, falling from a height of 56 millimetres,
+[15:18] which would deliver a kinetic energy of 0.14 joules.
+[15:21] Now, because this probably means almost nothing to you,
+[15:23] I'll demonstrate this to you using this pair
+[15:24] of side cutters, which are about the right weight
+[15:27] and drop them from the appropriate height.
+[15:29] Now, it's very important at this stage to point out
+[15:31] that this is absolutely not the accepted standardised way
+[15:34] of testing an enclosure.
+[15:36] There's all kinds of rules for what the test should consist
+[15:38] of and we'll discuss that in a moment.
+[15:40] But this will give you an idea
+[15:41] of relative impact energy levels.
+[15:44] Now, from IK01 to IK06, the weight remains the same
+[15:47] and the heights that it gets dropped from changes.
+[15:50] So for IK02, it gets dropped from a height of 80 mil,
+[15:52] giving an impact energy of 0.2 joules.
+[15:55] Then raised up to a height of 140 mil
+[15:57] for an energy level of 0.35 joules
+[15:58] to give an impact resistance rating of IK03.
+[16:01] For IK04, the 0.25 kilogramme weight gets lifted
+[16:05] to 200 millimetres,
+[16:06] giving an energy level of 0.5 joules.
+[16:08] Then up to 280 mil for IK05
+[16:10] and an energy delivered of 0.7 joules.
+[16:13] Then IK06 takes us up to 400 mil in height
+[16:16] to deliver an impact energy of one joule.
+[16:19] When we jump to IK07, we have an impact energy
+[16:21] of two joules by keeping the height
+[16:22] of 400 mil from the previous test,
+[16:24] but doubling the weight to 0.5 kilogrammes.
+[16:27] So that's the equivalent of dropping this hammer
+[16:28] onto the object from a height of 400 mil.
+[16:31] Then we move on to IK08,
+[16:33] and it's all changed as we drop 1.7 kilos
+[16:36] of weight onto the piece of equipment from 300 mil.
+[16:38] So let's show you the equivalent of that here
+[16:40] using this really common combination
+[16:42] of a rubber mallet and crimpers tied together,
+[16:45] and that's delivering an impact energy of five joules.
+[16:48] As you may realise by now,
+[16:49] finding common items that you'll be familiar with
+[16:52] of the right weight was a little challenging.
+[16:54] Then moving up the scale, we get to IK09,
+[16:56] which is all different again,
+[16:58] this time we're dropping a weight
+[16:59] of five kilos onto the enclosure from a height
+[17:01] of 200 millimetres to deliver an impact energy of 10 joules.
+[17:05] That's roughly the equivalent of this block pave here
+[17:07] and box of screws combo.
+[17:09] And finally, for IK10, we double the impact energy again
+[17:12] to 20 joules by dropping our five kilogramme weight from
+[17:15] double the height of the previous test
+[17:17] now at 400 millimetres.
+[17:20] Now, as we said, the testing is much more regulated than
+[17:22] what we've been doing here, and there's various ways of achieving this.
+[17:24] Three methods of testing are allowed in
+[17:26] connection with impact ratings.
+[17:27] These are pendulum hammer,
+[17:29] which is essentially a choppy test,
+[17:31] spring hammer, which is a tool where a spring loaded weight
+[17:34] is retracted into the barrel of the equipment,
+[17:36] placed on the enclosure to be tested and then released,
+[17:39] and this effectively fires the weight into the object.
+[17:43] And finally, the free fall hammer where a weight is placed
+[17:46] inside a tube at the specific height
+[17:48] and then dropped onto the unsuspecting enclosure below.
+[17:51] The pendulum hammer can be used across
+[17:53] all the IK rating tests.
+[17:54] The spring hammer from IK01 to IK07
+[17:58] and the free fall hammer from IK07 to IK10.
+[18:01] Another thing that varies between the tests
+[18:03] is the radius of the striking element.
+[18:05] As you can imagine,
+[18:06] a large flat face would spread the impact
+[18:08] over a larger area,
+[18:09] and if the weight had a point on the end,
+[18:11] it would concentrate the impact considerably.
+[18:13] So this is standardised.
+[18:15] The radius of the striking element for IK01
+[18:17] to IK06 is 10 millimetres.
+[18:19] For IK07 and IKO eight, the radius is 25 millimetres.
+[18:23] And for IK09 to IK10,
+[18:25] a striking element of 50 mil must be used.
+[18:27] But again, let's bring it back to electrical work.
+[18:29] What is the impact, if you'll pardon the pun,
+[18:32] of all of this on our electrical installation?
+[18:34] Well, again, the regs has certain
+[18:35] requirements for impact ratings.
+[18:37] In fact, if we turn to appendix one of the regs,
+[18:39] we find a table filled with British standards
+[18:41] that are referenced in BS 7671.
+[18:43] And on page 355, we find reference to BSEN 62262,
+[18:47] which is the standard we've been considering
+[18:49] for impact ratings.
+[18:50] Next to it, we see references to three regulations,
+[18:52] namely 708.512.2.1.3,
+[18:55] which relates to caravan parks in similar and states,
+[18:58] equipment installed in a campsite shall be
+[19:00] protected against mechanical damage,
+[19:02] impact of high severity AG3.
+[19:05] Protection of the equipment shall be afforded
+[19:07] by one or more of the following.
+[19:09] The position or location shall be selected to avoid damage
+[19:12] by any reasonably foreseeable impact.
+[19:15] Local or general mechanical protection shall be provided.
+[19:18] Equipment shall be installed that complies
+[19:20] with a minimum degree of protection against the external
+[19:22] mechanical impact of IK08.
+[19:26] Another reference regulation is 709.512.2.1.4 indent three,
+[19:31] which relates to marinas
+[19:32] and is similar worded where it reads,
+[19:34] equipment installed on or above a jetty, wharf,
+[19:37] pier, or pontoon shall be protected
+[19:39] against mechanical damage,
+[19:40] impact of medium severity AG2.
+[19:43] Protection shall be afforded by one
+[19:45] or more of the following.
+[19:47] Installing equipment complying
+[19:48] with a minimum degree of protection
+[19:50] for external mechanical impact IK08.
+[19:54] So you can see there that the same requirement
+[19:56] for IK08 equipment.
+[19:58] And finally, we find regulation 722.512.2.203
+[20:02] which is in the section of the regs that deals
+[20:04] with electric vehicle charging installations.
+[20:07] And this is the only change that's been made to this CPD
+[20:10] by amendment two of the 18th edition
+[20:12] of BSEN 7671.
+[20:13] It reads, equipment installed in public areas
+[20:16] and car park sites shall be protected
+[20:18] against mechanical damage,
+[20:20] impact of high severity AG3.
+[20:22] Protection of the equipment shall be afforded by one
+[20:25] or more of the following.
+[20:26] The position or location shall be selected to avoid damage
+[20:29] by any reasonably foreseeable impact.
+[20:32] Local or general mechanical protection shall be provided.
+[20:35] Equipment shall be installed that complies
+[20:37] with a minimum degree of protection against external
+[20:39] mechanical impact of IK08 in accordance
+[20:43] with the requirements of BSEN 62262.
+[20:47] In the previous version of the regs,
+[20:48] the impact was set at medium severity, so AG2,
+[20:52] and the IK rating was on IK07,
+[20:55] which was less stringent than that needed for marinas
+[20:57] or caravan sites.
+[20:58] Apparently in the meantime,
+[21:00] EV drivers have proved themselves every bit
+[21:02] as careless as boat drivers and caravan owners,
+[21:04] as now they require high levels
+[21:05] of impact protection too.
+[21:07] And even this may not be enough,
+[21:08] as we find in the document BSEN 61851-22,
+[21:12] electric vehicle conductive charging system part 22,
+[21:15] AC electric vehicle charging station.
+[21:18] The AC electric vehicle charging station body shall not be
+[21:22] damaged by mechanical impact.
+[21:24] Compliance is checked according
+[21:25] to the test procedure described in IEC 60068-2-75.
+[21:30] Impact energy value 20 joules five kilos at 0.4 metres,
+[21:35] which is the test carried out
+[21:36] to achieve a protection value of IK10.
+[21:38] So an even more stringent requirement there.
+[21:41] So there we go.
+[21:42] In the CPD module, we've looked at just what IP
+[21:44] and IK ratings are, what they mean and how they're tested.
+[21:47] We've also seen how this subject relates directly
+[21:50] to our electrical installations
+[21:51] and the considerations we need
+[21:53] to make when carrying out work in environments at risk from
+[21:55] the ingress of solid objects or liquids.
+[21:58] We hope that information was helpful to you,
+[21:59] and once again, if you'd now like
+[22:01] to complete the training package
+[22:02] by answering a few multiple choice questions,
+[22:04] then please click the link in the description below,
+[22:06] and do please check out the rest
+[22:08] of our free training packages on the knowhow page
+[22:10] of our website, efix.co.uk.
+[22:13] All that remains in this video
+[22:14] is to say thank you very much for watching.

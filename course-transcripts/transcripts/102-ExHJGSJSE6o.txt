@@ -1,0 +1,266 @@
+# The Easiest Most Accurate Way to Calculate Three Phase Neutral Current in an Unbalanced Load
+# https://www.youtube.com/watch?v=ExHJGSJSE6o
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to consider another way that we can calculate mutual current inside an imbalanced three-phase system now we've already looked at a couple of three different methods of how we can do this but this method that I'm about to show you has a couple of advantages the first method we saw combined a graphical representation of what was happening with the circuit followed by some mathematical procedures that helped us to get a really accurate answer to the neutral current inside that imbalance three phase load now that was a great method because it combines kind of a visual idea of what's happening inside the circuit combined with nice mathematical accuracy the disadvantage of that method is that it's quite long-winded and there's a number of steps to remember we then look to a purely graphical method and where we were able to draw things to scale and measure literally what the neutral current would be and that's a nice method because again you can visually see what's happening inside the circuit helps you to understand the interaction between the three currents when they meet in the neutral conductor but also not as accurate as it could be the method that I'm about to show you has no real graphical representation that I'm aware of and this is the reason why I don't really like to use this method as a starting point for this topic because I think it's lacking a certain amount of depth of understanding when it comes to figuring out what's happening with a neutral current however it has the advantage of being relatively straightforward mathematically speaking and again highly accurate so we'll go through this method and of course it's up to you which method you prefer to use in your day-to-day life when you're doing your electrical design work but also that reminder that if this is likely to come up in an exam then make sure that you speak to your teacher and it's very very clear which method you're supposed to use in the exam situation it may be that you can use any of the methods but you may be expected to show a specific method so just make sure that you speak to your teacher before you undertake this question in an exam scenario so let's have a look at the method so what we're going to do first of all is we're going to remind ourselves what the currents were in our circuit that we measured so he had l1 for starters that current in l1 was 4.1 amperes and if you remember we did a video where we actually looked to measuring these values and how we arrived at them within a three-phase system so if you're not sure what these values are coming from them please go back and watch that video however in this case we're just going to remind ourselves what the values were in l2 we had 16 point 1 amperes flowing and in l3 we had 8.1 amperes and then finally we measured the current in the neutral and that came out with a value but then when we calculated it in the follow-up video we saw that the value came out at ten point five eight amp ere's so we measured it slightly different to that and then we calculated it and we explained the reasons why those two values weren't exactly the same so what we're going to do in this video is we're going to use this formula now this might seem a little bit scary at first but let's just get it down on paper so the current in the neutral will be equal to let's start by doing this l1 squared plus l2 squared plus l3 squared bearing in mind that these three numbers are the currents that we find in l1 l2 and l3 we then add on to the end of this minus l1 multiplied by L 2 minus L 1 multiplied by L 3 minus l2 multiplied by L 3 and then that whole thing needs to be Square rooted so we square root that whole thing there now at first glance that formula probably looks quite intimidating but actually if you think of this logically it's actually not that bad we're just squaring all the currents and adding them together we're multiplying each current by each other current and then we're just taking that away from this total and square rooting the lot so if we kind of break it down stages it becomes a little bit easier so let's do that now let's let's look at doing the individual stages so first of all let's square all the values so first of all we're going to be looking at l1 squared and we'll see what that's equal to so we're going to do 4.1 squared so that is l1 4.1 amps and we're going to square that so if we do that on our casio FX 85 gt+ emulator on the screen here we find 4.1 squared is equal to sixteen point eight one sixteen point eight one there and then we're going to do the same for l2 so we're going to square l2 and l2 squared will be sixteen point one squared so I'll figure out what that is on the calculator so we can do 16 point one squared and that comes to two hundred and fifty nine point two one two hundred and fifty nine point two one and then we're going to do l3 squared which is equal to eight point one squared so let's put that onto our sheet eight point one squared is equal to eight point one squared is equal to sixty five point six one notice I'm not putting any units on the end of here because these are largely meaningless now they're just numbers they don't represent any particular quantity which is why I've not added any unit onto the end of it so we've got our three value squared there and now let's have a look at the next step so we can sort of say that this is step number one if you like so let's have a look at step number two now step number two is simply going to be this part where we figure out what these numbers are going to be so l1 times by l2 will be equal to four point one multiplied by 16 point one so that's four point one four point one times by sixteen point one and that comes out at sixty six point zero one so that's sixty six point zero one and then we've got l1 x l3 so you can see we've taken a 1 and we've multiplied it by the other currents and that's going to be four point one times by eight point one and we can see from our calculator four point one times by eight point one is going to give us 33 point two one so I'll do that now 33 point two one and then we just do the final part which is l2 times by l3 so the only combination we've not done that so that's going to come out now at sixteen point one multiplied by eight point one and when we do that 16 point one multiplied by eight point one we come out with this value here a hundred and thirty point four one so that's a hundred and thirty point four one so that's great so we've done the squaring of the currents we've done the multiplying of the currents and really all we've gotta do now is just put these numbers into the formula so let's do that now so this really now is step three where we put these values into the formula so we've got l1 squared came out at sixteen point eight one and then we're going to add on to that 259 point two one so that's l2 squared becomes 259 point two one and then we've got l3 squared which was sixty five point six one and then we're going to subtract all of these multiplications from there so l1 times l2 which is this bit here becomes sixty six point zero one and then we're going to take away L 1 times L three which is thirty three point two one and then we're going to take away L 2 times L three which is a hundred and thirty point four one and then of course don't forget we've got that critical part where we need to square root this whole number so we're going to square root that whole thing again looks quite intimidating in reality it's really not because all we're doing is just adding and subtracting a load of numbers and then square rooting it so at this stage we've kind of got a couple of options here but I quite like this to volley into the calculator in one hit so we're going to press the square root button and then we just put the numbers in 16.8 one and then we're going to add two hundred and fifty nine point two one and then we're going to add 65 point six one and then we are going to subtract sixty six point zero one and we're going to subtract 33 point two one and then we're going to subtract one hundred and thirty point four one hundred and thirty point four one so there you can see there's our massive long string of adding and subtracting all Square rooted and if we hit the equals button what we're hoping is we're going to come out somewhere around ten point five eight and pets so it's going to be very interesting to see if that's what happens so let's do the calculation and see what happens are we going to come out with ten point five eight and pairs we've come out with four times root seven so I'll press the SD button and see what that comes out to ten point five eight three etc so you can see there that we've come out with a very very accurate answer very similar to the answer that we got when we did this in the first place with our first method so that comes out at ten point five eight again we could go with three if we wanted but we'll leave it at that ten point five eight am pairs and there is our Neutral current so again quite a good method I don't think it's already complicated the first time you see this formula it looks a little bit intimidating but if you break it in two stages square the currents and then in step two multiply each current by each other current and then we add the squares together and then we take away all of the multiplied numbers and square root the whole thing we end up with the neutral current a slightly easier method I think an inaccurate method absolutely so if this is your preferred method then feel free to use it following the cautions that were mentioned earlier on in this video so at this point all that's left to say is thank you very much for watching [Music] [Music]
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to consider another way that
+[00:15] we can calculate mutual current inside
+[00:17] an imbalanced three-phase system now
+[00:20] we've already looked at a couple of
+[00:22] three different methods of how we can do
+[00:23] this but this method that I'm about to
+[00:26] show you has a couple of advantages
+[00:28] the first method we saw combined a
+[00:31] graphical representation of what was
+[00:33] happening with the circuit followed by
+[00:34] some mathematical procedures that helped
+[00:37] us to get a really accurate answer to
+[00:39] the neutral current inside that
+[00:41] imbalance three phase load now that was
+[00:44] a great method because it combines kind
+[00:47] of a visual idea of what's happening
+[00:50] inside the circuit combined with nice
+[00:52] mathematical accuracy the disadvantage
+[00:55] of that method is that it's quite
+[00:56] long-winded and there's a number of
+[00:58] steps to remember we then look to a
+[01:00] purely graphical method and where we
+[01:03] were able to draw things to scale and
+[01:04] measure literally what the neutral
+[01:07] current would be and that's a nice
+[01:09] method because again you can visually
+[01:11] see what's happening inside the circuit
+[01:12] helps you to understand the interaction
+[01:15] between the three currents when they
+[01:16] meet in the neutral conductor but also
+[01:19] not as accurate as it could be the
+[01:22] method that I'm about to show you has no
+[01:23] real graphical representation that I'm
+[01:25] aware of and this is the reason why I
+[01:28] don't really like to use this method as
+[01:30] a starting point for this topic because
+[01:32] I think it's lacking a certain amount of
+[01:36] depth of understanding when it comes to
+[01:38] figuring out what's happening with a
+[01:39] neutral current however it has the
+[01:42] advantage of being relatively
+[01:44] straightforward mathematically speaking
+[01:45] and again highly accurate so we'll go
+[01:48] through this method and of course it's
+[01:50] up to you which method you prefer to use
+[01:52] in your day-to-day life when you're
+[01:54] doing your electrical design work but
+[01:56] also that reminder that if this is
+[02:00] likely to come up in an exam then make
+[02:02] sure that you speak to your teacher and
+[02:04] it's very very clear which method you're
+[02:06] supposed to use in the exam situation it
+[02:09] may be that you can use any of the
+[02:11] methods but you may be expected to show
+[02:13] a specific method so just make sure that
+[02:15] you speak to your teacher before you
+[02:16] undertake this
+[02:18] question in an exam scenario so let's
+[02:21] have a look at the method so what we're
+[02:23] going to do first of all is we're going
+[02:24] to remind ourselves what the currents
+[02:25] were in our circuit that we measured so
+[02:27] he had l1 for starters that current in
+[02:29] l1 was 4.1 amperes and if you remember
+[02:33] we did a video where we actually looked
+[02:35] to measuring these values and how we
+[02:37] arrived at them within a three-phase
+[02:39] system so if you're not sure what these
+[02:42] values are coming from them please go
+[02:44] back and watch that video however in
+[02:46] this case we're just going to remind
+[02:47] ourselves what the values were in l2 we
+[02:51] had 16 point 1 amperes flowing and in l3
+[02:54] we had 8.1 amperes and then finally we
+[03:00] measured the current in the neutral and
+[03:03] that came out with a value but then when
+[03:04] we calculated it in the follow-up video
+[03:06] we saw that the value came out at ten
+[03:10] point five eight amp ere's so we
+[03:14] measured it slightly different to that
+[03:15] and then we calculated it and we
+[03:17] explained the reasons why those two
+[03:18] values weren't exactly the same so what
+[03:22] we're going to do in this video is we're
+[03:23] going to use this formula now this might
+[03:25] seem a little bit scary at first but
+[03:26] let's just get it down on paper so the
+[03:29] current in the neutral will be equal to
+[03:32] let's start by doing this l1 squared
+[03:36] plus l2 squared plus l3 squared bearing
+[03:41] in mind that these three numbers are the
+[03:43] currents that we find in l1 l2 and l3 we
+[03:48] then add on to the end of this minus l1
+[03:51] multiplied by L 2 minus L 1 multiplied
+[03:57] by L 3 minus l2 multiplied by L 3 and
+[04:04] then that whole thing needs to be Square
+[04:08] rooted so we square root that whole
+[04:10] thing there now at first glance that
+[04:14] formula probably looks quite
+[04:15] intimidating but actually if you think
+[04:17] of this logically it's actually not that
+[04:18] bad we're just squaring all the currents
+[04:20] and adding them together we're
+[04:22] multiplying each current by each other
+[04:25] current and then we're just taking that
+[04:26] away from this total and square rooting
+[04:29] the lot so if we kind of break it down
+[04:31] stages it becomes a little bit easier so
+[04:33] let's do that now let's let's look at
+[04:35] doing the individual stages so first of
+[04:39] all let's square all the values so first
+[04:41] of all we're going to be looking at l1
+[04:44] squared and we'll see what that's equal
+[04:46] to so we're going to do 4.1 squared so
+[04:50] that is l1 4.1 amps and we're going to
+[04:52] square that so if we do that on our
+[04:54] casio FX 85 gt+ emulator on the screen
+[04:57] here we find 4.1 squared is equal to
+[05:03] sixteen point eight one sixteen point
+[05:06] eight one there and then we're going to
+[05:10] do the same for l2 so we're going to
+[05:12] square l2 and l2 squared will be sixteen
+[05:15] point one squared so I'll figure out
+[05:18] what that is on the calculator so we can
+[05:20] do 16 point one squared and that comes
+[05:25] to two hundred and fifty nine point two
+[05:27] one two hundred and fifty nine point two
+[05:30] one and then we're going to do l3
+[05:33] squared which is equal to eight point
+[05:37] one squared so let's put that onto our
+[05:40] sheet eight point one squared is equal
+[05:43] to eight point one squared is equal to
+[05:47] sixty five point six one notice I'm not
+[05:51] putting any units on the end of here
+[05:52] because these are largely meaningless
+[05:54] now they're just numbers they don't
+[05:55] represent any particular quantity which
+[05:58] is why I've not added any unit onto the
+[05:59] end of it so we've got our three value
+[06:02] squared there and now let's have a look
+[06:04] at the next step so we can sort of say
+[06:06] that this is step number one if you like
+[06:09] so let's have a look at step number two
+[06:12] now step number two is simply going to
+[06:14] be this part where we figure out what
+[06:16] these numbers are going to be so l1
+[06:19] times by l2 will be equal to four point
+[06:24] one multiplied by 16 point one so that's
+[06:29] four point one four point one times by
+[06:35] sixteen point one and that comes out at
+[06:39] sixty six point zero one so that's sixty
+[06:43] six point zero one
+[06:44] and then we've got l1 x l3 so you can
+[06:49] see we've taken a 1 and we've multiplied
+[06:51] it by the other currents and that's
+[06:53] going to be four point one times by
+[06:56] eight point one and we can see from our
+[07:00] calculator four point one times by eight
+[07:03] point one is going to give us 33 point
+[07:08] two one so I'll do that now 33 point two
+[07:12] one and then we just do the final part
+[07:14] which is l2 times by l3 so the only
+[07:18] combination we've not done that so
+[07:20] that's going to come out now at sixteen
+[07:23] point one multiplied by eight point one
+[07:26] and when we do that 16 point
+[07:31] one multiplied by eight point one we
+[07:37] come out with this value here a hundred
+[07:40] and thirty point four one so that's a
+[07:43] hundred and thirty point four one so
+[07:47] that's great so we've done the squaring
+[07:50] of the currents we've done the
+[07:52] multiplying of the currents and really
+[07:54] all we've gotta do now is just put these
+[07:57] numbers into the formula so let's do
+[07:59] that now so this really now is step
+[08:03] three where we put these values into the
+[08:06] formula so we've got l1 squared came out
+[08:11] at sixteen point eight one and then
+[08:14] we're going to add on to that 259 point
+[08:18] two one so that's l2 squared becomes 259
+[08:22] point two one and then we've got l3
+[08:24] squared which was sixty five point six
+[08:27] one and then we're going to subtract all
+[08:31] of these multiplications from there so
+[08:33] l1 times l2 which is this bit here
+[08:36] becomes sixty six point zero one and
+[08:40] then we're going to take away L 1 times
+[08:43] L three which is thirty three point two
+[08:47] one and then we're going to take away L
+[08:50] 2 times L three which is a hundred and
+[08:52] thirty point four one and then of course
+[08:56] don't forget we've got that critical
+[08:57] part where we need to square root this
+[09:00] whole number so we're going to square
+[09:03] root that whole thing again looks quite
+[09:05] intimidating in reality it's really not
+[09:08] because all we're doing is just adding
+[09:11] and subtracting a load of numbers and
+[09:12] then square rooting it so at this stage
+[09:14] we've kind of got a couple of options
+[09:15] here but I quite like this to volley
+[09:18] into the calculator in one hit so we're
+[09:20] going to press the square root button
+[09:22] and then we just put the numbers in 16.8
+[09:26] one and then we're going to add two
+[09:30] hundred and fifty nine point two one and
+[09:35] then we're going to add 65 point six one
+[09:39] and then we are going to subtract sixty
+[09:43] six point zero one and we're going to
+[09:48] subtract 33 point two one and then we're
+[09:52] going to subtract one hundred and thirty
+[09:54] point four one hundred and thirty point
+[09:57] four one so there you can see there's
+[10:00] our massive long string of adding and
+[10:03] subtracting all Square rooted and if we
+[10:06] hit the equals button what we're hoping
+[10:07] is we're going to come out somewhere
+[10:09] around ten point five eight and pets so
+[10:12] it's going to be very interesting to see
+[10:14] if that's what happens so let's do the
+[10:17] calculation and see what happens
+[10:19] are we going to come out with ten point
+[10:22] five eight and pairs we've come out with
+[10:25] four times root seven so I'll press the
+[10:27] SD button and see what that comes out to
+[10:29] ten point five eight three etc so you
+[10:33] can see there that we've come out with a
+[10:35] very very accurate answer very similar
+[10:38] to the answer that we got when we did
+[10:40] this in the first place with our first
+[10:42] method so that comes out at ten point
+[10:45] five eight again we could go with three
+[10:49] if we wanted but we'll leave it at that
+[10:50] ten point five eight am pairs and there
+[10:53] is our Neutral current so again quite a
+[10:58] good method I don't think it's already
+[11:00] complicated the first time you see this
+[11:02] formula it looks a little bit
+[11:03] intimidating but if you break it in two
+[11:04] stages square the currents and then in
+[11:07] step two multiply each current by each
+[11:10] other current
+[11:11] and then we add the squares together and
+[11:13] then we take away all of the multiplied
+[11:15] numbers and square root the whole thing
+[11:17] we end up with the neutral current a
+[11:19] slightly easier method I think an
+[11:22] inaccurate method absolutely so if this
+[11:25] is your preferred method then feel free
+[11:27] to use it
+[11:28] following the cautions that were
+[11:29] mentioned earlier on in this video so at
+[11:31] this point all that's left to say is
+[11:33] thank you very much for watching
+[11:38] [Music]
+[11:51] [Music]

@@ -1,0 +1,127 @@
+# How To Choose The Correct Cable Size
+# https://www.youtube.com/watch?v=uxowSpL-cKM
+
+in this q a video we're going to answer the question how do I select the correct size of cable for a circuit now just before we explain the answer to this question Please be aware that this video is one of a series that we've made on the subject of circuit design they can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD and you'll receive a certificate to prove that you've completed the course through this series of videos we've been designing a circuit protected by an MCB from BG electrical to supply a 9 kilowatt Fusion Comet electric boiler from the electric heating company so how do we finally find a right size cable well in the last video the previous step was to calculate what the tabulated current carrying capacity of the cable would need to be remember tabulated just means recorded in a table so let's find those tables we'll stick with appendix F in the on-site guide in tables F4 to F6 we find information on the current carrying capacity of cables tables F4 and F5 are subdivided into two Separate Tables one covering current carrying capacity and one covering the voltage drop for the cables table F6 contains all the information in one place so which of these tables are we going to use well each one has a description as to what it covers so F4 is single core 70 degrees C thermoplastic PVC or Thermo setting insulated cables non-armored with or without sheath and with copper conductors which we can immediately discount for our circuit because we're not using singles table F5 is close it covers multi-core cables having thermoplastic PVC or thermosetting insulation non-armored with copper conductors so that's getting closer to the description of our twin and CPC cable but we can go on better and look at table F6 which covers 70 degrees C thermoplastic PVC insulated and sheathed flat cable with protective conductor with copper conductors that's the exact cable that we're using now again you may be wondering which one of these would I use for SWA as none of those tables seem to refer to it and you're quite right they don't but there are other tables covering other cable types in bs7671 and again we'll look at those another time so table F6 has the different ways that twin and CPC can be installed along the top and we find there four reference methods for when cable is installed in a ceiling or wall stuffed with insulation namely 100101 102 and 103. if we're using these reference methods we don't need to apply the insulation rating Factor as previously discussed as it's been taken account of in those figures already however our cable is going to be clipped directly to a surface and not surrounded by thermal insulation this means it's going to be installed using reference method C which we find in column 6. we know our cable needs to be able to carry 62.58 amps from our previous calculations so we simply work our way down the table until we get to a number that is bigger than 62.58 amps the first time we go over that is here where we have 64. running over to the corresponding cable size in column one you can see we have a value of 10 square millimeters therefore we need to install a 10 mil Cable in order for each to effectively dissipate the heat that it generates under normal operation interestingly these values are pretty close to each other meaning that we'd want to make sure that none of our rating factors change during installation for example if we were to run a third Cable in the group of conductors we might find that it derates the cable to the point where we'd need to upgrade it to a larger size it really emphasizes the importance of good circuit design and sticking to that design during the on-site installation work okay so we found the size of cable that we need to install to supply our boiler however there are other things that we need to check before we can install that cable these include the Vault drop the Earth volt Loop impedance of the circuit and in some circumstances if the size of the CPC is acceptable but we're going to cover that in the next part of this training package so please do make sure that you check that out when it gets released and that concludes this initial series of videos on electrical design if you found it helpful why not click the link in the description below to complete our free training package on this subject to help you with your CPD and that way you'll receive a certificate as well all that remains in this video is to say thank you very much thanks for watching
+
+
+[00:00] in this q a video we're going to answer
+[00:02] the question how do I select the correct
+[00:04] size of cable for a circuit now just
+[00:06] before we explain the answer to this
+[00:08] question Please be aware that this video
+[00:09] is one of a series that we've made on
+[00:11] the subject of circuit design they can
+[00:13] be viewed individually or you can click
+[00:15] the link in the description below to
+[00:16] view them as part of a free online
+[00:18] training package to help you with your
+[00:19] CPD and you'll receive a certificate to
+[00:22] prove that you've completed the course
+[00:24] through this series of videos we've been
+[00:26] designing a circuit protected by an MCB
+[00:28] from BG electrical to supply a 9
+[00:30] kilowatt Fusion Comet electric boiler
+[00:32] from the electric heating company so how
+[00:34] do we finally find a right size cable
+[00:37] well in the last video the previous step
+[00:39] was to calculate what the tabulated
+[00:41] current carrying capacity of the cable
+[00:43] would need to be remember tabulated just
+[00:45] means recorded in a table so let's find
+[00:47] those tables we'll stick with appendix F
+[00:50] in the on-site guide in tables F4 to F6
+[00:52] we find information on the current
+[00:54] carrying capacity of cables tables F4
+[00:57] and F5 are subdivided into two Separate
+[01:00] Tables one covering current carrying
+[01:02] capacity and one covering the voltage
+[01:04] drop for the cables table F6 contains
+[01:07] all the information in one place so
+[01:08] which of these tables are we going to
+[01:10] use well each one has a description as
+[01:12] to what it covers so F4 is single core
+[01:15] 70 degrees C thermoplastic PVC or Thermo
+[01:18] setting insulated cables non-armored
+[01:21] with or without sheath and with copper
+[01:23] conductors which we can immediately
+[01:25] discount for our circuit because we're
+[01:27] not using singles table F5 is close it
+[01:30] covers multi-core cables having
+[01:32] thermoplastic PVC or thermosetting
+[01:34] insulation non-armored with copper
+[01:36] conductors so that's getting closer to
+[01:38] the description of our twin and CPC
+[01:40] cable but we can go on better and look
+[01:42] at table F6 which covers 70 degrees C
+[01:45] thermoplastic PVC insulated and sheathed
+[01:48] flat cable with protective conductor
+[01:50] with copper conductors that's the exact
+[01:53] cable that we're using now again you may
+[01:55] be wondering which one of these would I
+[01:56] use for SWA as none of those tables seem
+[01:59] to refer to it and you're quite right
+[02:00] they don't but there are other tables
+[02:02] covering other cable types in bs7671 and
+[02:05] again we'll look at those another time
+[02:08] so table F6 has the different ways that
+[02:10] twin and CPC can be installed along the
+[02:12] top and we find there four reference
+[02:14] methods for when cable is installed in a
+[02:16] ceiling or wall stuffed with insulation
+[02:19] namely
+[02:20] 100101 102 and 103. if we're using these
+[02:25] reference methods we don't need to apply
+[02:26] the insulation rating Factor as
+[02:28] previously discussed as it's been taken
+[02:30] account of in those figures already
+[02:32] however our cable is going to be clipped
+[02:34] directly to a surface and not surrounded
+[02:37] by thermal insulation this means it's
+[02:39] going to be installed using reference
+[02:40] method C which we find in column 6. we
+[02:43] know our cable needs to be able to carry
+[02:45] 62.58 amps from our previous
+[02:47] calculations so we simply work our way
+[02:49] down the table until we get to a number
+[02:51] that is bigger than 62.58 amps the first
+[02:54] time we go over that is here where we
+[02:56] have 64. running over to the
+[02:59] corresponding cable size in column one
+[03:00] you can see we have a value of 10 square
+[03:04] millimeters therefore we need to install
+[03:06] a 10 mil Cable in order for each to
+[03:08] effectively dissipate the heat that it
+[03:09] generates under normal operation
+[03:12] interestingly these values are pretty
+[03:14] close to each other meaning that we'd
+[03:15] want to make sure that none of our
+[03:17] rating factors change during
+[03:18] installation for example if we were to
+[03:21] run a third Cable in the group of
+[03:22] conductors we might find that it derates
+[03:25] the cable to the point where we'd need
+[03:26] to upgrade it to a larger size it really
+[03:29] emphasizes the importance of good
+[03:30] circuit design and sticking to that
+[03:32] design during the on-site installation
+[03:34] work okay so we found the size of cable
+[03:37] that we need to install to supply our
+[03:39] boiler however there are other things
+[03:40] that we need to check before we can
+[03:42] install that cable these include the
+[03:44] Vault drop the Earth volt Loop impedance
+[03:46] of the circuit and in some circumstances
+[03:48] if the size of the CPC is acceptable but
+[03:51] we're going to cover that in the next
+[03:52] part of this training package so please
+[03:54] do make sure that you check that out
+[03:55] when it gets released and that concludes
+[03:58] this initial series of videos on
+[04:00] electrical design if you found it
+[04:01] helpful why not click the link in the
+[04:03] description below to complete our free
+[04:04] training package on this subject to help
+[04:06] you with your CPD and that way you'll
+[04:08] receive a certificate as well all that
+[04:10] remains in this video is to say thank
+[04:11] you very much thanks for watching

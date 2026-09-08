@@ -1,0 +1,73 @@
+# Electrical Testing and Fault Finding - Socket NOT Working for a Dishwasher
+# https://www.youtube.com/watch?v=MhGPToY3vZI
+
+so me and Eric come to a property today the customer said that their dishwasher isn't working it's actually an integrated appliance as you can see here the first thing we checked okay obviously by pressing the on off button that sounds silly but sometimes it can be that we had no power so then we checked just to see whether a local fuse had gone we checked continuity in the fuse the fuse was fine we checked the overcome protection device again that was fine everything else is working all the other sockets we've done some testing there is we're gonna plug in okay and we're gonna test for voltage and as you can see on the tester between line and earth our protective earth we actually have 240 volts so at this point you almost start looking for something else because you think oh yeah there's power here okay but then if we check between neutral and earth we actually have 68 volts and if we checked in line and neutral we're only showing 177 volts looking at this we have 240 there between line and earth so we know generally we can sort of say from that our line conductor and our CPC is actually doing what it should and we're getting a good reading there however we're getting a bad reading to neutral to earth and a bad reading between line and neutral so the common fault there if you like is with the neutral as you can see when we introduce the neutral into these voltages when we're testing between them that's when it changes and we get a reading we don't want to see so we can't at this stage really 100 say we have a problem with the neutral within this video show testing how we can prove that and see if there is an issue with our neutral conductor so now that we've looked at the voltage and we can see there's some sort of an issue there what sort of tests are we going to do next do we do an insulation resistance test well not actually tripping any of the overcome protection devices or blowing the localized fuse so i assume that the the condition of the cabling itself is okay what we're actually looking for if we're not getting a supply we're probably looking for a potential break in the cable undertake our continuity of CPC tests okay and and we're going to check that we have continuous conductors from one point to the other you could do this with a long lead test and we could probe onto the line one end the line in the socket outlet see if there's continuity again we'd call that a throughput test we can do the same with the CPC in the neutral however what we're going to do is we're going to do this without a long lead test okay we're just going to sort of use our R1 plus R2 method to distinguish whether we have a break now because this is a radial okay this actually fed from a module unit there okay grid switch okay and you can see that i've actually linked together line and neutral within the back of the switch for the dishwasher okay so what we're gonna do now is we're going to change our meter to continuity and make sure the probes are in in the back of the correct by that i mean because we're testing line and neutral we need on a neutral in L1 and L2 okay so it indicates line and neutral on the the plug top for our test equipment so when i plug in now i should expect to see a reading now i don't you see so we have a value greater than 999 so that is telling us that we have no continuity between either our with our line conductor okay or our neutral conductor we won't know which one it is until we now do the test between two more conductors so if we change this to our neutral and our CPC linked together there and we don't have a reading then we can assume our neutral is the issue if we do have a reading then we can assume that our line is issued so we have to prove two of the three combinations to confirm polarity if you like as well so now we've linked our neutral on our CPC okay again what we're going to do now is we're actually going to change in the back of our tester we're going to change the line conductor for our CPC remember on our plug-in lead here okay the colour indicates the conductor in the plug top so now we're doing neutral and CPC okay so what i'm going to do is i'm going to plug into here and again you can see i have no continuity so i've had no continuity between line and neutral and none between neutral and CPC with the information we gathered earlier with the voltage issues we knew we introduced the neutral is causing an issue now we don't seem to have continuity with the neutral at all when it's combined with either the CPC or the line i don't need to at this point but just to prove this what we'll do is we'll link line and CPC together and then we'll perform the test again and see if we get continuity then so now we've linked the grid switch what we're going to do we're going to need to put our line and CPC in the back to indicate on the plug top and now if we switch the socket on as you can see we actually have continuity now so we have continuity of line and CPC we don't have continuity between line and neutral or neutral and CPC therefore this is showing us okay that in fact we do have a break in the neutral conductor so again just an easy way of fault finding okay using dead testing there was no power to the appliance so what did we check first fuses etcetera for loss of supply all the fuses and open protection devices were fine therefore our first thought then is there a break in the cable because there's a loss of supply somewhere so something is stopping power from getting to that socket outlet in this case we found out it was the neutral conductor but regardless of which conductor is by following that process okay continuity of CPC you have to do two combinations you link the conductors out test for continuity if there is continuity you can almost disregard them conductors if there isn't then you must perform another test really to to just confirm the problem we have now okay so we understand that we have an issue with the neutral the problem is the cable actually goes up by the the look of it here okay but we're down to a dishwasher so trying to find a reference point where the break is going to be is going to be very very hard so we need to sort of think about how we can get a new feed to that socket outlet so they can have their dishwasher working we hope this video Eric where's the thumb there we go good lad
+
+
+[00:00] so me and Eric come to a property today the customer said that their dishwasher isn't working
+[00:03] it's actually an integrated appliance as you can see here the first thing we checked okay obviously
+[00:07] by pressing the on off button that sounds silly but sometimes it can be that we had no power
+[00:11] so then we checked just to see whether a local fuse had gone we checked continuity in the fuse
+[00:17] the fuse was fine we checked the overcome protection device again that was fine
+[00:20] everything else is working all the other sockets we've done some testing there
+[00:24] is we're gonna plug in okay and we're gonna test for voltage and as you can see on the tester
+[00:31] between line and earth our protective earth we actually have 240 volts so at this point
+[00:37] you almost start looking for something else because you think oh yeah there's
+[00:40] power here okay but then if we check between neutral and earth we actually have 68 volts
+[00:47] and if we checked in line and neutral we're only showing 177 volts looking at this we have 240
+[00:54] there between line and earth so we know generally we can sort of say from that our line conductor
+[01:00] and our CPC is actually doing what it should and we're getting a good reading there however we're
+[01:06] getting a bad reading to neutral to earth and a bad reading between line and neutral so the
+[01:10] common fault there if you like is with the neutral as you can see when we introduce the neutral into
+[01:14] these voltages when we're testing between them that's when it changes and we get a reading
+[01:20] we don't want to see so we can't at this stage really 100 say we have a problem with the neutral
+[01:25] within this video show testing how we can prove that and see if there is an issue with our neutral
+[01:31] conductor so now that we've looked at the voltage and we can see there's some sort of an issue there
+[01:36] what sort of tests are we going to do next do we do an insulation resistance test well not actually
+[01:40] tripping any of the overcome protection devices or blowing the localized fuse so i assume that the
+[01:45] the condition of the cabling itself is okay what we're actually looking for if we're not getting
+[01:49] a supply we're probably looking for a potential break in the cable undertake our continuity of
+[01:54] CPC tests okay and and we're going to check that we have continuous conductors from one
+[01:59] point to the other you could do this with a long lead test and we could probe onto the line one
+[02:04] end the line in the socket outlet see if there's continuity again we'd call that a throughput test
+[02:08] we can do the same with the CPC in the neutral however what we're going to do is we're going
+[02:11] to do this without a long lead test okay we're just going to sort of use our R1 plus R2 method
+[02:16] to distinguish whether we have a break now because this is a radial okay this actually
+[02:20] fed from a module unit there okay grid switch okay and you can see that i've actually linked together
+[02:26] line and neutral within the back of the switch for the dishwasher okay so what we're gonna do now
+[02:34] is we're going to change our meter to continuity and make sure the probes are in in the back of
+[02:40] the correct by that i mean because we're testing line and neutral we need on a neutral in L1 and
+[02:46] L2 okay so it indicates line and neutral on the the plug top for our test equipment so when i
+[02:53] plug in now i should expect to see a reading now i don't you see so we have a value greater than 999
+[03:01] so that is telling us that we have no continuity between either our with our line conductor okay or
+[03:09] our neutral conductor we won't know which one it is until we now do the test between two more
+[03:15] conductors so if we change this to our neutral and our CPC linked together there and we don't have
+[03:21] a reading then we can assume our neutral is the issue if we do have a reading then we can assume
+[03:27] that our line is issued so we have to prove two of the three combinations to confirm polarity if you
+[03:32] like as well so now we've linked our neutral on our CPC okay again what we're going to do now is
+[03:37] we're actually going to change in the back of our tester we're going to change the line conductor
+[03:42] for our CPC remember on our plug-in lead here okay the colour indicates the conductor in the plug top
+[03:50] so now we're doing neutral and CPC okay so what i'm going to do is i'm going to plug into here
+[03:59] and again you can see i have no continuity so i've had no continuity between line and neutral
+[04:06] and none between neutral and CPC with the information we gathered earlier with the voltage
+[04:10] issues we knew we introduced the neutral is causing an issue now we don't seem to
+[04:14] have continuity with the neutral at all when it's combined with either the CPC or the line
+[04:19] i don't need to at this point but just to prove this what we'll do is we'll link
+[04:22] line and CPC together and then we'll perform the test again and see if we get continuity then so
+[04:27] now we've linked the grid switch what we're going to do we're going to need to put our
+[04:31] line and CPC in the back to indicate on the plug top and now if we switch the socket on
+[04:41] as you can see we actually have continuity now so we have continuity of line and CPC we don't have
+[04:47] continuity between line and neutral or neutral and CPC therefore this is showing us okay that in fact
+[04:54] we do have a break in the neutral conductor so again just an easy way of fault finding okay using
+[05:01] dead testing there was no power to the appliance so what did we check first fuses etcetera for
+[05:06] loss of supply all the fuses and open protection devices were fine therefore our first thought then
+[05:12] is there a break in the cable because there's a loss of supply somewhere so something is stopping
+[05:17] power from getting to that socket outlet in this case we found out it was the neutral conductor
+[05:22] but regardless of which conductor is by following that process okay continuity of CPC you have
+[05:27] to do two combinations you link the conductors out test for continuity if there is continuity
+[05:32] you can almost disregard them conductors if there isn't then you must perform another test really to
+[05:39] to just confirm the problem we have now okay so we understand that we have an issue with the
+[05:44] neutral the problem is the cable actually goes up by the the look of it here okay but we're down to
+[05:50] a dishwasher so trying to find a reference point where the break is going to be is going to be very
+[05:55] very hard so we need to sort of think about how we can get a new feed to that socket outlet so they
+[06:00] can have their dishwasher working we hope this video Eric where's the thumb there we go good lad

@@ -1,0 +1,281 @@
+# How to Find the Power Formula Number 3 for Electrical Circuits, Calculating Power Without Current
+# https://www.youtube.com/watch?v=lPfu-QpFnS8
+
+[Music] hello and welcome to this ethical science and principles video in this video we're going to continue considering the subject of power now in the previous two videos on this subject we've uncovered two formulae so the first one was what I call the basic power formula or or the first power formula is power is equal to current times voltage and we measured a number of currents and voltages two different types of load and then we calculated the relationship between them we could see that relationship quite clearly we then went on to figure out what the second power formula is so that's power formula number two which if you'll remember was P equals I squared multiplied by R and we found that by using the basic power formula in conjunction with Ohm's law we got to our second power formula and we've already discussed the usefulness of these two formulas to us as electricians so what we're gonna do in this video is we're going to uncover the third power formula so there is three power formulas and you'll be relieved to hear that this is the final one okay so this is the one that we may really mean even our examines the classic exam questions whether we're doing sitting guilds or e-a-l qualifications you may well get asked a question pertaining to this particular formula so let's first of all try and figure out where it comes from and then we'll have a little look and see if we can use it in a practical experiment so very similar to what we did last time we're going to start off with our basic power formula P equals I multiplied by V and then we're going to talk about how we can include Ohm's law into this again so if you remember Ohm's law the way that I suggest you remember Ohm's law is I is equal to V divided by R so I equals V over R that's the way that you really want to remember it because that's kind of the most useful form of it towards electricians now hopefully if you watched the previous video in this series you'll remember the importance of this symbol here this equal symbol again as I said in a previous video we've kind of through the use of calculators come to view that symbol that button on the calculator as meaning give me the answer work this out for me however this symbol actually has its own power because it means is the same as is equal to or is the same as so what we see from this is that actually current is the same as voltage divided by resistance well how does that help is out in the context of power very simply actually if we look back to our basic power formula P equals I times V what we can do is we can kind of mix this up a little bit and say if we've got P is equal to we can now take this value of I whatever it may be in an electrical circuit and we can swap it out for this here because I is the same as V divided by R so this I we can actually swap this out for V divided by R like that so we've got V divided by R and then we're going to times that by V which is obviously that V there so you can see that actually this statement here and this statement here mean exactly the same thing but instead of using I we've used V divided by R now this obviously looks a little bit messy so what we're going to do is say that power is equal to V times V and of course V times V is V squared divided by R and there it is in all its glory that is our third power formula P is equal to V squared over R so let's put that into our list of power formulae P is equal to V squared over R like that and there they are the 3 power formulae that you will need to remember for your exams of course that's very important and we've already seen the importance of these two in kind of real-life electrical stuff so what we're interested in now is having a little look at kind of proving that this is at least relatively true the values won't be exact as we've seen as tolerances in manufacturing equipment there's tolerances in measuring equipment there's all kinds of things that cause this to perhaps not quite perfect but let's think back to some of the numbers that we found in previous videos and then we'll use those in order to calculate and see if this is anywhere near accurate so let's cut to that previous footage now now the second row we've got connected up is a two kilowatt heater so again a purely resistive load and it has a value of 2,000 watts so let's measure the voltage and the current again we'll record those values and then we'll have a look at how they relate to each other in the moment so we'll measure once again across the line and the neutral and that we will power the circuit up and turn the load on and you can see there we get in 242 where we have two hundred and forty three point one volts now that sailed down so 243 point one volts is a value that we'll use so what I've done now is I've had this heater plugged in for a few minutes and it's got really quite toasty now so it's dissipating a lot of heat that's why I've removed the mega instrument from leaning against it I didn't want to damage my tester what I'm now going to do is disconnect this from the supply and then we're going to measure the resistance of this now that it's got a little bit hotter so let's see what's happened with the value so I'll unplug this so that is now starting to cool down so we'll measure this nice and quickly so we get as accurate a result as we can so once again we're going to measure the resistance of the heating element by just connecting across the line and neutral of the pins there and we'll let the test to do its thing and you can see there that it's coming out at twenty seven point zero five ohms and you can see they're actually what's happening is that will probably start to drop down a little bit now as it gets cooler so we can assume that when that was hot it was at least twenty seven point oh five ohms so what we're going to do is we're going to now take that value back up to the classroom and we're going to do the calculation that we need to to figure out if we've got this a little bit more accurate now so in the first little bit of footage we looked at when we were gathering information about voltage and current for the two kilowatt heater so that's the 2000 watt heater we saw that the power for that heat was equal to 2,000 watts again bearing in mind with manufacturers tolerances and other variations that that value might not be exactly accurate and we also saw that the voltage for that particular load when we measured that was two hundred and forty three point one volts two hundred and forty three point one volts and then when we measured the resistance of the heater and if you remember we measured it when the resistance of the heater was slightly increased because the heater had been running for a while and was hot we saw that the resistance of that heater was twenty seven point zero five ohms so twenty seven point zero five ohms so what we're doing here we already know the value so we're not being asked to do a calculation here but we're just gonna kind of verify and see if these values or anywhere near accurate so we know now according to this third power form you know that P is equal to V squared divided by R P is equal to V squared over R so let's put our numbers in here two hundred and forty three point one volts divided by bearing in mind that we're going to square that top numbers that's very important and then we're going to divide that by the resistance which is twenty seven point zero five so two hundred and forty three point one squared divided by twenty seven point zero five so I'll put that into the calculator and of course on the catio FX 85 gt+ you've got this beautiful fraction button that I do love to use two hundred forty three point one squared and then we're going to divide that by twenty seven point zero five and if this is correct we should come out somewhere in the ballpark of two thousand watts it might be a little bit more might be a little bit more less but will be somewhere in that region so let's have a look at the value that we get and we come out there at two thousand one hundred and eighty four so we've got there two thousand one hundred and eighty four point also point eight watts there so you can see we've come out with a higher value than we had than we were expecting but what gotta bear in mind when we do this calculation is that if there is any kind of variance within the voltage measurement so maybe if instrument hasn't been calibrated for a while or maybe we read when there was a small surge in the voltage or something like that because we're squaring that number any kind of inaccuracy within that value will kind of be amplified and made bigger by the fact that we're squaring it which may be part of the reason why this value hasn't come out exactly right so key things just to take away from this video obviously our third power formula P equals V squared over R that's very very important we need to commit all three of these formulae to memory because we might be asked those in a exam situation we've already asked questions about them we may be given values to calculate with us we've demonstrated here or we may simply be asked to identify which one is the correct formula so you may be represented with something that's given P equals V over R squared or something like that P equals V over R squared you might be given multiple choices with one correct answer and several incorrect answers so it's important that we have these committed in our memory so that we can identify the correct formula and use it to perform calculations as well so there we have it that's our three power formula we've established now in future videos we'll go on to actually explain and prove that these values are correct that these formulas are all true and actually they all relate to each other quite beautifully and we'll kind of see some evidence for that in a future video it's quite a lovely thing to look at and we'll also take this a step further and start to discuss energy cuts again that's something that's very very important in electrical circles and also one of the areas where we stray away from the SI system of weights and measures so that's an interesting thought to look forward to I think it is anyway all that remains in this video is to say thank you very much for watching [Music] [Music] [Music]
+
+
+[00:02] [Music]
+[00:07] hello and welcome to this ethical
+[00:09] science and principles video in this
+[00:11] video we're going to continue
+[00:12] considering the subject of power now in
+[00:15] the previous two videos on this subject
+[00:16] we've uncovered two formulae so the
+[00:20] first one was what I call the basic
+[00:22] power formula or or the first power
+[00:24] formula is power is equal to current
+[00:28] times voltage and we measured a number
+[00:31] of currents and voltages two different
+[00:33] types of load and then we calculated the
+[00:37] relationship between them we could see
+[00:38] that relationship quite clearly we then
+[00:40] went on to figure out what the second
+[00:43] power formula is so that's power formula
+[00:45] number two which if you'll remember was
+[00:48] P equals I squared multiplied by R and
+[00:52] we found that by using the basic power
+[00:54] formula in conjunction with Ohm's law we
+[00:58] got to our second power formula and
+[01:00] we've already discussed the usefulness
+[01:02] of these two formulas to us as
+[01:04] electricians so what we're gonna do in
+[01:06] this video is we're going to uncover the
+[01:08] third power formula so there is three
+[01:10] power formulas and you'll be relieved to
+[01:13] hear that this is the final one
+[01:15] okay so this is the one that we may
+[01:17] really mean even our examines the
+[01:18] classic exam questions whether we're
+[01:19] doing sitting guilds or e-a-l
+[01:21] qualifications you may well get asked a
+[01:24] question pertaining to this particular
+[01:26] formula so let's first of all try and
+[01:28] figure out where it comes from and then
+[01:30] we'll have a little look and see if we
+[01:32] can use it in a practical experiment so
+[01:35] very similar to what we did last time
+[01:36] we're going to start off with our basic
+[01:38] power formula P equals I multiplied by V
+[01:42] and then we're going to talk about how
+[01:45] we can include Ohm's law into this again
+[01:47] so if you remember Ohm's law the way
+[01:49] that I suggest you remember Ohm's law is
+[01:51] I is equal to V divided by R so I equals
+[01:58] V over R that's the way that you really
+[02:00] want to remember it because that's kind
+[02:02] of the most useful form of it towards
+[02:04] electricians now hopefully if you
+[02:07] watched the previous video in this
+[02:08] series you'll remember the importance of
+[02:10] this symbol here this equal symbol
+[02:13] again as I said in a previous video
+[02:15] we've kind of through the use of
+[02:16] calculators come to view that symbol
+[02:19] that button on the calculator as meaning
+[02:21] give me the answer work this out for me
+[02:23] however this symbol actually has its own
+[02:25] power because it means is the same as is
+[02:29] equal to or is the same as so what we
+[02:32] see from this is that actually current
+[02:33] is the same as voltage divided by
+[02:37] resistance well how does that help is
+[02:39] out in the context of power very simply
+[02:42] actually if we look back to our basic
+[02:43] power formula P equals I times V what we
+[02:47] can do is we can kind of mix this up a
+[02:49] little bit and say if we've got P is
+[02:52] equal to we can now take this value of I
+[02:56] whatever it may be in an electrical
+[02:58] circuit and we can swap it out for this
+[03:01] here because I is the same as V divided
+[03:05] by R so this I we can actually swap this
+[03:08] out for V divided by R like that so
+[03:13] we've got V divided by R and then we're
+[03:15] going to times that by V which is
+[03:18] obviously that V there so you can see
+[03:20] that actually this statement here and
+[03:22] this statement here mean exactly the
+[03:24] same thing but instead of using I we've
+[03:27] used V divided by R now this obviously
+[03:31] looks a little bit messy so what we're
+[03:33] going to do is say that power is equal
+[03:35] to V times V and of course V times V is
+[03:39] V squared divided by R and there it is
+[03:44] in all its glory that is our third power
+[03:47] formula P is equal to V squared over R
+[03:50] so let's put that into our list of power
+[03:52] formulae P is equal to V squared over R
+[03:57] like that and there they are the 3 power
+[04:00] formulae that you will need to remember
+[04:02] for your exams of course that's very
+[04:05] important and we've already seen the
+[04:06] importance of these two in kind of
+[04:08] real-life electrical stuff so what we're
+[04:12] interested in now is having a little
+[04:14] look at kind of proving that this is at
+[04:17] least relatively true the values won't
+[04:18] be exact as we've seen as tolerances in
+[04:21] manufacturing equipment there's
+[04:22] tolerances in measuring equipment
+[04:24] there's all kinds of things that cause
+[04:26] this to perhaps not
+[04:27] quite perfect but let's think back to
+[04:29] some of the numbers that we found in
+[04:30] previous videos and then we'll use those
+[04:33] in order to calculate and see if this is
+[04:37] anywhere near accurate so let's cut to
+[04:39] that previous footage now now the second
+[04:42] row we've got connected up is a two
+[04:44] kilowatt heater so again a purely
+[04:46] resistive load and it has a value of
+[04:48] 2,000 watts so let's measure the voltage
+[04:51] and the current again we'll record those
+[04:52] values and then we'll have a look at how
+[04:54] they relate to each other in the moment
+[04:56] so we'll measure once again across the
+[04:58] line and the neutral and that we will
+[05:01] power the circuit up and turn the load
+[05:04] on and you can see there we get in 242
+[05:08] where we have two hundred and forty
+[05:10] three point one volts now that sailed
+[05:12] down so 243 point one volts is a value
+[05:16] that we'll use so what I've done now is
+[05:19] I've had this heater plugged in for a
+[05:20] few minutes and it's got really quite
+[05:22] toasty now so it's dissipating a lot of
+[05:24] heat that's why I've removed the mega
+[05:27] instrument from leaning against it I
+[05:29] didn't want to damage my tester what I'm
+[05:31] now going to do is disconnect this from
+[05:33] the supply and then we're going to
+[05:34] measure the resistance of this now that
+[05:37] it's got a little bit hotter so let's
+[05:39] see what's happened with the value so
+[05:40] I'll unplug this so that is now starting
+[05:45] to cool down so we'll measure this nice
+[05:47] and quickly so we get as accurate a
+[05:49] result as we can so once again we're
+[05:51] going to measure the resistance of the
+[05:53] heating element by just connecting
+[05:54] across the line and neutral of the pins
+[05:57] there and we'll let the test to do its
+[05:59] thing and you can see there that it's
+[06:02] coming out at twenty seven point zero
+[06:05] five ohms and you can see they're
+[06:08] actually what's happening is that will
+[06:09] probably start to drop down a little bit
+[06:11] now as it gets cooler so we can assume
+[06:14] that when that was hot it was at least
+[06:16] twenty seven point oh five ohms so what
+[06:19] we're going to do is we're going to now
+[06:20] take that value back up to the classroom
+[06:23] and we're going to do the calculation
+[06:25] that we need to to figure out if we've
+[06:27] got this a little bit more accurate now
+[06:29] so in the first little bit of footage we
+[06:31] looked at when we were gathering
+[06:32] information about voltage and current
+[06:34] for the two kilowatt heater so that's
+[06:36] the 2000 watt heater we saw that the
+[06:39] power for that heat
+[06:40] was equal to 2,000 watts again bearing
+[06:44] in mind with manufacturers tolerances
+[06:46] and other variations that that value
+[06:48] might not be exactly accurate and we
+[06:50] also saw that the voltage for that
+[06:54] particular load when we measured that
+[06:55] was two hundred and forty three point
+[06:58] one volts two hundred and forty three
+[07:01] point one volts and then when we
+[07:03] measured the resistance of the heater
+[07:05] and if you remember we measured it when
+[07:06] the resistance of the heater was
+[07:08] slightly increased because the heater
+[07:10] had been running for a while and was hot
+[07:12] we saw that the resistance of that
+[07:14] heater was twenty seven point zero five
+[07:18] ohms so twenty seven point zero five
+[07:22] ohms so what we're doing here we already
+[07:25] know the value so we're not being asked
+[07:26] to do a calculation here but we're just
+[07:28] gonna kind of verify and see if these
+[07:30] values or anywhere near accurate so we
+[07:32] know now according to this third power
+[07:34] form you know that P is equal to V
+[07:37] squared divided by R P is equal to V
+[07:40] squared over R so let's put our numbers
+[07:43] in here two hundred and forty three
+[07:45] point one volts divided by bearing in
+[07:49] mind that we're going to square that top
+[07:50] numbers that's very important and then
+[07:53] we're going to divide that by the
+[07:54] resistance which is twenty seven point
+[07:55] zero five so two hundred and forty three
+[07:58] point one squared divided by twenty
+[08:01] seven point zero five so I'll put that
+[08:03] into the calculator and of course on the
+[08:05] catio FX 85 gt+ you've got this
+[08:07] beautiful fraction button that I do love
+[08:10] to use two hundred forty three point one
+[08:12] squared and then we're going to divide
+[08:15] that by twenty seven point zero five and
+[08:17] if this is correct we should come out
+[08:21] somewhere in the ballpark of two
+[08:23] thousand watts it might be a little bit
+[08:24] more might be a little bit more less but
+[08:26] will be somewhere in that region so
+[08:27] let's have a look at the value that we
+[08:29] get and we come out there at two
+[08:31] thousand one hundred and eighty four so
+[08:34] we've got there two thousand one hundred
+[08:36] and eighty four point also point eight
+[08:40] watts there so you can see we've come
+[08:43] out with a higher value than we had than
+[08:45] we were expecting
+[08:46] but what gotta bear in mind when we do
+[08:48] this calculation is that if there is any
+[08:50] kind of variance within the voltage
+[08:53] measurement so maybe if
+[08:54] instrument hasn't been calibrated for a
+[08:56] while or maybe we read when there was a
+[08:58] small surge in the voltage or something
+[08:59] like that
+[09:00] because we're squaring that number any
+[09:02] kind of inaccuracy within that value
+[09:06] will kind of be amplified and made
+[09:08] bigger by the fact that we're squaring
+[09:10] it which may be part of the reason why
+[09:12] this value hasn't come out exactly right
+[09:14] so key things just to take away from
+[09:17] this video obviously our third power
+[09:19] formula P equals V squared over R that's
+[09:21] very very important we need to commit
+[09:23] all three of these formulae to memory
+[09:25] because we might be asked those in a
+[09:27] exam situation we've already asked
+[09:28] questions about them we may be given
+[09:30] values to calculate with us we've
+[09:32] demonstrated here or we may simply be
+[09:35] asked to identify which one is the
+[09:37] correct formula so you may be
+[09:38] represented with something that's given
+[09:40] P equals V over R squared or something
+[09:43] like that P equals V over R squared you
+[09:45] might be given multiple choices with one
+[09:47] correct answer and several incorrect
+[09:50] answers so it's important that we have
+[09:52] these committed in our memory so that we
+[09:54] can identify the correct formula and use
+[09:57] it to perform calculations as well so
+[10:00] there we have it that's our three power
+[10:01] formula we've established now in future
+[10:03] videos we'll go on to actually explain
+[10:05] and prove that these values are correct
+[10:09] that these formulas are all true and
+[10:11] actually they all relate to each other
+[10:13] quite beautifully and we'll kind of see
+[10:14] some evidence for that in a future video
+[10:15] it's quite a lovely thing to look at and
+[10:17] we'll also take this a step further and
+[10:19] start to discuss energy cuts again
+[10:22] that's something that's very very
+[10:23] important in electrical circles and also
+[10:25] one of the areas where we stray away
+[10:27] from the SI system of weights and
+[10:29] measures so that's an interesting
+[10:31] thought to look forward to I think it is
+[10:33] anyway all that remains in this video is
+[10:35] to say thank you very much for watching
+[10:39] [Music]
+[10:52] [Music]
+[10:58] [Music]

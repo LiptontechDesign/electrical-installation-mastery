@@ -1,0 +1,194 @@
+# Single Line (1-Line) or Panel Schedule?
+# https://www.youtube.com/watch?v=qkQ7DEGCRIk
+
+all right so i want to talk about a decision that you have to make when you're designing an electrical system how do you want to represent your equipment and the circuiting that goes to and from your gear you've probably seen a single line diagram or a one-line diagram and you know what a panel schedule is but why would you use one over the other and what are like the criterias to decide whether you use a single line or a panel schedule so it all comes down to the amount of detail that you want to show in your design do you want to just show the branch circuit to the equipment and that's it or do you need to call out the different wire types the disconnect and the vfd's all the way down to your air handler so if we want to take a look at the single line diagram you can see that the type of load that i'm circuiting here aren't just single receptacles or lights instead these are mechanical or process equipment that have multiple components that we need to show so over here we have a vfd to a hot water heating pump and then the next one over there is a disconnect switch a fused one that that that provides power and protection to the compressed uh the air compressor down the line so you can see that we can specify exactly what type of cable goes on each side of the vfd so right here it's a 40 amp cable and this is just 600 volt conductors then after the vfd we want to specify a vfd type cable so that information can be easily illustrated on a single line diagram if you wanted to do that on a panel schedule it would be a lot more difficult some other things that you can do on a single line that's difficult to illustrate on a panel schedule is like if you wanted to have say two main breakers and you wanted to key interlock them or if you wanted to show a breaker that has shunt trip or if you're doing a switch gear with like lsig breakers like anything that you want to add extra information to is a little easier to do on a single line diagram so you kind of get the idea a single line diagram maybe involves a little more work to put together but you can actually put a lot more information in that diagram a panel schedule on the other hand is a little more simplified it gives you information about the panel itself and literally just numbers the loads and sometimes provides you the load value in a chart so if you want to look at the panel schedule you can see that it's a very chart-like organized list so up at the top we'll have usually a panel name with a location and then there's some options that can be specified for the panel so for example here something unusual would be a spd or surge protection device so you can say exactly what it is type 2 90ka etc if you need a double neutral or anything this is a good spot to put it it'll list your enclosure type whether it be type 1 so for indoors or if you want to do outside for a nema 3 r you can list that here as well then you can find some other common information such as voltage phase wire and serve from you can include aic rating surface mounted or recessed and you can list your bus size or your main circuit breaker sometimes this might just be a main log only so you can list that kind of information here but you can see that when you get past the panel information the load information is a little limited as to what you can include here so of course you have your loads like your lighting loads here you can put your load in but if you wanted to include any notes like if you need to include a fuse disconnect and you want to size the fuse or something you have very limited space to do that so of course you can always put a note 1 and then elaborate down here but let's say you have that for five or six different pieces of equipment each one with its own special sizing you can see that this becomes unfavorable in that situation but on the plus side it is very organized and simple you will have your circuit number with your load description you can specify what the amperage of the breaker is and how many pulls then this will usually pull in your load if you're doing it in revit this will be an intelligent panel schedule so anything that you circuit to it will have their loads transferred to this chart then from here you can do a load classification if you wanted to so in this instance it's just lighting so it's just a hundred percent but um if you were to classify your loads as a receptacle or equipment or hvac you can apply a different demand factor then once all your demands are added up you can get a demand load that's you know less than your total connected load another useful feature for this one is that we'll have we can check to make sure that our phases are balanced so a b and c should typically all be within like the same amperage pull so if you have one that's extremely out which you can kind of see here phase a is slightly heavily loaded so since that one is more loaded you'll have a neutral connected current so if you were to balance all three of your phases out the neutral shouldn't experience any current so that's better for the whole system so you can kind of see that each one has its pros and cons single line diagram can be very detailed especially when you have different loads that require different parts to it a panel schedule on the other hand is very consistent and it also helps you add up your loads check your phase balancing and just give you a good total demand load normally on a project you would use both but you have to know when to make that cut off so if you're looking at a bigger single line diagram and you're working your way down from the distribution you have to kind of know when you have to switch over to a panel schedule most branch circuit panels are always shown as a panel schedule and on a single line diagram it would just be a box so basically the bottom line is a single line diagram offers you more flexibility and allows you to put more specific details in that design so when you have something that requires disconnect or vfd or motor starter or just anything that's like out of the ordinary then you might want to go with a single line diagram but if you go further downstream and you get to a branch panel where everything is just a receptacle load or a lighting load then a panel schedule is a very convenient and simple way to convey your information plus then it adds up your loads and everything so it's nice to have if you're trying to do a load cap later alright so that's my short rationale on why i would use a single line diagram or panel schedule so if you have any questions leave them in the comments we can have a chat down there otherwise i'll see you guys next time bye [Music]
+
+
+[00:00] all right so i want to talk about a
+[00:01] decision that you have to make when
+[00:02] you're designing an electrical system
+[00:04] how do you want to represent your
+[00:06] equipment and the circuiting that goes
+[00:08] to and from your gear you've probably
+[00:10] seen a single line diagram or a one-line
+[00:13] diagram and you know what a panel
+[00:14] schedule is but why would you use one
+[00:17] over the other and what are like the
+[00:19] criterias to decide whether you use a
+[00:22] single line or a panel schedule so it
+[00:24] all comes down to the amount of detail
+[00:25] that you want to show in your design do
+[00:27] you want to just show the branch circuit
+[00:29] to the equipment and that's it or do you
+[00:31] need to call out the different wire
+[00:32] types the disconnect and the vfd's all
+[00:35] the way down to your air handler so if
+[00:37] we want to take a look at the single
+[00:39] line diagram you can see that the type
+[00:41] of load that i'm
+[00:43] circuiting here aren't just
+[00:44] single receptacles or lights instead
+[00:47] these are mechanical or process
+[00:48] equipment that have multiple components
+[00:50] that we need to show so over here we
+[00:53] have a vfd
+[00:54] to a hot water heating pump and then the
+[00:56] next one over there is a disconnect
+[00:58] switch a fused one that that that
+[01:00] provides power and protection to the
+[01:02] compressed uh the air compressor down
+[01:04] the line so
+[01:06] you can see that we can specify exactly
+[01:08] what type of cable goes on each side of
+[01:11] the vfd so right here it's a 40 amp
+[01:13] cable and this is just 600 volt
+[01:16] conductors then after the vfd we want to
+[01:18] specify a vfd type cable so that
+[01:21] information can be easily illustrated on
+[01:23] a single line diagram if you wanted to
+[01:25] do that on a panel schedule it would be
+[01:27] a lot more difficult some other things
+[01:29] that you can do on a single line that's
+[01:31] difficult to illustrate on a panel
+[01:33] schedule is like if you wanted to have
+[01:35] say two main breakers and you wanted to
+[01:37] key interlock them or if you wanted to
+[01:39] show a breaker that has shunt trip or if
+[01:42] you're doing a switch gear with like
+[01:44] lsig breakers like anything that you
+[01:47] want to add extra information to is a
+[01:49] little easier to do on a single line
+[01:51] diagram so you kind of get the idea a
+[01:52] single line diagram maybe involves a
+[01:54] little more work to put together but you
+[01:56] can actually
+[01:57] put a lot more information in that
+[01:59] diagram a panel schedule on the other
+[02:00] hand is a little more simplified it
+[02:02] gives you information about the panel
+[02:03] itself and literally just numbers the
+[02:06] loads and sometimes provides you the
+[02:07] load value in a chart so if you want to
+[02:10] look at the panel schedule you can see
+[02:11] that it's a very chart-like organized
+[02:14] list so up at the top we'll have usually
+[02:17] a panel name with a location
+[02:19] and then there's some options that can
+[02:21] be specified for the panel so for
+[02:23] example here
+[02:24] something unusual would be a spd or
+[02:27] surge protection device so you can say
+[02:29] exactly what it is type 2 90ka etc
+[02:32] if you need a double neutral or anything
+[02:34] this is a good spot to put it it'll list
+[02:36] your enclosure type whether it be type 1
+[02:38] so for indoors or if you want to do
+[02:40] outside for a nema 3 r you can list that
+[02:43] here as well
+[02:44] then you can find some other common
+[02:46] information such as voltage phase wire
+[02:49] and serve from
+[02:50] you can include aic rating surface
+[02:52] mounted or recessed and you can list
+[02:55] your bus size or your main circuit
+[02:57] breaker sometimes this might just be a
+[02:59] main log only so you can list that kind
+[03:00] of information here but you can see that
+[03:03] when you get past the panel information
+[03:05] the load information is a little limited
+[03:08] as to what you can include here so of
+[03:10] course you have your loads like your
+[03:12] lighting loads here you can put your
+[03:13] load in but
+[03:15] if you wanted to include any notes like
+[03:17] if you need to include a fuse disconnect
+[03:19] and you want to size the fuse or
+[03:20] something you have very limited space to
+[03:23] do that so of course you can always put
+[03:25] a note 1 and then elaborate down here
+[03:27] but let's say you have that for five or
+[03:29] six different pieces of equipment each
+[03:31] one with its own special sizing you can
+[03:34] see that this becomes unfavorable in
+[03:36] that situation
+[03:37] but on the plus side it is very
+[03:39] organized and simple you will have your
+[03:41] circuit number with your load
+[03:42] description you can specify what the
+[03:45] amperage of the breaker is and how many
+[03:47] pulls
+[03:48] then this will usually pull in your load
+[03:50] if you're doing it in revit this will be
+[03:52] an intelligent panel schedule so
+[03:53] anything that you circuit to it will
+[03:55] have their loads transferred to this
+[03:56] chart then from here you can do a load
+[03:58] classification if you wanted to so in
+[04:00] this instance it's just lighting so it's
+[04:02] just a hundred percent but um if you
+[04:04] were to classify your loads as a
+[04:07] receptacle or equipment or hvac you can
+[04:09] apply a different demand factor then
+[04:11] once all your demands are added up you
+[04:13] can get a demand load that's you know
+[04:16] less than your total connected load
+[04:18] another useful feature for this one is
+[04:20] that we'll have
+[04:22] we can check to make sure that our
+[04:23] phases are balanced so a b and c should
+[04:26] typically all be within like the same
+[04:28] amperage pull so if you have one that's
+[04:30] extremely out which you can kind of see
+[04:32] here phase a is slightly heavily loaded
+[04:35] so
+[04:36] since that one is more loaded you'll
+[04:37] have a neutral connected current
+[04:40] so if you were to balance all three of
+[04:41] your phases out the neutral shouldn't
+[04:43] experience any current so that's better
+[04:45] for the whole system so you can kind of
+[04:46] see that each one has its pros and cons
+[04:49] single line diagram can be very detailed
+[04:51] especially when you have different loads
+[04:52] that require different parts to it a
+[04:54] panel schedule on the other hand is very
+[04:56] consistent and it also helps you add up
+[04:57] your loads check your phase balancing
+[04:59] and just give you a good total demand
+[05:01] load normally on a project you would use
+[05:03] both but you have to know when to make
+[05:05] that cut off so if you're looking at a
+[05:07] bigger single line diagram and you're
+[05:09] working your way down from the
+[05:10] distribution you have to kind of know
+[05:13] when you have to switch over to a panel
+[05:15] schedule most branch circuit panels are
+[05:18] always
+[05:19] shown as a panel schedule and on a
+[05:21] single line diagram it would just be a
+[05:23] box so basically the bottom line is a
+[05:25] single line diagram offers you more
+[05:27] flexibility and allows you to put more
+[05:29] specific details in that design so when
+[05:32] you have something that requires
+[05:34] disconnect or vfd or motor starter or
+[05:37] just anything that's like out of the
+[05:39] ordinary
+[05:40] then you might want to go with a single
+[05:41] line diagram but if you go further
+[05:43] downstream and you get to a branch panel
+[05:44] where everything is just a receptacle
+[05:46] load or a lighting load then a panel
+[05:48] schedule is a very convenient and simple
+[05:50] way to convey your information
+[05:52] plus then it adds up your loads and
+[05:54] everything so it's nice to have if
+[05:55] you're trying to do a load cap later
+[05:57] alright so that's my short rationale on
+[05:59] why i would use a single line diagram or
+[06:01] panel schedule so
+[06:02] if you have any questions leave them in
+[06:04] the comments we can have a chat down
+[06:05] there otherwise i'll see you guys next
+[06:06] time bye
+[06:09] [Music]

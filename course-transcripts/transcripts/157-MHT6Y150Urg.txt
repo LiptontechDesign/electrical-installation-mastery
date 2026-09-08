@@ -1,0 +1,68 @@
+# Electrical Fault Finding Earth Leakage Current Detected with the Megger DCM305E Clamp Meter
+# https://www.youtube.com/watch?v=MHT6Y150Urg
+
+so it's a very great pleasure to welcome to Tresham college this afternoon we've got uh Lee from Meggers brother with us this is Gordon from Megger so it's really nice to have you with us thanks for joining us today i'll do the courtesy of learning your name it's Gordon Billings who's come to join us today thank you and you've brought this fantastic looking rig with you that you've built yourself for us to have a little chat about some additional uses of the Megger DCM305E yeah now it's well documented we've seen already how good this is and useful this is for assessing our 30 percent uh residual current for the purposes of meeting regulation 531.3.2 however you're going to show us some uh useful information on this on how we can maybe use this for fault finding yeah so just talk us through the rig and explain how this is going to work for us okay so the rig itself i've sort of set it out as a dummy installation perhaps a domestic one with a couple of circuits a lighting radial circuit and a ring final circuit um the idea being to show how you can trace an intermittent fault that's not tripping while you're there so we have our main incoming here circuits out to ring finals lighting circuits and the fault that we're gonna find is gonna be mimicked by a socket tester fantastic okay we start by turning it on within 10 seconds the claim i make is that you'll know what you're looking for okay depending on what this reading is doing we'll show you exactly what what the fault is now at the moment you can see apart from the last digit it is a fixed reading that would mean it's electronics okay if i disconnect the socket tester you'll see that reading will drop away okay so that is what is causing it is electronic if it was actually your fault the reading you would expect to see would be flashing around as that is there right okay so the number would just be just be jumping around the only thing i can tell you it probably won't be above 22 23 milliamps which is where the RCD would normally trip so we're going to try and find that 1.2 value that is sitting on there at the moment so to find which circuit it's on we start by disconnecting all of the circuits turning them off okay you can see that reading drops away and then turn them on individually okay with that one it's still dropping so it's not that circular we put that one on and straight away there's that reading fantastic so we'd know from look we know this is the B32 so we know this is the reason now the ring final circuit brilliant okay now if it was RCBO's in the board you could just simply check at the top of each circuit of course that's the line in neutral line in neutral side by side and you can see there it's not the lighting circuit because that's dropping away yeah if i then put it on in a ring final circuit there's that one point right two one point three reading see in there on the uh full cables going away brilliant so we now know that it's on the ring final circle okay so the problem with rings is the current doesn't only go one way around the rings when you start trying to trace the fall if you just went in as it was and go in onto the cables behind the socket you can see we've got a reading there of almost 0.4 yeah and we've got a reading on that side of sort of just over the point nine right so add two together it comes up with the 1.3 that we know this is creating yeah so the best bet is to actually split the ring at this stage okay now i've just put in an isolator switch just so that i can do it without leaving live ends anywhere that has now created two radials okay that's great so if we go in at this point you can see there that reading's dropping away so it's not on this leg sure so if this was a natural installation with things plugged in and everything we've already eliminated every other circuit by the ring finals we've also now eliminated this half of the ring including anything that's plugged in okay so we now have just got this one leg now when you're using the clamp meter it will only indicate what's happening down line so if you then go in and split the ring again yeah i'll put it in at that point there and you can see the reading's dropping away so it's not beyond that point right okay so we know we've got to get closer to the closer to the board yeah so we go in at this point yep and if it goes you can see there's that reading so it has to be between that point there and that point there fantastic and as we look hey presto there it is brilliant okay so obviously when you're actually doing the testing out in the field you'll be dropping sockets off to get to these cables i've got them exposed when we talk about splitting the ring what you'll find perhaps it's a kitchen ring make yourself up a breakout lead okay which is this device here when you come to the socket where you're actually going to split the ring it's worth considering unplugging whatever appliances are in there plugging this in plugging the appliance into the end you might just be lucky and when you go into the breakout find that you've found the one yeah so okay but you eliminate anything that's plugged in at the socket where you're splitting it fantastic so what you don't know is taking the taking the earth out because if we clamped it around the whole thing we'd obviously find that all the currents in there would be balanced yeah yeah so that's that's a that's a nice idea that's very good a little breakout yeah you might just be lucky probably unlucky and find out it's the kettle that you've just unplugged so when you finish the job you don't get a cup of tea tragic tragic but that's intimate and fault-finding just made simple for you what an absolutely great idea that's fantastic but a kit and again a really good kind of adaptation a really good flexible use of a bit of kit in a way that perhaps we might not have seen ourselves using that in uh previously that's fantastic that's great well thank you very much
+
+
+[00:04] so it's a very great pleasure to welcome to Tresham college this afternoon we've got uh Lee
+[00:08] from Meggers brother with us this is Gordon from Megger so it's really nice to have you with us
+[00:12] thanks for joining us today i'll do the courtesy of learning your name it's Gordon Billings who's
+[00:16] come to join us today thank you and you've brought this fantastic looking rig with you that you've
+[00:19] built yourself for us to have a little chat about some additional uses of the Megger DCM305E yeah
+[00:27] now it's well documented we've seen already how good this is and useful this is for assessing our
+[00:31] 30 percent uh residual current for the purposes of meeting regulation 531.3.2 however you're going to
+[00:39] show us some uh useful information on this on how we can maybe use this for fault finding yeah so
+[00:44] just talk us through the rig and explain how this is going to work for us okay so the rig itself
+[00:49] i've sort of set it out as a dummy installation perhaps a domestic one with a couple of circuits
+[00:55] a lighting radial circuit and a ring final circuit um the idea being to show how you can trace an
+[01:02] intermittent fault that's not tripping while you're there so we have our main incoming here
+[01:09] circuits out to ring finals lighting circuits and the fault that we're gonna find is gonna
+[01:14] be mimicked by a socket tester fantastic okay we start by turning it on within 10 seconds the claim
+[01:22] i make is that you'll know what you're looking for okay depending on what this reading is doing
+[01:28] we'll show you exactly what what the fault is now at the moment you can see apart from the last
+[01:33] digit it is a fixed reading that would mean it's electronics okay if i disconnect the socket tester
+[01:39] you'll see that reading will drop away okay so that is what is causing it is electronic if it was
+[01:44] actually your fault the reading you would expect to see would be flashing around as that is there
+[01:49] right okay so the number would just be just be jumping around the only thing i can tell you
+[01:54] it probably won't be above 22 23 milliamps which is where the RCD would normally trip
+[02:00] so we're going to try and find that 1.2 value that is sitting on there at the moment so to find which
+[02:07] circuit it's on we start by disconnecting all of the circuits turning them off okay you can
+[02:12] see that reading drops away and then turn them on individually okay with that one it's still
+[02:16] dropping so it's not that circular we put that one on and straight away there's that reading
+[02:21] fantastic so we'd know from look we know this is the B32 so we know this is the reason now the ring
+[02:26] final circuit brilliant okay now if it was RCBO's in the board you could just simply check at the
+[02:33] top of each circuit of course that's the line in neutral line in neutral side by side and you can
+[02:38] see there it's not the lighting circuit because that's dropping away yeah if i then put it on in
+[02:42] a ring final circuit there's that one point right two one point three reading see in there on the
+[02:48] uh full cables going away brilliant so we now know that it's on the ring final circle okay so
+[02:56] the problem with rings is the current doesn't only go one way around the rings when you start
+[03:01] trying to trace the fall if you just went in as it was and go in onto the cables behind the socket
+[03:06] you can see we've got a reading there of almost 0.4 yeah and we've got a reading on that side
+[03:11] of sort of just over the point nine right so add two together it comes up with the 1.3 that
+[03:17] we know this is creating yeah so the best bet is to actually split the ring at this stage okay now
+[03:22] i've just put in an isolator switch just so that i can do it without leaving live ends anywhere
+[03:27] that has now created two radials okay that's great so if we go in at this point you can see there
+[03:33] that reading's dropping away so it's not on this leg sure so if this was a natural installation
+[03:38] with things plugged in and everything we've already eliminated every other circuit by the
+[03:43] ring finals we've also now eliminated this half of the ring including anything that's plugged in
+[03:49] okay so we now have just got this one leg now when you're using the clamp meter it will only
+[03:55] indicate what's happening down line so if you then go in and split the ring again yeah i'll
+[04:00] put it in at that point there and you can see the reading's dropping away so it's not beyond
+[04:05] that point right okay so we know we've got to get closer to the closer to the board yeah so we go
+[04:09] in at this point yep and if it goes you can see there's that reading so it has to be between that
+[04:16] point there and that point there fantastic and as we look hey presto there it is brilliant okay
+[04:22] so obviously when you're actually doing the testing out in the field you'll be dropping
+[04:26] sockets off to get to these cables i've got them exposed when we talk about splitting the ring
+[04:33] what you'll find perhaps it's a kitchen ring make yourself up a breakout lead okay which is
+[04:38] this device here when you come to the socket where you're actually going to split the ring it's worth
+[04:43] considering unplugging whatever appliances are in there plugging this in plugging the appliance into
+[04:50] the end you might just be lucky and when you go into the breakout find that you've found the one
+[04:55] yeah so okay but you eliminate anything that's plugged in at the socket where you're splitting
+[05:00] it fantastic so what you don't know is taking the taking the earth out because if we clamped
+[05:04] it around the whole thing we'd obviously find that all the currents in there would be balanced yeah
+[05:10] yeah so that's that's a that's a nice idea that's very good a little breakout yeah you might just
+[05:15] be lucky probably unlucky and find out it's the kettle that you've just unplugged so when you
+[05:18] finish the job you don't get a cup of tea tragic tragic but that's intimate and fault-finding just
+[05:24] made simple for you what an absolutely great idea that's fantastic but a kit and again a really good
+[05:30] kind of adaptation a really good flexible use of a bit of kit in a way that perhaps we might not have
+[05:35] seen ourselves using that in uh previously that's fantastic that's great well thank you very much

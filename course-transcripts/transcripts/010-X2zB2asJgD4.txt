@@ -1,0 +1,357 @@
+# Resistors in Parallel - How to Find Total Resistance for Any Number of Resistors
+# https://www.youtube.com/watch?v=X2zB2asJgD4
+
+[Music] hello and welcome to this electrical principals training video in this video we're going to continue considering resistors connected in parallel with each other so this really is the advanced section of the material now it's important that you watch this so that you can recognize the method that we're using and also it's very important to keep on extending yourself to keep on trying to stretch yourself a little bit so this is a good method to try and apply in order to do that so in this video we're going to consider what happens when you connect resistors in parallel where you have more than two resistors connected in parallel with each other so this method will work whether you've got 3 4 5 or even 100 resistors connected in parallel with each other it's often referred to as the one over RT method perhaps more strictly speaking it should be referred to as the reciprocal method because it uses a specific mathematical function which we'll talk about in a moment so again we've got our LOC Tronics board set up ready to go we've got a multimeter that's set to measure resistance so we're going to do some calculations and we're going to figure out what the resistance of these circuits will be so as we've said in this video now what we're going to be looking at is what happens when we have three resistors connected in parallel with each other where all the resistors have differing values so the method that I'm about to show you will work for any quantity of resistors whether it is two resistors of the same value two resistors of different value three resistors in value there'll be a whole range of applications for this if you've got resistors in parallel you can use this method but also bear in mind that if you've got less than three if you've got two resistors in parallel there's other easier methods that you can use so let's have a look at the circuit was built here as you can see we've got three resistors connected in parallel we've got a twenty seven ohm resistor a 10 ohm resistor and an 18 ohm resistor now what we're going to do in a minute is we're going to measure the resistance of this kit we're going to see what it is and then we're going to figure out how we can calculate answer and we'll get we'll get reasonably close to it one thing just to bear in mind again we want people to understand what's happening with resistors in parallel that's very important but also if we box a bit clever we can think about how we can apply this to an exam situation so here we've got three resistors connected in parallel the smallest resistor is worth 10 ohms and if you've seen another video in this series you'll understand our total resistance for this parallel circuit will always be smaller than the smallest resistor so that means that because we've got a 10 ohm resistor in this circuit that means that the total resistance is going to be less than 10 ohms put yourself in an example situation if you've got a multiple choice exam and you've got four options of total resistance for a parallel circuit and one of those options and only one of those options is smaller than the smallest resistor that's the right answer you don't even need to get calculator out you know that's the right answer if there's two answers where the answer is smaller than the smallest resistor you've got to start doing some calculations but it's nothing to be afraid of and we can demonstrate quite nicely how that's done so first things first let's have a look at what the total resistance of this circuit is so we know what we're aiming for now bear in mind our mathematical answer might not be exactly the same as the answer that we get from our real-life multimeter value but it will be quite close so we can see there was somewhere in the 5.5 5.4 5.5 range okay so that means that's the total resistance of this parallel circuit and what we're going to do now is we're going to show you how you can actually calculate that value using a calculator so let's see what we can do in terms of calculating this value then so the rule that we're going to apply here is what's known as the reciprocal rule now a reciprocal is a very simple mathematical function and what it means is that if you have a number it's reciprocal is simply 1 divided by that number so let's take an example if we have the number 2 then the reciprocal of 2 would be 1 divided by - so the reciprocal of 2 is simply 1/2 so the reciprocal of 2 is 1/2 as you can see here and we could do the same many times we could say that reciprocal of 3 is 1 over 3 or 1/3 and we can keep going in this vein so that's just something to bear in mind that the reciprocal of a number is simply 1 divided by that number so let's see how we can apply this to our circuit now the way that we apply this to our circuit is we look at our circuit we say we've got three resistors in parallel we've got R 1 R 2 and R 3 so what we do is we say that the reciprocal of R T or 1 over R T the total resistance will be equal to 1 over r1 plus 1 over r2 plus 1 over R 3 so we're going to say that 1 over R T our total resistance is equal to 1 over r1 plus 1 over r2 plus one over r3 so in our example here our values would be so we start off with 1 over R T and we'd say we've got 1 over 27 plus 1 over 10 plus 1 over 18 so there's our three values that we substituted in there are three resistor values now at this point we could make this extremely complicated and say we need to find what's called the lowest common denominator of these three numbers so that's what you need to do when you add fractions together that is an important thing to understand but it also can take quite a long time to figure that out especially where we've got numbers like this so the lowest common denominator of these numbers is going to be quite a big number so instead we're just gonna go straight to the calculator I mean I put this straight in and get the answer out so if we look at this now if we go over to our calculator over here so we've got the casio FX 85g t + what we're going to do here is you're going to use a special button called the reciprocal button and that is right here so this button here marked X to the minus one that is the same as saying 1 over X so I'll show you what I mean by that so if we say 1 divided by 2 will give is a half like that and the value of that is not 0.5 however if we say 2 to the power of minus 1 so we're going to push this button here this is exactly the same as saying 1/2 so if I hit the equals button now we get once again 1/2 so this is saying that 2 to the minus 1 it's exactly the same as 1/2 so it's exactly the same value and we can see that if we push the SD button we can see there that we get naught point 5 so this takes the place of 1 over and it simply becomes something to the power of minus 1 so let's see how we can use this to solve our question here so we've got 1 over 27 so we can write that as 27 to the minus 1 and we're adding that to 1 over 10 so we can do 10 to the minus 1 and then we can say that's the same as saying 1 over 18 or 18 to the minus 1 if this power to the minus 1 isn't quite making sense to you and you'd like to know a little bit more about it please watch my series of videos on the laws of indices and this will be clearly explained for you there so what we've done here is we've put in these values which is exactly the same as saying 1 over 27 plus 1 over 10 plus 1 over 18 so let's see what answer we get from this so we get a value of 26 over 135 now we could change that into a decimal which would look like this so you can see they've got some recurring values going but actually what we can do is simply leave that as a fraction so what we found is that over here we've got 1 over RT is equal to 26 divided by 135 so that's what we've got going on there so far so good what we haven't done though he's found the actual value of total resistance we found the reciprocal of the total resistance we found 1 over the total resistance so if we now want to figure out what the total resistance of the circuit is the nice thing is that this is a really simple thing to do all we do is just flip both sides of this equation over so that looks like this we've got our T divided by 1 is equal to this side flipped over which gives us a hundred and thirty-five divided by 26 so we've just flipped that on its head and if we now do this calculation cuz of course anything divided by 1 is just the value itself so it really what we're saying here is our T the total resistance is equal to 135 divided by 26 so I'll do that now we'll do a hundred and thirty-five divided by 26 and we're going to come out with 5.19 ohms 5.19 ohms so that is our value of total resistance for these three resistors that are connected in parallel with each other let's see how that compares so as you can see from the calculation that we just did we've got an answer that is very very close to our total resistance on the multimeter allowing for tolerances that's quite an acceptable reading and that is how you calculate resistors in parallel for any combination of resistors whether they're same or different or however many there are that's the method that we use so we'll just do one final example of a parallel circuit we'll work through the calculation and we'll see if the answer we get from the calculation gets as nice and close to the answer that we get from the multimeter so we've got three resistors in parallel at 27 ohm a 10 ohm and a 10 ohm and remember this is a parallel circuit the current doesn't have flow through each resistor to get to the next one it can flow to each resistor independently so let's do some calculations and see what we get so let's calculate the example of the circuit that we've set up now so we're going to start from the same position we're going to say we've got one over RT is equal to one over r1 plus one over r2 plus one over r3 so again notice I've written out the formula in full I know this formula off by heart because I've written it out so many times okay so we want to make sure that when we come to do maths we layout in this way we show our formula we show our numbers going in and some working out and then we show our final answer and if we do that whatever exam we doing will always give ourselves the best chance of getting the highest marks so let's put in some values here so we're gonna say we've got one over R T is equal to we've got 1 over 27 plus 1 over 10 plus 1 over 10 so those are our three values of resistance that we've played now we've got 27 1 over 27 plus 1 over 10 plus 1 over 10 and then we'll do some calculations on the calculator so we'll put this in so we've got 27 and remember we use this power of minus 1 button the reciprocal button and remember 27 to the power of minus 1 is exactly the same as 1 over 27 we're then going to add to that 1 over 10 so we've got 10 to the power of minus 1 and then we've got 10 to the power of minus 1 notice how just put it into the calculator like this it makes it so much easier we don't have to find the lowest common denominator we can just get straight to our answer so we've got 32 over 135 so again changing that into a decimal we've got some recurring values going on here so actually it's going to be much easier just to keep on working with the fraction so we found the answer that the reciprocal of the total resistance 1 over RT is equal to 32 over 135 so we've got 32 divided by 135 now let's bear in mind again that when we look at this we've got this value going on so we want to think now how do we get to our final answer can remember how we do it well of course we just flip both sides of the equation over so this side we end up with RT over 1 which is just exactly the same as RT any number divided by 1 is just the original value but on this side we're going to end up with 135 divided by 32 so something that looks like that let's put that into the calculator so we've got 135 divided by 32 and we're going to end up with this value which is 4 point 2 2 ohms if we ran after two decimal places so we end up with 4 point 2 2 ohms so let's see how that compares to our measured value so from our calculations there we can see that we're hoping to get 4 point 2 ohms or there abouts of course it's likely that we'll get a slightly different value resistor tolerances so let's do the cat-lair let's turn them altimeter on and see what value we get so you can see that we've got 4 point 5 ohms we were hoping for four point two but again we well within the reasonable limits imposed by the tolerances of the resistors so remember the method that we've just looked at today will be good for any combination of resistors in parallel doesn't matter how many you've got doesn't matter whether they're the same value or different values it will work for every single one and if you don't believe me feel free to re-watch a couple of the previous videos look at the values that we put in look at what we got out and do the calculation using this method and you'll find that you get to exactly the same result so I seriously hope that this video has been some help [Music] you [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principals training video in this video
+[00:13] we're going to continue considering
+[00:15] resistors connected in parallel with
+[00:17] each other so this really is the
+[00:18] advanced section of the material now
+[00:21] it's important that you watch this so
+[00:22] that you can recognize the method that
+[00:24] we're using and also it's very important
+[00:27] to keep on extending yourself to keep on
+[00:29] trying to stretch yourself a little bit
+[00:31] so this is a good method to try and
+[00:34] apply in order to do that so in this
+[00:37] video we're going to consider what
+[00:38] happens when you connect resistors in
+[00:40] parallel where you have more than two
+[00:42] resistors connected in parallel with
+[00:44] each other so this method will work
+[00:46] whether you've got 3 4 5 or even 100
+[00:48] resistors connected in parallel with
+[00:50] each other it's often referred to as the
+[00:53] one over RT method perhaps more strictly
+[00:56] speaking it should be referred to as the
+[00:58] reciprocal method because it uses a
+[01:00] specific mathematical function which
+[01:01] we'll talk about in a moment so again
+[01:03] we've got our LOC Tronics board set up
+[01:05] ready to go we've got a multimeter
+[01:07] that's set to measure resistance so
+[01:09] we're going to do some calculations and
+[01:11] we're going to figure out what the
+[01:13] resistance of these circuits will be so
+[01:18] as we've said in this video now what
+[01:20] we're going to be looking at is what
+[01:21] happens when we have three resistors
+[01:23] connected in parallel with each other
+[01:25] where all the resistors have differing
+[01:27] values so the method that I'm about to
+[01:29] show you will work for any quantity of
+[01:32] resistors whether it is two resistors of
+[01:35] the same value two resistors of
+[01:37] different value three resistors in value
+[01:39] there'll be a whole range of
+[01:42] applications for this if you've got
+[01:43] resistors in parallel you can use this
+[01:45] method but also bear in mind that if
+[01:48] you've got less than three if you've got
+[01:50] two resistors in parallel there's other
+[01:52] easier methods that you can use so let's
+[01:55] have a look at the circuit was built
+[01:56] here as you can see we've got three
+[01:57] resistors connected in parallel we've
+[01:59] got a twenty seven ohm resistor a 10 ohm
+[02:03] resistor and an 18 ohm resistor now what
+[02:07] we're going to do in a minute is we're going to measure the resistance of this
+[02:09] kit we're going to see what it is and
+[02:10] then we're going to figure out how we
+[02:12] can calculate answer and we'll get we'll get
+[02:14] reasonably close to it one thing just to
+[02:17] bear in mind again we want people to
+[02:20] understand what's happening with
+[02:21] resistors in parallel that's very
+[02:23] important but also if we box a bit
+[02:26] clever we can think about how we can
+[02:28] apply this to an exam situation so here
+[02:31] we've got three resistors connected in
+[02:32] parallel the smallest resistor is worth
+[02:36] 10 ohms and if you've seen another video
+[02:38] in this series you'll understand our
+[02:40] total resistance for this parallel
+[02:43] circuit will always be smaller than the
+[02:45] smallest resistor so that means that
+[02:48] because we've got a 10 ohm resistor in
+[02:50] this circuit that means that the total
+[02:53] resistance is going to be less than 10
+[02:55] ohms put yourself in an example
+[02:57] situation if you've got a multiple
+[02:58] choice exam and you've got four
+[03:01] options of total resistance for a
+[03:03] parallel circuit and one of those
+[03:05] options and only one of those options is
+[03:07] smaller than the smallest resistor
+[03:10] that's the right answer
+[03:11] you don't even need to get calculator
+[03:12] out you know that's the right answer if
+[03:15] there's two answers where the answer is
+[03:17] smaller than the smallest resistor
+[03:18] you've got to start doing some
+[03:20] calculations but it's nothing to be
+[03:21] afraid of and we can demonstrate quite
+[03:23] nicely how that's done so first things
+[03:26] first let's have a look at what the
+[03:27] total resistance of this circuit is so
+[03:29] we know what we're aiming for now bear
+[03:31] in mind our mathematical answer might
+[03:32] not be exactly the same as the answer
+[03:35] that we get from our real-life
+[03:36] multimeter value but it will be quite
+[03:38] close so we can see there was somewhere
+[03:41] in the 5.5 5.4 5.5 range okay so that
+[03:46] means that's the total resistance of
+[03:48] this parallel circuit and what we're
+[03:50] going to do now is we're going to show
+[03:51] you how you can actually calculate that
+[03:53] value using a calculator so let's see
+[03:57] what we can do in terms of calculating
+[03:59] this value then so the rule that we're
+[04:02] going to apply here is what's known as
+[04:05] the reciprocal rule now a reciprocal is
+[04:08] a very simple mathematical function and
+[04:09] what it means is that if you have a
+[04:12] number it's reciprocal is simply 1
+[04:15] divided by that number so let's take an
+[04:17] example if we have the number 2 then the
+[04:22] reciprocal of 2 would be 1 divided by
+[04:25] - so the reciprocal of 2 is simply 1/2
+[04:30] so the reciprocal of 2 is 1/2 as you can
+[04:33] see here and we could do the same many
+[04:35] times we could say that reciprocal of 3
+[04:38] is 1 over 3 or 1/3 and we can keep going
+[04:42] in this vein so that's just something to
+[04:44] bear in mind that the reciprocal of a
+[04:46] number is simply 1 divided by that
+[04:49] number so let's see how we can apply
+[04:51] this to our circuit now the way that we
+[04:55] apply this to our circuit is we look at
+[04:57] our circuit we say we've got three
+[04:59] resistors in parallel we've got R 1 R 2
+[05:01] and R 3 so what we do is we say that the
+[05:05] reciprocal of R T or 1 over R T the
+[05:09] total resistance will be equal to 1 over
+[05:13] r1 plus 1 over r2 plus 1 over R 3 so
+[05:29] we're going to say that 1 over R T our
+[05:31] total resistance is equal to 1 over r1
+[05:33] plus 1 over r2 plus one over r3 so in
+[05:36] our example here our values would be so
+[05:39] we start off with 1 over R T and we'd
+[05:42] say we've got 1 over 27 plus 1 over 10
+[05:51] plus 1 over 18 so there's our three
+[05:57] values that we substituted in there are
+[05:59] three resistor values now at this point
+[06:01] we could make this extremely complicated
+[06:03] and say we need to find what's called
+[06:07] the lowest common denominator of these
+[06:09] three numbers so that's what you need to
+[06:11] do when you add fractions together that
+[06:13] is an important thing to understand but
+[06:15] it also can take quite a long time to
+[06:17] figure that out especially where we've
+[06:19] got numbers like this so the lowest
+[06:21] common denominator of these numbers is
+[06:23] going to be quite a big number so
+[06:25] instead we're just gonna go straight to
+[06:27] the calculator I mean I put this
+[06:28] straight in and get the answer out so if
+[06:32] we look at this now if we go over to our
+[06:33] calculator over here so we've got the
+[06:35] casio FX 85g t +
+[06:38] what we're going to do here is you're
+[06:40] going to use a special button called the
+[06:42] reciprocal button and that is right here
+[06:44] so this button here marked X to the
+[06:48] minus one that is the same as saying 1
+[06:51] over X so I'll show you what I mean by
+[06:54] that
+[06:55] so if we say 1 divided by 2 will give is
+[07:03] a half like that and the value of that
+[07:06] is not 0.5 however if we say 2 to the
+[07:12] power of minus 1 so we're going to push
+[07:14] this button here this is exactly the
+[07:17] same as saying 1/2 so if I hit the
+[07:20] equals button now we get once again 1/2
+[07:24] so this is saying that 2 to the minus 1
+[07:26] it's exactly the same as 1/2 so it's
+[07:30] exactly the same value and we can see
+[07:33] that if we push the SD button we can see
+[07:34] there that we get naught point 5 so this
+[07:37] takes the place of 1 over and it simply
+[07:40] becomes something to the power of minus
+[07:43] 1 so let's see how we can use this to
+[07:45] solve our question here
+[07:47] so we've got 1 over 27 so we can write
+[07:50] that as 27 to the minus 1 and we're
+[07:54] adding that to 1 over 10 so we can do 10
+[07:58] to the minus 1 and then we can say
+[08:01] that's the same as saying 1 over 18 or
+[08:04] 18 to the minus 1 if this power to the
+[08:09] minus 1 isn't quite making sense to you
+[08:11] and you'd like to know a little bit more
+[08:12] about it please watch my series of
+[08:14] videos on the laws of indices and this
+[08:16] will be clearly explained for you there
+[08:18] so what we've done here is we've put in
+[08:20] these values which is exactly the same
+[08:22] as saying 1 over 27 plus 1 over 10 plus
+[08:26] 1 over 18 so let's see what answer we
+[08:28] get from this so we get a value of 26
+[08:33] over 135 now we could change that into a
+[08:37] decimal which would look like this so
+[08:39] you can see they've got some recurring
+[08:40] values going but actually what we can do
+[08:43] is simply leave that as a fraction so
+[08:47] what we found is that over here we've
+[08:50] got 1
+[08:51] over RT is equal to 26 divided by 135 so
+[09:00] that's what we've got going on there so
+[09:03] far so good
+[09:04] what we haven't done though he's found
+[09:05] the actual value of total resistance we
+[09:08] found the reciprocal of the total
+[09:11] resistance we found 1 over the total
+[09:13] resistance so if we now want to figure
+[09:15] out what the total resistance of the
+[09:16] circuit is the nice thing is that this
+[09:19] is a really simple thing to do all we do
+[09:20] is just flip both sides of this equation
+[09:22] over so that looks like this we've got
+[09:25] our T divided by 1 is equal to this side
+[09:30] flipped over which gives us a hundred
+[09:32] and thirty-five divided by 26 so we've
+[09:37] just flipped that on its head and if we
+[09:39] now do this calculation cuz of course
+[09:41] anything divided by 1 is just the value
+[09:44] itself so it really what we're saying
+[09:45] here is our T the total resistance is
+[09:48] equal to 135 divided by 26 so I'll do
+[09:52] that now we'll do a hundred and
+[09:54] thirty-five divided by 26 and we're
+[09:59] going to come out with 5.19
+[10:05] ohms 5.19 ohms so that is our value of
+[10:12] total resistance for these three
+[10:15] resistors that are connected in parallel
+[10:16] with each other let's see how that
+[10:19] compares so as you can see from the
+[10:21] calculation that we just did we've got
+[10:23] an answer that is very very close to our
+[10:26] total resistance on the multimeter
+[10:28] allowing for tolerances that's quite an
+[10:30] acceptable reading and that is how you
+[10:33] calculate resistors in parallel for any
+[10:35] combination of resistors whether they're
+[10:37] same or different or however many there
+[10:39] are that's the method that we use so
+[10:45] we'll just do one final example of a
+[10:46] parallel circuit we'll work through the
+[10:48] calculation and we'll see if the answer
+[10:50] we get from the calculation gets as nice
+[10:52] and close to the answer that we get from
+[10:54] the multimeter so we've got three
+[10:56] resistors in parallel at 27 ohm a 10 ohm
+[10:59] and a 10 ohm and remember this is a
+[11:00] parallel circuit the current doesn't
+[11:02] have flow through each resistor to get to the
+[11:05] next one it can flow to each resistor
+[11:08] independently so let's do some
+[11:10] calculations and see what we get so
+[11:12] let's calculate the example of the
+[11:15] circuit that we've set up now so we're
+[11:17] going to start from the same position
+[11:18] we're going to say we've got one over RT
+[11:22] is equal to one over r1 plus one over r2
+[11:31] plus one over r3 so again notice I've
+[11:39] written out the formula in full I know
+[11:41] this formula off by heart because I've
+[11:43] written it out so many times okay
+[11:45] so we want to make sure that when we
+[11:46] come to do maths we layout in this way
+[11:48] we show our formula we show our numbers
+[11:50] going in and some working out and then
+[11:52] we show our final answer and if we do
+[11:54] that whatever exam we doing will always
+[11:56] give ourselves the best chance of
+[11:58] getting the highest marks so let's put
+[12:00] in some values here so we're gonna say
+[12:02] we've got one over R T is equal to we've
+[12:08] got 1 over 27 plus 1 over 10 plus 1 over
+[12:22] 10 so those are our three values of
+[12:26] resistance that we've played now we've
+[12:27] got 27 1 over 27 plus 1 over 10 plus 1
+[12:30] over 10 and then we'll do some
+[12:32] calculations on the calculator so we'll
+[12:34] put this in so we've got 27 and remember
+[12:38] we use this power of minus 1 button the
+[12:40] reciprocal button and remember 27 to the
+[12:44] power of minus 1 is exactly the same as
+[12:46] 1 over 27 we're then going to add to
+[12:49] that 1 over 10 so we've got 10 to the
+[12:53] power of minus 1 and then we've got 10
+[12:56] to the power of minus 1 notice how just
+[13:00] put it into the calculator like this it
+[13:02] makes it so much easier we don't have to
+[13:04] find the lowest common denominator we
+[13:06] can just get straight to our answer so
+[13:08] we've got 32 over 135 so again changing
+[13:12] that into a decimal we've got some
+[13:14] recurring values going on here so
+[13:16] actually it's going to be much easier
+[13:17] just to keep on working with the
+[13:18] fraction so we found the answer
+[13:21] that the reciprocal of the total
+[13:23] resistance 1 over RT is equal to 32 over
+[13:31] 135 so we've got 32 divided by 135 now
+[13:36] let's bear in mind again that when we
+[13:38] look at this we've got this value going
+[13:41] on so we want to think now how do we get
+[13:44] to our final answer can remember how we
+[13:45] do it well of course we just flip both
+[13:48] sides of the equation over so this side
+[13:50] we end up with RT over 1 which is just
+[13:53] exactly the same as RT any number
+[13:56] divided by 1 is just the original value
+[13:58] but on this side we're going to end up
+[14:00] with 135 divided by 32 so something that
+[14:06] looks like that
+[14:07] let's put that into the calculator so
+[14:09] we've got 135 divided by 32 and we're
+[14:15] going to end up with this value which is
+[14:17] 4 point 2 2 ohms if we ran after two
+[14:21] decimal places so we end up with 4 point
+[14:25] 2 2 ohms so let's see how that compares
+[14:32] to our measured value so from our
+[14:37] calculations there we can see that we're
+[14:38] hoping to get 4 point 2 ohms or there
+[14:41] abouts of course it's likely that we'll
+[14:43] get a slightly different value resistor
+[14:45] tolerances so let's do the cat-lair
+[14:48] let's turn them altimeter on and see
+[14:49] what value we get so you can see that
+[14:53] we've got 4 point 5 ohms we were hoping
+[14:55] for four point two but again we well
+[14:57] within the reasonable limits imposed by
+[14:59] the tolerances of the resistors so
+[15:01] remember the method that we've just
+[15:03] looked at today will be good for any
+[15:07] combination of resistors in parallel
+[15:09] doesn't matter how many you've got
+[15:11] doesn't matter whether they're the same
+[15:12] value or different values it will work
+[15:13] for every single one and if you don't
+[15:16] believe me feel free to re-watch a
+[15:17] couple of the previous videos look at
+[15:20] the values that we put in look at what
+[15:21] we got out and do the calculation using
+[15:23] this method
+[15:24] and you'll find that you get to exactly
+[15:26] the same result so I seriously hope that
+[15:28] this video has been some help
+[15:30] [Music]
+[15:36] you
+[15:37] [Music]

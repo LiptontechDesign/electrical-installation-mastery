@@ -1,0 +1,1390 @@
+# An Introduction to Cabling and Network Cable Testing Webinar
+# https://www.youtube.com/watch?v=a8vQQGuJjbg
+
+greetings everyone welcome this is Mark Mullins from Food Network speaking to you from the fluke networks webcast studio here in Everett Washington and I'd like to wish everyone good day don't know what time it is where you are but it could be just about anywhere because we've got a lot of participants from all over the world who are here to talk about today's subject just to let you know you should all be muted right now so we won't hear any dogs barking or Amazon delivery doorbells or people sparking their coffee so that should make for a nice presentation today let's see I'm wondering if there are any hearing problems I thought I'd just make one more check and make sure to see if anybody can hear me so if you can send a message via the chat window that if you can hear me that would be great because I think we should be alright okay I'm getting indications the sound is okay so that's good thanks very much everybody I did get one call that I couldn't hear anything but maybe that was because we didn't we haven't started yet anyway thanks for coming to today's event we're going to cover the basics of cabling and cable testing it should be interesting and fun if you're looking for the really advanced class this probably isn't it this is just learning about the basics of cabling and cable testing so that you can troubleshoot and maintain we've got more advanced classes for example our GTV T which is our cabling certification test technician course which spends two days covering many of the same topics in a lot more depth this is just a getting started class so let's get started so one of the questions people might wonder about is why do I need to test cable you know pretty much worse about it up right it shouldn't really be a big problem well this is a post we got on Facebook who are our food networks page from from a gentleman and he said you know which termination of these is in the proper manner and if you look at the two the one on the right and the left they don't look that much different there's a little less jacket the jackets been pulled a little bit on the on the left hand side is compared to the right but I showed this to a number of experts in our company who are you know they're on the TI a and I Triple E committees they should know good cabling in which it when they see it and their answer is yeah they both look pretty good but but I probably want to test them to make sure they're good and that's the reason of course is that you can't just tell by looking at a cable whether or not it's good the one on the Left shows a little bit better workmanship but they both might work fine one of the things I don't know is that cat5 or capsid say I don't really know what kind of cabling that is but will the cable tester I can figure all that out and know whether or not it's going to work the other option of course is to just plug it in and pray that it works plug and pray as they like to call it so that's why we want to test so what will we talk about today well we already talked about why you might want to test then I'm going to cover a little bit about it's a pretty advanced topic I picked some electrical engineering and this is actually easier than any of the electrical engineering classes I thought I call it transmission line theory for dummies and it was explained to me in some very simple terms by some very smart people a few years back and I think it will help you understand exactly how this listed pair cabling works will then talk about some different measurements and then two different kinds of standards which is often confusing to people there are table in standards network standards what are the differences and why should you care then I'll talk about what can go wrong in twisted pair cabling what are the most common problems I'll talk about testers and how do you pick the right tester for the job you're trying to do then we'll cover some QA and then I'll lead the presentation and give you access to some resources which if you want to learn more about table testing you can do so let's talk about cable let's talk about transmission line theory so the way cabling works in most instances this is a simple example let's just say a good example for 10 base T you've got two pairs so the grey line indicates one wire and the black line represents another you've got a transmit pair and a received pair and obviously the transmit pair for at one end is the receive pair for the other end she computer is on the left and say the switch is on the right and you send the signal down those cables and they get received at the other end another signal comes back the other way it's all great everything works really well now the problem is is an electrical theory you'll hear about this thing called crosstalk and what that means is if I induce a signal on one wire it will create a magnetic field and a magnetic field can induce a signal on another wire so what happens is I send my little pulse say or my little wave which maybe represents a 1 or a 0 down the transmitted pair it generates this magnetic field which then gets picked up by the other wire and comes back in on another pair now the signal smaller of course but as signals travel down the wire they get a lot smaller so the transmitted signal could be a thousand times bigger than the received signal so even a little bit of cross talk can look like the guy at the other end trying to talk to you of course for those of you who are maybe over I don't know over 40 you might recall being on phone call some days where you can hear like this faint conversation in the background of another person's phone call it kind of screws you up that's where the whole term and the name cross talk came from and for computer communications it can really be devastating because every time you start to talk you have to stop and listen but it's just yourself talking so every time you talk you have to stop what's worst about these kinds of problems is they can kind of be intermittent for example they could be a problem that works where your table works great at 10 megabits per second but if you crank up the speed you go out and get some new hardware you go to 100 or to a gig it won't work anymore because everything gets more sensitive and speeds get higher so cross talk is probably the most problematic issue in transmission line theory and in pavement so how do you deal with it well the smart engineers came up with this idea they call it differential signaling so what you do is you send a positive pulse down one wire and an exact copy but a negative pulse down the other wire so what happens is you get too magnetic field but they're equal and opposite and they cancel each other out but not entirely because if you look at my picture here you'll see that the black wire is a little closer to the gray wire below it and so it picks up a little bit stronger signal from the black wire there the bottom cable than it would from the gray wire and that means you're still going to get some crosstalk there even though it's been greatly reduced there's still some so how do we get rid of that and this is where it's like really that's that's how they do it it's they just twist the cable so what that does is that means that sometimes the black one of the transmit pair is closer to the black one of the received pair but sometimes it's closer to the gray one and over the distance of the cable it all cancels out and you get very very little crossbar and you'll notice if you do this if you look at this picture though you'll notice it one of the top is twisted slightly different than the one at the bottom well and in fact that's intentional if you look at twisted pair cabling each pair has a slightly different twist rate so that the black isn't always closer to the other black or the gray isn't always closer to the other gray and so they will tend to cancel out and over the course of the cable that's really how they did it and you think well it's really not that complicated is it and it's actually it's not it's a pretty simple theory saying if you go and look at cable if you take it out of a jacket a typical floor pair twisted pair cable you can even see in this picture here that the twist rates are slightly different the blue and pair is twisted a little more tightly than the orange pair and so on you can see there's a slightly different twist rate on each one one way you'll see that is when you're using a tester you'll notice even a very accurate tester will report different lengths for the cable this is an example of one here this cable is only 20 meters long and yet you can see there's more than a meters worth of difference that's just because the tighter you twist the cable the more length there is in it Electrical lunch so the cable on the outside may be exactly 20 meters long you'll get these different measurements and it's not a problem with the tester it's just the fact that the twisting is different between the pairs now with pulling the twisting really gets rid of almost all crosstalk it's really an amazing mathematical certainty that you get rid of most of the crosstalk but you still get crosstalking cables you get a little bit during the cable the bigger problem is in the connectors and if you look at this image on the left you'll see why that is notice those cables are not twisted anymore right when they come out of the jacket and they go into that plug and have to get untwisted for a little bit and even that short little distance which is you know much less than an inch centimeter or two it's still there in pairs and there's going to be crosstalk because they're not twisted anymore the same thing can happen on a jack although you can see the person who put the jack together on the right there did a pretty good job of keeping them twisted all the way up to the point where they plug in but then you'll if you open that jack up you'd see the wires inside once again the pins they're going to be parallel to each other they're not twisted anymore so connectors are where most of the cross comes from in fact that's where a lot of the engineering work has to be done to make really high-performance cabling systems so let's talk a little bit about the different measurements now that you understand everything there is to know about cabling the measurements we're going to start with the simplest one which is wire mapping and wire mapping just determines are the wires connected to the right pins on the cable or on the jack or the plug whatever and the upper left corner shows the correct way to do it so every pin starts at one side goes to the other on the on the right one now here's a few of the promisee gap you can have an open which you can see there one of the pins isn't quite connected that's probably the most common wire map problem you can also have a short that can happen if the cable gets pinched in the wall or if somebody there's a really bad job of terminating it at the end you can have reverse perish that's not that hard to do either way you hook them up wrong crossed pairs is a little less common of a problem however it can be actually very common if somebody is using a crossover cable sometimes you'll have a cable that's design can swap the transmit and receive pairs most electronics nowadays don't care about that they'll fix it themselves but not all and sometimes that can be a real problem and in fact what will happen is sometimes people will wire up in the walls they'll do things like cross repairs to make things work better sometimes they'll also use separate pairs for the phone and other things which none of this is standard and why while it's fine if the people who put it together are still working there when somebody new comes along they install something it doesn't work you don't know why the last one I want to talk about is split pairs and then a split pair what you see happen is if you look at the ends everything is connected to where it should be in other words if I follow the say that green one all the way through to the other end even though it goes through the brown cable it comes out to the green end on the other side you think well that should be okay that's not okay because what will happen is the transmit and receive pairs will be twisted together but say for example the positive transmit and receive pairs instead of the positive and negative what happens is instead of the signals cancelling out as we showed in the earlier example they'll actually be constantly together along the length of the cable the crosstalk will be tremendous much more than if they were just straight and the cable won't work and once again as I pointed out sometimes these kinds of things will work for a while or sometimes you'll have a lot of errors Ethernet is very forgiving so you can have this something that kind of bad cabling and it will continue to work most of the time and some of the time but then you get these intermittent problems that can take you hours to figure out that's another reason why you should test now let's look at some other measurements we talked about cross talk and actually cross talk and be measured it's a fairly simple measurement you kind of see what is going on here the near-end crosstalk is just the ratio of the signal I put in on one pair divided by the signal I get out on the other pair and it's expressed in dB so you'll see like 40 DB of crosstalk or 60 DB of near-end crosstalk actually the bigger the number the better now sometimes you'll see crosstalk expressed with a negative number all that means we they just flip the the next over the in and they make it a negative number and then the larger the negative number the better so basically you always want the bigger number 40 DB is better than 30 DB minus 40 DB is better than minus 30 DB so just look at the absolute number the bigger the better and there are six different crosstalk measurements that are made there's near-end crosstalk RN crosstalk there's a ratio of crosstalk to the actual signal and so on and so forth also you have to measure the cross off on six different places between pairs 1 & 2 & 3 & 6 between 1 & 2 & 4 & 5 between 1 & 2 & 7 & 8 so you actually end up with lots of different crosswalk measurements on your cable it's a lot to keep track of good reason to use a tester another measurement that is important is delay and skew delay is just the time it takes a signal to travel the length of the cable signals travel at about 70 percent of the speed of light and so the cable if you know that propagation rate in the cable also called the nominal velocity of propagation you can figure out the actual length of the cable as well but remember each pair will be slightly different a measurement that's very important especially for high speed networks like 10g bastey and and and even Gigabit Ethernet is delay skew and that's the difference between the pair's you might think well I'll just twist one of them a lot and one of them not very much the problem is you'll end up with a pre big delay and so the signal doesn't all get to the far end at the same time and that can really screw up the electronics so there actually are standards that say what the delay needs to be and what the delivery difference in the delay between the pair's need to be another measurement you don't hear about a lot is resistance measurement and until recently it wasn't really that important there's actually three different measurement resistance there's the loop resistance which is what I'm showing you in the picture there so what's the you know if I put in a signal on one end and go all the way down and come back on that same pair what's the resistance in that and it's very well it's like an all in the range of an ohm there's also the resistance unbalanced between the pairs do the pairs all have approximately the same resistance are they close together or not and then there's resistance unbalanced within a pair in other words in the top example what's the resistance of the blue and white wire versus just the blue wire okay now why does anybody care about this it's not really a significant issue in data communications but it is a very significant issue with high-power POS systems there are POS systems now that can deliver sixty Watts over twisted pair cabling and if the resistance is not balanced properly between the pairs you end up at the table eating up and then if the cable eats up to this distance increases but power can't make it through the far end and you get intermittent problems as well so this is a new measurement that's not really new or resistance has been around for hundreds of years but in terms of cabling it's now getting a bigger importance as these new high-power p OE networks are starting to be deployed you know you can run a an Access Point camera and now even flat panel TVs off power over ethernet so if you're doing that make sure you're measuring the resistance and the resistance on balance make sure your tester is checking that out it's very important otherwise you're going to get intermittent performance and not know why now there are a lot of other measurements not going to talk about them all here because they are not as common and many of them are related in fact all of the ones that say near-end crosstalk AC r - n AC R - F all of those are basically different crossed off measurements I mentioned there are six different types of cross off measurements and those are just basically variants of a cross off measurement insertion loss and return loss relate to how much does the signal be great as it travels over the distance and then there's a bunch of other ones length and propagation delay and skew we talked about resistance we talked about why our map we talked about transverse conversion loss is one for the more advanced class we'll skip over that right now just make sure your tester can check it and make sure it's okay so those are all the measurements we got two other things to be aware of is when you're measuring the performance of a cable there's a number of different configurations and the two most common I'm going to talk about the first one being the channel the channel is everything from the patch to the beginning of the patch cord where it plugs into say the back of someone's computer all the way to where it plugs into the switch at the far end so as you can see with the green there and says you begin the measurement right before the patch right before where the patch cord plugs into the piece of equipment and you end the measurement at the far end this includes all the patch cords all the stuff in the wall if you've got patch panels and different sorts of connection points it's everything from end to end so it's basically if you think about it that's what the I Triple E when they define a network standard worries about it's what a network owner I'm troubleshooting a network that's what I worry about everything from end to end right I can't just worry about part of it got to worry about the whole thing the permanent link the easiest way to think about that is that's the stuff in the wall it generally starts at the jack in the wall goes all the way back to the some patch panel where then you would plug into an instrument and this is what contractors and building owners worry about now one of the things if you are very attentive you might have noticed the distances for permanent links are different than the differences for channels you can see a permanent link here 90 meters I go back to the channel it's 100 meters for most limits most kiai a limit for testing safer ID the channel is limited to 100 meters the permanent link is limited to 90 meters what's the difference you got ten meters through patch boards all right speaking of different kind of standards let's talk about the different standards there's cabling standards which are defined in North America by the telecommunications industry association in Europe and other parts of the world they're defined by the international standards organization those are organizations work together pretty closely and Armen eyes them although they have different names for the standards talk about that in a minute then there are network standards defined by I Triple E which are standards for say 10g base t10 BAE to whatever some sort of a networking standard now the cabling and network standards are designed to fit together these two organizations actually work very very closely we have representatives on both of these so when I Triple E wants to think about a new networking standard they also think about what kind of cabling will we need to support this standard and so what's the best way to explain this is to show you this cable right here is to show you the cabling standards now as I mentioned ISO and T ia generally work pretty close together the standards I put here on the same row aren't exactly the same but they're pretty darn close and for most people you really don't need to notice the difference so for example cat5 was pretty much designed to support 10 base T and 100 base T X near on 10 base T on cat 3 but I don't even know if anybody makes that anymore cat 5e came along and it was designed support 1000 base T or gigabit ethernet over twisted pair that's also ISO Class D then you can see cat 6 came along wasn't popular for a real long time because it was limited to 35 meters on ng base T so the standards committees went back they tweaked things up a little bit and they came out with 6a which is pretty much replaced 6 as an insult as a technology being installed and now it allows you to run ng base key over a hundred meters and then the latest standard that's come out is category eight which is called class 1 or 2 in Europe and it supports all the way up to 25 and 40 G base T but limited to 30 meters so it's pretty much right now a data center technology however as you can see standards can kind of get changed a little bit and then can support different types of networks now let's talk a little bit about that what's the difference between abling standards and network standards they have an example here that I'll show you about that so when category 5e cabling came out it was right about the time that Gigabit Ethernet was being and develop and these things were developed together and they go together just like Brad Pitt and Jennifer Aniston right you know back in 2000 they went together Gigabit Ethernet category 5e cable it was great so really what was the difference well at the time maybe not that much but in the last few years something changed in 2014 a new standard for Wi-Fi came out 802 11 AEC which you've probably heard about and it supports Wi-Fi up to six point seven gigabits per second now to make it work you need to run 10g bastey right that you can't run six point seven gigabits per second over a hundred megabits today 100 gigabit connection it's going to slow it way down right it's only as strong as its weakest link so if you wanted to deploy 802 11 AC you'd need to deploy 10 G base C and that's really expensive and what about all this cable I've got I want to change all that so this group got together the N base T Alliance and said I wonder if there's a way to cram higher speeds onto that existing cabling and that's exactly what they did they came up with a new standard where they can cram 2.5 gigabits per second into cat 5e cable and even five gigabit per second into cat 5e cable with some limitations it will certainly work on cat 6 so they basically assume clever signaling and electronics and magic and stuff it managed to make this work so now you can install and base T our cat our 802 11 AC over your category 5e cabling and just in the same way that Brad Pitt moved on from Jennifer Aniston to Angelina Jolie you can move your cat 5e cabling from Gigabit Ethernet up to n base P which is 2.5 Gigabit Ethernet or maybe even five gigabit so I hope this makes it all very clear to everyone why Brad Pitt is like a cabling standard Angelina Jolie and Jennifer Aniston are more like a network standard ok let's talk a little bit about cabling problems we did a research exercise a few years ago to find out what the big of cabling problems were and we found it kind of amusing because we make a lot of complicated test equipment that helps you figure out all sorts of complex cabling problems the funny thing was is the biggest problem is cables don't go where they're supposed to they're not labeled properly and they don't know where you thought they went you unplug something and you try to plug it back in and it no longer works because it was labeled wrong so this is the number one problem now actually a lot of our testers can help you with that because they have identifier which you can plug in say into the patch panel or the office and then go around and plug into the other end and see which one is that wait and I thought I put number two into that tack that this one says it's number five so we can help you troubleshoot that problem but it is the biggest problem that people have with cabling now what else split pairs is another big problem because a lot of times I hear people talk about I'm just going to make a straight-through cable well when I hear that it sets off a little alarm bell a straight-through cable really should be what you see in the center here and notice how the pairing is a little bit strange this dates back to the old telephone days of them and don't exactly understand the reasoning for this I'm sure there was a good reason but the one and two and seven eight pairs make a lot of sense but three six and four or five are the other pairs now you might think well I'll just you know run a pair between one and one and two a pair between three and four and that's what happened over there on the right and what you get is especially with Ethernet which uses three six or five pair in lower speed Ethernet you get a transmitted and received pair twisted together and another transmit and receive pair trusts together twisted together and it will not work or as I mentioned if the cable short enough it'll work intermittently and so this is a very tough problem to be able to you really don't want this and that's why it's important to make sure if you ever buy a cable tester make sure it can tell split pairs the really in extension ones that just use DC testing excuse me they can't tell the difference between the cable in the middle and the cable on the right but your network equipment certainly will excuse me now another problem broken cables right stuff pulls out of walls people run over things with their chairs all kinds of things can go wrong with cable and if it's broken you want to know where and that's something we'll talk about when we get to test equipment installation now if you go to a cabling installation and maintenance magazine or are on reddit you can see a parade of cable installation Horrors that will stand your hair on in I just grabbed one picture here I think there's some fine twisting there you know the pairs need to be twisted together not everything all twisted together as you see on the on the top there literally we've had installers tell us about wire nuts and maybe if you're not an electrician you don't know what wire nuts are but why are not sure what your electrician uses to put connections together like inside of light sockets and things wait for sixty Hertz AC really bad for Gigabit Ethernet and yes it doesn't work actually I heard a story once of wired us being used on fiber-optic cable I don't know if that's really true that's a pretty good story so an installation can be a problem so if you look at the one on the lower left there you can see there's a good job of installation the pairs are nicely twisted if you look at the one on the right that's not really such a good job you can see there untwisted for long distances or did maybe inch back from the connector that's that's a bad installation job another thing that can be a problem is compounds this is pretty rare but it could be a real disaster when it happens one of the biggest problems we've seen out there in the world is what's called copper clad aluminum cable in an effort to save money there are some manufacturers out there that are making a cable that's not copper it's aluminum and then it just has copper around the outside so it looks like it's copper but one of the ways can notice the difference between this is the fact that lumens a lot lighter than copper so literally we have had customers send us boxers where there are metal weights in the bottom of the box to make it as heavy as a copper box so if you pick it up you think you got a box of copper cabling but you don't and you remember I mentioned some of those other strange measurements like transverse conversion loss though we can find things like copper clad aluminum cable also some of the resistance measurements can help you find that the biggest problem with this is that it has real problems with power over ethernet but in general the quality's not that good in the first place and you can you can have all kinds of problems with this if you buy from a respected manufacturer you have almost no chance of running into this problem but if you've got a contractor or somebody who's really cutting corners be careful watch out for this we have a white paper on this topic by the way another problem is patch cords patch cords really varied in qualit quality and the worst is what you see on the right here you probably know that as a silver satin patch cord which can be a real nightmare they're not twisted at all which I guess was better than a split pair cable but not a lot better and these will fail you also have of course the guys who bring these from home and try and fix their network it's not going to work either so how do you prevent problems well I recommend three things first off use an installer who knows what they're doing if you are an installer I hope you know what you're doing we have actually certification classes for installers over 10,000 people have taken those classes around the world so get somebody who knows what they're doing and who will also make sure they buy the right components make sure you're using the right components along the way if you're using a good brand name you don't really have much to worry about and finally if they certify it and test it then you'll know for sure that they did a good job as I said the difference between a cable that works and a cable that doesn't work to be pretty tiny it can be pretty easy to miss if you've got a certification report that you know all your cables are good and you don't really have much to worry about and you also know that your future proof if some new technology comes down the road like in base P that you'll be able to Amal app so let's talk a little bit about troubleshooting three troubleshooting technologies that are very common and very very helpful are listed here the first one is TDR time-domain reflectometry that allows you to tell the distance to an open or a short and where the problem is opens and shorts are probably the most common problems aside from cabling stone to the wrong place and so with one of these you can tell where it is the problem is almost never in the wall right it's going to be at the jack it's going to be at the patch cord it's going to be a patch panel and one of these testers you can tell as in the example here oh it's 121 feet away that must be it the patch panel because it's not in the wall jack here so change you a lot of time when you have to go and troubleshoot where the problem is cable identification I mentioned before where you can plug an adapter into the far end of the king of the jack and then go plug in your tester and verify that you're connected to the place you thought you were in here and in the illustration in the center you can see there's a number five next to the far end of the cable which indicates you're plugged into cable identifier number five if that's the one you thought you're supposed to be plugged into great if not you know something's wrong and finally toning toning injects a signal on to the cable that's unbalanced it makes a lot of noise electromagnetic noise and then you can use a probe like the one you see here actually tracing along the length of the cable and you'll hear the tone as you get closer to the cable the tone gets firmer that's a really powerful tool for troubleshooting especially very messed up wiring closets but even in a patch panel it can help you identify which Jack goes where it's even easier than using the cable identifier you can just put the toner in the office say then go back to the patch panel and start plugging the probe into the Jack's until you see the one where you get a lot of signal that's the one you're plugged into so let's talk a little bit about the types of testers that are out there on the market well the first one are what we call verification testers it provides the basic Diagnostics the stuff I just talked about PDR toning and see what was the third one I think I forget to you our cable identification and toning and they run around $500 or so you pay a little less a little bit more get more features more identifiers and whatnot the next level is qualification testers now these are actually test again for network standards and they'll tell you will this cable support deben Ethernet or 100 megabit Ethernet the verification tools won't do that they'll tell you wired it up right and it's connected properly there's no split pairs but they won't tell you the difference between say a cable listed support gigabit or 10 megabit they also provide the same sort of basic Diagnostics that we talked about and these run about 1,500 dollars at the top of the pile are the certification testers they test against the cabling standards remember that big list of stuff I showed you that you have to measure they measure all of that stuff and tell you whether or not all of those things pass as per the PIAA or ISO limits they also feature some really advanced diagnostics to be honest unless you test a ton of cable you might not ever run into some of the problems they saw and they run they started around ten thousand dollars so they're definitely a different kind of tool they're also very fast in terms of certifying cable so if you have to test a lot of cable they're a good choice now I mentioned the advanced diagnostics I have something here that I love to show which is kind of funny because advanced diagnostics it reminds me of something if you've ever read about the Tesla cars they can accelerate very very fast because your battery power right and in fact they have different modes if you want to make them accelerate very fast and they have this one mode I think they can go from zero to 60 in approximately two and a half seconds and on the Jacke number and they call that ludicrous mode because I think it discharges the battery so fast that you probably can't drive it more than a few more miles after that point but it's I think it may be the fastest accelerating car that you can buy in a showroom our DSX series has what I like to call ludicrous Diagnostics yes of course you'll find open shorts and split pairs and which cable goes where and all that but it can find some really detailed stuff that I don't even know how I find some of this stuff so it can not only tell you say with a cross hop problem that there's crosswalk it can tell you which connector where the crosswalk is so if somebody untwist it a little bit too much we know which connector it's in another one is that it can tell if the cables damaged or if the cable is actually bad quality so I mentioned like the copper clad aluminum and all that it'll tell you exactly which cable and where in the cable and in this case it says it's not a spot in the cable it's the whole cable that has a problem here and a lot of this is because we worked with tens of thousands customers who have problems and we now know what they look like electronically and so we can put it into this simple but this is my favorite we can actually tell if there's water in the cable because we know now what that looks like so there's dozens of these kinds of problems and I gotta admit you've probably never run into water in your table in your life unless you install a lot of cables are dealing with a lot of cables but the DSX series are top-end certifiers have just ludicrous diagnostics there's probably no one person in the world any more and smarter than what this can find because it's got hundreds of years of experience that we've got with troubleshooting these kinds of problems built into the instrument that I just I just find this amusing anyway so what do you want to buy a certification tool is really what you need if you're testing new installations if you're building a new building and putting in new cabling I'd recommend you buy a certification tool or you hire somebody to do it or you rent one of these tools they're easy to rent by the way they're not hard at all also the test results that you get from a certification tool can be given to a manufacturer cabling manufacturer and they will certify your cable and then for 10 15 sometimes even 20 years of useful goodness and the third one is if you don't trust your installer and you want to go around behind them and see what they're really doing and you need a certification tool that's what you want now for most people who manage a network Mart and the cable installation business a qualification tool is good enough you can use that to check the existing cabling that you've got you know you moved into a a plant and there's cabling there it is you're really gonna work for Gigabit Ethernet you can check that with this product also you can be your troubleshooting and you can do your documenting it actually can save reports and then you can document them and keep track of your your cable plan and finally verification if you just want to do troubleshooting then that's that's the tool for you one other thing I should point out the certification tools also have the capability of adding fiber optic systems so if you do a lot of fiber optic testing I can take one of those certifications we'll plug a module into it turn it into an OTDR but that's for another class all right now I'm going to open it up for questions let's see what we got go on is anybody anybody come to me with any good questions yes you see if you can can stump me with your cabling questions ah well one of the first questions I see was will there be session notes made available or should you take notes we can make this presentation available we can send it out to everyone it's also being recorded so if you want to share it with your friends feel free to do that okay let's see if we get any other questions coming in yes I think I may have covered everything nobody seems to be asking any questions oh so there was a question can we access for video afterwards and the answer is yes we'll send you it will send everyone a link to the video afterwards oh here's a good question should I use key ia 568a or 568b and why actually we have a great blog post on this what we just did and the difference between 568 a and B that come back a few slides it will let me come back a few slides here the difference between a and B and I don't know them off top of my head I'll should warn you is it switch pairs they see which colored pairs are used together so this is either A or B I think probably somebody on this phone call is smarter than me in to tell me whether this is a or b the key thing is so that in this example orange is 1/2 green is 3 6 Blue is 45 and brown is 7/8 the other standard the ace and ugly usually a different coloring scheme but the pair's are all still the same so the point is if you use a or B it doesn't really matter as long as you always use the same on each cable if you put a on one end and B on the other you've got a good chance of getting split pairs so just make sure you always go with that I think a is less common not even most people have gone with B so if you're doing something new I'd go with B if you're doing something in an existing plant figure out what you got at the other end and that's a very good question though one person said that and somebody also pointed out we have a poster I'll get to that in a minute another person pointed out that that a was more for residential and B was more for commercial that may well be true but I know that B is more common for nowadays at least in most of the stuff that we see okay so what other questions we have that I did answer questions with return loss you know return loss can be based can be a problem based on either instant installation or the cabling and so that's probably a good question to take up with our Technical Assistance Center if you haven't if you're seeing a specific problem with return loss they can probably help you answer that and help you understand why you're having those kinds of problems let's see um what's a common cause for static on a voice over IP phone with power over ethernet boy you guys are going to ask some really hard ones here so that one I suspect static it could be a cabling job and then that's one reason alight certification if the cable certified that I suspected as nothing to do with the cable because because p OE should not interfere on a good cable with the audio signal that you're getting which is actually a digital signal anyway so I would I would suspect it may be something other than the cabling the only way to to exempt the cabling or to understand that it's not the problem would be to probably test it with a high-end tester as opposed a certification tester as opposed to a low-end type tester oh that's what there's a very good question like that brings up one I'll talk about how would I test the cabling job done by someone else when the cats are cat 5e that cable and patch panels are cat 6 I presume the would only pass with the weaker link okay so here's the deal on them the standards say that if I build a link with that is designed to cap off say caps X we'll use that as an example I have to use caps X components now I could build a link that use some cat 6 and some cat 5 components does that mean it would not pass if I hooked up a tester and tested it no actually it might you can set the link you can set the tester and say look I want you to test this in the caps h link and you can test it and it might not actually be officially an all cat 6 link but the tester might say you know what it passed every test it needed to it passed all the parameters legally it's not a caps H link but electrically it is so my point to you would be is you could use it but electrically it wouldn't be and obviously if you ran into some problems down the road and you brought somebody in to look at it they might know a lot of connectors that's the problem so that's that's an interesting thing to think about but remember in order to legally make a cat 6 link it has to be made of all cat 6 components and that's true with any of the standards let's see well that's a tough question no the answer to that one I think local jurisdictions will start making installers carry a license to install ICT with p OE wattages going up in the future that's impossible it's very hard the way that p OE works to actually make it dangerous it will only apply power if it's EE certain electrical conditions at the far end of the table which your body or your tongue cannot provide and if those conditions go away the power will shut off so it's actually very safe however there aren't some worries about cables heating up and there's a new standard from ul and now and you're going to get me but if you check out our blog we just put up an article about that about this new standard I believe it's LC cabling that ul is putting out that's basically cabling that's been tested for temperature issues and heating up with P OE and to prevent those kinds of problems so if you're worried about that I'd recommend going with that sort of certified cable um let's see but there's somebody here said the IT guy will always blade the cabling yeah that's that's that's based on experience yes that's true um a question here is about rj 49 I'm not familiar with rj 49 that's what do you want to be another question is when using an AC router is it that this to use cat 6 cable how much performance loss is there with cat 5e so the problem you run into is if your cables not good enough you're going to get a lot of errors and retransmissions because absolutely Ethernet works and it's very good about that but it kind of masks the problem as well cat 5e is good in virtually every instance for supporting 2.5 Gigabit Ethernet our 2.5 to 525 G but or 20 what is it 2.5 g base T - 5 g base T but our n base key that version but it's not always going to be good enough for five gig and it requires extra testing we have there's an apt note out by the N base T Alliance that we help right that tells you about the kind of testing that you need to do on cat5e cables can verify if they will support 5g base T in addition to 2.5 g base t so if you want to run 2.5 gig on your cat 5e cable you shouldn't have any problems if it was certified and you know it's cat 5e if you want to run the 5 gig you may have to go in and do a little bit of retesting the testing that's required is around a lien crosswalk if you have cable in bundles you not only get crosstalk between the pairs in the jacket but between adjacent pairs and there are ways to test for that and if you have a contractor that knows how to do that that's the way to check for that it's a fairly easy test especially since you only have to test the cables that you want to use for your access points but that's what I'd recommend that you do there but I'd go to the NBA ski Alliance website and find their white paper on cabling it explains exactly how to do that what else have I got there's a few there's a few good comments that are coming up about you know the difference between more expensive and less expensive cable is the Headroom and that's correct the Headroom is the distance the amount of space to say between the amount of crosstalk that's allowed and the amount of crosstalk in the cable let's see other more question here the difference between outdoors and indoors cable and UTP in any category that's more of the design of the jacket and the conductors it doesn't really have any impact on the cabling performance itself and that's pretty much what I look at so I don't really know the differences you'd have to talk to a painting manufacturer to know the difference between indoor and outdoor cabling but in terms of that like I said it's more about its ruggedness and its brushed in permeability and things like that by the way the quality of the cable will not let you run it further distances that's I went back and remember I mentioned the skew and delay skew no matter how good they make the cable they just run into the physics of how long you can make it now I'm sure somebody now is going to tell me about the 150 meter 10 base T link they ran and I've seen it done and it will work but it's not the standard and if you've ever tried to run anything faster say on that link you're going to run into some real problems so that's why it's better to stick with the standard if you want to run something a longer distance you need to get a repeater or use fiber or something like that cheating will work for a while but you know your successor or maybe even you five years from now might have a real problem on their hands to figure out how to make that link run faster it won't just be a matter of plugging in some better hardware at each end okay um oh well okay one more question if I'm simply changing access points what is the best way to certify the existing cabling is good well once again if you just if you just run gigabit on that one of our verificar verification testers would be good enough so what's she going back to that question so let's say you're installing a new access point as long as you're running it up to a gig a qualification tester like this one here would probably do the job if you want to run it for anything higher than a gig you're probably going to need a certification tester because all application testers pretty much run out of gas at a gig so if you're installing an AC access point you're going to want to use a certification tester now as much as I'd like to tell you if your network guy to go buy one I'd say hire a contractor have them come in and tested for you so hot cheaper than PI in one of these testers and they can test whatever else you need and help you fix it if it's not going to work you know all right can I recommend any other basic or introductory videos or webinars that's probably the last thing learning limit pictures of this here skip ahead here here are some things that I think would be very very useful but I think it could be kind of handy for you first off we've got a great poster that goes through a lot of the stuff I did without all the jokes and there's no Jennifer Aniston's I apologize but you can get a poster that talks about all the twisted-pair cabling measurements like this one you can also learn about cable testing by going to this website right here we have a lot of links to various documents and white papers and even a few videos I think that will tell you a little bit more about cable testing if you're thinking about buying a tester we've got a copper cable tester selection guide which is pretty cool because it goes from everything from the you know the really basic stuff I talked about you know the toners and whatnot 100 bucks couple hundred bucks all the way up to the certification tools you can compare them all and see what's right for you and we even have links you can go live right there and finally if you want to stay up on the latest developments I mentioned this a couple of times and this is really very useful I think that's how I stay up on the latest developments you'll see there are we have a table in chronicles blog and we talk about everything from the basics of cabling like how does wire mapping work the difference between 568a and types of g8b there's actually an article in there that we really put up about that all the way up to what's the latest on going on in the standards committees on fiber testing and you know some of the real high-end stuff that's going on as well so if you want to keep up on cabling and what's going on that's a great thing we have a couple articles a week we are really lucky that we have a lot of experts around here that can help explain some of this stuff and clearly simple terms so that's a place I would recommend so to finish up we will be sending you a link to this recorded version of this presentation and and the slides if you'd like to get them and with that I'll just leave this up here on the screen for a few more minutes so if you want to copy this addresses or take a screenshot but in the meantime I'd like to thank you all very much for coming I hope you got a lot out of it and we will talk to some of you later I I'm quite sure thanks again
+
+
+[00:02] greetings everyone welcome this is Mark
+[00:06] Mullins from Food Network speaking to
+[00:08] you from the fluke networks webcast
+[00:10] studio here in Everett Washington and
+[00:13] I'd like to wish everyone good day don't
+[00:17] know what time it is where you are but
+[00:19] it could be just about anywhere because
+[00:21] we've got a lot of participants from all
+[00:23] over the world who are here to talk
+[00:26] about today's subject just to let you
+[00:28] know you should all be muted right now
+[00:30] so we won't hear any dogs barking or
+[00:33] Amazon delivery doorbells or people
+[00:37] sparking their coffee so that should
+[00:39] make for a nice presentation today
+[00:45] let's see I'm wondering if there are any
+[00:47] hearing problems I thought I'd just make
+[00:49] one more check and make sure to see if
+[00:51] anybody can hear me so if you can send a
+[00:53] message via the chat window that if you
+[00:55] can hear me that would be great because
+[00:57] I think we should be alright okay I'm
+[01:00] getting indications the sound is okay so
+[01:02] that's good thanks very much everybody I
+[01:04] did get one call that I couldn't hear
+[01:06] anything but maybe that was because we
+[01:08] didn't we haven't started yet anyway
+[01:10] thanks for coming to today's event we're
+[01:12] going to cover the basics of cabling and
+[01:14] cable testing it should be interesting
+[01:17] and fun if you're looking for the really
+[01:19] advanced class this probably isn't it
+[01:21] this is just learning about the basics
+[01:24] of cabling and cable testing so that you
+[01:25] can troubleshoot and maintain we've got
+[01:28] more advanced classes for example our
+[01:30] GTV T which is our cabling certification
+[01:33] test technician course which spends two
+[01:36] days covering many of the same topics in
+[01:38] a lot more depth this is just a getting
+[01:40] started class so let's get started so
+[01:45] one of the questions people might wonder
+[01:47] about is why do I need to test cable you
+[01:50] know pretty much worse about it up right
+[01:52] it shouldn't really be a big problem
+[01:54] well this is a post we got on Facebook
+[01:57] who are our food networks page from from
+[01:59] a gentleman and he said you know which
+[02:03] termination of these is in the proper
+[02:04] manner and if you look at the two the
+[02:06] one on the right and the left they don't
+[02:08] look that much different there's a
+[02:10] little less jacket the jackets been
+[02:12] pulled a little bit on the on the left
+[02:14] hand side is compared to the right but I
+[02:17] showed this to a number of experts in
+[02:19] our company who are you know they're
+[02:20] on the TI a and I Triple E
+[02:23] committees they should know good cabling
+[02:25] in which it when they see it and their
+[02:27] answer is yeah they both look pretty
+[02:29] good but but I probably want to test
+[02:31] them to make sure they're good and
+[02:32] that's the reason of course is that you
+[02:34] can't just tell by looking at a cable
+[02:36] whether or not it's good the one on the
+[02:38] Left shows a little bit better
+[02:40] workmanship but they both might work
+[02:42] fine one of the things I don't know is
+[02:44] that cat5 or capsid say I don't really
+[02:46] know what kind of cabling that is but
+[02:48] will the cable tester I can figure all
+[02:50] that out and know whether or not it's
+[02:52] going to work the other option of course
+[02:54] is to just plug it in and pray that it
+[02:56] works plug and pray as they like to call
+[02:58] it so that's why we want to test so what
+[03:01] will we talk about today well we already
+[03:03] talked about why you might want to test
+[03:05] then I'm going to cover a little bit
+[03:07] about it's a pretty advanced topic I
+[03:09] picked some electrical engineering and
+[03:12] this is actually easier than any of the
+[03:15] electrical engineering classes I thought
+[03:17] I call it transmission line theory for
+[03:19] dummies and it was explained to me in
+[03:21] some very simple terms by some very
+[03:23] smart people a few years back and I
+[03:26] think it will help you understand
+[03:27] exactly how this listed pair cabling
+[03:29] works will then talk about some
+[03:31] different measurements and then two
+[03:34] different kinds of standards which is
+[03:35] often confusing to people there are
+[03:37] table in standards network standards
+[03:40] what are the differences and why should
+[03:41] you care then I'll talk about what can
+[03:44] go wrong in twisted pair cabling what
+[03:46] are the most common problems I'll talk
+[03:48] about testers and how do you pick the
+[03:50] right tester for the job you're trying
+[03:52] to do then we'll cover some QA and then
+[03:54] I'll lead the presentation and give you
+[03:57] access to some resources which if you
+[03:59] want to learn more about table testing
+[04:00] you can do
+[04:02] so let's talk about cable let's talk
+[04:05] about transmission line theory so the
+[04:07] way cabling works in most instances this
+[04:09] is a simple example let's just say a
+[04:11] good example for 10 base T you've got
+[04:13] two pairs so the grey line indicates one
+[04:17] wire and the black line represents
+[04:18] another you've got a transmit pair and a
+[04:21] received pair and obviously the transmit
+[04:23] pair for at one end
+[04:25] is the receive pair for the other end
+[04:27] she computer is on the left and say the
+[04:29] switch is on the right and you send the
+[04:32] signal down those cables and they get
+[04:35] received at the other end another signal
+[04:37] comes back the other way it's all great
+[04:39] everything works really well now the
+[04:41] problem is is an electrical theory
+[04:44] you'll hear about this thing called
+[04:45] crosstalk and what that means is if I
+[04:48] induce a signal on one wire it will
+[04:51] create a magnetic field and a magnetic
+[04:53] field can induce a signal on another
+[04:56] wire so what happens is I send my little
+[04:59] pulse say or my little wave which maybe
+[05:01] represents a 1 or a 0 down the
+[05:04] transmitted pair it generates this
+[05:06] magnetic field which then gets picked up
+[05:08] by the other wire and comes back in on
+[05:11] another pair now the signal smaller of
+[05:14] course but as signals travel down the
+[05:16] wire they get a lot smaller so the
+[05:19] transmitted signal could be a thousand
+[05:21] times bigger than the received signal so
+[05:24] even a little bit of cross talk can look
+[05:26] like the guy at the other end trying to
+[05:28] talk to you of course for those of you
+[05:30] who are maybe over I don't know over 40
+[05:33] you might recall being on phone call
+[05:35] some days where you can hear like this
+[05:36] faint conversation in the background of
+[05:39] another person's phone call it kind of
+[05:41] screws you up that's where the whole
+[05:42] term and the name cross talk came from
+[05:45] and for computer communications it can
+[05:48] really be devastating because every time
+[05:50] you start to talk you have to stop and
+[05:52] listen but it's just yourself talking so
+[05:54] every time you talk you have to stop
+[05:56] what's worst about these kinds of
+[05:58] problems is they can kind of be
+[06:00] intermittent for example they could be a
+[06:02] problem that works where your table
+[06:04] works great at 10 megabits per second
+[06:07] but if you crank up the speed you go out
+[06:09] and get some new hardware you go to 100
+[06:10] or to a gig it won't work anymore
+[06:12] because everything gets more sensitive
+[06:14] and speeds get higher so cross talk is
+[06:17] probably the most
+[06:19] problematic issue in transmission line
+[06:22] theory and in pavement so how do you
+[06:24] deal with it well the smart engineers
+[06:26] came up with this idea they call it
+[06:27] differential signaling so what you do is
+[06:30] you send a positive pulse down one wire
+[06:33] and an exact copy but a negative pulse
+[06:36] down the other wire so what happens is
+[06:38] you get too magnetic field but they're
+[06:40] equal and opposite and they cancel each
+[06:43] other out but not entirely because if
+[06:45] you look at my picture here you'll see
+[06:47] that the black wire is a little closer
+[06:49] to the gray wire below it and so it
+[06:52] picks up a little bit stronger signal
+[06:54] from the black wire there the bottom
+[06:57] cable than it would from the gray wire
+[06:59] and that means you're still going to get
+[07:01] some crosstalk there even though it's
+[07:03] been greatly reduced there's still some
+[07:06] so how do we get rid of that and this is
+[07:08] where it's like really that's that's how
+[07:09] they do it
+[07:11] it's they just twist the cable so what
+[07:14] that does is that means that sometimes
+[07:16] the black one of the transmit pair is
+[07:20] closer to the black one of the received
+[07:22] pair but sometimes it's closer to the
+[07:24] gray one and over the distance of the
+[07:26] cable it all cancels out and you get
+[07:29] very very little crossbar and
+[07:31] you'll notice if you do this if you look
+[07:34] at this picture though you'll notice it
+[07:35] one of the top is twisted slightly
+[07:37] different than the one at the bottom
+[07:40] well and in fact that's intentional if
+[07:41] you look at twisted pair cabling each
+[07:43] pair has a slightly different twist rate
+[07:46] so that the black isn't always closer to
+[07:49] the other black or the gray isn't always
+[07:51] closer to the other gray and so they
+[07:53] will tend to cancel out and over the
+[07:55] course of the cable that's really how
+[07:56] they did it and you think well it's
+[07:58] really not that complicated is it and
+[07:59] it's actually it's not it's a pretty
+[08:01] simple theory saying if you go and look
+[08:03] at cable if you take it out of a jacket
+[08:06] a typical floor pair twisted pair cable
+[08:08] you can even see in this picture here
+[08:10] that the twist rates are slightly
+[08:12] different the blue and pair is twisted a
+[08:15] little more tightly than the orange pair
+[08:17] and so on you can see there's a slightly
+[08:18] different twist rate on each one one way
+[08:21] you'll see that is when you're using a
+[08:22] tester you'll notice even a very
+[08:24] accurate tester will report different
+[08:26] lengths for the cable this is an example
+[08:28] of one here this cable is only 20 meters
+[08:30] long and yet you can see there's more
+[08:33] than a meters worth of difference that's
+[08:34] just because the tighter you twist the
+[08:36] cable the more length there is in it
+[08:38] Electrical lunch so the cable on the
+[08:40] outside may be exactly 20 meters long
+[08:42] you'll get these different measurements
+[08:44] and it's not a problem with the tester
+[08:46] it's just the fact that the twisting is
+[08:48] different between the pairs
+[08:50] now with pulling the twisting really
+[08:54] gets rid of almost all crosstalk it's
+[08:56] really an amazing
+[08:57] mathematical certainty that you get rid
+[08:59] of most of the crosstalk but you still
+[09:01] get crosstalking cables you get a little
+[09:03] bit during the cable the bigger problem
+[09:05] is in the connectors and if you look at
+[09:07] this image on the left you'll see why
+[09:09] that is notice those cables are not
+[09:12] twisted anymore right when they come out
+[09:14] of the jacket and they go into that plug
+[09:16] and have to get untwisted for a little
+[09:18] bit and even that short little distance
+[09:20] which is you know much less than an inch
+[09:22] centimeter or two it's still there in
+[09:25] pairs and there's going to be crosstalk
+[09:27] because they're not twisted anymore the
+[09:29] same thing can happen on a jack although
+[09:31] you can see the person who put the jack
+[09:33] together on the right there did a pretty
+[09:36] good job of keeping them twisted all the
+[09:39] way up to the point where they plug in
+[09:40] but then you'll if you open that jack up
+[09:44] you'd see the wires inside once again
+[09:46] the pins they're going to be parallel to
+[09:48] each other they're not twisted anymore
+[09:50] so connectors are where most of the
+[09:52] cross comes from in fact that's where a
+[09:54] lot of the engineering work has to be
+[09:55] done to make really high-performance
+[09:57] cabling systems
+[09:59] so let's talk a little bit about the
+[10:01] different measurements now that you
+[10:03] understand everything there is to know
+[10:05] about cabling the measurements we're
+[10:08] going to start with the simplest one
+[10:09] which is wire mapping and wire mapping
+[10:11] just determines are the wires connected
+[10:14] to the right pins on the cable or on the
+[10:16] jack or the plug whatever and the upper
+[10:19] left corner shows the correct way to do
+[10:21] it so every pin starts at one side goes
+[10:24] to the other on the on the right one now
+[10:27] here's a few of the promisee gap you can
+[10:29] have an open which you can see there one
+[10:32] of the pins isn't quite connected that's
+[10:34] probably the most common wire map
+[10:36] problem you can also have a short that
+[10:38] can happen if the cable gets pinched in
+[10:40] the wall or if somebody there's a really
+[10:41] bad job of terminating it at the end you
+[10:44] can have reverse perish that's not that
+[10:46] hard to do either way you hook them up
+[10:47] wrong crossed pairs is a little less
+[10:50] common of a problem however it can be
+[10:53] actually very common if somebody is
+[10:55] using a crossover cable sometimes you'll
+[10:57] have a cable that's design can swap the
+[11:00] transmit and receive pairs most
+[11:02] electronics nowadays don't care about
+[11:04] that they'll fix it themselves but not
+[11:06] all and sometimes that can be a real
+[11:08] problem and in fact what will happen is
+[11:10] sometimes people will wire up in the
+[11:13] walls they'll do things like cross
+[11:14] repairs to make things work better
+[11:16] sometimes they'll also use separate
+[11:18] pairs for the phone and other things
+[11:20] which none of this is standard and why
+[11:23] while it's fine if the people who put it
+[11:26] together are still working there when
+[11:28] somebody new comes along they install
+[11:31] something it doesn't work you don't know
+[11:33] why the last one I want to talk about is
+[11:35] split pairs and then a split pair what
+[11:38] you see happen is if you look at the
+[11:40] ends everything is connected to where it
+[11:43] should be in other words if I follow the
+[11:46] say that green one all the way through
+[11:48] to the other end even though it goes
+[11:49] through the brown cable it comes out to
+[11:51] the green end on the other side you
+[11:53] think well that should be okay that's
+[11:55] not okay because what will happen is the
+[11:58] transmit and receive pairs will be
+[12:01] twisted together but say for example the
+[12:03] positive transmit and receive pairs
+[12:05] instead of the positive and negative
+[12:06] what happens is instead of the signals
+[12:09] cancelling out as we showed in the
+[12:11] earlier example they'll actually be
+[12:13] constantly together along the length of
+[12:16] the cable the crosstalk will be
+[12:17] tremendous much more than if they were
+[12:20] just straight and the cable won't work
+[12:22] and once again as I pointed out
+[12:23] sometimes these kinds of things will
+[12:26] work for a while or sometimes you'll
+[12:28] have a lot of errors Ethernet is very
+[12:31] forgiving so you can have this
+[12:33] something that kind of bad cabling and
+[12:36] it will continue to work most of the
+[12:39] time and some of the time but then you
+[12:40] get these intermittent problems that can
+[12:42] take you hours to figure out that's
+[12:44] another reason why you should test now
+[12:46] let's look at some other measurements we
+[12:48] talked about cross talk and actually
+[12:51] cross talk and be measured it's a fairly
+[12:52] simple measurement you kind of see what
+[12:54] is going on here
+[12:56] the near-end crosstalk is just the ratio
+[12:59] of the signal I put in on one pair
+[13:02] divided by the signal I get out on the
+[13:04] other pair and it's expressed in dB so
+[13:07] you'll see like 40 DB of crosstalk or 60
+[13:10] DB of near-end crosstalk actually the
+[13:13] bigger the number the better now
+[13:16] sometimes you'll see crosstalk expressed
+[13:18] with a negative number
+[13:20] all that means we they just flip the the
+[13:22] next over the in and they make it a
+[13:24] negative number and then the larger the
+[13:27] negative number the better so basically
+[13:29] you always want the bigger number 40 DB
+[13:32] is better than 30 DB minus 40 DB is
+[13:35] better than minus 30 DB so just look at
+[13:38] the absolute number the bigger the
+[13:39] better and there are six different
+[13:41] crosstalk measurements that are made
+[13:43] there's
+[13:44] near-end crosstalk RN crosstalk there's
+[13:47] a ratio of crosstalk to the actual
+[13:50] signal and so on and so forth also you
+[13:52] have to measure the cross off on six
+[13:54] different places between pairs 1 & 2 & 3
+[13:58] & 6 between 1 & 2 & 4 & 5 between 1 & 2
+[14:03] & 7 & 8 so you actually end up with lots
+[14:07] of different crosswalk measurements on
+[14:08] your cable it's a lot to keep track of
+[14:10] good reason to use a tester
+[14:13] another measurement that is important is
+[14:15] delay and skew delay is just the time it
+[14:18] takes a signal to travel the length of
+[14:20] the cable signals travel at about 70
+[14:23] percent of the speed of light and so the
+[14:26] cable if you know that propagation rate
+[14:29] in the cable also called the nominal
+[14:31] velocity of propagation you can figure
+[14:33] out the actual length of the cable as
+[14:35] well but remember each pair will be
+[14:37] slightly different a measurement that's
+[14:40] very important especially for high speed
+[14:42] networks like
+[14:43] 10g bastey and and and even Gigabit
+[14:47] Ethernet is delay skew and that's the
+[14:50] difference between the pair's you might
+[14:52] think well I'll just twist one of them a
+[14:54] lot and one of them not very much the
+[14:56] problem is you'll end up with a pre big
+[14:58] delay and so the signal doesn't all get
+[15:00] to the far end at the same time and that
+[15:03] can really screw up the electronics so
+[15:05] there actually are standards that say
+[15:07] what the delay needs to be and what the
+[15:09] delivery difference in the delay between
+[15:11] the pair's need to be
+[15:15] another measurement you don't hear about
+[15:17] a lot is resistance measurement and
+[15:19] until recently it wasn't really that
+[15:22] important there's actually three
+[15:24] different measurement resistance there's
+[15:25] the loop resistance which is what I'm
+[15:27] showing you in the picture there so
+[15:28] what's the you know if I put in a signal
+[15:30] on one end and go all the way down and
+[15:31] come back on that same pair
+[15:33] what's the resistance in that and it's
+[15:35] very well it's like an all in the range
+[15:37] of an ohm there's also the resistance
+[15:39] unbalanced between the pairs do the
+[15:42] pairs all have approximately the same
+[15:44] resistance are they close together or
+[15:46] not and then there's resistance
+[15:48] unbalanced within a pair in other words
+[15:50] in the top example what's the resistance
+[15:52] of the blue and white wire versus just
+[15:55] the blue wire okay now why does anybody
+[15:57] care about this it's not really a
+[15:59] significant issue in data communications
+[16:03] but it is a very significant issue with
+[16:05] high-power POS systems there are POS
+[16:07] systems now that can deliver sixty Watts
+[16:09] over twisted pair cabling and if the
+[16:12] resistance is not balanced properly
+[16:14] between the pairs you end up at the
+[16:16] table eating up and then if the cable
+[16:18] eats up to this distance increases but
+[16:20] power can't make it through the far end
+[16:21] and you get intermittent problems as
+[16:23] well so this is a new measurement that's
+[16:26] not really new or resistance has been
+[16:27] around for hundreds of years but in
+[16:29] terms of cabling it's now getting a
+[16:31] bigger importance as these new
+[16:33] high-power p OE networks are starting to
+[16:36] be deployed you know you can run a an
+[16:38] Access Point camera and now even flat
+[16:41] panel TVs off power over ethernet so if
+[16:43] you're doing that make sure you're
+[16:45] measuring the resistance and the
+[16:46] resistance on balance make sure your
+[16:48] tester is checking that out it's very
+[16:49] important otherwise you're going to get
+[16:51] intermittent performance and not know
+[16:52] why
+[16:54] now there are a lot of other
+[16:56] measurements not going to talk about
+[16:57] them all here because they are
+[17:00] not as common and many of them are
+[17:03] related in fact all of the ones that say
+[17:07] near-end crosstalk AC r - n AC R - F all
+[17:12] of those are basically different crossed
+[17:13] off measurements I mentioned there are
+[17:15] six different types of cross off
+[17:16] measurements and those are just
+[17:17] basically variants of a cross off
+[17:19] measurement insertion loss and return
+[17:21] loss relate to how much does the signal
+[17:23] be great as it travels over the distance
+[17:25] and then there's a bunch of other ones
+[17:26] length and propagation delay and skew we
+[17:28] talked about resistance we talked about
+[17:30] why our map we talked about
+[17:32] transverse conversion loss is one for
+[17:35] the more advanced class we'll skip over
+[17:37] that right now just make sure your
+[17:39] tester can check it and make sure it's
+[17:40] okay so those are all the measurements
+[17:42] we got two other things to be aware of
+[17:45] is
+[17:46] when you're measuring the performance of
+[17:47] a cable there's a number of different
+[17:49] configurations and the two most common
+[17:51] I'm going to talk about the first one
+[17:53] being the channel the channel is
+[17:55] everything from the patch to the
+[17:58] beginning of the patch cord where it
+[17:59] plugs into say the back of someone's
+[18:01] computer all the way to where it plugs
+[18:04] into the switch at the far end so as you
+[18:06] can see with the green there and says
+[18:08] you begin the measurement right before
+[18:10] the patch right before where the patch
+[18:12] cord plugs into the piece of equipment
+[18:14] and you end the measurement at the far
+[18:16] end this includes all the patch cords
+[18:19] all the stuff in the wall if you've got
+[18:21] patch panels and different sorts of
+[18:22] connection points it's everything from
+[18:25] end to end so it's basically if you
+[18:27] think about it that's what the I Triple
+[18:29] E when they define a network standard
+[18:31] worries about it's what a network owner
+[18:33] I'm troubleshooting a network that's
+[18:35] what I worry about everything from end
+[18:37] to end right I can't just worry about
+[18:39] part of it got to worry about the whole
+[18:41] thing the permanent link the easiest way
+[18:44] to think about that is that's the stuff
+[18:46] in the wall it generally starts at the
+[18:49] jack in the wall goes all the way back
+[18:51] to the some patch panel where then you
+[18:54] would plug into an instrument and this
+[18:56] is what contractors and building owners
+[18:58] worry about now one of the things if you
+[19:01] are very attentive you might have
+[19:02] noticed the distances for permanent
+[19:05] links are different than the differences
+[19:07] for channels you can see a permanent
+[19:09] link here 90 meters I go back to the
+[19:11] channel it's 100 meters for most limits
+[19:14] most kiai a limit for testing safer ID
+[19:17] the channel is limited to 100 meters the
+[19:21] permanent link is limited to 90 meters
+[19:23] what's the difference you got ten meters
+[19:25] through patch boards
+[19:27] all right speaking of different kind of
+[19:30] standards let's talk about the different
+[19:32] standards there's cabling standards
+[19:34] which are defined in North America by
+[19:36] the telecommunications industry
+[19:38] association in Europe and other parts of
+[19:40] the world they're defined by the
+[19:41] international standards organization
+[19:43] those are organizations work together
+[19:45] pretty closely and Armen eyes them
+[19:47] although they have different names for
+[19:48] the standards talk about that in a
+[19:50] minute then there are network standards
+[19:52] defined by I Triple E which are
+[19:54] standards for say 10g base t10 BAE to
+[19:59] whatever some sort of a networking
+[20:01] standard now the cabling and network
+[20:03] standards are designed to fit together
+[20:05] these two organizations actually work
+[20:07] very very closely we have
+[20:08] representatives on both of these so when
+[20:10] I Triple E wants to think about a new
+[20:12] networking standard they also think
+[20:15] about what kind of cabling will we need
+[20:16] to support this standard and so what's
+[20:19] the best way to explain this is to show
+[20:21] you this cable right here is to show you
+[20:23] the cabling standards now as I mentioned
+[20:26] ISO and T ia generally work pretty close
+[20:29] together the standards I put here on the
+[20:32] same row aren't exactly the same but
+[20:34] they're pretty darn close and for most
+[20:36] people you really don't need to notice
+[20:38] the difference so for example cat5 was
+[20:42] pretty much designed to support 10 base
+[20:44] T and 100 base T X near on 10 base T on
+[20:47] cat 3 but I don't even know if anybody
+[20:50] makes that anymore cat 5e came along and
+[20:53] it was designed support 1000 base T or
+[20:56] gigabit ethernet over twisted pair
+[20:57] that's also ISO Class D then you can see
+[21:01] cat 6 came along wasn't popular for a
+[21:04] real long time because it was limited to
+[21:06] 35 meters on ng base T so the standards
+[21:10] committees went back they tweaked things
+[21:11] up a little bit and they came out with
+[21:13] 6a which is pretty much replaced 6 as an
+[21:17] insult as a technology being installed
+[21:19] and now it allows you to run ng base key
+[21:22] over a hundred meters and then the
+[21:24] latest standard that's come out is
+[21:26] category eight which is called class 1
+[21:28] or 2 in Europe and it supports all the
+[21:30] way up to 25 and 40 G base T but limited
+[21:34] to 30 meters so it's pretty much right
+[21:36] now a data center technology however as
+[21:39] you can see standards can kind of get
+[21:41] changed a little bit and then can
+[21:43] support different types of networks
+[21:45] now let's talk a little bit about that
+[21:48] what's the difference between abling
+[21:49] standards and network standards they
+[21:51] have an example here that I'll show you
+[21:53] about that
+[21:54] so when category 5e cabling came out it
+[21:58] was right about the time that Gigabit
+[21:59] Ethernet was being and develop and these
+[22:01] things were developed together and they
+[22:03] go together just like Brad Pitt and
+[22:05] Jennifer Aniston right you know back in
+[22:07] 2000 they went together Gigabit Ethernet
+[22:11] category 5e cable it was great so really
+[22:14] what was the difference well at the time
+[22:17] maybe not that much but in the last few
+[22:20] years something changed in 2014 a new
+[22:22] standard for Wi-Fi came out 802 11 AEC
+[22:26] which you've probably heard about and it
+[22:28] supports Wi-Fi up to six point seven
+[22:30] gigabits per second now to make it work
+[22:34] you need to run 10g bastey right that
+[22:36] you can't run six point seven gigabits
+[22:39] per second over a hundred megabits today
+[22:41] 100 gigabit connection it's going to
+[22:44] slow it way down right it's only as
+[22:46] strong as its weakest link so if you
+[22:49] wanted to deploy 802 11 AC you'd need to
+[22:53] deploy 10 G base C and that's really
+[22:57] expensive and what about all this cable
+[22:59] I've got I want to change all that so
+[23:02] this group got together the N base T
+[23:05] Alliance and said I wonder if there's a
+[23:07] way to cram higher speeds onto that
+[23:11] existing cabling and that's exactly what
+[23:15] they did they came up with a new
+[23:16] standard where they can cram 2.5
+[23:19] gigabits per second into cat 5e cable
+[23:22] and even five gigabit per second
+[23:26] into cat 5e cable with some limitations
+[23:29] it will certainly work on cat 6 so they
+[23:31] basically assume clever signaling and
+[23:33] electronics and magic and stuff it
+[23:36] managed to make this work so now you can
+[23:39] install and
+[23:41] base T our cat our 802 11 AC over your
+[23:46] category 5e cabling and just in the same
+[23:49] way that Brad Pitt moved on from
+[23:51] Jennifer Aniston to Angelina Jolie you
+[23:55] can move your cat 5e cabling from
+[23:58] Gigabit Ethernet up to n base P which is
+[24:01] 2.5 Gigabit Ethernet or maybe even five
+[24:04] gigabit so I hope this makes it all very
+[24:06] clear to everyone why Brad Pitt is like
+[24:10] a cabling standard Angelina Jolie and
+[24:12] Jennifer Aniston are more like a network
+[24:16] standard
+[24:17] ok let's talk a little bit about cabling
+[24:20] problems we did a research exercise a
+[24:24] few years ago to find out what the big
+[24:25] of cabling problems were and we found it
+[24:29] kind of amusing because we make a lot of
+[24:31] complicated test equipment that helps
+[24:33] you figure out all sorts of complex
+[24:36] cabling problems the funny thing was is
+[24:39] the biggest problem is cables don't go
+[24:40] where they're supposed to they're not
+[24:42] labeled properly and they don't know
+[24:44] where you thought they went you unplug
+[24:46] something and you try to plug it back in
+[24:48] and it no longer works because it was
+[24:50] labeled wrong so this is the number one
+[24:52] problem now actually a lot of our
+[24:54] testers can help you with that because
+[24:56] they have identifier which you can plug
+[24:57] in say into the patch panel or the
+[24:59] office and then go around and plug into
+[25:02] the other end and see which one is that
+[25:04] wait and I thought I put number two into
+[25:06] that tack that this one says it's number
+[25:08] five so we can help you troubleshoot
+[25:10] that problem but it is the biggest
+[25:13] problem that people have with cabling
+[25:15] now what else split pairs is another big
+[25:18] problem because a lot of times I hear
+[25:20] people talk about I'm just going to make
+[25:22] a straight-through cable well when I
+[25:24] hear that it sets off a little alarm
+[25:25] bell a straight-through cable really
+[25:28] should be what you see in the center
+[25:30] here and notice how the pairing is a
+[25:32] little bit strange this dates back to
+[25:34] the old telephone days of them and don't
+[25:36] exactly understand the reasoning for
+[25:37] this I'm sure there was a good reason
+[25:38] but the one and two and seven eight
+[25:41] pairs make a lot of sense but three six
+[25:44] and four or five are the other pairs now
+[25:47] you might think well I'll just you know
+[25:49] run a pair between one and one and two a
+[25:51] pair between three and four and that's
+[25:53] what happened over there on the right
+[25:55] and what you get is especially with
+[25:58] Ethernet which uses three six or five
+[26:00] pair in lower speed Ethernet you get a
+[26:04] transmitted and received pair twisted
+[26:06] together and another transmit and
+[26:08] receive pair trusts together twisted
+[26:10] together and it will not work or as I
+[26:14] mentioned if the cable short enough
+[26:15] it'll work intermittently and so this is
+[26:18] a very tough problem to be able to you
+[26:21] really don't want this and that's why
+[26:22] it's important to make sure if you ever
+[26:24] buy a cable tester make sure it can tell
+[26:27] split pairs the really in extension ones
+[26:29] that just use DC testing excuse me they
+[26:33] can't tell the difference between the
+[26:35] cable in the middle and the cable on the
+[26:37] right
+[26:38] but your network equipment certainly
+[26:39] will
+[26:42] excuse me now another problem broken
+[26:46] cables right stuff pulls out of walls
+[26:48] people run over things with their chairs
+[26:50] all kinds of things can go wrong with
+[26:51] cable
+[26:54] and if it's broken you want to know
+[26:57] where and that's something we'll talk
+[26:58] about when we get to test equipment
+[27:01] installation now if you go to a cabling
+[27:05] installation and maintenance magazine or
+[27:07] are on reddit you can see a parade of
+[27:10] cable installation Horrors that will
+[27:13] stand your hair on in I just grabbed one
+[27:15] picture here I think there's some fine
+[27:17] twisting there you know the pairs need
+[27:19] to be twisted together not everything
+[27:22] all twisted together as you see on the
+[27:24] on the top there literally we've
+[27:29] had installers tell us about wire nuts
+[27:31] and maybe if you're not an electrician
+[27:33] you don't know what wire nuts are but
+[27:35] why are not sure what your electrician
+[27:36] uses to put
+[27:38] connections together like inside of
+[27:40] light sockets and things wait for sixty
+[27:43] Hertz AC really bad for Gigabit Ethernet
+[27:47] and yes it doesn't work actually I heard
+[27:50] a story once of wired us being used on
+[27:52] fiber-optic cable I don't know if that's
+[27:54] really true that's a pretty good story
+[27:56] so an installation can be a problem so
+[27:58] if you look at the one on the lower left
+[28:00] there you can see there's a good job of
+[28:02] installation the pairs are nicely
+[28:03] twisted if you look at the one on the
+[28:05] right that's not really such a good job
+[28:08] you can see there untwisted for long
+[28:09] distances or did maybe inch back from
+[28:12] the connector that's that's a bad
+[28:14] installation job
+[28:17] another thing that can be a problem is
+[28:19] compounds this is pretty rare but it
+[28:21] could be a real disaster when it happens
+[28:23] one of the biggest problems we've seen
+[28:25] out there in the world is
+[28:28] what's called copper clad aluminum cable
+[28:31] in an effort to save money there are
+[28:34] some manufacturers out there that are
+[28:36] making a cable that's not copper it's
+[28:38] aluminum and then it just has copper
+[28:41] around the outside so it looks like it's
+[28:43] copper but one of the ways can notice
+[28:46] the difference between this is the fact
+[28:48] that lumens a lot lighter than copper
+[28:51] so literally we have had customers send
+[28:54] us boxers where there are metal weights
+[28:57] in the bottom of the box to make it as
+[28:59] heavy as a copper box so if you pick it
+[29:01] up you think you got a box of copper
+[29:02] cabling but you don't and you remember I
+[29:06] mentioned some of those other strange
+[29:08] measurements like transverse conversion
+[29:10] loss though we can find things like
+[29:13] copper clad aluminum cable also some of
+[29:17] the resistance measurements can help you
+[29:18] find that the biggest problem with this
+[29:20] is that it has real problems with power
+[29:23] over ethernet but in general the
+[29:25] quality's not that good in the first
+[29:27] place and you can you can have all kinds
+[29:30] of problems with this if you buy from a
+[29:32] respected manufacturer you have almost
+[29:35] no chance of running into this problem
+[29:37] but if you've got a contractor or
+[29:39] somebody who's really cutting corners be
+[29:42] careful watch out for this we have a
+[29:43] white paper on this topic by the way
+[29:44] another problem is patch cords patch
+[29:47] cords really varied in qualit quality
+[29:49] and
+[29:50] the worst is what you see on the right
+[29:53] here you probably know that as a silver
+[29:55] satin patch cord which can be a real
+[29:57] nightmare they're not twisted at all
+[29:59] which I guess was better than a split
+[30:00] pair cable but not a lot better and
+[30:03] these will fail you also have of course
+[30:05] the guys who bring these from home and
+[30:07] try and fix their network it's not going
+[30:09] to work either so how do you prevent
+[30:11] problems well I recommend three things
+[30:14] first off use an installer who knows
+[30:16] what they're doing if you are an
+[30:17] installer I hope you know what you're
+[30:19] doing we have actually certification
+[30:21] classes for installers over 10,000
+[30:23] people have taken those classes around
+[30:25] the world so get somebody who knows what
+[30:27] they're doing and who will also make
+[30:29] sure they buy the right components make
+[30:31] sure you're using the right components
+[30:33] along the way if you're using a good
+[30:34] brand name you don't really have much to
+[30:36] worry about and finally if they certify
+[30:39] it and test it then you'll know for sure
+[30:41] that they did a good job as I said the
+[30:43] difference between a cable that works
+[30:45] and a cable that doesn't work to be
+[30:46] pretty tiny it can be pretty easy to
+[30:48] miss if you've got a certification
+[30:49] report that you know all your cables are
+[30:52] good and you don't really have much to
+[30:53] worry about and you also know that your
+[30:55] future proof if some new technology
+[30:57] comes down the road like in base P that
+[30:59] you'll be able to Amal app
+[31:02] so let's talk a little bit about
+[31:04] troubleshooting three troubleshooting
+[31:06] technologies that are very common and
+[31:09] very very helpful are listed here the
+[31:11] first one is TDR time-domain
+[31:13] reflectometry that allows you to tell
+[31:16] the distance to an open or a short and
+[31:18] where the problem is opens and shorts
+[31:20] are probably the most common problems
+[31:22] aside from cabling stone to the wrong
+[31:24] place and so with one of these you can
+[31:26] tell where it is the problem is almost
+[31:29] never in the wall right it's going to be
+[31:31] at the jack it's going to be at the
+[31:32] patch cord it's going to be a patch
+[31:34] panel and one of these testers you can
+[31:36] tell as in the example here oh it's 121
+[31:38] feet away that must be it the patch
+[31:40] panel because it's not in the wall jack
+[31:42] here so change you a lot of time when
+[31:44] you have to go and troubleshoot where
+[31:45] the problem is cable identification I
+[31:48] mentioned before where you can plug an
+[31:51] adapter into the far end of the king of
+[31:53] the jack and then go plug in your tester
+[31:55] and verify that you're connected to the
+[31:57] place you thought you were in here and
+[31:59] in the illustration in the center you
+[32:01] can see there's a number five next to
+[32:03] the far end of the cable which indicates
+[32:05] you're plugged into cable identifier
+[32:08] number five if that's the one you
+[32:09] thought you're supposed to be plugged
+[32:11] into great if not you know something's
+[32:13] wrong and finally toning toning injects
+[32:17] a signal on to the cable that's
+[32:18] unbalanced it makes a lot of noise
+[32:22] electromagnetic noise and then you can
+[32:25] use a probe like the one you see here
+[32:26] actually tracing along the length of the
+[32:29] cable and you'll hear the tone as you
+[32:30] get closer to the cable the tone gets
+[32:32] firmer that's a really powerful tool for
+[32:34] troubleshooting especially very messed
+[32:37] up wiring closets but even in a patch
+[32:39] panel it can help you identify which
+[32:41] Jack goes where it's even easier
+[32:43] than using the cable identifier you can
+[32:46] just put the toner in the office say
+[32:48] then go back to the patch panel and
+[32:50] start plugging the probe
+[32:53] into the Jack's until you see the one
+[32:55] where you get a lot of signal that's the
+[32:57] one you're plugged into
+[32:59] so let's talk a little bit about the
+[33:01] types of testers that are out there on
+[33:03] the market well the first one are what
+[33:05] we call verification testers it provides
+[33:07] the basic Diagnostics the stuff I just
+[33:10] talked about PDR toning and
+[33:15] see what was the third one I think I
+[33:17] forget to you our cable identification
+[33:19] and toning and
+[33:21] they run around $500 or so you pay a
+[33:24] little less a little bit more get more
+[33:26] features more identifiers and whatnot
+[33:29] the next level is qualification testers
+[33:32] now these are actually test again for
+[33:33] network standards and they'll tell you
+[33:35] will this cable support deben Ethernet
+[33:37] or 100 megabit Ethernet the verification
+[33:40] tools won't do that they'll tell you
+[33:41] wired it up right and it's connected
+[33:43] properly there's no split pairs but they
+[33:46] won't tell you the difference between
+[33:47] say a cable listed support
+[33:49] gigabit or 10 megabit they also provide
+[33:52] the same sort of basic Diagnostics that
+[33:54] we talked about and these run about
+[33:56] 1,500 dollars
+[33:58] at the top of the pile are the
+[34:00] certification testers they test against
+[34:03] the cabling standards remember that big
+[34:05] list of stuff I showed you that you have
+[34:06] to measure they measure all of that
+[34:08] stuff and tell you whether or not all of
+[34:10] those things pass as per the PIAA or ISO
+[34:14] limits they also feature some really
+[34:17] advanced diagnostics to be honest unless
+[34:19] you test a ton of cable you might not
+[34:21] ever run into some of the problems they
+[34:23] saw and they run they started around ten
+[34:26] thousand dollars so they're definitely a
+[34:27] different kind of tool they're also very
+[34:29] fast in terms of certifying cable
+[34:32] so if you have to test a lot of cable
+[34:34] they're a good choice now I mentioned
+[34:36] the advanced diagnostics I have
+[34:38] something here that I love to show which
+[34:40] is kind of funny because advanced
+[34:41] diagnostics it reminds me of something
+[34:43] if you've ever read about the Tesla cars
+[34:46] they can accelerate very very fast
+[34:48] because your battery power right and in
+[34:50] fact they have different modes if you
+[34:52] want to make them accelerate very fast
+[34:55] and they have this one mode I think they
+[34:57] can go from zero to 60 in
+[35:00] approximately two and a half seconds and
+[35:02] on the Jacke number and they call that
+[35:04] ludicrous mode because I think it
+[35:06] discharges the battery so fast that you
+[35:09] probably can't drive it more than a few
+[35:10] more miles after that point but it's I
+[35:13] think it may be the fastest accelerating
+[35:15] car that you can buy in a showroom
+[35:18] our DSX series has what I like to call
+[35:21] ludicrous Diagnostics
+[35:24] yes of course you'll find open shorts
+[35:26] and split pairs and which cable goes
+[35:28] where and all that but it can find some
+[35:31] really detailed stuff that I don't even
+[35:34] know how I find some of this stuff so it
+[35:36] can not only tell you say with a cross
+[35:38] hop problem that there's crosswalk it
+[35:40] can tell you which connector where the
+[35:42] crosswalk is so if somebody untwist it a
+[35:44] little bit too much we know which
+[35:46] connector it's in another one is that it
+[35:49] can tell if the cables damaged or if the
+[35:51] cable is actually bad quality so I
+[35:53] mentioned like the copper clad aluminum
+[35:55] and all that it'll tell you exactly
+[35:56] which cable and where in the cable and
+[35:59] in this case it says it's not a spot in
+[36:01] the cable it's the whole cable that has
+[36:03] a problem here and a lot of this is
+[36:05] because we worked with tens of thousands
+[36:08] customers who have problems and we now
+[36:11] know what they look like
+[36:12] electronically and so we can put it into
+[36:15] this simple but this is my favorite we
+[36:17] can actually tell if there's water in
+[36:19] the cable because we know now what that
+[36:21] looks like so there's dozens of these
+[36:23] kinds of problems and I gotta admit
+[36:24] you've probably never run into water in
+[36:27] your table in your life unless you
+[36:28] install a lot of cables are dealing with
+[36:30] a lot of cables but the DSX series are
+[36:32] top-end certifiers have just ludicrous
+[36:35] diagnostics there's probably no one
+[36:38] person in the world any more and smarter
+[36:40] than what this can find because it's got
+[36:44] hundreds of years of experience that
+[36:46] we've got with troubleshooting these
+[36:47] kinds of problems built into the
+[36:49] instrument that I just I just find this
+[36:50] amusing anyway so what do you want to
+[36:53] buy a
+[36:54] certification tool is really what you
+[36:56] need if you're testing new installations
+[36:58] if you're building a new building and
+[36:59] putting in new cabling I'd recommend you
+[37:02] buy a certification tool or you hire
+[37:04] somebody to do it or you rent one of
+[37:06] these tools they're easy to rent by the
+[37:07] way they're not hard at all also the
+[37:10] test results that you get from a
+[37:12] certification tool can be given to a
+[37:14] manufacturer cabling manufacturer and
+[37:17] they will certify your cable and then
+[37:19] for 10 15 sometimes even 20 years of
+[37:24] useful goodness and the third one is if
+[37:27] you don't trust your installer and you
+[37:28] want to go around behind them and see
+[37:29] what they're really doing and you need a
+[37:31] certification tool that's what you want
+[37:33] now for most people who manage a network
+[37:36] Mart and the cable installation business
+[37:38] a qualification tool is good enough you
+[37:40] can use that to check the existing
+[37:42] cabling that you've got you know you
+[37:44] moved into a a plant and there's cabling
+[37:45] there it is you're really gonna work for
+[37:47] Gigabit Ethernet you can check that with
+[37:49] this product also you can be your
+[37:51] troubleshooting and you can do your
+[37:53] documenting it actually can save reports
+[37:55] and then you can document them and keep
+[37:56] track of your your cable plan and
+[37:58] finally verification if you just want to
+[38:00] do troubleshooting then that's that's
+[38:02] the tool for you one other thing I
+[38:05] should point out the certification tools
+[38:06] also have the capability of adding fiber
+[38:09] optic systems so if you do a lot of
+[38:11] fiber optic testing I can take one of
+[38:13] those certifications we'll plug a module
+[38:15] into it turn it into an OTDR but that's
+[38:18] for another class
+[38:19] all right now I'm going to open it up
+[38:22] for questions let's see what we got go
+[38:24] on is anybody anybody come to me with
+[38:26] any good questions yes you see if you
+[38:29] can can stump me with your cabling
+[38:32] questions ah
+[38:34] well one of the first questions I see
+[38:36] was will there be session notes made
+[38:38] available or should you take notes we
+[38:40] can make this presentation available we
+[38:42] can send it out to everyone it's also
+[38:44] being recorded so if you want to share
+[38:45] it with your friends feel free to do
+[38:47] that
+[38:48] okay let's see if we get any other
+[38:50] questions coming in
+[38:52] yes I think I may have covered
+[38:54] everything nobody seems to be asking any
+[38:56] questions oh
+[39:01] so there was a question can we access
+[39:04] for video afterwards
+[39:05] and
+[39:09] the answer is yes we'll send you it will
+[39:11] send everyone a link to the video
+[39:13] afterwards oh here's a good question
+[39:14] should I use key ia 568a or 568b and why
+[39:20] actually we have a great blog post on
+[39:23] this what we just did and the difference
+[39:25] between 568 a and B that come back a few
+[39:28] slides it will let me come back a few
+[39:31] slides here the difference between a and
+[39:33] B and I don't know them off top of my
+[39:35] head I'll should warn you is it switch
+[39:38] pairs they see which colored pairs are
+[39:41] used together so this is either A or B I
+[39:45] think probably somebody on this phone
+[39:47] call is smarter than me in to tell me
+[39:49] whether this is a or b the key thing is
+[39:52] so that in this example orange is 1/2
+[39:55] green is 3 6 Blue is 45 and brown is 7/8
+[40:01] the other standard the ace and ugly
+[40:04] usually a different coloring scheme but
+[40:07] the pair's are all still the same so the
+[40:09] point is if you use a or B it doesn't
+[40:12] really matter as long as you always use
+[40:15] the same on each cable if you put a on
+[40:17] one end and B on the other you've got a
+[40:20] good chance of getting split pairs so
+[40:22] just make sure you always go with that I
+[40:24] think a is less common not even most
+[40:26] people have gone with B so if you're
+[40:28] doing something new I'd go with B if
+[40:30] you're doing something in an existing
+[40:32] plant figure out what you got at the
+[40:34] other end and that's a very good
+[40:36] question though
+[40:38] one person said that and somebody also
+[40:42] pointed out we have a poster I'll get to
+[40:43] that in a minute another person pointed
+[40:45] out that that a was more for residential
+[40:47] and B was more for commercial that may
+[40:49] well be true but I know that B is more
+[40:52] common for nowadays at least in most of
+[40:55] the stuff that we see
+[40:58] okay so what other questions we have
+[41:01] that I did answer questions with return
+[41:03] loss you know return loss can be based
+[41:06] can be a problem based on either instant
+[41:08] installation or the cabling and so
+[41:12] that's probably a good question to take
+[41:14] up with our Technical Assistance Center
+[41:15] if you haven't if you're seeing a
+[41:16] specific problem with return loss they
+[41:19] can probably help you answer that and
+[41:20] help you understand why you're having
+[41:22] those kinds of problems
+[41:25] let's see um what's a common cause for
+[41:28] static on a voice over IP phone with
+[41:31] power over ethernet boy you guys are
+[41:33] going to ask some really hard ones here
+[41:34] so that one I suspect static it could be
+[41:40] a cabling job and then that's one reason
+[41:42] alight certification if the cable
+[41:43] certified that I suspected as nothing to
+[41:45] do with the cable because
+[41:49] because p OE should not interfere on a
+[41:52] good cable with the audio signal that
+[41:55] you're getting which is actually a
+[41:56] digital signal anyway so I would I would
+[42:00] suspect it may be something other than
+[42:02] the cabling the only way to to
+[42:06] exempt the cabling or to understand that
+[42:09] it's not the problem would be to
+[42:10] probably test it with a high-end tester
+[42:12] as opposed a certification tester as
+[42:15] opposed to a low-end type tester oh
+[42:22] that's what there's a very good question
+[42:25] like that brings up one I'll talk about
+[42:26] how would I test the cabling job done by
+[42:29] someone else when the cats are cat 5e
+[42:31] that cable and patch panels are cat 6 I
+[42:35] presume the would only pass with the
+[42:37] weaker link okay so here's the deal on
+[42:40] them the standards say that if I build a
+[42:44] link with
+[42:46] that is designed to cap off say caps X
+[42:49] we'll use that as an example I have to
+[42:52] use caps X components now I
+[42:56] could build a link that use some cat 6
+[43:00] and some cat 5 components does that mean
+[43:03] it would not pass if I hooked up a
+[43:05] tester and tested it no actually it
+[43:07] might
+[43:08] you can set the link you can set the
+[43:11] tester and say look I want you to test
+[43:13] this in the caps h link and you can test
+[43:15] it and it might not actually be
+[43:17] officially an all cat 6 link but the
+[43:20] tester might say you know what it passed
+[43:21] every test it needed to it passed all
+[43:23] the parameters legally it's not a caps H
+[43:26] link but electrically it is so my point
+[43:31] to you would be is you could use it but
+[43:33] electrically it wouldn't be and
+[43:35] obviously if you ran into some problems
+[43:36] down the road and you brought somebody
+[43:39] in to look at it they might know a lot
+[43:40] of connectors that's the problem
+[43:42] so that's that's an interesting thing to
+[43:45] think about but remember in order to
+[43:47] legally make a cat 6 link it has to be
+[43:50] made of all cat 6 components and that's
+[43:52] true with any of the standards
+[43:59] let's see well that's a tough question
+[44:01] no the answer to that one I think local
+[44:03] jurisdictions will start making
+[44:05] installers carry a license to install
+[44:07] ICT with p OE wattages going up in the
+[44:10] future
+[44:11] that's impossible it's very hard the way
+[44:14] that p OE works to actually make it
+[44:18] dangerous
+[44:19] it will only apply power if it's EE
+[44:22] certain electrical conditions at the far
+[44:23] end of the table which your body or
+[44:26] your tongue cannot provide and if those
+[44:29] conditions go away the power will shut
+[44:31] off so it's actually very safe however
+[44:34] there aren't some worries about
+[44:37] cables heating up and there's a new
+[44:40] standard from ul and now and you're
+[44:42] going to get me but if you check out our
+[44:43] blog we just put up an article about
+[44:46] that about this new standard I believe
+[44:48] it's
+[44:49] LC cabling that ul is putting out that's
+[44:53] basically cabling that's been tested for
+[44:56] temperature issues and heating up with P
+[45:00] OE and to prevent those kinds of
+[45:02] problems so if you're worried about that
+[45:04] I'd recommend going with that sort of
+[45:06] certified cable
+[45:09] um let's see
+[45:13] but there's somebody here said the IT
+[45:15] guy will always blade the cabling yeah
+[45:17] that's that's that's based on experience
+[45:20] yes that's true um a question here is
+[45:24] about rj 49 I'm not familiar with rj 49
+[45:27] that's what do you want to be
+[45:30] another question is when using an AC
+[45:33] router is it that this to use cat 6
+[45:35] cable how much performance loss is there
+[45:37] with cat 5e so the problem you run into
+[45:40] is if your cables not good enough you're
+[45:43] going to get a lot of errors and
+[45:45] retransmissions because absolutely
+[45:47] Ethernet works and it's very good about
+[45:49] that but it kind of masks the problem as
+[45:51] well
+[45:52] cat 5e is good in virtually every
+[45:57] instance for supporting 2.5 Gigabit
+[46:01] Ethernet our 2.5 to 525 G but or 20 what
+[46:05] is it 2.5 g base T - 5 g base T
+[46:11] but
+[46:12] our n base key that version but it's not
+[46:16] always going to be good enough for five
+[46:18] gig and it requires extra testing we
+[46:21] have there's an apt note out by the N
+[46:24] base T
+[46:26] Alliance that we help right that tells
+[46:29] you about the kind of testing that you
+[46:31] need to do on cat5e cables can verify if
+[46:35] they will support 5g base T in addition
+[46:39] to 2.5 g base t so if you want to run
+[46:42] 2.5 gig on your cat 5e cable
+[46:47] you shouldn't have any problems if it
+[46:49] was certified and you know it's cat 5e
+[46:51] if you want to run the 5 gig you may
+[46:54] have to go in and do a little bit of
+[46:55] retesting the testing that's required is
+[46:58] around a lien crosswalk if you have
+[47:00] cable in bundles you not only get
+[47:03] crosstalk between the pairs in the
+[47:05] jacket but between adjacent pairs and
+[47:08] there are ways to test for that and if
+[47:10] you have a contractor that knows how to
+[47:12] do that that's the way to check for that
+[47:14] it's a fairly easy test especially since
+[47:17] you only have to test the cables that
+[47:18] you want to use for your access points
+[47:20] but that's what I'd recommend that you
+[47:22] do there but I'd go to the NBA ski
+[47:24] Alliance website and find their white
+[47:26] paper on cabling it explains exactly how
+[47:28] to do that
+[47:35] what else have I got
+[47:39] there's a few there's a few good
+[47:41] comments that are coming up about you
+[47:43] know the difference between more
+[47:44] expensive and less expensive cable is
+[47:46] the Headroom and that's correct the
+[47:48] Headroom is the distance the amount of
+[47:50] space to say between the amount of
+[47:54] crosstalk that's allowed and the amount
+[47:56] of crosstalk in the cable
+[47:59] let's see other
+[48:02] more question here
+[48:05] the difference between outdoors and
+[48:07] indoors cable and UTP in any category
+[48:09] that's more of the design of the jacket
+[48:12] and the
+[48:14] conductors it doesn't really have any
+[48:16] impact on the cabling performance itself
+[48:19] and that's pretty much what I look at so
+[48:21] I don't really know the differences
+[48:22] you'd have to talk to a painting
+[48:23] manufacturer to know the difference
+[48:25] between indoor and outdoor cabling but
+[48:29] in terms of that like I said it's more
+[48:32] about its ruggedness and its brushed in
+[48:35] permeability and things like that by the
+[48:38] way the quality of the cable will not
+[48:41] let you run it further distances that's
+[48:43] I went back and remember I mentioned the
+[48:45] skew and delay skew
+[48:47] no matter how good they make the cable
+[48:50] they just run into the physics of how
+[48:52] long you can make it now I'm sure
+[48:53] somebody now is going to tell me about
+[48:55] the 150 meter 10 base T link they ran
+[48:58] and I've seen it done and it will work
+[49:01] but it's not the standard and if you've
+[49:04] ever tried to run anything faster say on
+[49:06] that link you're going to run into some
+[49:07] real problems so that's why it's better
+[49:09] to stick with the standard if you want
+[49:11] to run something a longer distance you
+[49:12] need to get a repeater or use fiber or
+[49:14] something like that cheating will work
+[49:16] for a while but you know your successor
+[49:19] or maybe even you five years from now
+[49:22] might have a real problem on their hands
+[49:25] to figure out how to make that link run
+[49:26] faster it won't just be a matter of
+[49:28] plugging in some better hardware at each
+[49:29] end
+[49:32] okay um
+[49:37] oh well okay one more question if I'm
+[49:40] simply changing access points what is
+[49:41] the best way to certify the existing
+[49:43] cabling is good well once again if you
+[49:45] just if you just run gigabit on that one
+[49:50] of our verificar
+[49:52] verification testers would be good
+[49:54] enough so
+[49:55] what's she going back to that question
+[49:58] so let's say you're installing a new
+[49:59] access point as long as you're running
+[50:01] it up to a gig a qualification tester
+[50:04] like this one here would probably do the
+[50:05] job if you want to run it for anything
+[50:09] higher than a gig you're probably going
+[50:10] to need a certification tester because
+[50:12] all application testers pretty much run
+[50:14] out of gas at a gig so if you're
+[50:16] installing an AC access point you're
+[50:18] going to want to use a certification
+[50:19] tester now as much as I'd like to tell
+[50:21] you if your network guy to go buy one
+[50:23] I'd say hire a contractor have them come
+[50:25] in and tested for you so hot cheaper
+[50:28] than PI in one of these testers and they
+[50:29] can test whatever else you need and help
+[50:31] you fix it if it's not going to work you
+[50:35] know
+[50:36] all right
+[50:40] can I recommend any other basic or
+[50:43] introductory videos or webinars that's
+[50:44] probably the last thing learning limit
+[50:46] pictures of this here
+[50:48] skip ahead here here are some things
+[50:50] that I think would be very very useful
+[50:53] but I think it could be kind of handy
+[50:55] for you first off we've got a great
+[50:57] poster that goes through a lot of the
+[50:59] stuff I did without all the jokes and
+[51:02] there's no Jennifer Aniston's I
+[51:03] apologize but you can get a poster that
+[51:05] talks about all the twisted-pair cabling
+[51:07] measurements like this one you can also
+[51:09] learn about cable testing by going to
+[51:11] this website right here we have a lot of
+[51:13] links to various
+[51:15] documents and white papers and even a
+[51:18] few videos I think that will tell you a
+[51:20] little bit more about cable testing if
+[51:23] you're thinking about buying a tester
+[51:24] we've got a copper cable tester
+[51:26] selection guide which is pretty cool
+[51:28] because it goes from everything from the
+[51:29] you know the really basic stuff I talked
+[51:31] about you know the toners and whatnot
+[51:33] 100 bucks couple hundred bucks all the
+[51:36] way up to the certification tools you
+[51:37] can compare them all and see what's
+[51:39] right for you and we even have links you
+[51:41] can go live right there and finally if
+[51:43] you want to stay up on the latest
+[51:44] developments I mentioned this a couple
+[51:46] of times and this is really very useful
+[51:48] I think that's how I stay up on the
+[51:50] latest developments you'll see there are
+[51:52] we have a table in chronicles blog and
+[51:54] we talk about everything from the basics
+[51:56] of cabling like how does wire mapping
+[51:58] work the difference between 568a and
+[52:01] types of g8b there's actually an article
+[52:03] in there that we really put up about
+[52:05] that all the way up to what's the latest
+[52:07] on going on in the standards committees
+[52:10] on fiber testing and
+[52:13] you know some of the real high-end stuff
+[52:15] that's going on as well so if you want
+[52:17] to keep up on cabling and what's going
+[52:18] on that's a great thing we have a couple
+[52:20] articles a week we are really lucky that
+[52:22] we have a lot of experts around here
+[52:24] that can help explain some of this stuff
+[52:27] and clearly simple terms so that's a
+[52:29] place I would recommend
+[52:31] so to finish up we will be sending you a
+[52:34] link to this recorded version of this
+[52:37] presentation and and the slides if you'd
+[52:40] like to get them and
+[52:42] with that I'll just leave this up here
+[52:44] on the screen for a few more minutes so
+[52:46] if you want to copy this addresses or
+[52:48] take a screenshot but in the meantime
+[52:50] I'd like to thank you all very much for
+[52:52] coming I hope you got a lot out of it
+[52:54] and
+[52:55] we will talk to some of you later I I'm
+[52:57] quite sure thanks again

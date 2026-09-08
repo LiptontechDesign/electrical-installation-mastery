@@ -1,0 +1,230 @@
+# How to Use a Clip-On Ammeter/Clampmeter
+# https://www.youtube.com/watch?v=zv7VZ9fzhdA
+
+Hello and welcome to this electrical principles training video. In this video, we're going to start looking at the subject of three-phase electricity and what happens particularly inside the neutral of a three-phase system. However, to build up to that, there's certain things that we need to understand before we get there. So, we'll look for that in a later video. What we're going to do here today is we're just going to look at uh the instrument that we're going to be using to measure current in these loads, and this is a clip-on ammeter, uh also referred to as a current transformer in some exams. It uses the principle of a current transformer. So, this is a clip-on ammeter. We're going to use this to measure current. And also, what we're going to look at is what happens inside the neutral of a single-phase load when we connect up a supply and how the line current relates to the neutral current just in a single-phase load to start with. So, we'll bring the camera in and we'll have a quick look at our clip-on ammeter. So, we've brought the camera in to have a look at our clamp meter. Now, there's two really important features on here that we need to understand when we're setting this up for use. The first is the settings dial. So, this is found on lots of instruments, and in this case, we're interested in measuring AC current, so we're going to turn it around to measure that. The other really important thing that we're interested in is this part of the device here. This is the part that allows us to measure current without disconnecting the circuit. If you think about a normal ammeter, we have to wire that in series with the load, so we'd have to disconnect the circuit, connect the ammeter in series, and then reconnect it again. So, this is the part that allows us to lose that disconnecting process. This works on the principle of what's known as a current transformer. So, this part here, when you push this big red button on the side, it opens up the jaws of the clamp meter. You can put this around the conductor and then close it up again. Now, the way this works is that you have a conductor passing through the center, and that acts as kind of like the primary winding on a transformer, but it only has one turn on that side. Then, this part here acts as the secondary winding of the transformer, and in here, you've got the equivalent of many turns on the secondary winding. So, what that means is that it can take very, very large currents, and it can actually make them lower, easier to read, and then the machine is calibrated to allow for the change in the measured current. So, it's a very simple device to set up. It's a very simple device to operate. So, let's take it back to the board and have a look at how we actually apply this. So, we've just seen how to set up our clip-on ammeter. Uh we've explained the function of that and how it operates. We've got this set up and ready to measure current. So, what we're going to do now is just explain our rig very briefly here. So, just over here out of shot, we've got a three-phase distribution board, and that is supplying this rotary isolator. So, that will disconnect and reconnect the uh the three lines. What we've then got here, this is not something you'll see in the real world. This has been set up here at the college for us to be able to measure currents going out to the three sockets that we've got coming off this rotary isolator. And we're going to use this to explain uh what's happening with our uh current in our line and our neutral. Coming off here, we've got our socket, uh and in this case, we're just looking at a single-phase load. So, here we've got uh a 2 kW heater, which is plugged into this socket. So, when we turn this on, when we switch the isolator on, we'll be able to measure the current flowing through the line and the current flowing through the neutral. We're just going to talk about a couple of common mistakes that people make uh sometimes when they're using clip-on ammeters, and then we can start looking at what's actually going on inside these conductors. So, what we've done now is we've zoomed in and we can see that we're in a position if we turn on our rotary isolator, it's going to uh allow electricity to flow to our little test box here, which will then flow into the socket and down to the heater. So, let's turn the rotary isolator on. Okay. So, this little orange light here has now illuminated, which means that this is live. So, we're now in a position where current can start to potentially flow through the conductors. And if we turn the socket on, then current will start to flow. Now, we've turned that on. The only indication that I've got is that there's a sudden burst of heat coming up here from below, but we can now measure how much current will be flowing through the line and uh see what's happening with the neutral conductor as well. Now, a really common mistake that people make when they're using a clip-on ammeter is that they stick it around the whole flex. So, they do something like this, and then they get a little bit confused about why that is saying that there is no current there. 0.07 is our base value, so this is actually currently measuring nothing. It's saying there is no current flowing through the circuit. But, I can show you there is current flowing through the circuit cuz this is getting really hot down here. Okay. So, what's happening there? Well, what's effectively happening is it's as if you're connecting the clip-on ammeter over the line and the neutral conductors at the same time. And can you see there, if you do that, you get absolutely no current flow. Once again, there is current flowing, but the ammeter isn't measuring it. Now, the reason for that is that as current flows through a conductor, it generates a magnetic field around that conductor. And what's happening here is that these two magnetic fields are just canceling each other out. So, there's absolutely no indication to the clip-on ammeter that there is any current flowing. So, what we need to do is just clip over one conductor. So, here we've clipped onto the line, and we can see there that we're getting uh 9 amps. Okay, just over 9 amps flowing through the meter there. So, that's well within the tolerance of what we were expecting. We've got 9 amps flowing through the line conductor. Now, let's just think about this for a moment cuz this is a really important point and part of what this video is building up to. What current do you think we will get when we clip our ammeter onto the neutral conductor? Will it be zero? Will it be the same? Will it be more than the line current? Well, let's clip it on and find out. So, as you can see, what we've got when we clip onto the neutral is you can see we've got 9.2 amps. So, again, there's a little bit of variance there, uh mainly just uh due to the tolerance of the ammeter. But, as you can see, the same amount of current flows through the neutral as flows through the line, and that is a really important principle for a single-phase circuit and also just for general understanding of how electricity works. However much current you've got flowing down the line conductor, you'll have exactly the same amount of current flowing down the neutral. So, that's a really, really important point to bear in mind. And it also that uh principle helps us to understand how things like RCDs work and other things like that. So, let's just clarify that really important main point that we've just learned about in this video. However much current we've got flowing down the line, we've also got flowing down the neutral. So, if we've got 10 amps flowing down the line, we've got 10 amps flowing through the neutral. If we've got 15 amps here, we'll have 15 amps here. It doesn't matter if the load is connected to L1, L2, or L3, the fundamental rule for a single-phase circuit is that however much current there is flowing down the line, you'll have exactly the same amount of current flowing through the neutral. Thank you very much for watching.
+
+
+[00:11] Hello and welcome to this electrical
+[00:12] principles training video. In this
+[00:13] video, we're going to start looking at
+[00:15] the subject of three-phase electricity
+[00:18] and what happens particularly inside the
+[00:21] neutral of a three-phase system.
+[00:23] However, to build up to that, there's
+[00:25] certain things that we need to
+[00:26] understand before we get there. So,
+[00:27] we'll look for that in a later video.
+[00:29] What we're going to do here today is
+[00:31] we're just going to look at uh the
+[00:33] instrument that we're going to be using
+[00:34] to measure current in these loads, and
+[00:36] this is a clip-on ammeter, uh also
+[00:38] referred to as a current transformer in
+[00:41] some exams. It uses the principle of a
+[00:44] current transformer. So, this is a
+[00:45] clip-on ammeter. We're going to use this
+[00:47] to measure current.
+[00:48] And also, what we're going to look at is
+[00:50] what happens inside the neutral of a
+[00:51] single-phase load when we connect up a
+[00:54] supply and how the line current relates
+[00:57] to the neutral current just in a
+[00:58] single-phase load to start with. So,
+[01:00] we'll bring the camera in and we'll have
+[01:01] a quick look at our clip-on ammeter.
+[01:06] So, we've brought the camera in to have
+[01:08] a look at our clamp meter. Now, there's
+[01:10] two really important features on here
+[01:11] that we need to understand when we're
+[01:12] setting this up for use. The first is
+[01:14] the settings dial. So, this is found on
+[01:17] lots of instruments, and in this case,
+[01:18] we're interested in measuring AC
+[01:20] current, so we're going to turn it
+[01:22] around to measure that.
+[01:25] The other really important thing that
+[01:26] we're interested in is this part of the
+[01:29] device here. This is the part that
+[01:31] allows us to measure current without
+[01:33] disconnecting the circuit.
+[01:35] If you think about a normal ammeter, we
+[01:37] have to wire that in series with the
+[01:39] load, so we'd have to disconnect the
+[01:41] circuit,
+[01:42] connect the ammeter in series, and then
+[01:44] reconnect it again.
+[01:46] So, this is the part that allows us to
+[01:48] lose that disconnecting process.
+[01:51] This works on the principle of what's
+[01:53] known as a current transformer. So, this
+[01:55] part here, when you push this big red
+[01:57] button on the side, it opens up the jaws
+[01:59] of the clamp meter. You can put this
+[02:01] around the conductor and then close it
+[02:03] up again.
+[02:04] Now, the way this works is that you have
+[02:06] a conductor passing through the center,
+[02:08] and that acts as kind of like the
+[02:10] primary winding on a transformer,
+[02:12] but it only has one turn on that side.
+[02:16] Then, this part here acts as the
+[02:17] secondary winding of the transformer,
+[02:19] and in here, you've got the equivalent
+[02:20] of many turns on the secondary winding.
+[02:23] So, what that means is that it can take
+[02:25] very, very large currents, and it can
+[02:27] actually make them lower,
+[02:29] easier to read, and then the machine is
+[02:31] calibrated to allow for the change in
+[02:34] the measured current. So, it's a very
+[02:35] simple device to set up. It's a very
+[02:37] simple device to operate. So, let's take
+[02:39] it back to the board and have a look at
+[02:41] how we actually apply this.
+[02:46] So, we've just seen how to set up our
+[02:47] clip-on ammeter. Uh we've explained the
+[02:49] function of that and how it operates.
+[02:51] We've got this set up and ready to
+[02:53] measure current. So, what we're going to
+[02:54] do now is just explain our rig very
+[02:56] briefly here. So, just over here out of
+[02:58] shot, we've got a three-phase
+[02:59] distribution board, and that is
+[03:00] supplying this rotary isolator. So, that
+[03:03] will disconnect and reconnect the uh the
+[03:06] three lines.
+[03:07] What we've then got here, this is not
+[03:09] something you'll see in the real world.
+[03:10] This has been set up here at the college
+[03:12] for us to be able to measure currents
+[03:14] going out to the three sockets that
+[03:16] we've got coming off this rotary
+[03:17] isolator. And we're going to use this to
+[03:19] explain uh what's happening with our uh
+[03:22] current in our line and our neutral.
+[03:25] Coming off here, we've got our socket,
+[03:29] uh and in this case, we're just looking
+[03:30] at a single-phase load. So, here we've
+[03:32] got uh a 2 kW heater, which is plugged
+[03:35] into this socket. So, when we turn this
+[03:37] on, when we switch the isolator on,
+[03:39] we'll be able to measure the current
+[03:40] flowing through the line and the current
+[03:42] flowing through the neutral. We're just
+[03:43] going to talk about a couple of common
+[03:45] mistakes that people make uh sometimes
+[03:47] when they're using clip-on ammeters, and
+[03:49] then we can start looking at what's
+[03:50] actually going on inside these
+[03:52] conductors.
+[03:57] So, what we've done now is we've zoomed
+[03:59] in and we can see that we're in a
+[04:00] position if we turn on our rotary
+[04:01] isolator, it's going to uh allow
+[04:04] electricity to flow to our little test
+[04:06] box here, which will then flow into the
+[04:08] socket and down to the heater. So, let's
+[04:10] turn the rotary isolator on.
+[04:13] Okay.
+[04:14] So, this little orange light here has
+[04:16] now illuminated, which means that this
+[04:17] is live. So, we're now in a position
+[04:19] where current can start to potentially
+[04:20] flow through the conductors.
+[04:23] And if we turn the socket on, then
+[04:25] current will start to flow.
+[04:27] Now, we've turned that on. The only
+[04:28] indication that I've got is that there's
+[04:29] a sudden burst of heat coming up here
+[04:31] from below, but we can now measure how
+[04:33] much current will be flowing through the
+[04:35] line and uh see what's happening with
+[04:37] the neutral conductor as well.
+[04:39] Now, a really common mistake that people
+[04:41] make when they're using a clip-on
+[04:42] ammeter is that they stick it around the
+[04:44] whole flex. So, they do something like
+[04:46] this,
+[04:47] and then they get a little bit confused
+[04:49] about why that is saying that there is
+[04:51] no current there. 0.07 is our base
+[04:54] value, so this is actually currently
+[04:55] measuring nothing. It's saying there is
+[04:57] no current flowing through the circuit.
+[05:00] But, I can show you there is current
+[05:01] flowing through the circuit cuz this is
+[05:02] getting really hot down here. Okay.
+[05:05] So, what's happening there?
+[05:07] Well, what's effectively happening is
+[05:09] it's as if you're connecting the clip-on
+[05:11] ammeter over the line and the neutral
+[05:14] conductors at the same time. And can you
+[05:17] see there, if you do that, you get
+[05:19] absolutely no current flow.
+[05:21] Once again, there is current flowing,
+[05:23] but the ammeter isn't measuring it. Now,
+[05:25] the reason for that is that as current
+[05:27] flows through a conductor, it generates
+[05:29] a magnetic field around that conductor.
+[05:32] And what's happening here is that these
+[05:33] two magnetic fields are just canceling
+[05:34] each other out. So, there's absolutely
+[05:37] no indication to the clip-on ammeter
+[05:39] that there is any current flowing.
+[05:41] So, what we need to do is just clip over
+[05:43] one conductor. So, here we've clipped
+[05:45] onto the line,
+[05:46] and we can see there that we're getting
+[05:49] uh 9 amps. Okay, just over 9 amps
+[05:52] flowing through the meter there.
+[05:54] So, that's well within the tolerance of
+[05:56] what we were expecting. We've got 9 amps
+[05:58] flowing through the line conductor.
+[06:00] Now, let's just think about this for a
+[06:01] moment cuz this is a really important
+[06:03] point and part of what this video is
+[06:04] building up to.
+[06:06] What current do you think we will get
+[06:08] when we clip our ammeter onto the
+[06:10] neutral conductor? Will it be zero?
+[06:14] Will it be the same? Will it be more
+[06:16] than the line current? Well, let's clip
+[06:18] it on and find out.
+[06:24] So, as you can see, what we've got when
+[06:26] we clip onto the neutral
+[06:28] is you can see we've got 9.2
+[06:31] amps. So, again, there's a little bit of
+[06:32] variance there, uh mainly just uh due to
+[06:35] the tolerance of the ammeter.
+[06:37] But, as you can see, the same amount of
+[06:39] current flows through the neutral
+[06:41] as flows through the line, and that is a
+[06:43] really important principle for a
+[06:44] single-phase circuit and also just for
+[06:47] general understanding of how electricity
+[06:48] works. However much current you've got
+[06:50] flowing down the line conductor, you'll
+[06:52] have exactly the same amount of current
+[06:54] flowing down the neutral. So, that's a
+[06:56] really, really important point to bear
+[06:57] in mind. And it also that uh principle
+[07:00] helps us to understand how things like
+[07:02] RCDs work and other things like that.
+[07:06] So, let's just clarify that really
+[07:08] important main point that we've just
+[07:10] learned about in this video.
+[07:12] However much current we've got flowing
+[07:14] down the line,
+[07:15] we've also got flowing down the neutral.
+[07:16] So, if we've got 10 amps flowing down
+[07:18] the line, we've got 10 amps flowing
+[07:20] through the neutral. If we've got 15
+[07:22] amps here, we'll have 15 amps here. It
+[07:25] doesn't matter if the load is connected
+[07:26] to L1, L2, or L3,
+[07:29] the fundamental rule for a single-phase
+[07:32] circuit is that however much current
+[07:33] there is flowing down the line, you'll
+[07:35] have exactly the same amount of current
+[07:36] flowing through the neutral.
+[07:38] Thank you very much for watching.

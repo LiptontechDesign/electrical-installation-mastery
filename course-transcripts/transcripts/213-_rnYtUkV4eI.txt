@@ -1,0 +1,809 @@
+# How to program KNX: ETS5 Introduction Part 2 - Ivory Egg
+# https://www.youtube.com/watch?v=_rnYtUkV4eI
+
+hi mark Harrigan from ivory egg in this video we're going to have a look at ETS and this time we're going to look at how to create a project and look around that kind of project view within ATS if you've not checked out the first video which is more of an introduction to the ETS software including where to download it from how to set up the software and its first instance then check that one out or share a link but this one we're going to really dig into how to create a project and just kind of think key things you need to know in that environment so let's get into it within ATS we're in the overview tab we just create a new project here with the plus we'll call it my house the settings here relate to the topology layers with you've got an IP backbone which is you know a KNX IP link or whether you've got twisted peer and the different group of risk types now the defaults are normally okay for a more of an overview of how the different case topologies work check out the intro techniques for the yo again I'll share a link so we've done that we'll use the default ones of them would create a project now it's going to launch the project view as an ETS these are two views this is a project environment we will do all our programming for a project if we want to get back to their main overview and the different settings for the software we click the green ATS at the top and that will jump between the two different windows and then a project there's lots and lots of different panels which enable you to program different aspects and there's lots of different ways of doing things so I'm going to show the simplest ones but there's so many different ways you can approach it and you can do most things in about three or four different ways so a couple of different views that are really important these panels the first is the buildings view which is hoping to automatically so click on work place we can see the other panels we've got building group dress topology project route devices and reports now the top three of the main ones building gives us an overview of the the physical layout of the building which will create in a minute group addresses how we link different items together and topology as the an overview and all the devices in the system and apology which isn't as linked to the building you might have you know different topology different layers of cabling through the building that's separate to the physical layout of the of the house so we'll have a look at them and we'll make a bit more sense but because we're going to be using these three a lot the first thing we're going to do is we're going to bring them out of the menu and put them on our taskbar so I'm going to customize the toolbar and we get a add a separator which will just sneak in there and then we can add in the building view and we can add in the group address view and topology and then in time we can actually just change them to icons only which simplifies the menu structure but I'll leave them as ticks now so it's clear and we donation index operator so now we've done that we've got those three that we can get to nice and quickly so back to the building view now we need to create a building so we've got our house already in our house we need to add the different parts of the different floors and the different rooms and if we click this drop down we can see the different items weekend ahead let me just quickly do a we're not going to do floors and work floors and breaking it all down just for to speed things up a little bit but obviously you can create your full layout I'm going to add a room and I'm gonna add a kitchen now there's two types of ways to add a room the first is the way I just did where you go to the the list and you choose the room name and the icon the other one is to click on rooms which will create this add rooms box and you can add multiple rooms at the same time it might be a IB lounge you might if you click the plus you can add multiple rooms let's just say we've got a bedroom oh it's a little studio apartment or a little your one-bedroom apartment the key here is to make sure you do city usage for the room this links to a tagging within the system which means when an external IOT system connects to canings and knows how to find the different rooms this is a relatively new addition to the UTS programming so do make sure you set the room usage it might not be exact but get it as close as you can to got the bedroom and for our lounge we'll call it the living room because they're close enough so that room usage is actually really important especially for the future proofing of the system when we created the kitchen I did it automatically because when you use that list of room names it'll automatically has that tag in it so we've created a couple of rooms the next thing to do would be add products into the system much as you would add them up and the installation where you you know physically wire a device a keypad into the system we need to add them into the software as well so to do that we're going to open the catalog and the first video I showed how to create the online catalog and and build it up so you've got all the manufacturers products that's why this is populated with lots of different products which will automatically download and add to the system so I'm gonna add a keypad I'm just going to use one this is a 2 button 2 keypad and we click on the keypad here the device we get a bit of information over here on the catalog tab sometimes we get an image not all the time this is a it's a one rocker keypad so you've got a button on one side and a button on the other it also tells us at the bus current which is quite useful for calculating the size of the power supply needed in the system now sometimes there'll be multiple application versions there isn't in this case it's just version 1.1 generally just using the most up-to-date one if you get an error when you're trying to download which sees a memory block fail or you know application miss mismatch you'll need to just use the most up-to-date application version so we've got this and we're going to add it into our kitchen pick it up and drop it under the kitchen that will download it and add it to the system sometimes sometimes it takes longer sometimes the online file is a slightly older version than the et software and I need to do a little update at a download which is called a product schemer update that sometimes takes sometimes with 20 30 seconds sometimes a little bit longer but generally speaking and will happen very fast as it has the year so we've got a keypad in our kitchen and now we're going to add a relay so that we can switch a light on and off again I'm just going to use one from memory so here's a this is an eight-way switching actuator or it can be configured as for a four-way blind using two of the channels together and again it's got our bus current heads giving us a din rail mounting so we've got the size of the product four modules so we know how to count so we're going to add this one but we're gonna add this one a slightly different way down here we've got the ability to add multiple items into the building part which is what we've studied at the moment and it's chosen the kitchen because we've got that selected up here if we change it it's going to change it to the lounge we'll keep it in the kitchen keep everything together we can see their different ways of adding something into the system nice and quick and you can also just double click it and it will go into the default at what's defaulted down here so I'll double click it and it will add two into the kitchen now we don't need two devices in the kitchen so I'm just going to delete one of them right click and then you'll be able to select delete and then it will give the warning now you can turn off this warning I find it quite useful just provides that reassurance that you aren't doing something you're not supposed to be doing so now we can see in our kitchen we have a keypad a push button and we have a relay and again with this software showing lots of different things in different ways we can see the list here under the kitchen if we select the kitchen we can see the same devices here if we select the device then we'll get different information and our main tab and the building View before we go into the next step I'm just going to close the catalog we don't need it anymore we've gathered the products we needed it into the system and it is a little tip make sure that you are in control of your workspace don't just have panels open that you don't using there's a lot of information going on so the best thing you can do is try and keep it as clean as possible and only show what you need to so if we select a device now we can see we're going to look at how we configure the device before that I just wanted to quickly go through the properties tab over here which is a pedal that comes in and out from the right hand side can be extended here we've got the information about the device and we've got its name which is using the default one but we might change that to keep kitchen keypad we can give it a we can change this address now the addresses where it sits in the bus and the actual system and we'll see that in the topology view when we come to an inner we can add information like a description about what the keypad might be doing we can also see a programming status which is quite useful to track where you are up to and the project or on on the individual device under comments we can add additional information maybe there's maybe you've maybe when you were installing that the back box was a little bit loose and you need to be careful when you're when you lift a to keep out of the wall for example or it might be some devices quite someone can be hidden behind other devices it might be a little input module that you've put behind behind a keypad that's got a really really actuator in it for the lights so here you might say you know hidden behind keypad five that just gives a label it enables you to provide kind of a record of the installation and then finally we've got the information tab now the information one will tell you the catalog information which we saw over on the catalog the UM the bus can't this one is key here the application tab now it's quite a hidden down we've had to go through a couple of different layers but this is where it tells you which application version you're using in the software and if you've got multiple versions in the project you've added them to the project from the catalog you can also update and change the application version from down here so we're quite useful here to find out which the program version is so we don't need the property tab just at the moment though so we've given it a name and as we've seen when we've changed the name it's automatically updated over here we've also got our relay and we'll just we will use the default name but let's just tidy it up a little bit and get rid of the description and part of the name so there we go we've now got that - I will call it the relay actually we'll call it will change it to a proper label we'll call it switching actuator one which means it's the first switching actuator in the system and we'll see that later when we create labels so now we've got two products the next step is to configure how we want those products to work if we start on the kitchen keypad see down here we've got the group objects and parameters group objects are how devices communicate with each other we need to link them into group addresses but before we do that we need to parameterize the device to make sure it works and the way we want once you collect parameters you'll get the actual kind of settings for the individual device now each device will needs the settings configured to make sure it works in the right way and and normally you'll have a general tab or a couple of general tabs at the top which will be settings for the whole device and then you'll have more and more specific functions so in this case there's some some you know does the does the device startup stay to what start of what I start up straightaway or does it wait a while before joining the bus maybe it's gonna see messages on to the bus so you want to stagger when devices start up we can add a dash of enable additional function like its ability to measure the room temperature and as we've enabled this it's going to open another another page here of settings some settings around how brightness on the device works on the keypad within have the operation concept which tells us whether it's a rocker or it's a button whether you've got two individual buttons left and right or if they're tied to give us so that the two buttons are linked of course these are going to be different for each different product and each different manufacturer so this is just a kind of an example of what the tightest settings you might find are yeah this is where it's you know working you know reading manuals understand the products coming and on to the training and coming on to basic course or more menu training from training providers or distributors training centers but also manufacturer training as well as where you're going to get the information of how to configure the individual devices so we're going to look at the rocker and we're going to keep it super simple so this is a switching rocker so when you press the lift button that's going to turn on when you release the button it's not going to do anything and if you press the right button it will turn the circuit off so we've got a leaf on/off rocker on each side of the keypad now we can do things like change the status LED and you know different functions add scenes things like that but right now it'll keep it simple so we'll just have a simple switching rocker so now we've configured that the parameters if we look back at the group objects we've got two things one is the rocker switching on and off and then there's that room temperature measurement that I enabled which is giving us a temperature value so that's all I need from the keypad if we're able to quite look at the switching actuator again which it's defaulted to the group objects but first we've got a go into the parameters and make sure it's configured the right way we have the the general tab where we've got the settings for the device again and where this in this case we're actually able to use different physical devices so the same single software application works for both the eight channel device and sixteen channel device in this example sometimes you might be changing you know quite a basically bit of functionality and that general tab now we've got what the channels do again we can change it between switching actuators and blind actuators that we can only do that on the first four channels cuz it's an eight channel switching actuator which makes it a four channel blind actuator if we change all of these then it will associate those other channels with those with the first four but we'll keep it as a switching actuator and then we now go into the channel specific functions so channel one here we have the settings for the channel now these default settings will be okay it's switching on and off it might be we want things like delays or pauses but we're going to switch it on and off we can use a three-shot value so instead of turning on and off based on an on-off signal we can say if you receive a value over a certain nibble turn on now here when we've turned this on it's given us another page of parameters just keep in mind that when you enable or disable parameter that might be happening down here in the menu not having on the page you can see and then we might want to say we have feedback and then you know different settings there again opening this other page where we can define different different parameters for how the feedback will work okay so now we've set that device up we'll have a look at the objects oh there's a lot the year and India because all the channels are enabled by default we don't need all of this this is where we just need to focus on the information we need which is channel 1 switching object so although we've got a very long list of parameters sometimes there's a lot of information in front of you you've just got to look for the thing you need and just just focus in on that so now we've got to keep two devices configured and we need to link them together a group redress so to do that we need this other tech panel so if we click group addresses it's going to open up you can move these around and adjust them as you need to you can also open them in separate windows so if we within group addresses now we said it was a three level group trees those three levels are just filing labels they're there to make it easier easier for us to manage all the different group addresses upon across the project so in the main group I'm going to call it lighting and then I've got main group here and then I need to add a middle group which is the second level which in this case I'm gonna call the kitchen and then finally I'm going to add the actual group dress which is here ad group address which will be the kitchen now it is important to put this room name here again because when you see the messages and the group monitor which enables you to see the traffic on the bus you don't have the benefit of all these different filing labels so that all you will see is the group addressed name so it's really important the actual group addressed name has useful information on it so we're going to set it to the kitchen we're gonna say it's the it's the like this surgical circuit we're controlling which will call down lights and we know that they're on switching actuator 1 channel 1 so we've got a little bit of wiring information there as well we know the circuit we're going to control and it's put on here also keypad 1 and it's being controlled from keypad 1 now I've given this as this is really simple way of doing it there's lots of different ways of doing the group dressing structure and if you look on our website and I've read code at UK under the learn section is actually a guide to some different group of Duras kind of ways of doing the group addresses because there's a couple of different kind of schemes for it so we've put the room we've told it what it's controlling and we've got the circuit that were controlling section switching actuator 1 channel 1 and we've got a keypad won the final bit as this what were actually doing which is a switching command so we're turning something on and off and again you could often do this in a much shorter form but just for it to be nice and clear we'll leave it like that so now we have our group address and the group address is 0 0 1 that's the number along with its name and then we've got some other settings which which aren't relevant and this example we can also because we've selected the middle group here we would see all our group addresses if we want to actually see what's in the group address we can click here and that will go and then the viewers of the group dress now we need to link together the different devices so we'll take our kitchen keypad we'll take our rock or one and we'll drag it down and we'll put it into the into the group dress and that will add that object into it and now we can see if we click on the group address we have the object dinner we also need the relay so switching object channel 1 will also add that into the group address now those two devices are linked or delivered in the software at least there's lots of different ways to do that you can drag from group dresses up to an object you can right click Add to add to group address as well link with lots of different ways to do things if you have expanded views here you can drag them from you anywhere is the object you want to link to another object you can generally pick it up and drag it to the one you want so a group addressed vo now had a group twist now has the two channels we want to control the final view to look at is the topology view so an open topology I'm gonna close the buildings view just to keep it nice and clear the topology view is the actual physical layer of the KNX bus now this has been happening automatically in the background the first thing we did was when we created the project we said to the backbone the highest level in the system was IP and we can see that here we then have an area which was created automatically we have a line and on that line we have our two devices and it's given them the default address of let's just address them in order so the first device is 1.1.1 and the second dress is 1.1.2 as a project gets larger this will start to fill up and as you have if you have multiple lines with different line couplers separating separating areas maybe you've got canings RF lines and you've got IP devices this topology view becomes really important as where you can change different settings about what different lines are how they work and just manage where devices physically are own system but for us in the small example it is a lot less relevant and a lot of the time the building view actually provides a bitter understanding of the project because you can see we're devices are in the system so from any of the views the last step is to download to the devices that we physically installed so to do that we would select the devices and we can sleep download now if you just click download it's going to do a default to a partial download unless it needs to do some of the other download types the first type is the main type is download all that downloads all the information to the device including the first step of giving its physical address now that's a physical state where you push the ID on the device it then gets given its address really important that I knew one device gets an address at a time otherwise you're gonna have conflicts in the system so download all will download the physical address or the end of a dilatory sorry it's used to be called the physical address now it's called the individual address sometimes people will use both terms they are interchangeable so we'll download the individual address and then it will download the the information for how the device needs to operate the other one is download partial which will only download any changes that you've made so once you've done your initial addressing and download partial is the one that used most of the time because it's the fastest way or lonely change down download what it needs to you can just to download the individual address and it's really useful if you've just come just to a project then you want to make sure everything's connected to the bus and working you don't want to spend a lot of time downloading the application maybe you've not done the programming yet just doing the individual dresses first enables you to make sure everything is working correctly and then you can start to download the applications and the software you are able to overwrite an individual address once you once something's been addressed in the system you know where it is you can then find it and move it to a different address and then finally you've got download application the three that the two real steps are download the individual address so you do that as an individual step and then download the application download partial is downloading a partial application so so when when it comes to actually just programming a project once everything's addressed you'll either be using download partial or you'll be doing download application because this would be the first download I would need to select I stick to download partial it knows that the devices don't have an address so it's actually going to override and say I need to program this device now it's off it's it's open to the pending operations tab which is my little download window and from here I can see it's asking me to press the programming button on the device now I don't actually have these devices in the system connected to a system but there's just an example of how the download window would work you can you can can selections you can cancel all and you can also see the history of what your programming has some what programming is completed so I've canceled them and now it's automatically jumped over to the history so I can see that I had issues there so you can select multiple devices to download and once you've done the individual addressing that's how you would normally do it you you know all the devices that they need downloading sleep what you need to download download and then check the history history to make sure they've worked so those are the main steps in terms of getting something working in terms of you know what you might need to the steps you'll need to take to link different products together a couple of other little tips though obviously creating all the parameters and getting this all set up is going to take a lot of work for each product but you don't have to start new every time whatever parameter make changes I've made here if I copy and paste this project there's some product so if I copy it and then paste it back into the line I'll get a new keypad and it's going to have the same parameters as the last one it won't have the same links it's not linked to those group objects it's got them these are the links I don't have you enabled so if we just right-click on top of one of these we can enable group theresa's and there we can see the group twisted of doing that we can now have a lot of information as well like the description and that will bring the description up from the group's trace view so you've got control over what was actually being shown in each of these pages so if we look at the other one the second copy one that's not got their group address linked so what would normally suggest as you add the products that you would need maybe using the same key pair throughout configure it for what's gonna generally be see how the products going to be used maybe you're gonna have a six button keypad and there's gonna be four scenes and then on off so you'd configure that then duplicate it and the project and then you're able to add the group dressing you saved yourself a lot of time with the programming another thing which is quite neat as the ability to do functions now functions if we go to click on a room we want to add a device we can add functions here this adds things like light circuits in heating it automatically creates the group addresses and it enables you to link devices together in a slightly faster way we'll cover that in a separate video and because there's some setup needed to make it work correctly but using functions you can't you can massively speed up how long your project takes to Commission the final thing to look at would be the diagnostics tab and diagnostics is we can see what was happening on the system so I've clicked it and again it's opened a new panel this is a great example of things starting to get pretty pretty crowded pretty quickly I had the head of topology of Europa and we kind of doesn't need it anymore then I open the buildings view we did about the air and now I've got the Diagnostics I could close that one and everything becomes a lot cleaner and simpler Oh potentially I could close them both or I might want to make my Diagnostics tab full so I can see all the information that's happening on the bus and if I click on the buildings tab I can get back so in here I might have you know group addresses and building I'm doing my programming and then I've got my separate tab for Diagnostics now because I've done my launch Diagnostics from within the project this is the best way to do it and you've got two different things here you've got group monitor and bus monitor group monitor will show you all the traffic on the bus that is related to devices communicating it won't show you things like repeated messages or error messages so group monitors what did you use for testing to make sure your program works bus monitor gives you a full view of what's actually happening on the bus which is useful for diagnosing diagnosing system faults if things aren't working the way you're expecting you want to make sure you're not over overload and the bus those kind of things then the bus monitor is the bit of you most of the time you'll be using group monitor from Diagnostics you can also do things like and check the device check devices see if they're in the system and you can you know control things like addresses check the check the number of devices in the system check if any devices are in program mode and the final tip because you have to be really careful that there aren't multiple devices in programming mode because you could create those multiple addresses in the system okay next of Isis will restart without the programming mode on so if you're not sure if you're getting some weird behavior here and in saying devices are on program and maybe you're not sure then reset the bus turn off the bus pass apply turn it back on again and then you'll be sure that all the devices in the system aren't in programming mode and then you can go around and program them individually right that's it for this introduction to ETS video hopefully that's give an idea of how you can use ETS to create a project and some of the steps you'll need to take when it comes to programming it's a pretty powerful program with lots going on there's always lots of different ways to do things so it can be a little bit intimidating at first but it really does start to make sense when you start to connect to products and download and start to see things happening loads of other videos on the channel so make sure to subscribe these various product product videos technical videos going into more detail and some other introduction videos if you're interested in finding out more about KX or looking at coming on training or want to find out about products then check out the ivory equip sites we are certainly here to help and guide you through your K next uni thank you very much for watching
+
+
+[00:05] hi mark Harrigan from ivory egg in this
+[00:10] video we're going to have a look at ETS
+[00:12] and this time we're going to look at how
+[00:14] to create a project and look around that
+[00:16] kind of project view within ATS if
+[00:19] you've not checked out the first video
+[00:20] which is more of an introduction to the
+[00:22] ETS software including where to download
+[00:25] it from how to set up the software and
+[00:26] its first instance then check that one
+[00:28] out or share a link but this one we're
+[00:30] going to really dig into how to create a
+[00:32] project and just kind of think key
+[00:34] things you need to know in that
+[00:35] environment so let's get into it within
+[00:38] ATS we're in the overview tab we just
+[00:40] create a new project here with the plus
+[00:42] we'll call it my house the settings here
+[00:48] relate to the topology layers with
+[00:50] you've got an IP backbone which is you
+[00:52] know a KNX IP link or whether you've got
+[00:55] twisted peer and the different group of
+[00:57] risk types now the defaults are normally
+[00:58] okay for a more of an overview of how
+[01:02] the different case topologies work check
+[01:04] out the intro techniques for the yo
+[01:06] again I'll share a link so we've done
+[01:09] that we'll use the default ones of them
+[01:11] would create a project now it's going to
+[01:12] launch the project view as an ETS these
+[01:15] are two views this is a project
+[01:17] environment we will do all our
+[01:18] programming for a project if we want to
+[01:20] get back to their main overview and the
+[01:22] different settings for the software we
+[01:24] click the green ATS at the top and that
+[01:25] will jump between the two different
+[01:28] windows and then a project there's lots
+[01:31] and lots of different panels which
+[01:35] enable you to program different aspects
+[01:37] and there's lots of different ways of
+[01:39] doing things so I'm going to show the
+[01:40] simplest ones but there's so many
+[01:41] different ways you can approach it and
+[01:43] you can do most things in about three or
+[01:45] four different ways so a couple of
+[01:47] different views that are really
+[01:48] important these panels the first is the
+[01:50] buildings view which is hoping to
+[01:52] automatically so click on work place we
+[01:55] can see the other panels we've got
+[01:56] building group dress topology project
+[01:59] route devices and reports now the top
+[02:02] three of the main ones building gives us
+[02:05] an overview of the the physical layout
+[02:08] of the building which will create in a
+[02:10] minute group addresses how we link
+[02:11] different items together and topology as
+[02:14] the an overview and all the devices in
+[02:16] the system
+[02:17] and apology which isn't as linked to the
+[02:19] building you might have you know
+[02:22] different topology different layers of
+[02:24] cabling through the building that's
+[02:26] separate to the physical layout of the
+[02:28] of the house so we'll have a look
+[02:31] at them and we'll make a bit more sense
+[02:32] but because we're going to be using
+[02:34] these three a lot the first thing we're
+[02:35] going to do is we're going to bring them
+[02:36] out of the menu and put them on our
+[02:38] taskbar so I'm going to customize the
+[02:40] toolbar and we get a add a separator
+[02:43] which will just sneak in there and then
+[02:46] we can add in the building view and we
+[02:49] can add in the group address view and
+[02:53] topology and then in time we can
+[02:56] actually just change them to icons only
+[02:57] which simplifies the menu structure but
+[03:00] I'll leave them as ticks now so it's
+[03:01] clear and we donation index operator so
+[03:05] now we've done that we've got those
+[03:07] three that we can get to nice and
+[03:08] quickly so back to the building view now
+[03:12] we need to create a building so we've
+[03:14] got our house already in our house we
+[03:16] need to add the different parts of the
+[03:18] different floors and the different rooms
+[03:19] and if we click this drop down we can
+[03:21] see the different items weekend ahead
+[03:23] let me just quickly do a we're not going
+[03:27] to do floors and work floors and
+[03:29] breaking it all down just for to speed
+[03:32] things up a little bit but obviously you
+[03:33] can create your full layout I'm going to
+[03:35] add a room and I'm gonna add a kitchen
+[03:36] now there's two types of ways to add a
+[03:40] room the first is the way I just did
+[03:42] where you go to the the list and you
+[03:44] choose the room name and the icon the
+[03:48] other one is to click on rooms which
+[03:50] will create this add rooms box and you
+[03:53] can add multiple rooms at the same time
+[03:55] it might be a IB lounge you might if you
+[04:00] click the plus you can add multiple
+[04:02] rooms let's just say we've got a bedroom oh
+[04:04] it's a little studio apartment or a
+[04:05] little your one-bedroom apartment the
+[04:08] key here is to make sure you do city
+[04:10] usage for the room this links to a
+[04:13] tagging within the system which means
+[04:14] when an external IOT system connects to
+[04:17] canings and knows how to find the
+[04:19] different rooms this is a relatively new
+[04:21] addition to the UTS programming so do
+[04:23] make sure you set the room usage it
+[04:27] might not be exact but get it as close
+[04:28] as you can to
+[04:29] got the bedroom and for our lounge we'll
+[04:31] call it the living room because they're
+[04:33] close enough so that room usage is
+[04:35] actually really important especially for
+[04:37] the future proofing of the system when
+[04:39] we created the kitchen I did it
+[04:41] automatically because when you use that
+[04:42] list of room names it'll automatically
+[04:44] has that tag in it so we've created a
+[04:47] couple of rooms the next thing to do
+[04:49] would be add products into the system
+[04:51] much as you would add them up and the
+[04:53] installation where you you know
+[04:54] physically wire a device a keypad into
+[04:57] the system we need to add them into the
+[04:59] software as well so to do that we're
+[05:01] going to open the catalog and the first
+[05:03] video I showed how to create the online
+[05:05] catalog and and build it up so you've
+[05:07] got all the manufacturers products
+[05:09] that's why this is populated with lots
+[05:11] of different products which will
+[05:14] automatically download and add to the
+[05:15] system so I'm gonna add a keypad I'm
+[05:17] just going to use one this is a 2 button
+[05:20] 2 keypad and we click on the keypad here
+[05:22] the device we get a bit of information
+[05:24] over here on the catalog tab sometimes
+[05:26] we get an image not all the time this is
+[05:28] a it's a one rocker keypad so you've got
+[05:32] a button on one side and a button on the
+[05:33] other it also tells us at the bus
+[05:36] current which is quite useful for
+[05:37] calculating the size of the power supply
+[05:39] needed in the system
+[05:40] now sometimes there'll be multiple
+[05:43] application versions there isn't in this
+[05:46] case it's just version 1.1 generally
+[05:50] just using the most up-to-date one if
+[05:52] you get an error when you're trying to
+[05:53] download which sees a memory block fail
+[05:55] or you know application miss mismatch
+[05:58] you'll need to just use the most
+[06:00] up-to-date application version so we've
+[06:02] got this and we're going to add it into
+[06:04] our kitchen pick it up and drop it under
+[06:06] the kitchen that will download it and
+[06:09] add it to the system sometimes sometimes
+[06:11] it takes longer sometimes the online
+[06:13] file is a slightly older version than
+[06:16] the et software and I need to do a
+[06:18] little update at a download which is
+[06:20] called a product schemer update that
+[06:22] sometimes takes sometimes with 20 30
+[06:25] seconds sometimes a little bit longer
+[06:26] but generally speaking and will happen
+[06:28] very fast as it has the year so we've
+[06:30] got a keypad in our kitchen and now
+[06:33] we're going to add a relay so that we
+[06:34] can switch a light on and off again I'm
+[06:38] just going to use one from memory so
+[06:39] here's a
+[06:41] this is an eight-way switching actuator
+[06:43] or it can be configured as for a
+[06:47] four-way blind using two of the channels
+[06:49] together and again it's got our bus
+[06:50] current heads giving us a din rail
+[06:52] mounting so we've got the size of the
+[06:54] product four modules so we know how to
+[06:56] count
+[06:58] so we're going to add this one but we're
+[07:00] gonna add this one a slightly different
+[07:01] way down here we've got the ability to
+[07:04] add multiple items into the building
+[07:07] part which is what we've studied at the
+[07:08] moment and it's chosen the kitchen
+[07:10] because we've got that selected up here
+[07:11] if we change it it's going to change it
+[07:14] to the lounge we'll keep it in the
+[07:15] kitchen keep everything together we can
+[07:18] see their different ways of adding
+[07:19] something into the system nice and quick
+[07:23] and you can also just double click it
+[07:25] and it will go into the default at
+[07:27] what's defaulted down here so I'll
+[07:28] double click it and it will add two into
+[07:30] the kitchen now we don't need two
+[07:32] devices in the kitchen so I'm just going
+[07:35] to delete one of them right click and
+[07:38] then you'll be able to select delete and
+[07:40] then it will give the warning now you
+[07:42] can turn off this warning I find it
+[07:44] quite useful just provides that
+[07:45] reassurance that you aren't doing
+[07:47] something you're not supposed to be
+[07:48] doing so now we can see in our kitchen
+[07:51] we have a keypad a push button and we
+[07:53] have a relay and again with this
+[07:57] software showing lots of different
+[07:59] things in different ways we can see the
+[08:00] list here under the kitchen if we select
+[08:03] the kitchen we can see the same devices
+[08:05] here if we select the device then we'll
+[08:08] get different information and our main
+[08:10] tab and the building View before we go
+[08:14] into the next step I'm just going to
+[08:15] close the catalog we don't need it
+[08:17] anymore we've gathered the products we
+[08:18] needed it into the system and it is a
+[08:20] little tip make sure that you are in
+[08:22] control of your workspace don't just
+[08:24] have panels open that you don't using
+[08:26] there's a lot of information going on so
+[08:28] the best thing you can do is try and
+[08:29] keep it as clean as possible and only
+[08:31] show what you need to so if we select a
+[08:34] device now we can see we're going to
+[08:38] look at how we configure the device
+[08:39] before that I just wanted to quickly go
+[08:41] through the properties tab over here
+[08:43] which is a pedal that comes in and out
+[08:44] from the right hand side can be extended
+[08:47] here we've got the information about the
+[08:49] device and we've got its name which is
+[08:51] using the default one but we might
+[08:53] change that
+[08:54] to keep kitchen keypad we can give it a
+[09:01] we can change this address
+[09:03] now the addresses where it sits in the
+[09:04] bus and the actual system and we'll see
+[09:06] that in the topology view when we come
+[09:08] to an inner we can add information like
+[09:10] a description about what the keypad
+[09:12] might be doing we can also see a
+[09:14] programming status which is quite useful
+[09:16] to track where you are up to and the
+[09:17] project or on on the individual device
+[09:20] under comments we can add additional
+[09:22] information maybe there's maybe you've
+[09:25] maybe when you were installing that the
+[09:27] back box was a little bit loose and you
+[09:29] need to be careful when you're when you
+[09:30] lift a to keep out of the wall for
+[09:32] example or it might be some devices
+[09:34] quite someone can be hidden behind other
+[09:36] devices it might be a little input
+[09:38] module that you've put behind behind a
+[09:41] keypad that's got a really really
+[09:42] actuator in it for the lights so here
+[09:44] you might say you know hidden behind
+[09:46] keypad five that just gives a label it
+[09:50] enables you to provide kind of a record
+[09:52] of the installation and then finally
+[09:56] we've got the information tab now the
+[09:57] information one will tell you the
+[09:59] catalog information which we saw over on
+[10:02] the catalog the UM the bus can't
+[10:04] this one is key here the application tab
+[10:07] now it's quite a hidden down we've had
+[10:09] to go through a couple of different
+[10:10] layers but this is where it tells you
+[10:12] which application version you're using
+[10:13] in the software and if you've got
+[10:15] multiple versions in the project you've
+[10:17] added them to the project from the
+[10:18] catalog you can also update and change
+[10:20] the application version from down here
+[10:22] so we're quite useful here to find out
+[10:24] which the program version is so we don't
+[10:28] need the property tab just at the moment
+[10:29] though so we've given it a name and as
+[10:31] we've seen when we've changed the name
+[10:32] it's automatically updated over here
+[10:35] we've also got our relay and we'll just
+[10:38] we will use the default name but let's
+[10:40] just tidy it up a little bit and get rid
+[10:42] of the description and part of the name
+[10:43] so there we go we've now got that - I
+[10:46] will call it the relay actually we'll
+[10:47] call it will change it to a proper label
+[10:50] we'll call it switching actuator one
+[10:53] which means it's the first switching
+[10:55] actuator in the system and we'll see
+[10:57] that later when we create labels
+[10:59] so now we've got two products the next
+[11:02] step is to configure how we want those
+[11:03] products to work if we start on the
+[11:05] kitchen keypad see down here we've got
+[11:08] the group objects and parameters group
+[11:12] objects are how devices communicate with
+[11:13] each other we need to link them into
+[11:15] group addresses but before we do that we
+[11:17] need to parameterize the device to make
+[11:19] sure it works and the way we want once
+[11:22] you collect parameters you'll get the
+[11:24] actual kind of settings for the
+[11:25] individual device now each device will
+[11:28] needs the settings configured to make
+[11:31] sure it works in the right way and and
+[11:33] normally you'll have a general tab or a
+[11:36] couple of general tabs at the top which
+[11:38] will be settings for the whole device
+[11:40] and then you'll have more and more
+[11:43] specific functions so in this case
+[11:45] there's some some you know does the does
+[11:49] the device startup stay to what start of
+[11:51] what I start up straightaway or does it
+[11:52] wait a while before joining the bus
+[11:54] maybe it's gonna see messages on to the
+[11:56] bus so you want to stagger when devices
+[11:57] start up we can add a dash of enable
+[12:02] additional function like its ability to
+[12:04] measure the room temperature
+[12:06] and as we've enabled this it's going to
+[12:07] open another another page here of
+[12:10] settings some settings around how
+[12:13] brightness on the device works on the
+[12:14] keypad within have the operation concept
+[12:17] which tells us whether it's a rocker or
+[12:19] it's a button whether you've got two
+[12:21] individual buttons left and right or if
+[12:23] they're tied to give us so that the two
+[12:25] buttons are linked of course these are
+[12:26] going to be different for each different
+[12:28] product and each different manufacturer
+[12:29] so this is just a kind of an example of
+[12:31] what the tightest settings you might
+[12:32] find are yeah this is where it's you
+[12:35] know working you know reading manuals
+[12:38] understand the products coming and on to
+[12:40] the training and coming on to basic
+[12:42] course or more menu training from
+[12:44] training providers or distributors
+[12:47] training centers but also manufacturer
+[12:49] training as well as where you're going
+[12:50] to get the information of how to
+[12:51] configure the individual devices so
+[12:54] we're going to look at the rocker and
+[12:56] we're going to keep it super simple so
+[12:57] this is a switching rocker so when you
+[12:59] press the lift button that's going to
+[13:00] turn on when you release the button it's
+[13:03] not going to do anything and if you
+[13:05] press the right button it will turn the
+[13:06] circuit off so we've got a leaf on/off
+[13:08] rocker on each side of the
+[13:11] keypad now we can do things like
+[13:14] change the status LED and you know
+[13:16] different functions add scenes things
+[13:18] like that but right now it'll keep it
+[13:20] simple so we'll just have a simple
+[13:21] switching rocker so now we've configured
+[13:23] that the parameters if we look back at
+[13:25] the group objects we've got two things
+[13:27] one is the rocker switching on and off
+[13:29] and then there's that room temperature
+[13:31] measurement that I enabled which is
+[13:32] giving us a temperature value so that's
+[13:35] all I need from the keypad if we're able
+[13:37] to quite look at the switching actuator
+[13:39] again which it's defaulted to the group
+[13:42] objects but first we've got a go into
+[13:43] the parameters and make sure it's
+[13:44] configured the right way we have the the
+[13:47] general tab where we've got the settings
+[13:49] for the device again and where this in
+[13:51] this case we're actually able to use
+[13:53] different physical devices so the same
+[13:57] single software application works for
+[14:00] both the eight channel device and
+[14:02] sixteen channel device in this example
+[14:03] sometimes you might be changing you know
+[14:06] quite a basically bit of functionality
+[14:08] and that general tab now we've got what
+[14:12] the channels do again we can change it
+[14:14] between switching actuators and blind
+[14:15] actuators that we can only do that on
+[14:18] the first four channels cuz it's an
+[14:21] eight channel switching actuator which
+[14:23] makes it a four channel blind actuator
+[14:25] if we change all of these then it will
+[14:26] associate those other channels with
+[14:29] those with the first four but we'll keep
+[14:31] it as a switching actuator and then we
+[14:36] now go into the channel specific
+[14:37] functions so channel one here we have
+[14:41] the settings for the channel now these
+[14:43] default settings will be okay it's
+[14:45] switching on and off it might be we want
+[14:47] things like delays or pauses but we're
+[14:49] going to switch it on and off we can use
+[14:51] a three-shot value so instead of turning
+[14:52] on and off based on an on-off signal we
+[14:55] can say if you receive a value over a
+[14:57] certain nibble turn on now here when
+[15:00] we've turned this on it's given us
+[15:01] another page of parameters just keep in
+[15:04] mind that when you enable or disable
+[15:05] parameter that might be happening down
+[15:07] here in the menu not having on the page
+[15:09] you can see and then we might want to
+[15:12] say we have feedback and then you know
+[15:14] different settings there again opening
+[15:16] this other page where we can define
+[15:17] different different parameters for how
+[15:20] the feedback will work
+[15:22] okay so now we've set that device up
+[15:24] we'll have a look at the objects oh
+[15:26] there's a lot the year and India because
+[15:28] all the channels are enabled by default
+[15:30] we don't need all of this this is where
+[15:33] we just need to focus on the information
+[15:34] we need which is channel 1 switching
+[15:36] object so although we've got a very long
+[15:38] list of parameters sometimes there's a
+[15:41] lot of information in front of you
+[15:42] you've just got to look for the thing
+[15:44] you need and just just focus in on that
+[15:46] so now we've got to keep two devices
+[15:50] configured and we need to link them
+[15:52] together a group redress so to do that
+[15:55] we need this other tech panel so if we
+[15:58] click group addresses it's going to open
+[15:59] up you can move these around and adjust
+[16:02] them as you need to you can also open
+[16:04] them in separate windows so if we within
+[16:07] group addresses now we said it was a
+[16:08] three level group trees those three
+[16:11] levels are just filing labels they're
+[16:12] there to make it easier easier for us to
+[16:14] manage all the different group addresses
+[16:16] upon across the project so in the main
+[16:19] group I'm going to call it lighting and
+[16:23] then I've got main group here and then I
+[16:26] need to add a middle group which is the
+[16:27] second level which in this case I'm
+[16:29] gonna call the kitchen and then finally
+[16:33] I'm going to add the actual group dress
+[16:35] which is here ad group address which
+[16:38] will be the kitchen now it is important
+[16:41] to put this room name here again because
+[16:42] when you see the messages and the group
+[16:45] monitor which enables you to see the
+[16:46] traffic on the bus you don't have the
+[16:48] benefit of all these different filing
+[16:50] labels so that all you will see is the
+[16:52] group addressed name so it's really
+[16:53] important the actual group addressed
+[16:55] name has useful information on it so
+[16:57] we're going to set it to the kitchen
+[16:59] we're gonna say it's the it's the like
+[17:03] this surgical circuit we're controlling
+[17:05] which will call down lights and we know
+[17:09] that they're on switching actuator 1
+[17:11] channel 1 so we've got a little bit of
+[17:13] wiring information there as well we know
+[17:15] the circuit we're going to control and
+[17:17] it's put on here also keypad 1 and it's
+[17:21] being controlled from keypad 1 now I've
+[17:23] given this as this is really simple way
+[17:24] of doing it there's lots of different
+[17:26] ways of doing the group dressing
+[17:27] structure and if you look on our website
+[17:29] and I've read code at UK under the learn
+[17:34] section is actually a guide to some
+[17:36] different group of Duras kind of ways of
+[17:39] doing the group addresses because
+[17:40] there's a couple of different kind of
+[17:42] schemes for it so we've put the room
+[17:46] we've told it what it's controlling and
+[17:48] we've got the circuit that were
+[17:49] controlling section switching actuator 1
+[17:51] channel 1 and we've got a keypad won the
+[17:53] final bit as this what were actually
+[17:54] doing which is a switching command so
+[17:56] we're turning something on and off and
+[17:59] again you could often do this in a much
+[18:00] shorter form but just for it to be nice
+[18:02] and clear we'll leave it like that
+[18:04] so now we have our group address and the
+[18:06] group address is 0 0 1 that's the number
+[18:10] along with its name and then we've got
+[18:13] some other settings which which aren't
+[18:15] relevant and this example we can also
+[18:19] because we've selected the middle group
+[18:21] here we would see all our group
+[18:22] addresses if we want to actually see
+[18:24] what's in the group address we can click
+[18:26] here and that will go and then the
+[18:28] viewers of the group dress now we need
+[18:31] to link together the different devices
+[18:32] so we'll take our kitchen keypad we'll
+[18:35] take our rock or one and we'll drag it
+[18:37] down and we'll put it into the into the
+[18:42] group dress and that will add that
+[18:44] object into it and now we can see if we
+[18:47] click on the group address we have the
+[18:50] object dinner we also need the relay so
+[18:54] switching object
+[18:55] channel 1 will also add that into the
+[18:57] group address now those two devices are
+[19:00] linked or delivered in the software at
+[19:02] least there's lots of different ways to
+[19:04] do that you can drag from group dresses
+[19:06] up to an object you can right click Add
+[19:10] to add to group address as well
+[19:13] link with lots of different ways to do
+[19:15] things if you have expanded views here
+[19:16] you can drag them from you anywhere is
+[19:19] the object you want to link to another
+[19:20] object you can generally pick it up and
+[19:22] drag it to the one you want so a group
+[19:25] addressed vo now had a group twist now
+[19:27] has the two channels we want to control
+[19:30] the final view to look at is the
+[19:33] topology view so an open topology
+[19:37] I'm gonna close the buildings view just
+[19:40] to keep it nice and clear the topology
+[19:42] view is the actual physical layer of the
+[19:45] KNX bus now this has been happening
+[19:47] automatically in the background the
+[19:49] first thing we did was when we created
+[19:50] the project we said to the backbone the
+[19:52] highest level in the system was IP and
+[19:54] we can see that here we then have an
+[19:57] area which was created automatically we
+[19:59] have a line and on that line we have our
+[20:02] two devices and it's given them the
+[20:04] default address of let's just address
+[20:07] them in order so the first device is
+[20:08] 1.1.1 and the second dress is 1.1.2 as a
+[20:11] project gets larger this will start to
+[20:13] fill up and as you have if you have
+[20:15] multiple lines with different line
+[20:17] couplers separating separating areas
+[20:19] maybe you've got canings RF lines and
+[20:22] you've got IP devices this topology view
+[20:24] becomes really important as where you
+[20:27] can change different settings about what
+[20:29] different lines are how they work and
+[20:31] just manage where devices physically are
+[20:33] own system but for us in the small
+[20:35] example it is a lot less relevant and a
+[20:38] lot of the time the building view
+[20:39] actually provides a bitter understanding
+[20:41] of the project because you can see we're
+[20:43] devices are in the system so from any of
+[20:49] the views the last step is to download
+[20:51] to the devices that we physically
+[20:53] installed so to do that we would select
+[20:55] the devices and we can sleep download
+[20:58] now if you just click download it's
+[21:00] going to do a default to a partial
+[21:03] download unless it needs to do some of
+[21:06] the other download types the first type
+[21:09] is the main type is download all that
+[21:11] downloads all the information to the
+[21:13] device including the first step of
+[21:15] giving its physical address now that's a
+[21:18] physical state where you push the ID on
+[21:20] the device it then gets given its
+[21:22] address really important that I knew one
+[21:23] device gets an address at a time
+[21:25] otherwise you're gonna have conflicts in
+[21:27] the system so download all will download
+[21:29] the physical address or the end of a
+[21:30] dilatory sorry it's used to be called
+[21:33] the physical address now it's called the
+[21:34] individual address sometimes people will
+[21:36] use both terms they are interchangeable
+[21:38] so we'll download the individual address
+[21:41] and then it will download the the
+[21:44] information for how the device needs to
+[21:46] operate the other one is download
+[21:49] partial which will
+[21:50] only download any changes that you've
+[21:52] made so once you've done your initial
+[21:54] addressing and download partial is the
+[21:57] one that used most of the time because
+[21:59] it's the fastest way or lonely change
+[22:01] down download what it needs to you can
+[22:04] just to download the individual address
+[22:06] and it's really useful if you've just
+[22:07] come just to a project then you want to
+[22:10] make sure everything's connected to the
+[22:11] bus and working you don't want to spend
+[22:13] a lot of time downloading the
+[22:14] application maybe you've not done the
+[22:16] programming yet just doing the
+[22:17] individual dresses first enables you to
+[22:20] make sure everything is working
+[22:21] correctly and then you can start to
+[22:23] download the applications and the
+[22:24] software you are able to overwrite an
+[22:27] individual address once you once
+[22:29] something's been addressed in the system
+[22:30] you know where it is you can then find
+[22:32] it and move it to a different address
+[22:33] and then finally you've got download
+[22:35] application the three that the two real
+[22:39] steps are download the individual
+[22:40] address so you do that as an individual
+[22:42] step and then download the application
+[22:44] download partial is downloading a
+[22:47] partial application so so when when it
+[22:51] comes to actually just programming a
+[22:52] project once everything's addressed
+[22:54] you'll either be using download partial
+[22:56] or you'll be doing download application
+[22:59] because this would be the first download
+[23:01] I would need to select I stick to
+[23:05] download partial it knows that the
+[23:07] devices don't have an address so it's
+[23:09] actually going to override and say I
+[23:10] need to program this device now it's
+[23:14] off it's it's open to the pending
+[23:17] operations tab which is my little
+[23:18] download window and from here I can see
+[23:21] it's asking me to press the programming
+[23:23] button on the device now I don't
+[23:25] actually have these devices in the
+[23:26] system connected to a system but there's
+[23:28] just an example of how the download
+[23:30] window would work you can you can can
+[23:33] selections you can cancel all and you
+[23:35] can also see the history of what your
+[23:37] programming has some what programming is
+[23:40] completed so I've canceled them and now
+[23:42] it's automatically jumped over to the
+[23:44] history so I can see that I had issues
+[23:46] there so you can select multiple devices
+[23:49] to download and once you've done the
+[23:51] individual addressing that's how you
+[23:52] would normally do it you you know all
+[23:54] the devices that they need downloading
+[23:55] sleep what you need to download download
+[23:57] and then check the history history to
+[23:59] make sure they've worked
+[24:01] so those are the main steps in terms of
+[24:03] getting something working in terms of
+[24:06] you know what you might need to the
+[24:08] steps you'll need to take to link
+[24:10] different products together a couple of
+[24:12] other little tips though obviously
+[24:15] creating all the parameters and getting
+[24:17] this all set up is going to take a lot
+[24:18] of work for each product but you don't
+[24:20] have to start new every time whatever
+[24:23] parameter make changes I've made here if
+[24:25] I copy and paste this project there's
+[24:28] some product so if I copy it and then
+[24:31] paste it back into the line I'll get a
+[24:33] new keypad and it's going to have the
+[24:35] same parameters as the last one it won't
+[24:39] have the same links it's not linked to
+[24:41] those group objects it's got them these
+[24:43] are the links I don't have you enabled
+[24:45] so if we just right-click on top of one
+[24:48] of these we can enable group theresa's
+[24:51] and there we can see the group twisted
+[24:52] of doing that we can now have a lot of
+[24:55] information as well like the description
+[24:57] and that will bring the description up
+[24:59] from the group's trace view so you've
+[25:02] got control over what was actually being
+[25:04] shown in each of these pages so if we
+[25:06] look at the other one the second copy
+[25:08] one that's not got their group address
+[25:09] linked so what would normally suggest as
+[25:12] you add the products that you would need
+[25:14] maybe using the same key pair throughout
+[25:16] configure it for what's gonna generally
+[25:19] be see how the products going to be used
+[25:21] maybe you're gonna have a six button
+[25:22] keypad and there's gonna be four scenes
+[25:25] and then on off so you'd configure that
+[25:27] then duplicate it and the project and
+[25:29] then you're able to add the group
+[25:31] dressing you saved yourself a lot of
+[25:32] time with the programming another thing
+[25:35] which is quite neat as the ability to do
+[25:40] functions now functions if we go to
+[25:43] click on a room we want to add a device
+[25:47] we can add functions here this adds
+[25:49] things like light circuits in heating it
+[25:53] automatically creates the group
+[25:55] addresses and it enables you to link
+[25:57] devices together in a slightly faster
+[25:59] way we'll cover that in a separate video
+[26:01] and because there's some setup needed to
+[26:03] make it work correctly but using
+[26:05] functions you can't you can massively
+[26:07] speed up how long your project takes to
+[26:08] Commission the final thing to look at
+[26:12] would be the diagnostics tab and
+[26:13] diagnostics is
+[26:15] we can see what was happening on the
+[26:17] system so I've clicked it and again it's
+[26:19] opened a new panel this is a great
+[26:20] example of things starting to get pretty
+[26:22] pretty crowded pretty quickly
+[26:25] I had the head of topology of Europa and
+[26:27] we kind of doesn't need it anymore then
+[26:29] I open the buildings view we did about
+[26:30] the air and now I've got the Diagnostics
+[26:31] I could close that one and everything
+[26:33] becomes a lot cleaner and simpler Oh
+[26:36] potentially I could close them both or I
+[26:38] might want to make my Diagnostics tab
+[26:40] full so I can see all the information
+[26:42] that's happening on the bus and if I
+[26:44] click on the buildings tab I can get
+[26:46] back so in here I might have you know
+[26:48] group addresses and building I'm doing
+[26:50] my programming and then I've got my
+[26:51] separate tab for Diagnostics now because
+[26:55] I've done my launch Diagnostics from
+[26:57] within the project this is the best way
+[27:00] to do it and you've got two different
+[27:02] things here you've got group monitor and
+[27:04] bus monitor group monitor will show you
+[27:06] all the traffic on the bus that is
+[27:07] related to devices communicating it
+[27:11] won't show you things like repeated
+[27:13] messages or error messages so group
+[27:17] monitors what did you use for testing to
+[27:19] make sure your program works bus monitor
+[27:22] gives you a full view of what's actually
+[27:23] happening on the bus which is useful for
+[27:26] diagnosing diagnosing system faults if
+[27:28] things aren't working the way you're
+[27:29] expecting you want to make sure you're
+[27:30] not over overload and the bus those kind
+[27:32] of things
+[27:33] then the bus monitor is the bit of you
+[27:34] most of the time you'll be using group
+[27:36] monitor from Diagnostics you can also do
+[27:39] things like and check the device check
+[27:42] devices see if they're in the system and
+[27:45] you can you know control things like
+[27:48] addresses check the check the number of
+[27:50] devices in the system check if any
+[27:52] devices are in program mode and the
+[27:54] final tip because you have to be really
+[27:56] careful that there aren't multiple
+[27:58] devices in programming mode because you
+[28:01] could create those multiple addresses in
+[28:02] the system
+[28:03] okay next of Isis will restart without
+[28:06] the programming mode on so if you're not
+[28:09] sure if you're getting some weird
+[28:10] behavior here and in saying devices are
+[28:12] on program and maybe you're not sure
+[28:13] then reset the bus turn off the bus pass
+[28:16] apply turn it back on again and then
+[28:17] you'll be sure that all the devices in
+[28:19] the system aren't in programming mode
+[28:21] and then you can go around and program
+[28:23] them individually right that's it for
+[28:27] this
+[28:28] introduction to ETS video hopefully
+[28:30] that's give an idea of how you can use
+[28:32] ETS to create a project and some of the
+[28:34] steps you'll need to take when it comes
+[28:36] to programming it's a pretty powerful
+[28:38] program with lots going on there's
+[28:40] always lots of different ways to do
+[28:41] things
+[28:42] so it can be a little bit intimidating
+[28:47] at first but it really does start to
+[28:50] make sense when you start to connect to
+[28:51] products and download and start to see
+[28:53] things happening loads of other videos
+[28:55] on the channel so make sure to subscribe
+[28:57] these various product product videos
+[29:01] technical videos going into more detail
+[29:02] and some other introduction videos if
+[29:05] you're interested in finding out more
+[29:06] about KX or looking at coming on
+[29:08] training or want to find out about
+[29:09] products then check out the ivory equip
+[29:11] sites we are
+[29:13] certainly here to help and guide you
+[29:15] through your K next uni thank you very
+[29:17] much for watching

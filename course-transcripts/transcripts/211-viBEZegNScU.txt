@@ -1,0 +1,604 @@
+# Introduction to KNX - Ivory Egg
+# https://www.youtube.com/watch?v=viBEZegNScU
+
+welcome to this ivory introduction to KNX my name is Mark and in this quick session we're going to have a look at what Kleenex is how the system just designed how its programmed and some key applications so what is canings well it's a standardized protocol that's been around for 30 years that allows products from different manufacturers to work together to control a building there's over 490 manufacturers that all part of the Association and using their products you can control heating lighting a/c shading metering monitoring anything that might be happening in a building in this example we can see a power supply at the top which powers the bus that's from one manufacturer and then we've got a PIR from another manufacturer that PIR is going to detect motion might be reading temperature it'll be sending a signal onto the bus saying this activity that signaling can then be picked up by a manifold controller which is at the bottom of the screen or a lighting relay you know all these different products can all respond to the different messages happening on the system it's completely decentralized no product is reliant on another they all have the intelligence to be able to perform their functions so if we have a keypad in the system that will have everything it needs to be able to sing different signals it might be a might be turning a light on and off it could be sending a temperature it could be changing the color temperature of a light if we think is integrated in that product so for it to perform its function when a button is pushed it sends a telegram on the bus which other products will pick up because of the standardization no manufacturer really controls the code that's handled by the cane exis OCA ssin the way the system works is always the same and we've got 30 years of backwards compatibility in terms of products working in a building because of that it provides one of the best platforms for installation in a building because you know that the system you're installing is going to be around for as long as the building will last and because no manufacturer can change how it works you have given us assurance that the system is set for the future so let's dig into the system a little bit more there's a couple of different communication mediums can can exist over IP it can exist over RF but the main connect system that people recognize is a wired system in a wired system you have a pair pair of cables a red and black and that powers the devices and also provides the communication everything happens on that red and black and generally products use the Vargo standardized connector which means it's really easy to install and you can one of the real benefits is you can disconnect a product from the bus without affecting the operation of the bus so if you're working in a large commercial building where you need to have a hundred seen uptime but you need to replace a product it's very simple to do with KNX because the product isn't as an hardwired unto the end of the bus it's quite common to see a two pair cable used though we will have a yellow and white that's often used for products that require additional power or or can provide some redundancy in the cable but the actual bus communication happens over a red and black connector one of the real benefits of the cable and the system is it's designed to be run with mains the signal on the Reed and black is a symmetrical signal so it is immune to interference so the cane is controlled cable can be run with the electrical installation which is where it should be we need a power supply on the line now this is a specific cane X power supply because it has an integrated choke and it's the troch that allows the AC signal and the DC signal to be on the same cables it also forms part of the telegram so it's a really important part in the system so okay next power supply that powers the bus and manages some of the communication there's lots of different versions available the most common one would be a 614 milliamp power supply now the size of the power supply is determined by the power requirements of the devices on the bus it's really important to check that and make sure you're providing enough power in the normal way can express ways are really really well engineered they designed as a central component in the system to be extremely reliable and have a very very low failure rate you can tell that because of the size of them they're over engineered to ensure there's a large amount of heat patient so they just don't fail they're very solid device so we need to know the we need to size the power supply for the number of devices but what about the actual system device limits well the topology and I can extend over a small line where you may have a power supply and two devices all the way up to a very large system with sixty 1696 devices and we do that by having different topology layers so on a line in this example we have a power supply and 255 devices now that's the system limit for a line the actual number of devices will be determined by the size of the power supply if we need to go up and add more devices where we add a coupler and a coupler manages the flow of track traffic it keeps local information local and doesn't share it with the rest of the system but if there's a system-wide message then it will pass that through up or down through the topology layers and that means that the system is broken down into individual cells which increases that reliability if something did happen to the to that power supply will happened on that line it wouldn't affect the rest of the system because the coupler is linking things together so from a line we can add we can add a coupler and that will create an area line or a main line from that main line we can have up to 15 lines we can then take that area and we can go up another layer and connect that area to a backbone line that line can have 15 areas aren't hanging off it so we can have 15 areas each of them with 15 lines and each line can have 255 devices how any of those layers could actually be IP so we could have a twisted peer line or area and different areas of a building with a IP backbone linking everything together maybe it's a large installation site like a university where you have a lot of different buildings with the Kane exes term limit being so large there's very few projects that can explore now that leads people to say well with the system being so large surely there's a lot of overhead in that when you're designing small systems maybe a small residential installation you know working with such a large system that is adding cobbler complication cost that's just not true with K annex B cuz of that decent utilization because you just need a power supply and it of the devices you need there's no central servers every little device has its own intelligence there's no additional cost if you've got just a keypad and maybe an eight channel relay and you need a small power supply those three devices are all you need in the system if you want to add that increase the functionality or increase the size of the project you just add the devices you need which means KNX is applicable for loads of different projects could be small resident short could be commercial could be officers could be medical used in hospitals is very very powerful in that sense and the topology ensures that you give the most amount of reliability and resilience built into the system so now we know about the power supplies and the topology how do we program it well everything is done through one software because the because it's so many manufacturers we can't have them all developing their own way of programming at the KNX Association manage the ETS software which is currently version 5 which all manufacturers have to create driver files for for the programming to happen so from one software you can configure large project small projects you know could be an HVAC project could be lighting everything happens in one place and the real benefit of that is you don't need to retrain for different types of projects if we think there's always in the same software you can get really really competent with the software knowing that your next 5 6 20 projects they could all be different types of projects different sized projects or doing different applications and you're always going to be yet using the same software is no jumping between different manufacturers or changing solutions it really is designed for professionals is a very powerful software but this huge amount of features in it which enable you to make things simpler or easier or program and faster ways or slower ways it's constantly evolving huge amount of updates done by the Kanak sociation and ets really captures what hay mixes you know the ability to program huge range of products from different manufacturers doing different functionalities but always being updated adding new features like connect secure which enables us to encrypt the messages on the bus but also the entire IP layer of where if we're doing an IP K needs backbone for example so adding these new features means that KX has always kept up-to-date but we have this this look back and in terms of you know backwards compatibility with previous versions of the system so using ets five these five steps to programming the first is to create a project and that one's really easy that's just clicking create a new project and giving it a name within add devices to the project from the online database so as a manufacturer develops products there's a driver file which has all the information that how that product works that exists in the online database you just drag it from the end to your project so again a really easy step you then configure the individual device parameters that's where you you define what a product does it might be a six button keypad and you want one key pair to one button to call the scene you want another button to do a raise lower so you know pushed to an arm push and hold to the map for example and you might have another button changing the heating mode in the building and the parameters is where you configure those those in those settings for each of the individual functions we then link the different devices together in a group address so we just take an object from one product and link it with another in a group address now group addresses are the main runtime of the system if you looked at a KNX bus when it was working you'd see a lot of group addresses and they enable with all the different products to talk talk to each other without needing to know about each other once we've done all that group address configuration we then download to the devices over the bus so we just you know connect an interface which would be either USB or via an IP interface select the device and download to it as simple as that just looking into that group address configuration a little bit more detail here we've got an example with two products we've got a key paired and we've got a relay when we've once we've configured the parameters we take an object from each of the things we want to control so we've got the rock or object from the keypad we drag that into a group address this group dresses group produces called 1 / 1 / 1 living wall lamp on/off we've taken the switching object into that group address so when we push a button it will send a value of 1 to that group address we then add the object from the relay and to the same group address so when it receives that group address it will look into it and see what value it is it has a value of 1 so it will know to turn on now the beauty of this is if we wanted that same button to turn on all the lights and the property could be a hundred different fittings it could be a thousand different light fittings or we will do all we would do is add the objects from the relays into the same group address so using one group address we could tune on everything in a property one message being sent on the bus could achieve you know a massive amount of functionality with a lot happening so whilst it seems like there's a lot to configure because we're doing all these individual group addressing for all the different functions actually there's a lot of crossover and it is one of the key strengths of KNX is the simplicity in which we can control many many devices you want to have a button by the front door that turns all the lighting in the property off well that could just be one simple message on the KNX bus right so now we know how to program it's looked at some products and one of the real strengths of Kanaks is the range of different keypads with so many different manufacturers making products they all have their own different design and team now I've chosen six different keypads here really with the goal of showing that from that different the difference between them they all have either 6 or 4 buttons and they're all going to be able to do exactly the same thing in terms of options on how you would control something but they all look massively different it could be going from a metal finish to a glass finish to something with you know real for solid buttons so it's clear what the the surface you need to push us something inscribed huge around huge range of options so if you're sitting with a customer or you're looking at the interior design of a room and you're trying to work out what you want it to look like can excuse you the flexibility to choose a design that suits the interior design but you don't have to compromise on functionality and you're never worried about you know having to change the system you're using on one project you could be doing a completely different design another project but you're using exactly the same system and programming and in the same way which is a real benefit so it's looking at some other products one of the ones where you see a lot of as P IRS so detector in the ceiling that's you know you're seeing motion in the room tied into the lux level so depending on the brightness in the room it will tune on the tune on the lighting but also could be used to enable heating and that's where we're getting this cross functionality because everything is on the Kanak system everything is controlled by one system it's really easy to have crossover so PIR tuning on the heating or disabling the heating when you're no longer present in the room it's really simple to achieve we could be using a more intelligent sensor that's able to determine this is an outdoor outdoor detector which is able to determine the direction of travel so it will know if you're moving towards the building or away from the building so then we could start to activate you know different lighting it could be driver lights turning on as you as you come towards the property or we could start to get really intelligent and say well we know there's no motion in the property we know the time of the day means no one's going to be asleep and we know you're leaving the property because you're driving away well we could use that to shut down the heating for example the limit the possibilities really are limitless this is a dinner and you know the quality of dimming we C&K Nyx's huge and and one of the reasons is we've got so many different manufacturers making products and effectively competing with each other so one manufacturer might bring out a dimmer another one might bring out another one it needs to step up in terms of functionality for them to stand out we've effectively got 490 different manufacturers all with their own R&D budgets investing in the development of products it's not just one manufacturer and what they feel is the right product development we've got such a wide range we really see constant innovation and change so mains dimming LED for example really really high quality dimming because of because of that strength of paintings manifold controllers underfloor heating for example really simple to control and just sitting on the same system as everything out so huge range of different products for for heating control and radiators controlling valves or it could be controlling air conditioning you know a little interface unit that sits in the AC unit and communicates directly to it so we've gone from having lighting control through to you know different types of heating and our bring unique in air conditioning everything working on the same system and programmed together at one level we can even introduce visualization at control remote access control or adding additional logic to the bus using a server module doesn't replace the decentralized nature of can exceed do want a little bit more processing power and ones in one place so fits within the KNX architecture in terms of every party bit product being individual but provides you things like your remote access or additional functionality so more with the station's enable you to do you know facade control of shading you know where you've got if you know the Sun position you know the brightness level you can then control the shading to manage the internal temperature reduce Sol again it could be co2 censors doing more environmental sensing and knowing you know what the internal air quality is and using that to open windows increase ventilation could be going from a dedicated co2 and humidity sensor as this example all the way up to a full room controller which is able to read not only the humidity and the co2 level and the temperature and lux level but also bring in you know vo C so you're really getting into equality and you can start to really manage that internal environment being able to bring metering into the system that a water meter gas meter Electric interfacing to different metering solutions enables us to use that data as part of our control control environment yes we would visualize the metering data but actually being able to say well we've got water flow we shouldn't have water flow because of the alarm set which means the building's unoccupied it's been more than 12 hours you've left the property so let's notify the customer that they've got a leak and it's also close a valve to stop the link at leak and prevent any damage happening so using metering provides us with a lot more information on way to control the building and that's even more apparent when it comes to things like you know renewables generating solar storing that into batteries and make being able to make decisions on we which unit you you're using or when you're using the energy as a real it's something we're going to have to get a lot better at to deal with the the on climate crisis climate change so can expose a really good solution to that because it's already offering control of all the different parts of the building into getting to other systems like Dali using Dali for your lighting control which provides you know real feedback on the status of different fittings doing things like color temperature control or you know working with emergency ballasts see you can automate the testing of emergency lighting in commercial buildings really simple with Dali and kanuk provides a great backbone to integrate that into the rest of the building or doing things that phone call control more advanced HVAC applications could be chilled ceilings it could be interfacing two different beam assistant like back NIT Modbus you know there really isn't a limit to the different functionalities within canings so YK annex well it's a very very flexible system that has applications and a huge amount of different projects be at residential be at commercial different types of commercial buildings it can be used on all of them but you're not you're not carrying any of the overhead from one to the other and that flexibility means that as a integrator or as a you know a systems designer you can approach different projects knowing that you've got a system and a solution that's going to enable you to offer a solution you're going to be able to find a way to control this product and this project and when the customer throws a curve ball like oh we want to include irrigation control in this property can express wrong platform that you know you're going to be able to find a solution you'll be able to just get the products that offer irrigation control integrate that onto the one system through the whole property and you're done the the range of interfaces is massive and it is a real driver for a clean residential for YK annex is so successful because there's always a different design to suit the interior design it's been around for over 30 years these over ninety thousand integrators worldwide these training centers in pretty much every country it is a very established system and that recognition means that your your working with the system that's going to be around for for a long time and and it's something that you can invest in knowing that the system itself is as designed for the types of for any type of project but also isn't going to go away so as an integration business it gives you a huge amount of assurance that this is a system that's going to be here for the future and if you're a customer are you looking to install this in your building or facilities manager your wiring something into the building that is designed for the future it's not just a happenstance that it's going to be around in ten years the way the system is designed is as future-proof in it and it's very nature and a lot of that is linked to that standardized open protocol you know you're not dealing with one manufacturer doing with a huge range of manufacturers and you're dealing with a protocol that enables the different products to work together so if you need to change how the building works or change the types of products can expertise to do that because of that standardization and ultimately it's you know one of the real strengths is it makes buildings more intelligent and makes them more efficient makes them easier to control it makes everything that we expect of an intelligent building it makes it possible you're able to integrate all the different functionalities in the building use all the different information that we get from the internal environment and the external environment to make decisions about how the building should work and how to best create that really nice internal environment I hope you found this video informative lots of different videos on the YouTube channel so please subscribe using the link below or on the little button if you've got any comments please post them below and we'll get back to you as soon as we can thank you very much for watching
+
+
+[00:04] welcome to this ivory introduction to
+[00:06] KNX my name is Mark and in this quick
+[00:08] session we're going to have a look at
+[00:09] what Kleenex is how the system just
+[00:11] designed how its programmed and some key
+[00:14] applications so what is canings well
+[00:17] it's a standardized protocol that's been
+[00:19] around for 30 years that allows products
+[00:21] from different manufacturers to work
+[00:23] together to control a building there's
+[00:26] over 490 manufacturers that all part of
+[00:30] the Association and using their products
+[00:33] you can control heating lighting a/c
+[00:36] shading metering monitoring anything
+[00:39] that might be happening in a building in
+[00:40] this example we can see a power supply
+[00:42] at the top which powers the bus that's
+[00:46] from one manufacturer and then we've got
+[00:48] a PIR from another manufacturer that PIR
+[00:51] is going to detect motion might be
+[00:53] reading temperature it'll be sending a
+[00:55] signal onto the bus saying this activity
+[00:57] that signaling can then be picked up by
+[01:00] a manifold controller which is at the
+[01:01] bottom of the screen or a lighting relay
+[01:04] you know all these different products
+[01:07] can all respond to the different
+[01:08] messages happening on the system it's
+[01:10] completely decentralized no product is
+[01:13] reliant on another they all have the
+[01:15] intelligence to be able to perform their
+[01:16] functions so if we have a keypad in the
+[01:18] system that will have everything it
+[01:21] needs to be able to sing different
+[01:23] signals it might be a might be turning a
+[01:26] light on and off it could be sending a
+[01:27] temperature it could be changing the
+[01:29] color temperature of a light if we think
+[01:32] is integrated in that product so for it
+[01:34] to perform its function when a button is
+[01:36] pushed it sends a telegram on the bus
+[01:38] which other products will pick up
+[01:40] because of the standardization no
+[01:42] manufacturer really controls the code
+[01:45] that's handled by the cane exis OCA ssin
+[01:47] the way the system works is always the
+[01:50] same and we've got 30 years of backwards
+[01:52] compatibility in terms of products
+[01:55] working in a building because of that it
+[01:58] provides one of the best platforms for
+[02:00] installation in a building because you
+[02:01] know that the system you're installing
+[02:03] is going to be around for as long as the
+[02:06] building will last and because no
+[02:08] manufacturer can change how it works
+[02:10] you have given us assurance that the
+[02:12] system is set for the future
+[02:15] so let's dig into the system a little
+[02:17] bit more there's a couple of different
+[02:19] communication mediums can can exist over
+[02:22] IP it can exist over RF but the main
+[02:25] connect system that people recognize is
+[02:27] a wired system in a wired system you
+[02:30] have a pair pair of cables a red and
+[02:34] black and that powers the devices and
+[02:36] also provides the communication
+[02:38] everything happens on that red and black
+[02:40] and generally products use the Vargo
+[02:42] standardized connector which means it's
+[02:44] really easy to install and you can one
+[02:47] of the real benefits is you can
+[02:48] disconnect a product from the bus
+[02:50] without affecting the operation of the
+[02:51] bus so if you're working in a large
+[02:53] commercial building where you need to
+[02:55] have a hundred seen uptime but you need
+[02:57] to replace a product it's very simple to
+[02:59] do with KNX because the product isn't as
+[03:02] an hardwired unto the end of the bus
+[03:04] it's quite common to see a two pair
+[03:06] cable used though we will have a yellow
+[03:09] and white that's often used for products
+[03:11] that require additional power or or can
+[03:13] provide some redundancy in the cable but
+[03:15] the actual bus communication happens
+[03:17] over a red and black connector one of
+[03:20] the real benefits of the cable and the
+[03:22] system is it's designed to be run with
+[03:24] mains the signal on the Reed and black
+[03:26] is a symmetrical signal so it is immune
+[03:28] to interference so the cane is
+[03:29] controlled cable can be run with the
+[03:31] electrical installation which is where
+[03:34] it should be we need a power supply on
+[03:36] the line now this is a specific cane X
+[03:39] power supply because it has an
+[03:40] integrated choke and it's the troch that
+[03:42] allows the AC signal and the DC signal
+[03:44] to be on the same cables it also forms
+[03:48] part of the telegram so it's a really
+[03:50] important part in the system so okay
+[03:52] next power supply that powers the bus
+[03:54] and manages some of the communication
+[03:56] there's lots of different versions
+[03:58] available the most common one would be a
+[04:00] 614 milliamp power supply now the size
+[04:04] of the power supply is determined by the
+[04:06] power requirements of the devices on the
+[04:09] bus it's really important to check that
+[04:10] and make sure you're providing enough
+[04:12] power in the normal way can express ways
+[04:15] are really really well engineered they
+[04:16] designed as a central component in the
+[04:19] system to be extremely reliable and have
+[04:21] a very very low failure rate you can
+[04:24] tell that because of the size of them
+[04:25] they're over engineered to ensure
+[04:26] there's a large amount of heat
+[04:28] patient so they just don't fail they're
+[04:30] very solid device so we need to know the
+[04:33] we need to size the power supply for the
+[04:35] number of devices but what about the
+[04:37] actual system device limits
+[04:39] well the topology and I can extend over
+[04:42] a small line where you may have a power
+[04:46] supply and two devices all the way up to
+[04:48] a very large system with sixty 1696
+[04:52] devices and we do that by having
+[04:54] different topology layers so on a line
+[04:57] in this example we have a power supply
+[04:59] and 255 devices now that's the system
+[05:03] limit for a line the actual number of
+[05:05] devices will be determined by the size
+[05:07] of the power supply if we need to go up
+[05:09] and add more devices where we add a
+[05:11] coupler and a coupler manages the flow
+[05:13] of track traffic
+[05:14] it keeps local information local and
+[05:17] doesn't share it with the rest of the
+[05:18] system but if there's a system-wide
+[05:21] message then it will pass that through
+[05:23] up or down through the topology layers
+[05:25] and that means that the system is broken
+[05:27] down into individual cells which
+[05:29] increases that reliability if something
+[05:31] did happen to the to that power supply
+[05:33] will happened on that line it wouldn't
+[05:35] affect the rest of the system because
+[05:36] the coupler is linking things together
+[05:38] so from a line we can add we can add a
+[05:41] coupler and that will create an area
+[05:43] line or a main line from that main line
+[05:45] we can have up to 15 lines we can then
+[05:49] take that area and we can go up another
+[05:52] layer and connect that area to a
+[05:53] backbone line that line can have 15
+[05:57] areas aren't hanging off it so we can
+[05:59] have 15 areas each of them with 15 lines
+[06:02] and each line can have 255 devices how
+[06:06] any of those layers could actually be IP
+[06:08] so we could have a twisted peer line or
+[06:13] area and different areas of a building
+[06:15] with a IP backbone linking everything
+[06:18] together maybe it's a large installation
+[06:19] site like a university where you have a
+[06:21] lot of different buildings with the Kane
+[06:23] exes term limit being so large there's
+[06:26] very few projects that can explore now
+[06:30] that leads people to say well with the
+[06:32] system being so large surely there's a
+[06:33] lot of overhead in that when you're
+[06:34] designing small systems maybe a small
+[06:36] residential installation you know
+[06:38] working with such a large system that is
+[06:40] adding cobbler complication cost that's just not true
+[06:43] with K annex B cuz of that decent
+[06:44] utilization because you just need a
+[06:46] power supply and it of the devices you
+[06:49] need there's no central servers every
+[06:51] little device has its own intelligence
+[06:52] there's no additional cost if you've got
+[06:55] just a keypad and maybe an eight channel
+[06:58] relay and you need a small power supply
+[07:00] those three devices are all you need in
+[07:02] the system if you want to add that
+[07:04] increase the functionality or increase
+[07:06] the size of the project you just add the
+[07:07] devices you need which means KNX is
+[07:10] applicable for loads of different
+[07:11] projects could be small resident short
+[07:13] could be commercial could be officers
+[07:15] could be medical used in hospitals is
+[07:17] very very powerful in that sense and the
+[07:20] topology ensures that you give the most
+[07:22] amount of reliability and resilience
+[07:24] built into the system so now we know
+[07:27] about the power supplies and the
+[07:30] topology how do we program it well
+[07:32] everything is done through one software
+[07:34] because the because it's so many
+[07:36] manufacturers we can't have them all
+[07:38] developing their own way of programming
+[07:40] at the KNX Association manage the ETS
+[07:43] software which is currently version 5
+[07:44] which all manufacturers have to create
+[07:48] driver files for for the programming to
+[07:51] happen so from one software you can
+[07:53] configure large project small projects
+[07:55] you know could be an HVAC project could
+[07:57] be lighting everything happens in one
+[07:59] place and the real benefit of that is
+[08:01] you don't need to retrain for different
+[08:03] types of projects if we think there's
+[08:05] always in the same software you can get
+[08:07] really really competent with the
+[08:08] software knowing that your next 5 6 20
+[08:11] projects they could all be different
+[08:13] types of projects different sized
+[08:15] projects or doing different applications
+[08:16] and you're always going to be yet using
+[08:18] the same software is no jumping between
+[08:20] different manufacturers or changing
+[08:22] solutions it really is designed for
+[08:24] professionals is a very powerful
+[08:25] software but this huge amount of
+[08:27] features in it which enable you to make
+[08:29] things simpler or easier or program and
+[08:31] faster ways or slower ways it's
+[08:33] constantly evolving huge amount of
+[08:35] updates done by the Kanak sociation and
+[08:37] ets really captures what hay mixes you
+[08:41] know the ability to program huge range
+[08:44] of products from different manufacturers
+[08:45] doing different
+[08:47] functionalities but always being updated
+[08:49] adding new features like connect secure
+[08:52] which enables us to encrypt
+[08:54] the messages on the bus but also the
+[08:56] entire IP layer of where if we're doing
+[08:59] an IP K needs backbone for example so
+[09:01] adding these new features means that KX
+[09:04] has always kept up-to-date but we have
+[09:06] this this look back and in terms of you
+[09:08] know backwards compatibility with
+[09:10] previous versions of the system
+[09:12] so using ets five these five steps to
+[09:16] programming the first is to create a
+[09:17] project and that one's really easy
+[09:19] that's just clicking create a new
+[09:21] project and giving it a name within add
+[09:23] devices to the project from the online
+[09:24] database so as a manufacturer develops
+[09:26] products there's a driver file which has
+[09:29] all the information that how that
+[09:30] product works that exists in the online
+[09:32] database you just drag it from the end
+[09:34] to your project so again a really easy
+[09:36] step you then configure the
+[09:39] individual device parameters that's
+[09:41] where you you define what a product does
+[09:43] it might be a six button keypad and you
+[09:46] want one key pair to one button to call
+[09:48] the scene you want another button to do
+[09:50] a raise lower so you know pushed to an
+[09:53] arm push and hold to the map for example
+[09:55] and you might have another button
+[09:57] changing the heating mode in the
+[09:59] building and the parameters is where you
+[10:01] configure those those in those settings
+[10:03] for each of the individual functions we
+[10:06] then link the different devices together
+[10:08] in a group address so we just take an
+[10:10] object from one product and link it with
+[10:12] another in a group address now group
+[10:14] addresses are the main runtime of the
+[10:16] system if you looked at a KNX bus when
+[10:18] it was working you'd see a lot of group
+[10:20] addresses and they enable with all the
+[10:22] different products to talk talk to each
+[10:24] other without needing to know about each
+[10:25] other
+[10:26] once we've done all that group address
+[10:28] configuration we then download to the
+[10:29] devices over the bus so we just you know
+[10:32] connect an interface which would be
+[10:33] either USB or via an IP interface select
+[10:37] the device and download to it as simple
+[10:39] as that just looking into that group
+[10:41] address configuration a little bit more
+[10:43] detail here we've got an example with
+[10:46] two products we've got a key paired and
+[10:48] we've got a relay when we've once we've
+[10:51] configured the parameters we take an
+[10:53] object from each of the things we want
+[10:56] to control so we've got the rock or
+[10:58] object from the keypad we drag that into
+[11:00] a group address this group dresses group
+[11:02] produces called 1 / 1 / 1 living wall
+[11:06] lamp on/off we've taken the switching object
+[11:08] into that group address so when we push
+[11:10] a button it will send a value of 1 to
+[11:12] that group address we then add the
+[11:15] object from the relay and to the same
+[11:17] group address so when it receives that
+[11:20] group address it will look into it and
+[11:22] see what value it is it has a value of 1
+[11:24] so it will know to turn on now the
+[11:27] beauty of this is if we wanted that same
+[11:29] button to turn on all the lights and the
+[11:32] property could be a hundred different
+[11:34] fittings it could be a thousand
+[11:35] different light fittings or we will do
+[11:37] all we would do is add the objects from
+[11:40] the relays into the same group address
+[11:41] so using one group address we could tune
+[11:44] on everything in a property one message
+[11:47] being sent on the bus could achieve you
+[11:49] know a massive amount of functionality
+[11:52] with a lot happening so whilst it seems
+[11:55] like there's a lot to configure because
+[11:56] we're doing all these individual group
+[11:58] addressing for all the different
+[11:59] functions actually there's a lot of
+[12:01] crossover and it is one of the key
+[12:03] strengths of KNX is the simplicity in
+[12:05] which we can control many many devices
+[12:07] you want to have a button by the front
+[12:10] door that turns all the lighting in the
+[12:11] property off well that could just be one
+[12:13] simple message on the KNX bus right so
+[12:18] now we know how to program it's looked
+[12:19] at some products and one of the real
+[12:20] strengths of Kanaks is the range of
+[12:22] different keypads with so many different
+[12:25] manufacturers making products they all
+[12:27] have their own different design and team
+[12:29] now I've chosen six different keypads
+[12:30] here really with the goal of showing
+[12:33] that from that different the difference
+[12:35] between them they all have either 6 or 4
+[12:38] buttons and they're all going to be able
+[12:39] to do exactly the same thing in terms of
+[12:41] options on how you would control
+[12:42] something but they all look massively
+[12:45] different it could be going from a metal
+[12:47] finish to a glass finish to something
+[12:49] with you know real for solid buttons so
+[12:51] it's clear what the the surface you need
+[12:53] to push us something inscribed huge
+[12:55] around huge range of options so if
+[12:58] you're sitting with a customer or you're
+[13:00] looking at the interior design of a room
+[13:01] and you're trying to work out what you
+[13:03] want it to look like can excuse you the
+[13:05] flexibility to choose a design that
+[13:07] suits the interior design but you don't
+[13:10] have to compromise on functionality and
+[13:12] you're never worried about you know
+[13:14] having to change the system you're using
+[13:15] on one project you could be doing a
+[13:17] completely different design
+[13:19] another project but you're using exactly
+[13:21] the same system and programming and in
+[13:23] the same way which is a real benefit so
+[13:26] it's looking at some other products one
+[13:29] of the ones where you see a lot of as P
+[13:32] IRS so detector in the ceiling that's
+[13:34] you know you're seeing motion in the
+[13:36] room tied into the lux level so
+[13:38] depending on the brightness in the room
+[13:39] it will tune on the tune on the lighting
+[13:41] but also could be used to enable heating
+[13:43] and that's where we're getting this
+[13:44] cross functionality because everything
+[13:47] is on the Kanak system everything is
+[13:48] controlled by one system it's really
+[13:50] easy to have crossover so PIR tuning on
+[13:54] the heating or disabling the heating
+[13:55] when you're no longer present in the
+[13:57] room it's really simple to achieve we
+[14:00] could be using a more intelligent sensor
+[14:01] that's able to determine this is an
+[14:03] outdoor outdoor detector which is able
+[14:06] to determine the direction of travel so
+[14:08] it will know if you're moving towards
+[14:09] the building or away from the building
+[14:11] so then we could start to activate you
+[14:13] know different lighting it could be
+[14:14] driver lights turning on as you as you
+[14:17] come towards the property or we could
+[14:19] start to get really intelligent and say
+[14:20] well we know there's no motion in the
+[14:21] property we know the time of the day
+[14:23] means no one's going to be asleep and we
+[14:25] know you're leaving the property because
+[14:26] you're driving away well we could use
+[14:28] that to shut down the heating for
+[14:29] example the limit the possibilities
+[14:32] really are limitless this is a dinner
+[14:35] and you know the quality of dimming we
+[14:37] C&K Nyx's huge and and one of the
+[14:39] reasons is we've got so many different
+[14:41] manufacturers making products and
+[14:42] effectively competing with each other so
+[14:45] one manufacturer might bring out a
+[14:46] dimmer another one might bring out
+[14:48] another one it needs to step up in terms
+[14:51] of functionality for them to stand out
+[14:52] we've effectively got 490 different
+[14:55] manufacturers all with their own R&D
+[14:58] budgets investing in the development of
+[15:01] products it's not just one manufacturer
+[15:04] and what they feel is the right product
+[15:05] development we've got such a wide range
+[15:07] we really see constant innovation and
+[15:09] change so mains dimming LED for example
+[15:12] really really high quality dimming
+[15:14] because of because of that strength of
+[15:17] paintings manifold controllers
+[15:20] underfloor heating for example really
+[15:22] simple to control and just
+[15:24] sitting on the same system as everything
+[15:26] out so huge range of different products
+[15:28] for for heating control and radiators
+[15:31] controlling valves or it could be
+[15:33] controlling air conditioning you know a
+[15:35] little interface unit that sits in the
+[15:37] AC unit and communicates directly to it
+[15:40] so we've gone from having lighting
+[15:42] control through to you know different
+[15:45] types of heating and our bring unique in
+[15:47] air conditioning everything working on
+[15:49] the same system and programmed together
+[15:51] at one level we can even introduce
+[15:53] visualization at control remote access
+[15:56] control or adding additional logic to
+[15:58] the bus using a server module doesn't
+[16:01] replace the decentralized nature of can
+[16:04] exceed do want a little bit more
+[16:06] processing power and ones in one place
+[16:07] so fits within the KNX architecture in
+[16:10] terms of every party bit product being
+[16:12] individual but provides you things like
+[16:14] your remote access or additional
+[16:16] functionality so more with the station's
+[16:19] enable you to do you know facade control
+[16:22] of shading you know where you've got if
+[16:24] you know the Sun position you know the
+[16:26] brightness level you can then control
+[16:28] the shading to manage the internal
+[16:30] temperature reduce Sol again it could be
+[16:33] co2 censors doing more environmental
+[16:35] sensing and knowing you know what the
+[16:37] internal air quality is and using
+[16:41] that to open windows increase
+[16:43] ventilation could be going from a
+[16:45] dedicated co2 and humidity sensor as
+[16:48] this example all the way up to a full
+[16:50] room controller which is able to read
+[16:52] not only the humidity and the co2 level
+[16:56] and the temperature and lux level but
+[16:58] also bring in you know vo C so you're
+[17:00] really getting into equality and you can
+[17:02] start to really manage that internal
+[17:04] environment being able to bring metering
+[17:07] into the system that a water meter gas
+[17:09] meter
+[17:10] Electric interfacing to different
+[17:11] metering solutions enables us to use
+[17:14] that data as part of our control control
+[17:18] environment yes we would visualize the
+[17:20] metering data but actually being able to
+[17:22] say well we've got water flow we
+[17:24] shouldn't have water flow because of the
+[17:25] alarm set which means the building's
+[17:27] unoccupied it's been more than 12 hours
+[17:29] you've left the property so let's notify
+[17:32] the customer that they've got a leak and
+[17:33] it's also close a valve to stop the link
+[17:36] at leak and prevent any damage happening
+[17:38] so using metering provides us with a lot
+[17:40] more information on way to control the
+[17:42] building and that's even more apparent
+[17:44] when it comes to things like you know
+[17:46] renewables generating solar storing that
+[17:49] into batteries and make being able to
+[17:50] make decisions on we which unit you
+[17:52] you're using or when you're using the
+[17:54] energy as a real it's something we're
+[17:57] going to have to get a lot better at to
+[17:59] deal with the the on climate crisis
+[18:01] climate change so can expose a really
+[18:04] good solution to that because it's
+[18:05] already offering control of all the
+[18:06] different parts of the building into
+[18:09] getting to other systems like Dali using
+[18:11] Dali for your lighting control which
+[18:13] provides you know real feedback on the
+[18:16] status of different fittings doing
+[18:17] things like color temperature control or
+[18:19] you know working with emergency ballasts
+[18:21] see you can automate the testing of
+[18:23] emergency lighting in commercial
+[18:24] buildings really simple with Dali and
+[18:26] kanuk provides a great backbone to
+[18:28] integrate that into the rest of the
+[18:30] building or doing things that phone call
+[18:32] control more advanced HVAC applications
+[18:34] could be chilled ceilings
+[18:36] it could be interfacing two different
+[18:38] beam assistant like back NIT Modbus you
+[18:41] know there really isn't a limit to the
+[18:43] different functionalities within canings
+[18:47] so YK annex well it's a very very
+[18:51] flexible system that has applications
+[18:53] and a huge amount of different projects
+[18:55] be at residential be at commercial
+[18:57] different types of commercial buildings
+[18:59] it can be used on all of them but you're
+[19:01] not you're not carrying any of the
+[19:03] overhead from one to the other and that
+[19:05] flexibility means that as a integrator
+[19:08] or as a you know a systems designer you
+[19:10] can approach different projects knowing
+[19:12] that you've got a system and a solution
+[19:16] that's going to enable you to offer a
+[19:19] solution you're going to be able to find
+[19:20] a way to control this product and this
+[19:22] project and when the customer throws a
+[19:24] curve ball like oh we want to include
+[19:25] irrigation control in this property can
+[19:28] express wrong platform that you know
+[19:30] you're going to be able to find a
+[19:31] solution you'll be able to just get the
+[19:33] products that offer irrigation control
+[19:34] integrate that onto the one system
+[19:37] through the whole property and you're
+[19:38] done the the range of interfaces is
+[19:41] massive and it is a real driver for a
+[19:44] clean residential for YK annex is so
+[19:46] successful because there's always a
+[19:48] different design to suit the interior
+[19:50] design it's been around for over 30
+[19:52] years these over ninety thousand
+[19:54] integrators worldwide these training
+[19:56] centers in pretty much every country it
+[19:58] is a very
+[19:59] established system and that
+[20:01] recognition means that your your working
+[20:03] with the system that's going to be
+[20:04] around for for a long time and and it's
+[20:08] something that you can invest in knowing
+[20:10] that the system itself is as designed
+[20:13] for the types of for any type of project
+[20:16] but also isn't going to go away so as an
+[20:18] integration business it gives you a huge
+[20:20] amount of assurance that this is a
+[20:22] system that's going to be here for the
+[20:23] future and if you're a customer are you
+[20:26] looking to install this in your building
+[20:27] or facilities manager your wiring
+[20:28] something into the building that is
+[20:30] designed for the future it's not just a
+[20:33] happenstance that it's going to be
+[20:34] around in ten years the way the system
+[20:36] is designed is as future-proof in it and
+[20:39] it's very nature and a lot of that is
+[20:41] linked to that standardized open
+[20:42] protocol you know you're not dealing
+[20:43] with one manufacturer doing with a huge
+[20:45] range of manufacturers and you're
+[20:47] dealing with a protocol that enables the
+[20:49] different products to work together so
+[20:51] if you need to change how the building
+[20:52] works or change the types of products
+[20:54] can expertise to do that because of that
+[20:57] standardization and ultimately it's you
+[21:00] know one of the real strengths is it
+[21:02] makes buildings more intelligent and
+[21:03] makes them more efficient makes them
+[21:05] easier to control it makes everything
+[21:07] that we expect of an intelligent
+[21:09] building it makes it possible you're
+[21:11] able to integrate all the different
+[21:13] functionalities in the building use all
+[21:15] the different information that we get
+[21:16] from the internal environment and the
+[21:18] external environment to make decisions
+[21:20] about how the building should work and
+[21:22] how to best create that really nice
+[21:25] internal environment I hope you found
+[21:28] this video informative lots of different
+[21:30] videos on the YouTube channel so please
+[21:32] subscribe using the link below or on the
+[21:34] little button if you've got any comments
+[21:37] please post them below and we'll get
+[21:39] back to you as soon as we can thank you
+[21:41] very much for watching

@@ -1,0 +1,1322 @@
+# TechTalks: Hikvision I Series NVR Overview
+# https://www.youtube.com/watch?v=0qjfR2Nqmdo
+
+two seconds this is always the the longest part waiting for this to go and we're live on YouTube so welcome to those of you in the joint wherever you are in the world I hope you can hear me okay and we're also on YouTube live so if you're joined by a zoom or by a YouTube a big welcome wherever you are I hope you're all safe staying out of harm's way and today we hope you learn something is more importantly today we're gonna take a look at the iSeries and VR why we'd use it in some of the features in it and any questions I'm on my own today I don't have my trusty sidekick Reese of me so if you've got any questions I will answer them at the end there's a Q&A box type in the questions at the end I'll go and review them if you want to know anything suggest content anything I have an answer then you want to discuss further webinar at t vs co uk and we'll be happy to help you where possible in there ok so moving forward I series and we are what is it so the iSeries NVR is a hikvision and we are available in different channel sizes so we do an 8 channel a 16 32 a 64 channel and then we also do the super eye series Envy ours which are 64 1 to 8 and 2 5 6 channel so depending on what you're trying to achieve on your site the application will dictate to you the channel count so the channels work like this if you have a 8 channel recorder so it's up to 8 channels or the inbound band which band width which ever is reached first so if you had cameras that exceeded the inbound bandwidth and then any only had seven of them you'd only be able to add 7 cameras now if you had 8 cameras and they came within the inbound bandwidth you could add all 8 it's just a logical thing whichever is hit first wherever it's the channel count or the inbound bandwidth sometimes you may only have 31 cameras but you may need to go for a 64 channel because they're all 12 megapixel full-frame 8 h.264 so you don't have BAM with capabilities to use the standard machine so just a little thing whichever comes first again any questions you can let us know all the data sheets for the products will contain the channel maximum channel capability for also the inbound bandwidth also the remote connection capability so the remote connection capability is how many cameras connections can be taken from each unit most of our units support one to eight some of them support two five six depending on if it's the medium to lower end or the super eye series a channel connection is you could have 256 channels being streamed to either one occupant or multiple people that are logged in again your scenario would take to you which machine is required we do them in different form factors so they are available in a 7 6 a slimline version so the 8 channel we're built in PUA is a 7 6 d sr 7 608 and i - i - really powerful machine that's the one that we tend to push for a MPI use the iSeries surely so we do it from an 8 channel p OE all the way up to the 256 for land for SFP versions and they have some of them have raid hot-swap capabilities if you want to use that function so if you want raid so those of you that sort of use raid regularly or prefer raid because it gives you some redundancy then you can actually enable raid on a 9 6 series so the 9 6 is the 32 64 128 6 channels and you can have the raid 0 1 5 6 and 10 so that gives you the redundancy in there could be careful if you do enable rage sometimes it does reduce the outbound or the inbound capacity for their channels so some of them go from 320 Meg to 200 Meg's so if you want to know just give us a show so in front of me I've got the standard and the most popular.i series it's the DS - 9 6 3 - and I - I ate so we've web browsers in to open it using internet explorer so we'll just quickly log in if I can remember my password I'll try and keep this webinar around 30 to 45 minutes and once you sort of get the gist of it general web browser feel so any of our web browsers on our products whether it's a four channel DVR up to a 256 channel envy are the web browser functionality is very familiar so once you can program one you can pretty much program any of them it'll just dictate which functions and features are available and how you add and use them so it's very beneficial to keep them all on same for the support and installation purposes so web browsers into the recorder so I've set the IP address and already added cameras using sadp tool so I activated it giving an IP address and already sit this online what you'll see here is the live view page now when I'm running a zoom webinar and using Internet Explorer if you don't know it's very very slow when you do try to do both on a Windows machine but if I show you the gist of it so we've got an ANPR camera added so we'll show you the MPR functionality shortly so as an ANPR camera on our road we've also got a pause camera but no pause till that's been put away but I've run through the premise of sat and paws-up on an I series so if you do on POS pause then you use the I series or the seven three eight UHI turbo machine we've got a some 4k 12 megapixel fish eyes so again if you want to use 12 megapixel fisheye so the fisheye is available in six megapixels and 12 megapixel if you want a 12 megapixel fisheye you need to use the iSeries machine the reason being the k-series is only limited to 8 megapixel and some of you that use the e-series still out there they're limited to 5 6 megapixel so I series will go all the way up to 12 megapixel and in fact there is an option in the web to enable Ultra HD so the Ultra HD will allow 132 megapixel panel view camera then to be added and which I'll show you in the web browser but it does have some very strict restrictions enabling that so I'll just go through the functionality and welcome any questions like I said we'll come back at the end is really difficult to answer questions and go through the webinar at the same time so just bear with my answer the question you or okay so we're browser any of you live you through on the left hand side you've also got the ability to choose chance code it transcoded sub stream and main stream so if you don't want to view the main stream you bought poor connection so if you put the in a 16 way split they automatically default to sub stream anyway but you can actually manually change between mainstream sub stream or trance coded transcoded stream and if that's what you prefer so you've got that manual ability within the front page you've got also let me just put the PT head on here so this is outside in our car park you'll see it's quite deserted you've got PT head control so if I just move this out here right-hand side of the screen you've got the ability to do PT Zaid control now I'll take a little bit of trying to catch up with my movements because it's Internet Explorer so those of you that do use IE you will find there's a bit of a delay on P DS air controls Live View etc so you've got the full PTZ control here you've got some additional menu options for the camera if they support it so if the camera has a wiper auxilary light axillary focus 3d position in 3d zoom if they camera start to an unmanned your track in so again with the PTC start 3d zoom and this is available not just on the iSeries but some most of our range to be honest click on that click on that and that PT Zed will zoom into that area once it catches up I've got electronic zoom enabled on there pdz an electronic image stabilization so it doesn't work that's another old pan of view but you can do all of these functions and you can call and set presets and also set patrols through the front end so any PT's heads you can set the patrols and star them edit them also presets on the left hand side there you want you'll notice is dependent on what PD Z is connected if you scroll down it'll give you feedback this is a pan abuse it doesn't have much in there but some of the presets will be predefined like wiper patrol star Patrol star iOS open iris closed reboot etc etc so they'll be predetermined as a preset so they're light and easy to call from the front end now from the bottom controls on the live view you have stream type change air so may subscreen transcoder screen your screen split your two-way audio so again if the camera has two-way audio capabilities or the unit the DUI and yeah you can start to weight audio directly to the recorder you've also got stock you've got capture image which are captured to the local PC so through the web browser to go to the local PC that you're using the same as the video will go to a local file destination on the PC digital zoom cycle camera laughter right and then you've got audio listen as well so if you've got a camera with a built-in microphone or a microphone connected you're able to start and preview audio there and then make it fullscreen if you want okay so I'll stop the live view in playback itself similar you can only do 16 camera playback and I would depend on the resolution frame rate and encoding algorithm of the camera there is connected also your network and PC performance you're not gonna view back sixteen eight megapixel cameras at full res on one Windows PC so it's just gonna fall over or stutter extremely so what you can do then with this if I select the camera so this pause test one you've got your standard and web browser control so you can search for your time and date here and the blue flag will indicate where footage is available to be viewed standard DVD controls so stop-start forward backward frame by frame you can actually stop or play back capture an image you can clip footage out so if you press the start clip in it'll clip one-minute footage into the local PC for the web browser or you can do a manual one and just click start and stop it could be ten seconds did your zoom and again audio and then download you click download it will bring up a menu where you're able to download segments of footage some nice and easy as well as choosing the string type one nice little feature that a lot of people don't realize is that it's now on the latest firmware on our NPR's if I choose a camera and play it back for instance this one this in my demo room I can actually now do the analytic search on the web browser front end so I don't have to use the IMS for you to the local GUI I can do it through the actual web browser so simply select line cross MP you have intrusion line cross and emotion boxes so if I select line crossing and draw a line here the footage will go away it scan anything that's gone across this line and along the bottom if I move the timeline you'll see the indicate is along the time line here where that footage is available stop on there and see if i zoom in on the timeline a little bit you'll see these little chunks of footage waiting for it to catch up and ask me when I was in there this morning so it's a nice easy way to search footage fruit line crossing it and choosing a motion detection and directly from the GUI front end and then you've got your standard DVD controls here and you can do multi-screen playback again as long as the PC is powerful enough then Network and the Machine and the resolution is OK you can do synchronous and asynchronous playback so either all cameras sync together or asynchronous and where they're independently playing back and you can actually manually set the playback time that the legend is on the bond what this blue bar indicates what the timeline indicates there ok so and if I wanted to download October simply select the clip and I'll download tool very very simple to do ok so moving on to the configuration of the unit itself so I guess I'll give you some insights into what we can do a lot of people don't know these little tips so again 9 6 3 2 NII 8 so it's a 32 channel 9000 series NVR i8 indicates it's an eight-day unit so on the 9 6 series it's a hot swap drive at the front and will actually flip down and give you 8 Bay's which you can actually hot swap so if a drive goes down you can actually remove it place a new one in there close the phone back up and the machine will detect that after a couple of minutes and then you go for my etc it also gives you the ability to do raid now our raid is done through software so it's a software puffin trade using drivers and that there isn't a hardware raid card some of the older models and they have the dedicated raid card but the cost was a lot higher so ours is like an Intel software made where we do it via software and a buffer and still really powerful a lot of people use it but there are some other options if you don't like radius of the problem where raid is it's great if you learn somebody that the Raiders potentially going to fail so you can intervene the issue of raid is if two drives fail or whatever the side may be and the whole raid system goes down you have to rebuild the whole raid which one means it's not the cord and Wireless rebuilding and you've lost all of the data because more than the one drivers failed so does work but it doesn't work in every scenario sometimes just having it as a jaybird sat up which is the default actually works much bags if one drive fails it sort of rejects it and just continues to record on the other drives we also offer Seagate hard drive and repair offer him so you buy a hard drive you buy a Seagate off repair Seagate rescue / drive you basically inputs you and I'm if the drive goes wrong you send the gist of it you send the drive to Seagate they can recover the data as a 95 percent chance they can recover they or a failed drive they will send you a replacement trying to put in the machine while they were try and recover the data from the supposedly broken one but they also cover accidentally deleted viruses dropped etc and so it's worth looking into the Seagate we ask you we do sol last so if anyone wants to know any more details let us know really really powerful and very cost effective for the peace of mind that that you'd get from the data being able to be recovered I think it's probably more likely to be a better success rate than using raid in my opinion but again everyone's got a different opinion on raid so currently it's not set up as raid this model because there are some connotations in it but this is as of today the latest firmware for the NVR for those of you that want to know you can actually just go to which in Portal so we have a European so under our fake vision portal we have a Europe one we also have a UK one where there's more specific firmware and softwares they're applicable to the UK market so anyone who needs the firmware just navigate to that portal and you'll find it cameras DVRs everything is in there software's tools just go in there and you'll find everything you want so currently that is the latest version so again moving through the actual menu choices now this has been around for quite some time but we've now implemented it in implemented the use of the live view settings in the web page so I can effectively alter what the customer sees on his local monitor so it's as simple as this select the output that you're trying to change so where there's HDMI 1 v j/1 or HDMI to VJ 2 select the screen split that you want the customer to see the switch interval is if it's on it's a while so if you want the cameras to go through 12 sequence and then how long after our would be so you could put it to 5 seconds or 300 and enable sound preview is I turn that off actually um it's the audio if it's got audio on a camera they'll play the audio if this if the camera is on full screen but you can actually drag and drop cameras into this Sattar click Save and that will be presented to the customer so if a customer calls in and says I really want to alter what I see on my monitor because they're not relevant anymore I just want to see something different you can actually do this remotely we can't do it for IMS for you to under currently is for the web browser but it's been a massively powerful tool for us and it's really helped our customers help their customers so on the latest firmware on the iSeries you are able to alter that remotely ok so if that's not a reason to a bigger recorder what is and the maintenance and that's where you do your firmware backups importing configs etc what I would say is if you are gonna update your recorder and this is applicable across a whole range not just for a DBA or NVR I would always export the device parameters and IEP camera parameters and ilt so if you use in IOT so whether it's a high intercom alarm device gjd architects luminite their classes IOT devices and back those up as well so it is as simple as click export give it a password make sure you get it right and export that to a location on the desktop just put it in [Music] and the same with the IP cameras ok so now you've exported that yep now you've exported that keep that safe and in case and also notes down the current firmware version and build that you're on in case it fails you need to go back a version back down to the original version always keep a note without you in a critical update especially if you're going for a lot of versions you're just going from one version to another standard fine you're going from an old version and skip in several versions always do this backup it's good practice and you can keep that NVR Ebony's default in or actually breaks you can actually import that into a new machine and save yourself a lot of time on a service maintenance call ok so again if you want to import those back so say flatten the machine I can simply import those straight back firmware select the firmware dizzykappa file click upgrade and it'll go through the process and update if it fails it will tell you why it fails generally online update and I uncheck that I don't want mine to do that itself I want to always choose my update but you can click automatically download download the latest installation package if it's on like connect these adverse up and it does sometimes notify you the new firmware is available for this machine and allow you to update it mainly I've seen it's on turbo products rather than the high-end env ours because there's generally a lot programmed in these with the 9000 so I'd probably turn that off if I was you and we've got the log and diagnose oh the die Gnostic tool is for debugging so we'll tell you how to use at an appropriate time if we need to get some additional information over a units behavior security so your standard web browser functionality this is coming across the range now so you can access restrictions range so you can actually restrict IP address and MAC addresses you can do security service so stream encryption enabled picture URL digestive offender vacation the default IP camera password so if I add an IP camera if I activate and I become a nanny that's what the default password would be and but I can change or add my own that's up to me and I can use the password fight IP cameras added via the default probe of course I can turn it on and off trusted root certificate and then double verification now the double verification is quite a good little tool and a lot of people use this in Europe but I can enable that add a user into a user I sat up in the NBI user management so I set up a new user in here and basically what that allows me to do then is add this user into the double verification user and then that user will have to ask for elevated permissions for download and playback and you can actually modify it narrow down to certain cameras even so it gives another layer of protection where a customer may be out to live view cameras but they need a second higher level of magnification to download and playback really really likes little additional add-on camera management so again we can add any camera that we want through the NBR interface don't forget on the 9000 series has no PE port so it's all added via one of the two lands generally most people will configure these at Yule and still have one Landers connected into the client network and for the monitoring software control and they'll have one side of the undead occator to the CCTV cameras which they can make up an IP address that suits them so on this one I'm using one LAN and they're both enabled so the client network which is my network it's also the network I bring my cameras through it works absolutely fine I sent Buzz click Add fill in the details and you've also got a lot of choices there or you can customize your own stream if you know what the RTSP the stream profile would look like you cannot die in yourself again if you need help just ask click quick add click on the quick add that are scan your network and find any cameras that it hasn't added to this unit so you can select them from there and simply add them directly just like being in front of the unit and the custom protocol is the one with the RTSP if I wanted to construct my own stream now you'd probably need to know the RTI speak instruction from that camera manufacture and but it is quite easy to get on the www nowadays and you can also activate your camera so the RTSP is real-time streaming protocol and I have a document which I can send so if anybody wants the document on what an RTSP RTSP stream looks like and how you would construct it I have one for hikvision camera which I made of the sense if you want to use light vision products with fear parties I can send that if it's a different camera manufacturer you need to refer to their documentation the stream will be very similar but not for the same everybody uses a different prefix a different way of constructing the stream but the basic gist of it is the same it draw it pulls in raw video from the product into our product and it gives you in essence live view and playback but January doesn't give you any of the advanced functionality if that camera had it ok so it is very basic integration but it does give a deeper a broad spectrum of integration with Thea type products that don't have on there for a Thai Rak driver ok user management so I can add many users into this web interfaces like there is a limit I think it's 32 currently but you can add you know and give each one can have their own different permissions they're saying with live view permissions if I add a user and click live view permissions I can remove the camera from their permission so on the live view screen if I have a monitor that's connected and to the to the NBR DVR then that camera wouldn't be shown so in essence it also becomes like a covert camera so it's quite a nice little addition and then online users will tell me what devices are connected currently to this machine as you can see I bought quite a few different softwares currently connected to this to be pulled off for various reasons our sales guys etc network so with the 9000 series tool and you can set it as multi address or net fault tolerance if you put it as net fault tolerance connect both lands into the same network if one fails the other one will continue to work so give some redundancy or you can set this multi address and have LAN one and LAN two is different IP address ranges so that's what my current IP address ranges but us again sat as applicable to yourself D DNS so we support dyndns pinna holland no IP we don't support our own of the D D and s anymore we've moved over to hide connect now so if you were on and the old hike TD and ass and you upgrade to the latest GUI for firmware and iSeries or any of our recorders you will lose that and you meet a microwave across the height connect pppoe never seen anybody use that in my lifetime of seven years of work of a hikvision but we do provide that functionality same so the poor is where you set your your default ports of our default ports at eighty eight thousand and five five four you can set those applicable to the applications you what I would say is if this is going on an external connection for people to access whether it's an art customers staff whatever that may be then I'd probably change it to non default ports just to add another layer in and put it behind the firewall like most people would sensibly do but you've sac your applicable ports here and which I already have done and then you're not is your UTP UPnP you can set it to manual Auto under the Advanced Settings we do support the SNMP for those IT professionals out there that want to use this as an interrogation reporting tool we support the SNMP and we support it version one and two email so I've got my email stuff in there this is currently sending alarms to Calypso the false alarm reduction platform so we doing some deep integration testing with that it's a product is available from us and if you want to know any more about that please speak to us outside of this platform accesses your hide connect so you've got the ice up version or the hike connect that so most people are very familiar with i connect enable air type in the serial code or scan the QR code from added straightaway no port forwarding required although I do generally do port forwarding adds a little bit of speed and stability into but it's not necessary and then you've got other things like network service so if you want to use HTTP I've enabled HTTPS so I can actually use HTTPS and then they evil HTTP browser him so I could enable HTTPS and disable HTTP for those of you that want to take the HTTP vulnerability away then you can sort of disable out and only use HTTP browse in and then you can actually import your own certificate that matches at your IT program profile portfolio as a bribe or simply use a default one that you can create yourself then you've got some other functions their agency ones and you've got the alarm hopes this is more for a third-party integration and what I would say is this virtual hubs here becomes a nice little function it actually gives you a hyperlink and the camera management it gives you a hyperlink that allows you to access any of the cameras are connected to the lamp or so you don't have to go open up a separate web browser but those that are connected to a purely port or if it's using a mbrp OE port the hyperlink will allow you to go straight to that camera if you're on an external network a nice little trick if your external but need access to the camera directly to alter satins etc port Ford port six five zero zero one two six five zero one six pour forward those two the IP address of the NVR and then the external IP address of the site of the router which may change it might be dynamic but you can get that through a the name resolution like ping you use even using the high connect address type in the external address semicolon six five zero zero one and that will take you to the web browser of camera one six five zero two camera two etc really nice little trick for a remote support outside of the system that will allow you to adjust cameras especially for cameras like a MPR thermal image and attach away you really want to get into the camera to get to those Saiyans so a nice little tip through there okay again so moving forward the Advanced Settings you've got the integration proper Corso ONVIF and I sappy I sappy as our like prior code that we used to talk to third-party systems you can develop I sappy software you can use ice happy Cogan to develop your own software and bring our product in and that's where you enable/disable and then Smooth Streaming is the way we on NOAA bandwidths handle the video to the end device like hike connect video an audio again slightly typical applicable cameras at the bitrate resolution etc that's appropriate to that camera technology and the frame rate required plus the bitrate and if you can use h.264 h.265 you can only use h.265 and HTS x5 plus if the end product supports it RN VI will support it as long as the end product IP camera will support it and then again it's as simple as setting the camera adjust in their signs are appropriate to you and again with mainstream sub stream and mainstream event you can adjust those individually so the sub stream value which is the lower quality stream the default one for the app and for lower bound websites then you can adjust that as applicable and then the mainstream event there you can set the frame rate change so you can have it record in at five frames a second on continuous and our motion it goes up to 25 frames a second so it gives you less bandwidth and more harddrive save in and then it goes up on an event and some people do that not I'm not a great fan of it but you can do that an entrance code is dream well I would say with the sub stream is a lot of problems we see sub screen values that are sapphire than five 112 so if you've got a camera that you can't see the sub stream on log into the IP camera directly go to the sub string value set it to 512 click Save then we put the camera you then see the sub stream on the NBR a lot of problems we see are based around the sub stream value being too high on the end product over five ones well technically it can be one or two 4 but 5 1 12 you won't have any problems ok so image happens again each camera you can select basic science so the display science basic display settings per camera OSD sat up so again time date where the information sits drag it across so you can actually move that over there for instance click Save and fill in some customized tacks it could be some customized instructions like call ABC security one two three four five six seven eight it could be an email address like you know if this person's seen call this number whatever that may be you drag and drop those into the images of propia and your privacy mask so again that's an ANPR comer citizen support but select the camera enable the privacy mask draw the areas as appropriate if you're using a PT said the privacy mark is Sattar enabled on the pts head itself directly for the web browser don't do it through here because wherever you set Barnett will stay as the PTZ moves the privacy mask will move with it so set the privacy mask on the PTC directly not through our web page of the MDR okay the event we pull whatever the event is supported on the end device so if I choose a camera it'll tell me what supported so motion video cam print video loss alarm in put an alarm out put the ones that are on the unit so you can set alarm inputs and outputs and they're actually built into the unit whatever reason using them for where there's PIR beams external detection of some kind you can actually enable set that up the only thing you can't do currently for the web browser is set the one key disarm in so if you want one key disarm in where input one becomes the one key disarm and so it to arms and disarms notifications and you need to do that on the local ku you ask one feature they haven't migrated across currently it's something that we are working on a nice little function on the alarms is to combined alarm so again you can actually have cause and effect in reality so you can select camera one motion on camera one you basically select what they have to do so you could have to thing so it could be intrusion and motion on camera free need to be triggered together click Save and then the linkage action would go so if you select and the two that need to apply in both need to trigger to give the combined linkage out per some people use it can be quite powerful especially if you've got a lot of false alarms and again it's up to you if you do use it a nice little feature that sort of been around for four or five and firmwares in any arm in schedule outputs you can test the alarm up of them here so if you want if you've got to connect it to a barrier or gate or whatever flashing light test manual alarm and that will trigger that output and makes it clear it to test that end device is working and the output is working smart event we pull directly from the supported product again this is the IDS TCM camera so let's choose one this one here so if I put select an IP camera the events are supported or pulled in up here wait for that to catch up so see seen change detection face attacked intrusion detection line passing all of the events are supported on the end device on the edge device will be the set within the web browser of the NVR and then you can set the arm is scheduled and linkage method that's appropriate to each of these actions so whatever is VCA y'see you want to use set that up set the parameters and set the linkage methods at the appropriate to that site or application and the storage some nice little things in here so we label the storage all my cameras I set to continual record I've got enough storage enough bandwidth enough data that I can set everything to continual core that way I never miss anything but again it's up to you you could have yours on motion alarm whatever that may be and make sure of different ones so I set all mine to motion but you can have diff like constant record you in open I was an emotion outside of open hours so you can mix and match and then if you want to record audio on a specific camera on an end via the audio has to be the microphone is included inside the camera or a microphone is connected to an audio input of a camera not connected to the back of the NVR it's not like a DVR so you simply click select record audio and if you want motion recording the pre and post times are there and this keep video pictures for is like a GDP our compliance thing so we could set that for 30 days and click Save so the footage for this camera and you can do this to all cameras would only be saved for a maximum of 30 days or until the hard drive is the capacity of the hard drive so the hard drive capacity could be 60 but we only actually saving him footage for 30 days or it could be the we set off for 30 but the hard drive can only do 7 so it's you know whichever is reached first hard drive capacity or the actual limit you put in air if you put 0 in there that means indefinite until the hard drive can't do any more and it'll just go back in a loop again ok so storage management I got two drives fit here one thing that's quite important on our latest 4.22 firmwares if you upgrade especially if you're upgrading from older versions of firmware it's quite important to do this you'll have issues we have playback and even units where the hard drives drop out and potentially even the unit reboots so if you do wanna do an upgrade of 4.22 from an older version select the hard drives and just click rebuild all it'll give you a warning message but click OK it could depend on on the size of the drives and how long how many you've got in there that could take 24 hours it could take longer it could take 37 hours but it basically rebuilds the database it's still records you're just not able to access the record in during this rebuild process but it rebuilds the database so once it's rebuilt it's actually more stable it's quicker and the metadata is easier to access for us so it orientates it in a way that does actually perform better but I would suggest that you do that rebuild database once you've upgraded from an older version version especially networked hard drive is where you add in your networks if you using NARS or hips and devices server address file path and I new choose it's our NARS and you can have up to eight locations and then the storage capacity used to be kept the two terabyte per drive location but it's limitations off now so you can actually add an up to eight locations to increase your unit storage capability if you don't have the hard drive space with the hard drive capacities going up all the time you know when I was a boy in 10 terabytes so effectively this unit could store 80 terabytes now that's a lot of storage in anyone's books but again you can actually give different okay you can add more storage locations using that hard drug detection see detection tools based within the Met web menu so you think you've got a faulty harddrive I'm not gonna run a test because it locks the unit out and while it's doing it but you've got smart settings you've got all the parameters there and you can do bad sector detection so you can actually test this remotely to see if you have a hard drive issue before going to site and then maybe taking a hard drive with you to replace cloud storage again if you use in one of our CVS storage units cloud storage unit enabler and put the details in there that's normally used for off-site storage and generally used in conjunction with like central external storage management again you have to enable arm for passwords in there that goes in home with the cloud storage and then we just mentioned backup settings we have a eSATA port on the back of some of our recorders the 9:6 family which we're looking at now has an eSATA port you're able to plug an eSATA device in there click auto backup select the backup time what channels what stream and then enable or disable when the hard drive is full so basically fill those parameters out and if you've got a nice after device it's got a lot of storage in there that will also dump the footage between that time to that device so effectively you have it in two devices on the NBR and then on a secure device which is connected to it which you can remove and then you know place in secure storage again if you want to do a mass a lot of like say for instance you need to download eight hours of footage across 32 cameras for evidential purposes there's been a serious crime I would plug a nice on a device in an Aegis where USB you think of many USBs and lots and lots of time plugger ISA a device in there select the backup time fill the details out and just click Save and it'll do it you know automatically for those parameters you set which will then free up your time and it'll all be downloaded to one's device and then advanced and you've got the holiday settings and enable hard drive sleeping and enable overwrite these are default if you uncheck enable overwrite when the hard drive is falling we'll stop recording and therefore you won't have anything more on there and that does cause us some problems with people who own ticket because they don't understand the implication of it enable hard drive sleep in saves the hard drive longevity exam is not in use it goes to sleep it goes into a dormant state so it saves power and hard drive longevity so I would definitely leave those enabled okay like I said earlier if you have any smart cameras detect connected to it I have an ANPR camera connected to it we have a IES TCM which is one of the smart traffic solution cameras so if I had a standard Sava line for line product I could set the detection lines white and black this can be done through the iSeries NVR so you actually select the list draw the boxes the army schedules etc and then the linkage method could be white mist trigger a barrier black they send an email so that's all done from there because this is an IDF TCM we take the live view playback and the data that outputs but we can't set the parameters on an IDs TCM currently when I series because it is such a high-end and specialized product what it will do is let you go into picture and again any of our EMP our camera products connected to our I series the KTV supports this as well as turbo and but we do recommend I Series for Best Performance by news in am PR I can simply select you can see there these are the IOT once I was on the bus if you've got IMT devices you can actually search specifically for these if I go into vehicle detection and select all can narrow down to a country if you want and any to the ones from today if I select search for a specific plate type mine in n6 8xd click search and you'll see here that this is my vehicle captured through one of the cameras on our engines there and again it nice and easy I can export that download it and do whatever I needed without fur so you can do all of that functionality through the web page and you know if you need to and especially for testing or check-in the system still working it provides a very handy interface so back into configuration now the VCA the VCA actually submenu will only be dictated to by what camera technology but connected generally we use this on the high end I guess so it IDs PTZ I guess camera and the thermal product so if you've got a thermal product connected to it you'd simply select that firm or product like here and you can actually set the rules etc a lot of the setup for the thermal we still have to do on the actual web interface of the thermal but you are able to adjust and calibrate and add additional rules in through the VCA menu so you select the appropriate camera that has that technology built in and you can see there I can actually draw intrusion line crosses set the thresholds linkage actions arm in schedules shield regions all of that can be set through the web page of our MBR so you can manage this remotely until quite recently you have to do this on the camera and on the local GUI the MBR this is now migrated into the web browser so it gives an added layer of support especially in this given day in situation as Congo and currently you can actually do this remotely so really powerful but the camera will dictate to you what you are able to do so again if you choose a camera that doesn't have that technology VCA technology the higher-end vc technology engines it just won't allow you to do anything face capture you need an a prick of all camera connected so if you use in face capture and face recognition we have a separate system face recognition system and camera that optimizes the performance of that face capture really is for you know facial detection not facial recognition but again facial recognition we got dedicated system set up for this but again you can do basic face detection using our eye series and cameras at a position in a way that were allowed to capture faces so you just sat the appropiate up for that so again choose a camera enable it and they'll allow you to do some basic face detection capture multi target type detection again you need a specific camera for that we're not gonna go through that today it's a very very specific camera for that functionality same with human body camera we do a specific camera normally a wide-angle lens with a PT's head underneath it looks like Robocop's head and that's one of the product family that does this human body capture but we also do it in some other we can actually enable it so if I choose this camera so yeah you need that specific camera IOT channels now a lot of people don't really use this but it's quite a powerful little function so I've already added and they video in to come into this so the devices that you add in have to be on the same land as one of the two lands you use him you can simply add choose the hikvision device IP address of video into karma access control unit so when there is a face rack terminal AC you like the two for channel IC use the video intercom call stations whatever indoor stations they can all be added as an access control device and that will allow you to run certain events based on that linkage so basically click on configuration once you've added it and it will allow you to choose the event type so these event types and when one of these events happens during this time the linkage method is this so it allows you to start integrating our products that's into an end we are to give it a more powerfully connected overall solution again we don't just do it with access control device we do it with our own alarm devices which we don't sell in the UK those of you other watching outside of the UK I know they ax happen some of these other devices are available and they can be added in in the same manner the IOT or the IOT event if I want to add so if I wanted to add like a optics is supported gjd and luminite if I wanted to add any of their products for IP Marv said our optics unit like a sip detector directly then all you have to do is input the IP address put the port number in there and the username and password which we can give you details on that and it will connect to that device and then any of the activations will come in and allow you to linkage method them the same if it was a physically connected device to another arm in but if you've got a 16 cam like a 16 channel NVR you can only add 8 channels of IMT so it's hot that ions each other there's half of what the total channel count is and just as a reference um and again you can choose up that she did illuminate there so pretty straightforward really powerful a lot people don't use it or don't know about it but that's where that comes into its own other than that um I'm trying to think if there's anything I've missed off and the local you can set the rules for the POS OSD etc one thing I will show you and if you use in a thermal camera with temperature detection you can enable these options here to give you that information ingrained in the video image one thing I will show you with the latest ims 4200 and firmware if you go into basic i'll show you know if you open up my MS 4200 which is here [Music] what the remote config used to be the old sdk interface and now it goes to a web browser style interface so some of the functions aren't available if you use remote config there is a little workaround so just wait for this to catch up wait from the command line they're slowly coming online so basically under the remote config it'll give me an option for basic which is a web browser which we just saw be looking at or advanced and it goes into the older sdk interface now some of the settings that are specific to the machine are only available within the older sdk interface so login security you've got storage so you can actually set the array up so if you're using raid you can enable and set that up and you know do any diagnostics within the older sdk advanced interface not on the standard web the vase you've got some of the events for fire source detection so if you're using a thermal camera with fire enabled by dynamic fire enabled you can set that the rules up in here and the event linkages you can for corridor mode on the camera that you can't do through the local web browser you can set up the counting rules and run the statistics and then export that heat map again through here you can do the heat map so you choose the cameras click search and export that POS if you use in POS point-of-sale you have to set it up through this older SDK interface so you simply select channel filter rule select the camera so I had it on camera two previously the pause test and it's as simple as enable positive text overlay filling in the details here that are applicable to the weather they are asked to go on this screen you've got your filter rules in any connection mode so the connection mode is how we put the pause data into the machine I've done a separate video on this you just twenty minutes long just go watch our and that will explain POS and our solution to you but that's where you can get some added information if you need it from the advanced SDK interface hopefully that's answered all of the questions that you had if you've got any questions again webinar DVF cougar UK I'll just have a quick look to see there are some questions so the first one is can you provide the PDF containing specifications of different channel iSeries and we are yes I can do that if anyone wants any additional information process please email webinar artemius topcoat our UK where we are sending any support and information out what is RTSP protocol and how to construct i've already explained that briefly again I have a document I can send out I want the RTSP document fine email webinar are DVS code on UK if that's okay Steven hello Steven I spoke to you by email this morning so big welcome how do you setup using the dual ports on the back of the NVR one of the customers IP range and how do you set the route is easier to update for example I think I've already gone through that I was sort of over 40 minutes ago so running through that any questions again please drop me an email you've got my direct email and again hello can you send me the RTS people go yeah Darwin hi Darwin good to see you again webinar DVS coder okay and I will send that across to you hopefully that has answered all of the questions you've had you've got a better understanding of our AI series NVR or just our range as an overview because a lot of these functions will be applicable and migrate across the whole range big thank you to wherever you are stay safe stay tuned stay subscribe more content to be delivered over the next coming weeks and again just another question the smooshy may make any difference when reviewing footage remotely yes it does um if you enable the smooth streaming and you've got bad bandwidth like between you and me remote application whether it's enabling smooth streaming which is enabled by default will help combat that streaming yeah so if we're hot it will help combat that and it does work quite well actually again I'm gonna do a sapper a five minute video on the use of smooth streaming outside of this but it does work very well right that's me done I got a jump after I got another meeting to get into thanks very much for watching stay safe stay tuned wherever you are in the world stay safe keep watching and we'll see you for another webinar by racing cheers guys
+
+
+[00:07] two seconds this is always the the
+[00:10] longest part waiting for this to go and
+[00:14] we're live on YouTube so welcome to
+[00:16] those of you in the joint wherever you
+[00:18] are in the world I hope you can hear me
+[00:20] okay and we're also on YouTube live so
+[00:22] if you're joined by a zoom or by a
+[00:24] YouTube a big welcome wherever you are I
+[00:27] hope you're all safe staying out of
+[00:29] harm's way and today we hope you learn
+[00:31] something is more importantly today
+[00:33] we're gonna take a look at the iSeries
+[00:35] and VR why we'd use it in some of the
+[00:37] features in it and any questions I'm on
+[00:41] my own today I don't have my trusty
+[00:43] sidekick Reese of me so if you've got
+[00:45] any questions I will answer them at the
+[00:47] end there's a Q&A box type in the
+[00:49] questions at the end I'll go and review
+[00:51] them if you want to know anything
+[00:52] suggest content anything I have an
+[00:54] answer then you want to discuss further
+[00:55] webinar at t vs co uk and we'll be happy
+[00:59] to help you
+[01:00] where possible in there ok so moving
+[01:04] forward I series and we are what is it
+[01:07] so the iSeries NVR is a hikvision and we
+[01:09] are available in different channel sizes
+[01:13] so we do an 8 channel a 16 32 a 64
+[01:18] channel and then we also do the super
+[01:20] eye series Envy ours which are 64 1 to 8
+[01:23] and 2 5 6 channel so depending on what
+[01:26] you're trying to achieve on your site
+[01:28] the application will dictate to you the
+[01:30] channel count so the channels work like
+[01:33] this if you have a 8 channel recorder so
+[01:36] it's up to 8 channels or the inbound
+[01:39] band which band width which ever is
+[01:42] reached first so if you had cameras that
+[01:45] exceeded the inbound bandwidth and then
+[01:48] any only had seven of them you'd only be
+[01:50] able to add 7 cameras now if you had 8
+[01:53] cameras and they came within the inbound
+[01:55] bandwidth you could add all 8 it's just
+[01:57] a logical thing whichever is hit first
+[01:59] wherever it's the channel count or the
+[02:02] inbound bandwidth sometimes you may only
+[02:04] have 31 cameras but you may need to go
+[02:07] for a 64 channel because they're all 12
+[02:09] megapixel full-frame 8 h.264 so you
+[02:12] don't have
+[02:13] BAM with capabilities to use the
+[02:15] standard machine so just a little thing
+[02:17] whichever comes first
+[02:19] again any questions you can let us know
+[02:21] all the data sheets for the products
+[02:23] will contain the channel maximum channel
+[02:25] capability for also the inbound
+[02:27] bandwidth also the remote connection
+[02:30] capability so the remote connection
+[02:32] capability is how many cameras
+[02:33] connections can be taken from each unit
+[02:36] most of our units support one to eight
+[02:38] some of them support two five six
+[02:40] depending on if it's the medium to lower
+[02:43] end or the super eye series a channel
+[02:46] connection is you could have 256
+[02:48] channels being streamed to either one
+[02:50] occupant or multiple people that are
+[02:53] logged in again your scenario would take
+[02:56] to you which machine is required we do
+[02:59] them in different form factors so they
+[03:01] are available in a 7 6 a slimline
+[03:04] version so the 8 channel we're built in
+[03:06] PUA is a 7 6 d sr 7 608 and i - i -
+[03:11] really powerful machine that's the one
+[03:13] that we tend to push for a MPI use the
+[03:16] iSeries
+[03:17] surely so we do it from an 8 channel p
+[03:20] OE all the way up to the 256 for land
+[03:23] for SFP versions and they have some of
+[03:27] them have raid hot-swap capabilities if
+[03:30] you want to use that function so if you
+[03:33] want raid so those of you that sort of
+[03:36] use raid regularly or prefer raid
+[03:39] because it gives you some redundancy
+[03:41] then you can actually enable raid on a 9
+[03:44] 6 series so the 9 6 is the 32 64 128 6
+[03:48] channels and you can have the raid 0 1 5
+[03:52] 6 and 10 so that gives you the
+[03:54] redundancy in there could be careful if
+[03:56] you do enable rage sometimes it does
+[03:58] reduce the outbound or the inbound
+[04:01] capacity for their channels so some of
+[04:03] them go from 320 Meg to 200 Meg's
+[04:06] so if you want to know just give us a
+[04:08] show so in front of me I've got the
+[04:11] standard and the most popular.i series
+[04:13] it's the DS - 9 6 3 - and I - I ate so
+[04:17] we've web browsers in to open it using
+[04:19] internet explorer so we'll just quickly
+[04:21] log in
+[04:25] if I can remember my password I'll try
+[04:28] and keep this webinar around 30 to 45
+[04:31] minutes and once you sort of get the
+[04:33] gist of it general web browser feel so
+[04:36] any of our web browsers on our products
+[04:37] whether it's a four channel DVR up to a
+[04:40] 256 channel envy are the web browser
+[04:42] functionality is very familiar so once
+[04:45] you can program one you can pretty much
+[04:46] program any of them
+[04:47] it'll just dictate which functions and
+[04:49] features are available and how you add
+[04:51] and use them so it's very beneficial to
+[04:55] keep them all on same for the support
+[04:57] and installation purposes so web
+[05:00] browsers into the recorder so I've set
+[05:01] the IP address and already added cameras
+[05:03] using sadp tool so I activated it giving
+[05:06] an IP address and already sit this
+[05:08] online what you'll see here is the live
+[05:10] view page now when I'm running a zoom
+[05:13] webinar and using Internet Explorer if
+[05:15] you don't know it's very very slow when
+[05:17] you do try to do both on a Windows
+[05:19] machine but if I show you the gist of it
+[05:21] so we've got an ANPR camera added so
+[05:24] we'll show you the MPR functionality
+[05:25] shortly so as an ANPR camera on our road
+[05:28] we've also got a pause camera but no
+[05:31] pause till that's been put away but I've
+[05:33] run through the premise of sat and
+[05:34] paws-up on an I series so if you do on
+[05:36] POS pause then you use the I series or
+[05:39] the seven three eight UHI turbo machine
+[05:42] we've got a some 4k 12 megapixel fish
+[05:46] eyes so again if you want to use 12
+[05:48] megapixel fisheye so the fisheye is
+[05:50] available in six megapixels and 12
+[05:52] megapixel if you want a 12 megapixel
+[05:55] fisheye you need to use the iSeries
+[05:57] machine
+[05:58] the reason being the k-series is only
+[06:00] limited to 8 megapixel and some of you
+[06:03] that use the e-series still out there
+[06:05] they're limited to 5 6 megapixel so I
+[06:09] series will go all the way up to 12
+[06:10] megapixel and in fact there is an option
+[06:13] in the web to enable Ultra HD so the
+[06:15] Ultra HD will allow 132 megapixel panel
+[06:18] view camera then to be added and which
+[06:22] I'll show you in the web browser but it
+[06:24] does have some very strict restrictions
+[06:26] enabling that so I'll just go through
+[06:28] the functionality and welcome any
+[06:30] questions like I said we'll come back at
+[06:32] the end is really difficult to answer
+[06:34] questions and go through the webinar at
+[06:35] the same time so just bear with my
+[06:37] answer the question you or
+[06:40] okay so we're browser any of you live
+[06:43] you through on the left hand side you've
+[06:45] also got the ability to choose chance
+[06:46] code it transcoded sub stream and main
+[06:49] stream so if you don't want to view the
+[06:51] main stream you bought poor connection
+[06:53] so if you put the in a 16 way split they
+[06:56] automatically default to sub stream
+[06:58] anyway but you can actually manually
+[07:00] change between mainstream sub stream or
+[07:02] trance coded transcoded stream and if
+[07:06] that's what you prefer so you've got
+[07:07] that manual ability within the front
+[07:09] page you've got also let me just put the
+[07:12] PT head on here so this is outside in
+[07:14] our car park you'll see it's quite
+[07:16] deserted
+[07:17] you've got PT head control so if I just
+[07:19] move this out here right-hand side of
+[07:21] the screen you've got the ability to do
+[07:23] PT Zaid control now I'll take a little
+[07:25] bit of trying to catch up with my
+[07:26] movements because it's Internet Explorer
+[07:28] so those of you that do use IE you will
+[07:31] find there's a bit of a delay on P DS
+[07:33] air controls Live View etc so you've got
+[07:36] the full PTZ control here you've got
+[07:38] some additional menu options for the
+[07:41] camera if they support it so if the
+[07:43] camera has a wiper auxilary light
+[07:46] axillary focus 3d position in 3d zoom if
+[07:50] they camera start to an unmanned your
+[07:52] track in so again with the PTC start 3d
+[07:55] zoom and this is available not just on
+[07:57] the iSeries but some most of our range
+[07:59] to be honest click on that click on that
+[08:02] and that PT Zed will zoom into that area
+[08:04] once it catches up I've got electronic
+[08:07] zoom enabled on there pdz an electronic
+[08:10] image stabilization so it doesn't work
+[08:12] that's another old pan of view but you
+[08:14] can do all of these functions and you
+[08:16] can call and set presets and also set
+[08:18] patrols through the front end so any
+[08:20] PT's heads you can set the patrols and
+[08:22] star them edit them also presets on the
+[08:25] left hand side there you want you'll
+[08:27] notice is dependent on what PD Z is
+[08:29] connected if you scroll down it'll give
+[08:32] you feedback this is a pan abuse it
+[08:33] doesn't have much in there but some of
+[08:35] the presets will be predefined like
+[08:37] wiper patrol star Patrol star iOS open
+[08:39] iris closed reboot etc etc so they'll be
+[08:42] predetermined as a preset so they're
+[08:44] light and easy to call from the front
+[08:46] end now from the bottom controls on the
+[08:50] live view you have stream type change
+[08:51] air so may
+[08:52] subscreen transcoder screen your screen
+[08:54] split your two-way audio so again if the
+[08:57] camera has two-way audio capabilities or
+[09:01] the unit the DUI and yeah you can start
+[09:03] to weight audio directly to the recorder
+[09:06] you've also got stock
+[09:08] you've got capture image which are
+[09:10] captured to the local PC so through the
+[09:12] web browser to go to the local PC that
+[09:14] you're using the same as the video will
+[09:16] go to a local file destination on the PC
+[09:19] digital zoom cycle camera laughter right
+[09:22] and then you've got audio listen as well
+[09:24] so if you've got a camera with a
+[09:25] built-in microphone or a microphone
+[09:27] connected you're able to start and
+[09:29] preview audio there and then make it
+[09:31] fullscreen if you want okay
+[09:33] so I'll stop the live view in playback
+[09:37] itself similar you can only do 16 camera
+[09:41] playback and I would depend on the
+[09:43] resolution frame rate and encoding
+[09:45] algorithm of the camera there is
+[09:47] connected also your network and PC
+[09:49] performance
+[09:50] you're not gonna view back sixteen eight
+[09:51] megapixel cameras at full res on one
+[09:54] Windows PC so it's just gonna fall over
+[09:57] or stutter extremely so what you can do
+[10:00] then with this if I select the camera so
+[10:04] this pause test one you've got your
+[10:06] standard and web browser control so you
+[10:10] can search for your time and date here
+[10:12] and the blue flag will indicate where
+[10:14] footage is available to be viewed
+[10:16] standard DVD controls so stop-start
+[10:19] forward backward frame by frame you can
+[10:22] actually stop or play back capture an
+[10:24] image you can clip footage out so if you
+[10:26] press the start clip in it'll clip
+[10:29] one-minute footage into the local PC for
+[10:31] the web browser or you can do a manual
+[10:33] one and just click start and stop it
+[10:35] could be ten seconds did your zoom and
+[10:37] again audio and then download you click
+[10:39] download it will bring up a menu where
+[10:41] you're able to download segments of
+[10:43] footage some nice and easy as well as
+[10:46] choosing the string type one nice little
+[10:49] feature that a lot of people don't
+[10:50] realize is that it's now on the latest
+[10:52] firmware on our NPR's
+[10:54] if I choose a camera and play it back
+[10:56] for instance this one this in my demo
+[10:57] room I can actually now do the analytic
+[11:02] search on the web browser front end so I
+[11:04] don't have to use the IMS for you to
+[11:06] the local GUI I can do it through the
+[11:09] actual web browser so simply select
+[11:11] line cross MP you have intrusion
+[11:15] line cross and emotion boxes so if I
+[11:17] select line crossing and draw a line
+[11:19] here the footage will go away it scan
+[11:23] anything that's gone across this line
+[11:24] and along the bottom if I move the
+[11:26] timeline you'll see the indicate is
+[11:30] along the time line here where that
+[11:31] footage is available stop on there and
+[11:38] see if i zoom in on the timeline a
+[11:40] little bit you'll see these little
+[11:43] chunks of footage waiting for it to
+[11:46] catch up and ask me when I was in there
+[11:50] this morning so it's a nice easy way to
+[11:51] search footage fruit line crossing it
+[11:53] and choosing a motion detection and
+[11:55] directly from the GUI front end and then
+[11:57] you've got your standard DVD controls
+[11:59] here and you can do multi-screen
+[12:01] playback again as long as the PC is
+[12:03] powerful enough then Network and the
+[12:04] Machine and the resolution is OK you can
+[12:07] do synchronous and asynchronous playback
+[12:08] so either all cameras sync together or
+[12:10] asynchronous and where they're
+[12:12] independently playing back and you can
+[12:15] actually manually set the playback time
+[12:17] that the legend is on the bond what this
+[12:19] blue bar indicates what the timeline
+[12:21] indicates there ok so and if I wanted to
+[12:24] download October simply select the clip
+[12:25] and I'll download tool very very simple
+[12:28] to do ok so moving on to the
+[12:32] configuration of the unit itself so I
+[12:34] guess I'll give you some insights into
+[12:36] what we can do a lot of people don't
+[12:38] know these little tips so again 9 6 3 2
+[12:42] NII 8 so it's a 32 channel 9000 series
+[12:45] NVR i8 indicates it's an eight-day unit
+[12:49] so on the 9 6 series it's a hot swap
+[12:52] drive at the front and will actually
+[12:54] flip down and give you 8 Bay's which you
+[12:57] can actually hot swap so if a drive goes
+[12:59] down you can actually remove it place a
+[13:01] new one in there close the phone back up
+[13:02] and the machine will detect that after a
+[13:04] couple of minutes and then you go for my
+[13:06] etc it also gives you the ability to do
+[13:09] raid now our raid is done through
+[13:11] software so it's a software puffin trade
+[13:13] using drivers and that there isn't a
+[13:15] hardware raid card some of the older
+[13:17] models and they have
+[13:19] the dedicated raid card but the cost was
+[13:21] a lot higher so ours is like an Intel
+[13:23] software made where we do it via
+[13:26] software and a buffer and still really
+[13:28] powerful a lot of people use it but
+[13:30] there are some other options if you
+[13:31] don't like radius of the problem where
+[13:33] raid is it's great if you learn somebody
+[13:36] that the Raiders potentially going to
+[13:38] fail so you can intervene the issue of
+[13:40] raid is if two drives fail or whatever
+[13:43] the side may be and the whole raid
+[13:45] system goes down you have to rebuild the
+[13:47] whole raid which one means it's not the
+[13:48] cord and Wireless rebuilding and you've
+[13:50] lost all of the data because more than
+[13:52] the one drivers failed so does work but
+[13:56] it doesn't work in every scenario
+[13:57] sometimes just having it as a jaybird
+[14:00] sat up which is the default actually
+[14:02] works much bags if one drive fails it
+[14:04] sort of rejects it and just continues to
+[14:06] record on the other drives we also offer
+[14:08] Seagate hard drive and repair offer him
+[14:13] so you buy a hard drive you buy a
+[14:15] Seagate off repair Seagate rescue /
+[14:18] drive you basically inputs you and I'm
+[14:21] if the drive goes wrong you send the
+[14:23] gist of it you send the drive to Seagate
+[14:25] they can recover the data as a 95
+[14:27] percent chance they can recover they or
+[14:29] a failed drive they will send you a
+[14:32] replacement trying to put in the machine
+[14:33] while they were try and recover the data
+[14:35] from the supposedly broken one but they
+[14:38] also cover accidentally deleted viruses
+[14:40] dropped etc and so it's worth looking
+[14:43] into the Seagate we ask you we do sol
+[14:45] last so if anyone wants to know any more
+[14:47] details let us know really really
+[14:48] powerful and very cost effective for the
+[14:51] peace of mind that that you'd get from
+[14:53] the data being able to be recovered I
+[14:55] think it's probably more likely to be a
+[15:00] better success rate than using raid in
+[15:02] my opinion but again everyone's got a
+[15:05] different opinion on raid so currently
+[15:07] it's not set up as raid this model
+[15:09] because there are some connotations in
+[15:11] it but this is as of today the latest
+[15:15] firmware for the NVR for those of you
+[15:18] that want to know you can actually just
+[15:20] go to
+[15:24] which in Portal so we have a European so
+[15:30] under our fake vision portal we have a
+[15:32] Europe one we also have a UK one where
+[15:35] there's more specific firmware and
+[15:37] softwares
+[15:38] they're applicable to the UK market so
+[15:40] anyone who needs the firmware just
+[15:42] navigate to that portal and you'll find
+[15:44] it cameras DVRs everything is in there
+[15:47] software's tools just go in there and
+[15:50] you'll find everything you want so
+[15:51] currently that is the latest version so
+[15:54] again moving through the actual menu
+[15:57] choices now this has been around for
+[15:59] quite some time but we've now
+[16:01] implemented it in implemented the use of
+[16:05] the live view settings in the web page
+[16:06] so I can effectively alter what the
+[16:09] customer sees on his local monitor so
+[16:12] it's as simple as this select the output
+[16:13] that you're trying to change so where
+[16:15] there's HDMI 1 v j/1 or HDMI to VJ 2
+[16:18] select the screen split that you want
+[16:20] the customer to see the switch interval
+[16:23] is if it's on it's a while so if you
+[16:24] want the cameras to go through 12
+[16:25] sequence and then how long after our
+[16:27] would be so you could put it to 5
+[16:29] seconds or 300 and enable sound preview
+[16:34] is I turn that off actually um it's the
+[16:37] audio if it's got audio on a camera
+[16:38] they'll play the audio if this if the
+[16:40] camera is on full screen but you can
+[16:44] actually drag and drop cameras into this
+[16:46] Sattar click Save and that will be
+[16:48] presented to the customer so if a
+[16:49] customer calls in and says I really want
+[16:51] to alter what I see on my monitor
+[16:53] because they're not relevant anymore I
+[16:55] just want to see something different you
+[16:56] can actually do this remotely we can't
+[16:58] do it for IMS for you to under currently
+[17:00] is for the web browser but it's been a
+[17:01] massively powerful tool for us and it's
+[17:04] really helped our customers help their
+[17:06] customers so on the latest firmware on
+[17:09] the iSeries you are able to alter that
+[17:11] remotely ok so if that's not a reason to
+[17:13] a bigger recorder what is and the
+[17:16] maintenance and that's where you do your
+[17:18] firmware backups importing configs etc
+[17:22] what I would say is if you are gonna
+[17:23] update your recorder and this is
+[17:25] applicable across a whole range not just
+[17:27] for a DBA or NVR I would always export
+[17:31] the device parameters and IEP camera
+[17:33] parameters and ilt so if you use in IOT
+[17:36] so whether it's a high
+[17:37] intercom alarm device gjd architects
+[17:41] luminite their classes IOT devices and
+[17:45] back those up as well so it is as simple
+[17:47] as click export give it a password make
+[17:53] sure you get it right and export that to
+[17:55] a location on the desktop just put it in
+[18:06] [Music]
+[18:08] and the same with the IP cameras ok so
+[18:19] now you've exported that yep
+[18:25] now you've exported that keep that safe
+[18:27] and in case and also notes down the
+[18:30] current firmware version and build that
+[18:32] you're on in case it fails you need to
+[18:35] go back a version back down to the
+[18:37] original version always keep a note
+[18:38] without you in a critical update
+[18:40] especially if you're going for a lot of
+[18:41] versions you're just going from one
+[18:42] version to another standard fine you're
+[18:44] going from an old version and skip in
+[18:46] several versions always do this backup
+[18:48] it's good practice and you can keep that
+[18:50] NVR Ebony's default in or actually
+[18:52] breaks you can actually import that into
+[18:54] a new machine and save yourself a lot of
+[18:57] time on a service maintenance call ok so
+[19:01] again if you want to import those back
+[19:03] so say flatten the machine I can simply
+[19:05] import those straight back firmware
+[19:07] select the firmware dizzykappa file
+[19:10] click upgrade and it'll go through the
+[19:12] process and update if it fails it will
+[19:14] tell you why it fails generally online
+[19:16] update and I uncheck that I don't want
+[19:20] mine to do that itself I want to always
+[19:23] choose my update but you can click
+[19:25] automatically download download the
+[19:27] latest installation package if it's on
+[19:29] like connect these adverse up and it
+[19:31] does sometimes notify you the new
+[19:33] firmware is available for this machine
+[19:34] and allow you to update it mainly I've
+[19:37] seen it's on turbo products rather than
+[19:39] the high-end env ours because there's
+[19:41] generally a lot programmed in these with
+[19:44] the 9000 so I'd probably turn that off
+[19:47] if I was you and we've got the log and
+[19:50] diagnose oh the die
+[19:51] Gnostic tool is for debugging so we'll
+[19:53] tell you how to use at an appropriate
+[19:55] time if we need to get some additional
+[19:57] information over a units behavior
+[20:00] security so your standard web browser
+[20:03] functionality this is coming across the
+[20:05] range now so you can access restrictions
+[20:07] range so you can actually restrict IP
+[20:09] address and MAC addresses you can do
+[20:11] security service so stream encryption
+[20:13] enabled picture URL digestive offender
+[20:16] vacation the default IP camera password
+[20:19] so if I add an IP camera if I activate
+[20:21] and I become a nanny that's what the
+[20:23] default password would be and but I can
+[20:25] change or add my own that's up to me and
+[20:27] I can use the password fight IP cameras
+[20:30] added via the default probe of course I
+[20:31] can turn it on and off trusted root
+[20:33] certificate and then double verification
+[20:35] now the double verification is quite a
+[20:37] good little tool and a lot of people use
+[20:41] this in Europe but I can enable that add
+[20:43] a user into a user I sat up in the NBI
+[20:48] user management so I set up a new user
+[20:49] in here and basically what that allows
+[20:52] me to do then is add this user into the
+[20:55] double verification user and then that
+[20:57] user will have to ask for elevated
+[21:00] permissions for download and playback
+[21:02] and you can actually modify it
+[21:04] narrow down to certain cameras even so
+[21:06] it gives another layer of protection
+[21:08] where a customer may be out to live view
+[21:11] cameras but they need a second higher
+[21:13] level of magnification to download and
+[21:15] playback really really likes little
+[21:19] additional add-on camera management so
+[21:22] again we can add any camera that we want
+[21:24] through the NBR interface don't forget
+[21:26] on the 9000 series has no PE port so
+[21:29] it's all added via one of the two lands
+[21:30] generally most people will configure
+[21:32] these at Yule and still have one Landers
+[21:34] connected into the client network and
+[21:37] for the monitoring software control and
+[21:40] they'll have one side of the undead
+[21:42] occator to the CCTV cameras which they
+[21:44] can make up an IP address that suits
+[21:45] them so on this one I'm using one LAN
+[21:48] and they're both enabled so the client
+[21:51] network which is my network it's also
+[21:53] the network I bring my cameras through
+[21:55] it works absolutely fine
+[21:56] I sent Buzz click Add fill in the
+[21:59] details and you've also got a lot of
+[22:01] choices there or you can customize your
+[22:03] own stream if you know what the RTSP
+[22:04] the stream profile would look like you
+[22:06] cannot die in yourself again if you need
+[22:09] help just ask click quick add click on
+[22:12] the quick add that are scan your network
+[22:13] and find any cameras that it hasn't
+[22:15] added to this unit so you can select
+[22:17] them from there and simply add them
+[22:18] directly just like being in front of the
+[22:20] unit and the custom protocol is the one
+[22:23] with the RTSP if I wanted to construct
+[22:25] my own stream now you'd probably need to
+[22:28] know the RTI speak instruction from that
+[22:30] camera manufacture and but it is quite
+[22:32] easy to get on the www nowadays and you
+[22:35] can also activate your camera so the
+[22:40] RTSP is real-time streaming protocol and
+[22:42] I have a document which I can send so if
+[22:45] anybody wants the document on what an
+[22:47] RTSP RTSP stream looks like and how you
+[22:50] would construct it I have one for
+[22:52] hikvision camera which I made of the
+[22:54] sense if you want to use light vision
+[22:55] products with fear parties I can send
+[22:57] that if it's a different camera
+[22:59] manufacturer you need to refer to their
+[23:00] documentation the stream will be very
+[23:02] similar but not for the same everybody
+[23:05] uses a different prefix a different way
+[23:07] of constructing the stream but the basic
+[23:08] gist of it is the same it draw it pulls
+[23:10] in raw video from the product into our
+[23:13] product and it gives you in essence live
+[23:15] view and playback but January doesn't
+[23:17] give you any of the advanced
+[23:18] functionality if that camera had it ok
+[23:20] so it is very basic integration but it
+[23:23] does give a deeper a broad spectrum of
+[23:27] integration with Thea type products that
+[23:28] don't have on there for a Thai Rak
+[23:30] driver ok user management so I can add
+[23:33] many users into this web interfaces like
+[23:36] there is a limit I think it's 32
+[23:38] currently but you can add you know and
+[23:40] give each one can have their own
+[23:41] different permissions they're saying
+[23:43] with live view permissions if I add a
+[23:45] user and click live view permissions I
+[23:46] can remove the camera from their
+[23:48] permission so on the live view screen if
+[23:50] I have a monitor that's connected and to
+[23:52] the to the NBR DVR then that camera
+[23:56] wouldn't be shown so in essence it also
+[23:57] becomes like a covert camera so it's
+[24:00] quite a nice little addition and then
+[24:02] online users will tell me what devices
+[24:04] are connected currently to this machine
+[24:06] as you can see I bought quite a few
+[24:07] different softwares currently connected
+[24:10] to this to be pulled off for various
+[24:12] reasons our sales guys etc network so
+[24:16] with the 9000 series tool and
+[24:18] you can set it as multi address or net
+[24:22] fault tolerance if you put it as net
+[24:24] fault tolerance connect both lands into
+[24:26] the same network if one fails the other
+[24:29] one will continue to work so give some
+[24:31] redundancy or you can set this multi
+[24:33] address and have LAN one and LAN two is
+[24:35] different IP address ranges so that's
+[24:38] what my current IP address ranges but us
+[24:39] again sat as applicable to yourself D
+[24:43] DNS so we support dyndns pinna holland
+[24:47] no IP we don't support our own of the D
+[24:49] D and s anymore we've moved over to hide
+[24:51] connect now so if you were on and the
+[24:53] old hike TD and ass and you upgrade to
+[24:56] the latest GUI for firmware and iSeries
+[24:58] or any of our recorders you will lose
+[25:00] that and you meet a microwave across the
+[25:01] height connect pppoe never seen anybody
+[25:06] use that in my lifetime of seven years
+[25:08] of work of a hikvision but we do provide
+[25:10] that functionality same so the poor is
+[25:13] where you set your your default ports of
+[25:15] our default ports at eighty eight
+[25:17] thousand and five five four you can set
+[25:19] those applicable to the applications you
+[25:21] what I would say is if this is going on
+[25:22] an external connection for people to
+[25:24] access whether it's an art customers
+[25:26] staff whatever that may be then I'd
+[25:28] probably change it to non default ports
+[25:30] just to add another layer in and put it
+[25:32] behind the firewall like most people
+[25:34] would sensibly do but you've sac your
+[25:36] applicable ports here and which I
+[25:38] already have done and then you're not is
+[25:41] your UTP UPnP you can set it to manual
+[25:43] Auto under the Advanced Settings we do
+[25:47] support the SNMP for those IT
+[25:49] professionals out there that want to use
+[25:51] this as an interrogation reporting tool
+[25:53] we support the SNMP and we support it
+[25:56] version one and two email so I've got my
+[25:59] email stuff in there this is currently
+[26:01] sending alarms to Calypso the false
+[26:03] alarm reduction platform so we doing
+[26:05] some deep integration testing with that
+[26:07] it's a product is available from us and
+[26:09] if you want to know any more about that
+[26:10] please speak to us outside of this
+[26:11] platform accesses your hide connect so
+[26:14] you've got the ice up version or the
+[26:16] hike connect that so most people are
+[26:18] very familiar with i connect enable air
+[26:21] type in the serial code or scan the QR
+[26:22] code from added straightaway no port
+[26:25] forwarding required although I do
+[26:26] generally do port forwarding adds a
+[26:28] little bit of speed and stability into
+[26:30] but it's not necessary and then you've
+[26:32] got other things like network service so
+[26:35] if you want to use HTTP I've enabled
+[26:37] HTTPS so I can actually use HTTPS and
+[26:41] then they evil HTTP browser him so I
+[26:43] could enable HTTPS and disable HTTP for
+[26:47] those of you that want to take the HTTP
+[26:49] vulnerability away then you can sort of
+[26:52] disable out and only use HTTP browse in
+[26:54] and then you can actually import your
+[26:56] own certificate that matches at your IT
+[26:58] program profile portfolio as a bribe or
+[27:01] simply use a default one that you can
+[27:03] create yourself then you've got some
+[27:06] other functions their agency ones and
+[27:09] you've got the alarm hopes this is more
+[27:11] for a third-party integration and what I
+[27:13] would say is this virtual hubs here
+[27:15] becomes a nice little function it
+[27:17] actually gives you a hyperlink and the
+[27:19] camera management it gives you a
+[27:21] hyperlink that allows you to access any
+[27:23] of the cameras are connected to the lamp
+[27:25] or so you don't have to go open up a
+[27:27] separate web browser but those that are
+[27:30] connected to a purely port or if it's
+[27:31] using a mbrp OE port the hyperlink will
+[27:34] allow you to go straight to that camera
+[27:36] if you're on an external network a nice
+[27:38] little trick if your external but need
+[27:40] access to the camera directly to alter
+[27:42] satins etc port Ford
+[27:44] port six five zero zero one two six five
+[27:47] zero one six pour forward those two the
+[27:50] IP address of the NVR and then the
+[27:52] external IP address of the site of the
+[27:54] router which may change it might be
+[27:56] dynamic but you can get that through a
+[27:57] the name resolution like ping you use
+[28:00] even using the high connect address type
+[28:03] in the external address semicolon six
+[28:05] five zero zero one and that will take
+[28:07] you to the web browser of camera one six
+[28:09] five zero two camera two etc really nice
+[28:11] little trick for a remote support
+[28:13] outside of the system that will allow
+[28:15] you to adjust cameras especially for
+[28:16] cameras like a MPR thermal image and
+[28:19] attach away you really want to get into
+[28:20] the camera to get to those Saiyans so a
+[28:22] nice little tip through there okay again
+[28:26] so moving forward the Advanced Settings
+[28:27] you've got the integration proper Corso
+[28:30] ONVIF and I sappy I sappy as our like
+[28:32] prior code that we used to talk to
+[28:34] third-party systems you can develop I
+[28:36] sappy
+[28:37] software you can use ice happy Cogan to
+[28:40] develop your own software and bring our
+[28:41] product in and that's where you
+[28:43] enable/disable and then Smooth Streaming
+[28:45] is the way we on NOAA bandwidths handle
+[28:48] the video to the end device like hike
+[28:51] connect video an audio again slightly
+[28:55] typical applicable cameras at the
+[28:57] bitrate resolution etc that's
+[28:59] appropriate to that camera technology
+[29:01] and the frame rate required plus the
+[29:03] bitrate and if you can use h.264 h.265
+[29:06] you can only use h.265 and HTS x5 plus
+[29:08] if the end product supports it
+[29:10] RN VI will support it as long as the end
+[29:12] product IP camera will support it and
+[29:15] then again it's as simple as setting the
+[29:17] camera adjust in their signs are
+[29:19] appropriate to you and again with
+[29:20] mainstream sub stream and mainstream
+[29:22] event you can adjust those individually
+[29:24] so the sub stream value which is the
+[29:26] lower quality stream the default one for
+[29:28] the app and for lower bound websites
+[29:30] then you can adjust that as applicable
+[29:31] and then the mainstream event there you
+[29:35] can set the frame rate change so you can
+[29:37] have it record in at five frames a
+[29:40] second on continuous and our motion it
+[29:42] goes up to 25 frames a second so it
+[29:44] gives you less bandwidth and more
+[29:46] harddrive save in and then it goes up on
+[29:48] an event and some people do that not I'm
+[29:51] not a great fan of it but you can do
+[29:53] that an entrance code is dream well I
+[29:56] would say with the sub stream is a lot
+[29:59] of problems we see sub screen values
+[30:01] that are sapphire than five 112 so if
+[30:03] you've got a camera that you can't see
+[30:05] the sub stream on log into the IP camera
+[30:07] directly go to the sub string value set
+[30:09] it to 512 click Save then we put the
+[30:11] camera you then see the sub stream on
+[30:13] the NBR a lot of problems we see are
+[30:15] based around the sub stream value being
+[30:18] too high on the end product over five
+[30:20] ones well technically it can be one or
+[30:22] two 4 but 5 1 12 you won't have any
+[30:24] problems ok so image happens again each
+[30:29] camera you can select basic science so
+[30:31] the display science basic display
+[30:33] settings per camera OSD sat up so again
+[30:36] time date where the information sits
+[30:39] drag it across so you can actually move
+[30:41] that over there for instance click Save
+[30:44] and fill in some customized tacks it
+[30:48] could be some customized instructions
+[30:50] like call ABC
+[30:51] security one two three four five six
+[30:53] seven eight it could be an email address
+[30:54] like you know if this person's seen call
+[30:57] this number whatever that may be you
+[30:58] drag and drop those into the images of
+[31:00] propia and your privacy mask so again
+[31:03] that's an ANPR comer citizen support but
+[31:07] select the camera enable the privacy
+[31:10] mask draw the areas as appropriate if
+[31:13] you're using a PT said the privacy mark
+[31:16] is Sattar enabled on the pts head itself directly
+[31:19] for the web browser don't do it through
+[31:21] here because wherever you set Barnett
+[31:23] will stay as the PTZ moves the privacy
+[31:25] mask will move with it so set the
+[31:28] privacy mask on the PTC directly not
+[31:31] through our web page of the MDR okay the
+[31:34] event we pull whatever the event is
+[31:37] supported on the end device so if I
+[31:41] choose a camera it'll tell me what
+[31:44] supported so motion video cam print
+[31:46] video loss alarm in put an alarm out put
+[31:49] the ones that are on the unit so you can
+[31:51] set alarm inputs and outputs and they're
+[31:55] actually built into the unit whatever
+[31:58] reason using them for where there's PIR
+[32:00] beams external detection of some kind
+[32:03] you can actually enable set that up the
+[32:06] only thing you can't do currently for
+[32:07] the web browser is set the one key
+[32:09] disarm in so if you want one key disarm
+[32:11] in where input one becomes the one key
+[32:13] disarm and so it to arms and disarms
+[32:16] notifications and you need to do that on
+[32:18] the local ku you ask one feature they
+[32:19] haven't migrated across currently it's
+[32:21] something that we are working on a nice
+[32:23] little function on the alarms is to
+[32:25] combined alarm so again you can actually
+[32:27] have cause and effect in reality so you
+[32:30] can select camera one motion on camera
+[32:33] one you basically select what they have
+[32:37] to do so you could have to thing so it
+[32:42] could be intrusion and motion on camera
+[32:44] free need to be triggered together click
+[32:47] Save and then the linkage action would
+[32:49] go so if you select and the two that
+[32:53] need to apply in both need to trigger to
+[32:56] give the combined linkage out per some
+[32:58] people use it can be quite powerful
+[32:59] especially if you've got a lot of false
+[33:00] alarms and again it's up to you if you
+[33:02] do use it a nice little feature that
+[33:04] sort of been around for
+[33:05] four or five and firmwares in any arm in
+[33:09] schedule
+[33:10] outputs you can test the alarm up of
+[33:12] them here so if you want if you've got
+[33:14] to connect it to a barrier or gate or
+[33:15] whatever flashing light test manual
+[33:17] alarm and that will trigger that output
+[33:19] and makes it clear it to test that end
+[33:21] device is working and the output is
+[33:23] working smart event we pull directly
+[33:25] from the supported product again this is
+[33:28] the IDS TCM camera so let's choose one
+[33:33] this one here so if I put select an IP
+[33:39] camera the events are supported or
+[33:41] pulled in up here wait for that to catch
+[33:44] up so see seen change detection face
+[33:48] attacked intrusion detection line
+[33:50] passing all of the events are supported
+[33:51] on the end device on the edge device
+[33:53] will be the set within the web browser
+[33:56] of the NVR and then you can set the arm
+[33:59] is scheduled and linkage method that's
+[34:00] appropriate to each of these actions so
+[34:03] whatever is VCA y'see you want to use
+[34:05] set that up set the parameters and set
+[34:08] the linkage methods at the appropriate
+[34:10] to that site or application and the
+[34:15] storage some nice little things in here
+[34:17] so we label the storage all my cameras I
+[34:19] set to continual record I've got enough
+[34:21] storage enough bandwidth enough data
+[34:23] that I can set everything to continual
+[34:25] core that way I never miss anything
+[34:26] but again it's up to you you could have
+[34:28] yours on motion alarm whatever that may
+[34:29] be and make sure of different ones so I
+[34:32] set all mine to motion but you can have
+[34:34] diff like constant record you in open I
+[34:35] was an emotion outside of open hours so
+[34:37] you can mix and match and then if you
+[34:39] want to record audio on a specific
+[34:41] camera on an end via the audio has to be
+[34:45] the microphone is included inside the
+[34:47] camera or a microphone is connected to
+[34:49] an audio input of a camera not connected
+[34:51] to the back of the NVR it's not like a
+[34:53] DVR so you simply click select record
+[34:56] audio and if you want motion recording
+[34:59] the pre and post times are there and
+[35:00] this keep video pictures for is like a
+[35:02] GDP our compliance thing so we could set
+[35:06] that for 30 days and click Save
+[35:07] so the footage for this camera and you
+[35:10] can do this to all cameras would only be
+[35:12] saved for a maximum of 30 days or until
+[35:14] the hard drive is the capacity of the
+[35:16] hard drive so the hard drive capacity
+[35:17] could be 60
+[35:19] but we only actually saving him footage
+[35:21] for 30 days or it could be the we set
+[35:23] off for 30 but the hard drive can only
+[35:24] do 7
+[35:25] so it's you know whichever is reached
+[35:27] first hard drive capacity or the actual
+[35:30] limit you put in air if you put 0 in
+[35:33] there
+[35:35] that means indefinite until the hard
+[35:37] drive can't do any more and it'll just
+[35:39] go back in a loop again ok
+[35:42] so storage management I got two drives
+[35:47] fit here one thing that's quite important on our
+[35:49] latest 4.22 firmwares if you upgrade
+[35:52] especially if you're upgrading from
+[35:53] older versions of firmware it's quite
+[35:56] important to do this you'll have issues
+[35:57] we have playback and even units where
+[36:00] the hard drives drop out and potentially
+[36:03] even the unit reboots so if you do wanna
+[36:05] do an upgrade of 4.22 from an older
+[36:08] version select the hard drives and just
+[36:11] click rebuild all it'll give you a
+[36:13] warning message but click OK
+[36:15] it could depend on on the size of the
+[36:17] drives and how long how many you've got
+[36:19] in there that could take 24 hours it
+[36:22] could take longer it could take 37 hours
+[36:23] but it basically rebuilds the database
+[36:26] it's still records you're just not able
+[36:27] to access the record in during this
+[36:29] rebuild process but it rebuilds the
+[36:31] database so once it's rebuilt it's
+[36:34] actually more stable it's quicker and
+[36:36] the metadata is easier to access for us
+[36:38] so it orientates it in a way that does
+[36:41] actually perform better but I would
+[36:43] suggest that you do that rebuild
+[36:44] database once you've upgraded from an
+[36:47] older version version especially
+[36:50] networked hard drive is where you add in
+[36:52] your networks if you using NARS or hips
+[36:54] and devices server address file path and
+[36:57] I new choose it's our NARS and you can
+[37:00] have up to eight locations and then the
+[37:02] storage capacity used to be kept the two
+[37:05] terabyte per drive location but it's
+[37:07] limitations off now so you can actually
+[37:10] add an up to eight locations to increase
+[37:12] your unit storage capability if you
+[37:13] don't have the hard drive space with the
+[37:16] hard drive capacities going up all the
+[37:18] time you know when I was a boy in 10
+[37:20] terabytes
+[37:21] so effectively this unit could store 80
+[37:23] terabytes now that's a lot of storage in
+[37:25] anyone's books but again you can
+[37:26] actually give different okay you can add
+[37:29] more storage locations using that hard
+[37:32] drug detection see
+[37:33] detection tools based within the Met web
+[37:35] menu so you think you've got a faulty
+[37:36] harddrive I'm not gonna run a test
+[37:38] because it locks the unit out and while
+[37:40] it's doing it but you've got smart
+[37:41] settings you've got all the parameters
+[37:43] there and you can do bad sector
+[37:45] detection so you can actually test this
+[37:47] remotely to see if you have a hard drive
+[37:48] issue before going to site and then
+[37:50] maybe taking a hard drive with you to
+[37:52] replace cloud storage again if you use
+[37:56] in one of our CVS storage units cloud
+[37:59] storage unit enabler and put the details
+[38:01] in there that's normally used for
+[38:03] off-site storage and generally used in
+[38:05] conjunction with like central external
+[38:10] storage management again you have to
+[38:12] enable arm for passwords in there that
+[38:14] goes in home with the cloud storage and
+[38:16] then we just mentioned backup settings
+[38:18] we have a eSATA port on the back of some
+[38:21] of our recorders the 9:6 family which
+[38:24] we're looking at now has an eSATA port
+[38:26] you're able to plug an eSATA device in
+[38:29] there click auto backup select the
+[38:33] backup time what channels what stream
+[38:35] and then enable or disable when the hard
+[38:38] drive is full so basically fill those
+[38:40] parameters out and if you've got a nice
+[38:42] after device it's got a lot of storage
+[38:43] in there that will also dump the footage
+[38:46] between that time to that device so
+[38:48] effectively you have it in two devices
+[38:50] on the NBR and then on a secure device
+[38:52] which is connected to it which you can
+[38:54] remove and then you know place in secure
+[38:56] storage again if you want to do a mass a
+[38:59] lot of like say for instance you need to
+[39:01] download eight hours of footage across
+[39:03] 32 cameras for evidential purposes
+[39:06] there's been a serious crime I would
+[39:09] plug a nice on a device in an Aegis
+[39:11] where USB you think of many USBs and
+[39:13] lots and lots of time plugger ISA a
+[39:16] device in there select the backup time fill the details
+[39:18] out and just click Save and it'll do it
+[39:20] you know automatically for those
+[39:22] parameters you set which will then free
+[39:24] up your time and it'll all be downloaded
+[39:26] to one's device and then advanced and
+[39:30] you've got the holiday settings and
+[39:32] enable hard drive sleeping and enable
+[39:33] overwrite these are default if you
+[39:35] uncheck enable overwrite when the hard
+[39:37] drive is falling we'll stop recording
+[39:38] and therefore you won't have anything
+[39:40] more on there and that does cause us
+[39:42] some problems with people who own ticket
+[39:44] because they don't understand the
+[39:45] implication of it
+[39:46] enable hard drive sleep in saves the
+[39:49] hard drive longevity exam is not in use
+[39:51] it goes to sleep it goes into a dormant
+[39:52] state so it saves power and hard drive
+[39:54] longevity so I would definitely leave
+[39:56] those enabled okay like I said earlier
+[40:00] if you have any smart cameras detect
+[40:03] connected to it I have an ANPR camera
+[40:05] connected to it we have a IES TCM which
+[40:08] is one of the smart traffic solution
+[40:10] cameras so if I had a standard Sava line
+[40:12] for line product I could set the
+[40:14] detection lines white and black this can
+[40:16] be done through the iSeries NVR so you
+[40:18] actually select the list draw the boxes
+[40:21] the army schedules etc and then the
+[40:24] linkage method could be white mist
+[40:25] trigger a barrier black they send an
+[40:27] email so that's all done from there
+[40:29] because this is an IDF TCM we take the
+[40:31] live view playback and the data that
+[40:34] outputs but we can't set the parameters
+[40:37] on an IDs TCM currently when I series
+[40:39] because it is such a high-end and
+[40:41] specialized product what it will do is
+[40:44] let you go into picture and again any of
+[40:49] our EMP our camera products connected to
+[40:50] our I series the KTV supports this as
+[40:53] well as turbo and but we do recommend I
+[40:55] Series for Best Performance by news in
+[40:57] am PR I can simply select you can see
+[41:00] there these are the IOT once I was on
+[41:03] the bus if you've got IMT devices you
+[41:05] can actually search specifically for
+[41:06] these if I go into vehicle detection and
+[41:08] select all can narrow down to a country
+[41:11] if you want and any to the ones from
+[41:13] today if I select search for a specific
+[41:17] plate type mine in n6 8xd click search
+[41:27] and you'll see here that this is my
+[41:29] vehicle captured through one of the
+[41:31] cameras on our engines there and again
+[41:33] it nice and easy I can export that
+[41:36] download it and do whatever I needed
+[41:38] without fur so you can do all of that
+[41:39] functionality through the web page and
+[41:41] you know if you need to and especially
+[41:43] for testing or check-in the system still
+[41:45] working it provides a very handy
+[41:47] interface so back into configuration
+[41:55] now the VCA the VCA actually submenu
+[42:01] will only be dictated to by what camera
+[42:04] technology but connected generally we
+[42:06] use this on the high end I guess so it
+[42:08] IDs PTZ I guess camera and the thermal
+[42:12] product so if you've got a thermal
+[42:13] product connected to it you'd simply
+[42:15] select that firm or product like here
+[42:18] and you can actually set the rules etc a
+[42:21] lot of the setup for the thermal we
+[42:23] still have to do on the actual web
+[42:25] interface of the thermal but you are
+[42:27] able to adjust and calibrate and add
+[42:30] additional rules in through the VCA menu
+[42:33] so you select the appropriate camera
+[42:34] that has that technology built in and
+[42:36] you can see there I can actually draw
+[42:38] intrusion line crosses set the
+[42:40] thresholds linkage actions arm in
+[42:43] schedules shield regions all of that can
+[42:46] be set through the web page of our MBR
+[42:48] so you can manage this remotely until
+[42:51] quite recently you have to do this on
+[42:52] the camera and on the local GUI the MBR
+[42:55] this is now migrated into the web
+[42:56] browser so it gives an added layer of
+[42:59] support especially in this given day in
+[43:02] situation as Congo and currently you can
+[43:05] actually do this remotely so really
+[43:07] powerful but the camera will
+[43:09] dictate to you what you are able to do
+[43:11] so again if you choose a camera that
+[43:13] doesn't have that technology
+[43:14] VCA technology the higher-end vc
+[43:17] technology engines it just won't allow
+[43:19] you to do anything face capture you need an a prick of all
+[43:22] camera connected so if you use in face
+[43:25] capture and face recognition we have a
+[43:28] separate system face recognition system
+[43:30] and camera that optimizes the
+[43:31] performance of that face capture really
+[43:34] is for you know facial detection not
+[43:36] facial recognition but again facial
+[43:38] recognition we got dedicated system set
+[43:40] up for this but again you can do basic
+[43:43] face detection using our eye series and
+[43:45] cameras at a position in a way that were
+[43:47] allowed to capture faces so you just sat
+[43:49] the appropiate up for that so again
+[43:52] choose a camera
+[43:58] enable it and they'll allow you to do
+[44:00] some basic face detection capture multi
+[44:04] target type detection again you need a
+[44:06] specific camera for that we're not gonna
+[44:08] go through that today it's a very very
+[44:09] specific camera for that functionality
+[44:11] same with human body camera we do a
+[44:14] specific camera normally a wide-angle
+[44:17] lens with a PT's head underneath it
+[44:19] looks like Robocop's head and that's one
+[44:21] of the product family that does this
+[44:23] human body capture but we also do it in
+[44:27] some other we can actually enable it so
+[44:29] if I choose this camera so yeah you need
+[44:33] that specific camera IOT channels now a
+[44:37] lot of people don't really use this but
+[44:38] it's quite a powerful little function so
+[44:40] I've already added and they video in to
+[44:42] come into this so the devices that you
+[44:44] add in have to be on the same land as
+[44:47] one of the two lands you use him you can
+[44:49] simply add choose the hikvision device
+[44:52] IP address of video into karma access
+[44:54] control unit so when there is a face
+[44:56] rack terminal AC you like the two for
+[44:59] channel IC use the video intercom call
+[45:04] stations whatever indoor stations they
+[45:06] can all be added as an access control
+[45:08] device and that will allow you to run
+[45:10] certain events based on that linkage so
+[45:13] basically click on configuration once
+[45:15] you've added it and it will allow you to
+[45:17] choose the event type so these event
+[45:20] types and when one of these events
+[45:22] happens during this time the linkage
+[45:24] method is this so it allows you to start
+[45:26] integrating our products that's into an
+[45:28] end we are to give it a more powerfully
+[45:30] connected overall solution again we
+[45:32] don't just do it with access control
+[45:34] device we do it with our own alarm
+[45:37] devices which we don't sell in the UK
+[45:39] those of you other watching outside of
+[45:41] the UK I know they ax happen some of
+[45:43] these other devices are available and
+[45:45] they can be added in in the same manner
+[45:46] the IOT or the IOT event if I want to
+[45:51] add so if I wanted to add like a optics
+[46:00] is supported gjd and luminite if I
+[46:04] wanted to add any of their products for
+[46:05] IP Marv said our optics unit like a sip
+[46:08] detector directly
+[46:09] then all you have to do is input the IP
+[46:11] address put the port number in there and
+[46:13] the username and password which we can
+[46:15] give you details on that and it will
+[46:17] connect to that device and then any of
+[46:18] the activations will come in and allow
+[46:20] you to linkage method them the same if
+[46:23] it was a physically connected device to
+[46:24] another arm in but if you've got a 16
+[46:28] cam like a 16 channel NVR you can only
+[46:31] add 8 channels of IMT so it's hot that
+[46:33] ions each other there's half of what the
+[46:35] total channel count is and just as a
+[46:37] reference um and again you can choose up
+[46:43] that she did illuminate there so pretty
+[46:45] straightforward really powerful a lot
+[46:46] people don't use it or don't know about
+[46:48] it but that's where that comes into its
+[46:50] own other than that um I'm trying to
+[46:53] think if there's anything I've missed
+[46:55] off and the local you can set the rules
+[46:56] for the POS OSD etc one thing I will
+[47:00] show you and if you use in a thermal
+[47:02] camera with temperature detection you
+[47:03] can enable these options here to give
+[47:05] you that information ingrained in the
+[47:07] video image one thing I will show you
+[47:09] with the latest ims 4200 and firmware if
+[47:15] you go into basic i'll show you know if
+[47:18] you open up my MS 4200 which is here
+[47:21] [Music]
+[47:25] what the remote config used to be the
+[47:28] old sdk interface and now it goes to a
+[47:30] web browser style interface so some of
+[47:32] the functions aren't available if you
+[47:34] use remote config there is a little
+[47:36] workaround so just wait for this to
+[47:38] catch up wait from the command line
+[47:44] they're slowly coming online so
+[47:46] basically under the remote config it'll
+[47:49] give me an option for basic which is a
+[47:51] web browser which we just saw be looking
+[47:54] at or advanced and it goes into the
+[47:59] older sdk interface now some of the
+[48:02] settings that are specific to the
+[48:03] machine are only available within the
+[48:05] older sdk interface so login security
+[48:09] you've got storage so you can actually
+[48:11] set the array up so if you're using raid
+[48:14] you can enable and set that up and you
+[48:16] know do any diagnostics within the older
+[48:19] sdk advanced interface not on the
+[48:21] standard web
+[48:22] the vase you've got some of the events
+[48:24] for fire source detection so if you're
+[48:26] using a thermal camera with fire enabled
+[48:28] by dynamic fire enabled you can set that
+[48:30] the rules up in here and the event
+[48:33] linkages you can for corridor mode on
+[48:36] the camera that you can't do through the
+[48:37] local web browser you can set up the
+[48:40] counting rules and run the statistics
+[48:42] and then export that heat map again
+[48:46] through here you can do the heat map so
+[48:49] you choose the cameras click search and
+[48:51] export that POS if you use in POS
+[48:54] point-of-sale you have to set it up
+[48:55] through this older SDK interface so you
+[48:58] simply select channel filter rule select
+[49:01] the camera so I had it on camera two
+[49:03] previously the pause test and it's as
+[49:05] simple as enable positive text overlay
+[49:07] filling in the details here that are
+[49:09] applicable to the weather they are asked
+[49:12] to go on this screen you've got your
+[49:14] filter rules in any connection mode so
+[49:16] the connection mode is how we put the
+[49:19] pause data into the machine I've done a
+[49:21] separate video on this you just twenty
+[49:23] minutes long just go watch our and that
+[49:25] will explain POS and our solution to you
+[49:27] but that's where you can get some added
+[49:29] information if you need it from the
+[49:31] advanced SDK interface hopefully that's
+[49:34] answered all of the questions that you
+[49:36] had if you've got any questions again
+[49:39] webinar DVF cougar UK I'll just have a
+[49:41] quick look to see there are some
+[49:43] questions so the first one is can you
+[49:45] provide the PDF containing
+[49:46] specifications of different channel
+[49:48] iSeries and we are yes I can do that if
+[49:50] anyone wants any additional information
+[49:52] process please email webinar artemius
+[49:54] topcoat our UK where we are sending any
+[49:56] support and information out what is RTSP
+[50:00] protocol and how to construct i've
+[50:01] already explained that briefly again I
+[50:03] have a document I can send out I want
+[50:06] the RTSP document fine email webinar are
+[50:09] DVS code on UK if that's okay Steven
+[50:12] hello Steven I spoke to you by email
+[50:14] this morning so big welcome how do you
+[50:17] setup using the dual ports on the back
+[50:18] of the NVR one of the customers IP range
+[50:20] and how do you set the route is easier
+[50:22] to update for example I think I've
+[50:24] already gone through that I was sort of
+[50:26] over 40 minutes ago so running through
+[50:28] that any questions again please drop me
+[50:30] an email
+[50:31] you've got my direct email and again
+[50:33] hello
+[50:35] can you send me the RTS people go yeah
+[50:37] Darwin hi Darwin good to see you again
+[50:38] webinar DVS coder okay and I will
+[50:41] send that across to you hopefully that
+[50:44] has answered all of the questions you've
+[50:45] had you've got a better understanding of
+[50:47] our AI series NVR or just our range as
+[50:50] an overview because a lot of these
+[50:51] functions will be applicable and migrate
+[50:54] across the whole range big thank you to
+[50:58] wherever you are stay safe stay tuned
+[51:00] stay subscribe more content to be
+[51:02] delivered over the next coming weeks and
+[51:04] again just another question
+[51:06] the smooshy may make any difference when
+[51:08] reviewing footage remotely yes it does
+[51:10] um if you enable the smooth streaming
+[51:13] and you've got bad bandwidth like
+[51:15] between you and me remote application
+[51:18] whether it's enabling smooth streaming
+[51:20] which is enabled by default will help
+[51:22] combat that streaming yeah so if we're
+[51:25] hot it will help combat that and it does
+[51:28] work quite well actually
+[51:29] again I'm gonna do a sapper a five
+[51:31] minute video on the use of smooth
+[51:33] streaming outside of this but it does
+[51:34] work very well right that's me done I
+[51:38] got a jump after I got another meeting
+[51:40] to get into thanks very much for
+[51:41] watching stay safe stay tuned wherever
+[51:43] you are in the world stay safe keep
+[51:45] watching and we'll see you for another
+[51:46] webinar by racing cheers guys

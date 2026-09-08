@@ -1,0 +1,216 @@
+# An Introduction to Three Phase Systems Using the Matrix Locktronics Kit
+# https://www.youtube.com/watch?v=NhLzjDJFuvk
+
+[Music] hello and welcome to this electrical principles training video in this video we're going to start looking at a very large subject the subject of three-phase electricity now in this video we're going to consider what a three-phase waveform looks like we're going to have a look at some lighting connected up in a three-phase fashion and we're going to have a look at a three-phase motor and how changing the frequency will affect that motor there'll be more videos on this subject to come so we hope this video is a good introduction for you so to help us develop our understanding of a three-phase system what we've done is we've set up a rig here uh that's been lent To Us by uh The Matrix Group who've lent us their Electronics board we've got here a three-phase generator and we've got coming out of there three line conductors that we've got connected onto three lamps now I'm sure you can already see looking at what's going on with these lamps they're behaving in an interesting fashion the reason that we can see these lamps flushing on and off this is actually what happens with any AC Supply the current is constantly switching its direction it's going first one way around the circuit and then the other so technically speaking most of our lights are constantly flashing on and off just like we've got here however because the current is changing its direction so quickly we don't normally see that in fact when we're using a filament lamp we can see that the lamp doesn't get time to cool down and it appears to be steadily lit all the time here using this nice B kit here what we've done is we've slowed the frequency right down we've reduced it a lot and so we can actually see them flashing on and off now the key point to see here is we can see that the lamps are actually uh flushing on and off in order they're almost going around in a cycle there and that's quite a key Point really for helping us to understand how three-phase uh circuit work so another thing you might notice about this is there's no neutral connection again that'll be something that's explained in more depth in a future video but if you've got a balanced load you don't need to have a three-phase connection so we've got three lamps here of equal power and so no neutral connection is required at all what we'll do now is we'll bring in an overlay and we'll have a look at the uh frequency of our circuit on an oscilloscope so as we can see here we've got a three-phase wave for on the screen now what we can do which is quite clever is we can switch off two of the readings from the oscilloscope and we can see that that is what a normal AC waveform looks like so we can see there it's constantly uh rising and then falling and as it goes above zero that indicates the current is going in One Direction around the circuit and as the current drops below zero all that means is that the current has changed its direction is now going back the other way around the circuit if we now turn on the other inputs from our oscilloscope we bring back our three-phase waveform and we can see there uh that if we were to measure how far apart each one of these waveforms was in terms of degrees we would see that they are 120° apart now what that means is that any given moment if one of the wave forms is at its peak then that means that the other two waveforms uh will be at the uh in the negative value uh and that's what's going on there and what's very interesting about this is that if uh the uh three wave forms are balanced so if we have exactly the same amount of current if we average out those currents so if we uh take the peak waveform and add to it the two negative values of the other two waveforms we actually find that the waveform equals zero and that's the reason why if you've got a balanced load if you've got the same amount of current flowing through each one of the conductors s you actually don't need to have a neutral because where the three uh currents meet uh between the loads there is literally no current flowing through that neutral so in the uh example that we looked at on the screen uh we saw the three lamps those lamps were equal loads they were equally balanced which means that there was no need for a return neutral connection back to the supply we can also uh think of this in terms of a balanced three-phase motor so a balanced three-phase motor requires no neutral because the neutral current Curr balance out and there is no neutral current so that's very interesting so what we'll have a look at now is a three-phase motor in operation so a typical application of a three-phase supply would be one where we connect a motor a three-phase motor so these are really the workhorses of the electrical industry if you walk into any kind of industrial unit where manufacturing is taking place where there's conveyor belts or things like that for a long long time the three-phase motor has been the Workhorse of that so what we've got here as you can see we've got our three uh line conductors coming out of our three-phase supply and they connect uh into our three-phase motor now obviously this is a teaching Aid on a normal motor we'd have to take the lid off this and do the connections inside so what we're doing here is we're connecting uh into one side of three coils that sit inside the body of the motor there will be a lot more videos coming about Motors and their operation and the way they function but for now let's look at how we can control the speed of this particular three-phase motor so we've got our three Line supply coming in the top here and then what we're going to do is we're going to connect this motor up in a way that's called star now what that means is that we're connecting together the other side of each coil to each other and that gives us a star connection so we connect those two together and we will connect those two together like so so now we've got all three of those all short shorted out and connected to each other so now if we turn our power supply on we can see there that we're getting a very very slow rotation of our motor so we're getting a very very slow rotation of the motor as you can see down at the bottom of the screen here now the reason that's so slow is we've got the frequency of our power supply turned right down so if I now increase the frequency of our power supply we can see that we're starting to increase the rotational speed of the motor so it's doing more revolutions per second now and if we turn it up to the 50 HZ which is the standard frequency that we get in this country we can see there that we get the normal rotation of a motor there so that's operating quite nicely what we're going to do just to demonstrate a point is we'll change the frequency of this back down so we can see now that's turning uh more slowly again now if we want to change the direction that that motor turns in how do you think we can achieve that well the simplest way of doing this with a three-phase motor is simply to swap over the polarity of any two of the phases that we're bringing in here so we'll isolate the supply and then if we swap over just any two of the incoming three-phase Supply and if we connect this up again you can see there now we've changed the direction that motor goes in so that is the easiest way to change the direction of the motor you'll notice again if we look at what's effectively the neutral side of our motor where we've connected it in Star there is no connection from this side of the motor to the neutral of our supply because each of the coils inside this motor are exactly the same which means that there is the same amount of coming coming in through each one of these supplies and that means that we've got a balanced load so there is absolutely no neutral uh requirement because there is no current flowing back through the neutral of this circuit [Music]
+
+
+[00:02] [Music]
+[00:09] hello and welcome to this electrical
+[00:11] principles training video in this video
+[00:13] we're going to start looking at a very
+[00:15] large subject the subject of three-phase
+[00:19] electricity now in this video we're
+[00:21] going to consider what a three-phase
+[00:23] waveform looks like we're going to have
+[00:25] a look at some lighting connected up in
+[00:27] a three-phase fashion and we're going to
+[00:29] have a look at a three-phase motor and
+[00:31] how changing the frequency will affect
+[00:33] that motor there'll be more videos on
+[00:36] this subject to come so we hope this
+[00:38] video is a good introduction for
+[00:40] you so to help us develop our
+[00:43] understanding of a three-phase system
+[00:45] what we've done is we've set up a rig
+[00:47] here uh that's been lent To Us by uh The
+[00:49] Matrix Group who've lent us their
+[00:50] Electronics board we've got here a
+[00:53] three-phase generator and we've got
+[00:55] coming out of there three line
+[00:57] conductors that we've got connected onto
+[00:59] three lamps now I'm sure you can already
+[01:01] see looking at what's going on with
+[01:02] these lamps they're behaving in an
+[01:04] interesting fashion the reason that we
+[01:07] can see these lamps flushing on and off
+[01:09] this is actually what happens with any
+[01:10] AC Supply the current is constantly
+[01:13] switching its direction it's going first
+[01:15] one way around the circuit and then the
+[01:16] other so technically speaking most of
+[01:19] our lights are constantly flashing on
+[01:20] and off just like we've got here however
+[01:23] because the current is changing its
+[01:25] direction so quickly we don't normally
+[01:27] see that in fact when we're using a
+[01:29] filament lamp we can see that the lamp
+[01:31] doesn't get time to cool down and it
+[01:32] appears to be steadily lit all the time
+[01:35] here using this nice B kit here what
+[01:38] we've done is we've slowed the frequency
+[01:39] right down we've reduced it a lot and so
+[01:42] we can actually see them flashing on and
+[01:43] off now the key point to see here is we
+[01:46] can see that the lamps are actually uh
+[01:49] flushing on and off in order they're
+[01:52] almost going around in a cycle there and
+[01:55] that's quite a key Point really for
+[01:56] helping us to understand how three-phase
+[01:59] uh circuit work so another thing you
+[02:02] might notice about this is there's no
+[02:03] neutral connection again that'll be
+[02:05] something that's explained in more depth
+[02:06] in a future video but if you've got a
+[02:07] balanced load you don't need to have a
+[02:10] three-phase connection so we've got
+[02:11] three lamps here of equal power and so
+[02:14] no neutral connection is required at all
+[02:16] what we'll do now is we'll bring in an
+[02:18] overlay and we'll have a look at the uh
+[02:20] frequency of our circuit on an
+[02:25] oscilloscope so as we can see here we've
+[02:28] got a three-phase wave for on the screen
+[02:31] now what we can do which is quite clever
+[02:33] is we can switch off two of the readings
+[02:37] from the
+[02:39] oscilloscope and we can see that that is
+[02:41] what a normal AC waveform looks like so
+[02:43] we can see there it's constantly uh
+[02:46] rising and then falling and as it goes
+[02:48] above zero that indicates the current is
+[02:50] going in One Direction around the
+[02:51] circuit and as the current drops below
+[02:53] zero all that means is that the current
+[02:55] has changed its direction is now going
+[02:57] back the other way around the circuit if
+[03:00] we now turn on the other inputs from our
+[03:05] oscilloscope we bring back our
+[03:07] three-phase waveform and we can see
+[03:10] there uh that if we were to measure how
+[03:12] far apart each one of these waveforms
+[03:15] was in terms of degrees we would see
+[03:17] that they are 120° apart now what that
+[03:21] means is that any given moment if one of
+[03:23] the wave forms is at its peak then that
+[03:26] means that the other two waveforms uh
+[03:28] will be at the uh in the negative value
+[03:32] uh and that's what's going on there and
+[03:33] what's very interesting about this is
+[03:36] that if uh the uh three wave forms are
+[03:39] balanced so if we have exactly the same
+[03:41] amount of current if we average out
+[03:43] those currents so if we uh take the peak
+[03:46] waveform and add to it the two negative
+[03:48] values of the other two waveforms we
+[03:51] actually find that the waveform equals
+[03:53] zero and that's the reason why if you've
+[03:55] got a balanced load if you've got the
+[03:57] same amount of current flowing through
+[03:58] each one of the conductors s you
+[04:00] actually don't need to have a neutral
+[04:02] because where the three uh currents meet
+[04:05] uh between the loads there is literally
+[04:07] no current flowing through that neutral
+[04:09] so in the uh example that we looked at
+[04:11] on the screen uh we saw the three lamps
+[04:13] those lamps were equal loads they were
+[04:15] equally balanced which means that there
+[04:17] was no need for a return neutral
+[04:18] connection back to the supply we can
+[04:21] also uh think of this in terms of a
+[04:23] balanced three-phase motor so a balanced
+[04:25] three-phase motor requires no neutral
+[04:28] because the neutral current Curr balance
+[04:30] out and there is no neutral current so
+[04:33] that's very interesting so what we'll
+[04:35] have a look at now is a three-phase
+[04:36] motor in
+[04:40] operation so a typical application of a
+[04:42] three-phase supply would be one where we
+[04:44] connect a motor a three-phase motor so
+[04:47] these are really the workhorses of the
+[04:48] electrical industry if you walk into any
+[04:50] kind of industrial unit where
+[04:52] manufacturing is taking place where
+[04:54] there's conveyor belts or things like
+[04:55] that for a long long time the
+[04:57] three-phase motor has been the Workhorse
+[04:59] of that so what we've got here as you
+[05:01] can see we've got our three uh line
+[05:03] conductors coming out of our three-phase
+[05:05] supply and they connect uh into our
+[05:08] three-phase motor now obviously this is
+[05:10] a teaching Aid on a normal motor we'd
+[05:12] have to take the lid off this and do the
+[05:14] connections inside so what we're doing
+[05:16] here is we're connecting uh into one
+[05:18] side of three coils that sit inside the
+[05:22] body of the motor there will be a lot
+[05:24] more videos coming about Motors and
+[05:25] their operation and the way they
+[05:26] function but for now let's look at how
+[05:28] we can control the speed of this
+[05:30] particular three-phase motor so we've
+[05:33] got our three Line supply coming in the
+[05:34] top here and then what we're going to do
+[05:36] is we're going to connect this motor up
+[05:38] in a way that's called star now what
+[05:40] that means is that we're connecting
+[05:42] together the other side of each
+[05:45] coil to each other and that gives us a
+[05:48] star connection so we connect those two
+[05:52] together and we will connect those two
+[05:55] together like so so now we've got all
+[05:58] three of those all short shorted out and
+[06:00] connected to each other so now if we
+[06:03] turn our power supply
+[06:05] on we can see there that we're getting a
+[06:08] very very slow rotation of our motor so
+[06:12] we're getting a very very slow rotation
+[06:14] of the motor as you can see down at the
+[06:17] bottom of the screen here now the reason
+[06:19] that's so slow is we've got the
+[06:21] frequency of our power supply turned
+[06:23] right down so if I now increase the
+[06:27] frequency of our power supply we can see
+[06:30] that we're starting to increase the
+[06:31] rotational speed of the motor so it's
+[06:34] doing more revolutions per second now
+[06:36] and if we turn it up to the 50 HZ which
+[06:38] is the standard frequency that we get in
+[06:40] this country we can see there that we
+[06:44] get the normal rotation of a motor there
+[06:47] so that's operating quite nicely what
+[06:49] we're going to do just to demonstrate a
+[06:51] point is we'll change the frequency of
+[06:53] this back
+[06:54] down so we can see now that's turning uh
+[06:57] more slowly again now if we want to
+[06:59] change the direction that that motor
+[07:01] turns in how do you think we can achieve
+[07:04] that well the simplest way of doing this
+[07:06] with a three-phase motor is simply to
+[07:09] swap over the polarity of any two of the
+[07:13] phases that we're bringing in here so
+[07:15] we'll isolate the
+[07:18] supply and then if we swap over just any
+[07:21] two of the incoming three-phase Supply
+[07:26] and if we connect this up again you can
+[07:29] see there now we've changed the
+[07:30] direction that motor goes in so that is
+[07:32] the easiest way to change the direction
+[07:34] of the motor you'll notice again if we
+[07:37] look at what's effectively the neutral
+[07:39] side of our motor where we've connected
+[07:41] it in Star there is no connection from
+[07:44] this side of the motor to the neutral of
+[07:46] our supply because each of the coils
+[07:49] inside this motor are exactly the same
+[07:51] which means that there is the same
+[07:53] amount of coming coming in through each
+[07:55] one of these supplies and that means
+[07:57] that we've got a balanced load so there
+[08:00] is absolutely no neutral uh requirement
+[08:02] because there is no current flowing back
+[08:05] through the neutral of this circuit
+[08:09] [Music]

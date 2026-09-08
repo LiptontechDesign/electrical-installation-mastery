@@ -1,0 +1,493 @@
+# The Complete Guide To RCDs - Residual Current Devices
+# https://www.youtube.com/watch?v=bXS-uNxeTXo
+
+- RCDs have successfully made the transition from devices used in very specific circumstances for fault protection, into their current position offering additional protection for a vast array of circuits. Indeed, BS 7671 now requires them in so many places and for so many circuits, that it's hard to install a circuit in a domestic property that doesn't require their use. To explain the ins and outs of these often misunderstood devices, we created a free training package to help you with your CPD. This is a video from that training package that we've decided to release to our wider audience. We really hope it helps your understanding of this subject. And if you'd like to complete the course and receive an accredited certificate towards your annual CPD, then please click the link in the description to take you to the relevant webpage. Please note that all the information in this video is taken from the original 18th edition of the wiring regulations, unless otherwise stated. It's always a good idea to check the latest version depending on when you're watching this. Over the past couple of decades, we've seen a huge increase in the stringency of circuit protection that's required by BS 7671, and leading the way in this regard is the humble RCD. Now, this family of devices have become an absolutely critical part of the electrician's line of defenses when it comes to protecting property and people from the harmful effects of electricity. However, this has had an unexpected side effect of people thinking that they are a 100% effective way of rendering the installation totally safe. In this CPD, we are gonna look at the different types of RCD, their applications, their limitations, and the reasons why we need to be careful about the type of RCD we use. First of all, let's establish what we mean by an RCD. Now, RCD stands for residual current device and it's kind of a catchall term for a number of different devices, including residual current circuit breakers, socket outlets incorporating residual current protection, and residual current breakers incorporating overload protection, what we normally refer to as RCBOs. The thing that all these devices have in common is that they look for current leaking to places that it shouldn't, through paths that it shouldn't. When they detect a certain amount of current doing this, the device will disconnect. They can be used to provide three different forms of protection. The one that, perhaps, initially we think of is additional protection. Now that's according to the regulations found in 415.1 of BS 7671, by means of an RCD not exceeding 30 milliamps. Broadly speaking, this is where we use an RCD to protect people and livestock from electrocution. Another use of RCDs that most of us will be familiar with is to provide fault protection to disconnect a faulty circuit within the times allowed in regulation 411.3.2. The advantage of using an RCD for this is it gives you a higher value of earth fault loop impedance to work within when designing circuits, which is really good for TT systems particularly. However, bear in mind that an RCD by itself will only monitor for earth faults, and will also require compliant overcurrent protection. The third way that an RCD can offer protection is as a safeguard against fire. Section 422 of the regs relates to precautions to be taken where particular risks of fire exist, and 422.3 narrows this down to locations with risks of fire due to the nature of processed or stored materials. And in these areas, motor circuits will need protection by an RCD having a rating of not more than 300 milliamps to help prevent the outbreak of fire. So we've mentioned a couple of different sizes of RCD there stating their values in milliamps, but what does this value mean, and how does an RCD work? We'll get into a slightly more technical explanation in a moment, but basically. the device watches the current flowing down the line conductor and then back down the neutral again. In a healthy single phase circuit, the currents in those conductors should be exactly the same. So if there's 10 amps in the line conductor, there should be 10 amps in the neutral. If there is, then the RCD is happy and won't trip. If however, there is less current flowing in the neutral, then that means that there must be some current flowing out of the circuit through something that it shouldn't be. Now this may be down the CPC due to a fault on the circuit, or it may be through a person to earth as they get an electric shock. So the RCD is monitoring the difference in current between the line and the neutral. If this difference becomes too large, then the RCD will disconnect the circuit, or trip. So an RCD with a 30 milliamp nominal rating will disconnect the outgoing circuit when the difference in current goes above 30 milliamps, which I'm sure you'd agree, is quite a small amount of difference. But for a device being used as additional protection, that value of 30 milliamps is below the lethal shock value for a typical human. And in reality, most RCDs actually trip below this value, somewhere around 23 milliamps. Now, for many years, RCDs operated perfectly satisfactorily and brought peace of mind to installers and users alike. However, as the years have gone by, we've seen an increase in the technological complexity of the loads being connected to our installations. This applies to all installations, domestic, commercial, and industrial. Now what do we mean by this? Well think about a typical domestic installation. What sort of loads might we see connected? We'll probably see things like washing machines, dishwashers, IT equipment like PCs and laptops, perhaps even nowadays, electric vehicle charge points. In addition to this, while they may not technically be a load, many homes now feature photovoltaic panels on their roofs. What about commercial properties? Well, we'll have some of the items that we mentioned previously. Plus we'll have vast amounts of LED lighting, and in industrial environments, there'll be speed control for motors by means of variable state drives, for example. Now, I'm sure you'll agree, that these devices are not by any means exotic or rare. Indeed, they are pretty much ubiquitous in our installations. But why does this even matter? Well, because these devices present a couple of problems. The first is that they have a tendency to leak DC electricity back into the supply system. Now, the problem with this is that the DC electricity has a tendency to blind the RCD. This means that the RCD then won't trip in the event of an earth fault. Why not? Well, to answer that, let's look in a little more depth as to how an RCD operates. Now we've got a diagram here you can see of a traditional RCD, what's referred to as an AC type RCD, which is the basic RCD that we've mostly been installing for years and years. Inside the RCD, the line conductor wraps around this toroidal or ring-shaped piece of soft iron, it then goes off and feeds the load. The neutral from the load then returns and wraps around the other side of the toroidal core and returns to the source of supply. Now at the same time, wrapped around the core there's this third coil that feeds a tripping device that connects to the switching contacts in the line and neutral connections. Now when the circuit is healthy the current passes through the line and the same amount of current comes back down the neutral. As the current passes through the coil around the core, it generates a magnetic field around the coil. But because the same amount of current is passing through the neutral coil at the bottom, a magnetic field is created around this coil that is equal to, but has an opposite direction, to the magnetic field around the line conductor. Now the upshot of this is that the two fields basically just cancel each other out. Now, if an earth fault occurs, and the current flowing back through the neutral is slightly smaller, this makes the neutral magnetic field slightly weaker than the one around the line conductor. So now this slightly stronger magnetic field is able to generate a small amount of current into the tripping coil using the exact same principles as the operation of, say, a transformer. If the difference in current in the line in neutral is big enough, the current generator in the tripping coil will be enough to trigger the tripping device and disconnect the circuit. Now, I'm sure you'll agree, that this is an elegant and ingenious piece of design, and if the electricity running through it is a purely AC supply, then it will operate exquisitely, doing its job perfectly. However, going back to our modern electronic loads the injected DC causes the AC waveform to become polluted, effectively. We can illustrate this using this lovely graphing software from Desmos. Here we have a healthy AC waveform, and here we can see what a DC waveform looks like. You see there, it's just a straight flat line. Now the problem occurs when we combine the two by leaking DC back into the AC supply because as the DC combines with this AC waveform, you can see it lifts the whole AC waveform up the y-axis. Now, just a word of caution for our understanding here, the subsequent lower waveform down at the bottom here does not indicate that there's less current in the neutral than there is in the line. If this was true, then the device would trip. When the AC waveform drops below zero into the negative range, it indicates that the current has changed direction. So now when the current is going one way around the circuit, it is slightly higher than when it reverses and goes the other way. Now this has the effect of slightly magnetizing the magnetic core in one direction, leaving a slight magnetic field in there all the time. Now, if an earth fault occurs, the magnetic field around the neutral is slightly weaker. But because there is a permanent magnetic field inside the soft iron core, there isn't enough strength in the imbalanced fields to overcome that slight remaining magnetism and generate enough current in the tripping coil to disconnect the circuit. So the device simply won't trip. Now for the more mature members of our audience, you may remember the old Robin testers that featured the D-lock function, and this allowed the tester to carry out an earth vault loop impedance test on circuits that were protected by RCDs. And it worked in the exact same way that we've just discussed. It would inject DC current into the circuit and stun the RCD by saturating it magnetically, meaning that the impedance test could then be carried out without tripping the RCD. Now, that's all very interesting, but what are the real life implications of this? Well, if our installations connect the loads we discussed earlier in the video, then it's likely that our old AC type RCDs won't operate under fault conditions, and that means that someone could be receiving a lethal amount of electricity through their bodies and the RCD simply won't disconnect the circuit. There is a second problem as well. In BS 7671 annex 53 table A53.1 that shows the possible consequences of faults occurring in systems incorporating semiconductor devices, and explains what the wave form of the current would look like under fault conditions. Now looking at the top drawing in the regs. you can just about see that there's a TRIAC being used in this circuit, and if a fault occurs, then the fault current looks like this. You can see that it's a pretty rough AC waveform because the TRIAC is chopping it up a bit, but it's still an AC waveform. However, if you look further down the list, you can see that there's a diode in the circuit, which is creating a very kind of rough and dirty DC supply. However, the consequence of this is that when the fault occurs, the fault current is also a rough and dirty DC waveform, and the AC type of RCD won't respond to this kind of fault current. In fact, if you look to the final column of this table you can see there that it details just what type of RCD will respond to each type of fault current. You can see there that the first fault we discussed will be dealt with by types AC, A, F, and B. However, the second fault we looked at will only be cleared by A, F, and B, not the AC type. So that leads us nicely to our next question which is, what are these different types of RCD, and where would we use them? Let's first of all look to the regs for a bit of a description, and then we'll look at some applications. Regulation 531.3.3 outlines how all four types of RCD work. Indent one outlines an RCD Type AC where it says, "RCD tripping on alternating sinusoidal residual current, suddenly applied or smoothly increasing." What does this mean? Well, it means that it can't cope with circuits supplying certain electronic controls as we saw earlier in table A53.1. So Type ACs are acceptable for use on loads that are pretty basic, things like electrical heating loads, such as showers, immersion heaters, incandescent lighting, hobs, and ovens. You can identify a Type AC RCD from this symbol being printed on it. At this point, it's worth interjecting that the second amendment to the 18th edition of the regulations became more stringent on the subjective of Type AC RCDs, with an addition to regulation 531.3.3 the explicitly states, "RCD Type AC shall only be used to serve fixed equipment where it is known that the load current contains no DC components." In Note 1, that regulation goes on to say, "Examples of fixed equipment with a load current containing no DC components can include but not be limited to electric heating appliances, and/or simple filament lighting, neither containing electronic components." As even the simplest loads may well contain digital controls, it's likely that a Type AC RCD will be unsuitable for most circuits nowadays, and the Type A is fast becoming the standard RCD type for the vast majority of installations. Let's discuss this in more detail now. Going back to indent two of regulation 531.3.3, an RCD Type A is described as, "RCD tripping on alternating sinusoidal residual current and on residual pulsating direct current, suddenly applied or smoothly increasing. Note 1 gives us a little further information where it says, "For RCD Type A, tripping is achieved for residual pulsating direct currents superimposed on a smooth direct current up to six milliamps." So this type of device is capable of dealing with a small amount of DC leakage back into the system, and also can detect and remove earth faults occurring after semiconductor control devices up to six milliamps in magnitude. So again, what does this mean in practice? Well, if your circuit is supplying things like class one IT equipment, or power supplies for class two equipment, LED drivers for lighting, dimmers, induction hobs, or EV charging equipment with smooth residual DC current below six milliamps, then a Type A RCD is indicated in these cases. In the case of EV charging, you're also likely to need to install a DC monitoring device as well, if using a Type A RCD. The Type A RCD can be identified by this symbol and can also be used to protect the types of equipment the Type AC RCD can also protect. Now we move on to the Type F RCD outlined in indent three. "RCD for which tripping is achieved as for Type A and in addition," bracket a, "for composite residual currents, whether suddenly applied or slowly rising, intended for circuit supplied between the line and neutral or line and earth middle conductor," and b, "for residual pulsating direct currents superimposed on smooth direct current." Note 2 goes on to say, "For RCD Type F, tripping achieved for residual pulsating direct currents superimposed on a smooth direct current up to 10 milliamps." So you can see this is similar to the Type A, but can handle higher values of DC fault current. So let's try and put that into practice. These would be used on frequency controlled appliances and this might include things like washing machines, dishwashers, and tumble dryers if they're using synchronous motors. It might also include some class one power tools, as well as air con controllers if they utilize variable speed drives. This type of RCD can be identified by the use of this symbol and will also cover similar faults Type AC and Type A RCDs. It's also worth noting that the F in Type F RCD relates to frequency. And have you noticed, that every time we go to the next type of RCD, we're actually just adding a new symbol to the one that came before, helping us to see that they're capable of handling the same types of fault as the previous RCD types. This approach continues as we move on to talk about Type B RCDs. Indent four of 531.3.3 states, "RCD Type B, RCD for which tripping is achieved as for Type F, and in addition," bracket a, "for residual sinusoidal alternating currents up to one kilohertz, bracket b, "for residual alternating current superimposed on a smooth direct current," bracket c, "for residual pulsating direct currents superimposed on a smooth direct current, bracket d, "for residual pulsating, rectified direct current which results from two or more phases, bracket e, "for residual smooth direct currents, whether suddenly applied or slowly increased, independent of polarity." Note 3 then tells us that, "For RCD Type B, tripping is achieved for residual pulsating direct currents superimposed on a smooth direct current up to 0.4 times the rated residual current or 10 milliamps, whichever is the highest value." So clearly then, this device is a much more complex piece of kit, and this is reflected in the types of load that it can protect. Things like lifts, escalators, PV installations, welding equipment, inverters, and uninterruptible power supplies. They also may be used in connection with EV charge points. If an EV charger requires RCD protection, and RCD Type B is one option that can be used. RCD Type Bs can be identified by this symbol. Now, I'm sure by this point in the video your head may be spinning a little bit, and you may be wondering just how you can make sure that you do actually install the correct RCD type. There's two scenarios here really. The first is where you know what loads are going to be connected to the circuit that you're installing, and the second is where you don't. The first situation, where you know exactly what load is going to be connected is actually fairly easily tackled because the manufacturer of the connected load is legally obliged to provide information on what type of RCD should be installed to offer suitable protection, without affecting the operation of the RCD. If this information isn't readily available in their documentation, then they should be contacted for further information. So there is a little bit more research required in this situation, but an answer should be available. You should be able to get that information. The second scenario, where you don't know what's going to be connected is a little bit trickier, and to be honest, it's going to require a certain amount of engineering judgment. As always in our trade, it's a matter of balancing cost against risk. The temptation is to suggest that if you don't know what's going to be connected, then just whack in a Type B. But the cost implications of this make it an unreasonable option at the moment. For example, in a domestic ring final circuit, it's not likely that you are going to be connecting inverters or an uninterruptible power supply. So you may decide that if it's not supplying kitchen appliances, then a Type A maybe most appropriate due to electronic devices being connected, and then to have a separate circuit feeding the kitchen appliances and protect just that one circuit with a Type F RCD for any appliances that may require it. That's going to help to minimize the financial impact on the installation. So as always, in our industry, it seems that the key to figuring out which RCD type to use boils down to good communication with the customer, or the design team, a little bit of extra research, and good engineering judgment, as well as a deeper understanding of the available options, which we've hopefully provided in this video presentation. We hope that information was helpful to you, and once again, if you'd now like to complete the training package by answering a few multiple choice questions, then please click the link in the description below, and do please check out the rest of our free training packages on the 'Know How' page of our website, efixx.co.uk. Thank you very much for watching.
+
+
+[00:00] - RCDs have successfully made the transition
+[00:02] from devices used in very specific circumstances
+[00:04] for fault protection,
+[00:06] into their current position offering additional protection
+[00:08] for a vast array of circuits.
+[00:10] Indeed, BS 7671 now requires them in so many places
+[00:14] and for so many circuits,
+[00:15] that it's hard to install a circuit in a domestic property
+[00:18] that doesn't require their use.
+[00:19] To explain the ins and outs
+[00:21] of these often misunderstood devices,
+[00:23] we created a free training package
+[00:25] to help you with your CPD.
+[00:26] This is a video from that training package
+[00:28] that we've decided to release to our wider audience.
+[00:30] We really hope it helps your understanding of this subject.
+[00:33] And if you'd like to complete the course
+[00:34] and receive an accredited certificate
+[00:36] towards your annual CPD,
+[00:37] then please click the link in the description
+[00:39] to take you to the relevant webpage.
+[00:41] Please note that all the information in this video
+[00:43] is taken from the original 18th edition
+[00:45] of the wiring regulations, unless otherwise stated.
+[00:48] It's always a good idea to check the latest version
+[00:50] depending on when you're watching this.
+[00:52] Over the past couple of decades,
+[00:53] we've seen a huge increase in the stringency
+[00:56] of circuit protection that's required by BS 7671,
+[01:00] and leading the way in this regard is the humble RCD.
+[01:03] Now, this family of devices
+[01:04] have become an absolutely critical part
+[01:07] of the electrician's line of defenses
+[01:08] when it comes to protecting property
+[01:11] and people from the harmful effects of electricity.
+[01:14] However, this has had an unexpected side effect
+[01:16] of people thinking that they are a 100% effective way
+[01:20] of rendering the installation totally safe.
+[01:24] In this CPD, we are gonna look
+[01:26] at the different types of RCD, their applications,
+[01:29] their limitations, and the reasons why we need to be careful
+[01:33] about the type of RCD we use.
+[01:35] First of all, let's establish what we mean by an RCD.
+[01:39] Now, RCD stands for residual current device
+[01:42] and it's kind of a catchall term
+[01:44] for a number of different devices,
+[01:46] including residual current circuit breakers,
+[01:49] socket outlets incorporating residual current protection,
+[01:52] and residual current breakers
+[01:54] incorporating overload protection,
+[01:57] what we normally refer to as RCBOs.
+[02:00] The thing that all these devices have in common
+[02:02] is that they look for current leaking to places
+[02:05] that it shouldn't, through paths that it shouldn't.
+[02:08] When they detect a certain amount of current doing this,
+[02:11] the device will disconnect.
+[02:13] They can be used to provide
+[02:15] three different forms of protection.
+[02:18] The one that, perhaps, initially we think of
+[02:20] is additional protection.
+[02:22] Now that's according to the regulations found in
+[02:25] 415.1 of BS 7671, by means of an RCD
+[02:28] not exceeding 30 milliamps.
+[02:31] Broadly speaking, this is where we use an RCD
+[02:33] to protect people and livestock from electrocution.
+[02:37] Another use of RCDs that most of us will be familiar with
+[02:39] is to provide fault protection
+[02:41] to disconnect a faulty circuit
+[02:43] within the times allowed in regulation 411.3.2.
+[02:48] The advantage of using an RCD for this
+[02:50] is it gives you a higher value of earth fault loop impedance
+[02:53] to work within when designing circuits,
+[02:55] which is really good for TT systems particularly.
+[02:59] However, bear in mind that an RCD by itself
+[03:01] will only monitor for earth faults,
+[03:04] and will also require compliant overcurrent protection.
+[03:08] The third way that an RCD can offer protection
+[03:11] is as a safeguard against fire.
+[03:14] Section 422 of the regs relates to precautions to be taken
+[03:17] where particular risks of fire exist,
+[03:19] and 422.3 narrows this down to locations with risks of fire
+[03:23] due to the nature of processed or stored materials.
+[03:26] And in these areas, motor circuits will need protection
+[03:29] by an RCD having a rating of not more than 300 milliamps
+[03:33] to help prevent the outbreak of fire.
+[03:36] So we've mentioned a couple of different sizes of RCD there
+[03:38] stating their values in milliamps,
+[03:41] but what does this value mean, and how does an RCD work?
+[03:45] We'll get into a slightly more technical explanation
+[03:47] in a moment, but basically. the device watches the current
+[03:50] flowing down the line conductor
+[03:52] and then back down the neutral again.
+[03:55] In a healthy single phase circuit,
+[03:57] the currents in those conductors should be exactly the same.
+[04:01] So if there's 10 amps in the line conductor,
+[04:03] there should be 10 amps in the neutral.
+[04:06] If there is, then the RCD is happy and won't trip.
+[04:10] If however, there is less current flowing in the neutral,
+[04:14] then that means that there must be some current flowing
+[04:16] out of the circuit through something that it shouldn't be.
+[04:19] Now this may be down the CPC due to a fault on the circuit,
+[04:23] or it may be through a person to earth
+[04:26] as they get an electric shock.
+[04:29] So the RCD is monitoring the difference in current
+[04:32] between the line and the neutral.
+[04:34] If this difference becomes too large,
+[04:37] then the RCD will disconnect the circuit, or trip.
+[04:41] So an RCD with a 30 milliamp nominal rating
+[04:43] will disconnect the outgoing circuit
+[04:45] when the difference in current goes above 30 milliamps,
+[04:49] which I'm sure you'd agree,
+[04:50] is quite a small amount of difference.
+[04:53] But for a device being used as additional protection,
+[04:55] that value of 30 milliamps is below the lethal shock value
+[04:59] for a typical human.
+[05:00] And in reality, most RCDs actually trip below this value,
+[05:03] somewhere around 23 milliamps.
+[05:06] Now, for many years, RCDs operated perfectly satisfactorily
+[05:09] and brought peace of mind to installers and users alike.
+[05:12] However, as the years have gone by,
+[05:14] we've seen an increase in the technological complexity
+[05:16] of the loads being connected to our installations.
+[05:20] This applies to all installations,
+[05:23] domestic, commercial, and industrial.
+[05:26] Now what do we mean by this?
+[05:28] Well think about a typical domestic installation.
+[05:31] What sort of loads might we see connected?
+[05:33] We'll probably see things like washing machines,
+[05:36] dishwashers, IT equipment like PCs and laptops,
+[05:40] perhaps even nowadays, electric vehicle charge points.
+[05:43] In addition to this,
+[05:44] while they may not technically be a load,
+[05:46] many homes now feature photovoltaic panels on their roofs.
+[05:51] What about commercial properties?
+[05:53] Well, we'll have some of the items
+[05:54] that we mentioned previously.
+[05:56] Plus we'll have vast amounts of LED lighting,
+[05:59] and in industrial environments,
+[06:00] there'll be speed control for motors by means of
+[06:02] variable state drives, for example.
+[06:05] Now, I'm sure you'll agree,
+[06:06] that these devices are not by any means exotic or rare.
+[06:10] Indeed, they are pretty much ubiquitous
+[06:12] in our installations.
+[06:14] But why does this even matter?
+[06:16] Well, because these devices present a couple of problems.
+[06:20] The first is that they have a tendency to leak
+[06:22] DC electricity back into the supply system.
+[06:25] Now, the problem with this is that the DC electricity
+[06:28] has a tendency to blind the RCD.
+[06:32] This means that the RCD then won't trip
+[06:34] in the event of an earth fault.
+[06:36] Why not?
+[06:38] Well, to answer that, let's look in a little more depth
+[06:40] as to how an RCD operates.
+[06:42] Now we've got a diagram here you can see
+[06:44] of a traditional RCD, what's referred to as an AC type RCD,
+[06:49] which is the basic RCD that we've mostly been installing
+[06:52] for years and years.
+[06:53] Inside the RCD, the line conductor wraps around
+[06:56] this toroidal or ring-shaped piece of soft iron,
+[06:59] it then goes off and feeds the load.
+[07:01] The neutral from the load then returns
+[07:04] and wraps around the other side of the toroidal core
+[07:06] and returns to the source of supply.
+[07:09] Now at the same time, wrapped around the core
+[07:12] there's this third coil that feeds a tripping device
+[07:15] that connects to the switching contacts
+[07:17] in the line and neutral connections.
+[07:20] Now when the circuit is healthy
+[07:22] the current passes through the line
+[07:23] and the same amount of current comes back down the neutral.
+[07:26] As the current passes through the coil around the core,
+[07:29] it generates a magnetic field around the coil.
+[07:33] But because the same amount of current
+[07:35] is passing through the neutral coil at the bottom,
+[07:38] a magnetic field is created around this coil
+[07:41] that is equal to, but has an opposite direction,
+[07:44] to the magnetic field around the line conductor.
+[07:48] Now the upshot of this is that the two fields
+[07:50] basically just cancel each other out.
+[07:53] Now, if an earth fault occurs, and the current flowing back
+[07:55] through the neutral is slightly smaller,
+[07:57] this makes the neutral magnetic field slightly weaker
+[08:01] than the one around the line conductor.
+[08:03] So now this slightly stronger magnetic field
+[08:06] is able to generate a small amount of current
+[08:08] into the tripping coil using the exact same principles
+[08:11] as the operation of, say, a transformer.
+[08:14] If the difference in current in the line in neutral
+[08:16] is big enough, the current generator in the tripping coil
+[08:19] will be enough to trigger the tripping device
+[08:21] and disconnect the circuit.
+[08:23] Now, I'm sure you'll agree,
+[08:24] that this is an elegant and ingenious piece of design,
+[08:27] and if the electricity running through it
+[08:29] is a purely AC supply,
+[08:31] then it will operate exquisitely, doing its job perfectly.
+[08:35] However, going back to our modern electronic loads
+[08:38] the injected DC causes the AC waveform
+[08:41] to become polluted, effectively.
+[08:43] We can illustrate this
+[08:44] using this lovely graphing software from Desmos.
+[08:47] Here we have a healthy AC waveform,
+[08:50] and here we can see what a DC waveform looks like.
+[08:53] You see there, it's just a straight flat line.
+[08:56] Now the problem occurs when we combine the two
+[08:59] by leaking DC back into the AC supply
+[09:03] because as the DC combines with this AC waveform,
+[09:06] you can see it lifts the whole AC waveform up the y-axis.
+[09:11] Now, just a word of caution for our understanding here,
+[09:13] the subsequent lower waveform down at the bottom here
+[09:17] does not indicate that there's less current in the neutral
+[09:19] than there is in the line.
+[09:20] If this was true, then the device would trip.
+[09:23] When the AC waveform drops below zero
+[09:25] into the negative range,
+[09:27] it indicates that the current has changed direction.
+[09:29] So now when the current is going one way around the circuit,
+[09:33] it is slightly higher
+[09:34] than when it reverses and goes the other way.
+[09:38] Now this has the effect of slightly magnetizing
+[09:41] the magnetic core in one direction,
+[09:43] leaving a slight magnetic field in there all the time.
+[09:47] Now, if an earth fault occurs,
+[09:49] the magnetic field around the neutral is slightly weaker.
+[09:52] But because there is a permanent magnetic field
+[09:55] inside the soft iron core,
+[09:57] there isn't enough strength in the imbalanced fields
+[10:00] to overcome that slight remaining magnetism
+[10:03] and generate enough current in the tripping coil
+[10:06] to disconnect the circuit.
+[10:08] So the device simply won't trip.
+[10:11] Now for the more mature members of our audience,
+[10:13] you may remember the old Robin testers
+[10:15] that featured the D-lock function,
+[10:17] and this allowed the tester to carry out
+[10:19] an earth vault loop impedance test
+[10:21] on circuits that were protected by RCDs.
+[10:25] And it worked in the exact same way
+[10:26] that we've just discussed.
+[10:27] It would inject DC current into the circuit
+[10:31] and stun the RCD by saturating it magnetically,
+[10:34] meaning that the impedance test could then be carried out
+[10:37] without tripping the RCD.
+[10:40] Now, that's all very interesting,
+[10:42] but what are the real life implications of this?
+[10:46] Well, if our installations connect the loads
+[10:48] we discussed earlier in the video,
+[10:49] then it's likely that our old AC type RCDs
+[10:53] won't operate under fault conditions,
+[10:56] and that means that someone could be receiving
+[10:58] a lethal amount of electricity through their bodies
+[11:01] and the RCD simply won't disconnect the circuit.
+[11:06] There is a second problem as well.
+[11:08] In BS 7671 annex 53 table A53.1
+[11:12] that shows the possible consequences
+[11:14] of faults occurring in systems incorporating
+[11:17] semiconductor devices,
+[11:19] and explains what the wave form of the current
+[11:20] would look like under fault conditions.
+[11:23] Now looking at the top drawing in the regs.
+[11:25] you can just about see that there's a TRIAC being used
+[11:28] in this circuit,
+[11:30] and if a fault occurs,
+[11:31] then the fault current looks like this.
+[11:34] You can see that it's a pretty rough AC waveform
+[11:37] because the TRIAC is chopping it up a bit,
+[11:40] but it's still an AC waveform.
+[11:43] However, if you look further down the list,
+[11:45] you can see that there's a diode in the circuit,
+[11:48] which is creating a very kind of rough and dirty DC supply.
+[11:52] However, the consequence of this is that
+[11:53] when the fault occurs,
+[11:55] the fault current is also a rough and dirty DC waveform,
+[11:59] and the AC type of RCD
+[12:02] won't respond to this kind of fault current.
+[12:05] In fact, if you look to the final column of this table
+[12:07] you can see there that it details
+[12:09] just what type of RCD will respond
+[12:12] to each type of fault current.
+[12:14] You can see there that the first fault we discussed
+[12:17] will be dealt with by types AC, A, F, and B.
+[12:21] However, the second fault we looked at
+[12:23] will only be cleared by A, F, and B, not the AC type.
+[12:29] So that leads us nicely to our next question which is,
+[12:31] what are these different types of RCD,
+[12:33] and where would we use them?
+[12:35] Let's first of all look to the regs
+[12:37] for a bit of a description,
+[12:38] and then we'll look at some applications.
+[12:40] Regulation 531.3.3 outlines how all four types of RCD work.
+[12:46] Indent one outlines an RCD Type AC where it says,
+[12:50] "RCD tripping on alternating sinusoidal residual current,
+[12:53] suddenly applied or smoothly increasing."
+[12:56] What does this mean?
+[12:57] Well, it means that it can't cope with circuits
+[12:59] supplying certain electronic controls
+[13:01] as we saw earlier in table A53.1.
+[13:05] So Type ACs are acceptable
+[13:07] for use on loads that are pretty basic,
+[13:09] things like electrical heating loads,
+[13:11] such as showers, immersion heaters,
+[13:14] incandescent lighting, hobs, and ovens.
+[13:17] You can identify a Type AC RCD from this symbol
+[13:20] being printed on it.
+[13:21] At this point, it's worth interjecting
+[13:23] that the second amendment to the 18th edition
+[13:25] of the regulations became more stringent
+[13:26] on the subjective of Type AC RCDs,
+[13:29] with an addition to regulation 531.3.3
+[13:32] the explicitly states,
+[13:33] "RCD Type AC shall only be used to serve fixed equipment
+[13:37] where it is known that the load current
+[13:39] contains no DC components."
+[13:42] In Note 1, that regulation goes on to say,
+[13:44] "Examples of fixed equipment
+[13:45] with a load current containing no DC components
+[13:48] can include but not be limited to
+[13:50] electric heating appliances,
+[13:51] and/or simple filament lighting,
+[13:53] neither containing electronic components."
+[13:56] As even the simplest loads
+[13:57] may well contain digital controls,
+[13:59] it's likely that a Type AC RCD will be unsuitable
+[14:03] for most circuits nowadays,
+[14:04] and the Type A is fast becoming the standard RCD type
+[14:07] for the vast majority of installations.
+[14:10] Let's discuss this in more detail now.
+[14:12] Going back to indent two of regulation 531.3.3,
+[14:15] an RCD Type A is described as,
+[14:17] "RCD tripping on alternating sinusoidal residual current
+[14:21] and on residual pulsating direct current,
+[14:24] suddenly applied or smoothly increasing.
+[14:27] Note 1 gives us a little further information where it says,
+[14:29] "For RCD Type A, tripping is achieved
+[14:32] for residual pulsating direct currents
+[14:34] superimposed on a smooth direct current
+[14:37] up to six milliamps."
+[14:39] So this type of device is capable of dealing with
+[14:41] a small amount of DC leakage back into the system,
+[14:44] and also can detect and remove earth faults
+[14:47] occurring after semiconductor control devices
+[14:50] up to six milliamps in magnitude.
+[14:53] So again, what does this mean in practice?
+[14:56] Well, if your circuit is supplying things
+[14:58] like class one IT equipment,
+[15:00] or power supplies for class two equipment,
+[15:02] LED drivers for lighting, dimmers,
+[15:05] induction hobs, or EV charging equipment
+[15:07] with smooth residual DC current below six milliamps,
+[15:11] then a Type A RCD is indicated in these cases.
+[15:16] In the case of EV charging,
+[15:17] you're also likely to need to install a DC monitoring device
+[15:21] as well, if using a Type A RCD.
+[15:25] The Type A RCD can be identified by this symbol
+[15:28] and can also be used to protect the types of equipment
+[15:30] the Type AC RCD can also protect.
+[15:34] Now we move on to the Type F RCD outlined in indent three.
+[15:38] "RCD for which tripping is achieved as for Type A
+[15:41] and in addition," bracket a,
+[15:43] "for composite residual currents,
+[15:45] whether suddenly applied or slowly rising,
+[15:48] intended for circuit supplied between
+[15:50] the line and neutral or line and earth middle conductor,"
+[15:54] and b, "for residual pulsating direct currents
+[15:57] superimposed on smooth direct current."
+[16:01] Note 2 goes on to say, "For RCD Type F,
+[16:04] tripping achieved for residual pulsating direct currents
+[16:07] superimposed on a smooth direct current up to 10 milliamps."
+[16:11] So you can see this is similar to the Type A,
+[16:14] but can handle higher values of DC fault current.
+[16:18] So let's try and put that into practice.
+[16:21] These would be used on frequency controlled appliances
+[16:24] and this might include things like
+[16:26] washing machines, dishwashers, and tumble dryers
+[16:29] if they're using synchronous motors.
+[16:31] It might also include some class one power tools,
+[16:34] as well as air con controllers
+[16:35] if they utilize variable speed drives.
+[16:38] This type of RCD can be identified by the use of this symbol
+[16:42] and will also cover similar faults Type AC and Type A RCDs.
+[16:47] It's also worth noting that the F in Type F RCD
+[16:51] relates to frequency.
+[16:53] And have you noticed,
+[16:54] that every time we go to the next type of RCD,
+[16:56] we're actually just adding a new symbol
+[16:57] to the one that came before, helping us to see
+[17:00] that they're capable of handling the same types of fault
+[17:02] as the previous RCD types.
+[17:05] This approach continues as we move on to talk about
+[17:07] Type B RCDs.
+[17:10] Indent four of 531.3.3 states,
+[17:13] "RCD Type B, RCD for which tripping is achieved
+[17:16] as for Type F, and in addition,"
+[17:19] bracket a, "for residual sinusoidal alternating currents
+[17:22] up to one kilohertz,
+[17:23] bracket b, "for residual alternating current
+[17:26] superimposed on a smooth direct current,"
+[17:28] bracket c, "for residual pulsating direct currents
+[17:32] superimposed on a smooth direct current,
+[17:34] bracket d, "for residual pulsating, rectified direct current
+[17:39] which results from two or more phases,
+[17:41] bracket e, "for residual smooth direct currents,
+[17:44] whether suddenly applied or slowly increased,
+[17:47] independent of polarity."
+[17:49] Note 3 then tells us that, "For RCD Type B,
+[17:52] tripping is achieved for residual pulsating direct currents
+[17:55] superimposed on a smooth direct current
+[17:58] up to 0.4 times the rated residual current or 10 milliamps,
+[18:02] whichever is the highest value."
+[18:05] So clearly then, this device
+[18:07] is a much more complex piece of kit, and this is reflected
+[18:10] in the types of load that it can protect.
+[18:13] Things like lifts, escalators, PV installations,
+[18:17] welding equipment, inverters,
+[18:19] and uninterruptible power supplies.
+[18:22] They also may be used in connection with EV charge points.
+[18:25] If an EV charger requires RCD protection,
+[18:27] and RCD Type B is one option that can be used.
+[18:31] RCD Type Bs can be identified by this symbol.
+[18:36] Now, I'm sure by this point in the video
+[18:38] your head may be spinning a little bit,
+[18:39] and you may be wondering just how you can make sure
+[18:42] that you do actually install the correct RCD type.
+[18:45] There's two scenarios here really.
+[18:47] The first is where you know
+[18:49] what loads are going to be connected
+[18:51] to the circuit that you're installing,
+[18:53] and the second is where you don't.
+[18:55] The first situation,
+[18:57] where you know exactly what load is going to be connected
+[18:59] is actually fairly easily tackled
+[19:01] because the manufacturer of the connected load
+[19:05] is legally obliged to provide information
+[19:07] on what type of RCD should be installed
+[19:10] to offer suitable protection,
+[19:12] without affecting the operation of the RCD.
+[19:17] If this information isn't readily available
+[19:19] in their documentation,
+[19:20] then they should be contacted for further information.
+[19:23] So there is a little bit more research
+[19:25] required in this situation,
+[19:26] but an answer should be available.
+[19:28] You should be able to get that information.
+[19:31] The second scenario,
+[19:32] where you don't know what's going to be connected
+[19:34] is a little bit trickier,
+[19:36] and to be honest, it's going to require
+[19:38] a certain amount of engineering judgment.
+[19:40] As always in our trade, it's a matter of balancing cost
+[19:44] against risk.
+[19:45] The temptation is to suggest that
+[19:47] if you don't know what's going to be connected,
+[19:48] then just whack in a Type B.
+[19:51] But the cost implications of this
+[19:52] make it an unreasonable option at the moment.
+[19:55] For example, in a domestic ring final circuit,
+[19:58] it's not likely that you are going to be connecting
+[20:00] inverters or an uninterruptible power supply.
+[20:03] So you may decide
+[20:04] that if it's not supplying kitchen appliances,
+[20:07] then a Type A maybe most appropriate due to
+[20:10] electronic devices being connected,
+[20:12] and then to have a separate circuit
+[20:14] feeding the kitchen appliances
+[20:16] and protect just that one circuit with a Type F RCD
+[20:20] for any appliances that may require it.
+[20:22] That's going to help to minimize the financial impact
+[20:25] on the installation.
+[20:27] So as always, in our industry,
+[20:28] it seems that the key to figuring out which RCD type to use
+[20:32] boils down to good communication with the customer,
+[20:35] or the design team,
+[20:37] a little bit of extra research,
+[20:38] and good engineering judgment,
+[20:40] as well as a deeper understanding
+[20:43] of the available options,
+[20:44] which we've hopefully provided in this video presentation.
+[20:48] We hope that information was helpful to you, and once again,
+[20:50] if you'd now like to complete the training package
+[20:52] by answering a few multiple choice questions,
+[20:54] then please click the link in the description below,
+[20:56] and do please check out
+[20:57] the rest of our free training packages
+[20:59] on the 'Know How' page of our website, efixx.co.uk.
+[21:02] Thank you very much for watching.

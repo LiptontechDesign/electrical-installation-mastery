@@ -1,0 +1,258 @@
+# What is the Luminous Flux Method or Lumen Method for Calculating Light Levels?
+# https://www.youtube.com/watch?v=yhH8wYWkilo
+
+[Music] hello and welcome to this electrical principles training video in this video we're going to continue considering our subject of lighting now in previous videos we looked at the inverse square law for lighting and also the cosine rule for lighting and we saw how using those affected our lighting calculations and the amount of light that was available on a surface now the good thing about those two calculations that we looked at there is that they're really useful for calculating things like very large rooms or especially outdoor spaces however when you come into an indoor space perhaps say a classroom or a room such as that things start to get a little bit more challenging because not only do you have light coming down from the light source and hitting the surface that you're working on or trying to illuminate or the floor but you've also got the additional challenge of the fact that actually the light tends to bounce around and be reflected off the internal walls of the room and then hit the surface as well now trying to figure out what all of those individual kind of light points are going to be is really complicated and it's going to get really difficult to do that calculation and so when it comes to indoor spaces a better way of doing lighting calculations is using what we're going to be looking at in this video and that is the luminous flux method sometimes it's referred to as just the lumen method you may see it referred to as that and in this video we're going to look at a new formula and some new elements of that now what you'll tend to find with this subject is that there's a few different ways that people write down the individual elements of it and they're referred to in slightly different ways however the principles of what we're going to look at in this video are sounds so we're going to look at a new formula and we're going to see how that formula kind of looks in terms of our lighting calculation so the first thing i'm going to do is i'm going to put the new formula up on the board and it very simply looks like this it's just f is equal to e multiplied by a divided by u multiplied by m so that's our new formula that we're going to be using and it's really important that we get that firmly fixed in our minds so let's have a little bit of a chat about what each one of these actually means okay so let's take each one of these at a time and break them down and see what they all mean so first of all we've got f which is the thing that we're trying to find with this formula now f stands for luminous flux so f is the mathematical symbol that we're going to be using and it stands for luminous flux and luminous flux is measured in lumens and we give it the unit symbol lm so if you've watched my videos on sr units you'll be familiar with the structure of what we're looking at here but what is luminous flux well in previous videos we looked at light sources and we measured their light output in luminous intensity or candelas if you remember back to those previous videos now the candela is really useful in terms of looking at how much light is being emitted from a source kind of in just one direction however if you think about a traditional filament lamp or a replacement led lamp it doesn't just emit light in one direction it emits light all around it and luminous flux is a better way of measuring the amount of light that a fitting gives off so there is a relationship between candelas and lumens but it's a little bit complicated for the purposes of this video we're not going to go into it in a lot of depth here all you've got to remember is that the luminous flux from a light source is a measurement of how much light it's giving off in total so for something like a panel light it's much more useful because obviously it's giving off light spread over an area rather than from coming from an individual point like an incandescent lamp now our next part of the mathematical formula that we're looking at is this capital e now hopefully familiar with this from the previous videos that we've watched because this e is the illuminance which of course we measure in looks and we give the unit symbol lx now what's interesting about this remember that illuminance is the amount of light that hits the surface and if you remember in our previous videos this value of illuminance was the thing that we were trying to find so it was the thing that we were trying to calculate whereas now this value for luminous flux you can see is actually inside the formula so we've buried it inside the formula now on the right hand side so it becomes part of the calculation process rather than the end result and we'll explain why that is in just a moment now moving on we've got our capital a again if you've seen my series on sr units you'll know what capital a stands for that is the area of a space in this case it's the area of a room so that's what we're looking at there of course measured in square meters and we give it the unit symbol m to the power of two m squared and then when we start looking below the line now this is where this gets really interesting we've got these two factors u and m sometimes you'll see these referred to slightly differently but we're going to refer to them as u and m because that's what a lot of the qualification producers like city and guilds and eal use they tend to use u and um you might see them referred to slightly differently but they have very similar meanings so what do these mean let's take u first of all so u is what we call the coefficient of utilization or sometimes the utilization factor and what this refers to is it's a number that takes into account things like how reflective the surfaces are in a room so how much light bounces off a wall or how much light bounces off the floor or even the ceiling and it also takes into account things like how much glass there is how many windows there are in a room so obviously if you've got a room with a lot of glass on it and at night time there's no blinds over those glass a lot of the light will simply fall out of the window and not be bounced back into the room which is going to make a difference to your light levels inside there so this value u a couple of really important things about it it's got a value it will always be a value between zero and one and we're going to see why that's so important in just a minute when we've discussed this capital m here but it will always be a value between zero and one now if you ever need to calculate this you need to go to the society of lights and lighting guides that they produce on lighting and you'll find lots of information about the different reflectances of surfaces and actually if you do a little digging you'll find that most paints will give you a reflectance value that you can use to figure out what this value for u will be again that's a little bit beyond the scope of what we're going to do here most of the time you're just given this value for your exam questions as being a fixed number and you've just got to know where to put it into the formula but we'll see how changing that does make a difference we've then got this capital m here and this m is the maintenance factor so if you think about a light fitting when you first install it it gives off a certain amount of light and then what happens is that over time it starts to get covered in dust and dirt again depending on the environment that it's in whether it's a clean room or a dirty room what it's being used for and that will start to reduce the light output and there's a number of other factors that will also affect how much the light output from the light fitting reduces including how often the light fittings are cleaned and things like that now again bear in mind that for the maintenance factor the value for m will always be a value between zero and one so it will always be somewhere between those two values so it's worth noting it's interesting that both of these values on the bottom here will have a value somewhere between zero and one so what effect does that have on our calculations well we'll answer that in our next video for now please take a note of the formula that you can see here and what the individual parts of it mean and we'll be able to expand on that in the follow-up video all that remains in this video is to say thank you very much for watching [Music] you
+
+
+[00:02] [Music]
+[00:08] hello and welcome to this electrical
+[00:10] principles training video
+[00:11] in this video we're going to continue
+[00:13] considering our subject of lighting
+[00:14] now in previous videos we looked at the
+[00:17] inverse square law for lighting and also
+[00:19] the cosine rule for lighting
+[00:21] and we saw how using those affected our
+[00:24] lighting calculations and the amount of
+[00:26] light that was available on a surface now the
+[00:29] good thing about
+[00:30] those two calculations that we looked at
+[00:32] there is that they're really useful for
+[00:33] calculating things like
+[00:35] very large rooms or especially outdoor
+[00:38] spaces
+[00:39] however when you come into an indoor
+[00:42] space perhaps say
+[00:43] a classroom or a room such as that
+[00:45] things start to get a little bit more
+[00:46] challenging because not only do you have
+[00:48] light coming down from the light source
+[00:51] and hitting the surface that you're
+[00:52] working on or trying to illuminate or
+[00:54] the floor
+[00:55] but you've also got the additional
+[00:56] challenge of the fact that actually
+[00:58] the light tends to bounce around and be
+[01:00] reflected off the internal walls of the
+[01:02] room and then hit the surface as well
+[01:04] now trying to figure out what all of
+[01:06] those individual kind of
+[01:08] light points are going to be is really
+[01:12] complicated and it's going to get really
+[01:13] difficult to do that calculation
+[01:15] and so when it comes to indoor spaces a
+[01:18] better way of doing lighting
+[01:19] calculations is using what we're going
+[01:21] to be looking at in this video and that is the
+[01:24] luminous flux
+[01:25] method sometimes it's referred to as
+[01:27] just the lumen method you may see it
+[01:29] referred to as that
+[01:30] and in this video we're going to look at
+[01:31] a new formula and some new elements of
+[01:33] that
+[01:34] now what you'll tend to find with this
+[01:35] subject is that there's a few different
+[01:37] ways that people write down the
+[01:38] individual elements of it
+[01:40] and they're referred to in slightly
+[01:41] different ways however the principles of
+[01:43] what we're going to look at in this
+[01:44] video
+[01:45] are sounds so we're going to look at a
+[01:47] new formula and we're going to see
+[01:49] how that formula kind of looks in terms
+[01:51] of our
+[01:52] lighting calculation so the first thing
+[01:54] i'm going to do is i'm going to put the
+[01:56] new
+[01:57] formula up on the board and it very
+[01:59] simply looks like this it's just
+[02:01] f is equal to e
+[02:05] multiplied by a divided by
+[02:08] u multiplied by m
+[02:11] so that's our new formula that we're
+[02:13] going to be using and it's really
+[02:14] important that we get that
+[02:16] firmly fixed in our minds so let's have
+[02:18] a little bit of a chat about
+[02:19] what each one of these actually means
+[02:22] okay so let's take each one of these at
+[02:24] a time and break them down and see what
+[02:26] they all mean so first of all we've got f which is the
+[02:28] thing that we're trying to find with
+[02:29] this formula
+[02:31] now f stands for luminous
+[02:34] flux so f is the mathematical symbol
+[02:37] that we're going to be using
+[02:38] and it stands for luminous flux and
+[02:40] luminous flux is measured
+[02:42] in lumens and we give it the unit symbol
+[02:45] lm so if you've watched my videos on sr
+[02:47] units you'll be familiar with the structure of
+[02:49] what we're looking at here but what is
+[02:51] luminous flux well in previous videos we
+[02:54] looked at light sources and we measured
+[02:56] their light output in luminous intensity or candelas
+[03:00] if you remember back to those previous
+[03:02] videos now
+[03:04] the candela is really useful in terms of
+[03:07] looking at how much light is being
+[03:09] emitted from a source
+[03:11] kind of in just one direction however if
+[03:13] you think about a traditional
+[03:15] filament lamp or a replacement led lamp
+[03:18] it doesn't just emit light in one
+[03:20] direction it emits light
+[03:21] all around it and luminous flux is a
+[03:24] better way of measuring the amount of light that a
+[03:27] fitting gives off so there is a
+[03:28] relationship between candelas
+[03:30] and lumens but it's a little bit
+[03:32] complicated for the purposes of this
+[03:33] video we're not going to go into it in
+[03:35] a lot of depth here all you've got to
+[03:36] remember is that the
+[03:38] luminous flux from a light source is a
+[03:40] measurement of how much light it's
+[03:42] giving off in total
+[03:43] so for something like a panel light it's
+[03:45] much more useful because obviously it's
+[03:47] giving off light spread over an area
+[03:49] rather than from coming from an
+[03:50] individual point like an incandescent
+[03:52] lamp now our next part of the mathematical
+[03:54] formula that we're looking at is this
+[03:56] capital e now hopefully familiar with
+[03:58] this from the previous videos that we've
+[04:00] watched because
+[04:01] this e is the illuminance
+[04:04] which of course we measure in looks and
+[04:06] we give the unit symbol
+[04:08] lx now what's interesting about this
+[04:11] remember that illuminance is the amount
+[04:13] of light
+[04:14] that hits the surface and if you
+[04:16] remember in our previous videos this
+[04:17] value of
+[04:19] illuminance was the thing that we were
+[04:21] trying to find so it was the thing that
+[04:23] we were trying to calculate
+[04:24] whereas now this value for luminous flux
+[04:26] you can see is actually
+[04:27] inside the formula so we've buried it
+[04:30] inside the formula now
+[04:32] on the right hand side so it becomes
+[04:33] part of the calculation process rather
+[04:35] than the end result
+[04:37] and we'll explain why that is in just a
+[04:39] moment
+[04:40] now moving on we've got our capital a
+[04:42] again if you've seen my series on sr
+[04:43] units you'll know what capital a stands
+[04:45] for that is the
+[04:46] area of a space in this case it's the
+[04:48] area of a room
+[04:50] so that's what we're looking at there of
+[04:51] course measured in
+[04:53] square meters and we give it the unit
+[04:56] symbol m to the power of two m squared and then
+[05:00] when we start looking below the line now
+[05:01] this is where this gets really
+[05:02] interesting we've got these two factors
+[05:04] u and m sometimes you'll see these
+[05:05] referred to slightly differently but
+[05:07] we're going to refer to them as u
+[05:08] and m because that's what a lot of the
+[05:10] qualification producers like city and
+[05:12] guilds and eal
+[05:13] use they tend to use u and um you might
+[05:15] see them referred to slightly
+[05:16] differently but they have very similar
+[05:17] meanings
+[05:18] so what do these mean let's take u first
+[05:20] of all so u
+[05:22] is what we call the coefficient of
+[05:24] utilization or sometimes the utilization
+[05:27] factor and what this refers to is it's a
+[05:30] number that takes into account
+[05:33] things like how reflective the surfaces
+[05:36] are in a room so how much
+[05:38] light bounces off a wall or how much
+[05:39] light bounces off the floor or even the
+[05:41] ceiling and it also takes into account things
+[05:43] like how much glass there is how many
+[05:45] windows there
+[05:46] are in a room so obviously if you've got
+[05:48] a room with a lot of glass on it and at
+[05:50] night time there's no blinds over those
+[05:52] glass a lot of the light will simply
+[05:53] fall out of the window and not be
+[05:54] bounced back into the room which is
+[05:56] going to make a difference to your light
+[05:57] levels inside there
+[05:58] so this value u a couple of really
+[06:01] important things about it
+[06:03] it's got a value it will always be a
+[06:04] value between zero
+[06:06] and one and we're going to see why
+[06:07] that's so important in just a minute
+[06:09] when we've discussed
+[06:10] this capital m here but it will always
+[06:12] be a value between
+[06:13] zero and one now if you ever need to
+[06:16] calculate this you need to go to the
+[06:18] society of lights and lighting guides
+[06:21] that they produce
+[06:22] on lighting and you'll find lots of
+[06:25] information about the different
+[06:26] reflectances of surfaces and actually if
+[06:28] you do a little digging you'll find that
+[06:30] most paints will give you a reflectance
+[06:32] value that you can use to figure out
+[06:34] what this value for u will be
+[06:36] again that's a little bit beyond the
+[06:37] scope of what we're going to do here
+[06:39] most of the time you're just given this
+[06:40] value
+[06:41] for your exam questions as being a fixed
+[06:44] number and you've just got to know where
+[06:45] to put it into the formula but we'll see
+[06:46] how changing that does make a difference
+[06:49] we've then got this capital m here and
+[06:51] this m is the maintenance factor
+[06:55] so if you think about a light fitting
+[06:56] when you first install it it gives off a
+[06:58] certain amount of light and then what
+[06:59] happens is that over time it starts to
+[07:00] get covered in dust and
+[07:02] dirt again depending on the environment
+[07:04] that it's in whether it's a clean room
+[07:06] or a dirty room what it's being used for
+[07:08] and that will start to reduce the light
+[07:09] output and there's a number of other
+[07:10] factors that will also affect
+[07:12] how much the light output from the light
+[07:15] fitting reduces including how often the
+[07:17] light fittings are cleaned
+[07:18] and things like that now again bear in
+[07:20] mind that for the maintenance factor
+[07:22] the value for m will always be a value
+[07:25] between zero
+[07:26] and one so it will always be somewhere
+[07:28] between those two values
+[07:30] so it's worth noting it's interesting
+[07:31] that both of these values on the bottom
+[07:33] here will have a value somewhere between
+[07:35] zero and one so what effect does that
+[07:37] have on our calculations
+[07:39] well we'll answer that in our next video
+[07:41] for now please take a note of the
+[07:43] formula that you can see here
+[07:44] and what the individual parts of it mean
+[07:46] and we'll be able to expand on that
+[07:48] in the follow-up video all that remains
+[07:50] in this video is to say
+[07:52] thank you very much for watching
+[07:58] [Music]
+[08:04] you

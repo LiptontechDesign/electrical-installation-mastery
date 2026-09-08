@@ -1,0 +1,101 @@
+# A Beginners Guide To DALI Lighting Controls
+# https://www.youtube.com/watch?v=FGPkVOycyP8
+
+welcome to this lighting control series exploring the digital addressable lighting interface protocol shortened to DALI to get started we're going back to basics for electricians who may be experiencing a DALI based lighting control system for the first time now if you're working in new or refurbished commercial buildings you'll struggle to avoid lighting controls as they are increasingly required to achieve energy performance requirements we know that when it comes to controlling lights traditional systems rely on switches and wiring cables from one switch to each lighting circuit that you want to control now this system has worked well for hundreds of years that is until the number of light points increases then there are more switches and more cabling making it more difficult for anybody using the space especially if the switches aren't clearly labeled plus if you want to change things up with your lighting it becomes a major job since you have to alter all of those fixed wires so the first reason to move away from the light switch is to enable flexibility and simplicity of wiring which is especially important in commercial applications where the layout is likely to change so think of open plan offices where walls move desks move around which may need some different arrangements when it comes to lighting however the main reason to use a lighting control system is to save energy and the problem with the traditional light switch is that people are often very good at turning lights on especially when it's dark but they often forget to switch them off when they leave so using a lighting control system we can automatically turn lights off when no one's using the space remembering the most energy efficient lights are the ones that aren't being used lighting controls can also help us to save energy by adjusting the lighting in response to the amount of daylight entering a space you don't need as much artificial light when a room is being flooded with daylight from windows or skylights this is often known as daylight linking or if you really want to sound like an expert daylight harvesting and we'll return to this later in the series another advantage of using lightning controls is the ability to implement scene setting which is changing the lightning levels to reflect the activity that the room is being used for so you'll often see this used in places like restaurants where the light levels are typically higher during the day but then turned down low to create a more relaxed atmosphere in the evening you'll often see them as well in conference rooms where you might want the general lighting up high when you're having a a meeting situation and then reducing the lighting level when there's a screen based presentation so everyone can fall asleep of course you could use a combination of traditional switches occupancy sensors and dimmer switches to create a lightning control system but the wiring will quickly become a nightmare and the biggest nightmare in that is the dimming element when we used incandescent and halogen lamps dimming was easy we connect a dimmer in series with the power supply to a lamp and chop the AC waveform to effectively reduce the amount of power flowing into the lamp which in turn reduces its light output however historically it was almost impossible to dim fluorescent and discharge lamps using a traditional dimmer switch the situation has improved with LED light sources but trying to match a traditional dimmer with an LED lamp or fixture remains a significant challenge so much so that we created a whole series of video just on dimming LED lamps and the troubleshooting that goes along with them the need to ensure consistent reliable and flicker free dimming was one of the main drivers behind the creation of the DALI protocol over 20 years ago this brings us neatly to the letter I in DALI or interphase a DALI lighting power supply or ballast has two sets of terminals The Familiar Mains connection to power the actual light source and an additional set of control terminals the interface the interface input or DALI connection allows a dedicated control signal to communicate with electronics inside the ballast or LED power supply this allows the power output of the device to be accurately controlled enabling smooth dimming the DALI control signal is also known as a DALI bus and electricians will be very familiar with the term bus bar as it's used to distribute power to circuit breakers and switch gear and the same applies to the DALI bus it's a common set of wires used to send a control signal to lighting fixtures which are all connected to the same bus the DALI standard allows you to control up to 64 individual lighting fixtures on one DALI bus now electricians are usually taught to keep power and data wiring separate with DALI you don't have to and in most installations the data bus is contained within the same cable as the power itself it's a robust protocol which is immune to disturbances on the Main's power supply the cable's typically used to wire DALI systems a regular Mains cable you don't need to use Twisted pairs or screened cable the DALI bus can be wired as Loop in and loop out from one fixture to the next as a star configuration or combinations of both you can even integrate the DALI bus into track lighting systems the only wiring configuration to avoid is the ring so you don't want to create a ring final circuit and that will be music to the ears of most UK electricians the DALI Bus itself is an extra low voltage signal but can't generally be regarded as safety or protected low voltage sources therefore the DALI cable should be installed to the same standard as regular Main's wiring you should also use the same respect as Main's voltages when it comes to Safe isolation as with the combined data and power cable there is the chance that somebody could have connected what you think are the data cables to the mains a lot of the terminals on some DALI devices are labeled da plus and da minus the bus wiring isn't polarity sensitive now let's explore the digital and addressable elements or the D and the A of the DALI protocol the DALI signal can be configured to talk to an individual light fixture groups of fixtures or all of the fixtures connected to the bus think of that as a floor of a building you could talk to One fixture or perhaps a whole rooms worth of fixtures or all of the fixtures on that particular floor that's what makes this system really powerful however to implement a DALI system we need some additional elements the DALI bus needs a power supply which is typically 16 Volts DC with a current of up to 250 milliamps I always said earlier that the DALI bus was not polarity sensitive there is one case in which you would need to observe the correct polarity that's if you have two devices providing power to the bus power supply provides power to control devices which could be push buttons for scene setting occupancy sensors or light level sensors the clever thing about DALI is that the control devices share the same bus as the lighting fixtures and you can have up to 64 control devices connected along with the lighting fixtures the last piece of the jigsaw is called the application controller or the systems brains this device is programmed to decide which lights respond to the various sensors and the inputs to the system whilst at first this may sound complicated in reality control devices often combine the functions of application controller power supply and the sensors into a single device here's an example from Flex 7 which integrates application control Power and sensors into a single package and it's been preconfigured for a typical office lighting application DALI is really flexible and can be used for whole building lighting control or just controlling a few lights in one room of course not all functions of DALI have to be implemented in every single device you can produce some simplified versions so check this out this looks like a normal Main's dimmer but it's actually a DALI dimmer capable of controlling up to 25 DALI fixtures the dimmer provides power to the DALI bus and a control signal for all of the fixtures connected to it the dimmer operates in what was termed broadcast mode where all of the fixtures on the DALI Bus receive the same dimming signal so the lights dim up and down at the the same time in response to the dial turning up or down with this entry level device it's not possible to address individual fixtures in our next video we'll take this simple installation a step further and look at practical implementation of a DALI control system and how this is combined with a prefabricated wiring system which are used extensively within commercial buildings I hope this introduction to DALI has helped you understand what's going on the next time you pop a ceiling tile in an office if you have any questions or like to share your experiences implementing lightning controls drop us a comment below it'll help the community and can help shape the future of this lightning control series
+
+
+[00:00] welcome to this lighting control series exploring the digital addressable lighting interface
+[00:05] protocol shortened to DALI to get started we're going back to basics for electricians who may
+[00:11] be experiencing a DALI based lighting control system for the first time now if you're working
+[00:17] in new or refurbished commercial buildings you'll struggle to avoid lighting controls
+[00:22] as they are increasingly required to achieve energy performance requirements we know that
+[00:27] when it comes to controlling lights traditional systems rely on switches and wiring cables from
+[00:33] one switch to each lighting circuit that you want to control now this system has worked
+[00:37] well for hundreds of years that is until the number of light points increases then there
+[00:43] are more switches and more cabling making it more difficult for anybody using the space especially
+[00:50] if the switches aren't clearly labeled plus if you want to change things up with your lighting
+[00:55] it becomes a major job since you have to alter all of those fixed wires so the first reason to
+[01:01] move away from the light switch is to enable flexibility and simplicity of wiring which is
+[01:06] especially important in commercial applications where the layout is likely to change so think
+[01:12] of open plan offices where walls move desks move around which may need some different arrangements
+[01:19] when it comes to lighting however the main reason to use a lighting control system is to
+[01:24] save energy and the problem with the traditional light switch is that people are often very good
+[01:29] at turning lights on especially when it's dark but they often forget to switch them off when
+[01:35] they leave so using a lighting control system we can automatically turn lights off when no
+[01:40] one's using the space remembering the most energy efficient lights are the ones that aren't being
+[01:46] used lighting controls can also help us to save energy by adjusting the lighting in response to
+[01:50] the amount of daylight entering a space you don't need as much artificial light when a room is being
+[01:56] flooded with daylight from windows or skylights this is often known as daylight linking or if
+[02:01] you really want to sound like an expert daylight harvesting and we'll return to this later in the
+[02:07] series another advantage of using lightning controls is the ability to implement scene
+[02:11] setting which is changing the lightning levels to reflect the activity that the room is being used
+[02:17] for so you'll often see this used in places like restaurants where the light levels are typically
+[02:22] higher during the day but then turned down low to create a more relaxed atmosphere in the evening
+[02:28] you'll often see them as well in conference rooms where you might want the general lighting up high
+[02:33] when you're having a a meeting situation and then reducing the lighting level when there's a screen
+[02:38] based presentation so everyone can fall asleep of course you could use a combination of traditional
+[02:44] switches occupancy sensors and dimmer switches to create a lightning control system but the wiring
+[02:50] will quickly become a nightmare and the biggest nightmare in that is the dimming element when we
+[02:56] used incandescent and halogen lamps dimming was easy we connect a dimmer in series with the power
+[03:02] supply to a lamp and chop the AC waveform to effectively reduce the amount of power
+[03:07] flowing into the lamp which in turn reduces its light output however historically it was almost
+[03:13] impossible to dim fluorescent and discharge lamps using a traditional dimmer switch the situation
+[03:19] has improved with LED light sources but trying to match a traditional dimmer with an LED lamp or
+[03:25] fixture remains a significant challenge so much so that we created a whole series of video just
+[03:30] on dimming LED lamps and the troubleshooting that goes along with them the need to ensure
+[03:36] consistent reliable and flicker free dimming was one of the main drivers behind the creation of
+[03:41] the DALI protocol over 20 years ago this brings us neatly to the letter I in DALI or interphase
+[03:50] a DALI lighting power supply or ballast has two sets of terminals The Familiar Mains
+[03:55] connection to power the actual light source and an additional set of control terminals the interface
+[04:01] the interface input or DALI connection allows a dedicated control signal to communicate with
+[04:07] electronics inside the ballast or LED power supply this allows the power output of the device to be
+[04:13] accurately controlled enabling smooth dimming the DALI control signal is also known as a DALI
+[04:20] bus and electricians will be very familiar with the term bus bar as it's used to distribute power
+[04:25] to circuit breakers and switch gear and the same applies to the DALI bus it's a common set of wires
+[04:31] used to send a control signal to lighting fixtures which are all connected to the same bus the DALI
+[04:37] standard allows you to control up to 64 individual lighting fixtures on one DALI bus now electricians
+[04:43] are usually taught to keep power and data wiring separate with DALI you don't have to and in most
+[04:49] installations the data bus is contained within the same cable as the power itself it's a robust
+[04:55] protocol which is immune to disturbances on the Main's power supply the cable's typically
+[04:59] used to wire DALI systems a regular Mains cable you don't need to use Twisted pairs or screened
+[05:06] cable the DALI bus can be wired as Loop in and loop out from one fixture to the next as a star
+[05:12] configuration or combinations of both you can even integrate the DALI bus into track lighting systems
+[05:19] the only wiring configuration to avoid is the ring so you don't want to create a ring final circuit
+[05:24] and that will be music to the ears of most UK electricians the DALI Bus itself is an extra low
+[05:31] voltage signal but can't generally be regarded as safety or protected low voltage sources therefore
+[05:37] the DALI cable should be installed to the same standard as regular Main's wiring you should also
+[05:42] use the same respect as Main's voltages when it comes to Safe isolation as with the combined data
+[05:48] and power cable there is the chance that somebody could have connected what you think are the data
+[05:53] cables to the mains a lot of the terminals on some DALI devices are labeled da plus and da
+[05:59] minus the bus wiring isn't polarity sensitive now let's explore the digital and addressable elements
+[06:06] or the D and the A of the DALI protocol the DALI signal can be configured to talk to an individual
+[06:12] light fixture groups of fixtures or all of the fixtures connected to the bus think of that as a
+[06:19] floor of a building you could talk to One fixture or perhaps a whole rooms worth of fixtures or all
+[06:26] of the fixtures on that particular floor that's what makes this system really powerful however to
+[06:33] implement a DALI system we need some additional elements the DALI bus needs a power supply which
+[06:39] is typically 16 Volts DC with a current of up to 250 milliamps I always said earlier that
+[06:45] the DALI bus was not polarity sensitive there is one case in which you would need to observe the
+[06:50] correct polarity that's if you have two devices providing power to the bus power supply provides
+[06:56] power to control devices which could be push buttons for scene setting occupancy sensors or
+[07:02] light level sensors the clever thing about DALI is that the control devices share the same bus
+[07:07] as the lighting fixtures and you can have up to 64 control devices connected along with the lighting
+[07:13] fixtures the last piece of the jigsaw is called the application controller or the systems brains
+[07:19] this device is programmed to decide which lights respond to the various sensors and the inputs
+[07:24] to the system whilst at first this may sound complicated in reality control devices often
+[07:30] combine the functions of application controller power supply and the sensors into a single device
+[07:37] here's an example from Flex 7 which integrates application control Power and sensors into a
+[07:42] single package and it's been preconfigured for a typical office lighting application DALI is
+[07:49] really flexible and can be used for whole building lighting control or just controlling a few lights
+[07:54] in one room of course not all functions of DALI have to be implemented in every single device you
+[08:00] can produce some simplified versions so check this out this looks like a normal Main's dimmer but
+[08:06] it's actually a DALI dimmer capable of controlling up to 25 DALI fixtures the dimmer provides power
+[08:13] to the DALI bus and a control signal for all of the fixtures connected to it the dimmer operates
+[08:20] in what was termed broadcast mode where all of the fixtures on the DALI Bus receive the same
+[08:25] dimming signal so the lights dim up and down at the the same time in response to the dial turning
+[08:32] up or down with this entry level device it's not possible to address individual fixtures in our
+[08:38] next video we'll take this simple installation a step further and look at practical implementation
+[08:44] of a DALI control system and how this is combined with a prefabricated wiring system which are used
+[08:51] extensively within commercial buildings I hope this introduction to DALI has helped
+[08:56] you understand what's going on the next time you pop a ceiling tile in an office if you have
+[09:01] any questions or like to share your experiences implementing lightning controls drop us a comment
+[09:06] below it'll help the community and can help shape the future of this lightning control series

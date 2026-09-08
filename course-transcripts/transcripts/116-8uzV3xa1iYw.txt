@@ -1,0 +1,156 @@
+# Choosing the Right Circuit Breaker - 6kA vs 10kA
+# https://www.youtube.com/watch?v=8uzV3xa1iYw
+
+- Hello and welcome to our latest video where we're looking at circuit breakers and the specifications usually printed on them. We're going to answer the question what's the difference between a 6kA and a 10kA MCB? Now, I'm sure you always look to fit the correct type and current rating of MCB. For example, B6, C20, B32 or whichever is correct for your circuit. But what's the other figure printed on there? On this circuit breaker from Schneider Electric, you can see the letters and numbers ICN 10,000 amps. On some you will find the figure in a rectangle. So, what exactly does this mean? Well, BS 7671 does not include a definition to explain this but table 2.16 of guidance note three and table 7.2.71 of the onsite guide both have details regarding what ICN is all about. As stated in both of these publications we're looking at the prospective fault current ratings of our circuit breakers. regulation 643.7.3.201 says we need to look at the current that may flow in the event of a short circuit at every relevant point of the installation, which means every point where a protective device is required to operate under fault conditions and includes the origin of the installation. And we need to ensure that should such a fault occur, our protective devices are able to withstand the large current that would flow. If we fit a device in a setting where the fault current exceeds the stated ICN, we could be in danger of the device being damaged or in worst-case scenario, catching fire or exploding. Appendix 14 of BS 7671 gives further guidance on these requirements and the measurements that should be taken. The regulation states the prospective fault current may be measured, calculated or determined by another method. If we look at these options further, the first option is measurement. As this is a live test, suitable precautions and test equipment should clearly be used. On a single phase supply such as most domestic installations both the prospective earth fault current aligned to earth fault and the prospective short circuit current aligned to neutral fault should be measured and the highest value recorded and compared to our circuit breakers to ensure it's lower than the rating of the protective device you are installing. When you're working with a three-phase supply, the worst-case scenario is a simultaneous fault between all line conductors. An approximation of this can be found by measuring between the line and neutral conductors and doubling the highest value obtained. Again, this should be compared with the rating of your protective device. Guidance note three includes the recommendation that alternative means to measurement are used to determine prospective fault current wherever possible. The second option given is calculation. If we go back to our basic principles and apply a bit of Ohm's Law, we know that the current that will flow is directly related to the resistance, or in this case the impedance of the fault path. If we have measured the earth fault loop impedance or Ze and we know the nominal voltage is 230 volts. We can calculate the expected current that will flow. So, while a nice low Ze is great for meeting the earth fault loop impedance values and therefore the disconnection times needed the lower the Ze, the higher the prospective fault current which in some circumstances may create other issues. The final option given is another method which would be inquiry and asking your local distribution network operator for the value. Guidance note three tells us that except in London and some other major city centers, the maximum fault current for a 230-volt single-phase supply up to 100 amps is unlikely to exceed 16kA. So, if we're working with a declared fault current of 16kA, shouldn't we have devices rated at 16kA or above? Fortunately, this isn't the case, as guidance note three goes on to give further guidance where it tells us that as long as the consumer unit is a type tested coordinated assembly, so no mixing and matching of brands with a double pole main switch meeting the requirements of BS 61439-3, our circuit breakers can be considered to be rated at 16kA which is suitable for our domestic installations as it matches the value quoted by our DNO. There are a few other criteria that must also be met regarding the supply which are the incoming supply must be provided in accordance with the requirements of electricity supply quality and continuity regulations with a nominal voltage below 250 volts and the cutout fuse is either a BS 1361 Type II or BS 88-3, rated at 100 amps or less. Obviously, these are things we would ensure but are really the DNOs responsibility. Why then would we need devices rated higher than the 6kA most circuit breakers are rated up? Well, as I mentioned earlier, guidance note three talks about single phase supplies up to 100 amps and also talks about not being in a city center. In either of these cases, other factors must be considered. If we look at industrial and commercial installations, many premises have an 11 kV or 33 kV supplied to a transformer right outside. The earth fault loop impedance in these cases will be extremely low as there is so little cable between the transformer and the consumer's intake position that very high currents may flow when a fault occurs. In many cases, even a 10kA circuit breaker may not be suitable at the first distribution board and an alternative such as a BS 88 fuse with prospective fault current ratings of up to 80kA may be required. By the time you have distribution circuits feeding consumer units within the customer's installation, the 10kA or even 6kA devices will probably be suitable. Of course, this is one of the relevant points referred to earlier where we would measure the prospective fault current to check. In city centers, the presence of multiple parallel earth fault paths and the proximity of transformers will again create very low impedances, leading to the very high currents when the faults occur. If when you go to install your over current protective devices, you notice there of the higher rating, then there's no need to worry. I liken this to tires fitting on my car. If they're rated at 100 miles per hour and I drive at 70 miles per hour, then they're gonna be just fine. So, no speeding as it's unsafe and illegal in this example. So, in conclusion, for domestic installations, circuit breakers rated at 6kA will usually suffice. However, if you're looking at industrial or commercial installations, you may need to fit the higher rated 10kA devices instead. If you found this interesting and you'd like to take a closer look at Schneider Circuit Protection and Consumer Units, check out these videos right here and thank you very much for watching.
+
+
+[00:00] - Hello and welcome to our latest video
+[00:02] where we're looking at circuit breakers
+[00:04] and the specifications usually printed on them.
+[00:06] We're going to answer the question
+[00:07] what's the difference between a 6kA and a 10kA MCB?
+[00:12] Now, I'm sure you always look to fit the correct type
+[00:14] and current rating of MCB.
+[00:16] For example, B6, C20, B32
+[00:19] or whichever is correct for your circuit.
+[00:21] But what's the other figure printed on there?
+[00:24] On this circuit breaker from Schneider Electric,
+[00:26] you can see the letters and numbers ICN 10,000 amps.
+[00:31] On some you will find the figure in a rectangle.
+[00:34] So, what exactly does this mean?
+[00:36] Well, BS 7671 does not include a definition to explain this
+[00:40] but table 2.16 of guidance note three
+[00:42] and table 7.2.71 of the onsite guide both have details
+[00:46] regarding what ICN is all about.
+[00:49] As stated in both of these publications
+[00:51] we're looking at the prospective fault current ratings
+[00:53] of our circuit breakers.
+[00:55] regulation 643.7.3.201 says we need to look at the current
+[01:00] that may flow in the event of a short circuit
+[01:03] at every relevant point of the installation,
+[01:06] which means every point where a protective device
+[01:08] is required to operate under fault conditions
+[01:10] and includes the origin of the installation.
+[01:13] And we need to ensure that should such a fault occur,
+[01:16] our protective devices are able to withstand
+[01:18] the large current that would flow.
+[01:21] If we fit a device in a setting
+[01:22] where the fault current exceeds the stated ICN,
+[01:25] we could be in danger of the device being damaged
+[01:28] or in worst-case scenario, catching fire or exploding.
+[01:32] Appendix 14 of BS 7671 gives further guidance
+[01:35] on these requirements and the measurements
+[01:37] that should be taken.
+[01:39] The regulation states the prospective fault current
+[01:41] may be measured, calculated
+[01:43] or determined by another method.
+[01:45] If we look at these options further,
+[01:47] the first option is measurement.
+[01:49] As this is a live test, suitable precautions
+[01:51] and test equipment should clearly be used.
+[01:54] On a single phase supply such as most domestic installations
+[01:57] both the prospective earth fault current aligned
+[01:59] to earth fault and the prospective short circuit current
+[02:02] aligned to neutral fault should be measured
+[02:05] and the highest value recorded and compared
+[02:07] to our circuit breakers to ensure it's lower than the rating
+[02:11] of the protective device you are installing.
+[02:14] When you're working with a three-phase supply,
+[02:15] the worst-case scenario is a simultaneous fault
+[02:18] between all line conductors.
+[02:19] An approximation of this can be found by measuring
+[02:22] between the line and neutral conductors
+[02:24] and doubling the highest value obtained.
+[02:26] Again, this should be compared with the rating
+[02:28] of your protective device.
+[02:30] Guidance note three includes the recommendation
+[02:32] that alternative means to measurement are used
+[02:34] to determine prospective fault current wherever possible.
+[02:37] The second option given is calculation.
+[02:40] If we go back to our basic principles
+[02:42] and apply a bit of Ohm's Law,
+[02:43] we know that the current that will flow is directly related
+[02:46] to the resistance, or in this case the impedance
+[02:49] of the fault path.
+[02:50] If we have measured the earth fault loop impedance
+[02:52] or Ze and we know the nominal voltage is 230 volts.
+[02:56] We can calculate the expected current that will flow.
+[02:58] So, while a nice low Ze is great for meeting
+[03:01] the earth fault loop impedance values
+[03:02] and therefore the disconnection times needed
+[03:04] the lower the Ze, the higher the prospective fault current
+[03:07] which in some circumstances may create other issues.
+[03:11] The final option given is another method
+[03:13] which would be inquiry
+[03:14] and asking your local distribution network operator
+[03:17] for the value. Guidance note three tells us that except in London
+[03:20] and some other major city centers,
+[03:21] the maximum fault current for a 230-volt single-phase supply
+[03:25] up to 100 amps is unlikely to exceed 16kA.
+[03:29] So, if we're working with a declared fault current of 16kA,
+[03:32] shouldn't we have devices rated at 16kA or above?
+[03:36] Fortunately, this isn't the case,
+[03:37] as guidance note three goes on to give further guidance
+[03:40] where it tells us that as long as the consumer unit
+[03:42] is a type tested coordinated assembly, so no mixing
+[03:45] and matching of brands with a double pole main switch
+[03:48] meeting the requirements of BS 61439-3,
+[03:51] our circuit breakers can be considered to be rated at 16kA
+[03:55] which is suitable for our domestic installations
+[03:57] as it matches the value quoted by our DNO.
+[04:00] There are a few other criteria that must also be met
+[04:02] regarding the supply which are the incoming supply
+[04:05] must be provided in accordance with the requirements
+[04:07] of electricity supply quality and continuity regulations
+[04:11] with a nominal voltage below 250 volts
+[04:13] and the cutout fuse is either a BS 1361 Type II
+[04:17] or BS 88-3, rated at 100 amps or less.
+[04:20] Obviously, these are things we would ensure
+[04:21] but are really the DNOs responsibility.
+[04:24] Why then would we need devices rated higher than the 6kA
+[04:27] most circuit breakers are rated up?
+[04:29] Well, as I mentioned earlier, guidance note three
+[04:31] talks about single phase supplies up to 100 amps
+[04:34] and also talks about not being in a city center.
+[04:37] In either of these cases, other factors must be considered.
+[04:40] If we look at industrial and commercial installations,
+[04:42] many premises have an 11 kV or 33 kV supplied
+[04:46] to a transformer right outside.
+[04:48] The earth fault loop impedance in these cases
+[04:50] will be extremely low as there is so little cable
+[04:53] between the transformer and the consumer's intake position
+[04:56] that very high currents may flow when a fault occurs.
+[05:00] In many cases, even a 10kA circuit breaker
+[05:02] may not be suitable at the first distribution board
+[05:05] and an alternative such as a BS 88 fuse
+[05:07] with prospective fault current ratings of up to 80kA
+[05:11] may be required.
+[05:12] By the time you have distribution circuits
+[05:14] feeding consumer units within the customer's installation,
+[05:17] the 10kA or even 6kA devices will probably be suitable.
+[05:21] Of course, this is one of the relevant points
+[05:22] referred to earlier where we would measure
+[05:24] the prospective fault current to check.
+[05:26] In city centers, the presence
+[05:28] of multiple parallel earth fault paths
+[05:30] and the proximity of transformers will again
+[05:31] create very low impedances,
+[05:33] leading to the very high currents when the faults occur.
+[05:37] If when you go to install your over current
+[05:38] protective devices, you notice there of the higher rating,
+[05:41] then there's no need to worry.
+[05:42] I liken this to tires fitting on my car.
+[05:45] If they're rated at 100 miles per hour
+[05:47] and I drive at 70 miles per hour,
+[05:48] then they're gonna be just fine.
+[05:50] So, no speeding as it's unsafe and illegal in this example.
+[05:53] So, in conclusion, for domestic installations,
+[05:55] circuit breakers rated at 6kA will usually suffice.
+[05:59] However, if you're looking at industrial
+[06:01] or commercial installations,
+[06:02] you may need to fit the higher rated 10kA devices instead.
+[06:06] If you found this interesting
+[06:08] and you'd like to take a closer look
+[06:09] at Schneider Circuit Protection and Consumer Units,
+[06:11] check out these videos right here
+[06:12] and thank you very much for watching.
