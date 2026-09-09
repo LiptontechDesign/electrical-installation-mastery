@@ -4,6 +4,7 @@ import { foundationRevisions } from './foundation-revisions';
 import { moduleTwoRevisions } from './module-two-revisions';
 import { courseEditorialRevisions } from './course-editorial-revisions';
 import { foundationVocabularyRevisions } from './foundation-vocabulary-revisions';
+import { professionalQuestionRevisions } from './professional-question-revisions';
 
 export type Revision = {
   prompt: string; correct: string;
@@ -144,7 +145,7 @@ export const questionRevisions: Record<string, Revision> = {
 };
 
 export function applyQuestionRevision(question: AssessmentQuestion): AssessmentQuestion {
-  const revision = questionRevisions[question.id];
+  const revision = professionalQuestionRevisions[question.id] ?? questionRevisions[question.id];
   if (!revision) return question;
   const followUp = {
     ...revision.followUp,

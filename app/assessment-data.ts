@@ -13,6 +13,7 @@ import type { QuestionDesign } from './learning-design';
 import { applyQuestionRevision } from './question-revisions';
 import { authorQuestion } from './question-authoring';
 import { suppliedAssessment } from './supplied-assessments';
+import { applyProfessionalCardRevision } from './professional-flashcard-revisions';
 
 export type Flashcard = {
   id: string;
@@ -756,7 +757,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
         front: overviewPrompts[lesson.id] ?? guide.checkYourself, back: overviewAnswers[lesson.id],
         design: { objective: overviewPrompts[lesson.id] ?? guide.checkYourself, principle: overviewAnswers[lesson.id], why: clearQuestions[0].teaching!.reasoning, keyIdea: guide.remember, practice: clearQuestions[0].teaching!.application, workingTex: overviewWorking[lesson.id], diagnostics: [], authorNote: 'Independent retrieval prompt with an authored answer; self-rating schedules this exact card.' },
       });
-      lessons[lesson.id] = { lessonId: lesson.id, moduleId: module.id, flashcards: clearCards, questions: clearQuestions };
+      lessons[lesson.id] = { lessonId: lesson.id, moduleId: module.id, flashcards: clearCards.map(applyProfessionalCardRevision), questions: clearQuestions };
 
       if (clearCards.length < 5 || clearQuestions.length < 5) {
         throw new Error(`Lesson ${lesson.id} does not contain enough retrieval practice.`);

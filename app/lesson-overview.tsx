@@ -19,6 +19,7 @@ import LessonReading from './lesson-reading';
 import type { EvidenceInput } from './tutor-model';
 import { LessonTerms, StandardsLearning } from './tutor-panels';
 import { terminologyForLesson } from './lesson-terminology';
+import { professionalFlashcardRevisions } from './professional-flashcard-revisions';
 
 type LessonOverviewProps = {
   lessonId: string;
@@ -56,7 +57,8 @@ export default function LessonOverview({
   const before = core[0] ?? target;
   const other = core.find(question => question.id !== target.id) ?? questions.find(question => question.id !== target.id)!;
   const bridge = target.design?.followUp ?? { prompt: other.prompt, answer: other.options[other.answer], why: other.design?.why ?? other.teaching?.reasoning ?? other.explanation, distinction: other.design?.distinction, workingTex: other.design?.workingTex };
-  const retrieval: Retrieval = authored?.retrieval ?? { prompt: overviewPrompts[lessonId] ?? guide.checkYourself, answer: overviewAnswers[lessonId], why: target.design?.why ?? target.teaching?.reasoning ?? target.explanation, distinction: target.design?.distinction, workingTex: overviewWorking[lessonId] };
+  const revisedRetrieval = professionalFlashcardRevisions[lessonId + '-overview-retrieval'];
+  const retrieval: Retrieval = revisedRetrieval ? { prompt: revisedRetrieval.front, answer: revisedRetrieval.back, why: revisedRetrieval.why } : authored?.retrieval ?? { prompt: overviewPrompts[lessonId] ?? guide.checkYourself, answer: overviewAnswers[lessonId], why: target.design?.why ?? target.teaching?.reasoning ?? target.explanation, distinction: target.design?.distinction, workingTex: overviewWorking[lessonId] };
   const trapIndex = before.design?.diagnostics.findIndex(item => item !== null) ?? -1;
   const trap = trapIndex >= 0 ? before.design!.diagnostics[trapIndex] : null;
   const knowledge = lessonKnowledge[lessonId];
