@@ -110,3 +110,51 @@
   .recap-paper { padding: 2rem; }
   .recap-video-window { width: min(90vw, 1600px); }
 }
+
+/* Let the actual number of learning prompts/terms determine the columns.
+   Empty grid tracks collapse, while narrow containers stack without overflow. */
+.lesson-key-ideas ol {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1rem;
+}
+.lesson-key-ideas li {
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: .75rem;
+  padding: 1.125rem;
+}
+.lesson-key-ideas li > span { width: 2rem; height: 2rem; font-size: .875rem; }
+.lesson-key-ideas li p { margin: 0; font-size: 1rem; line-height: 1.65; overflow-wrap: anywhere; }
+.lesson-focus-label { font-size: .8rem; line-height: 1.5; }
+.lesson-compass > p { font-size: 1rem; line-height: 1.65; }
+.lesson-compass > .secondary-button {
+  margin-top: 1.25rem;
+  max-width: 100%;
+  min-height: 3rem;
+  white-space: normal;
+}
+.overview-support > summary { padding: 1.125rem 1.375rem; }
+.overview-support > summary strong { font-size: 1rem; line-height: 1.45; }
+.overview-support > summary small { font-size: .875rem; line-height: 1.5; }
+.overview-support-body { padding: .5rem 1.375rem 1.375rem; }
+.overview-support-body > .lesson-terms:first-child { border-top: 0; margin-top: 0; }
+.context-term-list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1rem;
+}
+.context-term { padding-inline: 1.125rem; }
+.context-term summary { padding-block: 1rem; line-height: 1.5; }
+.context-term p { max-width: 76ch; line-height: 1.7; overflow-wrap: anywhere; }
+.term-lesson-links button {
+  align-items: flex-start;
+  gap: 1rem;
+  padding-block: .875rem;
+  font-size: .95rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.term-lesson-links button svg { flex-shrink: 0; margin-top: .25rem; }
+@media (max-width: 700px) {
+  .lesson-key-ideas ol, .context-term-list { grid-template-columns: minmax(0, 1fr); }
+  .overview-support > summary { padding: 1rem; }
+  .overview-support-body { padding: .5rem 1rem 1rem; }
+}
