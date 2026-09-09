@@ -1,6 +1,6 @@
 # Shared supplementary videos
 
-Use **Add supporting video** in an expanded module or above a lesson. Paste a YouTube link, use **Fill title and instructor from YouTube**, then choose the module and the lesson it should appear before or after. Titles and channel names remain editable. Metadata lookup can fail; manual entry remains available. Duration is not guessed.
+Use the compact **+** at module, expanded subsection or lesson level. The position defaults to the end of that module/subsection, or after the current lesson. Paste a YouTube link: title and instructor are fetched automatically after a short debounce. Stale requests are cancelled and manually edited fields are preserved. A retry control and manual entry remain available when lookup fails. Duration is not guessed. Archive controls sit beside the module-level plus.
 
 Videos appear in the existing course map at the chosen lesson position. They open in a course-styled embedded player; opening one pauses the core player and cancels automatic advancement. They have no assessment/overview tabs and do not alter core completion totals. A YouTube fallback link remains available for embed restrictions.
 

@@ -19,6 +19,34 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
   const [archiveModule, setArchiveModule] = useState<string | null>(null);
   const [confirmation, setConfirmation] = useState('');
   const [notice, setNotice] = useState('');
+  const [metadataStatus, setMetadataStatus] = useState('');
+  const [lookupAttempt, setLookupAttempt] = useState(0);
+  const editedFields = useRef({ title: false, instructor: false });
+  const editorUrl = editor?.url ?? '';
+  const editorAction = editor?.action;
+  useEffect(() => {
+    const id = youtubeId(editorUrl);
+    if (!id || !['add', 'edit'].includes(editorAction ?? '')) { setMetadataStatus(''); return; }
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      setMetadataStatus('Fetching title and instructor…');
+      try {
+        const response = await fetch(`/api/supplementary/metadata?url=${encodeURIComponent(editorUrl)}`, { signal: controller.signal });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error);
+        if (controller.signal.aborted) return;
+        setConfirmation('');
+        setEditor(current => current && current.url === editorUrl ? { ...current,
+          title: editedFields.current.title ? current.title : data.title,
+          instructor: editedFields.current.instructor ? current.instructor : data.instructor,
+        } : current);
+        setMetadataStatus('Details fetched. You can edit the title and instructor.');
+      } catch (e) {
+        if (!controller.signal.aborted) setMetadataStatus(e instanceof Error ? e.message : 'Enter the details manually.');
+      }
+    }, 450);
+    return () => { window.clearTimeout(timer); controller.abort(); };
+  }, [editorUrl, editorAction, lookupAttempt]);
   const dialog = useRef<HTMLElement>(null);
   const isOpen = Boolean(editor || selected || archiveModule);
   useDialogFocus(dialog, isOpen);
@@ -40,6 +68,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
   }, [isOpen]);
   function close() { if (busy) return; setEditor(null); setSelected(null); setArchiveModule(null); setConfirmation(''); setNotice(''); }
   function edit(video: SupplementaryVideo, action: SupplementaryAction) {
+    editedFields.current = { title: true, instructor: true };
     setEditor({ ...video, action, revision: state.revision, url: `https://www.youtube.com/watch?v=${video.videoId}` }); setSelected(null); setConfirmation(''); setNotice('');
   }
   async function save() {
@@ -59,23 +88,11 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     } catch (e) { setNotice(e instanceof Error ? e.message : 'Could not save.'); }
     finally { setBusy(false); }
   }
-  async function lookup() {
-    if (!editor || busy) return;
-    const draft = editor;
-    setBusy(true); setNotice('Looking up video details…');
-    try {
-      const response = await fetch(`/api/supplementary/metadata?url=${encodeURIComponent(draft.url)}`);
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error);
-      setEditor(current => current && current.url === draft.url ? { ...current, title: data.title, instructor: data.instructor } : current);
-      setNotice('Details filled in. You can rename them before publishing.');
-    } catch (e) { setNotice(e instanceof Error ? e.message : 'Enter the title manually.'); }
-    finally { setBusy(false); }
-  }
   const module = course.modules.find(m => m.id === editor?.moduleId);
   return <SupplementaryContext.Provider value={{ videos: state.videos, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
-    const first = course.modules.find(m => m.id === moduleId)!.lessons[0].id;
-    setEditor({ action: 'add', revision: state.revision, moduleId, anchorId: anchorId ?? first, position: 'after', url: '', title: '', instructor: '' }); setConfirmation(''); setNotice('');
+    const last = course.modules.find(m => m.id === moduleId)!.lessons.at(-1)!.id;
+    editedFields.current = { title: false, instructor: false };
+    setEditor({ action: 'add', revision: state.revision, moduleId, anchorId: anchorId ?? last, position: 'after', url: '', title: '', instructor: '' }); setConfirmation(''); setNotice('');
   }, archive: moduleId => { setArchiveModule(moduleId); setNotice(''); } }}>
     {children}
     {error && <div className="supp-status" role="status">{error} <button type="button" onClick={() => void refresh()}>Retry shared videos</button></div>}
@@ -84,10 +101,13 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
       {editor ? <form onSubmit={e => { e.preventDefault(); void save(); }}>
         <fieldset disabled={busy}>
           {['add', 'edit'].includes(editor.action) ? <>
-            <label>YouTube link<input type="url" required value={editor.url} onChange={e => { setEditor({ ...editor, url: e.target.value }); setConfirmation(''); }} placeholder="https://www.youtube.com/watch?v=…" /></label>
-            <button type="button" className="secondary-button" disabled={!youtubeId(editor.url)} onClick={() => void lookup()}>Fill title and instructor from YouTube</button>
-            <label>Video title<input required maxLength={240} value={editor.title} onChange={e => { setEditor({ ...editor, title: e.target.value }); setConfirmation(''); }} /></label>
-            <label>Instructor / channel<input maxLength={160} value={editor.instructor} onChange={e => { setEditor({ ...editor, instructor: e.target.value }); setConfirmation(''); }} /></label>
+            <label>YouTube link<input type="url" required value={editor.url} onChange={e => {
+              editedFields.current = { title: false, instructor: false };
+              setEditor({ ...editor, url: e.target.value.trim(), title: '', instructor: '' }); setConfirmation('');
+            }} placeholder="Paste a YouTube link — details fill automatically" /></label>
+            <div className="supp-metadata"><span role="status">{metadataStatus || 'Paste a video link to fetch its title and instructor automatically.'}</span><button type="button" disabled={!youtubeId(editor.url)} onClick={() => setLookupAttempt(value => value + 1)}>Retry lookup</button></div>
+            <label>Video title<input required maxLength={240} value={editor.title} onChange={e => { editedFields.current.title = true; setEditor({ ...editor, title: e.target.value }); setConfirmation(''); }} /></label>
+            <label>Instructor / channel<input maxLength={160} value={editor.instructor} onChange={e => { editedFields.current.instructor = true; setEditor({ ...editor, instructor: e.target.value }); setConfirmation(''); }} /></label>
             <div className="supp-fields"><label>Module<select value={editor.moduleId} onChange={e => { const m = course.modules.find(m => m.id === e.target.value)!; setEditor({ ...editor, moduleId: m.id, anchorId: m.lessons[0].id }); setConfirmation(''); }}>{course.modules.map(m => <option key={m.id} value={m.id}>{m.number}. {m.title}</option>)}</select></label>
             <label>Position<select value={editor.position} onChange={e => { setEditor({ ...editor, position: e.target.value as 'before' | 'after' }); setConfirmation(''); }}><option value="before">Before this lesson</option><option value="after">After this lesson</option></select></label></div>
             <label>Lesson (also selects its subsection)<select value={editor.anchorId} onChange={e => { setEditor({ ...editor, anchorId: e.target.value }); setConfirmation(''); }}>{module?.lessons.map(l => <option key={l.id} value={l.id}>L{l.number} · {l.title}</option>)}</select></label>
@@ -118,10 +138,10 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     </section></div>}
   </SupplementaryContext.Provider>;
 }
-export function SupplementaryControls({ moduleId, anchorId }: { moduleId: string; anchorId?: string }) {
+export function SupplementaryControls({ moduleId, anchorId, compact = false, label = 'Add video here' }: { moduleId: string; anchorId?: string; compact?: boolean; label?: string }) {
   const context = useContext(SupplementaryContext);
   if (!context) return null;
-  return <div className="supp-controls"><button type="button" onClick={() => context.add(moduleId, anchorId)}><Plus size={17} /><span>Add supporting video</span></button><button type="button" onClick={() => context.archive(moduleId)}><Archive size={17} /><span>Archived videos</span></button></div>;
+  return <div className="supp-controls"><button type="button" title={label} aria-label={label} onClick={() => context.add(moduleId, anchorId)}><Plus size={16} /></button>{!compact && <button type="button" title="Archived videos in this module" aria-label="Archived videos in this module" onClick={() => context.archive(moduleId)}><Archive size={16} /></button>}</div>;
 }
 export function SupplementaryRows({ anchorId, position }: { anchorId: string; position: 'before' | 'after' }) {
   const context = useContext(SupplementaryContext);
