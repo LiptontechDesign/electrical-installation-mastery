@@ -18,4 +18,8 @@ Metadata is fetched from a fixed YouTube oEmbed endpoint with an 8-second timeou
 
 ## Delivery note
 
+Watched marks are personal, browser-local state under `electrical-supplementary-watched-v1`, keyed by YouTube video ID. Finishing playback (when the shared YouTube API is available) or pressing Mark video watched records completion; simply opening a player does not. Undo removes the mark. Moving, renaming, archiving/restoring or switching navigation mode does not reset it. Replacing a video URL does not inherit the former video's mark. These optional marks are separate from required progress and are not included in the existing core-course progress export.
+
+Core video completion already used the same learner record in both modes. Turning Free Browse off now navigates to the earliest unwatched required video or unpassed checkpoint, without clearing any completed videos or assessment records. Individual lesson quizzes retain their existing status and requirements; watching a video never passes a quiz.
+
 No tests, build, browser QA or deployment monitoring were run, at the user's request. Git main remains the existing Vercel deployment path. Runtime availability depends on the existing production Blob binding; this change does not provision new storage.

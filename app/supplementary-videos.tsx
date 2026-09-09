@@ -1,12 +1,12 @@
 'use client';
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import { PlayCircle, Plus, Archive, X } from 'lucide-react';
+import { PlayCircle, Plus, Archive, X, CheckCircle2 } from 'lucide-react';
 import course from './course-curriculum';
 import { useDialogFocus } from './use-dialog-focus';
 import { confirmationPhrase, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
 
 type Editor = { action: SupplementaryAction; revision: number; id?: string; moduleId: string; anchorId: string; position: 'before' | 'after'; url: string; title: string; instructor: string };
-type Context = { videos: SupplementaryVideo[]; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
+type Context = { videos: SupplementaryVideo[]; watched: string[]; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
 const SupplementaryContext = createContext<Context | null>(null);
 const empty: SupplementaryState = { version: 1, revision: 0, videos: [] };
 export function SupplementaryProvider({ children }: { children: ReactNode }) {
@@ -19,6 +19,24 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
   const [archiveModule, setArchiveModule] = useState<string | null>(null);
   const [confirmation, setConfirmation] = useState('');
   const [notice, setNotice] = useState('');
+  const [watched, setWatched] = useState<string[]>([]);
+  const [progressReady, setProgressReady] = useState(false);
+  const [progressError, setProgressError] = useState('');
+  useEffect(() => {
+    try {
+      const value: unknown = JSON.parse(localStorage.getItem('electrical-supplementary-watched-v1') ?? '[]');
+      if (!Array.isArray(value) || value.some(id => typeof id !== 'string')) throw new Error();
+      setWatched([...new Set(value as string[])]); setProgressReady(true);
+    } catch { setProgressError('Supplementary watched marks could not be loaded. Existing saved data has not been changed.'); }
+  }, []);
+  useEffect(() => {
+    if (!progressReady) return;
+    try { localStorage.setItem('electrical-supplementary-watched-v1', JSON.stringify(watched)); setProgressError(''); }
+    catch { setProgressError('This browser could not save supplementary watched marks. They will last only for this session.'); }
+  }, [watched, progressReady]);
+  const markWatched = useCallback((id: string) => {
+    setWatched(current => current.includes(id) ? current : [...current, id]);
+  }, []);
   const [metadataStatus, setMetadataStatus] = useState('');
   const [lookupAttempt, setLookupAttempt] = useState(0);
   const editedFields = useRef({ title: false, instructor: false });
@@ -89,7 +107,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     finally { setBusy(false); }
   }
   const module = course.modules.find(m => m.id === editor?.moduleId);
-  return <SupplementaryContext.Provider value={{ videos: state.videos, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
+  return <SupplementaryContext.Provider value={{ videos: state.videos, watched, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
     const last = course.modules.find(m => m.id === moduleId)!.lessons.at(-1)!.id;
     editedFields.current = { title: false, instructor: false };
     setEditor({ action: 'add', revision: state.revision, moduleId, anchorId: anchorId ?? last, position: 'after', url: '', title: '', instructor: '' }); setConfirmation(''); setNotice('');
@@ -117,7 +135,10 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
         </fieldset>
       </form> : selected ? <>
         <p>{selected.instructor} · Optional supporting lesson</p>
-        <div className="video-frame"><iframe src={`https://www.youtube-nocookie.com/embed/${selected.videoId}?rel=0`} title={selected.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /></div>
+        <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
+        <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
+        <p>Watched status is personal to this browser and is kept in both browsing modes.</p>
+        {progressError && <p role="alert">{progressError}</p>}
         <p><a href={`https://www.youtube.com/watch?v=${selected.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p>
         <p>This optional video has no quiz or overview and does not change required course completion.</p>
         <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>
@@ -145,5 +166,39 @@ export function SupplementaryControls({ moduleId, anchorId, compact = false, lab
 }
 export function SupplementaryRows({ anchorId, position }: { anchorId: string; position: 'before' | 'after' }) {
   const context = useContext(SupplementaryContext);
-  return <>{context?.videos.filter(v => !v.archived && v.anchorId === anchorId && v.position === position).map(v => <button className="supp-video-row" type="button" key={v.id} onClick={() => context.open(v)}><PlayCircle size={17} /><span><strong>{v.title}</strong><small>Supplementary · {v.instructor || 'YouTube'}</small></span></button>)}</>;
+  return <>{context?.videos.filter(v => !v.archived && v.anchorId === anchorId && v.position === position).map(v => <button className="supp-video-row" type="button" key={v.id} onClick={() => context.open(v)}>{context.watched.includes(v.videoId) ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>{v.title}</strong><small>Supplementary · {context.watched.includes(v.videoId) ? 'Watched' : 'Not watched'} · {v.instructor || 'YouTube'}</small></span></button>)}</>;
+}
+
+function SupplementaryPlayer({ video, onWatched }: { video: SupplementaryVideo; onWatched: (id: string) => void }) {
+  const host = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const container = host.current;
+    if (!container) return;
+    let disposed = false;
+    let player: { destroy: () => void } | undefined;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${video.videoId}?rel=0&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`;
+    iframe.title = video.title;
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    const bind = () => {
+      if (disposed || player || !window.YT?.Player) return;
+      const api = window.YT;
+      player = new api.Player(iframe, { events: { onStateChange: event => {
+        if (!disposed && event.data === api.PlayerState.ENDED) onWatched(video.videoId);
+      } } });
+    };
+    iframe.addEventListener('load', bind);
+    container.appendChild(iframe);
+    // The course loads the shared YouTube API; handle it arriving after the frame.
+    let attempts = 0;
+    const timer = window.setInterval(() => { bind(); if (player || ++attempts >= 80) window.clearInterval(timer); }, 250);
+    return () => {
+      disposed = true; window.clearInterval(timer); iframe.removeEventListener('load', bind);
+      try { player?.destroy(); } catch { /* The frame may already have closed. */ }
+      iframe.remove();
+    };
+  }, [video.id, video.videoId, video.title, onWatched]);
+  return <div className="video-frame" ref={host} />;
 }

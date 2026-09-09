@@ -1054,12 +1054,17 @@ export default function CourseApp() {
       <button type="button" className="settings-switch" role="switch" aria-checked={learner.freeBrowseEnabled} onClick={() => {
         cancelAutoNext(false);
         setLearner((current) => ({...current, freeBrowseEnabled: !current.freeBrowseEnabled, updatedAt: new Date().toISOString()}));
-        setToast(learner.freeBrowseEnabled ? 'Guided sequence restored. Your progress is unchanged.' : 'Browse any video. Skipped work stays incomplete.');
+        if (learner.freeBrowseEnabled) {
+          if (nextRequiredItem?.kind === 'lesson') loadLesson(nextRequiredItem.lesson.id);
+          else if (nextRequiredItem?.kind === 'checkpoint') resolveCheckpoint(nextRequiredItem.checkpoint);
+          else navigate('progress');
+          setToast(nextRequiredItem ? 'Guided sequence resumed at your earliest unfinished requirement. All watched videos and passed assessments are preserved.' : 'All required videos and checkpoints are complete. Your progress is preserved.');
+        } else setToast('Browse any video. Watched videos stay recorded in both modes; skipped work stays incomplete.');
       }}>
         <SkipForward size={19}/><span><strong>Browse freely</strong><small>{learner.freeBrowseEnabled ? 'On · Open any module or video' : 'Off · Follow the guided sequence'}</small></span>
         <span className={`switch-track ${learner.freeBrowseEnabled ? 'on' : ''}`} aria-hidden="true"><i/></span>
       </button>
-      <p>Opening a lesson never marks it complete. Checkpoints still require their own lesson group and a passing score.</p>
+      <p>Watched videos and passed quizzes are remembered in both modes. Finish playback or mark a video watched; opening it alone does not count. Guided mode resumes at your earliest unfinished requirement.</p>
       {nextRequiredItem && <button type="button" className="resume-unfinished" onClick={() => nextRequiredItem.kind === 'lesson' ? chooseLesson(nextRequiredItem.lesson.id) : startCheckpoint(nextRequiredItem.checkpoint.id)}><RotateCcw size={16}/> Resume unfinished work</button>}
     </section>
   );
