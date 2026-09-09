@@ -1,6 +1,7 @@
 export type CheckpointPlanItem = {
   title: string;
   throughLessonId: string;
+  recapKey?: string;
 };
 
 // A checkpoint closes a coherent run of lessons. The assessment itself is
@@ -29,16 +30,16 @@ export const checkpointPlan: Record<string, readonly CheckpointPlanItem[]> = {
     { title: 'Drawings and distribution connections', throughLessonId: 'p02-l11' },
   ],
   'module-03': [
-    { title: 'Tools and conductor preparation', throughLessonId: 'p16-l02' },
+    { title: 'Tools, safe isolation and conductor preparation', throughLessonId: 'p16-l02' },
     { title: 'Socket terminations', throughLessonId: 'p03-l04' },
     { title: 'Lighting-circuit connections', throughLessonId: 'p03-l09' },
     { title: 'Final circuits and consumer units', throughLessonId: 'p03-l12' },
   ],
   'module-04': [
     { title: 'PVC and steel conduit', throughLessonId: 'p04-l06' },
-    { title: 'Tray, trunking and cable capacity', throughLessonId: 'p04-l10' },
+    { title: 'Tray, trunking and conduit circuit layout', throughLessonId: 'p04-l18', recapKey: 'p04-l10' },
     { title: 'SWA construction and installation', throughLessonId: 'p04-l14' },
-    { title: 'Special cable systems', throughLessonId: 'p04-l18' },
+    { title: 'Special cable systems', throughLessonId: 'p04-l17', recapKey: 'p04-l18' },
   ],
   'module-05': [
     { title: 'Faults, earthing and protective devices', throughLessonId: 'p05-l05' },
@@ -52,38 +53,39 @@ export const checkpointPlan: Record<string, readonly CheckpointPlanItem[]> = {
     { title: 'Voltage drop and fault rating', throughLessonId: 'p06-l15' },
   ],
   'module-07': [
-    { title: 'Isolation and motor starting', throughLessonId: 'p04-l20' },
+    { title: 'Motor principles, contactors and starters', throughLessonId: 'p04-l20' },
     { title: 'Motor control and distribution', throughLessonId: 'p07-l07' },
     { title: 'Submains and building load', throughLessonId: 'p07-l16' },
   ],
   'module-08': [
-    { title: 'Continuity and polarity', throughLessonId: 'p08-l05' },
+    { title: 'Safe isolation, continuity and polarity', throughLessonId: 'p08-l05' },
     { title: 'Insulation resistance', throughLessonId: 'p08-l06' },
     { title: 'Tests at the origin', throughLessonId: 'p08-l17' },
     { title: 'Circuit tests and functional checks', throughLessonId: 'p08-l15' },
-    { title: 'Periodic inspection and certification', throughLessonId: 'p16-l09' },
+    { title: 'Installation certification, then periodic inspection', throughLessonId: 'p08-periodic', recapKey: 'p16-l09' },
   ],
   'module-09': [
     { title: 'Ring-circuit and insulation faults', throughLessonId: 'p09-l04' },
     { title: 'Circuit fault diagnosis', throughLessonId: 'p09-l08' },
-    { title: 'Load and leakage diagnosis', throughLessonId: 'p09-l11' },
+    { title: 'Load, leakage and thermal diagnosis', throughLessonId: 'p16-l06' },
   ],
   'module-10': [
-    { title: 'Load planning and service detection', throughLessonId: 'p16-l04' },
-    { title: 'First fix, second fix and safe routing', throughLessonId: 'p16-l05' },
+    { title: 'Load planning and service detection', throughLessonId: 'p16-l05', recapKey: 'project-survey' },
+    { title: 'First fix and second fix', throughLessonId: 'p10-l04', recapKey: 'project-fixing' },
     { title: 'Complete installation projects', throughLessonId: 'p10-l08' },
   ],
   'module-11': [
-    { title: 'Boxes and common accessories', throughLessonId: 'p11-v2-l05' },
-    { title: 'Kitchen, cooker and shower planning', throughLessonId: 'p11-v2-l08' },
+    { title: 'Accessory specification, kitchen layout and demand', throughLessonId: 'p11-v2-l07', recapKey: 'residential-planning' },
+    { title: 'Chasing, boxes and accessory installation', throughLessonId: 'p11-v2-l05' },
     { title: 'Special-location accessories', throughLessonId: 'p11-v2-l11' },
   ],
   'module-12': [
+    { title: 'Visual task and human-centred lighting design', throughLessonId: 'p12-v2-l05', recapKey: 'lighting-brief' },
     { title: 'Lighting quantities and inverse-square calculations', throughLessonId: 'supp-lighting-03' },
     { title: 'Incidence angles and point calculations', throughLessonId: 'supp-lighting-05' },
     { title: 'Lumen method and fitting counts', throughLessonId: 'supp-lighting-09' },
     { title: 'Multiple-source lighting calculations', throughLessonId: 'supp-lighting-12' },
-    { title: 'Lighting design decisions', throughLessonId: 'p12-v2-l06' },
+    { title: 'Professional lighting specification', throughLessonId: 'p12-v2-l06' },
     { title: 'Downlights and LED strip systems', throughLessonId: 'p12-v2-l10' },
     { title: 'Drivers, dimming and flicker', throughLessonId: 'p12-v2-l13' },
     { title: 'Ratings and garden lighting', throughLessonId: 'p12-v2-l16' },
@@ -105,6 +107,6 @@ export const checkpointPlan: Record<string, readonly CheckpointPlanItem[]> = {
     { title: 'Building-services controls and protection', throughLessonId: 'p15-v2-l04' },
   ],
   'module-16': [
-    { title: 'Diagnosis, pricing and estimating', throughLessonId: 'p16-l08' },
+    { title: 'Job pricing and rewire estimating', throughLessonId: 'p16-l08' },
   ],
 };

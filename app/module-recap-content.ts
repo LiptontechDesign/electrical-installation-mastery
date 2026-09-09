@@ -75,7 +75,7 @@ export const foundationRecaps: Record<string, RecapCopy> = {
     ['Find the ratio','Power factor is real power divided by apparent power and has no unit.'],
     ['Draw consistently','Use the same numerical scale for the triangle’s power axes, label W/var/VA or their kilo-units, and identify the phase angle.'],
   ], 'equation',['P = 5 kW; Q = 3 kvar','S = √(5² + 3²) ≈ 5.83 kVA','Power factor ≈ 5/5.83 ≈ 0.857'],'The viewer’s motor example shows the calculation; it does not specify an actual installation design.'),
-  'p01-l31': page('Understand what an instrument measures before connecting it. Transformer action, isolation and measurement are linked by the difference between a useful electrical effect and a hazardous source of energy.', [
+  'p01-l31': page('Understand what an instrument measures before connecting it. This section explains transformer and measurement principles; the full consumer-unit safe-isolation lesson follows in Module 3.', [
     ['Transformers','Changing flux links windings; turns ratio relates their voltages. Core and winding losses explain why real behaviour differs from an ideal model.'],
     ['Measurement arrangement','Voltage is measured across points; an ammeter measures current in its intended path; resistance measurement needs an unenergised, appropriately isolated component.'],
     ['Clamp meter','Opposing line and neutral magnetic fields cancel when both pass through the clamp. A zero reading in that arrangement does not mean no load current.'],
@@ -96,6 +96,7 @@ export const foundationRecaps: Record<string, RecapCopy> = {
     ['Physical interfaces','Switch-fuse arrangements and industrial sockets need their actual ratings, conductor functions and terminal markings checked.'],
   ], 'flow',['Source and main distribution','Feeder or riser','Panel schedule and circuit','Equipment connection'],'Move between views rather than expecting a single-line diagram to show every terminal.'),
   'p16-l02': page('Good termination starts before the screw is tightened. Preparation must preserve the conductor and suit the terminal that will grip it.', [
+    ['Safe isolation first','The consumer-unit isolation demonstration comes before conductor preparation. Identify the equipment and follow the full approved procedure under appropriate training and supervision; a switch position is not proof of absence of voltage.'],
     ['Choose the tool','Match stripping and cutting tools to the cable. Remove sheath and insulation without nicking copper or losing fine strands.'],
     ['Flexible conductors','Fine-stranded conductors need controlled preparation so every strand enters the intended connection.'],
     ['Ferrules','Ferrule size, length, profile and crimp tool must suit the conductor and terminal. They are not a universal upgrade for every connector.'],
@@ -124,6 +125,7 @@ export const foundationRecaps: Record<string, RecapCopy> = {
     ['Fabrication','Tray and trunking bends need appropriate geometry and finished edges. Prefabricated fittings and workshop-made bends are different options.'],
     ['Capacity factors','The conduit and trunking examples compare cable factors with the permitted containment factor. Apply the method for the actual route and cable construction.'],
     ['Whole cables','A fractional permissible cable count is rounded down, not up. Space compliance does not prove current-carrying capacity.'],
+    ['Conduit loop-in circuits','Trace the individual line, neutral, switched-line and protective paths through the containment; changing the wiring system does not remove the need for a complete circuit.'],
   ], 'compare',['Space check → cable factors versus containment capacity','Heat check → installation and grouping conditions','Mechanical check → edges, bends and support'],'Do not use an example’s cable count as a universal limit for another containment system.'),
   'p04-l14': page('Armoured cable termination must address mechanical support, sealing and the intended protective connection together.', [
     ['Cable layers','Distinguish insulation, bedding, armour and outer sheath. Bedding is not the conductor’s primary insulation.'],
@@ -133,7 +135,7 @@ export const foundationRecaps: Record<string, RecapCopy> = {
   'p04-l18': page('Special cable systems need their own preparation and inspection methods. An outwardly tidy termination can conceal a problem with insulation or sealing.', [
     ['SY flex','Its braid and flexible conductors call for a compatible gland and termination method; do not assume it is interchangeable with SWA.'],
     ['MICC','The metal sheath and mineral insulation are integral to the system. The termination must seal the prepared end and retain insulation performance.'],
-    ['Singles in conduit','Individual conductor routes can be arranged differently from sheathed cable, but the circuit still needs complete, correctly identified paths.'],
+    ['Inspect before concealment','Check the prepared end and insulation performance before later assembly hides the work.'],
   ], 'flow',['Recognise the cable system','Use its termination method','Check insulation and protective paths','Confirm the complete circuit'],'The MICC demonstration tests an end before moving on, rather than waiting until both terminations hide the work.'),
   'p05-l05': page('Identify the fault before choosing the protection. Overload, short circuit and earth fault are not three names for the same condition.', [
     ['Fault paths','An overload uses the intended path at excessive current. A short circuit or earth fault creates an unintended low-impedance path.'],

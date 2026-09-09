@@ -1,6 +1,32 @@
 import {page, type RecapCopy} from './module-recap-content';
 
 export const applicationRecaps: Record<string, RecapCopy> = {
+  'p16-l06': page('Use load, leakage and thermal evidence together to locate a fault. An unusual current or temperature pattern is a clue to investigate, not a complete diagnosis.', [
+    ['Measured boundary','A leakage clamp measures the imbalance through the enclosed conductors; a line-current measurement answers a different question.'],
+    ['Load and control','A heater that does not warm may have a supply, control or element problem. Choose a measurement that separates possible causes.'],
+    ['Thermal context','Compare suitable components and operating loads. Surface emissivity and reflections can make apparent temperatures misleading.'],
+    ['Corroborate and revisit','Use appropriate electrical evidence to investigate loading, imbalance, harmonics or connection defects, and retain context for a post-repair comparison.'],
+  ], 'flow',['Observe the symptom','Choose the measurement boundary','Corroborate the cause','Record and verify the repair'],'The thermal square law concerns resistive power at fixed resistance, not multiplication of a Celsius reading.'),
+  'project-survey': page('Resolve demand and service-location uncertainties before intrusive installation work. Both building detectors and CAT/generator surveys belong in planning, not after first fix.', [
+    ['Load brief','Use building purpose and expected loads to develop the initial supply and distribution estimate. Refine assumptions as information improves.'],
+    ['Building services','Interpret pipe and cable detector indications across the intended work area; a silent detector does not prove it is clear.'],
+    ['External services','The CAT and generator lesson distinguishes direct connection, clamp application and induction, each with its own use and limitations.'],
+  ], 'flow',['Define demand','Survey existing services','Coordinate the route','Plan the intrusive work'],'Service detection informs a safe-work plan; it is not permission to excavate or drill from one reading.'),
+  'project-fixing': page('First fix and second fix are connected stages of one installation. The earlier route and position decisions must support sound final connections and verification.', [
+    ['First fix','Coordinate the agreed positions, boxes and routes with the service survey before cutting or chasing.'],
+    ['Second fix','Fit and connect accessories while preserving conductor identification, protective paths and the intended circuit arrangement.'],
+    ['Completion','Resolve defects and document what was built, then perform the relevant inspection and tests.'],
+  ], 'flow',['Agreed layout and surveyed route','First-fix boxes and wiring','Second-fix accessories','Inspection, testing and records'],'A finished accessory face does not by itself establish a verified circuit.'),
+  'residential-planning': page('Specify the room and its loads before chasing the walls. Accessory recognition, kitchen positions and cooking demand turn a client brief into an installation plan.', [
+    ['Accessory schedule','Identify the required functions and equipment rather than choosing only by appearance.'],
+    ['Kitchen layout','Coordinate outlets and cooker points with appliances, surfaces, access and the room layout before fixing positions.'],
+    ['Cooking demand','The diversity example depends on its domestic load assumptions; retain that context rather than copying a value into every kitchen.'],
+  ], 'flow',['Client and appliance brief','Accessory functions','Positions and access','Demand and circuit design'],'Survey hidden services and resolve the actual product requirements before intrusive work.'),
+  'lighting-brief': page('Begin with the people, tasks and character of the space. The lighting rules provide a design brief before equations are used to evaluate it.', [
+    ['Observe first','Identify what people need to see and how they use the room before selecting fittings.'],
+    ['Shape and contrast','Consider distribution, contrast and fitting position as well as the amount of light.'],
+    ['Use over time','Include controls, maintenance and later review in the early design decisions.'],
+  ], 'flow',['People and visual task','Observe the space','Choose the lighting intent','Calculate and refine'],'The following quantity and calculation sections support this brief rather than replacing design judgement.'),
   'p09-l04': page('Fault finding starts when a reading does not fit the expected circuit. Treat it as evidence to explain, not as a number to correct by trial and error.', [
     ['Ring integrity','An open conductor can leave outlets apparently working while changing the circuit’s electrical behaviour.'],
     ['Insulation problems','Check what remains connected before attributing a low insulation reading to the fixed cable.'],
@@ -42,6 +68,7 @@ export const applicationRecaps: Record<string, RecapCopy> = {
     ['Shower isolation','Disconnection requirements follow the equipment and installation requirements. Distinguish an operational switch from an appropriate means of isolation.'],
   ], 'flow',['Room and appliance brief','Load and demand assessment','Connection / isolation positions','Circuit design and verification'],'Do not transfer the example’s dimensions, diversity factors or cable selection to a different installation without assessment.'),
   'p11-v2-l11': page('An accessory must suit both its electrical duty and its environment. Labels describe tested properties, not a promise of suitability in every location.', [
+    ['Shower isolation','Distinguish an operational switch from the means of isolation required for the actual equipment and installation.'],
     ['Shaver supply','An isolating transformer changes the supply arrangement. Its presence does not make contact with both secondary conductors safe.'],
     ['Outdoor enclosures','Cable entries and assembly details are part of maintaining the enclosure’s protection; drilling an entry changes the enclosure boundary.'],
     ['Industrial sockets','Consider voltage, current, pin arrangement, environmental protection and impact duty as separate selection questions.'],
@@ -137,8 +164,8 @@ export const applicationRecaps: Record<string, RecapCopy> = {
     ['Sensitive loads','Transient overvoltage can damage or degrade lighting electronics. Surge protection must be considered as a coordinated system.'],
   ], 'compare',['Control evidence → correct response to inputs','Process evidence → water flow / pressure or airflow','Protection evidence → intended fault response'],'The pump-panel case includes operating instructions: leave users with understandable modes, not an unexplained control cabinet.'),
   'p16-l08': page('Professional judgement connects reliable evidence with a clearly priced scope. Explain what you know, what remains uncertain and what the quoted work includes.', [
-    ['Thermal evidence','Surface material and emissivity affect apparent temperature. Shiny metal can reflect infrared radiation and mislead a comparison.'],
+    ['Survey and scope','Record the actual site conditions and agree the work before building a price from a step-by-step method.'],
     ['Pricing','Build the materials list, obtain prices and lead times, and allow for the labour needed to deliver the defined work.'],
     ['Rewire scope','The case study compares an estimate with actual effort. Access, extent of work and assumptions need to be explicit rather than hidden in a headline price.'],
-  ], 'flow',['Reliable survey and diagnostic evidence','Defined scope and assumptions','Materials, lead times and labour','Clear quotation and handover responsibilities'],'A hot-looking image is not a complete diagnosis; a price from one filmed job is not a rate for another job.'),
+  ], 'flow',['Site survey and customer brief','Defined scope and assumptions','Materials, lead times and labour','Clear quotation and agreed variations'],'A price, crew allowance or materials quantity from one filmed job is not a rate or specification for another job.'),
 };
