@@ -44,3 +44,69 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
 .lesson-practice-reveal{margin-top:28px;scroll-margin-top:110px}.lesson-practice-reveal>summary{padding:18px;font-weight:700;cursor:pointer;min-height:52px;border:1px solid var(--line);border-radius:10px}.review-mode-actions{margin-bottom:18px}.quantity-control output{font-size:1.25rem;font-weight:700;padding:12px 0}.standards-learning .standard-topic:first-of-type{border-top:0;padding-top:4px}.standards-learning summary{min-height:44px;padding:12px 0;cursor:pointer}
+
+/* Expand the actual layout, not a CSS zoom/transform. Smaller viewports and
+   print retain their existing rules; browser zoom still reflows normally. */
+@media screen and (min-width: 1600px) {
+  body { font-size: 1rem; }
+  .app-frame { margin-left: var(--desktop-sidebar); }
+  .app-sidebar { width: var(--desktop-sidebar); padding: 1.4rem .9rem 1.1rem; }
+  .app-header { height: var(--desktop-header); padding-inline: var(--desktop-gutter); gap: 1.5rem; }
+  .app-content, .learn-page { min-height: calc(100dvh - var(--desktop-header)); }
+  .learn-page { grid-template-columns: var(--desktop-map) minmax(0, 1fr); }
+  .course-map { top: var(--desktop-header); height: calc(100dvh - var(--desktop-header)); padding: 1.25rem .9rem; }
+  .lesson-canvas { max-width: 1760px; padding: 1.5rem var(--desktop-gutter) 4rem; }
+  .page { width: min(100%, 1920px); padding: 2rem var(--desktop-gutter) 4rem; }
+  .search-trigger { width: min(36rem, 48vw); min-height: 2.75rem; }
+  .icon-button, .lesson-stepper button { width: 2.75rem; height: 2.75rem; }
+  .brand-symbol { width: 2.4rem; height: 2.4rem; }
+  .brand-copy strong { font-size: 1.05rem; }
+  .brand-copy small, .sidebar-safety p, .side-navigation button small { font-size: .8rem; }
+  .nav-label, .sidebar-safety strong { font-size: .875rem; }
+  .side-navigation button, .sidebar-settings { min-height: 3rem; padding: .65rem .75rem; }
+  .module-accordion > button { grid-template-columns: 2.3rem minmax(0,1fr) auto; min-height: 4rem; gap: .6rem; padding: .6rem; }
+  .module-index { width: 2.2rem; height: 2.2rem; font-size: .8rem; }
+  .module-accordion strong { font-size: .9rem; line-height: 1.4; }
+  .module-accordion small, .course-summary { font-size: .8rem; }
+  .accordion-lessons { padding-left: .65rem; }
+  .accordion-lessons button { min-height: 3.4rem; gap: .6rem; padding: .65rem; }
+  .accordion-lessons strong { font-size: .875rem; -webkit-line-clamp: 3; }
+  .accordion-lessons small { white-space: normal; line-height: 1.5; }
+  .course-topic-group > summary { padding: .85rem; font-size: .9rem; }
+  .course-topic-group > summary small { font-size: .8rem; }
+  .course-section-guide { font-size: .875rem; }
+  .breadcrumbs, .lesson-stepper, .header-progress b { font-size: .85rem; }
+  .lesson-title-block { margin: 1rem 0 1.3rem; }
+  .lesson-title-block h1 { max-width: 34ch; font-size: clamp(2.5rem, 2.3vw, 3.2rem); line-height: 1.12; letter-spacing: -.035em; }
+  .lesson-title-block p { font-size: .9rem; }
+  .topic-pill { font-size: .75rem; min-height: 1.75rem; padding: .25rem .65rem; margin-bottom: .3rem; }
+  .video-frame { border-radius: 1rem; }
+  .lesson-control-row { gap: 1rem; padding-block: 1rem; flex-wrap: wrap; }
+  .bookmark-button, .auto-next-toggle, .complete-button { min-height: 2.75rem; font-size: .9rem; padding: .55rem .85rem; }
+  .auto-next-toggle span { font-size: .75rem; }
+  .lesson-tabs { overflow: visible; margin-top: .6rem; }
+  .lesson-tabs > button { min-height: 3rem; font-size: .95rem; padding: .7rem; }
+  .lesson-tab-content { padding-top: 1.5rem; }
+  .overview-flow { gap: 1.2rem; }
+  .overview-application p, .focused-assessment .assessment-options .option-copy,
+  .focused-assessment .assessment-feedback p, .term-grid p { font-size: 1rem; line-height: 1.7; }
+  .overview-support > summary strong, .overview-quiz-cta > span:last-child { font-size: .95rem; }
+  .overview-support > summary small, .compact-assessment-heading p,
+  .session-heading > span, .recall-card-meta, .recall-source, .recall-hint,
+  .assessment-question-source { font-size: .85rem; }
+  .compact-assessment-heading h2 { font-size: 1.5rem; }
+  .session-heading h2 { font-size: 1.25rem; }
+  .focused-assessment .assessment-options { gap: .8rem; }
+  .focused-assessment .assessment-options button { min-height: 5.5rem; padding: 1rem; }
+  .recall-copy { font-size: 1.6rem; max-width: 60ch; }
+  .lesson-key-ideas li { padding: 1rem; }
+  .lesson-key-ideas li p { font-size: 1rem; line-height: 1.65; }
+  .lesson-next-card h3 { font-size: 1.15rem; }
+  /* Use the wider spread for two readable columns, not extra-long text lines. */
+  .recap-screen { width: min(96%, 2000px); max-width: none; }
+  .recap-reading-area { padding: 1.5rem 2rem; }
+  .recap-spread, .recap-detailed-notes, .recap-sources, .recap-safety,
+  .recap-view-switch { max-width: 1760px; }
+  .recap-paper { padding: 2rem; }
+  .recap-video-window { width: min(90vw, 1600px); }
+}

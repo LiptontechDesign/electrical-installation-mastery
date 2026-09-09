@@ -369,6 +369,17 @@ kbd {
 
 .mobile-navigation { display: none; }
 
+/* Wide desktop sizing is shared by navigation, learning and recap surfaces. */
+@media screen and (min-width: 1600px) {
+  :root {
+    --desktop-sidebar: clamp(248px, 11.25vw, 304px);
+    --desktop-map: clamp(320px, 15vw, 416px);
+    --desktop-header: 4.5rem;
+    --desktop-gutter: clamp(28px, 2vw, 56px);
+    font-size: clamp(100%, calc(.5rem + .5vw), 125%);
+  }
+}
+
 /* Learn */
 .learn-page { display: grid; grid-template-columns: 312px minmax(0,1fr); min-height: calc(100vh - 72px); }
 .course-map { position: sticky; top: 72px; height: calc(100vh - 72px); overflow: hidden auto; border-right: 1px solid var(--line); background: #fff; padding: 24px 14px; scrollbar-width: thin; }
