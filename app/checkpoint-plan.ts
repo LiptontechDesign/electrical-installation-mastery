@@ -1,13 +1,21 @@
+import course, { legacyModules } from './course-curriculum';
 export type CheckpointPlanItem = {
   title: string;
   throughLessonId: string;
   recapKey?: string;
+  legacyId?: string;
 };
+
+export function legacyCheckpointId(moduleId:string,index:number) {
+  const expanded=(moduleId==='module-01'&&index>=2)||moduleId==='module-12';
+  const reordered=['module-02','module-03','module-04','module-06','module-07','module-08','module-09','module-10','module-11','module-12','module-15','module-16'].includes(moduleId)||(moduleId==='module-01'&&index===13);
+  return `${moduleId}-checkpoint-${index+1}${expanded?'-supplied-202609':''}${reordered?'-flow-202609':''}`;
+}
 
 // A checkpoint closes a coherent run of lessons. The assessment itself is
 // cumulative from the start of the module, so earlier ideas return as the
 // learner moves forward.
-export const checkpointPlan: Record<string, readonly CheckpointPlanItem[]> = {
+export const legacyCheckpointPlan: Record<string, readonly CheckpointPlanItem[]> = {
   'module-01': [
     { title: 'Electricity and charge', throughLessonId: 'p01-l04' },
     { title: 'Circuits and Ohm’s law', throughLessonId: 'p01-l07' },
@@ -110,3 +118,42 @@ export const checkpointPlan: Record<string, readonly CheckpointPlanItem[]> = {
     { title: 'Job pricing and rewire estimating', throughLessonId: 'p16-l08' },
   ],
 };
+
+// Keep old coverage available for history and recap provenance, not as current gates.
+export const legacyScopes = legacyModules.flatMap(module => {
+  let start=0;
+  return legacyCheckpointPlan[module.id].map((item,index)=>{
+    const end=module.lessons.findIndex(l=>l.id===item.throughLessonId);
+    const scope={...item,moduleId:module.id,id:legacyCheckpointId(module.id,index),lessonIds:module.lessons.slice(0,end+1).map(l=>l.id),newLessonIds:module.lessons.slice(start,end+1).map(l=>l.id)};
+    start=end+1;return scope;
+  });
+});
+const sourceChapter=new Map(legacyScopes.flatMap(scope=>scope.newLessonIds.map(id=>[id,scope] as const)));
+// New stage boundaries follow coherent work tasks rather than every legacy chapter change.
+const stageGroups:Record<string,readonly (readonly [string,string])[]>={
+  'module-02':[['p07-l15','Supply architecture and drawings'],['p16-l05','Tools, isolation and service detection']],
+  'module-03':[['p16-l02','Preparing conductors and connections'],['p03-l09','Lighting switching arrangements'],['p03-l10','Socket circuits and accessories'],['p10-l04','Planning and first/second fix'],['p11-v2-l10','Installing residential accessories'],['p03-l11','Practical luminaires and final connections']],
+  'module-05':[['p05-l05','Faults, fuses and overcurrent response'],['p02-l08','Residual-current and protective-device distinctions'],['p05-l10','Earthing and protective bonding'],['p05-l11','Fault loops and automatic disconnection'],['p05-spd','Device selection and surge protection']],
+  'module-06':[['p06-l12','Load, demand and design current'],['p06-l10','Cable sizing and installation factors'],['p06-l08','Voltage-drop checks'],['p06-l15','Fault checks and final design evidence']],
+  'c2-boards':[['p03-l12','Consumer-unit assembly and connections'],['p10-l05','Complete installation cases']],
+  'module-08':[['p08-l06','Inspection, continuity, insulation and polarity'],['p08-l10','Controlled live verification'],['p16-l09','RCD, functional checks and documentation']],
+  'c1-distribution':[['p11-v2-l11','Safe isolation and industrial accessories'],['p07-l16','Boards and distribution arrangements'],['p10-l07','Three-phase installation projects']],
+  'c1-testing':[['p08-l17','Three-phase measurement and verification'],['p08-periodic','Inspection findings and periodic evidence']],
+  'c1-faults':[['p16-l06','Distribution faults and thermal evidence']],
+};
+export const checkpointPlan:Record<string,readonly CheckpointPlanItem[]> = Object.fromEntries(course.modules.map(module=>{
+  const result:CheckpointPlanItem[]=[];
+  let start=0;
+  module.lessons.forEach((lesson,index)=>{
+    const source=sourceChapter.get(lesson.id)!;
+    const next=module.lessons[index+1];
+    const groups=stageGroups[module.id],group=groups?.find(([end])=>end===lesson.id);
+    if(groups&&!group)return;
+    if(!groups&&next&&sourceChapter.get(next.id)?.id===source.id&&(module.id==='module-01'||index-start<5))return;
+    const cumulative=module.lessons.slice(0,index+1).map(l=>l.id);
+    const old=legacyScopes.find(scope=>scope.moduleId===module.id&&scope.lessonIds.join('|')===cumulative.join('|'));
+    result.push({title:group?.[1]??(index===start?lesson.title:source.title),throughLessonId:lesson.id,recapKey:source.recapKey??source.throughLessonId,legacyId:old?.id});
+    start=index+1;
+  });
+  return [module.id,result];
+}));

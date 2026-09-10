@@ -2,6 +2,7 @@ export type SupplementaryVideo = {
   id: string; videoId: string; title: string; instructor: string;
   moduleId: string; anchorId: string; position: 'before' | 'after';
   archived: boolean; updatedAt: string;
+  placementRevision?: number;
 };
 export type SupplementaryState = { version: 1; revision: number; videos: SupplementaryVideo[] };
 export type SupplementaryAction = 'add' | 'edit' | 'archive' | 'restore';

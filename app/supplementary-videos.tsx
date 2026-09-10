@@ -3,6 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { PlayCircle, Plus, Archive, X, CheckCircle2 } from 'lucide-react';
 import course from './course-curriculum';
 import { withSupplementaryDefaults } from './supplementary-defaults';
+import { ElectricalShockContext } from './licensing-ui';
 import { useDialogFocus } from './use-dialog-focus';
 import { confirmationPhrase, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
 
@@ -137,6 +138,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
         </fieldset>
       </form> : selected ? <>
         <p>{selected.instructor} · Optional supporting lesson</p>
+        {['TsJ49Np3HS0','UFvL7wTFzl0'].includes(selected.videoId)&&<ElectricalShockContext/>}
         <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
         <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
         <p>Watched status is personal to this browser and is kept in both browsing modes.</p>

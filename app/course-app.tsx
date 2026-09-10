@@ -12,7 +12,10 @@ import {
   PlayCircle, RotateCcw, Search, Settings, ShieldCheck, SkipForward, Sparkles, Target,
   Upload, X, Zap,
 } from 'lucide-react';
-import course, { lessonStudyRole } from './course-curriculum';
+import course, { lessonStudyRole, legacyModules } from './course-curriculum';
+import { pathLabels } from './licensing-curriculum';
+import { legacyScopes } from './checkpoint-plan';
+import { LicensingOverview, LicensingStageGuide } from './licensing-ui';
 import { bookCompanions, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
@@ -95,7 +98,11 @@ type LearnerState = {
 const STORAGE_KEY = 'electrical-mastery-progress-v1';
 const allLessons = course.modules.flatMap((module) => module.lessons);
 type QuizRecordKind = 'lesson'|'checkpoint'|'module';
-const quizRecordId = (kind: QuizRecordKind,id: string) => `${kind}:${id}`;
+const moduleAssessmentId = (id:string) => {
+  const old=legacyModules.find(m=>m.id===id),current=course.modules.find(m=>m.id===id);
+  return old&&current&&old.lessons.map(l=>l.id).join('|')===current.lessons.map(l=>l.id).join('|')?id:`${id}-licensing-20260910`;
+};
+const quizRecordId = (kind: QuizRecordKind,id: string) => `${kind}:${kind==='module'?moduleAssessmentId(id):id}`;
 const lessonLookup = new Map(allLessons.map((lesson) => [lesson.id, lesson]));
 const lessonLocation = new Map(
   course.modules.flatMap((module, moduleIndex) =>
@@ -108,9 +115,16 @@ const validReadingIds = new Set(allReading.map(({ guide }) => guide.id));
 const validLabIds = new Set(practiceLabs.map((lab) => lab.id));
 const assessmentBank = buildAssessmentBank(course.modules, lessonGuides);
 const validFlashcardIds = new Set(assessmentBank.allFlashcards.map((card) => card.id));
-const validModuleIds = new Set(course.modules.map((module) => module.id));
-const validCheckpointIds = new Set(assessmentBank.checkpointList.map((checkpoint) => checkpoint.id));
+const validModuleIds = new Set([...legacyModules.map(m=>m.id),...course.modules.flatMap(m=>[m.id,moduleAssessmentId(m.id)])]);
+const legacyCheckpointIds=legacyScopes.flatMap(scope=>{
+  const base=scope.id.replace(/-(supplied|flow)-202609/g,'');
+  return [scope.id,base,base+'-supplied-202609',base+'-flow-202609',base+'-supplied-202609-flow-202609'];
+});
+const validCheckpointIds = new Set([...legacyCheckpointIds,...assessmentBank.checkpointList.map((checkpoint) => checkpoint.id)]);
 const validQuizRecordIds = new Set([
+  ...legacyModules.map(m=>'module:'+m.id),
+  ...legacyCheckpointIds.map(id=>'checkpoint:'+id),
+  'licensing:C2','licensing:C1',
   ...allLessons.map((lesson)=>quizRecordId('lesson',lesson.id)),
   ...assessmentBank.checkpointList.map((checkpoint)=>quizRecordId('checkpoint',checkpoint.id)),
   ...course.modules.map((module)=>quizRecordId('module',module.id)),
@@ -230,6 +244,7 @@ function pad(value: number) {
 }
 
 function checkpointBeforeLesson(lessonId: string, completedCheckpointIds: string[]) {
+  if(lessonLocation.get(lessonId)?.module.path==='Professional') return undefined;
   const targetIndex = globalLessonIndex.get(lessonId);
   if (targetIndex === undefined) return undefined;
   const passed = new Set(completedCheckpointIds);
@@ -287,6 +302,7 @@ export default function CourseApp() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [bookReader, setBookReader] = useState<{ reading?: Reading } | null>(null);
   const [recapModuleId,setRecapModuleId] = useState<string|null>(null);
+  const [preparationPath,setPreparationPath] = useState<'C2'|'C1'|null>(null);
   const [confirmReset, setConfirmReset] = useState(false);
   const [toast, setToast] = useState('');
   const [selectedMasteryModuleId, setSelectedMasteryModuleId] = useState(course.modules[0].id);
@@ -341,8 +357,11 @@ export default function CourseApp() {
   const completed = useMemo(() => new Set(learner.completedLessonIds), [learner.completedLessonIds]);
   const bookmarked = useMemo(() => new Set(learner.bookmarkedLessonIds), [learner.bookmarkedLessonIds]);
   const passedCheckpoints = useMemo(()=>new Set(learner.completedCheckpointIds),[learner.completedCheckpointIds]);
-  const courseRequiredTotal=allLessons.length+assessmentBank.checkpointList.length;
-  const courseRequiredComplete=completed.size+passedCheckpoints.size;
+  const requiredModules=course.modules.filter(module=>module.path!=='Professional');
+  const requiredLessons=requiredModules.flatMap(module=>module.lessons);
+  const requiredCheckpoints=requiredModules.flatMap(module=>assessmentBank.checkpointsByModule[module.id]);
+  const courseRequiredTotal=requiredLessons.length+requiredCheckpoints.length;
+  const courseRequiredComplete=requiredLessons.filter(lesson=>completed.has(lesson.id)).length+requiredCheckpoints.filter(checkpoint=>passedCheckpoints.has(checkpoint.id)).length;
   const coursePercent = percent(courseRequiredComplete,courseRequiredTotal);
   const moduleTracking = (module: CourseModule) => {
     const videos=module.lessons.filter((lesson)=>completed.has(lesson.id)).length;
@@ -355,7 +374,7 @@ export default function CourseApp() {
   const currentLessonQuizPasses=attemptedLessonQuizRecords.filter((record)=>record.latestScore/record.latestTotal>=.8).length;
   const currentLessonQuizReviews=attemptedLessonQuizRecords.length-currentLessonQuizPasses;
   const nextRequiredItem=useMemo(()=>{
-    for(const courseModule of course.modules){
+    for(const courseModule of course.modules.filter(module=>module.path!=='Professional')){
       for(const lesson of courseModule.lessons){
         if(!completed.has(lesson.id))return {kind:'lesson' as const,module:courseModule,lesson};
         const checkpoint=checkpointAfterLesson.get(lesson.id);
@@ -384,6 +403,7 @@ export default function CourseApp() {
   const activeCheckpointModule = activeCheckpoint ? course.modules.find((module)=>module.id===activeCheckpoint.moduleId) : undefined;
   const checkpointNextLesson = activeCheckpoint ? allLessons[(globalLessonIndex.get(activeCheckpoint.throughLessonId)??-1)+1] : undefined;
   const activeBoundaryCheckpoint = checkpointAfterLesson.get(activeLesson.id);
+  const pathEnd=location.module.path!=='Professional'&&course.modules.filter(m=>m.path===location.module.path).at(-1)?.lessons.at(-1)?.id===activeLesson.id;
   const activeLearningText = `${activeLesson.title} ${activeGuide.summary}`;
   const activePractice = practiceForLesson(activeLearningText);
   const nextAction = nextLearningAction(learner.evidence, Object.values(learner.flashcardProgress).filter(item => item.dueAt <= todayKey()).length, activeLesson.id);
@@ -853,7 +873,8 @@ export default function CourseApp() {
   const startCheckpoint = (checkpointId: string) => {
     const targetIndex=assessmentBank.checkpointList.findIndex((checkpoint)=>checkpoint.id===checkpointId);
     if(targetIndex<0)return;
-    if(learner.freeBrowseEnabled){resolveCheckpoint(assessmentBank.checkpointList[targetIndex]);return;}
+    const target=assessmentBank.checkpointList[targetIndex];
+    if(learner.freeBrowseEnabled||course.modules.find(module=>module.id===target.moduleId)?.path==='Professional'){resolveCheckpoint(target);return;}
     const passed=new Set(learner.completedCheckpointIds);
     const required=assessmentBank.checkpointList.slice(0,targetIndex+1).find((checkpoint)=>!passed.has(checkpoint.id));
     resolveCheckpoint(required??assessmentBank.checkpointList[targetIndex]);
@@ -977,10 +998,10 @@ export default function CourseApp() {
       const at=new Date().toISOString(),recordId=quizRecordId('module',selectedMasteryModule.id);
       return {
         ...withStudyMinutes(current, Math.max(12, Math.ceil(total / 2))),
-        moduleQuizBestScores: { ...current.moduleQuizBestScores, [selectedMasteryModule.id]: Math.max(current.moduleQuizBestScores[selectedMasteryModule.id] ?? 0, score) },
+        moduleQuizBestScores: { ...current.moduleQuizBestScores, [moduleAssessmentId(selectedMasteryModule.id)]: Math.max(current.moduleQuizBestScores[moduleAssessmentId(selectedMasteryModule.id)] ?? 0, score) },
         quizRecords:{...current.quizRecords,[recordId]:recordQuizAttempt(current.quizRecords[recordId],score,total,at)},
-        completedModuleAssessmentIds: passed && !current.completedModuleAssessmentIds.includes(selectedMasteryModule.id)
-          ? [...current.completedModuleAssessmentIds, selectedMasteryModule.id]
+        completedModuleAssessmentIds: passed && !current.completedModuleAssessmentIds.includes(moduleAssessmentId(selectedMasteryModule.id))
+          ? [...current.completedModuleAssessmentIds, moduleAssessmentId(selectedMasteryModule.id)]
           : current.completedModuleAssessmentIds,
         updatedAt: at,
       };
@@ -1047,6 +1068,10 @@ export default function CourseApp() {
     setAutoPlayLessonId(null);
     setModuleDrawerOpen(false);
     setRecapModuleId(moduleId);
+  };
+
+  const completeLicensingPractice=(path:'C2'|'C1',score:number,total:number)=>{
+    setLearner(current=>({...current,quizRecords:{...current.quizRecords,['licensing:'+path]:recordQuizAttempt(current.quizRecords['licensing:'+path],score,total)},updatedAt:new Date().toISOString()}));
   };
 
   const browsingControls = (
@@ -1137,6 +1162,7 @@ export default function CourseApp() {
                 <article><span className="stat-icon amber"><Target size={21} /></span><div><b>{weekMinutes}<small> / {learner.weeklyGoalMinutes} min</small></b><p>This week’s study goal</p></div></article>
               </section>
 
+              <LicensingOverview initialExam={preparationPath} bank={assessmentBank} completed={learner.completedLessonIds} passedCheckpoints={learner.completedCheckpointIds} records={learner.quizRecords} onLesson={chooseLesson} onExam={completeLicensingPractice} onEvidence={recordEvidence}/>
               <section className="home-course">
                 <div className="home-primary-column">
                   <div className="section-heading compact"><div><h2>Course modules</h2></div></div>
@@ -1164,6 +1190,7 @@ export default function CourseApp() {
                     const done = moduleCompletedCount(module);
                     return (
                       <section className={`module-accordion ${isOpen ? 'open' : ''}`} key={module.id}>
+                        {module.stageNumber===1&&<h3 className="licensing-map-heading">{pathLabels[module.path]}</h3>}
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => setOpenModuleId(isOpen ? '' : module.id)} aria-expanded={isOpen}>
                           <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos · {assessmentBank.checkpointsByModule[module.id].filter((checkpoint)=>passedCheckpoints.has(checkpoint.id)).length}/{assessmentBank.checkpointsByModule[module.id].length} checkpoints</small></span><ChevronDown size={18} />
                         </button>
@@ -1215,6 +1242,8 @@ export default function CourseApp() {
                   <div className="lesson-stepper"><button type="button" onClick={() => goRelative(-1)} disabled={activeLesson.id === allLessons[0].id} aria-label="Previous lesson"><ChevronLeft size={20} /></button><span>{allLessons.findIndex((lesson) => lesson.id === activeLesson.id) + 1} / {allLessons.length}</span><button type="button" onClick={() => goRelative(1)} disabled={activeLesson.id === allLessons.at(-1)?.id} aria-label="Next lesson"><ChevronRight size={20} /></button></div>
                 </div>
                 <div className="lesson-title-block"><div><span className="topic-pill lesson-sequence">Lesson {pad(activeLesson.number)} of {location.module.lessons.length}</span><span className="topic-pill">{lessonStudyRole(activeLesson.id)}</span><span className="topic-pill">{activeLesson.layer}</span><span className="topic-pill quiet">{activeLesson.topic}</span>{'sourceKind' in activeLesson && typeof activeLesson.sourceKind === 'string' && <span className="topic-pill quiet">{activeLesson.sourceKind}</span>}</div><h1>{activeLesson.title}</h1><p>{activeLesson.instructor} <span>·</span> {activeLesson.duration} <span>·</span> {location.module.title}</p></div>
+                <p className="licensing-breadcrumb">{pathLabels[location.module.path]} · Stage {location.module.stageNumber} · {location.module.classification}</p>
+                {location.lessonIndex===0&&<LicensingStageGuide moduleId={location.module.id}/>}
                 <div className="video-shell">
                   <div className="video-frame">
                     {playerSrc
@@ -1288,6 +1317,7 @@ export default function CourseApp() {
 
                 </div>
                 {activeLesson.id===location.module.lessons.at(-1)?.id&&<section className="module-recap-end"><BookOpen size={28}/><div><span>Module {pad(location.module.number)} · Keep the essentials</span><h2>Your module recap book</h2><p>Turn through the key ideas, relationships and practical distinctions from this module’s videos.</p></div><button type="button" onClick={()=>openModuleRecap(location.module.id)}>Open recap <ArrowRight size={18}/></button></section>}
+                {pathEnd&&<footer className="lesson-next-card"><div><span>Complete your pathway review</span><h3>{location.module.path} written, oral and practical preparation</h3></div><button type="button" onClick={()=>{setPreparationPath(location.module.path as 'C2'|'C1');navigate('home');}}>Open preparation <ArrowRight size={18}/></button></footer>}
                 {activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)&&<footer className="lesson-next-card checkpoint-next"><div><span>{learner.freeBrowseEnabled?'Checkpoint still unfinished':'Required next'}</span><h3>Checkpoint {activeBoundaryCheckpoint.number}: {activeBoundaryCheckpoint.title}</h3><small>{activeBoundaryCheckpoint.questions.length} cumulative questions · 80% to pass</small></div><button type="button" onClick={()=>startCheckpoint(activeBoundaryCheckpoint.id)}>Start checkpoint <ArrowRight size={18}/></button></footer>}
                 {(learner.freeBrowseEnabled||!activeBoundaryCheckpoint||learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id))&&<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'End of video sequence'}</span><h3>{activeNextLesson?.title??'Check your progress for unfinished work'}</h3></div><button type="button" onClick={()=>activeNextLesson?goRelative(1):navigate('progress')}>{activeNextLesson?'Continue':'View progress'} <ArrowRight size={18}/></button></footer>}
               </article>}
@@ -1321,7 +1351,7 @@ export default function CourseApp() {
                 /></div>}
                 <div className="mastery-module-strip" aria-label="Choose a module assessment">{course.modules.map((module) => {
                   const assessment = assessmentBank.modules[module.id];
-                  const mastered = learner.completedModuleAssessmentIds.includes(module.id);
+                  const mastered = learner.completedModuleAssessmentIds.includes(moduleAssessmentId(module.id));
                   const record=learner.quizRecords[quizRecordId('module',module.id)];
                   return <button type="button" key={module.id} className={selectedMasteryModule.id === module.id ? 'active' : ''} onClick={() => setSelectedMasteryModuleId(module.id)}><span>{pad(module.number)}</span><strong>{module.title}</strong><small>{assessment.questions.length} questions{record?` · Latest ${quizPercentage(record)}%`:''}</small>{mastered && <CheckCircle2 size={18} />}</button>;
                 })}</div>
@@ -1333,9 +1363,9 @@ export default function CourseApp() {
                   flashcards={selectedMasteryAssessment.flashcards}
                   questions={selectedMasteryAssessment.questions}
                   progress={learner.flashcardProgress}
-                  bestScore={learner.moduleQuizBestScores[selectedMasteryModule.id] ?? 0}
+                  bestScore={learner.moduleQuizBestScores[moduleAssessmentId(selectedMasteryModule.id)] ?? 0}
                   quizRecord={learner.quizRecords[quizRecordId('module',selectedMasteryModule.id)]}
-                  completed={learner.completedModuleAssessmentIds.includes(selectedMasteryModule.id)}
+                  completed={learner.completedModuleAssessmentIds.includes(moduleAssessmentId(selectedMasteryModule.id))}
                   onRateCard={rateFlashcard}
                   onEvidence={recordEvidence}
                   onOpenLesson={chooseLesson}

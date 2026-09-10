@@ -2,6 +2,7 @@ import baseCourse from './course-data.json';
 import courseExtension from './course-extension-data';
 import { gapLessons } from './course-gap-data';
 import { suppliedLessons } from './supplied-lessons';
+import { buildLicensingModules } from './licensing-curriculum';
 import { formatStudyDuration, formatVideoDuration, type SourceKind } from './course-extension/builders';
 
 type BaseLesson = (typeof baseCourse.modules)[number]['lessons'][number];
@@ -59,7 +60,7 @@ export function lessonStudyRole(id: string) {
   return additionalPractice.has(id) ? 'Deep practice' : workedReinforcement.has(id) ? 'Worked reinforcement' : 'Core lesson';
 }
 const used = new Set<string>();
-const modules = originalModules.map(module => {
+export const legacyModules = originalModules.map(module => {
   const copy = moduleCopy[module.id];
   const lessonIds = order[module.id] ?? module.lessons.map(lesson => lesson.id);
   const lessons = lessonIds.map((id, index) => {
@@ -73,6 +74,7 @@ const modules = originalModules.map(module => {
   return { ...module, title: copy.title ?? module.title, description: copy.description, checkpoint: copy.checkpoint, lessons, durationSeconds, duration: formatStudyDuration(durationSeconds) };
 });
 if (used.size !== catalogue.size) throw new Error(`Curriculum omits ${catalogue.size - used.size} lessons.`);
+const modules = buildLicensingModules(legacyModules);
 const durationSeconds = modules.reduce((total, module) => total + module.durationSeconds, 0);
 const course = { ...baseCourse, description: 'A connected path through electrical theory, design, installation, motors, verification and building systems.', modules, lessonCount: used.size, durationSeconds, duration: formatStudyDuration(durationSeconds) };
 export default course;

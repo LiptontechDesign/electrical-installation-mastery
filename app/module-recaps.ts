@@ -1,5 +1,7 @@
 import course from './course-curriculum';
-import {checkpointPlan} from './checkpoint-plan';
+import {checkpointPlan,legacyScopes} from './checkpoint-plan';
+import {lessonGuides} from './lesson-guides';
+import type {RecapCopy} from './module-recap-content';
 import {foundationRecaps} from './module-recap-content';
 import {applicationRecaps} from './module-recap-applications';
 import provenance from './module-recap-sources.json';
@@ -10,7 +12,14 @@ export const recapBooks = course.modules.map(module => {
   let from = 0;
   const chapters = checkpointPlan[module.id].map((chapter,index) => {
     const end = module.lessons.findIndex(lesson => lesson.id === chapter.throughLessonId);
-    const chapterCopy = copy[chapter.recapKey ?? chapter.throughLessonId];
+    const chapterLessons=module.lessons.slice(from,end+1);
+    const exact=legacyScopes.some(scope=>scope.newLessonIds.join('|')===chapterLessons.map(l=>l.id).join('|'));
+    const chapterCopy:RecapCopy = exact ? copy[chapter.recapKey ?? chapter.throughLessonId] : {
+      lead:module.description,
+      notes:chapterLessons.map(lesson=>[lesson.title,lessonGuides[lesson.id].summary] as const),
+      visual:{kind:'compare',lines:chapterLessons.map(lesson=>lessonGuides[lesson.id].remember),caption:'Key distinctions from these lessons. Use the detailed notes for concepts, equations, worked explanations and full supplied transcripts.'},
+      caution:'Source-era UK examples are not Kenyan regulatory approval. Apply current local requirements and competent supervision.',
+    };
     if(end < from || !chapterCopy) throw new Error('Missing recap chapter: '+chapter.throughLessonId);
     const lessons = module.lessons.slice(from,end+1).map(lesson => {
       const source=sources[lesson.videoId];

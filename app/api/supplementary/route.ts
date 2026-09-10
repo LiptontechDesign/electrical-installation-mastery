@@ -46,7 +46,7 @@ export async function POST(request: Request) {
       if (!videoId || !title || title.length > 240 || instructor.length > 160 || !module?.lessons.some(l => l.id === body.anchorId) || !['before', 'after'].includes(String(body.position))) return reply({ error: 'Check the YouTube link, title and lesson position.' }, 400);
       if (coreVideos.has(videoId) || state.videos.some(v => v.videoId === videoId && v.id !== existing?.id)) return reply({ error: 'This video is already in the course or archive. Move or restore its existing entry instead.' }, 409);
       if (action === 'add' && state.videos.length >= 500) return reply({ error: 'The shared library has reached its 500-video limit.' }, 400);
-      video = { id: existing?.id ?? crypto.randomUUID(), videoId, title, instructor, moduleId: module.id, anchorId: String(body.anchorId), position: body.position as 'before' | 'after', archived: existing?.archived ?? false, updatedAt: new Date().toISOString() };
+      video = { id: existing?.id ?? crypto.randomUUID(), videoId, title, instructor, moduleId: module.id, anchorId: String(body.anchorId), position: body.position as 'before' | 'after', archived: existing?.archived ?? false, placementRevision: 1, updatedAt: new Date().toISOString() };
     } else video = { ...existing!, archived: action === 'archive', updatedAt: new Date().toISOString() };
     const next: SupplementaryState = { version: 1, revision: state.revision + 1, videos: existing ? state.videos.map(v => v.id === video.id ? video : v) : [...state.videos, video] };
     await put(pathname, JSON.stringify(next), { access: 'private', addRandomSuffix: false, contentType: 'application/json', cacheControlMaxAge: 0, ...(etag ? { ifMatch: etag, allowOverwrite: true } : { allowOverwrite: false }) });

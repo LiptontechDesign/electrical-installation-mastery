@@ -21,7 +21,7 @@ const original = JSON.parse(await readFile('app/course-data.json','utf8'));
 const oldModules = [...original.modules, ...extension.modules];
 const lessons = course.modules.flatMap(module => module.lessons);
 const lookup = new Map(lessons.map(lesson => [lesson.id,lesson]));
-assert.equal(course.modules.length, 16);
+assert.equal(course.modules.length, 25);
 assert.equal(lessons.length, 276);
 assert.equal(new Set(lessons.map(lesson => lesson.videoId)).size, lessons.length, 'No repeated video');
 const bank = buildAssessmentBank(course.modules, lessonGuides);
@@ -63,7 +63,7 @@ for (const courseModule of oldModules) for (const lesson of courseModule.lessons
   for (const card of oldBank.lessons[lesson.id].flashcards) assert.ok(bank.lessons[lesson.id].flashcards.some(item => item.id === card.id && item.front === card.front && item.back === card.back), `Saved card ${card.id} is preserved`);
 }
 const before = (first, second) => assert.ok(lessons.findIndex(lesson => lesson.id === first) < lessons.findIndex(lesson => lesson.id === second), `${first} must precede ${second}`);
-for (const pair of [['p01-l23','p01-transformers'],['p01-pf-visual','p01-l26'],['p03-l14','p01-l28'],['p03-l13','p03-l12'],['p07-l02','p06-l13'],['p07-l03','p06-l13'],['p08-l01','p04-l19'],['p07-induction','p04-l19'],['p04-l19','p04-l20'],['p04-l20','p07-star-delta'],['p07-star-delta','p07-vfd'],['p08-l16','p08-l06'],['p08-l06','p02-l09'],['p08-periodic','p16-l09'],['p16-l04','p10-l03'],['p16-l05','p10-l01'],['p14-v2-l09','p14-v2-l06'],['p12-v2-l02','p07-l10']]) before(...pair);
+for (const pair of [['p01-l23','p01-transformers'],['p01-pf-visual','p01-l26'],['p03-l14','p03-l01'],['p03-l13','p03-l12'],['p07-l02','p06-l13'],['p07-l03','p06-l13'],['p08-l01','p04-l19'],['p07-induction','p04-l19'],['p04-l19','p04-l20'],['p04-l20','p07-star-delta'],['p07-star-delta','p07-vfd'],['p08-l16','p08-l06'],['p08-l06','p02-l09'],['p16-l09','p08-periodic'],['p16-l04','p10-l03'],['p16-l05','p10-l01'],['p14-v2-l09','p14-v2-l06'],['p12-v2-l02','p07-l10']]) before(...pair);
 for (const courseModule of course.modules) {
   assert.equal(courseModule.durationSeconds, courseModule.lessons.reduce((sum,lesson) => sum + lesson.durationSeconds,0));
   courseModule.lessons.forEach((lesson,index) => { assert.equal(lesson.number,index+1); assert.ok(bank.lessons[lesson.id].questions.length >= 5); });
@@ -77,7 +77,7 @@ for (const courseModule of course.modules) {
     assert.deepEqual(checkpoint.lessonIds, courseModule.lessons.slice(0,boundary+1).map(lesson=>lesson.id), `${checkpoint.id} is cumulative`);
     assert.deepEqual(checkpoint.newLessonIds, courseModule.lessons.slice(previousBoundary+1,boundary+1).map(lesson=>lesson.id), `${checkpoint.id} names its new lesson group`);
     introduced.push(...checkpoint.newLessonIds);
-    assert.ok(checkpoint.questions.length >= 10, `${checkpoint.id} has at least ten questions`);
+    assert.ok(checkpoint.questions.length >= Math.min(10,checkpoint.lessonIds.reduce((n,id)=>n+bank.lessons[id].questions.length,0)), `${checkpoint.id} uses available questions without duplicating short stages`);
     assert.ok(checkpoint.questions.length <= 30, `${checkpoint.id} stays within the 30-question ceiling`);
     assert.equal(new Set(checkpoint.questions.map(question=>question.id)).size, checkpoint.questions.length, `${checkpoint.id} has no repeated questions`);
     assert.ok(checkpoint.questions.every(question=>checkpoint.lessonIds.includes(question.lessonId)), `${checkpoint.id} contains only studied lessons`);
@@ -90,7 +90,7 @@ for (const courseModule of course.modules) {
   assert.deepEqual(introduced, courseModule.lessons.map(lesson=>lesson.id), `${courseModule.id} partitions every lesson once`);
 }
 assert.ok(bank.checkpointsByModule['module-01'].length >= 5, 'Module 1 has at least five major checkpoints');
-assert.equal(bank.checkpointList.length, 68, 'Every planned checkpoint is built');
+assert.equal(bank.checkpointList.length, 78, 'Every planned checkpoint is built');
 assert.equal(course.durationSeconds, course.modules.reduce((sum,module) => sum+module.durationSeconds,0));
 const originalIds = new Set(oldModules.flatMap(module => module.lessons.map(lesson => lesson.id)));
 for (const lesson of lessons.filter(lesson => !originalIds.has(lesson.id) && !lesson.id.startsWith('supp-'))) assert.ok(lesson.durationSeconds >= 300, 'Previously selected gap video meets quality duration floor');
@@ -130,5 +130,5 @@ await act(async()=>tree.root.findByType('button').props.onClick());
 assert.equal(tree.root.findByType('button').props['aria-pressed'],true);
 assert.ok(JSON.stringify(tree.toJSON()).includes('reversed'));
 await act(async()=>tree.unmount());
-for (const [moduleId,lessonId] of [['module-01','p01-l26'],['module-06','p06-l13'],['module-07','p07-induction'],['module-08','p08-l07']]) assert.ok(bank.modules[moduleId].questions.some(question=>question.lessonId===lessonId && question.id.includes('-connection-')), 'Module assessment includes the new application check');
+for (const [moduleId,lessonId] of [['module-01','p01-l26'],['c1-power','p06-l13'],['c1-motors','p07-induction'],['c1-testing','p08-l07']]) assert.ok(bank.modules[moduleId].questions.some(question=>question.lessonId===lessonId && question.id.includes('-connection-')), 'Module assessment includes the new application check');
 console.log(`PASS: ${lessons.length} unique lessons; ${bank.checkpointList.length} required checkpoints; ${bank.totalLessonQuestions} lesson questions; formulas and three interactive exercises.`);

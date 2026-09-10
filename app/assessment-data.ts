@@ -796,13 +796,9 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       const cumulativeLessons = module.lessons.slice(0, boundary + 1);
       const newLessons = module.lessons.slice(previousBoundary + 1, boundary + 1);
       previousBoundary = boundary;
-      // Do not let a saved pass for an old numeric checkpoint unlock a new
-      // topic group. The first two Module 1 scopes and other modules are intact.
-      const expandedScope = (module.id === 'module-01' && checkpointIndex >= 2) || module.id === 'module-12';
       // Keep historical attempts, but do not treat a pass on a different
       // lesson scope as proof that the newly organised checkpoint was passed.
-      const reorderedScope = ['module-02','module-03','module-04','module-06','module-07','module-08','module-09','module-10','module-11','module-12','module-15','module-16'].includes(module.id) || (module.id === 'module-01' && checkpointIndex === 13);
-      const id = `${module.id}-checkpoint-${checkpointIndex + 1}${expandedScope ? '-supplied-202609' : ''}${reorderedScope ? '-flow-202609' : ''}`;
+      const id = item.legacyId ?? `${module.id}-checkpoint-${checkpointIndex + 1}-licensing-20260910`;
       const assessment: CheckpointAssessment = {
         id,
         moduleId: module.id,
