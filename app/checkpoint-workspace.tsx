@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowLeft, CheckCircle2, ChevronDown, LockKeyhole } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, ChevronDown, ListChecks } from 'lucide-react';
 import type { CheckpointAssessment } from './assessment-data';
 import AssessmentPanel from './assessment-panel';
 import course from './course-curriculum';
@@ -51,11 +51,11 @@ export default function CheckpointWorkspace({
   return <article className="checkpoint-workspace">
     <button type="button" className="checkpoint-back" onClick={onBack}><ArrowLeft size={17}/> Return to Lesson {String(throughLesson?.number??'').padStart(2,'0')}</button>
     <header className="checkpoint-hero">
-      <div className="checkpoint-lock"><LockKeyhole size={22}/></div>
+      <div className="checkpoint-lock"><ListChecks size={22}/></div>
       <div>
-        <span className="eyebrow">Module {String(moduleNumber).padStart(2,'0')} · Required checkpoint {checkpoint.number} of {checkpointTotal}</span>
+        <span className="eyebrow">Module {String(moduleNumber).padStart(2,'0')} · Checkpoint {checkpoint.number} of {checkpointTotal}</span>
         <h1>{checkpoint.title}</h1>
-        <p>{checkpoint.questions.length} questions covering Lessons 1–{throughLesson?.number}. Score 80% to unlock the next group.</p>
+        <p>{checkpoint.questions.length} questions covering Lessons 1–{throughLesson?.number}. Score 80% to record a pass. You can study or attempt checkpoints in any order.</p>
       </div>
       {completed&&<span className="checkpoint-passed"><CheckCircle2 size={17}/> Passed</span>}
     </header>
@@ -72,7 +72,7 @@ export default function CheckpointWorkspace({
       connectedLessonFlow
       mode="quiz"
       assessmentLabel="Checkpoint"
-      requirePassToContinue
+      requirePassToContinue={false}
       showFlashcards={false}
       flashcards={checkpoint.flashcards}
       questions={checkpoint.questions}

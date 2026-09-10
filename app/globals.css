@@ -1334,6 +1334,19 @@ kbd {
 }
 
 /* Compact course-authored bridges reuse the lesson/recap reading surface. */
+.flexible-navigation > p { margin: 0 0 .7rem; line-height: 1.55; }
+.flexible-navigation > p > strong { display: block; color: var(--text, #192b37); margin-bottom: .2rem; }
+.lesson-progress { margin: 1rem 0; border: 1px solid #d5e1e8; border-radius: 12px; padding: 1rem; background: #fff; }
+.lesson-progress > dl { margin: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; }
+.lesson-progress dt { color: #526775; font-size: .875rem; }
+.lesson-progress dd { margin: .25rem 0; color: #173c49; font-weight: 750; font-size: 1rem; }
+.lesson-progress small { display: block; color: #526775; font-size: .8125rem; line-height: 1.5; }
+.lesson-progress > details { margin-top: .8rem; border-top: 1px solid #e1e8ed; padding-top: .65rem; color: #526775; font-size: .875rem; line-height: 1.6; }
+.lesson-progress summary { cursor: pointer; width: fit-content; color: #006b7b; }
+.lesson-progress summary:focus-visible { outline: 3px solid #00849a; outline-offset: 3px; }
+.lesson-progress details p { max-width: 90ch; }
+.lesson-row-progress { color: #32616c !important; }
+@media(max-width:600px){ .lesson-progress > dl { grid-template-columns: 1fr; gap: .75rem; } .lesson-progress > dl > div + div { border-top: 1px solid #e1e8ed; padding-top: .75rem; } }
 .course-source-context { padding: 12px 16px; margin: 16px 0; border-left: 3px solid #b65b18; border-radius: 4px; background: #fff8ef; color: #493b2e; font-size: .9em; line-height: 1.6; }
 .course-source-context p { margin: 4px 0 0; }
 .course-bridge { margin: 18px 0; border: 1px solid #cbd9e1; border-radius: 14px; background: #fff; color: #192b37; overflow: hidden; }

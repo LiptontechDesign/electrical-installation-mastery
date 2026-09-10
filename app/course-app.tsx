@@ -19,6 +19,8 @@ import { ElectricalShockContext, LicensingOverview, LicensingStageGuide } from '
 import { importPromotedWatched, licensingPracticeId } from './integrated-progress';
 import CourseBridge from './course-bridge';
 import { sourceClarifications } from './supplied-lessons';
+import { recordVideoCompletion, validVideoCompletionCounts } from './flexible-progress';
+import LessonProgress from './lesson-progress';
 import { bookCompanions, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
@@ -86,7 +88,7 @@ type LearnerState = {
   studyMinutesByDate: Record<string, number>;
   weeklyGoalMinutes: number;
   autoNextEnabled: boolean;
-  freeBrowseEnabled: boolean;
+  videoCompletionCounts: Record<string,number>;
   reviewBeforeNext: boolean;
   flashcardProgress: FlashcardLearningState;
   lessonQuizBestScores: Record<string, number>;
@@ -154,7 +156,7 @@ const initialLearnerState: LearnerState = {
   studyMinutesByDate: {},
   weeklyGoalMinutes: 180,
   autoNextEnabled: true,
-  freeBrowseEnabled: false,
+  videoCompletionCounts: {},
   reviewBeforeNext: true,
   flashcardProgress: {},
   lessonQuizBestScores: {},
@@ -227,7 +229,7 @@ function clampState(value: unknown): LearnerState {
     weeklyGoalMinutes: typeof input.weeklyGoalMinutes === 'number'
       ? Math.max(30, Math.min(1200, Math.round(input.weeklyGoalMinutes))) : 180,
     autoNextEnabled: typeof input.autoNextEnabled === 'boolean' ? input.autoNextEnabled : true,
-    freeBrowseEnabled: input.freeBrowseEnabled === true,
+    videoCompletionCounts: validVideoCompletionCounts(input.videoCompletionCounts,lessonIds),
     reviewBeforeNext: typeof input.reviewBeforeNext === 'boolean' ? input.reviewBeforeNext : true,
     flashcardProgress,
     lessonQuizBestScores,
@@ -251,16 +253,6 @@ function quizPercentage(record: QuizRecord | undefined) {
 
 function pad(value: number) {
   return String(value).padStart(2, '0');
-}
-
-function checkpointBeforeLesson(lessonId: string, completedCheckpointIds: string[]) {
-  if(lessonLocation.get(lessonId)?.module.path==='Professional') return undefined;
-  const targetIndex = globalLessonIndex.get(lessonId);
-  if (targetIndex === undefined) return undefined;
-  const passed = new Set(completedCheckpointIds);
-  return assessmentBank.checkpointList.find((checkpoint) =>
-    (globalLessonIndex.get(checkpoint.throughLessonId) ?? Number.MAX_SAFE_INTEGER) < targetIndex
-    && !passed.has(checkpoint.id));
 }
 
 function todayKey() {
@@ -367,6 +359,7 @@ export default function CourseApp() {
   const completed = useMemo(() => new Set(learner.completedLessonIds), [learner.completedLessonIds]);
   const bookmarked = useMemo(() => new Set(learner.bookmarkedLessonIds), [learner.bookmarkedLessonIds]);
   const passedCheckpoints = useMemo(()=>new Set(learner.completedCheckpointIds),[learner.completedCheckpointIds]);
+  const currentPassedCheckpointCount=assessmentBank.checkpointList.filter(checkpoint=>passedCheckpoints.has(checkpoint.id)).length;
   const requiredModules=course.modules.filter(module=>module.path!=='Professional');
   const requiredLessons=requiredModules.flatMap(module=>module.lessons);
   const requiredCheckpoints=requiredModules.flatMap(module=>assessmentBank.checkpointsByModule[module.id]);
@@ -443,33 +436,6 @@ export default function CourseApp() {
   autoNextStateRef.current = autoNextState;
   autoAdvanceRef.current = (fromLessonId, nextLessonId) => {
     if (learner.activeLessonId !== fromLessonId) return;
-    const checkpoint = checkpointAfterLesson.get(fromLessonId);
-    if (!learner.freeBrowseEnabled && checkpoint && !learner.completedCheckpointIds.includes(checkpoint.id)) {
-      pendingAutoNextRef.current=null;
-      autoNextStateRef.current=null;
-      setAutoNextState(null);
-      const missingLessonId = checkpoint.lessonIds.find((lessonId)=>lessonId!==fromLessonId&&!completed.has(lessonId));
-      if (missingLessonId) {
-        const missingLocation=lessonLocation.get(missingLessonId);
-        if(!missingLocation)return;
-        setAutoPlayLessonId(null);
-        setLearner((current)=>({...current,activeLessonId:missingLessonId,updatedAt:new Date().toISOString()}));
-        setOpenModuleId(missingLocation.module.id);
-        setLessonTab('overview');
-        setView('learn');
-        window.history.replaceState(null,'',`#learn/${missingLessonId}`);
-        window.scrollTo({top:0,behavior:'smooth'});
-        setToast('Complete the remaining lesson before the required checkpoint.');
-        return;
-      }
-      setAutoPlayLessonId(null);
-      setActiveCheckpointId(checkpoint.id);
-      setOpenModuleId(checkpoint.moduleId);
-      setView('learn');
-      window.scrollTo({top:0,behavior:'smooth'});
-      setToast(`Checkpoint ${checkpoint.number} is required before the next lesson group.`);
-      return;
-    }
     const nextLocation = lessonLocation.get(nextLessonId);
     if (!nextLocation) return;
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
@@ -574,14 +540,12 @@ export default function CourseApp() {
     if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
       nextState = { ...nextState, activeLessonId: hashId };
     }
-    const blocker = nextState.freeBrowseEnabled ? undefined : checkpointBeforeLesson(nextState.activeLessonId,nextState.completedCheckpointIds);
-    if(blocker){
-      const watched=new Set(nextState.completedLessonIds);
-      const missingLessonId=blocker.lessonIds.find((lessonId)=>!watched.has(lessonId));
-      nextState={...nextState,activeLessonId:missingLessonId??blocker.throughLessonId};
-      if(!missingLessonId)checkpointToOpen=blocker;
+    if(hashView==='checkpoint'&&hashId&&assessmentBank.checkpoints[hashId]){
+      checkpointToOpen=assessmentBank.checkpoints[hashId];
+      nextState={...nextState,activeLessonId:checkpointToOpen.throughLessonId};
     }
     const timer = window.setTimeout(() => {
+      if(checkpointToOpen){setView('learn');setOpenModuleId(checkpointToOpen.moduleId);}
       if (readError) { setStorageBlocked(true); setToast('Saved progress could not be read. The original record is preserved; export this session before restoring a valid backup.'); }
       if (hashView === 'library' || hashView === 'practice') {
         setView('learn');
@@ -733,10 +697,9 @@ export default function CourseApp() {
 
           lastEndedLessonRef.current = lessonId;
           setLearner((current) => {
-            if (current.completedLessonIds.includes(lessonId)) return current;
             return withStudyMinutes({
               ...current,
-              completedLessonIds: [...current.completedLessonIds, lessonId],
+              ...recordVideoCompletion(current,lessonId),
               updatedAt: new Date().toISOString(),
             }, durationMinutes);
           });
@@ -870,49 +833,21 @@ export default function CourseApp() {
     setView('learn');
     setSearchOpen(false);
     setModuleDrawerOpen(false);
-    window.history.replaceState(null,'',`#learn/${checkpoint.throughLessonId}`);
+    window.history.replaceState(null,'',`#checkpoint/${checkpoint.id}`);
     window.scrollTo({top:0,behavior:'smooth'});
   };
 
-  const resolveCheckpoint = (checkpoint: CheckpointAssessment) => {
-    const missingLessonId=checkpoint.lessonIds.find((lessonId)=>!completed.has(lessonId));
-    if(missingLessonId){
-      loadLesson(missingLessonId);
-      setToast('Finish this lesson group before taking its checkpoint.');
-      return;
-    }
-    openCheckpoint(checkpoint);
-  };
-
   const startCheckpoint = (checkpointId: string) => {
-    const targetIndex=assessmentBank.checkpointList.findIndex((checkpoint)=>checkpoint.id===checkpointId);
-    if(targetIndex<0)return;
-    const target=assessmentBank.checkpointList[targetIndex];
-    if(learner.freeBrowseEnabled||course.modules.find(module=>module.id===target.moduleId)?.path==='Professional'){resolveCheckpoint(target);return;}
-    const passed=new Set(learner.completedCheckpointIds);
-    const required=assessmentBank.checkpointList.slice(0,targetIndex+1).find((checkpoint)=>!passed.has(checkpoint.id));
-    resolveCheckpoint(required??assessmentBank.checkpointList[targetIndex]);
+    const checkpoint=assessmentBank.checkpoints[checkpointId];
+    if(checkpoint)openCheckpoint(checkpoint);
   };
 
-  const chooseLesson = (lessonId: string) => {
-    const blocker=learner.freeBrowseEnabled ? undefined : checkpointBeforeLesson(lessonId,learner.completedCheckpointIds);
-    if(blocker){
-      resolveCheckpoint(blocker);
-      if(blocker.lessonIds.every((id)=>completed.has(id)))setToast(`Pass “${blocker.title}” to unlock the next lesson group.`);
-      return;
-    }
-    loadLesson(lessonId);
-  };
+  const chooseLesson = (lessonId: string) => loadLesson(lessonId);
 
   const chooseModule = (module: CourseModule) => {
-    if(learner.freeBrowseEnabled){loadLesson(module.lessons.find((lesson)=>!completed.has(lesson.id))?.id??module.lessons[0].id);return;}
-    for(const lesson of module.lessons){
-      if(!completed.has(lesson.id)){chooseLesson(lesson.id);return;}
-      const checkpoint=checkpointAfterLesson.get(lesson.id);
-      if(checkpoint&&!passedCheckpoints.has(checkpoint.id)){startCheckpoint(checkpoint.id);return;}
-    }
-    chooseLesson(module.lessons.at(-1)?.id??module.lessons[0].id);
+    loadLesson(module.lessons.find(lesson=>!completed.has(lesson.id))?.id??module.lessons[0].id);
   };
+
   const revisitFoundation = (lessonId: string) => {
     if (lessonId === activeLesson.id) return;
     setReturnLesson({id: activeLesson.id, tab: lessonTab});
@@ -928,7 +863,7 @@ export default function CourseApp() {
   const toggleComplete = (advance = false) => {
     const isComplete = completed.has(activeLesson.id);
     setLearner((current) => {
-      return { ...current, completedLessonIds: isComplete ? current.completedLessonIds.filter((id) => id !== activeLesson.id) : [...current.completedLessonIds, activeLesson.id], updatedAt: new Date().toISOString() };
+      return { ...current, ...(current.completedLessonIds.includes(activeLesson.id) ? {completedLessonIds:current.completedLessonIds.filter(id=>id!==activeLesson.id)} : recordVideoCompletion(current,activeLesson.id)), updatedAt: new Date().toISOString() };
     });
     setToast(isComplete ? 'Watched mark removed.' : 'Video marked as watched.');
     if (advance && !isComplete) {
@@ -1003,7 +938,7 @@ export default function CourseApp() {
         updatedAt:at,
       };
     });
-    setToast(passed?`Checkpoint ${activeCheckpoint.number} passed. The next lesson group is unlocked.`:`You scored ${score} of ${total}. Reach 80% to continue.`);
+    setToast(passed?`Checkpoint ${activeCheckpoint.number} passed. Your result is saved.`:`You scored ${score} of ${total}. This attempt is saved; review or continue whenever you choose.`);
   };
 
   const completeModuleQuiz = (score: number, total: number) => {
@@ -1029,10 +964,6 @@ export default function CourseApp() {
   };
 
   const continueAfterLessonAssessment = () => {
-    if(!learner.freeBrowseEnabled&&activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)){
-      startCheckpoint(activeBoundaryCheckpoint.id);
-      return;
-    }
     const next = allLessons[allLessons.findIndex((lesson) => lesson.id === activeLesson.id) + 1];
     if (next) chooseLesson(next.id);
     else navigate('progress');
@@ -1089,22 +1020,9 @@ export default function CourseApp() {
   };
 
   const browsingControls = (
-    <section className="browsing-controls" aria-label="Learning navigation">
-      <button type="button" className="settings-switch" role="switch" aria-checked={learner.freeBrowseEnabled} onClick={() => {
-        cancelAutoNext(false);
-        setLearner((current) => ({...current, freeBrowseEnabled: !current.freeBrowseEnabled, updatedAt: new Date().toISOString()}));
-        if (learner.freeBrowseEnabled) {
-          if (nextRequiredItem?.kind === 'lesson') loadLesson(nextRequiredItem.lesson.id);
-          else if (nextRequiredItem?.kind === 'checkpoint') resolveCheckpoint(nextRequiredItem.checkpoint);
-          else navigate('progress');
-          setToast(nextRequiredItem ? 'Guided sequence resumed at your earliest unfinished requirement. All watched videos and passed assessments are preserved.' : 'All required videos and checkpoints are complete. Your progress is preserved.');
-        } else setToast('Browse any video. Watched videos stay recorded in both modes; skipped work stays incomplete.');
-      }}>
-        <SkipForward size={19}/><span><strong>Browse freely</strong><small>{learner.freeBrowseEnabled ? 'On · Open any module or video' : 'Off · Follow the guided sequence'}</small></span>
-        <span className={`switch-track ${learner.freeBrowseEnabled ? 'on' : ''}`} aria-hidden="true"><i/></span>
-      </button>
-      <p>Watched videos and passed quizzes are remembered in both modes. Finish playback or mark a video watched; opening it alone does not count. Guided mode resumes at your earliest unfinished requirement.</p>
-      {nextRequiredItem && <button type="button" className="resume-unfinished" onClick={() => nextRequiredItem.kind === 'lesson' ? chooseLesson(nextRequiredItem.lesson.id) : startCheckpoint(nextRequiredItem.checkpoint.id)}><RotateCcw size={16}/> Resume unfinished work</button>}
+    <section className="browsing-controls flexible-navigation" aria-label="Learning navigation">
+      <p><strong>Learn in any order</strong>Open any lesson or checkpoint. Unfinished work stays visible.</p>
+      {nextRequiredItem && <button type="button" className="resume-unfinished" onClick={() => nextRequiredItem.kind === 'lesson' ? chooseLesson(nextRequiredItem.lesson.id) : startCheckpoint(nextRequiredItem.checkpoint.id)}><ArrowRight size={16}/> Suggested next step</button>}
     </section>
   );
 
@@ -1161,9 +1079,9 @@ export default function CourseApp() {
                   </div>
                 </div>
                 <div className="hero-session-card">
-                  <div className="session-label"><span>{nextRequiredItem?'Up next':'Required path complete'}</span><span>{nextRequiredItem?.kind==='lesson'?nextRequiredItem.lesson.duration:nextRequiredItem?.kind==='checkpoint'?`${nextRequiredItem.checkpoint.questions.length} questions`:'100%'}</span></div>
+                  <div className="session-label"><span>{nextRequiredItem?'Suggested next':'Core videos and checkpoints complete'}</span><span>{nextRequiredItem?.kind==='lesson'?nextRequiredItem.lesson.duration:nextRequiredItem?.kind==='checkpoint'?`${nextRequiredItem.checkpoint.questions.length} questions`:'100%'}</span></div>
                   <div className="session-index">{nextRequiredItem?.kind==='lesson'?`M${pad(nextRequiredItem.module.number)} · L${pad(nextRequiredItem.lesson.number)}`:nextRequiredItem?.kind==='checkpoint'?`M${pad(nextRequiredItem.module.number)} · CHECKPOINT ${pad(nextRequiredItem.checkpoint.number)}`:'COURSE COMPLETE'}</div>
-                  <h2>{nextRequiredItem?.kind==='lesson'?nextRequiredItem.lesson.title:nextRequiredItem?.kind==='checkpoint'?nextRequiredItem.checkpoint.title:'All required learning complete'}</h2><p>{nextRequiredItem?.module.title??'Keep your knowledge fresh with quiz retries and flashcards.'}</p>
+                  <h2>{nextRequiredItem?.kind==='lesson'?nextRequiredItem.lesson.title:nextRequiredItem?.kind==='checkpoint'?nextRequiredItem.checkpoint.title:'Core videos and checkpoints complete'}</h2><p>{nextRequiredItem?.module.title??'Keep your knowledge fresh with quiz retries and flashcards.'}</p>
                   <div className="session-meter"><span style={{ width: `${nextRequiredItem?moduleTracking(nextRequiredItem.module).requiredPercent:100}%` }} /></div>
                   {nextRequiredItem?.kind==='lesson'?<button type="button" onClick={() => chooseLesson(nextRequiredItem.lesson.id)}>Open lesson <ArrowRight size={17} /></button>:nextRequiredItem?.kind==='checkpoint'?<button type="button" onClick={() => startCheckpoint(nextRequiredItem.checkpoint.id)}>Start checkpoint <ArrowRight size={17} /></button>:<button type="button" onClick={() => navigate('progress')}>Review your progress <ArrowRight size={17} /></button>}
                 </div>
@@ -1197,7 +1115,7 @@ export default function CourseApp() {
               <aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
                 <div className="drawer-heading"><div><span className="eyebrow neutral">Video course</span><h2>Course map</h2></div><button type="button" onClick={() => setModuleDrawerOpen(false)} aria-label="Close course map"><X size={21} /></button></div>
                 {browsingControls}
-                <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required items</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>
+                <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} core videos + checkpoints</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>
                 <nav>
                   {course.modules.map((module) => {
                     const isOpen = openModuleId === module.id;
@@ -1209,14 +1127,13 @@ export default function CourseApp() {
                           <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos · {assessmentBank.checkpointsByModule[module.id].filter((checkpoint)=>passedCheckpoints.has(checkpoint.id)).length}/{assessmentBank.checkpointsByModule[module.id].length} checkpoints</small></span><ChevronDown size={18} />
                         </button>
                         <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
-                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<p className="course-section-guide">Study one section at a time. Core lessons introduce ideas; worked reinforcement applies them; deep practice gives extra problems. Free browsing lets you return to practice later without marking it complete.</p>}{assessmentBank.checkpointsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.newLessonIds.includes(activeLesson.id)||activeCheckpoint?.id===group.id||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.newLessonIds.filter(id=>completed.has(id)).length}/{group.newLessonIds.length} watched</small></summary>{group.newLessonIds.flatMap((lessonId) => {
+                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<p className="course-section-guide">Study one section at a time. Core lessons introduce ideas; worked reinforcement applies them; deep practice gives extra problems. Open any section whenever you need it; studying out of order does not mark skipped work complete.</p>}{assessmentBank.checkpointsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.newLessonIds.includes(activeLesson.id)||activeCheckpoint?.id===group.id||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.newLessonIds.filter(id=>completed.has(id)).length}/{group.newLessonIds.length} watched</small></summary>{group.newLessonIds.flatMap((lessonId) => {
                           const lesson=lessonLookup.get(lessonId)!;
                           const checkpoint=checkpointAfterLesson.get(lesson.id);
-                          const lessonLocked=!learner.freeBrowseEnabled&&Boolean(checkpointBeforeLesson(lesson.id,learner.completedCheckpointIds));
                           const lessonRecord=learner.quizRecords[quizRecordId('lesson',lesson.id)];
                           const latestLessonScore=quizPercentage(lessonRecord);
-                          const rows=[<button type="button" key={lesson.id} className={`${activeLesson.id===lesson.id&&!activeCheckpoint?'active ':''}${lessonLocked?'locked':''}`} onClick={()=>chooseLesson(lesson.id)}>{lessonLocked?<LockKeyhole size={16}/>:completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration} · {lesson.instructor}</small></span>{(bookmarked.has(lesson.id)||latestLessonScore!==undefined)&&<div className="lesson-row-state">{latestLessonScore!==undefined&&<span className={`quiz-score-chip ${latestLessonScore>=80?'passed':'review'}`}>Q {latestLessonScore}%</span>}{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
-                          if(checkpoint){const passed=passedCheckpoints.has(checkpoint.id);const ready=checkpoint.lessonIds.every((id)=>completed.has(id));const latest=quizPercentage(learner.quizRecords[quizRecordId('checkpoint',checkpoint.id)]);rows.push(<button type="button" key={checkpoint.id} className={`checkpoint-map-row ${activeCheckpoint?.id===checkpoint.id?'active ':''}${passed?'passed':ready?'ready':'locked'}`} onClick={()=>startCheckpoint(checkpoint.id)}>{passed?<CheckCircle2 size={17}/>:ready?<ListChecks size={17}/>:<LockKeyhole size={16}/>}<span><strong>Checkpoint {checkpoint.number}: {checkpoint.title}</strong><small>{checkpoint.questions.length} questions · {passed?'Passed':ready?'Ready':'Complete the lesson group'}{latest!==undefined?` · Latest ${latest}%`:''}</small></span><ChevronRight size={15}/></button>);}
+                          const rows=[<button type="button" key={lesson.id} className={activeLesson.id===lesson.id&&!activeCheckpoint?'active':''} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration} · {lesson.instructor}</small><small className="lesson-row-progress">{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}{lessonRecord?` · ${lessonRecord.attempts} quiz ${lessonRecord.attempts===1?'attempt':'attempts'}`:''}</small></span>{(bookmarked.has(lesson.id)||latestLessonScore!==undefined)&&<div className="lesson-row-state">{latestLessonScore!==undefined&&<span className={`quiz-score-chip ${latestLessonScore>=80?'passed':'review'}`}>Q {latestLessonScore}%</span>}{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
+                          if(checkpoint){const passed=passedCheckpoints.has(checkpoint.id);const ready=checkpoint.lessonIds.every((id)=>completed.has(id));const record=learner.quizRecords[quizRecordId('checkpoint',checkpoint.id)];const latest=quizPercentage(record);rows.push(<button type="button" key={checkpoint.id} className={`checkpoint-map-row ${activeCheckpoint?.id===checkpoint.id?'active ':''}${passed?'passed':'ready'}`} onClick={()=>startCheckpoint(checkpoint.id)}>{passed?<CheckCircle2 size={17}/>:<ListChecks size={17}/>}<span><strong>Checkpoint {checkpoint.number}: {checkpoint.title}</strong><small>{checkpoint.questions.length} questions · {passed?'Passed':ready?'Not passed yet':'Open anytime'}{latest!==undefined?` · Latest ${latest}%`:''}{record?` · ${record.attempts} ${record.attempts===1?'attempt':'attempts'}`:''}</small></span><ChevronRight size={15}/></button>);}
                           if (lesson.id === group.newLessonIds[0]) rows.splice(0, 0, <SupplementaryControls key={`${group.id}-add`} moduleId={module.id} anchorId={group.newLessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />);
                           const coreIndex = rows.findIndex(row => row.key === lesson.id);
                           rows.splice(coreIndex, 0, <SupplementaryRows key={`${lesson.id}-supp-before`} anchorId={lesson.id} position="before" />);
@@ -1279,6 +1196,7 @@ export default function CourseApp() {
                   <div><button className={`bookmark-button ${bookmarked.has(activeLesson.id) ? 'active' : ''}`} type="button" onClick={toggleBookmark}><Bookmark size={18} fill={bookmarked.has(activeLesson.id) ? 'currentColor' : 'none'} /> {bookmarked.has(activeLesson.id) ? 'Saved' : 'Save lesson'}</button><button className={`auto-next-toggle ${learner.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={18} /> Auto-next <span>{learner.autoNextEnabled ? 'On' : 'Off'}</span></button></div>
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={completed.has(activeLesson.id)} onClick={() => toggleComplete(!completed.has(activeLesson.id))}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Watched · Undo' : 'Mark video watched'}</button>
                 </div>
+                <LessonProgress watched={completed.has(activeLesson.id)} completions={learner.videoCompletionCounts[activeLesson.id]??0} quiz={learner.quizRecords[quizRecordId('lesson',activeLesson.id)]} passed={learner.completedLessonAssessmentIds.includes(activeLesson.id)} earlierScore={learner.lessonQuizBestScores[activeLesson.id]??0}/>
                 <nav className="lesson-tabs" role="tablist" aria-label="Lesson sections" onKeyDown={(event) => {
                   const tabs = Array.from(event.currentTarget.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
                   const index = tabs.indexOf(event.target as HTMLButtonElement);
@@ -1335,8 +1253,8 @@ export default function CourseApp() {
                 </div>
                 {activeLesson.id===location.module.lessons.at(-1)?.id&&<section className="module-recap-end"><BookOpen size={28}/><div><span>Module {pad(location.module.number)} · Keep the essentials</span><h2>Your module recap book</h2><p>Turn through the key ideas, relationships and practical distinctions from this module’s videos.</p></div><button type="button" onClick={()=>openModuleRecap(location.module.id)}>Open recap <ArrowRight size={18}/></button></section>}
                 {pathEnd&&<footer className="lesson-next-card"><div><span>Complete your pathway review</span><h3>{location.module.path} written, oral and practical preparation</h3></div><button type="button" onClick={()=>{setPreparationPath(location.module.path as 'C2'|'C1');navigate('home');}}>Open preparation <ArrowRight size={18}/></button></footer>}
-                {activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)&&<footer className="lesson-next-card checkpoint-next"><div><span>{learner.freeBrowseEnabled?'Checkpoint still unfinished':'Required next'}</span><h3>Checkpoint {activeBoundaryCheckpoint.number}: {activeBoundaryCheckpoint.title}</h3><small>{activeBoundaryCheckpoint.questions.length} cumulative questions · 80% to pass</small></div><button type="button" onClick={()=>startCheckpoint(activeBoundaryCheckpoint.id)}>Start checkpoint <ArrowRight size={18}/></button></footer>}
-                {(learner.freeBrowseEnabled||!activeBoundaryCheckpoint||learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id))&&<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'End of video sequence'}</span><h3>{activeNextLesson?.title??'Check your progress for unfinished work'}</h3></div><button type="button" onClick={()=>activeNextLesson?goRelative(1):navigate('progress')}>{activeNextLesson?'Continue':'View progress'} <ArrowRight size={18}/></button></footer>}
+                {activeBoundaryCheckpoint&&!learner.completedCheckpointIds.includes(activeBoundaryCheckpoint.id)&&<footer className="lesson-next-card checkpoint-next"><div><span>{'Optional next step · checkpoint not yet passed'}</span><h3>Checkpoint {activeBoundaryCheckpoint.number}: {activeBoundaryCheckpoint.title}</h3><small>{activeBoundaryCheckpoint.questions.length} cumulative questions · 80% to pass</small></div><button type="button" onClick={()=>startCheckpoint(activeBoundaryCheckpoint.id)}>Start checkpoint <ArrowRight size={18}/></button></footer>}
+                {<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'End of video sequence'}</span><h3>{activeNextLesson?.title??'Check your progress for unfinished work'}</h3></div><button type="button" onClick={()=>activeNextLesson?goRelative(1):navigate('progress')}>{activeNextLesson?'Continue':'View progress'} <ArrowRight size={18}/></button></footer>}
               </article>}
             </div>
           )}
@@ -1345,7 +1263,7 @@ export default function CourseApp() {
             <div className="page progress-page">
               <EvidenceOverview events={learner.evidence} onLesson={openPractice}/>
               <section className="progress-hero"><div><span className="eyebrow"><BarChart3 size={16} /> Your learning record</span><h1>Your progress.</h1><p>Track completed videos, required checkpoints, quiz results and study time.</p></div><div className="overall-ring" style={{ '--progress': `${coursePercent * 3.6}deg` } as CSSProperties}><span><b>{coursePercent}%</b><small>required path</small></span></div></section>
-              <section className="stat-grid progress-stats"><article><span className="stat-icon copper"><CirclePlay size={21} /></span><div><b>{Math.floor(completedSeconds / 3600)}h {Math.round((completedSeconds % 3600) / 60)}m</b><p>Video time completed</p></div></article><article><span className="stat-icon cyan"><BookOpen size={21} /></span><div><b>{learner.completedLessonAssessmentIds.length}<small> / {allLessons.length}</small></b><p>Lesson quizzes passed once</p></div></article><article><span className="stat-icon green"><RotateCcw size={21} /></span><div><b>{dueFlashcards.length}</b><p>Flashcards due for review</p></div></article><article><span className="stat-icon amber"><LockKeyhole size={21} /></span><div><b>{learner.completedCheckpointIds.length}<small> / {assessmentBank.checkpointList.length}</small></b><p>Required checkpoints passed</p></div></article></section>
+              <section className="stat-grid progress-stats"><article><span className="stat-icon copper"><CirclePlay size={21} /></span><div><b>{Math.floor(completedSeconds / 3600)}h {Math.round((completedSeconds % 3600) / 60)}m</b><p>Video time completed</p></div></article><article><span className="stat-icon cyan"><BookOpen size={21} /></span><div><b>{learner.completedLessonAssessmentIds.length}<small> / {allLessons.length}</small></b><p>Lesson quizzes passed once</p></div></article><article><span className="stat-icon green"><RotateCcw size={21} /></span><div><b>{dueFlashcards.length}</b><p>Flashcards due for review</p></div></article><article><span className="stat-icon amber"><ListChecks size={21} /></span><div><b>{currentPassedCheckpointCount}<small> / {assessmentBank.checkpointList.length}</small></b><p>Checkpoints passed</p></div></article></section>
               <details className="mastery-centre" open={reviewQueueOpen || undefined}>
                 <summary>Module quizzes &amp; flashcard review</summary>
                 <section className="review-queue-banner"><span className="review-queue-icon"><RotateCcw size={25} /></span><div><span className="eyebrow neutral">Flashcards</span><h3>{dueFlashcards.length ? `${dueFlashcards.length} cards due` : 'No cards due today'}</h3><p>{dueFlashcards.length ? 'Retrieve up to five ideas in this focused session.' : 'Review a lesson to add cards.'}</p></div><button type="button" disabled={!dueReviewCards.length} onClick={() => { if(reviewQueueOpen){setReviewQueueOpen(false);setReviewSession([]);}else startReview(); }}>{reviewQueueOpen ? 'Close review' : 'Start due review'} <ArrowRight size={17} /></button></section>
@@ -1396,7 +1314,7 @@ export default function CourseApp() {
                 />
               </details>
               <div className="progress-layout">
-                <section className="module-progress-panel"><div className="section-heading compact"><div><span className="eyebrow neutral">Required pathway</span><h2>Module progress</h2></div></div><div className="module-progress-list">{course.modules.map((module) => { const tracking=moduleTracking(module); return <button type="button" key={module.id} onClick={() => chooseModule(module)}><span className="module-index">{pad(module.number)}</span><span className="module-progress-copy"><strong>{module.title}</strong><small>{tracking.videos}/{module.lessons.length} videos watched · {tracking.quizzes}/{module.lessons.length} lesson quizzes passed · {tracking.completedCheckpoints}/{tracking.checkpoints.length} checkpoints passed</small><span className="progress-line"><i style={{ width: `${tracking.requiredPercent}%` }} /></span></span><b>{tracking.requiredPercent}%</b><ChevronRight size={18} /></button>; })}</div></section>
+                <section className="module-progress-panel"><div className="section-heading compact"><div><span className="eyebrow neutral">Your study record</span><h2>Module progress</h2></div></div><div className="module-progress-list">{course.modules.map((module) => { const tracking=moduleTracking(module); return <button type="button" key={module.id} onClick={() => chooseModule(module)}><span className="module-index">{pad(module.number)}</span><span className="module-progress-copy"><strong>{module.title}</strong><small>{tracking.videos}/{module.lessons.length} videos watched · {tracking.quizzes}/{module.lessons.length} lesson quizzes passed · {tracking.completedCheckpoints}/{tracking.checkpoints.length} checkpoints passed</small><span className="progress-line"><i style={{ width: `${tracking.requiredPercent}%` }} /></span></span><b>{tracking.requiredPercent}%</b><ChevronRight size={18} /></button>; })}</div></section>
                 <aside className="progress-side"><section className="goal-card"><div className="goal-card-head"><Target size={22} /><span>Weekly study goal</span></div><b>{weekMinutes}<small> / {learner.weeklyGoalMinutes} minutes</small></b><div className="progress-line"><span style={{ width: `${weekPercent}%` }} /></div><label><span>Set a weekly goal</span><input type="range" min="30" max="1200" step="30" value={learner.weeklyGoalMinutes} onChange={(event) => setLearner((current) => ({ ...current, weeklyGoalMinutes: Math.max(30, Math.min(1200, Number(event.target.value) || 30)), updatedAt: new Date().toISOString() }))} /><small>minutes</small></label></section><section className="mastery-card"><span className="eyebrow neutral">Latest quiz results</span><h3>{attemptedLessonQuizRecords.length?`${currentLessonQuizPasses} of ${attemptedLessonQuizRecords.length} at 80% or above`:'No completed lesson quizzes yet'}</h3><p>{currentLessonQuizReviews} latest results need review · {learner.completedLessonAssessmentIds.length} passed at least once.</p><button type="button" onClick={() => navigate('learn')}>Continue building mastery <ArrowRight size={17} /></button></section><section className="backup-card"><Database size={22} /><div><strong>Keep your progress safe</strong><p>Progress is device-local. Download a backup before changing browser or computer.</p></div><button type="button" onClick={exportProgress}><Download size={17} /> Download backup</button></section></aside>
               </div>
             </div>
@@ -1422,7 +1340,7 @@ export default function CourseApp() {
             <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>Your learning data</strong><p>Video marks, quiz attempts, bookmarks and learning evidence stay in this browser. My books keeps its shared reading record.</p></div></div>
             <section className="settings-section playback-settings"><span className="eyebrow neutral">Playback & recall</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished lesson</strong><small>Optional next-video countdown when reflection is switched off</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><button className="settings-switch" type="button" role="switch" aria-checked={learner.reviewBeforeNext} onClick={() => { const enabled = !learner.reviewBeforeNext; setLearner((current) => ({ ...current, reviewBeforeNext: enabled, updatedAt: new Date().toISOString() })); setToast(enabled ? 'Lesson recap is now required before auto-next.' : 'Auto-next will use the five-second countdown without opening the recap.'); }}><ListChecks size={19} /><span><strong>Review before next</strong><small>Open synthesis and recall when a video finishes</small></span><span className={`switch-track ${learner.reviewBeforeNext ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>Recommended: keep reflection on. Choose your next learning action after the video. In fullscreen, the app waits for you to exit safely before changing the lesson.</p></section>
             <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save video marks, quiz attempts and bookmarks</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>
-            <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>videos watched</span></div><div><b>{learner.completedLessonAssessmentIds.length}</b><span>lesson quizzes passed</span></div><div><b>{learner.completedCheckpointIds.length}</b><span>checkpoints passed</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This permanently clears progress from this browser. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Clear local progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset local progress</strong><small>Clear this browser’s learning record</small></span></button>}</section>
+            <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>videos watched</span></div><div><b>{learner.completedLessonAssessmentIds.length}</b><span>lesson quizzes passed</span></div><div><b>{currentPassedCheckpointCount}</b><span>checkpoints passed</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This permanently clears progress from this browser. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Clear local progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset local progress</strong><small>Clear this browser’s learning record</small></span></button>}</section>
             <div className="settings-footnote"><Info size={18} /><p>Videos stream from YouTube and need internet access.</p></div>
           </section>
         </div>
