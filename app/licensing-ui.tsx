@@ -1,4 +1,5 @@
 'use client';
+import { licensingPracticeId } from './integrated-progress';
 import {useEffect,useState} from 'react';
 import course from './course-curriculum';
 import {pathLabels,type LicensingPath} from './licensing-curriculum';
@@ -42,7 +43,7 @@ export function LicensingOverview({initialExam=null,bank,completed,passedCheckpo
   const done=new Set(completed),passed=new Set(passedCheckpoints);
   const pathComplete=(path:'C2'|'C1')=>{
     const stages=course.modules.filter(m=>m.path===path);
-    const record=records['licensing:'+path];
+    const record=records[licensingPracticeId(path)];
     return stages.every(m=>m.lessons.every(l=>done.has(l.id))&&bank.checkpointsByModule[m.id].every(c=>passed.has(c.id)))&&Boolean(record&&record.bestTotal>0&&record.bestScore/record.bestTotal>=.8);
   };
   const questionSet=(path:'C2'|'C1')=>course.modules.filter(m=>m.path===path).flatMap(m=>{
@@ -67,6 +68,6 @@ export function LicensingOverview({initialExam=null,bank,completed,passedCheckpo
     'Explain real, reactive and apparent power; calculate a target compensation value and identify practical capacitor-bank checks.',
     'Explain how a contactor, overload relay and short-circuit protective device cooperate, then reason through a failure-to-start scenario.',
     'Plan initial or periodic verification of a three-phase board, explaining safe conditions, interpretation, limitations and reporting.',
-  ]).map(q=><li key={q}>{q}</li>)}</ol></details><p>Suggested written practice: allow about one minute per question, then review the explanatory feedback. Exact EPRA exam timing and pass requirements are not represented here.</p><PracticeTimer key={exam+"-timer"} minutes={questionSet(exam).length}/><AssessmentPanel key={exam} title={exam+' written practice'} eyebrow="Course-authored revision" description="A balanced selection from the existing lesson assessments. These results do not overwrite lesson or checkpoint passes." flashcards={[]} questions={questionSet(exam)} progress={{}} bestScore={records['licensing:'+exam]?.bestScore??0} quizRecord={records['licensing:'+exam]} completed={Boolean(records['licensing:'+exam] && records['licensing:'+exam].bestScore / records['licensing:'+exam].bestTotal >= .8)} mode="quiz" showFlashcards={false} onRateCard={()=>{}} onEvidence={onEvidence} onCompleteQuiz={(score,total)=>onExam(exam,score,total)}/><p className="licensing-gap">Still required outside this course: authoritative current Kenya/KEBS tables and regulatory material, verified official past papers where available, supervised practical assessment and confirmed EPRA eligibility. A mock score does not establish these.</p></section>}
+  ]).map(q=><li key={q}>{q}</li>)}</ol></details><p>Suggested written practice: allow about one minute per question, then review the explanatory feedback. Exact EPRA exam timing and pass requirements are not represented here.</p><PracticeTimer key={exam+"-timer"} minutes={questionSet(exam).length}/><AssessmentPanel key={exam} title={exam+' written practice'} eyebrow="Course-authored revision" description="A balanced selection from the existing lesson assessments. These results do not overwrite lesson or checkpoint passes." flashcards={[]} questions={questionSet(exam)} progress={{}} bestScore={records[licensingPracticeId(exam)]?.bestScore??0} quizRecord={records[licensingPracticeId(exam)]} completed={Boolean(records[licensingPracticeId(exam)] && records[licensingPracticeId(exam)].bestScore / records[licensingPracticeId(exam)].bestTotal >= .8)} mode="quiz" showFlashcards={false} onRateCard={()=>{}} onEvidence={onEvidence} onCompleteQuiz={(score,total)=>onExam(exam,score,total)}/><p className="licensing-gap">Still required outside this course: authoritative current Kenya/KEBS tables and regulatory material, verified official past papers where available, supervised practical assessment and confirmed EPRA eligibility. A mock score does not establish these.</p></section>}
   </section>;
 }

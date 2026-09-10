@@ -798,7 +798,7 @@ export function buildAssessmentBank(modules: readonly CourseModule[], guides: Re
       previousBoundary = boundary;
       // Keep historical attempts, but do not treat a pass on a different
       // lesson scope as proof that the newly organised checkpoint was passed.
-      const id = item.legacyId ?? `${module.id}-checkpoint-${checkpointIndex + 1}-licensing-20260910`;
+      const id = item.legacyId ?? `${module.id}-checkpoint-${checkpointIndex + 1}-licensing-${module.lessons.some(l=>l.id.startsWith('course-'))?'20260910-transcripts':'20260910'}`;
       const assessment: CheckpointAssessment = {
         id,
         moduleId: module.id,

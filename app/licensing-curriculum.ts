@@ -1,5 +1,7 @@
 import type { CurriculumLesson } from './course-curriculum';
 import { formatStudyDuration } from './course-extension/builders';
+import { integratedLessons } from './integrated-lessons';
+import integratedIndex from './integrated-video-index.json';
 
 export type LicensingPath = 'C2' | 'C1' | 'Professional';
 export const pathLabels: Record<LicensingPath, string> = {
@@ -9,7 +11,7 @@ const range = (prefix: string, first: number, last: number) => Array.from({lengt
 type Stage = { id:string; path:LicensingPath; title:string; ids:string[]; purpose:string };
 type ExistingModule = { id:string; number:number; title:string; description:string; checkpoint:string; lessons:CurriculumLesson[]; durationSeconds:number; duration:string };
 export function buildLicensingModules<T extends ExistingModule>(legacy:T[]) {
-  const all = legacy.flatMap(m=>m.lessons), catalogue = new Map(all.map(l=>[l.id,l]));
+  const all = [...legacy.flatMap(m=>m.lessons),...integratedLessons], catalogue = new Map(all.map(l=>[l.id,l]));
   const original = (id:string) => legacy.find(m=>m.id===id)!.lessons.map(l=>l.id);
   const stages:Stage[] = [
     {id:'module-01',path:'C2',title:'Electrical Foundations',ids:original('module-01').filter(id=>id!=='p06-l14'),purpose:'Charge, circuits, power, magnetism, AC, basic power factor and measurement. Measurement demonstrations are preparation for supervised work, not permission to work live.'},
@@ -38,6 +40,11 @@ export function buildLicensingModules<T extends ExistingModule>(legacy:T[]) {
     {id:'module-15',path:'Professional',title:'Specialist Building Services',ids:original('module-15'),purpose:'Apply core control and protection knowledge to pumps, ventilation and sensitive building loads.'},
     {id:'module-16',path:'Professional',title:'Estimating and Professional Practice',ids:original('module-16'),purpose:'Plan scope, resources, quotations and professional handover beyond licensing study.'},
   ];
+  for(const video of integratedIndex){
+    const stage=stages.find(s=>s.ids.includes(video.anchor));
+    if(!stage)throw new Error('Missing integration anchor: '+video.anchor);
+    stage.ids.splice(stage.ids.indexOf(video.anchor)+(video.position==='after'?1:0),0,video.id);
+  }
   const used = new Set<string>(), pathNumbers = {C2:0,C1:0,Professional:0};
   const modules = stages.map((stage,index)=>{
     const base = legacy.find(m=>m.id===stage.id) ?? legacy[0];

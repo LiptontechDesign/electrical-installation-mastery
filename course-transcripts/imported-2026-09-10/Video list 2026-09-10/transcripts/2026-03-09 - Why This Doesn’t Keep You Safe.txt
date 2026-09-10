@@ -1,0 +1,422 @@
+# Why This Doesn’t Keep You Safe
+# https://www.youtube.com/watch?v=TUno2IT-KZY
+
+Sponsored by Fluke. This device can detect an electric shock and cut the power fast enough to save your life, but it doesn't always work. So, we tested the reaction speed, then ripped one apart to see what's inside, and learn how it works, but also learn when it will not work. But this one, a standard circuit breaker, won't save you at all. It was never designed to. A standard breaker trips for only two reasons. First, a short circuit. That's when the live and neutral wires touch directly. There's almost no resistance, so hundreds or even thousands of amps flow instantly. This causes the breaker to trip immediately. The second reason is overload. That's when too many loads are connected, causing the current to slowly increase past its rated value, which causes it to trip. Otherwise, the cables will overheat and start a fire. Both of these are only designed to protect the wiring, not the people. The problem is your body has a high resistance, so if you touch a live wire, the current flowing through you will be too small to trip most standard breakers. But it will still be more than enough to stop your heart. So, the breaker remains on and the shock continues. However, there is one situation where it can save you, and that's if the live wire touches a properly grounded metal enclosure. That creates a short circuit, so the large current trips the breaker. But if the enclosure isn't properly grounded, the breaker won't trip. So, the enclosure becomes energized. So, if you touch this, current can flow through you. So, how do we actually protect people from an electric shock? Well, we use these devices called RCDs or GFCIs in North America. Different names, but they all use the same working principle. They continuously monitor the current flowing into and out of the circuit. Under normal conditions, these two currents are identical. Subtract one from the other and you get zero. But, during a fault, that balance is broken. Some current leaves the circuit where it shouldn't, often through a damaged cable or a human body. That imbalance is called residual current, which is why in the UK these devices are known as residual current devices. But, because this fault current usually flows to ground, these devices are called ground fault circuit interrupters in North America. Other parts of the world simply call them differential circuit interrupters. Let me know in the comment section which name you prefer and why. These devices come in many shapes and sizes, depending on the manufacturer and also how they're used. An RCCB only protects against ground faults, nothing else. Because of that, they are often used to protect multiple circuits at once. Each individual circuit has its own circuit breaker for overloads and short circuits, but the RCCB monitors them all for current imbalance, protecting the entire home with one device. The downside is, if it trips, it cuts power to all the circuits it protects. But, these devices are surprisingly simple. They're mostly electromechanical, just a toroid transformer, a solenoid, a basic circuit board, a resistor, and a mechanical latch. They trip at relatively large fault currents, so they don't need complex electronics. However, newer installations often use RCBOs instead. These combine ground fault, overload, and short circuit protection into a single device, so each circuit is protected independently. They are thinner than RCCBs because they use electronics to amplify and filter the fault signal, which allows for a much smaller toroid. This number gives us the overcurrent rating, and the letter defines how it trips under overloads and short-circuit conditions only, not earth faults. In North America, a GFCI breaker is typically used. This only protects that specific circuit, not the entire home. Alternatively, a GFCI outlet is used with a standard breaker. This will protect everything downstream from it in that branch, but nothing upstream from it. Side note, we have a dedicated video explaining exactly how that works if you're interested. But, these devices need much more complex circuitry because they must trip faster at a much lower fault currents. That requires additional filtering to prevent false trips. Let's understand how they actually work. In a normal circuit, current flows from the source to the load and then back to the source. Our homes use AC or alternating current. So, the current is constantly changing between flowing forwards and backwards. But, for simplicity, let's use DC or direct current, which is in only one direction. The important thing is the current flows to the load and then back. So, the current is the same in both wires. But, during a shock, some of the current flows through the person and then through the ground to get back to the source. It does not return via the neutral wire. So, at that moment, the currents in the wires are not equal, and so there must be a fault. Great. But, how do we detect that and cut the power? Whenever current flows through a wire, it creates a magnetic field around it. The larger the current, the stronger the magnetic field. If the current changes direction, the magnetic field also changes direction. We can see that by placing some compasses around a wire. If we coil the wire, the magnetic field from each loop will add together, forming a larger, stronger magnetic field. Alternatively, we can place it around a ferrite core, and this magnetic field will swirl around the core. We call this magnetic flux, and it can be used to induce a voltage into another conductor. For example, if we connected another coil around this core, that magnetic flux would pass through the coil. When a constant magnetic field passes through a coil, nothing happens. But, when the magnetic field changes, a voltage will be induced into the second coil. This induced voltage will create a current. See, when the current is constant, nothing [clears throat] happens. But, when the current increases or decreases, the magnetic flux will also increase or decrease. And this second coil generates an induced voltage and current. Essentially, this coil can sense or detect a change in current, hence the name sense coil. The problem is our homes use AC, so the voltage and current are constantly changing. That means the sense coil is always detecting a change in current. And the RCD needs to account for that. Remember, current is flowing in opposite directions in these wires, and the direction of the magnetic field depends on the direction of current. So, if we also wrap the neutral wire around the core, its magnetic flux will cancel out the live wire's magnetic flux. So, the sense coil will stop detecting the constantly changing AC currents. This completes the first stage of the RCD. With balanced AC, the live and neutral wire currents cancel each other's magnetic flux, and the sense coil doesn't detect anything. Even when more loads are connected, the current will be equal, so it doesn't detect any changes. But, when a shock occurs, some of the current leaves the circuit. So, the current won't be equal. The live wire will have more current. So, the magnetic field and the magnetic flux will be stronger through the core. This will cause the sense coil to generate a small induced voltage. To make this small voltage usable, we see a lot of turns on the sense coil, which will increase the voltage and sensitivity. This version has one primary and 10 secondary turns. When a shock occurs, the imbalance will generate an induced voltage in the sense coil, and that will push a current to another coil, which has a substantial number of turns. This is the second and final stage of the RCD. Remember, when current flows through a coil, it creates a magnetic field. Well, we can use that to move a piston. This is called a solenoid. So, we can use that to activate a mechanical latch, opening the circuit and cutting the power. It all happens so fast that you might miss it if you blink. This is basically how an RCD works, but it doesn't end here. It can get more complex and more interesting, kind of. In some RCD circuit boards, diodes are used to clamp and limit the sense coil's voltage, while capacitors shape the time response, filtering out brief or small signals, but allowing sustained and sufficient ones, helping to drive enough current through the solenoid to build the magnetic force needed to trip the breaker. Other versions use a small magnet to hold a spring-loaded lever in position. When the coil is energized, the magnetic field generated releases the lever, and the spring forces it down. This will hit another lever, which activates the mechanism. So, when a person is shocked, the current imbalance through the toroid causes an induced voltage and current in the sense coil, which is then sent to a solenoid to open the circuit and save the person. The electronic versions still use a toroid to detect the fault signal, but an electronic circuit will basically filter this, then rectify it, and use it to charge a capacitor. If the voltage reaches the trip threshold, a comparator outputs a signal, which then triggers an SCR, and that energizes a solenoid and trips the breaker, cutting the power. All this happens almost instantly. The RCD then remains off until the fault is cleared and someone manually resets the mechanism. So, now we know how they will protect us, when will they fail? Well, an RCD doesn't prevent a shock. It just limits the duration of the shock. The longer the current flows through you, the more dangerous it becomes. But, if the fault occurs before the RCD, it will not trip. Also, if you touch the live and neutral at the same time, the RCD will not trip because the current is the same in both wires. It will only trip if enough current leaks through you to ground. But, right here, this one states it is rated to trip at 30 milliamps of imbalance. It will trip slightly below this, but it is not allowed to trip below 15 milliamps. We will test this in just a moment. However, larger currents are more dangerous, so it must trip faster if that occurs. But, we can get 100 and 300 milliamp versions. These are only designed to prevent fires, not protect people. However, many older installations use type AC RCDs marked with this symbol. These were only designed to work with sinusoidal AC currents like incandescent lamps. But, modern electronics like LED lights, laptop chargers, and USB chargers all distort the current waveform. Additionally, faulty devices like EV chargers can leak DC into the neutral. The problem is DC current creates a constant magnetic field, and this will be applied to the RCD's core. The core can only handle so much magnetism. So, this steady DC can push it towards saturation. If an earth fault then occurs, the current imbalance tries to create a magnetic field, but the core is already overloaded, so it can only produce a small amount. This weak signal can be insufficient to operate the trip mechanism. So, the RCD will not trip. If you test an energized RCD and it doesn't trip, that could be why. That's why type A RCDs are now used. This symbol shows they work with AC and pulsed DC. Then, there's type F, designed for variable frequency equipment as well as AC and pulsed DC. Finally, there's type B, which offers the highest protection, covering smooth DC, variable frequency, pulsed DC, and AC. Essential for EV chargers and industrial equipment. So, the right type must be used if you want to be protected. But, how do we know these devices actually work? Notice the device has a T button for testing. It must be energized to work, but when pressed, it should trip the device. It basically just sends current from the live through a large resistor straight to the neutral, creating an imbalance to trip the device. But, to really test it, we need a multi-function installation tester. Luckily, our sponsor Fluke kindly sent us one. It can check everything from voltage, continuity, insulation resistance, loop and line impedance, earth resistance, phase rotation, search protection, and voltage drop. But, we want the RCD test. The breaker we are testing is a type A, so we select that from the options. It is rated for 30 milliamps, so we select that for our test current. We can choose the phase angle of 0 or 180°, but for now, I will use 0°. Then, we select the multiplier factor. I will use 1x, meaning it will inject 1 * 30 milliamps RMS fault current. There is also an info button, which just tells us how to connect the device. So, when safe and ready, we will start the test. The breaker trips, and we see the time taken. In the UK, it must trip in under 300 milliseconds, which is 15 cycles. We are definitely below that, so this is fine. And, it shows a pass on the screen, also. If we change the phase angle to 180°, this test can give different results. This alters where in the waveform the fault begins, which will affect how quickly the magnetic flux builds in the core, which changes the trip time. Next, we select the five times multiplier, which injects 150 milliamps of fault current. That will trip the breaker, and we see the time is much faster. That's because the danger has increased. But, if we change to the 0.5 multiplier, it will inject 15 milliamps. But, when we run the test, the breaker doesn't trip. The test stops at 310 milliseconds, as it has exceeded the time limit. The device is not allowed to trip at or below 15 milliamps. So, this is a pass. To find the minimum trip current, we need to use the RCD ramp function. Ensure the device type is correct, the rated current is set, and set a phase angle. Then run the test, and we see it tripped at 21 milliamps of imbalance, and it took 31.1 milliseconds to achieve that. That is all within limits, so this is a pass. We can also see this with an oscilloscope. I'll clamp the live wire which feeds an incandescent lamp. That gives us this nice current sine wave. Now, I've already set up my trigger settings. So, when I press the single capture button, and then press the RCD test button, we can capture the trip on the oscilloscope. We can see there is a disturbance in the waveform where the fault current occurred, and we can see where the circuit was interrupted. There's also a spike on the final peak, which is likely where the mechanical latch started to open. If I use the cursor feature, placing the A line on the start point, and then move the B line to the end point, we can see the trip time listed here, which is very close to what we saw on the Fluke device. Now, these results will be different each time depending on where the fault started in the cycle, which occurs when you press the button. But anyway, that's how this device worked to save your life. And if you're interested in the Fluke device, I'll leave a link down below for you. Hey, I'd just like to give a huge shout out to our incredible Patreon and channel members. Thank you so much for supporting us. And if you'd like to see your name here, along with priority access to our content and behind-the-scenes footage, link's down below for how to join.
+
+
+[00:00] Sponsored by Fluke. This device can
+[00:03] detect an electric shock and cut the
+[00:05] power fast enough to save your life, but
+[00:08] it doesn't always work. So, we tested
+[00:10] the reaction speed, then ripped one
+[00:12] apart to see what's inside, and learn
+[00:14] how it works, but also learn when it
+[00:17] will not work.
+[00:18] But this one, a standard circuit
+[00:20] breaker, won't save you at all. It was
+[00:23] never designed to.
+[00:24] A standard breaker trips for only two
+[00:26] reasons.
+[00:28] First, a short circuit. That's when the
+[00:30] live and neutral wires touch directly.
+[00:33] There's almost no resistance, so
+[00:35] hundreds or even thousands of amps flow
+[00:37] instantly. This causes the breaker to
+[00:40] trip immediately. The second reason is
+[00:42] overload. That's when too many loads are
+[00:45] connected, causing the current to slowly
+[00:47] increase past its rated value, which
+[00:50] causes it to trip. Otherwise, the cables
+[00:53] will overheat and start a fire.
+[00:55] Both of these are only designed to
+[00:57] protect the wiring, not the people. The
+[01:00] problem is your body has a high
+[01:02] resistance, so if you touch a live wire,
+[01:05] the current flowing through you will be
+[01:07] too small to trip most standard
+[01:09] breakers. But it will still be more than
+[01:12] enough to stop your heart. So, the
+[01:15] breaker remains on and the shock
+[01:16] continues.
+[01:18] However, there is one situation where it
+[01:21] can save you, and that's if the live
+[01:23] wire touches a properly grounded metal
+[01:26] enclosure.
+[01:27] That creates a short circuit, so the
+[01:29] large current trips the breaker.
+[01:32] But if the enclosure isn't properly
+[01:34] grounded, the breaker won't trip. So,
+[01:37] the enclosure becomes energized. So, if
+[01:39] you touch this, current can flow through
+[01:42] you.
+[01:43] So, how do we actually protect people
+[01:45] from an electric shock? Well, we use
+[01:48] these devices called RCDs or GFCIs in
+[01:51] North America. Different names, but they
+[01:54] all use the same working principle. They
+[01:56] continuously monitor the current flowing
+[01:58] into and out of the circuit. Under
+[02:01] normal conditions, these two currents
+[02:03] are identical. Subtract one from the
+[02:06] other and you get zero. But, during a
+[02:09] fault, that balance is broken. Some
+[02:12] current leaves the circuit where it
+[02:14] shouldn't, often through a damaged cable
+[02:16] or a human body.
+[02:18] That imbalance is called residual
+[02:20] current, which is why in the UK these
+[02:23] devices are known as residual current
+[02:26] devices.
+[02:27] But, because this fault current usually
+[02:29] flows to ground, these devices are
+[02:32] called ground fault circuit interrupters
+[02:34] in North America. Other parts of the
+[02:36] world simply call them differential
+[02:38] circuit interrupters.
+[02:40] Let me know in the comment section which
+[02:42] name you prefer and why.
+[02:44] These devices come in many shapes and
+[02:46] sizes, depending on the manufacturer and
+[02:49] also how they're used.
+[02:51] An RCCB only protects against ground
+[02:54] faults, nothing else. Because of that,
+[02:57] they are often used to protect multiple
+[02:59] circuits at once. Each individual
+[03:02] circuit has its own circuit breaker for
+[03:04] overloads and short circuits, but the
+[03:07] RCCB monitors them all for current
+[03:10] imbalance, protecting the entire home
+[03:13] with one device. The downside is, if it
+[03:16] trips, it cuts power to all the circuits
+[03:19] it protects. But, these devices are
+[03:21] surprisingly simple. They're mostly
+[03:23] electromechanical, just a toroid
+[03:26] transformer, a solenoid, a basic circuit
+[03:29] board, a resistor, and a mechanical
+[03:31] latch.
+[03:33] They trip at relatively large fault
+[03:35] currents, so they don't need complex
+[03:37] electronics.
+[03:38] However, newer installations often use
+[03:41] RCBOs instead. These combine ground
+[03:44] fault, overload, and short circuit
+[03:47] protection into a single device, so each
+[03:50] circuit is protected independently. They
+[03:53] are thinner than RCCBs because they use
+[03:56] electronics to amplify and filter the
+[03:59] fault signal, which allows for a much
+[04:01] smaller toroid.
+[04:02] This number gives us the overcurrent
+[04:05] rating, and the letter defines how it
+[04:07] trips under overloads and short-circuit
+[04:09] conditions only, not earth faults. In
+[04:12] North America, a GFCI breaker is
+[04:15] typically used. This only protects that
+[04:18] specific circuit, not the entire home.
+[04:21] Alternatively, a GFCI outlet is used
+[04:24] with a standard breaker. This will
+[04:26] protect everything downstream from it in
+[04:28] that branch, but nothing upstream from
+[04:31] it. Side note, we have a dedicated video
+[04:34] explaining exactly how that works if
+[04:37] you're interested. But, these devices
+[04:39] need much more complex circuitry because
+[04:41] they must trip faster at a much lower
+[04:44] fault currents. That requires additional
+[04:46] filtering to prevent false trips. Let's
+[04:49] understand how they actually work. In a
+[04:52] normal circuit, current flows from the
+[04:54] source to the load and then back to the
+[04:57] source. Our homes use AC or alternating
+[05:00] current. So, the current is constantly
+[05:02] changing between flowing forwards and
+[05:04] backwards. But, for simplicity, let's
+[05:07] use DC or direct current, which is in
+[05:10] only one direction. The important thing
+[05:13] is the current flows to the load and
+[05:15] then back. So, the current is the same
+[05:18] in both wires. But, during a shock, some
+[05:21] of the current flows through the person
+[05:24] and then through the ground to get back
+[05:26] to the source. It does not return via
+[05:28] the neutral wire. So, at that moment,
+[05:31] the currents in the wires are not equal,
+[05:34] and so there must be a fault. Great.
+[05:36] But, how do we detect that and cut the
+[05:38] power? Whenever current flows through a
+[05:41] wire, it creates a magnetic field around
+[05:44] it. The larger the current, the stronger
+[05:46] the magnetic field.
+[05:48] If the current changes direction, the
+[05:50] magnetic field also changes direction.
+[05:53] We can see that by placing some
+[05:54] compasses around a wire.
+[05:57] If we coil the wire, the magnetic field
+[05:59] from each loop will add together,
+[06:01] forming a larger, stronger magnetic
+[06:03] field. Alternatively, we can place it
+[06:06] around a ferrite core, and this magnetic
+[06:08] field will swirl around the core.
+[06:12] We call this magnetic flux, and it can
+[06:14] be used to induce a voltage into another
+[06:17] conductor. For example, if we connected
+[06:20] another coil around this core,
+[06:22] that magnetic flux would pass through
+[06:24] the coil.
+[06:26] When a constant magnetic field passes
+[06:28] through a coil,
+[06:29] nothing happens. But, when the magnetic
+[06:32] field changes, a voltage will be induced
+[06:35] into the second coil. This induced
+[06:37] voltage will create a current. See, when
+[06:40] the current is constant, nothing
+[06:42] [clears throat] happens. But, when the
+[06:43] current increases or decreases, the
+[06:46] magnetic flux will also increase or
+[06:49] decrease. And this second coil generates
+[06:51] an induced voltage and current.
+[06:53] Essentially, this coil can sense or
+[06:56] detect a change in current, hence the
+[06:58] name sense coil. The problem is our
+[07:01] homes use AC, so the voltage and current
+[07:04] are constantly changing. That means the
+[07:06] sense coil is always detecting a change
+[07:09] in current. And the RCD needs to account
+[07:12] for that. Remember, current is flowing
+[07:14] in opposite directions in these wires,
+[07:17] and the direction of the magnetic field
+[07:19] depends on the direction of current. So,
+[07:22] if we also wrap the neutral wire around
+[07:24] the core, its magnetic flux will cancel
+[07:27] out the live wire's magnetic flux. So,
+[07:30] the sense coil will stop detecting the
+[07:32] constantly changing AC currents. This
+[07:34] completes the first stage of the RCD.
+[07:37] With balanced AC, the live and neutral
+[07:39] wire currents cancel each other's
+[07:41] magnetic flux, and the sense coil
+[07:44] doesn't detect anything. Even when more
+[07:47] loads are connected, the current will be
+[07:49] equal, so it doesn't detect any changes.
+[07:52] But, when a shock occurs, some of the
+[07:55] current leaves the circuit. So, the
+[07:57] current won't be equal. The live wire
+[07:59] will have more current. So, the magnetic
+[08:02] field and the magnetic flux will be
+[08:04] stronger through the core. This will
+[08:06] cause the sense coil to generate a small
+[08:09] induced voltage.
+[08:11] To make this small voltage usable, we
+[08:13] see a lot of turns on the sense coil,
+[08:15] which will increase the voltage and
+[08:17] sensitivity. This version has one
+[08:20] primary and 10 secondary turns.
+[08:23] When a shock occurs, the imbalance will
+[08:25] generate an induced voltage in the sense
+[08:27] coil, and that will push a current to
+[08:30] another coil, which has a substantial
+[08:33] number of turns. This is the second and
+[08:35] final stage of the RCD. Remember, when
+[08:38] current flows through a coil, it creates
+[08:41] a magnetic field. Well, we can use that
+[08:43] to move a piston. This is called a
+[08:46] solenoid. So, we can use that to
+[08:48] activate a mechanical latch, opening the
+[08:51] circuit and cutting the power. It all
+[08:53] happens so fast that you might miss it
+[08:55] if you blink.
+[08:57] This is basically how an RCD works, but
+[09:00] it doesn't end here. It can get more
+[09:02] complex and more interesting, kind of.
+[09:04] In some RCD circuit boards, diodes are
+[09:07] used to clamp and limit the sense coil's
+[09:09] voltage,
+[09:10] while capacitors shape the time
+[09:12] response, filtering out brief or small
+[09:15] signals, but allowing sustained and
+[09:17] sufficient ones, helping to drive enough
+[09:20] current through the solenoid to build
+[09:22] the magnetic force needed to trip the
+[09:24] breaker. Other versions use a small
+[09:27] magnet to hold a spring-loaded lever in
+[09:29] position. When the coil is energized,
+[09:32] the magnetic field generated releases
+[09:34] the lever, and the spring forces it
+[09:36] down. This will hit another lever, which
+[09:39] activates the mechanism. So, when a
+[09:41] person is shocked, the current imbalance
+[09:43] through the toroid causes an induced
+[09:46] voltage and current in the sense coil,
+[09:48] which is then sent to a solenoid to open
+[09:50] the circuit and save the person. The
+[09:53] electronic versions still use a toroid
+[09:56] to detect the fault signal, but an
+[09:58] electronic circuit will basically filter
+[10:00] this,
+[10:01] then rectify it, and use it to charge a
+[10:04] capacitor.
+[10:05] If the voltage reaches the trip
+[10:07] threshold, a comparator outputs a
+[10:09] signal, which then triggers an SCR, and
+[10:12] that energizes a solenoid and trips the
+[10:15] breaker, cutting the power. All this
+[10:18] happens almost instantly. The RCD then
+[10:20] remains off until the fault is cleared
+[10:23] and someone manually resets the
+[10:25] mechanism. So, now we know how they will
+[10:28] protect us, when will they fail? Well,
+[10:30] an RCD doesn't prevent a shock. It just
+[10:33] limits the duration of the shock. The
+[10:36] longer the current flows through you,
+[10:38] the more dangerous it becomes. But, if
+[10:40] the fault occurs before the RCD, it will
+[10:43] not trip. Also, if you touch the live
+[10:46] and neutral at the same time, the RCD
+[10:48] will not trip because the current is the
+[10:50] same in both wires. It will only trip if
+[10:54] enough current leaks through you to
+[10:56] ground. But, right here, this one states
+[10:59] it is rated to trip at 30 milliamps of
+[11:02] imbalance. It will trip slightly below
+[11:04] this, but it is not allowed to trip
+[11:06] below 15 milliamps. We will test this in
+[11:09] just a moment. However, larger currents
+[11:12] are more dangerous, so it must trip
+[11:14] faster if that occurs. But, we can get
+[11:18] 100 and 300 milliamp versions. These are
+[11:21] only designed to prevent fires, not
+[11:23] protect people. However, many older
+[11:26] installations use type AC RCDs marked
+[11:30] with this symbol. These were only
+[11:32] designed to work with sinusoidal AC
+[11:34] currents like incandescent lamps. But,
+[11:37] modern electronics like LED lights,
+[11:40] laptop chargers, and USB chargers all
+[11:43] distort the current waveform.
+[11:46] Additionally, faulty devices like EV
+[11:48] chargers can leak DC into the neutral.
+[11:51] The problem is DC current creates a
+[11:54] constant magnetic field, and this will
+[11:56] be applied to the RCD's core. The core
+[11:59] can only handle so much magnetism. So,
+[12:02] this steady DC can push it towards
+[12:05] saturation. If an earth fault then
+[12:07] occurs, the current imbalance tries to
+[12:10] create a magnetic field, but the core is
+[12:13] already overloaded, so it can only
+[12:15] produce a small amount. This weak signal
+[12:19] can be insufficient to operate the trip
+[12:21] mechanism. So, the RCD will not trip. If
+[12:25] you test an energized RCD and it doesn't
+[12:28] trip, that could be why. That's why type
+[12:30] A RCDs are now used. This symbol shows
+[12:34] they work with AC and pulsed DC.
+[12:37] Then, there's type F, designed for
+[12:40] variable frequency equipment as well as
+[12:42] AC and pulsed DC.
+[12:44] Finally, there's type B, which offers
+[12:47] the highest protection, covering smooth
+[12:49] DC, variable frequency, pulsed DC, and
+[12:53] AC. Essential for EV chargers and
+[12:56] industrial equipment. So, the right type
+[12:59] must be used if you want to be
+[13:01] protected. But, how do we know these
+[13:03] devices actually work? Notice the device
+[13:07] has a T button for testing. It must be
+[13:10] energized to work, but when pressed, it
+[13:13] should trip the device. It basically
+[13:15] just sends current from the live through
+[13:18] a large resistor straight to the
+[13:20] neutral, creating an imbalance to trip
+[13:23] the device. But, to really test it, we
+[13:25] need a multi-function installation
+[13:27] tester. Luckily, our sponsor Fluke
+[13:30] kindly sent us one. It can check
+[13:32] everything from voltage, continuity,
+[13:35] insulation resistance, loop and line
+[13:37] impedance, earth resistance, phase
+[13:40] rotation, search protection, and voltage
+[13:43] drop. But, we want the RCD test.
+[13:46] The breaker we are testing is a type A,
+[13:49] so we select that from the options.
+[13:52] It is rated for 30 milliamps, so we
+[13:55] select that for our test current. We can
+[13:57] choose the phase angle of 0 or 180°,
+[14:02] but for now, I will use 0°.
+[14:05] Then, we select the multiplier factor.
+[14:07] I will use 1x, meaning it will inject 1
+[14:11] * 30 milliamps RMS fault current. There
+[14:14] is also an info button, which just tells
+[14:17] us how to connect the device. So, when
+[14:19] safe and ready, we will start the test.
+[14:22] The breaker trips, and we see the time
+[14:24] taken. In the UK, it must trip in under
+[14:28] 300 milliseconds, which is 15 cycles. We
+[14:32] are definitely below that, so this is
+[14:35] fine. And, it shows a pass on the
+[14:37] screen, also.
+[14:38] If we change the phase angle to 180°,
+[14:42] this test can give different results.
+[14:45] This alters where in the waveform the
+[14:47] fault begins, which will affect how
+[14:49] quickly the magnetic flux builds in the
+[14:51] core, which changes the trip time.
+[14:55] Next, we select the five times
+[14:57] multiplier, which injects 150 milliamps
+[15:00] of fault current. That will trip the
+[15:02] breaker, and we see the time is much
+[15:04] faster. That's because the danger has
+[15:07] increased.
+[15:08] But, if we change to the 0.5 multiplier,
+[15:11] it will inject 15 milliamps.
+[15:14] But, when we run the test, the breaker
+[15:16] doesn't trip. The test stops at 310
+[15:20] milliseconds, as it has exceeded the
+[15:22] time limit. The device is not allowed to
+[15:25] trip at or below 15 milliamps. So, this
+[15:28] is a pass.
+[15:30] To find the minimum trip current, we
+[15:32] need to use the RCD ramp function.
+[15:35] Ensure the device type is correct, the
+[15:37] rated current is set, and set a phase
+[15:40] angle. Then run the test, and we see it
+[15:43] tripped at 21 milliamps of imbalance,
+[15:46] and it took 31.1 milliseconds to achieve
+[15:49] that. That is all within limits, so this
+[15:52] is a pass.
+[15:53] We can also see this with an
+[15:55] oscilloscope. I'll clamp the live wire
+[15:57] which feeds an incandescent lamp. That
+[16:00] gives us this nice current sine wave.
+[16:03] Now, I've already set up my trigger
+[16:04] settings. So, when I press the single
+[16:07] capture button, and then press the RCD
+[16:09] test button, we can capture the trip on
+[16:12] the oscilloscope. We can see there is a
+[16:14] disturbance in the waveform where the
+[16:16] fault current occurred, and we can see
+[16:19] where the circuit was interrupted.
+[16:21] There's also a spike on the final peak,
+[16:24] which is likely where the mechanical
+[16:25] latch started to open. If I use the
+[16:28] cursor feature, placing the A line on
+[16:30] the start point, and then move the B
+[16:33] line to the end point, we can see the
+[16:35] trip time listed here,
+[16:38] which is very close to what we saw on
+[16:39] the Fluke device. Now, these results
+[16:42] will be different each time depending on
+[16:44] where the fault started in the cycle,
+[16:47] which occurs when you press the button.
+[16:49] But anyway, that's how this device
+[16:51] worked to save your life. And if you're
+[16:53] interested in the Fluke device, I'll
+[16:55] leave a link down below for you. Hey,
+[16:58] I'd just like to give a huge shout out
+[17:00] to our incredible Patreon and channel
+[17:02] members. Thank you so much for
+[17:04] supporting us. And if you'd like to see
+[17:07] your name here, along with priority
+[17:09] access to our content and
+[17:11] behind-the-scenes footage, link's down
+[17:13] below for how to join.

@@ -15,7 +15,10 @@ import {
 import course, { lessonStudyRole, legacyModules } from './course-curriculum';
 import { pathLabels } from './licensing-curriculum';
 import { legacyScopes } from './checkpoint-plan';
-import { LicensingOverview, LicensingStageGuide } from './licensing-ui';
+import { ElectricalShockContext, LicensingOverview, LicensingStageGuide } from './licensing-ui';
+import { importPromotedWatched, licensingPracticeId } from './integrated-progress';
+import CourseBridge from './course-bridge';
+import { sourceClarifications } from './supplied-lessons';
 import { bookCompanions, practiceLabs } from './learning-data';
 import { lessonGuides } from './lesson-guides';
 import AssessmentPanel from './assessment-panel';
@@ -70,6 +73,7 @@ declare global {
 }
 
 type LearnerState = {
+  promotedVideoProgressImported?: boolean;
   schemaVersion: 6;
   evidence: LearningEvidence[];
   activeLessonId: string;
@@ -100,7 +104,7 @@ const allLessons = course.modules.flatMap((module) => module.lessons);
 type QuizRecordKind = 'lesson'|'checkpoint'|'module';
 const moduleAssessmentId = (id:string) => {
   const old=legacyModules.find(m=>m.id===id),current=course.modules.find(m=>m.id===id);
-  return old&&current&&old.lessons.map(l=>l.id).join('|')===current.lessons.map(l=>l.id).join('|')?id:`${id}-licensing-20260910`;
+  return old&&current&&old.lessons.map(l=>l.id).join('|')===current.lessons.map(l=>l.id).join('|')?id:`${id}-licensing-${current?.lessons.some(l=>l.id.startsWith('course-'))?'20260910-transcripts':'20260910'}`;
 };
 const quizRecordId = (kind: QuizRecordKind,id: string) => `${kind}:${kind==='module'?moduleAssessmentId(id):id}`;
 const lessonLookup = new Map(allLessons.map((lesson) => [lesson.id, lesson]));
@@ -115,16 +119,21 @@ const validReadingIds = new Set(allReading.map(({ guide }) => guide.id));
 const validLabIds = new Set(practiceLabs.map((lab) => lab.id));
 const assessmentBank = buildAssessmentBank(course.modules, lessonGuides);
 const validFlashcardIds = new Set(assessmentBank.allFlashcards.map((card) => card.id));
-const validModuleIds = new Set([...legacyModules.map(m=>m.id),...course.modules.flatMap(m=>[m.id,moduleAssessmentId(m.id)])]);
+const validModuleIds = new Set([...legacyModules.map(m=>m.id),...course.modules.flatMap(m=>[m.id,m.id+'-licensing-20260910',moduleAssessmentId(m.id)])]);
 const legacyCheckpointIds=legacyScopes.flatMap(scope=>{
   const base=scope.id.replace(/-(supplied|flow)-202609/g,'');
   return [scope.id,base,base+'-supplied-202609',base+'-flow-202609',base+'-supplied-202609-flow-202609'];
 });
-const validCheckpointIds = new Set([...legacyCheckpointIds,...assessmentBank.checkpointList.map((checkpoint) => checkpoint.id)]);
+// Retain old licensing attempts as history, not passes on newly expanded scopes.
+const previousLicensingCheckpointIds=course.modules.flatMap(m=>Array.from({length:14},(_,i)=>m.id+'-checkpoint-'+(i+1)+'-licensing-20260910'));
+const validCheckpointIds = new Set([...legacyCheckpointIds,...previousLicensingCheckpointIds,...assessmentBank.checkpointList.map((checkpoint) => checkpoint.id)]);
 const validQuizRecordIds = new Set([
   ...legacyModules.map(m=>'module:'+m.id),
   ...legacyCheckpointIds.map(id=>'checkpoint:'+id),
   'licensing:C2','licensing:C1',
+  licensingPracticeId('C2'),licensingPracticeId('C1'),
+  ...previousLicensingCheckpointIds.map(id=>'checkpoint:'+id),
+  ...course.modules.map(m=>'module:'+m.id+'-licensing-20260910'),
   ...allLessons.map((lesson)=>quizRecordId('lesson',lesson.id)),
   ...assessmentBank.checkpointList.map((checkpoint)=>quizRecordId('checkpoint',checkpoint.id)),
   ...course.modules.map((module)=>quizRecordId('module',module.id)),
@@ -205,6 +214,7 @@ function clampState(value: unknown): LearnerState {
 
   return {
     schemaVersion: 6,
+    promotedVideoProgressImported: input.promotedVideoProgressImported === true,
     evidence: validEvidence(input.evidence, lessonIds),
     activeLessonId,
     completedLessonIds: uniqueValidIds(input.completedLessonIds, lessonIds),
@@ -556,6 +566,10 @@ export default function CourseApp() {
     } catch {
       readError = true;
     }
+    try {
+      const watched:unknown=JSON.parse(window.localStorage.getItem('electrical-supplementary-watched-v1')??'[]');
+      nextState=importPromotedWatched(nextState,watched);
+    } catch { /* Preserve an unreadable supplementary record; do not block core progress. */ }
     const [hashView, hashId] = window.location.hash.replace(/^#/, '').split('/');
     if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
       nextState = { ...nextState, activeLessonId: hashId };
@@ -1060,7 +1074,7 @@ export default function CourseApp() {
     } catch { setToast('That file is not a valid course progress backup.'); }
   };
 
-  const resetProgress = () => { setLearner(initialLearnerState); setActiveCheckpointId(null); setStorageBlocked(false); setReviewSession([]); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
+  const resetProgress = () => { setLearner({...initialLearnerState,promotedVideoProgressImported:true}); setActiveCheckpointId(null); setStorageBlocked(false); setReviewSession([]); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
   const moduleCompletedCount = (module: CourseModule) => module.lessons.filter((lesson) => completed.has(lesson.id)).length;
   const openModuleRecap = (moduleId:string) => {
     cancelAutoNext(false);
@@ -1071,7 +1085,7 @@ export default function CourseApp() {
   };
 
   const completeLicensingPractice=(path:'C2'|'C1',score:number,total:number)=>{
-    setLearner(current=>({...current,quizRecords:{...current.quizRecords,['licensing:'+path]:recordQuizAttempt(current.quizRecords['licensing:'+path],score,total)},updatedAt:new Date().toISOString()}));
+    setLearner(current=>({...current,quizRecords:{...current.quizRecords,[licensingPracticeId(path)]:recordQuizAttempt(current.quizRecords[licensingPracticeId(path)],score,total)},updatedAt:new Date().toISOString()}));
   };
 
   const browsingControls = (
@@ -1244,6 +1258,9 @@ export default function CourseApp() {
                 <div className="lesson-title-block"><div><span className="topic-pill lesson-sequence">Lesson {pad(activeLesson.number)} of {location.module.lessons.length}</span><span className="topic-pill">{lessonStudyRole(activeLesson.id)}</span><span className="topic-pill">{activeLesson.layer}</span><span className="topic-pill quiet">{activeLesson.topic}</span>{'sourceKind' in activeLesson && typeof activeLesson.sourceKind === 'string' && <span className="topic-pill quiet">{activeLesson.sourceKind}</span>}</div><h1>{activeLesson.title}</h1><p>{activeLesson.instructor} <span>·</span> {activeLesson.duration} <span>·</span> {location.module.title}</p></div>
                 <p className="licensing-breadcrumb">{pathLabels[location.module.path]} · Stage {location.module.stageNumber} · {location.module.classification}</p>
                 {location.lessonIndex===0&&<LicensingStageGuide moduleId={location.module.id}/>}
+                {['course-TsJ49Np3HS0','course-UFvL7wTFzl0'].includes(activeLesson.id)&&<ElectricalShockContext/>}
+                <CourseBridge key={activeLesson.id} lessonId={activeLesson.id}/>
+                {activeLesson.id.startsWith('course-')&&sourceClarifications[activeLesson.id]&&<aside className="course-source-context"><strong>Source context</strong><p>{sourceClarifications[activeLesson.id]}</p></aside>}
                 <div className="video-shell">
                   <div className="video-frame">
                     {playerSrc

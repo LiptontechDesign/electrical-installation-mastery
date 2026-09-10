@@ -1,0 +1,250 @@
+# How Do Direct On Line Motor (DOL) Starters Work?
+# https://www.youtube.com/watch?v=HFkTPmY7N7w
+
+- In this Q&A video, we're going to answer the question, what is a DOL starter and how does it work? Now, just before we explain the answer to this question, please be aware that this video is one of a series that we've made on the subject of motor controls in association with Crompton Controls. They can be viewed individually or you can click the link in the description below to view them as part of a free online training package to help you with your CPD, and you'll receive a certificate to prove that you've completed the course. So first up, let's deal with the fact that a motor starter is not a very well named device. If you connect a motor to the right kind of electrical supply, it will start turning as current flows into the windings, magnetic fields are generated, and the laws of physics kick in. Therefore, electric motors are usually self-starting. However, one of those laws of physics, namely Ohm's law, means that the current flowing into an AC motor will be really high for a few moments before settling down to a lower value. This happens because when the motor is connected to a supply, there's effectively just a coil of copper connected across the live conductors. This coil of copper has a low resistance, and so Ohm's law says that a high current will flow. We refer to this high initial flow of current as inrush current. However, after a very brief period of time, the coil starts to generate inductive reactants, which combines with the resistance of the coil to create impedance. This impedance represents a higher value of opposition to current flow, and so the current then settles down to a lower value. So really there's two purposes to what we call motor starters. One is to provide control for turning the motor on and off, and the other is to limit this inrush current to a lower value until the impedance of the coils is in place and can oppose the current flow by itself. For motors that are about five kilowatts in power or less, the inrush current is sufficiently small that it won't cause any problems. And for these ratings of motor, we can use a DOL starter. DOL stands for direct online, which describes how the motor control connects the motor to the supply. It brings it online directly without any means of limiting the inrush current. Something just to bear in mind though is that even if it's acceptable to use a DOL starter on a motor, you should check to see if the electrical installation you're connecting the motor to has sufficient capacity to provide this inrush current, however briefly it may exist for. So what makes a direct online starter special? Why don't we just use a simple switch like a light switch or similar to turn our motor on and off? Well, there's a few reasons, and we find a couple of them in BS 7671. The first is in 552.1.2., where we read, every electric motor having a rating exceeding 0.37 kilowatts shall be provided with control equipment incorporating means of protection against overload of the motor. This requirement does not apply to a motor incorporated in an item of current-using equipment complying as a whole with an appropriate British or Harmonised standard. Just to deal with that last sentence, it's basically saying that something like a washing machine with a motor in it isn't bound by this regulation, as the relevant British standards will cover all the requirements anyway. And in an industrial setting, when using something like a compressor, the motor control and overload protection are usually incorporated within the equipment. Looking at the first sentence though, once a motor is above a certain power rating, it needs to have localised overload protection. If that number of 0.37 kilowatts seems a little randomly plucked out of nowhere, it's because it's the metric equivalent of half a horsepower under the older non-SI system that was originally used to measure the output of steam engines and motors. So one advantage to using a DOL starter is that it can incorporate overload protection, and if we open up this DOL starter from Crompton Controls, we can see the internals of this device. This part is called a contactor, and this is what actually makes and breaks the connection between the supply and the motor. We'll revisit that a little bit later. But connected to the underside of the contactor is this little device. This is an overload relay. Now, notice it's got relay in its name, so this won't physically switch the motor on and off itself, but rather it will disconnect the circuit to the contactor. Again, more on that later. These overload relays come in various sizes, and they can be swapped in and out on the underside of the contactor depending on the size and nature of the motor they're protecting. Now, we're used to seeing overload protection provided by things like MCBs and fuses, and these generally have a single rating like 6, 16, or 32 amps. However, motor overloads usually have a little dial or a slider on the front of them that allows you to adjust how much current will flow through them before they operate. This means that the overloads can be used across a range of motors, and the operating current can be adjusted quite finely to avoid causing damage to the motor if it's asked to do something that it can't cope with. The overload and the dial or slider on the front will be selected and set to be just above the full load current, or FLC, of the motor. This is the maximum current that the motor is expected to draw without damaging itself. You can find the information relating to the full load current on the rating plate that should be attached to the motor. Very much like an MCB, motor overload relays rely on a bimetallic strip, and the thermal effect of electricity heating it up to monitor and disconnect loads when too much current flows. You'll notice that the overload relay has large terminals at the bottom and some smaller ones here. The larger ones are where the conductor's going out to the motor connector, and the smaller ones are referred to as normally open and normally closed contacts. Again, we'll explain those in a bit more detail shortly. At the top of the overload relay, you can see these pins sticking up, and these are what connect into the underside of the contactor. Depending on the type of overload relay, these pins might have an option to move into different positions to suit the positions of the terminals on the underside of the contactor. So let's focus in on the contactor now. This is the part of the control that actually does the switching. This is the bit that connects and disconnects the motor. The supply conductors come in one side, usually the top in a DOL starter, and then the other side connects to the load, in this case, by the overload strapped on the bottom there. Inside here are the contacts that do the making and the breaking of the circuit, and, unlike a simple light switch, the conducting bar that goes from one terminal to the other actually disconnects at both ends of the device. This allows a bigger gap between the terminals when it disconnects, making it harder for the current to jump the gap when switching the motor off. Now, you can operate the contactor by pushing in on this area on the front of it. This will make the connections inside the device and allow the machine to run. However, this isn't really how it's meant to be operated. For one thing, you've got to have the lid off to access it. Very dangerous. This is more for testing and maintenance purposes when the power's switched off. We get it to work by energising the coil in the back of the contactor. Now, this is where things get really clever. Inside the contactor, there's a coil of copper. When this is connected to the supply, it generates a magnetic field. Mechanically connected to the switching bars is a soft iron armature, which is attracted into the magnetic field. When it moves into the field, it pulls the contactors to the closed position, and the current can flow to the motor. Then when the supply to the coil is turned off, a spring in the base of the contactor pushes the armature and contacts out of the electromagnet and disconnects the supply to the motor, thus turning it off. One thing to look out for on contactors is that they come in a variety of operating voltages. They may require an operating voltage of 400 volts, in which case, you would connect them up across two phases of a three-phase supply, or they may need 230 volts to operate, in which case, you'd connect across a line and neutral, which is useful for single-phase motors. Other variants include 110 volts, 48 volts, 24 volts, and 12 volts, with those three lower voltages also sometimes coming in DC format. These would require the use of transformers and DC power supplies for the control circuits and have the advantage of using safer voltage levels for the controls, which is the bit humans come into contact with the most. And also with lower voltages, the insulation requirements for equipment become a bit less stringent. But more on the control circuits in a future video in this series. So there we go. That's what we mean by a DOL starter. But you may be wondering why it operates with a coil instead of just a mechanical switch that stays in place till you turn it off. Well, to find out more about how that coil helps to comply with other regulations and how we can use it to do some other clever stuff, check out this video right here or click the link in the description below to watch it as part of our free training package to help you with your CPD, and you'll receive a certificate as well. All that remains in this video is to say thank you very much for watching.
+
+
+[00:00] - In this Q&A video,
+[00:01] we're going to answer the question,
+[00:02] what is a DOL starter and how does it work?
+[00:05] Now, just before we explain the answer to this question,
+[00:08] please be aware that this video
+[00:09] is one of a series that we've made
+[00:10] on the subject of motor controls
+[00:12] in association with Crompton Controls.
+[00:15] They can be viewed individually
+[00:16] or you can click the link in the description below
+[00:18] to view them as part of a free online training package
+[00:21] to help you with your CPD,
+[00:22] and you'll receive a certificate
+[00:23] to prove that you've completed the course.
+[00:26] So first up, let's deal with the fact
+[00:27] that a motor starter is not a very well named device.
+[00:30] If you connect a motor
+[00:31] to the right kind of electrical supply,
+[00:33] it will start turning as current flows into the windings,
+[00:36] magnetic fields are generated,
+[00:37] and the laws of physics kick in.
+[00:39] Therefore, electric motors are usually self-starting.
+[00:42] However, one of those laws of physics, namely Ohm's law,
+[00:45] means that the current flowing into an AC motor
+[00:48] will be really high for a few moments
+[00:50] before settling down to a lower value.
+[00:53] This happens because
+[00:54] when the motor is connected to a supply,
+[00:55] there's effectively just a coil of copper
+[00:57] connected across the live conductors.
+[00:59] This coil of copper has a low resistance,
+[01:01] and so Ohm's law says that a high current will flow.
+[01:04] We refer to this high initial flow of current
+[01:07] as inrush current.
+[01:08] However, after a very brief period of time,
+[01:11] the coil starts to generate inductive reactants,
+[01:13] which combines with the resistance of the coil
+[01:15] to create impedance.
+[01:17] This impedance represents
+[01:18] a higher value of opposition to current flow,
+[01:20] and so the current then settles down
+[01:22] to a lower value.
+[01:23] So really there's two purposes
+[01:25] to what we call motor starters.
+[01:27] One is to provide control for turning the motor on and off,
+[01:31] and the other is to limit this inrush current
+[01:33] to a lower value
+[01:34] until the impedance of the coils is in place
+[01:37] and can oppose the current flow by itself.
+[01:40] For motors that are about
+[01:41] five kilowatts in power or less,
+[01:42] the inrush current is sufficiently small
+[01:44] that it won't cause any problems.
+[01:46] And for these ratings of motor,
+[01:48] we can use a DOL starter.
+[01:50] DOL stands for direct online,
+[01:53] which describes how the motor control
+[01:55] connects the motor to the supply.
+[01:57] It brings it online directly
+[01:59] without any means of limiting the inrush current.
+[02:02] Something just to bear in mind though
+[02:03] is that even if it's acceptable
+[02:05] to use a DOL starter on a motor,
+[02:07] you should check to see if the electrical installation
+[02:09] you're connecting the motor to
+[02:10] has sufficient capacity to provide this inrush current,
+[02:13] however briefly it may exist for.
+[02:16] So what makes a direct online starter special?
+[02:19] Why don't we just use a simple switch
+[02:21] like a light switch or similar to turn our motor on and off?
+[02:24] Well, there's a few reasons,
+[02:25] and we find a couple of them in BS 7671.
+[02:28] The first is in 552.1.2., where we read,
+[02:31] every electric motor having a rating
+[02:33] exceeding 0.37 kilowatts
+[02:36] shall be provided with control equipment
+[02:38] incorporating means of protection
+[02:40] against overload of the motor.
+[02:42] This requirement does not apply to a motor
+[02:44] incorporated in an item of current-using equipment
+[02:47] complying as a whole
+[02:48] with an appropriate British or Harmonised standard.
+[02:51] Just to deal with that last sentence,
+[02:53] it's basically saying that something like a washing machine
+[02:55] with a motor in it
+[02:56] isn't bound by this regulation,
+[02:57] as the relevant British standards
+[02:59] will cover all the requirements anyway.
+[03:00] And in an industrial setting,
+[03:02] when using something like a compressor,
+[03:03] the motor control and overload protection
+[03:05] are usually incorporated within the equipment.
+[03:08] Looking at the first sentence though,
+[03:09] once a motor is above a certain power rating,
+[03:11] it needs to have localised overload protection.
+[03:15] If that number of 0.37 kilowatts
+[03:17] seems a little randomly plucked out of nowhere,
+[03:19] it's because it's the metric equivalent
+[03:21] of half a horsepower
+[03:22] under the older non-SI system
+[03:24] that was originally used to measure the output
+[03:26] of steam engines and motors.
+[03:28] So one advantage to using a DOL starter
+[03:30] is that it can incorporate overload protection,
+[03:33] and if we open up this DOL starter from Crompton Controls,
+[03:36] we can see the internals of this device.
+[03:38] This part is called a contactor,
+[03:41] and this is what actually makes and breaks the connection
+[03:43] between the supply and the motor.
+[03:44] We'll revisit that a little bit later.
+[03:47] But connected to the underside of the contactor
+[03:49] is this little device.
+[03:50] This is an overload relay.
+[03:52] Now, notice it's got relay in its name,
+[03:54] so this won't physically switch the motor on and off itself,
+[03:57] but rather it will disconnect the circuit to the contactor.
+[04:01] Again, more on that later.
+[04:03] These overload relays come in various sizes,
+[04:05] and they can be swapped in and out
+[04:07] on the underside of the contactor
+[04:08] depending on the size and nature
+[04:09] of the motor they're protecting.
+[04:11] Now, we're used to seeing overload protection
+[04:13] provided by things like MCBs and fuses,
+[04:15] and these generally have a single rating
+[04:17] like 6, 16, or 32 amps.
+[04:20] However, motor overloads usually have a little dial
+[04:23] or a slider on the front of them
+[04:24] that allows you to adjust
+[04:25] how much current will flow through them before they operate.
+[04:28] This means that the overloads can be used
+[04:30] across a range of motors,
+[04:31] and the operating current can be adjusted quite finely
+[04:34] to avoid causing damage to the motor
+[04:36] if it's asked to do something that it can't cope with.
+[04:38] The overload and the dial or slider on the front
+[04:41] will be selected and set to be just above the full load current,
+[04:44] or FLC, of the motor.
+[04:46] This is the maximum current
+[04:47] that the motor is expected to draw without damaging itself.
+[04:50] You can find the information
+[04:51] relating to the full load current on the rating plate
+[04:54] that should be attached to the motor.
+[04:56] Very much like an MCB,
+[04:57] motor overload relays rely on a bimetallic strip,
+[05:00] and the thermal effect of electricity heating it up
+[05:02] to monitor and disconnect loads when too much current flows.
+[05:06] You'll notice that the overload relay
+[05:07] has large terminals at the bottom
+[05:09] and some smaller ones here.
+[05:10] The larger ones are where the conductor's going out
+[05:13] to the motor connector,
+[05:14] and the smaller ones are referred to
+[05:15] as normally open and normally closed contacts.
+[05:18] Again, we'll explain those in a bit more detail shortly.
+[05:21] At the top of the overload relay,
+[05:23] you can see these pins sticking up,
+[05:25] and these are what connect
+[05:26] into the underside of the contactor.
+[05:28] Depending on the type of overload relay,
+[05:29] these pins might have an option
+[05:30] to move into different positions
+[05:32] to suit the positions of the terminals
+[05:34] on the underside of the contactor.
+[05:36] So let's focus in on the contactor now.
+[05:39] This is the part of the control
+[05:40] that actually does the switching.
+[05:41] This is the bit that connects and disconnects the motor.
+[05:45] The supply conductors come in one side,
+[05:46] usually the top in a DOL starter,
+[05:48] and then the other side connects to the load,
+[05:50] in this case, by the overload strapped on the bottom there.
+[05:53] Inside here are the contacts
+[05:55] that do the making and the breaking of the circuit,
+[05:57] and, unlike a simple light switch,
+[05:59] the conducting bar that goes from one terminal to the other
+[06:02] actually disconnects at both ends of the device.
+[06:04] This allows a bigger gap between the terminals
+[06:06] when it disconnects,
+[06:07] making it harder for the current to jump the gap
+[06:09] when switching the motor off.
+[06:11] Now, you can operate the contactor
+[06:13] by pushing in on this area on the front of it.
+[06:15] This will make the connections inside the device
+[06:17] and allow the machine to run.
+[06:19] However, this isn't really how it's meant to be operated.
+[06:21] For one thing, you've got to have the lid off to access it.
+[06:23] Very dangerous.
+[06:24] This is more for testing and maintenance purposes
+[06:26] when the power's switched off.
+[06:28] We get it to work
+[06:29] by energising the coil in the back of the contactor.
+[06:32] Now, this is where things get really clever.
+[06:34] Inside the contactor, there's a coil of copper.
+[06:37] When this is connected to the supply,
+[06:38] it generates a magnetic field.
+[06:40] Mechanically connected to the switching bars
+[06:42] is a soft iron armature,
+[06:43] which is attracted into the magnetic field.
+[06:46] When it moves into the field,
+[06:47] it pulls the contactors to the closed position,
+[06:49] and the current can flow to the motor.
+[06:51] Then when the supply to the coil is turned off,
+[06:53] a spring in the base of the contactor
+[06:55] pushes the armature and contacts out of the electromagnet
+[06:58] and disconnects the supply to the motor,
+[07:00] thus turning it off.
+[07:01] One thing to look out for on contactors
+[07:04] is that they come in a variety of operating voltages.
+[07:07] They may require an operating voltage of 400 volts,
+[07:10] in which case, you would connect them up
+[07:11] across two phases of a three-phase supply,
+[07:13] or they may need 230 volts to operate,
+[07:16] in which case, you'd connect across a line and neutral,
+[07:18] which is useful for single-phase motors.
+[07:21] Other variants include 110 volts, 48 volts,
+[07:24] 24 volts, and 12 volts,
+[07:25] with those three lower voltages
+[07:27] also sometimes coming in DC format.
+[07:29] These would require the use of transformers
+[07:31] and DC power supplies for the control circuits
+[07:34] and have the advantage of using safer voltage levels
+[07:36] for the controls,
+[07:37] which is the bit humans come into contact with the most.
+[07:40] And also with lower voltages,
+[07:42] the insulation requirements for equipment
+[07:43] become a bit less stringent.
+[07:45] But more on the control circuits
+[07:47] in a future video in this series.
+[07:49] So there we go.
+[07:50] That's what we mean by a DOL starter.
+[07:52] But you may be wondering why it operates with a coil
+[07:55] instead of just a mechanical switch
+[07:57] that stays in place till you turn it off.
+[07:59] Well, to find out more about how that coil
+[08:01] helps to comply with other regulations
+[08:02] and how we can use it to do some other clever stuff,
+[08:05] check out this video right here
+[08:06] or click the link in the description below
+[08:08] to watch it as part of our free training package
+[08:10] to help you with your CPD,
+[08:12] and you'll receive a certificate as well.
+[08:14] All that remains in this video
+[08:15] is to say thank you very much for watching.

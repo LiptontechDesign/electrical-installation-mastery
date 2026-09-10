@@ -1,0 +1,1514 @@
+# Circuit Breaker Selective Coordination Common Questions and Misconceptions
+# https://www.youtube.com/watch?v=V6WR_TBf1AU
+
+good morning everyone welcome to the easy power thursday webinar series my name is jim chastain i'm your host for today's session and we're looking forward very much to the presentation by by dr bob hanson from abb and before we do that as is our custom we'd like to run a couple poll questions that will give us some perspective as far as the audience leaning so again thank you very much and without obligation reliability we appreciate your helping us out with this poll question that is the national electrical code has a definition of selective coordination that applies to short circuits overloads and ground faults and that is a true or false question we will be doing a q a session at the end of the presentation so during the presentation feel free to enter questions in the question box of the webinar control system it looks like we have close to a quorum let's leave this up open another 10 seconds a couple late arrivals good all right here's how people have responded to this one looks like trues have it four to one fair enough and now the next is how often do you refer to selective coordination tables in the vendor database this one very curious to see how folks respond it's ironic we in this information age we think if we put anything on the internet everyone has access to it consequently everyone knows it which is not always the case so it's part of uh kind of sorting this out from a marketing point of view looks like we have close to a quorum here so let's see how folks have responded here pretty good distribution again thank you for participating and welcome to the presentation the presenter today comes with a severe experience i think that will benefit us all we're looking forward to his presentation bob let me hand the presentation over to you and you can share your screen mr bob hanson okay thank you so jim thank you very much thanks thank you to easy power for allowing me to share this information with everybody um and thank you everybody for attending my name is bob hanson i am a field application engineer with abb and today's topic is really selected by me out of questions that i commonly get an encounter during previous presentations such as this or um during conversations with a variety of folks in the industry so this is what i've got planned for today uh i just want to make sure we're all talking about the using the same definition so off you know reading off the same sheet of music so to say so just do a quick review of what uh some of the key things the nec requires and definitions and then jump into the these various topics in terms of specifying selective coordination uh some details on coordinating circuit breakers and then even further details on how to do that across low voltage general purpose transformers what do you do in a circuit breaker as ground fault and then talk a little bit about the circuit breaker ratios okay so start with just again some of the basics here uh there is of course i think you're all aware a formal definition of selective coordination that appears in the code uh that of course is in the the section for definitions under uh article uh 100 and then there's another not a definition because obviously it isn't section 100 under article 5 17.31 that is a more of a for lack of a better term or a definition by usage where it's referring to 0.1 second coordination so let's just touch a little bit on on each of these so the formal definition in the code selective coordination uh its intent is uh for most part universally accepted as meaning only the first device upstream of the fault would clear that fault leaving the remainder of the system unaffected as the polling question showed there's still some interpretation differences in this and i feel those come about from the fact that the term overcurrent may not be defined in the nec uh i feel it is defined in other ieee literature and again for the 80 percent that voted that uh the this definition does apply to overloads short circuit and ground fault uh i think then you're using the same definition i would of over current uh if you're in the 20 percent that doesn't agree with this then i guess the conversation continues but this is the assumption i'm working under today with anything i discussed that when we're talking about uh this definition select coordinate select coordination we're talking about any possible type of fault current out to the maximum available fault current on the system now under article 517 for health care systems this is the most recent statement of that but pretty much a similar statement since 2014 appeared for again article 517 systems uh states the requirement uh differently than the formal definition of selective coordination up above in that for again essential systems of a health care facility coordination uh up to um the point of point one second and beyond is is what's required so in other words this statement is saying that if if the fault occurs uh uh below 0.1 seconds it were to be cleared below that we're not worried about coordination the industry has adopted a term for the formal definition the article 100 definition in calling that point zero uh one second so 0.01 second coordination that kind of visually when you're reading it perhaps distinguish it quickly from 0.1 second requirements realize that.01 second coordination is again i feel like i've been in industry adopted terms it's used widely in specifications but it's technically not correct it almost sounds like it's to the exclusion of coordination between zero and 0.1 seconds and that's that's not the intent it's just again an industry adopted term to indicate the application of this definition so i'm going to use 0.01 second coordination and the term selective coordination interchangeably to mean coordination throughout the uh complete range of available fault current for any type of fault and examples of systems requiring uh selective coordination more specifically right article 700 701 legally required standby 708 critical operations power systems and those associated articles for those sections we mentioned 517 for essential systems in hospitals another example elevators and other associated article 620 equipment and of course there are more areas of the code that make statements about selective coordination requirements but these would be some of the the most common ones that you see in many designs and facilities okay so with that kind of quick background let me jump into the various common questions and in some cases maybe misconceptions uh selective coordination of circuit breakers um i think most folks who are in design and doing uh typical commercial systems institutional systems uh no circuit breakers can coordinate but if you haven't done that type of work you may still look at time current curves and see breakers that are overlapping and wondering well how can those possibly coordinate if they're overlapping so let's address the question can circuit breakers coordinate even though they overlap in the instantaneous region and if so how do i determine if a circuit breaker pair coordinates well the the the upfront answer that is yes the circuit breakers can coordinate but let's let's work our very slowly to to that point so it it helps uh the way i like to discuss it is it's just recognized kind of there are two major parts to a time current curve when we're talking coordination so i've got two electronic trip circuit breakers laid side by side in the plot you see on the right and the various numbers that are different break points between a pickup and a a delay and if we were to look at say this first shaded area kind of from point four where i transitioned from short time to instantaneous if i look at that and from that point above i would say well if i can just separate the breakers then from point four and above i can say they're sub rated uh they're they're coordinated because i have that separated with someone called white space from the old age of using onion skin plugs so i call this kind of the non-instantaneous region or what some nema documents might call the overload region uh so that's a that's a separate uh technique a separate skill to determine coordination in in this zone now once i go down below 0.4 and i deal with the instantaneous part of the protection and especially that pesky foot of the breaker that tends to overlap in most cases with some exceptions it's really a different skill set to know how to get these breakers coordinate to coordinate and what it comes down to is really needing a a vendor coordination table in order to discern if i can get coordination in this area in some cases as i'll mention later there are some coordination tables out there that will also guide you on the non-instantaneous part but bottom line to understand here is when we say selective coordination again per the code definition uh or again the informal industry term of 0.01 second coordination we're talking about both colored regions have to coordinate to uh out to whatever the maximum available fault current is so how do i know in that that lower instantaneous region how do i know if a circuit breaker is going to coordinate well again circuit breaker coordination tables uh will guide you in that area so it is a document that each major vendor produces uh that will uh allow you to identify specific breaker pairs and to what level of fault current they would coordinate now different vendors will have different styles of tables uh some tables will be for instantaneous coordination only uh that is the the table values tell you the instantaneous coordination and then everything else is determined by uh time current curve analysis and then some tables are designed to give you information on both the the instantaneous and non-instantaneous parts of the breaker curves now the typical means of obtaining selectivity in the instantaneous region and this is not meant to be all-inclusive if there are other newer technologies i'm not aware of but i think this would cover the large percentage of ways that breakers get coordinated uh one way uh that you know the tables would cover are simply the design of the breaker and and the physics of the the breakers in those systems uh no special algorithms in the breakers or wiring between those breakers another way where an electronic trip unit is involved say as the upstream and any breaker down type of breaker downstream is there could be an algorithm in that upstream upstream electronic trip breaker that facilitates coordination with downstream uh breakers but no wiring between them and then kind of at the the another level there can be say electronic trip to electronic trip you can have algorithms in the trip units that may also require wiring between the breakers in an example typical example that is something like instantaneous uh zone selective interlocking now again every vendor's table will be a little different but one thing all the tables i'm familiar with share in common is that you're basically organized the same way in that the downstream breakers form the rows the upscreen breakers form the columns and where those rows and columns intersect there's a number and then that's the number to which the breaker pair coordinates now it's very important when you're looking at these tables and i'm going to show you one here an example to make this a little more concrete there's a number like i said many numbers in the tables but you also have to read any uh introductory material to those tables or the notes for that tables because it is very common to have uh assumptions or specific requirements that go to the the table and i'll give you an example of one here in a second now here's an example of a specific table this is one we produce in my company this table shows instantaneous selectivity only and let me just give you just an example by walking through this one of how you read one of these tables so on the left hand side are choices for downstream breakers right this is one table of several so this covers certain downstream choices another table might cover different downstream choices okay so there are the downstream breakers now we go to the top uh this is listing what i've highlighted now on the top a specific breaker type the frame type and then listing the family of trip units that you could use with that breaker that are valid for this selective coordination now one row underneath the upstream breaker family listings are the sensor options so now again if you're not already familiar with these tables i'm trying to make you sensitive to the fact that the selection of these breakers is very specific to the things we've already discussed but also even the sensor uh size that is with that breaker because in some cases a breaker can have various sensor sizes so as a quick example let's say we have this breaker called the tmaxxt4 as a downstream breaker and we want to know to what coordination level can we coordinate would say an upstream 600 amp sensor key max xd5 well where the row and the column intersect there's a number that number says 100 000 amps so as long as you've selected breakers that actually have aic ratings of 100 000 amps then that's the the maximum uh coordination you could get between those two breakers in the instantaneous uh region now as i mentioned earlier you know there are typically some notes or assumptions or requirements using the table that would be listed in the uh the vendors document so do be very careful to read those and as an example for uh the upfront matter paragraph that's ahead of this table it explains that if the trip unit has a adjustability the trip unit instantaneous pickup must be set at maximum in order for these value to these values to to be usable to to be valid okay so circuit breakers uh can coordinate and especially for the instantaneous region using the vendor coordination tables is a a vital skill let's talk a little bit about specification of selective coordination because every every firm or group that might specify a project does it a little differently and there are many ways to do it that will work just fine but the typical question is do i need to include specifications for selective coordination or possibly should i just leave it to the bidding vendor to decide what to do because they know how to meet the code using their vendor specific products the theory being that the vendor knows their breakers the best so i shouldn't go overboard on specifying it well the bottom line my bottom line answer to this is you want to do as complete a job as possible to specify the selective coordination and yeah there's some basic rules you're going to need to follow to design when you want selective coordination but use your plans and specs just like you would for any other aspect of the project give clear complete concise specifications well how do i do that well let me kind of give you a look behind the curtain here from a vendor perspective of of what we typically have to do uh to put things into perspective for you remember as i say an engineer designer you may have been working on a project for several months if not several or a couple years and had have very frequent contacts so you're intimately familiar with that project you know it in and out but remember when you hand it off to go out to bid it probably goes through several hands and by the time the vendor gets it they have relatively little time to make quick decisions on who all has to be on the team to propose this what factories do i need to send us to to make quotes and what are the fundamental requirements and one of the most important ones being what are the selective coordination requirements because that that takes a special skill set to specifically select those breakers so as an example you know we're quickly looking for what version of the nec is in effect we certainly like the the plans to indicate that uh and not leave it to individual vendors to uh to determine that on their own similar for local jurisdiction and amendments right if if you're aware of something that the local asj has an amendment on that modify something in your selected coordination it's it's really good to put that in your specifications uh then of course a typical vendor is going to look through the specifications to say to see what it says regarding selective coordination uh what notes are on the drawings about selective coordination are the notes on the drawings and what's written in spec do they complement each other and are they consistent if not calls to to the engineer may happen and overall is it clear which circuits or parts of the one line require selective coordination now again when you have been working on the project for many months or like a year or more you know all of that will seem very very obvious to you but again keep in mind the the plans and drawings have to be interpreted by another human being who's going to look at this for the for the first time so if i were to sum it up from the perspective of the specifier i i'd sum it up this way the three w's the what the where and the why before you send your project out look at it closely and see if you can quickly answer these three questions without relying on your in-depth knowledge of having worked on the project or perhaps you give it to a peer in the office who hasn't worked on the project to see if they can quickly make these assessments so what what level of coordination is required what definition are we using is it 0.1 second is it all possible fault currents the again the formal definition in the section 100 the code what we informally call 0.01 second coordination could it possibly be both or neither that should be very clear and quickly discernible where is the selective coordination required well a lot of you will probably say well isn't that obvious from you know just knowing electrical systems in many cases it is so for example if you're using labels like ats ls ls is interpreted as light safety ats lrs legally required standby that certainly makes it easy to pick out which systems the coordination requires but i have seen drawings that use ats a b c d etc and then what's the vendor to do well you could go to the panel schedules and discern the type of loads to figure out what's what or you could call the engineer so in my opinion it's simply better to use uh you know n for normal e for emergency ats ls ats lrs that will more readily identify which parts of the systems require the selective coordination so that and knowledge of the code should produce an accurate bill of material now this last one also may strike some of you as odd but why is selective coordination required i put that one there because it is not too uncommon that you'll see requirements and specifications that exceed what the nec would dictate or perhaps in some cases are less than what the nec would dictate so when one sees that and there's not a clarification to the why it generates questions well with something missed something not understood or is the engineer and owner simply asking for more coordination than nec requires which is certainly allowed if you're asking for less than what the nec allows then there should be an ahj exemption so it it becomes a bit of an issue so put the y if you're doing something especially if you're doing something that isn't standard which design document should include selective coordination requirements for the the project so again uh we're talking about drawings and uh specifications and i'd like to start the discussion with uh bringing up the power system study spec right it's a standard spec that's uh thrown into uh projects realize that the power system study spec is a service bank right it's it's a study's going to be done in a report it's produced and delivered whereas coordination requirements are really an equipment performance spec so now certainly it makes more sense to put the coordination requirements in one location as opposed to saying all the coordination requirements and put that in your switchboard your switch gear your panel board spec right so it is an industry norm and everybody knows to look in the power system study spec to look for uh selective coordination requirements it can also be in the court in in the equipment specs that's okay uh but uh you know wherever it's put you know we wanted to meet the tenants and as i discussed earlier and obviously be clear now one of the things i just want to make sure that no one gets lulled into just because it's in the power system study spec right uh the the power system study engineer is not going to be able to make everything coordinate if uh right the design for one doesn't lend itself to the level of coordination required and uh the right bill of material breakers aren't part of of what the engineer is using to study so kind of bottom line here and this alludes to the points i was making earlier when we have point one second coordination it's really achieved that as all these study engineers know by adjusting any available settings on the breakers you've been given to work with if i'm going to coordinate to the entire range of available fault current i really need to make it clear that uh i'm doing that so again some specs will use the term 0.01 second coordination and then the study engineer ultimately can't crew can only prove the circuit breaker coordination by adjusting device settings and using vendor coordination tables again if you want to to show coordination for the entire range of available fulcrum now there are a couple of standard statements in the uh system study that i want to bring to your attention that have left unedited may cause confusion in some situations and these are the two statements that are in quotes here that i find are in that what i would call the canned meaning provided by some national service that provides standard specifications and and the issue that i'm bringing up is look at the uh the terms uh where it refers to provide adequate time margins uh and then in the other statement quotes graphically illustrate adequate time separation exists as i tried to point out earlier when we're talking about separation of the curves that's easy to do from you know once you're above the instantaneous region and though that's the skill and technique really that's used to promote 0.1 second coordination but time separation you can't do that with typically with an instantaneous part of the protection curve so the bottom line point in this discussion is if you're not adding something else to this spec or other parts of the spec to clarify you're not look you know if you want say selective coordination per the article 100 definition if that's what you really want you do need to add things to the statement because if i read only these statements and nothing else it's really telling me point one coordination well what would such a statement or addition to that spec look like well here's what i think is a pretty good example actually that was has been used in uh specification so it identifies now i'm talk we're talking about emergency legally required standby and healthcare essential power systems and then it goes on to identify the specific name of the type of system along with the article reference and then with a reference to the time in seconds so all of that is great then it even breaks out by the particular branch of an essential system of a health care facility what the the time standard is for uh coordination so this makes it uh very clear this is a good spec the only improvement i would say suggest to it is instead of putting you know put in there also the the addition of the national electric code and if you you know have already figured out their amendments uh for the particular project add that in there also but the the core of it is is very very good and very very helpful to interpret exactly what the requirements are and here are example of uh drawing notes uh that i found very helpful just examples so selectively coordinate the emergency branch per 2020 nec article 700.32 that tells me everything i need to know to select the correct breakers the example example below that it says kind of the same thing it doesn't do the code reference but it spells out in good detail hey i want you know uh devices feeding and and ats ls and ats lrs and what's below it and they're going to coordinate 0.01 seconds and then it has a note number that's applied to all the breakers that are expected to be coordinated to the standard so again that's very helpful by applying the note number to the specific breakers and then here's another example on the bottom manufacturer shall select appropriate breaker types to provide selective coordination for all supply side upstream devices connected to systems containing normal and generated power circuits and then i really like this statement coordination shall be demonstrated by manufacturer's published coordination table so when they say coordination tables ah okay i i know exactly what this engineer is thinking and then it goes on to make the code references and then this uh requirements and assumptions bullets is a very nice one uh you know it says to assume unlimited short circuit current on the primary uh that's taking the meant on the primary of say your service entrance transformer and what that uh assumption included in this in the spec or note does it puts everybody on an equal footing that uh if we assume unlimited primary we can do an easy calculation to figure out what then the secondary available fault current was would be and then proceed from there to pick the appropriate breakers as opposed to each vendor making their own assumption as to what the available short circuit current might be which then uh would allow different uh selection of of breakers so these are all good good examples to follow okay so that was a little bit about my thoughts and specifications a little bit about coordination across a transform again this is a common question i get and it generally kind of revolves somewhere around this type of question or discussion i've heard that coordination at a general purpose transformer uh and let's say we're talking about your basic you know again low voltage primary level just secondary but this could be for example a 480 to 208 120 transformer using many designs so for such a transformer i've heard that the coordination starts over so i only need to coordinate the 208 volt side and the 480 volt side separately and not worry about the 208 volt to 480 volt coordination across the transformer is this true well my answer to this particular question is it's not true but the element of truth into this is that because of the characteristics of the transformer it does in fact make it easier to coordinate and when you look at the time current curve it kind of guides you toward the thinking that oh the the coordination across the transformer takes care of itself well it may work out that way even without explicit effort from the the folks involved in designing it or studying it but it does take a consistent uh application of the coordination principles on which we've talked about and potentially coordination tables in order to get it right every time so let's talk through that a little bit all right uh so here's an example of a very simple uh one line and let's say there's our general purpose transformer and if if coordination is required let's say in this example out to the definition uh out to the full available fault current as listed in the article 100 definition then you know branches c and d would need to coordinate with b branches c and d would need to coordinate with a the primary feeder breaker to the uh to the transformer but a and b don't necessarily need to coordinate with each other because whether i lose one or both it's going to have the same effect on the system so uh what what's the role of the transformer in this well the the key aspects are obviously we have the transformation ratio where we're dropping voltage but you know increasing the amperage ratio and when i have a fault on a 208 volt side then i still see less fault on the 480 volt side and the fault current is limited because of the impedance of the transformer so impedance is typically between 3.5 to maybe 5.5 or 6 percent of these types of transforms that has a very specific effect so just as a quick little quick example say this were 45 kva transformer say 29 100 amps of available fall current just considering the left through current i'm not going to consider any uh motors in this basic discussion uh so 2900 at the 208 side that's going to be 12.55 on 480 volt so obviously the 480 volt side is going to see a substantially reduced amperage relative to 28 volt side and the upshot is here lower fault currents lend themselves to simpler coordination solutions so let's uh tie this together by looking at a typical layout for coordination across a low voltage transformer so here i'm going to look at the uh a panel board that uh shows um uh in this case i've extended the one line up a little bit i've got uh branch breakers d that need to coordinate with the main in that 208 side so d needs to coordinate with c uh d needs to coordinate uh with uh b and a and b and c don't necessarily need to coordinate with each other so that that's the objective we're trying to reach so let's walk through this uh time current curve layout and look at the essential points again i'm not showing numbers or settings the focus is on the the concept here similarly i'm not showing the damage curves for the transformer obviously the transformer has to be protected i just want to show the cop the key concepts here for coordinating across the transform so there's my electronic trip main again for this example is really for selective coordination across a transformer for the full 0.01 second level and typically an electronic trip would be required there in this case i'm also using an electronic trip as the primary feeder b now on the 208 volt side again i'm using an electronic trip breaker and then on the branch side there's my thermal magnetic all right now the first key point is obviously the 480 volt side devices they've got to be upstream of the inrush point so i've done that you got to make sure that happens that your upstream breakers are to the right and above the inrush point next salient point here is the 208 volt breakers uh they have their um the instantaneous foot of their breaker truncated and that's the effect of the impedance of that transformer so that's a plus in helping us coordinate it i also i often call this a stubby foot compared to the elongated foot you get when say you don't have as much impedance from the source uh the next salient point is here i've got my upstream devices set above where the downstream breaker has its truncated point due to the transformer impedance now you don't have to do that you could have it overlapping but then you're definitely going to be looking at the coordination tables as to does breaker uh be in this case actually coordinate you know for these downstream breakers and and do i have the settings right for that so in this case you see how i have a white space now between the 480 volt side and the 280 volt side so there's no issue with coordination between those breakers in this case i have no overlap and that's where the perception is well i just do the 208 both sides separately from the 480 volt side and don't worry once it comes across like i said that it commonly can work out to be that way but it may not work out that way in every case you do have to be look at this specifically to make sure it works out so now i've gotten to this point and really the only decisions left are well how do i know these areas of overlap coordinate and that's where the vendor coordination table would ensure you have to correct break repairs and also guide you as to any special settings requirements to make sure this overlap is in fact coordinated okay so lastly i would like uh to oh actually not lastly second to last uh talk a little bit about ground fault again another common question so how do i evaluate selective coordination when one of the breakers and typically say the upstream but it could be two levels of coordination has groundfall protection so to this point we've really kind of focused on upstream phase to downstream phase but obviously there are other combinations that could involve ground fault as shown as the kind of situations two and three but they're going to be evaluated similarly the major difference is going to be you now have to consider the combined curve of the ground fault curve along with the phase curve in evaluating coordination with the downstream breaker overlapping the instantaneous regions of the phase protection you're still going to coordinate that just as we've already discussed so here's a simple example again i'm leaving out numbers and settings to just focus on the concept this happens to be a 1600 amp main with say a 250 amp feeder sitting on the same bus there's no overlap in the non-instantaneous region so i know i have at least point one coordination and when i check that coordination tables for this specific breaker pair i can determine that they coordinate in the instantaneous region so these two breakers are coordinated now that was phase only let's add ground fault protection to the upstream breaker and what happens when i do that well i've selected a very low ground fault pickup and now i've caused some overlap between the upstream ground fall protection and the downstream breaker uh remember that even though the downstream breaker doesn't have its own ground fault protection capability uh it will see extra fault current as a result of a ground fault and will respond even with its phase protection eventually to whatever that ground fault current may be uh that's added into uh uh that the current it would normally be uh be seeing so it's gonna be a fault current it sees it's just not gonna be able to react as quickly as the the upstream ground fall protection so in this shaded area i'm showing now clearly there's a range of amperage where if i have a fault the ground fault curve is going to commit the tripping and trip before the upstream breaker even commits to tripping so that area is not selectively coordinated and again when i talked about the combined phase and ground fault curve this is kind of the left edge of that that i'm talking about so you see i've had that intersection of the dashed line with some part of the phase protection downstream that's what i need would like to avoid and uh again the overlap in the instantaneous rate region i'm still going to do that the same way with my coordination tables now in the next colored zone uh there i don't have a coordination issue because i don't have overlap between the upstream and downstream and any overlap in the instantaneous region again will be handled by coordination tubes so we can adjust the ground full pickup as shown in this next slide and the ground fault curve is now put at a pickup setting that allows it to have white space everywhere with the downstream phase protection so these breakers are now coordinated some of you may make the point well that's awfully close together between the ground full pickup and the downstream phase and you're correct a lot of folks because of the various uh assumptions that still go into a study like cable impedance uh or cable distances etc which may not be exactly known some would like to go over space so just make sure you're checking that your model to see that there may be some other uh sloping or um shaping capability and here's an example of you know something uh that can be done with some ground fault uh settings to put an additional uh delay or or pickup and to make the shape look more like an electronic uh trip unit to make it easier to coordinate and get maybe in this case get a little more space right in there between the ground fault curve and the pickups of the phase protection so this would be an example of a well-coordinated main with ground fault with a downstream feeder without the ground okay so lastly i am going to talk about uh coordination and the concept of of ratios uh before i do that i do want to point out to jim in the audience um i i have a notice coming up on computer that office is going to restart in 10 minutes not giving me an option to delay um the it guides are upon me um i'm not sure that's going to affect what we're doing but if it is uh i think i'll be done with this section in in 10 minutes but it may in fact affect uh the question and answer period in which case it does i will try to resume as quickly as possible okay so instead of here's the common question instead of using vendor coordination tables why can't i just use a rule of thumb for ratios of circuit breakers that will selectively coordinate well let's talk about that first of all anything i say here is is not meant to if if such tables exist my comments here are not meant to dissuade you um i i'm not aware in the nema market that such official documents exist i i did find one for the iec market that referenced the ratios so please accept these comments as you know my perspective on at least why abb hasn't done this yet so ratios are going to vary by specific breaker families that are involved thermal mag the thermal mag cases are going to have a much higher ratio because of the wider tolerances and those type of breakers e-trip to thermal mag will get a little better and then e-trip to e-trip may be your lowest ratios because of the tighter tolerances ratios for 0.1 second coordination are going to be different than what is needed to get point one coordination instantaneous coordination in particular is a function for some breakers especially the the smaller one branch-like breakers is going to be a function of the number of poles for some breakers okay so these are just some of the reasons why there'll be very specific cases of ratios that are unique to very specific circuit circumstances so again in my opinion in general there'll be too many ratios to know a reference and overall using such an approach is not going to be easier and it's going to be less reliable than using time current curve analysis and coordination tables and here's a another major major theme here what ratios am i even talking about i really didn't define what race you're going to talk about and i find that's a common theme when this conversation comes up in any form folks tend to focus on you know frame separation but really you know there are two things that should be considered when we're talking about breakers because remember in many cases i can have two and sometimes three different breaker frames provide the same amperage setting so you really have a lot of flexibility there but for breakers you really need to look at both the the frame separation and the amperage separation so i like to use the term frame separation i think amperage ratios is okay too but i think amperage or using ratios to the for the frames becomes a little difficult or misleading so let's take those one at a time you want to talk about frames again every vendor is going to have different rules uh i i think in regard to frames we're probably all all close but again talk to the specific vendor for the abb specific case uh out of our det 760 just as an example if the the fault current below the branch breaker is low enough you're gonna get four levels of molded case circuit breaker uh and kind of as shown here kind of your 100 amp frame level that covers down to your down as low as your 20 amp or 15 amp uh branch breakers a 200 amp 250 amp frame level so on so forth again the groupings i'm using kind of lumping them into the same kind of frame size that may be different from vendor to vendor but this is typically how we look at in my company otherwise if the the fault current isn't sufficiently low enough down at the the branch breaker the thing feeding the load then you may be looking at three layers of breakers now based on again what i'm showing you here that is specific from our tables uh there's a very simple rule that pops out that you need at least one frame size of separation at least one frame size of separation so that that's kind of a quick discussion on on the frame separation now if i want to look at amperages uh let's look at the case again say where we could get our four levels of molded case circuit breaker when i look at the possible averages involved again remember this 250 amp frame may have a selection down to maybe say 100 amps or so uh where thermo magnetics are involved at some point right you're going to have a thermal magnetic feeding your 20 amp or 15 30 amp loads uh that would be typical the average ratios are typically going to be higher in a specific case i i know from our own uh this 250 amp frame breaker if it's an electronic trip with many common branch breakers that would use it be used at say 208 240 or 480 you can get down to 1.6 1.7 ratio of the amperage setting and everything will work uh but there are other specific breakers that might need you know that are used from time to time for specific reasons maybe maybe a sub feed to thermal magnetic it might need a 2.5 ratio so again even within one vendor using different breaker types for different reasons they're going to be different ratios once you get higher up and you start using electronic trips if this were electronic trip to electronic trip between these two frame sizes here we have uh the the ability especially with newer trip units with lower tolerances you can get sub 1.2 to 1 ratio in terms of your amperage settings if it's an older trip unit or one less tolerance you can get down to 1.3 to 1 ratio still and then again the higher up you go probably more likely you're going to use e-trip to e-trip same thing you can get fairly low ratios of amperage says and here's an example on the left hand side of uh a way to space these out to kind of uh you know crunch them down the lower amperages it's often the life safety systems for smaller facilities that provide the the bigger challenge and you have to look at very carefully the larger systems typically aren't as much as a problem as long as you observe the three level or depending on the fault current available the four level of molded case circuit breaker rules okay so i want to do a a quick summary again uh i see that i'm going to have a forced office update in three minutes so i hope that doesn't affect anything uh in our connection here and we'll proceed with the question answered but to summarize quickly please think of the www i talked about the what when what where and why of selective coordination to make sure that's uh as clear as possible when you're producing uh your design plans and bid documents uh as hopefully i've convinced you uh or you already knew coordination of circuit breakers is possible even when the time current curves overlap even if it's in the instantaneous region um and cut consult the need to consult vendor coordination tables uh coordination across a transformer you're going to follow all the same principles we talked about but you do get a bit of a helping hand from the nature of the transformer properties where ground fault protection is involved again make sure you're looking at that combined phase and ground fault curve when evaluating selectivity with a downstream device using frame separation requirements indicated in the vendor coordination tables for coordination in the instantaneous region is a must to be able to consistently produce designs that can be coordinated by vendor offerings and then in the area of amperage separation remember you can provide amperage settings on multiple frames the amperage settings it will be documented in in some tables not all but can also be easily determined especially for the e-tripped e-trip by just knowing that the long-term pickup tolerance is involved so at that point i i will stop here i thank you very much for joining and uh for your attention and let's see what questions we can answer good job bob i'm gonna show you the question box right now you should be able to find it now on your control panel let me let me know jim when i can uh should be able to open a new okay so i have the questions section open uh and i'm not seeing anything at this point let me read them to you yeah okay let's do that first first question is uh will you be able to share the slides if you could send me a pdf copy of your presentation we can link it with the video when it's posted the next question is is the ground fault a kind of short circuit as well what what i tried to uh explain was uh the the ground fault curve uh you need to evaluate that simultaneously with your phase protection to make sure that combined over uh envelope does not intersect with the downstream device the one exception there being if your uh if you have instantaneous overlap between the the phase of upstream and downstream you can resolve that using a vendor coordination table i think that question came in early on so you probably covered it in addition that chuck's wanting to know does easy power allowed to show the ground fault trip portion of the curve look like you used easy power for your plots i was going to leave that question to you if you want me to comment could you repeat the question does easy power allow to show the ground fault trip portion of the curve well yeah abs absolutely and that is in fact what i used in one of my uh demo slides uh yes i no no problem uh for me showing that uh on easy power then uh jack wants to know what's the reason for some breakers as far as the foot does not stop vertically and it goes down to 0.01 axis okay so if if you're looking at say a uh a circuit breaker and you are looking specifically at the instantaneous part of the foot your observation is correct that in some cases even the bottom part of the instantaneous doesn't touch the point zero one if i interpret your question correctly and that's due to specific algorithm rhythms in that particular circuit breaker if i didn't if i didn't interpret the question correctly please uh please ask again or repeat then luis wants to ask to use the coordination tables for confirming coordination on the.01 instantaneous region do we need to have minimum added impedance to the cable between these two coordinated cables it says he understands that the tables are results of tests with added impedance with the coordinated circuit breakers the the any issues with impedance between the two breakers um will show up in your plots as uh different um uh cutoff points for or clipping points for where your instantaneous ends right so uh that would be in what impact of the different cable lengths uh there is no specific requirement to account for impedance based on what's in in the tables now if if the x over r's ratios are different than what the standard x over r ratio which i don't remember off the top my head that's that's used for uh ul uh testing of breakers then uh i can't speak for every coordination table at least in hours there's a description in our document to explain uh how to account for that difference and essentially apply an adjustment factor to the to the coordination level okay so here's another easy part question chuck follows up previously does the ground fault trip curve automatically show on easy power and i will answer that that's basically you need to set up a single ground a single line to ground fault and then you need to select to show either the phase coordination or ground phase coordination to show the ground curve so there's two settings you need to deal with chuck and then jack says zz power default asymmetrical current most cb tables use symmetrical current so the answer is you get asymmetrical current in the tcc plots and symmetrical current on the one line diagrams and you can change either or both as a as an option and and it is correct that the tables are based on symmetrical current i think that's the end of our question i apologize uh bob i think you only caught the tail end of the questions because you weren't an early organizer oh no problem no problem at all so yeah if you could make a copy of this a pdf copy i think the audience would be able to appreciate uh seeing that as they view the video i'll be happy to send that to you very good job and uh very informative thank you very much bob yeah thank you for the opportunity jim and thank you everybody for joining have a good day
+
+
+[00:03] good morning everyone
+[00:05] welcome to the easy power thursday
+[00:07] webinar series
+[00:09] my name is jim chastain
+[00:11] i'm your host for today's session
+[00:15] and we're looking forward very much to
+[00:17] the presentation by by dr bob hanson
+[00:21] from abb
+[00:23] and before we do that as is our custom
+[00:26] we'd like to run a couple poll questions
+[00:30] that
+[00:31] will give us some perspective as far as
+[00:33] the audience
+[00:34] leaning
+[00:36] so again thank you very much
+[00:39] and without obligation reliability we
+[00:42] appreciate your helping us out with this
+[00:45] poll question
+[00:47] that is the national electrical code has
+[00:49] a definition of selective coordination
+[00:53] that applies to short circuits overloads
+[00:55] and ground faults and that is a true or
+[00:58] false question
+[01:00] we will be
+[01:02] doing a q a session at the end of the
+[01:04] presentation
+[01:05] so during the presentation feel free to
+[01:07] enter questions in the question box
+[01:10] of the webinar control system
+[01:14] it looks like we have close to a quorum
+[01:16] let's leave this up open another
+[01:18] 10 seconds
+[01:20] a couple late arrivals good
+[01:23] all right
+[01:25] here's how people have responded to this
+[01:28] one looks like trues have it four to one
+[01:32] fair enough
+[01:34] and now the next is
+[01:37] how often do you refer to
+[01:40] selective coordination
+[01:42] tables in the vendor
+[01:45] database
+[01:47] this one
+[01:48] very curious to see how
+[01:50] folks respond
+[01:52] it's ironic we
+[01:54] in this information age we think if we
+[01:56] put anything on the internet everyone
+[01:58] has access to it
+[02:00] consequently everyone knows it
+[02:03] which is not always the case so
+[02:06] it's part of uh
+[02:07] kind of sorting this out from a
+[02:09] marketing point of view
+[02:10] looks like we have close to a quorum
+[02:12] here
+[02:14] so let's see how folks have responded
+[02:16] here
+[02:17] pretty good distribution
+[02:20] again thank you for participating
+[02:22] and
+[02:24] welcome to the presentation
+[02:28] the
+[02:30] presenter today comes with a
+[02:33] severe
+[02:36] experience
+[02:37] i think that will benefit us all
+[02:39] we're looking forward to his
+[02:40] presentation
+[02:43] bob let me hand the presentation over to
+[02:46] you
+[02:47] and you can share your screen mr bob
+[02:50] hanson
+[02:52] okay thank you so jim thank you very
+[02:54] much thanks thank you to easy power for
+[02:56] allowing me to
+[02:58] share this information with everybody
+[03:01] um and thank you everybody for attending
+[03:03] my name is bob hanson i am a field
+[03:06] application engineer with abb
+[03:08] and today's topic is really selected
+[03:12] by me out of
+[03:14] questions that i commonly get an
+[03:17] encounter during previous presentations
+[03:19] such as this
+[03:20] or
+[03:21] um
+[03:22] during conversations with a variety of
+[03:26] folks in the industry so this is what
+[03:28] i've got planned for today uh i just
+[03:32] want to make sure we're all talking
+[03:33] about the using the same
+[03:36] definition so off you know reading off
+[03:38] the same sheet of music so to say so
+[03:40] just do a quick review of what uh some
+[03:41] of the key things the nec requires and
+[03:44] definitions and then jump into the these
+[03:47] various topics in terms of
+[03:48] specifying selective coordination uh
+[03:51] some details on coordinating circuit
+[03:53] breakers and then even further details
+[03:55] on how to do that across low voltage
+[03:57] general purpose transformers what do you
+[03:59] do in a circuit breaker as ground fault
+[04:01] and then talk a little bit about the
+[04:03] circuit breaker ratios
+[04:05] okay so start with just again some of
+[04:08] the basics here
+[04:09] uh there is of course i think you're all
+[04:11] aware a formal definition of selective
+[04:14] coordination that appears in the code
+[04:17] uh that of course is in the the section
+[04:19] for definitions under uh
+[04:22] article uh 100
+[04:25] and then there's another not a
+[04:26] definition because obviously it isn't
+[04:28] section 100 under article 5 17.31
+[04:32] that is a more of a
+[04:34] for lack of a better term or a
+[04:36] definition by usage where it's referring
+[04:38] to 0.1 second coordination so let's just
+[04:40] touch a little bit on on each of these
+[04:43] so the formal definition in the code
+[04:45] selective coordination
+[04:47] uh its intent is uh
+[04:50] for most part universally accepted as
+[04:52] meaning only the first device upstream
+[04:56] of the fault would clear that fault
+[04:58] leaving the remainder of the system
+[05:00] unaffected
+[05:02] as the polling question showed
+[05:05] there's still some interpretation
+[05:07] differences in this
+[05:09] and i feel those come about from the
+[05:12] fact that
+[05:13] the term overcurrent
+[05:16] may not be defined in the nec
+[05:20] uh i feel it is defined in other ieee
+[05:23] literature and again for the 80 percent
+[05:26] that voted
+[05:27] that uh
+[05:29] the this definition does apply to
+[05:32] overloads short circuit and ground fault
+[05:35] uh
+[05:36] i think then you're using the same
+[05:38] definition i would of over current uh if
+[05:40] you're in the 20 percent that doesn't
+[05:43] agree with this then i guess the
+[05:45] conversation continues but this is the
+[05:47] assumption i'm working under today
+[05:50] with anything i discussed that when
+[05:52] we're talking about
+[05:53] uh this definition select coordinate
+[05:55] select coordination we're talking about
+[05:57] any possible type of fault current out
+[05:59] to the maximum available fault current
+[06:01] on the system
+[06:03] now under article 517 for health care
+[06:06] systems
+[06:08] this is the most recent statement of
+[06:09] that but pretty much
+[06:11] a similar statement since 2014 appeared
+[06:15] for again article 517 systems
+[06:19] uh states the requirement uh differently
+[06:22] than the formal definition of selective
+[06:24] coordination up above in that for again
+[06:26] essential systems of a health care
+[06:28] facility
+[06:29] coordination uh up to um
+[06:33] the point of point one second and beyond
+[06:36] is is what's required so in other words
+[06:39] this statement is saying that if if the
+[06:41] fault occurs uh uh below 0.1 seconds it
+[06:45] were to be cleared below that we're not
+[06:47] worried about coordination
+[06:50] the industry has adopted a term for the
+[06:53] formal definition the article 100
+[06:56] definition in calling that point zero
+[06:59] uh
+[07:00] one second so 0.01 second coordination
+[07:04] that kind of
+[07:05] visually when you're reading it
+[07:07] perhaps distinguish it quickly from 0.1
+[07:11] second requirements
+[07:12] realize that.01 second coordination
+[07:16] is again i feel like i've been in
+[07:18] industry adopted terms it's used widely
+[07:20] in specifications but it's technically
+[07:22] not correct it almost sounds like it's
+[07:24] to the exclusion of coordination between
+[07:26] zero and 0.1 seconds and that's that's
+[07:29] not the intent it's just again an
+[07:31] industry adopted term
+[07:33] to indicate the
+[07:35] application of this definition so
+[07:38] i'm going to use 0.01 second
+[07:40] coordination and the term selective
+[07:42] coordination interchangeably to mean
+[07:45] coordination throughout the uh
+[07:47] complete range of available fault
+[07:49] current for any type of fault
+[07:51] and examples of systems requiring uh
+[07:54] selective coordination more specifically
+[07:57] right article 700 701 legally required
+[07:59] standby 708 critical operations power
+[08:02] systems and those associated articles
+[08:04] for those sections we mentioned 517 for
+[08:07] essential systems in hospitals another
+[08:10] example elevators and other associated
+[08:12] article 620 equipment and of course
+[08:14] there are more areas of the code that
+[08:16] make statements about selective
+[08:18] coordination requirements but these
+[08:20] would be some of the the most
+[08:21] common ones that you see in many designs
+[08:24] and facilities
+[08:25] okay so with that kind of quick
+[08:27] background let me jump into the various
+[08:30] common questions and in some cases maybe
+[08:32] misconceptions
+[08:34] uh selective coordination of circuit
+[08:36] breakers
+[08:37] um i think most folks who are in design
+[08:40] and doing uh typical commercial systems
+[08:43] institutional systems
+[08:45] uh no circuit breakers
+[08:47] can coordinate but if you haven't done
+[08:48] that type of work you may still look at
+[08:50] time current curves and see breakers
+[08:52] that are overlapping and wondering well
+[08:54] how can those possibly coordinate if
+[08:56] they're overlapping so let's address the
+[08:58] question can circuit breakers
+[09:00] coordinate even though they overlap in
+[09:02] the instantaneous region and if so how
+[09:04] do i determine if a circuit breaker pair
+[09:06] coordinates
+[09:07] well the the the upfront answer that is
+[09:09] yes the circuit breakers can coordinate
+[09:11] but let's let's work our very slowly to
+[09:13] to that point
+[09:15] so it it helps uh the way i like to
+[09:18] discuss it is it's just recognized kind
+[09:19] of there are two major parts to a time
+[09:22] current curve when we're talking
+[09:23] coordination
+[09:25] so i've got two electronic trip circuit
+[09:27] breakers laid side by side in the plot
+[09:29] you see on the right
+[09:31] and the various numbers that are
+[09:32] different break points between a pickup
+[09:35] and a a delay
+[09:37] and if we were to look at say this first
+[09:39] shaded area kind of from point four
+[09:41] where i transitioned from short time to
+[09:43] instantaneous if i look at that and
+[09:47] from that point above
+[09:50] i would say well if i can just separate
+[09:52] the breakers then from point four and
+[09:54] above i can say they're sub rated uh
+[09:56] they're they're coordinated because i
+[09:57] have that separated with someone called
+[09:59] white space from the old age of using
+[10:01] onion skin
+[10:02] plugs so i call this kind of the
+[10:05] non-instantaneous region or what some
+[10:07] nema documents might call the overload
+[10:10] region uh so that's a that's a separate
+[10:12] uh
+[10:13] technique a separate skill to determine
+[10:16] coordination in in this zone now once i
+[10:19] go down below 0.4 and i deal with the
+[10:22] instantaneous part of the protection and
+[10:24] especially
+[10:26] that pesky foot of the breaker that
+[10:29] tends to overlap in most cases with some
+[10:31] exceptions
+[10:33] it's really a different skill set to
+[10:35] know how to get these breakers
+[10:37] coordinate to coordinate and what it
+[10:39] comes down to is really
+[10:40] needing a a vendor coordination table
+[10:44] in order to discern if i can get
+[10:47] coordination in this area in some cases
+[10:49] as i'll mention later there are some
+[10:51] coordination tables out there that will
+[10:52] also guide you on the non-instantaneous
+[10:55] part
+[10:56] but bottom line to understand here is
+[10:58] when we say selective coordination again
+[11:00] per the code definition
+[11:02] uh or again the informal industry term
+[11:04] of 0.01 second coordination we're
+[11:07] talking about both colored regions have
+[11:09] to coordinate to uh out to whatever the
+[11:11] maximum available fault current is
+[11:15] so how do i know in that that lower
+[11:18] instantaneous region how do i know if a
+[11:20] circuit breaker is going to coordinate
+[11:21] well again circuit breaker coordination
+[11:23] tables uh will guide you in that area
+[11:26] so it is a document that each major
+[11:29] vendor produces
+[11:30] uh that will uh allow you to identify
+[11:33] specific breaker pairs and to what level
+[11:36] of fault current they would coordinate
+[11:40] now
+[11:41] different vendors will have different
+[11:43] styles of tables uh some tables will be
+[11:47] for instantaneous coordination only uh
+[11:50] that is the the table values tell you
+[11:53] the instantaneous coordination and then
+[11:55] everything else is determined by uh time
+[11:57] current curve analysis and then some
+[11:59] tables are designed to give you
+[12:01] information on both the the
+[12:02] instantaneous and non-instantaneous
+[12:04] parts of the breaker curves
+[12:08] now the typical means of obtaining
+[12:10] selectivity in the instantaneous region
+[12:12] and this is not meant to be
+[12:13] all-inclusive if there are other newer
+[12:16] technologies i'm not aware of but i
+[12:17] think this would cover the large
+[12:19] percentage of ways that breakers get
+[12:22] coordinated uh one way uh that you know
+[12:25] the tables would cover are simply the
+[12:28] design of the breaker and and the
+[12:29] physics of the the breakers in those
+[12:31] systems uh no special algorithms in the
+[12:34] breakers or wiring between those
+[12:36] breakers another way where an electronic
+[12:39] trip unit is involved say as the
+[12:41] upstream and any breaker down type of
+[12:43] breaker downstream is there could be an
+[12:45] algorithm in that upstream upstream
+[12:47] electronic trip breaker that facilitates
+[12:49] coordination with downstream uh breakers
+[12:53] but no wiring between them and then kind
+[12:55] of at the the another level there can be
+[12:58] say electronic trip to electronic trip
+[13:00] you can have algorithms in the trip
+[13:01] units that may also require wiring
+[13:04] between the breakers in an example
+[13:06] typical example that is something like
+[13:08] instantaneous uh zone selective
+[13:10] interlocking
+[13:11] now again every vendor's table will be a
+[13:13] little different
+[13:14] but one thing
+[13:16] all the tables i'm familiar with share
+[13:18] in common is that you're basically
+[13:20] organized the same way in that the
+[13:22] downstream breakers form the rows the
+[13:25] upscreen breakers form the columns and
+[13:27] where those rows and columns intersect
+[13:29] there's a number and then that's the
+[13:31] number to which the breaker pair
+[13:33] coordinates
+[13:34] now it's very important when you're
+[13:36] looking at these tables and i'm going to
+[13:38] show you one here an example to make
+[13:40] this a little more concrete
+[13:42] there's a number like i said many
+[13:44] numbers in the tables but you also have
+[13:46] to read any uh introductory material to
+[13:49] those tables or the notes for that
+[13:51] tables because it is very common to have
+[13:54] uh assumptions or specific requirements
+[13:57] that go to
+[13:59] the the table and i'll give you an
+[14:01] example of one here in a second
+[14:03] now here's an example of a specific
+[14:05] table this is one we produce in my
+[14:07] company
+[14:08] this table shows instantaneous
+[14:10] selectivity only and let me just give
+[14:12] you just an example by walking through
+[14:14] this one of how you read one of these
+[14:15] tables
+[14:17] so on the left hand side are choices for
+[14:20] downstream breakers right this is one
+[14:23] table of several so this covers certain
+[14:25] downstream choices another table might
+[14:27] cover different downstream choices
+[14:30] okay so there are the downstream
+[14:31] breakers now we go to the top
+[14:34] uh this is listing what i've highlighted
+[14:37] now on the top a specific breaker type
+[14:40] the frame type and then listing the
+[14:42] family of trip units that you could use
+[14:44] with that breaker that are valid for
+[14:46] this selective coordination
+[14:49] now one row underneath the upstream
+[14:51] breaker family listings
+[14:54] are the sensor options so now again if
+[14:56] you're not already familiar with these
+[14:57] tables
+[14:58] i'm trying to make you sensitive to the
+[15:00] fact that the selection of these
+[15:02] breakers is very specific to the things
+[15:04] we've already discussed but also even
+[15:06] the sensor
+[15:08] uh
+[15:09] size that is with that breaker because
+[15:11] in some cases a breaker can have various
+[15:13] sensor sizes
+[15:15] so as a quick example let's say we have
+[15:17] this breaker called the tmaxxt4 as a
+[15:19] downstream breaker
+[15:21] and we want to know to what coordination
+[15:24] level can we coordinate would say an
+[15:26] upstream 600 amp sensor key max xd5 well
+[15:30] where the row and the column intersect
+[15:32] there's a number that number says 100
+[15:34] 000 amps so as long as you've selected
+[15:37] breakers that actually have aic ratings
+[15:39] of 100 000 amps then that's the the
+[15:42] maximum uh coordination you could get
+[15:45] between those two breakers in the
+[15:47] instantaneous uh
+[15:49] region
+[15:50] now as i mentioned earlier you know
+[15:52] there are typically some notes or
+[15:54] assumptions or requirements using the
+[15:57] table that would be listed in the uh the
+[15:59] vendors document
+[16:01] so do be very careful to read those and
+[16:03] as an example for uh the upfront matter
+[16:07] paragraph that's ahead of this table it
+[16:09] explains that if the trip unit has a
+[16:12] adjustability
+[16:13] the trip unit instantaneous pickup must
+[16:15] be set at maximum in order for these
+[16:18] value to these values to to be usable to
+[16:21] to be valid
+[16:23] okay
+[16:24] so circuit breakers uh can coordinate
+[16:27] and especially for the instantaneous
+[16:28] region using the vendor coordination
+[16:30] tables is a a vital skill
+[16:34] let's talk a little bit about
+[16:35] specification of selective coordination
+[16:37] because every every firm or group that
+[16:39] might specify a project does it a little
+[16:41] differently and there are many ways to
+[16:43] do it that will work just fine but the
+[16:46] typical question is do i need to include
+[16:48] specifications for selective
+[16:49] coordination or possibly should i just
+[16:52] leave it to the bidding vendor to decide
+[16:55] what to do because they know how to meet
+[16:57] the code using their vendor specific
+[16:59] products the theory being that the
+[17:01] vendor knows their breakers the best so
+[17:04] i shouldn't go overboard on specifying
+[17:07] it well the bottom line my bottom line
+[17:10] answer to this is
+[17:11] you want to do as complete a job as
+[17:13] possible to specify the selective
+[17:15] coordination and yeah there's some basic
+[17:18] rules you're going to need to follow to
+[17:19] design when you want selective
+[17:21] coordination
+[17:22] but
+[17:23] use your plans and specs just like you
+[17:26] would for any other aspect of the
+[17:27] project
+[17:28] give clear complete concise
+[17:30] specifications well
+[17:32] how do i do that
+[17:34] well let me kind of give you a look
+[17:36] behind the curtain here from a vendor
+[17:37] perspective of of what we typically have
+[17:40] to do
+[17:42] uh to put things into perspective for
+[17:44] you remember as i say an engineer
+[17:46] designer
+[17:48] you may have been working on a project
+[17:49] for several months if not several or a
+[17:51] couple years
+[17:53] and had have very frequent contacts so
+[17:55] you're intimately familiar with that
+[17:57] project you know it in and out but
+[17:59] remember when you hand it off to go out
+[18:01] to bid
+[18:02] it probably goes through several hands
+[18:04] and by the time the vendor gets it they
+[18:07] have
+[18:08] relatively little time to make quick
+[18:10] decisions on who all has to be on the
+[18:12] team to propose this what factories do i
+[18:14] need to send us to to make quotes and
+[18:16] what are the fundamental requirements
+[18:17] and one of the most important ones being
+[18:19] what are the selective coordination
+[18:20] requirements because that that takes a
+[18:22] special skill set to specifically select
+[18:25] those breakers so as an example you know
+[18:28] we're quickly looking for what version
+[18:30] of the nec is in effect we certainly
+[18:31] like the the plans to indicate that
+[18:34] uh and not leave it to individual
+[18:37] vendors to uh to determine that on their
+[18:39] own similar for local jurisdiction and
+[18:42] amendments right if if you're aware of
+[18:44] something that the local asj has an
+[18:47] amendment on
+[18:48] that modify something in your selected
+[18:50] coordination it's it's really good to
+[18:52] put that in your specifications
+[18:54] uh then of course a typical vendor is
+[18:56] going to look through the specifications
+[18:58] to say to see what it says regarding
+[19:00] selective coordination
+[19:01] uh what notes are on the drawings about
+[19:03] selective coordination are the notes on
+[19:05] the drawings and what's written in spec
+[19:08] do they complement each other and are
+[19:10] they consistent if not calls to to the
+[19:13] engineer may happen and overall is it
+[19:16] clear which circuits or parts of the one
+[19:18] line require selective coordination
+[19:20] now again when you have been working on
+[19:22] the project for many months or like a
+[19:24] year or more you know all of that will
+[19:27] seem very very obvious to you but again
+[19:29] keep in mind the the
+[19:30] plans and drawings have to be
+[19:32] interpreted by another human being who's
+[19:34] going to look at this for the for the
+[19:35] first time so if i were to sum it up
+[19:37] from the perspective of the
+[19:41] specifier i i'd sum it up this way the
+[19:43] three w's the what the where and the why
+[19:46] before you send your project out look at
+[19:48] it closely and see if you can quickly
+[19:51] answer these three questions without
+[19:53] relying on your in-depth knowledge of
+[19:55] having worked on the project or perhaps
+[19:57] you give it to a peer in the office who
+[19:59] hasn't worked on the project to see if
+[20:00] they can quickly make these assessments
+[20:02] so what what level of coordination is
+[20:04] required what definition are we using is
+[20:06] it 0.1 second is it all possible fault
+[20:09] currents the again the formal definition
+[20:11] in the section 100 the code what we
+[20:13] informally call 0.01 second coordination
+[20:16] could it possibly be both or neither
+[20:17] that should be very clear and quickly
+[20:19] discernible
+[20:21] where is the selective coordination
+[20:22] required well a lot of you will probably
+[20:24] say well isn't that obvious from you
+[20:27] know just knowing electrical systems
+[20:30] in many cases it is so for example if
+[20:33] you're using labels like ats ls ls is
+[20:37] interpreted as light safety
+[20:39] ats lrs legally required standby
+[20:43] that certainly makes it easy to pick out
+[20:45] which systems the coordination requires
+[20:48] but i have seen drawings that use ats a
+[20:52] b c d etc and then
+[20:55] what's the vendor to do well you could
+[20:57] go to the panel schedules
+[20:59] and discern the type of loads to figure
+[21:02] out what's what or you could call the
+[21:04] engineer
+[21:05] so in my opinion it's simply better to
+[21:07] use uh you know n for normal e for
+[21:09] emergency ats ls ats lrs that will more
+[21:14] readily identify which parts of the
+[21:16] systems require the selective
+[21:18] coordination so that and knowledge of
+[21:20] the code should produce
+[21:22] an accurate
+[21:24] bill of material
+[21:25] now this last one also may strike some
+[21:27] of you as odd but why is selective
+[21:30] coordination required i put that one
+[21:32] there because it is not too uncommon
+[21:35] that you'll see requirements and
+[21:37] specifications that exceed what the nec
+[21:40] would dictate or perhaps in some cases
+[21:43] are less than what the nec would dictate
+[21:47] so when
+[21:48] one sees that and there's not a
+[21:50] clarification to the why
+[21:52] it generates questions well with
+[21:54] something missed something not
+[21:55] understood or is the engineer and owner
+[21:57] simply asking for more coordination than
+[22:00] nec requires which is certainly allowed
+[22:03] if you're asking for less than what the
+[22:05] nec allows then there should be an ahj
+[22:08] exemption
+[22:11] so it it becomes a bit of an issue
+[22:14] so put the y if you're doing something
+[22:16] especially if you're doing something
+[22:17] that isn't standard
+[22:20] which design document should include
+[22:22] selective coordination requirements for
+[22:25] the the project
+[22:26] so again uh we're talking about
+[22:29] drawings and uh
+[22:32] specifications
+[22:33] and i'd like to start the discussion
+[22:35] with uh bringing up the power system
+[22:37] study spec right it's a standard spec
+[22:39] that's uh
+[22:41] thrown into uh
+[22:43] projects
+[22:45] realize that the power system study spec
+[22:47] is a service bank right it's it's a
+[22:49] study's going to be done in a report
+[22:51] it's produced and delivered
+[22:53] whereas coordination requirements are
+[22:55] really an equipment performance spec
+[22:58] so now certainly it makes more sense to
+[22:59] put the coordination requirements in one
+[23:01] location as opposed to saying
+[23:03] all the coordination requirements and
+[23:05] put that in your switchboard your switch
+[23:07] gear your panel board spec right so it
+[23:09] is an industry norm and everybody knows
+[23:11] to look in the power system study spec
+[23:12] to look for
+[23:14] uh selective coordination requirements
+[23:16] it can also be in the court in in the
+[23:17] equipment specs that's okay
+[23:19] uh but uh you know wherever it's put you
+[23:22] know we wanted to meet the tenants and
+[23:24] as i discussed earlier and obviously
+[23:26] be clear
+[23:27] now one of the things i just want to
+[23:28] make sure that no one gets lulled into
+[23:31] just because it's in the power system
+[23:34] study spec
+[23:35] right uh the the power system study
+[23:37] engineer is not going to be able to make
+[23:39] everything coordinate
+[23:41] if uh right the design for one doesn't
+[23:43] lend itself to the level of coordination
+[23:45] required and uh the right bill of
+[23:48] material breakers aren't part of of what
+[23:50] the engineer is using to study
+[23:53] so kind of bottom line here and this
+[23:55] alludes to the points i was making
+[23:56] earlier when we have point one second
+[23:58] coordination it's really achieved that
+[24:00] as all these study engineers know by
+[24:02] adjusting any available settings on the
+[24:04] breakers you've been given to work with
+[24:06] if i'm going to coordinate to the entire
+[24:08] range of available fault current
+[24:10] i really need to make it clear that uh
+[24:13] i'm doing that so again some specs will
+[24:15] use the term 0.01 second coordination
+[24:18] and then the study engineer ultimately
+[24:19] can't crew can only prove the circuit
+[24:21] breaker coordination by adjusting device
+[24:24] settings
+[24:25] and
+[24:26] using vendor coordination tables again
+[24:28] if you want to to show coordination for
+[24:30] the entire range of available fulcrum
+[24:33] now there are a couple of standard
+[24:36] statements
+[24:38] in the uh system study that i want to
+[24:41] bring to your attention that have left
+[24:42] unedited
+[24:44] may cause confusion in some situations
+[24:47] and these are the two
+[24:49] statements that are in quotes here
+[24:51] that i find are in that what i would
+[24:53] call the canned
+[24:55] meaning provided by some national
+[24:57] service that provides standard
+[24:59] specifications
+[25:01] and and the issue that i'm bringing up
+[25:02] is look at the uh the terms uh where it
+[25:05] refers to provide adequate time margins
+[25:09] uh and then in the other statement
+[25:10] quotes graphically illustrate adequate
+[25:13] time separation exists
+[25:15] as i tried to point out earlier when
+[25:17] we're talking about separation of the
+[25:19] curves that's easy to do from you know
+[25:22] once you're above the instantaneous
+[25:23] region
+[25:24] and though that's the skill and
+[25:26] technique really that's used to promote
+[25:28] 0.1 second coordination
+[25:30] but time separation you can't do that
+[25:33] with
+[25:34] typically with an instantaneous part of
+[25:36] the protection curve
+[25:38] so
+[25:40] the bottom line point in this discussion
+[25:42] is if you're not adding something else
+[25:45] to this spec or other parts of the spec
+[25:48] to clarify you're not look you know if
+[25:50] you want say selective coordination per
+[25:52] the article 100 definition if that's
+[25:54] what you really want you do need to add
+[25:56] things to the statement because if i
+[25:58] read only these statements and nothing
+[25:59] else it's really telling me point one
+[26:02] coordination
+[26:04] well what would such a
+[26:07] statement or addition to that spec look
+[26:09] like well here's what i think is a
+[26:11] pretty good example actually that was
+[26:13] has been used in uh specification
+[26:16] so it identifies now i'm talk we're
+[26:18] talking about emergency legally required
+[26:21] standby and healthcare essential power
+[26:23] systems
+[26:24] and then it goes on to identify the
+[26:26] specific
+[26:28] name of the type of system along with
+[26:30] the article reference
+[26:32] and then with a reference to the time in
+[26:34] seconds so all of that is great then it
+[26:37] even breaks out
+[26:39] by the particular branch of an essential
+[26:41] system of a health care facility
+[26:44] what the the time standard is for uh
+[26:46] coordination
+[26:47] so this makes it uh very clear this is a
+[26:49] good spec
+[26:51] the only improvement i would say suggest
+[26:53] to it is instead of putting
+[26:55] you know put in there also the the
+[26:57] addition of the national electric code
+[26:58] and if you you know have already figured
+[27:00] out their amendments
+[27:02] uh for the particular project add that
+[27:04] in there also but the the core of it is
+[27:06] is very very good and very very helpful
+[27:09] to interpret exactly what the
+[27:11] requirements are
+[27:13] and here are example of uh drawing notes
+[27:15] uh
+[27:16] that i found very helpful just examples
+[27:19] so selectively coordinate the emergency
+[27:21] branch per 2020 nec article 700.32 that
+[27:25] tells me everything i need to know to
+[27:27] select the correct breakers
+[27:30] the example example below that it says
+[27:32] kind of the same thing it doesn't do the
+[27:34] code reference but it spells out in good
+[27:36] detail hey i want you know
+[27:39] uh devices feeding and and
+[27:42] ats ls and ats lrs and what's below it
+[27:45] and they're going to coordinate 0.01
+[27:47] seconds and then it has a note number
+[27:49] that's applied to all the breakers that
+[27:52] are expected to be coordinated to the
+[27:54] standard so again that's very helpful by
+[27:56] applying the note number to the specific
+[27:58] breakers and then here's another example
+[28:00] on the bottom manufacturer shall select
+[28:04] appropriate breaker types to provide
+[28:06] selective coordination for all supply
+[28:08] side upstream devices connected to
+[28:10] systems containing normal and generated
+[28:12] power circuits
+[28:14] and then i really like this statement
+[28:15] coordination shall be demonstrated by
+[28:17] manufacturer's published coordination
+[28:19] table so when they say coordination
+[28:21] tables ah okay i i know exactly what
+[28:23] this engineer is thinking
+[28:25] and then it goes on to make the code
+[28:26] references and then this uh requirements
+[28:29] and assumptions bullets is a very nice
+[28:31] one uh you know it says to assume unlimited
+[28:34] short circuit current on the primary uh
+[28:37] that's taking the meant on the primary
+[28:40] of say your service entrance transformer
+[28:43] and what that uh
+[28:44] assumption included in this in the spec
+[28:47] or note does
+[28:48] it puts everybody on an equal footing
+[28:50] that uh if we assume unlimited primary
+[28:54] we can do an easy calculation to figure
+[28:56] out what then the secondary available
+[28:58] fault current was would be and then
+[29:00] proceed from there to pick the
+[29:02] appropriate breakers as opposed to each
+[29:05] vendor making their own assumption as to
+[29:07] what the available short circuit current
+[29:09] might be which then uh would allow
+[29:11] different uh selection of of breakers
+[29:15] so these are all good good examples to
+[29:17] follow
+[29:18] okay
+[29:19] so that was a little bit about my
+[29:21] thoughts and specifications a little bit
+[29:24] about coordination across
+[29:26] a transform again this is a common
+[29:28] question i get
+[29:30] and it generally
+[29:32] kind of
+[29:33] revolves somewhere around this type of
+[29:35] question or discussion i've heard that
+[29:37] coordination
+[29:38] at a general purpose transformer
+[29:41] uh and let's say we're talking about
+[29:42] your basic you know again low voltage
+[29:45] primary level just secondary but this
+[29:46] could be for example a 480 to 208 120
+[29:49] transformer using many designs so for
+[29:52] such a transformer i've heard that the
+[29:54] coordination starts over
+[29:56] so i only need to coordinate the 208
+[29:58] volt side and the 480 volt side
+[30:00] separately and not worry about the 208
+[30:03] volt to 480 volt coordination across the
+[30:05] transformer is this true well my answer
+[30:09] to this particular question is it's not
+[30:11] true
+[30:12] but the element of truth into this
+[30:15] is that because of the characteristics
+[30:18] of the transformer
+[30:19] it does in fact make it easier to
+[30:22] coordinate
+[30:23] and when you look at the time current
+[30:24] curve it kind of guides you toward the
+[30:27] thinking that oh the the coordination
+[30:30] across the transformer takes care of
+[30:32] itself
+[30:33] well it may work out that way even
+[30:36] without explicit effort from the the
+[30:38] folks involved in designing it or
+[30:40] studying it but it does take a
+[30:42] consistent uh application of the
+[30:44] coordination principles on which we've
+[30:46] talked about
+[30:47] and potentially coordination tables in
+[30:50] order to get it right every time so
+[30:52] let's talk through that a little bit
+[30:55] all right
+[30:56] uh so here's an example of a very simple
+[30:59] uh one line and let's say there's our
+[31:03] general purpose transformer and if if
+[31:06] coordination is required let's say in
+[31:07] this example out to the definition uh
+[31:10] out to the full available fault current
+[31:12] as listed in the article 100 definition
+[31:15] then you know branches c and d would
+[31:17] need to coordinate with b branches c and
+[31:20] d would need to coordinate with a the
+[31:22] primary feeder breaker to the uh to the
+[31:24] transformer
+[31:26] but a and b don't necessarily need to
+[31:28] coordinate with each other because
+[31:29] whether i lose one or both it's going to
+[31:31] have the same effect on the system
+[31:34] so uh
+[31:35] what what's the role of the transformer
+[31:37] in this well the the key aspects are
+[31:40] obviously we have the transformation
+[31:42] ratio where we're dropping voltage but
+[31:45] you know increasing the amperage ratio
+[31:47] and when i have a fault on a 208 volt
+[31:50] side then i still see less fault on the
+[31:52] 480 volt side and the fault current is
+[31:55] limited because of the impedance of the
+[31:57] transformer so impedance is typically
+[31:59] between 3.5 to maybe 5.5 or 6 percent of
+[32:03] these types of transforms that has a
+[32:05] very specific effect so just as a quick
+[32:06] little quick example say this were 45
+[32:09] kva transformer say 29
+[32:13] 100 amps of available fall current just
+[32:16] considering the left through current i'm
+[32:17] not going to consider any uh motors
+[32:19] in this basic discussion
+[32:22] uh so 2900 at the 208 side
+[32:26] that's going to be 12.55 on 480 volt so
+[32:29] obviously the 480 volt side is going to
+[32:30] see a substantially reduced amperage
+[32:33] relative to 28 volt side and the upshot
+[32:35] is here
+[32:36] lower fault currents lend themselves to
+[32:39] simpler coordination
+[32:40] solutions
+[32:42] so
+[32:43] let's uh tie this together by looking at
+[32:46] a typical
+[32:47] layout for coordination across a low
+[32:50] voltage transformer so here
+[32:52] i'm going to look at
+[32:55] the uh a panel board
+[32:57] that uh shows um
+[33:00] uh in this case i've extended the one
+[33:02] line up a little bit
+[33:03] i've got uh branch breakers d that need
+[33:07] to coordinate with the main in that 208
+[33:09] side so d needs to coordinate with c
+[33:12] uh d needs to coordinate uh with uh b
+[33:16] and a
+[33:17] and b and c don't necessarily need to
+[33:19] coordinate with each other so that
+[33:21] that's the objective we're trying to
+[33:22] reach so let's walk through this uh
+[33:26] time current curve layout and look at
+[33:28] the essential points again i'm not
+[33:29] showing numbers or settings
+[33:32] the focus is on the the concept here
+[33:34] similarly i'm not showing the damage
+[33:36] curves for the transformer obviously
+[33:37] the transformer has to be
+[33:39] protected i just want to show the cop
+[33:41] the key concepts here for coordinating
+[33:43] across the transform so there's my
+[33:45] electronic trip main
+[33:48] again for
+[33:50] this example is really for selective
+[33:52] coordination across a transformer
+[33:55] for the full 0.01 second level and
+[33:59] typically an electronic trip would be
+[34:00] required there in this case i'm also
+[34:02] using an electronic trip as the primary
+[34:04] feeder b
+[34:07] now on the 208 volt side again i'm using
+[34:09] an electronic trip breaker
+[34:13] and then on the branch side there's my
+[34:16] thermal magnetic
+[34:18] all right now the first key point is
+[34:20] obviously the 480 volt side devices
+[34:23] they've got to be upstream of the inrush
+[34:25] point so i've done that you got to make
+[34:27] sure that happens that your upstream
+[34:29] breakers are to the right and above the
+[34:31] inrush point
+[34:34] next salient point here is the 208 volt
+[34:37] breakers uh
+[34:39] they have their um the instantaneous
+[34:42] foot of their breaker truncated and
+[34:45] that's the effect of the impedance of
+[34:48] that transformer so that's a plus in
+[34:51] helping us coordinate it i also i often
+[34:53] call this a stubby foot compared to the
+[34:55] elongated foot you get
+[34:57] when say you don't have as much
+[34:59] impedance
+[35:01] from the source
+[35:02] uh the next salient point is here i've
+[35:05] got my upstream devices
+[35:08] set above where the
+[35:11] downstream breaker has its truncated
+[35:15] point due to the transformer impedance
+[35:17] now you don't have to do that
+[35:20] you could have it overlapping but then
+[35:22] you're definitely going to be looking at
+[35:23] the coordination tables as to does
+[35:26] breaker uh
+[35:27] be in this case actually coordinate
+[35:31] you know
+[35:32] for these downstream breakers and and do
+[35:34] i have the settings right for that
+[35:36] so in this case you see how i have a
+[35:38] white space now between the 480 volt
+[35:41] side and the 280 volt side so there's no
+[35:44] issue with coordination between those
+[35:46] breakers in this case i have no overlap
+[35:49] and that's where the perception is well
+[35:51] i just do the 208 both sides separately
+[35:53] from the 480 volt side and don't worry
+[35:55] once it comes across like i said that it
+[35:57] commonly can work out to be that way
+[36:00] but it may not work out that way in
+[36:01] every case you do have to be
+[36:04] look at this specifically to make sure
+[36:05] it works out so now i've gotten to this
+[36:07] point and really the only decisions left
+[36:09] are well how do i know these areas of
+[36:11] overlap coordinate
+[36:13] and that's where the
+[36:15] vendor coordination table would ensure
+[36:18] you have to correct break repairs and
+[36:20] also guide you as to any special
+[36:22] settings requirements to make sure this
+[36:24] overlap is in fact coordinated
+[36:27] okay so lastly
+[36:29] i would like uh to oh actually not
+[36:32] lastly second to last uh talk a little
+[36:35] bit about ground fault again another
+[36:36] common question
+[36:38] so how do i evaluate selective
+[36:40] coordination when one of the breakers
+[36:41] and typically say the upstream but it
+[36:43] could be two levels of coordination has
+[36:45] groundfall protection
+[36:47] so to this point we've really kind of
+[36:49] focused on upstream phase to downstream
+[36:51] phase but obviously there are other
+[36:52] combinations that could involve ground
+[36:55] fault as shown as the kind of situations
+[36:57] two and three but they're going to be
+[36:58] evaluated similarly
+[37:00] the major difference is going to be you
+[37:02] now have to consider the combined curve
+[37:05] of the ground fault curve along with the
+[37:08] phase curve in evaluating coordination
+[37:10] with the downstream breaker
+[37:12] overlapping the instantaneous regions of
+[37:14] the phase protection you're still going
+[37:16] to coordinate that just as we've already
+[37:17] discussed
+[37:19] so here's a simple example again i'm
+[37:21] leaving out numbers and settings to just
+[37:23] focus on the concept this happens to be
+[37:25] a 1600 amp main with say a 250 amp
+[37:28] feeder sitting on the same bus
+[37:30] there's no overlap in the
+[37:31] non-instantaneous region so i know i
+[37:33] have at least point one coordination
+[37:35] and when i check that coordination
+[37:37] tables for this specific breaker pair i
+[37:39] can determine that
+[37:41] they coordinate in the instantaneous
+[37:43] region so these two breakers are
+[37:45] coordinated
+[37:46] now that was phase only let's add ground
+[37:49] fault protection
+[37:51] to the upstream breaker and what happens
+[37:53] when i do that well i've selected a very
+[37:55] low
+[37:56] ground fault pickup and now i've caused
+[37:58] some overlap between the upstream ground
+[38:00] fall protection and the downstream
+[38:02] breaker uh remember that even though the
+[38:05] downstream breaker doesn't have its own
+[38:07] ground fault protection capability
+[38:10] uh it will see extra fault current as a
+[38:13] result of a ground fault and will
+[38:14] respond even with its phase
+[38:16] protection eventually to whatever that
+[38:19] ground fault current may be
+[38:21] uh that's added into uh uh
+[38:24] that the current it would normally be uh
+[38:26] be seeing so it's gonna be a fault
+[38:28] current it sees it's just not gonna be
+[38:29] able to react as quickly as the
+[38:32] the upstream ground fall protection
+[38:35] so in this shaded area i'm showing now
+[38:37] clearly there's a range of amperage
+[38:39] where if i have a fault
+[38:41] the ground fault curve is going to
+[38:43] commit the tripping and trip before the
+[38:45] upstream breaker even commits to
+[38:47] tripping so that area is not selectively
+[38:49] coordinated
+[38:50] and again when i talked about the
+[38:52] combined
+[38:54] phase and ground fault curve this is
+[38:58] kind of the left edge of that that i'm
+[38:59] talking about so you see i've had that
+[39:01] intersection of the dashed line with
+[39:03] some part of the phase protection
+[39:04] downstream
+[39:06] that's what i need would like to avoid
+[39:08] and uh again the overlap in the
+[39:10] instantaneous rate region i'm still
+[39:12] going to do that the same way with my
+[39:14] coordination tables
+[39:16] now in the next colored zone
+[39:18] uh there i don't have a coordination
+[39:20] issue because i don't have overlap
+[39:21] between the upstream and downstream and
+[39:24] any overlap in the instantaneous region
+[39:26] again will be handled by coordination
+[39:28] tubes
+[39:29] so
+[39:30] we can adjust the ground full pickup as
+[39:32] shown in this next slide
+[39:34] and the ground fault curve is now
+[39:39] put at a pickup setting that allows it
+[39:42] to have white space everywhere with the
+[39:44] downstream phase protection so these
+[39:46] breakers are now coordinated
+[39:48] some of you may make the point well
+[39:50] that's awfully close together between
+[39:52] the ground full pickup and the
+[39:53] downstream phase and you're correct a
+[39:56] lot of folks because of the various uh
+[39:59] assumptions that still go into a study
+[40:01] like
+[40:02] cable impedance uh or
+[40:04] cable distances etc which may not be
+[40:06] exactly known some would like to go over
+[40:08] space so just make sure you're checking
+[40:11] that your model to see that there may be
+[40:13] some other uh
+[40:15] sloping or um
+[40:17] shaping capability and here's an example
+[40:19] of you know something uh that can be
+[40:21] done with some ground fault uh settings
+[40:24] to put an additional uh delay or or
+[40:27] pickup and to make the shape look more
+[40:29] like an electronic uh trip unit to make
+[40:32] it easier to coordinate and get maybe in
+[40:34] this case get a little more space right
+[40:36] in there between the ground fault curve
+[40:38] and the pickups of the
+[40:41] phase protection so this would be an
+[40:43] example of a well-coordinated
+[40:46] main with ground fault with a downstream
+[40:48] feeder without the ground
+[40:50] okay
+[40:51] so lastly i am going to talk about uh
+[40:55] coordination and the concept of of
+[40:57] ratios
+[40:59] uh before i do that i do want to point
+[41:01] out to jim in the audience um i i have a
+[41:04] notice coming up on computer that office
+[41:06] is going to restart in 10 minutes not
+[41:08] giving me an option to delay
+[41:10] um the it guides are upon me
+[41:14] um i'm not sure that's going to affect
+[41:18] what we're doing but if it is uh i think
+[41:20] i'll be done with this section in in 10
+[41:22] minutes but it may in fact affect uh the
+[41:25] question and answer period in which
+[41:26] case it does i will try to resume as
+[41:28] quickly as possible
+[41:30] okay so instead of here's the common question
+[41:33] instead of using vendor coordination
+[41:35] tables why can't i just use a rule of
+[41:37] thumb for ratios of circuit breakers
+[41:39] that will selectively coordinate
+[41:41] well let's talk about that
+[41:44] first of all anything i say here is is
+[41:46] not meant to if if such tables exist
+[41:50] my comments here are not meant to
+[41:51] dissuade you
+[41:52] um i i'm not aware in the nema market
+[41:56] that
+[41:57] such official documents exist i i did
+[41:59] find one
+[42:01] for the iec market that referenced the
+[42:04] ratios
+[42:06] so please accept these comments as you
+[42:08] know my perspective
+[42:10] on at least why abb
+[42:12] hasn't done this yet so
+[42:15] ratios are going to vary by specific
+[42:17] breaker families that are involved
+[42:20] thermal mag the thermal mag cases are
+[42:22] going to have a much higher ratio
+[42:24] because of the wider tolerances and
+[42:26] those type of breakers
+[42:28] e-trip to thermal mag
+[42:30] will get a little better and then e-trip
+[42:32] to e-trip may be your lowest ratios
+[42:35] because of the
+[42:37] tighter tolerances
+[42:39] ratios for 0.1 second coordination are
+[42:42] going to be different than what is
+[42:44] needed to get point one coordination
+[42:47] instantaneous coordination in particular
+[42:49] is a function for some breakers
+[42:50] especially the the smaller one
+[42:52] branch-like breakers is going to be a
+[42:54] function of the number of poles for some
+[42:56] breakers okay so these are just some of
+[42:58] the reasons why
+[43:00] there'll be very specific cases of
+[43:02] ratios that are unique to very specific
+[43:04] circuit circumstances so again in my
+[43:06] opinion in general
+[43:08] there'll be too many ratios to know a
+[43:10] reference and overall using such an
+[43:14] approach is not going to be easier and
+[43:16] it's going to be less reliable than
+[43:17] using time current curve analysis and
+[43:20] coordination tables
+[43:22] and here's a another major major theme
+[43:24] here what ratios am i even talking about
+[43:26] i really didn't define what race you're
+[43:28] going to talk about
+[43:29] and i find that's a common theme when
+[43:32] this conversation comes up in any form
+[43:36] folks tend to focus on you know frame
+[43:38] separation but really you know there are
+[43:40] two things that should be considered
+[43:42] when we're talking about breakers
+[43:44] because remember
+[43:45] in many cases i can have two and
+[43:47] sometimes three different breaker frames
+[43:51] provide the same amperage setting so you
+[43:53] really have a lot of flexibility there
+[43:55] but for breakers you really need to look
+[43:58] at both the the frame separation and the
+[44:00] amperage separation so i like to use the
+[44:02] term frame separation i think amperage
+[44:04] ratios is okay too but i think amperage
+[44:07] or using ratios to the for the frames
+[44:09] becomes a little difficult or misleading
+[44:11] so
+[44:13] let's take those one at a time you want
+[44:15] to talk about frames
+[44:17] again every vendor is going to have
+[44:19] different rules uh i i think in regard
+[44:21] to frames we're probably all all close
+[44:24] but again talk to the specific vendor
+[44:26] for the abb specific case uh out of our
+[44:30] det 760 just as an example
+[44:33] if the the fault current below the
+[44:34] branch breaker is low enough you're
+[44:37] gonna get four levels of molded case
+[44:39] circuit breaker uh
+[44:41] and kind of as shown here kind of your
+[44:43] 100 amp frame level that covers down to
+[44:46] your down as low as your 20 amp or 15
+[44:48] amp uh branch breakers a 200 amp 250 amp
+[44:52] frame level so on so forth
+[44:54] again the groupings i'm using kind of
+[44:55] lumping them into the same kind of frame
+[44:57] size that may be different from vendor
+[44:59] to vendor but this is typically how we
+[45:01] look at in my company
+[45:03] otherwise if the the fault current isn't
+[45:05] sufficiently low enough down at the the
+[45:08] branch breaker the thing feeding the
+[45:10] load then you may be looking at three
+[45:12] layers of breakers
+[45:15] now based on again what i'm showing you
+[45:17] here that is specific from our tables uh
+[45:20] there's a very simple rule that pops out
+[45:22] that you need at least one frame size of
+[45:25] separation
+[45:26] at least one frame size of separation
+[45:30] so that that's kind of a quick
+[45:32] discussion on on
+[45:33] the frame separation now if i want to
+[45:35] look at amperages
+[45:37] uh let's look at the case again say
+[45:39] where we could get our four levels of
+[45:41] molded case circuit breaker
+[45:43] when i look at the possible averages
+[45:45] involved again remember this 250 amp
+[45:47] frame may have a selection
+[45:49] down to maybe say 100 amps or so
+[45:52] uh where thermo magnetics are involved
+[45:55] at some point right you're going to have
+[45:56] a thermal magnetic feeding your 20 amp
+[45:58] or 15 30 amp loads
+[46:00] uh that would be typical the average
+[46:03] ratios are typically going to be higher
+[46:06] in a specific case i i know from our own
+[46:09] uh
+[46:11] this 250 amp frame breaker if it's an
+[46:13] electronic trip
+[46:15] with many common branch breakers that
+[46:17] would use it be used at say 208 240 or
+[46:20] 480 you can get down to 1.6 1.7
+[46:24] ratio
+[46:26] of the amperage setting and everything
+[46:28] will work
+[46:30] uh but there are other specific breakers
+[46:32] that might need you know that are used
+[46:34] from time to time for specific reasons
+[46:37] maybe maybe a sub feed to thermal
+[46:39] magnetic it might need a 2.5 ratio so
+[46:41] again even within one vendor using
+[46:44] different breaker types for different
+[46:45] reasons they're going to be different
+[46:46] ratios once you get higher up and you
+[46:49] start using electronic trips if this
+[46:51] were electronic trip to electronic trip
+[46:53] between these two frame sizes
+[46:55] here we have uh the the ability
+[46:57] especially with newer trip units with
+[46:59] lower tolerances you can get sub 1.2 to
+[47:01] 1 ratio in terms of your amperage
+[47:03] settings
+[47:05] if it's an older trip unit or one less
+[47:07] tolerance you can get down to 1.3 to 1
+[47:10] ratio still
+[47:12] and then again the higher up you go
+[47:14] probably more likely you're going to use
+[47:16] e-trip to e-trip same thing you can get
+[47:18] fairly low ratios of amperage says
+[47:22] and here's an example on the left hand
+[47:23] side
+[47:24] of uh a way to space these out to kind
+[47:28] of uh you know crunch them down the
+[47:30] lower amperages it's often the life
+[47:32] safety systems for smaller facilities
+[47:34] that provide the the bigger challenge
+[47:37] and you have to look at very carefully
+[47:38] the larger systems typically aren't as
+[47:41] much as a problem as long as you observe
+[47:43] the three level or depending on the
+[47:46] fault current available the four level
+[47:47] of molded case circuit breaker rules
+[47:50] okay
+[47:51] so i want to do a a quick summary again
+[47:54] uh i see that i'm going to have a forced
+[47:57] office update in three minutes so i hope
+[47:59] that doesn't affect anything uh in our
+[48:02] connection here and we'll proceed with
+[48:03] the question answered but to summarize
+[48:05] quickly please think of the www i talked
+[48:08] about the what when what where and why
+[48:10] of selective coordination to make sure
+[48:12] that's uh as clear as possible when
+[48:14] you're producing uh your design plans
+[48:18] and bid documents uh as hopefully i've
+[48:21] convinced you uh or you already
+[48:23] knew coordination of circuit breakers is
+[48:25] possible even when the time current
+[48:27] curves overlap even if it's in the
+[48:28] instantaneous region
+[48:30] um and cut consult the need to consult
+[48:35] vendor coordination tables
+[48:37] uh coordination across a transformer
+[48:39] you're going to follow all the same
+[48:40] principles we talked about but you do
+[48:42] get a bit of a helping hand from the
+[48:44] nature of the transformer properties
+[48:47] where ground fault protection is
+[48:49] involved again make sure you're looking
+[48:51] at that combined phase and ground fault
+[48:53] curve when evaluating selectivity with a
+[48:55] downstream device
+[48:58] using frame separation requirements
+[49:00] indicated in the vendor coordination
+[49:02] tables
+[49:03] for coordination in the instantaneous
+[49:05] region is a must to be able to
+[49:07] consistently
+[49:08] produce designs that can be coordinated
+[49:11] by vendor offerings
+[49:13] and then
+[49:14] in the area of amperage separation
+[49:16] remember you can provide
+[49:19] amperage settings on multiple frames
+[49:22] the amperage settings it will be
+[49:24] documented in in some tables not all
+[49:27] but can also be easily determined
+[49:29] especially for the e-tripped e-trip by
+[49:31] just knowing that the long-term pickup
+[49:33] tolerance is involved
+[49:35] so at that point i
+[49:37] i will stop here i thank you very much
+[49:39] for joining and uh for your attention
+[49:42] and let's see what questions we can
+[49:44] answer
+[49:45] good job bob
+[49:47] i'm gonna
+[49:48] show you the question box right now
+[49:50] you should be able to find it now on
+[49:52] your control panel
+[49:54] let me let me know jim when i can uh
+[49:56] should be able to open a new
+[49:58] okay so i have the questions section
+[50:01] open
+[50:02] uh and i'm not seeing anything at this
+[50:05] point
+[50:06] let me read them to you yeah okay let's
+[50:09] do that
+[50:10] first first question is
+[50:12] uh will you be able to share the slides
+[50:16] if you could send me a pdf copy of your
+[50:18] presentation we can link it with the
+[50:20] video when it's posted
+[50:22] the next question is is the ground fault
+[50:25] a kind of short circuit as well
+[50:28] what what i tried to
+[50:30] uh
+[50:31] explain was
+[50:34] uh the the ground fault curve uh you
+[50:37] need to evaluate that simultaneously
+[50:40] with your phase protection to make sure
+[50:42] that combined over uh envelope
+[50:45] does not intersect with the downstream
+[50:47] device the one exception there being
+[50:50] if your uh if you have instantaneous
+[50:53] overlap between
+[50:55] the the phase of upstream and downstream
+[50:57] you can resolve that using a vendor
+[50:58] coordination table
+[51:00] i think that question came in early on
+[51:02] so you probably covered it in addition
+[51:05] that chuck's wanting to know does easy
+[51:07] power allowed to show the ground fault
+[51:09] trip portion of the curve
+[51:12] look like you used easy power for your
+[51:14] plots
+[51:16] i was going to leave that question to
+[51:17] you if you want me to comment could you
+[51:19] repeat the question does easy
+[51:21] power allow to show the ground fault
+[51:23] trip portion of the curve
+[51:26] well yeah abs absolutely and that is in
+[51:28] fact what i used in one of my uh demo
+[51:30] slides
+[51:31] uh yes i no no problem uh for me showing
+[51:35] that uh
+[51:36] on easy power
+[51:38] then uh jack wants to know what's the
+[51:40] reason for some breakers
+[51:43] as far as the foot does not stop
+[51:45] vertically and it goes down to 0.01
+[51:48] axis
+[51:49] okay so if if you're looking at say a uh
+[51:53] a circuit breaker
+[51:55] and you are looking specifically at the
+[51:57] instantaneous part of the foot your
+[51:59] observation is correct that in some
+[52:01] cases even the bottom part of the
+[52:03] instantaneous
+[52:04] doesn't touch the point zero one if i
+[52:06] interpret your question correctly and
+[52:08] that's due to specific algorithm
+[52:10] rhythms in that particular circuit
+[52:12] breaker if i didn't if i didn't
+[52:14] interpret the question correctly please
+[52:16] uh please ask again or repeat
+[52:18] then luis wants to ask
+[52:21] to use the coordination tables for
+[52:23] confirming coordination on the.01
+[52:26] instantaneous region
+[52:28] do we need to have minimum added
+[52:30] impedance to the cable between these two
+[52:33] coordinated
+[52:34] cables
+[52:36] it says he understands that the tables
+[52:38] are results of tests with added
+[52:39] impedance
+[52:41] with the coordinated circuit breakers
+[52:44] the the any issues with impedance
+[52:47] between the two breakers
+[52:49] um will show up in your plots as uh
+[52:53] different um
+[52:56] uh
+[52:57] cutoff points
+[52:59] for or clipping points for where your
+[53:01] instantaneous ends right so
+[53:04] uh that would be in what impact of the
+[53:06] different cable lengths uh there is no
+[53:09] specific requirement
+[53:11] to account for impedance based on what's
+[53:14] in in the tables now if if the x over
+[53:16] r's
+[53:17] ratios
+[53:19] are different than what the standard x
+[53:22] over r ratio which i don't remember off
+[53:23] the top my head that's that's used for
+[53:26] uh ul uh testing of breakers then uh i
+[53:30] can't speak for every coordination table
+[53:32] at least in hours there's a description
+[53:34] in our document to explain uh how to
+[53:37] account for that difference and
+[53:39] essentially apply an adjustment factor
+[53:42] to the to the coordination level
+[53:45] okay
+[53:46] so here's another easy part question
+[53:48] chuck
+[53:49] follows up previously does the ground
+[53:51] fault trip curve automatically show
+[53:54] on easy power and i will answer that
+[53:57] that's
+[53:58] basically you need to set up a single
+[54:00] ground a single line to ground fault
+[54:04] and then you need to select to show
+[54:05] either the
+[54:07] phase coordination or ground phase
+[54:10] coordination to show the
+[54:12] ground curve
+[54:14] so there's two settings you need to deal
+[54:16] with chuck
+[54:17] and then jack says
+[54:20] zz power default asymmetrical current
+[54:22] most cb tables use symmetrical current
+[54:25] so the answer is
+[54:27] you get
+[54:29] asymmetrical current in the tcc plots
+[54:32] and symmetrical current on the one line
+[54:34] diagrams
+[54:36] and you can change either or both
+[54:39] as a
+[54:40] as an option
+[54:42] and and it is correct that the tables
+[54:44] are based on symmetrical current
+[54:46] i think that's the end of our question i
+[54:48] apologize uh bob
+[54:51] i think you only caught the tail end of
+[54:53] the questions because you weren't
+[54:55] an early organizer
+[54:57] oh no problem no problem at all
+[54:59] so yeah if you could make a copy of this
+[55:00] a pdf copy i think the audience would be
+[55:03] able to appreciate uh seeing that
+[55:06] as they view the video
+[55:08] i'll be happy to send that to you
+[55:10] very good job and uh
+[55:13] very informative thank you very much bob
+[55:16] yeah thank you for the opportunity jim
+[55:17] and thank you everybody for joining have
+[55:20] a good day

@@ -76,5 +76,5 @@ export const legacyModules = originalModules.map(module => {
 if (used.size !== catalogue.size) throw new Error(`Curriculum omits ${catalogue.size - used.size} lessons.`);
 const modules = buildLicensingModules(legacyModules);
 const durationSeconds = modules.reduce((total, module) => total + module.durationSeconds, 0);
-const course = { ...baseCourse, description: 'A connected path through electrical theory, design, installation, motors, verification and building systems.', modules, lessonCount: used.size, durationSeconds, duration: formatStudyDuration(durationSeconds) };
+const course = { ...baseCourse, description: 'A connected path through electrical theory, design, installation, motors, verification and building systems.', modules, lessonCount: modules.reduce((sum,module)=>sum+module.lessons.length,0), durationSeconds, duration: formatStudyDuration(durationSeconds) };
 export default course;

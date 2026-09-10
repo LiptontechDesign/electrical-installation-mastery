@@ -1,0 +1,365 @@
+# Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)
+# https://www.youtube.com/watch?v=NIrKOVZrqnU
+
+this industrial site just received a massive penalty charge for something called reactive power the bus is angry and Confused the electrical engineer tries to explain that his power factor is bad but the bus is now even more confused what is the difference and why does it even matter let's find out in this video which is sponsored by brilliant does power factor apply to DC circuits no the voltage and current are constant flowing in only One Direction so power factor doesn't apply you'll understand why later on in the video however it does apply to AC systems that include single phase appliances but especially three-phase equipment because that usually causes the large penalty charges a multimeter makes it seem like the voltage and current are constant but if we use an oscope we can see they are not it has a sine wave pattern the voltage and current values are constantly changing rising and falling with positive and negative values that's because the generator is basically rotating a magnetic field with sweeps past the coils of wire the coils will experience a changing intensity of the magnetic field this induces a voltage that basically pushes electrons one way and then pulls them the other way this happens 50 or 60 times per second depending on your country's electrical standard and this creates the 50 HZ or 60 HZ AC Supply this changing intensity and Direction creates a sine wave with positive and negative values the average of these is zero so the multimeter just calculates and displays the RMS or root mean squared values to make it easier to work with let's say we measured the RMS voltage and current to a mystery load if we multiplied these values this gives us something called apparent power which in this case is 120 Vol ampers in DC circuits this would give us power in Watts but not in AC circuits we instead measure this in volt ampers this is how much power is being supplied but it is not how much is actually being used used if we connected an oscilloscope to this mystery load we can see the voltage and current are not aligned the current is delayed and lags behind the voltage which means we have a power factor problem we want these to be closer together let's assume we measured the delay to be around 1.71 milliseconds and we can easily convert that into degrees if we took the cosine of this angle we get a power factor value of 0.8 which is not very good a perfect power factor would be one but that's difficult to achieve so we often aim for between maybe 0.95 and 0.9 now if we multiply the RMS voltage and current by the power factor we get the real power which we measure in Watts this is the power that's actually used to do something useful ideally we would only need to supply this amount of power this is our Target but we're supplying more than this because the power factor is bad what happens if we were to improve the power factor to a perfect one well the real power remains almost constant and so does the voltage which means the current must change we see the current has reduced which means the apparent power must also Reduce by improving the power factor we can supply less power to achieve the same amount of work where is this extra power going we call this reactive power and we can better visualize it with a power triangle we can draw a horizontal line for the real power then we can draw another line at an angle to represent the apparent power the angle between them is that delay we measured on the oscilloscope we know we can easily convert the angle into the power factor value but up we can also take the inverse cosine of that value to find the angle we can also just divide the real Power by the apparent power to find this value from that you can see that the power factor is just a ratio so it has no units now the difference between these two points is called the reactive power measured in volt amp reactive I'll explain what it does in just a moment by drawing these lines we form a power triangle if we have plotted this correctly then we could just measure this value otherwise we can calculate it using this formula notice that if the power factor value improves then the angle reduces which brings the apparent power and the real power values closer together and that causes the reactive power to reduce and we will see how to improve that later in this video there are various ways to calculate each part of this triangle for real power we can use these formulas for apparent power we can use these formulas and for reative power we can use these formulas but where do we find these values if you are lucky the electrical panel will have a digital power meter telling you all of these values sometimes analog dials are provided and you can read these manually ideally you would have access to a power analyzer which provides very accurate and detailed results sometimes the manufacturer will also provide these values in the product data sheet however you can get these small cheap and simple versions which just provide the basic values with less accuracy or we can use these plug-in versions for portable devices I'll leave a link down below for you if you're interested now the circuit will contain components which can be either resistive inductive or capacitive resistive loads such as incandescent light bulbs convert energy into heat and light inductive loads such as electric motors store and release energy in their magnetic field capacitive loads such as capacitors store and release energy in their electric field these all affect the circuit differently let's understand how and why let's say we measure the RMS voltage this is approximately 70.7% of the peak of the s wave so to find the peak we use this formula then we can use this formula to calculate the instantaneous voltage at any point in the cycle of the sine wave we can see there are positive and negative values if we took a purely resistive load we can easily find the RMS current and from that we can calculate the peak current from that we can calculate the instantaneous current at any point we again see positive and negative values because current is Flowing forwards and backwards it alternates Direction the voltage and current are in Phase with each other meaning they Peak at the same time this is a perfect power factor if we multiply the instantaneous voltage and current values we find the instantaneous power notice the power is always positive even when the voltage and current are negative we can think of these positive regions as energy leaving the circuit it's doing useful work like producing light and heat the energy only flows one way and that's out of the circuit we call this power real power in this case all the current flowing through the wire is being used to do useful work which is what we want however if we connected a purely inductive load the voltage and current are no longer in Phase they are shifted by 9 ° the current lags behind the voltage now the instantaneous power has positive and negative values the inductor will build a magnetic field around itself which stores energy so during the positive segments energy is Flowing to the inductor to build the magnetic field and then in the negative segment the field collapses and almost all of that energy is returned back to the Circuit no energy is used but current flows the changing applied voltage pushes current in the circuit creating a changing magnetic field in the wire but in the coil that changing magnetic field is going to affect the neighboring sections of the coil we know that a changing magnetic field will induce a voltage in a coil so this magnetic field will also induce a voltage that is going to push back against the applied voltage that will limit how rapidly the current can increase or decrease which causes the delay in current but if we connect a purely capacitive load the opposite happens and the current leads the voltage we again have the positive and negative segments of power because the capacitor is storing and releasing energy in its electric field the current flows to build up the electric field so the current reaches its peak before the voltage in both cases we have current flowing through the wire just to store and release energy but it's not doing any useful work it's just moving power back and forth we call this power reactive power in a normal circuit we usually have some amount of resistance inductance and capacitance so the power factor Isn't So extreme typically we have a lagging power factor because of the large inductive loads but we can correct this by adding some capacitance to the Circuit the reactive power then moves between the inductor and capacitor instead of Through the Wire let's calculate the reactive Power Parent power and current for an electrical motor and also how to improve it and by the way you can download my Excel sheet with all the calculations and worked examples on we also have these very handy mugs with all the formulas on too links down below if you'd like one let's say we have a 120 Vol 60 HZ singlephase motor rated 2.87 horsepower with a lagging power factor of 0.7 and an efficiency of 82% we first convert that into Watts then divide that by the efficiency that is our real power the rated power is the output from the shaft but it doesn't include the energy lost as heat from the resistance the coil the friction of the bearings the heat from the Eddie currents Etc this is all energy leaving the circuit which we have now accounted for so we draw a line horizontally to represent that we take the inverse cosine of the power factor value to find the angle then we calculate the apparent Power by dividing the real Power by the power factor that's the total power that must be provided to achieve this real power we know that this line is our reactive power and we can easily calculate that value also since we know the real power voltage and power factor we can rearrange this formula to find the current now let's see what happens if we increase the power factor to 0.95 well the real power Remains the Same the angle has reduced to almost 18° the apparent power also reduces and that means our reactive power has also reduced you can see the Improvement in the power triangle this also means the current has reduced significantly to achieve that we connect a capacitor in parallel with the motor the capacitor needs to provide the difference between the two reactive Powers we just calculated the reactive power will oscillate back and forth between the magnetic field of the motor and the electric field of the capacitor but what size capacitor do we need well this formula calculates that we know the reactive power we know the voltage and the frequency so we can easily calculate the capacitor size you probably won't find a capacitor rated at that exact size but we can just test the nearest standard size available just convert that to thads drop in your values into this formula and find the reactive power it can supply we then subtract that from the motor's initial reactive power to find the remaining value now that we know the real power and the reactive power we can find the apparent power then we can easily find the power factor which is pretty close to our Target so we can use this capacitor the power source will then only need to supply the real power and the small remaining amount of reactive power so if that's just one small motor imagine what happens inside a large industrial side with a lot of much larger equipment you might have noticed that equipment like generators and Transformers are rated in apparent power so if a large consumer has a bad power factor then they will take up all the spare capacity of the network with their reactive power which doesn't do anything useful no one else can then be connected to the network unless either an entire new network is installed or much larger equipment is installed both options are very expensive as reactive power increases so does the current in the wire meaning the transmission losses will also be much higher this all results in the equipment needing to be replaced more frequently and these costs are passed on to the consumers so the power company will usually issue penalty charges to large consumers to encourage them to install power factor correction these usually don't apply to residential customers as their usage is so small in comparison it can be difficult to understand and electrical engineering topics and the math behind them but our sponsor brilliant is where you learn by doing there's so many new courses but I really enjoyed the new vector's course the graphics and interactions just made it so easy to visualize each step and there was extra help if I needed it brilliant has thousands of interactive lessons in math data analysis programming and AI all the skills you need to become a brilliant engineer they even have an app for on the-go learning making it easy to build your critical thinking skills through problem solving not memorizing each lesson is filled with handson problem solving that lets you play with Concepts I think you'll enjoy this too so you can try everything brilliant has to offer for free for 30 days just visit brilliant.org slthe engineering mindset or scan the QR code you'll also get 20% off an annual premium subscription do check them out links down below hey I'd just like to give a huge shout out to our incredible patreon and channel members thank you so much for supporting us and if you'd like to see your name here along with Priority Access to our content and behind the scenes footage links down below for how to join
+
+
+[00:00] this industrial site just received a
+[00:03] massive penalty charge for something
+[00:06] called reactive power the bus is angry
+[00:09] and Confused the electrical engineer
+[00:12] tries to explain that his power factor
+[00:15] is bad but the bus is now even more
+[00:18] confused what is the difference and why
+[00:20] does it even matter let's find out in
+[00:23] this video which is sponsored by
+[00:24] brilliant does power factor apply to DC
+[00:28] circuits no the voltage and current are
+[00:31] constant flowing in only One Direction
+[00:35] so power factor doesn't apply you'll
+[00:38] understand why later on in the video
+[00:40] however it does apply to AC systems that
+[00:43] include single phase appliances but
+[00:46] especially three-phase equipment because
+[00:49] that usually causes the large penalty
+[00:52] charges a multimeter makes it seem like
+[00:55] the voltage and current are constant but
+[00:58] if we use an oscope we can see they are
+[01:00] not it has a sine wave pattern the
+[01:03] voltage and current values are
+[01:05] constantly changing rising and falling
+[01:08] with positive and negative values that's
+[01:11] because the generator is basically
+[01:13] rotating a magnetic field with sweeps
+[01:16] past the coils of wire the coils will
+[01:19] experience a changing intensity of the
+[01:22] magnetic field this induces a voltage
+[01:25] that basically pushes electrons one way
+[01:27] and then pulls them the other way this
+[01:29] happens 50 or 60 times per second
+[01:32] depending on your country's electrical
+[01:34] standard and this creates the 50 HZ or
+[01:37] 60 HZ AC Supply this changing intensity
+[01:41] and Direction creates a sine wave with
+[01:44] positive and negative values the average
+[01:47] of these is zero so the multimeter just
+[01:51] calculates and displays the RMS or root
+[01:54] mean squared values to make it easier to
+[01:57] work with let's say we measured the RMS
+[02:00] voltage and current to a mystery load if
+[02:03] we multiplied these values this gives us
+[02:06] something called apparent power which in
+[02:09] this case is 120 Vol ampers in DC
+[02:14] circuits this would give us power in
+[02:17] Watts but not in AC circuits we instead
+[02:20] measure this in volt ampers this is how
+[02:24] much power is being supplied but it is
+[02:27] not how much is actually being used used
+[02:30] if we connected an oscilloscope to this
+[02:33] mystery load we can see the voltage and
+[02:35] current are not aligned the current is
+[02:38] delayed and lags behind the voltage
+[02:41] which means we have a power factor
+[02:43] problem we want these to be closer
+[02:46] together let's assume we measured the
+[02:49] delay to be around 1.71 milliseconds and
+[02:53] we can easily convert that into degrees
+[02:56] if we took the cosine of this angle we
+[02:59] get a power factor value of
+[03:02] 0.8 which is not very good a perfect
+[03:06] power factor would be one but that's
+[03:09] difficult to achieve so we often aim for
+[03:11] between maybe
+[03:13] 0.95 and
+[03:15] 0.9 now if we multiply the RMS voltage
+[03:19] and current by the power factor we get
+[03:22] the real power which we measure in Watts
+[03:25] this is the power that's actually used
+[03:28] to do something useful ideally we would
+[03:31] only need to supply this amount of power
+[03:34] this is our Target but we're supplying
+[03:36] more than this because the power factor
+[03:39] is bad what happens if we were to
+[03:41] improve the power factor to a perfect
+[03:44] one well the real power remains almost
+[03:47] constant and so does the voltage which
+[03:49] means the current must change we see the
+[03:52] current has reduced which means the
+[03:54] apparent power must also Reduce by
+[03:58] improving the power factor we can supply
+[04:00] less power to achieve the same amount of
+[04:03] work where is this extra power going we
+[04:07] call this reactive power and we can
+[04:09] better visualize it with a power
+[04:11] triangle we can draw a horizontal line
+[04:14] for the real power then we can draw
+[04:16] another line at an angle to represent
+[04:19] the apparent power the angle between
+[04:22] them is that delay we measured on the
+[04:24] oscilloscope we know we can easily
+[04:26] convert the angle into the power factor
+[04:28] value but up we can also take the
+[04:31] inverse cosine of that value to find the
+[04:34] angle we can also just divide the real
+[04:37] Power by the apparent power to find this
+[04:39] value from that you can see that the
+[04:41] power factor is just a ratio so it has
+[04:45] no units now the difference between
+[04:48] these two points is called the reactive
+[04:51] power measured in volt amp reactive I'll
+[04:55] explain what it does in just a moment by
+[04:57] drawing these lines we form a power
+[05:00] triangle if we have plotted this
+[05:02] correctly then we could just measure
+[05:04] this value otherwise we can calculate it
+[05:07] using this formula notice that if the
+[05:10] power factor value improves then the
+[05:12] angle reduces which brings the apparent
+[05:15] power and the real power values closer
+[05:18] together and that causes the reactive
+[05:20] power to reduce and we will see how to
+[05:23] improve that later in this video there
+[05:25] are various ways to calculate each part
+[05:28] of this triangle for real power we can
+[05:31] use these formulas for apparent power we
+[05:34] can use these formulas and for reative
+[05:36] power we can use these formulas but
+[05:40] where do we find these values if you are
+[05:42] lucky the electrical panel will have a
+[05:45] digital power meter telling you all of
+[05:48] these
+[05:49] values sometimes analog dials are
+[05:51] provided and you can read these manually
+[05:54] ideally you would have access to a power
+[05:56] analyzer which provides very accurate
+[05:58] and detailed results sometimes the
+[06:01] manufacturer will also provide these
+[06:04] values in the product data sheet however
+[06:07] you can get these small cheap and simple
+[06:09] versions which just provide the basic
+[06:11] values with less accuracy or we can use
+[06:15] these plug-in versions for portable
+[06:17] devices I'll leave a link down below for
+[06:19] you if you're interested now the circuit
+[06:22] will contain components which can be
+[06:24] either resistive inductive or capacitive
+[06:27] resistive loads such as incandescent
+[06:30] light bulbs convert energy into heat and
+[06:33] light inductive loads such as electric
+[06:36] motors store and release energy in their
+[06:38] magnetic field capacitive loads such as
+[06:42] capacitors store and release energy in
+[06:45] their electric field these all affect
+[06:48] the circuit differently let's understand
+[06:50] how and why let's say we measure the RMS
+[06:53] voltage this is approximately
+[06:57] 70.7% of the peak of the s wave so to
+[07:00] find the peak we use this formula then
+[07:03] we can use this formula to calculate the
+[07:05] instantaneous voltage at any point in
+[07:08] the cycle of the sine wave we can see
+[07:11] there are positive and negative values
+[07:13] if we took a purely resistive load we
+[07:16] can easily find the RMS current and from
+[07:20] that we can calculate the peak current
+[07:22] from that we can calculate the
+[07:24] instantaneous current at any point we
+[07:27] again see positive and negative values
+[07:30] because current is Flowing forwards and
+[07:32] backwards it alternates Direction the
+[07:35] voltage and current are in Phase with
+[07:37] each other meaning they Peak at the same
+[07:40] time this is a perfect power factor if
+[07:43] we multiply the instantaneous voltage
+[07:46] and current values we find the
+[07:48] instantaneous power notice the power is
+[07:52] always positive even when the voltage
+[07:55] and current are negative we can think of
+[07:57] these positive regions as energy leaving
+[08:00] the circuit it's doing useful work like
+[08:03] producing light and heat the energy only
+[08:06] flows one way and that's out of the
+[08:09] circuit we call this power real power in
+[08:13] this case all the current flowing
+[08:15] through the wire is being used to do
+[08:17] useful work which is what we want
+[08:20] however if we connected a purely
+[08:23] inductive load the voltage and current
+[08:25] are no longer in Phase they are shifted
+[08:28] by 9 ° the current lags behind the
+[08:32] voltage now the instantaneous power has
+[08:35] positive and negative values the
+[08:38] inductor will build a magnetic field
+[08:40] around itself which stores energy so
+[08:43] during the positive segments energy is
+[08:46] Flowing to the inductor to build the
+[08:49] magnetic field and then in the negative
+[08:51] segment the field collapses and almost
+[08:54] all of that energy is returned back to
+[08:56] the Circuit no energy is used but
+[08:59] current flows the changing applied
+[09:02] voltage pushes current in the circuit
+[09:05] creating a changing magnetic field in
+[09:08] the wire but in the coil that changing
+[09:11] magnetic field is going to affect the
+[09:14] neighboring sections of the coil we know
+[09:17] that a changing magnetic field will
+[09:19] induce a voltage in a coil so this
+[09:22] magnetic field will also induce a
+[09:24] voltage that is going to push back
+[09:27] against the applied voltage that will
+[09:29] limit how rapidly the current can
+[09:32] increase or decrease which causes the
+[09:35] delay in current but if we connect a
+[09:38] purely capacitive load the opposite
+[09:41] happens and the current leads the
+[09:43] voltage we again have the positive and
+[09:46] negative segments of power because the
+[09:48] capacitor is storing and releasing
+[09:50] energy in its electric field the current
+[09:52] flows to build up the electric field so
+[09:55] the current reaches its peak before the
+[09:57] voltage in both cases we have current
+[10:01] flowing through the wire just to store
+[10:03] and release energy but it's not doing
+[10:06] any useful work it's just moving power
+[10:09] back and forth we call this power
+[10:12] reactive power in a normal circuit we
+[10:16] usually have some amount of resistance
+[10:18] inductance and capacitance so the power
+[10:21] factor Isn't So extreme typically we
+[10:24] have a lagging power factor because of
+[10:27] the large inductive loads but we can
+[10:30] correct this by adding some capacitance
+[10:32] to the Circuit the reactive power then
+[10:35] moves between the inductor and capacitor
+[10:38] instead of Through the Wire let's
+[10:40] calculate the reactive Power Parent
+[10:43] power and current for an electrical
+[10:44] motor and also how to improve it and by
+[10:48] the way you can download my Excel sheet
+[10:50] with all the calculations and worked
+[10:52] examples on we also have these very
+[10:54] handy mugs with all the formulas on too
+[10:57] links down below if you'd like one
+[10:59] let's say we have a 120 Vol 60 HZ
+[11:04] singlephase motor rated 2.87 horsepower
+[11:08] with a lagging power factor of 0.7 and
+[11:12] an efficiency of
+[11:13] 82% we first convert that into Watts
+[11:17] then divide that by the efficiency that
+[11:20] is our real power the rated power is the
+[11:23] output from the shaft but it doesn't
+[11:26] include the energy lost as heat from the
+[11:28] resistance the coil the friction of the
+[11:31] bearings the heat from the Eddie
+[11:33] currents Etc this is all energy leaving
+[11:36] the circuit which we have now accounted
+[11:38] for so we draw a line horizontally to
+[11:41] represent that we take the inverse
+[11:44] cosine of the power factor value to find
+[11:46] the angle then we calculate the apparent
+[11:49] Power by dividing the real Power by the
+[11:51] power factor that's the total power that
+[11:54] must be provided to achieve this real
+[11:57] power we know that this line is our
+[12:00] reactive power and we can easily
+[12:01] calculate that value also since we know
+[12:04] the real power voltage and power factor
+[12:07] we can rearrange this formula to find
+[12:09] the current now let's see what happens
+[12:12] if we increase the power factor to
+[12:15] 0.95 well the real power Remains the
+[12:18] Same the angle has reduced to almost
+[12:22] 18° the apparent power also reduces and
+[12:25] that means our reactive power has also
+[12:28] reduced you can see the Improvement in
+[12:30] the power triangle this also means the
+[12:33] current has reduced significantly to
+[12:36] achieve that we connect a capacitor in
+[12:39] parallel with the motor the capacitor
+[12:41] needs to provide the difference between
+[12:43] the two reactive Powers we just
+[12:46] calculated the reactive power will
+[12:48] oscillate back and forth between the
+[12:50] magnetic field of the motor and the
+[12:52] electric field of the capacitor but what
+[12:55] size capacitor do we need well this
+[12:57] formula calculates that we know the
+[12:59] reactive power we know the voltage and
+[13:02] the frequency so we can easily calculate
+[13:04] the capacitor size you probably won't
+[13:08] find a capacitor rated at that exact
+[13:11] size but we can just test the nearest
+[13:13] standard size available just convert
+[13:15] that to thads drop in your values into
+[13:18] this formula and find the reactive power
+[13:20] it can supply we then subtract that from
+[13:23] the motor's initial reactive power to
+[13:25] find the remaining value now that we
+[13:28] know the real power and the reactive
+[13:30] power we can find the apparent power
+[13:33] then we can easily find the power factor
+[13:35] which is pretty close to our Target so
+[13:38] we can use this capacitor the power
+[13:40] source will then only need to supply the
+[13:42] real power and the small remaining
+[13:45] amount of reactive power so if that's
+[13:48] just one small motor imagine what
+[13:51] happens inside a large industrial side
+[13:53] with a lot of much larger equipment you
+[13:57] might have noticed that equipment like
+[13:59] generators and Transformers are rated in
+[14:01] apparent power so if a large consumer
+[14:05] has a bad power factor then they will
+[14:07] take up all the spare capacity of the
+[14:10] network with their reactive power which
+[14:13] doesn't do anything useful no one else
+[14:16] can then be connected to the network
+[14:18] unless either an entire new network is
+[14:20] installed or much larger equipment is
+[14:23] installed both options are very
+[14:26] expensive as reactive power increases so
+[14:29] does the current in the wire meaning the
+[14:31] transmission losses will also be much
+[14:34] higher this all results in the equipment
+[14:37] needing to be replaced more frequently
+[14:39] and these costs are passed on to the
+[14:41] consumers so the power company will
+[14:44] usually issue penalty charges to large
+[14:46] consumers to encourage them to install
+[14:49] power factor correction these usually
+[14:51] don't apply to residential customers as
+[14:54] their usage is so small in comparison it
+[14:57] can be difficult to understand and
+[14:59] electrical engineering topics and the
+[15:01] math behind them but our sponsor
+[15:02] brilliant is where you learn by doing
+[15:05] there's so many new courses but I really
+[15:07] enjoyed the new vector's course the
+[15:09] graphics and interactions just made it
+[15:11] so easy to visualize each step and there
+[15:14] was extra help if I needed it brilliant
+[15:16] has thousands of interactive lessons in
+[15:19] math data analysis programming and AI
+[15:22] all the skills you need to become a
+[15:24] brilliant engineer they even have an app
+[15:27] for on the-go learning making it easy to
+[15:29] build your critical thinking skills
+[15:31] through problem solving not memorizing
+[15:34] each lesson is filled with handson
+[15:37] problem solving that lets you play with
+[15:39] Concepts I think you'll enjoy this too
+[15:41] so you can try everything brilliant has
+[15:44] to offer for free for 30 days just visit
+[15:47] brilliant.org slthe engineering mindset
+[15:51] or scan the QR code you'll also get 20%
+[15:54] off an annual premium subscription do
+[15:56] check them out links down below hey
+[15:59] I'd just like to give a huge shout out
+[16:01] to our incredible patreon and channel
+[16:04] members thank you so much for supporting
+[16:06] us and if you'd like to see your name
+[16:09] here along with Priority Access to our
+[16:11] content and behind the scenes footage
+[16:13] links down below for how to join

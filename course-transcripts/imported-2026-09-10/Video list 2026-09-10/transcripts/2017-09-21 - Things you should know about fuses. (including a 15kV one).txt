@@ -1,0 +1,679 @@
+# Things you should know about fuses. (including a 15kV one)
+# https://www.youtube.com/watch?v=kx35WN3uLis
+
+let's talk about fuses because there's quite a wide range of fuses quite a wide range of ratings and apart from being the most universally abused component it's also one of the most important for safety and in this case I just for entertainment value I've got some really big fuses and I've smashed one of these open one that's been pre blew and so I'll show you that later a range of standard fuses that you're likely to see a clue nephews from China which supplier to the product well they're all probably from China well no these ones are made in Britain naturally and electronic fuse is automotive fuses and the really interesting one here which is a high voltage fuse designed to break fifteen thousand volts in a particularly interesting manner but before I start this video I'm just going to completely ruin it by making a really bad 1980s rave reference by getting a big fuse knowledge of fears and MD who knows the nineteen eighties era one of exactly where this is going big fuse lit a fuse big fuse little fuse big fuse little fuse cardboard box oh dear appear to have dropped and II see I told you it was going to be a really tacit but not to worry let's continue so the first characteristic that confused a lot of people with fuses is the voltage rating you see when you have something that twelve volt power supply and you get a new fuse for it you read the ratings of the fuse and it's got the current rating but it's also got a voltage rating in this case this fuses rated about 250 volts you think well can it be used of 12 volts then and the answer is that yes because the voltage rating is the maximum voltage it's designed to break the current rating is what's really important here so you've got the voltage rating will extend say for instance these ones it's 250 volts but it gets a bit more complicated than that for a typical inch and a quarter or thirty two millimeter fuse it goes up to about 500 volts for many of the styles for the industrial fuses that's rated for well in this case it's really it 450 volts and then of course at the top of the range we've got 15 kilovolt this 15 kilo volt fuse here or higher the trip characteristic is the next that confuses people you see you get different ratings of characteristics for tripping and if you use the wrong fuse it may be the correct current rating but it will just keep blowing all the time or just it all seemed as though there's another fault a recurring fault when there may not actually be one you see you get their two standard characteristics you get the quick flow and slow blow the quick flow is usually called air think fast and the slow blue is called T think time delay you know it would be nice to just use you know if the used names actually match the letter on them but this is what happens and when you have say for instance a fuse in Lane with a transformer or some other load that's going to start with an inductive surge you have to use a time delay fuse because unlike the quick blow fuse the F fuse which is designed to blow quickly the time delay fuse allows it's sometimes got a little blob in the middle of the wire or a may have a little sort of it may be wound as a spring and the idea is that instead of blowing instantly when it detects an overcurrent condition it actually has a slow characteristic it takes a while to warm that blob up and trip so if you've got a circuit fideya transformer you or motor the usual type of fuse is a time delay fuse F fuses are most likely used for loads like just tungsten lamps or or lab Lords that aren't gonna have that huge in rush basics electronic circuitry would usually have just like a quick blow fuse mainly to protect the components as well and this is where there's another fuse called F F no F F is a really fast blow and it's often called a semiconductor fuse and the idea is that theoretically theoretically it doesn't always happen the fuse blows so quickly under fault conditions and it is it makes it very sensitive to false blowing but it it blows so quickly that it will save the semiconductor device that's connected like attract bridge rectifier MOSFETs but in reality from my experience it doesn't always save the component and sometimes the fuses themselves are so hard to get I'm so expensive that maybe they're just using ordinary fuse and make sure the components easy to change other styles of fuses now what should I watch it watch there should I cover here breaking capacity that is the one of the most important things you see quite often you'll see glass fuses that have gone black inside they've really splattered and sometimes they'll actually feel explosively and the reason for this is that the fuse has to be able to break the fault current and these little glass fuses are only rated to break about 35 amps and if you think if this is connected to the means if this is connected to say something like a industrial unit with a transformer and something does a bit of hardware gets loose and something short so then the current is going to be much much higher than 35 amps and in that innocence what can happen is this the fuse blowers and this is a fuse out of a LAN controllers brought some time ago it was worth taking picture of there was so much damage in that controller it was a Phil Gramm LAN controller and the ordinary glass fuses have been used now I can understand why people use glass fuses because you can actually see through them you can see the if the air fuse wire is intact you can always see if the fuse wire is intact but in more senses it gives you an easy visual reference as to state the fuse but if you use ordinary glass fuses in an industrial application of using the memes then because of the high fault current if there's a dead short circuit and the fuse just blows instantly what can happen is it can initiate an arc incite the glass tube because the filament is splattered it basically creates a mist of conductive metal and that creates a allows a current path to continue has a discharge through the tube which causes it to be coated you can see the inside of this tube is also just splattered of copper in some instances if it metal plates inside the tube the actual tube itself can conduct and what's happened here is because the the amount of power dissipated in that arc has been so high it shattered the fuse it's really exploited it and then the arc contain the ark actually blew out from there and make contact electrical contact with other fuse holders which then more current flow to those and it basically went along the whole row of fuses in this I had to change every single fuse holder in this partly because the fuses were welded in and partly because they were so burnt and damaged and there was also quite a lot of electronic damage in that you know the person who brought this in had been working in the LAN controller it had blown some fuses he'd gone and put the new glass fuses and he'd been using his phone as a torch and then he went over to turn the power back on in this really confined area in SATA one of the pillars of a raid and he said that was just like the loudest electrical bang is heard it was just his eyes were just all he could see was just a visual dot for so long it just had to stay put inside that pillar until his eyesight returned before he could actually get back out again he said it was a terrifying experience so we have the reason for the ceramic fuses is that these aren't just a ceramic tube they're actually filled with sand inside now I can bring in a big fuse here that has blew in and show you what's inside them so this is a 160 amp fuse that has blew in with considerable force but the construction is quite interesting the end caps have three little tags on them and in this case there were just two of them with the original fuse links and I wasn't really sure why I was looking at these because it looked like set of flat troops but in reality it's been metal ribbons and because they've been covered by the sand when the fuse is blue and the molten metal has blown out into the sand and it's basically quenched arc it's cooled it and it's also absorbed the metal into the surface and it's created basically a metal coated tube but the metal has been so diffused into the ceramic that it's quenched the arc and it's limited American floor so whereas these little fuses here are rated to break 35 amps they're equivalent with the ceramic and the sand fill will be will be brushed this one up yes I think we will we'll be brushed and check if it does have sand inside it scrunchies scrunchie yeah it's good sand inside it and this one this little 20 millimeter fuse is actually reached to break 1,500 amps and it depends on the fuses rating that might vary but you know the difference is this can break 35 amps this can break one can beat 1,500 so in the event of a means full circuit the actual the force of failure the ability to break the circuit is much faster and it can it basically contain that rupture inside quite safely the term for these is HRC high rupture capacity because they can rupture that currently can break that current so next thing to cover that's the failure mode of glass fuses alright okay some of the fuse is coming from China with products that are bypassing the normal electrical regulations let's put this one over the way me Luke like our standard plug top fuses in the UK which are high rupture capacity ceramic fuses but if I open this one up by just trying to pull the end cap off there's an in-cab come off all they've done here is that used to ceramic they've bent the wire the threaded that order are through there's no sand in there at all they've thread the wire through folded it over the end and then just press the cap on so this isn't HRC this isn't going to feel in a controlled manner or certainly the fuse wire is thin enough or blue but it wouldn't necessarily break the fault current of a means fault and as such that this will go back all the way to the distribution board and that could cause problems and some instances where there isn't much in the way of further protection or the next protection level is quite high so it's worth noting that here some of these cloner fuses are thick and this brings us onto the pole and fuses which I don't think of cause I think these should be compliant so let's say take a look in the side one let's take a look and say both these packets since are different and see if they contain the sand are therefore compliant so that's it well first not it's quite hard to open crunch crunch there's this and yep they've got the sand in them so let's check this one out and see if these are good it's always worth checking particular if you get fuses from a random source it's worth checking they have their sand inside them so they can do their job properly so let's say crush this one open yeah it's good to sand again so both those fuses did contain this sand which is good do we want to take a look inside one the big with these big ones nihilistic a look inside this one as well I mean there's not altima a lot in seda is a a wire going through the middle and it's sand to break that circuit so yeah lots of sand the place is covered in sand oh that's a bit massive next thing let's say let's keep the exciting fuses till afterwards the electronic fuses and go onto this piece which is a high voltage 15 kilo volt expulsion of years and the reason is called misspoken fuse will become apparent shortly now if you've ever seen videos of linemen switching pitting the what they call cut oats next to Transformers and overhead lanes things that occasionally you'll see them throwing the thing in with our big extendable fibreglass in which we'd pull and there'll be a massive bang and a sheet of flame will come out the bottom and that's actually I deliver a thing that's how these fuses work you see these fuses and let's look at the rating for a start this one is slow blow 30 amp it's rated 15 kilovolts the number on it is 15 td-30 15 for 15 kilovolts the T means it's got a time delay characteristic the D means it's a double till the other versions of this just have a little button in the top and other versions again have a little screw on cap for adaptors and and there was the ones the button just have a single TLO the bottom the type of air the situations you use these this one's designed to be wired at both ends basically you could round us at a clamp at the top once you've thread it down the sort of main tube of the body of the cutter and at the bottom you're so cap it off with the ones in the stud on top you thread it down you thread this wire through put it down with the button on top and then you screw a little cap on a contact cap it's kind of simple armless but maybe this is just a better option in some situations so here's how they work if you're thinking that this is going to be quite a lot of voltage inside this tube here is a quite unmanned Abel quite a soft alloy almost like solder and next tip is a metal strip I'm going to make a wild guess here because I don't know why they've got this arrangement but my guess is that because this the main multiple link here is probably the main component that's going to blue and possibly create a lot of vapor when the fuse blue ISM and my guy says the metal strip is also it's part of the fuse but it's going to carry current but the main purpose of the metal strip is probably for strength because if this is a soft alloy and it heated up on the Lord it could kind of extrude out and gradually get thinner over time so I'm guessing that this flat strip here is for that extra strength above that and when one of them blows the other will be taking the fill current and that's when the circuit will just blow completely when it does because it's breaking in this case it would be give 11,000 volts and FIP hopefully a fault current scenario their motor their energy dissipated inside that tube is so high that it just basic physically blew the bottom oh this wire will physically blow at the bottom with a loud bang you'll see the flame coming at the bottom and then this will just be blue and clear not all just dangle and at that point it's just broken the circuit completely because this will still be the top cap will still be connected to the high voltage and there's a good chance at the bottom here that Ruben said we'll probably coated it with conductive coating but this isn't our carrier tube and which is slightly proud of that and this wire will then be so clear that the end will just be basically 14mm and that's how it's broken the circuit next type of fuse Oh voltage ratings here is an important thing this is a vehicle fuse and it's actually rated about 32 volts max it's capable support of the braking it flows and amps not sure I want to pull out the test but in the case of a car if that went across the car battery I suppose ultimately a thousand amps could easily floor but because it's got low voltage behind it I suppose it ultimately it's gonna have a state out arc welder ish effect but the distance that arc can be maintained at that lower voltage is probably quite low and that therefore it's going to break the circuit in controlled manner despite the fact that these are temptingly sort of like water resilient because they're all sealed with these caps and they've got the wire pre-terminated the temptation is there to use them in means voltage applications but because it's only rated for 32 volts if you use this in the mains application there's a risk that it would just burn it would actually create a conductive coating here and then the higher voltage would track across and you could end up the fuse holder burning and going in fire so it's not a good idea you have to use a fuse is rated for the voltage that it's going to be operated with them so let's talk about one of my favourite fuses for circuit boards PTC fuses and a common brand name associated to these is poly switch fuses and these are actually a positive temperature coefficient thermistor PTC thermistor with a very optimized characteristic so they've got a very low resistance when normal currents flowing through them but as soon as you exceed that current that they're rated at they have a similar characteristic just slow blow fuse they will start heating up and once they start heating up then the voltage across them all increased and it causes an avalanche it causes a chain reaction that then that resistance increases higher and then the voltage is higher it's getting hotter and it suddenly the if you got one of these connected in the series with the Lord and it does get overloaded you'll suddenly see a set of Lord or just something tear off suddenly and what happen is that this unit will go high resistance but all balance it will waver knock them down it doesn't sustain a fixed point at Weaver's a bit and it's basically limiting the current to the Lord current is still flowing through the Lord but just enough to keep this heart at the temperature of it's tripped state and you get different sizes for different current ratings and also you get different voltage ratings but most of these are aimed at low voltage of 60 volt and below use but again you can find the variety of types with the different current thresholds and with the difference of voltage ratings and the nice thing about these is you can sort us into a circuit board if it does trip if something gets shorted out all you have to do is turn the power off and this after a while this will have cooled down low enough that it won't it will go of low resistance again if you turn the power on the false still there it will instantly trip again it will go hot again if the fault is cleared then this will cool down and it will just be normal operation and these are also you get ruggedized versions of these used for deliberate control of Lords whereby it's designed for a very high number of deliberate cycles so if you've got this in line with see a high-power solenoid or motor then when the loads turned on the motor will run for a vey short length of time as this heats up or a solenoid or operate briefly at full current but then this will go high resistance and then drop the current down and error the solenoid will just drop out or or hold if it's got a fairly little holding current and that just means it's a very as about a simplest gate for a timing device so let's see if I covered everything the oh yeah tell you what let's say look at the characteristics of fuses because by looking at glass fuses you can actually tell her something field so if this is a glass fuse and you look at the wire in the middle and it's gone like this its sagged a wee bit and it's melted and two little balls at the end but the glasses otherwise clear inside then that means that the fault that caused that to happen was not a high current fault it wasn't a bang type fault it was maybe just a wrong lamp has been put in or a long wrong Lord or something's feeling that's growing graduating low resistance and the current has increased to the point that this has exceeded its a current rating but it's not been a dead short circuit so the wire parts and it just holds up at the end a bit like when you heat sword in it sort of goes round at the end the other scenario is when a fuse blows and the inside is just solid it's all coffee and black inside you can't actually see through the glass anymore in that instance that was almost certainly a catastrophic failure that was a dead short circuit something went bang something shorted out and the fuse wire blew with such forces it's pleated inside the glass other things to note if you look at a glass fuse and you see oh there's a wire inside that's okay it's intact don't take that as gospel that is intact because what can happen is the wire might be intact it might be correctly bonded on at that end but it may have broken just out of sight it may have just detached from the end there and it's possible with thermal cycling and just age that fuses do gradually aged a fuse can feel without a fault being there the thermal expansion contraction could just take its toll and it can fracture and when that happens it may happen at the end so always check the fuses with ammeter and don't just rely on taking a look through that through the glass at the fuse wire inside next thing if you've got a big fuse like this and it blows and you're like oh where am I going to get a fuse like that and you'll get the option you can short oh no don't do that or you can do it some people too and but even with standard plug type fuses the wrap tin for on them don't do that you see you get clipped and brought in rip here and people have wrapped a bit of wire around and then pushed it back into the fuse or deceit oh it's okay it was a crank reading of wire it may be the correct ratio wire but it wasn't in the correct housing it wasn't inside the ceramic tube and that gets really you know that gets really important with industrial applications if you just spray this fuse in and you wrap a bit of wire just wrap a bit of wire around and you see oh it's okay the fuse is rated for yours roughly the size it's going to blow first what's actually going to happen if there is a major fault is that wire is going to just splatter it's going to vaporize you're going to get a conductive plasma that plasma is because it's electric conductive it's going to spread out and it's going to carry current and if that then goes on to earth metal work in the vicinity you'll get a high current passage to that and then that plasma will continue the it will get further it goes on to the adjacent phases and then you've got higher voltage high current flowing through his plasma in short just like that boom the whole panel will explode honestly just the whole panel that door may actually get blown off in an industrial application and I can recall going to factory and engineering works where they'd had a simple fault had occurred and the fuses were obviously something that happened they were the wrong fuses they weren't suitable but the actual fault was that one of the infrared light curtains I wrecked fired filled in and blew in the fuse that's what the problem was and they'd got their local dabbler to have a goal and he'd obviously opened the panel and started poking contactors and that control the motors I'm pretty sure that was a press so it would have basically been one big mortar and it would have had star delta on it to actually ramp up to speed he had obviously poked in both contactors and basically shorted out all three phases simultaneous because they weren't mechanically interlocked and the fuses had not protected he I don't know if he was injured or not that people in the factory said there was just massive explosion from the machine they was like threw him back from the panel and inside all the wiring was burnt all all the insulation was off the wiring all the components were burned it was just black inside the control panel had been destroyed it didn't blow the fuse in the machines and you know latterly and I just looked and said that has suffered so much damage is going to require pretty much a rebuild but it had also taken out the few the fault had gone all the way back the fuses in it whatever they were had not ruptured the current safely the actual fuse carrier and it was welded in and that had gone back and had blown out all the power to the factory everything had just gone black with that massive explosion and that's not a good situation to be in when some like that happens so I know tin foil and no wires over the surface of these and other key points worth saying if you have all future waiting yet right substituting fuses the only time you should ever substitute a different value is if you know that the fuse it was blue and if you found the fault if you've not got a fuse the crack value you can put in perhaps very slightly higher or lower if you know the currents in that range but don't leave that in don't treat that as a permanent fix they always make sure that the correct fuse specified by the manufacturer and unfortunately there's equipment that comes out of the wrong specification so in that case if you've got a persistent problem then you have to make an educated decision you actually have to monitor the vault the current and the equipment measure it with a meter under all conditions you have to make an educated decision and find the correct routing fuse for that equipment and market in it clearly and it's not uncommon to find equipment that someone's replaced a fuse in the past and it's worked for a while but then it's filled and a common thing there is people putting the quick blow fuses in we're a time delay fuse existed in the first place and the fuse rating was correct but the characteristic was not so you you know if you've got a persistent problem the fuses blowing you have to consider is it an actual fault or is it that the fuse has been changed at some point for an appropriate value and the function of that works both ways people can put bigger fuses in and you just never know until a a major fault occurs and damage occurs so sometimes when you get new equipment that is same hand it's what actually checking all the fuses and making sure the correct ones for the task and the crack ratings so it's a complex of area but once you get your head round it you know it's quite easy selecting the correct type of fuse and that will avoid potential problems it just offers closure protection and also nuisance tripping so it's an interesting subject
+
+
+[00:00] let's talk about fuses because there's
+[00:02] quite a wide range of fuses quite a wide
+[00:04] range of ratings and apart from being
+[00:06] the most universally abused component
+[00:08] it's also one of the most important for
+[00:11] safety and in this case I just for
+[00:14] entertainment value I've got some really
+[00:15] big fuses and I've smashed one of these
+[00:17] open one that's been pre blew and so
+[00:18] I'll show you that later a range of
+[00:21] standard fuses that you're likely to see
+[00:23] a clue nephews from China which supplier
+[00:25] to the product well they're all probably
+[00:27] from China well no these ones are made
+[00:28] in Britain naturally and electronic fuse
+[00:32] is automotive fuses and the really
+[00:36] interesting one here which is a high
+[00:37] voltage fuse designed to break fifteen
+[00:39] thousand volts in a particularly
+[00:41] interesting manner but before I start
+[00:43] this video I'm just going to completely
+[00:45] ruin it by making a really bad 1980s
+[00:48] rave reference by getting a big fuse
+[00:50] knowledge of fears and MD who knows the
+[00:52] nineteen eighties era one of exactly
+[00:54] where this is going big fuse lit a fuse
+[00:57] big fuse little fuse big fuse little
+[01:01] fuse cardboard box oh dear
+[01:04] appear to have dropped and II see I told
+[01:07] you it was going to be a really tacit
+[01:08] but not to worry let's continue
+[01:12] so the first characteristic that
+[01:14] confused a lot of people with fuses is
+[01:16] the voltage rating you see when you have
+[01:19] something that twelve volt power supply
+[01:20] and you get a new fuse for it you read
+[01:24] the ratings of the fuse and it's got the
+[01:26] current rating but it's also got a
+[01:27] voltage rating in this case this fuses
+[01:29] rated about 250 volts you think well can
+[01:32] it be used of 12 volts then and the
+[01:34] answer is that yes because the voltage
+[01:36] rating is the maximum voltage it's
+[01:38] designed to break the current rating is
+[01:41] what's really important here so you've
+[01:45] got the voltage rating will extend say
+[01:47] for instance these ones it's 250 volts
+[01:49] but it gets a bit more complicated than
+[01:51] that for a typical inch and a quarter or
+[01:54] thirty two millimeter fuse it goes up to
+[01:56] about 500 volts for many of the styles
+[01:59] for the industrial fuses that's rated
+[02:01] for well in this case it's really it 450
+[02:03] volts and then of course at the top of
+[02:05] the range we've got 15 kilovolt this 15
+[02:08] kilo volt fuse here or higher the trip
+[02:12] characteristic is the next
+[02:13] that confuses people you see you get
+[02:16] different ratings of characteristics for
+[02:18] tripping and if you use the wrong fuse
+[02:21] it may be the correct current rating but
+[02:22] it will just keep blowing all the time
+[02:24] or just it all seemed as though there's
+[02:26] another fault a recurring fault when
+[02:29] there may not actually be one you see
+[02:31] you get their two standard
+[02:34] characteristics you get the quick flow
+[02:36] and slow blow the quick flow is usually
+[02:38] called air think fast and the slow blue
+[02:41] is called T think time delay you know it
+[02:44] would be nice to just use you know if
+[02:46] the used names actually match the letter
+[02:49] on them but this is what happens and
+[02:53] when you have say for instance a fuse in
+[02:56] Lane with a transformer or some other
+[02:58] load that's going to start with an
+[02:59] inductive surge you have to use a time
+[03:01] delay fuse because unlike the quick blow
+[03:04] fuse the F fuse which is designed to
+[03:06] blow quickly the time delay fuse allows
+[03:09] it's sometimes got a little blob in the
+[03:12] middle of the wire or a may have a
+[03:13] little sort of it may be wound as a
+[03:14] spring and the idea is that instead of
+[03:17] blowing instantly when it detects an
+[03:19] overcurrent condition it actually has a
+[03:21] slow characteristic it takes a while to
+[03:22] warm that blob up and trip so if you've
+[03:25] got a circuit fideya transformer you or
+[03:28] motor the usual type of fuse is a time
+[03:31] delay fuse F fuses are most likely used
+[03:34] for loads like just tungsten lamps or or
+[03:39] lab Lords that aren't gonna have that
+[03:41] huge in rush basics electronic circuitry
+[03:44] would usually have just like a quick
+[03:46] blow fuse mainly to protect the
+[03:48] components as well and this is where
+[03:50] there's another fuse called F F no F F
+[03:52] is a really fast blow and it's often
+[03:55] called a semiconductor fuse and the idea
+[03:57] is that theoretically theoretically it
+[03:59] doesn't always happen the fuse blows so
+[04:02] quickly under fault conditions and it is
+[04:04] it makes it very sensitive to false
+[04:06] blowing but it it blows so quickly that
+[04:10] it will save the semiconductor device
+[04:11] that's connected like attract
+[04:13] bridge rectifier MOSFETs but in reality
+[04:17] from my experience it doesn't always
+[04:20] save the component and sometimes the
+[04:22] fuses themselves are so hard to get I'm
+[04:24] so expensive that maybe
+[04:26] they're just using ordinary fuse and
+[04:27] make sure the components easy to change
+[04:30] other styles of fuses now what should I
+[04:34] watch it watch there should I cover here
+[04:36] breaking capacity that is the one of the
+[04:39] most important things you see quite
+[04:41] often you'll see glass fuses that have
+[04:44] gone black inside they've really
+[04:45] splattered and sometimes they'll
+[04:48] actually feel explosively and the reason
+[04:50] for this is that the fuse has to be able
+[04:52] to break the fault current and these
+[04:55] little glass fuses are only rated to
+[04:57] break about 35 amps and if you think if
+[05:00] this is connected to the means if this
+[05:01] is connected to say something like a
+[05:04] industrial unit with a transformer and
+[05:06] something does a bit of hardware gets
+[05:09] loose and something short so then the
+[05:12] current is going to be much much higher
+[05:13] than 35 amps and in that innocence what
+[05:16] can happen is this the fuse blowers and
+[05:21] this is a fuse out of a LAN controllers
+[05:23] brought some time ago it was worth
+[05:25] taking picture of there was so much
+[05:27] damage in that controller it was a Phil
+[05:29] Gramm LAN controller and the ordinary
+[05:33] glass fuses have been used now I can
+[05:34] understand why people use glass fuses
+[05:36] because you can actually see through
+[05:38] them you can see the if the air fuse
+[05:40] wire is intact you can always see if the
+[05:42] fuse wire is intact but in more senses
+[05:44] it gives you an easy visual reference as
+[05:47] to state the fuse but if you use
+[05:49] ordinary glass fuses in an industrial
+[05:52] application of using the memes then
+[05:54] because of the high fault current if
+[05:56] there's a dead short circuit and the
+[05:59] fuse just blows instantly what can
+[06:02] happen is it can initiate an arc incite
+[06:04] the glass tube because the filament is
+[06:07] splattered it basically creates a mist
+[06:11] of conductive metal and that creates a
+[06:14] allows a current path to continue has a
+[06:16] discharge through the tube which causes
+[06:18] it to be coated you can see the inside
+[06:20] of this tube is also just splattered of
+[06:22] copper in some instances if it metal
+[06:25] plates inside the tube the actual tube
+[06:27] itself can conduct and what's happened
+[06:30] here is because the the amount of power
+[06:32] dissipated in that arc has been so high
+[06:34] it shattered the fuse it's really
+[06:37] exploited it and then the arc contain
+[06:40] the ark actually blew out from there and
+[06:42] make contact electrical contact with
+[06:44] other fuse holders which then more
+[06:46] current flow to those and it basically
+[06:48] went along the whole row of fuses in
+[06:51] this I had to change every single fuse
+[06:53] holder in this partly because the fuses
+[06:55] were welded in and partly because they
+[06:57] were so burnt and damaged and there was
+[06:59] also quite a lot of electronic damage in
+[07:00] that you know the person who brought
+[07:03] this in had been working in the LAN
+[07:06] controller it had blown some fuses he'd
+[07:08] gone and put the new glass fuses and
+[07:10] he'd been using his phone as a torch and
+[07:12] then he went over to turn the power back
+[07:14] on
+[07:15] in this really confined area in SATA one
+[07:18] of the pillars of a raid and he said
+[07:21] that was just like the loudest
+[07:22] electrical bang is heard it was just his
+[07:24] eyes were just all he could see was just
+[07:26] a visual dot for so long it just had to
+[07:30] stay put inside that pillar until his
+[07:32] eyesight returned before he could
+[07:34] actually get back out again he said it
+[07:35] was a terrifying experience so we have
+[07:38] the reason for the ceramic fuses is that
+[07:41] these aren't just a ceramic tube they're
+[07:46] actually filled with sand inside now I
+[07:48] can bring in a big fuse here that has
+[07:50] blew in and show you what's inside them
+[07:52] so this is a 160 amp fuse that has blew
+[07:57] in with considerable force but the
+[08:01] construction is quite interesting the
+[08:03] end caps have three little tags on them
+[08:05] and in this case there were just two of
+[08:07] them with the original fuse links and I
+[08:09] wasn't really sure why I was looking at
+[08:11] these because it looked like set of flat
+[08:15] troops but in reality it's been metal
+[08:17] ribbons and because they've been covered
+[08:19] by the sand when the fuse is blue and
+[08:22] the molten metal has blown out into the
+[08:25] sand and it's basically quenched arc
+[08:29] it's cooled it and it's also absorbed
+[08:31] the metal into the surface and it's
+[08:33] created basically a metal coated tube
+[08:35] but the metal has been so diffused into
+[08:37] the ceramic that it's quenched the arc
+[08:40] and it's limited American floor so
+[08:42] whereas these little fuses here are
+[08:45] rated to break 35 amps they're
+[08:48] equivalent with the ceramic and the sand
+[08:50] fill will be will be brushed this one up
+[08:52] yes I think we will
+[08:54] we'll be brushed and check if it does
+[08:55] have sand inside it scrunchies scrunchie
+[08:59] yeah it's good sand inside it and this
+[09:03] one this little 20 millimeter fuse is
+[09:06] actually reached to break 1,500 amps and
+[09:10] it depends on the fuses rating that
+[09:14] might vary but you know the difference
+[09:16] is this can break 35 amps this can break
+[09:19] one can beat 1,500 so in the event of a
+[09:22] means full circuit the actual the force
+[09:25] of failure the ability to break the
+[09:27] circuit is much faster and it can it
+[09:30] basically contain that rupture inside
+[09:33] quite safely the term for these is HRC
+[09:37] high rupture capacity because they can
+[09:41] rupture that currently can break that
+[09:42] current so next thing to cover that's
+[09:47] the failure mode of glass fuses alright
+[09:49] okay some of the fuse is coming from
+[09:53] China with products that are bypassing
+[09:56] the normal electrical regulations let's
+[09:58] put this one over the way me Luke
+[10:02] like our standard plug top fuses in the
+[10:04] UK which are high rupture capacity
+[10:06] ceramic fuses but if I open this one up
+[10:12] by just trying to pull the end cap off
+[10:14] there's an in-cab come off all they've
+[10:16] done here is that used to ceramic
+[10:18] they've bent the wire the threaded that
+[10:20] order are through there's no sand in
+[10:22] there at all they've thread the wire
+[10:24] through folded it over the end and then
+[10:26] just press the cap on so this isn't HRC
+[10:28] this isn't going to feel in a controlled
+[10:30] manner or certainly the fuse wire is
+[10:32] thin enough or blue but it wouldn't
+[10:34] necessarily break the fault current of a
+[10:37] means fault and as such that this will
+[10:39] go back all the way to the distribution
+[10:41] board and that could cause problems and
+[10:45] some instances where there isn't much in
+[10:47] the way of further protection or the
+[10:48] next protection level is quite high so
+[10:50] it's worth noting that here some of
+[10:52] these cloner fuses are thick and this
+[10:54] brings us onto the pole and fuses which
+[10:56] I don't think of cause I think these
+[10:59] should be compliant so let's say take a
+[11:01] look in the side one let's take a look
+[11:02] and say both these packets since are
+[11:04] different and see if they contain the
+[11:06] sand are therefore compliant so that's it
+[11:11] well first not it's quite hard to open
+[11:14] crunch crunch there's this and yep
+[11:18] they've got the sand in them so let's
+[11:20] check this one out
+[11:24] and see if these are good it's always
+[11:27] worth checking particular if you get
+[11:28] fuses from a random source it's worth
+[11:30] checking they have their sand inside
+[11:32] them so they can do their job properly
+[11:34] so let's say crush this one open yeah
+[11:44] it's good to sand again so both those
+[11:47] fuses did contain this sand which is
+[11:50] good do we want to take a look inside
+[11:53] one the big with these big ones
+[11:54] nihilistic a look inside this one as
+[11:56] well I mean there's not altima a lot in
+[11:58] seda is a a wire going through the
+[12:01] middle and it's sand to break that
+[12:03] circuit so yeah lots of sand the place
+[12:06] is covered in sand oh that's a bit
+[12:07] massive next thing let's say let's keep
+[12:13] the exciting fuses till afterwards the
+[12:14] electronic fuses and go onto this piece
+[12:17] which is a high voltage 15 kilo volt
+[12:19] expulsion of years and the reason is
+[12:23] called misspoken fuse will become
+[12:25] apparent shortly now if you've ever seen
+[12:29] videos of linemen switching pitting the
+[12:32] what they call cut oats next to
+[12:34] Transformers and overhead lanes things
+[12:36] that occasionally you'll see them
+[12:37] throwing the thing in with our big
+[12:39] extendable fibreglass in which we'd pull
+[12:41] and there'll be a massive bang and a
+[12:43] sheet of flame will come out the bottom
+[12:44] and that's actually I deliver a thing
+[12:47] that's how these fuses work you see
+[12:49] these fuses and let's look at the rating
+[12:51] for a start this one is slow blow 30 amp
+[12:54] it's rated 15 kilovolts the number on it
+[12:56] is 15 td-30
+[12:58] 15 for 15 kilovolts the T means it's got
+[13:02] a time delay characteristic the D means
+[13:04] it's a double till the other versions of
+[13:06] this just have a little button in the
+[13:08] top and other versions again have a
+[13:10] little screw on cap for adaptors and and
+[13:13] there was the ones the button just have
+[13:15] a single TLO the bottom
+[13:18] the type of air the situations you use
+[13:23] these this one's designed to be wired at
+[13:25] both ends basically you could round us
+[13:27] at a clamp at the top once you've thread
+[13:30] it down the sort of main tube of the
+[13:31] body of the cutter and at the bottom
+[13:34] you're so cap it off with the ones in
+[13:36] the stud on top you thread it down you
+[13:39] thread this wire through put it down
+[13:42] with the button on top and then you
+[13:43] screw a little cap on a contact cap it's
+[13:45] kind of simple armless but maybe this is
+[13:48] just a better option in some situations
+[13:50] so here's how they work if you're
+[13:53] thinking that this is going to be quite
+[13:55] a lot of voltage inside this tube here
+[13:59] is a quite unmanned Abel quite a soft
+[14:02] alloy almost like solder and next tip is
+[14:06] a metal strip I'm going to make a wild
+[14:10] guess here because I don't know why
+[14:12] they've got this arrangement but my
+[14:13] guess is that because this the main
+[14:17] multiple link here is probably the main
+[14:19] component that's going to blue and
+[14:20] possibly create a lot of vapor when the
+[14:22] fuse blue ISM and my guy says the metal
+[14:25] strip is also it's part of the fuse but
+[14:27] it's going to carry current but the main
+[14:29] purpose of the metal strip is probably
+[14:31] for strength because if this is a soft
+[14:34] alloy and it heated up on the Lord it
+[14:36] could kind of extrude out and gradually
+[14:38] get thinner over time so I'm guessing
+[14:40] that this flat strip here is for that
+[14:42] extra strength above that and when one
+[14:46] of them blows the other will be taking
+[14:48] the fill current and that's when the
+[14:49] circuit will just blow completely when
+[14:52] it does because it's breaking in this
+[14:54] case it would be give 11,000 volts and
+[14:57] FIP hopefully a fault current scenario
+[15:00] their motor their energy dissipated
+[15:03] inside that tube is so high that it just
+[15:06] basic physically blew the bottom oh this
+[15:08] wire will physically blow at the bottom
+[15:11] with a loud bang you'll see the flame
+[15:12] coming at the bottom and then this will
+[15:14] just be blue and clear not all just
+[15:15] dangle and at that point it's just
+[15:17] broken the circuit completely because
+[15:19] this will still be the top cap will
+[15:21] still be connected to the high voltage
+[15:23] and there's a good chance at the bottom
+[15:25] here that Ruben said we'll probably
+[15:27] coated it with conductive coating but
+[15:30] this isn't our carrier
+[15:31] tube and which is slightly proud of that
+[15:34] and this wire will then be so clear that
+[15:36] the end will just be basically 14mm and
+[15:39] that's how it's broken the circuit next
+[15:43] type of fuse Oh voltage ratings here is
+[15:46] an important thing this is a vehicle
+[15:49] fuse and it's actually rated about 32
+[15:51] volts max it's capable support of the
+[15:54] braking it flows and amps not sure I
+[15:55] want to pull out the test but in the
+[15:57] case of a car if that went across the
+[15:59] car battery I suppose ultimately a
+[16:00] thousand amps could easily floor but
+[16:03] because it's got low voltage behind it I
+[16:04] suppose it ultimately it's gonna have a
+[16:07] state out arc welder ish effect but the
+[16:09] distance that arc can be maintained at
+[16:11] that lower voltage is probably quite low
+[16:13] and that therefore it's going to break
+[16:14] the circuit in controlled manner despite
+[16:17] the fact that these are temptingly sort
+[16:19] of like water resilient because they're
+[16:21] all sealed with these caps and they've
+[16:23] got the wire pre-terminated the
+[16:24] temptation is there to use them in means
+[16:27] voltage applications but because it's
+[16:30] only rated for 32 volts if you use this
+[16:32] in the mains application there's a risk
+[16:35] that it would just burn it would
+[16:37] actually create a conductive coating
+[16:39] here and then the higher voltage would
+[16:40] track across and you could end up the
+[16:42] fuse holder burning and going in fire so
+[16:45] it's not a good idea
+[16:46] you have to use a fuse is rated for the
+[16:50] voltage that it's going to be operated
+[16:52] with them so let's talk about one of my
+[16:57] favourite fuses for circuit boards PTC
+[16:59] fuses and a common brand name associated
+[17:02] to these is poly switch fuses and these
+[17:05] are actually a positive temperature
+[17:07] coefficient thermistor PTC thermistor
+[17:11] with a very optimized characteristic so
+[17:13] they've got a very low resistance when
+[17:16] normal currents flowing through them but
+[17:18] as soon as you exceed that current that
+[17:20] they're rated at they have a similar
+[17:22] characteristic just slow blow fuse they
+[17:25] will start heating up and once they
+[17:27] start heating up then the voltage across
+[17:29] them all increased and it causes an
+[17:31] avalanche it causes a chain reaction
+[17:33] that then that resistance increases
+[17:35] higher and then the voltage is higher
+[17:37] it's getting hotter and it suddenly the
+[17:40] if you got one of these connected in the
+[17:41] series with the Lord and it does get
+[17:43] overloaded
+[17:45] you'll suddenly see a set of Lord or
+[17:47] just something tear off suddenly and
+[17:49] what happen is that this unit will go
+[17:52] high resistance but all balance it will
+[17:55] waver knock them down it doesn't sustain
+[17:56] a fixed point at Weaver's a bit and it's
+[17:59] basically limiting the current to the
+[18:01] Lord current is still flowing through the
+[18:03] Lord but just enough to keep this heart
+[18:05] at the temperature of it's tripped state
+[18:07] and you get different sizes for
+[18:09] different current ratings and also you
+[18:11] get different voltage ratings but most
+[18:12] of these are aimed at low voltage of 60
+[18:15] volt and below use but again you can
+[18:18] find the variety of types with the
+[18:21] different current thresholds and with
+[18:23] the difference of voltage ratings and
+[18:25] the nice thing about these is you can
+[18:27] sort us into a circuit board if it does
+[18:29] trip if something gets shorted out all
+[18:31] you have to do is turn the power off and
+[18:33] this after a while this will have cooled
+[18:35] down low enough that it won't it will go
+[18:38] of low resistance again if you turn the
+[18:41] power on the false still there it will
+[18:43] instantly trip again it will go hot
+[18:44] again if the fault is cleared then this
+[18:47] will cool down and it will just be
+[18:50] normal operation and these are also you
+[18:54] get ruggedized versions of these used
+[18:56] for deliberate control of Lords whereby
+[18:59] it's designed for a very high number of
+[19:01] deliberate cycles so if you've got this
+[19:04] in line with see a high-power solenoid
+[19:06] or motor then when the loads turned on
+[19:09] the motor will run for a vey short
+[19:12] length of time as this heats up or a
+[19:14] solenoid or operate briefly at full
+[19:17] current but then this will go high
+[19:18] resistance and then drop the current
+[19:20] down and error the solenoid will just
+[19:22] drop out or or hold if it's got a fairly
+[19:25] little holding current and that just
+[19:27] means it's a very as about a simplest
+[19:29] gate for a timing device so let's see if
+[19:34] I covered everything the oh yeah tell
+[19:36] you what let's say look at the
+[19:37] characteristics of fuses because by
+[19:40] looking at glass fuses you can actually
+[19:42] tell her something field so if this is a
+[19:45] glass fuse and you look at the wire in
+[19:50] the middle and it's gone like this its
+[19:51] sagged a wee bit and it's melted and two
+[19:53] little balls at the end but the glasses
+[19:55] otherwise clear inside
+[19:58] then that means that the fault that
+[20:00] caused that to happen was not a high
+[20:03] current fault it wasn't a bang type
+[20:05] fault it was maybe just a wrong lamp has
+[20:08] been put in or a long wrong Lord or
+[20:10] something's feeling that's growing
+[20:11] graduating low resistance and the
+[20:13] current has increased to the point that
+[20:14] this has exceeded its a current rating
+[20:17] but it's not been a dead short circuit
+[20:19] so the wire parts and it just holds up
+[20:22] at the end a bit like when you heat
+[20:23] sword in it sort of goes round at the
+[20:24] end the other scenario is when a fuse
+[20:28] blows and the inside is just solid it's
+[20:32] all coffee and black inside you can't
+[20:34] actually see through the glass anymore
+[20:36] in that instance that was almost
+[20:38] certainly a catastrophic failure that
+[20:40] was a dead short circuit something went
+[20:42] bang something shorted out and the fuse
+[20:45] wire blew with such forces it's pleated
+[20:46] inside the glass other things to note if
+[20:50] you look at a glass fuse and you see oh
+[20:53] there's a wire inside that's okay it's
+[20:56] intact don't take that as gospel that
+[20:59] is intact because what can happen
+[21:01] is the wire might be intact it might be
+[21:04] correctly bonded on at that end but it
+[21:06] may have broken just out of sight it may
+[21:08] have just detached from the end there
+[21:10] and it's possible with thermal cycling
+[21:14] and just age that fuses do gradually
+[21:16] aged a fuse can feel without a fault
+[21:18] being there the thermal expansion
+[21:20] contraction could just take its toll and
+[21:23] it can fracture and when that happens it
+[21:26] may happen at the end so always check
+[21:28] the fuses with ammeter and don't just
+[21:30] rely on taking a look through that
+[21:31] through the glass at the fuse wire
+[21:34] inside next thing if you've got a big
+[21:37] fuse like this and it blows and you're
+[21:39] like oh where am I going to get a fuse
+[21:41] like that and you'll get the option you
+[21:44] can short oh no don't do that or you can
+[21:46] do it some people too and but even with
+[21:48] standard plug type fuses the wrap tin
+[21:51] for on them don't do that you see you
+[21:55] get clipped and brought in rip here and
+[21:57] people have wrapped a bit of wire around
+[21:59] and then pushed it back into the fuse or
+[22:01] deceit oh it's okay it was a crank
+[22:02] reading of wire it may be the correct
+[22:04] ratio wire but it wasn't in the correct
+[22:06] housing it wasn't inside the ceramic
+[22:08] tube and that gets really you know
+[22:12] that gets really important with
+[22:13] industrial applications if you just
+[22:16] spray this fuse in and you wrap a bit of
+[22:19] wire just wrap a bit of wire around and
+[22:20] you see oh it's okay the fuse is rated
+[22:22] for yours roughly the size it's going to
+[22:24] blow first what's actually going to
+[22:26] happen if there is a major fault is that
+[22:28] wire is going to just splatter it's
+[22:30] going to vaporize you're going to get a
+[22:31] conductive plasma that plasma is because
+[22:35] it's electric conductive it's going to
+[22:36] spread out and it's going to carry
+[22:38] current and if that then goes on to
+[22:40] earth metal work in the vicinity you'll
+[22:42] get a high current passage to that and
+[22:44] then that plasma will continue the it
+[22:47] will get further it goes on to the
+[22:49] adjacent phases and then you've got
+[22:52] higher voltage high current flowing
+[22:54] through his plasma in short just like
+[22:57] that boom the whole panel will explode
+[23:00] honestly just the whole panel that door
+[23:03] may actually get blown off in an
+[23:04] industrial application and I can recall
+[23:08] going to factory and engineering works
+[23:12] where they'd had a simple fault had
+[23:14] occurred and the fuses were obviously
+[23:16] something that happened they were the
+[23:18] wrong fuses they weren't suitable but
+[23:21] the actual fault was that one of the
+[23:23] infrared light curtains I wrecked fired
+[23:25] filled in and blew in the fuse that's
+[23:27] what the problem was and they'd got
+[23:30] their local dabbler to have a goal and
+[23:32] he'd obviously opened the panel and
+[23:33] started poking contactors and that
+[23:35] control the motors I'm pretty sure that
+[23:38] was a press so it would have basically
+[23:39] been one big mortar and it would have
+[23:41] had star delta on it to actually ramp up
+[23:44] to speed he had obviously poked in both
+[23:46] contactors and basically shorted out all
+[23:48] three phases simultaneous because they
+[23:50] weren't mechanically interlocked and the
+[23:53] fuses had not protected he I don't know
+[23:56] if he was injured or not that people in
+[23:58] the factory said there was just massive
+[23:59] explosion from the machine they was like
+[24:01] threw him back from the panel and inside
+[24:05] all the wiring was burnt all all the
+[24:07] insulation was off the wiring all the
+[24:09] components were burned it was just black
+[24:11] inside the control panel had been
+[24:13] destroyed it didn't blow the fuse in the
+[24:16] machines and you know latterly and I
+[24:19] just looked and said that has suffered
+[24:22] so much damage is going to require
+[24:23] pretty much a rebuild
+[24:25] but it had also taken out the few the
+[24:28] fault had gone all the way back the
+[24:29] fuses in it whatever they were had not
+[24:32] ruptured the current safely the actual
+[24:34] fuse carrier and it was welded in and
+[24:36] that had gone back and had blown out all
+[24:38] the power to the factory everything had
+[24:41] just gone black with that massive
+[24:42] explosion and that's not a good
+[24:44] situation to be in when some like that
+[24:46] happens so I know tin foil and no wires
+[24:49] over the surface of these and other key
+[24:55] points worth saying if you have all
+[25:00] future waiting yet right substituting
+[25:04] fuses the only time you should ever
+[25:07] substitute a different value is if you
+[25:09] know that the fuse it was blue and if
+[25:11] you found the fault if you've not got a
+[25:13] fuse the crack value you can put in
+[25:15] perhaps very slightly higher or lower if
+[25:19] you know the currents in that range but
+[25:22] don't leave that in don't treat that as
+[25:24] a permanent fix they always make sure
+[25:26] that the correct fuse specified by the
+[25:29] manufacturer and unfortunately there's
+[25:31] equipment that comes out of the wrong
+[25:33] specification so in that case if you've
+[25:36] got a persistent problem then you have
+[25:40] to make an educated decision you
+[25:41] actually have to monitor the vault the
+[25:43] current and the equipment measure it
+[25:45] with a meter under all conditions you
+[25:48] have to make an educated decision and
+[25:49] find the correct routing fuse for that
+[25:52] equipment and market in it clearly and
+[25:54] it's not uncommon to find equipment that
+[25:58] someone's replaced a fuse in the past
+[26:00] and it's worked for a while but then
+[26:01] it's filled and a common thing there is
+[26:04] people putting the quick blow fuses in
+[26:05] we're a time delay fuse existed in the
+[26:07] first place and the fuse rating was
+[26:10] correct but the characteristic was not
+[26:12] so you you know if you've got a
+[26:14] persistent problem the fuses blowing you
+[26:16] have to consider is it an actual fault
+[26:18] or is it that the fuse has been changed
+[26:21] at some point for an appropriate value
+[26:23] and the function of that works both ways
+[26:25] people can put bigger fuses in and you
+[26:27] just never know until a a major fault
+[26:31] occurs and damage occurs so sometimes
+[26:35] when you get new equipment that is same
+[26:37] hand it's what actually checking all the fuses and
+[26:40] making sure the correct ones for the
+[26:42] task and the crack ratings so it's a
+[26:44] complex of area but once you get your
+[26:48] head round it you know it's quite easy
+[26:50] selecting the correct type of fuse and
+[26:52] that will avoid potential problems it
+[26:55] just offers closure protection and also
+[26:58] nuisance tripping so it's an interesting
+[27:00] subject

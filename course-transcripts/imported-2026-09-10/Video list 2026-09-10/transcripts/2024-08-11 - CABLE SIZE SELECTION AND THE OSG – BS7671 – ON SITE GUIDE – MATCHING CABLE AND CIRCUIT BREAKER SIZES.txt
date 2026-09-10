@@ -1,0 +1,316 @@
+# CABLE SIZE SELECTION AND THE OSG – BS7671 – ON SITE GUIDE – MATCHING CABLE AND CIRCUIT BREAKER SIZES
+# https://www.youtube.com/watch?v=8Z255dd78H4
+
+welcome to this video on cable size selection and the on-site guide from learn electrics this video and the page numbers that are used are specific to the brown Amendment two onsite guide with just one exception from the brown wiring regulations book I should point out that although Amendment Three is now released and we have a video on this amendment three is a 10-page add-on pack that is attached to Amendment two so the amendment two books are still valid as just mentioned while using the brown Amendment two books and the questions we will answer will include how do I use the information in the books to help me why should I choose the correct size cable and circuit breaker and what are the formulas that will assist me let's start with the cable size formula there is a set method to help you to select the correct size cable for a particular circuit and you are encouraged to use it this is an important formula or equation and we must follow this in the correct order so that we get the right result the formula comes from the 18th Edition amendment to to wiring regulations book The Big Brown book the formula is talked about in words as follows look at page 424 of the big brown amendment 2 book and this is appendix 4 section 4 and look at the third paragraph shown here is part of this page page 424 from the brown reg's book this information is not found in the onsite guide look at the blue highlighted area here it mentions IB i n and i z and their relationship to each other it tells us that IB must be equal to or less than i n and that I N must be equal to or less than i z so what do these symbols mean IB is the design current the load think of IB as B for build what current has a manufacturer built the appliances to take what is going to be plugged into the circuit what has the circuit been designed for i n is the nominal current rating of the breaker or fuse think of n as the number or name printed on the breaker for example Le 16 amps or 32 amps the nominal current i z is the cable rating what is the maximum current that a conductor can carry under certain conditions without overheating or exceeding the voltage drop requirements we can take a moment to look at the funny symbol shown in the formula it's very important that you understand this symbol and that you get it the correct way round get it wrong and you will be in all sorts of trouble we can have a less than symbol any number on the left side must be less than the number on the right then we can have an equals symbol the numbers on both sides must be exactly equal now we can combine them as shown so that we can say that the number on the left is less than or equal to the number on the right and here is an example using the less than symbol 2 is definitely less than three and the equals symbol 2 is exactly equal to two combine the two and we can say that 2 is less than or equal to three remember this it matters the design L current must be less than or equal to the fuse or breaker size and the fuse size or breaker size must be less than or equal to the cable current carrying capacity for the circuit why does this matter the design current cannot be greater than the fuse or breaker size for example we cannot have a 13 amp kettle on a 5 amp fuse every time it's switched on the fuse will blow and the cable rating must always be the strongest part of the circuit and chosen for its current carrying capacity for that particular circuit's installation conditions it is chosen so that it does not exceed the limiting temperature before the protected device operates and to not exceed the voltage drop limit it is easier to change a fuse than it is to rewire a whole circuit there is a specific order of calculation that must be followed first is IB we always calculate the load first then I N so that we choose the correct breaker or fuse size and finally I Z we can determine the correct cable size for the circuit very often we will know the Watts or kilowatts for the load or Appliance but we need the information in amps for this we can use the power law triangle as shown here if we know the power p in watts and we know the voltage V of the circuit then we can easily calculate the amps p ided v gives I or some people will say Watts divided by volts will tell us the amps Let's do an example calculation we are asked a 3,000 watt Kettle is attached to a 240 volt Supply what is IB the current in amps use the formula shown and put in the numbers given in the question 3,000 Watts ided by 240 volts is 12.5 amps that is our answer IB the design current is 12.5 amps another example this time a 4.6 kwatt space heater is fed from a 230 volt Supply what is the design current IB in amps the first thing we must do is to convert kilowatts into watts to do this multiply the kilowatts by 1,000 so that for 4.6 Kow is the same as 4,600 wat now we can put the numbers into the formula 4,600 wat ided 230 Vol is 20 amps and this is our answer IB the design current is 20 amps and we will use this 4.6 kilow heater for the rest of the video we know IB 20 amps so now we can select the most appropriate breaker size and this can be any overcurrent protector device a circuit breaker a fuse or an rcbo before we move on check page 74 of your on-site guide some books will show a typo where the on-site guide uses BS 60898 and Bs 619 please read this as bsen 60898 and b619 nobody is infallible okay back to the nitty-gritty table 7.11 shows the popular sizes for overload protected devices and the assumed loads per circuit this is useful because good practice says that gener generally we should not select Breakers and fuses where the constant load is close to the actual breaker rating we have a constant 20 amp load here and we may be tempted to select a 20 amp breaker this would not be right we should choose the next size up a 25 amp breaker and you can see in the rightmost column that a 25 amp breaker is correct for a 20 amp load so as shown on page 74 for our 4.6 kilowatt heater we will choose a BS 60898 25 amp type B breaker let's see where that takes us now that we've selected a breaker we can move on to Cable size selection table 7.13 in the on-site guide covers several pages take some time to study the layout and Order of these Pages we want page 81 we will make some assumptions and assume that the installation method 100 applies and the table shows us that for a 25 amp type B breaker we should choose 4 mm by 1.5 mm twin and Earth cable as shown in the red box the table also tells us that if this was a tncs system then we could have a cable run of up to 55 M subject to voltage drop limits and we should check this next it's important that we check the voltage drop before installing the cable we need to be certain that sufficient voltage will be present at the load the heater in this case to allow the heater to function correctly any voltage drop is lost in the cable and the customer is paying for lost energy and not heating the house most efficiently voltage drop is measured in Mill volts per amp per meter and we will convert this back to volts in the calculation page 176 shows a variety of voltage drops and we are interested in singlephase AC voltages with the values shown in the pink table page 168 of the on-site guide shows the formula that we should use in order to calculate the actual voltage drop in the cable note that we only measure the length in one direction from the consumer unit to the load and not there and back the actual voltage drop or VD is equal to the mill volts per amp per meter multiplied by the load IB multiply by the length in meters this is all divided by 1,000 to convert the answer into volts so start with the basic formula and put in the numbers that we have 11 from the pink table 20 amps from our earlier calculation and 55 M as suggested by the on-site guide dividing this by 1,000 we have a voltage drop of 12.1 Vols when we check the result we find that the voltage drop limit will be exceeded for this circuit if we use the full 55 M too much voltage is lost in the cables the maximum permitted voltage drop for a non-lighting circuit is 11.5 volts we have two choices in order to find a solution we can do one of two things either install a bigger cable size as this will reduce the voltage drop say from 4 mm cable to 6 mm a bigger cable size will reduce the mvam number or we could find a shorter route for the cable but how much shorter can we calculate the new maximum length if we reduce the length we reduce the voltage drop either or both of these actions will reduce the voltage drop we need to get below that magical 11.5 volts limit what happens if we choose a bigger cable size ignoring the fact that it costs more money if we choose 6X 2.5 twin and Earth the table tells us the 6 mm cable has an mbaam number of 7.3 if we put this number into the calculation we have a voltage drop of just 8.03 volts perfectly acceptable the maximum permitted voltage drop is 11.5 volts and the actual voltage drop is just over 8 volts in this example 6 mm Tren Earth cable will be adequate or we could keep the 4 mm cable and try to find a shorter route that is still acceptable to do this we need to rearrange the voltage drop formula to make the maximum length the subject we've done this for you as shown in the blue box the maximum length is found by multiplying the maximum permitted voltage drop by 1,000 and then dividing this by the mill volts per amp per meter and the design current IB putting the numbers into the calculation as shown we have an answer of 52 M so the new length is 52 M compared to the previous 55 M if we don't need 55 M then don't use it if we can save 3 m by re-rooting the cable we can still install 4 mm by 1.5 mm twin and Earth and here we show all three formulas that we've used in the video and it would be well worth writing these down somewhere that is easy to access you will need them not just in exams but on site too practice really is the key to being successful in exams and in being professional when on site make up some examples of your own and work through to find an answer for example a 3 kwatt immersion heater on a 230 volt feed or a 240 volt lighting circuit with six 100 wat BC lamps thank you for watching it really is appreciated and I hope that you found this video useful and informative please subscribe to our channel to get access to all of our videos and remember to click on notify to be sure of not missing our next video and you will find even more information videos and help on our website at learn electric.com and don't forget you can also type in learn electric or one word into the YouTube search bar to go directly to our Channel at any time from any computer we constantly adding new videos to our channel so don't miss the next one and once again thank you for watching and we hope to see you again very soon
+
+
+[00:01] welcome to this video on cable size
+[00:03] selection and the on-site guide from
+[00:06] learn
+[00:07] electrics this video and the page
+[00:10] numbers that are used are specific to
+[00:13] the brown Amendment two onsite guide
+[00:17] with just one exception from the brown
+[00:20] wiring regulations book I should point
+[00:23] out that although Amendment Three is now
+[00:26] released and we have a video on this
+[00:29] amendment three is a 10-page add-on pack
+[00:33] that is attached to Amendment two so the
+[00:37] amendment two books are still
+[00:40] valid as just mentioned while using the
+[00:43] brown Amendment two books and the
+[00:46] questions we will answer will include
+[00:49] how do I use the information in the
+[00:51] books to help me why should I choose the
+[00:54] correct size cable and circuit breaker
+[00:58] and what are the formulas
+[01:00] that will assist
+[01:02] me let's start with the cable size
+[01:05] formula there is a set method to help
+[01:08] you to select the correct size cable for
+[01:10] a particular circuit and you are
+[01:13] encouraged to use
+[01:15] it this is an important formula or
+[01:18] equation and we must follow this in the
+[01:21] correct order so that we get the right
+[01:24] result the formula comes from the 18th
+[01:28] Edition amendment to to wiring
+[01:30] regulations book The Big Brown book the
+[01:34] formula is talked about in words as
+[01:38] follows look at page 424 of the big
+[01:42] brown amendment 2 book and this is
+[01:45] appendix 4 section 4 and look at the
+[01:49] third
+[01:51] paragraph shown here is part of this
+[01:54] page page 424 from the brown reg's book
+[01:58] this information is not found in the
+[02:01] onsite guide look at the blue
+[02:04] highlighted area here it mentions IB i n
+[02:09] and i z and their relationship to each
+[02:13] other it tells us that IB must be equal
+[02:17] to or less than i n and that I N must be
+[02:23] equal to or less than i z so what do
+[02:27] these symbols mean
+[02:30] IB is the design current the load think
+[02:34] of IB as B for build what current has a
+[02:39] manufacturer built the appliances to
+[02:41] take what is going to be plugged into
+[02:44] the circuit what has the circuit been
+[02:47] designed for i n is the nominal current
+[02:51] rating of the breaker or fuse think of n
+[02:55] as the number or name printed on the
+[02:58] breaker for example Le 16 amps or 32
+[03:03] amps the nominal current i z is the
+[03:07] cable rating what is the maximum current
+[03:11] that a conductor can carry under certain
+[03:13] conditions without overheating or
+[03:17] exceeding the voltage drop
+[03:20] requirements we can take a moment to
+[03:23] look at the funny symbol shown in the
+[03:25] formula it's very important that you
+[03:29] understand this symbol
+[03:30] and that you get it the correct way
+[03:32] round get it wrong and you will be in
+[03:35] all sorts of trouble we can have a less
+[03:39] than symbol any number on the left side
+[03:42] must be less than the number on the
+[03:45] right then we can have an equals symbol
+[03:49] the numbers on both sides must be
+[03:52] exactly equal now we can combine them as
+[03:56] shown so that we can say that the number
+[03:59] on the left is less than or equal to the
+[04:03] number on the right and here is an
+[04:07] example using the less than symbol 2 is
+[04:11] definitely less than three and the
+[04:14] equals symbol 2 is exactly equal to two
+[04:19] combine the two and we can say that 2 is
+[04:23] less than or equal to
+[04:26] three remember this it matters the
+[04:29] design L current must be less than or
+[04:32] equal to the fuse or breaker size and
+[04:36] the fuse size or breaker size must be
+[04:39] less than or equal to the cable current
+[04:42] carrying capacity for the
+[04:45] circuit why does this matter the design
+[04:48] current cannot be greater than the fuse
+[04:50] or breaker size for example we cannot
+[04:54] have a 13 amp kettle on a 5 amp fuse
+[04:58] every time it's switched on the fuse
+[05:01] will blow and the cable rating must
+[05:04] always be the strongest part of the
+[05:07] circuit and chosen for its current
+[05:09] carrying capacity for that particular
+[05:12] circuit's installation conditions it is
+[05:15] chosen so that it does not exceed the
+[05:18] limiting temperature before the
+[05:20] protected device operates and to not
+[05:24] exceed the voltage drop limit it is
+[05:27] easier to change a fuse than it is to
+[05:30] rewire a whole
+[05:33] circuit there is a specific order of
+[05:36] calculation that must be
+[05:38] followed first is IB we always calculate
+[05:42] the load first then I N so that we
+[05:46] choose the correct breaker or fuse size
+[05:49] and finally I Z we can determine the
+[05:53] correct cable size for the
+[05:55] circuit very often we will know the
+[05:58] Watts or kilowatts for the load or
+[06:00] Appliance but we need the information in
+[06:03] amps for this we can use the power law
+[06:07] triangle as shown here if we know the
+[06:10] power p in watts and we know the voltage
+[06:13] V of the circuit then we can easily
+[06:16] calculate the amps p ided v gives I or
+[06:23] some people will say Watts divided by
+[06:26] volts will tell us the amps
+[06:30] Let's do an example calculation we are
+[06:34] asked a 3,000 watt Kettle is attached to
+[06:38] a 240 volt Supply what is IB the current
+[06:43] in amps use the formula shown and put in
+[06:47] the numbers given in the question 3,000
+[06:51] Watts ided by 240 volts is 12.5 amps
+[06:57] that is our answer IB the design current
+[07:01] is 12.5
+[07:03] amps another example this time a 4.6
+[07:08] kwatt space heater is fed from a 230
+[07:13] volt Supply what is the design current
+[07:16] IB in amps the first thing we must do is
+[07:20] to convert kilowatts into watts to do
+[07:24] this multiply the kilowatts by 1,000 so
+[07:28] that for 4.6 Kow is the same as
+[07:33] 4,600 wat now we can put the numbers
+[07:37] into the formula 4,600 wat ided 230 Vol
+[07:43] is 20 amps and this is our answer IB the
+[07:49] design current is 20
+[07:52] amps and we will use this 4.6 kilow
+[07:55] heater for the rest of the
+[07:57] video we know IB 20 amps so now we can
+[08:02] select the most appropriate breaker size
+[08:05] and this can be any overcurrent
+[08:07] protector device a circuit breaker a
+[08:10] fuse or an
+[08:13] rcbo before we move on check page 74 of
+[08:17] your on-site guide some books will show
+[08:21] a typo where the on-site guide uses BS
+[08:26] 60898 and Bs 619
+[08:30] please read this as bsen
+[08:34] 60898 and
+[08:38] b619 nobody is
+[08:41] infallible okay back to the
+[08:44] nitty-gritty table
+[08:47] 7.11 shows the popular sizes for
+[08:49] overload protected devices and the
+[08:52] assumed loads per circuit this is useful
+[08:56] because good practice says that gener
+[08:59] generally we should not select Breakers
+[09:01] and fuses where the constant load is
+[09:04] close to the actual breaker rating we
+[09:07] have a constant 20 amp load here and we
+[09:11] may be tempted to select a 20 amp
+[09:14] breaker this would not be right we
+[09:16] should choose the next size up a 25 amp
+[09:20] breaker and you can see in the rightmost
+[09:23] column that a 25 amp breaker is correct
+[09:27] for a 20 amp load
+[09:30] so as shown on page 74 for our 4.6
+[09:34] kilowatt heater we will choose a
+[09:37] BS 60898 25 amp type B
+[09:43] breaker let's see where that takes
+[09:46] us now that we've selected a breaker we
+[09:49] can move on to Cable size
+[09:52] selection table
+[09:54] 7.13 in the on-site guide covers several
+[09:58] pages take some time to study the layout
+[10:01] and Order of these Pages we want page
+[10:05] 81 we will make some assumptions and
+[10:09] assume that the installation method 100
+[10:12] applies and the table shows us that for
+[10:16] a 25 amp type B breaker we should choose
+[10:20] 4 mm by 1.5 mm twin and Earth cable as
+[10:25] shown in the red
+[10:27] box the table also tells us that if this
+[10:31] was a tncs system then we could have a
+[10:35] cable run of up to 55 M subject to
+[10:39] voltage drop limits and we should check
+[10:42] this
+[10:43] next it's important that we check the
+[10:45] voltage drop before installing the cable
+[10:49] we need to be certain that sufficient
+[10:51] voltage will be present at the load the
+[10:54] heater in this case to allow the heater
+[10:57] to function correctly any voltage drop
+[11:00] is lost in the cable and the customer is
+[11:03] paying for lost energy and not heating
+[11:05] the house most
+[11:07] efficiently voltage drop is measured in
+[11:10] Mill volts per amp per meter and we will
+[11:14] convert this back to volts in the
+[11:16] calculation page 176 shows a variety of
+[11:21] voltage drops and we are interested in
+[11:24] singlephase AC voltages with the values
+[11:28] shown in the pink
+[11:30] table page 168 of the on-site guide
+[11:33] shows the formula that we should use in
+[11:36] order to calculate the actual voltage
+[11:38] drop in the cable note that we only
+[11:41] measure the length in one direction from
+[11:44] the consumer unit to the load and not
+[11:47] there and back the actual voltage drop
+[11:51] or VD is equal to the mill volts per amp
+[11:55] per meter multiplied by the load IB
+[11:59] multiply by the length in meters this is
+[12:03] all divided by 1,000 to convert the
+[12:06] answer into
+[12:08] volts so start with the basic formula
+[12:11] and put in the numbers that we have 11
+[12:15] from the pink table 20 amps from our
+[12:19] earlier
+[12:20] calculation and 55 M as suggested by the
+[12:24] on-site guide dividing this by 1,000 we
+[12:28] have a voltage drop of 12.1
+[12:32] Vols when we check the result we find
+[12:35] that the voltage drop limit will be
+[12:37] exceeded for this circuit if we use the
+[12:40] full 55 M too much voltage is lost in
+[12:44] the cables the maximum permitted voltage
+[12:47] drop for a non-lighting circuit is 11.5
+[12:52] volts we have two choices in order to
+[12:55] find a solution we can do one of two
+[12:59] things either install a bigger cable
+[13:02] size as this will reduce the voltage
+[13:05] drop say from 4 mm cable to 6 mm a
+[13:10] bigger cable size will reduce the mvam
+[13:14] number or we could find a shorter route
+[13:17] for the cable but how much shorter can
+[13:21] we calculate the new maximum length if
+[13:24] we reduce the length we reduce the
+[13:26] voltage drop either or both of these
+[13:30] actions will reduce the voltage drop we
+[13:33] need to get below that magical 11.5
+[13:36] volts
+[13:38] limit what happens if we choose a bigger
+[13:41] cable size ignoring the fact that it
+[13:44] costs more money if we choose 6X 2.5
+[13:48] twin and Earth the table tells us the 6
+[13:51] mm cable has an mbaam number of
+[13:56] 7.3 if we put this number into the
+[13:59] calculation we have a voltage drop of
+[14:01] just
+[14:02] 8.03 volts perfectly
+[14:06] acceptable the maximum permitted voltage
+[14:08] drop is 11.5 volts and the actual
+[14:11] voltage drop is just over 8 volts in
+[14:15] this example 6 mm Tren Earth cable will
+[14:19] be
+[14:20] adequate or we could keep the 4 mm cable
+[14:24] and try to find a shorter route that is
+[14:26] still acceptable to do this we need to
+[14:30] rearrange the voltage drop formula to
+[14:33] make the maximum length the subject
+[14:36] we've done this for you as shown in the
+[14:38] blue box the maximum length is found by
+[14:42] multiplying the maximum permitted
+[14:44] voltage drop by 1,000 and then dividing
+[14:48] this by the mill volts per amp per meter
+[14:52] and the design current IB putting the
+[14:55] numbers into the calculation as shown we
+[14:58] have an answer of 52
+[15:01] M so the new length is 52 M compared to
+[15:07] the previous 55 M if we don't need 55 M
+[15:12] then don't use it if we can save 3 m by
+[15:16] re-rooting the cable we can still
+[15:18] install 4 mm by 1.5 mm twin and
+[15:23] Earth and here we show all three
+[15:26] formulas that we've used in the video
+[15:29] and it would be well worth writing these
+[15:31] down somewhere that is easy to access
+[15:34] you will need them not just in exams but
+[15:37] on site too practice really is the key
+[15:42] to being successful in exams and in
+[15:45] being professional when on site make up
+[15:48] some examples of your own and work
+[15:50] through to find an answer for example a
+[15:54] 3 kwatt immersion heater on a 230 volt
+[15:58] feed
+[15:59] or a 240 volt lighting circuit with six
+[16:03] 100 wat BC
+[16:05] lamps thank you for watching it really
+[16:08] is appreciated and I hope that you found
+[16:11] this video useful and informative please
+[16:15] subscribe to our channel to get access
+[16:17] to all of our videos and remember to
+[16:19] click on notify to be sure of not
+[16:21] missing our next video and you will find
+[16:24] even more information videos and help on
+[16:28] our website at learn
+[16:32] electric.com and don't forget you can
+[16:34] also type in learn electric or one word
+[16:37] into the YouTube search bar to go
+[16:39] directly to our Channel at any time from
+[16:42] any
+[16:43] computer we constantly adding new videos
+[16:45] to our channel so don't miss the next
+[16:48] one and once again thank you for
+[16:50] watching and we hope to see you again
+[16:53] very soon

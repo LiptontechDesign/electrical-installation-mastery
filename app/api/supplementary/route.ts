@@ -9,11 +9,11 @@ const pathname = 'course/supplementary-videos-v1.json';
 const coreVideos = new Set(course.modules.flatMap(m => m.lessons.map(l => youtubeId(l.url))));
 async function read() {
   const result = await get(pathname, { access: 'private', useCache: false });
-  if (!result) return { state: withSupplementaryDefaults({ version: 1, revision: 0, videos: [] }), etag: undefined };
+  if (!result) return { state: withSupplementaryDefaults({ version: 1, revision: 0, videos: [] }), promoted: [] as SupplementaryVideo[], etag: undefined };
   if (result.statusCode !== 200) throw new Error('Storage unavailable');
   const state: SupplementaryState = await new Response(result.stream).json();
   if (state.version !== 1 || !Array.isArray(state.videos) || !Number.isSafeInteger(state.revision)) throw new Error('Invalid storage');
-  return { state: withSupplementaryDefaults(state), etag: result.blob.etag };
+  return { state: withSupplementaryDefaults(state), promoted: state.videos.filter(v=>coreVideos.has(v.videoId)), etag: result.blob.etag };
 }
 const reply = (body: unknown, status = 200) => Response.json(body, { status, headers: privateHeaders });
 export async function GET() {
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
   const action = body.action as SupplementaryAction;
   if (!['add', 'edit', 'archive', 'restore'].includes(action) || body.confirmation !== confirmationPhrase(action)) return reply({ error: 'Type the confirmation phrase exactly.' }, 400);
   try {
-    const { state, etag } = await read();
+    const { state, promoted, etag } = await read();
     if (body.revision !== state.revision) return reply({ error: 'Someone changed the shared list. Refresh it, review your changes and confirm again.' }, 409);
     const existing = state.videos.find(v => v.id === body.id);
     if (action !== 'add' && !existing) return reply({ error: 'Video not found.' }, 404);
@@ -49,7 +49,9 @@ export async function POST(request: Request) {
       video = { id: existing?.id ?? crypto.randomUUID(), videoId, title, instructor, moduleId: module.id, anchorId: String(body.anchorId), position: body.position as 'before' | 'after', archived: existing?.archived ?? false, placementRevision: 1, updatedAt: new Date().toISOString() };
     } else video = { ...existing!, archived: action === 'archive', updatedAt: new Date().toISOString() };
     const next: SupplementaryState = { version: 1, revision: state.revision + 1, videos: existing ? state.videos.map(v => v.id === video.id ? video : v) : [...state.videos, video] };
-    await put(pathname, JSON.stringify(next), { access: 'private', addRandomSuffix: false, contentType: 'application/json', cacheControlMaxAge: 0, ...(etag ? { ifMatch: etag, allowOverwrite: true } : { allowOverwrite: false }) });
+    // Preserve historical visitor entries when another shared video is edited.
+    // They are excluded from the public list because the video is now canonical.
+    await put(pathname, JSON.stringify({...next,videos:[...next.videos,...promoted]}), { access: 'private', addRandomSuffix: false, contentType: 'application/json', cacheControlMaxAge: 0, ...(etag ? { ifMatch: etag, allowOverwrite: true } : { allowOverwrite: false }) });
     return reply(next);
   } catch (error) {
     if (error instanceof BlobPreconditionFailedError || (error instanceof Error && /already exists/i.test(error.message))) return reply({ error: 'Another visitor saved first. Refresh and confirm again.' }, 409);

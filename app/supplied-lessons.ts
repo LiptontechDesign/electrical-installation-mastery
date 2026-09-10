@@ -6,9 +6,10 @@ import { acPhasors } from './supplied-ac-phasors';
 import { acApplications } from './supplied-ac-applications';
 import type { SuppliedTeaching } from './supplied-content-types';
 import type { LessonSeed } from './course-extension/builders';
+import { integratedTeaching } from './integrated-content';
 
 const content: Record<string, SuppliedTeaching> = { ...resistanceContent, ...lightingContent, ...acFoundations, ...acPhasors, ...acApplications };
-export const suppliedTeaching: Record<string, SuppliedTeaching> = {};
+export const suppliedTeaching: Record<string, SuppliedTeaching> = {...integratedTeaching};
 export const suppliedLessons: LessonSeed[] = index.filter(video => !video.existing).map(video => {
   const teaching = content[video.videoId];
   if (!teaching) throw new Error(`Missing transcript-authored content: ${video.videoId}`);
@@ -23,6 +24,7 @@ export const suppliedLessons: LessonSeed[] = index.filter(video => !video.existi
 export const suppliedGuides = Object.fromEntries(suppliedLessons.map(lesson => [lesson.id, lesson.guide]));
 
 export const sourceClarifications: Record<string, string> = {
+  ...Object.fromEntries(Object.entries(integratedTeaching).filter(([,t])=>t.note).map(([id,t])=>[id,t.note!])),
   'supp-resistance-02': 'Copper resistance rises as it warms, but it is not directly proportional to Celsius temperature. Doubling a Celsius reading does not imply twice the resistance.',
   'supp-lighting-02': 'The distance relationship is inverse-square, not exponential: tripling distance gives one ninth of the direct illuminance under the stated model.',
   'supp-ac-theory-13': 'Lower supply current at unchanged voltage means lower apparent power. It does not by itself mean that the lamp uses less real power; useful load power and cable losses are separate.',

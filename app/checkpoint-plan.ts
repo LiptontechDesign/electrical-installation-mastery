@@ -1,4 +1,5 @@
 import course, { legacyModules } from './course-curriculum';
+import integratedIndex from './integrated-video-index.json';
 export type CheckpointPlanItem = {
   title: string;
   throughLessonId: string;
@@ -129,11 +130,16 @@ export const legacyScopes = legacyModules.flatMap(module => {
   });
 });
 const sourceChapter=new Map(legacyScopes.flatMap(scope=>scope.newLessonIds.map(id=>[id,scope] as const)));
+for(const video of integratedIndex){
+  const source=sourceChapter.get(video.anchor);
+  if(!source)throw new Error('Missing source chapter for '+video.id);
+  sourceChapter.set(video.id,source);
+}
 // New stage boundaries follow coherent work tasks rather than every legacy chapter change.
 const stageGroups:Record<string,readonly (readonly [string,string])[]>={
-  'module-02':[['p07-l15','Supply architecture and drawings'],['p16-l05','Tools, isolation and service detection']],
+  'module-02':[['p07-l15','Supply architecture and drawings'],['course-UFvL7wTFzl0','Safe isolation and emergency response'],['p16-l05','Tools and service detection']],
   'module-03':[['p16-l02','Preparing conductors and connections'],['p03-l09','Lighting switching arrangements'],['p03-l10','Socket circuits and accessories'],['p10-l04','Planning and first/second fix'],['p11-v2-l10','Installing residential accessories'],['p03-l11','Practical luminaires and final connections']],
-  'module-05':[['p05-l05','Faults, fuses and overcurrent response'],['p02-l08','Residual-current and protective-device distinctions'],['p05-l10','Earthing and protective bonding'],['p05-l11','Fault loops and automatic disconnection'],['p05-spd','Device selection and surge protection']],
+  'module-05':[['course-kx35WN3uLis','Faults and fuse selection'],['course-Me_adh09CdY','MCB mechanisms and characteristic curves'],['course-TqdQRgf3uGs','Residual-current and protective-device distinctions'],['p05-l10','Earthing and protective bonding'],['p05-l11','Fault loops and automatic disconnection'],['p05-spd','Device selection and surge protection']],
   'module-06':[['p06-l12','Load, demand and design current'],['p06-l10','Cable sizing and installation factors'],['p06-l08','Voltage-drop checks'],['p06-l15','Fault checks and final design evidence']],
   'c2-boards':[['p03-l12','Consumer-unit assembly and connections'],['p10-l05','Complete installation cases']],
   'module-08':[['p08-l06','Inspection, continuity, insulation and polarity'],['p08-l10','Controlled live verification'],['p16-l09','RCD, functional checks and documentation']],

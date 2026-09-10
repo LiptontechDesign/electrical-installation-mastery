@@ -26,7 +26,9 @@ const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])).ma
   id,videoId,title,instructor,anchorId,position,moduleId:locations.get(anchorId)!,archived:false,placementRevision:1,updatedAt:'2026-09-10T00:00:00.000Z',
 }));
 export function withSupplementaryDefaults(state:SupplementaryState):SupplementaryState {
-  const saved=state.videos.map(video=>{
+  // Promoted videos now have one canonical lesson. Keep stored history intact,
+  // but do not display or merge a second supplementary copy.
+  const saved=state.videos.filter(video=>!canonical.has(video.videoId)).map(video=>{
     const seed=defaults.find(item=>item.id===video.id||item.videoId===video.videoId);
     // One curriculum migration; later visitor moves are preserved.
     const migrated=seed&&!video.placementRevision ? {...video,moduleId:seed.moduleId,anchorId:seed.anchorId,position:seed.position,title:video.title.replace(/^Protection study path \d+\/10 · /,''),placementRevision:1} : video;

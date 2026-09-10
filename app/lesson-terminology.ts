@@ -1,6 +1,10 @@
 // Vocabulary bridges, not interchangeable labels for different quantities.
 // Shared presentation is intentional; assessment questions remain separately authored.
 const bridges=[
+  {match:/\b(rccb|rcbo)\b/i,term:'RCCB versus RCBO',meaning:'An RCCB has residual-current protection without integral overcurrent protection. An RCBO combines both. Neither makes touching live conductors safe.'},
+  {match:/\b(i cu|icu|ics|breaking capacit)\b/i,term:'Breaking capacity versus rated current',meaning:'The kA interruption rating concerns prospective fault duty. The ampere load rating describes a different requirement; record the operating voltage too.'},
+  {match:/\b(power.factor correction|shunt capacitor)\b/i,term:'Power-factor correction (also abbreviated PFC)',meaning:'Here PFC means reactive compensation. In testing, the same letters can mean prospective fault current: expand the abbreviation from its context.'},
+  {match:/\b(slip|synchronous)\b/i,term:'Synchronous speed versus rotor speed',meaning:'The field speed follows frequency and pole count. An induction rotor runs below it under motoring load; their difference is slip.'},
   {match:/\b(real|true|active) power\b/i,term:'True power (real or active power), P',meaning:'These names refer to net energy transfer per second, measured in watts. This includes useful output and real losses.'},
   {match:/\breactive power\b/i,term:'Reactive power, Q — var',meaning:'The field-energy exchange discussed in the AC lessons. It is distinct from true power in watts and apparent power in volt-amperes.'},
   {match:/\bapparent power\b/i,term:'Apparent power, S — VA',meaning:'The RMS voltage–current product. Keep kVA separate from kW when discussing supply loading.'},

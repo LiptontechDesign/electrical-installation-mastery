@@ -1,0 +1,424 @@
+# Why Circuit Breakers DON'T Protect People (electric shocks)
+# https://www.youtube.com/watch?v=gqEu9t8HwW0
+
+sponsored by brilliant will this circuit breaker save you from an electric shock no will any of these no why well this number here tells us that the breaker is rated for 3 amp of current and it's one of the smallest you can buy for reference this lamp is around 0.14 amps this toaster is around 3 amps and this hair dryer is 7.8 amps your body has a very High Resistance we can touch a low voltage battery and nothing really happens but the cables in our homes carry much higher voltages touch those and current can flow straight through you at just 20 milliamps your muscles contract and you probably won't be able to let go at 0.2 amps for 1 second and your heart can stop beating so this 3 amp circuit breaker isn't going to trip and save you it will just provide Power to whatever is connected Ed to it including you in fact even this 3 amp toaster won't trip this 3 amp breaker this letter tells us that and I'll explain that later on in the video so if it doesn't protect people then what does it protect it protects cables and property and property is expensive why property well the current flows through cables in our properties inside the cable is a metal conductor which provides a load resistance path to the electrical load this is covered with an insulation to protect us and prevent the current from taking alternative Roots whenever current flows through a wire it generates heat now this isn't a problem but as the current increases then the temperature increases and at a certain point the insulation weakens and eventually melts this exposes the metal conductors and even causes fires each size cable is rated for a certain maximum current so the breaker must not exceed that value the breaker will detect excessive current and automatically trip to protect the cable it does that using these internal parts which I'll explain in just a moment so if we pass 20 amps through this 10 amp breaker how long will it take to trip tell me in the comment section and I'll give you the answer at the end of the video to protect people we use another device which measures the current flowing into and out of the device it then trips if these two values are not equal but that's a topic for another video this circuit breaker only detects short circuits and overloads ordinarily the current flows from the line through the load and back on the neutral this is AC current so it actually flows forwards and backwards but I'll explain it as DC for Simplicity the resistance of the load limits the current but if the line and neutral come into direct contact then we have a short circuit because there's no resistance so a huge and instant surge of current occurs and trips the breaker instantly we know that the breaker is rated for a certain current each time we plug and Appliance in we increase the current eventually we will exceed the breaker's limits and it will trip this is an overload and it takes a lot longer to trip we can manually operate the breaker to isolate the power but it will trip automatically once the fault is removed we can manually reset the device even if the lever is held in the on position most devices will still be able to trip and that's thanks to a clever internal design most of the world uses these mcbs for residential uses but North America and a few other places use plug in Breakers although mcbs are still often used in industrial and controls applications in those regions each manufacturer has a slightly different design they all work in a very similar way but you shouldn't mix them this is a consumer unit installed in the UK we can see it has lots of mcbs remember electricity is dangerous and can be fatal you must be qualified and competent to carry out any electrical work inside the consumer unit we have the live and the neutral incoming Supply this enters a double pole main switch the live passes through to the rcd and then to a metal bus bar that Connect into the bottom of the rcd this will provide Power to multiple circuit breakers a wire runs out the top of the breaker off to the load a neutral wire then runs from the load and back to another neutral block this block connects to the rcd the rcd connects to the main neutral block and this connects to the main switch so current flows in on the live through the main switch into the rcd through the circuit breaker through the load and into a terminal block then back on the rcd to the main terminal and out through the main switch to complete the circuit although as this is AC electricity the current actually flows back and forth looking at the circuit breaker we find a notch on the back this lets us clip onto a d rail this rail is not electrified on the front we have a lever which flips up and down and also indicates the status there's usually an indicator window too there's lots of text which I'll explain later on in the video we also find two screw terminals these let us adjust the terminals to grip a wire or bus bar on the top and bottom be careful though as it can go behind giving a false connection and you definitely don't want that there's often a heat vent on the top and on the bottom we see a tiny hidden screw I'll explain that in just a moment I had to drill out the rivets but then we can remove the case to see all the strange parts inside each manufacturer has a slightly different design but they all work in a very similar way we basically have a bi metallic strip for overload protection a solenoid for short circuit protection a lever a mechanism with movable contact and an arc chamber as well as two terminals in normal operation the current flows through the bottom terminal along the track through the biometallic strip through the braided wire to the movable contact arm through the contact pad into the copper track then into the wire around the solenoid coil and then out the wire and through the top terminal and it then goes off to the load the contact arm simply moves away to break the circuit to understand how it works we start with the main lever and notice it is spring loaded a small spring pushes against the case and forces the lever into the off position next we see the mechanism which has three main parts at the center is the main arm which is held in position with a pin the arm can pivot around this point a metal contact plate is attached to this arm when the arm moves the plate also moves a spring is attached to this arm and pushes against the case forcing the arm downwards a trigger arm sits on top of the main arm and can move a small amount around the same Pivot Point the trigger arm has a small opening at the end which aligns with a channel in the main arm a small spring pushes against the trigger arm and Main arm forcing the trigger arm to rotate and close this Gap a metal link is inserted into this Gap and connects to a hole in the lever the main arm and Trigger arm partly surround this metal link when we rotate the lever the metal link will also move and follow the rotation of the lever this pushes down on the main arm causing it to also rotate which compresses the spring the lever is prevented from going any further by the case the spring of the main arm is now pushing firmly against the metal link the tension of the spring on the trigger arm is just enough to keep the link in place but if a small downward Force acts on the trigger arm it will move and release the metal link the spring of the main arm instantly forces the arm downwards into the off position this happens so fast we need to sit in slow motion you can see the trigger arm moves which releases the metal link the main arm spring instantly moves the arm opening the circuit the ballic strip and the solenoid can both trigger the arm and trip the breaker the ballic strip protects from overloads this is made from two different Metals joined together each with a different thermal expansion coefficient in this version you can see the different colors of the materials there are other designs it just depends on the manufacturer when the strip is heated one metal expands slowly the other expands much faster which causes the strip to bend current flows through the biometallic strip which generates heat and causes the strip to bend the braided cable allows some flexibility but if too much current flows the strip will push the trigger arm and trip the breaker there is also a small screw here this is used by the manufacturer to ensure that the strip bends at the designed level of current flow you should not make adjustments yourself the next part is the solenoid which protects from short circuits this is simply a coil of wire connected across the upper terminal and a copper track it is held in position by a metallic support and the molding of the case inside the coil is a plastic case with a spring loaded piston inside the spring forces the plunger upwards but we can easily move this the full circuit current will pass through the coil in normal operation but the Piston won't move however if a short circuit occurs the Piston will be immediately pulled down until it hits the trigger arm which activates the mechanism and cuts the power let's see that in slow motion you can see the Piston gets pulled down and activates the mechanism why does this happen when we pass current through a wire it generates a magnetic field if we reverse the current the magnetic field reverses we can see that by placing some compasses around the wire the larger the current flowing through the coil the stronger the magnetic field will be and if we wrap the wire into a coil the magnetic fields join together and make a stronger larger magnetic field the wire is coated with Van insulation so the current has to flow through the entire coil otherwise it will just take the shortest path and it will create a short circuit under normal conditions a magnetic field is generated but it's not enough to overcome the force of the spring however during a short circuit there is very little resistance or impedance so the current instantly increases to potentially thousands of amps this will create a very strong magnetic field build which easily overcomes the spring force and pulls the Piston down our circuit is using alternating current so the current actually flows backwards and forwards the Piston will be pulled down no matter the direction you can notice that this small breaker has a very thin wire with lots of turns to help increase the strength of the magnetic field but the larger current R Breakers have much thicker wires and fewer turns so both the bi metallic strip and the solenoid can trigger the mechanism and break the circuit but when the contact Point opens we often find an arc forming because there's lots of energy flowing this Arc is an extremely high temperature and could easily melt through the case so we use an arc chamber this is simply multiple parallel Metal Sheets usually steel or copper plated steel which are held together by an insulating material the plates are all electrically isolated from each other a copper track called The Arc Runner runs from the biom metallic strip up along the side of the arc chamber sometimes it is angled and sometimes it is curved we usually find a small pad on the upper copper track to protect against the arc and improve the connection larger current devices typically have a double layer track when the contact arm opens the arc forms between the fixed and moving contacts the copper track widens the path leaving the ark away the ark is spread over a larger and larger distance to help weaken it a small Ark will naturally break and dissipate as the path widens but a larger Ark will continue and hit the chamber the plates will divide the arc into lots of smaller arcs which can't sustain themselves and dissipate their energy The Arc chamber absorbs the Heat and vents this out through the top we often find an extra layer of insulation around the chamber to help protect the case so why doesn't this 3 amp breaker trip at 3 amps of current well this letter b means we need to look at the type B chart which is provided by the manufacturer typically we also find type c and type D and these have their own corresponding charts on the vertical axis we have time and on the horizontal we have current the curve section relates to the B metallic strip for over current protection the vertical section relates to the solenoid for short circuit protection the two lines show the minimum and the maximum limits the breaker will trip within this Zone along the bottom we have multiples of the rated device current for Simplicity let's assume a 10 amp rated breaker so we have 10 amps 20 amps 30 amps Etc if 20 amps passes through the breaker that's two times the rating so we draw a line up and we see it hits the lower limit of the biom metallic section and this occurs at around 9 seconds then it hits the upper limit at around 50 seconds so this should trip between 9 and 50 seconds when 20 amps flows through the breaker at 1 times the rating so 10 amps we see it doesn't hit the line at all therefore this breaker will not trip if 10 amps flows through it it will not trip until it hits 1.13 times the rated current so 11.3 amps and it will take 3,600 seconds which is 1 hour at three times the rating say 30 amps it will take between 0.02 seconds and 11.5 seconds to trip that is the worst case scenario if 60 amps flow it will take 0.01 seconds to trip so type B Breakers will instantly trip if between three and five times the rated current flows through them or anything above that but they will take longer if anything less than that passes through it type c and d will take much longer hence the charts are extended so a type c won't trip instantly unless 5 to 10 times the rated current flows through it and a type D won't trip until 10 to 20 times the rated value so why would we want that well when an appliance is running it has a fairly constant current but when we plug in or turn on an appliance we have an inrush current because the capacitors and inductors inside are all storing energy and this causes a lot of current to flow so for a fraction of a second we have a large current flowing and then it will normalize by the way our viewers can get 15% off of all kiwe's tools just use code em15 at checkout and I'll leave a link for you in the video description we need different breakers for different applications and circuits for example this induction motor might have a running current of 5 amps but the inrush current is four times that at 20 amps and it only lasts 0.03 seconds therefore we couldn't use a typeb breaker as it will trip every time the motor turns on electrical engineering requires a lot of maths but our sponsor brilliant is where you learn by doing with thousands of interactive lessons in maths data analysis programming and AI all the key skills you need to become a brilliant engineer they even have an app for on thego learning making it easy to build your critical thinking skills through problem solving not memorizing and it doesn't matter where you are each lesson is filled with Hands-On problem solving that lets you play with Concept there's so many new courses but I've really enjoyed their thinking in code course the graphics and interactions just made it so easy to visualize each step and there was extra help if I needed it I think you'll enjoy this too so you can try everything brilliant has to offer for free for 30 days just visit brilliant.org engineering mindset or click on the link in the video description you'll also get 20% off an annual premium prum subscription so do check them out links down below hey I'd just like to give a huge shout out to our incredible patreon and channel members thank you so much for supporting us and if you'd like to see your name here along with Priority Access to our content and behind the scenes footage links down below for how to join
+
+
+[00:01] sponsored by brilliant will this circuit
+[00:03] breaker save you from an electric shock
+[00:06] no will any of these no why well this
+[00:10] number here tells us that the breaker is
+[00:13] rated for 3 amp of current and it's one
+[00:16] of the smallest you can buy for
+[00:18] reference this lamp is around 0.14 amps
+[00:22] this toaster is around 3 amps and this
+[00:25] hair dryer is 7.8 amps your body has a
+[00:29] very High Resistance we can touch a low
+[00:32] voltage battery and nothing really
+[00:34] happens but the cables in our homes
+[00:36] carry much higher voltages touch those
+[00:39] and current can flow straight through
+[00:41] you at just 20 milliamps your muscles
+[00:44] contract and you probably won't be able
+[00:46] to let go at 0.2 amps for 1 second and
+[00:51] your heart can stop beating so this 3
+[00:53] amp circuit breaker isn't going to trip
+[00:56] and save you it will just provide Power
+[00:58] to whatever is connected Ed to it
+[01:01] including you in fact even this 3 amp
+[01:04] toaster won't trip this 3 amp breaker
+[01:08] this letter tells us that and I'll
+[01:10] explain that later on in the video so if
+[01:12] it doesn't protect people then what does
+[01:15] it protect it protects cables and
+[01:18] property and property is expensive why
+[01:21] property well the current flows through
+[01:24] cables in our properties inside the
+[01:26] cable is a metal conductor which
+[01:29] provides a load resistance path to the
+[01:31] electrical load this is covered with an
+[01:34] insulation to protect us and prevent the
+[01:37] current from taking alternative Roots
+[01:39] whenever current flows through a wire it
+[01:42] generates heat now this isn't a problem
+[01:45] but as the current increases then the
+[01:47] temperature increases and at a certain
+[01:50] point the insulation weakens and
+[01:52] eventually melts this exposes the metal
+[01:54] conductors and even causes fires each
+[01:58] size cable is rated for a certain
+[02:00] maximum current so the breaker must not
+[02:02] exceed that value the breaker will
+[02:05] detect excessive current and
+[02:07] automatically trip to protect the cable
+[02:10] it does that using these internal parts
+[02:12] which I'll explain in just a moment so
+[02:15] if we pass 20 amps through this 10 amp
+[02:18] breaker how long will it take to trip
+[02:20] tell me in the comment section and I'll
+[02:22] give you the answer at the end of the
+[02:24] video to protect people we use another
+[02:27] device which measures the current
+[02:29] flowing into and out of the device it
+[02:32] then trips if these two values are not
+[02:35] equal but that's a topic for another
+[02:37] video this circuit breaker only detects
+[02:40] short circuits and overloads ordinarily
+[02:43] the current flows from the line through
+[02:46] the load and back on the neutral this is
+[02:49] AC current so it actually flows forwards
+[02:52] and backwards but I'll explain it as DC
+[02:54] for Simplicity the resistance of the
+[02:57] load limits the current but if the line
+[02:59] and neutral come into direct contact
+[03:02] then we have a short circuit because
+[03:04] there's no resistance so a huge and
+[03:06] instant surge of current occurs and
+[03:09] trips the breaker instantly we know that
+[03:11] the breaker is rated for a certain
+[03:13] current each time we plug and Appliance
+[03:16] in we increase the current eventually we
+[03:19] will exceed the breaker's limits and it
+[03:21] will trip this is an overload and it
+[03:24] takes a lot longer to trip we can
+[03:27] manually operate the breaker to isolate
+[03:30] the power but it will trip automatically
+[03:32] once the fault is removed we can
+[03:34] manually reset the device even if the
+[03:37] lever is held in the on position most
+[03:40] devices will still be able to trip and
+[03:42] that's thanks to a clever internal
+[03:44] design most of the world uses these mcbs
+[03:48] for residential uses but North America
+[03:51] and a few other places use plug in
+[03:54] Breakers although mcbs are still often
+[03:57] used in industrial and controls
+[03:59] applications in those regions each
+[04:01] manufacturer has a slightly different
+[04:03] design they all work in a very similar
+[04:06] way but you shouldn't mix them this is a
+[04:09] consumer unit installed in the UK we can
+[04:12] see it has lots of mcbs remember
+[04:15] electricity is dangerous and can be
+[04:17] fatal you must be qualified and
+[04:19] competent to carry out any electrical
+[04:21] work inside the consumer unit we have
+[04:24] the live and the neutral incoming Supply
+[04:27] this enters a double pole main switch
+[04:29] the live passes through to the rcd and
+[04:32] then to a metal bus bar that Connect
+[04:34] into the bottom of the rcd this will
+[04:37] provide Power to multiple circuit
+[04:39] breakers a wire runs out the top of the
+[04:42] breaker off to the load a neutral wire
+[04:45] then runs from the load and back to
+[04:47] another neutral block this block
+[04:49] connects to the rcd the rcd connects to
+[04:52] the main neutral block and this connects
+[04:54] to the main switch so current flows in
+[04:57] on the live through the main switch
+[05:00] into the rcd through the circuit breaker
+[05:03] through the load and into a terminal
+[05:05] block then back on the rcd to the main
+[05:09] terminal and out through the main switch
+[05:11] to complete the circuit although as this
+[05:13] is AC electricity the current actually
+[05:16] flows back and forth looking at the
+[05:19] circuit breaker we find a notch on the
+[05:21] back this lets us clip onto a d rail
+[05:25] this rail is not electrified on the
+[05:27] front we have a lever which flips up and
+[05:30] down and also indicates the status
+[05:32] there's usually an indicator window too
+[05:35] there's lots of text which I'll explain
+[05:37] later on in the video we also find two
+[05:39] screw terminals these let us adjust the
+[05:42] terminals to grip a wire or bus bar on
+[05:45] the top and bottom be careful though as
+[05:48] it can go behind giving a false
+[05:50] connection and you definitely don't want
+[05:52] that there's often a heat vent on the
+[05:55] top and on the bottom we see a tiny
+[05:57] hidden screw I'll explain that in just a
+[06:00] moment I had to drill out the rivets but
+[06:02] then we can remove the case to see all
+[06:04] the strange parts inside each
+[06:06] manufacturer has a slightly different
+[06:08] design but they all work in a very
+[06:11] similar way we basically have a bi
+[06:13] metallic strip for overload protection a
+[06:16] solenoid for short circuit protection a
+[06:18] lever a mechanism with movable contact
+[06:22] and an arc chamber as well as two
+[06:24] terminals in normal operation the
+[06:27] current flows through the bottom
+[06:29] terminal along the track through the
+[06:31] biometallic strip through the braided
+[06:33] wire to the movable contact arm through
+[06:36] the contact pad into the copper track
+[06:39] then into the wire around the solenoid
+[06:42] coil and then out the wire and through
+[06:44] the top terminal and it then goes off to
+[06:46] the load the contact arm simply moves
+[06:49] away to break the circuit to understand
+[06:52] how it works we start with the main
+[06:54] lever and notice it is spring loaded a
+[06:57] small spring pushes against the case and
+[07:00] forces the lever into the off position
+[07:03] next we see the mechanism which has
+[07:06] three main parts at the center is the
+[07:08] main arm which is held in position with
+[07:11] a pin the arm can pivot around this
+[07:13] point a metal contact plate is attached
+[07:16] to this arm when the arm moves the plate
+[07:19] also moves a spring is attached to this
+[07:22] arm and pushes against the case forcing
+[07:24] the arm downwards a trigger arm sits on
+[07:28] top of the main arm and can move a small
+[07:30] amount around the same Pivot Point the
+[07:33] trigger arm has a small opening at the
+[07:35] end which aligns with a channel in the
+[07:38] main arm a small spring pushes against
+[07:41] the trigger arm and Main arm forcing the
+[07:43] trigger arm to rotate and close this Gap
+[07:46] a metal link is inserted into this Gap
+[07:49] and connects to a hole in the lever the
+[07:52] main arm and Trigger arm partly surround
+[07:54] this metal link when we rotate the lever
+[07:58] the metal link will also move and follow
+[08:00] the rotation of the lever this pushes
+[08:03] down on the main arm causing it to also
+[08:06] rotate which compresses the spring the
+[08:08] lever is prevented from going any
+[08:10] further by the case the spring of the
+[08:13] main arm is now pushing firmly against
+[08:15] the metal link the tension of the spring
+[08:18] on the trigger arm is just enough to
+[08:20] keep the link in place but if a small
+[08:23] downward Force acts on the trigger arm
+[08:26] it will move and release the metal link
+[08:28] the spring of the main arm instantly
+[08:30] forces the arm downwards into the off
+[08:33] position this happens so fast we need to
+[08:36] sit in slow motion you can see the
+[08:39] trigger arm moves which releases the
+[08:41] metal link the main arm spring instantly
+[08:43] moves the arm opening the circuit the
+[08:46] ballic strip and the solenoid can both
+[08:49] trigger the arm and trip the breaker the
+[08:52] ballic strip protects from overloads
+[08:55] this is made from two different Metals
+[08:57] joined together each with a different
+[09:00] thermal expansion coefficient in this
+[09:02] version you can see the different colors
+[09:05] of the materials there are other designs
+[09:07] it just depends on the manufacturer when
+[09:10] the strip is heated one metal expands
+[09:12] slowly the other expands much faster
+[09:16] which causes the strip to bend current
+[09:18] flows through the biometallic strip
+[09:20] which generates heat and causes the
+[09:22] strip to bend the braided cable allows
+[09:25] some flexibility but if too much current
+[09:28] flows the strip will push the trigger
+[09:31] arm and trip the breaker there is also a
+[09:34] small screw here this is used by the
+[09:36] manufacturer to ensure that the strip
+[09:38] bends at the designed level of current
+[09:41] flow you should not make adjustments
+[09:43] yourself the next part is the solenoid
+[09:46] which protects from short circuits this
+[09:48] is simply a coil of wire connected
+[09:51] across the upper terminal and a copper
+[09:53] track it is held in position by a
+[09:56] metallic support and the molding of the
+[09:58] case inside the coil is a plastic case
+[10:01] with a spring loaded piston inside the
+[10:04] spring forces the plunger upwards but we
+[10:06] can easily move this the full circuit
+[10:09] current will pass through the coil in
+[10:11] normal operation but the Piston won't
+[10:14] move however if a short circuit occurs
+[10:17] the Piston will be immediately pulled
+[10:19] down until it hits the trigger arm which
+[10:22] activates the mechanism and cuts the
+[10:24] power let's see that in slow motion you
+[10:27] can see the Piston gets pulled down and
+[10:29] activates the mechanism why does this
+[10:32] happen when we pass current through a
+[10:34] wire it generates a magnetic field if we
+[10:37] reverse the current the magnetic field
+[10:39] reverses we can see that by placing some
+[10:42] compasses around the wire the larger the
+[10:45] current flowing through the coil the
+[10:47] stronger the magnetic field will be and
+[10:50] if we wrap the wire into a coil the
+[10:52] magnetic fields join together and make a
+[10:55] stronger larger magnetic field the wire
+[10:58] is coated with Van
+[10:59] insulation so the current has to flow
+[11:02] through the entire coil otherwise it
+[11:04] will just take the shortest path and it
+[11:06] will create a short circuit under normal
+[11:09] conditions a magnetic field is generated
+[11:12] but it's not enough to overcome the
+[11:14] force of the spring however during a
+[11:17] short circuit there is very little
+[11:19] resistance or impedance so the current
+[11:22] instantly increases to potentially
+[11:25] thousands of amps this will create a
+[11:27] very strong magnetic field build which
+[11:30] easily overcomes the spring force and
+[11:32] pulls the Piston down our circuit is
+[11:35] using alternating current so the current
+[11:37] actually flows backwards and forwards
+[11:40] the Piston will be pulled down no matter
+[11:42] the direction you can notice that this
+[11:44] small breaker has a very thin wire with
+[11:47] lots of turns to help increase the
+[11:50] strength of the magnetic field but the
+[11:52] larger current R Breakers have much
+[11:54] thicker wires and fewer turns so both
+[11:58] the bi metallic strip and the solenoid
+[12:00] can trigger the mechanism and break the
+[12:02] circuit but when the contact Point opens
+[12:06] we often find an arc forming because
+[12:09] there's lots of energy flowing this Arc
+[12:12] is an extremely high temperature and
+[12:14] could easily melt through the case so we
+[12:17] use an arc chamber this is simply
+[12:19] multiple parallel Metal Sheets usually
+[12:22] steel or copper plated steel which are
+[12:25] held together by an insulating material
+[12:28] the plates are all electrically isolated
+[12:30] from each other a copper track called
+[12:32] The Arc Runner runs from the biom
+[12:35] metallic strip up along the side of the
+[12:37] arc chamber sometimes it is angled and
+[12:40] sometimes it is curved we usually find a
+[12:43] small pad on the upper copper track to
+[12:45] protect against the arc and improve the
+[12:48] connection larger current devices
+[12:50] typically have a double layer track when
+[12:53] the contact arm opens the arc forms
+[12:56] between the fixed and moving contacts
+[12:58] the copper track widens the path leaving
+[13:01] the ark away the ark is spread over a
+[13:04] larger and larger distance to help
+[13:06] weaken it a small Ark will naturally
+[13:09] break and dissipate as the path widens
+[13:12] but a larger Ark will continue and hit
+[13:14] the chamber the plates will divide the
+[13:17] arc into lots of smaller arcs which
+[13:19] can't sustain themselves and dissipate
+[13:21] their energy The Arc chamber absorbs the
+[13:24] Heat and vents this out through the top
+[13:26] we often find an extra layer of
+[13:28] insulation around the chamber to help
+[13:30] protect the case so why doesn't this 3
+[13:34] amp breaker trip at 3 amps of current
+[13:37] well this letter b means we need to look
+[13:39] at the type B chart which is provided by
+[13:42] the manufacturer typically we also find
+[13:45] type c and type D and these have their
+[13:48] own corresponding charts on the vertical
+[13:51] axis we have time and on the horizontal
+[13:54] we have current the curve section
+[13:56] relates to the B metallic strip for over
+[13:58] current protection the vertical section
+[14:01] relates to the solenoid for short
+[14:03] circuit protection the two lines show
+[14:05] the minimum and the maximum limits the
+[14:08] breaker will trip within this Zone along
+[14:11] the bottom we have multiples of the
+[14:13] rated device current for Simplicity
+[14:17] let's assume a 10 amp rated breaker so
+[14:20] we have 10 amps 20 amps 30 amps Etc if
+[14:25] 20 amps passes through the breaker
+[14:28] that's two times the rating so we draw a
+[14:31] line up and we see it hits the lower
+[14:33] limit of the biom metallic section and
+[14:35] this occurs at around 9 seconds then it
+[14:39] hits the upper limit at around 50
+[14:42] seconds so this should trip between 9
+[14:44] and 50 seconds when 20 amps flows
+[14:48] through the breaker at 1 times the
+[14:50] rating so 10 amps we see it doesn't hit
+[14:54] the line at all therefore this breaker
+[14:56] will not trip if 10 amps flows through
+[14:59] it it will not trip until it
+[15:01] hits 1.13 times the rated current so
+[15:05] 11.3 amps and it will take
+[15:08] 3,600 seconds which is 1 hour at three
+[15:12] times the rating say 30 amps it will
+[15:15] take between
+[15:17] 0.02 seconds and 11.5 seconds to trip
+[15:21] that is the worst case scenario if 60
+[15:24] amps flow it will take 0.01 seconds to
+[15:27] trip so type B Breakers will instantly
+[15:31] trip if between three and five times the
+[15:33] rated current flows through them or
+[15:36] anything above that but they will take
+[15:38] longer if anything less than that passes
+[15:40] through it type c and d will take much
+[15:43] longer hence the charts are extended so
+[15:47] a type c won't trip instantly unless 5
+[15:50] to 10 times the rated current flows
+[15:52] through it and a type D won't trip until
+[15:55] 10 to 20 times the rated value so why
+[15:59] would we want that well when an
+[16:01] appliance is running it has a fairly
+[16:03] constant current but when we plug in or
+[16:06] turn on an appliance we have an inrush
+[16:09] current because the capacitors and
+[16:11] inductors inside are all storing energy
+[16:14] and this causes a lot of current to flow
+[16:17] so for a fraction of a second we have a
+[16:20] large current flowing and then it will
+[16:23] normalize by the way our viewers can get
+[16:25] 15% off of all kiwe's tools just use
+[16:29] code em15 at checkout and I'll leave a
+[16:32] link for you in the video description we
+[16:34] need different breakers for different
+[16:36] applications and circuits for example
+[16:39] this induction motor might have a
+[16:41] running current of 5 amps but the inrush
+[16:44] current is four times that at 20 amps
+[16:47] and it only lasts
+[16:49] 0.03 seconds therefore we couldn't use a
+[16:52] typeb breaker as it will trip every time
+[16:55] the motor turns on electrical
+[16:57] engineering requires a lot of maths but
+[17:00] our sponsor brilliant is where you learn
+[17:02] by doing with thousands of interactive
+[17:05] lessons in maths data analysis
+[17:07] programming and AI all the key skills
+[17:10] you need to become a brilliant engineer
+[17:13] they even have an app for on thego
+[17:15] learning making it easy to build your
+[17:17] critical thinking skills through problem
+[17:20] solving not memorizing and it doesn't
+[17:22] matter where you are each lesson is
+[17:25] filled with Hands-On problem solving
+[17:27] that lets you play with Concept
+[17:29] there's so many new courses but I've
+[17:31] really enjoyed their thinking in code
+[17:33] course the graphics and interactions
+[17:36] just made it so easy to visualize each
+[17:39] step and there was extra help if I
+[17:41] needed it I think you'll enjoy this too
+[17:43] so you can try everything brilliant has
+[17:46] to offer for free for 30 days just visit
+[17:50] brilliant.org
+[17:51] engineering mindset or click on the link
+[17:54] in the video description you'll also get
+[17:56] 20% off an annual premium prum
+[17:59] subscription so do check them out links
+[18:01] down below hey I'd just like to give a
+[18:05] huge shout out to our incredible patreon
+[18:07] and channel members thank you so much
+[18:10] for supporting us and if you'd like to
+[18:12] see your name here along with Priority
+[18:15] Access to our content and behind the
+[18:17] scenes footage links down below for how
+[18:19] to join

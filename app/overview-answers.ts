@@ -318,6 +318,10 @@ export const overviewModels: Record<string, string> = {
 // Explicit placement prevents an early charge lesson from acquiring a formula
 // about current merely because both contain the word charge.
 export const overviewFormulas: Record<string, string> = {
+  'course-8Z255dd78H4': 'I_b\\leq I_n\\leq I_z,\\qquad \\Delta U=\\frac{m I_b L}{1000}',
+  'course-NIrKOVZrqnU': '\\begin{aligned}S^2&=P^2+Q^2,\\quad \\mathrm{PF}=P/S\\\\Q_c&=P(\\tan\\phi_1-\\tan\\phi_2)\\\\C&=\\frac{Q_c}{2\\pi fV^2}\\quad\\text{(single phase)}\\end{aligned}',
+  'course-XbL0R_9KLD4': 'P_{\\mathrm{in}}=\\frac{P_{\\mathrm{shaft}}}{\\eta},\\qquad n_s=\\frac{120f}{p}',
+  'course-Me_adh09CdY': '\\mathrm{B}:3I_n\\text{–}5I_n,\\quad \\mathrm{C}:5I_n\\text{–}10I_n,\\quad \\mathrm{D}:10I_n\\text{–}20I_n',
   'p01-l04': 'I=\\frac{Q}{t},\\quad Q=It,\\quad [I]=\\mathrm{A},\\ [Q]=\\mathrm{C},\\ [t]=\\mathrm{s}',
   'p01-l06': 'I=\\frac{V}{R}',
   'p01-l07': 'V=IR,\\quad I=\\frac{V}{R},\\quad R=\\frac{V}{I}',

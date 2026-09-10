@@ -1,0 +1,45 @@
+# What Every Electricity Professional Needs to Know About Arc Fault Devices | Schneider Electric
+# https://www.youtube.com/watch?v=lIit5k8QVj8
+
+In this video, we'll explore the significant role of Arc fault detection devices in electrical protection. They help to safeguard against fires caused by electrical arc faults, protecting people, electrical systems, houses, buildings and goods. At F Lab, A Schneider Electric ISO 17-025 accredited laboratory, a demonstration bench is in place with an electrical load and a power cable connected to a socket outlet. We recreated a house environment with an electrical heater. For the first demonstration, the circuit is only protected by a miniature circuit breaker and residual current device. MCBs are designed to guard against over current and short circuits. RCDs detect abnormal earth leakage current. Arc faults are another electrical hazard that occurs when current flows through the air between two parts of the same conductor or between 2 conductors. Arc faults can occur due to loose terminal connections or damaged cables. This may result in a low current arc heating and carbonizing materials and eventually starting a fire. In our lab we're going to create an arc fault by pre-damaging and carbonizing a cable, accelerating the degradation process. Once the load is switched on the arc fault grows in power, reaches ignition temperature and causes a fire. An MCB would trip in the event of an over current or short circuit. An RCD would trip in the event of earth leakage, but neither is designed to protect against an arc fault. For this reason, arc fault detection devices are becoming mandatory to protect houses and building. The IEC 60364 installation standard makes AFDD more and more essential in various electrical circuits, supplying bedrooms, care facilities, areas with flammable materials and also in locations where irreplaceable goods are stored. In our demonstration set up, we add an AFDD alongside the RCD and MCB to protect the circuit. We introduce a new electrical heater with a pre damaged cable and then switch on the load. The AFDD detects the arc and trips immediately, preventing a fire. Let's dive into how an AFDD works. It has sensors and electronic boards that monitor the circuit's current waveform. When an arc fault occurs, it creates an unstable waveform. Once the AFDD has identified the Arc's signature, it sends a tripping order to open the circuit. The AFDD is designed to trip only when it detects a specific arc current waveform without unnecessary tripping due to non hazardous arcs. Schneider Electric offers various AFDDs for electrical systems, including stand alone AFDDs like the Acti9 iArc that can be installed in series with an MCB or RCBO. If panel board space is limited, other options are available such as MCB combined with AFDD, All-in-one solutions combining AFDD, MCB and RCD, Add-ons that can be associated with Acti9 MCBs. AFDDs are also available as part of the Acti9 Active range for connected applications. In short, AFDDs provide an extra layer of electrical protection alongside RCDs and MCBs. Arc faults can be dangerous and start fires. By using the right combination of devices, you can improve the protection of electrical installations and ensure compliance with the standards.
+
+
+[00:00] In this video, we'll explore the significant role of Arc fault detection devices in electrical
+[00:05] protection. They help to safeguard against fires caused by electrical arc faults, protecting
+[00:10] people, electrical systems, houses, buildings and goods. At F Lab, A Schneider Electric ISO 17-025
+[00:18] accredited laboratory, a demonstration bench is in place with an electrical load and a power cable
+[00:23] connected to a socket outlet. We recreated a house environment with an electrical heater.
+[00:28] For the first demonstration, the circuit is only protected by a miniature circuit breaker and residual current device.
+[00:35] MCBs are designed to guard against over current and short circuits.
+[00:41] RCDs detect abnormal earth leakage current.
+[00:46] Arc faults are another electrical hazard that occurs when current flows
+[00:49] through the air between two parts of the same conductor or between 2 conductors.
+[00:55] Arc faults can occur due to loose terminal connections or damaged cables. This may result in a low
+[01:01] current arc heating and carbonizing materials and eventually starting a fire.
+[01:07] In our lab we're going to create an arc fault by pre-damaging and carbonizing a cable, accelerating the degradation
+[01:13] process. Once the load is switched on the arc fault grows in power, reaches ignition temperature and causes a fire.
+[01:21] An MCB would trip in the event of an over current or short circuit.
+[01:26] An RCD would trip in the event of earth leakage, but neither is designed to protect against an arc fault.
+[01:31] For this reason, arc fault detection devices are becoming mandatory to protect houses and building.
+[01:37] The IEC 60364 installation standard makes AFDD more and more essential in various electrical circuits,
+[01:44] supplying bedrooms, care facilities, areas with flammable materials and also in locations
+[01:49] where irreplaceable goods are stored.
+[01:52] In our demonstration set up, we add an AFDD alongside the RCD and MCB to protect the circuit.
+[01:58] We introduce a new electrical heater with a pre damaged cable
+[02:01] and then switch on the load. The AFDD detects the arc and trips immediately, preventing a fire.
+[02:08] Let's dive into how an AFDD works. It has sensors and electronic boards that monitor the circuit's
+[02:14] current waveform. When an arc fault occurs, it creates an unstable waveform. Once the AFDD has
+[02:20] identified the Arc's signature, it sends a tripping order to open the circuit.
+[02:26] The AFDD is designed to trip only when it detects a specific arc current waveform
+[02:30] without unnecessary tripping due to non hazardous arcs.
+[02:35] Schneider Electric offers various AFDDs for electrical systems, including
+[02:39] stand alone AFDDs like the Acti9 iArc that can be installed in series with an MCB or RCBO.
+[02:47] If panel board space is limited, other options are available such as MCB combined with AFDD,
+[02:54] All-in-one solutions combining AFDD, MCB and RCD,
+[02:59] Add-ons that can be associated with Acti9 MCBs.
+[03:04] AFDDs are also available as part of the Acti9 Active range for connected applications.
+[03:10] In short, AFDDs provide an extra layer of electrical protection alongside RCDs and MCBs.
+[03:17] Arc faults can be dangerous and start fires.
+[03:20] By using the right combination of devices,
+[03:22] you can improve the protection of electrical installations
+[03:25] and ensure compliance with the standards.

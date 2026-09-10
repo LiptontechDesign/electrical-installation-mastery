@@ -7,6 +7,7 @@ import {sourceClarifications,suppliedTeaching} from './supplied-lessons';
 import LearningText from './learning-text';
 import Formula from './formula';
 import type {RecapChapter} from './module-recaps';
+import CourseBridge from './course-bridge';
 
 type Lesson=RecapChapter['lessons'][number];
 function Transcript({lesson}:{lesson:Lesson}){
@@ -30,6 +31,7 @@ export function LessonNoteContent({lesson}:{lesson:Lesson}){
  return <div className="recap-lesson-copy">
   <section><span className="recap-kicker">Understand the explanation</span><h3>{lesson.title}</h3><p><LearningText text={guide.summary}/></p>{overviewFormulas[lesson.id]&&<Formula tex={overviewFormulas[lesson.id]} block/>}<ol>{guide.keyConcepts.map(concept=><li key={concept}><LearningText text={concept}/></li>)}</ol>{sourceClarifications[lesson.id]&&<aside className="recap-caution"><strong>Keep the model accurate</strong><LearningText text={sourceClarifications[lesson.id]}/></aside>}</section>
   <section><span className="recap-kicker">Connect it to the work</span><h3>What to carry into practice</h3><p><LearningText text={overviewPurpose[lesson.id]??guide.practicalConnection}/></p><h4>Keep this distinction</h4><p><LearningText text={guide.remember}/></p><h4>Explain it back</h4><p><LearningText text={retrieval?.prompt??overviewPrompts[lesson.id]??guide.checkYourself}/></p><details className="recap-note-answer"><summary>Model explanation</summary><p><LearningText text={retrieval?.answer??overviewAnswers[lesson.id]}/></p>{(retrieval?.workingTex??overviewWorking[lesson.id])&&<Formula tex={(retrieval?.workingTex??overviewWorking[lesson.id])!} block/>}</details></section>
+  <CourseBridge lessonId={lesson.id}/>
  </div>;
 }
 
