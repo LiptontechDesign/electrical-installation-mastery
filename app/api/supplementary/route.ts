@@ -1,5 +1,6 @@
 import { get, put, BlobPreconditionFailedError } from '@vercel/blob';
 import course from '../../course-curriculum';
+import { withSupplementaryDefaults } from '../../supplementary-defaults';
 import { limitedJson, sameOrigin, privateHeaders } from '../../server/reader-auth';
 import { confirmationPhrase, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from '../../supplementary-model';
 
@@ -8,11 +9,11 @@ const pathname = 'course/supplementary-videos-v1.json';
 const coreVideos = new Set(course.modules.flatMap(m => m.lessons.map(l => youtubeId(l.url))));
 async function read() {
   const result = await get(pathname, { access: 'private', useCache: false });
-  if (!result) return { state: { version: 1, revision: 0, videos: [] } as SupplementaryState, etag: undefined };
+  if (!result) return { state: withSupplementaryDefaults({ version: 1, revision: 0, videos: [] }), etag: undefined };
   if (result.statusCode !== 200) throw new Error('Storage unavailable');
   const state: SupplementaryState = await new Response(result.stream).json();
   if (state.version !== 1 || !Array.isArray(state.videos) || !Number.isSafeInteger(state.revision)) throw new Error('Invalid storage');
-  return { state, etag: result.blob.etag };
+  return { state: withSupplementaryDefaults(state), etag: result.blob.etag };
 }
 const reply = (body: unknown, status = 200) => Response.json(body, { status, headers: privateHeaders });
 export async function GET() {

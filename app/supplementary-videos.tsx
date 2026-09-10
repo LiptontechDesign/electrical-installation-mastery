@@ -2,13 +2,14 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { PlayCircle, Plus, Archive, X, CheckCircle2 } from 'lucide-react';
 import course from './course-curriculum';
+import { withSupplementaryDefaults } from './supplementary-defaults';
 import { useDialogFocus } from './use-dialog-focus';
 import { confirmationPhrase, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
 
 type Editor = { action: SupplementaryAction; revision: number; id?: string; moduleId: string; anchorId: string; position: 'before' | 'after'; url: string; title: string; instructor: string };
 type Context = { videos: SupplementaryVideo[]; watched: string[]; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
 const SupplementaryContext = createContext<Context | null>(null);
-const empty: SupplementaryState = { version: 1, revision: 0, videos: [] };
+const empty: SupplementaryState = withSupplementaryDefaults({ version: 1, revision: 0, videos: [] });
 export function SupplementaryProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState(empty);
   const [ready, setReady] = useState(false);
@@ -73,8 +74,9 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
       const response = await fetch('/api/supplementary', { cache: 'no-store' });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error);
-      setState(current => data.revision >= current.revision ? data : current); setReady(true); setError('');
-      return data as SupplementaryState;
+      const merged = withSupplementaryDefaults(data as SupplementaryState);
+      setState(current => merged.revision >= current.revision ? merged : current); setReady(true); setError('');
+      return merged;
     } catch (e) { setError(e instanceof Error ? e.message : 'Shared videos could not be loaded.'); }
   }, []);
   useEffect(() => { void refresh(); const focus = () => { void refresh(); }; window.addEventListener('focus', focus); return () => window.removeEventListener('focus', focus); }, [refresh]);
