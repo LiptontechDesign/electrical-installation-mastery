@@ -54,7 +54,6 @@ assert.equal(moveSelection(7, 8, 'next'), 7);
 assert.equal(moveSelection(3, 8, 'first'), 0);
 assert.equal(moveSelection(3, 8, 'last'), 7);
 
-// C2-01 is the first published reviewed Overview stage.
 const c201 = overviewData.sections.find(section => section.id === 'c2-01-electrical-foundations');
 assert.ok(c201, 'C2-01 Overview exists');
 assert.equal(c201.status, 'reviewed');
@@ -77,7 +76,6 @@ assert.equal(resolveSourceLink(epra).kind, 'external');
 const demandAppendix = overviewData.sources.find(source => source.id === 'osg-demand-diversity');
 assert.equal(resolveSourceLink(demandAppendix).kind, 'unavailable', 'Unverified Appendix A reader mapping stays bibliography-only');
 
-// C2-02 publishes architecture, drawings, isolation, first aid and service detection as one reviewed stage.
 const c202 = overviewData.sections.find(section => section.id === 'c2-02-installation-architecture-drawings-safety');
 assert.ok(c202, 'C2-02 Overview exists');
 assert.equal(c202.status, 'reviewed');
@@ -97,6 +95,24 @@ for (const id of ['osg-electrical-supply','osg-isolation-switching','osg-safe-wo
 }
 assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === 'st-john-cpr')).kind, 'external');
 assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === 'st-john-aed')).kind, 'external');
+
+const c203 = overviewData.sections.find(section => section.id === 'c2-03-single-phase-wiring-accessories');
+assert.ok(c203, 'C2-03 Overview exists');
+assert.equal(c203.status, 'reviewed');
+assert.equal(c203.stageId, 'C2-03');
+assert.equal(c203.moduleId, 'module-03');
+assert.deepEqual(c203.learningSectionIds, learningSections.filter(section => section.moduleId === 'module-03').map(section => section.id));
+assert.equal(c203.learningSectionIds.length, 6, 'C2-03 covers all six neutral Module 03 learning sections');
+assert.deepEqual(c203.prerequisiteSectionIds, ['c2-02-installation-architecture-drawings-safety']);
+for (const page of overviewPages) assert.ok(c203.pages[page].length > 0, `C2-03 page ${page} is authored`);
+for (const requiredTerm of ['conductor-preparation','termination','cpc','polarity','one-way-switching','two-way-switching','intermediate-switching','switched-line','radial-circuit','ring-final-circuit','spur','ring-integrity','socket-outlet','fused-connection-unit','first-fix','second-fix','luminaire','led','ip-and-ik-ratings']) {
+  assert.ok(c203.termIds.includes(requiredTerm), `C2-03 includes ${requiredTerm}`);
+}
+assert.ok(c203.coverage.some(item => item.competency.includes('One-way, two-way and intermediate')));
+assert.ok(c203.coverage.some(item => item.competency.includes('Radial and ring')));
+for (const id of ['osg-identification-notices','osg-final-circuits','osg-bath-shower']) {
+  assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === id)).kind, 'unavailable', `${id} remains bibliography-only until exact reader mapping is verified`);
+}
 
 const mapped = overviewData.sources.find(source => source.id === 'osg-safe-testing');
 assert.equal(resolveSourceLink(mapped).reading.pdf, 125);
@@ -137,4 +153,4 @@ rejects(data => data.sections.find(section => section.id === 'foundation-fixture
 rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.mapping = undefined; }, /unverified PDF mapping/);
 rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.pdfPage = 999; }, /unverified PDF mapping/);
 rejects(data => data.sources[0].url = 'javascript:alert(1)', /unsafe source URL/);
-console.log(`Overview verified: ${overviewData.terms.length} canonical records, C2-01 and C2-02 complete, structural prerequisites, source mapping discipline and negative integrity fixtures.`);
+console.log(`Overview verified: ${overviewData.terms.length} canonical records, C2-01 through C2-03 complete, structural prerequisites, source mapping discipline and negative integrity fixtures.`);

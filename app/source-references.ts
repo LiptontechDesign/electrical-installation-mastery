@@ -20,11 +20,17 @@ export const sourceReferences: SourceReference[] = [
     verification: { evidence: 'Current Module 02 learning sections and the linked consumer-unit, drawing, safe-isolation, CPR/AED and service-detection lessons were audited for the C2-02 Overview implementation.', verifiedAt: '2026-09-13' },
   },
   {
+    id: 'course-c2-wiring', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Single-Phase Wiring and Accessories',
+    section: 'Module 03 learning sections, lesson guides and integrated radial/ring lessons', authority: 'supporting-explanation',
+    status: 'verified', kenyaStatus: 'check-kenyan-requirement',
+    verification: { evidence: 'Current Module 03 neutral learning sections plus conductor preparation, switching, radial/ring, accessory, first/second-fix and luminaire teaching were audited for the C2-03 Overview implementation.', verifiedAt: '2026-09-13' },
+  },
+  {
     id: 'epra-c2-competencies', sourceType: 'epra', title: 'Assessment Areas for Electrical Worker Written & Oral Interviews',
     organisation: 'Energy and Petroleum Regulatory Authority (EPRA)', section: 'Class C2 areas of competency',
     authority: 'primary-current', status: 'verified', kenyaStatus: 'kenya-verified',
     url: 'https://www.epra.go.ke/sites/default/files/2025-06/Written%20%26%20Oral%20Interviews%20Areas%20of%20Competency.pdf',
-    verification: { evidence: 'Current official EPRA competency PDF rechecked on 2026-09-13; C2 explicitly includes AC/DC, voltage, current, resistance, power, energy, power triangle, basic circuits, diversity/utilization/PF, single-phase calculations, installation competence and electrical safety including first aid.', verifiedAt: '2026-09-13' },
+    verification: { evidence: 'Current official EPRA competency PDF rechecked on 2026-09-13; C2 explicitly includes AC/DC, voltage, current, resistance, power, energy, power triangle, basic circuits, diversity/utilization/PF, single-phase calculations, one-way/two-way/intermediate switching, radial/ring socket circuits, luminaires, installation competence and electrical safety including first aid.', verifiedAt: '2026-09-13' },
   },
   {
     id: 'eca-c3-load-assessment', sourceType: 'eca-guide', title: 'Guide to the IET Wiring Regulations',
@@ -63,6 +69,24 @@ export const sourceReferences: SourceReference[] = [
     organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
     section: 'Isolation and Switching', authority: 'current-technical',
     status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '69–72',
+  },
+  {
+    id: 'osg-identification-notices', sourceType: 'on-site-guide', title: 'IET On-Site Guide',
+    organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
+    section: 'Identification and Notices', authority: 'current-technical',
+    status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '73–81',
+  },
+  {
+    id: 'osg-final-circuits', sourceType: 'on-site-guide', title: 'IET On-Site Guide',
+    organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
+    section: 'Final Circuits', authority: 'current-technical',
+    status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '83–116',
+  },
+  {
+    id: 'osg-bath-shower', sourceType: 'on-site-guide', title: 'IET On-Site Guide',
+    organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
+    section: 'Locations Containing a Bath or Shower', authority: 'current-technical',
+    status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '117–120',
   },
   {
     id: 'osg-safe-working', sourceType: 'on-site-guide', title: 'IET On-Site Guide',
