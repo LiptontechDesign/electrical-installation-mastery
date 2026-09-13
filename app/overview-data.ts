@@ -9,6 +9,8 @@ import { c205AdditionalTerms, c205Formulas, c205Sections, c205TermPatches } from
 import { c205SourceReferences } from './c2-05-sources';
 import { c206AdditionalTerms, c206Formulas, c206Sections, c206TermPatches } from './c2-06-overview';
 import { c206SourceReferences } from './c2-06-sources';
+import { c207AdditionalTerms, c207Formulas, c207Sections, c207TermPatches } from './c2-07-overview';
+import { c207SourceReferences } from './c2-07-sources';
 import type { OverviewDataset } from './overview-models';
 
 const patchEntries = new Map([
@@ -18,6 +20,7 @@ const patchEntries = new Map([
   ...Object.entries(c204TermPatches),
   ...Object.entries(c205TermPatches),
   ...Object.entries(c206TermPatches),
+  ...Object.entries(c207TermPatches),
 ]);
 export const overviewTerms: PreservedCanonicalTerm[] = [
   ...canonicalTerms.map(term => {
@@ -30,13 +33,14 @@ export const overviewTerms: PreservedCanonicalTerm[] = [
   ...c204AdditionalTerms,
   ...c205AdditionalTerms,
   ...c206AdditionalTerms,
+  ...c207AdditionalTerms,
 ];
 
 export const overviewData: OverviewDataset = {
-  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences],
+  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences, ...c207SourceReferences],
   terms: overviewTerms,
-  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas],
-  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections],
+  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas, ...c207Formulas],
+  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections, ...c207Sections],
 };
 
 export const overviewSectionById = new Map(overviewData.sections.map(section => [section.id, section]));
