@@ -14,11 +14,17 @@ export const sourceReferences: SourceReference[] = [
     verification: { evidence: 'Current Module 01 learning sections, lesson ordering and authored bridge material were audited for the C2-01 Overview implementation.', verifiedAt: '2026-09-13' },
   },
   {
+    id: 'course-c2-architecture', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Installation Architecture, Drawings and Safety',
+    section: 'Module 02 learning sections, lesson guides, supplied CPR/AED teaching and service-detection lessons', authority: 'supporting-explanation',
+    status: 'verified', kenyaStatus: 'check-kenyan-requirement',
+    verification: { evidence: 'Current Module 02 learning sections and the linked consumer-unit, drawing, safe-isolation, CPR/AED and service-detection lessons were audited for the C2-02 Overview implementation.', verifiedAt: '2026-09-13' },
+  },
+  {
     id: 'epra-c2-competencies', sourceType: 'epra', title: 'Assessment Areas for Electrical Worker Written & Oral Interviews',
     organisation: 'Energy and Petroleum Regulatory Authority (EPRA)', section: 'Class C2 areas of competency',
     authority: 'primary-current', status: 'verified', kenyaStatus: 'kenya-verified',
     url: 'https://www.epra.go.ke/sites/default/files/2025-06/Written%20%26%20Oral%20Interviews%20Areas%20of%20Competency.pdf',
-    verification: { evidence: 'Current official EPRA competency PDF rechecked on 2026-09-13; C2 explicitly includes AC/DC, voltage, current, resistance, power, energy, power triangle, basic circuits, diversity/utilization/PF and single-phase calculations.', verifiedAt: '2026-09-13' },
+    verification: { evidence: 'Current official EPRA competency PDF rechecked on 2026-09-13; C2 explicitly includes AC/DC, voltage, current, resistance, power, energy, power triangle, basic circuits, diversity/utilization/PF, single-phase calculations, installation competence and electrical safety including first aid.', verifiedAt: '2026-09-13' },
   },
   {
     id: 'eca-c3-load-assessment', sourceType: 'eca-guide', title: 'Guide to the IET Wiring Regulations',
@@ -45,6 +51,36 @@ export const sourceReferences: SourceReference[] = [
     organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
     section: 'Appendix A — Maximum demand and diversity', authority: 'current-technical',
     status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '149–152',
+  },
+  {
+    id: 'osg-electrical-supply', sourceType: 'on-site-guide', title: 'IET On-Site Guide',
+    organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
+    section: 'The Electrical Supply', authority: 'current-technical',
+    status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '19–32',
+  },
+  {
+    id: 'osg-isolation-switching', sourceType: 'on-site-guide', title: 'IET On-Site Guide',
+    organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
+    section: 'Isolation and Switching', authority: 'current-technical',
+    status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '69–72',
+  },
+  {
+    id: 'osg-safe-working', sourceType: 'on-site-guide', title: 'IET On-Site Guide',
+    organisation: 'IET', edition: 'Ninth edition, BS 7671:2018+A4:2026',
+    section: 'Appendix M — Safe working practices', authority: 'current-technical',
+    status: 'needs-verification', kenyaStatus: 'bs7671-technical-baseline', bookId: 'on-site-guide', printedPage: '243–246',
+  },
+  {
+    id: 'st-john-cpr', sourceType: 'specialist', title: 'How to do CPR',
+    organisation: 'St John Ambulance', section: 'Adult CPR', authority: 'supporting-explanation',
+    status: 'verified', kenyaStatus: 'check-kenyan-requirement', url: 'https://www.sja.org.uk/first-aid-advice/cpr/',
+    verification: { evidence: 'Current St John Ambulance adult CPR guidance, clinically reviewed 28 April 2025, was rechecked on 2026-09-13. It states scene safety, emergency help, adult compression depth about 5–6 cm, rate 100–120/min and 30:2 when trained and able.', verifiedAt: '2026-09-13' },
+  },
+  {
+    id: 'st-john-aed', sourceType: 'specialist', title: 'How To Use A Defibrillator (AED)',
+    organisation: 'St John Ambulance', section: 'AED use during adult cardiac arrest', authority: 'supporting-explanation',
+    status: 'verified', kenyaStatus: 'check-kenyan-requirement', url: 'https://www.sja.org.uk/first-aid-advice/how-to-use-a-defibrillator/',
+    verification: { evidence: 'Current St John Ambulance AED guidance, clinically reviewed 28 April 2025, was rechecked on 2026-09-13. It instructs rescuers to continue CPR while the AED is prepared, follow the device prompts, clear the casualty for analysis/shock and resume CPR when directed.', verifiedAt: '2026-09-13' },
   },
   {
     id: 'osg-safe-testing', sourceType: 'on-site-guide', title: 'IET On-Site Guide',

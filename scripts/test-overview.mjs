@@ -77,6 +77,27 @@ assert.equal(resolveSourceLink(epra).kind, 'external');
 const demandAppendix = overviewData.sources.find(source => source.id === 'osg-demand-diversity');
 assert.equal(resolveSourceLink(demandAppendix).kind, 'unavailable', 'Unverified Appendix A reader mapping stays bibliography-only');
 
+// C2-02 publishes architecture, drawings, isolation, first aid and service detection as one reviewed stage.
+const c202 = overviewData.sections.find(section => section.id === 'c2-02-installation-architecture-drawings-safety');
+assert.ok(c202, 'C2-02 Overview exists');
+assert.equal(c202.status, 'reviewed');
+assert.equal(c202.stageId, 'C2-02');
+assert.equal(c202.moduleId, 'module-02');
+assert.deepEqual(c202.learningSectionIds, learningSections.filter(section => section.moduleId === 'module-02').map(section => section.id));
+assert.equal(c202.learningSectionIds.length, 3, 'C2-02 covers all three neutral Module 02 learning sections');
+assert.deepEqual(c202.prerequisiteSectionIds, ['c2-01-electrical-foundations']);
+for (const page of overviewPages) assert.ok(c202.pages[page].length > 0, `C2-02 page ${page} is authored`);
+for (const requiredTerm of ['service-cut-out','electricity-meter','main-switch','consumer-unit','final-circuit','glossary-single-line-diagram-sld','riser-diagram','block-diagram','glossary-circuit-schedule','glossary-isolation','functional-switching','emergency-switching','switching-for-mechanical-maintenance','safe-isolation','lock-off','voltage-indicator','cpr','aed','concealed-services','cable-detector','cat-and-genny']) {
+  assert.ok(c202.termIds.includes(requiredTerm), `C2-02 includes ${requiredTerm}`);
+}
+assert.ok(c202.coverage.some(item => item.competency.includes('safe isolation')));
+assert.ok(c202.coverage.some(item => item.competency.includes('first aid')));
+for (const id of ['osg-electrical-supply','osg-isolation-switching','osg-safe-working']) {
+  assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === id)).kind, 'unavailable', `${id} remains bibliography-only until exact reader mapping is verified`);
+}
+assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === 'st-john-cpr')).kind, 'external');
+assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === 'st-john-aed')).kind, 'external');
+
 const mapped = overviewData.sources.find(source => source.id === 'osg-safe-testing');
 assert.equal(resolveSourceLink(mapped).reading.pdf, 125);
 assert.equal(resolveSourceLink(mapped).reading.printed, '123');
@@ -116,4 +137,4 @@ rejects(data => data.sections.find(section => section.id === 'foundation-fixture
 rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.mapping = undefined; }, /unverified PDF mapping/);
 rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.pdfPage = 999; }, /unverified PDF mapping/);
 rejects(data => data.sources[0].url = 'javascript:alert(1)', /unsafe source URL/);
-console.log(`Overview verified: ${overviewData.terms.length} canonical records, C2-01 complete across ${c201.learningSectionIds.length} learning sections, structural prerequisites, source mapping discipline and negative integrity fixtures.`);
+console.log(`Overview verified: ${overviewData.terms.length} canonical records, C2-01 and C2-02 complete, structural prerequisites, source mapping discipline and negative integrity fixtures.`);
