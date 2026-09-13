@@ -4,7 +4,7 @@ import { validVideoCompletionCounts } from './flexible-progress';
 import { validEvidence, type LearningEvidence } from './tutor-model';
 export type LearnerState = {
   promotedVideoProgressImported?: boolean;
-  schemaVersion: 7;
+  schemaVersion: 9;
   evidence: LearningEvidence[];
   activeLessonId: string;
   completedLessonIds: string[];
@@ -18,6 +18,16 @@ export type LearnerState = {
   autoNextEnabled: boolean;
   videoCompletionCounts: Record<string,number>;
   reviewBeforeNext: boolean;
+  assessment: {
+    activeQuestionId: string | null;
+    bookmarkedQuestionIds: string[];
+    reviews: Record<string, {
+      selectedOptionId: string;
+      isCorrect: boolean;
+      confidence: 'review' | 'developing' | 'secure' | null;
+      updatedAt: string;
+    }>;
+  };
 
   updatedAt: string | null;
 };
@@ -29,7 +39,7 @@ const validReadingIds = new Set(allReading.map(({ guide }) => guide.id));
 const validLabIds = new Set(practiceLabs.map((lab) => lab.id));
 
 export const initialLearnerState: LearnerState = {
-  schemaVersion: 7,
+  schemaVersion: 9,
   evidence: [],
   activeLessonId: allLessons[0].id,
   completedLessonIds: [],
@@ -43,6 +53,7 @@ export const initialLearnerState: LearnerState = {
   autoNextEnabled: true,
   videoCompletionCounts: {},
   reviewBeforeNext: true,
+  assessment: { activeQuestionId: null, bookmarkedQuestionIds: [], reviews: {} },
 
   updatedAt: null,
 };
@@ -73,8 +84,17 @@ export function clampState(value: unknown): LearnerState {
       ([date, minutes]) => /^\d{4}-\d{2}-\d{2}$/.test(date) && typeof minutes === 'number' && Number.isFinite(minutes) && minutes >= 0,
     ))
     : {};
+  const assessmentInput = input.assessment && typeof input.assessment === 'object' ? input.assessment : initialLearnerState.assessment;
+  const assessmentReviews = assessmentInput.reviews && typeof assessmentInput.reviews === 'object'
+    ? Object.fromEntries(Object.entries(assessmentInput.reviews).filter(([id, review]) => {
+      if (!/^C[12]-[A-Z0-9-]+$/.test(id) || !review || typeof review !== 'object') return false;
+      const candidate = review as { selectedOptionId?: unknown; isCorrect?: unknown; confidence?: unknown; updatedAt?: unknown };
+      return /^[A-D]$/.test(String(candidate.selectedOptionId)) && typeof candidate.isCorrect === 'boolean'
+        && (candidate.confidence === null || ['review','developing','secure'].includes(String(candidate.confidence))) && typeof candidate.updatedAt === 'string';
+    })) as LearnerState['assessment']['reviews']
+    : {};
   return {
-    schemaVersion: 7,
+    schemaVersion: 9,
     promotedVideoProgressImported: input.promotedVideoProgressImported === true,
     evidence: validEvidence(input.evidence, lessonIds).filter(item => /^(calc(?:-choice)?:|case:)/.test(item.activityId)),
     activeLessonId,
@@ -90,6 +110,11 @@ export function clampState(value: unknown): LearnerState {
     autoNextEnabled: typeof input.autoNextEnabled === 'boolean' ? input.autoNextEnabled : true,
     videoCompletionCounts: validVideoCompletionCounts(input.videoCompletionCounts,lessonIds),
     reviewBeforeNext: typeof input.reviewBeforeNext === 'boolean' ? input.reviewBeforeNext : true,
+    assessment: {
+      activeQuestionId: typeof assessmentInput.activeQuestionId === 'string' && /^C[12]-[A-Z0-9-]+$/.test(assessmentInput.activeQuestionId) ? assessmentInput.activeQuestionId : null,
+      bookmarkedQuestionIds: Array.isArray(assessmentInput.bookmarkedQuestionIds) ? [...new Set(assessmentInput.bookmarkedQuestionIds.filter((id): id is string => typeof id === 'string' && /^C[12]-[A-Z0-9-]+$/.test(id)))] : [],
+      reviews: assessmentReviews,
+    },
     updatedAt: typeof input.updatedAt === 'string' ? input.updatedAt : null,
   };
 }

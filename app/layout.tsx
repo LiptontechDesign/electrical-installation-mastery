@@ -7,6 +7,7 @@ import './reader-mobile.css';
 import './tutor.css';
 import './supplementary.css';
 import './licensing.css';
+import './assessment.css';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =

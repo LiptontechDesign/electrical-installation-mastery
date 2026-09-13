@@ -33,12 +33,13 @@ import { useDialogFocus } from './use-dialog-focus';
 
 const PracticeWorkspace = dynamic(() => import('./practice-workspace'), { loading: () => <p role="status">Preparing your practice…</p> });
 const ModuleRecap = dynamic(() => import('./module-recap'), { loading: () => <p role="status" className="recap-loading">Opening module recap…</p> });
+const AssessmentWorkspace = dynamic(() => import('./assessment-workspace'), { loading: () => <p role="status" className="assessment-loading">Preparing the question bank…</p> });
 
 const BookReader = dynamic(() => import('./book-reader'), { ssr: false });
 const BookWorkspace = dynamic(() => import('./book-reader').then(module => module.BookWorkspace), { ssr: false });
 
 type CourseModule = (typeof course.modules)[number];
-type View = 'home' | 'learn' | 'books';
+type View = 'home' | 'learn' | 'exam' | 'books';
 
 type AutoNextState = {
   seconds: number;
@@ -112,6 +113,7 @@ function getRecentStudyMinutes(days: number, entries: Record<string, number>) {
 const navigation = [
   { id: 'home' as const, label: 'Home', icon: Home },
   { id: 'learn' as const, label: 'Learn', icon: PlayCircle },
+  { id: 'exam' as const, label: 'Exam prep', icon: ListChecks },
   { id: 'books' as const, label: 'Books', icon: BookOpen },
 ];
 
@@ -680,6 +682,12 @@ export default function CourseApp() {
   const recordEvidence = (input: EvidenceInput) => {
     setLearner(current => ({...current,evidence:appendEvidence(current.evidence,input),updatedAt:new Date().toISOString()}));
   };
+  const selectAssessmentQuestion = (id: string) => setLearner(current => ({...current,assessment:{...current.assessment,activeQuestionId:id},updatedAt:new Date().toISOString()}));
+  const saveAssessmentReview = (id: string, review: LearnerState['assessment']['reviews'][string]) => setLearner(current => ({...current,assessment:{...current.assessment,reviews:{...current.assessment.reviews,[id]:review}},updatedAt:new Date().toISOString()}));
+  const toggleAssessmentBookmark = (id: string) => setLearner(current => {
+    const saved=current.assessment.bookmarkedQuestionIds.includes(id);
+    return {...current,assessment:{...current.assessment,bookmarkedQuestionIds:saved?current.assessment.bookmarkedQuestionIds.filter(questionId=>questionId!==id):[...current.assessment.bookmarkedQuestionIds,id]},updatedAt:new Date().toISOString()};
+  });
   const revealPractice = () => { setPracticeOpen(true); window.setTimeout(() => document.querySelector('.lesson-practice-reveal')?.scrollIntoView({block:'start',behavior:'auto'}),100); };
   const openPractice = (lessonId: string) => { chooseLesson(lessonId); revealPractice(); };
 
@@ -789,7 +797,7 @@ export default function CourseApp() {
                 </div>
               </section>
 
-              <section className="learning-next-strip" aria-label="Learning resources"><button type="button" onClick={() => navigate('books')}><BookOpen size={19}/><span><strong>Open your books</strong><small>Reference pages and saved reading</small></span><ArrowRight size={17}/></button><button type="button" onClick={() => openPractice(activeLesson.id)}><Calculator size={19}/><span><strong>Apply your current lesson</strong><small>Worked examples and practical reasoning</small></span><ArrowRight size={17}/></button></section>
+              <section className="learning-next-strip" aria-label="Learning resources"><button type="button" onClick={() => navigate('exam')}><ListChecks size={19}/><span><strong>Prepare for the EPRA exam</strong><small>Multiple-choice reasoning, worked solutions and clear drawings</small></span><ArrowRight size={17}/></button><button type="button" onClick={() => navigate('books')}><BookOpen size={19}/><span><strong>Open your books</strong><small>Reference pages and saved reading</small></span><ArrowRight size={17}/></button><button type="button" onClick={() => openPractice(activeLesson.id)}><Calculator size={19}/><span><strong>Apply your current lesson</strong><small>Worked examples and practical reasoning</small></span><ArrowRight size={17}/></button></section>
 
               <section className="stat-grid home-stats" aria-label="Learning overview">
                 <article><span className="stat-icon copper"><PlayCircle size={21} /></span><div><b>{completed.size}<small> / {allLessons.length}</small></b><p>Video lessons completed</p></div></article>
@@ -889,6 +897,7 @@ export default function CourseApp() {
               </article>
             </div>
           )}
+          {view === 'exam' && <AssessmentWorkspace assessment={learner.assessment} onSelect={selectAssessmentQuestion} onReview={saveAssessmentReview} onBookmark={toggleAssessmentBookmark} onLesson={chooseLesson}/>}
           {view === 'books' && <BookWorkspace />}
         </main>
         <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}</nav>

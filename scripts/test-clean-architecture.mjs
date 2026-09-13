@@ -10,11 +10,11 @@ for(const file of (await walk('app')).filter(f=>/\.[jt]sx?$/.test(f))){
  for(const match of source.matchAll(/(?:from\s*|import\s*\()\s*['"]([^'"]+)/g))assert.ok(!retired.test(match[1]),file+': '+match[1]);
 }
 const app=await readFile('app/course-app.tsx','utf8');
-assert.match(app,/type View = 'home' \| 'learn' \| 'books'/);
+assert.match(app,/type View = 'home' \| 'learn' \| 'exam' \| 'books'/);
 assert.ok(!/AssessmentPanel|assessmentBank|completedCheckpointIds|lessonQuiz|moduleQuiz|checkpointQuiz|flashcardProgress|LessonTab|assessmentMode|navigate\(['"](?:toolkit|progress)/.test(app));
 const bundle=await build({entryPoints:['app/course-app.tsx'],outdir:'work/architecture-test',bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',write:false,metafile:true});
 for(const file of Object.keys(bundle.metafile.inputs))assert.ok(!retired.test(file),'No retired engine in app bundle: '+file);
 const javascript=bundle.outputFiles.find(file=>file.path.endsWith('.js'));
 assert.ok(javascript,'Application JavaScript bundle exists');
 assert.ok(!javascript.text.includes('buildAssessmentBank'));
-console.log('PASS: Home/Learn/Books navigation, no orphan engine imports and no old assessment generator in application bundle.');
+console.log('PASS: Home/Learn/Exam prep/Books navigation, no orphan legacy engine imports and no old assessment generator in the application bundle.');

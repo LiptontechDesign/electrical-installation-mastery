@@ -170,7 +170,7 @@ function questionPrompt(prompt) {
 
 function linkedLessons(sectionId, text) {
   const direct = sourceLessonBySection[sectionId];
-  if (direct) return direct;
+  if (direct && (/^C[12]-\d{2}$/.test(sectionId) || sectionId === 'C1-R')) return direct;
   const candidates = [];
   const add = (id) => { if (!candidates.includes(id)) candidates.push(id); };
   if (/motor|contactor|starter|overload|vfd|slip|synchronous/i.test(text)) add('p07-induction');
@@ -181,7 +181,7 @@ function linkedLessons(sectionId, text) {
   if (/test|inspect|polarity|insulation|verification/i.test(text)) add('p08-l02');
   if (/fault|diagnos|repair|tripping/i.test(text)) add('p09-l01');
   if (/Kenya|EPRA|licen[cs]e|regulat|connection/i.test(text)) add('p16-l04');
-  return candidates.length ? candidates.slice(0, 3) : [sectionId.startsWith('C1') ? 'p02-l03' : 'p01-l01'];
+  return candidates.length ? candidates.slice(0, 3) : direct ?? [sectionId.startsWith('C1') ? 'p02-l03' : 'p01-l01'];
 }
 
 function prerequisiteLessons(sectionId) {
