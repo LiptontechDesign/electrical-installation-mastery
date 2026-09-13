@@ -7,3 +7,8 @@ import type { OverviewDataset } from './overview-models';
 export const overviewData: OverviewDataset = {
   sources: sourceReferences, terms: canonicalTerms, formulas: [], sections: [],
 };
+
+export const overviewSectionById = new Map(overviewData.sections.map(section => [section.id, section]));
+export function overviewSectionForLesson(lessonId: string) {
+  return overviewData.sections.find(section => section.lessonIds.includes(lessonId));
+}

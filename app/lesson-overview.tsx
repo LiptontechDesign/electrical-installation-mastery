@@ -15,6 +15,8 @@ import LessonConnection from './lesson-connection';
 import LessonReading from './lesson-reading';
 import { LessonTerms, StandardsLearning } from './tutor-panels';
 import { terminologyForLesson } from './lesson-terminology';
+import OverviewReader from './overview-reader';
+import { overviewData, overviewSectionForLesson } from './overview-data';
 
 type Explanation = { prompt: string; answer?: string; why?: string; distinction?: string; workingTex?: string };
 type Notes = { before: string; listenFor: string[]; explanation: Explanation; bridge: Explanation; application: string; trap?: { temptation: string; diagnosis: string; model: string } };
@@ -32,6 +34,7 @@ export default function LessonOverview({ lessonId, guide, watched, learningText,
   const [showNotes, setShowNotes] = useState(false);
   const knowledge = lessonKnowledge[lessonId];
   const terminology = terminologyForLesson(guide.keyConcepts.join(' '));
+  const standardsSection = overviewSectionForLesson(lessonId);
   return <div className="overview-flow">
     <section className="overview-orientation"><span className="eyebrow neutral">Why this matters</span><p><LearningText text={overviewPurpose[lessonId] ?? guide.practicalConnection}/></p></section>
     {!watched&&!showReview&&<section className="lesson-compass"><span className="eyebrow neutral">Before you watch</span><h2><LearningText text={notes?.before ?? guide.checkYourself}/></h2><p>Look for the explanation as you watch.</p><ul>{(notes?.listenFor ?? guide.keyConcepts).map((idea,i)=><li key={i}><LearningText text={idea}/></li>)}</ul><button type="button" className="secondary-button" onClick={()=>setShowReview(true)}>Open the learning review</button></section>}
@@ -43,6 +46,7 @@ export default function LessonOverview({ lessonId, guide, watched, learningText,
       <section className="overview-application"><span className="overview-section-icon"><Lightbulb size={20}/></span><div><span className="eyebrow neutral">Put it into practice</span><h2>Use the idea</h2><p><LearningText text={notes?.application ?? guide.practicalConnection}/></p></div></section>
       {notes&&<ModelExplanation item={notes.bridge} title="A further connection"/>}
     </>}
+    {standardsSection&&<OverviewReader section={standardsSection} terms={overviewData.terms} sources={overviewData.sources} formulas={overviewData.formulas} onLesson={onLesson} onRead={onRead}/>} 
     <StandardsLearning text={learningText} lessonId={lessonId} relevantOnly/>
     <details className="overview-support" onToggle={event=>setShowNotes(event.currentTarget.open)}><summary>Further explanations and practical connections</summary>{showNotes&&<StudyNotes lessonId={lessonId}/>}</details>
     <details className="overview-support"><summary><span><BookOpen size={19}/><span><strong>Need another connection?</strong><small>Foundations, terms and book pages</small></span></span><ChevronDown size={19}/></summary><div className="overview-support-body">

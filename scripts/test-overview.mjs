@@ -5,13 +5,14 @@ import { execFileSync } from 'node:child_process';
 import { resolve } from 'node:path';
 
 await mkdir('work/overview-tests', { recursive: true });
-await build({ entryPoints: ['app/overview-data.ts','app/overview-integrity.ts','app/source-references.ts','app/course-curriculum.ts','app/learning-sections.ts','app/knowledge-graph.ts'], outdir: 'work/overview-tests', bundle: true, platform: 'node', format: 'esm' });
+await build({ entryPoints: ['app/overview-data.ts','app/overview-integrity.ts','app/source-references.ts','app/course-curriculum.ts','app/learning-sections.ts','app/knowledge-graph.ts','app/overview-navigation.ts'], outdir: 'work/overview-tests', bundle: true, platform: 'node', format: 'esm' });
 const { overviewData } = await import('../work/overview-tests/overview-data.js');
 const { validateOverview, buildOverviewBacklinks } = await import('../work/overview-tests/overview-integrity.js');
 const { resolveSourceLink } = await import('../work/overview-tests/source-references.js');
 const { default: course } = await import('../work/overview-tests/course-curriculum.js');
 const { learningSections } = await import('../work/overview-tests/learning-sections.js');
 const { electricalTerms, matchingTerms, lessonKnowledge, prerequisiteIdsByLesson } = await import('../work/overview-tests/knowledge-graph.js');
+const { overviewPages, overviewPageLabels, authorityLabels, kenyaStatusLabels, moveSelection } = await import('../work/overview-tests/overview-navigation.js');
 const context = {
   modules: course.modules.map(module => ({ id: module.id, lessonIds: module.lessons.map(lesson => lesson.id) })),
   learningSections, stageIds: [...Array.from({length:9}, (_, i) => `C2-${String(i+1).padStart(2,'0')}`), ...Array.from({length:10}, (_, i) => `C1-${String(i+1).padStart(2,'0')}`)],
@@ -30,7 +31,6 @@ for (const term of overviewData.terms) {
   assert.equal(electricalTerms.find(item => item.id === term.id).definition, term.standardsMeaning);
   assert.ok(matchingTerms(term.term).some(item => item.id === term.id));
 }
-// Structural prerequisites must follow the canonical licensing order, not learner-facing prose.
 for (const module of course.modules) {
   for (const [index, lesson] of module.lessons.entries()) {
     const expected = index > 0 ? [module.lessons[index - 1].id] : [];
@@ -38,6 +38,19 @@ for (const module of course.modules) {
     assert.deepEqual(lessonKnowledge[lesson.id].prerequisites, expected, `${lesson.id} knowledge prerequisite IDs`);
   }
 }
+assert.deepEqual(overviewPages, ['system-model','definitions','relationships','engineering-rules','application','verification','common-confusions','sources']);
+assert.equal(overviewPageLabels['system-model'], 'System Model');
+assert.equal(overviewPageLabels['engineering-rules'], 'Engineering Rules');
+assert.equal(overviewPageLabels['common-confusions'], 'Common Confusions');
+assert.equal(authorityLabels['formal-definition-verified'], 'FORMAL DEFINITION — VERIFIED');
+assert.equal(authorityLabels['current-standards-meaning'], 'CURRENT STANDARDS MEANING');
+assert.equal(kenyaStatusLabels['kenya-verified'], 'KENYA VERIFIED');
+assert.equal(kenyaStatusLabels['bs7671-technical-baseline'], 'CURRENT BS 7671 TECHNICAL BASELINE');
+assert.equal(moveSelection(0, 8, 'previous'), 0);
+assert.equal(moveSelection(0, 8, 'next'), 1);
+assert.equal(moveSelection(7, 8, 'next'), 7);
+assert.equal(moveSelection(3, 8, 'first'), 0);
+assert.equal(moveSelection(3, 8, 'last'), 7);
 const mapped = overviewData.sources.find(source => source.id === 'osg-safe-testing');
 assert.equal(resolveSourceLink(mapped).reading.pdf, 125);
 assert.equal(resolveSourceLink(mapped).reading.printed, '123');
@@ -47,7 +60,6 @@ for (const pdfPage of [0, -1, 1.5, 259, NaN, Infinity, '125']) assert.notEqual(r
 for (const url of ['javascript:alert(1)', 'data:text/html,x', 'file:///tmp/a', 'https://user:password@example.com']) assert.equal(resolveSourceLink({...mapped, pdfPage: undefined, url}).kind, 'unavailable');
 assert.equal(resolveSourceLink({...mapped, pdfPage: undefined, url:'https://electrical.theiet.org/'}).kind, 'external');
 
-// Representative fixture exercises relationships and all page slots without publishing stage content.
 const fixture = structuredClone(overviewData);
 fixture.sections.push({
   id: 'foundation-fixture', stageId: 'C2-01', moduleId: 'module-01',
@@ -78,4 +90,4 @@ rejects(data => data.sections[0].prerequisiteSectionIds = ['foundation-fixture']
 rejects(data => data.sources[1].mapping = undefined, /unverified PDF mapping/);
 rejects(data => data.sources[1].pdfPage = 999, /unverified PDF mapping/);
 rejects(data => data.sources[0].url = 'javascript:alert(1)', /unsafe source URL/);
-console.log(`Overview foundation verified: ${overviewData.terms.length} canonical records, structural lesson prerequisites, exact/unknown source mapping, backlinks and negative integrity fixtures.`);
+console.log(`Overview foundation verified: ${overviewData.terms.length} canonical records, structural lesson prerequisites, horizontal navigation semantics, exact/unknown source mapping, backlinks and negative integrity fixtures.`);
