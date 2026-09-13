@@ -11,7 +11,7 @@ const { validateOverview, buildOverviewBacklinks } = await import('../work/overv
 const { resolveSourceLink } = await import('../work/overview-tests/source-references.js');
 const { default: course } = await import('../work/overview-tests/course-curriculum.js');
 const { learningSections } = await import('../work/overview-tests/learning-sections.js');
-const { electricalTerms, matchingTerms } = await import('../work/overview-tests/knowledge-graph.js');
+const { electricalTerms, matchingTerms, lessonKnowledge, prerequisiteIdsByLesson } = await import('../work/overview-tests/knowledge-graph.js');
 const context = {
   modules: course.modules.map(module => ({ id: module.id, lessonIds: module.lessons.map(lesson => lesson.id) })),
   learningSections, stageIds: [...Array.from({length:9}, (_, i) => `C2-${String(i+1).padStart(2,'0')}`), ...Array.from({length:10}, (_, i) => `C1-${String(i+1).padStart(2,'0')}`)],
@@ -29,6 +29,14 @@ for (const [index, record] of old.electricalTerms.entries()) {
 for (const term of overviewData.terms) {
   assert.equal(electricalTerms.find(item => item.id === term.id).definition, term.standardsMeaning);
   assert.ok(matchingTerms(term.term).some(item => item.id === term.id));
+}
+// Structural prerequisites must follow the canonical licensing order, not learner-facing prose.
+for (const module of course.modules) {
+  for (const [index, lesson] of module.lessons.entries()) {
+    const expected = index > 0 ? [module.lessons[index - 1].id] : [];
+    assert.deepEqual(prerequisiteIdsByLesson.get(lesson.id), expected, `${lesson.id} structural prerequisite IDs`);
+    assert.deepEqual(lessonKnowledge[lesson.id].prerequisites, expected, `${lesson.id} knowledge prerequisite IDs`);
+  }
 }
 const mapped = overviewData.sources.find(source => source.id === 'osg-safe-testing');
 assert.equal(resolveSourceLink(mapped).reading.pdf, 125);
@@ -70,4 +78,4 @@ rejects(data => data.sections[0].prerequisiteSectionIds = ['foundation-fixture']
 rejects(data => data.sources[1].mapping = undefined, /unverified PDF mapping/);
 rejects(data => data.sources[1].pdfPage = 999, /unverified PDF mapping/);
 rejects(data => data.sources[0].url = 'javascript:alert(1)', /unsafe source URL/);
-console.log(`Overview foundation verified: ${overviewData.terms.length} canonical records, exact/unknown source mapping, backlinks and negative integrity fixtures.`);
+console.log(`Overview foundation verified: ${overviewData.terms.length} canonical records, structural lesson prerequisites, exact/unknown source mapping, backlinks and negative integrity fixtures.`);

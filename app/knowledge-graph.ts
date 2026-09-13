@@ -14,11 +14,19 @@ function containsTerm(text: string, value: string) {
 }
 export const lessons = course.modules.flatMap(module => module.lessons);
 export const lessonById = new Map(lessons.map(lesson => [lesson.id, lesson]));
+// Prerequisites are structural IDs derived from the canonical licensing order.
+// Never reconstruct graph edges from learner-facing prerequisite prose.
+export const prerequisiteIdsByLesson = new Map(
+  course.modules.flatMap(module => module.lessons.map((lesson, index) => [
+    lesson.id,
+    index > 0 ? [module.lessons[index - 1].id] : [],
+  ] as const)),
+);
 export const lessonKnowledge = Object.fromEntries(lessons.map(lesson => {
   const guide = lessonGuides[lesson.id];
   const content = `${lesson.title} ${guide.summary} ${guide.keyConcepts.join(' ')}`;
   const terms = electricalTerms.filter(item => [item.term,...item.aliases].some(alias => containsTerm(content, alias)));
-  const prerequisites = [...new Set((lesson.prerequisite.match(/p\d{2}-(?:v\d+-l\d{2}|l\d{2}|[a-z]+(?:-[a-z]+)*)/gi) ?? []).map(id => id.toLowerCase()))].filter(id => id !== lesson.id && lessonById.has(id));
+  const prerequisites = prerequisiteIdsByLesson.get(lesson.id) ?? [];
   return [lesson.id, { terms, prerequisites, concepts: guide.keyConcepts.map((statement, index) => ({ id: `${lesson.id}-concept-${index + 1}`, statement })), source: 'Existing lesson guide' }];
 }));
 export const lessonsForTerm = (name: string) => lessons.filter(lesson => lessonKnowledge[lesson.id].terms.some(item => item.term === name));
