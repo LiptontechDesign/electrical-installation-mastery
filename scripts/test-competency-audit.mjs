@@ -99,5 +99,8 @@ assert.equal(source('iet-conductor-identification-baseline').status, 'historical
 for (const id of ['osg-demand-diversity','osg-current-capacity-voltage-drop','osg-zs-appendix']) {
   assert.equal(source(id).status, 'needs-verification', `${id} remains source-limited`);
 }
+const auditDocument = await import('node:fs/promises').then(fs => fs.readFile('docs/C2_C1_COMPETENCY_SOURCE_COUNTER_AUDIT.md', 'utf8'));
+assert.ok(auditDocument.includes('supplied current OSG asset has 258 PDF pages'));
+assert.ok(!/OSG asset truncates|file appears to stop|missing OSG appendix material/.test(auditDocument));
 
 console.log('C2/C1 competency and source counter-audit checks passed.');

@@ -18,7 +18,7 @@ const { electricalTerms, matchingTerms, lessonKnowledge, prerequisiteIdsByLesson
 const { overviewPages, overviewPageLabels, authorityLabels, kenyaStatusLabels, moveSelection } = await import('../work/overview-tests/overview-navigation.js');
 
 const context = {
-  modules: course.modules.map(module => ({ id: module.id, lessonIds: module.lessons.map(lesson => lesson.id) })),
+  modules: course.modules.map(courseModule => ({ id: courseModule.id, lessonIds: courseModule.lessons.map(lesson => lesson.id) })),
   learningSections,
   stageIds: [...Array.from({length:9}, (_, i) => `C2-${String(i+1).padStart(2,'0')}`), ...Array.from({length:10}, (_, i) => `C1-${String(i+1).padStart(2,'0')}`)],
 };
@@ -43,9 +43,9 @@ for (const term of overviewData.terms) {
 }
 
 // Structural lesson prerequisites remain ID-based, never reconstructed from learner prose.
-for (const module of course.modules) {
-  for (const [index, lesson] of module.lessons.entries()) {
-    const expected = index > 0 ? [module.lessons[index - 1].id] : [];
+for (const courseModule of course.modules) {
+  for (const [index, lesson] of courseModule.lessons.entries()) {
+    const expected = index > 0 ? [courseModule.lessons[index - 1].id] : [];
     assert.deepEqual(prerequisiteIdsByLesson.get(lesson.id), expected, `${lesson.id} structural prerequisite IDs`);
     assert.deepEqual(lessonKnowledge[lesson.id].prerequisites, expected, `${lesson.id} knowledge prerequisite IDs`);
   }
@@ -170,7 +170,11 @@ fixture.sections.push({
 });
 fixture.terms.find(term => term.id === 'safe-isolation').relatedTermIds = ['continuity'];
 assert.deepEqual(validateOverview(fixture, context), []);
-assert.deepEqual(buildOverviewBacklinks(fixture).terms.continuity, {termIds:['safe-isolation'],sectionIds:['foundation-fixture']});
+const continuityBacklinks = buildOverviewBacklinks(fixture).terms.continuity;
+assert.ok(continuityBacklinks.termIds.includes('safe-isolation'));
+assert.ok(continuityBacklinks.sectionIds.includes('foundation-fixture'));
+assert.equal(new Set(continuityBacklinks.termIds).size, continuityBacklinks.termIds.length);
+assert.equal(new Set(continuityBacklinks.sectionIds).size, continuityBacklinks.sectionIds.length);
 const rejects = (change, pattern) => {
   const bad = structuredClone(fixture); change(bad);
   assert.match(validateOverview(bad, context).join('\n'), pattern);

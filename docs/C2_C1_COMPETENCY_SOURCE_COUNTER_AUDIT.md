@@ -95,11 +95,11 @@ This matters because C1 is cumulative, not a replacement curriculum.
 
 | Stage | Competency completeness | Source quality | Notes |
 |---|---|---|---|
-| C2-01 Foundations | PASS | Good | OSG Appendix A remains bibliography-only because the supplied current OSG asset truncates before the appendices. |
+| C2-01 Foundations | PASS | Good | OSG Appendix A remains bibliography-only until the exact reader pages used by the Overview are individually verified. The supplied 258-page asset contains the appendix. |
 | C2-02 Architecture/Drawings/Safety | PASS | **Strong** | Audit added exact C2 scope plus Energy Act and Building Code authority layer. |
 | C2-03 Wiring/Accessories | PASS | Good with caveat | Audit added explicit conductor-identification/colour teaching. Exact current adopted KS 662 colour table still needs verification. |
-| C2-04 Cables/Containment | PASS | Good conceptually | OSG Appendices C–F are referenced bibliographically but exact local reader pages are unavailable in the truncated asset. |
-| C2-05 Protection/Earthing/ADS | PASS | Strong conceptually | OSG protection/earthing/RCD/Zs sources remain current baseline references; exact missing appendix pages are not guessed. |
+| C2-04 Cables/Containment | PASS | Good conceptually | OSG Appendices C–F are present in the supplied asset and referenced bibliographically; exact reader jumps remain disabled until each source-page mapping used by the Overview is verified. |
+| C2-05 Protection/Earthing/ADS | PASS | Strong conceptually | OSG protection/earthing/RCD/Zs sources remain current baseline references; unverified appendix page jumps are not guessed. |
 | C2-06 Single-Phase Design | PASS | Strong | Full load → Ib → In → method/factors → Iz → VD → fault/ADS → breaking-capacity workflow. |
 | C2-07 Consumer Units | PASS | **Improved** | Audit added Building Code bridge to KS IEC 60947/61439 product/assembly families. |
 | C2-08 Testing/Commissioning | PASS | **Improved** | Audit added Energy Act certification/periodic-duty anchor; technical sequence remains source-based. |
@@ -164,11 +164,11 @@ Until integrated:
 - do not invent codes, intervals or numerical limits;
 - assessment questions must not require unsourced GN3-specific recall.
 
-## 3. Complete current OSG Appendices A–M
+## 3. Exact current OSG Appendix A–M reader mappings
 
-Status: **OPEN — source pack limitation**.
+Status: **OPEN — page-mapping/editorial limitation**.
 
-The supplied current OSG file appears to stop around printed page 148 even though the contents list Appendices A–M. The course correctly stores bibliographic printed-page references but does not fabricate reader-page offsets or reproduce missing tables from older editions.
+The supplied current OSG asset has 258 PDF pages and includes Appendices A–M. Its chapter map reaches printed page 254 and the final index/back matter. Overview references correctly retain bibliographic printed-page labels, but an “Open source page” action remains disabled until the exact PDF page used by that individual reference has direct mapping evidence. The course does not infer a reader jump merely from the known general page offset.
 
 ## 4. Exact current BS 7671 Part 2 formal-definition wording
 
@@ -201,7 +201,7 @@ The new assessment engine may now draw questions from the Overview where the ans
 3. UK/IET material is a technical baseline where consistent with Kenyan requirements;
 4. do not assess exact KS 662 conductor-colour wording as Kenya-verified until the current adopted source is integrated;
 5. do not assess exact GN3 periodic codes/intervals until the current source is integrated;
-6. do not assess missing OSG appendix table values unless the exact current data are supplied in the question/source pack;
+6. do not assess source-sensitive OSG appendix table values unless the exact current data are verified or supplied in the question/source pack;
 7. manufacturer-specific questions must provide or cite the actual product data;
 8. every scored question should be traceable back to the canonical Overview term/formula/source that teaches its answer.
 
@@ -223,7 +223,7 @@ The test asserts:
 - C2-07 and C1-08 retain the Building Code product/assembly bridge;
 - C2-08 and C1-09 retain the Energy Act inspection/certification anchor;
 - all 19 licensing stages remain authored and source-linked;
-- GN3 and missing OSG appendix material remain visibly source-limited.
+- GN3 detail and unverified OSG appendix reader mappings remain visibly source-limited.
 
 # Final audit verdict
 

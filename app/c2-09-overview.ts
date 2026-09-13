@@ -6,7 +6,10 @@ const stageId = 'C2-09';
 const sectionId = 'c2-09-fault-finding';
 const moduleId = 'module-09';
 const groups = learningSections.filter(section => section.moduleId === moduleId);
-const lessonIds = [...new Set([...groups.flatMap(section => section.lessonIds), 'p16-l06'])];
+// Keep section ownership aligned with the C2-09 curriculum module. The thermal
+// imaging lesson p16-l06 remains linked from its canonical term and C1-10, where
+// that lesson actually belongs; it is not a C2-09 module lesson.
+const lessonIds = [...new Set(groups.flatMap(section => section.lessonIds))];
 
 const reviewed = (lessons: string[], relatedTermIds: string[] = []): Partial<CanonicalTerm> => ({
   editorialStatus: 'reviewed', stageIds: [stageId], sectionIds: [sectionId], lessonIds: lessons, relatedTermIds,

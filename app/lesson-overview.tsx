@@ -46,7 +46,7 @@ export default function LessonOverview({ lessonId, guide, watched, learningText,
       <section className="overview-application"><span className="overview-section-icon"><Lightbulb size={20}/></span><div><span className="eyebrow neutral">Put it into practice</span><h2>Use the idea</h2><p><LearningText text={notes?.application ?? guide.practicalConnection}/></p></div></section>
       {notes&&<ModelExplanation item={notes.bridge} title="A further connection"/>}
     </>}
-    {standardsSection&&<OverviewReader section={standardsSection} terms={overviewData.terms} sources={overviewData.sources} formulas={overviewData.formulas} onLesson={onLesson} onRead={onRead}/>} 
+    {standardsSection&&<OverviewReader key={standardsSection.id} section={standardsSection} terms={overviewData.terms} sources={overviewData.sources} formulas={overviewData.formulas} onLesson={onLesson} onRead={onRead}/>}
     <StandardsLearning text={learningText} lessonId={lessonId} relevantOnly/>
     <details className="overview-support" onToggle={event=>setShowNotes(event.currentTarget.open)}><summary>Further explanations and practical connections</summary>{showNotes&&<StudyNotes lessonId={lessonId}/>}</details>
     <details className="overview-support"><summary><span><BookOpen size={19}/><span><strong>Need another connection?</strong><small>Foundations, terms and book pages</small></span></span><ChevronDown size={19}/></summary><div className="overview-support-body">

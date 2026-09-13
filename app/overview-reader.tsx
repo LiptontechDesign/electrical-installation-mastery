@@ -73,11 +73,6 @@ export default function OverviewReader({ section, terms, sources, formulas, onLe
   const pageRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const termRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
-  useEffect(() => {
-    setActivePage('system-model');
-    setActiveTermId(sectionTerms[0]?.id ?? '');
-  }, [section.id, sectionTerms]);
-
   const activeTerm = sectionTerms.find(term => term.id === activeTermId) ?? sectionTerms[0];
   const activePageIndex = overviewPages.indexOf(activePage);
   const activeTermIndex = Math.max(0, sectionTerms.findIndex(term => term.id === activeTerm?.id));
