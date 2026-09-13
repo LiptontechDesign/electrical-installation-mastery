@@ -1,11 +1,19 @@
-import { canonicalTerms } from './standards-terms';
+import { canonicalTerms, type PreservedCanonicalTerm } from './standards-terms';
 import { sourceReferences } from './source-references';
+import { c201AdditionalTerms, c201Formulas, c201Sections, c201TermPatches } from './c2-01-overview';
 import type { OverviewDataset } from './overview-models';
 
-// Section 1 intentionally has no authored stage content. A fixture belongs in tests,
-// not in the learner's curriculum. Later stages add reviewed sections here.
+const patchEntries = new Map(Object.entries(c201TermPatches));
+export const overviewTerms: PreservedCanonicalTerm[] = [
+  ...canonicalTerms.map(term => ({ ...term, ...(patchEntries.get(term.id) ?? {}) })),
+  ...c201AdditionalTerms,
+];
+
 export const overviewData: OverviewDataset = {
-  sources: sourceReferences, terms: canonicalTerms, formulas: [], sections: [],
+  sources: sourceReferences,
+  terms: overviewTerms,
+  formulas: c201Formulas,
+  sections: c201Sections,
 };
 
 export const overviewSectionById = new Map(overviewData.sections.map(section => [section.id, section]));

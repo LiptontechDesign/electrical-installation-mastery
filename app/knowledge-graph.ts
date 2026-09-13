@@ -1,9 +1,9 @@
 import course from './course-curriculum';
 import { lessonGuides } from './lesson-guides';
-import { canonicalTerms } from './standards-terms';
+import { overviewTerms } from './overview-data';
 export type { KnowledgeTerm } from './standards-terms';
-// Compatibility view: glossary/search/lesson consumers share the canonical records.
-export const electricalTerms = canonicalTerms;
+// Compatibility view: glossary/search/lesson consumers share the composed canonical records.
+export const electricalTerms = overviewTerms;
 
 const normalize = (value: string) => value.toLowerCase().replace(/[–—−]/g, '-');
 function containsTerm(text: string, value: string) {

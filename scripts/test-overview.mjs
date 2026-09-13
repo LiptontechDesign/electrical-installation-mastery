@@ -23,9 +23,11 @@ assert.equal(electricalTerms.length, overviewData.terms.length);
 const baseline = execFileSync('git', ['show','4b92f3691781d7738ef48e415fb9b8efeb23539f:app/knowledge-graph.ts'], {encoding:'utf8'});
 const oldBuild = await build({stdin:{contents:baseline,resolveDir:resolve('app'),loader:'ts'},bundle:true,platform:'node',format:'esm',write:false});
 const old = await import(`data:text/javascript;base64,${Buffer.from(oldBuild.outputFiles[0].text).toString('base64')}`);
-assert.equal(electricalTerms.length, old.electricalTerms.length, 'No vocabulary lost');
-for (const [index, record] of old.electricalTerms.entries()) {
-  for (const key of Object.keys(record)) assert.deepEqual(electricalTerms[index][key], record[key], `Preserve ${record.term}.${key}`);
+assert.ok(electricalTerms.length >= old.electricalTerms.length, 'Canonical vocabulary may grow but must not shrink');
+for (const record of old.electricalTerms) {
+  const preserved = electricalTerms.find(item => item.term === record.term);
+  assert.ok(preserved, `Preserve vocabulary term ${record.term}`);
+  for (const key of Object.keys(record)) assert.deepEqual(preserved[key], record[key], `Preserve ${record.term}.${key}`);
 }
 for (const term of overviewData.terms) {
   assert.equal(electricalTerms.find(item => item.id === term.id).definition, term.standardsMeaning);
@@ -51,6 +53,30 @@ assert.equal(moveSelection(0, 8, 'next'), 1);
 assert.equal(moveSelection(7, 8, 'next'), 7);
 assert.equal(moveSelection(3, 8, 'first'), 0);
 assert.equal(moveSelection(3, 8, 'last'), 7);
+
+// C2-01 is the first published reviewed Overview stage.
+const c201 = overviewData.sections.find(section => section.id === 'c2-01-electrical-foundations');
+assert.ok(c201, 'C2-01 Overview exists');
+assert.equal(c201.status, 'reviewed');
+assert.equal(c201.stageId, 'C2-01');
+assert.equal(c201.moduleId, 'module-01');
+assert.equal(c201.learningSectionIds.length, 14, 'C2-01 covers every neutral Module 01 learning section');
+assert.deepEqual(c201.learningSectionIds, learningSections.filter(section => section.moduleId === 'module-01').map(section => section.id));
+for (const page of overviewPages) assert.ok(c201.pages[page].length > 0, `C2-01 page ${page} is authored`);
+for (const requiredTerm of ['glossary-voltage','glossary-current','glossary-resistance','glossary-power','energy','direct-current','alternating-current','frequency','power-factor','connected-load','glossary-maximum-demand','glossary-diversity','utilization-factor','coincidence-factor','ib']) {
+  assert.ok(c201.termIds.includes(requiredTerm), `C2-01 includes ${requiredTerm}`);
+}
+for (const requiredFormula of ['ohms-law','electrical-power','energy-from-power','frequency-period','single-phase-ac-power','single-phase-design-current','coincidence-diversity']) {
+  assert.ok(overviewData.formulas.some(formula => formula.id === requiredFormula), `C2-01 includes ${requiredFormula}`);
+}
+assert.ok(c201.coverage.some(item => item.competency.includes('AC, DC')));
+assert.ok(c201.coverage.some(item => item.competency.includes('diversity factor')));
+assert.ok(c201.coverage.some(item => item.competency.includes('power, current and voltage')));
+const epra = overviewData.sources.find(source => source.id === 'epra-c2-competencies');
+assert.equal(resolveSourceLink(epra).kind, 'external');
+const demandAppendix = overviewData.sources.find(source => source.id === 'osg-demand-diversity');
+assert.equal(resolveSourceLink(demandAppendix).kind, 'unavailable', 'Unverified Appendix A reader mapping stays bibliography-only');
+
 const mapped = overviewData.sources.find(source => source.id === 'osg-safe-testing');
 assert.equal(resolveSourceLink(mapped).reading.pdf, 125);
 assert.equal(resolveSourceLink(mapped).reading.printed, '123');
@@ -71,7 +97,7 @@ fixture.sections.push({
 fixture.terms.find(term => term.id === 'safe-isolation').relatedTermIds = ['continuity'];
 assert.deepEqual(validateOverview(fixture, context), []);
 assert.deepEqual(buildOverviewBacklinks(fixture).terms.continuity, {termIds:['safe-isolation'],sectionIds:['foundation-fixture']});
-assert.deepEqual(buildOverviewBacklinks(fixture).sources['osg-safe-testing'].sectionIds, ['foundation-fixture']);
+assert.deepEqual(new Set(buildOverviewBacklinks(fixture).sources['osg-safe-testing'].sectionIds), new Set(['c2-01-electrical-foundations','foundation-fixture']));
 const rejects = (change, pattern) => {
   const bad = structuredClone(fixture); change(bad);
   assert.match(validateOverview(bad, context).join('\n'), pattern);
@@ -86,8 +112,8 @@ rejects(data => data.sections[0].lessonIds = ['missing'], /unknown lesson/);
 rejects(data => data.sections[0].stageId = 'C2-99', /unknown stage/);
 rejects(data => data.sections[0].learningSectionIds = ['module-02-section-1'], /wrong module/);
 rejects(data => delete data.sections[0].pages.sources, /missing page sources/);
-rejects(data => data.sections[0].prerequisiteSectionIds = ['foundation-fixture'], /cyclic prerequisite/);
-rejects(data => data.sources[1].mapping = undefined, /unverified PDF mapping/);
-rejects(data => data.sources[1].pdfPage = 999, /unverified PDF mapping/);
+rejects(data => data.sections.find(section => section.id === 'foundation-fixture').prerequisiteSectionIds = ['foundation-fixture'], /cyclic prerequisite/);
+rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.mapping = undefined; }, /unverified PDF mapping/);
+rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.pdfPage = 999; }, /unverified PDF mapping/);
 rejects(data => data.sources[0].url = 'javascript:alert(1)', /unsafe source URL/);
-console.log(`Overview foundation verified: ${overviewData.terms.length} canonical records, structural lesson prerequisites, horizontal navigation semantics, exact/unknown source mapping, backlinks and negative integrity fixtures.`);
+console.log(`Overview verified: ${overviewData.terms.length} canonical records, C2-01 complete across ${c201.learningSectionIds.length} learning sections, structural prerequisites, source mapping discipline and negative integrity fixtures.`);
