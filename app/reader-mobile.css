@@ -5,7 +5,9 @@
 .books-page input, .books-page select, .books-page textarea { font-size: 1rem; }
 .books-page :focus-visible { outline: 3px solid #bb6a24; outline-offset: 2px; }
 .saved-page-link textarea { width: 100%; min-height: 70px; padding: 8px; border: 1px solid #cedac0; border-radius: 6px; resize: vertical; }
-.lesson-notes { margin-top: 24px; display: grid; gap: 10px; }
+.lesson-notes-disclosure { margin-top: 14px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.lesson-notes-disclosure > summary { min-height: 52px; cursor: pointer; padding: 16px 18px; font-weight: 700; }
+.lesson-notes { display: grid; gap: 10px; border-top: 1px solid var(--line); padding: 16px 18px 18px; color: #526775; font-size: .875rem; }
 .lesson-notes textarea { width: 100%; min-height: 160px; padding: 16px; border: 1px solid var(--line); border-radius: 9px; font: inherit; resize: vertical; }
 @media(max-width:600px) { .books-page { height: calc(100dvh - 140px); min-height: 360px; border-radius: 8px; } }
 .book-reader-dialog[open] { display: flex; flex-direction: column; overflow: hidden; }

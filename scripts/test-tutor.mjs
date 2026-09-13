@@ -62,6 +62,11 @@ for(const lesson of graph.lessonById.values())for(const watched of [false,true])
  assert.ok(html.includes('Why this matters'),lesson.id);
  assert.ok(!/lesson quiz|Start the lesson quiz|Before the quiz/.test(html));
 }
+const foundationGuide=renderToStaticMarkup(h(Overview,{lessonId:'p01-l01',guide:lessonGuides['p01-l01'],watched:false,learningText:'Atomic structure',mode:'guide',onLesson(){},onRead(){}}));
+const foundationStandards=renderToStaticMarkup(h(Overview,{lessonId:'p01-l01',guide:lessonGuides['p01-l01'],watched:false,learningText:'Atomic structure',mode:'standards',onLesson(){},onRead(){}}));
+assert.ok(foundationGuide.includes('role="tablist"')&&foundationGuide.includes('Lesson guide')&&foundationGuide.includes('Standards companion'));
+assert.ok(foundationGuide.includes('Why this matters')&&!foundationGuide.includes('The electrical system model'),'Guide mode shows only lesson guidance');
+assert.ok(foundationStandards.includes('The electrical system model')&&!foundationStandards.includes('Why this matters'),'Standards mode shows only the technical companion');
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 const text = node => typeof node === 'string' || typeof node === 'number' ? String(node) : Array.isArray(node) ? node.map(text).join('') : node?.children ? text(node.children) : '';
 let tree;

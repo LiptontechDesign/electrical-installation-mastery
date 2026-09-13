@@ -16,14 +16,12 @@ import course, { lessonStudyRole } from './course-curriculum';
 import { sectionsByModule } from './learning-sections';
 import { ElectricalShockContext, LicensingOverview, LicensingStageGuide } from './licensing-ui';
 import { importPromotedWatched } from './integrated-progress';
-import CourseBridge from './course-bridge';
-import { sourceClarifications } from './supplied-lessons';
 import { recordVideoCompletion } from './flexible-progress';
 import LessonProgress from './lesson-progress';
 import { initialLearnerState, clampState, type LearnerState } from './learner-state';
 import { lessonGuides } from './lesson-guides';
 
-import LessonOverview from './lesson-overview';
+import LessonOverview, { type LessonWorkspaceMode } from './lesson-overview';
 import { SupplementaryControls, SupplementaryRows } from './supplementary-videos';
 import type { Reading } from './books-data';
 import { appendEvidence, isProgressBackup, calendarDay, type EvidenceInput } from './tutor-model';
@@ -123,6 +121,7 @@ export default function CourseApp() {
   const [view, setView] = useState<View>('home');
 
   const [practiceOpen,setPracticeOpen]=useState(false);
+  const [lessonWorkspaceMode,setLessonWorkspaceMode]=useState<LessonWorkspaceMode>('guide');
   const [returnLesson, setReturnLesson] = useState<{id:string}|null>(null);
   const [openModuleId, setOpenModuleId] = useState(course.modules[0].id);
   const [mapPath, setMapPath] = useState<CourseModule['path']>(course.modules[0].path);
@@ -618,6 +617,7 @@ export default function CourseApp() {
     setMapPath(nextLocation.module.path);
 
     setPracticeOpen(false);
+    setLessonWorkspaceMode('guide');
     setView('learn');
     setSearchOpen(false);
     setModuleDrawerOpen(false);
@@ -689,7 +689,7 @@ export default function CourseApp() {
       setSelectedTerm(result.id); setSearchOpen(false);
     }
     if(result.kind==='Practice'||result.kind==='Your learning') openPractice(result.parentId);
-    if(result.kind==='Standards') { chooseLesson(result.parentId);  }
+    if(result.kind==='Standards') { chooseLesson(result.parentId); setLessonWorkspaceMode('standards'); }
   };
 
   const exportProgress = () => {
@@ -858,8 +858,6 @@ export default function CourseApp() {
                 </div>
                 <div className="lesson-title-block"><p className="lesson-kicker"><strong>{location.module.path}.{String(location.module.stageNumber).padStart(2,'0')}</strong><span>·</span>{lessonStudyRole(activeLesson.id)}<span>·</span>{activeLesson.topic}</p><h1>{activeLesson.title}</h1><p>{activeLesson.instructor} <span>·</span> {activeLesson.duration}</p></div>
                 {['course-TsJ49Np3HS0','course-UFvL7wTFzl0'].includes(activeLesson.id)&&<ElectricalShockContext/>}
-                <CourseBridge key={activeLesson.id} lessonId={activeLesson.id}/>
-                {activeLesson.id.startsWith('course-')&&sourceClarifications[activeLesson.id]&&<aside className="course-source-context"><strong>Source context</strong><p>{sourceClarifications[activeLesson.id]}</p></aside>}
                 <div className="video-shell">
                   <div className="video-frame">
                     {playerSrc
@@ -879,12 +877,12 @@ export default function CourseApp() {
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={completed.has(activeLesson.id)} onClick={() => toggleComplete(!completed.has(activeLesson.id))}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Watched · Undo' : 'Mark video watched'}</button>
                 </div>
                 <LessonProgress watched={completed.has(activeLesson.id)} completions={learner.videoCompletionCounts[activeLesson.id]??0}/>
-                {location.lessonIndex===0&&<LicensingStageGuide moduleId={location.module.id}/>}
                 <section id="lesson-overview" className="lesson-overview" aria-label="Lesson Overview">
-                  <LessonOverview key={activeLesson.id} lessonId={activeLesson.id} guide={activeGuide} watched={completed.has(activeLesson.id)} learningText={activeLearningText} onLesson={revisitFoundation} onRead={reading=>setBookReader({reading})}/>
+                  <LessonOverview key={activeLesson.id} lessonId={activeLesson.id} guide={activeGuide} watched={completed.has(activeLesson.id)} learningText={activeLearningText} mode={lessonWorkspaceMode} onModeChange={setLessonWorkspaceMode} onLesson={revisitFoundation} onRead={reading=>setBookReader({reading})}/>
                   <details className="lesson-practice-reveal" open={practiceOpen} onToggle={event=>setPracticeOpen(event.currentTarget.open)}><summary>Worked examples and investigations</summary>{practiceOpen&&<PracticeWorkspace key={activeLesson.id} lessonId={activeLesson.id} calculation={activePractice.calculation} cases={activePractice.cases} onEvidence={recordEvidence} evidence={learner.evidence}/>}</details>
-                  <label className="lesson-notes"><strong>Your lesson notes</strong><textarea aria-label="Your lesson notes" value={learner.notes[activeLesson.id]??''} onChange={event=>setLearner(current=>({...current,notes:{...current.notes,[activeLesson.id]:event.target.value},updatedAt:new Date().toISOString()}))} placeholder="Record an explanation, observation or question…"/></label>
+                  <details className="lesson-notes-disclosure"><summary>Your lesson notes</summary><label className="lesson-notes"><span>Write a private note for this lesson</span><textarea aria-label="Your lesson notes" value={learner.notes[activeLesson.id]??''} onChange={event=>setLearner(current=>({...current,notes:{...current.notes,[activeLesson.id]:event.target.value},updatedAt:new Date().toISOString()}))} placeholder="Record an explanation, observation or question…"/></label></details>
                 </section>
+                {location.lessonIndex===0&&<LicensingStageGuide moduleId={location.module.id}/>}
                 {activeLesson.id===location.module.lessons.at(-1)?.id&&<section className="module-recap-end"><BookOpen size={28}/><div><span>Module {pad(location.module.number)} · Keep the essentials</span><h2>Your module recap book</h2><p>Turn through the key ideas, relationships and practical distinctions from this module’s videos.</p></div><button type="button" onClick={()=>openModuleRecap(location.module.id)}>Open recap <ArrowRight size={18}/></button></section>}
                 {pathEnd&&<footer className="lesson-next-card"><div><span>Complete your pathway review</span><h3>{location.module.path} oral and practical preparation</h3></div><button type="button" onClick={()=>{setPreparationPath(location.module.path as 'C2'|'C1');navigate('home');}}>Open preparation <ArrowRight size={18}/></button></footer>}
                 {<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'End of video sequence'}</span><h3>{activeNextLesson?.title??'Return Home for unfinished lessons'}</h3></div><button type="button" onClick={()=>activeNextLesson?goRelative(1):navigate('home')}>{activeNextLesson?'Continue':'Go Home'} <ArrowRight size={18}/></button></footer>}
