@@ -15,7 +15,7 @@ await build({
 });
 const {default:App}=await import('../work/navigation-tests/app.mjs');
 globalThis.IS_REACT_ACT_ENVIRONMENT=true;
-let saved=null, tree;
+let saved=null, tree, narrowViewport=false;
 const timers=new Map(); let timerId=0;
 globalThis.document={hidden:false,fullscreenElement:null,addEventListener(){},removeEventListener(){},querySelector(){return null;}};
 globalThis.window={
@@ -25,7 +25,7 @@ globalThis.window={
   scrollTo(){},addEventListener(){},removeEventListener(){},
   setTimeout(fn,delay){const id=++timerId;if(!delay)timers.set(id,fn);return id;},
   clearTimeout(id){timers.delete(id);},setInterval(){return 1;},clearInterval(){},
-  matchMedia:()=>({matches:false}),
+  matchMedia:query=>({matches:narrowViewport&&query.includes('max-width: 1180px')}),
 };
 const flush=async()=>{for(let i=0;i<5&&timers.size;i++)await act(async()=>{const pending=[...timers.values()];timers.clear();pending.forEach(fn=>fn());});};
 const text=node=>typeof node==='string'?node:Array.isArray(node)?node.map(text).join(''):node?.children?text(node.children):'';
@@ -37,6 +37,18 @@ await mount();
 assert.equal(button('Browse freely'),undefined,'No mode toggle is needed');
 const modules=()=>tree.root.findAllByType('button').filter(node=>node.props.className==='module-card');
 await click(modules().at(-1));
+assert.ok(tree.root.findAllByProps({'aria-current':'page'}).some(node=>node.type==='button'),'Current lesson is identified in the course map');
+const learnPage=()=>tree.root.findByProps({className:tree.root.findAll(node=>typeof node.props.className==='string'&&node.props.className.startsWith('learn-page'))[0].props.className});
+await click(tree.root.findAllByProps({'aria-label':'Close course map'})[0]);
+assert.match(learnPage().props.className,/course-map-collapsed/,'Wide course map can be closed');
+await click(button('Course map'));
+assert.doesNotMatch(learnPage().props.className,/course-map-collapsed/,'Wide course map can be reopened');
+narrowViewport=true;
+await click(button('Course map'));
+assert.match(tree.root.findByProps({'aria-label':'Course modules'}).props.className,/drawer-open/,'Narrow course map opens as a drawer');
+await click(tree.root.findAllByProps({'aria-label':'Close course map'})[0]);
+assert.doesNotMatch(tree.root.findByProps({'aria-label':'Course modules'}).props.className,/drawer-open/,'Narrow course map can be closed');
+narrowViewport=false;
 const distant=state().activeLessonId;
 assert.notEqual(distant,'p01-l01','A distant module opens without prior progress');
 assert.deepEqual(state().completedLessonIds,[],'Opening a lesson is not completion');

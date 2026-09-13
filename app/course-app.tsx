@@ -126,6 +126,8 @@ export default function CourseApp() {
   const [practiceOpen,setPracticeOpen]=useState(false);
   const [returnLesson, setReturnLesson] = useState<{id:string}|null>(null);
   const [openModuleId, setOpenModuleId] = useState(course.modules[0].id);
+  const [mapPath, setMapPath] = useState<CourseModule['path']>(course.modules[0].path);
+  const [courseMapCollapsed, setCourseMapCollapsed] = useState(false);
   const [moduleDrawerOpen, setModuleDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -150,6 +152,7 @@ export default function CourseApp() {
   const searchDialogRef = useRef<HTMLElement>(null);
   const settingsDialogRef = useRef<HTMLElement>(null);
   const courseDrawerRef = useRef<HTMLElement>(null);
+  const activeLessonRowRef = useRef<HTMLButtonElement>(null);
   useDialogFocus(searchDialogRef, searchOpen);
   useDialogFocus(settingsDialogRef, settingsOpen);
   useDialogFocus(courseDrawerRef, moduleDrawerOpen);
@@ -338,13 +341,17 @@ export default function CourseApp() {
       if (readError) { setStorageBlocked(true); setToast('Saved progress could not be read. The original record is preserved; export this session before restoring a valid backup.'); }
       if (hashView === 'library' || hashView === 'practice') {
         setView('learn');
-        setOpenModuleId(lessonLocation.get(nextState.activeLessonId)?.module.id ?? course.modules[0].id);
+        const restoredModule = lessonLocation.get(nextState.activeLessonId)?.module ?? course.modules[0];
+        setOpenModuleId(restoredModule.id);
+        setMapPath(restoredModule.path);
         window.history.replaceState(null, '', `#learn/${nextState.activeLessonId}`);
       } else if (navigation.some((item) => item.id === hashView)) {
         setView(hashView as View);
       }
       if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
-        setOpenModuleId(lessonLocation.get(nextState.activeLessonId)?.module.id ?? course.modules[0].id);
+        const restoredModule = lessonLocation.get(nextState.activeLessonId)?.module ?? course.modules[0];
+        setOpenModuleId(restoredModule.id);
+        setMapPath(restoredModule.path);
         if(nextState.activeLessonId!==hashId)window.history.replaceState(null,'',`#learn/${nextState.activeLessonId}`);
       }
 
@@ -353,6 +360,11 @@ export default function CourseApp() {
     }, 0);
     return () => window.clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (view !== 'learn') return;
+    activeLessonRowRef.current?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  }, [activeLesson.id, moduleDrawerOpen, openModuleId, view]);
 
   useEffect(() => {
     if (!hydrated || storageBlocked) return;
@@ -604,6 +616,7 @@ export default function CourseApp() {
 
     setLearner((current) => ({ ...current, activeLessonId: lessonId, updatedAt: new Date().toISOString() }));
     setOpenModuleId(nextLocation.module.id);
+    setMapPath(nextLocation.module.path);
 
     setPracticeOpen(false);
     setView('learn');
@@ -614,6 +627,22 @@ export default function CourseApp() {
   };
 
   const chooseLesson = (lessonId: string) => loadLesson(lessonId);
+
+  const openCourseMap = () => {
+    setCourseMapCollapsed(false);
+    if (window.matchMedia('(max-width: 1180px)').matches) setModuleDrawerOpen(true);
+  };
+
+  const closeCourseMap = () => {
+    setModuleDrawerOpen(false);
+    if (!window.matchMedia('(max-width: 1180px)').matches) setCourseMapCollapsed(true);
+  };
+
+  const chooseMapPath = (path: CourseModule['path']) => {
+    setMapPath(path);
+    const currentPathModule = location.module.path === path ? location.module : course.modules.find(module => module.path === path);
+    if (currentPathModule) setOpenModuleId(currentPathModule.id);
+  };
 
   const chooseModule = (module: CourseModule) => {
     loadLesson(module.lessons.find(lesson=>!completed.has(lesson.id))?.id??module.lessons[0].id);
@@ -785,25 +814,28 @@ export default function CourseApp() {
             </div>
           )}
           {view === 'learn' && (
-            <div className="learn-page">
+            <div className={`learn-page ${courseMapCollapsed ? 'course-map-collapsed' : ''}`}>
               <aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
-                <div className="drawer-heading"><div><span className="eyebrow neutral">Video course</span><h2>Course map</h2></div><button type="button" onClick={() => setModuleDrawerOpen(false)} aria-label="Close course map"><X size={21} /></button></div>
+                <div className="drawer-heading"><div><span className="eyebrow neutral">Video course</span><h2>Course map</h2></div><button type="button" onClick={closeCourseMap} aria-label="Close course map"><X size={21} /></button></div>
+                <div className="course-path-switcher" role="group" aria-label="Choose learning pathway">
+                  {(['C2','C1','Professional'] as const).map(path=><button key={path} type="button" className={mapPath===path?'active':''} aria-pressed={mapPath===path} onClick={()=>chooseMapPath(path)}>{path==='Professional'?'Advanced':path}</button>)}
+                </div>
                 {browsingControls}
                 <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required videos watched</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>
                 <nav>
-                  {course.modules.map((module) => {
+                  {course.modules.filter(module=>module.path===mapPath).map((module) => {
                     const isOpen = openModuleId === module.id;
                     const done = moduleCompletedCount(module);
                     return (
                       <section className={`module-accordion ${isOpen ? 'open' : ''}`} key={module.id}>
-                        {module.stageNumber===1&&<h3 className="licensing-map-heading">{pathLabels[module.path]}</h3>}
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => setOpenModuleId(isOpen ? '' : module.id)} aria-expanded={isOpen}>
                           <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos watched</small></span><ChevronDown size={18} />
                         </button>
                         <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
-                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<p className="course-section-guide">Study one section at a time. Core lessons introduce ideas; worked reinforcement applies them; deep practice gives extra problems. Open any section whenever you need it; studying out of order does not mark skipped work complete.</p>}{sectionsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary>{group.lessonIds.flatMap((lessonId) => {
+                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary>{group.lessonIds.flatMap((lessonId) => {
                           const lesson=lessonLookup.get(lessonId)!;
-                          const rows=[<button type="button" key={lesson.id} className={activeLesson.id===lesson.id?'active':''} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration} · {lesson.instructor}</small><small className="lesson-row-progress">{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
+                          const isActiveLesson=activeLesson.id===lesson.id;
+                          const rows=[<button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" key={lesson.id} className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Current</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
                           if (lesson.id === group.lessonIds[0]) rows.splice(0, 0, <SupplementaryControls key={`${group.id}-add`} moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />);
                           const coreIndex = rows.findIndex(row => row.key === lesson.id);
                           rows.splice(coreIndex, 0, <SupplementaryRows key={`${lesson.id}-supp-before`} anchorId={lesson.id} position="before" />);
@@ -821,7 +853,7 @@ export default function CourseApp() {
                 {returnLesson && returnLesson.id !== activeLesson.id && <button type="button" className="secondary-button foundation-return" onClick={()=>{chooseLesson(returnLesson.id);setReturnLesson(null);}}><ChevronLeft size={18}/> Return to {lessonLookup.get(returnLesson.id)?.title}</button>}
                 <div className="lesson-topline">
                   <SupplementaryControls moduleId={location.module.id} anchorId={activeLesson.id} compact label="Add a supporting video after this lesson" />
-                  <button className="mobile-module-button" type="button" onClick={() => setModuleDrawerOpen(true)}><Menu size={19} /> Course map</button>
+                  <button className="mobile-module-button" type="button" onClick={openCourseMap} aria-expanded={moduleDrawerOpen}><Menu size={19} /> Course map</button>
                   <div className="breadcrumbs"><span>Module {pad(location.module.number)}</span><ChevronRight size={15} /><span>Lesson {pad(activeLesson.number)}</span></div>
                   <div className="lesson-stepper"><button type="button" onClick={() => goRelative(-1)} disabled={activeLesson.id === allLessons[0].id} aria-label="Previous lesson"><ChevronLeft size={20} /></button><span>{allLessons.findIndex((lesson) => lesson.id === activeLesson.id) + 1} / {allLessons.length}</span><button type="button" onClick={() => goRelative(1)} disabled={activeLesson.id === allLessons.at(-1)?.id} aria-label="Next lesson"><ChevronRight size={20} /></button></div>
                 </div>
