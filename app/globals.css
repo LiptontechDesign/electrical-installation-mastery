@@ -428,12 +428,14 @@ kbd {
 .breadcrumbs { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 13px; font-weight: 700; }
 .lesson-stepper { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; font-weight: 800; }
 .lesson-stepper button { display: grid; width: 44px; height: 44px; place-items: center; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
-.lesson-title-block { margin: 20px 0 24px; }
+.lesson-title-block { margin: 14px 0 18px; }
 .topic-pill { display: inline-flex; min-height: 28px; align-items: center; margin-right: 7px; border-radius: 99px; background: #dff8fa; color: #087984; padding: 4px 10px; font-size: 12px; font-weight: 850; }
 .topic-pill.quiet { background: #e9edf1; color: #51606e; }
-.lesson-title-block h1 { max-width: 920px; margin: 14px 0 9px; font-size: clamp(32px,4vw,51px); line-height: 1.08; letter-spacing: -.048em; }
+.lesson-title-block h1 { max-width: 920px; margin: 8px 0 7px; font-size: clamp(30px,3.35vw,44px); line-height: 1.1; letter-spacing: -.04em; }
 .lesson-title-block p { margin: 0; color: var(--muted); font-size: 14px; }
 .lesson-title-block p span { padding: 0 4px; color: #a4adb5; }
+.lesson-title-block .lesson-kicker { color: #42616c; font-size: 12px; font-weight: 700; letter-spacing: .025em; }
+.lesson-title-block .lesson-kicker strong { color: #087984; letter-spacing: .07em; }
 .video-shell { position: relative; }
 .video-frame { position: relative; overflow: hidden; aspect-ratio: 16/9; border: 1px solid #19293b; border-radius: 18px; background: #020609; box-shadow: 0 20px 50px rgba(7,17,31,.18); }
 .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

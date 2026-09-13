@@ -13,7 +13,6 @@ import {
   Upload, X, Zap,
 } from 'lucide-react';
 import course, { lessonStudyRole } from './course-curriculum';
-import { pathLabels } from './licensing-curriculum';
 import { sectionsByModule } from './learning-sections';
 import { ElectricalShockContext, LicensingOverview, LicensingStageGuide } from './licensing-ui';
 import { importPromotedWatched } from './integrated-progress';
@@ -854,12 +853,10 @@ export default function CourseApp() {
                 <div className="lesson-topline">
                   <SupplementaryControls moduleId={location.module.id} anchorId={activeLesson.id} compact label="Add a supporting video after this lesson" />
                   <button className="mobile-module-button" type="button" onClick={openCourseMap} aria-expanded={moduleDrawerOpen}><Menu size={19} /> Course map</button>
-                  <div className="breadcrumbs"><span>Module {pad(location.module.number)}</span><ChevronRight size={15} /><span>Lesson {pad(activeLesson.number)}</span></div>
-                  <div className="lesson-stepper"><button type="button" onClick={() => goRelative(-1)} disabled={activeLesson.id === allLessons[0].id} aria-label="Previous lesson"><ChevronLeft size={20} /></button><span>{allLessons.findIndex((lesson) => lesson.id === activeLesson.id) + 1} / {allLessons.length}</span><button type="button" onClick={() => goRelative(1)} disabled={activeLesson.id === allLessons.at(-1)?.id} aria-label="Next lesson"><ChevronRight size={20} /></button></div>
+                  <div className="breadcrumbs"><span>{location.module.path}</span><ChevronRight size={15} /><span>{location.module.title}</span></div>
+                  <div className="lesson-stepper"><button type="button" onClick={() => goRelative(-1)} disabled={activeLesson.id === allLessons[0].id} aria-label="Previous lesson"><ChevronLeft size={20} /></button><span>Lesson {location.lessonIndex + 1} of {location.module.lessons.length}</span><button type="button" onClick={() => goRelative(1)} disabled={activeLesson.id === allLessons.at(-1)?.id} aria-label="Next lesson"><ChevronRight size={20} /></button></div>
                 </div>
-                <div className="lesson-title-block"><div><span className="topic-pill lesson-sequence">Lesson {pad(activeLesson.number)} of {location.module.lessons.length}</span><span className="topic-pill">{lessonStudyRole(activeLesson.id)}</span><span className="topic-pill">{activeLesson.layer}</span><span className="topic-pill quiet">{activeLesson.topic}</span>{'sourceKind' in activeLesson && typeof activeLesson.sourceKind === 'string' && <span className="topic-pill quiet">{activeLesson.sourceKind}</span>}</div><h1>{activeLesson.title}</h1><p>{activeLesson.instructor} <span>·</span> {activeLesson.duration} <span>·</span> {location.module.title}</p></div>
-                <p className="licensing-breadcrumb">{pathLabels[location.module.path]} · Stage {location.module.stageNumber} · {location.module.classification}</p>
-                {location.lessonIndex===0&&<LicensingStageGuide moduleId={location.module.id}/>}
+                <div className="lesson-title-block"><p className="lesson-kicker"><strong>{location.module.path}.{String(location.module.stageNumber).padStart(2,'0')}</strong><span>·</span>{lessonStudyRole(activeLesson.id)}<span>·</span>{activeLesson.topic}</p><h1>{activeLesson.title}</h1><p>{activeLesson.instructor} <span>·</span> {activeLesson.duration}</p></div>
                 {['course-TsJ49Np3HS0','course-UFvL7wTFzl0'].includes(activeLesson.id)&&<ElectricalShockContext/>}
                 <CourseBridge key={activeLesson.id} lessonId={activeLesson.id}/>
                 {activeLesson.id.startsWith('course-')&&sourceClarifications[activeLesson.id]&&<aside className="course-source-context"><strong>Source context</strong><p>{sourceClarifications[activeLesson.id]}</p></aside>}
@@ -882,6 +879,7 @@ export default function CourseApp() {
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={completed.has(activeLesson.id)} onClick={() => toggleComplete(!completed.has(activeLesson.id))}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Watched · Undo' : 'Mark video watched'}</button>
                 </div>
                 <LessonProgress watched={completed.has(activeLesson.id)} completions={learner.videoCompletionCounts[activeLesson.id]??0}/>
+                {location.lessonIndex===0&&<LicensingStageGuide moduleId={location.module.id}/>}
                 <section id="lesson-overview" className="lesson-overview" aria-label="Lesson Overview">
                   <LessonOverview key={activeLesson.id} lessonId={activeLesson.id} guide={activeGuide} watched={completed.has(activeLesson.id)} learningText={activeLearningText} onLesson={revisitFoundation} onRead={reading=>setBookReader({reading})}/>
                   <details className="lesson-practice-reveal" open={practiceOpen} onToggle={event=>setPracticeOpen(event.currentTarget.open)}><summary>Worked examples and investigations</summary>{practiceOpen&&<PracticeWorkspace key={activeLesson.id} lessonId={activeLesson.id} calculation={activePractice.calculation} cases={activePractice.cases} onEvidence={recordEvidence} evidence={learner.evidence}/>}</details>

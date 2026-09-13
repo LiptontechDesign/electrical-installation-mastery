@@ -5,7 +5,7 @@ import integratedIndex from './integrated-video-index.json';
 
 export type LicensingPath = 'C2' | 'C1' | 'Professional';
 export const pathLabels: Record<LicensingPath, string> = {
-  C2: 'Part I · C2 Licensing Path', C1: 'Part II · C1 Licensing Path', Professional: 'Part III · Professional Mastery',
+  C2: 'C2 · Domestic and single-phase', C1: 'C1 · Three-phase and commercial', Professional: 'Advanced systems',
 };
 const range = (prefix: string, first: number, last: number) => Array.from({length:last-first+1},(_,i)=>`${prefix}${String(first+i).padStart(2,'0')}`);
 type Stage = { id:string; path:LicensingPath; title:string; ids:string[]; purpose:string };

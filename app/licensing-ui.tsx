@@ -1,5 +1,6 @@
 'use client';
 import {useState} from 'react';
+import {ChevronDown, Info} from 'lucide-react';
 import course from './course-curriculum';
 import {pathLabels,type LicensingPath} from './licensing-curriculum';
 import Formula from './formula';
@@ -14,13 +15,13 @@ function CorrectionExample() {
 }
 export function LicensingStageGuide({moduleId}:{moduleId:string}) {
   const stage=course.modules.find(m=>m.id===moduleId)!;
-  return <section className="licensing-stage-guide"><span className="eyebrow">{pathLabels[stage.path]} · Stage {stage.stageNumber}</span><h2>{stage.title}</h2><p>{stage.description}</p>
+  return <details className="licensing-stage-guide"><summary><Info size={18}/><span><small>{stage.path} · Stage {stage.stageNumber}</small><strong>About this stage</strong></span><ChevronDown size={18}/></summary><div className="licensing-stage-guide-body"><h2>{stage.title}</h2><p>{stage.description}</p>
     {moduleId==='module-02'&&<details><summary>Electrical-shock response: read before CPR/AED</summary><ElectricalShockContext/></details>}
     {moduleId==='module-06'&&<><Formula tex={'I_b \\leq I_n \\leq I_z'} block/><p>Identify the load and design current first. Select protection, then check installed cable capacity using the applicable correction factors. Check voltage drop, fault protection and breaking capacity before finalising the design. A cable passing one calculation has not necessarily passed the others.</p></>}
     {moduleId==='module-08'&&<details open><summary>Initial Verification — The Complete Test Sequence</summary><p>Visual inspection and safe isolation establish the starting condition. Appropriate continuity/CPC, ring continuity where relevant, insulation resistance and polarity checks identify defects before energisation. Earth-electrode checks apply where required. Only when the dead-test evidence and safety controls permit it should a competent person proceed to live verification: supply polarity, external loop impedance, prospective fault current, circuit loop/RCD performance and functional checks, followed by documentation.</p><p>This is a learning sequence, not a universal field procedure: method, order, parallel paths, connected equipment and safe conditions depend on the installation and applicable standard. For every demonstration record the purpose, instrument, safe condition, expected interpretation, defect indication and next action. Never energise simply because you reached the next video.</p></details>}
     {moduleId==='c1-pfc'&&<CorrectionExample/>}
     {moduleId==='c1-faults'&&<p className="licensing-gap">Further supervised scenarios are still needed for motor phase loss, phase imbalance and protection coordination. The board and thermal lessons do not establish full C1 fault-finding competence.</p>}
-  </section>;
+  </div></details>;
 }
 
 type Props = { initialPath?: 'C2' | 'C1' | null; completed: string[]; onLesson: (id: string) => void };
