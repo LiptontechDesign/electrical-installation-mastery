@@ -7,6 +7,8 @@ import { c204AdditionalTerms, c204Formulas, c204Sections, c204TermPatches } from
 import { c204SourceReferences } from './c2-04-sources';
 import { c205AdditionalTerms, c205Formulas, c205Sections, c205TermPatches } from './c2-05-overview';
 import { c205SourceReferences } from './c2-05-sources';
+import { c206AdditionalTerms, c206Formulas, c206Sections, c206TermPatches } from './c2-06-overview';
+import { c206SourceReferences } from './c2-06-sources';
 import type { OverviewDataset } from './overview-models';
 
 const patchEntries = new Map([
@@ -15,12 +17,11 @@ const patchEntries = new Map([
   ...Object.entries(c203TermPatches),
   ...Object.entries(c204TermPatches),
   ...Object.entries(c205TermPatches),
+  ...Object.entries(c206TermPatches),
 ]);
 export const overviewTerms: PreservedCanonicalTerm[] = [
   ...canonicalTerms.map(term => {
     const composed = { ...term, ...(patchEntries.get(term.id) ?? {}) };
-    // `definition` is the compatibility field used by legacy glossary/search consumers.
-    // Keep it synchronized with the canonical standardsMeaning after editorial patches.
     return { ...composed, definition: composed.standardsMeaning };
   }),
   ...c201AdditionalTerms,
@@ -28,13 +29,14 @@ export const overviewTerms: PreservedCanonicalTerm[] = [
   ...c203AdditionalTerms,
   ...c204AdditionalTerms,
   ...c205AdditionalTerms,
+  ...c206AdditionalTerms,
 ];
 
 export const overviewData: OverviewDataset = {
-  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences],
+  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences],
   terms: overviewTerms,
-  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas],
-  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections],
+  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas],
+  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections],
 };
 
 export const overviewSectionById = new Map(overviewData.sections.map(section => [section.id, section]));
