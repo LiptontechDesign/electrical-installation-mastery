@@ -1,162 +1,84 @@
 # Electrical Installation Mastery
 
-A mobile-friendly, self-paced electrical installation course designed around long-form UK teaching videos and practical Kenyan residential and light-commercial context.
+A learning workshop with 296 lessons in 25 modules across C2, C1 and Professional pathways. The assessment reset intentionally removes the old quizzes, flashcards and checkpoints without introducing replacement exams.
 
-**Live course:** [electrical-installation-mastery.vercel.app](https://electrical-installation-mastery.vercel.app/)
+## Learning experience
 
-## What has been built
+- **Home:** continue learning, required-video progress, study minutes and licensing pathway information.
+- **Learn:** 82 neutral learning sections, original videos and transcripts, Overview explanations, standards, glossary, book links, worked calculations, fault investigations and personal notes. Lessons remain freely accessible in any order.
+- **Books:** four complete books with chapter search, PDF and text views, zoom, page navigation, saved pages/notes, extracted figures and explanatory simulations. Lesson source links reuse the same reader in a dialog.
+- **Settings:** browser progress backup/import/reset and playback preferences.
 
-- **276 sequenced video lessons across 16 modules:** the previous 246 lessons plus 30 missing supplied AC, resistance/resistivity and lighting videos. The additions contain 150 explicitly authored questions and 180 retrieval cards. See [the September additions and audit](docs/SUPPLIED_LESSON_REVIEW.md).
-- **Embedded YouTube learning:** lessons play inside the course without requiring a separate playlist or paid video hosting.
-- **Optional free browsing:** switch on Browse freely from Home or the Learn course map to open any module or video. Guided sequencing remains the default. Resume unfinished work returns to the earliest unwatched video or unpassed checkpoint; skipping never changes completion records. The preference survives reloads and progress backups. Checkpoints still require their own lesson group and an 80% pass.
-- **Reliable optional auto-next:** a completed video is marked finished and the next lesson loads after a five-second countdown. The learner can cancel, select another lesson or switch auto-next off. Fullscreen playback is handled without removing the active player unexpectedly.
-- **Lesson teaching guides:** every video has a concise summary, key concepts, points to remember and practical connections.
-- **Lesson-specific retrieval practice:** 1,580 flashcards and 1,580 quiz questions include new worked applications. Optional explanations and three interactive exercises appear inside the existing Overview tab.
-- **Lesson and module mastery:** flashcard review, instant quiz feedback, saved best scores, an 80% mastery target and spaced-review due dates.
-- **Learning workspace:** searchable lessons, concise lesson overviews, interactive formula diagrams with KaTeX, glossary, bookmarks, personal notes, confidence ratings and progress reporting. Navigation is limited to Home, Learn, Toolkit and Progress; lessons have Overview, Quiz, Flashcards and My notes tabs, and module quizzes and due flashcards open from Progress.
-- **Local-first progress:** learning records stay in browser storage and can be exported or restored as a JSON backup.
-- **Responsive interface:** the course navigation, video lesson, practice tools and progress views adapt for desktop and phone use.
-- **Book reader:** two complete reference books and eight extracted illustrations in private Vercel Blob storage. My books opens automatically and includes chapter search, PDF page navigation, zoom, saved pages and book notes. Devices share the same reading state without entering a key.
-- **Phone reading:** full-screen reader, safe-area spacing, larger touch controls, persistent bottom page navigation and fit-to-width pages. Page zoom reaches 300%; Text view offers adjustable, wrapping text wherever the source PDF has selectable text. Scanned pages remain available in Page view. Rendered canvases are limited to four million pixels to reduce memory pressure.
-- **Reading companions:** nine carefully mapped topics connect 39 lessons to precise book pages. RCD current balance, cable-route conditions and motor holding contacts have interactive models, also available after revealing relevant quiz and flashcard answers.
-- **My books → Simulations:** four guided activities explore current balance, cable capacity, voltage drop and motor control using those models. Each has a prediction check and exact source-page links. Matching book pages link back to the relevant simulation. The RCD model has an adjustable protective-path current and animated current paths, with reduced-motion support.
+Schema 7 accepts earlier backups (including version 6), retains learning records and preferences, and discards retired assessment scores, passes, attempts and recall schedules. Required progress counts videos only. Book state remains independently synchronized on the server.
 
-## Books on Vercel
+## Books and privacy
 
-The PDFs and extracted images are stored in a **private** Blob store, outside Git and the public website assets. Opening My books automatically creates a signed, HttpOnly session; no reader key or account is required. This is a shared reader: anyone using the website can read the books and access or update the same book positions, bookmarks and notes. Private storage keeps Blob credentials on the server; the automatic session is not an identity check. Bookmarks and reading positions use small operations with ETag checks so simultaneous changes on different devices do not replace the whole reading record. Video progress and lesson notes retain their existing browser storage.
+| Book | Edition | Complete PDF pages |
+|---|---|---:|
+| Electrical Installation Designs | Fourth, 2013 | 264 |
+| Modern Wiring Practice | Fourteenth, 2010 | 352 |
+| Guide to the IET Wiring Regulations | BS 7671:2008+A1:2011 guide, 2012 | 290 |
+| On-Site Guide | Ninth, BS 7671:2018+A4:2026 | 258 |
 
-Required server variables:
+Originals, reading copies and extracted figures live in private Vercel Blob, not Git or public assets. The 2026 On-Site Guide is an image scan; use Page view and chapter search. The IET Wiring Guide has an OCR text layer. Older editions are historical references, not current compliance specifications.
 
-- `BLOB_READ_WRITE_TOKEN` from the connected private store, or `BLOB_STORE_ID` with Vercel OIDC.
-- `READER_SESSION_SECRET`: a separate random secret of at least 32 characters. Changing it invalidates existing reader sessions.
+Opening Books creates a signed HttpOnly session automatically. **This is a shared reader, not individual authentication:** anyone who can access the website can read books and update shared bookmarks/positions/notes. Private Blob storage protects credentials and prevents direct anonymous Blob downloads; it does not restrict website visitors. Video progress and lesson notes are browser-local.
 
-Never expose these variables with a `NEXT_PUBLIC_` prefix. Sessions last 30 days and renew automatically whenever My books opens, including after a session expires. No secret is hardcoded in the browser, and `READER_ACCESS_KEY_SHA256` is no longer required. There are no individual user accounts.
+Server configuration:
 
-`scripts/prepare-book-copies.py` creates reading copies with compact PDF object indexes using pikepdf. All 264 / 352 pages are retained; source originals remain in the private store. The optimized indexes prevent the scanned book from downloading every page image just to open the document. `app/book-assets.json` records the exact file sizes required for range reads.
+- `BLOB_READ_WRITE_TOKEN`, or `BLOB_STORE_ID` with Vercel OIDC.
+- `READER_SESSION_SECRET`: at least 32 random characters, never prefixed `NEXT_PUBLIC_`.
 
-`scripts/upload-books.mjs` uploads the two supplied PDFs, optional prepared illustrations and reading copies with private access, fixed paths and size checks. `scripts/prepare-reader.mjs` copies matching PDF.js worker, font and decoder assets before the Vercel build. Generated PDF.js assets, credentials, source books and local research outputs are excluded from Git and from deployment uploads. The reader downloads at most two sections at once and retries temporary transfer failures.
+Reader operations use ETag checks to avoid replacing another device's concurrent changes. PDF.js assets are prepared automatically before development/build. All complete page counts and exact byte sizes are recorded in the registry.
 
-Validation:
+To prepare/upload one new book, use `scripts/prepare-book-copies.py --book BOOK_ID INPUT_PDF PAGE_COUNT OUTPUT_PDF` and `node --env-file=.env.local scripts/upload-books.mjs --book BOOK_ID ORIGINAL_PDF READER_PDF`. Uploads are private and refuse overwrites. Generated PDFs and manifests belong in ignored `work/`.
 
-```sh
-npm run prepare:reader
-npm run test:learning
-npm run test:books
-npx next build
-node --env-file=.env.local scripts/verify-book-access.mjs https://electrical-installation-mastery.vercel.app
-```
+## Run and verify
 
-The access check verifies opening without a key, replacement of an invalid session, shared state access, CSRF rejection, PDF ranges, private Blob access and an extracted figure without changing reading progress. The optional `--test-saving` flag is only for an unused store; it checks concurrent updates from two independent sessions and then removes its temporary test progress.
-
-These books describe historical UK requirements. The lesson source panels explain that context and direct learners to current authorities. The interactive cable values are illustrative, and the models do not certify a real installation. Chapter-title search works for both books; the scanned book has no selectable page text.
-
-## Curriculum
-
-The learning path begins with electrical principles and progresses through:
-
-1. Electrical foundations
-2. Building electrical systems
-3. Practical wiring and terminations
-4. Containment, cables and installation methods
-5. Protection, earthing and fault paths
-6. Electrical design and calculations
-7. Three-phase systems and distribution
-8. Inspection, testing and commissioning
-9. Fault finding and maintenance
-10. Complete installation workflows
-11. Socket outlets, fixed appliances and domestic loads
-12. Lighting design, LED systems and lighting controls
-13. Smart homes, data, CCTV, access control and electric fencing
-14. Solar PV, batteries, generators, UPS systems and EV charging
-15. Pumps, water heating, HVAC, fire detection and building services
-16. Tools, quotations, documentation, handover and professional practice
-
-Kenyan applications include stone and brick construction, concealed conduit, reinforced slabs, gypsum ceilings, modern lighting layouts, outdoor and compound systems, backup power and future-ready services.
-
-## Assessment design
-
-Each lesson follows a simple learning loop:
-
-1. Watch the complete video.
-2. Review the lesson summary and key concepts.
-3. Answer concise flashcard questions from that lesson.
-4. Complete the lesson quiz and read the answer feedback.
-5. Continue automatically or choose another lesson.
-6. Complete a larger mastery review at the end of the module.
-
-The assessment generator requires at least three lesson-specific concepts and builds distinct recall, application, safety and Kenya-compliance checks. The transcript audit verifies that every lesson has a matching teaching guide and that its learning content is grounded in the archived transcript vocabulary. One visual-only lesson is explicitly recorded rather than treated as spoken narration.
-
-Run the course-wide assessment audit with:
+Node.js 22.13 or newer:
 
 ```powershell
-npm run audit:transcripts
-```
-
-September 2026 verified coverage:
-
-- 276 unique videos, 16 modules and complete lesson-guide/assessment coverage
-- All 239 original lesson and flashcard identities preserved
-- Seven new videos checked against publicly indexed creator captions and metadata
-- 1,746 flashcards
-- 1,500 quiz questions
-- 0 generic title-based recall prompts
-- 0 overlong flashcard questions or answers
-
-The transcript archive is bundled in `course-transcripts/`, so a normal clone includes the source evidence used by the course audit. It contains transcript text for 275 active videos and an explicit `no_captions` record for one video. The default audit checks all 276 course records; `node scripts/audit-transcript-assessments.mjs --new-only` retains its historical scope of the seven earlier gap lessons. Run `node scripts/test-supplied-learning.mjs` for the 30 supplied additions and a course-wide generated-content audit. Vocabulary overlap is evidence coverage, not proof of technical accuracy or individual authorship. The course-wide audit currently identifies 1,355 inherited questions with generated follow-ups or diagnostics requiring editorial review. Captions are source evidence and are not published in the site UI.
-
-## Safety and standards
-
-This is an educational course, not an electrical licence or authorisation to undertake regulated work. Current Kenyan law, EPRA and utility requirements, applicable KS/IEC standards, the approved project specification and the equipment manufacturer's instructions take priority. UK videos and BS 7671 material are teaching references and must not be assumed to establish Kenyan compliance automatically.
-
-## Project structure
-
-- `app/course-data.json` — validated catalogue for the original 161 lessons.
-- `app/course-extension/` — modular definitions for the advanced curriculum.
-- `app/course-extension-data.ts` — combines and validates extension modules.
-- `app/course-curriculum.ts` — canonical ordering, module descriptions and totals used by the website and audits.
-- `app/course-gap-data.ts` — seven accepted video additions and original guides.
-- `course-transcripts/` — bundled transcript archives and the complete 276-video source manifest.
-- `app/lesson-connections-data.ts` — concise calculation and concept explanations with primary sources.
-- `app/lesson-connection.tsx` — optional explanations and interactive learning exercises.
-- `scripts/test-curriculum.mjs` — progress-identity, prerequisite, assessment and exercise checks.
-- `app/lesson-guides-*.json` — lesson-specific summaries and core concepts.
-- `app/assessment-data.ts` — flashcard and quiz construction and quality rules.
-- `app/assessment-panel.tsx` — lesson and module practice interface.
-- `app/course-app.tsx` — course navigation, player, progress and learning tools.
-- `docs/ASSESSMENT_SOURCE_MAP.md` — assessment pedagogy, source hierarchy and Kenyan regulatory guardrails.
-- `scripts/audit-transcript-assessments.mjs` — full transcript-to-assessment coverage audit.
-- `scripts/generate-course-data.mjs` — rebuilds and validates the original curriculum catalogue.
-
-## Run locally
-
-Requirements: Node.js 22.13 or newer.
-
-```powershell
-npm install
+npm ci
 npm run dev
 ```
 
-Open `http://127.0.0.1:3000/` in Chrome. For a production check:
+Checks:
 
 ```powershell
+npm run lint
+npx tsc --noEmit
+npm run test:learning
+npm run test:curriculum
+npm run test:licensing
+npm run test:tutor
+npm run test:books
+npm run test:recaps
+npm run test:navigation
+npm run test:migration
+npm run test:architecture
+node scripts/test-supplied-learning.mjs
+npm run audit:course
 npm run audit:transcripts
-npx next build
-npx next start
-```
-
-## Deployment
-
-The production application is hosted on Vercel. The repository includes `vercel.json` and the Next.js configuration needed for deployment. After linking the repository to a Vercel project, pushes to the production branch can deploy automatically; a manual production deployment can also be created with:
-
-```powershell
-npx vercel deploy --prod
-```
-
-## Updating the course
-
-Add advanced lessons through the appropriate file in `app/course-extension/`, add a matching lesson guide, and preserve every existing lesson ID so saved progress remains valid. Before publishing a content change, run:
-
-```powershell
-npm run audit:transcripts
+npm run build
 npx next build
 ```
+
+`npm run build` validates the existing vinext/Vite target. `vercel.json` uses `node scripts/prepare-reader.mjs && npx next build`; verify that target before publishing. Production-like local server: `npx next start -H 127.0.0.1 -p 3001`.
+
+With server credentials configured, `node --env-file=.env.local scripts/verify-book-access.mjs http://127.0.0.1:3001` checks session renewal, shared state reads, all four PDF ranges, CSRF rejection, private Blob access and an extracted figure. Its optional `--test-saving` mode refuses to change an occupied store.
+
+## Architecture and sources
+
+- `app/course-curriculum.ts`: canonical ordering; `scripts/course-baseline.json` protects all existing lesson/video identities.
+- `app/learning-sections.ts` / `.json`: coherent lesson groups, with no pass/fail state.
+- `app/lesson-explanations.json`, `lesson-study-notes.json`, `supplied-teaching.json`: neutral preserved teaching extracted before the old question engine was removed.
+- `app/learner-state.ts`: schema 7 migration and validation.
+- `app/book-reader.tsx`: shared full-page/dialog reader implementation.
+- `course-transcripts/`: 295 complete transcript sources and one explicitly visual-only lesson; all fingerprints are audited.
+- `app/knowledge-graph.ts`, `standards-data.ts`, `lesson-terminology.ts`, `practice-data.ts`, toolkit math and visuals remain available for contextual learning.
+
+Earlier documents in `docs/` are historical design/audit records, not the current implementation contract. See the assessment-reset report for the current delivered scope. The obsolete generated question-bank audit has been removed.
+
+## Safety
+
+This course does not grant an electrical licence or authorize regulated work. Kenyan requirements, applicable standards, approved project specifications and manufacturers' instructions govern actual installations. UK book references and illustrative models must not be treated as proof of Kenyan compliance. Practical work requires appropriate competence and supervision.

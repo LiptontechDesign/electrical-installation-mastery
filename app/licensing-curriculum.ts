@@ -9,7 +9,7 @@ export const pathLabels: Record<LicensingPath, string> = {
 };
 const range = (prefix: string, first: number, last: number) => Array.from({length:last-first+1},(_,i)=>`${prefix}${String(first+i).padStart(2,'0')}`);
 type Stage = { id:string; path:LicensingPath; title:string; ids:string[]; purpose:string };
-type ExistingModule = { id:string; number:number; title:string; description:string; checkpoint:string; lessons:CurriculumLesson[]; durationSeconds:number; duration:string };
+type ExistingModule = { id:string; number:number; title:string; description:string; learningOutcome:string; lessons:CurriculumLesson[]; durationSeconds:number; duration:string };
 export function buildLicensingModules<T extends ExistingModule>(legacy:T[]) {
   const all = [...legacy.flatMap(m=>m.lessons),...integratedLessons], catalogue = new Map(all.map(l=>[l.id,l]));
   const original = (id:string) => legacy.find(m=>m.id===id)!.lessons.map(l=>l.id);
@@ -55,7 +55,7 @@ export function buildLicensingModules<T extends ExistingModule>(legacy:T[]) {
       return {...lesson,number:i+1,prerequisite:i ? `Build on “${catalogue.get(stage.ids[i-1])!.title}”.` : stage.purpose};
     });
     const durationSeconds = lessons.reduce((sum,l)=>sum+l.durationSeconds,0);
-    return {...base,id:stage.id,number:index+1,path:stage.path,stageNumber:++pathNumbers[stage.path],classification:stage.path==='Professional'?'PROFESSIONAL EXTENSION':`${stage.path} CORE`,title:stage.title,description:stage.purpose,checkpoint:stage.purpose,lessons,durationSeconds,duration:formatStudyDuration(durationSeconds)};
+    return {...base,id:stage.id,number:index+1,path:stage.path,stageNumber:++pathNumbers[stage.path],classification:stage.path==='Professional'?'PROFESSIONAL EXTENSION':`${stage.path} CORE`,title:stage.title,description:stage.purpose,learningOutcome:stage.purpose,lessons,durationSeconds,duration:formatStudyDuration(durationSeconds)};
   });
   if(used.size!==catalogue.size) throw new Error(`Unassigned licensing lessons: ${all.filter(l=>!used.has(l.id)).map(l=>l.id).join(', ')}`);
   return modules;

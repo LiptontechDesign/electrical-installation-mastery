@@ -3,18 +3,20 @@ import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { put, head, BlobNotFoundError } from '@vercel/blob';
 
-if (process.argv.length < 4) throw new Error('Usage: node --env-file=.env.local scripts/upload-books.mjs <designs.pdf> <wiring.pdf> [extracted-figures-directory] [prepared-reading-copies-directory]');
-const inputs = [
+if (process.argv.length < 4) throw new Error('Usage: upload-books.mjs <designs.pdf> <wiring.pdf> [figures-dir] [readers-dir], or --book <book-id> <original.pdf> <reader.pdf>');
+const singleBook = process.argv[2] === '--book';
+const assets = JSON.parse(await readFile('app/book-assets.json', 'utf8'));
+if (singleBook && (!assets[process.argv[3]] || !process.argv[4] || !process.argv[5])) throw new Error('Provide a known book ID, original PDF and reader PDF.');
+const inputs = singleBook ? ['original','reader'].map((kind,index) => ({ file: process.argv[4+index], pathname: assets[process.argv[3]][kind].pathname, expected: assets[process.argv[3]][kind].size, contentType: 'application/pdf' })) : [
   { file: process.argv[2], pathname: 'books/installation-designs-fourth-edition.pdf', expected: 12753340, contentType: 'application/pdf' },
   { file: process.argv[3], pathname: 'books/modern-wiring-practice-fourteenth-edition.pdf', expected: 67489354, contentType: 'application/pdf' },
 ];
-if (process.argv[4]) {
+if (!singleBook && process.argv[4]) {
   const figures = JSON.parse(await readFile('app/book-figures.json', 'utf8'));
   inputs.push(...figures.map(figure => ({ file: resolve(process.argv[4], `${figure.id}.png`), pathname: `figures/${figure.id}.png`, contentType: 'image/png' })));
 }
-if (process.argv[5]) {
-  const assets = JSON.parse(await readFile('app/book-assets.json', 'utf8'));
-  for (const [id, files] of Object.entries(assets)) inputs.push({ file: resolve(process.argv[5], `${id}-reader.pdf`), pathname: files.reader.pathname, expected: files.reader.size, contentType: 'application/pdf' });
+if (!singleBook && process.argv[5]) {
+  for (const id of ['installation-designs','modern-wiring']) { const files = assets[id]; inputs.push({ file: resolve(process.argv[5], `${id}-reader.pdf`), pathname: files.reader.pathname, expected: files.reader.size, contentType: 'application/pdf' }); }
 }
 await mkdir('work/book-integration', { recursive: true });
 const uploaded = [];

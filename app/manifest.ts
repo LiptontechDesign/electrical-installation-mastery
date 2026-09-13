@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Electrical Installation Mastery',
     short_name: 'Electrical Mastery',
     description:
-      'Electrical installation lessons, quizzes, calculators and progress tracking.',
+      'Electrical installation lessons, reference books, practical examples and video progress.',
     id: '/',
     start_url: '/',
     scope: '/',

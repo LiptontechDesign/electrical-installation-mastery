@@ -1,11 +1,7 @@
 'use client';
-import { licensingPracticeId } from './integrated-progress';
-import {useEffect,useState} from 'react';
+import {useState} from 'react';
 import course from './course-curriculum';
 import {pathLabels,type LicensingPath} from './licensing-curriculum';
-import AssessmentPanel from './assessment-panel';
-import type {buildAssessmentBank} from './assessment-data';
-import type {EvidenceInput,QuizRecord} from './tutor-model';
 import Formula from './formula';
 
 export function ElectricalShockContext() {
@@ -27,34 +23,14 @@ export function LicensingStageGuide({moduleId}:{moduleId:string}) {
   </section>;
 }
 
-function PracticeTimer({minutes}:{minutes:number}) {
-  const [deadline,setDeadline]=useState<number|null>(null);
-  const [remaining,setRemaining]=useState(minutes*60);
-  useEffect(()=>{
-    if(deadline===null)return;
-    const timer=window.setInterval(()=>setRemaining(Math.max(0,Math.ceil((deadline-Date.now())/1000))),1000);
-    return ()=>window.clearInterval(timer);
-  },[deadline]);
-  return <div><button className="secondary-button" onClick={()=>{setRemaining(minutes*60);setDeadline(Date.now()+minutes*60000);}}>{deadline===null?'Start':'Restart'} optional practice timer</button><p role="timer" aria-label="Practice time remaining">{Math.floor(remaining/60)}:{String(remaining%60).padStart(2,'0')} remaining{remaining===0?' — time reached; finish and review your answers.':''}</p><small>Study aid only: the timer does not submit answers or certify exam readiness.</small></div>;
-}
-type Props={initialExam?:'C2'|'C1'|null;bank:ReturnType<typeof buildAssessmentBank>;completed:string[];passedCheckpoints:string[];records:Record<string,QuizRecord>;onLesson:(id:string)=>void;onExam:(path:'C2'|'C1',score:number,total:number)=>void;onEvidence:(e:EvidenceInput)=>void};
-export function LicensingOverview({initialExam=null,bank,completed,passedCheckpoints,records,onLesson,onExam,onEvidence}:Props) {
-  const [exam,setExam]=useState<'C2'|'C1'|null>(initialExam);
-  const done=new Set(completed),passed=new Set(passedCheckpoints);
-  const pathComplete=(path:'C2'|'C1')=>{
-    const stages=course.modules.filter(m=>m.path===path);
-    const record=records[licensingPracticeId(path)];
-    return stages.every(m=>m.lessons.every(l=>done.has(l.id))&&bank.checkpointsByModule[m.id].every(c=>passed.has(c.id)))&&Boolean(record&&record.bestTotal>0&&record.bestScore/record.bestTotal>=.8);
-  };
-  const questionSet=(path:'C2'|'C1')=>course.modules.filter(m=>m.path===path).flatMap(m=>{
-    const questions=bank.modules[m.id].questions;
-    return [0,Math.floor(questions.length/2),questions.length-1].filter((n,i,a)=>a.indexOf(n)===i).map(n=>questions[n]);
-  });
-  return <section className="licensing-overview" aria-label="Licensing pathways"><h2>Your learning progression</h2><p>Complete the C2 foundation, extend it through C1, then explore specialist systems. Course milestones require watched core videos, passed checkpoints and at least 80% on course written practice. C1 also requires the C2 milestone. These are study records, not an EPRA licence or proof of practical competence.</p><div className="licensing-paths">{(['C2','C1','Professional'] as LicensingPath[]).map(path=>{
-    const modules=course.modules.filter(m=>m.path===path),lessons=modules.flatMap(m=>m.lessons),checks=modules.flatMap(m=>bank.checkpointsByModule[m.id]);
-    const watched=lessons.filter(l=>done.has(l.id)).length,checksDone=checks.filter(c=>passed.has(c.id)).length;
-    const complete=path!=='Professional'&&pathComplete(path)&&(path!=='C1'||pathComplete('C2'));
-    return <article key={path}><span className="eyebrow">{path==='Professional'?'Optional enrichment':path+' core'}</span><h3>{pathLabels[path]}</h3><p>{path==='C2'?'Foundations → installation → protection → design → testing → fault finding':path==='C1'?'Three-phase → design → power factor → motors → verification':'Specialist cables, lighting, automation, energy systems and professional practice'}</p><p>{watched}/{lessons.length} videos · {checksDone}/{checks.length} checkpoints</p><button className="secondary-button" onClick={()=>onLesson(lessons.find(l=>!done.has(l.id))?.id??lessons[0].id)}>Open {path} pathway</button>{path!=='Professional'&&<><button className="secondary-button" onClick={()=>setExam(exam===path?null:path)}>EPRA {path} preparation</button><p className="licensing-milestone">{complete?path+' COURSE CORE COMPLETE':path+' core in progress'}</p></>}</article>;
+type Props = { initialPath?: 'C2' | 'C1' | null; completed: string[]; onLesson: (id: string) => void };
+export function LicensingOverview({initialPath=null,completed,onLesson}:Props) {
+  const [exam,setExam]=useState<'C2'|'C1'|null>(initialPath);
+  const done=new Set(completed);
+  return <section className="licensing-overview" aria-label="Licensing pathways"><h2>Your learning progression</h2><p>Study the C2 foundation, extend it through C1, then explore specialist systems. Progress records watched videos. These study records are not an EPRA licence or proof of practical competence.</p><div className="licensing-paths">{(['C2','C1','Professional'] as LicensingPath[]).map(path=>{
+    const modules=course.modules.filter(m=>m.path===path),lessons=modules.flatMap(m=>m.lessons);
+    const watched=lessons.filter(l=>done.has(l.id)).length;
+    return <article key={path}><span className="eyebrow">{path==='Professional'?'Optional enrichment':path+' core'}</span><h3>{pathLabels[path]}</h3><p>{path==='C2'?'Foundations → installation → protection → design → testing → fault finding':path==='C1'?'Three-phase → design → power factor → motors → verification':'Specialist cables, lighting, automation, energy systems and professional practice'}</p><p>{watched}/{lessons.length} videos watched</p><button className="secondary-button" onClick={()=>onLesson(lessons.find(l=>!done.has(l.id))?.id??lessons[0].id)}>Open {path} pathway</button>{path!=='Professional'&&<><button className="secondary-button" onClick={()=>setExam(exam===path?null:path)}>EPRA {path} preparation</button><p className="licensing-milestone">{watched===lessons.length?path+' core videos watched':path+' core videos in progress'}</p></>}</article>;
   })}</div>
   {exam&&<section className="licensing-preparation"><h3>EPRA {exam} preparation</h3><p>This is course-authored revision, not an official EPRA past paper or a guarantee of eligibility. Verify current regulations, Kenyan standards, application conditions and practical requirements with <a href="https://www.epra.go.ke/written-oral-interviews-areas-competency" target="_blank" rel="noreferrer">EPRA’s competency publication</a>.</p><details open><summary>Oral and practical preparation</summary><ol>{(exam==='C2'?[
     'Explain the path from the supply to a socket load, including isolation, protection, neutral and CPC. Identify the role of each without assuming colour alone proves identity.',
@@ -68,6 +44,6 @@ export function LicensingOverview({initialExam=null,bank,completed,passedCheckpo
     'Explain real, reactive and apparent power; calculate a target compensation value and identify practical capacitor-bank checks.',
     'Explain how a contactor, overload relay and short-circuit protective device cooperate, then reason through a failure-to-start scenario.',
     'Plan initial or periodic verification of a three-phase board, explaining safe conditions, interpretation, limitations and reporting.',
-  ]).map(q=><li key={q}>{q}</li>)}</ol></details><p>Suggested written practice: allow about one minute per question, then review the explanatory feedback. Exact EPRA exam timing and pass requirements are not represented here.</p><PracticeTimer key={exam+"-timer"} minutes={questionSet(exam).length}/><AssessmentPanel key={exam} title={exam+' written practice'} eyebrow="Course-authored revision" description="A balanced selection from the existing lesson assessments. These results do not overwrite lesson or checkpoint passes." flashcards={[]} questions={questionSet(exam)} progress={{}} bestScore={records[licensingPracticeId(exam)]?.bestScore??0} quizRecord={records[licensingPracticeId(exam)]} completed={Boolean(records[licensingPracticeId(exam)] && records[licensingPracticeId(exam)].bestScore / records[licensingPracticeId(exam)].bestTotal >= .8)} mode="quiz" showFlashcards={false} onRateCard={()=>{}} onEvidence={onEvidence} onCompleteQuiz={(score,total)=>onExam(exam,score,total)}/><p className="licensing-gap">Still required outside this course: authoritative current Kenya/KEBS tables and regulatory material, verified official past papers where available, supervised practical assessment and confirmed EPRA eligibility. A mock score does not establish these.</p></section>}
+  ]).map(q=><li key={q}>{q}</li>)}</ol></details></section>}
   </section>;
 }

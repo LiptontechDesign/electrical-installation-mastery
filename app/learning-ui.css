@@ -1,18 +1,11 @@
 /* Focused lesson workspace */
 [hidden] { display: none !important; }
-.lesson-tabs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
-.lesson-tabs button { justify-content: center; min-width: 0; }
 .lesson-overview { border: 0; border-radius: 0; background: transparent; padding: 0; }
 .overview-flow { display: grid; gap: 18px; }
 .overview-application { display: flex; align-items: flex-start; gap: 15px; margin: 0; border: 1px solid #cfe0e4; border-radius: 16px; background: #f2f9fa; padding: clamp(20px,3vw,28px); }
 .overview-section-icon { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border-radius: 12px; background: #d6f2f5; color: #0f6f7a; }
 .overview-application h2 { margin: 7px 0 8px; font-size: clamp(20px,2.4vw,25px); letter-spacing: -.03em; }
 .overview-application p { max-width: 76ch; margin: 0; color: #405562; font-size: 16px; line-height: 1.65; }
-.overview-quiz-cta { display: flex; min-height: 94px; align-items: center; justify-content: space-between; gap: 24px; border: 0; border-radius: 16px; background: var(--navy-2); color: #f7fbfd; padding: 20px 24px; text-align: left; box-shadow: 0 12px 30px rgba(10,30,47,.16); }
-.overview-quiz-cta > span { display: grid; gap: 5px; }
-.overview-quiz-cta > span:last-child { display: flex; grid-auto-flow: column; align-items: center; gap: 9px; color: var(--cyan); font-size: 14px; font-weight: 750; }
-.overview-quiz-cta small { color: #aebfca; font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
-.overview-quiz-cta strong { font-size: clamp(20px,2.5vw,25px); letter-spacing: -.025em; }
 .overview-support { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
 .overview-support > summary { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 15px; padding: 16px 22px; cursor: pointer; list-style: none; }
 .overview-support > summary::-webkit-details-marker { display: none; }
@@ -24,92 +17,10 @@
 .overview-support[open] > summary { border-bottom: 1px solid var(--line); }
 .overview-support[open] > summary > svg { transform: rotate(180deg); }
 .overview-support-body { display: grid; gap: 0; padding: 4px 22px 22px; }
-
-/* Assessments: one activity, one clear next action */
-.focused-assessment { box-shadow: none; border-radius: 18px; }
-.compact-assessment-heading { padding: 22px 26px 8px; }
-.compact-assessment-heading h2 { margin: 6px 0 14px; font-size: 24px; }
-.compact-assessment-heading p { margin: -6px 0 12px; color: var(--muted); font-size: 14px; }
-.session-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 18px; }
-.session-heading h2 { margin: 0; font-size: 20px; letter-spacing: -.025em; }
-.session-heading h2 span { color: var(--muted); font-weight: 500; }
-.session-heading > span { color: var(--muted); font-size: 14px; }
-.recall-map { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 18px; }
-.recall-map button { display: grid; place-items: center; min-width: 36px; min-height: 36px; border-radius: 8px; border: 1px solid transparent; background: #eef2f5; color: #65737f; font-size: 13px; }
-.recall-map .known { background: #ddf4e8; color: #146944; }
-.recall-map .again { background: #fff0da; color: #8b4c09; }
-.recall-map .current { border: 2px solid var(--navy); color: var(--navy); font-weight: 800; }
-.recall-card { width: 100%; min-height: 290px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; padding: clamp(24px,4vw,38px); border-radius: 16px; background: var(--navy-2); color: #f5f8fb; text-align: left; border: 2px solid var(--navy-2); transition: background .2s ease, border-color .2s ease; }
-.recall-card.revealed { background: #effaf6; color: var(--ink); border-color: #94cdb6; }
-.recall-card-meta { display: flex; justify-content: space-between; align-items: center; color: var(--cyan); font-size: 14px; }
-.recall-card.revealed .recall-card-meta { color: #18704f; }
-.recall-copy { display: block; max-width: 46ch; margin: 28px 0; font-size: clamp(22px,2.7vw,30px); font-weight: 650; line-height: 1.4; letter-spacing: -.025em; }
-.recall-source { color: #b6c6d4; font-size: 14px; margin-top: 14px; }
-.revealed .recall-source { color: #547065; }
-.recall-hint { font-size: 14px; color: #a9bfce; }
-.revealed .recall-hint { color: #557367; }
-.recall-tally { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding-top: 20px; color: #4f6870; font-size: 14px; }
-.recall-tally span, .recall-tally button { display: inline-flex; align-items: center; gap: 6px; }
-.recall-tally button { margin-left: auto; background: transparent; color: #176c78; min-height: 40px; font-weight: 750; }
-.quiz-map { display: flex; gap: 4px; margin-bottom: 26px; }
-.quiz-map span { flex: 1; height: 7px; background: #e7edf1; border-radius: 4px; }
-.quiz-map .current { background: var(--copper); }
-.quiz-map .known { background: #1d9266; }
-.quiz-map .again { background: #b86632; }
-.focused-assessment .assessment-options { grid-template-columns: repeat(2,minmax(0,1fr)); }
-.focused-assessment .assessment-options button { align-items: start; min-height: 100px; grid-template-columns: 32px minmax(0,1fr) 20px; padding: 16px; }
-.focused-assessment .assessment-options .option-copy { display: block; width: auto; height: auto; background: none; padding: 0; color: var(--ink); font-size: 16px; font-weight: 500; line-height: 1.5; }
-.focused-assessment .assessment-options button:disabled { opacity: 1; cursor: default; }
-.focused-assessment .assessment-options button > svg { margin-top: 5px; }
-.focused-assessment .assessment-feedback { margin-top: 18px; }
-.focused-assessment .assessment-feedback p { margin-bottom: 0; font-size: 16px; }
-.focused-assessment .assessment-feedback p + p { margin-top: 12px; }
-.answer-application { margin-top: 14px; border-top: 1px solid currentColor; padding-top: 10px; }
-.answer-application summary { cursor: pointer; font-size: 14px; font-weight: 700; }
-.recall-copy { white-space: pre-line; }
-.question-kind { display: inline-flex; margin: 0 0 9px; border-radius: 99px; background: #eef5f6; color: #246d77; padding: 5px 9px; font-size: 11px; font-weight: 800; letter-spacing: .055em; text-transform: uppercase; }
-.quiz-prior-record { display: flex; flex-wrap: wrap; gap: 7px; margin: -2px 0 17px; }
-.quiz-prior-record span { border-radius: 99px; background: #eef3f5; color: #526875; padding: 6px 10px; font-size: 12px; font-weight: 750; }
-.quiz-score-record { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; color: #526875; font-size: 13px; }
-.quiz-score-record span { display: inline-flex; align-items: center; gap: 5px; }
-.quiz-score-record strong { color: #176b4d; }
 .topic-pill.lesson-sequence { background: var(--navy-2); color: var(--cyan); }
 .lesson-row-state { display: flex; align-items: center; gap: 6px; }
 .lesson-row-state svg { color: var(--copper); }
-.quiz-score-chip { border-radius: 99px; padding: 4px 6px; font-size: 10px; font-weight: 850; white-space: nowrap; }
-.quiz-score-chip.passed { background: #dff3e9; color: #176447; }
-.quiz-score-chip.review { background: #fff0da; color: #8b4c09; }
-
-/* Required cumulative checkpoints */
 .accordion-lessons button.locked { color: #8b969f; }
-.accordion-lessons button.checkpoint-map-row { min-height: 62px; margin: 5px 0 7px; border: 1px solid #dfd4c0; background: #fbf7ef; color: #72511e; }
-.accordion-lessons button.checkpoint-map-row:hover, .accordion-lessons button.checkpoint-map-row.active { border-color: #bf7b35; background: #fff2df; color: #4e3212; box-shadow: inset 3px 0 #bf6c27; }
-.accordion-lessons button.checkpoint-map-row.passed { border-color: #bbdacb; background: #f0f8f4; color: #236247; }
-.accordion-lessons button.checkpoint-map-row.locked { border-style: dashed; background: #f5f4f1; color: #85827b; }
-.checkpoint-workspace { width: 100%; max-width: 1120px; min-width: 0; margin: 0 auto; padding: 34px 44px 80px; }
-.checkpoint-back { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; margin-bottom: 16px; background: transparent; color: #526774; font-size: 14px; font-weight: 750; }
-.checkpoint-hero { display: grid; grid-template-columns: 48px minmax(0,1fr) auto; align-items: start; gap: 17px; border-radius: 18px; background: var(--navy-2); color: #f5f9fb; padding: clamp(24px,4vw,38px); box-shadow: 0 18px 42px rgba(8,27,43,.18); }
-.checkpoint-lock { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 14px; background: var(--copper); color: #2d170a; }
-.checkpoint-hero .eyebrow { color: var(--cyan); }
-.checkpoint-hero h1 { margin: 9px 0 10px; font-size: clamp(31px,4.2vw,49px); line-height: 1.08; letter-spacing: -.045em; }
-.checkpoint-hero p { max-width: 70ch; margin: 0; color: #bdcbd4; font-size: 15px; line-height: 1.6; }
-.checkpoint-passed { display: inline-flex; align-items: center; gap: 7px; border-radius: 99px; background: #dff6e9; color: #17633f; padding: 8px 11px; font-size: 12px; font-weight: 850; }
-.checkpoint-scope { margin: 16px 0; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
-.checkpoint-scope > summary { display: grid; min-height: 58px; grid-template-columns: 1fr auto 20px; align-items: center; gap: 12px; padding: 12px 17px; cursor: pointer; list-style: none; font-size: 14px; font-weight: 800; }
-.checkpoint-scope > summary::-webkit-details-marker { display: none; }
-.checkpoint-scope > summary small { color: var(--muted); font-weight: 500; }
-.checkpoint-scope[open] > summary svg { transform: rotate(180deg); }
-.checkpoint-scope ol { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px 28px; margin: 0; border-top: 1px solid var(--line); padding: 17px 22px 20px 42px; color: #465965; font-size: 14px; line-height: 1.55; }
-.checkpoint-workspace .focused-assessment { border: 1px solid var(--line); background: #fff; }
-.checkpoint-next small { display: block; margin-top: 6px; color: #b7c8d3; font-size: 12px; }
-.quiz-finish { display: grid; grid-template-columns: 150px minmax(0,1fr); align-items: center; gap: 28px; padding: 36px; }
-.score-ring { width: 150px; height: 150px; padding: 10px; border-radius: 50%; }
-.score-ring > span { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; flex-direction: column; background: white; border-radius: 50%; }
-.score-ring b { font-size: 32px; }
-.score-ring small { font-size: 14px; color: var(--muted); }
-.quiz-finish h2 { margin: 0; font-size: 26px; }
-.quiz-finish p { font-size: 16px; color: var(--muted); }
-.quiz-finish-actions { display: flex; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
 .concept-visual { border: 1px solid #cddfe2; border-radius: 12px; padding: 16px 18px; background: #f7fbfc; margin-top: 20px; }
 .concept-visual > summary { cursor: pointer; color: #1e6470; font-size: 14px; font-weight: 800; }
 .particle-selector { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 20px; }
@@ -127,9 +38,6 @@
 .circuit-model.closed span { background: #e2f7eb; border-color: #8fc6a9; }
 
 /* Interactive formula studio */
-.interactive-toolkit { min-width: 0; }
-.toolkit-heading h1 { font-size: clamp(28px,3.6vw,42px); line-height: 1.15; letter-spacing: -.045em; margin: 12px 0; }
-.toolkit-heading p { color: var(--muted); font-size: 16px; margin: 0; }
 .formula-picker { display: grid; grid-template-columns: repeat(5,minmax(185px,1fr)); overflow-x: auto; gap: 10px; padding: 5px 2px 14px; margin-top: 28px; scroll-snap-type: x proximity; }
 .formula-picker button { min-width: 0; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 16px; text-align: left; scroll-snap-align: start; }
 .formula-picker button > span:first-child { font-size: 14px; font-weight: 750; }
@@ -183,7 +91,6 @@
 .resistance-stack span:nth-child(3) { background: #b7a4ff; }
 .power-factor-track { height: 12px; background: #35495d; border-radius: 5px; overflow: hidden; }
 .power-factor-track > span { display: block; height: 100%; background: var(--cyan); transition: width .15s; }
-.toolkit-scope { color: var(--muted); font-size: 14px; margin: 16px 0 38px; }
 .term-heading { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 14px; }
 .term-heading h2 { display: flex; gap: 10px; align-items: center; font-size: 24px; margin: 0; letter-spacing: -.03em; }
 .term-heading .glossary-search { width: 300px; max-width: 100%; }
@@ -202,20 +109,12 @@
 .term-empty { background: #fff; padding: 24px; border-radius: 12px; font-size: 16px; }
 
 @media (max-width: 1100px) {
-  .focused-assessment .assessment-options { grid-template-columns: 1fr; }
-  .focused-assessment .assessment-options button { min-height: 68px; }
   .term-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width: 760px) {
-  .checkpoint-workspace { padding: 18px 14px 64px; }
-  .checkpoint-hero { grid-template-columns: 42px minmax(0,1fr); padding: 22px 18px; }
-  .checkpoint-lock { width: 42px; height: 42px; }
-  .checkpoint-passed { grid-column: 2; justify-self: start; }
-  .checkpoint-scope ol { grid-template-columns: 1fr; }
   .overview-flow { gap: 14px; }
   .overview-application { padding: 18px; }
   .overview-application .overview-section-icon { width: 38px; height: 38px; flex-basis: 38px; }
-  .overview-quiz-cta { min-height: 0; align-items: flex-start; flex-direction: column; gap: 14px; padding: 20px; }
   .overview-support > summary { padding: 15px 17px; }
   .overview-support > summary small { display: none; }
   .overview-support-body { padding: 2px 16px 16px; }
@@ -224,47 +123,22 @@
   .quantity-control:nth-child(3) { grid-column: 1 / -1; }
   .formula-picker { grid-template-columns: repeat(5,190px); margin-top: 18px; }
   .formula-assumption { margin-top: 14px; }
-  .quiz-finish { padding: 24px; gap: 20px; grid-template-columns: 110px minmax(0,1fr); }
-  .score-ring { width: 110px; height: 110px; padding: 8px; }
-  .score-ring b { font-size: 26px; }
-  .score-ring small { font-size: 12px; }
-  .quiz-finish h2 { font-size: 22px; }
-  .recall-copy { font-size: 23px; }
-  .focused-assessment .flashcard-actions { display: flex; flex-wrap: wrap; justify-content: space-between; }
-  .focused-assessment .flashcard-actions .card-rating, .focused-assessment .flashcard-actions .reveal-card { order: -1; width: 100%; }
-  .focused-assessment .flashcard-actions .card-nav { flex: 1; }
-  .focused-assessment .card-rating button { min-width: 0; flex: 1; }
-  .focused-assessment .assessment-quiz, .focused-assessment .flashcard-workspace { padding: 20px; }
-  .lesson-tabs button { font-size: 14px; gap: 6px; padding-inline: 5px; }
   .term-heading .glossary-search { width: 100%; }
 }
 @media (max-width: 420px) {
-  .lesson-tabs button { flex-direction: column; font-size: 13px; }
   .term-grid { grid-template-columns: 1fr; }
-  .quiz-finish { grid-template-columns: 1fr; justify-items: center; text-align: center; }
-  .quiz-score-record { justify-content: center; }
   .editable-values { grid-template-columns: 1fr; }
   .circuit-model { gap: 4px; }
   .circuit-model span { padding: 10px 6px; font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .recall-card, .power-factor-track > span { transition: none; }
+  .power-factor-track > span { transition: none; }
 }
 .overview-orientation { padding: 4px 0 12px; max-width: 72ch; }
 .overview-orientation p { font-size: 1.05rem; line-height: 1.7; margin: 10px 0 0; }
-.retrieval-step { padding: 24px 0; border-top: 1px solid #dce6eb; }
-.retrieval-step h3 { font-size: 1.18rem; line-height: 1.55; max-width: 64ch; margin: 12px 0; }
-.retrieval-cue { color: #5c6e78; font-size: .9rem; }
-.retrieval-answer { margin-top: 18px; max-width: 72ch; line-height: 1.7; }
-.retrieval-result, .answer-principle { font-weight: 650; color: #123b35; }
-.retrieval-answer .button-row { margin-top: 18px; }
+.answer-principle { font-weight: 650; color: #123b35; }
 .overview-trap { border-top: 1px solid #dce6eb; padding: 18px 0; line-height: 1.65; }
 .overview-trap summary { cursor: pointer; font-weight: 650; }
 .overview-trap p { max-width: 72ch; }
 .overview-equation { margin: 16px 0; overflow-x: auto; }
 .overview-equation p { color: #5c6e78; font-size: .9rem; }
-.flashcard-explanation { padding: 18px 4px; max-width: 72ch; line-height: 1.7; }
-.flashcard-explanation summary { cursor: pointer; font-weight: 600; }
-.misconception-diagnosis { border-left: 3px solid #bc6a32; padding-left: 12px; }
-.misconception-partly-right { color: #5c4b38 !important; }
-.retrieval-step .math-block, .assessment-feedback .math-block { overflow-x: auto; max-width: 100%; }

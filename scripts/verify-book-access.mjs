@@ -53,7 +53,7 @@ const manifest = JSON.parse(await readFile('work/book-integration/upload-manifes
 const unauthorized = await fetch(manifest[0].url,{headers:{Range:'bytes=0-15'}});
 assert.ok([401,403,404].includes(unauthorized.status), 'Direct private Blob URL denies unauthenticated access');
 await unauthorized.body?.cancel();
-console.log('PASS: automatic access without a key, renewed sessions, shared reading state, cross-origin rejection, both PDF byte ranges and extracted figure.');
+console.log(`PASS: automatic access without a key, renewed sessions, shared reading state, cross-origin rejection, all ${Object.keys(assets).length} PDF byte ranges and extracted figure.`);
 
 // Test-only mutations are opt-in. The routine production check above only creates sessions and reads books/state.
 if (process.argv.includes('--test-saving')) {

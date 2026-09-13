@@ -10,7 +10,7 @@ import './licensing.css';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =
-  'Electrical installation video lessons, summaries, quizzes and calculators. Track your learning at your own pace.';
+  'Electrical installation video lessons, summaries, reference books and practical resources. Track your learning at your own pace.';
 
 function resolveMetadataBase() {
   const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();

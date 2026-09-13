@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { ArrowRight, CheckCircle2, Lightbulb, ShieldCheck } from 'lucide-react';
-import { calculations, calculationProblem, calculationChoices, checkCalculation, faultCases, type Calculation, type FaultCase } from './practice-data';
+import { calculationProblem, calculationChoices, checkCalculation, type Calculation, type FaultCase } from './practice-data';
 import type { EvidenceInput, LearningEvidence } from './tutor-model';
 import { calendarDay } from './tutor-model';
 import LoopVisual from './loop-visual';
@@ -64,13 +64,9 @@ function CaseStudio({scenario,lessonId,onEvidence,evidence}:{scenario:FaultCase}
 export default function PracticeWorkspace({lessonId,calculation,cases,onEvidence,evidence}:Props){
   const activities=[...(calculation?[{id:`calc:${calculation.id}`,title:calculation.title}]:[]),...cases.map(item=>({id:`case:${item.id}`,title:item.title}))];
   const [active,setActive]=useState(activities[0]?.id??'');
-  return <div className="practice-workspace">{activities.length>0&&<nav className="practice-picker" aria-label="Choose a practice activity">{activities.map(item=><button type="button" key={item.id} aria-pressed={active===item.id} onClick={()=>setActive(item.id)}>{item.title}</button>)}</nav>}{calculation&&active===`calc:${calculation.id}`&&<CalculationStudio key={`${lessonId}-${active}`} spec={calculation} lessonId={lessonId} onEvidence={onEvidence} evidence={evidence}/>}{cases.filter(item=>active===`case:${item.id}`).map(item=><CaseStudio key={`${lessonId}-${item.id}`} scenario={item} lessonId={lessonId} onEvidence={onEvidence} evidence={evidence}/>)}<GuidePractice key={`guide-${lessonId}`} lessonId={lessonId} onEvidence={onEvidence}/></div>;
+  return <div className="practice-workspace">{activities.length>0&&<nav className="practice-picker" aria-label="Choose a practice activity">{activities.map(item=><button type="button" key={item.id} aria-pressed={active===item.id} onClick={()=>setActive(item.id)}>{item.title}</button>)}</nav>}{calculation&&active===`calc:${calculation.id}`&&<CalculationStudio key={`${lessonId}-${active}`} spec={calculation} lessonId={lessonId} onEvidence={onEvidence} evidence={evidence}/>}{cases.filter(item=>active===`case:${item.id}`).map(item=><CaseStudio key={`${lessonId}-${item.id}`} scenario={item} lessonId={lessonId} onEvidence={onEvidence} evidence={evidence}/>)}<GuidePractice key={`guide-${lessonId}`} lessonId={lessonId}/></div>;
 }
-function GuidePractice({lessonId,onEvidence}:Pick<Props,'lessonId'|'onEvidence'>){
+function GuidePractice({lessonId}:Pick<Props,'lessonId'>){
   const guide=lessonGuides[lessonId];
-  const [revealed,setRevealed]=useState(false),[saved,setSaved]=useState(false);
-  return <section className="guide-practice"><span className="eyebrow neutral">One more connection</span><h2>See how the idea is used.</h2><p>{guide.checkYourself}</p><button type="button" className="secondary-button" aria-expanded={revealed} onClick={()=>setRevealed(value=>!value)}>{revealed?'Hide the explanation':'Reveal the explanation'}</button>{revealed&&<div className="retrieval-comparison"><p><strong>The key idea:</strong> {guide.remember}</p><ul>{guide.keyConcepts.map(item=><li key={item}>{item}</li>)}</ul><div className="button-row"><button type="button" disabled={saved} className="secondary-button" onClick={()=>{setSaved(true);onEvidence({lessonId,conceptId:`${lessonId}:application-reflection`,activityId:'application-reflection',dimension:'recall',correct:false,assisted:false,misconception:'Revisit the key idea'});}}>Show this again later</button><button type="button" disabled={saved} className="secondary-button" onClick={()=>{setSaved(true);onEvidence({lessonId,conceptId:`${lessonId}:application-reflection`,activityId:'application-reflection',dimension:'recall',correct:true,assisted:false});}}>I remembered this</button></div>{saved&&<p role="status">Review choice saved.</p>}</div>}<ConceptVisual lessonId={lessonId}/></section>;
-}
-export function PracticeLibrary({onLesson}:{onLesson:(query:string)=>void}){
-  return <section className="practice-library"><h2>Practice and investigations</h2><p>Find the lesson context before opening a worked example or virtual case.</p><div className="practice-library-list">{[...calculations,...faultCases].map(item=><button type="button" key={item.id} onClick={()=>onLesson(item.concept)}><span>{item.title}</span><ArrowRight size={17}/></button>)}</div></section>;
+  return <section className="guide-practice"><span className="eyebrow neutral">One more connection</span><h2>See how the idea is used.</h2><p>{guide.checkYourself}</p><details className="practice-explanation"><summary>Read the explanation</summary><p><strong>The key idea:</strong> {guide.remember}</p><ul>{guide.keyConcepts.map(item=><li key={item}>{item}</li>)}</ul></details><ConceptVisual lessonId={lessonId}/></section>;
 }

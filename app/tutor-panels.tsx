@@ -1,8 +1,7 @@
 'use client';
-import { ArrowRight, CheckCircle2, RotateCcw, ShieldCheck } from 'lucide-react';
-import { lessonKnowledge, lessonById, lessonsForTerm, type KnowledgeTerm } from './knowledge-graph';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
+import { lessonKnowledge, lessonsForTerm, type KnowledgeTerm } from './knowledge-graph';
 import { topicsForLesson } from './standards-data';
-import { learningSnapshot, type LearningEvidence } from './tutor-model';
 import Formula from './formula';
 
 export function ContextTerm({item,onLesson}:{item:KnowledgeTerm;onLesson:(id:string)=>void}){
@@ -21,8 +20,4 @@ export function StandardsLearning({text,lessonId,relevantOnly=false}:{text:strin
   return <section className="standards-learning" aria-label="Standard to know"><header className="standards-heading"><span className="overview-section-icon"><ShieldCheck size={20}/></span><div><span className="eyebrow neutral">Standard to know</span><h2>{topics.length===1?topics[0].title:`${topics.length} connected requirements`}</h2></div></header>
     {topics.map(topic=><article className="standard-topic" key={topic.id}><small>{topic.reference}</small>{topics.length>1&&<h3>{topic.title}</h3>}<p>{topic.principle}</p><div className="standard-example"><strong>Apply it:</strong> {topic.example}</div><details><summary>Why it matters</summary><p>{topic.why}</p><p><strong>Avoid:</strong> {topic.mistake}</p><p><strong>Verify:</strong> {topic.verify}</p></details></article>)}
   </section>;
-}
-export function EvidenceOverview({events,onLesson}:{events:LearningEvidence[];onLesson:(id:string)=>void}){
-  const snapshot=learningSnapshot(events);
-  return <section className="evidence-overview"><div className="tutor-section-title"><div><span className="eyebrow neutral">Evidence of learning</span><h2>See what you can do.</h2></div><span className="evidence-label">{snapshot.total} recorded attempts</span></div><p>Latest evidence is shown separately from video coverage. Recognition, self-reported recall and independent application answer different questions.</p><div className="evidence-dimensions">{snapshot.dimensions.map(item=><article key={item.dimension}><strong>{item.label}</strong><b>{item.attempted?`${item.successful} / ${item.attempted}`:'Not yet assessed'}</b><small>{item.attempted?'latest successful attempts without support':'Try a relevant learning activity'}</small><meter min={0} max={Math.max(1,item.attempted)} value={item.successful} aria-label={`${item.label}: ${item.successful} of ${item.attempted}`}/></article>)}</div><p className="retention-note"><RotateCcw size={17}/>{snapshot.retained} concepts recalled successfully at least seven days apart. This is self-reported retention evidence.</p><details open={snapshot.weaknesses.length>0}><summary>Recent difficulties and supported attempts ({snapshot.weaknesses.length})</summary>{snapshot.weaknesses.slice(0,8).map(item=><button key={item.id} type="button" className="evidence-difficulty" onClick={()=>onLesson(item.lessonId)}><span><strong>{lessonById.get(item.lessonId)?.title}</strong><small>{item.misconception??'Try again independently'} · {new Date(item.at).toLocaleDateString()}</small></span><ArrowRight size={17}/></button>)}{!snapshot.weaknesses.length&&<p>No unresolved difficulty has been recorded. This does not mean every concept is mastered.</p>}</details><p className="simulation-safety"><CheckCircle2 size={17}/> Practical competence requires observed performance and appropriate authorisation. Digital activity is preparation, not certification.</p></section>;
 }

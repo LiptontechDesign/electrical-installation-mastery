@@ -43,7 +43,7 @@ for (let index = 0; index < headings.length; index += 1) {
   const end = headings[index + 1]?.index ?? source.length;
   const section = source.slice(start, end);
   const totalMatch = section.match(/\*\*(\d+) videos · ([^*]+)\*\*/);
-  const checkpointMatch = section.match(/\*\*Checkpoint \(not a YouTube lesson\):\*\* ([^\n]+)/);
+  const outcomeMatch = section.match(/\*\*Checkpoint \(not a YouTube lesson\):\*\* ([^\n]+)/);
   const lessons = [];
 
   for (const line of section.split(/\r?\n/)) {
@@ -82,7 +82,7 @@ for (let index = 0; index < headings.length; index += 1) {
     description: moduleDescriptions[number],
     duration: totalMatch?.[2]?.trim() || '',
     durationSeconds: lessons.reduce((total, lesson) => total + lesson.durationSeconds, 0),
-    checkpoint: checkpointMatch?.[1]?.trim() || '',
+    learningOutcome: outcomeMatch?.[1]?.trim() || '',
     lessons,
   });
 }

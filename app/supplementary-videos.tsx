@@ -28,11 +28,15 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     try {
       const value: unknown = JSON.parse(localStorage.getItem('electrical-supplementary-watched-v1') ?? '[]');
       if (!Array.isArray(value) || value.some(id => typeof id !== 'string')) throw new Error();
+      // Hydrate browser-owned storage after SSR; do not overwrite it before this read.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setWatched([...new Set(value as string[])]); setProgressReady(true);
     } catch { setProgressError('Supplementary watched marks could not be loaded. Existing saved data has not been changed.'); }
   }, []);
   useEffect(() => {
     if (!progressReady) return;
+    // Report failures from the external browser storage synchronization.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     try { localStorage.setItem('electrical-supplementary-watched-v1', JSON.stringify(watched)); setProgressError(''); }
     catch { setProgressError('This browser could not save supplementary watched marks. They will last only for this session.'); }
   }, [watched, progressReady]);
@@ -46,7 +50,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
   const editorAction = editor?.action;
   useEffect(() => {
     const id = youtubeId(editorUrl);
-    if (!id || !['add', 'edit'].includes(editorAction ?? '')) { setMetadataStatus(''); return; }
+    if (!id || !['add', 'edit'].includes(editorAction ?? '')) { const clear = window.setTimeout(() => setMetadataStatus(''), 0); return () => window.clearTimeout(clear); }
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       setMetadataStatus('Fetching title and instructor…');
@@ -80,6 +84,8 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
       return merged;
     } catch (e) { setError(e instanceof Error ? e.message : 'Shared videos could not be loaded.'); }
   }, []);
+  // refresh updates state only after the external fetch resolves.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { void refresh(); const focus = () => { void refresh(); }; window.addEventListener('focus', focus); return () => window.removeEventListener('focus', focus); }, [refresh]);
   useEffect(() => {
     if (!isOpen) return;
@@ -109,7 +115,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     } catch (e) { setNotice(e instanceof Error ? e.message : 'Could not save.'); }
     finally { setBusy(false); }
   }
-  const module = course.modules.find(m => m.id === editor?.moduleId);
+  const courseModule = course.modules.find(m => m.id === editor?.moduleId);
   return <SupplementaryContext.Provider value={{ videos: state.videos, watched, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
     const last = course.modules.find(m => m.id === moduleId)!.lessons.at(-1)!.id;
     editedFields.current = { title: false, instructor: false };
@@ -131,7 +137,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
             <label>Instructor / channel<input maxLength={160} value={editor.instructor} onChange={e => { editedFields.current.instructor = true; setEditor({ ...editor, instructor: e.target.value }); setConfirmation(''); }} /></label>
             <div className="supp-fields"><label>Module<select value={editor.moduleId} onChange={e => { const m = course.modules.find(m => m.id === e.target.value)!; setEditor({ ...editor, moduleId: m.id, anchorId: m.lessons[0].id }); setConfirmation(''); }}>{course.modules.map(m => <option key={m.id} value={m.id}>{m.number}. {m.title}</option>)}</select></label>
             <label>Position<select value={editor.position} onChange={e => { setEditor({ ...editor, position: e.target.value as 'before' | 'after' }); setConfirmation(''); }}><option value="before">Before this lesson</option><option value="after">After this lesson</option></select></label></div>
-            <label>Lesson (also selects its subsection)<select value={editor.anchorId} onChange={e => { setEditor({ ...editor, anchorId: e.target.value }); setConfirmation(''); }}>{module?.lessons.map(l => <option key={l.id} value={l.id}>L{l.number} · {l.title}</option>)}</select></label>
+            <label>Lesson (also selects its subsection)<select value={editor.anchorId} onChange={e => { setEditor({ ...editor, anchorId: e.target.value }); setConfirmation(''); }}>{courseModule?.lessons.map(l => <option key={l.id} value={l.id}>L{l.number} · {l.title}</option>)}</select></label>
           </> : <p><strong>{editor.title}</strong><br />{editor.action === 'archive' ? 'Hide this video from the course for everyone. It stays in the archive and can be restored.' : 'Return this video to its saved course position for everyone.'}</p>}
           <div className="supp-confirm"><strong>Are you sure? This changes the course for every visitor.</strong><p>Original lessons and assessments will not change. No video is permanently deleted.</p><label>Type <strong>{confirmationPhrase(editor.action)}</strong> to confirm<input autoComplete="off" spellCheck={false} value={confirmation} onChange={e => setConfirmation(e.target.value)} /></label></div>
           <button className="primary-button" type="submit" disabled={!ready || confirmation !== confirmationPhrase(editor.action)}>{busy ? 'Saving…' : 'Confirm shared change'}</button>
@@ -144,7 +150,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
         <p>Watched status is personal to this browser and is kept in both browsing modes.</p>
         {progressError && <p role="alert">{progressError}</p>}
         <p><a href={`https://www.youtube.com/watch?v=${selected.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p>
-        <p>This optional video has no quiz or overview and does not change required course completion.</p>
+        <p>This optional video does not change required course completion.</p>
         <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>
       </> : <>
         <p>Archived videos remain saved. Restore them to make them visible to everyone again.</p>

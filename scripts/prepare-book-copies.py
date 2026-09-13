@@ -1,19 +1,26 @@
 """Prepare complete PDF reading copies with compact object indexes; requires pikepdf.
 
 Usage: python scripts/prepare-book-copies.py designs.pdf wiring.pdf output_directory
+   or: python scripts/prepare-book-copies.py --book book_id source.pdf page_count output_directory
 Source files are never overwritten. Verify app/book-assets.json sizes before uploading.
 """
 import sys
 from pathlib import Path
 import pikepdf
 
-if len(sys.argv) != 4:
+if len(sys.argv) == 6 and sys.argv[1] == '--book':
+    inputs = [(sys.argv[2], sys.argv[3], int(sys.argv[4]))]
+    destination = sys.argv[5]
+elif len(sys.argv) == 4:
+    inputs = zip(['installation-designs', 'modern-wiring'], sys.argv[1:3], [264, 352])
+    destination = sys.argv[3]
+else:
     raise SystemExit(__doc__)
-target = Path(sys.argv[3]).resolve()
+target = Path(destination).resolve()
 target.mkdir(parents=True, exist_ok=True)
-for book_id, source, count in zip(
-    ["installation-designs", "modern-wiring"], sys.argv[1:3], [264, 352]
-):
+for book_id, source, count in inputs:
+    if not book_id or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-' for c in book_id):
+        raise ValueError('Invalid book ID')
     source = Path(source).resolve()
     output = target / f"{book_id}-reader.pdf"
     if source == output:

@@ -1,4 +1,13 @@
 /* The page scrolls independently; reading controls remain within thumb reach. */
+.books-page { display: flex; flex-direction: column; height: calc(100dvh - 110px); min-height: 420px; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: #fbfcfa; color: #20382e; }
+.books-page button { min-height: 44px; cursor: pointer; }
+.books-page button:disabled { opacity: .4; cursor: not-allowed; }
+.books-page input, .books-page select, .books-page textarea { font-size: 1rem; }
+.books-page :focus-visible { outline: 3px solid #bb6a24; outline-offset: 2px; }
+.saved-page-link textarea { width: 100%; min-height: 70px; padding: 8px; border: 1px solid #cedac0; border-radius: 6px; resize: vertical; }
+.lesson-notes { margin-top: 24px; display: grid; gap: 10px; }
+.lesson-notes textarea { width: 100%; min-height: 160px; padding: 16px; border: 1px solid var(--line); border-radius: 9px; font: inherit; resize: vertical; }
+@media(max-width:600px) { .books-page { height: calc(100dvh - 140px); min-height: 360px; border-radius: 8px; } }
 .book-reader-dialog[open] { display: flex; flex-direction: column; overflow: hidden; }
 .book-reader-header { flex: none; }
 .reader-content { display: flex; flex: 1; flex-direction: column; min-height: 0; overflow: hidden; }

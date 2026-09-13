@@ -1,5 +1,5 @@
 import course from './course-curriculum';
-import {checkpointPlan,legacyScopes} from './checkpoint-plan';
+import {sectionsByModule} from './learning-sections';
 import {lessonGuides} from './lesson-guides';
 import type {RecapCopy} from './module-recap-content';
 import {foundationRecaps} from './module-recap-content';
@@ -10,10 +10,10 @@ const copy = {...foundationRecaps,...applicationRecaps};
 const sources: Record<string,{transcript:boolean;sha256:string|null;file:string|null}> = provenance;
 export const recapBooks = course.modules.map(module => {
   let from = 0;
-  const chapters = checkpointPlan[module.id].map((chapter,index) => {
+  const chapters = sectionsByModule[module.id].map((chapter,index) => {
     const end = module.lessons.findIndex(lesson => lesson.id === chapter.throughLessonId);
     const chapterLessons=module.lessons.slice(from,end+1);
-    const exact=legacyScopes.some(scope=>scope.newLessonIds.join('|')===chapterLessons.map(l=>l.id).join('|'));
+    const exact=chapter.authoredRecap;
     const chapterCopy:RecapCopy = exact ? copy[chapter.recapKey ?? chapter.throughLessonId] : {
       lead:module.description,
       notes:chapterLessons.map(lesson=>[lesson.title,lessonGuides[lesson.id].summary] as const),

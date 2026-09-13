@@ -75,9 +75,9 @@ export async function POST(request: Request) {
       const videoId = typeof body.url === 'string' ? youtubeId(body.url) : null;
       const title = typeof body.title === 'string' ? body.title.trim() : '';
       const instructor = typeof body.instructor === 'string' ? body.instructor.trim() : '';
-      const module = course.modules.find(m => m.id === body.moduleId);
+      const courseModule = course.modules.find(m => m.id === body.moduleId);
 
-      if (!videoId || !title || title.length > 240 || instructor.length > 160 || !module?.lessons.some(l => l.id === body.anchorId) || !['before', 'after'].includes(String(body.position))) {
+      if (!videoId || !title || title.length > 240 || instructor.length > 160 || !courseModule?.lessons.some(l => l.id === body.anchorId) || !['before', 'after'].includes(String(body.position))) {
         return reply({ error: 'Check the YouTube link, title and lesson position.' }, 400);
       }
       if (coreVideos.has(videoId) || state.videos.some(v => v.videoId === videoId && v.id !== existing?.id)) {
@@ -92,7 +92,7 @@ export async function POST(request: Request) {
         videoId,
         title,
         instructor,
-        moduleId: module.id,
+        moduleId: courseModule.id,
         anchorId: String(body.anchorId),
         position: body.position as 'before' | 'after',
         archived: existing?.archived ?? false,

@@ -7,6 +7,8 @@ import bookAssets from '../book-assets.json';
 export const bookFiles: Record<BookId, { pathname: string; size: number }> = {
   'installation-designs': bookAssets['installation-designs'].reader,
   'modern-wiring': bookAssets['modern-wiring'].reader,
+  'iet-wiring-guide': bookAssets['iet-wiring-guide'].reader,
+  'on-site-guide': bookAssets['on-site-guide'].reader,
 };
 const statePath = 'reader/owner-state-v1.json';
 export async function readReaderState(): Promise<{ state: ReaderState; etag?: string }> {

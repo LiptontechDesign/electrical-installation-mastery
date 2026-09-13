@@ -40,5 +40,7 @@ next-env.d.ts
 /work/
 /public/pdfjs/
 /public/recap-transcripts/
+*.tsbuildinfo
 
 .vercel
+.env*.local

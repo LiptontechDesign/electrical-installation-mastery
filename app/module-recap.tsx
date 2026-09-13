@@ -89,7 +89,7 @@ export default function ModuleRecap({moduleId,onClose,completedLessonIds}:Props)
         <p className="recap-safety">{recapSafety}</p>
         <div className="recap-view-switch" aria-label="Reading depth"><button type="button" aria-pressed={view==='summary'} onClick={()=>setView('summary')}>Chapter summary</button><button type="button" aria-pressed={view==='notes'} onClick={()=>setView('notes')}>Detailed lesson notes · {chapter.lessons.length} lessons</button></div>
         {view==='summary'?<Spread key={chapter.id} chapter={chapter}/>:<RecapLessonNotes key={chapter.id+'-notes'} chapter={chapter} onVideo={setVideo}/>}
-        {view==='summary'&&<details open className="recap-sources" key={chapter.id+'-sources'}><summary>Source videos · {chapter.lessons.length} lessons <span>Reading this recap does not mark videos or quizzes complete.</span></summary>
+        {view==='summary'&&<details open className="recap-sources" key={chapter.id+'-sources'}><summary>Source videos · {chapter.lessons.length} lessons <span>Reading this recap does not mark videos complete.</span></summary>
           <ul>{chapter.lessons.map(lesson=><li key={lesson.id}>
             <div><button className="recap-source-play" type="button" onClick={()=>setVideo(lesson)}><Play size={18}/>L{String(lesson.number).padStart(2,'0')} · {lesson.title}</button>
               <small>{lesson.transcript?'Supplied transcript':'Visual-only source — no transcript summary claimed'}</small></div>

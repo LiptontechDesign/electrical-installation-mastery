@@ -9,7 +9,7 @@ await build({
   entryPoints:['app/course-app.tsx'], outfile:'work/navigation-tests/app.mjs',
   bundle:true, platform:'node', format:'esm', packages:'external', jsx:'automatic',
   plugins:[{name:'non-navigation-ui',setup(b){
-    b.onResolve({filter:/^(next\/(script|dynamic|image)|\.\/(lesson-overview|assessment-panel|checkpoint-workspace))$/},args=>({path:args.path,namespace:'stub'}));
+    b.onResolve({filter:/^(next\/(script|dynamic|image)|\.\/(lesson-overview))$/},args=>({path:args.path,namespace:'stub'}));
     b.onLoad({filter:/.*/,namespace:'stub'},args=>({contents:args.path==='next/dynamic'?'export default () => () => null':'export default () => null',loader:'js'}));
   }}],
 });
@@ -40,7 +40,7 @@ await click(modules().at(-1));
 const distant=state().activeLessonId;
 assert.notEqual(distant,'p01-l01','A distant module opens without prior progress');
 assert.deepEqual(state().completedLessonIds,[],'Opening a lesson is not completion');
-assert.deepEqual(state().completedCheckpointIds,[],'Navigation cannot award passes');
+assert.equal(state().schemaVersion,7); assert.ok(!('completedCheckpointIds' in state()));
 await click(button('Mark video watched'));
 assert.deepEqual(state().completedLessonIds,[distant]);
 assert.equal(state().videoCompletionCounts[distant],1);
@@ -50,27 +50,12 @@ assert.equal(state().videoCompletionCounts[distant],1,'Undo keeps historical eve
 await click(button('Mark video watched'));
 assert.equal(state().completedLessonIds.length,1);
 assert.equal(state().videoCompletionCounts[distant],2,'Repeated completion does not inflate unique progress');
-await click(button('Checkpoint 1:'));
-let checkpoint=tree.root.findAll(node=>Boolean(node.props.checkpoint&&node.props.onComplete))[0];
-assert.ok(checkpoint,'An unwatched checkpoint opens directly');
-const checkpointId=checkpoint.props.checkpoint.id,total=checkpoint.props.checkpoint.questions.length;
-await act(async()=>checkpoint.props.onComplete(0,total));
-await flush();
-assert.ok(!state().completedCheckpointIds.includes(checkpointId),'Failure remains an attempt, not a pass');
-assert.equal(state().quizRecords['checkpoint:'+checkpointId].attempts,1);
-await act(async()=>checkpoint.props.onContinue());
-await flush();
-assert.ok(!tree.root.findAll(node=>Boolean(node.props.checkpoint&&node.props.onComplete)).length,'Continue works without passing');
-window.location.hash='#checkpoint/'+checkpointId;
-await act(async()=>tree.unmount());
-await mount();
-checkpoint=tree.root.findAll(node=>Boolean(node.props.checkpoint&&node.props.onComplete))[0];
-assert.equal(checkpoint.props.checkpoint.id,checkpointId,'Checkpoint deep link survives reload');
-await act(async()=>checkpoint.props.onComplete(total,total));
-await flush();
-assert.ok(state().completedCheckpointIds.includes(checkpointId));
-assert.equal(state().quizRecords['checkpoint:'+checkpointId].attempts,2);
-assert.equal(state().completedLessonIds.length,1,'Passing does not mark other videos watched');
+const note=tree.root.findByProps({'aria-label':'Your lesson notes'});
+await act(async()=>note.props.onChange({target:{value:'Preserved study note'}}));await flush();
+assert.equal(state().notes[distant],'Preserved study note');
+await click(button('Save lesson'));assert.ok(state().bookmarkedLessonIds.includes(distant));
+assert.equal(tree.root.findAllByProps({role:'tablist'}).length,0,'No quiz tab');
+assert.ok(!text(tree.toJSON()).includes('Checkpoint'));
 await click(button('Suggested next step'));
 assert.equal(state().activeLessonId,'p01-l01','Suggested next is an explicit action');
 await act(async()=>tree.unmount());
@@ -80,4 +65,4 @@ await mount();
 assert.equal(state().activeLessonId,distant,'Old guided preferences cannot redirect deep links');
 assert.equal(state().videoCompletionCounts[distant],2,'Counters persist');
 await act(async()=>tree.unmount());
-console.log('Flexible navigation, arbitrary checkpoints, independent passes, repeat counts, reload and old-backup migration passed.');
+console.log('PASS: flexible lesson navigation, watched/undo/replay, suggested next, reload and saved notes.');

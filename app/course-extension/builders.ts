@@ -44,7 +44,7 @@ export type ExtensionModule = {
   description: string;
   duration: string;
   durationSeconds: number;
-  checkpoint: string;
+  learningOutcome: string;
   lessons: ExtensionLesson[];
 };
 
@@ -93,7 +93,7 @@ export function M(
   number: number,
   title: string,
   description: string,
-  checkpoint: string,
+  learningOutcome: string,
   entryPrerequisite: string,
   defaultRegulationStatus: string,
   seeds: LessonSeed[],
@@ -119,7 +119,7 @@ export function M(
     description,
     duration: formatStudyDuration(durationSeconds),
     durationSeconds,
-    checkpoint,
+    learningOutcome,
     lessons,
   };
 }

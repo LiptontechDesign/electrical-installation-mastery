@@ -1,0 +1,1740 @@
+{
+  "course-TsJ49Np3HS0": {
+    "model": "CPR is the immediate response when an adult is unresponsive and is not breathing normally. At an electrical incident, first make the scene safe: do not touch a casualty who may still be in contact with electricity. Once safe to approach, assess responsiveness and breathing, summon emergency help and begin CPR when indicated.",
+    "ideas": [
+      "Recognise the emergency, not just movement. Occasional gasps are not normal breathing. Check breathing briefly (no more than ten seconds); call for emergency assistance, use speakerphone and follow the dispatcher. Send another person for an AED while you remain with the casualty.",
+      "Effective adult compressions use the centre of the chest, straight arms, 100–120 compressions per minute and a depth of 5–6 cm. Release pressure between compressions so the chest recoils; minimise interruptions. These are skills to practise with an accredited trainer, not on a healthy person.",
+      "If trained and willing, use 30 compressions followed by two rescue breaths, each sufficient to produce visible chest rise. Otherwise give compression-only CPR and follow emergency guidance. Continue until help takes over, normal breathing returns, an AED requests a pause, or you cannot continue. Reassess and monitor a casualty who recovers; responsiveness alone does not establish normal breathing."
+    ],
+    "practice": "Include electrical isolation, access for emergency responders, emergency contacts, first-aid training and AED location in the site emergency plan. In Kenya, emergency numbers include 999 and 112. Do not turn a rescue into a second electrical casualty.",
+    "retrieval": {
+      "prompt": "Why should a workmate fetch the AED while the first aider stays with an adult receiving CPR?",
+      "answer": "It brings defibrillation to the casualty without abandoning compressions and ongoing assessment.",
+      "why": "The tasks can run in parallel; avoidable interruptions reduce the benefit of CPR."
+    },
+    "note": "Electrical safety comes before contact. This is adult first-aid revision, not certification. Follow current emergency dispatcher guidance. Sources: supplied St John Ambulance transcript; sja.org.uk/first-aid-advice/cpr/; resus.org.uk 2025 adult basic life support guidance.",
+    "explanations": [
+      {
+        "principle": "Call emergency help and begin CPR, following dispatcher instructions",
+        "reasoning": "Unresponsiveness with abnormal breathing calls for emergency help and CPR, not watchful waiting. Electrical danger must first be controlled."
+      },
+      {
+        "principle": "Release pressure between compressions while keeping hand position",
+        "reasoning": "Full recoil allows the chest to return between compressions. Combine recoil with the taught adult depth and rate, without leaning continuously."
+      },
+      {
+        "principle": "Give continuous chest compressions and follow the dispatcher",
+        "reasoning": "Compression-only CPR is the appropriate alternative when breaths cannot be given; emergency guidance supports the bystander while help is coming."
+      }
+    ]
+  },
+  "course-UFvL7wTFzl0": {
+    "model": "An automated external defibrillator (AED) analyses the heart rhythm and guides the rescuer. It delivers or advises a shock only when indicated; it does not shock every collapsed person. CPR, emergency help and AED use are complementary parts of resuscitation.",
+    "ideas": [
+      "Switch on the AED and follow its spoken or pictured instructions. Expose the chest and apply pads in the positions shown on that device. If there are two rescuers, one can continue CPR while the other prepares the AED, keeping interruptions short.",
+      "Nobody should touch the casualty during rhythm analysis or shock delivery. Clearly announce the pause and check that everyone is clear. Follow the particular AED prompts; some devices deliver automatically and others ask the rescuer to press a shock button.",
+      "After a shock—or a no-shock instruction—resume CPR when prompted if the casualty remains unresponsive and is not breathing normally. No shock advised does not mean no emergency. Keep pads attached for further analysis and handover; continue reassessment until professional help takes over."
+    ],
+    "practice": "On a worksite, establish who calls emergency services, who brings the AED and who maintains CPR. AED access should be quick and known before an incident. Never approach an electrically unsafe casualty merely because an AED has arrived.",
+    "retrieval": {
+      "prompt": "An AED says “no shock advised.” Why might CPR still be necessary?",
+      "answer": "The detected rhythm may not be shockable even though the casualty remains in cardiac arrest. Follow the AED and dispatcher and resume CPR as directed.",
+      "why": "The shock decision concerns rhythm suitability, not confirmation of recovery."
+    },
+    "note": "The 2016 video remains a device demonstration, not the current local emergency protocol. Follow current AED/dispatcher guidance. Electrical danger must be controlled before touching the casualty.",
+    "explanations": [
+      {
+        "principle": "One prepares the AED while the other continues CPR until a pause is requested",
+        "reasoning": "Preparation can overlap with CPR. Pause when the AED requires everyone clear, then promptly resume as directed."
+      },
+      {
+        "principle": "Tell everyone to stand clear and check that nobody is touching",
+        "reasoning": "Everyone must be clear for reliable analysis and safe shock delivery. Communicate the pause explicitly rather than assuming others heard the device."
+      },
+      {
+        "principle": "Resume CPR promptly with the pads left attached",
+        "reasoning": "A shock is one intervention within continuing resuscitation. Resume CPR as directed and leave the AED connected for subsequent prompts."
+      }
+    ]
+  },
+  "course-8VhgQ9Q9ixA": {
+    "model": "Choose protection by the condition it detects, not by the similarity of device names. Overcurrent, residual current and transient overvoltage are different phenomena. Trace each protective function from the fault it senses to the circuit it disconnects.",
+    "ideas": [
+      "MCBs and MCCBs provide overcurrent protection according to their ratings and trip characteristics. An isolating device provides a means of separation when suitably rated; a switch handle alone does not prove automatic fault protection or safe isolation.",
+      "RCD is the umbrella term for residual-current devices. An RCCB responds to residual current but has no integral overcurrent protection; an RCBO combines residual-current and overcurrent functions. Coordinate an RCCB with suitable overcurrent protection rather than treating it as an RCBO.",
+      "A motor-protection circuit breaker has motor-oriented protective features that depend on its specification. Historical voltage-operated ELCBs differ from modern current-operated RCDs. Read the product standard, wiring diagram and manufacturer data: acronyms are a starting point, not a complete specification."
+    ],
+    "practice": "When reviewing a small distribution board, label the isolator, each overcurrent function and each residual-current function on the single-line diagram. Check their protected boundaries and compatibility before deciding that a circuit is adequately protected.",
+    "retrieval": {
+      "prompt": "Why is “an RCD is fitted” an incomplete description of a final circuit’s protection?",
+      "answer": "It does not identify whether overcurrent protection is included, the residual-current type and rating, or which conductors and part of the circuit are protected.",
+      "why": "The name of one function does not describe the whole protective arrangement."
+    },
+    "note": "Correction: an RCD does not prevent every shock or make touching live parts safe. Do not treat the video’s current limits for device families as universal product limits.",
+    "explanations": [
+      {
+        "principle": "Suitable overcurrent protection for the RCCB and outgoing circuits",
+        "reasoning": "An RCCB detects imbalance but does not incorporate the overcurrent function of an RCBO. The complete arrangement must provide both where required."
+      },
+      {
+        "principle": "RCBO",
+        "reasoning": "The RCBO combines the two protection families; its actual ratings, residual-current type and compatibility still need checking."
+      },
+      {
+        "principle": "Its specified protective functions, ratings, standard and manufacturer compatibility",
+        "reasoning": "Replacement is an engineering decision about functions and ratings, not appearance. The circuit diagram helps locate what each device actually protects."
+      }
+    ]
+  },
+  "course-kx35WN3uLis": {
+    "model": "A fuse is a calibrated protective component, not simply a thin wire that fits a holder. Its current rating, time-current characteristic, voltage rating and breaking capacity describe different requirements. A suitable replacement must satisfy the equipment specification and the available fault conditions.",
+    "ideas": [
+      "Rated current is not an exact instantaneous melting threshold. A time-delay fuse may tolerate legitimate starting inrush that a fast fuse cannot. Repeated operation calls for fault investigation and verification of the specified characteristic—not a larger fuse or a bypass.",
+      "Breaking capacity describes interruption of fault current under specified conditions. High-rupturing-capacity designs use construction such as arc-quenching filler. An automotive voltage rating is not suitable for a mains circuit merely because the ampere rating matches. Appearance alone cannot establish breaking capacity or authenticity.",
+      "Fast, time-delay and semiconductor fuses serve different duties. A resettable PTC limits current by increasing resistance and may still pass current: it is not an isolator. The high-voltage demonstration illustrates specialist arc management, not a procedure to repeat on site."
+    ],
+    "practice": "For a failed equipment fuse, isolate safely, investigate why it operated and obtain the exact specified replacement. Record the current, voltage, characteristic, dimensions and interruption rating; never fit foil, wire or an unverified substitute to restore service.",
+    "retrieval": {
+      "prompt": "Two fuses have the same ampere rating. Why might only one be suitable for a mains appliance?",
+      "answer": "Their voltage ratings, time-current characteristics and breaking capacities may differ, even if the physical size matches.",
+      "why": "Carrying normal current and safely interrupting a fault are separate duties."
+    },
+    "note": "Do not copy temporary wrong-rating replacements or destructive inspection from demonstrations. Use the manufacturer specification; a ceramic body alone is not proof of an HRC fuse.",
+    "explanations": [
+      {
+        "principle": "The specified fuse characteristic and whether starting current or a fault explains operation",
+        "reasoning": "Check both the actual appliance condition and the intended time-current response. A correct time-delay replacement is justified by specification, not by trial and error."
+      },
+      {
+        "principle": "It may not safely interrupt an arc at the equipment voltage",
+        "reasoning": "The fuse must extinguish the arc under the specified voltage and fault current. A matching ampere rating does not prove this capability."
+      },
+      {
+        "principle": "Current may be limited, but safe isolation has not been established",
+        "reasoning": "A PTC changes resistance; it does not provide the isolation needed before access. Use the equipment’s safe-isolation and stored-energy procedure."
+      },
+      {
+        "principle": "Verified ratings and provenance for the specified fuse",
+        "reasoning": "The construction and certified ratings matter. A ceramic enclosure is not proof that an unknown product can safely clear the available fault current."
+      },
+      {
+        "principle": "Its current-time and let-through behaviour may not protect the semiconductor",
+        "reasoning": "Sensitive devices can require a specific protective characteristic and energy limitation. Follow the equipment’s specified fuse rather than matching only current and size."
+      }
+    ]
+  },
+  "course-gqEu9t8HwW0": {
+    "model": "A thermal-magnetic MCB has two responses: a thermal element responds to sustained overload and a magnetic mechanism responds rapidly to sufficiently high overcurrent. Neither response makes a normal circuit breaker a personal shock detector.",
+    "ideas": [
+      "The bimetal element heats and bends over time, releasing the mechanism during overload. Greater overcurrent generally shortens operating time. Cable heating rises with current squared for unchanged resistance, so moderate overload is still important even when it does not cause an immediate trip.",
+      "A solenoid releases the latch rapidly at the magnetic operating range. Contacts separate and the arc is managed by the arc chute. The trip-free mechanism allows protective opening even if someone holds the handle in the on position.",
+      "Read a time-current band rather than assuming operation at one exact current and time. Starting inrush and prospective fault current must be considered together when selecting a characteristic. Do not upsize a breaker simply to stop trips; first establish load, cable capacity and the cause."
+    ],
+    "practice": "If a motor circuit trips at starting, compare measured or specified inrush with the correct manufacturer curve and check the protective design. If a cable overheats, do not take the absence of an immediate trip as evidence that the loading is acceptable.",
+    "retrieval": {
+      "prompt": "Why can a modest overload take longer to trip than a short circuit?",
+      "answer": "The thermal mechanism needs heating time, whereas sufficiently high fault current operates the magnetic mechanism rapidly.",
+      "why": "The two mechanisms deliberately respond to different current-time conditions."
+    },
+    "note": "The video title concerns direct shock protection. Overcurrent devices can still contribute to automatic disconnection for earth faults in a correctly designed earthing/protection system. A rated-current marking is not an instantaneous trip threshold.",
+    "explanations": [
+      {
+        "principle": "Heating and bending of the bimetal element",
+        "reasoning": "The bimetal’s heating response gives inverse-time overload protection. The exact time must be read from the specified characteristic."
+      },
+      {
+        "principle": "The solenoid acts on the trip mechanism",
+        "reasoning": "High current energises the magnetic mechanism sufficiently to release the latch. This is different from waiting for the thermal element."
+      },
+      {
+        "principle": "A trip-free mechanism",
+        "reasoning": "The internal mechanism can open under a trip condition independently of someone holding the operating handle. Never use this as a reason to force repeated reclosing into a fault."
+      },
+      {
+        "principle": "An operating-time range under the stated conditions",
+        "reasoning": "The band represents the characteristic’s operating range. Use its relevant limits and assumptions when checking a protective requirement."
+      },
+      {
+        "principle": "It becomes four times as large",
+        "reasoning": "P = I²R, so doubling current multiplies heating by four at the stated constant resistance. This explains why sustained overload cannot be dismissed."
+      }
+    ]
+  },
+  "course-Me_adh09CdY": {
+    "model": "A marking such as C10 combines a characteristic letter with a rated current. The letter concerns the operating curve; 10 A is not the breaking capacity and does not mean an immediate trip at any current just above ten amperes.",
+    "ideas": [
+      "For common MCB characteristics, the magnetic bands are typically B: 3–5 times rated current, C: 5–10 times and D: 10–20 times. These are bands, not promises of one exact trip point. Confirm the applicable standard and manufacturer curve.",
+      "K and Z characteristics are product-specific choices and must be read from the actual data. A higher magnetic threshold can tolerate inrush, but it also changes the fault current needed for rapid disconnection. Load suitability and fault-loop performance must both be checked.",
+      "Keep the markings separate: rated current, curve, voltage, short-circuit breaking capacity and any energy-limiting class. An energy-limiting class number is not a time in seconds. Select and document the entire specification, not just the letter."
+    ],
+    "practice": "For a proposed B-to-C replacement on a motor circuit, ask why the existing device operates, whether the cable remains protected and whether minimum fault current still achieves the required disconnection. Do not use a curve change as an unexamined nuisance-trip fix.",
+    "retrieval": {
+      "prompt": "What two independent meanings are contained in C10?",
+      "answer": "C identifies the time-current characteristic; 10 A identifies rated current. Breaking capacity is a separate marking.",
+      "why": "Separating the markings avoids confusing normal load duty with fault interruption."
+    },
+    "note": "The video’s K/Z ranges and trip-time examples must not be universalised. Use exact manufacturer data; the number “3” on an energy-limiting-class marking does not mean three seconds.",
+    "explanations": [
+      {
+        "principle": "50–100 A",
+        "reasoning": "Multiply rated current by the typical C band of five to ten. This identifies a magnetic range; suitability still depends on the actual device and circuit."
+      },
+      {
+        "principle": "16 A is rated current; 6 kA is short-circuit breaking capacity",
+        "reasoning": "Rated current and interruption capacity answer different design questions: normal circuit duty and the fault current the device can safely interrupt."
+      },
+      {
+        "principle": "Whether available fault current still produces the required disconnection",
+        "reasoning": "A higher instantaneous threshold may tolerate inrush while making rapid fault disconnection harder to achieve. Check the complete design and manufacturer data."
+      },
+      {
+        "principle": "The proposed model’s own curve and application data",
+        "reasoning": "K and Z product characteristics must be verified for the actual model and standard. Use those data for inrush and fault-disconnection checks."
+      },
+      {
+        "principle": "A guaranteed three-second disconnection time",
+        "reasoning": "Do not turn a class number into a time value. Use the time-current characteristic for timing and the relevant data for energy let-through."
+      }
+    ]
+  },
+  "course-TUno2IT-KZY": {
+    "model": "An RCD compares the currents in the live conductors passing through its sensing core. When their vector sum is not zero, some current is returning by another path. That imbalance can operate the device, but it is not a universal detector of every electric shock.",
+    "ideas": [
+      "In a healthy single-phase load, line and neutral currents balance. Leakage returning outside the monitored conductors produces residual current. A person connected between line and neutral can carry a dangerous balanced current that does not provide the residual signal expected by the RCD.",
+      "Type AC, A, F and B refer to residual-current waveforms the device is designed to detect. Electronic equipment can create pulsating or smooth DC and mixed frequencies. Select the required type from equipment instructions and the installation requirements; these letters are unrelated to an MCB’s B/C/D trip curve.",
+      "An RCCB needs coordinated overcurrent protection; an RCBO combines functions. The test button checks an internal operating path, not the complete installation. Instrument tests must use the correct device type and settings: trip-time tests measure time, while ramp tests investigate operating-current threshold."
+    ],
+    "practice": "For a new electronic load, identify the expected residual waveform and the required protective arrangement before choosing an RCD. During verification, record the device type, rated residual current, test configuration and results rather than recording only “button works”.",
+    "retrieval": {
+      "prompt": "Why can an RCD remain closed during a dangerous line-to-neutral contact?",
+      "answer": "If the current leaving through line returns through the monitored neutral, it may remain balanced at the sensing core despite passing through a person.",
+      "why": "Residual-current protection responds to imbalance, not directly to whether current is flowing through a body."
+    },
+    "note": "Never test protection by touching live conductors. RCDs reduce some risks but do not make contact safe or protect wiring upstream of them. Source-era UK test limits are not automatic Kenyan acceptance criteria.",
+    "explanations": [
+      {
+        "principle": "Balanced line-to-neutral current may not create a residual signal",
+        "reasoning": "Current balance, not the identity of the load, drives residual sensing. Safe isolation and avoidance of live contact remain essential."
+      },
+      {
+        "principle": "The required residual-current waveform capability and the approved protective arrangement",
+        "reasoning": "Electronic loads can affect residual-current sensing. Check the equipment’s specified arrangement, including any built-in detection, rather than applying a blanket rule to every electronic load."
+      },
+      {
+        "principle": "The internal test function operated; full installation verification is still required",
+        "reasoning": "A successful button operation is useful but limited evidence. It does not substitute for the relevant inspections and instrument tests."
+      },
+      {
+        "principle": "150 mA",
+        "reasoning": "5 × 30 mA = 150 mA. The correct test mode, waveform and acceptance criteria must still come from the applicable procedure; this arithmetic is not a universal instruction to perform that test."
+      },
+      {
+        "principle": "They lie within the same RCCB’s switched supply group",
+        "reasoning": "A group RCCB can interrupt all its supplied circuits. Individual RCBO arrangements change the grouping, but require a complete compatible design."
+      }
+    ]
+  },
+  "course-TqdQRgf3uGs": {
+    "model": "MCB and MCCB describe device families, not a universal dividing line at one current rating. MCCBs commonly offer a wider selection of frame sizes, trip units and accessories. Select the actual product for load, fault interruption, adjustment and coordination requirements.",
+    "ideas": [
+      "A frame size describes the physical/rating family; the fitted trip unit and its settings determine the protective behaviour. Some devices are fixed and others adjustable. Read the exact model rather than assuming every MCCB has every adjustment.",
+      "Rated operating voltage and breaking capacities must suit the installation. Icu is ultimate short-circuit breaking capacity and Ics is service short-circuit breaking capacity under the relevant standard. These are not interchangeable with continuous rated current.",
+      "A shunt trip allows an external command to release the breaker; it is not itself a sensor of every fault. Auxiliary contacts signal state to a control or indication circuit; they are not the main load path. A mechanical trip button does not calibrate the complete protective characteristic."
+    ],
+    "practice": "For a feeder replacement, collect the single-line diagram, prospective fault current, required settings and manufacturer compatibility data. Confirm the accessories’ control voltage and function separately from the main circuit’s voltage and current.",
+    "retrieval": {
+      "prompt": "Why is “same frame size” insufficient when replacing an MCCB?",
+      "answer": "Trip unit, settings, voltage rating, breaking capacities, poles and coordination may differ within the same frame family.",
+      "why": "The enclosure does not specify all the protective behaviour."
+    },
+    "note": "Do not adopt the video’s family-wide current/pole limits or accessory claims as universal. Actual manufacturers offer different MCB and MCCB ranges.",
+    "explanations": [
+      {
+        "principle": "Compare the actual protective settings and coordination requirements",
+        "reasoning": "The fitted trip unit determines the response within the device’s limits. Match the complete electrical specification, not only the frame."
+      },
+      {
+        "principle": "Release the breaker when its control circuit receives the required command",
+        "reasoning": "The shunt trip converts an external electrical command into opening. The system still needs the correct detection, control supply and protective design."
+      },
+      {
+        "principle": "It lacks demonstrated fault-interruption capability for that location",
+        "reasoning": "Choose adequate breaking capacity or an explicitly verified manufacturer-supported backup arrangement. Do not assume normal load suitability guarantees fault suitability."
+      },
+      {
+        "principle": "They describe different standardised fault-interruption duties",
+        "reasoning": "The required interruption and service-performance duties must be checked at the operating voltage. Do not collapse distinct ratings into one unlabeled kA number."
+      },
+      {
+        "principle": "A suitably rated auxiliary contact",
+        "reasoning": "Use the specified indication accessory and its contact arrangement. State indication and a command to open are different control functions."
+      }
+    ]
+  },
+  "course-CNiLNvBLopI": {
+    "model": "A Type 2 surge protective device addresses transient overvoltages that can damage electronic equipment. Such transients can arise from atmospheric events or switching inductive loads. This is a different protective task from interrupting an overload or detecting residual current.",
+    "ideas": [
+      "Electronic equipment can be vulnerable to brief voltage disturbances even when its normal current is within the circuit rating. A transient is a short-duration event, not automatically a sustained overload.",
+      "Nearby atmospheric activity and switching motors or other inductive loads can produce surges. The short video explains why this risk can exist without a direct lightning strike on the building.",
+      "Type 2 protection belongs within a coordinated surge-protection design. The video is a motivation for protection, not a complete SPD selection or wiring specification. Device type, location, earthing, connections and manufacturer requirements still matter."
+    ],
+    "practice": "When specifying a board serving controls and electronics, consider surge risk as a separate design question. Do not present an MCB, an RCD or one SPD as a guarantee against every cause of equipment damage.",
+    "retrieval": {
+      "prompt": "Why might a workshop need surge assessment even when its machines never overload the circuit?",
+      "answer": "Switching and atmospheric transients concern brief overvoltage, not just sustained load current.",
+      "why": "Different electrical disturbances require different protective functions."
+    },
+    "note": "This 51-second source explains purpose, not installation detail. It does not establish direct-lightning protection or a universal regulatory requirement to fit a particular SPD.",
+    "explanations": [
+      {
+        "principle": "A transient overvoltage",
+        "reasoning": "Inductive switching is one possible surge source identified in the video. Investigate evidence rather than diagnosing every failure from the symptom alone."
+      },
+      {
+        "principle": "The SPD addresses transient voltage; MCBs address overcurrent",
+        "reasoning": "Explain the disturbance first, then the device that addresses it. This prevents one protective function being mistaken for complete protection."
+      },
+      {
+        "principle": "The complete design and the manufacturer’s selection and connection requirements",
+        "reasoning": "A short purpose video is not a wiring instruction. Use the exact product documentation and applicable installation requirements."
+      }
+    ]
+  },
+  "course-lIit5k8QVj8": {
+    "model": "An arc-fault detection device looks for electrical signatures associated with hazardous arcing. The demonstration shows why a damaged conductor can create a fire risk without producing the high current of a conventional short circuit.",
+    "ideas": [
+      "A series arc can restrict current through a damaged connection or conductor. The resulting current may remain below an overcurrent device’s fast operating region while concentrated heating creates a hazard.",
+      "If current still returns through the expected live conductors, residual-current protection may not see sufficient imbalance. AFDD technology examines waveform behaviour and distinguishes unwanted arcing from normal switching signatures.",
+      "Arc-fault protection complements, rather than excuses omission of, other protective measures. Correct terminals, cable protection, inspection and compatible protective devices remain necessary. The laboratory demonstration is not a safe experiment to reproduce on an installation."
+    ],
+    "practice": "A scorched connection requires isolation, investigation and repair—not just a device upgrade. Consider the required arc-fault protective arrangement alongside workmanship, circuit condition and manufacturer guidance.",
+    "retrieval": {
+      "prompt": "Why can a damaging series arc fail to operate either an MCB or an RCD promptly?",
+      "answer": "The arc may limit current below the MCB’s relevant response and still carry balanced outgoing and returning current.",
+      "why": "Arc signatures, overcurrent and residual imbalance are different detection inputs."
+    },
+    "note": "A controlled manufacturer demonstration is not an invitation to create arcs. AFDD suitability and regulatory application require the exact product and current local requirements.",
+    "explanations": [
+      {
+        "principle": "The arc does not necessarily produce enough overcurrent for prompt operation",
+        "reasoning": "A dangerous local heating condition need not resemble a high-current short circuit. Arc-fault detection addresses a different signature."
+      },
+      {
+        "principle": "Isolate, investigate and repair the damaged connection before return to service",
+        "reasoning": "Protection reduces risk; it does not justify leaving known defects. Repair and verify the installation itself."
+      },
+      {
+        "principle": "The expected residual-current imbalance may be absent",
+        "reasoning": "Balanced current can still contain an arc signature. Residual-current sensing and arc detection are not interchangeable."
+      }
+    ]
+  },
+  "course-V6WR_TBf1AU": {
+    "model": "Selective coordination aims to clear a fault with the appropriate device nearest upstream while maintaining unaffected supplies. The webinar moves from time-current curves to tested device combinations and shows why a coordination claim needs more evidence than two different ampere ratings.",
+    "ideas": [
+      "Study the whole single-line path and all relevant fault conditions. Overload, short-circuit and ground-fault elements can operate differently. A downstream branch device must coordinate with the upstream devices that can interrupt its supply; an overlooked ground-fault element can defeat an apparently satisfactory phase-overcurrent study.",
+      "Time-current curves are useful in their applicable regions, but instantaneous and current-limiting behaviour may require manufacturer test tables. Match frame, sensor, trip unit, settings, voltage and every table note. Overlapping plotted curves do not alone settle coordination when the manufacturer supplies applicable tested data.",
+      "Transformer impedance and current transformation affect the comparison across primary and secondary sides, but do not guarantee coordination. Check inrush, damage protection, fault levels and operating settings. Specify the required scope and evidence before equipment purchase rather than expecting software to fix incompatible hardware."
+    ],
+    "practice": "For a main board feeding floor boards, mark a final-circuit fault on the drawing, identify every device able to disconnect it and request coordination evidence for the exact combination. Record any limit of selectivity and the consequences for unaffected occupants.",
+    "retrieval": {
+      "prompt": "Why is “upstream breaker is twice the amperes” not sufficient proof of selectivity?",
+      "answer": "Device mechanisms, trip settings, fault level and tested pairing determine operation; a simple current-rating ratio does not establish the result.",
+      "why": "Coordination is a relationship between specified devices under specified conditions."
+    },
+    "note": "This webinar discusses North American NEC contexts and manufacturer examples. Those legal scopes and time thresholds are not Kenyan rules. Do not delay protection or raise pickups without a complete safety and withstand review.",
+    "explanations": [
+      {
+        "principle": "Selective clearing that preserves unaffected supplies",
+        "reasoning": "The intended downstream device should clear the relevant fault without unnecessarily losing healthy circuits, within the established selectivity range."
+      },
+      {
+        "principle": "Verify exact device identities, settings, fault level and table conditions",
+        "reasoning": "Use the correct evidence for the operating region. Manufacturer tests can describe interactions not resolved by a simplified plot, provided every condition matches."
+      },
+      {
+        "principle": "Coordination of all enabled protective elements along the fault path",
+        "reasoning": "An independent ground-fault element can determine actual operation even when phase curves look satisfactory. Include it in the protective study."
+      },
+      {
+        "principle": "The transformer ratio and fault conditions on the respective sides",
+        "reasoning": "Currents on different voltage sides must be referred consistently. Include transformer inrush, damage protection and fault levels in the review."
+      },
+      {
+        "principle": "The purchased combinations may not meet the required operating relationship",
+        "reasoning": "Define the protected paths, continuity needs and evidence early. Hardware selection and available trip functions constrain the final study."
+      }
+    ]
+  },
+  "course-8Z255dd78H4": {
+    "model": "Cable selection is a connected design process. Establish the load current, protective-device rating and installed cable capacity, then check voltage drop and fault protection. A cable can satisfy its current-carrying requirement and still fail a voltage-drop check.",
+    "ideas": [
+      "For the video’s resistive 4.6 kW load at 230 V, design current is 20 A. Coordinate design current Ib, protective rating In and installed capacity Iz. Installation method, insulation and applicable correction factors affect Iz. Do not confuse tabulated capacity with the capacity in the actual route.",
+      "In the source example, a 55 m run with an 11 mV/A/m coefficient at 20 A gives 12.1 V drop. That exceeds the example’s 11.5 V allowance even though a thermal-capacity choice may have appeared satisfactory. Length matters independently of the normal current check.",
+      "Using the example’s 7.3 mV/A/m coefficient gives 8.03 V over the same route. Alternatively, the original coefficient reaches 11.5 V at about 52.3 m. A redesign must recheck the whole circuit: do not shorten a number on paper or increase cable size without checking the other conditions."
+    ],
+    "practice": "Prepare a circuit worksheet with load assumptions, installation method, correction factors, protective device, cable capacity, route length, voltage drop and fault checks. Each number should have an identified source rather than an unexplained table-page reference.",
+    "retrieval": {
+      "prompt": "A cable passes its installed current-capacity check. What additional effect can make a long route unacceptable?",
+      "answer": "Voltage drop can exceed the applicable design limit even at an acceptable load current.",
+      "why": "Thermal capacity and voltage at the load are separate constraints.",
+      "workingTex": "\\Delta U = \\frac{m\\,I_b\\,L}{1000}"
+    },
+    "note": "The UK On-Site Guide edition, installation examples and 5% allowance are source-specific, not Kenyan requirements. Selecting the next breaker size above Ib is not an unconditional rule.",
+    "explanations": [
+      {
+        "principle": "12.1 V: the example exceeds its voltage-drop allowance",
+        "reasoning": "11 × 20 × 55 / 1000 = 12.1 V. Compare the calculated result with the stated allowance, not with the cable’s ampere rating."
+      },
+      {
+        "principle": "The calculated drop becomes 8.03 V, but the other design checks still apply",
+        "reasoning": "7.3 × 20 × 55 / 1000 = 8.03 V. The voltage-drop calculation passes the example limit, but coordination and fault checks remain necessary."
+      },
+      {
+        "principle": "Use the actual installation method and relevant capacity corrections",
+        "reasoning": "Installed capacity depends on heat removal and route conditions. Select from the applicable method and corrections before checking Ib, In and Iz."
+      },
+      {
+        "principle": "52.3 m",
+        "reasoning": "L = 11.5 × 1000 /(11 × 20) ≈ 52.3 m. A real route must be surveyed and all design checks repeated if changed."
+      },
+      {
+        "principle": "20 A",
+        "reasoning": "4600 W / 230 V = 20 A for the stated resistive load. Motor and other non-unity-power-factor input calculations need the relevant additional data."
+      }
+    ]
+  },
+  "course-NIrKOVZrqnU": {
+    "model": "Power factor links useful real power to the apparent power drawn from the supply. Inductive loads require reactive power as well as real power. Parallel capacitors can offset some inductive reactive demand, reducing supply current without claiming that the useful mechanical work has disappeared.",
+    "ideas": [
+      "For the sinusoidal single-phase model, apparent power S = VI, real power P = S cos(phi), and reactive power Q = S sin(phi). The power triangle gives S² = P² + Q². Motor shaft output is not electrical input: efficiency must be considered before using the nameplate’s mechanical power in an input-power calculation.",
+      "Inductive reactive demand is lagging; capacitive reactive power has the opposite sign. A shunt capacitor reduces the reactive power supplied from upstream while the load still needs real power. Lower current can reduce cable losses and release capacity; it does not imply the same percentage reduction in useful-energy consumption.",
+      "For target correction, Qc = P(tan(phi1) − tan(phi2)). For a single-phase capacitor at voltage V and frequency f, C = Qc/(2 pi f V²). Select a real product and recalculate the resulting power factor; connection, duty, harmonic conditions and ratings matter. Three-phase bank connections require their appropriate equations."
+    ],
+    "practice": "For a motor installation, distinguish shaft kW, input kW, kvar and kVA before estimating correction. Document voltage, frequency, existing power factor and target power factor, then check actual bank steps and operating conditions.",
+    "retrieval": {
+      "prompt": "Why does adding a parallel capacitor not remove the real power required to drive a loaded motor?",
+      "answer": "It offsets reactive exchange with the supply; useful mechanical output and motor losses still require real input power.",
+      "why": "Real and reactive power are different components, not two interchangeable descriptions of wasted energy.",
+      "workingTex": "Q_c=P(\\tan\\phi_1-\\tan\\phi_2)"
+    },
+    "note": "The transcript has caption errors, including an angle that should be 90 degrees rather than 9. Do not calculate reactive power as S minus P, or apply a single-phase capacitance formula blindly to a three-phase bank.",
+    "explanations": [
+      {
+        "principle": "8 kW",
+        "reasoning": "P = S × power factor = 10 × 0.8 = 8 kW. In this case Q = 6 kvar, from the right triangle, not 2 kvar."
+      },
+      {
+        "principle": "The capacitor supplies part of the reactive demand locally",
+        "reasoning": "Reactive current supplied upstream can fall while useful real power remains. Distinguish capacity and loss benefits from claims about energy charges."
+      },
+      {
+        "principle": "Recalculate the achieved power factor and verify duty, voltage and frequency ratings",
+        "reasoning": "The calculation proposes a value; the selected product must be checked in the actual system. Avoid treating a theoretical capacitance as a finished panel design."
+      },
+      {
+        "principle": "4.21 kvar",
+        "reasoning": "tan(acos 0.8) = 0.75 and tan(acos 0.95) ≈ 0.3287. Their difference times 10 gives about 4.21 kvar, before selecting real equipment."
+      },
+      {
+        "principle": "60 microfarads",
+        "reasoning": "Use Qc = 1000 var: 1000/(2 pi × 50 × 230²) ≈ 0.0000602 F = 60.2 microfarads. This is a calculation exercise, not an installation specification."
+      }
+    ]
+  },
+  "course-XbL0R_9KLD4": {
+    "model": "A motor nameplate links a particular supply and connection to rated mechanical performance. Read voltage, star/delta connection, frequency, current and speed together rather than selecting one attractive number independently.",
+    "ideas": [
+      "The rated kW is shaft output, while efficiency relates output to electrical input. Power factor relates real input to apparent input. A design calculation that treats output kW as input understates the electrical demand.",
+      "Use the connection paired with the actual supply voltage and frequency. Rated current belongs to those conditions. For the demonstrated two-pole 50 Hz motor, 2935 r/min is below the 3000 r/min synchronous field speed: that difference is slip, not necessarily a defect.",
+      "IP rating, insulation class, frame and mounting code answer different mechanical/environmental questions. Insulation class F is not permission for a 155°C ambient. Bearing and lubrication instructions belong to the exact motor. Service factor is conditional data, not unrestricted permission to overload."
+    ],
+    "practice": "Before connecting a replacement motor, compare the nameplate with the supply, terminal diagram, starter settings, driven load and mounting. Include maintenance data in the handover rather than recording only kW.",
+    "retrieval": {
+      "prompt": "A nameplate gives shaft output, efficiency and power factor. Which is used first to obtain real electrical input?",
+      "answer": "Divide shaft output by efficiency; use power factor separately when relating real input to apparent power/current.",
+      "why": "Efficiency and power factor describe different relationships."
+    },
+    "note": "Nameplate examples belong to the demonstrated machine. Do not generalise its voltage connection, bearing grease, current or service factor to another motor.",
+    "explanations": [
+      {
+        "principle": "24.4 kW",
+        "reasoning": "Input = output / efficiency = 22 / 0.90. Power factor is a separate quantity when calculating apparent power or current."
+      },
+      {
+        "principle": "It runs below the 3000 r/min synchronous field speed because of slip",
+        "reasoning": "The rotating field’s speed is set by frequency and pole count. The induction rotor follows slightly slower under load."
+      },
+      {
+        "principle": "That the motor is approved for a 155°C ambient",
+        "reasoning": "An insulation thermal class is not the permitted ambient temperature. Use the motor’s actual operating and environmental ratings."
+      },
+      {
+        "principle": "The pairing on that motor’s plate and terminal diagram",
+        "reasoning": "Read the voltage/connection pair for the exact machine. A familiar supply voltage alone does not establish how its windings should be connected."
+      },
+      {
+        "principle": "The exact bearing, speed, operating conditions and manufacturer lubrication instructions",
+        "reasoning": "Mechanical construction and operating conditions affect lubrication. The nameplate and manual link the maintenance plan to the actual motor."
+      }
+    ]
+  },
+  "course-HFkTPmY7N7w": {
+    "model": "A direct-on-line starter connects the motor to full supply voltage through a contactor. The control circuit operates the coil; the power contacts carry motor current. An overload relay can interrupt the coil circuit so the contactor releases, but the contactor alone is not overload protection.",
+    "ideas": [
+      "Energising the coil produces magnetic force that closes the contactor. Removing coil power lets the return spring open it. The specified coil voltage may differ from the motor supply, so identify both circuits before wiring.",
+      "DOL starting does not intentionally reduce starting voltage. A motor can draw substantial inrush while accelerating. Suitability depends on the supply, motor and driven load—not a universal kW cut-off.",
+      "The overload relay monitors motor loading and its control contact releases the contactor when it operates. Choose the appropriate relay range, setting and trip class from motor and manufacturer data. Short-circuit protection remains a separate coordinated function."
+    ],
+    "practice": "Trace a starter drawing in two passes: supply through protective devices and main contacts to the motor; then control supply through stop/start, holding contacts and overload contact to the coil. Identify what opens when each protective function operates.",
+    "retrieval": {
+      "prompt": "Why can a small overload-relay control contact stop a motor carrying a much larger current?",
+      "answer": "It opens the contactor coil circuit; the contactor’s main poles then interrupt the motor supply.",
+      "why": "Control and power circuits have different duties."
+    },
+    "note": "Do not adopt “just above full-load current” as a universal overload setting or a fixed motor-kW limit for DOL. Follow the exact starter/motor specification and site design.",
+    "explanations": [
+      {
+        "principle": "The contactor releases and its main contacts open",
+        "reasoning": "Opening the coil circuit removes the force holding the main contacts closed. Distinguish the initiating protective signal from the device interrupting load current."
+      },
+      {
+        "principle": "The specified 24 V control supply",
+        "reasoning": "A contactor can switch a high-voltage power circuit while its coil operates from a lower-voltage control circuit. Follow the coil label and drawing."
+      },
+      {
+        "principle": "Full-voltage starting current and its effect on the supply and load",
+        "reasoning": "Review starting duty, acceleration and supply strength before choosing an alternative starter. The presence of a contactor does not reduce inrush by itself."
+      }
+    ]
+  },
+  "course-wQwGZMcDGXk": {
+    "model": "A motor-protection circuit breaker combines protective functions suited to a motor circuit, within the capabilities of the particular product. Its adjustable current range is used with the motor specification; it is not a dial for making faults disappear.",
+    "ideas": [
+      "The demonstrated adjustable range, 4–6.3 A, allows matching a specified motor duty within that range. A device set too high can fail to provide the intended overload protection. Do not choose solely by enclosure size.",
+      "Short-circuit and sustained-overload responses serve different hazards. Phase-loss sensitivity may be provided, but the exact mechanism and limitations must be verified. Do not assume every MPCB detects every supply-voltage problem.",
+      "Auxiliary contacts can report device state through NO/NC control contacts. A mechanical test verifies a mechanism action, not the complete current-time calibration. A starter still needs a defined control and switching arrangement."
+    ],
+    "practice": "For a motor replacement, compare rated current and duty with the MPCB range and manufacturer settings. Check coordinated contactor and short-circuit data, and verify any required phase-loss or imbalance protection explicitly.",
+    "retrieval": {
+      "prompt": "What must be checked before relying on an MPCB for phase-loss protection?",
+      "answer": "The exact product’s documented protective functions and limitations, and whether they satisfy the motor application.",
+      "why": "A family name does not guarantee every type of fault detection."
+    },
+    "note": "The source’s phase-failure claims are product-dependent. Do not assume a generic MPCB provides comprehensive phase-voltage monitoring or that its test button proves calibrated protection.",
+    "explanations": [
+      {
+        "principle": "Set it according to the motor and device instructions, not automatically at 6.3 A",
+        "reasoning": "An adjustable range permits correct matching; it does not justify maximising the setting. Confirm the required setting and the application conditions."
+      },
+      {
+        "principle": "Its complete protective current-time performance",
+        "reasoning": "A mechanical test and a calibrated protective-response test answer different questions. Do not convert an observed mechanical action into a complete commissioning claim."
+      },
+      {
+        "principle": "No; verify the particular protection’s documented capabilities",
+        "reasoning": "Select functions against the fault requirement. Some motor devices respond to phase loss through current behaviour; a particular application may require additional monitoring."
+      }
+    ]
+  },
+  "course-At7AnMV7Xd0": {
+    "model": "A radial circuit begins at its protective device and extends to its final outlets without returning as a ring to the origin. It can branch. The outlets remain electrically parallel: “radial” describes wiring topology, not appliances connected in series.",
+    "ideas": [
+      "Trace line, neutral and circuit protective conductor together from the board to the outlets. A branch does not automatically turn a radial into a ring. The load current is shared between branches according to what is connected, while common upstream sections carry their combined current.",
+      "Each accessory must accept the conductor arrangement in its rated terminals. Connection capacity, conductor size and mechanical condition come from the product specification, not a universal maximum number of wires.",
+      "Opening one protective switch does not establish safe isolation. For an RCBO circuit, line and neutral must follow the intended protected path; mixed neutrals can cause incorrect operation and hazards. Verify the whole circuit rather than inferring correctness from working sockets."
+    ],
+    "practice": "Before adding an outlet, sketch the existing route and identify the supplying device, cable sizes, installation conditions and terminal capacities. Confirm the circuit topology and design capacity before installation, then complete the appropriate inspection and tests.",
+    "retrieval": {
+      "prompt": "Why does a branched radial still have outlets at the same supply voltage rather than dividing voltage between appliances?",
+      "answer": "The outlets are connected across line and neutral in parallel; branching the cable route does not put appliances in series.",
+      "why": "Physical route and electrical load connection are different descriptions."
+    },
+    "note": "John Ward’s UK sizes and protective arrangements are examples, not Kenyan design rules. Follow current local requirements and exact accessory ratings.",
+    "explanations": [
+      {
+        "principle": "A branched radial",
+        "reasoning": "The presence or absence of a return path defines the distinction here. Outlets on the radial are still parallel loads."
+      },
+      {
+        "principle": "10 A",
+        "reasoning": "The common conductor carries the combined load current before it divides. This is why adding outlets requires assessment of upstream capacity."
+      },
+      {
+        "principle": "The accessory’s permitted conductor combination and terminal capacity",
+        "reasoning": "Use the actual manufacturer limits for number, size and type of conductors, together with sound installation and verification."
+      }
+    ]
+  },
+  "course-hZN6hiGLtrE": {
+    "model": "A ring final circuit returns its line, neutral and protective conductor to the same origin. Its two paths can share current, but not necessarily equally. Continuity of the intended ring is therefore a design and verification concern, not something established because the sockets work.",
+    "ideas": [
+      "Current division depends on the resistances of the two paths and where loads are connected. Near one end, the shorter path can carry more current. Do not assume each leg carries exactly half of every load.",
+      "A broken ring can leave outlets energised through the remaining route. That apparent operation can hide a loss of the assumptions supporting the circuit design. Verify line, neutral and protective-conductor continuity with the appropriate safe test method.",
+      "A spur is a branch from the ring, not a continuation completing the ring. Extending a ring, adding a spur and supplying a separate circuit are different alterations. Load distribution, cable conditions and accessory ratings must be considered; outlet count alone does not prove capacity."
+    ],
+    "practice": "Before altering a supposed ring, establish its topology and existing test evidence. After work, inspect and perform the appropriate end-to-end and cross-connection checks under safe conditions. Investigate unexpected readings rather than assuming a powered outlet confirms the return path.",
+    "retrieval": {
+      "prompt": "Why can an open ring be more difficult to notice than a completely open radial?",
+      "answer": "The other route can still supply outlets, masking the break while changing the circuit’s current-sharing assumptions.",
+      "why": "Loss of intended topology does not always produce immediate loss of supply."
+    },
+    "note": "UK ring-final cable sizes, floor-area guidance and protective ratings are jurisdiction-specific examples. The instructor’s preferences about topology are opinions, not universal requirements.",
+    "explanations": [
+      {
+        "principle": "Supply continuity does not prove that the intended ring is intact",
+        "reasoning": "The ring can keep supplying loads through one path. Investigate and rectify the fault, then verify the intended circuit rather than relying on operation alone."
+      },
+      {
+        "principle": "No; current division depends on the resistance of each path",
+        "reasoning": "The two routes act as parallel paths with their actual resistances. Equal sharing is a special case, not a safe universal assumption."
+      },
+      {
+        "principle": "A spur requiring its own suitability assessment",
+        "reasoning": "Describe the actual topology before applying design rules. A spur and an extension of both legs of a ring are not the same alteration."
+      }
+    ]
+  },
+  "course-_tGyaE78WTA": {
+    "model": "A soft starter controls the voltage applied while a motor starts, reducing starting stress where suitable for the load. It fills the gap between direct switching and a variable-frequency drive, but it is not normally a running-speed controller.",
+    "ideas": [
+      "Controlled semiconductor devices (SCRs/thyristors) progressively apply voltage. This can reduce starting current and mechanical shock compared with abrupt full-voltage starting. The motor must still develop enough torque to accelerate its particular load.",
+      "After acceleration, a bypass arrangement can carry the normal running current instead of continuous semiconductor conduction, reducing losses. This does not create a separate variable-speed operating mode.",
+      "Soft stopping can moderate deceleration effects such as water hammer in a suitable pump system. It is not an emergency brake. A VFD controls voltage and frequency for speed control; choose by the process requirement, not by assuming all electronic starters do the same job."
+    ],
+    "practice": "For a conveyor or pump, separate the requirement for gentler starting from the requirement for adjustable running speed. Check load torque, starting frequency, supply conditions, bypass arrangement and protective coordination with the manufacturer.",
+    "retrieval": {
+      "prompt": "A process needs a motor to run at several commanded speeds throughout the day. Why is a conventional soft starter not the direct solution?",
+      "answer": "It manages starting/stopping voltage rather than providing normal running frequency-based speed control; assess a suitable drive instead.",
+      "why": "Starting stress and continuous speed regulation are different requirements."
+    },
+    "note": "Soft stop is not safety-rated emergency stopping or a mechanical brake. Actual torque, starting duty and protection requirements are product- and load-specific.",
+    "explanations": [
+      {
+        "principle": "A controlled voltage ramp during starting",
+        "reasoning": "A soft starter moderates application of voltage during acceleration. Confirm that reduced starting torque can still accelerate the load."
+      },
+      {
+        "principle": "Carry running current around the semiconductor path to reduce losses",
+        "reasoning": "The bypass reduces the continuous losses associated with the semiconductor path. It does not change the basic distinction between starter and variable-speed drive."
+      },
+      {
+        "principle": "It must suit the hydraulic system and is not an emergency brake",
+        "reasoning": "Soft stopping can improve a suitable process but must not be confused with safety stopping or maintenance isolation."
+      }
+    ]
+  },
+  "course-igi8F6UAvh0": {
+    "model": "Phase sequence describes the order of the three alternating phases. That order determines the direction of the rotating magnetic field for a given motor connection. A phase-rotation meter provides evidence of sequence at its connected points; it does not prove that equipment is isolated.",
+    "ideas": [
+      "The practical demonstration checks sequence after supply work, before relying on motor direction. Connect the meter leads to their identified reference phases according to its instructions. A clockwise or counter-clockwise indication has meaning only with that lead arrangement recorded.",
+      "Changing any two phase connections reverses sequence. Any corrective wiring requires safe isolation, proving dead and the appropriate controlled work procedure—not swapping live leads or conductors while investigating.",
+      "Meter selection includes the instrument and leads’ voltage and measurement-category ratings, condition and permitted environment. A maximum voltage marking alone is not the whole safety specification. Live measurements require competence and appropriate controls; a phase meter is not a substitute for an approved safe-isolation process."
+    ],
+    "practice": "During pump commissioning, compare supply sequence and the driven equipment’s required direction under a controlled plan. Record where and how sequence was measured. After any isolated correction, repeat the appropriate verification before return to service.",
+    "retrieval": {
+      "prompt": "Why must the lead-to-phase relationship be recorded with a rotation-meter reading?",
+      "answer": "The indicated direction refers to that ordering of the connected leads; interchanging two leads reverses the indicated sequence.",
+      "why": "A direction symbol without the connection reference is incomplete evidence."
+    },
+    "note": "Observe the demonstration as controlled live testing, not permission for unsupervised work. Use the Fluke 9040 manual for the exact instrument; sequence indication does not establish absence of voltage.",
+    "explanations": [
+      {
+        "principle": "Phase sequence at the relevant supply points",
+        "reasoning": "Sequence is a separate three-phase property. The demonstration shows why supply work can require it to be reverified before assuming motor direction."
+      },
+      {
+        "principle": "Safe isolation and proving dead under the controlled work procedure",
+        "reasoning": "Although the concept is “exchange two phases,” physical alteration must be done safely isolated. Reverification follows the completed change."
+      },
+      {
+        "principle": "Suitable measurement-category ratings, leads, condition and a controlled test method",
+        "reasoning": "Match both the instrument and its leads to the measurement environment and manufacturer instructions. Competence and safe access remain necessary."
+      }
+    ]
+  },
+  "supp-ac-theory-01": {
+    "model": "AC measurements can look inconsistent if phase is ignored. The fluorescent fitting introduces two puzzles: component voltage magnitudes need not add arithmetically, and a parallel capacitor can reduce supply current.",
+    "ideas": [
+      "The lamp and choke form a series branch; the correction capacitor is connected in parallel.",
+      "Separate component RMS readings do not show their timing relative to one another.",
+      "Lower supply current does not by itself establish lower real power or lower lamp output."
+    ],
+    "practice": "Use the recorded readings to ask which quantity is being measured and where. This is an observation exercise; the exposed live demonstration is not a practical task to copy.",
+    "retrieval": {
+      "prompt": "Adding a parallel capacitor reduces the measured supply current without changing lamp brightness. What information is missing from simple arithmetic addition of branch currents?",
+      "answer": "The relative phase of the branch currents.",
+      "why": "AC currents can reach their positive and negative values at different times. Their RMS magnitudes alone do not determine the supply-current magnitude."
+    },
+    "explanations": [
+      {
+        "principle": "In parallel with the lamp-and-choke branch",
+        "reasoning": "A parallel capacitor has the same supply voltage as the lamp-and-choke branch. Its current combines with that branch current at the supply connection."
+      },
+      {
+        "principle": "The phase relationship between the component voltages",
+        "reasoning": "Kirchhoff’s voltage law still applies instantaneously. Separate RMS magnitudes discard phase information, so they cannot always be added as ordinary numbers."
+      },
+      {
+        "principle": "Lamp operation stays similar while reactive supply current is reduced",
+        "reasoning": "The capacitor can offset part of the lagging reactive current. The useful load can continue operating with less current demanded from the supply."
+      },
+      {
+        "principle": "The currents can have different phase angles",
+        "reasoning": "A magnitude describes size without the relative time position of the waveform. Phasors preserve both magnitude and phase for sinusoidal analysis."
+      },
+      {
+        "principle": "Analyse the supplied observations and circuit diagram",
+        "reasoning": "The learning target is interpretation of AC behaviour. Understanding the diagram and observations does not require reproducing the exposed live apparatus."
+      }
+    ]
+  },
+  "supp-ac-theory-02": {
+    "model": "Distinguish resistance, inductance and capacitance before calculating their AC effects. R is measured in ohms, L in henries and C in farads; these describe different properties.",
+    "ideas": [
+      "A resistive element converts electrical energy into heat.",
+      "Inductance links changing current with induced voltage and magnetic energy storage.",
+      "Capacitance describes charge stored per volt; it is not itself capacitive reactance."
+    ],
+    "practice": "Read a circuit diagram and identify which parts model heating, magnetic fields and electric-field storage. This prepares you to interpret a choke and correction capacitor correctly.",
+    "retrieval": {
+      "prompt": "A coil is marked 0.2 H. Does that tell you its AC opposition is 0.2 Ω?",
+      "answer": "No. Henry is the unit of inductance; reactance in ohms also depends on frequency.",
+      "why": "A component property and its opposition at a particular frequency are different quantities."
+    },
+    "explanations": [
+      {
+        "principle": "L, measured in henries",
+        "reasoning": "Inductance uses L and the unit henry. Distinguishing it from current I avoids mistakes when using XL = 2πfL."
+      },
+      {
+        "principle": "Electrical energy is converted into heat",
+        "reasoning": "Resistance dissipates real power. In a heater, the resulting thermal energy is the intended useful output."
+      },
+      {
+        "principle": "Stored charge per applied voltage",
+        "reasoning": "C = Q/V relates separated charge to potential difference. At the same voltage, a larger capacitance stores more charge."
+      },
+      {
+        "principle": "A winding that links changing current with magnetic flux",
+        "reasoning": "A coil’s magnetic field changes with current and induces voltage. This is the basis of the inductive component model."
+      },
+      {
+        "principle": "Farads and ohms",
+        "reasoning": "Capacitance C is a component property in farads. XC is the opposition at a stated frequency, measured in ohms."
+      }
+    ]
+  },
+  "supp-ac-theory-06": {
+    "model": "A fixed inductor presents greater reactance as frequency rises. Infer this from current only when the applied voltage is held constant.",
+    "ideas": [
+      "XL increases with frequency for fixed inductance.",
+      "At fixed RMS voltage, greater opposition produces less current.",
+      "An ideal resistor does not show this same frequency dependence."
+    ],
+    "practice": "Interpret the function-generator experiment by changing one condition at a time. A current change alone cannot identify an impedance change if the applied voltage also changes.",
+    "retrieval": {
+      "prompt": "Frequency doubles across an ideal inductor while RMS voltage and inductance stay fixed. What happens to current?",
+      "answer": "The reactance doubles and the current halves.",
+      "why": "XL = 2πfL and I = V/XL. Doubling f doubles the denominator in the current calculation."
+    },
+    "explanations": [
+      {
+        "principle": "Higher reactance and lower current",
+        "reasoning": "XL = 2πfL increases with f. For a fixed V, I = V/XL therefore falls."
+      },
+      {
+        "principle": "The applied voltage",
+        "reasoning": "I = V/Z connects current with both voltage and impedance. A lower current can also result from a lower voltage."
+      },
+      {
+        "principle": "40 Ω",
+        "reasoning": "Frequency increases by 200/50 = 4, so reactance becomes 4 × 10 = 40 Ω."
+      },
+      {
+        "principle": "Current remains unchanged in the ideal resistance model",
+        "reasoning": "For an ideal resistor, I = V/R with R fixed. Frequency does not appear in this model."
+      },
+      {
+        "principle": "It has doubled",
+        "reasoning": "Z = V/I. With V unchanged, dividing I by two multiplies Z by two."
+      }
+    ]
+  },
+  "supp-ac-theory-07": {
+    "model": "Inductive reactance depends on both frequency and inductance: XL = 2πfL. Use henries for L and hertz for f to obtain ohms.",
+    "ideas": [
+      "Increasing inductance increases reactance at fixed frequency.",
+      "Millihenries must be converted to henries before substitution.",
+      "Inductance in H and reactance in Ω are not interchangeable."
+    ],
+    "practice": "Compare two coils at the same supply frequency before predicting their current. A coil’s winding resistance must be included when the ideal-inductor approximation is insufficient.",
+    "retrieval": {
+      "prompt": "What is the reactance of a 200 mH ideal inductor at 50 Hz?",
+      "answer": "L = 0.2 H; XL = 2π × 50 × 0.2 = 62.83 Ω.",
+      "why": "The formula needs the inductance in henries. The resulting opposition is frequency-dependent."
+    },
+    "explanations": [
+      {
+        "principle": "It doubles",
+        "reasoning": "XL = 2πfL is directly proportional to L when f stays fixed."
+      },
+      {
+        "principle": "0.047 H",
+        "reasoning": "47 mH = 47 × 10⁻³ H = 0.047 H. Omitting the prefix would make the calculated reactance 1000 times too large."
+      },
+      {
+        "principle": "XL = 2πfL",
+        "reasoning": "Frequency and inductance both increase opposition, so both multiply in XL = 2πfL."
+      },
+      {
+        "principle": "31.4 Ω",
+        "reasoning": "XL = 2π × 50 × 0.1 = 31.4 Ω approximately."
+      },
+      {
+        "principle": "Their inductive reactances match, but total impedances may differ",
+        "reasoning": "XL uses f and L only. A real coil’s total impedance also reflects its resistance, so equal XL is not sufficient for equal current."
+      }
+    ]
+  },
+  "supp-ac-theory-08": {
+    "model": "Capacitive reactance falls when frequency or capacitance rises: XC = 1/(2πfC). At unchanged voltage, this allows a greater alternating current.",
+    "ideas": [
+      "Increasing f or C increases the denominator and reduces XC.",
+      "Convert microfarads or nanofarads to farads.",
+      "The reciprocal dependence is opposite to inductive reactance."
+    ],
+    "practice": "Predict how a capacitor branch responds to frequency before interpreting its measured current. Do not confuse a larger capacitance with a larger AC opposition.",
+    "retrieval": {
+      "prompt": "An ideal capacitor is replaced with one of twice the capacitance at the same frequency and voltage. What happens?",
+      "answer": "Its reactance halves and its current doubles.",
+      "why": "Capacitance divides the reactance expression; current is voltage divided by that reactance."
+    },
+    "explanations": [
+      {
+        "principle": "Reactance halves and current doubles",
+        "reasoning": "XC = 1/(2πfC). Doubling f halves XC, and I = V/XC doubles."
+      },
+      {
+        "principle": "Lower capacitive reactance",
+        "reasoning": "The denominator 2πfC grows with C, making its reciprocal smaller."
+      },
+      {
+        "principle": "1 × 10⁻⁶ F",
+        "reasoning": "Micro means one millionth. Correct conversion is essential because C is in the denominator."
+      },
+      {
+        "principle": "318 Ω",
+        "reasoning": "XC = 1/(2π × 50 × 10 × 10⁻⁶) ≈ 318 Ω."
+      },
+      {
+        "principle": "Both changes must be considered before isolating the capacitance effect",
+        "reasoning": "I = V/XC depends on source voltage as well as capacitive reactance. Change one variable at a time or account for both."
+      }
+    ]
+  },
+  "supp-ac-theory-09": {
+    "model": "Compare equivalent points on voltage and current waveforms to determine phase. In ideal loads, current is in phase for R, lags by 90° for L and leads by 90° for C.",
+    "ideas": [
+      "Phase displacement is a timing difference, not necessarily a frequency difference.",
+      "Compare like landmarks, such as positive peaks or rising zero crossings.",
+      "A real resistive-inductive coil normally lags by less than 90°."
+    ],
+    "practice": "Read a waveform diagram before interpreting an AC power calculation. A current peak occurring later than a voltage peak signals lagging current.",
+    "retrieval": {
+      "prompt": "Voltage reaches its positive peak at 90° and current reaches its positive peak at 180°. What is their relationship?",
+      "answer": "Current lags voltage by 90°.",
+      "why": "The equivalent current landmark occurs a quarter-cycle later. Both waves can still have the same period."
+    },
+    "explanations": [
+      {
+        "principle": "Current lags voltage",
+        "reasoning": "A repeated delay between equivalent waveform points is phase lag. It is distinct from amplitude and frequency."
+      },
+      {
+        "principle": "A pure resistor",
+        "reasoning": "For a pure resistor, instantaneous current follows voltage through i = v/R. Their zeros and peaks align."
+      },
+      {
+        "principle": "It leads voltage by 90°",
+        "reasoning": "Capacitor current is associated with the rate of voltage change. For a sine voltage, the current leads by one quarter-cycle."
+      },
+      {
+        "principle": "5 ms",
+        "reasoning": "T = 1/50 = 0.02 s = 20 ms. A quarter-cycle is 5 ms."
+      },
+      {
+        "principle": "Its winding has resistance as well as inductance",
+        "reasoning": "Winding resistance contributes an in-phase voltage component. The total coil voltage is therefore less than 90° ahead of its current in the series R–L model."
+      }
+    ]
+  },
+  "supp-ac-theory-10": {
+    "model": "A phasor represents a sinusoidal quantity by its magnitude and phase relative to a reference. The angle between arrows represents the timing difference between waves of the same frequency.",
+    "ideas": [
+      "Choose and label a reference phasor before interpreting other angles.",
+      "With voltage to the right and anticlockwise rotation, leading current lies above and lagging current below.",
+      "Changing the reference rotates the drawing without changing relative phase."
+    ],
+    "practice": "Use a phasor sketch to distinguish inductive and capacitive branch current before attempting a supply-current calculation.",
+    "retrieval": {
+      "prompt": "Voltage is the rightward reference and current is drawn 90° clockwise from it. With anticlockwise rotation, which ideal load does this represent?",
+      "answer": "An ideal inductor: current lags voltage by 90°.",
+      "why": "The voltage reaches any reference direction a quarter-cycle before the current."
+    },
+    "explanations": [
+      {
+        "principle": "Their relative phase",
+        "reasoning": "Phasor angle encodes how far one sinusoid leads or lags another. Magnitude is represented separately by arrow length."
+      },
+      {
+        "principle": "Capacitive current leading by 90°",
+        "reasoning": "An upward arrow reaches a direction 90° before the rightward voltage arrow during anticlockwise rotation."
+      },
+      {
+        "principle": "They remain unchanged",
+        "reasoning": "Only the chosen reference direction changes. Relative angles and magnitudes remain the same."
+      },
+      {
+        "principle": "No; they represent different units",
+        "reasoning": "Phasor addition requires compatible quantities. A voltage-current comparison can show phase, but adding their lengths does not yield a voltage."
+      },
+      {
+        "principle": "They have the same frequency",
+        "reasoning": "At equal frequency, the relative phase can remain fixed. Different frequencies continuously change their relative angle."
+      }
+    ]
+  },
+  "supp-ac-theory-11": {
+    "model": "Connect each ideal load to its property, reactance and phase behaviour before combining loads. The same letters and units must keep the same meaning across diagrams and calculations.",
+    "ideas": [
+      "R dissipates real power and has in-phase current.",
+      "L gives XL = 2πfL with ideal current lagging voltage.",
+      "C gives XC = 1/(2πfC) with ideal current leading voltage."
+    ],
+    "practice": "Use this review to decide which pure-load assumptions remain valid when a real circuit contains several components. The next step combines their effects rather than assigning one pure-load rule to the whole circuit.",
+    "retrieval": {
+      "prompt": "A load contains both winding resistance and inductance. Should it automatically be assigned exactly 90° phase lag?",
+      "answer": "No. Exactly 90° belongs to the ideal purely inductive case.",
+      "why": "Resistance introduces an in-phase contribution; the resulting series R–L angle is between 0° and 90° for positive R and L."
+    },
+    "explanations": [
+      {
+        "principle": "L in H; XL rises with frequency; current lags voltage",
+        "reasoning": "Keep the property, its opposition and its phase relationship together: inductance L, reactance XL and lagging current."
+      },
+      {
+        "principle": "XL rises and XC falls",
+        "reasoning": "Frequency multiplies XL but divides XC. The two branches therefore respond in opposite ways."
+      },
+      {
+        "principle": "Reactance",
+        "reasoning": "Reactance describes opposition to sinusoidal current and is measured in ohms. The component properties use different units."
+      },
+      {
+        "principle": "Corresponding peaks and rising zero crossings coincide",
+        "reasoning": "In-phase sinusoids share equivalent time landmarks. Their amplitudes need not match."
+      },
+      {
+        "principle": "They establish components whose effects can then be combined",
+        "reasoning": "Ideal elements provide clear reference models. A mixed circuit is analysed using its actual connections and the component phase relationships."
+      }
+    ]
+  },
+  "supp-ac-theory-12": {
+    "model": "The fluorescent-lamp voltage puzzle is resolved by adding voltage phasors. The lamp and choke voltage waveforms are displaced, so their RMS magnitudes do not simply add.",
+    "ideas": [
+      "A series circuit provides a common current reference.",
+      "The ideal resistive voltage follows current; ideal inductive voltage leads it by 90°.",
+      "A real choke includes resistance, so a right-angle approximation is not exact for the complete choke."
+    ],
+    "practice": "Explain an apparent mismatch between component voltage readings without assuming the source creates extra energy. Identify what the meter readings omit: relative phase.",
+    "retrieval": {
+      "prompt": "In an ideal series R–L circuit, VR = 60 V and VL = 80 V. Is the supply 140 V?",
+      "answer": "No. Vs = √(60² + 80²) = 100 V.",
+      "why": "The voltage components are perpendicular phasors, so their resultant follows Pythagoras rather than arithmetic addition."
+    },
+    "explanations": [
+      {
+        "principle": "The component voltages are not in phase",
+        "reasoning": "A scalar RMS reading omits timing. Adding phasors preserves that timing and produces the supply magnitude."
+      },
+      {
+        "principle": "The series current",
+        "reasoning": "The shared current relates VR and VL: VR is in phase with it, while VL leads by 90° for an ideal inductor."
+      },
+      {
+        "principle": "90°",
+        "reasoning": "Relative to the common current, VR has zero displacement and VL leads by 90°."
+      },
+      {
+        "principle": "50 V",
+        "reasoning": "Vs = √(30² + 40²) = √2500 = 50 V."
+      },
+      {
+        "principle": "Its winding resistance adds an in-phase voltage component",
+        "reasoning": "The complete choke voltage includes resistance and inductance. Its phase relative to current is therefore not exactly the ideal inductor angle."
+      }
+    ]
+  },
+  "supp-ac-theory-13": {
+    "model": "Parallel AC branch currents share a voltage reference and combine as phasors. A capacitor can offset lagging reactive current while leaving the useful load’s real-power demand broadly unchanged.",
+    "ideas": [
+      "The load branch still carries its own current after a parallel capacitor is connected.",
+      "Leading and lagging reactive components can oppose one another.",
+      "Lower RMS supply current reduces apparent power at fixed voltage; it does not alone prove lower real power."
+    ],
+    "practice": "Explain why supply conductors can carry less current after correction even though a capacitor branch draws current. Keep cable losses separate from the useful load’s power.",
+    "retrieval": {
+      "prompt": "A load current has 3 A in phase and 4 A lagging reactive components. A parallel capacitor supplies 4 A leading. What supply current remains?",
+      "answer": "3 A, in phase with the voltage.",
+      "why": "The reactive components cancel in this ideal sinusoidal example, leaving the unchanged real component."
+    },
+    "note": "The transcript’s final “less current means less power” claim is qualified: apparent power falls; useful load real power need not. Source: OpenStax, Power in an AC Circuit.",
+    "explanations": [
+      {
+        "principle": "The branch voltage",
+        "reasoning": "Parallel branches connect across the same two nodes, so they share voltage. Their currents must be compared relative to that voltage."
+      },
+      {
+        "principle": "The total supply current",
+        "reasoning": "The leading capacitor component offsets part of the load’s reactive demand at the supply junction. The load branch need not reduce its real-power consumption."
+      },
+      {
+        "principle": "5 A",
+        "reasoning": "I = √(3² + 4²) = 5 A. The components describe the same load current resolved relative to voltage."
+      },
+      {
+        "principle": "Apparent power S = VrmsIrms",
+        "reasoning": "Apparent power is the product of RMS voltage and current. Real power includes the waveform relationship, so its change cannot be inferred from current alone."
+      },
+      {
+        "principle": "The supply current becomes leading",
+        "reasoning": "Correction has a balance point. Excess capacitance creates net leading reactive current rather than endless improvement."
+      }
+    ]
+  },
+  "supp-ac-theory-14": {
+    "model": "A scale phasor drawing converts voltage magnitudes to lengths while retaining their phase angles. Use the same voltage scale for all voltage arrows and measure the resultant from its correct endpoints.",
+    "ideas": [
+      "State the scale in volts per centimetre or an equivalent ratio.",
+      "Draw the ideal resistive and inductive voltages at right angles.",
+      "The diagonal represents the supply resultant; real-coil resistance limits the ideal construction."
+    ],
+    "practice": "Use a scale drawing as an independent check on a triangle calculation. A visibly implausible diagonal can reveal the wrong scale or an incorrect angle.",
+    "retrieval": {
+      "prompt": "At 10 V per centimetre, perpendicular voltages are drawn 6 cm and 8 cm long. What supply voltage does the 10 cm diagonal represent?",
+      "answer": "100 V: 10 cm × 10 V/cm.",
+      "why": "All three voltage lengths use the same conversion. The diagonal is the resultant, not the sum of the side lengths."
+    },
+    "explanations": [
+      {
+        "principle": "5 cm",
+        "reasoning": "Length = voltage/(volts per centimetre) = 100/20 = 5 cm."
+      },
+      {
+        "principle": "All voltage arrows use the same magnitude scale",
+        "reasoning": "A consistent scale preserves the ratios between component magnitudes and their resultant."
+      },
+      {
+        "principle": "5 cm",
+        "reasoning": "Pythagoras gives √(3² + 4²) = 5 cm. The graphical and numerical methods should agree."
+      },
+      {
+        "principle": "The arrow from the first tail to the final head",
+        "reasoning": "Head-to-tail addition preserves each arrow’s magnitude and direction. The closing displacement gives their combined effect."
+      },
+      {
+        "principle": "Check the assumed phase angle and the choke’s resistance",
+        "reasoning": "A physical choke is not a pure inductance. Its resistive contribution changes the angle used in the ideal right-angle drawing."
+      }
+    ]
+  },
+  "supp-ac-theory-15": {
+    "model": "The ideal series R–L voltage triangle is a right triangle: Vs² = VR² + VL². Use the correct hypotenuse and keep voltage magnitudes distinct from instantaneous signed values.",
+    "ideas": [
+      "The supply magnitude is the hypotenuse.",
+      "Find an unknown component by subtracting squares, then taking the square root.",
+      "A right angle is an assumption about the ideal R and L components, not every pair of voltmeter readings."
+    ],
+    "practice": "Use the triangle to check a calculation without relying on a precisely drawn diagram. The answer should be greater than either perpendicular component and less than their arithmetic sum.",
+    "retrieval": {
+      "prompt": "For an ideal series R–L circuit with Vs = 100 V and VR = 60 V, what is VL?",
+      "answer": "VL = √(Vs² − VR²) = √(10000 − 3600) = 80 V.",
+      "why": "The supply is the hypotenuse. Rearrangement requires subtracting squared magnitudes, not subtracting the magnitudes directly."
+    },
+    "explanations": [
+      {
+        "principle": "Vs² = VR² + VL²",
+        "reasoning": "The two component voltage phasors are perpendicular, so Pythagoras gives the supply resultant."
+      },
+      {
+        "principle": "200 V",
+        "reasoning": "Vs = √(120² + 160²) = √40000 = 200 V."
+      },
+      {
+        "principle": "120 V",
+        "reasoning": "VL = √(130² − 50²) = √14400 = 120 V."
+      },
+      {
+        "principle": "The inputs or triangle calculation need checking",
+        "reasoning": "In this specific R–L model, Vs = √(VR² + VL²) cannot be smaller than VR. Check labels, units and arithmetic."
+      },
+      {
+        "principle": "Their phase angle may not be 90°",
+        "reasoning": "Pythagoras requires perpendicular phasors. For another angle, use the corresponding vector relationship."
+      }
+    ]
+  },
+  "supp-ac-theory-21": {
+    "model": "Separate a coil’s resistance from its AC impedance before finding inductance. Under the series R–L approximation, Z = Vac/Iac, XL = √(Z² − R²), and L = XL/(2πf).",
+    "ideas": [
+      "A settled DC measurement estimates winding resistance under stated conditions.",
+      "An AC voltage/current ratio gives impedance magnitude, not resistance alone.",
+      "The series R–L model neglects effects such as significant core loss and frequency-dependent winding resistance."
+    ],
+    "practice": "Interpret supplied coil measurements to distinguish winding resistance from frequency-dependent opposition. This is a calculation exercise, not a procedure for energising an unknown coil.",
+    "retrieval": {
+      "prompt": "A model coil has R = 30 Ω and Z = 50 Ω at 50 Hz. What are XL and L?",
+      "answer": "XL = √(50² − 30²) = 40 Ω; L = 40/(2π × 50) = 0.127 H, approximately.",
+      "why": "Remove the resistive component by subtracting squares, then divide reactance by angular frequency."
+    },
+    "explanations": [
+      {
+        "principle": "Impedance magnitude",
+        "reasoning": "The ratio of RMS voltage to RMS current is the magnitude of impedance. It is not automatically the coil’s resistance."
+      },
+      {
+        "principle": "40 Ω",
+        "reasoning": "XL = √(Z² − R²) = √(2500 − 900) = 40 Ω."
+      },
+      {
+        "principle": "L = XL/(2πf)",
+        "reasoning": "Rearrange XL = 2πfL by dividing both sides by 2πf. The resulting L is in henries."
+      },
+      {
+        "principle": "50 Hz",
+        "reasoning": "f = 1/T = 1/0.020 = 50 Hz. Convert milliseconds before taking the reciprocal."
+      },
+      {
+        "principle": "Real coils can have losses and behaviour beyond a constant series R and L",
+        "reasoning": "A two-element approximation is useful for teaching but may not capture a real magnetic component’s complete behaviour. Interpret inferred values within those assumptions."
+      }
+    ]
+  },
+  "supp-ac-theory-22": {
+    "model": "Power factor and phase angle describe the coil’s supply demand. For a shunt correction capacitor, cancel reactive power at the supply voltage; do not substitute a series-reactance cancellation rule.",
+    "ideas": [
+      "For the sinusoidal series R–L model, PF = R/Z and φ = arccos(PF).",
+      "Shunt correction uses Qc = P(tan φ₁ − tan φ₂).",
+      "For a single-phase shunt capacitor, C = Qc/(2πfV²), with V across the capacitor."
+    ],
+    "practice": "Calculate an ideal correction requirement from a specified load, then distinguish it from selecting actual equipment. Voltage rating, harmonics, switching and manufacturer guidance are separate requirements.",
+    "retrieval": {
+      "prompt": "A 1 kW single-phase load at PF 0.8 lagging is ideally corrected to unity at 230 V, 50 Hz. What capacitance is required?",
+      "answer": "tan φ = 0.75; Qc = 1000 × 0.75 = 750 var; C = 750/(2π × 50 × 230²) ≈ 45.1 μF.",
+      "why": "The parallel capacitor supplies the load’s reactive demand at the full supply voltage. The load’s real-power requirement stays 1 kW in this ideal example."
+    },
+    "note": "Technical correction: the supplied transcript mixes equal-reactance cancellation with shunt current reduction. Keep series resonance distinct from parallel power-factor correction. Check against Schneider Electric Electrical Installation Guide, Power Factor Correction, and OpenStax AC circuits.",
+    "explanations": [
+      {
+        "principle": "R/Z",
+        "reasoning": "Resistance is adjacent to the phase angle and impedance is the hypotenuse, so cos φ = R/Z."
+      },
+      {
+        "principle": "36.9° lagging",
+        "reasoning": "φ = arccos(0.8) ≈ 36.9°. The ratio alone is not an angular measurement."
+      },
+      {
+        "principle": "The load’s reactive power at the supply",
+        "reasoning": "Reactive power supplied by the capacitor opposes the load’s lagging reactive demand. The real component remains."
+      },
+      {
+        "principle": "The capacitor and coil do not carry the same series current",
+        "reasoning": "Equal and opposite reactances cancel in a series impedance. Shunt correction instead cancels reactive current or power, using the common voltage."
+      },
+      {
+        "principle": "C = Qc/(2πfV²)",
+        "reasoning": "For the capacitor, Qc = V²/XC = 2πfCV². Rearranging gives the required capacitance in farads."
+      }
+    ]
+  },
+  "supp-ac-theory-23": {
+    "model": "Instantaneous power is p(t) = v(t)i(t). In an ideal capacitor or inductor, equal positive and negative energy transfers over a complete cycle give zero average real power, despite nonzero current.",
+    "ideas": [
+      "Positive power means energy entering the component under the passive sign convention.",
+      "Negative power means previously stored energy returning to the circuit.",
+      "Real components still have losses; zero average applies to the ideal pure reactive model."
+    ],
+    "practice": "Explain why a supply and its cables can carry current for a reactive load even when the ideal component consumes no average real power. Cable resistance can still dissipate heat.",
+    "retrieval": {
+      "prompt": "An ideal reactive component absorbs 2 J during part of a cycle and returns 2 J during the rest. What is the net energy absorbed over that cycle?",
+      "answer": "0 J net; average real power over the cycle is also zero.",
+      "why": "Equal absorbed and returned energy cancel over the full period. Instantaneous power need not be zero."
+    },
+    "explanations": [
+      {
+        "principle": "p(t) = v(t)i(t)",
+        "reasoning": "Multiply voltage and current at the same instant. Their signs determine the direction of energy transfer."
+      },
+      {
+        "principle": "Negative",
+        "reasoning": "The product vi is negative, indicating energy returning from the component to the circuit under this convention."
+      },
+      {
+        "principle": "It stores magnetic energy and returns it over the cycle",
+        "reasoning": "The cycle includes both absorption and return of magnetic energy. Their net over one complete steady-state period is zero for the ideal component."
+      },
+      {
+        "principle": "Real winding resistance can dissipate power even when the ideal inductance does not",
+        "reasoning": "The ideal model isolates reactive storage. Real resistance produces irreversible energy conversion to heat."
+      },
+      {
+        "principle": "A complete cycle or an integer number of cycles",
+        "reasoning": "The stored-energy state repeats after a full steady-state cycle. Partial intervals can show nonzero net transfer."
+      }
+    ]
+  },
+  "supp-ac-theory-24": {
+    "model": "Solve a series resistor-and-inductor problem in dependency order: reactance, impedance, current, component voltages, power factor and real power. Each answer supplies the next calculation.",
+    "ideas": [
+      "Use Z = √(R² + XL²), not R + XL.",
+      "The common current determines VR = IR and VL = IXL.",
+      "Real power is I²R; supply VI is apparent power unless multiplied by PF."
+    ],
+    "practice": "Check a complete AC calculation using more than one route. Agreement between I²R and VI × PF catches many mistaken voltage or power-factor substitutions.",
+    "retrieval": {
+      "prompt": "A model circuit has R = 30 Ω, XL = 40 Ω and Vs = 100 V RMS. Find current and real power.",
+      "answer": "Z = √(30² + 40²) = 50 Ω; I = 100/50 = 2 A; P = I²R = 4 × 30 = 120 W.",
+      "why": "Current depends on total impedance, while real dissipation belongs to the resistive part of the ideal circuit."
+    },
+    "explanations": [
+      {
+        "principle": "50 Ω",
+        "reasoning": "Z = √(30² + 40²) = 50 Ω, preserving the phase relationship between resistance and reactance."
+      },
+      {
+        "principle": "2 A",
+        "reasoning": "I = V/Z = 100/50 = 2 A. Use the total impedance, not resistance alone."
+      },
+      {
+        "principle": "VR = 60 V and VL = 80 V",
+        "reasoning": "VR = IR = 60 V and VL = IXL = 80 V. Their resultant is the 100 V supply."
+      },
+      {
+        "principle": "120 W",
+        "reasoning": "P = I²R = 2² × 30 = 120 W. Only the resistance dissipates average power in this ideal model."
+      },
+      {
+        "principle": "0.6",
+        "reasoning": "PF = P/S = 120/200 = 0.6. Then VI × PF = 100 × 2 × 0.6 = 120 W."
+      }
+    ]
+  },
+  "supp-ac-theory-25": {
+    "model": "Apparent power is the hypotenuse of the sinusoidal power triangle. Combine real and reactive power using S = √(P² + Q²), with consistent prefixes.",
+    "ideas": [
+      "Real power uses W or kW; reactive power uses var or kvar.",
+      "Apparent power uses VA or kVA and is at least as large as |P|.",
+      "A familiar 3–4–5 triangle cannot be assumed unless the given numbers actually fit it."
+    ],
+    "practice": "Estimate the apparent-power demand that supply equipment must carry from a load’s real and reactive components. Keep this separate from the useful kW output.",
+    "retrieval": {
+      "prompt": "A load has 5 kW real power and 3 kvar reactive power. What is its apparent power?",
+      "answer": "S = √(5² + 3²) = √34 = 5.83 kVA, approximately.",
+      "why": "Both values use the kilo prefix, so the result is in kVA. The apparent power is the hypotenuse, not the missing leg of a 3–4–5 triangle."
+    },
+    "explanations": [
+      {
+        "principle": "5.83 kVA",
+        "reasoning": "S = √(25 + 9) = √34 ≈ 5.83 kVA."
+      },
+      {
+        "principle": "Apparent power S",
+        "reasoning": "Apparent power combines both components as a magnitude and forms the longest side."
+      },
+      {
+        "principle": "Convert both to compatible prefixes",
+        "reasoning": "Use 5000 W with 3000 var for a result in VA, or 5 kW with 3 kvar for kVA."
+      },
+      {
+        "principle": "The calculation or input interpretation is inconsistent",
+        "reasoning": "S = √(P² + Q²) is at least P for positive P. A smaller result signals a mistaken side or arithmetic operation."
+      },
+      {
+        "principle": "Apparent power includes the effect of reactive current",
+        "reasoning": "The supply carries current associated with both real transfer and reactive exchange. Here useful and loss-related real transfer is 5 kW, not 5.83 kW."
+      }
+    ]
+  },
+  "supp-resistance-01": {
+    "model": "A conductor has resistance even when it is intended to carry current. For the same material and temperature, resistance rises with length and falls as cross-sectional area increases.",
+    "ideas": [
+      "Length and resistance are directly proportional when area and material stay fixed.",
+      "Two equal conductors in parallel provide twice the conducting area and half the resistance.",
+      "Compare readings only after accounting for lead resistance and the actual conducting path."
+    ],
+    "practice": "Predict the resistance of an isolated cable before comparing it with a low-resistance test. Trace whether the test includes one conductor, an outgoing-and-return pair, or parallel paths.",
+    "retrieval": {
+      "prompt": "One 100 m conductor measures 1.78 Ω. What should two identical conductors measure when joined in series?",
+      "answer": "3.56 Ω. Rtotal = 1.78 + 1.78 = 3.56 Ω.",
+      "why": "The current path is now 200 m long with the original area. Both conductor resistances contribute in series."
+    },
+    "explanations": [
+      {
+        "principle": "1.20 Ω",
+        "reasoning": "R is proportional to length: 0.40 × 60/20 = 1.20 Ω. The longer path presents more resistance."
+      },
+      {
+        "principle": "0.9 Ω",
+        "reasoning": "Equal parallel paths share current. Their combined conducting area doubles, so the equivalent resistance halves."
+      },
+      {
+        "principle": "60 m",
+        "reasoning": "The test signal travels to the far-end link and returns through the second conductor. The measured series path is 30 + 30 = 60 m."
+      },
+      {
+        "principle": "The lead contribution to the measured resistance",
+        "reasoning": "At low resistances, lead and contact contributions can be a substantial part of the reading. Null suitable leads or account for their measured contribution."
+      },
+      {
+        "principle": "The thicker conductor has half the resistance",
+        "reasoning": "For fixed resistivity and length, R = ρL/A. Doubling A divides R by two without changing ρ."
+      }
+    ]
+  },
+  "supp-resistance-02": {
+    "model": "Copper resistance increases as the conductor warms. A resistance reading must be interpreted at the conductor temperature, which need not equal the surrounding air temperature.",
+    "ideas": [
+      "Cooling copper lowers resistance; warming it raises resistance over the range demonstrated.",
+      "Length and area comparisons still apply when conductors are at the same temperature.",
+      "A rising temperature trend is not proof that resistance is directly proportional to Celsius temperature."
+    ],
+    "practice": "A cold continuity reading and the resistance of a loaded warm cable need not match. Use the stated temperature basis when comparing calculations, measurements and conductor data.",
+    "retrieval": {
+      "prompt": "The same copper conductor reads 1.78 Ω when cool and 2.04 Ω when warm. Must it have become longer?",
+      "answer": "No. Its resistance can rise because its temperature rises.",
+      "why": "The material resistivity changes with temperature even when the conductor geometry is effectively unchanged."
+    },
+    "note": "Corrects the transcript’s loose use of “directly proportional” for temperature. The heated-cable demonstration is observational, not a suggested home experiment.",
+    "explanations": [
+      {
+        "principle": "Its resistance increases, but need not double",
+        "reasoning": "Warming copper increases resistivity over ordinary operating temperatures. The same geometry therefore has a higher resistance."
+      },
+      {
+        "principle": "4.08 Ω",
+        "reasoning": "Each warm conductor contributes 2.04 Ω. Series resistance is 2.04 + 2.04 = 4.08 Ω."
+      },
+      {
+        "principle": "The reference and measurement use different temperature conditions",
+        "reasoning": "A comparison needs a common temperature basis. Heating can raise the measured resistance without indicating a change of length or conductor size."
+      },
+      {
+        "principle": "Copper resistance rises over the demonstrated temperature range",
+        "reasoning": "The observation establishes a trend for copper. It does not establish a universal material law or a doubling rule on the Celsius scale."
+      },
+      {
+        "principle": "Whether both samples are at the same temperature",
+        "reasoning": "A temperature difference is a plausible cause of a resistance difference. Measurement leads and contacts also need to be comparable before attributing it to the sample."
+      }
+    ]
+  },
+  "supp-resistance-04": {
+    "model": "A known material and cross-sectional area let resistance estimate conductor length. Rearrange R = ρL/A to L = RA/ρ, and keep the area and resistivity units compatible.",
+    "ideas": [
+      "Length is the unknown; resistance is the measured input.",
+      "Convert 1.5 mm² to 1.5 × 10⁻⁶ m² when resistivity is in Ω·m.",
+      "Lead resistance, temperature and conductor tolerances limit the precision of the estimate."
+    ],
+    "practice": "Estimate the remaining length of a known isolated cable using its resistance, then compare it with a physical measurement. Treat the result as an estimate with stated assumptions.",
+    "retrieval": {
+      "prompt": "For R = 0.19 Ω, A = 1.5 × 10⁻⁶ m² and ρ = 17.2 × 10⁻⁹ Ω·m, what length is estimated?",
+      "answer": "L = RA/ρ = (0.19 × 1.5 × 10⁻⁶)/(17.2 × 10⁻⁹) = 16.57 m, approximately.",
+      "why": "Multiplying R by A and dividing by the material resistivity isolates length. Precision is limited by the measured inputs."
+    },
+    "explanations": [
+      {
+        "principle": "L = RA/ρ",
+        "reasoning": "Multiply both sides by A, then divide by ρ: RA = ρL, so L = RA/ρ."
+      },
+      {
+        "principle": "1.5 × 10⁻⁶ m²",
+        "reasoning": "One millimetre is 10⁻³ m. Squaring both dimensions gives 1 mm² = 10⁻⁶ m²."
+      },
+      {
+        "principle": "Twice the original length",
+        "reasoning": "With A and ρ fixed, L is directly proportional to the measured R. Doubling R therefore doubles the estimated length."
+      },
+      {
+        "principle": "The estimated length is too long",
+        "reasoning": "Extra series resistance is mistaken for extra conductor length. Account for the measuring path before using R in the estimate."
+      },
+      {
+        "principle": "Check input tolerances and measurement uncertainty",
+        "reasoning": "The estimate depends on resistivity, nominal area, temperature and resistance measurement. A small difference calls for checking those inputs, not inventing a new cable length rule."
+      }
+    ]
+  },
+  "supp-resistance-05": {
+    "model": "Resistivity separates a material’s behaviour from sample geometry. Measure resistance and use ρ = RA/L; the result belongs to the sample and its temperature, not every alloy with a similar name.",
+    "ideas": [
+      "Resistance is measured in Ω; resistivity is measured in Ω·m.",
+      "Convert length and area separately before substituting.",
+      "Contact and lead resistance can bias a two-terminal estimate upward."
+    ],
+    "practice": "Compare resistance-wire samples on a common unit and temperature basis before reasoning about a heating element. A measured resistivity is evidence, not a complete material specification.",
+    "retrieval": {
+      "prompt": "A 0.5 m sample has area 0.21 mm² and resistance 3.6 Ω. What resistivity follows?",
+      "answer": "ρ = RA/L = 3.6 × 0.21 × 10⁻⁶ / 0.5 = 1.512 × 10⁻⁶ Ω·m = 1.512 μΩ·m.",
+      "why": "Area must be expressed in square metres. The result is a material estimate inferred from this particular sample."
+    },
+    "explanations": [
+      {
+        "principle": "Sample length and cross-sectional area",
+        "reasoning": "Resistance alone mixes material and geometry. Multiplying it by area and dividing by length separates the geometry from the inferred material property."
+      },
+      {
+        "principle": "Ω·m",
+        "reasoning": "From ρ = RA/L, the units are Ω × m² / m = Ω·m."
+      },
+      {
+        "principle": "0.5 m",
+        "reasoning": "Divide millimetres by 1000 to obtain metres: 500/1000 = 0.5 m. Length and area use different conversion powers."
+      },
+      {
+        "principle": "The inferred resistivity is too high",
+        "reasoning": "Any extra measured series resistance is attributed to the sample. The resulting material estimate is therefore biased upward."
+      },
+      {
+        "principle": "This is the estimate for that sample under the measurement conditions",
+        "reasoning": "A sample-derived value should retain its units and conditions. It is not a universal exact constant for all products called nichrome."
+      }
+    ]
+  },
+  "supp-resistance-06": {
+    "model": "Compare materials using resistivity in matching units, not the raw resistance of differently sized samples. A thinner constantan sample can have higher resistance than a thicker nichrome sample despite lower resistivity.",
+    "ideas": [
+      "The constantan calculation uses ρ = RA/L with A = 0.075 mm² and L = 0.5 m.",
+      "604.5 nΩ·m and 0.6045 μΩ·m describe the same resistivity.",
+      "Different sample geometries prevent a direct ranking of materials by resistance alone."
+    ],
+    "practice": "When comparing resistance-wire samples, record dimensions with each resistance reading. Otherwise a thin wire can be mistaken for a material with intrinsically higher resistivity.",
+    "retrieval": {
+      "prompt": "For R = 4.03 Ω, A = 0.075 mm² and L = 0.5 m, what is the inferred resistivity?",
+      "answer": "ρ = 4.03 × 0.075 × 10⁻⁶ / 0.5 = 6.045 × 10⁻⁷ Ω·m = 0.6045 μΩ·m.",
+      "why": "The square-millimetre conversion belongs in the numerator. This is an estimate from the demonstrated sample and includes measurement limitations."
+    },
+    "explanations": [
+      {
+        "principle": "No; the areas must be included in the comparison",
+        "reasoning": "Compute RA/L for each sample. Raw resistance cannot isolate material behaviour when the sample areas differ."
+      },
+      {
+        "principle": "0.6045 μΩ·m",
+        "reasoning": "1 μΩ·m equals 1000 nΩ·m. Therefore 604.5/1000 = 0.6045 μΩ·m."
+      },
+      {
+        "principle": "7.5 × 10⁻⁸ m²",
+        "reasoning": "0.075 × 10⁻⁶ = 7.5 × 10⁻⁸ m². Keeping the area units correct prevents a thousandfold error."
+      },
+      {
+        "principle": "Check leads, contacts, temperature and sample dimensions",
+        "reasoning": "The calculation is only as good as its inputs. Additional series resistance and uncertain geometry can explain a high estimate."
+      },
+      {
+        "principle": "Higher resistivity under those conditions",
+        "reasoning": "R = ρL/A leaves resistivity as the differing factor when geometry and temperature are controlled."
+      }
+    ]
+  },
+  "supp-lighting-01": {
+    "model": "Illuminance describes light arriving at a surface. For a point-source approximation at normal incidence, E = I/d² connects illuminance in lux with directional intensity in candela and distance in metres.",
+    "ideas": [
+      "Candela describes luminous intensity in a direction; lux describes illuminance at a surface.",
+      "Use the source-to-surface distance, expressed in metres.",
+      "The inverse-square model assumes a sufficiently small source and excludes reflected contributions."
+    ],
+    "practice": "Use a fitting’s directional intensity to estimate direct light at a work point. A watt rating alone does not supply the intensity required by this calculation.",
+    "retrieval": {
+      "prompt": "A point source has intensity 800 cd toward a surface 2 m away at normal incidence. What direct illuminance follows?",
+      "answer": "E = I/d² = 800/2² = 200 lx.",
+      "why": "The intensity is divided by the square of the distance. The result describes the receiving surface, not lamp power."
+    },
+    "explanations": [
+      {
+        "principle": "Illuminance",
+        "reasoning": "Illuminance is luminous flux incident per unit area. Its unit is lux, equivalent to lumens per square metre."
+      },
+      {
+        "principle": "Candela in the direction of the work point",
+        "reasoning": "I is directional luminous intensity. The fitting may emit different intensities in different directions."
+      },
+      {
+        "principle": "100 lx",
+        "reasoning": "E = 900/3² = 900/9 = 100 lx. The receiving light is spread over an area that grows with distance squared."
+      },
+      {
+        "principle": "A small source illuminating a surface normally from a sufficient distance",
+        "reasoning": "The source must be sufficiently small relative to distance, and the ray must be normal to the receiving plane for this simple form."
+      },
+      {
+        "principle": "No; light output, distribution and geometry can differ",
+        "reasoning": "Electrical input power is not a complete description of optical output. Compare the photometric data and the actual source-to-surface geometry."
+      }
+    ]
+  },
+  "supp-lighting-02": {
+    "model": "For unchanged source intensity and incidence, illuminance follows the inverse square of distance. Doubling distance gives one quarter of the original illuminance, not one half.",
+    "ideas": [
+      "E₂/E₁ = (d₁/d₂)² when source intensity stays fixed.",
+      "Doubling intensity doubles illuminance at the same position.",
+      "Distance dependence is inverse-square, not exponential."
+    ],
+    "practice": "Predict the effect of moving a fitting farther from a task before selecting a higher-output fitting. State that this is a direct point-source comparison.",
+    "retrieval": {
+      "prompt": "A surface receives 360 lx at 2 m. What is predicted at 6 m under the same conditions?",
+      "answer": "E₂ = 360 × (2/6)² = 40 lx.",
+      "why": "The distance triples, so the illuminated area associated with the same angular spread increases ninefold."
+    },
+    "note": "Corrects “exponentially” in the transcript to inverse-square behaviour.",
+    "explanations": [
+      {
+        "principle": "100 lx",
+        "reasoning": "The distance ratio is two, so E becomes 400/2² = 100 lx."
+      },
+      {
+        "principle": "One ninth",
+        "reasoning": "Inverse-square behaviour uses the square of the distance ratio. Tripling distance divides illuminance by nine."
+      },
+      {
+        "principle": "It doubles",
+        "reasoning": "Illuminance is directly proportional to intensity when geometry is fixed. Only the distance term is squared."
+      },
+      {
+        "principle": "Increase intensity fourfold",
+        "reasoning": "Doubling distance multiplies d² by four. I must also multiply by four to keep I/d² unchanged."
+      },
+      {
+        "principle": "An inverse-square relationship",
+        "reasoning": "The exponent on d is fixed at −2. Calling this exponential obscures the actual prediction used in calculations."
+      }
+    ]
+  },
+  "supp-lighting-03": {
+    "model": "Use E = I/d² as a calculation with units and a plausibility check. Changing source intensity and changing distance affect the result in different ways.",
+    "ideas": [
+      "Square the complete distance before division.",
+      "Use the actual distance to the receiving plane, which may be above the floor.",
+      "Check whether the answer should rise or fall before trusting the calculator."
+    ],
+    "practice": "Estimate light on a bench from mounting height above the bench. A ceiling-to-floor height gives the wrong distance if the task is above the floor.",
+    "retrieval": {
+      "prompt": "A 2000 cd source is 2 m above a bench. What is the direct illuminance immediately below it?",
+      "answer": "E = 2000/2² = 500 lx.",
+      "why": "At normal incidence the bench receives the source intensity divided by the square of the 2 m separation."
+    },
+    "explanations": [
+      {
+        "principle": "125 lx",
+        "reasoning": "E = 2000/4² = 2000/16 = 125 lx."
+      },
+      {
+        "principle": "2 m",
+        "reasoning": "Subtract the worktop height from the source height: 3 − 1 = 2 m. The relevant distance is between source and receiving point."
+      },
+      {
+        "principle": "1000 cd",
+        "reasoning": "Rearrange E = I/d² to I = Ed². Then I = 250 × 2² = 1000 cd."
+      },
+      {
+        "principle": "4 m",
+        "reasoning": "d² = I/E = 1600/100 = 16 m², so d = 4 m."
+      },
+      {
+        "principle": "Whether distance squared was used as a divisor",
+        "reasoning": "Under the stated assumptions, greater distance must reduce illuminance. A reversed multiplication or division is a likely arithmetic setup error."
+      }
+    ]
+  },
+  "supp-lighting-04": {
+    "model": "Oblique light spreads across a larger receiving area. Use E = I cos θ/d², where θ is measured from the surface normal and d is the actual source-to-point distance.",
+    "ideas": [
+      "The surface normal is perpendicular to the receiving plane.",
+      "At normal incidence θ = 0° and cos θ = 1.",
+      "For a horizontal plane, height h and slant distance d give cos θ = h/d."
+    ],
+    "practice": "Estimate illumination away from the point directly below a fitting. Account for both the increased slant distance and the oblique incidence.",
+    "retrieval": {
+      "prompt": "A 1000 cd source is 5 m from a point, with cos θ = 0.8. What illuminance follows?",
+      "answer": "E = 1000 × 0.8 / 5² = 32 lx.",
+      "why": "The angular factor reduces the normal-incidence value at the same distance from 40 lx to 32 lx."
+    },
+    "explanations": [
+      {
+        "principle": "Between the arriving ray and the surface normal",
+        "reasoning": "The normal is perpendicular to the receiving surface. This convention makes θ zero for a ray arriving straight onto the plane."
+      },
+      {
+        "principle": "Half the illuminance",
+        "reasoning": "E is multiplied by cos 60° = 0.5. This comparison holds distance and directional intensity fixed."
+      },
+      {
+        "principle": "5 m",
+        "reasoning": "d = √(3² + 4²) = 5 m. This is the ray path between the source and the point."
+      },
+      {
+        "principle": "h/d",
+        "reasoning": "Cosine is adjacent over hypotenuse. Relative to the normal, the adjacent side is the vertical height h."
+      },
+      {
+        "principle": "Zero because cos 90° = 0",
+        "reasoning": "At 90° to the normal, the ray grazes the plane. Its direct contribution is zero; other sources or reflections are separate."
+      }
+    ]
+  },
+  "supp-lighting-05": {
+    "model": "Solve a lighting point problem by drawing the geometry before substituting. Find the slant distance and cosine from the same triangle, keeping intermediate values unrounded.",
+    "ideas": [
+      "Distinguish source height above the task from height above the floor.",
+      "Use Pythagoras for slant distance and h/d for the cosine.",
+      "Calculate each requested point independently, then label the result in lux."
+    ],
+    "practice": "Compare a table centre with its edge. A single central light reading cannot establish how evenly the whole work surface is illuminated.",
+    "retrieval": {
+      "prompt": "A 1250 cd point source is 3 m above a horizontal surface. A point is 4 m sideways. What is E?",
+      "answer": "d = √(3² + 4²) = 5 m; cos θ = 3/5 = 0.6; E = 1250 × 0.6/25 = 30 lx.",
+      "why": "Both the longer ray path and its angle reduce the illuminance relative to the point directly underneath."
+    },
+    "explanations": [
+      {
+        "principle": "2.0 m",
+        "reasoning": "Use 2.8 − 0.8 = 2.0 m. All subsequent geometry must refer to the same receiving plane."
+      },
+      {
+        "principle": "d = 2.5 m and cos θ = 0.8",
+        "reasoning": "Pythagoras gives d = 2.5 m, and adjacent/hypotenuse gives cos θ = 2/2.5 = 0.8."
+      },
+      {
+        "principle": "Multiply I by 0.72",
+        "reasoning": "The required trigonometric ratio is already known. Applying cosine again changes the quantity and produces the wrong result."
+      },
+      {
+        "principle": "Distance affects both its square and the cosine ratio",
+        "reasoning": "The same distance enters more than one factor. Premature rounding can compound error, especially when comparing multiple points."
+      },
+      {
+        "principle": "Greater slant distance and a smaller cosine factor",
+        "reasoning": "E = I cos θ/d² accounts for two geometric losses: d increases and cos θ decreases as the point moves sideways."
+      }
+    ]
+  },
+  "supp-lighting-09": {
+    "model": "The lumen method estimates average maintained illuminance. Convert efficacy and lamp power into source lumens, account for utilisation and maintenance, then round the required fitting count upward.",
+    "ideas": [
+      "Source lumens = lamp watts × luminous efficacy in lm/W.",
+      "Required source lumens = E × area/(UF × MF), using consistent photometric definitions.",
+      "Lamp watts alone may exclude control-gear losses and power-factor effects on input current."
+    ],
+    "practice": "Turn a room illuminance target into a preliminary fitting count. Then check actual luminaire output, layout, uniformity and electrical input data before treating it as a design.",
+    "retrieval": {
+      "prompt": "A calculation needs 42,857 lm. Each fitting contributes 5,400 lm on the same calculation basis. How many fittings are needed?",
+      "answer": "N = 42,857/5,400 = 7.94; round up to 8 fittings.",
+      "why": "Seven fittings would fall below the calculated lumen requirement. This count alone does not establish uniformity or compliance."
+    },
+    "explanations": [
+      {
+        "principle": "5400 lm",
+        "reasoning": "Two lamps produce 2 × 36 × 75 = 5400 lm before any separate luminaire-output adjustment."
+      },
+      {
+        "principle": "37500 lm",
+        "reasoning": "Required flux = 300 × 60/(0.6 × 0.8) = 37500 lm. The source must supply more than reaches the maintained work plane."
+      },
+      {
+        "principle": "8 fittings",
+        "reasoning": "Round the count upward to meet the modelled lumen requirement, then verify the resulting arrangement."
+      },
+      {
+        "principle": "Applying the same optical loss a second time",
+        "reasoning": "Photometric input definitions must be consistent. Double-counting the same loss overstates the required fitting count."
+      },
+      {
+        "principle": "Control-gear losses and power factor may need inclusion",
+        "reasoning": "Use actual electrical input power and power factor for current. Lamp wattage alone can omit control-gear consumption and reactive current."
+      }
+    ]
+  },
+  "supp-lighting-10": {
+    "model": "At a given point, ordinary independent light sources contribute illuminances that add. Calculate each source using its own intensity, distance and incidence angle before adding the lux values.",
+    "ideas": [
+      "Different sources usually have different ray paths to the same point.",
+      "Etotal is the sum of individual point illuminances, not a phasor sum.",
+      "Do not add candela values before applying different geometries."
+    ],
+    "practice": "Check a point between two fittings where both contribute. This exposes low-light areas that cannot be predicted by considering only the nearest fitting.",
+    "retrieval": {
+      "prompt": "Two independent sources contribute 56.25 lx and 95.48 lx at a point. What is the total?",
+      "answer": "Etotal = 56.25 + 95.48 = 151.73 lx.",
+      "why": "The figures already represent illumination arriving at the same point, so they can be added directly."
+    },
+    "explanations": [
+      {
+        "principle": "200 lx",
+        "reasoning": "For ordinary independent sources, add the illuminance contributions: 80 + 120 = 200 lx."
+      },
+      {
+        "principle": "Calculate each source’s lux contribution, then add",
+        "reasoning": "Each term has its own I, d and angle. Apply E = I cos θ/d² separately before summing."
+      },
+      {
+        "principle": "56.25 lx",
+        "reasoning": "E = 1500 × 0.6/4² = 900/16 = 56.25 lx."
+      },
+      {
+        "principle": "Its contribution is removed; the other contribution remains",
+        "reasoning": "Superposition lets the contributions be treated separately. Remove the switched-off source’s term from the total."
+      },
+      {
+        "principle": "Keep intermediate precision and round the final total",
+        "reasoning": "Small rounding errors can affect each source term. Retaining intermediate precision gives a more reliable total."
+      }
+    ]
+  },
+  "supp-lighting-12": {
+    "model": "For several work points, build a separate sum at each location. A source directly above one point can be oblique to another, so neither distance nor incidence can be copied blindly.",
+    "ideas": [
+      "At the point directly below a source, cos θ = 1.",
+      "At an offset point, use that point’s own slant distance and cosine.",
+      "Comparing totals at multiple points reveals variation, not just average light level."
+    ],
+    "practice": "Compare two task positions served by the same pair of lights. This helps identify whether relocating a fitting might improve the weaker point.",
+    "retrieval": {
+      "prompt": "At one point, the overhead source contributes 208.33 lx and the second source contributes 41.93 lx. What is the total?",
+      "answer": "208.33 + 41.93 = 250.26 lx.",
+      "why": "An overhead contribution and an oblique contribution both arrive at the same point and add."
+    },
+    "explanations": [
+      {
+        "principle": "208.33 lx",
+        "reasoning": "E = 1200/2.4² = 208.33 lx, approximately. Normal incidence requires no reduction by angle."
+      },
+      {
+        "principle": "Use different geometry for its contributions at A and B",
+        "reasoning": "Each source-to-point pair has its own ray path. Directly underneath and off-axis are different geometric cases."
+      },
+      {
+        "principle": "No; distance and angle also determine each contribution",
+        "reasoning": "Equal directional intensities produce equal point illuminance only if the geometric factors also match."
+      },
+      {
+        "principle": "The calculated direct illumination differs between those points",
+        "reasoning": "Point calculations describe specific positions. Assess each relevant task against its requirement and investigate the distribution."
+      },
+      {
+        "principle": "It reduces that source’s normal-incidence value at the same distance",
+        "reasoning": "The cosine factor multiplies I/d² for that ray. Its meaning is geometric projection onto the receiving plane."
+      }
+    ]
+  }
+}

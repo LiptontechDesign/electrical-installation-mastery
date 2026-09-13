@@ -103,12 +103,9 @@ assert.equal(ui.root.findAllByType('input').length, 0);
 await act(async()=>ui.unmount());
 let source;
 await act(async()=>{ ui=create(h(BookSimulations,{onRead: reading => { source = reading; }})); });
-for (const [label, id, correct] of [['Current balance','rcd',0],['Cable capacity','cable',1],['Voltage drop','voltage-drop',1],['Motor starter','motor',1]]) {
+for (const [label, id] of [['Current balance','rcd'],['Cable capacity','cable'],['Voltage drop','voltage-drop'],['Motor starter','motor']]) {
   await act(async()=>ui.root.findAllByType('button').find(node => buttonText(node) === label).props.onClick());
-  const check = ui.root.findByType('fieldset');
-  assert.equal(check.findAllByProps({role:'status'}).length,0,'Changing the activity clears the previous answer');
-  await act(async()=>check.findAllByType('button')[correct].props.onClick());
-  assert.equal(check.findByProps({role:'status'}).props.className,'answer-correct');
+  assert.equal(ui.root.findAllByType('fieldset').length,0,'Simulations have explanations, not assessment questions');
   const sources = ui.root.findByProps({className:'simulation-sources'}).findAllByType('button');
   const topic = readingTopics.find(item => item.id === id);
   for (let index=0; index<sources.length; index++) {
@@ -145,3 +142,10 @@ try {
   assert.equal(calls,1,'A failed queue stops additional downloads');
 } finally { globalThis.fetch = nativeFetch; }
 console.log(`Book checks passed: ${courseBooks.length} books, ${readingTopics.length} reading topics, ${readingTopics.reduce((sum,topic)=>sum+topic.lessonIds.length,0)} lesson links; state merge, ranges, motor interlocks and cable calculations.`);
+for(const book of courseBooks){
+ assert.ok(parseReaderCommand({bookId:book.id,action:'position',page:book.pages}));
+ assert.equal(parseReaderCommand({bookId:book.id,action:'position',page:book.pages+1}),null);
+ const marked=applyReaderCommand(emptyReaderState(),{bookId:book.id,action:'bookmark',page:book.pages,saved:true,note:'Remember this page'});
+ assert.equal(marked.books[book.id].bookmarks[0].note,'Remember this page');
+}
+assert.equal(courseBooks.length,4);

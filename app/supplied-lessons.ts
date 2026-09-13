@@ -1,17 +1,13 @@
 import index from './supplied-video-index.json';
-import { resistanceContent } from './supplied-resistance-content';
-import { lightingContent } from './supplied-lighting-content';
-import { acFoundations } from './supplied-ac-foundations';
-import { acPhasors } from './supplied-ac-phasors';
-import { acApplications } from './supplied-ac-applications';
+import teachingData from './supplied-teaching.json';
 import type { SuppliedTeaching } from './supplied-content-types';
 import type { LessonSeed } from './course-extension/builders';
 import { integratedTeaching } from './integrated-content';
 
-const content: Record<string, SuppliedTeaching> = { ...resistanceContent, ...lightingContent, ...acFoundations, ...acPhasors, ...acApplications };
+const content: Record<string, SuppliedTeaching> = teachingData;
 export const suppliedTeaching: Record<string, SuppliedTeaching> = {...integratedTeaching};
 export const suppliedLessons: LessonSeed[] = index.filter(video => !video.existing).map(video => {
-  const teaching = content[video.videoId];
+  const teaching = content[video.id];
   if (!teaching) throw new Error(`Missing transcript-authored content: ${video.videoId}`);
   suppliedTeaching[video.id] = teaching;
   return {
