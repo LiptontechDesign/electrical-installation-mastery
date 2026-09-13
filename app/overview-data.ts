@@ -13,6 +13,8 @@ import { c207AdditionalTerms, c207Formulas, c207Sections, c207TermPatches } from
 import { c207SourceReferences } from './c2-07-sources';
 import { c208AdditionalTerms, c208Formulas, c208Sections, c208TermPatches } from './c2-08-overview';
 import { c208SourceReferences } from './c2-08-sources';
+import { c209AdditionalTerms, c209Formulas, c209Sections, c209TermPatches } from './c2-09-overview';
+import { c209SourceReferences } from './c2-09-sources';
 import type { OverviewDataset } from './overview-models';
 
 const patchEntries = new Map([
@@ -24,6 +26,7 @@ const patchEntries = new Map([
   ...Object.entries(c206TermPatches),
   ...Object.entries(c207TermPatches),
   ...Object.entries(c208TermPatches),
+  ...Object.entries(c209TermPatches),
 ]);
 export const overviewTerms: PreservedCanonicalTerm[] = [
   ...canonicalTerms.map(term => {
@@ -38,13 +41,14 @@ export const overviewTerms: PreservedCanonicalTerm[] = [
   ...c206AdditionalTerms,
   ...c207AdditionalTerms,
   ...c208AdditionalTerms,
+  ...c209AdditionalTerms,
 ];
 
 export const overviewData: OverviewDataset = {
-  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences, ...c207SourceReferences, ...c208SourceReferences],
+  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences, ...c207SourceReferences, ...c208SourceReferences, ...c209SourceReferences],
   terms: overviewTerms,
-  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas, ...c207Formulas, ...c208Formulas],
-  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections, ...c207Sections, ...c208Sections],
+  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas, ...c207Formulas, ...c208Formulas, ...c209Formulas],
+  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections, ...c207Sections, ...c208Sections, ...c209Sections],
 };
 
 export const overviewSectionById = new Map(overviewData.sections.map(section => [section.id, section]));
