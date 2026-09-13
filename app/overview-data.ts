@@ -14,7 +14,12 @@ const patchEntries = new Map([
   ...Object.entries(c204TermPatches),
 ]);
 export const overviewTerms: PreservedCanonicalTerm[] = [
-  ...canonicalTerms.map(term => ({ ...term, ...(patchEntries.get(term.id) ?? {}) })),
+  ...canonicalTerms.map(term => {
+    const composed = { ...term, ...(patchEntries.get(term.id) ?? {}) };
+    // `definition` is the compatibility field used by legacy glossary/search consumers.
+    // Keep it synchronized with the canonical standardsMeaning after editorial patches.
+    return { ...composed, definition: composed.standardsMeaning };
+  }),
   ...c201AdditionalTerms,
   ...c202AdditionalTerms,
   ...c203AdditionalTerms,
