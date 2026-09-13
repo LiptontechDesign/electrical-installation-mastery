@@ -17,6 +17,7 @@ import { c209AdditionalTerms, c209Formulas, c209Sections, c209TermPatches } from
 import { c209SourceReferences } from './c2-09-sources';
 import { c1AdditionalTerms, c1Formulas, c1Sections } from './c1-overviews';
 import { c1SourceReferences } from './c1-sources';
+import { applyLicensingAuthorityCoverage, licensingAuthoritySources, licensingAuthorityTerms } from './licensing-authority-overview';
 import type { OverviewDataset } from './overview-models';
 
 const patchEntries = new Map([
@@ -45,13 +46,27 @@ export const overviewTerms: PreservedCanonicalTerm[] = [
   ...c208AdditionalTerms,
   ...c209AdditionalTerms,
   ...c1AdditionalTerms,
+  ...licensingAuthorityTerms,
+];
+
+const authoredSections = [
+  ...c201Sections,
+  ...c202Sections,
+  ...c203Sections,
+  ...c204Sections,
+  ...c205Sections,
+  ...c206Sections,
+  ...c207Sections,
+  ...c208Sections,
+  ...c209Sections,
+  ...c1Sections,
 ];
 
 export const overviewData: OverviewDataset = {
-  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences, ...c207SourceReferences, ...c208SourceReferences, ...c209SourceReferences, ...c1SourceReferences],
+  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences, ...c207SourceReferences, ...c208SourceReferences, ...c209SourceReferences, ...c1SourceReferences, ...licensingAuthoritySources],
   terms: overviewTerms,
   formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas, ...c207Formulas, ...c208Formulas, ...c209Formulas, ...c1Formulas],
-  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections, ...c207Sections, ...c208Sections, ...c209Sections, ...c1Sections],
+  sections: applyLicensingAuthorityCoverage(authoredSections),
 };
 
 export const overviewSectionById = new Map(overviewData.sections.map(section => [section.id, section]));
