@@ -62,12 +62,8 @@ assert.equal(c201.moduleId, 'module-01');
 assert.equal(c201.learningSectionIds.length, 14, 'C2-01 covers every neutral Module 01 learning section');
 assert.deepEqual(c201.learningSectionIds, learningSections.filter(section => section.moduleId === 'module-01').map(section => section.id));
 for (const page of overviewPages) assert.ok(c201.pages[page].length > 0, `C2-01 page ${page} is authored`);
-for (const requiredTerm of ['glossary-voltage','glossary-current','glossary-resistance','glossary-power','energy','direct-current','alternating-current','frequency','power-factor','connected-load','glossary-maximum-demand','glossary-diversity','utilization-factor','coincidence-factor','ib']) {
-  assert.ok(c201.termIds.includes(requiredTerm), `C2-01 includes ${requiredTerm}`);
-}
-for (const requiredFormula of ['ohms-law','electrical-power','energy-from-power','frequency-period','single-phase-ac-power','single-phase-design-current','coincidence-diversity']) {
-  assert.ok(overviewData.formulas.some(formula => formula.id === requiredFormula), `C2-01 includes ${requiredFormula}`);
-}
+for (const requiredTerm of ['glossary-voltage','glossary-current','glossary-resistance','glossary-power','energy','direct-current','alternating-current','frequency','power-factor','connected-load','glossary-maximum-demand','glossary-diversity','utilization-factor','coincidence-factor','ib']) assert.ok(c201.termIds.includes(requiredTerm), `C2-01 includes ${requiredTerm}`);
+for (const requiredFormula of ['ohms-law','electrical-power','energy-from-power','frequency-period','single-phase-ac-power','single-phase-design-current','coincidence-diversity']) assert.ok(overviewData.formulas.some(formula => formula.id === requiredFormula), `C2-01 includes ${requiredFormula}`);
 assert.ok(c201.coverage.some(item => item.competency.includes('AC, DC')));
 assert.ok(c201.coverage.some(item => item.competency.includes('diversity factor')));
 assert.ok(c201.coverage.some(item => item.competency.includes('power, current and voltage')));
@@ -85,14 +81,10 @@ assert.deepEqual(c202.learningSectionIds, learningSections.filter(section => sec
 assert.equal(c202.learningSectionIds.length, 3, 'C2-02 covers all three neutral Module 02 learning sections');
 assert.deepEqual(c202.prerequisiteSectionIds, ['c2-01-electrical-foundations']);
 for (const page of overviewPages) assert.ok(c202.pages[page].length > 0, `C2-02 page ${page} is authored`);
-for (const requiredTerm of ['service-cut-out','electricity-meter','main-switch','consumer-unit','final-circuit','glossary-single-line-diagram-sld','riser-diagram','block-diagram','glossary-circuit-schedule','glossary-isolation','functional-switching','emergency-switching','switching-for-mechanical-maintenance','safe-isolation','lock-off','voltage-indicator','cpr','aed','concealed-services','cable-detector','cat-and-genny']) {
-  assert.ok(c202.termIds.includes(requiredTerm), `C2-02 includes ${requiredTerm}`);
-}
+for (const requiredTerm of ['service-cut-out','electricity-meter','main-switch','consumer-unit','final-circuit','glossary-single-line-diagram-sld','riser-diagram','block-diagram','glossary-circuit-schedule','glossary-isolation','functional-switching','emergency-switching','switching-for-mechanical-maintenance','safe-isolation','lock-off','voltage-indicator','cpr','aed','concealed-services','cable-detector','cat-and-genny']) assert.ok(c202.termIds.includes(requiredTerm), `C2-02 includes ${requiredTerm}`);
 assert.ok(c202.coverage.some(item => item.competency.includes('safe isolation')));
 assert.ok(c202.coverage.some(item => item.competency.includes('first aid')));
-for (const id of ['osg-electrical-supply','osg-isolation-switching','osg-safe-working']) {
-  assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === id)).kind, 'unavailable', `${id} remains bibliography-only until exact reader mapping is verified`);
-}
+for (const id of ['osg-electrical-supply','osg-isolation-switching','osg-safe-working']) assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === id)).kind, 'unavailable', `${id} remains bibliography-only until exact reader mapping is verified`);
 assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === 'st-john-cpr')).kind, 'external');
 assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === 'st-john-aed')).kind, 'external');
 
@@ -105,14 +97,25 @@ assert.deepEqual(c203.learningSectionIds, learningSections.filter(section => sec
 assert.equal(c203.learningSectionIds.length, 6, 'C2-03 covers all six neutral Module 03 learning sections');
 assert.deepEqual(c203.prerequisiteSectionIds, ['c2-02-installation-architecture-drawings-safety']);
 for (const page of overviewPages) assert.ok(c203.pages[page].length > 0, `C2-03 page ${page} is authored`);
-for (const requiredTerm of ['conductor-preparation','termination','cpc','polarity','one-way-switching','two-way-switching','intermediate-switching','switched-line','radial-circuit','ring-final-circuit','spur','ring-integrity','socket-outlet','fused-connection-unit','first-fix','second-fix','luminaire','led','ip-and-ik-ratings']) {
-  assert.ok(c203.termIds.includes(requiredTerm), `C2-03 includes ${requiredTerm}`);
-}
+for (const requiredTerm of ['conductor-preparation','termination','cpc','polarity','one-way-switching','two-way-switching','intermediate-switching','switched-line','radial-circuit','ring-final-circuit','spur','ring-integrity','socket-outlet','fused-connection-unit','first-fix','second-fix','luminaire','led','ip-and-ik-ratings']) assert.ok(c203.termIds.includes(requiredTerm), `C2-03 includes ${requiredTerm}`);
 assert.ok(c203.coverage.some(item => item.competency.includes('One-way, two-way and intermediate')));
 assert.ok(c203.coverage.some(item => item.competency.includes('Radial and ring')));
-for (const id of ['osg-identification-notices','osg-final-circuits','osg-bath-shower']) {
-  assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === id)).kind, 'unavailable', `${id} remains bibliography-only until exact reader mapping is verified`);
-}
+for (const id of ['osg-identification-notices','osg-final-circuits','osg-bath-shower']) assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === id)).kind, 'unavailable', `${id} remains bibliography-only until exact reader mapping is verified`);
+
+const c204 = overviewData.sections.find(section => section.id === 'c2-04-cable-systems-containment-installation-methods');
+assert.ok(c204, 'C2-04 Overview exists');
+assert.equal(c204.status, 'reviewed');
+assert.equal(c204.stageId, 'C2-04');
+assert.equal(c204.moduleId, 'module-04');
+assert.deepEqual(c204.learningSectionIds, learningSections.filter(section => section.moduleId === 'module-04').map(section => section.id));
+assert.equal(c204.learningSectionIds.length, 4, 'C2-04 covers all four neutral Module 04 learning sections');
+assert.deepEqual(c204.prerequisiteSectionIds, ['c2-03-single-phase-wiring-accessories']);
+for (const page of overviewPages) assert.ok(c204.pages[page].length > 0, `C2-04 page ${page} is authored`);
+for (const requiredTerm of ['cable-system','insulation','outer-sheath','armour','swa','swa-gland','conduit','trunking','cable-tray','installation-method','iz','correction-factor','ambient-temperature-factor','grouping-factor','thermal-insulation-factor','bend-radius','cable-support','segregation','fire-stopping','voltage-drop']) assert.ok(c204.termIds.includes(requiredTerm), `C2-04 includes ${requiredTerm}`);
+assert.ok(overviewData.formulas.some(formula => formula.id === 'corrected-current-capacity'), 'C2-04 includes corrected-current-capacity formula');
+assert.ok(c204.coverage.some(item => item.competency.includes('Selection of cables')));
+assert.ok(c204.coverage.some(item => item.competency.includes('conduit, trunking, cable tray and SWA')));
+for (const id of ['osg-cable-types','osg-cable-supports','osg-conduit-trunking','osg-current-capacity-voltage-drop']) assert.equal(resolveSourceLink(overviewData.sources.find(source => source.id === id)).kind, 'unavailable', `${id} remains bibliography-only until exact reader mapping is verified`);
 
 const mapped = overviewData.sources.find(source => source.id === 'osg-safe-testing');
 assert.equal(resolveSourceLink(mapped).reading.pdf, 125);
@@ -153,4 +156,4 @@ rejects(data => data.sections.find(section => section.id === 'foundation-fixture
 rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.mapping = undefined; }, /unverified PDF mapping/);
 rejects(data => { const source = data.sources.find(item => item.id === 'osg-safe-testing'); source.pdfPage = 999; }, /unverified PDF mapping/);
 rejects(data => data.sources[0].url = 'javascript:alert(1)', /unsafe source URL/);
-console.log(`Overview verified: ${overviewData.terms.length} canonical records, C2-01 through C2-03 complete, structural prerequisites, source mapping discipline and negative integrity fixtures.`);
+console.log(`Overview verified: ${overviewData.terms.length} canonical records, C2-01 through C2-04 complete, structural prerequisites, source mapping discipline and negative integrity fixtures.`);
