@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test:overview": "node scripts/test-overview.mjs",
+    "test:assessment": "node scripts/test-assessment-bank.mjs",
     "test:competency": "node scripts/test-competency-audit.mjs",
     "dev": "vinext dev --host 127.0.0.1",
     "build": "vinext build",
