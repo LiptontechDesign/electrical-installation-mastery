@@ -11,6 +11,8 @@ export type AssessmentChoiceSet = {
   questionId: string;
   correctOption: string;
   objective: string;
+  foundation: string;
+  workedMethod?: string;
   options: AssessmentChoice[];
 };
 

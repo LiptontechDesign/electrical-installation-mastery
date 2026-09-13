@@ -138,7 +138,7 @@ export default function AssessmentWorkspace({ assessment, onSelect, onReview, on
           <div className="assessment-options" role="radiogroup" aria-label={`Answer choices for ${active.id}`} onKeyDown={handleChoiceKeys}>{choiceSet.options.map((option, optionIndex) => {
             const selected = review?.selectedOptionId === option.id;
             const state = review ? option.isCorrect ? 'correct' : selected ? 'incorrect' : 'muted' : '';
-            return <button type="button" role="radio" aria-checked={selected} tabIndex={selected || (!review && optionIndex === 0) ? 0 : -1} key={option.id} className={`${selected ? 'selected' : ''} ${state}`} onClick={() => chooseAnswer(option.id)}><span className="choice-letter">{option.id}</span><span className="choice-copy"><AssessmentMarkdown text={option.text}/>{selected && review ? <small className="selected-feedback">{option.feedback}</small> : null}</span>{review && option.isCorrect ? <CheckCircle2 className="choice-status" size={21}/> : selected && review ? <X className="choice-status" size={21}/> : null}</button>;
+            return <button type="button" role="radio" aria-checked={selected} tabIndex={selected || (!review && optionIndex === 0) ? 0 : -1} key={option.id} className={`${selected ? 'selected' : ''} ${state}`} onClick={() => chooseAnswer(option.id)}><span className="choice-letter">{option.id}</span><span className="choice-copy"><AssessmentMarkdown text={option.text}/></span>{review && option.isCorrect ? <CheckCircle2 className="choice-status" size={21}/> : selected && review ? <X className="choice-status" size={21}/> : null}</button>;
           })}</div>
           {!review ? <p className="choice-privacy">Select the strongest answer to reveal the complete solution. Nothing is submitted or automatically graded outside this device.</p> : null}
         </div>
@@ -147,6 +147,11 @@ export default function AssessmentWorkspace({ assessment, onSelect, onReview, on
           <header className="solution-verdict"><span className="verdict-icon">{review.isCorrect ? <Check size={22}/> : <X size={22}/>}</span><div><span className="eyebrow">{review.isCorrect ? 'Correct answer' : 'Review this distinction'}</span><h3>{review.isCorrect ? 'Your choice is complete and technically sound.' : `The complete answer is ${choiceSet.correctOption}.`}</h3><p>{selectedChoice?.feedback}</p></div></header>
           <div className="solution-walkthrough">
             <div className="solution-heading"><span className="eyebrow neutral"><Sparkles size={15}/> Full worked solution</span><h3>Reasoning, method and final answer</h3><p>Follow the sequence; each displayed calculation retains its quantities and units.</p></div>
+            <section className="solution-foundation" aria-label="Underlying electrical principle">
+              <span className="eyebrow neutral">Start from the principle</span>
+              <AssessmentMarkdown text={choiceSet.foundation}/>
+              {choiceSet.workedMethod ? <div className="worked-method"><strong>Formula and substitution</strong><AssessmentMarkdown text={choiceSet.workedMethod}/></div> : null}
+            </section>
             <AssessmentDiagram question={active}/>
             <article className="model-answer"><AssessmentMarkdown text={active.answer}/></article>
           </div>

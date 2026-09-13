@@ -24,9 +24,13 @@ for(const item of choices.questions){
   assert.equal(item.options.length,4,item.questionId);
   assert.equal(item.options.filter(option=>option.isCorrect).length,1,item.questionId);
   assert.equal(item.options.find(option=>option.isCorrect).id,item.correctOption,item.questionId);
+  assert.equal(new Set(item.options.map(option=>option.text.trim().toLocaleLowerCase())).size,4,`${item.questionId} has four distinct choices`);
+  assert.ok(item.foundation.length>150,`${item.questionId} starts from a substantive electrical principle`);
   for(const option of item.options){
     assert.ok(option.text.length>1,`${item.questionId} ${option.id} text`);
-    assert.ok(option.feedback.length>35,`${item.questionId} ${option.id} teaches`);
+    assert.ok(option.feedback.length>80,`${item.questionId} ${option.id} teaches`);
+    assert.doesNotMatch(option.feedback,/accept the result without|remaining stated checks|plausible numerical distractor|only response that preserves every required relationship|full solution below defines/i,`${item.questionId} ${option.id} avoids generic template feedback`);
+    assert.doesNotMatch(option.text,/decorative|CPR chart|immediate return to work|ignore the supply|operate as a dimmer|meter seal|lifting eyes|voltage becomes DC|changes AC to DC|lamp colou?r temperature|earth-electrode driving|motor slip|PF controller|sets lamp colou?r|determines room area|circuit name is short|enclosure is white|label is printed clearly|a new label|a larger earth bar|turn AC into DC|transparent|no switches/i,`${item.questionId} ${option.id} is a credible electrical distractor`);
     assert.doesNotThrow(()=>renderToStaticMarkup(h(Markdown,{text:option.text})),`${item.questionId} ${option.id} typesets`);
   }
 }
@@ -39,5 +43,5 @@ const html=renderToStaticMarkup(h(Workspace,{assessment,onSelect(){},onReview(){
 for(const label of ['EPRA exam preparation','Study bank','Mock papers','Oral practice','Drawing practice','Choose the response','Select the strongest answer']) assert.ok(html.includes(label),label);
 assert.ok(!html.includes('<textarea'),'Learners are never required to type an assessment answer');
 const revealed=renderToStaticMarkup(h(Workspace,{assessment:{...assessment,reviews:{'C2-01-M01':{selectedOptionId:'B',isCorrect:true,confidence:null,updatedAt:'2026-09-13T00:00:00Z'}}},onSelect(){},onReview(){},onBookmark(){},onLesson(){}}));
-for(const label of ['Full worked solution','Why every option is right or wrong','Full-credit evidence']) assert.ok(revealed.includes(label),label);
+for(const label of ['Full worked solution','Start from the principle','Why every option is right or wrong','Full-credit evidence']) assert.ok(revealed.includes(label),label);
 console.log(`PASS: all ${bank.questions.length} prompts and solutions typeset; ${choices.questions.length} C2 questions have four choices, individual feedback and selection-gated solutions.`);
