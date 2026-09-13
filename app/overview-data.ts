@@ -11,6 +11,8 @@ import { c206AdditionalTerms, c206Formulas, c206Sections, c206TermPatches } from
 import { c206SourceReferences } from './c2-06-sources';
 import { c207AdditionalTerms, c207Formulas, c207Sections, c207TermPatches } from './c2-07-overview';
 import { c207SourceReferences } from './c2-07-sources';
+import { c208AdditionalTerms, c208Formulas, c208Sections, c208TermPatches } from './c2-08-overview';
+import { c208SourceReferences } from './c2-08-sources';
 import type { OverviewDataset } from './overview-models';
 
 const patchEntries = new Map([
@@ -21,6 +23,7 @@ const patchEntries = new Map([
   ...Object.entries(c205TermPatches),
   ...Object.entries(c206TermPatches),
   ...Object.entries(c207TermPatches),
+  ...Object.entries(c208TermPatches),
 ]);
 export const overviewTerms: PreservedCanonicalTerm[] = [
   ...canonicalTerms.map(term => {
@@ -34,13 +37,14 @@ export const overviewTerms: PreservedCanonicalTerm[] = [
   ...c205AdditionalTerms,
   ...c206AdditionalTerms,
   ...c207AdditionalTerms,
+  ...c208AdditionalTerms,
 ];
 
 export const overviewData: OverviewDataset = {
-  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences, ...c207SourceReferences],
+  sources: [...sourceReferences, ...c204SourceReferences, ...c205SourceReferences, ...c206SourceReferences, ...c207SourceReferences, ...c208SourceReferences],
   terms: overviewTerms,
-  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas, ...c207Formulas],
-  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections, ...c207Sections],
+  formulas: [...c201Formulas, ...c202Formulas, ...c203Formulas, ...c204Formulas, ...c205Formulas, ...c206Formulas, ...c207Formulas, ...c208Formulas],
+  sections: [...c201Sections, ...c202Sections, ...c203Sections, ...c204Sections, ...c205Sections, ...c206Sections, ...c207Sections, ...c208Sections],
 };
 
 export const overviewSectionById = new Map(overviewData.sections.map(section => [section.id, section]));
