@@ -7,6 +7,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "test:overview": "node scripts/test-overview.mjs",
     "dev": "vinext dev --host 127.0.0.1",
     "build": "vinext build",
     "start": "vinext start --host 127.0.0.1",
