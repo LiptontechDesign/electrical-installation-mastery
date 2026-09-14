@@ -3,7 +3,7 @@ const symbols: [RegExp, string][] = [
   [/\bIph\b/g, 'I_{\\mathrm{ph}}'], [/\bVph\b/g, 'V_{\\mathrm{ph}}'],
   [/\bIL\b/g, 'I_L'], [/\bVL\b/g, 'V_L'], [/\bIA\b/g, 'I_A'], [/\bIB\b/g, 'I_B'],
   [/\bIb\b/g, 'I_b'], [/\bIn\b/g, 'I_n'], [/\bIz\b/g, 'I_z'], [/\bIt\b/g, 'I_t'],
-  [/\bNs\b/g, 'N_s'], [/\bNr\b/g, 'N_r'], [/\bfr\b/g, 'f_r'], [/\bQc\b/g, 'Q_c'],
+  [/\b[Nn]s\b/g, 'n_s'], [/\b[Nn]r\b/g, 'n_r'], [/\bfr\b/g, 'f_r'], [/\bQc\b/g, 'Q_c'],
   [/\bCa\b/g, 'C_a'], [/\bCg\b/g, 'C_g'], [/\bCi\b/g, 'C_i'],
   [/\bRt\b/g, 'R_t'], [/\bZs\b/g, 'Z_s'], [/\bZe\b/g, 'Z_e'], [/\bU0\b/g, 'U_0'], [/\bVd\b/g, '\\Delta V'],
   [/\bpf\b/gi, '\\mathrm{pf}'], [/\bsqrt\s*\(\s*3\s*\)/gi, '\\sqrt{3}'], [/√\s*3/g, '\\sqrt{3}'],

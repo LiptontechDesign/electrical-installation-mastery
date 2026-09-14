@@ -18,7 +18,7 @@ for (const question of bank.questions) {
   for (const option of question.options ?? []) assert.doesNotThrow(() => renderToStaticMarkup(h(Markdown,{text:option.text})), `${question.id} option ${option.id} typesets`);
 }
 const sourceIds=new Set(bank.questions.map(question=>question.id));
-assert.equal(choices.questions.length,bank.counts.C2,'C2 is the completed pathway in this verified section');
+assert.equal(choices.questions.length,bank.questions.length,'C2 and C1 both have completed choice sets');
 for(const item of choices.questions){
   assert.ok(sourceIds.has(item.questionId),item.questionId);
   assert.equal(item.options.length,4,item.questionId);
@@ -34,7 +34,7 @@ for(const item of choices.questions){
     assert.doesNotThrow(()=>renderToStaticMarkup(h(Markdown,{text:option.text})),`${item.questionId} ${option.id} typesets`);
   }
 }
-for(const question of bank.questions.filter(question=>question.pathway==='C2'&&question.format==='diagram'&&/\bdraw\b|\bdiagram\b/i.test(question.prompt))){
+for(const question of bank.questions.filter(question=>question.format==='diagram'&&/\bdraw\b|\bdiagram\b/i.test(question.prompt))){
   const diagram=renderToStaticMarkup(h(Diagram,{question}));
   assert.ok(diagram.includes('Completed answer diagram'),`${question.id} supplies a drawn answer`);
 }
@@ -44,4 +44,4 @@ for(const label of ['EPRA exam preparation','Study bank','Mock papers','Oral pra
 assert.ok(!html.includes('<textarea'),'Learners are never required to type an assessment answer');
 const revealed=renderToStaticMarkup(h(Workspace,{assessment:{...assessment,reviews:{'C2-01-M01':{selectedOptionId:'B',isCorrect:true,confidence:null,updatedAt:'2026-09-13T00:00:00Z'}}},onSelect(){},onReview(){},onBookmark(){},onLesson(){}}));
 for(const label of ['Full worked solution','Start from the principle','Why every option is right or wrong','Full-credit evidence']) assert.ok(revealed.includes(label),label);
-console.log(`PASS: all ${bank.questions.length} prompts and solutions typeset; ${choices.questions.length} C2 questions have four choices, individual feedback and selection-gated solutions.`);
+console.log(`PASS: all ${bank.questions.length} C2/C1 questions and solutions typeset with four choices, individual feedback and selection-gated solutions.`);
