@@ -3,9 +3,10 @@ import { ArrowRight, ShieldCheck } from 'lucide-react';
 import { lessonKnowledge, lessonsForTerm, type KnowledgeTerm } from './knowledge-graph';
 import { topicsForLesson } from './standards-data';
 import Formula from './formula';
+import {engineeringToTex} from './engineering-notation';
 
 export function ContextTerm({item,onLesson}:{item:KnowledgeTerm;onLesson:(id:string)=>void}){
-  return <details className="context-term"><summary>{item.term}{item.unit&&<small>{item.unit}</small>}</summary><p>{item.definition}</p>{item.formulaTex?<div className="term-formula"><Formula tex={item.formulaTex} block />{item.formulaNote&&<small>{item.formulaNote}</small>}</div>:item.formula&&<p className="term-formula">{item.formula}</p>}{item.contrast&&<p><strong>Keep the distinction:</strong> {item.contrast}</p>}<div className="term-lesson-links">{lessonsForTerm(item.term).slice(0,3).map(lesson=><button type="button" key={lesson.id} onClick={()=>onLesson(lesson.id)}>{lesson.title}<ArrowRight size={15}/></button>)}</div></details>;
+  return <details className="context-term"><summary>{item.term}{item.unit&&<small>{item.unit}</small>}</summary><p>{item.definition}</p>{item.formulaTex?<div className="term-formula"><Formula tex={item.formulaTex} block />{item.formulaNote&&<small>{item.formulaNote}</small>}</div>:item.formula&&<p className="term-formula"><Formula tex={engineeringToTex(item.formula)} block/></p>}{item.contrast&&<p><strong>Keep the distinction:</strong> {item.contrast}</p>}<div className="term-lesson-links">{lessonsForTerm(item.term).slice(0,3).map(lesson=><button type="button" key={lesson.id} onClick={()=>onLesson(lesson.id)}>{lesson.title}<ArrowRight size={15}/></button>)}</div></details>;
 }
 export function LessonTerms({lessonId,onLesson}:{lessonId:string;onLesson:(id:string)=>void}){
   const terms=lessonKnowledge[lessonId].terms;

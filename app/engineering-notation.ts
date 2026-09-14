@@ -14,10 +14,13 @@ const symbols: [RegExp, string][] = [
 ];
 
 const unitPatterns: [RegExp, string][] = [
-  [/\b(\d+(?:\.\d+)?)\s*mm2\b/gi, '$1\\,\\mathrm{mm^2}'],
-  [/\b(\d+(?:\.\d+)?)\s*M(?:ohm|Ω)\b/gi, '$1\\,\\mathrm{M\\Omega}'],
-  [/\b(\d+(?:\.\d+)?)\s*(?:ohm|Ω)\b/gi, '$1\\,\\Omega'],
-  [/\b(\d+(?:\.\d+)?)\s*(kVAr|kVA|kWh|kW|mV\/A\/m|r\/min|Hz|ms|V|A|W|h)\b/g, '$1\\,\\mathrm{$2}'],
+  [/\b(\d+(?:\.\d+)?)\s*mm(?:2|\^2)(?![A-Za-z0-9_])/gi, '$1\\,\\mathrm{mm^2}'],
+  [/\b(\d+(?:\.\d+)?)\s*M(?:ohm|Ω)(?![A-Za-z0-9_])/gi, '$1\\,\\mathrm{M\\Omega}'],
+  [/\b(\d+(?:\.\d+)?)\s*k(?:ohm|Ω)(?![A-Za-z0-9_])/gi, '$1\\,\\mathrm{k\\Omega}'],
+  [/\b(\d+(?:\.\d+)?)\s*m(?:ohm|Ω)(?![A-Za-z0-9_])/gi, '$1\\,\\mathrm{m\\Omega}'],
+  [/\b(\d+(?:\.\d+)?)\s*(?:ohm|Ω)(?![A-Za-z0-9_])/gi, '$1\\,\\Omega'],
+  [/\b(\d+(?:\.\d+)?)\s*(kVAr|kvar|kVA|kWh|kW|Wh|mV\/A\/m|r\/min|Hz|ms|mA|V|A|W|C|J|s|h|m|lm|lx)(?![A-Za-z0-9_])/g, '$1\\,\\mathrm{$2}'],
+  [/\b(\d+(?:\.\d+)?)\s*%/g, '$1\\,\\%'],
 ];
 
 /** Converts the bank's constrained ASCII engineering notation into KaTeX input. */

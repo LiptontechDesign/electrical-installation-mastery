@@ -18,6 +18,7 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "test:tutor": "node scripts/test-tutor.mjs",
     "test:learning": "node scripts/test-learning.mjs",
+    "test:math": "node scripts/test-math-typesetting.mjs",
     "test:navigation": "node scripts/test-navigation.mjs",
     "test:migration": "node scripts/test-learner-state.mjs",
     "test:architecture": "node scripts/test-clean-architecture.mjs",
