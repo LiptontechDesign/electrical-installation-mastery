@@ -176,6 +176,8 @@ svg { flex: 0 0 auto; }
 
 .mobile-brand { display: none; color: var(--ink); font-weight: 800; }
 .mobile-brand .brand-symbol { width: 34px; height: 34px; border-radius: 10px; }
+.header-navigation, .header-course-map-button { display: none; }
+.header-course-map-button { min-height: 42px; align-items: center; gap: 7px; border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: 0 11px; color: #294653; font-weight: 780; }
 
 .search-trigger {
   display: flex;
@@ -835,6 +837,7 @@ kbd {
   .course-map { position: fixed; z-index: 130; inset: 0 auto 0 0; width: min(380px,92vw); height: 100dvh; padding-top: 18px; transform: translateX(-105%); visibility: hidden; transition: transform .22s ease, visibility .22s; box-shadow: 18px 0 60px rgba(0,0,0,.25); }
   .course-map.drawer-open { transform: translateX(0); visibility: visible; }
   .mobile-module-button { display: inline-flex; }
+  .header-course-map-button { display: inline-flex; }
   .drawer-scrim { position: fixed; z-index: 120; inset: 0; display: block; background: rgba(5,12,21,.55); }
 }
 
@@ -842,7 +845,10 @@ kbd {
   .app-sidebar { display: none; }
   .app-frame { margin-left: 0; }
   .mobile-brand { display: flex; }
-  .app-header { padding: 0 18px; }
+  .app-header { height: auto; min-height: 118px; flex-wrap: wrap; gap: 8px 12px; padding: 9px 18px 8px; }
+  .header-navigation { order: 5; display: grid; width: 100%; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 5px; }
+  .header-navigation button { display: flex; min-width: 0; min-height: 42px; align-items: center; justify-content: center; gap: 6px; border-radius: 9px; background: transparent; color: #60717b; font-size: 12px; font-weight: 760; }
+  .header-navigation button.active { background: #e7f4f5; color: #075f69; box-shadow: inset 0 0 0 1px #b8dcdf; }
   .search-trigger { width: auto; flex: 1; }
   .page { padding-inline: 22px; }
   .home-hero { grid-template-columns: 1fr; gap: 30px; }
@@ -856,14 +862,15 @@ kbd {
 
 @media (max-width: 720px) {
   body { font-size: 15px; }
-  .app-header { height: 62px; gap: 10px; }
+  .app-header { min-height: 112px; gap: 7px; }
   .mobile-brand > span:last-child { display: none; }
   .search-trigger { min-width: 0; }
   .search-trigger span, .search-trigger kbd, .header-progress .mini-progress { display: none; }
   .search-trigger { width: 44px; flex: 0 0 44px; justify-content: center; padding: 0; }
   .header-actions { gap: 6px; }
+  .my-books-button { display: none; }
   .header-progress { min-width: 50px; justify-content: center; }
-  .app-content { min-height: calc(100vh - 62px); padding-bottom: 76px; }
+  .app-content { min-height: calc(100vh - 112px); padding-bottom: 76px; }
   .page { padding: 20px 14px 44px; }
   .home-hero, .page-hero, .progress-hero { border-radius: 18px; padding: 29px 22px; }
   .home-hero { min-height: auto; }
@@ -979,6 +986,9 @@ kbd {
 
 @media (max-width: 400px) {
   .app-header { padding-inline: 10px; }
+  .header-course-map-button span { display: none; }
+  .header-course-map-button { width: 42px; justify-content: center; padding: 0; }
+  .header-navigation button { gap: 4px; font-size: 10px; }
   .hero-copy h1 { font-size: 37px; }
   .hero-session-card h2 { font-size: 21px; }
   .weekly-card { grid-template-columns: 1fr; }

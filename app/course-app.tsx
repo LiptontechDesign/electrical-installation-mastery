@@ -766,7 +766,9 @@ export default function CourseApp() {
       <div className="app-frame">
         <header className="app-header">
           <button className="mobile-brand" type="button" onClick={() => navigate('home')} aria-label="Go home"><span className="brand-symbol"><Zap size={18} /></span><span>Electrical Mastery</span></button>
+          {view === 'learn' && <button className="header-course-map-button" type="button" onClick={moduleDrawerOpen ? closeCourseMap : openCourseMap} aria-expanded={moduleDrawerOpen} aria-label={moduleDrawerOpen ? 'Close course map' : 'Open course map'}>{moduleDrawerOpen ? <X size={19}/> : <Menu size={19}/>}<span>{moduleDrawerOpen ? 'Close map' : 'Course map'}</span></button>}
           <button className="search-trigger" type="button" aria-label="Search lessons, concepts and practice" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={19} /><span>Search your learning</span><kbd>/</kbd></button>
+          <nav className="header-navigation" aria-label="Top navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={18}/><span>{item.label}</span></button>; })}</nav>
           <div className="header-actions">
             <button className="my-books-button" type="button" aria-label="Open My books" onClick={() => navigate('books')}><BookOpen size={19} /><span>My books</span></button>
             <button className="header-progress" type="button" onClick={() => navigate('home')} aria-label={`${coursePercent}% of the required course path complete`}><span className="mini-progress"><i style={{ width: `${coursePercent}%` }} /></span><b>{coursePercent}%</b></button>
@@ -900,7 +902,7 @@ export default function CourseApp() {
           {view === 'exam' && <AssessmentWorkspace assessment={learner.assessment} onSelect={selectAssessmentQuestion} onReview={saveAssessmentReview} onBookmark={toggleAssessmentBookmark} onLesson={chooseLesson}/>}
           {view === 'books' && <BookWorkspace />}
         </main>
-        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}</nav>
+        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}</nav>
       </div>
 
       {searchOpen && (
