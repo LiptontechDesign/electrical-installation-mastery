@@ -47,7 +47,7 @@ const clean = (value = '') => value
   .trim();
 
 const sentences = (value = '') => clean(value)
-  .split(/(?<=[.!?])\s+(?=[A-Z0-9`])/)
+  .split(/(?<=[.!?])\s+(?=[A-Z0-9])/)
   .map(item => item.trim())
   .filter(Boolean);
 
@@ -67,13 +67,13 @@ function evidenceReason(question: AssessmentEvidence) {
     .map(point => concise(point.criterion, 220))
     .filter(Boolean);
   if (criteria.length >= 2) {
-    return `The decisive points in this question are ${criteria[0].replace(/[.;:,]+$/, '')}; then ${criteria[1].replace(/[.;:,]+$/, '')}.`;
+    return `The decisive points are ${criteria[0].replace(/[.;:,]+$/, '')}; then ${criteria[1].replace(/[.;:,]+$/, '')}.`;
   }
   if (criteria.length === 1) {
-    return `The deciding point in this question is ${criteria[0].replace(/[.;:,]+$/, '')}.`;
+    return `The deciding point is ${criteria[0].replace(/[.;:,]+$/, '')}.`;
   }
   const lead = sentences(question.answer)[0];
-  return lead ? `The answer follows from this question-specific point: ${concise(lead, 300)}` : `Apply the electrical condition stated in “${question.title}” directly.`;
+  return lead ? concise(lead, 320) : `Apply the electrical condition stated in “${question.title}” directly.`;
 }
 
 function nonRepeatedFeedback(feedback: string, foundation: string, answer: string) {
@@ -96,38 +96,23 @@ function refineC1ChoiceSet(choiceSet: AssessmentChoiceSet): AssessmentChoiceSet 
 
   const directAnswer = `Correct answer: ${correctChoice.id} — ${clean(correctChoice.text)}`;
   const reasoning = evidenceReason(question);
-  const lessonBridge = question.sourceLessonIds?.length
-    ? `This question is linked to ${question.sourceLessonIds.join(', ')}; use the same technical terms and distinctions taught in that lesson.`
-    : '';
-
-  const questionSpecificFoundation = [
-    reasoning,
-    choiceSet.foundation,
-    lessonBridge,
-  ].filter(Boolean).join(' ');
-
   const options = choiceSet.options.map(option => {
-    const distinctFeedback = nonRepeatedFeedback(option.feedback, choiceSet.foundation, question.answer);
     if (option.isCorrect) {
       return {
         ...option,
-        feedback: `${directAnswer}. ${reasoning}`,
+        feedback: `This option gives the complete response required by “${question.title}”.`,
       };
     }
 
-    const misconception = distinctFeedback
-      || `Option ${option.id} does not satisfy the electrical condition tested in “${question.title}”.`;
-    return {
-      ...option,
-      feedback: `${directAnswer}. ${misconception}`,
-    };
+    const misconception = nonRepeatedFeedback(option.feedback, choiceSet.foundation, question.answer)
+      || `This option does not satisfy the electrical condition tested in “${question.title}”.`;
+    return { ...option, feedback: misconception };
   });
 
   return {
     ...choiceSet,
     directAnswer,
     reasoning,
-    foundation: questionSpecificFoundation,
     options,
   };
 }
