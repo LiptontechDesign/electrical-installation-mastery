@@ -109,6 +109,7 @@ export default function AssessmentWorkspace({ assessment, onSelect, onReview, on
 
   if (!active || !choiceSet) return <section className="assessment-empty"><h1>No completed questions match this filter</h1><button type="button" onClick={() => setQuery('')}>Clear search</button></section>;
   const selectedChoice = choiceSet.options.find(option => option.id === review?.selectedOptionId);
+  const enhancedC1 = active.pathway === 'C1' && Boolean(choiceSet.directAnswer && choiceSet.reasoning);
   return <div className="assessment-page">
     <header className="assessment-hero">
       <div><span className="eyebrow"><GraduationCap size={17}/> EPRA exam preparation</span><h1>Choose. Check. Understand why.</h1><p>Every option tests a real distinction. Select once to reveal the complete reasoning, worked method and drawing where the answer requires one.</p></div>
@@ -144,18 +145,18 @@ export default function AssessmentWorkspace({ assessment, onSelect, onReview, on
         </div>
 
         {review ? <section id={`${active.id}-result`} className={`solution-workspace ${review.isCorrect ? 'is-correct' : 'is-incorrect'}`} aria-live="polite" aria-label="Answer and full-credit solution">
-          <header className="solution-verdict"><span className="verdict-icon">{review.isCorrect ? <Check size={22}/> : <X size={22}/>}</span><div><span className="eyebrow">{review.isCorrect ? 'Correct answer' : 'Review this distinction'}</span><h3>{review.isCorrect ? 'Your choice is complete and technically sound.' : `The complete answer is ${choiceSet.correctOption}.`}</h3><p>{selectedChoice?.feedback}</p></div></header>
+          <header className="solution-verdict"><span className="verdict-icon">{review.isCorrect ? <Check size={22}/> : <X size={22}/>}</span><div><span className="eyebrow">{review.isCorrect ? 'Correct answer' : 'Review this distinction'}</span><h3>{enhancedC1 ? choiceSet.directAnswer : review.isCorrect ? 'Your choice is complete and technically sound.' : `The complete answer is ${choiceSet.correctOption}.`}</h3>{enhancedC1 ? <><AssessmentMarkdown text={choiceSet.reasoning!}/>{!review.isCorrect && selectedChoice ? <p><strong>Why your choice fails:</strong> {selectedChoice.feedback}</p> : null}</> : <p>{selectedChoice?.feedback}</p>}</div></header>
           <div className="solution-walkthrough">
             <div className="solution-heading"><span className="eyebrow neutral"><Sparkles size={15}/> Full worked solution</span><h3>Reasoning, method and final answer</h3><p>Follow the sequence; each displayed calculation retains its quantities and units.</p></div>
             <section className="solution-foundation" aria-label="Underlying electrical principle">
-              <span className="eyebrow neutral">Start from the principle</span>
+              <span className="eyebrow neutral">Underlying principle</span>
               <AssessmentMarkdown text={choiceSet.foundation}/>
-              {choiceSet.workedMethod ? <div className="worked-method"><strong>Formula and substitution</strong><AssessmentMarkdown text={choiceSet.workedMethod}/></div> : null}
+              {choiceSet.workedMethod ? <div className="worked-method"><strong>Worked method: formula and substitution</strong><AssessmentMarkdown text={choiceSet.workedMethod}/></div> : null}
             </section>
             <AssessmentDiagram question={active}/>
-            <article className="model-answer"><AssessmentMarkdown text={active.answer}/></article>
+            <article className="model-answer"><strong>Exam-ready model answer</strong><AssessmentMarkdown text={active.answer}/></article>
           </div>
-          <details className="choice-rationales"><summary><span><ListChecks size={17}/><strong>Why every option is right or wrong</strong></span><ChevronDown size={18}/></summary><div>{choiceSet.options.map(option => <article key={option.id} className={option.isCorrect ? 'correct' : ''}><span>{option.id}</span><div><strong>{option.isCorrect ? 'Complete answer' : 'Not the best answer'}</strong><p>{option.feedback}</p></div></article>)}</div></details>
+          <details className="choice-rationales"><summary><span><ListChecks size={17}/><strong>Why every option is right or wrong</strong></span><ChevronDown size={18}/></summary><div>{choiceSet.options.filter(option => !(enhancedC1 && option.id === selectedChoice?.id)).map(option => <article key={option.id} className={option.isCorrect ? 'correct' : ''}><span>{option.id}</span><div><strong>{option.isCorrect ? 'Complete answer' : 'Not the best answer'}</strong><p>{option.feedback}</p></div></article>)}</div></details>
           <details className="marking-review"><summary><span><ListChecks size={17}/><strong>Full-credit evidence</strong></span><span>{active.marks} marks</span></summary><ol>{active.markingPoints.map((point, index) => <li key={`${index}-${point.criterion}`}><span>{index + 1}</span><div><AssessmentMarkdown text={point.criterion}/><b>{point.marks} {point.marks === 1 ? 'mark' : 'marks'}</b></div></li>)}</ol></details>
           <div className="solution-footer"><div><strong>How secure is this now?</strong><div className="confidence-buttons">{([['review', 'Needs review'], ['developing', 'Developing'], ['secure', 'Secure']] as const).map(([value, label]) => <button type="button" key={value} aria-pressed={review.confidence === value} onClick={() => setConfidence(value)}>{value === 'secure' ? <Check size={15}/> : null} {label}</button>)}</div></div><div className="solution-sources"><strong>Relearn the principle</strong>{active.sourceLessonIds.map(id => <button type="button" key={id} onClick={() => onLesson(id)}>Open related lesson <ArrowRight size={16}/></button>)}</div></div>
         </section> : null}
