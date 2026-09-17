@@ -9,6 +9,7 @@ import { confirmationPhrase, youtubeId, type SupplementaryAction, type Supplemen
 
 type Editor = { action: SupplementaryAction; revision: number; id?: string; moduleId: string; anchorId: string; position: 'before' | 'after'; url: string; title: string; instructor: string };
 type Context = { videos: SupplementaryVideo[]; watched: string[]; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
+type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
 const SupplementaryContext = createContext<Context | null>(null);
 const empty: SupplementaryState = withSupplementaryDefaults({ version: 1, revision: 0, videos: [] });
 export function SupplementaryProvider({ children }: { children: ReactNode }) {
@@ -43,6 +44,20 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
   const markWatched = useCallback((id: string) => {
     setWatched(current => current.includes(id) ? current : [...current, id]);
   }, []);
+  useEffect(() => {
+    const bulkMarkWatched = (event: Event) => {
+      const detail = (event as CustomEvent<BulkWatchDetail>).detail;
+      if (!detail?.moduleId || !Array.isArray(detail.lessonIds)) return;
+      const anchors = new Set(detail.lessonIds);
+      const videoIds = state.videos
+        .filter(video => !video.archived && video.moduleId === detail.moduleId && anchors.has(video.anchorId))
+        .map(video => video.videoId);
+      if (!videoIds.length) return;
+      setWatched(current => [...new Set([...current, ...videoIds])]);
+    };
+    window.addEventListener('supplementary-bulk-watch', bulkMarkWatched);
+    return () => window.removeEventListener('supplementary-bulk-watch', bulkMarkWatched);
+  }, [state.videos]);
   const [metadataStatus, setMetadataStatus] = useState('');
   const [lookupAttempt, setLookupAttempt] = useState(0);
   const editedFields = useRef({ title: false, instructor: false });
