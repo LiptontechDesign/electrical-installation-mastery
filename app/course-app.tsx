@@ -16,7 +16,7 @@ import course, { lessonStudyRole } from './course-curriculum';
 import { sectionsByModule } from './learning-sections';
 import { ElectricalShockContext, LicensingOverview, LicensingStageGuide } from './licensing-ui';
 import { importPromotedWatched } from './integrated-progress';
-import { recordVideoCompletion } from './flexible-progress';
+import { markVideoGroupWatched, recordVideoCompletion } from './flexible-progress';
 import LessonProgress from './lesson-progress';
 import { initialLearnerState, clampState, type LearnerState } from './learner-state';
 import { lessonGuides } from './lesson-guides';
@@ -673,6 +673,12 @@ export default function CourseApp() {
     }
   };
 
+  const markGroupWatched = (lessonIds: string[], moduleId: string, label: string) => {
+    setLearner((current) => ({ ...markVideoGroupWatched(current, lessonIds), updatedAt: new Date().toISOString() }));
+    window.dispatchEvent(new CustomEvent('supplementary-bulk-watch', { detail: { moduleId, lessonIds } }));
+    setToast(`${label} marked as watched.`);
+  };
+
   const toggleBookmark = () => {
     const isSaved = bookmarked.has(activeLesson.id);
     setLearner((current) => ({ ...current, bookmarkedLessonIds: isSaved ? current.bookmarkedLessonIds.filter((id) => id !== activeLesson.id) : [...current.bookmarkedLessonIds, activeLesson.id], updatedAt: new Date().toISOString() }));
@@ -841,7 +847,7 @@ export default function CourseApp() {
                           <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos watched</small></span><ChevronDown size={18} />
                         </button>
                         <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
-                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary>{group.lessonIds.flatMap((lessonId) => {
+                        {isOpen && <div className="accordion-lessons"><button type="button" className="bulk-watch-action" onClick={()=>markGroupWatched(module.lessons.map(lesson=>lesson.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/><span><strong>Mark module watched</strong><small>Mark every lesson and supporting video in this module</small></span></button>{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><button type="button" className="bulk-watch-action" onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/><span><strong>Mark section watched</strong><small>Mark all lessons and supporting videos in this section</small></span></button>{group.lessonIds.flatMap((lessonId) => {
                           const lesson=lessonLookup.get(lessonId)!;
                           const isActiveLesson=activeLesson.id===lesson.id;
                           const rows=[<button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" key={lesson.id} className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Current</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
