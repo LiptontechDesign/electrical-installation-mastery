@@ -1,0 +1,653 @@
+/*
+ * System dark theme.
+ *
+ * This stylesheet is intentionally imported last from app/layout.tsx so it can
+ * adapt legacy light-only component styles without adding client-side theme
+ * state. The OS/browser preference is the single source of truth.
+ */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --ink: #e7edf3;
+    --muted: #9eacb9;
+    --line: #2b3a49;
+    --paper: #08111d;
+    --white: #0f1b28;
+    --warm: #17170f;
+    --recap-panel: #102b31;
+    --recap-border: #28505a;
+    --recap-accent: #5fd3df;
+    --copper-dark: #ff9c60;
+    --shadow-sm: 0 8px 28px rgba(0, 0, 0, .24);
+    --shadow-lg: 0 24px 72px rgba(0, 0, 0, .42);
+
+    --dark-surface: #0f1b28;
+    --dark-surface-soft: #132231;
+    --dark-surface-raised: #172838;
+    --dark-surface-teal: #102a31;
+    --dark-border: #2b3a49;
+    --dark-text: #e7edf3;
+    --dark-muted: #9eacb9;
+  }
+
+  html,
+  body {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  input,
+  textarea,
+  select {
+    color-scheme: dark;
+  }
+
+  ::placeholder {
+    color: #7f91a2;
+    opacity: 1;
+  }
+
+  /* App chrome */
+  .app-header {
+    border-bottom-color: rgba(43, 58, 73, .92);
+    background: rgba(8, 17, 29, .92);
+  }
+
+  .mobile-brand {
+    color: var(--ink);
+  }
+
+  .header-course-map-button,
+  .search-trigger,
+  kbd,
+  .icon-button,
+  .secondary-button,
+  .mobile-module-button,
+  .lesson-stepper button,
+  .chapter-search,
+  .glossary-search {
+    border-color: var(--dark-border);
+    background: var(--dark-surface);
+    color: var(--dark-text);
+  }
+
+  .search-trigger,
+  .breadcrumbs,
+  .lesson-stepper,
+  .bookmark-button,
+  .transcript-link,
+  .auto-next-toggle {
+    color: var(--dark-muted);
+  }
+
+  kbd {
+    border-color: #3a4a5a;
+    color: #b7c3ce;
+  }
+
+  .mini-progress,
+  .progress-line,
+  .session-meter {
+    background: #273746;
+  }
+
+  .eyebrow.neutral {
+    color: #9eacb9;
+  }
+
+  .text-button {
+    color: #ffa56d;
+  }
+
+  /* Home */
+  .stat-grid article,
+  .learning-path-grid button,
+  .module-card,
+  .weekly-card,
+  .local-data-card,
+  .course-map,
+  .book-selector > button,
+  .library-workspace,
+  .lab-card,
+  .calculator-panel,
+  .formula-reference {
+    border-color: var(--dark-border);
+    background: var(--dark-surface);
+    color: var(--dark-text);
+  }
+
+  .learning-path-grid button:hover,
+  .module-card:hover {
+    border-color: #496071;
+  }
+
+  .learning-path-grid button > span {
+    color: #314252;
+  }
+
+  .stat-icon.copper { background: #392318; color: #ffae7a; }
+  .stat-icon.cyan { background: #10333a; color: #74dce6; }
+  .stat-icon.green { background: #123426; color: #68d99c; }
+  .stat-icon.amber { background: #362f17; color: #f4d36f; }
+
+  .weekly-ring,
+  .overall-ring {
+    background: conic-gradient(var(--copper) var(--progress), #263644 0);
+  }
+
+  .weekly-ring::before,
+  .overall-ring::before {
+    background: var(--dark-surface);
+  }
+
+  .safety-card,
+  .safety-ribbon,
+  .edition-banner,
+  .knowledge-prompt,
+  .practice-hint,
+  .storage-warning,
+  .licensing-safety,
+  .licensing-gap,
+  .supp-confirm,
+  .supp-status {
+    border-color: #66552d;
+    background: #221f14;
+    color: #e9cc7a;
+  }
+
+  .safety-card .eyebrow,
+  .safety-card button,
+  .safety-ribbon,
+  .edition-banner,
+  .licensing-safety,
+  .licensing-gap {
+    color: #e9c66a;
+  }
+
+  .safety-card strong,
+  .safety-ribbon strong,
+  .edition-banner strong {
+    color: var(--dark-text);
+  }
+
+  .safety-card p,
+  .safety-ribbon p,
+  .edition-banner p {
+    color: #c9b77c;
+  }
+
+  .local-data-card,
+  .pdf-open-card,
+  .try-card,
+  .worked-solution,
+  .standard-example,
+  .diagnostic-help,
+  .overview-application,
+  .concept-visual,
+  .source-status,
+  .choice-instruction,
+  .solution-foundation,
+  .assessment-diagram {
+    border-color: #28505a;
+    background: #102a31;
+    color: #a9e0e5;
+  }
+
+  .local-data-card strong,
+  .pdf-open-card strong {
+    color: var(--dark-text);
+  }
+
+  /* Course map and lesson shell */
+  .course-map {
+    border-right-color: var(--dark-border);
+  }
+
+  .drawer-heading > button:hover,
+  .module-accordion > button:hover,
+  .module-accordion > button.active,
+  .accordion-lessons button:hover,
+  .accordion-lessons button.active,
+  .course-map-help,
+  .chapter-index nav button:hover,
+  .chapter-index nav button.active {
+    background: var(--dark-surface-soft);
+  }
+
+  .course-path-switcher,
+  .course-summary,
+  .course-map-help,
+  .calculator-tabs,
+  .lesson-learning-switch {
+    border-color: var(--dark-border);
+    background: #101e2b;
+  }
+
+  .course-path-switcher button,
+  .lesson-learning-switch button {
+    color: #9eacb9;
+  }
+
+  .course-path-switcher button.active,
+  .lesson-learning-switch button[aria-selected="true"],
+  .calculator-tabs button.active {
+    background: var(--dark-surface-raised);
+    color: #86e1e8;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .28);
+  }
+
+  .module-accordion {
+    border-bottom-color: var(--dark-border);
+  }
+
+  .module-index,
+  .topic-pill.quiet,
+  .assessment-section-list button small,
+  .assessment-question-topline span,
+  .choice-letter,
+  .choice-rationales article > span,
+  .marking-review li > span,
+  .marking-review li b {
+    background: #1d2c3a;
+    color: #a9b7c3;
+  }
+
+  .accordion-lessons button {
+    color: #a2b0bc;
+  }
+
+  .accordion-lessons button[aria-current="page"] {
+    background: #12313a;
+  }
+
+  .topic-pill {
+    background: #103239;
+    color: #79dce5;
+  }
+
+  .lesson-title-block .lesson-kicker {
+    color: #9fb1bc;
+  }
+
+  .lesson-title-block .lesson-kicker strong {
+    color: #71d8e2;
+  }
+
+  .auto-next-toggle span {
+    background: #253543;
+    color: #a9b6c1;
+  }
+
+  .auto-next-toggle.active {
+    border-color: #2f6972;
+    background: #102e35;
+    color: #77dce5;
+  }
+
+  .complete-button.completed {
+    background: #123526;
+    color: #7cdda8;
+  }
+
+  .lesson-summary-card {
+    border-color: #354350;
+    background: #15160f;
+  }
+
+  .summary-card-heading {
+    border-bottom-color: #3c3b30;
+  }
+
+  .summary-source-note,
+  .term-formula,
+  .model-assumption,
+  .simulation-safety,
+  .evidence-label,
+  .prerequisite-links button,
+  .tutor-empty,
+  .standards-check {
+    background: #132530;
+    color: #abc0cb;
+  }
+
+  .plain-summary > p,
+  .guide-summary,
+  .key-concepts-card li p,
+  .overview-application p,
+  .standard-topic > p,
+  .standard-topic details p,
+  .standards-baseline-body p {
+    color: #c3ced7;
+  }
+
+  .key-concepts-card,
+  .overview-support,
+  .particle-selector button,
+  .formula-picker button,
+  .term-categories button,
+  .term-grid details,
+  .term-empty,
+  .lesson-compass,
+  .calculation-coach,
+  .case-studio,
+  .standards-learning,
+  .lesson-key-ideas li,
+  .context-term,
+  .practice-picker button,
+  .case-options button,
+  .learning-next-strip button,
+  .practice-library-list button,
+  .guide-practice,
+  .diagnostic-choices button {
+    border-color: var(--dark-border);
+    background: var(--dark-surface);
+    color: var(--dark-text);
+  }
+
+  .lesson-compass.after-video {
+    background: #0e211d;
+  }
+
+  .lesson-watch-status,
+  .evidence-dimensions article,
+  .loop-explorer {
+    border-color: var(--dark-border);
+    background: var(--dark-surface-soft);
+    color: var(--dark-muted);
+  }
+
+  .after-video .lesson-watch-status {
+    background: #123426;
+    color: #75daa4;
+  }
+
+  .worked-solution,
+  .standard-example {
+    color: #c1d5dc;
+  }
+
+  .tutor-feedback {
+    background: #2b2017;
+    color: #f0c397;
+  }
+
+  .tutor-feedback.success,
+  .case-options .correct {
+    background: #102b22;
+    color: #95dfb7;
+  }
+
+  .case-options .incorrect {
+    background: #301d18;
+    color: #f0ab98;
+  }
+
+  .formula-studio {
+    border-color: var(--dark-border);
+    background: var(--dark-surface);
+  }
+
+  .quantity-control input[type="number"],
+  .calculation-answer input,
+  .calculation-answer select,
+  .experiment-fields select,
+  .experiment-fields input,
+  .explain-it textarea,
+  .reader-unlock input,
+  .supp-dialog input,
+  .supp-dialog select,
+  .licensing-example input {
+    border-color: #405263;
+    background: #0b1723;
+    color: var(--dark-text);
+  }
+
+  .formula-picker button[aria-pressed="true"] {
+    border-color: #3b8d98;
+    background: #12323a;
+    box-shadow: 0 0 0 1px #3b8d98;
+  }
+
+  .term-categories button[aria-pressed="true"],
+  .practice-picker button[aria-pressed="true"],
+  .diagnostic-choices button[aria-pressed="true"] {
+    background: #193346;
+    color: #f4f8fb;
+  }
+
+  /* Library and reading */
+  .light-hero {
+    border-color: var(--dark-border);
+    background: linear-gradient(125deg, #101d2a, #0b1622);
+  }
+
+  .chapter-index {
+    border-right-color: var(--dark-border);
+    background: #0c1722;
+  }
+
+  .book-progress,
+  .concept-chip-list span,
+  .filter-row button,
+  .calculator-tabs {
+    border-color: var(--dark-border);
+    background: #162533;
+    color: #aab7c2;
+  }
+
+  .linked-modules button,
+  .filter-row button,
+  .my-books-button,
+  .learning-experiment,
+  .experiment-controls button,
+  .motor-controls button,
+  .book-shelf-card {
+    border-color: var(--dark-border);
+    background: var(--dark-surface);
+    color: var(--dark-text);
+  }
+
+  .reading-link,
+  .learning-experiment > summary,
+  .cable-route,
+  .experiment-results-grid > div,
+  .motor-logic > div,
+  .motor-state,
+  .reader-message button,
+  .reader-unlock,
+  .reasoning-feedback {
+    border-color: var(--dark-border);
+    background: var(--dark-surface-soft);
+    color: #c8d3dc;
+  }
+
+  .reading-link:hover,
+  .explain-it > button {
+    background: #172b36;
+  }
+
+  .lesson-reading > p,
+  .reading-link small,
+  .experiment-caption,
+  .motor-state p,
+  .explain-it p,
+  .source-context-body,
+  .books-intro p,
+  .book-shelf-card p,
+  .books-source-note,
+  .reader-message,
+  .reader-unlock p {
+    color: var(--dark-muted);
+  }
+
+  .experiment-result {
+    background: #0d2926;
+  }
+
+  .capacity-result.met,
+  .motor-state.running,
+  .motor-logic .energized {
+    background: #102b22;
+    color: #9bddb8;
+  }
+
+  .capacity-result.not-met {
+    background: #2c2117;
+    color: #efbd85;
+  }
+
+  .book-reader-dialog,
+  .book-reader-header {
+    border-color: var(--dark-border);
+    background: #0b171f;
+    color: #e4ece8;
+  }
+
+  .book-reader-header,
+  .reader-session-bar {
+    border-bottom-color: var(--dark-border);
+  }
+
+  .book-reader-header > button,
+  .reader-session-bar,
+  .reader-session-bar button {
+    color: #9fb0a7;
+  }
+
+  /* Supplementary and licensing */
+  .supp-dialog {
+    background: var(--dark-surface);
+    color: var(--dark-text);
+  }
+
+  .supp-dialog header > button,
+  .supp-controls button:hover,
+  .supp-controls button:focus-visible {
+    background: var(--dark-surface-soft);
+    color: #75d7e1;
+  }
+
+  .supp-controls button {
+    color: #89c9d0;
+  }
+
+  .supp-metadata {
+    color: var(--dark-muted);
+  }
+
+  .licensing-paths > article,
+  .licensing-preparation {
+    background: var(--dark-surface);
+  }
+
+  .licensing-stage-guide {
+    border-color: #28505a;
+    background: #102730;
+    color: #c7d8df;
+  }
+
+  .licensing-stage-guide > summary small,
+  .licensing-breadcrumb,
+  .licensing-map-heading {
+    color: #8ec5cf;
+  }
+
+  .licensing-stage-guide-body {
+    border-top-color: #28505a;
+  }
+
+  /* Assessment workspace */
+  .assessment-controls {
+    border-color: var(--dark-border);
+    background: rgba(15, 27, 40, .94);
+  }
+
+  .assessment-path button[aria-pressed="true"],
+  .assessment-modes button[aria-pressed="true"],
+  .assessment-section-list button.active {
+    background: #12333a;
+    color: #8be2e8;
+    box-shadow: inset 0 0 0 1px #2b626b;
+  }
+
+  .assessment-navigator,
+  .assessment-question,
+  .assessment-options > button,
+  .solution-walkthrough,
+  .choice-rationales article,
+  .marking-review li,
+  .diagram-lane {
+    border-color: var(--dark-border);
+    background: var(--dark-surface);
+    color: var(--dark-text);
+  }
+
+  .assessment-section-list,
+  .assessment-question-topline,
+  .choice-rationales,
+  .marking-review,
+  .solution-walkthrough {
+    border-color: var(--dark-border);
+  }
+
+  .assessment-options > button {
+    color: var(--dark-text);
+  }
+
+  .assessment-options > button:hover {
+    border-color: #4e7680;
+    background: #142632;
+  }
+
+  .assessment-options > button.correct,
+  .choice-rationales article.correct {
+    border-color: #357c5a;
+    background: #102b22;
+  }
+
+  .assessment-options > button.incorrect {
+    border-color: #8d5043;
+    background: #301d18;
+  }
+
+  .assessment-question-topline > button.saved,
+  .source-status.check-kenyan-requirement {
+    background: #2c2117;
+    color: #efbd85;
+  }
+
+  .solution-workspace {
+    background: #0d211d;
+  }
+
+  .solution-verdict p,
+  .choice-rationales p {
+    color: #adbdc7;
+  }
+
+  .choice-rationales,
+  .marking-review {
+    background: #0c1823;
+  }
+
+  .assessment-diagram-heading {
+    border-bottom-color: #2b4a51;
+    background: #123039;
+  }
+
+  .assessment-diagram-heading span {
+    color: #9bc7ce;
+  }
+
+  .diagram-node {
+    border-color: #45656d;
+    background: #10212b;
+    color: #dbe6eb;
+  }
+
+  /* Keep native scrollbars and controls consistent with the selected scheme. */
+  * {
+    scrollbar-color: #3b5061 #0b1723;
+  }
+}
