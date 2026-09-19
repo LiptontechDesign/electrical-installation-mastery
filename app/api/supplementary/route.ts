@@ -2,7 +2,7 @@ import { get, put } from '@vercel/blob';
 import course from '../../course-curriculum';
 import { withSupplementaryDefaults } from '../../supplementary-defaults';
 import { limitedJson, sameOrigin, privateHeaders } from '../../server/reader-auth';
-import { confirmationPhrase, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from '../../supplementary-model';
+import { confirmationPhrase, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from '../../supplementary-model';
 
 export const runtime = 'nodejs';
 const pathname = 'course/supplementary-videos-v1.json';
@@ -76,9 +76,20 @@ export async function POST(request: Request) {
       const title = typeof body.title === 'string' ? body.title.trim() : '';
       const instructor = typeof body.instructor === 'string' ? body.instructor.trim() : '';
       const courseModule = course.modules.find(m => m.id === body.moduleId);
+      const anchorId = typeof body.anchorId === 'string' ? body.anchorId : '';
+      const lessonAnchor = courseModule?.lessons.some(lesson => lesson.id === anchorId);
+      const supplementaryAnchor = state.videos.find(candidate =>
+        candidate.id === anchorId &&
+        candidate.id !== existing?.id &&
+        candidate.moduleId === courseModule?.id &&
+        (!candidate.archived || existing?.anchorId === candidate.id)
+      );
 
-      if (!videoId || !title || title.length > 240 || instructor.length > 160 || !courseModule?.lessons.some(l => l.id === body.anchorId) || !['before', 'after'].includes(String(body.position))) {
-        return reply({ error: 'Check the YouTube link, title and lesson position.' }, 400);
+      if (!videoId || !title || title.length > 240 || instructor.length > 160 || !courseModule || (!lessonAnchor && !supplementaryAnchor) || !['before', 'after'].includes(String(body.position))) {
+        return reply({ error: 'Check the YouTube link, title and placement.' }, 400);
+      }
+      if (supplementaryPlacementCreatesCycle(state.videos, existing?.id, anchorId)) {
+        return reply({ error: 'Choose a different placement. A video cannot be placed inside its own sequence.' }, 400);
       }
       if (coreVideos.has(videoId) || state.videos.some(v => v.videoId === videoId && v.id !== existing?.id)) {
         return reply({ error: 'This video is already in the course or archive. Move or restore its existing entry instead.' }, 409);
@@ -93,7 +104,7 @@ export async function POST(request: Request) {
         title,
         instructor,
         moduleId: courseModule.id,
-        anchorId: String(body.anchorId),
+        anchorId,
         position: body.position as 'before' | 'after',
         archived: existing?.archived ?? false,
         placementRevision: 1,

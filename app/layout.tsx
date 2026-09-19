@@ -9,6 +9,7 @@ import './supplementary.css';
 import './licensing.css';
 import './assessment.css';
 import './dark-theme.css';
+import AccessibleTooltips from './accessible-tooltips';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =
@@ -106,7 +107,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB">
-      <body>{children}</body>
+      <body>{children}<AccessibleTooltips /></body>
     </html>
   );
 }

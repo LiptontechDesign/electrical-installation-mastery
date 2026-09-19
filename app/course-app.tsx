@@ -758,7 +758,7 @@ export default function CourseApp() {
           <span className="brand-symbol" aria-hidden="true"><Zap size={20} /></span>
           <span className="brand-copy"><strong>Electrical</strong><small>Installation Mastery</small></span>
         </button>
-        <nav className="side-navigation">
+        <nav className="side-navigation" aria-label="Primary navigation">
           <span className="nav-label">Workshop</span>
           {navigation.map((item) => {
             const Icon = item.icon;
@@ -770,7 +770,7 @@ export default function CourseApp() {
       </aside>
 
       <div className="app-frame">
-        <header className="app-header">
+        <header className="app-header" aria-label="Application toolbar">
           <button className="mobile-brand" type="button" onClick={() => navigate('home')} aria-label="Go home"><span className="brand-symbol"><Zap size={18} /></span><span>Electrical Mastery</span></button>
           {view === 'learn' && <button className="header-course-map-button" type="button" onClick={moduleDrawerOpen ? closeCourseMap : openCourseMap} aria-expanded={moduleDrawerOpen} aria-label={moduleDrawerOpen ? 'Close course map' : 'Open course map'}>{moduleDrawerOpen ? <X size={19}/> : <Menu size={19}/>}<span>{moduleDrawerOpen ? 'Close map' : 'Course map'}</span></button>}
           <button className="search-trigger" type="button" aria-label="Search lessons, concepts and practice" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={19} /><span>Search your learning</span><kbd>/</kbd></button>
@@ -837,7 +837,7 @@ export default function CourseApp() {
                 </div>
                 {browsingControls}
                 <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required videos watched</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>
-                <nav>
+                <nav aria-label="Course module and lesson navigation">
                   {course.modules.filter(module=>module.path===mapPath).map((module) => {
                     const isOpen = openModuleId === module.id;
                     const done = moduleCompletedCount(module);
@@ -846,12 +846,14 @@ export default function CourseApp() {
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => setOpenModuleId(isOpen ? '' : module.id)} aria-expanded={isOpen}>
                           <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos watched</small></span><ChevronDown size={18} />
                         </button>
-                        <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
-                        {isOpen && <div className="accordion-lessons"><button type="button" className="bulk-watch-action" onClick={()=>markGroupWatched(module.lessons.map(lesson=>lesson.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/><span><strong>Mark module watched</strong><small>Mark every lesson and supporting video in this module</small></span></button>{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><button type="button" className="bulk-watch-action" onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/><span><strong>Mark section watched</strong><small>Mark all lessons and supporting videos in this section</small></span></button>{group.lessonIds.flatMap((lessonId) => {
+                        <div className="module-actions">
+                          <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
+                          {isOpen&&<button type="button" className="bulk-watch-action" aria-label={`Mark every video in module ${pad(module.number)} as watched`} data-tooltip={`Mark every video in module ${pad(module.number)} as watched`} onClick={()=>markGroupWatched(module.lessons.map(lesson=>lesson.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/></button>}
+                        </div>
+                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button><SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} /></div>{group.lessonIds.flatMap((lessonId) => {
                           const lesson=lessonLookup.get(lessonId)!;
                           const isActiveLesson=activeLesson.id===lesson.id;
                           const rows=[<button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" key={lesson.id} className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Current</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
-                          if (lesson.id === group.lessonIds[0]) rows.splice(0, 0, <SupplementaryControls key={`${group.id}-add`} moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />);
                           const coreIndex = rows.findIndex(row => row.key === lesson.id);
                           rows.splice(coreIndex, 0, <SupplementaryRows key={`${lesson.id}-supp-before`} anchorId={lesson.id} position="before" />);
                           rows.splice(coreIndex + 2, 0, <SupplementaryRows key={`${lesson.id}-supp-after`} anchorId={lesson.id} position="after" />);
@@ -877,7 +879,7 @@ export default function CourseApp() {
                 <div className="video-shell">
                   <div className="video-frame">
                     {playerSrc
-                      ? <div ref={playerHostRef} className="youtube-player player-loading" aria-label={`${activeLesson.title} video player`} />
+                      ? <div ref={playerHostRef} className="youtube-player player-loading" role="group" aria-label={`${activeLesson.title} video player`} />
                       : <div className="youtube-player player-loading" role="status" aria-label={`Loading ${activeLesson.title}`} />}
                   </div>
                   {autoNextState && queuedNextLesson && (

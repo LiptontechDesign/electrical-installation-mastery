@@ -28,6 +28,7 @@
     "test:books": "node scripts/test-books.mjs",
     "test:curriculum": "node scripts/test-curriculum.mjs",
     "test:licensing": "node scripts/test-licensing.mjs",
+    "test:supplementary": "node scripts/test-supplementary.mjs",
     "test:recaps": "node scripts/test-module-recaps.mjs",
     "audit:course": "node scripts/audit-course-integrity.mjs"
   },

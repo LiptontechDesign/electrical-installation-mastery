@@ -91,7 +91,7 @@ function ReaderWorkspace({ initialReading }: { initialReading?: Reading }) {
 }
 
 export function BookWorkspace({ initialReading }: { initialReading?: Reading }) {
-  return <section className="page books-page" aria-label="Books"><ReaderSession initialReading={initialReading}/></section>;
+  return <section className="page books-page" aria-label="Books"><h1 className="sr-only">Electrical reference books and simulations</h1><ReaderSession initialReading={initialReading}/></section>;
 }
 
 function ReaderSession({ initialReading }: { initialReading?: Reading }) {

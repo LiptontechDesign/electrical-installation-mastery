@@ -129,7 +129,7 @@ export default function AssessmentWorkspace({ assessment, onSelect, onReview, on
         <nav className="assessment-question-list" aria-label={`${active.sectionTitle} questions`}>{sectionQuestions.map((question, index) => { const result = assessment.reviews[question.id]; return <button type="button" key={question.id} className={active.id === question.id ? 'active' : ''} aria-current={active.id === question.id ? 'true' : undefined} onClick={() => select(question)}><span>{result ? result.isCorrect ? <CheckCircle2 size={17}/> : <X size={17}/> : <Circle size={17}/>}</span><span><strong>{index + 1}. {question.title}</strong><small>{question.marks} {question.marks === 1 ? 'mark' : 'marks'} · {formatLabels[question.format]}</small></span>{assessment.bookmarkedQuestionIds.includes(question.id) ? <Bookmark size={14} fill="currentColor"/> : null}</button>; })}</nav>
       </aside>
 
-      <main className="assessment-question" aria-labelledby="assessment-question-title">
+      <section className="assessment-question" aria-labelledby="assessment-question-title">
         <div className="assessment-question-topline"><div><span>{active.id}</span><span>{formatLabels[active.format]}</span><span><Clock3 size={14}/>{active.expectedMinutes} min</span><span>{active.marks} {active.marks === 1 ? 'mark' : 'marks'}</span></div><button type="button" className={assessment.bookmarkedQuestionIds.includes(active.id) ? 'saved' : ''} aria-pressed={assessment.bookmarkedQuestionIds.includes(active.id)} onClick={() => onBookmark(active.id)}><Bookmark size={17} fill={assessment.bookmarkedQuestionIds.includes(active.id) ? 'currentColor' : 'none'}/>{assessment.bookmarkedQuestionIds.includes(active.id) ? 'Saved' : 'Save'}</button></div>
         <div className="assessment-question-copy">
           <span className={`source-status ${active.kenyaStatus}`}>{active.kenyaStatus === 'check-kenyan-requirement' ? <ShieldCheck size={15}/> : null} {statusLabels[active.kenyaStatus]}</span>
@@ -162,7 +162,7 @@ export default function AssessmentWorkspace({ assessment, onSelect, onReview, on
         </section> : null}
 
         <footer className="assessment-stepper"><button type="button" disabled={activeIndex <= 0} onClick={() => select(sectionQuestions[activeIndex - 1])}><ArrowLeft size={17}/> Previous</button><span>{activeIndex + 1} of {sectionQuestions.length} in {active.sectionTitle}</span><button type="button" disabled={activeIndex < 0 || activeIndex >= sectionQuestions.length - 1} onClick={() => select(sectionQuestions[activeIndex + 1])}>Next <ArrowRight size={17}/></button></footer>
-      </main>
+      </section>
     </div>
   </div>;
 }
