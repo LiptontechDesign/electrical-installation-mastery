@@ -17,8 +17,8 @@ function PowerFactorExercise() {
     <label htmlFor={id}>Target power factor <output>{target.toFixed(2)}</output></label>
     <input id={id} type="range" min="0.75" max="1" step="0.01" value={target} onChange={event => setTarget(Number(event.target.value))} />
     <svg viewBox="0 0 300 210" role="img" aria-label={`At 5 kW, reactive demand falls from ${number(result.beforeReactive)} to ${number(result.afterReactive)} kVAr. Real power stays fixed.`}>
-      <path d={`M40 175 H215 V${beforeY} Z`} fill="none" stroke="#a8b6af" strokeWidth="3" strokeDasharray="6 5" />
-      <path d={`M40 175 H215 V${afterY} Z`} fill="#dceadf" stroke="#476b52" strokeWidth="3" />
+      <path d={`M40 175 H215 V${beforeY} Z`} fill="none" stroke="var(--control-border)" strokeWidth="3" strokeDasharray="6 5" />
+      <path d={`M40 175 H215 V${afterY} Z`} fill="var(--surface-success)" stroke="var(--text-success)" strokeWidth="3" />
       <text x="94" y="199">P = 5 kW</text><text x="225" y="145">Q</text><text x="118" y={(175 + afterY) / 2 - 8}>S</text>
     </svg>
     <div className="connection-results" aria-live="polite"><span>Capacitor <strong>{number(result.compensation)} kVAr</strong></span><span>Supply current <strong>{number(result.beforeCurrent)} → {number(result.afterCurrent)} A</strong></span></div>

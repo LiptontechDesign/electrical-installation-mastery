@@ -64,10 +64,10 @@ export function RecapDiagram({chapterId}:{chapterId:string}){
  const diagonal=impedance?'Z':worked?'S ≈ 5.83 kVA':'S (VA)';
  return <figure className="recap-triangle">
    <svg viewBox="0 0 480 240" role="img" aria-label={`${impedance?'Inductive impedance':'Inductive power'} triangle: ${horizontal} horizontal, ${vertical} vertical, ${diagonal} hypotenuse.`}>
-    <path d="M45 190 H345 V10 Z" fill="#e6f4f6" stroke="#097a8e" strokeWidth="3"/>
-    <path d="M325 190 V170 H345" fill="none" stroke="#526b78" strokeWidth="2"/>
-    <path d="M95 190 A50 50 0 0 0 90 168" fill="none" stroke="#b96620" strokeWidth="2"/>
-    <text x="103" y="179" fill="#92501b">φ</text>
+    <path d="M45 190 H345 V10 Z" fill="var(--surface-selected)" stroke="var(--text-accent)" strokeWidth="3"/>
+    <path d="M325 190 V170 H345" fill="none" stroke="var(--muted)" strokeWidth="2"/>
+    <path d="M95 190 A50 50 0 0 0 90 168" fill="none" stroke="var(--copper-dark)" strokeWidth="2"/>
+    <text x="103" y="179" fill="var(--copper-dark)">φ</text>
     <text x="195" y="220" textAnchor="middle">{horizontal}</text>
     <text x="355" y="106" fontSize="14">{vertical}</text>
     <text x="181" y="87" textAnchor="middle" transform="rotate(-30.964 181 87)">{diagonal}</text>
