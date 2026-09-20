@@ -142,3 +142,6 @@
   .overview-support > summary { padding: 1rem; }
   .overview-support-body { padding: .5rem 1rem 1rem; }
 }
+.standard-topic > small {
+  color: var(--muted);
+}

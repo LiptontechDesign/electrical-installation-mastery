@@ -12,6 +12,12 @@
   --surface-selected: #e7f4f5;
   --surface-selected-border: #b8dcdf;
   --surface-selected-text: #075f69;
+  /* Paired roles: surface colors must never double as foreground colors. */
+  --text-accent: #075f69;
+  --surface-inverse: #0d1b2d;
+  --text-on-inverse: #ecf7fa;
+  --accent-on-inverse: #68dbe5;
+  --focus-ring: #08717c;
   --chrome-background: rgba(255,255,255,.93);
   --mobile-chrome-background: rgba(255,255,255,.97);
   --warm: #fffdf7;
@@ -20,7 +26,7 @@
   --navy-3: #14263b;
   --navy-4: #1b3149;
   --copper: #ff914d;
-  --copper-dark: #d96625;
+  --copper-dark: #a84714;
   --cyan: #43d3e2;
   --green: #43cb83;
   --amber: #f4c95d;
@@ -68,7 +74,7 @@ a { color: inherit; }
 svg { flex: 0 0 auto; }
 
 :focus-visible {
-  outline: 3px solid var(--cyan);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
 }
 

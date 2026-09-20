@@ -7,6 +7,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "test:theme": "node scripts/test-theme.mjs",
     "test:overview": "node scripts/test-overview.mjs",
     "test:assessment": "node scripts/test-assessment-bank.mjs",
     "test:assessment-ui": "node scripts/test-assessment-ui.mjs",
@@ -24,7 +25,7 @@
     "test:architecture": "node scripts/test-clean-architecture.mjs",
     "prepare:reader": "node scripts/prepare-reader.mjs",
     "predev": "node scripts/prepare-reader.mjs",
-    "prebuild": "npm run test:assessment-ui && node scripts/prepare-reader.mjs",
+    "prebuild": "npm run test:theme && npm run test:assessment-ui && node scripts/prepare-reader.mjs",
     "test:books": "node scripts/test-books.mjs",
     "test:curriculum": "node scripts/test-curriculum.mjs",
     "test:licensing": "node scripts/test-licensing.mjs",

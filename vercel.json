@@ -1,3 +1,3 @@
 {
-  "buildCommand": "node scripts/prepare-reader.mjs && npx next build"
+  "buildCommand": "npm run test:theme && node scripts/prepare-reader.mjs && npx next build"
 }
