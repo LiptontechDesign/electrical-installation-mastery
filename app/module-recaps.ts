@@ -8,9 +8,9 @@ import provenance from './module-recap-sources.json';
 
 const copy = {...foundationRecaps,...applicationRecaps};
 const sources: Record<string,{transcript:boolean;sha256:string|null;file:string|null}> = provenance;
-export const recapBooks = course.modules.map(module => {
+export function buildRecapBooks(currentCourse = course, currentSections = sectionsByModule) { return currentCourse.modules.map(module => {
   let from = 0;
-  const chapters = sectionsByModule[module.id].map((chapter,index) => {
+  const chapters = currentSections[module.id].filter(chapter => chapter.lessonIds.length > 0).map((chapter,index) => {
     const end = module.lessons.findIndex(lesson => lesson.id === chapter.throughLessonId);
     const chapterLessons=module.lessons.slice(from,end+1);
     const exact=chapter.authoredRecap;
@@ -31,7 +31,8 @@ export const recapBooks = course.modules.map(module => {
   });
   if(from!==module.lessons.length)throw new Error('Incomplete recap coverage: '+module.id);
   return {id:module.id,number:module.number,title:module.title,chapters,lessonCount:module.lessons.length};
-});
+}); }
+export const recapBooks = buildRecapBooks();
 export type RecapBook = typeof recapBooks[number];
 export type RecapChapter = RecapBook['chapters'][number];
 export const recapSafety = 'Revision from the supplied videos, not a stand-alone work procedure or proof of competence. Video-era UK rules and product examples are not current local approval: use the applicable requirements, manufacturer instructions and competent supervision for actual work.';

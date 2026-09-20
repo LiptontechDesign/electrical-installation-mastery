@@ -13,7 +13,7 @@ import {
   Upload, X, Zap,
 } from 'lucide-react';
 import course, { lessonStudyRole } from './course-curriculum';
-import { sectionsByModule } from './learning-sections';
+import { MoveLessonButton, useCourseOrder } from './course-order';
 import { ElectricalShockContext, LicensingOverview, LicensingStageGuide } from './licensing-ui';
 import { importPromotedWatched } from './integrated-progress';
 import { markVideoGroupWatched, recordVideoCompletion } from './flexible-progress';
@@ -67,14 +67,6 @@ declare global {
 }
 
 const STORAGE_KEY = 'electrical-mastery-progress-v1';
-const allLessons = course.modules.flatMap((module) => module.lessons);
-const lessonLookup = new Map(allLessons.map((lesson) => [lesson.id, lesson]));
-const lessonLocation = new Map(
-  course.modules.flatMap((module, moduleIndex) =>
-    module.lessons.map((lesson, lessonIndex) => [lesson.id, { module, moduleIndex, lessonIndex }] as const),
-  ),
-);
-const globalLessonIndex = new Map(allLessons.map((lesson,index)=>[lesson.id,index]));
 
 function percent(value: number, total: number) {
   return total ? Math.round((value / total) * 100) : 0;
@@ -118,6 +110,11 @@ const navigation = [
 ];
 
 export default function CourseApp() {
+  const { course, sectionsByModule } = useCourseOrder();
+  const allLessons = useMemo(() => course.modules.flatMap(m => m.lessons), [course]);
+  const lessonLookup = useMemo(() => new Map(allLessons.map(l => [l.id, l])), [allLessons]);
+  const lessonLocation = useMemo(() => new Map(course.modules.flatMap((module, moduleIndex) => module.lessons.map((lesson, lessonIndex) => [lesson.id, { module, moduleIndex, lessonIndex }] as const))), [course]);
+  const globalLessonIndex = useMemo(() => new Map(allLessons.map((l, i) => [l.id, i])), [allLessons]);
   const [learner, setLearner] = useState<LearnerState>(initialLearnerState);
   const [hydrated, setHydrated] = useState(false);
   const [view, setView] = useState<View>('home');
@@ -300,7 +297,7 @@ export default function CourseApp() {
     }, 250);
   };
 
-  }, [learner.activeLessonId, learner.autoNextEnabled, learner.reviewBeforeNext, autoNextState]);
+  }, [learner.activeLessonId, learner.autoNextEnabled, learner.reviewBeforeNext, autoNextState, lessonLocation]);
 
   const handleYouTubeScriptReady = () => {
     if (window.YT?.Player) {
@@ -359,7 +356,7 @@ export default function CourseApp() {
       setHydrated(true);
     }, 0);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [course.modules, hydrated, lessonLocation, lessonLookup]);
 
   useEffect(() => {
     if (view !== 'learn') return;
@@ -532,7 +529,7 @@ export default function CourseApp() {
       },
     });
     playerBindingRef.current = { iframe, player, deactivate: () => { destroyed = true; } };
-  }, [view, youtubeApiReady, playerSrc, activeLesson.id, activeLesson.durationSeconds, autoPlayLessonId]);
+  }, [view, youtubeApiReady, playerSrc, activeLesson.id, activeLesson.durationSeconds, autoPlayLessonId, allLessons]);
 
   const searchResults = useMemo(() => {
     const query = searchQuery.trim().toLocaleLowerCase();
@@ -561,7 +558,7 @@ export default function CourseApp() {
     const aliases = matchingTerms(query).filter(item => item.term.toLowerCase() === query).flatMap(item => item.aliases);
     return results.filter((result) => !query || [query,...aliases].some(value => result.searchable.toLocaleLowerCase().includes(value)))
       .sort((a,b) => Number(b.title.toLowerCase() === query) - Number(a.title.toLowerCase() === query)).slice(0, 36);
-  }, [searchQuery, learner.evidence]);
+  }, [searchQuery, learner.evidence, allLessons, lessonLocation, lessonLookup]);
 
   const cancelAutoNext = (announce = false) => {
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
@@ -646,6 +643,7 @@ export default function CourseApp() {
   };
 
   const chooseModule = (module: CourseModule) => {
+    if (!module.lessons.length) { setToast('This module is empty. Move a lesson here from another module.'); return; }
     loadLesson(module.lessons.find(lesson=>!completed.has(lesson.id))?.id??module.lessons[0].id);
   };
 
@@ -869,6 +867,7 @@ export default function CourseApp() {
 <article className="lesson-canvas">
                 {returnLesson && returnLesson.id !== activeLesson.id && <button type="button" className="secondary-button foundation-return" onClick={()=>{chooseLesson(returnLesson.id);setReturnLesson(null);}}><ChevronLeft size={18}/> Return to {lessonLookup.get(returnLesson.id)?.title}</button>}
                 <div className="lesson-topline">
+                  <MoveLessonButton key={activeLesson.id} lessonId={activeLesson.id} onMoved={moduleId => { setOpenModuleId(moduleId); setMapPath(course.modules.find(m => m.id === moduleId)!.path); }} />
                   <SupplementaryControls moduleId={location.module.id} anchorId={activeLesson.id} compact label="Add a supporting video after this lesson" />
                   <button className="mobile-module-button" type="button" onClick={openCourseMap} aria-expanded={moduleDrawerOpen}><Menu size={19} /> Course map</button>
                   <div className="breadcrumbs"><span>{location.module.path}</span><ChevronRight size={15} /><span>{location.module.title}</span></div>

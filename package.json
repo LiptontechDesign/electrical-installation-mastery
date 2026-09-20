@@ -30,6 +30,7 @@
     "test:curriculum": "node scripts/test-curriculum.mjs",
     "test:licensing": "node scripts/test-licensing.mjs",
     "test:supplementary": "node scripts/test-supplementary.mjs",
+    "test:course-order": "node scripts/test-course-order.mjs",
     "test:recaps": "node scripts/test-module-recaps.mjs",
     "audit:course": "node scripts/audit-course-integrity.mjs"
   },

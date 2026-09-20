@@ -1,0 +1,21 @@
+.move-lesson-button { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: var(--white); font-size: .78rem; }
+.move-lesson-button:hover { background: var(--surface-soft); color: var(--ink); }
+.move-lesson-dialog { width: min(620px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); overflow: auto; margin: auto; padding: 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); color: var(--ink); box-shadow: 0 20px 70px var(--shadow-color); }
+.move-lesson-dialog::backdrop { background: var(--overlay); }
+.move-dialog-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.move-dialog-heading h2 { margin: 6px 0 16px; }
+.move-lesson-dialog p { font-size: .88rem; line-height: 1.6; color: var(--muted); }
+.move-lesson-dialog .move-lesson-name { font-weight: 650; color: var(--ink); }
+.move-lesson-dialog fieldset { border: 0; padding: 0; margin: 20px 0; display: grid; gap: 14px; min-width: 0; }
+.move-lesson-dialog label { display: grid; gap: 7px; font-size: .85rem; font-weight: 600; }
+.move-lesson-dialog select { width: 100%; min-width: 0; min-height: 44px; padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); text-overflow: ellipsis; }
+.move-preview { padding: 16px; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 10px; font-size: .84rem; }
+.move-preview ol { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
+.move-preview li { padding: 9px; color: var(--muted); }
+.move-preview .moving { background: var(--surface-selected); color: var(--surface-selected-text); border-radius: 6px; font-weight: 600; }
+.move-dialog-actions { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin-top: 20px; }
+.move-dialog-actions button { min-height: 44px; padding: 10px 16px; }
+.move-error { color: var(--text-danger); background: var(--surface-danger); padding: 12px; border-radius: 8px; margin-top: 12px; }
+.move-lesson-dialog button:disabled { opacity: .55; cursor: not-allowed; }
+.move-lesson-dialog button:focus-visible, .move-lesson-dialog select:focus-visible, .move-lesson-button:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+@media (max-width: 600px) { .move-lesson-dialog { padding: 18px; } .move-dialog-actions { flex-wrap: wrap; } }

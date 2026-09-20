@@ -2,6 +2,7 @@
 import {useState} from 'react';
 import {ChevronDown, Info} from 'lucide-react';
 import course from './course-curriculum';
+import { useCourseOrder } from './course-order';
 import {pathLabels,type LicensingPath} from './licensing-curriculum';
 import Formula from './formula';
 import EngineeringValue from './engineering-value';
@@ -27,6 +28,7 @@ export function LicensingStageGuide({moduleId}:{moduleId:string}) {
 
 type Props = { initialPath?: 'C2' | 'C1' | null; completed: string[]; onLesson: (id: string) => void };
 export function LicensingOverview({initialPath=null,completed,onLesson}:Props) {
+  const { course } = useCourseOrder();
   const [exam,setExam]=useState<'C2'|'C1'|null>(initialPath);
   const done=new Set(completed);
   return <section className="licensing-overview" aria-label="Licensing pathways"><h2>Your learning progression</h2><p>Study the C2 foundation, extend it through C1, then explore specialist systems. Progress records watched videos. These study records are not an EPRA licence or proof of practical competence.</p><div className="licensing-paths">{(['C2','C1','Professional'] as LicensingPath[]).map(path=>{

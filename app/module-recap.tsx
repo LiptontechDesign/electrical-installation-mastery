@@ -1,8 +1,9 @@
 'use client';
 
-import {useEffect,useRef,useState} from 'react';
+import {useEffect,useMemo,useRef,useState} from 'react';
 import {ArrowLeft,ArrowRight,BookOpen,CheckCircle2,Play,List,Printer,X} from 'lucide-react';
-import {recapBooks,recapSafety,type RecapChapter} from './module-recaps';
+import {buildRecapBooks,recapSafety,type RecapChapter} from './module-recaps';
+import {useCourseOrder} from './course-order';
 import {useDialogFocus} from './use-dialog-focus';
 import {RecapLine,RecapDiagram} from './recap-math';
 import RecapVideo from './recap-video';
@@ -32,7 +33,8 @@ function Spread({chapter,printing=false}:{chapter:RecapChapter;printing?:boolean
 }
 
 export default function ModuleRecap({moduleId,onClose,completedLessonIds}:Props) {
-  const book=recapBooks.find(item=>item.id===moduleId)!;
+  const {course,sectionsByModule}=useCourseOrder();
+  const book=useMemo(()=>buildRecapBooks(course,sectionsByModule).find(item=>item.id===moduleId)!,[course,sectionsByModule,moduleId]);
   const [index,setIndex]=useState(0);
   const [contentsOpen,setContentsOpen]=useState(false);
   const [view,setView]=useState<'summary'|'notes'>('summary');
@@ -40,7 +42,7 @@ export default function ModuleRecap({moduleId,onClose,completedLessonIds}:Props)
   const dialog=useRef<HTMLElement>(null);
   const readingArea=useRef<HTMLDivElement>(null);
   const previousChapter=useRef(index);
-  const chapter=book.chapters[index];
+  const chapter=book.chapters[Math.min(index,book.chapters.length-1)];
   useDialogFocus(dialog,true);
 
   useEffect(()=>{

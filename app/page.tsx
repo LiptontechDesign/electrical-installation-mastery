@@ -1,6 +1,7 @@
 import CourseApp from './course-app';
 import { SupplementaryProvider } from './supplementary-videos';
+import { CourseOrderProvider } from './course-order';
 
 export default function Home() {
-  return <SupplementaryProvider><CourseApp /></SupplementaryProvider>;
+  return <CourseOrderProvider><SupplementaryProvider><CourseApp /></SupplementaryProvider></CourseOrderProvider>;
 }

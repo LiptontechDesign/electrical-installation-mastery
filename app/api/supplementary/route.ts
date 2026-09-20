@@ -1,5 +1,7 @@
 import { get, put } from '@vercel/blob';
 import course from '../../course-curriculum';
+import { courseForOrder, relocateSupportingVideos } from '../../course-order-model';
+import { readCourseOrder } from '../../server/course-order-store';
 import { withSupplementaryDefaults } from '../../supplementary-defaults';
 import { limitedJson, sameOrigin, privateHeaders } from '../../server/reader-auth';
 import { confirmationPhrase, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from '../../supplementary-model';
@@ -66,7 +68,9 @@ export async function POST(request: Request) {
     // Re-read immediately before every change. We intentionally do not reject a
     // stale client revision: edits are applied to the latest catalogue and the
     // most recent successful save wins.
-    const { state, promoted } = await read();
+    const { state: storedState, promoted } = await read();
+    const { course: currentCourse } = courseForOrder((await readCourseOrder()).order);
+    const state = { ...storedState, videos: relocateSupportingVideos(storedState.videos, currentCourse) };
     const existing = state.videos.find(v => v.id === body.id);
     if (action !== 'add' && !existing) return reply({ error: 'Video not found. Refresh the shared list and try again.' }, 404);
 
@@ -75,7 +79,7 @@ export async function POST(request: Request) {
       const videoId = typeof body.url === 'string' ? youtubeId(body.url) : null;
       const title = typeof body.title === 'string' ? body.title.trim() : '';
       const instructor = typeof body.instructor === 'string' ? body.instructor.trim() : '';
-      const courseModule = course.modules.find(m => m.id === body.moduleId);
+      const courseModule = currentCourse.modules.find(m => m.id === body.moduleId);
       const anchorId = typeof body.anchorId === 'string' ? body.anchorId : '';
       const lessonAnchor = courseModule?.lessons.some(lesson => lesson.id === anchorId);
       const supplementaryAnchor = state.videos.find(candidate =>

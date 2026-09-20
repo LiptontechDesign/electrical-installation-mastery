@@ -1,7 +1,8 @@
 'use client';
-import { Fragment, createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
+import { Fragment, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { PlayCircle, Plus, Archive, X, CheckCircle2 } from 'lucide-react';
-import course from './course-curriculum';
+import { useCourseOrder } from './course-order';
+import { relocateSupportingVideos } from './course-order-model';
 import { withSupplementaryDefaults } from './supplementary-defaults';
 import { ElectricalShockContext } from './licensing-ui';
 import { useDialogFocus } from './use-dialog-focus';
@@ -13,7 +14,9 @@ type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
 const SupplementaryContext = createContext<Context | null>(null);
 const empty: SupplementaryState = withSupplementaryDefaults({ version: 1, revision: 0, videos: [] });
 export function SupplementaryProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState(empty);
+  const { course } = useCourseOrder();
+  const [storedState, setState] = useState(empty);
+  const state = useMemo(() => ({ ...storedState, videos: relocateSupportingVideos(storedState.videos, course) }), [storedState, course]);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -138,7 +141,8 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
   ) : [];
   const anchorIsSupplementary = supplementaryTargets.some(video => video.id === editor?.anchorId);
   return <SupplementaryContext.Provider value={{ videos: state.videos, watched, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
-    const last = course.modules.find(m => m.id === moduleId)!.lessons.at(-1)!.id;
+    const last = course.modules.find(m => m.id === moduleId)?.lessons.at(-1)?.id;
+    if (!last) return;
     editedFields.current = { title: false, instructor: false };
     setEditor({ action: 'add', revision: state.revision, moduleId, anchorId: anchorId ?? last, position: 'after', url: '', title: '', instructor: '' }); setConfirmation(''); setNotice('');
   }, archive: moduleId => { setArchiveModule(moduleId); setNotice(''); } }}>
