@@ -3,8 +3,8 @@ import type { SourceReference } from './overview-models';
 export const c209SourceReferences: SourceReference[] = [
   {
     id: 'course-c2-fault-finding', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Fault Finding',
-    section: 'Module 09 learning sections, fault-diagnosis lesson guides and thermal/current diagnostic teaching', authority: 'supporting-explanation',
+    section: 'Module 09 continuity/polarity/open-circuit faults, insulation/RCD/leakage faults, and load-current/functional diagnosis; thermal concepts are wider C1-linked knowledge', authority: 'supporting-explanation',
     status: 'verified', kenyaStatus: 'check-kenyan-requirement',
-    verification: { evidence: 'Current Module 09 neutral learning sections plus the linked ring, insulation, polarity, borrowed-neutral, leakage-current, load-current and thermal-diagnostic teaching were audited for the C2-09 Overview implementation.', verifiedAt: '2026-09-13' },
+    verification: { evidence: 'Three fault-family groups match all eleven canonical C2-09 lessons exactly once. Thermal-imaging lesson p16-l06 remains in C1-10 and is only cross-referenced as wider knowledge.', verifiedAt: '2026-09-20' },
   },
 ];

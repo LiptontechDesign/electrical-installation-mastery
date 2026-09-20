@@ -22,7 +22,7 @@ export const c206TermPatches: Record<string, Partial<CanonicalTerm>> = {
     explainAloud: 'Why must Ib be justified from the load before In and the cable are selected?',
   },
   in: {
-    ...reviewed(['p06-l04','p06-l10'], ['ib','iz','mcb','fuse','glossary-breaking-capacity'], ['overload-coordination']),
+    ...reviewed(['p06-l04','p06-l10','course-8Z255dd78H4'], ['ib','iz','mcb','fuse','glossary-breaking-capacity'], ['overload-coordination']),
     sourceIds: ['course-vocabulary','course-c2-design','osg-protection'],
     standardsMeaning: 'In is the protective-device rated current or selected current setting relevant to the overload-coordination check.',
     plainMeaning: 'In belongs to the protective device. It must carry the design load while still coordinating with the cable and the rest of the protection requirements.',
@@ -30,7 +30,7 @@ export const c206TermPatches: Record<string, Partial<CanonicalTerm>> = {
     explainAloud: 'What three separate questions must be answered before increasing a protective-device current rating?',
   },
   iz: {
-    ...reviewed(['p06-l04','p06-l10'], ['ib','in','tabulated-current-capacity','correction-factor','installation-method'], ['overload-coordination','required-tabulated-capacity']),
+    ...reviewed(['p06-l04','p06-l10','course-8Z255dd78H4'], ['ib','in','tabulated-current-capacity','correction-factor','installation-method'], ['overload-coordination','required-tabulated-capacity']),
     sourceIds: ['course-vocabulary','course-c2-cables','course-c2-design','osg-current-capacity-voltage-drop'],
     standardsMeaning: 'Iz is the current-carrying capacity of the selected conductor for the actual installation conditions after applicable corrections are considered.',
     plainMeaning: 'Iz is the usable cable capacity in the real route, not a memorized number attached to conductor size.',
@@ -38,7 +38,7 @@ export const c206TermPatches: Record<string, Partial<CanonicalTerm>> = {
     explainAloud: 'Distinguish It from Iz and explain why the route affects the second value.',
   },
   'voltage-drop': {
-    ...reviewed(['p06-l07','p06-l08'], ['ib','tabulated-current-capacity','installation-method'], ['single-phase-voltage-drop','voltage-drop-percent']),
+    ...reviewed(['p06-l07','p06-l08','p06-l09'], ['ib','tabulated-current-capacity','installation-method'], ['single-phase-voltage-drop','voltage-drop-percent']),
     sourceIds: ['course-vocabulary','course-c2-cables','course-c2-design','osg-current-capacity-voltage-drop'],
     practicalExample: 'At the same current and conductor type, increasing circuit length increases voltage drop; a cable that passes the thermal check may still need a larger section for voltage-drop performance.',
     explainAloud: 'Why can a circuit pass Ib/In/Iz and still require a different cable?',

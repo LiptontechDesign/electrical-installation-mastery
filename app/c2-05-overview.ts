@@ -116,7 +116,7 @@ export const c205TermPatches: Record<string, Partial<CanonicalTerm>> = {
     practicalExample: 'Protective bonding connects relevant extraneous-conductive-parts into the equipotential protective arrangement; it does not replace the final-circuit CPC.',
   },
   'glossary-discrimination-selectivity': {
-    ...reviewed(['p05-l14'], ['selectivity','mcb','mccb','fuse']), sourceIds: ['course-vocabulary','course-c2-protection'],
+    ...reviewed(['p05-l14','course-V6WR_TBf1AU'], ['selectivity','mcb','mccb','fuse']), sourceIds: ['course-vocabulary','course-c2-protection'],
   },
 };
 
@@ -171,13 +171,13 @@ export const c205AdditionalTerms: PreservedCanonicalTerm[] = [
     sourceIds: ['course-c2-protection','osg-protection','osg-rcd-operation'], relatedTermIds: ['rcd','rccb','rcbo'], practicalExample: 'Before selecting an RCD for electronic loads, identify the residual-current waveform characteristics and any manufacturer requirement rather than defaulting to a familiar type.', explainAloud: 'Why can two RCDs with the same IΔn rating still have different suitability for a load?',
   }),
   newTerm('selectivity', 'Selectivity', ['selectivity','discrimination'], 'Selectivity is coordination intended so the protective device nearest the fault operates without unnecessary operation of upstream devices, over the verified current/time range of the device combination.', 'The smallest faulted part should disconnect where the verified coordination permits, instead of blacking out healthy upstream circuits.', 'Protection', {
-    sourceIds: ['course-c2-protection'], lessonIds: ['p05-l14'], relatedTermIds: ['glossary-discrimination-selectivity','mcb','mccb','fuse'], practicalExample: 'A socket-circuit fault should not unnecessarily trip the floor/main device if the exact device combination is selectively coordinated at the available fault level.', explainAloud: 'Why can an ampere-rating ratio suggest selectivity but not prove it?',
+    sourceIds: ['course-c2-protection'], lessonIds: ['p05-l14','course-V6WR_TBf1AU'], relatedTermIds: ['glossary-discrimination-selectivity','mcb','mccb','fuse'], practicalExample: 'A socket-circuit fault should not unnecessarily trip the floor/main device if the exact device combination is selectively coordinated at the available fault level.', explainAloud: 'Why can an ampere-rating ratio suggest selectivity but not prove it?',
   }),
   newTerm('transient-overvoltage', 'Transient overvoltage', ['surge','transient overvoltage'], 'A transient overvoltage is a short-duration voltage rise that can stress or damage equipment and may arise from switching, lightning-related effects or other network events.', 'It is a brief voltage spike/surge rather than sustained overload current.', 'Protection', {
     sourceIds: ['course-c2-protection','osg-protection'], lessonIds: ['course-CNiLNvBLopI','p05-spd'], relatedTermIds: ['spd'], practicalExample: 'An SPD is selected and connected to limit transient voltage at the protected installation/equipment within its specified arrangement.', explainAloud: 'Distinguish a transient overvoltage from an overload current.',
   }),
   newTerm('afdd', 'Arc fault detection device (AFDD)', ['afdd','arc fault detection'], 'An AFDD is a protective device intended to detect specified arc-fault signatures and disconnect under its product-standard/application conditions; it does not replace the other required overcurrent, residual-current or fault-protection functions unless combined and rated for them.', 'It looks for dangerous arcing patterns that ordinary current-magnitude protection may not identify in the same way.', 'Protection', {
-    sourceIds: ['course-c2-protection','osg-protection'], relatedTermIds: ['mcb','rcbo','spd'], practicalExample: 'AFDD application is a current-standards selection question; awareness of the function does not justify fitting one everywhere without checking the actual requirement/product arrangement.', explainAloud: 'What hazard does an AFDD target, and why does that not make it a replacement for an MCB/RCD/SPD?',
+    sourceIds: ['course-c2-protection','osg-protection'], lessonIds: ['course-lIit5k8QVj8'], relatedTermIds: ['mcb','rcbo','spd'], practicalExample: 'AFDD application is a current-standards selection question; awareness of the function does not justify fitting one everywhere without checking the actual requirement/product arrangement.', explainAloud: 'What hazard does an AFDD target, and why does that not make it a replacement for an MCB/RCD/SPD?',
   }),
 ];
 

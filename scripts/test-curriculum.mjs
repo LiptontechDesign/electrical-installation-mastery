@@ -5,6 +5,7 @@ import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { act, create } from 'react-test-renderer';
 import { renderToString } from 'katex';
+import { assertC2Reorganization } from './assert-c2-reorganization.mjs';
 
 await mkdir('work/curriculum-tests', { recursive: true });
 await build({ entryPoints: ['app/course-curriculum.ts','app/course-extension-data.ts','app/lesson-guides.ts','app/connection-models.ts','app/lesson-connections-data.ts','app/lesson-connection.tsx','app/practice-data.ts','app/knowledge-graph.ts'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
@@ -58,8 +59,7 @@ await act(async()=>tree.root.findByType('button').props.onClick());
 assert.equal(tree.root.findByType('button').props['aria-pressed'],true);
 assert.ok(JSON.stringify(tree.toJSON()).includes('reversed'));
 await act(async()=>tree.unmount());
-const baseline=JSON.parse(await readFile('scripts/course-baseline.json','utf8'));
-assert.deepEqual(course.modules.map(m=>({id:m.id,path:m.path,lessons:m.lessons.map(l=>({id:l.id,videoId:l.videoId,title:l.title,durationSeconds:l.durationSeconds}))})),baseline,'All course identities, ordering and source videos preserved');
+assertC2Reorganization(course);
 for(const lesson of lessons)assert.ok(lessonGuides[lesson.id]);
 assert.equal(course.durationSeconds,course.modules.reduce((sum,m)=>sum+m.durationSeconds,0));
 console.log('PASS: 296 unchanged lessons, 25 modules, preserved formulas, terminology and interactive connections.');

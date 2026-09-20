@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 import { createElement as h } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { assertC2Reorganization, c2StageOrder } from './assert-c2-reorganization.mjs';
 await build({entryPoints:['app/course-curriculum.ts','app/licensing-ui.tsx','app/learning-sections.ts','app/integrated-progress.ts','app/supplementary-defaults.ts'],outdir:'work/licensing-check',bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic'});
 const {default:course}=await import('../work/licensing-check/course-curriculum.js');
 const {LicensingOverview,LicensingStageGuide}=await import('../work/licensing-check/licensing-ui.js');
@@ -9,8 +10,12 @@ const {sectionsByModule,learningSections}=await import('../work/licensing-check/
 const {importPromotedWatched}=await import('../work/licensing-check/integrated-progress.js');
 const {withSupplementaryDefaults}=await import('../work/licensing-check/supplementary-defaults.js');
 assert.deepEqual(course.modules.map(m=>m.path),[...Array(9).fill('C2'),...Array(10).fill('C1'),...Array(6).fill('Professional')]);
-assert.equal(learningSections.length,82);
-assert.equal(new Set(learningSections.map(s=>s.id)).size,82);
+assertC2Reorganization(course);
+assert.equal(learningSections.length,78);
+assert.equal(new Set(learningSections.map(s=>s.id)).size,78);
+for(const [moduleId,expected] of Object.entries(c2StageOrder)) {
+ assert.deepEqual(sectionsByModule[moduleId].map(({title,lessonIds})=>({title,lessonIds})),expected);
+}
 for(const stage of course.modules){
  const sections=sectionsByModule[stage.id];
  assert.deepEqual(sections.flatMap(s=>s.lessonIds),stage.lessons.map(l=>l.id));

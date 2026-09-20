@@ -25,6 +25,15 @@ const context = {
 assert.deepEqual(validateOverview(overviewData, context), []);
 assert.deepEqual(validateOverview(JSON.parse(JSON.stringify(overviewData)), context), [], 'JSON transport preserves validity');
 assert.equal(electricalTerms.length, overviewData.terms.length);
+for (const [termId, lessonIds] of Object.entries({
+  afdd: ['course-lIit5k8QVj8'],
+  selectivity: ['p05-l14', 'course-V6WR_TBf1AU'],
+  'glossary-discrimination-selectivity': ['p05-l14', 'course-V6WR_TBf1AU'],
+  'voltage-drop': ['p06-l07', 'p06-l08', 'p06-l09'],
+})) {
+  const term = overviewData.terms.find(item => item.id === termId);
+  for (const lessonId of lessonIds) assert.ok(term?.lessonIds.includes(lessonId), `${termId} provenance includes ${lessonId}`);
+}
 
 // Preserve pre-refactor vocabulary identity while allowing canonical meanings to improve.
 const baseline = execFileSync('git', ['show','4b92f3691781d7738ef48e415fb9b8efeb23539f:app/knowledge-graph.ts'], {encoding:'utf8'});
@@ -70,9 +79,9 @@ const published = [
   ['c2-02-installation-architecture-drawings-safety','C2-02','module-02',3,'c2-01-electrical-foundations'],
   ['c2-03-single-phase-wiring-accessories','C2-03','module-03',6,'c2-02-installation-architecture-drawings-safety'],
   ['c2-04-cable-systems-containment-installation-methods','C2-04','module-04',4,'c2-03-single-phase-wiring-accessories'],
-  ['c2-05-faults-protective-devices-earthing-ads','C2-05','module-05',6,'c2-04-cable-systems-containment-installation-methods'],
-  ['c2-06-single-phase-circuit-design','C2-06','module-06',4,'c2-05-faults-protective-devices-earthing-ads'],
-  ['c2-07-consumer-units-complete-installation','C2-07','c2-boards',3,'c2-06-single-phase-circuit-design'],
+  ['c2-05-faults-protective-devices-earthing-ads','C2-05','module-05',4,'c2-04-cable-systems-containment-installation-methods'],
+  ['c2-06-single-phase-circuit-design','C2-06','module-06',3,'c2-05-faults-protective-devices-earthing-ads'],
+  ['c2-07-consumer-units-complete-installation','C2-07','c2-boards',2,'c2-06-single-phase-circuit-design'],
   ['c2-08-inspection-testing-commissioning','C2-08','module-08',3,'c2-07-consumer-units-complete-installation'],
   ['c2-09-fault-finding','C2-09','module-09',3,'c2-08-inspection-testing-commissioning'],
   ['c1-01-three-phase-fundamentals','C1-01','c1-fundamentals',1,'c2-09-fault-finding'],

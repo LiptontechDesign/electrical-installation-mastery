@@ -3,9 +3,9 @@ import type { SourceReference } from './overview-models';
 export const c205SourceReferences: SourceReference[] = [
   {
     id: 'course-c2-protection', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Faults, Protective Devices, Earthing and ADS',
-    section: 'Module 05 learning sections, lesson guides, integrated protective-device videos and authored protection bridges', authority: 'supporting-explanation',
+    section: 'Module 05: overcurrent protection; earth fault, earthing, ADS and residual-current protection; special protection; selection and coordination', authority: 'supporting-explanation',
     status: 'verified', kenyaStatus: 'check-kenyan-requirement',
-    verification: { evidence: 'Current Module 05 neutral learning sections plus fault, fuse, MCB, RCD, MCCB, earthing, ADS, Zs, selectivity and SPD teaching were audited for the C2-05 Overview implementation.', verifiedAt: '2026-09-13' },
+    verification: { evidence: 'Four Module 05 learning sections align with canonical lessons, including AFDD course-lIit5k8QVj8 and selective coordination course-V6WR_TBf1AU. Device functions remain distinct; testing procedures remain in C2-08.', verifiedAt: '2026-09-20' },
   },
   {
     id: 'osg-protection', sourceType: 'on-site-guide', title: 'IET On-Site Guide', organisation: 'IET',

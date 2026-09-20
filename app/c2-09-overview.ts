@@ -125,6 +125,7 @@ export const c209Sections: OverviewSection[] = [{
   ],
   pages: {
     'system-model': [
+      { kind: 'prose', title: 'Classify the fault family before choosing the test', paragraphs: ['The lesson groups progress from ring, continuity, polarity and open-circuit paths to insulation, cable deterioration, RCD and leakage faults, then load-current and functional diagnosis.', 'Thermal imaging remains wider cross-referenced knowledge from C1-10, not a canonical C2-09 video group.'], sourceIds: ['course-c2-fault-finding'] },
       { kind: 'flow', title: 'Evidence-led fault-finding loop', steps: ['Define the symptom precisely', 'Identify hazards and establish the required safe state', 'Confirm the symptom without creating extra risk', 'Draw/trace the expected circuit path', 'List plausible causes ranked by evidence', 'Choose the safest test that best separates the hypotheses', 'Sectionalize and narrow the fault', 'Repair the proven cause', 'Repeat all tests affected by the repair', 'Functional check and document final condition'], sourceIds: ['course-c2-fault-finding','course-c2-testing'] },
     ],
     definitions: [
