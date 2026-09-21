@@ -33,12 +33,13 @@ export function CourseOrderProvider({ children }: { children: ReactNode }) {
   }, []);
   async function save(move: LessonMove) {
     ++sequence.current;
+    let reconciled = false;
     try {
       const response = await fetch('/api/course-order', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...move, revision: order.revision }) });
       const data = await response.json();
-      if (!response.ok) { if (data.order) setOrder(parseOrder(data.order)); throw new Error(data.error); }
+      if (!response.ok) { if (data.order) { setOrder(parseOrder(data.order)); reconciled = true; } throw new Error(data.error); }
       setOrder(parseOrder(data)); setError(''); return true;
-    } catch (error) { setError(error instanceof Error ? error.message : 'The move could not be saved.'); return false; }
+    } catch (error) { if (!reconciled) await refresh(); setError(error instanceof Error ? error.message : 'The move could not be saved.'); return false; }
   }
   const resolved = useMemo(() => courseForOrder(order), [order]);
   return <CourseOrderContext.Provider value={{ ...resolved, order, ready, error, refresh, save }}>{children}</CourseOrderContext.Provider>;

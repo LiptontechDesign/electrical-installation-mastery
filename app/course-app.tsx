@@ -22,7 +22,8 @@ import { initialLearnerState, clampState, type LearnerState } from './learner-st
 import { lessonGuides } from './lesson-guides';
 
 import LessonOverview, { type LessonWorkspaceMode } from './lesson-overview';
-import { SupplementaryControls, SupplementaryRows } from './supplementary-videos';
+import { SupplementaryControls } from './supplementary-videos';
+import { CourseDragProvider, CourseDragModule, CourseDragSection, CourseDragPath, CourseSectionRows } from './course-drag-context';
 import type { Reading } from './books-data';
 import { appendEvidence, isProgressBackup, calendarDay, type EvidenceInput } from './tutor-model';
 import { electricalTerms, matchingTerms } from './knowledge-graph';
@@ -125,6 +126,7 @@ export default function CourseApp() {
   const [openModuleId, setOpenModuleId] = useState(course.modules[0].id);
   const [mapPath, setMapPath] = useState<CourseModule['path']>(course.modules[0].path);
   const [courseMapCollapsed, setCourseMapCollapsed] = useState(false);
+  const [dragOpenModuleIds, setDragOpenModuleIds] = useState<string[]>([]);
   const [moduleDrawerOpen, setModuleDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -388,6 +390,7 @@ export default function CourseApp() {
         window.setTimeout(() => searchInputRef.current?.focus(), 0);
       }
       if (event.key === 'Escape') {
+        if (event.defaultPrevented || document.querySelector('.course-drag-shell[data-moving="true"]')) return;
         setSearchOpen(false); setSelectedTerm(null);
         setSettingsOpen(false);
         setConfirmReset(false);
@@ -632,6 +635,7 @@ export default function CourseApp() {
   };
 
   const closeCourseMap = () => {
+    if (document.querySelector('.course-drag-shell[data-moving="true"]')) return;
     setModuleDrawerOpen(false);
     if (!window.matchMedia('(max-width: 1180px)').matches) setCourseMapCollapsed(true);
   };
@@ -828,41 +832,37 @@ export default function CourseApp() {
           )}
           {view === 'learn' && (
             <div className={`learn-page ${courseMapCollapsed ? 'course-map-collapsed' : ''}`}>
-              <aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
+              <CourseDragProvider onLocate={moduleId => { setMapPath(course.modules.find(m => m.id === moduleId)!.path); setOpenModuleId(moduleId); }}><aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
                 <div className="drawer-heading"><div><span className="eyebrow neutral">Video course</span><h2>Course map</h2></div><button type="button" onClick={closeCourseMap} aria-label="Close course map"><X size={21} /></button></div>
                 <div className="course-path-switcher" role="group" aria-label="Choose learning pathway">
-                  {(['C2','C1','Professional'] as const).map(path=><button key={path} type="button" className={mapPath===path?'active':''} aria-pressed={mapPath===path} onClick={()=>chooseMapPath(path)}>{path==='Professional'?'Advanced':path}</button>)}
+                  {(['C2','C1','Professional'] as const).map(path=><CourseDragPath key={path} id={path} selected={mapPath===path} onSelect={()=>chooseMapPath(path)}>{path==='Professional'?'Advanced':path}</CourseDragPath>)}
                 </div>
                 {browsingControls}
                 <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required videos watched</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>
                 <nav aria-label="Course module and lesson navigation">
                   {course.modules.filter(module=>module.path===mapPath).map((module) => {
-                    const isOpen = openModuleId === module.id;
+                    const isOpen = openModuleId === module.id || dragOpenModuleIds.includes(module.id);
                     const done = moduleCompletedCount(module);
                     return (
-                      <section className={`module-accordion ${isOpen ? 'open' : ''}`} key={module.id}>
-                        <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => setOpenModuleId(isOpen ? '' : module.id)} aria-expanded={isOpen}>
+                      <CourseDragModule key={module.id} id={module.id} expanded={isOpen} onExpand={() => setDragOpenModuleIds(ids => [...new Set([...ids, module.id])])}><section className={`module-accordion ${isOpen ? 'open' : ''}`}>
+                        <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => { setDragOpenModuleIds([]); setOpenModuleId(isOpen ? '' : module.id); }} aria-expanded={isOpen}>
                           <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos watched</small></span><ChevronDown size={18} />
                         </button>
                         <div className="module-actions">
                           <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
                           {isOpen&&<button type="button" className="bulk-watch-action" aria-label={`Mark every video in module ${pad(module.number)} as watched`} data-tooltip={`Mark every video in module ${pad(module.number)} as watched`} onClick={()=>markGroupWatched(module.lessons.map(lesson=>lesson.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/></button>}
                         </div>
-                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><details className="course-topic-group" key={group.id} open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button><SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} /></div>{group.lessonIds.flatMap((lessonId) => {
+                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button>{group.lessonIds.length > 0 && <SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />}</div><CourseSectionRows sectionId={group.id} renderCore={(lessonId) => {
                           const lesson=lessonLookup.get(lessonId)!;
                           const isActiveLesson=activeLesson.id===lesson.id;
-                          const rows=[<button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" key={lesson.id} className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Current</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>];
-                          const coreIndex = rows.findIndex(row => row.key === lesson.id);
-                          rows.splice(coreIndex, 0, <SupplementaryRows key={`${lesson.id}-supp-before`} anchorId={lesson.id} position="before" />);
-                          rows.splice(coreIndex + 2, 0, <SupplementaryRows key={`${lesson.id}-supp-after`} anchorId={lesson.id} position="after" />);
-                          return rows;
-                        })}</details>)}<button type="button" className="module-recap-link" onClick={()=>openModuleRecap(module.id)}><BookOpen size={19}/><span><strong>Module recap book</strong><small>Key ideas · relationships · source videos</small></span><ChevronRight size={17}/></button></div>}
-                      </section>
+                          return <button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Current</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>;
+                        }} /></details></CourseDragSection>)}<button type="button" className="module-recap-link" onClick={()=>openModuleRecap(module.id)}><BookOpen size={19}/><span><strong>Module recap book</strong><small>Key ideas · relationships · source videos</small></span><ChevronRight size={17}/></button></div>}
+                      </section></CourseDragModule>
                     );
                   })}
                 </nav>
-              </aside>
-              {moduleDrawerOpen && <button className="drawer-scrim" type="button" aria-label="Close course map" onClick={() => setModuleDrawerOpen(false)} />}
+              </aside></CourseDragProvider>
+              {moduleDrawerOpen && <button className="drawer-scrim" type="button" aria-label="Close course map" onClick={closeCourseMap} />}
 
 <article className="lesson-canvas">
                 {returnLesson && returnLesson.id !== activeLesson.id && <button type="button" className="secondary-button foundation-return" onClick={()=>{chooseLesson(returnLesson.id);setReturnLesson(null);}}><ChevronLeft size={18}/> Return to {lessonLookup.get(returnLesson.id)?.title}</button>}

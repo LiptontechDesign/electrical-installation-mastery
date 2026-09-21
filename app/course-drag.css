@@ -1,0 +1,35 @@
+.course-drag-shell { display: contents; }
+.course-path-target { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.course-drag-notice:empty { display: none; }
+.course-draggable-row { display: flex; position: relative; align-items: stretch; border-radius: 9px; }
+.course-draggable-row > button:not(.course-drag-handle) { flex: 1; min-width: 0; }
+.accordion-lessons .course-drag-handle { display: flex; width: 36px; min-width: 36px; min-height: 44px; align-items: center; justify-content: center; padding: 0; color: var(--muted); cursor: grab; touch-action: pan-y; border-radius: 6px; }
+.accordion-lessons .course-drag-handle:hover, .accordion-lessons .course-drag-handle:focus-visible { color: var(--ink); background: var(--surface-soft); outline: 2px solid var(--cyan); outline-offset: -2px; }
+.accordion-lessons .course-drag-handle:active { cursor: grabbing; background: var(--surface-soft); }
+.accordion-lessons .course-drag-handle:disabled { opacity: .35; cursor: default; }
+.course-draggable-row.supplementary { background: color-mix(in srgb, var(--cyan) 4%, transparent); }
+.course-draggable-row.is-moving { background: var(--surface-soft); outline: 1px dashed var(--cyan); outline-offset: -2px; }
+.course-draggable-row.is-moving > button { opacity: .35; }
+.course-drag-section.target > details, .course-drag-module.target { outline: 2px solid var(--cyan); outline-offset: -2px; border-radius: 8px; }
+.course-drag-section > .course-topic-group { overflow: visible; }
+.course-insertion-line { position: absolute; top: 0; left: 5px; right: 5px; height: 3px; background: var(--cyan); z-index: 3; border-radius: 3px; pointer-events: none; }
+.course-insertion-line::before { content: ''; position: absolute; left: -3px; top: -3px; width: 9px; height: 9px; border: 2px solid var(--cyan); border-radius: 50%; background: var(--white); }
+.course-insertion-line > span { position: absolute; right: 2px; top: -10px; background: var(--surface-inverse); color: var(--text-on-inverse); padding: 2px 7px; border-radius: 4px; font-size: 10px; line-height: 16px; }
+.course-section-drop-end { position: relative; min-height: 22px; padding: 3px 10px; font-size: 10px; color: var(--muted); }
+.course-drag-overlay { display: flex; align-items: center; gap: 10px; padding: 12px; width: 100%; background: var(--white); color: var(--ink); border: 1px solid var(--cyan); border-radius: 9px; box-shadow: var(--shadow-lg); cursor: grabbing; pointer-events: none; }
+.course-drag-overlay > span { min-width: 0; }
+.course-drag-overlay strong { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 13px; }
+.course-drag-overlay small { display: block; margin-top: 4px; font-size: 11px; color: var(--muted); }
+.course-drag-overlay.supplementary { border-style: dashed; }
+.course-drag-title { display: flex; align-items: center; gap: 10px; }
+.course-drag-route { border: 1px solid var(--line); background: var(--surface-soft); border-radius: 10px; padding: 16px; }
+.course-drag-route small { display: block; color: var(--muted); font-size: 10px; letter-spacing: .12em; }
+.course-drag-route p { margin: 5px 0 12px; }
+.course-drag-route > svg { margin-bottom: 10px; color: var(--muted); }
+.course-drag-route strong { font-size: 13px; }
+.course-drag-dialog { position: fixed; inset: 0; margin: auto; width: min(620px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; }
+.course-drag-notice:not(:empty), .course-drag-error { position: fixed; left: 18px; bottom: 18px; z-index: 150; max-width: min(370px, calc(100vw - 36px)); border: 1px solid var(--line); border-radius: 9px; padding: 10px 14px; background: var(--white); color: var(--ink); font-size: 12px; box-shadow: var(--shadow-sm); pointer-events: none; }
+.course-drag-error { bottom: 110px; color: var(--copper); }
+.course-drag-shell[data-moving="true"] .course-map { overscroll-behavior: contain; overflow-anchor: none; }
+@media (pointer: coarse) { .accordion-lessons .course-drag-handle { width: 44px; min-width: 44px; } }
+@media (prefers-reduced-motion: reduce) { .course-draggable-row, .course-insertion-line { animation: none !important; transition: none !important; } }

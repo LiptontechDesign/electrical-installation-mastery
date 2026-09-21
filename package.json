@@ -31,10 +31,13 @@
     "test:licensing": "node scripts/test-licensing.mjs",
     "test:supplementary": "node scripts/test-supplementary.mjs",
     "test:course-order": "node scripts/test-course-order.mjs",
+    "test:course-drag": "node scripts/test-course-drag.mjs",
+    "test:course-drag-browser": "node scripts/test-course-drag-browser.mjs",
     "test:recaps": "node scripts/test-module-recaps.mjs",
     "audit:course": "node scripts/audit-course-integrity.mjs"
   },
   "dependencies": {
+    "@dnd-kit/core": "6.3.1",
     "@vercel/blob": "^2.8.0",
     "jose": "^6.2.11",
     "katex": "0.18.5",
@@ -56,6 +59,7 @@
     "esbuild": "0.27.3",
     "eslint": "9.39.4",
     "eslint-config-next": "16.3.2",
+    "playwright": "1.58.2",
     "react-test-renderer": "19.2.6",
     "typescript": "5.9.3",
     "vinext": "1.0.0-beta.3",

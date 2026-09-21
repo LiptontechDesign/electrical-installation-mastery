@@ -7,11 +7,13 @@ import { withSupplementaryDefaults } from './supplementary-defaults';
 import { ElectricalShockContext } from './licensing-ui';
 import { useDialogFocus } from './use-dialog-focus';
 import { confirmationPhrase, supplementaryDescendants, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
+import type { SupplementaryMove } from './course-drop-model';
 
 type Editor = { action: SupplementaryAction; revision: number; id?: string; moduleId: string; anchorId: string; position: 'before' | 'after'; url: string; title: string; instructor: string };
-type Context = { videos: SupplementaryVideo[]; watched: string[]; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
+type Context = { videos: SupplementaryVideo[]; watched: string[]; ready: boolean; error: string; move: (move: SupplementaryMove) => Promise<boolean>; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
 type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
 const SupplementaryContext = createContext<Context | null>(null);
+export const useSupplementary = () => useContext(SupplementaryContext);
 const empty: SupplementaryState = withSupplementaryDefaults({ version: 1, revision: 0, videos: [] });
 export function SupplementaryProvider({ children }: { children: ReactNode }) {
   const { course } = useCourseOrder();
@@ -132,6 +134,23 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     } catch (e) { setNotice(e instanceof Error ? e.message : 'Could not save.'); }
     finally { setBusy(false); }
   }
+  async function move(placement: SupplementaryMove) {
+    const video = state.videos.find(v => v.id === placement.id);
+    if (!ready || busy || !video) return false;
+    setBusy(true);
+    try {
+      const response = await fetch('/api/supplementary', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...video, ...placement, action: 'edit', revision: state.revision,
+          url: `https://www.youtube.com/watch?v=${video.videoId}`, confirmation: confirmationPhrase('edit') }) });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error);
+      setState(data); setError(''); return true;
+    } catch (e) {
+      // Reload after failure, including an ambiguous network failure after a write.
+      await refresh();
+      setError(e instanceof Error ? e.message : 'The video could not be moved.'); return false;
+    } finally { setBusy(false); }
+  }
   const courseModule = course.modules.find(m => m.id === editor?.moduleId);
   const supplementaryTargets = editor ? state.videos.filter(video =>
     video.moduleId === editor.moduleId &&
@@ -140,7 +159,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     !supplementaryPlacementCreatesCycle(state.videos, editor.id, video.id)
   ) : [];
   const anchorIsSupplementary = supplementaryTargets.some(video => video.id === editor?.anchorId);
-  return <SupplementaryContext.Provider value={{ videos: state.videos, watched, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
+  return <SupplementaryContext.Provider value={{ videos: state.videos, watched, ready: ready && !busy, error, move, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
     const last = course.modules.find(m => m.id === moduleId)?.lessons.at(-1)?.id;
     if (!last) return;
     editedFields.current = { title: false, instructor: false };
