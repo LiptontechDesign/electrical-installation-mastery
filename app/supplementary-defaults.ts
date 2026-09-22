@@ -26,6 +26,15 @@ const resources = [
   ['c2-full-verification-capstone','JIdARijhacs','Full Testing Sequence Including Completion of an EIC','Jim Henson','p16-l09','after'],
   ['c2-troubleshooting-method','UJZLP8ttrd4','A Systematic Electrical Troubleshooting Method','The Electrical Guy','p09-l01','before'],
   ['c2-lighting-faults','S1Tzr5VX8-Q','Lighting Circuit Faults: Common Problems and Solutions','LEARN ELECTRICS','p09-l01','before'],
+  ['c2-final-distribution-circuits','2_Bi49tWK_I','Final and Distribution Circuits — Why Do We Have Them?','LEARN ELECTRICS','p11-v2-l02','after'],
+  ['c2-protection-mcb-rcd-rcbo','nVi5Idyt-jE','RCDs, RCBOs and MCBs Explained — What They Do Inside Your Fuse Box','LEARN ELECTRICS','p02-l07','before'],
+  ['c2-conduit-capacity-part-one','o8pcBZSGa6s','How to Work Out Conduit Cable Capacity — Appendix E, Part 1','GSH Electrical','p04-l09','before'],
+  ['c2-trunking-conduit-factors','RBXeU_9UUbo','Trunking and Conduit Calculations — Cable Factors and Appendix E','LEARN ELECTRICS','p04-l10','after'],
+  ['c2-installation-reference-methods','xxsB91hzSeY','Installation Reference Methods — BS 7671 Amendment 2','LEARN ELECTRICS','p06-l04','before'],
+  ['c2-live-conductor-sizing','wAcqKNBxy-w','Cable Calculation — Calculating the Live Cable Size from BS 7671','Electrical Student','p06-l04','after'],
+  ['c2-complete-cable-sizing','OwpTVeJ231A','Cable Size Calculations — BS 7671 Amendment 2','LEARN ELECTRICS','course-8Z255dd78H4','after'],
+  ['c2-voltage-drop-masterclass','yMgyWxzGN-U','Voltage Drop Masterclass — Single Point and Distributed Loads','LEARN ELECTRICS','p06-l08','after'],
+  ['c2-socket-planning-design','QVMpVIYm594','How Many Sockets Is That? Kitchens, Bedrooms, Floor Area and Circuit Design','LEARN ELECTRICS','p06-l15','after'],
   ['c1-pfc-bridge','NIrKOVZrqnU','Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)','The Engineering Mindset','p06-l14','before'],
   ['c1-nameplate','XbL0R_9KLD4','How to read a Motor Nameplate (IEC standard)','ElectricalEngineeringPlanet','p07-induction','after'],
   ['c1-dol-bridge','HFkTPmY7N7w','How Do Direct On Line Motor (DOL) Starters Work?','eFIXX','p15-v2-l01','before'],
@@ -33,13 +42,15 @@ const resources = [
 ] as const;
 const locations=new Map(course.modules.flatMap(m=>m.lessons.map(l=>[l.id,m.id] as const)));
 const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
-const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>({
+// This C1 core video is also an intentionally placed C2 supporting lesson.
+export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w']);
+const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>({
   id,videoId,title,instructor,anchorId,position,moduleId:locations.get(anchorId)!,archived:false,placementRevision:1,updatedAt:'2026-09-10T00:00:00.000Z',
 }));
 export function withSupplementaryDefaults(state:SupplementaryState):SupplementaryState {
-  // Promoted videos now have one canonical lesson. Keep stored history intact,
-  // but do not display or merge a second supplementary copy.
-  const saved=state.videos.filter(video=>!canonical.has(video.videoId)).map(video=>{
+  // Promoted videos keep their stored history without displaying a second copy.
+  // The approved C1-to-C2 study bridge above is the sole deliberate exception.
+  const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)).map(video=>{
     const seed=defaults.find(item=>item.id===video.id||item.videoId===video.videoId);
     // One curriculum migration; later visitor moves are preserved.
     const migrated=seed&&!video.placementRevision ? {...video,moduleId:seed.moduleId,anchorId:seed.anchorId,position:seed.position,title:video.title.replace(/^Protection study path \d+\/10 · /,''),placementRevision:1} : video;

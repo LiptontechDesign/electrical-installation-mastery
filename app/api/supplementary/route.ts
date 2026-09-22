@@ -2,7 +2,7 @@ import { get, put } from '@vercel/blob';
 import course from '../../course-curriculum';
 import { courseForOrder, relocateSupportingVideos } from '../../course-order-model';
 import { readCourseOrder } from '../../server/course-order-store';
-import { withSupplementaryDefaults } from '../../supplementary-defaults';
+import { crossPathSupplementaryVideoIds, withSupplementaryDefaults } from '../../supplementary-defaults';
 import { limitedJson, sameOrigin, privateHeaders } from '../../server/reader-auth';
 import { confirmationPhrase, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from '../../supplementary-model';
 
@@ -28,7 +28,7 @@ async function read(): Promise<ReadResult> {
 
   return {
     state: withSupplementaryDefaults(stored),
-    promoted: stored.videos.filter(v => coreVideos.has(v.videoId)),
+    promoted: stored.videos.filter(v => coreVideos.has(v.videoId) && !crossPathSupplementaryVideoIds.has(v.videoId)),
   };
 }
 
@@ -95,7 +95,7 @@ export async function POST(request: Request) {
       if (supplementaryPlacementCreatesCycle(state.videos, existing?.id, anchorId)) {
         return reply({ error: 'Choose a different placement. A video cannot be placed inside its own sequence.' }, 400);
       }
-      if (coreVideos.has(videoId) || state.videos.some(v => v.videoId === videoId && v.id !== existing?.id)) {
+      if ((coreVideos.has(videoId) && !(crossPathSupplementaryVideoIds.has(videoId) && courseModule.path === 'C2')) || state.videos.some(v => v.videoId === videoId && v.id !== existing?.id)) {
         return reply({ error: 'This video is already in the course or archive. Move or restore its existing entry instead.' }, 409);
       }
       if (action === 'add' && state.videos.length >= 500) {
