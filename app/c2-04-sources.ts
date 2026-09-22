@@ -2,7 +2,7 @@ import type { SourceReference } from './overview-models';
 
 export const c204SourceReferences: SourceReference[] = [
   {
-    id: 'course-c2-cables', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Cable Systems, Containment and Installation Methods',
+    id: 'course-c2-cables', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Containment, Routing and Cable Installation',
     section: 'Module 04 learning sections and lesson guides', authority: 'supporting-explanation',
     status: 'verified', kenyaStatus: 'check-kenyan-requirement',
     verification: { evidence: 'Current Module 04 learning sections and the linked cable-construction, conduit, tray, trunking and SWA lessons were audited for the C2-04 Overview implementation.', verifiedAt: '2026-09-13' },

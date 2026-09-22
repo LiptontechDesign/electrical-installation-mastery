@@ -12,7 +12,7 @@ import {
   PlayCircle, RotateCcw, Search, Settings, ShieldCheck, SkipForward, Sparkles, Target,
   Upload, X, Zap,
 } from 'lucide-react';
-import course, { lessonStudyRole } from './course-curriculum';
+import course, { isRequiredLesson, lessonStudyRole } from './course-curriculum';
 import { MoveLessonButton, useCourseOrder } from './course-order';
 import { ElectricalShockContext, LicensingOverview, LicensingStageGuide } from './licensing-ui';
 import { importPromotedWatched } from './integrated-progress';
@@ -190,17 +190,19 @@ export default function CourseApp() {
   const completed = useMemo(() => new Set(learner.completedLessonIds), [learner.completedLessonIds]);
   const bookmarked = useMemo(() => new Set(learner.bookmarkedLessonIds), [learner.bookmarkedLessonIds]);
   const requiredModules = course.modules.filter(module => module.path !== 'Professional');
-  const requiredLessons = requiredModules.flatMap(module => module.lessons);
+  const requiredLessons = requiredModules.flatMap(module => module.lessons).filter(lesson => isRequiredLesson(lesson.id));
   const courseRequiredTotal = requiredLessons.length;
   const courseRequiredComplete = requiredLessons.filter(lesson => completed.has(lesson.id)).length;
   const coursePercent = percent(courseRequiredComplete, courseRequiredTotal);
   const moduleTracking = (module: CourseModule) => {
     const videos = module.lessons.filter(lesson => completed.has(lesson.id)).length;
-    return { videos, requiredPercent: percent(videos, module.lessons.length) };
+    const required = module.lessons.filter(lesson => isRequiredLesson(lesson.id));
+    const requiredComplete = required.filter(lesson => completed.has(lesson.id)).length;
+    return { videos, requiredComplete, requiredTotal: required.length, requiredPercent: percent(requiredComplete, required.length) };
   };
   const nextRequiredItem = (() => {
     for (const courseModule of course.modules.filter(module => module.path !== 'Professional')) {
-      const lesson = courseModule.lessons.find(lesson => !completed.has(lesson.id));
+      const lesson = courseModule.lessons.find(lesson => isRequiredLesson(lesson.id) && !completed.has(lesson.id));
       if (lesson) return { module: courseModule, lesson };
     }
   })();
@@ -852,7 +854,7 @@ export default function CourseApp() {
                           <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
                           {isOpen&&<button type="button" className="bulk-watch-action" aria-label={`Mark every video in module ${pad(module.number)} as watched`} data-tooltip={`Mark every video in module ${pad(module.number)} as watched`} onClick={()=>markGroupWatched(module.lessons.map(lesson=>lesson.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/></button>}
                         </div>
-                        {isOpen && <div className="accordion-lessons">{['module-01','module-12'].includes(module.id)&&<details className="course-map-help"><summary><Info size={15}/>How sections work</summary><p>Core lessons introduce ideas, reinforcement applies them, and deep practice adds problems. You can study in any order without marking skipped work complete.</p></details>}{sectionsByModule[module.id].map(group=><CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button>{group.lessonIds.length > 0 && <SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />}</div><CourseSectionRows sectionId={group.id} renderCore={(lessonId) => {
+                        {isOpen && <div className="accordion-lessons">{(module.path==='C2'||module.id==='module-12')&&<details className="course-map-help"><summary><Info size={15}/>How the video path works</summary><p>Follow core lessons and applied practicals in order for the main learning path. Worked reinforcement repeats or connects an idea; deep practice is optional extra problem-solving. Suggested next follows the core-and-applied path, so extra practice never blocks progress.</p></details>}{sectionsByModule[module.id].map(group=><CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button>{group.lessonIds.length > 0 && <SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />}</div><CourseSectionRows sectionId={group.id} renderCore={(lessonId) => {
                           const lesson=lessonLookup.get(lessonId)!;
                           const isActiveLesson=activeLesson.id===lesson.id;
                           return <button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(lesson.number)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Current</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>;

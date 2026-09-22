@@ -164,7 +164,7 @@ export const c202Sections: OverviewSection[] = [{
   stageId,
   moduleId,
   learningSectionIds: groups.map(section => section.id),
-  title: 'Installation Architecture, Drawings and Safety',
+  title: 'Safety, Supply Architecture, Drawings and Instruments',
   status: 'reviewed',
   lessonIds,
   termIds: [

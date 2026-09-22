@@ -434,7 +434,7 @@ export const c201Sections: OverviewSection[] = [{
   stageId,
   moduleId,
   learningSectionIds: foundationGroups.map(section => section.id),
-  title: 'Electrical Foundations',
+  title: 'Electrical Principles and Single-Phase Calculations',
   status: 'reviewed',
   lessonIds: foundationLessonIds,
   termIds,

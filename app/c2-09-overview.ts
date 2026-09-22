@@ -113,7 +113,7 @@ export const c209AdditionalTerms: PreservedCanonicalTerm[] = [
 export const c209Formulas: OverviewFormula[] = [];
 
 export const c209Sections: OverviewSection[] = [{
-  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'C2 Fault Finding', status: 'reviewed', lessonIds,
+  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Systematic Fault Diagnosis', status: 'reviewed', lessonIds,
   termIds: ['fault-finding','fault-symptom','fault-hypothesis','sectionalizing','safe-isolation','continuity','ring-integrity','open-circuit-fault','high-resistance-joint','insulation-resistance','insulation-fault','polarity','polarity-fault','borrowed-neutral','rcd','earth-leakage','nuisance-tripping','phantom-voltage','leakage-clamp-measurement','load-current-diagnosis','thermal-anomaly','cable-deterioration','zs','ze','r1-r2','cpc','swa','commissioning-record'],
   sourceIds: ['epra-c2-competencies','course-c2-fault-finding','course-c2-testing','course-c2-protection','osg-initial-verification','osg-protection','osg-rcd-operation','osg-zs-appendix'],
   relatedSectionIds: ['c2-08-inspection-testing-commissioning'], prerequisiteSectionIds: ['c2-08-inspection-testing-commissioning'],

@@ -5,13 +5,16 @@ import { createHash } from 'node:crypto';
 const json = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 export const c2StageOrder = json('./fixtures/c2-stage-order.json');
 const baseline = json('./course-baseline.json');
-const relocated = ['course-lIit5k8QVj8', 'course-V6WR_TBf1AU'];
+const relocatedFromProfessional = new Map([
+  ['module-12', ['p12-v2-l14']],
+  ['module-15', ['course-lIit5k8QVj8', 'course-V6WR_TBf1AU']],
+]);
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
   const expected = baseline.map(module => ({ ...module, lessons: c2StageOrder[module.id]
     ? c2StageOrder[module.id].flatMap(section => section.lessonIds).map(id => source.get(id))
-    : module.id === 'module-15' ? module.lessons.filter(lesson => !relocated.includes(lesson.id)) : module.lessons }));
+    : relocatedFromProfessional.has(module.id) ? module.lessons.filter(lesson => !relocatedFromProfessional.get(module.id).includes(lesson.id)) : module.lessons }));
   const actual = course.modules.map(module => ({ id: module.id, path: module.path,
     lessons: module.lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })) }));
   assert.deepEqual(actual, expected, 'Only the specified C2 order and two Professional relocations may change');

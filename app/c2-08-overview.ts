@@ -102,7 +102,7 @@ export const c208AdditionalTerms: PreservedCanonicalTerm[] = [
 export const c208Formulas: OverviewFormula[] = [];
 
 export const c208Sections: OverviewSection[] = [{
-  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'C2 Inspection, Testing and Commissioning', status: 'reviewed', lessonIds,
+  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Initial Verification, Commissioning and Installation Capstones', status: 'reviewed', lessonIds,
   termIds: ['initial-verification','visual-inspection','test-sequence','safe-isolation','voltage-indicator','continuity','low-resistance-ohmmeter','ring-integrity','r1-r2','cpc','glossary-bonding','insulation-resistance','insulation-resistance-tester','polarity','earth-electrode','earth-electrode-resistance-test','ze','zs','loop-impedance-test','pfc','pscc','pefc','prospective-fault-current-test','rcd','rcd-types','rcd-test','functional-testing','commissioning-record','glossary-circuit-schedule'],
   sourceIds: ['epra-c2-competencies','course-c2-testing','osg-initial-verification','osg-safe-testing','osg-zs-appendix','osg-rcd-operation','osg-earthing-bonding'],
   relatedSectionIds: ['c2-07-consumer-units-complete-installation'], prerequisiteSectionIds: ['c2-07-consumer-units-complete-installation'],

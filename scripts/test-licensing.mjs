@@ -11,8 +11,8 @@ const {importPromotedWatched}=await import('../work/licensing-check/integrated-p
 const {withSupplementaryDefaults}=await import('../work/licensing-check/supplementary-defaults.js');
 assert.deepEqual(course.modules.map(m=>m.path),[...Array(9).fill('C2'),...Array(10).fill('C1'),...Array(6).fill('Professional')]);
 assertC2Reorganization(course);
-assert.equal(learningSections.length,78);
-assert.equal(new Set(learningSections.map(s=>s.id)).size,78);
+assert.equal(learningSections.length,84);
+assert.equal(new Set(learningSections.map(s=>s.id)).size,84);
 for(const [moduleId,expected] of Object.entries(c2StageOrder)) {
  assert.deepEqual(sectionsByModule[moduleId].map(({title,lessonIds})=>({title,lessonIds})),expected);
 }
@@ -34,5 +34,5 @@ const initial={completedLessonIds:[]};
 const promoted=importPromotedWatched(initial,['UFvL7wTFzl0']);
 assert.ok(promoted.completedLessonIds.includes('course-UFvL7wTFzl0'));
 assert.deepEqual(importPromotedWatched(promoted,[]),promoted);
-assert.equal(withSupplementaryDefaults({version:1,revision:0,videos:[]}).videos.length,0);
+assert.equal(withSupplementaryDefaults({version:1,revision:0,videos:[]}).videos.length,10);
 console.log('PASS: licensing paths, neutral section coverage, oral preparation, watched-only milestones and promoted-video migration.');

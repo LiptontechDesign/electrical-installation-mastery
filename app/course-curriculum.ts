@@ -18,7 +18,7 @@ const range = (prefix: string, first: number, last: number) => Array.from({ leng
 // Stable lesson IDs preserve notes, bookmarks, completed lessons.
 // This is the single ordering used by the website, recaps and source audits.
 const order: Record<string, string[]> = {
-  'module-01': [...range('p01-l', 1, 7), 'supp-resistance-01', 'supp-resistance-02', 'p06-l06', 'supp-resistance-04', 'supp-resistance-05', 'supp-resistance-06', ...range('p01-l', 8, 18), 'supp-ac-theory-01', 'supp-ac-theory-02', ...range('p01-l', 19, 22), 'supp-ac-theory-06', 'supp-ac-theory-07', 'p01-l25', 'supp-ac-theory-08', 'supp-ac-theory-09', 'supp-ac-theory-10', 'supp-ac-theory-11', 'supp-ac-theory-12', 'supp-ac-theory-14', 'supp-ac-theory-15', 'p01-l24', 'supp-ac-theory-13', 'p01-l27', 'p01-pf-visual', 'p01-l26', 'supp-ac-theory-23', 'p01-l23', 'supp-ac-theory-21', 'supp-ac-theory-22', 'supp-ac-theory-24', 'supp-ac-theory-25', 'p06-l14', 'p01-transformers', ...range('p01-l', 28, 31)],
+  'module-01': [...range('p01-l', 1, 7), 'supp-resistance-01', 'supp-resistance-02', 'p06-l06', 'supp-resistance-04', 'supp-resistance-05', 'supp-resistance-06', ...range('p01-l', 8, 18), 'p01-transformers', 'supp-ac-theory-01', 'supp-ac-theory-02', ...range('p01-l', 19, 22), 'supp-ac-theory-06', 'supp-ac-theory-07', 'p01-l25', 'supp-ac-theory-08', 'supp-ac-theory-09', 'supp-ac-theory-10', 'supp-ac-theory-11', 'supp-ac-theory-12', 'supp-ac-theory-14', 'supp-ac-theory-15', 'p01-l24', 'supp-ac-theory-13', 'p01-l27', 'p01-pf-visual', 'p01-l26', 'supp-ac-theory-23', 'p01-l23', 'supp-ac-theory-21', 'supp-ac-theory-22', 'supp-ac-theory-24', 'supp-ac-theory-25', 'p06-l14', ...range('p01-l', 28, 31)],
   'module-02': ['p02-l01', 'p02-l02', ...range('p02-l', 4, 8), ...range('p07-l', 13, 15), 'p02-l10', 'p02-l11'],
   'module-03': ['p16-l01', 'p03-l14', 'p03-l01', 'p03-l02', 'p16-l02', ...range('p03-l', 3, 11), 'p03-l13', 'p03-l12'],
   'module-04': ['p04-l02', 'p04-l03', 'p04-l01', ...range('p04-l', 4, 10), 'p04-l18', 'p04-l11', 'p04-l12', 'p16-l03', ...range('p04-l', 13, 17)],
@@ -54,10 +54,29 @@ const moduleCopy: Record<string, { title?: string; description: string; learning
   'module-16': { title: 'Estimating and Professional Practice', description: 'Define the work, plan resources and communicate a realistic quotation for electrical installation projects.', learningOutcome: 'Prepare an evidence-based scope and estimate, including verification and handover responsibilities.', entry: 'Bring together the installation and commissioning decisions from the course. Certification is taught with testing in Module 8; thermal diagnosis is in Module 9.' },
 };
 
-const additionalPractice = new Set(['supp-resistance-04','supp-resistance-05','supp-resistance-06','supp-ac-theory-21','supp-ac-theory-22','supp-ac-theory-24','supp-ac-theory-25','supp-lighting-05','supp-lighting-09','supp-lighting-10','supp-lighting-12']);
-const workedReinforcement = new Set(['supp-resistance-02','p06-l06','supp-lighting-02','supp-lighting-03','p07-l11','p07-l12']);
+const additionalPractice = new Set([
+  'supp-resistance-04','supp-resistance-05','supp-resistance-06',
+  'supp-ac-theory-09','supp-ac-theory-10','supp-ac-theory-14','supp-ac-theory-15','supp-ac-theory-21','supp-ac-theory-22','supp-ac-theory-24','supp-ac-theory-25',
+  'p16-l05','course-kx35WN3uLis','course-Me_adh09CdY','course-lIit5k8QVj8','course-V6WR_TBf1AU','p06-l09','p02-l10','p09-l10',
+  'supp-lighting-05','supp-lighting-09','supp-lighting-10','supp-lighting-12',
+]);
+const workedReinforcement = new Set([
+  'supp-resistance-02','p06-l06','supp-ac-theory-11','supp-ac-theory-12','p01-l23','p01-pf-visual','supp-ac-theory-13','supp-ac-theory-23',
+  'course-gqEu9t8HwW0','p05-l08','course-TUno2IT-KZY','p06-l12','p05-l09','p08-l08',
+  'supp-lighting-02','supp-lighting-03','p07-l11','p07-l12',
+]);
+const appliedPractical = new Set([
+  'p03-l01','p03-l02','p16-l02','p03-l06','p03-l07','p03-l08','p03-l03','p03-l04','p03-l10','p11-l01','p10-l03','p10-l04',
+  'p11-v2-l03','p11-v2-l04','p11-v2-l05','p11-v2-l08','p11-v2-l09','p11-v2-l10','p03-l11',
+  'p04-l02','p04-l03','p04-l04','p04-l05','p04-l06','p04-l07','p04-l08','p04-l09','p04-l10','p04-l18','p04-l11','p04-l12','p16-l03','p04-l13','p04-l14',
+  'p03-l13','p03-l12','p08-l03','p08-l04','p08-l05','p08-l06','p08-l12','p02-l09','p08-l09','p08-l10','p08-l13','p08-l14','p08-l15',
+  'p10-l01','p10-l02','p10-l05','p09-l01','p09-l02','p09-l04','p09-l05','p09-l08','p09-l03','p09-l06','p09-l07','p09-l09','p09-l11',
+]);
 export function lessonStudyRole(id: string) {
-  return additionalPractice.has(id) ? 'Deep practice' : workedReinforcement.has(id) ? 'Worked reinforcement' : 'Core lesson';
+  return additionalPractice.has(id) ? 'Deep practice' : workedReinforcement.has(id) ? 'Worked reinforcement' : appliedPractical.has(id) ? 'Applied practical' : 'Core lesson';
+}
+export function isRequiredLesson(id: string) {
+  return !additionalPractice.has(id) && !workedReinforcement.has(id);
 }
 const used = new Set<string>();
 export const legacyModules = originalModules.map(module => {

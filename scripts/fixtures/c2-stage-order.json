@@ -1,27 +1,68 @@
 {
+  "module-01": [
+    { "title": "Electricity and charge", "lessonIds": ["p01-l01", "p01-l02", "p01-l03", "p01-l04"] },
+    { "title": "Circuits and Ohm’s law", "lessonIds": ["p01-l05", "p01-l06", "p01-l07"] },
+    { "title": "Conductor geometry, temperature and resistance", "lessonIds": ["supp-resistance-01", "supp-resistance-02", "p06-l06"] },
+    { "title": "Length and material resistivity", "lessonIds": ["supp-resistance-04", "supp-resistance-05", "supp-resistance-06"] },
+    { "title": "Series and parallel circuits", "lessonIds": ["p01-l08", "p01-l09", "p01-l10", "p01-l11"] },
+    { "title": "Power, energy and electrical effects", "lessonIds": ["p01-l12", "p01-l13", "p01-l14", "p01-l15", "p01-l16"] },
+    { "title": "Magnetism, induction, transformers and AC generation", "lessonIds": ["p01-l17", "p01-l18", "p01-transformers", "supp-ac-theory-01", "supp-ac-theory-02", "p01-l19", "p01-l20", "p01-l21"] },
+    { "title": "Inductive and capacitive opposition", "lessonIds": ["p01-l22", "supp-ac-theory-06", "supp-ac-theory-07", "p01-l25", "supp-ac-theory-08"] },
+    { "title": "Waveforms and phasors", "lessonIds": ["supp-ac-theory-09", "supp-ac-theory-10", "supp-ac-theory-11"] },
+    { "title": "Voltage and impedance triangles", "lessonIds": ["supp-ac-theory-12", "supp-ac-theory-14", "supp-ac-theory-15", "p01-l24"] },
+    { "title": "AC currents and power", "lessonIds": ["supp-ac-theory-13", "p01-l27", "p01-pf-visual", "p01-l26", "supp-ac-theory-23"] },
+    { "title": "Coil analysis and correction", "lessonIds": ["p01-l23", "supp-ac-theory-21", "supp-ac-theory-22", "supp-ac-theory-24", "supp-ac-theory-25"] }
+  ],
+  "module-02": [
+    { "title": "Kenyan C2 orientation slot and domestic supply equipment", "lessonIds": ["p02-l02", "p11-v2-l02"] },
+    { "title": "Reading single-line, riser and panel drawings", "lessonIds": ["p07-l13", "p07-l14", "p07-l15"] },
+    { "title": "Tools, hazards and safe isolation", "lessonIds": ["p16-l01", "p03-l14"] },
+    { "title": "Electrical-incident response and first aid", "lessonIds": ["course-TsJ49Np3HS0", "course-UFvL7wTFzl0"] },
+    { "title": "Safe use of meters and clamp instruments", "lessonIds": ["p01-l28", "p01-l29", "p01-l30", "p01-l31"] },
+    { "title": "Detecting concealed and underground services", "lessonIds": ["p16-l04", "p16-l05"] }
+  ],
+  "module-03": [
+    { "title": "Cable construction, conductor functions and identification", "lessonIds": ["p02-l01"] },
+    { "title": "Preparing conductors and connections", "lessonIds": ["p03-l01", "p03-l02", "p16-l02"] },
+    { "title": "Lighting switching arrangements", "lessonIds": ["p03-l05", "p03-l06", "p03-l07", "p03-l08", "p03-l09"] },
+    { "title": "Socket circuits and accessories", "lessonIds": ["course-At7AnMV7Xd0", "course-hZN6hiGLtrE", "p03-l03", "p03-l04", "p03-l10"] },
+    { "title": "Planning and first/second fix", "lessonIds": ["p11-v2-l06", "p11-l01", "p10-l03", "p10-l04"] },
+    { "title": "Installing residential accessories", "lessonIds": ["p11-v2-l03", "p11-v2-l04", "p11-v2-l05", "p11-v2-l08", "p11-v2-l09", "p11-v2-l10"] },
+    { "title": "Practical luminaires and final connections", "lessonIds": ["p12-v2-l01", "p12-v2-l07", "p12-v2-l14", "p03-l11"] }
+  ],
+  "module-04": [
+    { "title": "PVC and steel conduit tools, components and fabrication", "lessonIds": ["p04-l02", "p04-l03", "p04-l01", "p04-l04", "p04-l05", "p04-l06"] },
+    { "title": "Trunking, tray, capacity and conduit circuit layout", "lessonIds": ["p04-l07", "p04-l08", "p04-l09", "p04-l10", "p04-l18"] },
+    { "title": "SWA construction and installation", "lessonIds": ["p04-l11", "p04-l12", "p16-l03", "p04-l13", "p04-l14"] }
+  ],
   "module-05": [
-    { "title": "Overload and Short-Circuit Protection", "lessonIds": ["p05-l01", "course-8VhgQ9Q9ixA", "p02-l06", "p05-l02", "course-kx35WN3uLis", "p05-l03", "course-gqEu9t8HwW0", "p05-l05", "course-Me_adh09CdY", "course-TqdQRgf3uGs"] },
-    { "title": "Earth Fault, Earthing, ADS and Residual-Current Protection", "lessonIds": ["p02-l04", "p02-l05", "p05-l08", "p05-l07", "p05-l06", "p05-l10", "p05-l11", "p02-l07", "p05-l04", "course-TUno2IT-KZY", "p02-l08", "p05-l15"] },
-    { "title": "Surge, Arc and Special Protection", "lessonIds": ["course-CNiLNvBLopI", "p05-spd", "course-lIit5k8QVj8"] },
-    { "title": "Protective-Device Selection and Coordination", "lessonIds": ["p05-l14", "course-V6WR_TBf1AU"] }
+    { "title": "Fault types and protective-device functions", "lessonIds": ["p05-l01", "course-8VhgQ9Q9ixA", "p02-l06"] },
+    { "title": "Fuses, circuit breakers and trip characteristics", "lessonIds": ["p05-l02", "course-kx35WN3uLis", "p05-l03", "course-gqEu9t8HwW0", "p05-l05", "course-Me_adh09CdY", "course-TqdQRgf3uGs"] },
+    { "title": "Earth-fault paths, earthing, bonding and ADS", "lessonIds": ["p02-l04", "p02-l05", "p05-l08", "p05-l07", "p05-l06", "p05-l10", "p05-l11"] },
+    { "title": "RCD, RCBO and additional protection", "lessonIds": ["p02-l07", "p05-l04", "course-TUno2IT-KZY", "p02-l08", "p05-l15"] },
+    { "title": "Surge, arc and special protection", "lessonIds": ["course-CNiLNvBLopI", "p05-spd", "course-lIit5k8QVj8"] },
+    { "title": "Protective-device rating, discrimination and selectivity", "lessonIds": ["p05-l14", "course-V6WR_TBf1AU"] }
   ],
   "module-06": [
-    { "title": "Load, Demand and Design Current", "lessonIds": ["p06-l01", "p10-l09", "p06-l11", "p11-v2-l07", "p06-l12", "p06-l02", "p06-l03"] },
-    { "title": "Cable Selection and Installation Factors", "lessonIds": ["p06-l04", "p06-l10", "course-8Z255dd78H4"] },
-    { "title": "Voltage Drop, Fault Duty and Final Design Checks", "lessonIds": ["p06-l07", "p06-l08", "p06-l09", "p06-l15"] }
+    { "title": "Load assessment, demand and design current", "lessonIds": ["p06-l01", "p10-l09", "p06-l11", "p11-v2-l07", "p06-l12", "p06-l02", "p06-l03"] },
+    { "title": "Cable capacity, installation methods and correction factors", "lessonIds": ["p06-l04", "p06-l10", "course-8Z255dd78H4"] },
+    { "title": "Voltage-drop calculation and compliance", "lessonIds": ["p06-l07", "p06-l08", "p06-l09"] },
+    { "title": "Fault duty, breaking capacity and final design proof", "lessonIds": ["p06-l15"] }
   ],
   "c2-boards": [
-    { "title": "Consumer-Unit Assembly, Connections and Supply Arrangements", "lessonIds": ["p03-l13", "p03-l12", "p02-l10"] },
-    { "title": "Complete Single-Phase Installation Cases", "lessonIds": ["p10-l01", "p10-l02", "p10-l05"] }
+    { "title": "Torque, consumer-unit assembly and supply arrangements", "lessonIds": ["p03-l13", "p03-l12", "p02-l10"] }
   ],
   "module-08": [
-    { "title": "Inspection and Dead Tests: Continuity, Polarity and Insulation", "lessonIds": ["p08-l02", "p08-l03", "p05-l09", "p08-l04", "p08-l05", "p08-l16", "p08-l06"] },
-    { "title": "Earthing Verification, Ze/PFC/Zs and Controlled Live Tests", "lessonIds": ["p08-l12", "p02-l09", "p08-l08", "p08-l09", "p08-l10"] },
-    { "title": "RCD Testing, Functional Verification and Certification", "lessonIds": ["p08-l13", "p08-l14", "p08-l15", "p16-l09"] }
+    { "title": "Visual inspection, test planning and instrument setup", "lessonIds": ["p08-l02"] },
+    { "title": "Continuity, polarity, ring-circuit and insulation tests", "lessonIds": ["p08-l03", "p05-l09", "p08-l04", "p08-l05", "p08-l16", "p08-l06"] },
+    { "title": "Earth-electrode checks, Ze, PFC, Zs and controlled live tests", "lessonIds": ["p08-l12", "p02-l09", "p08-l08", "p08-l09", "p08-l10"] },
+    { "title": "RCD testing and functional verification", "lessonIds": ["p08-l13", "p08-l14", "p08-l15"] },
+    { "title": "Certification and Kenyan handover bridge", "lessonIds": ["p16-l09"] },
+    { "title": "Complete single-phase installation capstones", "lessonIds": ["p10-l01", "p10-l02", "p10-l05"] }
   ],
   "module-09": [
-    { "title": "Ring, Continuity, Polarity and Open-Circuit Faults", "lessonIds": ["p09-l01", "p09-l02", "p09-l04", "p09-l05", "p09-l08"] },
-    { "title": "Insulation, Cable Deterioration, RCD and Leakage Faults", "lessonIds": ["p09-l03", "p09-l06", "p09-l07", "p09-l09"] },
-    { "title": "Load-Current and Functional Diagnosis", "lessonIds": ["p09-l10", "p09-l11"] }
+    { "title": "Diagnostic method, ring circuits and open-circuit faults", "lessonIds": ["p09-l01", "p09-l02", "p09-l04", "p09-l05", "p09-l08"] },
+    { "title": "Insulation, cable deterioration, RCD and leakage faults", "lessonIds": ["p09-l03", "p09-l06", "p09-l07", "p09-l09"] },
+    { "title": "Load-current and functional diagnosis", "lessonIds": ["p09-l10", "p09-l11"] }
   ]
 }

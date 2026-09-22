@@ -203,7 +203,7 @@ export const c205Formulas: OverviewFormula[] = [
 ];
 
 export const c205Sections: OverviewSection[] = [{
-  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Faults, Protective Devices, Earthing and ADS', status: 'reviewed', lessonIds,
+  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Fault Protection, Earthing and Protective Devices', status: 'reviewed', lessonIds,
   termIds: [
     'overload-current','short-circuit','earth-fault','fuse','mcb','mccb','glossary-breaking-capacity','pfc','pscc','pefc',
     'rcd','rccb','rcbo','rcd-types','basic-protection','fault-protection','additional-protection','ads',

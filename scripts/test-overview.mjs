@@ -75,14 +75,14 @@ assert.equal(moveSelection(3, 8, 'first'), 0);
 assert.equal(moveSelection(3, 8, 'last'), 7);
 
 const published = [
-  ['c2-01-electrical-foundations','C2-01','module-01',14,null],
-  ['c2-02-installation-architecture-drawings-safety','C2-02','module-02',3,'c2-01-electrical-foundations'],
-  ['c2-03-single-phase-wiring-accessories','C2-03','module-03',6,'c2-02-installation-architecture-drawings-safety'],
-  ['c2-04-cable-systems-containment-installation-methods','C2-04','module-04',4,'c2-03-single-phase-wiring-accessories'],
-  ['c2-05-faults-protective-devices-earthing-ads','C2-05','module-05',4,'c2-04-cable-systems-containment-installation-methods'],
-  ['c2-06-single-phase-circuit-design','C2-06','module-06',3,'c2-05-faults-protective-devices-earthing-ads'],
-  ['c2-07-consumer-units-complete-installation','C2-07','c2-boards',2,'c2-06-single-phase-circuit-design'],
-  ['c2-08-inspection-testing-commissioning','C2-08','module-08',3,'c2-07-consumer-units-complete-installation'],
+  ['c2-01-electrical-foundations','C2-01','module-01',12,null],
+  ['c2-02-installation-architecture-drawings-safety','C2-02','module-02',6,'c2-01-electrical-foundations'],
+  ['c2-03-single-phase-wiring-accessories','C2-03','module-03',7,'c2-02-installation-architecture-drawings-safety'],
+  ['c2-04-cable-systems-containment-installation-methods','C2-04','module-04',3,'c2-03-single-phase-wiring-accessories'],
+  ['c2-05-faults-protective-devices-earthing-ads','C2-05','module-05',6,'c2-04-cable-systems-containment-installation-methods'],
+  ['c2-06-single-phase-circuit-design','C2-06','module-06',4,'c2-05-faults-protective-devices-earthing-ads'],
+  ['c2-07-consumer-units-complete-installation','C2-07','c2-boards',1,'c2-06-single-phase-circuit-design'],
+  ['c2-08-inspection-testing-commissioning','C2-08','module-08',6,'c2-07-consumer-units-complete-installation'],
   ['c2-09-fault-finding','C2-09','module-09',3,'c2-08-inspection-testing-commissioning'],
   ['c1-01-three-phase-fundamentals','C1-01','c1-fundamentals',1,'c2-09-fault-finding'],
   ['c1-02-three-phase-power','C1-02','c1-power',1,'c1-01-three-phase-fundamentals'],

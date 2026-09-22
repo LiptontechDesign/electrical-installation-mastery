@@ -166,7 +166,7 @@ export const c203Sections: OverviewSection[] = [{
   stageId,
   moduleId,
   learningSectionIds: groups.map(section => section.id),
-  title: 'Single-Phase Wiring and Accessories',
+  title: 'Cables, Conductors and Final Circuits',
   status: 'reviewed',
   lessonIds,
   termIds: [

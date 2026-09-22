@@ -132,7 +132,7 @@ export const c206Formulas: OverviewFormula[] = [
 ];
 
 export const c206Sections: OverviewSection[] = [{
-  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Single-Phase Circuit Design', status: 'reviewed', lessonIds,
+  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Load Assessment and Single-Phase Circuit Design', status: 'reviewed', lessonIds,
   termIds: ['connected-load','glossary-maximum-demand','glossary-diversity','power-factor','design-assumptions','ib','in','iz','tabulated-current-capacity','installation-method','correction-factor','ambient-temperature-factor','grouping-factor','thermal-insulation-factor','voltage-drop','fault-thermal-withstand','cpc','ads','zs','pfc','pscc','pefc','glossary-breaking-capacity','selectivity','design-evidence'],
   sourceIds: ['epra-c2-competencies','course-c2-design','course-c2-cables','course-c2-protection','osg-demand-diversity','osg-current-capacity-voltage-drop','osg-protection','osg-zs-appendix'],
   relatedSectionIds: ['c2-05-faults-protective-devices-earthing-ads'], prerequisiteSectionIds: ['c2-05-faults-protective-devices-earthing-ads'],

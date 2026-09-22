@@ -80,7 +80,7 @@ export const c207AdditionalTerms: PreservedCanonicalTerm[] = [
 export const c207Formulas: OverviewFormula[] = [];
 
 export const c207Sections: OverviewSection[] = [{
-  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Consumer Units and Complete Single-Phase Installation', status: 'reviewed', lessonIds,
+  id: sectionId, stageId, moduleId, learningSectionIds: groups.map(section => section.id), title: 'Consumer Units: Assembly and Pre-Commissioning', status: 'reviewed', lessonIds,
   termIds: ['service-cut-out','electricity-meter','meter-tails','switch-fuse','main-switch','consumer-unit','busbar','neutral-bar','protective-conductor-bar','circuit-division','board-compatibility','split-load-arrangement','mcb','rccb','rcbo','spd','glossary-breaking-capacity','pfc','selectivity','termination','torque-controlled-termination','cpc','met','glossary-circuit-schedule','final-circuit','glossary-isolation'],
   sourceIds: ['epra-c2-competencies','course-c2-boards','course-c2-design','course-c2-protection','osg-electrical-supply','osg-isolation-switching','osg-protection','osg-identification-notices','osg-final-circuits'],
   relatedSectionIds: ['c2-06-single-phase-circuit-design'], prerequisiteSectionIds: ['c2-06-single-phase-circuit-design'],
@@ -93,7 +93,7 @@ export const c207Sections: OverviewSection[] = [{
   pages: {
     'system-model': [
       { kind: 'flow', title: 'Supply-to-load architecture', steps: ['Distributor/service arrangement', 'Service protective device / cut-out', 'Metering', 'Meter tails / incoming conductors', 'Main switch or switch-fuse as designed', 'Consumer unit enclosure and busbars', 'Outgoing protective devices', 'Neutral and protective-conductor terminations', 'Final circuits', 'Local isolation/connection where required', 'Loads'], sourceIds: ['course-c2-boards','osg-electrical-supply'] },
-      { kind: 'flow', title: 'Board design is the meeting point of earlier C2 stages', steps: ['C2-01 load/current fundamentals', 'C2-03 final-circuit topology/accessories', 'C2-04 cable/containment', 'C2-05 protective functions/earthing', 'C2-06 design calculations', 'C2-07 coordinated board and complete installation'], sourceIds: ['course-c2-boards'] },
+      { kind: 'flow', title: 'Board design is the meeting point of earlier C2 stages', steps: ['C2-01 load/current fundamentals', 'C2-03 final-circuit topology/accessories', 'C2-04 cable/containment', 'C2-05 protective functions/earthing', 'C2-06 design calculations', 'C2-07 coordinated board ready for initial verification'], sourceIds: ['course-c2-boards'] },
     ],
     definitions: [
       { kind: 'table', title: 'Inside the consumer unit', columns: ['Part','Primary function','Do not confuse with'], rows: [

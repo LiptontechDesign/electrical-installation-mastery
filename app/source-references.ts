@@ -8,19 +8,19 @@ export const sourceReferences: SourceReference[] = [
     status: 'needs-verification', kenyaStatus: 'check-kenyan-requirement',
   },
   {
-    id: 'course-c2-foundations', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Electrical Foundations',
+    id: 'course-c2-foundations', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Electrical Principles and Single-Phase Calculations',
     section: 'Module 01 lessons, authored recaps and course bridges', authority: 'supporting-explanation',
     status: 'verified', kenyaStatus: 'check-kenyan-requirement',
     verification: { evidence: 'Current Module 01 learning sections, lesson ordering and authored bridge material were audited for the C2-01 Overview implementation.', verifiedAt: '2026-09-13' },
   },
   {
-    id: 'course-c2-architecture', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Installation Architecture, Drawings and Safety',
+    id: 'course-c2-architecture', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Safety, Supply Architecture, Drawings and Instruments',
     section: 'Module 02 learning sections, lesson guides, supplied CPR/AED teaching and service-detection lessons', authority: 'supporting-explanation',
     status: 'verified', kenyaStatus: 'check-kenyan-requirement',
     verification: { evidence: 'Current Module 02 learning sections and the linked consumer-unit, drawing, safe-isolation, CPR/AED and service-detection lessons were audited for the C2-02 Overview implementation.', verifiedAt: '2026-09-13' },
   },
   {
-    id: 'course-c2-wiring', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Single-Phase Wiring and Accessories',
+    id: 'course-c2-wiring', sourceType: 'course', title: 'Electrical Installation Mastery — C2 Cables, Conductors and Final Circuits',
     section: 'Module 03 learning sections, lesson guides and integrated radial/ring lessons', authority: 'supporting-explanation',
     status: 'verified', kenyaStatus: 'check-kenyan-requirement',
     verification: { evidence: 'Current Module 03 neutral learning sections plus conductor preparation, switching, radial/ring, accessory, first/second-fix and luminaire teaching were audited for the C2-03 Overview implementation.', verifiedAt: '2026-09-13' },

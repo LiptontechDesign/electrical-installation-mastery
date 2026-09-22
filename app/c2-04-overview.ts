@@ -144,7 +144,7 @@ export const c204Formulas: OverviewFormula[] = [{
 export const c204Sections: OverviewSection[] = [{
   id: sectionId, stageId, moduleId,
   learningSectionIds: groups.map(section => section.id),
-  title: 'Cable Systems, Containment and Installation Methods', status: 'reviewed', lessonIds,
+  title: 'Containment, Routing and Cable Installation', status: 'reviewed', lessonIds,
   termIds: [
     'cable-system','insulation','outer-sheath','armour','swa','swa-gland','conduit','trunking','cable-tray',
     'installation-method','iz','correction-factor','ambient-temperature-factor','grouping-factor','thermal-insulation-factor',
