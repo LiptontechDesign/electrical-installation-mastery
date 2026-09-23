@@ -1,4 +1,8 @@
 /* One course, one clear workspace. Brand colors retain the audited semantic roles. */
+.studio-practice-link { display: flex; align-items: center; color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 650; }
+.studio-practice-link:hover { color: var(--text-accent); }
+.mobile-navigation:has(.mobile-practice-link) { grid-template-columns: repeat(4, 1fr); }
+.mobile-practice-link { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 2px; color: var(--muted); text-decoration: none; font-size: 10px; font-weight: 750; }
 .studio-shell .app-frame { margin-left: 0; }
 .studio-shell .app-header { height: 84px; min-height: 84px; padding: 0 clamp(20px, 3.5vw, 64px); gap: 40px; flex-wrap: nowrap; }
 .studio-brand { display: flex; align-items: center; flex-shrink: 0; gap: 11px; padding: 0; background: transparent; color: var(--ink); text-align: left; }

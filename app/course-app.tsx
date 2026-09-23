@@ -3,10 +3,11 @@
 import type { ChangeEvent, CSSProperties } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Script from 'next/script';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import {
   AlertTriangle, ArrowRight, BookOpen, Bookmark,
-  Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Circle,
+  Check, CheckCircle2, ClipboardList, ChevronDown, ChevronLeft, ChevronRight, Circle,
   Download,
   Home, Info, LockKeyhole, Menu,
   PlayCircle, RotateCcw, Search, Settings, SkipForward,
@@ -704,7 +705,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       <div className="app-frame">
         <header className="app-header studio-header" aria-label="Application toolbar">
           <button className="studio-brand" type="button" onClick={() => navigate('home')} aria-label="Electrical Installation Mastery home"><span className="studio-monogram"><Zap size={22}/></span><span><strong>Electrical</strong><small>INSTALLATION MASTERY</small></span></button>
-          <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? user ? 'My learning' : 'The course' : item.label}</button>)}</nav>
+          <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? user ? 'My learning' : 'The course' : item.label}</button>)}<Link href="/practice" className="studio-practice-link">Practice</Link></nav>
           <div className="header-actions">
             <button className="studio-search" type="button" aria-label="Search video lessons" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={20}/><span>Find a lesson</span><kbd>/</kbd></button>
             {user ? <button className="course-progress-chip" onClick={() => { setShowOverview(false); navigate('home'); }} aria-label={`${coursePercent}% of the required course path complete`}><span className="progress-chip-ring" style={{ '--course-progress': `${coursePercent * 3.6}deg` } as CSSProperties}/><span><strong>{coursePercent}%</strong><small>Course progress</small></span></button> : <button className="studio-settings" onClick={() => setSettingsOpen(true)} aria-label="Playback settings"><Settings size={19}/></button>}
@@ -807,7 +808,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           )}
           {view === 'books' && <BookWorkspace />}
         </main>
-        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}</nav>
+        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}<Link href="/practice" className="mobile-practice-link"><ClipboardList size={20}/><span>Practice</span></Link></nav>
       </div>
 
       {searchOpen && (

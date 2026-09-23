@@ -27,18 +27,26 @@
     "test:course-drag-browser": "node scripts/test-course-drag-browser.mjs",
     "test:accounts": "node scripts/test-account-isolation.mjs",
     "test:guests": "node scripts/test-guest-access.mjs",
-    "audit:course": "node scripts/audit-course-integrity.mjs"
+    "audit:course": "node scripts/audit-course-integrity.mjs",
+    "import:epra": "node scripts/import-epra.mjs",
+    "test:epra": "node scripts/test-epra.mjs",
+    "test:epra-browser": "node scripts/test-epra-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",
     "@neondatabase/serverless": "^1.1.0",
     "@vercel/blob": "^2.8.0",
     "jose": "^6.2.11",
+    "katex": "^0.16.47",
     "lucide-react": "^0.542.0",
     "next": "16.3.2",
     "pdfjs-dist": "^6.3.289",
     "react": "19.2.6",
     "react-dom": "19.2.6",
+    "react-markdown": "^10.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "server-only": "^0.0.1"
   },
   "devDependencies": {

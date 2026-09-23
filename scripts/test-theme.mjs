@@ -33,7 +33,8 @@ for (const [name, theme] of Object.entries({ light, dark })) {
     assert.ok(ratio >= 4.5, `${name}: ${foreground} on ${background} contrast ${ratio.toFixed(2)} < 4.5`);
   }
 }
-const cssFiles = readdirSync(new URL('../app/', import.meta.url)).filter(file => file.endsWith('.css'));
+const appFiles = readdirSync(new URL('../app/', import.meta.url), { recursive: true });
+const cssFiles = appFiles.filter(file => file.endsWith('.css'));
 const defined = new Set();
 const used = new Set();
 for (const file of cssFiles) {
@@ -53,7 +54,7 @@ for (const file of cssFiles) {
 // Runtime-only layout/progress custom properties are supplied by React.
 for (const name of ['--progress', '--countdown', '--reader-text-size', '--desktop-sidebar', '--desktop-header', '--desktop-gutter', '--desktop-map']) defined.add(name);
 for (const name of used) assert.ok(defined.has(name), `Undefined CSS token ${name}`);
-for (const file of readdirSync(new URL('../app/', import.meta.url)).filter(file => file.endsWith('.tsx') && file !== 'layout.tsx')) {
+for (const file of appFiles.filter(file => file.endsWith('.tsx') && file !== 'layout.tsx')) {
   assert.doesNotMatch(read(`app/${file}`), /#[\da-f]{3,8}\b/i, `${file}: use semantic SVG/style tokens`);
 }
 console.log(`Theme checks passed: ${pairs.length * 2} contrast pairs; ${cssFiles.length} stylesheets and all TSX components scanned.`);
