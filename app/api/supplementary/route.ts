@@ -1,13 +1,13 @@
-import { get, put } from '@vercel/blob';
 import course from '../../course-curriculum';
 import { courseForOrder, relocateSupportingVideos } from '../../course-order-model';
 import { readCourseOrder } from '../../server/course-order-store';
+import { requireCourseUser } from '../../server/auth';
+import { readUserDocument, writeUserDocument } from '../../server/database';
 import { crossPathSupplementaryVideoIds, withSupplementaryDefaults } from '../../supplementary-defaults';
 import { limitedJson, sameOrigin, privateHeaders } from '../../server/reader-auth';
 import { confirmationPhrase, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from '../../supplementary-model';
 
 export const runtime = 'nodejs';
-const pathname = 'course/supplementary-videos-v1.json';
 const coreVideos = new Set(course.modules.flatMap(m => m.lessons.map(l => youtubeId(l.url))));
 
 type ReadResult = {
@@ -15,15 +15,10 @@ type ReadResult = {
   promoted: SupplementaryVideo[];
 };
 
-async function read(): Promise<ReadResult> {
-  // Always read the current private Blob directly from origin. This catalogue is
-  // intentionally collaborative and uses last-write-wins semantics, so there is
-  // no ETag/head precondition that can block ordinary visitor edits.
-  const result = await get(pathname, { access: 'private', useCache: false });
+async function read(userId: string): Promise<ReadResult> {
+  const result = await readUserDocument<SupplementaryState>(userId, 'supplementary');
   if (!result) return { state: withSupplementaryDefaults({ version: 1, revision: 0, videos: [] }), promoted: [] };
-  if (result.statusCode !== 200) throw new Error('Storage unavailable');
-
-  const stored: SupplementaryState = await new Response(result.stream).json();
+  const stored = result.payload;
   if (stored.version !== 1 || !Array.isArray(stored.videos) || !Number.isSafeInteger(stored.revision)) throw new Error('Invalid storage');
 
   return {
@@ -39,17 +34,15 @@ function safeError(error: unknown) {
 }
 
 export async function GET() {
-  try { return reply((await read()).state); }
+  try { const user = await requireCourseUser(); return reply((await read(user.id)).state); }
   catch (error) {
     console.error('Supplementary catalogue read failed', safeError(error));
-    return reply({ error: 'Shared videos could not be loaded. Please retry; existing course lessons are unaffected.' }, 503);
+    const unauthenticated = error instanceof Error && error.message === 'UNAUTHENTICATED';
+    return reply({ error: unauthenticated ? 'Sign in to open your videos.' : 'Your videos could not be loaded. Please retry; existing course lessons are unaffected.' }, unauthenticated ? 401 : 503);
   }
 }
 
 export async function POST(request: Request) {
-  // Intentionally collaborative: no identity gate. Any visitor using the app
-  // may add, edit, archive or restore supplementary videos. Confirmation is an
-  // accident guard, not authentication.
   if (!sameOrigin(request)) return reply({ error: 'Request not allowed.' }, 403);
 
   let body: Record<string, unknown>;
@@ -65,11 +58,9 @@ export async function POST(request: Request) {
   }
 
   try {
-    // Re-read immediately before every change. We intentionally do not reject a
-    // stale client revision: edits are applied to the latest catalogue and the
-    // most recent successful save wins.
-    const { state: storedState, promoted } = await read();
-    const { course: currentCourse } = courseForOrder((await readCourseOrder()).order);
+    const user = await requireCourseUser();
+    const { state: storedState, promoted } = await read(user.id);
+    const { course: currentCourse } = courseForOrder(await readCourseOrder(user.id));
     const state = { ...storedState, videos: relocateSupportingVideos(storedState.videos, currentCourse) };
     const existing = state.videos.find(v => v.id === body.id);
     if (action !== 'add' && !existing) return reply({ error: 'Video not found. Refresh the shared list and try again.' }, 404);
@@ -124,20 +115,12 @@ export async function POST(request: Request) {
       videos: existing ? state.videos.map(v => v.id === video.id ? video : v) : [...state.videos, video],
     };
 
-    // Deliberately use unconditional overwrite for this open collaborative list.
-    // This avoids the storage-level ETag/precondition failures that were blocking
-    // normal saves. The latest successful visitor save is authoritative.
-    await put(pathname, JSON.stringify({ ...next, videos: [...next.videos, ...promoted] }), {
-      access: 'private',
-      addRandomSuffix: false,
-      allowOverwrite: true,
-      contentType: 'application/json',
-      cacheControlMaxAge: 60,
-    });
+    await writeUserDocument(user.id, 'supplementary', { ...next, videos: [...next.videos, ...promoted] });
 
     return reply(next);
   } catch (error) {
     console.error('Supplementary catalogue save failed', { action, ...safeError(error) });
-    return reply({ error: 'Changes were not saved because shared storage is unavailable. Please retry shortly; your form has been kept.' }, 503);
+    const unauthenticated = error instanceof Error && error.message === 'UNAUTHENTICATED';
+    return reply({ error: unauthenticated ? 'Sign in to save your videos.' : 'Changes were not saved because your private storage is unavailable. Please retry shortly; your form has been kept.' }, unauthenticated ? 401 : 503);
   }
 }

@@ -1377,3 +1377,42 @@ kbd {
 .recap-lesson-copy > .course-bridge { grid-column: 1 / -1; }
 @media (max-width: 760px) { .course-bridge-grid { grid-template-columns: 1fr; gap: 18px; } .course-bridge > summary { padding: 14px; } }
 @media print { .course-bridge { break-inside: auto; } .course-bridge > .course-bridge-body { display: block !important; } .course-bridge-grid { display: block; } .course-bridge a { color: #000; } }
+
+.sign-in-page { min-height: 100svh; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 50% 15%, color-mix(in srgb, var(--copper) 22%, transparent), transparent 42%), var(--paper); color: var(--ink); }
+.sign-in-card { width: min(100%, 560px); padding: clamp(28px, 6vw, 54px); border: 1px solid var(--line); border-radius: 24px; background: var(--white); box-shadow: var(--shadow-lg); text-align: center; }
+.sign-in-mark { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 22px; border-radius: 18px; background: var(--copper); color: var(--text-on-primary); font-size: 28px; box-shadow: var(--shadow-sm); }
+.sign-in-card h1 { margin: 10px 0 14px; font-size: clamp(2rem, 5vw, 3.15rem); line-height: 1.04; letter-spacing: -.045em; }
+.sign-in-card > p { margin: 0 auto 26px; max-width: 48ch; color: var(--muted); line-height: 1.7; }
+.google-sign-in { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 52px; margin: 8px 0 18px; padding: 12px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); color: var(--ink); font-weight: 750; text-decoration: none; box-shadow: var(--shadow-sm); }
+.google-sign-in span { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; color: var(--text-accent); background: var(--white); font: 800 18px/1 Arial, sans-serif; }
+.google-sign-in:hover { border-color: var(--copper); transform: translateY(-1px); }
+.google-sign-in:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+.sign-in-card > small { display: block; color: var(--muted); line-height: 1.55; }
+.policy-links { display: flex; justify-content: center; gap: 18px; margin-top: 18px; font-size: .85rem; }
+.policy-links a, .policy-page a { color: var(--text-accent); text-underline-offset: 3px; }
+.policy-page { min-height: 100svh; padding: clamp(22px,5vw,64px); background: var(--paper); color: var(--ink); }
+.policy-page article { width: min(100%,780px); margin: 0 auto; padding: clamp(26px,5vw,58px); border: 1px solid var(--line); border-radius: 20px; background: var(--white); box-shadow: var(--shadow-lg); }
+.policy-back { display: inline-block; margin-bottom: 30px; font-weight: 700; }
+.policy-page h1 { margin: 8px 0 4px; font-size: clamp(2.25rem,6vw,4rem); letter-spacing: -.045em; }
+.policy-page h2 { margin: 32px 0 8px; font-size: 1.2rem; }
+.policy-page p, .policy-page li { line-height: 1.72; }
+.policy-page ul { padding-left: 22px; }
+.policy-page li + li { margin-top: 8px; }
+.policy-updated { margin-top: 0; color: var(--muted); font-size: .86rem; }
+.sign-in-error, .sign-in-pending { padding: 12px 14px; border-radius: 10px; background: var(--surface-warning); color: var(--text-warning) !important; }
+.account-settings form { margin: 0; }
+.account-identity { display: flex; align-items: center; gap: 13px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-soft); }
+.account-identity > span { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 50%; background: var(--copper); color: var(--text-on-primary); font-weight: 800; }
+.account-identity strong, .account-identity small { display: block; overflow-wrap: anywhere; }
+.account-identity small { margin-top: 2px; color: var(--muted); }
+.account-identity em { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; color: var(--text-accent); font-size: .78rem; font-style: normal; font-weight: 750; }
+.settings-link { display: flex; align-items: center; gap: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); text-decoration: none; }
+.settings-link span { flex: 1; }
+.settings-link strong, .settings-link small { display: block; }
+.settings-link small { margin-top: 3px; color: var(--muted); }
+.delete-account { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.delete-account summary { display: flex; align-items: center; gap: 9px; padding: 14px; cursor: pointer; color: var(--text-danger); font-weight: 750; }
+.delete-account > :not(summary) { margin-left: 14px; margin-right: 14px; }
+.delete-account label { display: grid; gap: 7px; margin-bottom: 12px; }
+.delete-account input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); color: var(--ink); }
+.delete-account .danger { width: calc(100% - 28px); margin-bottom: 14px; }

@@ -23,7 +23,7 @@ globalThis.window={
   localStorage:{getItem:key=>key==='electrical-mastery-progress-v1'?saved:null,setItem:(_,value)=>{saved=value;}},
   history:{replaceState:(_,__,hash)=>{window.location.hash=hash;}},
   scrollTo(){},addEventListener(){},removeEventListener(){},
-  setTimeout(fn,delay){const id=++timerId;if(!delay)timers.set(id,fn);return id;},
+  setTimeout(fn,delay){const id=++timerId;if((delay??0)<=600)timers.set(id,fn);return id;},
   clearTimeout(id){timers.delete(id);},setInterval(){return 1;},clearInterval(){},
   matchMedia:query=>({matches:narrowViewport&&query.includes('max-width: 1180px')}),
 };
@@ -32,7 +32,7 @@ const text=node=>typeof node==='string'?node:Array.isArray(node)?node.map(text).
 const click=async node=>{assert.ok(node,'Control exists');await act(async()=>node.props.onClick());await flush();};
 const button=label=>tree.root.findAllByType('button').find(node=>text(node).includes(label));
 const state=()=>JSON.parse(saved);
-const mount=async()=>{await act(async()=>{tree=create(h(App));});await flush();};
+const mount=async()=>{await act(async()=>{tree=create(h(App,{user:{id:'test-user',email:'learner@example.com',name:'Test Learner',picture:null,isAdmin:false}}));});await flush();};
 await mount();
 assert.equal(button('Browse freely'),undefined,'No mode toggle is needed');
 const modules=()=>tree.root.findAllByType('button').filter(node=>node.props.className==='module-card');

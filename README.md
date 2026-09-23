@@ -7,9 +7,9 @@ A learning workshop with 296 lessons in 25 modules across C2, C1 and Professiona
 - **Home:** continue learning, required-video progress, study minutes and licensing pathway information.
 - **Learn:** 82 neutral learning sections, original videos and transcripts, Overview explanations, standards, glossary, book links, worked calculations, fault investigations and personal notes. Lessons remain freely accessible in any order.
 - **Books:** four complete books with chapter search, PDF and text views, zoom, page navigation, saved pages/notes, extracted figures and explanatory simulations. Lesson source links reuse the same reader in a dialog.
-- **Settings:** browser progress backup/import/reset and playback preferences.
+- **Settings:** Google account controls, complete account export/deletion, progress backup/import/reset and playback preferences.
 
-Schema 7 accepts earlier backups (including version 6), retains learning records and preferences, and discards retired assessment scores, passes, attempts and recall schedules. Required progress counts videos only. Book state remains independently synchronized on the server.
+Schema 9 accepts earlier backups, retains learning records and preferences, and discards retired assessment scores, passes, attempts and recall schedules. Required progress counts videos only. All learner-owned records are synchronized per account.
 
 ## Books and privacy
 
@@ -22,14 +22,18 @@ Schema 7 accepts earlier backups (including version 6), retains learning records
 
 Originals, reading copies and extracted figures live in private Vercel Blob, not Git or public assets. The 2026 On-Site Guide is an image scan; use Page view and chapter search. The IET Wiring Guide has an OCR text layer. Older editions are historical references, not current compliance specifications.
 
-Opening Books creates a signed HttpOnly session automatically. **This is a shared reader, not individual authentication:** anyone who can access the website can read books and update shared bookmarks/positions/notes. Private Blob storage protects credentials and prevents direct anonymous Blob downloads; it does not restrict website visitors. Video progress and lesson notes are browser-local.
+The course uses Google OpenID Connect for identity and a signed, HttpOnly course session. Google access and refresh tokens are not retained. Every database document has a composite `(user_id, document_type)` key, so progress, lesson notes, course ordering, supplementary videos and reading records are isolated between learners. A first sign-in imports the old browser-local progress once; subsequent changes synchronize across devices. Private Blob continues to protect the book files themselves.
 
 Server configuration:
 
 - `BLOB_READ_WRITE_TOKEN`, or `BLOB_STORE_ID` with Vercel OIDC.
-- `READER_SESSION_SECRET`: at least 32 random characters, never prefixed `NEXT_PUBLIC_`.
+- `DATABASE_URL` (or `POSTGRES_URL`): Neon Postgres connection string.
+- `AUTH_SECRET`: at least 32 random characters, never prefixed `NEXT_PUBLIC_`.
+- `AUTH_GOOGLE_ID` and `AUTH_GOOGLE_SECRET`: Google OAuth web client credentials.
+- `ADMIN_EMAIL`: administrator email; production uses `liptontechdesign@gmail.com`.
+- `NEXT_PUBLIC_SITE_URL`: canonical site origin, without a trailing slash.
 
-Reader operations use ETag checks to avoid replacing another device's concurrent changes. PDF.js assets are prepared automatically before development/build. All complete page counts and exact byte sizes are recorded in the registry.
+Database tables are created idempotently on the first authenticated request. PDF.js assets are prepared automatically before development/build. All complete page counts and exact byte sizes are recorded in the registry.
 
 To prepare/upload one new book, use `scripts/prepare-book-copies.py --book BOOK_ID INPUT_PDF PAGE_COUNT OUTPUT_PDF` and `node --env-file=.env.local scripts/upload-books.mjs --book BOOK_ID ORIGINAL_PDF READER_PDF`. Uploads are private and refuse overwrites. Generated PDFs and manifests belong in ignored `work/`.
 
@@ -56,6 +60,7 @@ npm run test:recaps
 npm run test:navigation
 npm run test:migration
 npm run test:architecture
+npm run test:accounts
 node scripts/test-supplied-learning.mjs
 npm run audit:course
 npm run audit:transcripts
@@ -65,7 +70,7 @@ npx next build
 
 `npm run build` validates the existing vinext/Vite target. `vercel.json` uses `node scripts/prepare-reader.mjs && npx next build`; verify that target before publishing. Production-like local server: `npx next start -H 127.0.0.1 -p 3001`.
 
-With server credentials configured, `node --env-file=.env.local scripts/verify-book-access.mjs http://127.0.0.1:3001` checks session renewal, shared state reads, all four PDF ranges, CSRF rejection, private Blob access and an extracted figure. Its optional `--test-saving` mode refuses to change an occupied store.
+With server credentials configured, browser integration checks should cover Google sign-in, account-scoped state reads, all four PDF ranges, CSRF rejection, private Blob access and an extracted figure.
 
 ## Architecture and sources
 
@@ -73,7 +78,9 @@ With server credentials configured, `node --env-file=.env.local scripts/verify-b
 - `app/learning-sections.ts` / `.json`: coherent lesson groups, with no pass/fail state.
 - `app/lesson-explanations.json`, `lesson-study-notes.json`, `supplied-teaching.json`: neutral preserved teaching extracted before the old question engine was removed.
 - `app/learner-state.ts`: schema 7 migration and validation.
-- `app/book-reader.tsx`: shared full-page/dialog reader implementation.
+- `app/server/auth.ts`: Google OpenID Connect, PKCE/state/nonce validation and signed course sessions.
+- `app/server/database.ts`: account-scoped Neon document storage and lifecycle operations.
+- `app/book-reader.tsx`: per-account full-page/dialog reader implementation.
 - `course-transcripts/`: 295 complete transcript sources and one explicitly visual-only lesson; all fingerprints are audited.
 - `app/knowledge-graph.ts`, `standards-data.ts`, `lesson-terminology.ts`, `practice-data.ts`, toolkit math and visuals remain available for contextual learning.
 

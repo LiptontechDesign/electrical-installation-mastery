@@ -31,6 +31,8 @@ import { standardsTopics, standardSources } from './standards-data';
 import { practiceForLesson } from './practice-data';
 
 import { useDialogFocus } from './use-dialog-focus';
+import AccountPanel from './account-panel';
+import type { CourseUser } from './server/auth';
 
 const PracticeWorkspace = dynamic(() => import('./practice-workspace'), { loading: () => <p role="status">Preparing your practice…</p> });
 const ModuleRecap = dynamic(() => import('./module-recap'), { loading: () => <p role="status" className="recap-loading">Opening module recap…</p> });
@@ -110,7 +112,7 @@ const navigation = [
   { id: 'books' as const, label: 'Books', icon: BookOpen },
 ];
 
-export default function CourseApp() {
+export default function CourseApp({ user }: { user: CourseUser }) {
   const { course, sectionsByModule } = useCourseOrder();
   const allLessons = useMemo(() => course.modules.flatMap(m => m.lessons), [course]);
   const lessonLookup = useMemo(() => new Map(allLessons.map(l => [l.id, l])), [allLessons]);
@@ -142,6 +144,8 @@ export default function CourseApp() {
 
   const [storageBlocked, setStorageBlocked] = useState(false);
   const [saveError, setSaveError] = useState(false);
+  const hydrationStartedRef = useRef(false);
+  const legacyProgressRef = useRef(false);
 
   const [youtubeApiReady, setYouTubeApiReady] = useState(false);
   const [autoPlayLessonId, setAutoPlayLessonId] = useState<string | null>(null);
@@ -316,51 +320,57 @@ export default function CourseApp() {
   };
 
   useEffect(() => {
-    let nextState = initialLearnerState;
-    let readError = false;
-
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed: unknown = JSON.parse(saved);
-        if (!isProgressBackup(parsed, new Set(lessonLookup.keys()))) throw new Error('Unreadable or newer progress format');
-        nextState = clampState(parsed);
+    if (hydrationStartedRef.current) return;
+    hydrationStartedRef.current = true;
+    let active = true;
+    void (async () => {
+      let nextState = initialLearnerState;
+      let localState: LearnerState | null = null;
+      let readError = false;
+      try {
+        const personalKey = `${STORAGE_KEY}:${user.id}`;
+        const personal = window.localStorage.getItem(personalKey);
+        const legacy = window.localStorage.getItem(STORAGE_KEY);
+        legacyProgressRef.current = !personal && Boolean(legacy);
+        const saved = personal ?? legacy;
+        if (saved) {
+          const parsed: unknown = JSON.parse(saved);
+          if (!isProgressBackup(parsed, new Set(lessonLookup.keys()))) throw new Error('Unreadable or newer progress format');
+          localState = clampState(parsed);
+        }
+      } catch { readError = true; }
+      try {
+        const response = await fetch('/api/user-data/learner-state', { cache: 'no-store' });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error);
+        nextState = data.exists ? clampState(data.payload) : localState ?? initialLearnerState;
+      } catch (value) {
+        nextState = localState ?? initialLearnerState;
+        if (active) setToast(value instanceof Error ? value.message : 'Cloud progress could not be loaded.');
       }
-    } catch {
-      readError = true;
-    }
-    try {
-      const watched:unknown=JSON.parse(window.localStorage.getItem('electrical-supplementary-watched-v1')??'[]');
-      nextState=importPromotedWatched(nextState,watched);
-    } catch { /* Preserve an unreadable supplementary record; do not block core progress. */ }
-    const [hashView, hashId] = window.location.hash.replace(/^#/, '').split('/');
-    if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
-      nextState = { ...nextState, activeLessonId: hashId };
-    }
-    const timer = window.setTimeout(() => {
-
-      if (readError) { setStorageBlocked(true); setToast('Saved progress could not be read. The original record is preserved; export this session before restoring a valid backup.'); }
+      try {
+        const watched: unknown = JSON.parse(window.localStorage.getItem(`electrical-supplementary-watched-v1:${user.id}`) ?? window.localStorage.getItem('electrical-supplementary-watched-v1') ?? '[]');
+        nextState = importPromotedWatched(nextState, watched);
+      } catch { /* Preserve an unreadable supplementary record; do not block core progress. */ }
+      const [hashView, hashId] = window.location.hash.replace(/^#/, '').split('/');
+      if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) nextState = { ...nextState, activeLessonId: hashId };
+      if (!active) return;
+      if (readError && !localState) { setStorageBlocked(true); setToast('A browser copy could not be read. Your cloud record was not changed.'); }
       if (hashView === 'library' || hashView === 'practice') {
         setView('learn');
         const restoredModule = lessonLocation.get(nextState.activeLessonId)?.module ?? course.modules[0];
-        setOpenModuleId(restoredModule.id);
-        setMapPath(restoredModule.path);
+        setOpenModuleId(restoredModule.id); setMapPath(restoredModule.path);
         window.history.replaceState(null, '', `#learn/${nextState.activeLessonId}`);
-      } else if (navigation.some((item) => item.id === hashView)) {
-        setView(hashView as View);
-      }
+      } else if (navigation.some(item => item.id === hashView)) setView(hashView as View);
       if (hashView === 'learn' && hashId && lessonLookup.has(hashId)) {
         const restoredModule = lessonLocation.get(nextState.activeLessonId)?.module ?? course.modules[0];
-        setOpenModuleId(restoredModule.id);
-        setMapPath(restoredModule.path);
-        if(nextState.activeLessonId!==hashId)window.history.replaceState(null,'',`#learn/${nextState.activeLessonId}`);
+        setOpenModuleId(restoredModule.id); setMapPath(restoredModule.path);
       }
-
       setLearner(nextState);
       setHydrated(true);
-    }, 0);
-    return () => window.clearTimeout(timer);
-  }, [course.modules, hydrated, lessonLocation, lessonLookup]);
+    })();
+    return () => { active = false; };
+  }, [course.modules, lessonLocation, lessonLookup, user.id]);
 
   useEffect(() => {
     if (view !== 'learn') return;
@@ -369,12 +379,18 @@ export default function CourseApp() {
 
   useEffect(() => {
     if (!hydrated || storageBlocked) return;
-    const timer = window.setTimeout(() => {
-      try { window.localStorage.setItem(STORAGE_KEY, JSON.stringify(learner)); setSaveError(false); }
-      catch { setSaveError(true); }
-    }, 0);
+    const timer = window.setTimeout(async () => {
+      try {
+        window.localStorage.setItem(`${STORAGE_KEY}:${user.id}`, JSON.stringify(learner));
+        const response = await fetch('/api/user-data/learner-state', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ payload: learner }) });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error);
+        if (legacyProgressRef.current) { window.localStorage.removeItem(STORAGE_KEY); legacyProgressRef.current = false; }
+        setSaveError(false);
+      } catch { setSaveError(true); }
+    }, 600);
     return () => window.clearTimeout(timer);
-  }, [hydrated, learner, storageBlocked]);
+  }, [hydrated, learner, storageBlocked, user.id]);
 
   useEffect(() => {
     if (!toast) return;
@@ -729,7 +745,7 @@ export default function CourseApp() {
     } catch { setToast('That file is not a valid course progress backup.'); }
   };
 
-  const resetProgress = () => { setLearner({...initialLearnerState,promotedVideoProgressImported:true}); setStorageBlocked(false); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Local learning progress has been reset.'); };
+  const resetProgress = () => { setLearner({...initialLearnerState,promotedVideoProgressImported:true}); setStorageBlocked(false); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Your learning progress has been reset and will sync to your account.'); };
   const moduleCompletedCount = (module: CourseModule) => module.lessons.filter((lesson) => completed.has(lesson.id)).length;
   const openModuleRecap = (moduleId:string) => {
     cancelAutoNext(false);
@@ -787,7 +803,7 @@ export default function CourseApp() {
         </header>
 
         <main id="main-content" className="app-content">
-          {(storageBlocked || saveError) && <div className="storage-warning" role="alert"><strong>{storageBlocked ? 'The existing saved record is being preserved.' : 'This session could not be saved to the browser.'}</strong><p>Download a backup of this session before leaving. Restore a valid backup in Settings to resume normal saving.</p><button type="button" onClick={exportProgress}>Download this session</button></div>}
+          {(storageBlocked || saveError) && <div className="storage-warning" role="alert"><strong>{storageBlocked ? 'The unreadable browser copy is being preserved.' : 'Your latest changes could not be synced to your account.'}</strong><p>Download a backup of this session and retry when your connection is available.</p><button type="button" onClick={exportProgress}>Download this session</button></div>}
           {view === 'home' && (
             <div className="page home-page">
               <section className="home-hero">
@@ -927,11 +943,12 @@ export default function CourseApp() {
       {settingsOpen && (
         <div className="modal-layer align-right" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
           <section ref={settingsDialogRef} className="settings-drawer" role="dialog" aria-modal="true" aria-labelledby="settings-title">
-            <div className="dialog-title"><div><span className="eyebrow neutral">Device & data</span><h2 id="settings-title">Settings</h2></div><button type="button" onClick={() => setSettingsOpen(false)} aria-label="Close settings"><X size={22} /></button></div>
-            <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>Your learning data</strong><p>Video marks, notes, bookmarks and practical learning records stay in this browser. My books keeps its shared reading record.</p></div></div>
+            <div className="dialog-title"><div><span className="eyebrow neutral">Account & data</span><h2 id="settings-title">Settings</h2></div><button type="button" onClick={() => setSettingsOpen(false)} aria-label="Close settings"><X size={22} /></button></div>
+            <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>Your private learning data</strong><p>Video marks, notes, bookmarks, course changes and reading records are saved only under your Google account and sync across devices.</p></div></div>
+            <AccountPanel user={user} />
             <section className="settings-section playback-settings"><span className="eyebrow neutral">Playback & review</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished lesson</strong><small>Optional next-video countdown when reflection is switched off</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><button className="settings-switch" type="button" role="switch" aria-checked={learner.reviewBeforeNext} onClick={() => { const enabled = !learner.reviewBeforeNext; setLearner((current) => ({ ...current, reviewBeforeNext: enabled, updatedAt: new Date().toISOString() })); setToast(enabled ? 'Lesson recap is now required before auto-next.' : 'Auto-next will use the five-second countdown without opening the recap.'); }}><ListChecks size={19} /><span><strong>Review before next</strong><small>Open the lesson Overview when a video finishes</small></span><span className={`switch-track ${learner.reviewBeforeNext ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>Recommended: keep reflection on. Choose your next learning action after the video. In fullscreen, the app waits for you to exit safely before changing the lesson.</p></section>
             <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save video marks, notes and bookmarks</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>
-            <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>videos watched</span></div><div><b>{coursePercent}%</b><span>required videos watched</span></div><div><b>{weekMinutes}</b><span>study minutes this week</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This permanently clears progress from this browser. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Clear local progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset local progress</strong><small>Clear this browser’s learning record</small></span></button>}</section>
+            <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>videos watched</span></div><div><b>{coursePercent}%</b><span>required videos watched</span></div><div><b>{weekMinutes}</b><span>study minutes this week</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This clears progress from your account on every device. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Reset account progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset learning progress</strong><small>Clear your synced learning record</small></span></button>}</section>
             <div className="settings-footnote"><Info size={18} /><p>Videos stream from YouTube and need internet access.</p></div>
           </section>
         </div>

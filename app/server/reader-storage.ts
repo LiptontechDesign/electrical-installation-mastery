@@ -1,8 +1,8 @@
 import 'server-only';
-import { get, put, BlobPreconditionFailedError } from '@vercel/blob';
 import { applyReaderCommand, emptyReaderState, type ReaderState, type ReaderCommand } from '../reader-state';
 import type { BookId } from '../books-data';
 import bookAssets from '../book-assets.json';
+import { readUserDocument, writeUserDocument } from './database';
 
 export const bookFiles: Record<BookId, { pathname: string; size: number }> = {
   'installation-designs': bookAssets['installation-designs'].reader,
@@ -10,26 +10,15 @@ export const bookFiles: Record<BookId, { pathname: string; size: number }> = {
   'iet-wiring-guide': bookAssets['iet-wiring-guide'].reader,
   'on-site-guide': bookAssets['on-site-guide'].reader,
 };
-const statePath = 'reader/owner-state-v1.json';
-export async function readReaderState(): Promise<{ state: ReaderState; etag?: string }> {
-  const result = await get(statePath, { access: 'private', useCache: false });
-  if (!result) return { state: emptyReaderState() };
-  if (result.statusCode !== 200) throw new Error('STATE_UNAVAILABLE');
-  const state: ReaderState = await new Response(result.stream).json();
+export async function readReaderState(userId: string): Promise<ReaderState> {
+  const result = await readUserDocument<ReaderState>(userId, 'reader-state');
+  if (!result) return emptyReaderState();
+  const state = result.payload;
   if (state.version !== 1 || !state.books || typeof state.books !== 'object') throw new Error('STATE_FORMAT');
-  return { state, etag: result.blob.etag };
+  return state;
 }
-export async function updateReaderState(command: ReaderCommand): Promise<ReaderState> {
-  for (let attempt = 0; attempt < 4; attempt++) {
-    const { state, etag } = await readReaderState();
-    const next = applyReaderCommand(state, command);
-    try {
-      await put(statePath, JSON.stringify(next), { access: 'private', addRandomSuffix: false, contentType: 'application/json', cacheControlMaxAge: 0, ...(etag ? { ifMatch: etag, allowOverwrite: true } : { allowOverwrite: false }) });
-      return next;
-    } catch (error) {
-      const conflict = error instanceof BlobPreconditionFailedError || (error instanceof Error && /already exists/i.test(error.message));
-      if (!conflict || attempt === 3) throw error;
-    }
-  }
-  throw new Error('STATE_CONFLICT');
+export async function updateReaderState(userId: string, command: ReaderCommand): Promise<ReaderState> {
+  const next = applyReaderCommand(await readReaderState(userId), command);
+  await writeUserDocument(userId, 'reader-state', next);
+  return next;
 }

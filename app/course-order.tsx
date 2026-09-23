@@ -23,7 +23,7 @@ export function CourseOrderProvider({ children }: { children: ReactNode }) {
       if (!response.ok) throw new Error(data.error);
       if (requestId !== sequence.current) return;
       setOrder(parseOrder(data)); setReady(true); setError('');
-    } catch { if (requestId === sequence.current) { setReady(false); setError('The shared order could not be loaded. Retry before moving a lesson.'); } }
+    } catch { if (requestId === sequence.current) { setReady(false); setError('Your course order could not be loaded. Retry before moving a lesson.'); } }
   }
   useEffect(() => {
     const initialRequest = window.setTimeout(() => { void refresh(); }, 0);
@@ -80,7 +80,7 @@ export function MoveLessonButton({ lessonId, onMoved }: { lessonId: string; onMo
     const move = isUndo && undo ? undo : { lessonId, sectionId: destination.id, beforeId };
     if (await save(move)) {
       const group = groups.find(s => s.id === move.sectionId)!;
-      setUndo(isUndo ? null : previous); setNotice(isUndo ? 'Move undone for everyone.' : 'Lesson moved. The shared course has been updated.');
+      setUndo(isUndo ? null : previous); setNotice(isUndo ? 'Move undone.' : 'Lesson moved in your course.');
       setSectionId(move.sectionId); setBeforeId(move.beforeId); onMoved?.(group.moduleId);
     }
     setBusy(false);
@@ -88,8 +88,8 @@ export function MoveLessonButton({ lessonId, onMoved }: { lessonId: string; onMo
   return <>
     <button ref={trigger} type="button" className="move-lesson-button" onClick={begin} data-tooltip="Move this lesson to another module, section or position"><ArrowRightLeft size={16} /> Move lesson</button>
     <dialog ref={dialog} className="move-lesson-dialog" aria-labelledby="move-lesson-title" onCancel={event => { if (busy) event.preventDefault(); }} onClose={() => { setOpen(false); trigger.current?.focus(); }}>
-      <div className="move-dialog-heading"><div><span className="eyebrow">Shared course editor</span><h2 id="move-lesson-title">Move lesson</h2></div><button type="button" disabled={busy} aria-label="Close move lesson" onClick={() => setOpen(false)}><X size={20} /></button></div>
-      <p className="move-lesson-name">{lesson.title}</p><p>Updates the course for everyone. Watched progress, notes and bookmarks stay with this lesson. Supporting videos attached to it follow along.</p>
+      <div className="move-dialog-heading"><div><span className="eyebrow">Your course editor</span><h2 id="move-lesson-title">Move lesson</h2></div><button type="button" disabled={busy} aria-label="Close move lesson" onClick={() => setOpen(false)}><X size={20} /></button></div>
+      <p className="move-lesson-name">{lesson.title}</p><p>Updates only your course. Watched progress, notes and bookmarks stay with this lesson. Supporting videos attached to it follow along.</p>
       <form onSubmit={event => { event.preventDefault(); void submit(); }}>
         <fieldset disabled={busy || !ready}>
           <label>Destination module<select value={destination.moduleId} onChange={event => { setSectionId(sectionsByModule[event.target.value][0].id); setBeforeId(null); setNotice(''); }}>{course.modules.map(m => <option key={m.id} value={m.id}>{m.path} · {m.stageNumber}. {m.title}</option>)}</select></label>
@@ -105,7 +105,7 @@ export function MoveLessonButton({ lessonId, onMoved }: { lessonId: string; onMo
         {error && <div role="alert" className="move-error">{error} <button disabled={busy} type="button" onClick={() => void refresh()}>Refresh order</button></div>}
         {!ready && !error && <p role="status">Loading shared course order…</p>}
         {notice && <p role="status">{notice} {undo && <button type="button" disabled={busy} onClick={() => void submit(true)}>Undo move</button>}</p>}
-        <div className="move-dialog-actions"><button type="button" disabled={busy} onClick={() => setOpen(false)}>{notice ? 'Done' : 'Cancel'}</button><button className="primary-button" disabled={busy || !ready || !validBefore || unchanged} type="submit">{busy ? 'Saving…' : 'Move for everyone'}</button></div>
+        <div className="move-dialog-actions"><button type="button" disabled={busy} onClick={() => setOpen(false)}>{notice ? 'Done' : 'Cancel'}</button><button className="primary-button" disabled={busy || !ready || !validBefore || unchanged} type="submit">{busy ? 'Saving…' : 'Move in my course'}</button></div>
       </form>
     </dialog>
   </>;

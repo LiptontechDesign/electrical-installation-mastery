@@ -16,7 +16,7 @@ const SupplementaryContext = createContext<Context | null>(null);
 export const useSupplementary = () => useContext(SupplementaryContext);
 const courseVideoLabel = (number: number | undefined) => number === undefined ? 'Video' : `L${String(number).padStart(2, '0')}`;
 const empty: SupplementaryState = withSupplementaryDefaults({ version: 1, revision: 0, videos: [] });
-export function SupplementaryProvider({ children }: { children: ReactNode }) {
+export function SupplementaryProvider({ children, userId }: { children: ReactNode; userId: string }) {
   const { course, order } = useCourseOrder();
   const [storedState, setState] = useState(empty);
   const state = useMemo(() => ({ ...storedState, videos: relocateSupportingVideos(storedState.videos, course) }), [storedState, course]);
@@ -33,22 +33,46 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
   const [watched, setWatched] = useState<string[]>([]);
   const [progressReady, setProgressReady] = useState(false);
   const [progressError, setProgressError] = useState('');
+  const legacyProgress = useRef(false);
   useEffect(() => {
-    try {
-      const value: unknown = JSON.parse(localStorage.getItem('electrical-supplementary-watched-v1') ?? '[]');
-      if (!Array.isArray(value) || value.some(id => typeof id !== 'string')) throw new Error();
-      // Hydrate browser-owned storage after SSR; do not overwrite it before this read.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setWatched([...new Set(value as string[])]); setProgressReady(true);
-    } catch { setProgressError('Supplementary watched marks could not be loaded. Existing saved data has not been changed.'); }
-  }, []);
+    let active = true;
+    void (async () => {
+      let local: string[] = [];
+      try {
+        const personal = localStorage.getItem(`electrical-supplementary-watched-v1:${userId}`);
+        const legacy = localStorage.getItem('electrical-supplementary-watched-v1');
+        legacyProgress.current = !personal && Boolean(legacy);
+        const value: unknown = JSON.parse(personal ?? legacy ?? '[]');
+        if (!Array.isArray(value) || value.some(id => typeof id !== 'string')) throw new Error();
+        local = [...new Set(value as string[])];
+      } catch { if (active) setProgressError('Saved supplementary marks could not be read. The cloud record was not changed.'); }
+      try {
+        const response = await fetch('/api/user-data/supplementary-progress', { cache: 'no-store' });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error);
+        if (!active) return;
+        setWatched(data.exists ? data.payload : local);
+        setProgressReady(true);
+      } catch (value) {
+        if (active) { setWatched(local); setProgressReady(true); setProgressError(value instanceof Error ? value.message : 'Cloud progress could not be loaded.'); }
+      }
+    })();
+    return () => { active = false; };
+  }, [userId]);
   useEffect(() => {
     if (!progressReady) return;
-    // Report failures from the external browser storage synchronization.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    try { localStorage.setItem('electrical-supplementary-watched-v1', JSON.stringify(watched)); setProgressError(''); }
-    catch { setProgressError('This browser could not save supplementary watched marks. They will last only for this session.'); }
-  }, [watched, progressReady]);
+    const timer = window.setTimeout(async () => {
+      try {
+        localStorage.setItem(`electrical-supplementary-watched-v1:${userId}`, JSON.stringify(watched));
+        const response = await fetch('/api/user-data/supplementary-progress', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ payload: watched }) });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error);
+        if (legacyProgress.current) { localStorage.removeItem('electrical-supplementary-watched-v1'); legacyProgress.current = false; }
+        setProgressError('');
+      } catch (value) { setProgressError(value instanceof Error ? value.message : 'Supplementary marks could not be saved to your account.'); }
+    }, 500);
+    return () => window.clearTimeout(timer);
+  }, [watched, progressReady, userId]);
   const markWatched = useCallback((id: string) => {
     setWatched(current => current.includes(id) ? current : [...current, id]);
   }, []);
@@ -133,7 +157,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
         setSelected(saved); setArchiveModule(null);
         window.dispatchEvent(new Event('supplementary-video-open'));
       } else setArchiveModule(editor.moduleId);
-      setNotice('Saved for everyone. Close this window to continue the course.');
+      setNotice('Saved in your course. Close this window to continue.');
     } catch (e) { setNotice(e instanceof Error ? e.message : 'Could not save.'); }
     finally { setBusy(false); }
   }
@@ -188,22 +212,22 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
               <optgroup label="Core lessons">{courseModule?.lessons.map(l => <option key={l.id} value={l.id}>{courseVideoLabel(displayNumberById.get(l.id))} · {l.title}</option>)}</optgroup>
               {supplementaryTargets.length > 0 && <optgroup label="Supplementary videos already here">{supplementaryTargets.map(video => <option key={video.id} value={video.id}>{video.archived ? 'Archived placement' : courseVideoLabel(displayNumberById.get(video.id))} · {video.title}</option>)}</optgroup>}
             </select><small className="supp-placement-help">Choose a core lesson or an existing supplementary video. Your video will appear immediately before or after that item.</small></label>
-          </> : <p><strong>{editor.title}</strong><br />{editor.action === 'archive' ? 'Hide this video from the course for everyone. It stays in the archive and can be restored.' : 'Return this video to its saved course position for everyone.'}</p>}
-          <div className="supp-confirm"><strong>Are you sure? This changes the course for every visitor.</strong><p>Original lessons and assessments will not change. No video is permanently deleted.</p><label>Type <strong>{confirmationPhrase(editor.action)}</strong> to confirm<input autoComplete="off" spellCheck={false} value={confirmation} onChange={e => setConfirmation(e.target.value)} /></label></div>
-          <button className="primary-button" type="submit" disabled={!ready || confirmation !== confirmationPhrase(editor.action)}>{busy ? 'Saving…' : 'Confirm shared change'}</button>
+          </> : <p><strong>{editor.title}</strong><br />{editor.action === 'archive' ? 'Hide this video from your course. It stays in your archive and can be restored.' : 'Return this video to its saved position in your course.'}</p>}
+          <div className="supp-confirm"><strong>Are you sure? This changes only your course.</strong><p>Original lessons and assessments will not change. No video is permanently deleted.</p><label>Type <strong>{confirmationPhrase(editor.action)}</strong> to confirm<input autoComplete="off" spellCheck={false} value={confirmation} onChange={e => setConfirmation(e.target.value)} /></label></div>
+          <button className="primary-button" type="submit" disabled={!ready || confirmation !== confirmationPhrase(editor.action)}>{busy ? 'Saving…' : 'Confirm my change'}</button>
         </fieldset>
       </form> : selected ? <>
         <p>{selected.instructor} · Optional supporting lesson</p>
         {['luTRnCoeD4c','TsJ49Np3HS0','UFvL7wTFzl0'].includes(selected.videoId)&&<ElectricalShockContext/>}
         <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
         <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
-        <p>Watched status is personal to this browser and is kept in both browsing modes.</p>
+        <p>Watched status is private to your account and syncs across your devices.</p>
         {progressError && <p role="alert">{progressError}</p>}
         <p><a href={`https://www.youtube.com/watch?v=${selected.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p>
         <p>This optional video does not change required course completion.</p>
         <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>
       </> : <>
-        <p>Archived videos remain saved. Restore them to make them visible to everyone again.</p>
+        <p>Archived videos remain saved. Restore them to make them visible in your course again.</p>
         {state.videos.filter(v => v.archived && v.moduleId === archiveModule).map(v => <div className="supp-archive-row" key={v.id}><span>{v.title}</span><button className="secondary-button" onClick={() => edit(v, 'restore')}>Restore</button><button className="secondary-button" onClick={() => edit(v, 'edit')}>Rename or move</button></div>)}
         {!state.videos.some(v => v.archived && v.moduleId === archiveModule) && <p>No archived videos in this module.</p>}
       </>}
@@ -215,7 +239,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
           setEditor(null); setSelected(null); setArchiveModule(archiveModule ?? editor?.moduleId ?? selected?.moduleId ?? course.modules[0].id);
           setNotice('Shared list refreshed. Reopen the video from the course map to review its latest details before editing.');
         }
-      }}>Refresh shared list</button><small>Open collaboration · No sign-in required</small></footer>
+      }}>Refresh my list</button><small>Private to {userId ? 'your account' : 'you'}</small></footer>
     </section></div>}
   </SupplementaryContext.Provider>;
 }
