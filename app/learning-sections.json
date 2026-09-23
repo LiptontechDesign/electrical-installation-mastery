@@ -716,13 +716,35 @@
     "id": "c1-fundamentals-section-1",
     "moduleId": "c1-fundamentals",
     "number": 1,
-    "title": "Three-phase relationships",
-    "throughLessonId": "p07-l05",
+    "title": "What a three-phase supply is",
+    "throughLessonId": "p07-l01",
     "lessonIds": [
       "p02-l03",
-      "p07-l01",
+      "p07-l01"
+    ],
+    "recapKey": "p07-l01",
+    "authoredRecap": false
+  },
+  {
+    "id": "c1-fundamentals-section-2",
+    "moduleId": "c1-fundamentals",
+    "number": 2,
+    "title": "Star and delta: line versus phase quantities",
+    "throughLessonId": "p07-l03",
+    "lessonIds": [
       "p07-l02",
-      "p07-l03",
+      "p07-l03"
+    ],
+    "recapKey": "p07-l03",
+    "authoredRecap": false
+  },
+  {
+    "id": "c1-fundamentals-section-3",
+    "moduleId": "c1-fundamentals",
+    "number": 3,
+    "title": "Balanced loads, imbalance and neutral current",
+    "throughLessonId": "p07-l05",
+    "lessonIds": [
       "p07-l04",
       "p07-l05"
     ],
@@ -733,7 +755,7 @@
     "id": "c1-power-section-1",
     "moduleId": "c1-power",
     "number": 1,
-    "title": "3 Phase: How to Calculate Line Voltage, Phase Voltage, Line Current & Phase Current in Star & Delta",
+    "title": "Line/phase calculation, then three-phase power",
     "throughLessonId": "p06-l13",
     "lessonIds": [
       "p06-l13"
@@ -745,43 +767,28 @@
     "id": "c1-distribution-section-1",
     "moduleId": "c1-distribution",
     "number": 1,
-    "title": "Safe isolation and industrial accessories",
-    "throughLessonId": "p11-v2-l11",
+    "title": "Safe isolation, distribution boards and submains",
+    "throughLessonId": "p07-l08",
     "lessonIds": [
       "p08-l01",
-      "course-igi8F6UAvh0",
-      "p02-l11",
-      "p11-v2-l11"
+      "p07-l06",
+      "p07-l07",
+      "p07-l08"
     ],
-    "recapKey": "p11-v2-l11",
+    "recapKey": "p07-l08",
     "authoredRecap": false
   },
   {
     "id": "c1-distribution-section-2",
     "moduleId": "c1-distribution",
     "number": 2,
-    "title": "Boards, feeders and phase allocation",
-    "throughLessonId": "p07-l09",
+    "title": "Three-phase plugs, sockets and enclosure selection",
+    "throughLessonId": "p11-v2-l11",
     "lessonIds": [
-      "p07-l06",
-      "p07-l07",
-      "p07-l08",
-      "p07-l09"
+      "p02-l11",
+      "p11-v2-l11"
     ],
-    "recapKey": "p07-l16",
-    "authoredRecap": false
-  },
-  {
-    "id": "c1-distribution-section-3",
-    "moduleId": "c1-distribution",
-    "number": 3,
-    "title": "Three-phase installation projects",
-    "throughLessonId": "p10-l07",
-    "lessonIds": [
-      "p10-l06",
-      "p10-l07"
-    ],
-    "recapKey": "p10-l08",
+    "recapKey": "p11-v2-l11",
     "authoredRecap": false
   },
   {
@@ -801,7 +808,7 @@
     "id": "c1-design-section-2",
     "moduleId": "c1-design",
     "number": 2,
-    "title": "Cable and protective-device design",
+    "title": "Three-phase cable and protective-device design",
     "throughLessonId": "p06-l05",
     "lessonIds": [
       "p06-l05"
@@ -813,20 +820,34 @@
     "id": "c1-earthing-section-1",
     "moduleId": "c1-earthing",
     "number": 1,
-    "title": "Earthing, fault paths and protection calculations",
-    "throughLessonId": "p05-l13",
+    "title": "Fault-loop design, then temperature correction",
+    "throughLessonId": "p05-l12",
     "lessonIds": [
-      "p05-l12",
-      "p05-l13"
+      "p05-l13",
+      "p05-l12"
     ],
     "recapKey": "p05-l13",
+    "authoredRecap": false
+  },
+  {
+    "id": "c1-earthing-section-2",
+    "moduleId": "c1-earthing",
+    "number": 2,
+    "title": "Apply the design to a three-phase board",
+    "throughLessonId": "p10-l07",
+    "lessonIds": [
+      "p07-l09",
+      "p10-l06",
+      "p10-l07"
+    ],
+    "recapKey": "p10-l07",
     "authoredRecap": false
   },
   {
     "id": "c1-pfc-section-1",
     "moduleId": "c1-pfc",
     "number": 1,
-    "title": "Power factor",
+    "title": "Power-factor causes, correction and device sizing",
     "throughLessonId": "p06-l14",
     "lessonIds": [
       "course-NIrKOVZrqnU",
@@ -839,7 +860,7 @@
     "id": "c1-motors-section-1",
     "moduleId": "c1-motors",
     "number": 1,
-    "title": "Motor principles, contactors and starters",
+    "title": "Motor operating principle and nameplate",
     "throughLessonId": "course-XbL0R_9KLD4",
     "lessonIds": [
       "p07-induction",
@@ -852,7 +873,7 @@
     "id": "module-07-section-1",
     "moduleId": "module-07",
     "number": 1,
-    "title": "Motor principles, contactors and starters",
+    "title": "Contactor, DOL starter and motor protection",
     "throughLessonId": "p04-l20",
     "lessonIds": [
       "p04-l21",
@@ -869,7 +890,7 @@
     "id": "module-07-section-2",
     "moduleId": "module-07",
     "number": 2,
-    "title": "Motor control and distribution",
+    "title": "Star-delta, soft starting and variable speed",
     "throughLessonId": "p07-vfd",
     "lessonIds": [
       "p07-star-delta",
@@ -883,23 +904,24 @@
     "id": "c1-testing-section-1",
     "moduleId": "c1-testing",
     "number": 1,
-    "title": "Three-phase measurement and verification",
-    "throughLessonId": "p08-l17",
+    "title": "Phase sequence and initial three-phase verification",
+    "throughLessonId": "p08-l11",
     "lessonIds": [
+      "course-igi8F6UAvh0",
       "p08-l07",
-      "p08-l17"
+      "p08-l17",
+      "p08-l11"
     ],
-    "recapKey": "p08-l17",
+    "recapKey": "p08-l11",
     "authoredRecap": false
   },
   {
     "id": "c1-testing-section-2",
     "moduleId": "c1-testing",
     "number": 2,
-    "title": "Inspection findings and periodic evidence",
+    "title": "Periodic inspection and condition reporting",
     "throughLessonId": "p08-periodic",
     "lessonIds": [
-      "p08-l11",
       "p08-periodic"
     ],
     "recapKey": "p16-l09",
@@ -909,7 +931,7 @@
     "id": "c1-faults-section-1",
     "moduleId": "c1-faults",
     "number": 1,
-    "title": "Distribution faults and thermal evidence",
+    "title": "Lost neutral, missing phase, board faults and thermal evidence",
     "throughLessonId": "p16-l06",
     "lessonIds": [
       "p10-l08",

@@ -12,12 +12,12 @@ const relocatedFromProfessional = new Map([
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  const expected = baseline.map(module => ({ ...module, lessons: c2StageOrder[module.id]
+  const expected = baseline.filter(module => module.path !== 'C1').map(module => ({ ...module, lessons: c2StageOrder[module.id]
     ? c2StageOrder[module.id].flatMap(section => section.lessonIds).map(id => source.get(id))
     : relocatedFromProfessional.has(module.id) ? module.lessons.filter(lesson => !relocatedFromProfessional.get(module.id).includes(lesson.id)) : module.lessons }));
-  const actual = course.modules.map(module => ({ id: module.id, path: module.path,
+  const actual = course.modules.filter(module => module.path !== 'C1').map(module => ({ id: module.id, path: module.path,
     lessons: module.lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })) }));
-  assert.deepEqual(actual, expected, 'Only the specified C2 order and two Professional relocations may change');
+  assert.deepEqual(actual, expected, 'C2 and Professional order remains unchanged while C1 is reorganized');
   const lessons = course.modules.flatMap(module => module.lessons);
   // Captured before this reorganization: all canonical lesson properties except
   // presentation number and automatically generated predecessor description.

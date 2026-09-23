@@ -300,7 +300,7 @@ const c110Groups = groupsFor('c1-faults');
 
 export const c1Sections: OverviewSection[] = [
   {
-    id: c101, stageId: 'C1-01', moduleId: 'c1-fundamentals', learningSectionIds: c101Groups.map(item => item.id), title: 'Three-Phase Fundamentals', status: 'reviewed', lessonIds: lessonsFor('c1-fundamentals'),
+    id: c101, stageId: 'C1-01', moduleId: 'c1-fundamentals', learningSectionIds: c101Groups.map(item => item.id), title: 'Three-Phase Supply, Star/Delta and Neutral Behaviour', status: 'reviewed', lessonIds: lessonsFor('c1-fundamentals'),
     termIds: ['three-phase-system','line-and-phase-values','phase-sequence','star-connection','delta-connection','balanced-three-phase-load','unbalanced-three-phase-load','neutral-current','triplen-harmonics','frequency','alternating-current','power-factor'],
     sourceIds: ['epra-c1-competencies','course-c1-three-phase','course-kenya-240-415-50'], relatedSectionIds: ['c2-01-electrical-foundations'], prerequisiteSectionIds: ['c2-09-fault-finding'],
     coverage: [
@@ -323,7 +323,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c102, stageId: 'C1-02', moduleId: 'c1-power', learningSectionIds: c102Groups.map(item => item.id), title: 'Three-Phase Power Calculations', status: 'reviewed', lessonIds: lessonsFor('c1-power'),
+    id: c102, stageId: 'C1-02', moduleId: 'c1-power', learningSectionIds: c102Groups.map(item => item.id), title: 'Three-Phase Voltage, Current and Power Calculations', status: 'reviewed', lessonIds: lessonsFor('c1-power'),
     termIds: ['three-phase-system','line-and-phase-values','real-power','reactive-power','apparent-power','power-factor','power-triangle','ib'],
     sourceIds: ['epra-c1-competencies','course-c1-three-phase','course-kenya-240-415-50'], relatedSectionIds: [c101], prerequisiteSectionIds: [c101],
     coverage: [
@@ -342,7 +342,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c103, stageId: 'C1-03', moduleId: 'c1-distribution', learningSectionIds: c103Groups.map(item => item.id), title: 'Three-Phase Distribution and Installation', status: 'reviewed', lessonIds: lessonsFor('c1-distribution'),
+    id: c103, stageId: 'C1-03', moduleId: 'c1-distribution', learningSectionIds: c103Groups.map(item => item.id), title: 'Three-Phase Boards, Feeders and Outlets', status: 'reviewed', lessonIds: lessonsFor('c1-distribution'),
     termIds: ['three-phase-distribution-board','submain','feeder','phase-allocation','neutral-loading','three-phase-isolation','phase-sequence','safe-isolation','swa','cpc','mccb','selectivity','grouping-factor','glossary-circuit-schedule'],
     sourceIds: ['epra-c1-competencies','course-c1-distribution','course-c1-three-phase','osg-isolation-switching','osg-protection'], relatedSectionIds: [c102], prerequisiteSectionIds: [c102],
     coverage: [
@@ -362,7 +362,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c104, stageId: 'C1-04', moduleId: 'c1-design', learningSectionIds: c104Groups.map(item => item.id), title: 'Three-Phase Design and Protective-Device Selection', status: 'reviewed', lessonIds: lessonsFor('c1-design'),
+    id: c104, stageId: 'C1-04', moduleId: 'c1-design', learningSectionIds: c104Groups.map(item => item.id), title: 'Three-Phase Load, Cable and Protection Design', status: 'reviewed', lessonIds: lessonsFor('c1-design'),
     termIds: ['connected-load','glossary-maximum-demand','glossary-diversity','power-factor','ib','in','iz','tabulated-current-capacity','installation-method','correction-factor','neutral-loading','voltage-drop','pfc','glossary-breaking-capacity','selectivity','ads','zs','three-phase-design-evidence','phase-allocation'],
     sourceIds: ['epra-c1-competencies','course-c1-design','course-c1-distribution','course-c2-design','osg-demand-diversity','osg-current-capacity-voltage-drop','osg-protection'], relatedSectionIds: [c103], prerequisiteSectionIds: [c103],
     coverage: [
@@ -381,7 +381,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c105, stageId: 'C1-05', moduleId: 'c1-earthing', learningSectionIds: c105Groups.map(item => item.id), title: 'Small-Commercial Earthing and Protection Application', status: 'reviewed', lessonIds: lessonsFor('c1-earthing'),
+    id: c105, stageId: 'C1-05', moduleId: 'c1-earthing', learningSectionIds: c105Groups.map(item => item.id), title: 'Small-Commercial Earthing and Installation Application', status: 'reviewed', lessonIds: lessonsFor('c1-earthing'),
     termIds: ['submain-cpc','armour-as-cpc','parallel-earth-path','cpc','met','earthing-conductor','protective-bonding-conductor','swa','ads','zs','ze','r1-r2','pfc','fault-thermal-withstand','glossary-breaking-capacity','selectivity'],
     sourceIds: ['epra-c1-competencies','course-c1-earthing','course-c2-protection','osg-earthing-bonding','osg-zs-appendix','osg-protection'], relatedSectionIds: [c104], prerequisiteSectionIds: [c104],
     coverage: [
@@ -400,7 +400,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c106, stageId: 'C1-06', moduleId: 'c1-pfc', learningSectionIds: c106Groups.map(item => item.id), title: 'Power Factor Correction', status: 'reviewed', lessonIds: lessonsFor('c1-pfc'),
+    id: c106, stageId: 'C1-06', moduleId: 'c1-pfc', learningSectionIds: c106Groups.map(item => item.id), title: 'Power Factor Causes, Correction and Capacitor Sizing', status: 'reviewed', lessonIds: lessonsFor('c1-pfc'),
     termIds: ['power-factor','real-power','reactive-power','apparent-power','power-triangle','power-factor-correction','capacitor-bank','automatic-pfc','detuned-reactor','three-phase-system'],
     sourceIds: ['epra-c1-competencies','course-c1-pfc','schneider-pfc','course-kenya-240-415-50'], relatedSectionIds: [c102,c104], prerequisiteSectionIds: [c105],
     coverage: [
@@ -420,7 +420,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c107, stageId: 'C1-07', moduleId: 'c1-motors', learningSectionIds: c107Groups.map(item => item.id), title: 'Three-Phase Motor Principles and Nameplates', status: 'reviewed', lessonIds: lessonsFor('c1-motors'),
+    id: c107, stageId: 'C1-07', moduleId: 'c1-motors', learningSectionIds: c107Groups.map(item => item.id), title: 'Induction Motors, Nameplates and Terminal Connections', status: 'reviewed', lessonIds: lessonsFor('c1-motors'),
     termIds: ['induction-motor','synchronous-speed','slip','motor-nameplate','motor-overload-protection','phase-sequence','star-connection','delta-connection','power-factor','frequency'],
     sourceIds: ['epra-c1-competencies','course-c1-motors','eca-motors-historical','course-kenya-240-415-50'], relatedSectionIds: [c101,c102], prerequisiteSectionIds: [c106],
     coverage: [
@@ -439,7 +439,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c108, stageId: 'C1-08', moduleId: 'module-07', learningSectionIds: c108Groups.map(item => item.id), title: 'Motor Starting, Control and Protection', status: 'reviewed', lessonIds: lessonsFor('module-07'),
+    id: c108, stageId: 'C1-08', moduleId: 'module-07', learningSectionIds: c108Groups.map(item => item.id), title: 'Motor Starters, Protection and Speed Control', status: 'reviewed', lessonIds: lessonsFor('module-07'),
     termIds: ['direct-on-line-starting','star-delta-starting','soft-starter','variable-frequency-drive','contactor','interlock','control-circuit','motor-overload-protection','phase-loss','mcb','mccb','phase-sequence','induction-motor'],
     sourceIds: ['epra-c1-competencies','course-c1-motors','eca-motors-historical'], relatedSectionIds: [c107], prerequisiteSectionIds: [c107],
     coverage: [
@@ -459,7 +459,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c109, stageId: 'C1-09', moduleId: 'c1-testing', learningSectionIds: c109Groups.map(item => item.id), title: 'Three-Phase Testing and Periodic Inspection', status: 'reviewed', lessonIds: lessonsFor('c1-testing'),
+    id: c109, stageId: 'C1-09', moduleId: 'c1-testing', learningSectionIds: c109Groups.map(item => item.id), title: 'Three-Phase Initial Verification and Periodic Inspection', status: 'reviewed', lessonIds: lessonsFor('c1-testing'),
     termIds: ['phase-rotation-test','periodic-inspection','phase-imbalance','test-sequence','initial-verification','visual-inspection','safe-isolation','continuity','insulation-resistance','polarity','ze','zs','pfc','pscc','pefc','rcd','commissioning-record','three-phase-distribution-board'],
     sourceIds: ['epra-c1-competencies','course-c1-testing','osg-safe-testing','osg-initial-verification','iet-gn3-periodic'], relatedSectionIds: [c103,c108], prerequisiteSectionIds: [c108],
     coverage: [
@@ -478,7 +478,7 @@ export const c1Sections: OverviewSection[] = [
     },
   },
   {
-    id: c110, stageId: 'C1-10', moduleId: 'c1-faults', learningSectionIds: c110Groups.map(item => item.id), title: 'Three-Phase Distribution Fault Diagnosis', status: 'reviewed', lessonIds: lessonsFor('c1-faults'),
+    id: c110, stageId: 'C1-10', moduleId: 'c1-faults', learningSectionIds: c110Groups.map(item => item.id), title: 'Three-Phase and Motor Fault Diagnosis', status: 'reviewed', lessonIds: lessonsFor('c1-faults'),
     termIds: ['distribution-fault','phase-imbalance','phase-loss','motor-fault-diagnosis','control-circuit-fault','thermal-imaging','fault-finding','fault-symptom','fault-hypothesis','sectionalizing','safe-isolation','submain','three-phase-distribution-board','phase-sequence','neutral-current','load-current-diagnosis','high-resistance-joint','cable-deterioration','commissioning-record'],
     sourceIds: ['epra-c1-competencies','course-c1-faults','course-c1-testing','course-c1-motors'], relatedSectionIds: [c103,c108,c109], prerequisiteSectionIds: [c109],
     coverage: [

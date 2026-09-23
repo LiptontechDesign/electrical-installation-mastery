@@ -36,17 +36,34 @@ const resources = [
   ['c2-voltage-drop-masterclass','yMgyWxzGN-U','Voltage Drop Masterclass — Single Point and Distributed Loads','LEARN ELECTRICS','p06-l08','after'],
   ['c2-socket-planning-design','QVMpVIYm594','How Many Sockets Is That? Kitchens, Bedrooms, Floor Area and Circuit Design','LEARN ELECTRICS','p06-l15','after'],
   ['c1-pfc-bridge','NIrKOVZrqnU','Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)','The Engineering Mindset','p06-l14','before'],
+  ['c1-balanced-three-phase-power','bSjh8AakqXM','Power in a Balanced Three-Phase Circuit','Michel van Biezen','p06-l13','after'],
+  ['c1-three-phase-power-factor','T2eO6hOT-EA','Three-Phase Motor Power Factor — Worked Example','Michel van Biezen','c1-balanced-three-phase-power','after'],
+  ['c1-three-phase-line-current','TPsHULaNc7s','Find the Line Current Needed for a Three-Phase Motor','Michel van Biezen','c1-three-phase-power-factor','after'],
+  ['c1-cable-design','ChC_94Zmf4I','Master Three-Phase Cable Calculations','Sparky Help','p06-l05','after'],
+  ['c1-three-phase-voltage-drop','RCHw0TUEAes','Voltage Drop in Three-Phase Installations and Single-Phase Circuits from a Three-Phase Supply','LEARN ELECTRICS','c1-cable-design','after'],
+  ['c1-capacitor-sizing','u9m8vgz4aJs','Calculation of Capacitor Bank for Power Factor Improvement — kVAr','Electrical lectures','p06-l14','after'],
+  ['c1-capacitor-placement','oaIRQ1Xm7OQ','5 Types of Power Factor Correction — Capacitor Bank Locations','The Electrical Guy','c1-capacitor-sizing','after'],
   ['c1-nameplate','XbL0R_9KLD4','How to read a Motor Nameplate (IEC standard)','ElectricalEngineeringPlanet','p07-induction','after'],
+  ['c1-motor-terminals','p2hDLMeFJqs','How to Connect Motor Windings in Star and Delta','The Electrical Guy','course-XbL0R_9KLD4','after'],
   ['c1-dol-bridge','HFkTPmY7N7w','How Do Direct On Line Motor (DOL) Starters Work?','eFIXX','p15-v2-l01','before'],
+  ['c1-motor-protection-sizing','DWUuKNjMf3E','How to Select MCB and Overload Relay Size for a Motor','The Electrical Guy','course-wQwGZMcDGXk','after'],
+  ['c1-phase-failure-relay','-OCfG8inGSY','Phase-Failure Relay with a DOL Starter','The Electrical Guy','p04-l20','after'],
+  ['c1-lost-neutral','0MVNJUstzCY','Three-Phase Lost Neutral — What Happens and Why Equipment Is Damaged','LEARN ELECTRICS','p10-l08','before'],
+  ['c1-trace-three-phase','CDW_SKOgYSY','Tracing Three-Phase Wiring and Identifying Cables','LEARN ELECTRICS','c1-lost-neutral','after'],
+  ['c1-motor-phase-loss','AtlXd1xA-CU','Single-Phasing Fault in a Three-Phase Motor','Electrical lectures','p10-l08','after'],
   ['professional-selectivity','V6WR_TBf1AU','Circuit Breaker Selective Coordination: Common Questions and Misconceptions','Bentley EasyPower / ABB presenter','p05-l14','after'],
 ] as const;
 const locations=new Map(course.modules.flatMap(m=>m.lessons.map(l=>[l.id,m.id] as const)));
 const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
 // This C1 core video is also an intentionally placed C2 supporting lesson.
 export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w']);
-const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>({
-  id,videoId,title,instructor,anchorId,position,moduleId:locations.get(anchorId)!,archived:false,placementRevision:1,updatedAt:'2026-09-10T00:00:00.000Z',
-}));
+const seedLocations=new Map<string,string>(locations);
+const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>{
+  const moduleId=seedLocations.get(anchorId);
+  if(!moduleId)throw new Error(`Missing supplementary anchor: ${anchorId}`);
+  seedLocations.set(id,moduleId);
+  return {id,videoId,title,instructor,anchorId,position,moduleId,archived:false,placementRevision:1,updatedAt:'2026-09-23T00:00:00.000Z'};
+});
 export function withSupplementaryDefaults(state:SupplementaryState):SupplementaryState {
   // Promoted videos keep their stored history without displaying a second copy.
   // The approved C1-to-C2 study bridge above is the sole deliberate exception.

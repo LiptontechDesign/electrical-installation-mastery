@@ -58,6 +58,7 @@ const additionalPractice = new Set([
   'supp-resistance-04','supp-resistance-05','supp-resistance-06',
   'supp-ac-theory-09','supp-ac-theory-10','supp-ac-theory-14','supp-ac-theory-15','supp-ac-theory-21','supp-ac-theory-22','supp-ac-theory-24','supp-ac-theory-25',
   'p16-l05','course-kx35WN3uLis','course-Me_adh09CdY','course-lIit5k8QVj8','course-V6WR_TBf1AU','p06-l09','p02-l10','p09-l10',
+  'p07-l07','p07-l09','p16-l06',
   'supp-lighting-05','supp-lighting-09','supp-lighting-10','supp-lighting-12',
 ]);
 const workedReinforcement = new Set([
@@ -71,6 +72,7 @@ const appliedPractical = new Set([
   'p04-l02','p04-l03','p04-l04','p04-l05','p04-l06','p04-l07','p04-l08','p04-l09','p04-l10','p04-l18','p04-l11','p04-l12','p16-l03','p04-l13','p04-l14',
   'p03-l13','p03-l12','p08-l03','p08-l04','p08-l05','p08-l06','p08-l12','p02-l09','p08-l09','p08-l10','p08-l13','p08-l14','p08-l15',
   'p10-l01','p10-l02','p10-l05','p09-l01','p09-l02','p09-l04','p09-l05','p09-l08','p09-l03','p09-l06','p09-l07','p09-l09','p09-l11',
+  'p08-l01','p02-l11','p11-v2-l11','p07-l06','p07-l08','p10-l06','p10-l07','p04-l19','p04-l20','p08-l07','p08-l17','p08-l11','p08-periodic','p10-l08',
 ]);
 export function lessonStudyRole(id: string) {
   return additionalPractice.has(id) ? 'Deep practice' : workedReinforcement.has(id) ? 'Worked reinforcement' : appliedPractical.has(id) ? 'Applied practical' : 'Core lesson';

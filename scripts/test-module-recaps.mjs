@@ -16,7 +16,7 @@ const {terminologyForLesson}=await import('../work/recap-tests/lesson-terminolog
 const {sectionsByModule}=await import('../work/recap-tests/learning-sections.js');
 assert.equal(recapBooks.length,25);
 const chapters=recapBooks.flatMap(b=>b.chapters),sources=chapters.flatMap(c=>c.lessons);
-assert.equal(chapters.length,84);
+assert.equal(chapters.length,86);
 assert.equal(sources.length,296);
 assert.equal(new Set(sources.map(s=>s.id)).size,296,'Each lesson belongs to exactly one recap chapter');
 assert.equal(sources.filter(s=>s.transcript).length,295);
@@ -95,4 +95,4 @@ await key('Escape');assert.equal(closed,1);
 assert.deepEqual(completed,['p01-l01'],'Recap does not mutate learner completion');
 await act(async()=>tree.unmount());
 assert.equal(document.body.style.overflow,'auto','Closing restores scroll');
-console.log('PASS: 25 recap books, 84 sections, 296 lessons, source fingerprints, math, reader controls and unchanged completion.');
+console.log('PASS: 25 recap books, 86 sections, 296 lessons, source fingerprints, math, reader controls and unchanged completion.');
