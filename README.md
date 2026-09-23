@@ -4,7 +4,7 @@ A learning workshop with 296 lessons in 25 modules across C2, C1 and Professiona
 
 ## Learning experience
 
-- **Home:** continue learning, required-video progress, study minutes and licensing pathway information.
+- **Home:** guests see the public course overview; signed-in learners see a personal workspace with their current lesson, upcoming videos, bookmarks and progress. A full-width header includes the account initials, progress and sign-out menu.
 - **Learn:** 82 neutral learning sections, original videos and transcripts, Overview explanations, standards, glossary, book links, worked calculations, fault investigations and personal notes. Lessons remain freely accessible in any order.
 - **Books:** four complete books with chapter search, PDF and text views, zoom, page navigation, saved pages/notes, extracted figures and explanatory simulations. Lesson source links reuse the same reader in a dialog.
 - **Settings:** Google account controls, complete account export/deletion, progress backup/import/reset and playback preferences.

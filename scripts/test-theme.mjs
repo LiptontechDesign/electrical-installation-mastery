@@ -10,6 +10,8 @@ const luminance = hex => hex.slice(1).match(/../g).map(value => parseInt(value, 
   .map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4)
   .reduce((sum, value, index) => sum + value * [.2126, .7152, .0722][index], 0);
 const pairs = [
+  ['--google-ink', '--google-surface'],
+  ['--google-ink', '--google-hover'],
   ...['--paper', '--white', '--surface-soft', '--surface-muted'].flatMap(surface => ['--ink', '--muted', '--text-accent', '--copper-dark'].map(text => [text, surface])),
   ['--surface-selected-text', '--surface-selected'],
   ['--text-on-inverse', '--surface-inverse'],

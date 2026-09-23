@@ -1,4 +1,9 @@
 :root {
+  /* Fixed Google identity colors, independent of the course theme. */
+  --google-surface: #ffffff;
+  --google-ink: #1f1f1f;
+  --google-border: #747775;
+  --google-hover: #f2f2f2;
   --recap-accent: #097887;
   --recap-panel: #e9f5f8;
   --recap-border: #bed5df;

@@ -5,11 +5,11 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import {
-  AlertTriangle, ArrowRight, BookOpen, Bookmark, Calculator,
+  AlertTriangle, ArrowRight, BookOpen, Bookmark,
   Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Circle,
-  CirclePlay, Download,
+  Download,
   Home, Info, ListChecks, LockKeyhole, Menu,
-  PlayCircle, RotateCcw, Search, Settings, ShieldCheck, SkipForward, Sparkles, Target,
+  PlayCircle, RotateCcw, Search, Settings, SkipForward,
   Upload, X, Zap,
 } from 'lucide-react';
 import course, { isRequiredLesson, lessonStudyRole } from './course-curriculum';
@@ -34,6 +34,7 @@ import { useDialogFocus } from './use-dialog-focus';
 import AccountPanel from './account-panel';
 import { AccountControl, useCourseAccount } from './course-account';
 import CourseOverview from './course-overview';
+import LearningHome from './learning-home';
 import type { CourseUser } from './server/auth';
 
 const PracticeWorkspace = dynamic(() => import('./practice-workspace'), { loading: () => <p role="status">Preparing your practice…</p> });
@@ -327,6 +328,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     if (hydrationStartedRef.current) return;
     hydrationStartedRef.current = true;
     let active = true;
+    let hydrationFinished = false;
     void (async () => {
       if (!user) {
         const [guestView, guestLessonId] = window.location.hash.replace(/^#/, '').split('/');
@@ -336,6 +338,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           setLearner({ ...initialLearnerState, activeLessonId: guestLessonId });
           setOpenModuleId(location.module.id); setMapPath(location.module.path);
         }
+        hydrationFinished = true;
         setHydrated(true);
         return;
       }
@@ -382,9 +385,10 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         setOpenModuleId(restoredModule.id); setMapPath(restoredModule.path);
       }
       setLearner(nextState);
+      hydrationFinished = true;
       setHydrated(true);
     })();
-    return () => { active = false; };
+    return () => { active = false; if (!hydrationFinished) hydrationStartedRef.current = false; };
   }, [course.modules, lessonLocation, lessonLookup, user]);
 
   useEffect(() => {
@@ -783,7 +787,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   );
 
   return (
-    <div className={user ? 'app-shell' : 'app-shell guest-course'}>
+    <div className={user ? 'app-shell studio-shell signed-in-course' : 'app-shell studio-shell guest-course'}>
       <Script
         id="youtube-iframe-api"
         src="https://www.youtube.com/iframe_api"
@@ -793,34 +797,17 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       />
       <a className="skip-link" href="#main-content">Skip to course content</a>
 
-      <aside className="app-sidebar" aria-label="Main navigation">
-        <button className="brand" type="button" onClick={() => navigate('home')} aria-label="Electrical Installation Mastery home">
-          <span className="brand-symbol" aria-hidden="true"><Zap size={20} /></span>
-          <span className="brand-copy"><strong>Electrical</strong><small>Installation Mastery</small></span>
-        </button>
-        <nav className="side-navigation" aria-label="Primary navigation">
-          <span className="nav-label">Workshop</span>
-          {navigation.map((item) => {
-            const Icon = item.icon;
-            return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><Icon size={19} /><span>{item.id === 'home' && !user ? 'Course overview' : item.label}</span>{item.id === 'learn' && user && <small>{coursePercent}%</small>}</button>;
-          })}
-        </nav>
-        <div className="sidebar-safety"><ShieldCheck size={22} /><strong>Safety before speed</strong><p>Learn the principle, then practise safely with qualified supervision.</p></div>
-        <button className="sidebar-settings" type="button" onClick={() => setSettingsOpen(true)}><Settings size={19} /><span>Data & settings</span></button>
-      </aside>
-
       <div className="app-frame">
-        <header className="app-header" aria-label="Application toolbar">
-          <button className="mobile-brand" type="button" onClick={() => navigate('home')} aria-label="Go home"><span className="brand-symbol"><Zap size={18} /></span><span>Electrical Mastery</span></button>
-          {view === 'learn' && <button className="header-course-map-button" type="button" onClick={moduleDrawerOpen ? closeCourseMap : openCourseMap} aria-expanded={moduleDrawerOpen} aria-label={moduleDrawerOpen ? 'Close course map' : 'Open course map'}>{moduleDrawerOpen ? <X size={19}/> : <Menu size={19}/>}<span>{moduleDrawerOpen ? 'Close map' : 'Course map'}</span></button>}
-          <button className="search-trigger" type="button" aria-label="Search lessons, concepts and practice" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={19} /><span>Search your learning</span><kbd>/</kbd></button>
-          <nav className="header-navigation" aria-label="Top navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={18}/><span>{item.label}</span></button>; })}</nav>
+        <header className="app-header studio-header" aria-label="Application toolbar">
+          <button className="studio-brand" type="button" onClick={() => navigate('home')} aria-label="Electrical Installation Mastery home"><span className="studio-monogram"><Zap size={22}/></span><span><strong>Electrical</strong><small>INSTALLATION MASTERY</small></span></button>
+          <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? user ? 'My learning' : 'The course' : item.label}</button>)}</nav>
           <div className="header-actions">
-            <button className="my-books-button" type="button" aria-label="Open My books" onClick={() => navigate('books')}><BookOpen size={19} /><span>My books</span></button>
-            {user && <button className="header-progress" type="button" onClick={() => navigate('home')} aria-label={`${coursePercent}% of the required course path complete`}><span className="mini-progress"><i style={{ width: `${coursePercent}%` }} /></span><b>{coursePercent}%</b></button>}
+            <button className="studio-search" type="button" aria-label="Search lessons, concepts and practice" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={20}/><span>Find a lesson</span><kbd>/</kbd></button>
+            {user ? <button className="course-progress-chip" onClick={() => { setShowOverview(false); navigate('home'); }} aria-label={`${coursePercent}% of the required course path complete`}><span className="progress-chip-ring" style={{ '--course-progress': `${coursePercent * 3.6}deg` } as CSSProperties}/><span><strong>{coursePercent}%</strong><small>Course progress</small></span></button> : <button className="studio-settings" onClick={() => setSettingsOpen(true)} aria-label="Playback settings"><Settings size={19}/></button>}
             <AccountControl onSettings={() => setSettingsOpen(true)}/>
           </div>
         </header>
+        {view === 'learn' && <div className="studio-lesson-navigation"><button type="button" onClick={moduleDrawerOpen ? closeCourseMap : openCourseMap} aria-expanded={moduleDrawerOpen} aria-label={moduleDrawerOpen ? 'Close course map' : 'Open course map'}><Menu size={17}/> Course content</button><span>{location.module.title}</span><button type="button" onClick={() => { setShowOverview(true); navigate('home'); }}>Course overview <ArrowRight size={15}/></button></div>}
 
         <main id="main-content" className="app-content">
           {!user && view !== 'home' && <div className="guest-learning-bar"><span>Guest mode <span>· Progress is not saved</span></span><button onClick={requestSignIn}>Sign in to save your learning <ArrowRight size={15}/></button></div>}
@@ -829,31 +816,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           {view === 'home' && (!user || showOverview) && <CourseOverview onLesson={chooseLesson} onExam={() => navigate('exam')} onBooks={() => navigate('books')}/>}
           {view === 'home' && user && !showOverview && (
             <div className="page home-page">
-              <section className="home-hero">
-                <div className="hero-glow" aria-hidden="true" />
-                <div className="hero-copy">
-                  <span className="eyebrow"><Sparkles size={16} /> Electrical Installation Mastery</span>
-                  <h1>{learner.evidence.length ? 'Build on what you know.' : 'Understand it. Put it to work.'}</h1>
-                  <p>Continue with a video, explore its Overview, or open your reference books.</p>
-                  <div className="button-row">
-                    <button className="primary-button" type="button" onClick={() => chooseLesson(learner.activeLessonId)}><CirclePlay size={19} /> {completed.size ? 'Continue learning' : 'Start the course'} <ArrowRight size={18} /></button>
-                  </div>
-                </div>
-                <div className="hero-session-card">
-                  <div className="session-label"><span>{nextRequiredItem ? 'Suggested next' : 'Core videos complete'}</span><span>{nextRequiredItem?.lesson.duration ?? '100%'}</span></div>
-                  <div className="session-index">{nextRequiredItem ? 'M'+pad(nextRequiredItem.module.number)+' · L'+pad(nextRequiredItem.lesson.number) : 'CORE VIDEOS COMPLETE'}</div>
-                  <h2>{nextRequiredItem?.lesson.title ?? 'All required videos watched'}</h2><p>{nextRequiredItem?.module.title ?? 'Revisit an Overview or explore the reference books.'}</p>
-                  <div className="session-meter"><span style={{ width: (nextRequiredItem ? moduleTracking(nextRequiredItem.module).requiredPercent : 100)+'%' }} /></div>
-                  <button type="button" onClick={() => nextRequiredItem ? chooseLesson(nextRequiredItem.lesson.id) : navigate('books')}>{nextRequiredItem ? 'Open lesson' : 'Open books'} <ArrowRight size={17}/></button>
-                </div>
-              </section>
-
-              <section className="learning-next-strip" aria-label="Learning resources"><button type="button" onClick={() => navigate('exam')}><ListChecks size={19}/><span><strong>Prepare for the EPRA exam</strong><small>Multiple-choice reasoning, worked solutions and clear drawings</small></span><ArrowRight size={17}/></button><button type="button" onClick={() => navigate('books')}><BookOpen size={19}/><span><strong>Open your books</strong><small>Reference pages and saved reading</small></span><ArrowRight size={17}/></button><button type="button" onClick={() => openPractice(activeLesson.id)}><Calculator size={19}/><span><strong>Apply your current lesson</strong><small>Worked examples and practical reasoning</small></span><ArrowRight size={17}/></button></section>
-
-              <section className="stat-grid home-stats" aria-label="Learning overview">
-                <article><span className="stat-icon copper"><PlayCircle size={21} /></span><div><b>{completed.size}<small> / {allLessons.length}</small></b><p>Video lessons completed</p></div></article>
-                <article><span className="stat-icon amber"><Target size={21} /></span><div><b>{weekMinutes}<small> / {learner.weeklyGoalMinutes} min</small></b><p>This week’s study goal</p></div></article>
-              </section>
+              <LearningHome user={user} learner={learner} percent={coursePercent} weekMinutes={weekMinutes} onLesson={chooseLesson} onExam={() => navigate('exam')} onBooks={() => navigate('books')}/>
 
               <LicensingOverview initialPath={preparationPath} completed={learner.completedLessonIds} onLesson={chooseLesson}/>
               <section className="home-course">
