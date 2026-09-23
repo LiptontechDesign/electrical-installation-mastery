@@ -9,8 +9,8 @@ await build({
   entryPoints:['app/course-app.tsx'], outfile:'work/navigation-tests/app.mjs',
   bundle:true, platform:'node', format:'esm', packages:'external', jsx:'automatic',
   plugins:[{name:'non-navigation-ui',setup(b){
-    b.onResolve({filter:/^next\/(script|dynamic|image)$/},args=>({path:args.path,namespace:'stub'}));
-    b.onLoad({filter:/.*/,namespace:'stub'},args=>({contents:args.path==='next/dynamic'?'export default () => () => null':'export default () => null',loader:'js'}));
+    b.onResolve({filter:/^next\/(script|dynamic|image|link)$/},args=>({path:args.path,namespace:'stub'}));
+    b.onLoad({filter:/.*/,namespace:'stub'},args=>({contents:args.path==='next/link'?'import {createElement} from \"react\"; export default ({children,...props}) => createElement(\"a\",props,children)':args.path==='next/dynamic'?'export default () => () => null':'export default () => null',loader:'js',resolveDir:process.cwd()}));
   }}],
 });
 const {default:App}=await import('../work/navigation-tests/app.mjs');

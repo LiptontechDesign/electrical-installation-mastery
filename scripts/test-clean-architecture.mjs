@@ -17,4 +17,4 @@ for (const lesson of catalog.modules.flatMap(group => group.lessons)) {
     assert.ok(!(field in lesson), 'Retired authored content in video catalogue: ' + field);
   }
 }
-assert.ok(!JSON.parse(await readFile('package.json', 'utf8')).dependencies.katex, 'Unused formula renderer must stay removed');
+assert.ok(JSON.parse(await readFile('package.json', 'utf8')).dependencies.katex, 'Standalone practice centre requires the formula renderer');

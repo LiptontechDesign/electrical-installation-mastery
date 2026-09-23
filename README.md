@@ -1,12 +1,13 @@
 # Electrical Installation Mastery
 
-A video course with 296 lessons in 25 modules across C2, C1 and Professional pathways.
+A video course with 296 lessons in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
 
 ## Learning experience
 
 - **Home:** guests see the public course overview; signed-in learners see a personal workspace with their current lesson, upcoming videos, bookmarks and progress. A full-width header includes the account initials, progress and sign-out menu.
 - **Learn:** 86 sections with embedded videos, watched progress, bookmarks and private notes. Lessons are freely accessible in any order. Core and supplementary videos share continuous numbering that adjusts when reordered.
 - **Books:** four complete reference books with chapter search, PDF/text views, zoom, saved pages and personal notes.
+- **Practice (`/practice`):** separate C2/C1 pathways, 568 verbatim topic questions, 110 recall questions and two complete mock papers. Topic filters, answer reveals, LaTeX worked solutions, session quizzes, timed/untimed exams, self-assessment and downloadable working. No sign-in required. See [the practice-centre guide](docs/epra-practice-centre.md).
 - **Settings:** Google account controls, complete account export/deletion, progress backup/import/reset and playback preferences.
 
 Schema 10 accepts earlier backups and preserves video progress, bookmarks, notes and playback preferences. Learner records synchronize per account.
@@ -80,7 +81,9 @@ With server credentials configured, browser integration checks should cover Goog
 - `app/book-reader.tsx`: per-account reference book reader.
 - `course-transcripts/`: 295 complete transcript sources and one explicitly visual-only lesson; retained as source archives, not published as recap pages.
 
-## Removed features — September 2026
+## Historical cleanup — September 2026
+
+The removal described below predates the explicitly requested standalone practice centre. The new `/practice` route uses only the supplied complete study pack; retired question banks and lesson extras remain removed.
 
 The course now focuses on videos and reference books. The lesson guide, Standards Companion, definitions/glossary, authored lesson explanations, worked-question panels, quizzes, flashcards, mock exams, exam preparation, simulations and module recap books have been removed. Their navigation, search entries, content banks, components, obsolete tests, styles and formula-rendering dependency have also been removed.
 
