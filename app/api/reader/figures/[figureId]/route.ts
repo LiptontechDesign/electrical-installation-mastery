@@ -1,10 +1,10 @@
 import { get } from '@vercel/blob';
 import figures from '../../../../book-figures.json';
-import { privateHeaders, readerAuthenticated } from '../../../../server/reader-auth';
+import { privateHeaders, readerConfigured } from '../../../../server/reader-auth';
 
 export const runtime = 'nodejs';
 export async function GET(request: Request, context: { params: Promise<{ figureId: string }> }) {
-  if (!await readerAuthenticated()) return new Response(null, { status: 401, headers: privateHeaders });
+  if (!readerConfigured()) return new Response(null, { status: 503, headers: privateHeaders });
   const { figureId } = await context.params;
   const figure = figures.find(item => item.id === figureId);
   if (!figure) return new Response(null, { status: 404, headers: privateHeaders });

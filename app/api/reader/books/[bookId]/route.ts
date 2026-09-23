@@ -1,13 +1,13 @@
 import { get } from '@vercel/blob';
 import { getBook } from '../../../../books-data';
 import { parseByteRange } from '../../../../reader-state';
-import { privateHeaders, readerAuthenticated } from '../../../../server/reader-auth';
+import { privateHeaders, readerConfigured } from '../../../../server/reader-auth';
 import { bookFiles } from '../../../../server/reader-storage';
 
 export const runtime = 'nodejs';
 export const maxDuration = 60;
 export async function GET(request: Request, context: { params: Promise<{ bookId: string }> }) {
-  if (!await readerAuthenticated()) return Response.json({ error: 'Open My books to start a reading session.' }, { status: 401, headers: privateHeaders });
+  if (!readerConfigured()) return Response.json({ error: 'Book storage is not connected yet.' }, { status: 503, headers: privateHeaders });
   const book = getBook((await context.params).bookId);
   if (!book) return new Response(null, { status: 404, headers: privateHeaders });
   const file = bookFiles[book.id];

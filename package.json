@@ -34,6 +34,7 @@
     "test:course-drag": "node scripts/test-course-drag.mjs",
     "test:course-drag-browser": "node scripts/test-course-drag-browser.mjs",
     "test:accounts": "node scripts/test-account-isolation.mjs",
+    "test:guests": "node scripts/test-guest-access.mjs",
     "test:recaps": "node scripts/test-module-recaps.mjs",
     "audit:course": "node scripts/audit-course-integrity.mjs"
   },

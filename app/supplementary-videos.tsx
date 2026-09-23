@@ -1,6 +1,7 @@
 'use client';
 import { Fragment, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { PlayCircle, Plus, Archive, X, CheckCircle2 } from 'lucide-react';
+import { useCourseAccount } from './course-account';
 import { useCourseOrder } from './course-order';
 import { relocateSupportingVideos } from './course-order-model';
 import { courseMapSnapshot, type SupplementaryMove } from './course-drop-model';
@@ -16,7 +17,8 @@ const SupplementaryContext = createContext<Context | null>(null);
 export const useSupplementary = () => useContext(SupplementaryContext);
 const courseVideoLabel = (number: number | undefined) => number === undefined ? 'Video' : `L${String(number).padStart(2, '0')}`;
 const empty: SupplementaryState = withSupplementaryDefaults({ version: 1, revision: 0, videos: [] });
-export function SupplementaryProvider({ children, userId }: { children: ReactNode; userId: string }) {
+export function SupplementaryProvider({ children, userId }: { children: ReactNode; userId?: string }) {
+  const { requestSignIn } = useCourseAccount();
   const { course, order } = useCourseOrder();
   const [storedState, setState] = useState(empty);
   const state = useMemo(() => ({ ...storedState, videos: relocateSupportingVideos(storedState.videos, course) }), [storedState, course]);
@@ -35,6 +37,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
   const [progressError, setProgressError] = useState('');
   const legacyProgress = useRef(false);
   useEffect(() => {
+    if (!userId) return;
     let active = true;
     void (async () => {
       let local: string[] = [];
@@ -60,7 +63,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     return () => { active = false; };
   }, [userId]);
   useEffect(() => {
-    if (!progressReady) return;
+    if (!userId || !progressReady) return;
     const timer = window.setTimeout(async () => {
       try {
         localStorage.setItem(`electrical-supplementary-watched-v1:${userId}`, JSON.stringify(watched));
@@ -74,10 +77,12 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     return () => window.clearTimeout(timer);
   }, [watched, progressReady, userId]);
   const markWatched = useCallback((id: string) => {
+    if (!userId) return;
     setWatched(current => current.includes(id) ? current : [...current, id]);
-  }, []);
+  }, [userId]);
   useEffect(() => {
     const bulkMarkWatched = (event: Event) => {
+      if (!userId) return;
       const detail = (event as CustomEvent<BulkWatchDetail>).detail;
       if (!detail?.moduleId || !Array.isArray(detail.lessonIds)) return;
       const videoIds = supplementaryDescendants(state.videos, detail.lessonIds)
@@ -88,7 +93,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     };
     window.addEventListener('supplementary-bulk-watch', bulkMarkWatched);
     return () => window.removeEventListener('supplementary-bulk-watch', bulkMarkWatched);
-  }, [state.videos]);
+  }, [state.videos, userId]);
   const [metadataStatus, setMetadataStatus] = useState('');
   const [lookupAttempt, setLookupAttempt] = useState(0);
   const editedFields = useRef({ title: false, instructor: false });
@@ -121,6 +126,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
   const isOpen = Boolean(editor || selected || archiveModule);
   useDialogFocus(dialog, isOpen);
   const refresh = useCallback(async () => {
+    if (!userId) return;
     try {
       const response = await fetch('/api/supplementary', { cache: 'no-store' });
       const data = await response.json();
@@ -129,7 +135,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
       setState(current => merged.revision >= current.revision ? merged : current); setReady(true); setError('');
       return merged;
     } catch (e) { setError(e instanceof Error ? e.message : 'Shared videos could not be loaded.'); }
-  }, []);
+  }, [userId]);
   // refresh updates state only after the external fetch resolves.
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { void refresh(); const focus = () => { void refresh(); }; window.addEventListener('focus', focus); return () => window.removeEventListener('focus', focus); }, [refresh]);
@@ -220,32 +226,33 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
         <p>{selected.instructor} · Optional supporting lesson</p>
         {['luTRnCoeD4c','TsJ49Np3HS0','UFvL7wTFzl0'].includes(selected.videoId)&&<ElectricalShockContext/>}
         <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
-        <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
-        <p>Watched status is private to your account and syncs across your devices.</p>
+        <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{!userId ? 'Sign in to save progress' : watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
+        <p>{userId ? 'Watched status is private to your account and syncs across your devices.' : 'Watch freely. Guest progress is not recorded.'}</p>
         {progressError && <p role="alert">{progressError}</p>}
         <p><a href={`https://www.youtube.com/watch?v=${selected.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p>
         <p>This optional video does not change required course completion.</p>
-        <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>
+        {userId && <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>}
       </> : <>
         <p>Archived videos remain saved. Restore them to make them visible in your course again.</p>
         {state.videos.filter(v => v.archived && v.moduleId === archiveModule).map(v => <div className="supp-archive-row" key={v.id}><span>{v.title}</span><button className="secondary-button" onClick={() => edit(v, 'restore')}>Restore</button><button className="secondary-button" onClick={() => edit(v, 'edit')}>Rename or move</button></div>)}
         {!state.videos.some(v => v.archived && v.moduleId === archiveModule) && <p>No archived videos in this module.</p>}
       </>}
       {notice && <p role="status">{notice}</p>}
-      <footer><button type="button" disabled={busy} onClick={async () => {
+      {userId && <footer><button type="button" disabled={busy} onClick={async () => {
         setConfirmation('');
         const latest = await refresh();
         if (latest) {
           setEditor(null); setSelected(null); setArchiveModule(archiveModule ?? editor?.moduleId ?? selected?.moduleId ?? course.modules[0].id);
           setNotice('Shared list refreshed. Reopen the video from the course map to review its latest details before editing.');
         }
-      }}>Refresh my list</button><small>Private to {userId ? 'your account' : 'you'}</small></footer>
+      }}>Refresh my list</button><small>Private to your account</small></footer>}
     </section></div>}
   </SupplementaryContext.Provider>;
 }
 export function SupplementaryControls({ moduleId, anchorId, compact = false, label = 'Add video here' }: { moduleId: string; anchorId?: string; compact?: boolean; label?: string }) {
+  const { user } = useCourseAccount();
   const context = useContext(SupplementaryContext);
-  if (!context) return null;
+  if (!context || !user) return null;
   return <div className="supp-controls"><button type="button" data-tooltip={label} aria-label={label} onClick={() => context.add(moduleId, anchorId)}><Plus size={16} /></button>{!compact && <button type="button" data-tooltip="View archived videos in this module" aria-label="View archived videos in this module" onClick={() => context.archive(moduleId)}><Archive size={16} /></button>}</div>;
 }
 export function SupplementaryRows({ anchorId, position }: { anchorId: string; position: 'before' | 'after' }) {

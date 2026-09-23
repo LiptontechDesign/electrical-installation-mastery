@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Bookmark, BookOpen, ChevronLeft, ChevronRight, C
 import { courseBooks, getBook, printedPage, simulationForPage, type BookId, type Reading } from './books-data';
 import { emptyReaderState, type ReaderCommand, type ReaderState } from './reader-state';
 import bookFigures from './book-figures.json';
+import { useCourseAccount } from './course-account';
 
 const PdfPage = dynamic(() => import('./pdf-page'), { ssr: false, loading: () => <p className="reader-message">Opening reader…</p> });
 const BookSimulations = dynamic(() => import('./book-simulations'), { loading: () => <p className="reader-message">Opening simulations…</p> });
@@ -20,15 +21,17 @@ async function requestJson<T>(url: string, options?: RequestInit): Promise<T> {
 }
 
 function Bookshelf({ state, ready, onOpen }: { state: ReaderState; ready: boolean; onOpen: (id: BookId, page: number) => void }) {
-  return <div className="book-shelf"><div className="books-intro"><span className="eyebrow neutral">Your reading companions</span><h3>Go deeper into the lesson.</h3><p>{courseBooks.length} complete books, with your place saved across devices.</p></div><div className="book-shelf-grid">{courseBooks.map((book, index) => {
+  const { user } = useCourseAccount();
+  return <div className="book-shelf"><div className="books-intro"><span className="eyebrow neutral">Your reading companions</span><h3>Go deeper into the lesson.</h3><p>{courseBooks.length} reference books. {user ? "Your place is saved across devices." : "Read freely; sign in to save your place."}</p></div><div className="book-shelf-grid">{courseBooks.map((book, index) => {
     const progress = state.books[book.id];
     return <article className="book-shelf-card" key={book.id}><button type="button" className={`book-jacket jacket-${index}`} disabled={!ready} onClick={() => onOpen(book.id, progress?.page ?? 1)} aria-label={`Read ${book.title}`}><span>{book.edition}</span><strong>{book.title}</strong><div className="cover-circuit" aria-hidden="true"><i /><i /><i /><i /></div><small>{book.authors}</small></button><div><span className="book-edition">{book.year} · {book.pages} PDF pages</span><h3>{book.title}</h3><p>{book.description}</p><button type="button" className="reader-primary" disabled={!ready} onClick={() => onOpen(book.id, progress?.page ?? 1)}>{!ready ? 'Loading your place…' : progress ? `Continue · ${printedPage(book, progress.page)}` : 'Open book'} <ArrowRight size={17} /></button>{Boolean(progress?.bookmarks.length) && <small>{progress?.bookmarks.length} saved pages</small>}</div></article>;
   })}</div><p className="books-source-note">Edition-specific references · the 2012 guide covers 17th Edition requirements; the 2026 On-Site Guide covers Amendment 4. Match references to the applicable standard.</p></div>;
 }
 
 function ReaderWorkspace({ initialReading }: { initialReading?: Reading }) {
+  const { user, requestSignIn } = useCourseAccount();
   const [state, setState] = useState<ReaderState>(emptyReaderState);
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(!user);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
   const [selected, setSelected] = useState<{ id: BookId; page: number } | null>(initialReading ? { id: initialReading.bookId, page: initialReading.pdf } : null);
@@ -52,11 +55,13 @@ function ReaderWorkspace({ initialReading }: { initialReading?: Reading }) {
   const figure = bookFigures.find(item => item.id === figureId);
   const currentMark = selected && state.books[selected.id]?.bookmarks.find(mark => mark.page === selected.page);
   useEffect(() => {
+    if (!user) return;
     let active = true;
     requestJson<ReaderState>('/api/reader/state').then(value => { if (active) { setState(value); setLoaded(true); setError(''); } }).catch(error => { if (active) setError(error.message); });
     return () => { active = false; };
-  }, [retry]);
+  }, [retry, user]);
   const save = useCallback((command: ReaderCommand) => {
+    if (!user) { if (command.action !== 'position') requestSignIn(); return; }
     pending.current += 1;
     setSaveStatus('Saving…');
     queue.current = queue.current.then(async () => {
@@ -70,7 +75,7 @@ function ReaderWorkspace({ initialReading }: { initialReading?: Reading }) {
         setFailedCommands(commands => [...commands.filter(item => !(item.bookId === command.bookId && item.action === command.action && (item.action === 'position' || item.page === command.page))), command]);
       } finally { pending.current -= 1; }
     });
-  }, []);
+  }, [user, requestSignIn]);
   const onRendered = useCallback((page: number) => {
     if (!selected || !loaded) return;
     const key = `${selected.id}-${page}`;
@@ -82,7 +87,7 @@ function ReaderWorkspace({ initialReading }: { initialReading?: Reading }) {
   const go = (page: number) => { if (book && Number.isInteger(page) && page >= 1 && page <= book.pages) { setSelected({ id: book.id, page }); setSidebar(false); setFigureId(null); readingScroll.current?.scrollTo({ top: 0, behavior: 'instant' }); } };
   const readSource = (reading: Reading) => { open(reading.bookId, reading.pdf); setFocusedReading(reading); };
 
-  return <><nav className="reader-section-nav" aria-label="Books and simulations"><button type="button" aria-pressed={view === 'books'} onClick={() => setView('books')}><BookOpen size={18} /> Books</button><button type="button" aria-pressed={view === 'simulations'} onClick={() => setView('simulations')}><FlaskConical size={18} /> Simulations</button><span><Cloud size={15} /> Saved on Vercel</span></nav>{!loaded && <div className="reader-sync">{error ? <><p role="alert">{error}</p><button type="button" onClick={() => { setError(''); setRetry(value => value + 1); }}>Retry saved pages</button></> : <p role="status">Loading your saved place…</p>}</div>}{view === 'simulations' ? <BookSimulations key={simulationId ?? 'all'} initialTopicId={simulationId} onTopicChange={setSimulationId} onRead={readSource} /> : !selected || !book ? <Bookshelf state={state} ready={loaded} onOpen={open} /> : <div className="reader-workspace"><div className="reader-reading-scroll" ref={readingScroll}><div className="reader-book-heading"><button type="button" aria-label="Back to bookshelf" onClick={() => { setSelected(null); setSidebar(false); }}><ArrowLeft size={17} /> My books</button><div><h3>{book.title}</h3><span>{book.edition} · {book.year}</span></div></div>{focusedReading?.bookId === book.id && <div className="reading-focus"><BookOpen size={18} /><div><strong>{focusedReading.title}</strong><span>{focusedReading.purpose} pp. {focusedReading.printed}</span></div><button type="button" onClick={() => go(focusedReading.pdf)}>Go to reading</button></div>}<div className="reader-toolbar">
+  return <><nav className="reader-section-nav" aria-label="Books and simulations"><button type="button" aria-pressed={view === 'books'} onClick={() => setView('books')}><BookOpen size={18} /> Books</button><button type="button" aria-pressed={view === 'simulations'} onClick={() => setView('simulations')}><FlaskConical size={18} /> Simulations</button><span><Cloud size={15} /> {user ? "Saved across devices" : "Guest reading · not saved"}</span></nav>{!loaded && <div className="reader-sync">{error ? <><p role="alert">{error}</p><button type="button" onClick={() => { setError(''); setRetry(value => value + 1); }}>Retry saved pages</button></> : <p role="status">Loading your saved place…</p>}</div>}{view === 'simulations' ? <BookSimulations key={simulationId ?? 'all'} initialTopicId={simulationId} onTopicChange={setSimulationId} onRead={readSource} /> : !selected || !book ? <Bookshelf state={state} ready={loaded} onOpen={open} /> : <div className="reader-workspace"><div className="reader-reading-scroll" ref={readingScroll}><div className="reader-book-heading"><button type="button" aria-label="Back to bookshelf" onClick={() => { setSelected(null); setSidebar(false); }}><ArrowLeft size={17} /> My books</button><div><h3>{book.title}</h3><span>{book.edition} · {book.year}</span></div></div>{focusedReading?.bookId === book.id && <div className="reading-focus"><BookOpen size={18} /><div><strong>{focusedReading.title}</strong><span>{focusedReading.purpose} pp. {focusedReading.printed}</span></div><button type="button" onClick={() => go(focusedReading.pdf)}>Go to reading</button></div>}<div className="reader-toolbar">
       <button type="button" aria-label="Book contents, saved pages and figures" aria-expanded={sidebar} onClick={() => setSidebar(value => !value)}><List size={18} /><span>Contents</span></button>
       {!figure && <div className="reader-view-mode" role="group" aria-label="Reading view"><button type="button" aria-pressed={mode === 'page'} onClick={() => setMode('page')}>Page</button><button type="button" aria-pressed={mode === 'text'} onClick={() => setMode('text')}>Text</button></div>}
       {(mode === 'page' || figure) && <div className="reader-zoom"><button type="button" aria-label="Zoom out" disabled={zoom <= .75} onClick={() => setZoom(value => value - .25)}><ZoomOut size={18} /></button><button type="button" className="reader-fit" aria-label="Fit page to screen width" onClick={() => setZoom(1)}>{zoom === 1 ? 'Fit width' : `${Math.round(zoom * 100)}%`}</button><button type="button" aria-label="Zoom in" disabled={zoom >= 3} onClick={() => setZoom(value => value + .25)}><ZoomIn size={18} /></button></div>}
@@ -95,17 +100,19 @@ export function BookWorkspace({ initialReading }: { initialReading?: Reading }) 
 }
 
 function ReaderSession({ initialReading }: { initialReading?: Reading }) {
+  const { user } = useCourseAccount();
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
   useEffect(() => {
+    if (!user) return;
     let active = true;
     requestJson<Session>('/api/reader/session', { method: 'POST' }).then(value => {
       if (active) { setReady(value.authenticated); setError(''); }
     }).catch(error => { if (active) setError(error instanceof Error ? error.message : 'Could not open books.'); });
     return () => { active = false; };
-  }, [retry]);
-  return <div className="reader-content">{ready ? <ReaderWorkspace initialReading={initialReading}/> : <div className="reader-message">{error ? <><p role="alert">{error}</p><button type="button" onClick={()=>{setError('');setRetry(value=>value+1);}}>Retry opening books</button></> : <p role="status">Opening your books…</p>}</div>}</div>;
+  }, [retry, user]);
+  return <div className="reader-content">{(ready || !user) ? <ReaderWorkspace initialReading={initialReading}/> : <div className="reader-message">{error ? <><p role="alert">{error}</p><button type="button" onClick={()=>{setError('');setRetry(value=>value+1);}}>Retry opening books</button></> : <p role="status">Opening your books…</p>}</div>}</div>;
 }
 
 export default function BookReader({ initialReading, onClose }: { initialReading?: Reading; onClose: () => void }) {

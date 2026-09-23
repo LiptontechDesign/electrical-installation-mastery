@@ -6,6 +6,7 @@ import { DndContext, DragOverlay, KeyboardSensor, MeasuringStrategy, MouseSensor
 import { CheckCircle2, GripVertical, PlayCircle } from 'lucide-react';
 import { useCourseOrder } from './course-order';
 import { useSupplementary } from './supplementary-videos';
+import { useCourseAccount } from './course-account';
 import { closestDrop, courseMapSnapshot, dropCandidates, moveSession, movingSequence, persistConfirmedMove,
   type DropProposal, type MapRow, type MoveSession } from './course-drop-model';
 import { MoveConfirmationDialog } from './move-confirmation-dialog';
@@ -212,6 +213,7 @@ export function CourseDragPath({ id, selected, onSelect, children }: { id: strin
 }
 
 export function CourseSectionRows({ sectionId, renderCore }: { sectionId: string; renderCore: (id: string, displayNumber: number) => ReactNode }) {
+  const { user } = useCourseAccount();
   const { rows, busy } = useContext(DragContext);
   const supplementary = useSupplementary();
   const { setNodeRef } = useDroppable({ id: `end:${sectionId}`, data: { type: 'end', sectionId }, disabled: !busy });
@@ -221,7 +223,7 @@ export function CourseSectionRows({ sectionId, renderCore }: { sectionId: string
     return <CourseDraggableRow key={row.id} row={row}>
     {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <button className="supp-video-row" type="button" onClick={() => {
       if (video) supplementary?.open(video);
-    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small>Supplementary · {watched ? 'Watched' : 'Not watched'} · {video?.instructor || 'YouTube'}</small></span></button>}
+    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small>Supplementary · {user ? (watched ? 'Watched · ' : 'Not watched · ') : ''}{video?.instructor || 'YouTube'}</small></span></button>}
   </CourseDraggableRow>;
   })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Empty section · core lessons only') : null}</div></>;
 }

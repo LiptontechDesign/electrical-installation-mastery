@@ -32,6 +32,8 @@ import { practiceForLesson } from './practice-data';
 
 import { useDialogFocus } from './use-dialog-focus';
 import AccountPanel from './account-panel';
+import { AccountControl, useCourseAccount } from './course-account';
+import CourseOverview from './course-overview';
 import type { CourseUser } from './server/auth';
 
 const PracticeWorkspace = dynamic(() => import('./practice-workspace'), { loading: () => <p role="status">Preparing your practice…</p> });
@@ -112,7 +114,9 @@ const navigation = [
   { id: 'books' as const, label: 'Books', icon: BookOpen },
 ];
 
-export default function CourseApp({ user }: { user: CourseUser }) {
+export default function CourseApp({ user }: { user: CourseUser | null }) {
+  const { requestSignIn } = useCourseAccount();
+  const [showOverview, setShowOverview] = useState(false);
   const { course, sectionsByModule } = useCourseOrder();
   const allLessons = useMemo(() => course.modules.flatMap(m => m.lessons), [course]);
   const lessonLookup = useMemo(() => new Map(allLessons.map(l => [l.id, l])), [allLessons]);
@@ -324,6 +328,17 @@ export default function CourseApp({ user }: { user: CourseUser }) {
     hydrationStartedRef.current = true;
     let active = true;
     void (async () => {
+      if (!user) {
+        const [guestView, guestLessonId] = window.location.hash.replace(/^#/, '').split('/');
+        if (navigation.some(item => item.id === guestView)) setView(guestView as View);
+        if (guestView === 'learn' && lessonLookup.has(guestLessonId)) {
+          const location = lessonLocation.get(guestLessonId)!;
+          setLearner({ ...initialLearnerState, activeLessonId: guestLessonId });
+          setOpenModuleId(location.module.id); setMapPath(location.module.path);
+        }
+        setHydrated(true);
+        return;
+      }
       let nextState = initialLearnerState;
       let localState: LearnerState | null = null;
       let readError = false;
@@ -370,7 +385,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
       setHydrated(true);
     })();
     return () => { active = false; };
-  }, [course.modules, lessonLocation, lessonLookup, user.id]);
+  }, [course.modules, lessonLocation, lessonLookup, user]);
 
   useEffect(() => {
     if (view !== 'learn') return;
@@ -378,7 +393,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
   }, [activeLesson.id, moduleDrawerOpen, openModuleId, view]);
 
   useEffect(() => {
-    if (!hydrated || storageBlocked) return;
+    if (!user || !hydrated || storageBlocked) return;
     const timer = window.setTimeout(async () => {
       try {
         window.localStorage.setItem(`${STORAGE_KEY}:${user.id}`, JSON.stringify(learner));
@@ -390,7 +405,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
       } catch { setSaveError(true); }
     }, 600);
     return () => window.clearTimeout(timer);
-  }, [hydrated, learner, storageBlocked, user.id]);
+  }, [hydrated, learner, storageBlocked, user]);
 
   useEffect(() => {
     if (!toast) return;
@@ -515,7 +530,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
           ) return;
 
           lastEndedLessonRef.current = lessonId;
-          setLearner((current) => {
+          if (user) setLearner((current) => {
             return withStudyMinutes({
               ...current,
               ...recordVideoCompletion(current,lessonId),
@@ -550,7 +565,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
       },
     });
     playerBindingRef.current = { iframe, player, deactivate: () => { destroyed = true; } };
-  }, [view, youtubeApiReady, playerSrc, activeLesson.id, activeLesson.durationSeconds, autoPlayLessonId, allLessons]);
+  }, [view, youtubeApiReady, playerSrc, activeLesson.id, activeLesson.durationSeconds, autoPlayLessonId, allLessons, user]);
 
   const searchResults = useMemo(() => {
     const query = searchQuery.trim().toLocaleLowerCase();
@@ -682,6 +697,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
   };
 
   const toggleComplete = (advance = false) => {
+    if (!user) { requestSignIn(); return; }
     const isComplete = completed.has(activeLesson.id);
     setLearner((current) => {
       return { ...current, ...(current.completedLessonIds.includes(activeLesson.id) ? {completedLessonIds:current.completedLessonIds.filter(id=>id!==activeLesson.id)} : recordVideoCompletion(current,activeLesson.id)), updatedAt: new Date().toISOString() };
@@ -694,23 +710,27 @@ export default function CourseApp({ user }: { user: CourseUser }) {
   };
 
   const markGroupWatched = (lessonIds: string[], moduleId: string, label: string) => {
+    if (!user) { requestSignIn(); return; }
     setLearner((current) => ({ ...markVideoGroupWatched(current, lessonIds), updatedAt: new Date().toISOString() }));
     window.dispatchEvent(new CustomEvent('supplementary-bulk-watch', { detail: { moduleId, lessonIds } }));
     setToast(`${label} marked as watched.`);
   };
 
   const toggleBookmark = () => {
+    if (!user) { requestSignIn(); return; }
     const isSaved = bookmarked.has(activeLesson.id);
     setLearner((current) => ({ ...current, bookmarkedLessonIds: isSaved ? current.bookmarkedLessonIds.filter((id) => id !== activeLesson.id) : [...current.bookmarkedLessonIds, activeLesson.id], updatedAt: new Date().toISOString() }));
     setToast(isSaved ? 'Bookmark removed.' : 'Lesson saved to your notebook.');
   };
 
   const recordEvidence = (input: EvidenceInput) => {
+    if (!user) return;
     setLearner(current => ({...current,evidence:appendEvidence(current.evidence,input),updatedAt:new Date().toISOString()}));
   };
   const selectAssessmentQuestion = (id: string) => setLearner(current => ({...current,assessment:{...current.assessment,activeQuestionId:id},updatedAt:new Date().toISOString()}));
   const saveAssessmentReview = (id: string, review: LearnerState['assessment']['reviews'][string]) => setLearner(current => ({...current,assessment:{...current.assessment,reviews:{...current.assessment.reviews,[id]:review}},updatedAt:new Date().toISOString()}));
   const toggleAssessmentBookmark = (id: string) => setLearner(current => {
+    if (!user) return current;
     const saved=current.assessment.bookmarkedQuestionIds.includes(id);
     return {...current,assessment:{...current.assessment,bookmarkedQuestionIds:saved?current.assessment.bookmarkedQuestionIds.filter(questionId=>questionId!==id):[...current.assessment.bookmarkedQuestionIds,id]},updatedAt:new Date().toISOString()};
   });
@@ -763,7 +783,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
   );
 
   return (
-    <div className="app-shell">
+    <div className={user ? 'app-shell' : 'app-shell guest-course'}>
       <Script
         id="youtube-iframe-api"
         src="https://www.youtube.com/iframe_api"
@@ -782,7 +802,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
           <span className="nav-label">Workshop</span>
           {navigation.map((item) => {
             const Icon = item.icon;
-            return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><Icon size={19} /><span>{item.label}</span>{item.id === 'learn' && <small>{coursePercent}%</small>}</button>;
+            return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} onClick={() => navigate(item.id)}><Icon size={19} /><span>{item.id === 'home' && !user ? 'Course overview' : item.label}</span>{item.id === 'learn' && user && <small>{coursePercent}%</small>}</button>;
           })}
         </nav>
         <div className="sidebar-safety"><ShieldCheck size={22} /><strong>Safety before speed</strong><p>Learn the principle, then practise safely with qualified supervision.</p></div>
@@ -797,14 +817,17 @@ export default function CourseApp({ user }: { user: CourseUser }) {
           <nav className="header-navigation" aria-label="Top navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={18}/><span>{item.label}</span></button>; })}</nav>
           <div className="header-actions">
             <button className="my-books-button" type="button" aria-label="Open My books" onClick={() => navigate('books')}><BookOpen size={19} /><span>My books</span></button>
-            <button className="header-progress" type="button" onClick={() => navigate('home')} aria-label={`${coursePercent}% of the required course path complete`}><span className="mini-progress"><i style={{ width: `${coursePercent}%` }} /></span><b>{coursePercent}%</b></button>
-            <button className="icon-button" type="button" onClick={() => setSettingsOpen(true)} aria-label="Open data and settings"><Settings size={20} /></button>
+            {user && <button className="header-progress" type="button" onClick={() => navigate('home')} aria-label={`${coursePercent}% of the required course path complete`}><span className="mini-progress"><i style={{ width: `${coursePercent}%` }} /></span><b>{coursePercent}%</b></button>}
+            <AccountControl onSettings={() => setSettingsOpen(true)}/>
           </div>
         </header>
 
         <main id="main-content" className="app-content">
+          {!user && view !== 'home' && <div className="guest-learning-bar"><span>Guest mode <span>· Progress is not saved</span></span><button onClick={requestSignIn}>Sign in to save your learning <ArrowRight size={15}/></button></div>}
+          {user && view === 'home' && <div className="home-view-switch"><button aria-pressed={!showOverview} onClick={() => setShowOverview(false)}>My learning</button><button aria-pressed={showOverview} onClick={() => setShowOverview(true)}>About this course</button></div>}
           {(storageBlocked || saveError) && <div className="storage-warning" role="alert"><strong>{storageBlocked ? 'The unreadable browser copy is being preserved.' : 'Your latest changes could not be synced to your account.'}</strong><p>Download a backup of this session and retry when your connection is available.</p><button type="button" onClick={exportProgress}>Download this session</button></div>}
-          {view === 'home' && (
+          {view === 'home' && (!user || showOverview) && <CourseOverview onLesson={chooseLesson} onExam={() => navigate('exam')} onBooks={() => navigate('books')}/>}
+          {view === 'home' && user && !showOverview && (
             <div className="page home-page">
               <section className="home-hero">
                 <div className="hero-glow" aria-hidden="true" />
@@ -856,7 +879,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
                   {(['C2','C1','Professional'] as const).map(path=><CourseDragPath key={path} id={path} selected={mapPath===path} onSelect={()=>chooseMapPath(path)}>{path==='Professional'?'Advanced':path}</CourseDragPath>)}
                 </div>
                 {browsingControls}
-                <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required videos watched</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>
+                {user && <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required videos watched</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>}
                 <nav aria-label="Course module and lesson navigation">
                   {course.modules.filter(module=>module.path===mapPath).map((module) => {
                     const isOpen = openModuleId === module.id || dragOpenModuleIds.includes(module.id);
@@ -864,7 +887,7 @@ export default function CourseApp({ user }: { user: CourseUser }) {
                     return (
                       <CourseDragModule key={module.id} id={module.id} expanded={isOpen} onExpand={() => setDragOpenModuleIds(ids => [...new Set([...ids, module.id])])}><section className={`module-accordion ${isOpen ? 'open' : ''}`}>
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => { setDragOpenModuleIds([]); setOpenModuleId(isOpen ? '' : module.id); }} aria-expanded={isOpen}>
-                          <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{done}/{module.lessons.length} videos watched</small></span><ChevronDown size={18} />
+                          <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{user ? `${done}/${module.lessons.length} videos watched` : `${module.lessons.length} lessons · ${module.duration}`}</small></span><ChevronDown size={18} />
                         </button>
                         <div className="module-actions">
                           <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
@@ -911,11 +934,11 @@ export default function CourseApp({ user }: { user: CourseUser }) {
                   <div><button className={`bookmark-button ${bookmarked.has(activeLesson.id) ? 'active' : ''}`} type="button" onClick={toggleBookmark}><Bookmark size={18} fill={bookmarked.has(activeLesson.id) ? 'currentColor' : 'none'} /> {bookmarked.has(activeLesson.id) ? 'Saved' : 'Save lesson'}</button><button className={`auto-next-toggle ${learner.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={18} /> Auto-next <span>{learner.autoNextEnabled ? 'On' : 'Off'}</span></button></div>
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={completed.has(activeLesson.id)} onClick={() => toggleComplete(!completed.has(activeLesson.id))}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Watched · Undo' : 'Mark video watched'}</button>
                 </div>
-                <LessonProgress watched={completed.has(activeLesson.id)} completions={learner.videoCompletionCounts[activeLesson.id]??0}/>
+                {user && <LessonProgress watched={completed.has(activeLesson.id)} completions={learner.videoCompletionCounts[activeLesson.id]??0}/>}
                 <section id="lesson-overview" className="lesson-overview" aria-label="Lesson Overview">
                   <LessonOverview key={activeLesson.id} lessonId={activeLesson.id} guide={activeGuide} watched={completed.has(activeLesson.id)} learningText={activeLearningText} mode={lessonWorkspaceMode} onModeChange={setLessonWorkspaceMode} onLesson={revisitFoundation} onRead={reading=>setBookReader({reading})}/>
                   <details className="lesson-practice-reveal" open={practiceOpen} onToggle={event=>setPracticeOpen(event.currentTarget.open)}><summary>Worked examples and investigations</summary>{practiceOpen&&<PracticeWorkspace key={activeLesson.id} lessonId={activeLesson.id} calculation={activePractice.calculation} cases={activePractice.cases} onEvidence={recordEvidence} evidence={learner.evidence}/>}</details>
-                  <details className="lesson-notes-disclosure"><summary>Your lesson notes</summary><label className="lesson-notes"><span>Write a private note for this lesson</span><textarea aria-label="Your lesson notes" value={learner.notes[activeLesson.id]??''} onChange={event=>setLearner(current=>({...current,notes:{...current.notes,[activeLesson.id]:event.target.value},updatedAt:new Date().toISOString()}))} placeholder="Record an explanation, observation or question…"/></label></details>
+                  <details className="lesson-notes-disclosure"><summary>Your lesson notes</summary>{user ? <label className="lesson-notes"><span>Write a private note for this lesson</span><textarea aria-label="Your lesson notes" value={learner.notes[activeLesson.id]??''} onChange={event=>setLearner(current=>({...current,notes:{...current.notes,[activeLesson.id]:event.target.value},updatedAt:new Date().toISOString()}))} placeholder="Record an explanation, observation or question…"/></label> : <div className="guest-notes"><p>Keep explanations and questions together with each lesson.</p><button className="account-sign-in" onClick={requestSignIn}>Sign in to keep notes</button></div>}</details>
                 </section>
                 {location.lessonIndex===0&&<LicensingStageGuide moduleId={location.module.id}/>}
                 {activeLesson.id===location.module.lessons.at(-1)?.id&&<section className="module-recap-end"><BookOpen size={28}/><div><span>Module {pad(location.module.number)} · Keep the essentials</span><h2>Your module recap book</h2><p>Turn through the key ideas, relationships and practical distinctions from this module’s videos.</p></div><button type="button" onClick={()=>openModuleRecap(location.module.id)}>Open recap <ArrowRight size={18}/></button></section>}
@@ -944,11 +967,11 @@ export default function CourseApp({ user }: { user: CourseUser }) {
         <div className="modal-layer align-right" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
           <section ref={settingsDialogRef} className="settings-drawer" role="dialog" aria-modal="true" aria-labelledby="settings-title">
             <div className="dialog-title"><div><span className="eyebrow neutral">Account & data</span><h2 id="settings-title">Settings</h2></div><button type="button" onClick={() => setSettingsOpen(false)} aria-label="Close settings"><X size={22} /></button></div>
-            <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>Your private learning data</strong><p>Video marks, notes, bookmarks, course changes and reading records are saved only under your Google account and sync across devices.</p></div></div>
-            <AccountPanel user={user} />
+            <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>{user ? 'Your private learning data' : 'You’re exploring as a guest'}</strong><p>{user ? 'Video marks, notes, bookmarks, course changes and reading records are saved only under your Google account and sync across devices.' : 'Enjoy the course freely. Your learning activity is not saved. Sign in when you want to keep progress, notes and bookmarks.'}</p>{!user && <button className="account-sign-in" onClick={() => { setSettingsOpen(false); requestSignIn(); }}>Sign in with Google</button>}</div></div>
+            {user && <AccountPanel user={user} />}
             <section className="settings-section playback-settings"><span className="eyebrow neutral">Playback & review</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished lesson</strong><small>Optional next-video countdown when reflection is switched off</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><button className="settings-switch" type="button" role="switch" aria-checked={learner.reviewBeforeNext} onClick={() => { const enabled = !learner.reviewBeforeNext; setLearner((current) => ({ ...current, reviewBeforeNext: enabled, updatedAt: new Date().toISOString() })); setToast(enabled ? 'Lesson recap is now required before auto-next.' : 'Auto-next will use the five-second countdown without opening the recap.'); }}><ListChecks size={19} /><span><strong>Review before next</strong><small>Open the lesson Overview when a video finishes</small></span><span className={`switch-track ${learner.reviewBeforeNext ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>Recommended: keep reflection on. Choose your next learning action after the video. In fullscreen, the app waits for you to exit safely before changing the lesson.</p></section>
-            <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save video marks, notes and bookmarks</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>
-            <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>videos watched</span></div><div><b>{coursePercent}%</b><span>required videos watched</span></div><div><b>{weekMinutes}</b><span>study minutes this week</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This clears progress from your account on every device. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Reset account progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset learning progress</strong><small>Clear your synced learning record</small></span></button>}</section>
+            {user && <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save video marks, notes and bookmarks</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>}
+            {user && <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{completed.size}</b><span>videos watched</span></div><div><b>{coursePercent}%</b><span>required videos watched</span></div><div><b>{weekMinutes}</b><span>study minutes this week</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This clears progress from your account on every device. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Reset account progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset learning progress</strong><small>Clear your synced learning record</small></span></button>}</section>}
             <div className="settings-footnote"><Info size={18} /><p>Videos stream from YouTube and need internet access.</p></div>
           </section>
         </div>

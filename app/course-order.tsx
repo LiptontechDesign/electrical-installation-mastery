@@ -1,6 +1,7 @@
 'use client';
-import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ArrowRightLeft, X } from 'lucide-react';
+import { useCourseAccount } from './course-account';
 import { courseForOrder, defaultOrder, moveLesson, orderedSections, parseOrder, type LessonMove } from './course-order-model';
 
 const initial = courseForOrder(defaultOrder);
@@ -10,11 +11,13 @@ const CourseOrderContext = createContext<CourseOrderContextValue>({ ...initial, 
   refresh: async () => {}, save: async () => false });
 export const useCourseOrder = () => useContext(CourseOrderContext);
 export function CourseOrderProvider({ children }: { children: ReactNode }) {
+  const { user } = useCourseAccount();
   const [order, setOrder] = useState(defaultOrder);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const sequence = useRef(0);
-  async function refresh() {
+  const refresh = useCallback(async () => {
+    if (!user) return;
     const requestId = ++sequence.current;
     setReady(false);
     try {
@@ -24,14 +27,15 @@ export function CourseOrderProvider({ children }: { children: ReactNode }) {
       if (requestId !== sequence.current) return;
       setOrder(parseOrder(data)); setReady(true); setError('');
     } catch { if (requestId === sequence.current) { setReady(false); setError('Your course order could not be loaded. Retry before moving a lesson.'); } }
-  }
+  }, [user]);
   useEffect(() => {
     const initialRequest = window.setTimeout(() => { void refresh(); }, 0);
     const onFocus = () => { void refresh(); };
     window.addEventListener('focus', onFocus);
     return () => { window.clearTimeout(initialRequest); window.removeEventListener('focus', onFocus); };
-  }, []);
+  }, [refresh]);
   async function save(move: LessonMove) {
+    if (!user) return false;
     ++sequence.current;
     let reconciled = false;
     try {
@@ -46,6 +50,7 @@ export function CourseOrderProvider({ children }: { children: ReactNode }) {
 }
 
 export function MoveLessonButton({ lessonId, onMoved }: { lessonId: string; onMoved?: (moduleId: string) => void }) {
+  const { user } = useCourseAccount();
   const { course, order, sectionsByModule, ready, error, refresh, save } = useCourseOrder();
   const [open, setOpen] = useState(false);
   const [sectionId, setSectionId] = useState('');
@@ -85,6 +90,7 @@ export function MoveLessonButton({ lessonId, onMoved }: { lessonId: string; onMo
     }
     setBusy(false);
   }
+  if (!user) return null;
   return <>
     <button ref={trigger} type="button" className="move-lesson-button" onClick={begin} data-tooltip="Move this lesson to another module, section or position"><ArrowRightLeft size={16} /> Move lesson</button>
     <dialog ref={dialog} className="move-lesson-dialog" aria-labelledby="move-lesson-title" onCancel={event => { if (busy) event.preventDefault(); }} onClose={() => { setOpen(false); trigger.current?.focus(); }}>

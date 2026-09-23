@@ -22,7 +22,7 @@ Schema 9 accepts earlier backups, retains learning records and preferences, and 
 
 Originals, reading copies and extracted figures live in private Vercel Blob, not Git or public assets. The 2026 On-Site Guide is an image scan; use Page view and chapter search. The IET Wiring Guide has an OCR text layer. Older editions are historical references, not current compliance specifications.
 
-The course uses Google OpenID Connect for identity and a signed, HttpOnly course session. Google access and refresh tokens are not retained. Every database document has a composite `(user_id, document_type)` key, so progress, lesson notes, course ordering, supplementary videos and reading records are isolated between learners. A first sign-in imports the old browser-local progress once; subsequent changes synchronize across devices. Private Blob continues to protect the book files themselves.
+The course uses Google OpenID Connect for identity and a signed, HttpOnly course session. Google access and refresh tokens are not retained. Every database document has a composite `(user_id, document_type)` key, so progress, lesson notes, course ordering, supplementary videos and reading records are isolated between learners. A first sign-in imports the old browser-local progress once; subsequent changes synchronize across devices. Book files stay in private Blob storage and are served through the course's public, read-only content endpoints; personal reading records remain protected.
 
 Server configuration:
 
@@ -38,6 +38,8 @@ Database tables are created idempotently on the first authenticated request. PDF
 To prepare/upload one new book, use `scripts/prepare-book-copies.py --book BOOK_ID INPUT_PDF PAGE_COUNT OUTPUT_PDF` and `node --env-file=.env.local scripts/upload-books.mjs --book BOOK_ID ORIGINAL_PDF READER_PDF`. Uploads are private and refuse overwrites. Generated PDFs and manifests belong in ignored `work/`.
 
 ## Run and verify
+
+The course is open without sign-in. The public overview includes outcomes, pathway filters and an expandable curriculum. Guests can watch any video, read books and use practice; no guest learning records are read from or written to local storage or the database. Temporary practice answers disappear on reload. Google sign-in enables the existing personal progress, notes, bookmarks and course arrangement. Account controls are in the top-right menu; sign-out returns to the public course. Personal data APIs still require an authenticated session. Book/figure content is accessible to guests, while saved reading state remains authenticated.
 
 Node.js 22.13 or newer:
 
@@ -61,6 +63,7 @@ npm run test:navigation
 npm run test:migration
 npm run test:architecture
 npm run test:accounts
+npm run test:guests
 node scripts/test-supplied-learning.mjs
 npm run audit:course
 npm run audit:transcripts

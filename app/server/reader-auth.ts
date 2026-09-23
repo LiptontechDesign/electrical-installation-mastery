@@ -1,8 +1,8 @@
 import 'server-only';
-import { authConfigured, getCourseUser } from './auth';
+import { getCourseUser } from './auth';
 export const privateHeaders = { 'Cache-Control': 'private, no-store', 'X-Content-Type-Options': 'nosniff', 'Vary': 'Cookie' };
 export function readerConfigured() {
-  return Boolean(authConfigured() && (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID));
+  return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
 }
 export async function readerAuthenticated() {
   return readerConfigured() && Boolean(await getCourseUser());

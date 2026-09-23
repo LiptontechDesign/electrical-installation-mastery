@@ -11,6 +11,7 @@ import './assessment.css';
 import './dark-theme.css';
 import './course-order.css';
 import './course-drag.css';
+import './course-overview.css';
 import AccessibleTooltips from './accessible-tooltips';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
