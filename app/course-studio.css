@@ -98,7 +98,7 @@
 .saved-learning-empty > svg { color: var(--text-accent); }
 .saved-learning-empty strong { color: var(--ink); font-size: 13px; line-height: 1.6; font-weight: 550; }
 .saved-learning-empty p { font-size: 11px; line-height: 1.8; margin: 0; max-width: 280px; }
-.learning-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+.learning-tools { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
 .learning-tools button { display: flex; align-items: center; gap: 15px; background: var(--surface-soft); color: var(--ink); padding: 22px; text-align: left; border: 1px solid var(--line); border-radius: 10px; }
 .learning-tool-icon { color: var(--text-accent); display: flex; }
 .learning-tools button > span:nth-child(2) { flex: 1; }

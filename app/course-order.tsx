@@ -107,9 +107,9 @@ export function MoveLessonButton({ lessonId, onMoved }: { lessonId: string; onMo
           </select></label>
         </fieldset>
         <div className="move-preview" aria-live="polite"><strong>Preview · {targetModule.path} · Section {destination.number}</strong>{validBefore ? <ol>{preview.slice(Math.max(0, previewIndex - 1), previewIndex + 2).map(id => <li key={id} className={id === lessonId ? 'moving' : ''}>{id === lessonId && <span>Moving here · </span>}{lessons.get(id)!.title}</li>)}</ol> : <p>Choose a new position to preview your move.</p>}</div>
-        {source.moduleId !== destination.moduleId && <p className="move-help">This changes module membership and watched totals. Teaching references and exam topics keep their authored subject scope.</p>}
+        {source.moduleId !== destination.moduleId && <p className="move-help">This changes module membership and watched totals. Your watched records and notes stay with each video.</p>}
         {error && <div role="alert" className="move-error">{error} <button disabled={busy} type="button" onClick={() => void refresh()}>Refresh order</button></div>}
-        {!ready && !error && <p role="status">Loading shared course order…</p>}
+        {!ready && !error && <p role="status">Loading your course order…</p>}
         {notice && <p role="status">{notice} {undo && <button type="button" disabled={busy} onClick={() => void submit(true)}>Undo move</button>}</p>}
         <div className="move-dialog-actions"><button type="button" disabled={busy} onClick={() => setOpen(false)}>{notice ? 'Done' : 'Cancel'}</button><button className="primary-button" disabled={busy || !ready || !validBefore || unchanged} type="submit">{busy ? 'Saving…' : 'Move in my course'}</button></div>
       </form>

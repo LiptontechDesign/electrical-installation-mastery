@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       <p>Electrical Installation Mastery is a learning service operated by Liptontech. This policy explains the limited information used to provide individual course accounts.</p>
 
       <h2>Information we use</h2>
-      <p>You can browse and watch without an account. Guest learning progress, notes and reading history are not saved to your browser or our database. Interactive practice may hold answers temporarily while the page is open; refreshing clears them. YouTube playback and hosting providers may process ordinary service data under their own policies.</p>
+      <p>You can browse and watch without an account. Guest learning progress, notes and reading history are not saved to your browser or our database. YouTube playback and hosting providers may process ordinary service data under their own policies.</p>
       <ul>
         <li><strong>Google account details:</strong> your Google account identifier, name, email address and profile picture.</li>
         <li><strong>Learning records:</strong> video completion, notes, bookmarks, reading position, course ordering and supplementary-video choices.</li>

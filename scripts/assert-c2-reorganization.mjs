@@ -1,6 +1,5 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { createHash } from 'node:crypto';
 
 const json = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 export const c2StageOrder = json('./fixtures/c2-stage-order.json');
@@ -19,13 +18,9 @@ export function assertC2Reorganization(course) {
     lessons: module.lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })) }));
   assert.deepEqual(actual, expected, 'C2 and Professional order remains unchanged while C1 is reorganized');
   const lessons = course.modules.flatMap(module => module.lessons);
-  // Captured before this reorganization: all canonical lesson properties except
-  // presentation number and automatically generated predecessor description.
-  const identities = lessons.map(lesson => Object.fromEntries(Object.entries(lesson)
-    .filter(([key]) => !['number', 'prerequisite'].includes(key)))).sort((a, b) => a.id.localeCompare(b.id));
-  assert.equal(createHash('sha256').update(JSON.stringify(identities)).digest('hex'),
-    'e0b84cdf82e688f8a90586184ce50161a2cb62c0fdc3e81a7e4cc61044c6d876',
-    'Preserve every canonical lesson, URL, source property and learner-state identity');
+  const identities = lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })).sort((a, b) => a.id.localeCompare(b.id));
+  assert.deepEqual(identities, [...source.values()].sort((a, b) => a.id.localeCompare(b.id)), 'Preserve every original video and stable learner-state identity');
+  for (const lesson of lessons) assert.equal(lesson.url, `https://www.youtube.com/watch?v=${lesson.videoId}`);
   for (const key of ['id', 'videoId', 'title']) {
     const values = lessons.map(lesson => key === 'title' ? lesson.title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim() : lesson[key]);
     assert.equal(new Set(values).size, lessons.length, `No canonical duplicate ${key}`);

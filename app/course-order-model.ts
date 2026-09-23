@@ -1,6 +1,6 @@
 import originalCourse from './course-curriculum';
 import { learningSections } from './learning-sections';
-import { formatStudyDuration } from './course-extension/builders';
+import { formatStudyDuration } from './course-duration';
 import type { SupplementaryVideo } from './supplementary-model';
 
 export function relocateSupportingVideos(videos: SupplementaryVideo[], course: typeof originalCourse) {
@@ -31,8 +31,7 @@ export function orderedSections(order: CourseOrder) {
     const group = groups.find(g => g.id === section.id)!;
     for (const id of section.lessonIds) if (!seen.has(id)) { group.lessonIds.push(id); seen.add(id); }
   }
-  return groups.map(group => ({ ...group, throughLessonId: group.lessonIds.at(-1) ?? '',
-    authoredRecap: group.authoredRecap && JSON.stringify(group.lessonIds) === JSON.stringify(learningSections.find(s => s.id === group.id)!.lessonIds) }));
+  return groups;
 }
 
 export function parseOrder(value: unknown): CourseOrder {

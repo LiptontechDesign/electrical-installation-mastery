@@ -9,7 +9,7 @@ await build({
   entryPoints:['app/course-app.tsx'], outfile:'work/navigation-tests/app.mjs',
   bundle:true, platform:'node', format:'esm', packages:'external', jsx:'automatic',
   plugins:[{name:'non-navigation-ui',setup(b){
-    b.onResolve({filter:/^(next\/(script|dynamic|image)|\.\/(lesson-overview))$/},args=>({path:args.path,namespace:'stub'}));
+    b.onResolve({filter:/^next\/(script|dynamic|image)$/},args=>({path:args.path,namespace:'stub'}));
     b.onLoad({filter:/.*/,namespace:'stub'},args=>({contents:args.path==='next/dynamic'?'export default () => () => null':'export default () => null',loader:'js'}));
   }}],
 });
@@ -52,8 +52,8 @@ narrowViewport=false;
 const distant=state().activeLessonId;
 assert.notEqual(distant,'p01-l01','A distant module opens without prior progress');
 assert.deepEqual(state().completedLessonIds,[],'Opening a lesson is not completion');
-assert.equal(state().schemaVersion,9); assert.ok(!('completedCheckpointIds' in state()));
-assert.ok(button('Exam prep'),'Exam preparation is a first-class navigation destination');
+assert.equal(state().schemaVersion,10);
+assert.equal(button('Exam prep'),undefined,'Video course has no exam destination');
 await click(button('Mark video watched'));
 assert.deepEqual(state().completedLessonIds,[distant]);
 assert.equal(state().videoCompletionCounts[distant],1);
@@ -67,8 +67,8 @@ const note=tree.root.findByProps({'aria-label':'Your lesson notes'});
 await act(async()=>note.props.onChange({target:{value:'Preserved study note'}}));await flush();
 assert.equal(state().notes[distant],'Preserved study note');
 await click(button('Save lesson'));assert.ok(state().bookmarkedLessonIds.includes(distant));
-assert.equal(tree.root.findAllByProps({role:'tablist'}).length,0,'No quiz tab');
-assert.ok(!text(tree.toJSON()).includes('Checkpoint'));
+assert.equal(tree.root.findAllByProps({role:'tablist'}).length,0,'No lesson guide tabs');
+assert.ok(!/Lesson guide|Standards companion|Module recap|Mock paper|Simulations/.test(text(tree.toJSON())));
 await click(button('Suggested next step'));
 assert.equal(state().activeLessonId,'p01-l01','Suggested next is an explicit action');
 await act(async()=>tree.unmount());

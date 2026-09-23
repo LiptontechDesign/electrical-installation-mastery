@@ -1,20 +1,20 @@
 import assert from 'node:assert/strict';
-import {readFile,readdir} from 'node:fs/promises';
-import {build} from 'esbuild';
-const retired=/assessment-data|assessment-panel|checkpoint-plan|checkpoint-questions|checkpoint-workspace|question-authoring|question-revisions|recall-distractors|recall-extras|supplied-assessments|professional-flashcard-revisions|simulation-assessments|answer-teaching|concept-distractors|connection-assessments|standards-checks|learning-design/;
-async function walk(dir){return (await Promise.all((await readdir(dir,{withFileTypes:true})).map(item=>item.isDirectory()?walk(dir+'/'+item.name):dir+'/'+item.name))).flat();}
-for(const file of (await walk('app')).filter(f=>/\.[jt]sx?$/.test(f))){
- const source=await readFile(file,'utf8');
- assert.ok(!/I remembered this|application-reflection|Show this again later/.test(source),file+': retired recall controls');
- assert.ok(!retired.test(file),file+' retired');
- for(const match of source.matchAll(/(?:from\s*|import\s*\()\s*['"]([^'"]+)/g))assert.ok(!retired.test(match[1]),file+': '+match[1]);
+import { readFile, readdir } from 'node:fs/promises';
+import { build } from 'esbuild';
+const retired = /(?:assessment-(?:bank|choice|workspace|markdown|diagram|types)|lesson-overview|overview-(?:data|reader)|module-recap|practice-(?:data|workspace)|book-simulations|learning-experiment|simulation-activities|knowledge-graph|standards-(?:data|terms)|tutor-panels)/;
+const files = await readdir('app');
+for (const file of files) assert.ok(!retired.test(file), 'Retired content file remains: ' + file);
+for (const file of ['app/course-app.tsx', 'app/course-overview.tsx', 'app/learning-home.tsx', 'app/book-reader.tsx']) {
+  const source = await readFile(file, 'utf8');
+  assert.ok(!/Lesson guide|Standards companion|Module recap book|Exam prep|Mock papers|Flashcards|Simulations/.test(source), 'Retired interface remains: ' + file);
 }
-const app=await readFile('app/course-app.tsx','utf8');
-assert.match(app,/type View = 'home' \| 'learn' \| 'exam' \| 'books'/);
-assert.ok(!/AssessmentPanel|assessmentBank|completedCheckpointIds|lessonQuiz|moduleQuiz|checkpointQuiz|flashcardProgress|LessonTab|assessmentMode|navigate\(['"](?:toolkit|progress)/.test(app));
-const bundle=await build({entryPoints:['app/course-app.tsx'],outdir:'work/architecture-test',bundle:true,platform:'node',format:'esm',packages:'external',jsx:'automatic',write:false,metafile:true});
-for(const file of Object.keys(bundle.metafile.inputs))assert.ok(!retired.test(file),'No retired engine in app bundle: '+file);
-const javascript=bundle.outputFiles.find(file=>file.path.endsWith('.js'));
-assert.ok(javascript,'Application JavaScript bundle exists');
-assert.ok(!javascript.text.includes('buildAssessmentBank'));
-console.log('PASS: Home/Learn/Exam prep/Books navigation, no orphan legacy engine imports and no old assessment generator in the application bundle.');
+const bundle = await build({ entryPoints: ['app/course-app.tsx'], outdir: 'work/architecture-test', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic', write: false, metafile: true });
+for (const file of Object.keys(bundle.metafile.inputs)) assert.ok(!retired.test(file), 'Retired content is still bundled: ' + file);
+console.log('PASS: video course and books contain no retired lesson, assessment or simulation interfaces or bundles.');
+const catalog = JSON.parse(await readFile('app/video-catalog.json', 'utf8'));
+for (const lesson of catalog.modules.flatMap(group => group.lessons)) {
+  for (const field of ['guide', 'rationale', 'prerequisite', 'checkYourself', 'keyConcepts']) {
+    assert.ok(!(field in lesson), 'Retired authored content in video catalogue: ' + field);
+  }
+}
+assert.ok(!JSON.parse(await readFile('package.json', 'utf8')).dependencies.katex, 'Unused formula renderer must stay removed');

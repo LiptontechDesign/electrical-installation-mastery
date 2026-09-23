@@ -1,65 +1,18 @@
 import assert from 'node:assert/strict';
-import { readFile, mkdir } from 'node:fs/promises';
 import { build } from 'esbuild';
-import { createElement as h } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { act, create } from 'react-test-renderer';
-import { renderToString } from 'katex';
 import { assertC2Reorganization } from './assert-c2-reorganization.mjs';
-
-await mkdir('work/curriculum-tests', { recursive: true });
-await build({ entryPoints: ['app/course-curriculum.ts','app/course-extension-data.ts','app/lesson-guides.ts','app/connection-models.ts','app/lesson-connections-data.ts','app/lesson-connection.tsx','app/practice-data.ts','app/knowledge-graph.ts'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
+await build({ entryPoints: ['app/course-curriculum.ts', 'app/learning-sections.ts'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm' });
 const { default: course } = await import('../work/curriculum-tests/course-curriculum.js');
-const { default: extension } = await import('../work/curriculum-tests/course-extension-data.js');
-const { lessonGuides } = await import('../work/curriculum-tests/lesson-guides.js');
-const { powerFactorExample, motorSpeedExample } = await import('../work/curriculum-tests/connection-models.js');
-const { lessonConnections } = await import('../work/curriculum-tests/lesson-connections-data.js');
-const { default: Connection } = await import('../work/curriculum-tests/lesson-connection.js');
-const { calculations, calculationProblem } = await import('../work/curriculum-tests/practice-data.js');
-const { electricalTerms } = await import('../work/curriculum-tests/knowledge-graph.js');
-const original = JSON.parse(await readFile('app/course-data.json','utf8'));
-assert.ok(original.modules.length && extension.modules.length);
-const lessons = course.modules.flatMap(module => module.lessons);
-const lookup = new Map(lessons.map(lesson => [lesson.id,lesson]));
+const { sectionsByModule } = await import('../work/curriculum-tests/learning-sections.js');
+const lessons = course.modules.flatMap(courseModule => courseModule.lessons);
 assert.equal(course.modules.length, 25);
 assert.equal(lessons.length, 296);
-assert.equal(new Set(lessons.map(lesson => lesson.videoId)).size, lessons.length, 'No repeated video');
-const pf = powerFactorExample(5,230,.75,.95);
-assert.ok(Math.abs(pf.beforeCurrent - 28.98550724637681) < 1e-10);
-assert.ok(Math.abs(pf.afterCurrent - 22.88329519450801) < 1e-10);
-assert.ok(Math.abs(pf.compensation - (5*Math.sqrt(1-.75**2)/.75 - 5*Math.sqrt(1-.95**2)/.95)) < 1e-10);
-assert.equal(powerFactorExample(5,230,.75,.75).compensation,0);
-assert.equal(powerFactorExample(5,230,.75,1).afterReactive,0);
-for (const args of [[5,0,.75,.95],[5,230,0,.95],[5,230,.75,.5],[5,230,.75,1.1],[NaN,230,.75,.95]]) assert.throws(()=>powerFactorExample(...args),RangeError);
-assert.deepEqual(motorSpeedExample(50,4,100/30),{ synchronous:1500,rotor:1450,slip:1/30 });
-assert.equal(motorSpeedExample(50,8,0).synchronous,750);
-for (const args of [[50,3,3],[50,0,3],[50,4,100],[50,4,-1],[Infinity,4,3]]) assert.throws(()=>motorSpeedExample(...args),RangeError);
-for (const [id,connection] of Object.entries(lessonConnections)) {
-  assert.ok(lookup.has(id));
-  for (const tex of connection.equations ?? []) assert.ok(renderToString(tex,{strict:'error',throwOnError:true}).includes('katex'));
-  const html = renderToStaticMarkup(h(Connection,{connection}));
-  assert.ok(html.includes('<details class="lesson-connection">'), 'Connection starts collapsed');
-  assert.ok(!html.includes('katex-error'));
-}
-for (const calculation of calculations) for (let variant=0;variant<4;variant+=1) {
-  const problem=calculationProblem(calculation.id,variant);
-  assert.ok(renderToString(problem.workingTex,{displayMode:true,strict:'error',throwOnError:true}).includes('katex'), `${calculation.id} variant ${variant+1} has valid LaTeX working`);
-}
-for (const item of electricalTerms.filter(item=>item.formulaTex)) assert.ok(renderToString(item.formulaTex,{displayMode:true,strict:'error',throwOnError:true}).includes('katex'), `${item.term} has valid LaTeX`);
-globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-let tree;
-await act(async()=>{ tree=create(h(Connection,{connection:lessonConnections['p01-l26']})); });
-await act(async()=>tree.root.findByType('input').props.onChange({target:{value:'1'}}));
-assert.ok(JSON.stringify(tree.toJSON()).includes('21.74'), 'PF slider updates the supply current');
-await act(async()=>{ tree.unmount(); tree=create(h(Connection,{connection:lessonConnections['p07-induction']})); });
-await act(async()=>tree.root.findByType('select').props.onChange({target:{value:'8'}}));
-assert.ok(JSON.stringify(tree.toJSON()).includes('725'), 'Pole count updates rotor speed');
-await act(async()=>{ tree.unmount(); tree=create(h(Connection,{connection:lessonConnections['p08-l07']})); });
-await act(async()=>tree.root.findByType('button').props.onClick());
-assert.equal(tree.root.findByType('button').props['aria-pressed'],true);
-assert.ok(JSON.stringify(tree.toJSON()).includes('reversed'));
-await act(async()=>tree.unmount());
+assert.equal(new Set(lessons.map(lesson => lesson.id)).size, lessons.length);
+assert.equal(new Set(lessons.map(lesson => lesson.videoId)).size, lessons.length);
 assertC2Reorganization(course);
-for(const lesson of lessons)assert.ok(lessonGuides[lesson.id]);
-assert.equal(course.durationSeconds,course.modules.reduce((sum,m)=>sum+m.durationSeconds,0));
-console.log('PASS: 296 unchanged lessons, 25 modules, preserved formulas, terminology and interactive connections.');
+for (const courseModule of course.modules) {
+  assert.deepEqual(sectionsByModule[courseModule.id].flatMap(section => section.lessonIds), courseModule.lessons.map(lesson => lesson.id));
+  assert.equal(courseModule.durationSeconds, courseModule.lessons.reduce((sum, lesson) => sum + lesson.durationSeconds, 0));
+}
+assert.equal(course.durationSeconds, course.modules.reduce((sum, courseModule) => sum + courseModule.durationSeconds, 0));
+console.log('PASS: 296 videos, 25 modules, unique video identities and complete course-section coverage.');

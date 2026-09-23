@@ -1,37 +1,14 @@
 import assert from 'node:assert/strict';
-import { mkdir } from 'node:fs/promises';
 import { build } from 'esbuild';
-import { createElement as h } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { act, create } from 'react-test-renderer';
-
-await mkdir('work/book-tests', { recursive: true });
-await build({ entryPoints: ['app/books-data.ts','app/reader-state.ts','app/experiment-models.ts','app/learning-experiment.tsx','app/book-simulations.tsx','app/pdf-layout.ts','app/course-curriculum.ts','app/pdf-range.ts'], outdir: 'work/book-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic' });
-const { courseBooks, readingTopics, printedPage, simulationForPage } = await import('../work/book-tests/books-data.js');
+await build({ entryPoints: ['app/books-data.ts', 'app/reader-state.ts', 'app/pdf-layout.ts', 'app/pdf-range.ts'], outdir: 'work/book-tests', bundle: true, platform: 'node', format: 'esm', packages: 'external' });
+const { courseBooks, printedPage } = await import('../work/book-tests/books-data.js');
 const { applyReaderCommand, emptyReaderState, parseReaderCommand, parseByteRange } = await import('../work/book-tests/reader-state.js');
-const { motorTransition, initialMotor, cableExample, residualExample } = await import('../work/book-tests/experiment-models.js');
-const { default: Experiment } = await import('../work/book-tests/learning-experiment.js');
-const { default: course } = await import('../work/book-tests/course-curriculum.js');
 const { PdfRangeQueue } = await import('../work/book-tests/pdf-range.js');
 const { pdfRenderSize } = await import('../work/book-tests/pdf-layout.js');
-const { default: BookSimulations } = await import('../work/book-tests/book-simulations.js');
-const lessons = course.modules.flatMap(module => module.lessons);
-const ids = new Set(lessons.map(lesson => lesson.id));
-for (const topic of readingTopics) {
-  for (const id of topic.lessonIds) assert.ok(ids.has(id), `${topic.id}: unknown lesson ${id}`);
-  for (const reading of topic.readings) {
-    const book = courseBooks.find(book => book.id === reading.bookId);
-    assert.ok(reading.pdf <= reading.end && reading.end <= book.pages && reading.pdf > 0);
-  }
-}
 for (const book of courseBooks) for (const chapter of book.chapters) assert.equal(printedPage(book, chapter.pdf), `p. ${chapter.printed}`);
 assert.equal(printedPage(courseBooks[0], 259), 'p. 237');
 assert.equal(printedPage(courseBooks[0], 260), 'p. 239');
 assert.equal(printedPage(courseBooks[1], 149), 'p. 134');
-assert.equal(simulationForPage('installation-designs', 237).id, 'rcd');
-assert.equal(simulationForPage('installation-designs', 255).id, 'voltage-drop', 'A specific page takes priority over a broader reading range');
-assert.equal(simulationForPage('modern-wiring', 149).id, 'motor');
-assert.equal(simulationForPage('modern-wiring', 1), undefined);
 assert.equal(parseReaderCommand({bookId:'../secret',action:'position',page:1}),null);
 for (const page of [0,265,1.5,NaN,'10']) assert.equal(parseReaderCommand({bookId:'installation-designs',action:'position',page}),null);
 assert.equal(parseReaderCommand({bookId:'modern-wiring',action:'bookmark',page:1,saved:true,note:'x'.repeat(2001)}),null);
@@ -50,33 +27,6 @@ assert.deepEqual(parseByteRange('bytes=0-1023',12753340),{start:0,end:1023});
 assert.deepEqual(parseByteRange('bytes=-64',100),{start:36,end:99});
 assert.deepEqual(parseByteRange('bytes=80-',100),{start:80,end:99});
 for (const header of ['bytes=100-101','bytes=3-2','bytes=-0','bytes=0-1,3-4','bytes=-','items=0-3']) assert.equal(parseByteRange(header,100),'invalid');
-let motor = motorTransition(initialMotor,'start');
-motor = motorTransition(motor,'release');
-assert.equal(motor.running,true,'Holding contact maintains the healthy coil');
-motor = motorTransition(motor,'trip');
-assert.equal(motor.running,false);
-motor = motorTransition(motor,'reset');
-assert.equal(motor.running,false,'Reset does not restart');
-motor = motorTransition(motorTransition(motor,'start'),'supply');
-motor = motorTransition(motor,'supply');
-assert.equal(motor.running,false,'Supply restoration does not restart');
-motor = motorTransition(motor,'holding-fault');
-motor = motorTransition(motor,'start');
-assert.equal(motor.running,true,'Start temporarily bypasses the failed holding contact');
-assert.equal(motorTransition(motor,'release').running,false);
-assert.equal(cableExample(27,31,.6).capacityMet,false);
-assert.equal(cableExample(27,31,.8).capacityMet,true);
-assert.equal(cableExample(33,31,1).capacityMet,false);
-assert.ok(Math.abs(cableExample(27,31,1).drop - 3.6828)<1e-8);
-assert.equal(cableExample(NaN,31,1),null);
-assert.equal(residualExample(true).residualMilliamps,40);
-for (const leakage of [0, 5, 30, 60]) {
-  const current = residualExample(true, leakage);
-  assert.ok(Math.abs(current.line - current.neutral - current.protective) < 1e-10, 'Current is conserved for every slider setting');
-  assert.equal(current.residualMilliamps, leakage);
-  assert.equal(residualExample(false, leakage).residualMilliamps, 0);
-}
-assert.equal(cableExample(27, 60, 1).drop, 2 * cableExample(27, 30, 1).drop);
 for (const viewport of [280, 320, 375, 390, 430, 600, 768, 1280]) {
   for (const zoom of [1, 2, 3]) {
     const size = pdfRenderSize(viewport - 24, 595, 842, zoom, 3);
@@ -85,35 +35,6 @@ for (const viewport of [280, 320, 375, 390, 430, 600, 768, 1280]) {
     assert.ok(Math.max(size.pixelsWide, size.pixelsHigh) <= 4096);
   }
 }
-for (const kind of ['rcd','cable','motor']) assert.ok(renderToStaticMarkup(h(Experiment,{kind})).includes('experiment'));
-globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-let ui;
-await act(async()=>{ ui=create(h(Experiment,{kind:'cable'})); });
-await act(async()=>{ ui.root.findByType('select').props.onChange({target:{value:'2'}}); });
-assert.ok(JSON.stringify(ui.toJSON()).includes('not met'));
-assert.ok(JSON.stringify(ui.toJSON()).includes('&gt;') || JSON.stringify(ui.toJSON()).includes('>'));
-await act(async()=>ui.unmount());
-await act(async()=>{ ui=create(h(Experiment,{kind:'rcd'})); });
-const buttonText = node => node.children.filter(value => typeof value === 'string').join('');
-await act(async()=>ui.root.findAllByType('button').find(node => buttonText(node) === 'Earth fault').props.onClick());
-await act(async()=>ui.root.findByType('input').props.onChange({target:{value:'60'}}));
-assert.ok(JSON.stringify(ui.toJSON()).includes('2.060'), 'Moving leakage changes the displayed line current');
-await act(async()=>ui.root.findAllByType('button').find(node => buttonText(node) === 'Healthy circuit').props.onClick());
-assert.equal(ui.root.findAllByType('input').length, 0);
-await act(async()=>ui.unmount());
-let source;
-await act(async()=>{ ui=create(h(BookSimulations,{onRead: reading => { source = reading; }})); });
-for (const [label, id] of [['Current balance','rcd'],['Cable capacity','cable'],['Voltage drop','voltage-drop'],['Motor starter','motor']]) {
-  await act(async()=>ui.root.findAllByType('button').find(node => buttonText(node) === label).props.onClick());
-  assert.equal(ui.root.findAllByType('fieldset').length,0,'Simulations have explanations, not assessment questions');
-  const sources = ui.root.findByProps({className:'simulation-sources'}).findAllByType('button');
-  const topic = readingTopics.find(item => item.id === id);
-  for (let index=0; index<sources.length; index++) {
-    await act(async()=>sources[index].props.onClick());
-    assert.deepEqual(source,topic.readings[index],`${id}: book link preserves exact source page`);
-  }
-}
-await act(async()=>ui.unmount());
 const nativeFetch = globalThis.fetch;
 try {
   const waiting = [];
@@ -141,7 +62,6 @@ try {
   locked.request(4,8);
   assert.equal(calls,1,'A failed queue stops additional downloads');
 } finally { globalThis.fetch = nativeFetch; }
-console.log(`Book checks passed: ${courseBooks.length} books, ${readingTopics.length} reading topics, ${readingTopics.reduce((sum,topic)=>sum+topic.lessonIds.length,0)} lesson links; state merge, ranges, motor interlocks and cable calculations.`);
 for(const book of courseBooks){
  assert.ok(parseReaderCommand({bookId:book.id,action:'position',page:book.pages}));
  assert.equal(parseReaderCommand({bookId:book.id,action:'position',page:book.pages+1}),null);
@@ -149,3 +69,4 @@ for(const book of courseBooks){
  assert.equal(marked.books[book.id].bookmarks[0].note,'Remember this page');
 }
 assert.equal(courseBooks.length,4);
+console.log('PASS: four reference books, chapter pages, saved notes, range downloads and phone canvas limits.');

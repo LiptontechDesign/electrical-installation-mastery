@@ -9,7 +9,7 @@ await build({
   plugins: [{ name: 'external-view-stubs', setup(builder) {
     builder.onResolve({ filter: /^react-dom$/ }, () => ({ path: 'react-dom', namespace: 'portal-stub' }));
     builder.onLoad({ filter: /.*/, namespace: 'portal-stub' }, () => ({ contents: 'export const createPortal = children => children;', loader: 'js' }));
-    builder.onResolve({ filter: /^(next\/(script|dynamic|image)|\.\/lesson-overview)$/ }, args => ({ path: args.path, namespace: 'stub' }));
+    builder.onResolve({ filter: /^next\/(script|dynamic|image)$/ }, args => ({ path: args.path, namespace: 'stub' }));
     builder.onLoad({ filter: /.*/, namespace: 'stub' }, args => ({ contents: args.path === 'next/dynamic' ? 'export default () => () => null' : 'export default () => null', loader: 'js' }));
   } }],
 });
@@ -51,7 +51,7 @@ assert.deepEqual(storage, [], 'Guests never read another account cache or save b
 await act(async () => tree.unmount());
 window.location.hash = '#learn/p01-l01';
 await mount();
-assert.ok(tree.root.findAllByProps({ 'aria-label': 'Lesson Overview' }).length, 'Guest lesson deep links work after reload');
+assert.ok(tree.root.findAll(node => typeof node.props['aria-label'] === 'string' && node.props['aria-label'].endsWith('video player')).length, 'Guest lesson deep links work after reload');
 assert.deepEqual(requests, []);
 assert.deepEqual(storage, []);
 await act(async () => tree.unmount());

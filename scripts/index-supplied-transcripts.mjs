@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 // Mechanical source indexing only. Learning content is authored separately.
 const root = 'course-transcripts/supplied-2026-09';
-const base = JSON.parse(readFileSync('app/course-data.json', 'utf8'));
+const base = JSON.parse(readFileSync('app/video-catalog.json', 'utf8'));
 const old = new Map(base.modules.flatMap(m => m.lessons.map(l => [l.videoId, l])));
 const rows = [];
 for (const group of ['ac-theory', 'resistance', 'lighting']) {

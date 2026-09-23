@@ -1,63 +1,29 @@
-# Course Map drag ordering
+# Personal course ordering
 
-Implemented locally. Release sign-off remains blocked by the repository's existing assessment prebuild validation. No live shared catalogue was edited during testing.
+Signed-in learners can arrange their own course map. A change belongs to the authenticated account and does not change anyone else's course. Guests use the published default arrangement.
 
-## Interaction and architecture
+## Interaction
 
-- `app/course-drop-model.ts` reproduces the rendered anchor tree, enumerates representable destinations, and returns the exact preview and persistence payload. A state machine separates pickup, review, and saving.
-- `app/course-drag-context.tsx` confines drag state to the Course Map. It uses dnd-kit mouse, touch and keyboard sensors, a lightweight portalled overlay, 180 ms layout movement, visible-element hit testing after scrolling, edge auto-scroll, and 650 ms hover expansion. Pathway tabs also accept deliberate hover to reach another pathway. Reduced motion skips layout animation.
-- `app/move-confirmation-dialog.tsx` shows the source, destination, exact neighbouring item and shared-change notice. Initial focus goes to Cancel. Escape cancels; only Confirm move invokes persistence. Cancel makes no request.
-- `app/course-drag.css` adds handles, placeholders, destination indicators, section highlights and feedback using the existing theme tokens. Touch handles have a 44 px hit area; mouse activation requires 6 px of movement; touch activation requires a 260 ms hold with 7 px tolerance.
-- Existing precision editors remain available. Dragging does not modify the player or learner state.
+Drag handles support mouse, touch and keyboard through dnd-kit. A preview describes the proposed destination; the confirmation dialog opens with focus on Cancel. Only confirmation persists a move. Precision move controls remain available. Cancelling does not save anything.
 
-## Placement rules
+The map supports section/module targets, deliberate pathway hover, edge auto-scroll and reduced-motion preferences. Touch activation uses a hold gesture to avoid confusing normal scrolling with dragging.
 
-Core moves retain the existing `{ lessonId, sectionId, beforeId }` model. A lesson and its attached supporting sequence move together. Mixed-row destinations snap to representable core boundaries; the marker describes that normalized location.
+## Placement and numbering
 
-Supplementary moves retain `{ id, moduleId, anchorId, position }`. Each candidate is simulated using the same depth-first sibling order as rendering, so existing siblings and nested videos cannot cause the preview to promise a different placement from the saved result. Descendant anchors are excluded, and existing server duplicate, cycle and module checks remain intact. The client supplies `EDIT VIDEO` only after explicit confirmation.
+Core moves use lessonId, sectionId and beforeId. A video and its attached supporting sequence move together. Supplementary moves use moduleId, anchorId and before/after placement. Descendant/self cycles are excluded, and previews use the same ordering model as rendering.
 
-Empty sections accept core lessons. Supplementary videos require a valid anchor and cannot be the sole item in an empty section. The empty-section label says so, and the misleading section-level add control is hidden there.
+Core and supplementary videos share one continuous L1, L2, L3 sequence within each module. Display numbers are calculated from the current visible order, not stored as permanent identities. Watched records and notes use stable IDs and survive moves.
 
-Core revision conflicts reconcile with the returned server order. Other core errors reload; supplementary failures refresh the catalogue. The preview is discarded after reconciliation. If shared data changes while a move is under review, the user must review a fresh proposal.
+Empty sections accept core videos; supplementary videos require an existing anchor. Archived supplementary videos do not appear in the visible numbering.
 
-## Exact files changed or added
+## Persistence and implementation
 
-| File | Purpose |
-| --- | --- |
-| `app/course-app.tsx` | Integrate drag rows, hierarchy targets and drawer protection |
-| `app/course-drag-context.tsx` | Drag sensors, overlay, target handling and preview rendering |
-| `app/course-drop-model.ts` | Pure placement calculations and confirmation state machine |
-| `app/move-confirmation-dialog.tsx` | Explicit confirmation and safe focus |
-| `app/course-drag.css` | Interaction styling and reduced motion |
-| `app/course-order.tsx` | Reconcile failed core saves |
-| `app/supplementary-videos.tsx` | Expose confirmed placement-only saves through the existing provider |
-| `app/use-dialog-focus.ts` | Let the native confirmation dialog own focus inside the mobile drawer |
-| `app/layout.tsx` | Load interaction styles |
-| `package.json` | Dependencies and test commands |
-| `package-lock.json` | Lock only the added dependencies; preserve existing versions |
-| `scripts/test-course-drag.mjs` | Placement, identity, attachment, cycle and confirmation tests |
-| `scripts/test-course-drag-browser.mjs` | Real-browser interaction and API-fixture tests |
-| `docs/course-drag-and-drop.md` | This handoff |
+The course-order and supplementary endpoints require a signed-in account, validate same-origin requests and store records by user ID in Postgres. Course-order requests include a revision; stale requests return the current order for review. Storage errors are shown instead of silently claiming a save.
 
-Dependencies: runtime `@dnd-kit/core@6.3.1`; development `playwright@1.58.2`. dnd-kit's declared React/React DOM peer range is `>=16.8.0`; this application uses React 19.2.6. Production compilation and browser tests verify the integration with vinext.
+Relevant code: course-drop-model.ts, course-order-model.ts, course-drag-context.tsx, course-order.tsx, supplementary-videos.tsx and move-confirmation-dialog.tsx in app/.
 
 ## Verification
 
-Passed: `test:course-order`, `test:supplementary`, `test:course-drag`, `test:navigation`, `test:migration`, `test:architecture`, `test:learning`, `test:recaps`, theme validation and TypeScript `--noEmit`.
+Run test:course-order, test:course-drag, test:supplementary, test:navigation and test:accounts. The placement suite checks mixed numbering, cross-section/module moves, attachment rules, cycles, empty sections, identity preservation and confirmation-only saves.
 
-Lint passes with one existing unused-variable warning in `scripts/test-assessment-ui.mjs`.
-
-Browser scenarios cover mouse pickup/review/cancel, safe focus, no accidental video selection, exact saved core and supplementary previews, keyboard cancellation/review, revision conflict reconciliation, supplementary failure recovery, cross-module hover expansion, invalid outside drops, reduced motion, mobile long press/drawer protection, ordinary touch scrolling, and edge auto-scroll stopping away from the edge. API routes are intercepted with isolated fixtures; no real storage writes occur.
-
-Run browser checks against a running server:
-
-```sh
-npx playwright install chromium
-npm run test:course-drag-browser
-```
-
-Optional environment variables: `COURSE_TEST_URL`, `COURSE_TEST_CHANNEL=chrome` for an installed Chrome, `COURSE_TEST_CDP` for an existing isolated browser, and `COURSE_TEST_FILTER` for one scenario. Screenshots are written under ignored `work/`.
-
-`npm run build` fails in the existing `test:assessment-ui` prebuild check at `C1-02-M07` (answer length). Investigation also found another short answer and duplicated C1 reasoning. Assessment content and assertions are unchanged. Running `npx vinext build` directly passes all production compilation stages, with the existing large-chunk warning; this does not make the full build command pass.
-
-Local Vercel Blob credentials are unavailable, so actual live-storage writes have not been verified. The existing collaboration/security checks and supplementary last-write-wins semantics are unchanged. Cross-pathway hover is implemented; the automated cross-module scenario exercises modules within one pathway. No 60 fps hardware guarantee is claimed.
+The optional test:course-drag-browser script remains available for future browser regression work; it was not run during the September 2026 cleanup because the owner requested no computer use.

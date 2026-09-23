@@ -10,7 +10,6 @@ tsconfig.tsbuildinfo
 /scripts/*
 !/scripts/prepare-reader.mjs
 !/scripts/test-theme.mjs
-!/scripts/prepare-recap-transcripts.mjs
 /work
 /outputs
 /.env*
@@ -23,3 +22,4 @@ tsconfig.tsbuildinfo
 /public/pdfjs
 **/*.pdf
 **/PRIVATE-*
+/public/recap-transcripts

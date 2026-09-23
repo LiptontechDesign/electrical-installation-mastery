@@ -1,13 +1,9 @@
 import type { Metadata, Viewport } from 'next';
-import 'katex/dist/katex.min.css';
 import './globals.css';
 import './learning-ui.css';
 import './book-reading.css';
 import './reader-mobile.css';
-import './tutor.css';
 import './supplementary.css';
-import './licensing.css';
-import './assessment.css';
 import './dark-theme.css';
 import './course-order.css';
 import './course-drag.css';
@@ -17,7 +13,7 @@ import AccessibleTooltips from './accessible-tooltips';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
 const PRODUCT_DESCRIPTION =
-  'Electrical installation video lessons, summaries, reference books and practical resources. Track your learning at your own pace.';
+  'Electrical installation video lessons and reference books. Track your learning at your own pace.';
 
 function resolveMetadataBase() {
   const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();

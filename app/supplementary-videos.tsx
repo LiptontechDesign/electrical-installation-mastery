@@ -6,7 +6,6 @@ import { useCourseOrder } from './course-order';
 import { relocateSupportingVideos } from './course-order-model';
 import { courseMapSnapshot, type SupplementaryMove } from './course-drop-model';
 import { withSupplementaryDefaults } from './supplementary-defaults';
-import { ElectricalShockContext } from './licensing-ui';
 import { useDialogFocus } from './use-dialog-focus';
 import { confirmationPhrase, supplementaryDescendants, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
 
@@ -199,7 +198,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     setEditor({ action: 'add', revision: state.revision, moduleId, anchorId: anchorId ?? last, position: 'after', url: '', title: '', instructor: '' }); setConfirmation(''); setNotice('');
   }, archive: moduleId => { setArchiveModule(moduleId); setNotice(''); } }}>
     {children}
-    {error && <div className="supp-status" role="status">{error} <button type="button" onClick={() => void refresh()}>Retry shared videos</button></div>}
+    {error && <div className="supp-status" role="status">{error} <button type="button" onClick={() => void refresh()}>Retry your videos</button></div>}
     {isOpen && <div className="supp-overlay"><section ref={dialog} className="supp-dialog" role="dialog" aria-modal="true" aria-labelledby="supp-title" onKeyDown={e => { if (e.key === 'Escape') { e.stopPropagation(); close(); } }}>
       <div className="supp-dialog-header"><div><span className="eyebrow">Supplementary videos</span><h2 id="supp-title">{editor ? editor.action === 'add' ? 'Add a course video' : editor.action === 'edit' ? 'Rename or move video' : `${editor.action === 'archive' ? 'Archive' : 'Restore'} video?` : selected ? `${courseVideoLabel(displayNumberById.get(selected.id))} · ${selected.title}` : 'Archived videos'}</h2></div><button type="button" disabled={busy} aria-label="Close supplementary videos" onClick={close}><X /></button></div>
       {editor ? <form onSubmit={e => { e.preventDefault(); void save(); }}>
@@ -219,12 +218,11 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
               {supplementaryTargets.length > 0 && <optgroup label="Supplementary videos already here">{supplementaryTargets.map(video => <option key={video.id} value={video.id}>{video.archived ? 'Archived placement' : courseVideoLabel(displayNumberById.get(video.id))} · {video.title}</option>)}</optgroup>}
             </select><small className="supp-placement-help">Choose a core lesson or an existing supplementary video. Your video will appear immediately before or after that item.</small></label>
           </> : <p><strong>{editor.title}</strong><br />{editor.action === 'archive' ? 'Hide this video from your course. It stays in your archive and can be restored.' : 'Return this video to its saved position in your course.'}</p>}
-          <div className="supp-confirm"><strong>Are you sure? This changes only your course.</strong><p>Original lessons and assessments will not change. No video is permanently deleted.</p><label>Type <strong>{confirmationPhrase(editor.action)}</strong> to confirm<input autoComplete="off" spellCheck={false} value={confirmation} onChange={e => setConfirmation(e.target.value)} /></label></div>
+          <div className="supp-confirm"><strong>Are you sure? This changes only your course.</strong><p>Original videos will not change. No video is permanently deleted.</p><label>Type <strong>{confirmationPhrase(editor.action)}</strong> to confirm<input autoComplete="off" spellCheck={false} value={confirmation} onChange={e => setConfirmation(e.target.value)} /></label></div>
           <button className="primary-button" type="submit" disabled={!ready || confirmation !== confirmationPhrase(editor.action)}>{busy ? 'Saving…' : 'Confirm my change'}</button>
         </fieldset>
       </form> : selected ? <>
         <p>{selected.instructor} · Optional supporting lesson</p>
-        {['luTRnCoeD4c','TsJ49Np3HS0','UFvL7wTFzl0'].includes(selected.videoId)&&<ElectricalShockContext/>}
         <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
         <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{!userId ? 'Sign in to save progress' : watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
         <p>{userId ? 'Watched status is private to your account and syncs across your devices.' : 'Watch freely. Guest progress is not recorded.'}</p>

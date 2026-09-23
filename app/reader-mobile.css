@@ -13,7 +13,7 @@
 .book-reader-dialog[open] { display: flex; flex-direction: column; overflow: hidden; }
 .book-reader-header { flex: none; }
 .reader-content { display: flex; flex: 1; flex-direction: column; min-height: 0; overflow: hidden; }
-.reader-content > .book-shelf, .book-simulations { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
+.reader-content > .book-shelf { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
 .reader-workspace { display: flex; flex: 1; min-height: 0; flex-direction: column; }
 .reader-reading-scroll { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; }
 .reader-section-nav { display: flex; flex: none; align-items: center; gap: 8px; padding: 8px 24px; border-bottom: 1px solid var(--line); background: var(--white); }
@@ -35,8 +35,6 @@
 .reader-navigation form { gap: 8px; font-size: .875rem; }
 .reader-navigation input { width: 56px; height: 44px; padding: 8px 4px; }
 .reader-navigation form button { min-width: 44px; font-size: .875rem; }
-.reader-concept-link { display: flex; align-items: center; gap: 9px; width: 100%; padding: 10px 24px; text-align: left; background: var(--surface-soft); color: var(--text-accent); font-size: .9375rem; }
-.reader-concept-link svg:last-child { margin-left: auto; }
 .reader-body { min-height: 0; }
 .reader-book-heading > div { min-width: 0; }
 .reader-book-heading h3 { overflow-wrap: anywhere; }
@@ -56,48 +54,9 @@
 .book-shelf-card h3 { overflow-wrap: anywhere; }
 .book-shelf-card p, .book-shelf-card .reader-primary, .books-intro p { font-size: 1rem; }
 .book-edition, .books-source-note, .book-shelf-card > div > small { font-size: .8125rem; }
-.book-simulations { padding: 28px clamp(16px, 4vw, 48px) 40px; }
-.simulation-intro { display: flex; align-items: flex-start; gap: 12px; max-width: 760px; margin: 0 auto 22px; }
-.simulation-intro > svg { flex: none; margin-top: 5px; color: var(--text-accent); }
-.simulation-intro h2 { margin: 0 0 8px; font-size: 1.5rem; line-height: 1.3; letter-spacing: -.035em; }
-.simulation-intro p { color: var(--muted); line-height: 1.65; margin: 0; }
-.simulation-picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; max-width: 760px; margin: 0 auto 24px; }
-.simulation-picker button { border: 1px solid var(--line); border-radius: 9px; background: var(--white); padding: 12px; color: var(--ink); font-size: .9375rem; font-weight: 650; line-height: 1.4; }
-.simulation-picker [aria-pressed=true] { border-color: var(--text-accent); background: var(--surface-selected); color: var(--surface-selected-text); box-shadow: inset 0 -3px var(--text-accent); }
-.simulation-activity { max-width: 760px; margin: auto; }
-.simulation-activity > h3 { margin: 0 0 10px; font-size: 1.35rem; }
-.simulation-task { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.75; }
-.simulation-task > strong { display: block; color: var(--ink); }
-.simulation-check { min-width: 0; margin: 26px 0; border: 1px solid var(--line); border-radius: 10px; padding: 18px; background: var(--white); }
-.simulation-check legend { max-width: 100%; padding: 0 7px; font-weight: 650; line-height: 1.6; }
-.simulation-check > div { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.simulation-check button { text-align: left; padding: 12px; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 8px; color: var(--text-accent); font-size: 1rem; line-height: 1.65; }
-.simulation-check [aria-pressed=true] { border-color: var(--text-accent); background: var(--surface-selected); color: var(--surface-selected-text); }
-.simulation-check > p { display: flex; gap: 9px; line-height: 1.75; margin: 16px 0 0; }
-.simulation-check > p svg { flex: none; margin-top: 5px; }
-.answer-correct { color: var(--text-success); }.answer-rethink { color: var(--text-danger); }
-.simulation-sources h4 { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 1rem; }
-.simulation-sources .reading-link { width: 100%; margin-top: 8px; }
-.simulation-context { margin-top: 22px; font-size: .875rem; color: var(--muted); line-height: 1.75; }
-.simulation-context summary { cursor: pointer; min-height: 44px; padding: 12px 0; }
 .reader-sync { flex: none; display: flex; align-items: center; gap: 10px; padding: 8px 16px; font-size: .875rem; color: var(--muted); background: var(--surface-soft); }
 .reader-sync p { margin: 0; }.reader-sync button { background: transparent; text-decoration: underline; color: var(--text-accent); }
-.learning-experiment { min-width: 0; }
-.learning-experiment > summary { min-height: 48px; font-size: 1rem; line-height: 1.5; }
-.experiment-caption { font-size: .875rem; }
-.experiment-fields label, .experiment-range, .experiment-results-grid > div > span, .experiment-fault { font-size: .9375rem; }
-.experiment-fields select, .experiment-fields input { min-height: 44px; font-size: 1rem; }
-.experiment-controls button, .motor-controls button { min-height: 44px; font-size: .9375rem; }
-.experiment-range input { min-height: 36px; }
-.experiment-fault { min-height: 44px; line-height: 1.6; }
-.experiment-result > span, .experiment-result p, .capacity-result, .motor-state p { font-size: .9375rem; }
-.current-path { grid-template-columns: 105px minmax(30px, 1fr) 94px; font-size: .875rem; }
-.current-path b { font-size: .875rem; }
 .rcd-sensor-label { font-size: .8125rem; }
-.current-track i { animation: current-flow 2.4s linear infinite; }
-.current-track.returning i { animation-direction: reverse; }
-.protective:not(.has-fault) .current-track i { display: none; }
-.motor-logic strong { font-size: .875rem; }.motor-logic small { font-size: .8125rem; }
 @keyframes current-flow { from { left: 4%; } to { left: 92%; } }
 @media (max-width: 600px) {
   .book-reader-dialog { height: 100dvh; width: 100%; }
@@ -133,29 +92,15 @@
   .reader-navigation .reader-page-controls { gap: 6px; }
   .reader-navigation form { gap: 5px; }.reader-navigation button { padding: 8px; }
   .reader-navigation input { width: 48px; }
-  .reader-concept-link { padding: 10px 14px; font-size: .875rem; }
   .reader-index { max-height: 42dvh; padding: 12px; }.reader-index-tabs button { font-size: .875rem; }
   .reader-page-footer { padding: 12px; font-size: .8125rem; }
   .pdf-canvas-scroll { padding: 0 12px 16px; }.pdf-readable-text { padding: 16px 18px 32px; }
-  .reader-figure { padding: 16px 12px; }.reader-figure p, .reader-figure figcaption p { font-size: .9375rem; }
-  .book-simulations { padding: 22px 16px max(28px, env(safe-area-inset-bottom)); }
-  .simulation-picker { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .simulation-intro h2 { font-size: 1.3rem; }.simulation-intro p { font-size: .9375rem; }
-  .simulation-check { padding: 12px; }.simulation-check > div { grid-template-columns: 1fr; }
-  .simulation-sources .reading-link strong { font-size: .9375rem; }.simulation-sources .reading-link small { font-size: .8125rem; }
-  .experiment-body { padding: 16px 12px; }.experiment-controls { display: grid; grid-template-columns: 1fr 1fr; }
-  .experiment-controls button { padding: 10px; justify-content: center; }
-  .current-path { grid-template-columns: 84px minmax(20px, 1fr) 84px; gap: 6px; font-size: .8125rem; }
-  .current-path b { font-size: .8125rem; }.rcd-sensor-label { top: -16px; left: 33%; width: 40%; font-size: .75rem; }
-  .experiment-results-grid { grid-template-columns: 1fr; }.experiment-result { gap: 8px; padding: 14px; }
-  .motor-controls { display: grid; grid-template-columns: 1fr 1fr; }.motor-controls button { padding: 10px; }
-  .motor-logic > div { min-height: 125px; }.motor-logic strong { font-size: .875rem; }.motor-logic small { font-size: .8125rem; }
+  .reader-figure { padding: 16px 12px; }.reader-figure p, .reader-figure figcaption p { font-size: .9375rem; }.rcd-sensor-label { top: -16px; left: 33%; width: 40%; font-size: .75rem; }
 }
 @media (max-width: 420px) {
   .reader-navigation .reader-page-controls > button > span { display: none; }
   .reader-toolbar > button > span { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { .current-track i { animation: none; } }
 @media (max-height: 500px) and (max-width: 950px) {
   .book-reader-dialog { width: 100%; height: 100dvh; margin: 0; border: 0; border-radius: 0; }
   .book-reader-header { padding: 4px max(12px, env(safe-area-inset-right)) 4px max(12px, env(safe-area-inset-left)); }
@@ -164,3 +109,4 @@
   .reader-toolbar .reader-zoom { margin-left: auto; }.reader-toolbar > button span { display: none; }
   .reader-navigation { padding-top: 4px; padding-bottom: max(4px, env(safe-area-inset-bottom)); }
 }
+.reader-section-nav > strong { display: inline-flex; align-items: center; gap: 8px; padding: 10px 0; }

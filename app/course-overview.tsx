@@ -6,9 +6,9 @@ import { useSupplementary } from './supplementary-videos';
 import { useCourseAccount } from './course-account';
 import { courseMapSnapshot } from './course-drop-model';
 
-const outcomes = ['Understand voltage, current, resistance and electrical power.', 'Choose cables, protective devices and earthing arrangements.', 'Read drawings and reason through installation decisions.', 'Explore single-phase and three-phase systems.', 'Work through inspection, testing and fault diagnosis.', 'Prepare for C2 and C1 theory with worked practice.'];
+const outcomes = ['Understand voltage, current, resistance and electrical power.', 'Explore cables, protective devices and earthing arrangements.', 'See how drawings connect to installation decisions.', 'Follow single-phase and three-phase systems.', 'Watch inspection, testing and fault diagnosis demonstrations.', 'Move through C2, C1 and specialist video pathways.'];
 
-export default function CourseOverview({ onLesson, onExam, onBooks }: { onLesson: (id: string) => void; onExam: () => void; onBooks: () => void }) {
+export default function CourseOverview({ onLesson, onBooks }: { onLesson: (id: string) => void; onBooks: () => void }) {
   const { course, order, sectionsByModule } = useCourseOrder();
   const supplementary = useSupplementary();
   const { user, requestSignIn } = useCourseAccount();
@@ -32,12 +32,12 @@ export default function CourseOverview({ onLesson, onExam, onBooks }: { onLesson
         <div className="circuit-heading"><Zap size={21}/><span>THE LEARNING CIRCUIT</span><span className="circuit-live"/></div>
         <svg viewBox="0 0 360 166" role="img" aria-label="An electrical circuit linking a power source to a lamp"><path d="M75 83V32H270V62M270 104V138H75V96"/><path d="M57 83H93M65 95H85"/><circle cx="270" cy="83" r="22"/><path d="m255 68 30 30m0-30-30 30"/><circle className="circuit-node" cx="167" cy="32" r="5"/><circle className="circuit-node" cx="167" cy="138" r="5"/><text x="107" y="89">PRINCIPLE → PRACTICE</text></svg>
         <div className="circuit-stages"><span><b>01</b> Understand</span><span><b>02</b> Apply</span><span><b>03</b> Verify</span></div>
-        <p>Watch the lesson. Explore the explanation.<br/>Put the idea to work.</p>
+        <p>Watch the video.<br/>Continue through the course.</p>
       </div>
     </section>
     {!user && <section className="course-save-invitation"><span className="save-invitation-symbol"><BookOpen size={22}/></span><div><strong>Make this course yours, whenever you’re ready.</strong><p>Sign in to save progress, keep notes and continue on another device. Browsing as a guest leaves no saved learning record.</p></div><button onClick={requestSignIn}>Sign in to save progress <ArrowRight size={17}/></button></section>}
     <nav className="course-section-links" aria-label="Course overview sections"><a href="#course-outcomes">What you’ll learn</a><a href="#course-curriculum">Course content</a><a href="#course-how-it-works">How it works</a></nav>
-    <section id="course-outcomes" className="course-outcomes"><div><span className="eyebrow neutral">A connected foundation</span><h2>What you’ll learn</h2><p>Build the reasoning behind the work, one concept at a time.</p></div><ul>{outcomes.map(outcome => <li key={outcome}><Check size={19}/><span>{outcome}</span></li>)}</ul></section>
+    <section id="course-outcomes" className="course-outcomes"><div><span className="eyebrow neutral">A connected foundation</span><h2>What you’ll learn</h2><p>Follow each topic through the videos at your own pace.</p></div><ul>{outcomes.map(outcome => <li key={outcome}><Check size={19}/><span>{outcome}</span></li>)}</ul></section>
     <section id="course-curriculum" className="public-curriculum"><div className="curriculum-heading"><div><span className="eyebrow neutral">Your route through the course</span><h2>Course content</h2><p>{course.modules.length} modules · {rows.length} videos · All lessons open</p></div><button onClick={() => setExpanded(expanded.length ? [] : shown.map(module => module.id))}>{expanded.length ? 'Collapse all' : 'Expand all'}</button></div>
       <div className="curriculum-filters" role="group" aria-label="Filter course pathway">{['All','C2','C1','Professional'].map(item => <button key={item} aria-pressed={path === item} onClick={() => setPath(item)}>{item === 'All' ? 'Full course' : item === 'Professional' ? 'Advanced systems' : item === 'C2' ? 'C2 · Foundations' : 'C1 · Three-phase'}</button>)}</div>
       <div className="curriculum-modules">{shown.map(module => {
@@ -50,7 +50,7 @@ export default function CourseOverview({ onLesson, onExam, onBooks }: { onLesson
         })}</div></details>;
       })}</div>
     </section>
-    <section id="course-how-it-works" className="course-how"><div><span className="eyebrow neutral">A workshop, at your pace</span><h2>Choose a topic. Make it click.</h2><p>Start with C2 foundations, move into C1 three-phase systems, then explore specialist topics. You can open any lesson in any order.</p><p>Bring curiosity and basic arithmetic. Use the explanations and worked examples alongside each video, then check your understanding with practice.</p><div className="course-resource-buttons"><button onClick={onExam}>Explore exam practice <ArrowRight size={17}/></button><button onClick={onBooks}>Open reference books <ArrowRight size={17}/></button></div></div><aside><ShieldCheck size={26}/><h3>Learn the theory. Practise safely.</h3><p>This course supports study and exam preparation. Electrical installation and testing require qualified supervision. Course progress is not an EPRA licence or proof of practical competence.</p><small>Curated by Liptontech. Video creators are credited within their lessons.</small></aside></section>
+    <section id="course-how-it-works" className="course-how"><div><span className="eyebrow neutral">A course, at your pace</span><h2>Choose a topic. Start watching.</h2><p>Start with C2 foundations, move into C1 three-phase systems, then explore specialist topics. You can open any video in any order.</p><p>Your watched videos, bookmarks and private notes are saved when you sign in. The reference books are available whenever you want to read further.</p><div className="course-resource-buttons"><button onClick={onBooks}>Open reference books <ArrowRight size={17}/></button></div></div><aside><ShieldCheck size={26}/><h3>Learn the theory. Practise safely.</h3><p>Electrical installation and testing require qualified supervision. Course progress is not an EPRA licence or proof of practical competence.</p><small>Curated by Liptontech. Video creators are credited within their lessons.</small></aside></section>
     <footer className="course-public-footer"><span>Electrical Installation Mastery · Liptontech</span><nav aria-label="Course policies"><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav></footer>
   </div>;
 }

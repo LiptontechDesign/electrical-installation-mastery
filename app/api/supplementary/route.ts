@@ -63,7 +63,7 @@ export async function POST(request: Request) {
     const { course: currentCourse } = courseForOrder(await readCourseOrder(user.id));
     const state = { ...storedState, videos: relocateSupportingVideos(storedState.videos, currentCourse) };
     const existing = state.videos.find(v => v.id === body.id);
-    if (action !== 'add' && !existing) return reply({ error: 'Video not found. Refresh the shared list and try again.' }, 404);
+    if (action !== 'add' && !existing) return reply({ error: 'Video not found. Refresh your video list and try again.' }, 404);
 
     let video: SupplementaryVideo;
     if (action === 'add' || action === 'edit') {
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
         return reply({ error: 'This video is already in the course or archive. Move or restore its existing entry instead.' }, 409);
       }
       if (action === 'add' && state.videos.length >= 500) {
-        return reply({ error: 'The shared library has reached its 500-video limit.' }, 400);
+        return reply({ error: 'Your video library has reached its 500-video limit.' }, 400);
       }
 
       video = {

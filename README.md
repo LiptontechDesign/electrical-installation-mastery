@@ -1,15 +1,15 @@
 # Electrical Installation Mastery
 
-A learning workshop with 296 lessons in 25 modules across C2, C1 and Professional pathways. The assessment reset intentionally removes the old quizzes, flashcards and checkpoints without introducing replacement exams.
+A video course with 296 lessons in 25 modules across C2, C1 and Professional pathways.
 
 ## Learning experience
 
 - **Home:** guests see the public course overview; signed-in learners see a personal workspace with their current lesson, upcoming videos, bookmarks and progress. A full-width header includes the account initials, progress and sign-out menu.
-- **Learn:** 82 neutral learning sections, original videos and transcripts, Overview explanations, standards, glossary, book links, worked calculations, fault investigations and personal notes. Lessons remain freely accessible in any order.
-- **Books:** four complete books with chapter search, PDF and text views, zoom, page navigation, saved pages/notes, extracted figures and explanatory simulations. Lesson source links reuse the same reader in a dialog.
+- **Learn:** 86 sections with embedded videos, watched progress, bookmarks and private notes. Lessons are freely accessible in any order. Core and supplementary videos share continuous numbering that adjusts when reordered.
+- **Books:** four complete reference books with chapter search, PDF/text views, zoom, saved pages and personal notes.
 - **Settings:** Google account controls, complete account export/deletion, progress backup/import/reset and playback preferences.
 
-Schema 9 accepts earlier backups, retains learning records and preferences, and discards retired assessment scores, passes, attempts and recall schedules. Required progress counts videos only. All learner-owned records are synchronized per account.
+Schema 10 accepts earlier backups and preserves video progress, bookmarks, notes and playback preferences. Learner records synchronize per account.
 
 ## Books and privacy
 
@@ -39,7 +39,7 @@ To prepare/upload one new book, use `scripts/prepare-book-copies.py --book BOOK_
 
 ## Run and verify
 
-The course is open without sign-in. The public overview includes outcomes, pathway filters and an expandable curriculum. Guests can watch any video, read books and use practice; no guest learning records are read from or written to local storage or the database. Temporary practice answers disappear on reload. Google sign-in enables the existing personal progress, notes, bookmarks and course arrangement. Account controls are in the top-right menu; sign-out returns to the public course. Personal data APIs still require an authenticated session. Book/figure content is accessible to guests, while saved reading state remains authenticated.
+The course is open without sign-in. The public overview includes outcomes, pathway filters and an expandable curriculum. Guests can watch any video and read books; no guest learning records are read from or written to local storage or the database. Google sign-in enables the existing personal progress, notes, bookmarks and course arrangement. Account controls are in the top-right menu; sign-out returns to the public course. Personal data APIs still require an authenticated session. Book/figure content is accessible to guests, while saved reading state remains authenticated.
 
 Node.js 22.13 or newer:
 
@@ -53,42 +53,41 @@ Checks:
 ```powershell
 npm run lint
 npx tsc --noEmit
-npm run test:learning
 npm run test:curriculum
 npm run test:licensing
-npm run test:tutor
 npm run test:books
-npm run test:recaps
 npm run test:navigation
 npm run test:migration
 npm run test:architecture
 npm run test:accounts
 npm run test:guests
-node scripts/test-supplied-learning.mjs
 npm run audit:course
-npm run audit:transcripts
 npm run build
 npx next build
 ```
 
-`npm run build` validates the existing vinext/Vite target. `vercel.json` uses `node scripts/prepare-reader.mjs && npx next build`; verify that target before publishing. Production-like local server: `npx next start -H 127.0.0.1 -p 3001`.
+`npm run build` validates the existing vinext/Vite target. `vercel.json` uses `npm run test:theme && node scripts/prepare-reader.mjs && npx next build`; verify that target before publishing. Production-like local server: `npx next start -H 127.0.0.1 -p 3001`.
 
 With server credentials configured, browser integration checks should cover Google sign-in, account-scoped state reads, all four PDF ranges, CSRF rejection, private Blob access and an extracted figure.
 
 ## Architecture and sources
 
-- `app/course-curriculum.ts`: canonical ordering; `scripts/course-baseline.json` protects all existing lesson/video identities.
+- `app/video-catalog.json` and `app/course-curriculum.ts`: video metadata and canonical ordering; `scripts/course-baseline.json` protects existing video identities.
 - `app/learning-sections.ts` / `.json`: coherent lesson groups, with no pass/fail state.
-- `app/lesson-explanations.json`, `lesson-study-notes.json`, `supplied-teaching.json`: neutral preserved teaching extracted before the old question engine was removed.
-- `app/learner-state.ts`: schema 7 migration and validation.
+- `app/learner-state.ts`: schema 10 migration and validation.
 - `app/server/auth.ts`: Google OpenID Connect, PKCE/state/nonce validation and signed course sessions.
 - `app/server/database.ts`: account-scoped Neon document storage and lifecycle operations.
-- `app/book-reader.tsx`: per-account full-page/dialog reader implementation.
-- `course-transcripts/`: 295 complete transcript sources and one explicitly visual-only lesson; all fingerprints are audited.
-- `app/knowledge-graph.ts`, `standards-data.ts`, `lesson-terminology.ts`, `practice-data.ts`, toolkit math and visuals remain available for contextual learning.
+- `app/book-reader.tsx`: per-account reference book reader.
+- `course-transcripts/`: 295 complete transcript sources and one explicitly visual-only lesson; retained as source archives, not published as recap pages.
 
-Earlier documents in `docs/` are historical design/audit records, not the current implementation contract. See the assessment-reset report for the current delivered scope. The obsolete generated question-bank audit has been removed.
+## Removed features — September 2026
+
+The course now focuses on videos and reference books. The lesson guide, Standards Companion, definitions/glossary, authored lesson explanations, worked-question panels, quizzes, flashcards, mock exams, exam preparation, simulations and module recap books have been removed. Their navigation, search entries, content banks, components, obsolete tests, styles and formula-rendering dependency have also been removed.
+
+Personal notes are learner-written, not built-in teaching text. Original video content and source PDF books are unchanged. Stable video IDs preserve watched progress, notes and bookmarks. Schema 10 discards retired exercise fields when old records are read and on subsequent saves; no blanket deletion of account records was performed.
+
+Superseded Markdown plans/audits were removed to avoid describing features that no longer exist. Their previous versions and the removed code/content are recoverable in Git history. See [the documentation index](docs/README.md) for current implementation notes and [the cleanup record](docs/video-only-cleanup.md) for scope and verification.
 
 ## Safety
 
-This course does not grant an electrical licence or authorize regulated work. Kenyan requirements, applicable standards, approved project specifications and manufacturers' instructions govern actual installations. UK book references and illustrative models must not be treated as proof of Kenyan compliance. Practical work requires appropriate competence and supervision.
+This course does not grant an electrical licence or authorize regulated work. Kenyan requirements, applicable standards, approved project specifications and manufacturers' instructions govern actual installations. UK book references must not be treated as proof of Kenyan compliance. Practical work requires appropriate competence and supervision.

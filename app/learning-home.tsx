@@ -1,13 +1,13 @@
 'use client';
-import { ArrowRight, Bookmark, BookOpen, Check, CirclePlay, Clock3, ListChecks } from 'lucide-react';
+import { ArrowRight, Bookmark, BookOpen, Check, CirclePlay, Clock3 } from 'lucide-react';
 import type { CourseUser } from './server/auth';
 import type { LearnerState } from './learner-state';
 import { useCourseOrder } from './course-order';
 import { useSupplementary } from './supplementary-videos';
 
-export default function LearningHome({ user, learner, percent, weekMinutes, onLesson, onExam, onBooks }: {
+export default function LearningHome({ user, learner, percent, weekMinutes, onLesson, onBooks }: {
   user: CourseUser; learner: LearnerState; percent: number; weekMinutes: number;
-  onLesson: (id: string) => void; onExam: () => void; onBooks: () => void;
+  onLesson: (id: string) => void; onBooks: () => void;
 }) {
   const { course } = useCourseOrder();
   const supplementary = useSupplementary();
@@ -35,6 +35,6 @@ export default function LearningHome({ user, learner, percent, weekMinutes, onLe
       <section className="upcoming-lessons"><div className="learning-list-heading"><h2>Next in this module</h2><span>{next.length ? 'Keep the ideas connected' : 'Module complete'}</span></div>{next.length ? next.map(lesson => <button key={lesson.id} onClick={() => onLesson(lesson.id)}><span className="upcoming-icon">{watched.has(lesson.id) ? <Check size={17}/> : <CirclePlay size={17}/>}</span><span><strong>{lesson.title}</strong><small>L{String(supplementary?.displayNumberById.get(lesson.id) ?? lesson.number).padStart(2,'0')} · {lesson.duration}</small></span><ArrowRight size={17}/></button>) : <p>Explore the course modules below, or revisit a lesson.</p>}</section>
       <section className="saved-learning"><div className="learning-list-heading"><h2>Saved for later</h2><Bookmark size={18}/></div>{saved.length ? saved.slice(0,3).map(lesson => <button key={lesson.id} onClick={() => onLesson(lesson.id)}><Bookmark size={16}/><span>{lesson.title}</span><ArrowRight size={16}/></button>) : <div className="saved-learning-empty"><Bookmark size={25}/><strong>A place for the lessons you want to revisit.</strong><p>Choose “Save lesson” while watching. Your bookmarks will appear here.</p></div>}</section>
     </div>
-    <div className="learning-tools"><button onClick={onExam}><span className="learning-tool-icon"><ListChecks size={23}/></span><span><strong>Put your knowledge to the test</strong><small>EPRA exam practice and worked solutions</small></span><ArrowRight size={20}/></button><button onClick={onBooks}><span className="learning-tool-icon"><BookOpen size={23}/></span><span><strong>Go deeper with your reference library</strong><small>Books, saved pages and interactive explanations</small></span><ArrowRight size={20}/></button></div>
+    <div className="learning-tools"><button onClick={onBooks}><span className="learning-tool-icon"><BookOpen size={23}/></span><span><strong>Open your reference library</strong><small>Books, chapters and saved pages</small></span><ArrowRight size={20}/></button></div>
   </section>;
 }

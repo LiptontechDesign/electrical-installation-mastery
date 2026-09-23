@@ -16,7 +16,7 @@ export function MoveConfirmationDialog({ proposal, busy, onCancel, onConfirm }: 
     <p className="course-drag-title"><GripVertical size={20} /><strong>{proposal.item.title}</strong></p>
     <div className="course-drag-route"><small>FROM</small><p>{proposal.source}</p><ArrowDown size={18} aria-hidden="true" /><small>TO</small><p>{proposal.destination}</p><strong>{proposal.placement}</strong></div>
     {proposal.movingIds.length > 1 && <p className="move-help">Attached supporting videos follow this item.</p>}
-    <p id="drag-confirm-impact">This changes the shared course order for everyone.</p>
+    <p id="drag-confirm-impact">This changes your course order only. Other learners are not affected.</p>
     <div className="move-dialog-actions"><button ref={cancel} type="button" disabled={busy} onClick={onCancel}>Cancel</button><button type="button" className="primary-button" disabled={busy} onClick={onConfirm}>{busy ? 'Saving…' : 'Confirm move'}</button></div>
   </dialog>;
 }
