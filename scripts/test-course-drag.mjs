@@ -14,6 +14,12 @@ const snapshot = courseMapSnapshot(defaultOrder, videos);
 const allIds = Object.values(snapshot.rows).flat().map(r => r.id).sort();
 let count = 0;
 function check(name, fn) { fn(); count++; console.log(`PASS ${name}`); }
+check('all visible videos share one continuous module sequence', () => {
+  const moduleRows = Object.values(snapshot.rows).flat().filter(row => row.moduleId === source.moduleId);
+  const supplementaryRows = moduleRows.filter(row => row.kind === 'supplementary');
+  assert.deepEqual(moduleRows.map(row => row.displayNumber), moduleRows.map((_, index) => index + 1));
+  assert.deepEqual(supplementaryRows.map(row => row.id), ['first', 'child', 'leaf', 'second', 'before']);
+});
 for (const [name, section] of [['same section', source], ['different section', otherSection], ['different module', otherModule]]) {
   check(`core moves to ${name}`, () => {
     const p = dropCandidates(snapshot, a, section.id).find(p => p.core.beforeId === null);
@@ -34,6 +40,8 @@ check('supplementary relative to another supplementary and across modules', () =
   const p = dropCandidates(snapshot, 'first', otherModule.id)[0];
   assert.equal(p.supplementary.moduleId, otherModule.moduleId);
   assert.equal(p.rows[otherModule.id].find(r => r.id === 'child').moduleId, otherModule.moduleId);
+  const destinationRows = Object.values(p.rows).flat().filter(r => r.moduleId === otherModule.moduleId);
+  assert.deepEqual(destinationRows.map(r => r.displayNumber), destinationRows.map((_, index) => index + 1));
 });
 check('self and descendant cycles excluded including archived anchors', () => {
   assert.ok(!dropCandidates(snapshot, 'first', source.id).some(p => ['first', 'child'].includes(p.supplementary.anchorId)));

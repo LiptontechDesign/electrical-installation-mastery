@@ -2,7 +2,7 @@ import { courseForOrder, moveLesson, orderedSections, relocateSupportingVideos, 
 import { supplementaryPlacementCreatesCycle, type SupplementaryVideo } from './supplementary-model';
 
 export type SupplementaryMove = Pick<SupplementaryVideo, 'id' | 'moduleId' | 'anchorId' | 'position'>;
-export type MapRow = { id: string; title: string; kind: 'core' | 'supplementary'; sectionId: string; moduleId: string };
+export type MapRow = { id: string; title: string; kind: 'core' | 'supplementary'; sectionId: string; moduleId: string; displayNumber: number };
 export type MapSnapshot = ReturnType<typeof courseMapSnapshot>;
 export type DropProposal = {
   item: MapRow; source: string; destination: string; sectionId: string;
@@ -21,20 +21,28 @@ export function courseMapSnapshot(order: CourseOrder, input: SupplementaryVideo[
   const children = new Map<string, SupplementaryVideo[]>();
   for (const video of videos) children.set(video.anchorId, [...(children.get(video.anchorId) ?? []), video]);
   const rows: Record<string, MapRow[]> = {};
+  const videoCounts = new Map<string, number>();
   for (const section of sections) {
     const result: MapRow[] = [];
+    const nextDisplayNumber = () => {
+      const displayNumber = (videoCounts.get(section.moduleId) ?? 0) + 1;
+      videoCounts.set(section.moduleId, displayNumber);
+      return displayNumber;
+    };
     const visit = (anchorId: string, position: 'before' | 'after', trail: Set<string>) => {
       for (const video of children.get(anchorId) ?? []) {
         if (video.position !== position || trail.has(video.id)) continue;
         const next = new Set([...trail, video.id]);
         visit(video.id, 'before', next);
-        if (!video.archived) result.push({ id: video.id, title: video.title, kind: 'supplementary', sectionId: section.id, moduleId: section.moduleId });
+        if (!video.archived) {
+          result.push({ id: video.id, title: video.title, kind: 'supplementary', sectionId: section.id, moduleId: section.moduleId, displayNumber: nextDisplayNumber() });
+        }
         visit(video.id, 'after', next);
       }
     };
     for (const id of section.lessonIds) {
       visit(id, 'before', new Set());
-      result.push({ id, title: lessons.get(id)!.title, kind: 'core', sectionId: section.id, moduleId: section.moduleId });
+      result.push({ id, title: lessons.get(id)!.title, kind: 'core', sectionId: section.id, moduleId: section.moduleId, displayNumber: nextDisplayNumber() });
       visit(id, 'after', new Set());
     }
     rows[section.id] = result;

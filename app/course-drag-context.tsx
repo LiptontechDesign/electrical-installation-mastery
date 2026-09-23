@@ -211,7 +211,7 @@ export function CourseDragPath({ id, selected, onSelect, children }: { id: strin
   return <button ref={setNodeRef} type="button" data-course-path={id} className={selected ? 'active' : isOver ? 'course-path-target' : ''} aria-pressed={selected} onClick={onSelect}>{children}</button>;
 }
 
-export function CourseSectionRows({ sectionId, renderCore }: { sectionId: string; renderCore: (id: string) => ReactNode }) {
+export function CourseSectionRows({ sectionId, renderCore }: { sectionId: string; renderCore: (id: string, displayNumber: number) => ReactNode }) {
   const { rows, busy } = useContext(DragContext);
   const supplementary = useSupplementary();
   const { setNodeRef } = useDroppable({ id: `end:${sectionId}`, data: { type: 'end', sectionId }, disabled: !busy });
@@ -219,9 +219,9 @@ export function CourseSectionRows({ sectionId, renderCore }: { sectionId: string
     const video = supplementary?.videos.find(v => v.id === row.id);
     const watched = Boolean(video && supplementary?.watched.includes(video.videoId));
     return <CourseDraggableRow key={row.id} row={row}>
-    {row.kind === 'core' ? renderCore(row.id) : <button className="supp-video-row" type="button" onClick={() => {
+    {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <button className="supp-video-row" type="button" onClick={() => {
       if (video) supplementary?.open(video);
-    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>{row.title}</strong><small>Supplementary · {watched ? 'Watched' : 'Not watched'} · {video?.instructor || 'YouTube'}</small></span></button>}
+    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small>Supplementary · {watched ? 'Watched' : 'Not watched'} · {video?.instructor || 'YouTube'}</small></span></button>}
   </CourseDraggableRow>;
   })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Empty section · core lessons only') : null}</div></>;
 }

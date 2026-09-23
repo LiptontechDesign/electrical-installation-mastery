@@ -3,22 +3,25 @@ import { Fragment, createContext, useCallback, useContext, useEffect, useMemo, u
 import { PlayCircle, Plus, Archive, X, CheckCircle2 } from 'lucide-react';
 import { useCourseOrder } from './course-order';
 import { relocateSupportingVideos } from './course-order-model';
+import { courseMapSnapshot, type SupplementaryMove } from './course-drop-model';
 import { withSupplementaryDefaults } from './supplementary-defaults';
 import { ElectricalShockContext } from './licensing-ui';
 import { useDialogFocus } from './use-dialog-focus';
 import { confirmationPhrase, supplementaryDescendants, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
-import type { SupplementaryMove } from './course-drop-model';
 
 type Editor = { action: SupplementaryAction; revision: number; id?: string; moduleId: string; anchorId: string; position: 'before' | 'after'; url: string; title: string; instructor: string };
-type Context = { videos: SupplementaryVideo[]; watched: string[]; ready: boolean; error: string; move: (move: SupplementaryMove) => Promise<boolean>; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
+type Context = { videos: SupplementaryVideo[]; watched: string[]; displayNumberById: ReadonlyMap<string, number>; ready: boolean; error: string; move: (move: SupplementaryMove) => Promise<boolean>; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
 type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
 const SupplementaryContext = createContext<Context | null>(null);
 export const useSupplementary = () => useContext(SupplementaryContext);
+const courseVideoLabel = (number: number | undefined) => number === undefined ? 'Video' : `L${String(number).padStart(2, '0')}`;
 const empty: SupplementaryState = withSupplementaryDefaults({ version: 1, revision: 0, videos: [] });
 export function SupplementaryProvider({ children }: { children: ReactNode }) {
-  const { course } = useCourseOrder();
+  const { course, order } = useCourseOrder();
   const [storedState, setState] = useState(empty);
   const state = useMemo(() => ({ ...storedState, videos: relocateSupportingVideos(storedState.videos, course) }), [storedState, course]);
+  const displayNumberById = useMemo(() => new Map(Object.values(courseMapSnapshot(order, state.videos).rows).flat()
+    .map(row => [row.id, row.displayNumber])), [order, state.videos]);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
@@ -159,7 +162,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     !supplementaryPlacementCreatesCycle(state.videos, editor.id, video.id)
   ) : [];
   const anchorIsSupplementary = supplementaryTargets.some(video => video.id === editor?.anchorId);
-  return <SupplementaryContext.Provider value={{ videos: state.videos, watched, ready: ready && !busy, error, move, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
+  return <SupplementaryContext.Provider value={{ videos: state.videos, watched, displayNumberById, ready: ready && !busy, error, move, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
     const last = course.modules.find(m => m.id === moduleId)?.lessons.at(-1)?.id;
     if (!last) return;
     editedFields.current = { title: false, instructor: false };
@@ -168,7 +171,7 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
     {children}
     {error && <div className="supp-status" role="status">{error} <button type="button" onClick={() => void refresh()}>Retry shared videos</button></div>}
     {isOpen && <div className="supp-overlay"><section ref={dialog} className="supp-dialog" role="dialog" aria-modal="true" aria-labelledby="supp-title" onKeyDown={e => { if (e.key === 'Escape') { e.stopPropagation(); close(); } }}>
-      <div className="supp-dialog-header"><div><span className="eyebrow">Supplementary videos</span><h2 id="supp-title">{editor ? editor.action === 'add' ? 'Add a course video' : editor.action === 'edit' ? 'Rename or move video' : `${editor.action === 'archive' ? 'Archive' : 'Restore'} video?` : selected ? selected.title : 'Archived videos'}</h2></div><button type="button" disabled={busy} aria-label="Close supplementary videos" onClick={close}><X /></button></div>
+      <div className="supp-dialog-header"><div><span className="eyebrow">Supplementary videos</span><h2 id="supp-title">{editor ? editor.action === 'add' ? 'Add a course video' : editor.action === 'edit' ? 'Rename or move video' : `${editor.action === 'archive' ? 'Archive' : 'Restore'} video?` : selected ? `${courseVideoLabel(displayNumberById.get(selected.id))} · ${selected.title}` : 'Archived videos'}</h2></div><button type="button" disabled={busy} aria-label="Close supplementary videos" onClick={close}><X /></button></div>
       {editor ? <form onSubmit={e => { e.preventDefault(); void save(); }}>
         <fieldset disabled={busy}>
           {['add', 'edit'].includes(editor.action) ? <>
@@ -182,8 +185,8 @@ export function SupplementaryProvider({ children }: { children: ReactNode }) {
             <div className="supp-fields"><label>Module<select value={editor.moduleId} onChange={e => { const m = course.modules.find(m => m.id === e.target.value)!; setEditor({ ...editor, moduleId: m.id, anchorId: m.lessons[0].id }); setConfirmation(''); }}>{course.modules.map(m => <option key={m.id} value={m.id}>{m.number}. {m.title}</option>)}</select></label>
             <label>Position<select value={editor.position} onChange={e => { setEditor({ ...editor, position: e.target.value as 'before' | 'after' }); setConfirmation(''); }}><option value="before">Before this {anchorIsSupplementary ? 'video' : 'lesson'}</option><option value="after">After this {anchorIsSupplementary ? 'video' : 'lesson'}</option></select></label></div>
             <label>Place next to<select value={editor.anchorId} onChange={e => { setEditor({ ...editor, anchorId: e.target.value }); setConfirmation(''); }}>
-              <optgroup label="Core lessons">{courseModule?.lessons.map(l => <option key={l.id} value={l.id}>L{l.number} · {l.title}</option>)}</optgroup>
-              {supplementaryTargets.length > 0 && <optgroup label="Supplementary videos already here">{supplementaryTargets.map(video => <option key={video.id} value={video.id}>{video.archived ? 'Archived placement' : 'Video'} · {video.title}</option>)}</optgroup>}
+              <optgroup label="Core lessons">{courseModule?.lessons.map(l => <option key={l.id} value={l.id}>{courseVideoLabel(displayNumberById.get(l.id))} · {l.title}</option>)}</optgroup>
+              {supplementaryTargets.length > 0 && <optgroup label="Supplementary videos already here">{supplementaryTargets.map(video => <option key={video.id} value={video.id}>{video.archived ? 'Archived placement' : courseVideoLabel(displayNumberById.get(video.id))} · {video.title}</option>)}</optgroup>}
             </select><small className="supp-placement-help">Choose a core lesson or an existing supplementary video. Your video will appear immediately before or after that item.</small></label>
           </> : <p><strong>{editor.title}</strong><br />{editor.action === 'archive' ? 'Hide this video from the course for everyone. It stays in the archive and can be restored.' : 'Return this video to its saved course position for everyone.'}</p>}
           <div className="supp-confirm"><strong>Are you sure? This changes the course for every visitor.</strong><p>Original lessons and assessments will not change. No video is permanently deleted.</p><label>Type <strong>{confirmationPhrase(editor.action)}</strong> to confirm<input autoComplete="off" spellCheck={false} value={confirmation} onChange={e => setConfirmation(e.target.value)} /></label></div>
@@ -232,7 +235,7 @@ function SupplementaryBranch({ context, anchorId, position, trail }: { context: 
     const nextTrail = [...trail, video.id];
     return <Fragment key={video.id}>
       <SupplementaryBranch context={context} anchorId={video.id} position="before" trail={nextTrail} />
-      {!video.archived && <button className="supp-video-row" type="button" onClick={() => context.open(video)}>{context.watched.includes(video.videoId) ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>{video.title}</strong><small>Supplementary · {context.watched.includes(video.videoId) ? 'Watched' : 'Not watched'} · {video.instructor || 'YouTube'}</small></span></button>}
+      {!video.archived && <button className="supp-video-row" type="button" onClick={() => context.open(video)}>{context.watched.includes(video.videoId) ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>{courseVideoLabel(context.displayNumberById.get(video.id))} · {video.title}</strong><small>Supplementary · {context.watched.includes(video.videoId) ? 'Watched' : 'Not watched'} · {video.instructor || 'YouTube'}</small></span></button>}
       <SupplementaryBranch context={context} anchorId={video.id} position="after" trail={nextTrail} />
     </Fragment>;
   })}</>;
