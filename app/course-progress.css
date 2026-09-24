@@ -26,3 +26,52 @@
 }
 
 @media (max-width: 700px) { .lesson-topline { flex-wrap: wrap; gap: 8px; } }
+/* A compact, readable learning rail. Colour identifies pathways; text carries state. */
+.course-map .drawer-heading { margin-bottom: 20px; }
+.map-guidance { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin: 0 8px 18px; font-size: 11px; color: var(--muted); }
+.map-guidance button { display: inline-flex; align-items: center; gap: 5px; padding: 6px 0; background: transparent; color: var(--text-accent); font-weight: 650; }
+.course-map .course-summary { margin-bottom: 20px; border: 1px solid var(--line); background: transparent; }
+.module-accordion[data-pathway] { border: 1px solid var(--line); border-inline-start: 3px solid var(--pathway-accent); border-radius: 12px; padding: 4px; margin-bottom: 12px; background: var(--white); }
+.module-accordion[data-current="true"] { border-color: color-mix(in srgb, var(--pathway-accent) 50%, var(--line)); }
+.module-accordion[data-pathway]>button { align-items: start; gap: 10px; padding: 12px 8px; }
+.module-accordion[data-pathway]>button.active, .module-accordion[data-complete="true"]>button { background: transparent; }
+.module-accordion[data-pathway] .module-index { width: 32px; height: 32px; border-radius: 50%; font-size: 11px; }
+.module-accordion[data-complete="true"] .module-index { background: var(--surface-success); color: var(--text-success); }
+.module-eyebrow, .section-eyebrow { display: block; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 6px; }
+.module-eyebrow>span { color: var(--text-accent); }
+.module-accordion strong { font-size: 13px; line-height: 1.5; }
+.module-accordion small { font-size: 10px; line-height: 1.6; }
+.course-progress-summary { grid-template-columns: minmax(0,1fr) auto; column-gap: 8px; row-gap: 8px; margin-top: 12px; font-size: 10px; }
+.course-status { padding: 0; background: transparent; border-radius: 0; font-size: 10px; gap: 5px; }
+.course-progress-count { align-self: center; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.course-progress-count strong { font-size: inherit; color: var(--ink); }
+.course-progress-summary[data-state="complete"] .course-status { background: transparent; }
+.course-progress-track, .course-optional-status { grid-column: 1 / -1; }
+.course-progress-track { height: 3px; }
+.course-progress-summary[data-state="complete"] .course-progress-track { display: none; }
+.course-optional-status { font-size: 10px; }
+.course-topic-group { margin: 8px 0; border-radius: 9px; border: 1px solid var(--line); }
+.course-topic-group>summary { list-style: none; position: relative; padding: 14px 28px 14px 12px; }
+.course-topic-group>summary::-webkit-details-marker { display: none; }
+.course-topic-group>summary::after { content: '+'; position: absolute; top: 12px; right: 12px; font-size: 16px; font-weight: 500; color: var(--muted); }
+.course-topic-group[open]>summary::after { content: '−'; }
+.section-title { display: block; font-size: 12px; line-height: 1.5; }
+.course-topic-group[data-complete="true"]>summary { background: color-mix(in srgb, var(--surface-success) 25%, var(--white)); }
+.course-topic-group .course-status { font-size: 10px; }
+.course-topic-group .course-progress-summary { margin-top: 10px; }
+.course-map .accordion-lessons { padding: 0 4px; }
+.accordion-lessons .course-drag-handle { min-width: 24px; width: 24px; }
+.accordion-lessons .course-draggable-row>button:not(.course-drag-handle) { padding: 12px 9px; border-radius: 8px; }
+.accordion-lessons .course-draggable-row strong { white-space: normal; display: block; overflow: visible; font-size: 12px; line-height: 1.6; }
+.accordion-lessons button[aria-current="page"] { background: color-mix(in srgb, var(--pathway-accent) 10%, var(--white)); outline-color: color-mix(in srgb, var(--pathway-accent) 45%, var(--line)); }
+.lesson-row-progress b { padding: 3px 7px; border-radius: 4px; font-size: 8px; letter-spacing: .06em; }
+.module-actions { padding: 0 8px; margin-top: -4px; }
+.module-card .course-progress-summary { margin-top: 20px; font-size: 12px; }
+.module-card .course-status { font-size: 12px; }
+@media (min-width: 1181px) { .learn-page:not(.course-map-collapsed) { grid-template-columns: 350px minmax(0,1fr); } }
+@media (pointer: coarse) { .accordion-lessons .course-drag-handle { min-width: 36px; width: 36px; } }
+
+.course-progress-count { display: inline-flex; align-items: baseline; gap: 3px; }
+.course-progress-count strong { display: inline; }
+.course-map .course-progress-summary, .course-map .course-status { font-size: 11px; }
+.module-accordion .module-eyebrow { font-size: 9px; }
