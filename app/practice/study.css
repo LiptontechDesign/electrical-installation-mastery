@@ -276,3 +276,69 @@
   .epra-dock-hint { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .epra-page * { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+
+/* Practice reading, response types and session navigation. */
+[data-practice-tone="blue"] { --practice-accent: #3274b9; }
+[data-practice-tone="violet"] { --practice-accent: #8261b5; }
+[data-practice-tone="teal"] { --practice-accent: #157c89; }
+[data-practice-tone="amber"] { --practice-accent: #a86b1b; }
+@media (prefers-color-scheme: dark) {
+  [data-practice-tone="blue"] { --practice-accent: #87b9ee; }
+  [data-practice-tone="violet"] { --practice-accent: #bda1e6; }
+  [data-practice-tone="teal"] { --practice-accent: #70c7d0; }
+  [data-practice-tone="amber"] { --practice-accent: #e6ba73; }
+}
+.epra-collection[data-practice-tone] { border-top: 4px solid var(--practice-accent); }
+.epra-reader-heading { border-inline-start: 4px solid var(--practice-accent); padding-inline-start: 20px; }
+.epra-reader .epra-button { min-height: 44px; }
+.epra-question-list button { font-size: 13px; min-height: 44px; }
+.epra-question-state { display: block; margin-top: 5px; font-size: 11px; color: var(--muted); font-weight: 400; }
+.epra-session-note p, .epra-small { font-size: 12px; }
+.epra-sessions { padding: 22px; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 32px; }
+.epra-sessions h2 { font-size: 20px; margin: 0 0 8px; }
+.epra-sessions p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.epra-sessions > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.epra-study-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin: 20px 0; }
+.epra-state-label { font-size: 12px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); }
+.epra-context { padding: 20px; margin: 20px 0; border: 1px solid var(--line); border-inline-start: 3px solid var(--practice-accent); border-radius: 8px; background: var(--surface-soft); }
+.epra-context h3 { margin-top: 0; font-size: 17px; }
+.epra-context > p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.epra-context summary { cursor: pointer; padding: 12px 0; font-weight: 600; }
+.epra-answer-workspace, .epra-attempt-pane, .epra-answer { min-width: 0; }
+.epra-answer { border-inline-start: 3px solid var(--practice-accent); padding-inline-start: 22px; }
+.epra-prose { overflow-wrap: anywhere; }
+.epra-prose h3, .epra-prose h4, .epra-prose h5, .epra-prose h6 { scroll-margin-top: 30px; }
+.epra-prose h4 { font-size: 17px; }
+.epra-prose h5, .epra-prose h6 { font-size: 15px; }
+.epra-outline nav { display: block; }
+.epra-outline ol { margin: 5px 0; padding-left: 20px; }
+.epra-outline > nav > ol { padding-left: 20px; }
+.epra-outline li { padding: 3px 0; }
+.epra-outline a { font-size: 13px; line-height: 1.6; }
+.epra-mcq, .epra-part { border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin: 24px 0; min-width: 0; }
+.epra-mcq legend { padding: 0 8px; font-weight: 650; font-size: 14px; }
+.epra-mcq > label { display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--line); border-radius: 8px; padding: 13px; margin: 10px 0; line-height: 1.7; cursor: pointer; font-size: 14px; }
+.epra-mcq > label:has(input:checked) { background: var(--surface-selected); border-color: var(--text-accent); }
+.epra-mcq input { flex-shrink: 0; margin-top: 5px; accent-color: var(--text-accent); }
+.epra-mcq:disabled { opacity: 1; }
+.epra-part-working { display: grid; gap: 10px; color: var(--text-accent); font-size: 13px; font-weight: 600; }
+.epra-part-working textarea { width: 100%; min-width: 0; resize: vertical; padding: 14px; border: 1px solid var(--control-border); border-radius: 8px; background: var(--surface-soft); color: var(--ink); font-size: 16px; font-weight: 400; line-height: 1.7; }
+.epra-part-marks { margin-top: 25px; padding: 15px; border: 1px solid var(--line); border-radius: 8px; min-width: 0; }
+.epra-part-marks legend { font-size: 16px; font-weight: 600; }
+.epra-part-marks label { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 10px 0; font-size: 13px; }
+.epra-part-marks input { width: 80px; padding: 10px; background: var(--white); color: var(--ink); border: 1px solid var(--control-border); border-radius: 6px; }
+.epra-choice-review { padding: 18px; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 8px; margin: 20px 0; font-size: 13px; line-height: 1.8; }
+.epra-choice-review ol { padding-left: 20px; }
+@media (min-width: 1500px) {
+  .epra-reader.epra-compare { max-width: 1920px; }
+  .epra-compare .epra-answer-workspace.has-answer { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+  .epra-compare .epra-answer-workspace.has-answer .epra-answer { margin-top: 0; padding-top: 0; }
+}
+@media (max-width: 1499px) { .epra-study-actions > button { display: none; } }
+@media (max-width: 720px) {
+  .epra-answer { padding-inline-start: 12px; }
+  .epra-mcq, .epra-part, .epra-context { padding: 14px; }
+  .epra-dock-question { max-width: 80px; }
+  .epra-dock-inner > .epra-button { font-size: 11px !important; }
+  .epra-sessions .epra-button { width: 100%; justify-content: space-between; text-align: left; }
+}

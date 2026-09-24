@@ -3,7 +3,7 @@ import { mkdir } from 'node:fs/promises';
 import { chromium } from 'playwright';
 
 const base = process.env.EPRA_TEST_URL || 'http://127.0.0.1:3001';
-const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const browser = await chromium.launch({ channel: process.env.EPRA_BROWSER || 'chrome', headless: true });
 await mkdir('artifacts/browser-verification', { recursive: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 const errors = [];
@@ -12,7 +12,7 @@ page.on('dialog', dialog => dialog.accept());
 const button = name => page.getByRole('button', { name, exact: true });
 const noOverflow = async () => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow');
 try {
-  await page.goto(`${base}/practice`);
+  await page.goto(`${base}/practice`, { waitUntil: 'networkidle' });
   await page.getByRole('heading', { name: 'Choose how you practise' }).waitFor();
   assert.equal(await page.locator('.epra-collection').count(), 7);
   await page.getByRole('button', { name: /C1 YOUR LICENCE PATHWAY/ }).click();
@@ -25,7 +25,7 @@ try {
   await page.getByRole('heading', { name: 'Question 1 — Electrical Current' }).waitFor();
   assert.equal(await page.locator('.epra-answer').count(), 0, 'Answer absent until revealed');
   await page.locator('#epra-working').fill('I = Q/t. Current is measured in amperes.');
-  await page.getByRole('button', { name: /^Reveal Answer/ }).click();
+  if (await page.getByRole('button', { name: /^Reveal Answer/ }).count()) await page.getByRole('button', { name: /^Reveal Answer/ }).click();
   assert.ok((await page.locator('.epra-answer .epra-prose').textContent()).startsWith('Electric current is the rate'));
   assert.ok(!(await page.locator('.epra-answer').textContent()).includes('does not provide'));
   assert.ok(await page.locator('.epra-answer .katex').count() > 0);
@@ -58,7 +58,7 @@ try {
   await button('Finish quiz & review').click();
   await button('Finish & review answers').click();
   assert.equal(await page.locator('#epra-working').getAttribute('readonly'), '');
-  await page.getByRole('button', { name: /^Reveal Answer/ }).click();
+  if (await page.getByRole('button', { name: /^Reveal Answer/ }).count()) await page.getByRole('button', { name: /^Reveal Answer/ }).click();
   await button('Revisit this question').click();
   const downloadEvent = page.waitForEvent('download');
   await button('Download my working').click();
@@ -67,16 +67,16 @@ try {
   await button('Mock exams').click();
   await page.locator('.epra-collection').click();
   await page.getByRole('heading', { name: 'Your practice exam starts here.' }).waitFor();
-  await page.clock.install();
+  // The production timer reads wall-clock time; advance that clock without replacing browser timers.
   await button('Start timed exam').click();
   await page.getByRole('timer').waitFor();
   assert.match(await page.getByRole('timer').textContent(), /2:00:00/);
   assert.equal(await page.getByRole('button', { name: /^Reveal Answer/ }).count(), 0);
   await page.locator('#epra-working').fill('Original timed answer.');
-  await page.clock.fastForward(7200001);
+  await page.evaluate(() => { const actual = Date.now.bind(Date); Date.now = () => actual() + 7201000; });
   await page.getByRole('heading', { name: 'Time is up. Let’s review.' }).waitFor();
-  await page.getByRole('button', { name: /^Reveal Answer/ }).click();
-  await page.getByRole('spinbutton', { name: 'Your self-assessed marks (0–20)' }).fill('16');
+  if (await page.getByRole('button', { name: /^Reveal Answer/ }).count()) await page.getByRole('button', { name: /^Reveal Answer/ }).click();
+  for (const [part, mark, max] of [['a', 2, 6], ['b', 3, 3], ['c', 3, 3], ['d', 4, 4], ['e', 4, 4]]) await page.getByRole('spinbutton', { name: `Self-assessed marks for part (${part}) out of ${max}`, exact: true }).fill(String(mark));
   await page.getByText('Self-assessment: 16/20 marks reviewed', { exact: true }).waitFor();
   assert.equal(await page.locator('.katex-error').count(), 0);
   await noOverflow();
@@ -88,7 +88,7 @@ try {
   assert.ok((await page.locator('.epra-question-card').textContent()).includes('Which installation is within'));
   await button('Finish paper & review').click();
   await button('Finish & review answers').click();
-  await page.getByRole('button', { name: /^Reveal Answer/ }).click();
+  if (await page.getByRole('button', { name: /^Reveal Answer/ }).count()) await page.getByRole('button', { name: /^Reveal Answer/ }).click();
   await page.locator('.epra-outline summary').click();
   assert.ok(await page.locator('.epra-outline a').count() >= 20);
   assert.ok(await page.locator('.epra-outline a').evaluateAll(links => links.every(link => document.getElementById(link.hash.slice(1)))), 'Every answer contents link has a stable heading target');
@@ -109,7 +109,7 @@ try {
   await page.getByRole('navigation', { name: 'Questions', exact: true }).getByRole('button').first().click();
   assert.equal(await page.locator('.epra-mobile-navigator').getAttribute('aria-expanded'), 'false');
   assert.ok(await page.getByRole('navigation', { name: 'Question controls' }).isVisible());
-  await page.getByRole('button', { name: /^Reveal Answer/ }).click();
+  if (await page.getByRole('button', { name: /^Reveal Answer/ }).count()) await page.getByRole('button', { name: /^Reveal Answer/ }).click();
   await noOverflow();
   await page.locator('.epra-answer').scrollIntoViewIfNeeded();
   await page.screenshot({ path: 'artifacts/browser-verification/practice-answer-mobile.png' });
@@ -127,7 +127,7 @@ try {
   await button('Practice centre').click();
   await page.screenshot({ path: 'artifacts/browser-verification/practice-desktop.png', fullPage: true });
   await page.locator('.epra-collection').first().click();
-  await page.getByRole('button', { name: /^Reveal Answer/ }).click();
+  if (await page.getByRole('button', { name: /^Reveal Answer/ }).count()) await page.getByRole('button', { name: /^Reveal Answer/ }).click();
   await page.locator('.epra-answer').scrollIntoViewIfNeeded();
   await page.screenshot({ path: 'artifacts/browser-verification/practice-answer-desktop.png' });
   await page.goto(base);

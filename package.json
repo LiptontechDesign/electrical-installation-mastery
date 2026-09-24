@@ -30,7 +30,8 @@
     "audit:course": "node scripts/audit-course-integrity.mjs",
     "import:epra": "node scripts/import-epra.mjs",
     "test:epra": "node scripts/test-epra.mjs",
-    "test:epra-browser": "node scripts/test-epra-browser.mjs"
+    "test:epra-browser": "node scripts/test-epra-browser.mjs",
+    "test:practice-experience": "node scripts/test-practice-experience-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",
