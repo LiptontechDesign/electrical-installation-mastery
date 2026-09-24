@@ -1,6 +1,9 @@
 'use client';
 import { Fragment, createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import { PlayCircle, Plus, Archive, X, CheckCircle2 } from 'lucide-react';
+import { VideoStudyContext, VideoStudyTools, VideoLessonStepper, NextVideoCard, timestamp, trackVideoPosition, type StudyPlayer } from './video-study-tools';
+import LessonProgress from './lesson-progress';
+import { moduleTone } from './course-ui-model';
+import { PlayCircle, Plus, Archive, X, CheckCircle2, Bookmark, Check, Circle, Menu, ChevronRight } from 'lucide-react';
 import { useCourseAccount } from './course-account';
 import { useCourseOrder } from './course-order';
 import { relocateSupportingVideos } from './course-order-model';
@@ -191,18 +194,9 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     !supplementaryPlacementCreatesCycle(state.videos, editor.id, video.id)
   ) : [];
   const anchorIsSupplementary = supplementaryTargets.some(video => video.id === editor?.anchorId);
-  const playback = selected ? <article className="lesson-canvas supp-lesson">
-        <div className="lesson-topline"><button type="button" className="secondary-button" onClick={() => setSelected(null)}>Back to core lesson</button></div>
-        <div className="lesson-title-block"><p className="lesson-kicker">Supplementary · {courseVideoLabel(displayNumberById.get(selected.id))}</p><h1>{selected.title}</h1></div>
-        <p>{selected.instructor} · Optional supporting lesson</p>
-        <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
-        <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{!userId ? 'Sign in to save progress' : watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
-        <p>{userId ? 'Watched status is private to your account and syncs across your devices.' : 'Watch freely. Guest progress is not recorded.'}</p>
-        {progressError && <p role="alert">{progressError}</p>}
-        <p><a href={`https://www.youtube.com/watch?v=${selected.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p>
-        <p>This optional video does not change required course completion.</p>
-        {userId && <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>}
-      </article> : null;
+  const playback = selected ? <SupplementaryLesson key={selected.id} video={selected} watched={watched.includes(selected.videoId)} progressError={progressError} onWatched={markWatched}
+    onBack={() => setSelected(null)} onEdit={action => edit(selected, action)}
+    onToggle={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}/> : null;
   return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelected(null), videos: state.videos, watched, displayNumberById, ready: ready && !busy, error, move, open: video => { setSelected(video); setEditor(null); setArchiveModule(null); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
     const last = course.modules.find(m => m.id === moduleId)?.lessons.at(-1)?.id;
     if (!last) return;
@@ -250,6 +244,34 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     </section></div>}
   </SupplementaryContext.Provider>;
 }
+function SupplementaryLesson({ video, watched, progressError, onWatched, onBack, onEdit, onToggle }: {
+  video: SupplementaryVideo; watched: boolean; progressError: string; onWatched: (id: string) => void; onBack: () => void; onEdit: (action: SupplementaryAction) => void; onToggle: () => void;
+}) {
+  const { user, requestSignIn } = useCourseAccount();
+  const study = useContext(VideoStudyContext);
+  const player = useRef<StudyPlayer | null>(null);
+  const [duration, setDuration] = useState(0);
+  const onPlayer = useCallback((value: StudyPlayer | null) => {
+    player.current = value;
+    const seconds = value?.getDuration?.();
+    if (typeof seconds === 'number' && Number.isFinite(seconds) && seconds > 0) setDuration(seconds);
+  }, []);
+  const saved = study.savedVideos.includes(video.videoId);
+  return <article className="lesson-canvas supp-lesson" data-module-tone={moduleTone(video.moduleId)}>
+    <div className="lesson-topline"><button className="mobile-module-button" type="button" onClick={study.openCourseMap}><Menu size={19}/> Course map</button><div className="breadcrumbs"><span>{study.navigation.path}</span><ChevronRight size={15}/><span>{study.navigation.moduleTitle}</span></div><VideoLessonStepper/></div>
+    <div className="lesson-title-block"><p className="lesson-kicker"><strong>Video {study.navigation.position}</strong><span>·</span>Optional lesson</p><h1>{video.title}</h1><p>{video.instructor || 'YouTube'}{duration > 0 && <> <span>·</span> {timestamp(duration)}</>}</p></div>
+    <div className="video-shell"><SupplementaryPlayer video={video} onWatched={onWatched} onPlayer={onPlayer}/></div>
+    <div className="lesson-control-row"><div><button className={saved ? 'bookmark-button active' : 'bookmark-button'} type="button" onClick={() => user ? study.toggleSaved(video.videoId) : requestSignIn()}><Bookmark size={18} fill={saved ? 'currentColor' : 'none'}/>{saved ? 'Saved' : 'Save lesson'}</button><button className="bookmark-button" type="button" onClick={onBack}>Back to core lesson</button></div><button className={watched ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={watched} onClick={onToggle}>{watched ? <Check size={19}/> : <Circle size={19}/>} {watched ? 'Watched · Undo' : 'Mark video watched'}</button></div>
+    <VideoStudyTools videoId={video.videoId} getPlayer={() => player.current}/>
+    {user && <LessonProgress watched={watched} completions={0} optional/>}
+    <section className="lesson-personal-notes" aria-label="Personal lesson notes"><details className="lesson-notes-disclosure"><summary>Your lesson notes</summary>{user ? <label className="lesson-notes"><span>Write a private note for this lesson</span><textarea aria-label="Your lesson notes" maxLength={10000} value={study.videoNotes[video.videoId] ?? ''} onChange={event => study.setNote(video.videoId, event.target.value)} placeholder="Write your own notes…"/></label> : <div className="guest-notes"><p>Save your notes with this video.</p><button className="account-sign-in" onClick={requestSignIn}>Sign in to keep notes</button></div>}</details></section>
+    {progressError && <p role="alert">{progressError}</p>}
+    <details className="video-playback-help"><summary>Playback help</summary><p><a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p></details>
+    {user && <div className="supp-actions"><button className="secondary-button" onClick={() => onEdit('edit')}>Rename or move</button><button className="secondary-button" onClick={() => onEdit('archive')}>Archive video</button></div>}
+    <NextVideoCard/>
+  </article>;
+}
+
 export function SupplementaryControls({ moduleId, anchorId, compact = false, label = 'Add video here' }: { moduleId: string; anchorId?: string; compact?: boolean; label?: string }) {
   const { user } = useCourseAccount();
   const context = useContext(SupplementaryContext);
@@ -273,15 +295,21 @@ function SupplementaryBranch({ context, anchorId, position, trail }: { context: 
   })}</>;
 }
 
-function SupplementaryPlayer({ video, onWatched }: { video: SupplementaryVideo; onWatched: (id: string) => void }) {
+function SupplementaryPlayer({ video, onWatched, onPlayer }: { video: SupplementaryVideo; onWatched: (id: string) => void; onPlayer: (player: StudyPlayer | null) => void }) {
   const host = useRef<HTMLDivElement>(null);
+  const study = useContext(VideoStudyContext);
+  const studyRef = useRef(study);
+  const playerRef = useRef<StudyPlayer | null>(null);
+  useEffect(() => { studyRef.current = study; }, [study]);
   useEffect(() => {
     const container = host.current;
     if (!container) return;
     let disposed = false;
+    let stopTracking = Object.assign(() => {}, { capture: () => {} });
     let player: { destroy: () => void } | undefined;
     const iframe = document.createElement('iframe');
     iframe.src = `https://www.youtube-nocookie.com/embed/${video.videoId}?rel=0&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`;
+    if (studyRef.current.enabled) iframe.src += '&start=' + (studyRef.current.positions[video.videoId] ?? 0);
     iframe.title = video.title;
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
     iframe.allowFullscreen = true;
@@ -289,8 +317,9 @@ function SupplementaryPlayer({ video, onWatched }: { video: SupplementaryVideo; 
     const bind = () => {
       if (disposed || player || !window.YT?.Player) return;
       const api = window.YT;
-      player = new api.Player(iframe, { events: { onStateChange: event => {
-        if (!disposed && event.data === api.PlayerState.ENDED) onWatched(video.videoId);
+      player = new api.Player(iframe, { events: { onReady: event => { if (disposed) return; playerRef.current = event.target; onPlayer(event.target); if (studyRef.current.enabled) stopTracking = trackVideoPosition(event.target, seconds => { if (studyRef.current.enabled) studyRef.current.position(video.videoId, seconds); }); }, onStateChange: event => {
+        if (!disposed) { stopTracking.capture(); onPlayer(playerRef.current); }
+        if (!disposed && event.data === api.PlayerState.ENDED) { onWatched(video.videoId); studyRef.current.position(video.videoId, 0); }
       } } });
     };
     iframe.addEventListener('load', bind);
@@ -299,10 +328,10 @@ function SupplementaryPlayer({ video, onWatched }: { video: SupplementaryVideo; 
     let attempts = 0;
     const timer = window.setInterval(() => { bind(); if (player || ++attempts >= 80) window.clearInterval(timer); }, 250);
     return () => {
-      disposed = true; window.clearInterval(timer); iframe.removeEventListener('load', bind);
+      stopTracking(); playerRef.current = null; onPlayer(null); disposed = true; window.clearInterval(timer); iframe.removeEventListener('load', bind);
       try { player?.destroy(); } catch { /* The frame may already have closed. */ }
       iframe.remove();
     };
-  }, [video.id, video.videoId, video.title, onWatched]);
+  }, [video.id, video.videoId, video.title, onWatched, study.enabled, onPlayer]);
   return <div className="video-frame" ref={host} />;
 }

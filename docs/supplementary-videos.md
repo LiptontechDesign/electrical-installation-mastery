@@ -23,3 +23,5 @@ Metadata comes from a fixed YouTube oEmbed endpoint; returned embed HTML is neve
 ## Verification
 
 Run test:supplementary, test:course-order, test:course-drag and test:accounts. Canonical-video and default-placement coverage is also checked by test:licensing.
+
+Supplementary playback uses the same title, module context, lesson stepper, next-video card, saved control and personal-notes styling as core lessons. New additions automatically receive this layout. YouTube reports duration after the player connects; unavailable durations are omitted. Saved supplementary videos, freeform notes, playback positions and timestamped notes are keyed by YouTube ID in the learner record, so moving or renaming preserves them and changing the video does not inherit another video’s data.

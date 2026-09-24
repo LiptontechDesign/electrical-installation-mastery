@@ -5,7 +5,7 @@ A video course with 296 lessons in 25 modules across C2, C1 and Professional pat
 ## Learning experience
 
 - **Home:** guests see the public course overview; signed-in learners see a personal workspace with their current lesson, upcoming videos, bookmarks and progress. A full-width header includes the account initials, progress and sign-out menu.
-- **Learn:** 86 sections with embedded videos, watched progress, bookmarks and private notes. Lessons are freely accessible in any order. Core and supplementary videos share continuous numbering that adjusts when reordered.
+- **Learn:** 86 sections with embedded videos, watched progress, bookmarks, playback resume and private notes, including timestamped notes. Module colours continue through sections and lessons; All / Unwatched / Saved filters and Organise mode keep navigation focused. Lessons are freely accessible in any order. Core and supplementary videos share continuous numbering that adjusts when reordered.
 - **Books:** four complete reference books with chapter search, PDF/text views, zoom, saved pages and personal notes.
 - **Practice (`/practice`):** separate C2/C1 pathways, 568 verbatim topic questions, 110 recall questions and two complete mock papers. Topic filters, answer reveals, LaTeX worked solutions, session quizzes, timed/untimed exams, self-assessment and downloadable working. No sign-in required. See [the practice-centre guide](docs/epra-practice-centre.md).
 - **Settings:** Google account controls, complete account export/deletion, progress backup/import/reset and playback preferences.

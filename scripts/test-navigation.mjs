@@ -69,7 +69,7 @@ assert.equal(state().notes[distant],'Preserved study note');
 await click(button('Save lesson'));assert.ok(state().bookmarkedLessonIds.includes(distant));
 assert.equal(tree.root.findAllByProps({role:'tablist'}).length,0,'No lesson guide tabs');
 assert.ok(!/Lesson guide|Standards companion|Module recap|Mock paper|Simulations/.test(text(tree.toJSON())));
-await click(button('Suggested next step'));
+await click(button('Next unwatched'));
 assert.equal(state().activeLessonId,'p01-l01','Suggested next is an explicit action');
 await act(async()=>tree.unmount());
 saved=JSON.stringify({...state(),freeBrowseEnabled:false});

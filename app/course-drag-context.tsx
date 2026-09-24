@@ -3,7 +3,8 @@ import { createContext, useContext, useEffect, useLayoutEffect, useMemo, useRef,
 import { createPortal } from 'react-dom';
 import { DndContext, DragOverlay, KeyboardSensor, MeasuringStrategy, MouseSensor, TouchSensor, rectIntersection,
   useDraggable, useDroppable, useSensor, useSensors, type DragMoveEvent, type KeyboardCoordinateGetter, type CollisionDetection } from '@dnd-kit/core';
-import { CheckCircle2, GripVertical, PlayCircle } from 'lucide-react';
+import { VideoStudyContext } from './video-study-tools';
+import { CheckCircle2, GripVertical, PlayCircle, Bookmark } from 'lucide-react';
 import { useCourseOrder } from './course-order';
 import { useSupplementary } from './supplementary-videos';
 import { useCourseAccount } from './course-account';
@@ -56,7 +57,7 @@ const collision: CollisionDetection = args => {
   return hits.sort((a, b) => rank(a.id) - rank(b.id));
 };
 
-export function CourseDragProvider({ children, onLocate }: { children: ReactNode; onLocate: (moduleId: string) => void }) {
+export function CourseDragProvider({ children, onLocate, organizing = false }: { children: ReactNode; organizing?: boolean; onLocate: (moduleId: string) => void }) {
   const core = useCourseOrder();
   const supplementary = useSupplementary();
   const videos = supplementary?.videos;
@@ -150,7 +151,7 @@ export function CourseDragProvider({ children, onLocate }: { children: ReactNode
   }
 
   const item = activeId ? snapshot.byId.get(activeId) ?? proposal?.item : null;
-  return <DragContext.Provider value={{ rows: proposal?.rows ?? snapshot.rows, activeId, movingIds, proposal, enabled: core.ready && Boolean(supplementary?.ready), busy }}>
+  return <DragContext.Provider value={{ rows: proposal?.rows ?? snapshot.rows, activeId, movingIds, proposal, enabled: organizing && core.ready && Boolean(supplementary?.ready), busy }}>
     <DndContext sensors={sensors} collisionDetection={collision} measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
       autoScroll={{ threshold: { x: 0, y: .16 }, acceleration: 8, canScroll: element => element.classList.contains('course-map') }}
       accessibility={{ restoreFocus: false, screenReaderInstructions: { draggable: 'Press Space to pick up. Use Up and Down for positions, Left and Right for sections or modules. Space opens a move review. Escape cancels. Only Confirm move saves.' },
@@ -212,18 +213,19 @@ export function CourseDragPath({ id, selected, onSelect, children }: { id: strin
   return <button ref={setNodeRef} type="button" data-course-path={id} className={selected ? 'active' : isOver ? 'course-path-target' : ''} aria-pressed={selected} onClick={onSelect}>{children}</button>;
 }
 
-export function CourseSectionRows({ sectionId, renderCore }: { sectionId: string; renderCore: (id: string, displayNumber: number) => ReactNode }) {
+export function CourseSectionRows({ sectionId, renderCore, visibleIds }: { visibleIds?: ReadonlySet<string>; sectionId: string; renderCore: (id: string, displayNumber: number) => ReactNode }) {
   const { user } = useCourseAccount();
   const { rows, busy } = useContext(DragContext);
+  const study = useContext(VideoStudyContext);
   const supplementary = useSupplementary();
   const { setNodeRef } = useDroppable({ id: `end:${sectionId}`, data: { type: 'end', sectionId }, disabled: !busy });
-  return <>{(rows[sectionId] ?? []).map(row => {
+  return <>{(rows[sectionId] ?? []).filter(row => !visibleIds || visibleIds.has(row.id)).map(row => {
     const video = supplementary?.videos.find(v => v.id === row.id);
     const watched = Boolean(video && supplementary?.watched.includes(video.videoId));
     return <CourseDraggableRow key={row.id} row={row}>
     {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <button className={supplementary?.selected?.id === row.id ? "supp-video-row active" : "supp-video-row"} aria-current={supplementary?.selected?.id === row.id ? "page" : undefined} type="button" onClick={() => {
       if (video) supplementary?.open(video);
-    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small className="lesson-row-progress">{supplementary?.selected?.id === row.id && <b>Watching now</b>}Supplementary · {user ? (watched ? 'Watched · ' : 'Not watched · ') : ''}{video?.instructor || 'YouTube'}</small></span></button>}
+    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small className="lesson-row-progress">{supplementary?.selected?.id === row.id && <b>Watching now</b>}Supplementary · {user ? (watched ? 'Watched · ' : 'Not watched · ') : ''}{video?.instructor || 'YouTube'}</small></span>{video && study.savedVideos.includes(video.videoId) && <span className="lesson-row-state"><Bookmark size={14} fill="currentColor" aria-label="Saved"/></span>}</button>}
   </CourseDraggableRow>;
   })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Empty section · core lessons only') : null}</div></>;
 }

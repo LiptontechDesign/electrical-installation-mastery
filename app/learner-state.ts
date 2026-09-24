@@ -11,6 +11,10 @@ export type LearnerState = {
   studyMinutesByDate: Record<string, number>;
   autoNextEnabled: boolean;
   videoCompletionCounts: Record<string, number>;
+  videoBookmarks: string[];
+  videoNotes: Record<string, string>;
+  videoPositions: Record<string, number>;
+  timestampNotes: Record<string, { id: string; seconds: number; text: string }[]>;
   updatedAt: string | null;
 };
 
@@ -26,6 +30,10 @@ export const initialLearnerState: LearnerState = {
   studyMinutesByDate: {},
   autoNextEnabled: true,
   videoCompletionCounts: {},
+  videoBookmarks: [],
+  videoNotes: {},
+  videoPositions: {},
+  timestampNotes: {},
   updatedAt: null,
 };
 
@@ -56,6 +64,10 @@ export function clampState(value: unknown): LearnerState {
     studyMinutesByDate,
     autoNextEnabled: typeof input.autoNextEnabled === 'boolean' ? input.autoNextEnabled : true,
     videoCompletionCounts: validVideoCompletionCounts(input.videoCompletionCounts, lessonIds),
+    videoBookmarks: Array.isArray(input.videoBookmarks) ? [...new Set(input.videoBookmarks.filter(id => typeof id === 'string' && /^[\w-]{11}$/.test(id)))].slice(0, 2000) : [],
+    videoNotes: input.videoNotes && typeof input.videoNotes === 'object' && !Array.isArray(input.videoNotes) ? Object.fromEntries(Object.entries(input.videoNotes).filter(([id, text]) => /^[\w-]{11}$/.test(id) && typeof text === 'string').slice(0, 2000).map(([id, text]) => [id, text.slice(0, 10000)])) : {},
+    videoPositions: validVideoPositions(input.videoPositions),
+    timestampNotes: validTimestampNotes(input.timestampNotes),
     updatedAt: typeof input.updatedAt === 'string' ? input.updatedAt : null,
   };
 }
@@ -70,4 +82,22 @@ export function isProgressBackup(value: unknown, validLessonIds: Set<string>): b
   return Array.isArray(input.completedLessonIds) && typeof input.activeLessonId === 'string'
     && validLessonIds.has(input.activeLessonId)
     && (input.schemaVersion === undefined || (typeof input.schemaVersion === 'number' && Number.isInteger(input.schemaVersion) && input.schemaVersion >= 1 && input.schemaVersion <= 10));
+}
+
+export function validVideoPositions(value: unknown): Record<string, number> {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  return Object.fromEntries(Object.entries(value).filter(([id, seconds]) => /^[\w-]{11}$/.test(id) && typeof seconds === 'number' && Number.isFinite(seconds) && seconds >= 0 && seconds <= 86400).slice(0, 2000).map(([id, seconds]) => [id, Math.floor(seconds as number)]));
+}
+export function validTimestampNotes(value: unknown): LearnerState['timestampNotes'] {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  let remaining = 1000;
+  return Object.fromEntries(Object.entries(value).filter(([id, notes]) => /^[\w-]{11}$/.test(id) && Array.isArray(notes)).slice(0, 2000).map(([id, notes]) => {
+    const valid = (notes as unknown[]).filter((note): note is LearnerState['timestampNotes'][string][number] => {
+      if (!note || typeof note !== 'object') return false;
+      const n = note as Record<string, unknown>;
+      return typeof n.id === 'string' && n.id.length <= 80 && typeof n.seconds === 'number' && Number.isFinite(n.seconds) && n.seconds >= 0 && n.seconds <= 86400 && typeof n.text === 'string' && n.text.trim().length > 0;
+    }).slice(0, Math.min(100, remaining)).map(n => ({ id: n.id, seconds: Math.floor(n.seconds), text: n.text.slice(0, 2000) }));
+    remaining -= valid.length;
+    return [id, valid];
+  }));
 }

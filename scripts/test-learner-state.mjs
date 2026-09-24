@@ -22,3 +22,15 @@ const malformed = clampState({ ...old, notes: [], videoCompletionCounts: { 'p01-
 assert.deepEqual(malformed.videoCompletionCounts, {});
 assert.deepEqual(malformed.studyMinutesByDate, {});
 console.log('PASS: older backups migrate to video-only state while preserving notes, bookmarks, watched records and playback preferences.');
+
+const withPlayback = clampState({ ...initialLearnerState, videoPositions: { abcdefghijk: 72.8, bad: 12, lmnopqrstuv: -1, wxyzabcdefg: Infinity }, timestampNotes: { abcdefghijk: [{ id: 'note1', seconds: 42.9, text: 'My timestamp note' }, { id: 'bad', seconds: -5, text: 'Invalid' }] } });
+assert.deepEqual(withPlayback.videoPositions, { abcdefghijk: 72 });
+assert.deepEqual(withPlayback.timestampNotes, { abcdefghijk: [{ id: 'note1', seconds: 42, text: 'My timestamp note' }] });
+assert.deepEqual(clampState(withPlayback), withPlayback, 'Playback and notes survive server parsing and backup restore');
+assert.deepEqual(clampState({ schemaVersion: 9 }).videoPositions, {}, 'Old backups start with no saved positions');
+assert.deepEqual(clampState({ videoPositions: [], timestampNotes: 'bad' }).timestampNotes, {});
+console.log('PASS: playback positions and timestamp notes are validated and migrate safely.');
+
+const optionalDetails = clampState({ videoBookmarks: ['abcdefghijk','bad','abcdefghijk'], videoNotes: { abcdefghijk: 'Personal optional note', bad: 'bad ID', lmnopqrstuv: 42 } });
+assert.deepEqual(optionalDetails.videoBookmarks, ['abcdefghijk']);
+assert.deepEqual(optionalDetails.videoNotes, { abcdefghijk: 'Personal optional note' });
