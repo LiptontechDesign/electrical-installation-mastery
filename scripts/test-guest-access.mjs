@@ -4,7 +4,7 @@ import { createElement as h } from 'react';
 import { act, create } from 'react-test-renderer';
 
 await build({
-  stdin: { contents: "export { defaultOrder } from './app/course-order-model'; export { initialLearnerState } from './app/learner-state'; export { default as App } from './app/course-app'; export { CourseAccountProvider } from './app/course-account'; export { CourseOrderProvider } from './app/course-order'; export { SupplementaryProvider } from './app/supplementary-videos';", resolveDir: process.cwd(), loader: 'tsx' },
+  stdin: { contents: "export { defaultOrder } from './app/course-order-model'; export { initialLearnerState } from './app/learner-state'; export { default as App } from './app/course-app'; export { CourseAccountProvider } from './app/course-account'; export { CourseOrderProvider } from './app/course-order'; export { SupplementaryProvider, useSupplementary } from './app/supplementary-videos';", resolveDir: process.cwd(), loader: 'tsx' },
   outfile: 'work/guest-tests/app.mjs', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic',
   plugins: [{ name: 'external-view-stubs', setup(builder) {
     builder.onResolve({ filter: /^react-dom$/ }, () => ({ path: 'react-dom', namespace: 'portal-stub' }));
@@ -13,7 +13,7 @@ await build({
     builder.onLoad({ filter: /.*/, namespace: 'stub' }, args => ({ contents: args.path === 'next/link' ? 'import {createElement} from \"react\"; export default ({children,...props}) => createElement(\"a\",props,children)' : args.path === 'next/dynamic' ? 'export default () => () => null' : 'export default () => null', loader: 'js', resolveDir: process.cwd() }));
   } }],
 });
-const { App, CourseAccountProvider, CourseOrderProvider, SupplementaryProvider, defaultOrder, initialLearnerState } = await import('../work/guest-tests/app.mjs');
+const { App, CourseAccountProvider, CourseOrderProvider, SupplementaryProvider, useSupplementary, defaultOrder, initialLearnerState } = await import('../work/guest-tests/app.mjs');
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 const requests = [], storage = [];
 const timers = new Map(); let timerId = 0;
@@ -29,9 +29,10 @@ globalThis.localStorage = window.localStorage;
 globalThis.fetch = async (url, options) => { requests.push({ url, method: options?.method ?? 'GET' }); throw new Error('Guest must not access personal APIs'); };
 const flush = async () => { for (let i = 0; i < 8 && timers.size; i++) await act(async () => { const pending = [...timers.values()]; timers.clear(); await Promise.all(pending.map(fn => fn())); }); };
 const text = node => typeof node === 'string' ? node : Array.isArray(node) ? node.map(text).join('') : node?.children ? text(node.children) : '';
-let tree;
+let tree, supplementary;
+function SupplementaryProbe() { supplementary = useSupplementary(); return null; }
 const mount = async () => {
-  await act(async () => { tree = create(h(CourseAccountProvider, { user: null }, h(CourseOrderProvider, null, h(SupplementaryProvider, null, h(App, { user: null }))))); });
+  await act(async () => { tree = create(h(CourseAccountProvider, { user: null }, h(CourseOrderProvider, null, h(SupplementaryProvider, null, h(SupplementaryProbe), h(App, { user: null }))))); });
   await flush();
 };
 const button = label => tree.root.findAllByType('button').find(node => text(node).trim() === label.trim());
@@ -40,6 +41,14 @@ await mount();
 assert.ok(text(tree.toJSON()).includes('Understand every connection.'));
 await click(button('Start learning '));
 assert.equal(tree.root.findAllByProps({ 'aria-label': 'Your record for this lesson' }).length, 0);
+window.dispatchEvent = () => true;
+await act(async () => supplementary.open(supplementary.videos.find(video => !video.archived)));
+await flush();
+assert.equal(tree.root.findAllByProps({ className: 'lesson-canvas supp-lesson' }).length, 1, 'Supplementary playback uses the lesson canvas');
+assert.equal(tree.root.findAllByProps({ 'aria-labelledby': 'supp-title' }).length, 0, 'Watching does not open a supplementary dialog');
+assert.notEqual(document.body.style.overflow, 'hidden', 'Inline playback does not lock page scrolling');
+await click(button('Back to core lesson'));
+assert.equal(tree.root.findAllByProps({ className: 'lesson-canvas supp-lesson' }).length, 0, 'Core playback returns after leaving a supplementary video');
 await click(button('Mark video watched'));
 assert.equal(tree.root.findAllByProps({ 'aria-labelledby': 'account-invitation-title' }).length, 1, 'Saving prompts for optional sign-in');
 await click(button('Keep exploring without an account'));

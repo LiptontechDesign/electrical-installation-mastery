@@ -6,7 +6,7 @@ The published course includes 32 bundled supplementary entries. Guests can watch
 
 Use the + control at a module, section or video. A YouTube link can populate its title and channel through metadata lookup; manual entry and retry remain available. Duration is not invented. Save actions require the applicable explicit confirmation phrase.
 
-Videos appear at their chosen place in the course map and use the course's embedded player. Opening one pauses core playback and cancels pending automatic advancement. A YouTube fallback link is available for embedding restrictions.
+Videos appear at their chosen place in the course map and play inline in the main lesson canvas, with their title, watched control and editing actions. Playback does not open a modal; only management forms and the archive use dialogs. Selecting a core lesson or leaving Learn closes supplementary playback. Opening one pauses core playback and cancels pending automatic advancement. A YouTube fallback link is available for embedding restrictions.
 
 Core and supplementary videos share continuous numbering within each module. Moving an entry automatically updates display numbers. Supplementary videos retain their label, so they do not need a separate numbering system.
 

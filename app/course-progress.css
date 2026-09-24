@@ -1,0 +1,28 @@
+[data-pathway="C2"] { --pathway-accent: #3274b9; }
+[data-pathway="C1"] { --pathway-accent: #8261b5; }
+[data-pathway="Professional"] { --pathway-accent: #b27925; }
+.module-card[data-pathway], .module-accordion[data-pathway] { border-inline-start: 3px solid var(--pathway-accent); }
+.module-accordion[data-pathway] { padding-inline-start: 5px; }
+.module-card[data-pathway] .module-card-head>span, .module-accordion[data-pathway] .module-index { background: color-mix(in srgb, var(--pathway-accent) 12%, var(--white)); color: var(--ink); }
+.course-topic-group>summary { background: color-mix(in srgb, var(--pathway-accent) 7%, var(--white)); }
+.course-progress-summary { display: grid; gap: 6px; margin-top: 10px; font-size: 12px; font-weight: 500; line-height: 1.5; color: var(--muted); }
+.course-status { display: inline-flex; align-items: center; gap: 6px; justify-self: start; padding: 3px 8px; border-radius: 6px; color: var(--ink); background: var(--surface-soft); font-weight: 700; }
+.course-status svg { flex-shrink: 0; }
+.course-progress-summary[data-state="complete"] .course-status { background: var(--surface-success); color: var(--text-success); }
+.course-progress-track { display: block; height: 4px; border-radius: 6px; overflow: hidden; background: var(--line); }
+.course-progress-track>span { display: block; height: 100%; border-radius: inherit; background: var(--pathway-accent, var(--text-accent)); }
+.course-progress-summary[data-state="complete"] .course-progress-track>span { background: var(--text-success); }
+.course-optional-status { font-size: 11px; }
+.module-card[data-complete="true"] { background: color-mix(in srgb, var(--surface-success) 35%, var(--white)); }
+.course-topic-group[data-complete="true"]>summary { background: color-mix(in srgb, var(--surface-success) 55%, var(--white)); }
+.module-accordion[data-complete="true"]>button { background: color-mix(in srgb, var(--surface-success) 40%, var(--white)); }
+.accordion-lessons button[aria-current="page"] { box-shadow: inset 3px 0 var(--pathway-accent, var(--text-accent)); outline: 1px solid var(--control-border); outline-offset: -1px; }
+.lesson-row-progress { flex-wrap: wrap; }
+.lesson-row-progress b { white-space: nowrap; }
+@media (prefers-color-scheme: dark) {
+  [data-pathway="C2"] { --pathway-accent: #87b9ee; }
+  [data-pathway="C1"] { --pathway-accent: #bda1e6; }
+  [data-pathway="Professional"] { --pathway-accent: #e6ba73; }
+}
+
+@media (max-width: 700px) { .lesson-topline { flex-wrap: wrap; gap: 8px; } }

@@ -12,3 +12,5 @@ Updated 23 September 2026. This index and the root README describe the current a
 The app has Home, Learn, Books and a standalone Practice destination, plus account/settings controls. The new practice centre uses the supplied EPRA study pack. Retired lesson guides, Standards Companion, flashcards, simulations and recap interfaces remain absent.
 
 Superseded assessment, competency, lesson-explanation, transcript-integration and recap plans/audits were removed from this documentation set. Historical versions remain in Git history; they are not specifications for the current product.
+
+Course progress uses explicit not-started, in-progress and completed badges with watched counts and progress bars. Required core videos determine core completion; optional catalogue and supplementary videos are counted separately. Optional-only groups show their own progress. C2, C1 and Advanced use restrained blue, violet and amber accents, while green indicates completion. The active video is labelled Watching now. Guest views do not show saved progress.

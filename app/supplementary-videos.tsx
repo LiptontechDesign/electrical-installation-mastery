@@ -10,7 +10,7 @@ import { useDialogFocus } from './use-dialog-focus';
 import { confirmationPhrase, supplementaryDescendants, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
 
 type Editor = { action: SupplementaryAction; revision: number; id?: string; moduleId: string; anchorId: string; position: 'before' | 'after'; url: string; title: string; instructor: string };
-type Context = { videos: SupplementaryVideo[]; watched: string[]; displayNumberById: ReadonlyMap<string, number>; ready: boolean; error: string; move: (move: SupplementaryMove) => Promise<boolean>; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
+type Context = { selected: SupplementaryVideo | null; playback: ReactNode; clearSelection: () => void; videos: SupplementaryVideo[]; watched: string[]; displayNumberById: ReadonlyMap<string, number>; ready: boolean; error: string; move: (move: SupplementaryMove) => Promise<boolean>; open: (video: SupplementaryVideo) => void; add: (moduleId: string, anchorId?: string) => void; archive: (moduleId: string) => void };
 type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
 const SupplementaryContext = createContext<Context | null>(null);
 export const useSupplementary = () => useContext(SupplementaryContext);
@@ -122,7 +122,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     return () => { window.clearTimeout(timer); controller.abort(); };
   }, [editorUrl, editorAction, lookupAttempt]);
   const dialog = useRef<HTMLElement>(null);
-  const isOpen = Boolean(editor || selected || archiveModule);
+  const isOpen = Boolean(editor || archiveModule);
   useDialogFocus(dialog, isOpen);
   const refresh = useCallback(async () => {
     if (!userId) return;
@@ -162,7 +162,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
         setSelected(saved); setArchiveModule(null);
         window.dispatchEvent(new Event('supplementary-video-open'));
       } else setArchiveModule(editor.moduleId);
-      setNotice('Saved in your course. Close this window to continue.');
+      setNotice('Saved in your course.');
     } catch (e) { setNotice(e instanceof Error ? e.message : 'Could not save.'); }
     finally { setBusy(false); }
   }
@@ -191,7 +191,19 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
     !supplementaryPlacementCreatesCycle(state.videos, editor.id, video.id)
   ) : [];
   const anchorIsSupplementary = supplementaryTargets.some(video => video.id === editor?.anchorId);
-  return <SupplementaryContext.Provider value={{ videos: state.videos, watched, displayNumberById, ready: ready && !busy, error, move, open: video => { setSelected(video); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
+  const playback = selected ? <article className="lesson-canvas supp-lesson">
+        <div className="lesson-topline"><button type="button" className="secondary-button" onClick={() => setSelected(null)}>Back to core lesson</button></div>
+        <div className="lesson-title-block"><p className="lesson-kicker">Supplementary · {courseVideoLabel(displayNumberById.get(selected.id))}</p><h1>{selected.title}</h1></div>
+        <p>{selected.instructor} · Optional supporting lesson</p>
+        <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
+        <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{!userId ? 'Sign in to save progress' : watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
+        <p>{userId ? 'Watched status is private to your account and syncs across your devices.' : 'Watch freely. Guest progress is not recorded.'}</p>
+        {progressError && <p role="alert">{progressError}</p>}
+        <p><a href={`https://www.youtube.com/watch?v=${selected.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p>
+        <p>This optional video does not change required course completion.</p>
+        {userId && <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>}
+      </article> : null;
+  return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelected(null), videos: state.videos, watched, displayNumberById, ready: ready && !busy, error, move, open: video => { setSelected(video); setEditor(null); setArchiveModule(null); setNotice(''); window.dispatchEvent(new Event('supplementary-video-open')); }, add: (moduleId, anchorId) => {
     const last = course.modules.find(m => m.id === moduleId)?.lessons.at(-1)?.id;
     if (!last) return;
     editedFields.current = { title: false, instructor: false };
@@ -221,16 +233,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
           <div className="supp-confirm"><strong>Are you sure? This changes only your course.</strong><p>Original videos will not change. No video is permanently deleted.</p><label>Type <strong>{confirmationPhrase(editor.action)}</strong> to confirm<input autoComplete="off" spellCheck={false} value={confirmation} onChange={e => setConfirmation(e.target.value)} /></label></div>
           <button className="primary-button" type="submit" disabled={!ready || confirmation !== confirmationPhrase(editor.action)}>{busy ? 'Saving…' : 'Confirm my change'}</button>
         </fieldset>
-      </form> : selected ? <>
-        <p>{selected.instructor} · Optional supporting lesson</p>
-        <SupplementaryPlayer key={selected.id} video={selected} onWatched={markWatched} />
-        <button type="button" className={watched.includes(selected.videoId) ? 'complete-button completed' : 'complete-button'} aria-pressed={watched.includes(selected.videoId)} onClick={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}>{!userId ? 'Sign in to save progress' : watched.includes(selected.videoId) ? 'Watched · Undo' : 'Mark video watched'}</button>
-        <p>{userId ? 'Watched status is private to your account and syncs across your devices.' : 'Watch freely. Guest progress is not recorded.'}</p>
-        {progressError && <p role="alert">{progressError}</p>}
-        <p><a href={`https://www.youtube.com/watch?v=${selected.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p>
-        <p>This optional video does not change required course completion.</p>
-        {userId && <div className="supp-actions"><button className="secondary-button" onClick={() => edit(selected, 'edit')}>Rename or move</button><button className="secondary-button" onClick={() => edit(selected, 'archive')}>Archive video</button></div>}
-      </> : <>
+      </form> : <>
         <p>Archived videos remain saved. Restore them to make them visible in your course again.</p>
         {state.videos.filter(v => v.archived && v.moduleId === archiveModule).map(v => <div className="supp-archive-row" key={v.id}><span>{v.title}</span><button className="secondary-button" onClick={() => edit(v, 'restore')}>Restore</button><button className="secondary-button" onClick={() => edit(v, 'edit')}>Rename or move</button></div>)}
         {!state.videos.some(v => v.archived && v.moduleId === archiveModule) && <p>No archived videos in this module.</p>}

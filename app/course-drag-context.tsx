@@ -221,9 +221,9 @@ export function CourseSectionRows({ sectionId, renderCore }: { sectionId: string
     const video = supplementary?.videos.find(v => v.id === row.id);
     const watched = Boolean(video && supplementary?.watched.includes(video.videoId));
     return <CourseDraggableRow key={row.id} row={row}>
-    {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <button className="supp-video-row" type="button" onClick={() => {
+    {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <button className={supplementary?.selected?.id === row.id ? "supp-video-row active" : "supp-video-row"} aria-current={supplementary?.selected?.id === row.id ? "page" : undefined} type="button" onClick={() => {
       if (video) supplementary?.open(video);
-    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small>Supplementary · {user ? (watched ? 'Watched · ' : 'Not watched · ') : ''}{video?.instructor || 'YouTube'}</small></span></button>}
+    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small className="lesson-row-progress">{supplementary?.selected?.id === row.id && <b>Watching now</b>}Supplementary · {user ? (watched ? 'Watched · ' : 'Not watched · ') : ''}{video?.instructor || 'YouTube'}</small></span></button>}
   </CourseDraggableRow>;
   })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Empty section · core lessons only') : null}</div></>;
 }

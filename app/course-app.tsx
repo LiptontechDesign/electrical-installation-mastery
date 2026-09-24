@@ -19,7 +19,9 @@ import { importPromotedWatched } from './integrated-progress';
 import { markVideoGroupWatched, recordVideoCompletion } from './flexible-progress';
 import LessonProgress from './lesson-progress';
 import { initialLearnerState, clampState, isProgressBackup, calendarDay, type LearnerState } from './learner-state';
-import { SupplementaryControls } from './supplementary-videos';
+import { CourseProgressSummary } from './course-progress-summary';
+import { supplementaryDescendants } from './supplementary-model';
+import { SupplementaryControls, useSupplementary } from './supplementary-videos';
 import { CourseDragProvider, CourseDragModule, CourseDragSection, CourseDragPath, CourseSectionRows } from './course-drag-context';
 import { useDialogFocus } from './use-dialog-focus';
 import AccountPanel from './account-panel';
@@ -104,6 +106,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const { requestSignIn } = useCourseAccount();
   const [showOverview, setShowOverview] = useState(false);
   const { course, sectionsByModule } = useCourseOrder();
+  const supplementary = useSupplementary();
+  const supplementaryId = supplementary?.selected?.id;
   const allLessons = useMemo(() => course.modules.flatMap(m => m.lessons), [course]);
   const lessonLookup = useMemo(() => new Map(allLessons.map(l => [l.id, l])), [allLessons]);
   const lessonLocation = useMemo(() => new Map(course.modules.flatMap((module, moduleIndex) => module.lessons.map((lesson, lessonIndex) => [lesson.id, { module, moduleIndex, lessonIndex }] as const))), [course]);
@@ -164,6 +168,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       autoNextStateRef.current = null;
       setAutoNextState(null);
       setModuleDrawerOpen(false);
+      setView('learn');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     window.addEventListener('supplementary-video-open', pauseForSupplementary);
     return () => window.removeEventListener('supplementary-video-open', pauseForSupplementary);
@@ -178,11 +184,14 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const courseRequiredTotal = requiredLessons.length;
   const courseRequiredComplete = requiredLessons.filter(lesson => completed.has(lesson.id)).length;
   const coursePercent = percent(courseRequiredComplete, courseRequiredTotal);
-  const moduleTracking = (module: CourseModule) => {
-    const videos = module.lessons.filter(lesson => completed.has(lesson.id)).length;
-    const required = module.lessons.filter(lesson => isRequiredLesson(lesson.id));
-    const requiredComplete = required.filter(lesson => completed.has(lesson.id)).length;
-    return { videos, requiredComplete, requiredTotal: required.length, requiredPercent: percent(requiredComplete, required.length) };
+  const groupProgress = (ids: string[]) => {
+    const core = ids.filter(isRequiredLesson);
+    const extra = ids.filter(id => !isRequiredLesson(id));
+    const supporting = supplementaryDescendants(supplementary?.videos ?? [], ids);
+    const optionalTotal = extra.length + supporting.length;
+    const optionalWatched = extra.filter(id => completed.has(id)).length + supporting.filter(video => supplementary?.watched.includes(video.videoId)).length;
+    return core.length ? { total: core.length, watched: core.filter(id => completed.has(id)).length, optionalTotal, optionalRemaining: optionalTotal - optionalWatched, optionalOnly: false }
+      : { total: optionalTotal, watched: optionalWatched, optionalTotal: 0, optionalRemaining: 0, optionalOnly: true };
   };
   const nextRequiredItem = (() => {
     for (const courseModule of course.modules.filter(module => module.path !== 'Professional')) {
@@ -472,7 +481,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       if (playerIframeRef.current === iframe) playerIframeRef.current = null;
       if (iframe.parentNode === host) host.removeChild(iframe);
     };
-  }, [view, playerSrc, activeLesson.id, activeLesson.title]);
+  }, [view, playerSrc, activeLesson.id, activeLesson.title, supplementaryId]);
 
   useEffect(() => {
     if (view !== 'learn') return;
@@ -527,7 +536,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       },
     });
     playerBindingRef.current = { iframe, player, deactivate: () => { destroyed = true; } };
-  }, [view, youtubeApiReady, playerSrc, activeLesson.id, activeLesson.durationSeconds, autoPlayLessonId, allLessons, user]);
+  }, [view, youtubeApiReady, playerSrc, activeLesson.id, activeLesson.durationSeconds, autoPlayLessonId, allLessons, user, supplementaryId]);
 
   const searchResults = useMemo(() => {
     const query = searchQuery.trim().toLocaleLowerCase();
@@ -578,6 +587,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const navigate = (nextView: View) => {
+    supplementary?.clearSelection();
     if (nextView !== 'learn') {
       cancelAutoNext(false);
       setAutoPlayLessonId(null);
@@ -592,6 +602,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const loadLesson = (lessonId: string) => {
     const nextLocation = lessonLocation.get(lessonId);
     if (!nextLocation) return;
+    supplementary?.clearSelection();
     cancelAutoNext(false);
     setAutoPlayLessonId(null);
 
@@ -683,7 +694,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const resetProgress = () => { setLearner({...initialLearnerState,promotedVideoProgressImported:true}); setStorageBlocked(false); setConfirmReset(false); setSettingsOpen(false); navigate('home'); setToast('Your learning progress has been reset and will sync to your account.'); };
-  const moduleCompletedCount = (module: CourseModule) => module.lessons.filter((lesson) => completed.has(lesson.id)).length;
   const browsingControls = (
     <section className="browsing-controls flexible-navigation" aria-label="Learning navigation">
       <p><strong>Learn in any order</strong>Open any lesson. Unfinished work stays visible.</p>
@@ -728,8 +738,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   {browsingControls}
                   <div className="module-card-grid">
                     {course.modules.map((module) => {
-                      const tracking=moduleTracking(module);
-                      return <button type="button" className="module-card" key={module.id} onClick={() => chooseModule(module)}><div className="module-card-head"><span>{pad(module.number)}</span><small>{module.duration}</small></div><h3>{module.title}</h3><div className="progress-line"><span style={{ width: `${tracking.requiredPercent}%` }} /></div><footer><span>{tracking.videos}/{module.lessons.length} videos watched</span><b>{tracking.requiredPercent}%</b></footer></button>;
+                      const progress=groupProgress(module.lessons.map(lesson => lesson.id));
+                      return <button type="button" className="module-card" data-pathway={module.path} data-complete={progress.total > 0 && progress.watched === progress.total} key={module.id} onClick={() => chooseModule(module)}><div className="module-card-head"><span>{pad(module.number)}</span><small>{module.path === 'Professional' ? 'Advanced' : module.path} · {module.duration}</small></div><h3>{module.title}</h3><CourseProgressSummary {...progress} label={module.title + ' progress'}/></button>;
                     })}
                   </div>
                 </div>
@@ -749,21 +759,21 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                 <nav aria-label="Course module and lesson navigation">
                   {course.modules.filter(module=>module.path===mapPath).map((module) => {
                     const isOpen = openModuleId === module.id || dragOpenModuleIds.includes(module.id);
-                    const done = moduleCompletedCount(module);
+                    const progress = groupProgress(module.lessons.map(lesson => lesson.id));
                     return (
-                      <CourseDragModule key={module.id} id={module.id} expanded={isOpen} onExpand={() => setDragOpenModuleIds(ids => [...new Set([...ids, module.id])])}><section className={`module-accordion ${isOpen ? 'open' : ''}`}>
+                      <CourseDragModule key={module.id} id={module.id} expanded={isOpen} onExpand={() => setDragOpenModuleIds(ids => [...new Set([...ids, module.id])])}><section data-pathway={module.path} data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} className={`module-accordion ${isOpen ? 'open' : ''}`}>
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => { setDragOpenModuleIds([]); setOpenModuleId(isOpen ? '' : module.id); }} aria-expanded={isOpen}>
-                          <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{user ? `${done}/${module.lessons.length} videos watched` : `${module.lessons.length} lessons · ${module.duration}`}</small></span><ChevronDown size={18} />
+                          <span className="module-index">{pad(module.number)}</span><span><strong>{module.title}</strong><small>{module.path === 'Professional' ? 'Advanced' : module.path} · {module.lessons.length} lessons · {module.duration}</small>{user && <CourseProgressSummary {...progress} label={module.title + ' progress'}/>}</span><ChevronDown size={18} />
                         </button>
                         <div className="module-actions">
                           <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
                           {isOpen&&<button type="button" className="bulk-watch-action" aria-label={`Mark every video in module ${pad(module.number)} as watched`} data-tooltip={`Mark every video in module ${pad(module.number)} as watched`} onClick={()=>markGroupWatched(module.lessons.map(lesson=>lesson.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/></button>}
                         </div>
-                        {isOpen && <div className="accordion-lessons">{sectionsByModule[module.id].map(group=><CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" open={group.lessonIds.includes(activeLesson.id)||undefined}><summary><span>Section {group.number} · {group.title}</span><small>{group.lessonIds.filter(id=>completed.has(id)).length}/{group.lessonIds.length} watched</small></summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button>{group.lessonIds.length > 0 && <SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />}</div><CourseSectionRows sectionId={group.id} renderCore={(lessonId, displayNumber) => {
+                        {isOpen && <div className="accordion-lessons">{sectionsByModule[module.id].map(group=>{const progress = groupProgress(group.lessonIds); return <CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} open={group.lessonIds.includes(activeLesson.id)||supplementaryDescendants(supplementary?.videos ?? [], group.lessonIds).some(video => video.id === supplementaryId)||undefined}><summary><span>Section {group.number} · {group.title}</span>{user ? <CourseProgressSummary {...progress} label={group.title + ' progress'}/> : <small>{group.lessonIds.length} core videos</small>}</summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button>{group.lessonIds.length > 0 && <SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />}</div><CourseSectionRows sectionId={group.id} renderCore={(lessonId, displayNumber) => {
                           const lesson=lessonLookup.get(lessonId)!;
-                          const isActiveLesson=activeLesson.id===lesson.id;
-                          return <button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(displayNumber)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Current</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>;
-                        }} /></details></CourseDragSection>)}</div>}
+                          const isActiveLesson=!supplementaryId&&activeLesson.id===lesson.id;
+                          return <button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(displayNumber)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Watching now</b>}{completed.has(lesson.id)?'Watched':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>;
+                        }} /></details></CourseDragSection>;})}</div>}
                       </section></CourseDragModule>
                     );
                   })}
@@ -771,7 +781,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
               </aside></CourseDragProvider>
               {moduleDrawerOpen && <button className="drawer-scrim" type="button" aria-label="Close course map" onClick={closeCourseMap} />}
 
-<article className="lesson-canvas">
+{supplementaryId ? supplementary?.playback : <article className="lesson-canvas">
                 <div className="lesson-topline">
                   <MoveLessonButton key={activeLesson.id} lessonId={activeLesson.id} onMoved={moduleId => { setOpenModuleId(moduleId); setMapPath(course.modules.find(m => m.id === moduleId)!.path); }} />
                   <SupplementaryControls moduleId={location.module.id} anchorId={activeLesson.id} compact label="Add a supporting video after this lesson" />
@@ -803,7 +813,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   <details className="lesson-notes-disclosure"><summary>Your lesson notes</summary>{user ? <label className="lesson-notes"><span>Write a private note for this lesson</span><textarea aria-label="Your lesson notes" value={learner.notes[activeLesson.id]??''} onChange={event=>setLearner(current=>({...current,notes:{...current.notes,[activeLesson.id]:event.target.value},updatedAt:new Date().toISOString()}))} placeholder="Write your own notes…"/></label> : <div className="guest-notes"><p>Save your notes with this video.</p><button className="account-sign-in" onClick={requestSignIn}>Sign in to keep notes</button></div>}</details>
                 </section>
                 {<footer className="lesson-next-card"><div><span>{activeNextLesson?`Next · Lesson ${pad(activeNextLesson.number)}`:'End of video sequence'}</span><h3>{activeNextLesson?.title??'Return Home for unfinished lessons'}</h3></div><button type="button" onClick={()=>activeNextLesson?goRelative(1):navigate('home')}>{activeNextLesson?'Continue':'Go Home'} <ArrowRight size={18}/></button></footer>}
-              </article>
+              </article>}
             </div>
           )}
           {view === 'books' && <BookWorkspace />}
