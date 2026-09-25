@@ -35,7 +35,7 @@ export default function AccessibleTooltips() {
       else reveal();
     };
     const pointerOver = (event: PointerEvent) => {
-      if (event.pointerType === 'touch') return;
+      if (event.pointerType === 'touch') { hide(); return; }
       const target = findTarget(event.target);
       if (target && !target.contains(event.relatedTarget as Node | null)) show(target, true);
     };
@@ -43,7 +43,7 @@ export default function AccessibleTooltips() {
       const target = findTarget(event.target);
       if (target && !target.contains(event.relatedTarget as Node | null)) hide();
     };
-    const focusIn = (event: FocusEvent) => { const target = findTarget(event.target); if (target) show(target, false); };
+    const focusIn = (event: FocusEvent) => { const target = findTarget(event.target); if (target?.matches(':focus-visible')) show(target, false); };
     const focusOut = (event: FocusEvent) => { const target = findTarget(event.target); if (target && !target.contains(event.relatedTarget as Node | null)) hide(); };
 
     document.addEventListener('pointerover', pointerOver);

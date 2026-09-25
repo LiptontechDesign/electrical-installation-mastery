@@ -763,7 +763,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       positions: learner.videoPositions, notes: learner.timestampNotes, position: saveVideoPosition,
       addNote: (id, seconds, text) => { if (user) setLearner(current => ({ ...current, timestampNotes: { ...current.timestampNotes, [id]: [...(current.timestampNotes[id] ?? []), { id: crypto.randomUUID(), seconds: Math.floor(seconds), text }].slice(0, 100) }, updatedAt: new Date().toISOString() })); },
       removeNote: (id, noteId) => { if (user) setLearner(current => ({ ...current, timestampNotes: { ...current.timestampNotes, [id]: (current.timestampNotes[id] ?? []).filter(note => note.id !== noteId) }, updatedAt: new Date().toISOString() })); }
-    }}><div data-organizing={organizing} className={user ? 'app-shell studio-shell signed-in-course' : 'app-shell studio-shell guest-course'}>
+    }}><div data-view={view} data-organizing={organizing} className={user ? 'app-shell studio-shell signed-in-course' : 'app-shell studio-shell guest-course'}>
       <Script
         id="youtube-iframe-api"
         src="https://www.youtube.com/iframe_api"

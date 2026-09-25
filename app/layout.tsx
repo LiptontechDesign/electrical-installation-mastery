@@ -10,6 +10,7 @@ import './course-drag.css';
 import './course-overview.css';
 import './course-studio.css';
 import './course-progress.css';
+import './mobile-experience.css';
 import AccessibleTooltips from './accessible-tooltips';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';

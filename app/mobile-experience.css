@@ -1,0 +1,71 @@
+/* Mobile layout is explicit: controls stay reachable without clipping content. */
+@media (max-width: 900px) {
+  .supp-dialog input, .supp-dialog select, .supp-dialog textarea,
+  .app-shell input:not([type=checkbox]):not([type=radio]), .app-shell textarea, .app-shell select,
+  .epra-page input:not([type=checkbox]):not([type=radio]), .epra-page textarea, .epra-page select { font-size: 16px; }
+  .app-shell button, .epra-page button, .epra-page summary { touch-action: manipulation; }
+  .app-shell textarea, .epra-page textarea { scroll-margin-block: 100px; }
+  .studio-search, .studio-settings, .studio-header .account-trigger, .studio-header .account-sign-in,
+  .dialog-title > button, .drawer-heading > button, .account-invitation .invitation-close, .supp-dialog-header > button { min-width: 44px; min-height: 44px; }
+  .studio-lesson-navigation button, .guest-learning-bar button, .epra-text-button,
+  .epra-site-header nav a, .epra-tabs button { min-height: 44px; }
+  .epra-revisit-filter { min-height: 44px; align-items: center; }
+  .epra-site-header nav a { display: inline-flex; align-items: center; }
+  .studio-shell[data-view="books"] .app-frame { display: flex; flex-direction: column; height: 100dvh; min-height: 0; }
+  .studio-shell[data-view="books"] .app-header { flex: none; }
+  .studio-shell[data-view="books"] .app-content { display: flex; flex: 1; flex-direction: column; min-height: 0; padding-bottom: 0; }
+  .studio-shell[data-view="books"] .guest-learning-bar { flex: none; }
+  .studio-shell[data-view="books"] .books-page { flex: 1; min-height: 0; height: auto; width: 100%; }
+  .studio-shell[data-view="books"] .mobile-navigation { position: static; flex: none; }
+  .reader-reading-scroll, .reader-content > .book-shelf, .course-map { overscroll-behavior-y: contain; }
+}
+@media (max-width: 720px) {
+  .studio-shell .app-header { padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right)); gap: 8px; }
+  .studio-header .header-actions { gap: 6px; }
+  .studio-header .studio-settings { display: grid; padding: 10px; }
+  .studio-search { justify-content: center; }
+  .studio-brand { flex-shrink: 1; min-width: 0; min-height: 44px; }
+  .studio-brand strong { font-size: 17px; }
+  .studio-monogram { flex-shrink: 0; }
+  .app-content { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .lesson-topline > .mobile-module-button { display: none; }
+  .lesson-topline { justify-content: flex-end; }
+  .studio-lesson-navigation { padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right)); }
+  .studio-lesson-navigation button { font-size: 12px; }
+  .guest-learning-bar { gap: 8px; }
+  .guest-learning-bar > span { flex-shrink: 0; }
+  .guest-learning-bar button { font-size: 11px; text-align: right; }
+  .mobile-navigation { padding-inline: max(5px, env(safe-area-inset-left)) max(5px, env(safe-area-inset-right)); }
+  .account-popover { max-height: calc(100dvh - 100px); overflow-y: auto; overscroll-behavior: contain; }
+  .modal-layer { padding: 0; }
+  .search-dialog { display: flex; flex-direction: column; height: 100dvh; min-height: 0; max-height: 100dvh; }
+  .search-dialog .dialog-title, .search-dialog .search-field { flex: none; }
+  .search-dialog .search-results { flex: 1; min-height: 0; max-height: none; overscroll-behavior: contain; padding-bottom: max(18px, env(safe-area-inset-bottom)); }
+  .settings-drawer { height: 100dvh; padding-bottom: max(30px, env(safe-area-inset-bottom)); overscroll-behavior: contain; }
+  .dialog-title { padding-top: max(16px, env(safe-area-inset-top)); }
+  .settings-drawer .dialog-title { position: sticky; top: 0; z-index: 2; background: var(--white); }
+  .studio-shell[data-view="books"] .reader-navigation { padding-bottom: 8px; }
+  .epra-reader { padding-bottom: calc(170px + env(safe-area-inset-bottom)); }
+  .epra-reading-dock { padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right)); }
+}
+@media (max-width: 360px) {
+  .studio-brand > span:last-child { display: none; }
+  .studio-header .header-actions { margin-left: auto; }
+  .studio-lesson-navigation { gap: 6px; }
+  .studio-lesson-navigation button { font-size: 11px; }
+  .epra-site-header { padding-inline: 14px; }
+  .epra-site-header nav { gap: 8px; font-size: 12px; }
+}
+@media (max-height: 500px) and (max-width: 950px) {
+  .modal-layer { padding: 0; }
+  .search-dialog { display: flex; flex-direction: column; height: 100dvh; min-height: 0; max-height: 100dvh; border-radius: 0; }
+  .search-results { flex: 1; min-height: 0; max-height: none; }
+  .settings-drawer { height: 100dvh; }
+  .studio-shell[data-view="books"] .reader-section-nav { display: none; }
+  .studio-shell[data-view="books"] .reader-book-heading { padding-block: 4px; }
+  .studio-shell[data-view="books"] .reader-book-heading span { display: none; }
+}
+@media (max-width: 1180px) {
+  html:has(.modal-layer, .course-map.drawer-open) { overflow: hidden; }
+  .course-map.drawer-open { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+}
