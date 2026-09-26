@@ -8,7 +8,7 @@ export default function PrivacyPage() {
       <Link className="policy-back" href="/">← Electrical Installation Mastery</Link>
       <span className="eyebrow">Account policy</span>
       <h1>Privacy</h1>
-      <p className="policy-updated">Last updated 23 September 2026</p>
+      <p className="policy-updated">Last updated 26 September 2026</p>
       <p>Electrical Installation Mastery is a learning service operated by Liptontech. This policy explains the limited information used to provide individual course accounts.</p>
 
       <h2>Information we use</h2>
@@ -27,6 +27,9 @@ export default function PrivacyPage() {
 
       <h2>Storage and sharing</h2>
       <p>Account and learning records are stored in a private Neon Postgres database connected to the course&apos;s Vercel project. Course books are stored in private Vercel Blob storage. Data is disclosed to these infrastructure providers only as required to run the service, or when required by law.</p>
+
+      <h2>Installed app</h2>
+      <p>The installed web app stores a small public reconnect screen in your browser’s cache. This contains no personal information. Account pages, learning records, books and videos are not stored by this offline feature. You can remove the installed app and clear its site data in your browser or device settings.</p>
 
       <h2>Your choices</h2>
       <p>You can export your account data or permanently delete your account and learning records from Account settings. You can also revoke this app&apos;s Google access from your Google Account. Essential security logs may remain for the limited period maintained by the hosting providers.</p>

@@ -11,6 +11,8 @@ import './course-overview.css';
 import './course-studio.css';
 import './course-progress.css';
 import './mobile-experience.css';
+import './pwa.css';
+import { PwaProvider } from './pwa-support';
 import AccessibleTooltips from './accessible-tooltips';
 
 const PRODUCT_NAME = 'Electrical Installation Mastery';
@@ -59,6 +61,7 @@ export const metadata: Metadata = {
     'inspection and testing',
   ],
   manifest: '/manifest.webmanifest',
+  icons: { icon: [{ url: '/icons/app-192.png', sizes: '192x192', type: 'image/png' }], apple: [{ url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }] },
   alternates: {
     canonical: '/',
   },
@@ -109,7 +112,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB">
-      <body>{children}<AccessibleTooltips /></body>
+      <body><PwaProvider>{children}</PwaProvider><AccessibleTooltips /></body>
     </html>
   );
 }

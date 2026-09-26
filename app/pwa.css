@@ -1,0 +1,28 @@
+.pwa-install-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding-block: 10px; font-size: 14px; color: var(--text-accent); text-decoration: underline; text-underline-offset: 4px; }
+.course-welcome-copy > .pwa-install-link { margin-top: 12px; }
+.pwa-page { max-width: 1080px; margin: auto; padding: 30px 28px max(48px, env(safe-area-inset-bottom)); }
+.pwa-back { display: inline-flex; align-items: center; min-height: 44px; color: var(--text-accent); text-decoration: none; }
+.pwa-hero { max-width: 720px; margin-block: 32px 40px; }
+.pwa-hero > img { display: block; border-radius: 20px; margin-bottom: 24px; }
+.pwa-hero h1 { font-size: clamp(32px, 5vw, 52px); letter-spacing: -.04em; line-height: 1.12; margin: 14px 0 24px; }
+.pwa-page p, .pwa-page li { color: var(--muted); line-height: 1.8; }
+.pwa-action { margin-top: 26px; }
+.pwa-action button { min-height: 48px; white-space: normal; }
+.pwa-installed { color: var(--text-success) !important; font-weight: 650; }
+.pwa-instructions { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pwa-instructions article { border: 1px solid var(--line); border-radius: 14px; background: var(--white); padding: 24px; }
+.pwa-instructions article:last-child { grid-column: 1 / -1; }
+.pwa-instructions h2, .pwa-online h2 { font-size: 21px; margin-top: 0; }
+.pwa-instructions ol { padding-left: 22px; }
+.pwa-instructions li { margin-block: 12px; padding-left: 6px; }
+.pwa-online { margin-top: 28px; padding: 26px; background: var(--surface-soft); border-radius: 14px; }
+.pwa-page footer { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+.pwa-page footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--text-accent); }
+.pwa-page :focus-visible, .pwa-install-link:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .pwa-page { padding-inline: max(18px, env(safe-area-inset-left)) max(18px, env(safe-area-inset-right)); }
+  .pwa-instructions { grid-template-columns: 1fr; }
+  .pwa-instructions article, .pwa-online { padding: 20px; }
+  .pwa-action button { width: 100%; justify-content: center; }
+  .epra-centre-footer { flex-wrap: wrap; }
+}

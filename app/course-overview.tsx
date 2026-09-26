@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 import { ArrowRight, BookOpen, Check, ChevronDown, CirclePlay, Clock3, Layers3, ShieldCheck, Zap } from 'lucide-react';
 import { useCourseOrder } from './course-order';
@@ -26,7 +27,7 @@ export default function CourseOverview({ onLesson, onBooks }: { onLesson: (id: s
         <p>A guided learning workshop for electrical principles, safe installation and confident problem-solving. Follow the course from the beginning, or jump straight to what you need.</p>
         <div className="course-facts"><span><Layers3 size={17}/>{course.modules.length} modules</span><span><CirclePlay size={17}/>{rows.length} videos</span><span><Clock3 size={17}/>About {hours} hours + extra videos</span></div>
         <div className="button-row"><button className="primary-button" onClick={() => onLesson(lessons[0].id)}><CirclePlay size={19}/> Start learning <ArrowRight size={18}/></button><a className="course-outline-link" href="#course-curriculum">Explore the curriculum <ChevronDown size={17}/></a></div>
-        <small className="open-course-note">Free to explore · No account needed · Learn at your own pace</small>
+        <Link className="pwa-install-link" href="/install">Install on your phone <ArrowRight size={16}/></Link><small className="open-course-note">Free to explore · No account needed · Learn at your own pace</small>
       </div>
       <div className="course-welcome-art" aria-label="Learning route: understand, apply, verify">
         <div className="circuit-heading"><Zap size={21}/><span>THE LEARNING CIRCUIT</span><span className="circuit-live"/></div>

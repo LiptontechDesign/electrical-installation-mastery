@@ -33,7 +33,9 @@
     "test:epra-browser": "node scripts/test-epra-browser.mjs",
     "test:practice-experience": "node scripts/test-practice-experience-browser.mjs",
     "test:mobile": "node scripts/test-mobile-browser.mjs",
-    "test:mobile-account": "node scripts/test-mobile-account-browser.mjs"
+    "test:mobile-account": "node scripts/test-mobile-account-browser.mjs",
+    "test:pwa": "node scripts/test-pwa.mjs",
+    "test:pwa-browser": "node scripts/test-pwa-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

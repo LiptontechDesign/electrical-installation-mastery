@@ -7,6 +7,7 @@ Updated 23 September 2026. This index and the root README describe the current a
 - [Course ordering](course-drag-and-drop.md): personal ordering, placement rules and continuous numbering.
 - [Supplementary videos](supplementary-videos.md): personal additions, defaults, playback and persistence.
 - [EPRA practice centre](epra-practice-centre.md): source fidelity, topic practice, quizzes, mock exams and verification.
+- [Installable app](pwa.md): installation, privacy boundaries, offline recovery and verification.
 - [Theme and accessibility](theme-audit.md): current palette and verification limits.
 
 The app has Home, Learn, Books and a standalone Practice destination, plus account/settings controls. The new practice centre uses the supplied EPRA study pack. Retired lesson guides, Standards Companion, flashcards, simulations and recap interfaces remain absent.
