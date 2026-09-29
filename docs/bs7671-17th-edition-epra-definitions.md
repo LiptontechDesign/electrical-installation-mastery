@@ -4,7 +4,7 @@
 
 > **Method:** The entries below transcribe the definitions in the supplied PDF's Part 2. Source notes following definitions are omitted. PDF text extraction was checked against page images for OCR ambiguities; punctuation and typography are retained where legible. Section-limited definitions remain marked with their section numbers. Search aliases are navigation aids, not quotations from BS 7671.
 
-This file is a source-backed reference for possible future glossary search. It is not wired into the course app. [EPRA's C2/C1 written and oral assessment areas](https://www.epra.go.ke/sites/default/files/2025-06/Written%20%26%20Oral%20Interviews%20Areas%20of%20Competency.pdf) determine the groups; BS 7671 determines the wording. A term without a Part 2 definition is listed under **Terms to source separately**, rather than assigned invented wording.
+This file supplies the searchable **Practice → Definitions** tab. After editing an entry, run `npm run import:definitions` to regenerate its app data. [EPRA's C2/C1 written and oral assessment areas](https://www.epra.go.ke/sites/default/files/2025-06/Written%20%26%20Oral%20Interviews%20Areas%20of%20Competency.pdf) determine the groups; BS 7671 determines the wording. A term without a Part 2 definition is listed under **Terms to source separately**, rather than assigned invented wording.
 
 **Included definitions:** 138.
 
@@ -932,7 +932,7 @@ The following EPRA-relevant terms are not separately defined in Part 2 of this s
 - **Installation tests and measurements:** continuity, polarity, insulation resistance, prospective short-circuit current as a separately headed term, R1+R2, Ze, earth electrode resistance measurement, RCD trip time.
 - **Kenyan licensing:** EPRA C2 and C1 licence classes, permitted work scope and current Kenyan legal requirements require current EPRA/Kenyan sources, not a UK wiring-regulations definition.
 
-## Editorial checks before app integration
+## Editorial checks for the app
 
 - Preserve the printed-page and PDF-page references in search results, including the two-page earth-fault-loop definition. Keep typographic subscripts and superscripts when rendering symbols.
 - Keep aliases, source wording, and future plain-language teaching explanations as separate fields. A search match on an alias must return the source term and its actual definition.

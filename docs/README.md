@@ -7,7 +7,7 @@ Updated 29 September 2026. This index and the root README describe the current a
 - [Course ordering](course-drag-and-drop.md): personal ordering, placement rules and continuous numbering.
 - [Supplementary videos](supplementary-videos.md): personal additions, defaults, playback and persistence.
 - [EPRA practice centre](epra-practice-centre.md): source fidelity, topic practice, quizzes, mock exams and verification.
-- [BS 7671 17th-edition EPRA definitions](bs7671-17th-edition-epra-definitions.md): historical source quotations grouped for C2/C1 study and possible future glossary search; not part of the app yet.
+- [BS 7671 17th-edition EPRA definitions](bs7671-17th-edition-epra-definitions.md): historical source quotations powering the searchable Definitions tab in Practice.
 - [Installable app](pwa.md): installation, privacy boundaries, offline recovery and verification.
 - [Theme and accessibility](theme-audit.md): current palette and verification limits.
 

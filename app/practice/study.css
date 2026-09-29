@@ -75,6 +75,34 @@
 .epra-result small { display: block; color: var(--muted); font-size: 11px; margin-bottom: 8px; line-height: 1.5; }
 .epra-result strong { font-size: 15px; }
 .epra-result > svg { color: var(--text-accent); flex-shrink: 0; }
+.epra-definitions { max-width: 100%; }
+.epra-definitions-intro { display: flex; align-items: start; justify-content: space-between; gap: 22px; padding: 19px 22px; background: var(--white); border: 1px solid var(--line); border-radius: 11px; }
+.epra-definitions-intro strong { font-size: 14px; color: var(--ink); }
+.epra-definitions-intro p { margin: 6px 0 0; max-width: 650px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.epra-definitions-intro > span { flex-shrink: 0; font-size: 10px; color: var(--text-accent); border: 1px solid var(--surface-selected-border); background: var(--surface-selected); border-radius: 5px; padding: 6px 8px; }
+.epra-definitions-filter { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 12px 0 25px; }
+.epra-definitions-filter .epra-field { width: min(100%, 320px); margin: 0; }
+.epra-definitions-filter > p { margin: 0 0 7px; font-size: 11px; color: var(--muted); }
+.epra-definition-group { margin: 0 0 26px; }
+.epra-definition-group h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 9px; font-size: 15px; letter-spacing: -.2px; }
+.epra-definition-group h3 span { font-size: 10px; color: var(--muted); font-weight: 500; }
+.epra-definition-list { border: 1px solid var(--line); border-radius: 11px; background: var(--white); overflow: hidden; }
+.epra-definition-row + .epra-definition-row { border-top: 1px solid var(--line); }
+.epra-definition-trigger { display: flex; align-items: center; width: 100%; gap: 15px; padding: 14px 18px; color: var(--ink); background: transparent; border: 0; text-align: left; }
+.epra-definition-trigger:hover, .epra-definition-row.is-open .epra-definition-trigger { background: var(--surface-soft); }
+.epra-definition-trigger > span:first-child { flex: 1; min-width: 0; }
+.epra-definition-trigger strong { display: block; font-size: 13px; line-height: 1.5; font-weight: 650; }
+.epra-definition-trigger small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+.epra-definition-page { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.epra-definition-trigger > svg { color: var(--text-accent); flex-shrink: 0; transition: transform .15s; }
+.epra-definition-row.is-open .epra-definition-trigger > svg { transform: rotate(180deg); }
+.epra-definition-detail { padding: 4px 22px 19px; border-top: 1px solid var(--line); background: var(--white); }
+.epra-definition-copy { border-left: 2px solid var(--text-accent); padding: 0 0 0 16px; margin-top: 13px; }
+.epra-definition-copy .epra-prose { font-size: 14px; line-height: 1.8; }
+.epra-definition-copy .epra-prose > p { margin: 0 0 8px; }
+.epra-definition-copy .epra-prose ul { margin: 7px 0; }
+.epra-definition-source { margin: 14px 0 0 18px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.epra-definitions-caveat { margin: 25px 0 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .epra-empty { text-align: center; padding: 45px 20px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; }
 .epra-empty svg { color: var(--text-accent); }
 .epra-empty p { font-size: 13px; color: var(--muted); }
@@ -226,10 +254,18 @@
   .epra-workspace-heading h2 { font-size: 23px; }
   .epra-workspace-heading > p { font-size: 10px; line-height: 1.8; }
   .epra-toolbar { flex-direction: column; gap: 12px; }
-  .epra-tabs { width: 100%; }
-  .epra-tabs button { flex: 1; justify-content: center; padding: 11px 6px; font-size: 10px; gap: 6px; }
+  .epra-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .epra-tabs button { justify-content: center; padding: 10px 6px; font-size: 10px; gap: 6px; }
   .epra-tabs button svg { width: 14px; }
   .epra-toolbar > .epra-search { width: 100%; }
+  .epra-definitions-intro { padding: 16px; }
+  .epra-definitions-intro > span { display: none; }
+  .epra-definitions-filter { align-items: start; flex-direction: column; gap: 8px; }
+  .epra-definitions-filter .epra-field { width: 100%; }
+  .epra-definitions-filter > p { margin: 0; }
+  .epra-definition-trigger { padding: 13px 14px; gap: 10px; }
+  .epra-definition-trigger strong { font-size: 12px; }
+  .epra-definition-detail { padding: 3px 15px 17px; }
   .epra-collection-grid { grid-template-columns: 1fr; gap: 13px; }
   .epra-collection { padding: 21px; }
   .epra-collection h3 { margin-top: 18px; }
