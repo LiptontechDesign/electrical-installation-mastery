@@ -17,8 +17,13 @@ try {
   await search.fill('cpc');
   const cpc = page.getByRole('button', { name: /Circuit protective conductor \(cpc\)/ });
   await cpc.click();
-  assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /connecting exposed-conductive-parts of equipment to the main earthing terminal/);
-  assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /printed p\. 25/);
+  const cpcRegion = page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' });
+  assert.match(await cpcRegion.textContent(), /connecting exposed-conductive-parts of equipment to the main earthing terminal/);
+  assert.match(await cpcRegion.textContent(), /Official definition · BS 7671 17th Edition \(2015\)/);
+  assert.match(await cpcRegion.textContent(), /What this means/);
+  assert.match(await cpcRegion.textContent(), /CPC connects exposed-conductive-parts to the MET/);
+  assert.match(await cpcRegion.textContent(), /2026 ON-SITE GUIDE CONTEXT/);
+  assert.match(await cpcRegion.textContent(), /printed p\. 25/);
 
   await search.fill('earthing conductor');
   await page.getByRole('button', { name: /^Earthing conductor/ }).click();
@@ -41,6 +46,15 @@ try {
   assert.ok(await page.locator('.epra-definition-row').count() < 138);
   await page.getByRole('button', { name: 'Topic practice' }).click();
   assert.equal(await page.locator('.epra-collection').count(), 7);
+  const topicSearch = page.getByRole('textbox', { name: 'Search topic questions' });
+  await topicSearch.fill('RCD');
+  assert.ok(await page.locator('.epra-definition-result').count() > 0, 'Definitions are surfaced outside the Definitions tab');
+  await page.locator('.epra-definition-result').filter({ hasText: 'Residual current device (RCD)' }).first().click();
+  assert.equal(await page.getByRole('button', { name: 'Definitions', exact: true }).getAttribute('aria-pressed'), 'true');
+  assert.match(await page.getByRole('region', { name: 'Residual current device (RCD) definition' }).textContent(), /RCCB = residual-current protection/);
+
+  await page.goto(`${base}/practice?definition=definition-50`, { waitUntil: 'networkidle' });
+  assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /What this means/);
 
   await page.getByRole('button', { name: 'Definitions', exact: true }).click();
   await page.setViewportSize({ width: 390, height: 844 });
