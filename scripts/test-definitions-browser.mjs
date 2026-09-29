@@ -12,13 +12,18 @@ try {
   await page.getByRole('button', { name: 'Definitions', exact: true }).click();
   assert.equal(await page.locator('.epra-definition-row').count(), 138);
   assert.equal(await page.locator('.epra-definition-group').count(), 6);
+  assert.equal(await page.locator('.epra-definition-group[open]').count(), 0, 'Learning areas start compact');
+  await page.locator('.epra-definition-group > summary').nth(0).click();
+  await page.locator('.epra-definition-group > summary').nth(1).click();
+  assert.equal(await page.locator('.epra-definition-group[open]').count(), 1, 'Only one learning area stays open');
 
   const search = page.getByRole('textbox', { name: 'Search definitions' });
   await search.fill('cpc');
   const cpc = page.getByRole('button', { name: /Circuit protective conductor \(cpc\)/ });
   await cpc.click();
   assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /connecting exposed-conductive-parts of equipment to the main earthing terminal/);
-  assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /printed p\. 25/);
+  assert.equal(await page.locator('.epra-definition-source').count(), 0);
+  assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /CPC — circuit protective conductor/);
 
   await search.fill('earthing conductor');
   await page.getByRole('button', { name: /^Earthing conductor/ }).click();
