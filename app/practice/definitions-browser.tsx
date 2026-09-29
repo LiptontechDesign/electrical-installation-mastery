@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown, Search } from 'lucide-react';
 import definitions from './definitions.json';
 import StudyMarkdown from './study-markdown';
@@ -40,46 +40,51 @@ function displayDefinition(value: string) {
     .replace(/^\((i|ii|iii|iv|v)\) /gm, '- ($1) ');
 }
 
-function DefinitionRow({
+export function DefinitionRow({
   entry,
   open,
   onToggle,
   showCategory,
   onRequestTerm,
+  idPrefix = '',
 }: {
+  idPrefix?: string;
   entry: Definition;
   open: boolean;
   onToggle: () => void;
   showCategory: boolean;
   onRequestTerm?: (term: string, id: string) => void;
 }) {
-  const panelId = `${entry.id}-answer`;
+  const panelId = `${idPrefix}${entry.id}-answer`;
   const learning = definitionLearningNotes[entry.id];
   const guide = learning?.guide ? guideReferences[learning.guide] : null;
 
-  const terms = termsInDefinition(entry.term, [entry.definition, learning?.meaning, learning?.remember, learning?.guideDetail, guide?.summary].filter(Boolean).join(' '));
+  const terms = termsInDefinition(entry.term, [entry.definition, learning?.meaning, learning?.remember, learning?.guideDetail ?? guide?.summary].filter(Boolean).join(' '));
 
-  return <article className={`epra-definition-row ${open ? 'is-open' : ''}`} id={entry.id}>
+  return <article className={`epra-definition-row ${open ? 'is-open' : ''}`} id={`${idPrefix}${entry.id}`}>
     <button type="button" className="epra-definition-trigger" aria-expanded={open} aria-controls={panelId} onClick={onToggle}>
       <span><strong>{entry.term.replace(/, \{\d+\}$/, '')}</strong>{showCategory && <small>{entry.category}</small>}</span>
       <ChevronDown size={16} aria-hidden="true"/>
     </button>
     {open && <div className="epra-definition-detail" id={panelId} role="region" aria-label={`${entry.term} definition`}>
-      <div className="epra-definition-copy"><StudyMarkdown prefix={entry.id}>{displayDefinition(entry.definition)}</StudyMarkdown></div>
+      <div className="epra-definition-reading"><div className="epra-definition-copy"><StudyMarkdown prefix={entry.id}>{displayDefinition(entry.definition)}</StudyMarkdown></div>
 
       {learning && <section className="epra-definition-learning" aria-label="Expanded learning explanation">
 
         <div className="epra-definition-explanation"><StudyMarkdown prefix={`${entry.id}-meaning`}>{learning.meaning}</StudyMarkdown></div>
         {learning.remember && <div className="epra-definition-explanation"><StudyMarkdown prefix={`${entry.id}-remember`}>{learning.remember}</StudyMarkdown></div>}
-        {guide && <div className="epra-definition-explanation"><StudyMarkdown prefix={`${entry.id}-context`}>{[learning.guideDetail, guide.summary].filter(Boolean).join('\n\n')}</StudyMarkdown></div>}
+        {guide && <div className="epra-definition-explanation"><StudyMarkdown prefix={`${entry.id}-context`}>{learning.guideDetail ?? guide.summary}</StudyMarkdown></div>}
+      </section>}
+      </div>
+      {(terms.length > 0 || !!learning?.related?.length) && <aside className="epra-definition-support" aria-label="Terms and connections">
         {terms.length > 0 && <dl className="epra-definition-terms" aria-label="Abbreviations and symbols explained">{terms.map(item => <div key={item.label}><dt>{item.label}</dt><dd>{item.meaning}</dd></div>)}</dl>}
-        {!!learning.related?.length && <div className="epra-definition-related"><strong>Related definitions</strong><div>{learning.related.map(term => {
+        {!!learning?.related?.length && <div className="epra-definition-related"><strong>Related definitions</strong><div>{learning.related.map(term => {
           const target = definitionsByTerm.get(term);
           return target && onRequestTerm
             ? <button type="button" key={term} onClick={() => onRequestTerm(term, target.id)}>{term}</button>
             : <span key={term}>{term}</span>;
         })}</div></div>}
-      </section>}
+      </aside>}
     </div>}
   </article>;
 }
@@ -96,12 +101,6 @@ export default function DefinitionsBrowser({
   const [category, setCategory] = useState('all');
   const [openId, setOpenId] = useState<string | null>(initialOpenId ?? null);
 
-  useEffect(() => {
-    if (!initialOpenId || !definitions.some(entry => entry.id === initialOpenId)) return;
-    const frame = window.requestAnimationFrame(() => document.getElementById(initialOpenId)?.scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }));
-    return () => window.cancelAnimationFrame(frame);
-  }, [initialOpenId]);
-
   const words = searchable(query.trim()).split(/\s+/).filter(Boolean);
   const matches = definitions.filter(entry => {
     if (category !== 'all' && entry.category !== category) return false;
@@ -113,7 +112,7 @@ export default function DefinitionsBrowser({
       entry.aliases.join(' '),
       entry.definition,
       entry.category,
-      ...termsInDefinition(entry.term, [entry.definition, learning?.meaning, learning?.remember, learning?.guideDetail, guide?.summary].join(' ')).map(item => item.label),
+      ...termsInDefinition(entry.term, [entry.definition, learning?.meaning, learning?.remember, learning?.guideDetail ?? guide?.summary].join(' ')).map(item => item.label),
       learning?.meaning ?? '',
       learning?.remember ?? '',
       learning?.related?.join(' ') ?? '',

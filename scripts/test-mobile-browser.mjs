@@ -22,13 +22,13 @@ try{
  for(const [width,height] of [[320,740],[390,844],[430,932],[768,1024],[844,390]]){
   await page.setViewportSize({width,height});
   await open('home');await fit('Home '+width);
-  await reachable(button('Search video lessons'),'Search');
+  await reachable(button('Search lessons and definitions'),'Search');
   await reachable(button('Playback settings'),'Playback settings');
   await button('Playback settings').click();await button('Close settings').waitFor();
   await reachable(button('Close settings'),'Close settings');await fit('Settings');await button('Close settings').click();
-  await button('Search video lessons').click();await page.getByRole('textbox',{name:'Search video lessons'}).fill('voltage');
-  assert.ok(await page.getByRole('textbox',{name:'Search video lessons'}).evaluate(e=>parseFloat(getComputedStyle(e).fontSize)>=16));
-  await fit('Search');assert.ok(await page.locator('.search-dialog').evaluate(e=>e.getBoundingClientRect().bottom<=innerHeight+1));
+  await button('Search lessons and definitions').click();await page.getByRole('textbox',{name:'Search lessons and definitions'}).fill('voltage');
+  assert.ok(await page.getByRole('textbox',{name:'Search lessons and definitions'}).evaluate(e=>parseFloat(getComputedStyle(e).fontSize)>=16));
+  await fit('Search');assert.ok(await page.locator('.site-search-dialog').evaluate(e=>e.getBoundingClientRect().bottom<=innerHeight+1));
   await button('Close search').click();
   await button('Sign in').click();await button('Close sign in').waitFor();await fit('Sign-in invitation');await button('Close sign in').click();
   await open('learn');await fit('Learn '+width);

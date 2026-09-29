@@ -75,35 +75,6 @@
 .epra-result small { display: block; color: var(--muted); font-size: 11px; margin-bottom: 8px; line-height: 1.5; }
 .epra-result strong { font-size: 15px; }
 .epra-result > svg { color: var(--text-accent); flex-shrink: 0; }
-.epra-definitions { max-width: 100%; }
-.epra-definitions-filter { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 12px 0 25px; }
-.epra-definitions-filter .epra-field { width: min(100%, 320px); margin: 0; }
-.epra-definitions-filter > p { margin: 0 0 7px; font-size: 11px; color: var(--muted); }
-.epra-definition-group { margin: 0 0 26px; }
-.epra-definition-list { border: 1px solid var(--line); border-radius: 11px; background: var(--white); overflow: hidden; }
-.epra-definition-row + .epra-definition-row { border-top: 1px solid var(--line); }
-.epra-definition-trigger { display: flex; align-items: center; width: 100%; gap: 15px; padding: 14px 18px; color: var(--ink); background: transparent; border: 0; text-align: left; }
-.epra-definition-trigger:hover, .epra-definition-row.is-open .epra-definition-trigger { background: var(--surface-soft); }
-.epra-definition-trigger > span:first-child { flex: 1; min-width: 0; }
-.epra-definition-trigger strong { display: block; font-size: 13px; line-height: 1.5; font-weight: 650; }
-.epra-definition-trigger small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
-.epra-definition-trigger > svg { color: var(--text-accent); flex-shrink: 0; transition: transform .15s; }
-.epra-definition-row.is-open .epra-definition-trigger > svg { transform: rotate(180deg); }
-.epra-definition-detail { padding: 4px 22px 19px; border-top: 1px solid var(--line); background: var(--white); }
-.epra-definition-copy { border-left: 2px solid var(--text-accent); padding: 0 0 0 16px; margin-top: 13px; }
-.epra-definition-copy .epra-prose { font-size: 14px; line-height: 1.8; }
-.epra-definition-copy .epra-prose > p { margin: 0 0 8px; }
-.epra-definition-copy .epra-prose ul { margin: 7px 0; }
-.epra-definition-explanation { margin: 10px 0 0; }
-.epra-definition-explanation .epra-prose { font-size: 13px; line-height: 1.75; }
-.epra-definition-explanation .epra-prose > p { margin: 0 0 10px; }
-.epra-definition-related { margin-top: 15px; }
-.epra-definition-related > strong { display: block; margin-bottom: 7px; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .04em; }
-.epra-definition-related > div { display: flex; flex-wrap: wrap; gap: 6px; }
-.epra-definition-related button, .epra-definition-related span { border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--text-accent); padding: 5px 9px; font: inherit; font-size: 10px; line-height: 1.25; }
-.epra-definition-related button { cursor: pointer; }
-.epra-definition-related button:hover { border-color: var(--surface-selected-border); background: var(--surface-selected); }
-.epra-definition-result p { margin: 5px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
 .epra-empty { text-align: center; padding: 45px 20px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; }
 .epra-empty svg { color: var(--text-accent); }
 .epra-empty p { font-size: 13px; color: var(--muted); }
@@ -377,18 +348,3 @@
   .epra-dock-inner > .epra-button { font-size: 11px !important; }
   .epra-sessions .epra-button { width: 100%; justify-content: space-between; text-align: left; }
 }
-
-.epra-definition-group > summary { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 9px; background: var(--white); cursor: pointer; list-style: none; font-size: 14px; font-weight: 650; }
-.epra-definition-group > summary::-webkit-details-marker { display: none; }
-.epra-definition-group > summary span { flex: 1; }
-.epra-definition-group > summary small { color: var(--muted); font-size: 10px; font-weight: 400; white-space: nowrap; }
-.epra-definition-group > summary svg { flex-shrink: 0; color: var(--text-accent); }
-.epra-definition-group[open] > summary { margin-bottom: 8px; }
-.epra-definition-group[open] > summary svg { transform: rotate(180deg); }
-.epra-definition-copy { max-width: 75ch; }
-
-.epra-definition-learning { max-width: 75ch; font-size: 13px; line-height: 1.8; color: var(--ink); margin: 16px 0 0; }
-.epra-definition-terms { max-width: 75ch; border-top: 1px solid var(--line); margin: 18px 0 0; padding-top: 4px; }
-.epra-definition-terms > div { margin-top: 12px; }
-.epra-definition-terms dt { font-size: 12px; font-weight: 650; line-height: 1.6; }
-.epra-definition-terms dd { margin: 3px 0 0; font-size: 12px; line-height: 1.8; color: var(--muted); }

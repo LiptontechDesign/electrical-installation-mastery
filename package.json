@@ -31,6 +31,7 @@
     "import:epra": "node scripts/import-epra.mjs",
     "import:definitions": "node scripts/import-definitions.mjs",
     "test:definitions": "node scripts/import-definitions.mjs --check",
+    "test:site-search-browser": "node scripts/test-site-search-browser.mjs",
     "test:definitions-browser": "node scripts/test-definitions-browser.mjs",
     "test:epra": "node scripts/test-epra.mjs",
     "test:epra-browser": "node scripts/test-epra-browser.mjs",

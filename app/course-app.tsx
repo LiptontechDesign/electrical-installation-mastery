@@ -10,7 +10,7 @@ import {
   Check, CheckCircle2, ClipboardList, ChevronDown, ChevronRight, Circle,
   Download,
   Home, Info, LockKeyhole, Menu,
-  PlayCircle, RotateCcw, Search, Settings, SkipForward,
+  PlayCircle, RotateCcw, Settings, SkipForward,
   Upload, X, Zap,
 } from 'lucide-react';
 import course, { isRequiredLesson, lessonStudyRole } from './course-curriculum';
@@ -32,8 +32,7 @@ import { AccountControl, useCourseAccount } from './course-account';
 import CourseOverview from './course-overview';
 import LearningHome from './learning-home';
 import type { CourseUser } from './server/auth';
-import definitions from './practice/definitions.json';
-import { definitionLearningNotes, guideReferences } from './practice/definition-learning-notes';
+import SiteSearch from './site-search';
 
 const BookWorkspace = dynamic(() => import('./book-reader').then(module => module.BookWorkspace), { ssr: false });
 
@@ -129,8 +128,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const [organizing, setOrganizing] = useState(false);
   const [lessonFilter, setLessonFilter] = useState<LessonFilter>('all');
   const [collapseCompleted, setCollapseCompleted] = useState(true);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const [toast, setToast] = useState('');
@@ -169,12 +166,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const [autoPlayLessonId, setAutoPlayLessonId] = useState<string | null>(null);
   const [autoNextState, setAutoNextState] = useState<AutoNextState>(null);
   const importInputRef = useRef<HTMLInputElement>(null);
-  const searchInputRef = useRef<HTMLInputElement>(null);
-  const searchDialogRef = useRef<HTMLElement>(null);
   const settingsDialogRef = useRef<HTMLElement>(null);
   const courseDrawerRef = useRef<HTMLElement>(null);
   const activeLessonRowRef = useRef<HTMLButtonElement>(null);
-  useDialogFocus(searchDialogRef, searchOpen);
   useDialogFocus(settingsDialogRef, settingsOpen);
   useDialogFocus(courseDrawerRef, moduleDrawerOpen);
   const playerHostRef = useRef<HTMLDivElement>(null);
@@ -450,16 +444,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (document.querySelector('dialog[open]')) return;
-      const element = event.target as HTMLElement | null;
-      const typing = ['INPUT', 'TEXTAREA', 'SELECT'].includes(element?.tagName ?? '');
-      if (event.key === '/' && !typing) {
-        event.preventDefault();
-        setSearchOpen(true);
-        window.setTimeout(() => searchInputRef.current?.focus(), 0);
-      }
       if (event.key === 'Escape') {
         if (event.defaultPrevented || document.querySelector('.course-drag-shell[data-moving="true"]')) return;
-        setSearchOpen(false);
         setSettingsOpen(false);
         setConfirmReset(false);
         setModuleDrawerOpen(false);
@@ -599,8 +585,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     };
   }, [allCourseRows, supplementaryId, activeLesson.id]);
 
-  const searchResults = useMemo(() => {
-    const query = searchQuery.trim().toLocaleLowerCase();
+  const searchLessons = useMemo(() => {
     const results = [
       ...allLessons.map((lesson) => {
         const lessonPosition=lessonLocation.get(lesson.id)!;
@@ -609,27 +594,14 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           id: lesson.id,
           parentId: '',
           title: lesson.title,
-          subtitle: `M${pad(lessonPosition.module.number)} · L${pad(courseRowsById.get(lesson.id)?.displayNumber ?? lesson.number)} · ${lesson.topic} · ${lesson.instructor}`,
+          subtitle: `Module ${pad(lessonPosition.module.number)} · ${lessonPosition.module.title} · Lesson ${pad(courseRowsById.get(lesson.id)?.displayNumber ?? lesson.number)}`,
           searchable: `${lesson.title} ${lesson.topic} ${lesson.instructor} ${lesson.layer}`,
         };
       }),
       ...(supplementary?.videos.filter(video => !video.archived && courseRowsById.has(video.id)).map(video => ({ kind: 'Supplementary video' as const, id: video.id, parentId: '', title: video.title, subtitle: `L${pad(courseRowsById.get(video.id)!.displayNumber)} · ${course.modules.find(m => m.id === video.moduleId)?.title} · ${video.instructor}`, searchable: `${video.title} ${video.instructor}` })) ?? []),
-      ...definitions.map(entry => {
-        const learning = definitionLearningNotes[entry.id];
-        const guide = learning?.guide ? guideReferences[learning.guide] : null;
-        return {
-          kind: 'Definition' as const,
-          id: entry.id,
-          parentId: '',
-          title: entry.term,
-          subtitle: `${entry.category} · BS 7671 definition + learning explanation`,
-          searchable: [entry.term, entry.aliases.join(' '), entry.definition, entry.category, learning?.meaning ?? '', learning?.remember ?? '', learning?.related?.join(' ') ?? '', learning?.guideDetail ?? '', guide?.label ?? '', guide?.summary ?? ''].join(' '),
-        };
-      }),
     ];
-    return results.filter((result) => !query || result.searchable.toLocaleLowerCase().includes(query))
-      .sort((a,b) => Number(b.title.toLowerCase() === query) - Number(a.title.toLowerCase() === query)).slice(0, 36);
-  }, [searchQuery, allLessons, lessonLocation, courseRowsById, supplementary?.videos, course.modules]);
+    return results;
+  }, [allLessons, lessonLocation, courseRowsById, supplementary?.videos, course.modules]);
 
   const cancelAutoNext = (announce = false) => {
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
@@ -685,7 +657,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     setMapPath(nextLocation.module.path);
 
     setView('learn');
-    setSearchOpen(false);
     setModuleDrawerOpen(false);
     window.history.replaceState(null, '', `#learn/${lessonId}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -776,15 +747,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     setToast(isSaved ? 'Bookmark removed.' : 'Lesson saved to your notebook.');
   };
 
-  const chooseSearchResult = (result: (typeof searchResults)[number]) => {
-    if (result.kind === 'Definition') {
-      window.location.href = `/practice?definition=${encodeURIComponent(result.id)}`;
-      return;
-    }
-    const row = courseRowsById.get(result.id);
-    if (row) { selectCourseRow(row); setSearchOpen(false); }
-  };
-
   const exportProgress = () => {
     const payload = JSON.stringify({ app: 'Electrical Installation Mastery', exportedAt: new Date().toISOString(), progress: learner }, null, 2);
     const url = URL.createObjectURL(new Blob([payload], { type: 'application/json' }));
@@ -848,7 +810,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           <button className="studio-brand" type="button" onClick={() => navigate('home')} aria-label="Electrical Installation Mastery home"><span className="studio-monogram"><Zap size={22}/></span><span><strong>Electrical</strong><small>INSTALLATION MASTERY</small></span></button>
           <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? user ? 'My learning' : 'The course' : item.label}</button>)}<Link href="/practice" className="studio-practice-link">Practice</Link></nav>
           <div className="header-actions">
-            <button className="studio-search" type="button" aria-label="Search video lessons" onClick={() => { setSearchOpen(true); window.setTimeout(() => searchInputRef.current?.focus(), 0); }}><Search size={20}/><span>Find a lesson</span><kbd>/</kbd></button>
+            <SiteSearch lessons={searchLessons} onLesson={id => { const row = courseRowsById.get(id); if (row) selectCourseRow(row); }}/>
+
             {user ? <button className="course-progress-chip" onClick={() => { setShowOverview(false); navigate('home'); }} aria-label={`${coursePercent}% of the required course path complete`}><span className="progress-chip-ring" style={{ '--course-progress': `${coursePercent * 3.6}deg` } as CSSProperties}/><span><strong>{coursePercent}%</strong><small>Course progress</small></span></button> : <button className="studio-settings" onClick={() => setSettingsOpen(true)} aria-label="Playback settings"><Settings size={19}/></button>}
             <AccountControl onSettings={() => setSettingsOpen(true)}/>
           </div>
@@ -954,16 +917,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}<Link href="/practice" className="mobile-practice-link"><ClipboardList size={20}/><span>Practice</span></Link></nav>
       </div>
 
-      {searchOpen && (
-        <div className="modal-layer" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSearchOpen(false); }}>
-          <section ref={searchDialogRef} className="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
-            <div className="dialog-title"><div><span className="eyebrow neutral">Global search</span><h2 id="search-title">Search the course</h2></div><button type="button" onClick={() => setSearchOpen(false)} aria-label="Close search"><X size={22} /></button></div>
-            <label className="search-field"><Search size={21} /><input ref={searchInputRef} aria-label="Search the course" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search lessons, definitions, topics or instructors…" autoComplete="off" /><kbd>esc</kbd></label>
-            <div className="search-results">{searchResults.map((result) => <button type="button" key={`${result.kind}-${result.id}`} onClick={() => chooseSearchResult(result)}><span className="result-icon">{result.kind === 'Video lesson' ? <PlayCircle size={19} /> : <BookOpen size={19} />}</span><span><small>{result.kind}</small><strong>{result.title}</strong><p>{result.subtitle}</p></span><ChevronRight size={18} /></button>)}</div>
-            {!searchResults.length && <div className="empty-state"><Search size={25} /><h3>No results yet</h3><p>Try a shorter topic or search one word.</p></div>}
-          </section>
-        </div>
-      )}
       {settingsOpen && (
         <div className="modal-layer align-right" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
           <section ref={settingsDialogRef} className="settings-drawer" role="dialog" aria-modal="true" aria-labelledby="settings-title">

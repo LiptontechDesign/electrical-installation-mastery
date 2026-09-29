@@ -1,9 +1,10 @@
+import { SearchPageHeader } from '../site-search';
 import Link from 'next/link';
 
 export const metadata = { title: 'Privacy · Electrical Installation Mastery' };
 
 export default function PrivacyPage() {
-  return <main className="policy-page">
+  return <><SearchPageHeader/><main className="policy-page">
     <article>
       <Link className="policy-back" href="/">← Electrical Installation Mastery</Link>
       <span className="eyebrow">Account policy</span>
@@ -37,5 +38,5 @@ export default function PrivacyPage() {
       <h2>Contact</h2>
       <p>Questions or privacy requests can be sent to <a href="mailto:liptontechdesign@gmail.com">liptontechdesign@gmail.com</a>.</p>
     </article>
-  </main>;
+  </main></>;
 }

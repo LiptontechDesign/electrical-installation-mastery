@@ -284,11 +284,11 @@ export const definitionLearningNotes: Record<string, DefinitionLearningNote> = {
     guide: 'earthing'
   },
   'definition-50': {
-    meaning: 'The CPC provides the protective connection from exposed-conductive-parts of equipment back to the main earthing terminal. During an earth fault it forms an essential part of the fault-current path used by the protective system.',
-    remember: 'CPC connects exposed-conductive-parts to the MET. The earthing conductor connects the MET to the means of earthing. A bonding conductor has a different job again.',
+    meaning: 'During an earth fault, the circuit protective conductor forms part of the path that carries fault current back towards the source. This enables the protective system to operate.',
+    remember: 'Connection path: equipment’s exposed conductive part → circuit protective conductor → main earthing terminal → earthing conductor → means of earthing.',
     related: ['Protective conductor (PE)', 'Earthing conductor', 'Main earthing terminal', 'Exposed-conductive-part', 'Earth fault loop impedance'],
     guide: 'earthing',
-    guideDetail: 'The CPC is distinct from earthing and bonding conductors. Continuity testing checks its connection; R1 + R2 is the combined resistance of the circuit line conductor and circuit protective conductor.'
+    guideDetail: 'Continuity testing checks that the protective path is electrically continuous. R1 + R2 is the combined resistance of the circuit line conductor and circuit protective conductor.\n\nMain protective bonding conductors connect relevant extraneous conductive parts to the main earthing terminal; supplementary bonding connects relevant conductive parts locally.'
   },
   'definition-51': {
     meaning: 'Class I equipment has basic insulation and also provides for exposed conductive parts to be connected to the installation protective conductor. Its fault protection therefore depends on that protective connection being effective.',
@@ -574,7 +574,7 @@ export const definitionLearningNotes: Record<string, DefinitionLearningNote> = {
     remember: 'RCCB = residual-current protection without integral overload/short-circuit protection. RCBO = residual-current protection plus integral overcurrent protection.',
     related: ['Residual current', 'Residual operating current', 'Residual current operated circuit-breaker with integral overcurrent protection (RCBO)', 'Residual current operated circuit-breaker without integral overcurrent protection (RCCB)'],
     guide: 'rccds',
-    guideDetail: 'RCD selection also considers the connected load, fault-protection function, rated current, residual-current behaviour, directionality, markings and ambient temperature.'
+    guideDetail: 'RCD selection considers the device type, connected load, protective function, rated current, residual-current behaviour, directionality, markings, ambient temperature and coordination with other devices.'
   },
   'definition-112': {
     meaning: 'An RCBO combines residual-current operation with integral protection against overload and/or short-circuit. It can therefore perform functions that would otherwise require an RCD plus a separate overcurrent protective device.',
