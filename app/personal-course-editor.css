@@ -115,3 +115,23 @@
   .personal-course-notice { right: 16px; bottom: 80px; }
 }
 @media (prefers-reduced-motion: no-preference) { .editor-recently-moved { transition: background-color .18s ease; } }
+
+/* Keep the title's full width; only metadata makes room for the action target. */
+.accordion-lessons .course-draggable-row > button.video-actions-button {
+  position: absolute; right: 5px; bottom: 7px; z-index: 1;
+}
+.signed-in-course .accordion-lessons .course-draggable-row > button:not(.course-drag-handle):not(.video-actions-button) > span > small {
+  padding-right: 35px;
+}
+.signed-in-course .accordion-lessons .course-draggable-row.supplementary .lesson-row-progress { min-height: 34px; }
+.editor-location-caption { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 5px; }
+.editor-location-details { display: grid; gap: 3px; line-height: 1.45; font-size: 12px; overflow-wrap: anywhere; }
+.editor-location-details > span:first-child { color: var(--muted); font-size: 11px; }
+.editor-location-details > strong { font-size: 12px; font-weight: 650; }
+.editor-source-location { padding-top: 7px; }
+.editor-source-location .editor-location-details { font-size: 11px; }
+.editor-source-location .editor-location-details > strong { font-size: 11px; font-weight: 500; }
+@media (pointer: coarse), (max-width: 680px) {
+  .signed-in-course .accordion-lessons .course-draggable-row > button:not(.course-drag-handle):not(.video-actions-button) > span > small { padding-right: 45px; }
+  .signed-in-course .accordion-lessons .course-draggable-row.supplementary .lesson-row-progress { min-height: 44px; }
+}

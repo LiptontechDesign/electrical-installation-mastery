@@ -43,3 +43,9 @@ Both the Next.js production build and the vinext/Vite build passed. The Vite App
 The two build tools generate different `.next/types/routes.d.ts` shapes. If running standalone TypeScript after the Vite build, run `npx next typegen` first. This is generated tooling output, not application state.
 
 The browser suites use a local Next server with `AUTH_SECRET=local-preview-only-0000000000000000000000`, `AUTH_GOOGLE_ID=local-fixture` and `AUTH_GOOGLE_SECRET=local-fixture`. All storage and player responses are intercepted by the fixtures. Never use those test credentials in production. Live account sign-in, actual Postgres persistence and real YouTube embedding remain deployment integration checks. No live account data was changed or application deployed by this implementation.
+
+### Compact rows and clear locations
+
+Video menus use a small vertical-dot icon beside the lower metadata, preserving the full title width and a 44px touch target. Add/Move/Restore show explicit pathway, numbered module and numbered section labels; destination search, module options and saved messages use the same naming. Current location is separate from the destination.
+
+Design rationale: [NN/g contextual-menu guidance](https://www.nngroup.com/articles/contextual-menus-guidelines/) supports proximity and relevant secondary actions; [W3C target-size guidance](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum) supports maintaining usable targets while keeping icons visually restrained. Placement was chosen for this course layout rather than treated as a universal best pattern. Verified desktop/mobile workflows, keyboard/drag interaction, theme contrast, lint, types and the Next production build.

@@ -105,7 +105,7 @@ export function personalCourseSnapshot(state: PersonalCourse) {
   const label = (sectionId: string) => {
     const section = sectionById.get(sectionId)!;
     const courseModule = catalog.modules.find(m => m.id === section.moduleId)!;
-    return `${courseModule.path === 'Professional' ? 'Advanced' : courseModule.path} · ${courseModule.title} · ${section.title}`;
+    return `${courseModule.path === 'Professional' ? 'Advanced' : courseModule.path} · Module ${String(courseModule.number).padStart(2, '0')} — ${courseModule.title} · Section ${String(section.number).padStart(2, '0')} — ${section.title}`;
   };
   return { ...resolved, order, rows, allRows, byId, videos, label };
 }

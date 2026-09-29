@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Archive, ArrowRightLeft, MoreHorizontal, Pencil, Plus, Undo2 } from 'lucide-react';
+import { Archive, ArrowRightLeft, MoreHorizontal, MoreVertical, Pencil, Plus, Undo2 } from 'lucide-react';
 import { useCourseOrder } from './course-order';
 import { useCourseAccount } from './course-account';
 import { savedPlacement } from './personal-course-model';
@@ -41,7 +41,7 @@ export function VideoActions({ id }: { id: string }) {
     setOpen(true);
   }
   return <>
-    <button ref={trigger} type="button" className="video-actions-button" data-video-actions={id} aria-label={`Actions for ${title}`} aria-haspopup="menu" aria-controls={open ? menuId : undefined} aria-expanded={open} disabled={editor.busy} onClick={event => { event.stopPropagation(); show(); }}><MoreHorizontal size={17}/></button>
+    <button ref={trigger} type="button" className="video-actions-button" data-video-actions={id} aria-label={`Actions for ${title}`} aria-haspopup="menu" aria-controls={open ? menuId : undefined} aria-expanded={open} disabled={editor.busy} onClick={event => { event.stopPropagation(); show(); }}><MoreVertical size={17}/></button>
     {open && createPortal(<div ref={menu} id={menuId} role="menu" aria-label={`Actions for ${title}`} className="course-action-menu" style={position}
       onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) close(false); }}
       onKeyDown={event => {
