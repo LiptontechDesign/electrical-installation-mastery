@@ -1,126 +1,15 @@
-import course from '../../course-curriculum';
-import { courseForOrder, relocateSupportingVideos } from '../../course-order-model';
-import { readCourseOrder } from '../../server/course-order-store';
 import { requireCourseUser } from '../../server/auth';
-import { readUserDocument, writeUserDocument } from '../../server/database';
-import { crossPathSupplementaryVideoIds, withSupplementaryDefaults } from '../../supplementary-defaults';
-import { limitedJson, sameOrigin, privateHeaders } from '../../server/reader-auth';
-import { confirmationPhrase, supplementaryPlacementCreatesCycle, youtubeId, type SupplementaryAction, type SupplementaryState, type SupplementaryVideo } from '../../supplementary-model';
-
+import { readPersonalCourse } from '../../server/personal-course-store';
+import { personalCourseSnapshot } from '../../personal-course-model';
+import { privateHeaders, sameOrigin } from '../../server/reader-auth';
 export const runtime = 'nodejs';
-const coreVideos = new Set(course.modules.flatMap(m => m.lessons.map(l => youtubeId(l.url))));
-
-type ReadResult = {
-  state: SupplementaryState;
-  promoted: SupplementaryVideo[];
-};
-
-async function read(userId: string): Promise<ReadResult> {
-  const result = await readUserDocument<SupplementaryState>(userId, 'supplementary');
-  if (!result) return { state: withSupplementaryDefaults({ version: 1, revision: 0, videos: [] }), promoted: [] };
-  const stored = result.payload;
-  if (stored.version !== 1 || !Array.isArray(stored.videos) || !Number.isSafeInteger(stored.revision)) throw new Error('Invalid storage');
-
-  return {
-    state: withSupplementaryDefaults(stored),
-    promoted: stored.videos.filter(v => coreVideos.has(v.videoId) && !crossPathSupplementaryVideoIds.has(v.videoId)),
-  };
-}
-
-const reply = (body: unknown, status = 200) => Response.json(body, { status, headers: privateHeaders });
-
-function safeError(error: unknown) {
-  return error instanceof Error ? { name: error.name, message: error.message } : { name: 'UnknownError', message: String(error) };
-}
-
 export async function GET() {
-  try { const user = await requireCourseUser(); return reply((await read(user.id)).state); }
-  catch (error) {
-    console.error('Supplementary catalogue read failed', safeError(error));
-    const unauthenticated = error instanceof Error && error.message === 'UNAUTHENTICATED';
-    return reply({ error: unauthenticated ? 'Sign in to open your videos.' : 'Your videos could not be loaded. Please retry; existing course lessons are unaffected.' }, unauthenticated ? 401 : 503);
-  }
+  try { const user = await requireCourseUser(); const { state } = await readPersonalCourse(user.id); return Response.json({ version: 1, revision: state.revision, videos: personalCourseSnapshot(state).videos }, { headers: privateHeaders }); }
+  catch (error) { return Response.json({ error: 'Your videos are unavailable.' }, { status: error instanceof Error && error.message === 'UNAUTHENTICATED' ? 401 : 503, headers: privateHeaders }); }
 }
-
 export async function POST(request: Request) {
-  if (!sameOrigin(request)) return reply({ error: 'Request not allowed.' }, 403);
-
-  let body: Record<string, unknown>;
-  try {
-    const value = await limitedJson(request);
-    if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error();
-    body = value as Record<string, unknown>;
-  } catch { return reply({ error: 'Invalid request.' }, 400); }
-
-  const action = body.action as SupplementaryAction;
-  if (!['add', 'edit', 'archive', 'restore'].includes(action) || body.confirmation !== confirmationPhrase(action)) {
-    return reply({ error: 'Type the confirmation phrase exactly.' }, 400);
-  }
-
-  try {
-    const user = await requireCourseUser();
-    const { state: storedState, promoted } = await read(user.id);
-    const { course: currentCourse } = courseForOrder(await readCourseOrder(user.id));
-    const state = { ...storedState, videos: relocateSupportingVideos(storedState.videos, currentCourse) };
-    const existing = state.videos.find(v => v.id === body.id);
-    if (action !== 'add' && !existing) return reply({ error: 'Video not found. Refresh your video list and try again.' }, 404);
-
-    let video: SupplementaryVideo;
-    if (action === 'add' || action === 'edit') {
-      const videoId = typeof body.url === 'string' ? youtubeId(body.url) : null;
-      const title = typeof body.title === 'string' ? body.title.trim() : '';
-      const instructor = typeof body.instructor === 'string' ? body.instructor.trim() : '';
-      const courseModule = currentCourse.modules.find(m => m.id === body.moduleId);
-      const anchorId = typeof body.anchorId === 'string' ? body.anchorId : '';
-      const lessonAnchor = courseModule?.lessons.some(lesson => lesson.id === anchorId);
-      const supplementaryAnchor = state.videos.find(candidate =>
-        candidate.id === anchorId &&
-        candidate.id !== existing?.id &&
-        candidate.moduleId === courseModule?.id &&
-        (!candidate.archived || existing?.anchorId === candidate.id)
-      );
-
-      if (!videoId || !title || title.length > 240 || instructor.length > 160 || !courseModule || (!lessonAnchor && !supplementaryAnchor) || !['before', 'after'].includes(String(body.position))) {
-        return reply({ error: 'Check the YouTube link, title and placement.' }, 400);
-      }
-      if (supplementaryPlacementCreatesCycle(state.videos, existing?.id, anchorId)) {
-        return reply({ error: 'Choose a different placement. A video cannot be placed inside its own sequence.' }, 400);
-      }
-      if ((coreVideos.has(videoId) && !(crossPathSupplementaryVideoIds.has(videoId) && courseModule.path === 'C2')) || state.videos.some(v => v.videoId === videoId && v.id !== existing?.id)) {
-        return reply({ error: 'This video is already in the course or archive. Move or restore its existing entry instead.' }, 409);
-      }
-      if (action === 'add' && state.videos.length >= 500) {
-        return reply({ error: 'Your video library has reached its 500-video limit.' }, 400);
-      }
-
-      video = {
-        id: existing?.id ?? crypto.randomUUID(),
-        videoId,
-        title,
-        instructor,
-        moduleId: courseModule.id,
-        anchorId,
-        position: body.position as 'before' | 'after',
-        archived: existing?.archived ?? false,
-        placementRevision: 1,
-        updatedAt: new Date().toISOString(),
-      };
-    } else {
-      video = { ...existing!, archived: action === 'archive', updatedAt: new Date().toISOString() };
-    }
-
-    const next: SupplementaryState = {
-      version: 1,
-      revision: state.revision + 1,
-      videos: existing ? state.videos.map(v => v.id === video.id ? video : v) : [...state.videos, video],
-    };
-
-    await writeUserDocument(user.id, 'supplementary', { ...next, videos: [...next.videos, ...promoted] });
-
-    return reply(next);
-  } catch (error) {
-    console.error('Supplementary catalogue save failed', { action, ...safeError(error) });
-    const unauthenticated = error instanceof Error && error.message === 'UNAUTHENTICATED';
-    return reply({ error: unauthenticated ? 'Sign in to save your videos.' : 'Changes were not saved because your private storage is unavailable. Please retry shortly; your form has been kept.' }, unauthenticated ? 401 : 503);
-  }
+  if (!sameOrigin(request)) return Response.json({ error: 'Request not allowed.' }, { status: 403, headers: privateHeaders });
+  try { await requireCourseUser(); }
+  catch { return Response.json({ error: 'Sign in first.' }, { status: 401, headers: privateHeaders }); }
+  return Response.json({ error: 'The course editor has been updated. Reload the page to make this change.' }, { status: 409, headers: privateHeaders });
 }

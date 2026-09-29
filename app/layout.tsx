@@ -12,6 +12,7 @@ import './course-studio.css';
 import './course-progress.css';
 import './mobile-experience.css';
 import './pwa.css';
+import './personal-course-editor.css';
 import { PwaProvider } from './pwa-support';
 import AccessibleTooltips from './accessible-tooltips';
 

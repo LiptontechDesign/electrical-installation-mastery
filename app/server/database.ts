@@ -4,6 +4,7 @@ import { neon } from '@neondatabase/serverless';
 export type UserDocumentType =
   | 'learner-state'
   | 'course-order'
+  | 'personal-course'
   | 'supplementary'
   | 'supplementary-progress'
   | 'reader-state';
@@ -25,6 +26,7 @@ export type AccountProfile = {
 const allowedDocumentTypes = new Set<UserDocumentType>([
   'learner-state',
   'course-order',
+  'personal-course',
   'supplementary',
   'supplementary-progress',
   'reader-state',
@@ -136,6 +138,27 @@ export async function deleteAccountData(userId: string) {
   await ensureSchema();
   const query = sql();
   await query`DELETE FROM course_users WHERE id = ${userId}`;
+}
+
+// Placement and supplementary metadata are committed together. Both the first
+// migration write and later revisions have atomic conflict protection.
+export async function compareAndSwapPersonalCourse<T>(userId: string, expectedRevision: number, payload: T): Promise<StoredDocument<T> | null> {
+  await ensureSchema();
+  const query = sql();
+  const encoded = JSON.stringify(payload);
+  if (encoded.length > 1_000_000) throw new Error('DOCUMENT_TOO_LARGE');
+  const rows = expectedRevision === 0 ? await query`
+    INSERT INTO user_documents (user_id, document_type, payload)
+    VALUES (${userId}, 'personal-course', ${encoded}::jsonb)
+    ON CONFLICT (user_id, document_type) DO NOTHING
+    RETURNING payload, revision::int AS revision, updated_at::text AS "updatedAt"
+  ` : await query`
+    UPDATE user_documents
+    SET payload = ${encoded}::jsonb, revision = revision + 1, updated_at = NOW()
+    WHERE user_id = ${userId} AND document_type = 'personal-course' AND revision = ${expectedRevision}
+    RETURNING payload, revision::int AS revision, updated_at::text AS "updatedAt"
+  `;
+  return rows[0] as StoredDocument<T> | undefined ?? null;
 }
 
 export async function databaseReady() {

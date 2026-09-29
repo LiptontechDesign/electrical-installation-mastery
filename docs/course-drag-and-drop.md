@@ -1,29 +1,45 @@
 # Personal course ordering
 
-Signed-in learners can arrange their own course map. A change belongs to the authenticated account and does not change anyone else's course. Guests use the published default arrangement.
+Signed-in learners can arrange their own course map. Changes belong to the authenticated account; guests use the published arrangement without tracking.
 
 ## Interaction
 
-Drag handles support mouse, touch and keyboard through dnd-kit. A preview describes the proposed destination; the confirmation dialog opens with focus on Cancel. Only confirmation persists a move. Precision move controls remain available. Cancelling does not save anything.
+A compact **Add video** control is always available in the course map. Every video has a **More actions** menu with **Move to…** and **Add video after**. Supplementary entries also offer **Edit details** and **Archive**. Section add controls work even when a section is empty.
 
-The map supports section/module targets, deliberate pathway hover, edge auto-scroll and reduced-motion preferences. Touch activation uses a hold gesture to avoid confusing normal scrolling with dragging.
+**Move to…** opens a searchable destination picker with pathway/module browsing and exact insertion positions. The preview shows the resulting lesson numbers. Videos move independently by default. Where a legacy supporting sequence exists, an explicit checkbox lists the videos that can move together.
+
+**Organise** reveals drag handles and bulk watched controls. Mouse, touch hold, and keyboard dragging share the same placement model. Dropping saves once and offers **Undo**; Escape cancels without saving. The precise move dialog is also usable entirely by keyboard or touch without dragging. A saved move highlights its destination and keeps the current video selected.
+
+Undo is available from the latest-change message and course menu during the current session. It reverses the affected items while preserving unrelated edits. If the same video has changed again, the older change cannot be undone over that newer edit. Undoing an addition archives it, preserving its notes and progress.
 
 ## Placement and numbering
 
-Core moves use lessonId, sectionId and beforeId. A video and its attached supporting sequence move together. Supplementary moves use moduleId, anchorId and before/after placement. Descendant/self cycles are excluded, and previews use the same ordering model as rendering.
+Core and supplementary videos share explicit section membership and a continuous L1, L2, L3 sequence within each module. Any video can move between sections, modules and pathways, including empty destinations. Display numbers are derived from the visible order; archived entries are excluded. Stable lesson and YouTube IDs preserve watched records, notes, bookmarks and playback positions.
 
-Core and supplementary videos share one continuous L1, L2, L3 sequence within each module. Display numbers are calculated from the current visible order, not stored as permanent identities. Watched records and notes use stable IDs and survive moves.
+The map, search, module counts, Previous/Next and automatic advancement use the same mixed sequence. Core completion remains separate from optional and supplementary completion.
 
-Empty sections accept core videos; supplementary videos require an existing anchor. Archived supplementary videos do not appear in the visible numbering.
+## Persistence and migration
 
-## Persistence and implementation
+`/api/personal-course` requires authentication, same-origin writes and validated operations. A single version-2 `personal-course` document contains both catalogue and placement, keyed by account ID. Postgres compare-and-swap writes atomically reject stale revisions. An operation receipt makes retries idempotent, including a disconnected response after a successful save. Conflict responses load the latest arrangement for review; failed forms keep their details.
 
-The course-order and supplementary endpoints require a signed-in account, validate same-origin requests and store records by user ID in Postgres. Course-order requests include a revision; stale requests return the current order for review. Storage errors are shown instead of silently claiming a save.
+Accounts without this document are read from their existing `course-order` and `supplementary` records. Migration preserves the legacy visible order, archived entries and stable identities. The first successful edit saves version 2. Legacy documents remain available for recovery and account export. Legacy GET endpoints project the new document; legacy POST endpoints request a reload so older tabs cannot save incompatible changes. No manual database migration is required.
 
-Relevant code: course-drop-model.ts, course-order-model.ts, course-drag-context.tsx, course-order.tsx, supplementary-videos.tsx and move-confirmation-dialog.tsx in app/.
+Implementation: `app/personal-course-model.ts`, `app/course-order.tsx`, `app/personal-course-editor.tsx`, `app/course-editor-actions.tsx`, `app/course-drag-context.tsx`, and `app/server/personal-course-store.ts`.
 
 ## Verification
 
-Run test:course-order, test:course-drag, test:supplementary, test:navigation and test:accounts. The placement suite checks mixed numbering, cross-section/module moves, attachment rules, cycles, empty sections, identity preservation and confirmation-only saves.
+- `npm run test:personal-course`: migration, mixed placement, numbering, grouped moves, undo, identity, duplicates and request validation.
+- `npm run test:personal-course-api`: actual route/store code with deterministic database fixtures; authentication, CSRF, isolation, concurrency, retries and storage failure.
+- `npm run test:personal-course-browser`: desktop/mobile add, move, archive, restore, failure recovery and guest isolation.
+- `npm run test:personal-course-interactions`: drag cancellation/save/undo, keyboard movement, mixed auto-next and disconnected-response recovery.
+- `npm run test:course-experience`: playback resume, timestamp notes, bookmarks and layout regression coverage.
 
-The optional test:course-drag-browser script remains available for future browser regression work; it was not run during the September 2026 cleanup because the owner requested no computer use.
+Browser tests require a local server on port 3001 with fixture auth configuration (see `scripts/personal-course-browser-fixture.mjs`). They mock API storage and the YouTube player; they do not verify a live Google session, live Postgres or YouTube playback. Legacy model suites remain useful for migration compatibility.
+
+### Local verification, 29 September 2026
+
+Both the Next.js production build and the vinext/Vite build passed. The Vite App Router dependency `@vitejs/plugin-rsc` is now explicitly declared at the version already in the lockfile, so clean installs include it. Lint, TypeScript, theme contrast checks, model/API tests, desktop/mobile browser tests, conflict tests and playback regression checks passed. `npm run test:personal-course-conflicts` covers stale-tab recovery, duplicate guidance and mobile dialog dismissal.
+
+The two build tools generate different `.next/types/routes.d.ts` shapes. If running standalone TypeScript after the Vite build, run `npx next typegen` first. This is generated tooling output, not application state.
+
+The browser suites use a local Next server with `AUTH_SECRET=local-preview-only-0000000000000000000000`, `AUTH_GOOGLE_ID=local-fixture` and `AUTH_GOOGLE_SECRET=local-fixture`. All storage and player responses are intercepted by the fixtures. Never use those test credentials in production. Live account sign-in, actual Postgres persistence and real YouTube embedding remain deployment integration checks. No live account data was changed or application deployed by this implementation.

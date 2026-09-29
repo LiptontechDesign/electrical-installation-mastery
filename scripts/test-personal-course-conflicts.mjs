@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import { browser, fixture } from './personal-course-browser-fixture.mjs';
+try {
+ const f = await fixture(); const {page} = f;
+ await page.getByRole('button', {name:'Add video',exact:true}).click();
+ const dialog = page.getByRole('dialog',{name:'Add a video',exact:true});
+ await dialog.getByLabel('YouTube link',{exact:true}).fill('https://youtu.be/abcdefghijk');
+ await dialog.locator('.editor-video-preview strong').filter({hasText:'Understanding a missing concept'}).waitFor();
+ f.external({type:'move',id:f.first.id,sectionId:f.first.sectionId,beforeId:null});
+ await dialog.getByRole('button',{name:'Add to my course',exact:true}).click();
+ await dialog.getByRole('alert').filter({hasText:'another tab or device'}).waitFor();
+ assert.equal(await dialog.getByLabel('YouTube link',{exact:true}).inputValue(),'https://youtu.be/abcdefghijk');
+ assert.equal(f.state().videos.some(v=>v.videoId==='abcdefghijk'),false);
+ await dialog.getByRole('button',{name:'Add to my course',exact:true}).click();
+ await page.getByRole('dialog',{name:'Video added',exact:true}).waitFor();
+ assert.equal(f.state().videos.filter(v=>v.videoId==='abcdefghijk').length,1);
+ assert.equal(f.state().groups[f.first.sectionId].at(-2),f.first.id,'The external move survives the later addition');
+ await page.getByRole('button',{name:'Add another',exact:true}).click();
+ await page.getByLabel('YouTube link',{exact:true}).fill('https://youtu.be/abcdefghijk');
+ await page.getByText('This video is already in your course.',{exact:true}).waitFor();
+ assert.equal(await page.getByRole('button',{name:'Add to my course',exact:true}).isDisabled(),true);
+ assert.deepEqual(f.errors,[]);
+ await f.context.close();
+ const mobile=await fixture({mobile:true});
+ await mobile.page.getByRole('button',{name:'Add video',exact:true}).click();
+ await mobile.page.getByRole('dialog',{name:'Add a video',exact:true}).waitFor();
+ await mobile.page.keyboard.press('Escape');
+ await mobile.page.getByRole('dialog',{name:'Add a video',exact:true}).waitFor({state:'hidden'});
+ assert.equal(await mobile.page.locator('.course-map.drawer-open').isVisible(),true,'Escape closes only the editor and preserves the map');
+ await mobile.context.close();
+ console.log('PASS: stale-tab conflict retains draft and preserves external edit, duplicates guide to existing entry, mobile Escape keeps course map.');
+} finally {await browser.close();}

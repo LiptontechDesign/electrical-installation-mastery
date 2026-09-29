@@ -3,8 +3,9 @@ import { chromium } from 'playwright';
 import { SignJWT } from 'jose';
 import { build } from 'esbuild';
 import { mkdirSync } from 'node:fs';
-await build({entryPoints:['app/learner-state.ts','app/course-order-model.ts','app/course-curriculum.ts'],outdir:'work/experience-tests',bundle:true,platform:'node',format:'esm'});
+await build({entryPoints:['app/learner-state.ts','app/course-order-model.ts','app/course-curriculum.ts','app/personal-course-model.ts'],outdir:'work/experience-tests',bundle:true,platform:'node',format:'esm'});
 const { initialLearnerState }=await import('../work/experience-tests/learner-state.js');
+const { migratePersonalCourse, applyCourseEdit }=await import('../work/experience-tests/personal-course-model.js');
 const { defaultOrder }=await import('../work/experience-tests/course-order-model.js');
 const { default:course }=await import('../work/experience-tests/course-curriculum.js');
 const origin=process.env.COURSE_TEST_URL ?? 'http://127.0.0.1:3001';
@@ -19,7 +20,9 @@ try {
  let state={...initialLearnerState,autoNextEnabled:false,bookmarkedLessonIds:[second.id],completedLessonIds:[first.id],videoPositions:{[first.videoId]:72,abcdefghijk:32}};
  const writes=[];
  let additions=[{id:'test-support',videoId:'abcdefghijk',moduleId:course.modules[0].id,anchorId:first.id,position:'after',title:'Test supporting video',instructor:'Test channel',archived:false}];
+ let personal=migratePersonalCourse(defaultOrder,{version:1,revision:0,videos:additions});
  await page.route('**/api/**',async route=>{const url=route.request().url(); if(url.endsWith('/learner-state')&&route.request().method()==='PUT'){state=route.request().postDataJSON().payload;writes.push(state);}
+ if(url.endsWith('/personal-course')){if(route.request().method()==='POST')personal=applyCourseEdit(personal,route.request().postDataJSON());return route.fulfill({json:personal});}
  if(url.includes('/supplementary/metadata')) return route.fulfill({json:{title:'Newly added lesson',instructor:'New channel'}});
  if(url.endsWith('/supplementary') && route.request().method()==='POST'){const body=route.request().postDataJSON(); additions.push({...body,id:'new-support',videoId:'newvideo123',archived:false});}
  await route.fulfill({json:url.endsWith('/course-order')?defaultOrder:url.endsWith('/supplementary')?{version:1,revision:0,videos:additions}:url.endsWith('/learner-state')?{exists:true,payload:state}:{exists:true,payload:[]}});});
@@ -47,11 +50,11 @@ try {
  assert.equal(await page.locator('[data-course-row]:visible').count(),1,'Saved filter shows one saved lesson');
  assert.equal(await page.locator('[data-course-row]:visible').getAttribute('data-course-row'),second.id);
  await page.getByRole('button',{name:'Clear filter',exact:true}).click();
- await page.getByRole('button',{name:'Organise course',exact:true}).click();
+ await page.getByRole('button',{name:'Organise',exact:true}).click();
  assert.ok(await page.locator('.course-drag-handle:visible').count()>0,'Organise mode reveals ordering controls');
  assert.equal(await page.locator('.course-drag-handle:visible').first().isDisabled(),false);
- await page.getByRole('button',{name:'Done organising',exact:true}).click();
- await page.locator('[data-course-row="test-support"] button').last().click();
+ await page.getByRole('button',{name:'Done',exact:true}).click();
+ await page.locator('[data-course-row="test-support"] button:not(.course-drag-handle):not([data-video-actions])').first().click();
  await page.getByRole('button',{name:'Resume at 0:32',exact:true}).waitFor();
  assert.equal(await page.locator('.supp-overlay').count(),0,'Supplementary playback remains inline');
  await page.locator('.supp-lesson').getByRole('button',{name:'Save lesson',exact:true}).click();
@@ -78,7 +81,7 @@ try {
  await page.getByRole('button',{name:'Previous lesson',exact:true}).click();
  await page.locator('.supp-lesson h1').filter({hasText:'Test supporting video'}).waitFor();
  await page.getByRole('button',{name:'Back to core lesson',exact:true}).click();
- await page.locator('[data-course-row="'+first.id+'"] button').last().click();
+ await page.locator('[data-course-row="'+first.id+'"] button:not(.course-drag-handle):not([data-video-actions])').first().click();
 
  await page.waitForFunction(()=>window.testPlayer.time===94);
  await page.reload();
@@ -99,12 +102,12 @@ try {
  await page.waitForTimeout(800);
  assert.equal(state.videoPositions[first.videoId],0,'Finished videos restart from the beginning');
  await page.setViewportSize({width:1440,height:1000});
- await page.getByRole('button',{name:'Organise course',exact:true}).click();
- await page.getByRole('button',{name:/Add video to module 1:/}).click();
+ await page.getByRole('button',{name:'Organise',exact:true}).click();
+ await page.getByRole('button',{name:'Add video',exact:true}).click();
  await page.getByLabel('YouTube link',{exact:true}).fill('https://www.youtube.com/watch?v=newvideo123');
- await page.waitForFunction(()=>document.querySelector('input[maxlength="240"]')?.value==='Newly added lesson');
- await page.getByLabel('Type ADD VIDEO to confirm',{exact:true}).fill('ADD VIDEO');
- await page.getByRole('button',{name:'Confirm my change',exact:true}).click();
+ await page.locator('.editor-video-preview strong').filter({hasText:'Newly added lesson'}).waitFor();
+ await page.getByRole('button',{name:'Add to my course',exact:true}).click();
+ await page.getByRole('button',{name:'Watch now',exact:true}).click();
  await page.locator('.supp-lesson h1').filter({hasText:'Newly added lesson'}).waitFor();
  assert.equal(await page.locator('.supp-overlay').count(),0,'New videos open in the shared lesson layout');
  await page.locator('.supp-lesson').getByRole('button',{name:'Save lesson',exact:true}).waitFor();

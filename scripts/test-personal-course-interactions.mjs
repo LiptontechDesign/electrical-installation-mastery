@@ -1,0 +1,78 @@
+import assert from 'node:assert/strict';
+import { browser, fixture, model } from './personal-course-browser-fixture.mjs';
+async function pick(page, id, targetId) {
+  const handle = page.locator(`[data-drag-handle="${id}"]`);
+  await handle.scrollIntoViewIfNeeded();
+  const start = await handle.boundingBox();
+  await page.mouse.move(start.x + start.width / 2, start.y + start.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(start.x + start.width / 2 + 10, start.y + start.height / 2, { steps: 3 });
+  await page.locator('.course-drag-overlay').waitFor();
+  await page.locator(`[data-course-row="${targetId}"]`).evaluate(node => node.scrollIntoView({ block: 'center', behavior: 'instant' }));
+  const target = await page.locator(`[data-course-row="${targetId}"]`).boundingBox();
+  await page.mouse.move(target.x + target.width * .6, target.y + target.height * .85, { steps: 10 });
+}
+try {
+ const f = await fixture(); const { page } = f;
+ await page.getByRole('button', { name: 'Organise', exact: true }).click();
+ const rows = model.personalCourseSnapshot(f.state()).rows[f.first.sectionId];
+ const target = rows[2].id;
+ await pick(page, f.first.id, target);
+ await page.keyboard.press('Escape'); await page.mouse.up();
+ assert.equal(f.writes.length, 0, 'Escape cancels without a write');
+ await pick(page, f.first.id, target);
+ await page.mouse.up();
+ await page.waitForFunction(() => document.querySelector('.personal-course-notice')?.textContent.includes('Video moved'));
+ assert.equal(f.writes.length, 1);
+ const newIds = model.personalCourseSnapshot(f.state()).rows[f.first.sectionId].map(r => r.id);
+ assert.ok(newIds.indexOf(f.first.id) > newIds.indexOf(target), 'Drag drops at the indicated boundary');
+ assert.equal(await page.locator('dialog[open]').count(), 0, 'Ordinary drag does not add a confirmation dialog');
+ assert.equal(await page.locator('.lesson-canvas h1').textContent(), f.first.title, 'Drag leaves playback selected');
+ await page.locator('.personal-course-notice').getByRole('button', { name: 'Undo', exact: true }).click();
+ await page.getByText('Change undone.', { exact: true }).waitFor();
+ assert.deepEqual(model.personalCourseSnapshot(f.state()).rows[f.first.sectionId].map(r => r.id), rows.map(r => r.id));
+ await page.getByRole('button', { name: 'Done', exact: true }).click();
+ const trigger = page.locator(`[data-course-row="${f.first.id}"] [data-video-actions]`);
+ await trigger.focus(); await page.keyboard.press('Enter');
+ await page.getByRole('menuitem', { name: 'Move to…', exact: true }).waitFor();
+ await page.keyboard.press('Enter');
+ const dialog = page.getByRole('dialog', { name: 'Move video', exact: true });
+ await dialog.waitFor();
+ await dialog.getByRole('radio', { name: 'At the end', exact: true }).focus(); await page.keyboard.press('Space');
+ await dialog.getByRole('button', { name: 'Move video', exact: true }).focus(); await page.keyboard.press('Enter');
+ await dialog.waitFor({ state: 'hidden' });
+ assert.equal(model.personalCourseSnapshot(f.state()).rows[f.first.sectionId].at(-1).id, f.first.id);
+ assert.deepEqual(f.errors, []);
+ await f.context.close();
+ console.log('PASS: mouse drag, cancel, single save, exact placement, undo, and keyboard menu/move flow.');
+
+ const seed = model.applyCourseEdit(model.publishedPersonalCourse, { revision: 0, operationId: 'insert-autonext-00001', edit: { type: 'add', url: 'https://youtu.be/abcdefghijk', title: 'Inserted next video', instructor: '', sectionId: rows[0].sectionId, beforeId: rows[1].id } });
+ const playback = await fixture({ state: seed }); const p = playback.page;
+ await p.waitForFunction(() => window.testPlayer?.options);
+ await p.getByRole('switch', { name: /Auto-next/ }).click();
+ await p.evaluate(() => { window.testPlayer.time = 500; window.testPlayer.state = 0; window.testPlayer.options.events.onStateChange({ data: 0 }); });
+ await p.locator('.auto-next-card h2').filter({ hasText: 'Inserted next video' }).waitFor();
+ await p.locator('.auto-next-card').getByRole('button', { name: /Next now/ }).click();
+ await p.locator('.supp-lesson h1').filter({ hasText: 'Inserted next video' }).waitFor();
+ await p.waitForFunction(() => window.testPlayer?.options && document.querySelector('.supp-lesson iframe'));
+ await p.waitForTimeout(400);
+ await p.evaluate(() => { window.testPlayer.time = 500; window.testPlayer.state = 0; window.testPlayer.options.events.onStateChange({ data: 0 }); });
+ await p.locator('.auto-next-card h2').filter({ hasText: rows[1].title }).waitFor();
+ await p.locator('.auto-next-card').getByRole('button', { name: /Next now/ }).click();
+ await p.locator('.lesson-canvas h1').filter({ hasText: rows[1].title }).waitFor();
+ assert.deepEqual(playback.errors, []);
+ await playback.context.close();
+ console.log('PASS: auto-next follows core → inserted supplementary → core sequence.');
+
+ const uncertain = await fixture();
+ await uncertain.page.getByRole('button', { name: 'Add video', exact: true }).click();
+ await uncertain.page.getByLabel('YouTube link', { exact: true }).fill('https://youtu.be/abcdefghijk');
+ await uncertain.page.waitForFunction(() => !document.querySelector('.editor-primary')?.disabled);
+ uncertain.loseNextResponse();
+ await uncertain.page.getByRole('button', { name: 'Add to my course', exact: true }).click();
+ await uncertain.page.getByRole('dialog', { name: 'Video added', exact: true }).waitFor();
+ assert.equal(uncertain.state().videos.filter(v => v.videoId === 'abcdefghijk').length, 1);
+ assert.equal(uncertain.writes.length, 1, 'Receipt read-back confirms a disconnected successful write');
+ await uncertain.context.close();
+ console.log('PASS: ambiguous network response reconciles without duplicate video or write.');
+} finally { await browser.close(); }

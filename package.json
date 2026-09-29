@@ -35,7 +35,13 @@
     "test:mobile": "node scripts/test-mobile-browser.mjs",
     "test:mobile-account": "node scripts/test-mobile-account-browser.mjs",
     "test:pwa": "node scripts/test-pwa.mjs",
-    "test:pwa-browser": "node scripts/test-pwa-browser.mjs"
+    "test:pwa-browser": "node scripts/test-pwa-browser.mjs",
+    "test:personal-course": "node scripts/test-personal-course.mjs",
+    "test:personal-course-api": "node scripts/test-personal-course-api.mjs",
+    "test:personal-course-browser": "node scripts/test-personal-course-browser.mjs",
+    "test:personal-course-interactions": "node scripts/test-personal-course-interactions.mjs",
+    "test:course-experience": "node scripts/test-course-experience-browser.mjs",
+    "test:personal-course-conflicts": "node scripts/test-personal-course-conflicts.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",
@@ -62,6 +68,7 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
     "esbuild": "0.27.3",
     "eslint": "9.39.4",
     "eslint-config-next": "16.3.2",

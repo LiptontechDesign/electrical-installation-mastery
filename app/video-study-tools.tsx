@@ -1,11 +1,12 @@
 'use client';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { LearnerState } from './learner-state';
 
 export type StudyPlayer = { getCurrentTime?: () => number; getDuration?: () => number; getPlayerState?: () => number; seekTo?: (seconds: number, allowSeekAhead: boolean) => void; pauseVideo?: () => void };
 export const VideoStudyContext = createContext<{
   enabled: boolean;
+  autoNextControls: ReactNode; autoPlayId: string | null; onEnded: (id: string) => void; autoNextEnabled: boolean; toggleAutoNext: () => void;
   savedVideos: string[]; videoNotes: Record<string, string>; toggleSaved: (id: string) => void; setNote: (id: string, text: string) => void;
   openCourseMap: () => void;
   navigation: { previous?: { title: string; select: () => void }; next?: { title: string; duration?: string; optional: boolean; select: () => void }; position: number; total: number; path: string; moduleTitle: string };
@@ -13,7 +14,7 @@ export const VideoStudyContext = createContext<{
   position: (id: string, seconds: number) => void;
   addNote: (id: string, seconds: number, text: string) => void;
   removeNote: (id: string, noteId: string) => void;
-}>({ enabled: false, savedVideos: [], videoNotes: {}, toggleSaved: () => {}, setNote: () => {}, openCourseMap: () => {}, navigation: { position: 1, total: 1, path: '', moduleTitle: '' }, positions: {}, notes: {}, position: () => {}, addNote: () => {}, removeNote: () => {} });
+}>({ enabled: false, autoNextControls: null, autoPlayId: null, onEnded: () => {}, autoNextEnabled: false, toggleAutoNext: () => {}, savedVideos: [], videoNotes: {}, toggleSaved: () => {}, setNote: () => {}, openCourseMap: () => {}, navigation: { position: 1, total: 1, path: '', moduleTitle: '' }, positions: {}, notes: {}, position: () => {}, addNote: () => {}, removeNote: () => {} });
 export const timestamp = (seconds: number) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
 
 // Never infer progress from an unloaded player. Checkpoint during playback,

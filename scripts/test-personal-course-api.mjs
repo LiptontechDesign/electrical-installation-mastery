@@ -1,0 +1,58 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { build } from 'esbuild';
+globalThis.editorTestDocuments = new Map();
+globalThis.editorTestUser = null;
+globalThis.editorTestFail = false;
+await build({ entryPoints: { api: 'app/api/personal-course/route.ts', oldOrder: 'app/api/course-order/route.ts', oldVideos: 'app/api/supplementary/route.ts' }, outdir: 'work/editor-api-tests', bundle: true, platform: 'node', format: 'esm', plugins: [{ name: 'account-storage-fixture', setup(builder) {
+  builder.onResolve({ filter: /server-only$/ }, () => ({ path: 'empty', namespace: 'fixture' }));
+  builder.onResolve({ filter: /(?:server\/auth|\.\/auth)$/ }, () => ({ path: 'auth', namespace: 'fixture' }));
+  builder.onResolve({ filter: /(?:server\/database|\.\/database)$/ }, () => ({ path: 'database', namespace: 'fixture' }));
+  builder.onLoad({ filter: /.*/, namespace: 'fixture' }, args => ({ contents: args.path === 'auth' ? `export async function requireCourseUser(){if(!globalThis.editorTestUser)throw new Error('UNAUTHENTICATED');return {id:globalThis.editorTestUser};} export const getCourseUser=requireCourseUser;` : args.path === 'database' ? `
+    export async function readUserDocument(userId,type){if(globalThis.editorTestFail)throw Error('database down');return structuredClone(globalThis.editorTestDocuments.get(userId+':'+type)??null);}
+    export async function compareAndSwapPersonalCourse(userId,revision,payload){await new Promise(resolve=>setTimeout(resolve,1));if(globalThis.editorTestFail)throw Error('database down');const key=userId+':personal-course';const previous=globalThis.editorTestDocuments.get(key);if((previous?.revision??0)!==revision)return null;const next={payload:structuredClone(payload),revision:revision+1,updatedAt:''};globalThis.editorTestDocuments.set(key,next);return structuredClone(next);}` : '', loader: 'js' }));
+} }] });
+const api = await import('../work/editor-api-tests/api.js');
+const oldOrder = await import('../work/editor-api-tests/oldOrder.js');
+const oldVideos = await import('../work/editor-api-tests/oldVideos.js');
+const command = (revision, edit) => ({ operationId: crypto.randomUUID(), revision, edit });
+const post = (body, origin = 'https://course.example') => api.POST(new Request('https://course.example/api/personal-course', { method: 'POST', headers: { origin, 'content-type': 'application/json' }, body: JSON.stringify(body) }));
+assert.equal((await api.GET()).status, 401);
+assert.equal((await post({})).status, 401);
+globalThis.editorTestUser = 'alice';
+const initial = await (await api.GET()).json();
+const [source, destination] = Object.keys(initial.groups), [first, second] = initial.groups[source];
+assert.equal(globalThis.editorTestDocuments.size, 0, 'Reading legacy/default data does not write or destroy it');
+assert.equal((await post({}, 'https://attacker.example')).status, 403);
+assert.equal((await post({})).status, 400);
+assert.equal((await post({ junk: 'x'.repeat(9000) })).status, 400);
+const add = command(0, { type: 'add', url: 'https://youtu.be/abcdefghijk', title: 'Alice video', instructor: '', sectionId: source, beforeId: first });
+const response = await post(add); assert.equal(response.status, 200);
+const saved = await response.json();
+assert.equal(saved.revision, 1);
+assert.equal((await post(add)).status, 200, 'An identical retry returns the committed result');
+assert.equal(globalThis.editorTestDocuments.get('alice:personal-course').revision, 1, 'Retry performs no extra write');
+globalThis.editorTestUser = 'bob';
+const bob = await (await api.GET()).json();
+assert.ok(!bob.videos.some(v => v.title === 'Alice video'));
+assert.equal(bob.revision, 0);
+globalThis.editorTestUser = 'alice';
+const a = command(saved.revision, { type: 'move', id: first, sectionId: destination, beforeId: null });
+const b = command(saved.revision, { type: 'move', id: second, sectionId: destination, beforeId: null });
+const results = await Promise.all([post(a), post(b)]);
+assert.deepEqual(results.map(r => r.status).sort(), [200, 409], 'Exactly one simultaneous revision can commit');
+const conflict = await results.find(r => r.status === 409).json();
+assert.equal(conflict.state.revision, 2);
+const bad = await post(command(2, { type: 'add', url: 'https://youtu.be/abcdefghijk', title: 'Duplicate', instructor: '', sectionId: source, beforeId: null }));
+assert.equal(bad.status, 409); assert.ok((await bad.json()).existingId);
+globalThis.editorTestFail = true;
+assert.equal((await post(command(2, { type: 'move', id: first, sectionId: source, beforeId: null }))).status, 503);
+globalThis.editorTestFail = false;
+assert.equal((await (await api.GET()).json()).revision, 2);
+for (const route of [oldOrder, oldVideos]) {
+  assert.equal((await route.POST(new Request('https://course.example/api/course-order', { method: 'POST', headers: { origin: 'https://course.example' } }))).status, 409, 'Legacy clients cannot write a divergent catalogue');
+}
+const sql = await readFile('app/server/database.ts', 'utf8');
+assert.match(sql, /WHERE user_id = \$\{userId\} AND document_type = 'personal-course' AND revision = \$\{expectedRevision\}/);
+assert.match(sql, /ON CONFLICT \(user_id, document_type\) DO NOTHING/);
+console.log('PASS: authenticated API, CSRF/body validation, account isolation, idempotent retry, concurrent revision conflict, database failure, and legacy-client guard. Storage uses a deterministic CAS fixture; live Postgres is not exercised.');

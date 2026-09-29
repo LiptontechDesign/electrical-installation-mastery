@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useContext, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { DndContext, DragOverlay, KeyboardSensor, MeasuringStrategy, MouseSensor, TouchSensor, rectIntersection,
   useDraggable, useDroppable, useSensor, useSensors, type DragMoveEvent, type KeyboardCoordinateGetter, type CollisionDetection } from '@dnd-kit/core';
@@ -8,14 +8,13 @@ import { CheckCircle2, GripVertical, PlayCircle, Bookmark } from 'lucide-react';
 import { useCourseOrder } from './course-order';
 import { useSupplementary } from './supplementary-videos';
 import { useCourseAccount } from './course-account';
-import { closestDrop, courseMapSnapshot, dropCandidates, moveSession, movingSequence, persistConfirmedMove,
-  type DropProposal, type MapRow, type MoveSession } from './course-drop-model';
-import { MoveConfirmationDialog } from './move-confirmation-dialog';
+import { VideoActions } from './course-editor-actions';
+import { previewMove, type Placement } from './personal-course-model';
+import type { MapRow } from './course-drop-model';
 
-type DragState = { rows: Record<string, MapRow[]>; activeId: string | null; movingIds: Set<string>; proposal: DropProposal | null; enabled: boolean; busy: boolean };
+type Proposal = Placement & { rows: Record<string, MapRow[]>; movingIds: string[] };
+type DragState = { rows: Record<string, MapRow[]>; activeId: string | null; movingIds: Set<string>; proposal: Proposal | null; enabled: boolean; busy: boolean };
 const DragContext = createContext<DragState>({ rows: {}, activeId: null, movingIds: new Set(), proposal: null, enabled: false, busy: false });
-const proposalKey = (p: DropProposal | null) => p ? JSON.stringify(p.core ?? p.supplementary) : '';
-
 const keyboardCoordinates: KeyboardCoordinateGetter = (event, { currentCoordinates, context }) => {
   if (!['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight'].includes(event.code)) return;
   event.preventDefault();
@@ -58,122 +57,65 @@ const collision: CollisionDetection = args => {
 };
 
 export function CourseDragProvider({ children, onLocate, organizing = false }: { children: ReactNode; organizing?: boolean; onLocate: (moduleId: string) => void }) {
-  const core = useCourseOrder();
-  const supplementary = useSupplementary();
-  const videos = supplementary?.videos;
-  const snapshot = useMemo(() => courseMapSnapshot(core.order, videos ?? []), [core.order, videos]);
-  const [session, setSession] = useState<MoveSession>({ phase: 'idle' });
-  const sessionRef = useRef(session);
-  const [proposal, setProposal] = useState<DropProposal | null>(null);
-  const proposalRef = useRef<DropProposal | null>(null);
+  const editor = useCourseOrder();
+  const { user } = useCourseAccount();
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const activeRef = useRef<string | null>(null);
+  const [proposal, setProposal] = useState<Proposal | null>(null);
+  const proposalRef = useRef<Proposal | null>(null);
+  const original = useRef(editor.state);
   const [notice, setNotice] = useState('');
-  const original = useRef(snapshot);
-  const candidates = useRef(new Map<string, DropProposal[]>());
-  const positions = useRef(new Map<string, DOMRect>());
-  const shell = useRef<HTMLDivElement>(null);
-  const pickup = useRef<HTMLElement | null>(null);
-  const activeId = session.phase === 'dragging' ? session.id : session.phase === 'idle' ? null : session.proposal.item.id;
-  const movingIds = useMemo(() => activeId ? movingSequence(snapshot, activeId) : new Set<string>(), [snapshot, activeId]);
-  const busy = session.phase !== 'idle';
+  const busy = Boolean(activeId) || editor.busy;
   const sensors = useSensors(useSensor(MouseSensor, { activationConstraint: { distance: 6 } }),
     useSensor(TouchSensor, { activationConstraint: { delay: 260, tolerance: 7 } }),
     useSensor(KeyboardSensor, { coordinateGetter: keyboardCoordinates, scrollBehavior: 'auto' }));
-
-  function transition(next: MoveSession) { sessionRef.current = next; setSession(next); }
-  function rememberPositions() {
-    positions.current = new Map(Array.from(shell.current?.querySelectorAll<HTMLElement>('[data-course-row]') ?? []).map(node => [node.dataset.courseRow!, node.getBoundingClientRect()]));
-  }
-  function preview(next: DropProposal | null) {
-    if (proposalKey(next) === proposalKey(proposalRef.current)) return;
-    rememberPositions(); proposalRef.current = next; setProposal(next);
-  }
-  useLayoutEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    for (const node of shell.current?.querySelectorAll<HTMLElement>('[data-course-row]') ?? []) {
-      const before = positions.current.get(node.dataset.courseRow!);
-      const after = node.getBoundingClientRect();
-      if (!before || Math.abs(before.top - after.top) < 1) continue;
-      node.getAnimations().forEach(animation => animation.cancel());
-      node.animate([{ transform: `translateY(${before.top - after.top}px)` }, { transform: 'translateY(0)' }], { duration: 180, easing: 'cubic-bezier(.2,.7,.2,1)' });
-    }
-    positions.current.clear();
-  }, [proposal]);
-  function restoreFocus(id: string | null = activeId) {
-    const current = proposalRef.current?.rows ? Object.values(proposalRef.current.rows).flat().find(row => row.id === id) : snapshot.byId.get(id ?? '');
-    if (current) onLocate(current.moduleId);
-    requestAnimationFrame(() => {
-      const handle = Array.from(shell.current?.querySelectorAll<HTMLButtonElement>('[data-drag-handle]') ?? []).find(node => node.dataset.dragHandle === id);
-      const details = handle?.closest('details'); if (details) details.open = true;
-      (handle ?? pickup.current)?.focus({ preventScroll: true });
-      handle?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
-    });
-  }
-  function cancel() { preview(null); transition(moveSession(sessionRef.current, { type: 'cancel' })); setNotice('Move cancelled. Course order unchanged.'); restoreFocus(); }
-
+  const setPreview = (next: Proposal | null) => { proposalRef.current = next; setProposal(next); };
   function destination(event: DragMoveEvent) {
-    if (sessionRef.current.phase !== 'dragging') return;
+    const id = activeRef.current;
     const target = event.over?.data.current;
-    if (!target || target.type === 'module' || target.type === 'path') { preview(null); return; }
-    if (target.type === 'section' && !target.isExpanded()) { preview(null); return; }
-    const id = sessionRef.current.id;
-    const moving = movingSequence(original.current, id);
-    if (target.type === 'row' && moving.has(target.rowId)) return;
+    if (!id || !target || ['module', 'path'].includes(target.type) || (target.type === 'section' && !target.isExpanded())) { setPreview(null); return; }
+    if (target.rowId === id) return;
     const sectionId = target.sectionId as string;
-    let choices = candidates.current.get(sectionId);
-    if (!choices) { choices = dropCandidates(original.current, id, sectionId); candidates.current.set(sectionId, choices); }
-    const rows = (proposalRef.current?.rows ?? original.current.rows)[sectionId]?.filter(row => !moving.has(row.id)) ?? [];
+    const rows = (proposalRef.current?.rows ?? editor.rows)[sectionId]?.filter(row => row.id !== id) ?? [];
     let boundary = target.type === 'end' ? rows.length : 0;
     if (target.type === 'row') {
       const index = rows.findIndex(row => row.id === target.rowId);
-      const activator = event.activatorEvent;
-      const startY = 'touches' in activator ? (activator as TouchEvent).touches[0]?.clientY : 'clientY' in activator ? (activator as MouseEvent).clientY : undefined;
+      const eventStart = event.activatorEvent;
+      const startY = 'touches' in eventStart ? (eventStart as TouchEvent).touches[0]?.clientY : 'clientY' in eventStart ? (eventStart as MouseEvent).clientY : undefined;
       const y = startY === undefined ? (event.active.rect.current.translated?.top ?? 0) + (event.active.rect.current.translated?.height ?? 0) / 2 : startY + event.delta.y;
       boundary = Math.max(0, index) + Number(y > event.over!.rect.top + event.over!.rect.height / 2);
     }
-    const next = closestDrop(choices, boundary);
-    preview(next);
-    if (!next) setNotice('This section needs a core lesson before a supplementary video can be placed here.');
-    else setNotice(`${next.destination}. ${next.placement}${next.item.kind === 'core' ? '. Core lessons move at lesson boundaries with their supporting videos.' : ''}`);
+    const beforeId = rows[boundary]?.id ?? null;
+    if (proposalRef.current?.sectionId === sectionId && proposalRef.current.beforeId === beforeId) return;
+    try {
+      const next = previewMove(original.current, id, { sectionId, beforeId });
+      setPreview({ sectionId, beforeId, rows: next.rows, movingIds: [id] });
+      setNotice('Place in ' + next.label(sectionId) + (beforeId ? ' before ' + next.byId.get(beforeId)?.title : ' at the end') + '. Release to save.');
+    } catch { setPreview(null); }
   }
-
-  async function confirm() {
-    if (sessionRef.current.phase !== 'review') return;
-    if (original.current.order !== snapshot.order || original.current.videos.map(v => JSON.stringify(v)).join() !== snapshot.videos.map(v => JSON.stringify(v)).join()) {
-      preview(null); transition({ phase: 'idle' }); setNotice('The shared course changed while you were reviewing. Review a new move using the latest order.'); restoreFocus(); return;
-    }
-    const saving = moveSession(sessionRef.current, { type: 'confirm' });
-    transition(saving);
-    const ok = await persistConfirmedMove(saving, core.save, move => supplementary!.move(move));
-    if (ok) restoreFocus();
-    preview(null); transition({ phase: 'idle' });
-    setNotice(ok ? 'Video moved. The shared course has been updated.' : 'Move could not be confirmed. The latest available shared order is shown. Review the error and try again.');
-    if (!ok) restoreFocus();
-  }
-
-  const item = activeId ? snapshot.byId.get(activeId) ?? proposal?.item : null;
-  return <DragContext.Provider value={{ rows: proposal?.rows ?? snapshot.rows, activeId, movingIds, proposal, enabled: organizing && core.ready && Boolean(supplementary?.ready), busy }}>
+  const item = activeId ? editor.byId.get(activeId) : null;
+  return <DragContext.Provider value={{ rows: proposal?.rows ?? editor.rows, activeId, movingIds: new Set(activeId ? [activeId] : []), proposal, enabled: Boolean(user) && organizing && editor.ready && !editor.busy, busy }}>
     <DndContext sensors={sensors} collisionDetection={collision} measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
       autoScroll={{ threshold: { x: 0, y: .16 }, acceleration: 8, canScroll: element => element.classList.contains('course-map') }}
-      accessibility={{ restoreFocus: false, screenReaderInstructions: { draggable: 'Press Space to pick up. Use Up and Down for positions, Left and Right for sections or modules. Space opens a move review. Escape cancels. Only Confirm move saves.' },
-        announcements: { onDragStart: ({ active }) => `Picked up ${snapshot.byId.get(String(active.id))?.title}. Use arrows to choose a destination.`, onDragOver: () => '', onDragEnd: () => 'Drag finished. Review the proposed move or cancel.', onDragCancel: () => 'Move cancelled. Course unchanged.' } }}
-      onDragStart={({ active }) => {
-        original.current = snapshot; candidates.current.clear(); pickup.current = document.activeElement as HTMLElement;
-        transition(moveSession(sessionRef.current, { type: 'pick', id: String(active.id) })); setNotice('Choose a destination. Release to review; Escape cancels.');
-      }} onDragMove={destination} onDragOver={destination} onDragCancel={cancel}
+      accessibility={{ restoreFocus: false, screenReaderInstructions: { draggable: 'Press Space to pick up, arrow keys to choose a position, Space to move, or Escape to cancel. You can also use the video actions menu and Move to.' }, announcements: { onDragStart: ({ active }) => 'Picked up ' + editor.byId.get(String(active.id))?.title, onDragOver: () => '', onDragEnd: () => 'Checking the new position.', onDragCancel: () => 'Move cancelled.' } }}
+      onDragStart={({ active }) => { original.current = editor.state; activeRef.current = String(active.id); setActiveId(String(active.id)); setPreview(null); setNotice('Choose a position. Escape cancels.'); }}
+      onDragMove={destination} onDragOver={destination}
+      onDragCancel={() => { const id = activeRef.current; activeRef.current = null; setActiveId(null); setPreview(null); setNotice('Move cancelled.'); requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('[data-drag-handle="' + id + '"]')?.focus()); }}
       onDragEnd={({ over }) => {
+        const id = activeRef.current;
         const next = over && !['module', 'path'].includes(over.data.current?.type) ? proposalRef.current : null;
-        const state = moveSession(sessionRef.current, { type: 'drop', proposal: next });
-        transition(state);
-        if (state.phase === 'idle') { preview(null); setNotice('No move applied. Course order unchanged.'); restoreFocus(); }
+        activeRef.current = null; setActiveId(null); setPreview(null); setNotice('');
+        if (!id || !next) return;
+        if (original.current.revision !== editor.state.revision) { editor.openEditor({ type: 'move', id }); return; }
+        if (Object.keys(editor.rows).every(key => editor.rows[key].map(row => row.id).join() === next.rows[key].map(row => row.id).join())) return;
+        void editor.commit({ type: 'move', id, sectionId: next.sectionId, beforeId: next.beforeId }).then(result => {
+          if (!result.ok) { editor.openEditor({ type: 'move', id, destination: { sectionId: next.sectionId, beforeId: next.beforeId } }); return; }
+          const moved = next.rows[next.sectionId].find(row => row.id === id);
+          if (moved) onLocate(moved.moduleId);
+        });
       }}>
-      <div ref={shell} className="course-drag-shell" data-moving={busy} onClickCapture={event => {
-        if (busy && !(event.target as HTMLElement).closest('.course-drag-dialog')) { event.preventDefault(); event.stopPropagation(); }
-      }}>{children}
-        <div className="course-drag-notice" role="status" aria-live="polite" aria-atomic="true">{notice}</div>
-        {(core.error || supplementary?.error) && <div className="course-drag-error" role="alert">{core.error || supplementary?.error}</div>}
-        {(session.phase === 'review' || session.phase === 'saving') && <MoveConfirmationDialog proposal={session.proposal} busy={session.phase === 'saving'} onCancel={cancel} onConfirm={() => void confirm()} />}
-      </div>
-      {typeof document !== 'undefined' && document.body && createPortal(<DragOverlay style={{ pointerEvents: 'none' }} dropAnimation={null}>{session.phase === 'dragging' && item ? <div className={`course-drag-overlay ${item.kind}`}><GripVertical size={20} /><span><strong>{item.title}</strong><small>{item.kind === 'core' ? 'Core lesson' : 'Supplementary video'} · Release to review</small></span></div> : null}</DragOverlay>, document.body)}
+      <div className="course-drag-shell" data-moving={busy} onClickCapture={event => { if (activeId) { event.preventDefault(); event.stopPropagation(); } }}>{children}<span className="editor-sr-only" role="status" aria-live="polite">{notice}</span></div>
+      {typeof document !== 'undefined' && document.body && createPortal(<DragOverlay style={{ pointerEvents: 'none' }} dropAnimation={null}>{item ? <div className="course-drag-overlay"><GripVertical size={17}/><span><strong>{item.title}</strong><small>Release to move · Undo available</small></span></div> : null}</DragOverlay>, document.body)}
     </DndContext>
   </DragContext.Provider>;
 }
@@ -227,7 +169,7 @@ export function CourseSectionRows({ sectionId, renderCore, visibleIds }: { visib
       if (video) supplementary?.open(video);
     }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small className="lesson-row-progress">{supplementary?.selected?.id === row.id && <b>Watching now</b>}Supplementary · {user ? (watched ? 'Watched · ' : 'Not watched · ') : ''}{video?.instructor || 'YouTube'}</small></span>{video && study.savedVideos.includes(video.videoId) && <span className="lesson-row-state"><Bookmark size={14} fill="currentColor" aria-label="Saved"/></span>}</button>}
   </CourseDraggableRow>;
-  })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Empty section · core lessons only') : null}</div></>;
+  })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Place as the first video') : null}</div></>;
 }
 
 function CourseDraggableRow({ row, children }: { row: MapRow; children: ReactNode }) {
@@ -241,6 +183,6 @@ function CourseDraggableRow({ row, children }: { row: MapRow; children: ReactNod
     {firstMoving && <span className="course-insertion-line" aria-hidden="true"><span>Place here</span></span>}
     <button ref={setActivatorNodeRef} {...attributes} {...listeners} type="button" className="course-drag-handle" data-drag-handle={row.id}
       aria-label={`Move ${row.title}`} disabled={!enabled || (busy && activeId !== row.id)} onClick={event => { event.preventDefault(); event.stopPropagation(); }}><GripVertical size={18} /></button>
-    {children}
+    {children}<VideoActions id={row.id}/>
   </div>;
 }

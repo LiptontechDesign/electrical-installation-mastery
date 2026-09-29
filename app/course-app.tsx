@@ -14,17 +14,17 @@ import {
   Upload, X, Zap,
 } from 'lucide-react';
 import course, { isRequiredLesson, lessonStudyRole } from './course-curriculum';
-import { MoveLessonButton, useCourseOrder } from './course-order';
+import { useCourseOrder } from './course-order';
 import { importPromotedWatched } from './integrated-progress';
 import { markVideoGroupWatched, recordVideoCompletion } from './flexible-progress';
 import LessonProgress from './lesson-progress';
 import { initialLearnerState, clampState, isProgressBackup, calendarDay, type LearnerState } from './learner-state';
 import { VideoStudyContext, VideoStudyTools, VideoLessonStepper, NextVideoCard, trackVideoPosition, type StudyPlayer } from './video-study-tools';
-import { courseMapSnapshot } from './course-drop-model';
+import { AddVideoButton, CourseEditorTools, VideoActions } from './course-editor-actions';
+import { PersonalCourseEditor } from './personal-course-editor';
 import { moduleTone, matchesLessonFilter, type LessonFilter } from './course-ui-model';
 import { CourseProgressSummary } from './course-progress-summary';
-import { supplementaryDescendants } from './supplementary-model';
-import { SupplementaryControls, useSupplementary } from './supplementary-videos';
+import { useSupplementary } from './supplementary-videos';
 import { CourseDragProvider, CourseDragModule, CourseDragSection, CourseDragPath, CourseSectionRows } from './course-drag-context';
 import { useDialogFocus } from './use-dialog-focus';
 import AccountPanel from './account-panel';
@@ -109,7 +109,7 @@ const navigation = [
 export default function CourseApp({ user }: { user: CourseUser | null }) {
   const { requestSignIn } = useCourseAccount();
   const [showOverview, setShowOverview] = useState(false);
-  const { course, sectionsByModule, order } = useCourseOrder();
+  const { course, sectionsByModule, rows: mapRows, allRows: allCourseRows, byId: courseRowsById } = useCourseOrder();
   const supplementary = useSupplementary();
   const supplementaryId = supplementary?.selected?.id;
   const allLessons = useMemo(() => course.modules.flatMap(m => m.lessons), [course]);
@@ -188,6 +188,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const autoNextStateRef = useRef<AutoNextState>(autoNextState);
   const autoAdvanceRef = useRef<(fromLessonId: string, nextLessonId: string) => void>(() => undefined);
   const startAutoNextCountdownRef = useRef<(fromLessonId: string, nextLessonId: string) => void>(() => undefined);
+  const videoEndedRef = useRef<(id: string) => void>(() => {});
   const pendingAutoNextRef = useRef<{ fromLessonId: string; nextLessonId: string } | null>(null);
 
   useEffect(() => {
@@ -210,9 +211,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const activeLesson = location.module.lessons[location.lessonIndex];
   const completed = useMemo(() => new Set(learner.completedLessonIds), [learner.completedLessonIds]);
   const bookmarked = useMemo(() => new Set(learner.bookmarkedLessonIds), [learner.bookmarkedLessonIds]);
-  const mapRows = courseMapSnapshot(order, supplementary?.videos ?? []).rows;
   const watchedRows = new Set([...completed, ...(supplementary?.videos.filter(video => supplementary.watched.includes(video.videoId)).map(video => video.id) ?? [])]);
-  const allCourseRows = Object.values(mapRows).flat();
   const savedRows = new Set([...bookmarked, ...(supplementary?.videos.filter(video => learner.videoBookmarks.includes(video.videoId)).map(video => video.id) ?? [])]);
   const pathRows = allCourseRows.filter(row => course.modules.find(module => module.id === row.moduleId)?.path === mapPath);
   const visibleRows = new Set(pathRows.filter(row => matchesLessonFilter(row, organizing ? 'all' : lessonFilter, watchedRows, savedRows)).map(row => row.id));
@@ -223,9 +222,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const courseRequiredComplete = requiredLessons.filter(lesson => completed.has(lesson.id)).length;
   const coursePercent = percent(courseRequiredComplete, courseRequiredTotal);
   const groupProgress = (ids: string[]) => {
-    const core = ids.filter(isRequiredLesson);
-    const extra = ids.filter(id => !isRequiredLesson(id));
-    const supporting = supplementaryDescendants(supplementary?.videos ?? [], ids);
+    const core = ids.filter(id => lessonLookup.has(id) && isRequiredLesson(id));
+    const extra = ids.filter(id => lessonLookup.has(id) && !isRequiredLesson(id));
+    const supporting = supplementary?.videos.filter(video => !video.archived && ids.includes(video.id)) ?? [];
     const optionalTotal = extra.length + supporting.length;
     const optionalWatched = extra.filter(id => completed.has(id)).length + supporting.filter(video => supplementary?.watched.includes(video.videoId)).length;
     return core.length ? { total: core.length, watched: core.filter(id => completed.has(id)).length, optionalTotal, optionalRemaining: optionalTotal - optionalWatched, optionalOnly: false }
@@ -238,7 +237,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     }
   })();
   const weekMinutes = getRecentStudyMinutes(7, learner.studyMinutesByDate);
-  const queuedNextLesson = autoNextState ? lessonLookup.get(autoNextState.nextLessonId) : undefined;
+  const queuedNextLesson = autoNextState ? courseRowsById.get(autoNextState.nextLessonId) : undefined;
 
   const selectedRowIndex = allCourseRows.findIndex(row => row.id === (supplementaryId ?? activeLesson.id));
   const previousRow = allCourseRows[selectedRowIndex - 1];
@@ -254,9 +253,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   autoNextEnabledRef.current = learner.autoNextEnabled;
   autoNextStateRef.current = autoNextState;
   autoAdvanceRef.current = (fromLessonId, nextLessonId) => {
-    if (learner.activeLessonId !== fromLessonId) return;
-    const nextLocation = lessonLocation.get(nextLessonId);
-    if (!nextLocation) return;
+    if ((supplementaryId ?? learner.activeLessonId) !== fromLessonId) return;
+    const nextRow = courseRowsById.get(nextLessonId);
+    if (!nextRow) return;
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
     autoNextTimerRef.current = null;
     pendingAutoNextRef.current = null;
@@ -264,8 +263,15 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     setAutoNextState(null);
     setAutoPlayLessonId(nextLessonId);
 
-    setLearner((current) => ({ ...current, activeLessonId: nextLessonId, updatedAt: new Date().toISOString() }));
-    setOpenModuleId(nextLocation.module.id);
+    if (nextRow.kind === 'supplementary') {
+      const video = supplementary?.videos.find(v => v.id === nextLessonId);
+      if (video) supplementary?.open(video);
+    } else {
+      supplementary?.clearSelection();
+      setLearner((current) => ({ ...current, activeLessonId: nextLessonId, updatedAt: new Date().toISOString() }));
+    }
+    setOpenModuleId(nextRow.moduleId);
+    setMapPath(course.modules.find(m => m.id === nextRow.moduleId)!.path);
 
     setView('learn');
     window.history.replaceState(null, '', `#learn/${nextLessonId}`);
@@ -273,7 +279,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     setToast('Next lesson loaded automatically.');
   };
   startAutoNextCountdownRef.current = (fromLessonId, nextLessonId) => {
-    if (learner.activeLessonId !== fromLessonId || !autoNextEnabledRef.current) return;
+    if ((supplementaryId ?? learner.activeLessonId) !== fromLessonId || !autoNextEnabledRef.current) return;
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
     autoNextTimerRef.current = null;
     pendingAutoNextRef.current = null;
@@ -325,7 +331,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     }, 250);
   };
 
-  }, [learner.activeLessonId, learner.autoNextEnabled, autoNextState, lessonLocation]);
+  }, [learner.activeLessonId, learner.autoNextEnabled, autoNextState, courseRowsById, supplementary, supplementaryId, course.modules]);
 
   const handleYouTubeScriptReady = () => {
     if (window.YT?.Player) {
@@ -408,7 +414,14 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   useEffect(() => {
     if (view !== 'learn') return;
-    activeLessonRowRef.current?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    const map = courseDrawerRef.current;
+    if (moduleDrawerOpen) { map?.scrollTo({ top: 0 }); return; }
+    if (window.matchMedia('(max-width: 1180px)').matches) return;
+    const row = activeLessonRowRef.current;
+    if (!map || !row) return;
+    const bounds = row.getBoundingClientRect(), viewport = map.getBoundingClientRect();
+    if (bounds.bottom > viewport.bottom) map.scrollTop += bounds.bottom - viewport.bottom;
+    else if (bounds.top < viewport.top) map.scrollTop -= viewport.top - bounds.top;
   }, [activeLesson.id, moduleDrawerOpen, openModuleId, view]);
 
   useEffect(() => {
@@ -434,6 +447,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
+      if (document.querySelector('dialog[open]')) return;
       const element = event.target as HTMLElement | null;
       const typing = ['INPUT', 'TEXTAREA', 'SELECT'].includes(element?.tagName ?? '');
       if (event.key === '/' && !typing) {
@@ -533,8 +547,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
     const lessonId = activeLesson.id;
     const durationMinutes = Math.ceil(activeLesson.durationSeconds / 60);
-    const lessonIndex = allLessons.findIndex((lesson) => lesson.id === lessonId);
-    const nextLesson = allLessons[lessonIndex + 1];
     let destroyed = false;
     lastEndedLessonRef.current = null;
 
@@ -562,17 +574,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           });
 
 
-          if (!nextLesson) {
-            setToast('Final video watched. Return to the course or open your books.');
-            return;
-          }
-
-          if (!autoNextEnabledRef.current) {
-            setToast('Video watched. Choose another lesson when you are ready.');
-            return;
-          }
-
-          startAutoNextCountdownRef.current(lessonId, nextLesson.id);
+          videoEndedRef.current(lessonId);
         },
         onAutoplayBlocked: () => {
           if (!destroyed && autoPlayLessonId === lessonId) {
@@ -584,6 +586,17 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     playerBindingRef.current = { iframe, player, deactivate: () => { stopTracking(); destroyed = true; } };
   }, [view, youtubeApiReady, playerSrc, activeLesson.id, activeLesson.durationSeconds, autoPlayLessonId, allLessons, user, supplementaryId, activeLesson.videoId, saveVideoPosition]);
 
+  useEffect(() => {
+    videoEndedRef.current = id => {
+      if ((supplementaryId ?? activeLesson.id) !== id) return;
+      const index = allCourseRows.findIndex(row => row.id === id);
+      const next = allCourseRows[index + 1];
+      if (!next) { setToast('Final video watched. Return to the course or open your books.'); return; }
+      if (!autoNextEnabledRef.current) { setToast('Video watched. Choose another lesson when you are ready.'); return; }
+      startAutoNextCountdownRef.current(id, next.id);
+    };
+  }, [allCourseRows, supplementaryId, activeLesson.id]);
+
   const searchResults = useMemo(() => {
     const query = searchQuery.trim().toLocaleLowerCase();
     const results = [
@@ -594,14 +607,15 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           id: lesson.id,
           parentId: '',
           title: lesson.title,
-          subtitle: `M${pad(lessonPosition.module.number)} · L${pad(lesson.number)} · ${lesson.topic} · ${lesson.instructor}`,
+          subtitle: `M${pad(lessonPosition.module.number)} · L${pad(courseRowsById.get(lesson.id)?.displayNumber ?? lesson.number)} · ${lesson.topic} · ${lesson.instructor}`,
           searchable: `${lesson.title} ${lesson.topic} ${lesson.instructor} ${lesson.layer}`,
         };
       }),
+      ...(supplementary?.videos.filter(video => !video.archived && courseRowsById.has(video.id)).map(video => ({ kind: 'Supplementary video' as const, id: video.id, parentId: '', title: video.title, subtitle: `L${pad(courseRowsById.get(video.id)!.displayNumber)} · ${course.modules.find(m => m.id === video.moduleId)?.title} · ${video.instructor}`, searchable: `${video.title} ${video.instructor}` })) ?? []),
     ];
     return results.filter((result) => !query || result.searchable.toLocaleLowerCase().includes(query))
       .sort((a,b) => Number(b.title.toLowerCase() === query) - Number(a.title.toLowerCase() === query)).slice(0, 36);
-  }, [searchQuery, allLessons, lessonLocation]);
+  }, [searchQuery, allLessons, lessonLocation, courseRowsById, supplementary?.videos, course.modules]);
 
   const cancelAutoNext = (announce = false) => {
     if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
@@ -685,8 +699,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const chooseModule = (module: CourseModule) => {
-    if (!module.lessons.length) { setToast('This module is empty. Move a lesson here from another module.'); return; }
-    loadLesson(module.lessons.find(lesson=>!completed.has(lesson.id))?.id??module.lessons[0].id);
+    const rows = allCourseRows.filter(row => row.moduleId === module.id);
+    if (!rows.length) { setView('learn'); setOpenModuleId(module.id); setMapPath(module.path); setModuleDrawerOpen(window.matchMedia('(max-width: 1180px)').matches); setToast('This module is empty. Add a video or move one here.'); return; }
+    selectCourseRow(rows.find(row => !watchedRows.has(row.id)) ?? rows[0]);
   };
 
   const selectCourseRow = (row: (typeof allCourseRows)[number]) => {
@@ -696,6 +711,33 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     const targetModule = course.modules.find(module => module.id === row.moduleId)!;
     setMapPath(targetModule.path); setOpenModuleId(targetModule.id); supplementary?.open(video);
   };
+
+  useEffect(() => {
+    const locate = (event: Event) => {
+      const detail = (event as CustomEvent<{ id: string; moduleId: string; sectionId: string }>).detail;
+      const targetModule = course.modules.find(m => m.id === detail.moduleId);
+      if (!targetModule) return;
+      setMapPath(targetModule.path); setOpenModuleId(targetModule.id); setLessonFilter('all'); setCourseMapCollapsed(false);
+      window.setTimeout(() => {
+        const section = document.querySelector<HTMLElement>('[data-course-section="' + detail.sectionId + '"]');
+        const disclosure = section?.querySelector('details'); if (disclosure) disclosure.open = true;
+        const row = document.querySelector<HTMLElement>('[data-course-row="' + detail.id + '"]');
+        row?.classList.add('editor-recently-moved');
+        if (!document.querySelector('dialog[open]')) row?.querySelector<HTMLButtonElement>('[data-video-actions]')?.focus({ preventScroll: true });
+        if (row?.getClientRects().length) row.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+        window.setTimeout(() => row?.classList.remove('editor-recently-moved'), 1800);
+      }, 80);
+    };
+    const watch = (event: Event) => {
+      const row = courseRowsById.get((event as CustomEvent<{ id: string }>).detail.id);
+      if (row) selectCourseRow(row);
+    };
+    const changed = () => cancelAutoNext(false);
+    window.addEventListener('personal-course-locate', locate);
+    window.addEventListener('personal-course-watch', watch);
+    window.addEventListener('personal-course-changed', changed);
+    return () => { window.removeEventListener('personal-course-locate', locate); window.removeEventListener('personal-course-watch', watch); window.removeEventListener('personal-course-changed', changed); };
+  });
 
   const toggleComplete = () => {
     if (!user) { requestSignIn(); return; }
@@ -708,7 +750,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   const markGroupWatched = (lessonIds: string[], moduleId: string, label: string) => {
     if (!user) { requestSignIn(); return; }
-    setLearner((current) => ({ ...markVideoGroupWatched(current, lessonIds), updatedAt: new Date().toISOString() }));
+    setLearner((current) => ({ ...markVideoGroupWatched(current, lessonIds.filter(id => lessonLookup.has(id))), updatedAt: new Date().toISOString() }));
     window.dispatchEvent(new CustomEvent('supplementary-bulk-watch', { detail: { moduleId, lessonIds } }));
     setToast(`${label} marked as watched.`);
   };
@@ -721,7 +763,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const chooseSearchResult = (result: (typeof searchResults)[number]) => {
-    if (result.kind === 'Video lesson') chooseLesson(result.id);
+    const row = courseRowsById.get(result.id);
+    if (row) { selectCourseRow(row); setSearchOpen(false); }
   };
 
   const exportProgress = () => {
@@ -751,8 +794,16 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     </section>
   );
 
+  const autoNextPanel = autoNextState && queuedNextLesson && (
+                    <section className="auto-next-card" aria-labelledby="auto-next-title">
+                      <div className={`countdown-ring ${autoNextState.waitingForFullscreenExit ? 'paused' : ''}`} style={{ '--countdown': `${autoNextState.seconds * 72}deg` } as CSSProperties}><span><b>{autoNextState.seconds}</b><small>{autoNextState.waitingForFullscreenExit ? 'after exit' : 'seconds'}</small></span></div>
+                      <div className="auto-next-copy"><span className="eyebrow">{autoNextState.waitingForFullscreenExit ? 'Ready after fullscreen' : 'Up next automatically'}</span><h2 id="auto-next-title">{queuedNextLesson.title}</h2><p>{autoNextState.waitingForFullscreenExit ? 'Exit fullscreen to begin the five-second countdown. The current player stays safely in place until then.' : 'This lesson is complete. Continue now or cancel to stay here.'}</p></div>
+                      <div className="auto-next-actions"><button type="button" onClick={() => cancelAutoNext(true)}>Cancel</button><button type="button" onClick={playQueuedLessonNow}><SkipForward size={18} /> Next now</button></div>
+                    </section>
+                  );
+
   return (
-    <VideoStudyContext.Provider value={{ enabled: Boolean(user && hydrated),
+    <VideoStudyContext.Provider value={{ enabled: Boolean(user && hydrated), autoNextControls: autoNextPanel, autoPlayId: autoPlayLessonId, onEnded: id => videoEndedRef.current(id), autoNextEnabled: learner.autoNextEnabled, toggleAutoNext: toggleAutoNextPreference,
       savedVideos: learner.videoBookmarks, videoNotes: learner.videoNotes,
       toggleSaved: id => { if (user) setLearner(current => ({ ...current, videoBookmarks: current.videoBookmarks.includes(id) ? current.videoBookmarks.filter(value => value !== id) : [...current.videoBookmarks, id], updatedAt: new Date().toISOString() })); },
       setNote: (id, text) => { if (user) setLearner(current => ({ ...current, videoNotes: { ...current.videoNotes, [id]: text }, updatedAt: new Date().toISOString() })); },
@@ -771,6 +822,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         onReady={handleYouTubeScriptReady}
         onError={() => setToast('Auto-next could not connect. Videos still play normally.')}
       />
+      <PersonalCourseEditor/>
       <a className="skip-link" href="#main-content">Skip to course content</a>
 
       <div className="app-frame">
@@ -799,7 +851,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   {browsingControls}
                   <div className="module-card-grid">
                     {course.modules.map((module) => {
-                      const progress=groupProgress(module.lessons.map(lesson => lesson.id));
+                      const progress=groupProgress(allCourseRows.filter(row => row.moduleId === module.id).map(row => row.id));
                       return <button type="button" className="module-card" data-module-tone={moduleTone(module.id)} data-pathway={module.path} data-complete={progress.total > 0 && progress.watched === progress.total} key={module.id} onClick={() => chooseModule(module)}><div className="module-card-head"><span>{pad(module.number)}</span><small>{module.path === 'Professional' ? 'Advanced' : module.path} · {module.duration}</small></div><h3>{module.title}</h3><CourseProgressSummary {...progress} label={module.title + ' progress'}/></button>;
                     })}
                   </div>
@@ -818,27 +870,27 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                 <div className="map-guidance"><span>Explore at your own pace</span>{nextRequiredItem && <button type="button" onClick={() => chooseLesson(nextRequiredItem.lesson.id)}>Next unwatched <ArrowRight size={14}/></button>}</div>
                 {user && <div className="course-summary"><span>{courseRequiredComplete}/{courseRequiredTotal} required videos watched</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>}
                 {user && <div className="course-map-tools">
-                  <button type="button" className="organise-toggle" aria-pressed={organizing} onClick={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; setOrganizing(value => !value); setLessonFilter('all'); }}>{organizing ? 'Done organising' : 'Organise course'}</button>
+                  <CourseEditorTools sectionId={allCourseRows[selectedRowIndex]?.sectionId ?? sectionsByModule[openModuleId][0].id} organizing={organizing} onOrganise={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; setOrganizing(value => !value); setLessonFilter('all'); }}/>
                   {!organizing && <><div className="lesson-filters" role="group" aria-label="Filter lessons">{(['all', 'unwatched', 'saved'] as const).map(filter => <button key={filter} type="button" aria-pressed={lessonFilter === filter} onClick={() => setLessonFilter(filter)}>{filter === 'all' ? 'All' : filter === 'saved' ? 'Saved' : 'Unwatched'} <span>{filterCounts[filter]}</span></button>)}</div>
                   <label className="collapse-completed"><input type="checkbox" checked={collapseCompleted} onChange={event => setCollapseCompleted(event.target.checked)}/>Collapse completed sections</label>
                   {lessonFilter !== 'all' && <p className="filter-notice">{visibleRows.size} matching {lessonFilter === 'saved' ? 'saved lessons' : 'videos'} in this pathway. <button type="button" onClick={() => setLessonFilter('all')}>Clear filter</button></p>}</>}
-                  {organizing && <p className="filter-notice">Drag to reorder, or use Move lesson. Changes are reviewed before saving.</p>}
+                  {organizing && <p className="filter-notice">Drag nearby videos, or choose Move to… from a video’s menu. Only your course changes.</p>}
                 </div>}
                 {!organizing && lessonFilter !== 'all' && visibleRows.size === 0 && <p className="map-empty" role="status">{lessonFilter === 'saved' ? 'No saved lessons in this pathway yet. Use Save lesson below a video.' : 'You have watched every video in this pathway.'}</p>}
                 <nav aria-label="Course module and lesson navigation">
                   {course.modules.filter(module=>module.path===mapPath && (organizing || lessonFilter === 'all' || sectionsByModule[module.id].some(group => mapRows[group.id]?.some(row => visibleRows.has(row.id))))).map((module) => {
                     const isOpen = (!organizing && lessonFilter !== 'all') || openModuleId === module.id || dragOpenModuleIds.includes(module.id);
-                    const progress = groupProgress(module.lessons.map(lesson => lesson.id));
+                    const progress = groupProgress(allCourseRows.filter(row => row.moduleId === module.id).map(row => row.id));
                     return (
                       <CourseDragModule key={module.id} id={module.id} expanded={isOpen} onExpand={() => setDragOpenModuleIds(ids => [...new Set([...ids, module.id])])}><section data-current={(supplementary?.selected?.moduleId ?? location.module.id) === module.id} data-module-tone={moduleTone(module.id)} data-pathway={module.path} data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} className={`module-accordion ${isOpen ? 'open' : ''}`}>
                         <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => { setDragOpenModuleIds([]); setOpenModuleId(isOpen ? '' : module.id); }} aria-expanded={isOpen}>
-                          <span className="module-index">{user && progress.total > 0 && progress.watched === progress.total ? <Check size={18} aria-label="Completed"/> : pad(module.number)}</span><span><span className="module-eyebrow">Module {pad(module.number)}{(supplementary?.selected?.moduleId ?? location.module.id) === module.id && <span> · Current</span>}</span><strong>{module.title}</strong><small>{module.path === 'Professional' ? 'Advanced' : module.path} · {module.lessons.length} lessons · {module.duration}</small>{user && <CourseProgressSummary {...progress} label={module.title + ' progress'}/>}</span><ChevronDown size={18} />
+                          <span className="module-index">{user && progress.total > 0 && progress.watched === progress.total ? <Check size={18} aria-label="Completed"/> : pad(module.number)}</span><span><span className="module-eyebrow">Module {pad(module.number)}{(supplementary?.selected?.moduleId ?? location.module.id) === module.id && <span> · Current</span>}</span><strong>{module.title}</strong><small>{module.path === 'Professional' ? 'Advanced' : module.path} · {allCourseRows.filter(row => row.moduleId === module.id).length} videos · {module.duration} core</small>{user && <CourseProgressSummary {...progress} label={module.title + ' progress'}/>}</span><ChevronDown size={18} />
                         </button>
                         <div className="module-actions">
-                          <SupplementaryControls moduleId={module.id} label={`Add video to module ${module.number}: ${module.title}`} />
-                          {isOpen&&<button type="button" className="bulk-watch-action" aria-label={`Mark every video in module ${pad(module.number)} as watched`} data-tooltip={`Mark every video in module ${pad(module.number)} as watched`} onClick={()=>markGroupWatched(module.lessons.map(lesson=>lesson.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/></button>}
+                          <AddVideoButton sectionId={sectionsByModule[module.id][0].id} compact label={`Add video to module ${module.number}: ${module.title}`} />
+                          {isOpen&&<button type="button" className="bulk-watch-action" aria-label={`Mark every video in module ${pad(module.number)} as watched`} data-tooltip={`Mark every video in module ${pad(module.number)} as watched`} onClick={()=>markGroupWatched(allCourseRows.filter(row => row.moduleId === module.id).map(row => row.id),module.id,`Module ${pad(module.number)}`)}><CheckCircle2 size={17}/></button>}
                         </div>
-                        {isOpen && <div className="accordion-lessons">{sectionsByModule[module.id].filter(group => organizing || lessonFilter === 'all' || mapRows[group.id]?.some(row => visibleRows.has(row.id))).map(group=>{const progress = groupProgress(group.lessonIds); return <CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} key={String(collapseCompleted) + lessonFilter} open={(!organizing && lessonFilter !== 'all') || (!supplementaryId && group.lessonIds.includes(activeLesson.id)) || supplementaryDescendants(supplementary?.videos ?? [], group.lessonIds).some(video => video.id === supplementaryId) || (user && !collapseCompleted && progress.total > 0 && progress.watched === progress.total) || undefined}><summary><span className="section-eyebrow">Section {String(group.number).padStart(2, '0')}</span><span className="section-title">{group.title}</span>{user ? <CourseProgressSummary {...progress} label={group.title + ' progress'}/> : <small>{group.lessonIds.length} core videos</small>}</summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched(group.lessonIds,module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button>{group.lessonIds.length > 0 && <SupplementaryControls moduleId={module.id} anchorId={group.lessonIds.at(-1)} compact label={`Add video to section ${group.number}: ${group.title}`} />}</div><CourseSectionRows visibleIds={organizing || lessonFilter === 'all' ? undefined : visibleRows} sectionId={group.id} renderCore={(lessonId, displayNumber) => {
+                        {isOpen && <div className="accordion-lessons">{sectionsByModule[module.id].filter(group => organizing || lessonFilter === 'all' || mapRows[group.id]?.some(row => visibleRows.has(row.id))).map(group=>{const progress = groupProgress((mapRows[group.id] ?? []).map(row => row.id)); return <CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} key={String(collapseCompleted) + lessonFilter} open={(!organizing && lessonFilter !== 'all') || (!supplementaryId && group.lessonIds.includes(activeLesson.id)) || (mapRows[group.id] ?? []).some(row => row.id === supplementaryId) || (user && !collapseCompleted && progress.total > 0 && progress.watched === progress.total) || undefined}><summary><span className="section-eyebrow">Section {String(group.number).padStart(2, '0')}</span><span className="section-title">{group.title}</span>{user ? <CourseProgressSummary {...progress} label={group.title + ' progress'}/> : <small>{group.lessonIds.length} core videos</small>}</summary><div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched((mapRows[group.id] ?? []).map(row => row.id),module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button><AddVideoButton sectionId={group.id} compact label={`Add video to section ${group.number}: ${group.title}`} /></div><CourseSectionRows visibleIds={organizing || lessonFilter === 'all' ? undefined : visibleRows} sectionId={group.id} renderCore={(lessonId, displayNumber) => {
                           const lesson=lessonLookup.get(lessonId)!;
                           const isActiveLesson=!supplementaryId&&activeLesson.id===lesson.id;
                           return <button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17}/>:<Circle size={17}/>}<span><strong>L{pad(displayNumber)} · {lesson.title}</strong><small>{lessonStudyRole(lesson.id)} · {lesson.duration}</small><small className="lesson-row-progress">{isActiveLesson&&<b>Watching now</b>}{completed.has(lesson.id)?'Watched':isActiveLesson?'':'Not watched'}{(learner.videoCompletionCounts[lesson.id]??0)>1?` · ${learner.videoCompletionCounts[lesson.id]} completions`:''}</small></span>{bookmarked.has(lesson.id)&&<div className="lesson-row-state">{bookmarked.has(lesson.id)&&<Bookmark size={14} fill="currentColor"/>}</div>}</button>;
@@ -852,8 +904,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
 {supplementaryId ? supplementary?.playback : <article className="lesson-canvas" data-module-tone={moduleTone(location.module.id)}>
                 <div className="lesson-topline">
-                  {organizing && <MoveLessonButton key={activeLesson.id} lessonId={activeLesson.id} onMoved={moduleId => { setOpenModuleId(moduleId); setMapPath(course.modules.find(m => m.id === moduleId)!.path); }} />}
-                  <SupplementaryControls moduleId={location.module.id} anchorId={activeLesson.id} compact label="Add a supporting video after this lesson" />
+                  <VideoActions id={activeLesson.id}/>
                   <button className="mobile-module-button" type="button" onClick={openCourseMap} aria-expanded={moduleDrawerOpen}><Menu size={19} /> Course map</button>
                   <div className="breadcrumbs"><span>{location.module.path}</span><ChevronRight size={15} /><span>{location.module.title}</span></div>
                   <VideoLessonStepper/>
@@ -865,13 +916,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                       ? <div ref={playerHostRef} className="youtube-player player-loading" role="group" aria-label={`${activeLesson.title} video player`} />
                       : <div className="youtube-player player-loading" role="status" aria-label={`Loading ${activeLesson.title}`} />}
                   </div>
-                  {autoNextState && queuedNextLesson && (
-                    <section className="auto-next-card" aria-labelledby="auto-next-title">
-                      <div className={`countdown-ring ${autoNextState.waitingForFullscreenExit ? 'paused' : ''}`} style={{ '--countdown': `${autoNextState.seconds * 72}deg` } as CSSProperties}><span><b>{autoNextState.seconds}</b><small>{autoNextState.waitingForFullscreenExit ? 'after exit' : 'seconds'}</small></span></div>
-                      <div className="auto-next-copy"><span className="eyebrow">{autoNextState.waitingForFullscreenExit ? 'Ready after fullscreen' : 'Up next automatically'}</span><h2 id="auto-next-title">{queuedNextLesson.title}</h2><p>{autoNextState.waitingForFullscreenExit ? 'Exit fullscreen to begin the five-second countdown. The current player stays safely in place until then.' : 'This lesson is complete. Continue now or cancel to stay here.'}</p></div>
-                      <div className="auto-next-actions"><button type="button" onClick={() => cancelAutoNext(true)}>Cancel</button><button type="button" onClick={playQueuedLessonNow}><SkipForward size={18} /> Next now</button></div>
-                    </section>
-                  )}
+                  {autoNextPanel}
                 </div>
                 <div className="lesson-control-row">
                   <div><button className={`bookmark-button ${bookmarked.has(activeLesson.id) ? 'active' : ''}`} type="button" onClick={toggleBookmark}><Bookmark size={18} fill={bookmarked.has(activeLesson.id) ? 'currentColor' : 'none'} /> {bookmarked.has(activeLesson.id) ? 'Saved' : 'Save lesson'}</button><button className={`auto-next-toggle ${learner.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={18} /> Auto-next <span>{learner.autoNextEnabled ? 'On' : 'Off'}</span></button></div>

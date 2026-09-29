@@ -6,6 +6,7 @@ A video course with 296 lessons in 25 modules across C2, C1 and Professional pat
 
 - **Home:** guests see the public course overview; signed-in learners see a personal workspace with their current lesson, upcoming videos, bookmarks and progress. A full-width header includes the account initials, progress and sign-out menu.
 - **Learn:** 86 sections with embedded videos, watched progress, bookmarks, playback resume and private notes, including timestamped notes. Module colours continue through sections and lessons; All / Unwatched / Saved filters and Organise mode keep navigation focused. Lessons are freely accessible in any order. Core and supplementary videos share continuous numbering that adjusts when reordered.
+- **Personal course editor:** signed-in learners can add YouTube videos, move any video between sections/modules/pathways, and archive or restore supplementary entries. Compact menus, an exact-position picker, optional dragging and Undo preserve the existing study layout. Changes are account-scoped; numbering and playback navigation update together. See [personal ordering](docs/course-drag-and-drop.md).
 - **Books:** four complete reference books with chapter search, PDF/text views, zoom, saved pages and personal notes.
 - **Practice (`/practice`):** separate C2/C1 pathways, 568 verbatim topic questions, 110 recall questions and two complete mock papers. Topic filters, answer reveals, LaTeX worked solutions, session quizzes, timed/untimed exams, individual mock responses, part-level self-assessment, separate resumable in-page sessions, wide-screen answer comparison and downloadable working including revision flags. No sign-in required. See [the practice-centre guide](docs/epra-practice-centre.md).
 - **Install (`/install`):** add the course to a phone home screen or desktop app launcher. Browser installation guidance, app icons and a public offline reconnect screen. Course content and account sync still require internet. See [PWA support](docs/pwa.md).
@@ -61,6 +62,8 @@ npm run test:books
 npm run test:navigation
 npm run test:migration
 npm run test:architecture
+npm run test:personal-course
+npm run test:personal-course-api
 npm run test:accounts
 npm run test:guests
 npm run audit:course
