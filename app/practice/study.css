@@ -102,6 +102,28 @@
 .epra-definition-copy .epra-prose > p { margin: 0 0 8px; }
 .epra-definition-copy .epra-prose ul { margin: 7px 0; }
 .epra-definition-source { margin: 14px 0 0 18px; color: var(--muted); font-size: 10px; line-height: 1.6; }
+.epra-definition-official + .epra-definition-learning { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+.epra-definition-kicker { display: flex; align-items: center; gap: 7px; color: var(--text-accent); font-size: 10px; letter-spacing: .045em; text-transform: uppercase; }
+.epra-definition-kicker svg { flex: 0 0 auto; }
+.epra-definition-explanation { margin: 10px 0 0; }
+.epra-definition-explanation .epra-prose { font-size: 13px; line-height: 1.75; }
+.epra-definition-explanation .epra-prose > p { margin: 0; }
+.epra-definition-remember { margin: 13px 0 0; padding: 12px 14px; border: 1px solid var(--surface-selected-border); border-radius: 8px; background: var(--surface-selected); }
+.epra-definition-remember > strong { display: block; margin-bottom: 5px; color: var(--ink); font-size: 11px; }
+.epra-definition-remember .epra-prose { font-size: 12px; line-height: 1.65; }
+.epra-definition-remember .epra-prose > p { margin: 0; }
+.epra-definition-guide { margin: 13px 0 0; padding: 13px 15px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-soft); }
+.epra-definition-guide > span { display: block; color: var(--muted); font-size: 9px; font-weight: 650; letter-spacing: .05em; }
+.epra-definition-guide > strong { display: block; margin-top: 5px; color: var(--ink); font-size: 12px; }
+.epra-definition-guide > p { margin: 6px 0 0; color: var(--ink); font-size: 12px; line-height: 1.65; }
+.epra-definition-guide > small { display: block; margin-top: 7px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.epra-definition-related { margin-top: 15px; }
+.epra-definition-related > strong { display: block; margin-bottom: 7px; color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .04em; }
+.epra-definition-related > div { display: flex; flex-wrap: wrap; gap: 6px; }
+.epra-definition-related button, .epra-definition-related span { border: 1px solid var(--line); border-radius: 999px; background: var(--white); color: var(--text-accent); padding: 5px 9px; font: inherit; font-size: 10px; line-height: 1.25; }
+.epra-definition-related button { cursor: pointer; }
+.epra-definition-related button:hover { border-color: var(--surface-selected-border); background: var(--surface-selected); }
+.epra-definition-result p { margin: 5px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
 .epra-definitions-caveat { margin: 25px 0 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .epra-empty { text-align: center; padding: 45px 20px; background: var(--white); border: 1px solid var(--line); border-radius: 14px; }
 .epra-empty svg { color: var(--text-accent); }
