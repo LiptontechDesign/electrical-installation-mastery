@@ -41,7 +41,7 @@ for (let index = 0; index < sections.length; index += 1) {
 assert.equal(sections.length, 6, 'Expected six learning areas');
 assert.equal(definitions.length, 138, 'Glossary count changed; review the source before updating this check');
 assert.equal(new Set(definitions.map(entry => entry.term)).size, definitions.length, 'Duplicate glossary term');
-const learningIds = [...learningNotes.matchAll(/^  '(definition-\\d+)': \\{/gm)].map(match => match[1]);
+const learningIds = [...learningNotes.matchAll(/^  '(definition-\d+)': \{/gm)].map(match => match[1]);
 assert.equal(learningIds.length, definitions.length, 'Every definition must have one expanded learning note');
 assert.deepEqual(new Set(learningIds), new Set(definitions.map(entry => entry.id)), 'Expanded learning note IDs must match the glossary exactly');
 for (const term of ['Circuit protective conductor (cpc)', 'Earthing conductor', 'Protective conductor (PE)', 'Protective bonding conductor']) {
