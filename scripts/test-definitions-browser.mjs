@@ -26,19 +26,19 @@ try {
   assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /CPC — circuit protective conductor/);
 
   await search.fill('earthing conductor');
-  await page.getByRole('button', { name: /^Earthing conductor/ }).click();
+  await page.locator('.epra-definition-trigger').filter({ hasText: /^Earthing conductor/ }).click();
   assert.match(await page.getByRole('region', { name: 'Earthing conductor definition' }).textContent(), /main earthing terminal of an installation to an earth electrode/);
 
   await search.fill('TN-C-S');
-  await page.getByRole('button', { name: /^TN-C-S system/ }).click();
+  await page.locator('.epra-definition-trigger').filter({ hasText: /^TN-C-S system/ }).click();
   assert.match(await page.getByRole('region', { name: 'TN-C-S system definition' }).textContent(), /neutral and protective functions are combined/);
 
   await search.fill('Zs');
-  await page.getByRole('button', { name: /^Earth fault loop impedance/ }).click();
+  await page.locator('.epra-definition-trigger').filter({ hasText: /^Earth fault loop impedance/ }).click();
   assert.ok(await page.getByRole('region', { name: 'Earth fault loop impedance definition' }).locator('.katex').count() > 0, 'Subscript is rendered');
 
   await search.fill('triplen');
-  await page.getByRole('button', { name: /^Triplen harmonics/ }).click();
+  await page.locator('.epra-definition-trigger').filter({ hasText: /^Triplen harmonics/ }).click();
   assert.ok(await page.getByRole('region', { name: 'Triplen harmonics definition' }).locator('.katex').count() > 0, 'Superscripts are rendered');
 
   await search.fill('');
@@ -46,6 +46,15 @@ try {
   assert.ok(await page.locator('.epra-definition-row').count() < 138);
   await page.getByRole('button', { name: 'Topic practice' }).click();
   assert.equal(await page.locator('.epra-collection').count(), 7);
+  const topicSearch = page.getByRole('textbox', { name: 'Search topic questions' });
+  await topicSearch.fill('RCD');
+  assert.ok(await page.locator('.epra-definition-result').count() > 0, 'Definitions are surfaced outside the Definitions tab');
+  await page.locator('.epra-definition-result').filter({ hasText: 'Residual current device (RCD)' }).first().click();
+  assert.equal(await page.getByRole('button', { name: 'Definitions', exact: true }).getAttribute('aria-pressed'), 'true');
+  assert.match(await page.getByRole('region', { name: 'Residual current device (RCD) definition' }).textContent(), /RCCB = residual-current protection/);
+
+  await page.goto(`${base}/practice?definition=definition-50`, { waitUntil: 'networkidle' });
+  assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /CPC — circuit protective conductor/);
 
   await page.getByRole('button', { name: 'Definitions', exact: true }).click();
   await page.setViewportSize({ width: 390, height: 844 });

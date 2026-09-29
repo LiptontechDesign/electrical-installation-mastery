@@ -3,7 +3,9 @@ import { readFile, writeFile } from 'node:fs/promises';
 
 const source = new URL('../docs/bs7671-17th-edition-epra-definitions.md', import.meta.url);
 const target = new URL('../app/practice/definitions.json', import.meta.url);
+const learningNotesSource = new URL('../app/practice/definition-learning-notes.ts', import.meta.url);
 const markdown = await readFile(source, 'utf8');
+const learningNotes = await readFile(learningNotesSource, 'utf8');
 const body = markdown.split('## Terms to source separately')[0];
 const sections = [...body.matchAll(/^## [1-6]\. (.+)$/gm)];
 const definitions = [];
@@ -39,6 +41,9 @@ for (let index = 0; index < sections.length; index += 1) {
 assert.equal(sections.length, 6, 'Expected six learning areas');
 assert.equal(definitions.length, 138, 'Glossary count changed; review the source before updating this check');
 assert.equal(new Set(definitions.map(entry => entry.term)).size, definitions.length, 'Duplicate glossary term');
+const learningIds = [...learningNotes.matchAll(/^  '(definition-\d+)': \{/gm)].map(match => match[1]);
+assert.equal(learningIds.length, definitions.length, 'Every definition must have one expanded learning note');
+assert.deepEqual(new Set(learningIds), new Set(definitions.map(entry => entry.id)), 'Expanded learning note IDs must match the glossary exactly');
 for (const term of ['Circuit protective conductor (cpc)', 'Earthing conductor', 'Protective conductor (PE)', 'Protective bonding conductor']) {
   assert.ok(definitions.some(entry => entry.term === term), `Missing essential term: ${term}`);
 }

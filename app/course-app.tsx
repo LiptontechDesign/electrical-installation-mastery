@@ -32,6 +32,8 @@ import { AccountControl, useCourseAccount } from './course-account';
 import CourseOverview from './course-overview';
 import LearningHome from './learning-home';
 import type { CourseUser } from './server/auth';
+import definitions from './practice/definitions.json';
+import { definitionLearningNotes, guideReferences } from './practice/definition-learning-notes';
 
 const BookWorkspace = dynamic(() => import('./book-reader').then(module => module.BookWorkspace), { ssr: false });
 
@@ -612,6 +614,18 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         };
       }),
       ...(supplementary?.videos.filter(video => !video.archived && courseRowsById.has(video.id)).map(video => ({ kind: 'Supplementary video' as const, id: video.id, parentId: '', title: video.title, subtitle: `L${pad(courseRowsById.get(video.id)!.displayNumber)} · ${course.modules.find(m => m.id === video.moduleId)?.title} · ${video.instructor}`, searchable: `${video.title} ${video.instructor}` })) ?? []),
+      ...definitions.map(entry => {
+        const learning = definitionLearningNotes[entry.id];
+        const guide = learning?.guide ? guideReferences[learning.guide] : null;
+        return {
+          kind: 'Definition' as const,
+          id: entry.id,
+          parentId: '',
+          title: entry.term,
+          subtitle: `${entry.category} · BS 7671 definition + learning explanation`,
+          searchable: [entry.term, entry.aliases.join(' '), entry.definition, entry.category, learning?.meaning ?? '', learning?.remember ?? '', learning?.related?.join(' ') ?? '', learning?.guideDetail ?? '', guide?.label ?? '', guide?.summary ?? ''].join(' '),
+        };
+      }),
     ];
     return results.filter((result) => !query || result.searchable.toLocaleLowerCase().includes(query))
       .sort((a,b) => Number(b.title.toLowerCase() === query) - Number(a.title.toLowerCase() === query)).slice(0, 36);
@@ -763,6 +777,10 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const chooseSearchResult = (result: (typeof searchResults)[number]) => {
+    if (result.kind === 'Definition') {
+      window.location.href = `/practice?definition=${encodeURIComponent(result.id)}`;
+      return;
+    }
     const row = courseRowsById.get(result.id);
     if (row) { selectCourseRow(row); setSearchOpen(false); }
   };
@@ -940,7 +958,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         <div className="modal-layer" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSearchOpen(false); }}>
           <section ref={searchDialogRef} className="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
             <div className="dialog-title"><div><span className="eyebrow neutral">Global search</span><h2 id="search-title">Search the course</h2></div><button type="button" onClick={() => setSearchOpen(false)} aria-label="Close search"><X size={22} /></button></div>
-            <label className="search-field"><Search size={21} /><input ref={searchInputRef} aria-label="Search video lessons" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search video titles, topics or instructors…" autoComplete="off" /><kbd>esc</kbd></label>
+            <label className="search-field"><Search size={21} /><input ref={searchInputRef} aria-label="Search the course" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Search lessons, definitions, topics or instructors…" autoComplete="off" /><kbd>esc</kbd></label>
             <div className="search-results">{searchResults.map((result) => <button type="button" key={`${result.kind}-${result.id}`} onClick={() => chooseSearchResult(result)}><span className="result-icon">{result.kind === 'Video lesson' ? <PlayCircle size={19} /> : <BookOpen size={19} />}</span><span><small>{result.kind}</small><strong>{result.title}</strong><p>{result.subtitle}</p></span><ChevronRight size={18} /></button>)}</div>
             {!searchResults.length && <div className="empty-state"><Search size={25} /><h3>No results yet</h3><p>Try a shorter topic or search one word.</p></div>}
           </section>

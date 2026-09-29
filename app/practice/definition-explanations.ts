@@ -1,7 +1,13 @@
 export const abbreviationHelp = [
+  { pattern: '\\bIEC\\b', label: 'IEC — International Electrotechnical Commission', meaning: 'The international organisation that develops standards for electrical and electronic technologies.' },
+  { pattern: '\\bMET\\b', label: 'MET — main earthing terminal', meaning: 'The connection point for protective conductors and the installation’s means of earthing.' },
+  { pattern: '\\bL[123]?\\b', label: 'L, L1, L2, L3 — line conductors', meaning: 'L identifies a line conductor; L1, L2 and L3 identify the three line conductors of a three-phase supply.' },
+  { pattern: '\\bN\\b', label: 'N — neutral conductor', meaning: 'The conductor connected to the neutral point of a system that can contribute to the transmission of electrical energy.' },
+  { pattern: '\\bR1\\b|\\bR2\\b', label: 'R1 + R2 — line and protective conductor resistance', meaning: 'R1 is the circuit line-conductor resistance and R2 is the circuit protective-conductor resistance. Their sum represents the combined resistance of these two paths, measured in ohms.' },
+  { pattern: 'IΔn', label: 'IΔn — rated residual operating current', meaning: 'The manufacturer-assigned residual-current value at which a residual current device must operate under specified conditions. I denotes current, Δ indicates a difference and n indicates the rated value.' },
   { pattern: '\\bBS\\b', label: 'BS — British Standard', meaning: 'A published British standard. BS 7671 sets requirements for electrical installations.' },
   { pattern: '\\bEN\\b', label: 'EN — European Standard', meaning: 'A European standard; BS EN identifies its adoption as a British Standard.' },
-  { pattern: '\\bcpc\\b', label: 'CPC — circuit protective conductor', meaning: 'Connects equipment’s exposed conductive parts to the main earthing terminal.' },
+  { pattern: '\\bcpcs?\\b', label: 'CPC — circuit protective conductor', meaning: 'Connects equipment’s exposed conductive parts to the main earthing terminal.' },
   { pattern: '\\bSELV\\b', label: 'SELV — separated extra-low voltage', meaning: 'An extra-low-voltage system separated from Earth and other systems so that a single fault does not create an electric-shock risk.' },
   { pattern: '\\bPELV\\b', label: 'PELV — protective extra-low voltage', meaning: 'An extra-low-voltage system meeting the SELV protective requirements except that it may be connected to Earth.' },
   { pattern: '\\bFELV\\b', label: 'FELV — functional extra-low voltage', meaning: 'Extra-low voltage used for a functional purpose without all the protective measures required for SELV or PELV. Low voltage alone does not establish equivalent shock protection.' },
@@ -18,7 +24,7 @@ export const abbreviationHelp = [
   { pattern: '\\bV\\b', label: 'V — volt', meaning: 'The unit of electrical potential difference, also called voltage.' },
   { pattern: '\\bkg\\b', label: 'kg — kilogram', meaning: 'The unit of mass.' },
   { pattern: '\\bIpf\\b', label: 'Ipf — prospective fault current', meaning: 'The current that would flow at the point under consideration if a fault of negligible impedance occurred.' },
-  { pattern: 'Z<sub>s</sub>', label: 'Zs — earth fault loop impedance', meaning: 'The total opposition to alternating fault current around the complete earth-fault loop, including the outgoing and return paths.' },
+  { pattern: 'Z<sub>s</sub>|\\bZs\\b', label: 'Zs — earth fault loop impedance', meaning: 'The total opposition to alternating fault current around the complete earth-fault loop, including the outgoing and return paths.' },
   { pattern: '\\b(?:TN(?:-C-S|-C|-S)?|TT|IT)\\b', label: 'Earthing-system letters', meaning: 'The first letter describes the source: T means a direct connection to Earth; I means isolation from Earth or connection through an impedance. The second letter describes the exposed conductive parts: T means their own connection to Earth; N means connection to the earthed point of the source. S means separate neutral and protective conductors; C means their functions are combined. TN-C-S combines them in one part and separates them in another.' },
 ];
 
@@ -26,11 +32,3 @@ export function termsInDefinition(term: string, definition: string) {
   const visible = definition.replace(/\s*\(see (?:BS EN [\d-]+|Figure [\d.]+|Appendix \d+ Figure \w+)\)/gi, '');
   return abbreviationHelp.filter(item => new RegExp(item.pattern, item.pattern.includes('cpc') ? 'i' : '').test(`${term} ${visible}`));
 }
-
-export const learningNotes: Record<string, string> = {
-  'Circuit protective conductor (cpc)': 'Follow the connection: equipment → circuit protective conductor → main earthing terminal. The earthing conductor continues from that terminal to the earth electrode or other means of earthing.',
-  'Earthing conductor': 'Follow the connection: main earthing terminal → earthing conductor → earth electrode or other means of earthing. The circuit protective conductor connects the equipment to the main earthing terminal.',
-  'Exposed-conductive-part': 'For example, the accessible metal case of electrical equipment may become live if its insulation fails. “Exposed” here describes a conductive equipment part, not an intentionally live bare wire.',
-  'Extraneous-conductive-part': 'For example, a metal service pipe entering a building may introduce Earth potential. A metal object is not automatically extraneous: its ability to introduce a potential is what matters.',
-  'Overcurrent': 'This is the broader term. An overload occurs in an electrically sound circuit; a short-circuit current results from a fault between live conductors.',
-};
