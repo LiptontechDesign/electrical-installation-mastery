@@ -28,8 +28,12 @@ The C2 URL-only text files follow the new catalogue order. No lesson is deleted 
 
 ## Saved courses
 
-All 87 previous section IDs remain valid; display numbers reflect the new sequence. Original saved teaching groups receive the update on read. Explicitly edited/moved rows and legacy groups with a custom core order keep their placements. Personal additions keep their relative order; untouched legacy attachments follow a relocated anchor. Archives, permanent removals, account revisions and operation receipts are retained.
+All 87 previous section IDs remain valid; display numbers reflect the new sequence. The first migration skipped customised source groups and touched rows, which could leave Section 5 empty while ADS and calculation lessons remained in Section 3. Revision 2 corrects those known lessons even when their old combined group was reordered. It changes only obsolete source placements; personal moves to other destinations remain intact.
 
-An additive `curriculumRevision` marker prevents subsequent personal moves from being moved back by the update. A read performs no database write; the marker is persisted with the next successful course edit. Stable lesson and YouTube IDs keep watched marks, notes, bookmarks and playback positions attached to the same videos. Active totals and numbering are derived from the new membership.
+The introductory mixed order in an existing revision-1 course stays intact. For the reported eight-video arrangement, Section 3 keeps its five catalogue earthing/bonding lessons and three personal introductions, in the same order. The remaining catalogue lessons move to ADS (Section 5), loop impedance (Section 6), conductor sizing (Module 6) and bonding assessment (Module 8). Personal entries before the first relocated lesson stay in Section 3 even if a legacy anchor points at a moving lesson. Later untouched legacy attachments follow their relocated anchor. Archives, permanent removals, account revisions and operation receipts are retained.
+
+The `curriculumRevision: 2` marker prevents subsequent personal moves from being moved back by the correction. A read performs no database write; the marker is persisted with the next successful course edit. Stable lesson and YouTube IDs keep watched marks, notes, bookmarks and playback positions attached to the same videos. Active totals and numbering are derived from the new membership.
 
 Verify with `node scripts/test-earthing-curriculum.mjs`, the curriculum/licensing suites and the existing personal-course model/API/browser suites. Browser scenarios use local account/storage and YouTube fixtures; they do not change live learner records.
+
+`node scripts/test-earthing-browser.mjs` uses the local fixture server to reproduce the customised eight-video introduction and empty ADS section on desktop and 320px mobile. It verifies repaired placements, mixed watched totals, notes, bookmarks, resume positions, three-dot move/Undo and reload.

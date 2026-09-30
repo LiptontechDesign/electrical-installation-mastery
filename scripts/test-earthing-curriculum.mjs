@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { build } from 'esbuild';
+import { incompleteEarthingCourse, firstEightEarthingIds, obsoleteEarthingIds } from './fixtures/earthing-incomplete-course.mjs';
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-order-model.ts', 'app/course-progress-model.ts'], outdir: 'work/earthing-regroup-tests', bundle: true, platform: 'node', format: 'esm' });
 const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCourseSnapshot: snapshot, applyCourseEdit: apply, migratePersonalCourse } = await import('../work/earthing-regroup-tests/personal-course-model.js');
 const { orderedSections, moveLesson } = await import('../work/earthing-regroup-tests/course-order-model.js');
@@ -20,7 +21,7 @@ const before = oldState(), upgraded = parse(before), rows = snapshot(upgraded);
 assert.deepEqual(upgraded.groups, base.groups, 'An untouched saved course receives the complete new teaching order');
 assert.deepEqual([...Object.values(before.groups).flat()].sort(), [...Object.values(upgraded.groups).flat()].sort(), 'No video is lost, added or duplicated');
 assert.equal(upgraded.revision, 12);
-assert.equal(upgraded.curriculumRevision, 1);
+assert.equal(upgraded.curriculumRevision, 2);
 assert.deepEqual(parse(upgraded), upgraded, 'Reading an upgraded course is idempotent');
 assert.equal(before.curriculumRevision, undefined, 'Normalising does not mutate the stored input');
 assert.equal(rows.byId.get('p05-l10').sectionId, 'module-06-cpc-sizing');
@@ -32,13 +33,13 @@ const customised = oldState();
 customised.groups['module-05-section-3'] = customised.groups['module-05-section-3'].filter(id => id !== 'p05-l10');
 customised.groups['module-06-section-2'].push('p05-l10');
 customised.itemRevisions['p05-l10'] = 12;
-customised.itemRevisions['p05-l07'] = 11; // An explicitly placed row stays where the learner put it.
+customised.itemRevisions['p05-l07'] = 11; // A touched row still in the obsolete combined group must move.
 customised.receipts = [{ id: 'retained-earthing-move', revision: 12, affected: ['p05-l10'], inverse: { positions: [{ id: 'p05-l10', sectionId: 'module-05-section-3', beforeId: 'p05-l11', afterId: 'course-TFt3d77LujQ' }], videos: [], archiveIds: [] } }];
 customised.archivedLessonIds = ['course-8-GmwF090JU'];
 customised.deletedIds = ['p05-l11'];
 const personal = parse(customised);
 assert.equal(snapshot(personal).byId.get('p05-l10').sectionId, 'module-06-section-2');
-assert.equal(snapshot(personal).byId.get('p05-l07').sectionId, 'module-05-section-3');
+assert.equal(snapshot(personal).byId.get('p05-l07').sectionId, 'module-05-fault-loop');
 assert.deepEqual(personal.receipts, customised.receipts);
 assert.deepEqual(personal.itemRevisions, customised.itemRevisions);
 assert.deepEqual(personal.archivedLessonIds, customised.archivedLessonIds);
@@ -78,10 +79,33 @@ const legacyUpgrade = migratePersonalCourse(legacy);
 assert.deepEqual(legacyUpgrade.groups, base.groups);
 const legacyCustom = structuredClone(legacy);
 legacyCustom.groups['module-05-section-3'].reverse();
-assert.deepEqual(orderedSections(legacyCustom).find(section => section.id === 'module-05-section-3').lessonIds, legacyCustom.groups['module-05-section-3'], 'Legacy custom core ordering is not overwritten');
+assert.deepEqual(orderedSections(legacyCustom).find(section => section.id === 'module-05-section-3').lessonIds, legacyCustom.groups['module-05-section-3'].filter(id => base.groups['module-05-section-3'].includes(id)), 'Custom introductory order remains intact while known misplaced subjects move');
 const moveAfterUpgrade = moveLesson(legacy, { lessonId: 'p05-l06', sectionId: 'module-05-section-3', beforeId: null });
 assert.ok(orderedSections(moveAfterUpgrade).find(section => section.id === 'module-05-section-3').lessonIds.includes('p05-l06'), 'Later personal moves are not remigrated');
 assert.throws(() => parse({ ...base, curriculumRevision: -1 }));
+
+for (const revision of [0, 1]) {
+  const incomplete = incompleteEarthingCourse(base, revision), original = structuredClone(incomplete);
+  const repaired = parse(incomplete), repairedRows = snapshot(repaired);
+  assert.deepEqual(repaired.groups['module-05-section-3'], firstEightEarthingIds, 'Keep exactly the first eight earthing/bonding videos in the reported order');
+  assert.equal(repairedRows.rows['module-05-section-3'].length, 8);
+  assert.deepEqual(repaired.groups['module-05-ads'], ['p05-l06'], 'Previously empty Section 5 receives ADS');
+  assert.deepEqual(repaired.groups['module-05-fault-loop'], base.groups['module-05-fault-loop']);
+  assert.deepEqual(repaired.groups['module-06-cpc-sizing'], ['p05-l10']);
+  assert.equal(repaired.groups['module-08-section-2'][0], 'course-TFt3d77LujQ');
+  for (const id of obsoleteEarthingIds) assert.ok(!repaired.groups['module-05-section-3'].includes(id));
+  assert.deepEqual(Object.values(repaired.groups).flat().sort(), Object.values(incomplete.groups).flat().sort(), 'Relocation does not lose or duplicate any video');
+  assert.deepEqual(repaired.videos, incomplete.videos);
+  assert.deepEqual(repaired.receipts, incomplete.receipts);
+  assert.deepEqual(repaired.itemRevisions, incomplete.itemRevisions);
+  assert.equal(repaired.revision, incomplete.revision);
+  assert.equal(repaired.curriculumRevision, 2);
+  assert.deepEqual(parse(repaired), repaired);
+  assert.deepEqual(incomplete, original);
+  assert.deepEqual(progressForVideos(repairedRows.allRows.map(row => row.id), marked), progressForVideos(Object.values(incomplete.groups).flat(), marked));
+  const later = change(repaired, { type: 'move', id: 'p05-l06', sectionId: 'module-05-section-3', beforeId: null });
+  assert.equal(snapshot(parse(later)).byId.get('p05-l06').sectionId, 'module-05-section-3', 'A new personal move after revision 2 stays authoritative');
+}
 
 const course = JSON.parse(readFileSync('app/video-catalog.json', 'utf8'));
 for (const courseModule of course.modules.filter(module => module.path === 'C2')) {
