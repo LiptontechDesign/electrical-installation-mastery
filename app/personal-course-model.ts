@@ -79,7 +79,9 @@ export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
     for (let index = 0; index < ids.length; index++) {
       const id = ids[index];
       if (deleted.has(id) || seen.has(id)) continue;
-      const nextId = ids.slice(index + 1).find(next => groups[sectionId].includes(next));
+      // Existing supporting-video positions remain intact when a new published
+      // lesson is inserted before its next core neighbour.
+      const nextId = ids.slice(index + 1).find(next => (!core.has(id) || core.has(next)) && groups[sectionId].includes(next));
       groups[sectionId].splice(nextId ? groups[sectionId].indexOf(nextId) : groups[sectionId].length, 0, id);
       seen.add(id);
     }

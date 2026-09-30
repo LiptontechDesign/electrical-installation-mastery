@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 const json = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 export const c2StageOrder = json('./fixtures/c2-stage-order.json');
 export const earthElectrodeAdditions = json('./fixtures/earth-electrode-additions.json');
+export const jpelectricAdditions = json('./fixtures/jpelectric-additions.json');
 const baseline = json('./course-baseline.json');
 const relocatedFromProfessional = new Map([
   ['module-12', ['p12-v2-l14']],
@@ -12,7 +13,7 @@ const relocatedFromProfessional = new Map([
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  for (const lesson of earthElectrodeAdditions) {
+  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions]) {
     assert.ok(!source.has(lesson.id), 'New lessons must not replace an original identity');
     source.set(lesson.id, lesson);
   }
@@ -21,7 +22,7 @@ export function assertC2Reorganization(course) {
     : relocatedFromProfessional.has(module.id) ? module.lessons.filter(lesson => !relocatedFromProfessional.get(module.id).includes(lesson.id)) : module.lessons }));
   const actual = course.modules.filter(module => module.path !== 'C1').map(module => ({ id: module.id, path: module.path,
     lessons: module.lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })) }));
-  assert.deepEqual(actual, expected, 'Preserve published C2/Professional order including the additive Module 5 section');
+  assert.deepEqual(actual, expected, 'Preserve the approved C2 playlist order and the published Professional pathway');
   const lessons = course.modules.flatMap(module => module.lessons);
   const identities = lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })).sort((a, b) => a.id.localeCompare(b.id));
   assert.deepEqual(identities, [...source.values()].sort((a, b) => a.id.localeCompare(b.id)), 'Preserve every original video and stable learner-state identity');

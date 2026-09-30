@@ -22,7 +22,7 @@ export const defaultOrder: CourseOrder = { version: 1, revision: 0, groups: {} }
 const lessonIds = new Set(originalCourse.modules.flatMap(m => m.lessons.map(l => l.id)));
 
 // Keep empty sections available as destinations. Newly published lessons join
-// their authored section; saved moves always retain the original lesson IDs.
+// before their next authored neighbour; existing saved placements always win.
 export function orderedSections(order: CourseOrder) {
   const excluded = new Set(order.excludedLessonIds ?? []);
   const seen = new Set<string>();
@@ -30,7 +30,12 @@ export function orderedSections(order: CourseOrder) {
     .filter(id => { if (!lessonIds.has(id) || excluded.has(id) || seen.has(id)) return false; seen.add(id); return true; }) }));
   for (const section of learningSections) {
     const group = groups.find(g => g.id === section.id)!;
-    for (const id of section.lessonIds) if (!excluded.has(id) && !seen.has(id)) { group.lessonIds.push(id); seen.add(id); }
+    section.lessonIds.forEach((id, index) => {
+      if (excluded.has(id) || seen.has(id)) return;
+      const nextId = section.lessonIds.slice(index + 1).find(next => group.lessonIds.includes(next));
+      group.lessonIds.splice(nextId ? group.lessonIds.indexOf(nextId) : group.lessonIds.length, 0, id);
+      seen.add(id);
+    });
   }
   return groups;
 }

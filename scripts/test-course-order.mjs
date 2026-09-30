@@ -1,11 +1,25 @@
 import assert from 'node:assert/strict';
 import { mkdir } from 'node:fs/promises';
 import { build } from 'esbuild';
+import { earthElectrodeAdditions, jpelectricAdditions } from './assert-c2-reorganization.mjs';
 await mkdir('work/course-order-tests', { recursive: true });
 await build({ entryPoints: ['app/course-order-model.ts'], outfile: 'work/course-order-tests/model.js', bundle: true, platform: 'node', format: 'esm' });
 const { courseForOrder, defaultOrder, moveLesson, orderedSections, parseOrder, relocateSupportingVideos } = await import('../work/course-order-tests/model.js');
 const initial = courseForOrder(defaultOrder);
 const identity = initial.course.modules.flatMap(m => m.lessons.map(l => l.id));
+
+// Replay a saved arrangement from before the selected playlist lessons existed.
+const newIds = new Set([...jpelectricAdditions, ...earthElectrodeAdditions.slice(3)].map(lesson => lesson.id));
+const authoredSections = orderedSections(defaultOrder);
+const previous = { version: 1, revision: 8, groups: Object.fromEntries(authoredSections.map(section => [section.id, section.lessonIds.filter(id => !newIds.has(id))])) };
+previous.groups['module-05-earth-electrodes'].splice(1, 0, 'p05-earth-plates');
+assert.deepEqual(orderedSections(previous), authoredSections, 'New explanations precede existing practical lessons in saved arrangements');
+const customPrevious = moveLesson(previous, { lessonId: 'p08-l03', sectionId: 'module-06-section-2', beforeId: 'p06-l10' });
+customPrevious.excludedLessonIds = ['course-q4UTihwOloA'];
+const upgradedCustom = orderedSections(customPrevious);
+assert.ok(upgradedCustom.find(section => section.id === 'module-06-section-2').lessonIds.includes('p08-l03'), 'Existing personal moves remain in their destination');
+assert.ok(!upgradedCustom.flatMap(section => section.lessonIds).includes('course-q4UTihwOloA'), 'Excluded new lessons do not return');
+assert.equal(previous.revision, 8, 'Reading the new catalogue does not modify the saved revision');
 
 let order = moveLesson(defaultOrder, { lessonId: 'p05-l01', sectionId: 'module-05-section-1', beforeId: null });
 assert.equal(orderedSections(order).find(s => s.id === 'module-05-section-1').lessonIds.at(-1), 'p05-l01', 'Move within section');

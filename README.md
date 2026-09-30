@@ -1,6 +1,6 @@
 # Electrical Installation Mastery
 
-A video course with 308 lessons in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
+A video course with 324 lessons in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
 
 ## Learning experience
 
@@ -77,13 +77,13 @@ With server credentials configured, browser integration checks should cover Goog
 
 ## Architecture and sources
 
-- `app/video-catalog.json` and `app/course-curriculum.ts`: video metadata and canonical ordering; `scripts/course-baseline.json` protects original video identities and `scripts/fixtures/earth-electrode-additions.json` registers the 12 new Module 5 videos.
+- `app/video-catalog.json` and `app/course-curriculum.ts`: video metadata and canonical ordering; `scripts/course-baseline.json` protects original video identities. Fixtures register six John Ward earth-electrode videos and 22 JPElectric lessons; see [the C2 playlist integration](docs/c2-testing-playlist-integration.md).
 - `app/learning-sections.ts` / `.json`: coherent lesson groups, with no pass/fail state.
 - `app/learner-state.ts`: schema 10 migration and validation.
 - `app/server/auth.ts`: Google OpenID Connect, PKCE/state/nonce validation and signed course sessions.
 - `app/server/database.ts`: account-scoped Neon document storage and lifecycle operations.
 - `app/book-reader.tsx`: per-account reference book reader.
-- `course-transcripts/`: 295 original complete transcript sources and one explicitly visual-only lesson; retained as source archives, not published as recap pages. New Module 5 videos stream from their credited creators and are documented separately.
+- `course-transcripts/`: 295 original complete transcript sources and one explicitly visual-only lesson; retained as source archives, not published as recap pages. New playlist videos stream from their credited creators and are documented separately.
 
 ## Historical cleanup — September 2026
 

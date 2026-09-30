@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { build } from 'esbuild';
+import { earthElectrodeAdditions, jpelectricAdditions } from './assert-c2-reorganization.mjs';
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-drop-model.ts', 'app/course-order-model.ts'], outdir: 'work/personal-course-tests', bundle: true, platform: 'node', format: 'esm' });
 const { migratePersonalCourse, personalCourseSnapshot: snapshot, applyCourseEdit: apply, parsePersonalCourse, normalisePersonalCourse, savedPlacement, validateEditRequest, existingVideoId } = await import('../work/personal-course-tests/personal-course-model.js');
 const { courseMapSnapshot } = await import('../work/personal-course-tests/course-drop-model.js');
@@ -32,7 +33,7 @@ test('published and saved legacy ordering migrate exactly, with archives retaine
 test('the new electrode section joins an existing saved course without moving old videos', () => {
   const sectionId = 'module-05-earth-electrodes';
   const additions = base.groups[sectionId];
-  assert.equal(additions.length, 12);
+  assert.equal(additions.length, 6);
   const old = structuredClone(change(base, { type: 'move', id: first, sectionId: destination, beforeId: null }));
   delete old.groups[sectionId];
   const upgraded = normalisePersonalCourse(old);
@@ -41,6 +42,45 @@ test('the new electrode section joins an existing saved course without moving ol
   assert.deepEqual(upgraded.receipts, old.receipts);
   assert.equal(upgraded.revision, old.revision);
   integrity(upgraded);
+});
+
+test('new playlist lessons join saved sections in teaching order while personal moves and removals survive', () => {
+  const newIds = new Set([
+    ...jpelectricAdditions.map(lesson => lesson.id),
+    ...earthElectrodeAdditions.slice(3).map(lesson => lesson.id),
+  ]);
+  const old = structuredClone(base);
+  old.groups = Object.fromEntries(Object.entries(old.groups).map(([id, ids]) => [id, ids.filter(id => !newIds.has(id))]));
+  old.groups['module-05-earth-electrodes'].splice(1, 0, 'p05-earth-plates', 'p05-earth-wenner');
+  old.revision = 12;
+  const upgraded = normalisePersonalCourse(old);
+  const coreIds = new Set(snapshot(base).course.modules.flatMap(module => module.lessons.map(lesson => lesson.id)));
+  for (const sectionId of Object.keys(base.groups)) {
+    assert.deepEqual(upgraded.groups[sectionId].filter(id => coreIds.has(id)), base.groups[sectionId].filter(id => coreIds.has(id)), 'New explanations precede their practical neighbours, not the end of the section');
+  }
+  assert.ok(upgraded.groups['module-09-section-1'].indexOf('c2-troubleshooting-method') < upgraded.groups['module-09-section-1'].indexOf('course-Onf6P_bA0XU'), 'The saved diagnostic framework stays before the new cases');
+  assert.equal(upgraded.revision, 12);
+  assert.deepEqual(upgraded.receipts, old.receipts);
+
+  const customised = structuredClone(old);
+  const movedId = 'p08-l03';
+  customised.groups['module-08-section-2'] = customised.groups['module-08-section-2'].filter(id => id !== movedId);
+  customised.groups[destination].push(movedId);
+  customised.archivedLessonIds = ['p05-earth-components'];
+  customised.deletedIds = ['p08-l04', 'course-q4UTihwOloA'];
+  const preserved = normalisePersonalCourse(customised);
+  assert.equal(snapshot(preserved).byId.get(movedId).sectionId, destination);
+  assert.deepEqual(preserved.archivedLessonIds, customised.archivedLessonIds);
+  assert.deepEqual(preserved.deletedIds, customised.deletedIds);
+  for (const [sectionId, ids] of Object.entries(customised.groups)) {
+    const original = ids.filter(id => !['p05-earth-plates', 'p05-earth-wenner', ...customised.deletedIds].includes(id));
+    assert.deepEqual(preserved.groups[sectionId].filter(id => !newIds.has(id)), original, 'Existing personal relative order remains intact');
+  }
+  assert.ok(!snapshot(preserved).byId.has('p05-earth-components'));
+  assert.ok(!snapshot(preserved).byId.has('p08-l04'));
+  assert.ok(!snapshot(preserved).byId.has('course-q4UTihwOloA'));
+  assert.equal(preserved.revision, 12);
+  integrity(preserved);
 });
 
 test('adding to an empty section embeds a separate entry with continuous numbering', () => {
@@ -140,8 +180,8 @@ test('permanent removal survives default merging, reload, subsequent edits and r
   assert.ok(!state.videos.some(v => v.id === seed.id), 'A deleted bundled entry never rejoins through default merging');
   assert.ok(!snapshot(state).course.modules.flatMap(m => m.lessons).some(l => l.id === first));
   assert.ok(!state.receipts.some(r => r.inverse.videos.some(v => v.id === seed.id)));
-  assert.equal(snapshot(state).course.lessonCount, 307);
-  assert.equal(snapshot(base).course.lessonCount, 308, 'The shared published course is unchanged');
+  assert.equal(snapshot(state).course.lessonCount, snapshot(base).course.lessonCount - 1);
+  assert.equal(snapshot(base).course.lessonCount, 324, 'The shared published course is unchanged by a personal removal');
   integrity(state);
 });
 test('removed links can be added deliberately, without automatic restoration', () => {
