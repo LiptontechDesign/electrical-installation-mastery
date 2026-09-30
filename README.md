@@ -14,6 +14,8 @@ A video course with 324 lessons in 25 modules across C2, C1 and Professional pat
 
 Schema 10 accepts earlier backups and preserves video progress, bookmarks, notes and playback preferences. Learner records synchronize per account.
 
+Progress counts every active video, including optional and supplementary videos. Section, module and overall totals update when watched marks or course membership change. Progress backups include supplementary marks; earlier backups remain supported.
+
 ## Books and privacy
 
 | Book | Edition | Complete PDF pages |

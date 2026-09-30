@@ -9,7 +9,7 @@ import { useCourseOrder } from './course-order';
 import { VideoActions } from './course-editor-actions';
 import type { SupplementaryVideo } from './supplementary-model';
 
-type Context = { selected: SupplementaryVideo | null; playback: ReactNode; clearSelection: () => void; videos: SupplementaryVideo[]; watched: string[]; ready: boolean; error: string; open: (video: SupplementaryVideo) => void };
+type Context = { selected: SupplementaryVideo | null; playback: ReactNode; clearSelection: () => void; videos: SupplementaryVideo[]; watched: string[]; replaceWatched: (ids: string[]) => void; ready: boolean; error: string; open: (video: SupplementaryVideo) => void };
 type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
 const SupplementaryContext = createContext<Context | null>(null);
 export const useSupplementary = () => useContext(SupplementaryContext);
@@ -30,6 +30,14 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
   const [progressReady, setProgressReady] = useState(false);
   const [progressError, setProgressError] = useState('');
   const legacyProgress = useRef(false);
+  const pendingProgressReplacement = useRef<string[] | null>(null);
+  const replaceWatched = useCallback((ids: string[]) => {
+    if (!userId) return;
+    const next = [...new Set(ids)];
+    // An explicit reset/import also wins if the initial cloud read is pending.
+    if (!progressReady) pendingProgressReplacement.current = next;
+    setWatched(next);
+  }, [userId, progressReady]);
   useEffect(() => {
     if (!userId) return;
     let active = true;
@@ -48,10 +56,11 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
         const data = await response.json();
         if (!response.ok) throw new Error(data.error);
         if (!active) return;
-        setWatched(data.exists ? data.payload : local);
+        setWatched(pendingProgressReplacement.current ?? (data.exists ? data.payload : local));
+        pendingProgressReplacement.current = null;
         setProgressReady(true);
       } catch (value) {
-        if (active) { setWatched(local); setProgressReady(false); setProgressError(value instanceof Error ? value.message : 'Cloud progress could not be loaded.'); }
+        if (active) { setWatched(pendingProgressReplacement.current ?? local); setProgressReady(false); setProgressError(value instanceof Error ? value.message : 'Cloud progress could not be loaded.'); }
       }
     })();
     return () => { active = false; };
@@ -90,7 +99,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
   }, [videos, userId]);
   const playback = selected ? <SupplementaryLesson key={selected.id} video={selected} watched={watched.includes(selected.videoId)} progressError={progressError} onWatched={markWatched}
     onBack={() => { window.history.replaceState(null, '', '#learn'); setSelectedId(null); }} onToggle={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}/> : null;
-  return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelectedId(null), videos, watched, ready, error,
+  return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelectedId(null), videos, watched, replaceWatched, ready, error,
     open: video => { setSelectedId(video.id); window.history.replaceState(null, '', `#learn/${video.id}`); window.dispatchEvent(new CustomEvent('supplementary-video-open', { detail: { id: video.id } })); } }}>{children}</SupplementaryContext.Provider>;
 }
 

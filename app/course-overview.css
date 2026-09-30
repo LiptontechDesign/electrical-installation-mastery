@@ -92,7 +92,7 @@
 .guest-learning-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 24px; background: var(--surface-selected); color: var(--surface-selected-text); font-size: 11px; border-bottom: 1px solid var(--surface-selected-border); }
 .guest-learning-bar button { display: flex; align-items: center; gap: 8px; border: 0; background: transparent; color: inherit; font-weight: 650; font-size: inherit; }
 .guest-notes { padding: 16px; font-size: 13px; }
-.guest-course .course-drag-handle, .guest-course .bulk-watch-action, .guest-course .lesson-row-progress, .guest-course .course-topic-group > summary > small { display: none; }
+.guest-course .course-drag-handle, .guest-course .bulk-watch-action, .guest-course .lesson-row-progress { display: none; }
 .home-view-switch { display: flex; gap: 8px; padding: 20px 32px 0; }
 @media (max-width: 720px) {
   .app-header { min-height: 66px; }

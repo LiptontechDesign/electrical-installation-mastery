@@ -22,7 +22,7 @@ Undo is available from the latest-change message and course menu during the curr
 
 Core and supplementary videos share explicit section membership and a continuous L1, L2, L3 sequence within each module. Any video can move between sections, modules and pathways, including empty destinations. Display numbers are derived from the visible order; archived and deleted entries are excluded from rows, counts, search and playback navigation. Stable lesson and YouTube IDs preserve watched records, notes, bookmarks and playback positions.
 
-The map, search, module counts, Previous/Next and automatic advancement use the same mixed sequence. Core completion remains separate from optional and supplementary completion.
+The map, overview, Home, search, progress counts, Previous/Next and automatic advancement use the same mixed sequence. Every active video contributes to section, module and overall completion, including optional and supplementary entries. Moves update source and destination totals without changing overall progress.
 
 ## Persistence and migration
 

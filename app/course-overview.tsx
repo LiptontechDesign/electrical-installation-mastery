@@ -5,19 +5,16 @@ import { ArrowRight, BookOpen, Check, ChevronDown, CirclePlay, Clock3, Layers3, 
 import { useCourseOrder } from './course-order';
 import { useSupplementary } from './supplementary-videos';
 import { useCourseAccount } from './course-account';
-import { courseMapSnapshot } from './course-drop-model';
 
 const outcomes = ['Understand voltage, current, resistance and electrical power.', 'Explore cables, protective devices and earthing arrangements.', 'See how drawings connect to installation decisions.', 'Follow single-phase and three-phase systems.', 'Watch inspection, testing and fault diagnosis demonstrations.', 'Move through C2, C1 and specialist video pathways.'];
 
 export default function CourseOverview({ onLesson, onBooks }: { onLesson: (id: string) => void; onBooks: () => void }) {
-  const { course, order, sectionsByModule } = useCourseOrder();
+  const { course, rows: mapRows, allRows: rows, sectionsByModule } = useCourseOrder();
   const supplementary = useSupplementary();
   const { user, requestSignIn } = useCourseAccount();
   const [path, setPath] = useState('All');
   const [expanded, setExpanded] = useState<string[]>([]);
-  const snapshot = courseMapSnapshot(order, supplementary?.videos ?? []);
   const lessons = course.modules.flatMap(module => module.lessons);
-  const rows = Object.values(snapshot.rows).flat();
   const hours = Math.round(lessons.reduce((sum, lesson) => sum + lesson.durationSeconds, 0) / 3600);
   const shown = course.modules.filter(module => path === 'All' || module.path === path);
   return <div className="page course-overview-page">
@@ -26,7 +23,7 @@ export default function CourseOverview({ onLesson, onBooks }: { onLesson: (id: s
         <h1 id="course-title">Electrical installation.<br/><em>Understand every connection.</em></h1>
         <p>A guided learning workshop for electrical principles, safe installation and confident problem-solving. Follow the course from the beginning, or jump straight to what you need.</p>
         <div className="course-facts"><span><Layers3 size={17}/>{course.modules.length} modules</span><span><CirclePlay size={17}/>{rows.length} videos</span><span><Clock3 size={17}/>About {hours} hours + extra videos</span></div>
-        <div className="button-row"><button className="primary-button" onClick={() => onLesson(lessons[0].id)}><CirclePlay size={19}/> Start learning <ArrowRight size={18}/></button><a className="course-outline-link" href="#course-curriculum">Explore the curriculum <ChevronDown size={17}/></a></div>
+        <div className="button-row"><button className="primary-button" disabled={!rows.length} onClick={() => rows[0] && onLesson(rows[0].id)}><CirclePlay size={19}/> Start learning <ArrowRight size={18}/></button><a className="course-outline-link" href="#course-curriculum">Explore the curriculum <ChevronDown size={17}/></a></div>
         <Link className="pwa-install-link" href="/install">Install on your phone <ArrowRight size={16}/></Link><small className="open-course-note">Free to explore · No account needed · Learn at your own pace</small>
       </div>
       <div className="course-welcome-art" aria-label="Learning route: understand, apply, verify">
@@ -42,12 +39,12 @@ export default function CourseOverview({ onLesson, onBooks }: { onLesson: (id: s
     <section id="course-curriculum" className="public-curriculum"><div className="curriculum-heading"><div><span className="eyebrow neutral">Your route through the course</span><h2>Course content</h2><p>{course.modules.length} modules · {rows.length} videos · All lessons open</p></div><button onClick={() => setExpanded(expanded.length ? [] : shown.map(module => module.id))}>{expanded.length ? 'Collapse all' : 'Expand all'}</button></div>
       <div className="curriculum-filters" role="group" aria-label="Filter course pathway">{['All','C2','C1','Professional'].map(item => <button key={item} aria-pressed={path === item} onClick={() => setPath(item)}>{item === 'All' ? 'Full course' : item === 'Professional' ? 'Advanced systems' : item === 'C2' ? 'C2 · Foundations' : 'C1 · Three-phase'}</button>)}</div>
       <div className="curriculum-modules">{shown.map(module => {
-        const moduleRows = sectionsByModule[module.id].flatMap(section => snapshot.rows[section.id] ?? []);
+        const moduleRows = sectionsByModule[module.id].flatMap(section => mapRows[section.id] ?? []);
         return <details key={module.id} open={expanded.includes(module.id)} onToggle={event => { const open = event.currentTarget.open; setExpanded(current => open ? current.includes(module.id) ? current : [...current, module.id] : current.filter(id => id !== module.id)); }}><summary><span className="curriculum-number">{String(module.number).padStart(2,'0')}</span><span className="curriculum-module-name"><strong>{module.title}</strong><small>{moduleRows.length} videos · {module.duration} lesson time</small></span><ChevronDown size={19}/></summary><div className="curriculum-lessons">{moduleRows.map(row => {
           const lesson = lessons.find(item => item.id === row.id);
           const video = supplementary?.videos.find(item => item.id === row.id);
           if (!lesson && !video) return null;
-          return <button key={row.id} onClick={() => lesson ? onLesson(lesson.id) : video && supplementary?.open(video)}><CirclePlay size={17}/><span className="curriculum-lesson-number">L{String(row.displayNumber).padStart(2,'0')}</span><span>{lesson?.title ?? video?.title}{video && <small>Supplementary</small>}</span><small>{lesson?.duration ?? 'Watch'}</small></button>;
+          return <button key={row.id} onClick={() => onLesson(row.id)}><CirclePlay size={17}/><span className="curriculum-lesson-number">L{String(row.displayNumber).padStart(2,'0')}</span><span>{lesson?.title ?? video?.title}{video && <small>Supplementary</small>}</span><small>{lesson?.duration ?? 'Watch'}</small></button>;
         })}</div></details>;
       })}</div>
     </section>

@@ -18,6 +18,8 @@ Catalogue and explicit section order share the authenticated account's revisione
 
 Watched marks are keyed by YouTube ID in `supplementary-progress`. Bookmarks, freeform notes, playback positions and timestamp notes also retain their stable video identity. Moving, renaming or archiving does not reset them. Existing video links cannot be replaced through Edit details; add a different video separately.
 
+Supplementary watched marks count in the primary section, module and overall progress totals. Archived and deleted entries are excluded from active totals; restoring an archived entry restores its existing watched status. Adding and moving entries updates the same totals immediately. Progress backup/import includes supplementary marks, and Reset learning progress clears them with the catalogue marks.
+
 The API validates YouTube links, placement, duplicates, body size and a 500-entry catalogue limit. Metadata comes from a fixed YouTube oEmbed endpoint; supplied HTML is never rendered. Save errors retain the form. Simultaneous changes cannot silently overwrite one another.
 
 ## Verification

@@ -10,7 +10,7 @@ export const origin = process.env.COURSE_TEST_URL ?? 'http://127.0.0.1:3001';
 assert.ok(['127.0.0.1', 'localhost'].includes(new URL(origin).hostname), 'Fixture tests must use a local server.');
 export const browser = await chromium.launch({ headless: true, channel: process.env.COURSE_TEST_CHANNEL ?? 'msedge' });
 mkdirSync('work/editor-preview', { recursive: true });
-export async function fixture({ mobile = false, guest = false, state: seed } = {}) {
+export async function fixture({ mobile = false, guest = false, state: seed, learner: seedLearner, supplementaryProgress: seedProgress = [], supplementaryReadDelay = 0 } = {}) {
   const context = await browser.newContext(mobile ? { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } : { viewport: { width: 1440, height: 1000 } });
   if (!guest) {
     const token = await new SignJWT({ email: 'preview@example.test', name: 'Preview Learner' }).setProtectedHeader({ alg: 'HS256' }).setSubject('preview').setIssuer('electrical-installation-mastery').setAudience('electrical-course').setExpirationTime('1h').sign(new TextEncoder().encode('local-preview-only-0000000000000000000000'));
@@ -18,9 +18,10 @@ export async function fixture({ mobile = false, guest = false, state: seed } = {
   }
   const page = await context.newPage(); page.setDefaultTimeout(15000);
   let state = structuredClone(seed ?? model.publishedPersonalCourse);
-  const first = model.personalCourseSnapshot(state).allRows.find(r => r.kind === 'core');
-  let learner = { ...initialLearnerState, autoNextEnabled: false, activeLessonId: first.id, notes: { [first.id]: 'Existing note stays with the lesson' }, completedLessonIds: [first.id], bookmarkedLessonIds: [first.id] };
-  let supplementaryProgress = [];
+  const first = model.personalCourseSnapshot(state).allRows.find(r => r.kind === 'core') ?? model.personalCourseSnapshot(state).allRows[0];
+  let learner = structuredClone(seedLearner ?? { ...initialLearnerState, autoNextEnabled: false, activeLessonId: first.id, notes: { [first.id]: 'Existing note stays with the lesson' }, completedLessonIds: [first.id], bookmarkedLessonIds: [first.id] });
+  let supplementaryProgress = [...seedProgress];
+  let supplementaryLoaded = false;
   const errors = [], writes = [], reads = [];
   let rejectNext = false, loseResponse = false;
   page.on('pageerror', error => errors.push(error.message));
@@ -43,6 +44,7 @@ export async function fixture({ mobile = false, guest = false, state: seed } = {
       return route.fulfill({ json: { exists: true, payload: learner } });
     }
     if (url.pathname.endsWith('/supplementary-progress')) {
+      if (request.method() === 'GET') { if (supplementaryReadDelay) await new Promise(resolve => setTimeout(resolve, supplementaryReadDelay)); supplementaryLoaded = true; }
       if (request.method() === 'PUT') supplementaryProgress = request.postDataJSON().payload;
       return route.fulfill({ json: { exists: true, payload: supplementaryProgress } });
     }
@@ -56,5 +58,5 @@ export async function fixture({ mobile = false, guest = false, state: seed } = {
   await page.locator('.lesson-canvas h1').waitFor();
   if (mobile) { await page.getByRole('button', { name: 'Open course map', exact: true }).click(); await page.waitForTimeout(350); }
   if (!guest) await page.getByRole('button', { name: 'Add video', exact: true }).waitFor();
-  return { page, context, first, errors, writes, reads, state: () => state, learner: () => learner, external: edit => { state = model.applyCourseEdit(state, { operationId: crypto.randomUUID(), revision: state.revision, edit }); }, failNext: () => { rejectNext = true; }, loseNextResponse: () => { loseResponse = true; } };
+  return { page, context, first, errors, writes, reads, state: () => state, learner: () => learner, supplementaryProgress: () => supplementaryProgress, supplementaryLoaded: () => supplementaryLoaded, external: edit => { state = model.applyCourseEdit(state, { operationId: crypto.randomUUID(), revision: state.revision, edit }); }, failNext: () => { rejectNext = true; }, loseNextResponse: () => { loseResponse = true; } };
 }
