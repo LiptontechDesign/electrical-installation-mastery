@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { useCourseAccount } from './course-account';
 import { parsePersonalCourse, personalCourseSnapshot, publishedPersonalCourse, type CourseEdit, type EditRequest, type PersonalCourse, type Placement } from './personal-course-model';
 
-export type EditorIntent = ({ type: 'add' } & Placement) | { type: 'move' | 'edit' | 'restore'; id: string; destination?: Placement } | { type: 'archive' };
+export type EditorIntent = ({ type: 'add' } & Placement) | { type: 'move' | 'edit' | 'restore'; id: string; destination?: Placement } | { type: 'delete'; id: string } | { type: 'archive' };
 export type EditResult = { ok: boolean; state?: PersonalCourse; operationId?: string; error?: string; existingId?: string };
 const initial = personalCourseSnapshot(publishedPersonalCourse);
 type CourseOrderContextValue = typeof initial & {
@@ -68,11 +68,13 @@ export function CourseOrderProvider({ children }: { children: ReactNode }) {
     const success = (next: PersonalCourse): EditResult => {
       accept(next); pending.current = null; setError('');
       if (edit.type === 'undo') setUndoIds(ids => ids.filter(id => id !== edit.targetOperationId));
+      else if (edit.type === 'delete') setUndoIds([]);
       else setUndoIds(ids => [...ids.filter(id => id !== request.operationId), request.operationId].slice(-50));
       const receipt = next.receipts.find(r => r.id === request.operationId);
       const snapshot = personalCourseSnapshot(next);
       const row = snapshot.byId.get(receipt?.affected[0] ?? '');
-      setNotice(edit.type === 'undo' ? 'Change undone.' : edit.type === 'archive' ? 'Video archived. Your notes and progress are kept.' : edit.type === 'edit' ? 'Video details saved.' : `${edit.type === 'add' ? 'Video added' : edit.type === 'restore' ? 'Video restored' : 'Video moved'}${row ? ` to ${snapshot.label(row.sectionId)}` : ''}.`);
+      setNotice(edit.type === 'undo' ? 'Change undone.' : edit.type === 'delete' ? 'Video permanently removed from your course.' : edit.type === 'archive' ? 'Video archived. Your notes and progress are kept.' : edit.type === 'edit' ? 'Video details saved.' : `${edit.type === 'add' ? 'Video added' : edit.type === 'restore' ? 'Video restored' : 'Video moved'}${row ? ` to ${snapshot.label(row.sectionId)}` : ''}.`);
+      if (edit.type === 'archive' || edit.type === 'delete') window.dispatchEvent(new CustomEvent('personal-course-removed', { detail: { id: edit.id } }));
       if (row && edit.type !== 'edit') window.dispatchEvent(new CustomEvent('personal-course-locate', { detail: { id: row.id, moduleId: row.moduleId, sectionId: row.sectionId } }));
       window.dispatchEvent(new Event('personal-course-changed'));
       return { ok: true, state: next, operationId: request.operationId };

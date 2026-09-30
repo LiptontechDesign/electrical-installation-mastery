@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Archive, ArrowRightLeft, MoreHorizontal, MoreVertical, Pencil, Plus, Undo2 } from 'lucide-react';
+import { Archive, ArrowRightLeft, MoreHorizontal, MoreVertical, Pencil, Plus, Trash2, Undo2 } from 'lucide-react';
 import { useCourseOrder } from './course-order';
 import { useCourseAccount } from './course-account';
 import { savedPlacement } from './personal-course-model';
@@ -53,7 +53,8 @@ export function VideoActions({ id }: { id: string }) {
       <button role="menuitem" type="button" onClick={() => { close(); editor.openEditor({ type: video?.archived ? 'restore' : 'move', id }); }}><ArrowRightLeft size={15}/>{video?.archived ? 'Restore video…' : 'Move to…'}</button>
       {row && <button role="menuitem" type="button" onClick={() => { close(); editor.openEditor({ type: 'add', ...savedPlacement(editor.state, id) }); }}><Plus size={15}/>Add video after this</button>}
       {video && <button role="menuitem" type="button" onClick={() => { close(); editor.openEditor({ type: 'edit', id }); }}><Pencil size={15}/>Edit details</button>}
-      {video && !video.archived && <button role="menuitem" type="button" onClick={() => { close(); void editor.commit({ type: 'archive', id }); }}><Archive size={15}/>Archive video</button>}
+      {(row || video && !video.archived) && <button role="menuitem" type="button" onClick={() => { close(); void editor.commit({ type: 'archive', id }); }}><Archive size={15}/>Archive video</button>}
+      <button role="menuitem" type="button" className="editor-delete-action" onClick={() => { close(); editor.openEditor({ type: 'delete', id }); }}><Trash2 size={15}/>Delete permanently…</button>
     </div>, document.body)}
   </>;
 }

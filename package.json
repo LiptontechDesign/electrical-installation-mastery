@@ -43,6 +43,7 @@
     "test:personal-course": "node scripts/test-personal-course.mjs",
     "test:personal-course-api": "node scripts/test-personal-course-api.mjs",
     "test:personal-course-browser": "node scripts/test-personal-course-browser.mjs",
+    "test:personal-course-removal-browser": "node scripts/test-personal-course-removal-browser.mjs",
     "test:personal-course-interactions": "node scripts/test-personal-course-interactions.mjs",
     "test:course-experience": "node scripts/test-course-experience-browser.mjs",
     "test:personal-course-conflicts": "node scripts/test-personal-course-conflicts.mjs"

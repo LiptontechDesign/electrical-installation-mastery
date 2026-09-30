@@ -13,7 +13,7 @@ export function PersonalCourseEditor() {
   const { user } = useCourseAccount();
   if (!user) return null;
   return <>
-    {editor.intent && <EditorDialog key={JSON.stringify(editor.intent)} intent={editor.intent}/>}
+    {editor.intent && (editor.intent.type === 'delete' ? <DeleteVideoDialog key={editor.intent.id} id={editor.intent.id}/> : <EditorDialog key={JSON.stringify(editor.intent)} intent={editor.intent}/>)}
     {!editor.intent && (editor.notice || editor.error) && <div className={`personal-course-notice ${editor.error ? 'has-error' : ''}`}>
       <span role={editor.error ? 'alert' : 'status'}>{editor.error || editor.notice}</span>
       {editor.error ? <button type="button" disabled={editor.busy} onClick={() => void editor.refresh()}>Refresh</button> : editor.canUndo && <button type="button" disabled={editor.busy} onClick={() => void editor.undo()}><Undo2 size={14}/>Undo</button>}
@@ -22,13 +22,44 @@ export function PersonalCourseEditor() {
   </>;
 }
 
-function EditorDialog({ intent }: { intent: EditorIntent }) {
+function DeleteVideoDialog({ id }: { id: string }) {
+  const editor = useCourseOrder();
+  const dialog = useRef<HTMLDialogElement>(null);
+  const cancel = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
+  const descriptionId = useId();
+  const [title] = useState(() => editor.byId.get(id)?.title ?? editor.archivedVideos.find(video => video.id === id)?.title ?? 'This video');
+  const [error, setError] = useState('');
+  const close = () => { if (!editor.busy) editor.openEditor(null); };
+  useEffect(() => {
+    const previous = document.activeElement as HTMLElement | null;
+    const element = dialog.current!;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden'; element.showModal(); cancel.current?.focus();
+    return () => { element.close(); document.body.style.overflow = overflow; if (previous?.isConnected) previous.focus({ preventScroll: true }); };
+  }, []);
+  async function remove() {
+    const result = await editor.commit({ type: 'delete', id });
+    if (result.ok) editor.openEditor(null);
+    else setError(result.error ?? 'The video could not be removed. Please retry.');
+  }
+  return <dialog ref={dialog} className="personal-course-dialog" aria-labelledby={titleId} aria-describedby={descriptionId} onCancel={event => { event.preventDefault(); close(); }}>
+    <header className="course-editor-heading"><div><span>Only your course changes</span><h2 id={titleId}>Delete video permanently?</h2></div><button type="button" className="editor-close" aria-label="Close course editor" disabled={editor.busy} onClick={close}><X size={19}/></button></header>
+    <div className="editor-moving-title"><strong>{title}</strong></div>
+    <div id={descriptionId} className="editor-delete-description"><p>This removes the video from your course and archive. You cannot undo this removal or restore it from Archived videos.</p><p>Your saved notes and progress are kept. Other learners’ courses stay unchanged.</p><p>Use Archive if you may want to restore the video later.</p></div>
+    {(error || editor.error) && <p className="editor-error" role="alert">{error || editor.error}</p>}
+    <footer className="editor-footer"><button ref={cancel} type="button" className="editor-secondary" disabled={editor.busy} onClick={close}>Cancel</button><button type="button" className="editor-primary editor-delete-confirm" disabled={editor.busy || !editor.ready} onClick={() => void remove()}>{editor.busy ? 'Deleting…' : 'Delete permanently'}</button></footer>
+  </dialog>;
+}
+
+function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delete' }> }) {
   const editor = useCourseOrder();
   const supplementary = useSupplementary();
   const dialog = useRef<HTMLDialogElement>(null);
   const titleId = useId();
   const original = 'id' in intent ? editor.videos.find(v => v.id === intent.id) : undefined;
   const sourceRow = 'id' in intent ? editor.byId.get(intent.id) : undefined;
+  const sourceTitle = sourceRow?.title ?? original?.title ?? ('id' in intent ? editor.archivedVideos.find(video => video.id === intent.id)?.title : undefined);
   const sourcePlacement = 'id' in intent ? savedPlacement(editor.state, intent.id) : null;
   const [placement, setPlacement] = useState<Placement>(intent.type === 'add' ? intent : ('destination' in intent ? intent.destination : null) ?? sourcePlacement ?? { sectionId: learningSections[0].id, beforeId: null });
   const [url, setUrl] = useState('');
@@ -48,6 +79,7 @@ function EditorDialog({ intent }: { intent: EditorIntent }) {
   const videoId = youtubeId(url);
   const duplicateId = intent.type === 'add' ? existingVideoId(editor.state, url) : undefined;
   const duplicate = editor.videos.find(v => v.id === duplicateId);
+  const duplicateArchived = Boolean(duplicate?.archived || editor.archivedVideos.some(video => video.id === duplicateId));
   const related = 'id' in intent ? relatedVideoIds(editor.state, intent.id) : [];
   const excluded = 'id' in intent ? [intent.id, ...(withSupporting ? related : [])] : [];
   const candidates = (editor.rows[placement.sectionId] ?? []).filter(row => !excluded.includes(row.id));
@@ -101,13 +133,13 @@ function EditorDialog({ intent }: { intent: EditorIntent }) {
     setFormError('');
     const result = await editor.commit(edit);
     if (!result.ok) { setFormError(result.error ?? 'The change could not be saved. Please retry.'); setReviewedRevision(result.state?.revision ?? editor.state.revision); return; }
-    if (intent.type === 'add') setSavedId(`personal-${result.operationId}`);
+    if (intent.type === 'add') setSavedId(result.state?.receipts.find(receipt => receipt.id === result.operationId)?.affected[0] ?? `personal-${result.operationId}`);
     else close();
   }
   return <dialog ref={dialog} className="personal-course-dialog" aria-labelledby={titleId} onCancel={event => { event.preventDefault(); close(); }}>
     <header className="course-editor-heading"><div><span>Only your course changes</span><h2 id={titleId}>{savedId ? 'Video added' : label}</h2></div><button type="button" className="editor-close" aria-label="Close course editor" disabled={editor.busy} onClick={close}><X size={19}/></button></header>
     {savedId ? <div className="editor-success"><Check size={24}/><h3>{title}</h3><p>Added to {editor.label(placement.sectionId)}.</p><p>Your current video is still in place.</p><div className="editor-footer"><button type="button" className="editor-secondary" onClick={() => { setSavedId(null); setUrl(''); setTitle(''); setInstructor(''); setMetadata(''); setFormError(''); setReviewedRevision(editor.state.revision); touched.current = { title: false, instructor: false }; }}>Add another</button><button type="button" className="editor-primary" onClick={() => watch(savedId)}>Watch now</button></div></div>
-      : intent.type === 'archive' ? <div className="editor-archive"><p>Archived videos keep their notes and progress. Restore one to any section.</p><label className="editor-search"><Search size={16}/><input aria-label="Search archived videos" placeholder="Find an archived video" value={archiveSearch} onChange={event => setArchiveSearch(event.target.value)}/></label><ul>{editor.videos.filter(v => v.archived && v.title.toLowerCase().includes(archiveSearch.toLowerCase())).map(video => <li key={video.id}><span>{video.title}</span><button type="button" onClick={() => editor.openEditor({ type: 'restore', id: video.id })}>Restore…</button></li>)}</ul>{!editor.videos.some(v => v.archived && v.title.toLowerCase().includes(archiveSearch.toLowerCase())) && <p className="editor-empty">{archiveSearch ? 'No archived videos match your search.' : 'No archived videos yet.'}</p>}</div>
+      : intent.type === 'archive' ? <div className="editor-archive"><p>Archived videos keep their notes and progress. Restore one to any section.</p><label className="editor-search"><Search size={16}/><input aria-label="Search archived videos" placeholder="Find an archived video" value={archiveSearch} onChange={event => setArchiveSearch(event.target.value)}/></label><ul>{editor.archivedVideos.filter(v => v.title.toLowerCase().includes(archiveSearch.toLowerCase())).map(video => <li key={video.id}><span>{video.title}</span><div className="editor-archive-actions"><button type="button" onClick={() => editor.openEditor({ type: 'restore', id: video.id })}>Restore…</button><button type="button" className="editor-delete-action" aria-label={`Delete permanently: ${video.title}`} onClick={() => editor.openEditor({ type: 'delete', id: video.id })}>Delete…</button></div></li>)}</ul>{!editor.archivedVideos.some(v => v.title.toLowerCase().includes(archiveSearch.toLowerCase())) && <p className="editor-empty">{archiveSearch ? 'No archived videos match your search.' : 'No archived videos yet.'}</p>}</div>
       : <form onSubmit={event => { event.preventDefault(); void submit(); }}><fieldset className="editor-form-fields" disabled={editor.busy}>
         {intent.type === 'add' && <>
           <label className="editor-field">YouTube link<input autoFocus type="url" required value={url} placeholder="Paste a YouTube video link" onChange={event => { setUrl(event.target.value.trim()); setTitle(''); setInstructor(''); setMetadata(''); setMetadataBusy(false); setFormError(''); touched.current = { title: false, instructor: false }; }}/></label>
@@ -119,11 +151,11 @@ function EditorDialog({ intent }: { intent: EditorIntent }) {
             <div><strong>{title || 'Your video'}</strong><small>{instructor || 'YouTube'}</small></div>
           </div>}
           <div className="editor-metadata"><span role="status">{metadataBusy && <LoaderCircle size={13}/>} {metadata}</span>{videoId && <button type="button" onClick={() => setLookup(value => value + 1)}>Retry lookup</button>}</div>
-          {duplicateId && <div className="editor-duplicate" role="status"><strong>{duplicate?.archived ? 'This video is in your archive.' : 'This video is already in your course.'}</strong><div>{!duplicate?.archived && <button type="button" onClick={() => watch(duplicateId)}>Go to video</button>}<button type="button" onClick={() => editor.openEditor({ type: duplicate?.archived ? 'restore' : 'move', id: duplicateId })}>{duplicate?.archived ? 'Restore video…' : 'Move existing video…'}</button></div></div>}
+          {duplicateId && <div className="editor-duplicate" role="status"><strong>{duplicateArchived ? 'This video is in your archive.' : 'This video is already in your course.'}</strong><div>{!duplicateArchived && <button type="button" onClick={() => watch(duplicateId)}>Go to video</button>}<button type="button" onClick={() => editor.openEditor({ type: duplicateArchived ? 'restore' : 'move', id: duplicateId })}>{duplicateArchived ? 'Restore video…' : 'Move existing video…'}</button></div></div>}
           <button type="button" className="editor-text-action" aria-expanded={showDetails} onClick={() => setShowDetails(value => !value)}>Edit details <ChevronDown size={14}/></button>
         </>}
         {(intent.type === 'edit' || intent.type === 'add' && showDetails) && <div className="editor-details"><label className="editor-field">Video title<input required maxLength={240} value={title} onChange={event => { touched.current.title = true; setTitle(event.target.value); }}/></label><label className="editor-field">Instructor / channel<input maxLength={160} value={instructor} onChange={event => { touched.current.instructor = true; setInstructor(event.target.value); }}/></label></div>}
-        {(intent.type === 'move' || intent.type === 'restore') && <div className="editor-moving-title"><strong>{sourceRow?.title ?? original?.title}</strong><div className="editor-source-location"><span className="editor-location-caption">Current location</span><LocationDetails sectionId={sourcePlacement!.sectionId}/></div></div>}
+        {(intent.type === 'move' || intent.type === 'restore') && <div className="editor-moving-title"><strong>{sourceTitle}</strong><div className="editor-source-location"><span className="editor-location-caption">Current location</span><LocationDetails sectionId={sourcePlacement!.sectionId}/></div></div>}
         {intent.type !== 'edit' && <>
           <div className="editor-location-summary"><MapPin size={16}/><div><span className="editor-location-caption">{intent.type === 'add' ? 'Add to' : intent.type === 'restore' ? 'Restore to' : 'Move to'}</span><LocationDetails sectionId={placement.sectionId}/><small>Position: {!validPosition ? 'Choose a new position' : before ? `Before Lesson ${String(before.displayNumber).padStart(2, '0')} — ${before.title}` : candidates.length ? 'At the end of this section' : 'First video in this section'}</small></div><button type="button" aria-expanded={showLocation} onClick={() => setShowLocation(value => !value)}>{showLocation ? 'Hide' : 'Change location'}</button></div>
           {intent.type === 'move' && related.length > 0 && <div className="editor-related"><label><input type="checkbox" checked={withSupporting} onChange={event => { setWithSupporting(event.target.checked); setPlacement(value => ({ ...value, beforeId: null })); }}/>Move with {related.length} supporting {related.length === 1 ? 'video' : 'videos'}</label>{withSupporting && <ul>{related.map(id => <li key={id}>{editor.videos.find(video => video.id === id)?.title}{editor.videos.find(video => video.id === id)?.archived ? ' (archived)' : ''}</li>)}</ul>}</div>}

@@ -66,6 +66,10 @@ declare global {
 }
 
 const STORAGE_KEY = 'electrical-mastery-progress-v1';
+const publishedLessonIds = new Set(course.modules.flatMap(module => module.lessons.map(lesson => lesson.id)));
+// Used only for internal defaults when every core lesson has been removed.
+// The empty-course view never renders this lesson or its player.
+const fallbackLocation = { module: course.modules[0], moduleIndex: 0, lessonIndex: 0 };
 
 function percent(value: number, total: number) {
   return total ? Math.round((value / total) * 100) : 0;
@@ -203,8 +207,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     return () => window.removeEventListener('supplementary-video-open', pauseForSupplementary);
   }, []);
 
-  const location = lessonLocation.get(learner.activeLessonId) ?? lessonLocation.get(allLessons[0].id)!;
+  const location = lessonLocation.get(learner.activeLessonId) ?? lessonLocation.get(allLessons[0]?.id ?? '') ?? fallbackLocation;
   const activeLesson = location.module.lessons[location.lessonIndex];
+  const hasCoreLesson = lessonLookup.has(activeLesson.id);
   const completed = useMemo(() => new Set(learner.completedLessonIds), [learner.completedLessonIds]);
   const bookmarked = useMemo(() => new Set(learner.bookmarkedLessonIds), [learner.bookmarkedLessonIds]);
   const watchedRows = new Set([...completed, ...(supplementary?.videos.filter(video => supplementary.watched.includes(video.videoId)).map(video => video.id) ?? [])]);
@@ -241,7 +246,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const selectedModule = course.modules.find(module => module.id === (supplementary?.selected?.moduleId ?? location.module.id)) ?? location.module;
   const nextCore = nextRow?.kind === 'core' ? lessonLookup.get(nextRow.id) : undefined;
   const playerOrigin = hydrated && typeof window !== 'undefined' ? window.location.origin : '';
-  const playerSrc = playerOrigin
+  const playerSrc = playerOrigin && hasCoreLesson
     ? `https://www.youtube.com/embed/${activeLesson.videoId}?enablejsapi=1&origin=${encodeURIComponent(playerOrigin)}&rel=0&playsinline=1&autoplay=${autoPlayLessonId === activeLesson.id ? 1 : 0}`
     : '';
 
@@ -370,7 +375,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         const saved = personal ?? legacy;
         if (saved) {
           const parsed: unknown = JSON.parse(saved);
-          if (!isProgressBackup(parsed, new Set(lessonLookup.keys()))) throw new Error('Unreadable or newer progress format');
+          if (!isProgressBackup(parsed, publishedLessonIds)) throw new Error('Unreadable or newer progress format');
           localState = clampState(parsed);
         }
       } catch { readError = true; }
@@ -718,10 +723,19 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       if (row) selectCourseRow(row);
     };
     const changed = () => cancelAutoNext(false);
+    const removed = (event: Event) => {
+      const id = (event as CustomEvent<{ id: string }>).detail.id;
+      if ((supplementaryId ?? learner.activeLessonId) !== id) return;
+      const index = allCourseRows.findIndex(row => row.id === id);
+      const next = allCourseRows[index + 1] ?? allCourseRows[index - 1];
+      if (next) selectCourseRow(next);
+      else { supplementary?.clearSelection(); window.history.replaceState(null, '', '#learn'); }
+    };
     window.addEventListener('personal-course-locate', locate);
     window.addEventListener('personal-course-watch', watch);
     window.addEventListener('personal-course-changed', changed);
-    return () => { window.removeEventListener('personal-course-locate', locate); window.removeEventListener('personal-course-watch', watch); window.removeEventListener('personal-course-changed', changed); };
+    window.addEventListener('personal-course-removed', removed);
+    return () => { window.removeEventListener('personal-course-locate', locate); window.removeEventListener('personal-course-watch', watch); window.removeEventListener('personal-course-changed', changed); window.removeEventListener('personal-course-removed', removed); };
   });
 
   const toggleComplete = () => {
@@ -761,7 +775,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     try {
       const parsed = JSON.parse(await file.text());
       const record = parsed.progress ?? parsed;
-      if (!isProgressBackup(record, new Set(lessonLookup.keys()))) throw new Error('Invalid backup');
+      if (!isProgressBackup(record, publishedLessonIds)) throw new Error('Invalid backup');
       replacingProgress.current = true; pendingPositions.current = {}; setLearner(clampState(record)); window.setTimeout(() => { replacingProgress.current = false; }, 0); setStorageBlocked(false); setToast('Progress backup restored.'); setSettingsOpen(false);
     } catch { setToast('That file is not a valid course progress backup.'); }
   };
@@ -883,7 +897,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
               </aside></CourseDragProvider>
               {moduleDrawerOpen && <button className="drawer-scrim" type="button" aria-label="Close course map" onClick={closeCourseMap} />}
 
-{supplementaryId ? supplementary?.playback : <article className="lesson-canvas" data-module-tone={moduleTone(location.module.id)}>
+{supplementaryId ? supplementary?.playback : !hasCoreLesson ? <article className="lesson-canvas"><div className="lesson-title-block"><h1>{allCourseRows.length ? 'Choose a video' : 'No active videos'}</h1><p>{allCourseRows.length ? 'Choose a video from your course map.' : 'Restore an archived video or add a video to your course.'}</p><button className="editor-secondary" type="button" onClick={openCourseMap}>Open course map</button></div></article> : <article className="lesson-canvas" data-module-tone={moduleTone(location.module.id)}>
                 <div className="lesson-topline">
                   <VideoActions id={activeLesson.id}/>
                   <button className="mobile-module-button" type="button" onClick={openCourseMap} aria-expanded={moduleDrawerOpen}><Menu size={19} /> Course map</button>

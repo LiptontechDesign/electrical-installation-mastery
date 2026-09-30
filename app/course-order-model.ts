@@ -16,7 +16,7 @@ export function relocateSupportingVideos(videos: SupplementaryVideo[], course: t
   });
 }
 
-export type CourseOrder = { version: 1; revision: number; groups: Record<string, string[]> };
+export type CourseOrder = { version: 1; revision: number; groups: Record<string, string[]>; excludedLessonIds?: string[] };
 export type LessonMove = { lessonId: string; sectionId: string; beforeId: string | null };
 export const defaultOrder: CourseOrder = { version: 1, revision: 0, groups: {} };
 const lessonIds = new Set(originalCourse.modules.flatMap(m => m.lessons.map(l => l.id)));
@@ -24,12 +24,13 @@ const lessonIds = new Set(originalCourse.modules.flatMap(m => m.lessons.map(l =>
 // Keep empty sections available as destinations. Newly published lessons join
 // their authored section; saved moves always retain the original lesson IDs.
 export function orderedSections(order: CourseOrder) {
+  const excluded = new Set(order.excludedLessonIds ?? []);
   const seen = new Set<string>();
   const groups = learningSections.map(section => ({ ...section, lessonIds: (order.groups[section.id] ?? [])
-    .filter(id => { if (!lessonIds.has(id) || seen.has(id)) return false; seen.add(id); return true; }) }));
+    .filter(id => { if (!lessonIds.has(id) || excluded.has(id) || seen.has(id)) return false; seen.add(id); return true; }) }));
   for (const section of learningSections) {
     const group = groups.find(g => g.id === section.id)!;
-    for (const id of section.lessonIds) if (!seen.has(id)) { group.lessonIds.push(id); seen.add(id); }
+    for (const id of section.lessonIds) if (!excluded.has(id) && !seen.has(id)) { group.lessonIds.push(id); seen.add(id); }
   }
   return groups;
 }
@@ -39,6 +40,7 @@ export function parseOrder(value: unknown): CourseOrder {
   const order = value as CourseOrder;
   if (order.version !== 1 || !Number.isSafeInteger(order.revision) || order.revision < 0 || !order.groups || typeof order.groups !== 'object' || Array.isArray(order.groups)) throw new Error('Invalid course order');
   const ids = Object.values(order.groups).flat();
+  if (order.excludedLessonIds !== undefined && (!Array.isArray(order.excludedLessonIds) || !order.excludedLessonIds.every(id => typeof id === 'string'))) throw new Error('Invalid course order');
   if (!Object.values(order.groups).every(ids => Array.isArray(ids) && ids.every(id => typeof id === 'string')) || new Set(ids).size !== ids.length) throw new Error('Invalid course order');
   return order;
 }
@@ -63,5 +65,6 @@ export function courseForOrder(order: CourseOrder) {
     const durationSeconds = lessons.reduce((sum, l) => sum + l.durationSeconds, 0);
     return { ...m, lessons, durationSeconds, duration: formatStudyDuration(durationSeconds) };
   });
-  return { course: { ...originalCourse, modules }, sectionsByModule: Object.fromEntries(modules.map(m => [m.id, groups.filter(s => s.moduleId === m.id)])) };
+  const durationSeconds = modules.reduce((sum, m) => sum + m.durationSeconds, 0);
+  return { course: { ...originalCourse, modules, lessonCount: modules.reduce((sum, m) => sum + m.lessons.length, 0), durationSeconds, duration: formatStudyDuration(durationSeconds) }, sectionsByModule: Object.fromEntries(modules.map(m => [m.id, groups.filter(s => s.moduleId === m.id)])) };
 }

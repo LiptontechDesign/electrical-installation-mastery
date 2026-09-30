@@ -99,6 +99,11 @@
 .editor-archive ul { list-style: none; padding: 0; }
 .editor-archive li { display: flex; align-items: center; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 13px; line-height: 1.5; }
 .editor-archive li span { flex: 1; }
+.editor-archive-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; }
+.course-action-menu .editor-delete-action, .editor-archive li .editor-delete-action { color: var(--text-danger); }
+.editor-delete-description p { margin: 12px 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.editor-primary.editor-delete-confirm { background: var(--solid-danger); color: var(--text-on-inverse); }
+.editor-primary.editor-delete-confirm:hover { background: var(--solid-danger); }
 .personal-course-notice { position: fixed; bottom: 84px; right: 20px; z-index: 240; display: flex; align-items: center; gap: 10px; max-width: min(450px, calc(100vw - 32px)); padding: 11px 13px; background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: 9px; box-shadow: var(--shadow-sm); font-size: 12px; line-height: 1.5; }
 .personal-course-notice > span { max-height: 90px; overflow: auto; }
 .personal-course-notice button { display: inline-flex; gap: 4px; align-items: center; flex-shrink: 0; color: var(--text-accent); background: transparent; padding: 5px; font-size: 12px; }

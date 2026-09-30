@@ -7,17 +7,19 @@ import { supplementaryDescendants, youtubeId, type SupplementaryState, type Supp
 
 export type Placement = { sectionId: string; beforeId: string | null };
 type SavedPosition = Placement & { id: string; afterId: string | null };
-type UndoPatch = { positions: SavedPosition[]; videos: SupplementaryVideo[]; archiveIds: string[] };
+type UndoPatch = { positions: SavedPosition[]; videos: SupplementaryVideo[]; archiveIds: string[]; lessonArchives?: { id: string; archived: boolean }[] };
 export type EditReceipt = { id: string; revision: number; affected: string[]; inverse: UndoPatch; undone?: boolean };
 export type PersonalCourse = {
   version: 2; revision: number; groups: Record<string, string[]>;
   videos: SupplementaryVideo[]; itemRevisions: Record<string, number>; receipts: EditReceipt[];
+  archivedLessonIds?: string[]; deletedIds?: string[];
 };
 export type CourseEdit =
   | ({ type: 'move'; id: string; withSupporting?: boolean } & Placement)
   | ({ type: 'add'; url: string; title: string; instructor: string } & Placement)
   | { type: 'edit'; id: string; title: string; instructor: string }
   | { type: 'archive'; id: string }
+  | { type: 'delete'; id: string }
   | ({ type: 'restore'; id: string } & Placement)
   | { type: 'undo'; targetOperationId: string };
 export type EditRequest = { operationId: string; revision: number; edit: CourseEdit };
@@ -54,14 +56,18 @@ export function parsePersonalCourse(value: unknown): PersonalCourse {
     !Object.values(state.groups).every(ids => Array.isArray(ids) && ids.every(id => typeof id === 'string')) ||
     !Array.isArray(state.videos) || !Array.isArray(state.receipts) || !state.itemRevisions || typeof state.itemRevisions !== 'object') throw new Error('Your course arrangement could not be read.');
   if (state.videos.some(v => !v || typeof v.id !== 'string' || typeof v.videoId !== 'string' || typeof v.title !== 'string' || typeof v.archived !== 'boolean')) throw new Error('Your video library could not be read.');
+  for (const ids of [state.archivedLessonIds, state.deletedIds]) {
+    if (ids !== undefined && (!Array.isArray(ids) || ids.some(id => typeof id !== 'string' || !id || id.length > 100) || new Set(ids).size !== ids.length)) throw new Error('Your removed videos could not be read.');
+  }
   return normalisePersonalCourse(state);
 }
 
 // New published lessons/defaults join their original section. Existing placements,
 // including empty sections and archives, always win over default placement.
 export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
-  const videos = withSupplementaryDefaults({ version: 1, revision: state.revision, videos: state.videos }).videos;
-  const known = new Set([...core.keys(), ...videos.map(v => v.id)]);
+  const deleted = new Set(state.deletedIds ?? []);
+  const videos = withSupplementaryDefaults({ version: 1, revision: state.revision, videos: state.videos }).videos.filter(v => !deleted.has(v.id));
+  const known = new Set([...core.keys(), ...videos.map(v => v.id)].filter(id => !deleted.has(id)));
   const seen = new Set<string>();
   const groups = Object.fromEntries(learningSections.map(s => [s.id, (state.groups[s.id] ?? []).filter(id => {
     if (!known.has(id) || seen.has(id)) return false;
@@ -72,7 +78,7 @@ export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
   for (const [sectionId, ids] of Object.entries(fallback.groups)) {
     for (let index = 0; index < ids.length; index++) {
       const id = ids[index];
-      if (seen.has(id)) continue;
+      if (deleted.has(id) || seen.has(id)) continue;
       const nextId = ids.slice(index + 1).find(next => groups[sectionId].includes(next));
       groups[sectionId].splice(nextId ? groups[sectionId].indexOf(nextId) : groups[sectionId].length, 0, id);
       seen.add(id);
@@ -82,6 +88,8 @@ export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
 }
 
 export function personalCourseSnapshot(state: PersonalCourse) {
+  const deleted = new Set(state.deletedIds ?? []);
+  const archived = new Set(state.archivedLessonIds ?? []);
   const videoById = new Map(state.videos.map(v => [v.id, v]));
   const rows: Record<string, MapRow[]> = {};
   const counts = new Map<string, number>();
@@ -91,13 +99,13 @@ export function personalCourseSnapshot(state: PersonalCourse) {
     for (const id of state.groups[section.id] ?? []) {
       locations.set(id, section.moduleId);
       const video = videoById.get(id);
-      if (video?.archived || (!core.has(id) && !video)) continue;
+      if (deleted.has(id) || archived.has(id) || video?.archived || (!core.has(id) && !video)) continue;
       const displayNumber = (counts.get(section.moduleId) ?? 0) + 1;
       counts.set(section.moduleId, displayNumber);
       rows[section.id].push({ id, title: core.get(id)?.title ?? video!.title, kind: core.has(id) ? 'core' : 'supplementary', moduleId: section.moduleId, sectionId: section.id, displayNumber });
     }
   }
-  const order: CourseOrder = { version: 1, revision: state.revision, groups: Object.fromEntries(Object.entries(state.groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])) };
+  const order: CourseOrder = { version: 1, revision: state.revision, groups: Object.fromEntries(Object.entries(state.groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])), excludedLessonIds: [...new Set([...archived, ...deleted])].filter(id => core.has(id)) };
   const resolved = courseForOrder(order);
   const allRows = Object.values(rows).flat();
   const byId = new Map(allRows.map(row => [row.id, row]));
@@ -107,7 +115,8 @@ export function personalCourseSnapshot(state: PersonalCourse) {
     const courseModule = catalog.modules.find(m => m.id === section.moduleId)!;
     return `${courseModule.path === 'Professional' ? 'Advanced' : courseModule.path} · Module ${String(courseModule.number).padStart(2, '0')} — ${courseModule.title} · Section ${String(section.number).padStart(2, '0')} — ${section.title}`;
   };
-  return { ...resolved, order, rows, allRows, byId, videos, label };
+  const archivedVideos = [...videos.filter(v => v.archived), ...[...archived].filter(id => core.has(id) && !deleted.has(id)).map(id => ({ id, title: core.get(id)!.title }))];
+  return { ...resolved, order, rows, allRows, byId, videos, archivedVideos, label };
 }
 
 export function relatedVideoIds(state: PersonalCourse, id: string): string[] {
@@ -141,9 +150,9 @@ export function validateEditRequest(value: unknown): EditRequest {
   const request = value as EditRequest;
   if (typeof request.operationId !== 'string' || !/^[a-zA-Z0-9-]{16,80}$/.test(request.operationId) || !Number.isSafeInteger(request.revision) || request.revision < 0 || !request.edit || typeof request.edit !== 'object') throw new CourseEditError('Invalid change. Refresh your course and try again.');
   const edit = request.edit;
-  if (!['add', 'move', 'edit', 'archive', 'restore', 'undo'].includes(edit.type)) throw new CourseEditError('Unknown course action.');
+  if (!['add', 'move', 'edit', 'archive', 'restore', 'delete', 'undo'].includes(edit.type)) throw new CourseEditError('Unknown course action.');
   if ('id' in edit && (typeof edit.id !== 'string' || edit.id.length > 100)) throw new CourseEditError('Invalid video.');
-  if (['move', 'edit', 'archive', 'restore'].includes(edit.type) && !('id' in edit)) throw new CourseEditError('Choose a video.');
+  if (['move', 'edit', 'archive', 'restore', 'delete'].includes(edit.type) && !('id' in edit)) throw new CourseEditError('Choose a video.');
   if (edit.type === 'add' || edit.type === 'move' || edit.type === 'restore') {
     if (typeof edit.sectionId !== 'string' || !(edit.beforeId === null || typeof edit.beforeId === 'string')) throw new CourseEditError('Choose a destination and position.');
   }
@@ -164,10 +173,10 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
   let next = state;
   let affected: string[] = [];
   const existing = 'id' in edit ? state.videos.find(v => v.id === edit.id) : undefined;
-  if ('id' in edit && !existing && !core.has(edit.id)) throw new CourseEditError('This video is no longer available.', 404);
-  if (['archive', 'restore', 'edit'].includes(edit.type) && !existing) throw new CourseEditError('Published lesson details cannot be changed. You can move the lesson in your course.');
+  if ('id' in edit && ((!existing && !core.has(edit.id)) || state.deletedIds?.includes(edit.id))) throw new CourseEditError('This video is no longer available in your course.', 404);
+  if (edit.type === 'edit' && !existing) throw new CourseEditError('Published lesson details cannot be changed. You can move the lesson in your course.');
   if (edit.type === 'move') {
-    if (existing?.archived) throw new CourseEditError('Restore this video before moving it.');
+    if (existing?.archived || state.archivedLessonIds?.includes(edit.id)) throw new CourseEditError('Restore this video before moving it.');
     const selected = new Set([edit.id, ...(edit.withSupporting ? relatedVideoIds(state, edit.id) : [])]);
     affected = Object.values(state.groups).flat().filter(id => selected.has(id));
     inverse.positions = affected.map(id => positionOf(state, id));
@@ -176,15 +185,45 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
     const videoId = youtubeId(edit.url)!;
     const duplicate = state.videos.find(v => v.videoId === videoId);
     const coreDuplicate = [...core.values()].find(l => l.videoId === videoId);
-    if (duplicate || coreDuplicate) throw new CourseEditError('This video is already in your course. Open, move, or restore its existing entry.', 409, duplicate?.id ?? coreDuplicate!.id);
-    if (state.videos.length >= maxVideos) throw new CourseEditError('Your library has reached its 500-video limit.');
-    const id = `personal-${request.operationId}`;
-    if (state.videos.some(v => v.id === id)) throw new CourseEditError('This addition was already saved. Refresh your course.', 409, id);
-    const section = sectionById.get(edit.sectionId);
-    if (!section) throw new CourseEditError('Choose a destination section.');
-    const video: SupplementaryVideo = { id, videoId, ...validateDetails(edit.title, edit.instructor), moduleId: section.moduleId, anchorId: '', position: 'after', archived: false, placementRevision: 2, updatedAt: now };
-    affected = [id]; inverse.archiveIds = [id];
-    next = placeVideos({ ...state, videos: [...state.videos, video] }, [id], edit);
+    if (duplicate || coreDuplicate && !state.deletedIds?.includes(coreDuplicate.id)) throw new CourseEditError('This video is already in your course. Open, move, or restore its existing entry.', 409, duplicate?.id ?? coreDuplicate!.id);
+    if (coreDuplicate) {
+      // An explicit addition may bring back a removed published lesson. Default
+      // merging and Undo never bring a permanently removed lesson back.
+      affected = [coreDuplicate.id];
+      inverse.lessonArchives = [{ id: coreDuplicate.id, archived: true }];
+      next = placeVideos({ ...state, deletedIds: state.deletedIds!.filter(id => id !== coreDuplicate.id) }, affected, edit);
+    } else {
+      if (state.videos.length >= maxVideos) throw new CourseEditError('Your library has reached its 500-video limit.');
+      const id = `personal-${request.operationId}`;
+      if (state.videos.some(v => v.id === id)) throw new CourseEditError('This addition was already saved. Refresh your course.', 409, id);
+      const section = sectionById.get(edit.sectionId);
+      if (!section) throw new CourseEditError('Choose a destination section.');
+      const video: SupplementaryVideo = { id, videoId, ...validateDetails(edit.title, edit.instructor), moduleId: section.moduleId, anchorId: '', position: 'after', archived: false, placementRevision: 2, updatedAt: now };
+      affected = [id]; inverse.archiveIds = [id];
+      next = placeVideos({ ...state, videos: [...state.videos, video] }, [id], edit);
+    }
+  } else if (edit.type === 'delete') {
+    affected = [edit.id];
+    const defaultIds = existing ? publishedPersonalCourse.videos.filter(v => v.videoId === existing.videoId).map(v => v.id) : [];
+    next = { ...state,
+      groups: Object.fromEntries(Object.entries(state.groups).map(([id, ids]) => [id, ids.filter(value => value !== edit.id)])),
+      videos: state.videos.filter(v => v.id !== edit.id),
+      archivedLessonIds: (state.archivedLessonIds ?? []).filter(id => id !== edit.id),
+      deletedIds: [...new Set([...(state.deletedIds ?? []), edit.id, ...defaultIds])],
+      // Remove saved inverse details as well as the entry itself. Earlier edits
+      // involving this video cannot restore it through Undo.
+      receipts: state.receipts.filter(receipt => !receipt.affected.includes(edit.id)),
+    };
+  } else if ((edit.type === 'archive' || edit.type === 'restore') && !existing) {
+    affected = [edit.id];
+    inverse.lessonArchives = [{ id: edit.id, archived: Boolean(state.archivedLessonIds?.includes(edit.id)) }];
+    const archived = new Set(state.archivedLessonIds ?? []);
+    if (edit.type === 'archive') archived.add(edit.id); else archived.delete(edit.id);
+    next = { ...state, archivedLessonIds: [...archived] };
+    if (edit.type === 'restore') {
+      inverse.positions = [positionOf(state, edit.id)];
+      next = placeVideos(next, [edit.id], edit);
+    }
   } else if (edit.type === 'edit' || edit.type === 'archive' || edit.type === 'restore') {
     affected = [existing!.id]; inverse.videos = [existing!];
     next = { ...state, videos: state.videos.map(v => v.id !== existing!.id ? v : { ...v, ...(edit.type === 'edit' ? validateDetails(edit.title, edit.instructor) : { archived: edit.type === 'archive' }), updatedAt: now }) };
@@ -199,6 +238,11 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
     affected = receipt.affected;
     const old = new Map(receipt.inverse.videos.map(v => [v.id, v]));
     next = { ...state, videos: state.videos.map(v => old.get(v.id) ?? (receipt.inverse.archiveIds.includes(v.id) ? { ...v, archived: true, updatedAt: now } : v)) };
+    if (receipt.inverse.lessonArchives) {
+      const archived = new Set(state.archivedLessonIds ?? []);
+      for (const lesson of receipt.inverse.lessonArchives) { if (lesson.archived) archived.add(lesson.id); else archived.delete(lesson.id); }
+      next = { ...next, archivedLessonIds: [...archived] };
+    }
     // Restore in reverse order so consecutive moved entries find their neighbour.
     for (const position of [...receipt.inverse.positions].reverse()) {
       const destination = next.groups[position.sectionId].filter(id => id !== position.id);
@@ -208,7 +252,7 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
     next = { ...next, receipts: next.receipts.map(r => r.id === receipt.id ? { ...r, undone: true } : r) };
   }
   const revision = state.revision + 1;
-  return { ...next, revision, itemRevisions: { ...state.itemRevisions, ...Object.fromEntries(affected.map(id => [id, revision])) }, receipts: [...next.receipts, { id: request.operationId, revision, affected, inverse, ...(edit.type === 'undo' ? { undone: true } : {}) }].slice(-50) };
+  return { ...next, revision, itemRevisions: { ...state.itemRevisions, ...Object.fromEntries(affected.map(id => [id, revision])) }, receipts: [...next.receipts, { id: request.operationId, revision, affected, inverse, ...(['undo', 'delete'].includes(edit.type) ? { undone: true } : {}) }].slice(-50) };
 }
 
 export function previewMove(state: PersonalCourse, id: string, placement: Placement, withSupporting = false) {
@@ -219,7 +263,7 @@ export function previewMove(state: PersonalCourse, id: string, placement: Placem
 
 export function existingVideoId(state: PersonalCourse, url: string) {
   const id = youtubeId(url);
-  return state.videos.find(v => v.videoId === id)?.id ?? [...core.values()].find(l => l.videoId === id)?.id;
+  return state.videos.find(v => v.videoId === id)?.id ?? [...core.values()].find(l => l.videoId === id && !state.deletedIds?.includes(l.id))?.id;
 }
 
 export function savedPlacement(state: PersonalCourse, id: string): Placement {
