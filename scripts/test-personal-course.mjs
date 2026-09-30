@@ -29,6 +29,20 @@ test('published and saved legacy ordering migrate exactly, with archives retaine
   assert.ok(migrated.groups[destination].includes('hidden'));
   integrity(migrated);
 });
+test('the new electrode section joins an existing saved course without moving old videos', () => {
+  const sectionId = 'module-05-earth-electrodes';
+  const additions = base.groups[sectionId];
+  assert.equal(additions.length, 12);
+  const old = structuredClone(change(base, { type: 'move', id: first, sectionId: destination, beforeId: null }));
+  delete old.groups[sectionId];
+  const upgraded = normalisePersonalCourse(old);
+  assert.deepEqual(upgraded.groups[sectionId], additions);
+  for (const [id, videos] of Object.entries(old.groups)) assert.deepEqual(upgraded.groups[id], videos);
+  assert.deepEqual(upgraded.receipts, old.receipts);
+  assert.equal(upgraded.revision, old.revision);
+  integrity(upgraded);
+});
+
 test('adding to an empty section embeds a separate entry with continuous numbering', () => {
   let state = base;
   for (const id of [...state.groups[source]]) state = change(state, { type: 'move', id, sectionId: destination, beforeId: null });

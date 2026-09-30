@@ -1,11 +1,11 @@
 # Electrical Installation Mastery
 
-A video course with 296 lessons in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
+A video course with 308 lessons in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
 
 ## Learning experience
 
 - **Home:** guests see the public course overview; signed-in learners see a personal workspace with their current lesson, upcoming videos, bookmarks and progress. A full-width header includes the account initials, progress and sign-out menu.
-- **Learn:** 86 sections with embedded videos, watched progress, bookmarks, playback resume and private notes, including timestamped notes. Module colours continue through sections and lessons; All / Unwatched / Saved filters and Organise mode keep navigation focused. Lessons are freely accessible in any order. Core and supplementary videos share continuous numbering that adjusts when reordered.
+- **Learn:** 87 sections with embedded videos, watched progress, bookmarks, playback resume and private notes, including timestamped notes. Module colours continue through sections and lessons; All / Unwatched / Saved filters and Organise mode keep navigation focused. Lessons are freely accessible in any order. Core and supplementary videos share continuous numbering that adjusts when reordered. Module 5 includes a practical earth-electrode and measurement section; see [selection and coverage](docs/earth-electrode-video-selection.md).
 - **Personal course editor:** signed-in learners can add YouTube videos, move any video between sections/modules/pathways, and archive or restore supplementary entries. Compact menus, an exact-position picker, optional dragging and Undo preserve the existing study layout. Changes are account-scoped; numbering and playback navigation update together. See [personal ordering](docs/course-drag-and-drop.md).
 - **Books:** four complete reference books with chapter search, PDF/text views, zoom, saved pages and personal notes.
 - **Practice (`/practice`):** separate C2/C1 pathways, 568 verbatim topic questions, 110 recall questions, two complete mock papers and 138 searchable BS 7671 definitions. Each definition preserves its substantive historical 17th-edition wording, with plain-language explanations, expanded abbreviations and related terms. Wide screens place explanations beside supporting terms; phones use a single reading column. A sticky top-bar search is available across the course, books, Practice and information pages. Results distinguish definitions from lessons, support keyboard navigation and open full definitions in place without discarding practice working. Topic filters, answer reveals, LaTeX worked solutions, session quizzes, timed/untimed exams, individual mock responses, part-level self-assessment, separate resumable in-page sessions, wide-screen answer comparison and downloadable working including revision flags. No sign-in required. See [the practice-centre guide](docs/epra-practice-centre.md).
@@ -77,13 +77,13 @@ With server credentials configured, browser integration checks should cover Goog
 
 ## Architecture and sources
 
-- `app/video-catalog.json` and `app/course-curriculum.ts`: video metadata and canonical ordering; `scripts/course-baseline.json` protects existing video identities.
+- `app/video-catalog.json` and `app/course-curriculum.ts`: video metadata and canonical ordering; `scripts/course-baseline.json` protects original video identities and `scripts/fixtures/earth-electrode-additions.json` registers the 12 new Module 5 videos.
 - `app/learning-sections.ts` / `.json`: coherent lesson groups, with no pass/fail state.
 - `app/learner-state.ts`: schema 10 migration and validation.
 - `app/server/auth.ts`: Google OpenID Connect, PKCE/state/nonce validation and signed course sessions.
 - `app/server/database.ts`: account-scoped Neon document storage and lifecycle operations.
 - `app/book-reader.tsx`: per-account reference book reader.
-- `course-transcripts/`: 295 complete transcript sources and one explicitly visual-only lesson; retained as source archives, not published as recap pages.
+- `course-transcripts/`: 295 original complete transcript sources and one explicitly visual-only lesson; retained as source archives, not published as recap pages. New Module 5 videos stream from their credited creators and are documented separately.
 
 ## Historical cleanup — September 2026
 

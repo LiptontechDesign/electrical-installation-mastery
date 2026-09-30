@@ -1,11 +1,12 @@
 # Current documentation
 
-Updated 29 September 2026. This index and the root README describe the current application, not a future roadmap.
+Updated 30 September 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
 - [Video-only cleanup](video-only-cleanup.md): what was retained, removed and verified.
 - [Course ordering](course-drag-and-drop.md): personal ordering, placement rules and continuous numbering.
 - [Supplementary videos](supplementary-videos.md): personal additions, defaults, playback and persistence.
+- [Earth-electrode video selection](earth-electrode-video-selection.md): Module 5 sequence, verified creator links, electrode/test coverage and source limitations.
 - [EPRA practice centre](epra-practice-centre.md): source fidelity, topic practice, quizzes, mock exams and verification.
 - [BS 7671 17th-edition EPRA definitions](bs7671-17th-edition-epra-definitions.md): historical source quotations powering the searchable Definitions tab in Practice.
 - [Installable app](pwa.md): installation, privacy boundaries, offline recovery and verification.
