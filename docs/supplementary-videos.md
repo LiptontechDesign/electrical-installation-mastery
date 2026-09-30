@@ -8,7 +8,7 @@ Use **Add video**, a section's small plus control, or a video's **Add video afte
 
 Videos play inline in the shared lesson canvas with watched marks, bookmarks, private notes, timestamp notes, resume and sequence navigation. Duration is shown only after YouTube reports it. Core and supplementary videos share automatic advancement and continuous numbering. A YouTube fallback link is available for embedding restrictions.
 
-Course-map rows show the lesson title, a supplementary label and a separate watched/current-status line, matching the core rows' metadata layout. Channel names appear in the lesson header and editable details. The existing metadata spacing reserves room for the three-dot menu.
+Course-map rows keep full lesson titles above one compact metadata line: lesson type, duration when available, and watched/current status. The current video's badge and check icon identify playback and watched status without another line. Core and supplementary rows share this layout, with the three-dot menu aligned at the right and space reserved for its touch target. Channel names appear in the lesson header and editable details.
 
 Use the compact video menu to edit the title/channel, move to any section, or archive. Restore from **Archived videos** in the course menu. Archiving preserves notes and progress. **Delete permanently…** opens a separate title-specific confirmation and removes the entry from your course and archive. Permanent removal has no Undo; saved notes and progress are kept. Deleted bundled entries stay removed through reloads and default merging. See [course ordering](course-drag-and-drop.md) for removal of published lessons too. Reversible edits require no typed confirmation phrase.
 
