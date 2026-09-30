@@ -8,6 +8,7 @@ Updated 30 September 2026. This index and the root README describe the current a
 - [Supplementary videos](supplementary-videos.md): personal additions, defaults, playback and persistence.
 - [Earth-electrode video selection](earth-electrode-video-selection.md): Module 5 sequence, verified creator links, electrode/test coverage and source limitations.
 - [C2 testing playlist integration](c2-testing-playlist-integration.md): approved JPElectric lessons, teaching order, excluded and retired videos, and preservation of personal course arrangements.
+- [Earthing, ADS and fault-loop learning order](earthing-ads-learning-order.md): revised Module 5 sections, conductor sizing in Module 6, bonding assessment in Module 8 and saved-course migration.
 - [EPRA practice centre](epra-practice-centre.md): source fidelity, topic practice, quizzes, mock exams and verification.
 - [BS 7671 17th-edition EPRA definitions](bs7671-17th-edition-epra-definitions.md): historical source quotations powering the searchable Definitions tab in Practice.
 - [Installable app](pwa.md): installation, privacy boundaries, offline recovery and verification.

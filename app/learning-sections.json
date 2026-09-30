@@ -364,26 +364,53 @@
     "id": "module-05-section-3",
     "moduleId": "module-05",
     "number": 3,
-    "title": "Earth-fault paths, earthing, bonding and ADS",
+    "title": "Earthing systems and protective bonding",
     "lessonIds": [
       "course-9xNy5ne2YPI",
       "p02-l04",
-      "p02-l05",
-      "course-l7df_UZxT0E",
       "p05-l08",
-      "p05-l07",
-      "p05-l06",
-      "course-TFt3d77LujQ",
-      "p05-l10",
-      "p05-l11",
-      "course-8-GmwF090JU"
+      "p02-l05",
+      "course-l7df_UZxT0E"
     ]
+  },
+  {
+    "id": "module-05-section-4",
+    "moduleId": "module-05",
+    "number": 4,
+    "title": "Residual-current protection: RCDs and RCBOs",
+    "lessonIds": [
+      "p02-l07",
+      "p05-l04",
+      "course-TUno2IT-KZY",
+      "p02-l08"
+    ]
+  },
+  {
+    "id": "module-05-ads",
+    "moduleId": "module-05",
+    "title": "Automatic disconnection of supply: fault protection",
+    "lessonIds": [
+      "p05-l06"
+    ],
+    "number": 5
+  },
+  {
+    "id": "module-05-fault-loop",
+    "moduleId": "module-05",
+    "title": "Earth-fault loop impedance: Ze, Zs and R1 + R2",
+    "lessonIds": [
+      "p05-l07",
+      "p05-l11",
+      "p05-l15",
+      "course-8-GmwF090JU"
+    ],
+    "number": 6
   },
   {
     "id": "module-05-earth-electrodes",
     "moduleId": "module-05",
-    "number": 4,
-    "title": "Earth electrodes: forms, installation and resistance measurement",
+    "number": 7,
+    "title": "Earth electrodes: installation and resistance testing",
     "lessonIds": [
       "p05-earth-components",
       "p05-earth-rod-install",
@@ -394,23 +421,10 @@
     ]
   },
   {
-    "id": "module-05-section-4",
-    "moduleId": "module-05",
-    "number": 5,
-    "title": "RCD, RCBO and additional protection",
-    "lessonIds": [
-      "p02-l07",
-      "p05-l04",
-      "course-TUno2IT-KZY",
-      "p02-l08",
-      "p05-l15"
-    ]
-  },
-  {
     "id": "module-05-section-5",
     "moduleId": "module-05",
-    "number": 6,
-    "title": "Surge, arc and special protection",
+    "number": 8,
+    "title": "Surge protection devices and arc-fault detection devices",
     "lessonIds": [
       "course-CNiLNvBLopI",
       "p05-spd",
@@ -420,8 +434,8 @@
   {
     "id": "module-05-section-6",
     "moduleId": "module-05",
-    "number": 7,
-    "title": "Protective-device rating, discrimination and selectivity",
+    "number": 9,
+    "title": "Protective-device selection and selectivity",
     "lessonIds": [
       "p05-l14",
       "course-V6WR_TBf1AU"
@@ -468,9 +482,18 @@
     ]
   },
   {
+    "id": "module-06-cpc-sizing",
+    "moduleId": "module-06",
+    "title": "Circuit protective conductor sizing and fault withstand",
+    "lessonIds": [
+      "p05-l10"
+    ],
+    "number": 4
+  },
+  {
     "id": "module-06-section-4",
     "moduleId": "module-06",
-    "number": 4,
+    "number": 5,
     "title": "Fault duty, breaking capacity and final design proof",
     "lessonIds": [
       "p06-l15"
@@ -501,8 +524,9 @@
     "id": "module-08-section-2",
     "moduleId": "module-08",
     "number": 2,
-    "title": "Continuity, polarity, ring-circuit and insulation tests",
+    "title": "Protective bonding, continuity, polarity, ring-circuit and insulation tests",
     "lessonIds": [
+      "course-TFt3d77LujQ",
       "course-oG6hwNed35k",
       "p08-l03",
       "p05-l09",

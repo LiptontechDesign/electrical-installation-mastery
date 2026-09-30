@@ -16,7 +16,7 @@ for (const courseModule of course.modules) {
   assert.equal(courseModule.durationSeconds, courseModule.lessons.reduce((sum, lesson) => sum + lesson.durationSeconds, 0));
 }
 assert.equal(course.durationSeconds, course.modules.reduce((sum, courseModule) => sum + courseModule.durationSeconds, 0));
-const electrodeSection = sectionsByModule['module-05'][3];
+const electrodeSection = sectionsByModule['module-05'][6];
 assert.equal(electrodeSection.id, 'module-05-earth-electrodes');
 assert.deepEqual(electrodeSection.lessonIds, earthElectrodeAdditions.map(lesson => lesson.id));
 assert.equal(earthElectrodeAdditions.length, 6);
@@ -36,5 +36,5 @@ assert.deepEqual(course.modules.filter(module => module.path === 'C2').map(modul
   'Initial Verification, Commissioning and Installation Capstones',
   'Systematic Fault Diagnosis',
 ]);
-assert.equal(sectionsByModule['module-05'][4].id, 'module-05-section-4');
+assert.equal(sectionsByModule['module-05'][3].id, 'module-05-section-4');
 console.log(`PASS: ${lessons.length} videos, 25 modules, unique video identities and complete course-section coverage.`);

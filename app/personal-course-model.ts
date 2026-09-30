@@ -4,6 +4,7 @@ import { courseMapSnapshot, type MapRow } from './course-drop-model';
 import { courseForOrder, defaultOrder, type CourseOrder } from './course-order-model';
 import { withSupplementaryDefaults } from './supplementary-defaults';
 import { supplementaryDescendants, youtubeId, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
+import { earthingCurriculumRevision, upgradeEarthingGroups } from './earthing-curriculum-migration';
 
 export type Placement = { sectionId: string; beforeId: string | null };
 type SavedPosition = Placement & { id: string; afterId: string | null };
@@ -13,6 +14,7 @@ export type PersonalCourse = {
   version: 2; revision: number; groups: Record<string, string[]>;
   videos: SupplementaryVideo[]; itemRevisions: Record<string, number>; receipts: EditReceipt[];
   archivedLessonIds?: string[]; deletedIds?: string[];
+  curriculumRevision?: number;
 };
 export type CourseEdit =
   | ({ type: 'move'; id: string; withSupporting?: boolean } & Placement)
@@ -43,7 +45,7 @@ export function migratePersonalCourse(order: CourseOrder = defaultOrder, supplem
     const section = learningSections.find(s => s.moduleId === video.moduleId) ?? learningSections[0];
     groups[section.id].push(video.id);
   }
-  return { version: 2, revision: 0, groups, videos, itemRevisions: {}, receipts: [] };
+  return { version: 2, revision: 0, groups, videos, itemRevisions: {}, receipts: [], curriculumRevision: earthingCurriculumRevision };
 }
 
 export const publishedPersonalCourse = migratePersonalCourse();
@@ -56,6 +58,7 @@ export function parsePersonalCourse(value: unknown): PersonalCourse {
     !Object.values(state.groups).every(ids => Array.isArray(ids) && ids.every(id => typeof id === 'string')) ||
     !Array.isArray(state.videos) || !Array.isArray(state.receipts) || !state.itemRevisions || typeof state.itemRevisions !== 'object') throw new Error('Your course arrangement could not be read.');
   if (state.videos.some(v => !v || typeof v.id !== 'string' || typeof v.videoId !== 'string' || typeof v.title !== 'string' || typeof v.archived !== 'boolean')) throw new Error('Your video library could not be read.');
+  if (state.curriculumRevision !== undefined && (!Number.isSafeInteger(state.curriculumRevision) || state.curriculumRevision < 0)) throw new Error('Your curriculum revision could not be read.');
   for (const ids of [state.archivedLessonIds, state.deletedIds]) {
     if (ids !== undefined && (!Array.isArray(ids) || ids.some(id => typeof id !== 'string' || !id || id.length > 100) || new Set(ids).size !== ids.length)) throw new Error('Your removed videos could not be read.');
   }
@@ -65,15 +68,16 @@ export function parsePersonalCourse(value: unknown): PersonalCourse {
 // New published lessons/defaults join their original section. Existing placements,
 // including empty sections and archives, always win over default placement.
 export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
+  const upgraded = upgradeEarthingGroups(state.groups, state.curriculumRevision, new Set(Object.keys(state.itemRevisions).filter(id => state.itemRevisions[id] > 0)), state.videos);
   const deleted = new Set(state.deletedIds ?? []);
   const videos = withSupplementaryDefaults({ version: 1, revision: state.revision, videos: state.videos }).videos.filter(v => !deleted.has(v.id));
   const known = new Set([...core.keys(), ...videos.map(v => v.id)].filter(id => !deleted.has(id)));
   const seen = new Set<string>();
-  const groups = Object.fromEntries(learningSections.map(s => [s.id, (state.groups[s.id] ?? []).filter(id => {
+  const groups = Object.fromEntries(learningSections.map(s => [s.id, (upgraded[s.id] ?? []).filter(id => {
     if (!known.has(id) || seen.has(id)) return false;
     seen.add(id); return true;
   })]));
-  const legacyOrder: CourseOrder = { version: 1, revision: 0, groups: Object.fromEntries(Object.entries(groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])) };
+  const legacyOrder: CourseOrder = { version: 1, revision: 0, groups: Object.fromEntries(Object.entries(groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])), curriculumRevision: earthingCurriculumRevision };
   const fallback = migratePersonalCourse(legacyOrder, { version: 1, revision: 0, videos });
   for (const [sectionId, ids] of Object.entries(fallback.groups)) {
     for (let index = 0; index < ids.length; index++) {
@@ -86,7 +90,7 @@ export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
       seen.add(id);
     }
   }
-  return { ...state, groups, videos };
+  return { ...state, groups, videos, curriculumRevision: Math.max(state.curriculumRevision ?? 0, earthingCurriculumRevision) };
 }
 
 export function personalCourseSnapshot(state: PersonalCourse) {
@@ -107,7 +111,7 @@ export function personalCourseSnapshot(state: PersonalCourse) {
       rows[section.id].push({ id, title: core.get(id)?.title ?? video!.title, kind: core.has(id) ? 'core' : 'supplementary', moduleId: section.moduleId, sectionId: section.id, displayNumber });
     }
   }
-  const order: CourseOrder = { version: 1, revision: state.revision, groups: Object.fromEntries(Object.entries(state.groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])), excludedLessonIds: [...new Set([...archived, ...deleted])].filter(id => core.has(id)) };
+  const order: CourseOrder = { version: 1, revision: state.revision, groups: Object.fromEntries(Object.entries(state.groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])), excludedLessonIds: [...new Set([...archived, ...deleted])].filter(id => core.has(id)), curriculumRevision: state.curriculumRevision };
   const resolved = courseForOrder(order);
   const allRows = Object.values(rows).flat();
   const byId = new Map(allRows.map(row => [row.id, row]));

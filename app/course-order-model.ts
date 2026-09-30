@@ -2,6 +2,7 @@ import originalCourse from './course-curriculum';
 import { learningSections } from './learning-sections';
 import { formatStudyDuration } from './course-duration';
 import type { SupplementaryVideo } from './supplementary-model';
+import { earthingCurriculumRevision, upgradeEarthingGroups } from './earthing-curriculum-migration';
 
 export function relocateSupportingVideos(videos: SupplementaryVideo[], course: typeof originalCourse) {
   const locations = new Map(course.modules.flatMap(m => m.lessons.map(l => [l.id, m.id] as const)));
@@ -16,17 +17,18 @@ export function relocateSupportingVideos(videos: SupplementaryVideo[], course: t
   });
 }
 
-export type CourseOrder = { version: 1; revision: number; groups: Record<string, string[]>; excludedLessonIds?: string[] };
+export type CourseOrder = { version: 1; revision: number; groups: Record<string, string[]>; excludedLessonIds?: string[]; curriculumRevision?: number };
 export type LessonMove = { lessonId: string; sectionId: string; beforeId: string | null };
-export const defaultOrder: CourseOrder = { version: 1, revision: 0, groups: {} };
+export const defaultOrder: CourseOrder = { version: 1, revision: 0, groups: {}, curriculumRevision: earthingCurriculumRevision };
 const lessonIds = new Set(originalCourse.modules.flatMap(m => m.lessons.map(l => l.id)));
 
 // Keep empty sections available as destinations. Newly published lessons join
 // before their next authored neighbour; existing saved placements always win.
 export function orderedSections(order: CourseOrder) {
+  const upgraded = upgradeEarthingGroups(order.groups, order.curriculumRevision);
   const excluded = new Set(order.excludedLessonIds ?? []);
   const seen = new Set<string>();
-  const groups = learningSections.map(section => ({ ...section, lessonIds: (order.groups[section.id] ?? [])
+  const groups = learningSections.map(section => ({ ...section, lessonIds: (upgraded[section.id] ?? [])
     .filter(id => { if (!lessonIds.has(id) || excluded.has(id) || seen.has(id)) return false; seen.add(id); return true; }) }));
   for (const section of learningSections) {
     const group = groups.find(g => g.id === section.id)!;
@@ -44,6 +46,7 @@ export function parseOrder(value: unknown): CourseOrder {
   if (!value || typeof value !== 'object') throw new Error('Invalid course order');
   const order = value as CourseOrder;
   if (order.version !== 1 || !Number.isSafeInteger(order.revision) || order.revision < 0 || !order.groups || typeof order.groups !== 'object' || Array.isArray(order.groups)) throw new Error('Invalid course order');
+  if (order.curriculumRevision !== undefined && (!Number.isSafeInteger(order.curriculumRevision) || order.curriculumRevision < 0)) throw new Error('Invalid curriculum revision');
   const ids = Object.values(order.groups).flat();
   if (order.excludedLessonIds !== undefined && (!Array.isArray(order.excludedLessonIds) || !order.excludedLessonIds.every(id => typeof id === 'string'))) throw new Error('Invalid course order');
   if (!Object.values(order.groups).every(ids => Array.isArray(ids) && ids.every(id => typeof id === 'string')) || new Set(ids).size !== ids.length) throw new Error('Invalid course order');
@@ -59,7 +62,7 @@ export function moveLesson(order: CourseOrder, move: LessonMove): CourseOrder {
   const index = move.beforeId === null ? destination.lessonIds.length : destination.lessonIds.indexOf(move.beforeId);
   if (index < 0) throw new Error('The destination changed. Choose the position again.');
   destination.lessonIds.splice(index, 0, move.lessonId);
-  return { version: 1, revision: order.revision + 1, groups: Object.fromEntries(sections.map(s => [s.id, s.lessonIds])) };
+  return { version: 1, revision: order.revision + 1, groups: Object.fromEntries(sections.map(s => [s.id, s.lessonIds])), curriculumRevision: earthingCurriculumRevision };
 }
 
 export function courseForOrder(order: CourseOrder) {

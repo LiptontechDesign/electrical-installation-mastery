@@ -38,16 +38,19 @@
   "module-05": [
     { "title": "Fault types and protective-device functions", "lessonIds": ["p05-l01", "course-8VhgQ9Q9ixA", "p02-l06"] },
     { "title": "Fuses, circuit breakers and trip characteristics", "lessonIds": ["p05-l02", "course-kx35WN3uLis", "p05-l03", "course-gqEu9t8HwW0", "p05-l05", "course-Me_adh09CdY", "course-TqdQRgf3uGs"] },
-    { "title": "Earth-fault paths, earthing, bonding and ADS", "lessonIds": ["course-9xNy5ne2YPI", "p02-l04", "p02-l05", "course-l7df_UZxT0E", "p05-l08", "p05-l07", "p05-l06", "course-TFt3d77LujQ", "p05-l10", "p05-l11", "course-8-GmwF090JU"] },
-    { "title": "Earth electrodes: forms, installation and resistance measurement", "lessonIds": ["p05-earth-components", "p05-earth-rod-install", "p05-earth-three-wire", "p05-earth-dry-soil", "p05-earth-condudisc-demo", "p05-earth-condudisc-install"] },
-    { "title": "RCD, RCBO and additional protection", "lessonIds": ["p02-l07", "p05-l04", "course-TUno2IT-KZY", "p02-l08", "p05-l15"] },
-    { "title": "Surge, arc and special protection", "lessonIds": ["course-CNiLNvBLopI", "p05-spd", "course-lIit5k8QVj8"] },
-    { "title": "Protective-device rating, discrimination and selectivity", "lessonIds": ["p05-l14", "course-V6WR_TBf1AU"] }
+    { "title": "Earthing systems and protective bonding", "lessonIds": ["course-9xNy5ne2YPI", "p02-l04", "p05-l08", "p02-l05", "course-l7df_UZxT0E"] },
+    { "title": "Residual-current protection: RCDs and RCBOs", "lessonIds": ["p02-l07", "p05-l04", "course-TUno2IT-KZY", "p02-l08"] },
+    { "title": "Automatic disconnection of supply: fault protection", "lessonIds": ["p05-l06"] },
+    { "title": "Earth-fault loop impedance: Ze, Zs and R1 + R2", "lessonIds": ["p05-l07", "p05-l11", "p05-l15", "course-8-GmwF090JU"] },
+    { "title": "Earth electrodes: installation and resistance testing", "lessonIds": ["p05-earth-components", "p05-earth-rod-install", "p05-earth-three-wire", "p05-earth-dry-soil", "p05-earth-condudisc-demo", "p05-earth-condudisc-install"] },
+    { "title": "Surge protection devices and arc-fault detection devices", "lessonIds": ["course-CNiLNvBLopI", "p05-spd", "course-lIit5k8QVj8"] },
+    { "title": "Protective-device selection and selectivity", "lessonIds": ["p05-l14", "course-V6WR_TBf1AU"] }
   ],
   "module-06": [
     { "title": "Load assessment, demand and design current", "lessonIds": ["p06-l01", "p10-l09", "p06-l11", "p11-v2-l07", "p06-l12", "p06-l02", "p06-l03"] },
     { "title": "Cable capacity, installation methods and correction factors", "lessonIds": ["p06-l04", "p06-l10", "course-8Z255dd78H4", "course-ps2vW6d29Ug", "course-DRxoEzWzZVs", "course-105Zv2Oplx0"] },
     { "title": "Voltage-drop calculation and compliance", "lessonIds": ["p06-l07", "p06-l08", "p06-l09"] },
+    { "title": "Circuit protective conductor sizing and fault withstand", "lessonIds": ["p05-l10"] },
     { "title": "Fault duty, breaking capacity and final design proof", "lessonIds": ["p06-l15"] }
   ],
   "c2-boards": [
@@ -55,7 +58,7 @@
   ],
   "module-08": [
     { "title": "Visual inspection, test planning and instrument setup", "lessonIds": ["p08-l02"] },
-    { "title": "Continuity, polarity, ring-circuit and insulation tests", "lessonIds": ["course-oG6hwNed35k", "p08-l03", "p05-l09", "course-vD_cRnErve8", "p08-l04", "course-zXi35z_WHSY", "p08-l05", "course-_0Nu7UfeM5k", "course-q4UTihwOloA", "course-Gz0bKTZo6Tk", "p08-l16", "course-Y-n2NSpV4BQ", "p08-l06"] },
+    { "title": "Protective bonding, continuity, polarity, ring-circuit and insulation tests", "lessonIds": ["course-TFt3d77LujQ", "course-oG6hwNed35k", "p08-l03", "p05-l09", "course-vD_cRnErve8", "p08-l04", "course-zXi35z_WHSY", "p08-l05", "course-_0Nu7UfeM5k", "course-q4UTihwOloA", "course-Gz0bKTZo6Tk", "p08-l16", "course-Y-n2NSpV4BQ", "p08-l06"] },
     { "title": "Earth-electrode checks, Ze, PFC, Zs and controlled live tests", "lessonIds": ["p08-l12", "course-zwuByd7PwMY", "p02-l09", "p08-l08", "p08-l09", "course-eOW2ohFXULE", "p08-l10"] },
     { "title": "RCD testing and functional verification", "lessonIds": ["p08-l13", "p08-l14", "p08-l15"] },
     { "title": "Certification and Kenyan handover bridge", "lessonIds": ["p16-l09"] },

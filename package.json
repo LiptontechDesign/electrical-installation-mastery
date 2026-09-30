@@ -22,6 +22,7 @@
     "prebuild": "npm run test:theme && npm run test:definitions && node scripts/prepare-reader.mjs",
     "test:books": "node scripts/test-books.mjs",
     "test:curriculum": "node scripts/test-curriculum.mjs",
+    "test:earthing": "node scripts/test-earthing-curriculum.mjs",
     "test:licensing": "node scripts/test-licensing.mjs",
     "test:supplementary": "node scripts/test-supplementary.mjs",
     "test:course-order": "node scripts/test-course-order.mjs",

@@ -2,7 +2,7 @@
 
 Updated 30 September 2026 following the user's playlist review and integration request.
 
-Module names, the 25 modules, 87 sections, page design, player and personal-course controls remain intact. The catalogue now has **324 lessons**: the original 296, six John Ward earth-electrode lessons and 22 JPElectric lessons. All original lesson IDs, YouTube IDs, titles and durations are preserved. The nine earlier earth-electrode selections outside John Ward's playlist were retired.
+Module names, the 25 modules, page design, player and personal-course controls remain intact. The [earthing/ADS teaching update](earthing-ads-learning-order.md) preserves all 87 previous section IDs and adds three sections, bringing the total to 90. The catalogue now has **324 lessons**: the original 296, six John Ward earth-electrode lessons and 22 JPElectric lessons. All original lesson IDs, YouTube IDs, titles and durations are preserved. The nine earlier earth-electrode selections outside John Ward's playlist were retired.
 
 ## Approved JPElectric lessons
 
@@ -10,7 +10,7 @@ The 22 approved videos are embedded through the existing player, with the instru
 
 | Section | JPElectric videos in order | Teaching flow |
 |---|---|---|
-| Module 5, Section 3: earth-fault paths, earthing, bonding and ADS | [Earthing & Bonding](https://www.youtube.com/watch?v=9xNy5ne2YPI); [Earthing & Bonding 2](https://www.youtube.com/watch?v=l7df_UZxT0E); [Extraneous Conductive Parts](https://www.youtube.com/watch?v=TFt3d77LujQ); [Touch Voltage](https://www.youtube.com/watch?v=8-GmwF090JU) | Start with the purpose of earthing, retain the existing system and bonding explanations, then classify parts and explore touch voltage. The second earthing lesson and touch-voltage detail are optional reinforcement. |
+| Module 5, Sections 3 and 6; Module 8, Section 2 | [Earthing & Bonding](https://www.youtube.com/watch?v=9xNy5ne2YPI); [Earthing & Bonding 2](https://www.youtube.com/watch?v=l7df_UZxT0E); [Touch Voltage](https://www.youtube.com/watch?v=8-GmwF090JU); [Extraneous Conductive Parts](https://www.youtube.com/watch?v=TFt3d77LujQ) | Earthing/bonding foundations stay in Module 5, Section 3. Advanced touch-voltage calculations close Section 6. Extraneous-part assessment opens Module 8, Section 2 before bonding continuity. |
 | Module 6, Section 2: circuit design | [Iz](https://www.youtube.com/watch?v=ps2vW6d29Ug); [Ring Final Circuit: Current Split](https://www.youtube.com/watch?v=DRxoEzWzZVs); [Ring Final Circuit: Net Currents and Load Distribution](https://www.youtube.com/watch?v=105Zv2Oplx0) | Existing circuit-design fundamentals and cable-selection teaching precede conductor capacity and worked ring-current examples. Iz and the shorter current-sharing example are optional extensions. |
 | Module 7: Consumer Units: Assembly and Pre-Commissioning | [Safe Isolation](https://www.youtube.com/watch?v=BeoujaqN-68) | Optional isolation reminder before the existing torque and consumer-unit assembly lessons. It does not replace the detailed Module 2 safe-isolation lesson. |
 | Module 8, Section 2: dead tests | [Main Protective Bonding Continuity](https://www.youtube.com/watch?v=oG6hwNed35k); [Circuit Protective Conductor Continuity](https://www.youtube.com/watch?v=vD_cRnErve8); [Ring Final Circuit Continuity](https://www.youtube.com/watch?v=zXi35z_WHSY); [Ring Final Circuit R1+R2 Variation](https://www.youtube.com/watch?v=_0Nu7UfeM5k); [Insulation Resistance Part 1](https://www.youtube.com/watch?v=q4UTihwOloA); [Insulation Resistance Part 2](https://www.youtube.com/watch?v=Gz0bKTZo6Tk); [Insulation Resistance Part 3](https://www.youtube.com/watch?v=Y-n2NSpV4BQ) | Bonding, CPC and ring-continuity explanations precede their existing practical demonstrations. R1+R2 variation follows the complete ring test. The insulation-resistance series remains in part order, with existing connection guidance before Part 3 and the practical demonstration afterward. |
@@ -30,7 +30,7 @@ The user's five exclusions are absent from the published catalogue:
 - `wu8-mEfwVuk`: Power Factor Part 1.
 - `KcF222vgYz0`: Power Factor Part 2.
 
-Module 5, Section 4 now contains exactly the [six John Ward playlist lessons](earth-electrode-video-selection.md). The earlier videos with IDs `gwL5bfLou9Y`, `EQ5qbWporuQ`, `5r8_r4aqhn4`, `GUVLaJz94bQ`, `TYVGndneEXE`, `wXbtvJF-zyA`, `q1vb4LREJyI`, `3lG9Q8IK4PQ` and `kSDjRiMhS7g` were removed from the published catalogue rather than relocated. The separate original Module 8 electrode-testing lesson remains.
+Module 5, Section 7 now contains exactly the [six John Ward playlist lessons](earth-electrode-video-selection.md). The earlier videos with IDs `gwL5bfLou9Y`, `EQ5qbWporuQ`, `5r8_r4aqhn4`, `GUVLaJz94bQ`, `TYVGndneEXE`, `wXbtvJF-zyA`, `q1vb4LREJyI`, `3lG9Q8IK4PQ` and `kSDjRiMhS7g` were removed from the published catalogue rather than relocated. The separate original Module 8 electrode-testing lesson remains.
 
 ## Review evidence and limits
 
@@ -48,7 +48,7 @@ References used in the review:
 
 Missing published lessons are inserted before their next known core neighbour when a saved course is normalised. Existing learner ordering, moved lessons, supplementary placements, archived/deleted IDs, revisions and operation receipts are retained. Permanently removed lessons are not restored. Retired catalogue rows no longer appear in navigation; account progress and notes are not bulk-deleted.
 
-The nine URL-only files in `C2 YouTube Links/` contain 213 catalogue URLs in course order, one file per C2 module. Personal supplementary additions are outside these canonical exports.
+Following the teaching update, the nine URL-only files in `C2 YouTube Links/` contain 213 catalogue URLs in course order, one file per C2 module. Personal supplementary additions are outside these canonical exports.
 
 ## Verification
 

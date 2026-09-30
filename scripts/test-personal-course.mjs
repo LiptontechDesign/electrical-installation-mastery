@@ -215,7 +215,7 @@ test('empty personal courses retain destinations and never restore removed lesso
   const state = normalisePersonalCourse({ ...base, archivedLessonIds: coreIds, videos: base.videos.map(v => ({ ...v, archived: true })) });
   assert.equal(snapshot(state).allRows.length, 0);
   assert.equal(snapshot(state).course.lessonCount, 0);
-  assert.equal(Object.keys(snapshot(state).rows).length, 87);
+  assert.equal(Object.keys(snapshot(state).rows).length, 90);
   integrity(state);
 });
 test('invalid requests, missing destinations and self placement are rejected', () => {

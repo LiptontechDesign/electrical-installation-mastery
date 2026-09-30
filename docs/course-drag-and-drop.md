@@ -30,6 +30,8 @@ The map, overview, Home, search, progress counts, Previous/Next and automatic ad
 
 Optional `archivedLessonIds` and `deletedIds` fields preserve removed membership in existing version-2 documents without a database migration. Deleted IDs block default merging, and deletion receipts have no Undo. Published course data and source archives stay shared; removal changes only the account's current arrangement. Retained legacy records and learning records remain available in account exports.
 
+The [earthing/ADS teaching update](earthing-ads-learning-order.md) adds a `curriculumRevision` marker. Original saved groups receive the new subject grouping while explicit personal edits, custom legacy core order, removals and operation receipts remain intact. Reading performs no write; the next successful edit persists the marker. Later personal moves are not remigrated.
+
 Accounts without this document are read from their existing `course-order` and `supplementary` records. Migration preserves the legacy visible order, archived entries and stable identities. The first successful edit saves version 2. Legacy documents remain available for recovery and account export. Legacy GET endpoints project the new document; legacy POST endpoints request a reload so older tabs cannot save incompatible changes. No manual database migration is required.
 
 Implementation: `app/personal-course-model.ts`, `app/course-order.tsx`, `app/personal-course-editor.tsx`, `app/course-editor-actions.tsx`, `app/course-drag-context.tsx`, and `app/server/personal-course-store.ts`.

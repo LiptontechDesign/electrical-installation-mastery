@@ -2,7 +2,7 @@
 
 Updated 30 September 2026 to follow the user's selection of John Ward's complete [Earth Electrodes playlist](https://www.youtube.com/playlist?list=PLVsHvs2SuqmoGuQa4SNL9FOYjHhGmTZ9G).
 
-Section 4 sits after **Earth-fault paths, earthing, bonding and ADS**, before RCD/RCBO lessons. It contains exactly the six playlist videos, using the existing catalogue, player, navigation and account model. The first three lessons retain their existing IDs, preserving their progress and notes. The separate original eFIXX electrode-testing lesson in Module 8 remains intact.
+Section 7 follows the earthing/bonding, RCD/RCBO, ADS and fault-loop calculation sections in the [revised learning order](earthing-ads-learning-order.md). It contains exactly the six playlist videos, using the existing catalogue, player, navigation and account model. The first three lessons retain their existing IDs, preserving their progress and notes. The separate original eFIXX electrode-testing lesson in Module 8 remains intact.
 
 ## Video sequence
 
@@ -15,7 +15,7 @@ Section 4 sits after **Earth-fault paths, earthing, bonding and ADS**, before RC
 | 5 | [ConduDisc Earth Electrode](https://www.youtube.com/watch?v=VKJ3gwFnxEw) | Optional alternative-electrode demonstration and explanation. |
 | 6 | [ConduDisc Earth Electrode Installation](https://www.youtube.com/watch?v=tYcXE9W2AKQ) | Optional physical installation example following the explanation. |
 
-The last two are product-specific extensions, not renamed “Parts 5 and 6”. The section is approximately 69 minutes. The four approved JPElectric earthing/bonding lessons belong in the preceding section, not in this six-video section.
+The last two are product-specific extensions, not renamed “Parts 5 and 6”. The section is approximately 69 minutes. The JPElectric basics and bonding lessons are in Section 3; touch-voltage calculations are in Section 6, and extraneous-part assessment is in Module 8, Section 2.
 
 The earlier nine selections outside this playlist were removed from the published catalogue. Their IDs and the full JPElectric placement record are listed in [the C2 playlist integration](c2-testing-playlist-integration.md).
 
@@ -40,7 +40,7 @@ Soil resistivity (ohm-metres), electrode resistance (ohms) and installation loop
 
 ## Copyable C2 URLs
 
-`C2 YouTube Links/` contains one URL-only text file per C2 module, in catalogue order. Module 5 includes exactly these six lessons in Section 4. Across all nine modules the exports contain 213 URLs; personal supplementary additions are outside these exports.
+`C2 YouTube Links/` contains one URL-only text file per C2 module, in catalogue order. Module 5 includes exactly these six lessons in Section 7. Across all nine modules the exports contain 213 URLs; personal supplementary additions are outside these exports.
 
 ## Implementation checks
 
