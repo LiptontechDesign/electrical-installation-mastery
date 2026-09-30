@@ -167,7 +167,7 @@ export function CourseSectionRows({ sectionId, renderCore, visibleIds }: { visib
     return <CourseDraggableRow key={row.id} row={row}>
     {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <button className={supplementary?.selected?.id === row.id ? "supp-video-row active" : "supp-video-row"} aria-current={supplementary?.selected?.id === row.id ? "page" : undefined} type="button" onClick={() => {
       if (video) supplementary?.open(video);
-    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small className="lesson-row-progress">{supplementary?.selected?.id === row.id && <b>Watching now</b>}Supplementary · {user ? (watched ? 'Watched · ' : 'Not watched · ') : ''}{video?.instructor || 'YouTube'}</small></span>{video && study.savedVideos.includes(video.videoId) && <span className="lesson-row-state"><Bookmark size={14} fill="currentColor" aria-label="Saved"/></span>}</button>}
+    }}>{watched ? <CheckCircle2 size={17} /> : <PlayCircle size={17} />}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><small>Supplementary</small><small className="lesson-row-progress">{supplementary?.selected?.id === row.id && <b>Watching now</b>}{user ? (watched ? 'Watched' : 'Not watched') : ''}</small></span>{video && study.savedVideos.includes(video.videoId) && <span className="lesson-row-state"><Bookmark size={14} fill="currentColor" aria-label="Saved"/></span>}</button>}
   </CourseDraggableRow>;
   })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Place as the first video') : null}</div></>;
 }
