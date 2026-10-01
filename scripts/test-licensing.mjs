@@ -9,8 +9,8 @@ const {withSupplementaryDefaults}=await import('../work/licensing-check/suppleme
 const {courseMapSnapshot}=await import('../work/licensing-check/course-drop-model.js');
 assert.deepEqual(course.modules.map(m=>m.path),[...Array(9).fill('C2'),...Array(10).fill('C1'),...Array(6).fill('Professional')]);
 assertC2Reorganization(course);
-assert.equal(learningSections.length,90);
-assert.equal(new Set(learningSections.map(s=>s.id)).size,90);
+assert.equal(learningSections.length,114);
+assert.equal(new Set(learningSections.map(s=>s.id)).size,114);
 for(const [moduleId,expected] of Object.entries(c2StageOrder)) {
  assert.deepEqual(sectionsByModule[moduleId].map(({title,lessonIds})=>({title,lessonIds})),expected);
 }
@@ -35,7 +35,10 @@ assert.deepEqual(ids('c1-power-section-1'),['p06-l13','c1-balanced-three-phase-p
 assert.deepEqual(ids('c1-design-section-2'),['p06-l05','c1-cable-design','c1-three-phase-voltage-drop']);
 assert.deepEqual(ids('c1-pfc-section-1'),['course-NIrKOVZrqnU','p06-l14','c1-capacitor-sizing','c1-capacitor-placement']);
 assert.deepEqual(ids('c1-motors-section-1'),['p07-induction','course-XbL0R_9KLD4','c1-motor-terminals']);
-assert.deepEqual(ids('module-07-section-1'),['p04-l21','course-HFkTPmY7N7w','p15-v2-l01','course-wQwGZMcDGXk','c1-motor-protection-sizing','p04-l19','p04-l20','c1-phase-failure-relay']);
-assert.deepEqual(ids('c1-faults-section-1'),['c1-lost-neutral','c1-trace-three-phase','p10-l08','c1-motor-phase-loss','p16-l06']);
-assert.equal(ids('c1-testing-section-1')[0],'course-igi8F6UAvh0');
+assert.deepEqual(ids('module-07-section-1'),['p04-l21','course-HFkTPmY7N7w']);
+assert.deepEqual(ids('module-07-dol-protection-wiring'),['course-wQwGZMcDGXk','c1-motor-protection-sizing','p15-v2-l01','p04-l19','p04-l20','c1-phase-failure-relay']);
+assert.deepEqual(ids('c1-faults-section-1'),['c1-lost-neutral','c1-trace-three-phase','p10-l08']);
+assert.deepEqual(ids('c1-faults-motor-phase-loss'),['c1-motor-phase-loss']);
+assert.deepEqual(ids('c1-faults-thermal-diagnosis'),['p16-l06']);
+assert.equal(ids('c1-testing-section-1')[0],'p08-l07');
 console.log('PASS: course paths, section coverage, supplementary placement and promoted-video progress migration.');

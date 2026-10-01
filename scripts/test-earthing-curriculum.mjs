@@ -7,10 +7,11 @@ const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCours
 const { orderedSections, moveLesson } = await import('../work/earthing-regroup-tests/course-order-model.js');
 const { progressForVideos } = await import('../work/earthing-regroup-tests/course-progress-model.js');
 const previous = JSON.parse(readFileSync('scripts/fixtures/earthing-regroup-previous.json', 'utf8'));
+const previousCourse = JSON.parse(readFileSync('scripts/fixtures/curriculum-review-previous.json', 'utf8'));
 const newSections = ['module-05-ads', 'module-05-fault-loop', 'module-06-cpc-sizing'];
 const oldState = () => {
   const state = structuredClone(base);
-  Object.assign(state.groups, structuredClone(previous));
+  state.groups = { ...structuredClone(previousCourse.groups), ...structuredClone(previous) };
   for (const id of newSections) delete state.groups[id];
   delete state.curriculumRevision;
   state.revision = 12;
@@ -21,7 +22,7 @@ const before = oldState(), upgraded = parse(before), rows = snapshot(upgraded);
 assert.deepEqual(upgraded.groups, base.groups, 'An untouched saved course receives the complete new teaching order');
 assert.deepEqual([...Object.values(before.groups).flat()].sort(), [...Object.values(upgraded.groups).flat()].sort(), 'No video is lost, added or duplicated');
 assert.equal(upgraded.revision, 12);
-assert.equal(upgraded.curriculumRevision, 2);
+assert.equal(upgraded.curriculumRevision, 3);
 assert.deepEqual(parse(upgraded), upgraded, 'Reading an upgraded course is idempotent');
 assert.equal(before.curriculumRevision, undefined, 'Normalising does not mutate the stored input');
 assert.equal(rows.byId.get('p05-l10').sectionId, 'module-06-cpc-sizing');
@@ -99,7 +100,7 @@ for (const revision of [0, 1]) {
   assert.deepEqual(repaired.receipts, incomplete.receipts);
   assert.deepEqual(repaired.itemRevisions, incomplete.itemRevisions);
   assert.equal(repaired.revision, incomplete.revision);
-  assert.equal(repaired.curriculumRevision, 2);
+  assert.equal(repaired.curriculumRevision, 3);
   assert.deepEqual(parse(repaired), repaired);
   assert.deepEqual(incomplete, original);
   assert.deepEqual(progressForVideos(repairedRows.allRows.map(row => row.id), marked), progressForVideos(Object.values(incomplete.groups).flat(), marked));

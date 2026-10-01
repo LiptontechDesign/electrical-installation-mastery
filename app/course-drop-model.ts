@@ -40,11 +40,13 @@ export function courseMapSnapshot(order: CourseOrder, input: SupplementaryVideo[
         visit(video.id, 'after', next);
       }
     };
+    visit(section.id, 'before', new Set());
     for (const id of section.lessonIds) {
       visit(id, 'before', new Set());
       result.push({ id, title: lessons.get(id)!.title, kind: 'core', sectionId: section.id, moduleId: section.moduleId, displayNumber: nextDisplayNumber() });
       visit(id, 'after', new Set());
     }
+    visit(section.id, 'after', new Set());
     rows[section.id] = result;
   }
   const byId = new Map(Object.values(rows).flat().map(row => [row.id, row]));

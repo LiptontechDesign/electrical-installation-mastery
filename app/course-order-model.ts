@@ -2,10 +2,10 @@ import originalCourse from './course-curriculum';
 import { learningSections } from './learning-sections';
 import { formatStudyDuration } from './course-duration';
 import type { SupplementaryVideo } from './supplementary-model';
-import { earthingCurriculumRevision, upgradeEarthingGroups } from './earthing-curriculum-migration';
+import { curriculumRevision, upgradePublishedGroups } from './curriculum-placement-update';
 
 export function relocateSupportingVideos(videos: SupplementaryVideo[], course: typeof originalCourse) {
-  const locations = new Map(course.modules.flatMap(m => m.lessons.map(l => [l.id, m.id] as const)));
+  const locations = new Map([...learningSections.map(s => [s.id, s.moduleId] as const), ...course.modules.flatMap(m => m.lessons.map(l => [l.id, m.id] as const))]);
   const lookup = new Map(videos.map(v => [v.id, v]));
   return videos.map(video => {
     let anchor = video.anchorId;
@@ -19,13 +19,13 @@ export function relocateSupportingVideos(videos: SupplementaryVideo[], course: t
 
 export type CourseOrder = { version: 1; revision: number; groups: Record<string, string[]>; excludedLessonIds?: string[]; curriculumRevision?: number };
 export type LessonMove = { lessonId: string; sectionId: string; beforeId: string | null };
-export const defaultOrder: CourseOrder = { version: 1, revision: 0, groups: {}, curriculumRevision: earthingCurriculumRevision };
+export const defaultOrder: CourseOrder = { version: 1, revision: 0, groups: {}, curriculumRevision };
 const lessonIds = new Set(originalCourse.modules.flatMap(m => m.lessons.map(l => l.id)));
 
 // Keep empty sections available as destinations. Newly published lessons join
 // before their next authored neighbour; existing saved placements always win.
 export function orderedSections(order: CourseOrder) {
-  const upgraded = upgradeEarthingGroups(order.groups, order.curriculumRevision);
+  const upgraded = upgradePublishedGroups(order.groups, order.curriculumRevision);
   const excluded = new Set(order.excludedLessonIds ?? []);
   const seen = new Set<string>();
   const groups = learningSections.map(section => ({ ...section, lessonIds: (upgraded[section.id] ?? [])
@@ -62,7 +62,7 @@ export function moveLesson(order: CourseOrder, move: LessonMove): CourseOrder {
   const index = move.beforeId === null ? destination.lessonIds.length : destination.lessonIds.indexOf(move.beforeId);
   if (index < 0) throw new Error('The destination changed. Choose the position again.');
   destination.lessonIds.splice(index, 0, move.lessonId);
-  return { version: 1, revision: order.revision + 1, groups: Object.fromEntries(sections.map(s => [s.id, s.lessonIds])), curriculumRevision: earthingCurriculumRevision };
+  return { version: 1, revision: order.revision + 1, groups: Object.fromEntries(sections.map(s => [s.id, s.lessonIds])), curriculumRevision };
 }
 
 export function courseForOrder(order: CourseOrder) {

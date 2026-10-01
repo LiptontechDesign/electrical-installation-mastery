@@ -14,7 +14,12 @@ export async function fixture({ mobile = false, guest = false, state: seed, lear
   const context = await browser.newContext(mobile ? { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } : { viewport: { width: 1440, height: 1000 } });
   if (!guest) {
     const token = await new SignJWT({ email: 'preview@example.test', name: 'Preview Learner' }).setProtectedHeader({ alg: 'HS256' }).setSubject('preview').setIssuer('electrical-installation-mastery').setAudience('electrical-course').setExpirationTime('1h').sign(new TextEncoder().encode('local-preview-only-0000000000000000000000'));
-    await context.addCookies([{ name: 'electrical-session', value: token, url: origin }]);
+    // This fixture is restricted to loopback above. Supply the development and
+    // production cookie names so the same checks can use a production build.
+    await context.addCookies([
+      { name: 'electrical-session', value: token, url: origin },
+      { name: '__Host-electrical-session', value: token, url: origin.replace(/^http:/, 'https:'), secure: true },
+    ]);
   }
   const page = await context.newPage(); page.setDefaultTimeout(15000);
   let state = structuredClone(seed ?? model.publishedPersonalCourse);

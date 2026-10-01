@@ -29,8 +29,13 @@ async function visit(page, id) {
 }
 async function progress(page, watched) {
   await openMap(page);
-  await page.waitForFunction(({ watched, total }) => document.querySelector('.course-summary > span')?.textContent === watched + '/' + total + ' videos watched',
-    { watched, total: snapshot.allRows.length });
+  try {
+    await page.waitForFunction(({ watched, total }) => document.querySelector('.course-summary > span')?.textContent === watched + '/' + total + ' videos watched',
+      { watched, total: snapshot.allRows.length });
+  } catch (error) {
+    console.error({ expected: watched + '/' + snapshot.allRows.length, actual: await page.locator('.course-summary > span').textContent(), hash: new URL(page.url()).hash });
+    throw error;
+  }
 }
 const rowIds = async (page, sectionId) => page.locator('[data-course-section="' + sectionId + '"] [data-course-row]').evaluateAll(rows => rows.map(row => row.dataset.courseRow));
 
@@ -56,8 +61,12 @@ try {
     await progress(page, 11);
     assert.equal(await ads.locator('[role="progressbar"]').getAttribute('aria-valuenow'), '0');
     await closeMap(page);
+    // Hard reloads below must follow the debounced account save. The local
+    // route fixture does not model a keepalive request after page teardown.
+    const restoredMark = page.waitForResponse(response => response.url().endsWith('/learner-state') && response.request().method() === 'PUT' && response.request().postDataJSON()?.payload?.completedLessonIds?.includes('p05-l06'));
     await page.getByRole('button', { name: 'Mark video watched', exact: true }).click();
     await progress(page, 12);
+    await restoredMark;
     await visit(page, 'course-TFt3d77LujQ');
     assert.equal((await rowIds(page, 'module-08-section-2'))[0], 'course-TFt3d77LujQ');
     await visit(page, 'p05-l10');
@@ -76,7 +85,7 @@ try {
     await dialog.getByRole('radio', { name: 'At the beginning', exact: true }).check();
     await dialog.getByRole('button', { name: 'Move video', exact: true }).click();
     await dialog.waitFor({ state: 'hidden' });
-    assert.equal(f.state().curriculumRevision, 2);
+    assert.equal(f.state().curriculumRevision, 3);
     assert.deepEqual(f.state().groups['module-05-section-3'], firstEightEarthingIds);
     await page.locator('.personal-course-notice').getByRole('button', { name: 'Undo', exact: true }).click();
     await page.getByText('Change undone.', { exact: true }).waitFor();

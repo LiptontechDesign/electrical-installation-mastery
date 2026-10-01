@@ -24,6 +24,8 @@
     "test:curriculum": "node scripts/test-curriculum.mjs",
     "test:earthing": "node scripts/test-earthing-curriculum.mjs",
     "test:earthing-browser": "node scripts/test-earthing-browser.mjs",
+    "test:placement-update": "node scripts/test-curriculum-placement-update.mjs",
+    "test:placement-browser": "node scripts/test-curriculum-placement-browser.mjs",
     "test:licensing": "node scripts/test-licensing.mjs",
     "test:supplementary": "node scripts/test-supplementary.mjs",
     "test:course-order": "node scripts/test-course-order.mjs",

@@ -58,13 +58,14 @@ test('new playlist lessons join saved sections in teaching order while personal 
   for (const sectionId of Object.keys(base.groups)) {
     assert.deepEqual(upgraded.groups[sectionId].filter(id => coreIds.has(id)), base.groups[sectionId].filter(id => coreIds.has(id)), 'New explanations precede their practical neighbours, not the end of the section');
   }
-  assert.ok(upgraded.groups['module-09-section-1'].indexOf('c2-troubleshooting-method') < upgraded.groups['module-09-section-1'].indexOf('course-Onf6P_bA0XU'), 'The saved diagnostic framework stays before the new cases');
+  const upgradedRows = snapshot(upgraded).allRows.map(row => row.id);
+  assert.ok(upgradedRows.indexOf('c2-troubleshooting-method') < upgradedRows.indexOf('course-Onf6P_bA0XU'), 'The saved diagnostic framework stays before the new lighting cases');
   assert.equal(upgraded.revision, 12);
   assert.deepEqual(upgraded.receipts, old.receipts);
 
   const customised = structuredClone(old);
   const movedId = 'p08-l03';
-  customised.groups['module-08-section-2'] = customised.groups['module-08-section-2'].filter(id => id !== movedId);
+  customised.groups = Object.fromEntries(Object.entries(customised.groups).map(([sectionId, ids]) => [sectionId, ids.filter(id => id !== movedId)]));
   customised.groups[destination].push(movedId);
   customised.archivedLessonIds = ['p05-earth-components'];
   customised.deletedIds = ['p08-l04', 'course-q4UTihwOloA'];
@@ -215,7 +216,7 @@ test('empty personal courses retain destinations and never restore removed lesso
   const state = normalisePersonalCourse({ ...base, archivedLessonIds: coreIds, videos: base.videos.map(v => ({ ...v, archived: true })) });
   assert.equal(snapshot(state).allRows.length, 0);
   assert.equal(snapshot(state).course.lessonCount, 0);
-  assert.equal(Object.keys(snapshot(state).rows).length, 90);
+  assert.equal(Object.keys(snapshot(state).rows).length, 114);
   integrity(state);
 });
 test('invalid requests, missing destinations and self placement are rejected', () => {

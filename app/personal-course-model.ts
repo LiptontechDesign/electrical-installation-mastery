@@ -4,7 +4,7 @@ import { courseMapSnapshot, type MapRow } from './course-drop-model';
 import { courseForOrder, defaultOrder, type CourseOrder } from './course-order-model';
 import { withSupplementaryDefaults } from './supplementary-defaults';
 import { supplementaryDescendants, youtubeId, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
-import { earthingCurriculumRevision, upgradeEarthingGroups } from './earthing-curriculum-migration';
+import { curriculumRevision, upgradePublishedGroups } from './curriculum-placement-update';
 
 export type Placement = { sectionId: string; beforeId: string | null };
 type SavedPosition = Placement & { id: string; afterId: string | null };
@@ -29,6 +29,10 @@ export type EditRequest = { operationId: string; revision: number; edit: CourseE
 const core = new Map(catalog.modules.flatMap(m => m.lessons).map(l => [l.id, l]));
 const sectionById = new Map(learningSections.map(s => [s.id, s]));
 const maxVideos = 500;
+function videosAtGroups(videos: SupplementaryVideo[], groups: Record<string, string[]>) {
+  const locations = new Map(learningSections.flatMap(section => (groups[section.id] ?? []).map(id => [id, section.moduleId] as const)));
+  return videos.map(video => ({ ...video, moduleId: locations.get(video.id) ?? video.moduleId }));
+}
 export class CourseEditError extends Error {
   constructor(message: string, public status = 400, public existingId?: string) { super(message); }
 }
@@ -36,7 +40,7 @@ export class CourseEditError extends Error {
 // Migration uses the exact legacy rendering order, including archived anchors.
 // Neither legacy document is modified; it remains available for recovery/export.
 export function migratePersonalCourse(order: CourseOrder = defaultOrder, supplementary: SupplementaryState = { version: 1, revision: 0, videos: [] }): PersonalCourse {
-  const videos = withSupplementaryDefaults(supplementary).videos;
+  const videos = withSupplementaryDefaults(supplementary, (order.curriculumRevision ?? 0) < curriculumRevision).videos;
   const snapshot = courseMapSnapshot(order, videos.map(v => ({ ...v, archived: false })));
   const groups = Object.fromEntries(Object.entries(snapshot.rows).map(([id, rows]) => [id, rows.map(row => row.id)]));
   // Recover orphaned legacy entries into a valid section instead of losing them.
@@ -45,7 +49,7 @@ export function migratePersonalCourse(order: CourseOrder = defaultOrder, supplem
     const section = learningSections.find(s => s.moduleId === video.moduleId) ?? learningSections[0];
     groups[section.id].push(video.id);
   }
-  return { version: 2, revision: 0, groups, videos, itemRevisions: {}, receipts: [], curriculumRevision: earthingCurriculumRevision };
+  return { version: 2, revision: 0, groups, videos: videosAtGroups(videos, groups), itemRevisions: {}, receipts: [], curriculumRevision };
 }
 
 export const publishedPersonalCourse = migratePersonalCourse();
@@ -65,19 +69,19 @@ export function parsePersonalCourse(value: unknown): PersonalCourse {
   return normalisePersonalCourse(state);
 }
 
-// New published lessons/defaults join their original section. Existing placements,
-// including empty sections and archives, always win over default placement.
+// Published topic corrections are applied once to their former sections. Other
+// personal destinations, empty sections, archives and removals stay authoritative.
 export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
-  const upgraded = upgradeEarthingGroups(state.groups, state.curriculumRevision, new Set(Object.keys(state.itemRevisions).filter(id => state.itemRevisions[id] > 0)), state.videos);
   const deleted = new Set(state.deletedIds ?? []);
-  const videos = withSupplementaryDefaults({ version: 1, revision: state.revision, videos: state.videos }).videos.filter(v => !deleted.has(v.id));
+  const videos = withSupplementaryDefaults({ version: 1, revision: state.revision, videos: state.videos }, (state.curriculumRevision ?? 0) < curriculumRevision).videos.filter(v => !deleted.has(v.id));
+  const upgraded = upgradePublishedGroups(state.groups, state.curriculumRevision, new Set(Object.keys(state.itemRevisions).filter(id => state.itemRevisions[id] > 0)), videos);
   const known = new Set([...core.keys(), ...videos.map(v => v.id)].filter(id => !deleted.has(id)));
   const seen = new Set<string>();
   const groups = Object.fromEntries(learningSections.map(s => [s.id, (upgraded[s.id] ?? []).filter(id => {
     if (!known.has(id) || seen.has(id)) return false;
     seen.add(id); return true;
   })]));
-  const legacyOrder: CourseOrder = { version: 1, revision: 0, groups: Object.fromEntries(Object.entries(groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])), curriculumRevision: earthingCurriculumRevision };
+  const legacyOrder: CourseOrder = { version: 1, revision: 0, groups: Object.fromEntries(Object.entries(groups).map(([id, ids]) => [id, ids.filter(id => core.has(id))])), curriculumRevision };
   const fallback = migratePersonalCourse(legacyOrder, { version: 1, revision: 0, videos });
   for (const [sectionId, ids] of Object.entries(fallback.groups)) {
     for (let index = 0; index < ids.length; index++) {
@@ -90,7 +94,7 @@ export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
       seen.add(id);
     }
   }
-  return { ...state, groups, videos, curriculumRevision: Math.max(state.curriculumRevision ?? 0, earthingCurriculumRevision) };
+  return { ...state, groups, videos: videosAtGroups(videos, groups), curriculumRevision: Math.max(state.curriculumRevision ?? 0, curriculumRevision) };
 }
 
 export function personalCourseSnapshot(state: PersonalCourse) {

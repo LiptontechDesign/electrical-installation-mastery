@@ -1,4 +1,5 @@
 import course from './course-curriculum';
+import { learningSections } from './learning-sections';
 import type { SupplementaryState, SupplementaryVideo } from './supplementary-model';
 
 // Approved study-plan media. No duration, transcript or assessment is invented.
@@ -17,15 +18,15 @@ const resources = [
   ['c2-first-aid-aed','UFvL7wTFzl0','AED / Defibrillator Training','St John Ambulance','p03-l14','after'],
   ['c2-electric-shock-first-aid','luTRnCoeD4c','Learn first aid gestures: Electrocution','SIKANA English','course-TsJ49Np3HS0','before'],
   ['c2-cable-sizes-colours','A8lBYlk5zjE','What Sizes do Twin and Earth Cables Come in?','GSH Electrical','p02-l01','after'],
-  ['c2-equipment-protection-classes','eWHQRcO071E','Appliance Protection Classes 0, I, II and III','John Ward','p12-v2-l01','after'],
+  ['c2-equipment-protection-classes','eWHQRcO071E','Appliance Protection Classes 0, I, II and III','John Ward','p12-v2-l14','before'],
   ['c2-ip-ik-ratings','bvUZ2L7eHSE','IP Ratings Explained: Water, Dust and Impact','eFIXX','p12-v2-l01','after'],
   ['c2-spd-foundation','7en_Rc14c2g','What is a Surge Protection Device (SPD), and How Do They Work?','eFIXX','course-CNiLNvBLopI','before'],
   ['c2-selectivity-bridge','lOcbVQgCSpM','Selectivity, Discrimination and Co-ordination of Protective Devices','LEARN ELECTRICS','p05-l14','after'],
   ['c2-visual-inspection-bridge','RCCi6lfLT-U','Importance of Electrical Testing and Visual Inspections','GSH Electrical','p08-l02','before'],
   ['c2-certificate-overview','rYtaZRcCjl8','Electrical Certificates Part 1 — Overview and Minor Works','John Ward','p16-l09','before'],
-  ['c2-full-verification-capstone','JIdARijhacs','Full Testing Sequence Including Completion of an EIC','Jim Henson','p16-l09','after'],
-  ['c2-troubleshooting-method','UJZLP8ttrd4','A Systematic Electrical Troubleshooting Method','The Electrical Guy','course-Onf6P_bA0XU','before'],
-  ['c2-lighting-faults','S1Tzr5VX8-Q','Lighting Circuit Faults: Common Problems and Solutions','LEARN ELECTRICS','course-VNhtnnCJ8KM','before'],
+  ['c2-full-verification-capstone','JIdARijhacs','Full Testing Sequence Including Completion of an EIC','Jim Henson','p10-l01','before'],
+  ['c2-troubleshooting-method','UJZLP8ttrd4','A Systematic Electrical Troubleshooting Method','The Electrical Guy','module-09-section-1','after'],
+  ['c2-lighting-faults','S1Tzr5VX8-Q','Lighting Circuit Faults: Common Problems and Solutions','LEARN ELECTRICS','course-Onf6P_bA0XU','before'],
   ['c2-final-distribution-circuits','2_Bi49tWK_I','Final and Distribution Circuits — Why Do We Have Them?','LEARN ELECTRICS','p11-v2-l02','after'],
   ['c2-protection-mcb-rcd-rcbo','nVi5Idyt-jE','RCDs, RCBOs and MCBs Explained — What They Do Inside Your Fuse Box','LEARN ELECTRICS','p02-l07','before'],
   ['c2-conduit-capacity-part-one','o8pcBZSGa6s','How to Work Out Conduit Cable Capacity — Appendix E, Part 1','GSH Electrical','p04-l09','before'],
@@ -34,7 +35,7 @@ const resources = [
   ['c2-live-conductor-sizing','wAcqKNBxy-w','Cable Calculation — Calculating the Live Cable Size from BS 7671','Electrical Student','p06-l04','after'],
   ['c2-complete-cable-sizing','OwpTVeJ231A','Cable Size Calculations — BS 7671 Amendment 2','LEARN ELECTRICS','course-8Z255dd78H4','after'],
   ['c2-voltage-drop-masterclass','yMgyWxzGN-U','Voltage Drop Masterclass — Single Point and Distributed Loads','LEARN ELECTRICS','p06-l08','after'],
-  ['c2-socket-planning-design','QVMpVIYm594','How Many Sockets Is That? Kitchens, Bedrooms, Floor Area and Circuit Design','LEARN ELECTRICS','p06-l15','after'],
+  ['c2-socket-planning-design','QVMpVIYm594','How Many Sockets Is That? Kitchens, Bedrooms, Floor Area and Circuit Design','LEARN ELECTRICS','p10-l09','after'],
   ['c1-pfc-bridge','NIrKOVZrqnU','Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)','The Engineering Mindset','p06-l14','before'],
   ['c1-balanced-three-phase-power','bSjh8AakqXM','Power in a Balanced Three-Phase Circuit','Michel van Biezen','p06-l13','after'],
   ['c1-three-phase-power-factor','T2eO6hOT-EA','Three-Phase Motor Power Factor — Worked Example','Michel van Biezen','c1-balanced-three-phase-power','after'],
@@ -50,10 +51,10 @@ const resources = [
   ['c1-phase-failure-relay','-OCfG8inGSY','Phase-Failure Relay with a DOL Starter','The Electrical Guy','p04-l20','after'],
   ['c1-lost-neutral','0MVNJUstzCY','Three-Phase Lost Neutral — What Happens and Why Equipment Is Damaged','LEARN ELECTRICS','p10-l08','before'],
   ['c1-trace-three-phase','CDW_SKOgYSY','Tracing Three-Phase Wiring and Identifying Cables','LEARN ELECTRICS','c1-lost-neutral','after'],
-  ['c1-motor-phase-loss','AtlXd1xA-CU','Single-Phasing Fault in a Three-Phase Motor','Electrical lectures','p10-l08','after'],
+  ['c1-motor-phase-loss','AtlXd1xA-CU','Single-Phasing Fault in a Three-Phase Motor','Electrical lectures','c1-faults-motor-phase-loss','after'],
   ['professional-selectivity','V6WR_TBf1AU','Circuit Breaker Selective Coordination: Common Questions and Misconceptions','Bentley EasyPower / ABB presenter','p05-l14','after'],
 ] as const;
-const locations=new Map(course.modules.flatMap(m=>m.lessons.map(l=>[l.id,m.id] as const)));
+const locations=new Map([...learningSections.map(s=>[s.id,s.moduleId] as const),...course.modules.flatMap(m=>m.lessons.map(l=>[l.id,m.id] as const))]);
 const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
 // This C1 core video is also an intentionally placed C2 supporting lesson.
 export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w']);
@@ -62,15 +63,27 @@ const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||cr
   const moduleId=seedLocations.get(anchorId);
   if(!moduleId)throw new Error(`Missing supplementary anchor: ${anchorId}`);
   seedLocations.set(id,moduleId);
-  return {id,videoId,title,instructor,anchorId,position,moduleId,archived:false,placementRevision:1,updatedAt:'2026-09-23T00:00:00.000Z'};
+  return {id,videoId,title,instructor,anchorId,position,moduleId,archived:false,placementRevision:3,updatedAt:'2026-10-01T00:00:00.000Z'};
 });
-export function withSupplementaryDefaults(state:SupplementaryState):SupplementaryState {
+const reviewedAnchors = new Map<string, { anchorId: string; position: 'before' | 'after' }>([
+  ['c2-equipment-protection-classes', { anchorId: 'p12-v2-l01', position: 'after' }],
+  ['c2-full-verification-capstone', { anchorId: 'p16-l09', position: 'after' }],
+  ['c2-troubleshooting-method', { anchorId: 'course-Onf6P_bA0XU', position: 'before' }],
+  ['c2-lighting-faults', { anchorId: 'course-VNhtnnCJ8KM', position: 'before' }],
+  ['c2-socket-planning-design', { anchorId: 'p06-l15', position: 'after' }],
+  ['c1-motor-phase-loss', { anchorId: 'p10-l08', position: 'after' }],
+]);
+export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlacements = true):SupplementaryState {
   // Promoted videos keep their stored history without displaying a second copy.
   // The approved C1-to-C2 study bridge above is the sole deliberate exception.
   const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)).map(video=>{
     const seed=defaults.find(item=>item.id===video.id||item.videoId===video.videoId);
     // One curriculum migration; later visitor moves are preserved.
-    const migrated=seed&&!video.placementRevision ? {...video,moduleId:seed.moduleId,anchorId:seed.anchorId,position:seed.position,title:video.title.replace(/^Protection study path \d+\/10 · /,''),placementRevision:1} : video;
+    let migrated=seed&&!video.placementRevision ? {...video,moduleId:seed.moduleId,anchorId:seed.anchorId,position:seed.position,title:video.title.replace(/^Protection study path \d+\/10 · /,''),placementRevision:3} : video;
+    const previous = reviewedAnchors.get(video.id);
+    if (reviewedPlacements && seed && previous && (migrated.placementRevision ?? 0) < 3 && migrated.anchorId === previous.anchorId && migrated.position === previous.position) {
+      migrated = {...migrated, anchorId:seed.anchorId, position:seed.position, placementRevision:3};
+    }
     return {...migrated,moduleId:locations.get(migrated.anchorId)??migrated.moduleId};
   });
   const ids=new Set(saved.map(v=>v.id)),videoIds=new Set(saved.map(v=>v.videoId));

@@ -14,6 +14,10 @@ export const obsoleteEarthingIds = [
 
 export function incompleteEarthingCourse(base, curriculumRevision = 1) {
   const state = structuredClone(base);
+  // Remove the copied legacy rows from any newer split destinations first.
+  // A persisted course contains each video once, even across later curricula.
+  const previousIds = new Set(Object.values(previous).flat());
+  state.groups = Object.fromEntries(Object.entries(state.groups).map(([sectionId, ids]) => [sectionId, ids.filter(id => !previousIds.has(id))]));
   Object.assign(state.groups, structuredClone(previous));
   for (const id of ['module-05-ads', 'module-05-fault-loop', 'module-06-cpc-sizing']) state.groups[id] = [];
   state.groups['module-05-section-3'] = [...firstEightEarthingIds, ...obsoleteEarthingIds];

@@ -32,6 +32,8 @@ Optional `archivedLessonIds` and `deletedIds` fields preserve removed membership
 
 The [earthing/ADS teaching update](earthing-ads-learning-order.md) uses a `curriculumRevision` marker. Revision 2 repairs known ADS/calculation lessons still in the obsolete combined groups, including reordered groups skipped by the first update. Introductory mixed order, placements in other destinations, removals and operation receipts remain intact. Reading performs no write; the next successful edit persists the marker. Later personal moves are not remigrated.
 
+The [reviewed placement update](curriculum-placement-update.md) advances this marker to revision 3. It groups testing, design, diagnosis and specialist-system videos in 114 populated sections while retaining all earlier section identities and the same personal editing rules.
+
 Accounts without this document are read from their existing `course-order` and `supplementary` records. Migration preserves the legacy visible order, archived entries and stable identities. The first successful edit saves version 2. Legacy documents remain available for recovery and account export. Legacy GET endpoints project the new document; legacy POST endpoints request a reload so older tabs cannot save incompatible changes. No manual database migration is required.
 
 Implementation: `app/personal-course-model.ts`, `app/course-order.tsx`, `app/personal-course-editor.tsx`, `app/course-editor-actions.tsx`, `app/course-drag-context.tsx`, and `app/server/personal-course-store.ts`.

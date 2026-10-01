@@ -73,11 +73,19 @@
     "id": "module-01-section-7",
     "moduleId": "module-01",
     "number": 7,
-    "title": "Magnetism, induction, transformers and AC generation",
+    "title": "Magnetism, induction and transformers",
     "lessonIds": [
       "p01-l17",
       "p01-l18",
-      "p01-transformers",
+      "p01-transformers"
+    ]
+  },
+  {
+    "id": "module-01-ac-generation",
+    "moduleId": "module-01",
+    "number": 8,
+    "title": "AC generation, sine waves and electrical quantities",
+    "lessonIds": [
       "supp-ac-theory-01",
       "supp-ac-theory-02",
       "p01-l19",
@@ -88,7 +96,7 @@
   {
     "id": "module-01-section-8",
     "moduleId": "module-01",
-    "number": 8,
+    "number": 9,
     "title": "Inductive and capacitive opposition",
     "lessonIds": [
       "p01-l22",
@@ -101,7 +109,7 @@
   {
     "id": "module-01-section-9",
     "moduleId": "module-01",
-    "number": 9,
+    "number": 10,
     "title": "Waveforms and phasors",
     "lessonIds": [
       "supp-ac-theory-09",
@@ -112,7 +120,7 @@
   {
     "id": "module-01-section-10",
     "moduleId": "module-01",
-    "number": 10,
+    "number": 11,
     "title": "Voltage and impedance triangles",
     "lessonIds": [
       "supp-ac-theory-12",
@@ -124,7 +132,7 @@
   {
     "id": "module-01-section-11",
     "moduleId": "module-01",
-    "number": 11,
+    "number": 12,
     "title": "AC currents and power",
     "lessonIds": [
       "supp-ac-theory-13",
@@ -137,7 +145,7 @@
   {
     "id": "module-01-section-12",
     "moduleId": "module-01",
-    "number": 12,
+    "number": 13,
     "title": "Coil analysis and correction",
     "lessonIds": [
       "p01-l23",
@@ -151,7 +159,7 @@
     "id": "module-02-section-1",
     "moduleId": "module-02",
     "number": 1,
-    "title": "Kenyan C2 orientation slot and domestic supply equipment",
+    "title": "Domestic supply equipment and circuit hierarchy",
     "lessonIds": [
       "p02-l02",
       "p11-v2-l02"
@@ -260,18 +268,24 @@
     "id": "module-03-section-5",
     "moduleId": "module-03",
     "number": 5,
-    "title": "Planning and first/second fix",
+    "title": "Planning kitchen sockets and cooker points",
     "lessonIds": [
-      "p11-v2-l06",
-      "p11-l01",
-      "p10-l03",
-      "p10-l04"
+      "p11-v2-l06"
+    ]
+  },
+  {
+    "id": "module-03-equipment-ratings",
+    "moduleId": "module-03",
+    "number": 6,
+    "title": "Equipment protection classes and IP/IK ratings",
+    "lessonIds": [
+      "p12-v2-l14"
     ]
   },
   {
     "id": "module-03-section-6",
     "moduleId": "module-03",
-    "number": 6,
+    "number": 7,
     "title": "Installing residential accessories",
     "lessonIds": [
       "p11-v2-l03",
@@ -285,23 +299,40 @@
   {
     "id": "module-03-section-7",
     "moduleId": "module-03",
-    "number": 7,
+    "number": 8,
     "title": "Practical luminaires and final connections",
     "lessonIds": [
       "p12-v2-l01",
       "p12-v2-l07",
-      "p12-v2-l14",
       "p03-l11"
+    ]
+  },
+  {
+    "id": "module-04-routing-first-fix",
+    "moduleId": "module-04",
+    "number": 1,
+    "title": "Cable routes, wall chasing and first fix",
+    "lessonIds": [
+      "p11-l01",
+      "p10-l03"
     ]
   },
   {
     "id": "module-04-section-1",
     "moduleId": "module-04",
-    "number": 1,
-    "title": "PVC and steel conduit tools, components and fabrication",
+    "number": 2,
+    "title": "PVC conduit components and fabrication",
     "lessonIds": [
       "p04-l02",
-      "p04-l03",
+      "p04-l03"
+    ]
+  },
+  {
+    "id": "module-04-steel-conduit",
+    "moduleId": "module-04",
+    "number": 3,
+    "title": "Steel conduit tools, components and fabrication",
+    "lessonIds": [
       "p04-l01",
       "p04-l04",
       "p04-l05",
@@ -311,20 +342,37 @@
   {
     "id": "module-04-section-2",
     "moduleId": "module-04",
-    "number": 2,
-    "title": "Trunking, tray, capacity and conduit circuit layout",
+    "number": 4,
+    "title": "Trunking and cable-tray fabrication",
     "lessonIds": [
       "p04-l07",
-      "p04-l08",
+      "p04-l08"
+    ]
+  },
+  {
+    "id": "module-04-containment-capacity",
+    "moduleId": "module-04",
+    "number": 5,
+    "title": "Conduit and trunking capacity calculations",
+    "lessonIds": [
       "p04-l09",
-      "p04-l10",
-      "p04-l18"
+      "p04-l10"
+    ]
+  },
+  {
+    "id": "module-04-conduit-lighting",
+    "moduleId": "module-04",
+    "number": 6,
+    "title": "Conduit lighting methods and second-fix connections",
+    "lessonIds": [
+      "p04-l18",
+      "p10-l04"
     ]
   },
   {
     "id": "module-04-section-3",
     "moduleId": "module-04",
-    "number": 3,
+    "number": 7,
     "title": "SWA construction and installation",
     "lessonIds": [
       "p04-l11",
@@ -388,23 +436,23 @@
   {
     "id": "module-05-ads",
     "moduleId": "module-05",
+    "number": 5,
     "title": "Automatic disconnection of supply: fault protection",
     "lessonIds": [
       "p05-l06"
-    ],
-    "number": 5
+    ]
   },
   {
     "id": "module-05-fault-loop",
     "moduleId": "module-05",
+    "number": 6,
     "title": "Earth-fault loop impedance: Ze, Zs and R1 + R2",
     "lessonIds": [
       "p05-l07",
       "p05-l11",
       "p05-l15",
       "course-8-GmwF090JU"
-    ],
-    "number": 6
+    ]
   },
   {
     "id": "module-05-earth-electrodes",
@@ -465,7 +513,15 @@
       "p06-l04",
       "p06-l10",
       "course-8Z255dd78H4",
-      "course-ps2vW6d29Ug",
+      "course-ps2vW6d29Ug"
+    ]
+  },
+  {
+    "id": "module-06-ring-design",
+    "moduleId": "module-06",
+    "number": 3,
+    "title": "Ring-final circuit design and load distribution",
+    "lessonIds": [
       "course-DRxoEzWzZVs",
       "course-105Zv2Oplx0"
     ]
@@ -473,7 +529,7 @@
   {
     "id": "module-06-section-3",
     "moduleId": "module-06",
-    "number": 3,
+    "number": 4,
     "title": "Voltage-drop calculation and compliance",
     "lessonIds": [
       "p06-l07",
@@ -484,17 +540,17 @@
   {
     "id": "module-06-cpc-sizing",
     "moduleId": "module-06",
+    "number": 5,
     "title": "Circuit protective conductor sizing and fault withstand",
     "lessonIds": [
       "p05-l10"
-    ],
-    "number": 4
+    ]
   },
   {
     "id": "module-06-section-4",
     "moduleId": "module-06",
-    "number": 5,
-    "title": "Fault duty, breaking capacity and final design proof",
+    "number": 6,
+    "title": "Prospective fault duty and breaker breaking capacity",
     "lessonIds": [
       "p06-l15"
     ]
@@ -524,17 +580,41 @@
     "id": "module-08-section-2",
     "moduleId": "module-08",
     "number": 2,
-    "title": "Protective bonding, continuity, polarity, ring-circuit and insulation tests",
+    "title": "Protective bonding: assessment and continuity",
     "lessonIds": [
       "course-TFt3d77LujQ",
       "course-oG6hwNed35k",
       "p08-l03",
-      "p05-l09",
+      "p05-l09"
+    ]
+  },
+  {
+    "id": "module-08-cpc-continuity",
+    "moduleId": "module-08",
+    "number": 3,
+    "title": "CPC continuity and dead polarity",
+    "lessonIds": [
       "course-vD_cRnErve8",
-      "p08-l04",
+      "p08-l04"
+    ]
+  },
+  {
+    "id": "module-08-ring-continuity",
+    "moduleId": "module-08",
+    "number": 4,
+    "title": "Ring-final continuity and polarity",
+    "lessonIds": [
       "course-zXi35z_WHSY",
       "p08-l05",
-      "course-_0Nu7UfeM5k",
+      "course-_0Nu7UfeM5k"
+    ]
+  },
+  {
+    "id": "module-08-insulation-resistance",
+    "moduleId": "module-08",
+    "number": 5,
+    "title": "Insulation-resistance testing",
+    "lessonIds": [
       "course-q4UTihwOloA",
       "course-Gz0bKTZo6Tk",
       "p08-l16",
@@ -545,14 +625,30 @@
   {
     "id": "module-08-section-3",
     "moduleId": "module-08",
-    "number": 3,
-    "title": "Earth-electrode checks, Ze, PFC, Zs and controlled live tests",
+    "number": 6,
+    "title": "Earth-electrode resistance measurement",
     "lessonIds": [
-      "p08-l12",
+      "p08-l12"
+    ]
+  },
+  {
+    "id": "module-08-external-loop-pfc",
+    "moduleId": "module-08",
+    "number": 7,
+    "title": "External loop impedance Ze and prospective fault current",
+    "lessonIds": [
       "course-zwuByd7PwMY",
       "p02-l09",
       "p08-l08",
-      "p08-l09",
+      "p08-l09"
+    ]
+  },
+  {
+    "id": "module-08-circuit-loop",
+    "moduleId": "module-08",
+    "number": 8,
+    "title": "Circuit earth-fault loop impedance Zs",
+    "lessonIds": [
       "course-eOW2ohFXULE",
       "p08-l10"
     ]
@@ -560,10 +656,9 @@
   {
     "id": "module-08-section-4",
     "moduleId": "module-08",
-    "number": 4,
-    "title": "RCD testing and functional verification",
+    "number": 9,
+    "title": "RCD verification and functional checks",
     "lessonIds": [
-      "p08-l13",
       "p08-l14",
       "p08-l15"
     ]
@@ -571,8 +666,8 @@
   {
     "id": "module-08-section-5",
     "moduleId": "module-08",
-    "number": 5,
-    "title": "Certification and Kenyan handover bridge",
+    "number": 10,
+    "title": "Certification and recording results",
     "lessonIds": [
       "p16-l09"
     ]
@@ -580,8 +675,8 @@
   {
     "id": "module-08-section-6",
     "moduleId": "module-08",
-    "number": 6,
-    "title": "Complete single-phase installation capstones",
+    "number": 11,
+    "title": "Complete verification and installation walkthroughs",
     "lessonIds": [
       "p10-l01",
       "p10-l02",
@@ -592,10 +687,25 @@
     "id": "module-09-section-1",
     "moduleId": "module-09",
     "number": 1,
-    "title": "Diagnostic method, ring circuits and open-circuit faults",
+    "title": "Systematic diagnostic method",
+    "lessonIds": []
+  },
+  {
+    "id": "module-09-lighting-faults",
+    "moduleId": "module-09",
+    "number": 2,
+    "title": "Lighting-circuit faults and visual evidence",
     "lessonIds": [
       "course-Onf6P_bA0XU",
-      "course-VNhtnnCJ8KM",
+      "course-VNhtnnCJ8KM"
+    ]
+  },
+  {
+    "id": "module-09-ring-socket-faults",
+    "moduleId": "module-09",
+    "number": 3,
+    "title": "Ring, socket and circuit-path faults",
+    "lessonIds": [
       "course-P8wxe7_FX54",
       "p09-l01",
       "p09-l02",
@@ -607,21 +717,30 @@
   {
     "id": "module-09-section-2",
     "moduleId": "module-09",
-    "number": 2,
-    "title": "Insulation, cable deterioration, RCD and leakage faults",
+    "number": 4,
+    "title": "Insulation faults and cable deterioration",
+    "lessonIds": [
+      "p09-l03",
+      "p09-l07"
+    ]
+  },
+  {
+    "id": "module-09-rcd-leakage",
+    "moduleId": "module-09",
+    "number": 5,
+    "title": "RCD/RCBO, borrowed-neutral and leakage diagnosis",
     "lessonIds": [
       "course-_2yb6WB-kQo",
       "course-NoAiWOSJvPU",
-      "p09-l03",
       "p09-l06",
-      "p09-l07",
-      "p09-l09"
+      "p09-l09",
+      "p08-l13"
     ]
   },
   {
     "id": "module-09-section-3",
     "moduleId": "module-09",
-    "number": 3,
+    "number": 6,
     "title": "Load-current and functional diagnosis",
     "lessonIds": [
       "p09-l10",
@@ -662,7 +781,7 @@
     "id": "c1-power-section-1",
     "moduleId": "c1-power",
     "number": 1,
-    "title": "Line/phase calculation, then three-phase power",
+    "title": "Three-phase quantities and worked power calculations",
     "lessonIds": [
       "p06-l13"
     ]
@@ -743,7 +862,7 @@
     "id": "c1-motors-section-1",
     "moduleId": "c1-motors",
     "number": 1,
-    "title": "Motor operating principle and nameplate",
+    "title": "Motor operation, nameplates and terminal connections",
     "lessonIds": [
       "p07-induction",
       "course-XbL0R_9KLD4"
@@ -753,12 +872,20 @@
     "id": "module-07-section-1",
     "moduleId": "module-07",
     "number": 1,
-    "title": "Contactor, DOL starter and motor protection",
+    "title": "Contactor and DOL operating principles",
     "lessonIds": [
       "p04-l21",
-      "course-HFkTPmY7N7w",
-      "p15-v2-l01",
+      "course-HFkTPmY7N7w"
+    ]
+  },
+  {
+    "id": "module-07-dol-protection-wiring",
+    "moduleId": "module-07",
+    "number": 2,
+    "title": "Motor protection selection and DOL construction",
+    "lessonIds": [
       "course-wQwGZMcDGXk",
+      "p15-v2-l01",
       "p04-l19",
       "p04-l20"
     ]
@@ -766,11 +893,19 @@
   {
     "id": "module-07-section-2",
     "moduleId": "module-07",
-    "number": 2,
-    "title": "Star-delta, soft starting and variable speed",
+    "number": 3,
+    "title": "Reduced-current starting: star-delta and soft starters",
     "lessonIds": [
       "p07-star-delta",
-      "course-_tGyaE78WTA",
+      "course-_tGyaE78WTA"
+    ]
+  },
+  {
+    "id": "module-07-vfd-speed-control",
+    "moduleId": "module-07",
+    "number": 4,
+    "title": "VFD operating principle and motor speed control",
+    "lessonIds": [
       "p07-vfd"
     ]
   },
@@ -778,10 +913,10 @@
     "id": "c1-testing-section-1",
     "moduleId": "c1-testing",
     "number": 1,
-    "title": "Phase sequence and initial three-phase verification",
+    "title": "Supply verification, phase rotation and three-phase tests",
     "lessonIds": [
-      "course-igi8F6UAvh0",
       "p08-l07",
+      "course-igi8F6UAvh0",
       "p08-l17",
       "p08-l11"
     ]
@@ -799,9 +934,24 @@
     "id": "c1-faults-section-1",
     "moduleId": "c1-faults",
     "number": 1,
-    "title": "Lost neutral, missing phase, board faults and thermal evidence",
+    "title": "Supply, board and lost-neutral faults",
     "lessonIds": [
-      "p10-l08",
+      "p10-l08"
+    ]
+  },
+  {
+    "id": "c1-faults-motor-phase-loss",
+    "moduleId": "c1-faults",
+    "number": 2,
+    "title": "Motor phase-loss diagnosis",
+    "lessonIds": []
+  },
+  {
+    "id": "c1-faults-thermal-diagnosis",
+    "moduleId": "c1-faults",
+    "number": 3,
+    "title": "Thermal diagnosis and condition evidence",
+    "lessonIds": [
       "p16-l06"
     ]
   },
@@ -895,9 +1045,10 @@
     "id": "module-12-section-8",
     "moduleId": "module-12",
     "number": 8,
-    "title": "Drivers, dimming and flicker",
+    "title": "LED drivers, dimming, flicker and protection",
     "lessonIds": [
       "p12-v2-l11",
+      "p15-v2-l04",
       "p12-v2-l12",
       "p12-v2-l13"
     ]
@@ -906,7 +1057,7 @@
     "id": "module-12-section-9",
     "moduleId": "module-12",
     "number": 9,
-    "title": "Ratings and garden lighting",
+    "title": "Garden lighting design and installation",
     "lessonIds": [
       "p12-v2-l15",
       "p12-v2-l16"
@@ -916,20 +1067,36 @@
     "id": "module-12-section-10",
     "moduleId": "module-12",
     "number": 10,
-    "title": "Lighting-control systems",
+    "title": "Lighting-control architecture and PIR operation",
     "lessonIds": [
-      "p12-v2-l17",
-      "p12-v2-l18",
+      "p12-v2-l22",
+      "p12-v2-l18"
+    ]
+  },
+  {
+    "id": "module-12-dali-controls",
+    "moduleId": "module-12",
+    "number": 11,
+    "title": "DALI principles, wiring and installation",
+    "lessonIds": [
       "p12-v2-l19",
-      "p12-v2-l20",
+      "p12-v2-l20"
+    ]
+  },
+  {
+    "id": "module-12-control-applications",
+    "moduleId": "module-12",
+    "number": 12,
+    "title": "Smart dimming and integrated lighting-control applications",
+    "lessonIds": [
       "p12-v2-l21",
-      "p12-v2-l22"
+      "p12-v2-l17"
     ]
   },
   {
     "id": "module-12-section-11",
     "moduleId": "module-12",
-    "number": 11,
+    "number": 13,
     "title": "Emergency lighting and final design review",
     "lessonIds": [
       "p12-v2-l23",
@@ -952,23 +1119,39 @@
     "id": "module-13-section-2",
     "moduleId": "module-13",
     "number": 2,
-    "title": "Data, security and access control",
+    "title": "Network cabling and copper/fibre testing",
     "lessonIds": [
       "p13-v2-l04",
       "p13-v2-l05",
-      "p13-v2-l06",
+      "p13-v2-l06"
+    ]
+  },
+  {
+    "id": "module-13-security-access",
+    "moduleId": "module-13",
+    "number": 3,
+    "title": "CCTV and access control",
+    "lessonIds": [
       "p13-v2-l07",
-      "p13-v2-l08",
-      "p13-v2-l09"
+      "p13-v2-l08"
     ]
   },
   {
     "id": "module-13-section-3",
     "moduleId": "module-13",
-    "number": 3,
-    "title": "Gate safety and fire detection",
+    "number": 4,
+    "title": "Automated-gate controllers and safety devices",
     "lessonIds": [
-      "p13-v2-l10",
+      "p13-v2-l09",
+      "p13-v2-l10"
+    ]
+  },
+  {
+    "id": "module-13-fire-detection",
+    "moduleId": "module-13",
+    "number": 5,
+    "title": "Fire detection and alarm systems",
+    "lessonIds": [
       "p13-v2-l11",
       "p13-l10",
       "p13-v2-l13"
@@ -990,21 +1173,29 @@
     "id": "module-14-section-2",
     "moduleId": "module-14",
     "number": 2,
-    "title": "Storage location and installation checks",
+    "title": "Inverter operation, storage planning and hybrid installation",
     "lessonIds": [
+      "p14-l02",
       "p14-v2-l04",
       "p14-v2-l05",
-      "p14-v2-l06",
       "p14-v2-l07"
+    ]
+  },
+  {
+    "id": "module-14-pv-verification",
+    "moduleId": "module-14",
+    "number": 3,
+    "title": "PV verification and commissioning",
+    "lessonIds": [
+      "p14-v2-l06"
     ]
   },
   {
     "id": "module-14-section-3",
     "moduleId": "module-14",
-    "number": 3,
-    "title": "Inverters, transfer and backup power",
+    "number": 4,
+    "title": "Transfer switches, UPS and backup systems",
     "lessonIds": [
-      "p14-l02",
       "p14-v2-l10",
       "p14-v2-l11",
       "p14-l07"
@@ -1013,7 +1204,7 @@
   {
     "id": "module-14-section-4",
     "moduleId": "module-14",
-    "number": 4,
+    "number": 5,
     "title": "EV charging and handover",
     "lessonIds": [
       "p14-v2-l13",
@@ -1026,11 +1217,10 @@
     "id": "module-15-section-1",
     "moduleId": "module-15",
     "number": 1,
-    "title": "Building-services controls and protection",
+    "title": "Pump and ventilation controls",
     "lessonIds": [
       "p15-v2-l02",
-      "p15-v2-l03",
-      "p15-v2-l04"
+      "p15-v2-l03"
     ]
   },
   {

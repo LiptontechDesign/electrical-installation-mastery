@@ -1,5 +1,7 @@
 # Earthing, ADS and fault-loop learning order
 
+The [1 October course placement update](curriculum-placement-update.md) retains this Module 5 teaching sequence and carries its migration into curriculum revision 3. Other modules now use 114 sections overall.
+
 Updated 30 September 2026 after the user's review of Module 5. Module names, lesson identities, video URLs, the player and editing controls stay unchanged. The catalogue still contains 324 lessons across 25 modules; three new sections bring the total to 90.
 
 ## Module 5

@@ -2,6 +2,8 @@
 
 Updated 30 September 2026 following the user's playlist review and integration request.
 
+The [1 October placement update](curriculum-placement-update.md) further separates the testing, design and diagnosis groups while retaining these videos. The section references and verification counts below record the original 30 September integration; use the newer document for current section numbering.
+
 Module names, the 25 modules, page design, player and personal-course controls remain intact. The [earthing/ADS teaching update](earthing-ads-learning-order.md) preserves all 87 previous section IDs and adds three sections, bringing the total to 90. The catalogue now has **324 lessons**: the original 296, six John Ward earth-electrode lessons and 22 JPElectric lessons. All original lesson IDs, YouTube IDs, titles and durations are preserved. The nine earlier earth-electrode selections outside John Ward's playlist were retired.
 
 ## Approved JPElectric lessons
