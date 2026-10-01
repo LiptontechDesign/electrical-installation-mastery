@@ -31,6 +31,16 @@
 .map-guidance { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin: 0 8px 18px; font-size: 11px; color: var(--muted); }
 .map-guidance button { display: inline-flex; align-items: center; gap: 5px; padding: 6px 0; background: transparent; color: var(--text-accent); font-weight: 650; }
 .course-map .course-summary { margin-bottom: 20px; border: 1px solid var(--line); background: transparent; }
+.course-summary .pathway-progress-heading { grid-column: 1 / -1; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: var(--ink); }
+.pathway-progress-heading strong { font-size: 13px; }
+.course-summary .pathway-progress-count { grid-column: 1 / -1; font-variant-numeric: tabular-nums; }
+.course-summary .progress-line > span, .learning-progress-panel .learning-progress-track > span { background: var(--pathway-accent, var(--text-accent)); }
+.overall-progress { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; color: var(--muted); font-size: 11px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+.overall-progress strong, .overall-progress b { font-weight: 600; color: var(--ink); }
+.overall-progress b { margin-inline-start: 8px; }
+.course-summary .overall-progress { grid-column: 1 / -1; margin-top: 5px; padding-top: 8px; border-top: 1px solid var(--line); }
+.learning-progress-panel .overall-progress { padding-block: 10px 14px; border-top: 1px solid var(--line); }
+.learning-progress-panel .progress-panel-number { color: var(--pathway-accent, var(--text-accent)); }
 .module-accordion[data-pathway] { border: 1px solid var(--line); border-inline-start: 3px solid var(--pathway-accent); border-radius: 12px; padding: 4px; margin-bottom: 12px; background: var(--white); }
 .module-accordion[data-current="true"] { border-color: color-mix(in srgb, var(--pathway-accent) 50%, var(--line)); }
 .module-accordion[data-pathway]>button { align-items: start; gap: 10px; padding: 12px 8px; }

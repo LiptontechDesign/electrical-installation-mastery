@@ -5,6 +5,7 @@ import { courseForOrder, defaultOrder, type CourseOrder } from './course-order-m
 import { withSupplementaryDefaults } from './supplementary-defaults';
 import { supplementaryDescendants, youtubeId, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
 import { curriculumRevision, upgradePublishedGroups } from './curriculum-placement-update';
+import { validVideoDuration } from './video-duration';
 
 export type Placement = { sectionId: string; beforeId: string | null };
 type SavedPosition = Placement & { id: string; afterId: string | null };
@@ -18,7 +19,7 @@ export type PersonalCourse = {
 };
 export type CourseEdit =
   | ({ type: 'move'; id: string; withSupporting?: boolean } & Placement)
-  | ({ type: 'add'; url: string; title: string; instructor: string } & Placement)
+  | ({ type: 'add'; url: string; title: string; instructor: string; durationSeconds?: number } & Placement)
   | { type: 'edit'; id: string; title: string; instructor: string }
   | { type: 'archive'; id: string }
   | { type: 'delete'; id: string }
@@ -192,6 +193,7 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
     inverse.positions = affected.map(id => positionOf(state, id));
     next = placeVideos(state, affected, edit);
   } else if (edit.type === 'add') {
+    if (edit.durationSeconds !== undefined && !validVideoDuration(edit.durationSeconds)) throw new CourseEditError('Video duration is invalid. Look up the video details again.');
     const videoId = youtubeId(edit.url)!;
     const duplicate = state.videos.find(v => v.videoId === videoId);
     const coreDuplicate = [...core.values()].find(l => l.videoId === videoId);
@@ -208,7 +210,7 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
       if (state.videos.some(v => v.id === id)) throw new CourseEditError('This addition was already saved. Refresh your course.', 409, id);
       const section = sectionById.get(edit.sectionId);
       if (!section) throw new CourseEditError('Choose a destination section.');
-      const video: SupplementaryVideo = { id, videoId, ...validateDetails(edit.title, edit.instructor), moduleId: section.moduleId, anchorId: '', position: 'after', archived: false, placementRevision: 2, updatedAt: now };
+      const video: SupplementaryVideo = { id, videoId, ...validateDetails(edit.title, edit.instructor), moduleId: section.moduleId, anchorId: '', position: 'after', archived: false, placementRevision: 2, updatedAt: now, durationSeconds: edit.durationSeconds };
       affected = [id]; inverse.archiveIds = [id];
       next = placeVideos({ ...state, videos: [...state.videos, video] }, [id], edit);
     }

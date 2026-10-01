@@ -18,7 +18,7 @@ async function closeMap(page){
 }
 async function progress(page,watched,total){
   await openMap(page);
-  await page.waitForFunction(({watched,total})=>document.querySelector('.course-summary > span')?.textContent===watched+'/'+total+' videos watched',{watched,total});
+  await page.waitForFunction(({watched,total})=>document.querySelector('.course-summary .overall-progress strong')?.textContent===watched+'/'+total,{watched,total});
 }
 async function visit(page,id){
   await page.goto(origin+'/#learn/'+id);

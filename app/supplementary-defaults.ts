@@ -1,8 +1,11 @@
 import course from './course-curriculum';
 import { learningSections } from './learning-sections';
 import type { SupplementaryState, SupplementaryVideo } from './supplementary-model';
+import durationData from './supplementary-durations.json';
+import { validVideoDuration } from './video-duration';
+const verifiedDurations: Record<string, number> = durationData;
 
-// Approved study-plan media. No duration, transcript or assessment is invented.
+// Approved study-plan media. Durations come from each video's public YouTube metadata.
 const resources = [
   ['protection-overview','8VhgQ9Q9ixA','Protective-device overview: MCB, MCCB, RCD, RCBO and MPCB','The Electrical Guy','p05-l01','after'],
   ['protection-study-path-07','kx35WN3uLis','Things you should know about fuses (including a 15kV one)','bigclivedotcom','p05-l02','after'],
@@ -63,7 +66,7 @@ const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||cr
   const moduleId=seedLocations.get(anchorId);
   if(!moduleId)throw new Error(`Missing supplementary anchor: ${anchorId}`);
   seedLocations.set(id,moduleId);
-  return {id,videoId,title,instructor,anchorId,position,moduleId,archived:false,placementRevision:3,updatedAt:'2026-10-01T00:00:00.000Z'};
+  return {id,videoId,title,instructor,anchorId,position,moduleId,archived:false,placementRevision:3,updatedAt:'2026-10-01T00:00:00.000Z',durationSeconds:verifiedDurations[videoId]};
 });
 const reviewedAnchors = new Map<string, { anchorId: string; position: 'before' | 'after' }>([
   ['c2-equipment-protection-classes', { anchorId: 'p12-v2-l01', position: 'after' }],
@@ -84,7 +87,9 @@ export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlac
     if (reviewedPlacements && seed && previous && (migrated.placementRevision ?? 0) < 3 && migrated.anchorId === previous.anchorId && migrated.position === previous.position) {
       migrated = {...migrated, anchorId:seed.anchorId, position:seed.position, placementRevision:3};
     }
-    return {...migrated,moduleId:locations.get(migrated.anchorId)??migrated.moduleId};
+    const { durationSeconds: storedDuration, ...details } = migrated;
+    const durationSeconds = validVideoDuration(storedDuration) ?? verifiedDurations[migrated.videoId];
+    return {...details,moduleId:locations.get(migrated.anchorId)??migrated.moduleId,...(durationSeconds ? {durationSeconds} : {})};
   });
   const ids=new Set(saved.map(v=>v.id)),videoIds=new Set(saved.map(v=>v.videoId));
   return {...state,videos:[...saved,...defaults.filter(v=>!ids.has(v.id)&&!videoIds.has(v.videoId))]};

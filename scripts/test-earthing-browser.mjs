@@ -30,10 +30,10 @@ async function visit(page, id) {
 async function progress(page, watched) {
   await openMap(page);
   try {
-    await page.waitForFunction(({ watched, total }) => document.querySelector('.course-summary > span')?.textContent === watched + '/' + total + ' videos watched',
+    await page.waitForFunction(({ watched, total }) => document.querySelector('.course-summary .overall-progress strong')?.textContent === watched + '/' + total,
       { watched, total: snapshot.allRows.length });
   } catch (error) {
-    console.error({ expected: watched + '/' + snapshot.allRows.length, actual: await page.locator('.course-summary > span').textContent(), hash: new URL(page.url()).hash });
+    console.error({ expected: watched + '/' + snapshot.allRows.length, actual: await page.locator('.course-summary .overall-progress strong').textContent(), hash: new URL(page.url()).hash });
     throw error;
   }
 }

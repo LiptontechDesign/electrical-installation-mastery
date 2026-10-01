@@ -27,9 +27,10 @@ async function openMap(page) {
 }
 async function checkMap(page, watched, total, groupWatched = watched, groupTotal = total) {
   await openMap(page);
-  await waitText(page, '.course-summary > span', watched + '/' + total + ' videos watched');
-  assert.equal(await page.locator('.course-summary > b').textContent(), percent(watched, total) + '%');
-  assert.equal(await page.locator('.course-progress-chip').getAttribute('aria-label'), percent(watched, total) + '% of your active videos watched');
+  await waitText(page, '.course-summary .overall-progress strong', watched + '/' + total);
+  await waitText(page, '.course-summary .pathway-progress-count', watched + '/' + total + ' videos watched');
+  assert.equal(await page.locator('.pathway-progress-heading > b').textContent(), percent(watched, total) + '%');
+  assert.equal(await page.locator('.course-progress-chip').getAttribute('aria-label'), 'C2 progress: ' + watched + ' of ' + total + ' videos watched, ' + percent(watched, total) + '%');
   for (const name of [moduleTitle + ' progress', sectionTitle + ' progress']) {
     const bar = page.getByRole('progressbar', { name, exact: true, includeHidden: true });
     try {
@@ -54,8 +55,8 @@ async function checkHomeAndOverview(page, watched, total, groupWatched = watched
   if (await home.isVisible()) await home.click();
   else await page.locator('.mobile-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   await page.locator('.home-view-switch').getByRole('button', { name: 'My learning', exact: true }).click();
-  await waitText(page, '.learning-progress-panel dl > div:first-child dd', watched + ' / ' + total);
-  assert.equal(await page.locator('.progress-panel-number').textContent(), percent(watched, total) + '%');
+  await waitText(page, '.learning-progress-panel .overall-progress strong', watched + '/' + total);
+  assert.equal(await page.locator('.learning-progress-panel .overall-progress b').textContent(), percent(watched, total) + '%');
   const card = page.locator('.module-card').filter({ has: page.getByRole('heading', { name: moduleTitle, exact: true }) });
   assert.equal(await card.locator('.course-progress-count').getAttribute('aria-label'), groupWatched + ' of ' + groupTotal + ' videos watched');
   const dialog = await settings(page);
@@ -227,7 +228,9 @@ try {
   await dialog.getByRole('button', { name: 'Move video', exact: true }).click();
   await dialog.waitFor({ state: 'hidden' });
   await openMap(mp);
-  await waitText(mp, '.course-summary > span', '2/5 videos watched');
+  await waitText(mp, '.course-summary .overall-progress strong', '2/5');
+  await waitText(mp, '.pathway-progress-count', '1/1 videos watched');
+  assert.equal(await mp.locator('.pathway-progress-heading strong').textContent(), 'C1 progress');
   const moved = model.personalCourseSnapshot(mobile.state()).byId.get(seed.added[0].id);
   assert.notEqual(moved.moduleId, 'module-05');
   await mp.locator('.course-map').getByRole('button', { name: 'Close course map', exact: true }).click();
@@ -257,7 +260,7 @@ try {
   await op.getByRole('heading', { name: 'No active videos', exact: true }).waitFor();
   await op.locator('.home-view-switch').getByRole('button', { name: 'About this course', exact: true }).click();
   assert.equal(await op.getByRole('button', { name: 'Start learning', exact: true }).isDisabled(), true);
-  assert.equal(await op.locator('.course-progress-chip').getAttribute('aria-label'), '0% of your active videos watched');
+  assert.equal(await op.locator('.course-progress-chip').getAttribute('aria-label'), 'C2 progress: 0 of 0 videos watched, 0%');
   assert.deepEqual(only.errors, []);
   await only.context.close();
   console.log('PASS: supplementary-only Home/resume and empty-course counters with no stale completion or crash.');
@@ -271,7 +274,7 @@ try {
   await dp.waitForResponse(response => response.url().endsWith('/supplementary-progress') && response.request().method() === 'GET');
   await dp.waitForTimeout(650);
   assert.deepEqual(delayed.supplementaryProgress(), [], 'A late cloud read cannot restore reset marks');
-  assert.equal(await dp.locator('.course-progress-chip').getAttribute('aria-label'), '0% of your active videos watched');
+  assert.equal(await dp.locator('.course-progress-chip').getAttribute('aria-label'), 'C2 progress: 0 of 5 videos watched, 0%');
   assert.deepEqual(delayed.errors, []);
   await delayed.context.close();
   console.log('PASS: an explicit reset wins over a pending supplementary cloud read.');

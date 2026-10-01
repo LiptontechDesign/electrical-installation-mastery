@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ArrowRight, BookOpen, Check, ChevronDown, CirclePlay, Clock3, Layers3, ShieldCheck, Zap } from 'lucide-react';
 import { useCourseOrder } from './course-order';
-import { useSupplementary } from './supplementary-videos';
+import { SupplementaryDuration, useSupplementary } from './supplementary-videos';
 import { useCourseAccount } from './course-account';
 
 const outcomes = ['Understand voltage, current, resistance and electrical power.', 'Explore cables, protective devices and earthing arrangements.', 'See how drawings connect to installation decisions.', 'Follow single-phase and three-phase systems.', 'Watch inspection, testing and fault diagnosis demonstrations.', 'Move through C2, C1 and specialist video pathways.'];
@@ -44,7 +44,7 @@ export default function CourseOverview({ onLesson, onBooks }: { onLesson: (id: s
           const lesson = lessons.find(item => item.id === row.id);
           const video = supplementary?.videos.find(item => item.id === row.id);
           if (!lesson && !video) return null;
-          return <button key={row.id} onClick={() => onLesson(row.id)}><CirclePlay size={17}/><span className="curriculum-lesson-number">L{String(row.displayNumber).padStart(2,'0')}</span><span>{lesson?.title ?? video?.title}{video && <small>Supplementary</small>}</span><small>{lesson?.duration ?? 'Watch'}</small></button>;
+          return <button key={row.id} onClick={() => onLesson(row.id)}><CirclePlay size={17}/><span className="curriculum-lesson-number">L{String(row.displayNumber).padStart(2,'0')}</span><span>{lesson?.title ?? video?.title}{video && <small>Supplementary</small>}</span><small>{lesson?.duration ?? <SupplementaryDuration video={video} lookup={expanded.includes(module.id)}/>}</small></button>;
         })}</div></details>;
       })}</div>
     </section>

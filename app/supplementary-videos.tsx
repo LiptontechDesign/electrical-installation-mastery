@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import { VideoStudyContext, VideoStudyTools, VideoLessonStepper, NextVideoCard, timestamp, trackVideoPosition, type StudyPlayer } from './video-study-tools';
+import { VideoStudyContext, VideoStudyTools, VideoLessonStepper, NextVideoCard, trackVideoPosition, type StudyPlayer } from './video-study-tools';
 import LessonProgress from './lesson-progress';
 import { moduleTone } from './course-ui-model';
 import { Bookmark, Check, Circle, Menu, ChevronRight, SkipForward } from 'lucide-react';
@@ -8,14 +8,61 @@ import { useCourseAccount } from './course-account';
 import { useCourseOrder } from './course-order';
 import { VideoActions } from './course-editor-actions';
 import type { SupplementaryVideo } from './supplementary-model';
+import { formatVideoDuration, validVideoDuration } from './video-duration';
 
-type Context = { selected: SupplementaryVideo | null; playback: ReactNode; clearSelection: () => void; videos: SupplementaryVideo[]; watched: string[]; replaceWatched: (ids: string[]) => void; ready: boolean; error: string; open: (video: SupplementaryVideo) => void };
+type Context = { selected: SupplementaryVideo | null; playback: ReactNode; clearSelection: () => void; videos: SupplementaryVideo[]; watched: string[]; replaceWatched: (ids: string[]) => void; ready: boolean; error: string; open: (video: SupplementaryVideo) => void;
+  durationFor: (video?: SupplementaryVideo) => string | undefined; requestDuration: (videoId: string) => void; reportDuration: (videoId: string, seconds: number) => void;
+};
 type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
 const SupplementaryContext = createContext<Context | null>(null);
 export const useSupplementary = () => useContext(SupplementaryContext);
+export function useSupplementaryDuration(video?: SupplementaryVideo, lookup = true) {
+  const supplementary = useSupplementary();
+  const duration = supplementary?.durationFor(video);
+  const request = supplementary?.requestDuration;
+  const id = video?.videoId;
+  useEffect(() => { if (lookup && id && !duration) request?.(id); }, [lookup, id, duration, request]);
+  return duration;
+}
+export function SupplementaryDuration({ video, lookup = true, fallback = '—' }: { video?: SupplementaryVideo; lookup?: boolean; fallback?: string }) {
+  const duration = useSupplementaryDuration(video, lookup);
+  return <span title={duration ? 'Video duration' : 'Duration unavailable'}>{duration ?? fallback}</span>;
+}
 export function SupplementaryProvider({ children, userId }: { children: ReactNode; userId?: string }) {
   const { requestSignIn } = useCourseAccount();
   const { videos, ready, error } = useCourseOrder();
+  const [durations, setDurations] = useState<Record<string, number>>({});
+  const requests = useRef(new Set<string>());
+  const queue = useRef<string[]>([]);
+  const running = useRef(0);
+  const disposed = useRef(false);
+  useEffect(() => { disposed.current = false; return () => { disposed.current = true; queue.current = []; }; }, []);
+  const reportDuration = useCallback((id: string, value: number) => {
+    const seconds = validVideoDuration(Math.floor(value));
+    if (!seconds || disposed.current) return;
+    setDurations(current => current[id] === seconds ? current : { ...current, [id]: seconds });
+  }, []);
+  const durationFor = useCallback((video?: SupplementaryVideo) => {
+    if (!video) return;
+    const seconds = validVideoDuration(video.durationSeconds) ?? durations[video.videoId];
+    return seconds ? formatVideoDuration(seconds) : undefined;
+  }, [durations]);
+  const requestDuration = useCallback((id: string) => {
+    if (!userId || !/^[\w-]{11}$/.test(id) || requests.current.has(id)) return;
+    requests.current.add(id); queue.current.push(id);
+    const pump = () => {
+      while (!disposed.current && running.current < 2 && queue.current.length) {
+        const videoId = queue.current.shift()!;
+        running.current++;
+        void fetch(`/api/supplementary/metadata?durationOnly=1&url=${encodeURIComponent('https://www.youtube.com/watch?v=' + videoId)}`, { signal: AbortSignal.timeout(12000) })
+          .then(async response => response.ok ? response.json() : null)
+          .then(data => { const seconds = validVideoDuration(data?.durationSeconds); if (seconds) reportDuration(videoId, seconds); })
+          .catch(() => { /* The loaded player can still supply the duration. */ })
+          .finally(() => { running.current--; pump(); });
+      }
+    };
+    pump();
+  }, [userId, reportDuration]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const selected = videos.find(v => v.id === selectedId && !v.archived) ?? null;
   useEffect(() => {
@@ -99,7 +146,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
   }, [videos, userId]);
   const playback = selected ? <SupplementaryLesson key={selected.id} video={selected} watched={watched.includes(selected.videoId)} progressError={progressError} onWatched={markWatched}
     onBack={() => { window.history.replaceState(null, '', '#learn'); setSelectedId(null); }} onToggle={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}/> : null;
-  return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelectedId(null), videos, watched, replaceWatched, ready, error,
+  return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelectedId(null), videos, watched, replaceWatched, ready, error, durationFor, requestDuration, reportDuration,
     open: video => { setSelectedId(video.id); window.history.replaceState(null, '', `#learn/${video.id}`); window.dispatchEvent(new CustomEvent('supplementary-video-open', { detail: { id: video.id } })); } }}>{children}</SupplementaryContext.Provider>;
 }
 
@@ -108,17 +155,19 @@ function SupplementaryLesson({ video, watched, progressError, onWatched, onBack,
 }) {
   const { user, requestSignIn } = useCourseAccount();
   const study = useContext(VideoStudyContext);
+  const supplementary = useSupplementary();
+  const duration = useSupplementaryDuration(video);
+  const reportDuration = supplementary?.reportDuration;
   const player = useRef<StudyPlayer | null>(null);
-  const [duration, setDuration] = useState(0);
   const onPlayer = useCallback((value: StudyPlayer | null) => {
     player.current = value;
     const seconds = value?.getDuration?.();
-    if (typeof seconds === 'number' && Number.isFinite(seconds) && seconds > 0) setDuration(seconds);
-  }, []);
+    if (typeof seconds === 'number') reportDuration?.(video.videoId, seconds);
+  }, [reportDuration, video.videoId]);
   const saved = study.savedVideos.includes(video.videoId);
   return <article className="lesson-canvas supp-lesson" data-module-tone={moduleTone(video.moduleId)}>
     <div className="lesson-topline"><button className="mobile-module-button" type="button" onClick={study.openCourseMap}><Menu size={19}/> Course map</button><div className="breadcrumbs"><span>{study.navigation.path}</span><ChevronRight size={15}/><span>{study.navigation.moduleTitle}</span></div><VideoActions id={video.id}/><VideoLessonStepper/></div>
-    <div className="lesson-title-block"><p className="lesson-kicker"><strong>Video {study.navigation.position}</strong><span>·</span>Optional lesson</p><h1>{video.title}</h1><p>{video.instructor || 'YouTube'}{duration > 0 && <> <span>·</span> {timestamp(duration)}</>}</p></div>
+    <div className="lesson-title-block"><p className="lesson-kicker"><strong>Video {study.navigation.position}</strong><span>·</span>Supplementary lesson</p><h1>{video.title}</h1><p>{video.instructor || 'YouTube'} <span>·</span> {duration ?? '—'}</p></div>
     <div className="video-shell"><SupplementaryPlayer video={video} onWatched={onWatched} onPlayer={onPlayer}/>{study.autoNextControls}</div>
     <div className="lesson-control-row"><div><button className={saved ? 'bookmark-button active' : 'bookmark-button'} type="button" onClick={() => user ? study.toggleSaved(video.videoId) : requestSignIn()}><Bookmark size={18} fill={saved ? 'currentColor' : 'none'}/>{saved ? 'Saved' : 'Save lesson'}</button><button className="bookmark-button" type="button" onClick={onBack}>Back to core lesson</button><button className={`auto-next-toggle ${study.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={study.autoNextEnabled} onClick={study.toggleAutoNext}><SkipForward size={18}/> Auto-next <span>{study.autoNextEnabled ? 'On' : 'Off'}</span></button></div><button className={watched ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={watched} onClick={onToggle}>{watched ? <Check size={19}/> : <Circle size={19}/>} {watched ? 'Watched · Undo' : 'Mark video watched'}</button></div>
     <VideoStudyTools videoId={video.videoId} getPlayer={() => player.current}/>

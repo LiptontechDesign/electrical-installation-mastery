@@ -24,7 +24,8 @@ import { AddVideoButton, CourseEditorTools, VideoActions } from './course-editor
 import { PersonalCourseEditor } from './personal-course-editor';
 import { moduleTone, matchesLessonFilter, type LessonFilter } from './course-ui-model';
 import { CourseProgressSummary } from './course-progress-summary';
-import { progressForVideos } from './course-progress-model';
+import { pathwayLabel, progressForVideos } from './course-progress-model';
+import PathwayProgress from './pathway-progress';
 import LessonRowMetadata from './lesson-row-metadata';
 import { useSupplementary } from './supplementary-videos';
 import { CourseDragProvider, CourseDragModule, CourseDragSection, CourseDragPath, CourseSectionRows } from './course-drag-context';
@@ -220,12 +221,14 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const filterCounts = { all: pathRows.length, unwatched: pathRows.filter(row => !watchedRows.has(row.id)).length, saved: pathRows.filter(row => savedRows.has(row.id)).length };
   const courseProgress = progressForVideos(allCourseRows.map(row => row.id), watchedRows);
   const coursePercent = courseProgress.percent;
+  const pathwayProgress = progressForVideos(pathRows.map(row => row.id), watchedRows);
+  const selectedPathLabel = pathwayLabel(mapPath);
   const groupProgress = (ids: string[]) => {
     const optional = ids.filter(id => !lessonLookup.has(id) || !isRequiredLesson(id));
     const optionalProgress = progressForVideos(optional, watchedRows);
     return { ...progressForVideos(ids, watchedRows), optionalTotal: optionalProgress.total, optionalRemaining: optionalProgress.total - optionalProgress.watched };
   };
-  const nextUnwatchedRow = allCourseRows.find(row => !watchedRows.has(row.id));
+  const nextUnwatchedRow = pathRows.find(row => !watchedRows.has(row.id));
   const weekMinutes = getRecentStudyMinutes(7, learner.studyMinutesByDate);
   const queuedNextLesson = autoNextState ? courseRowsById.get(autoNextState.nextLessonId) : undefined;
 
@@ -233,6 +236,15 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const previousRow = allCourseRows[selectedRowIndex - 1];
   const nextRow = allCourseRows[selectedRowIndex + 1];
   const selectedModule = course.modules.find(module => module.id === (supplementary?.selected?.moduleId ?? location.module.id)) ?? location.module;
+  const selectedVideoId = supplementaryId ?? activeLesson.id;
+  const selectedModuleId = selectedModule.id, selectedModulePath = selectedModule.path;
+  // Account ordering can arrive after a linked video first opens. Follow its
+  // resolved home on that change without resetting deliberate pathway browsing.
+  useEffect(() => {
+    if (view !== 'learn' || !selectedVideoId) return;
+    const timer = window.setTimeout(() => { setMapPath(selectedModulePath); setOpenModuleId(selectedModuleId); }, 0);
+    return () => window.clearTimeout(timer);
+  }, [view, selectedVideoId, selectedModuleId, selectedModulePath]);
   const nextCore = nextRow?.kind === 'core' ? lessonLookup.get(nextRow.id) : undefined;
   const playerOrigin = hydrated && typeof window !== 'undefined' ? window.location.origin : '';
   const playerSrc = playerOrigin && hasCoreLesson
@@ -673,7 +685,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   const chooseMapPath = (path: CourseModule['path']) => {
     setMapPath(path);
-    const currentPathModule = location.module.path === path ? location.module : course.modules.find(module => module.path === path);
+    const currentPathModule = selectedModule.path === path ? selectedModule : course.modules.find(module => module.path === path);
     if (currentPathModule) setOpenModuleId(currentPathModule.id);
   };
 
@@ -800,7 +812,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       openCourseMap,
       navigation: { position: allCourseRows[selectedRowIndex]?.displayNumber ?? 1, total: allCourseRows.filter(row => row.moduleId === selectedModule.id).length, path: selectedModule.path, moduleTitle: selectedModule.title,
         previous: previousRow ? { title: previousRow.title, select: () => selectCourseRow(previousRow) } : undefined,
-        next: nextRow ? { title: nextRow.title, duration: nextCore?.duration, optional: !nextCore || !isRequiredLesson(nextCore.id), select: () => selectCourseRow(nextRow) } : undefined },
+        next: nextRow ? { title: nextRow.title, duration: nextCore?.duration ?? supplementary?.durationFor(supplementary.videos.find(video => video.id === nextRow.id)), optional: !nextCore || !isRequiredLesson(nextCore.id), select: () => selectCourseRow(nextRow) } : undefined },
       positions: learner.videoPositions, notes: learner.timestampNotes, position: saveVideoPosition,
       addNote: (id, seconds, text) => { if (user) setLearner(current => ({ ...current, timestampNotes: { ...current.timestampNotes, [id]: [...(current.timestampNotes[id] ?? []), { id: crypto.randomUUID(), seconds: Math.floor(seconds), text }].slice(0, 100) }, updatedAt: new Date().toISOString() })); },
       removeNote: (id, noteId) => { if (user) setLearner(current => ({ ...current, timestampNotes: { ...current.timestampNotes, [id]: (current.timestampNotes[id] ?? []).filter(note => note.id !== noteId) }, updatedAt: new Date().toISOString() })); }
@@ -822,7 +834,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           <div className="header-actions">
             <SiteSearch lessons={searchLessons} onLesson={id => { const row = courseRowsById.get(id); if (row) selectCourseRow(row); }}/>
 
-            {user ? <button className="course-progress-chip" onClick={() => { setShowOverview(false); navigate('home'); }} aria-label={`${coursePercent}% of your active videos watched`}><span className="progress-chip-ring" style={{ '--course-progress': `${coursePercent * 3.6}deg` } as CSSProperties}/><span><strong>{coursePercent}%</strong><small>Course progress</small></span></button> : <button className="studio-settings" onClick={() => setSettingsOpen(true)} aria-label="Playback settings"><Settings size={19}/></button>}
+            {user ? <button className="course-progress-chip" data-pathway={mapPath} onClick={() => { setShowOverview(false); navigate('home'); }} aria-label={`${selectedPathLabel} progress: ${pathwayProgress.watched} of ${pathwayProgress.total} videos watched, ${pathwayProgress.percent}%`}><span className="progress-chip-ring" style={{ '--course-progress': `${pathwayProgress.percent * 3.6}deg` } as CSSProperties}/><span><strong>{pathwayProgress.percent}%</strong><small>{selectedPathLabel} progress</small></span></button> : <button className="studio-settings" onClick={() => setSettingsOpen(true)} aria-label="Playback settings"><Settings size={19}/></button>}
             <AccountControl onSettings={() => setSettingsOpen(true)}/>
           </div>
         </header>
@@ -835,7 +847,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           {view === 'home' && (!user || showOverview) && <CourseOverview onLesson={openCourseVideo} onBooks={() => navigate('books')}/>}
           {view === 'home' && user && !showOverview && (
             <div className="page home-page">
-              <LearningHome user={user} learner={learner} progress={courseProgress} watchedRows={watchedRows} weekMinutes={weekMinutes} onLesson={openCourseVideo} onBooks={() => navigate('books')}/>
+              <LearningHome user={user} learner={learner} path={mapPath} progress={pathwayProgress} overallProgress={courseProgress} watchedRows={watchedRows} weekMinutes={weekMinutes} onLesson={openCourseVideo} onBooks={() => navigate('books')}/>
               <section className="home-course">
                 <div className="home-primary-column">
                   <div className="section-heading compact"><div><h2>Course modules</h2></div></div>
@@ -859,7 +871,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   {(['C2','C1','Professional'] as const).map(path=><CourseDragPath key={path} id={path} selected={mapPath===path} onSelect={()=>chooseMapPath(path)}>{path==='Professional'?'Advanced':path}</CourseDragPath>)}
                 </div>
                 <div className="map-guidance"><span>Explore at your own pace</span>{nextUnwatchedRow && <button type="button" onClick={() => selectCourseRow(nextUnwatchedRow)}>Next unwatched <ArrowRight size={14}/></button>}</div>
-                {user && <div className="course-summary"><span>{courseProgress.watched}/{courseProgress.total} videos watched</span><b>{coursePercent}%</b><div className="progress-line"><span style={{ width: `${coursePercent}%` }} /></div></div>}
+                {user && <PathwayProgress path={mapPath} progress={pathwayProgress} overall={courseProgress}/>}
                 {user && <div className="course-map-tools">
                   <CourseEditorTools sectionId={allCourseRows[selectedRowIndex]?.sectionId ?? sectionsByModule[openModuleId]?.[0]?.id ?? sectionsByModule[course.modules[0].id][0].id} organizing={organizing} onOrganise={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; setOrganizing(value => !value); setLessonFilter('all'); }}/>
                   {!organizing && <><div className="lesson-filters" role="group" aria-label="Filter lessons">{(['all', 'unwatched', 'saved'] as const).map(filter => <button key={filter} type="button" aria-pressed={lessonFilter === filter} onClick={() => setLessonFilter(filter)}>{filter === 'all' ? 'All' : filter === 'saved' ? 'Saved' : 'Unwatched'} <span>{filterCounts[filter]}</span></button>)}</div>
@@ -935,7 +947,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
             {user && <AccountPanel user={user} />}
             <section className="settings-section playback-settings"><span className="eyebrow neutral">Video playback</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished video</strong><small>Optional five-second countdown to the next video</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>In fullscreen, the next video waits until you exit before the countdown begins.</p></section>
             {user && <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save video marks, notes and bookmarks</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>}
-            {user && <section className="settings-section"><span className="eyebrow neutral">Learning record</span><div className="settings-summary"><div><b>{courseProgress.watched}</b><span>videos watched</span></div><div><b>{coursePercent}%</b><span>course completion</span></div><div><b>{weekMinutes}</b><span>study minutes this week</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This clears progress from your account on every device. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Reset account progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset learning progress</strong><small>Clear your synced learning record</small></span></button>}</section>}
+            {user && <section className="settings-section"><span className="eyebrow neutral">Learning record · All pathways</span><div className="settings-summary"><div><b>{courseProgress.watched}</b><span>videos watched overall</span></div><div><b>{coursePercent}%</b><span>overall completion</span></div><div><b>{weekMinutes}</b><span>study minutes this week</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This clears progress from your account on every device. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Reset account progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset learning progress</strong><small>Clear your synced learning record</small></span></button>}</section>}
             <section className="settings-section"><Link className="pwa-install-link" href="/install"><Download size={19}/> Install on your phone <ArrowRight size={16}/></Link><p>Open Electrical Mastery from your home screen.</p></section><div className="settings-footnote"><Info size={18} /><p>Videos stream from YouTube and need internet access.</p></div>
           </section>
         </div>

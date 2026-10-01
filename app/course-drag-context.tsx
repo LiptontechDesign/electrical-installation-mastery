@@ -7,7 +7,8 @@ import { DndContext, DragOverlay, KeyboardSensor, MeasuringStrategy, MouseSensor
 import { VideoStudyContext } from './video-study-tools';
 import { CheckCircle2, GripVertical, PlayCircle } from 'lucide-react';
 import { useCourseOrder } from './course-order';
-import { useSupplementary } from './supplementary-videos';
+import { useSupplementary, useSupplementaryDuration } from './supplementary-videos';
+import type { SupplementaryVideo } from './supplementary-model';
 import { useCourseAccount } from './course-account';
 import { VideoActions } from './course-editor-actions';
 import { previewMove, type Placement } from './personal-course-model';
@@ -157,20 +158,28 @@ export function CourseDragPath({ id, selected, onSelect, children }: { id: strin
 }
 
 export function CourseSectionRows({ sectionId, renderCore, visibleIds }: { visibleIds?: ReadonlySet<string>; sectionId: string; renderCore: (id: string, displayNumber: number) => ReactNode }) {
-  const { user } = useCourseAccount();
   const { rows, busy } = useContext(DragContext);
-  const study = useContext(VideoStudyContext);
   const supplementary = useSupplementary();
   const { setNodeRef } = useDroppable({ id: `end:${sectionId}`, data: { type: 'end', sectionId }, disabled: !busy });
   return <>{(rows[sectionId] ?? []).filter(row => !visibleIds || visibleIds.has(row.id)).map(row => {
     const video = supplementary?.videos.find(v => v.id === row.id);
-    const watched = Boolean(video && supplementary?.watched.includes(video.videoId));
     return <CourseDraggableRow key={row.id} row={row}>
-    {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <button className={supplementary?.selected?.id === row.id ? "supp-video-row active" : "supp-video-row"} aria-current={supplementary?.selected?.id === row.id ? "page" : undefined} type="button" onClick={() => {
-      if (video) supplementary?.open(video);
-    }}>{watched ? <CheckCircle2 size={17} role={user?'img':undefined} aria-label={user?'Watched':undefined}/> : <PlayCircle size={17} role={user?'img':undefined} aria-label={user?'Not watched':undefined}/>}<span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><LessonRowMetadata kind="Supplementary" watched={user?watched:undefined} current={supplementary?.selected?.id===row.id} saved={Boolean(video&&study.savedVideos.includes(video.videoId))}/></span></button>}
+    {row.kind === 'core' ? renderCore(row.id, row.displayNumber) : <SupplementaryCourseRow row={row} video={video}/>}
   </CourseDraggableRow>;
   })}<div ref={setNodeRef} data-course-end={sectionId} className="course-section-drop-end">{busy ? (rows[sectionId]?.length ? 'End of section' : 'Place as the first video') : null}</div></>;
+}
+
+function SupplementaryCourseRow({ row, video }: { row: MapRow; video?: SupplementaryVideo }) {
+  const { user } = useCourseAccount();
+  const study = useContext(VideoStudyContext);
+  const supplementary = useSupplementary();
+  const duration = useSupplementaryDuration(video);
+  const watched = Boolean(video && supplementary?.watched.includes(video.videoId));
+  const current = supplementary?.selected?.id === row.id;
+  return <button className={current ? 'supp-video-row active' : 'supp-video-row'} aria-current={current ? 'page' : undefined} type="button" onClick={() => { if (video) supplementary?.open(video); }}>
+    {watched ? <CheckCircle2 size={17} role={user?'img':undefined} aria-label={user?'Watched':undefined}/> : <PlayCircle size={17} role={user?'img':undefined} aria-label={user?'Not watched':undefined}/>}
+    <span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><LessonRowMetadata kind="Supplementary" duration={duration ?? '—'} watched={user ? watched : undefined} current={current} saved={Boolean(video && study.savedVideos.includes(video.videoId))}/></span>
+  </button>;
 }
 
 function CourseDraggableRow({ row, children }: { row: MapRow; children: ReactNode }) {

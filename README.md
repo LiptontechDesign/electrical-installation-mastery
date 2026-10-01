@@ -14,7 +14,7 @@ A video course with 324 lessons in 25 modules across C2, C1 and Professional pat
 
 Schema 10 accepts earlier backups and preserves video progress, bookmarks, notes and playback preferences. Learner records synchronize per account.
 
-Progress counts every active video, including optional and supplementary videos. Section, module and overall totals update when watched marks or course membership change. Progress backups include supplementary marks; earlier backups remain supported.
+Progress counts every active video, including optional and supplementary videos. The course map, toolbar and My learning panel show the selected C2, C1 or Advanced pathway; a compact All pathways total retains overall progress. Section, module, pathway and overall totals update when watched marks or course membership change. Supplementary running times share the existing lesson metadata layout. See [progress scopes and video durations](docs/pathway-progress-and-video-duration.md). Progress backups include supplementary marks; earlier backups remain supported.
 
 ## Books and privacy
 

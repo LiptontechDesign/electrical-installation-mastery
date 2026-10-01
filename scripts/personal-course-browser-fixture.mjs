@@ -43,7 +43,7 @@ export async function fixture({ mobile = false, guest = false, state: seed, lear
       }
       return route.fulfill({ json: state });
     }
-    if (url.pathname.endsWith('/supplementary/metadata')) return route.fulfill({ json: { title: 'Understanding a missing concept', instructor: 'Test electrical channel' } });
+    if (url.pathname.endsWith('/supplementary/metadata')) return route.fulfill({ json: { title: 'Understanding a missing concept', instructor: 'Test electrical channel', durationSeconds: 645 } });
     if (url.pathname.endsWith('/learner-state')) {
       if (request.method() === 'PUT') learner = request.postDataJSON().payload;
       return route.fulfill({ json: { exists: true, payload: learner } });

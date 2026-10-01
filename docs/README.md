@@ -10,6 +10,7 @@ Updated 1 October 2026. This index and the root README describe the current appl
 - [C2 testing playlist integration](c2-testing-playlist-integration.md): approved JPElectric lessons, teaching order, excluded and retired videos, and preservation of personal course arrangements.
 - [Earthing, ADS and fault-loop learning order](earthing-ads-learning-order.md): revised Module 5 sections, conductor sizing in Module 6, bonding assessment in Module 8 and saved-course migration.
 - [Reviewed curriculum placements](curriculum-placement-update.md): 114 populated sections, clarified testing/design/fault groups, specialist-system sequences and revision-3 saved-course migration.
+- [Pathway progress and supplementary durations](pathway-progress-and-video-duration.md): selected-pathway counters, overall totals, scoped next-unwatched navigation and verified running times.
 - [EPRA practice centre](epra-practice-centre.md): source fidelity, topic practice, quizzes, mock exams and verification.
 - [BS 7671 17th-edition EPRA definitions](bs7671-17th-edition-epra-definitions.md): historical source quotations powering the searchable Definitions tab in Practice.
 - [Installable app](pwa.md): installation, privacy boundaries, offline recovery and verification.
@@ -29,6 +30,6 @@ The learning view defaults to study mode. Compact Add video and per-video menus 
 
 Signed-in core and supplementary videos resume using positions keyed by YouTube ID. Positions are checkpointed during playback, on pause and navigation, and on page hide. Timestamp notes use the same account-scoped learner-state document; they include jump and delete actions. Existing freeform lesson notes remain intact. Schema 10 gains additive validated videoPositions and timestampNotes fields; older backups receive empty defaults. Guests do not record either field. Browser checks with a simulated YouTube API: node scripts/test-course-experience-browser.mjs (local fixture server only).
 
-Supplementary lessons share the main lesson layout, course-order Previous/Next controls, save action, watched panel and private freeform notes. Duration is shown only after YouTube reports it. Added videos use the same component automatically. Large screens use a fluid lesson canvas up to 1920px, with a preserved 16:9 player.
+Supplementary lessons share the main lesson layout, course-order Previous/Next controls, save action, watched panel and private freeform notes. All 32 bundled supplementary videos have verified durations available before playback. New additions retain automatic timing metadata; older personal videos look up missing duration when displayed, with the embedded player as a fallback. Added videos use the same component automatically. Large screens use a fluid lesson canvas up to 1920px, with a preserved 16:9 player.
 
 Mobile layouts keep book page controls above navigation, retain guest playback settings, use larger touch targets and form text, and constrain dialogs to dynamic viewport height. Touch taps do not leave hover tooltips. See [mobile verification](mobile-experience.md) for coverage and device-testing limits.

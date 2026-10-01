@@ -1,4 +1,5 @@
 export type VideoProgress = { total: number; watched: number; percent: number };
+export const pathwayLabel = (path: string) => path === 'Professional' ? 'Advanced' : path;
 
 // Count active course entries, never retained history from archived/deleted rows.
 export function progressForVideos(ids: Iterable<string>, watchedIds: ReadonlySet<string>): VideoProgress {

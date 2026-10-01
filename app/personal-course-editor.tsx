@@ -7,6 +7,7 @@ import { useSupplementary } from './supplementary-videos';
 import { learningSections } from './learning-sections';
 import { existingVideoId, relatedVideoIds, savedPlacement, type CourseEdit, type Placement } from './personal-course-model';
 import { youtubeId } from './supplementary-model';
+import { validVideoDuration } from './video-duration';
 
 export function PersonalCourseEditor() {
   const editor = useCourseOrder();
@@ -65,6 +66,7 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
   const [url, setUrl] = useState('');
   const [title, setTitle] = useState(original?.title ?? '');
   const [instructor, setInstructor] = useState(original?.instructor ?? '');
+  const [durationSeconds, setDurationSeconds] = useState<number | undefined>();
   const [showDetails, setShowDetails] = useState(intent.type === 'edit');
   const [showLocation, setShowLocation] = useState(intent.type === 'move' || intent.type === 'restore');
   const [withSupporting, setWithSupporting] = useState(false);
@@ -106,6 +108,7 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
         if (abort.signal.aborted) return;
         if (!touched.current.title) setTitle(data.title);
         if (!touched.current.instructor) setInstructor(data.instructor);
+        setDurationSeconds(validVideoDuration(data.durationSeconds));
         setMetadata('Details found. You can edit them below.');
       } catch (error) {
         if (!abort.signal.aborted) { setMetadata(error instanceof Error ? error.message : 'Enter the video details below.'); setShowDetails(true); }
@@ -125,7 +128,7 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
     if (reviewedRevision !== editor.state.revision) { setReviewedRevision(editor.state.revision); setFormError('Your course has updated. Check the destination shown below, then save again.'); return; }
     if (intent.type !== 'edit' && !validPosition) { setFormError('Choose a new position; the previous destination has moved.'); setShowLocation(true); return; }
     let edit: CourseEdit;
-    if (intent.type === 'add') edit = { type: 'add', url, title, instructor, ...placement };
+    if (intent.type === 'add') edit = { type: 'add', url, title, instructor, durationSeconds, ...placement };
     else if (intent.type === 'move') edit = { type: 'move', id: intent.id, ...placement, withSupporting };
     else if (intent.type === 'restore') edit = { type: 'restore', id: intent.id, ...placement };
     else if (intent.type === 'edit') edit = { type: 'edit', id: intent.id, title, instructor };
@@ -138,11 +141,11 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
   }
   return <dialog ref={dialog} className="personal-course-dialog" aria-labelledby={titleId} onCancel={event => { event.preventDefault(); close(); }}>
     <header className="course-editor-heading"><div><span>Only your course changes</span><h2 id={titleId}>{savedId ? 'Video added' : label}</h2></div><button type="button" className="editor-close" aria-label="Close course editor" disabled={editor.busy} onClick={close}><X size={19}/></button></header>
-    {savedId ? <div className="editor-success"><Check size={24}/><h3>{title}</h3><p>Added to {editor.label(placement.sectionId)}.</p><p>Your current video is still in place.</p><div className="editor-footer"><button type="button" className="editor-secondary" onClick={() => { setSavedId(null); setUrl(''); setTitle(''); setInstructor(''); setMetadata(''); setFormError(''); setReviewedRevision(editor.state.revision); touched.current = { title: false, instructor: false }; }}>Add another</button><button type="button" className="editor-primary" onClick={() => watch(savedId)}>Watch now</button></div></div>
+    {savedId ? <div className="editor-success"><Check size={24}/><h3>{title}</h3><p>Added to {editor.label(placement.sectionId)}.</p><p>Your current video is still in place.</p><div className="editor-footer"><button type="button" className="editor-secondary" onClick={() => { setSavedId(null); setUrl(''); setTitle(''); setInstructor(''); setDurationSeconds(undefined); setMetadata(''); setFormError(''); setReviewedRevision(editor.state.revision); touched.current = { title: false, instructor: false }; }}>Add another</button><button type="button" className="editor-primary" onClick={() => watch(savedId)}>Watch now</button></div></div>
       : intent.type === 'archive' ? <div className="editor-archive"><p>Archived videos keep their notes and progress. Restore one to any section.</p><label className="editor-search"><Search size={16}/><input aria-label="Search archived videos" placeholder="Find an archived video" value={archiveSearch} onChange={event => setArchiveSearch(event.target.value)}/></label><ul>{editor.archivedVideos.filter(v => v.title.toLowerCase().includes(archiveSearch.toLowerCase())).map(video => <li key={video.id}><span>{video.title}</span><div className="editor-archive-actions"><button type="button" onClick={() => editor.openEditor({ type: 'restore', id: video.id })}>Restore…</button><button type="button" className="editor-delete-action" aria-label={`Delete permanently: ${video.title}`} onClick={() => editor.openEditor({ type: 'delete', id: video.id })}>Delete…</button></div></li>)}</ul>{!editor.archivedVideos.some(v => v.title.toLowerCase().includes(archiveSearch.toLowerCase())) && <p className="editor-empty">{archiveSearch ? 'No archived videos match your search.' : 'No archived videos yet.'}</p>}</div>
       : <form onSubmit={event => { event.preventDefault(); void submit(); }}><fieldset className="editor-form-fields" disabled={editor.busy}>
         {intent.type === 'add' && <>
-          <label className="editor-field">YouTube link<input autoFocus type="url" required value={url} placeholder="Paste a YouTube video link" onChange={event => { setUrl(event.target.value.trim()); setTitle(''); setInstructor(''); setMetadata(''); setMetadataBusy(false); setFormError(''); touched.current = { title: false, instructor: false }; }}/></label>
+          <label className="editor-field">YouTube link<input autoFocus type="url" required value={url} placeholder="Paste a YouTube video link" onChange={event => { setUrl(event.target.value.trim()); setTitle(''); setInstructor(''); setDurationSeconds(undefined); setMetadata(''); setMetadataBusy(false); setFormError(''); touched.current = { title: false, instructor: false }; }}/></label>
           {url && !videoId && <p className="editor-help">Use a YouTube watch, share, Shorts, or live-video link.</p>}
           {videoId && <div className="editor-video-preview">
             {/* The thumbnail host and validated video ID are fixed, never supplied HTML. */}
