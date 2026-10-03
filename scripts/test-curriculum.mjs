@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import { build } from 'esbuild';
-import { assertC2Reorganization, earthElectrodeAdditions, jpelectricAdditions } from './assert-c2-reorganization.mjs';
+import { assertC2Reorganization, earthElectrodeAdditions, jpelectricAdditions, surgeProtectionAdditions } from './assert-c2-reorganization.mjs';
 await build({ entryPoints: ['app/course-curriculum.ts', 'app/learning-sections.ts'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm' });
 const { default: course } = await import('../work/curriculum-tests/course-curriculum.js');
 const { sectionsByModule } = await import('../work/curriculum-tests/learning-sections.js');
 const lessons = course.modules.flatMap(courseModule => courseModule.lessons);
 assert.equal(course.modules.length, 25);
-assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length);
+assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length + surgeProtectionAdditions.length);
 assert.equal(course.lessonCount, lessons.length);
 assert.equal(new Set(lessons.map(lesson => lesson.id)).size, lessons.length);
 assert.equal(new Set(lessons.map(lesson => lesson.videoId)).size, lessons.length);

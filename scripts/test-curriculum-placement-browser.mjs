@@ -43,7 +43,7 @@ try{
   for(const mobile of [false,true]){
     const f=await fixture({mobile,state:previous,learner,supplementaryProgress:['eWHQRcO071E','QVMpVIYm594']}),{page}=f;
     if(mobile)await page.setViewportSize({width:320,height:740});
-    await progress(page,5,356);
+    await progress(page,5,snapshot.allRows.length);
     let path='C2';
     for(const courseModule of snapshot.course.modules){
       const nextPath=courseModule.path==='Professional'?'Advanced':courseModule.path;
@@ -72,41 +72,41 @@ try{
     await dialog.getByRole('radio',{name:'At the beginning',exact:true}).check();
     await dialog.getByRole('button',{name:'Move video',exact:true}).click();
     await dialog.waitFor({state:'hidden'});
-    assert.equal(f.state().curriculumRevision,3);
+    assert.equal(f.state().curriculumRevision,4);
     assert.equal(model.personalCourseSnapshot(f.state()).byId.get('p08-l13').sectionId,'module-03-section-5');
-    await progress(page,5,356);
+    await progress(page,5,snapshot.allRows.length);
     await undo(page);
     assert.equal(model.personalCourseSnapshot(f.state()).byId.get('p08-l13').sectionId,'module-09-rcd-leakage');
-    await page.reload();await progress(page,5,356);
+    await page.reload();await progress(page,5,snapshot.allRows.length);
 
     const method='c2-troubleshooting-method';
     const section=page.locator('[data-course-section="module-09-section-1"]');
     await selectMethod(page);
     await closeMap(page);
     await page.locator('.supp-lesson').getByRole('button',{name:'Mark video watched',exact:true}).click();
-    await progress(page,6,356);
+    await progress(page,6,snapshot.allRows.length);
     assert.equal(await section.locator('[role="progressbar"]').getAttribute('aria-valuenow'),'1');
     assert.equal(await section.locator('[role="progressbar"]').getAttribute('aria-valuemax'),'1');
     await closeMap(page);
     await page.locator('.lesson-canvas [data-video-actions="'+method+'"]').click();
     await page.getByRole('menuitem',{name:'Archive video',exact:true}).click();
     await page.getByText('Video archived. Your notes and progress are kept.',{exact:true}).waitFor();
-    await progress(page,5,355);
-    await undo(page);await progress(page,6,356);
+    await progress(page,5,snapshot.allRows.length-1);
+    await undo(page);await progress(page,6,snapshot.allRows.length);
     await selectMethod(page);
     await closeMap(page);
     await page.locator('.lesson-canvas [data-video-actions="'+method+'"]').click();
     await page.getByRole('menuitem',{name:'Delete permanently…',exact:true}).click();
     await page.getByRole('dialog',{name:'Delete video permanently?',exact:true}).getByRole('button',{name:'Delete permanently',exact:true}).click();
     await page.getByText('Video permanently removed from your course.',{exact:true}).waitFor();
-    await progress(page,5,355);
-    await page.reload();await progress(page,5,355);
+    await progress(page,5,snapshot.allRows.length-1);
+    await page.reload();await progress(page,5,snapshot.allRows.length-1);
     assert.ok(f.state().deletedIds.includes(method));
     assert.ok(!model.personalCourseSnapshot(f.state()).byId.has(method),'Default merging does not resurrect the removed section-root video');
     assert.equal(f.learner().notes['p08-l13'],notes);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
     assert.deepEqual(f.errors,[]);
     await f.context.close();
-    console.log('PASS '+(mobile?'320px mobile':'desktop')+': all 25 modules and 114 section placements, preserved menus/notes/resume, move/Undo/reload, supplementary-only watched/archive/delete totals.');
+    console.log('PASS '+(mobile?'320px mobile':'desktop')+': all 25 modules and 115 section placements, preserved menus/notes/resume, move/Undo/reload, supplementary-only watched/archive/delete totals.');
   }
 }finally{await browser.close();}

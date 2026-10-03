@@ -1,0 +1,339 @@
+# Surge Protection Devices - Part 1
+# https://www.youtube.com/watch?v=DWBFHjE5zK0
+
+hello Andre w this is part 1 of a series on surge protection devices or SPD's and his a very typical example this happens to be a two module thing which we'll look at again in more detail at some point in the future now this time we can have a look at the basics such as what are surge is why you would want to protect against them and why it is that they have suddenly seemed to become a thing even though that surges and surge protection has been around for literally decades so just cover the basics to start with and then same token parts we'll have a look at various parts of it in more detail now said there Sergio's are new they have literally existed for as long as that Christie has existed and certainly surge protection again that's not new either you have been around pretty much forever that certainly this case that more recently things like this have become a thing / tip in your domestic consumer minute source more installations and this is a cheaper Chinese one main reason because in a future episode weekend here taking this apart and seeing what's contained inside but the principles course are the same whoever makes the thing now let's have a look first of all what the surge actually is now unfortunately there are several definitions of the word surge but of course it's only one of them as you can see with here so well what is a surge so in this particular case what we're talking about is a transient over voltage now it's two words here both which may not be anti-abuse but over voltage basically means voltage is far too high so in the UK voltage is normally around 230 volts ac in the case of voltage in the case of surge what we're talking about is many hundreds of volts more than that and in some cases many thousands of alts on top of that so it's a significant increased on the normal 230 volts a might be sort of say a thousand volts or five thousand volts or something like that certainly not what are gonna be having in the normal event there and then the other part here is the transient this means it's extremely short in duration it's not something to stick around for any length of time and for typical surges the duration or length of the overwatch existing is in the region of microseconds to milliseconds now amid a second is one thousandth of a second hopefully of that things are unlike our CDs which Topsy trip and say things like care sort of forty milliseconds or two hundred milliseconds in a microsecond is one millionth of a second so these things exist for a very short time very tiny fraction of the AC waveform but whilst they do exist it is very high voltage many hundreds of thousands of volts more than you would normally get so in the context of surge protection this is what we're talking about very very tiny little short pulses of extremely high voltage far more than you'd normally have now there is another definitely surge which is also used in the electrical industry and this is used within the distribution network and it's things where for example if the neutral was disconnected the voltage rather mean 230 might sort of go up to in the region was sort of 400 or 500 or something like that and again if there's some other problem within the network it could go out of range but that is something which typically exists over a period of many tens of seconds or even minutes and it doesn't go particular into the thousand volts it's only a few hundred so the other definition of surge is valid in the case of surge protection it is not what we're talking about it's entirely unrelated and separate thing we're only talking about extremely high voltages for an extremely short period of time now what this would look like if you have your typical AC waveforms so let's say at zero there and voltage of course is alternating so it's changing all the time okay so on a sine wave there that would be a normal thing there in the case of the UK so it's 230 volts RMS so your peak value here it's gonna be around the sort of three forty volts kind of area they're slightly plus their nationally - 340 volts over there so on average of course the RMS value that's way up to 30 comes from so in the case of a surge or a transient over voltage it could be the direction could be positive or negative doesn't really matter there and what you would actually see is that the way from we become along like this and then sudden you have a huge spike like this for an incredibly short duration and you might have another one here so it might sort of go way off up there and I don't want to hear like that so very very short pulses but quite large in the actual total voltage there now terms of where these can occur it's going to be between any two conductors in the system so between say line and neutral which is weight normally fine the normal voltage and of course can also occur between the line and to the earth so again that's way to find your normal may as well teach there and also no not as obviously it can also occur between the neutral and the earth as well now in some systems of course these two are actually linked together so in your T n system TNCs or t NS those going to be linked together at some point but even in a say at t NS system it's gonna be linked together at the transformer then you may have many tens or hundreds of meters of cabling between that in your house so it's totally possible for these spikes a voltage or transients to be induced on the cabling between there so you can get these damaging voltages between neutral and earth as well and on a TT system in particular wave got you or earth is just an electrode in the ground getting completely possible to have quite a damaging voltage between the incoming neutral conductor and your electrode in the ground there so can occur between all or some of those and pretty much at any time and the other thing of course it can occur between turn on a three-phase system is between two phases or two line conductors so pretty much between any of the conductors that you have in a typical installation and it can be found between any or in fact all of those things and as well as the power cabling coming into the building it can also be found on other types of cabling so for example data cabling telephone cabling and why things like sort of TV aerials satellite dishes and in fact any kind of conductors which come into the building from some outside source so although certainly in terms of consuming it or the electric in the station it's most likely to be between the outer conductors here don't forget about other conductive things coming into the building any of those things can and quite often do have surgery or transient over voltages on them and it may be necessary to provide protection for these as well and have a look at this particular example here we see the it's got three connections here so line neutral and the earth or protect from types are there so again that would cover between all three of these combinations and in the case of a multi-phase vice because it would have additional modules for the additional phases as well so that's fairly typical the Assumption there now where do these things come from well there's several causes for these things and most likely course here is lightning now in most cases we're not talking about lightning striking your house directly now of course that can't happen in rare instances but basically if lightning is going to strike at a domestic property directly it's only a huge amount of damage things going on fire half the walls going to be blown out and so on so although that is a possibility generally that's not what we're talking about so lightning strikes and there can be two types of these more likely to strikes onto cabling so we've got directly on two cables a list of the cables outside of the edge installation such as overhead lines or underground lines or possibly on to things like transformers or other network equipment and the other one is indirect strikes and this is where you may have a lightning strike say between one cloud and another but because that's in the vicinity of similar actual cabling you'll get an induced voltage on the cabling simply due to the fact that you've got inductive and capacitive effects there so whilst this is Australia trait forward obviously lightning strikes the cable and then you have large voltage on that cable this one you might say have cloud here might be a cloud over there Skype and then below that on the ground you might have some poles here with cabling on them so a direct strike in this case would just be from the out here on to the cabling itself because it's going to reduce the voltage on the cabling here and then the indirects would be safe from one cloud here it could be a lightning strike through the air to another cloud because you've got two large current flowing here in power with another conductor then of course you can get two voltage induced on the cabling justify the fact you've got very high current flowing here so due to induction or capacitive effects there and that would coupled into the cabling even though it doesn't directly strike the cable itself now those effects are not restricted only to overhead cabling no cabling may be more likely to be say either struck by lighting directly or have a voltage induced on it but even if it came as a bearing on the ground as we got here and it's totally possible for lightning to actually strike there so if it was lying straight from this cloud here I strike the ground it's still going to be putting out fairly substantive voltage onto these cables the sparing mind this lightning has just jumped from a cloud to the ground that could be hundreds of meters the fact got a cable buried say a couple of meters on the ground pretty much irrelevant in terms of the scope of the massive voltage and the huge current we've got going through here and just as with the indirect strikes even integrate strikes across here we're still gonna get a huge magnetic field around this massive current flowing here again that can actually affect anything within the vicinity including stuff that's underground and of course you've also got a lot of other stuff above ground like say transformers and switching equipment and all kinds of other stuff so putting miss lightning strikes anywhere I'd like to have an effect on any kind of electrical equipment whether it's in the ground above ground or pretty much anywhere else now the second main course is due to switching and these ones were created within the electrical installation or the distribution network itself and one fairly common examples here if you had a large electric motor this is a massive inductive load so when it's spinning up there it's going to draw a face of central current but if you just disconnect the power here by switching it off motors still gonna be turning and because it's turning it's going to act as a generator and they're getting in the beep pulse of voltage coming out of there back onto the conductor's you've got now if it's a double pulse probably not a problem but of course if it's a single-pole switch your neutral still gonna be connected and that's going to put a fairly large pulse of voltage back into the distribution equipment so any kind of inductive load there can cause this sort of thing and also so can pretty much anything else so everything's like capacitive loads and whatever else switching this on off is going to cause disturbances on the electrical wiring within that building and even in other buildings in some cases so switching of various loads can and often does cause transient over voltages which again can cause problems for equipment elsewhere within the installation or even related stations nearby now I said before surges like this or transient over voltages have existed pretty much the whole time that say electricity has been in use because of course lightning strikes have been around since millions of years and a surge protection in itself isn't particularly has been around for a very long time so why is it that suddenly it seems to be a big thing well the answer to that is that until fairly recently most of what was in a typical installation wasn't actually going to be really affected by these transient voltages or if it was it didn't really cause any kind of a big problem because you look at certain older equipment so salient a domestic situation you have a look at what NS a typical house a few decades ago you would have things like the cooker oven or whatever all that was in there was basically a heating element and in most cases several of them but it's just Pacey a resistor inside a metal casing so shoving a very high Bosch on that for a fraction of a second probably not going to do any damage there if it was high enough for long enough it could theoretically arc over to the casing and might cause some damage but that's pretty unlikely and of course your typical lighting would be the incandescent lamp and again that's just basically a resistive element when you should have come through it it heats up and gets white-hot too and in that room so if you just shoved a very high voltage through there for a fraction of a second it's gonna slightly increase the temperature of that yeah it's not really doing a thing wouldn't even notice if it was really extreme and it might cause the thing to fail but then of course just get on the shops and buy a new one and that would be like 50 pence or something so even if it did bust well on the rare occasion Theodore who cares because Bobby was gonna break anyway so I'm not really a big problem there and other people had there at other electronic items in their house there wasn't a huge number of those things and even what they did have they're typically had what are called linear power supplies so those are constructed internally so have your power coming in there so say line and neutral and the very first thing ins then there would be a transformer so you have your 240 volt says it would have been in the day and then you have a little winding there probably for 12 volts there then you'd have your bridge rectifier here and you'd probably have a few capacitors in there and they'd have some kind of voltage regulator and then you'd eventually get your say 12 volts DC for your radio or whatever else now although surges or transit or voltages can pass through transformers in the case of this one here if you're gonna say shove a big Pole serve say a few hundred volts there it's gonna be considerably smaller in magnitude when it gets through here and because you've got all this other stuff on the side of this by the time it gets to here this effect is gonna be significantly reduced so even for electronics of the sort of twenty thirty years ago not likely to cause huge problem and again not something it's really common anyhow because most people didn't have houses stuffed full of electronic devices however fast for today and most electronic devices do not contain big metal round transformers with iron cores on whatever because those are part expensive now and they are too heavy and they are too big because you lose everything you're not gonna have any space for much else so today of course electronics are highly prevalent and in most cases the power supply for those is line and you're coming in and instead of a transformer all there's big copper windings and all that business the very first thing in here is going to be some kind of microchip or electronic silicon device there and that is going to be directly across the 230 volts there and then from that onwards you gonna have all C other components that may be negative connection here and so on and then you're going to have your voltage coming out of there and in some cases it may just be a single capacitor there and then you can have your LED light so when are they in here might be another few of smoothing items going in there but incredibly simple stuff so if you've got a big shoving in here a fairly large voltage of say a thousand volts for a very short time it's incredibly likely that something in here is going to get damaged because semiconductors unfortunately are extremely sensitive to transient over voltages if this was say a current voltage regulating device here show the repulsive I have altered air even for a few microseconds that can cause some kind of faults internally and it pretty much won't work anymore and again you gotta say capacitors across a line rated for say 450 volts if you shove say a thousand volts or 2,000 volts in there fairly likely this is gonna fail it will either fail open but clear nothing works or it could fail short circuit maturity gonna damage other things because the current can flow through there and destroy things now if a transient voltage does cause damage to some electronic device most of the time the damage is not going to be visible this is mainly because the damage is gonna be in turn or to say a chip or some other device and you're not gonna be able to see it so if you open up something that's no longer working and you're suspect it has been damaged by a surge or transient over voltage don't expect to see massive blackening and charring whatever inside because that's simply not what actually happens in some cases there will be damage because of all that may be what we've happened here so if this failed short-circuit what would then happen instead of a very small current flowing through the capacitor you've been get to say the form a politician before current here so you might find that all of these LEDs were completely blown because a basic shock that Mays washed across it may can be blackened and charred but that damage is not because the surge itself just at the stove yourself damaged something and then they made whole tea to power through here in watts of a 50 100 amps or something flowing on the circuit for a short time and that is what caused the damage so in many cases any damage you can see has been caused by the mains voltage which is never something caused by some component failing and allowing far too much current to flow through some part of the circuit and therefore that's when you'll see your charred and blackened items but in a lot of case it is literally just some electronic component has failed internally you can't see any damage the only visible thing in fact that the item itself is no longer working now as well as modern electronics being rather more susceptible to damage than certain dits of old equipment the other major problem is that electronics are now in pretty much everything most in the past of course most things didn't have them so as we saw previously things like the oven or fridge or things like that in the past course they didn't have those but as well as usual electronic items you would find in your house but say I've just got your cooker or oven which in the past was just a box of some heating elements and mechanical thermostat of course these days we've got to me an electric control in there it's usually a clock or something along those lines and of course without this part the rest of it doesn't actually work on plenty of these if you don't even set the clock correctly the oven doesn't even turn on and even things like say a fridge or a washing machine but again in the past would just be basic kind of that mechanical timer or mechanical thermostat or whatever because these days a lot of things with motors in actually have inverter drives in there so rather than the actual motors has been connected to the mains power when it needs to be switched on it's actually run through another big-box electronics so there's the frequency and the power whatever else as those are more efficient so again a fairly common situation and even without that particular style you find that plenty of these actually having any electronic control so getting something goes wrong with that really it's not going to work and repairing that sort of thing is of course a fairly expensive and some of the other items which it may not consider are things like the central heating boiler which again has a circuit board inside which basically controls and runs the entire thing and again if that's going to be broken well guess what it's going to be many hundreds of to replace and of course that's before we even get into things such as smart devices all of which are electronic of course by their nature and of course this is going to be things such as thermostats cameras doorbells like this ones that you can bring any contacts your phone and all that behind a business there and obviously there's this whole horde of other stuff which most people don't have in their homes now and even if you're about simple things such as lighting of course all lighting these days is LED and guess what of course LEDs are one of the very things which are easily damaged by transient over voltages so even an LED lamp so it's not gonna be a huge cost to replace just one way I mind that in the past you just have a single filament lamp hanging down in the center of the room these days of course probably have stayed down lights or whatever my hell say eight or ten of those in the room if holo those get busted again that's not going to be a particularly cheap or a desirable situation to be in now there are some areas might think well there's certainly nothing can be of any value there one of which might be a landlord supply this is the kind of situation where you would have a block of flats or apartments and then each flat holes have its own individual power supply there and the landlord supply is what connects and despise power to the common areas so normally that's going to be so just a few lights from the sockets for the vacuum cleaner and whatever and probably not much else so might be told to think in a situation like that well there's no point putting surge protection there because nothing really it's going to be damaged but that's not actually true because if you think about it in the corridors or stairway there's gonna be some lighting and of course that's going to be LED lights in pretty much every case so if you have say block attacks with say 10 LED light fixtures there and six of them get busted we do some transit coming in replacing those it's not going to be just a question of poppy in a new lamp or bulb they're more than likely you have to actually replace the hole fitting and of course you have somebody come in and replace it I mean that's not going to be cheap something any more than 100 pounds so the sort of costs of surge protection there and another thing to consider that most blocks of flats and hangs have a entry system and even the most basic of these things kind run into many hundreds of pounds even if it's a two or three flats and of course if it's a large block of flats then it has a a video system there you could easily be looking at many thousands of pounds if parts of that it became damaged or destroyed and then there's always gonna be other things such as the fire alarm I'm not something you want to be damaged or destroyed and again if it was or some kind of polymer code or that due to transient then repair to that again I'm not going to be exactly a bargain basement so even if situation to my mind I think this an awful lot of equipment there the quite often is and again most of it is going to be far more and the hundred pounds or so it would cost to fit the surge protection so let's look at surge protection now specifically what these things are and why you would want to protect against them certainly in any kind of modern installation it's gonna be stacked full of electronic equipment of various types all of which is susceptible to damage by transient over voltages and therefore say claiming that oh it's nothing at my house of any value it's gonna be damaged well that's a load of nonsense and things like lightning strikes are actually incredibly common all right might be a knife that lightning storm where you happen to live at the moment but sending across the country lightning strikes happen all the time and if there was a pier to say yeah bad weather or whatever you can get thousands and thousands of these things within a very short time and of course it's not just about lightning say striking your house or in the general area if it's a strikes paralyze far away that overall church can travel a considerable distances so it's not something which is rare or hardly or happens these things happen all the time and all the equipment house is fairly Thunderball to these things now that's sir just basically look there at base what they are and what you can protect against future episodes also look at that in more detail okay what types of surge protection you can get and where you would fit such things and we're also gonna be taking some of these things apart to see what's contained inside but until then thanks for watching
+
+
+[00:03] hello Andre w this is part 1 of a series on surge protection devices or SPD's and
+[00:10] his a very typical example this happens to be a two module thing which we'll
+[00:16] look at again in more detail at some point in the future now this time we can
+[00:20] have a look at the basics such as what are surge is why you would want to
+[00:24] protect against them and why it is that they have suddenly seemed to become a
+[00:27] thing even though that surges and surge protection has been around for literally
+[00:31] decades so just cover the basics to start with and then same token parts
+[00:35] we'll have a look at various parts of it in more detail now said there Sergio's
+[00:40] are new they have literally existed for as long as that Christie has existed and
+[00:44] certainly surge protection again that's not new either you have been around
+[00:47] pretty much forever that certainly this case that more recently things like this
+[00:51] have become a thing / tip in your domestic consumer minute source more
+[00:55] installations and this is a cheaper Chinese one main reason because in a
+[01:01] future episode weekend here taking this apart and seeing what's contained inside
+[01:04] but the principles course are the same whoever makes the thing now let's have a
+[01:10] look first of all what the surge actually is now unfortunately there are
+[01:14] several definitions of the word surge but of course it's only one of them as
+[01:17] you can see with here so well what is a surge so in this particular case what
+[01:23] we're talking about is a transient over voltage now it's two words here both
+[01:29] which may not be anti-abuse but over voltage basically means voltage is far
+[01:34] too high so in the UK voltage is normally around 230 volts ac in the case
+[01:42] of voltage in the case of surge what we're talking about is many hundreds of
+[01:46] volts more than that and in some cases many thousands of alts on top of that so
+[01:53] it's a significant increased on the normal 230 volts a might be sort of say
+[01:56] a thousand volts or five thousand volts or something like that certainly not
+[02:00] what are gonna be having in the normal event there and then the other part here
+[02:04] is the transient this means it's extremely short in duration it's not
+[02:09] something to stick around for any length of time and for typical surges the
+[02:13] duration or length of the overwatch existing is
+[02:17] in the region of microseconds to milliseconds now amid a second is one
+[02:25] thousandth of a second hopefully of that things are unlike our
+[02:31] CDs which Topsy trip and say things like care sort of forty milliseconds or two
+[02:35] hundred milliseconds in a microsecond is one millionth of a second so these
+[02:45] things exist for a very short time very tiny fraction of the AC waveform but
+[02:51] whilst they do exist it is very high voltage many hundreds of
+[02:54] thousands of volts more than you would normally get so in the context of surge
+[02:58] protection this is what we're talking about very very tiny little short pulses
+[03:03] of extremely high voltage far more than you'd normally have now there is another
+[03:07] definitely surge which is also used in the electrical industry and this is used
+[03:12] within the distribution network and it's things where for example if the neutral
+[03:16] was disconnected the voltage rather mean 230 might sort of go up to in the region
+[03:20] was sort of 400 or 500 or something like that
+[03:22] and again if there's some other problem within the network it could go out of
+[03:26] range but that is something which typically exists over a period of many
+[03:30] tens of seconds or even minutes and it doesn't go particular into the thousand
+[03:33] volts it's only a few hundred so the other definition of surge is valid in
+[03:38] the case of surge protection it is not what we're talking about it's entirely
+[03:41] unrelated and separate thing we're only talking about extremely high voltages
+[03:45] for an extremely short period of time now what this would look like if you
+[03:51] have your typical AC waveforms so let's say at zero there and voltage of course
+[03:57] is alternating so it's changing all the time okay so on a sine wave there that
+[04:03] would be a normal thing there in the case of the UK so it's 230 volts RMS so
+[04:09] your peak value here it's gonna be around the sort of three forty volts
+[04:13] kind of area they're slightly plus their nationally - 340 volts over there so on
+[04:20] average of course the RMS value that's way up to 30 comes from so in the case
+[04:27] of a surge or a transient over voltage it could be
+[04:30] the direction could be positive or negative doesn't really matter there and
+[04:34] what you would actually see is that the way from we become along like this and
+[04:37] then sudden you have a huge spike like this for an incredibly short duration
+[04:41] and you might have another one here so it might sort of go way off up there and
+[04:45] I don't want to hear like that so very very short pulses but quite large in the
+[04:51] actual total voltage there now terms of where these can occur
+[04:55] it's going to be between any two conductors in the system so between say
+[05:00] line and neutral which is weight normally fine the normal voltage and of
+[05:06] course can also occur between the line and to the earth so again that's way to
+[05:12] find your normal may as well teach there and also no not as obviously it can also
+[05:16] occur between the neutral and the earth as well now in some systems of course
+[05:23] these two are actually linked together so in your T n system TNCs or t NS those
+[05:28] going to be linked together at some point but even in a say at t NS system
+[05:32] it's gonna be linked together at the transformer then you may have many tens
+[05:35] or hundreds of meters of cabling between that in your house so it's totally
+[05:38] possible for these spikes a voltage or transients to be induced on the cabling
+[05:43] between there so you can get these damaging voltages between neutral and
+[05:47] earth as well and on a TT system in particular wave got you or earth is just
+[05:52] an electrode in the ground getting completely possible to have quite a
+[05:55] damaging voltage between the incoming neutral conductor and your electrode in
+[06:00] the ground there so can occur between all or some of those and pretty much at
+[06:05] any time and the other thing of course it can occur between turn on a
+[06:08] three-phase system is between two phases or two line conductors so pretty much
+[06:15] between any of the conductors that you have in a typical installation and it
+[06:19] can be found between any or in fact all of those things and as well as the power
+[06:24] cabling coming into the building it can also be found on other types of cabling
+[06:28] so for example data cabling telephone cabling and why things like sort of TV
+[06:36] aerials satellite dishes and in fact any kind of conductors which
+[06:43] come into the building from some outside source
+[06:46] so although certainly in terms of consuming it or the electric in the
+[06:50] station it's most likely to be between the outer conductors here don't forget
+[06:54] about other conductive things coming into the building any of those things
+[06:57] can and quite often do have surgery or transient over voltages on them and it
+[07:02] may be necessary to provide protection for these as well and have a look at
+[07:07] this particular example here we see the it's got three connections here so line
+[07:11] neutral and the earth or protect from types are there so again that would
+[07:14] cover between all three of these combinations and in the case of a
+[07:19] multi-phase vice because it would have additional modules for the additional
+[07:22] phases as well so that's fairly typical the Assumption there now where do these
+[07:29] things come from well there's several causes for these things and most likely
+[07:33] course here is lightning now in most cases we're not talking about lightning
+[07:38] striking your house directly now of course that can't happen in rare
+[07:41] instances but basically if lightning is going to strike at a domestic property
+[07:44] directly it's only a huge amount of damage things going on fire half the
+[07:48] walls going to be blown out and so on so although that is a possibility generally
+[07:52] that's not what we're talking about so lightning strikes and there can be two
+[07:55] types of these more likely to strikes onto cabling so we've got directly on
+[08:02] two cables a list of the cables outside of the edge installation such as
+[08:06] overhead lines or underground lines or possibly on to things like transformers
+[08:10] or other network equipment and the other one is indirect strikes and this is
+[08:19] where you may have a lightning strike say between one cloud and another but
+[08:24] because that's in the vicinity of similar actual cabling you'll get an
+[08:27] induced voltage on the cabling simply due to the fact that you've got
+[08:30] inductive and capacitive effects there so whilst this is Australia trait
+[08:34] forward obviously lightning strikes the cable and then you have large voltage on
+[08:37] that cable this one you might say have cloud here might be a cloud over there
+[08:42] Skype and then below that on the ground you might have some poles here with
+[08:48] cabling on them so a direct strike in this case would just be from the
+[08:53] out here on to the cabling itself because it's going to reduce the voltage
+[08:57] on the cabling here and then the indirects would be safe from one cloud
+[09:02] here it could be a lightning strike through the air to another cloud because
+[09:07] you've got two large current flowing here in power with another conductor
+[09:11] then of course you can get two voltage induced on the cabling justify the fact
+[09:15] you've got very high current flowing here so due to induction or capacitive
+[09:20] effects there and that would coupled into the cabling even though it doesn't
+[09:23] directly strike the cable itself now those effects are not restricted only to
+[09:30] overhead cabling no cabling may be more likely to be say either struck by
+[09:34] lighting directly or have a voltage induced on it but even if it came as a
+[09:37] bearing on the ground as we got here and it's totally possible for lightning to
+[09:41] actually strike there so if it was lying straight from this cloud here I strike
+[09:46] the ground it's still going to be putting out fairly substantive voltage
+[09:49] onto these cables the sparing mind this lightning has just jumped from a cloud
+[09:53] to the ground that could be hundreds of meters the fact got a cable buried say a
+[09:57] couple of meters on the ground pretty much irrelevant in terms of the scope of
+[10:00] the massive voltage and the huge current we've got going through here and just as
+[10:05] with the indirect strikes even integrate strikes across here we're still gonna
+[10:10] get a huge magnetic field around this massive current flowing here again that
+[10:14] can actually affect anything within the vicinity including stuff that's
+[10:18] underground and of course you've also got a lot of other stuff above ground
+[10:21] like say transformers and switching equipment and all kinds of other stuff
+[10:24] so putting miss lightning strikes anywhere I'd like to have an effect on
+[10:28] any kind of electrical equipment whether it's in the ground above ground or
+[10:31] pretty much anywhere else now the second main course is due to switching and
+[10:38] these ones were created within the electrical installation or the
+[10:41] distribution network itself and one fairly common examples here if you had a
+[10:46] large electric motor this is a massive inductive load so when it's spinning up
+[10:52] there it's going to draw a face of central current but if you just
+[10:54] disconnect the power here by switching it off motors still gonna be turning and
+[10:59] because it's turning it's going to act as a generator and they're getting in
+[11:01] the beep pulse of voltage coming out of there back onto the conductor's you've
+[11:05] got now if it's a double pulse probably not a problem but of course if
+[11:08] it's a single-pole switch your neutral still gonna be connected and that's
+[11:12] going to put a fairly large pulse of voltage back into the distribution
+[11:17] equipment so any kind of inductive load there can cause this sort of thing and
+[11:22] also so can pretty much anything else so everything's like capacitive loads
+[11:25] and whatever else switching this on off is going to cause disturbances on the
+[11:29] electrical wiring within that building and even in other buildings in some
+[11:32] cases so switching of various loads can and often does cause transient over
+[11:38] voltages which again can cause problems for equipment elsewhere within the
+[11:42] installation or even related stations nearby now I said before surges like
+[11:48] this or transient over voltages have existed pretty much the whole time that
+[11:52] say electricity has been in use because of course lightning strikes have been
+[11:55] around since millions of years and a surge protection in itself isn't
+[11:59] particularly has been around for a very long time so why is it that suddenly it
+[12:04] seems to be a big thing well the answer to that is that until fairly recently
+[12:08] most of what was in a typical installation wasn't actually going to be
+[12:12] really affected by these transient voltages or if it was it didn't really
+[12:16] cause any kind of a big problem because you look at certain older equipment so
+[12:19] salient a domestic situation you have a look at what NS a typical house a few
+[12:24] decades ago you would have things like the cooker oven or whatever all that was
+[12:30] in there was basically a heating element and in most cases several of them but
+[12:36] it's just Pacey a resistor inside a metal casing so
+[12:40] shoving a very high Bosch on that for a fraction of a second probably not going
+[12:43] to do any damage there if it was high enough for long enough it could
+[12:46] theoretically arc over to the casing and might cause some damage but that's
+[12:50] pretty unlikely and of course your typical lighting would be the
+[12:54] incandescent lamp and again that's just basically a resistive element when you
+[12:59] should have come through it it heats up and gets white-hot too and in that room
+[13:03] so if you just shoved a very high voltage through there for a fraction of
+[13:06] a second it's gonna slightly increase the temperature of that yeah it's not
+[13:09] really doing a thing wouldn't even notice if it was really extreme and it
+[13:13] might cause the thing to fail but then of course just get on the shops and buy
+[13:17] a new one and that would be like 50 pence or
+[13:20] something so even if it did bust well on the rare occasion Theodore who cares
+[13:24] because Bobby was gonna break anyway so I'm not really a big problem there and
+[13:28] other people had there at other electronic items in their house there
+[13:32] wasn't a huge number of those things and even what they did have they're
+[13:35] typically had what are called linear power supplies so those are constructed
+[13:40] internally so have your power coming in there so say line and neutral and the
+[13:46] very first thing ins then there would be a transformer so you have your 240 volt
+[13:50] says it would have been in the day and then you have a little winding there
+[13:54] probably for 12 volts there then you'd have your bridge rectifier here and
+[14:02] you'd probably have a few capacitors in there and they'd have some kind of
+[14:08] voltage regulator and then you'd eventually get your say 12 volts DC for
+[14:15] your radio or whatever else now although surges or transit or
+[14:20] voltages can pass through transformers in the case of this one here if you're
+[14:23] gonna say shove a big Pole serve say a few hundred volts there it's gonna be
+[14:27] considerably smaller in magnitude when it gets through here and because you've
+[14:30] got all this other stuff on the side of this by the time it gets to here
+[14:33] this effect is gonna be significantly reduced so even for electronics of the
+[14:37] sort of twenty thirty years ago not likely to cause huge problem and again
+[14:42] not something it's really common anyhow because most people didn't have houses
+[14:46] stuffed full of electronic devices however fast for today and most
+[14:50] electronic devices do not contain big metal round transformers with iron cores
+[14:55] on whatever because those are part expensive now and they are too heavy and
+[14:58] they are too big because you lose everything you're not gonna have any
+[15:02] space for much else so today of course electronics are highly prevalent and in
+[15:08] most cases the power supply for those is line and you're coming in and instead of
+[15:14] a transformer all there's big copper windings and all that business
+[15:17] the very first thing in here is going to be some kind of microchip or electronic
+[15:22] silicon device there and that is going to be directly across the 230 volts
+[15:27] there and then from that onwards you gonna have all C
+[15:31] other components that may be negative connection here and so on and then
+[15:34] you're going to have your voltage coming out of there and in some cases it may
+[15:38] just be a single capacitor there and then you can have your LED light so when
+[15:45] are they in here might be another few of smoothing items going in there but
+[15:50] incredibly simple stuff so if you've got a big shoving in here a fairly large
+[15:55] voltage of say a thousand volts for a very short time it's incredibly likely
+[16:00] that something in here is going to get damaged because semiconductors
+[16:04] unfortunately are extremely sensitive to transient over voltages if this was say
+[16:10] a current voltage regulating device here show the repulsive I have altered air
+[16:15] even for a few microseconds that can cause some kind of faults internally and
+[16:19] it pretty much won't work anymore and again you gotta say capacitors across a
+[16:22] line rated for say 450 volts if you shove say a thousand volts or 2,000
+[16:28] volts in there fairly likely this is gonna fail it will either fail open but
+[16:33] clear nothing works or it could fail short circuit maturity gonna damage
+[16:36] other things because the current can flow through there and destroy things
+[16:40] now if a transient voltage does cause damage to some electronic device
+[16:45] most of the time the damage is not going to be visible this is mainly because the
+[16:49] damage is gonna be in turn or to say a chip or some other device and you're not
+[16:53] gonna be able to see it so if you open up something that's no longer working
+[16:56] and you're suspect it has been damaged by a surge or transient over voltage
+[17:00] don't expect to see massive blackening and charring whatever inside because
+[17:03] that's simply not what actually happens in some cases there will be damage
+[17:07] because of all that may be what we've happened here so if this failed
+[17:10] short-circuit what would then happen instead of a very small current flowing
+[17:13] through the capacitor you've been get to say the form a
+[17:16] politician before current here so you might find that all of these LEDs were
+[17:19] completely blown because a basic shock that Mays washed across it may can be
+[17:24] blackened and charred but that damage is not because the surge itself just at the
+[17:31] stove yourself damaged something and then they made whole tea to power
+[17:33] through here in watts of a 50 100 amps or something flowing on the circuit for
+[17:36] a short time and that is what caused the damage so in many cases any damage you
+[17:44] can see has been caused by the mains voltage
+[17:47] which is never something caused by some component failing and allowing far too
+[17:51] much current to flow through some part of the circuit and therefore that's when
+[17:54] you'll see your charred and blackened items but in a lot of case it is
+[17:59] literally just some electronic component has failed internally you can't see any
+[18:03] damage the only visible thing in fact that the item itself is no longer
+[18:07] working now as well as modern electronics being rather more
+[18:10] susceptible to damage than certain dits of old equipment the other major problem
+[18:14] is that electronics are now in pretty much everything most in the past of
+[18:18] course most things didn't have them so as we saw previously things like the
+[18:22] oven or fridge or things like that in the past course they didn't have those
+[18:27] but as well as usual electronic items you would find in your house but say
+[18:33] I've just got your cooker or oven which in the past was just a box of some
+[18:37] heating elements and mechanical thermostat of course these days we've
+[18:40] got to me an electric control in there it's usually a clock or something along
+[18:45] those lines and of course without this part the rest of it doesn't actually
+[18:48] work on plenty of these if you don't even set the clock correctly the oven
+[18:52] doesn't even turn on and even things like say a fridge or a washing machine
+[18:56] but again in the past would just be basic kind of that mechanical timer or
+[19:01] mechanical thermostat or whatever because these days
+[19:04] a lot of things with motors in actually have inverter drives in there so rather
+[19:10] than the actual motors has been connected to the mains power when it
+[19:13] needs to be switched on it's actually run through another big-box electronics
+[19:17] so there's the frequency and the power whatever else as those are more
+[19:21] efficient so again a fairly common situation and even without that
+[19:25] particular style you find that plenty of these actually having any electronic
+[19:28] control so getting something goes wrong with that really it's not going to work
+[19:32] and repairing that sort of thing is of course a fairly expensive and some of
+[19:36] the other items which it may not consider are things like the central
+[19:40] heating boiler which again has a circuit board inside which basically controls
+[19:47] and runs the entire thing and again if that's going to be broken well guess
+[19:51] what it's going to be many hundreds of to replace and of course that's before
+[19:55] we even get into things such as smart devices all of which are electronic of
+[20:01] course by their nature and of course this is going to be things such as
+[20:05] thermostats cameras doorbells like this ones that you can bring any contacts
+[20:11] your phone and all that behind a business there and obviously there's
+[20:14] this whole horde of other stuff which most people don't have in their homes
+[20:18] now and even if you're about simple things such as lighting of course all
+[20:23] lighting these days is LED and guess what of course LEDs are one of the very
+[20:27] things which are easily damaged by transient over voltages so even an LED
+[20:32] lamp so it's not gonna be a huge cost to replace just one way I mind that in the
+[20:36] past you just have a single filament lamp hanging down in the center of the
+[20:39] room these days of course probably have stayed down lights or whatever my hell
+[20:42] say eight or ten of those in the room if holo those get busted again that's not
+[20:45] going to be a particularly cheap or a desirable situation to be in
+[20:50] now there are some areas might think well there's certainly nothing can be of
+[20:53] any value there one of which might be a landlord supply this is the kind of
+[20:59] situation where you would have a block of flats or apartments and then each
+[21:02] flat holes have its own individual power supply there and the landlord supply is
+[21:07] what connects and despise power to the common areas so normally that's going to
+[21:11] be so just a few lights from the sockets for the vacuum cleaner and whatever and
+[21:15] probably not much else so might be told to think in a situation like that well
+[21:19] there's no point putting surge protection there because nothing really
+[21:21] it's going to be damaged but that's not actually true because if you think about
+[21:25] it in the corridors or stairway there's gonna be some lighting and of course
+[21:29] that's going to be LED lights in pretty much every case so if you have say block
+[21:35] attacks with say 10 LED light fixtures there and six of them get busted we do
+[21:39] some transit coming in replacing those it's not going to be just a question of
+[21:43] poppy in a new lamp or bulb they're more than likely you have to actually replace
+[21:46] the hole fitting and of course you have somebody come in and replace it I mean
+[21:50] that's not going to be cheap something any more than 100 pounds so the sort of
+[21:55] costs of surge protection there and another thing to consider that most
+[21:59] blocks of flats and hangs have a entry system and even the most basic of these
+[22:05] things kind run into many hundreds of pounds even if
+[22:08] it's a two or three flats and of course if it's a large block of flats then it
+[22:11] has a a video system there you could easily be looking at many thousands of
+[22:16] pounds if parts of that it became damaged or destroyed and then there's
+[22:20] always gonna be other things such as the fire alarm
+[22:23] I'm not something you want to be damaged or destroyed and again if it was or some
+[22:27] kind of polymer code or that due to transient then repair to that again I'm
+[22:31] not going to be exactly a bargain basement so even if situation to my mind
+[22:35] I think this an awful lot of equipment there the quite often is and again most
+[22:38] of it is going to be far more and the hundred pounds or so it would cost to
+[22:42] fit the surge protection so let's look at surge protection now specifically
+[22:47] what these things are and why you would want to protect against them certainly
+[22:51] in any kind of modern installation it's gonna be stacked full of electronic
+[22:54] equipment of various types all of which is susceptible to damage by transient
+[22:59] over voltages and therefore say claiming that oh it's nothing at my house of any
+[23:03] value it's gonna be damaged well that's a load of nonsense and things like
+[23:07] lightning strikes are actually incredibly common all right might be a
+[23:11] knife that lightning storm where you happen to live at the moment but sending
+[23:13] across the country lightning strikes happen all the time
+[23:16] and if there was a pier to say yeah bad weather or whatever you can get
+[23:20] thousands and thousands of these things within a very short time and of course
+[23:24] it's not just about lightning say striking your house or in the general
+[23:27] area if it's a strikes paralyze far away that overall church can travel a
+[23:31] considerable distances so it's not something which is rare or hardly or
+[23:35] happens these things happen all the time and all the equipment house is fairly
+[23:40] Thunderball to these things now that's sir just basically look there
+[23:44] at base what they are and what you can protect against future episodes also
+[23:47] look at that in more detail okay what types of surge protection you can get
+[23:50] and where you would fit such things and we're also gonna be taking some of these
+[23:54] things apart to see what's contained inside but until then thanks for
+[23:59] watching

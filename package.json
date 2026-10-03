@@ -54,7 +54,9 @@
     "test:personal-course-removal-browser": "node scripts/test-personal-course-removal-browser.mjs",
     "test:personal-course-interactions": "node scripts/test-personal-course-interactions.mjs",
     "test:course-experience": "node scripts/test-course-experience-browser.mjs",
-    "test:personal-course-conflicts": "node scripts/test-personal-course-conflicts.mjs"
+    "test:personal-course-conflicts": "node scripts/test-personal-course-conflicts.mjs",
+    "test:surge-protection": "node scripts/test-surge-protection.mjs",
+    "test:surge-protection-browser": "node scripts/test-surge-protection-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

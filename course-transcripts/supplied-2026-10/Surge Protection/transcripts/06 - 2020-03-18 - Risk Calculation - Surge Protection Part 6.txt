@@ -1,0 +1,759 @@
+# Risk Calculation - Surge Protection Part 6
+# https://www.youtube.com/watch?v=EplV5B9fYVU
+
+hello I'm JW this time it's surge protection I mean we're looking inside this book here there's some z71 and specifically regarding that calculation as to whether you need a surge protection or not and that's the one with the picture there the Lightning map and all that other bother now this isn't a particularly complicated but in reality it might actually have need to use this at all because this calculation is only used if the whole part of other things aren't actually met in the first place so the reality is that while it's calculation exists in there and is valid in some circumstances in the vast majority of installations you know even need to get to this particular calculation because you've already determined it by other means so let's have a look at that and see what the calculations about and what's the okay demonstration of actually doing the calculation and seeing what kind of results we get from it now here's the one regulations the 77 1 2018 version this is the original one there's an m1 which we haven't looked at yet but we will be looking at later however the other men and one only covers one particular individual piece of this so does make any difference to what we're talking about here now this particular thing is in chapter 44 which says here's protection against voltage disturbances and electromagnetic disturbances turn through the pages but there they may get to this nice map here of the UK and this basis shows you the likelihood of lightning occurring within those areas so basically the darker it is the more likely it is going to be happening so I see certainly over here it's gonna be very likely over here in the southwest or whatever probably not and if you live in the north of Scotland and probably never gonna happen at all and then over here is some of the things you need to calculate on the length of cables and all of that but before we get into all of that I want a look on the previous page which starts here and this is 4 4 3 4 4 3 starts over this side which is protection against transit over voltage of atmospheric origin or Tudor switching so important realize that was seen in previous episodes that there's two real source of the year's lightning which is the atmospheric origin here and most of the time that's not going to literally lightning striking your house or building whatever it's more likely going to be lighting striking the ground somewhere and that causes voltages to be induced on underground cables and so on and then the other ones you switching so gonna turn on large loads within the installation so like motors for a lift or something like that or even big bangs or LED lighting that can also cause the transients as well so if we move over to this side where we've got over hostage control which really gets into the thing on the following page there what's realize that this calculation only applies to things of atmospheric origin so if you've got an installation where transients due to things being switched on laughs that it's going to be happening this calculation is an absolutely no use whatsoever because it only deals with the instances of things like lightning outside of the installation so straight away if you're going to put the surge protection in because of switching you don't need to do this calculation completely irrelevant and unrelated now I've got four things here to consider so four three point four overwatch control protects against transient over voltage shall be provided where the consequence caused by a voltage could and then we have four different things here to consider so first of all results in sewers injury to or loss of human life result in the interruption of public services and or damage to cultural heritage results in destruction of commercial or industrial activities or affects a large number of co-located individuals so if any of these things apply again you don't need to bother with the calculation because you've already determined from these that you need to install surge protection so if you actually look at these things here these cover a vast number of different types of installation so internal number three presump although its interruption of commercial or industrial activity so pretty much in that single line you've covered all kinds of shops offices factories computer centers and all this kind of other stuff that's clearly if you're gonna have a serious going into any of those buildings it could cause disruption to whatever that business happens to be even things like a little corner shop it says goes in there and destroys there till they can't serve any customers are taking money so clearly that's not a good situation so that in itself covers pretty much all commercial and industrial installations this one the bottom a large none of colocasia fit to all so that's the is gonna be like hotels or big blocks of flats or anywhere such as that and the other things here again you're going covering things like your hospitals any kind of sort of municipal buildings that kind of thing as well so if any of these apply don't leave the calculation because you've already determine here that you need surge protection now most of this doesn't necessarily apply to individual dwellings or people's houses because generally it's not any of those items there so if we any one here for all other cases a risk assessment according to four four three five shall be performed which is the calculation here and on the next page if there is consent maintain is not performed the election station shall be provided with protection against transit over voltage so basically if you're not gonna be bothered to do this calculation anyway even if you've suddenly found somewhere that wasn't any of these and you couldn't be bothered to do calculation then the deal is you need to put surge protection in anyway and then the only exception except for single dwelling units in other words somebody's house or their flat or bungalow or whatever else where the total value of the installation and equipment therein that does not justify such protection so essentially it's going to be any of these apply you need surge protection if you don't want to be doing the calculation you need surge protection if it's a single house which is pretty much everything that's not included on this one at the top then you don't have to put it in assuming the equipment and the installation itself doesn't justify such protection now barring alignment for a domestic installation you typical cost of surge protection is gonna be in the region of say 100 pounds in that case is quite probably less particularly putting in a new consuming it anyway if you're just going in to put surge protection and then it's gonna cost a bit more that putting in a new consuming it in house or bungalow or whatever it's probably going to be around a hundred pounds or so to put the surge protection in that now total value of the installation does not justify so it basically saying any house or single dwelling doesn't have more than a hundred pounds worth of equipment in that could be damaged now pretty much that's no house anywhere because a single television it's going to be hundreds pounds maybe in thousands of it's the notice of a load model or whatever everybody's got television in our houses everybody's got phones everybody's got computers and even other stuff you got all kinds of electronic equipment within your installation even things like say a refrigerator it's not just a thing that turns on oftenly more it's got those electronic controls on the front and if there's a damage well you need to buy a new fridge don't you so this value exemption is really a load of nonsense because unless you know how house that doesn't have anything in it which is a mess face it's never going to happen and you need to put surge protection in and then the final part here is the protection against switching a voltage shall we consider in the case of equipment likely to reduce switching a whole tidge or disturbances exceeding the values currently authority catari or the installation and this means I will say we're low voice generator supplies the installation or a inductive and capacitive loads such as motors transformers capacitor banks troy's units or high current load installed so even if you don't want to do this and that doesn't apply and you don't want to do this and all the rest of it even then you still have consider the fact that this is only for things outside the installation so typically or lightening that but anything that's going to be turned on and off that's likely to cause switching over voltages again you need to put surge protection in and it's about to know here the things like capacitive loads in most cases includes LED lighting because most LED lighting is a capacitive load and you have a large amount of LED lighting when you switch it on there is a massive inrush there and that can cause disturbances on the supply so even in normal house if you have a lot of those LED downlight errs say in the room you've got like 15 or 20 of them in a big kitchen or something even turning those on just in a normal house can be enough to cause over voltages on the system and possibly damage equipment that is connected even things like the lights themselves so assuming you've got past of all of this and you've found a place that doesn't apply to any of these and it's a house that apparently has nothing in it and all the rest of it after all of that if none of those apply then you can move on to the risk assessment method and do the calculation so as you can see the circumstances in which you might need to do this calculation are pretty much one-in-a-million it's really not something you're going to be doing on pretty much any installation and then watch some ridiculously vague and indistinct things where so it may have considered it's none of those but it's not something gonna be doing that often but nonetheless we are gonna have a look at it anyway just so see how it actually works now this is the calculation here it's all on this a little bit here some of these have to be calculated from stuff on the next page which we'll look at in a moment so essentially calculated risk level which I've called CRL it's used to determine if protection against transient ovata Jeff atmospheric origin notably not things within the installation is required CL is found by this formula so essentially we've got three things in here F en v LP and in G so essentially is FN v divided by the other two multiplied together so it's three numbers multiplied two together one divided by the other and then you'll get some number here which then is used to determine whether you need it or not and the three things you've got the first one is an environmental factor selected according to table walk for forty three point one and if have look what for three that one is over the top page here so essentially got two values rural and suburban it's eighty five and urban environments which means your town centers and cities or whatever 850 so getting that value it's just a question of which one of those it is 85 or 850 so not really any kind of mystery there LP is the risk assessment length in kilometers and see below or on the next page and we'll have a look at that in a moment engi is the lightning ground flash density we live in to the location of the power line and connected structure figure for 4.24 hoping to is this map here of britain so in terms of getting this value of the energy figure all you're going to do is locate on the map where the installation is located so these are blown located in North Dorset which is just about here that's that sort of mid gray color so over here in the side look it's an all point five so that's that's pretty straightforward isn't it and if you happen to live in north yorkshire say up here that's much darker one so there you would use value of one and if you happen to live say up here and the Highlands of Scotland you down the value is the white one and the value there is nor point one so that's just a question of locating it on the map selecting the appropriate value from here so straightaway we've got three values to which is very easy just looking at a table or just looking on that map and they're noting down what the figure is so say pretty straight forward so far now LP which is the middle one it's the risk assessment length which is on the next page now this is slightly more involved we got it's not too terrible now LP as I've got here this is actually calculated from a whole lot of other stuff so the risk assessment length is calculated as follows LP is equal to basically all of these things added together now this is where the length thing comes in and he'll look bit further down here here's a sort of a diagram of some typical installation wiring so high-voltage headlines coming in and we'll see those across the as bits the countryside underground high voltage cabling I'm a big transformer here next part here we've got our the underground low voltage cabling then I've got some overhead low voltage cabling here I've got a bit more of the underground low-balled she's coding there and then trying to actually out the house itself so there's four things involved there and how look at the top here so we've got the linked in kilometers of low voltage overhead line length in low voltage on the ground cable length of high-voltage overhead line and length of high-voltage underground cable today so things just got in the diagram here so you need to find out what these links actually are now if it's an overhead wire of course you can just have a look and see into the estimate how long it might actually be on the ground ones it's not going to be so easy in theory the DNA or the network operator might be able to give you some indication of the sorts of links another thing you could do is say if you know where the trance will have to be for the particular property even if it's all underground you can pretty much see where the transformer would say it's halfway down the street and here's the house here so you could get some kind of estimation of the distance across here but even if you don't know any of these things then not really a big problem because now to go up here if the network banks are totally or partially are known then essentially all you going to put in is a distance of one kilometer you just make one of them which is VL pal one equal to one kilometer so if you know some of them you just make that equal a whole lot equals up to a kilometer if you don't know any of them you just make that as one kilometer and all the rest are 0 so it's not particularly terrible it's not a question of finding out what sort of things you've got and the main difference here isn't necessarily the length as much it's more to do with whether it's overhead or underground because obviously there's a difference in the likelihood of things being affected there now once you've got some of the lengths or maybe none of the lengths needs to in put them in here so those are four lengths so it's one two three four and all you're doing is pasty adding these together the only slight complication is that some of these have a number in front so where it says two there you're basically multiplying this value by two before you actually add anything together so if you had say some low value headline and for example that will say naught point five kilometers or half then you actually put it in here most of you two so in that case it would be two times not point five slightly equal one lpci which is the underground cable just put in as it is and again these two others here whatever length you've got ears you just Mort will apply the appropriate value first so in this case you might want by 0.4 in this case it's not equal to by a naught point two and these have been put in because presumably somebody has worked out that the different risk factors of whether it's overhead underground or whatever so this assumingly more likely to have a high risk thing so powell is the one with the low voice overhead line so that's presumably a higher risk to have things induced on it and PCH being the lowest risk has only naught point to compute a to the length of the high-voltage underground cable so it's all to do with risk factors but essentially just multiplying it by the value in front of it once you've done that and you've got all four values add the four values together and that value is the LP and that's the third thing which you saw on the previous page so once you've got that value here it goes into the thing on the previous page of seen so we know that came from the table we know that that comes from the map and then LP is that value we just got from adding those four things together and that goes in there and then that gives you the CRL or the calculated risk level value and then the only thing after that once you've got this value is whether it's greater or less than a particular value and if you look down here if it's greater than or equal to a thousand protection against transit no voltage at swagg origin is not required and it's less than a thousand then it is required so all you're looking for at the end value is it bigger than a thousand or not and if it is not needed if it's less than you do now let's do a couple of calculations just to show how this would work in practice now first impeding course is where is the institution located and what type of station is so for the first one we'll say that this installation is located in North Dorset that's what I happen to live at the moment and it will say this is a rural environment because most of Dorset is raw also question first of all looking on the map over here here's Dorset at the bottom here and North Dorset is in this light gray color so straight away we could see on the side over here the light gray is value of naught 0.5 so our in achieve a leo's it's over there this case will just be equal to naught point five and then the second thing we know it's in a rural area so in the countryside not much going on there and at the top of this page got this table so rural environment the value of F env I'm still at t equal to 85 that's a rural environment so 85 now the third item of course is LP and we've seen before that's the sum of these various lengths on different types of cables when it's over ground or not and there's other things so thing in mind all of these are limited to a maximum of one kilometer in any case and if you don't know any of the lengths or couldn't identify them or whatever then you all you have to put in is basically the L pal is equal to one and then the others are zero so we'll do that strike first away so L pal we know it's going to be one so look at the top here we've got two L pal so that's going to be - we know they'll power it's going to be one because that's the default value two times one and then the others all basically going to be equal to zero because one being the default value so in this case it's gonna be adding absolutely nothing so just betting zero and the zero now of course eros adding doesn't achieve anything two times one is basically going to be two during this case LP just if we want it's simply gonna be equal to the value two so that's the case if we don't know the values we'll can't find them or whatever say cows on the ground can't see them and so on just assume that that's going to be one which gives the value of 2 because 2 times 1 is equal to 2 now we have our three values we just need to put them into the formula here so the CRL or the connect later each level as we saw previously is equal to Fe and V which we know is 85 let's divide it by the other two values multiplied together so it's LP between hours to not to fly by the other one which is not 0.5 two times not 0.5 is 1 that's 1 85 85 of course and of course 85 divided by 1 it's just 85 so in this case the CRL value is 85 I took on our previous page so if the Cyril is less than so pretty obviously 85 is way less than thousand then protection against transient over to answering origin is required so in this case it's going to be yes they are required because of course the value is only 85 and that's using the default so we don't know really the actual links of cables involved now let's do that same one again so gonna have the same values there so 85 for the rural environment and energy of not 0.5 which if you have a clock on the map here it's all of the light gray so it's actually a very large percentage of the country there there's very few errors actually it's considerably larger values so same mouse game but this time we'll say that we do know some or even all of the values of the cabling so instead of putting overhead this time or just using the default which is basically the same as gonna be overhead I'm gonna say we can see that the ones in the house are obviously underground because we can't see them on poles outside and we know that the transformer its job over here is about half a kilometer away from the house and again that's gonna be pretty obvious and easy to determine you can't see the cables so you know that underground general you can see they transform it's either a building or something enclosure somewhere else so half a kilometer there so our LP value once again is the four thing that's added together we know that underground low voltage cable which is the PCL that's the second item there so we have something plus not 0.5 and then possibly two other things at the end now we'll say that we don't know what the high-voltage overhead and underground actually is and we can't actually see anything else up to that point so we don't really know what's going on there so as it set up here being on the total length is limited to one kilometer and if it's partially or totally on there and then L Powell is Satan's equal to the remaining distance to reach a total length of one kilometer so the two n values for the high voltage cabling are again zero and then the one in here is also half because a half and a half years of course total to one and we know that this first value has two in front of it so if we just rewrite that in two times 1/2 it's one half is obviously still half serious don't matter so the total value is just those two added just going to be 1.5 so it's a bit lower than we had before go to previously and now it's 1.5 men because we've got some of the cabling underground which of course is less likely to be subject to a transients than something that's overhead so again we can do that same house Latian so the CRL is the env which when it was 85 divided by the other two multiplied so in this case the endurance is it's one point five to the value got here multiplied by the energy which is still not point 585 on the top 1 5 times 1/2 is 0.75 and therefore the total is 85 divided by 0.75 so our total figure this time is a hundred from the 13 now that's a bit bigger we had previously because of course the value on the bottom is smaller because we had 85 so now 113 but again that's way less than a thousand so again this is an example way it would be required now we do the same thing again it was an urban environment again the only difference would be that the 85 becomes 850 so if that was 850 father why not point 75 then the result again is just 10 times bigger so essentially it's 1130 now in this case that's more than a thousand so this would mean that it was not acquired where's this one ears so again it's basically that top value has a big impact on the output so if everything else is the same rural area less than thousand we are going to need it urban area greater than a thousand so we're probably not and brutal men one this is actually we've got some underground cabling which again is far more likely in an urban area now I'll just do one more let's show what happen if you went to a different area and for this one we're going to pick an area in Lincolnshire just right little here this completely black dots there which is must be the most unlucky part in the country and that's gonna be a value of one point four four in G so in that case we know that ng is at one point four Lincolnshire Leone is a fairly rural area so we'll start out with that Fe and V being 85 again for the rural environment and then for LP well again assume that we don't know the length for cabling or we can't see it so we're good to go for that default value had before which as we saw mostly works out as two times the maximum length of one kilometre all the rest of zero so L P basically is equal to two so again we just see that the CRL thing from that previous page so CL is Fe NV which is 85 divided by the other two multiplied so it's one point four in this case and the develop and evolve - so that's gonna be 85 divided by those which is 2.8 I can already see it's gonna be far less than a thousand because obviously it's going to be smaller and the value we get in this case is actually thirty point some decimal points but the point is it's way less than a thousand so in that case yes it's going to be needed and even in this particular case even if it was the 850 on top that would just be 850 for the urban area I think and chair does have some of those and divided by 2.8 and again it's going to be ten times that so the result of this case it's going to be three hundred and three it's a decimal points whatever so in this particular case many could have got a much greater risk factor on the bottom here doesn't make any difference whether it's urban or rural it's still way way less than a thousand so in this case would be required no matter what and again if you had the various lengths of different cabling it would make a small difference to the bottom here but bearing in mind it's very likely going to be considerably less than a thousand in any case here simply the fact that if it's 85 on the top star with to get anything over a thousand this value on the bottom it's going to have to be incredibly small of course it's not going to the case if you've got one point four and they already and with 850 on the top it's not particularly difficult to get it over assuming you've got a fairly low risk factor for that so the thing on the top does make quite a big difference at a factor of ten bits underneath makes some difference but in the scheme of things not particularly significant in many cases so there's the calculation as to whether you need surge protection or not so about your mind that first of all you've got to go through all those things on the previous page and decide that it's not any of those which already probably counts out 99% of installations and then if it's not any of those and it's not a house that doesn't have anything of value in it then you can actually do the calculation if you really want to to determine whether surge protection is required or not and even then most cases if you're going to be living it or what's going to be located in a rural area then you probably will need it and in an urban you probably won't and then even out all that even if you do want to do the calculation all that pallava you don't have to be on paper either because if you go to the ECA website they've actually put a calculator on there you can just use you just fill in the lengths and the figures and it does the calculation for you so you don't even have to it on paper at all even if you wanted to do it which is gonna be extremely unlikely and probably never gonna happen anyway so there's the calculation for you so although this is in the regulations and it know that it's valid you're probably never going to use it it's not something that can use every day or even every year because in most cases that previous page with those four items will cover pretty much everything and it's basically saying that in 99% of cases surge protection is required and if you find that rare random one a thing where it doesn't fit into the categories then in theory you can do the calculation and then say oh yes we need it anyway or maybe not depending on where it's located now link to the website in question is in the description of this video so let's have a look there you don't have to be a member of them or anything it's just freely available absolute it's fulfilling the figures and press the button and it gives you the result required so that's the calculation there yes it's there but in reality probably not you know using it very often or even ever so that's it for this video and to next time thanks for watching
+
+
+[00:03] hello I'm JW this time it's surge
+[00:06] protection I mean we're looking inside
+[00:07] this book here there's some z71 and
+[00:10] specifically regarding that calculation
+[00:12] as to whether you need a surge
+[00:14] protection or not and that's the one
+[00:16] with the picture there the Lightning map
+[00:18] and all that other bother now this isn't
+[00:21] a particularly complicated but in
+[00:23] reality it might actually have need to
+[00:24] use this at all because this calculation
+[00:26] is only used if the whole part of other
+[00:28] things aren't actually met in the first
+[00:30] place so the reality is that while it's
+[00:32] calculation exists in there and is valid
+[00:34] in some circumstances in the vast
+[00:37] majority of installations you know even
+[00:39] need to get to this particular
+[00:40] calculation because you've already
+[00:41] determined it by other means so let's
+[00:44] have a look at that and see what the
+[00:45] calculations about and what's the okay
+[00:47] demonstration of actually doing the
+[00:49] calculation and seeing what kind of
+[00:51] results we get from it now here's the
+[00:54] one regulations the 77 1 2018 version
+[00:58] this is the original one there's an m1
+[01:00] which we haven't looked at yet but we
+[01:02] will be looking at later however the
+[01:04] other men and one only covers one
+[01:05] particular individual piece of this so
+[01:08] does make any difference to what we're
+[01:09] talking about here now this particular
+[01:12] thing is in chapter 44 which says here's
+[01:15] protection against voltage disturbances
+[01:17] and electromagnetic disturbances turn
+[01:20] through the pages but there they may get
+[01:22] to this nice map here of the UK and this
+[01:28] basis shows you the likelihood of
+[01:30] lightning occurring within those areas
+[01:32] so basically the darker it is the more
+[01:34] likely it is going to be happening so I
+[01:37] see certainly over here it's gonna be
+[01:38] very likely over here in the southwest
+[01:41] or whatever probably not and if you live
+[01:44] in the north of Scotland and probably
+[01:45] never gonna happen at all and then over
+[01:48] here is some of the things you need to
+[01:49] calculate on the length of cables and
+[01:51] all of that but before we get into all
+[01:53] of that
+[01:54] I want a look on the previous page which
+[01:57] starts here and this is 4 4 3 4 4 3
+[02:00] starts over this side which is
+[02:02] protection against transit over voltage
+[02:03] of atmospheric origin or Tudor switching
+[02:06] so important realize that was seen in
+[02:08] previous episodes that there's two real
+[02:10] source of the year's lightning which is
+[02:13] the atmospheric origin here and most of
+[02:15] the time that's not going to literally
+[02:16] lightning striking
+[02:17] your house or building whatever it's
+[02:19] more likely going to be lighting
+[02:20] striking the ground somewhere and that
+[02:21] causes voltages to be induced on
+[02:24] underground cables and so on and then
+[02:26] the other ones you switching so gonna
+[02:28] turn on large loads within the
+[02:29] installation so like motors for a lift
+[02:31] or something like that or even big bangs
+[02:34] or LED lighting that can also cause the
+[02:36] transients as well so if we move over to
+[02:40] this side where we've got over hostage
+[02:41] control which really gets into the thing
+[02:44] on the following page there what's
+[02:46] realize that this calculation only
+[02:49] applies to things of atmospheric origin
+[02:51] so if you've got an installation where
+[02:53] transients due to things being switched
+[02:55] on laughs that it's going to be
+[02:56] happening this calculation is an
+[02:58] absolutely no use whatsoever because it
+[02:59] only deals with the instances of things
+[03:02] like lightning outside of the
+[03:04] installation so straight away if you're
+[03:06] going to put the surge protection in
+[03:07] because of switching you don't need to
+[03:09] do this calculation completely
+[03:11] irrelevant and unrelated now I've got
+[03:14] four things here to consider so four
+[03:16] three point four overwatch control
+[03:17] protects against transient over voltage
+[03:19] shall be provided where the consequence
+[03:22] caused by a voltage could and then we
+[03:24] have four different things here to
+[03:25] consider so first of all results in
+[03:27] sewers injury to or loss of human life
+[03:30] result in the interruption of public
+[03:32] services and or damage to cultural
+[03:34] heritage results in destruction of
+[03:36] commercial or industrial activities or
+[03:38] affects a large number of co-located
+[03:41] individuals so if any of these things
+[03:43] apply again you don't need to bother
+[03:45] with the calculation because you've
+[03:46] already determined from these that you
+[03:48] need to install surge protection so if
+[03:51] you actually look at these things here
+[03:52] these cover a vast number of different
+[03:55] types of installation so internal number
+[03:57] three presump although its interruption
+[03:58] of commercial or industrial activity so
+[04:01] pretty much in that single line you've
+[04:02] covered all kinds of shops offices
+[04:05] factories computer centers and all this
+[04:08] kind of other stuff that's clearly if
+[04:11] you're gonna have a serious going into any of those buildings it could cause
+[04:13] disruption to whatever that business
+[04:14] happens to be even things like a little
+[04:16] corner shop it says goes in there and
+[04:19] destroys there till they can't serve any
+[04:21] customers are taking money so clearly
+[04:22] that's not a good situation so that in
+[04:24] itself covers pretty much all commercial
+[04:27] and industrial installations this one
+[04:29] the bottom a large none of colocasia fit
+[04:30] to all so that's the
+[04:31] is gonna be like hotels or big blocks of
+[04:33] flats or anywhere such as that and the
+[04:36] other things here again you're going
+[04:37] covering things like your hospitals any
+[04:39] kind of sort of municipal buildings that
+[04:41] kind of thing as well so if any of these
+[04:44] apply don't leave the calculation
+[04:46] because you've already determine here
+[04:47] that you need surge protection now most
+[04:51] of this doesn't necessarily apply to
+[04:52] individual dwellings or people's houses
+[04:55] because generally it's not any of those
+[04:57] items there so if we any one here for
+[04:59] all other cases a risk assessment
+[05:01] according to four four three five shall
+[05:03] be performed which is the calculation
+[05:05] here and on the next page if there is
+[05:08] consent maintain is not performed the
+[05:10] election station shall be provided with
+[05:12] protection against transit over voltage
+[05:13] so basically if you're not gonna be
+[05:15] bothered to do this calculation anyway
+[05:16] even if you've suddenly found somewhere
+[05:18] that wasn't any of these and you
+[05:20] couldn't be bothered to do calculation
+[05:21] then the deal is you need to put surge
+[05:23] protection in anyway and then the only
+[05:25] exception except for single dwelling
+[05:27] units in other words somebody's house or
+[05:29] their flat or bungalow or whatever else
+[05:31] where the total value of the
+[05:33] installation and equipment therein that
+[05:34] does not justify such protection so
+[05:38] essentially it's going to be any of
+[05:40] these apply you need surge protection if
+[05:43] you don't want to be doing the
+[05:44] calculation you need surge protection if
+[05:47] it's a single house which is pretty much
+[05:49] everything that's not included on this
+[05:51] one at the top then you don't have to
+[05:53] put it in assuming the equipment and the
+[05:55] installation itself doesn't justify such
+[05:57] protection now barring alignment for a
+[05:59] domestic installation you typical cost
+[06:01] of surge protection is gonna be in the
+[06:02] region of say 100 pounds in that case is
+[06:05] quite probably less particularly putting
+[06:07] in a new consuming it anyway if you're
+[06:09] just going in to put surge protection
+[06:10] and then it's gonna cost a bit more that
+[06:11] putting in a new consuming it in house
+[06:14] or bungalow or whatever it's probably
+[06:16] going to be around a hundred pounds or
+[06:17] so to put the surge protection in that
+[06:19] now total value of the installation does
+[06:22] not justify so it basically saying any
+[06:24] house or single dwelling doesn't have
+[06:27] more than a hundred pounds worth of
+[06:28] equipment in that could be damaged now
+[06:30] pretty much that's no house anywhere
+[06:32] because a single television it's going
+[06:34] to be hundreds pounds maybe in thousands
+[06:36] of it's the notice of a load model or
+[06:39] whatever everybody's got television in
+[06:41] our houses everybody's got phones
+[06:42] everybody's got computers
+[06:45] and even other stuff you got all kinds
+[06:46] of electronic equipment within your
+[06:48] installation even things like say a
+[06:50] refrigerator it's not just a thing that
+[06:53] turns on oftenly more it's got those
+[06:54] electronic controls on the front and if
+[06:55] there's a damage well you need to buy a
+[06:57] new fridge don't you so this value
+[06:59] exemption is really a load of nonsense
+[07:01] because unless you know how house that
+[07:03] doesn't have anything in it which is a
+[07:05] mess face it's never going to happen and
+[07:06] you need to put surge protection in and
+[07:08] then the final part here is the
+[07:10] protection against switching a voltage
+[07:11] shall we consider in the case of
+[07:12] equipment likely to reduce switching a
+[07:14] whole tidge or disturbances exceeding
+[07:16] the values currently authority catari or
+[07:17] the installation and this means I will
+[07:20] say we're low voice generator supplies
+[07:22] the installation or a inductive and
+[07:23] capacitive loads such as motors
+[07:25] transformers capacitor banks troy's
+[07:26] units or high current load installed so
+[07:29] even if you don't want to do this and
+[07:31] that doesn't apply and you don't want to
+[07:33] do this and all the rest of it even then
+[07:34] you still have consider the fact that
+[07:36] this is only for things outside the
+[07:38] installation so typically or lightening
+[07:40] that but anything that's going to be
+[07:42] turned on and off that's likely to cause
+[07:44] switching over voltages again you need
+[07:46] to put surge protection in and it's
+[07:48] about to know here the things like
+[07:49] capacitive loads in most cases includes
+[07:52] LED lighting because most LED lighting
+[07:54] is a capacitive load and you have a
+[07:57] large amount of LED lighting when you
+[07:58] switch it on there is a massive inrush
+[08:00] there and that can cause disturbances on
+[08:02] the supply so even in normal house if
+[08:05] you have a lot of those LED downlight
+[08:07] errs say in the room you've got like 15
+[08:08] or 20 of them in a big kitchen or
+[08:10] something even turning those on just in
+[08:13] a normal house can be enough to cause
+[08:15] over voltages on the system and possibly
+[08:17] damage equipment that is connected even
+[08:20] things like the lights themselves so
+[08:22] assuming you've got past of all of this
+[08:24] and you've found a place that doesn't
+[08:25] apply to any of these and it's a house
+[08:27] that apparently has nothing in it and
+[08:29] all the rest of it after all of that if
+[08:31] none of those apply then you can move on
+[08:34] to the risk assessment method and do the
+[08:35] calculation so as you can see the
+[08:39] circumstances in which you might need to
+[08:40] do this calculation are pretty much
+[08:42] one-in-a-million it's really not
+[08:44] something you're going to be doing on
+[08:45] pretty much any installation and then
+[08:47] watch some ridiculously vague and
+[08:49] indistinct things where so it may have
+[08:51] considered it's none of those but it's
+[08:53] not something gonna be doing that often
+[08:55] but nonetheless we are gonna have a look
+[08:57] at it anyway just so
+[08:58] see how it actually works now this is
+[09:00] the calculation here it's all on this a
+[09:02] little bit here some of these have to be
+[09:05] calculated from stuff on the next page
+[09:06] which we'll look at in a moment
+[09:08] so essentially calculated risk level
+[09:10] which I've called CRL it's used to
+[09:13] determine if protection against
+[09:14] transient ovata Jeff atmospheric origin
+[09:16] notably not things within the
+[09:17] installation is required CL is found by
+[09:21] this formula so essentially we've got
+[09:23] three things in here F en v LP and in G
+[09:27] so essentially is FN v divided by the
+[09:31] other two multiplied together so it's
+[09:32] three numbers multiplied two together
+[09:35] one divided by the other and then you'll
+[09:36] get some number here which then is used
+[09:39] to determine whether you need it or not
+[09:40] and the three things you've got the
+[09:43] first one is an environmental factor
+[09:45] selected according to table walk for
+[09:47] forty three point one and if have look
+[09:49] what for three that one is over the top
+[09:52] page here so essentially got two values
+[09:55] rural and suburban it's eighty five and
+[09:59] urban environments which means your town
+[10:01] centers and cities or whatever 850 so
+[10:04] getting that value it's just a question
+[10:05] of which one of those it is 85 or 850 so
+[10:09] not really any kind of mystery there LP
+[10:13] is the risk assessment length in
+[10:15] kilometers and see below or on the next
+[10:17] page and we'll have a look at that in a
+[10:19] moment engi is the lightning ground flash
+[10:22] density we live in to the location of
+[10:24] the power line and connected structure
+[10:25] figure for 4.24 hoping to is this map
+[10:30] here of britain so in terms of getting
+[10:32] this value of the energy figure all
+[10:35] you're going to do is locate on the map
+[10:36] where the installation is located so
+[10:38] these are blown located in North Dorset
+[10:41] which is just about here that's that
+[10:42] sort of mid gray color so over here in
+[10:45] the side look it's an all point five so
+[10:46] that's that's pretty straightforward
+[10:48] isn't it and if you happen to live in
+[10:50] north yorkshire say up here that's much
+[10:52] darker one so there you would use value
+[10:53] of one and if you happen to live say up
+[10:59] here and the Highlands of Scotland you
+[11:01] down the value is the white one and the
+[11:04] value there is nor point one so that's
+[11:06] just a question of locating it on the
+[11:07] map selecting the appropriate value from
+[11:10] here
+[11:12] so straightaway we've got three values
+[11:14] to which is very easy just looking at a
+[11:17] table or just looking on that map and
+[11:19] they're noting down what the figure is
+[11:21] so say pretty straight forward so far
+[11:23] now LP which is the middle one it's the
+[11:27] risk assessment length which is on the
+[11:28] next page now this is slightly more
+[11:30] involved we got it's not too terrible
+[11:33] now LP as I've got here this is actually
+[11:37] calculated from a whole lot of other
+[11:38] stuff so the risk assessment length is
+[11:41] calculated as follows LP is equal to
+[11:43] basically all of these things added
+[11:45] together now this is where the length
+[11:48] thing comes in and he'll look bit
+[11:50] further down here here's a sort of a
+[11:52] diagram of some typical installation
+[11:55] wiring so high-voltage headlines coming
+[11:58] in and we'll see those across the as
+[12:00] bits the countryside underground high
+[12:04] voltage cabling I'm a big transformer
+[12:06] here next part here we've got our the
+[12:09] underground low voltage cabling then
+[12:14] I've got some overhead low voltage
+[12:15] cabling here I've got a bit more of the
+[12:17] underground low-balled she's coding
+[12:19] there and then trying to actually out
+[12:21] the house itself so there's four things
+[12:23] involved there and how look at the top
+[12:27] here so we've got the linked in
+[12:29] kilometers of low voltage overhead line
+[12:31] length in low voltage on the ground
+[12:33] cable length of high-voltage overhead
+[12:35] line and length of high-voltage
+[12:36] underground cable today so things just
+[12:39] got in the diagram here so you need to
+[12:42] find out what these links actually are
+[12:43] now if it's an overhead wire of course
+[12:45] you can just have a look and see into
+[12:46] the estimate how long it might actually
+[12:47] be on the ground ones it's not going to
+[12:50] be so easy in theory the DNA or the
+[12:54] network operator might be able to give
+[12:55] you some indication of the sorts of
+[12:57] links another thing you could do is say
+[12:59] if you know where the trance will have
+[13:00] to be for the particular property even
+[13:02] if it's all underground you can pretty
+[13:03] much see where the transformer would say
+[13:05] it's halfway down the street and here's
+[13:07] the house here so you could get some
+[13:09] kind of estimation of the distance
+[13:10] across here but even if you don't know
+[13:14] any of these things then not really a
+[13:15] big problem because now to go up here if
+[13:18] the network banks are totally or
+[13:20] partially are known then essentially all
+[13:22] you going to put in is a distance of one
+[13:24] kilometer
+[13:25] you just make one of them which is VL
+[13:26] pal one equal to one kilometer so if you
+[13:30] know some of them you just make that
+[13:32] equal a whole lot equals up to a
+[13:33] kilometer if you don't know any of them
+[13:35] you just make that as one kilometer and
+[13:37] all the rest are 0 so it's not
+[13:40] particularly terrible it's not a
+[13:41] question of finding out what sort of
+[13:43] things you've got and the main
+[13:45] difference here isn't necessarily the
+[13:47] length as much it's more to do with
+[13:48] whether it's overhead or underground
+[13:50] because obviously there's a difference
+[13:52] in the likelihood of things being
+[13:54] affected there now once you've got some
+[13:56] of the lengths or maybe none of the
+[13:57] lengths needs to in put them in here so
+[14:00] those are four lengths so it's one two
+[14:02] three four and all you're doing is pasty
+[14:06] adding these together the only slight
+[14:08] complication is that some of these have
+[14:09] a number in front so where it says two
+[14:10] there you're basically multiplying this
+[14:12] value by two before you actually add
+[14:14] anything together so if you had say some
+[14:17] low value headline and for example that
+[14:20] will say naught point five kilometers or
+[14:22] half then you actually put it in here
+[14:24] most of you two so in that case it would
+[14:25] be two times not point five slightly
+[14:27] equal one lpci which is the underground
+[14:31] cable just put in as it is and again
+[14:33] these two others here whatever length
+[14:35] you've got ears you just Mort will apply
+[14:36] the appropriate value first so in this
+[14:38] case you might want by 0.4 in this case
+[14:41] it's not equal to by a naught point two
+[14:42] and these have been put in because
+[14:44] presumably somebody has worked out that
+[14:46] the different risk factors of whether
+[14:47] it's overhead underground or whatever
+[14:49] so this assumingly more likely to have a
+[14:51] high risk thing so powell is the one
+[14:54] with the low voice overhead line so
+[14:56] that's presumably a higher risk to have
+[14:58] things induced on it and PCH being the
+[15:02] lowest risk has only naught point to
+[15:04] compute a to the length of the
+[15:06] high-voltage underground cable so it's
+[15:08] all to do with risk factors but
+[15:10] essentially just multiplying it by the
+[15:11] value in front of it once you've done
+[15:13] that and you've got all four values add
+[15:16] the four values together and that value
+[15:17] is the LP and that's the third thing
+[15:20] which you saw on the previous page so
+[15:24] once you've got that value here it goes
+[15:25] into the thing on the previous page of
+[15:27] seen so we know that came from the table
+[15:30] we know that that comes from the map and
+[15:32] then LP is that value we just got from
+[15:34] adding those four things together and that goes in
+[15:36] there and then that gives you the CRL or
+[15:39] the calculated risk level value and then
+[15:42] the only thing after that once you've
+[15:44] got this value is whether it's greater
+[15:46] or less than a particular value and if
+[15:49] you look down here if it's greater than
+[15:53] or equal to a thousand protection
+[15:55] against transit no voltage at swagg
+[15:57] origin is not required and it's less
+[16:00] than a thousand then it is required so
+[16:02] all you're looking for at the end value
+[16:03] is it bigger than a thousand or not and
+[16:06] if it is not needed if it's less than
+[16:08] you do now let's do a couple of
+[16:11] calculations just to show how this would
+[16:13] work in practice now first impeding
+[16:16] course is where is the institution
+[16:17] located and what type of station is so
+[16:20] for the first one we'll say that this
+[16:21] installation is located in North Dorset
+[16:23] that's what I happen to live at the
+[16:25] moment and it will say this is a rural
+[16:27] environment because most of Dorset is
+[16:29] raw also question first of all looking
+[16:32] on the map over here here's Dorset at
+[16:34] the bottom here and North Dorset is in
+[16:36] this light gray color so straight away
+[16:39] we could see on the side over here the
+[16:42] light gray is value of naught 0.5 so our
+[16:47] in achieve a leo's it's over there this
+[16:51] case will just be equal to naught point
+[16:53] five and then the second thing we know
+[16:54] it's in a rural area so in the
+[16:57] countryside not much going on there and
+[16:59] at the top of this page got this table
+[17:01] so rural environment the value of F env
+[17:07] I'm still at t equal to 85 that's a
+[17:11] rural environment so 85 now the third
+[17:16] item of course is LP and we've seen
+[17:18] before that's the sum of these various
+[17:19] lengths on different types of cables
+[17:21] when it's over ground or not and there's
+[17:23] other things so thing in mind all of
+[17:25] these are limited to a maximum of one
+[17:27] kilometer in any case and if you don't
+[17:30] know any of the lengths or couldn't
+[17:31] identify them or whatever then you all
+[17:33] you have to put in is basically the L
+[17:34] pal is equal to one and then the others
+[17:37] are zero so we'll do that strike first
+[17:39] away so L pal we know it's going to be
+[17:43] one so look at the top here we've got
+[17:45] two L pal so that's going to be
+[17:47] - we know they'll power it's going to be
+[17:50] one because that's the default value two
+[17:52] times one and then the others all
+[17:55] basically going to be equal to zero
+[17:57] because one being the default value so
+[17:59] in this case it's gonna be adding
+[18:00] absolutely nothing so just betting zero
+[18:02] and the zero
+[18:04] now of course eros adding doesn't
+[18:06] achieve anything two times one is
+[18:08] basically going to be two during this
+[18:11] case LP just if we want
+[18:14] it's simply gonna be equal to the value
+[18:17] two so that's the case if we don't know the
+[18:20] values we'll can't find them or whatever
+[18:21] say cows on the ground can't see them
+[18:23] and so on just assume that that's going
+[18:25] to be one which gives the value of 2
+[18:27] because 2 times 1 is equal to 2 now we
+[18:31] have our three values we just need to
+[18:32] put them into the formula here so the
+[18:34] CRL or the connect later each level as
+[18:38] we saw previously is equal to Fe and V
+[18:40] which we know is 85 let's divide it by
+[18:44] the other two values multiplied together
+[18:46] so it's LP between hours to not to fly
+[18:49] by the other one which is not 0.5 two
+[18:53] times not 0.5 is 1 that's 1 85 85 of
+[18:58] course and of course 85 divided by 1
+[19:01] it's just 85 so in this case the CRL
+[19:06] value is 85 I took on our previous page
+[19:10] so if the Cyril is less than so pretty
+[19:13] obviously 85 is way less than thousand
+[19:15] then protection against transient over
+[19:17] to answering origin is required so in
+[19:20] this case it's going to be yes they are
+[19:24] required because of course the value is
+[19:26] only 85 and that's using the default so
+[19:29] we don't know really the actual links of
+[19:31] cables involved now let's do that same
+[19:34] one again so gonna have the same values
+[19:35] there so 85 for the rural environment
+[19:38] and energy of not 0.5 which if you have
+[19:41] a clock on the map here it's all of the
+[19:43] light gray so it's actually a very large
+[19:44] percentage of the country there there's
+[19:48] very few errors actually it's
+[19:49] considerably larger values so same mouse
+[19:51] game but this time we'll say that we do
+[19:52] know some or even all of the values of
+[19:54] the cabling so instead of putting
+[19:57] overhead this time or just using the
+[19:58] default which is basically the same as
+[20:00] gonna be overhead I'm gonna say we can
+[20:02] see that the ones in the house are
+[20:03] obviously underground because we can't
+[20:05] see them on poles outside and we know
+[20:07] that the transformer its job over here
+[20:09] is about half a kilometer away from the
+[20:12] house and again that's gonna be pretty
+[20:14] obvious and easy to determine you can't
+[20:16] see the cables so you know that
+[20:17] underground general you can see they
+[20:19] transform it's either a building or
+[20:20] something enclosure somewhere else so
+[20:22] half a kilometer there
+[20:24] so our LP value once again is the four
+[20:30] thing that's added together we know that
+[20:33] underground low voltage cable which is
+[20:37] the PCL that's the second item there so
+[20:39] we have something plus not 0.5 and then
+[20:44] possibly two other things at the end now
+[20:46] we'll say that we don't know what the
+[20:47] high-voltage overhead and underground
+[20:48] actually is and we can't actually see
+[20:51] anything else up to that point so we
+[20:52] don't really know what's going on there
+[20:53] so as it set up here being on the total
+[20:57] length is limited to one kilometer and
+[20:59] if it's partially or totally on there
+[21:00] and then L Powell is Satan's equal to
+[21:02] the remaining distance to reach a total
+[21:04] length of one kilometer so the two n
+[21:06] values for the high voltage cabling are
+[21:08] again zero and then the one in here is
+[21:10] also half because a half and a half
+[21:14] years of course total to one and we know
+[21:16] that this first value has two in front
+[21:18] of it so if we just rewrite that in two
+[21:21] times 1/2 it's one half is obviously
+[21:24] still half serious don't matter so the
+[21:28] total value is just those two added just
+[21:30] going to be 1.5 so it's a bit lower than
+[21:34] we had before go to previously and now
+[21:36] it's 1.5 men because we've got some of
+[21:38] the cabling underground which of course
+[21:40] is less likely to be subject to a
+[21:42] transients than something that's
+[21:43] overhead so again we can do that same
+[21:46] house Latian so the CRL is the env which
+[21:50] when it was 85 divided by the other two
+[21:53] multiplied so in this case the endurance
+[21:55] is it's one point five to the value got
+[21:58] here multiplied by the energy which is
+[22:00] still not point 585 on the top
+[22:06] 1 5 times 1/2 is 0.75 and therefore the
+[22:10] total is 85 divided by 0.75 so our total
+[22:14] figure this time is a hundred from the
+[22:15] 13 now that's a bit bigger we had
+[22:18] previously because of course the value
+[22:19] on the bottom is smaller because we had
+[22:21] 85 so now 113 but again that's way less
+[22:24] than a thousand so again this is an
+[22:27] example way it would be required now we
+[22:31] do the same thing again it was an urban
+[22:32] environment again the only difference
+[22:33] would be that the 85 becomes 850 so if
+[22:37] that was 850 father why not point 75
+[22:41] then the result again is just 10 times
+[22:43] bigger so essentially it's 1130 now in
+[22:47] this case that's more than a thousand so
+[22:49] this would mean that it was not acquired
+[22:52] where's this one ears so again it's
+[22:54] basically that top value has a big
+[22:57] impact on the output so if everything
+[22:59] else is the same
+[23:00] rural area less than thousand we are
+[23:04] going to need it urban area greater than
+[23:06] a thousand so we're probably not and
+[23:09] brutal men one this is actually we've
+[23:11] got some underground cabling which again
+[23:12] is far more likely in an urban area now
+[23:16] I'll just do one more let's show what
+[23:17] happen if you went to a different area
+[23:18] and for this one we're going to pick an
+[23:19] area in Lincolnshire just right little
+[23:22] here this completely black dots there
+[23:24] which is must be the most unlucky part
+[23:25] in the country and that's gonna be a
+[23:27] value of one point four four in G so in
+[23:31] that case we know that ng is at one
+[23:34] point four Lincolnshire Leone is a
+[23:37] fairly rural area so we'll start out
+[23:38] with that Fe and V being 85 again for
+[23:44] the rural environment and then for LP
+[23:48] well again assume that we don't know the
+[23:50] length for cabling or we can't see it so
+[23:51] we're good to go for that default value
+[23:53] had before which as we saw mostly works
+[23:56] out as two times the maximum length of
+[23:58] one kilometre all the rest of zero so L
+[24:01] P basically is equal to two so again we
+[24:05] just see that the CRL thing from that
+[24:07] previous page so CL is Fe NV which is 85
+[24:11] divided by the other two multiplied so
+[24:14] it's one point four in this case and the
+[24:17] develop and evolve
+[24:19] - so that's gonna be 85 divided by those
+[24:23] which is 2.8 I can already see it's
+[24:27] gonna be far less than a thousand
+[24:28] because obviously it's going to be
+[24:30] smaller and the value we get in this
+[24:32] case is actually thirty point some
+[24:35] decimal points but the point is it's way
+[24:37] less than a thousand so in that case yes
+[24:41] it's going to be needed and even in this
+[24:43] particular case even if it was the 850
+[24:45] on top that would just be 850 for the
+[24:47] urban area I think and chair does have
+[24:49] some of those and divided by 2.8 and
+[24:53] again it's going to be ten times that so
+[24:54] the result of this case it's going to be
+[24:56] three hundred and three it's a decimal
+[25:00] points whatever so in this particular
+[25:01] case many could have got a much greater
+[25:03] risk factor on the bottom here doesn't
+[25:07] make any difference whether it's urban
+[25:08] or rural it's still way way less than a
+[25:10] thousand so in this case would be
+[25:12] required no matter what and again if you
+[25:16] had the various lengths of different
+[25:17] cabling it would make a small difference
+[25:18] to the bottom here but bearing in mind
+[25:20] it's very likely going to be
+[25:22] considerably less than a thousand in any
+[25:24] case here simply the fact that if it's
+[25:26] 85 on the top star with to get anything
+[25:28] over a thousand this value on the bottom
+[25:30] it's going to have to be incredibly
+[25:31] small
+[25:32] of course it's not going to the case if
+[25:33] you've got one point four and they
+[25:35] already and with 850 on the top it's not
+[25:39] particularly difficult to get it over
+[25:40] assuming you've got a fairly low risk
+[25:42] factor for that so the thing on the top
+[25:45] does make quite a big difference at a
+[25:46] factor of ten bits underneath makes some
+[25:48] difference but in the scheme of things
+[25:50] not particularly significant in many
+[25:53] cases so there's the calculation as to
+[25:56] whether you need surge protection or not
+[25:58] so about your mind that first of all
+[26:00] you've got to go through all those
+[26:01] things on the previous page and decide
+[26:03] that it's not any of those which already
+[26:05] probably counts out 99% of installations
+[26:07] and then if it's not any of those and
+[26:09] it's not a house that doesn't have
+[26:10] anything of value in it then you can
+[26:14] actually do the calculation if you
+[26:15] really want to to determine whether
+[26:16] surge protection is required or not and
+[26:18] even then most cases if you're going to
+[26:21] be living it or what's going to be
+[26:22] located in a rural area then you
+[26:23] probably will need it and in an urban
+[26:25] you probably won't and then even out all
+[26:28] that even if you do want to do the
+[26:29] calculation all that pallava you don't
+[26:31] have to be on paper either because if
+[26:33] you go to the ECA website they've
+[26:35] actually put a calculator on there you
+[26:36] can just use you just fill in the
+[26:37] lengths and the figures and it does the
+[26:39] calculation for you so you don't even
+[26:41] have to it on paper at all even if you
+[26:42] wanted to do it which is gonna be
+[26:44] extremely unlikely and probably never
+[26:45] gonna happen anyway so there's the
+[26:47] calculation for you so although this is
+[26:49] in the regulations and it know that it's
+[26:51] valid you're probably never going to use
+[26:52] it it's not something that can use every
+[26:54] day or even every year because in most
+[26:56] cases that previous page with those four
+[26:59] items will cover pretty much everything
+[27:00] and it's basically saying that in 99% of
+[27:03] cases surge protection is required and
+[27:05] if you find that rare random one a thing
+[27:08] where it doesn't fit into the categories
+[27:10] then in theory you can do the
+[27:11] calculation and then say oh yes we need
+[27:13] it anyway or maybe not depending on
+[27:15] where it's located now link to the
+[27:17] website in question is in the
+[27:19] description of this video so let's have
+[27:21] a look there you don't have to be a member of them or anything it's just
+[27:23] freely available absolute it's
+[27:25] fulfilling the figures and press the
+[27:26] button and it gives you the result
+[27:28] required so that's the calculation there
+[27:30] yes it's there but in reality probably
+[27:34] not you know using it very often or even
+[27:36] ever so that's it for this video and to
+[27:39] next time thanks for watching

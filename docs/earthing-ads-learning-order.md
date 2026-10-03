@@ -1,6 +1,6 @@
 # Earthing, ADS and fault-loop learning order
 
-The [1 October course placement update](curriculum-placement-update.md) retains this Module 5 teaching sequence and carries its migration into curriculum revision 3. Other modules now use 114 sections overall.
+The [1 October course placement update](curriculum-placement-update.md) retains this Module 5 teaching sequence and carries its migration into curriculum revision 3. The [3 October surge-protection update](surge-protection-integration.md) splits the former combined SPD/AFDD topic, adds six videos and introduces curriculum revision 4. The course now has 330 catalogue lessons and 115 sections overall.
 
 Updated 30 September 2026 after the user's review of Module 5. Module names, lesson identities, video URLs, the player and editing controls stay unchanged. The catalogue still contains 324 lessons across 25 modules; three new sections bring the total to 90.
 
@@ -15,8 +15,9 @@ Updated 30 September 2026 after the user's review of Module 5. Module names, les
 | 5 | Automatic disconnection of supply: fault protection | GSH Electrical's ADS lesson connects earthing, bonding and disconnection. |
 | 6 | Earth-fault loop impedance: Ze, Zs and R1 + R2 | Fault path, temperature-corrected calculations, RCD relationship, then advanced touch-voltage calculations. |
 | 7 | Earth electrodes: installation and resistance testing | John Ward's six-video playlist, kept together in its original order. |
-| 8 | Surge protection devices and arc-fault detection devices | Distinguish surge/arc protection from the preceding shock-protection topics. |
-| 9 | Protective-device selection and selectivity | Apply selection and coordination after the protective principles. |
+| 8 | Surge protection devices (SPDs) | Learn the introduction, John Ward Parts 1–6, then the existing SPD-test demonstration. |
+| 9 | Arc-fault detection devices (AFDDs) | Study the existing Schneider Electric arc-fault lesson as its own topic. |
+| 10 | Protective-device selection and selectivity | Apply selection and coordination after the protective principles. |
 
 The RCD/loop-impedance lesson moves from the device introduction into Section 6. The advanced touch-voltage lesson closes the calculation sequence. The electrode playlist retains the coverage limits in [its selection record](earth-electrode-video-selection.md).
 

@@ -4,7 +4,7 @@ import { courseMapSnapshot, type MapRow } from './course-drop-model';
 import { courseForOrder, defaultOrder, type CourseOrder } from './course-order-model';
 import { withSupplementaryDefaults } from './supplementary-defaults';
 import { supplementaryDescendants, youtubeId, type SupplementaryState, type SupplementaryVideo } from './supplementary-model';
-import { curriculumRevision, upgradePublishedGroups } from './curriculum-placement-update';
+import { curriculumRevision, reviewedPlacementRevision, upgradePublishedGroups } from './curriculum-placement-update';
 import { validVideoDuration } from './video-duration';
 
 export type Placement = { sectionId: string; beforeId: string | null };
@@ -41,7 +41,7 @@ export class CourseEditError extends Error {
 // Migration uses the exact legacy rendering order, including archived anchors.
 // Neither legacy document is modified; it remains available for recovery/export.
 export function migratePersonalCourse(order: CourseOrder = defaultOrder, supplementary: SupplementaryState = { version: 1, revision: 0, videos: [] }): PersonalCourse {
-  const videos = withSupplementaryDefaults(supplementary, (order.curriculumRevision ?? 0) < curriculumRevision).videos;
+  const videos = withSupplementaryDefaults(supplementary, (order.curriculumRevision ?? 0) < reviewedPlacementRevision).videos;
   const snapshot = courseMapSnapshot(order, videos.map(v => ({ ...v, archived: false })));
   const groups = Object.fromEntries(Object.entries(snapshot.rows).map(([id, rows]) => [id, rows.map(row => row.id)]));
   // Recover orphaned legacy entries into a valid section instead of losing them.
@@ -74,7 +74,7 @@ export function parsePersonalCourse(value: unknown): PersonalCourse {
 // personal destinations, empty sections, archives and removals stay authoritative.
 export function normalisePersonalCourse(state: PersonalCourse): PersonalCourse {
   const deleted = new Set(state.deletedIds ?? []);
-  const videos = withSupplementaryDefaults({ version: 1, revision: state.revision, videos: state.videos }, (state.curriculumRevision ?? 0) < curriculumRevision).videos.filter(v => !deleted.has(v.id));
+  const videos = withSupplementaryDefaults({ version: 1, revision: state.revision, videos: state.videos }, (state.curriculumRevision ?? 0) < reviewedPlacementRevision).videos.filter(v => !deleted.has(v.id));
   const upgraded = upgradePublishedGroups(state.groups, state.curriculumRevision, new Set(Object.keys(state.itemRevisions).filter(id => state.itemRevisions[id] > 0)), videos);
   const known = new Set([...core.keys(), ...videos.map(v => v.id)].filter(id => !deleted.has(id)));
   const seen = new Set<string>();

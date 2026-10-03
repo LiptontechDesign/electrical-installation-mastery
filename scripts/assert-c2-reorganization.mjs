@@ -6,11 +6,12 @@ export const c2StageOrder = json('./fixtures/c2-stage-order.json');
 const professionalStageOrder = json('./fixtures/professional-stage-order.json');
 export const earthElectrodeAdditions = json('./fixtures/earth-electrode-additions.json');
 export const jpelectricAdditions = json('./fixtures/jpelectric-additions.json');
+export const surgeProtectionAdditions = json('./fixtures/surge-protection-additions.json');
 const baseline = json('./course-baseline.json');
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions]) {
+  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions]) {
     assert.ok(!source.has(lesson.id), 'New lessons must not replace an original identity');
     source.set(lesson.id, lesson);
   }

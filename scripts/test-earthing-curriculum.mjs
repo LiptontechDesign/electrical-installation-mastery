@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { build } from 'esbuild';
 import { incompleteEarthingCourse, firstEightEarthingIds, obsoleteEarthingIds } from './fixtures/earthing-incomplete-course.mjs';
+import { surgeProtectionAdditions } from './assert-c2-reorganization.mjs';
+const surgeIds = new Set(surgeProtectionAdditions.map(lesson => lesson.id));
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-order-model.ts', 'app/course-progress-model.ts'], outdir: 'work/earthing-regroup-tests', bundle: true, platform: 'node', format: 'esm' });
 const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCourseSnapshot: snapshot, applyCourseEdit: apply, migratePersonalCourse } = await import('../work/earthing-regroup-tests/personal-course-model.js');
 const { orderedSections, moveLesson } = await import('../work/earthing-regroup-tests/course-order-model.js');
@@ -20,9 +22,9 @@ const oldState = () => {
 const change = (state, edit) => apply(state, { revision: state.revision, operationId: crypto.randomUUID(), edit });
 const before = oldState(), upgraded = parse(before), rows = snapshot(upgraded);
 assert.deepEqual(upgraded.groups, base.groups, 'An untouched saved course receives the complete new teaching order');
-assert.deepEqual([...Object.values(before.groups).flat()].sort(), [...Object.values(upgraded.groups).flat()].sort(), 'No video is lost, added or duplicated');
+assert.deepEqual([...Object.values(before.groups).flat()].sort(), [...Object.values(upgraded.groups).flat().filter(id => !surgeIds.has(id))].sort(), 'No previous video is lost or duplicated');
 assert.equal(upgraded.revision, 12);
-assert.equal(upgraded.curriculumRevision, 3);
+assert.equal(upgraded.curriculumRevision, 4);
 assert.deepEqual(parse(upgraded), upgraded, 'Reading an upgraded course is idempotent');
 assert.equal(before.curriculumRevision, undefined, 'Normalising does not mutate the stored input');
 assert.equal(rows.byId.get('p05-l10').sectionId, 'module-06-cpc-sizing');
@@ -66,7 +68,7 @@ assert.equal(upgradedMixed.groups['module-05-fault-loop'][2], child.id);
 
 const marked = new Set(['p05-l06', 'p05-l10', 'course-TFt3d77LujQ', 'p05-l15']);
 const oldProgress = progressForVideos(Object.values(before.groups).flat(), marked);
-assert.deepEqual(progressForVideos(rows.allRows.map(row => row.id), marked), oldProgress, 'Moving lessons keeps overall watched totals unchanged');
+assert.deepEqual(progressForVideos(rows.allRows.filter(row => !surgeIds.has(row.id)).map(row => row.id), marked), oldProgress, 'Moving lessons keeps overall watched totals unchanged');
 for (const [id, destination] of [['p05-l06', 'module-05-ads'], ['p05-l10', 'module-06-cpc-sizing'], ['course-TFt3d77LujQ', 'module-08-section-2']]) {
   assert.equal(progressForVideos(rows.rows[destination].map(row => row.id), marked).watched, 1, id + ' keeps its watched mark at its destination');
 }
@@ -95,15 +97,15 @@ for (const revision of [0, 1]) {
   assert.deepEqual(repaired.groups['module-06-cpc-sizing'], ['p05-l10']);
   assert.equal(repaired.groups['module-08-section-2'][0], 'course-TFt3d77LujQ');
   for (const id of obsoleteEarthingIds) assert.ok(!repaired.groups['module-05-section-3'].includes(id));
-  assert.deepEqual(Object.values(repaired.groups).flat().sort(), Object.values(incomplete.groups).flat().sort(), 'Relocation does not lose or duplicate any video');
+  assert.deepEqual(Object.values(repaired.groups).flat().filter(id => !surgeIds.has(id)).sort(), Object.values(incomplete.groups).flat().filter(id => !surgeIds.has(id)).sort(), 'Relocation does not lose or duplicate any previous video');
   assert.deepEqual(repaired.videos, incomplete.videos);
   assert.deepEqual(repaired.receipts, incomplete.receipts);
   assert.deepEqual(repaired.itemRevisions, incomplete.itemRevisions);
   assert.equal(repaired.revision, incomplete.revision);
-  assert.equal(repaired.curriculumRevision, 3);
+  assert.equal(repaired.curriculumRevision, 4);
   assert.deepEqual(parse(repaired), repaired);
   assert.deepEqual(incomplete, original);
-  assert.deepEqual(progressForVideos(repairedRows.allRows.map(row => row.id), marked), progressForVideos(Object.values(incomplete.groups).flat(), marked));
+  assert.deepEqual(progressForVideos(repairedRows.allRows.filter(row => !surgeIds.has(row.id)).map(row => row.id), marked), progressForVideos(Object.values(incomplete.groups).flat().filter(id => !surgeIds.has(id)), marked));
   const later = change(repaired, { type: 'move', id: 'p05-l06', sectionId: 'module-05-section-3', beforeId: null });
   assert.equal(snapshot(parse(later)).byId.get('p05-l06').sectionId, 'module-05-section-3', 'A new personal move after revision 2 stays authoritative');
 }

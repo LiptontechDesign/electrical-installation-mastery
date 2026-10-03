@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
+import { surgeProtectionAdditions } from './assert-c2-reorganization.mjs';
+const surgeIds = new Set(surgeProtectionAdditions.map(lesson => lesson.id));
 await build({entryPoints:['app/personal-course-model.ts','app/course-order-model.ts','app/course-progress-model.ts'],outdir:'work/placement-tests',bundle:true,platform:'node',format:'esm'});
 const model=await import('../work/placement-tests/personal-course-model.js');
 const { orderedSections, moveLesson }=await import('../work/placement-tests/course-order-model.js');
@@ -17,13 +19,13 @@ const change=(state,edit)=>apply(state,{revision:state.revision,operationId:cryp
 assert.deepEqual(upgraded.groups,base.groups,'An actual revision-2 saved course receives the complete public teaching order');
 assert.deepEqual(before,original,'Reading never mutates the saved input');
 assert.deepEqual(parse(upgraded),upgraded,'The update is idempotent');
-assert.equal(upgraded.curriculumRevision,3);
+assert.equal(upgraded.curriculumRevision,4);
 assert.equal(upgraded.revision,before.revision,'A read does not consume an edit revision');
-assert.equal(view.allRows.length,356);
-assert.equal(Object.keys(view.rows).length,114);
-assert.equal(sections.length,114);
+assert.equal(view.allRows.length,362);
+assert.equal(Object.keys(view.rows).length,115);
+assert.equal(sections.length,115);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'All published sections contain videos, including supplementary-only sections');
-assert.deepEqual(Object.values(upgraded.groups).flat().sort(),Object.values(before.groups).flat().sort(),'No old video is lost, duplicated or added');
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!surgeIds.has(id)).sort(),Object.values(before.groups).flat().sort(),'No old video is lost or duplicated');
 assert.ok(Object.keys(before.groups).every(id=>Object.hasOwn(upgraded.groups,id)),'Every previous section remains a valid edit/Undo destination');
 assert.equal(catalog.modules.length,25);
 
@@ -68,7 +70,7 @@ for(const id of ['p07-l16','p12-v2-l22']){
 assert.match(catalog.modules.find(m=>m.id==='c1-earthing').description,/Part 1 in Module 5, Section 6/);
 
 const marked=new Set(Object.keys(expectedHomes).map(idFor).slice(0,16));
-assert.deepEqual(progressForVideos(view.allRows.map(row=>row.id),marked),progressForVideos(Object.values(before.groups).flat(),marked),'Overall watched totals survive all moves');
+assert.deepEqual(progressForVideos(view.allRows.filter(row=>!surgeIds.has(row.id)).map(row=>row.id),marked),progressForVideos(Object.values(before.groups).flat(),marked),'Overall watched totals survive all moves');
 for(const row of view.allRows.filter(row=>marked.has(row.id)))assert.ok(progressForVideos(view.rows[row.sectionId].map(r=>r.id),marked).watched>0);
 for(const moduleId of new Set(view.allRows.map(row=>row.moduleId))){
   const rows=view.allRows.filter(row=>row.moduleId===moduleId);
@@ -105,10 +107,10 @@ removed.videos=removed.videos.filter(v=>v.id!=='c2-socket-planning-design');
 const removedUp=parse(removed),removedView=snapshot(removedUp);
 assert.deepEqual(removedUp.archivedLessonIds,removed.archivedLessonIds);
 assert.deepEqual(removedUp.deletedIds,removed.deletedIds);
-assert.equal(removedView.allRows.length,352);
+assert.equal(removedView.allRows.length,358);
 for(const id of [...removed.deletedIds,...removed.archivedLessonIds,'c2-equipment-protection-classes'])assert.ok(!removedView.byId.has(id),'Removed or archived row stays inactive: '+id);
 const restored=change(removedUp,{type:'restore',id:idFor('Mxv3OVVjANs'),sectionId:'module-09-rcd-leakage',beforeId:null});
-assert.equal(snapshot(restored).allRows.length,353);
+assert.equal(snapshot(restored).allRows.length,359);
 assert.ok(!snapshot(parse(restored)).byId.has(moved),'Restoring another video does not revive deletions');
 
 const attached=structuredClone(before),ramp=idFor('Mxv3OVVjANs');
@@ -128,7 +130,7 @@ assert.deepEqual(details(attachedUp.videos),details(attached.videos),'Private vi
 assert.equal(attachedUp.videos.find(v=>v.id===protectedChild.id).moduleId,'module-08','Stored metadata follows the explicit personal destination');
 assert.equal(attachedUp.videos.find(v=>v.id===child.id).moduleId,'module-09','Nested support metadata follows its relocated group');
 assert.deepEqual(parse(attachedUp),attachedUp);
-assert.deepEqual(Object.values(attachedUp.groups).flat().sort(),Object.values(attached.groups).flat().sort());
+assert.deepEqual(Object.values(attachedUp.groups).flat().filter(id=>!surgeIds.has(id)).sort(),Object.values(attached.groups).flat().sort());
 
 const legacy={version:1,revision:5,groups:Object.fromEntries(Object.entries(before.groups).map(([sectionId,ids])=>[sectionId,ids.filter(id=>catalog.modules.some(m=>m.lessons.some(l=>l.id===id)))])),curriculumRevision:2};
 assert.deepEqual(migratePersonalCourse(legacy,{version:1,revision:5,videos:before.videos}).groups,base.groups,'Legacy separate order/supplement documents also receive the new sequence');
