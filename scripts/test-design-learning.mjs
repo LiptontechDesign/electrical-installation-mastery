@@ -20,7 +20,7 @@ for (const section of sections.filter(s => !['module-06', 'c2-boards'].includes(
 const overview = sections.find(s => s.id === 'module-06-efixx-overview');
 const lessons = new Map(catalog.modules.flatMap(m => m.lessons).map(l => [l.id, l]));
 assert.deepEqual(overview.lessonIds.map(id => lessons.get(id).videoId), ['42qk0TSwbAs', 'GyQkZnvc9jg', 'y5mQPAHajQI', '4seJf2Ql_0E', 'uxowSpL-cKM', 'CP6noiQp79I', 'q3rSnVEJ7kA', 'GKdW9H_5NA4', '2ClZKN1Qxaw', 'QUC17Kju4ug']);
-assert.match(overview.description, /Watch Parts 1 and 2 in order/);
+assert.match(overview.description, /Watch Parts 1 & 2, then explore each design step/);
 assert.deepEqual(sections.filter(s => s.moduleId === 'module-06').map(s => view.rows[s.id].length), [10, 3, 2, 3, 2, 2, 4, 2, 4, 1, 1]);
 assert.deepEqual(sections.filter(s => s.moduleId === 'c2-boards').map(s => view.rows[s.id].map(r => r.id)), [['course-BeoujaqN-68', 'p02-l10'], ['p03-l13'], ['p03-l12']]);
 const custom = structuredClone(before);

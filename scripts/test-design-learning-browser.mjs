@@ -30,8 +30,8 @@ try {
     assert.equal(await module6.locator('.section-title').count(), 11);
     const overview = page.locator(`[data-course-section="${overviewId}"]`);
     assert.equal(await overview.locator('[data-course-row]').count(), 10);
-    assert.match(await overview.locator('.course-section-description').textContent(), /Watch Parts 1 and 2 in order/);
-    assert.match(await page.locator('.lesson-section-introduction').textContent(), /Watch Parts 1 and 2 in order/);
+    assert.match(await overview.locator('.course-section-description').textContent(), /Watch Parts 1 & 2, then explore each design step/);
+    assert.match(await page.locator('.lesson-section-introduction').textContent(), /Watch Parts 1 & 2, then explore each design step/);
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
     if (mobile) await overview.locator('summary').scrollIntoViewIfNeeded();
     await page.screenshot({ path: `work/editor-preview/design-learning-${mobile ? 'mobile' : 'desktop'}.png`, fullPage: true });
