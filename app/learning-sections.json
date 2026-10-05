@@ -504,82 +504,150 @@
     ]
   },
   {
-    "id": "module-06-section-1",
+    "id": "module-06-efixx-overview",
+    "title": "Complete Circuit Design with eFIXX — Parts 1 & 2",
+    "lessonIds": [
+      "c2-design-overview-01",
+      "c2-design-overview-02",
+      "c2-design-overview-03",
+      "c2-design-overview-04",
+      "c2-design-overview-05",
+      "c2-design-overview-06",
+      "c2-design-overview-07",
+      "c2-design-overview-08",
+      "c2-design-overview-09",
+      "c2-design-overview-10"
+    ],
+    "description": "Start with this connected design example to understand how the decisions fit together. Watch Parts 1 and 2 in order, then use the following sections for further explanations and worked calculations.",
     "moduleId": "module-06",
-    "number": 1,
-    "title": "Load assessment, demand and design current",
+    "number": 1
+  },
+  {
+    "id": "module-06-section-1",
+    "title": "Understanding the Design Brief and Planning Loads",
     "lessonIds": [
       "p06-l01",
-      "p10-l09",
-      "p06-l11",
-      "p11-v2-l07",
-      "p06-l12",
+      "p10-l09"
+    ],
+    "moduleId": "module-06",
+    "number": 2
+  },
+  {
+    "id": "module-06-design-current",
+    "title": "Calculating Single-Phase Design Current (Ib)",
+    "lessonIds": [
       "p06-l02",
       "p06-l03"
-    ]
+    ],
+    "moduleId": "module-06",
+    "number": 3
+  },
+  {
+    "id": "module-06-demand-diversity",
+    "title": "Maximum Demand and Diversity",
+    "lessonIds": [
+      "p06-l11",
+      "p11-v2-l07",
+      "p06-l12"
+    ],
+    "moduleId": "module-06",
+    "number": 4
+  },
+  {
+    "id": "module-06-cable-capacity",
+    "title": "Cable Capacity (Iz) and Installation Methods",
+    "lessonIds": [
+      "course-ps2vW6d29Ug"
+    ],
+    "moduleId": "module-06",
+    "number": 5
+  },
+  {
+    "id": "module-06-rating-factors",
+    "title": "Cable Rating Factors: Temperature, Grouping and Insulation",
+    "lessonIds": [
+      "c2-design-rating-factors",
+      "p06-l10"
+    ],
+    "moduleId": "module-06",
+    "number": 6
   },
   {
     "id": "module-06-section-2",
-    "moduleId": "module-06",
-    "number": 2,
-    "title": "Cable capacity, installation methods and correction factors",
+    "title": "Selecting Cable Size — Worked Calculations",
     "lessonIds": [
       "p06-l04",
-      "p06-l10",
-      "course-8Z255dd78H4",
-      "course-ps2vW6d29Ug"
-    ]
+      "course-8Z255dd78H4"
+    ],
+    "moduleId": "module-06",
+    "number": 7
   },
   {
     "id": "module-06-ring-design",
-    "moduleId": "module-06",
-    "number": 3,
-    "title": "Ring-final circuit design and load distribution",
+    "title": "Ring-Final Circuit Design and Load Distribution",
     "lessonIds": [
       "course-DRxoEzWzZVs",
       "course-105Zv2Oplx0"
-    ]
+    ],
+    "moduleId": "module-06",
+    "number": 8
   },
   {
     "id": "module-06-section-3",
-    "moduleId": "module-06",
-    "number": 4,
-    "title": "Voltage-drop calculation and compliance",
+    "title": "Calculating and Assessing Voltage Drop",
     "lessonIds": [
       "p06-l07",
       "p06-l08",
       "p06-l09"
-    ]
+    ],
+    "moduleId": "module-06",
+    "number": 9
   },
   {
     "id": "module-06-cpc-sizing",
-    "moduleId": "module-06",
-    "number": 5,
-    "title": "Circuit protective conductor sizing and fault withstand",
+    "title": "CPC Sizing and Thermal Fault Withstand",
     "lessonIds": [
       "p05-l10"
-    ]
+    ],
+    "moduleId": "module-06",
+    "number": 10
   },
   {
     "id": "module-06-section-4",
-    "moduleId": "module-06",
-    "number": 6,
-    "title": "Prospective fault duty and breaker breaking capacity",
+    "title": "Prospective Fault Current and Breaker Breaking Capacity",
     "lessonIds": [
       "p06-l15"
-    ]
+    ],
+    "moduleId": "module-06",
+    "number": 11
   },
   {
     "id": "c2-boards-section-1",
-    "moduleId": "c2-boards",
-    "number": 1,
-    "title": "Torque, consumer-unit assembly and supply arrangements",
+    "title": "Safe Isolation and Consumer-Unit Supply Arrangements",
     "lessonIds": [
       "course-BeoujaqN-68",
-      "p03-l13",
-      "p03-l12",
       "p02-l10"
-    ]
+    ],
+    "moduleId": "c2-boards",
+    "number": 1
+  },
+  {
+    "id": "c2-boards-torque",
+    "title": "Correct Torque and Secure Terminations",
+    "lessonIds": [
+      "p03-l13"
+    ],
+    "moduleId": "c2-boards",
+    "number": 2
+  },
+  {
+    "id": "c2-boards-assembly",
+    "title": "Consumer-Unit Assembly and Connections",
+    "lessonIds": [
+      "p03-l12"
+    ],
+    "moduleId": "c2-boards",
+    "number": 3
   },
   {
     "id": "module-08-section-1",

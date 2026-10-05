@@ -64,7 +64,7 @@ try {
     await dialog.getByRole('radio',{name:'At the beginning',exact:true}).check();
     await dialog.getByRole('button',{name:'Move video',exact:true}).click();
     await dialog.waitFor({state:'hidden'});
-    assert.equal(f.state().curriculumRevision,4);
+    assert.equal(f.state().curriculumRevision, 5);
     assert.equal(model.personalCourseSnapshot(f.state()).byId.get(arcFaultId).sectionId,sourceId);
     await page.locator('.personal-course-notice').getByRole('button',{name:'Undo',exact:true}).click();
     await page.getByText('Change undone.',{exact:true}).waitFor();

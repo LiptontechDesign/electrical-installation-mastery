@@ -1,6 +1,6 @@
 # Current documentation
 
-Updated 3 October 2026. This index and the root README describe the current application, not a future roadmap.
+Updated 5 October 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
 - [Video-only cleanup](video-only-cleanup.md): what was retained, removed and verified.
@@ -9,6 +9,7 @@ Updated 3 October 2026. This index and the root README describe the current appl
 - [Earth-electrode video selection](earth-electrode-video-selection.md): Module 5 sequence, verified creator links, electrode/test coverage and source limitations.
 - [C2 testing playlist integration](c2-testing-playlist-integration.md): approved JPElectric lessons, teaching order, excluded and retired videos, and preservation of personal course arrangements.
 - [Earthing, ADS and fault-loop learning order](earthing-ads-learning-order.md): revised Module 5 sections, conductor sizing in Module 6, bonding assessment in Module 8 and saved-course migration.
+- [Design learning structure](design-learning-structure.md): the Module 6 eFIXX overview, focused design sections, Module 7 assembly groups and revision-5 saved-course migration.
 - [Surge-protection integration](surge-protection-integration.md): six supplied John Ward videos, separate SPD/AFDD sections in Module 5 and revision-4 saved-course migration.
 - [Reviewed curriculum placements](curriculum-placement-update.md): the 1 October testing/design/fault groups, specialist-system sequences and revision-3 saved-course migration; the surge-protection update adds the 115th section.
 - [Pathway progress and supplementary durations](pathway-progress-and-video-duration.md): selected-pathway counters, overall totals, scoped next-unwatched navigation and verified running times.

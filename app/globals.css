@@ -1072,3 +1072,6 @@ kbd {
 .delete-account label { display: grid; gap: 7px; margin-bottom: 12px; }
 .delete-account input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); color: var(--ink); }
 .delete-account .danger { width: calc(100% - 28px); margin-bottom: 14px; }
+
+.course-section-description { margin: 0 14px 12px; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+.lesson-section-introduction { margin: 0 0 20px; color: var(--muted); line-height: 1.7; }

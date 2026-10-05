@@ -7,11 +7,13 @@ const professionalStageOrder = json('./fixtures/professional-stage-order.json');
 export const earthElectrodeAdditions = json('./fixtures/earth-electrode-additions.json');
 export const jpelectricAdditions = json('./fixtures/jpelectric-additions.json');
 export const surgeProtectionAdditions = json('./fixtures/surge-protection-additions.json');
+export const designLearningAdditions = json('./fixtures/design-learning-additions.json');
+export const designOverviewIds = new Set(json('../app/design-learning-update.json').overviewLessonIds);
 const baseline = json('./course-baseline.json');
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions]) {
+  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions]) {
     assert.ok(!source.has(lesson.id), 'New lessons must not replace an original identity');
     source.set(lesson.id, lesson);
   }
@@ -26,8 +28,9 @@ export function assertC2Reorganization(course) {
   assert.deepEqual(identities, [...source.values()].sort((a, b) => a.id.localeCompare(b.id)), 'Preserve every original video and stable learner-state identity');
   for (const lesson of lessons) assert.equal(lesson.url, `https://www.youtube.com/watch?v=${lesson.videoId}`);
   for (const key of ['id', 'videoId', 'title']) {
-    const values = lessons.map(lesson => key === 'title' ? lesson.title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim() : lesson[key]);
-    assert.equal(new Set(values).size, lessons.length, `No canonical duplicate ${key}`);
+    const entries = key === 'videoId' ? lessons.filter(lesson => !designOverviewIds.has(lesson.id)) : lessons;
+    const values = entries.map(lesson => key === 'title' ? lesson.title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim() : lesson[key]);
+    assert.equal(new Set(values).size, entries.length, `No unapproved canonical duplicate ${key}`);
   }
   const anchors = { 'course-TqdQRgf3uGs': 'course-Me_adh09CdY', 'course-lIit5k8QVj8': 'p05-spd',
     'course-V6WR_TBf1AU': 'p05-l14', 'course-8Z255dd78H4': 'p06-l10' };

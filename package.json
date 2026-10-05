@@ -56,7 +56,9 @@
     "test:course-experience": "node scripts/test-course-experience-browser.mjs",
     "test:personal-course-conflicts": "node scripts/test-personal-course-conflicts.mjs",
     "test:surge-protection": "node scripts/test-surge-protection.mjs",
-    "test:surge-protection-browser": "node scripts/test-surge-protection-browser.mjs"
+    "test:surge-protection-browser": "node scripts/test-surge-protection-browser.mjs",
+    "test:design-learning": "node scripts/test-design-learning.mjs",
+    "test:design-learning-browser": "node scripts/test-design-learning-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

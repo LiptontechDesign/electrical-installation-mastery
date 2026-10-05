@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { build } from 'esbuild';
-import { surgeProtectionAdditions } from './assert-c2-reorganization.mjs';
+import { surgeProtectionAdditions, designLearningAdditions } from './assert-c2-reorganization.mjs';
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-order-model.ts', 'app/course-progress-model.ts'], outdir: 'work/surge-tests', bundle: true, platform: 'node', format: 'esm' });
 const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCourseSnapshot: snapshot, applyCourseEdit: apply, migratePersonalCourse } = await import('../work/surge-tests/personal-course-model.js');
 const { orderedSections, moveLesson } = await import('../work/surge-tests/course-order-model.js');
@@ -11,6 +11,7 @@ const previous = JSON.parse(readFileSync('scripts/fixtures/surge-protection-prev
 const sections = JSON.parse(readFileSync('app/learning-sections.json', 'utf8'));
 const catalog = JSON.parse(readFileSync('app/video-catalog.json', 'utf8'));
 const sourceId = 'module-05-section-5', destinationId = 'module-05-arc-fault', arcFaultId = 'course-lIit5k8QVj8';
+const designIds = new Set(designLearningAdditions.map(lesson => lesson.id));
 const newIds = new Set(surgeProtectionAdditions.map(lesson => lesson.id));
 assert.equal(surgeProtectionAdditions.length, 6);
 assert.deepEqual(surgeProtectionAdditions.map(lesson => lesson.videoId), ['DWBFHjE5zK0', '-ehw6uZOOfw', '5XO5d2vLUsw', 'fczDUB6KNDk', 'f6PpvrCgyEA', 'EplV5B9fYVU']);
@@ -19,18 +20,18 @@ assert.equal(sections.find(section => section.id === sourceId).title, 'Surge pro
 assert.equal(sections.find(section => section.id === destinationId).title, 'Arc-fault detection devices (AFDDs)');
 const original = structuredClone(previous), upgraded = parse(previous), view = snapshot(upgraded);
 assert.deepEqual(upgraded.groups, base.groups, 'A revision-3 saved course receives the same arrangement as a new course');
-assert.equal(upgraded.curriculumRevision, 4);
+assert.equal(upgraded.curriculumRevision, 5);
 assert.equal(upgraded.revision, previous.revision);
 assert.deepEqual(previous, original, 'Reading does not modify the stored course');
 assert.deepEqual(parse(upgraded), upgraded, 'The migration runs only once');
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)).sort(), Object.values(previous.groups).flat().sort(), 'Every previous video survives exactly once');
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id) && !designIds.has(id)).sort(), Object.values(previous.groups).flat().sort(), 'Every previous video survives exactly once');
 for (const [id, ids] of Object.entries(previous.groups)) {
-  if (id === sourceId) continue;
+  if (id === sourceId || sections.some(section => section.id === id && ['module-06', 'c2-boards'].includes(section.moduleId))) continue;
   assert.deepEqual(upgraded.groups[id], ids, 'Unrelated saved group remains unchanged: ' + id);
 }
 assert.deepEqual(upgraded.groups[sourceId], ['c2-spd-foundation', 'course-CNiLNvBLopI', ...newIds, 'p05-spd']);
 assert.deepEqual(upgraded.groups[destinationId], [arcFaultId]);
-assert.deepEqual(upgraded.videos, previous.videos);
+assert.deepEqual(upgraded.videos.filter(v => v.id !== 'c2-installation-reference-methods'), previous.videos.filter(v => v.id !== 'c2-installation-reference-methods'));
 for (const courseModule of catalog.modules) {
   const numbers = view.allRows.filter(row => row.moduleId === courseModule.id).map(row => row.displayNumber);
   assert.deepEqual(numbers, numbers.map((_, index) => index + 1));
@@ -39,7 +40,7 @@ const marked = new Set(['p05-spd', arcFaultId, 'p05-l14']);
 const beforeProgress = progressForVideos(Object.values(previous.groups).flat(), marked);
 const afterProgress = progressForVideos(view.allRows.map(row => row.id), marked);
 assert.equal(afterProgress.watched, beforeProgress.watched);
-assert.equal(afterProgress.total, beforeProgress.total + 6, 'New videos increase the total without changing watched marks');
+assert.equal(afterProgress.total, beforeProgress.total + 6 + designLearningAdditions.length, 'New videos increase the total without changing watched marks');
 assert.equal(progressForVideos(view.rows[destinationId].map(row => row.id), marked).watched, 1);
 const change = (state, edit) => apply(state, { revision: state.revision, operationId: crypto.randomUUID(), edit });
 const custom = structuredClone(previous);
@@ -75,7 +76,7 @@ const mixedUp = parse(mixed);
 assert.deepEqual(mixedUp.groups[destinationId], ['private-child','private-afdd',arcFaultId], 'Nested legacy attachments keep their relative order, including hidden parents');
 assert.equal(snapshot(mixedUp).byId.get('private-surge').sectionId, sourceId);
 assert.equal(snapshot(mixedUp).byId.get('private-moved').sectionId, sourceId, 'An explicitly edited private position is retained');
-assert.deepEqual(mixedUp.videos, mixed.videos);
+assert.deepEqual(mixedUp.videos.filter(v => v.id !== 'c2-installation-reference-methods'), mixed.videos.filter(v => v.id !== 'c2-installation-reference-methods'));
 assert.deepEqual(mixedUp.groups[sourceId].filter(id => !newIds.has(id)), mixed.groups[sourceId].filter(id => ![arcFaultId,'private-afdd','private-child'].includes(id)));
 const removed = structuredClone(previous);
 removed.archivedLessonIds = [arcFaultId];

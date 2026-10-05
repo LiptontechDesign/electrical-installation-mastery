@@ -3,6 +3,7 @@ import { learningSections } from './learning-sections';
 import type { SupplementaryState, SupplementaryVideo } from './supplementary-model';
 import durationData from './supplementary-durations.json';
 import { validVideoDuration } from './video-duration';
+import designUpdate from './design-learning-update.json';
 const verifiedDurations: Record<string, number> = durationData;
 
 // Approved study-plan media. Durations come from each video's public YouTube metadata.
@@ -34,7 +35,7 @@ const resources = [
   ['c2-protection-mcb-rcd-rcbo','nVi5Idyt-jE','RCDs, RCBOs and MCBs Explained — What They Do Inside Your Fuse Box','LEARN ELECTRICS','p02-l07','before'],
   ['c2-conduit-capacity-part-one','o8pcBZSGa6s','How to Work Out Conduit Cable Capacity — Appendix E, Part 1','GSH Electrical','p04-l09','before'],
   ['c2-trunking-conduit-factors','RBXeU_9UUbo','Trunking and Conduit Calculations — Cable Factors and Appendix E','LEARN ELECTRICS','p04-l10','after'],
-  ['c2-installation-reference-methods','xxsB91hzSeY','Installation Reference Methods — BS 7671 Amendment 2','LEARN ELECTRICS','p06-l04','before'],
+  ['c2-installation-reference-methods','xxsB91hzSeY','Installation Reference Methods — BS 7671 Amendment 2','LEARN ELECTRICS','course-ps2vW6d29Ug','after'],
   ['c2-live-conductor-sizing','wAcqKNBxy-w','Cable Calculation — Calculating the Live Cable Size from BS 7671','Electrical Student','p06-l04','after'],
   ['c2-complete-cable-sizing','OwpTVeJ231A','Cable Size Calculations — BS 7671 Amendment 2','LEARN ELECTRICS','course-8Z255dd78H4','after'],
   ['c2-voltage-drop-masterclass','yMgyWxzGN-U','Voltage Drop Masterclass — Single Point and Distributed Loads','LEARN ELECTRICS','p06-l08','after'],
@@ -61,6 +62,7 @@ const locations=new Map([...learningSections.map(s=>[s.id,s.moduleId] as const),
 const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
 // This C1 core video is also an intentionally placed C2 supporting lesson.
 export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w']);
+const intentionalDesignRepeatVideoIds = new Set(designUpdate.repeatableVideoIds);
 const seedLocations=new Map<string,string>(locations);
 const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>{
   const moduleId=seedLocations.get(anchorId);
@@ -76,16 +78,19 @@ const reviewedAnchors = new Map<string, { anchorId: string; position: 'before' |
   ['c2-socket-planning-design', { anchorId: 'p06-l15', position: 'after' }],
   ['c1-motor-phase-loss', { anchorId: 'p10-l08', position: 'after' }],
 ]);
-export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlacements = true):SupplementaryState {
-  // Promoted videos keep their stored history without displaying a second copy.
-  // The approved C1-to-C2 study bridge above is the sole deliberate exception.
-  const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)).map(video=>{
+export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlacements = true, designPlacements = true):SupplementaryState {
+  // Preserve the approved cross-path bridge and personal copies of the design
+  // overview videos: repeating those lessons is intentional reinforcement.
+  const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)||intentionalDesignRepeatVideoIds.has(video.videoId)).map(video=>{
     const seed=defaults.find(item=>item.id===video.id||item.videoId===video.videoId);
     // One curriculum migration; later visitor moves are preserved.
     let migrated=seed&&!video.placementRevision ? {...video,moduleId:seed.moduleId,anchorId:seed.anchorId,position:seed.position,title:video.title.replace(/^Protection study path \d+\/10 · /,''),placementRevision:3} : video;
     const previous = reviewedAnchors.get(video.id);
     if (reviewedPlacements && seed && previous && (migrated.placementRevision ?? 0) < 3 && migrated.anchorId === previous.anchorId && migrated.position === previous.position) {
       migrated = {...migrated, anchorId:seed.anchorId, position:seed.position, placementRevision:3};
+    }
+    if (designPlacements && seed && video.id === 'c2-installation-reference-methods' && migrated.anchorId === 'p06-l04' && migrated.position === 'before' && (migrated.placementRevision ?? 0) < designUpdate.revision) {
+      migrated = {...migrated, anchorId:seed.anchorId, position:seed.position, placementRevision:designUpdate.revision};
     }
     const { durationSeconds: storedDuration, ...details } = migrated;
     const durationSeconds = validVideoDuration(storedDuration) ?? verifiedDurations[migrated.videoId];

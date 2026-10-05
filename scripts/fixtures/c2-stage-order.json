@@ -383,35 +383,71 @@
   ],
   "module-06": [
     {
-      "title": "Load assessment, demand and design current",
+      "title": "Complete Circuit Design with eFIXX — Parts 1 & 2",
+      "lessonIds": [
+        "c2-design-overview-01",
+        "c2-design-overview-02",
+        "c2-design-overview-03",
+        "c2-design-overview-04",
+        "c2-design-overview-05",
+        "c2-design-overview-06",
+        "c2-design-overview-07",
+        "c2-design-overview-08",
+        "c2-design-overview-09",
+        "c2-design-overview-10"
+      ]
+    },
+    {
+      "title": "Understanding the Design Brief and Planning Loads",
       "lessonIds": [
         "p06-l01",
-        "p10-l09",
-        "p06-l11",
-        "p11-v2-l07",
-        "p06-l12",
+        "p10-l09"
+      ]
+    },
+    {
+      "title": "Calculating Single-Phase Design Current (Ib)",
+      "lessonIds": [
         "p06-l02",
         "p06-l03"
       ]
     },
     {
-      "title": "Cable capacity, installation methods and correction factors",
+      "title": "Maximum Demand and Diversity",
       "lessonIds": [
-        "p06-l04",
-        "p06-l10",
-        "course-8Z255dd78H4",
+        "p06-l11",
+        "p11-v2-l07",
+        "p06-l12"
+      ]
+    },
+    {
+      "title": "Cable Capacity (Iz) and Installation Methods",
+      "lessonIds": [
         "course-ps2vW6d29Ug"
       ]
     },
     {
-      "title": "Ring-final circuit design and load distribution",
+      "title": "Cable Rating Factors: Temperature, Grouping and Insulation",
+      "lessonIds": [
+        "c2-design-rating-factors",
+        "p06-l10"
+      ]
+    },
+    {
+      "title": "Selecting Cable Size — Worked Calculations",
+      "lessonIds": [
+        "p06-l04",
+        "course-8Z255dd78H4"
+      ]
+    },
+    {
+      "title": "Ring-Final Circuit Design and Load Distribution",
       "lessonIds": [
         "course-DRxoEzWzZVs",
         "course-105Zv2Oplx0"
       ]
     },
     {
-      "title": "Voltage-drop calculation and compliance",
+      "title": "Calculating and Assessing Voltage Drop",
       "lessonIds": [
         "p06-l07",
         "p06-l08",
@@ -419,13 +455,13 @@
       ]
     },
     {
-      "title": "Circuit protective conductor sizing and fault withstand",
+      "title": "CPC Sizing and Thermal Fault Withstand",
       "lessonIds": [
         "p05-l10"
       ]
     },
     {
-      "title": "Prospective fault duty and breaker breaking capacity",
+      "title": "Prospective Fault Current and Breaker Breaking Capacity",
       "lessonIds": [
         "p06-l15"
       ]
@@ -433,12 +469,22 @@
   ],
   "c2-boards": [
     {
-      "title": "Torque, consumer-unit assembly and supply arrangements",
+      "title": "Safe Isolation and Consumer-Unit Supply Arrangements",
       "lessonIds": [
         "course-BeoujaqN-68",
-        "p03-l13",
-        "p03-l12",
         "p02-l10"
+      ]
+    },
+    {
+      "title": "Correct Torque and Secure Terminations",
+      "lessonIds": [
+        "p03-l13"
+      ]
+    },
+    {
+      "title": "Consumer-Unit Assembly and Connections",
+      "lessonIds": [
+        "p03-l12"
       ]
     }
   ],
