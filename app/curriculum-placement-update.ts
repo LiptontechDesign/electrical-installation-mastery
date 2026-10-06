@@ -5,7 +5,7 @@ import { upgradeSurgeProtectionGroups } from './surge-protection-curriculum-migr
 import { upgradeDesignLearningGroups } from './design-learning-migration';
 
 export const reviewedPlacementRevision = 3;
-export const curriculumRevision = 5;
+export const curriculumRevision = 6;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));

@@ -4,6 +4,7 @@ import type { SupplementaryState, SupplementaryVideo } from './supplementary-mod
 import durationData from './supplementary-durations.json';
 import { validVideoDuration } from './video-duration';
 import designUpdate from './design-learning-update.json';
+import processUpdate from './connected-process-update.json';
 const verifiedDurations: Record<string, number> = durationData;
 
 // Approved study-plan media. Durations come from each video's public YouTube metadata.
@@ -62,7 +63,7 @@ const locations=new Map([...learningSections.map(s=>[s.id,s.moduleId] as const),
 const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
 // This C1 core video is also an intentionally placed C2 supporting lesson.
 export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w']);
-const intentionalDesignRepeatVideoIds = new Set(designUpdate.repeatableVideoIds);
+const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds]);
 const seedLocations=new Map<string,string>(locations);
 const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>{
   const moduleId=seedLocations.get(anchorId);
@@ -79,9 +80,9 @@ const reviewedAnchors = new Map<string, { anchorId: string; position: 'before' |
   ['c1-motor-phase-loss', { anchorId: 'p10-l08', position: 'after' }],
 ]);
 export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlacements = true, designPlacements = true):SupplementaryState {
-  // Preserve the approved cross-path bridge and personal copies of the design
-  // overview videos: repeating those lessons is intentional reinforcement.
-  const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)||intentionalDesignRepeatVideoIds.has(video.videoId)).map(video=>{
+  // Preserve the approved cross-path bridge and personal copies of overview
+  // videos: repeating those lessons is intentional reinforcement.
+  const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)||intentionalRepeatVideoIds.has(video.videoId)).map(video=>{
     const seed=defaults.find(item=>item.id===video.id||item.videoId===video.videoId);
     // One curriculum migration; later visitor moves are preserved.
     let migrated=seed&&!video.placementRevision ? {...video,moduleId:seed.moduleId,anchorId:seed.anchorId,position:seed.position,title:video.title.replace(/^Protection study path \d+\/10 · /,''),placementRevision:3} : video;

@@ -622,6 +622,17 @@
     "number": 11
   },
   {
+    "id": "c2-boards-gary-hayers-overview",
+    "moduleId": "c2-boards",
+    "number": 1,
+    "title": "Consumer Unit Assembly and Checks — Gary Hayers",
+    "description": "Assemble, connect and check.",
+    "lessonIds": [
+      "c2-assembly-overview-01",
+      "c2-assembly-overview-02"
+    ]
+  },
+  {
     "id": "c2-boards-section-1",
     "title": "Safe Isolation and Consumer-Unit Supply Arrangements",
     "lessonIds": [
@@ -629,7 +640,7 @@
       "p02-l10"
     ],
     "moduleId": "c2-boards",
-    "number": 1
+    "number": 2
   },
   {
     "id": "c2-boards-torque",
@@ -638,7 +649,7 @@
       "p03-l13"
     ],
     "moduleId": "c2-boards",
-    "number": 2
+    "number": 3
   },
   {
     "id": "c2-boards-assembly",
@@ -647,12 +658,30 @@
       "p03-l12"
     ],
     "moduleId": "c2-boards",
-    "number": 3
+    "number": 4
+  },
+  {
+    "id": "module-08-john-ward-overview",
+    "moduleId": "module-08",
+    "number": 1,
+    "title": "Initial Verification — John Ward",
+    "description": "Follow the test sequence, including the RCD update.",
+    "lessonIds": [
+      "c2-verification-overview-01",
+      "c2-verification-overview-02",
+      "c2-verification-overview-03",
+      "c2-verification-overview-04",
+      "c2-verification-overview-05",
+      "c2-verification-overview-06",
+      "c2-verification-overview-07",
+      "c2-verification-overview-08",
+      "c2-verification-overview-09"
+    ]
   },
   {
     "id": "module-08-section-1",
     "moduleId": "module-08",
-    "number": 1,
+    "number": 2,
     "title": "Visual inspection, test planning and instrument setup",
     "lessonIds": [
       "p08-l02"
@@ -661,7 +690,7 @@
   {
     "id": "module-08-section-2",
     "moduleId": "module-08",
-    "number": 2,
+    "number": 3,
     "title": "Protective bonding: assessment and continuity",
     "lessonIds": [
       "course-TFt3d77LujQ",
@@ -673,7 +702,7 @@
   {
     "id": "module-08-cpc-continuity",
     "moduleId": "module-08",
-    "number": 3,
+    "number": 4,
     "title": "CPC continuity and dead polarity",
     "lessonIds": [
       "course-vD_cRnErve8",
@@ -683,7 +712,7 @@
   {
     "id": "module-08-ring-continuity",
     "moduleId": "module-08",
-    "number": 4,
+    "number": 5,
     "title": "Ring-final continuity and polarity",
     "lessonIds": [
       "course-zXi35z_WHSY",
@@ -694,7 +723,7 @@
   {
     "id": "module-08-insulation-resistance",
     "moduleId": "module-08",
-    "number": 5,
+    "number": 6,
     "title": "Insulation-resistance testing",
     "lessonIds": [
       "course-q4UTihwOloA",
@@ -707,7 +736,7 @@
   {
     "id": "module-08-section-3",
     "moduleId": "module-08",
-    "number": 6,
+    "number": 7,
     "title": "Earth-electrode resistance measurement",
     "lessonIds": [
       "p08-l12"
@@ -716,7 +745,7 @@
   {
     "id": "module-08-external-loop-pfc",
     "moduleId": "module-08",
-    "number": 7,
+    "number": 8,
     "title": "External loop impedance Ze and prospective fault current",
     "lessonIds": [
       "course-zwuByd7PwMY",
@@ -728,7 +757,7 @@
   {
     "id": "module-08-circuit-loop",
     "moduleId": "module-08",
-    "number": 8,
+    "number": 9,
     "title": "Circuit earth-fault loop impedance Zs",
     "lessonIds": [
       "course-eOW2ohFXULE",
@@ -738,7 +767,7 @@
   {
     "id": "module-08-section-4",
     "moduleId": "module-08",
-    "number": 9,
+    "number": 10,
     "title": "RCD verification and functional checks",
     "lessonIds": [
       "p08-l14",
@@ -748,7 +777,7 @@
   {
     "id": "module-08-section-5",
     "moduleId": "module-08",
-    "number": 10,
+    "number": 11,
     "title": "Certification and recording results",
     "lessonIds": [
       "p16-l09"
@@ -757,7 +786,7 @@
   {
     "id": "module-08-section-6",
     "moduleId": "module-08",
-    "number": 11,
+    "number": 12,
     "title": "Complete verification and installation walkthroughs",
     "lessonIds": [
       "p10-l01",
@@ -766,16 +795,28 @@
     ]
   },
   {
-    "id": "module-09-section-1",
+    "id": "module-09-learn-electrics-overview",
     "moduleId": "module-09",
     "number": 1,
+    "title": "Circuit Fault Tracing — Learn Electrics",
+    "description": "Trace ring and radial faults in order.",
+    "lessonIds": [
+      "c2-fault-tracing-overview-01",
+      "c2-fault-tracing-overview-02",
+      "c2-fault-tracing-overview-03"
+    ]
+  },
+  {
+    "id": "module-09-section-1",
+    "moduleId": "module-09",
+    "number": 2,
     "title": "Systematic diagnostic method",
     "lessonIds": []
   },
   {
     "id": "module-09-lighting-faults",
     "moduleId": "module-09",
-    "number": 2,
+    "number": 3,
     "title": "Lighting-circuit faults and visual evidence",
     "lessonIds": [
       "course-Onf6P_bA0XU",
@@ -785,7 +826,7 @@
   {
     "id": "module-09-ring-socket-faults",
     "moduleId": "module-09",
-    "number": 3,
+    "number": 4,
     "title": "Ring, socket and circuit-path faults",
     "lessonIds": [
       "course-P8wxe7_FX54",
@@ -799,7 +840,7 @@
   {
     "id": "module-09-section-2",
     "moduleId": "module-09",
-    "number": 4,
+    "number": 5,
     "title": "Insulation faults and cable deterioration",
     "lessonIds": [
       "p09-l03",
@@ -809,7 +850,7 @@
   {
     "id": "module-09-rcd-leakage",
     "moduleId": "module-09",
-    "number": 5,
+    "number": 6,
     "title": "RCD/RCBO, borrowed-neutral and leakage diagnosis",
     "lessonIds": [
       "course-_2yb6WB-kQo",
@@ -822,7 +863,7 @@
   {
     "id": "module-09-section-3",
     "moduleId": "module-09",
-    "number": 6,
+    "number": 7,
     "title": "Load-current and functional diagnosis",
     "lessonIds": [
       "p09-l10",

@@ -50,13 +50,13 @@ try {
     assert.ok(!f.learner().completedLessonIds.includes('c2-design-overview-02'), 'The repeat has independent watched progress');
     await visit(page, 'p03-l12'); await openMap(page);
     const module7 = page.locator('.module-accordion').filter({ hasText: 'Consumer Units: Assembly and Pre-Commissioning' }).first();
-    assert.equal(await module7.locator('.section-title').count(), 3);
-    assert.deepEqual(await module7.locator('[data-course-row]').evaluateAll(rows => rows.map(row => row.dataset.courseRow)), ['course-BeoujaqN-68', 'p02-l10', 'p03-l13', 'p03-l12']);
+    assert.equal(await module7.locator('.section-title').count(), 4);
+    assert.deepEqual(await module7.locator('[data-course-row]').evaluateAll(rows => rows.map(row => row.dataset.courseRow)), ['c2-assembly-overview-01', 'c2-assembly-overview-02', 'course-BeoujaqN-68', 'p02-l10', 'p03-l13', 'p03-l12']);
     assert.ok(view.byId.has(personal.id));
     assert.equal(f.writes.length, 0, 'Reading and navigation do not write the personal course');
     assert.deepEqual(f.errors, []);
     await f.context.close();
-    console.log(`PASS ${mobile ? '320px mobile' : 'desktop'}: 34 Module 6 videos, ten-video overview, three Module 7 sections, correct players, notes/progress preservation and no course writes.`);
+    console.log(`PASS ${mobile ? '320px mobile' : 'desktop'}: 34 Module 6 videos, ten-video overview, four Module 7 sections, correct players, notes/progress preservation and no course writes.`);
   }
   const guest = await fixture({ guest: true });
   await visit(guest.page, 'c2-design-overview-01');

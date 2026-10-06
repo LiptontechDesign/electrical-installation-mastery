@@ -182,7 +182,7 @@ test('permanent removal survives default merging, reload, subsequent edits and r
   assert.ok(!snapshot(state).course.modules.flatMap(m => m.lessons).some(l => l.id === first));
   assert.ok(!state.receipts.some(r => r.inverse.videos.some(v => v.id === seed.id)));
   assert.equal(snapshot(state).course.lessonCount, snapshot(base).course.lessonCount - 1);
-  assert.equal(snapshot(base).course.lessonCount, 341, 'The shared published course is unchanged by a personal removal');
+  assert.equal(snapshot(base).course.lessonCount, 355, 'The shared published course is unchanged by a personal removal');
   integrity(state);
 });
 test('removed links can be added deliberately, without automatic restoration', () => {
@@ -216,7 +216,7 @@ test('empty personal courses retain destinations and never restore removed lesso
   const state = normalisePersonalCourse({ ...base, archivedLessonIds: coreIds, videos: base.videos.map(v => ({ ...v, archived: true })) });
   assert.equal(snapshot(state).allRows.length, 0);
   assert.equal(snapshot(state).course.lessonCount, 0);
-  assert.equal(Object.keys(snapshot(state).rows).length, 122);
+  assert.equal(Object.keys(snapshot(state).rows).length, 125);
   integrity(state);
 });
 test('invalid requests, missing destinations and self placement are rejected', () => {

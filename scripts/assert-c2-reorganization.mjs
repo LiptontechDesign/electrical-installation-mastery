@@ -8,12 +8,15 @@ export const earthElectrodeAdditions = json('./fixtures/earth-electrode-addition
 export const jpelectricAdditions = json('./fixtures/jpelectric-additions.json');
 export const surgeProtectionAdditions = json('./fixtures/surge-protection-additions.json');
 export const designLearningAdditions = json('./fixtures/design-learning-additions.json');
+export const connectedProcessAdditions = json('./fixtures/connected-process-additions.json');
 export const designOverviewIds = new Set(json('../app/design-learning-update.json').overviewLessonIds);
+export const processOverviewIds = new Set(json('../app/connected-process-update.json').overviewLessonIds);
+export const overviewIds = new Set([...designOverviewIds, ...processOverviewIds]);
 const baseline = json('./course-baseline.json');
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions]) {
+  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions]) {
     assert.ok(!source.has(lesson.id), 'New lessons must not replace an original identity');
     source.set(lesson.id, lesson);
   }
@@ -28,7 +31,7 @@ export function assertC2Reorganization(course) {
   assert.deepEqual(identities, [...source.values()].sort((a, b) => a.id.localeCompare(b.id)), 'Preserve every original video and stable learner-state identity');
   for (const lesson of lessons) assert.equal(lesson.url, `https://www.youtube.com/watch?v=${lesson.videoId}`);
   for (const key of ['id', 'videoId', 'title']) {
-    const entries = key === 'videoId' ? lessons.filter(lesson => !designOverviewIds.has(lesson.id)) : lessons;
+    const entries = key === 'videoId' ? lessons.filter(lesson => !overviewIds.has(lesson.id)) : lessons;
     const values = entries.map(lesson => key === 'title' ? lesson.title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim() : lesson[key]);
     assert.equal(new Set(values).size, entries.length, `No unapproved canonical duplicate ${key}`);
   }
