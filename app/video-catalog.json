@@ -3906,10 +3906,10 @@
       "id": "c1-fundamentals",
       "number": 10,
       "title": "Three-Phase Supply, Star/Delta and Neutral Behaviour",
-      "description": "Build on the C2 AC foundation: first see three phase as a supply, then learn star/delta line-versus-phase relationships, balanced loads and the neutral current created by imbalance.",
+      "description": "Understand three-phase supplies, star/delta connections, balanced loads and neutral current.",
       "duration": "1 h 28 min",
       "durationSeconds": 5294,
-      "learningOutcome": "Build on the C2 AC foundation: first see three phase as a supply, then learn star/delta line-versus-phase relationships, balanced loads and the neutral current created by imbalance.",
+      "learningOutcome": "Understand three-phase supplies, star/delta connections, balanced loads and neutral current.",
       "lessons": [
         {
           "id": "p02-l03",
@@ -4010,10 +4010,10 @@
       "id": "c1-power",
       "number": 11,
       "title": "Three-Phase Voltage, Current and Power Calculations",
-      "description": "Consolidate line and phase quantities before using balanced three-phase P, Q and S calculations. Distinguish electrical input power from motor shaft output and state the assumptions behind each formula.",
+      "description": "Calculate three-phase voltage, current, power factor and motor input power.",
       "duration": "55 min",
       "durationSeconds": 3314,
-      "learningOutcome": "Consolidate line and phase quantities before using balanced three-phase P, Q and S calculations. Distinguish electrical input power from motor shaft output and state the assumptions behind each formula.",
+      "learningOutcome": "Calculate three-phase voltage, current, power factor and motor input power.",
       "lessons": [
         {
           "id": "p06-l13",
@@ -4059,7 +4059,7 @@
           "regulationSensitive": false,
           "studyRole": "Core lesson",
           "required": true,
-          "studyNote": "The 460 V, 75 hp example teaches universal power relationships, not local supply values or North American wiring rules. Pinput = Pshaft/η; S = Pinput/PF; IL = S/(√3VL). Scilab is only a calculator: reproduce the result with a normal scientific calculator."
+          "studyNote": "Electrical input = Pshaft/η; apparent power = electrical input/PF."
         }
       ],
       "path": "C1",
@@ -4070,10 +4070,10 @@
       "id": "c1-distribution",
       "number": 12,
       "title": "Three-Phase Boards, Feeders and Outlets",
-      "description": "After safe isolation, identify the board and its outgoing circuits, follow a submain to the next board, then examine industrial outlets. This is the system map needed before sizing or installing it.",
+      "description": "Follow the supply through boards, submains, outlets and practical installation.",
       "duration": "1 h 01 min",
       "durationSeconds": 3707,
-      "learningOutcome": "After safe isolation, identify the board and its outgoing circuits, follow a submain to the next board, then examine industrial outlets. This is the system map needed before sizing or installing it.",
+      "learningOutcome": "Follow the supply through boards, submains, outlets and practical installation.",
       "lessons": [
         {
           "id": "p08-l01",
@@ -4220,10 +4220,10 @@
       "id": "c1-design",
       "number": 13,
       "title": "Three-Phase Load, Cable and Protection Design",
-      "description": "Assess three-phase building demand before cable and protective-device design. The seven-floor building and transformer-sizing example is an optional advanced extension.",
+      "description": "Assess demand, balance phases and select cables and protective devices.",
       "duration": "1 h 05 min",
       "durationSeconds": 3955,
-      "learningOutcome": "Assess three-phase building demand before cable and protective-device design. The seven-floor building and transformer-sizing example is an optional advanced extension.",
+      "learningOutcome": "Assess demand, balance phases and select cables and protective devices.",
       "lessons": [
         {
           "id": "p10-l10",
@@ -4254,7 +4254,7 @@
           "regulationSensitive": true,
           "studyRole": "Optional context",
           "required": false,
-          "studyNote": "This is a limited UK domestic example. Its largest-circuit plus 40% method requires the stated standard final-circuit arrangements. It is not a universal whole-building diversity rule. For C1, prepare a separate L1/L2/L3 schedule and assess the most heavily loaded phase; use the worked project."
+          "studyNote": "Domestic example only; assess L1, L2 and L3 separately for a three-phase building."
         },
         {
           "id": "p06-l05",
@@ -4284,8 +4284,7 @@
           "layer": "WHY",
           "regulationSensitive": true,
           "studyRole": "Optional extension",
-          "required": false,
-          "studyNote": "Optional extension: a seven-floor building and transformer example exceeds the four-storey C1 building scope. Complete the main low-voltage building sequence and the four-storey worked project first."
+          "required": false
         }
       ],
       "path": "C1",
@@ -4296,10 +4295,10 @@
       "id": "c1-earthing",
       "number": 14,
       "title": "Earth Fault Loops, Disconnection and Protection Checks",
-      "description": "Connect cable design to earthing, protective conductors, temperature-corrected Zs and automatic disconnection. Complete the fault-protection checks before verification. Revisit Part 1 in Module 5, Section 6 before the temperature calculation.",
+      "description": "Check protective conductors, temperature-corrected Zs and automatic disconnection.",
       "duration": "19 min",
       "durationSeconds": 1194,
-      "learningOutcome": "Connect cable design to earthing, protective conductors, temperature-corrected Zs and automatic disconnection. Complete the fault-protection checks before verification.",
+      "learningOutcome": "Check protective conductors, temperature-corrected Zs and automatic disconnection.",
       "lessons": [
         {
           "id": "p05-l13",
@@ -4340,10 +4339,10 @@
       "id": "c1-pfc",
       "number": 15,
       "title": "Power Factor Causes, Correction and Capacitor Sizing",
-      "description": "Understand why inductive loads draw reactive current and the consequences of poor power factor; then calculate compensating kVAr and compare individual, group and automatic bank placement.",
+      "description": "Understand poor power factor, calculate capacitor sizes and choose compensation arrangements.",
       "duration": "33 min",
       "durationSeconds": 1999,
-      "learningOutcome": "Understand why inductive loads draw reactive current and the consequences of poor power factor; then calculate compensating kVAr and compare individual, group and automatic bank placement.",
+      "learningOutcome": "Understand poor power factor, calculate capacitor sizes and choose compensation arrangements.",
       "lessons": [
         {
           "id": "course-NIrKOVZrqnU",
@@ -4375,7 +4374,7 @@
           "regulationSensitive": false,
           "studyRole": "Core lesson",
           "required": true,
-          "studyNote": "This generic 600 V, 60 Hz calculation is a mathematical example, not a Kenyan supply specification. The 72 kVAr total becomes 24 kVAr per star-connected capacitor; C ≈ 530.5 µF per phase. Unity is an instructional limit, not the default design target. The worked project uses 400 V, 50 Hz and correction to 0.95."
+          "studyNote": "This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95."
         }
       ],
       "path": "C1",
@@ -4386,10 +4385,10 @@
       "id": "c1-motors",
       "number": 16,
       "title": "Induction Motors, Nameplates and Terminal Connections",
-      "description": "Learn rotating field, slip and speed before reading a real motor nameplate and connecting its windings in star or delta. Supply voltage and nameplate ratings govern the permissible connection.",
+      "description": "Understand induction motors, read nameplates and identify star/delta terminal connections.",
       "duration": "23 min",
       "durationSeconds": 1438,
-      "learningOutcome": "Learn rotating field, slip and speed before reading a real motor nameplate and connecting its windings in star or delta. Supply voltage and nameplate ratings govern the permissible connection.",
+      "learningOutcome": "Understand induction motors, read nameplates and identify star/delta terminal connections.",
       "lessons": [
         {
           "id": "p07-induction",
@@ -4432,10 +4431,10 @@
       "id": "module-07",
       "number": 17,
       "title": "Motor Starters, Protection and Speed Control",
-      "description": "Move from contactor and overload function to DOL diagrams and wiring; only then compare star-delta, soft starting and VFD speed control. Keep short-circuit, overload and control functions distinct.",
+      "description": "Read and wire motor controls, then compare starting methods, interlocks and speed control.",
       "duration": "1 h 17 min",
       "durationSeconds": 4660,
-      "learningOutcome": "Move from contactor and overload function to DOL diagrams and wiring; only then compare star-delta, soft starting and VFD speed control. Keep short-circuit, overload and control functions distinct.",
+      "learningOutcome": "Read and wire motor controls, then compare starting methods, interlocks and speed control.",
       "lessons": [
         {
           "id": "p04-l21",
@@ -4498,8 +4497,7 @@
           "duration": "8:32",
           "regulationSensitive": true,
           "studyRole": "Optional refresher",
-          "required": false,
-          "studyNote": "Optional single-phase DOL comparison. The following three-phase diagram and wiring demonstrations provide the main C1 starter sequence."
+          "required": false
         },
         {
           "id": "p04-l19",
@@ -4545,7 +4543,7 @@
           "regulationSensitive": false,
           "studyRole": "Core lesson",
           "required": true,
-          "studyNote": "Learn the swapped-phase power paths and both interlock principles first (0:00–2:11). Later NFPA/UL references and product kits are US-specific context. Choose components, coil voltage and protection for the actual installation; verify that forward and reverse cannot energise together."
+          "studyNote": "NFPA/UL references are US-specific; the phase-swapping and interlocking principles apply generally."
         },
         {
           "id": "p07-star-delta",
@@ -4604,10 +4602,10 @@
       "id": "c1-testing",
       "number": 18,
       "title": "Three-Phase Initial Verification and Periodic Inspection",
-      "description": "Use the C2 inspection and dead-test sequence, then study phase rotation and controlled three-phase live measurements before periodic inspection and reporting.",
+      "description": "Follow the three-phase inspection, testing and commissioning sequence.",
       "duration": "1 h 42 min",
       "durationSeconds": 6164,
-      "learningOutcome": "Use the C2 inspection and dead-test sequence, then study phase rotation and controlled three-phase live measurements before periodic inspection and reporting.",
+      "learningOutcome": "Follow the three-phase inspection, testing and commissioning sequence.",
       "lessons": [
         {
           "id": "c1-three-phase-ir-sequence",
@@ -4623,7 +4621,7 @@
           "regulationSensitive": true,
           "studyRole": "Core lesson",
           "required": true,
-          "studyNote": "Apply C2 safe isolation and continuity/polarity methods first. Disconnect or protect sensitive loads, electronics, SPDs and drive equipment according to their instructions. Test voltage and acceptance criteria depend on the circuit and applicable standard; discharge after testing."
+          "studyNote": "Disconnect sensitive equipment as instructed and discharge after testing."
         },
         {
           "id": "p08-l07",
@@ -4653,8 +4651,7 @@
           "layer": "HOW",
           "regulationSensitive": false,
           "studyRole": "Core lesson",
-          "required": true,
-          "studyNote": "Phase identification and phase rotation are different checks. Establish consistent identification, verify the instrument rating and confirm rotation at the required points before testing the intended motor direction."
+          "required": true
         },
         {
           "id": "course-igi8F6UAvh0",
@@ -4701,7 +4698,7 @@
           "regulationSensitive": true,
           "studyRole": "Core lesson",
           "required": true,
-          "studyNote": "PFC here means prospective fault current, not power factor correction. The doubled highest L–N result is a UK assessment approximation shown in this video, not a universal measurement of a three-phase fault. Use the correct instrument method and compare the applicable prospective fault current with protective-device breaking capacity."
+          "studyNote": "The doubled L–N result is an estimate, not an exact three-phase fault measurement."
         },
         {
           "id": "p08-l11",
@@ -4733,7 +4730,7 @@
           "duration": "59:44",
           "studyRole": "Optional refresher",
           "required": false,
-          "studyNote": "Optional domestic EICR refresher. This is not a complete three-phase commissioning demonstration. Initial verification, periodic inspection and diagnosis have different purposes; use the preceding three-phase test sequence and the worked project to assemble the C1 handover."
+          "studyNote": "Optional domestic EICR refresher; use the preceding lessons for three-phase commissioning."
         }
       ],
       "path": "C1",
@@ -4744,10 +4741,10 @@
       "id": "c1-faults",
       "number": 19,
       "title": "Three-Phase and Motor Fault Diagnosis",
-      "description": "Trace the system before testing: consider lost neutral, board defects, missing motor phase and thermal symptoms; isolate, repair and repeat the relevant verification. Videos do not replace supervised practice.",
+      "description": "Diagnose supply, neutral and motor faults using systematic tests and evidence.",
       "duration": "1 h 18 min",
       "durationSeconds": 4732,
-      "learningOutcome": "Trace the system before testing: consider lost neutral, board defects, missing motor phase and thermal symptoms; isolate, repair and repeat the relevant verification. Videos do not replace supervised practice.",
+      "learningOutcome": "Diagnose supply, neutral and motor faults using systematic tests and evidence.",
       "lessons": [
         {
           "id": "p10-l08",
@@ -4778,7 +4775,7 @@
           "regulationSensitive": false,
           "studyRole": "Core lesson",
           "required": true,
-          "studyNote": "This is a disconnected bench motor. Complete safe isolation and separation from the starter/VFD first. Compare U1–U2, V1–V2 and W1–W2, then insulation to the frame and between windings using manufacturer-approved voltage. The displayed >200 MΩ is that meter’s range, not a universal pass threshold. Balanced ohms do not prove absence of turn-to-turn faults; assess mechanical condition and safe functional behaviour too."
+          "studyNote": "Use manufacturer test limits; >200 MΩ is this meter’s range, not a universal pass value."
         },
         {
           "id": "p16-l06",

@@ -67,7 +67,7 @@ for(const id of ['p07-l16','p12-v2-l22']){
   const lesson=catalog.modules.flatMap(m=>m.lessons).find(l=>l.id===id);
   assert.equal(lesson.required,false);assert.equal(lesson.studyRole,'Optional extension');
 }
-assert.match(catalog.modules.find(m=>m.id==='c1-earthing').description,/Part 1 in Module 5, Section 6/);
+assert.match(catalog.modules.find(m=>m.id==='c1-earthing').description,/temperature-corrected Zs/);
 
 const marked=new Set(Object.keys(expectedHomes).map(idFor).slice(0,16));
 assert.deepEqual(progressForVideos(view.allRows.filter(row=>!surgeIds.has(row.id)).map(row=>row.id),marked),progressForVideos(Object.values(before.groups).flat(),marked),'Overall watched totals survive all moves');

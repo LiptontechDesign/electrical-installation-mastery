@@ -2,6 +2,8 @@
 
 Reviewed 14 October 2026. Curriculum revision 7 changes C1 only. C2 and Professional lesson identities, media and order remain unchanged.
 
+The subsequent clarity cleanup removes all 40 C1 section-introduction paragraphs, shortens module summaries and retains only brief technical corrections beside relevant videos. Detailed selection reasoning stays in this review and the optional worked project. Video order, roles, identities and saved-course migration are unchanged.
+
 ## Result
 
 C1 now has 40 populated sections across its existing ten modules, 49 catalogue entries and 13 supporting entries: 62 default study rows. Eight catalogue entries were added, including an intentional optional repeat of GSH’s C2 demand example. Seven YouTube videos are new to the course. Every previous C1 lesson and supporting-video identity remains available.

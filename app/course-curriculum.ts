@@ -1,7 +1,7 @@
 import catalog from './video-catalog.json';
 import roles from './c1-study-roles.json';
 
-const supportingRoles: Record<string, { required: boolean; studyRole: string; studyNote: string }> = roles;
+const supportingRoles: Record<string, { required: boolean; studyRole: string; studyNote?: string }> = roles;
 
 const lessonById = new Map(catalog.modules.flatMap(module => module.lessons.map(lesson => [lesson.id, lesson] as const)));
 export function lessonStudyRole(id: string) {

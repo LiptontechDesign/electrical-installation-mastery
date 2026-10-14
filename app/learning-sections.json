@@ -878,8 +878,7 @@
     "lessonIds": [
       "p02-l03",
       "p07-l01"
-    ],
-    "description": "Begin after C2 AC theory and safe isolation. Start with the whole system, then identify L1, L2, L3, neutral and CPC. Separate 400 V line voltage from approximately 230 V phase voltage. UK examples teach principles; EPRA and local supply requirements govern Kenyan work."
+    ]
   },
   {
     "id": "c1-fundamentals-section-2",
@@ -889,8 +888,7 @@
     "lessonIds": [
       "p07-l02",
       "p07-l03"
-    ],
-    "description": "Draw both connections and label each line and winding quantity before using √3. This is the prerequisite for motor terminals, power calculations and capacitor banks."
+    ]
   },
   {
     "id": "c1-fundamentals-section-3",
@@ -900,8 +898,7 @@
     "lessonIds": [
       "p07-l04",
       "p07-l05"
-    ],
-    "description": "Compare a balanced motor with unequal single-phase building loads. Reproduce the neutral-current example before moving to a phase schedule. Simple vector formulae assume sinusoidal currents with the stated phase relationships; nonlinear loads and harmonics need separate assessment."
+    ]
   },
   {
     "id": "c1-power-section-1",
@@ -910,8 +907,7 @@
     "title": "Calculate resistive star and delta circuit quantities",
     "lessonIds": [
       "p06-l13"
-    ],
-    "description": "Use the previous line/phase relationships in a worked resistive exercise. This lesson does not cover the entire P, Q and S topic."
+    ]
   },
   {
     "id": "c1-power-triangle",
@@ -920,16 +916,14 @@
     "title": "Real power, reactive power, apparent power and power factor",
     "lessonIds": [
       "p06-l14"
-    ],
-    "description": "Revise the power triangle with Joe Robinson, then optionally derive constant balanced three-phase power. Use W for P, var for Q and VA for S. Power factor and motor efficiency are different ratios."
+    ]
   },
   {
     "id": "c1-power-worked-examples",
     "moduleId": "c1-power",
     "number": 3,
     "title": "Find three phase power factor and line current",
-    "lessonIds": [],
-    "description": "Solve for S, PF and line current in that order. For balanced sinusoidal loads: S = √3VLIL, P = S cos φ, Q = S sin φ. Write each unit and identify whether a kW figure is electrical input or shaft output."
+    "lessonIds": []
   },
   {
     "id": "c1-power-motor-efficiency",
@@ -938,8 +932,7 @@
     "title": "Convert motor shaft output into input power and supply current",
     "lessonIds": [
       "c1-motor-input-efficiency"
-    ],
-    "description": "Include efficiency before power factor when the nameplate power is shaft output. Check the answer against the nameplate current rather than silently assuming 100% efficiency."
+    ]
   },
   {
     "id": "c1-distribution-section-1",
@@ -950,8 +943,7 @@
       "p08-l01",
       "p07-l06",
       "p07-l07"
-    ],
-    "description": "Repeat C2 safe isolation for all phases, neutral and possible alternative supplies. Understand the board and the manufacturer’s switching arrangement before working through submains. The smart-board product tour is optional context."
+    ]
   },
   {
     "id": "c1-distribution-submains",
@@ -961,10 +953,9 @@
     "lessonIds": [
       "p07-l08"
     ],
-    "description": "Trace origin → protective device → submain → floor board → final circuits. Carry the neutral, earthing arrangement and protective conductor through the same drawing.",
     "resource": {
       "href": "/c1-worked-project.md",
-      "label": "Open the C1 four-storey worked study project"
+      "label": "Four-storey worked project"
     }
   },
   {
@@ -976,8 +967,7 @@
       "p10-l06",
       "p10-l07",
       "p07-l09"
-    ],
-    "description": "Follow the installation demonstrations after learning board architecture. Check conductor identification, torque, separation and manufacturer instructions. Cable management is an optional workmanship detail; it is not an earthing-design lesson."
+    ]
   },
   {
     "id": "c1-distribution-section-2",
@@ -987,8 +977,7 @@
     "lessonIds": [
       "p02-l11",
       "p11-v2-l11"
-    ],
-    "description": "Identify the voltage, phase, neutral and earth arrangement for each connector. Match circuit protection and conductor identification to the outlet before testing it."
+    ]
   },
   {
     "id": "c1-design-section-1",
@@ -999,10 +988,9 @@
       "p10-l10",
       "c1-demand-example"
     ],
-    "description": "List actual loads, electrical input, duty and any justified diversity. Distinguish connected load, demand, breaker ratings and service capacity. The optional domestic example is limited to its stated UK arrangements.",
     "resource": {
       "href": "/c1-worked-project.md",
-      "label": "Open the C1 four-storey worked study project"
+      "label": "Four-storey worked project"
     }
   },
   {
@@ -1012,8 +1000,7 @@
     "title": "Design current, correction factors and cable current capacity",
     "lessonIds": [
       "p06-l05"
-    ],
-    "description": "Start after C2 Module 6 conductor sizing. Follow Ib → In → correction factors → required table capacity → selected cable → installed Iz. The three-phase example adds line current and the correct three-phase cable-table column."
+    ]
   },
   {
     "id": "c1-design-voltage-drop",
@@ -1021,10 +1008,9 @@
     "number": 3,
     "title": "Add submain and final circuit voltage drop correctly",
     "lessonIds": [],
-    "description": "A circuit can pass current capacity and still fail voltage drop. Carry the same load, route length and supply reference through the whole origin-to-load path; do not mix volts referred to 400 V with volts referred to 230 V.",
     "resource": {
       "href": "/c1-worked-project.md",
-      "label": "Open the C1 four-storey worked study project"
+      "label": "Four-storey worked project"
     }
   },
   {
@@ -1034,8 +1020,7 @@
     "title": "Optional extension: larger buildings and transformer loading",
     "lessonIds": [
       "p07-l16"
-    ],
-    "description": "Complete the four-storey low-voltage project first. This earlier seven-floor example is an extension, not the defining C1 design exercise."
+    ]
   },
   {
     "id": "c1-earthing-section-1",
@@ -1044,8 +1029,7 @@
     "title": "Verify earth fault loop impedance and automatic disconnection",
     "lessonIds": [
       "p05-l13"
-    ],
-    "description": "Revisit C2 Module 5 earthing systems, ADS and Module 6 CPC sizing before this application. Follow Ze + (R1 + R2), the applicable disconnection time and device characteristic. The eFIXX worked process connects the preceding cable design to ADS."
+    ]
   },
   {
     "id": "c1-earthing-section-2",
@@ -1055,10 +1039,9 @@
     "lessonIds": [
       "p05-l12"
     ],
-    "description": "Use the correct reference temperature when comparing calculated and measured loop impedance. Complete CPC/adiabatic, bonding, fault-current and device-coordination checks alongside cable capacity and voltage drop; passing one check does not complete a design.",
     "resource": {
       "href": "/c1-worked-project.md",
-      "label": "Open the C1 four-storey worked study project"
+      "label": "Four-storey worked project"
     }
   },
   {
@@ -1068,8 +1051,7 @@
     "title": "Why poor power factor increases supply current",
     "lessonIds": [
       "course-NIrKOVZrqnU"
-    ],
-    "description": "Revise the Module 11 power triangle. Distinguish reactive exchange from real energy losses and distinguish displacement power factor from efficiency. Any tariff or billing example is jurisdiction-specific."
+    ]
   },
   {
     "id": "c1-pfc-calculation",
@@ -1079,10 +1061,9 @@
     "lessonIds": [
       "c1-pfc-unity-bank"
     ],
-    "description": "Find Q before and after correction, then subtract. Calculate total bank kVAr before dividing between phases. Star capacitors see VL/√3; delta capacitors see VL. Use the worked project for a 0.75 → 0.95 target at 400 V, 50 Hz.",
     "resource": {
       "href": "/c1-worked-project.md",
-      "label": "Open the C1 four-storey worked study project"
+      "label": "Four-storey worked project"
     }
   },
   {
@@ -1090,8 +1071,7 @@
     "moduleId": "c1-pfc",
     "number": 3,
     "title": "Choose compensation location, switching and automatic steps",
-    "lessonIds": [],
-    "description": "Compare load, group and central banks. Explain discharge, overcorrection, harmonics and switching before choosing equipment. Compensation does not raise motor efficiency or remove the load’s own reactive current downstream of the bank."
+    "lessonIds": []
   },
   {
     "id": "c1-motors-section-1",
@@ -1100,8 +1080,7 @@
     "title": "How the rotating field and induction motor produce torque",
     "lessonIds": [
       "p07-induction"
-    ],
-    "description": "Connect the three-phase rotating field to rotor motion, synchronous speed and slip before reading the nameplate."
+    ]
   },
   {
     "id": "c1-motors-nameplates",
@@ -1110,16 +1089,14 @@
     "title": "Read the nameplate: voltage, connection, current, speed and efficiency",
     "lessonIds": [
       "course-XbL0R_9KLD4"
-    ],
-    "description": "Read Δ/Y voltage, rated current, output, duty, speed and power factor together. Refer back to Module 11 when converting shaft output to electrical input."
+    ]
   },
   {
     "id": "c1-motors-terminals",
     "moduleId": "c1-motors",
     "number": 3,
     "title": "Identify six winding ends and select star or delta links",
-    "lessonIds": [],
-    "description": "Use the rated winding voltage to choose the connection. A terminal-link demonstration does not authorise either connection on every motor; confirm the plate and the actual supply."
+    "lessonIds": []
   },
   {
     "id": "module-07-section-1",
@@ -1129,8 +1106,7 @@
     "lessonIds": [
       "p04-l21",
       "course-HFkTPmY7N7w"
-    ],
-    "description": "Begin with contactor action and eFIXX’s complete DOL explanation. Separate the three-phase power circuit from the lower-current Start/Stop holding circuit."
+    ]
   },
   {
     "id": "module-07-dol-protection-wiring",
@@ -1140,8 +1116,7 @@
     "lessonIds": [
       "course-wQwGZMcDGXk",
       "p15-v2-l01"
-    ],
-    "description": "Separate short-circuit protection, overload protection and no-volt release. Use the motor nameplate and manufacturer coordination tables for device selection and relay setting. The sizing rule and single-phase starter examples are optional comparisons, not general design instructions."
+    ]
   },
   {
     "id": "c1-controls-three-phase-dol",
@@ -1151,8 +1126,7 @@
     "lessonIds": [
       "p04-l19",
       "p04-l20"
-    ],
-    "description": "Follow the same GSH diagram into the actual wiring. Trace Stop, overload NC, Start, auxiliary holding contact and coil. Explain why the motor stops after a supply failure and should not restart unexpectedly."
+    ]
   },
   {
     "id": "c1-controls-reversing",
@@ -1161,8 +1135,7 @@
     "title": "Reverse rotation with electrical and mechanical interlocking",
     "lessonIds": [
       "c1-reversing-interlocks"
-    ],
-    "description": "Swap two phases to reverse the rotating field. Trace both contactors and prove the opposing coil cannot energise; simultaneous closure creates a phase-to-phase short circuit."
+    ]
   },
   {
     "id": "module-07-section-2",
@@ -1171,8 +1144,7 @@
     "title": "Star delta starting: connection, transition and reduced torque",
     "lessonIds": [
       "p07-star-delta"
-    ],
-    "description": "Use a motor suitable for delta running at the actual line voltage. Explain the starting-current and torque reduction, timing and interlocking before comparing other starters."
+    ]
   },
   {
     "id": "c1-controls-soft-start",
@@ -1181,8 +1153,7 @@
     "title": "Soft starters: limit starting current without continuous speed control",
     "lessonIds": [
       "course-_tGyaE78WTA"
-    ],
-    "description": "Compare reduced-voltage starting with star–delta. Distinguish a starting ramp from a VFD’s continuous frequency/speed control."
+    ]
   },
   {
     "id": "module-07-vfd-speed-control",
@@ -1191,16 +1162,14 @@
     "title": "VFD speed control: rectifier, DC link and inverter",
     "lessonIds": [
       "p07-vfd"
-    ],
-    "description": "Connect supply frequency, motor speed and the drive stages. Follow manufacturer requirements for motor suitability, earthing, cable, EMC and protection; isolate and wait the specified DC-link discharge time before tests."
+    ]
   },
   {
     "id": "c1-controls-phase-monitoring",
     "moduleId": "module-07",
     "number": 8,
     "title": "Optional review: phase monitoring and protective contact placement",
-    "lessonIds": [],
-    "description": "Review the relay function, then critique the shown holding-branch protection. A robust circuit must prevent energisation through every required path during a fault. The diagram is not an approved wiring template."
+    "lessonIds": []
   },
   {
     "id": "c1-testing-dead-tests",
@@ -1209,8 +1178,7 @@
     "title": "Dead tests: continuity, conductor identification and insulation",
     "lessonIds": [
       "c1-three-phase-ir-sequence"
-    ],
-    "description": "Use the C2 initial-verification process in order: inspect, isolate/prove dead, protective-conductor continuity and dead polarity, then insulation resistance. The new lessons add conductor tracing and all ten IR pairs for a five-conductor three-phase circuit."
+    ]
   },
   {
     "id": "c1-testing-section-1",
@@ -1221,8 +1189,7 @@
       "p08-l07",
       "c1-phase-sequence-theory",
       "course-igi8F6UAvh0"
-    ],
-    "description": "After satisfactory dead tests, verify supply characteristics and phase sequence using rated equipment and the appropriate safe procedure. John Ward explains the principle before the practical meter demonstration."
+    ]
   },
   {
     "id": "c1-testing-fault-current",
@@ -1232,8 +1199,7 @@
     "lessonIds": [
       "p08-l17",
       "c1-pfc-breaking-capacity"
-    ],
-    "description": "Keep earth-fault and short-circuit paths distinct. Compare the applicable maximum prospective fault current with the protective-device breaking capacity. Treat an assessment estimate as an estimate."
+    ]
   },
   {
     "id": "c1-testing-outlets",
@@ -1243,10 +1209,9 @@
     "lessonIds": [
       "p08-l11"
     ],
-    "description": "Combine the outlet check with earlier continuity, polarity, IR and phase-sequence results. Complete applicable RCD and functional tests, record deviations and rectify failures before handover. Use C2’s certificate teaching and the worked project for the full record.",
     "resource": {
       "href": "/c1-worked-project.md",
-      "label": "Open the C1 four-storey worked study project"
+      "label": "Four-storey worked project"
     }
   },
   {
@@ -1256,8 +1221,7 @@
     "title": "Optional refresher: domestic periodic inspection and reporting",
     "lessonIds": [
       "p08-periodic"
-    ],
-    "description": "This house EICR revises periodic inspection. It is separate from initial three-phase verification and does not replace the C1 commissioning sequence above."
+    ]
   },
   {
     "id": "c1-faults-section-1",
@@ -1266,16 +1230,14 @@
     "title": "Diagnose supply imbalance, lost neutral and installation faults",
     "lessonIds": [
       "p10-l08"
-    ],
-    "description": "Begin with the C2 systematic fault method: obtain symptoms/history, inspect, form a hypothesis, isolate, test and compare. Separate a shared-neutral problem from a final-circuit open neutral. Use the site video to discuss evidence rather than memorising a repair."
+    ]
   },
   {
     "id": "c1-faults-motor-phase-loss",
     "moduleId": "c1-faults",
     "number": 2,
     "title": "Recognise motor phase loss and distinguish supply from winding faults",
-    "lessonIds": [],
-    "description": "A stopped motor may fail to start; a running motor may overheat. Trace supply, protection, contactor, cable and winding as separate possible causes. Avoid repeated starting until the cause is established."
+    "lessonIds": []
   },
   {
     "id": "c1-faults-motor-tests",
@@ -1285,10 +1247,9 @@
     "lessonIds": [
       "c1-motor-winding-tests"
     ],
-    "description": "Inspect mechanical freedom and condition, then compare winding continuity/resistance and insulation. Record all three winding readings rather than accepting one good measurement. Repair, repeat the relevant tests and assess safe operation before return to service.",
     "resource": {
       "href": "/c1-worked-project.md",
-      "label": "Open the C1 four-storey worked study project"
+      "label": "Four-storey worked project"
     }
   },
   {
@@ -1298,8 +1259,7 @@
     "title": "Optional extension: thermal imaging and abnormal heating",
     "lessonIds": [
       "p16-l06"
-    ],
-    "description": "Use thermography as additional evidence, with load, emissivity, environment and competent safe access considered. A hot connection does not replace electrical diagnosis and verification."
+    ]
   },
   {
     "id": "professional-cables-section-1",

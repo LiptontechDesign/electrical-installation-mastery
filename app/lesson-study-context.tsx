@@ -6,7 +6,7 @@ export default function LessonStudyContext({ id, section, introduction }: { id: 
   if (!introduction && !note && !section?.resource) return null;
   return <div className="lesson-section-introduction">
     {introduction && <p>{introduction}</p>}
-    {note && <p><strong>Study focus: </strong>{note}</p>}
+    {note && <p>{note}</p>}
     {section?.resource && <p><a href={section.resource.href} download>{section.resource.label}</a></p>}
   </div>;
 }
