@@ -12,7 +12,7 @@ assert.deepEqual(upgraded.groups, base.groups, 'A saved revision-4 course receiv
 assert.deepEqual(before, original, 'Reading does not mutate input');
 assert.deepEqual(parse(upgraded), upgraded, 'Migration runs once');
 assert.equal(upgraded.revision, before.revision, 'Reading does not consume an edit revision');
-assert.equal(upgraded.curriculumRevision, 7);
+assert.equal(upgraded.curriculumRevision, 8);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)).sort(), Object.values(before.groups).flat().sort(), 'All original occurrences survive exactly once');
 for (const section of sections.filter(s => Object.hasOwn(before.groups, s.id) && !['module-06', 'c2-boards', ...catalog.modules.filter(m=>m.path==='C1').map(m=>m.id)].includes(s.moduleId))) {
   assert.deepEqual(upgraded.groups[section.id], before.groups[section.id], 'Other modules remain unchanged: ' + section.id);

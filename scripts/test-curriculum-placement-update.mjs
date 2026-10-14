@@ -19,9 +19,9 @@ const change=(state,edit)=>apply(state,{revision:state.revision,operationId:cryp
 assert.deepEqual(upgraded.groups,base.groups,'An actual revision-2 saved course receives the complete public teaching order');
 assert.deepEqual(before,original,'Reading never mutates the saved input');
 assert.deepEqual(parse(upgraded),upgraded,'The update is idempotent');
-assert.equal(upgraded.curriculumRevision, 7);
+assert.equal(upgraded.curriculumRevision, 8);
 assert.equal(upgraded.revision,before.revision,'A read does not consume an edit revision');
-assert.equal(view.allRows.length, 395);
+assert.equal(view.allRows.length, 397);
 assert.equal(Object.keys(view.rows).length, 144);
 assert.equal(sections.length, 144);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'All published sections contain videos, including supplementary-only sections');

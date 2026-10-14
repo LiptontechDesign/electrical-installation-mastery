@@ -217,6 +217,62 @@
       ],
       "decision": "Selected",
       "intentionalRepeat": false
+    },
+    {
+      "lessonId": "c1-three-phase-ir-practical",
+      "videoId": "0SS4bdnnjeM",
+      "url": "https://www.youtube.com/watch?v=0SS4bdnnjeM",
+      "title": "Insulation Resistance Test On a 3 Phase Circuit | PTT",
+      "creator": "Proactive Technical Training PTT",
+      "creatorUrl": "https://www.youtube.com/@proactivetechnicaltraining4431",
+      "fetchedAt": "2026-10-14T14:43:06.741Z",
+      "captionProvider": "YTTools public captions",
+      "captionLanguage": [
+        "en"
+      ],
+      "captionGeneration": "Not exposed by provider; do not assume human-authored",
+      "captionSha256": "3545979e70806a0135f34b5b2c685a08b7a46dbe0eef3539a595e963b564b98d",
+      "captionSegments": 155,
+      "captionEndSeconds": 519,
+      "durationBasis": "Approximate caption endpoint, visibly labelled approximate",
+      "review": "Complete available English transcript read; procedure and limitations checked; concise corrections displayed beside lesson",
+      "reviewedRanges": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 519
+        }
+      ],
+      "decision": "Selected",
+      "intentionalRepeat": false,
+      "limitations": "Demonstrates IR after isolation, not the isolation procedure. Around 1:56 captions say maximum but subsequent explanation correctly expects readings above 1 MΩ; minimum clarified. Incoming-neutral disconnection requires prior isolation/proving dead and reconnection."
+    },
+    {
+      "lessonId": "c1-periodic-reporting",
+      "videoId": "SAlr4fM3Jzg",
+      "url": "https://www.youtube.com/watch?v=SAlr4fM3Jzg",
+      "title": "Completing Certification | Electrical Installation Condition Report",
+      "creator": "ECA - Electrotechnical & Engineering Services Body",
+      "creatorUrl": "https://www.youtube.com/@ECALive",
+      "fetchedAt": "2026-10-14T14:50:58.697Z",
+      "captionProvider": "YTTools public captions",
+      "captionLanguage": [
+        "en"
+      ],
+      "captionGeneration": "Not exposed by provider; do not assume human-authored",
+      "captionSha256": "71a960190afd66a4b661f3d457a1ccdf6334bf3b04506234020e9c8621d8d706",
+      "captionSegments": 483,
+      "captionEndSeconds": 1262,
+      "durationBasis": "Approximate caption endpoint, visibly labelled approximate",
+      "review": "Complete available English transcript read; procedure and limitations checked; concise corrections displayed beside lesson",
+      "reviewedRanges": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1262
+        }
+      ],
+      "decision": "Selected",
+      "intentionalRepeat": false,
+      "limitations": "A2:2022 UK form example, not current Kenyan certification or a complete practical inspection. At 17:05 the outcome summary omits FI; correction displayed and checked against Electrical Safety First guidance."
     }
   ]
 }

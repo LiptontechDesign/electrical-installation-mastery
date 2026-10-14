@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { mkdir } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
 import { createElement as h } from 'react';
 import { act, create } from 'react-test-renderer';
@@ -70,7 +71,10 @@ await click(button('Save lesson'));assert.ok(state().bookmarkedLessonIds.include
 assert.equal(tree.root.findAllByProps({role:'tablist'}).length,0,'No lesson guide tabs');
 assert.ok(!/Lesson guide|Standards companion|Module recap|Mock paper|Simulations/.test(text(tree.toJSON())));
 await click(button('Next unwatched'));
-assert.equal(state().activeLessonId,'p01-l01','Suggested next is an explicit action');
+const catalog=JSON.parse(readFileSync('app/video-catalog.json','utf8'));
+const distantPath=catalog.modules.find(module=>module.lessons.some(lesson=>lesson.id===distant)).path;
+const firstInPath=catalog.modules.find(module=>module.path===distantPath).lessons[0].id;
+assert.equal(state().activeLessonId,firstInPath,'Suggested next is an explicit action within the selected pathway');
 await act(async()=>tree.unmount());
 saved=JSON.stringify({...state(),freeBrowseEnabled:false});
 window.location.hash='#learn/'+distant;

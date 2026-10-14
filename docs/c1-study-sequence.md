@@ -2,7 +2,7 @@
 
 Follow the sections in order after C2. Use the [four-storey worked project](../public/c1-worked-project.md) alongside the videos.
 
-40 sections · 62 video entries. [Selection review](c1-video-selection-and-flow.md).
+40 sections · 64 video entries. [Selection review](c1-video-selection-and-flow.md).
 
 ## Module 10: Three-Phase Supply, Star/Delta and Neutral Behaviour
 
@@ -194,6 +194,10 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 
   Disconnect sensitive equipment as instructed and discharge after testing.
 
+- [Three-Phase Insulation Resistance: Practical Board Test](https://www.youtube.com/watch?v=0SS4bdnnjeM) — Proactive Technical Training PTT; Applied practical.
+
+  1 MΩ is a minimum, not a target. Isolate and prove dead before disconnecting neutral; reconnect afterwards.
+
 ### 2. Supply polarity, phase identification and phase sequence
 
 - [First Live Test - Check Polarity of 3 Phase Supply, Using an Approved Voltage Indicator AM2 & AM2S](https://www.youtube.com/watch?v=3kHlWHM9Wm8) — GSH Electrical; Applied practical.
@@ -211,7 +215,11 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 
 - [Earth Fault Loop Impedance (Zs) - Testing 16 Amp Industrial Socket Outlets Both Single and 3 Phase](https://www.youtube.com/watch?v=Y7NPT8sQINY) — GSH Electrical; Applied practical.
 
-### 5. Optional refresher: domestic periodic inspection and reporting
+### 5. Periodic inspection: scope, observations and condition reporting
+
+- [Periodic Inspection: Scope, Limitations, Observations and Reporting](https://www.youtube.com/watch?v=SAlr4fM3Jzg) — ECA; Core application.
+
+  UK example: FI also makes an EICR unsatisfactory. Use current forms and assess each defect on its evidence.
 
 - [Periodic Inspection: Follow the Evidence Through an EICR](https://www.youtube.com/watch?v=1tBICSsjVWo) — Artisan Electrics; Optional refresher.
 

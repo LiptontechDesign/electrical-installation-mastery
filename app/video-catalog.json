@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 363,
-  "duration": "87 h 25 min",
+  "lessonCount": 365,
+  "duration": "87 h 55 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -4603,8 +4603,8 @@
       "number": 18,
       "title": "Three-Phase Initial Verification and Periodic Inspection",
       "description": "Follow the three-phase inspection, testing and commissioning sequence.",
-      "duration": "1 h 42 min",
-      "durationSeconds": 6164,
+      "duration": "2 h 12 min",
+      "durationSeconds": 7945,
       "learningOutcome": "Follow the three-phase inspection, testing and commissioning sequence.",
       "lessons": [
         {
@@ -4624,8 +4624,25 @@
           "studyNote": "Disconnect sensitive equipment as instructed and discharge after testing."
         },
         {
-          "id": "p08-l07",
+          "id": "c1-three-phase-ir-practical",
+          "videoId": "0SS4bdnnjeM",
+          "title": "Three-Phase Insulation Resistance: Practical Board Test",
+          "topic": "Conductor-pair testing, recorded readings and the supply neutral link",
+          "studyRole": "Applied practical",
+          "studyNote": "1 MΩ is a minimum, not a target. Isolate and prove dead before disconnecting neutral; reconnect afterwards.",
+          "instructor": "Proactive Technical Training PTT",
+          "durationSeconds": 519,
+          "duration": "≈ 8:39",
           "number": 2,
+          "url": "https://www.youtube.com/watch?v=0SS4bdnnjeM",
+          "layer": "HOW + REQUIREMENT",
+          "sourceKind": "Educator",
+          "regulationSensitive": true,
+          "required": true
+        },
+        {
+          "id": "p08-l07",
+          "number": 3,
           "title": "First Live Test - Check Polarity of 3 Phase Supply, Using an Approved Voltage Indicator AM2 & AM2S",
           "videoId": "3kHlWHM9Wm8",
           "url": "https://www.youtube.com/watch?v=3kHlWHM9Wm8",
@@ -4640,7 +4657,7 @@
         },
         {
           "id": "c1-phase-sequence-theory",
-          "number": 3,
+          "number": 4,
           "title": "Testing Phase Sequence: Rotation, Instruments and Consistent Phase Identification",
           "videoId": "aDSY10l_ZqE",
           "url": "https://www.youtube.com/watch?v=aDSY10l_ZqE",
@@ -4660,7 +4677,7 @@
           "instructor": "Odeane's Electric",
           "durationSeconds": 294,
           "duration": "≈ 4:54",
-          "number": 4,
+          "number": 5,
           "url": "https://www.youtube.com/watch?v=igi8F6UAvh0",
           "topic": "Phase sequence",
           "layer": "WHY",
@@ -4671,7 +4688,7 @@
         },
         {
           "id": "p08-l17",
-          "number": 5,
+          "number": 6,
           "title": "LIVE Testing on a 3 Phase Dis-Board - External Earth Fault Loop Impedance Ze, PEFC, PSCC AM2 & AM2S",
           "videoId": "IeWoLUIKuJw",
           "url": "https://www.youtube.com/watch?v=IeWoLUIKuJw",
@@ -4686,7 +4703,7 @@
         },
         {
           "id": "c1-pfc-breaking-capacity",
-          "number": 6,
+          "number": 7,
           "title": "Three-Phase Prospective Fault Current: Measurements, Estimates and Breaking Capacity",
           "videoId": "Ge7me58155E",
           "url": "https://www.youtube.com/watch?v=Ge7me58155E",
@@ -4702,7 +4719,7 @@
         },
         {
           "id": "p08-l11",
-          "number": 7,
+          "number": 8,
           "title": "Earth Fault Loop Impedance (Zs) - Testing 16 Amp Industrial Socket Outlets Both Single and 3 Phase",
           "videoId": "Y7NPT8sQINY",
           "url": "https://www.youtube.com/watch?v=Y7NPT8sQINY",
@@ -4716,6 +4733,23 @@
           "required": true
         },
         {
+          "id": "c1-periodic-reporting",
+          "videoId": "SAlr4fM3Jzg",
+          "title": "Periodic Inspection: Scope, Limitations, Observations and Reporting",
+          "topic": "Periodic inspection reporting, evidence and classification of observations",
+          "studyRole": "Core application",
+          "studyNote": "UK example: FI also makes an EICR unsatisfactory. Use current forms and assess each defect on its evidence.",
+          "instructor": "ECA - Electrotechnical & Engineering Services Body",
+          "durationSeconds": 1262,
+          "duration": "≈ 21:02",
+          "number": 9,
+          "url": "https://www.youtube.com/watch?v=SAlr4fM3Jzg",
+          "layer": "HOW + REQUIREMENT",
+          "sourceKind": "Educator",
+          "regulationSensitive": true,
+          "required": true
+        },
+        {
           "id": "p08-periodic",
           "title": "Periodic Inspection: Follow the Evidence Through an EICR",
           "videoId": "1tBICSsjVWo",
@@ -4725,7 +4759,7 @@
           "layer": "APPLY",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 8,
+          "number": 10,
           "url": "https://www.youtube.com/watch?v=1tBICSsjVWo",
           "duration": "59:44",
           "studyRole": "Optional refresher",
@@ -5997,5 +6031,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 314729
+  "durationSeconds": 316510
 }

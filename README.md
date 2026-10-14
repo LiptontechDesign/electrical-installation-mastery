@@ -1,8 +1,8 @@
 # Electrical Installation Mastery
 
-A video course with 363 lesson entries in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
+A video course with 365 lesson entries in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
 
-The C1 pathway has 40 focused sections and 62 default video rows, with transcript-reviewed additions, explicit essential/optional roles and a linked four-storey worked study project. See [the C1 selection and flow review](docs/c1-video-selection-and-flow.md).
+The C1 pathway has 40 focused sections and 64 default video rows, with transcript-reviewed additions, explicit essential/optional roles and a linked four-storey worked study project. See [the C1 selection and flow review](docs/c1-video-selection-and-flow.md).
 
 ## Learning experience
 

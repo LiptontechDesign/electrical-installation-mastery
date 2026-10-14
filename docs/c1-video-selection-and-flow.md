@@ -1,12 +1,12 @@
 # C1 video selection and teaching order
 
-Reviewed 14 October 2026. Curriculum revision 7 changes C1 only. C2 and Professional lesson identities, media and order remain unchanged.
+Reviewed 14 October 2026. Curriculum revisions 7 and 8 change C1 only. C2 and Professional lesson identities, media and order remain unchanged.
 
 The subsequent clarity cleanup removes all 40 C1 section-introduction paragraphs, shortens module summaries and retains only brief technical corrections beside relevant videos. Detailed selection reasoning stays in this review and the optional worked project. Video order, roles, identities and saved-course migration are unchanged.
 
 ## Result
 
-C1 now has 40 populated sections across its existing ten modules, 49 catalogue entries and 13 supporting entries: 62 default study rows. Eight catalogue entries were added, including an intentional optional repeat of GSH’s C2 demand example. Seven YouTube videos are new to the course. Every previous C1 lesson and supporting-video identity remains available.
+C1 now has 40 populated sections across its existing ten modules, 51 catalogue entries and 13 supporting entries: 64 default study rows. Ten catalogue entries were added, including an intentional optional repeat of GSH’s C2 demand example. Nine YouTube videos are new to the course. Every previous C1 lesson and supporting-video identity remains available.
 
 The order is supply/neutral → calculations → distribution/installation → demand/cables → fault protection → compensation → motor principles → controls → verification → diagnosis. The change splits broad groups and moves board workmanship out of earthing. Power-triangle teaching now precedes three-phase power examples. A standalone [four-storey worked study project](../public/c1-worked-project.md), linked from relevant lesson sections, carries one set of assumptions through the main steps. It is an authored training exercise, not an installation design approval or a claim that unrelated videos show one building.
 
@@ -30,6 +30,12 @@ UK teaching remains the main spine: Joe Robinson, eFIXX, GSH Electrical, John Wa
 | [Three-phase IR sequence — Learn Electrics](https://www.youtube.com/watch?v=Xe9vD_a3qEE) | 0:00–5:27; five conductors and ten unique pairs | Adds systematic three-phase insulation testing after C2 isolation/continuity. Module 18. Sensitive equipment, instrument instructions and discharge are stated beside the lesson. |
 | [Prospective fault current — GSH Electrical](https://www.youtube.com/watch?v=Ge7me58155E) | 0:00–6:15; L–N estimate, actual L–L readings, device capacity | Connects measurement to breaking capacity after Ze/PFC teaching. Module 18. Doubling L–N is identified as the video's assessment estimate, not a universal exact three-phase fault value. |
 | [Disconnected motor tests — Samuel Smith](https://www.youtube.com/watch?v=Ap6fpJ58d5Q) | 0:00–5:51; winding comparisons to 3:20, IR thereafter | Clear bench comparison of three winding resistances, frame insulation and inter-winding insulation. Module 19. Its >200 MΩ display is a meter-range result, not a universal acceptance limit; the lesson does not prove every possible motor fault. |
+| [Practical three-phase IR — Proactive Technical Training](https://www.youtube.com/watch?v=0SS4bdnnjeM) | Complete English captions, 0:00–8:39; instrument checks 1:01–1:47, conductor pairs 2:38–7:03, neutral-link diagnosis and restoration 7:07–8:24 | Added in revision 8 immediately after the conductor-pair theory. Demonstrates an actual board, switching lighting paths, recording meter readings and isolating the supply neutral link from the test. Isolation is a prerequisite; this is not an isolation tutorial. The caption's “maximum” at 1:56 conflicts with the subsequent above-1-MΩ explanation; the displayed correction identifies a minimum. |
+| [Condition reporting — ECA](https://www.youtube.com/watch?v=SAlr4fM3Jzg) | Complete English captions, 0:00–21:02; scope/limitations 3:26–8:23, classification and evidence 10:53–17:30, schedules 17:35–20:05 | Added in revision 8 before the existing optional domestic example. Explains agreed and operational limitations, recording defects, matching observations to inspection schedules and distinguishing diagnosis from remedial work. This is an A2:2022 UK reporting example, not a complete practical inspection or Kenyan certificate. The summary at 17:05 omits FI from unsatisfactory outcomes; the concise correction explicitly includes it. |
+
+The two revision-8 additions are UK sources. PTT's [2391 preparation course](https://www.proactivetechnicaltraining.co.uk/specialist-courses/preparation-course-for-city-guilds-2391/) establishes its UK training context. ECA's [official LV technical resources](https://www.eca.co.uk/member-support/technical/low-voltage-electrical-installations) establish the reporting context and distinguish the video's older forms from current forms. The FI correction is supported by [Electrical Safety First's reporting guidance](https://www.electricalsafetyfirst.org.uk/media/fnmoxlai/best-practice-guide-10.pdf), page 13. UK EICR classification codes C1/C2 are defect categories, distinct from EPRA licence classes.
+
+Revision 8 is additive: existing personal order is retained, new lessons join beside their authored neighbours, and the revision-7 relocation gate remains 7 so those moves are not replayed. Tests use the actual published revision-7 snapshot, protected personal moves, archives, deletions and repeated normalisation. Course totals are 365 catalogue entries and 397 default rows; C1 remains 40 sections with 64 rows. No section-introduction paragraphs were restored.
 
 ## Existing supporting lessons
 
@@ -63,6 +69,10 @@ These are editorial decisions about the requested self-study route, not general 
 | [Big Mike H: motor troubleshooting](https://www.youtube.com/watch?v=xHWv173gUbk) | Returned translated captions; also includes isolation/protection ambiguity. Not adopted as a core safe-test method. |
 | [Zack Hartle: PFC calculation](https://www.youtube.com/watch?v=4XXyrlpvGTw), [Actual Electrical Content: motor tests](https://www.youtube.com/watch?v=3ccwfO0T9_M) | Potentially valuable, but recovered captions were translated Arabic rather than verified English. Not represented as fully verified English selections. |
 | XS Training DOL and high-resistance fault demonstrations | Captions unavailable through the checked public sources. Not added on titles alone. |
+| [OM Electrical: EICR](https://www.youtube.com/watch?v=cahWM1pEtfo) | Complete English transcript reviewed. Overbroad retrofit, RCD and breaking-capacity conclusions would require several qualifications. Not selected. |
+| [Mark Allison: commercial EICR](https://www.youtube.com/watch?v=7HolOONojeU) | Complete English transcript reviewed. Useful inspection/sampling context, but the practical tests shown focus on one 230 V final circuit; neither complete three-phase commissioning nor report completion is demonstrated. Not added as the missing capstone. |
+| [PTT: three-phase isolation](https://www.youtube.com/watch?v=tO9Ws0C2wtA) | Complete available English transcript reviewed. Lock-off follows proving dead in the described sequence; not added as the beginner's isolation method. |
+| [John Ward: EICR Part 3](https://www.youtube.com/watch?v=4U9faEpt_JI) | Initial transcript review identifies a 2015 form and broad legacy RCD coding examples. Not selected over the shorter ECA reporting lesson; not represented as fully reviewed. |
 
 ## Migration and verification contract
 

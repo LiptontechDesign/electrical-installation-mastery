@@ -6,7 +6,7 @@ import { upgradeDesignLearningGroups } from './design-learning-migration';
 import { upgradeC1LearningGroups } from './c1-learning-migration';
 
 export const reviewedPlacementRevision = 3;
-export const curriculumRevision = 7;
+export const curriculumRevision = 8;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));

@@ -182,7 +182,7 @@ test('permanent removal survives default merging, reload, subsequent edits and r
   assert.ok(!snapshot(state).course.modules.flatMap(m => m.lessons).some(l => l.id === first));
   assert.ok(!state.receipts.some(r => r.inverse.videos.some(v => v.id === seed.id)));
   assert.equal(snapshot(state).course.lessonCount, snapshot(base).course.lessonCount - 1);
-  assert.equal(snapshot(base).course.lessonCount, 363, 'The shared published course is unchanged by a personal removal');
+  assert.equal(snapshot(base).course.lessonCount, 365, 'The shared published course is unchanged by a personal removal');
   integrity(state);
 });
 test('removed links can be added deliberately, without automatic restoration', () => {

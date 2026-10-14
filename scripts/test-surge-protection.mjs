@@ -20,7 +20,7 @@ assert.equal(sections.find(section => section.id === sourceId).title, 'Surge pro
 assert.equal(sections.find(section => section.id === destinationId).title, 'Arc-fault detection devices (AFDDs)');
 const original = structuredClone(previous), upgraded = parse(previous), view = snapshot(upgraded);
 assert.deepEqual(upgraded.groups, base.groups, 'A revision-3 saved course receives the same arrangement as a new course');
-assert.equal(upgraded.curriculumRevision, 7);
+assert.equal(upgraded.curriculumRevision, 8);
 assert.equal(upgraded.revision, previous.revision);
 assert.deepEqual(previous, original, 'Reading does not modify the stored course');
 assert.deepEqual(parse(upgraded), upgraded, 'The migration runs only once');
