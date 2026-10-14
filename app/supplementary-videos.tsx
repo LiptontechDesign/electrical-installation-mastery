@@ -8,6 +8,8 @@ import { useCourseAccount } from './course-account';
 import { useCourseOrder } from './course-order';
 import { VideoActions } from './course-editor-actions';
 import type { SupplementaryVideo } from './supplementary-model';
+import { isRequiredStudyVideo, studyVideoRole } from './course-curriculum';
+import LessonStudyContext from './lesson-study-context';
 import { formatVideoDuration, validVideoDuration } from './video-duration';
 
 type Context = { selected: SupplementaryVideo | null; playback: ReactNode; clearSelection: () => void; videos: SupplementaryVideo[]; watched: string[]; replaceWatched: (ids: string[]) => void; ready: boolean; error: string; open: (video: SupplementaryVideo) => void;
@@ -165,13 +167,17 @@ function SupplementaryLesson({ video, watched, progressError, onWatched, onBack,
     if (typeof seconds === 'number') reportDuration?.(video.videoId, seconds);
   }, [reportDuration, video.videoId]);
   const saved = study.savedVideos.includes(video.videoId);
+  const order = useCourseOrder();
+  const section = order.sectionsByModule[video.moduleId]?.find(section => section.id === order.byId.get(video.id)?.sectionId);
+  const isC1 = order.course.modules.find(module => module.id === video.moduleId)?.path === 'C1';
   return <article className="lesson-canvas supp-lesson" data-module-tone={moduleTone(video.moduleId)}>
     <div className="lesson-topline"><button className="mobile-module-button" type="button" onClick={study.openCourseMap}><Menu size={19}/> Course map</button><div className="breadcrumbs"><span>{study.navigation.path}</span><ChevronRight size={15}/><span>{study.navigation.moduleTitle}</span></div><VideoActions id={video.id}/><VideoLessonStepper/></div>
-    <div className="lesson-title-block"><p className="lesson-kicker"><strong>Video {study.navigation.position}</strong><span>·</span>Supplementary lesson</p><h1>{video.title}</h1><p>{video.instructor || 'YouTube'} <span>·</span> {duration ?? '—'}</p></div>
+    <div className="lesson-title-block"><p className="lesson-kicker"><strong>Video {study.navigation.position}</strong><span>·</span>{studyVideoRole(video.id)}</p><h1>{video.title}</h1><p>{video.instructor || 'YouTube'} <span>·</span> {duration ?? '—'}</p></div>
+    <LessonStudyContext id={video.id} section={section} introduction={isC1 ? section?.description : undefined}/>
     <div className="video-shell"><SupplementaryPlayer video={video} onWatched={onWatched} onPlayer={onPlayer}/>{study.autoNextControls}</div>
     <div className="lesson-control-row"><div><button className={saved ? 'bookmark-button active' : 'bookmark-button'} type="button" onClick={() => user ? study.toggleSaved(video.videoId) : requestSignIn()}><Bookmark size={18} fill={saved ? 'currentColor' : 'none'}/>{saved ? 'Saved' : 'Save lesson'}</button><button className="bookmark-button" type="button" onClick={onBack}>Back to core lesson</button><button className={`auto-next-toggle ${study.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={study.autoNextEnabled} onClick={study.toggleAutoNext}><SkipForward size={18}/> Auto-next <span>{study.autoNextEnabled ? 'On' : 'Off'}</span></button></div><button className={watched ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={watched} onClick={onToggle}>{watched ? <Check size={19}/> : <Circle size={19}/>} {watched ? 'Watched · Undo' : 'Mark video watched'}</button></div>
     <VideoStudyTools videoId={video.videoId} getPlayer={() => player.current}/>
-    {user && <LessonProgress watched={watched} completions={0} optional/>}
+    {user && <LessonProgress watched={watched} completions={0} optional={!isRequiredStudyVideo(video.id)} tracksCompletions={false}/>}
     <section className="lesson-personal-notes" aria-label="Personal lesson notes"><details className="lesson-notes-disclosure"><summary>Your lesson notes</summary>{user ? <label className="lesson-notes"><span>Write a private note for this lesson</span><textarea aria-label="Your lesson notes" maxLength={10000} value={study.videoNotes[video.videoId] ?? ''} onChange={event => study.setNote(video.videoId, event.target.value)} placeholder="Write your own notes…"/></label> : <div className="guest-notes"><p>Save your notes with this video.</p><button className="account-sign-in" onClick={requestSignIn}>Sign in to keep notes</button></div>}</details></section>
     {progressError && <p role="alert">{progressError}</p>}
     <details className="video-playback-help"><summary>Playback help</summary><p><a href={`https://www.youtube.com/watch?v=${video.videoId}`} target="_blank" rel="noopener noreferrer">Open on YouTube if playback is unavailable</a></p></details>

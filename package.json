@@ -60,7 +60,8 @@
     "test:design-learning": "node scripts/test-design-learning.mjs",
     "test:design-learning-browser": "node scripts/test-design-learning-browser.mjs",
     "test:connected-process": "node scripts/test-connected-process.mjs",
-    "test:connected-process-browser": "node scripts/test-connected-process-browser.mjs"
+    "test:connected-process-browser": "node scripts/test-connected-process-browser.mjs",
+    "test:c1-learning": "node scripts/test-c1-learning.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

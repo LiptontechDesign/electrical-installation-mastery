@@ -1,0 +1,355 @@
+{
+  "revision": 7,
+  "previous": {
+    "c1-fundamentals-section-1": [
+      "p02-l03",
+      "p07-l01"
+    ],
+    "c1-fundamentals-section-2": [
+      "p07-l02",
+      "p07-l03"
+    ],
+    "c1-fundamentals-section-3": [
+      "p07-l04",
+      "p07-l05"
+    ],
+    "c1-power-section-1": [
+      "p06-l13",
+      "c1-balanced-three-phase-power",
+      "c1-three-phase-power-factor",
+      "c1-three-phase-line-current"
+    ],
+    "c1-distribution-section-1": [
+      "p08-l01",
+      "p07-l06",
+      "p07-l07",
+      "p07-l08"
+    ],
+    "c1-distribution-section-2": [
+      "p02-l11",
+      "p11-v2-l11"
+    ],
+    "c1-design-section-1": [
+      "p10-l10",
+      "p07-l16"
+    ],
+    "c1-design-section-2": [
+      "p06-l05",
+      "c1-cable-design",
+      "c1-three-phase-voltage-drop"
+    ],
+    "c1-earthing-section-1": [
+      "p05-l13",
+      "p05-l12"
+    ],
+    "c1-earthing-section-2": [
+      "p07-l09",
+      "p10-l06",
+      "p10-l07"
+    ],
+    "c1-pfc-section-1": [
+      "course-NIrKOVZrqnU",
+      "p06-l14",
+      "c1-capacitor-sizing",
+      "c1-capacitor-placement"
+    ],
+    "c1-motors-section-1": [
+      "p07-induction",
+      "course-XbL0R_9KLD4",
+      "c1-motor-terminals"
+    ],
+    "module-07-section-1": [
+      "p04-l21",
+      "course-HFkTPmY7N7w"
+    ],
+    "module-07-dol-protection-wiring": [
+      "course-wQwGZMcDGXk",
+      "c1-motor-protection-sizing",
+      "p15-v2-l01",
+      "p04-l19",
+      "p04-l20",
+      "c1-phase-failure-relay"
+    ],
+    "module-07-section-2": [
+      "p07-star-delta",
+      "course-_tGyaE78WTA"
+    ],
+    "module-07-vfd-speed-control": [
+      "p07-vfd"
+    ],
+    "c1-testing-section-1": [
+      "p08-l07",
+      "course-igi8F6UAvh0",
+      "p08-l17",
+      "p08-l11"
+    ],
+    "c1-testing-section-2": [
+      "p08-periodic"
+    ],
+    "c1-faults-section-1": [
+      "c1-lost-neutral",
+      "c1-trace-three-phase",
+      "p10-l08"
+    ],
+    "c1-faults-motor-phase-loss": [
+      "c1-motor-phase-loss"
+    ],
+    "c1-faults-thermal-diagnosis": [
+      "p16-l06"
+    ]
+  },
+  "current": {
+    "c1-fundamentals-section-1": [
+      "p02-l03",
+      "p07-l01"
+    ],
+    "c1-fundamentals-section-2": [
+      "p07-l02",
+      "p07-l03"
+    ],
+    "c1-fundamentals-section-3": [
+      "p07-l04",
+      "p07-l05"
+    ],
+    "c1-power-section-1": [
+      "p06-l13"
+    ],
+    "c1-power-triangle": [
+      "p06-l14",
+      "c1-balanced-three-phase-power"
+    ],
+    "c1-power-worked-examples": [
+      "c1-three-phase-power-factor",
+      "c1-three-phase-line-current"
+    ],
+    "c1-power-motor-efficiency": [
+      "c1-motor-input-efficiency"
+    ],
+    "c1-distribution-section-1": [
+      "p08-l01",
+      "p07-l06",
+      "p07-l07"
+    ],
+    "c1-distribution-submains": [
+      "p07-l08"
+    ],
+    "c1-distribution-installation": [
+      "p10-l06",
+      "p10-l07",
+      "p07-l09"
+    ],
+    "c1-distribution-section-2": [
+      "p02-l11",
+      "p11-v2-l11"
+    ],
+    "c1-design-section-1": [
+      "p10-l10",
+      "c1-demand-example"
+    ],
+    "c1-design-section-2": [
+      "p06-l05",
+      "c1-cable-design"
+    ],
+    "c1-design-voltage-drop": [
+      "c1-three-phase-voltage-drop"
+    ],
+    "c1-design-extension": [
+      "p07-l16"
+    ],
+    "c1-earthing-section-1": [
+      "p05-l13"
+    ],
+    "c1-earthing-section-2": [
+      "p05-l12"
+    ],
+    "c1-pfc-section-1": [
+      "course-NIrKOVZrqnU"
+    ],
+    "c1-pfc-calculation": [
+      "c1-pfc-unity-bank",
+      "c1-capacitor-sizing"
+    ],
+    "c1-pfc-application": [
+      "c1-capacitor-placement"
+    ],
+    "c1-motors-section-1": [
+      "p07-induction"
+    ],
+    "c1-motors-nameplates": [
+      "course-XbL0R_9KLD4"
+    ],
+    "c1-motors-terminals": [
+      "c1-motor-terminals"
+    ],
+    "module-07-section-1": [
+      "p04-l21",
+      "course-HFkTPmY7N7w"
+    ],
+    "module-07-dol-protection-wiring": [
+      "course-wQwGZMcDGXk",
+      "c1-motor-protection-sizing",
+      "p15-v2-l01"
+    ],
+    "c1-controls-three-phase-dol": [
+      "p04-l19",
+      "p04-l20"
+    ],
+    "c1-controls-reversing": [
+      "c1-reversing-interlocks"
+    ],
+    "module-07-section-2": [
+      "p07-star-delta"
+    ],
+    "c1-controls-soft-start": [
+      "course-_tGyaE78WTA"
+    ],
+    "module-07-vfd-speed-control": [
+      "p07-vfd"
+    ],
+    "c1-controls-phase-monitoring": [
+      "c1-phase-failure-relay"
+    ],
+    "c1-testing-dead-tests": [
+      "c1-trace-three-phase",
+      "c1-three-phase-ir-sequence"
+    ],
+    "c1-testing-section-1": [
+      "p08-l07",
+      "c1-phase-sequence-theory",
+      "course-igi8F6UAvh0"
+    ],
+    "c1-testing-fault-current": [
+      "p08-l17",
+      "c1-pfc-breaking-capacity"
+    ],
+    "c1-testing-outlets": [
+      "p08-l11"
+    ],
+    "c1-testing-section-2": [
+      "p08-periodic"
+    ],
+    "c1-faults-section-1": [
+      "c1-lost-neutral",
+      "p10-l08"
+    ],
+    "c1-faults-motor-phase-loss": [
+      "c1-motor-phase-loss"
+    ],
+    "c1-faults-motor-tests": [
+      "c1-motor-winding-tests"
+    ],
+    "c1-faults-thermal-diagnosis": [
+      "p16-l06"
+    ]
+  },
+  "repeatableVideoIds": [
+    "Jx3Pk_5O-PM",
+    "lGcsQ8mLI34",
+    "q5xjqXcCqNw",
+    "VqgXVIi0jw8",
+    "aDSY10l_ZqE",
+    "Xe9vD_a3qEE",
+    "Ge7me58155E",
+    "Ap6fpJ58d5Q"
+  ],
+  "supplementaryAnchors": [
+    {
+      "id": "c1-balanced-three-phase-power",
+      "previous": {
+        "anchorId": "p06-l13",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "p06-l14",
+        "position": "after"
+      }
+    },
+    {
+      "id": "c1-three-phase-power-factor",
+      "previous": {
+        "anchorId": "c1-balanced-three-phase-power",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "c1-power-worked-examples",
+        "position": "after"
+      }
+    },
+    {
+      "id": "c1-three-phase-voltage-drop",
+      "previous": {
+        "anchorId": "c1-cable-design",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "c1-design-voltage-drop",
+        "position": "after"
+      }
+    },
+    {
+      "id": "c1-capacitor-sizing",
+      "previous": {
+        "anchorId": "p06-l14",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "c1-pfc-unity-bank",
+        "position": "after"
+      }
+    },
+    {
+      "id": "c1-capacitor-placement",
+      "previous": {
+        "anchorId": "c1-capacitor-sizing",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "c1-pfc-application",
+        "position": "after"
+      }
+    },
+    {
+      "id": "c1-motor-terminals",
+      "previous": {
+        "anchorId": "course-XbL0R_9KLD4",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "c1-motors-terminals",
+        "position": "after"
+      }
+    },
+    {
+      "id": "c1-phase-failure-relay",
+      "previous": {
+        "anchorId": "p04-l20",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "c1-controls-phase-monitoring",
+        "position": "after"
+      }
+    },
+    {
+      "id": "c1-trace-three-phase",
+      "previous": {
+        "anchorId": "c1-lost-neutral",
+        "position": "after"
+      },
+      "current": {
+        "anchorId": "c1-three-phase-ir-sequence",
+        "position": "before"
+      }
+    }
+  ],
+  "addedLessonIds": [
+    "c1-motor-input-efficiency",
+    "c1-demand-example",
+    "c1-pfc-unity-bank",
+    "c1-reversing-interlocks",
+    "c1-phase-sequence-theory",
+    "c1-three-phase-ir-sequence",
+    "c1-pfc-breaking-capacity",
+    "c1-motor-winding-tests"
+  ]
+}

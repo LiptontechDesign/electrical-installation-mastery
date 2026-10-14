@@ -1,5 +1,6 @@
 'use client';
 import LessonRowMetadata from './lesson-row-metadata';
+import { studyVideoRole } from './course-curriculum';
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { DndContext, DragOverlay, KeyboardSensor, MeasuringStrategy, MouseSensor, TouchSensor, rectIntersection,
@@ -178,7 +179,7 @@ function SupplementaryCourseRow({ row, video }: { row: MapRow; video?: Supplemen
   const current = supplementary?.selected?.id === row.id;
   return <button className={current ? 'supp-video-row active' : 'supp-video-row'} aria-current={current ? 'page' : undefined} type="button" onClick={() => { if (video) supplementary?.open(video); }}>
     {watched ? <CheckCircle2 size={17} role={user?'img':undefined} aria-label={user?'Watched':undefined}/> : <PlayCircle size={17} role={user?'img':undefined} aria-label={user?'Not watched':undefined}/>}
-    <span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><LessonRowMetadata kind="Supplementary" duration={duration ?? '—'} watched={user ? watched : undefined} current={current} saved={Boolean(video && study.savedVideos.includes(video.videoId))}/></span>
+    <span><strong>L{String(row.displayNumber).padStart(2, '0')} · {row.title}</strong><LessonRowMetadata kind={studyVideoRole(row.id)} duration={duration ?? '—'} watched={user ? watched : undefined} current={current} saved={Boolean(video && study.savedVideos.includes(video.videoId))}/></span>
   </button>;
 }
 

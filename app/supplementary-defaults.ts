@@ -5,6 +5,7 @@ import durationData from './supplementary-durations.json';
 import { validVideoDuration } from './video-duration';
 import designUpdate from './design-learning-update.json';
 import processUpdate from './connected-process-update.json';
+import c1Update from './c1-learning-update.json';
 const verifiedDurations: Record<string, number> = durationData;
 
 // Approved study-plan media. Durations come from each video's public YouTube metadata.
@@ -42,20 +43,20 @@ const resources = [
   ['c2-voltage-drop-masterclass','yMgyWxzGN-U','Voltage Drop Masterclass — Single Point and Distributed Loads','LEARN ELECTRICS','p06-l08','after'],
   ['c2-socket-planning-design','QVMpVIYm594','How Many Sockets Is That? Kitchens, Bedrooms, Floor Area and Circuit Design','LEARN ELECTRICS','p10-l09','after'],
   ['c1-pfc-bridge','NIrKOVZrqnU','Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)','The Engineering Mindset','p06-l14','before'],
-  ['c1-balanced-three-phase-power','bSjh8AakqXM','Power in a Balanced Three-Phase Circuit','Michel van Biezen','p06-l13','after'],
-  ['c1-three-phase-power-factor','T2eO6hOT-EA','Three-Phase Motor Power Factor — Worked Example','Michel van Biezen','c1-balanced-three-phase-power','after'],
+  ['c1-balanced-three-phase-power','bSjh8AakqXM','Power in a Balanced Three-Phase Circuit','Michel van Biezen','p06-l14','after'],
+  ['c1-three-phase-power-factor','T2eO6hOT-EA','Three-Phase Motor Power Factor — Worked Example','Michel van Biezen','c1-power-worked-examples','after'],
   ['c1-three-phase-line-current','TPsHULaNc7s','Find the Line Current Needed for a Three-Phase Motor','Michel van Biezen','c1-three-phase-power-factor','after'],
   ['c1-cable-design','ChC_94Zmf4I','Master Three-Phase Cable Calculations','Sparky Help','p06-l05','after'],
-  ['c1-three-phase-voltage-drop','RCHw0TUEAes','Voltage Drop in Three-Phase Installations and Single-Phase Circuits from a Three-Phase Supply','LEARN ELECTRICS','c1-cable-design','after'],
-  ['c1-capacitor-sizing','u9m8vgz4aJs','Calculation of Capacitor Bank for Power Factor Improvement — kVAr','Electrical lectures','p06-l14','after'],
-  ['c1-capacitor-placement','oaIRQ1Xm7OQ','5 Types of Power Factor Correction — Capacitor Bank Locations','The Electrical Guy','c1-capacitor-sizing','after'],
+  ['c1-three-phase-voltage-drop','RCHw0TUEAes','Voltage Drop in Three-Phase Installations and Single-Phase Circuits from a Three-Phase Supply','LEARN ELECTRICS','c1-design-voltage-drop','after'],
+  ['c1-capacitor-sizing','u9m8vgz4aJs','Calculation of Capacitor Bank for Power Factor Improvement — kVAr','Electrical lectures','c1-pfc-unity-bank','after'],
+  ['c1-capacitor-placement','oaIRQ1Xm7OQ','5 Types of Power Factor Correction — Capacitor Bank Locations','The Electrical Guy','c1-pfc-application','after'],
   ['c1-nameplate','XbL0R_9KLD4','How to read a Motor Nameplate (IEC standard)','ElectricalEngineeringPlanet','p07-induction','after'],
-  ['c1-motor-terminals','p2hDLMeFJqs','How to Connect Motor Windings in Star and Delta','The Electrical Guy','course-XbL0R_9KLD4','after'],
+  ['c1-motor-terminals','p2hDLMeFJqs','How to Connect Motor Windings in Star and Delta','The Electrical Guy','c1-motors-terminals','after'],
   ['c1-dol-bridge','HFkTPmY7N7w','How Do Direct On Line Motor (DOL) Starters Work?','eFIXX','p15-v2-l01','before'],
   ['c1-motor-protection-sizing','DWUuKNjMf3E','How to Select MCB and Overload Relay Size for a Motor','The Electrical Guy','course-wQwGZMcDGXk','after'],
-  ['c1-phase-failure-relay','-OCfG8inGSY','Phase-Failure Relay with a DOL Starter','The Electrical Guy','p04-l20','after'],
+  ['c1-phase-failure-relay','-OCfG8inGSY','Phase-Failure Relay with a DOL Starter','The Electrical Guy','c1-controls-phase-monitoring','after'],
   ['c1-lost-neutral','0MVNJUstzCY','Three-Phase Lost Neutral — What Happens and Why Equipment Is Damaged','LEARN ELECTRICS','p10-l08','before'],
-  ['c1-trace-three-phase','CDW_SKOgYSY','Tracing Three-Phase Wiring and Identifying Cables','LEARN ELECTRICS','c1-lost-neutral','after'],
+  ['c1-trace-three-phase','CDW_SKOgYSY','Tracing Three-Phase Wiring and Identifying Cables','LEARN ELECTRICS','c1-three-phase-ir-sequence','before'],
   ['c1-motor-phase-loss','AtlXd1xA-CU','Single-Phasing Fault in a Three-Phase Motor','Electrical lectures','c1-faults-motor-phase-loss','after'],
   ['professional-selectivity','V6WR_TBf1AU','Circuit Breaker Selective Coordination: Common Questions and Misconceptions','Bentley EasyPower / ABB presenter','p05-l14','after'],
 ] as const;
@@ -63,7 +64,7 @@ const locations=new Map([...learningSections.map(s=>[s.id,s.moduleId] as const),
 const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
 // This C1 core video is also an intentionally placed C2 supporting lesson.
 export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w']);
-const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds]);
+const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds, ...c1Update.repeatableVideoIds]);
 const seedLocations=new Map<string,string>(locations);
 const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>{
   const moduleId=seedLocations.get(anchorId);
@@ -79,7 +80,7 @@ const reviewedAnchors = new Map<string, { anchorId: string; position: 'before' |
   ['c2-socket-planning-design', { anchorId: 'p06-l15', position: 'after' }],
   ['c1-motor-phase-loss', { anchorId: 'p10-l08', position: 'after' }],
 ]);
-export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlacements = true, designPlacements = true):SupplementaryState {
+export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlacements = true, designPlacements = true, c1Placements = true):SupplementaryState {
   // Preserve the approved cross-path bridge and personal copies of overview
   // videos: repeating those lessons is intentional reinforcement.
   const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)||intentionalRepeatVideoIds.has(video.videoId)).map(video=>{
@@ -92,6 +93,10 @@ export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlac
     }
     if (designPlacements && seed && video.id === 'c2-installation-reference-methods' && migrated.anchorId === 'p06-l04' && migrated.position === 'before' && (migrated.placementRevision ?? 0) < designUpdate.revision) {
       migrated = {...migrated, anchorId:seed.anchorId, position:seed.position, placementRevision:designUpdate.revision};
+    }
+    const c1Anchor = c1Update.supplementaryAnchors.find(item => item.id === video.id);
+    if (c1Placements && seed && c1Anchor && (migrated.placementRevision ?? 0) < c1Update.revision && migrated.anchorId === c1Anchor.previous.anchorId && migrated.position === c1Anchor.previous.position) {
+      migrated = {...migrated, anchorId:seed.anchorId, position:seed.position, placementRevision:c1Update.revision};
     }
     const { durationSeconds: storedDuration, ...details } = migrated;
     const durationSeconds = validVideoDuration(storedDuration) ?? verifiedDurations[migrated.videoId];

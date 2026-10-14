@@ -1,0 +1,67 @@
+{
+  "c1-balanced-three-phase-power": {
+    "required": false,
+    "studyRole": "Optional derivation",
+    "studyNote": "This derives constant total power for balanced sinusoidal loads. You can first study the worked P, Q and S examples below, then return to the trigonometric derivation."
+  },
+  "c1-three-phase-power-factor": {
+    "required": true,
+    "studyRole": "Core worked example",
+    "studyNote": "Treat 4.8 kW as electrical input power. S = √3 × VL × IL is measured in VA, not W; power factor = P/S. Mechanical output requires a separate efficiency calculation."
+  },
+  "c1-three-phase-line-current": {
+    "required": true,
+    "studyRole": "Core worked example",
+    "studyNote": "The 25 kW is electrical input power. Write apparent power as 31.25 kVA, although the narration says kW. If a motor rating gives shaft output, first divide it by efficiency."
+  },
+  "c1-cable-design": {
+    "required": true,
+    "studyRole": "Core worked example",
+    "studyNote": "BS 7671 example: 15.7 kW is electrical input. Ib = 28.33 A; In = 32 A; required tabulated capacity ≈ 43.29 A. A table rating of 44 A is not installed Iz: 44 × 0.96 × 0.77 ≈ 32.52 A. Check terminal temperature limits, CPC, Zs and breaking capacity separately."
+  },
+  "c1-three-phase-voltage-drop": {
+    "required": true,
+    "studyRole": "Core worked example",
+    "studyNote": "Follow the diagram values as captions can misread lengths. Express the balanced three-phase submain drop against line voltage and the single-phase final-circuit drop against phase voltage before adding percentages. An unbalanced feeder needs a fuller calculation."
+  },
+  "c1-capacitor-sizing": {
+    "required": false,
+    "studyRole": "Optional earlier example",
+    "studyNote": "The available captions are badly corrupted, so this earlier resource is not the core calculation. Use the verified three-phase capacitor-bank lesson and the linked worked project for Qc = P(tan φ1 − tan φ2), units and a target power factor below unity."
+  },
+  "c1-capacitor-placement": {
+    "required": true,
+    "studyRole": "Core application",
+    "studyNote": "Compare individual, group and central compensation. Specify switching, protection and discharge from manufacturer guidance. Automatic steps prevent overcorrection as demand falls. Do not connect correction capacitors to a VFD output."
+  },
+  "c1-motor-terminals": {
+    "required": true,
+    "studyRole": "Core demonstration",
+    "studyNote": "Study the nameplate first: a 230/400 V Δ/Y motor runs in star on a 400 V supply; a 400/690 V Δ/Y motor runs in delta on 400 V. A star–delta starter on 400 V needs a motor rated for delta running at 400 V and six accessible ends. Identify winding pairs on an isolated, disconnected motor."
+  },
+  "c1-motor-protection-sizing": {
+    "required": false,
+    "studyRole": "Optional comparison",
+    "studyNote": "Do not use the blanket 125% breaker rule as a BS 7671 or EPRA design rule. The kW example omits efficiency if kW means shaft output. Select protection from nameplate current, starting duty, cable protection and manufacturer coordination; distinguish relay range from its actual setting."
+  },
+  "c1-phase-failure-relay": {
+    "required": false,
+    "studyRole": "Optional circuit critique",
+    "studyNote": "Inspect the control diagram critically: protection in only the holding branch can be bypassed while Start is held. A validated protective contact must interrupt every energising path as required by the manufacturer. Do not copy this diagram as a complete approved control circuit."
+  },
+  "c1-lost-neutral": {
+    "required": true,
+    "studyRole": "Core fault explanation",
+    "studyNote": "The RMS supply is approximately 230 V phase-to-neutral; its sinusoidal peak is about 325 V. Losing the shared neutral shifts the star point under unequal loads. Individual voltages depend on the impedances and can approach line voltage; they do not all become 400 V."
+  },
+  "c1-trace-three-phase": {
+    "required": true,
+    "studyRole": "Core dead-test method",
+    "studyNote": "Apply only after safe isolation, proving dead and separating the conductors from all supplies and loads. Record each identified pair, verify the final conductor and remove temporary links before reconnection."
+  },
+  "c1-motor-phase-loss": {
+    "required": true,
+    "studyRole": "Core fault concept",
+    "studyNote": "Single-phasing can prevent starting or cause overheating while running. The quoted current multipliers illustrate a particular model; they are not universal trip settings. Compare phase currents, supply continuity and winding tests using the motor and protection manufacturer instructions."
+  }
+}

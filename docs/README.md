@@ -1,6 +1,6 @@
 # Current documentation
 
-Updated 6 October 2026. This index and the root README describe the current application, not a future roadmap.
+Updated 14 October 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
 - [Video-only cleanup](video-only-cleanup.md): what was retained, removed and verified.
@@ -9,6 +9,8 @@ Updated 6 October 2026. This index and the root README describe the current appl
 - [Earth-electrode video selection](earth-electrode-video-selection.md): Module 5 sequence, verified creator links, electrode/test coverage and source limitations.
 - [C2 testing playlist integration](c2-testing-playlist-integration.md): approved JPElectric lessons, teaching order, excluded and retired videos, and preservation of personal course arrangements.
 - [Earthing, ADS and fault-loop learning order](earthing-ads-learning-order.md): revised Module 5 sections, conductor sizing in Module 6, bonding assessment in Module 8 and saved-course migration.
+- [C1 self-study sequence](c1-study-sequence.md): every C1 section and video in study order, with essential/optional roles and precise study notes.
+- [C1 video selection and teaching flow](c1-video-selection-and-flow.md): 40 C1 sections, transcript evidence, qualified examples, the linked worked project and revision-7 migration.
 - [Connected process introductions](connected-process-introductions.md): first sections for Modules 7–9, current-before-earlier RCD teaching, and revision-6 preservation of saved courses.
 - [Design learning structure](design-learning-structure.md): the Module 6 eFIXX overview, focused design sections, Module 7 assembly groups and revision-5 saved-course migration.
 - [Surge-protection integration](surge-protection-integration.md): six supplied John Ward videos, separate SPD/AFDD sections in Module 5 and revision-4 saved-course migration.

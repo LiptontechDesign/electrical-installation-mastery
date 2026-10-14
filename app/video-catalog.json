@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 355,
-  "duration": "86 h 23 min",
+  "lessonCount": 363,
+  "duration": "87 h 25 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -4011,8 +4011,8 @@
       "number": 11,
       "title": "Three-Phase Voltage, Current and Power Calculations",
       "description": "Consolidate line and phase quantities before using balanced three-phase P, Q and S calculations. Distinguish electrical input power from motor shaft output and state the assumptions behind each formula.",
-      "duration": "25 min",
-      "durationSeconds": 1553,
+      "duration": "55 min",
+      "durationSeconds": 3314,
       "learningOutcome": "Consolidate line and phase quantities before using balanced three-phase P, Q and S calculations. Distinguish electrical input power from motor shaft output and state the assumptions behind each formula.",
       "lessons": [
         {
@@ -4029,6 +4029,37 @@
           "regulationSensitive": true,
           "studyRole": "Core lesson",
           "required": true
+        },
+        {
+          "id": "p06-l14",
+          "number": 2,
+          "title": "Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale",
+          "videoId": "qBJvgN8nCqw",
+          "url": "https://www.youtube.com/watch?v=qBJvgN8nCqw",
+          "instructor": "Joe Robinson Training",
+          "duration": "20:39",
+          "durationSeconds": 1239,
+          "topic": "AC, impedance and power factor",
+          "layer": "WHY",
+          "regulationSensitive": true,
+          "studyRole": "Core lesson",
+          "required": true
+        },
+        {
+          "id": "c1-motor-input-efficiency",
+          "number": 3,
+          "title": "Motor Output, Efficiency, Power Factor and Three-Phase Line Current",
+          "videoId": "Jx3Pk_5O-PM",
+          "url": "https://www.youtube.com/watch?v=Jx3Pk_5O-PM",
+          "instructor": "Aaron Dahlen",
+          "duration": "≈ 8:42",
+          "durationSeconds": 522,
+          "topic": "Motor input current",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core lesson",
+          "required": true,
+          "studyNote": "The 460 V, 75 hp example teaches universal power relationships, not local supply values or North American wiring rules. Pinput = Pshaft/η; S = Pinput/PF; IL = S/(√3VL). Scilab is only a calculator: reproduce the result with a normal scientific calculator."
         }
       ],
       "path": "C1",
@@ -4040,8 +4071,8 @@
       "number": 12,
       "title": "Three-Phase Boards, Feeders and Outlets",
       "description": "After safe isolation, identify the board and its outgoing circuits, follow a submain to the next board, then examine industrial outlets. This is the system map needed before sizing or installing it.",
-      "duration": "37 min",
-      "durationSeconds": 2263,
+      "duration": "1 h 01 min",
+      "durationSeconds": 3707,
       "learningOutcome": "After safe isolation, identify the board and its outgoing circuits, follow a submain to the next board, then examine industrial outlets. This is the system map needed before sizing or installing it.",
       "lessons": [
         {
@@ -4105,8 +4136,53 @@
           "required": true
         },
         {
-          "id": "p02-l11",
+          "id": "p10-l06",
           "number": 5,
+          "title": "SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION",
+          "videoId": "_nba6f8ClgM",
+          "url": "https://www.youtube.com/watch?v=_nba6f8ClgM",
+          "instructor": "eFIXX",
+          "duration": "10:07",
+          "durationSeconds": 607,
+          "topic": "Supply and distribution equipment",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Applied practical",
+          "required": true
+        },
+        {
+          "id": "p10-l07",
+          "number": 6,
+          "title": "THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES",
+          "videoId": "MNy60muYklo",
+          "url": "https://www.youtube.com/watch?v=MNy60muYklo",
+          "instructor": "eFIXX",
+          "duration": "10:50",
+          "durationSeconds": 650,
+          "topic": "Supply and distribution equipment",
+          "layer": "WHY + REQUIREMENT",
+          "regulationSensitive": true,
+          "studyRole": "Applied practical",
+          "required": true
+        },
+        {
+          "id": "p07-l09",
+          "number": 7,
+          "title": "Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell",
+          "videoId": "c6YyObUS4Mk",
+          "url": "https://www.youtube.com/watch?v=c6YyObUS4Mk",
+          "instructor": "GSH Electrical",
+          "duration": "3:07",
+          "durationSeconds": 187,
+          "topic": "Supply and distribution equipment",
+          "layer": "WHY",
+          "regulationSensitive": true,
+          "studyRole": "Deep practice",
+          "required": false
+        },
+        {
+          "id": "p02-l11",
+          "number": 8,
           "title": "Connections in a 3 Phase Plug and Socket Explained",
           "videoId": "-9irkJ94xg0",
           "url": "https://www.youtube.com/watch?v=-9irkJ94xg0",
@@ -4128,7 +4204,7 @@
           "topic": "Heavy-duty industrial connection systems",
           "layer": "SELECT + PROTECT",
           "sourceKind": "Manufacturer or trade specialist",
-          "number": 6,
+          "number": 9,
           "url": "https://www.youtube.com/watch?v=PNWdC47daYM",
           "duration": "5:46",
           "regulationSensitive": true,
@@ -4145,8 +4221,8 @@
       "number": 13,
       "title": "Three-Phase Load, Cable and Protection Design",
       "description": "Assess three-phase building demand before cable and protective-device design. The seven-floor building and transformer-sizing example is an optional advanced extension.",
-      "duration": "1 h 00 min",
-      "durationSeconds": 3647,
+      "duration": "1 h 05 min",
+      "durationSeconds": 3955,
       "learningOutcome": "Assess three-phase building demand before cable and protective-device design. The seven-floor building and transformer-sizing example is an optional advanced extension.",
       "lessons": [
         {
@@ -4165,19 +4241,20 @@
           "required": true
         },
         {
-          "id": "p07-l16",
+          "id": "c1-demand-example",
           "number": 2,
-          "title": "Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial",
-          "videoId": "XGMUpguNzao",
-          "url": "https://www.youtube.com/watch?v=XGMUpguNzao",
-          "instructor": "Elegant Power Solutions",
-          "duration": "18:00",
-          "durationSeconds": 1080,
-          "topic": "Electrical design and calculations",
-          "layer": "WHY",
+          "title": "Maximum Demand and Diversity: A UK Domestic Worked Example",
+          "videoId": "lGcsQ8mLI34",
+          "url": "https://www.youtube.com/watch?v=lGcsQ8mLI34",
+          "instructor": "GSH Electrical",
+          "duration": "≈ 5:08",
+          "durationSeconds": 308,
+          "topic": "Demand and diversity",
+          "layer": "HOW",
           "regulationSensitive": true,
-          "studyRole": "Optional extension",
-          "required": false
+          "studyRole": "Optional context",
+          "required": false,
+          "studyNote": "This is a limited UK domestic example. Its largest-circuit plus 40% method requires the stated standard final-circuit arrangements. It is not a universal whole-building diversity rule. For C1, prepare a separate L1/L2/L3 schedule and assess the most heavily loaded phase; use the worked project."
         },
         {
           "id": "p06-l05",
@@ -4193,6 +4270,22 @@
           "regulationSensitive": true,
           "studyRole": "Core lesson",
           "required": true
+        },
+        {
+          "id": "p07-l16",
+          "number": 4,
+          "title": "Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial",
+          "videoId": "XGMUpguNzao",
+          "url": "https://www.youtube.com/watch?v=XGMUpguNzao",
+          "instructor": "Elegant Power Solutions",
+          "duration": "18:00",
+          "durationSeconds": 1080,
+          "topic": "Electrical design and calculations",
+          "layer": "WHY",
+          "regulationSensitive": true,
+          "studyRole": "Optional extension",
+          "required": false,
+          "studyNote": "Optional extension: a seven-floor building and transformer example exceeds the four-storey C1 building scope. Complete the main low-voltage building sequence and the four-storey worked project first."
         }
       ],
       "path": "C1",
@@ -4202,11 +4295,11 @@
     {
       "id": "c1-earthing",
       "number": 14,
-      "title": "Small-Commercial Earthing and Installation Application",
-      "description": "Complete fault-loop and earthing checks after sizing, then apply the design to three-phase boards. Before the temperature-correction Part 2 lesson, review Part 1 in Module 5, Section 6: Earth-fault loop impedance.",
-      "duration": "43 min",
-      "durationSeconds": 2638,
-      "learningOutcome": "Complete fault-loop and earthing checks after sizing, then apply the design to three-phase boards. Before the temperature-correction Part 2 lesson, review Part 1 in Module 5, Section 6: Earth-fault loop impedance.",
+      "title": "Earth Fault Loops, Disconnection and Protection Checks",
+      "description": "Connect cable design to earthing, protective conductors, temperature-corrected Zs and automatic disconnection. Complete the fault-protection checks before verification. Revisit Part 1 in Module 5, Section 6 before the temperature calculation.",
+      "duration": "19 min",
+      "durationSeconds": 1194,
+      "learningOutcome": "Connect cable design to earthing, protective conductors, temperature-corrected Zs and automatic disconnection. Complete the fault-protection checks before verification.",
       "lessons": [
         {
           "id": "p05-l13",
@@ -4237,51 +4330,6 @@
           "regulationSensitive": true,
           "studyRole": "Core lesson",
           "required": true
-        },
-        {
-          "id": "p07-l09",
-          "number": 3,
-          "title": "Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell",
-          "videoId": "c6YyObUS4Mk",
-          "url": "https://www.youtube.com/watch?v=c6YyObUS4Mk",
-          "instructor": "GSH Electrical",
-          "duration": "3:07",
-          "durationSeconds": 187,
-          "topic": "Supply and distribution equipment",
-          "layer": "WHY",
-          "regulationSensitive": true,
-          "studyRole": "Deep practice",
-          "required": false
-        },
-        {
-          "id": "p10-l06",
-          "number": 4,
-          "title": "SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION",
-          "videoId": "_nba6f8ClgM",
-          "url": "https://www.youtube.com/watch?v=_nba6f8ClgM",
-          "instructor": "eFIXX",
-          "duration": "10:07",
-          "durationSeconds": 607,
-          "topic": "Supply and distribution equipment",
-          "layer": "HOW",
-          "regulationSensitive": true,
-          "studyRole": "Applied practical",
-          "required": true
-        },
-        {
-          "id": "p10-l07",
-          "number": 5,
-          "title": "THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES",
-          "videoId": "MNy60muYklo",
-          "url": "https://www.youtube.com/watch?v=MNy60muYklo",
-          "instructor": "eFIXX",
-          "duration": "10:50",
-          "durationSeconds": 650,
-          "topic": "Supply and distribution equipment",
-          "layer": "WHY + REQUIREMENT",
-          "regulationSensitive": true,
-          "studyRole": "Applied practical",
-          "required": true
         }
       ],
       "path": "C1",
@@ -4293,8 +4341,8 @@
       "number": 15,
       "title": "Power Factor Causes, Correction and Capacitor Sizing",
       "description": "Understand why inductive loads draw reactive current and the consequences of poor power factor; then calculate compensating kVAr and compare individual, group and automatic bank placement.",
-      "duration": "36 min",
-      "durationSeconds": 2212,
+      "duration": "33 min",
+      "durationSeconds": 1999,
       "learningOutcome": "Understand why inductive loads draw reactive current and the consequences of poor power factor; then calculate compensating kVAr and compare individual, group and automatic bank placement.",
       "lessons": [
         {
@@ -4314,19 +4362,20 @@
           "required": true
         },
         {
-          "id": "p06-l14",
+          "id": "c1-pfc-unity-bank",
           "number": 2,
-          "title": "Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale",
-          "videoId": "qBJvgN8nCqw",
-          "url": "https://www.youtube.com/watch?v=qBJvgN8nCqw",
-          "instructor": "Joe Robinson Training",
-          "duration": "20:39",
-          "durationSeconds": 1239,
-          "topic": "AC, impedance and power factor",
-          "layer": "WHY",
-          "regulationSensitive": true,
+          "title": "Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank",
+          "videoId": "q5xjqXcCqNw",
+          "url": "https://www.youtube.com/watch?v=q5xjqXcCqNw",
+          "instructor": "Dieter Monkey",
+          "duration": "≈ 17:06",
+          "durationSeconds": 1026,
+          "topic": "Three-phase capacitor calculations",
+          "layer": "HOW",
+          "regulationSensitive": false,
           "studyRole": "Core lesson",
-          "required": true
+          "required": true,
+          "studyNote": "This generic 600 V, 60 Hz calculation is a mathematical example, not a Kenyan supply specification. The 72 kVAr total becomes 24 kVAr per star-connected capacitor; C ≈ 530.5 µF per phase. Unity is an instructional limit, not the default design target. The worked project uses 400 V, 50 Hz and correction to 0.95."
         }
       ],
       "path": "C1",
@@ -4384,8 +4433,8 @@
       "number": 17,
       "title": "Motor Starters, Protection and Speed Control",
       "description": "Move from contactor and overload function to DOL diagrams and wiring; only then compare star-delta, soft starting and VFD speed control. Keep short-circuit, overload and control functions distinct.",
-      "duration": "1 h 11 min",
-      "durationSeconds": 4285,
+      "duration": "1 h 17 min",
+      "durationSeconds": 4660,
       "learningOutcome": "Move from contactor and overload function to DOL diagrams and wiring; only then compare star-delta, soft starting and VFD speed control. Keep short-circuit, overload and control functions distinct.",
       "lessons": [
         {
@@ -4448,8 +4497,9 @@
           "url": "https://www.youtube.com/watch?v=PIaqmCxN9KU",
           "duration": "8:32",
           "regulationSensitive": true,
-          "studyRole": "Core lesson",
-          "required": true
+          "studyRole": "Optional refresher",
+          "required": false,
+          "studyNote": "Optional single-phase DOL comparison. The following three-phase diagram and wiring demonstrations provide the main C1 starter sequence."
         },
         {
           "id": "p04-l19",
@@ -4482,6 +4532,22 @@
           "required": true
         },
         {
+          "id": "c1-reversing-interlocks",
+          "number": 7,
+          "title": "Reversing a Three-Phase Motor: Mechanical and Electrical Interlocks",
+          "videoId": "VqgXVIi0jw8",
+          "url": "https://www.youtube.com/watch?v=VqgXVIi0jw8",
+          "instructor": "AutomationDirect.com",
+          "duration": "≈ 6:15",
+          "durationSeconds": 375,
+          "topic": "Reversing and interlocking",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core lesson",
+          "required": true,
+          "studyNote": "Learn the swapped-phase power paths and both interlock principles first (0:00–2:11). Later NFPA/UL references and product kits are US-specific context. Choose components, coil voltage and protection for the actual installation; verify that forward and reverse cannot energise together."
+        },
+        {
           "id": "p07-star-delta",
           "title": "Star–Delta Starting: Sequence and Interlocks",
           "videoId": "h89TTwlNnpY",
@@ -4491,7 +4557,7 @@
           "layer": "HOW",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 7,
+          "number": 8,
           "url": "https://www.youtube.com/watch?v=h89TTwlNnpY",
           "duration": "11:08",
           "studyRole": "Core lesson",
@@ -4504,7 +4570,7 @@
           "instructor": "AutomationDirect",
           "durationSeconds": 198,
           "duration": "≈ 3:18",
-          "number": 8,
+          "number": 9,
           "url": "https://www.youtube.com/watch?v=_tGyaE78WTA",
           "topic": "Soft starting",
           "layer": "WHY",
@@ -4523,7 +4589,7 @@
           "layer": "WHY",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 9,
+          "number": 10,
           "url": "https://www.youtube.com/watch?v=yEPe7RDtkgo",
           "duration": "15:17",
           "studyRole": "Core lesson",
@@ -4539,13 +4605,29 @@
       "number": 18,
       "title": "Three-Phase Initial Verification and Periodic Inspection",
       "description": "Use the C2 inspection and dead-test sequence, then study phase rotation and controlled three-phase live measurements before periodic inspection and reporting.",
-      "duration": "1 h 23 min",
-      "durationSeconds": 5002,
+      "duration": "1 h 42 min",
+      "durationSeconds": 6164,
       "learningOutcome": "Use the C2 inspection and dead-test sequence, then study phase rotation and controlled three-phase live measurements before periodic inspection and reporting.",
       "lessons": [
         {
-          "id": "p08-l07",
+          "id": "c1-three-phase-ir-sequence",
           "number": 1,
+          "title": "Three-Phase Insulation Resistance: All Ten Conductor Pairs",
+          "videoId": "Xe9vD_a3qEE",
+          "url": "https://www.youtube.com/watch?v=Xe9vD_a3qEE",
+          "instructor": "LEARN ELECTRICS",
+          "duration": "≈ 5:27",
+          "durationSeconds": 327,
+          "topic": "Dead-test sequence",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core lesson",
+          "required": true,
+          "studyNote": "Apply C2 safe isolation and continuity/polarity methods first. Disconnect or protect sensitive loads, electronics, SPDs and drive equipment according to their instructions. Test voltage and acceptance criteria depend on the circuit and applicable standard; discharge after testing."
+        },
+        {
+          "id": "p08-l07",
+          "number": 2,
           "title": "First Live Test - Check Polarity of 3 Phase Supply, Using an Approved Voltage Indicator AM2 & AM2S",
           "videoId": "3kHlWHM9Wm8",
           "url": "https://www.youtube.com/watch?v=3kHlWHM9Wm8",
@@ -4559,13 +4641,29 @@
           "required": true
         },
         {
+          "id": "c1-phase-sequence-theory",
+          "number": 3,
+          "title": "Testing Phase Sequence: Rotation, Instruments and Consistent Phase Identification",
+          "videoId": "aDSY10l_ZqE",
+          "url": "https://www.youtube.com/watch?v=aDSY10l_ZqE",
+          "instructor": "John Ward (jwflame)",
+          "duration": "≈ 7:40",
+          "durationSeconds": 460,
+          "topic": "Phase sequence",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core lesson",
+          "required": true,
+          "studyNote": "Phase identification and phase rotation are different checks. Establish consistent identification, verify the instrument rating and confirm rotation at the required points before testing the intended motor direction."
+        },
+        {
           "id": "course-igi8F6UAvh0",
           "videoId": "igi8F6UAvh0",
           "title": "How to use a phase rotation meter? 👷🏽‍♂️",
           "instructor": "Odeane's Electric",
           "durationSeconds": 294,
           "duration": "≈ 4:54",
-          "number": 2,
+          "number": 4,
           "url": "https://www.youtube.com/watch?v=igi8F6UAvh0",
           "topic": "Phase sequence",
           "layer": "WHY",
@@ -4576,7 +4674,7 @@
         },
         {
           "id": "p08-l17",
-          "number": 3,
+          "number": 5,
           "title": "LIVE Testing on a 3 Phase Dis-Board - External Earth Fault Loop Impedance Ze, PEFC, PSCC AM2 & AM2S",
           "videoId": "IeWoLUIKuJw",
           "url": "https://www.youtube.com/watch?v=IeWoLUIKuJw",
@@ -4590,8 +4688,24 @@
           "required": true
         },
         {
+          "id": "c1-pfc-breaking-capacity",
+          "number": 6,
+          "title": "Three-Phase Prospective Fault Current: Measurements, Estimates and Breaking Capacity",
+          "videoId": "Ge7me58155E",
+          "url": "https://www.youtube.com/watch?v=Ge7me58155E",
+          "instructor": "GSH Electrical",
+          "duration": "≈ 6:15",
+          "durationSeconds": 375,
+          "topic": "Prospective fault current",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core lesson",
+          "required": true,
+          "studyNote": "PFC here means prospective fault current, not power factor correction. The doubled highest L–N result is a UK assessment approximation shown in this video, not a universal measurement of a three-phase fault. Use the correct instrument method and compare the applicable prospective fault current with protective-device breaking capacity."
+        },
+        {
           "id": "p08-l11",
-          "number": 4,
+          "number": 7,
           "title": "Earth Fault Loop Impedance (Zs) - Testing 16 Amp Industrial Socket Outlets Both Single and 3 Phase",
           "videoId": "Y7NPT8sQINY",
           "url": "https://www.youtube.com/watch?v=Y7NPT8sQINY",
@@ -4614,11 +4728,12 @@
           "layer": "APPLY",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 5,
+          "number": 8,
           "url": "https://www.youtube.com/watch?v=1tBICSsjVWo",
           "duration": "59:44",
-          "studyRole": "Applied practical",
-          "required": true
+          "studyRole": "Optional refresher",
+          "required": false,
+          "studyNote": "Optional domestic EICR refresher. This is not a complete three-phase commissioning demonstration. Initial verification, periodic inspection and diagnosis have different purposes; use the preceding three-phase test sequence and the worked project to assemble the C1 handover."
         }
       ],
       "path": "C1",
@@ -4630,8 +4745,8 @@
       "number": 19,
       "title": "Three-Phase and Motor Fault Diagnosis",
       "description": "Trace the system before testing: consider lost neutral, board defects, missing motor phase and thermal symptoms; isolate, repair and repeat the relevant verification. Videos do not replace supervised practice.",
-      "duration": "1 h 13 min",
-      "durationSeconds": 4381,
+      "duration": "1 h 18 min",
+      "durationSeconds": 4732,
       "learningOutcome": "Trace the system before testing: consider lost neutral, board defects, missing motor phase and thermal symptoms; isolate, repair and repeat the relevant verification. Videos do not replace supervised practice.",
       "lessons": [
         {
@@ -4650,6 +4765,22 @@
           "required": true
         },
         {
+          "id": "c1-motor-winding-tests",
+          "number": 2,
+          "title": "Isolated Motor Bench Tests: Winding Resistance and Insulation Resistance",
+          "videoId": "Ap6fpJ58d5Q",
+          "url": "https://www.youtube.com/watch?v=Ap6fpJ58d5Q",
+          "instructor": "Samuel Smith",
+          "duration": "≈ 5:51",
+          "durationSeconds": 351,
+          "topic": "Motor dead tests",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core lesson",
+          "required": true,
+          "studyNote": "This is a disconnected bench motor. Complete safe isolation and separation from the starter/VFD first. Compare U1–U2, V1–V2 and W1–W2, then insulation to the frame and between windings using manufacturer-approved voltage. The displayed >200 MΩ is that meter’s range, not a universal pass threshold. Balanced ohms do not prove absence of turn-to-turn faults; assess mechanical condition and safe functional behaviour too."
+        },
+        {
           "id": "p16-l06",
           "title": "Detecting Electrical Energy Loss with Thermal Imaging",
           "videoId": "KceE8zdk35g",
@@ -4658,7 +4789,7 @@
           "topic": "Electrical thermography and condition assessment",
           "layer": "Diagnostic inspection",
           "sourceKind": "Manufacturer or trade specialist",
-          "number": 2,
+          "number": 3,
           "url": "https://www.youtube.com/watch?v=KceE8zdk35g",
           "duration": "51:00",
           "regulationSensitive": true,
@@ -5869,5 +6000,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 310985
+  "durationSeconds": 314729
 }

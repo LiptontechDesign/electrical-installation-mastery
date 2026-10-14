@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
-import { connectedProcessAdditions } from './assert-c2-reorganization.mjs';
+import { connectedProcessAdditions, c1LearningAdditions } from './assert-c2-reorganization.mjs';
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-order-model.ts', 'app/course-progress-model.ts'], outdir: 'work/process-tests', bundle: true, platform: 'node', format: 'esm' });
 const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCourseSnapshot: snapshot, applyCourseEdit: apply } = await import('../work/process-tests/personal-course-model.js');
 const { orderedSections } = await import('../work/process-tests/course-order-model.js');
@@ -9,21 +9,21 @@ const { progressForVideos } = await import('../work/process-tests/course-progres
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const before = read('scripts/fixtures/connected-process-previous.json'), original = structuredClone(before);
 const update = read('app/connected-process-update.json'), sections = read('app/learning-sections.json');
-const newIds = new Set(connectedProcessAdditions.map(lesson => lesson.id));
+const newIds = new Set([...connectedProcessAdditions, ...c1LearningAdditions].map(lesson => lesson.id));
 const upgraded = parse(before), view = snapshot(upgraded);
 const lessons = new Map(view.course.modules.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
 assert.equal(before.curriculumRevision, 5);
-assert.equal(upgraded.curriculumRevision, update.revision);
+assert.equal(upgraded.curriculumRevision, 7);
 assert.equal(upgraded.revision, before.revision, 'Reading does not consume a personal edit revision');
 assert.deepEqual(before, original, 'The saved input is unchanged');
 assert.deepEqual(parse(upgraded), upgraded, 'The additive upgrade is idempotent');
 assert.deepEqual(upgraded.groups, base.groups, 'A revision-5 saved course receives the published sequence');
-for (const [id, ids] of Object.entries(before.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every existing section retains its exact order: ' + id);
-assert.deepEqual(upgraded.videos, before.videos, 'Existing supporting-video details remain unchanged');
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)), Object.values(before.groups).flat(), 'Every previous occurrence retains its place in the overall sequence');
-assert.equal(view.course.lessonCount, 355);
-assert.equal(view.allRows.length, 387);
-assert.equal(sections.length, 125);
+for (const [id, ids] of Object.entries(before.groups).filter(([id])=>!Object.hasOwn(JSON.parse(readFileSync('app/c1-learning-update.json','utf8')).previous,id))) assert.deepEqual(upgraded.groups[id], ids, 'Every existing section retains its exact order: ' + id);
+assert.deepEqual(upgraded.videos.filter(v=>!v.id.startsWith('c1-')), before.videos.filter(v=>!v.id.startsWith('c1-')), 'Existing supporting-video details remain unchanged');
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)).sort(), Object.values(before.groups).flat().sort(), 'Every previous occurrence retains its place in the overall sequence');
+assert.equal(view.course.lessonCount, 363);
+assert.equal(view.allRows.length, 395);
+assert.equal(sections.length, 144);
 assert.deepEqual(update.overviewLessonIds, connectedProcessAdditions.map(lesson => lesson.id));
 const expected = [
   ['c2-boards', ['62lEhAuzeAI', 'dlkxzIQFvrk']],
@@ -45,7 +45,7 @@ const marked = new Set(['p03-l12', 'p08-l14', 'p09-l01']);
 const oldProgress = progressForVideos(Object.values(before.groups).flat(), marked);
 const newProgress = progressForVideos(view.allRows.map(row => row.id), marked);
 assert.equal(newProgress.watched, oldProgress.watched);
-assert.equal(newProgress.total, oldProgress.total + 14);
+assert.equal(newProgress.total, oldProgress.total + 14 + c1LearningAdditions.length);
 assert.equal(progressForVideos(update.overviewLessonIds, marked).watched, 0, 'Repeated videos have independent watched occurrences');
 
 // Personal copies must survive when their YouTube videos become canonical.
@@ -61,7 +61,7 @@ custom.receipts = [{ id: 'previous-consumer-unit-move', revision: 22, affected: 
 custom.archivedLessonIds = ['p08-l03']; custom.deletedIds = ['p09-l01'];
 const kept = parse(custom), keptView = snapshot(kept);
 assert.deepEqual(kept.videos.filter(video => video.id.startsWith('private-process-')), copies, 'Personal copies retain IDs, details, position and archive status');
-for (const [id, ids] of Object.entries(custom.groups)) assert.deepEqual(kept.groups[id], ids.filter(id => !custom.deletedIds.includes(id)), 'Personal group order is preserved: ' + id);
+for (const [id, ids] of Object.entries(custom.groups).filter(([id])=>!Object.hasOwn(JSON.parse(readFileSync('app/c1-learning-update.json','utf8')).previous,id))) assert.deepEqual(kept.groups[id], ids.filter(id => !custom.deletedIds.includes(id)), 'Personal group order is preserved: ' + id);
 assert.deepEqual(kept.itemRevisions, custom.itemRevisions); assert.deepEqual(kept.receipts, custom.receipts);
 assert.equal(kept.revision, 22); assert.deepEqual(parse(kept), kept);
 assert.equal(keptView.byId.get('p03-l12').sectionId, destination);

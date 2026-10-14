@@ -3,9 +3,10 @@ import { learningSections } from './learning-sections';
 import { upgradeEarthingGroups } from './earthing-curriculum-migration';
 import { upgradeSurgeProtectionGroups } from './surge-protection-curriculum-migration';
 import { upgradeDesignLearningGroups } from './design-learning-migration';
+import { upgradeC1LearningGroups } from './c1-learning-migration';
 
 export const reviewedPlacementRevision = 3;
-export const curriculumRevision = 6;
+export const curriculumRevision = 7;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));
@@ -16,7 +17,7 @@ type SupportingVideo = { id: string; anchorId: string };
 // authoritative; each update retains its own revision gate.
 export function upgradePublishedGroups(input: Record<string, string[]>, revision = 0, protectedIds = new Set<string>(), supporting: SupportingVideo[] = []) {
   const earthing = upgradeEarthingGroups(input, revision, protectedIds, supporting);
-  if (revision >= reviewedPlacementRevision) return upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(earthing, revision, protectedIds, supporting), revision, protectedIds, supporting);
+  if (revision >= reviewedPlacementRevision) return upgradeC1LearningGroups(upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(earthing, revision, protectedIds, supporting), revision, protectedIds, supporting), revision, protectedIds, supporting);
   const groups = Object.fromEntries(Object.entries(earthing).map(([id, ids]) => [id, [...ids]]));
   for (const section of learningSections) groups[section.id] ??= [];
   const sortable = new Set<string>();
@@ -88,5 +89,5 @@ export function upgradePublishedGroups(input: Record<string, string[]>, revision
       return ordered[index++];
     });
   }
-  return upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(groups, revision, protectedIds, supporting), revision, protectedIds, supporting);
+  return upgradeC1LearningGroups(upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(groups, revision, protectedIds, supporting), revision, protectedIds, supporting), revision, protectedIds, supporting);
 }

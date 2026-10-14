@@ -13,7 +13,8 @@ import {
   PlayCircle, RotateCcw, Settings, SkipForward,
   Upload, X, Zap,
 } from 'lucide-react';
-import course, { isRequiredLesson, lessonStudyRole } from './course-curriculum';
+import course, { isRequiredStudyVideo, lessonStudyRole } from './course-curriculum';
+import LessonStudyContext from './lesson-study-context';
 import { useCourseOrder } from './course-order';
 import { importPromotedWatched } from './integrated-progress';
 import { markVideoGroupWatched, recordVideoCompletion } from './flexible-progress';
@@ -211,7 +212,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   const location = lessonLocation.get(learner.activeLessonId) ?? lessonLocation.get(allLessons[0]?.id ?? '') ?? fallbackLocation;
   const activeLesson = location.module.lessons[location.lessonIndex];
-  const sectionIntroduction = sectionsByModule[location.module.id]?.find(section => section.lessonIds[0] === activeLesson.id)?.description;
+  const activeSection = sectionsByModule[location.module.id]?.find(section => section.id === courseRowsById.get(activeLesson.id)?.sectionId);
+  const sectionIntroduction = location.module.path === 'C1' || activeSection?.lessonIds[0] === activeLesson.id ? activeSection?.description : undefined;
   const hasCoreLesson = lessonLookup.has(activeLesson.id);
   const completed = useMemo(() => new Set(learner.completedLessonIds), [learner.completedLessonIds]);
   const bookmarked = useMemo(() => new Set(learner.bookmarkedLessonIds), [learner.bookmarkedLessonIds]);
@@ -225,7 +227,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const pathwayProgress = progressForVideos(pathRows.map(row => row.id), watchedRows);
   const selectedPathLabel = pathwayLabel(mapPath);
   const groupProgress = (ids: string[]) => {
-    const optional = ids.filter(id => !lessonLookup.has(id) || !isRequiredLesson(id));
+    const optional = ids.filter(id => !isRequiredStudyVideo(id));
     const optionalProgress = progressForVideos(optional, watchedRows);
     return { ...progressForVideos(ids, watchedRows), optionalTotal: optionalProgress.total, optionalRemaining: optionalProgress.total - optionalProgress.watched };
   };
@@ -813,7 +815,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       openCourseMap,
       navigation: { position: allCourseRows[selectedRowIndex]?.displayNumber ?? 1, total: allCourseRows.filter(row => row.moduleId === selectedModule.id).length, path: selectedModule.path, moduleTitle: selectedModule.title,
         previous: previousRow ? { title: previousRow.title, select: () => selectCourseRow(previousRow) } : undefined,
-        next: nextRow ? { title: nextRow.title, duration: nextCore?.duration ?? supplementary?.durationFor(supplementary.videos.find(video => video.id === nextRow.id)), optional: !nextCore || !isRequiredLesson(nextCore.id), select: () => selectCourseRow(nextRow) } : undefined },
+        next: nextRow ? { title: nextRow.title, duration: nextCore?.duration ?? supplementary?.durationFor(supplementary.videos.find(video => video.id === nextRow.id)), optional: !isRequiredStudyVideo(nextRow.id), select: () => selectCourseRow(nextRow) } : undefined },
       positions: learner.videoPositions, notes: learner.timestampNotes, position: saveVideoPosition,
       addNote: (id, seconds, text) => { if (user) setLearner(current => ({ ...current, timestampNotes: { ...current.timestampNotes, [id]: [...(current.timestampNotes[id] ?? []), { id: crypto.randomUUID(), seconds: Math.floor(seconds), text }].slice(0, 100) }, updatedAt: new Date().toISOString() })); },
       removeNote: (id, noteId) => { if (user) setLearner(current => ({ ...current, timestampNotes: { ...current.timestampNotes, [id]: (current.timestampNotes[id] ?? []).filter(note => note.id !== noteId) }, updatedAt: new Date().toISOString() })); }
@@ -914,7 +916,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   <VideoLessonStepper/>
                 </div>
                 <div className="lesson-title-block"><p className="lesson-kicker"><strong>{location.module.path}.{String(location.module.stageNumber).padStart(2,'0')}</strong><span>·</span>{lessonStudyRole(activeLesson.id)}<span>·</span>{activeLesson.topic}</p><h1>{activeLesson.title}</h1><p>{activeLesson.instructor} <span>·</span> {activeLesson.duration}</p></div>
-                {sectionIntroduction && <p className="lesson-section-introduction">{sectionIntroduction}</p>}
+                <LessonStudyContext id={activeLesson.id} section={activeSection} introduction={sectionIntroduction}/>
                 <div className="video-shell">
                   <div className="video-frame">
                     {playerSrc
@@ -928,7 +930,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={completed.has(activeLesson.id)} onClick={toggleComplete}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Watched · Undo' : 'Mark video watched'}</button>
                 </div>
                 <VideoStudyTools key={activeLesson.videoId} videoId={activeLesson.videoId} getPlayer={() => playerBindingRef.current?.player ?? null}/>
-                {user && <LessonProgress watched={completed.has(activeLesson.id)} completions={learner.videoCompletionCounts[activeLesson.id]??0}/>}
+                {user && <LessonProgress watched={completed.has(activeLesson.id)} completions={learner.videoCompletionCounts[activeLesson.id]??0} optional={!isRequiredStudyVideo(activeLesson.id)}/>}
                 <section className="lesson-personal-notes" aria-label="Personal lesson notes">
                   <details className="lesson-notes-disclosure"><summary>Your lesson notes</summary>{user ? <label className="lesson-notes"><span>Write a private note for this lesson</span><textarea aria-label="Your lesson notes" value={learner.notes[activeLesson.id]??''} onChange={event=>setLearner(current=>({...current,notes:{...current.notes,[activeLesson.id]:event.target.value},updatedAt:new Date().toISOString()}))} placeholder="Write your own notes…"/></label> : <div className="guest-notes"><p>Save your notes with this video.</p><button className="account-sign-in" onClick={requestSignIn}>Sign in to keep notes</button></div>}</details>
                 </section>

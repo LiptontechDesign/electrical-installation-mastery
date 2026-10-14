@@ -72,7 +72,7 @@ try{
     await dialog.getByRole('radio',{name:'At the beginning',exact:true}).check();
     await dialog.getByRole('button',{name:'Move video',exact:true}).click();
     await dialog.waitFor({state:'hidden'});
-    assert.equal(f.state().curriculumRevision, 6);
+    assert.equal(f.state().curriculumRevision, 7);
     assert.equal(model.personalCourseSnapshot(f.state()).byId.get('p08-l13').sectionId,'module-03-section-5');
     await progress(page,5,snapshot.allRows.length);
     await undo(page);

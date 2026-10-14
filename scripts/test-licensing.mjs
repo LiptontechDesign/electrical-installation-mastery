@@ -9,8 +9,8 @@ const {withSupplementaryDefaults}=await import('../work/licensing-check/suppleme
 const {courseMapSnapshot}=await import('../work/licensing-check/course-drop-model.js');
 assert.deepEqual(course.modules.map(m=>m.path),[...Array(9).fill('C2'),...Array(10).fill('C1'),...Array(6).fill('Professional')]);
 assertC2Reorganization(course);
-assert.equal(learningSections.length, 125);
-assert.equal(new Set(learningSections.map(s=>s.id)).size, 125);
+assert.equal(learningSections.length, 144);
+assert.equal(new Set(learningSections.map(s=>s.id)).size, 144);
 for(const [moduleId,expected] of Object.entries(c2StageOrder)) {
  assert.deepEqual(sectionsByModule[moduleId].map(({title,lessonIds})=>({title,lessonIds})),expected);
 }
@@ -31,14 +31,6 @@ const addedC1=['bSjh8AakqXM','T2eO6hOT-EA','TPsHULaNc7s','ChC_94Zmf4I','RCHw0TUE
 for(const id of addedC1)assert.ok(supplements.some(video=>video.videoId===id&&course.modules.find(module=>module.id===video.moduleId)?.path==='C1'),`C1 supplementary placement: ${id}`);
 const rows=courseMapSnapshot({version:1,revision:0,groups:{}},supplements).rows;
 const ids=sectionId=>rows[sectionId].map(row=>row.id);
-assert.deepEqual(ids('c1-power-section-1'),['p06-l13','c1-balanced-three-phase-power','c1-three-phase-power-factor','c1-three-phase-line-current']);
-assert.deepEqual(ids('c1-design-section-2'),['p06-l05','c1-cable-design','c1-three-phase-voltage-drop']);
-assert.deepEqual(ids('c1-pfc-section-1'),['course-NIrKOVZrqnU','p06-l14','c1-capacitor-sizing','c1-capacitor-placement']);
-assert.deepEqual(ids('c1-motors-section-1'),['p07-induction','course-XbL0R_9KLD4','c1-motor-terminals']);
-assert.deepEqual(ids('module-07-section-1'),['p04-l21','course-HFkTPmY7N7w']);
-assert.deepEqual(ids('module-07-dol-protection-wiring'),['course-wQwGZMcDGXk','c1-motor-protection-sizing','p15-v2-l01','p04-l19','p04-l20','c1-phase-failure-relay']);
-assert.deepEqual(ids('c1-faults-section-1'),['c1-lost-neutral','c1-trace-three-phase','p10-l08']);
-assert.deepEqual(ids('c1-faults-motor-phase-loss'),['c1-motor-phase-loss']);
-assert.deepEqual(ids('c1-faults-thermal-diagnosis'),['p16-l06']);
-assert.equal(ids('c1-testing-section-1')[0],'p08-l07');
+const c1Plan = JSON.parse(await (await import('node:fs/promises')).readFile('app/c1-learning-update.json','utf8'));
+for(const [sectionId, expected] of Object.entries(c1Plan.current)) assert.deepEqual(ids(sectionId), expected);
 console.log('PASS: course paths, section coverage, supplementary placement and promoted-video progress migration.');
