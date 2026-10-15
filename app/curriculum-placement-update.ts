@@ -4,20 +4,25 @@ import { upgradeEarthingGroups } from './earthing-curriculum-migration';
 import { upgradeSurgeProtectionGroups } from './surge-protection-curriculum-migration';
 import { upgradeDesignLearningGroups } from './design-learning-migration';
 import { upgradeC1LearningGroups } from './c1-learning-migration';
+import c1FlowUpdate from './c1-flow-update.json';
 
 export const reviewedPlacementRevision = 3;
-export const curriculumRevision = 9;
+export const curriculumRevision = 10;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));
 type SupportingVideo = { id: string; anchorId: string };
+function upgradeC1PublishedGroups(input: Record<string, string[]>, revision: number, protectedIds: Set<string>, supporting: SupportingVideo[]) {
+  const historical = upgradeC1LearningGroups(input, revision, protectedIds, supporting);
+  return upgradeC1LearningGroups(historical, revision, protectedIds, supporting, c1FlowUpdate);
+}
 
 // Apply the published topic changes once. A known video moves only while it is
 // still in its former published section. Personal destinations elsewhere stay
 // authoritative; each update retains its own revision gate.
 export function upgradePublishedGroups(input: Record<string, string[]>, revision = 0, protectedIds = new Set<string>(), supporting: SupportingVideo[] = []) {
   const earthing = upgradeEarthingGroups(input, revision, protectedIds, supporting);
-  if (revision >= reviewedPlacementRevision) return upgradeC1LearningGroups(upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(earthing, revision, protectedIds, supporting), revision, protectedIds, supporting), revision, protectedIds, supporting);
+  if (revision >= reviewedPlacementRevision) return upgradeC1PublishedGroups(upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(earthing, revision, protectedIds, supporting), revision, protectedIds, supporting), revision, protectedIds, supporting);
   const groups = Object.fromEntries(Object.entries(earthing).map(([id, ids]) => [id, [...ids]]));
   for (const section of learningSections) groups[section.id] ??= [];
   const sortable = new Set<string>();
@@ -89,5 +94,5 @@ export function upgradePublishedGroups(input: Record<string, string[]>, revision
       return ordered[index++];
     });
   }
-  return upgradeC1LearningGroups(upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(groups, revision, protectedIds, supporting), revision, protectedIds, supporting), revision, protectedIds, supporting);
+  return upgradeC1PublishedGroups(upgradeDesignLearningGroups(upgradeSurgeProtectionGroups(groups, revision, protectedIds, supporting), revision, protectedIds, supporting), revision, protectedIds, supporting);
 }

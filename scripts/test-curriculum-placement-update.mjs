@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
-import { surgeProtectionAdditions, designLearningAdditions, connectedProcessAdditions, overviewIds, c1LearningAdditions, c1GapFillAdditions } from './assert-c2-reorganization.mjs';
-const surgeIds = new Set([...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions].map(lesson => lesson.id));
+import { surgeProtectionAdditions, designLearningAdditions, connectedProcessAdditions, overviewIds, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions } from './assert-c2-reorganization.mjs';
+const surgeIds = new Set([...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions].map(lesson => lesson.id));
 await build({entryPoints:['app/personal-course-model.ts','app/course-order-model.ts','app/course-progress-model.ts'],outdir:'work/placement-tests',bundle:true,platform:'node',format:'esm'});
 const model=await import('../work/placement-tests/personal-course-model.js');
 const { orderedSections, moveLesson }=await import('../work/placement-tests/course-order-model.js');
@@ -19,11 +19,11 @@ const change=(state,edit)=>apply(state,{revision:state.revision,operationId:cryp
 assert.deepEqual(upgraded.groups,base.groups,'An actual revision-2 saved course receives the complete public teaching order');
 assert.deepEqual(before,original,'Reading never mutates the saved input');
 assert.deepEqual(parse(upgraded),upgraded,'The update is idempotent');
-assert.equal(upgraded.curriculumRevision, 9);
+assert.equal(upgraded.curriculumRevision, 10);
 assert.equal(upgraded.revision,before.revision,'A read does not consume an edit revision');
-assert.equal(view.allRows.length, 450);
-assert.equal(Object.keys(view.rows).length, 174);
-assert.equal(sections.length, 174);
+assert.equal(view.allRows.length, 464);
+assert.equal(Object.keys(view.rows).length, 182);
+assert.equal(sections.length, 182);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'All published sections contain videos, including supplementary-only sections');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!surgeIds.has(id)).sort(),Object.values(before.groups).flat().sort(),'No old video is lost or duplicated');
 assert.ok(Object.keys(before.groups).every(id=>Object.hasOwn(upgraded.groups,id)),'Every previous section remains a valid edit/Undo destination');

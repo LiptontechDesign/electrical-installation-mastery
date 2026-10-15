@@ -1,14 +1,16 @@
 import update from './c1-learning-update.json';
 
-const previous: Record<string, string[]> = update.previous;
-const current: Record<string, string[]> = update.current;
-const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));
 type SupportingVideo = { id: string; anchorId: string };
+type GroupUpdate = { revision: number; previous: Record<string, string[]>; current: Record<string, string[]>; addedLessonIds: string[] };
 
 // Split only the former published C1 groups. Personal moves,
 // supporting-video edits and later curriculum arrangements remain authoritative.
-export function upgradeC1LearningGroups(input: Record<string, string[]>, revision = 0, protectedIds = new Set<string>(), supporting: SupportingVideo[] = []) {
+export function upgradeC1LearningGroups(input: Record<string, string[]>, revision = 0, protectedIds = new Set<string>(), supporting: SupportingVideo[] = [], placement: GroupUpdate = update) {
+  const update = placement;
   if (revision >= update.revision) return input;
+  const previous = update.previous;
+  const current = update.current;
+  const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));
   const groups = Object.fromEntries(Object.entries(input).map(([id, ids]) => [id, [...ids]]));
   for (const sectionId of Object.keys(current)) groups[sectionId] ??= [];
   const sortable = new Set<string>();

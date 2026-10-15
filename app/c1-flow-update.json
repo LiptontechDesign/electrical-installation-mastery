@@ -1,0 +1,160 @@
+{
+  "revision": 10,
+  "previous": {
+    "c1-ac-values-phasors": [
+      "c1-rms-peak",
+      "c1-ac-phasors"
+    ],
+    "c1-motor-slip": [
+      "c1-slip-rotor-frequency",
+      "c1-torque-slip-operating-point"
+    ],
+    "c1-lightning-surge": [
+      "c1-surge-foundation",
+      "c1-lightning-protection-principles"
+    ],
+    "c1-ac-power-foundations": [
+      "c1-impedance-foundation",
+      "c1-power-triangle-foundation",
+      "c1-reactive-energy-foundation"
+    ]
+  },
+  "current": {
+    "c1-ac-values-phasors": [
+      "c1-rms-peak"
+    ],
+    "c1-motor-slip": [
+      "c1-slip-rotor-frequency"
+    ],
+    "c1-lightning-surge": [
+      "c1-lightning-strike-path",
+      "c1-surge-foundation"
+    ],
+    "c1-ac-load-behaviour": [
+      "c1-ac-load-types",
+      "c1-capacitor-energy",
+      "c1-inductor-energy"
+    ],
+    "c1-ac-wave-diagrams": [
+      "c1-current-voltage-waveforms",
+      "c1-ac-phasors"
+    ],
+    "c1-reactance-experiments": [
+      "c1-reactance-frequency",
+      "c1-reactance-inductance",
+      "c1-reactance-capacitance"
+    ],
+    "c1-voltage-phasors": [
+      "c1-voltage-vector-demonstration",
+      "c1-voltage-phasor-drawing",
+      "c1-voltage-triangle"
+    ],
+    "c1-pfc-complex-tools": [
+      "c1-complex-number-foundation",
+      "c1-complex-conjugate-foundation"
+    ],
+    "c1-motor-torque-curves": [
+      "c1-torque-speed-foundation"
+    ],
+    "c1-motor-torque-depth": [
+      "c1-torque-slip-operating-point"
+    ],
+    "c1-lightning-application": [
+      "c1-lightning-protection-principles"
+    ],
+    "c1-ac-power-foundations": [
+      "c1-impedance-foundation",
+      "c1-reactive-energy-foundation",
+      "c1-power-triangle-foundation"
+    ]
+  },
+  "addedLessonIds": [
+    "c1-ac-load-types",
+    "c1-capacitor-energy",
+    "c1-inductor-energy",
+    "c1-current-voltage-waveforms",
+    "c1-reactance-frequency",
+    "c1-reactance-inductance",
+    "c1-reactance-capacitance",
+    "c1-voltage-vector-demonstration",
+    "c1-voltage-phasor-drawing",
+    "c1-voltage-triangle",
+    "c1-complex-number-foundation",
+    "c1-complex-conjugate-foundation",
+    "c1-torque-speed-foundation",
+    "c1-lightning-strike-path"
+  ],
+  "repeatableVideoIds": [
+    "MnC-jHxBZvE",
+    "X4EUwTwZ110",
+    "NgwXkUt3XxQ",
+    "_XNvQ44feqA",
+    "c9C1Etd8qek",
+    "Cp9dV_mkjVM",
+    "t5PyB5yuugE",
+    "lCYGX1scCc4",
+    "dOt3GhjLhJo",
+    "spMt1O6yX6A",
+    "GfihUkWPCQQ",
+    "dbxJ6LD0344",
+    "8T53wEGiBKE",
+    "UKe1LaMLWTY"
+  ],
+  "repeats": [
+    {
+      "id": "c1-ac-load-types",
+      "sourceLessonId": "supp-ac-theory-02",
+      "videoId": "MnC-jHxBZvE"
+    },
+    {
+      "id": "c1-current-voltage-waveforms",
+      "sourceLessonId": "supp-ac-theory-09",
+      "videoId": "_XNvQ44feqA"
+    },
+    {
+      "id": "c1-reactance-frequency",
+      "sourceLessonId": "supp-ac-theory-06",
+      "videoId": "c9C1Etd8qek"
+    },
+    {
+      "id": "c1-reactance-inductance",
+      "sourceLessonId": "supp-ac-theory-07",
+      "videoId": "Cp9dV_mkjVM"
+    },
+    {
+      "id": "c1-reactance-capacitance",
+      "sourceLessonId": "supp-ac-theory-08",
+      "videoId": "t5PyB5yuugE"
+    },
+    {
+      "id": "c1-voltage-vector-demonstration",
+      "sourceLessonId": "supp-ac-theory-12",
+      "videoId": "lCYGX1scCc4"
+    },
+    {
+      "id": "c1-voltage-phasor-drawing",
+      "sourceLessonId": "supp-ac-theory-14",
+      "videoId": "dOt3GhjLhJo"
+    },
+    {
+      "id": "c1-voltage-triangle",
+      "sourceLessonId": "supp-ac-theory-15",
+      "videoId": "spMt1O6yX6A"
+    }
+  ],
+  "sections": [
+    "c1-ac-load-behaviour",
+    "c1-ac-wave-diagrams",
+    "c1-reactance-experiments",
+    "c1-voltage-phasors",
+    "c1-pfc-complex-tools",
+    "c1-motor-torque-curves",
+    "c1-motor-torque-depth",
+    "c1-lightning-application"
+  ],
+  "reclassifiedLessonIds": [
+    "c1-shunt-pfc-examples",
+    "c1-torque-slip-operating-point",
+    "c1-lightning-protection-principles"
+  ]
+}

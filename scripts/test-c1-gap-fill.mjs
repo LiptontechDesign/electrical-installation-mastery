@@ -5,17 +5,17 @@ const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.ts'],outdir:'work/c1-gap-tests',bundle:true,platform:'node',format:'esm'});
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply}=await import('../work/c1-gap-tests/personal-course-model.js');
 const catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),update=read('app/c1-gap-fill-update.json'),evidence=read('docs/c1-gap-fill-review.json');
-const previous=read('scripts/fixtures/c1-gap-fill-previous.json'), original=structuredClone(previous);
+const previous=read('scripts/fixtures/c1-gap-fill-previous.json'), original=structuredClone(previous), flow=read('app/c1-flow-update.json');
 const ids=new Set(update.addedLessonIds), core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])), c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(previous),view=snapshot(upgraded);
-assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision,9);
+assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision,10);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-8 published snapshot upgrades to the exact new sequence');
 assert.deepEqual(previous,original,'Stored snapshot is not mutated');
-assert.deepEqual(parse(upgraded),upgraded,'Revision-9 normalisation is idempotent');
+assert.deepEqual(parse(upgraded),upgraded,'Revision-10 normalisation is idempotent');
 for(const [sectionId,old] of Object.entries(previous.groups))assert.deepEqual(upgraded.groups[sectionId].filter(id=>!ids.has(id)),old,'Every old section keeps its relative order: '+sectionId);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!ids.has(id)).sort(),Object.values(previous.groups).flat().sort(),'Every existing occurrence survives exactly once');
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length);
-assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!ids.has(id)&&!flow.addedLessonIds.includes(id)).sort(),Object.values(previous.groups).flat().sort(),'Every existing occurrence survives exactly once');
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length);
+assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length);
 for(const sectionId of update.sections){
  const s=sections.find(s=>s.id===sectionId);assert.ok(c1Modules.has(s.moduleId));
  assert.equal(s.intro,undefined,'No section-introduction prose');
@@ -39,7 +39,7 @@ for(const [a,b] of [
  ['c1-transformer-losses','c1-transformer-efficiency-example'],['c1-utilization-foundation','c1-load-factor-example'],['c1-wattmeter-foundation','c1-wattmeter-methods'],['c1-load-factor-example','p10-l10'],
  ['c1-rating-factors-foundation','p06-l05'],['c1-rcd-foundation','p05-l13'],['p05-l12','c1-cpc-size-foundation'],
  ['c1-surge-foundation','c1-lightning-protection-principles'],['c1-pfc-target-foundation','c1-shunt-pfc-examples'],
- ['c1-shunt-pfc-examples','c1-pfc-unity-bank'],['course-XbL0R_9KLD4','c1-slip-rotor-frequency'],
+ ['c1-pfc-unity-bank','c1-shunt-pfc-examples'],['course-XbL0R_9KLD4','c1-slip-rotor-frequency'],
  ['c1-slip-rotor-frequency','c1-torque-slip-operating-point'],['c1-single-phase-motor-principles','c1-single-phase-reversing-switch'],
  ['c1-dc-motor-commutation','c1-dc-winding-reversal'],['p07-star-delta','c1-autotransformer-starter'],
  ['c1-autotransformer-starter','course-_tGyaE78WTA'],['p07-vfd','c1-regenerative-drive-principles'],
@@ -72,7 +72,8 @@ for(const r of evidence.videos){
  assert.match(r.transcript.sha256,/^[a-f0-9]{64}$/);assert.ok(r.transcript.captionEndSeconds>0);
  assert.equal(r.transcript.reviewedRanges[0].endSeconds,r.transcript.captionEndSeconds);
  assert.equal(r.videoId,core.get(r.lessonId).videoId);assert.equal(r.url,'https://www.youtube.com/watch?v='+r.videoId);
- assert.ok(sections.find(s=>s.id===r.sectionId).lessonIds.includes(r.lessonId));
+ const destination=Object.entries(flow.current).find(([,ids])=>ids.includes(r.lessonId))?.[0]??r.sectionId;
+ assert.ok(sections.find(s=>s.id===destination).lessonIds.includes(r.lessonId),'Historical review location receives its explicit revision-10 move');
  if(r.transcript.language.some(l=>!/^en(?:-|$)/.test(l)))assert.match(r.transcript.reviewQualification,/translated/);
 }
 assert.match(core.get('c1-certification-foundation').studyNote,/Older UK form/);

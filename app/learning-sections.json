@@ -885,16 +885,36 @@
     "id": "c1-ac-values-phasors",
     "moduleId": "c1-fundamentals",
     "number": 2,
-    "title": "RMS values, phase angle and phasor diagrams",
+    "title": "RMS and peak values",
     "lessonIds": [
-      "c1-rms-peak",
+      "c1-rms-peak"
+    ]
+  },
+  {
+    "id": "c1-ac-load-behaviour",
+    "moduleId": "c1-fundamentals",
+    "number": 3,
+    "title": "Resistive loads, capacitors and inductors",
+    "lessonIds": [
+      "c1-ac-load-types",
+      "c1-capacitor-energy",
+      "c1-inductor-energy"
+    ]
+  },
+  {
+    "id": "c1-ac-wave-diagrams",
+    "moduleId": "c1-fundamentals",
+    "number": 4,
+    "title": "Current and voltage timing: waveforms before phasors",
+    "lessonIds": [
+      "c1-current-voltage-waveforms",
       "c1-ac-phasors"
     ]
   },
   {
     "id": "c1-fundamentals-section-1",
     "moduleId": "c1-fundamentals",
-    "number": 3,
+    "number": 5,
     "title": "Three phase waveforms, supply voltages and the complete system",
     "lessonIds": [
       "p02-l03",
@@ -904,7 +924,7 @@
   {
     "id": "c1-fundamentals-section-2",
     "moduleId": "c1-fundamentals",
-    "number": 4,
+    "number": 6,
     "title": "Star and delta: line voltage, phase voltage and current",
     "lessonIds": [
       "p07-l02",
@@ -914,7 +934,7 @@
   {
     "id": "c1-neutral-current-foundation",
     "moduleId": "c1-fundamentals",
-    "number": 5,
+    "number": 7,
     "title": "Measure line and neutral current with a clamp meter",
     "lessonIds": [
       "c1-clamp-current"
@@ -923,7 +943,7 @@
   {
     "id": "c1-fundamentals-section-3",
     "moduleId": "c1-fundamentals",
-    "number": 6,
+    "number": 8,
     "title": "Balanced loads, unequal phase currents and the neutral",
     "lessonIds": [
       "p07-l04",
@@ -931,29 +951,51 @@
     ]
   },
   {
-    "id": "c1-power-section-1",
+    "id": "c1-reactance-experiments",
     "moduleId": "c1-power",
     "number": 1,
+    "title": "Reactance: frequency, inductance and capacitance",
+    "lessonIds": [
+      "c1-reactance-frequency",
+      "c1-reactance-inductance",
+      "c1-reactance-capacitance"
+    ]
+  },
+  {
+    "id": "c1-voltage-phasors",
+    "moduleId": "c1-power",
+    "number": 2,
+    "title": "Measured AC voltages, scaled phasors and the voltage triangle",
+    "lessonIds": [
+      "c1-voltage-vector-demonstration",
+      "c1-voltage-phasor-drawing",
+      "c1-voltage-triangle"
+    ]
+  },
+  {
+    "id": "c1-ac-power-foundations",
+    "moduleId": "c1-power",
+    "number": 3,
+    "title": "Impedance, reactive energy and the power triangle",
+    "lessonIds": [
+      "c1-impedance-foundation",
+      "c1-reactive-energy-foundation",
+      "c1-power-triangle-foundation"
+    ]
+  },
+  {
+    "id": "c1-power-section-1",
+    "moduleId": "c1-power",
+    "number": 4,
     "title": "Calculate resistive star and delta circuit quantities",
     "lessonIds": [
       "p06-l13"
     ]
   },
   {
-    "id": "c1-ac-power-foundations",
-    "moduleId": "c1-power",
-    "number": 2,
-    "title": "Impedance, the power triangle and reactive energy",
-    "lessonIds": [
-      "c1-impedance-foundation",
-      "c1-power-triangle-foundation",
-      "c1-reactive-energy-foundation"
-    ]
-  },
-  {
     "id": "c1-power-triangle",
     "moduleId": "c1-power",
-    "number": 3,
+    "number": 5,
     "title": "Real power, reactive power, apparent power and power factor",
     "lessonIds": [
       "p06-l14"
@@ -962,36 +1004,17 @@
   {
     "id": "c1-power-worked-examples",
     "moduleId": "c1-power",
-    "number": 4,
+    "number": 6,
     "title": "Find three phase power factor and line current",
     "lessonIds": []
   },
   {
     "id": "c1-power-motor-efficiency",
     "moduleId": "c1-power",
-    "number": 5,
+    "number": 7,
     "title": "Convert motor shaft output into input power and supply current",
     "lessonIds": [
       "c1-motor-input-efficiency"
-    ]
-  },
-  {
-    "id": "c1-ct-metering",
-    "moduleId": "c1-power",
-    "number": 6,
-    "title": "Current-transformer ratios and secondary precautions",
-    "lessonIds": [
-      "c1-ct-ratios"
-    ]
-  },
-  {
-    "id": "c1-wattmeter-measurement",
-    "moduleId": "c1-power",
-    "number": 7,
-    "title": "Wattmeter operation and three-phase power measurement",
-    "lessonIds": [
-      "c1-wattmeter-foundation",
-      "c1-wattmeter-methods"
     ]
   },
   {
@@ -1025,24 +1048,43 @@
     ]
   },
   {
-    "id": "c1-generator-control",
+    "id": "c1-ct-metering",
     "moduleId": "c1-power",
     "number": 11,
-    "title": "Generator frequency, voltage control and power limits",
+    "title": "Current-transformer ratios and secondary precautions",
     "lessonIds": [
-      "c1-generator-governor",
-      "c1-generator-excitation",
-      "c1-generator-power-limits"
+      "c1-ct-ratios"
+    ]
+  },
+  {
+    "id": "c1-wattmeter-measurement",
+    "moduleId": "c1-power",
+    "number": 12,
+    "title": "Wattmeter operation and three-phase power measurement",
+    "lessonIds": [
+      "c1-wattmeter-foundation",
+      "c1-wattmeter-methods"
     ]
   },
   {
     "id": "c1-resistance-measurement",
     "moduleId": "c1-power",
-    "number": 12,
-    "title": "Bridge measurement and the Lorenz resistance method",
+    "number": 13,
+    "title": "Wheatstone bridge measurement and Lorenz apparatus",
     "lessonIds": [
       "c1-wheatstone-bridge",
       "c1-lorenz-demonstration"
+    ]
+  },
+  {
+    "id": "c1-generator-control",
+    "moduleId": "c1-power",
+    "number": 14,
+    "title": "Generator frequency, voltage control and power limits",
+    "lessonIds": [
+      "c1-generator-governor",
+      "c1-generator-excitation",
+      "c1-generator-power-limits"
     ]
   },
   {
@@ -1094,7 +1136,7 @@
     "id": "c1-switchgear-construction",
     "moduleId": "c1-distribution",
     "number": 5,
-    "title": "Metal-clad and metal-enclosed switchgear",
+    "title": "Medium-voltage switchgear: metal-clad and metal-enclosed",
     "lessonIds": [
       "c1-switchgear-compartments"
     ]
@@ -1216,9 +1258,18 @@
     "id": "c1-lightning-surge",
     "moduleId": "c1-earthing",
     "number": 6,
-    "title": "Surge protection and external lightning-protection principles",
+    "title": "Lightning strike paths and surge protection",
     "lessonIds": [
-      "c1-surge-foundation",
+      "c1-lightning-strike-path",
+      "c1-surge-foundation"
+    ]
+  },
+  {
+    "id": "c1-lightning-application",
+    "moduleId": "c1-earthing",
+    "number": 7,
+    "title": "Further study: lightning protection and bonding in data centres",
+    "lessonIds": [
       "c1-lightning-protection-principles"
     ]
   },
@@ -1241,18 +1292,9 @@
     ]
   },
   {
-    "id": "c1-pfc-shunt-examples",
-    "moduleId": "c1-pfc",
-    "number": 3,
-    "title": "Shunt capacitors, combined loads and 50 Hz worked examples",
-    "lessonIds": [
-      "c1-shunt-pfc-examples"
-    ]
-  },
-  {
     "id": "c1-pfc-calculation",
     "moduleId": "c1-pfc",
-    "number": 4,
+    "number": 3,
     "title": "Size a three phase capacitor bank in kVAr and microfarads",
     "lessonIds": [
       "c1-pfc-unity-bank"
@@ -1265,9 +1307,28 @@
   {
     "id": "c1-pfc-application",
     "moduleId": "c1-pfc",
-    "number": 5,
+    "number": 4,
     "title": "Choose compensation location, switching and automatic steps",
     "lessonIds": []
+  },
+  {
+    "id": "c1-pfc-complex-tools",
+    "moduleId": "c1-pfc",
+    "number": 5,
+    "title": "Further study: complex numbers and conjugates for AC calculations",
+    "lessonIds": [
+      "c1-complex-number-foundation",
+      "c1-complex-conjugate-foundation"
+    ]
+  },
+  {
+    "id": "c1-pfc-shunt-examples",
+    "moduleId": "c1-pfc",
+    "number": 6,
+    "title": "Further study: complex power and combined-load correction",
+    "lessonIds": [
+      "c1-shunt-pfc-examples"
+    ]
   },
   {
     "id": "c1-motors-section-1",
@@ -1293,21 +1354,29 @@
     "number": 3,
     "title": "Synchronous speed, percentage slip and rotor frequency",
     "lessonIds": [
-      "c1-slip-rotor-frequency",
-      "c1-torque-slip-operating-point"
+      "c1-slip-rotor-frequency"
+    ]
+  },
+  {
+    "id": "c1-motor-torque-curves",
+    "moduleId": "c1-motors",
+    "number": 4,
+    "title": "Torque–speed curves: starting, normal running and load changes",
+    "lessonIds": [
+      "c1-torque-speed-foundation"
     ]
   },
   {
     "id": "c1-motors-terminals",
     "moduleId": "c1-motors",
-    "number": 4,
+    "number": 5,
     "title": "Identify six winding ends and select star or delta links",
     "lessonIds": []
   },
   {
     "id": "c1-single-phase-motors",
     "moduleId": "c1-motors",
-    "number": 5,
+    "number": 6,
     "title": "Single-phase starting windings, capacitors and reversal",
     "lessonIds": [
       "c1-single-phase-motor-principles",
@@ -1317,7 +1386,7 @@
   {
     "id": "c1-dc-motors",
     "moduleId": "c1-motors",
-    "number": 6,
+    "number": 7,
     "title": "DC motor force, commutation and direction reversal",
     "lessonIds": [
       "c1-dc-motor-commutation",
@@ -1327,11 +1396,20 @@
   {
     "id": "c1-precision-motors",
     "moduleId": "c1-motors",
-    "number": 7,
+    "number": 8,
     "title": "Stepper positioning and servo feedback",
     "lessonIds": [
       "c1-stepper-motor-principles",
       "c1-servo-motor-feedback"
+    ]
+  },
+  {
+    "id": "c1-motor-torque-depth",
+    "moduleId": "c1-motors",
+    "number": 9,
+    "title": "Further study: torque–slip analysis and operating-point stability",
+    "lessonIds": [
+      "c1-torque-slip-operating-point"
     ]
   },
   {
@@ -1470,7 +1548,7 @@
     "id": "c1-testing-outlets",
     "moduleId": "c1-testing",
     "number": 5,
-    "title": "Verify outlet Zs and assemble the commissioning record",
+    "title": "Measure earth-fault loop impedance at industrial outlets",
     "lessonIds": [
       "p08-l11"
     ],
