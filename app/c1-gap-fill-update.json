@@ -1,0 +1,192 @@
+{
+  "revision": 9,
+  "addedLessonIds": [
+    "c1-ac-generation",
+    "c1-ac-sine-wave",
+    "c1-ac-frequency",
+    "c1-rms-peak",
+    "c1-ac-phasors",
+    "c1-clamp-current",
+    "c1-impedance-foundation",
+    "c1-power-triangle-foundation",
+    "c1-reactive-energy-foundation",
+    "c1-ct-ratios",
+    "c1-wattmeter-methods",
+    "c1-transformer-foundation",
+    "c1-transformer-ratio-calculations",
+    "c1-transformer-emf-equation",
+    "c1-transformer-flux-example",
+    "c1-transformer-losses",
+    "c1-transformer-efficiency-example",
+    "c1-wheatstone-bridge",
+    "c1-lorenz-demonstration",
+    "c1-load-factor-example",
+    "c1-rating-factors-foundation",
+    "c1-earthing-arrangements-foundation",
+    "c1-bonding-foundation",
+    "c1-rcd-foundation",
+    "c1-cpc-size-foundation",
+    "c1-emergency-firefighter-switches",
+    "c1-surge-foundation",
+    "c1-lightning-protection-principles",
+    "c1-pfc-target-foundation",
+    "c1-shunt-pfc-examples",
+    "c1-slip-rotor-frequency",
+    "c1-torque-slip-operating-point",
+    "c1-single-phase-motor-principles",
+    "c1-single-phase-reversing-switch",
+    "c1-dc-motor-commutation",
+    "c1-dc-winding-reversal",
+    "c1-stepper-motor-principles",
+    "c1-servo-motor-feedback",
+    "c1-autotransformer-starter",
+    "c1-regenerative-drive-principles",
+    "c1-verification-order-foundation",
+    "c1-continuity-foundation",
+    "c1-rcd-testing-foundation",
+    "c1-certification-foundation",
+    "c1-fluorescent-operation",
+    "c1-stroboscopic-demonstration",
+    "c1-switchgear-compartments",
+    "c1-fire-response-principles",
+    "c1-generator-governor",
+    "c1-generator-excitation",
+    "c1-generator-power-limits",
+    "c1-wattmeter-foundation",
+    "c1-utilization-foundation"
+  ],
+  "repeats": [
+    {
+      "id": "c1-ac-generation",
+      "sourceLessonId": "p01-l19",
+      "videoId": "PgmgL2R5dFE"
+    },
+    {
+      "id": "c1-ac-sine-wave",
+      "sourceLessonId": "p01-l20",
+      "videoId": "kUIrN6jNrxo"
+    },
+    {
+      "id": "c1-ac-frequency",
+      "sourceLessonId": "p01-l21",
+      "videoId": "YbkE937rsbw"
+    },
+    {
+      "id": "c1-ac-phasors",
+      "sourceLessonId": "supp-ac-theory-10",
+      "videoId": "_F1jzaGgtXw"
+    },
+    {
+      "id": "c1-clamp-current",
+      "sourceLessonId": "p01-l31",
+      "videoId": "zv7VZ9fzhdA"
+    },
+    {
+      "id": "c1-impedance-foundation",
+      "sourceLessonId": "p01-l24",
+      "videoId": "6-Q-tMZi2fo"
+    },
+    {
+      "id": "c1-power-triangle-foundation",
+      "sourceLessonId": "p01-l27",
+      "videoId": "6YC2_Ir-d2w"
+    },
+    {
+      "id": "c1-reactive-energy-foundation",
+      "sourceLessonId": "supp-ac-theory-23",
+      "videoId": "nf1LD0qOcrg"
+    },
+    {
+      "id": "c1-transformer-foundation",
+      "sourceLessonId": "p01-transformers",
+      "videoId": "UchitHGF4n8"
+    },
+    {
+      "id": "c1-rating-factors-foundation",
+      "sourceLessonId": "c2-design-rating-factors",
+      "videoId": "4seJf2Ql_0E"
+    },
+    {
+      "id": "c1-earthing-arrangements-foundation",
+      "sourceLessonId": "p02-l04",
+      "videoId": "i22OiHyWeUg"
+    },
+    {
+      "id": "c1-bonding-foundation",
+      "sourceLessonId": "p02-l05",
+      "videoId": "_e1wDq23-w0"
+    },
+    {
+      "id": "c1-rcd-foundation",
+      "sourceLessonId": "p02-l07",
+      "videoId": "MfQAoPOKil8"
+    },
+    {
+      "id": "c1-cpc-size-foundation",
+      "sourceLessonId": "c2-design-overview-08",
+      "videoId": "GKdW9H_5NA4"
+    },
+    {
+      "id": "c1-surge-foundation",
+      "sourceLessonId": "c2-spd-foundation",
+      "videoId": "7en_Rc14c2g"
+    },
+    {
+      "id": "c1-pfc-target-foundation",
+      "sourceLessonId": "p01-pf-visual",
+      "videoId": "Tv_7XWf96gg"
+    },
+    {
+      "id": "c1-verification-order-foundation",
+      "sourceLessonId": "c2-verification-overview-01",
+      "videoId": "Sc0tJGl4Oas"
+    },
+    {
+      "id": "c1-continuity-foundation",
+      "sourceLessonId": "c2-verification-overview-02",
+      "videoId": "AZenZfLQQgw"
+    },
+    {
+      "id": "c1-rcd-testing-foundation",
+      "sourceLessonId": "p08-l14",
+      "videoId": "zIPgYcLdQZE"
+    },
+    {
+      "id": "c1-certification-foundation",
+      "sourceLessonId": "p16-l09",
+      "videoId": "cB35hzk4tDw"
+    }
+  ],
+  "sections": [
+    "c1-ac-waveforms",
+    "c1-ac-values-phasors",
+    "c1-neutral-current-foundation",
+    "c1-ac-power-foundations",
+    "c1-ct-metering",
+    "c1-wattmeter-measurement",
+    "c1-transformer-ratios",
+    "c1-transformer-emf",
+    "c1-transformer-efficiency",
+    "c1-resistance-measurement",
+    "c1-load-factors",
+    "c1-cable-factors-foundation",
+    "c1-earthing-foundations",
+    "c1-cpc-sizing",
+    "c1-protective-switching",
+    "c1-lightning-surge",
+    "c1-pfc-target",
+    "c1-pfc-shunt-examples",
+    "c1-motor-slip",
+    "c1-single-phase-motors",
+    "c1-dc-motors",
+    "c1-precision-motors",
+    "c1-autotransformer-starting",
+    "c1-regenerative-braking",
+    "c1-verification-foundations",
+    "c1-rcd-handover",
+    "c1-stroboscopic-effect",
+    "c1-switchgear-construction",
+    "c1-fire-response",
+    "c1-generator-control"
+  ]
+}

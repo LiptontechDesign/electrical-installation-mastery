@@ -1,0 +1,70 @@
+# C1 gap-fill video selection
+
+Reviewed 15 October 2026. Revision 9 adds **33 new YouTube videos and 20 C2 foundation repeats** within the existing ten C1 modules. C1 now has **70 sections and 117 default video rows**. The whole course has 418 catalogue entries, 32 bundled supporting entries and 174 sections. No player, lesson layout, past-paper answer or new learning feature was introduced.
+
+The original C2 and Advanced entries, ordering and metadata remain unchanged. Each C1 repeat has a separate lesson ID, so it can be studied and marked independently. The C2 SPD supporting entry is explicitly retained even though the video now also has a C1 catalogue entry.
+
+## Selection and evidence
+
+The [evidence manifest](c1-gap-fill-review.json) records every selected lesson, creator, source C2 identity where applicable, caption language, hash, complete available caption range and the specific teaching scope. Full captions remain in ignored local research files. All available caption text was read; this is a transcript-based review, not frame-by-frame verification or an official marking scheme. Three videos were reviewed through translated tracks: eFIXX emergency/firefighter switching (Arabic), Chinmay Deshpande DC winding reversal (Dutch), and International Engineering Training excitation (Arabic). These are not described as original-English transcript reviews. The Lorenz apparatus video has captions only to 2:37; its uncaptained tail is not used as evidence.
+
+UK teaching remains the course spine, including Joe Robinson, eFIXX, GSH, John Ward, Learn Electrics, Physics Online and BBC Earth Science. Narrow worked-calculation and specialist gaps use other instructors and manufacturer teaching. Country or professional credentials are not inferred from an accent. Candidate videos with material errors in slip, pole count, torque, generator regulation or load-factor definitions were rejected.
+
+## Placement
+
+- **Opening C1:** AC generation → sine wave → frequency/period → RMS → phasors → existing three-phase supply/star/delta → clamp measurement → existing balanced/unbalanced neutral demonstrations.
+- **Power:** a wattmeter-principle lesson precedes the measurement example; a simple utilization-factor definition precedes the combined factor problem. Impedance and stored/returned reactive energy precede the power examples; CT ratios and wattmeters follow motor input/efficiency; transformer operation precedes ratios, EMF/flux and efficiency examples. Generator speed, excitation and power limits precede distribution work.
+- **Design/protection:** load-duration factors precede maximum demand; cable derating precedes cable sizing; earthing/bonding/RCD foundations precede loop checks; CPC energy follows loop impedance; SPDs precede external lightning protection.
+- **Compensation:** the target-PF example precedes the 50 Hz shunt/combined-load examples and the existing three-phase bank calculation.
+- **Machines/controls:** nameplates precede slip/rotor frequency and torque curves; starting windings precede single-phase reversal; DC commutation precedes relative winding reversal; stepper/servo principles follow motor fundamentals. Autotransformer starting sits between star-delta and soft starters; regeneration follows VFD operation.
+- **Verification/diagnosis:** test order and continuity precede three-phase insulation resistance. Current RCD guidance precedes an optional historical certificate walkthrough. Fluorescent starter/choke operation precedes the stroboscopic demonstration; fire prevention and response finish fault-diagnosis study.
+
+## Accepted teaching scope
+
+| Lesson | What the reviewed captions establish |
+|---|---|
+| [RMS and Peak Voltage: Compare AC and DC Heating](https://www.youtube.com/watch?v=o_t2RdCCxro) — ElectronicsTeaching | Equal-brightness AC/DC demonstration and sine-wave RMS/peak relationship. |
+| [Current Transformers: Ratios, Meter Readings and Shorting Precautions](https://www.youtube.com/watch?v=RHuu7QQhw2o) — Zack Hartle | 1200:5 ratio, 4.13 A secondary → 991.2 A primary; secondary shorting and make-before-break. |
+| [Compare Three-, Two- and Single-Instrument Power Measurements](https://www.youtube.com/watch?v=6P0qH0Nzb4I) — Jim Pytel | Per-phase real power, wattmeter connections, two-reading sum and shaft/input efficiency. Single-instrument example assumes balance. |
+| [Transformer Turns, Voltage and Current: Worked Calculations](https://www.youtube.com/watch?v=jzOQFtW02uc) — Craig's Class - Level 3 Electrical Principles | Voltage/turns proportionality, inverse current ratio and equation transposition. |
+| [Derive the Transformer EMF Equation: E = 4.44 f N Φ](https://www.youtube.com/watch?v=BqetOHEhAGE) — Ekeeda | Faraday/Lenz, sinusoidal flux and conversion to RMS induced voltage. |
+| [Calculate Transformer Turns, Maximum Flux and Flux Density](https://www.youtube.com/watch?v=Jwz2rhI6cbM) — Ekeeda | 3000/200 V, 50 Hz, 80 low-voltage turns and 150 cm² core: 1200 high-voltage turns, 0.01126 Wb and 0.75075 T. |
+| [Transformer Losses and the Condition for Maximum Efficiency](https://www.youtube.com/watch?v=GgckE4H5AJE) — Ekeeda | Approximately constant core loss, current-squared copper loss, fractional load and equal-loss maximum-efficiency condition. |
+| [Transformer Efficiency at Full Load and the Best Load Point](https://www.youtube.com/watch?v=LNgf2nojsqc) — Ekeeda | 40 kVA, 450 W core loss, 850 W full-load copper loss, PF 0.8: full-load efficiency 96.10%, best load 29.10 kVA. |
+| [Wheatstone Bridge: Null Balance and Unknown Resistance](https://www.youtube.com/watch?v=TFMRbx9mARU) — Physics Online | Zero galvanometer current, equal midpoint potentials and resistance-ratio calculation. |
+| [Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration](https://www.youtube.com/watch?v=9ILTHNLSsG0) — nickm2001 | Historical apparatus shows induced EMF balanced against a resistive potential drop; does not derive the complete numerical method. |
+| [Load-Duration Curve: Load, Capacity and Utilization Factors](https://www.youtube.com/watch?v=qZcv5pAW2lA) — Neso Academy | Annual curve 140→30 MW, average 85 MW, installed 185 MW; distinguishes average/maximum, average/capacity and maximum/capacity. |
+| [Distinguish Emergency Switching from a Firefighters’ Switch](https://www.youtube.com/watch?v=Er5KRhHekDo) — eFIXX | UK eFIXX correction distinguishes HV discharge-lighting firefighters’ switches from forecourt emergency shutdown and manual restoration. |
+| [Lightning Protection: Air Terminals, Down Conductors, Earthing and Bonding](https://www.youtube.com/watch?v=eti2tGM0YnU) — DEHN Inc. | External interception and discharge paths, separation, bonding, zones and coordinated surge protection. Data-centre specialist examples. |
+| [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel | Worked RL circuits, a 240 V 50 Hz parallel circuit giving 53.05 µF, summed P/Q for two loads, source-current reduction and leading overcorrection. |
+| [Induction-Motor Speed, Slip and Rotor Frequency: Six Worked Examples](https://www.youtube.com/watch?v=H0SaAq7sMN0) — Gargi Basu | Ns = 120f/P, slip as fraction/percent, rotor frequency sf and rotor-field motion relative to rotor/stator. |
+| [Torque–Slip Curve: Load Changes, Stable Operation and Stalling](https://www.youtube.com/watch?v=zssTcEBkzh0) — NPTEL IIT Kharagpur | Load/developed torque, acceleration, low-slip slope, maximum torque and stable/unstable operating points. |
+| [Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal](https://www.youtube.com/watch?v=bytt0ZCJwRk) — LEARN ELECTRICS | Starting/run windings, phase shift, centrifugal switching and reversal of one winding relative to the other. |
+| [Wire and Test a Single-Phase Forward/Reverse Drum Switch](https://www.youtube.com/watch?v=45re1J-RxKc) — LEARN ELECTRICS | Stop before reversal, isolated switch continuity mapping and straight/cross connections to reverse one winding. |
+| [DC Motors: Magnetic Force, Brushes and Commutation](https://www.youtube.com/watch?v=GQatiB-JHdI) — The Engineering Mindset | Permanent-magnet DC construction, force, commutator action and direction change. |
+| [Reverse a Wound-Field DC Motor: Armature or Field Connections](https://www.youtube.com/watch?v=GYuBVM_GyOw) — Chinmay Deshpande | Four force-direction cases: reverse either armature or field for reverse torque; reversing both retains direction. |
+| [Stepper Motors: Winding Sequences, Steps and Position](https://www.youtube.com/watch?v=09Mpkjcr0bo) — The Engineering Mindset | Permanent-magnet, reluctance and hybrid types; sequence, direction, speed, full/half/microstepping. |
+| [Servo Motors: Command, Error and Position Feedback](https://www.youtube.com/watch?v=ditS0a28Sko) — RealPars | Command/feedback error, encoder/resolver, AC/DC motor types and synchronous versus induction operation. |
+| [Autotransformer Starting: Tap Voltage, Line Current and Torque](https://www.youtube.com/watch?v=iHFTVBWLOAg) — Zack Hartle | 80% voltage tap gives 80% motor starting current, 64% line starting current and 64% starting torque; switching transitions. |
+| [Four-Quadrant Drives: Motoring, Braking and Regeneration](https://www.youtube.com/watch?v=IAnMVYOYHxg) — KEB America | Speed/torque signs, motoring/generating, DC-bus voltage, resistor heat versus energy returned to the supply. |
+| [Fluorescent Lighting: Starter, Choke, Tube and Correction Capacitor](https://www.youtube.com/watch?v=hkgKmjVMesE) — John Ward (jwflame) | Actual switch-start fitting, bimetal glow starter, filament heating, inductive starting pulse, running current limitation and separate PFC capacitor. |
+| [Stroboscopic Effect: Why Moving Machinery Can Appear Still](https://www.youtube.com/watch?v=muucS5fwtvU) — BBC Earth Science | Rotating-disc and pulsed-water demonstrations show stationary/reverse apparent motion when frequencies match or differ slightly. |
+| [Compare Metal-Clad and Metal-Enclosed Switchgear Compartments](https://www.youtube.com/watch?v=R8n9fiHcPYM) — SGB-SMIT USA | Actual bus/cable barriers show why all metal-clad gear is metal-enclosed, but not the converse. Medium-voltage US example. |
+| [Electrical Fire Risks: Prevention, Alarm, Evacuation and Extinguisher Types](https://www.youtube.com/watch?v=cnn-yvszLXE) — Zippyangels Productions | Fire triangle, electrical hazards, raise alarm, call emergency services, escape/assembly and water/CO2/powder distinctions. |
+| [Generator Governors: Droop and Isochronous Speed Control](https://www.youtube.com/watch?v=DKSkcspz4E4) — WellandTV | Governor regulates engine speed; fixed-speed isochronous versus sloped droop characteristic and load-sharing purpose. |
+| [Generator Voltage Control: Excitation, AVR and Brushless Systems](https://www.youtube.com/watch?v=7MvjbC4f5Aw) — International Engineering Training | DC field excitation controls induced voltage; sensed-voltage feedback, static excitation and rotating rectifier/brushless excitation. |
+| [Generator Power: Engine kW, Alternator kVA and Reactive Current](https://www.youtube.com/watch?v=Lc-u37_gfIg) — WellandTV | Distinguishes engine real-power work from reactive current in alternator windings, vector apparent power and power factor. |
+
+The final opening-lesson check also adds [Jim Pytel’s wattmeter principles](https://www.youtube.com/watch?v=bVjmy2vBj-0) before his measurement example, and [Neso Academy’s simple utilization-factor explanation](https://www.youtube.com/watch?v=hGMkuo8HG_Q) before the combined factor problem. Both complete available English tracks were read. The wattmeter note distinguishes a conventional watt reading from the later voltage/current/PF analysis; the utilization note states the exact maximum-demand/installed-capacity ratio.
+
+## Limits retained after selection
+
+This materially strengthens the non-Kenyan C1 theory sequence, but a video-only completeness guarantee would exceed the evidence. The following exact exam variants still rely on the existing worked answers or practical instruction: one physical wattmeter moved sequentially through an unbalanced four-wire load; a full absolute Lorenz numerical derivation; one integrated four-storey installation from design through handover; exact fixed-bank/demand-tariff variants; and detailed accident reporting/rescue practice. The synchronous/induction distinction is taught within the servo lesson, rather than a complete standalone synchronous-machine starting course. The stroboscopic video demonstrates misleading motion; it is not a full industrial-lighting mitigation design lesson. The generator clips establish control and separate kW/kVA limits, rather than a complete transient-load sizing study. Kenyan licensing, supply procedures and local forms were outside this requested video search.
+
+Short existing-format study notes qualify only essential limits: CT secondary safety, sine-wave RMS/EMF assumptions, historical UK forms, motor-capacitor discharge, servo coast-down, manufacturer motor limits and fire response. These do not restore section-introduction paragraphs.
+
+## Saved-course update and validation
+
+Revision 9 is additive. The earlier revision-7 move gate remains 7; no previous relocations are replayed. Actual published revision-8 snapshots receive the new sections and videos while retaining every old occurrence, private additions, custom ordering, protected moves, archives, deletions and historical Undo. New-media private copies survive catalogue merging. Old progress, note, bookmark and playback keys are unchanged. Tests independently close CT, transformer, load-factor, target-PF, 50 Hz capacitance, slip and autotransformer examples.
+
+Supporting primary checks: [STAMFORD AVR operation](https://www.stamford-avk.com/parts/service-parts/avr), [London Fire Brigade workplace training](https://www.london-fire.gov.uk/safety/the-workplace/fire-safety-training/) and [emergency plans](https://www.london-fire.gov.uk/safety/the-workplace/your-emergency-plan/). UK examples remain jurisdiction-qualified by the existing course notices.

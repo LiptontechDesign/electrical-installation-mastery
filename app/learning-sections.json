@@ -871,9 +871,30 @@
     ]
   },
   {
-    "id": "c1-fundamentals-section-1",
+    "id": "c1-ac-waveforms",
     "moduleId": "c1-fundamentals",
     "number": 1,
+    "title": "AC generation, sine waves, frequency and period",
+    "lessonIds": [
+      "c1-ac-generation",
+      "c1-ac-sine-wave",
+      "c1-ac-frequency"
+    ]
+  },
+  {
+    "id": "c1-ac-values-phasors",
+    "moduleId": "c1-fundamentals",
+    "number": 2,
+    "title": "RMS values, phase angle and phasor diagrams",
+    "lessonIds": [
+      "c1-rms-peak",
+      "c1-ac-phasors"
+    ]
+  },
+  {
+    "id": "c1-fundamentals-section-1",
+    "moduleId": "c1-fundamentals",
+    "number": 3,
     "title": "Three phase waveforms, supply voltages and the complete system",
     "lessonIds": [
       "p02-l03",
@@ -883,7 +904,7 @@
   {
     "id": "c1-fundamentals-section-2",
     "moduleId": "c1-fundamentals",
-    "number": 2,
+    "number": 4,
     "title": "Star and delta: line voltage, phase voltage and current",
     "lessonIds": [
       "p07-l02",
@@ -891,9 +912,18 @@
     ]
   },
   {
+    "id": "c1-neutral-current-foundation",
+    "moduleId": "c1-fundamentals",
+    "number": 5,
+    "title": "Measure line and neutral current with a clamp meter",
+    "lessonIds": [
+      "c1-clamp-current"
+    ]
+  },
+  {
     "id": "c1-fundamentals-section-3",
     "moduleId": "c1-fundamentals",
-    "number": 3,
+    "number": 6,
     "title": "Balanced loads, unequal phase currents and the neutral",
     "lessonIds": [
       "p07-l04",
@@ -910,9 +940,20 @@
     ]
   },
   {
-    "id": "c1-power-triangle",
+    "id": "c1-ac-power-foundations",
     "moduleId": "c1-power",
     "number": 2,
+    "title": "Impedance, the power triangle and reactive energy",
+    "lessonIds": [
+      "c1-impedance-foundation",
+      "c1-power-triangle-foundation",
+      "c1-reactive-energy-foundation"
+    ]
+  },
+  {
+    "id": "c1-power-triangle",
+    "moduleId": "c1-power",
+    "number": 3,
     "title": "Real power, reactive power, apparent power and power factor",
     "lessonIds": [
       "p06-l14"
@@ -921,17 +962,87 @@
   {
     "id": "c1-power-worked-examples",
     "moduleId": "c1-power",
-    "number": 3,
+    "number": 4,
     "title": "Find three phase power factor and line current",
     "lessonIds": []
   },
   {
     "id": "c1-power-motor-efficiency",
     "moduleId": "c1-power",
-    "number": 4,
+    "number": 5,
     "title": "Convert motor shaft output into input power and supply current",
     "lessonIds": [
       "c1-motor-input-efficiency"
+    ]
+  },
+  {
+    "id": "c1-ct-metering",
+    "moduleId": "c1-power",
+    "number": 6,
+    "title": "Current-transformer ratios and secondary precautions",
+    "lessonIds": [
+      "c1-ct-ratios"
+    ]
+  },
+  {
+    "id": "c1-wattmeter-measurement",
+    "moduleId": "c1-power",
+    "number": 7,
+    "title": "Wattmeter operation and three-phase power measurement",
+    "lessonIds": [
+      "c1-wattmeter-foundation",
+      "c1-wattmeter-methods"
+    ]
+  },
+  {
+    "id": "c1-transformer-ratios",
+    "moduleId": "c1-power",
+    "number": 8,
+    "title": "Transformer operation, turns, voltage and current ratios",
+    "lessonIds": [
+      "c1-transformer-foundation",
+      "c1-transformer-ratio-calculations"
+    ]
+  },
+  {
+    "id": "c1-transformer-emf",
+    "moduleId": "c1-power",
+    "number": 9,
+    "title": "Transformer EMF, peak flux and flux density",
+    "lessonIds": [
+      "c1-transformer-emf-equation",
+      "c1-transformer-flux-example"
+    ]
+  },
+  {
+    "id": "c1-transformer-efficiency",
+    "moduleId": "c1-power",
+    "number": 10,
+    "title": "Transformer losses, fractional loading and maximum efficiency",
+    "lessonIds": [
+      "c1-transformer-losses",
+      "c1-transformer-efficiency-example"
+    ]
+  },
+  {
+    "id": "c1-generator-control",
+    "moduleId": "c1-power",
+    "number": 11,
+    "title": "Generator frequency, voltage control and power limits",
+    "lessonIds": [
+      "c1-generator-governor",
+      "c1-generator-excitation",
+      "c1-generator-power-limits"
+    ]
+  },
+  {
+    "id": "c1-resistance-measurement",
+    "moduleId": "c1-power",
+    "number": 12,
+    "title": "Bridge measurement and the Lorenz resistance method",
+    "lessonIds": [
+      "c1-wheatstone-bridge",
+      "c1-lorenz-demonstration"
     ]
   },
   {
@@ -980,9 +1091,28 @@
     ]
   },
   {
-    "id": "c1-design-section-1",
+    "id": "c1-switchgear-construction",
+    "moduleId": "c1-distribution",
+    "number": 5,
+    "title": "Metal-clad and metal-enclosed switchgear",
+    "lessonIds": [
+      "c1-switchgear-compartments"
+    ]
+  },
+  {
+    "id": "c1-load-factors",
     "moduleId": "c1-design",
     "number": 1,
+    "title": "Load factor, capacity factor and utilization factor",
+    "lessonIds": [
+      "c1-utilization-foundation",
+      "c1-load-factor-example"
+    ]
+  },
+  {
+    "id": "c1-design-section-1",
+    "moduleId": "c1-design",
+    "number": 2,
     "title": "Build a load schedule and justify maximum demand",
     "lessonIds": [
       "p10-l10",
@@ -994,9 +1124,18 @@
     }
   },
   {
+    "id": "c1-cable-factors-foundation",
+    "moduleId": "c1-design",
+    "number": 3,
+    "title": "Why temperature, grouping and insulation change cable selection",
+    "lessonIds": [
+      "c1-rating-factors-foundation"
+    ]
+  },
+  {
     "id": "c1-design-section-2",
     "moduleId": "c1-design",
-    "number": 2,
+    "number": 4,
     "title": "Design current, correction factors and cable current capacity",
     "lessonIds": [
       "p06-l05"
@@ -1005,7 +1144,7 @@
   {
     "id": "c1-design-voltage-drop",
     "moduleId": "c1-design",
-    "number": 3,
+    "number": 5,
     "title": "Add submain and final circuit voltage drop correctly",
     "lessonIds": [],
     "resource": {
@@ -1016,16 +1155,27 @@
   {
     "id": "c1-design-extension",
     "moduleId": "c1-design",
-    "number": 4,
+    "number": 6,
     "title": "Optional extension: larger buildings and transformer loading",
     "lessonIds": [
       "p07-l16"
     ]
   },
   {
-    "id": "c1-earthing-section-1",
+    "id": "c1-earthing-foundations",
     "moduleId": "c1-earthing",
     "number": 1,
+    "title": "Earthing arrangements, protective bonding and RCD operation",
+    "lessonIds": [
+      "c1-earthing-arrangements-foundation",
+      "c1-bonding-foundation",
+      "c1-rcd-foundation"
+    ]
+  },
+  {
+    "id": "c1-earthing-section-1",
+    "moduleId": "c1-earthing",
+    "number": 2,
     "title": "Verify earth fault loop impedance and automatic disconnection",
     "lessonIds": [
       "p05-l13"
@@ -1034,7 +1184,7 @@
   {
     "id": "c1-earthing-section-2",
     "moduleId": "c1-earthing",
-    "number": 2,
+    "number": 3,
     "title": "Apply conductor temperature and complete the protection checks",
     "lessonIds": [
       "p05-l12"
@@ -1043,6 +1193,34 @@
       "href": "/c1-worked-project.md",
       "label": "Four-storey worked project"
     }
+  },
+  {
+    "id": "c1-cpc-sizing",
+    "moduleId": "c1-earthing",
+    "number": 4,
+    "title": "Check protective-conductor size and fault energy",
+    "lessonIds": [
+      "c1-cpc-size-foundation"
+    ]
+  },
+  {
+    "id": "c1-protective-switching",
+    "moduleId": "c1-earthing",
+    "number": 5,
+    "title": "Emergency switching and firefighters’ switches",
+    "lessonIds": [
+      "c1-emergency-firefighter-switches"
+    ]
+  },
+  {
+    "id": "c1-lightning-surge",
+    "moduleId": "c1-earthing",
+    "number": 6,
+    "title": "Surge protection and external lightning-protection principles",
+    "lessonIds": [
+      "c1-surge-foundation",
+      "c1-lightning-protection-principles"
+    ]
   },
   {
     "id": "c1-pfc-section-1",
@@ -1054,9 +1232,27 @@
     ]
   },
   {
-    "id": "c1-pfc-calculation",
+    "id": "c1-pfc-target",
     "moduleId": "c1-pfc",
     "number": 2,
+    "title": "Find the kVAr needed to reach a target power factor",
+    "lessonIds": [
+      "c1-pfc-target-foundation"
+    ]
+  },
+  {
+    "id": "c1-pfc-shunt-examples",
+    "moduleId": "c1-pfc",
+    "number": 3,
+    "title": "Shunt capacitors, combined loads and 50 Hz worked examples",
+    "lessonIds": [
+      "c1-shunt-pfc-examples"
+    ]
+  },
+  {
+    "id": "c1-pfc-calculation",
+    "moduleId": "c1-pfc",
+    "number": 4,
     "title": "Size a three phase capacitor bank in kVAr and microfarads",
     "lessonIds": [
       "c1-pfc-unity-bank"
@@ -1069,7 +1265,7 @@
   {
     "id": "c1-pfc-application",
     "moduleId": "c1-pfc",
-    "number": 3,
+    "number": 5,
     "title": "Choose compensation location, switching and automatic steps",
     "lessonIds": []
   },
@@ -1092,11 +1288,51 @@
     ]
   },
   {
-    "id": "c1-motors-terminals",
+    "id": "c1-motor-slip",
     "moduleId": "c1-motors",
     "number": 3,
+    "title": "Synchronous speed, percentage slip and rotor frequency",
+    "lessonIds": [
+      "c1-slip-rotor-frequency",
+      "c1-torque-slip-operating-point"
+    ]
+  },
+  {
+    "id": "c1-motors-terminals",
+    "moduleId": "c1-motors",
+    "number": 4,
     "title": "Identify six winding ends and select star or delta links",
     "lessonIds": []
+  },
+  {
+    "id": "c1-single-phase-motors",
+    "moduleId": "c1-motors",
+    "number": 5,
+    "title": "Single-phase starting windings, capacitors and reversal",
+    "lessonIds": [
+      "c1-single-phase-motor-principles",
+      "c1-single-phase-reversing-switch"
+    ]
+  },
+  {
+    "id": "c1-dc-motors",
+    "moduleId": "c1-motors",
+    "number": 6,
+    "title": "DC motor force, commutation and direction reversal",
+    "lessonIds": [
+      "c1-dc-motor-commutation",
+      "c1-dc-winding-reversal"
+    ]
+  },
+  {
+    "id": "c1-precision-motors",
+    "moduleId": "c1-motors",
+    "number": 7,
+    "title": "Stepper positioning and servo feedback",
+    "lessonIds": [
+      "c1-stepper-motor-principles",
+      "c1-servo-motor-feedback"
+    ]
   },
   {
     "id": "module-07-section-1",
@@ -1147,9 +1383,18 @@
     ]
   },
   {
-    "id": "c1-controls-soft-start",
+    "id": "c1-autotransformer-starting",
     "moduleId": "module-07",
     "number": 6,
+    "title": "Autotransformer starting and reduced-current ratios",
+    "lessonIds": [
+      "c1-autotransformer-starter"
+    ]
+  },
+  {
+    "id": "c1-controls-soft-start",
+    "moduleId": "module-07",
+    "number": 7,
     "title": "Soft starters: limit starting current without continuous speed control",
     "lessonIds": [
       "course-_tGyaE78WTA"
@@ -1158,23 +1403,42 @@
   {
     "id": "module-07-vfd-speed-control",
     "moduleId": "module-07",
-    "number": 7,
+    "number": 8,
     "title": "VFD speed control: rectifier, DC link and inverter",
     "lessonIds": [
       "p07-vfd"
     ]
   },
   {
+    "id": "c1-regenerative-braking",
+    "moduleId": "module-07",
+    "number": 9,
+    "title": "Motoring, braking resistors and regeneration",
+    "lessonIds": [
+      "c1-regenerative-drive-principles"
+    ]
+  },
+  {
     "id": "c1-controls-phase-monitoring",
     "moduleId": "module-07",
-    "number": 8,
+    "number": 10,
     "title": "Optional review: phase monitoring and protective contact placement",
     "lessonIds": []
   },
   {
-    "id": "c1-testing-dead-tests",
+    "id": "c1-verification-foundations",
     "moduleId": "c1-testing",
     "number": 1,
+    "title": "Verification order, protective continuity and dead-test polarity",
+    "lessonIds": [
+      "c1-verification-order-foundation",
+      "c1-continuity-foundation"
+    ]
+  },
+  {
+    "id": "c1-testing-dead-tests",
+    "moduleId": "c1-testing",
+    "number": 2,
     "title": "Dead tests: continuity, conductor identification and insulation",
     "lessonIds": [
       "c1-three-phase-ir-sequence",
@@ -1184,7 +1448,7 @@
   {
     "id": "c1-testing-section-1",
     "moduleId": "c1-testing",
-    "number": 2,
+    "number": 3,
     "title": "Supply polarity, phase identification and phase sequence",
     "lessonIds": [
       "p08-l07",
@@ -1195,7 +1459,7 @@
   {
     "id": "c1-testing-fault-current",
     "moduleId": "c1-testing",
-    "number": 3,
+    "number": 4,
     "title": "Measure Ze and prospective fault current; assess breaking capacity",
     "lessonIds": [
       "p08-l17",
@@ -1205,7 +1469,7 @@
   {
     "id": "c1-testing-outlets",
     "moduleId": "c1-testing",
-    "number": 4,
+    "number": 5,
     "title": "Verify outlet Zs and assemble the commissioning record",
     "lessonIds": [
       "p08-l11"
@@ -1216,9 +1480,19 @@
     }
   },
   {
+    "id": "c1-rcd-handover",
+    "moduleId": "c1-testing",
+    "number": 6,
+    "title": "RCD verification and the installation handover record",
+    "lessonIds": [
+      "c1-rcd-testing-foundation",
+      "c1-certification-foundation"
+    ]
+  },
+  {
     "id": "c1-testing-section-2",
     "moduleId": "c1-testing",
-    "number": 5,
+    "number": 7,
     "title": "Periodic inspection: scope, observations and condition reporting",
     "lessonIds": [
       "c1-periodic-reporting",
@@ -1261,6 +1535,25 @@
     "title": "Optional extension: thermal imaging and abnormal heating",
     "lessonIds": [
       "p16-l06"
+    ]
+  },
+  {
+    "id": "c1-stroboscopic-effect",
+    "moduleId": "c1-faults",
+    "number": 5,
+    "title": "Fluorescent starting, ballast operation and misleading motion",
+    "lessonIds": [
+      "c1-fluorescent-operation",
+      "c1-stroboscopic-demonstration"
+    ]
+  },
+  {
+    "id": "c1-fire-response",
+    "moduleId": "c1-faults",
+    "number": 6,
+    "title": "Fire prevention, alarm and safe evacuation",
+    "lessonIds": [
+      "c1-fire-response-principles"
     ]
   },
   {

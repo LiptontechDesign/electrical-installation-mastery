@@ -1,38 +1,63 @@
 # C1 self-study video sequence
 
-Follow the sections in order after C2. Use the [four-storey worked project](../public/c1-worked-project.md) alongside the videos.
+Follow the sections in order. Key C2 foundations now appear directly in C1. The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
 
-40 sections · 64 video entries. [Selection review](c1-video-selection-and-flow.md).
+70 sections · 117 video entries. [Gap-fill selection review](c1-gap-fill-selection.md).
 
-## Module 10: Three-Phase Supply, Star/Delta and Neutral Behaviour
+## Module 10: AC Foundations, Three-Phase Supply and Neutral Behaviour
 
-### 1. Three phase waveforms, supply voltages and the complete system
+### 1. AC generation, sine waves, frequency and period
+
+- [Generate an AC Waveform: Rotation, Magnetic Field and Slip Rings](https://www.youtube.com/watch?v=PgmgL2R5dFE) — Joe Robinson Training; Core foundation.
+- [Why a Rotating Generator Produces a Sine Wave](https://www.youtube.com/watch?v=kUIrN6jNrxo) — Joe Robinson Training; Core foundation.
+- [Read Peak Values, Frequency and Periodic Time](https://www.youtube.com/watch?v=YbkE937rsbw) — Joe Robinson Training; Core foundation.
+
+### 2. RMS values, phase angle and phasor diagrams
+
+- [RMS and Peak Voltage: Compare AC and DC Heating](https://www.youtube.com/watch?v=o_t2RdCCxro) — ElectronicsTeaching; Core lesson.
+
+  For a sine wave, RMS is the equivalent DC heating value; peak = RMS × √2.
+- [From Waveforms to Phasors: In Phase, Leading and Lagging](https://www.youtube.com/watch?v=_F1jzaGgtXw) — Joe Robinson Training; Core foundation.
+
+### 3. Three phase waveforms, supply voltages and the complete system
 
 - [The Utimate Guide to Three Phase Electricity](https://www.youtube.com/watch?v=9BZ_hSndQyw) — eFIXX; Core lesson.
 - [An Introduction to Three Phase Systems Using the Matrix Locktronics Kit](https://www.youtube.com/watch?v=NhLzjDJFuvk) — Joe Robinson Training; Core lesson.
 
-### 2. Star and delta: line voltage, phase voltage and current
+### 4. Star and delta: line voltage, phase voltage and current
 
 - [3 Phase: Star Connected Loads, How to Calculate Line and Phase Voltage & Line and Phase Current](https://www.youtube.com/watch?v=rB1NafJ6XPk) — Joe Robinson Training; Core lesson.
 - [3 Phase: Delta Connected Loads, How to Calculate Line and Phase Voltage & Line and Phase Current](https://www.youtube.com/watch?v=7slCHGpfHtg) — Joe Robinson Training; Core lesson.
 
-### 3. Balanced loads, unequal phase currents and the neutral
+### 5. Measure line and neutral current with a clamp meter
+
+- [Clamp-Meter Measurements: Line Current and Neutral Return](https://www.youtube.com/watch?v=zv7VZ9fzhdA) — Joe Robinson Training; Core foundation.
+
+### 6. Balanced loads, unequal phase currents and the neutral
 
 - [Three Phase Mystery Solved, No Neutral Required in a Balanced Load?](https://www.youtube.com/watch?v=WZ4GG4GuSfQ) — Joe Robinson Training; Core lesson.
 - [The Easiest Most Accurate Way to Calculate Three Phase Neutral Current in an Unbalanced Load](https://www.youtube.com/watch?v=ExHJGSJSE6o) — Joe Robinson Training; Core lesson.
 
-## Module 11: Three-Phase Voltage, Current and Power Calculations
+## Module 11: Three-Phase Power, Measurement and Transformers
 
 ### 1. Calculate resistive star and delta circuit quantities
 
 - [3 Phase: How to Calculate Line Voltage, Phase Voltage, Line Current & Phase Current in Star & Delta](https://www.youtube.com/watch?v=ky7cs1NYvCI) — Joe Robinson Training; Core lesson.
 
-### 2. Real power, reactive power, apparent power and power factor
+### 2. Impedance, the power triangle and reactive energy
+
+- [Resistance, Reactance and the Impedance Triangle](https://www.youtube.com/watch?v=6-Q-tMZi2fo) — Joe Robinson Training; Core foundation.
+- [Build the Real, Reactive and Apparent Power Triangle](https://www.youtube.com/watch?v=6YC2_Ir-d2w) — Joe Robinson Training; Core foundation.
+
+  Reactive energy is stored and returned; S = √(P² + Q²).
+- [Energy Storage and Return in Inductors and Capacitors](https://www.youtube.com/watch?v=nf1LD0qOcrg) — Joe Robinson Training; Core foundation.
+
+### 3. Real power, reactive power, apparent power and power factor
 
 - [Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale](https://www.youtube.com/watch?v=qBJvgN8nCqw) — Joe Robinson Training; Core lesson.
 - [Power in a Balanced Three-Phase Circuit](https://www.youtube.com/watch?v=bSjh8AakqXM) — Michel van Biezen; Optional derivation.
 
-### 3. Find three phase power factor and line current
+### 4. Find three phase power factor and line current
 
 - [Three-Phase Motor Power Factor — Worked Example](https://www.youtube.com/watch?v=T2eO6hOT-EA) — Michel van Biezen; Core worked example.
 
@@ -41,11 +66,62 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 
   25 kW is input power; 31.25 kVA is apparent power.
 
-### 4. Convert motor shaft output into input power and supply current
+### 5. Convert motor shaft output into input power and supply current
 
 - [Motor Output, Efficiency, Power Factor and Three-Phase Line Current](https://www.youtube.com/watch?v=Jx3Pk_5O-PM) — Aaron Dahlen; Core lesson.
 
   Electrical input = Pshaft/η; apparent power = electrical input/PF.
+
+### 6. Current-transformer ratios and secondary precautions
+
+- [Current Transformers: Ratios, Meter Readings and Shorting Precautions](https://www.youtube.com/watch?v=RHuu7QQhw2o) — Zack Hartle; Core lesson.
+
+  Never open a CT secondary while primary current flows.
+
+### 7. Wattmeter operation and three-phase power measurement
+
+- [Wattmeters and Balanced Loads: Measurement Principles Before Examples](https://www.youtube.com/watch?v=bVjmy2vBj-0) — Jim Pytel; Core lesson.
+
+  Later examples use voltage/current and known PF; do not multiply a conventional wattmeter’s watt reading by √3.
+- [Compare Three-, Two- and Single-Instrument Power Measurements](https://www.youtube.com/watch?v=6P0qH0Nzb4I) — Jim Pytel; Core lesson.
+
+  The two-wattmeter method shown applies to three-wire systems.
+
+### 8. Transformer operation, turns, voltage and current ratios
+
+- [Transformer Operation: Changing Flux, Windings and Core](https://www.youtube.com/watch?v=UchitHGF4n8) — The Engineering Mindset; Core foundation.
+- [Transformer Turns, Voltage and Current: Worked Calculations](https://www.youtube.com/watch?v=jzOQFtW02uc) — Craig's Class - Level 3 Electrical Principles; Core lesson.
+
+### 9. Transformer EMF, peak flux and flux density
+
+- [Derive the Transformer EMF Equation: E = 4.44 f N Φ](https://www.youtube.com/watch?v=BqetOHEhAGE) — Ekeeda; Core lesson.
+
+  The 4.44 factor assumes sinusoidal flux; Φ is peak flux in webers.
+- [Calculate Transformer Turns, Maximum Flux and Flux Density](https://www.youtube.com/watch?v=Jwz2rhI6cbM) — Ekeeda; Core lesson.
+
+### 10. Transformer losses, fractional loading and maximum efficiency
+
+- [Transformer Losses and the Condition for Maximum Efficiency](https://www.youtube.com/watch?v=GgckE4H5AJE) — Ekeeda; Core lesson.
+
+  Assumes fixed voltage, frequency and power factor.
+- [Transformer Efficiency at Full Load and the Best Load Point](https://www.youtube.com/watch?v=LNgf2nojsqc) — Ekeeda; Core lesson.
+
+### 11. Generator frequency, voltage control and power limits
+
+- [Generator Governors: Droop and Isochronous Speed Control](https://www.youtube.com/watch?v=DKSkcspz4E4) — WellandTV; Core lesson.
+
+  The 1500 rpm example assumes a four-pole, 50 Hz alternator.
+- [Generator Voltage Control: Excitation, AVR and Brushless Systems](https://www.youtube.com/watch?v=7MvjbC4f5Aw) — International Engineering Training; Core lesson.
+- [Generator Power: Engine kW, Alternator kVA and Reactive Current](https://www.youtube.com/watch?v=Lc-u37_gfIg) — WellandTV; Core lesson.
+
+  Both engine kW and alternator kVA limits apply; reactive current still contributes to winding losses.
+
+### 12. Bridge measurement and the Lorenz resistance method
+
+- [Wheatstone Bridge: Null Balance and Unknown Resistance](https://www.youtube.com/watch?v=TFMRbx9mARU) — Physics Online; Core lesson.
+- [Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration](https://www.youtube.com/watch?v=9ILTHNLSsG0) — nickm2001; Optional demonstration.
+
+  Apparatus demonstration; use the worked question for the full calculation.
 
 ## Module 12: Three-Phase Boards, Feeders and Outlets
 
@@ -70,41 +146,79 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 - [Connections in a 3 Phase Plug and Socket Explained](https://www.youtube.com/watch?v=-9irkJ94xg0) — GSH Electrical; Applied practical.
 - [Industrial Plugs and Sockets: IP, IK and Duty Selection](https://www.youtube.com/watch?v=PNWdC47daYM) — eFIXX; Applied practical.
 
+### 5. Metal-clad and metal-enclosed switchgear
+
+- [Compare Metal-Clad and Metal-Enclosed Switchgear Compartments](https://www.youtube.com/watch?v=R8n9fiHcPYM) — SGB-SMIT USA; Core lesson.
+
 ## Module 13: Three-Phase Load, Cable and Protection Design
 
-### 1. Build a load schedule and justify maximum demand
+### 1. Load factor, capacity factor and utilization factor
+
+- [Installed Capacity and Maximum Demand: Understand Utilization Factor](https://www.youtube.com/watch?v=hGMkuo8HG_Q) — Neso Academy; Core lesson.
+
+  Utilization factor compares maximum demand with installed capacity; 1 means full utilization.
+- [Load-Duration Curve: Load, Capacity and Utilization Factors](https://www.youtube.com/watch?v=qZcv5pAW2lA) — Neso Academy; Core lesson.
+
+### 2. Build a load schedule and justify maximum demand
 
 - [Electrical Load Estimation - Electrical Load Calculation in Electrical Distribution](https://www.youtube.com/watch?v=AQffdGvDNcA) — Engr. Ahmed / Khadija Academy; Core lesson.
 - [Maximum Demand and Diversity: A UK Domestic Worked Example](https://www.youtube.com/watch?v=lGcsQ8mLI34) — GSH Electrical; Optional context.
 
   Domestic example only; assess L1, L2 and L3 separately for a three-phase building.
 
-### 2. Design current, correction factors and cable current capacity
+### 3. Why temperature, grouping and insulation change cable selection
+
+- [Cable Rating Factors: Temperature, Grouping and Thermal Insulation](https://www.youtube.com/watch?v=4seJf2Ql_0E) — eFIXX; Core foundation.
+
+### 4. Design current, correction factors and cable current capacity
 
 - [Cable calculation. Calculating the live cable size from BS 7671](https://www.youtube.com/watch?v=wAcqKNBxy-w) — Electrical Student; Core lesson.
 - [Master Three-Phase Cable Calculations](https://www.youtube.com/watch?v=ChC_94Zmf4I) — Sparky Help; Core worked example.
 
   44 A is tabulated capacity; corrected Iz is 32.52 A.
 
-### 3. Add submain and final circuit voltage drop correctly
+### 5. Add submain and final circuit voltage drop correctly
 
 - [Voltage Drop in Three-Phase Installations and Single-Phase Circuits from a Three-Phase Supply](https://www.youtube.com/watch?v=RCHw0TUEAes) — LEARN ELECTRICS; Core worked example.
 
   For a balanced feeder, use 400 V for submain drop percentages and 230 V for single-phase final circuits.
 
-### 4. Optional extension: larger buildings and transformer loading
+### 6. Optional extension: larger buildings and transformer loading
 
 - [Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial](https://www.youtube.com/watch?v=XGMUpguNzao) — Elegant Power Solutions; Optional extension.
 
 ## Module 14: Earth Fault Loops, Disconnection and Protection Checks
 
-### 1. Verify earth fault loop impedance and automatic disconnection
+### 1. Earthing arrangements, protective bonding and RCD operation
+
+- [Identify TN-S, TN-C-S and TT Earthing Arrangements](https://www.youtube.com/watch?v=i22OiHyWeUg) — GSH Electrical; Core foundation.
+
+  Quoted supply values are UK examples; verify actual supply data.
+- [Exposed and Extraneous Parts: Earthing and Protective Bonding](https://www.youtube.com/watch?v=_e1wDq23-w0) — eFIXX; Core foundation.
+- [RCD Current Balance and the Need for Overcurrent Protection](https://www.youtube.com/watch?v=MfQAoPOKil8) — Joe Robinson Training; Core foundation.
+
+### 2. Verify earth fault loop impedance and automatic disconnection
 
 - [Electrical Design: Calculating Earth Fault Loop Impedance](https://www.youtube.com/watch?v=q3rSnVEJ7kA) — eFIXX; Core lesson.
 
-### 2. Apply conductor temperature and complete the protection checks
+### 3. Apply conductor temperature and complete the protection checks
 
 - [How to Calculate Total Earth Fault Loop Impedance Part 2 - Applying a Temperature Factor to R1 + R2](https://www.youtube.com/watch?v=kgZvjl4A1sE) — GSH Electrical; Core lesson.
+
+### 4. Check protective-conductor size and fault energy
+
+- [Size the CPC: Table Selection, Fault Current and the Adiabatic Equation](https://www.youtube.com/watch?v=GKdW9H_5NA4) — eFIXX; Core foundation.
+
+### 5. Emergency switching and firefighters’ switches
+
+- [Distinguish Emergency Switching from a Firefighters’ Switch](https://www.youtube.com/watch?v=Er5KRhHekDo) — eFIXX; Core lesson.
+
+### 6. Surge protection and external lightning-protection principles
+
+- [Transient Surges and How SPDs Limit Voltage](https://www.youtube.com/watch?v=7en_Rc14c2g) — eFIXX; Core foundation.
+- [Lightning Protection: Air Terminals, Down Conductors, Earthing and Bonding](https://www.youtube.com/watch?v=eti2tGM0YnU) — DEHN Inc.; Core lesson.
+
+  Principles and specialist examples; this is not a lightning-system installation procedure.
 
 ## Module 15: Power Factor Causes, Correction and Capacitor Sizing
 
@@ -112,20 +226,30 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 
 - [Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)](https://www.youtube.com/watch?v=NIrKOVZrqnU) — The Engineering Mindset; Core lesson.
 
-### 2. Size a three phase capacitor bank in kVAr and microfarads
+### 2. Find the kVAr needed to reach a target power factor
+
+- [Correct a Building’s Power Factor to a Chosen Target](https://www.youtube.com/watch?v=Tv_7XWf96gg) — The Engineering Mindset; Core foundation.
+
+  Use electrical input kW; convert shaft output through efficiency first.
+
+### 3. Shunt capacitors, combined loads and 50 Hz worked examples
+
+- [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Core lesson.
+
+### 4. Size a three phase capacitor bank in kVAr and microfarads
 
 - [Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank](https://www.youtube.com/watch?v=q5xjqXcCqNw) — Dieter Monkey; Core lesson.
 
   This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
 - [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
 
-### 3. Choose compensation location, switching and automatic steps
+### 5. Choose compensation location, switching and automatic steps
 
 - [5 Types of Power Factor Correction — Capacitor Bank Locations](https://www.youtube.com/watch?v=oaIRQ1Xm7OQ) — The Electrical Guy; Core application.
 
   Keep correction capacitors off VFD outputs.
 
-## Module 16: Induction Motors, Nameplates and Terminal Connections
+## Module 16: Induction, Single-Phase, DC and Precision Motors
 
 ### 1. How the rotating field and induction motor produce torque
 
@@ -135,11 +259,39 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 
 - [How to read a Motor Nameplate (IEC standard)](https://www.youtube.com/watch?v=XbL0R_9KLD4) — ElectricalEngineeringPlanet; Core lesson.
 
-### 3. Identify six winding ends and select star or delta links
+### 3. Synchronous speed, percentage slip and rotor frequency
+
+- [Induction-Motor Speed, Slip and Rotor Frequency: Six Worked Examples](https://www.youtube.com/watch?v=H0SaAq7sMN0) — Gargi Basu; Core lesson.
+- [Torque–Slip Curve: Load Changes, Stable Operation and Stalling](https://www.youtube.com/watch?v=zssTcEBkzh0) — NPTEL IIT Kharagpur; Core lesson.
+
+  Illustrative torque ratios are not motor ratings; use manufacturer limits.
+
+### 4. Identify six winding ends and select star or delta links
 
 - [How to Connect Motor Windings in Star and Delta](https://www.youtube.com/watch?v=p2hDLMeFJqs) — The Electrical Guy; Core demonstration.
 
   On 400 V: 230/400 V Δ/Y → star; 400/690 V Δ/Y → delta.
+
+### 5. Single-phase starting windings, capacitors and reversal
+
+- [Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal](https://www.youtube.com/watch?v=bytt0ZCJwRk) — LEARN ELECTRICS; Core lesson.
+
+  Terminal arrangements vary; follow the motor diagram.
+- [Wire and Test a Single-Phase Forward/Reverse Drum Switch](https://www.youtube.com/watch?v=45re1J-RxKc) — LEARN ELECTRICS; Core lesson.
+
+  Isolate and prove capacitors discharged before touching terminals.
+
+### 6. DC motor force, commutation and direction reversal
+
+- [DC Motors: Magnetic Force, Brushes and Commutation](https://www.youtube.com/watch?v=GQatiB-JHdI) — The Engineering Mindset; Core lesson.
+- [Reverse a Wound-Field DC Motor: Armature or Field Connections](https://www.youtube.com/watch?v=GYuBVM_GyOw) — Chinmay Deshpande; Core lesson.
+
+### 7. Stepper positioning and servo feedback
+
+- [Stepper Motors: Winding Sequences, Steps and Position](https://www.youtube.com/watch?v=09Mpkjcr0bo) — The Engineering Mindset; Core lesson.
+- [Servo Motors: Command, Error and Position Feedback](https://www.youtube.com/watch?v=ditS0a28Sko) — RealPars; Core lesson.
+
+  Removing power does not stop a rotating load instantly.
 
 ## Module 17: Motor Starters, Protection and Speed Control
 
@@ -171,15 +323,25 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 
 - [Star–Delta Starting: Sequence and Interlocks](https://www.youtube.com/watch?v=h89TTwlNnpY) — The Engineering Mindset; Core lesson.
 
-### 6. Soft starters: limit starting current without continuous speed control
+### 6. Autotransformer starting and reduced-current ratios
+
+- [Autotransformer Starting: Tap Voltage, Line Current and Torque](https://www.youtube.com/watch?v=iHFTVBWLOAg) — Zack Hartle; Core lesson.
+
+  Ratios refer to full-voltage starting values; follow manufacturer overload settings.
+
+### 7. Soft starters: limit starting current without continuous speed control
 
 - [What is a Soft Starter? from AutomationDirect](https://www.youtube.com/watch?v=_tGyaE78WTA) — AutomationDirect; Core lesson.
 
-### 7. VFD speed control: rectifier, DC link and inverter
+### 8. VFD speed control: rectifier, DC link and inverter
 
 - [Variable-Frequency Drives: From Rectifier to Motor Speed](https://www.youtube.com/watch?v=yEPe7RDtkgo) — The Engineering Mindset; Core lesson.
 
-### 8. Optional review: phase monitoring and protective contact placement
+### 9. Motoring, braking resistors and regeneration
+
+- [Four-Quadrant Drives: Motoring, Braking and Regeneration](https://www.youtube.com/watch?v=IAnMVYOYHxg) — KEB America; Core lesson.
+
+### 10. Optional review: phase monitoring and protective contact placement
 
 - [Phase-Failure Relay with a DOL Starter](https://www.youtube.com/watch?v=-OCfG8inGSY) — The Electrical Guy; Optional circuit critique.
 
@@ -187,40 +349,50 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 
 ## Module 18: Three-Phase Initial Verification and Periodic Inspection
 
-### 1. Dead tests: continuity, conductor identification and insulation
+### 1. Verification order, protective continuity and dead-test polarity
+
+- [Initial Verification: Dead Tests Before Live Tests](https://www.youtube.com/watch?v=Sc0tJGl4Oas) — John Ward; Core foundation.
+- [Protective-Conductor Continuity: R2, R1+R2 and Polarity](https://www.youtube.com/watch?v=AZenZfLQQgw) — John Ward; Core foundation.
+
+### 2. Dead tests: continuity, conductor identification and insulation
 
 - [Tracing Three-Phase Wiring and Identifying Cables](https://www.youtube.com/watch?v=CDW_SKOgYSY) — LEARN ELECTRICS; Core dead-test method.
 - [Three-Phase Insulation Resistance: All Ten Conductor Pairs](https://www.youtube.com/watch?v=Xe9vD_a3qEE) — LEARN ELECTRICS; Core lesson.
 
   Disconnect sensitive equipment as instructed and discharge after testing.
-
 - [Three-Phase Insulation Resistance: Practical Board Test](https://www.youtube.com/watch?v=0SS4bdnnjeM) — Proactive Technical Training PTT; Applied practical.
 
   1 MΩ is a minimum, not a target. Isolate and prove dead before disconnecting neutral; reconnect afterwards.
 
-### 2. Supply polarity, phase identification and phase sequence
+### 3. Supply polarity, phase identification and phase sequence
 
 - [First Live Test - Check Polarity of 3 Phase Supply, Using an Approved Voltage Indicator AM2 & AM2S](https://www.youtube.com/watch?v=3kHlWHM9Wm8) — GSH Electrical; Applied practical.
 - [Testing Phase Sequence: Rotation, Instruments and Consistent Phase Identification](https://www.youtube.com/watch?v=aDSY10l_ZqE) — John Ward (jwflame); Core lesson.
 - [How to use a phase rotation meter? 👷🏽‍♂️](https://www.youtube.com/watch?v=igi8F6UAvh0) — Odeane's Electric; Core lesson.
 
-### 3. Measure Ze and prospective fault current; assess breaking capacity
+### 4. Measure Ze and prospective fault current; assess breaking capacity
 
 - [LIVE Testing on a 3 Phase Dis-Board - External Earth Fault Loop Impedance Ze, PEFC, PSCC AM2 & AM2S](https://www.youtube.com/watch?v=IeWoLUIKuJw) — GSH Electrical; Applied practical.
 - [Three-Phase Prospective Fault Current: Measurements, Estimates and Breaking Capacity](https://www.youtube.com/watch?v=Ge7me58155E) — GSH Electrical; Core lesson.
 
   The doubled L–N result is an estimate, not an exact three-phase fault measurement.
 
-### 4. Verify outlet Zs and assemble the commissioning record
+### 5. Verify outlet Zs and assemble the commissioning record
 
 - [Earth Fault Loop Impedance (Zs) - Testing 16 Amp Industrial Socket Outlets Both Single and 3 Phase](https://www.youtube.com/watch?v=Y7NPT8sQINY) — GSH Electrical; Applied practical.
 
-### 5. Periodic inspection: scope, observations and condition reporting
+### 6. RCD verification and the installation handover record
 
-- [Periodic Inspection: Scope, Limitations, Observations and Reporting](https://www.youtube.com/watch?v=SAlr4fM3Jzg) — ECA; Core application.
+- [RCD Verification: Rated Residual Current and Trip Time](https://www.youtube.com/watch?v=zIPgYcLdQZE) — GSH Electrical; Core foundation.
+- [Assemble an Installation Certificate, Inspection Schedule and Test Results](https://www.youtube.com/watch?v=cB35hzk4tDw) — John Ward; Optional demonstration.
+
+  Older UK form: use current fields and the preceding RCD test requirements.
+
+### 7. Periodic inspection: scope, observations and condition reporting
+
+- [Periodic Inspection: Scope, Limitations, Observations and Reporting](https://www.youtube.com/watch?v=SAlr4fM3Jzg) — ECA - Electrotechnical & Engineering Services Body; Core application.
 
   UK example: FI also makes an EICR unsatisfactory. Use current forms and assess each defect on its evidence.
-
 - [Periodic Inspection: Follow the Evidence Through an EICR](https://www.youtube.com/watch?v=1tBICSsjVWo) — Artisan Electrics; Optional refresher.
 
   Optional domestic EICR refresher; use the preceding lessons for three-phase commissioning.
@@ -249,3 +421,16 @@ Follow the sections in order after C2. Use the [four-storey worked project](../p
 ### 4. Optional extension: thermal imaging and abnormal heating
 
 - [Detecting Electrical Energy Loss with Thermal Imaging](https://www.youtube.com/watch?v=KceE8zdk35g) — VoltimumUK/Fluke; Deep practice.
+
+### 5. Fluorescent starting, ballast operation and misleading motion
+
+- [Fluorescent Lighting: Starter, Choke, Tube and Correction Capacitor](https://www.youtube.com/watch?v=hkgKmjVMesE) — John Ward (jwflame); Core lesson.
+- [Stroboscopic Effect: Why Moving Machinery Can Appear Still](https://www.youtube.com/watch?v=muucS5fwtvU) — BBC Earth Science; Core lesson.
+
+  Flashing light can make moving machinery look stationary; isolate before approaching it.
+
+### 6. Fire prevention, alarm and safe evacuation
+
+- [Electrical Fire Risks: Prevention, Alarm, Evacuation and Extinguisher Types](https://www.youtube.com/watch?v=cnn-yvszLXE) — Zippyangels Productions; Core lesson.
+
+  Raise the alarm and evacuate first. Use an extinguisher only if trained, the fire is small and your escape remains clear.

@@ -1,0 +1,1369 @@
+{
+  "reviewedAt": "2026-10-15",
+  "revision": 9,
+  "method": "Complete available caption text reviewed for each selected lesson; worked examples checked independently. Three translated tracks are explicitly identified. This is not frame-by-frame video validation or an official syllabus-completeness claim. Full caption text remains in ignored local research files.",
+  "videos": [
+    {
+      "lessonId": "c1-ac-generation",
+      "sourceLessonId": "p01-l19",
+      "videoId": "PgmgL2R5dFE",
+      "url": "https://www.youtube.com/watch?v=PgmgL2R5dFE",
+      "instructor": "Joe Robinson Training",
+      "title": "Generate an AC Waveform: Rotation, Magnetic Field and Slip Rings",
+      "sectionId": "c1-ac-waveforms",
+      "scope": "Rotation, magnetic flux and alternating induced EMF.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "91e20c2a46ed1632cf23dd5dc270673f696cb593da507c17285025b30152f1bd",
+        "captionEndSeconds": 602,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 602
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-ac-sine-wave",
+      "sourceLessonId": "p01-l20",
+      "videoId": "kUIrN6jNrxo",
+      "url": "https://www.youtube.com/watch?v=kUIrN6jNrxo",
+      "instructor": "Joe Robinson Training",
+      "title": "Why a Rotating Generator Produces a Sine Wave",
+      "sectionId": "c1-ac-waveforms",
+      "scope": "Connects generator rotation to the instantaneous sine-wave voltage.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "f25dd0e5bf0e21934751b16e1543d202a10e01eeedbe928e2105dfbdaf62f78d",
+        "captionEndSeconds": 751,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 751
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-ac-frequency",
+      "sourceLessonId": "p01-l21",
+      "videoId": "YbkE937rsbw",
+      "url": "https://www.youtube.com/watch?v=YbkE937rsbw",
+      "instructor": "Joe Robinson Training",
+      "title": "Read Peak Values, Frequency and Periodic Time",
+      "sectionId": "c1-ac-waveforms",
+      "scope": "Frequency, cycle time, peak quantities and f = 1/T.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "8dae4c36ebfa35a07984f26912dd6a86ead65be17fdfd40648a302826633e6cb",
+        "captionEndSeconds": 677,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 677
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-rms-peak",
+      "sourceLessonId": null,
+      "videoId": "o_t2RdCCxro",
+      "url": "https://www.youtube.com/watch?v=o_t2RdCCxro",
+      "instructor": "ElectronicsTeaching",
+      "title": "RMS and Peak Voltage: Compare AC and DC Heating",
+      "sectionId": "c1-ac-values-phasors",
+      "scope": "Equal-brightness AC/DC demonstration and sine-wave RMS/peak relationship.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "519b14e454dfd4b90846d1895fb357b46ad4212a2317d65b8110bef288c604b2",
+        "captionSegments": 79,
+        "captionEndSeconds": 249,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 249
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-ac-phasors",
+      "sourceLessonId": "supp-ac-theory-10",
+      "videoId": "_F1jzaGgtXw",
+      "url": "https://www.youtube.com/watch?v=_F1jzaGgtXw",
+      "instructor": "Joe Robinson Training",
+      "title": "From Waveforms to Phasors: In Phase, Leading and Lagging",
+      "sectionId": "c1-ac-values-phasors",
+      "scope": "Time displacement becomes phase angle; leading and lagging currents.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "10a047c49118017116c40fe6d1e6d61212b6ee8ce9c20127a72e00c849d1fdaa",
+        "captionEndSeconds": 735,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 735
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-clamp-current",
+      "sourceLessonId": "p01-l31",
+      "videoId": "zv7VZ9fzhdA",
+      "url": "https://www.youtube.com/watch?v=zv7VZ9fzhdA",
+      "instructor": "Joe Robinson Training",
+      "title": "Clamp-Meter Measurements: Line Current and Neutral Return",
+      "sectionId": "c1-neutral-current-foundation",
+      "scope": "Clamp a single conductor; outgoing and returning currents cancel when both are enclosed. Prepares the neutral-current demonstrations.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "443bdc4f395a36dbed416d058d878544efbc2fe9d9819610debdce6dcd8214fc",
+        "captionEndSeconds": 458,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 458
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-impedance-foundation",
+      "sourceLessonId": "p01-l24",
+      "videoId": "6-Q-tMZi2fo",
+      "url": "https://www.youtube.com/watch?v=6-Q-tMZi2fo",
+      "instructor": "Joe Robinson Training",
+      "title": "Resistance, Reactance and the Impedance Triangle",
+      "sectionId": "c1-ac-power-foundations",
+      "scope": "R, X and Z as the basis of AC circuit current and phase angle.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "b5bdf2efb94e1a6387f6ad4764bf9915ca10a1bd6d5b0ad9cad322c565927f04",
+        "captionEndSeconds": 767,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 767
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-power-triangle-foundation",
+      "sourceLessonId": "p01-l27",
+      "videoId": "6YC2_Ir-d2w",
+      "url": "https://www.youtube.com/watch?v=6YC2_Ir-d2w",
+      "instructor": "Joe Robinson Training",
+      "title": "Build the Real, Reactive and Apparent Power Triangle",
+      "sectionId": "c1-ac-power-foundations",
+      "scope": "P in W, Q in var, S in VA and the power-factor triangle.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "c92be3b4d3a9377c324e9e3f9d597c7a1a1f3de67a4e9df7bd693e0625bd05cc",
+        "captionEndSeconds": 656,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 656
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-reactive-energy-foundation",
+      "sourceLessonId": "supp-ac-theory-23",
+      "videoId": "nf1LD0qOcrg",
+      "url": "https://www.youtube.com/watch?v=nf1LD0qOcrg",
+      "instructor": "Joe Robinson Training",
+      "title": "Energy Storage and Return in Inductors and Capacitors",
+      "sectionId": "c1-ac-power-foundations",
+      "scope": "Instantaneous voltage/current/power; zero average power in ideal reactive components.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "25d786e407cbf4fd05ed0c567c8247e1697543bab2a08307607b667bdee80651",
+        "captionEndSeconds": 745,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 745
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-ct-ratios",
+      "sourceLessonId": null,
+      "videoId": "RHuu7QQhw2o",
+      "url": "https://www.youtube.com/watch?v=RHuu7QQhw2o",
+      "instructor": "Zack Hartle",
+      "title": "Current Transformers: Ratios, Meter Readings and Shorting Precautions",
+      "sectionId": "c1-ct-metering",
+      "scope": "1200:5 ratio, 4.13 A secondary → 991.2 A primary; secondary shorting and make-before-break.",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "982e1288462b9b787045a65a6bae9e240083ac332267eb614325de792a10d52b",
+        "captionSegments": 157,
+        "captionEndSeconds": 358,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 358
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-wattmeter-methods",
+      "sourceLessonId": null,
+      "videoId": "6P0qH0Nzb4I",
+      "url": "https://www.youtube.com/watch?v=6P0qH0Nzb4I",
+      "instructor": "Jim Pytel",
+      "title": "Compare Three-, Two- and Single-Instrument Power Measurements",
+      "sectionId": "c1-wattmeter-measurement",
+      "scope": "Per-phase real power, wattmeter connections, two-reading sum and shaft/input efficiency. Single-instrument example assumes balance.",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "7efd6db9fd03bbbe0f08f089735094e338030fa77874c6409ff0b166108d5070",
+        "captionSegments": 316,
+        "captionEndSeconds": 673,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 673
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-transformer-foundation",
+      "sourceLessonId": "p01-transformers",
+      "videoId": "UchitHGF4n8",
+      "url": "https://www.youtube.com/watch?v=UchitHGF4n8",
+      "instructor": "The Engineering Mindset",
+      "title": "Transformer Operation: Changing Flux, Windings and Core",
+      "sectionId": "c1-transformer-ratios",
+      "scope": "Changing primary flux links secondary turns and induces voltage.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "manual",
+        "sha256": "3b74838dc0131dbf354643f1019f3592b2128a706277942c970f1d7572f2f833",
+        "captionEndSeconds": 385,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 385
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-transformer-ratio-calculations",
+      "sourceLessonId": null,
+      "videoId": "jzOQFtW02uc",
+      "url": "https://www.youtube.com/watch?v=jzOQFtW02uc",
+      "instructor": "Craig's Class - Level 3 Electrical Principles",
+      "title": "Transformer Turns, Voltage and Current: Worked Calculations",
+      "sectionId": "c1-transformer-ratios",
+      "scope": "Voltage/turns proportionality, inverse current ratio and equation transposition.",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "0db37c20a7df798d89f5a07c49605266ca006f657af3240233790dea2395d444",
+        "captionSegments": 310,
+        "captionEndSeconds": 909,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 909
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-transformer-emf-equation",
+      "sourceLessonId": null,
+      "videoId": "BqetOHEhAGE",
+      "url": "https://www.youtube.com/watch?v=BqetOHEhAGE",
+      "instructor": "Ekeeda",
+      "title": "Derive the Transformer EMF Equation: E = 4.44 f N Φ",
+      "sectionId": "c1-transformer-emf",
+      "scope": "Faraday/Lenz, sinusoidal flux and conversion to RMS induced voltage.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "84943d3b43ef02a4bc0075c96965987060528c0dbf8b3b4a9b58aef004804c8a",
+        "captionSegments": 109,
+        "captionEndSeconds": 560,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 560
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-transformer-flux-example",
+      "sourceLessonId": null,
+      "videoId": "Jwz2rhI6cbM",
+      "url": "https://www.youtube.com/watch?v=Jwz2rhI6cbM",
+      "instructor": "Ekeeda",
+      "title": "Calculate Transformer Turns, Maximum Flux and Flux Density",
+      "sectionId": "c1-transformer-emf",
+      "scope": "3000/200 V, 50 Hz, 80 low-voltage turns and 150 cm² core: 1200 high-voltage turns, 0.01126 Wb and 0.75075 T.",
+      "transcript": {
+        "provider": "YouTube original transcript, browser export",
+        "language": [
+          "en"
+        ],
+        "kind": "Authored or unspecified: export does not establish human authorship",
+        "sha256": "e5ccd478a3b07af358b76d3d70efd2b64053a2eb23c30f97cda759fe5320ca02",
+        "captionSegments": 69,
+        "captionEndSeconds": 313,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 313
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-transformer-losses",
+      "sourceLessonId": null,
+      "videoId": "GgckE4H5AJE",
+      "url": "https://www.youtube.com/watch?v=GgckE4H5AJE",
+      "instructor": "Ekeeda",
+      "title": "Transformer Losses and the Condition for Maximum Efficiency",
+      "sectionId": "c1-transformer-efficiency",
+      "scope": "Approximately constant core loss, current-squared copper loss, fractional load and equal-loss maximum-efficiency condition.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "626f7f916145d43874edebe4df1d746697dba5754979cf6738684c22fbb361c9",
+        "captionSegments": 180,
+        "captionEndSeconds": 971,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 971
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-transformer-efficiency-example",
+      "sourceLessonId": null,
+      "videoId": "LNgf2nojsqc",
+      "url": "https://www.youtube.com/watch?v=LNgf2nojsqc",
+      "instructor": "Ekeeda",
+      "title": "Transformer Efficiency at Full Load and the Best Load Point",
+      "sectionId": "c1-transformer-efficiency",
+      "scope": "40 kVA, 450 W core loss, 850 W full-load copper loss, PF 0.8: full-load efficiency 96.10%, best load 29.10 kVA.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "626304ce905dbe0a2245a924dfaa5f9e3ea3766d9816014627c62d7683676152",
+        "captionSegments": 109,
+        "captionEndSeconds": 505,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 505
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-wheatstone-bridge",
+      "sourceLessonId": null,
+      "videoId": "TFMRbx9mARU",
+      "url": "https://www.youtube.com/watch?v=TFMRbx9mARU",
+      "instructor": "Physics Online",
+      "title": "Wheatstone Bridge: Null Balance and Unknown Resistance",
+      "sectionId": "c1-resistance-measurement",
+      "scope": "Zero galvanometer current, equal midpoint potentials and resistance-ratio calculation.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "e27815e2933aa58321f395dc338f0a654eb67838d9cd255a9dec46f9540f6021",
+        "captionSegments": 152,
+        "captionEndSeconds": 376,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 376
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-lorenz-demonstration",
+      "sourceLessonId": null,
+      "videoId": "9ILTHNLSsG0",
+      "url": "https://www.youtube.com/watch?v=9ILTHNLSsG0",
+      "instructor": "nickm2001",
+      "title": "Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration",
+      "sectionId": "c1-resistance-measurement",
+      "scope": "Historical apparatus shows induced EMF balanced against a resistive potential drop; does not derive the complete numerical method.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "8e0a58177a22028c9ad61154f1da622662eb011f685167452a5f1cd70dbeac8b",
+        "captionSegments": 57,
+        "captionEndSeconds": 157,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 157
+          }
+        ],
+        "reviewQualification": "All available English captions to 2:37 reviewed; the uncaptained final 36 seconds are not used as evidence. Apparatus demonstration only, not a full derivation."
+      }
+    },
+    {
+      "lessonId": "c1-load-factor-example",
+      "sourceLessonId": null,
+      "videoId": "qZcv5pAW2lA",
+      "url": "https://www.youtube.com/watch?v=qZcv5pAW2lA",
+      "instructor": "Neso Academy",
+      "title": "Load-Duration Curve: Load, Capacity and Utilization Factors",
+      "sectionId": "c1-load-factors",
+      "scope": "Annual curve 140→30 MW, average 85 MW, installed 185 MW; distinguishes average/maximum, average/capacity and maximum/capacity.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "ed4310dd68d705351a754d630e55845b7c4bc030424008eb2ec480f41ae1eafb",
+        "captionSegments": 171,
+        "captionEndSeconds": 530,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 530
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-rating-factors-foundation",
+      "sourceLessonId": "c2-design-rating-factors",
+      "videoId": "4seJf2Ql_0E",
+      "url": "https://www.youtube.com/watch?v=4seJf2Ql_0E",
+      "instructor": "eFIXX",
+      "title": "Cable Rating Factors: Temperature, Grouping and Thermal Insulation",
+      "sectionId": "c1-cable-factors-foundation",
+      "scope": "How ambient temperature, grouping and insulation reduce usable cable current rating.",
+      "transcript": {
+        "provider": "YTTools English captions (existing reviewed course research)",
+        "language": [
+          "en"
+        ],
+        "kind": "provider not exposed",
+        "captionEndSeconds": 763,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 763
+          }
+        ],
+        "sha256": "6dca74b2e2bfdb36aa89326eda8b0b33dbe728410e030827b91d638c462b8241"
+      }
+    },
+    {
+      "lessonId": "c1-earthing-arrangements-foundation",
+      "sourceLessonId": "p02-l04",
+      "videoId": "i22OiHyWeUg",
+      "url": "https://www.youtube.com/watch?v=i22OiHyWeUg",
+      "instructor": "GSH Electrical",
+      "title": "Identify TN-S, TN-C-S and TT Earthing Arrangements",
+      "sectionId": "c1-earthing-foundations",
+      "scope": "Supply protective-earth/neutral arrangements and the distinct TT electrode path.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "manual",
+        "sha256": "4d9542d7015a5b52c422cea6804a7e9ac470ec09548de10ed79eb3084255dec2",
+        "captionEndSeconds": 354,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 354
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-bonding-foundation",
+      "sourceLessonId": "p02-l05",
+      "videoId": "_e1wDq23-w0",
+      "url": "https://www.youtube.com/watch?v=_e1wDq23-w0",
+      "instructor": "eFIXX",
+      "title": "Exposed and Extraneous Parts: Earthing and Protective Bonding",
+      "sectionId": "c1-earthing-foundations",
+      "scope": "Defines exposed and extraneous conductive parts and their different protective connections.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "manual",
+        "sha256": "0ad19b8836d1b21d553f9e7d906e7384312a5b16f06cd2b0edede75982dad4b5",
+        "captionEndSeconds": 393,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 393
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-rcd-foundation",
+      "sourceLessonId": "p02-l07",
+      "videoId": "MfQAoPOKil8",
+      "url": "https://www.youtube.com/watch?v=MfQAoPOKil8",
+      "instructor": "Joe Robinson Training",
+      "title": "RCD Current Balance and the Need for Overcurrent Protection",
+      "sectionId": "c1-earthing-foundations",
+      "scope": "Residual current from unequal outgoing/return currents; an RCCB does not provide overload or short-circuit protection.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "df0fc663b5edc682df2865272022eed8fc221c45441959ff7b9075ba2b331a08",
+        "captionEndSeconds": 226,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 226
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-cpc-size-foundation",
+      "sourceLessonId": "c2-design-overview-08",
+      "videoId": "GKdW9H_5NA4",
+      "url": "https://www.youtube.com/watch?v=GKdW9H_5NA4",
+      "instructor": "eFIXX",
+      "title": "Size the CPC: Table Selection, Fault Current and the Adiabatic Equation",
+      "sectionId": "c1-cpc-sizing",
+      "scope": "Table selection, I = Uo/Zs, S = √(I²t)/k, device time and manufacturer let-through energy.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "manual",
+        "sha256": "05e90ca2f24ed812628590fa4e17dba5a897bd1d5234286313183261fe433a61",
+        "captionEndSeconds": 1132,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1132
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-emergency-firefighter-switches",
+      "sourceLessonId": null,
+      "videoId": "Er5KRhHekDo",
+      "url": "https://www.youtube.com/watch?v=Er5KRhHekDo",
+      "instructor": "eFIXX",
+      "title": "Distinguish Emergency Switching from a Firefighters’ Switch",
+      "sectionId": "c1-protective-switching",
+      "scope": "UK eFIXX correction distinguishes HV discharge-lighting firefighters’ switches from forecourt emergency shutdown and manual restoration.",
+      "transcript": {
+        "provider": "YTTools translated captions; language recorded below",
+        "language": [
+          "ar"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "8dc3b54f7a8b6080fca67bbf46ae22a822af96606a26c4ef1e3bdeed83a610e4",
+        "captionSegments": 229,
+        "captionEndSeconds": 312,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 312
+          }
+        ],
+        "reviewQualification": "Complete available translated caption track reviewed; original English caption track was not obtained. No claim of original-English or frame-by-frame review."
+      }
+    },
+    {
+      "lessonId": "c1-surge-foundation",
+      "sourceLessonId": "c2-spd-foundation",
+      "videoId": "7en_Rc14c2g",
+      "instructor": "eFIXX",
+      "title": "Transient Surges and How SPDs Limit Voltage",
+      "sectionId": "c1-lightning-surge",
+      "scope": "Transient overvoltage and the purpose of an SPD; prepares external lightning-protection coordination.",
+      "transcript": {
+        "provider": "YTTools English captions (existing reviewed course research)",
+        "language": [
+          "en"
+        ],
+        "kind": "provider not exposed",
+        "captionEndSeconds": 368,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 368
+          }
+        ],
+        "sha256": "ea95e606317b99bf6e72a268874a2cf50251611aead5e14cd649d0c6f121a945"
+      },
+      "url": "https://www.youtube.com/watch?v=7en_Rc14c2g"
+    },
+    {
+      "lessonId": "c1-lightning-protection-principles",
+      "sourceLessonId": null,
+      "videoId": "eti2tGM0YnU",
+      "url": "https://www.youtube.com/watch?v=eti2tGM0YnU",
+      "instructor": "DEHN Inc.",
+      "title": "Lightning Protection: Air Terminals, Down Conductors, Earthing and Bonding",
+      "sectionId": "c1-lightning-surge",
+      "scope": "External interception and discharge paths, separation, bonding, zones and coordinated surge protection. Data-centre specialist examples.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "1ada1cf85707ff1d6eed90df27cf2a8be33ffa7b37c692c5a03acdac7410759f",
+        "captionSegments": 846,
+        "captionEndSeconds": 2334,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 2334
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-pfc-target-foundation",
+      "sourceLessonId": "p01-pf-visual",
+      "videoId": "Tv_7XWf96gg",
+      "url": "https://www.youtube.com/watch?v=Tv_7XWf96gg",
+      "instructor": "The Engineering Mindset",
+      "title": "Correct a Building’s Power Factor to a Chosen Target",
+      "sectionId": "c1-pfc-target",
+      "scope": "50 kW at PF 0.78 corrected to 0.96 gives about 25.53 kVAr; phase angle and power triangles explain the calculation.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "manual",
+        "sha256": "4ebd686c035eb7f4f4071203c95daceae37df57b9f73b9e2f5f3ae9974bde23d",
+        "captionEndSeconds": 660,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 660
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-shunt-pfc-examples",
+      "sourceLessonId": null,
+      "videoId": "KvOM5xz1LI4",
+      "url": "https://www.youtube.com/watch?v=KvOM5xz1LI4",
+      "instructor": "Jim Pytel",
+      "title": "Power Factor Correction: Parallel Capacitors and Combined Loads",
+      "sectionId": "c1-pfc-shunt-examples",
+      "scope": "Worked RL circuits, a 240 V 50 Hz parallel circuit giving 53.05 µF, summed P/Q for two loads, source-current reduction and leading overcorrection.",
+      "transcript": {
+        "provider": "YTtoTranscript public captions",
+        "language": [
+          "en-orig"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "13921f22013946a15e5d1131ca423d462056d62c67ff4c3ab2fd57b787a375d7",
+        "captionSegments": 1273,
+        "captionEndSeconds": 2834,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 2834
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-slip-rotor-frequency",
+      "sourceLessonId": null,
+      "videoId": "H0SaAq7sMN0",
+      "url": "https://www.youtube.com/watch?v=H0SaAq7sMN0",
+      "instructor": "Gargi Basu",
+      "title": "Induction-Motor Speed, Slip and Rotor Frequency: Six Worked Examples",
+      "sectionId": "c1-motor-slip",
+      "scope": "Ns = 120f/P, slip as fraction/percent, rotor frequency sf and rotor-field motion relative to rotor/stator.",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "4d65b8eb2c3a590e3876708e9629b748d98ab94a22c6a3d7f51fb372172e5d68",
+        "captionSegments": 302,
+        "captionEndSeconds": 1059,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1059
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-torque-slip-operating-point",
+      "sourceLessonId": null,
+      "videoId": "zssTcEBkzh0",
+      "url": "https://www.youtube.com/watch?v=zssTcEBkzh0",
+      "instructor": "NPTEL IIT Kharagpur",
+      "title": "Torque–Slip Curve: Load Changes, Stable Operation and Stalling",
+      "sectionId": "c1-motor-slip",
+      "scope": "Load/developed torque, acceleration, low-slip slope, maximum torque and stable/unstable operating points.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "04a1729a2e629c0b21a2c1a42844238d0c70cf2cb23724d2d4cb14d7519104d8",
+        "captionSegments": 228,
+        "captionEndSeconds": 1966,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1966
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-single-phase-motor-principles",
+      "sourceLessonId": null,
+      "videoId": "bytt0ZCJwRk",
+      "url": "https://www.youtube.com/watch?v=bytt0ZCJwRk",
+      "instructor": "LEARN ELECTRICS",
+      "title": "Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal",
+      "sectionId": "c1-single-phase-motors",
+      "scope": "Starting/run windings, phase shift, centrifugal switching and reversal of one winding relative to the other.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "999f94bf89a2bec1584404969335ceeed98d7f0e9eea65c09c63502eac64b0bc",
+        "captionSegments": 332,
+        "captionEndSeconds": 778,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 778
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-single-phase-reversing-switch",
+      "sourceLessonId": null,
+      "videoId": "45re1J-RxKc",
+      "url": "https://www.youtube.com/watch?v=45re1J-RxKc",
+      "instructor": "LEARN ELECTRICS",
+      "title": "Wire and Test a Single-Phase Forward/Reverse Drum Switch",
+      "sectionId": "c1-single-phase-motors",
+      "scope": "Stop before reversal, isolated switch continuity mapping and straight/cross connections to reverse one winding.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "201c65507ce199679fba473301f54831592274af296593a14ff28d3b90937204",
+        "captionSegments": 279,
+        "captionEndSeconds": 651,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 651
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-dc-motor-commutation",
+      "sourceLessonId": null,
+      "videoId": "GQatiB-JHdI",
+      "url": "https://www.youtube.com/watch?v=GQatiB-JHdI",
+      "instructor": "The Engineering Mindset",
+      "title": "DC Motors: Magnetic Force, Brushes and Commutation",
+      "sectionId": "c1-dc-motors",
+      "scope": "Permanent-magnet DC construction, force, commutator action and direction change.",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "4581c18ea8729ae015d17b4fa76a3ac612bfc3dc32acc68045a23fa748e39d89",
+        "captionSegments": 382,
+        "captionEndSeconds": 929,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 929
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-dc-winding-reversal",
+      "sourceLessonId": null,
+      "videoId": "GYuBVM_GyOw",
+      "url": "https://www.youtube.com/watch?v=GYuBVM_GyOw",
+      "instructor": "Chinmay Deshpande",
+      "title": "Reverse a Wound-Field DC Motor: Armature or Field Connections",
+      "sectionId": "c1-dc-motors",
+      "scope": "Four force-direction cases: reverse either armature or field for reverse torque; reversing both retains direction.",
+      "transcript": {
+        "provider": "YTTools translated captions; language recorded below",
+        "language": [
+          "nl-NL"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "54a323dfd866b1f6f02eefa95ba2b414c5485d614c29969fde60bff31d73b6d7",
+        "captionSegments": 260,
+        "captionEndSeconds": 707,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 707
+          }
+        ],
+        "reviewQualification": "Complete available translated caption track reviewed; original English caption track was not obtained. No claim of original-English or frame-by-frame review."
+      }
+    },
+    {
+      "lessonId": "c1-stepper-motor-principles",
+      "sourceLessonId": null,
+      "videoId": "09Mpkjcr0bo",
+      "url": "https://www.youtube.com/watch?v=09Mpkjcr0bo",
+      "instructor": "The Engineering Mindset",
+      "title": "Stepper Motors: Winding Sequences, Steps and Position",
+      "sectionId": "c1-precision-motors",
+      "scope": "Permanent-magnet, reluctance and hybrid types; sequence, direction, speed, full/half/microstepping.",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "bb5f11375f414629653a1993a1e75084f4e982119b5af34bda66e3c1f502ba94",
+        "captionSegments": 403,
+        "captionEndSeconds": 842,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 842
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-servo-motor-feedback",
+      "sourceLessonId": null,
+      "videoId": "ditS0a28Sko",
+      "url": "https://www.youtube.com/watch?v=ditS0a28Sko",
+      "instructor": "RealPars",
+      "title": "Servo Motors: Command, Error and Position Feedback",
+      "sectionId": "c1-precision-motors",
+      "scope": "Command/feedback error, encoder/resolver, AC/DC motor types and synchronous versus induction operation.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "14de4a21d5efbec4e5f1f85910684c30b245980634d33d10be738f3afff4f990",
+        "captionSegments": 201,
+        "captionEndSeconds": 923,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 923
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-autotransformer-starter",
+      "sourceLessonId": null,
+      "videoId": "iHFTVBWLOAg",
+      "url": "https://www.youtube.com/watch?v=iHFTVBWLOAg",
+      "instructor": "Zack Hartle",
+      "title": "Autotransformer Starting: Tap Voltage, Line Current and Torque",
+      "sectionId": "c1-autotransformer-starting",
+      "scope": "80% voltage tap gives 80% motor starting current, 64% line starting current and 64% starting torque; switching transitions.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "f032f9249c3bf69c6f48f65d14aa540ecfbedc1ee47e80df7aa06967602903eb",
+        "captionSegments": 127,
+        "captionEndSeconds": 543,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 543
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-regenerative-drive-principles",
+      "sourceLessonId": null,
+      "videoId": "IAnMVYOYHxg",
+      "url": "https://www.youtube.com/watch?v=IAnMVYOYHxg",
+      "instructor": "KEB America",
+      "title": "Four-Quadrant Drives: Motoring, Braking and Regeneration",
+      "sectionId": "c1-regenerative-braking",
+      "scope": "Speed/torque signs, motoring/generating, DC-bus voltage, resistor heat versus energy returned to the supply.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "c228b358ca8c29f6a931c032e382a4d30260d479c6704744ee74b90285fec388",
+        "captionSegments": 41,
+        "captionEndSeconds": 178,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 178
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-verification-order-foundation",
+      "sourceLessonId": "c2-verification-overview-01",
+      "videoId": "Sc0tJGl4Oas",
+      "url": "https://www.youtube.com/watch?v=Sc0tJGl4Oas",
+      "instructor": "John Ward",
+      "title": "Initial Verification: Dead Tests Before Live Tests",
+      "sectionId": "c1-verification-foundations",
+      "scope": "Initial verification, safe test order and dead before live.",
+      "transcript": {
+        "provider": "YTTools English captions (existing reviewed course research)",
+        "language": [
+          "en"
+        ],
+        "kind": "provider not exposed",
+        "captionEndSeconds": 506,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 506
+          }
+        ],
+        "sha256": "9af5455dfefbdf2d5d5174af8789a329bcd702922715627b4b0752510f6d35a6"
+      }
+    },
+    {
+      "lessonId": "c1-continuity-foundation",
+      "sourceLessonId": "c2-verification-overview-02",
+      "videoId": "AZenZfLQQgw",
+      "url": "https://www.youtube.com/watch?v=AZenZfLQQgw",
+      "instructor": "John Ward",
+      "title": "Protective-Conductor Continuity: R2, R1+R2 and Polarity",
+      "sectionId": "c1-verification-foundations",
+      "scope": "Instrument compensation, continuity methods, conductor identification and dead-test polarity.",
+      "transcript": {
+        "provider": "YTTools English captions (existing reviewed course research)",
+        "language": [
+          "en"
+        ],
+        "kind": "provider not exposed",
+        "captionEndSeconds": 1013,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1013
+          }
+        ],
+        "sha256": "57f9a37d71d622e66392ff085d93b57ba8b8aab7fd6db7108534a2f04c57a2ae"
+      }
+    },
+    {
+      "lessonId": "c1-rcd-testing-foundation",
+      "sourceLessonId": "p08-l14",
+      "videoId": "zIPgYcLdQZE",
+      "url": "https://www.youtube.com/watch?v=zIPgYcLdQZE",
+      "instructor": "GSH Electrical",
+      "title": "RCD Verification: Rated Residual Current and Trip Time",
+      "sectionId": "c1-rcd-handover",
+      "scope": "A2 UK test example: rated residual current, time limit and distinguish test button from instrument testing.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "manual",
+        "sha256": "e82d2dcb83dfd57be26d5deadd63fcb675ef7fed8107fd2a1b25bf6adeae72a2",
+        "captionEndSeconds": 211,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 211
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-certification-foundation",
+      "sourceLessonId": "p16-l09",
+      "videoId": "cB35hzk4tDw",
+      "url": "https://www.youtube.com/watch?v=cB35hzk4tDw",
+      "instructor": "John Ward",
+      "title": "Assemble an Installation Certificate, Inspection Schedule and Test Results",
+      "sectionId": "c1-rcd-handover",
+      "scope": "Walk through declarations, supply data, inspection items and circuit results; historical form, not current test settings.",
+      "transcript": {
+        "provider": "Existing course transcript archive",
+        "language": [
+          "en"
+        ],
+        "kind": "asr",
+        "sha256": "09bad9aef8a57aef2457bf9a0adb234d3f289cea90f4a6c7ed2159fb5df5fc5f",
+        "captionEndSeconds": 2559,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 2559
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-fluorescent-operation",
+      "sourceLessonId": null,
+      "videoId": "hkgKmjVMesE",
+      "url": "https://www.youtube.com/watch?v=hkgKmjVMesE",
+      "instructor": "John Ward (jwflame)",
+      "title": "Fluorescent Lighting: Starter, Choke, Tube and Correction Capacitor",
+      "sectionId": "c1-stroboscopic-effect",
+      "scope": "Actual switch-start fitting, bimetal glow starter, filament heating, inductive starting pulse, running current limitation and separate PFC capacitor.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "f5367130ed650036ad4aaf66bce5bd542927dee85c6ba1f7f2ca51bb0854d7e5",
+        "captionSegments": 672,
+        "captionEndSeconds": 1487,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1487
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-stroboscopic-demonstration",
+      "sourceLessonId": null,
+      "videoId": "muucS5fwtvU",
+      "url": "https://www.youtube.com/watch?v=muucS5fwtvU",
+      "instructor": "BBC Earth Science",
+      "title": "Stroboscopic Effect: Why Moving Machinery Can Appear Still",
+      "sectionId": "c1-stroboscopic-effect",
+      "scope": "Rotating-disc and pulsed-water demonstrations show stationary/reverse apparent motion when frequencies match or differ slightly.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "80e52d461a32b2469fab8a0cdb9a2778dd25955c8b2bb86b8f771ebe055f798d",
+        "captionSegments": 91,
+        "captionEndSeconds": 237,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 237
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-switchgear-compartments",
+      "sourceLessonId": null,
+      "videoId": "R8n9fiHcPYM",
+      "url": "https://www.youtube.com/watch?v=R8n9fiHcPYM",
+      "instructor": "SGB-SMIT USA",
+      "title": "Compare Metal-Clad and Metal-Enclosed Switchgear Compartments",
+      "sectionId": "c1-switchgear-construction",
+      "scope": "Actual bus/cable barriers show why all metal-clad gear is metal-enclosed, but not the converse. Medium-voltage US example.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "241c14f9e116187bc5e78fe37b5b621e84ea3d79436baa81939c2df7ab5e26ab",
+        "captionSegments": 21,
+        "captionEndSeconds": 142,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 142
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-fire-response-principles",
+      "sourceLessonId": null,
+      "videoId": "cnn-yvszLXE",
+      "url": "https://www.youtube.com/watch?v=cnn-yvszLXE",
+      "instructor": "Zippyangels Productions",
+      "title": "Electrical Fire Risks: Prevention, Alarm, Evacuation and Extinguisher Types",
+      "sectionId": "c1-fire-response",
+      "scope": "Fire triangle, electrical hazards, raise alarm, call emergency services, escape/assembly and water/CO2/powder distinctions.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "edaf45959ca9cb09436d2f00f8609e2f28510e748af26822e877be1eb6684979",
+        "captionSegments": 257,
+        "captionEndSeconds": 749,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 749
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-generator-governor",
+      "sourceLessonId": null,
+      "videoId": "DKSkcspz4E4",
+      "url": "https://www.youtube.com/watch?v=DKSkcspz4E4",
+      "instructor": "WellandTV",
+      "title": "Generator Governors: Droop and Isochronous Speed Control",
+      "sectionId": "c1-generator-control",
+      "scope": "Governor regulates engine speed; fixed-speed isochronous versus sloped droop characteristic and load-sharing purpose.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "e4011577a3ba5155f8c2e68877bee848b5aea51c84a1c65716e18d553940bd92",
+        "captionSegments": 24,
+        "captionEndSeconds": 68,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 68
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-generator-excitation",
+      "sourceLessonId": null,
+      "videoId": "7MvjbC4f5Aw",
+      "url": "https://www.youtube.com/watch?v=7MvjbC4f5Aw",
+      "instructor": "International Engineering Training",
+      "title": "Generator Voltage Control: Excitation, AVR and Brushless Systems",
+      "sectionId": "c1-generator-control",
+      "scope": "DC field excitation controls induced voltage; sensed-voltage feedback, static excitation and rotating rectifier/brushless excitation.",
+      "transcript": {
+        "provider": "YTTools translated captions; language recorded below",
+        "language": [
+          "ar"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "0ed535f02de9ccb4401210f9363af055888ec489e5fa09b19cb6a10b21ef83a9",
+        "captionSegments": 145,
+        "captionEndSeconds": 271,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 271
+          }
+        ],
+        "reviewQualification": "Complete available translated caption track reviewed; original English caption track was not obtained. No claim of original-English or frame-by-frame review."
+      }
+    },
+    {
+      "lessonId": "c1-generator-power-limits",
+      "sourceLessonId": null,
+      "videoId": "Lc-u37_gfIg",
+      "url": "https://www.youtube.com/watch?v=Lc-u37_gfIg",
+      "instructor": "WellandTV",
+      "title": "Generator Power: Engine kW, Alternator kVA and Reactive Current",
+      "sectionId": "c1-generator-control",
+      "scope": "Distinguishes engine real-power work from reactive current in alternator windings, vector apparent power and power factor.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "c2c0ae2a0f7125de209026cdd7b1c63bfbb719bebf262c3e1c3f86694443f783",
+        "captionSegments": 34,
+        "captionEndSeconds": 85,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 85
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-wattmeter-foundation",
+      "sourceLessonId": null,
+      "videoId": "bVjmy2vBj-0",
+      "url": "https://www.youtube.com/watch?v=bVjmy2vBj-0",
+      "instructor": "Jim Pytel",
+      "title": "Wattmeters and Balanced Loads: Measurement Principles Before Examples",
+      "sectionId": "c1-wattmeter-measurement",
+      "scope": "Starts with the existing star/delta and power prerequisites, explains voltage/current connections, three-meter measurement and balanced per-phase scaling, then line-value measurement with known PF and motor efficiency.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "8d959631acf1cad3d57067e96dd91617a95ef10b337f1c83c75e4e6ab423d04a",
+        "captionSegments": 1046,
+        "captionEndSeconds": 2186,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 2186
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "c1-utilization-foundation",
+      "sourceLessonId": null,
+      "videoId": "hGMkuo8HG_Q",
+      "url": "https://www.youtube.com/watch?v=hGMkuo8HG_Q",
+      "instructor": "Neso Academy",
+      "title": "Installed Capacity and Maximum Demand: Understand Utilization Factor",
+      "sectionId": "c1-load-factors",
+      "scope": "Defines maximum demand/installed capacity with a simple 150 MW/200 MW = 75% example before the combined load-duration problem.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "56214997eb474286ac37ffd5a397f6724a2d8b67257c4e90983686878cca42ed",
+        "captionSegments": 55,
+        "captionEndSeconds": 176,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 176
+          }
+        ]
+      }
+    }
+  ]
+}
