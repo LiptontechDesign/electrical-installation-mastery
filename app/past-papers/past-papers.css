@@ -40,23 +40,21 @@
 .past-paper-stepper button { display: grid; place-items: center; width: 44px; height: 44px; color: var(--ink); background: var(--surface-soft); border: 1px solid var(--line); border-radius: 8px; }
 .past-paper-question > h2 { font-size: clamp(25px, 2.7vw, 36px); line-height: 1.25; letter-spacing: -.035em; margin: 12px 0 20px; scroll-margin-top: 18px; }
 .past-paper-prompt { font-size: 16px; line-height: 1.85; border-left: 3px solid var(--text-accent); padding: 7px 0 7px 20px; margin-bottom: 25px; }
-.past-paper-solution > section { margin-top: 30px; }
+.past-paper-solution > section { margin-top: 24px; }
 .past-paper-solution h3 { display: flex; gap: 12px; align-items: baseline; font-size: 18px; letter-spacing: -.02em; margin-bottom: 18px; }
-.past-paper-solution h3 > span { color: var(--text-accent); font-size: 11px; font-weight: 700; }
 .past-paper-solution ol, .past-paper-check ul { padding-left: 22px; line-height: 1.9; font-size: 14px; }
-.past-paper-terms { margin: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.past-paper-terms > div { display: grid; grid-template-columns: minmax(100px, 25%) minmax(0, 1fr); gap: 18px; padding: 16px 20px; border-top: 1px solid var(--line); }
-.past-paper-terms > div:first-child { border-top: 0; }
-.past-paper-terms dt { font-size: 13px; font-weight: 750; line-height: 1.7; }
-.past-paper-terms dd { margin: 0; font-size: 13px; line-height: 1.8; color: var(--muted); }
-.past-paper-terms details { margin-top: 10px; font-size: 12px; }
-.past-paper-terms details p { color: var(--ink); }
-.past-paper-terms a { color: var(--text-accent); }
-.past-paper-check { padding: 20px; background: var(--surface-soft); border-radius: 10px; }
+.past-paper-check, .past-paper-reference { margin-top: 20px; padding: 12px 16px; background: var(--surface-soft); border-radius: 10px; font-size: 13px; line-height: 1.75; }
+.past-paper-check summary, .past-paper-reference summary { cursor: pointer; font-weight: 650; min-height: 32px; padding: 5px 0; }
+.past-paper-reference a { color: var(--text-accent); }
+.past-paper-solution .epra-prose { line-height: 1.8; }
+.past-paper-solution .epra-prose li { margin: 0 0 12px; padding-left: 3px; }
+.past-paper-solution .epra-prose li > p { margin: 0; }
+.past-paper-solution .epra-prose li::marker { color: var(--text-accent); font-weight: 650; }
+.past-paper-solution .epra-prose strong { color: var(--ink); font-weight: 750; }
 .past-paper-check h3 { margin: 0 0 12px; }
 .past-paper-check ul { margin-bottom: 0; }
 .past-paper-working { padding: 14px 16px; border: 1px solid var(--line); border-radius: 10px; margin: 24px 0; }
-.past-paper-working summary, .past-paper-terms summary { cursor: pointer; min-height: 32px; padding: 6px 0; font-size: 12px; font-weight: 650; }
+.past-paper-working summary { cursor: pointer; min-height: 32px; padding: 6px 0; font-size: 12px; font-weight: 650; }
 .past-paper-working textarea { display: block; width: 100%; min-height: 160px; border: 1px solid var(--control-border); border-radius: 8px; padding: 14px; color: var(--ink); background: var(--paper); resize: vertical; margin-top: 14px; }
 .past-paper-working p { font-size: 11px; color: var(--muted); line-height: 1.7; }
 .past-paper-diagram { margin: 24px 0 0; }
@@ -83,7 +81,6 @@
   .past-paper-list { position: static; max-height: 210px; }
   .past-paper-list button { min-height: 58px; }
   .past-paper-question { padding: 20px 16px; }
-  .past-paper-terms > div { grid-template-columns: 1fr; gap: 6px; padding: 14px; }
   .past-paper-filters select, .past-paper-filters input, .past-paper-working textarea { font-size: 16px; }
   .past-paper-download { width: 100%; }
 }

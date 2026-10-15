@@ -21,6 +21,6 @@ export function filterQuestions(path: PaperPath, query = '', topic = '', paperId
 }
 export function compilationMarkdown(path: PaperPath, bank: PaperQuestion[], working: Record<string, string> = {}) {
   return `# ${path} past-paper study compilation\n\nQuestions with worked answers.\n\n` + bank.map((question, index) => {
-    return `## ${index + 1}. ${question.title}\n\n${question.prompt}\n\n### What the question asks\n\n${question.breakdown.map(item => '- ' + item).join('\n')}\n\n### Key terms\n\n${question.terms.map(item => `- **${item.term}:** ${item.meaning}`).join('\n')}\n\n${working[question.id]?.trim() ? `### Your working\n\n${working[question.id]}\n\n` : ''}### Worked answer\n\n${question.answer}\n\n${question.diagram ? `Study diagram: https://electrical-installation-mastery.vercel.app/past-paper-diagrams/${question.diagram}.svg\n\n` : ''}### Check your answer\n\n${question.check.map(item => '- ' + item).join('\n')}\n\n`;
+    return `## ${index + 1}. ${question.title}\n\n${question.prompt}\n\n${working[question.id]?.trim() ? `### Your working\n\n${working[question.id]}\n\n` : ''}### Worked answer\n\n${question.answer}\n\n${question.diagram ? `Study diagram: https://electrical-installation-mastery.vercel.app/past-paper-diagrams/${question.diagram}.svg\n\n` : ''}### Check your answer\n\n${question.check.map(item => '- ' + item).join('\n')}\n\n`;
   }).join('---\n\n');
 }

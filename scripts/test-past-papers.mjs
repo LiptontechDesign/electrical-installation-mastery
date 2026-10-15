@@ -39,8 +39,14 @@ assert.ok(filterQuestions('C1','CAPACITOR 81.19').some(q=>q.id==='single-phase-c
 assert.equal(filterQuestions('C2','no-such-study-question').length,0);
 assert.ok(filterQuestions('C1','','Motors and controls').every(q=>q.topic==='Motors and controls'));
 const md=compilationMarkdown('C2',questionsFor('C2'),{'domestic-supply':'My example working'});
-assert.ok(md.includes('My example working')&&md.includes('### Key terms')&&md.includes('### What the question asks'));
+assert.ok(md.includes('My example working')&&md.includes('### Worked answer')&&!md.includes('### Key terms')&&!md.includes('### What the question asks'));
 assert.ok(!/scribd|Related original|marking scheme|Paper:/.test(md));
+for (const q of questionsFor('C2')) assert.ok(md.includes(q.answer), q.id+' export must preserve the displayed worked answer');
+for (const [id, tag] of [['motor-types', 'ul'], ['initial-verification', 'ol'], ['power-factors', 'table']]) {
+ const q=questions.find(item=>item.id===id);
+ const html=renderToStaticMarkup(React.createElement(StudyMarkdown,{prefix:id},q.answer));
+ assert.ok(html.includes('<'+tag),id+' must retain its semantic learning structure');
+}
 // Independent calculations, including the error-prone capacitor, CT, load and motor-speed cases.
 const near=(a,b,e=.0001)=>assert.ok(Math.abs(a-b)<e,`${a} != ${b}`);
 const tanpf=pf=>Math.sqrt(1-pf*pf)/pf;
