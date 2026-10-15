@@ -7,6 +7,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "test:past-papers": "node scripts/test-past-papers.mjs",
     "test:theme": "node scripts/test-theme.mjs",
     "dev": "vinext dev --host 127.0.0.1",
     "build": "vinext build",

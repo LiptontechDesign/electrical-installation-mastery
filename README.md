@@ -1,6 +1,6 @@
 # Electrical Installation Mastery
 
-A video course with 365 lesson entries in 25 modules across C2, C1 and Professional pathways, plus a standalone EPRA C1/C2 practice centre.
+A video course with 365 lesson entries in 25 modules across C2, C1 and Professional pathways, plus standalone Practice and C1/C2 Past Papers destinations.
 
 The C1 pathway has 40 focused sections and 64 default video rows, with transcript-reviewed additions, explicit essential/optional roles and a linked four-storey worked study project. See [the C1 selection and flow review](docs/c1-video-selection-and-flow.md).
 
@@ -13,6 +13,7 @@ The C1 pathway has 40 focused sections and 64 default video rows, with transcrip
 - **Books:** four complete reference books with chapter search, PDF/text views, zoom, saved pages and personal notes.
 - **Practice (`/practice`):** separate C2/C1 pathways, 568 verbatim topic questions, 110 recall questions, two complete mock papers and 138 searchable BS 7671 definitions. Each definition preserves its substantive historical 17th-edition wording, with plain-language explanations, expanded abbreviations and related terms. Wide screens place explanations beside supporting terms; phones use a single reading column. A sticky top-bar search is available across the course, books, Practice and information pages. Results distinguish definitions from lessons, support keyboard navigation and open full definitions in place without discarding practice working. Topic filters, answer reveals, LaTeX worked solutions, session quizzes, timed/untimed exams, individual mock responses, part-level self-assessment, separate resumable in-page sessions, wide-screen answer comparison and downloadable working including revision flags. No sign-in required. See [the practice-centre guide](docs/epra-practice-centre.md).
 - **Install (`/install`):** add the course to a phone home screen or desktop app launcher. Browser installation guidance, app icons and a public offline reconnect screen. Course content and account sync still require internet. See [PWA support](docs/pwa.md).
+- **C1 / C2 Past Papers (`/past-papers/c1`, `/past-papers/c2`):** 78 C1 and 24 C2 consolidated study questions, independently written from recurring topics in ten dated public archive copies. Repeated topics share answers; 87 unique questions underlie the two pathways. Each question includes its givens, breakdown, key terms, worked answer and checks. KaTeX renders calculations; twelve accessible SVG schematics illustrate technical arrangements. Topic/search filters, Study / Attempt first and a downloadable Markdown compilation support self-study. Working stays in the open page and is included in downloads; no tracking or account records are added. Paper provenance and incomplete-source notes remain in the [research audit](docs/past-paper-research.md), outside student answers. This is an authored study compilation, not an official marking scheme or a complete authenticated archive.
 - **Settings:** Google account controls, complete account export/deletion, progress backup/import/reset and playback preferences.
 
 Schema 10 accepts earlier backups and preserves video progress, bookmarks, notes and playback preferences. Learner records synchronize per account.
@@ -84,6 +85,8 @@ npx next build
 With server credentials configured, browser integration checks should cover Google sign-in, account-scoped state reads, all four PDF ranges, CSRF rejection, private Blob access and an extracted figure.
 
 ## Architecture and sources
+
+- `app/past-papers/`: independently authored, editable study bank and source register, kept separate from the immutable supplied `content/epra/` archive. Verify with `node scripts/test-past-papers.mjs`.
 
 - `app/video-catalog.json` and `app/course-curriculum.ts`: video metadata and canonical ordering; `scripts/course-baseline.json` protects original video identities. Fixtures register six John Ward earth-electrode videos, 22 JPElectric lessons and six John Ward surge-protection videos; see [the C2 playlist integration](docs/c2-testing-playlist-integration.md) and [surge-protection integration](docs/surge-protection-integration.md).
 - `app/learning-sections.ts` / `.json`: coherent lesson groups, with no pass/fail state.

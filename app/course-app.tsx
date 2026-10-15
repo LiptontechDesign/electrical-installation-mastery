@@ -37,6 +37,7 @@ import CourseOverview from './course-overview';
 import LearningHome from './learning-home';
 import type { CourseUser } from './server/auth';
 import SiteSearch from './site-search';
+import PastPaperLinks from './past-paper-links';
 
 const BookWorkspace = dynamic(() => import('./book-reader').then(module => module.BookWorkspace), { ssr: false });
 
@@ -833,7 +834,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       <div className="app-frame">
         <header className="app-header studio-header" aria-label="Application toolbar">
           <button className="studio-brand" type="button" onClick={() => navigate('home')} aria-label="Electrical Installation Mastery home"><span className="studio-monogram"><Zap size={22}/></span><span><strong>Electrical</strong><small>INSTALLATION MASTERY</small></span></button>
-          <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? user ? 'My learning' : 'The course' : item.label}</button>)}<Link href="/practice" className="studio-practice-link">Practice</Link></nav>
+          <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? user ? 'My learning' : 'The course' : item.label}</button>)}<Link href="/practice" className="studio-practice-link">Practice</Link><PastPaperLinks/></nav>
           <div className="header-actions">
             <SiteSearch lessons={searchLessons} onLesson={id => { const row = courseRowsById.get(id); if (row) selectCourseRow(row); }}/>
 
@@ -940,7 +941,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           )}
           {view === 'books' && <BookWorkspace />}
         </main>
-        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}<Link href="/practice" className="mobile-practice-link"><ClipboardList size={20}/><span>Practice</span></Link></nav>
+        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}<Link href="/practice" className="mobile-practice-link"><ClipboardList size={20}/><span>Practice</span></Link><PastPaperLinks mobile/></nav>
       </div>
 
       {settingsOpen && (

@@ -21,7 +21,7 @@ Updated 14 October 2026. This index and the root README describe the current app
 - [Installable app](pwa.md): installation, privacy boundaries, offline recovery and verification.
 - [Theme and accessibility](theme-audit.md): current palette and verification limits.
 
-The app has Home, Learn, Books and a standalone Practice destination, plus account/settings controls. The new practice centre uses the supplied EPRA study pack. Retired lesson guides, Standards Companion, flashcards, simulations and recap interfaces remain absent.
+The app has Home, Learn, Books, Practice, C1 Past Papers and C2 Past Papers destinations, plus account/settings controls. Practice uses the supplied EPRA study pack; the separately authorised Past Papers areas use an independently authored study bank. See [past-paper research and verification](past-paper-research.md). Retired lesson guides, Standards Companion, flashcards, simulations and recap interfaces remain absent.
 
 Superseded assessment, competency, lesson-explanation, transcript-integration and recap plans/audits were removed from this documentation set. Historical versions remain in Git history; they are not specifications for the current product.
 

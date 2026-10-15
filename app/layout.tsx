@@ -15,6 +15,7 @@ import './pwa.css';
 import './personal-course-editor.css';
 import './definitions.css';
 import './site-search.css';
+import './past-paper-navigation.css';
 import 'katex/dist/katex.min.css';
 import { PwaProvider } from './pwa-support';
 import AccessibleTooltips from './accessible-tooltips';
