@@ -16,12 +16,14 @@ export default function PastPaperCentre({ path }: { path: PaperPath }) {
   const [attempt, setAttempt] = useState(false);
   const [revealed, setRevealed] = useState<string[]>([]);
   const [working, setWorking] = useState<Record<string, string>>({});
+  const [downloadedWorking, setDownloadedWorking] = useState('');
   const heading = useRef<HTMLHeadingElement>(null);
   const filtered = useMemo(() => filterQuestions(path, query, topic), [path, query, topic]);
   const current = filtered.find(question => question.id === selectedId) ?? filtered[0];
   const index = current ? filtered.indexOf(current) : -1;
   const showAnswer = !attempt || (current && revealed.includes(current.id));
   const hasWorking = Object.values(working).some(value => value.trim());
+  const unsavedWorking = hasWorking && JSON.stringify(working) !== downloadedWorking;
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get('question');
     if (!requested || !bank.some(item => item.id === requested)) return;
@@ -29,7 +31,7 @@ export default function PastPaperCentre({ path }: { path: PaperPath }) {
     return () => cancelAnimationFrame(frame);
   }, [bank]);
   useEffect(() => {
-    if (!hasWorking) return;
+    if (!unsavedWorking) return;
     const guard = (event: BeforeUnloadEvent) => { event.preventDefault(); event.returnValue = ''; };
     const leave = (event: MouseEvent) => {
       const link = (event.target as Element).closest?.('a[href]');
@@ -41,7 +43,7 @@ export default function PastPaperCentre({ path }: { path: PaperPath }) {
     window.addEventListener('beforeunload', guard);
     document.addEventListener('click', leave, true);
     return () => { window.removeEventListener('beforeunload', guard); document.removeEventListener('click', leave, true); };
-  }, [hasWorking]);
+  }, [unsavedWorking]);
   const choose = (id: string) => {
     setSelectedId(id);
     const url = new URL(window.location.href); url.searchParams.set('question', id);
@@ -49,14 +51,15 @@ export default function PastPaperCentre({ path }: { path: PaperPath }) {
     requestAnimationFrame(() => heading.current?.focus());
   };
   const download = () => {
-    const blob = new Blob([compilationMarkdown(path, filtered, working)], { type: 'text/markdown;charset=utf-8' });
+    const blob = new Blob([compilationMarkdown(path, bank, working)], { type: 'text/markdown;charset=utf-8' });
     const url = URL.createObjectURL(blob), link = document.createElement('a');
     link.href = url; link.download = `${path.toLowerCase()}-past-paper-study-answers.md`; link.click();
+    setDownloadedWorking(JSON.stringify(working));
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
   return <div className="past-paper-centre">
     <div className="past-paper-hero"><div><p className="epra-eyebrow"><Files size={15}/> {path} · PAST PAPERS</p><h1>Questions with<br/><em>worked answers.</em></h1><p>One consolidated study paper. Understand the question, define the terms and build the answer.</p></div><div className="past-paper-count"><strong>{bank.length}</strong><span>study questions</span></div></div>
-    <div className="past-paper-topbar"><p>Read, practise and check your reasoning.</p><button className="past-paper-download" onClick={download} disabled={!filtered.length}><Download size={16}/> Download compilation</button></div>
+    <div className="past-paper-topbar"><p>Read, practise and check your reasoning.</p><button className="past-paper-download" onClick={download} disabled={!bank.length}><Download size={16}/> Download compilation</button></div>
       <div className="past-paper-filters"><label className="epra-search"><Search size={17}/><input aria-label="Search past-paper questions and answers" placeholder="Search questions, terms or answers…" value={query} onChange={event => setQuery(event.target.value)}/></label><label>Topic<select aria-label="Topic" value={topic} onChange={event => setTopic(event.target.value)}><option value="">All topics</option>{[...new Set(bank.map(question => question.topic))].map(value => <option key={value}>{value}</option>)}</select></label></div>
       <div className="past-paper-mode"><div role="group" aria-label="Study mode"><button aria-pressed={!attempt} onClick={() => setAttempt(false)}>Study</button><button aria-pressed={attempt} onClick={() => setAttempt(true)}>Attempt first</button></div><p role="status">{filtered.length} {filtered.length === 1 ? 'question' : 'questions'}{hasWorking ? ' · Working kept for this open page; download before leaving' : ''}</p></div>
       <div className="past-paper-workspace"><aside className="past-paper-list" aria-label="Consolidated question list">{filtered.map((question, i) => <button key={question.id} aria-current={current?.id === question.id ? 'true' : undefined} onClick={() => choose(question.id)}><span>{String(i + 1).padStart(2, '0')}</span><span><small>{question.topic}</small><strong>{question.title}</strong></span></button>)}</aside><div className="past-paper-reading">{current ? <article key={current.id} className="past-paper-question"><div className="past-paper-stepper"><span>Question {index + 1} of {filtered.length}</span><div><button aria-label="Previous question" disabled={index === 0} onClick={() => choose(filtered[index - 1].id)}><ArrowLeft size={18}/></button><button aria-label="Next question" disabled={index === filtered.length - 1} onClick={() => choose(filtered[index + 1].id)}><ArrowRight size={18}/></button></div></div><p className="epra-eyebrow">{current.topic}</p><h2 ref={heading} tabIndex={-1}>{current.title}</h2><div className="past-paper-prompt"><StudyMarkdown prefix={`prompt-${current.id}`}>{current.prompt}</StudyMarkdown></div>
