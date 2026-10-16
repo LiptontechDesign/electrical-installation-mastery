@@ -1,0 +1,255 @@
+{
+  "reviewedAt": "2026-10-16",
+  "revision": 11,
+  "method": "Complete available English caption text reviewed for every selected video. Five tracks were exported through the native YouTube browser transcript API and two obtained through the public YTTools caption provider. Auto captions can misrecognise technical terms; equations and teaching scope were checked independently. Full caption text stays in ignored local research files; no frame-by-frame review is claimed.",
+  "videos": [
+    {
+      "lessonId": "c1-analyser-setup",
+      "videoId": "1JhOXUrjpsI",
+      "url": "https://www.youtube.com/watch?v=1JhOXUrjpsI",
+      "instructor": "Advanced Test Equipment Corp. (ATEC)",
+      "title": "Configure a Three-Phase Power Analyser and Verify Its Channels",
+      "sectionId": "c1-power-analyser",
+      "scope": "Voltage/current channels, neutral channel, signal and phasor checks, wye/delta configuration, nominal voltage/frequency, logging and report export. The leads are already installed; this is not a safe-connection procedure or an unbalanced worked power calculation.",
+      "durationSeconds": 355,
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "6a42ae14548bcf777bc5839661c7a97fc32bbd07f80843225e7024b56b87b3f1",
+        "captionSegments": 106,
+        "captionEndSeconds": 336,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 336
+          }
+        ]
+      },
+      "embeddedPlaybackCheck": {
+        "checkedAt": "2026-10-16",
+        "environment": "Local Next.js production build, guest mode",
+        "paused": false,
+        "readyState": 4,
+        "observedTimeSeconds": 42.620995,
+        "durationSeconds": 354.121
+      }
+    },
+    {
+      "lessonId": "c1-analyser-power-readings",
+      "videoId": "-RWS7Cwkuus",
+      "url": "https://www.youtube.com/watch?v=-RWS7Cwkuus",
+      "instructor": "Yokogawa Test&Measurement",
+      "title": "Measure Three-Wire Power with a Digital Analyser: Connections and Readings",
+      "sectionId": "c1-power-analyser",
+      "scope": "Defines the three-wire two-wattmeter circuit and common reference, derives total power, wires two measuring elements, then displays voltage/current/power/reactive/apparent quantities on a motor-drive bench. Explicitly distinguishes total real power from phase power and qualifies power-factor interpretation for unbalanced loads.",
+      "durationSeconds": 588,
+      "transcript": {
+        "provider": "YouTube native transcript exported through browser",
+        "language": [
+          "en"
+        ],
+        "kind": "auto-generated",
+        "sha256": "c78fb14beb255d079c9dcaf3d8452bd1d1cb9743c51a5cf747867c2282486af5",
+        "rawExportSha256": "c76ad1babe506950df81c958b0526f1599369f349980e36c6ec95dd06c764f91",
+        "captionSegments": 211,
+        "captionEndSeconds": 581,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 581
+          }
+        ],
+        "reviewQualification": "End extent is the last exported cue timestamp; the export supplies no final cue duration."
+      },
+      "embeddedPlaybackCheck": {
+        "checkedAt": "2026-10-16",
+        "environment": "Local Next.js production build, guest mode",
+        "paused": false,
+        "readyState": 4,
+        "observedTimeSeconds": 11.343357,
+        "durationSeconds": 587.241
+      }
+    },
+    {
+      "lessonId": "c1-building-design-plan",
+      "videoId": "7nge0ugiVyY",
+      "url": "https://www.youtube.com/watch?v=7nge0ugiVyY",
+      "instructor": "SparkyNinja",
+      "title": "Plan a Building Installation from the Brief, Drawings and Cable Routes",
+      "sectionId": "c1-building-design-planning",
+      "scope": "Reads a catalogue-shop design brief, building fabric and supply data; lays out distribution, containment, lighting/switching and small-power routes; checks client constraints; derives defensible route lengths before cable/protection calculations and final containment sizing. Provisional choices are explicitly subject to later verification. Does not complete upstairs, all calculations or handover.",
+      "durationSeconds": 1784,
+      "transcript": {
+        "provider": "YouTube native transcript exported through browser",
+        "language": [
+          "en"
+        ],
+        "kind": "auto-generated",
+        "sha256": "399d5ee10a95d8d0f1763654d8ef54035790f2cf8757b1728cb2cf9314d39fb5",
+        "rawExportSha256": "5a34f26826d95176b8c9702253ebf2e87a8a873694d8e43dd440c533e48df9fc",
+        "captionSegments": 739,
+        "captionEndSeconds": 1775,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1775
+          }
+        ],
+        "reviewQualification": "End extent is the last exported cue timestamp; the export supplies no final cue duration."
+      },
+      "embeddedPlaybackCheck": {
+        "checkedAt": "2026-10-16",
+        "environment": "Local Next.js production build, guest mode",
+        "paused": false,
+        "readyState": 4,
+        "observedTimeSeconds": 25.459556,
+        "durationSeconds": 1783.261
+      }
+    },
+    {
+      "lessonId": "c1-synchronous-condenser-overview",
+      "videoId": "6U_rO5FWW0Y",
+      "url": "https://www.youtube.com/watch?v=6U_rO5FWW0Y",
+      "instructor": "Flirting with Technology",
+      "title": "Synchronous Condensers: Reactive Power and Voltage Support",
+      "sectionId": "c1-pfc-synchronous-condenser",
+      "scope": "Concise narrated introduction: an unloaded synchronous machine, no external prime mover, supplying or absorbing reactive power, voltage and power-factor support. Introductory awareness only; no excitation calculation, sizing or grid-design demonstration.",
+      "durationSeconds": 113,
+      "transcript": {
+        "provider": "YouTube native transcript exported through browser",
+        "language": [
+          "en"
+        ],
+        "kind": "auto-generated",
+        "sha256": "1130717db9e7b9bfbe9592ea252bb162f7785b7e31f757a1c91c2da688ae9a40",
+        "rawExportSha256": "fff6ae8a7e79ed71bd8a6833a92e34bbe33dc937306dc679f37051a776f11f1d",
+        "captionSegments": 42,
+        "captionEndSeconds": 109,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 109
+          }
+        ],
+        "reviewQualification": "End extent is the last exported cue timestamp; the export supplies no final cue duration."
+      },
+      "embeddedPlaybackCheck": {
+        "checkedAt": "2026-10-16",
+        "environment": "Local Next.js production build, guest mode",
+        "paused": false,
+        "readyState": 4,
+        "observedTimeSeconds": 21.330026,
+        "durationSeconds": 112.501
+      }
+    },
+    {
+      "lessonId": "c1-test-results-resistance",
+      "videoId": "niuVdopqlcs",
+      "url": "https://www.youtube.com/watch?v=niuVdopqlcs",
+      "instructor": "LEARN ELECTRICS",
+      "title": "Interpret Ring-Circuit Test Results: Expected Values, Spurs and Wrong Links",
+      "sectionId": "c1-testing-results-interpretation",
+      "scope": "Starts with ring-continuity measurements and safe isolation; derives expected cross-connected readings using series/parallel resistance, explains divide-by-four and unequal CPC sizes, compares measured/calculated values, then distinguishes spur resistance from incorrect test links and loose connections. Retains highest measured result; not a complete schedule or all possible test failures.",
+      "durationSeconds": 937,
+      "transcript": {
+        "provider": "YouTube native transcript exported through browser",
+        "language": [
+          "en"
+        ],
+        "kind": "auto-generated",
+        "sha256": "780c4af8888df1e89a1167cd7bc744b508483e732d54335b3d208e32e1002d79",
+        "rawExportSha256": "4f47bd78ca158d5c76a6762af3f72a1d4a25a619e175464dccb0006fadd14892",
+        "captionSegments": 395,
+        "captionEndSeconds": 934,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 934
+          }
+        ],
+        "reviewQualification": "End extent is the last exported cue timestamp; the export supplies no final cue duration."
+      },
+      "embeddedPlaybackCheck": {
+        "checkedAt": "2026-10-16",
+        "environment": "Local Next.js production build, guest mode",
+        "paused": false,
+        "readyState": 4,
+        "observedTimeSeconds": 22.037651,
+        "durationSeconds": 936.441
+      }
+    },
+    {
+      "lessonId": "c1-incident-evidence",
+      "videoId": "_RMYPD-T1Aw",
+      "url": "https://www.youtube.com/watch?v=_RMYPD-T1Aw",
+      "instructor": "Compassa eLearning",
+      "title": "After an Incident: Preserve the Scene and Collect Reliable Evidence",
+      "sectionId": "c1-incident-investigation",
+      "scope": "UK instructor Will Taylor uses an authored forklift injury scenario to collect scene photographs, sketches/measurements, environmental facts, witness accounts and equipment/training/risk records, and preserve physical evidence. Placed after fire/emergency response; not an electrical fire-forensics qualification or Kenyan reporting procedure.",
+      "durationSeconds": 760,
+      "transcript": {
+        "provider": "YouTube native transcript exported through browser",
+        "language": [
+          "en"
+        ],
+        "kind": "auto-generated",
+        "sha256": "4fc6f80e57b90c6cfb99bdc6d631b6df2f91b200d3e9b8b20d2a4c3eb6525a2b",
+        "rawExportSha256": "448a070d3493bb63b450fad6dd666dd7ac7b7d9a3ae0774298084815377eb76d",
+        "captionSegments": 338,
+        "captionEndSeconds": 752,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 752
+          }
+        ],
+        "reviewQualification": "End extent is the last exported cue timestamp; the export supplies no final cue duration."
+      },
+      "embeddedPlaybackCheck": {
+        "checkedAt": "2026-10-16",
+        "environment": "Local Next.js production build, guest mode",
+        "paused": false,
+        "readyState": 4,
+        "observedTimeSeconds": 28.525409,
+        "durationSeconds": 759.841
+      }
+    },
+    {
+      "lessonId": "c1-incident-causes-actions",
+      "videoId": "vbmQ4yXcXB8",
+      "url": "https://www.youtube.com/watch?v=vbmQ4yXcXB8",
+      "instructor": "Compassa eLearning",
+      "title": "Investigate Causes and Turn Findings into a Corrective-Action Plan",
+      "sectionId": "c1-incident-investigation",
+      "scope": "Same UK instructor applies immediate/underlying/root-cause reasoning to an authored MEWP near miss: inspection/maintenance, training, supervision and barriers. Connects evidence to controls, management reporting and actions with owners, resources and timescales. Does not claim to teach an official EPRA paper or electrical-fire forensic methods.",
+      "durationSeconds": 1123,
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "ee5c740fa03b2ec5b96f911b23d54d95fd54719aebd96756099347bfe6e2d8bd",
+        "captionSegments": 537,
+        "captionEndSeconds": 1119,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1119
+          }
+        ]
+      },
+      "embeddedPlaybackCheck": {
+        "checkedAt": "2026-10-16",
+        "environment": "Local Next.js production build, guest mode",
+        "paused": false,
+        "readyState": 4,
+        "observedTimeSeconds": 14.79764,
+        "durationSeconds": 1122.121
+      }
+    }
+  ]
+}

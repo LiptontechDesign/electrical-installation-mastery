@@ -1067,25 +1067,43 @@
     ]
   },
   {
+    "id": "c1-power-analyser",
+    "moduleId": "c1-power",
+    "title": "Digital power analysers: configure channels and interpret total power",
+    "lessonIds": [
+      "c1-analyser-setup",
+      "c1-analyser-power-readings"
+    ],
+    "number": 13
+  },
+  {
     "id": "c1-resistance-measurement",
     "moduleId": "c1-power",
-    "number": 13,
-    "title": "Wheatstone bridge measurement and Lorenz apparatus",
+    "number": 14,
+    "title": "Wheatstone bridge: comparative resistance measurement",
     "lessonIds": [
-      "c1-wheatstone-bridge",
-      "c1-lorenz-demonstration"
+      "c1-wheatstone-bridge"
     ]
   },
   {
     "id": "c1-generator-control",
     "moduleId": "c1-power",
-    "number": 14,
+    "number": 15,
     "title": "Generator frequency, voltage control and power limits",
     "lessonIds": [
       "c1-generator-governor",
       "c1-generator-excitation",
       "c1-generator-power-limits"
     ]
+  },
+  {
+    "id": "c1-historical-resistance",
+    "moduleId": "c1-power",
+    "title": "Optional historical revision: Lorenz absolute-resistance apparatus",
+    "lessonIds": [
+      "c1-lorenz-demonstration"
+    ],
+    "number": 16
   },
   {
     "id": "c1-distribution-section-1",
@@ -1142,9 +1160,18 @@
     ]
   },
   {
+    "id": "c1-building-design-planning",
+    "moduleId": "c1-design",
+    "title": "Read the design brief, plan circuit routes and establish cable lengths",
+    "lessonIds": [
+      "c1-building-design-plan"
+    ],
+    "number": 1
+  },
+  {
     "id": "c1-load-factors",
     "moduleId": "c1-design",
-    "number": 1,
+    "number": 2,
     "title": "Load factor, capacity factor and utilization factor",
     "lessonIds": [
       "c1-utilization-foundation",
@@ -1154,7 +1181,7 @@
   {
     "id": "c1-design-section-1",
     "moduleId": "c1-design",
-    "number": 2,
+    "number": 3,
     "title": "Build a load schedule and justify maximum demand",
     "lessonIds": [
       "p10-l10",
@@ -1168,7 +1195,7 @@
   {
     "id": "c1-cable-factors-foundation",
     "moduleId": "c1-design",
-    "number": 3,
+    "number": 4,
     "title": "Why temperature, grouping and insulation change cable selection",
     "lessonIds": [
       "c1-rating-factors-foundation"
@@ -1177,7 +1204,7 @@
   {
     "id": "c1-design-section-2",
     "moduleId": "c1-design",
-    "number": 4,
+    "number": 5,
     "title": "Design current, correction factors and cable current capacity",
     "lessonIds": [
       "p06-l05"
@@ -1186,7 +1213,7 @@
   {
     "id": "c1-design-voltage-drop",
     "moduleId": "c1-design",
-    "number": 5,
+    "number": 6,
     "title": "Add submain and final circuit voltage drop correctly",
     "lessonIds": [],
     "resource": {
@@ -1197,7 +1224,7 @@
   {
     "id": "c1-design-extension",
     "moduleId": "c1-design",
-    "number": 6,
+    "number": 7,
     "title": "Optional extension: larger buildings and transformer loading",
     "lessonIds": [
       "p07-l16"
@@ -1312,9 +1339,18 @@
     "lessonIds": []
   },
   {
+    "id": "c1-pfc-synchronous-condenser",
+    "moduleId": "c1-pfc",
+    "title": "Synchronous condensers: another source of reactive-power compensation",
+    "lessonIds": [
+      "c1-synchronous-condenser-overview"
+    ],
+    "number": 5
+  },
+  {
     "id": "c1-pfc-complex-tools",
     "moduleId": "c1-pfc",
-    "number": 5,
+    "number": 6,
     "title": "Further study: complex numbers and conjugates for AC calculations",
     "lessonIds": [
       "c1-complex-number-foundation",
@@ -1324,7 +1360,7 @@
   {
     "id": "c1-pfc-shunt-examples",
     "moduleId": "c1-pfc",
-    "number": 6,
+    "number": 7,
     "title": "Further study: complex power and combined-load correction",
     "lessonIds": [
       "c1-shunt-pfc-examples"
@@ -1568,9 +1604,18 @@
     ]
   },
   {
+    "id": "c1-testing-results-interpretation",
+    "moduleId": "c1-testing",
+    "title": "Interpret test results: expected resistance, spurs and faulty test connections",
+    "lessonIds": [
+      "c1-test-results-resistance"
+    ],
+    "number": 7
+  },
+  {
     "id": "c1-testing-section-2",
     "moduleId": "c1-testing",
-    "number": 7,
+    "number": 8,
     "title": "Periodic inspection: scope, observations and condition reporting",
     "lessonIds": [
       "c1-periodic-reporting",
@@ -1633,6 +1678,16 @@
     "lessonIds": [
       "c1-fire-response-principles"
     ]
+  },
+  {
+    "id": "c1-incident-investigation",
+    "moduleId": "c1-faults",
+    "title": "After the emergency: collect evidence, identify causes and plan action",
+    "lessonIds": [
+      "c1-incident-evidence",
+      "c1-incident-causes-actions"
+    ],
+    "number": 7
   },
   {
     "id": "professional-cables-section-1",

@@ -64,7 +64,8 @@
     "test:connected-process-browser": "node scripts/test-connected-process-browser.mjs",
     "test:c1-learning": "node scripts/test-c1-learning.mjs",
     "test:c1-gap-fill": "node scripts/test-c1-gap-fill.mjs",
-    "test:c1-flow": "node scripts/test-c1-flow.mjs"
+    "test:c1-flow": "node scripts/test-c1-flow.mjs",
+    "test:c1-applications": "node scripts/test-c1-applications.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

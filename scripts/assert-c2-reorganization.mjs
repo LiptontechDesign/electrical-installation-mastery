@@ -12,6 +12,7 @@ export const connectedProcessAdditions = json('./fixtures/connected-process-addi
 export const c1LearningAdditions = json('./fixtures/c1-learning-additions.json');
 export const c1GapFillAdditions = json('./fixtures/c1-gap-fill-additions.json');
 export const c1FlowAdditions = json('./fixtures/c1-flow-additions.json');
+export const c1ApplicationAdditions = json('./fixtures/c1-application-additions.json');
 export const c1FlowRepeatIds = json('../app/c1-flow-update.json').repeats.map(lesson => lesson.id);
 export const c1FoundationIds = json('../app/c1-gap-fill-update.json').repeats.map(lesson => lesson.id);
 export const designOverviewIds = new Set(json('../app/design-learning-update.json').overviewLessonIds);
@@ -21,7 +22,7 @@ const baseline = json('./course-baseline.json');
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions]) {
+  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions]) {
     assert.ok(!source.has(lesson.id), 'New lessons must not replace an original identity');
     source.set(lesson.id, lesson);
   }

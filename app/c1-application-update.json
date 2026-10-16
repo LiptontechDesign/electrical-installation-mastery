@@ -1,0 +1,60 @@
+{
+  "revision": 11,
+  "previous": {
+    "c1-resistance-measurement": [
+      "c1-wheatstone-bridge",
+      "c1-lorenz-demonstration"
+    ]
+  },
+  "current": {
+    "c1-power-analyser": [
+      "c1-analyser-setup",
+      "c1-analyser-power-readings"
+    ],
+    "c1-historical-resistance": [
+      "c1-lorenz-demonstration"
+    ],
+    "c1-building-design-planning": [
+      "c1-building-design-plan"
+    ],
+    "c1-pfc-synchronous-condenser": [
+      "c1-synchronous-condenser-overview"
+    ],
+    "c1-testing-results-interpretation": [
+      "c1-test-results-resistance"
+    ],
+    "c1-incident-investigation": [
+      "c1-incident-evidence",
+      "c1-incident-causes-actions"
+    ],
+    "c1-resistance-measurement": [
+      "c1-wheatstone-bridge"
+    ]
+  },
+  "addedLessonIds": [
+    "c1-analyser-setup",
+    "c1-analyser-power-readings",
+    "c1-building-design-plan",
+    "c1-synchronous-condenser-overview",
+    "c1-test-results-resistance",
+    "c1-incident-evidence",
+    "c1-incident-causes-actions"
+  ],
+  "repeatableVideoIds": [
+    "1JhOXUrjpsI",
+    "-RWS7Cwkuus",
+    "7nge0ugiVyY",
+    "6U_rO5FWW0Y",
+    "niuVdopqlcs",
+    "_RMYPD-T1Aw",
+    "vbmQ4yXcXB8"
+  ],
+  "sections": [
+    "c1-power-analyser",
+    "c1-historical-resistance",
+    "c1-building-design-planning",
+    "c1-pfc-synchronous-condenser",
+    "c1-testing-results-interpretation",
+    "c1-incident-investigation"
+  ]
+}

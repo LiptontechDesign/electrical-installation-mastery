@@ -30,7 +30,7 @@
   "c1-capacitor-placement": {
     "required": true,
     "studyRole": "Core application",
-    "studyNote": "Keep correction capacitors off VFD outputs."
+    "studyNote": "Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs."
   },
   "c1-motor-terminals": {
     "required": true,

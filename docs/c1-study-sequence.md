@@ -2,7 +2,7 @@
 
 Follow the sections in order. Key C2 foundations now appear directly in C1. The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
 
-78 sections · 131 video entries. [Flow repair and caption qualifications](c1-flow-repair.md).
+84 sections · 138 video entries. [Modern applications and coverage limits](c1-modern-applications.md).
 
 ## Module 10: AC Foundations, Three-Phase Supply and Neutral Behaviour
 
@@ -130,14 +130,20 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   The two-wattmeter method shown applies to three-wire systems.
 
-### 13. Wheatstone bridge measurement and Lorenz apparatus
+### 13. Digital power analysers: configure channels and interpret total power
+
+- [Configure a Three-Phase Power Analyser and Verify Its Channels](https://www.youtube.com/watch?v=1JhOXUrjpsI) — Advanced Test Equipment Corp. (ATEC); Core demonstration.
+
+  The 480 V, 60 Hz example illustrates setup; select the actual supply voltage, frequency and wiring system.
+- [Measure Three-Wire Power with a Digital Analyser: Connections and Readings](https://www.youtube.com/watch?v=-RWS7Cwkuus) — Yokogawa Test&Measurement; Core worked demonstration.
+
+  Two measuring elements give total real power on a three-wire system; their readings are not individual phase powers.
+
+### 14. Wheatstone bridge: comparative resistance measurement
 
 - [Wheatstone Bridge: Null Balance and Unknown Resistance](https://www.youtube.com/watch?v=TFMRbx9mARU) — Physics Online; Core lesson.
-- [Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration](https://www.youtube.com/watch?v=9ILTHNLSsG0) — nickm2001; Optional demonstration.
 
-  Apparatus demonstration; use the worked question for the full calculation.
-
-### 14. Generator frequency, voltage control and power limits
+### 15. Generator frequency, voltage control and power limits
 
 - [Generator Governors: Droop and Isochronous Speed Control](https://www.youtube.com/watch?v=DKSkcspz4E4) — WellandTV; Core lesson.
 
@@ -146,6 +152,12 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Generator Power: Engine kW, Alternator kVA and Reactive Current](https://www.youtube.com/watch?v=Lc-u37_gfIg) — WellandTV; Core lesson.
 
   Both engine kW and alternator kVA limits apply; reactive current still contributes to winding losses.
+
+### 16. Optional historical revision: Lorenz absolute-resistance apparatus
+
+- [Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration](https://www.youtube.com/watch?v=9ILTHNLSsG0) — nickm2001; Optional historical demonstration.
+
+  Historical apparatus overview; focus on absolute versus comparative resistance measurement.
 
 ## Module 12: Three-Phase Boards, Feeders and Outlets
 
@@ -176,38 +188,44 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 ## Module 13: Three-Phase Load, Cable and Protection Design
 
-### 1. Load factor, capacity factor and utilization factor
+### 1. Read the design brief, plan circuit routes and establish cable lengths
+
+- [Plan a Building Installation from the Brief, Drawings and Cable Routes](https://www.youtube.com/watch?v=7nge0ugiVyY) — SparkyNinja; Core applied planning.
+
+  Use the planning method with current requirements; this is an earlier UK project example.
+
+### 2. Load factor, capacity factor and utilization factor
 
 - [Installed Capacity and Maximum Demand: Understand Utilization Factor](https://www.youtube.com/watch?v=hGMkuo8HG_Q) — Neso Academy; Core lesson.
 
   Utilization factor compares maximum demand with installed capacity; 1 means full utilization.
 - [Load-Duration Curve: Load, Capacity and Utilization Factors](https://www.youtube.com/watch?v=qZcv5pAW2lA) — Neso Academy; Core lesson.
 
-### 2. Build a load schedule and justify maximum demand
+### 3. Build a load schedule and justify maximum demand
 
 - [Electrical Load Estimation - Electrical Load Calculation in Electrical Distribution](https://www.youtube.com/watch?v=AQffdGvDNcA) — Engr. Ahmed / Khadija Academy; Core lesson.
 - [Maximum Demand and Diversity: A UK Domestic Worked Example](https://www.youtube.com/watch?v=lGcsQ8mLI34) — GSH Electrical; Optional context.
 
   Domestic example only; assess L1, L2 and L3 separately for a three-phase building.
 
-### 3. Why temperature, grouping and insulation change cable selection
+### 4. Why temperature, grouping and insulation change cable selection
 
 - [Cable Rating Factors: Temperature, Grouping and Thermal Insulation](https://www.youtube.com/watch?v=4seJf2Ql_0E) — eFIXX; Core foundation.
 
-### 4. Design current, correction factors and cable current capacity
+### 5. Design current, correction factors and cable current capacity
 
 - [Cable calculation. Calculating the live cable size from BS 7671](https://www.youtube.com/watch?v=wAcqKNBxy-w) — Electrical Student; Core lesson.
 - [Master Three-Phase Cable Calculations](https://www.youtube.com/watch?v=ChC_94Zmf4I) — Sparky Help; Core worked example.
 
   44 A is tabulated capacity; corrected Iz is 32.52 A.
 
-### 5. Add submain and final circuit voltage drop correctly
+### 6. Add submain and final circuit voltage drop correctly
 
 - [Voltage Drop in Three-Phase Installations and Single-Phase Circuits from a Three-Phase Supply](https://www.youtube.com/watch?v=RCHw0TUEAes) — LEARN ELECTRICS; Core worked example.
 
   For a balanced feeder, use 400 V for submain drop percentages and 230 V for single-phase final circuits.
 
-### 6. Optional extension: larger buildings and transformer loading
+### 7. Optional extension: larger buildings and transformer loading
 
 - [Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial](https://www.youtube.com/watch?v=XGMUpguNzao) — Elegant Power Solutions; Optional extension.
 
@@ -273,16 +291,20 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 - [5 Types of Power Factor Correction — Capacitor Bank Locations](https://www.youtube.com/watch?v=oaIRQ1Xm7OQ) — The Electrical Guy; Core application.
 
-  Keep correction capacitors off VFD outputs.
+  Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs.
 
-### 5. Further study: complex numbers and conjugates for AC calculations
+### 5. Synchronous condensers: another source of reactive-power compensation
+
+- [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
+
+### 6. Further study: complex numbers and conjugates for AC calculations
 
 - [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
 - [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
 
   Mathematical i is the same imaginary unit written j in electrical engineering.
 
-### 6. Further study: complex power and combined-load correction
+### 7. Further study: complex power and combined-load correction
 
 - [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
 
@@ -434,7 +456,11 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Older UK form: use current fields and the preceding RCD test requirements.
 
-### 7. Periodic inspection: scope, observations and condition reporting
+### 7. Interpret test results: expected resistance, spurs and faulty test connections
+
+- [Interpret Ring-Circuit Test Results: Expected Values, Spurs and Wrong Links](https://www.youtube.com/watch?v=niuVdopqlcs) — LEARN ELECTRICS; Core worked application.
+
+### 8. Periodic inspection: scope, observations and condition reporting
 
 - [Periodic Inspection: Scope, Limitations, Observations and Reporting](https://www.youtube.com/watch?v=SAlr4fM3Jzg) — ECA - Electrotechnical & Engineering Services Body; Core application.
 
@@ -480,3 +506,10 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Electrical Fire Risks: Prevention, Alarm, Evacuation and Extinguisher Types](https://www.youtube.com/watch?v=cnn-yvszLXE) — Zippyangels Productions; Core lesson.
 
   Raise the alarm and evacuate first. Use an extinguisher only if trained, the fire is small and your escape remains clear.
+
+### 7. After the emergency: collect evidence, identify causes and plan action
+
+- [After an Incident: Preserve the Scene and Collect Reliable Evidence](https://www.youtube.com/watch?v=_RMYPD-T1Aw) — Compassa eLearning; Core applied method.
+
+  Make people and the scene safe before collecting evidence.
+- [Investigate Causes and Turn Findings into a Corrective-Action Plan](https://www.youtube.com/watch?v=vbmQ4yXcXB8) — Compassa eLearning; Core worked application.

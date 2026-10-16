@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 432,
-  "duration": "101 h 10 min",
+  "lessonCount": 439,
+  "duration": "102 h 45 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -4163,8 +4163,8 @@
       "number": 11,
       "title": "AC Power, Transformers and Electrical Measurements",
       "description": "Build AC calculations from reactance and phasors, then study transformers, metering and supply control.",
-      "duration": "4 h 48 min",
-      "durationSeconds": 17337,
+      "duration": "5 h 4 min",
+      "durationSeconds": 18280,
       "learningOutcome": "Build AC calculations from reactance and phasors, then study transformers, metering and supply control.",
       "lessons": [
         {
@@ -4490,6 +4490,38 @@
           "studyNote": "The two-wattmeter method shown applies to three-wire systems."
         },
         {
+          "id": "c1-analyser-setup",
+          "videoId": "1JhOXUrjpsI",
+          "instructor": "Advanced Test Equipment Corp. (ATEC)",
+          "title": "Configure a Three-Phase Power Analyser and Verify Its Channels",
+          "durationSeconds": 355,
+          "topic": "Three-phase analyser setup",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core demonstration",
+          "required": true,
+          "studyNote": "The 480 V, 60 Hz example illustrates setup; select the actual supply voltage, frequency and wiring system.",
+          "url": "https://www.youtube.com/watch?v=1JhOXUrjpsI",
+          "duration": "5:55",
+          "number": 22
+        },
+        {
+          "id": "c1-analyser-power-readings",
+          "videoId": "-RWS7Cwkuus",
+          "instructor": "Yokogawa Test&Measurement",
+          "title": "Measure Three-Wire Power with a Digital Analyser: Connections and Readings",
+          "durationSeconds": 588,
+          "topic": "Digital two-wattmeter measurement",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core worked demonstration",
+          "required": true,
+          "studyNote": "Two measuring elements give total real power on a three-wire system; their readings are not individual phase powers.",
+          "url": "https://www.youtube.com/watch?v=-RWS7Cwkuus",
+          "duration": "9:48",
+          "number": 23
+        },
+        {
           "videoId": "TFMRbx9mARU",
           "url": "https://www.youtube.com/watch?v=TFMRbx9mARU",
           "instructor": "Physics Online",
@@ -4497,7 +4529,7 @@
           "durationSeconds": 387,
           "regulationSensitive": false,
           "id": "c1-wheatstone-bridge",
-          "number": 22,
+          "number": 24,
           "title": "Wheatstone Bridge: Null Balance and Unknown Resistance",
           "topic": "Wheatstone Bridge: Null Balance and Unknown Resistance",
           "layer": "WHY",
@@ -4505,24 +4537,8 @@
           "required": true
         },
         {
-          "videoId": "9ILTHNLSsG0",
-          "url": "https://www.youtube.com/watch?v=9ILTHNLSsG0",
-          "instructor": "nickm2001",
-          "duration": "3:13",
-          "durationSeconds": 193,
-          "regulationSensitive": false,
-          "id": "c1-lorenz-demonstration",
-          "number": 23,
-          "title": "Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration",
-          "topic": "Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration",
-          "layer": "WHY",
-          "studyRole": "Optional demonstration",
-          "required": false,
-          "studyNote": "Apparatus demonstration; use the worked question for the full calculation."
-        },
-        {
           "id": "c1-generator-governor",
-          "number": 24,
+          "number": 25,
           "title": "Generator Governors: Droop and Isochronous Speed Control",
           "videoId": "DKSkcspz4E4",
           "url": "https://www.youtube.com/watch?v=DKSkcspz4E4",
@@ -4538,7 +4554,7 @@
         },
         {
           "id": "c1-generator-excitation",
-          "number": 25,
+          "number": 26,
           "title": "Generator Voltage Control: Excitation, AVR and Brushless Systems",
           "videoId": "7MvjbC4f5Aw",
           "url": "https://www.youtube.com/watch?v=7MvjbC4f5Aw",
@@ -4553,7 +4569,7 @@
         },
         {
           "id": "c1-generator-power-limits",
-          "number": 26,
+          "number": 27,
           "title": "Generator Power: Engine kW, Alternator kVA and Reactive Current",
           "videoId": "Lc-u37_gfIg",
           "url": "https://www.youtube.com/watch?v=Lc-u37_gfIg",
@@ -4566,6 +4582,22 @@
           "studyRole": "Core lesson",
           "required": true,
           "studyNote": "Both engine kW and alternator kVA limits apply; reactive current still contributes to winding losses."
+        },
+        {
+          "videoId": "9ILTHNLSsG0",
+          "url": "https://www.youtube.com/watch?v=9ILTHNLSsG0",
+          "instructor": "nickm2001",
+          "duration": "3:13",
+          "durationSeconds": 193,
+          "regulationSensitive": false,
+          "id": "c1-lorenz-demonstration",
+          "number": 28,
+          "title": "Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration",
+          "topic": "Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration",
+          "layer": "WHY",
+          "studyRole": "Optional historical demonstration",
+          "required": false,
+          "studyNote": "Historical apparatus overview; focus on absolute versus comparative resistance measurement."
         }
       ],
       "path": "C1",
@@ -4742,13 +4774,29 @@
       "number": 13,
       "title": "Three-Phase Load, Cable and Protection Design",
       "description": "Assess demand, balance phases and select cables and protective devices.",
-      "duration": "1 h 30 min",
-      "durationSeconds": 5422,
+      "duration": "2 h 0 min",
+      "durationSeconds": 7206,
       "learningOutcome": "Assess demand, balance phases and select cables and protective devices.",
       "lessons": [
         {
+          "id": "c1-building-design-plan",
+          "videoId": "7nge0ugiVyY",
+          "instructor": "SparkyNinja",
+          "title": "Plan a Building Installation from the Brief, Drawings and Cable Routes",
+          "durationSeconds": 1784,
+          "topic": "Building design planning",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core applied planning",
+          "required": true,
+          "studyNote": "Use the planning method with current requirements; this is an earlier UK project example.",
+          "url": "https://www.youtube.com/watch?v=7nge0ugiVyY",
+          "duration": "29:44",
+          "number": 1
+        },
+        {
           "id": "c1-utilization-foundation",
-          "number": 1,
+          "number": 2,
           "title": "Installed Capacity and Maximum Demand: Understand Utilization Factor",
           "videoId": "hGMkuo8HG_Q",
           "url": "https://www.youtube.com/watch?v=hGMkuo8HG_Q",
@@ -4770,7 +4818,7 @@
           "durationSeconds": 529,
           "regulationSensitive": false,
           "id": "c1-load-factor-example",
-          "number": 2,
+          "number": 3,
           "title": "Load-Duration Curve: Load, Capacity and Utilization Factors",
           "topic": "Load-Duration Curve: Load, Capacity and Utilization Factors",
           "layer": "WHY",
@@ -4779,7 +4827,7 @@
         },
         {
           "id": "p10-l10",
-          "number": 3,
+          "number": 4,
           "title": "Electrical Load Estimation - Electrical Load Calculation in Electrical Distribution",
           "videoId": "AQffdGvDNcA",
           "url": "https://www.youtube.com/watch?v=AQffdGvDNcA",
@@ -4794,7 +4842,7 @@
         },
         {
           "id": "c1-demand-example",
-          "number": 4,
+          "number": 5,
           "title": "Maximum Demand and Diversity: A UK Domestic Worked Example",
           "videoId": "lGcsQ8mLI34",
           "url": "https://www.youtube.com/watch?v=lGcsQ8mLI34",
@@ -4816,7 +4864,7 @@
           "durationSeconds": 764,
           "regulationSensitive": true,
           "id": "c1-rating-factors-foundation",
-          "number": 5,
+          "number": 6,
           "title": "Cable Rating Factors: Temperature, Grouping and Thermal Insulation",
           "topic": "Cable Rating Factors: Temperature, Grouping and Thermal Insulation",
           "layer": "WHY",
@@ -4825,7 +4873,7 @@
         },
         {
           "id": "p06-l05",
-          "number": 6,
+          "number": 7,
           "title": "Cable calculation. Calculating the live cable size from BS 7671",
           "videoId": "wAcqKNBxy-w",
           "url": "https://www.youtube.com/watch?v=wAcqKNBxy-w",
@@ -4840,7 +4888,7 @@
         },
         {
           "id": "p07-l16",
-          "number": 7,
+          "number": 8,
           "title": "Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial",
           "videoId": "XGMUpguNzao",
           "url": "https://www.youtube.com/watch?v=XGMUpguNzao",
@@ -5028,8 +5076,8 @@
       "number": 15,
       "title": "Power Factor Causes, Correction and Capacitor Sizing",
       "description": "Understand poor power factor, calculate capacitor sizes and choose compensation arrangements.",
-      "duration": "2 h 0 min",
-      "durationSeconds": 7211,
+      "duration": "2 h 2 min",
+      "durationSeconds": 7324,
       "learningOutcome": "Understand poor power factor, calculate capacitor sizes and choose compensation arrangements.",
       "lessons": [
         {
@@ -5081,13 +5129,28 @@
           "studyNote": "This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95."
         },
         {
+          "id": "c1-synchronous-condenser-overview",
+          "videoId": "6U_rO5FWW0Y",
+          "instructor": "Flirting with Technology",
+          "title": "Synchronous Condensers: Reactive Power and Voltage Support",
+          "durationSeconds": 113,
+          "topic": "Synchronous condenser introduction",
+          "layer": "WHY",
+          "regulationSensitive": false,
+          "studyRole": "Core short overview",
+          "required": true,
+          "url": "https://www.youtube.com/watch?v=6U_rO5FWW0Y",
+          "duration": "1:53",
+          "number": 4
+        },
+        {
           "videoId": "GfihUkWPCQQ",
           "instructor": "EEVblog",
           "duration": "24:28",
           "durationSeconds": 1468,
           "regulationSensitive": false,
           "id": "c1-complex-number-foundation",
-          "number": 4,
+          "number": 5,
           "title": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
           "url": "https://www.youtube.com/watch?v=GfihUkWPCQQ",
           "topic": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
@@ -5102,7 +5165,7 @@
           "durationSeconds": 241,
           "regulationSensitive": false,
           "id": "c1-complex-conjugate-foundation",
-          "number": 5,
+          "number": 6,
           "title": "Complex Conjugates: Change the Imaginary Sign and Multiply",
           "url": "https://www.youtube.com/watch?v=dbxJ6LD0344",
           "topic": "Complex Conjugates: Change the Imaginary Sign and Multiply",
@@ -5119,7 +5182,7 @@
           "durationSeconds": 2834,
           "regulationSensitive": false,
           "id": "c1-shunt-pfc-examples",
-          "number": 6,
+          "number": 7,
           "title": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "topic": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "layer": "WHY",
@@ -5524,8 +5587,8 @@
       "number": 18,
       "title": "Three-Phase Initial Verification and Periodic Inspection",
       "description": "Follow the three-phase inspection, testing and commissioning sequence.",
-      "duration": "3 h 24 min",
-      "durationSeconds": 12254,
+      "duration": "3 h 39 min",
+      "durationSeconds": 13191,
       "learningOutcome": "Follow the three-phase inspection, testing and commissioning sequence.",
       "lessons": [
         {
@@ -5715,6 +5778,21 @@
           "studyNote": "Older UK form: use current fields and the preceding RCD test requirements."
         },
         {
+          "id": "c1-test-results-resistance",
+          "videoId": "niuVdopqlcs",
+          "instructor": "LEARN ELECTRICS",
+          "title": "Interpret Ring-Circuit Test Results: Expected Values, Spurs and Wrong Links",
+          "durationSeconds": 937,
+          "topic": "Verification result interpretation",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core worked application",
+          "required": true,
+          "url": "https://www.youtube.com/watch?v=niuVdopqlcs",
+          "duration": "15:37",
+          "number": 13
+        },
+        {
           "id": "c1-periodic-reporting",
           "videoId": "SAlr4fM3Jzg",
           "title": "Periodic Inspection: Scope, Limitations, Observations and Reporting",
@@ -5724,7 +5802,7 @@
           "instructor": "ECA - Electrotechnical & Engineering Services Body",
           "durationSeconds": 1262,
           "duration": "≈ 21:02",
-          "number": 13,
+          "number": 14,
           "url": "https://www.youtube.com/watch?v=SAlr4fM3Jzg",
           "layer": "HOW + REQUIREMENT",
           "sourceKind": "Educator",
@@ -5741,7 +5819,7 @@
           "layer": "APPLY",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 14,
+          "number": 15,
           "url": "https://www.youtube.com/watch?v=1tBICSsjVWo",
           "duration": "59:44",
           "studyRole": "Optional refresher",
@@ -5758,8 +5836,8 @@
       "number": 19,
       "title": "Three-Phase and Motor Fault Diagnosis",
       "description": "Diagnose supply, neutral and motor faults using systematic tests and evidence.",
-      "duration": "2 h 0 min",
-      "durationSeconds": 7210,
+      "duration": "2 h 31 min",
+      "durationSeconds": 9093,
       "learningOutcome": "Diagnose supply, neutral and motor faults using systematic tests and evidence.",
       "lessons": [
         {
@@ -5855,6 +5933,37 @@
           "studyRole": "Core lesson",
           "required": true,
           "studyNote": "Raise the alarm and evacuate first. Use an extinguisher only if trained, the fire is small and your escape remains clear."
+        },
+        {
+          "id": "c1-incident-evidence",
+          "videoId": "_RMYPD-T1Aw",
+          "instructor": "Compassa eLearning",
+          "title": "After an Incident: Preserve the Scene and Collect Reliable Evidence",
+          "durationSeconds": 760,
+          "topic": "Incident evidence collection",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core applied method",
+          "required": true,
+          "studyNote": "Make people and the scene safe before collecting evidence.",
+          "url": "https://www.youtube.com/watch?v=_RMYPD-T1Aw",
+          "duration": "12:40",
+          "number": 7
+        },
+        {
+          "id": "c1-incident-causes-actions",
+          "videoId": "vbmQ4yXcXB8",
+          "instructor": "Compassa eLearning",
+          "title": "Investigate Causes and Turn Findings into a Corrective-Action Plan",
+          "durationSeconds": 1123,
+          "topic": "Incident causes and action planning",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core worked application",
+          "required": true,
+          "url": "https://www.youtube.com/watch?v=vbmQ4yXcXB8",
+          "duration": "18:43",
+          "number": 8
         }
       ],
       "path": "C1",
@@ -7060,5 +7169,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 364242
+  "durationSeconds": 369902
 }
