@@ -118,6 +118,12 @@
 [data-organizing="false"] .supp-actions,
 [data-organizing="false"] .course-section-drop-end { display: none; }
 .course-map-tools { display: grid; gap: 12px; margin: 0 0 20px; }
+.course-map-header { display: contents; }
+.course-map-actions { display: flex; align-items: center; gap: 8px; }
+.course-map-actions .map-guidance { flex: 1; margin: 0 8px; }
+.course-map-secondary-tools { display: grid; gap: 12px; }
+.course-map-tools-toggle { display: none; }
+.course-map-body:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
 .organise-toggle { justify-self: end; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 8px; color: var(--ink); padding: 10px 14px; min-height: 44px; font-size: 13px; }
 .organise-toggle[aria-pressed="true"] { background: var(--surface-selected); border-color: var(--surface-selected-border); color: var(--surface-selected-text); }
 .lesson-filters { display: flex; flex-wrap: wrap; gap: 5px; }

@@ -67,5 +67,34 @@
 }
 @media (max-width: 1180px) {
   html:has(.modal-layer, .course-map.drawer-open) { overflow: hidden; }
-  .course-map.drawer-open { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+  .studio-shell .course-map { display: flex; flex-direction: column; width: min(420px, 92vw); padding: 0; overflow: hidden; pointer-events: none; }
+  .studio-shell .course-map.drawer-open { pointer-events: auto; }
+  .course-map-header { display: block; flex: none; padding: max(10px, env(safe-area-inset-top)) 14px 10px; border-bottom: 1px solid var(--line); background: var(--white); }
+  .course-map .drawer-heading { min-height: 44px; padding: 0; margin: 0 0 8px; }
+  .course-map .drawer-heading .eyebrow { display: none; }
+  .course-map .drawer-heading h2 { margin: 0; font-size: 22px; }
+  .course-map .course-path-switcher { margin: 0; padding: 3px; }
+  .course-map .course-path-switcher button { font-size: 13px; }
+  .course-map-body { flex: 1; min-height: 0; padding: 12px 14px max(24px, env(safe-area-inset-bottom)); overflow: hidden auto; overscroll-behavior-y: contain; scrollbar-width: thin; scroll-padding-block: 10px; }
+  .course-map .map-guidance { margin: 0; min-height: 44px; }
+  .course-map .map-guidance > span { display: none; }
+  .course-map .map-guidance button { min-height: 44px; padding-inline: 8px; }
+  .course-map .course-summary { gap: 4px; padding: 10px 12px; margin-bottom: 12px; }
+  .course-map .course-summary .overall-progress { margin-top: 2px; padding-top: 5px; }
+  .course-map .course-map-tools { gap: 8px; margin-bottom: 12px; }
+  .course-map-tools-toggle { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--white); font-size: 12px; text-align: left; }
+  .course-map-tools-toggle[aria-expanded="true"] > svg { transform: rotate(180deg); }
+  .course-map-tools-toggle:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .course-map-secondary-tools { display: none; }
+  .course-map-secondary-tools[data-expanded="true"] { display: grid; gap: 8px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-soft); }
+  .course-map .course-editor-toolbar .course-tool-action, .course-map .course-tools-more summary { min-height: 44px; }
+  .course-map .course-tools-more summary { min-width: 44px; }
+  .course-map .course-tools-more button { min-height: 44px; }
+  .course-map .lesson-filters button { padding-inline: 5px; }
+}
+@media (max-width: 600px) {
+  .studio-shell .course-map { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .course-map { transition: none; }
 }

@@ -130,6 +130,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const [courseMapCollapsed, setCourseMapCollapsed] = useState(false);
   const [dragOpenModuleIds, setDragOpenModuleIds] = useState<string[]>([]);
   const [moduleDrawerOpen, setModuleDrawerOpen] = useState(false);
+  const [mapToolsExpanded, setMapToolsExpanded] = useState(false);
   const [organizing, setOrganizing] = useState(false);
   const [lessonFilter, setLessonFilter] = useState<LessonFilter>('all');
   const [collapseCompleted, setCollapseCompleted] = useState(true);
@@ -173,6 +174,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const importInputRef = useRef<HTMLInputElement>(null);
   const settingsDialogRef = useRef<HTMLElement>(null);
   const courseDrawerRef = useRef<HTMLElement>(null);
+  const courseMapBodyRef = useRef<HTMLDivElement>(null);
+  const mapModuleToRevealRef = useRef<string | null>(null);
   const activeLessonRowRef = useRef<HTMLButtonElement>(null);
   useDialogFocus(settingsDialogRef, settingsOpen);
   useDialogFocus(courseDrawerRef, moduleDrawerOpen);
@@ -420,8 +423,13 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   useEffect(() => {
     if (view !== 'learn') return;
+    const map = window.matchMedia('(max-width: 1180px)').matches ? courseMapBodyRef.current : courseDrawerRef.current;
+    map?.scrollTo({ top: 0 });
+  }, [mapPath, view]);
+
+  useEffect(() => {
+    if (view !== 'learn') return;
     const map = courseDrawerRef.current;
-    if (moduleDrawerOpen) { map?.scrollTo({ top: 0 }); return; }
     if (window.matchMedia('(max-width: 1180px)').matches) return;
     const row = activeLessonRowRef.current;
     if (!map || !row) return;
@@ -429,6 +437,14 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     if (bounds.bottom > viewport.bottom) map.scrollTop += bounds.bottom - viewport.bottom;
     else if (bounds.top < viewport.top) map.scrollTop -= viewport.top - bounds.top;
   }, [activeLesson.id, moduleDrawerOpen, openModuleId, view]);
+
+  useEffect(() => {
+    const moduleId = mapModuleToRevealRef.current;
+    mapModuleToRevealRef.current = null;
+    if (!moduleId || !moduleDrawerOpen) return;
+    const moduleElement = Array.from(courseMapBodyRef.current?.querySelectorAll<HTMLElement>('[data-course-module]') ?? []).find(element => element.dataset.courseModule === moduleId);
+    moduleElement?.querySelector('section > button')?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+  }, [openModuleId, dragOpenModuleIds, moduleDrawerOpen]);
 
   useEffect(() => {
     if (!user || !hydrated || storageBlocked) return;
@@ -676,8 +692,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   const openCourseMap = () => {
     setCourseMapCollapsed(false);
-    const currentModule = course.modules.find(module => module.id === (supplementary?.selected?.moduleId ?? location.module.id));
-    if (currentModule) { setMapPath(currentModule.path); setOpenModuleId(currentModule.id); }
     if (window.matchMedia('(max-width: 1180px)').matches) setModuleDrawerOpen(true);
   };
 
@@ -688,9 +702,13 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const chooseMapPath = (path: CourseModule['path']) => {
+    if (mapPath === path) return;
+    mapModuleToRevealRef.current = null;
     setMapPath(path);
+    setLessonFilter('all');
+    setDragOpenModuleIds([]);
     const currentPathModule = selectedModule.path === path ? selectedModule : course.modules.find(module => module.path === path);
-    if (currentPathModule) setOpenModuleId(currentPathModule.id);
+    setOpenModuleId(window.matchMedia('(max-width: 1180px)').matches && !organizing ? '' : currentPathModule?.id ?? '');
   };
 
   const chooseModule = (module: CourseModule) => {
@@ -870,19 +888,27 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           {view === 'learn' && (
             <div className={`learn-page ${courseMapCollapsed ? 'course-map-collapsed' : ''}`}>
               <CourseDragProvider organizing={organizing} onLocate={moduleId => { setMapPath(course.modules.find(m => m.id === moduleId)!.path); setOpenModuleId(moduleId); }}><aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
+                <div className="course-map-header">
                 <div className="drawer-heading"><div><span className="eyebrow neutral">Video course</span><h2>Course map</h2></div><button type="button" onClick={closeCourseMap} aria-label="Close course map"><X size={21} /></button></div>
                 <div className="course-path-switcher" role="group" aria-label="Choose learning pathway">
                   {(['C2','C1','Professional'] as const).map(path=><CourseDragPath key={path} id={path} selected={mapPath===path} onSelect={()=>chooseMapPath(path)}>{path==='Professional'?'Advanced':path}</CourseDragPath>)}
                 </div>
-                <div className="map-guidance"><span>Explore at your own pace</span>{nextUnwatchedRow && <button type="button" onClick={() => selectCourseRow(nextUnwatchedRow)}>Next unwatched <ArrowRight size={14}/></button>}</div>
+                </div>
+                <div ref={courseMapBodyRef} className="course-map-body" role="region" aria-label="Course content" tabIndex={0}>
                 {user && <PathwayProgress path={mapPath} progress={pathwayProgress} overall={courseProgress}/>}
-                {user && <div className="course-map-tools">
-                  <CourseEditorTools sectionId={allCourseRows[selectedRowIndex]?.sectionId ?? sectionsByModule[openModuleId]?.[0]?.id ?? sectionsByModule[course.modules[0].id][0].id} organizing={organizing} onOrganise={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; setOrganizing(value => !value); setLessonFilter('all'); }}/>
-                  {!organizing && <><div className="lesson-filters" role="group" aria-label="Filter lessons">{(['all', 'unwatched', 'saved'] as const).map(filter => <button key={filter} type="button" aria-pressed={lessonFilter === filter} onClick={() => setLessonFilter(filter)}>{filter === 'all' ? 'All' : filter === 'saved' ? 'Saved' : 'Unwatched'} <span>{filterCounts[filter]}</span></button>)}</div>
-                  <label className="collapse-completed"><input type="checkbox" checked={collapseCompleted} onChange={event => setCollapseCompleted(event.target.checked)}/>Collapse completed sections</label>
-                  {lessonFilter !== 'all' && <p className="filter-notice">{visibleRows.size} matching {lessonFilter === 'saved' ? 'saved lessons' : 'videos'} in this pathway. <button type="button" onClick={() => setLessonFilter('all')}>Clear filter</button></p>}</>}
-                  {organizing && <p className="filter-notice">Drag nearby videos, or choose Move to… from a video’s menu. Only your course changes.</p>}
-                </div>}
+                <div className="course-map-tools">
+                  {user && !organizing && <div className="lesson-filters" role="group" aria-label="Filter lessons">{(['all', 'unwatched', 'saved'] as const).map(filter => <button key={filter} type="button" aria-pressed={lessonFilter === filter} onClick={() => setLessonFilter(filter)}>{filter === 'all' ? 'All' : filter === 'saved' ? 'Saved' : 'Unwatched'} <span>{filterCounts[filter]}</span></button>)}</div>}
+                  <div className="course-map-actions">
+                    <div className="map-guidance"><span>Explore at your own pace</span>{nextUnwatchedRow && <button type="button" onClick={() => selectCourseRow(nextUnwatchedRow)}>Next unwatched <ArrowRight size={14}/></button>}</div>
+                    {user && <button type="button" className="course-map-tools-toggle" aria-expanded={mapToolsExpanded || organizing} aria-controls="course-map-secondary-tools" onClick={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; const closing = mapToolsExpanded || organizing; setMapToolsExpanded(!closing); if (closing) setOrganizing(false); }}>Course tools<ChevronDown size={16}/></button>}
+                  </div>
+                  {user && <div id="course-map-secondary-tools" className="course-map-secondary-tools" data-expanded={mapToolsExpanded || organizing}>
+                    <CourseEditorTools sectionId={(allCourseRows[selectedRowIndex]?.moduleId === openModuleId ? allCourseRows[selectedRowIndex].sectionId : undefined) ?? sectionsByModule[openModuleId]?.[0]?.id ?? sectionsByModule[course.modules.find(module => module.path === mapPath)!.id][0].id} organizing={organizing} onOrganise={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; setOrganizing(value => !value); setLessonFilter('all'); }}/>
+                    {!organizing && <label className="collapse-completed"><input type="checkbox" checked={collapseCompleted} onChange={event => setCollapseCompleted(event.target.checked)}/>Collapse completed sections</label>}
+                  </div>}
+                  {user && !organizing && lessonFilter !== 'all' && <p className="filter-notice">{visibleRows.size} matching {lessonFilter === 'saved' ? 'saved lessons' : 'videos'} in this pathway. <button type="button" onClick={() => setLessonFilter('all')}>Clear filter</button></p>}
+                  {user && organizing && <p className="filter-notice">Drag nearby videos, or choose Move to… from a video’s menu. Only your course changes.</p>}
+                </div>
                 {!organizing && lessonFilter !== 'all' && visibleRows.size === 0 && <p className="map-empty" role="status">{lessonFilter === 'saved' ? 'No saved lessons in this pathway yet. Use Save lesson below a video.' : 'You have watched every video in this pathway.'}</p>}
                 <nav aria-label="Course module and lesson navigation">
                   {course.modules.filter(module=>module.path===mapPath && (organizing || lessonFilter === 'all' || sectionsByModule[module.id].some(group => mapRows[group.id]?.some(row => visibleRows.has(row.id))))).map((module) => {
@@ -890,7 +916,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                     const progress = groupProgress(allCourseRows.filter(row => row.moduleId === module.id).map(row => row.id));
                     return (
                       <CourseDragModule key={module.id} id={module.id} expanded={isOpen} onExpand={() => setDragOpenModuleIds(ids => [...new Set([...ids, module.id])])}><section data-current={(supplementary?.selected?.moduleId ?? location.module.id) === module.id} data-module-tone={moduleTone(module.id)} data-pathway={module.path} data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} className={`module-accordion ${isOpen ? 'open' : ''}`}>
-                        <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => { setDragOpenModuleIds([]); setOpenModuleId(isOpen ? '' : module.id); }} aria-expanded={isOpen}>
+                        <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => { mapModuleToRevealRef.current = module.id; setDragOpenModuleIds([]); setOpenModuleId(isOpen ? '' : module.id); }} aria-expanded={isOpen}>
                           <span className="module-index">{user && progress.total > 0 && progress.watched === progress.total ? <Check size={18} aria-label="Completed"/> : pad(module.number)}</span><span><span className="module-eyebrow">Module {pad(module.number)}{(supplementary?.selected?.moduleId ?? location.module.id) === module.id && <span> · Current</span>}</span><strong>{module.title}</strong><small>{module.path === 'Professional' ? 'Advanced' : module.path} · {allCourseRows.filter(row => row.moduleId === module.id).length} videos · {module.duration} core</small>{user && <CourseProgressSummary {...progress} label={module.title + ' progress'}/>}</span><ChevronDown size={18} />
                         </button>
                         <div className="module-actions">
@@ -906,6 +932,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                     );
                   })}
                 </nav>
+                </div>
               </aside></CourseDragProvider>
               {moduleDrawerOpen && <button className="drawer-scrim" type="button" aria-label="Close course map" onClick={closeCourseMap} />}
 

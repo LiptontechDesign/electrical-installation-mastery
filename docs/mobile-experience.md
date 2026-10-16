@@ -4,6 +4,12 @@ The responsive overrides in `app/mobile-experience.css` cover course navigation,
 
 Phones retain playback settings, have touch-sized search/account/close controls, and avoid a duplicate course-map button. Text inputs use at least 16px type on small screens. Dialogs use dynamic viewport height, scroll internally and keep close controls accessible; opening a modal or course drawer prevents background document scrolling. Safe-area padding protects bottom controls. Touch focus no longer triggers a lingering hover tooltip; keyboard-visible focus still receives tooltips.
 
+## Course drawer
+
+On phones the course map fills the screen. Its heading, close button and C2/C1/Advanced selector remain above an independently scrolling list. Progress and lesson filters stay visible near the beginning; Add video, Organise and the completed-section setting sit inside Course tools. Those tools remain directly available in the desktop sidebar.
+
+Changing pathways clears the lesson filter and shows a collapsed module overview on mobile. Tapping the selected pathway preserves the open module. Closing and reopening the drawer preserves the browsed pathway, module and scroll position. Expanding a module reveals its heading without resetting the list to the beginning. A closing drawer immediately stops intercepting pointer input. Keyboard focus enters the drawer after layout, stays inside it and returns to the opener when closed. The Add video default follows the browsed module or pathway, retaining the current section when that module is selected.
+
 ## Verification
 
 `node scripts/test-mobile-browser.mjs` checks 320x740, 390x844, 430x932, 768x1024 and 844x390 in Chromium with mobile/touch emulation. It checks actual control hit targets and page overflow in guest home, lessons, maps, settings, search, sign-in invitation, book contents/page navigation and practice. At 390px it also checks a real PDF page renders. Local runs proxy only read-only book ranges from the production content endpoint. Set MOBILE_TEST_URL for a different server and MOBILE_TEST_CHANNEL for an installed Chromium channel. Screenshots are written to ignored work/mobile-verification.
@@ -11,3 +17,7 @@ Phones retain playback settings, have touch-sized search/account/close controls,
 `node scripts/test-mobile-account-browser.mjs` checks the signed-in home, account/settings, supplementary-video form, embedded supplementary lesson and notes at 320, 390 and 768px. It requires a local development server with fixture credentials: AUTH_SECRET=local-preview-only-0000000000000000000000, placeholder AUTH_GOOGLE_ID and AUTH_GOOGLE_SECRET, and a dummy DATABASE_URL. All personal API requests are intercepted in the browser; it neither signs into Google nor writes to production accounts. The script refuses non-local servers.
 
 These are browser-emulated checks, not physical iPhone/Android certification. Actual operating-system keyboards, browser chrome and hardware playback controls still benefit from a device smoke test. Existing desktop course and practice browser suites remain the regression checks for larger layouts.
+
+The October 2026 drawer update was checked through the in-app browser at actual rendered viewports of 320x740, 390x844, 768x1024, 844x390 and 1280x900, using the local production guest build and a local signed-in component fixture with sample records. Checks covered pathway selection, later-module expansion, pinned controls while scrolling, rapid close/reopen, empty-filter recovery, tool disclosure, the Add video destination, nested-dialog dismissal, keyboard wrapping, Escape and the exposed tablet backdrop. At 390px the first signed-in module moved from about 547px to 362px below the screen top. Screenshot capture was unavailable; checks used rendered geometry, accessibility state and interaction results.
+
+`node scripts/test-navigation.mjs` now also verifies mobile pathway overviews, module selection, reopening, filter reset and closing the tools, and asserts that browsing those controls does not alter learning records. The existing progress, guest/account, theme and architecture checks remain required alongside the production build and lint.
