@@ -10,6 +10,7 @@ Updated 16 October 2026. This index and the root README describe the current app
 - [C2 testing playlist integration](c2-testing-playlist-integration.md): approved JPElectric lessons, teaching order, excluded and retired videos, and preservation of personal course arrangements.
 - [Earthing, ADS and fault-loop learning order](earthing-ads-learning-order.md): revised Module 5 sections, conductor sizing in Module 6, bonding assessment in Module 8 and saved-course migration.
 - [C1 self-study sequence](c1-study-sequence.md): every C1 section and video in study order, with essential/optional roles and precise study notes.
+- [C1 design before installation](c1-design-before-installation.md): early board overview, then Modules 13–14 design/protection checks before full submain and board-assembly demonstrations, with stable saved-course identities.
 - [C1 modern applications and historical priorities](c1-modern-applications.md): revision 11, seven new videos, complete available English-caption review, analyser/design/results/incident applications, a short condenser introduction and optional Lorenz revision, with precise remaining coverage limits.
 - [C1 prerequisite and flow repair](c1-flow-repair.md): revision 10, six new YouTube videos, eight C2 repeats, clearer section scopes and optional advanced branches, with caption-language qualifications and saved-course verification.
 - [C1 gap-fill video additions](c1-gap-fill-selection.md): revision 9, transcript scope, 33 new videos, 20 C2 repeats, preserved saved order and remaining narrow limits.

@@ -32,6 +32,12 @@ for(const pair of [
  ['c1-continuity-foundation','c1-test-results-resistance'],['c1-certification-foundation','c1-test-results-resistance'],['c1-test-results-resistance','c1-periodic-reporting'],
  ['c1-fire-response-principles','c1-incident-evidence'],['c1-incident-evidence','c1-incident-causes-actions']
 ])before(...pair);
+for(const id of ['p07-l08','p10-l06','p10-l07','p07-l09']){
+ for(const prerequisite of ['c1-cable-design','c1-three-phase-voltage-drop','c1-cpc-size-foundation','c1-surge-foundation'])before(prerequisite,id);
+ assert.equal(view.byId.get(id).moduleId,'c1-earthing','Full installation follows the design/protection teaching');
+}
+before('p07-l06','c1-building-design-plan');before('p08-l01','p07-l08');
+before('p07-l08','p10-l06');before('p10-l07','p07-l09');before('p07-l09','c1-lightning-protection-principles');
 assert.match(note('c1-capacitor-placement'),/induction generation/);
 // The only moved existing row carries untouched supporting descendants;
 // explicit placements, copies, removals and edit history remain authoritative.

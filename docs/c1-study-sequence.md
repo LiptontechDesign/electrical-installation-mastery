@@ -159,7 +159,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Historical apparatus overview; focus on absolute versus comparative resistance measurement.
 
-## Module 12: Three-Phase Boards, Feeders and Outlets
+## Module 12: Three-Phase Distribution: Boards and Outlets
 
 ### 1. Safe isolation, board layout and phase identification
 
@@ -167,22 +167,12 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Understanding Your Three-Phase Distribution Board](https://www.youtube.com/watch?v=27QIQAvOF9k) — eFIXX; Applied practical.
 - [Inside Hager's Smart Three-Phase Distribution Board 🤓](https://www.youtube.com/watch?v=Uj63TuZ3QXw) — eFIXX; Deep practice.
 
-### 2. Submains and three phase distribution between boards
-
-- [Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)](https://www.youtube.com/watch?v=zSw0mVzcQ4A) — GSH Electrical; Applied practical.
-
-### 3. Board installation, terminations and workmanship
-
-- [SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION](https://www.youtube.com/watch?v=_nba6f8ClgM) — eFIXX; Applied practical.
-- [THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES](https://www.youtube.com/watch?v=MNy60muYklo) — eFIXX; Applied practical.
-- [Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell](https://www.youtube.com/watch?v=c6YyObUS4Mk) — GSH Electrical; Deep practice.
-
-### 4. Industrial plugs, sockets and circuit connections
+### 2. Industrial plugs, sockets and circuit connections
 
 - [Connections in a 3 Phase Plug and Socket Explained](https://www.youtube.com/watch?v=-9irkJ94xg0) — GSH Electrical; Applied practical.
 - [Industrial Plugs and Sockets: IP, IK and Duty Selection](https://www.youtube.com/watch?v=PNWdC47daYM) — eFIXX; Applied practical.
 
-### 5. Medium-voltage switchgear: metal-clad and metal-enclosed
+### 3. Medium-voltage switchgear: metal-clad and metal-enclosed
 
 - [Compare Metal-Clad and Metal-Enclosed Switchgear Compartments](https://www.youtube.com/watch?v=R8n9fiHcPYM) — SGB-SMIT USA; Core lesson.
 
@@ -229,7 +219,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 - [Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial](https://www.youtube.com/watch?v=XGMUpguNzao) — Elegant Power Solutions; Optional extension.
 
-## Module 14: Earth Fault Loops, Disconnection and Protection Checks
+## Module 14: Fault Protection and Three-Phase Board Installation
 
 ### 1. Earthing arrangements, protective bonding and RCD operation
 
@@ -262,7 +252,17 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
   Model demonstration; a complete system also includes bonding and coordinated surge protection.
 - [Transient Surges and How SPDs Limit Voltage](https://www.youtube.com/watch?v=7en_Rc14c2g) — eFIXX; Core foundation.
 
-### 7. Further study: lightning protection and bonding in data centres
+### 7. Submain installation: SWA terminations and switch-fuse connections
+
+- [Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)](https://www.youtube.com/watch?v=zSw0mVzcQ4A) — GSH Electrical; Applied practical.
+
+### 8. Three-phase board assembly, terminations and workmanship
+
+- [SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION](https://www.youtube.com/watch?v=_nba6f8ClgM) — eFIXX; Applied practical.
+- [THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES](https://www.youtube.com/watch?v=MNy60muYklo) — eFIXX; Applied practical.
+- [Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell](https://www.youtube.com/watch?v=c6YyObUS4Mk) — GSH Electrical; Deep practice.
+
+### 9. Further study: lightning protection and bonding in data centres
 
 - [Lightning Protection: Air Terminals, Down Conductors, Earthing and Bonding](https://www.youtube.com/watch?v=eti2tGM0YnU) — DEHN Inc.; Optional specialist application.
 

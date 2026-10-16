@@ -1117,33 +1117,9 @@
     ]
   },
   {
-    "id": "c1-distribution-submains",
-    "moduleId": "c1-distribution",
-    "number": 2,
-    "title": "Submains and three phase distribution between boards",
-    "lessonIds": [
-      "p07-l08"
-    ],
-    "resource": {
-      "href": "/c1-worked-project.md",
-      "label": "Four-storey worked project"
-    }
-  },
-  {
-    "id": "c1-distribution-installation",
-    "moduleId": "c1-distribution",
-    "number": 3,
-    "title": "Board installation, terminations and workmanship",
-    "lessonIds": [
-      "p10-l06",
-      "p10-l07",
-      "p07-l09"
-    ]
-  },
-  {
     "id": "c1-distribution-section-2",
     "moduleId": "c1-distribution",
-    "number": 4,
+    "number": 2,
     "title": "Industrial plugs, sockets and circuit connections",
     "lessonIds": [
       "p02-l11",
@@ -1153,7 +1129,7 @@
   {
     "id": "c1-switchgear-construction",
     "moduleId": "c1-distribution",
-    "number": 5,
+    "number": 3,
     "title": "Medium-voltage switchgear: metal-clad and metal-enclosed",
     "lessonIds": [
       "c1-switchgear-compartments"
@@ -1292,9 +1268,33 @@
     ]
   },
   {
-    "id": "c1-lightning-application",
+    "id": "c1-distribution-submains",
     "moduleId": "c1-earthing",
     "number": 7,
+    "title": "Submain installation: SWA terminations and switch-fuse connections",
+    "lessonIds": [
+      "p07-l08"
+    ],
+    "resource": {
+      "href": "/c1-worked-project.md",
+      "label": "Four-storey worked project"
+    }
+  },
+  {
+    "id": "c1-distribution-installation",
+    "moduleId": "c1-earthing",
+    "number": 8,
+    "title": "Three-phase board assembly, terminations and workmanship",
+    "lessonIds": [
+      "p10-l06",
+      "p10-l07",
+      "p07-l09"
+    ]
+  },
+  {
+    "id": "c1-lightning-application",
+    "moduleId": "c1-earthing",
+    "number": 9,
     "title": "Further study: lightning protection and bonding in data centres",
     "lessonIds": [
       "c1-lightning-protection-principles"
