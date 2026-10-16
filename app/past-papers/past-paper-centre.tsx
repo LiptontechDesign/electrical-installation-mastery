@@ -7,6 +7,7 @@ import definitions from '../practice/definitions.json';
 import { compilationMarkdown, filterQuestions, questionsFor } from './bank';
 import type { PaperPath } from './sources';
 import { diagrams } from './study-diagrams';
+import { PastPaperPathSwitcher } from '../past-paper-links';
 
 export default function PastPaperCentre({ path }: { path: PaperPath }) {
   const bank = useMemo(() => questionsFor(path), [path]);
@@ -58,6 +59,7 @@ export default function PastPaperCentre({ path }: { path: PaperPath }) {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
   return <div className="past-paper-centre">
+    <PastPaperPathSwitcher active={path}/>
     <div className="past-paper-hero"><div><p className="epra-eyebrow"><Files size={15}/> {path} · PAST PAPERS</p><h1>Questions with<br/><em>worked answers.</em></h1><p>Clear explanations, worked calculations and diagrams in one study paper.</p></div><div className="past-paper-count"><strong>{bank.length}</strong><span>study questions</span></div></div>
     <div className="past-paper-topbar"><p>Read, practise and check your reasoning.</p><button className="past-paper-download" onClick={download} disabled={!bank.length}><Download size={16}/> Download compilation</button></div>
       <div className="past-paper-filters"><label className="epra-search"><Search size={17}/><input aria-label="Search past-paper questions and answers" placeholder="Search questions, terms or answers…" value={query} onChange={event => setQuery(event.target.value)}/></label><label>Topic<select aria-label="Topic" value={topic} onChange={event => setTopic(event.target.value)}><option value="">All topics</option>{[...new Set(bank.map(question => question.topic))].map(value => <option key={value}>{value}</option>)}</select></label></div>

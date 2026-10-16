@@ -1,0 +1,65 @@
+:root { --mobile-navigation-height: calc(72px + env(safe-area-inset-bottom, 0px)); }
+
+.mobile-navigation { display: none; }
+
+@media (max-width: 720px) {
+  .mobile-navigation {
+    position: fixed;
+    z-index: 80;
+    inset: auto 0 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    height: var(--mobile-navigation-height);
+    padding: 6px max(8px, env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    border-top: 1px solid var(--line);
+    background: var(--white);
+    backdrop-filter: none;
+  }
+
+  .mobile-navigation .mobile-navigation-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-width: 0;
+    min-height: 56px;
+    padding: 2px 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    touch-action: manipulation;
+  }
+
+  .mobile-navigation-icon { display: grid; place-items: center; width: 48px; height: 32px; border-radius: 18px; }
+  .mobile-navigation .mobile-navigation-link[aria-current="page"] { color: var(--surface-selected-text); font-weight: 750; }
+  .mobile-navigation-link[aria-current="page"] .mobile-navigation-icon { background: var(--surface-selected); }
+  .mobile-navigation-link[aria-current="page"] svg { stroke-width: 2.5; }
+  .mobile-navigation .mobile-navigation-link:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: -2px; }
+
+  .epra-page:has(> .mobile-navigation) { padding-bottom: calc(var(--mobile-navigation-height) + 16px); }
+  .epra-page .study-site-header { display: flex; flex-wrap: nowrap; min-height: 68px; gap: 12px; padding: 10px max(14px, env(safe-area-inset-right)) 10px max(14px, env(safe-area-inset-left)); }
+  .epra-page .study-site-header > nav { display: none; }
+  .epra-page .epra-reading-dock { bottom: var(--mobile-navigation-height); padding-bottom: 12px; }
+}
+
+@media (max-width: 720px) and (hover: hover) and (pointer: fine) {
+  .mobile-navigation-link:not([aria-current="page"]):hover .mobile-navigation-icon { background: var(--surface-soft); }
+}
+
+@media (forced-colors: active) {
+  .mobile-navigation-link[aria-current="page"] .mobile-navigation-icon { outline: 2px solid Highlight; outline-offset: -2px; }
+}
+
+@media print {
+  .mobile-navigation { display: none; }
+}

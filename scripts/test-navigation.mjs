@@ -35,6 +35,19 @@ const button=label=>tree.root.findAllByType('button').find(node=>text(node).incl
 const state=()=>JSON.parse(saved);
 const mount=async()=>{await act(async()=>{tree=create(h(App,{user:{id:'test-user',email:'learner@example.com',name:'Test Learner',picture:null,isAdmin:false}}));});await flush();};
 await mount();
+const mobileNavigation=()=>tree.root.findByProps({'aria-label':'Mobile navigation'});
+const mobileControls=()=>mobileNavigation().findAll(node=>node.type==='button'||node.type==='a');
+assert.deepEqual(mobileControls().map(text),['Home','Learn','Books','Practice','Papers'],'Mobile destinations remain consistent and fit one bar');
+assert.equal(mobileControls().filter(node=>node.props['aria-current']==='page').length,1,'One mobile destination is selected');
+assert.equal(mobileControls().find(node=>text(node)==='Papers').props.href,'/past-papers/c2');
+const beforeMobileNavigation=state();
+await click(mobileControls().find(node=>text(node)==='Learn'));
+assert.equal(mobileControls().find(node=>text(node)==='Learn').props['aria-current'],'page');
+await click(mobileControls().find(node=>text(node)==='Books'));
+assert.equal(window.location.hash,'#books','Books keeps in-app navigation');
+await click(mobileControls().find(node=>text(node)==='Home'));
+assert.equal(mobileControls().find(node=>text(node)==='Home').props['aria-current'],'page');
+assert.deepEqual(state(),beforeMobileNavigation,'Switching mobile destinations does not change progress or notes');
 assert.equal(button('Browse freely'),undefined,'No mode toggle is needed');
 const modules=()=>tree.root.findAllByType('button').filter(node=>node.props.className==='module-card');
 await click(modules().at(-1));
@@ -53,6 +66,7 @@ const mapModules=()=>tree.root.findAllByType('section').filter(node=>typeof node
 const moduleButton=number=>mapModules().find(node=>text(node).startsWith(number)).findAllByType('button')[0];
 await click(pathButton('C1'));
 assert.equal(pathButton('C1').props['aria-pressed'],true);
+assert.equal(mobileControls().find(node=>text(node)==='Papers').props.href,'/past-papers/c1','Papers follows the browsed C1 course pathway');
 assert.ok(mapModules().length>1&&mapModules().every(node=>node.props['data-pathway']==='C1'),'C1 shows its own module list');
 assert.ok(mapModules().every(node=>!node.props.className.includes('open')),'Switching pathways starts with a compact module overview on mobile');
 await click(moduleButton('10'));

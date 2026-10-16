@@ -50,7 +50,8 @@ for (const term of ['Circuit protective conductor (cpc)', 'Earthing conductor', 
 
 const generated = `${JSON.stringify(definitions, null, 2)}\n`;
 if (process.argv.includes('--check')) {
-  assert.equal(await readFile(target, 'utf8'), generated, 'Definitions JSON is out of date; run npm run import:definitions');
+  // Git may check the generated file out with CRLF on Windows.
+  assert.equal((await readFile(target, 'utf8')).replaceAll('\r\n', '\n'), generated, 'Definitions JSON is out of date; run npm run import:definitions');
   console.log(`Verified ${definitions.length} definitions against the Markdown source.`);
 } else {
   await writeFile(target, generated);

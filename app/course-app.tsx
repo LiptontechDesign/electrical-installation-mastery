@@ -7,7 +7,7 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import {
   AlertTriangle, ArrowRight, BookOpen, Bookmark,
-  Check, CheckCircle2, ClipboardList, ChevronDown, ChevronRight, Circle,
+  Check, CheckCircle2, ChevronDown, ChevronRight, Circle,
   Download,
   Home, Info, LockKeyhole, Menu,
   PlayCircle, RotateCcw, Settings, SkipForward,
@@ -39,6 +39,7 @@ import LearningHome from './learning-home';
 import type { CourseUser } from './server/auth';
 import SiteSearch from './site-search';
 import PastPaperLinks from './past-paper-links';
+import MobileNavigation from './mobile-navigation';
 
 const BookWorkspace = dynamic(() => import('./book-reader').then(module => module.BookWorkspace), { ssr: false });
 
@@ -976,7 +977,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           )}
           {view === 'books' && <BookWorkspace />}
         </main>
-        <nav className="mobile-navigation" aria-label="Mobile navigation">{navigation.map((item) => { const Icon = item.icon; return <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}><Icon size={20} /><span>{item.label}</span></button>; })}<Link href="/practice" className="mobile-practice-link"><ClipboardList size={20}/><span>Practice</span></Link><PastPaperLinks mobile/></nav>
+        <MobileNavigation active={view} onCourseNavigate={navigate} papersHref={mapPath === 'C1' ? '/past-papers/c1' : '/past-papers/c2'}/>
       </div>
 
       {settingsOpen && (
