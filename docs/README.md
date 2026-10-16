@@ -3,6 +3,7 @@
 Updated 16 October 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
+- [Course fullscreen player](course-fullscreen-player.md): persistent Previous/Next and Auto-next controls, phone landscape requests, expanded-view fallback and verification.
 - [Video-only cleanup](video-only-cleanup.md): what was retained, removed and verified.
 - [Course ordering](course-drag-and-drop.md): personal ordering, placement rules and continuous numbering.
 - [Supplementary videos](supplementary-videos.md): personal additions, defaults, playback and persistence.

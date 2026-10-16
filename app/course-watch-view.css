@@ -1,0 +1,66 @@
+.course-player-controls { display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 6px; margin-top: 8px; padding: 6px; border: 1px solid var(--line); border-radius: 10px; background: var(--white); color: var(--ink); }
+.course-player-controls button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; width: auto; min-width: 44px; min-height: 44px; padding: 8px; border: 1px solid transparent; background: transparent; color: var(--ink); font-size: 12px; font-weight: 650; }
+.course-player-controls button:hover:not(:disabled) { background: var(--surface-soft); }
+.course-player-controls button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.course-player-controls button:disabled { opacity: .45; cursor: default; }
+.course-player-controls .player-auto-next[aria-checked="true"] { border-color: var(--surface-selected-border); background: var(--surface-selected); color: var(--surface-selected-text); }
+.player-auto-next-state { display: none; }
+.course-player-label { display: grid; gap: 3px; min-width: 0; padding-inline: 4px; text-align: center; }
+.course-player-label strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 650; }
+.course-player-label small { color: var(--muted); font-size: 12px; font-weight: 500; }
+.video-shell > .auto-next-card { position: static; width: 100%; max-width: none; margin-top: 8px; }
+html:has(.learn-page[data-watch-expanded="true"]) { overflow: hidden; }
+.learn-page[data-watch-expanded="true"] { position: fixed; inset: 0; z-index: 200; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; width: 100%; height: 100dvh; min-height: 0; margin: 0; padding: 0; overflow: hidden; background: var(--surface-inverse); }
+.learn-page[data-watch-expanded="true"] > :not(.lesson-canvas):not(.fullscreen-player-controls),
+.learn-page[data-watch-expanded="true"] .lesson-canvas > :not(.video-shell),
+.learn-page[data-watch-expanded="true"] .inline-player-controls { display: none; }
+.learn-page[data-watch-expanded="true"] .lesson-canvas { display: flex; min-width: 0; min-height: 0; width: 100%; height: 100%; max-width: none; margin: 0; padding: 0; }
+.learn-page[data-watch-expanded="true"] .video-shell { display: flex; flex: 1; flex-direction: column; min-width: 0; min-height: 0; }
+.learn-page[data-watch-expanded="true"] .video-frame { flex: 1; min-width: 0; min-height: 0; width: 100%; margin: 0; aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none; }
+@supports (width: 1cqw) and (container-type: size) {
+  .learn-page[data-watch-expanded="true"] .video-frame { container-type: size; }
+  .learn-page[data-watch-expanded="true"] .video-frame > .youtube-player,
+  .learn-page[data-watch-expanded="true"] .video-frame > iframe {
+    inset: 50% auto auto 50%; transform: translate(-50%, -50%);
+    width: min(100cqw, calc(100cqh * 16 / 9));
+    height: min(100cqh, max(200px, calc(100cqw * 9 / 16)));
+  }
+}
+.learn-page[data-watch-expanded="true"] .fullscreen-player-controls { grid-template-columns: auto minmax(0, 1fr) auto auto auto; margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 6px max(8px, env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)); }
+.learn-page[data-watch-expanded="true"] .auto-next-card { position: static; display: flex; align-items: center; gap: 10px; flex: none; width: 100%; max-width: none; margin: 0; padding: 6px max(10px, env(safe-area-inset-right)) 6px max(10px, env(safe-area-inset-left)); border-radius: 0; box-shadow: none; }
+.learn-page[data-watch-expanded="true"] .countdown-ring { flex: 0 0 36px; width: 36px; height: 36px; padding: 3px; }
+.learn-page[data-watch-expanded="true"] .countdown-ring::before { width: 28px; height: 28px; }
+.learn-page[data-watch-expanded="true"] .countdown-ring b { font-size: 16px; }
+.learn-page[data-watch-expanded="true"] .countdown-ring small,
+.learn-page[data-watch-expanded="true"] .auto-next-copy p,
+.learn-page[data-watch-expanded="true"] .auto-next-copy .eyebrow { display: none; }
+.learn-page[data-watch-expanded="true"] .auto-next-copy { flex: 1; min-width: 0; }
+.learn-page[data-watch-expanded="true"] .auto-next-copy h2 { margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.learn-page[data-watch-expanded="true"] .auto-next-actions { flex: none; }
+.learn-page[data-watch-expanded="true"] .auto-next-actions button { min-height: 44px; }
+@media (max-width: 600px) {
+  .course-player-controls .player-previous-label, .course-player-controls .player-expand > span { display: none; }
+  .fullscreen-player-controls .player-auto-next-label { display: none; }
+  .fullscreen-player-controls .player-auto-next-state { display: inline; }
+  .course-player-label { padding-inline: 0; }
+  .course-player-label strong { font-size: 12px; }
+  .course-player-label small { font-size: 11px; }
+  .learn-page[data-watch-expanded="true"] .fullscreen-player-controls { grid-template-columns: 44px minmax(0, 1fr) auto 44px; }
+  .fullscreen-player-controls > button { grid-row: 2; }
+  .fullscreen-player-controls .course-player-label { grid-column: 1 / -1; grid-row: 1; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; text-align: left; }
+  .fullscreen-player-controls .course-player-label strong { flex: 1; min-width: 0; }
+  .fullscreen-player-controls .course-player-label small { flex: none; white-space: nowrap; }
+  .learn-page[data-watch-expanded="true"] .auto-next-card { flex-wrap: wrap; }
+  .learn-page[data-watch-expanded="true"] .auto-next-copy { flex: 1 1 calc(100% - 56px); }
+  .learn-page[data-watch-expanded="true"] .auto-next-actions { flex: 0 0 100%; width: 100%; }
+}
+@media (max-width: 600px) and (max-height: 500px) {
+  .learn-page[data-watch-expanded="true"] .fullscreen-player-controls { grid-template-columns: auto minmax(0, 1fr) auto auto auto; }
+  .fullscreen-player-controls > button { grid-row: auto; }
+  .fullscreen-player-controls .course-player-label { grid-column: auto; grid-row: auto; display: grid; text-align: center; }
+  .learn-page[data-watch-expanded="true"] .auto-next-card { flex-wrap: nowrap; }
+  .learn-page[data-watch-expanded="true"] .auto-next-copy { flex: 1; }
+  .learn-page[data-watch-expanded="true"] .auto-next-actions { flex: none; width: auto; }
+  .learn-page[data-watch-expanded="true"] .fullscreen-player-controls { padding-block: 0 max(0px, env(safe-area-inset-bottom)); }
+  .learn-page[data-watch-expanded="true"] .auto-next-card { padding-block: 0; }
+}

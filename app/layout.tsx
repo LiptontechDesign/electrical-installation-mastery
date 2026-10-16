@@ -11,6 +11,7 @@ import './course-overview.css';
 import './course-studio.css';
 import './course-progress.css';
 import './mobile-experience.css';
+import './course-watch-view.css';
 import './pwa.css';
 import './personal-course-editor.css';
 import './definitions.css';

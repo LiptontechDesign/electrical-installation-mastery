@@ -1,6 +1,7 @@
 'use client';
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
-import { VideoStudyContext, VideoStudyTools, VideoLessonStepper, NextVideoCard, trackVideoPosition, type StudyPlayer } from './video-study-tools';
+import { VideoStudyContext, VideoStudyTools, NextVideoCard, trackVideoPosition, type StudyPlayer } from './video-study-tools';
+import { CoursePlayerControls } from './course-watch-view';
 import LessonProgress from './lesson-progress';
 import { moduleTone } from './course-ui-model';
 import { Bookmark, Check, Circle, Menu, ChevronRight, SkipForward } from 'lucide-react';
@@ -171,10 +172,10 @@ function SupplementaryLesson({ video, watched, progressError, onWatched, onBack,
   const section = order.sectionsByModule[video.moduleId]?.find(section => section.id === order.byId.get(video.id)?.sectionId);
   const isC1 = order.course.modules.find(module => module.id === video.moduleId)?.path === 'C1';
   return <article className="lesson-canvas supp-lesson" data-module-tone={moduleTone(video.moduleId)}>
-    <div className="lesson-topline"><button className="mobile-module-button" type="button" onClick={study.openCourseMap}><Menu size={19}/> Course map</button><div className="breadcrumbs"><span>{study.navigation.path}</span><ChevronRight size={15}/><span>{study.navigation.moduleTitle}</span></div><VideoActions id={video.id}/><VideoLessonStepper/></div>
+    <div className="lesson-topline"><button className="mobile-module-button" type="button" onClick={study.openCourseMap}><Menu size={19}/> Course map</button><div className="breadcrumbs"><span>{study.navigation.path}</span><ChevronRight size={15}/><span>{study.navigation.moduleTitle}</span></div><VideoActions id={video.id}/></div>
     <div className="lesson-title-block"><p className="lesson-kicker"><strong>Video {study.navigation.position}</strong><span>·</span>{studyVideoRole(video.id)}</p><h1>{video.title}</h1><p>{video.instructor || 'YouTube'} <span>·</span> {duration ?? '—'}</p></div>
     <LessonStudyContext id={video.id} section={section} introduction={isC1 ? section?.description : undefined}/>
-    <div className="video-shell"><SupplementaryPlayer video={video} onWatched={onWatched} onPlayer={onPlayer}/>{study.autoNextControls}</div>
+    <div className="video-shell"><SupplementaryPlayer video={video} onWatched={onWatched} onPlayer={onPlayer}/><CoursePlayerControls/>{study.autoNextControls}</div>
     <div className="lesson-control-row"><div><button className={saved ? 'bookmark-button active' : 'bookmark-button'} type="button" onClick={() => user ? study.toggleSaved(video.videoId) : requestSignIn()}><Bookmark size={18} fill={saved ? 'currentColor' : 'none'}/>{saved ? 'Saved' : 'Save lesson'}</button><button className="bookmark-button" type="button" onClick={onBack}>Back to core lesson</button><button className={`auto-next-toggle ${study.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={study.autoNextEnabled} onClick={study.toggleAutoNext}><SkipForward size={18}/> Auto-next <span>{study.autoNextEnabled ? 'On' : 'Off'}</span></button></div><button className={watched ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={watched} onClick={onToggle}>{watched ? <Check size={19}/> : <Circle size={19}/>} {watched ? 'Watched · Undo' : 'Mark video watched'}</button></div>
     <VideoStudyTools videoId={video.videoId} getPlayer={() => player.current}/>
     {user && <LessonProgress watched={watched} completions={0} optional={!isRequiredStudyVideo(video.id)} tracksCompletions={false}/>}
@@ -198,7 +199,7 @@ function SupplementaryPlayer({ video, onWatched, onPlayer }: { video: Supplement
     let stopTracking = Object.assign(() => {}, { capture: () => {} });
     let player: { destroy: () => void } | undefined;
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube-nocookie.com/embed/${video.videoId}?rel=0&enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${video.videoId}?rel=0&enablejsapi=1&playsinline=1&fs=0&origin=${encodeURIComponent(window.location.origin)}`;
     if (studyRef.current.autoPlayId === video.id) iframe.src += '&autoplay=1';
     if (studyRef.current.enabled) iframe.src += '&start=' + (studyRef.current.positions[video.videoId] ?? 0);
     iframe.title = 'Supplementary course video';

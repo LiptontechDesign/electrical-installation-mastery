@@ -70,6 +70,7 @@ npm run test:connected-process
 npm run test:c1-flow
 npm run test:books
 npm run test:navigation
+npm run test:course-watch-view
 npm run test:migration
 npm run test:architecture
 npm run test:personal-course

@@ -20,7 +20,8 @@ import { importPromotedWatched } from './integrated-progress';
 import { markVideoGroupWatched, recordVideoCompletion } from './flexible-progress';
 import LessonProgress from './lesson-progress';
 import { initialLearnerState, clampState, isProgressBackup, calendarDay, type LearnerState } from './learner-state';
-import { VideoStudyContext, VideoStudyTools, VideoLessonStepper, NextVideoCard, trackVideoPosition, type StudyPlayer } from './video-study-tools';
+import { VideoStudyContext, VideoStudyTools, NextVideoCard, trackVideoPosition, type StudyPlayer } from './video-study-tools';
+import CourseWatchView, { CoursePlayerControls, fullscreenBlocksCourseNavigation } from './course-watch-view';
 import { AddVideoButton, CourseEditorTools, VideoActions } from './course-editor-actions';
 import { PersonalCourseEditor } from './personal-course-editor';
 import { moduleTone, matchesLessonFilter, type LessonFilter } from './course-ui-model';
@@ -255,7 +256,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const nextCore = nextRow?.kind === 'core' ? lessonLookup.get(nextRow.id) : undefined;
   const playerOrigin = hydrated && typeof window !== 'undefined' ? window.location.origin : '';
   const playerSrc = playerOrigin && hasCoreLesson
-    ? `https://www.youtube.com/embed/${activeLesson.videoId}?enablejsapi=1&origin=${encodeURIComponent(playerOrigin)}&rel=0&playsinline=1&autoplay=${autoPlayLessonId === activeLesson.id ? 1 : 0}`
+    ? `https://www.youtube.com/embed/${activeLesson.videoId}?enablejsapi=1&origin=${encodeURIComponent(playerOrigin)}&rel=0&playsinline=1&fs=0&autoplay=${autoPlayLessonId === activeLesson.id ? 1 : 0}`
     : '';
 
   useEffect(() => {
@@ -293,9 +294,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     autoNextTimerRef.current = null;
     pendingAutoNextRef.current = null;
 
-    if (document.hidden || document.fullscreenElement) {
+    if (document.hidden || fullscreenBlocksCourseNavigation()) {
       pendingAutoNextRef.current = { fromLessonId, nextLessonId };
-      if (document.fullscreenElement) {
+      if (fullscreenBlocksCourseNavigation()) {
         const waitingState = { seconds: 5, fromLessonId, nextLessonId, waitingForFullscreenExit: true };
         autoNextStateRef.current = waitingState;
         setAutoNextState(waitingState);
@@ -323,7 +324,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           setAutoNextState(null);
           return;
         }
-        if (document.hidden || document.fullscreenElement) {
+        if (document.hidden || fullscreenBlocksCourseNavigation()) {
           startAutoNextCountdownRef.current(fromLessonId, nextLessonId);
           return;
         }
@@ -489,7 +490,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         }
         return;
       }
-      if (document.hidden || document.fullscreenElement) return;
+      if (document.hidden || fullscreenBlocksCourseNavigation()) return;
       const pending = pendingAutoNextRef.current;
       if (!pending) return;
       pendingAutoNextRef.current = null;
@@ -497,7 +498,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     };
     const onFullscreenChange = () => {
       if (document.hidden) return;
-      if (document.fullscreenElement) {
+      if (fullscreenBlocksCourseNavigation()) {
         const activeCountdown = autoNextStateRef.current;
         if (!activeCountdown || activeCountdown.waitingForFullscreenExit) return;
         if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
@@ -513,10 +514,12 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     window.addEventListener('keydown', onKeyDown);
     document.addEventListener('visibilitychange', onVisibilityChange);
     document.addEventListener('fullscreenchange', onFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange);
     return () => {
       window.removeEventListener('keydown', onKeyDown);
       document.removeEventListener('visibilitychange', onVisibilityChange);
       document.removeEventListener('fullscreenchange', onFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', onFullscreenChange);
       if (autoNextTimerRef.current !== null) window.clearInterval(autoNextTimerRef.current);
       autoNextTimerRef.current = null;
       pendingAutoNextRef.current = null;
@@ -647,7 +650,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   const playQueuedLessonNow = () => {
     if (!autoNextState) return;
-    if (autoNextState.waitingForFullscreenExit && document.fullscreenElement) {
+    if (autoNextState.waitingForFullscreenExit && fullscreenBlocksCourseNavigation()) {
       setToast('Exit fullscreen first so the current player can close safely.');
       return;
     }
@@ -723,6 +726,11 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     if (!video) return;
     const targetModule = course.modules.find(module => module.id === row.moduleId)!;
     setMapPath(targetModule.path); setOpenModuleId(targetModule.id); supplementary?.open(video);
+  };
+
+  const playCourseRow = (row: (typeof allCourseRows)[number]) => {
+    selectCourseRow(row);
+    setAutoPlayLessonId(row.id);
   };
 
   const openCourseVideo = (id: string) => {
@@ -886,7 +894,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
             </div>
           )}
           {view === 'learn' && (
-            <div className={`learn-page ${courseMapCollapsed ? 'course-map-collapsed' : ''}`}>
+            <CourseWatchView collapsed={courseMapCollapsed} title={allCourseRows[selectedRowIndex]?.title ?? activeLesson.title} previous={previousRow ? { title: previousRow.title, select: () => playCourseRow(previousRow) } : undefined} next={nextRow ? { title: nextRow.title, select: () => playCourseRow(nextRow) } : undefined}>
               <CourseDragProvider organizing={organizing} onLocate={moduleId => { setMapPath(course.modules.find(m => m.id === moduleId)!.path); setOpenModuleId(moduleId); }}><aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
                 <div className="course-map-header">
                 <div className="drawer-heading"><div><span className="eyebrow neutral">Video course</span><h2>Course map</h2></div><button type="button" onClick={closeCourseMap} aria-label="Close course map"><X size={21} /></button></div>
@@ -941,7 +949,6 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   <VideoActions id={activeLesson.id}/>
                   <button className="mobile-module-button" type="button" onClick={openCourseMap} aria-expanded={moduleDrawerOpen}><Menu size={19} /> Course map</button>
                   <div className="breadcrumbs"><span>{location.module.path}</span><ChevronRight size={15} /><span>{location.module.title}</span></div>
-                  <VideoLessonStepper/>
                 </div>
                 <div className="lesson-title-block"><p className="lesson-kicker"><strong>{location.module.path}.{String(location.module.stageNumber).padStart(2,'0')}</strong><span>·</span>{lessonStudyRole(activeLesson.id)}<span>·</span>{activeLesson.topic}</p><h1>{activeLesson.title}</h1><p>{activeLesson.instructor} <span>·</span> {activeLesson.duration}</p></div>
                 <LessonStudyContext id={activeLesson.id} section={activeSection} introduction={sectionIntroduction}/>
@@ -951,6 +958,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                       ? <div ref={playerHostRef} className="youtube-player player-loading" role="group" aria-label={`${activeLesson.title} video player`} />
                       : <div className="youtube-player player-loading" role="status" aria-label={`Loading ${activeLesson.title}`} />}
                   </div>
+                  <CoursePlayerControls/>
                   {autoNextPanel}
                 </div>
                 <div className="lesson-control-row">
@@ -964,7 +972,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                 </section>
                 <NextVideoCard/>
               </article>}
-            </div>
+            </CourseWatchView>
           )}
           {view === 'books' && <BookWorkspace />}
         </main>
@@ -977,7 +985,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
             <div className="dialog-title"><div><span className="eyebrow neutral">Account & data</span><h2 id="settings-title">Settings</h2></div><button type="button" onClick={() => setSettingsOpen(false)} aria-label="Close settings"><X size={22} /></button></div>
             <div className="privacy-panel"><LockKeyhole size={23} /><div><strong>{user ? 'Your private learning data' : 'You’re exploring as a guest'}</strong><p>{user ? 'Video marks, notes, bookmarks, course changes and reading records are saved only under your Google account and sync across devices.' : 'Enjoy the course freely. Your learning activity is not saved. Sign in when you want to keep progress, notes and bookmarks.'}</p>{!user && <button className="account-sign-in" onClick={() => { setSettingsOpen(false); requestSignIn(); }}>Sign in with Google</button>}</div></div>
             {user && <AccountPanel user={user} />}
-            <section className="settings-section playback-settings"><span className="eyebrow neutral">Video playback</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished video</strong><small>Optional five-second countdown to the next video</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>In fullscreen, the next video waits until you exit before the countdown begins.</p></section>
+            <section className="settings-section playback-settings"><span className="eyebrow neutral">Video playback</span><button className="settings-switch" type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={19} /><span><strong>Auto-next after a finished video</strong><small>Optional five-second countdown to the next video</small></span><span className={`switch-track ${learner.autoNextEnabled ? 'on' : ''}`} aria-hidden="true"><i /></span></button><p>Auto-next also works in course fullscreen.</p></section>
             {user && <section className="settings-section"><span className="eyebrow neutral">Backup & restore</span><button type="button" onClick={exportProgress}><Download size={19} /><span><strong>Download progress backup</strong><small>Save video marks, notes and bookmarks</small></span><ChevronRight size={18} /></button><button type="button" onClick={() => importInputRef.current?.click()}><Upload size={19} /><span><strong>Restore from backup</strong><small>Choose a previous JSON backup file</small></span><ChevronRight size={18} /></button><input ref={importInputRef} type="file" accept="application/json,.json" onChange={importProgress} hidden /></section>}
             {user && <section className="settings-section"><span className="eyebrow neutral">Learning record · All pathways</span><div className="settings-summary"><div><b>{courseProgress.watched}</b><span>videos watched overall</span></div><div><b>{coursePercent}%</b><span>overall completion</span></div><div><b>{weekMinutes}</b><span>study minutes this week</span></div></div>{confirmReset ? <div className="reset-confirm"><AlertTriangle size={21} /><p>This clears progress from your account on every device. Download a backup first if you may want it later.</p><div><button type="button" onClick={() => setConfirmReset(false)}>Cancel</button><button className="danger" type="button" onClick={resetProgress}>Reset account progress</button></div></div> : <button className="reset-button" type="button" onClick={() => setConfirmReset(true)}><RotateCcw size={19} /><span><strong>Reset learning progress</strong><small>Clear your synced learning record</small></span></button>}</section>}
             <section className="settings-section"><Link className="pwa-install-link" href="/install"><Download size={19}/> Install on your phone <ArrowRight size={16}/></Link><p>Open Electrical Mastery from your home screen.</p></section><div className="settings-footnote"><Info size={18} /><p>Videos stream from YouTube and need internet access.</p></div>
