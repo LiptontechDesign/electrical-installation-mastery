@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import StudyNavigationLink from './study-navigation-link';
 import { BookOpen, ClipboardList, Files, Home, PlayCircle } from 'lucide-react';
 
 type CourseDestination = 'home' | 'learn' | 'books';
@@ -28,7 +28,7 @@ export default function MobileNavigation({ active, onCourseNavigate, papersHref 
         const destination = item.id;
         return <button key={item.id} className="mobile-navigation-link" type="button" aria-current={current} onClick={() => onCourseNavigate(destination)}>{content}</button>;
       }
-      return <Link key={item.id} className="mobile-navigation-link" href={item.id === 'papers' ? papersHref : item.href} aria-current={current}>{content}</Link>;
+      return <StudyNavigationLink key={item.id} className="mobile-navigation-link" href={item.id === 'papers' ? papersHref : item.href} aria-current={current}>{content}</StudyNavigationLink>;
     })}
   </nav>;
 }

@@ -13,11 +13,11 @@ const button = name => page.getByRole('button', { name, exact: true });
 const noOverflow = async () => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'No horizontal page overflow');
 try {
   await page.goto(`${base}/practice`, { waitUntil: 'networkidle' });
-  await page.getByRole('heading', { name: 'Choose how you practise' }).waitFor();
+  await page.getByRole('heading', { name: 'Practice', exact: true }).waitFor();
   assert.equal(await page.locator('.epra-collection').count(), 7);
-  await page.getByRole('button', { name: /C1 YOUR LICENCE PATHWAY/ }).click();
+  await page.getByRole('button', { name: /C1 Extended study/ }).click();
   assert.equal(await page.locator('.epra-collection').count(), 8);
-  await page.getByRole('button', { name: /C2 YOUR LICENCE PATHWAY/ }).click();
+  await page.getByRole('button', { name: /C2 Foundations/ }).click();
   await page.getByRole('textbox', { name: 'Search topic questions' }).fill('no-such-question-000');
   await page.getByRole('heading', { name: 'No questions found' }).waitFor();
   await button('Clear search').first().click();
@@ -81,7 +81,7 @@ try {
   assert.equal(await page.locator('.katex-error').count(), 0);
   await noOverflow();
   await button('Practice centre').click();
-  await page.getByRole('button', { name: /C1 YOUR LICENCE PATHWAY/ }).click();
+  await page.getByRole('button', { name: /C1 Extended study/ }).click();
   await page.locator('.epra-collection').click();
   await button('Practise without a timer').click();
   assert.equal(await page.getByRole('timer').textContent(), 'Untimed practice');
@@ -132,7 +132,7 @@ try {
   await page.screenshot({ path: 'artifacts/browser-verification/practice-answer-desktop.png' });
   await page.goto(base);
   await page.getByRole('navigation', { name: 'Primary navigation' }).getByRole('link', { name: 'Practice', exact: true }).click();
-  await page.getByRole('heading', { name: 'Choose how you practise' }).waitFor();
+  await page.getByRole('heading', { name: 'Practice', exact: true }).waitFor();
   assert.equal(await page.evaluate(() => localStorage.length), 0, 'Guest practice writes no browser records');
   assert.deepEqual(errors, []);
   console.log('PASS: pathway separation, search, full questions, answer gating, draft isolation, flags, filtered navigation, quizzes, downloads, timed expiry, untimed mocks, self-assessment, recall bank, mobile/dark rendering and guest privacy.');

@@ -1,16 +1,16 @@
 # Current theme and accessibility checks
 
-Updated 23 September 2026 for the video-focused application.
+Updated 16 October 2026 for the shared study workspace.
 
 The public overview, personal home, video workspace, course map, reference reader, account controls, search and settings use semantic surface, text, action, status and focus tokens. Light and system-dark palettes are defined in globals.css and dark-theme.css.
 
-The removed guide, companion, recap, simulation and exam interfaces are no longer part of the theme or current QA scope. Their dedicated styles and obsolete selectors were removed.
+The retired lesson guide, companion, recap, simulation and lesson-assessment interfaces remain absent. The separately authorized Practice and Papers areas share the current study workspace theme.
 
 ## Verification and limits
 
 Run npm run test:theme. The current static suite checks 64 declared light/dark foreground/background pairs for at least 4.5:1 contrast, scans stylesheets and TSX presentation colors, and rejects undefined tokens and inappropriate raw component colors. This check is part of the production build.
 
-Static contrast checks do not prove every rendered layout or interaction is accessible. No new visual/browser audit was performed during this cleanup, at the owner's request. Keyboard, screen-reader and authenticated book-reader end-to-end testing remain useful release checks for future UI changes.
+Static contrast checks do not prove every rendered layout or interaction is accessible. The October workspace redesign includes browser review of phone, tablet, landscape and desktop layouts, light/dark surfaces, reader controls and isolated signed-in records. See [the study workspace verification](study-workspace.md). Physical-device and screen-reader testing remain separate release checks.
 
 ## Intentional exceptions
 

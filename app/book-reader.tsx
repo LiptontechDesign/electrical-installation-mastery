@@ -3,9 +3,9 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { ArrowLeft, ArrowRight, Bookmark, BookOpen, ChevronLeft, ChevronRight, Cloud, List, Search, ZoomIn, ZoomOut } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Bookmark, BookOpen, ChevronLeft, ChevronRight, Cloud, List, Search, SlidersHorizontal, ZoomIn, ZoomOut } from 'lucide-react';
 import { courseBooks, getBook, printedPage, type BookId } from './books-data';
-import { emptyReaderState, type ReaderCommand, type ReaderState } from './reader-state';
+import { emptyReaderState, latestReading, type BookSelection, type ReaderCommand, type ReaderState } from './reader-state';
 import bookFigures from './book-figures.json';
 import { useCourseAccount } from './course-account';
 
@@ -21,8 +21,12 @@ async function requestJson<T>(url: string, options?: RequestInit): Promise<T> {
 
 function Bookshelf({ state, ready, onOpen }: { state: ReaderState; ready: boolean; onOpen: (id: BookId, page: number) => void }) {
   const { user } = useCourseAccount();
+  const reading = ready && user ? latestReading(state) : undefined;
+  const recent = reading?.book;
+  const recentPage = reading?.page;
   return <div className="book-shelf">
-    <div className="books-intro"><span className="eyebrow neutral">Reference library</span><h3>Read the original books.</h3><p>{courseBooks.length} reference books. {user ? 'Your place is saved across devices.' : 'Read freely; sign in to save your place.'}</p></div>
+    <div className="books-intro workspace-page-heading"><div><p className="workspace-kicker">Reference books</p><h2>Your library</h2><p>{courseBooks.length} complete books. {user ? 'Your place is saved across devices.' : 'Read freely; sign in to save your place.'}</p></div></div>
+    {recent && recentPage && <button type="button" className="book-continue" onClick={() => onOpen(recent.id, recentPage)}><span className="book-continue-icon"><BookOpen size={25}/></span><span><small>Continue reading</small><strong>{recent.title}</strong><small>{recent.year} · {printedPage(recent, recentPage)}</small></span><ArrowRight size={20}/></button>}
     <div className="book-shelf-grid">{courseBooks.map((book, index) => {
       const progress = state.books[book.id];
       return <article className="book-shelf-card" key={book.id}>
@@ -34,13 +38,13 @@ function Bookshelf({ state, ready, onOpen }: { state: ReaderState; ready: boolea
   </div>;
 }
 
-function ReaderWorkspace() {
+function ReaderWorkspace({ initialSelection }: { initialSelection?: BookSelection | null }) {
   const { user, requestSignIn } = useCourseAccount();
   const [state, setState] = useState<ReaderState>(emptyReaderState);
   const [loaded, setLoaded] = useState(!user);
   const [error, setError] = useState('');
   const [retry, setRetry] = useState(0);
-  const [selected, setSelected] = useState<{ id: BookId; page: number } | null>(null);
+  const [selected, setSelected] = useState<BookSelection | null>(initialSelection ?? null);
   const [zoom, setZoom] = useState(1);
   const [mode, setMode] = useState<'page' | 'text'>('page');
   const [sidebar, setSidebar] = useState(false);
@@ -93,16 +97,18 @@ function ReaderWorkspace() {
   const go = (page: number) => { if (book && Number.isInteger(page) && page >= 1 && page <= book.pages) { setSelected({ id: book.id, page }); setSidebar(false); setFigureId(null); readingScroll.current?.scrollTo({ top: 0, behavior: 'instant' }); } };
 
   return <>
-    <nav className="reader-section-nav" aria-label="Reference books"><strong><BookOpen size={18}/> Books</strong><span><Cloud size={15}/>{user ? 'Saved across devices' : 'Guest reading · not saved'}</span></nav>
+    <nav className="reader-section-nav" aria-label="Reference books" hidden={Boolean(selected && book)}><strong><BookOpen size={18}/> Books</strong><span><Cloud size={15}/>{user ? 'Saved across devices' : 'Guest reading · not saved'}</span></nav>
     {!loaded && <div className="reader-sync">{error ? <><p role="alert">{error}</p><button type="button" onClick={() => { setError(''); setRetry(value => value + 1); }}>Retry saved pages</button></> : <p role="status">Loading your saved place…</p>}</div>}
     {!selected || !book ? <Bookshelf state={state} ready={loaded} onOpen={open}/> : <div className="reader-workspace">
       <div className="reader-reading-scroll" ref={readingScroll}>
         <div className="reader-book-heading"><button type="button" aria-label="Back to bookshelf" onClick={() => { setSelected(null); setSidebar(false); }}><ArrowLeft size={17}/> My books</button><div><h3>{book.title}</h3><span>{book.edition} · {book.year}</span></div></div>
         <div className="reader-toolbar">
           <button type="button" aria-label="Book contents, saved pages and figures" aria-expanded={sidebar} onClick={() => setSidebar(value => !value)}><List size={18}/><span>Contents</span></button>
-          {!figure && <div className="reader-view-mode" role="group" aria-label="Reading view"><button type="button" aria-pressed={mode === 'page'} onClick={() => setMode('page')}>Page</button><button type="button" aria-pressed={mode === 'text'} onClick={() => setMode('text')}>Text</button></div>}
-          {(mode === 'page' || figure) && <div className="reader-zoom"><button type="button" aria-label="Zoom out" disabled={zoom <= .75} onClick={() => setZoom(value => value - .25)}><ZoomOut size={18}/></button><button type="button" className="reader-fit" aria-label="Fit page to screen width" onClick={() => setZoom(1)}>{zoom === 1 ? 'Fit width' : `${Math.round(zoom * 100)}%`}</button><button type="button" aria-label="Zoom in" disabled={zoom >= 3} onClick={() => setZoom(value => value + .25)}><ZoomIn size={18}/></button></div>}
           <button type="button" className={currentMark ? 'is-saved' : ''} aria-label={currentMark ? 'Remove saved page' : 'Save this page'} aria-pressed={Boolean(currentMark)} disabled={!loaded} onClick={() => save({ action: 'bookmark', bookId: book.id, page: selected.page, saved: !currentMark })}><Bookmark size={18} fill={currentMark ? 'currentColor' : 'none'}/><span>{currentMark ? 'Saved' : 'Save'}</span></button>
+          <details className="reader-tools"><summary><SlidersHorizontal size={18}/> Reading tools</summary><div className="reader-options">
+            {!figure && <div className="reader-view-mode" role="group" aria-label="Reading view"><button type="button" aria-pressed={mode === 'page'} onClick={() => setMode('page')}>Page</button><button type="button" aria-pressed={mode === 'text'} onClick={() => setMode('text')}>Text</button></div>}
+            {(mode === 'page' || figure) && <div className="reader-zoom"><button type="button" aria-label="Zoom out" disabled={zoom <= .75} onClick={() => setZoom(value => value - .25)}><ZoomOut size={18}/></button><button type="button" className="reader-fit" aria-label="Fit page to screen width" onClick={() => setZoom(1)}>{zoom === 1 ? 'Fit width' : `${Math.round(zoom * 100)}%`}</button><button type="button" aria-label="Zoom in" disabled={zoom >= 3} onClick={() => setZoom(value => value + .25)}><ZoomIn size={18}/></button></div>}
+          </div></details>
         </div>
         <div className={`reader-body ${sidebar ? 'index-open' : ''}`}>
           {sidebar && <aside className="reader-index" aria-label="Book contents and saved pages">
@@ -119,11 +125,11 @@ function ReaderWorkspace() {
   </>;
 }
 
-export function BookWorkspace() {
-  return <section className="page books-page" aria-label="Books"><h1 className="sr-only">Electrical reference books</h1><ReaderSession/></section>;
+export function BookWorkspace({ initialSelection }: { initialSelection?: BookSelection | null }) {
+  return <section className="page books-page" aria-label="Books"><h1 className="sr-only">Electrical reference books</h1><ReaderSession key={initialSelection ? `${initialSelection.id}-${initialSelection.page}` : 'shelf'} initialSelection={initialSelection}/></section>;
 }
 
-function ReaderSession() {
+function ReaderSession({ initialSelection }: { initialSelection?: BookSelection | null }) {
   const { user } = useCourseAccount();
   const [ready, setReady] = useState(false);
   const [error, setError] = useState('');
@@ -134,5 +140,5 @@ function ReaderSession() {
     requestJson<Session>('/api/reader/session', { method: 'POST' }).then(value => { if (active) { setReady(value.authenticated); setError(''); } }).catch(value => { if (active) setError(value instanceof Error ? value.message : 'Could not open books.'); });
     return () => { active = false; };
   }, [retry, user]);
-  return <div className="reader-content">{ready || !user ? <ReaderWorkspace/> : <div className="reader-message">{error ? <><p role="alert">{error}</p><button type="button" onClick={() => { setError(''); setRetry(value => value + 1); }}>Retry opening books</button></> : <p role="status">Opening your books…</p>}</div>}</div>;
+  return <div className="reader-content">{ready || !user ? <ReaderWorkspace initialSelection={initialSelection}/> : <div className="reader-message">{error ? <><p role="alert">{error}</p><button type="button" onClick={() => { setError(''); setRetry(value => value + 1); }}>Retry opening books</button></> : <p role="status">Opening your books…</p>}</div>}</div>;
 }

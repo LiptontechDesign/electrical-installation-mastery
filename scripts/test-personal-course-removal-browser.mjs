@@ -160,7 +160,7 @@ try {
   const empty = await fixture('empty', { seed: { ...model.publishedPersonalCourse, archivedLessonIds: coreIds, videos: model.publishedPersonalCourse.videos.map(v => ({ ...v, archived: true })) } });
   await empty.page.getByRole('heading', { name: 'No active videos', exact: true }).waitFor();
   assert.equal(await empty.page.locator('.video-frame iframe').count(), 0);
-  await empty.page.getByRole('button', { name: 'My learning', exact: true }).click();
+  await empty.page.getByRole('button', { name: 'Home', exact: true }).click();
   await empty.page.getByRole('heading', { name: 'No active videos', exact: true }).waitFor();
   assert.deepEqual(empty.errors, []); await empty.context.close();
 

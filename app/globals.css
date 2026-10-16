@@ -7,15 +7,15 @@
   --ink: #17212b;
   --muted: #506171;
   --line: #dce2e8;
-  --paper: #f4f6f8;
-  --white: #fafcfd;
+  --paper: #f5f7f7;
+  --white: #ffffff;
   --surface-soft: #eef3f6;
   --surface-muted: #edf3f6;
-  --surface-selected: #e7f4f5;
-  --surface-selected-border: #b8dcdf;
-  --surface-selected-text: #075f69;
+  --surface-selected: #e6f3ef;
+  --surface-selected-border: #b6d7ce;
+  --surface-selected-text: #075e58;
   /* Paired roles: surface colors must never double as foreground colors. */
-  --text-accent: #075f69;
+  --text-accent: #086c63;
   --surface-inverse: #0d1b2d;
   --text-on-inverse: #ecf7fa;
   --accent-on-inverse: #68dbe5;
@@ -27,7 +27,7 @@
   --text-warning: #74470c;
   --surface-danger: #fcecea;
   --text-danger: #96342d;
-  --solid-accent: #075f69;
+  --solid-accent: #086c63;
   --solid-danger: #a93333;
   --solid-copper: #87451e;
   --inverse-muted: #bdcbd8;

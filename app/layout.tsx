@@ -18,6 +18,7 @@ import './definitions.css';
 import './site-search.css';
 import './past-paper-navigation.css';
 import './mobile-navigation.css';
+import './workspace-design.css';
 import 'katex/dist/katex.min.css';
 import { PwaProvider } from './pwa-support';
 import AccessibleTooltips from './accessible-tooltips';
@@ -119,7 +120,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB">
-      <body><PwaProvider>{children}</PwaProvider><AccessibleTooltips /></body>
+      <body className="workspace-design"><PwaProvider>{children}</PwaProvider><AccessibleTooltips /></body>
     </html>
   );
 }

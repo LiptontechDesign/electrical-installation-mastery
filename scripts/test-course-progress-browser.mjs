@@ -51,7 +51,7 @@ async function settings(page) {
 }
 async function checkHomeAndOverview(page, watched, total, groupWatched = watched, groupTotal = total) {
   const activeTitle = await page.locator('.lesson-canvas h1').textContent();
-  const home = page.locator('.studio-navigation').getByRole('button', { name: 'My learning', exact: true });
+  const home = page.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true });
   if (await home.isVisible()) await home.click();
   else await page.locator('.mobile-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   await page.locator('.home-view-switch').getByRole('button', { name: 'My learning', exact: true }).click();
@@ -243,7 +243,7 @@ try {
   onlySupplementary.archivedLessonIds.push(...seed.coreIds);
   const only = await fixture({ state: onlySupplementary, learner, supplementaryProgress: [seed.added[0].videoId] }), op = only.page;
   await waitText(op, '.course-summary > span', '1/2 videos watched');
-  await op.locator('.studio-navigation').getByRole('button', { name: 'My learning', exact: true }).click();
+  await op.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   await waitText(op, '.progress-panel-number', '50%');
   assert.ok((await op.locator('.resume-bottom').textContent()).includes('1 of 2 videos watched'));
   await op.locator('.home-view-switch').getByRole('button', { name: 'About this course', exact: true }).click();
@@ -255,7 +255,7 @@ try {
   await waitText(op, '.course-summary > span', '0/0 videos watched');
   await op.locator('.module-accordion.open > button').click();
   await op.getByRole('button', { name: 'Add video', exact: true }).waitFor();
-  await op.locator('.studio-navigation').getByRole('button', { name: 'My learning', exact: true }).click();
+  await op.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   await op.locator('.home-view-switch').getByRole('button', { name: 'My learning', exact: true }).click();
   await op.getByRole('heading', { name: 'No active videos', exact: true }).waitFor();
   await op.locator('.home-view-switch').getByRole('button', { name: 'About this course', exact: true }).click();

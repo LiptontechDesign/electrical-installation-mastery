@@ -39,7 +39,9 @@ import LearningHome from './learning-home';
 import type { CourseUser } from './server/auth';
 import SiteSearch from './site-search';
 import PastPaperLinks from './past-paper-links';
+import StudyNavigationLink from './study-navigation-link';
 import MobileNavigation from './mobile-navigation';
+import type { BookSelection } from './reader-state';
 
 const BookWorkspace = dynamic(() => import('./book-reader').then(module => module.BookWorkspace), { ssr: false });
 
@@ -126,6 +128,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const [learner, setLearner] = useState<LearnerState>(initialLearnerState);
   const [hydrated, setHydrated] = useState(false);
   const [view, setView] = useState<View>('home');
+  const [bookSelection, setBookSelection] = useState<BookSelection | null>(null);
 
   const [openModuleId, setOpenModuleId] = useState(course.modules[0].id);
   const [mapPath, setMapPath] = useState<CourseModule['path']>(course.modules[0].path);
@@ -663,6 +666,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const navigate = (nextView: View) => {
+    if (nextView === 'books') setBookSelection(null);
     supplementary?.clearSelection();
     if (nextView !== 'learn') {
       cancelAutoNext(false);
@@ -861,7 +865,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       <div className="app-frame">
         <header className="app-header studio-header" aria-label="Application toolbar">
           <button className="studio-brand" type="button" onClick={() => navigate('home')} aria-label="Electrical Installation Mastery home"><span className="studio-monogram"><Zap size={22}/></span><span><strong>Electrical</strong><small>INSTALLATION MASTERY</small></span></button>
-          <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? user ? 'My learning' : 'The course' : item.label}</button>)}<Link href="/practice" className="studio-practice-link">Practice</Link><PastPaperLinks/></nav>
+          <nav className="studio-navigation" aria-label="Primary navigation">{navigation.map(item => <button key={item.id} type="button" className={view === item.id ? 'active' : ''} aria-current={view === item.id ? 'page' : undefined} onClick={() => navigate(item.id)}>{item.id === 'home' ? 'Home' : item.label}</button>)}<StudyNavigationLink href="/practice" className="studio-practice-link">Practice</StudyNavigationLink><PastPaperLinks active={mapPath === 'C1' ? 'C1' : 'C2'} selected={false}/></nav>
           <div className="header-actions">
             <SiteSearch lessons={searchLessons} onLesson={id => { const row = courseRowsById.get(id); if (row) selectCourseRow(row); }}/>
 
@@ -878,7 +882,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
           {view === 'home' && (!user || showOverview) && <CourseOverview onLesson={openCourseVideo} onBooks={() => navigate('books')}/>}
           {view === 'home' && user && !showOverview && (
             <div className="page home-page">
-              <LearningHome user={user} learner={learner} path={mapPath} progress={pathwayProgress} overallProgress={courseProgress} watchedRows={watchedRows} weekMinutes={weekMinutes} onLesson={openCourseVideo} onBooks={() => navigate('books')}/>
+              <LearningHome user={user} learner={learner} path={mapPath} progress={pathwayProgress} overallProgress={courseProgress} watchedRows={watchedRows} weekMinutes={weekMinutes} ready={hydrated} onLesson={openCourseVideo} onBooks={selection => { navigate('books'); if (selection) setBookSelection(selection); }}/>
               <section className="home-course">
                 <div className="home-primary-column">
                   <div className="section-heading compact"><div><h2>Course modules</h2></div></div>
@@ -975,7 +979,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
               </article>}
             </CourseWatchView>
           )}
-          {view === 'books' && <BookWorkspace />}
+          {view === 'books' && <BookWorkspace initialSelection={bookSelection}/>}
         </main>
         <MobileNavigation active={view} onCourseNavigate={navigate} papersHref={mapPath === 'C1' ? '/past-papers/c1' : '/past-papers/c2'}/>
       </div>

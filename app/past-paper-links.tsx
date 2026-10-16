@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import Link from './study-navigation-link';
 export const paperDestinations = [{ path: 'C1', href: '/past-papers/c1' }, { path: 'C2', href: '/past-papers/c2' }];
-export default function PastPaperLinks({ active }: { active?: string }) {
-  return <>{paperDestinations.map(item => <Link key={item.path} href={item.href} className="studio-practice-link past-paper-nav-link" aria-current={active === item.path ? 'page' : undefined}><span>{item.path} Past Papers</span></Link>)}</>;
+export default function PastPaperLinks({ active, selected = Boolean(active) }: { active?: string; selected?: boolean }) {
+  return <Link href={active === 'C1' ? '/past-papers/c1' : '/past-papers/c2'} className="studio-practice-link past-paper-nav-link" aria-current={selected ? 'page' : undefined}>Papers</Link>;
 }
 
 export function PastPaperPathSwitcher({ active }: { active: 'C1' | 'C2' }) {

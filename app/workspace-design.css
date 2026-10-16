@@ -1,0 +1,440 @@
+/* Shared study workspace. Content, navigation and optional tools have distinct roles. */
+.workspace-design { --workspace-width: 1360px; --workspace-gutter: clamp(20px, 4vw, 56px); }
+.workspace-design :is(.workspace-kicker, .epra-eyebrow) { font-size: 12px; line-height: 1.5; font-weight: 600; letter-spacing: .02em; text-transform: none; color: var(--text-accent); }
+.workspace-design .workspace-kicker { margin: 0 0 7px; }
+.workspace-design .workspace-page-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 0 0 24px; }
+.workspace-design .workspace-page-heading :is(h1, h2) { font-size: clamp(28px, 3vw, 38px); line-height: 1.18; font-weight: 650; letter-spacing: -.045em; margin: 0 0 10px; }
+.workspace-design .workspace-page-heading > div > p:last-child { max-width: 65ch; margin: 0; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.workspace-design :is(.workspace-primary, .workspace-secondary, .workspace-help) { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 11px 17px; border-radius: 10px; border: 1px solid transparent; font-size: 14px; font-weight: 600; text-decoration: none; }
+.workspace-design .workspace-primary { background: var(--solid-accent); color: var(--text-on-inverse); }
+.workspace-design :is(.workspace-secondary, .workspace-help) { background: var(--white); color: var(--text-accent); border-color: var(--line); }
+.workspace-design .workspace-help { flex-shrink: 0; }
+.workspace-design .workspace-path { padding: 7px 11px; background: var(--surface-selected); color: var(--surface-selected-text); border-radius: 8px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.workspace-design .workspace-segmented { display: inline-flex; gap: 3px; padding: 3px; border-radius: 10px; background: var(--surface-soft); }
+.workspace-design .workspace-segmented button { min-height: 42px; padding: 8px 12px; color: var(--muted); background: transparent; border-radius: 7px; font-size: 13px; font-weight: 550; }
+.workspace-design .workspace-segmented button[aria-pressed=true] { background: var(--white); color: var(--text-accent); box-shadow: var(--shadow-sm); }
+.workspace-design .workspace-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.workspace-design .workspace-section-heading h2 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -.025em; }
+.workspace-design .workspace-section-heading > :is(span, svg) { color: var(--muted); font-size: 12px; }
+
+/* The same five destinations and compact brand appear throughout the site. */
+.workspace-design .studio-shell .app-header,
+.workspace-design .epra-page .study-site-header { min-height: 76px; height: 76px; padding: 0 var(--workspace-gutter); gap: clamp(20px, 3vw, 44px); background: var(--white); border-bottom: 1px solid var(--line); flex-wrap: nowrap; }
+.workspace-design .epra-page .study-site-header { display: flex; position: sticky; top: 0; z-index: 60; }
+.workspace-design :is(.studio-brand, .epra-brand) { gap: 10px; font-size: 20px; font-weight: 650; letter-spacing: -.6px; }
+.workspace-design .studio-brand strong { font-size: 20px; font-weight: 650; }
+.workspace-design :is(.studio-brand small, .epra-brand strong) { display: block; font-size: 10px; letter-spacing: .035em; font-weight: 500; margin-top: 4px; line-height: 1.3; color: var(--muted); }
+.workspace-design .studio-monogram { width: 34px; height: 40px; border: 0; border-radius: 10px; color: var(--text-accent); background: var(--surface-selected); }
+.workspace-design .epra-brand > svg { box-sizing: content-box; width: 22px; height: 22px; padding: 9px 6px; border-radius: 10px; background: var(--surface-selected); }
+.workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) { display: flex; align-items: center; align-self: center; gap: 5px; flex: 1; justify-content: center; white-space: nowrap; overflow: visible; }
+.workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) :is(button, a) { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border: 0; border-radius: 9px; font-size: 14px; line-height: 1.4; color: var(--muted); background: transparent; font-weight: 550; text-decoration: none; }
+.workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) [aria-current=page] { color: var(--surface-selected-text); background: var(--surface-selected); border: 0; }
+.workspace-design .studio-navigation button.active::after { display: none; }
+.workspace-design .studio-header .header-actions { gap: 14px; margin-left: auto; }
+.workspace-design .studio-header .account-trigger-label small { font-size: 11px; }
+.workspace-design .studio-header .account-trigger-label strong { font-size: 13px; }
+.workspace-design .course-progress-chip { display: none; }
+.workspace-design .studio-lesson-navigation { min-height: 48px; padding: 3px var(--workspace-gutter); font-size: 13px; background: var(--paper); }
+.workspace-design .studio-lesson-navigation button { min-height: 42px; font-size: 13px; }
+.workspace-design .guest-learning-bar { min-height: 38px; padding-block: 6px; font-size: 12px; background: var(--paper); border-bottom: 1px solid var(--line); }
+
+/* Home: one next step, a small progress summary and useful reading/lesson rows. */
+.workspace-design .studio-shell :is(.home-page, .course-overview-page) { max-width: var(--workspace-width); padding: 24px var(--workspace-gutter) 56px; margin: auto; }
+.workspace-design .studio-shell .home-view-switch { max-width: var(--workspace-width); padding: 14px var(--workspace-gutter) 0; }
+.workspace-design .studio-shell .home-view-switch button { min-height: 44px; margin-right: 20px; font-size: 13px; }
+.workspace-design .study-home-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 22px; }
+.workspace-design .study-home-heading h1 { margin: 0; font-size: clamp(25px, 2.8vw, 34px); line-height: 1.25; font-weight: 650; letter-spacing: -.045em; }
+.workspace-design .study-home-desk { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
+.workspace-design .study-home-main { min-width: 0; }
+.workspace-design .study-home-main .study-library-link { margin-top: 14px; }
+.workspace-design .study-home-main .study-library-link strong { margin: 3px 0; }
+.workspace-design .study-resume { padding: 26px 28px; border-radius: 18px; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+.workspace-design .study-resume-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.workspace-design .study-resume-heading > span { display: flex; align-items: center; gap: 8px; color: var(--text-accent); font-size: 13px; font-weight: 600; }
+.workspace-design .study-resume-context { margin: 20px 0 7px; font-size: 13px; color: var(--muted); }
+.workspace-design .study-resume h2 { margin: 0 0 14px; max-width: 38ch; font-size: clamp(22px, 2vw, 29px); font-weight: 600; line-height: 1.35; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.workspace-design .study-resume-meta { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 22px; color: var(--muted); font-size: 13px; }
+.workspace-design .study-resume-meta > span { display: inline-flex; align-items: center; gap: 6px; }
+.workspace-design .study-progress { border: 0; box-shadow: none; background: transparent; padding: 18px 0; border-radius: 0; }
+.workspace-design .study-progress-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.workspace-design .study-progress .progress-panel-heading { font-size: 12px; letter-spacing: .015em; }
+.workspace-design .study-progress .progress-panel-number { font-size: 28px; margin: 0; letter-spacing: -.05em; }
+.workspace-design .study-progress .progress-panel-number > span { font-size: 16px; }
+.workspace-design .study-progress > p { font-size: 13px; margin: 12px 0; }
+.workspace-design .study-progress .study-remaining { font-size: 12px; margin: 8px 0 12px; }
+.workspace-design .study-home-stats { border-top: 1px solid var(--line); margin-top: 18px; }
+.workspace-design .study-home-stats summary { min-height: 44px; padding: 12px 0; color: var(--muted); font-size: 12px; cursor: pointer; }
+.workspace-design .study-home-stats .overall-progress { font-size: 12px; }
+.workspace-design .study-home-stats dl { display: grid; gap: 12px; margin: 16px 0; }
+.workspace-design .study-home-stats dl > div { display: flex; flex-direction: row; justify-content: space-between; gap: 10px; }
+.workspace-design .study-home-stats :is(dt, dd, small) { font-size: 12px; margin: 0; color: var(--muted); }
+.workspace-design .study-home-stats dd { color: var(--ink); }
+.workspace-design .study-home-rail { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; margin: 30px 0 36px; }
+.workspace-design .study-lesson-row { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 76px; padding: 15px 0; background: transparent; text-align: left; color: var(--ink); border-bottom: 1px solid var(--line); }
+.workspace-design .study-lesson-row > span:not(.study-row-icon) { flex: 1; min-width: 0; }
+.workspace-design .study-lesson-row strong { display: block; font-size: 15px; line-height: 1.5; font-weight: 550; }
+.workspace-design .study-lesson-row small { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+.workspace-design .study-row-icon { display: grid; place-items: center; width: 36px; height: 42px; flex: 0 0 auto; border-radius: 10px; background: var(--white); color: var(--text-accent); }
+.workspace-design .study-lesson-row > svg { color: var(--muted); }
+.workspace-design .study-empty { padding: 18px 0; color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0; }
+.workspace-design .study-library-link { display: flex; gap: 13px; align-items: center; width: 100%; padding: 17px; margin-top: 12px; border-radius: 12px; background: var(--surface-selected); color: var(--surface-selected-text); text-align: left; }
+.workspace-design .study-library-link > span { flex: 1; }
+.workspace-design .study-library-link strong { display: block; font-size: 15px; font-weight: 600; }
+.workspace-design .study-library-link small { display: block; font-size: 12px; margin-top: 4px; }
+.workspace-design .study-home-loading { display: flex; align-items: center; gap: 14px; padding: 32px; min-height: 200px; background: var(--white); border-radius: 16px; color: var(--muted); }
+.workspace-design .studio-shell .module-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.workspace-design .studio-shell .module-card { border-radius: 12px; padding: 22px; border-color: var(--line); }
+.workspace-design .module-card h3 { font-size: 17px; line-height: 1.45; font-weight: 600; }
+.workspace-design .module-card-head { font-size: 13px; }
+.workspace-design .module-card-head small { font-size: 12px; }
+.workspace-design .module-card .course-progress-summary { font-size: 12px; }
+
+/* Public entry and video study retain the material with a quieter hierarchy. */
+.workspace-design .studio-shell .course-welcome { padding: 22px 0 36px; gap: 56px; }
+.workspace-design .studio-shell .course-welcome h1 { font-size: clamp(38px, 4.5vw, 62px); line-height: 1.08; letter-spacing: -.055em; font-weight: 650; }
+.workspace-design .course-welcome-copy > p { max-width: 52ch; font-size: 16px; line-height: 1.7; }
+.workspace-design .course-kicker { font-size: 12px; text-transform: none; letter-spacing: .02em; }
+.workspace-design .course-welcome .primary-button { min-height: 48px; background: var(--solid-accent); color: var(--text-on-inverse); box-shadow: none; font-size: 15px; border-radius: 10px; }
+.workspace-design .course-facts { gap: 16px; flex-wrap: wrap; }
+.workspace-design .course-facts > span { font-size: 13px; }
+.workspace-design .open-course-note { font-size: 12px; }
+.workspace-design .course-welcome-art { background: var(--surface-inverse); color: var(--text-on-inverse); border-radius: 20px; }
+.workspace-design .course-outcomes { gap: 32px; }
+.workspace-design .course-outcomes li { font-size: 15px; }
+.workspace-design .course-section-links { min-height: 50px; }
+.workspace-design .course-section-links a { font-size: 14px; }
+.workspace-design .course-save-invitation { padding: 20px 24px; border-radius: 12px; }
+.workspace-design .course-save-invitation p { font-size: 14px; }
+.workspace-design .lesson-canvas { position: relative; padding: 20px 32px 64px; }
+.workspace-design .lesson-title-block { margin: 8px 0 20px; }
+.workspace-design .lesson-title-block h1 { font-size: clamp(24px, 2.3vw, 34px); line-height: 1.3; font-weight: 600; letter-spacing: -.03em; margin: 8px 0; }
+.workspace-design .lesson-title-block .lesson-kicker { font-size: 12px; letter-spacing: 0; font-weight: 500; }
+.workspace-design .lesson-title-block > p:last-child { font-size: 13px; }
+.workspace-design .lesson-topline { min-height: 32px; }
+.workspace-design .video-shell { border-radius: 14px; box-shadow: none; border: 1px solid var(--line); }
+.workspace-design .video-shell > .video-frame { margin: 0; border: 0; box-shadow: none; border-radius: 13px 13px 0 0; }
+.workspace-design .video-shell > .inline-player-controls { margin-top: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0 0 13px 13px; }
+.workspace-design .lesson-control-row { margin-top: 16px; padding-block: 4px 16px; }
+.workspace-design .lesson-control-row button { font-size: 14px; min-height: 44px; }
+.workspace-design .lesson-control-row .complete-button { background: var(--surface-selected); color: var(--surface-selected-text); border: 1px solid var(--surface-selected-border); box-shadow: none; }
+.workspace-design .lesson-control-row .complete-button.completed { background: var(--surface-success); color: var(--text-success); border-color: var(--line); }
+.workspace-design .course-player-controls button[aria-label="Next lesson"]:not(:disabled) { background: var(--solid-accent); color: var(--text-on-inverse); border-color: transparent; }
+.workspace-design .lesson-next-card button { background: var(--solid-accent); color: var(--text-on-inverse); }
+.workspace-design .lesson-personal-notes { margin-top: 20px; }
+.workspace-design .lesson-notes-disclosure { border-radius: 10px; }
+.workspace-design .lesson-notes-disclosure > summary { font-size: 14px; font-weight: 550; }
+.workspace-design .studio-shell .course-map { background: var(--white); }
+.workspace-design .course-map .module-accordion { border-color: var(--line); border-radius: 10px; box-shadow: none; }
+.workspace-design .course-map .module-accordion > button strong { font-size: 15px; line-height: 1.5; }
+.workspace-design .course-map .section-title { font-size: 14px; line-height: 1.5; }
+.workspace-design .course-map .module-eyebrow,
+.workspace-design .course-map .section-eyebrow { font-size: 11px; letter-spacing: .025em; }
+.workspace-design .course-map .course-topic-group { border-radius: 8px; box-shadow: none; }
+.workspace-design .course-map .course-topic-group summary { padding-block: 12px; }
+.workspace-design .course-map .course-progress-count { font-size: 12px; }
+.workspace-design .course-map .lesson-row-metadata { font-size: 12px; }
+
+/* Books: a clear return to reading, then the four complete references. */
+.workspace-design .books-page { max-width: 1400px; border: 0; border-radius: 0; }
+.workspace-design .reader-section-nav[hidden] { display: none; }
+.workspace-design .reader-section-nav { padding: 4px 28px; border: 0; }
+.workspace-design .reader-section-nav > strong { font-size: 14px; }
+.workspace-design .reader-section-nav > span { font-size: 12px; }
+.workspace-design .book-shelf { padding: 24px 28px 40px; }
+.workspace-design .books-intro { margin-bottom: 24px; }
+.workspace-design .book-continue { display: flex; align-items: center; gap: 16px; width: 100%; margin: 0 0 26px; padding: 20px; border-radius: 14px; background: var(--surface-selected); color: var(--surface-selected-text); text-align: left; }
+.workspace-design .book-continue > span:nth-child(2) { flex: 1; min-width: 0; }
+.workspace-design .book-continue-icon { display: grid; place-items: center; width: 48px; height: 58px; background: var(--white); border-radius: 4px 10px 10px 4px; }
+.workspace-design .book-continue strong { display: block; font-size: 18px; line-height: 1.4; margin: 4px 0; font-weight: 600; }
+.workspace-design .book-continue small { display: block; font-size: 13px; }
+.workspace-design .book-shelf-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.workspace-design .book-shelf-card { grid-template-columns: 120px minmax(0, 1fr); gap: 22px; padding: 22px; border-radius: 14px; box-shadow: none; }
+.workspace-design .book-jacket { min-height: 200px; padding: 18px 14px; }
+.workspace-design .book-jacket > strong { font-size: 19px; line-height: 1.35; }
+.workspace-design .book-shelf-card h3 { font-size: 19px; line-height: 1.35; font-weight: 600; letter-spacing: -.025em; }
+.workspace-design .book-shelf-card p { font-size: 14px; line-height: 1.65; }
+.workspace-design .book-shelf-card .reader-primary { font-size: 14px; border-radius: 8px; }
+.workspace-design .books-source-note { font-size: 13px; line-height: 1.7; }
+.workspace-design .reader-book-heading { display: flex; gap: 20px; align-items: center; padding: 12px 24px; background: var(--white); }
+.workspace-design .reader-book-heading > button { font-size: 13px; min-height: 44px; }
+.workspace-design .reader-book-heading h3 { font-size: 18px; line-height: 1.35; font-weight: 600; margin: 0 0 3px; }
+.workspace-design .reader-book-heading span { font-size: 12px; }
+.workspace-design .reader-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding: 6px 24px; }
+.workspace-design .reader-toolbar > button { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; padding: 9px 12px; min-height: 44px; }
+.workspace-design .reader-tools { margin-left: auto; color: var(--muted); font-size: 13px; }
+.workspace-design .reader-tools summary { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 10px; list-style: none; cursor: pointer; }
+.workspace-design .reader-tools summary::-webkit-details-marker { display: none; }
+.workspace-design .reader-options { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 8px 0; }
+.workspace-design .reader-options .reader-zoom { margin: 0; }
+.workspace-design .reader-options .reader-view-mode { padding: 3px; }
+.workspace-design .reader-navigation { padding-block: 8px; }
+
+/* Practice opens directly at the task choices. Answers use a readable measure. */
+.workspace-design :is(.epra-centre, .epra-reader) { max-width: var(--workspace-width); padding: 32px var(--workspace-gutter) 64px; }
+.workspace-design .workspace-pathways { display: flex; gap: 8px; padding: 0; margin: 0 0 12px; }
+.workspace-design .workspace-pathways .epra-path { display: flex; flex: 0 1 220px; gap: 12px; align-items: center; padding: 12px 16px; min-height: 54px; border-radius: 11px; box-shadow: none; }
+.workspace-design .workspace-pathways .epra-path-icon { border: 0; padding: 0; font-size: 17px; }
+.workspace-design .workspace-pathways .epra-path strong { font-size: 14px; }
+.workspace-design .workspace-pathways .epra-path > svg { margin-left: auto; color: var(--text-accent); }
+.workspace-design .epra-workspace-heading { margin: 0 0 16px; }
+.workspace-design .epra-workspace-heading > p { font-size: 13px; }
+.workspace-design .epra-toolbar { padding-bottom: 16px; gap: 18px; }
+.workspace-design .epra-tabs { background: transparent; border: 1px solid var(--line); padding: 3px; gap: 4px; }
+.workspace-design .epra-tabs button { min-height: 44px; padding: 10px 14px; font-size: 14px; }
+.workspace-design .epra-tabs button[aria-pressed=true] { background: var(--surface-selected); color: var(--surface-selected-text); border-color: transparent; box-shadow: none; }
+.workspace-design .practice-tab-compact { display: none; }
+.workspace-design .epra-toolbar + :is(.epra-collection-grid, .epra-results) { margin-top: 18px; }
+.workspace-design .epra-search { min-height: 46px; border-radius: 10px; }
+.workspace-design .epra-search input { font-size: 15px; }
+.workspace-design .epra-mode-note { font-size: 14px; line-height: 1.65; margin: 16px 0 22px; }
+.workspace-design .epra-collection-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.workspace-design .epra-wide-cards { grid-template-columns: 1fr; }
+.workspace-design .epra-collection { padding: 22px; border-radius: 14px; box-shadow: none; border-color: var(--line); border-top: 1px solid var(--line); transform: none; }
+.workspace-design .epra-collection[data-practice-tone] { border-top: 1px solid var(--line); }
+.workspace-design .epra-card-top { min-height: 22px; }
+.workspace-design .epra-step { font-size: 12px; letter-spacing: .02em; }
+.workspace-design .epra-badge { font-size: 11px; border: 0; background: var(--surface-soft); }
+.workspace-design .epra-collection h3 { margin: 18px 0 10px; font-size: 20px; line-height: 1.35; font-weight: 600; }
+.workspace-design .epra-collection p { font-size: 14px; line-height: 1.65; }
+.workspace-design .epra-card-bottom { font-size: 12px; padding-top: 15px; }
+.workspace-design .epra-method { margin: 16px 0 24px; padding: 18px 22px; background: var(--paper); border: 0; }
+.workspace-design .epra-method ol { margin: 0; }
+.workspace-design .epra-sessions { padding: 18px 20px; margin-bottom: 20px; border-radius: 12px; }
+.workspace-design .epra-sessions h2 { font-size: 18px; }
+.workspace-design .epra-sessions p { font-size: 13px; }
+.workspace-design .epra-reader-top { gap: 12px; padding-bottom: 14px; }
+.workspace-design .epra-reader-top > span { font-size: 12px; }
+.workspace-design .epra-reader-heading { padding: 22px 0; border: 0; }
+.workspace-design .epra-reader-heading h1 { margin: 6px 0 8px; font-size: clamp(25px, 2.5vw, 34px); font-weight: 600; line-height: 1.3; letter-spacing: -.03em; }
+.workspace-design .epra-reader-heading p { font-size: 13px; margin: 0; }
+.workspace-design .epra-question-card { padding: 28px 32px; border-radius: 14px; border: 1px solid var(--line); box-shadow: none; }
+.workspace-design .epra-question-card > h2 { font-size: 27px; line-height: 1.35; font-weight: 600; }
+.workspace-design .epra-question-meta { padding-bottom: 12px; margin-bottom: 14px; }
+.workspace-design .epra-question-meta > span { font-size: 12px; letter-spacing: .02em; }
+.workspace-design .epra-question-topic { font-size: 12px; }
+.workspace-design .epra-button { font-size: 14px !important; min-height: 44px; }
+.workspace-design .epra-field,
+.workspace-design .epra-revisit-filter,
+.workspace-design .epra-question-list summary { font-size: 13px; }
+.workspace-design .epra-field select { font-size: 14px; }
+.workspace-design .epra-question-nav { border-radius: 12px; }
+.workspace-design .epra-nav-heading { font-size: 14px; }
+.workspace-design .epra-question-list button { font-size: 14px; line-height: 1.6; }
+.workspace-design .epra-question-state { font-size: 12px; }
+.workspace-design .epra-prose { font-size: 17px; line-height: 1.8; }
+.workspace-design .epra-prose :is(h2, h3, h4) { font-size: 20px; line-height: 1.45; font-weight: 600; letter-spacing: -.02em; }
+.workspace-design .epra-prose .katex-display { padding: 14px 12px; margin: 20px 0; border: 0; border-radius: 8px; }
+.workspace-design .epra-prose table { font-size: 15px; line-height: 1.65; }
+.workspace-design .epra-prose :is(th, td) { border-width: 0 0 1px; padding: 12px; }
+.workspace-design .epra-prose :is(blockquote, pre) { font-size: 14px; }
+.workspace-design .epra-text-button { font-size: 14px !important; min-height: 44px; }
+.workspace-design .epra-answer-label { letter-spacing: .02em; font-size: 12px; }
+.workspace-design .epra-answer .epra-prose { max-width: 78ch; }
+.workspace-design .epra-reveal { border-radius: 10px; }
+.workspace-design .epra-reveal-note { font-size: 12px; }
+.workspace-design .epra-working > label { font-size: 14px; }
+.workspace-design .epra-working > label > span { font-size: 12px; }
+.workspace-design .epra-reading-dock { background: var(--white); }
+.workspace-design .learn-page[data-watch-expanded=true] .video-shell { border: 0; border-radius: 0; }
+.workspace-design .learn-page[data-watch-expanded=true] .video-frame { border-radius: 0; }
+
+@media (min-width: 1181px) {
+  .workspace-design .studio-shell .course-map { top: 76px; height: calc(100dvh - 76px); }
+}
+@media (min-width: 901px) {
+  .workspace-design .studio-shell[data-view=books] .app-content { display: flex; min-height: 0; height: calc(100dvh - 76px); }
+  .workspace-design .studio-shell[data-view=books] .books-page { height: 100%; flex: 1; min-height: 0; margin: 0 auto; }
+}
+@media (min-width: 1280px) {
+  .workspace-design .epra-study-actions .epra-button { display: inline-flex; }
+  .workspace-design .epra-reader.epra-compare { max-width: 1840px; }
+  .workspace-design .epra-compare .epra-answer-workspace.has-answer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 28px; }
+  .workspace-design .epra-compare .epra-answer-workspace.has-answer .epra-answer { padding-top: 0; margin-top: 0; }
+}
+@media (max-width: 1180px) {
+  .workspace-design .studio-shell .app-header,
+  .workspace-design .epra-page .study-site-header { gap: 16px; padding-inline: 22px; }
+  .workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) :is(a, button) { padding-inline: 12px; }
+  .workspace-design .studio-header .account-trigger-label { display: none; }
+  .workspace-design .studio-shell .course-map { top: 0; height: 100dvh; }
+  .workspace-design .book-shelf-grid { grid-template-columns: 1fr; }
+  .workspace-design .book-shelf-card { grid-template-columns: 110px minmax(0, 1fr); }
+  .workspace-design .book-jacket { min-height: 180px; }
+  .workspace-design .epra-toolbar { flex-wrap: wrap; }
+  .workspace-design .epra-toolbar > .epra-search { width: 100%; }
+  .workspace-design .epra-collection-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .workspace-design .epra-wide-cards { grid-template-columns: 1fr; }
+}
+@media (min-width: 721px) and (max-width: 1000px) {
+  .workspace-design .studio-shell .app-header,
+  .workspace-design .epra-page .study-site-header { height: 116px; min-height: 116px; flex-wrap: wrap; gap: 0 16px; padding-top: 10px; }
+  .workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) { order: 3; flex: 0 0 100%; min-height: 50px; padding: 0; margin: 0; }
+  .workspace-design .epra-page .study-site-header > .studio-search { margin-left: auto; }
+  .workspace-design .study-home-desk { grid-template-columns: minmax(0, 1fr) 230px; gap: 20px; }
+  .workspace-design .study-home-rail { gap: 24px; }
+}
+@media (max-width: 720px) {
+  .workspace-design { --workspace-gutter: 18px; }
+  .workspace-design .studio-shell .app-header,
+  .workspace-design .epra-page .study-site-header { min-height: 68px; height: 68px; padding: 9px max(14px, env(safe-area-inset-right)) 9px max(14px, env(safe-area-inset-left)); gap: 8px; flex-wrap: nowrap; }
+  .workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) { display: none; }
+  .workspace-design :is(.studio-brand strong, .epra-brand) { font-size: 17px; }
+  .workspace-design :is(.studio-brand small, .epra-brand strong) { font-size: 9px; letter-spacing: .02em; }
+  .workspace-design .studio-monogram { width: 30px; height: 36px; }
+  .workspace-design .studio-header .header-actions { gap: 5px; }
+  .workspace-design .studio-header .account-sign-in { font-size: 13px; }
+  .workspace-design .studio-brand > span:last-child { display: block; }
+  .workspace-design .studio-lesson-navigation { padding: 2px 14px; min-height: 44px; gap: 12px; }
+  .workspace-design .studio-lesson-navigation button { font-size: 12px; }
+  .workspace-design .guest-learning-bar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; padding: 6px 16px; }
+  .workspace-design .guest-learning-bar button { font-size: 12px; }
+  .workspace-design .studio-shell .home-view-switch { padding-top: 7px; }
+  .workspace-design .studio-shell .home-view-switch button { font-size: 13px; margin-right: 18px; }
+  .workspace-design .studio-shell :is(.home-page, .course-overview-page) { padding-top: 20px; }
+  .workspace-design .study-home-heading { align-items: start; gap: 10px; margin-bottom: 18px; }
+  .workspace-design .study-home-heading h1 { font-size: 25px; }
+  .workspace-design .study-home-heading .workspace-kicker { display: none; }
+  .workspace-design .workspace-path { font-size: 12px; padding: 6px 8px; }
+  .workspace-design .study-home-desk { grid-template-columns: 1fr; gap: 12px; }
+  .workspace-design .study-resume { padding: 20px; border-radius: 14px; box-shadow: none; }
+  .workspace-design .study-resume h2 { font-size: 22px; line-height: 1.35; }
+  .workspace-design .study-resume-context { margin-top: 15px; font-size: 12px; }
+  .workspace-design .study-resume-heading { gap: 12px; }
+  .workspace-design .study-resume-heading .workspace-segmented { width: 100%; }
+  .workspace-design .study-resume-heading .workspace-segmented button { flex: 1; }
+  .workspace-design .study-resume .workspace-primary { width: 100%; }
+  .workspace-design .study-progress { padding: 12px 0 4px; }
+  .workspace-design .study-progress .progress-panel-number { font-size: 24px; }
+  .workspace-design .study-progress > p { margin-block: 8px; }
+  .workspace-design .study-home-stats { margin-top: 8px; }
+  .workspace-design .study-home-rail { grid-template-columns: 1fr; gap: 24px; margin-top: 20px; }
+  .workspace-design .workspace-section-heading h2 { font-size: 18px; }
+  .workspace-design .study-lesson-row strong { font-size: 15px; }
+  .workspace-design .studio-shell .module-card-grid { grid-template-columns: 1fr; }
+  .workspace-design .studio-shell .module-card { padding: 20px; }
+  .workspace-design .studio-shell .course-welcome { padding-top: 4px; padding-bottom: 28px; gap: 20px; }
+  .workspace-design .studio-shell .course-welcome h1 { font-size: clamp(36px, 9vw, 46px); margin-block: 14px 18px; }
+  .workspace-design .course-welcome-copy > p { font-size: 15px; line-height: 1.65; }
+  .workspace-design .course-welcome-art { display: none; }
+  .workspace-design .course-facts { gap: 9px 14px; margin-block: 20px; }
+  .workspace-design .course-facts > span { font-size: 12px; }
+  .workspace-design .course-welcome .button-row { gap: 8px; margin-bottom: 16px; }
+  .workspace-design .course-outline-link { font-size: 14px; min-height: 44px; }
+  .workspace-design .course-save-invitation { padding: 18px; }
+  .workspace-design .course-section-links { gap: 18px; overflow-x: auto; }
+  .workspace-design .course-section-links a { white-space: nowrap; font-size: 13px; }
+  .workspace-design .course-outcomes { padding-block: 28px; }
+  .workspace-design .lesson-canvas { padding: 14px 16px 48px; }
+  .workspace-design .lesson-topline { position: absolute; top: 6px; right: 12px; min-height: 44px; }
+  .workspace-design .lesson-topline .breadcrumbs { display: none; }
+  .workspace-design .lesson-title-block { margin: 0 0 16px; }
+  .workspace-design .lesson-title-block h1 { font-size: 22px; line-height: 1.3; padding-right: 32px; }
+  .workspace-design .lesson-title-block .lesson-kicker { max-width: calc(100% - 36px); font-size: 11px; }
+  .workspace-design .video-shell { border-radius: 10px; }
+  .workspace-design .lesson-control-row { gap: 10px; }
+  .workspace-design .lesson-control-row button { font-size: 13px; }
+  .workspace-design .lesson-canvas:not(.supp-lesson) .lesson-control-row > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .workspace-design .lesson-control-row :is(.bookmark-button, .auto-next-toggle) { padding-inline: 8px; min-width: 0; justify-content: center; gap: 6px; }
+  .workspace-design .book-shelf { padding: 20px 18px 32px; }
+  .workspace-design .reader-section-nav { padding: 2px 18px; }
+  .workspace-design .reader-section-nav > strong { display: none; }
+  .workspace-design .reader-section-nav > span { margin-left: 0; font-size: 12px; padding-block: 6px; }
+  .workspace-design .book-shelf-grid { gap: 12px; }
+  .workspace-design .book-shelf-card { grid-template-columns: 82px minmax(0, 1fr); gap: 16px; padding: 15px; border-radius: 12px; }
+  .workspace-design .book-jacket { min-height: 148px; padding: 12px 9px; }
+  .workspace-design .book-jacket > strong { font-size: 14px; margin-top: 12px; }
+  .workspace-design .book-shelf-card h3 { font-size: 17px; margin: 7px 0 10px; }
+  .workspace-design .book-shelf-card .reader-primary { font-size: 14px; margin-top: 10px; padding-inline: 10px; }
+  .workspace-design .book-continue { padding: 16px; gap: 12px; margin-bottom: 20px; }
+  .workspace-design .book-continue strong { font-size: 17px; }
+  .workspace-design .book-continue small { font-size: 12px; }
+  .workspace-design .reader-book-heading { padding: 8px 12px; gap: 12px; }
+  .workspace-design .reader-book-heading > button { padding-inline: 6px; font-size: 12px; }
+  .workspace-design .reader-book-heading h3 { font-size: 15px; }
+  .workspace-design .reader-book-heading span { font-size: 11px; }
+  .workspace-design .reader-toolbar { display: flex; padding: 4px 10px; gap: 4px; }
+  .workspace-design .reader-toolbar > button { padding: 8px 9px; min-width: 44px; font-size: 12px; }
+  .workspace-design .reader-toolbar > button span { display: inline; }
+  .workspace-design .reader-tools { font-size: 12px; }
+  .workspace-design .reader-tools summary { gap: 6px; padding-inline: 6px; }
+  .workspace-design .reader-tools[open] { margin-left: 0; flex: 0 0 100%; }
+  .workspace-design .reader-options { gap: 10px; justify-content: space-between; }
+  .workspace-design .reader-toolbar .reader-zoom { margin: 0; }
+  .workspace-design .reader-toolbar .reader-fit { min-width: 68px; }
+  .workspace-design .pdf-canvas-scroll { padding-inline: 6px; }
+  .workspace-design :is(.epra-centre, .epra-reader) { padding-top: 22px; padding-bottom: calc(170px + env(safe-area-inset-bottom)); }
+  .workspace-design .workspace-page-heading { align-items: start; gap: 12px; margin-bottom: 20px; }
+  .workspace-design .workspace-page-heading :is(h1, h2) { font-size: 28px; margin-bottom: 8px; }
+  .workspace-design .workspace-page-heading > div > p:last-child { font-size: 14px; }
+  .workspace-design .epra-centre > .workspace-page-heading .workspace-kicker,
+  .workspace-design .epra-centre > .workspace-page-heading > div > p:last-child { display: none; }
+  .workspace-design .workspace-help { min-height: 44px; padding: 9px 11px; font-size: 12px; gap: 6px; }
+  .workspace-design .workspace-pathways { gap: 8px; margin-bottom: 12px; }
+  .workspace-design .workspace-pathways .epra-path { flex: 1; min-height: 50px; padding: 10px 12px; gap: 9px; }
+  .workspace-design .workspace-pathways .epra-path strong { font-size: 12px; }
+  .workspace-design .workspace-pathways .epra-path-icon { font-size: 16px; }
+  .workspace-design .epra-workspace-heading { margin-bottom: 12px; }
+  .workspace-design .epra-workspace-heading > p { font-size: 12px; line-height: 1.6; }
+  .workspace-design .epra-workspace-heading > p span { padding-inline: 4px; }
+  .workspace-design .epra-toolbar { gap: 12px; padding-bottom: 0; border: 0; }
+  .workspace-design .epra-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; gap: 3px; }
+  .workspace-design .epra-tabs button { min-height: 44px; padding: 8px 3px; justify-content: center; font-size: 12px; letter-spacing: -.02em; }
+  .workspace-design .epra-tabs button > svg,
+  .workspace-design .practice-tab-full { display: none; }
+  .workspace-design .practice-tab-compact { display: inline; }
+  .workspace-design .epra-search input { font-size: 16px; }
+  .workspace-design .epra-mode-note { font-size: 13px; margin: 14px 0 18px; }
+  .workspace-design .epra-collection-grid { grid-template-columns: 1fr; gap: 12px; }
+  .workspace-design .epra-collection { padding: 18px; }
+  .workspace-design .epra-collection h3 { margin: 12px 0 8px; font-size: 19px; }
+  .workspace-design .epra-collection p { font-size: 13px; margin-bottom: 16px; }
+  .workspace-design .epra-card-bottom { font-size: 12px; padding-top: 13px; }
+  .workspace-design .epra-reader-top { flex-wrap: wrap; gap: 4px 14px; padding-bottom: 10px; }
+  .workspace-design .epra-reader-top > span { order: 3; flex: 0 0 100%; font-size: 12px; }
+  .workspace-design .epra-reader-top > button:last-child { margin-left: auto; }
+  .workspace-design .epra-reader-top .epra-text-button { font-size: 12px !important; }
+  .workspace-design .epra-reader-heading { padding: 16px 0; }
+  .workspace-design .epra-reader-heading h1 { font-size: 24px; }
+  .workspace-design .epra-reader-heading .epra-eyebrow { font-size: 11px; }
+  .workspace-design .epra-reader-heading p { font-size: 12px; }
+  .workspace-design .epra-study-layout { gap: 14px; }
+  .workspace-design .epra-question-card { padding: 20px 18px; border-radius: 12px; }
+  .workspace-design .epra-question-card > h2 { font-size: 23px; }
+  .workspace-design .epra-prose { font-size: 16px; line-height: 1.8; }
+  .workspace-design .epra-prose :is(h2, h3, h4) { font-size: 18px; }
+  .workspace-design .epra-prose table { font-size: 14px; }
+  .workspace-design .epra-prose :is(th, td) { padding: 10px; }
+  .workspace-design .epra-prose .katex-display { padding: 12px 8px; }
+  .workspace-design .epra-reading-dock { padding-top: 8px; }
+  .workspace-design .epra-dock-inner > .epra-button { font-size: 12px !important; }
+}
+@media (min-width: 721px) and (max-width: 1000px) and (max-height: 500px) {
+  .workspace-design .studio-shell .app-header,
+  .workspace-design .epra-page .study-site-header { height: 60px; min-height: 60px; flex-wrap: nowrap; padding: 6px 16px; gap: 14px; }
+  .workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) { order: 0; flex: 1; min-height: 44px; width: auto; }
+  .workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) :is(a, button) { padding: 8px 10px; font-size: 13px; }
+  .workspace-design .studio-brand > span:last-child,
+  .workspace-design .epra-brand > span { display: none; }
+  .workspace-design .studio-header .header-actions { gap: 6px; }
+}
+@media (max-width: 360px) {
+  .workspace-design .studio-brand > span:last-child { display: block; }
+  .workspace-design .studio-brand strong { font-size: 15px; }
+  .workspace-design .studio-brand small { font-size: 8px; }
+  .workspace-design .studio-monogram { width: 25px; }
+  .workspace-design .studio-brand { gap: 6px; }
+  .workspace-design .study-home-heading { flex-wrap: wrap; }
+  .workspace-design .workspace-page-heading { flex-wrap: wrap; }
+  .workspace-design .workspace-page-heading .workspace-help { padding-block: 7px; }
+  .workspace-design .workspace-pathways .epra-path { padding-inline: 10px; gap: 6px; }
+  .workspace-design .workspace-pathways .epra-path > svg { width: 14px; }
+  .workspace-design .reader-toolbar > button { padding-inline: 7px; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .workspace-design :is(.study-lesson-row, .study-library-link, .book-continue):hover { color: var(--text-accent); }
+  .workspace-design :is(.studio-navigation, .epra-page .study-site-header nav) :is(a, button):hover { background: var(--surface-soft); color: var(--text-accent); }
+  .workspace-design .epra-collection:hover { border-color: var(--surface-selected-border); transform: none; }
+}
+@media print {
+  .workspace-design :is(.workspace-help, .reader-tools) { display: none; }
+}

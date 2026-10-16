@@ -74,7 +74,7 @@ try {
  const marksDownload=page.waitForEvent('download'); await btn('Download my working').click();
  assert.match(await readFile(await (await marksDownload).path(),'utf8'),/Self-assessed part marks: 3\/3/);
  await btn('Practice centre').click();
- await page.getByRole('button',{name:/C1 YOUR LICENCE PATHWAY/}).click();
+ await page.getByRole('button',{name:/C1 Extended study/}).click();
  await page.locator('.epra-collection').click();
  await btn('Practise without a timer').click();
  assert.equal(await page.locator('.epra-mcq').count(),20);

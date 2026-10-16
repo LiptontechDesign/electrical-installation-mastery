@@ -1,13 +1,26 @@
-import { getBook, type BookId } from './books-data';
+import { courseBooks, getBook, type BookId, type CourseBook } from './books-data';
 
 export type PageBookmark = { page: number; note: string; updatedAt: string };
 export type BookProgress = { page: number; updatedAt: string; bookmarks: PageBookmark[] };
 export type ReaderState = { version: 1; books: Partial<Record<BookId, BookProgress>> };
+export type BookSelection = { id: BookId; page: number };
 export type ReaderCommand = { bookId: BookId; page: number } & (
   | { action: 'position' }
   | { action: 'bookmark'; saved: boolean; note?: string }
 );
 export const emptyReaderState = (): ReaderState => ({ version: 1, books: {} });
+
+export function latestReading(state: ReaderState) {
+  let latest: { book: CourseBook; page: number } | undefined;
+  let latestTime = -Infinity;
+  for (const book of courseBooks) {
+    const progress = state.books?.[book.id];
+    if (!progress || !Number.isInteger(progress.page) || progress.page < 1 || progress.page > book.pages) continue;
+    const time = Date.parse(progress.updatedAt);
+    if (time > latestTime) { latest = { book, page: progress.page }; latestTime = time; }
+  }
+  return latest;
+}
 
 export function parseReaderCommand(value: unknown): ReaderCommand | null {
   if (!value || typeof value !== 'object') return null;

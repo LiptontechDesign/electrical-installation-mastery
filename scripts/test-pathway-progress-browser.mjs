@@ -105,7 +105,7 @@ try {
     await dialog.waitFor({ state: 'hidden' });
     await check(page, 'C1', 2, 2);
     await closeMap(page);
-    const home = page.locator('.studio-navigation').getByRole('button', { name: 'My learning', exact: true });
+    const home = page.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true });
     if (await home.isVisible()) await home.click(); else await page.locator('.mobile-navigation').getByRole('button', { name: 'Home', exact: true }).click();
     await page.locator('.learning-progress-panel').waitFor();
     assert.equal(await page.locator('.progress-panel-heading > span').textContent(), 'C1 PROGRESS');
@@ -133,7 +133,7 @@ try {
   supplementaryOnly.archivedLessonIds = published.allRows.filter(row => row.kind === 'core').map(row => row.id);
   supplementaryOnly.videos = supplementaryOnly.videos.map(video => ({ ...video, archived: video.id !== bundledId }));
   const f = await fixture({ state: supplementaryOnly, learner });
-  await f.page.locator('.studio-navigation').getByRole('button', { name: 'My learning', exact: true }).click();
+  await f.page.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   assert.ok((await f.page.locator('.resume-label').textContent()).includes('8:46'), 'The supplementary Home resume card shows duration');
   await f.context.close();
   const additions = await fixture({ state, learner }), page = additions.page;
