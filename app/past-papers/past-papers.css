@@ -65,6 +65,10 @@
 .workspace-design .past-paper-diagram a { display: inline-flex; align-items: center; gap: 5px; color: var(--text-accent); }
 .workspace-design .past-paper-empty { padding: 48px 24px; text-align: center; color: var(--muted); border: 1px solid var(--line); border-radius: 12px; }
 .workspace-design .past-paper-empty button { background: var(--surface-selected); color: var(--surface-selected-text); padding: 12px 16px; border-radius: 8px; min-height: 44px; }
+.workspace-design .paper-question-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 24px; margin-top: 28px; border-top: 1px solid var(--line); }
+.workspace-design .paper-question-footer button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 14px; border-radius: 9px; background: var(--surface-soft); color: var(--ink); font-size: 14px; }
+.workspace-design .paper-question-footer button:last-child:not(:disabled) { background: var(--solid-accent); color: var(--text-on-inverse); }
+.workspace-design .paper-question-footer > span { color: var(--muted); font-size: 12px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 @media (max-width: 1000px) {
   .workspace-design .past-paper-workspace { grid-template-columns: 220px minmax(0, 1fr); gap: 18px; }
   .workspace-design .past-paper-browser { top: 132px; }
@@ -98,13 +102,15 @@
   .workspace-design .past-paper-prompt .epra-prose { font-size: 16px; }
   .workspace-design .past-paper-working { margin-block: 18px; padding-inline: 12px; }
   .workspace-design .past-paper-reveal { width: 100%; }
+  .workspace-design .paper-question-footer { gap: 8px; }
+  .workspace-design .paper-question-footer button { font-size: 12px; padding-inline: 10px; gap: 5px; }
 }
 @media (max-width: 360px) {
   .workspace-design .paper-page-actions { flex-wrap: wrap; }
   .workspace-design .past-paper-question { padding: 16px; }
 }
 @media print {
-  .workspace-design :is(.epra-site-header, .workspace-page-heading, .paper-page-actions, .paper-filter-disclosure, .past-paper-mode, .past-paper-browser, .past-paper-stepper button, .past-paper-working, .past-paper-reveal) { display: none; }
+  .workspace-design :is(.epra-site-header, .workspace-page-heading, .paper-page-actions, .paper-filter-disclosure, .past-paper-mode, .past-paper-browser, .past-paper-stepper button, .past-paper-working, .past-paper-reveal, .paper-question-footer) { display: none; }
   .workspace-design .past-paper-centre { padding: 0; }
   .workspace-design .past-paper-workspace { display: block; }
   .workspace-design .past-paper-question { border: 0; padding: 0; }

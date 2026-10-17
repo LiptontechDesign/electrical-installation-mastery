@@ -10,7 +10,7 @@ await build({
     builder.onResolve({ filter: /^react-dom$/ }, () => ({ path: 'react-dom', namespace: 'portal-stub' }));
     builder.onLoad({ filter: /.*/, namespace: 'portal-stub' }, () => ({ contents: 'export const createPortal = children => children;', loader: 'js', resolveDir: process.cwd() }));
     builder.onResolve({ filter: /^next\/(script|dynamic|image|link)$/ }, args => ({ path: args.path, namespace: 'stub' }));
-    builder.onLoad({ filter: /.*/, namespace: 'stub' }, args => ({ contents: args.path === 'next/link' ? 'import {createElement} from \"react\"; export default ({children,...props}) => createElement(\"a\",props,children)' : args.path === 'next/dynamic' ? 'export default () => () => null' : 'export default () => null', loader: 'js', resolveDir: process.cwd() }));
+    builder.onLoad({ filter: /.*/, namespace: 'stub' }, args => ({ contents: args.path === 'next/link' ? 'export const useLinkStatus=()=>({pending:false}); import {createElement} from \"react\"; export default ({children,...props}) => createElement(\"a\",props,children)' : args.path === 'next/dynamic' ? 'export default () => () => null' : 'export default () => null', loader: 'js', resolveDir: process.cwd() }));
   } }],
 });
 const { App, CourseAccountProvider, CourseOrderProvider, SupplementaryProvider, useSupplementary, defaultOrder, initialLearnerState } = await import('../work/guest-tests/app.mjs');

@@ -11,19 +11,19 @@ await build({
   bundle:true, platform:'node', format:'esm', packages:'external', jsx:'automatic',
   plugins:[{name:'non-navigation-ui',setup(b){
     b.onResolve({filter:/^next\/(script|dynamic|image|link)$/},args=>({path:args.path,namespace:'stub'}));
-    b.onLoad({filter:/.*/,namespace:'stub'},args=>({contents:args.path==='next/link'?'import {createElement} from \"react\"; export default ({children,...props}) => createElement(\"a\",props,children)':args.path==='next/dynamic'?'export default () => () => null':'export default () => null',loader:'js',resolveDir:process.cwd()}));
+    b.onLoad({filter:/.*/,namespace:'stub'},args=>({contents:args.path==='next/link'?'export const useLinkStatus=()=>({pending:false}); import {createElement} from \"react\"; export default ({children,...props}) => createElement(\"a\",props,children)':args.path==='next/dynamic'?'export default () => () => null':'export default () => null',loader:'js',resolveDir:process.cwd()}));
   }}],
 });
 const {default:App}=await import('../work/navigation-tests/app.mjs');
 globalThis.IS_REACT_ACT_ENVIRONMENT=true;
 let saved=null, tree, narrowViewport=false;
 const timers=new Map(); let timerId=0;
-globalThis.document={hidden:false,fullscreenElement:null,addEventListener(){},removeEventListener(){},querySelector(){return null;}};
+globalThis.document={hidden:false,fullscreenElement:null,addEventListener(){},removeEventListener(){},querySelector(){return null;},getElementById(){return null;}};
 globalThis.window={
   location:{hash:'',origin:'http://localhost:3000'},
   localStorage:{getItem:key=>key==='electrical-mastery-progress-v1'?saved:null,setItem:(_,value)=>{saved=value;}},
   history:{replaceState:(_,__,hash)=>{window.location.hash=hash;}},
-  scrollTo(){},addEventListener(){},removeEventListener(){},
+  scrollTo(){},requestAnimationFrame(fn){fn();return 1;},addEventListener(){},removeEventListener(){},
   setTimeout(fn,delay){const id=++timerId;if((delay??0)<=600)timers.set(id,fn);return id;},
   clearTimeout(id){timers.delete(id);},setInterval(){return 1;},clearInterval(){},
   matchMedia:query=>({matches:narrowViewport&&query.includes('max-width: 1180px')}),
@@ -48,6 +48,16 @@ assert.equal(window.location.hash,'#books','Books keeps in-app navigation');
 await click(mobileControls().find(node=>text(node)==='Home'));
 assert.equal(mobileControls().find(node=>text(node)==='Home').props['aria-current'],'page');
 assert.deepEqual(state(),beforeMobileNavigation,'Switching mobile destinations does not change progress or notes');
+await click(button('About this course'));
+assert.equal(tree.root.findAllByProps({role:'tab'}).find(node=>text(node)==='About this course').props['aria-selected'],true);
+await click(mobileControls().find(node=>text(node)==='Home'));
+assert.ok(tree.root.findAllByType('h1').some(node=>text(node).includes('Welcome back')),'Home returns to the personal study workspace from About');
+await click(mobileControls().find(node=>text(node)==='Learn'));
+const beforeReselect = state();
+await click(mobileControls().find(node=>text(node)==='Learn'));
+assert.deepEqual(state(),beforeReselect,'Reselecting Learn preserves the active lesson and learning records');
+await click(mobileControls().find(node=>text(node)==='Home'));
+
 assert.equal(button('Browse freely'),undefined,'No mode toggle is needed');
 const modules=()=>tree.root.findAllByType('button').filter(node=>node.props.className==='module-card');
 await click(modules().at(-1));

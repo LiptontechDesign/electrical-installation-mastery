@@ -52,7 +52,7 @@ try {
  await page.setViewportSize({width:390,height:844}); await noOverflow();
  await page.screenshot({path:'work/practice-experience/context-mobile.png',fullPage:true});
  await btn('Practice centre').click();
- await btn('Mock exams').click();
+ await page.getByRole('tab', { name: 'Mock exams', exact: true }).click();
  await page.locator('.epra-collection').click();
  await btn('Start timed exam').click();
  await page.getByRole('timer').waitFor();

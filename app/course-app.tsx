@@ -40,6 +40,7 @@ import type { CourseUser } from './server/auth';
 import SiteSearch from './site-search';
 import PastPaperLinks from './past-paper-links';
 import StudyNavigationLink from './study-navigation-link';
+import StudyTabs from './study-tabs';
 import MobileNavigation from './mobile-navigation';
 import type { BookSelection } from './reader-state';
 
@@ -666,17 +667,26 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   };
 
   const navigate = (nextView: View) => {
+    const changed = nextView !== view || (nextView === 'home' && showOverview);
+    if (nextView === 'home') setShowOverview(false);
+    if (!changed) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      return;
+    }
     if (nextView === 'books') setBookSelection(null);
-    supplementary?.clearSelection();
+    setModuleDrawerOpen(false);
     if (nextView !== 'learn') {
       cancelAutoNext(false);
       setAutoPlayLessonId(null);
 
     }
     setView(nextView);
-    const suffix = nextView === 'learn' ? `/${learner.activeLessonId}` : '';
+    const suffix = nextView === 'learn' ? `/${supplementaryId ?? learner.activeLessonId}` : '';
     window.history.replaceState(null, '', `#${nextView}${suffix}`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      document.getElementById('main-content')?.focus({ preventScroll: true });
+    });
   };
 
   const loadLesson = (lessonId: string) => {
@@ -873,14 +883,15 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
             <AccountControl onSettings={() => setSettingsOpen(true)}/>
           </div>
         </header>
-        {view === 'learn' && <div className="studio-lesson-navigation"><button type="button" onClick={moduleDrawerOpen ? closeCourseMap : openCourseMap} aria-expanded={moduleDrawerOpen} aria-label={moduleDrawerOpen ? 'Close course map' : 'Open course map'}><Menu size={17}/> Course content</button><span>{selectedModule.title}</span><button type="button" onClick={() => { setShowOverview(true); navigate('home'); }}>Course overview <ArrowRight size={15}/></button></div>}
+        {view === 'learn' && <div className="studio-lesson-navigation"><button type="button" onClick={moduleDrawerOpen ? closeCourseMap : openCourseMap} aria-expanded={moduleDrawerOpen} aria-label={moduleDrawerOpen ? 'Close course map' : 'Open course map'}><Menu size={17}/> Course content</button><span>{selectedModule.title}</span><button type="button" onClick={() => { navigate('home'); setShowOverview(true); }}>Course overview <ArrowRight size={15}/></button></div>}
 
-        <main id="main-content" className="app-content">
+        <main id="main-content" className="app-content" tabIndex={-1}>
           {!user && view !== 'home' && <div className="guest-learning-bar"><span>Guest mode <span>· Progress is not saved</span></span><button onClick={requestSignIn}>Sign in to save your learning <ArrowRight size={15}/></button></div>}
-          {user && view === 'home' && <div className="home-view-switch"><button aria-pressed={!showOverview} onClick={() => setShowOverview(false)}>My learning</button><button aria-pressed={showOverview} onClick={() => setShowOverview(true)}>About this course</button></div>}
+          {user && view === 'home' && <StudyTabs id="home-view" label="Home view" className="home-view-switch" value={showOverview ? 'about' : 'learning'} items={[{ id: 'learning', label: 'My learning' }, { id: 'about', label: 'About this course' }]} onChange={value => setShowOverview(value === 'about')}/>}
           {(storageBlocked || saveError) && <div className="storage-warning" role="alert"><strong>{storageBlocked ? 'The unreadable browser copy is being preserved.' : 'Your latest changes could not be synced to your account.'}</strong><p>Download a backup of this session and retry when your connection is available.</p><button type="button" onClick={exportProgress}>Download this session</button></div>}
-          {view === 'home' && (!user || showOverview) && <CourseOverview onLesson={openCourseVideo} onBooks={() => navigate('books')}/>}
-          {view === 'home' && user && !showOverview && (
+          {view === 'home' && <div id="home-view-panel" role={user ? 'tabpanel' : undefined} aria-labelledby={user ? `home-view-${showOverview ? 'about' : 'learning'}` : undefined} tabIndex={user ? 0 : undefined}>
+          {(!user || showOverview) && <CourseOverview onLesson={openCourseVideo} onBooks={() => navigate('books')}/>}
+          {user && !showOverview && (
             <div className="page home-page">
               <LearningHome user={user} learner={learner} path={mapPath} progress={pathwayProgress} overallProgress={courseProgress} watchedRows={watchedRows} weekMinutes={weekMinutes} ready={hydrated} onLesson={openCourseVideo} onBooks={selection => { navigate('books'); if (selection) setBookSelection(selection); }}/>
               <section className="home-course">
@@ -898,6 +909,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
               </section>
             </div>
           )}
+          </div>}
           {view === 'learn' && (
             <CourseWatchView collapsed={courseMapCollapsed} title={allCourseRows[selectedRowIndex]?.title ?? activeLesson.title} previous={previousRow ? { title: previousRow.title, select: () => playCourseRow(previousRow) } : undefined} next={nextRow ? { title: nextRow.title, select: () => playCourseRow(nextRow) } : undefined}>
               <CourseDragProvider organizing={organizing} onLocate={moduleId => { setMapPath(course.modules.find(m => m.id === moduleId)!.path); setOpenModuleId(moduleId); }}><aside ref={courseDrawerRef} className={`course-map ${moduleDrawerOpen ? 'drawer-open' : ''}`} role={moduleDrawerOpen?'dialog':undefined} aria-modal={moduleDrawerOpen?true:undefined} aria-label="Course modules">
@@ -967,7 +979,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   {autoNextPanel}
                 </div>
                 <div className="lesson-control-row">
-                  <div><button className={`bookmark-button ${bookmarked.has(activeLesson.id) ? 'active' : ''}`} type="button" onClick={toggleBookmark}><Bookmark size={18} fill={bookmarked.has(activeLesson.id) ? 'currentColor' : 'none'} /> {bookmarked.has(activeLesson.id) ? 'Saved' : 'Save lesson'}</button><button className={`auto-next-toggle ${learner.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={18} /> Auto-next <span>{learner.autoNextEnabled ? 'On' : 'Off'}</span></button></div>
+                  <div><button className={`bookmark-button ${bookmarked.has(activeLesson.id) ? 'active' : ''}`} type="button" aria-pressed={bookmarked.has(activeLesson.id)} onClick={toggleBookmark}><Bookmark size={18} fill={bookmarked.has(activeLesson.id) ? 'currentColor' : 'none'} /> {bookmarked.has(activeLesson.id) ? 'Saved' : 'Save lesson'}</button><button className={`auto-next-toggle ${learner.autoNextEnabled ? 'active' : ''}`} type="button" role="switch" aria-checked={learner.autoNextEnabled} onClick={toggleAutoNextPreference}><SkipForward size={18} /> Auto-next <span>{learner.autoNextEnabled ? 'On' : 'Off'}</span></button></div>
                   <button className={completed.has(activeLesson.id) ? 'complete-button completed' : 'complete-button'} type="button" aria-pressed={completed.has(activeLesson.id)} onClick={toggleComplete}>{completed.has(activeLesson.id) ? <Check size={19} /> : <Circle size={19} />}{completed.has(activeLesson.id) ? 'Watched · Undo' : 'Mark video watched'}</button>
                 </div>
                 <VideoStudyTools key={activeLesson.videoId} videoId={activeLesson.videoId} getPlayer={() => playerBindingRef.current?.player ?? null}/>

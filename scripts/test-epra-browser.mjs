@@ -64,7 +64,7 @@ try {
   await button('Download my working').click();
   assert.match((await downloadEvent).suggestedFilename(), /my-working\.md$/);
   await button('Practice centre').click();
-  await button('Mock exams').click();
+  await page.getByRole('tab', { name: 'Mock exams', exact: true }).click();
   await page.locator('.epra-collection').click();
   await page.getByRole('heading', { name: 'Your practice exam starts here.' }).waitFor();
   // The production timer reads wall-clock time; advance that clock without replacing browser timers.
@@ -94,11 +94,11 @@ try {
   assert.ok(await page.locator('.epra-outline a').evaluateAll(links => links.every(link => document.getElementById(link.hash.slice(1)))), 'Every answer contents link has a stable heading target');
   assert.equal(await page.locator('.katex-error').count(), 0);
   await button('Practice centre').click();
-  await button('Recall quizzes').click();
+  await page.getByRole('tab', { name: 'Recall quizzes', exact: true }).click();
   await page.locator('.epra-collection').click();
   assert.equal(await page.getByRole('navigation', { name: 'Questions', exact: true }).getByRole('button').count(), 110);
   await button('Practice centre').click();
-  await button('Topic practice').click();
+  await page.getByRole('tab', { name: 'Topic practice', exact: true }).click();
   await page.setViewportSize({ width: 390, height: 844 });
   await noOverflow();
   await page.screenshot({ path: 'artifacts/browser-verification/practice-mobile.png', fullPage: true });

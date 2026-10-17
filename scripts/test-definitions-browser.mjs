@@ -9,7 +9,7 @@ page.on('pageerror', error => errors.push(error.message));
 
 try {
   await page.goto(`${base}/practice`, { waitUntil: 'networkidle' });
-  await page.getByRole('button', { name: 'Definitions', exact: true }).click();
+  await page.getByRole('tab', { name: 'Definitions', exact: true }).click();
   assert.equal(await page.locator('.epra-definition-row').count(), 138);
   assert.equal(await page.locator('.epra-definition-group').count(), 6);
   assert.equal(await page.locator('.epra-definition-group[open]').count(), 0, 'Learning areas start compact');
@@ -44,19 +44,19 @@ try {
   await search.fill('');
   await page.getByLabel('Learning area').selectOption('Earthing, bonding and shock protection');
   assert.ok(await page.locator('.epra-definition-row').count() < 138);
-  await page.getByRole('button', { name: 'Topic practice' }).click();
+  await page.getByRole('tab', { name: 'Topic practice' }).click();
   assert.equal(await page.locator('.epra-collection').count(), 7);
   const topicSearch = page.getByRole('textbox', { name: 'Search topic questions' });
   await topicSearch.fill('RCD');
   assert.ok(await page.locator('.epra-definition-result').count() > 0, 'Definitions are surfaced outside the Definitions tab');
   await page.locator('.epra-definition-result').filter({ hasText: 'Residual current device (RCD)' }).first().click();
-  assert.equal(await page.getByRole('button', { name: 'Definitions', exact: true }).getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.getByRole('tab', { name: 'Definitions', exact: true }).getAttribute('aria-selected'), 'true');
   assert.match(await page.getByRole('region', { name: 'Residual current device (RCD) definition' }).textContent(), /RCCB = residual-current protection/);
 
   await page.goto(`${base}/practice?definition=definition-50`, { waitUntil: 'networkidle' });
   assert.match(await page.getByRole('region', { name: 'Circuit protective conductor (cpc) definition' }).textContent(), /CPC — circuit protective conductor/);
 
-  await page.getByRole('button', { name: 'Definitions', exact: true }).click();
+  await page.getByRole('tab', { name: 'Definitions', exact: true }).click();
   await page.setViewportSize({ width: 390, height: 844 });
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), 'Mobile viewport has no horizontal overflow');
   assert.deepEqual(await page.evaluate(() => ({ local: localStorage.length, session: sessionStorage.length })), { local: 0, session: 0 });

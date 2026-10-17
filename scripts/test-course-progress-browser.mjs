@@ -54,7 +54,7 @@ async function checkHomeAndOverview(page, watched, total, groupWatched = watched
   const home = page.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true });
   if (await home.isVisible()) await home.click();
   else await page.locator('.mobile-navigation').getByRole('button', { name: 'Home', exact: true }).click();
-  await page.locator('.home-view-switch').getByRole('button', { name: 'My learning', exact: true }).click();
+  await page.locator('.home-view-switch').getByRole('tab', { name: 'My learning', exact: true }).click();
   await waitText(page, '.learning-progress-panel .overall-progress strong', watched + '/' + total);
   assert.equal(await page.locator('.learning-progress-panel .overall-progress b').textContent(), percent(watched, total) + '%');
   const card = page.locator('.module-card').filter({ has: page.getByRole('heading', { name: moduleTitle, exact: true }) });
@@ -63,7 +63,7 @@ async function checkHomeAndOverview(page, watched, total, groupWatched = watched
   assert.equal(await dialog.locator('.settings-summary > div:first-child b').textContent(), String(watched));
   assert.equal(await dialog.locator('.settings-summary > div:nth-child(2) b').textContent(), percent(watched, total) + '%');
   await dialog.getByRole('button', { name: 'Close settings', exact: true }).click();
-  await page.locator('.home-view-switch').getByRole('button', { name: 'About this course', exact: true }).click();
+  await page.locator('.home-view-switch').getByRole('tab', { name: 'About this course', exact: true }).click();
   await page.locator('.course-facts').getByText(total + ' videos', { exact: true }).waitFor();
   const moduleDetails = page.locator('.curriculum-modules details').filter({ has: page.locator('summary strong', { hasText: moduleTitle }) });
   assert.ok((await moduleDetails.locator('summary small').textContent()).startsWith(groupTotal + ' videos'));
@@ -181,7 +181,7 @@ try {
   assert.ok(backup.supplementaryProgress.includes(seed.added[0].videoId));
   await dialog.getByRole('button', { name: /Reset learning progress/ }).click();
   await dialog.getByRole('button', { name: 'Reset account progress', exact: true }).click();
-  await page.locator('.home-view-switch').getByRole('button', { name: 'My learning', exact: true }).click();
+  await page.locator('.home-view-switch').getByRole('tab', { name: 'My learning', exact: true }).click();
   await waitText(page, '.progress-panel-number', '0%');
   await page.waitForTimeout(650);
   assert.deepEqual(f.supplementaryProgress(), [], 'Reset syncs an empty supplementary watched record');
@@ -246,7 +246,7 @@ try {
   await op.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   await waitText(op, '.progress-panel-number', '50%');
   assert.ok((await op.locator('.resume-bottom').textContent()).includes('1 of 2 videos watched'));
-  await op.locator('.home-view-switch').getByRole('button', { name: 'About this course', exact: true }).click();
+  await op.locator('.home-view-switch').getByRole('tab', { name: 'About this course', exact: true }).click();
   await op.getByRole('button', { name: 'Start learning', exact: true }).click();
   await op.locator('.supp-lesson h1').waitFor();
   await permanentlyDelete(op, seed.added[0].id);
@@ -256,9 +256,9 @@ try {
   await op.locator('.module-accordion.open > button').click();
   await op.getByRole('button', { name: 'Add video', exact: true }).waitFor();
   await op.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
-  await op.locator('.home-view-switch').getByRole('button', { name: 'My learning', exact: true }).click();
+  await op.locator('.home-view-switch').getByRole('tab', { name: 'My learning', exact: true }).click();
   await op.getByRole('heading', { name: 'No active videos', exact: true }).waitFor();
-  await op.locator('.home-view-switch').getByRole('button', { name: 'About this course', exact: true }).click();
+  await op.locator('.home-view-switch').getByRole('tab', { name: 'About this course', exact: true }).click();
   assert.equal(await op.getByRole('button', { name: 'Start learning', exact: true }).isDisabled(), true);
   assert.equal(await op.locator('.course-progress-chip').getAttribute('aria-label'), 'C2 progress: 0 of 0 videos watched, 0%');
   assert.deepEqual(only.errors, []);

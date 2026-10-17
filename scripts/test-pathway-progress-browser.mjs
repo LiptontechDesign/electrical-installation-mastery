@@ -111,7 +111,7 @@ try {
     assert.equal(await page.locator('.progress-panel-heading > span').textContent(), 'C1 PROGRESS');
     assert.equal(await page.locator('.progress-panel-number').textContent(), '100%');
     assert.equal(await page.locator('.learning-progress-panel .overall-progress strong').textContent(), '3/6');
-    await page.locator('.home-view-switch').getByRole('button', { name: 'About this course', exact: true }).click();
+    await page.locator('.home-view-switch').getByRole('tab', { name: 'About this course', exact: true }).click();
     await page.getByRole('button', { name: 'Expand all', exact: true }).click();
     const overviewVideo = page.locator('.curriculum-lessons > button').filter({ hasText: state.videos.find(video => video.id === bundledId).title });
     assert.equal(await overviewVideo.locator(':scope > small').textContent(), '8:46');
