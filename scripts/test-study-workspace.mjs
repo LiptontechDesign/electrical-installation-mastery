@@ -6,14 +6,14 @@ import { act, create } from 'react-test-renderer';
 
 await mkdir('work/study-workspace-tests', { recursive: true });
 await build({
-  stdin: { contents: "export { default as Papers } from './app/past-papers/past-paper-centre'; export { default as Practice } from './app/practice/study-centre'; export { default as StudyTabs } from './app/study-tabs'; export { default as Home } from './app/learning-home'; export { homeContinueDestination } from './app/course-ui-model'; export { initialLearnerState } from './app/learner-state'; export { personalCourseSnapshot, publishedPersonalCourse } from './app/personal-course-model';", resolveDir: process.cwd(), loader: 'tsx' },
+  stdin: { contents: "export { default as StudyPageHeader } from './app/study-page-header'; export { default as Papers } from './app/past-papers/past-paper-centre'; export { default as Practice } from './app/practice/study-centre'; export { default as StudyTabs } from './app/study-tabs'; export { default as Home } from './app/learning-home'; export { homeContinueDestination } from './app/course-ui-model'; export { initialLearnerState } from './app/learner-state'; export { personalCourseSnapshot, publishedPersonalCourse } from './app/personal-course-model';", resolveDir: process.cwd(), loader: 'tsx' },
   outfile: 'work/study-workspace-tests/home.mjs', bundle: true, platform: 'node', format: 'esm', packages: 'external', jsx: 'automatic',
   plugins: [{ name: 'view-dependencies', setup(builder) {
     builder.onResolve({ filter: /^next\/(script|dynamic|image|link)$/ }, args => ({ path: args.path, namespace: 'view-stub' }));
     builder.onLoad({ filter: /.*/, namespace: 'view-stub' }, args => ({ contents: args.path === 'next/link' ? 'export const useLinkStatus=()=>({pending:false}); import {createElement} from "react"; export default ({children,...props}) => createElement("a",props,children)' : args.path === 'next/dynamic' ? 'export default () => () => null' : 'export default () => null', loader: 'js', resolveDir: process.cwd() }));
   } }],
 });
-const { Papers, Practice, StudyTabs, Home, homeContinueDestination, initialLearnerState, personalCourseSnapshot, publishedPersonalCourse } = await import('../work/study-workspace-tests/home.mjs');
+const { StudyPageHeader, Papers, Practice, StudyTabs, Home, homeContinueDestination, initialLearnerState, personalCourseSnapshot, publishedPersonalCourse } = await import('../work/study-workspace-tests/home.mjs');
 const rows = [{ id: 'personal-video' }, { id: 'core-video' }, { id: 'optional-video' }];
 assert.equal(homeContinueDestination(rows, new Set(), 'core-video').id, 'core-video', 'Unfinished current work is preferred');
 assert.equal(homeContinueDestination(rows, new Set(['core-video']), 'core-video').id, 'personal-video', 'A watched current lesson does not hide the next unwatched video');
@@ -88,11 +88,37 @@ globalThis.cancelAnimationFrame=window.cancelAnimationFrame;
 const flushFrames=()=>{while(frames.length)frames.shift()();};
 const pressButton=async label=>{await act(async()=>{tree.root.findAllByType('button').find(node=>text(node).trim()===label).props.onClick();});flushFrames();};
 const paperDialog={open:false,showModal(){this.open=true;},close(){this.open=false;},querySelector(){return null;}};
+for (const path of ['C2','C1']) {
+  await act(async()=>{tree=create(h(StudyPageHeader,{active:path}));});
+  const currentPapersLinks=tree.root.findAllByType('a').filter(node=>text(node)==='Papers'&&node.props['aria-current']==='page');
+  assert.equal(currentPapersLinks.length,2);
+  assert.ok(currentPapersLinks.every(node=>node.props.href==='#past-paper-main'),'Retapping Papers preserves the question URL and open working on desktop and mobile');
+  await act(async()=>tree.unmount());
+}
 await act(async()=>{tree=create(h(Papers,{path:'C2'}),{createNodeMock:element=>element.type==='dialog'?paperDialog:{focus(){focusEvents.push(element.props['aria-label']??element.type);},scrollIntoView(){}}});});
+const paperWorking=()=>tree.root.findByProps({'aria-label':'Your answer and working'});
+const workingEditor=()=>tree.root.findByProps({id:'paper-working-editor'});
+assert.equal(workingEditor().props.hidden,true,'Study starts with the explanation rather than an open writing area');
+await pressButton('Your working');
+assert.equal(workingEditor().props.hidden,false,'Study working opens only when requested');
+assert.equal(focusEvents.at(-1),'Your answer and working','Opening working puts focus in the editor');
+await act(async()=>paperWorking().props.onChange({target:{value:'Study draft'}}));
+await act(async()=>tree.root.findByProps({className:'paper-working-toggle'}).props.onClick());
+assert.equal(workingEditor().props.hidden,true);
+assert.equal(paperWorking().props.value,'Study draft','Closing the optional editor retains its draft');
 const browse=()=>tree.root.findByProps({className:'paper-mobile-navigator'});
 await act(async()=>browse().props.onClick());
 assert.equal(paperDialog.open,true,'Browse opens a native modal rather than moving the question down');
 assert.equal(browse().props['aria-expanded'],true);
+const dialog=()=>tree.root.findByType('dialog');
+await act(async()=>dialog().findByProps({'aria-label':'Search past-paper questions and answers'}).props.onChange({target:{value:'no-matching-study-question'}}));
+assert.equal(tree.root.findAllByType('article').length,0,'Question-browser search handles an empty result without discarding working');
+await act(async()=>dialog().findAllByType('button').find(node=>text(node)==='Clear filters').props.onClick());
+assert.equal(tree.root.findAllByType('article').length,1);
+await act(async()=>dialog().findByProps({'aria-label':'Topic'}).props.onChange({target:{value:'Electrical principles'}}));
+assert.match(text(tree.root.findByProps({className:'paper-active-filter'})),/1 matching questionClear filters/);
+await act(async()=>dialog().findAllByType('button').find(node=>text(node)==='Clear filters').props.onClick());
+assert.equal(paperWorking().props.value,'Study draft','Searching and clearing filters restores the existing draft');
 const sheetControls=[0,1].map(id=>({id,getClientRects:()=>[{}],focus(){document.activeElement=this;}}));
 const sheetKey=shiftKey=>tree.root.findByType('dialog').props.onKeyDown({key:'Tab',shiftKey,currentTarget:{querySelectorAll:()=>sheetControls},preventDefault(){}});
 document.activeElement=sheetControls[0]; sheetKey(true);
@@ -104,9 +130,10 @@ assert.equal(paperDialog.open,false,'Escape/cancel closes the question browser')
 assert.equal(tree.root.findByProps({role:'tabpanel'}).props['aria-labelledby'],'paper-study-mode-study');
 await pressButton('Attempt first');
 assert.equal(tree.root.findAllByProps({'aria-label':'Worked answer'}).length,0);
+assert.equal(workingEditor().props.hidden,false,'Attempt first opens working before the answer');
+assert.equal(paperWorking().props.value,'Study draft','Mode switching preserves working');
 await pressButton('Show worked answer');
 assert.equal(focusEvents.at(-1),'Worked answer','Revealing a Papers answer moves focus to its beginning');
-const paperWorking=()=>tree.root.findByProps({'aria-label':'Your answer and working'});
 await act(async()=>paperWorking().props.onChange({target:{value:'Existing calculation'}}));
 await act(async()=>tree.root.findByProps({'aria-label':'Continue to next question'}).props.onClick());flushFrames();
 assert.equal(tree.root.findAllByProps({'aria-label':'Worked answer'}).length,0,'Next retains Attempt first and hides the new answer');
