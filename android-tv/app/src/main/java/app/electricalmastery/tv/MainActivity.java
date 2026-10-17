@@ -14,6 +14,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.CookieManager;
+import android.webkit.JsResult;
 import android.webkit.URLUtil;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -41,6 +42,7 @@ public final class MainActivity extends Activity {
     private boolean connectionDialog;
 
     private boolean trusted(String url) {
+        if (url == null) return false;
         Uri uri = Uri.parse(url);
         return "https".equals(uri.getScheme()) && "electrical-installation-mastery.vercel.app".equals(uri.getHost())
             && (uri.getPort() == -1 || uri.getPort() == 443);
@@ -91,7 +93,7 @@ public final class MainActivity extends Activity {
             }
             @Override public void onPageFinished(WebView view, String url) {
                 CookieManager.getInstance().flush();
-                if (trusted(url)) view.evaluateJavascript("if(!window.electricalTvBack){document.querySelector('button,a[href]')?.focus()}", null);
+                if (trusted(url)) view.evaluateJavascript("if(!window.electricalTvBack){document.querySelector('main button:not(:disabled),main a[href],button:not(:disabled),a[href]:not(.skip-link)')?.focus()}", null);
             }
             @Override public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 if (!request.isForMainFrame() || connectionDialog) return;
@@ -104,6 +106,17 @@ public final class MainActivity extends Activity {
             }
         });
         web.setWebChromeClient(new WebChromeClient() {
+            @Override public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
+                if (!trusted(url)) return false;
+                new AlertDialog.Builder(MainActivity.this).setTitle("Leave this page?").setMessage(message)
+                    .setPositiveButton("Leave", (dialog, which) -> result.confirm())
+                    .setNegativeButton("Stay", (dialog, which) -> result.cancel())
+                    .setOnCancelListener(dialog -> result.cancel()).show();
+                return true;
+            }
+            @Override public boolean onJsBeforeUnload(WebView view, String url, String message, JsResult result) {
+                return onJsConfirm(view, url, message, result);
+            }
             @Override public void onShowCustomView(View view, CustomViewCallback callback) {
                 if (fullscreen != null) { callback.onCustomViewHidden(); return; }
                 fullscreen = view; fullscreenCallback = callback;
@@ -139,7 +152,7 @@ public final class MainActivity extends Activity {
                     String cookies = CookieManager.getInstance().getCookie(url);
                     if (cookies != null) request.addRequestHeader("Cookie", cookies);
                     request.addRequestHeader("User-Agent", agent);
-                    request.setDestinationInExternalFilesDir(this, Environment.DIRECTORY_DOWNLOADS, name);
+                    request.setDestinationUri(Uri.fromFile(downloadFile(name)));
                     ((DownloadManager) getSystemService(DOWNLOAD_SERVICE)).enqueue(request);
                     Toast.makeText(this, "Downloading to Electrical Mastery’s Downloads: " + name, Toast.LENGTH_LONG).show();
                 } catch (Exception ignored) { Toast.makeText(this, "Download unavailable. Try the website on your phone.", Toast.LENGTH_LONG).show(); }
@@ -156,12 +169,20 @@ public final class MainActivity extends Activity {
     }
 
     private void saveWorking(String name, String text) {
-        File directory = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
-        if (directory == null) directory = getFilesDir();
-        try (FileOutputStream out = new FileOutputStream(new File(directory, name))) {
+        try (FileOutputStream out = new FileOutputStream(downloadFile(name))) {
             out.write(text.getBytes(StandardCharsets.UTF_8));
             Toast.makeText(this, "Saved to Electrical Mastery’s Downloads: " + name, Toast.LENGTH_LONG).show();
         } catch (Exception ignored) { Toast.makeText(this, "Could not save working. Check available storage.", Toast.LENGTH_LONG).show(); }
+    }
+
+    private File downloadFile(String name) {
+        File directory = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+        if (directory == null) directory = getFilesDir();
+        File target = new File(directory, name);
+        int dot = name.lastIndexOf('.'), suffix = 2;
+        String stem = dot > 0 ? name.substring(0, dot) : name, extension = dot > 0 ? name.substring(dot) : "";
+        while (target.exists()) target = new File(directory, stem + "_" + suffix++ + extension);
+        return target;
     }
 
     private void closeFullscreen() {
