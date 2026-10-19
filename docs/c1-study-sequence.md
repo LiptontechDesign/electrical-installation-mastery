@@ -1,10 +1,10 @@
 # C1 self-study video sequence
 
-Follow the sections in order. Key C2 foundations now appear directly in C1. The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
+Follow the sections in order. C1 has its own Module 1–16 numbering. It builds on the C2 foundations, with selected reminders included. See the [current route and EPRA mapping](c1-focused-modules.md). The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
 
-86 sections · 145 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md).
+85 sections · 144 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md).
 
-## Module 10: AC Foundations, Three-Phase Supply and Neutral Behaviour
+## C1 Module 1: AC and Three-Phase Foundations
 
 ### 1. AC generation, sine waves, frequency and period
 
@@ -50,7 +50,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Three Phase Mystery Solved, No Neutral Required in a Balanced Load?](https://www.youtube.com/watch?v=WZ4GG4GuSfQ) — Joe Robinson Training; Core lesson.
 - [The Easiest Most Accurate Way to Calculate Three Phase Neutral Current in an Unbalanced Load](https://www.youtube.com/watch?v=ExHJGSJSE6o) — Joe Robinson Training; Core lesson.
 
-## Module 11: AC Power, Generators, Transformers and Measurements
+## C1 Module 2: AC Power and Calculations
 
 ### 1. Reactance: frequency, inductance and capacitance
 
@@ -81,22 +81,9 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Questions from Viewers: AC Theory, How to Calculate Power Factor and Draw a Power Triangle to Scale](https://www.youtube.com/watch?v=qBJvgN8nCqw) — Joe Robinson Training; Core lesson.
 - [Power in a Balanced Three-Phase Circuit](https://www.youtube.com/watch?v=bSjh8AakqXM) — Michel van Biezen; Optional derivation.
 
-### 6. Find three phase power factor and line current
+## C1 Module 3: Generator Principles and Controls
 
-- [Three-Phase Motor Power Factor — Worked Example](https://www.youtube.com/watch?v=T2eO6hOT-EA) — Michel van Biezen; Core worked example.
-
-  Use electrical input kW and apparent power in VA; efficiency is a separate ratio.
-- [Find the Line Current Needed for a Three-Phase Motor](https://www.youtube.com/watch?v=TPsHULaNc7s) — Michel van Biezen; Core worked example.
-
-  25 kW is input power; 31.25 kVA is apparent power.
-
-### 7. Convert motor shaft output into input power and supply current
-
-- [Motor Output, Efficiency, Power Factor and Three-Phase Line Current](https://www.youtube.com/watch?v=Jx3Pk_5O-PM) — Aaron Dahlen; Core lesson.
-
-  Electrical input = Pshaft/η; apparent power = electrical input/PF.
-
-### 8. Generator sets: purpose, operation, controls and power limits
+### 1. Generator sets: purpose, operation, controls and power limits
 
 - [Meet a Generator Set: Engine, Alternator and Electrical Output](https://www.youtube.com/watch?v=aeUhT7wuNpI) — saVRee; Core foundation.
 
@@ -108,32 +95,43 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Both engine kW and alternator kVA limits apply. Reactive power exchanges energy; it is not wasted power, although reactive current contributes to winding losses.
 
-### 9. Transformer operation, turns, voltage and current ratios
+### 2. Further study: governor droop and excitation hardware
+
+- [Generator Governors: Droop and Isochronous Speed Control](https://www.youtube.com/watch?v=DKSkcspz4E4) — WellandTV; Optional control detail.
+
+  The 1500 rpm example assumes a four-pole, 50 Hz alternator.
+- [Generator Voltage Control: Excitation, AVR and Brushless Systems](https://www.youtube.com/watch?v=7MvjbC4f5Aw) — International Engineering Training; Optional control detail.
+
+## C1 Module 4: Transformers
+
+### 1. Transformer operation, turns, voltage and current ratios
 
 - [Transformer Operation: Changing Flux, Windings and Core](https://www.youtube.com/watch?v=UchitHGF4n8) — The Engineering Mindset; Core foundation.
 - [Transformer Turns, Voltage and Current: Worked Calculations](https://www.youtube.com/watch?v=jzOQFtW02uc) — Craig's Class - Level 3 Electrical Principles; Core lesson.
 
-### 10. Transformer EMF, peak flux and flux density
+### 2. Transformer EMF, peak flux and flux density
 
 - [Derive the Transformer EMF Equation: E = 4.44 f N Φ](https://www.youtube.com/watch?v=BqetOHEhAGE) — Ekeeda; Core lesson.
 
   The 4.44 factor assumes sinusoidal flux; Φ is peak flux in webers.
 - [Calculate Transformer Turns, Maximum Flux and Flux Density](https://www.youtube.com/watch?v=Jwz2rhI6cbM) — Ekeeda; Core lesson.
 
-### 11. Transformer losses, fractional loading and maximum efficiency
+### 3. Transformer losses, fractional loading and maximum efficiency
 
 - [Transformer Losses and the Condition for Maximum Efficiency](https://www.youtube.com/watch?v=GgckE4H5AJE) — Ekeeda; Core lesson.
 
   Assumes fixed voltage, frequency and power factor.
 - [Transformer Efficiency at Full Load and the Best Load Point](https://www.youtube.com/watch?v=LNgf2nojsqc) — Ekeeda; Core lesson.
 
-### 12. Current-transformer ratios and secondary precautions
+## C1 Module 5: Electrical Measurements
+
+### 1. Current-transformer ratios and secondary precautions
 
 - [Current Transformers: Ratios, Meter Readings and Shorting Precautions](https://www.youtube.com/watch?v=RHuu7QQhw2o) — Zack Hartle; Core lesson.
 
   Never open a CT secondary while primary current flows.
 
-### 13. Wattmeter operation and three-phase power measurement
+### 2. Wattmeter operation and three-phase power measurement
 
 - [Wattmeters and Balanced Loads: Measurement Principles Before Examples](https://www.youtube.com/watch?v=bVjmy2vBj-0) — Jim Pytel; Core lesson.
 
@@ -142,7 +140,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   The two-wattmeter method shown applies to three-wire systems.
 
-### 14. Digital power analysers: configure channels and interpret total power
+### 3. Digital power analysers: configure channels and interpret total power
 
 - [Configure a Three-Phase Power Analyser and Verify Its Channels](https://www.youtube.com/watch?v=1JhOXUrjpsI) — Advanced Test Equipment Corp. (ATEC); Core demonstration.
 
@@ -151,24 +149,51 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Two measuring elements give total real power on a three-wire system; their readings are not individual phase powers.
 
-### 15. Wheatstone bridge: comparative resistance measurement
+### 4. Wheatstone bridge: comparative resistance measurement
 
 - [Wheatstone Bridge: Null Balance and Unknown Resistance](https://www.youtube.com/watch?v=TFMRbx9mARU) — Physics Online; Core lesson.
 
-### 16. Further study: governor droop and excitation hardware
-
-- [Generator Governors: Droop and Isochronous Speed Control](https://www.youtube.com/watch?v=DKSkcspz4E4) — WellandTV; Optional control detail.
-
-  The 1500 rpm example assumes a four-pole, 50 Hz alternator.
-- [Generator Voltage Control: Excitation, AVR and Brushless Systems](https://www.youtube.com/watch?v=7MvjbC4f5Aw) — International Engineering Training; Optional control detail.
-
-### 17. Optional historical revision: Lorenz absolute-resistance apparatus
+### 5. Optional historical revision: Lorenz absolute-resistance apparatus
 
 - [Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration](https://www.youtube.com/watch?v=9ILTHNLSsG0) — nickm2001; Optional historical demonstration.
 
   Historical apparatus overview; focus on absolute versus comparative resistance measurement.
 
-## Module 12: Three-Phase Distribution: Boards and Outlets
+## C1 Module 6: Power-Factor Correction
+
+### 1. Why poor power factor increases supply current
+
+- [Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)](https://www.youtube.com/watch?v=NIrKOVZrqnU) — The Engineering Mindset; Core lesson.
+
+### 2. Find the kVAr needed to reach a target power factor
+
+- [Correct a Building’s Power Factor to a Chosen Target](https://www.youtube.com/watch?v=Tv_7XWf96gg) — The Engineering Mindset; Core foundation.
+
+  Use electrical input kW; convert shaft output through efficiency first.
+
+### 3. Size a three phase capacitor bank in kVAr and microfarads
+
+- [Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank](https://www.youtube.com/watch?v=q5xjqXcCqNw) — Dieter Monkey; Core lesson.
+
+  This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
+- [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
+
+### 4. Synchronous condensers: another source of reactive-power compensation
+
+- [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
+
+### 5. Further study: complex numbers and conjugates for AC calculations
+
+- [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
+- [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
+
+  Mathematical i is the same imaginary unit written j in electrical engineering.
+
+### 6. Further study: complex power and combined-load correction
+
+- [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
+
+## C1 Module 7: Three-Phase Distribution
 
 ### 1. Safe isolation, board layout and phase identification
 
@@ -181,11 +206,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Connections in a 3 Phase Plug and Socket Explained](https://www.youtube.com/watch?v=-9irkJ94xg0) — GSH Electrical; Applied practical.
 - [Industrial Plugs and Sockets: IP, IK and Duty Selection](https://www.youtube.com/watch?v=PNWdC47daYM) — eFIXX; Applied practical.
 
-### 3. Medium-voltage switchgear: metal-clad and metal-enclosed
-
-- [Compare Metal-Clad and Metal-Enclosed Switchgear Compartments](https://www.youtube.com/watch?v=R8n9fiHcPYM) — SGB-SMIT USA; Core lesson.
-
-## Module 13: Three-Phase Load, Cable and Protection Design
+## C1 Module 8: Load Assessment and Cable Design
 
 ### 1. Read the design brief, plan circuit routes and establish cable lengths
 
@@ -228,7 +249,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 - [Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial](https://www.youtube.com/watch?v=XGMUpguNzao) — Elegant Power Solutions; Optional extension.
 
-## Module 14: Fault Protection and Three-Phase Board Installation
+## C1 Module 9: Earthing and Fault Protection
 
 ### 1. Earthing arrangements, protective bonding and RCD operation
 
@@ -261,63 +282,25 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
   Model demonstration; a complete system also includes bonding and coordinated surge protection.
 - [Transient Surges and How SPDs Limit Voltage](https://www.youtube.com/watch?v=7en_Rc14c2g) — eFIXX; Core foundation.
 
-### 7. Submain installation: SWA terminations and switch-fuse connections
-
-- [Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)](https://www.youtube.com/watch?v=zSw0mVzcQ4A) — GSH Electrical; Applied practical.
-
-### 8. Three-phase board assembly, terminations and workmanship
-
-- [SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION](https://www.youtube.com/watch?v=_nba6f8ClgM) — eFIXX; Applied practical.
-- [THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES](https://www.youtube.com/watch?v=MNy60muYklo) — eFIXX; Applied practical.
-- [Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell](https://www.youtube.com/watch?v=c6YyObUS4Mk) — GSH Electrical; Deep practice.
-
-### 9. Further study: lightning protection and bonding in data centres
+### 7. Further study: lightning protection and bonding in data centres
 
 - [Lightning Protection: Air Terminals, Down Conductors, Earthing and Bonding](https://www.youtube.com/watch?v=eti2tGM0YnU) — DEHN Inc.; Optional specialist application.
 
   Principles and specialist examples; this is not a lightning-system installation procedure.
 
-## Module 15: Power Factor Causes, Correction and Capacitor Sizing
+## C1 Module 10: Submains and Board Installation
 
-### 1. Why poor power factor increases supply current
+### 1. Submain installation: SWA terminations and switch-fuse connections
 
-- [Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)](https://www.youtube.com/watch?v=NIrKOVZrqnU) — The Engineering Mindset; Core lesson.
+- [Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)](https://www.youtube.com/watch?v=zSw0mVzcQ4A) — GSH Electrical; Applied practical.
 
-### 2. Find the kVAr needed to reach a target power factor
+### 2. Three-phase board assembly, terminations and workmanship
 
-- [Correct a Building’s Power Factor to a Chosen Target](https://www.youtube.com/watch?v=Tv_7XWf96gg) — The Engineering Mindset; Core foundation.
+- [SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION](https://www.youtube.com/watch?v=_nba6f8ClgM) — eFIXX; Applied practical.
+- [THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES](https://www.youtube.com/watch?v=MNy60muYklo) — eFIXX; Applied practical.
+- [Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell](https://www.youtube.com/watch?v=c6YyObUS4Mk) — GSH Electrical; Deep practice.
 
-  Use electrical input kW; convert shaft output through efficiency first.
-
-### 3. Size a three phase capacitor bank in kVAr and microfarads
-
-- [Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank](https://www.youtube.com/watch?v=q5xjqXcCqNw) — Dieter Monkey; Core lesson.
-
-  This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
-- [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
-
-### 4. Choose compensation location, switching and automatic steps
-
-- [5 Types of Power Factor Correction — Capacitor Bank Locations](https://www.youtube.com/watch?v=oaIRQ1Xm7OQ) — The Electrical Guy; Core application.
-
-  Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs.
-
-### 5. Synchronous condensers: another source of reactive-power compensation
-
-- [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
-
-### 6. Further study: complex numbers and conjugates for AC calculations
-
-- [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
-- [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
-
-  Mathematical i is the same imaginary unit written j in electrical engineering.
-
-### 7. Further study: complex power and combined-load correction
-
-- [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
-
-## Module 16: Induction, Single-Phase, DC and Precision Motors
+## C1 Module 11: Motor Principles and Connections
 
 ### 1. How the rotating field and induction motor produce torque
 
@@ -327,23 +310,38 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 - [How to read a Motor Nameplate (IEC standard)](https://www.youtube.com/watch?v=XbL0R_9KLD4) — ElectricalEngineeringPlanet; Core lesson.
 
-### 3. Synchronous speed, percentage slip and rotor frequency
+### 3. Find three phase power factor and line current
+
+- [Three-Phase Motor Power Factor — Worked Example](https://www.youtube.com/watch?v=T2eO6hOT-EA) — Michel van Biezen; Core worked example.
+
+  Use electrical input kW and apparent power in VA; efficiency is a separate ratio.
+- [Find the Line Current Needed for a Three-Phase Motor](https://www.youtube.com/watch?v=TPsHULaNc7s) — Michel van Biezen; Core worked example.
+
+  25 kW is input power; 31.25 kVA is apparent power.
+
+### 4. Convert motor shaft output into input power and supply current
+
+- [Motor Output, Efficiency, Power Factor and Three-Phase Line Current](https://www.youtube.com/watch?v=Jx3Pk_5O-PM) — Aaron Dahlen; Core lesson.
+
+  Electrical input = Pshaft/η; apparent power = electrical input/PF.
+
+### 5. Synchronous speed, percentage slip and rotor frequency
 
 - [Induction-Motor Speed, Slip and Rotor Frequency: Six Worked Examples](https://www.youtube.com/watch?v=H0SaAq7sMN0) — Gargi Basu; Core lesson.
 
-### 4. Torque–speed curves: starting, normal running and load changes
+### 6. Torque–speed curves: starting, normal running and load changes
 
 - [Induction-Motor Torque and Speed: From the Rotating Field to the Load Curve](https://www.youtube.com/watch?v=8T53wEGiBKE) — BSE PolyU; Core lesson.
 
   The final NEMA classifications are US examples; the torque–speed principles apply generally.
 
-### 5. Identify six winding ends and select star or delta links
+### 7. Identify six winding ends and select star or delta links
 
 - [How to Connect Motor Windings in Star and Delta](https://www.youtube.com/watch?v=p2hDLMeFJqs) — The Electrical Guy; Core demonstration.
 
   On 400 V: 230/400 V Δ/Y → star; 400/690 V Δ/Y → delta.
 
-### 6. Single-phase starting windings, capacitors and reversal
+### 8. Single-phase starting windings, capacitors and reversal
 
 - [Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal](https://www.youtube.com/watch?v=bytt0ZCJwRk) — LEARN ELECTRICS; Core lesson.
 
@@ -352,25 +350,25 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Isolate and prove capacitors discharged before touching terminals.
 
-### 7. DC motor force, commutation and direction reversal
+### 9. DC motor force, commutation and direction reversal
 
 - [DC Motors: Magnetic Force, Brushes and Commutation](https://www.youtube.com/watch?v=GQatiB-JHdI) — The Engineering Mindset; Core lesson.
 - [Reverse a Wound-Field DC Motor: Armature or Field Connections](https://www.youtube.com/watch?v=GYuBVM_GyOw) — Chinmay Deshpande; Core lesson.
 
-### 8. Stepper positioning and servo feedback
+### 10. Further study: stepper positioning and servo feedback
 
-- [Stepper Motors: Winding Sequences, Steps and Position](https://www.youtube.com/watch?v=09Mpkjcr0bo) — The Engineering Mindset; Core lesson.
-- [Servo Motors: Command, Error and Position Feedback](https://www.youtube.com/watch?v=ditS0a28Sko) — RealPars; Core lesson.
+- [Stepper Motors: Winding Sequences, Steps and Position](https://www.youtube.com/watch?v=09Mpkjcr0bo) — The Engineering Mindset; Optional further study.
+- [Servo Motors: Command, Error and Position Feedback](https://www.youtube.com/watch?v=ditS0a28Sko) — RealPars; Optional further study.
 
   Removing power does not stop a rotating load instantly.
 
-### 9. Further study: torque–slip analysis and operating-point stability
+### 11. Further study: torque–slip analysis and operating-point stability
 
 - [Torque–Slip Curve: Load Changes, Stable Operation and Stalling](https://www.youtube.com/watch?v=zssTcEBkzh0) — NPTEL IIT Kharagpur; Optional advanced analysis.
 
   Illustrative torque ratios are not motor ratings; use manufacturer limits.
 
-## Module 17: Motor Starters, Protection and Speed Control
+## C1 Module 12: Motor Starting, Protection and Speed Control
 
 ### 1. Contactors, control coils and the complete DOL starter
 
@@ -404,7 +402,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 - [Autotransformer Starting: Tap Voltage, Line Current and Torque](https://www.youtube.com/watch?v=iHFTVBWLOAg) — Zack Hartle; Core lesson.
 
-  Ratios refer to full-voltage starting values; follow manufacturer overload settings.
+  A tapped common winding is introduced before the starter circuits. Canadian 600 V and code examples explain the principle; use local supply values, manufacturer coordination and applicable BS 7671/EPRA requirements for selection. An autotransformer provides no galvanic isolation; reduced starting current does not by itself justify smaller conductors.
 
 ### 7. Soft starters: limit starting current without continuous speed control
 
@@ -418,13 +416,19 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 - [Four-Quadrant Drives: Motoring, Braking and Regeneration](https://www.youtube.com/watch?v=IAnMVYOYHxg) — KEB America; Core lesson.
 
-### 10. Optional review: phase monitoring and protective contact placement
+### 10. Power-factor correction around motors and drives
+
+- [5 Types of Power Factor Correction — Capacitor Bank Locations](https://www.youtube.com/watch?v=oaIRQ1Xm7OQ) — The Electrical Guy; Core application.
+
+  Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs.
+
+### 11. Optional review: phase monitoring and protective contact placement
 
 - [Phase-Failure Relay with a DOL Starter](https://www.youtube.com/watch?v=-OCfG8inGSY) — The Electrical Guy; Optional circuit critique.
 
   Protection can be bypassed while Start is held; do not copy this circuit.
 
-## Module 18: Three-Phase Initial Verification and Periodic Inspection
+## C1 Module 13: Initial Verification and Commissioning
 
 ### 1. Verification order, protective continuity and dead-test polarity
 
@@ -469,7 +473,9 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
 - [Interpret Ring-Circuit Test Results: Expected Values, Spurs and Wrong Links](https://www.youtube.com/watch?v=niuVdopqlcs) — LEARN ELECTRICS; Core worked application.
 
-### 8. Periodic inspection: scope, observations and condition reporting
+## C1 Module 14: Periodic Inspection
+
+### 1. Periodic inspection: scope, observations and condition reporting
 
 - [Periodic Inspection: Scope, Limitations, Observations and Reporting](https://www.youtube.com/watch?v=SAlr4fM3Jzg) — ECA - Electrotechnical & Engineering Services Body; Core application.
 
@@ -478,7 +484,9 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Optional domestic EICR refresher; use the preceding lessons for three-phase commissioning.
 
-### 9. Standby generators: site, connections, earthing and operation
+## C1 Module 15: Standby Generators: Connections and Operation
+
+### 1. Standby generators: site, connections, earthing and operation
 
 - [Plan a Generator Installation: Air, Exhaust, Access, Cables and Fuel](https://www.youtube.com/watch?v=uexkXQ_I7iE) — Shenton Group — Mark Porter; Core application.
 
@@ -496,7 +504,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Trace mains and generator feeds → ATS → consumer unit → load; distinguish control/charging from output power. This is a functional demonstration, not a wiring or commissioning procedure. Do not copy the indoor engine location. Reapply the earlier verification lessons in both supply modes.
 
-## Module 19: Three-Phase and Motor Fault Diagnosis
+## C1 Module 16: Fault Diagnosis
 
 ### 1. Diagnose supply imbalance, lost neutral and installation faults
 

@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 const json = path => JSON.parse(readFileSync(new URL(path, import.meta.url), 'utf8'));
 export const c2StageOrder = json('./fixtures/c2-stage-order.json');
 const professionalStageOrder = json('./fixtures/professional-stage-order.json');
+const professionalScopeAdditions = json('../app/c1-module-update.json').professionalScopeAdditions;
 export const earthElectrodeAdditions = json('./fixtures/earth-electrode-additions.json');
 export const jpelectricAdditions = json('./fixtures/jpelectric-additions.json');
 export const surgeProtectionAdditions = json('./fixtures/surge-protection-additions.json');
@@ -29,7 +30,7 @@ export function assertC2Reorganization(course) {
   }
   const approvedOrder = { ...c2StageOrder, ...professionalStageOrder };
   const expected = baseline.filter(module => module.path !== 'C1').map(module => ({ ...module, lessons: approvedOrder[module.id]
-    ? approvedOrder[module.id].flatMap(section => section.lessonIds).map(id => source.get(id)) : module.lessons }));
+    ? [...approvedOrder[module.id].flatMap(section => section.lessonIds), ...(professionalScopeAdditions[module.id] ?? [])].map(id => source.get(id)) : module.lessons }));
   const actual = course.modules.filter(module => module.path !== 'C1').map(module => ({ id: module.id, path: module.path,
     lessons: module.lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })) }));
   assert.deepEqual(actual, expected, 'Preserve the reviewed C2 and Professional topic order');

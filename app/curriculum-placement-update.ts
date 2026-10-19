@@ -9,7 +9,9 @@ import c1ApplicationUpdate from './c1-application-update.json';
 import c1GeneratorUpdate from './c1-generator-update.json';
 
 export const reviewedPlacementRevision = 3;
-export const curriculumRevision = 12;
+// Revision 13 assigns existing stable sections to focused subject modules.
+// Their saved row groups need no relocation or reordering migration.
+export const curriculumRevision = 13;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));

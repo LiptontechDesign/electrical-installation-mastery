@@ -175,7 +175,7 @@ function LocationDetails({ sectionId }: { sectionId: string }) {
   const editor = useCourseOrder();
   const section = learningSections.find(item => item.id === sectionId)!;
   const courseModule = editor.course.modules.find(item => item.id === section.moduleId)!;
-  return <span className="editor-location-details"><span>Pathway: {courseModule.path === 'Professional' ? 'Advanced' : courseModule.path}</span><strong>Module {String(courseModule.number).padStart(2, '0')} — {courseModule.title}</strong><span>Section {String(section.number).padStart(2, '0')} — {section.title}</span></span>;
+  return <span className="editor-location-details"><span>Pathway: {courseModule.path === 'Professional' ? 'Advanced' : courseModule.path}</span><strong>Module {String(courseModule.stageNumber).padStart(2, '0')} — {courseModule.title}</strong><span>Section {String(section.number).padStart(2, '0')} — {section.title}</span></span>;
 }
 
 function PlacementPicker({ value, onChange, excluded, movingTitle }: { value: Placement; onChange: (value: Placement) => void; excluded: string[]; movingTitle: string }) {

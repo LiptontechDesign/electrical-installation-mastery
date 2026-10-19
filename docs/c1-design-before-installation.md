@@ -1,5 +1,7 @@
 # C1: complete design and protection checks before board installation
 
+Historical change record: the current C1 module positions and independent Module 1–16 numbering are documented in [the revision-13 route](c1-focused-modules.md). Earlier module numbers below refer to the layout at the time of this change.
+
 Reviewed 16 October 2026.
 
 The four full submain/board-installation demonstrations formerly appeared in Module 12, before the detailed C1 design and protection teaching. Their two existing sections now follow the core protection checks in Module 14.

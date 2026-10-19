@@ -53,7 +53,7 @@ export function courseMapSnapshot(order: CourseOrder, input: SupplementaryVideo[
   const label = (id: string) => {
     const section = sections.find(s => s.id === id)!;
     const courseModule = course.modules.find(m => m.id === section.moduleId)!;
-    return `Module ${String(courseModule.number).padStart(2, '0')} · Section ${section.number} · ${section.title}`;
+    return `${courseModule.path === 'Professional' ? 'Advanced' : courseModule.path} · Module ${String(courseModule.stageNumber).padStart(2, '0')} · Section ${section.number} · ${section.title}`;
   };
   return { order, videos, sections, rows, byId, label };
 }

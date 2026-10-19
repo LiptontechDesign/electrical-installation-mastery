@@ -10,15 +10,15 @@ const catalog=read('app/video-catalog.json'),sections=read('app/learning-section
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 const upgraded=parse(prior),view=snapshot(upgraded),order=view.allRows.map(r=>r.id);
 assert.equal(prior.curriculumRevision,11);assert.equal(Object.values(prior.groups).flat().length,471,'Fixture is the actual published pre-generator course');
-assert.equal(upgraded.curriculumRevision,12);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
+assert.equal(upgraded.curriculumRevision,13);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every original occurrence survives exactly once');
 for(const [id,ids] of Object.entries(prior.groups))if(!Object.hasOwn(update.previous,id))assert.deepEqual(upgraded.groups[id],ids,'Other saved groups remain unchanged: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids);
-assert.equal(view.allRows.length,478);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,145);assert.equal(sections.length,190);
+assert.equal(view.allRows.length,478);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,144);assert.equal(sections.length,190);
 const before=(a,b)=>assert.ok(order.indexOf(a)>=0&&order.indexOf(a)<order.indexOf(b),a+' must precede '+b);
 for(const [a,b] of [
  ['c1-ac-generation','c1-generator-set-overview'],['p07-l03','c1-generator-set-overview'],['c1-power-triangle-foundation','c1-generator-set-overview'],
- ['c1-motor-input-efficiency','c1-generator-set-overview'],['c1-generator-set-overview','c1-generator-operating-principles'],
+ ['p06-l14','c1-generator-set-overview'],['c1-generator-set-overview','c1-generator-operating-principles'],
  ['c1-generator-operating-principles','c1-generator-power-limits'],['c1-generator-power-limits','c1-generator-governor'],['c1-generator-governor','c1-generator-excitation'],
  ['c1-cable-design','c1-generator-transfer-operation'],['c1-cpc-size-foundation','c1-generator-transfer-operation'],['p07-star-delta','c1-generator-transfer-operation'],
  ['c1-certification-foundation','c1-generator-site-planning'],['p02-l11','c1-generator-site-planning'],['c1-rcd-testing-foundation','c1-generator-site-planning'],

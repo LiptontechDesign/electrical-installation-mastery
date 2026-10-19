@@ -1,5 +1,7 @@
 # C1 gap-fill video selection
 
+Historical change record: the current C1 module positions and independent Module 1–16 numbering are documented in [the revision-13 route](c1-focused-modules.md). Earlier module numbers below refer to the layout at the time of this change.
+
 Reviewed 15 October 2026. Revision 9 adds **33 new YouTube videos and 20 C2 foundation repeats** within the existing ten C1 modules. C1 now has **70 sections and 117 default video rows**. The whole course has 418 catalogue entries, 32 bundled supporting entries and 174 sections. No player, lesson layout, past-paper answer or new learning feature was introduced.
 
 The original C2 and Advanced entries, ordering and metadata remain unchanged. Each C1 repeat has a separate lesson ID, so it can be studied and marked independently. The C2 SPD supporting entry is explicitly retained even though the video now also has a C1 catalogue entry.

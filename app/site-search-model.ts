@@ -7,7 +7,7 @@ export type SearchLesson = { id: string; kind: 'Video lesson' | 'Supplementary v
 export type SearchEntry = Omit<SearchLesson, 'kind'> & { kind: SearchLesson['kind'] | 'Definition'; aliases?: string[] };
 export const publicSearchLessons: SearchLesson[] = course.modules.flatMap(module => module.lessons.map(lesson => ({
   id: lesson.id, kind: 'Video lesson', title: lesson.title,
-  subtitle: `Module ${String(module.number).padStart(2, '0')} · ${module.title} · Lesson ${String(lesson.number).padStart(2, '0')}`,
+  subtitle: `${module.path === 'Professional' ? 'Advanced' : module.path} · Module ${String(module.stageNumber).padStart(2, '0')} · ${module.title} · Lesson ${String(lesson.number).padStart(2, '0')}`,
   searchable: `${lesson.title} ${lesson.topic} ${lesson.instructor} ${module.title}`,
 })));
 

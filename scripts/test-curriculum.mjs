@@ -5,7 +5,7 @@ await build({ entryPoints: ['app/course-curriculum.ts', 'app/learning-sections.t
 const { default: course } = await import('../work/curriculum-tests/course-curriculum.js');
 const { sectionsByModule } = await import('../work/curriculum-tests/learning-sections.js');
 const lessons = course.modules.flatMap(courseModule => courseModule.lessons);
-assert.equal(course.modules.length, 25);
+assert.equal(course.modules.length, 31);
 assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length + surgeProtectionAdditions.length + designLearningAdditions.length + connectedProcessAdditions.length + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length);
 assert.equal(course.lessonCount, lessons.length);
 assert.equal(new Set(lessons.map(lesson => lesson.id)).size, lessons.length);
@@ -38,4 +38,4 @@ assert.deepEqual(course.modules.filter(module => module.path === 'C2').map(modul
   'Systematic Fault Diagnosis',
 ]);
 assert.equal(sectionsByModule['module-05'][3].id, 'module-05-section-4');
-console.log(`PASS: ${lessons.length} lesson entries, 25 modules, approved overview repetitions and complete course-section coverage.`);
+console.log(`PASS: ${lessons.length} lesson entries, 31 modules, approved overview repetitions and complete course-section coverage.`);

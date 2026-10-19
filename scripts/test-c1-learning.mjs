@@ -11,7 +11,7 @@ const sections = read('app/learning-sections.json'), catalog = read('app/video-c
 const newIds = new Set([...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions].map(l=>l.id)), oldIds = Object.values(before.groups).flat();
 const upgraded = parse(before), view = snapshot(upgraded);
 assert.equal(before.curriculumRevision, 6);
-assert.equal(upgraded.curriculumRevision, 12);
+assert.equal(upgraded.curriculumRevision, 13);
 assert.deepEqual(upgraded.groups, base.groups, 'An actual revision-6 saved course receives the exact authored sequence');
 assert.deepEqual(before, original, 'Migration does not mutate the stored snapshot');
 assert.deepEqual(parse(upgraded), upgraded, 'Revision 7 is idempotent');
@@ -32,7 +32,7 @@ personalSeven.itemRevisions['c1-three-phase-ir-sequence'] = 42;
 personalSeven.deletedIds = ['c1-three-phase-ir-practical'];
 personalSeven.archivedLessonIds = ['c1-periodic-reporting'];
 const personalEight = parse(personalSeven);
-assert.equal(personalEight.curriculumRevision, 12);
+assert.equal(personalEight.curriculumRevision, 13);
 assert.equal(personalEight.revision, 42);
 assert.deepEqual(personalEight.groups['c1-testing-section-1'], personalSeven.groups['c1-testing-section-1']);
 assert.ok(personalEight.groups['module-01-section-1'].includes('c1-three-phase-ir-sequence'));
@@ -47,7 +47,8 @@ for (const [sectionId, expected] of Object.entries(update.current)) assert.deepE
 for (const id of Object.keys(update.previous)) assert.ok(Object.hasOwn(upgraded.groups,id),'Historical section/Undo identity survives: '+id);
 for (const [id,ids] of Object.entries(before.groups).filter(([id])=>!Object.hasOwn(update.previous,id))) assert.deepEqual(upgraded.groups[id],ids,'Other pathways remain untouched: '+id);
 assert.equal(sections.filter(s=>Object.hasOwn(update.current,s.id)).length,40);
-assert.equal(view.allRows.filter(r=>catalog.modules.find(m=>m.id===r.moduleId).path==='C1').length,64+c1GapFillAdditions.length+c1FlowAdditions.length+c1ApplicationAdditions.length + c1GeneratorAdditions.length);
+// The medium-voltage switchgear occurrence now belongs to Advanced.
+assert.equal(view.allRows.filter(r=>catalog.modules.find(m=>m.id===r.moduleId).path==='C1').length,64+c1GapFillAdditions.length+c1FlowAdditions.length+c1ApplicationAdditions.length + c1GeneratorAdditions.length-1);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'Published sections are populated, including supporting-only topics');
 assert.equal(view.byId.get('p06-l14').sectionId,'c1-power-triangle');
 assert.equal(view.byId.get('p10-l06').sectionId,'c1-distribution-installation');
@@ -113,4 +114,4 @@ near(125/(.94*.8),166.22,.01);assert.ok(160*.94*.8<125);assert.ok(200*.94*.8>125
 near(.12+1.2*.16,.312,.0001);near(Math.sqrt(1600000)/115,11,.01);
 const voltagePercent=(.9*Ib*40/1000)/400*100+(29*6*20/1000)/Uo*100;near(voltagePercent,2.42,.01);
 const project=readFileSync('public/c1-worked-project.md','utf8');for(const value of ['23.734','18.516','472.18','157.39','101.64','166.22','18.75'])assert.ok(project.includes(value));
-console.log('PASS C1: revision-12 sequence including historical 40-section/64-row core; original identities; C2/Advanced unchanged; saved/legacy upgrades; protected order and descendants; private copies; archives/deletions/Undo; required labels; caption provenance; project arithmetic.');
+console.log('PASS C1: current sequence including historical 40-section/64-row core; original identities; C2 unchanged and approved MV extension in Advanced; saved/legacy upgrades; protected order and descendants; private copies; archives/deletions/Undo; required labels; caption provenance; project arithmetic.');

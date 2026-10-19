@@ -10,14 +10,14 @@ const applications=read('app/c1-application-update.json'), generators=read('app/
 const newIds=new Set(update.addedLessonIds),destinations=new Map(Object.entries(update.current).flatMap(([sectionId,ids])=>ids.map(id=>[id,sectionId])));
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])),c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(prior),view=snapshot(upgraded);
-assert.equal(prior.curriculumRevision,9);assert.equal(upgraded.curriculumRevision, 12);
+assert.equal(prior.curriculumRevision,9);assert.equal(upgraded.curriculumRevision, 13);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-9 published state receives the exact revised sequence');
 assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!applications.addedLessonIds.includes(id)&&!generators.addedLessonIds.includes(id)).sort(),Object.values(prior.groups).flat().sort(),'Every previous occurrence survives once');
 for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(applications.previous,id)&&!Object.hasOwn(generators.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Other groups stay unchanged: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids,'Explicit revised section: '+id);
-assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,145);
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,86);
+assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,144);
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,85);
 assert.equal(update.addedLessonIds.length,14);assert.equal(update.repeats.length,8);
 for(const r of update.repeats){assert.equal(core.get(r.id).videoId,core.get(r.sourceLessonId).videoId);assert.ok(view.byId.has(r.sourceLessonId));}
 const order=view.allRows.filter(r=>c1Modules.has(r.moduleId)).map(r=>r.id);
@@ -34,9 +34,10 @@ for(const [a,b] of [
  ['c1-lightning-strike-path','c1-surge-foundation'],['c1-surge-foundation','c1-lightning-protection-principles']
 ])before(a,b);
 for(const id of [...update.reclassifiedLessonIds,'c1-complex-number-foundation','c1-complex-conjugate-foundation'])assert.equal(required(id),false,id+' is visibly optional depth');
-for(const id of newIds)if(!id.startsWith('c1-complex-'))assert.equal(required(id),true,id+' is required introductory teaching');
+for(const id of newIds)if(!id.startsWith('c1-complex-')&&id!=='c1-switchgear-compartments')assert.equal(required(id),true,id+' is required introductory teaching');
 for(const s of sections.filter(s=>c1Modules.has(s.moduleId)))assert.equal(s.intro,undefined,'No introductory prose added');
-assert.match(sections.find(s=>s.id==='c1-switchgear-construction').title,/Medium-voltage/);
+assert.match(sections.find(s=>s.id==='c1-switchgear-construction').title,/medium-voltage/);
+assert.equal(required('c1-switchgear-compartments'),false,'MV switchgear is explicitly optional advanced scope');
 assert.match(sections.find(s=>s.id==='c1-motor-torque-curves').title,/Torque/);
 assert.match(sections.find(s=>s.id==='c1-testing-outlets').title,/industrial outlets/);
 assert.match(sections.find(s=>s.id==='c1-resistance-measurement').title,/Wheatstone/);

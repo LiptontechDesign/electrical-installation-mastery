@@ -9,16 +9,18 @@ const previous=read('scripts/fixtures/c1-gap-fill-previous.json'), original=stru
 const applications=read('app/c1-application-update.json'), generators=read('app/c1-generator-update.json');
 const ids=new Set(update.addedLessonIds), core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])), c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(previous),view=snapshot(upgraded);
-assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 12);
+assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 13);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-8 published snapshot upgrades to the exact new sequence');
 assert.deepEqual(previous,original,'Stored snapshot is not mutated');
 assert.deepEqual(parse(upgraded),upgraded,'Current normalisation is idempotent');
 for(const [sectionId,old] of Object.entries(previous.groups))assert.deepEqual(upgraded.groups[sectionId].filter(id=>!ids.has(id)),old,'Every old section keeps its relative order: '+sectionId);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!ids.has(id)&&!flow.addedLessonIds.includes(id)&&!applications.addedLessonIds.includes(id)&&!generators.addedLessonIds.includes(id)).sort(),Object.values(previous.groups).flat().sort(),'Every existing occurrence survives exactly once');
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length+generators.sections.length);
-assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length+generators.addedLessonIds.length);
+// One existing MV section/video is now optional Advanced scope.
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length+generators.sections.length-1);
+assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length+generators.addedLessonIds.length-1);
 for(const sectionId of update.sections){
- const s=sections.find(s=>s.id===sectionId);assert.ok(c1Modules.has(s.moduleId));
+ const s=sections.find(s=>s.id===sectionId);
+ if(sectionId==='c1-switchgear-construction')assert.equal(s.moduleId,'professional-cables');else assert.ok(c1Modules.has(s.moduleId));
  assert.equal(s.intro,undefined,'No section-introduction prose');
  assert.deepEqual(upgraded.groups[sectionId],s.lessonIds,'Additions use standard published rows');
 }

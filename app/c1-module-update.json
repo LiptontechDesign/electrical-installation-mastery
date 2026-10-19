@@ -1,0 +1,137 @@
+{
+  "revision": 13,
+  "previousRevision": 12,
+  "date": "2026-10-19",
+  "moduleOrder": [
+    "c1-fundamentals",
+    "c1-power",
+    "c1-generators",
+    "c1-transformers",
+    "c1-measurements",
+    "c1-pfc",
+    "c1-distribution",
+    "c1-design",
+    "c1-earthing",
+    "c1-installation",
+    "c1-motors",
+    "module-07",
+    "c1-testing",
+    "c1-periodic",
+    "c1-standby",
+    "c1-faults"
+  ],
+  "newModuleIds": [
+    "c1-generators",
+    "c1-transformers",
+    "c1-measurements",
+    "c1-installation",
+    "c1-periodic",
+    "c1-standby"
+  ],
+  "sectionMoves": [
+    {
+      "sectionId": "c1-generator-control",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-generators"
+    },
+    {
+      "sectionId": "c1-generator-further-controls",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-generators"
+    },
+    {
+      "sectionId": "c1-transformer-ratios",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-transformers"
+    },
+    {
+      "sectionId": "c1-transformer-emf",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-transformers"
+    },
+    {
+      "sectionId": "c1-transformer-efficiency",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-transformers"
+    },
+    {
+      "sectionId": "c1-ct-metering",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-measurements"
+    },
+    {
+      "sectionId": "c1-wattmeter-measurement",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-measurements"
+    },
+    {
+      "sectionId": "c1-power-analyser",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-measurements"
+    },
+    {
+      "sectionId": "c1-resistance-measurement",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-measurements"
+    },
+    {
+      "sectionId": "c1-historical-resistance",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-measurements"
+    },
+    {
+      "sectionId": "c1-distribution-submains",
+      "fromModuleId": "c1-earthing",
+      "toModuleId": "c1-installation"
+    },
+    {
+      "sectionId": "c1-distribution-installation",
+      "fromModuleId": "c1-earthing",
+      "toModuleId": "c1-installation"
+    },
+    {
+      "sectionId": "c1-power-worked-examples",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-motors"
+    },
+    {
+      "sectionId": "c1-power-motor-efficiency",
+      "fromModuleId": "c1-power",
+      "toModuleId": "c1-motors"
+    },
+    {
+      "sectionId": "c1-pfc-application",
+      "fromModuleId": "c1-pfc",
+      "toModuleId": "module-07"
+    },
+    {
+      "sectionId": "c1-testing-section-2",
+      "fromModuleId": "c1-testing",
+      "toModuleId": "c1-periodic"
+    },
+    {
+      "sectionId": "c1-generator-building-integration",
+      "fromModuleId": "c1-testing",
+      "toModuleId": "c1-standby"
+    },
+    {
+      "sectionId": "c1-switchgear-construction",
+      "fromModuleId": "c1-distribution",
+      "toModuleId": "professional-cables"
+    }
+  ],
+  "reclassifiedLessonIds": [
+    "c1-stepper-motor-principles",
+    "c1-servo-motor-feedback",
+    "c1-switchgear-compartments"
+  ],
+  "professionalScopeAdditions": {
+    "professional-cables": [
+      "c1-switchgear-compartments"
+    ]
+  },
+  "addedLessonIds": [],
+  "preservation": "Whole sections retain their IDs and lesson rows. Saved section groups, custom placements, notes, progress and Undo destinations remain valid; supporting-video module ownership resolves from the section.",
+  "scopeSource": "https://www.epra.go.ke/sites/default/files/2025-06/Written%20%26%20Oral%20Interviews%20Areas%20of%20Competency.pdf",
+  "numbering": "Display stageNumber independently for each pathway; global number remains an internal catalogue ordinal."
+}

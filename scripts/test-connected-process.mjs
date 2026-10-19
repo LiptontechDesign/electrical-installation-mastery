@@ -13,7 +13,7 @@ const newIds = new Set([...connectedProcessAdditions, ...c1LearningAdditions, ..
 const upgraded = parse(before), view = snapshot(upgraded);
 const lessons = new Map(view.course.modules.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
 assert.equal(before.curriculumRevision, 5);
-assert.equal(upgraded.curriculumRevision, 12);
+assert.equal(upgraded.curriculumRevision, 13);
 assert.equal(upgraded.revision, before.revision, 'Reading does not consume a personal edit revision');
 assert.deepEqual(before, original, 'The saved input is unchanged');
 assert.deepEqual(parse(upgraded), upgraded, 'The additive upgrade is idempotent');

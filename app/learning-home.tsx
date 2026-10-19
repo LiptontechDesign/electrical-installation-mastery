@@ -41,7 +41,7 @@ export default function LearningHome({ user, learner, path, progress, overallPro
         <article className="study-resume">
           <div className="study-resume-heading"><span><CirclePlay size={18}/>{watched ? 'Revisit a lesson' : resuming ? 'Pick up where you left off' : 'Your next step'}</span>{recent && recommended && recent.id !== recommended.id && <div className="workspace-segmented" role="group" aria-label="Continue from"><button type="button" aria-pressed={choice === 'next'} onClick={() => setChoice('next')}>{nextLabel}</button><button type="button" aria-pressed={choice === 'recent'} onClick={() => setChoice('recent')}>Last opened</button></div>}</div>
           {active && courseModule ? <>
-            <p className="study-resume-context">{pathwayLabel(courseModule.path)} · Module {String(courseModule.number).padStart(2, '0')} · Video {active.displayNumber}</p>
+            <p className="study-resume-context">{pathwayLabel(courseModule.path)} · Module {String(courseModule.stageNumber).padStart(2, '0')} · Video {active.displayNumber}</p>
             <h2>{active.title}</h2>
             <div className="study-resume-meta"><span><Clock3 size={16}/>{duration(active.id)}</span><span>{watched ? <><Check size={16}/> Watched</> : 'Not watched'}</span></div>
             <button type="button" className="workspace-primary" onClick={() => onLesson(active.id)}><CirclePlay size={19}/>{watched ? 'Replay lesson' : resuming ? 'Resume video' : 'Start lesson'}<ArrowRight size={18}/></button>

@@ -1,6 +1,6 @@
 # C1 generators: foundations, physical equipment and standby supplies
 
-Reviewed 19 October 2026 · curriculum revision 12.
+Reviewed 19 October 2026 · videos selected in revision 12; module positions updated for revision 13. Module numbers below are within C1. See the [sixteen-module route](c1-focused-modules.md).
 
 The old generator section began with droop/isochronous control, then excitation hardware and a power analogy. Those clips assumed the learner already understood a generator set. Revision 12 adds **seven videos**, puts the complete set before its controls, retains the short power recap and makes the two specialist clips optional. The eight core videos total **46 minutes 38 seconds**. This connects the foundation to UK equipment demonstrations; it is **not a complete generator installation and commissioning practical**.
 
@@ -8,20 +8,20 @@ The old generator section began with droop/isochronous control, then excitation 
 
 | Stage | Selected video | Length | Reviewed teaching |
 |---|---|---:|---|
-| Module 11, 1 | [saVRee: Diesel Generators Explained](https://www.youtube.com/watch?v=aeUhT7wuNpI) | 5:13 | Complete set, engine/alternator, normal/emergency use, cooling, energy conversion, rotor and stator. |
-| Module 11, 2 | [Graham Dudgeon / MATLAB: Introduction to Synchronous Generators](https://www.youtube.com/watch?v=gf8Pn2jpJiA) | 9:24 | Field/stator output, poles/speed/frequency, loading before controls, governor and AVR responses. No MATLAB programming or machine construction exercise. |
-| Module 11, 3 | [WellandTV: kW, kVAR and kVA](https://www.youtube.com/watch?v=Lc-u37_gfIg) | 1:23 | Recap of engine and alternator limits, after the complete explanation. |
-| Module 18, 1 | [Shenton Group: Installing Backup Generators in Plant Rooms](https://www.youtube.com/watch?v=uexkXQ_I7iE) | 4:10 | Airflow, exhaust, noise, access, cable route/distance and fuel access. Planning explanation. |
-| Module 18, 2 | [John Ward: Generator Earthing Types — TN-S or IT?](https://www.youtube.com/watch?v=mzCGE5wnWos) | 14:57 | Isolated versus referenced output; metallic fault path versus reference electrode; three-phase L1/L2/L3/N/PE diagrams. |
-| Module 18, 3 | [Blades Power Generation: Motorized Changeover Switch](https://www.youtube.com/watch?v=MfR2Y34U7Ww) | 2:14 | Physical four-pole mechanism, manual handle, simulated source availability, start signal, delays, transfer and return. |
-| Module 18, 4 | [Pleavin Power: Initial Generator Operation](https://www.youtube.com/watch?v=cwBzqfZRn3I) | 5:42 | Real set, fluids, battery, controller, alarms, output breaker, off-load starting and emergency-stop check. Assumes installed output wiring. |
-| Module 18, 5 | [ThePowerSite: How an ATS Works with a Generator](https://www.youtube.com/watch?v=jwBI-rd3-I4) | 3:35 | Connected generator/ATS/consumer-unit/lamp rig. Failure, starting, transfer, restored mains, return and cool-down; power versus control/charging cables. |
+| C1 Module 3, 1 | [saVRee: Diesel Generators Explained](https://www.youtube.com/watch?v=aeUhT7wuNpI) | 5:13 | Complete set, engine/alternator, normal/emergency use, cooling, energy conversion, rotor and stator. |
+| C1 Module 3, 2 | [Graham Dudgeon / MATLAB: Introduction to Synchronous Generators](https://www.youtube.com/watch?v=gf8Pn2jpJiA) | 9:24 | Field/stator output, poles/speed/frequency, loading before controls, governor and AVR responses. No MATLAB programming or machine construction exercise. |
+| C1 Module 3, 3 | [WellandTV: kW, kVAR and kVA](https://www.youtube.com/watch?v=Lc-u37_gfIg) | 1:23 | Recap of engine and alternator limits, after the complete explanation. |
+| C1 Module 15, 1 | [Shenton Group: Installing Backup Generators in Plant Rooms](https://www.youtube.com/watch?v=uexkXQ_I7iE) | 4:10 | Airflow, exhaust, noise, access, cable route/distance and fuel access. Planning explanation. |
+| C1 Module 15, 2 | [John Ward: Generator Earthing Types — TN-S or IT?](https://www.youtube.com/watch?v=mzCGE5wnWos) | 14:57 | Isolated versus referenced output; metallic fault path versus reference electrode; three-phase L1/L2/L3/N/PE diagrams. |
+| C1 Module 15, 3 | [Blades Power Generation: Motorized Changeover Switch](https://www.youtube.com/watch?v=MfR2Y34U7Ww) | 2:14 | Physical four-pole mechanism, manual handle, simulated source availability, start signal, delays, transfer and return. |
+| C1 Module 15, 4 | [Pleavin Power: Initial Generator Operation](https://www.youtube.com/watch?v=cwBzqfZRn3I) | 5:42 | Real set, fluids, battery, controller, alarms, output breaker, off-load starting and emergency-stop check. Assumes installed output wiring. |
+| C1 Module 15, 5 | [ThePowerSite: How an ATS Works with a Generator](https://www.youtube.com/watch?v=jwBI-rd3-I4) | 3:35 | Connected generator/ATS/consumer-unit/lamp rig. Failure, starting, transfer, restored mains, return and cool-down; power versus control/charging cables. |
 
-The first three form a **16-minute foundation**, following Module 10 AC/three-phase/neutral study and Module 11 power/current/efficiency calculations. They precede transformers. The complete set appears before relying on its control functions.
+The first three form a **16-minute foundation** in C1 Module 3, following Modules 1–2 AC/three-phase/neutral study and power calculations. They precede transformers. The complete set appears before relying on its control functions. Motor efficiency examples follow motor operation and nameplates in Module 11.
 
-The five UK application lessons form one coherent section at the end of Module 18. Cable selection, protection, earthing, industrial connectors, motor starting and verification have already been taught. The section applies those skills to a standby source before fault diagnosis. It would be premature immediately after basic three-phase theory.
+The five UK application lessons form C1 Module 15. Cable selection, protection, earthing, industrial connectors, motor starting and verification have already been taught. The section applies those skills to a standby source before fault diagnosis. It would be premature immediately after basic three-phase theory.
 
-The original governor and excitation IDs remain in `c1-generator-further-controls`, near the end of Module 11, labelled optional. Neither specialist clip establishes the new beginner foundation.
+The original governor and excitation IDs remain in `c1-generator-further-controls`, at the end of C1 Module 3, labelled optional. Neither specialist clip establishes the new beginner foundation.
 
 ## Theory-to-practical coverage audit
 

@@ -1,0 +1,75 @@
+{
+  "reviewedAt": "2026-10-19",
+  "newVideosAdded": 0,
+  "videos": [
+    {
+      "videoId": "RblT05CLPw8",
+      "url": "https://www.youtube.com/watch?v=RblT05CLPw8",
+      "title": "What is an Autotransformer?",
+      "instructor": "Stan Gibilisco",
+      "decision": "Not added",
+      "reason": "RF matching dominates; a voltage example is confusing and the existing starter already introduces the winding.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 83,
+        "captionEndSeconds": 240,
+        "sha256": "c5e0f8aef5a024890ce89d2664d21414716e43ab7bcfe044714dabbb71acc708",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 240
+          }
+        ]
+      }
+    },
+    {
+      "videoId": "Y6oo25eNayA",
+      "url": "https://www.youtube.com/watch?v=Y6oo25eNayA",
+      "title": "An autotransformer Basic",
+      "instructor": "Flirting with Technology",
+      "decision": "Not added",
+      "reason": "Isolation wording is imprecise: a common winding provides no galvanic isolation.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 34,
+        "captionEndSeconds": 106,
+        "sha256": "0a5df3fb44584dfe903c0b411724df82852d9f0ba4b8881422e5554b6b141a7e",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 106
+          }
+        ]
+      }
+    },
+    {
+      "videoId": "_vkcxR0zIE8",
+      "url": "https://www.youtube.com/watch?v=_vkcxR0zIE8",
+      "title": "What Size Diesel Generator Do You Need?",
+      "instructor": "Power Electrics",
+      "decision": "Not added",
+      "reason": "Overgeneralises generator power factor, operating time at maximum and preferred loading.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 59,
+        "captionEndSeconds": 159,
+        "sha256": "4ccdc9828ddabc38cded08d466dfe255bf1e7c6c6159b3095c16284750cca1f0",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 159
+          }
+        ]
+      }
+    }
+  ]
+}

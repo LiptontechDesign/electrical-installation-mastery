@@ -1,5 +1,7 @@
 # C1 modern applications and historical priorities
 
+Historical change record: the current C1 module positions and independent Module 1–16 numbering are documented in [the revision-13 route](c1-focused-modules.md). Earlier module numbers below refer to the layout at the time of this change.
+
 Reviewed 16 October 2026. Curriculum revision 11 adds seven YouTube videos (1 h 34 min 20 s), using the existing lesson players, section rows and study-role labels. C1 now has 138 default video rows in 84 sections. C2 and Advanced retain their published content and order.
 
 ## Selection and teaching order

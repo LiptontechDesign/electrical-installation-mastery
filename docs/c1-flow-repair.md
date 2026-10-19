@@ -1,5 +1,7 @@
 # C1 prerequisite and flow repair
 
+Historical change record: the current C1 module positions and independent Module 1–16 numbering are documented in [the revision-13 route](c1-focused-modules.md). Earlier module numbers below refer to the layout at the time of this change.
+
 Reviewed 15 October 2026 · curriculum revision 10.
 
 The fresh review found prerequisite jumps within the existing C1 sequence. This update adds **six new YouTube videos and eight C2 repeats**, then reorders the affected teaching. C1 now has **78 sections and 131 default video entries**. All videos use the existing lesson/player format. No section introductions or new teaching-text panels were added.

@@ -24,7 +24,7 @@ const before = oldState(), upgraded = parse(before), rows = snapshot(upgraded);
 assert.deepEqual(upgraded.groups, base.groups, 'An untouched saved course receives the complete new teaching order');
 assert.deepEqual([...Object.values(before.groups).flat()].sort(), [...Object.values(upgraded.groups).flat().filter(id => !surgeIds.has(id))].sort(), 'No previous video is lost or duplicated');
 assert.equal(upgraded.revision, 12);
-assert.equal(upgraded.curriculumRevision, 12);
+assert.equal(upgraded.curriculumRevision, 13);
 assert.deepEqual(parse(upgraded), upgraded, 'Reading an upgraded course is idempotent');
 assert.equal(before.curriculumRevision, undefined, 'Normalising does not mutate the stored input');
 assert.equal(rows.byId.get('p05-l10').sectionId, 'module-06-cpc-sizing');
@@ -102,7 +102,7 @@ for (const revision of [0, 1]) {
   assert.deepEqual(repaired.receipts, incomplete.receipts);
   assert.deepEqual(repaired.itemRevisions, incomplete.itemRevisions);
   assert.equal(repaired.revision, incomplete.revision);
-  assert.equal(repaired.curriculumRevision, 12);
+  assert.equal(repaired.curriculumRevision, 13);
   assert.deepEqual(parse(repaired), repaired);
   assert.deepEqual(incomplete, original);
   assert.deepEqual(progressForVideos(repairedRows.allRows.filter(row => !surgeIds.has(row.id)).map(row => row.id), marked), progressForVideos(Object.values(incomplete.groups).flat().filter(id => !surgeIds.has(id)), marked));

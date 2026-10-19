@@ -19,7 +19,7 @@ const change=(state,edit)=>apply(state,{revision:state.revision,operationId:cryp
 assert.deepEqual(upgraded.groups,base.groups,'An actual revision-2 saved course receives the complete public teaching order');
 assert.deepEqual(before,original,'Reading never mutates the saved input');
 assert.deepEqual(parse(upgraded),upgraded,'The update is idempotent');
-assert.equal(upgraded.curriculumRevision, 12);
+assert.equal(upgraded.curriculumRevision, 13);
 assert.equal(upgraded.revision,before.revision,'A read does not consume an edit revision');
 assert.equal(view.allRows.length, 478);
 assert.equal(Object.keys(view.rows).length, 190);
@@ -27,7 +27,7 @@ assert.equal(sections.length, 190);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'All published sections contain videos, including supplementary-only sections');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!surgeIds.has(id)).sort(),Object.values(before.groups).flat().sort(),'No old video is lost or duplicated');
 assert.ok(Object.keys(before.groups).every(id=>Object.hasOwn(upgraded.groups,id)),'Every previous section remains a valid edit/Undo destination');
-assert.equal(catalog.modules.length,25);
+assert.equal(catalog.modules.length,31);
 
 const expectedHomes={
   zVg40FUj3Ts:'module-04-conduit-lighting',
@@ -67,7 +67,7 @@ for(const id of ['p07-l16','p12-v2-l22']){
   const lesson=catalog.modules.flatMap(m=>m.lessons).find(l=>l.id===id);
   assert.equal(lesson.required,false);assert.equal(lesson.studyRole,'Optional extension');
 }
-assert.match(catalog.modules.find(m=>m.id==='c1-earthing').description,/temperature-corrected Zs/);
+assert.match(catalog.modules.find(m=>m.id==='c1-earthing').description,/fault-loop impedance, temperature correction/);
 
 const marked=new Set(Object.keys(expectedHomes).map(idFor).slice(0,16));
 assert.deepEqual(progressForVideos(view.allRows.filter(row=>!surgeIds.has(row.id)).map(row=>row.id),marked),progressForVideos(Object.values(before.groups).flat(),marked),'Overall watched totals survive all moves');

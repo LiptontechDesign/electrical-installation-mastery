@@ -10,15 +10,15 @@ const newIds=new Set(update.addedLessonIds),core=new Map(catalog.modules.flatMap
 const c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const generators=read('app/c1-generator-update.json');
 const upgraded=parse(prior),view=snapshot(upgraded),c1=view.allRows.filter(r=>c1Modules.has(r.moduleId));
-assert.equal(prior.curriculumRevision,10);assert.equal(upgraded.curriculumRevision,12);
+assert.equal(prior.curriculumRevision,10);assert.equal(upgraded.curriculumRevision,13);
 assert.equal(Object.values(prior.groups).flat().length,464,'Fixture is the actual published revision-10 state');
 assert.deepEqual(upgraded.groups,base.groups,'Existing accounts receive the exact revision-11 sequence');
 assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!generators.addedLessonIds.includes(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
 for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(generators.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Untouched groups retain their exact order: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids,'Published placement: '+id);
-assert.equal(c1.length,145);assert.equal(view.allRows.length, 478);assert.equal(sections.length, 190);
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,86);
+assert.equal(c1.length,144);assert.equal(view.allRows.length, 478);assert.equal(sections.length, 190);
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,85);
 for(const id of newIds){assert.ok(view.byId.has(id));assert.equal(required(id),true);}
 assert.equal(required('c1-wheatstone-bridge'),true);assert.equal(required('c1-lorenz-demonstration'),false);
 assert.match(core.get('c1-lorenz-demonstration').studyRole,/historical/);
@@ -29,16 +29,16 @@ for(const pair of [
  ['c1-ct-ratios','c1-wattmeter-foundation'],['c1-wattmeter-methods','c1-analyser-setup'],['c1-analyser-setup','c1-analyser-power-readings'],
  ['c1-wheatstone-bridge','c1-lorenz-demonstration'],['c1-generator-power-limits','c1-lorenz-demonstration'],
  ['c1-building-design-plan','c1-utilization-foundation'],['c1-building-design-plan','p10-l10'],['c1-rating-factors-foundation','c1-cable-design'],
- ['c1-capacitor-placement','c1-synchronous-condenser-overview'],['c1-synchronous-condenser-overview','c1-complex-number-foundation'],
+ ['c1-pfc-unity-bank','c1-synchronous-condenser-overview'],['c1-synchronous-condenser-overview','c1-complex-number-foundation'],['p07-vfd','c1-capacitor-placement'],
  ['c1-continuity-foundation','c1-test-results-resistance'],['c1-certification-foundation','c1-test-results-resistance'],['c1-test-results-resistance','c1-periodic-reporting'],
  ['c1-fire-response-principles','c1-incident-evidence'],['c1-incident-evidence','c1-incident-causes-actions']
 ])before(...pair);
 for(const id of ['p07-l08','p10-l06','p10-l07','p07-l09']){
  for(const prerequisite of ['c1-cable-design','c1-three-phase-voltage-drop','c1-cpc-size-foundation','c1-surge-foundation'])before(prerequisite,id);
- assert.equal(view.byId.get(id).moduleId,'c1-earthing','Full installation follows the design/protection teaching');
+ assert.equal(view.byId.get(id).moduleId,'c1-installation','Dedicated installation module follows design/protection');
 }
 before('p07-l06','c1-building-design-plan');before('p08-l01','p07-l08');
-before('p07-l08','p10-l06');before('p10-l07','p07-l09');before('p07-l09','c1-lightning-protection-principles');
+before('p07-l08','p10-l06');before('p10-l07','p07-l09');before('c1-surge-foundation','c1-lightning-protection-principles');
 assert.match(note('c1-capacitor-placement'),/induction generation/);
 // The only moved existing row carries untouched supporting descendants;
 // explicit placements, copies, removals and edit history remain authoritative.
