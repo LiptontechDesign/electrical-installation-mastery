@@ -1,0 +1,45 @@
+{
+  "revision": 12,
+  "previous": {
+    "c1-generator-control": [
+      "c1-generator-governor",
+      "c1-generator-excitation",
+      "c1-generator-power-limits"
+    ]
+  },
+  "current": {
+    "c1-generator-control": [
+      "c1-generator-set-overview",
+      "c1-generator-operating-principles",
+      "c1-generator-power-limits"
+    ],
+    "c1-generator-further-controls": [
+      "c1-generator-governor",
+      "c1-generator-excitation"
+    ],
+    "c1-generator-building-integration": [
+      "c1-generator-site-planning",
+      "c1-generator-neutral-transfer",
+      "c1-generator-three-phase-changeover",
+      "c1-generator-prestart-checks",
+      "c1-generator-transfer-operation"
+    ]
+  },
+  "addedLessonIds": [
+    "c1-generator-set-overview",
+    "c1-generator-operating-principles",
+    "c1-generator-site-planning",
+    "c1-generator-neutral-transfer",
+    "c1-generator-three-phase-changeover",
+    "c1-generator-prestart-checks",
+    "c1-generator-transfer-operation"
+  ],
+  "reclassifiedLessonIds": [
+    "c1-generator-governor",
+    "c1-generator-excitation"
+  ],
+  "sections": [
+    "c1-generator-further-controls",
+    "c1-generator-building-integration"
+  ]
+}

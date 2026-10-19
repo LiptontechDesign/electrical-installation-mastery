@@ -9,6 +9,7 @@ import c1Update from './c1-learning-update.json';
 import c1GapFill from './c1-gap-fill-update.json';
 import c1FlowUpdate from './c1-flow-update.json';
 import c1ApplicationUpdate from './c1-application-update.json';
+import c1GeneratorUpdate from './c1-generator-update.json';
 const verifiedDurations: Record<string, number> = durationData;
 
 // Approved study-plan media. Durations come from each video's public YouTube metadata.
@@ -68,7 +69,8 @@ const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
 // This C1 core video is also an intentionally placed C2 supporting lesson.
 export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w', ...c1GapFill.repeats.map(video => video.videoId)]);
 const c1GapFillVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => c1GapFill.addedLessonIds.includes(lesson.id)).map(lesson => lesson.videoId);
-const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds, ...c1Update.repeatableVideoIds, ...c1GapFillVideoIds, ...c1FlowUpdate.repeatableVideoIds, ...c1ApplicationUpdate.repeatableVideoIds]);
+const c1GeneratorVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => c1GeneratorUpdate.addedLessonIds.includes(lesson.id)).map(lesson => lesson.videoId);
+const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds, ...c1Update.repeatableVideoIds, ...c1GapFillVideoIds, ...c1FlowUpdate.repeatableVideoIds, ...c1ApplicationUpdate.repeatableVideoIds, ...c1GeneratorVideoIds]);
 const seedLocations=new Map<string,string>(locations);
 const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>{
   const moduleId=seedLocations.get(anchorId);

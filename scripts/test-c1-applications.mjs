@@ -8,16 +8,17 @@ const {isRequiredStudyVideo:required,studyNoteFor:note}=await import('../work/c1
 const prior=read('scripts/fixtures/c1-application-previous.json'),original=structuredClone(prior),update=read('app/c1-application-update.json'),catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),evidence=read('docs/c1-application-video-review.json');
 const newIds=new Set(update.addedLessonIds),core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 const c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
+const generators=read('app/c1-generator-update.json');
 const upgraded=parse(prior),view=snapshot(upgraded),c1=view.allRows.filter(r=>c1Modules.has(r.moduleId));
-assert.equal(prior.curriculumRevision,10);assert.equal(upgraded.curriculumRevision,11);
+assert.equal(prior.curriculumRevision,10);assert.equal(upgraded.curriculumRevision,12);
 assert.equal(Object.values(prior.groups).flat().length,464,'Fixture is the actual published revision-10 state');
 assert.deepEqual(upgraded.groups,base.groups,'Existing accounts receive the exact revision-11 sequence');
 assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
-for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Untouched groups retain their exact order: '+id);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!generators.addedLessonIds.includes(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
+for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(generators.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Untouched groups retain their exact order: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids,'Published placement: '+id);
-assert.equal(c1.length,138);assert.equal(view.allRows.length,471);assert.equal(sections.length,188);
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,84);
+assert.equal(c1.length,145);assert.equal(view.allRows.length, 478);assert.equal(sections.length, 190);
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,86);
 for(const id of newIds){assert.ok(view.byId.has(id));assert.equal(required(id),true);}
 assert.equal(required('c1-wheatstone-bridge'),true);assert.equal(required('c1-lorenz-demonstration'),false);
 assert.match(core.get('c1-lorenz-demonstration').studyRole,/historical/);

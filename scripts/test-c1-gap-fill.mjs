@@ -6,17 +6,17 @@ await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply}=await import('../work/c1-gap-tests/personal-course-model.js');
 const catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),update=read('app/c1-gap-fill-update.json'),evidence=read('docs/c1-gap-fill-review.json');
 const previous=read('scripts/fixtures/c1-gap-fill-previous.json'), original=structuredClone(previous), flow=read('app/c1-flow-update.json');
-const applications=read('app/c1-application-update.json');
+const applications=read('app/c1-application-update.json'), generators=read('app/c1-generator-update.json');
 const ids=new Set(update.addedLessonIds), core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])), c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(previous),view=snapshot(upgraded);
-assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 11);
+assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 12);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-8 published snapshot upgrades to the exact new sequence');
 assert.deepEqual(previous,original,'Stored snapshot is not mutated');
 assert.deepEqual(parse(upgraded),upgraded,'Current normalisation is idempotent');
 for(const [sectionId,old] of Object.entries(previous.groups))assert.deepEqual(upgraded.groups[sectionId].filter(id=>!ids.has(id)),old,'Every old section keeps its relative order: '+sectionId);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!ids.has(id)&&!flow.addedLessonIds.includes(id)&&!applications.addedLessonIds.includes(id)).sort(),Object.values(previous.groups).flat().sort(),'Every existing occurrence survives exactly once');
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length);
-assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!ids.has(id)&&!flow.addedLessonIds.includes(id)&&!applications.addedLessonIds.includes(id)&&!generators.addedLessonIds.includes(id)).sort(),Object.values(previous.groups).flat().sort(),'Every existing occurrence survives exactly once');
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length+generators.sections.length);
+assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length+generators.addedLessonIds.length);
 for(const sectionId of update.sections){
  const s=sections.find(s=>s.id===sectionId);assert.ok(c1Modules.has(s.moduleId));
  assert.equal(s.intro,undefined,'No section-introduction prose');
@@ -73,7 +73,7 @@ for(const r of evidence.videos){
  assert.match(r.transcript.sha256,/^[a-f0-9]{64}$/);assert.ok(r.transcript.captionEndSeconds>0);
  assert.equal(r.transcript.reviewedRanges[0].endSeconds,r.transcript.captionEndSeconds);
  assert.equal(r.videoId,core.get(r.lessonId).videoId);assert.equal(r.url,'https://www.youtube.com/watch?v='+r.videoId);
- const destination=Object.entries(applications.current).find(([,ids])=>ids.includes(r.lessonId))?.[0]??Object.entries(flow.current).find(([,ids])=>ids.includes(r.lessonId))?.[0]??r.sectionId;
+ const destination=Object.entries(generators.current).find(([,ids])=>ids.includes(r.lessonId))?.[0]??Object.entries(applications.current).find(([,ids])=>ids.includes(r.lessonId))?.[0]??Object.entries(flow.current).find(([,ids])=>ids.includes(r.lessonId))?.[0]??r.sectionId;
  assert.ok(sections.find(s=>s.id===destination).lessonIds.includes(r.lessonId),'Historical review location receives its explicit later move');
  if(r.transcript.language.some(l=>!/^en(?:-|$)/.test(l)))assert.match(r.transcript.reviewQualification,/translated/);
 }

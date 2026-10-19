@@ -1018,9 +1018,20 @@
     ]
   },
   {
-    "id": "c1-transformer-ratios",
+    "id": "c1-generator-control",
     "moduleId": "c1-power",
     "number": 8,
+    "title": "Generator sets: purpose, operation, controls and power limits",
+    "lessonIds": [
+      "c1-generator-set-overview",
+      "c1-generator-operating-principles",
+      "c1-generator-power-limits"
+    ]
+  },
+  {
+    "id": "c1-transformer-ratios",
+    "moduleId": "c1-power",
+    "number": 9,
     "title": "Transformer operation, turns, voltage and current ratios",
     "lessonIds": [
       "c1-transformer-foundation",
@@ -1030,7 +1041,7 @@
   {
     "id": "c1-transformer-emf",
     "moduleId": "c1-power",
-    "number": 9,
+    "number": 10,
     "title": "Transformer EMF, peak flux and flux density",
     "lessonIds": [
       "c1-transformer-emf-equation",
@@ -1040,7 +1051,7 @@
   {
     "id": "c1-transformer-efficiency",
     "moduleId": "c1-power",
-    "number": 10,
+    "number": 11,
     "title": "Transformer losses, fractional loading and maximum efficiency",
     "lessonIds": [
       "c1-transformer-losses",
@@ -1050,7 +1061,7 @@
   {
     "id": "c1-ct-metering",
     "moduleId": "c1-power",
-    "number": 11,
+    "number": 12,
     "title": "Current-transformer ratios and secondary precautions",
     "lessonIds": [
       "c1-ct-ratios"
@@ -1059,7 +1070,7 @@
   {
     "id": "c1-wattmeter-measurement",
     "moduleId": "c1-power",
-    "number": 12,
+    "number": 13,
     "title": "Wattmeter operation and three-phase power measurement",
     "lessonIds": [
       "c1-wattmeter-foundation",
@@ -1074,26 +1085,25 @@
       "c1-analyser-setup",
       "c1-analyser-power-readings"
     ],
-    "number": 13
+    "number": 14
   },
   {
     "id": "c1-resistance-measurement",
     "moduleId": "c1-power",
-    "number": 14,
+    "number": 15,
     "title": "Wheatstone bridge: comparative resistance measurement",
     "lessonIds": [
       "c1-wheatstone-bridge"
     ]
   },
   {
-    "id": "c1-generator-control",
+    "id": "c1-generator-further-controls",
     "moduleId": "c1-power",
-    "number": 15,
-    "title": "Generator frequency, voltage control and power limits",
+    "number": 16,
+    "title": "Further study: governor droop and excitation hardware",
     "lessonIds": [
       "c1-generator-governor",
-      "c1-generator-excitation",
-      "c1-generator-power-limits"
+      "c1-generator-excitation"
     ]
   },
   {
@@ -1103,7 +1113,7 @@
     "lessonIds": [
       "c1-lorenz-demonstration"
     ],
-    "number": 16
+    "number": 17
   },
   {
     "id": "c1-distribution-section-1",
@@ -1620,6 +1630,19 @@
     "lessonIds": [
       "c1-periodic-reporting",
       "p08-periodic"
+    ]
+  },
+  {
+    "id": "c1-generator-building-integration",
+    "moduleId": "c1-testing",
+    "number": 9,
+    "title": "Standby generators: site, connections, earthing and operation",
+    "lessonIds": [
+      "c1-generator-site-planning",
+      "c1-generator-neutral-transfer",
+      "c1-generator-three-phase-changeover",
+      "c1-generator-prestart-checks",
+      "c1-generator-transfer-operation"
     ]
   },
   {

@@ -1,0 +1,375 @@
+{
+  "reviewedAt": "2026-10-19",
+  "revision": 12,
+  "method": "Complete available English caption text read for all seven additions and the retained power recap. UK installation/earthing/operation teaching replaces the proposed US application pair. Representative equipment frames of the two transfer demonstrations were observed in one dedicated Chrome tab; full visual playback is not claimed. Full third-party transcripts remain in ignored research files.",
+  "videos": [
+    {
+      "lessonId": "c1-generator-set-overview",
+      "videoId": "aeUhT7wuNpI",
+      "url": "https://www.youtube.com/watch?v=aeUhT7wuNpI",
+      "title": "Meet a Generator Set: Engine, Alternator and Electrical Output",
+      "instructor": "saVRee",
+      "durationSeconds": 313,
+      "sectionId": "c1-generator-control",
+      "scope": "Complete generator-set overview, ordinary and emergency applications, engine/alternator identification, cooling, chemical-to-mechanical-to-electrical energy conversion, and rotor/stator identification. No engine overhaul or winding design.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "a26e4543acf4fa1839aab8e95b0af27491fd81b1bc33a19c231b8c91caaa4e39",
+        "captionSegments": 132,
+        "captionEndSeconds": 314,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 314
+          }
+        ],
+        "reviewQualification": "All available English caption text read. The provider’s last cue may extend slightly beyond the media endpoint; this is not additional teaching or a frame-by-frame review."
+      },
+      "availability": {
+        "id": "aeUhT7wuNpI",
+        "durationSeconds": 313,
+        "playableInEmbed": true,
+        "status": "OK"
+      }
+    },
+    {
+      "lessonId": "c1-generator-operating-principles",
+      "videoId": "gf8Pn2jpJiA",
+      "url": "https://www.youtube.com/watch?v=gf8Pn2jpJiA",
+      "title": "Generator Operation: Magnetic Field, Frequency, Load, Governor and AVR",
+      "instructor": "Graham Dudgeon — MATLAB",
+      "durationSeconds": 564,
+      "sectionId": "c1-generator-control",
+      "scope": "Wound-rotor magnetic field and induced stator voltage; pole pairs and speed/frequency; resistive loading before controls; governor torque/fuel response to active-load steps; AVR field response and terminal-voltage recovery. The physical system precedes its controls; no machine-design calculations or MATLAB programming is required.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "8010e0f55091b015665702bfb3341cfbd2b21b4ec5761c0df01520b8f87d26be",
+        "captionSegments": 264,
+        "captionEndSeconds": 565,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 565
+          }
+        ],
+        "reviewQualification": "All available English caption text read. The provider’s last cue may extend slightly beyond the media endpoint; this is not additional teaching or a frame-by-frame review."
+      },
+      "availability": {
+        "id": "gf8Pn2jpJiA",
+        "durationSeconds": 564,
+        "playableInEmbed": true,
+        "status": "OK"
+      }
+    },
+    {
+      "lessonId": "c1-generator-site-planning",
+      "videoId": "uexkXQ_I7iE",
+      "url": "https://www.youtube.com/watch?v=uexkXQ_I7iE",
+      "title": "Plan a Generator Installation: Air, Exhaust, Access, Cables and Fuel",
+      "instructor": "Shenton Group — Mark Porter",
+      "durationSeconds": 250,
+      "sectionId": "c1-generator-building-integration",
+      "scope": "Six installation considerations: ventilation and avoiding recirculation, exhaust, noise, maintenance access, cable size/routing/distance and refuelling. Planning explanation, not a wiring or commissioning demonstration.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "b82c84d43bcd85656b8882645874e412951b3616e6905bc3ab652eb8431c5419",
+        "captionSegments": 81,
+        "captionEndSeconds": 245,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 245
+          }
+        ],
+        "reviewQualification": "All available English caption text returned by the public provider read. Caption origin/accuracy is not guaranteed; diagrams and technical scope were considered separately."
+      },
+      "availability": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 250
+      },
+      "visualReview": "No complete visual playback review claimed."
+    },
+    {
+      "lessonId": "c1-generator-neutral-transfer",
+      "videoId": "mzCGE5wnWos",
+      "url": "https://www.youtube.com/watch?v=mzCGE5wnWos",
+      "title": "Generator Earthing: Isolated Outputs, TN-S, Neutral and the Fault Path",
+      "instructor": "John Ward",
+      "durationSeconds": 897,
+      "sectionId": "c1-generator-building-integration",
+      "scope": "Isolated small-output example before TN-S generator diagrams; separates the metallic protective-conductor fault path from the reference electrode, shows 230/400 V three-phase L1/L2/L3/N/PE connections and explains why unknown winding arrangements must be checked before bonding. Does not determine every standby installation’s neutral switching.",
+      "transcript": {
+        "provider": "YTtoTranscript public English captions",
+        "language": [
+          "en-orig"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "15abd4e044b7af6cc1ea5d72596fcf32fe8ed1424ec9bc1463142c842d11a231",
+        "captionSegments": 490,
+        "captionEndSeconds": 899,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 899
+          }
+        ],
+        "reviewQualification": "All available English caption text returned by the public provider read. Caption origin/accuracy is not guaranteed; diagrams and technical scope were considered separately."
+      },
+      "availability": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 897
+      },
+      "visualReview": "No complete visual playback review claimed."
+    },
+    {
+      "lessonId": "c1-generator-three-phase-changeover",
+      "videoId": "MfR2Y34U7Ww",
+      "url": "https://www.youtube.com/watch?v=MfR2Y34U7Ww",
+      "title": "Recognise a Four-Pole Generator Changeover and Its Transfer Sequence",
+      "instructor": "Blades Power Generation",
+      "durationSeconds": 134,
+      "sectionId": "c1-generator-building-integration",
+      "scope": "Physical 630 A four-pole motorised transfer mechanism and manual handle; simulated source availability, generator-start signal, adjustable delays, transfer, mains stability and return. This is a bench demonstration, not full-current energisation or a terminal-by-terminal wiring tutorial.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "194c1ed1e7b6d8cd41b635b8a9c909345a89a1ea49d5b6f34a8be4fc118e424a",
+        "captionSegments": 41,
+        "captionEndSeconds": 130,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 130
+          }
+        ],
+        "reviewQualification": "All available English caption text returned by the public provider read. Caption origin/accuracy is not guaranteed; diagrams and technical scope were considered separately."
+      },
+      "availability": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 134
+      },
+      "visualReview": "Representative physical-equipment frames observed in the single dedicated Chrome tab; not a complete visual playback review."
+    },
+    {
+      "lessonId": "c1-generator-prestart-checks",
+      "videoId": "cwBzqfZRn3I",
+      "url": "https://www.youtube.com/watch?v=cwBzqfZRn3I",
+      "title": "At the Generator: Pre-Start Checks, Output Breaker and Emergency Stop",
+      "instructor": "Pleavin Power",
+      "durationSeconds": 342,
+      "sectionId": "c1-generator-building-integration",
+      "scope": "Real set and controller, starter battery, oil/coolant checks, alarms, output breaker off before starting, off-load manual run and emergency-stop demonstration; output-cable protection and separate heater/charger supply. Assumes output wiring is already installed and does not perform electrical commissioning.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "5d269821f3d65638be4a657a50fbdab6182c3555f02658cbe2ea96e9d32af29f",
+        "captionSegments": 165,
+        "captionEndSeconds": 343,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 343
+          }
+        ],
+        "reviewQualification": "All available English caption text returned by the public provider read. Caption origin/accuracy is not guaranteed; diagrams and technical scope were considered separately."
+      },
+      "availability": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 342
+      },
+      "visualReview": "No complete visual playback review claimed."
+    },
+    {
+      "lessonId": "c1-generator-transfer-operation",
+      "videoId": "jwBI-rd3-I4",
+      "url": "https://www.youtube.com/watch?v=jwBI-rd3-I4",
+      "title": "Follow a Real Standby Setup: Generator, ATS, Consumer Unit and Load",
+      "instructor": "ThePowerSite Ltd",
+      "durationSeconds": 215,
+      "sectionId": "c1-generator-building-integration",
+      "scope": "Connected UK demonstration rig with simulated mains feed, generator power feed, control/charging cable, ATS, consumer unit and lamp load. Demonstrates mains failure, generator start/readiness, load transfer, restoration, return and cool-down. No terminal-by-terminal assembly, earthing test or complete commissioning procedure.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "kind": "Not exposed by provider; do not assume human-authored",
+        "sha256": "8e9aa20a4c7a56acfd1ef6d077ca529ad89aadc601efaec39aaddc444673754e",
+        "captionSegments": 86,
+        "captionEndSeconds": 212,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 212
+          }
+        ],
+        "reviewQualification": "All available English caption text returned by the public provider read. Caption origin/accuracy is not guaranteed; diagrams and technical scope were considered separately."
+      },
+      "availability": {
+        "status": "OK",
+        "playableInEmbed": true,
+        "durationSeconds": 215,
+        "qualification": "One HTTP watch-page request returned LOGIN_REQUIRED; a second public request returned OK/playableInEmbed. Playback and the connected rig were also observed in the dedicated Chrome tab. This does not guarantee availability for every viewer."
+      },
+      "visualReview": "Representative physical-equipment frames observed in the single dedicated Chrome tab; not a complete visual playback review."
+    }
+  ],
+  "retained": [
+    {
+      "lessonId": "c1-generator-power-limits",
+      "videoId": "Lc-u37_gfIg",
+      "decision": "Retained as a recap after the complete operating explanation, with an essential qualification to its reactive-power analogy.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "sha256": "c2c0ae2a0f7125de209026cdd7b1c63bfbb719bebf262c3e1c3f86694443f783",
+        "captionSegments": 34,
+        "captionEndSeconds": 85,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 85
+          }
+        ],
+        "reviewQualification": "Complete available English provider text read; not a full visual playback review."
+      }
+    },
+    {
+      "lessonId": "c1-generator-governor",
+      "videoId": "DKSkcspz4E4",
+      "decision": "Retained by stable identity as optional detail after the beginner core; not used as the introduction.",
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "sha256": "e4011577a3ba5155f8c2e68877bee848b5aea51c84a1c65716e18d553940bd92",
+        "captionSegments": 24,
+        "captionEndSeconds": 68,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 68
+          }
+        ],
+        "reviewQualification": "Complete available English provider text read; not a full visual playback review."
+      }
+    },
+    {
+      "lessonId": "c1-generator-excitation",
+      "videoId": "7MvjbC4f5Aw",
+      "decision": "Retained by stable identity as optional excitation hardware detail. Its previous review used a translated Arabic track, not original English; not relied on to establish the new beginner core."
+    }
+  ],
+  "rejected": [
+    {
+      "videoId": "WhATjUHgzxQ",
+      "reason": "Complete English transcript read. Repeats the established AC-generation/three-phase foundation and uses loose current-generation wording; adds repetition without repairing the system-level gap."
+    },
+    {
+      "videoId": "spWktmdcEvs",
+      "reason": "Complete English transcript read. Product promotion, US residential examples and overlap; the Cummins transfer-mechanism lesson teaches the operating sequence more precisely."
+    },
+    {
+      "videoId": "P7lVzwnExbg",
+      "reason": "Complete English transcript read. Significant North American ATS selection/service/pole-count detail and broad sizing statements need more qualification than the focused Cummins lesson."
+    },
+    {
+      "videoId": "A1R6-0GwXlY",
+      "reason": "Complete English transcript read. A very short mechanical-governor explanation overgeneralises the absence of operator/control commands; the complete MATLAB operating explanation is preferable."
+    },
+    {
+      "videoId": "jj9VXMkQblI",
+      "reason": "Opening 0:00–1:36 read only; explicit earlier AVR prerequisites and a 12-minute component/circuit lesson. Rejected as hardware detail outside the requested beginner core; no complete-transcript review claimed."
+    },
+    {
+      "videoId": "GSNprRBlbpc",
+      "reason": "Captions unavailable through the checked providers; not selected or represented as transcript-reviewed."
+    },
+    {
+      "videoId": "6idadtpqSrg",
+      "reason": "Complete English transcript read. Accurate mechanism/sequence teaching, but the UK physical demonstrations fit the requested jurisdiction and setup more closely. Not added."
+    },
+    {
+      "videoId": "TJy64V_s9IU",
+      "reason": "Complete matching publisher English WebVTT read; YouTube captions disabled. US NEC neutral/bonding examples replaced by UK earthing teaching. Not added."
+    },
+    {
+      "videoId": "QFzy6PCJNJs",
+      "reason": "Complete available English transcript read. UK job vlog with substantial solar/advertising/other-job content; generator terminations and full commissioning are not taught."
+    },
+    {
+      "videoId": "2SlDAHKTXgk",
+      "reason": "Complete available English transcript read. The backup source is an inverter; functional switchover is shown, but no complete electrical verification or earthing rationale. Not a generator installation course."
+    },
+    {
+      "videoId": "2tl6SkxPorg",
+      "reason": "Complete available English transcript read. First-install vlog expresses unresolved earthing uncertainty and does not demonstrate the required commissioning tests. Unsuitable as sole practical instruction."
+    },
+    {
+      "videoId": "hfc7D_k10-M",
+      "reason": "Complete available English transcript read. Complex solar/battery integration, significant assumptions, and a kVA/kW sizing confusion; not a beginner generator setup."
+    },
+    {
+      "videoId": "CbFNzIAcBLg",
+      "reason": "Complete available English transcript read. Australian job vlog explicitly skips a large part of the work; no full connection/verification teaching."
+    },
+    {
+      "videoId": "oyGBHLNlBHE",
+      "reason": "Complete available English transcript read. Non-UK cam-switch wiring includes twisted/taped protective conductors and generic tightening instructions; not suitable as the required UK installation standard."
+    },
+    {
+      "videoId": "ITLfk06nIy4",
+      "reason": "Opening 0:00–17:00 approximately read only; 49-minute relay/timer ATS assembly, not the concise UK complete-installation lesson sought. No full-transcript review claimed."
+    },
+    {
+      "videoId": "XGOP97lAjqc",
+      "reason": "Opening 0:00–13:15 approximately read only. UK discussion rather than practical connections; wide event/solar tangents and no complete installation demonstration. No full-transcript review claimed."
+    },
+    {
+      "videoId": "T4CRX7DRmIw",
+      "reason": "Available translated Arabic captions read; newer/clearer UK single-phase rig demonstration selected with an available English caption transcript."
+    },
+    {
+      "videoId": "D5LYfcW9VSc",
+      "reason": "Complete available English transcript read. Useful portable hire-set operation, but less relevant than the diesel pre-start/controller lesson; no building connections."
+    },
+    {
+      "videoId": "4953PRvRUss",
+      "reason": "Complete available English transcript read. Mostly delivery/site hire and promotion; the selected Shenton lesson connects siting, exhaust, cable routing and access more coherently."
+    },
+    {
+      "videoId": "LxPujetVAhI",
+      "reason": "Complete available English transcript read. Short physical component tour, but overlaps the selected complete-set overview and pre-start demonstration."
+    }
+  ],
+  "coverage": {
+    "foundation": "Complete-set purpose → alternator operation and regulation → kW/kVA recap, after three-phase power.",
+    "application": "UK siting → earthing and fault path → four-pole mechanism → pre-start checks → real connected ATS/load demonstration, after cable/protection/motor/testing prerequisites.",
+    "remainingPracticalGap": "The selected set does not show every generator/inlet/changeover termination and all commissioning tests on one complete installation. Earlier UK termination and verification videos teach component skills, but are not evidence that this missing generator-specific capstone has been demonstrated. Supervised hands-on performance is not assessed by these videos."
+  }
+}

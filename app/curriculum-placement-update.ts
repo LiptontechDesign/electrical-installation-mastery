@@ -6,9 +6,10 @@ import { upgradeDesignLearningGroups } from './design-learning-migration';
 import { upgradeC1LearningGroups } from './c1-learning-migration';
 import c1FlowUpdate from './c1-flow-update.json';
 import c1ApplicationUpdate from './c1-application-update.json';
+import c1GeneratorUpdate from './c1-generator-update.json';
 
 export const reviewedPlacementRevision = 3;
-export const curriculumRevision = 11;
+export const curriculumRevision = 12;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));
@@ -16,7 +17,8 @@ type SupportingVideo = { id: string; anchorId: string };
 function upgradeC1PublishedGroups(input: Record<string, string[]>, revision: number, protectedIds: Set<string>, supporting: SupportingVideo[]) {
   const historical = upgradeC1LearningGroups(input, revision, protectedIds, supporting);
   const foundations = upgradeC1LearningGroups(historical, revision, protectedIds, supporting, c1FlowUpdate);
-  return upgradeC1LearningGroups(foundations, revision, protectedIds, supporting, c1ApplicationUpdate);
+  const applications = upgradeC1LearningGroups(foundations, revision, protectedIds, supporting, c1ApplicationUpdate);
+  return upgradeC1LearningGroups(applications, revision, protectedIds, supporting, c1GeneratorUpdate);
 }
 
 // Apply the published topic changes once. A known video moves only while it is

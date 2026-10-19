@@ -6,18 +6,18 @@ await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply,migratePersonalCourse}=await import('../work/c1-flow-tests/personal-course-model.js');
 const {isRequiredStudyVideo:required}=await import('../work/c1-flow-tests/course-curriculum.js');
 const prior=read('scripts/fixtures/c1-flow-previous.json'),original=structuredClone(prior),update=read('app/c1-flow-update.json'),catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),evidence=read('docs/c1-flow-video-review.json');
-const applications=read('app/c1-application-update.json');
+const applications=read('app/c1-application-update.json'), generators=read('app/c1-generator-update.json');
 const newIds=new Set(update.addedLessonIds),destinations=new Map(Object.entries(update.current).flatMap(([sectionId,ids])=>ids.map(id=>[id,sectionId])));
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])),c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(prior),view=snapshot(upgraded);
-assert.equal(prior.curriculumRevision,9);assert.equal(upgraded.curriculumRevision, 11);
+assert.equal(prior.curriculumRevision,9);assert.equal(upgraded.curriculumRevision, 12);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-9 published state receives the exact revised sequence');
 assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!applications.addedLessonIds.includes(id)).sort(),Object.values(prior.groups).flat().sort(),'Every previous occurrence survives once');
-for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(applications.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Other groups stay unchanged: '+id);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!applications.addedLessonIds.includes(id)&&!generators.addedLessonIds.includes(id)).sort(),Object.values(prior.groups).flat().sort(),'Every previous occurrence survives once');
+for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(applications.previous,id)&&!Object.hasOwn(generators.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Other groups stay unchanged: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids,'Explicit revised section: '+id);
-assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,138);
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,84);
+assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,145);
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,86);
 assert.equal(update.addedLessonIds.length,14);assert.equal(update.repeats.length,8);
 for(const r of update.repeats){assert.equal(core.get(r.id).videoId,core.get(r.sourceLessonId).videoId);assert.ok(view.byId.has(r.sourceLessonId));}
 const order=view.allRows.filter(r=>c1Modules.has(r.moduleId)).map(r=>r.id);

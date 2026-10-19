@@ -6,13 +6,13 @@ const { parsePersonalCourse: parse, personalCourseSnapshot: snapshot, publishedP
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const before = read('scripts/fixtures/design-learning-previous.json'), original = structuredClone(before);
 const sections = read('app/learning-sections.json'), catalog = read('app/video-catalog.json');
-const additions = [...read('scripts/fixtures/design-learning-additions.json'), ...read('scripts/fixtures/connected-process-additions.json'), ...read('scripts/fixtures/c1-learning-additions.json'), ...read('scripts/fixtures/c1-gap-fill-additions.json'), ...read('scripts/fixtures/c1-flow-additions.json'), ...read('scripts/fixtures/c1-application-additions.json')], newIds = new Set(additions.map(l => l.id));
+const additions = [...read('scripts/fixtures/design-learning-additions.json'), ...read('scripts/fixtures/connected-process-additions.json'), ...read('scripts/fixtures/c1-learning-additions.json'), ...read('scripts/fixtures/c1-gap-fill-additions.json'), ...read('scripts/fixtures/c1-flow-additions.json'), ...read('scripts/fixtures/c1-application-additions.json'), ...read('scripts/fixtures/c1-generator-additions.json')], newIds = new Set(additions.map(l => l.id));
 const upgraded = parse(before), view = snapshot(upgraded);
 assert.deepEqual(upgraded.groups, base.groups, 'A saved revision-4 course receives the authored sequence');
 assert.deepEqual(before, original, 'Reading does not mutate input');
 assert.deepEqual(parse(upgraded), upgraded, 'Migration runs once');
 assert.equal(upgraded.revision, before.revision, 'Reading does not consume an edit revision');
-assert.equal(upgraded.curriculumRevision, 11);
+assert.equal(upgraded.curriculumRevision, 12);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)).sort(), Object.values(before.groups).flat().sort(), 'All original occurrences survive exactly once');
 for (const section of sections.filter(s => Object.hasOwn(before.groups, s.id) && !['module-06', 'c2-boards', ...catalog.modules.filter(m=>m.path==='C1').map(m=>m.id)].includes(s.moduleId))) {
   assert.deepEqual(upgraded.groups[section.id], before.groups[section.id], 'Other modules remain unchanged: ' + section.id);

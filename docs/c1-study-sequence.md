@@ -2,7 +2,7 @@
 
 Follow the sections in order. Key C2 foundations now appear directly in C1. The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
 
-84 sections · 138 video entries. [Modern applications and coverage limits](c1-modern-applications.md).
+86 sections · 145 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md).
 
 ## Module 10: AC Foundations, Three-Phase Supply and Neutral Behaviour
 
@@ -50,7 +50,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Three Phase Mystery Solved, No Neutral Required in a Balanced Load?](https://www.youtube.com/watch?v=WZ4GG4GuSfQ) — Joe Robinson Training; Core lesson.
 - [The Easiest Most Accurate Way to Calculate Three Phase Neutral Current in an Unbalanced Load](https://www.youtube.com/watch?v=ExHJGSJSE6o) — Joe Robinson Training; Core lesson.
 
-## Module 11: AC Power, Transformers and Electrical Measurements
+## Module 11: AC Power, Generators, Transformers and Measurements
 
 ### 1. Reactance: frequency, inductance and capacitance
 
@@ -96,32 +96,44 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Electrical input = Pshaft/η; apparent power = electrical input/PF.
 
-### 8. Transformer operation, turns, voltage and current ratios
+### 8. Generator sets: purpose, operation, controls and power limits
+
+- [Meet a Generator Set: Engine, Alternator and Electrical Output](https://www.youtube.com/watch?v=aeUhT7wuNpI) — saVRee; Core foundation.
+
+  A generator set combines a prime mover with an alternator. This example uses a diesel engine.
+- [Generator Operation: Magnetic Field, Frequency, Load, Governor and AVR](https://www.youtube.com/watch?v=gf8Pn2jpJiA) — Graham Dudgeon — MATLAB; Core foundation.
+
+  1 per unit means the chosen rated value. In the standalone example, the governor adjusts mechanical input and the AVR adjusts excitation.
+- [Generator Power: Engine kW, Alternator kVA and Reactive Current](https://www.youtube.com/watch?v=Lc-u37_gfIg) — WellandTV; Core lesson.
+
+  Both engine kW and alternator kVA limits apply. Reactive power exchanges energy; it is not wasted power, although reactive current contributes to winding losses.
+
+### 9. Transformer operation, turns, voltage and current ratios
 
 - [Transformer Operation: Changing Flux, Windings and Core](https://www.youtube.com/watch?v=UchitHGF4n8) — The Engineering Mindset; Core foundation.
 - [Transformer Turns, Voltage and Current: Worked Calculations](https://www.youtube.com/watch?v=jzOQFtW02uc) — Craig's Class - Level 3 Electrical Principles; Core lesson.
 
-### 9. Transformer EMF, peak flux and flux density
+### 10. Transformer EMF, peak flux and flux density
 
 - [Derive the Transformer EMF Equation: E = 4.44 f N Φ](https://www.youtube.com/watch?v=BqetOHEhAGE) — Ekeeda; Core lesson.
 
   The 4.44 factor assumes sinusoidal flux; Φ is peak flux in webers.
 - [Calculate Transformer Turns, Maximum Flux and Flux Density](https://www.youtube.com/watch?v=Jwz2rhI6cbM) — Ekeeda; Core lesson.
 
-### 10. Transformer losses, fractional loading and maximum efficiency
+### 11. Transformer losses, fractional loading and maximum efficiency
 
 - [Transformer Losses and the Condition for Maximum Efficiency](https://www.youtube.com/watch?v=GgckE4H5AJE) — Ekeeda; Core lesson.
 
   Assumes fixed voltage, frequency and power factor.
 - [Transformer Efficiency at Full Load and the Best Load Point](https://www.youtube.com/watch?v=LNgf2nojsqc) — Ekeeda; Core lesson.
 
-### 11. Current-transformer ratios and secondary precautions
+### 12. Current-transformer ratios and secondary precautions
 
 - [Current Transformers: Ratios, Meter Readings and Shorting Precautions](https://www.youtube.com/watch?v=RHuu7QQhw2o) — Zack Hartle; Core lesson.
 
   Never open a CT secondary while primary current flows.
 
-### 12. Wattmeter operation and three-phase power measurement
+### 13. Wattmeter operation and three-phase power measurement
 
 - [Wattmeters and Balanced Loads: Measurement Principles Before Examples](https://www.youtube.com/watch?v=bVjmy2vBj-0) — Jim Pytel; Core lesson.
 
@@ -130,7 +142,7 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   The two-wattmeter method shown applies to three-wire systems.
 
-### 13. Digital power analysers: configure channels and interpret total power
+### 14. Digital power analysers: configure channels and interpret total power
 
 - [Configure a Three-Phase Power Analyser and Verify Its Channels](https://www.youtube.com/watch?v=1JhOXUrjpsI) — Advanced Test Equipment Corp. (ATEC); Core demonstration.
 
@@ -139,21 +151,18 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 
   Two measuring elements give total real power on a three-wire system; their readings are not individual phase powers.
 
-### 14. Wheatstone bridge: comparative resistance measurement
+### 15. Wheatstone bridge: comparative resistance measurement
 
 - [Wheatstone Bridge: Null Balance and Unknown Resistance](https://www.youtube.com/watch?v=TFMRbx9mARU) — Physics Online; Core lesson.
 
-### 15. Generator frequency, voltage control and power limits
+### 16. Further study: governor droop and excitation hardware
 
-- [Generator Governors: Droop and Isochronous Speed Control](https://www.youtube.com/watch?v=DKSkcspz4E4) — WellandTV; Core lesson.
+- [Generator Governors: Droop and Isochronous Speed Control](https://www.youtube.com/watch?v=DKSkcspz4E4) — WellandTV; Optional control detail.
 
   The 1500 rpm example assumes a four-pole, 50 Hz alternator.
-- [Generator Voltage Control: Excitation, AVR and Brushless Systems](https://www.youtube.com/watch?v=7MvjbC4f5Aw) — International Engineering Training; Core lesson.
-- [Generator Power: Engine kW, Alternator kVA and Reactive Current](https://www.youtube.com/watch?v=Lc-u37_gfIg) — WellandTV; Core lesson.
+- [Generator Voltage Control: Excitation, AVR and Brushless Systems](https://www.youtube.com/watch?v=7MvjbC4f5Aw) — International Engineering Training; Optional control detail.
 
-  Both engine kW and alternator kVA limits apply; reactive current still contributes to winding losses.
-
-### 16. Optional historical revision: Lorenz absolute-resistance apparatus
+### 17. Optional historical revision: Lorenz absolute-resistance apparatus
 
 - [Lorenz Resistance Method: Rotating-Disc Apparatus Demonstration](https://www.youtube.com/watch?v=9ILTHNLSsG0) — nickm2001; Optional historical demonstration.
 
@@ -468,6 +477,24 @@ Follow the sections in order. Key C2 foundations now appear directly in C1. The 
 - [Periodic Inspection: Follow the Evidence Through an EICR](https://www.youtube.com/watch?v=1tBICSsjVWo) — Artisan Electrics; Optional refresher.
 
   Optional domestic EICR refresher; use the preceding lessons for three-phase commissioning.
+
+### 9. Standby generators: site, connections, earthing and operation
+
+- [Plan a Generator Installation: Air, Exhaust, Access, Cables and Fuel](https://www.youtube.com/watch?v=uexkXQ_I7iE) — Shenton Group — Mark Porter; Core application.
+
+  Portable generators belong outdoors, away from openings. Permanent enclosed sets need engineered ventilation and exhaust. Apply the earlier cable, voltage-drop and protection lessons to the actual route and manufacturer’s requirements.
+- [Generator Earthing: Isolated Outputs, TN-S, Neutral and the Fault Path](https://www.youtube.com/watch?v=mzCGE5wnWos) — John Ward; Core application.
+
+  Neutral is a live conductor: never touch it. Identify the actual winding, neutral-earth link and fault path; do not infer them from generator size. Never add a link without the approved design and manufacturer’s instructions. An electrode does not replace the protective conductor; transfer pole choice is design dependent.
+- [Recognise a Four-Pole Generator Changeover and Its Transfer Sequence](https://www.youtube.com/watch?v=MfR2Y34U7Ww) — Blades Power Generation; Core application.
+
+  Four poles can transfer L1, L2, L3 and neutral; protective earth remains continuous. This bench demonstration shows the mechanism and sequence. Actual pole choice, interlocking, ratings and terminal connections follow the approved design and device instructions.
+- [At the Generator: Pre-Start Checks, Output Breaker and Emergency Stop](https://www.youtube.com/watch?v=cwBzqfZRn3I) — Pleavin Power; Core application.
+
+  Inspect with all AC/DC sources isolated and auto-start disabled. Follow the model’s battery and fuel procedures; the video assumes output wiring and commissioning are complete. Persistent hunting needs investigation. Use the normal stop/cool-down procedure for routine shutdown, rather than the emergency stop.
+- [Follow a Real Standby Setup: Generator, ATS, Consumer Unit and Load](https://www.youtube.com/watch?v=jwBI-rd3-I4) — ThePowerSite Ltd; Core application.
+
+  Trace mains and generator feeds → ATS → consumer unit → load; distinguish control/charging from output power. This is a functional demonstration, not a wiring or commissioning procedure. Do not copy the indoor engine location. Reapply the earlier verification lessons in both supply modes.
 
 ## Module 19: Three-Phase and Motor Fault Diagnosis
 
