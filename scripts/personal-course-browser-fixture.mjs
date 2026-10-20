@@ -62,6 +62,8 @@ export async function fixture({ mobile = false, guest = false, state: seed, lear
   await page.goto(origin + '/#learn/' + first.id);
   await page.locator('.lesson-canvas h1').waitFor();
   if (mobile) { await page.getByRole('button', { name: 'Open course map', exact: true }).click(); await page.waitForTimeout(350); }
-  if (!guest) await page.getByRole('button', { name: 'Add video', exact: true }).waitFor();
+  // Phone Course tools start collapsed; readiness must not depend on their
+  // Add video button being visible or change the initial navigation layout.
+  if (!guest) await page.locator('.course-editor-toolbar').waitFor({ state: 'attached' });
   return { page, context, first, errors, writes, reads, state: () => state, learner: () => learner, supplementaryProgress: () => supplementaryProgress, supplementaryLoaded: () => supplementaryLoaded, external: edit => { state = model.applyCourseEdit(state, { operationId: crypto.randomUUID(), revision: state.revision, edit }); }, failNext: () => { rejectNext = true; }, loseNextResponse: () => { loseResponse = true; } };
 }

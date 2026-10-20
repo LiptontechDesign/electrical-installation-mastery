@@ -1,0 +1,137 @@
+/* Finished modules take one row; their original colours return when expanded. */
+.completed-module-group {
+  margin-block: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+.completed-module-group > summary {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto 16px;
+  align-items: center;
+  gap: 10px;
+  min-height: 68px;
+  padding: 12px;
+  border-radius: 9px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.completed-module-group > summary::-webkit-details-marker { display: none; }
+.completed-module-group > summary::marker { content: ''; }
+.completed-module-group > summary:hover { background: var(--surface-muted); }
+.completed-module-group > summary:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.completed-module-icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-success);
+  color: var(--text-success);
+}
+
+.completed-module-icon > svg { width: 18px; height: 18px; }
+.completed-module-label { display: grid; gap: 4px; min-width: 0; }
+.completed-module-label > strong { font-size: 14px; font-weight: 700; line-height: 1.45; }
+.completed-module-label > small { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.completed-module-label > :is(strong, small) { overflow-wrap: anywhere; }
+.completed-module-count {
+  display: grid;
+  min-width: 26px;
+  min-height: 26px;
+  padding: 2px 6px;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--surface-success);
+  color: var(--text-success);
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.completed-module-group > summary > svg { width: 16px; height: 16px; color: var(--muted); }
+.completed-module-group[open] > summary { border-end-start-radius: 0; border-end-end-radius: 0; }
+.completed-module-group[open] > summary > svg { transform: rotate(180deg); }
+.completed-module-content { padding: 10px 8px 0; border-top: 1px solid var(--line); }
+.completed-module-content > .module-accordion:last-child { margin-bottom: 8px; }
+
+/* A persistent module edge carries identity without relying on colour for state. */
+.course-map .module-accordion[data-module-tone] {
+  border-inline-start: 3px solid var(--pathway-accent);
+  scroll-margin-block: 12px;
+}
+
+.course-map .module-accordion[data-current="true"] {
+  border-color: var(--control-border);
+  border-inline-start-color: var(--pathway-accent);
+}
+
+.course-map .module-accordion[data-current="true"] > button { background: var(--surface-soft); }
+.course-map .module-accordion > button strong { overflow: visible; overflow-wrap: anywhere; text-overflow: clip; }
+.course-map-section-label {
+  margin: 18px 4px 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+/* Keep the playing lesson within reach while someone explores the course. */
+.course-current-locator {
+  display: grid;
+  gap: 10px;
+  margin-block: 0 14px;
+  padding: 12px;
+  border: 1px solid var(--control-border);
+  border-inline-start: 3px solid var(--pathway-accent, var(--text-accent));
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--ink);
+}
+
+.course-current-locator > div { display: grid; gap: 5px; min-width: 0; }
+.course-current-locator > div > span { color: var(--muted); font-size: 12px; font-weight: 650; line-height: 1.5; }
+.course-current-locator strong { font-size: 14px; font-weight: 650; line-height: 1.5; overflow-wrap: anywhere; }
+.course-current-locator > button {
+  display: inline-flex;
+  justify-self: start;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--surface-selected-border);
+  border-radius: 8px;
+  background: var(--surface-selected);
+  color: var(--surface-selected-text);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: start;
+}
+
+.course-current-locator > button > svg { width: 16px; height: 16px; }
+.course-current-locator > button:hover { border-color: var(--text-accent); }
+.course-current-locator > button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .completed-module-group > summary > svg { transition: transform .18s ease; }
+}
+
+@media (max-width: 400px) {
+  .completed-module-group > summary { gap: 8px; padding-inline: 10px; }
+  .completed-module-content { padding-inline: 6px; }
+}
+
+@media (prefers-contrast: more) {
+  .completed-module-group { border-color: var(--control-border); }
+}

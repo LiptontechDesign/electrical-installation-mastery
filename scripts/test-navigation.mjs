@@ -83,7 +83,7 @@ assert.ok(mapModules().every(node=>!node.props.className.includes('open')),'Swit
 await click(moduleButton('01'));
 await click(moduleButton('13'));
 assert.equal(moduleButton('13').props['aria-expanded'],true,'A later module can be expanded');
-assert.equal(moduleButton('01').props['aria-expanded'],false,'The previously expanded module closes');
+assert.equal(moduleButton('01').props['aria-expanded'],true,'Deliberately opened modules stay available for revision');
 await click(pathButton('C1'));
 assert.equal(moduleButton('13').props['aria-expanded'],true,'Tapping the selected pathway preserves the expanded module');
 await click(tree.root.findAllByProps({'aria-label':'Close course map'})[0]);

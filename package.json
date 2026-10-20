@@ -14,6 +14,8 @@
     "start": "vinext start --host 127.0.0.1",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "test:navigation": "node scripts/test-navigation.mjs",
+    "test:course-map-focus": "node scripts/test-course-map-focus.mjs",
+    "test:course-map-focus-browser": "node scripts/test-course-map-focus-browser.mjs",
     "test:study-workspace": "node scripts/test-study-workspace.mjs",
     "test:course-watch-view": "node scripts/test-course-watch-view.mjs",
     "test:progress": "node scripts/test-course-progress.mjs",

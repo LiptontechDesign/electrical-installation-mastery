@@ -95,11 +95,13 @@ try {
  await page.getByRole('button',{name:'Open course map',exact:true}).click();await page.waitForTimeout(350);
  await page.screenshot({path:'work/experience-preview/mobile.png'});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'No mobile overflow');
+ const checkpointSaved=page.waitForResponse(response=>response.url().endsWith('/learner-state')&&response.request().method()==='PUT'&&response.request().postDataJSON().payload.videoPositions[first.videoId]===105);
  await page.evaluate(()=>{window.testPlayer.time=105;window.testPlayer.state=1;window.dispatchEvent(new Event('pagehide'));});
- await page.waitForTimeout(800);
+ await checkpointSaved;
  assert.equal(state.videoPositions[first.videoId],105,'Leaving the page flushes the latest playback checkpoint');
+ const completionSaved=page.waitForResponse(response=>response.url().endsWith('/learner-state')&&response.request().method()==='PUT'&&response.request().postDataJSON().payload.videoPositions[first.videoId]===0);
  await page.evaluate(()=>{window.testPlayer.state=0;window.testPlayer.options.events.onStateChange({data:0});});
- await page.waitForTimeout(800);
+ await completionSaved;
  assert.equal(state.videoPositions[first.videoId],0,'Finished videos restart from the beginning');
  await page.setViewportSize({width:1440,height:1000});
  await page.getByRole('button',{name:'Organise',exact:true}).click();

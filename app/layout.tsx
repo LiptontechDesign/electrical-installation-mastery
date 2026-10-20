@@ -19,6 +19,7 @@ import './site-search.css';
 import './past-paper-navigation.css';
 import './mobile-navigation.css';
 import './workspace-design.css';
+import './course-map-focus.css';
 import 'katex/dist/katex.min.css';
 import { PwaProvider } from './pwa-support';
 import AccessibleTooltips from './accessible-tooltips';

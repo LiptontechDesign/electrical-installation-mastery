@@ -14,6 +14,7 @@ import LessonStudyContext from './lesson-study-context';
 import { formatVideoDuration, validVideoDuration } from './video-duration';
 
 type Context = { selected: SupplementaryVideo | null; playback: ReactNode; clearSelection: () => void; videos: SupplementaryVideo[]; watched: string[]; replaceWatched: (ids: string[]) => void; ready: boolean; error: string; open: (video: SupplementaryVideo) => void;
+  progressReady: boolean;
   durationFor: (video?: SupplementaryVideo) => string | undefined; requestDuration: (videoId: string) => void; reportDuration: (videoId: string, seconds: number) => void;
 };
 type BulkWatchDetail = { moduleId: string; lessonIds: string[] };
@@ -149,7 +150,7 @@ export function SupplementaryProvider({ children, userId }: { children: ReactNod
   }, [videos, userId]);
   const playback = selected ? <SupplementaryLesson key={selected.id} video={selected} watched={watched.includes(selected.videoId)} progressError={progressError} onWatched={markWatched}
     onBack={() => { window.history.replaceState(null, '', '#learn'); setSelectedId(null); }} onToggle={() => !userId ? requestSignIn() : watched.includes(selected.videoId) ? setWatched(current => current.filter(id => id !== selected.videoId)) : markWatched(selected.videoId)}/> : null;
-  return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelectedId(null), videos, watched, replaceWatched, ready, error, durationFor, requestDuration, reportDuration,
+  return <SupplementaryContext.Provider value={{ selected, playback, clearSelection: () => setSelectedId(null), videos, watched, replaceWatched, ready, error, progressReady, durationFor, requestDuration, reportDuration,
     open: video => { setSelectedId(video.id); window.history.replaceState(null, '', `#learn/${video.id}`); window.dispatchEvent(new CustomEvent('supplementary-video-open', { detail: { id: video.id } })); } }}>{children}</SupplementaryContext.Provider>;
 }
 

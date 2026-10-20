@@ -1,9 +1,10 @@
 # Current documentation
 
-Updated 19 October 2026. This index and the root README describe the current application, not a future roadmap.
+Updated 20 October 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
 - [Course fullscreen player](course-fullscreen-player.md): persistent Previous/Next and Auto-next controls, phone landscape requests, expanded-view fallback and verification.
+- [Focused course map](course-map-focus.md): compact completed-module groups, retained revision access, current-lesson return and module colours.
 - [Video-only cleanup](video-only-cleanup.md): what was retained, removed and verified.
 - [Course ordering](course-drag-and-drop.md): personal ordering, placement rules and continuous numbering.
 - [Supplementary videos](supplementary-videos.md): personal additions, defaults, playback and persistence.
@@ -35,7 +36,7 @@ Superseded assessment, competency, lesson-explanation, transcript-integration an
 
 Course progress uses explicit not-started, in-progress and completed badges with watched counts and progress bars. Every active video counts once, including required catalogue, optional catalogue, bundled supplementary and personal additions across all pathways. Sections, modules, Home, Settings and the toolbar use the same mixed course arrangement. Watching or undoing a mark updates the numerator; adding, archiving, restoring or deleting updates the active total and its matching watched count. Historical marks for removed entries remain saved but do not contribute until restored. Optional remaining counts provide extra context within the primary total. C2, C1 and Advanced use restrained blue, violet and amber accents, while green indicates completion. The active video is labelled Watching now. Guests see video totals without saved progress.
 
-The course map uses compact progress rows with watched/total video counts, separate module and section headings, full lesson titles and a current-module indicator. Completed groups use quieter success styling only after every active video is watched, and a Next unwatched shortcut follows the same mixed sequence.
+The course map uses compact progress rows with watched/total video counts, separate module and section headings, full lesson titles and a current-module indicator. Consecutive finished modules share an expandable Completed modules row; the playing module stays visible until the learner moves on. Earlier modules can remain open for revision, and Return to lesson reveals the playing video without resetting playback. Completed groups use quieter success styling only after every active video is watched, and a Next unwatched shortcut follows the same mixed sequence. See [focused navigation](course-map-focus.md).
 
 Progress backups include supplementary watched marks alongside the learner state. Older backups remain accepted and leave supplementary marks intact when that field is absent. Reset learning progress clears both watched records. Verify with `node scripts/test-course-progress.mjs` and `node scripts/test-course-progress-browser.mjs` (the browser suite requires a local fixture server).
 

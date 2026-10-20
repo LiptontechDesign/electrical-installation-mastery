@@ -9,7 +9,7 @@ import {
   AlertTriangle, ArrowRight, BookOpen, Bookmark,
   Check, CheckCircle2, ChevronDown, ChevronRight, Circle,
   Download,
-  Home, Info, LockKeyhole, Menu,
+  Home, Info, LocateFixed, LockKeyhole, Menu,
   PlayCircle, RotateCcw, Settings, SkipForward,
   Upload, X, Zap,
 } from 'lucide-react';
@@ -25,6 +25,7 @@ import CourseWatchView, { CoursePlayerControls, fullscreenBlocksCourseNavigation
 import { AddVideoButton, CourseEditorTools, VideoActions } from './course-editor-actions';
 import { PersonalCourseEditor } from './personal-course-editor';
 import { moduleTone, matchesLessonFilter, type LessonFilter } from './course-ui-model';
+import { buildCourseMapGroups } from './course-map-focus-model';
 import { CourseProgressSummary } from './course-progress-summary';
 import { pathwayLabel, progressForVideos } from './course-progress-model';
 import PathwayProgress from './pathway-progress';
@@ -120,7 +121,7 @@ const navigation = [
 export default function CourseApp({ user }: { user: CourseUser | null }) {
   const { requestSignIn } = useCourseAccount();
   const [showOverview, setShowOverview] = useState(false);
-  const { course, sectionsByModule, rows: mapRows, allRows: allCourseRows, byId: courseRowsById } = useCourseOrder();
+  const { course, sectionsByModule, rows: mapRows, allRows: allCourseRows, byId: courseRowsById, ready: courseReady } = useCourseOrder();
   const supplementary = useSupplementary();
   const supplementaryId = supplementary?.selected?.id;
   const allLessons = useMemo(() => course.modules.flatMap(m => m.lessons), [course]);
@@ -132,6 +133,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const [bookSelection, setBookSelection] = useState<BookSelection | null>(null);
 
   const [openModuleId, setOpenModuleId] = useState(course.modules[0].id);
+  const [reviewOpenModuleIds, setReviewOpenModuleIds] = useState<string[]>([]);
   const [mapPath, setMapPath] = useState<CourseModule['path']>(course.modules[0].path);
   const [courseMapCollapsed, setCourseMapCollapsed] = useState(false);
   const [dragOpenModuleIds, setDragOpenModuleIds] = useState<string[]>([]);
@@ -251,11 +253,25 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const selectedModule = course.modules.find(module => module.id === (supplementary?.selected?.moduleId ?? location.module.id)) ?? location.module;
   const selectedVideoId = supplementaryId ?? activeLesson.id;
   const selectedModuleId = selectedModule.id, selectedModulePath = selectedModule.path;
+  const selectedRow = allCourseRows[selectedRowIndex];
+  const progressByModule = new Map(course.modules.map(module => [module.id, groupProgress(allCourseRows.filter(row => row.moduleId === module.id).map(row => row.id))]));
+  const mapModules = course.modules.filter(module => module.path === mapPath && (organizing || lessonFilter === 'all' || sectionsByModule[module.id].some(group => mapRows[group.id]?.some(row => visibleRows.has(row.id)))));
+  const mapGroups = buildCourseMapGroups(mapModules, {
+    enabled: Boolean(user) && hydrated && courseReady && Boolean(supplementary?.progressReady) && !organizing && lessonFilter === 'all',
+    currentModuleId: selectedModuleId,
+    progressByModule,
+  });
+  const currentModuleOpen = openModuleId === selectedModuleId || reviewOpenModuleIds.includes(selectedModuleId) || (!organizing && lessonFilter !== 'all');
+  const showCurrentLocator = Boolean(selectedRow) && !organizing && (mapPath !== selectedModulePath || !currentModuleOpen || !visibleRows.has(selectedVideoId));
   // Account ordering can arrive after a linked video first opens. Follow its
   // resolved home on that change without resetting deliberate pathway browsing.
   useEffect(() => {
     if (view !== 'learn' || !selectedVideoId) return;
-    const timer = window.setTimeout(() => { setMapPath(selectedModulePath); setOpenModuleId(selectedModuleId); }, 0);
+    const timer = window.setTimeout(() => {
+      setMapPath(selectedModulePath);
+      setOpenModuleId(selectedModuleId);
+      setReviewOpenModuleIds(ids => ids.filter(id => id !== selectedModuleId));
+    }, 0);
     return () => window.clearTimeout(timer);
   }, [view, selectedVideoId, selectedModuleId, selectedModulePath]);
   const nextCore = nextRow?.kind === 'core' ? lessonLookup.get(nextRow.id) : undefined;
@@ -450,7 +466,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     if (!moduleId || !moduleDrawerOpen) return;
     const moduleElement = Array.from(courseMapBodyRef.current?.querySelectorAll<HTMLElement>('[data-course-module]') ?? []).find(element => element.dataset.courseModule === moduleId);
     moduleElement?.querySelector('section > button')?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
-  }, [openModuleId, dragOpenModuleIds, moduleDrawerOpen]);
+  }, [openModuleId, reviewOpenModuleIds, dragOpenModuleIds, moduleDrawerOpen]);
 
   useEffect(() => {
     if (!user || !hydrated || storageBlocked) return;
@@ -719,11 +735,27 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     if (!window.matchMedia('(max-width: 1180px)').matches) setCourseMapCollapsed(true);
   };
 
+  const returnToCurrentLesson = () => {
+    setMapPath(selectedModulePath);
+    setLessonFilter('all');
+    setOpenModuleId(selectedModuleId);
+    // Reveal the existing row rather than selecting/reloading its video.
+    window.requestAnimationFrame(() => window.requestAnimationFrame(() => {
+      const row = Array.from(courseMapBodyRef.current?.querySelectorAll<HTMLElement>('[data-course-row]') ?? []).find(element => element.dataset.courseRow === selectedVideoId);
+      const section = row?.closest('details');
+      if (section) section.open = true;
+      const button = row?.querySelector<HTMLButtonElement>('button:not(.course-drag-handle):not([data-video-actions])');
+      button?.focus({ preventScroll: true });
+      row?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+    }));
+  };
+
   const chooseMapPath = (path: CourseModule['path']) => {
     if (mapPath === path) return;
     mapModuleToRevealRef.current = null;
     setMapPath(path);
     setLessonFilter('all');
+    setReviewOpenModuleIds([]);
     setDragOpenModuleIds([]);
     const currentPathModule = selectedModule.path === path ? selectedModule : course.modules.find(module => module.path === path);
     setOpenModuleId(window.matchMedia('(max-width: 1180px)').matches && !organizing ? '' : currentPathModule?.id ?? '');
@@ -935,13 +967,26 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                   {user && organizing && <p className="filter-notice">Drag nearby videos, or choose Move to… from a video’s menu. Only your course changes.</p>}
                 </div>
                 {!organizing && lessonFilter !== 'all' && visibleRows.size === 0 && <p className="map-empty" role="status">{lessonFilter === 'saved' ? 'No saved lessons in this pathway yet. Use Save lesson below a video.' : 'You have watched every video in this pathway.'}</p>}
+                {showCurrentLocator && <div className="course-current-locator" data-module-tone={moduleTone(selectedModuleId)}>
+                  <div><span>Watching now · {pathwayLabel(selectedModulePath)} · Module {pad(selectedModule.stageNumber)}</span><strong>{selectedRow?.title}</strong></div>
+                  <button type="button" onClick={returnToCurrentLesson}><LocateFixed size={16} aria-hidden="true"/>Return to lesson</button>
+                </div>}
                 <nav aria-label="Course module and lesson navigation">
-                  {course.modules.filter(module=>module.path===mapPath && (organizing || lessonFilter === 'all' || sectionsByModule[module.id].some(group => mapRows[group.id]?.some(row => visibleRows.has(row.id))))).map((module) => {
-                    const isOpen = (!organizing && lessonFilter !== 'all') || openModuleId === module.id || dragOpenModuleIds.includes(module.id);
-                    const progress = groupProgress(allCourseRows.filter(row => row.moduleId === module.id).map(row => row.id));
+                  {mapGroups.map(entry => {
+                    const modules = entry.kind === 'completed' ? entry.modules : [entry.module];
+                    const content = modules.map(module => {
+                    const isOpen = (!organizing && lessonFilter !== 'all') || openModuleId === module.id || reviewOpenModuleIds.includes(module.id) || dragOpenModuleIds.includes(module.id);
+                    const progress = progressByModule.get(module.id)!;
                     return (
                       <CourseDragModule key={module.id} id={module.id} expanded={isOpen} onExpand={() => setDragOpenModuleIds(ids => [...new Set([...ids, module.id])])}><section data-current={(supplementary?.selected?.moduleId ?? location.module.id) === module.id} data-module-tone={moduleTone(module.id)} data-pathway={module.path} data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} className={`module-accordion ${isOpen ? 'open' : ''}`}>
-                        <button type="button" className={location.module.id === module.id ? 'active' : ''} onClick={() => { mapModuleToRevealRef.current = module.id; setDragOpenModuleIds([]); setOpenModuleId(isOpen ? '' : module.id); }} aria-expanded={isOpen}>
+                        <button type="button" className={selectedModuleId === module.id ? 'active' : ''} onClick={() => {
+                          mapModuleToRevealRef.current = module.id;
+                          setDragOpenModuleIds([]);
+                          if (isOpen) {
+                            if (openModuleId === module.id) setOpenModuleId('');
+                            setReviewOpenModuleIds(ids => ids.filter(id => id !== module.id));
+                          } else setReviewOpenModuleIds(ids => [...new Set([...ids, module.id])]);
+                        }} aria-expanded={isOpen}>
                           <span className="module-index">{user && progress.total > 0 && progress.watched === progress.total ? <Check size={18} aria-label="Completed"/> : pad(module.stageNumber)}</span><span><span className="module-eyebrow">Module {pad(module.stageNumber)}{(supplementary?.selected?.moduleId ?? location.module.id) === module.id && <span> · Current</span>}</span><strong>{module.title}</strong><small>{module.path === 'Professional' ? 'Advanced' : module.path} · {allCourseRows.filter(row => row.moduleId === module.id).length} videos · {module.duration} core</small>{user && <CourseProgressSummary {...progress} label={module.title + ' progress'}/>}</span><ChevronDown size={18} />
                         </button>
                         <div className="module-actions">
@@ -955,6 +1000,14 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                         }} /></details></CourseDragSection>;})}</div>}
                       </section></CourseDragModule>
                     );
+                    });
+                    if (entry.kind === 'module') return content;
+                    const first = entry.modules[0], last = entry.modules.at(-1)!;
+                    const moduleNumbers = entry.modules.length === 1 ? `Module ${pad(first.stageNumber)}` : `Modules ${pad(first.stageNumber)}–${pad(last.stageNumber)}`;
+                    return <details key={entry.id} className="completed-module-group" data-pathway={mapPath} data-completed-modules={entry.modules.map(module => module.id).join(' ')} open={entry.modules.some(module => openModuleId === module.id) || undefined}>
+                      <summary><span className="completed-module-icon"><CheckCircle2 size={18} aria-hidden="true"/></span><span className="completed-module-label"><strong>{entry.modules.length === 1 ? 'Completed module' : 'Completed modules'}</strong><small>{moduleNumbers} · {entry.watched} videos watched</small></span><span className="completed-module-count" aria-label={`${entry.modules.length} ${entry.modules.length === 1 ? 'module' : 'modules'}`}>{entry.modules.length}</span><ChevronDown size={16} aria-hidden="true"/></summary>
+                      <div className="completed-module-content">{content}</div>
+                    </details>;
                   })}
                 </nav>
                 </div>
