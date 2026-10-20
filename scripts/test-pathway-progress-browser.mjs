@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { browser, fixture, model } from './personal-course-browser-fixture.mjs';
+import { browser, fixture, model, chooseCoursePath, openCourseTools, revealCourseModule } from './personal-course-browser-fixture.mjs';
 const { initialLearnerState } = await import('../work/editor-browser/learner-state.js');
 const published = model.personalCourseSnapshot(model.publishedPersonalCourse);
 const c1Module = published.course.modules.find(module => module.path === 'C1');
@@ -38,9 +38,10 @@ async function check(page, path, watched, total, overallWatched = 3, overallTota
 }
 async function choosePath(page, label) {
   await openMap(page);
-  await page.locator('.course-path-switcher').getByRole('button', { name: label, exact: true }).click();
+  await chooseCoursePath(page, label);
 }
 async function openEarthingModule(page) {
+  await revealCourseModule(page, 'module-05');
   const accordion = page.locator('.module-accordion').filter({ hasText: 'Fault Protection, Earthing and Protective Devices' });
   if (!(await accordion.getAttribute('class')).split(' ').includes('open')) await accordion.locator(':scope > button').click();
   const section = page.locator('[data-course-section="module-05-section-4"]');
@@ -75,6 +76,7 @@ try {
     await choosePath(page, 'C1'); await check(page, 'C1', 1, 1);
     assert.equal(await page.locator('.map-guidance').getByRole('button', { name: 'Next unwatched' }).count(), 0, 'A completed pathway never suggests another pathway');
     await choosePath(page, 'Advanced'); await check(page, 'Advanced', 0, 1);
+    await openCourseTools(page);
     await page.locator('.map-guidance').getByRole('button', { name: 'Next unwatched' }).click();
     await closeMap(page);
     assert.ok((await page.locator('.breadcrumbs').textContent()).includes('Professional'));
@@ -134,7 +136,7 @@ try {
   supplementaryOnly.videos = supplementaryOnly.videos.map(video => ({ ...video, archived: video.id !== bundledId }));
   const f = await fixture({ state: supplementaryOnly, learner });
   await f.page.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
-  assert.ok((await f.page.locator('.resume-label').textContent()).includes('8:46'), 'The supplementary Home resume card shows duration');
+  assert.ok((await f.page.locator('.study-resume-meta').textContent()).includes('8:46'), 'The supplementary Home resume card shows duration');
   await f.context.close();
   const additions = await fixture({ state, learner }), page = additions.page;
   await page.route('**/api/supplementary/metadata?**', async route => {
@@ -142,6 +144,7 @@ try {
     if (link?.endsWith('newDur00002')) return route.fulfill({ status: 422, json: { error: 'Video details unavailable in this fixture.' } });
     return route.fallback();
   });
+  await openCourseTools(page);
   await page.getByRole('button', { name: 'Add video', exact: true }).click();
   const addDialog = page.getByRole('dialog', { name: 'Add a video', exact: true });
   await addDialog.getByLabel('YouTube link').fill('https://youtu.be/newDur00001');

@@ -21,7 +21,7 @@ globalThis.document = { body: { style: {} }, hidden: false, fullscreenElement: n
 globalThis.window = {
   location: { hash: '', origin: 'http://localhost:3001' },
   localStorage: { getItem(key) { storage.push(['read', key]); return null; }, setItem(key) { storage.push(['write', key]); } },
-  history: { replaceState(_, __, hash) { window.location.hash = hash; } }, scrollTo() {}, addEventListener() {}, removeEventListener() {},
+  history: { replaceState(_, __, hash) { window.location.hash = hash; } }, scrollTo() {}, requestAnimationFrame(fn) { fn(); return 1; }, cancelAnimationFrame() {}, addEventListener() {}, removeEventListener() {},
   setTimeout(fn, delay) { const id = ++timerId; if ((delay ?? 0) <= 600) timers.set(id, fn); return id; }, clearTimeout(id) { timers.delete(id); },
   setInterval() { return 1; }, clearInterval() {}, matchMedia() { return { matches: false }; },
 };

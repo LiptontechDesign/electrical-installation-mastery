@@ -50,6 +50,7 @@ try {
  assert.equal(await page.locator('[data-course-row]:visible').count(),1,'Saved filter shows one saved lesson');
  assert.equal(await page.locator('[data-course-row]:visible').getAttribute('data-course-row'),second.id);
  await page.getByRole('button',{name:'Clear filter',exact:true}).click();
+ await page.getByRole('button',{name:'Course tools',exact:true}).click();
  await page.getByRole('button',{name:'Organise',exact:true}).click();
  assert.ok(await page.locator('.course-drag-handle:visible').count()>0,'Organise mode reveals ordering controls');
  assert.equal(await page.locator('.course-drag-handle:visible').first().isDisabled(),false);
@@ -104,6 +105,8 @@ try {
  await completionSaved;
  assert.equal(state.videoPositions[first.videoId],0,'Finished videos restart from the beginning');
  await page.setViewportSize({width:1440,height:1000});
+ const courseTools=page.getByRole('button',{name:'Course tools',exact:true});
+ if(await courseTools.getAttribute('aria-expanded')!=='true')await courseTools.click();
  await page.getByRole('button',{name:'Organise',exact:true}).click();
  await page.getByRole('button',{name:'Add video',exact:true}).click();
  await page.getByLabel('YouTube link',{exact:true}).fill('https://www.youtube.com/watch?v=newvideo123');

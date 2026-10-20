@@ -48,4 +48,10 @@ assert.equal(finished[0].watched, 2, 'Retained historical marks do not inflate g
 mixedProgress.set('safety', progressForVideos(['catalogue-lesson'], watched));
 assert.equal(buildCourseMapGroups([modules[1]], { ...options, progressByModule: mixedProgress })[0].watched, 1, 'Archiving an addition immediately changes the active total');
 
-console.log('PASS: contiguous completed-module groups, original order and identities, current-module exemption, disabled/empty/missing progress, mixed-video completion and archive totals.');
+const focused = buildCourseMapGroups(modules, { ...options, compactFollowing: true });
+assert.deepEqual(shape(focused), [['foundation', 'safety'], 'cables', ['protection'], 'design', ['testing', 'empty', 'unloaded']], 'Later modules form one group while earlier incomplete modules stay visible');
+assert.equal(focused.at(-1).kind, 'following', 'Later modules keep their separate meaning from completed work');
+assert.deepEqual(focused.flatMap(node => node.kind === 'module' ? [node.module] : node.modules), modules);
+assert.deepEqual(shape(buildCourseMapGroups(modules, { ...options, compactFollowing: true, enabled: false })), modules.map(module => module.id));
+assert.deepEqual(shape(buildCourseMapGroups(modules, { ...options, compactFollowing: true, currentModuleId: 'elsewhere' })), shape(buildCourseMapGroups(modules, { ...options, currentModuleId: 'elsewhere' })), 'Browsing a different pathway never assumes which module comes next');
+console.log('PASS: completed and later module groups, original order and identities, current exemption, loading/empty/missing progress, mixed-video completion and archive totals.');

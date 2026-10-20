@@ -4,9 +4,9 @@ Implemented 1 October 2026.
 
 ## Progress scope
 
-- C2, C1 and Advanced tabs select the primary progress scope in the course map.
-- The primary card names that pathway and shows watched/active videos, percentage and an accessible progress bar. Its accent follows the existing pathway colour.
-- A quieter All pathways row retains the complete personal course total.
+- The named C2, C1 and Advanced pathway picker selects the primary progress scope in the course map. Organise retains separate pathway drop targets.
+- A compact watched/active-video line and percentage share an accessible progress bar. The selected pathway is named in the picker and accessible labels, with the existing pathway colour.
+- Opening the progress line reveals All pathways totals. Home and Settings retain their existing overall totals.
 - The toolbar and My learning progress panel use the selected pathway and name it explicitly. My learning also shows the overall total. Settings retains the account-wide record and labels it All pathways / overall.
 - Next unwatched and Suggested next step search the selected pathway. Completing it does not suggest an unrelated pathway.
 - Required, optional and supplementary entries all count. Lesson filters do not change progress denominators. Archives and permanent removals are excluded; restores recover their retained watched marks. Cross-path moves change each pathway's membership while preserving the overall total.

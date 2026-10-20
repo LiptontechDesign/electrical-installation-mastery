@@ -9,6 +9,19 @@ const { initialLearnerState } = await import('../work/editor-browser/learner-sta
 export const origin = process.env.COURSE_TEST_URL ?? 'http://127.0.0.1:3001';
 assert.ok(['127.0.0.1', 'localhost'].includes(new URL(origin).hostname), 'Fixture tests must use a local server.');
 export const browser = await chromium.launch({ headless: true, channel: process.env.COURSE_TEST_CHANNEL ?? 'msedge' });
+export async function openCourseTools(page) {
+  const button = page.getByRole('button', { name: 'Course tools', exact: true });
+  if (await button.getAttribute('aria-expanded') !== 'true') await button.click();
+}
+export async function chooseCoursePath(page, path) {
+  await page.getByRole('combobox', { name: 'Choose learning pathway', exact: true }).selectOption(path === 'Advanced' ? 'Professional' : path);
+}
+export async function revealCourseModule(page, moduleId) {
+  const collection = page.locator('.module-collection').filter({ has: page.locator('[data-course-module="' + moduleId + '"]') });
+  if (await collection.count() && !await collection.evaluate(node => node.open)) await collection.locator(':scope > summary').click();
+  const button = page.locator('[data-course-module="' + moduleId + '"] .module-accordion > button');
+  if (await button.getAttribute('aria-expanded') !== 'true') await button.click();
+}
 mkdirSync('work/editor-preview', { recursive: true });
 export async function fixture({ mobile = false, guest = false, state: seed, learner: seedLearner, supplementaryProgress: seedProgress = [], supplementaryReadDelay = 0 } = {}) {
   const context = await browser.newContext(mobile ? { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true } : { viewport: { width: 1440, height: 1000 } });
@@ -60,6 +73,9 @@ export async function fixture({ mobile = false, guest = false, state: seed, lear
     return route.fulfill({ contentType: 'text/html', body: '<html><body style="background:#0c1c2e;color:white;font:18px sans-serif;padding:24px">Course video preview</body></html>' });
   });
   await page.goto(origin + '/#learn/' + first.id);
+  // The development-only launcher overlaps the phone Home button. It is not
+  // part of the production interface; client exceptions remain captured above.
+  await page.addStyleTag({ content: 'nextjs-portal { display: none; }' });
   await page.locator('.lesson-canvas h1').waitFor();
   if (mobile) { await page.getByRole('button', { name: 'Open course map', exact: true }).click(); await page.waitForTimeout(350); }
   // Phone Course tools start collapsed; readiness must not depend on their

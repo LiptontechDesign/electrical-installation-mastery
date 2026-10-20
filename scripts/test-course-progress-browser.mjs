@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { browser, fixture, model } from './personal-course-browser-fixture.mjs';
+import { browser, fixture, model, openCourseTools } from './personal-course-browser-fixture.mjs';
 import { progressFixture } from './course-progress-fixture.mjs';
 const { initialLearnerState } = await import('../work/editor-browser/learner-state.js');
 const seed = progressFixture(model);
@@ -91,6 +91,7 @@ async function archive(page, id) {
 }
 async function restore(page, title) {
   await openMap(page);
+  await openCourseTools(page);
   await page.locator('.course-tools-more summary').click();
   await page.getByRole('button', { name: 'Archived videos', exact: true }).click();
   let dialog = page.getByRole('dialog', { name: 'Archived videos', exact: true });
@@ -154,6 +155,7 @@ try {
   assert.equal(f.learner().notes['p01-l01'], 'Archived notes stay private');
 
   // A new addition changes every denominator without changing watched history.
+  await openCourseTools(page);
   await page.getByRole('button', { name: 'Add video', exact: true }).click();
   let dialog = page.getByRole('dialog', { name: 'Add a video', exact: true });
   await dialog.getByLabel('YouTube link', { exact: true }).fill('https://youtu.be/progTest003');
@@ -164,6 +166,7 @@ try {
   await checkHomeAndOverview(page, 2, 4);
   await page.getByRole('button', { name: 'Next unwatched', exact: true }).click();
   assert.ok(new URL(page.url()).hash.endsWith(seed.coreIds[1]), 'Suggested next follows the active mixed course');
+  await openCourseTools(page);
   await page.getByRole('button', { name: 'Organise', exact: true }).click();
   await page.getByRole('button', { name: 'Mark every video in section 3 as watched', exact: true }).click();
   await checkMap(page, 4, 4);
@@ -242,7 +245,7 @@ try {
   const onlySupplementary = structuredClone(seed.state);
   onlySupplementary.archivedLessonIds.push(...seed.coreIds);
   const only = await fixture({ state: onlySupplementary, learner, supplementaryProgress: [seed.added[0].videoId] }), op = only.page;
-  await waitText(op, '.course-summary > span', '1/2 videos watched');
+  await waitText(op, '.course-summary .pathway-progress-count', '1/2 videos watched');
   await op.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   await waitText(op, '.progress-panel-number', '50%');
   assert.equal(await op.locator('.learning-progress-panel > p').first().textContent(), '1 of 2 videos watched');
@@ -250,10 +253,11 @@ try {
   await op.getByRole('button', { name: 'Start learning', exact: true }).click();
   await op.locator('.supp-lesson h1').waitFor();
   await permanentlyDelete(op, seed.added[0].id);
-  await waitText(op, '.course-summary > span', '0/1 videos watched');
+  await waitText(op, '.course-summary .pathway-progress-count', '0/1 videos watched');
   await permanentlyDelete(op, seed.added[1].id);
-  await waitText(op, '.course-summary > span', '0/0 videos watched');
+  await waitText(op, '.course-summary .pathway-progress-count', '0/0 videos watched');
   await op.locator('.module-accordion.open > button').click();
+  await openCourseTools(op);
   await op.getByRole('button', { name: 'Add video', exact: true }).waitFor();
   await op.locator('.studio-navigation').getByRole('button', { name: 'Home', exact: true }).click();
   await op.locator('.home-view-switch').getByRole('tab', { name: 'My learning', exact: true }).click();

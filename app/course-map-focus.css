@@ -1,12 +1,12 @@
 /* Finished modules take one row; their original colours return when expanded. */
-.completed-module-group {
+.module-collection {
   margin-block: 0 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--white);
 }
 
-.completed-module-group > summary {
+.module-collection > summary {
   display: grid;
   grid-template-columns: 28px minmax(0, 1fr) auto 16px;
   align-items: center;
@@ -20,10 +20,10 @@
   list-style: none;
 }
 
-.completed-module-group > summary::-webkit-details-marker { display: none; }
-.completed-module-group > summary::marker { content: ''; }
-.completed-module-group > summary:hover { background: var(--surface-muted); }
-.completed-module-group > summary:focus-visible {
+.module-collection > summary::-webkit-details-marker { display: none; }
+.module-collection > summary::marker { content: ''; }
+.module-collection > summary:hover { background: var(--surface-muted); }
+.module-collection > summary:focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
 }
@@ -57,9 +57,9 @@
   font-variant-numeric: tabular-nums;
 }
 
-.completed-module-group > summary > svg { width: 16px; height: 16px; color: var(--muted); }
-.completed-module-group[open] > summary { border-end-start-radius: 0; border-end-end-radius: 0; }
-.completed-module-group[open] > summary > svg { transform: rotate(180deg); }
+.module-collection > summary > svg { width: 16px; height: 16px; color: var(--muted); }
+.module-collection[open] > summary { border-end-start-radius: 0; border-end-end-radius: 0; }
+.module-collection[open] > summary > svg { transform: rotate(180deg); }
 .completed-module-content { padding: 10px 8px 0; border-top: 1px solid var(--line); }
 .completed-module-content > .module-accordion:last-child { margin-bottom: 8px; }
 
@@ -124,14 +124,14 @@
 .course-current-locator > button:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .completed-module-group > summary > svg { transition: transform .18s ease; }
+  .module-collection > summary > svg { transition: transform .18s ease; }
 }
 
 @media (max-width: 400px) {
-  .completed-module-group > summary { gap: 8px; padding-inline: 10px; }
+  .module-collection > summary { gap: 8px; padding-inline: 10px; }
   .completed-module-content { padding-inline: 6px; }
 }
 
 @media (prefers-contrast: more) {
-  .completed-module-group { border-color: var(--control-border); }
+  .module-collection { border-color: var(--control-border); }
 }

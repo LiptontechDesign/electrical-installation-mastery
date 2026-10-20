@@ -18,7 +18,7 @@ The C1 pathway now has **16 independently numbered subject modules**, 85 focused
 
 Schema 10 accepts earlier backups and preserves video progress, bookmarks, notes and playback preferences. Learner records synchronize per account.
 
-In Learn, finished consecutive modules share one expandable **Completed modules** row, while the playing module stays visible. Earlier modules can stay open for revision. **Return to lesson** reveals the current video without restarting playback. Module colours and light/dark contrast remain consistent; see [focused course navigation](docs/course-map-focus.md).
+In Learn, a compact pathway picker, progress line and lesson filters bring modules closer to the top. Optional editing and display actions live in Tools. Finished earlier modules and later modules have separate expandable groups; open them individually, expand a whole group or pathway, or focus the current module. **Return to lesson** reveals the current video without restarting playback. Module colours and light/dark contrast remain consistent; see [focused course navigation](docs/course-map-focus.md).
 
 Progress counts every active video, including optional and supplementary videos. The course map, toolbar and My learning panel show the selected C2, C1 or Advanced pathway; a compact All pathways total retains overall progress. Section, module, pathway and overall totals update when watched marks or course membership change. Supplementary running times share the existing lesson metadata layout. See [progress scopes and video durations](docs/pathway-progress-and-video-duration.md). Progress backups include supplementary marks; earlier backups remain supported.
 

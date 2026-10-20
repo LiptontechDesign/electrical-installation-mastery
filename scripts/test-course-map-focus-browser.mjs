@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { browser, fixture, model } from './personal-course-browser-fixture.mjs';
+import { browser, fixture, model, chooseCoursePath } from './personal-course-browser-fixture.mjs';
 
 const { initialLearnerState } = await import('../work/editor-browser/learner-state.js');
 const published = model.personalCourseSnapshot(model.publishedPersonalCourse);
@@ -36,7 +36,7 @@ async function waitGroups(page, ids) {
 }
 async function revealModule(page, moduleId) {
   await openMap(page);
-  const group = page.locator(groupSelector).filter({ has: page.locator('[data-course-module="' + moduleId + '"]') });
+  const group = page.locator('.module-collection').filter({ has: page.locator('[data-course-module="' + moduleId + '"]') });
   if (await group.count() && !await group.evaluate(node => node.open)) await group.locator(':scope > summary').click();
   const button = header(page, moduleId);
   if (await button.getAttribute('aria-expanded') !== 'true') await button.click();
@@ -112,6 +112,11 @@ async function assertRenderedContrast(page, colorScheme) {
       ['.module-accordion > button .module-eyebrow', 4.5],
       ['.module-accordion > button .module-eyebrow > span', 4.5],
       ['.module-accordion > button .module-index', 4.5],
+      ['.course-path-select select', 4.5],
+      ['.course-map-tools-toggle', 4.5],
+      ['.course-progress-details .pathway-progress-count', 4.5],
+      ['.course-progress-details .pathway-progress-heading b', 4.5],
+      ['.lesson-filters button', 4.5],
     ];
     return targets.flatMap(([selector, required]) => [...document.querySelectorAll(selector)].filter(element => element.getClientRects().length).map(element => {
       const ancestors = [];
@@ -132,9 +137,9 @@ async function assertRenderedContrast(page, colorScheme) {
 try {
   const f = await fixture({ state, learner, supplementaryProgress: [videoId] });
   const { page } = f;
-  await waitGroups(page, [[modules[1].id, modules[2].id]]);
+  await waitGroups(page, []);
   assert.equal(await header(page, modules[0].id).getAttribute('aria-expanded'), 'true', 'A completed playing module stays open');
-  const initialGroup = page.locator(groupSelector);
+  const initialGroup = page.locator('.following-module-group');
   assert.equal(await initialGroup.evaluate(node => node.open), false, 'Completed history starts compact');
   assert.equal(await header(page, modules[1].id).isVisible(), false);
   await initialGroup.locator(':scope > summary').focus();
@@ -143,7 +148,7 @@ try {
   await header(page, modules[1].id).click();
   assert.equal(await header(page, modules[1].id).getAttribute('aria-expanded'), 'true');
   assert.equal(await header(page, modules[0].id).getAttribute('aria-expanded'), 'true', 'Revision does not close the playing module');
-  await waitGroups(page, [[modules[1].id, modules[2].id]]);
+  await waitGroups(page, []);
 
   await select(page, coreRows[3]);
   await waitGroups(page, [[modules[0].id, modules[1].id, modules[2].id]]);
@@ -167,7 +172,7 @@ try {
   for (const scheme of ['light', 'dark']) contrast[scheme] = (await assertRenderedContrast(page, scheme)).toFixed(2);
   console.log('PASS: rendered group, module-label and lesson-locator text contrast; lowest text ratios ' + JSON.stringify(contrast));
   await returnToLesson(page, coreRows[4]);
-  await page.locator('.course-path-switcher').getByRole('button', { name: 'C1', exact: true }).click();
+  await chooseCoursePath(page, 'C1');
   await returnToLesson(page, coreRows[4]);
 
   await filter(page, 'Saved');
@@ -189,7 +194,7 @@ try {
 
   // Personal video playback has the same current-module protection.
   await select(page, snapshot.byId.get(added.id));
-  await waitGroups(page, [[modules[0].id], [modules[2].id, modules[3].id]]);
+  await waitGroups(page, [[modules[0].id]]);
   assert.equal(await header(page, modules[1].id).getAttribute('aria-expanded'), 'true');
   assert.equal(await page.locator('.supp-lesson .complete-button').getAttribute('aria-pressed'), 'true');
   assert.equal(f.writes.length, 0, 'Browsing and completed-group expansion never edit the personal course');
@@ -202,9 +207,9 @@ try {
   const delayed = await fixture({ state, learner, supplementaryProgress: [], supplementaryReadDelay: 5000 });
   assert.equal(delayed.supplementaryLoaded(), false, 'The fixture supplementary read is still pending');
   assert.equal(await delayed.page.locator(groupSelector).count(), 0, 'No grouping before supplementary progress hydration');
-  await delayed.page.waitForFunction(() => Boolean(document.querySelector('details.completed-module-group')));
-  await waitGroups(delayed.page, [[modules[2].id]]);
-  assert.equal(await header(delayed.page, modules[1].id).isVisible(), true, 'An unwatched personal addition keeps its module out of completed history');
+  await delayed.page.waitForFunction(() => Boolean(document.querySelector('details.following-module-group')));
+  await waitGroups(delayed.page, []);
+  assert.equal(await delayed.page.locator('.completed-module-group [data-course-module="' + modules[1].id + '"]').count(), 0, 'An unwatched personal addition stays outside completed history');
   assert.deepEqual(delayed.errors, []);
   await delayed.context.close();
   console.log('PASS: pending mixed-video progress cannot prematurely hide modules, and an unfinished personal addition remains visible.');
@@ -212,14 +217,14 @@ try {
   const mobile = await fixture({ mobile: true, state, learner, supplementaryProgress: [videoId] });
   const mp = mobile.page;
   await mp.addStyleTag({ content: 'nextjs-portal { display: none; }' });
-  await waitGroups(mp, [[modules[1].id, modules[2].id]]);
+  await waitGroups(mp, []);
   for (const width of [390, 320]) {
     await mp.setViewportSize({ width, height: 844 });
     for (const colorScheme of ['light', 'dark']) {
       await mp.emulateMedia({ colorScheme });
-      await mp.locator(groupSelector).locator(':scope > summary').focus();
+      await mp.locator('.following-module-group').locator(':scope > summary').focus();
       assert.equal(await mp.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, width + 'px ' + colorScheme + ' layout has no horizontal overflow');
-      const bounds = await mp.locator(groupSelector).boundingBox();
+      const bounds = await mp.locator('.following-module-group').boundingBox();
       assert.ok(bounds.width > 0 && bounds.x >= 0 && bounds.x + bounds.width <= width + 1, 'Completed row fits the mobile drawer');
     }
   }

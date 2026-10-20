@@ -23,7 +23,7 @@ globalThis.window={
   location:{hash:'',origin:'http://localhost:3000'},
   localStorage:{getItem:key=>key==='electrical-mastery-progress-v1'?saved:null,setItem:(_,value)=>{saved=value;}},
   history:{replaceState:(_,__,hash)=>{window.location.hash=hash;}},
-  scrollTo(){},requestAnimationFrame(fn){fn();return 1;},addEventListener(){},removeEventListener(){},
+  scrollTo(){},requestAnimationFrame(fn){fn();return 1;},cancelAnimationFrame(){},addEventListener(){},removeEventListener(){},
   setTimeout(fn,delay){const id=++timerId;if((delay??0)<=600)timers.set(id,fn);return id;},
   clearTimeout(id){timers.delete(id);},setInterval(){return 1;},clearInterval(){},
   matchMedia:query=>({matches:narrowViewport&&query.includes('max-width: 1180px')}),
@@ -31,7 +31,7 @@ globalThis.window={
 const flush=async()=>{for(let i=0;i<5&&timers.size;i++)await act(async()=>{const pending=[...timers.values()];timers.clear();pending.forEach(fn=>fn());});};
 const text=node=>typeof node==='string'?node:Array.isArray(node)?node.map(text).join(''):node?.children?text(node.children):'';
 const click=async node=>{assert.ok(node,'Control exists');await act(async()=>node.props.onClick());await flush();};
-const button=label=>tree.root.findAllByType('button').find(node=>text(node).includes(label));
+const button=label=>tree.root.findAllByType('button').find(node=>node.props['aria-label']===label||text(node).includes(label));
 const state=()=>JSON.parse(saved);
 const mount=async()=>{await act(async()=>{tree=create(h(App,{user:{id:'test-user',email:'learner@example.com',name:'Test Learner',picture:null,isAdmin:false}}));});await flush();};
 await mount();
@@ -71,11 +71,12 @@ narrowViewport=true;
 await click(button('Course map'));
 assert.match(tree.root.findByProps({'aria-label':'Course modules'}).props.className,/drawer-open/,'Narrow course map opens as a drawer');
 const beforeBrowsing=state();
-const pathButton=label=>tree.root.findByProps({'aria-label':'Choose learning pathway'}).findAllByType('button').find(node=>text(node)===label);
+const pathPicker=()=>tree.root.findByProps({'aria-label':'Choose learning pathway'});
+const choosePath=async label=>{await act(async()=>pathPicker().props.onChange({target:{value:label==='Advanced'?'Professional':label}}));await flush();};
 const mapModules=()=>tree.root.findAllByType('section').filter(node=>typeof node.props.className==='string'&&node.props.className.startsWith('module-accordion'));
 const moduleButton=number=>mapModules().find(node=>text(node).startsWith(number)).findAllByType('button')[0];
-await click(pathButton('C1'));
-assert.equal(pathButton('C1').props['aria-pressed'],true);
+await choosePath('C1');
+assert.equal(pathPicker().props.value,'C1');
 assert.equal(mobileControls().find(node=>text(node)==='Papers').props.href,'/past-papers/c1','Papers follows the browsed C1 course pathway');
 assert.ok(mapModules().length>1&&mapModules().every(node=>node.props['data-pathway']==='C1'),'C1 shows its own module list');
 assert.deepEqual(mapModules().map(node=>text(node.findByProps({className:'module-eyebrow'})).match(/^Module (\d+)/)[1]),Array.from({length:16},(_,i)=>String(i+1).padStart(2,'0')),'C1 displays its own Module 01–16 sequence');
@@ -84,19 +85,19 @@ await click(moduleButton('01'));
 await click(moduleButton('13'));
 assert.equal(moduleButton('13').props['aria-expanded'],true,'A later module can be expanded');
 assert.equal(moduleButton('01').props['aria-expanded'],true,'Deliberately opened modules stay available for revision');
-await click(pathButton('C1'));
+await choosePath('C1');
 assert.equal(moduleButton('13').props['aria-expanded'],true,'Tapping the selected pathway preserves the expanded module');
 await click(tree.root.findAllByProps({'aria-label':'Close course map'})[0]);
 assert.doesNotMatch(tree.root.findByProps({'aria-label':'Course modules'}).props.className,/drawer-open/,'Narrow course map can be closed');
 await click(button('Course map'));
-assert.equal(pathButton('C1').props['aria-pressed'],true,'Reopening remembers the browsed pathway');
+assert.equal(pathPicker().props.value,'C1','Reopening remembers the browsed pathway');
 assert.equal(moduleButton('13').props['aria-expanded'],true,'Reopening remembers the expanded module');
-await click(pathButton('C2'));
+await choosePath('C2');
 assert.ok(mapModules().length>1&&mapModules().every(node=>node.props['data-pathway']==='C2'),'C2 switching updates the whole module list');
 assert.ok(mapModules().every(node=>!node.props.className.includes('open')));
 await click(button('Saved 0'));
 assert.equal(mapModules().length,0,'Saved filter is scoped to the selected pathway');
-await click(pathButton('C1'));
+await choosePath('C1');
 assert.ok(mapModules().length>1,'Switching pathways clears a filter that could hide every module');
 await click(button('Course tools'));
 assert.equal(button('Course tools').props['aria-expanded'],true);
@@ -106,7 +107,7 @@ await click(button('Course tools'));
 assert.equal(button('Course tools').props['aria-expanded'],false);
 assert.equal(button('Organise').props['aria-pressed'],false,'Closing the tools returns to ordinary lesson browsing');
 assert.deepEqual(state(),beforeBrowsing,'Pathway, module and tool navigation do not alter learning records');
-await click(pathButton('Advanced'));
+await choosePath('Advanced');
 await click(tree.root.findAllByProps({'aria-label':'Close course map'})[0]);
 narrowViewport=false;
 const distant=state().activeLessonId;
