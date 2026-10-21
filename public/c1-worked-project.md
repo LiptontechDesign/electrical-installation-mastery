@@ -1,6 +1,6 @@
 # C1 worked study project: a four-storey building
 
-Work through this project as you study C1 Modules 10–19. Keep one drawing and one calculation sheet throughout. Try each task before reading its worked result. This authored exercise supplements the videos; it does not alter the supplied EPRA questions or answers.
+Work through this project alongside the C1 calculations, design, protection, motor and verification modules. Keep one drawing and one calculation sheet throughout. Try each task before reading its worked result. This authored exercise supplements the videos; it does not alter the supplied EPRA questions or answers.
 
 ## 1. Draw the installation and state the assumptions
 
