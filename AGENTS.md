@@ -10,7 +10,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Delivery workflow
 
-The user’s standing preference is to commit completed changes and push them to the remote repository automatically after the relevant checks pass. Do not stop at local changes or ask again for routine commit/push permission. Report the commit and remote branch when finished.
+The user’s standing preference is to commit completed changes, push them to the remote repository and merge them into the default branch automatically after the relevant checks pass. Do not stop at local changes or ask again for routine commit/push/merge permission. Respect required repository checks and branch protections. Report the commit and merge result when finished.
 
 ## Current product scope
 
