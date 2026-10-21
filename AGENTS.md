@@ -16,6 +16,10 @@ The user’s standing preference is to commit completed changes, push them to th
 
 Read README.md and docs/README.md for the current application contract. This is a video course and reference-book reader with optional Google sign-in and account-scoped progress, notes and ordering. Lesson guides, Standards Companion, quizzes, flashcards, exams, simulations and module recaps were removed in September 2026. Do not reintroduce them or use historical Git documents as current requirements without an explicit request. Preserve stable video IDs, guest access without tracking, and account isolation.
 
+## C1 video selection
+
+The user requires English spoken teaching and complete available transcript review before selecting C1 videos. Evaluate explanation quality, technical accuracy and teaching flow rather than relying on a title. A translated caption export does not establish the original audio language; resolve English audio/track evidence and label any translated review honestly. See `docs/c1-motor-transcript-audit.md` for the current motor-specific evidence and remaining gaps.
+
 ## Standalone practice centre — explicitly requested September 2026
 
 The user authorized `/practice` with the supplied `EPRA_C2_C1_COMPLETE_ALL_IN_ONE_Study_Pack.zip`. `content/epra/` is the immutable source archive; never rewrite question or answer wording. Use `npm run import:epra` to regenerate the exact source slices, and `npm run test:epra` to verify hashes, completeness and formulas. Keep the practice centre independent of retired lesson extras and account progress. Practice working is session-only and downloadable; no guest tracking or new account state is introduced.

@@ -1,0 +1,3442 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-21",
+  "courseCommit": "21f0b3d401f79493ebdb140dccb42e9960414add",
+  "scope": {
+    "motorModuleIds": [
+      "c1-motors",
+      "module-07"
+    ],
+    "motorVideos": 30,
+    "relatedVideos": 12,
+    "papers": 9
+  },
+  "method": {
+    "basis": "Motor-related questions in eight registered C1 papers plus one dated October 2016 public copy. No general syllabus used to invent extra examinable motor requirements.",
+    "reading": "All 42 complete available caption texts read, including optional/supplementary videos. Three original English archive transcripts replaced non-English default exports; one Dutch dubbed export required translation.",
+    "limitations": [
+      "Not every C1 paper ever issued is available. Seven paper motor extracts readable; two older papers rely on the prior topic register.",
+      "Public copies/marking schemes are not authenticated originals. Unclear marks remain null; parent and child marks are not summed.",
+      "Caption-based review, not a full listening or frame-by-frame video inspection. A diagram not described in captions is unverified visually, not proven absent from every frame.",
+      "English evidence comes from original/default-audio metadata where available, supplied English ASR/manual tracks and English caption exports. No non-English-only lesson identified. Player language/dub preferences may select a different track.",
+      "A full-caption read is not the same as observing complete media when captions end early. No full copyrighted transcripts or original papers are redistributed.",
+      "Direct means the requested principle/procedure is taught; it does not mean every historical numeric variant appears verbatim. Partial includes dispersed ingredients, inference, missing qualification or incomplete integrated demonstration.",
+      "Evidence ranges are approximate navigation windows; caption timestamps can differ slightly between archived and current tracks.",
+      "No oral weighting or guaranteed grade is inferred. NVR is a circuit-completeness check, not claimed as a separately verified original question."
+    ]
+  },
+  "papers": [
+    {
+      "id": "c1-2012-08",
+      "url": "https://www.scribd.com/document/728768005/Epra-c1-License-Exam-August-2012",
+      "readStatus": "Prior topic register; fresh public text unavailable",
+      "questions": [
+        {
+          "reference": "Q4(a)",
+          "topic": "Starter selection",
+          "marks": null
+        },
+        {
+          "reference": "Q4(b)",
+          "topic": "Star–delta circuit/operation",
+          "marks": null
+        },
+        {
+          "reference": "Q4(c)",
+          "topic": "Line/phase relationships",
+          "marks": null
+        },
+        {
+          "reference": "Q4(d)",
+          "topic": "Three-phase and split-phase reversal",
+          "marks": null
+        },
+        {
+          "reference": "Q4(e)",
+          "topic": "Slip and torque",
+          "marks": null
+        },
+        {
+          "reference": "Q5(b)",
+          "topic": "Single-phase motor compensation",
+          "marks": null
+        },
+        {
+          "reference": "Q3(c)(i), Q5(c)",
+          "topic": "Capacitor placement",
+          "marks": null
+        },
+        {
+          "reference": "Q5(a)",
+          "topic": "Correction alternatives",
+          "marks": null
+        }
+      ],
+      "limitation": "Direct fetch timed out. Topics and references come from the existing register; exact wording, subparts and marks have not been freshly verified."
+    },
+    {
+      "id": "c1-2012-11",
+      "url": "https://pdfcoffee.com/c1-nov-2012-1-pdf-free.html",
+      "readStatus": "Relevant public motor extracts read",
+      "questions": [
+        {
+          "reference": "Q5(d)",
+          "topic": "Line current from motor shaft output, efficiency and PF",
+          "marks": 7
+        },
+        {
+          "reference": "Q3(d)",
+          "topic": "Single-phase motor: 220 V, 50 Hz, 1000 W input, PF 0.7→0.9; capacitance",
+          "marks": 10
+        },
+        {
+          "reference": "Q3(a–c)",
+          "topic": "Related PF explanation and correction alternatives",
+          "marks": null
+        }
+      ],
+      "limitation": "Public third-party copy; not authenticated as an official original or answer key."
+    },
+    {
+      "id": "c1-2013-03",
+      "url": "https://www.scribd.com/document/728768009/Epra-c1-License-Exam-March-2013",
+      "readStatus": "Public OCR motor extracts read",
+      "questions": [
+        {
+          "reference": "Q2(a)",
+          "topic": "Starting methods",
+          "marks": 3
+        },
+        {
+          "reference": "Q2(b)",
+          "topic": "DOL advantages/disadvantages",
+          "marks": 8
+        },
+        {
+          "reference": "Q2(c)",
+          "topic": "Star–delta circuit drawing and operation",
+          "marks": 9
+        },
+        {
+          "reference": "Q3(b)",
+          "topic": "Single-phase shaft-output/efficiency, apparent power, current components, kVAr and target capacitance",
+          "marks": null
+        },
+        {
+          "reference": "Q5(b)",
+          "topic": "Motor versus generator",
+          "marks": 2
+        },
+        {
+          "reference": "Q5(c)",
+          "topic": "Humming three-phase motor: four possible causes",
+          "marks": 4
+        }
+      ],
+      "limitation": "Public OCR readable for motor tasks; Q3(b) mark glyph unclear, so marks remain null. Supplied arithmetic is not an answer authority."
+    },
+    {
+      "id": "c1-2016-04",
+      "url": "https://www.scribd.com/document/728767998/EPRA-C1-LICENSE-EXAM-APRIL-2016",
+      "readStatus": "Prior topic register; fresh full text unavailable",
+      "questions": [
+        {
+          "reference": "Q2(a)",
+          "topic": "Starter selection",
+          "marks": null
+        },
+        {
+          "reference": "Q2(b)",
+          "topic": "DOL power/control diagram",
+          "marks": null
+        },
+        {
+          "reference": "Q1(viii), Q5(c)",
+          "topic": "Motor humming/faults",
+          "marks": null
+        },
+        {
+          "reference": "Q5(b)",
+          "topic": "DC commutation and reversal",
+          "marks": null
+        },
+        {
+          "reference": "Q4(c)",
+          "topic": "Single-phase motor compensation",
+          "marks": null
+        }
+      ],
+      "limitation": "Direct fetch timed out. Prior topic evidence only; no freshly verified exact wording or marks."
+    },
+    {
+      "id": "c1-2016-10-additional",
+      "url": "https://www.scribd.com/document/1056617054/Written-Exam-C1-Oct-2016-Marking-Scheme-1",
+      "readStatus": "Additional public motor extracts read; duplicate uploads counted once",
+      "questions": [
+        {
+          "reference": "A3",
+          "topic": "Unloaded leading-PF synchronous condenser",
+          "marks": null
+        },
+        {
+          "reference": "A4",
+          "topic": "Synchronous-motor hunting causes",
+          "marks": null
+        },
+        {
+          "reference": "A8",
+          "topic": "Thermal overload versus short-circuit protection",
+          "marks": null
+        },
+        {
+          "reference": "A15",
+          "topic": "Lockable remote motor isolation",
+          "marks": null
+        },
+        {
+          "reference": "A18",
+          "topic": "Star voltage relationship",
+          "marks": null
+        },
+        {
+          "reference": "A25",
+          "topic": "Wound-rotor external resistance and starting torque",
+          "marks": null
+        },
+        {
+          "reference": "A27",
+          "topic": "Indicative domestic sewing-machine motor wattage",
+          "marks": null
+        },
+        {
+          "reference": "A33",
+          "topic": "Single-phase starting-torque comparison",
+          "marks": null
+        },
+        {
+          "reference": "A34",
+          "topic": "Single-phase running-PF comparison",
+          "marks": null
+        },
+        {
+          "reference": "B1(a)",
+          "topic": "Three motor starting methods",
+          "marks": 3
+        },
+        {
+          "reference": "B1(b)",
+          "topic": "220 V, 50 Hz, 1000 W motor, PF 0.7→0.9, capacitor µF",
+          "marks": 11
+        },
+        {
+          "reference": "B1(c–d)",
+          "topic": "Related correction alternatives and poor-PF consequences",
+          "marks": null
+        }
+      ],
+      "limitation": "MCQ marks are not separately inferred from the mixed-section total. Source contains wrong capacitor-current arithmetic. Its instruction/numbering inconsistency does not establish any oral allocation."
+    },
+    {
+      "id": "c1-2022-05",
+      "url": "https://www.scribd.com/document/941499251/May-2022-C1-exam-marking-scheme",
+      "readStatus": "Public motor extracts freshly recovered and read",
+      "questions": [
+        {
+          "reference": "Q1.10, Q1.16–17, Q1.20",
+          "topic": "Synchronous condenser, motor frame earthing, sequence and poles/speed",
+          "marks": null
+        },
+        {
+          "reference": "Q5(a–b)",
+          "topic": "Starting alternatives and DOL limitations",
+          "marks": 4
+        },
+        {
+          "reference": "Q5(c)",
+          "topic": "Thermal overload, overcurrent and phase-failure relay functions",
+          "marks": 3
+        },
+        {
+          "reference": "Q5(d)",
+          "topic": "Humming conveyor motor",
+          "marks": 2
+        },
+        {
+          "reference": "Q5(e)",
+          "topic": "Squirrel cage, synchronous and stepper features/applications",
+          "marks": 6
+        },
+        {
+          "reference": "Q5(f)",
+          "topic": "Four-pole speed at given slip, no load and 50/60 Hz",
+          "marks": 5
+        },
+        {
+          "reference": "Q3, motor/PFC block (c–e)",
+          "topic": "100 kW motor target bank plus motor/bank single-line and capacitor steps",
+          "marks": 12
+        },
+        {
+          "reference": "Q4(d)",
+          "topic": "AHU 415 V, 120 A, PF 0.7→0.95; P, Q and correction",
+          "marks": 7
+        },
+        {
+          "reference": "Q3, correction-alternatives block (b)",
+          "topic": "Two methods besides capacitor banks",
+          "marks": 2
+        }
+      ],
+      "limitation": "Public copy has duplicated lettering around Q3. Refer to named blocks rather than silently repairing numbering. Its 63 A MCCB for a 100 kW motor and 1800 rpm at 50 Hz no-load are not validated answers."
+    },
+    {
+      "id": "c1-2023-09",
+      "url": "https://www.scribd.com/document/728768214/EPRA-C1-LICENSE-EXAM-SEPTEMBER-2023",
+      "readStatus": "Public OCR motor extracts read",
+      "questions": [
+        {
+          "reference": "Q1.8–9",
+          "topic": "Star voltage and delta current",
+          "marks": null
+        },
+        {
+          "reference": "Q1.14",
+          "topic": "Motor precommission tests",
+          "marks": null
+        },
+        {
+          "reference": "Q1.18",
+          "topic": "Overexcited no-load synchronous motor",
+          "marks": null
+        },
+        {
+          "reference": "Q3(b)",
+          "topic": "VFD speed control",
+          "marks": 2
+        },
+        {
+          "reference": "Q3(c)",
+          "topic": "Synchronous/stepper comparison",
+          "marks": null
+        },
+        {
+          "reference": "Q3, booster-motor block (i–v)",
+          "topic": "27.2 kW eight-pole pump: starter, DOL limits, slip, loaded speed and 60 Hz no-load speed",
+          "marks": 5
+        }
+      ],
+      "limitation": "OCR has ambiguous subpart lettering and a motor-comparison mark glyph. Do not invent the latter. No-load speed as synchronous speed is an explicit idealised exam assumption, not zero real motor losses."
+    },
+    {
+      "id": "c1-2025-05",
+      "url": "https://www.scribd.com/document/1013156811/May-2025-C1-written-interview-Jr",
+      "readStatus": "Public motor extracts read",
+      "questions": [
+        {
+          "reference": "Q1.9–10, Q1.12, Q1.14–15",
+          "topic": "Synchronous speed, poles, condenser, motor earthing and precommission tests",
+          "marks": null
+        },
+        {
+          "reference": "Q2(g–i)",
+          "topic": "Sequence, phase interchange danger and instrument",
+          "marks": 4
+        },
+        {
+          "reference": "Q5(a–b)",
+          "topic": "Starting alternatives and DOL limits",
+          "marks": 4
+        },
+        {
+          "reference": "Q5(c)",
+          "topic": "Three protection-relay functions",
+          "marks": 3
+        },
+        {
+          "reference": "Q5(d)",
+          "topic": "Synchronous, stepper and servo speed behaviour",
+          "marks": 3
+        },
+        {
+          "reference": "Q5(e–g)",
+          "topic": "Slip definition, importance and torque relationship",
+          "marks": 3
+        },
+        {
+          "reference": "Q5(h)",
+          "topic": "150 hp four-pole 50/60 Hz speed at prescribed slip/no load",
+          "marks": 5
+        },
+        {
+          "reference": "Q5(i)",
+          "topic": "Humming conveyor causes",
+          "marks": 2
+        },
+        {
+          "reference": "Q4(d)",
+          "topic": "100 kW motor: S, Q and 0.8→0.97 correction",
+          "marks": 5
+        },
+        {
+          "reference": "Q4(e)",
+          "topic": "Motor with correction-bank diagram",
+          "marks": null
+        }
+      ],
+      "limitation": "Q5 totals 20; do not add it to its parts when discussing weight. General PF/earthing questions are included only where they support a motor-specific task."
+    },
+    {
+      "id": "c1-2025-06",
+      "url": "https://www.scribd.com/document/1013156754/Class-C-1-Written-Exam-June-2025",
+      "readStatus": "Relevant public motor extracts read during this audit",
+      "questions": [
+        {
+          "reference": "Q1, motor-related MCQs",
+          "topic": "Four-quadrant VFD, delta current, poles/speed, rotor frequency, tests and humming",
+          "marks": null
+        },
+        {
+          "reference": "Q2(a)",
+          "topic": "DC commutator purpose",
+          "marks": 2
+        },
+        {
+          "reference": "Q2(b)",
+          "topic": "DC direction/current connection",
+          "marks": 1
+        },
+        {
+          "reference": "Q2(c)",
+          "topic": "Starting alternatives for larger motors",
+          "marks": 2
+        },
+        {
+          "reference": "Q2(d)",
+          "topic": "Synchronous/stepper/servo operation",
+          "marks": 3
+        },
+        {
+          "reference": "Q2(e)",
+          "topic": "Four-pole 50 Hz/1420 rpm speed and slip",
+          "marks": 2
+        },
+        {
+          "reference": "Q3(e)(i–ii)",
+          "topic": "Motor relay functions",
+          "marks": null
+        },
+        {
+          "reference": "Q3(g)",
+          "topic": "2.55 kW motor with current angle: S and Q",
+          "marks": 2
+        }
+      ],
+      "limitation": "Intermittent web retrieval. Relevant extracts read earlier in this same audit; no fresh full-scan verification. Motor MCQs are grouped because their OCR numbering/old topic-register labels disagree. No claimed extra marks from ambiguous indices."
+    }
+  ],
+  "videos": [
+    {
+      "lessonId": "c1-pfc-target-foundation",
+      "videoId": "Tv_7XWf96gg",
+      "title": "Correct a Building’s Power Factor to a Chosen Target",
+      "instructor": "The Engineering Mindset",
+      "moduleId": "c1-pfc",
+      "sectionId": "c1-pfc-target",
+      "displayNumber": 2,
+      "studyRole": "Core foundation",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=Tv_7XWf96gg",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "e562a74c8bc1116d8e6e630857254ca38645fa4f7f9ee1b973907572c89e0505",
+        "captionEndSeconds": 663.093,
+        "segments": 289,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          663.093
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "e562a74c8bc1116d8e6e630857254ca38645fa4f7f9ee1b973907572c89e0505"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Power triangle, lagging/leading PF and a complete chosen-target kVAr calculation.",
+      "flowAndLimits": "Clear analogy-to-example flow. The motor example calls 10 kW output but omits efficiency; use electrical input. Spoken/transcribed algebra contains slips: P=PF×S, Q=√(S²−P²). Billing comments are supplier-dependent.",
+      "existingStudyNote": "Use electrical input kW; convert shaft output through efficiency first."
+    },
+    {
+      "lessonId": "c1-pfc-unity-bank",
+      "videoId": "q5xjqXcCqNw",
+      "title": "Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank",
+      "instructor": "Dieter Monkey",
+      "moduleId": "c1-pfc",
+      "sectionId": "c1-pfc-calculation",
+      "displayNumber": 3,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=q5xjqXcCqNw",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "b494e333f61a98b1b15d23525510c37dc7957df47707a2f9bf194edb9bc07901",
+        "captionEndSeconds": 1025.839,
+        "segments": 388,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          1025.839
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "b494e333f61a98b1b15d23525510c37dc7957df47707a2f9bf194edb9bc07901"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Revises a single-phase RL/capacitor example, then solves a three-phase delta load with star capacitors, including µF per phase.",
+      "flowAndLimits": "Systematic but assumes earlier circuit lessons. The single-phase revision corrects to unity; it does not work a non-unity target motor case. Keep single-phase and per-phase bank capacitances distinct.",
+      "existingStudyNote": "This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95."
+    },
+    {
+      "lessonId": "c1-rashid-capacitor-bank",
+      "videoId": "vbytmPtvZi4",
+      "title": "Capacitor-Bank Selection and Protection: A 200 kW Worked Example",
+      "instructor": "Rashid iqubal",
+      "moduleId": "c1-pfc",
+      "sectionId": "c1-pfc-bank-protection",
+      "displayNumber": 5,
+      "studyRole": "Optional applied example",
+      "required": false,
+      "url": "https://www.youtube.com/watch?v=vbytmPtvZi4",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "10454d74709338b951360f735227313a608c5ffdbef1f6dde7add14b335a0dde",
+        "captionEndSeconds": 640.72,
+        "segments": 199,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          640.72
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "10454d74709338b951360f735227313a608c5ffdbef1f6dde7add14b335a0dde"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Chosen-target correction, bank steps, capacitor current and protection factors.",
+      "flowAndLimits": "Useful applied flow; substantial caption numerical noise. Existing note corrects the installed 125 kVAr versus calculated bank and rejects automatic savings in load kW or universal protection multipliers.",
+      "existingStudyNote": "The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall."
+    },
+    {
+      "lessonId": "c1-protection-overcurrent-relay",
+      "videoId": "bQ6fZrrP0H4",
+      "title": "Overcurrent Relays: Pickup, Time Delay and Circuit-Breaker Tripping",
+      "instructor": "OMICRONenergy",
+      "moduleId": "c1-protective-devices",
+      "sectionId": "c1-protection-overcurrent-section",
+      "displayNumber": 12,
+      "studyRole": "Core device foundation",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=bQ6fZrrP0H4",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "d91e6b1c4cb288078c2fdd669220cad019eb38fb7435dfd66a569ef77c31bc9c",
+        "captionEndSeconds": 235.8,
+        "segments": 35,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          235.8
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "d91e6b1c4cb288078c2fdd669220cad019eb38fb7435dfd66a569ef77c31bc9c"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "CT–overcurrent-relay–breaker chain; pickup, inverse/definite/instantaneous timing and selectivity.",
+      "flowAndLimits": "Clear functional animation. Network-scale examples transfer to LV principles. This is not a complete motor setting/coordination exercise or permission to disconnect a live CT secondary.",
+      "existingStudyNote": "The CT–relay–breaker principle also applies at low voltage. This is a functional introduction, not a relay-testing procedure. Never open an energised CT secondary; testing requires approved isolation and shorting arrangements."
+    },
+    {
+      "lessonId": "c1-protection-overload-relay",
+      "videoId": "3aur1tZYlKE",
+      "title": "Thermal Overload Relays: Motor Current, Trip Contacts and Reset",
+      "instructor": "Automatedo",
+      "moduleId": "c1-protective-devices",
+      "sectionId": "c1-protection-motor-devices-section",
+      "displayNumber": 13,
+      "studyRole": "Core device foundation",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=3aur1tZYlKE",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "4839ba5de0a6402ccfdf1a6c0d78245aa22d58ebb38c7c65f63ade28210691fc",
+        "captionEndSeconds": 499.919,
+        "segments": 219,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          499.919
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "4839ba5de0a6402ccfdf1a6c0d78245aa22d58ebb38c7c65f63ade28210691fc"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Overload causes, time delay, 95–96/97–98, contactor operation, reset and contact checks.",
+      "flowAndLimits": "Good concept-to-schematic-to-test progression; includes jamming, misalignment, bearings, ventilation and phase loss. One non-tripped/tripped wording slip conflicts with its correct demonstration; contact checks do not calibrate thermal operation.",
+      "existingStudyNote": "Normally 95–96 is closed; a trip opens it and closes 97–98. Contact checks do not establish thermal calibration. The relay needs coordinated short-circuit protection. Study detailed starter wiring after motor principles."
+    },
+    {
+      "lessonId": "c1-protection-mpcb",
+      "videoId": "1DDsOJa_FuU",
+      "title": "Motor-Protection Circuit Breakers: Thermal, Magnetic and Phase-Loss Mechanisms",
+      "instructor": "Power Eng. By Afshin",
+      "moduleId": "c1-protective-devices",
+      "sectionId": "c1-protection-motor-devices-section",
+      "displayNumber": 14,
+      "studyRole": "Core device foundation",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=1DDsOJa_FuU",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "388f71dd9b0743b64131ed5063df2b640e1461944014fa77b58ef8851b8dbc05",
+        "captionEndSeconds": 209.12,
+        "segments": 85,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          209.12
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "388f71dd9b0743b64131ed5063df2b640e1461944014fa77b58ef8851b8dbc05"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Animated magnetic short-circuit, bimetal overload and differential phase-loss trip mechanisms.",
+      "flowAndLimits": "Good internal-mechanism flow. Explicitly acknowledges low-current phase loss may not trip. Features and thresholds belong to this design, not every MPCB.",
+      "existingStudyNote": "This mechanism is one MPCB design, not a universal feature list. Phase-loss sensitivity is not separate voltage monitoring. Select the current range and short-circuit coordination from the motor nameplate, starting duty and manufacturer data."
+    },
+    {
+      "lessonId": "c1-protection-phase-monitoring",
+      "videoId": "sO2RPcGLshA",
+      "title": "Phase-Monitoring Relays: Phase Failure, Sequence and Voltage Conditions",
+      "instructor": "ATO Automation",
+      "moduleId": "c1-protective-devices",
+      "sectionId": "c1-protection-motor-devices-section",
+      "displayNumber": 15,
+      "studyRole": "Core device foundation",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=sO2RPcGLshA",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "ed6e033821070aeaab64047c1779a91798269cfa2b8902270b11fddaa2dfde31",
+        "captionEndSeconds": 326.479,
+        "segments": 152,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          326.479
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "ed6e033821070aeaab64047c1779a91798269cfa2b8902270b11fddaa2dfde31"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Phase loss/sequence, voltage imbalance, over/undervoltage, delay/reset settings and contactor output.",
+      "flowAndLimits": "Clear functional introduction, then one product example. Check the actual model; relay output switches the control circuit, not motor fault current.",
+      "existingStudyNote": "Functions and thresholds vary by model. The output controls a contactor; it does not interrupt motor fault current. Keep the protective contact effective in every energising path, including while Start is held. Detailed motor wiring follows later."
+    },
+    {
+      "lessonId": "p07-induction",
+      "videoId": "59HBoIXzX_c",
+      "title": "Induction Motors: Rotating Field, Rotor and Slip",
+      "instructor": "The Engineering Mindset",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-motors-section-1",
+      "displayNumber": 1,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=59HBoIXzX_c",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "3fdc35d5fe8d30f964d4b6f831964a9a0ff767a49f72ca3ca4eb2570743f2e09",
+        "captionEndSeconds": 932.079,
+        "segments": 340,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          932.079
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "3fdc35d5fe8d30f964d4b6f831964a9a0ff767a49f72ca3ca4eb2570743f2e09"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (GB) original",
+          "id": "en-GB.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Stator/rotor, rotating field, induced rotor current, squirrel cage, slip concept, terminal star/delta and line/phase examples.",
+      "flowAndLimits": "Strong visual-concept sequence. Does not supply the numerical slip/synchronous-speed formula or wound-rotor resistance starting; separate lessons are necessary.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "course-XbL0R_9KLD4",
+      "videoId": "XbL0R_9KLD4",
+      "title": "How to read a Motor Nameplate (IEC standard)",
+      "instructor": "ElectricalEngineeringPlanet",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-motors-nameplates",
+      "displayNumber": 2,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=XbL0R_9KLD4",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "Supplied English course archive",
+        "language": "en",
+        "sha256": "c1cc95190c58ddc8ad961616efe82ded396fe5325244a5eaf219cbb3de83f1f7",
+        "captionEndSeconds": 505,
+        "segments": 107,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          505
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "ar",
+        "defaultExportSha256": "2fbaaed5e165a5249e3c14d2b986f8f47840e7473d7c3e97bc209c0afcfaa15e"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": {
+          "kind": "asr",
+          "track": "en-asr",
+          "sha256": "c1cc95190c58ddc8ad961616efe82ded396fe5325244a5eaf219cbb3de83f1f7"
+        },
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "IEC nameplate example: shaft kW, voltage/connection, full-load current, frequency, PF, speed/poles, efficiency, IP, insulation and duty.",
+      "flowAndLimits": "Orderly factor-by-factor explanation. Service factor is oversimplified as a percentage-current allowance; use the specific manufacturer data. Original English ASR archive reviewed, not only the Arabic export.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-three-phase-power-factor",
+      "videoId": "T2eO6hOT-EA",
+      "title": "Three-Phase Motor Power Factor — Worked Example",
+      "instructor": "Michel van Biezen",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-power-worked-examples",
+      "displayNumber": 3,
+      "studyRole": "Core worked example",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=T2eO6hOT-EA",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "f0bed3411c6cc0e636119f7f861858c811860665d30add0644fd1a09350e0af5",
+        "captionEndSeconds": 227.889,
+        "segments": 78,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          227.889
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "f0bed3411c6cc0e636119f7f861858c811860665d30add0644fd1a09350e0af5"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Worked three-phase PF from electrical input power, voltage and line current.",
+      "flowAndLimits": "Short, focused arithmetic. Apparent power is VA, although the presentation calls it watts. PF and efficiency must remain separate.",
+      "existingStudyNote": "Use electrical input kW and apparent power in VA; efficiency is a separate ratio."
+    },
+    {
+      "lessonId": "c1-three-phase-line-current",
+      "videoId": "TPsHULaNc7s",
+      "title": "Find the Line Current Needed for a Three-Phase Motor",
+      "instructor": "Michel van Biezen",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-power-worked-examples",
+      "displayNumber": 4,
+      "studyRole": "Core worked example",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=TPsHULaNc7s",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "576df9ccfa084bfab988ed64f927d990094c4128ab57afd5a47c9486fcfbbbda",
+        "captionEndSeconds": 183.349,
+        "segments": 62,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          183.349
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "576df9ccfa084bfab988ed64f927d990094c4128ab57afd5a47c9486fcfbbbda"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Worked line current from three-phase input kW, line voltage and PF.",
+      "flowAndLimits": "Short follow-on example. Apparent power is kVA, not kW; shaft-output data would additionally require efficiency.",
+      "existingStudyNote": "25 kW is input power; 31.25 kVA is apparent power."
+    },
+    {
+      "lessonId": "c1-motor-input-efficiency",
+      "videoId": "Jx3Pk_5O-PM",
+      "title": "Motor Output, Efficiency, Power Factor and Three-Phase Line Current",
+      "instructor": "Aaron Dahlen",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-power-motor-efficiency",
+      "displayNumber": 5,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=Jx3Pk_5O-PM",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "6272b32986801d8bcc4bf58059cd931496ad5bbc8b4d0aa1941eefb797062ef2",
+        "captionEndSeconds": 521.12,
+        "segments": 172,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          521.12
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "6272b32986801d8bcc4bf58059cd931496ad5bbc8b4d0aa1941eefb797062ef2"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Shaft hp→watts→electrical input through efficiency→apparent power→line current; identifies losses.",
+      "flowAndLimits": "Complete relevant chain. Complex-power notation is more demanding than C1 needs, but its scalar results are directly applicable. US supply values are example givens.",
+      "existingStudyNote": "Electrical input = Pshaft/η; apparent power = electrical input/PF."
+    },
+    {
+      "lessonId": "c1-slip-rotor-frequency",
+      "videoId": "H0SaAq7sMN0",
+      "title": "Induction-Motor Speed, Slip and Rotor Frequency: Six Worked Examples",
+      "instructor": "Gargi Basu",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-motor-slip",
+      "displayNumber": 6,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=H0SaAq7sMN0",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "066c2010540b7e7f3c3026bc3944def654cf1e0d5ea4731d7f7fdcf85b43a946",
+        "captionEndSeconds": 1058.799,
+        "segments": 302,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          1058.799
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "066c2010540b7e7f3c3026bc3944def654cf1e0d5ea4731d7f7fdcf85b43a946"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Six examples of synchronous speed, pole count, slip speed, per-unit/percent slip, rotor frequency and frequency changes.",
+      "flowAndLimits": "Strong, repetitive calculation flow. Approximate pole identification uses the nearest physically plausible synchronous speed; do not replace Ns with loaded rotor speed in the defining formula.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-torque-speed-foundation",
+      "videoId": "8T53wEGiBKE",
+      "title": "Induction-Motor Torque and Speed: From the Rotating Field to the Load Curve",
+      "instructor": "BSE PolyU",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-motor-torque-curves",
+      "displayNumber": 7,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=8T53wEGiBKE",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "ebb7cef6a1ee430ef739a8d9e8f79de6e7e051968111e51f1199bb08f80a8198",
+        "captionEndSeconds": 896.959,
+        "segments": 341,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          896.959
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "ebb7cef6a1ee430ef739a8d9e8f79de6e7e051968111e51f1199bb08f80a8198"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Induction/force foundation, locked-rotor/pull-up/breakdown torque, load intersection, speed change and stalling.",
+      "flowAndLimits": "Good foundation before the longer torque–slip lecture. Final NEMA designs are examples. No external rotor-resistance starting demonstration.",
+      "existingStudyNote": "The final NEMA classifications are US examples; the torque–speed principles apply generally."
+    },
+    {
+      "lessonId": "c1-motor-terminals",
+      "videoId": "p2hDLMeFJqs",
+      "title": "How to Connect Motor Windings in Star and Delta",
+      "instructor": "The Electrical Guy",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-motors-terminals",
+      "displayNumber": 8,
+      "studyRole": "Core demonstration",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=p2hDLMeFJqs",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "90ad1bda81a86bb2fc9b9deb162cb88eed7e7e430e68629624b6ba3e29b0f5bc",
+        "captionEndSeconds": 493.759,
+        "segments": 219,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          493.759
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "90ad1bda81a86bb2fc9b9deb162cb88eed7e7e430e68629624b6ba3e29b0f5bc"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Finding winding pairs, star/delta links, six leads, resistance balance and swapping two supply lines.",
+      "flowAndLimits": "Useful bench demonstration. Continuity identifies pairs, not start/end polarity by itself; nameplate voltage and manufacturer terminal diagram remain necessary.",
+      "existingStudyNote": "On 400 V: 230/400 V Δ/Y → star; 400/690 V Δ/Y → delta."
+    },
+    {
+      "lessonId": "c1-single-phase-motor-principles",
+      "videoId": "bytt0ZCJwRk",
+      "title": "Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal",
+      "instructor": "LEARN ELECTRICS",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-single-phase-motors",
+      "displayNumber": 9,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=bytt0ZCJwRk",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "0c2f97d8952ec2382b73e89e0ebfcb9b60f66d8c33b267155055fd2ede7173c9",
+        "captionEndSeconds": 777.6,
+        "segments": 332,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          777.6
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "0c2f97d8952ec2382b73e89e0ebfcb9b60f66d8c33b267155055fd2ede7173c9"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Run/start windings, capacitor-run, capacitor-start and two-capacitor motors, centrifugal switch, relative winding reversal and capacitor-related humming.",
+      "flowAndLimits": "Good component-to-circuit flow. Its general capacitor statement must not imply every single-phase motor uses one. It does not compare shaded-pole/resistance-split-phase starting torque and PF systematically.",
+      "existingStudyNote": "Terminal arrangements vary; follow the motor diagram."
+    },
+    {
+      "lessonId": "c1-single-phase-reversing-switch",
+      "videoId": "45re1J-RxKc",
+      "title": "Wire and Test a Single-Phase Forward/Reverse Drum Switch",
+      "instructor": "LEARN ELECTRICS",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-single-phase-motors",
+      "displayNumber": 10,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=45re1J-RxKc",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "0e58c8a1fcf38016039cc20195fa4de5190d17df7e4caad8140e899de1db1e76",
+        "captionEndSeconds": 650.72,
+        "segments": 279,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          650.72
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "0e58c8a1fcf38016039cc20195fa4de5190d17df7e4caad8140e899de1db1e76"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Forward/off/reverse drum switch, contact testing, winding reversal, earthing and stopping before reversal.",
+      "flowAndLimits": "Methodical model-specific wiring. Existing note correctly requires proving capacitors discharged; waiting a stated number of seconds alone does not establish discharge.",
+      "existingStudyNote": "Isolate and prove capacitors discharged before touching terminals."
+    },
+    {
+      "lessonId": "c1-dc-motor-commutation",
+      "videoId": "GQatiB-JHdI",
+      "title": "DC Motors: Magnetic Force, Brushes and Commutation",
+      "instructor": "The Engineering Mindset",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-dc-motors",
+      "displayNumber": 11,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=GQatiB-JHdI",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "eff3e6e2c6cf8cc378960cb888e41f2069c2377a8edb2af94ff9c0d0b5a4050f",
+        "captionEndSeconds": 928.1,
+        "segments": 382,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          928.1
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "eff3e6e2c6cf8cc378960cb888e41f2069c2377a8edb2af94ff9c0d0b5a4050f"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "PMDC construction, brushes, split commutator, armature current, torque and polarity reversal.",
+      "flowAndLimits": "Strong animated foundation for the commutator question. PMDC battery reversal must not be generalised to reversing both circuits of a wound-field motor.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-dc-winding-reversal",
+      "videoId": "GYuBVM_GyOw",
+      "title": "Reverse a Wound-Field DC Motor: Armature or Field Connections",
+      "instructor": "Chinmay Deshpande",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-dc-motors",
+      "displayNumber": 12,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=GYuBVM_GyOw",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "nl-NL",
+        "sha256": "e7c8735a60ec51c0668d583854543cd20d6c679ed339a005180f0c1ba90118d8",
+        "captionEndSeconds": 706.67,
+        "segments": 260,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          706.67
+        ],
+        "translationUsed": true,
+        "defaultExportLanguage": "nl-NL",
+        "defaultExportSha256": "e7c8735a60ec51c0668d583854543cd20d6c679ed339a005180f0c1ba90118d8"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English original/default audio verified in YouTube metadata; full Dutch dubbed captions reviewed with translation"
+      },
+      "teaches": "Force-direction cases: reverse armature or field alone to reverse torque; reversing both retains direction.",
+      "flowAndLimits": "Directly relevant DC distinction. Full Dutch auto-dub caption export reviewed with translation; YouTube separately identifies English (US) original/default audio and an English ASR track. Not mislabelled an English-transcript reread.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-stepper-motor-principles",
+      "videoId": "09Mpkjcr0bo",
+      "title": "Stepper Motors: Winding Sequences, Steps and Position",
+      "instructor": "The Engineering Mindset",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-precision-motors",
+      "displayNumber": 13,
+      "studyRole": "Optional further study",
+      "required": false,
+      "url": "https://www.youtube.com/watch?v=09Mpkjcr0bo",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "ca918664ddee855432095057cd1facfc6ced05db9b09a67a12450d61e72c3059",
+        "captionEndSeconds": 841.92,
+        "segments": 403,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          841.92
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "ca918664ddee855432095057cd1facfc6ced05db9b09a67a12450d61e72c3059"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (GB) original",
+          "id": "en-GB.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Pulse sequence, discrete angle, frequency/speed, direction, holding position, PM/VR/hybrid and drive sequences.",
+      "flowAndLimits": "Clear but much deeper than the short paper comparison. Optional placement makes an examined concept easy to skip.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-servo-motor-feedback",
+      "videoId": "ditS0a28Sko",
+      "title": "Servo Motors: Command, Error and Position Feedback",
+      "instructor": "RealPars",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-precision-motors",
+      "displayNumber": 14,
+      "studyRole": "Optional further study",
+      "required": false,
+      "url": "https://www.youtube.com/watch?v=ditS0a28Sko",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "434a51a99044de8b8934f4647d7726910e07f820691a45e0a07a4aad506c8701",
+        "captionEndSeconds": 922.733,
+        "segments": 201,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          922.733
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "434a51a99044de8b8934f4647d7726910e07f820691a45e0a07a4aad506c8701"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "manual",
+          "name": "English",
+          "vssId": ".en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Servo command/error/feedback loop, encoder/resolver, AC/DC types and synchronous versus induction speed.",
+      "flowAndLimits": "Good feedback explanation. Synchronous speed comparison appears mid-lesson, not a complete wound-field synchronous-motor lesson. Removing power does not instantly stop the rotor; existing note corrects this.",
+      "existingStudyNote": "Removing power does not stop a rotating load instantly."
+    },
+    {
+      "lessonId": "c1-torque-slip-operating-point",
+      "videoId": "zssTcEBkzh0",
+      "title": "Torque–Slip Curve: Load Changes, Stable Operation and Stalling",
+      "instructor": "NPTEL IIT Kharagpur",
+      "moduleId": "c1-motors",
+      "sectionId": "c1-motor-torque-depth",
+      "displayNumber": 15,
+      "studyRole": "Optional advanced analysis",
+      "required": false,
+      "url": "https://www.youtube.com/watch?v=zssTcEBkzh0",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "b35619c180a50abe3f06aa06b4586446be2eafa776c5369d7b6f0664d21f5b84",
+        "captionEndSeconds": 1965.609,
+        "segments": 228,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          1965.609
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "b35619c180a50abe3f06aa06b4586446be2eafa776c5369d7b6f0664d21f5b84"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Torque–slip curve, changing load, inertia, equilibrium, stability and stalling.",
+      "flowAndLimits": "Rigorous, long follow-on lecture; optional depth. Induction-motor oscillation is not evidence of synchronous-motor hunting coverage. No external rotor resistance explanation found.",
+      "existingStudyNote": "Illustrative torque ratios are not motor ratings; use manufacturer limits."
+    },
+    {
+      "lessonId": "p04-l21",
+      "videoId": "Ed3_zbZ0xaA",
+      "title": "Single Phase Contactor - Connections Explained, Application plus the Current in the Coil and Load",
+      "instructor": "GSH Electrical",
+      "moduleId": "module-07",
+      "sectionId": "module-07-section-1",
+      "displayNumber": 1,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=Ed3_zbZ0xaA",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "Supplied English course archive",
+        "language": "en",
+        "sha256": "2d7aa87128212dc1e464f8a47db20f350529b78fa545bb668187a87fa893bf5f",
+        "captionEndSeconds": 506,
+        "segments": 92,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          506
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "nl-NL",
+        "defaultExportSha256": "682d5c202ed74ad84f548308dec705f6b08b917bdd0cc7ebcd9209a97b922e25"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": {
+          "kind": "manual",
+          "track": "en-manual",
+          "sha256": "2d7aa87128212dc1e464f8a47db20f350529b78fa545bb668187a87fa893bf5f"
+        },
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Single-phase contactor coil/load separation, terminals, switching and measured currents.",
+      "flowAndLimits": "Good physical introduction. Uses a maintained switch and lighting load; it does not teach DOL holding/no-voltage release. Complete original English archive text reviewed instead of Dutch export.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "course-HFkTPmY7N7w",
+      "videoId": "HFkTPmY7N7w",
+      "title": "How Do Direct On Line Motor (DOL) Starters Work?",
+      "instructor": "eFIXX",
+      "moduleId": "module-07",
+      "sectionId": "module-07-section-1",
+      "displayNumber": 2,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=HFkTPmY7N7w",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "1dee9e98e0967dc073e0a9d63932f95a78fdf4583c2b424db336b4f2aa1ca730",
+        "captionEndSeconds": 499.08,
+        "segments": 250,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          499.08
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "1dee9e98e0967dc073e0a9d63932f95a78fdf4583c2b424db336b4f2aa1ca730"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "DOL contactor/thermal relay, full-voltage starting, coil voltage, overload adjustment and physical operation.",
+      "flowAndLimits": "Accessible introduction, but the explanation that motor reactance only appears after starting is misleading. High starting current concerns the locked-rotor/slip-dependent motor impedance. No universal 5 kW DOL cutoff or blanket above-FLC setting should be inferred.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "course-wQwGZMcDGXk",
+      "videoId": "wQwGZMcDGXk",
+      "title": "What is MPCB | MPCB Vs MCB | Motor Protection Circuit Breaker @the Electrical Guy",
+      "instructor": "The Electrical Guy",
+      "moduleId": "module-07",
+      "sectionId": "module-07-dol-protection-wiring",
+      "displayNumber": 3,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=wQwGZMcDGXk",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "Supplied English course archive",
+        "language": "en",
+        "sha256": "e3cd2468219249dd587b1b5e44581a85422c18945c419d80aa7770c30decd345",
+        "captionEndSeconds": 217,
+        "segments": 91,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          217
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "ar",
+        "defaultExportSha256": "e11149125c6bd5e9d56b92fa6a77b54e9c9ca81d5f309743fa2e021fe4fd1fca"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": {
+          "kind": "asr",
+          "track": "en-asr",
+          "sha256": "e3cd2468219249dd587b1b5e44581a85422c18945c419d80aa7770c30decd345"
+        },
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "MCB versus MPCB: adjustable current range, operation, trip test and claimed phase-loss functions.",
+      "flowAndLimits": "Original English archive reviewed. Incorrectly implies a C40 MCB trips at 40 A; the time–current curve governs. Test button does not prove calibration. Phase-loss features are model-dependent; the Module 10 mechanism lesson is stronger.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-motor-protection-sizing",
+      "videoId": "DWUuKNjMf3E",
+      "title": "How to Select MCB and Overload Relay Size for a Motor",
+      "instructor": "The Electrical Guy",
+      "moduleId": "module-07",
+      "sectionId": "module-07-dol-protection-wiring",
+      "displayNumber": 4,
+      "studyRole": "Optional comparison",
+      "required": false,
+      "url": "https://www.youtube.com/watch?v=DWUuKNjMf3E",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "1cf0d031e5371b64bc99198ff92a9aea41e63023d7d09c9a0c439f63811fe0d2",
+        "captionEndSeconds": 397.28,
+        "segments": 148,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          397.28
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "1cf0d031e5371b64bc99198ff92a9aea41e63023d7d09c9a0c439f63811fe0d2"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Horsepower conversion, assumed three-phase current and example MCB/overload range selection.",
+      "flowAndLimits": "Easy arithmetic but weak selection method: omits efficiency for shaft kW, treats 125% and ±20% as general rules and restricts MCB types too broadly. Existing optional-comparison warning is necessary; not a definitive sizing lesson.",
+      "existingStudyNote": "Use nameplate current and manufacturer coordination; the 125% shortcut is not a general selection rule."
+    },
+    {
+      "lessonId": "p15-v2-l01",
+      "videoId": "PIaqmCxN9KU",
+      "title": "Single-Phase Direct-On-Line Starter Wiring",
+      "instructor": "GSH Electrical",
+      "moduleId": "module-07",
+      "sectionId": "module-07-dol-protection-wiring",
+      "displayNumber": 5,
+      "studyRole": "Optional refresher",
+      "required": false,
+      "url": "https://www.youtube.com/watch?v=PIaqmCxN9KU",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "d212ccd81f9646de2a06cdec95b035f4fbb049abfcb5cd7c7bef8fb4a092149e",
+        "captionEndSeconds": 507.04,
+        "segments": 95,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          507.04
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "d212ccd81f9646de2a06cdec95b035f4fbb049abfcb5cd7c7bef8fb4a092149e"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "manual",
+          "name": "English",
+          "vssId": ".en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Physical single-phase DOL connections, coil, holding auxiliary, start, stop, overload trip/reset and CPC.",
+      "flowAndLimits": "Clear equipment demonstration. Specific routing through three overload elements is product-dependent; not a universal single-phase wiring prescription. No explicit supply-loss/restart walkthrough.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "p04-l19",
+      "videoId": "mcXxhUaUb94",
+      "title": "3 Phase Direct Online Starter DOL Wiring Diagram Connections Explained",
+      "instructor": "GSH Electrical",
+      "moduleId": "module-07",
+      "sectionId": "c1-controls-three-phase-dol",
+      "displayNumber": 6,
+      "studyRole": "Applied practical",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=mcXxhUaUb94",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "d04f423779cc4439d0498f1fef4a1f66c573e3546bf7c5340d8733e64056defc",
+        "captionEndSeconds": 371.44,
+        "segments": 68,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          371.44
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "d04f423779cc4439d0498f1fef4a1f66c573e3546bf7c5340d8733e64056defc"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "manual",
+          "name": "English",
+          "vssId": ".en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Three-phase power path and 230 V control: stop/overload NC, start NO and parallel holding auxiliary.",
+      "flowAndLimits": "Clear schematic-to-operation lesson. Good DOL drawing preparation; supply-loss/no-automatic-restart follows from the circuit but is not explicitly walked through.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "p04-l20",
+      "videoId": "qlqPdLGwJxk",
+      "title": "3 Phase Direct Online Starter DOL Wiring and Connections Explained",
+      "instructor": "GSH Electrical",
+      "moduleId": "module-07",
+      "sectionId": "c1-controls-three-phase-dol",
+      "displayNumber": 7,
+      "studyRole": "Applied practical",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=qlqPdLGwJxk",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "28b18a7b48cd013ad2d7f34de95111bdc1dac91b31b58c4333e5f64b9e666316",
+        "captionEndSeconds": 385.52,
+        "segments": 72,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          385.52
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "28b18a7b48cd013ad2d7f34de95111bdc1dac91b31b58c4333e5f64b9e666316"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "manual",
+          "name": "English",
+          "vssId": ".en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Three-phase DOL physical wiring, 230 V coil/neutral, holding, overload, reset and alternative coil voltages.",
+      "flowAndLimits": "Good practical companion to the previous diagram. No explicit power-failure/restart demonstration or universal numerical overload sizing rule.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-reversing-interlocks",
+      "videoId": "VqgXVIi0jw8",
+      "title": "Reversing a Three-Phase Motor: Mechanical and Electrical Interlocks",
+      "instructor": "AutomationDirect.com",
+      "moduleId": "module-07",
+      "sectionId": "c1-controls-reversing",
+      "displayNumber": 8,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=VqgXVIi0jw8",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "cbf411792a8fc285ca3e3690b131681268e53f046d857e8edec4dfc497ca67cb",
+        "captionEndSeconds": 374.19,
+        "segments": 73,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          374.19
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "cbf411792a8fc285ca3e3690b131681268e53f046d857e8edec4dfc497ca67cb"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Two-phase swap, two reversing contactors, fault if both close and mechanical plus electrical interlocks.",
+      "flowAndLimits": "Strong explanation and manufacturer-kit demonstration. It teaches reversing interlocks, not the full timed star–delta control circuit. US NFPA/UL references are not Kenyan design rules.",
+      "existingStudyNote": "NFPA/UL references are US-specific; the phase-swapping and interlocking principles apply generally."
+    },
+    {
+      "lessonId": "p07-star-delta",
+      "videoId": "h89TTwlNnpY",
+      "title": "Star–Delta Starting: Sequence and Interlocks",
+      "instructor": "The Engineering Mindset",
+      "moduleId": "module-07",
+      "sectionId": "module-07-section-2",
+      "displayNumber": 9,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=h89TTwlNnpY",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "bb0282c8d6f55dd9ac41479d34a16d69b4a9ef39cfdfb8ced47186698c62ad6b",
+        "captionEndSeconds": 656.35,
+        "segments": 274,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          656.35
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "bb0282c8d6f55dd9ac41479d34a16d69b4a9ef39cfdfb8ced47186698c62ad6b"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Star/delta winding connections, three power contactors, timer transition and reduced starting current/torque.",
+      "flowAndLimits": "Clear power-sequence animation. Complete start/stop/holding/overload/timer control schematic and explicit cross-interlock wiring are absent from captions. Caption text confuses 33% coil current with 33% line current; winding current is about 58% of direct-delta starting winding current.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-autotransformer-starter",
+      "videoId": "iHFTVBWLOAg",
+      "title": "Autotransformer Starting: Tap Voltage, Line Current and Torque",
+      "instructor": "Zack Hartle",
+      "moduleId": "module-07",
+      "sectionId": "c1-autotransformer-starting",
+      "displayNumber": 10,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=iHFTVBWLOAg",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "6496a45b0e67826a05c35b654b5d92c6401b2271eadd0e6fef276374f35cf3f1",
+        "captionEndSeconds": 542.31,
+        "segments": 127,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          542.31
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "6496a45b0e67826a05c35b654b5d92c6401b2271eadd0e6fef276374f35cf3f1"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Autotransformer tap ratio, motor versus supply current, torque-squared relationship and open/closed transition.",
+      "flowAndLimits": "Well-sequenced alternative-starter explanation. Percent current compares starting conditions, not rated running current. Canadian code examples are local to that example; no galvanic isolation or automatic conductor-size reduction.",
+      "existingStudyNote": "A tapped common winding is introduced before the starter circuits. Canadian 600 V and code examples explain the principle; use local supply values, manufacturer coordination and applicable BS 7671/EPRA requirements for selection. An autotransformer provides no galvanic isolation; reduced starting current does not by itself justify smaller conductors."
+    },
+    {
+      "lessonId": "course-_tGyaE78WTA",
+      "videoId": "_tGyaE78WTA",
+      "title": "What is a Soft Starter? from AutomationDirect",
+      "instructor": "AutomationDirect",
+      "moduleId": "module-07",
+      "sectionId": "c1-controls-soft-start",
+      "displayNumber": 11,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=_tGyaE78WTA",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "d9a7961907b98f6b1857e22c773c44fd10de7c61eb43f4f9fc6d7b8789bf788e",
+        "captionEndSeconds": 205.12,
+        "segments": 89,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          205.12
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "d9a7961907b98f6b1857e22c773c44fd10de7c61eb43f4f9fc6d7b8789bf788e"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "SCR voltage ramp, inrush/mechanical stress, bypass and soft stop; distinguishes VFD speed control.",
+      "flowAndLimits": "Concise manufacturer overview with good comparison. Does not establish detailed starter selection/settings for a particular installation.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "p07-vfd",
+      "videoId": "yEPe7RDtkgo",
+      "title": "Variable-Frequency Drives: From Rectifier to Motor Speed",
+      "instructor": "The Engineering Mindset",
+      "moduleId": "module-07",
+      "sectionId": "module-07-vfd-speed-control",
+      "displayNumber": 12,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=yEPe7RDtkgo",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "f43d435e038f5247b079262cf268c73975e2d07a6dfca737757503e9f1f3878e",
+        "captionEndSeconds": 914.92,
+        "segments": 438,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          914.92
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "f43d435e038f5247b079262cf268c73975e2d07a6dfca737757503e9f1f3878e"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Rectifier, DC bus, inverter/PWM and varying frequency/voltage to change motor speed.",
+      "flowAndLimits": "Long foundations before the drive; clear power-stage progression. Simplified waveform/electron analogies are not a rigorous machine model. A diode front end alone cannot return regenerated energy to the mains.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-regenerative-drive-principles",
+      "videoId": "IAnMVYOYHxg",
+      "title": "Four-Quadrant Drives: Motoring, Braking and Regeneration",
+      "instructor": "KEB America",
+      "moduleId": "module-07",
+      "sectionId": "c1-regenerative-braking",
+      "displayNumber": 13,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=IAnMVYOYHxg",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "064a0275d401b1b2095f19cb0b795b204ec0ba327da60a9681465497b6057ccf",
+        "captionEndSeconds": 177.14,
+        "segments": 41,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          177.14
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "064a0275d401b1b2095f19cb0b795b204ec0ba327da60a9681465497b6057ccf"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "manual",
+          "name": "English",
+          "vssId": ".en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Four speed/torque quadrants, motoring/generation, DC-bus braking resistor and regenerative front end.",
+      "flowAndLimits": "Concise and directly answers the regenerative-drive distinction. An ordinary VFD is not automatically a mains-regenerative drive.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-capacitor-placement",
+      "videoId": "oaIRQ1Xm7OQ",
+      "title": "5 Types of Power Factor Correction — Capacitor Bank Locations",
+      "instructor": "The Electrical Guy",
+      "moduleId": "module-07",
+      "sectionId": "c1-pfc-application",
+      "displayNumber": 14,
+      "studyRole": "Core application",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=oaIRQ1Xm7OQ",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "85bf10a11da3404f68722e60fa83d7783ade118a9bebab222c09dbd6b106b129",
+        "captionEndSeconds": 370.93,
+        "segments": 129,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          370.93
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "85bf10a11da3404f68722e60fa83d7783ade118a9bebab222c09dbd6b106b129"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Individual/group/central/combined/automatic capacitor placement, motor switching and self-excitation hazard.",
+      "flowAndLimits": "Useful comparison. It mistakenly names self-excited induction generation synchronous generation; the existing note corrects it. Not a detailed motor-bank single-line drawing exercise; keep capacitors off VFD outputs.",
+      "existingStudyNote": "Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs."
+    },
+    {
+      "lessonId": "c1-phase-failure-relay",
+      "videoId": "-OCfG8inGSY",
+      "title": "Phase-Failure Relay with a DOL Starter",
+      "instructor": "The Electrical Guy",
+      "moduleId": "module-07",
+      "sectionId": "c1-controls-phase-monitoring",
+      "displayNumber": 15,
+      "studyRole": "Optional circuit critique",
+      "required": false,
+      "url": "https://www.youtube.com/watch?v=-OCfG8inGSY",
+      "scope": "motor modules",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "704ed0c5187296e3ca71c8563a7c675cb3c4d81efe1ff0522f8cf6d268d27c95",
+        "captionEndSeconds": 274.1,
+        "segments": 116,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          274.1
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "704ed0c5187296e3ca71c8563a7c675cb3c4d81efe1ff0522f8cf6d268d27c95"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Phase-monitor relay supply and a DOL holding-branch wiring example.",
+      "flowAndLimits": "Useful only as the existing optional circuit critique: Start bypasses the monitoring contact while held. Do not copy it as a correct protective circuit or count it as gap closure.",
+      "existingStudyNote": "Protection can be bypassed while Start is held; do not copy this circuit."
+    },
+    {
+      "lessonId": "c1-phase-sequence-theory",
+      "videoId": "aDSY10l_ZqE",
+      "title": "Testing Phase Sequence: Rotation, Instruments and Consistent Phase Identification",
+      "instructor": "John Ward (jwflame)",
+      "moduleId": "c1-testing",
+      "sectionId": "c1-testing-section-1",
+      "displayNumber": 7,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=aDSY10l_ZqE",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "5668d0da2e6ea3f6875866c1919851d6644368ba05bd2fbeddfa13193ec6cd55",
+        "captionEndSeconds": 459.08,
+        "segments": 211,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          459.08
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "5668d0da2e6ea3f6875866c1919851d6644368ba05bd2fbeddfa13193ec6cd55"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Sequence, direction, phase indicators, swapping two lines, consistent identification and tester ratings.",
+      "flowAndLimits": "Strong explanation before the practical demonstration; recognises equipment-specific two-pole phase indication. It is not a complete motor commissioning procedure.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "course-igi8F6UAvh0",
+      "videoId": "igi8F6UAvh0",
+      "title": "How to use a phase rotation meter? 👷🏽‍♂️",
+      "instructor": "Odeane's Electric",
+      "moduleId": "c1-testing",
+      "sectionId": "c1-testing-section-1",
+      "displayNumber": 8,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=igi8F6UAvh0",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "e0f1a408b76450ab285b7c74fa81f65a04945a9310da7c30c6ea67d9553b084c",
+        "captionEndSeconds": 296.32,
+        "segments": 112,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          296.32
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "e0f1a408b76450ab285b7c74fa81f65a04945a9310da7c30c6ea67d9553b084c"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Practical phase rotation indication, lead identification and correcting reverse sequence.",
+      "flowAndLimits": "Useful equipment example with PPE/voltage-range discussion. Any wiring alteration still requires isolation; the clip is not the whole safe-isolation procedure.",
+      "existingStudyNote": null
+    },
+    {
+      "lessonId": "c1-motor-phase-loss",
+      "videoId": "AtlXd1xA-CU",
+      "title": "Single-Phasing Fault in a Three-Phase Motor",
+      "instructor": "Electrical lectures",
+      "moduleId": "c1-faults",
+      "sectionId": "c1-faults-motor-phase-loss",
+      "displayNumber": 3,
+      "studyRole": "Core fault concept",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=AtlXd1xA-CU",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "d4de4710cf5d436b12921754940109a678c6f0da87d31b34d15dbeb5adbfc6b7",
+        "captionEndSeconds": 286.32,
+        "segments": 120,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          286.32
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "d4de4710cf5d436b12921754940109a678c6f0da87d31b34d15dbeb5adbfc6b7"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": null,
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Phase loss at rest versus running, fuse/contactor/conductor causes, heating, noise and phase-failure protection.",
+      "flowAndLimits": "Direct fault concept with clear examples. Numerical current multipliers and claims of all windings being overcurrent are not universal; no complete humming diagnosis.",
+      "existingStudyNote": "Current multipliers are illustrative, not universal relay settings."
+    },
+    {
+      "lessonId": "c1-motor-winding-tests",
+      "videoId": "Ap6fpJ58d5Q",
+      "title": "Isolated Motor Bench Tests: Winding Resistance and Insulation Resistance",
+      "instructor": "Samuel Smith",
+      "moduleId": "c1-faults",
+      "sectionId": "c1-faults-motor-tests",
+      "displayNumber": 4,
+      "studyRole": "Core lesson",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=Ap6fpJ58d5Q",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "f173e36aa0d68b53ae0abdb28805fe14513cb466e3a8c0cec13888ed44630089",
+        "captionEndSeconds": 350.36,
+        "segments": 131,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          350.36
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "f173e36aa0d68b53ae0abdb28805fe14513cb466e3a8c0cec13888ed44630089"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": null,
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Disconnected bench motor: remove links, compare winding resistances, check to frame and winding-to-winding insulation.",
+      "flowAndLimits": "Clear progression showing why a continuity check is insufficient. >200 MΩ is this meter/example, not a universal pass threshold. Not a complete site isolation, discharge, refit and commissioning sequence.",
+      "existingStudyNote": "Use manufacturer test limits; >200 MΩ is this meter’s range, not a universal pass value."
+    },
+    {
+      "lessonId": "c1-synchronous-condenser-overview",
+      "videoId": "6U_rO5FWW0Y",
+      "title": "Synchronous Condensers: Reactive Power and Voltage Support",
+      "instructor": "Flirting with Technology",
+      "moduleId": "c1-pfc",
+      "sectionId": "c1-pfc-synchronous-condenser",
+      "displayNumber": null,
+      "studyRole": "Core short overview",
+      "required": true,
+      "url": "https://www.youtube.com/watch?v=6U_rO5FWW0Y",
+      "scope": "related C1 lesson",
+      "transcript": {
+        "source": "YTTools public caption export",
+        "language": "en",
+        "sha256": "6c49c920177b4563bd6377b0601f2ca228e64a4dea346ea7fe0632032aec40da",
+        "captionEndSeconds": 113.28,
+        "segments": 42,
+        "reviewed": "Complete available caption text",
+        "reviewedRangeSeconds": [
+          0,
+          113.28
+        ],
+        "translationUsed": false,
+        "defaultExportLanguage": "en",
+        "defaultExportSha256": "6c49c920177b4563bd6377b0601f2ca228e64a4dea346ea7fe0632032aec40da"
+      },
+      "languageEvidence": {
+        "originalDefaultAudio": {
+          "displayName": "English (US) original",
+          "id": "en-US.4",
+          "audioIsDefault": true
+        },
+        "englishCaptionTrack": {
+          "language": "en",
+          "kind": "asr",
+          "name": "English (auto-generated)",
+          "vssId": "a.en"
+        },
+        "archivedEnglishTrack": null,
+        "assessment": "English caption text reviewed; not a full audio listening test"
+      },
+      "teaches": "Unloaded synchronous machine, reactive-power production/absorption and voltage/PF support.",
+      "flowAndLimits": "Good short identification. Does not explicitly connect increased field excitation to leading stator current or teach hunting. Not complete overexcitation teaching.",
+      "existingStudyNote": null
+    }
+  ],
+  "requirements": [
+    {
+      "id": "motor-generator",
+      "title": "Motor versus generator energy conversion",
+      "paperRefs": [
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q5(b)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "GQatiB-JHdI",
+          "startSeconds": 0,
+          "endSeconds": 928,
+          "teaches": "Electrical input produces mechanical rotation"
+        },
+        {
+          "videoId": "IAnMVYOYHxg",
+          "startSeconds": 0,
+          "endSeconds": 177,
+          "teaches": "Motor versus generator operation/energy flow"
+        }
+      ],
+      "remaining": "Concept taught across two lessons; not a single exam-style comparison."
+    },
+    {
+      "id": "cage-induction",
+      "title": "Squirrel-cage construction, operation and applications",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(e)(i)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "59HBoIXzX_c",
+          "startSeconds": 0,
+          "endSeconds": 933,
+          "teaches": "Rotating field, induced rotor currents and cage construction"
+        }
+      ],
+      "remaining": "No wound-rotor detail should be inferred."
+    },
+    {
+      "id": "star-voltage",
+      "title": "Star/delta winding voltage and connection",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(c)"
+        },
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A18"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q1.8"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "59HBoIXzX_c",
+          "startSeconds": 535,
+          "endSeconds": 933,
+          "teaches": "Star/delta terminals and voltage/current example"
+        },
+        {
+          "videoId": "XbL0R_9KLD4",
+          "startSeconds": 133,
+          "endSeconds": 185,
+          "teaches": "Voltage versus rated connection"
+        }
+      ],
+      "remaining": "Use nameplate Δ/Y voltages; not every motor can run in delta at the available supply."
+    },
+    {
+      "id": "delta-current",
+      "title": "Delta line current versus winding current",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(c)"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q1.9"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q1, delta-current MCQ"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "59HBoIXzX_c",
+          "startSeconds": 600,
+          "endSeconds": 933,
+          "teaches": "Line and winding-current relationship"
+        }
+      ],
+      "remaining": "Iline=√3 Iwinding for a balanced delta; do not propagate the star-starter caption slips."
+    },
+    {
+      "id": "input-power",
+      "title": "Electrical input kW, kVA, PF and current",
+      "paperRefs": [
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q3(g)"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q4(d)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "T2eO6hOT-EA",
+          "startSeconds": 0,
+          "endSeconds": 227,
+          "teaches": "PF example"
+        },
+        {
+          "videoId": "TPsHULaNc7s",
+          "startSeconds": 0,
+          "endSeconds": 183,
+          "teaches": "Line-current example"
+        },
+        {
+          "videoId": "q5xjqXcCqNw",
+          "startSeconds": 20,
+          "endSeconds": 164,
+          "teaches": "RL power/current components"
+        }
+      ],
+      "remaining": "VA/kVA wording corrections are necessary; exact angle/AHU givens require transfer."
+    },
+    {
+      "id": "shaft-current",
+      "title": "Shaft output, efficiency, hp and motor line current",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-11",
+          "reference": "Q5(d)"
+        },
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q3(b)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "Jx3Pk_5O-PM",
+          "startSeconds": 0,
+          "endSeconds": 522,
+          "teaches": "Complete shaft-output→input→PF→line-current example"
+        }
+      ],
+      "remaining": "Use η and PF separately; one optional protection-sizing example omits η."
+    },
+    {
+      "id": "poles-speed",
+      "title": "Synchronous speed and pole count",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q1.20, Q5(f)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q1.10, Q5(h)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(e), Q1 motor-speed MCQ"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "H0SaAq7sMN0",
+          "startSeconds": 0,
+          "endSeconds": 1058,
+          "teaches": "Ns=120f/P and worked pole/speed cases"
+        }
+      ],
+      "remaining": "Real induction no-load speed is slightly below Ns; use zero slip only when the problem specifies it."
+    },
+    {
+      "id": "slip-value",
+      "title": "Slip speed, per-unit/percent slip and loaded speed",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(e)"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q3 booster-motor block"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(e), Q5(h)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(e)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "H0SaAq7sMN0",
+          "startSeconds": 0,
+          "endSeconds": 1058,
+          "teaches": "Six complete numerical cases"
+        }
+      ],
+      "remaining": "Distinguish rpm difference from dimensionless slip; convert percent to per-unit."
+    },
+    {
+      "id": "slip-needed",
+      "title": "Why induction torque requires slip",
+      "paperRefs": [
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(f)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "59HBoIXzX_c",
+          "startSeconds": 360,
+          "endSeconds": 535,
+          "teaches": "Rotor cannot catch the rotating field"
+        },
+        {
+          "videoId": "8T53wEGiBKE",
+          "startSeconds": 0,
+          "endSeconds": 895,
+          "teaches": "Relative motion, induction and torque"
+        }
+      ],
+      "remaining": "Zero-slip idealised paper givens are not proof a real induction motor needs no loss torque."
+    },
+    {
+      "id": "frequency-change",
+      "title": "50/60 Hz and no-load/full-load speed",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(f)"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q3 booster-motor block"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(h)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "H0SaAq7sMN0",
+          "startSeconds": 0,
+          "endSeconds": 1058,
+          "teaches": "Frequency/poles/slip numerical method"
+        }
+      ],
+      "remaining": "Exact 150 hp/eight-pole paper cases are transfers, not identical worked videos; assume unchanged slip only if given."
+    },
+    {
+      "id": "torque-slip",
+      "title": "Torque–slip behaviour, load change and stall",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(e)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(g)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "8T53wEGiBKE",
+          "startSeconds": 0,
+          "endSeconds": 895,
+          "teaches": "Torque curve and operating point"
+        },
+        {
+          "videoId": "zssTcEBkzh0",
+          "startSeconds": 0,
+          "endSeconds": 1967,
+          "teaches": "Stable/unstable operation and load changes"
+        }
+      ],
+      "remaining": "Long lecture is optional depth. Full electrical-machine equivalent-circuit theory is not introduced as a new exam requirement."
+    },
+    {
+      "id": "rotor-frequency",
+      "title": "Rotor-current frequency from slip",
+      "paperRefs": [
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q1 rotor-frequency MCQ"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "H0SaAq7sMN0",
+          "startSeconds": 0,
+          "endSeconds": 1058,
+          "teaches": "fr=s f including standstill and loaded cases"
+        }
+      ],
+      "remaining": "No gap in the required calculation method."
+    },
+    {
+      "id": "starting-options",
+      "title": "Name and justify alternative starting methods",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(a)"
+        },
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q2(a)"
+        },
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q2(a)"
+        },
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "B1(a)"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(a)"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q3 booster-motor block"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(a)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(c)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "h89TTwlNnpY",
+          "startSeconds": 0,
+          "endSeconds": 656,
+          "teaches": "Star–delta"
+        },
+        {
+          "videoId": "iHFTVBWLOAg",
+          "startSeconds": 0,
+          "endSeconds": 544,
+          "teaches": "Autotransformer"
+        },
+        {
+          "videoId": "_tGyaE78WTA",
+          "startSeconds": 0,
+          "endSeconds": 198,
+          "teaches": "Soft starter versus VFD"
+        }
+      ],
+      "remaining": "Enough methods to list. A complete load-torque/supply/duty/nameplate-based comparison is dispersed; pump power alone cannot establish the best starter."
+    },
+    {
+      "id": "dol-tradeoffs",
+      "title": "DOL advantages, limitations and inrush",
+      "paperRefs": [
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q2(b)"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(b)"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q3 booster-motor block"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(b)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "HFkTPmY7N7w",
+          "startSeconds": 0,
+          "endSeconds": 495,
+          "teaches": "Full-voltage starting, simplicity and large starting current"
+        },
+        {
+          "videoId": "_tGyaE78WTA",
+          "startSeconds": 0,
+          "endSeconds": 198,
+          "teaches": "Mechanical/electrical stress comparison"
+        }
+      ],
+      "remaining": "Correct misleading reactance explanation; supply stiffness, allowed voltage dip, torque/duty and manufacturer data govern suitability. No universal 5 kW/15 kW prohibition."
+    },
+    {
+      "id": "dol-power",
+      "title": "Draw/trace DOL three-phase power circuit",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q2(b)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "mcXxhUaUb94",
+          "startSeconds": 0,
+          "endSeconds": 371,
+          "teaches": "Three poles→overload→motor"
+        },
+        {
+          "videoId": "qlqPdLGwJxk",
+          "startSeconds": 0,
+          "endSeconds": 386,
+          "teaches": "Matching physical connections"
+        }
+      ],
+      "remaining": "Protection coordination remains application-specific."
+    },
+    {
+      "id": "dol-hold",
+      "title": "Draw/trace DOL start, stop, holding and overload control",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q2(b)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "mcXxhUaUb94",
+          "startSeconds": 0,
+          "endSeconds": 371,
+          "teaches": "NO Start, NC Stop/overload and holding contact"
+        },
+        {
+          "videoId": "qlqPdLGwJxk",
+          "startSeconds": 0,
+          "endSeconds": 386,
+          "teaches": "Physical companion"
+        }
+      ],
+      "remaining": "Coil voltage determines whether neutral is needed; motor itself need not use a neutral."
+    },
+    {
+      "id": "dol-nvr",
+      "title": "Explain DOL no-voltage release and safe restart",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q2(b)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "mcXxhUaUb94",
+          "startSeconds": 0,
+          "endSeconds": 371,
+          "teaches": "Holding circuit from which behaviour can be derived"
+        }
+      ],
+      "remaining": "This is a completeness check for explaining that circuit, not a separately verified historical question. No explicit supply-failure→coil drop→return-of-supply→fresh Start walkthrough found. Written project helps but is not video proof."
+    },
+    {
+      "id": "star-power",
+      "title": "Star–delta power circuit and starting sequence",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(b)"
+        },
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q2(c)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "h89TTwlNnpY",
+          "startSeconds": 0,
+          "endSeconds": 656,
+          "teaches": "Three power contactors and timer transition"
+        }
+      ],
+      "remaining": "Power sequence present; qualify delta-rated supply voltage and starting-torque suitability. Correct winding/line-current ratio confusion."
+    },
+    {
+      "id": "star-control",
+      "title": "Complete star–delta control drawing and interlocks",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(b)"
+        },
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q2(c)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "h89TTwlNnpY",
+          "startSeconds": 300,
+          "endSeconds": 455,
+          "teaches": "Timer changes star to delta"
+        },
+        {
+          "videoId": "VqgXVIi0jw8",
+          "startSeconds": 0,
+          "endSeconds": 375,
+          "teaches": "Interlock concept for reversing contactors"
+        }
+      ],
+      "remaining": "No complete timed star–delta Start/Stop, holding, overload, timer contacts and cross-interlocked star/delta coil circuit found. Reversing interlocks cannot be counted as the missing drawing. Highest-priority diagram gap."
+    },
+    {
+      "id": "reverse-three",
+      "title": "Three-phase reversal and interlocks",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(d)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q2(h)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "p2hDLMeFJqs",
+          "startSeconds": 0,
+          "endSeconds": 492,
+          "teaches": "Swap two supply lines"
+        },
+        {
+          "videoId": "VqgXVIi0jw8",
+          "startSeconds": 0,
+          "endSeconds": 375,
+          "teaches": "Mechanical and electrical interlocks"
+        }
+      ],
+      "remaining": "Reverse only under an appropriate switching/stopping arrangement."
+    },
+    {
+      "id": "reverse-split",
+      "title": "Single-phase/split-phase relative winding reversal",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q4(d)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "bytt0ZCJwRk",
+          "startSeconds": 0,
+          "endSeconds": 776,
+          "teaches": "Reverse one winding relative to the other"
+        },
+        {
+          "videoId": "45re1J-RxKc",
+          "startSeconds": 0,
+          "endSeconds": 649,
+          "teaches": "Drum-switch example"
+        }
+      ],
+      "remaining": "Examples are capacitor motors; terminal labels are not universal. Reversing line and neutral alone does not reverse both-winding motor torque."
+    },
+    {
+      "id": "commutator",
+      "title": "Brushes and commutator maintain DC motor torque",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q5(b)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(a)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "GQatiB-JHdI",
+          "startSeconds": 0,
+          "endSeconds": 928,
+          "teaches": "Construction and current reversal in rotating armature"
+        }
+      ],
+      "remaining": "No dedicated additional video required for this short question."
+    },
+    {
+      "id": "reverse-dc",
+      "title": "DC armature/field direction relationship",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q5(b)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(b)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "GYuBVM_GyOw",
+          "startSeconds": 0,
+          "endSeconds": 708,
+          "teaches": "Reverse armature or field alone; reversing both preserves torque direction"
+        }
+      ],
+      "remaining": "English original/default audio verified; audit transcript for this clip is translated Dutch."
+    },
+    {
+      "id": "synchronous-speed",
+      "title": "Synchronous versus induction speed/load behaviour",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(e)"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q3(c)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q1.9, Q5(d)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(d)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "ditS0a28Sko",
+          "startSeconds": 420,
+          "endSeconds": 488,
+          "teaches": "Synchronous rotor follows rotating field; induction rotor lags"
+        }
+      ],
+      "remaining": "Basic distinction taught inside optional servo lesson. Pull-out/loss-of-synchronism under excessive load is not fully taught; constant speed is conditional on remaining in synchronism."
+    },
+    {
+      "id": "stepper",
+      "title": "Stepper operation, speed/position and applications",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(e)"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q3(c)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(d)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(d)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "09Mpkjcr0bo",
+          "startSeconds": 0,
+          "endSeconds": 842,
+          "teaches": "Pulse sequence and angle, direction, speed and holding"
+        }
+      ],
+      "remaining": "Current optional-further-study role understates its relevance to recurring short questions."
+    },
+    {
+      "id": "servo",
+      "title": "Servo command, error, feedback and applications",
+      "paperRefs": [
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(d)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q2(d)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "ditS0a28Sko",
+          "startSeconds": 0,
+          "endSeconds": 420,
+          "teaches": "Closed-loop control and feedback"
+        }
+      ],
+      "remaining": "Also optional. Teach the feedback principle without implying servo names one unique motor construction or instant stopping."
+    },
+    {
+      "id": "sync-condenser",
+      "title": "Overexcited unloaded synchronous motor/leading PF",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A3"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q1.10"
+        },
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q1.18"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q1.12"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "6U_rO5FWW0Y",
+          "startSeconds": 0,
+          "endSeconds": 113,
+          "teaches": "Unloaded synchronous condenser provides/absorbs reactive power"
+        }
+      ],
+      "remaining": "Identification covered; field excitation→leading stator current→reactive support is not explicitly explained. Existing name alone is insufficient for full mechanism coverage."
+    },
+    {
+      "id": "hunting",
+      "title": "Synchronous-motor hunting and causes",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A4"
+        }
+      ],
+      "verdict": "missing",
+      "evidence": [],
+      "remaining": "No synchronous-hunting teaching found in the reviewed motor/supporting captions. Induction-load oscillations in NPTEL are a different phenomenon/context."
+    },
+    {
+      "id": "wound-rotor",
+      "title": "Slip-ring/wound-rotor resistance and starting torque",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A25"
+        }
+      ],
+      "verdict": "missing",
+      "evidence": [],
+      "remaining": "No lesson explains external rotor resistance, its starting-torque effect and removal as the motor accelerates. Squirrel-cage bars, brushes in DC motors and stator/autotransformer starting do not close this gap."
+    },
+    {
+      "id": "single-phase-comparison",
+      "title": "Starting torque and PF: capacitor-start/run, split-phase, shaded-pole",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A33–34"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "bytt0ZCJwRk",
+          "startSeconds": 0,
+          "endSeconds": 776,
+          "teaches": "Capacitor configurations, start/run roles and switch"
+        }
+      ],
+      "remaining": "No explicit four-type starting-torque/PF comparison; resistance split-phase and shaded-pole mechanisms are absent. Do not infer the MCQ comparison solely from capacitor presence."
+    },
+    {
+      "id": "vfd-speed",
+      "title": "VFD frequency/voltage and induction motor speed",
+      "paperRefs": [
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q3(b)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "yEPe7RDtkgo",
+          "startSeconds": 0,
+          "endSeconds": 914,
+          "teaches": "AC–DC–AC/PWM and frequency control"
+        },
+        {
+          "videoId": "_tGyaE78WTA",
+          "startSeconds": 0,
+          "endSeconds": 198,
+          "teaches": "Soft-start voltage control versus VFD"
+        }
+      ],
+      "remaining": "No need to introduce advanced vector-control design as a past-paper requirement."
+    },
+    {
+      "id": "four-quadrant",
+      "title": "Motoring, generating and regenerative drive capability",
+      "paperRefs": [
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q1 four-quadrant-drive MCQ"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "IAnMVYOYHxg",
+          "startSeconds": 0,
+          "endSeconds": 177,
+          "teaches": "Torque/speed signs and regeneration versus resistor braking"
+        }
+      ],
+      "remaining": "Distinguish motor-side generation from returning energy through a suitable mains front end."
+    },
+    {
+      "id": "thermal-relay",
+      "title": "Thermal overload relay function and trip contacts",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A8"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(c)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(c)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q3(e)(i–ii)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "3aur1tZYlKE",
+          "startSeconds": 0,
+          "endSeconds": 499,
+          "teaches": "Time-delayed overload protection; NC trip contact releases contactor"
+        }
+      ],
+      "remaining": "Not short-circuit protection; current setting depends on actual motor and relay placement. Correct the isolated contact-state wording slip."
+    },
+    {
+      "id": "overcurrent-relay",
+      "title": "Overcurrent relay versus overload/short-circuit interruption",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(c)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(c)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q3(e)(i–ii)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "bQ6fZrrP0H4",
+          "startSeconds": 0,
+          "endSeconds": 236,
+          "teaches": "Pickup/time/current sensing and breaker trip chain"
+        },
+        {
+          "videoId": "1DDsOJa_FuU",
+          "startSeconds": 0,
+          "endSeconds": 209,
+          "teaches": "Thermal versus magnetic protection mechanism"
+        }
+      ],
+      "remaining": "Definitions are strong; these do not demonstrate a complete coordinated motor-feeder design."
+    },
+    {
+      "id": "phase-failure",
+      "title": "Phase-failure/sequence monitoring and protective action",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(c)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(c)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "sO2RPcGLshA",
+          "startSeconds": 0,
+          "endSeconds": 327,
+          "teaches": "Voltage monitoring with contactor-control output"
+        },
+        {
+          "videoId": "AtlXd1xA-CU",
+          "startSeconds": 0,
+          "endSeconds": 286,
+          "teaches": "Failure causes and effect on motor"
+        }
+      ],
+      "remaining": "Do not count the optional Start-bypass circuit as a correct installation. Model-specific MPCB sensitivity is not a substitute for all voltage monitoring."
+    },
+    {
+      "id": "humming",
+      "title": "Humming/no-start causes and systematic checks",
+      "paperRefs": [
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q5(c)"
+        },
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q1(viii), Q5(c)"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q5(d)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q5(i)"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q1 humming MCQ"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "3aur1tZYlKE",
+          "startSeconds": 0,
+          "endSeconds": 120,
+          "teaches": "Jam, load, ventilation/bearings and phase loss"
+        },
+        {
+          "videoId": "AtlXd1xA-CU",
+          "startSeconds": 0,
+          "endSeconds": 286,
+          "teaches": "Single phasing"
+        },
+        {
+          "videoId": "Ap6fpJ58d5Q",
+          "startSeconds": 0,
+          "endSeconds": 351,
+          "teaches": "Dead winding/insulation checks"
+        },
+        {
+          "videoId": "sO2RPcGLshA",
+          "startSeconds": 0,
+          "endSeconds": 327,
+          "teaches": "Undervoltage conditions"
+        }
+      ],
+      "remaining": "Causes are distributed. No full symptom→safe isolation→mechanical/supply/control/winding diagnosis→repair/retest walkthrough; undervoltage as a specific hum/no-start cause is not explicitly linked."
+    },
+    {
+      "id": "precommission",
+      "title": "Motor winding resistance, insulation and phase sequence",
+      "paperRefs": [
+        {
+          "paperId": "c1-2023-09",
+          "reference": "Q1.14"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q1.15"
+        },
+        {
+          "paperId": "c1-2025-06",
+          "reference": "Q1 motor-test MCQ"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "Ap6fpJ58d5Q",
+          "startSeconds": 0,
+          "endSeconds": 351,
+          "teaches": "Winding resistance and insulation"
+        },
+        {
+          "videoId": "aDSY10l_ZqE",
+          "startSeconds": 0,
+          "endSeconds": 460,
+          "teaches": "Phase-sequence instrument/principle"
+        },
+        {
+          "videoId": "igi8F6UAvh0",
+          "startSeconds": 0,
+          "endSeconds": 294,
+          "teaches": "Phase indicator demonstration"
+        }
+      ],
+      "remaining": "Covers named tests; not proof of complete safe commissioning, acceptance limits or instrument competency. A normal insulation test cannot detect every turn-to-turn defect."
+    },
+    {
+      "id": "frame-earth",
+      "title": "Earth the exposed motor frame, not live windings",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q1.16"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q1.14"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "PIaqmCxN9KU",
+          "startSeconds": 0,
+          "endSeconds": 507,
+          "teaches": "CPC connection in starter/motor setup"
+        },
+        {
+          "videoId": "Ap6fpJ58d5Q",
+          "startSeconds": 0,
+          "endSeconds": 351,
+          "teaches": "Tests winding insulation to frame/earth"
+        }
+      ],
+      "remaining": "Practical earth connection shown; the frame-versus-live-winding distinction and fault-current path are not explicitly compared in these captions. General C1 earthing lessons were not re-audited here."
+    },
+    {
+      "id": "lockoff",
+      "title": "Lockable remote motor isolation",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A15"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "45re1J-RxKc",
+          "startSeconds": 0,
+          "endSeconds": 649,
+          "teaches": "Turn off/lock off supply before working"
+        }
+      ],
+      "remaining": "Lock-off practice is present; the remote-isolator exam case and complete prove-dead sequence are not demonstrated here. Wider C1 isolation teaching exists outside this motor-only reread."
+    },
+    {
+      "id": "sequence",
+      "title": "Positive/negative sequence, phase interchange and instrument",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q1.17"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q2(g–i)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "aDSY10l_ZqE",
+          "startSeconds": 0,
+          "endSeconds": 460,
+          "teaches": "Three-phase order, reversing two lines and indication"
+        },
+        {
+          "videoId": "igi8F6UAvh0",
+          "startSeconds": 0,
+          "endSeconds": 294,
+          "teaches": "Correct lead identification and direction"
+        }
+      ],
+      "remaining": "Translate labels consistently: RYB/YBR/BRY are cyclic positive orders; swapping two gives the opposite sequence."
+    },
+    {
+      "id": "single-phase-uf",
+      "title": "Single-phase motor PF correction to a non-unity target, in µF",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q5(b)"
+        },
+        {
+          "paperId": "c1-2012-11",
+          "reference": "Q3(d)"
+        },
+        {
+          "paperId": "c1-2013-03",
+          "reference": "Q3(b)"
+        },
+        {
+          "paperId": "c1-2016-04",
+          "reference": "Q4(c)"
+        },
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "B1(b)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "Tv_7XWf96gg",
+          "startSeconds": 530,
+          "endSeconds": 653,
+          "teaches": "Chosen-target reactive difference"
+        },
+        {
+          "videoId": "q5xjqXcCqNw",
+          "startSeconds": 20,
+          "endSeconds": 164,
+          "teaches": "Single-phase capacitor revision and reactance"
+        },
+        {
+          "videoId": "Jx3Pk_5O-PM",
+          "startSeconds": 0,
+          "endSeconds": 522,
+          "teaches": "Shaft-output/efficiency conversion"
+        }
+      ],
+      "remaining": "Ingredients exist, but no complete one-video target-PF single-phase motor example linking shaft/input P, current components, Qc and C=Qc/(2πfV²). Not the same as selecting a starting capacitor or three-phase µF per bank phase."
+    },
+    {
+      "id": "motor-kvar",
+      "title": "Motor/AHU target-PF kVAr calculation",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q3 motor/PFC block (c), Q4(d)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q4(d)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "Tv_7XWf96gg",
+          "startSeconds": 530,
+          "endSeconds": 653,
+          "teaches": "Initial/target Q difference"
+        },
+        {
+          "videoId": "vbytmPtvZi4",
+          "startSeconds": 0,
+          "endSeconds": 641,
+          "teaches": "P(tanφ1−tanφ2) applied calculation"
+        },
+        {
+          "videoId": "Jx3Pk_5O-PM",
+          "startSeconds": 0,
+          "endSeconds": 522,
+          "teaches": "Efficiency and current method"
+        }
+      ],
+      "remaining": "Strong transferable method; exact measured-current AHU case is not demonstrated end-to-end. Use input kW and do not copy supplied scheme arithmetic blindly."
+    },
+    {
+      "id": "bank-drawing",
+      "title": "Motor/capacitor single-line and staged bank",
+      "paperRefs": [
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q3 motor/PFC block (d–e)"
+        },
+        {
+          "paperId": "c1-2025-05",
+          "reference": "Q4(e)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "vbytmPtvZi4",
+          "startSeconds": 240,
+          "endSeconds": 641,
+          "teaches": "Bank-unit selection/protection"
+        },
+        {
+          "videoId": "oaIRQ1Xm7OQ",
+          "startSeconds": 0,
+          "endSeconds": 370,
+          "teaches": "Location/switching arrangements"
+        }
+      ],
+      "remaining": "No complete exam drawing from the given motor brief with available 5/10/25 kVAr steps, switching and coordinated protection. Written Papers/project diagrams are support, not video coverage."
+    },
+    {
+      "id": "capacitor-placement",
+      "title": "Motor-side/group/central correction and switching precautions",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q3(c)(i), Q5(c)"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q3 motor/PFC block (d–e)"
+        }
+      ],
+      "verdict": "direct",
+      "evidence": [
+        {
+          "videoId": "oaIRQ1Xm7OQ",
+          "startSeconds": 0,
+          "endSeconds": 370,
+          "teaches": "Location comparison, motor switching and self-excitation"
+        }
+      ],
+      "remaining": "Existing note is essential: self-excited induction generation, not synchronous generation; no correction capacitor on a VFD output."
+    },
+    {
+      "id": "correction-alternatives",
+      "title": "Correction alternatives beyond a capacitor bank",
+      "paperRefs": [
+        {
+          "paperId": "c1-2012-08",
+          "reference": "Q5(a)"
+        },
+        {
+          "paperId": "c1-2012-11",
+          "reference": "Q3(c)"
+        },
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "B1(c)"
+        },
+        {
+          "paperId": "c1-2022-05",
+          "reference": "Q3 correction-alternatives block (b)"
+        }
+      ],
+      "verdict": "partial",
+      "evidence": [
+        {
+          "videoId": "6U_rO5FWW0Y",
+          "startSeconds": 0,
+          "endSeconds": 113,
+          "teaches": "Synchronous condenser"
+        }
+      ],
+      "remaining": "Only one non-capacitor alternative clearly explained in this reviewed set. No phase-advancer lesson found; a question requesting two alternatives cannot be treated as fully covered by the condenser alone."
+    },
+    {
+      "id": "sewing-rating",
+      "title": "Indicative domestic sewing-machine motor wattage",
+      "paperRefs": [
+        {
+          "paperId": "c1-2016-10-additional",
+          "reference": "A27"
+        }
+      ],
+      "verdict": "missing",
+      "evidence": [],
+      "remaining": "No dedicated rating example. A particular appliance/nameplate rating is not universal motor theory; do not invent a numeric answer without a reliable model/answer source. Low priority compared with repeated circuit/calculation tasks."
+    }
+  ]
+}
