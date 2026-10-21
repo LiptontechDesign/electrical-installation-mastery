@@ -10,6 +10,8 @@ Three transcript-reviewed Rashid iqubal examples now connect capacitor-bank sele
 
 C1 Module 10 now gathers **Protective Devices and Coordination** into 15 transcript-reviewed lessons before board installation and motor study. See [the sequence, device gaps and video review](docs/c1-protective-devices.md).
 
+The [motor-only past-paper and transcript audit](docs/c1-motor-transcript-audit.md) checks all 30 motor-module videos plus 12 related lessons against nine available C1 paper records. It distinguishes directly taught skills from incomplete control drawings, missing machine concepts and written-only support, with English-language evidence for each video.
+
 ## Learning experience
 
 - **Home:** guests see the public course overview; signed-in learners see a compact personal workspace with unfinished learning in the selected pathway, upcoming unwatched videos, bookmarks, progress and their most recent book. Watched videos are labelled Replay; Continue reading opens the saved PDF page. The shared navigation has Home, Learn, Books, Practice and Papers, with account/settings and sign-out in the account menu.
