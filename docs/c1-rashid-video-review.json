@@ -1,0 +1,198 @@
+{
+  "reviewedAt": "2026-10-21",
+  "channel": "https://www.youtube.com/@Rashid-iqubal/videos",
+  "discovery": "Reviewed latest 30 channel entries and channel searches for motor, generator and power factor; selected by transcript and existing C1 coverage.",
+  "selectedCount": 3,
+  "totalAddedDurationSeconds": 3010,
+  "unreviewedCandidates": [
+    {
+      "videoId": "ZVEoKRGV5UE",
+      "decision": "Not added: no complete transcript reviewed. Retrieval failures and the fallback provider’s daily free quota limited further screening. Titles alone were not treated as English-content evidence."
+    },
+    {
+      "videoId": "gWXzfzzcbMs",
+      "decision": "Not added: no complete transcript reviewed. Retrieval failures and the fallback provider’s daily free quota limited further screening. Titles alone were not treated as English-content evidence."
+    },
+    {
+      "videoId": "KkIs9ElRycU",
+      "decision": "Not added: no complete transcript reviewed. Retrieval failures and the fallback provider’s daily free quota limited further screening. Titles alone were not treated as English-content evidence."
+    },
+    {
+      "videoId": "EJ9m90vF8c0",
+      "decision": "Not added: no complete transcript reviewed. Retrieval failures and the fallback provider’s daily free quota limited further screening. Titles alone were not treated as English-content evidence."
+    },
+    {
+      "videoId": "vUNCu5c4WDE",
+      "decision": "Not added: no complete transcript reviewed. Retrieval failures and the fallback provider’s daily free quota limited further screening. Titles alone were not treated as English-content evidence."
+    },
+    {
+      "videoId": "pSQy5WNsYzs",
+      "decision": "Not added: no complete transcript reviewed. Retrieval failures and the fallback provider’s daily free quota limited further screening. Titles alone were not treated as English-content evidence."
+    }
+  ],
+  "scope": "This is a curated sample of the channel, not a claim that its entire archive has been reviewed.",
+  "sources": {
+    "selectivity": "https://www.electrical-installation.org/enwiki/Coordination_between_circuit-breakers",
+    "cableProtection": "https://www.electrical-installation.org/enwiki/Practical_values_for_a_protective_scheme",
+    "capacitorProtection": "https://www.electrical-installation.org/enwiki/Implementation_of_capacitor_banks",
+    "capacitorControl": "https://www.electrical-installation.org/enwiki/The_choice_between_a_fixed_or_automatically-regulated_bank_of_capacitors",
+    "motorStarting": "https://library.e.abb.com/public/6b4e1a3530814df0c12579bb0030e58b/1SFC132060M0201.pdf"
+  },
+  "videos": [
+    {
+      "videoId": "HmgqGPzYSMs",
+      "url": "https://www.youtube.com/watch?v=HmgqGPzYSMs",
+      "sourceTitle": "Electrical Load Calculation for Residential Building | DB, SMDB, MDB, Transformer & Cable Sizing",
+      "decision": "Selected as optional applied example",
+      "lessonId": "c1-rashid-building-design",
+      "sectionId": "c1-building-design-capstone",
+      "moduleId": "c1-installation",
+      "durationSeconds": 1684,
+      "durationSource": "YouTube channel thumbnail time overlay",
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "transcript": {
+        "provider": "YTTools public captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 594,
+        "captionEndSeconds": 1683.08,
+        "sha256": "b57ec661e5bed6ea764345573e96e2fd3d7669434066047ab2f1aef7377fd1f6",
+        "rawExportSha256": "2c5101bca2c57f76133a2368328df6059071a8fc4779e4a4faaa026ec01be488",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1683.08
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed. Automatic captions may misrender symbols and numbers; no frame-by-frame or live playback verification."
+      }
+    },
+    {
+      "videoId": "vbytmPtvZi4",
+      "url": "https://www.youtube.com/watch?v=vbytmPtvZi4",
+      "sourceTitle": "Capacitor Bank and its Circuit Breaker size calculation",
+      "decision": "Selected as optional applied example",
+      "lessonId": "c1-rashid-capacitor-bank",
+      "sectionId": "c1-pfc-bank-protection",
+      "moduleId": "c1-pfc",
+      "durationSeconds": 643,
+      "durationSource": "YouTube channel thumbnail time overlay",
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "transcript": {
+        "provider": "YTtoTranscript public captions",
+        "language": "en-orig",
+        "captionSegments": 199,
+        "captionEndSeconds": 640.72,
+        "sha256": "9e7170cf65f37f43a18eda973bf11144ffecd320c21dd8e3470897284c97f29c",
+        "rawExportSha256": "80b83184ee4259b49acdf85c94988446fa2fcdd5620206b51b827553e50e665f",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 640.72
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed. Automatic captions may misrender symbols and numbers; no frame-by-frame or live playback verification."
+      }
+    },
+    {
+      "videoId": "j78uOSXYuOE",
+      "url": "https://www.youtube.com/watch?v=j78uOSXYuOE",
+      "sourceTitle": "Main Distribution Board (MDB) Explained | ACB, Bus Coupler, ATS & Generator Backup",
+      "decision": "Selected as optional applied example",
+      "lessonId": "c1-rashid-mdb-transfer",
+      "sectionId": "c1-standby-mdb-transfer",
+      "moduleId": "c1-standby",
+      "durationSeconds": 683,
+      "durationSource": "YouTube channel thumbnail time overlay",
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "transcript": {
+        "provider": "YTtoTranscript public captions",
+        "language": "en-orig",
+        "captionSegments": 285,
+        "captionEndSeconds": 681.68,
+        "sha256": "ab68388278ead8a308cf6e0cb119998f425eed93a9403f0839db7af94c48f678",
+        "rawExportSha256": "cd6464b9c4885fe214a55d603b40860c69ec3d2e386a28247419ef9f8eec48c7",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 681.68
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed. Automatic captions may misrender symbols and numbers; no frame-by-frame or live playback verification."
+      }
+    },
+    {
+      "videoId": "pLUY3QMwsRI",
+      "url": "https://www.youtube.com/watch?v=pLUY3QMwsRI",
+      "sourceTitle": "Short Circuit Current Calculation | Transformer to LV Panel, SMDB & DB Explained",
+      "decision": "Not selected: adds impedance magnitudes rather than summing resistance and reactance separately; this can underestimate fault current and produce an inadequate breaking-capacity choice. Captions also lose decimal places. Retain the existing fault-current foundations.",
+      "transcript": {
+        "provider": "YTtoTranscript public captions",
+        "language": "en-orig",
+        "captionSegments": 370,
+        "captionEndSeconds": 1098.919,
+        "sha256": "c43a19d26799a844671beeb99a7407aa18ef053a9dc25ea6bcc427f64e120d69",
+        "rawExportSha256": "7fb5dea096d64236bb55f9d941d08f919f2c3f9a2b2ace7136692ae4b52c3ed9",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1098.919
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed. Automatic captions may misrender symbols and numbers; no frame-by-frame or live playback verification."
+      }
+    },
+    {
+      "videoId": "WpuorkbS-UU",
+      "url": "https://www.youtube.com/watch?v=WpuorkbS-UU",
+      "sourceTitle": "Star-Delta Starter - Explained (Power wiring)",
+      "decision": "Not selected: the 220 + 220 = 440 V explanation does not account for the 120-degree phase relationship; a motor-size threshold is not a universal DOL limit. Existing motor lessons cover the same ground.",
+      "transcript": {
+        "provider": "YTtoTranscript public captions",
+        "language": "en-orig",
+        "captionSegments": 115,
+        "captionEndSeconds": 302.479,
+        "sha256": "ee2ae0de706776136bd40b81fe245243e373ff57c32aed5b56c63459c08dc705",
+        "rawExportSha256": "5dc016d2fc150ca451e782f9bdb3b068d8f82b42e047a25debdd58f16e8d5fd4",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 302.479
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed. Automatic captions may misrender symbols and numbers; no frame-by-frame or live playback verification."
+      }
+    },
+    {
+      "videoId": "P6szzqnfaBM",
+      "url": "https://www.youtube.com/watch?v=P6szzqnfaBM",
+      "sourceTitle": "DOL (Direct online) and Star Delta Starter । Power and Control wiring (Detail explanation)",
+      "decision": "Not selected: repeats the existing DOL and star-delta sequence; the stated reduction “by 30 percent” is inconsistent with the approximate one-third starting line current relative to DOL delta. The fixed 5 HP threshold is not universal.",
+      "transcript": {
+        "provider": "YTtoTranscript public captions",
+        "language": "en-orig",
+        "captionSegments": 178,
+        "captionEndSeconds": 395.6,
+        "sha256": "a1c21345e84c55ce8d11df2a693a5baa632bd55ae55610c9691af0393fe80699",
+        "rawExportSha256": "541eb23f4be10ea5178aa459938f419310606c92f950e9d02b709a1299b7d228",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 395.6
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed. Automatic captions may misrender symbols and numbers; no frame-by-frame or live playback verification."
+      }
+    }
+  ]
+}

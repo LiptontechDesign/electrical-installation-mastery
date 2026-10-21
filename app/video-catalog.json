@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 453,
-  "duration": "104 h 27 min",
+  "lessonCount": 471,
+  "duration": "107 h 38 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -4667,8 +4667,8 @@
       "number": 15,
       "title": "Power-Factor Correction",
       "description": "Build on AC-power calculations to explain the causes and consequences of poor power factor. Choose a target, size capacitor compensation and compare a synchronous condenser. Motor/drive-specific capacitor placement follows the motor-control lessons; complex-number derivations are further study.",
-      "duration": "2 h 2 min",
-      "durationSeconds": 7324,
+      "duration": "2 h 13 min",
+      "durationSeconds": 7967,
       "learningOutcome": "Build on AC-power calculations to explain the causes and consequences of poor power factor. Choose a target, size capacitor compensation and compare a synchronous condenser. Motor/drive-specific capacitor placement follows the motor-control lessons; complex-number derivations are further study.",
       "lessons": [
         {
@@ -4720,6 +4720,22 @@
           "studyNote": "This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95."
         },
         {
+          "id": "c1-rashid-capacitor-bank",
+          "number": 4,
+          "title": "Capacitor-Bank Selection and Protection: A 200 kW Worked Example",
+          "videoId": "vbytmPtvZi4",
+          "url": "https://www.youtube.com/watch?v=vbytmPtvZi4",
+          "instructor": "Rashid iqubal",
+          "duration": "10:43",
+          "durationSeconds": 643,
+          "topic": "Applied example: capacitor-bank steps and protection",
+          "layer": "HOW + REQUIREMENT",
+          "regulationSensitive": true,
+          "studyRole": "Optional applied example",
+          "required": false,
+          "studyNote": "The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall."
+        },
+        {
           "id": "c1-synchronous-condenser-overview",
           "videoId": "6U_rO5FWW0Y",
           "instructor": "Flirting with Technology",
@@ -4732,7 +4748,7 @@
           "required": true,
           "url": "https://www.youtube.com/watch?v=6U_rO5FWW0Y",
           "duration": "1:53",
-          "number": 4
+          "number": 5
         },
         {
           "videoId": "GfihUkWPCQQ",
@@ -4741,7 +4757,7 @@
           "durationSeconds": 1468,
           "regulationSensitive": false,
           "id": "c1-complex-number-foundation",
-          "number": 5,
+          "number": 6,
           "title": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
           "url": "https://www.youtube.com/watch?v=GfihUkWPCQQ",
           "topic": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
@@ -4756,7 +4772,7 @@
           "durationSeconds": 241,
           "regulationSensitive": false,
           "id": "c1-complex-conjugate-foundation",
-          "number": 6,
+          "number": 7,
           "title": "Complex Conjugates: Change the Imaginary Sign and Multiply",
           "url": "https://www.youtube.com/watch?v=dbxJ6LD0344",
           "topic": "Complex Conjugates: Change the Imaginary Sign and Multiply",
@@ -4773,7 +4789,7 @@
           "durationSeconds": 2834,
           "regulationSensitive": false,
           "id": "c1-shunt-pfc-examples",
-          "number": 7,
+          "number": 8,
           "title": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "topic": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "layer": "WHY",
@@ -5290,18 +5306,288 @@
       "classification": "C1 CORE"
     },
     {
-      "id": "c1-installation",
+      "id": "c1-protective-devices",
       "number": 19,
+      "title": "Protective Devices and Coordination",
+      "description": "Recognise fuses, MCBs, MCCBs, ACBs, residual-current devices, SPDs and protective relays. Connect operating principles, ratings and selectivity before board installation and motor applications.",
+      "duration": "2 h 21 min",
+      "durationSeconds": 8459,
+      "learningOutcome": "Recognise fuses, MCBs, MCCBs, ACBs, residual-current devices, SPDs and protective relays. Connect operating principles, ratings and selectivity before board installation and motor applications.",
+      "lessons": [
+        {
+          "id": "c1-protection-fuses",
+          "number": 1,
+          "title": "Fuses and HRC Construction: Identify the Protective Devices",
+          "videoId": "rijmYhVeUNs",
+          "url": "https://www.youtube.com/watch?v=rijmYhVeUNs",
+          "instructor": "GSH Electrical",
+          "duration": "13:59",
+          "durationSeconds": 839,
+          "regulationSensitive": true,
+          "topic": "Fuses and HRC Construction: Identify the Protective Devices",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "Historic BS examples support identification. Use marked ratings and actual characteristics; fuses can fail. HRC filler cools and de-ionises the arc. A fixed fusing factor is not a universal selection rule."
+        },
+        {
+          "id": "c1-protection-fuse-demo",
+          "number": 2,
+          "title": "Fuse Operation: Current, Heating and Time",
+          "videoId": "iHjWlO0JKyQ",
+          "url": "https://www.youtube.com/watch?v=iHjWlO0JKyQ",
+          "instructor": "eFIXX",
+          "duration": "3:59",
+          "durationSeconds": 239,
+          "regulationSensitive": true,
+          "topic": "Fuse Operation: Current, Heating and Time",
+          "layer": "WHY",
+          "studyRole": "Optional physical demonstration",
+          "required": false,
+          "studyNote": "This glass-fuse experiment illustrates heating and time, not HRC breaking capacity. Rated current is not an instantaneous operating threshold."
+        },
+        {
+          "id": "c1-protection-mcb",
+          "number": 3,
+          "title": "MCB Fundamentals: Thermal Trips, Magnetic Trips and B/C/D Curves",
+          "videoId": "iVZhVeFoSfk",
+          "url": "https://www.youtube.com/watch?v=iVZhVeFoSfk",
+          "instructor": "eFIXX",
+          "duration": "25:20",
+          "durationSeconds": 1520,
+          "regulationSensitive": true,
+          "topic": "MCB Fundamentals: Thermal Trips, Magnetic Trips and B/C/D Curves",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "Select the curve from load inrush and required disconnection, rather than the building label. Use current tables, manufacturer data and verified fault levels; the UK examples are historical."
+        },
+        {
+          "id": "c1-protection-mccb",
+          "number": 4,
+          "title": "MCCB Fundamentals: Frame Size, Trip Settings and Breaking Capacity",
+          "videoId": "yzXROOX2LfI",
+          "url": "https://www.youtube.com/watch?v=yzXROOX2LfI",
+          "instructor": "The M&E Engineers",
+          "duration": "11:08",
+          "durationSeconds": 668,
+          "regulationSensitive": true,
+          "topic": "MCCB Fundamentals: Frame Size, Trip Settings and Breaking Capacity",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "Frame size is not the overload setting. The 800 A crossover and pickup ranges are examples. Check rated voltage, Icu/Ics and manufacturer coordination. Ground-fault tripping is not necessarily personnel RCD protection and must satisfy the design."
+        },
+        {
+          "id": "c1-protection-acb",
+          "number": 5,
+          "title": "ACB Fundamentals: Trip Units, Draw-Out Construction and Releases",
+          "videoId": "ILE7RM604CQ",
+          "url": "https://www.youtube.com/watch?v=ILE7RM604CQ",
+          "instructor": "The M&E Engineers",
+          "duration": "9:19",
+          "durationSeconds": 559,
+          "regulationSensitive": true,
+          "topic": "ACB Fundamentals: Trip Units, Draw-Out Construction and Releases",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "Read after the MCCB lesson. Ratings, coil voltages, undervoltage thresholds and maintenance-mode settings are model-specific. Recognise the functions here; actual operation and withdrawal require the approved equipment procedure."
+        },
+        {
+          "id": "c1-protection-acb-components",
+          "number": 6,
+          "title": "ACB Component Recognition: Siemens 3WL Example",
+          "videoId": "OWygTF_BO3E",
+          "url": "https://www.youtube.com/watch?v=OWygTF_BO3E",
+          "instructor": "Siemens Knowledge Hub",
+          "duration": "4:00",
+          "durationSeconds": 240,
+          "regulationSensitive": true,
+          "topic": "ACB Component Recognition: Siemens 3WL Example",
+          "layer": "WHY",
+          "studyRole": "Optional physical demonstration",
+          "required": false,
+          "studyNote": "A product example for recognising the trip unit, charging motor, releases and auxiliary contacts. Features and ratings vary by model."
+        },
+        {
+          "id": "c1-protection-rcd",
+          "number": 7,
+          "title": "Residual-Current Protection: Principles and Types AC, A, F and B",
+          "videoId": "bXS-uNxeTXo",
+          "url": "https://www.youtube.com/watch?v=bXS-uNxeTXo",
+          "instructor": "eFIXX",
+          "duration": "21:05",
+          "durationSeconds": 1265,
+          "regulationSensitive": true,
+          "topic": "Residual-Current Protection: Principles and Types AC, A, F and B",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "30 mA reduces shock risk; it is not a safe current. DC-tolerance figures are not residual trip-current ratings. Select waveform type for the actual load and manufacturer requirements; verify current local rules."
+        },
+        {
+          "id": "c1-protection-rcbo",
+          "number": 8,
+          "title": "RCCB and RCBO: Separate and Combined Protection",
+          "videoId": "eWaNJ-VD5m0",
+          "url": "https://www.youtube.com/watch?v=eWaNJ-VD5m0",
+          "instructor": "eFIXX",
+          "duration": "5:15",
+          "durationSeconds": 315,
+          "regulationSensitive": true,
+          "topic": "RCCB and RCBO: Separate and Combined Protection",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "An RCCB needs appropriate overcurrent protection. An RCBO combines residual-current and overcurrent protection; select its poles, ratings and fault duty for the circuit."
+        },
+        {
+          "id": "c1-protection-three-phase-rcd",
+          "number": 9,
+          "title": "Three-Phase RCDs: Current Balance, Unequal Loads and Neutral Connections",
+          "videoId": "tBjIVDu6YHo",
+          "url": "https://www.youtube.com/watch?v=tBjIVDu6YHo",
+          "instructor": "eFIXX",
+          "duration": "5:39",
+          "durationSeconds": 339,
+          "regulationSensitive": true,
+          "topic": "Three-Phase RCDs: Current Balance, Unequal Loads and Neutral Connections",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "Sense every live load conductor, including neutral where used; unequal phase loads alone do not cause residual current. A three-wire load may need no load neutral, but the RCD electronics or test circuit can need a specified supply. Follow the exact wiring diagram; Type B does not universally require neutral."
+        },
+        {
+          "id": "c1-protection-spd",
+          "number": 10,
+          "title": "SPD Fundamentals: Transient Surges, Clamping and Device Condition",
+          "videoId": "7en_Rc14c2g",
+          "url": "https://www.youtube.com/watch?v=7en_Rc14c2g",
+          "instructor": "eFIXX",
+          "duration": "6:10",
+          "durationSeconds": 370,
+          "regulationSensitive": true,
+          "topic": "SPD Fundamentals: Transient Surges, Clamping and Device Condition",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "SPDs limit transients; they do not replace overcurrent or residual-current protection, or protect against every sustained overvoltage. Coordinate Types 1/2/3 and any external lightning protection for the installation. Verify current local requirements."
+        },
+        {
+          "id": "c1-protection-selectivity",
+          "number": 11,
+          "title": "Protective-Device Coordination: Selectivity and Discrimination",
+          "videoId": "lOcbVQgCSpM",
+          "url": "https://www.youtube.com/watch?v=lOcbVQgCSpM",
+          "instructor": "LEARN ELECTRICS",
+          "duration": "13:36",
+          "durationSeconds": 816,
+          "regulationSensitive": true,
+          "topic": "Protective-Device Coordination: Selectivity and Discrimination",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "One plotted overload point does not prove full selectivity. Check the actual fault-current range and manufacturer selectivity/energy tables. Use current RCD verification procedures; the half-rated test discussion is historical."
+        },
+        {
+          "id": "c1-protection-overcurrent-relay",
+          "number": 12,
+          "title": "Overcurrent Relays: Pickup, Time Delay and Circuit-Breaker Tripping",
+          "videoId": "bQ6fZrrP0H4",
+          "url": "https://www.youtube.com/watch?v=bQ6fZrrP0H4",
+          "instructor": "OMICRONenergy",
+          "duration": "4:10",
+          "durationSeconds": 250,
+          "regulationSensitive": true,
+          "topic": "Overcurrent Relays: Pickup, Time Delay and Circuit-Breaker Tripping",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "The CT–relay–breaker principle also applies at low voltage. This is a functional introduction, not a relay-testing procedure. Never open an energised CT secondary; testing requires approved isolation and shorting arrangements."
+        },
+        {
+          "id": "c1-protection-overload-relay",
+          "number": 13,
+          "title": "Thermal Overload Relays: Motor Current, Trip Contacts and Reset",
+          "videoId": "3aur1tZYlKE",
+          "url": "https://www.youtube.com/watch?v=3aur1tZYlKE",
+          "instructor": "Automatedo",
+          "duration": "8:24",
+          "durationSeconds": 504,
+          "regulationSensitive": true,
+          "topic": "Thermal Overload Relays: Motor Current, Trip Contacts and Reset",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "Normally 95–96 is closed; a trip opens it and closes 97–98. Contact checks do not establish thermal calibration. The relay needs coordinated short-circuit protection. Study detailed starter wiring after motor principles."
+        },
+        {
+          "id": "c1-protection-mpcb",
+          "number": 14,
+          "title": "Motor-Protection Circuit Breakers: Thermal, Magnetic and Phase-Loss Mechanisms",
+          "videoId": "1DDsOJa_FuU",
+          "url": "https://www.youtube.com/watch?v=1DDsOJa_FuU",
+          "instructor": "Power Eng. By Afshin",
+          "duration": "3:28",
+          "durationSeconds": 208,
+          "regulationSensitive": true,
+          "topic": "Motor-Protection Circuit Breakers: Thermal, Magnetic and Phase-Loss Mechanisms",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "This mechanism is one MPCB design, not a universal feature list. Phase-loss sensitivity is not separate voltage monitoring. Select the current range and short-circuit coordination from the motor nameplate, starting duty and manufacturer data."
+        },
+        {
+          "id": "c1-protection-phase-monitoring",
+          "number": 15,
+          "title": "Phase-Monitoring Relays: Phase Failure, Sequence and Voltage Conditions",
+          "videoId": "sO2RPcGLshA",
+          "url": "https://www.youtube.com/watch?v=sO2RPcGLshA",
+          "instructor": "ATO Automation",
+          "duration": "5:27",
+          "durationSeconds": 327,
+          "regulationSensitive": true,
+          "topic": "Phase-Monitoring Relays: Phase Failure, Sequence and Voltage Conditions",
+          "layer": "WHY",
+          "studyRole": "Core device foundation",
+          "required": true,
+          "studyNote": "Functions and thresholds vary by model. The output controls a contactor; it does not interrupt motor fault current. Keep the protective contact effective in every energising path, including while Start is held. Detailed motor wiring follows later."
+        }
+      ],
+      "path": "C1",
+      "stageNumber": 10,
+      "classification": "C1 CORE"
+    },
+    {
+      "id": "c1-installation",
+      "number": 20,
       "title": "Submains and Board Installation",
       "description": "Use the completed cable-design and fault-protection checks while following SWA submain terminations, switch-fuse connections and three-phase board assembly. Compare practical workmanship before the later verification module.",
       "learningOutcome": "Use the completed cable-design and fault-protection checks while following SWA submain terminations, switch-fuse connections and three-phase board assembly. Compare practical workmanship before the later verification module.",
       "path": "C1",
-      "stageNumber": 10,
+      "stageNumber": 11,
       "classification": "C1 CORE",
       "lessons": [
         {
-          "id": "p07-l08",
+          "id": "c1-rashid-building-design",
           "number": 1,
+          "title": "Residential Building Design: Loads, Boards, Transformer and Feeders",
+          "videoId": "HmgqGPzYSMs",
+          "url": "https://www.youtube.com/watch?v=HmgqGPzYSMs",
+          "instructor": "Rashid iqubal",
+          "duration": "28:04",
+          "durationSeconds": 1684,
+          "topic": "Worked Building Design: From Loads to Feeders",
+          "layer": "HOW + REQUIREMENT",
+          "regulationSensitive": true,
+          "studyRole": "Optional applied example",
+          "required": false,
+          "studyNote": "Worked comparison; verify its assumed demand factors and margins. Breaking capacity does not establish selectivity: check actual fault levels and manufacturer coordination data. Two 490 A cables derated by 0.8 provide 784 A; verify the overload setting of an 800 A frame. Complete phase balancing, full-route voltage drop and protective-conductor/fault checks before adopting the design."
+        },
+        {
+          "id": "p07-l08",
+          "number": 2,
           "title": "Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)",
           "videoId": "zSw0mVzcQ4A",
           "url": "https://www.youtube.com/watch?v=zSw0mVzcQ4A",
@@ -5316,7 +5602,7 @@
         },
         {
           "id": "p10-l06",
-          "number": 2,
+          "number": 3,
           "title": "SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION",
           "videoId": "_nba6f8ClgM",
           "url": "https://www.youtube.com/watch?v=_nba6f8ClgM",
@@ -5331,7 +5617,7 @@
         },
         {
           "id": "p10-l07",
-          "number": 3,
+          "number": 4,
           "title": "THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES",
           "videoId": "MNy60muYklo",
           "url": "https://www.youtube.com/watch?v=MNy60muYklo",
@@ -5346,7 +5632,7 @@
         },
         {
           "id": "p07-l09",
-          "number": 4,
+          "number": 5,
           "title": "Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell",
           "videoId": "c6YyObUS4Mk",
           "url": "https://www.youtube.com/watch?v=c6YyObUS4Mk",
@@ -5360,12 +5646,12 @@
           "required": false
         }
       ],
-      "durationSeconds": 1906,
-      "duration": "32 min"
+      "durationSeconds": 3590,
+      "duration": "1 h 0 min"
     },
     {
       "id": "c1-motors",
-      "number": 20,
+      "number": 21,
       "title": "Motor Principles and Connections",
       "description": "Begin with the rotating field and induction motor, then read nameplates and connect shaft output, efficiency, electrical input and supply current. Develop slip, torque and winding connections before single-phase and DC motors; precision motors are further study.",
       "duration": "2 h 59 min",
@@ -5562,12 +5848,12 @@
         }
       ],
       "path": "C1",
-      "stageNumber": 11,
+      "stageNumber": 12,
       "classification": "C1 CORE"
     },
     {
       "id": "module-07",
-      "number": 21,
+      "number": 22,
       "title": "Motor Starting, Protection and Speed Control",
       "description": "Use motor nameplates and winding connections to understand contactors and protection, read and wire DOL circuits, then compare reversal and reduced-voltage starting. Introduce soft starters before VFD speed control and regenerative braking. Apply capacitor-placement precautions after the induction-motor and VFD lessons.",
       "duration": "1 h 30 min",
@@ -5764,12 +6050,12 @@
         }
       ],
       "path": "C1",
-      "stageNumber": 12,
+      "stageNumber": 13,
       "classification": "C1 CORE"
     },
     {
       "id": "c1-testing",
-      "number": 22,
+      "number": 23,
       "title": "Initial Verification and Commissioning",
       "description": "Start with inspection, safe test order and protective continuity. Follow dead tests before supply polarity, phase sequence, fault-current, loop and RCD measurements; interpret results and complete the handover record.",
       "duration": "2 h 19 min",
@@ -5979,17 +6265,17 @@
         }
       ],
       "path": "C1",
-      "stageNumber": 13,
+      "stageNumber": 14,
       "classification": "C1 CORE"
     },
     {
       "id": "c1-periodic",
-      "number": 23,
+      "number": 24,
       "title": "Periodic Inspection",
       "description": "Distinguish assessment of an existing installation from initial verification. Establish the agreed scope, inspect and interpret observations, and report condition using the earlier testing foundations.",
       "learningOutcome": "Distinguish assessment of an existing installation from initial verification. Establish the agreed scope, inspect and interpret observations, and report condition using the earlier testing foundations.",
       "path": "C1",
-      "stageNumber": 14,
+      "stageNumber": 15,
       "classification": "C1 CORE",
       "lessons": [
         {
@@ -6032,12 +6318,12 @@
     },
     {
       "id": "c1-standby",
-      "number": 24,
+      "number": 25,
       "title": "Standby Generators: Connections and Operation",
       "description": "Apply generator principles, cable design, earthing, switching and verification to a standby supply. Follow UK siting guidance, neutral/fault-path diagrams, a physical four-pole changeover, pre-start checks and a connected ATS demonstration. These examples do not replace complete termination and commissioning training.",
       "learningOutcome": "Apply generator principles, cable design, earthing, switching and verification to a standby supply. Follow UK siting guidance, neutral/fault-path diagrams, a physical four-pole changeover, pre-start checks and a connected ATS demonstration. These examples do not replace complete termination and commissioning training.",
       "path": "C1",
-      "stageNumber": 15,
+      "stageNumber": 16,
       "classification": "C1 CORE",
       "lessons": [
         {
@@ -6119,14 +6405,30 @@
           "regulationSensitive": true,
           "studyRole": "Core application",
           "required": true
+        },
+        {
+          "id": "c1-rashid-mdb-transfer",
+          "number": 6,
+          "title": "Main Distribution Boards: Incomers, Bus Couplers and Generator Transfer",
+          "videoId": "j78uOSXYuOE",
+          "url": "https://www.youtube.com/watch?v=j78uOSXYuOE",
+          "instructor": "Rashid iqubal",
+          "duration": "11:23",
+          "durationSeconds": 683,
+          "topic": "Main distribution boards, bus couplers and automatic transfer",
+          "layer": "HOW + REQUIREMENT",
+          "regulationSensitive": true,
+          "studyRole": "Optional applied example",
+          "required": false,
+          "studyNote": "ATS = automatic transfer switch; ACB = air circuit breaker. Open-transition transfer prevents unintended source paralleling and interrupts supply; a suitable UPS supports only its connected loads during transfer. Use the actual design for neutral/earthing, load shedding, selectivity and timing."
         }
       ],
-      "durationSeconds": 1838,
-      "duration": "31 min"
+      "durationSeconds": 2521,
+      "duration": "42 min"
     },
     {
       "id": "c1-faults",
-      "number": 25,
+      "number": 26,
       "title": "Fault Diagnosis",
       "description": "Use measured evidence to distinguish supply imbalance, lost-neutral and motor faults. Compare isolated winding tests, misleading lighting/stroboscopic effects and thermal observations, then connect emergency response to incident investigation.",
       "duration": "2 h 32 min",
@@ -6260,12 +6562,12 @@
         }
       ],
       "path": "C1",
-      "stageNumber": 16,
+      "stageNumber": 17,
       "classification": "C1 CORE"
     },
     {
       "id": "professional-cables",
-      "number": 26,
+      "number": 27,
       "title": "Specialist Cables and Switchgear",
       "description": "Extend core cable skills into specialist flexible and mineral-insulated systems with product-specific constraints. Study medium-voltage switchgear compartments as an optional extension beyond the C1 low-voltage route.",
       "duration": "57 min",
@@ -6339,7 +6641,7 @@
     },
     {
       "id": "module-12",
-      "number": 27,
+      "number": 28,
       "title": "Advanced Lighting Design and Controls",
       "description": "Develop lighting calculations, specification, drivers, dimming, control architecture and emergency-lighting design beyond the licensing spine.",
       "duration": "12 h 24 min",
@@ -6894,7 +7196,7 @@
     },
     {
       "id": "module-13",
-      "number": 28,
+      "number": 29,
       "title": "Smart Buildings, Data, Security and Life Safety",
       "description": "Develop KNX controls, then network cabling and copper/fibre testing. Study CCTV and access control, automated-gate controllers together with their safety devices, then fire detection and alarm systems.",
       "duration": "7 h 12 min",
@@ -7116,7 +7418,7 @@
     },
     {
       "id": "module-14",
-      "number": 29,
+      "number": 30,
       "title": "Solar, Storage, Backup Power and EV",
       "description": "Survey and prepare solar systems safely. Learn inverter operation and storage-location planning before the hybrid installation example, then PV verification. Study transfer switches, UPS and backup systems separately before EV installation, commissioning and handover.",
       "duration": "4 h 33 min",
@@ -7386,7 +7688,7 @@
     },
     {
       "id": "module-15",
-      "number": 30,
+      "number": 31,
       "title": "Specialist Building Services",
       "description": "Apply building-services knowledge to pump panels and extractor-fan installation. LED-driver and lighting-surge protection is covered in Lighting Design and Controls.",
       "duration": "1 h 55 min",
@@ -7432,7 +7734,7 @@
     },
     {
       "id": "module-16",
-      "number": 31,
+      "number": 32,
       "title": "Estimating and Professional Practice",
       "description": "Plan scope, resources, quotations and professional handover beyond licensing study.",
       "duration": "33 min",
@@ -7477,5 +7779,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 376020
+  "durationSeconds": 387489
 }

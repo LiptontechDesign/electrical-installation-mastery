@@ -1,8 +1,8 @@
 # C1 self-study video sequence
 
-Follow the sections in order. C1 has its own Module 1–16 numbering. It builds on the C2 foundations, with selected reminders included. See the [current route and EPRA mapping](c1-focused-modules.md). The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
+Follow the sections in order. C1 has its own Module 1–17 numbering. It builds on the C2 foundations, with selected reminders included. See the [current route and EPRA mapping](c1-focused-modules.md). The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
 
-86 sections · 151 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md). [Connected seven-step cable design](c1-cable-design-series.md).
+98 sections · 169 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md). [Connected seven-step cable design](c1-cable-design-series.md). [Rashid iqubal applied examples](c1-rashid-worked-examples.md). [Protective-device foundations](c1-protective-devices.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -178,18 +178,24 @@ Follow the sections in order. C1 has its own Module 1–16 numbering. It builds 
   This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
 - [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
 
-### 4. Synchronous condensers: another source of reactive-power compensation
+### 4. Applied example: capacitor-bank steps and protection
+
+- [Capacitor-Bank Selection and Protection: A 200 kW Worked Example](https://www.youtube.com/watch?v=vbytmPtvZi4) — Rashid iqubal; Optional applied example.
+
+  The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall.
+
+### 5. Synchronous condensers: another source of reactive-power compensation
 
 - [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
 
-### 5. Further study: complex numbers and conjugates for AC calculations
+### 6. Further study: complex numbers and conjugates for AC calculations
 
 - [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
 - [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
 
   Mathematical i is the same imaginary unit written j in electrical engineering.
 
-### 6. Further study: complex power and combined-load correction
+### 7. Further study: complex power and combined-load correction
 
 - [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
 
@@ -320,19 +326,99 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   Principles and specialist examples; this is not a lightning-system installation procedure.
 
-## C1 Module 10: Submains and Board Installation
+## C1 Module 10: Protective Devices and Coordination
 
-### 1. Submain installation: SWA terminations and switch-fuse connections
+### 1. Fuses and HRC Protection
+
+- [Fuses and HRC Construction: Identify the Protective Devices](https://www.youtube.com/watch?v=rijmYhVeUNs) — GSH Electrical; Core device foundation.
+
+  Historic BS examples support identification. Use marked ratings and actual characteristics; fuses can fail. HRC filler cools and de-ionises the arc. A fixed fusing factor is not a universal selection rule.
+- [Fuse Operation: Current, Heating and Time](https://www.youtube.com/watch?v=iHjWlO0JKyQ) — eFIXX; Optional physical demonstration.
+
+  This glass-fuse experiment illustrates heating and time, not HRC breaking capacity. Rated current is not an instantaneous operating threshold.
+
+### 2. MCBs and Time–Current Curves
+
+- [MCB Fundamentals: Thermal Trips, Magnetic Trips and B/C/D Curves](https://www.youtube.com/watch?v=iVZhVeFoSfk) — eFIXX; Core device foundation.
+
+  Select the curve from load inrush and required disconnection, rather than the building label. Use current tables, manufacturer data and verified fault levels; the UK examples are historical.
+
+### 3. MCCBs: Ratings and Trip Units
+
+- [MCCB Fundamentals: Frame Size, Trip Settings and Breaking Capacity](https://www.youtube.com/watch?v=yzXROOX2LfI) — The M&E Engineers; Core device foundation.
+
+  Frame size is not the overload setting. The 800 A crossover and pickup ranges are examples. Check rated voltage, Icu/Ics and manufacturer coordination. Ground-fault tripping is not necessarily personnel RCD protection and must satisfy the design.
+
+### 4. ACBs: Construction and Releases
+
+- [ACB Fundamentals: Trip Units, Draw-Out Construction and Releases](https://www.youtube.com/watch?v=ILE7RM604CQ) — The M&E Engineers; Core device foundation.
+
+  Read after the MCCB lesson. Ratings, coil voltages, undervoltage thresholds and maintenance-mode settings are model-specific. Recognise the functions here; actual operation and withdrawal require the approved equipment procedure.
+- [ACB Component Recognition: Siemens 3WL Example](https://www.youtube.com/watch?v=OWygTF_BO3E) — Siemens Knowledge Hub; Optional physical demonstration.
+
+  A product example for recognising the trip unit, charging motor, releases and auxiliary contacts. Features and ratings vary by model.
+
+### 5. RCDs, RCCBs and RCBOs on Three-Phase Supplies
+
+- [Residual-Current Protection: Principles and Types AC, A, F and B](https://www.youtube.com/watch?v=bXS-uNxeTXo) — eFIXX; Core device foundation.
+
+  30 mA reduces shock risk; it is not a safe current. DC-tolerance figures are not residual trip-current ratings. Select waveform type for the actual load and manufacturer requirements; verify current local rules.
+- [RCCB and RCBO: Separate and Combined Protection](https://www.youtube.com/watch?v=eWaNJ-VD5m0) — eFIXX; Core device foundation.
+
+  An RCCB needs appropriate overcurrent protection. An RCBO combines residual-current and overcurrent protection; select its poles, ratings and fault duty for the circuit.
+- [Three-Phase RCDs: Current Balance, Unequal Loads and Neutral Connections](https://www.youtube.com/watch?v=tBjIVDu6YHo) — eFIXX; Core device foundation.
+
+  Sense every live load conductor, including neutral where used; unequal phase loads alone do not cause residual current. A three-wire load may need no load neutral, but the RCD electronics or test circuit can need a specified supply. Follow the exact wiring diagram; Type B does not universally require neutral.
+
+### 6. Surge Protective Devices
+
+- [SPD Fundamentals: Transient Surges, Clamping and Device Condition](https://www.youtube.com/watch?v=7en_Rc14c2g) — eFIXX; Core device foundation.
+
+  SPDs limit transients; they do not replace overcurrent or residual-current protection, or protect against every sustained overvoltage. Coordinate Types 1/2/3 and any external lightning protection for the installation. Verify current local requirements.
+
+### 7. Selectivity and Coordination
+
+- [Protective-Device Coordination: Selectivity and Discrimination](https://www.youtube.com/watch?v=lOcbVQgCSpM) — LEARN ELECTRICS; Core device foundation.
+
+  One plotted overload point does not prove full selectivity. Check the actual fault-current range and manufacturer selectivity/energy tables. Use current RCD verification procedures; the half-rated test discussion is historical.
+
+### 8. Overcurrent Relays
+
+- [Overcurrent Relays: Pickup, Time Delay and Circuit-Breaker Tripping](https://www.youtube.com/watch?v=bQ6fZrrP0H4) — OMICRONenergy; Core device foundation.
+
+  The CT–relay–breaker principle also applies at low voltage. This is a functional introduction, not a relay-testing procedure. Never open an energised CT secondary; testing requires approved isolation and shorting arrangements.
+
+### 9. Overload Relays, MPCBs and Phase Monitoring
+
+- [Thermal Overload Relays: Motor Current, Trip Contacts and Reset](https://www.youtube.com/watch?v=3aur1tZYlKE) — Automatedo; Core device foundation.
+
+  Normally 95–96 is closed; a trip opens it and closes 97–98. Contact checks do not establish thermal calibration. The relay needs coordinated short-circuit protection. Study detailed starter wiring after motor principles.
+- [Motor-Protection Circuit Breakers: Thermal, Magnetic and Phase-Loss Mechanisms](https://www.youtube.com/watch?v=1DDsOJa_FuU) — Power Eng. By Afshin; Core device foundation.
+
+  This mechanism is one MPCB design, not a universal feature list. Phase-loss sensitivity is not separate voltage monitoring. Select the current range and short-circuit coordination from the motor nameplate, starting duty and manufacturer data.
+- [Phase-Monitoring Relays: Phase Failure, Sequence and Voltage Conditions](https://www.youtube.com/watch?v=sO2RPcGLshA) — ATO Automation; Core device foundation.
+
+  Functions and thresholds vary by model. The output controls a contactor; it does not interrupt motor fault current. Keep the protective contact effective in every energising path, including while Start is held. Detailed motor wiring follows later.
+
+## C1 Module 11: Submains and Board Installation
+
+### 1. Worked Building Design: From Loads to Feeders
+
+- [Residential Building Design: Loads, Boards, Transformer and Feeders](https://www.youtube.com/watch?v=HmgqGPzYSMs) — Rashid iqubal; Optional applied example.
+
+  Worked comparison; verify its assumed demand factors and margins. Breaking capacity does not establish selectivity: check actual fault levels and manufacturer coordination data. Two 490 A cables derated by 0.8 provide 784 A; verify the overload setting of an 800 A frame. Complete phase balancing, full-route voltage drop and protective-conductor/fault checks before adopting the design.
+
+### 2. Submain installation: SWA terminations and switch-fuse connections
 
 - [Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)](https://www.youtube.com/watch?v=zSw0mVzcQ4A) — GSH Electrical; Applied practical.
 
-### 2. Three-phase board assembly, terminations and workmanship
+### 3. Three-phase board assembly, terminations and workmanship
 
 - [SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION](https://www.youtube.com/watch?v=_nba6f8ClgM) — eFIXX; Applied practical.
 - [THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES](https://www.youtube.com/watch?v=MNy60muYklo) — eFIXX; Applied practical.
 - [Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell](https://www.youtube.com/watch?v=c6YyObUS4Mk) — GSH Electrical; Deep practice.
 
-## C1 Module 11: Motor Principles and Connections
+## C1 Module 12: Motor Principles and Connections
 
 ### 1. How the rotating field and induction motor produce torque
 
@@ -400,7 +486,7 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   Illustrative torque ratios are not motor ratings; use manufacturer limits.
 
-## C1 Module 12: Motor Starting, Protection and Speed Control
+## C1 Module 13: Motor Starting, Protection and Speed Control
 
 ### 1. Contactors, control coils and the complete DOL starter
 
@@ -460,7 +546,7 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   Protection can be bypassed while Start is held; do not copy this circuit.
 
-## C1 Module 13: Initial Verification and Commissioning
+## C1 Module 14: Initial Verification and Commissioning
 
 ### 1. Verification order, protective continuity and dead-test polarity
 
@@ -505,7 +591,7 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
 - [Interpret Ring-Circuit Test Results: Expected Values, Spurs and Wrong Links](https://www.youtube.com/watch?v=niuVdopqlcs) — LEARN ELECTRICS; Core worked application.
 
-## C1 Module 14: Periodic Inspection
+## C1 Module 15: Periodic Inspection
 
 ### 1. Periodic inspection: scope, observations and condition reporting
 
@@ -516,7 +602,7 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   Optional domestic EICR refresher; use the preceding lessons for three-phase commissioning.
 
-## C1 Module 15: Standby Generators: Connections and Operation
+## C1 Module 16: Standby Generators: Connections and Operation
 
 ### 1. Standby generators: site, connections, earthing and operation
 
@@ -536,7 +622,13 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   Trace mains and generator feeds → ATS → consumer unit → load; distinguish control/charging from output power. This is a functional demonstration, not a wiring or commissioning procedure. Do not copy the indoor engine location. Reapply the earlier verification lessons in both supply modes.
 
-## C1 Module 16: Fault Diagnosis
+### 2. Main distribution boards, bus couplers and automatic transfer
+
+- [Main Distribution Boards: Incomers, Bus Couplers and Generator Transfer](https://www.youtube.com/watch?v=j78uOSXYuOE) — Rashid iqubal; Optional applied example.
+
+  ATS = automatic transfer switch; ACB = air circuit breaker. Open-transition transfer prevents unintended source paralleling and interrupts supply; a suitable UPS supports only its connected loads during transfer. Use the actual design for neutral/earthing, load shedding, selectivity and timing.
+
+## C1 Module 17: Fault Diagnosis
 
 ### 1. Diagnose supply imbalance, lost neutral and installation faults
 

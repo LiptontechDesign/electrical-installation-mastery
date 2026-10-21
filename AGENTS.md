@@ -8,6 +8,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+## Delivery workflow
+
+The user’s standing preference is to commit completed changes, push them to the remote repository and merge them into the default branch automatically after the relevant checks pass. Do not stop at local changes or ask again for routine commit/push/merge permission. Respect required repository checks and branch protections. Report the commit and merge result when finished.
+
 ## Current product scope
 
 Read README.md and docs/README.md for the current application contract. This is a video course and reference-book reader with optional Google sign-in and account-scoped progress, notes and ordering. Lesson guides, Standards Companion, quizzes, flashcards, exams, simulations and module recaps were removed in September 2026. Do not reintroduce them or use historical Git documents as current requirements without an explicit request. Preserve stable video IDs, guest access without tracking, and account isolation.
