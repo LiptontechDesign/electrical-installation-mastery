@@ -1,0 +1,1026 @@
+{
+  "reviewDate": "2026-10-21",
+  "courseCommit": "bfacafd095734f7ee5d9d57bed3b1233392512a5",
+  "courseCounts": {
+    "c1Modules": 17,
+    "c1Sections": 98,
+    "c1MixedRows": 169,
+    "consolidatedC1Questions": 78
+  },
+  "method": "Rechecked the eight registered C1 public sources, readable written mark allocations, an additional October 2016 copy, the official competency PDF and every current consolidated C1 question prompt against the published mixed course and earlier transcript-review evidence. Not a fresh watch or transcript reread of every course video. No authored question count, video duration or MCQ count is used as a mark weight.",
+  "officialCompetencies": {
+    "url": "https://www.epra.go.ke/sites/default/files/2025-06/Written%20%26%20Oral%20Interviews%20Areas%20of%20Competency.pdf",
+    "downloaded": true,
+    "pages": 3,
+    "relevantPage": 1,
+    "sha256": "b6451d854668d3d0be34e95a46285ac16f71bf1f17ad36c4f38cbff936be66d7",
+    "oralTopicMarks": null
+  },
+  "papers": [
+    {
+      "id": "c1-2012-08",
+      "status": "Existing topic register reviewed; current full mark text not recovered",
+      "url": "https://www.scribd.com/document/728768005/Epra-c1-License-Exam-August-2012",
+      "blocks": [],
+      "limitations": "Public fetch timed out. Do not invent the office-load, wattmeter, motor or PFC mark allocation from question order."
+    },
+    {
+      "id": "c1-2012-11",
+      "status": "Relevant written blocks re-read",
+      "url": "https://pdfcoffee.com/c1-nov-2012-1-pdf-free.html",
+      "blocks": [
+        {
+          "reference": "Q2",
+          "marks": 20,
+          "topic": "Integrated four-storey wiring, protection and testing"
+        },
+        {
+          "reference": "Q3(a–d)",
+          "marks": 19,
+          "topic": "Power factor and single-phase compensation",
+          "note": "Printed parts sum 3+4+2+10; not silently rounded to 20."
+        },
+        {
+          "reference": "Q4(a–c)",
+          "marks": 14,
+          "topic": "Earthing principles, resistance factors and improvement"
+        },
+        {
+          "reference": "Q4(d)",
+          "marks": 5,
+          "topic": "Insulation-test preparation"
+        },
+        {
+          "reference": "Q1(c)",
+          "marks": 8,
+          "topic": "Containment selection"
+        },
+        {
+          "reference": "Q5(c)",
+          "marks": 6,
+          "topic": "Standby-generator requirements"
+        },
+        {
+          "reference": "Q5(d)",
+          "marks": 7,
+          "topic": "Motor current from output and efficiency"
+        }
+      ]
+    },
+    {
+      "id": "c1-2013-03",
+      "status": "Public OCR reviewed; some labels/values unclear",
+      "url": "https://www.scribd.com/document/728768009/Epra-c1-License-Exam-March-2013",
+      "blocks": [
+        {
+          "reference": "Q2(a–c)",
+          "marks": 20,
+          "topic": "Motor starting and star–delta",
+          "note": "3 marks starting methods + 8 DOL trade-offs + 9 circuit/operation."
+        },
+        {
+          "reference": "Q1, periodic-inspection parts",
+          "marks": 12,
+          "topic": "Periodic need, responsibilities and interval factors",
+          "note": "2+6+4; subpart letters are unclear in OCR."
+        },
+        {
+          "reference": "Q1, electrode-test part",
+          "marks": 8,
+          "topic": "Earth-electrode test with instrument and diagram"
+        },
+        {
+          "reference": "Q5(a)",
+          "marks": 6,
+          "topic": "Standby-generator requirements"
+        }
+      ],
+      "limitations": "PFC subpart mark glyph and transformer/diagram data are not reliably transcribed; no invented numerical ranking for those parts."
+    },
+    {
+      "id": "c1-2016-04",
+      "status": "Existing topic register and readable indexed end section reviewed; full marks not recovered",
+      "url": "https://www.scribd.com/document/728767998/EPRA-C1-LICENSE-EXAM-APRIL-2016",
+      "blocks": [
+        {
+          "reference": "Q5(d)",
+          "marks": 8,
+          "topic": "Conventional lightning-protection diagram and components"
+        }
+      ],
+      "limitations": "Direct public-text fetch timed out; only the readable indexed 8-mark item is assigned marks. No whole-paper weighting inferred."
+    },
+    {
+      "id": "c1-2022-05",
+      "status": "Existing topic register reviewed; current full mark text not recovered",
+      "url": "https://www.scribd.com/document/941499251/May-2022-C1-exam-marking-scheme",
+      "blocks": [],
+      "limitations": "Do not invent marks for the mixed test schedule, generator cable, AHU/PFC or CT questions. Prior register already records unreadable tables and incorrect supplied working."
+    },
+    {
+      "id": "c1-2023-09",
+      "status": "Public OCR question blocks reviewed",
+      "url": "https://www.scribd.com/document/728768214/EPRA-C1-LICENSE-EXAM-SEPTEMBER-2023",
+      "blocks": [
+        {
+          "reference": "Q3(a)(i–vii)",
+          "marks": 11,
+          "topic": "Measured load, correction, tariff savings and incomer selection",
+          "note": "Mixed block: 10 marks power/PFC/tariff and 1 protective-device mark; not a pure 20-mark PFC question."
+        },
+        {
+          "reference": "Q2, bill questions",
+          "marks": 6,
+          "topic": "Bill interpretation and tariff categories",
+          "note": "Bill values are not reliably legible; mark labels and question objectives are readable."
+        },
+        {
+          "reference": "Q2, cable calculation (i–iii)",
+          "marks": 4,
+          "topic": "Load current, derating and table choice",
+          "note": "Only the clearly readable 2+1+1 marks counted."
+        },
+        {
+          "reference": "Q4",
+          "marks": 20,
+          "topic": "Mixed switchgear, earthing, protection and tests",
+          "note": "Mixed heading; do not attribute all 20 to a single device or earth test."
+        },
+        {
+          "reference": "Q5(h)",
+          "marks": 6,
+          "topic": "Floor-by-floor building single-line drawing"
+        },
+        {
+          "reference": "Q5(g)",
+          "marks": 2,
+          "topic": "ACB versus MCCB comparison"
+        }
+      ]
+    },
+    {
+      "id": "c1-2025-05",
+      "status": "Written Q1–Q5 text and relevant allocations re-read",
+      "url": "https://www.scribd.com/document/1013156811/May-2025-C1-written-interview-Jr",
+      "blocks": [
+        {
+          "reference": "Q3",
+          "marks": 20,
+          "topic": "Earthing, bonding, PME, electrodes and floating neutral"
+        },
+        {
+          "reference": "Q5",
+          "marks": 20,
+          "topic": "Motor starting, relays, motor types, slip, speeds and faults"
+        },
+        {
+          "reference": "Q4(a–e)",
+          "marks": 12,
+          "topic": "Power factor, compensation and voltage effect",
+          "note": "Remaining 8 marks of Q4 concern cable materials/armour and IR; not a pure 20-mark PFC question."
+        },
+        {
+          "reference": "Q2(a–b)",
+          "marks": 5,
+          "topic": "Licence scope and premises decisions"
+        },
+        {
+          "reference": "Q2(d)",
+          "marks": 3,
+          "topic": "Sectional-maintenance safety"
+        },
+        {
+          "reference": "Q2(j)",
+          "marks": 3,
+          "topic": "Periodic-inspection interval factors"
+        }
+      ]
+    },
+    {
+      "id": "c1-2025-06",
+      "status": "Written Q1–Q5 text and relevant allocations re-read",
+      "url": "https://www.scribd.com/document/1013156754/Class-C-1-Written-Exam-June-2025",
+      "blocks": [
+        {
+          "reference": "Q4",
+          "marks": 20,
+          "topic": "Power factor and measured-load/capacitor-bank calculation",
+          "note": "8 explanation marks plus 12 linked calculation marks."
+        },
+        {
+          "reference": "Q2(a–e)",
+          "marks": 10,
+          "topic": "Motor function, starting, types and slip"
+        },
+        {
+          "reference": "Q2(f–g)",
+          "marks": 6,
+          "topic": "Cable construction and selection"
+        },
+        {
+          "reference": "Q2(h–i)",
+          "marks": 4,
+          "topic": "Insulation test and precautions"
+        },
+        {
+          "reference": "Q3(b)",
+          "marks": 4,
+          "topic": "MCB/MCCB/ACB/RCD applications and ratings"
+        },
+        {
+          "reference": "Q5(a–b)",
+          "marks": 10,
+          "topic": "Earthing tests and system diagrams"
+        },
+        {
+          "reference": "Q5(c)",
+          "marks": 2,
+          "topic": "Surge-diverter functions"
+        },
+        {
+          "reference": "Q5(d)",
+          "marks": 8,
+          "topic": "Floor-by-floor building single-line drawing"
+        }
+      ]
+    },
+    {
+      "id": "c1-2016-10-additional",
+      "status": "Additional dated public copy reviewed; outside existing bank register",
+      "url": "https://www.scribd.com/document/1056617054/Written-Exam-C1-Oct-2016-Marking-Scheme-1",
+      "duplicateUrl": "https://www.scribd.com/document/1056617051/Written-Exam-C1-Oct-2016-Marking-Scheme",
+      "blocks": [
+        {
+          "reference": "Section A",
+          "marks": 35,
+          "topic": "Mixed multiple-choice questions",
+          "note": "This is not 35 marks for protection. Instruction says 1–30 while numbering reaches 35; no assumption of a 100-mark total or of oral marks."
+        },
+        {
+          "reference": "Section B Q1(b–d)",
+          "marks": 17,
+          "topic": "Single-phase capacitance, correction methods and PF demerits",
+          "note": "11+2+4, within a 20-mark question whose remaining 3 marks concern starters."
+        },
+        {
+          "reference": "Section B Q1(a)",
+          "marks": 3,
+          "topic": "Motor-starting methods"
+        },
+        {
+          "reference": "Section B Q2",
+          "marks": 15,
+          "topic": "Integrated building design, essential circuits and tests",
+          "note": "10 metering/riser + 2 essential circuits + 3 verification. Readable answer arithmetic is not treated as authoritative."
+        }
+      ],
+      "limitations": "Two uploads are one paper, not two frequency observations. Incorrect capacitor-current working in the supplied answer must not be copied."
+    }
+  ],
+  "additionalUnconfirmed": [
+    {
+      "url": "https://www.scribd.com/document/955060659/Www-Scribd",
+      "title": "18 February 2025 / 08 April 2025 Class C1-R copy",
+      "reason": "Repeated February footers conflict with an April line and unrelated inserted titles. Excluded from numerical/frequency ranking pending a reliable original."
+    }
+  ],
+  "oral": {
+    "authenticatedC1PastOralRubricFound": false,
+    "marksByTopic": null,
+    "competencyBasis": "Official page 1 covers both written and oral, including C2 prerequisites. It supplies areas, not numeric topic weights.",
+    "recommendedPriorityOrder": [
+      "Safe isolation and instrument use",
+      "Earthing, testing and result judgement",
+      "Device recognition and application",
+      "Building/cable/protection justification",
+      "Motor control diagrams and fault reasoning",
+      "Power-factor explanation and calculation",
+      "Kenyan licence limits and documentation"
+    ],
+    "priorityIsEditorialInference": true,
+    "excludedEvidence": "Class B oral papers, solar T3 oral material, commercial revision advice and a third-party draft-guideline upload are not an authenticated C1 oral marking scheme."
+  },
+  "groups": [
+    {
+      "id": "local",
+      "title": "Kenyan licensing and documents",
+      "questionIds": [
+        "licence-scope",
+        "regulatory-roles",
+        "licence-progression",
+        "certificates"
+      ],
+      "lessonIds": [
+        "c1-certification-foundation"
+      ],
+      "verdict": "Written support; local video gap",
+      "gap": "The certificate video uses a UK form. No dedicated Kenyan licence-scope, institutional-role, progression or current local forms walkthrough was found in the published course.",
+      "questionTitles": [
+        "C1 and C2 licence boundaries",
+        "Who does what in the electricity sector?",
+        "Does licence tenure alone qualify you for A1?",
+        "Commencement, completion and as-built records"
+      ],
+      "courseLocations": [
+        "C1 Module 14"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-08",
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06"
+      ]
+    },
+    {
+      "id": "generators",
+      "title": "Generator principles and standby application",
+      "questionIds": [
+        "standby-generator",
+        "generator-response",
+        "equipment-ratings"
+      ],
+      "lessonIds": [
+        "c1-generator-set-overview",
+        "c1-generator-operating-principles",
+        "c1-generator-power-limits",
+        "c1-generator-site-planning",
+        "c1-generator-neutral-transfer",
+        "c1-generator-transfer-operation"
+      ],
+      "verdict": "Strong principles; partial practical/local coverage",
+      "gap": "No single complete transfer installation and both-source commissioning demonstration; Kenyan authorisations are supported in the written bank rather than the UK equipment clips.",
+      "questionTitles": [
+        "Standby generation and AC/DC comparisons",
+        "Generator load changes: governor and AVR",
+        "Why equipment has kVA and kW ratings"
+      ],
+      "courseLocations": [
+        "C1 Module 3",
+        "C1 Module 16"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-11",
+        "c1-2013-03",
+        "c1-2016-04",
+        "c1-2025-05"
+      ]
+    },
+    {
+      "id": "basics",
+      "title": "C2 principles inherited by C1",
+      "questionIds": [
+        "power-energy",
+        "series-parallel",
+        "conductor-resistance",
+        "series-lamps",
+        "supply-characteristics"
+      ],
+      "lessonIds": [
+        "p01-l01",
+        "p07-l13",
+        "p07-l14"
+      ],
+      "verdict": "C2 prerequisite",
+      "gap": "C1 is not a replacement for C2. The lamp/heater variation also needs worked reasoning rather than simple definition recall.",
+      "questionTitles": [
+        "Power, energy and the correct meter",
+        "Series and parallel quantities",
+        "Resistance, area and temperature",
+        "A lamp in series with a heater",
+        "Supply characteristics and circuit division"
+      ],
+      "courseLocations": [
+        "C2 Module 1",
+        "C2 Module 2"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-08",
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2016-04"
+      ]
+    },
+    {
+      "id": "ac-power",
+      "title": "AC and three-phase calculations",
+      "questionIds": [
+        "resistance-impedance",
+        "star-delta-relations",
+        "three-phase-advantages",
+        "three-phase-energy",
+        "single-phase-angle"
+      ],
+      "lessonIds": [
+        "p06-l13",
+        "c1-motor-input-efficiency"
+      ],
+      "verdict": "Strong C1 foundation with written applications",
+      "gap": "Use the actual load connection and distinguish input kW, shaft output, kVA and kVAr; written numerical variants still require independent working.",
+      "questionTitles": [
+        "Resistance and impedance",
+        "Line and phase values in star and delta",
+        "Why three-phase supply is useful",
+        "Three-phase power and energy",
+        "Active power and a 32° phase angle"
+      ],
+      "courseLocations": [
+        "C1 Module 2",
+        "C1 Module 12"
+      ],
+      "indexedC1Papers": [
+        "c1-2022-05",
+        "c1-2012-08",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2012-11",
+        "c1-2016-04"
+      ]
+    },
+    {
+      "id": "historical",
+      "title": "Absolute/comparative resistance",
+      "questionIds": [
+        "absolute-resistance"
+      ],
+      "lessonIds": [
+        "c1-wheatstone-bridge",
+        "c1-lorenz-demonstration"
+      ],
+      "verdict": "Core comparative principle; optional historical awareness",
+      "gap": "The Lorenz clip is a limited apparatus overview. No claim of a full numerical absolute-resistance course or of high written mark weight.",
+      "questionTitles": [
+        "Absolute and comparative resistance measurement"
+      ],
+      "courseLocations": [
+        "C1 Module 5"
+      ],
+      "indexedC1Papers": [
+        "c1-2016-04"
+      ]
+    },
+    {
+      "id": "transformers",
+      "title": "Transformer action and calculations",
+      "questionIds": [
+        "transformer-principle",
+        "transformer-example"
+      ],
+      "lessonIds": [
+        "c1-transformer-foundation",
+        "c1-transformer-ratio-calculations",
+        "c1-transformer-emf-equation",
+        "c1-transformer-flux-example",
+        "c1-transformer-losses",
+        "c1-transformer-efficiency-example"
+      ],
+      "verdict": "Strong direct C1 coverage",
+      "gap": "Treat unreadable original numerical givens separately; the authored bank states its own complete training data.",
+      "questionTitles": [
+        "Transformer action and losses",
+        "Transformer current, turns and flux"
+      ],
+      "courseLocations": [
+        "C1 Module 4"
+      ],
+      "indexedC1Papers": [
+        "c1-2013-03",
+        "c1-2025-05"
+      ]
+    },
+    {
+      "id": "measurement",
+      "title": "Wattmeters and CT calculations",
+      "questionIds": [
+        "wattmeter",
+        "ct-power"
+      ],
+      "lessonIds": [
+        "c1-ct-ratios",
+        "c1-wattmeter-foundation",
+        "c1-wattmeter-methods",
+        "c1-analyser-setup",
+        "c1-analyser-power-readings"
+      ],
+      "verdict": "Strong principles; exact variant partial",
+      "gap": "One physical wattmeter successively measuring an unbalanced four-wire load is explained in the written answer, not demonstrated end to end by the analyser/two-wattmeter videos.",
+      "questionTitles": [
+        "Measure power on a three-phase four-wire system",
+        "Current-transformer ratio and measured power"
+      ],
+      "courseLocations": [
+        "C1 Module 5"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-08",
+        "c1-2022-05"
+      ]
+    },
+    {
+      "id": "demand",
+      "title": "Demand factors and load schedules",
+      "questionIds": [
+        "power-factors",
+        "office-demand"
+      ],
+      "lessonIds": [
+        "c1-utilization-foundation",
+        "c1-load-factor-example",
+        "p10-l10",
+        "c1-demand-example",
+        "c1-building-design-plan"
+      ],
+      "verdict": "Good methods; integrated answer practice needed",
+      "gap": "The domestic diversity example is optional context. The full mixed-PF office calculation needs a phase schedule and P/Q summation; no single selected clip reproduces the archived office task.",
+      "questionTitles": [
+        "Demand, diversity, load factor and capacity factor",
+        "Office connected-load assessment"
+      ],
+      "courseLocations": [
+        "C1 Module 8"
+      ],
+      "indexedC1Papers": [
+        "c1-2025-06",
+        "c1-2012-08",
+        "c1-2016-04"
+      ]
+    },
+    {
+      "id": "tariffs",
+      "title": "Measured load, fixed bank and bills",
+      "questionIds": [
+        "tariff-reasoning",
+        "transformer-demand"
+      ],
+      "lessonIds": [
+        "c1-pfc-target-foundation",
+        "c1-pfc-unity-bank",
+        "c1-rashid-capacitor-bank"
+      ],
+      "verdict": "Written coverage; video application gap",
+      "gap": "Target-PF sizing is taught. No dedicated complete measured current → S/P/Q → fixed 100 kVAr bank → new PF/kVA → demand saving/surcharge worked video was established.",
+      "questionTitles": [
+        "Energy, demand and power-factor charges",
+        "Measured transformer load and capacitor-bank savings"
+      ],
+      "courseLocations": [
+        "C1 Module 6"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-08",
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-06"
+      ]
+    },
+    {
+      "id": "building",
+      "title": "Building single-line and riser drawings",
+      "questionIds": [
+        "four-storey-design",
+        "cold-store-diagram"
+      ],
+      "lessonIds": [
+        "c1-building-design-plan",
+        "p07-l16",
+        "c1-rashid-building-design",
+        "p07-l08",
+        "p10-l06",
+        "c1-rashid-mdb-transfer"
+      ],
+      "verdict": "Good constituent teaching; partial exact task",
+      "gap": "No one video completes the specified floor-by-floor cold-store diagram or an entire four-storey design/protect/test/handover answer. Written project and authored SVG/answers bridge it.",
+      "questionTitles": [
+        "Design, protect and verify a four-storey office",
+        "Cold-store building single-line diagram"
+      ],
+      "courseLocations": [
+        "C1 Module 8",
+        "C1 Module 11",
+        "C1 Module 16"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-11",
+        "c1-2016-04",
+        "c1-2023-09",
+        "c1-2025-06"
+      ]
+    },
+    {
+      "id": "cables",
+      "title": "Cables, containment and fault-energy selection",
+      "questionIds": [
+        "cable-selection",
+        "protective-conductor-sizing",
+        "wiring-system",
+        "cable-materials",
+        "glands-armour",
+        "voltage-drop",
+        "generator-cable"
+      ],
+      "lessonIds": [
+        "p02-l01",
+        "p04-l11",
+        "p04-l12",
+        "p04-l13",
+        "c1-cable-process-01",
+        "c1-cable-process-02",
+        "c1-cable-process-03",
+        "c1-cable-process-04",
+        "c1-cable-process-05",
+        "c1-cable-process-06",
+        "c1-cable-process-07",
+        "c1-cpc-size-foundation",
+        "c1-cable-design",
+        "c1-three-phase-voltage-drop"
+      ],
+      "verdict": "Strong C2/C1 methods",
+      "gap": "The connected seven-step examples are single-phase. Apply the subsequent three-phase examples and actual cable tables; a building description never by itself establishes a conductor size.",
+      "questionTitles": [
+        "Select a cable from the installation conditions",
+        "Size a protective conductor",
+        "Choose a wiring and containment system",
+        "Insulation, conductor and armour materials",
+        "Cable glands and armour continuity",
+        "Voltage drop and acceptance",
+        "Generator current and cable derating"
+      ],
+      "courseLocations": [
+        "C2 Module 3",
+        "C2 Module 4",
+        "C1 Module 8",
+        "C1 Module 9"
+      ],
+      "indexedC1Papers": [
+        "c1-2016-04",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2012-11",
+        "c1-2022-05"
+      ]
+    },
+    {
+      "id": "final-circuits",
+      "title": "Final circuits and lighting effects",
+      "questionIds": [
+        "ring-radial-spur",
+        "lighting-effects",
+        "bathrooms"
+      ],
+      "lessonIds": [
+        "course-At7AnMV7Xd0",
+        "course-hZN6hiGLtrE",
+        "p03-l10",
+        "p11-v2-l08",
+        "p11-v2-l09",
+        "c1-fluorescent-operation",
+        "c1-stroboscopic-demonstration"
+      ],
+      "verdict": "C2 prerequisites plus C1 fault examples",
+      "gap": "The stroboscopic demonstration explains the hazard; it does not establish a complete industrial lighting mitigation design. Bathroom rules require applicable current requirements.",
+      "questionTitles": [
+        "Ring, radial and spur circuits",
+        "Fluorescent choke and stroboscopic effect",
+        "Bathroom zones and socket outlets"
+      ],
+      "courseLocations": [
+        "C2 Module 3",
+        "C1 Module 17"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-11",
+        "c1-2013-03",
+        "c1-2016-04",
+        "c1-2025-06",
+        "c1-2012-08"
+      ]
+    },
+    {
+      "id": "protection",
+      "title": "Protection functions and switching",
+      "questionIds": [
+        "basic-fault-protection",
+        "protective-devices",
+        "elcb-terminology",
+        "enclosures",
+        "emergency-switching"
+      ],
+      "lessonIds": [
+        "p05-l01",
+        "c1-protection-fuses",
+        "c1-protection-mcb",
+        "c1-protection-mccb",
+        "c1-protection-acb",
+        "c1-protection-rcd",
+        "c1-protection-rcbo",
+        "c1-protection-three-phase-rcd",
+        "c1-protection-selectivity",
+        "c1-emergency-firefighter-switches"
+      ],
+      "verdict": "Strong device foundations after Module 10; some specialist distinctions partial",
+      "gap": "Legacy voltage-operated ELCB terminology and metal-clad versus metal-enclosed terminology need the focused written answers; the optional MV lesson is outside the core C1 route.",
+      "questionTitles": [
+        "Basic protection and fault protection",
+        "Fuse, MCB, MCCB, ACB, RCD and RCBO",
+        "Voltage-operated ELCB and current-operated RCD",
+        "Outdoor enclosures and switchgear construction",
+        "Emergency switching and firefighters’ switches"
+      ],
+      "courseLocations": [
+        "C2 Module 5",
+        "C1 Module 10",
+        "C1 Module 9"
+      ],
+      "indexedC1Papers": [
+        "c1-2016-04",
+        "c1-2012-11",
+        "c1-2013-03",
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2012-08"
+      ]
+    },
+    {
+      "id": "earthing",
+      "title": "Earthing, electrodes and loop acceptance",
+      "questionIds": [
+        "earthing-bonding",
+        "earthing-systems",
+        "pme-neutral",
+        "electrodes",
+        "electrode-test",
+        "loop-acceptance"
+      ],
+      "lessonIds": [
+        "c1-earthing-arrangements-foundation",
+        "c1-bonding-foundation",
+        "c1-lost-neutral",
+        "p05-earth-components",
+        "p05-earth-rod-install",
+        "p05-earth-three-wire",
+        "p05-earth-dry-soil",
+        "p08-l12"
+      ],
+      "verdict": "Strong principles; electrode demonstrations remain in C2",
+      "gap": "A C1-only viewer can miss electrode testing. Local PME/customer intake details need the actual authorised supply arrangement; do not copy an arbitrary N–E link or a universal electrode-resistance figure.",
+      "questionTitles": [
+        "Earthing, CPCs and protective bonding",
+        "TN-S, TN-C-S, TN-C and TT",
+        "PME and the floating neutral",
+        "Electrodes, resistance and improvement",
+        "Earth-electrode resistance: fall of potential",
+        "Earth resistance versus earth-fault loop impedance"
+      ],
+      "courseLocations": [
+        "C1 Module 9",
+        "C1 Module 17",
+        "C2 Module 5",
+        "C2 Module 8"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-11",
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2016-04",
+        "c1-2013-03"
+      ]
+    },
+    {
+      "id": "safety",
+      "title": "Isolation, instruments, first aid and incidents",
+      "questionIds": [
+        "safe-isolation",
+        "ppe-tools",
+        "incident-fire"
+      ],
+      "lessonIds": [
+        "p03-l14",
+        "p08-l01",
+        "course-TsJ49Np3HS0",
+        "course-UFvL7wTFzl0",
+        "c1-fire-response-principles",
+        "c1-incident-evidence",
+        "c1-incident-causes-actions"
+      ],
+      "verdict": "Substantial C2/C1 teaching; practical competence unproven",
+      "gap": "Sectional isolation and first aid require demonstration and supervised practice. Incident-investigation clips do not establish current Kenyan statutory reporting procedures.",
+      "questionTitles": [
+        "Safe isolation during sectional maintenance",
+        "Choose tools, instruments and PPE",
+        "Incident records and electrical fires"
+      ],
+      "courseLocations": [
+        "C2 Module 2",
+        "C1 Module 7",
+        "C1 Module 17"
+      ],
+      "indexedC1Papers": [
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2012-08"
+      ]
+    },
+    {
+      "id": "verification",
+      "title": "Initial/periodic verification and judgement",
+      "questionIds": [
+        "initial-verification",
+        "insulation-test",
+        "test-results-review",
+        "periodic-inspection"
+      ],
+      "lessonIds": [
+        "c1-verification-order-foundation",
+        "c1-continuity-foundation",
+        "c1-three-phase-ir-sequence",
+        "c1-three-phase-ir-practical",
+        "p08-l17",
+        "c1-pfc-breaking-capacity",
+        "c1-rcd-testing-foundation",
+        "c1-test-results-resistance",
+        "c1-periodic-reporting"
+      ],
+      "verdict": "Strong procedures; mixed-result judgement partial",
+      "gap": "There is a ring-result interpretation lesson, but no complete video assessing the whole archived mixed IR/earth/loop/missing-continuity schedule and deciding corrective action before certification.",
+      "questionTitles": [
+        "Order of initial inspection and testing",
+        "Insulation resistance: preparation and interpretation",
+        "Can these results be certified?",
+        "Periodic inspection and responsibilities"
+      ],
+      "courseLocations": [
+        "C1 Module 14",
+        "C1 Module 15"
+      ],
+      "indexedC1Papers": [
+        "c1-2016-04",
+        "c1-2012-11",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2022-05",
+        "c1-2012-08",
+        "c1-2013-03"
+      ]
+    },
+    {
+      "id": "motors",
+      "title": "Motors, starting, protection and speed",
+      "questionIds": [
+        "phase-sequence",
+        "starter-selection",
+        "dol-starter",
+        "star-delta-starter",
+        "reverse-motors",
+        "motor-relays",
+        "vfd",
+        "motor-types",
+        "slip-torque",
+        "motor-faults",
+        "dc-commutator",
+        "motor-commissioning",
+        "motor-current",
+        "motor-speed"
+      ],
+      "lessonIds": [
+        "p07-induction",
+        "course-XbL0R_9KLD4",
+        "c1-motor-input-efficiency",
+        "c1-slip-rotor-frequency",
+        "c1-single-phase-motor-principles",
+        "c1-dc-motor-commutation",
+        "c1-reversing-interlocks",
+        "p04-l19",
+        "p04-l20",
+        "p07-star-delta",
+        "c1-autotransformer-starter",
+        "p07-vfd",
+        "c1-regenerative-drive-principles",
+        "c1-protection-overcurrent-relay",
+        "c1-protection-overload-relay",
+        "c1-protection-phase-monitoring",
+        "c1-motor-winding-tests",
+        "c1-stepper-motor-principles",
+        "c1-servo-motor-feedback"
+      ],
+      "verdict": "Strong direct coverage; integrated diagnosis/practical rehearsal needed",
+      "gap": "Learners must draw and explain circuits independently, including interlocks and no-voltage release. Stepper/servo basics are optional further study but appear in short written comparisons. An isolated winding test is not the complete non-starting-motor diagnosis.",
+      "questionTitles": [
+        "Phase sequence and motor direction",
+        "Choose a motor-starting method",
+        "DOL power circuit and holding circuit",
+        "Star-delta starting sequence and interlocks",
+        "Reverse a three-phase or split-phase motor",
+        "Overload, overcurrent and phase-failure protection",
+        "VFD speed control and four-quadrant operation",
+        "Induction, synchronous, stepper and servo motors",
+        "Slip, rotor frequency and torque",
+        "A motor hums but fails to run",
+        "DC commutation and reversal",
+        "Motor checks before commissioning",
+        "Motor shaft power, efficiency and current",
+        "Pole count, synchronous speed and slip"
+      ],
+      "courseLocations": [
+        "C1 Module 12",
+        "C1 Module 13",
+        "C1 Module 10",
+        "C1 Module 17"
+      ],
+      "indexedC1Papers": [
+        "c1-2022-05",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2012-08",
+        "c1-2013-03",
+        "c1-2016-04",
+        "c1-2023-09",
+        "c1-2012-11"
+      ]
+    },
+    {
+      "id": "pfc",
+      "title": "Power-factor correction and capacitance",
+      "questionIds": [
+        "power-factor-quality",
+        "pfc-methods",
+        "pfc-placement",
+        "voltage-regulation",
+        "single-phase-capacitors",
+        "three-phase-compensation",
+        "ahu-compensation"
+      ],
+      "lessonIds": [
+        "c1-pfc-target-foundation",
+        "c1-pfc-unity-bank",
+        "c1-rashid-capacitor-bank",
+        "c1-synchronous-condenser-overview",
+        "c1-capacitor-placement"
+      ],
+      "verdict": "Strong foundation; some exact calculation variants partial",
+      "gap": "Target sizing and three-phase bank principles are taught. The historical single-phase µF cases, broad voltage-regulation options and full calculation chains also rely on authored worked answers/project; financial fixed-bank variants are mapped separately.",
+      "questionTitles": [
+        "Causes and consequences of poor power factor",
+        "Correction methods and their limits",
+        "Bank connection, staging and source-side measurements",
+        "Voltage regulation and four improvement methods",
+        "Single-phase compensation: four worked cases",
+        "Three-phase kVAr correction and current",
+        "Air-handling load: calculate the correction"
+      ],
+      "courseLocations": [
+        "C1 Module 6",
+        "C1 Module 13"
+      ],
+      "indexedC1Papers": [
+        "c1-2012-08",
+        "c1-2012-11",
+        "c1-2016-04",
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06",
+        "c1-2013-03"
+      ]
+    },
+    {
+      "id": "lightning",
+      "title": "External lightning and SPDs",
+      "questionIds": [
+        "surges-lightning"
+      ],
+      "lessonIds": [
+        "c1-lightning-strike-path",
+        "c1-surge-foundation",
+        "c1-lightning-protection-principles",
+        "c1-protection-spd"
+      ],
+      "verdict": "Principles present; diagram/practical task partial",
+      "gap": "Model lightning-path and optional specialist material do not constitute a complete conventional building-system layout and installation demonstration. Practise the labelled schematic in the written bank.",
+      "questionTitles": [
+        "Surges, SPDs and lightning protection"
+      ],
+      "courseLocations": [
+        "C1 Module 9",
+        "C1 Module 10"
+      ],
+      "indexedC1Papers": [
+        "c1-2013-03",
+        "c1-2016-04",
+        "c1-2022-05",
+        "c1-2023-09",
+        "c1-2025-05",
+        "c1-2025-06"
+      ]
+    }
+  ]
+}

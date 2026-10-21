@@ -2,6 +2,8 @@
 
 Reviewed 15 October 2026.
 
+Follow-up 21 October: the [C1 marks and course-coverage audit](c1-exam-weight-and-coverage-audit.md) rechecks this eight-paper C1 register, records recoverable mark allocations and current access limits, reviews an additional October 2016 copy separately, and maps all 78 current C1 study questions to lessons and gaps. It does not change this bank's source count or claim an authenticated oral marking scheme.
+
 ## Scope and editorial contract
 
 The user explicitly requested separate C1 and C2 tabs after Practice, consolidated questions with comprehensive beginner-friendly answers, question breakdowns and professional LaTeX calculations. The user also requested that source labels, discussions of other answer keys and repetitive correction commentary remain out of the student view.
