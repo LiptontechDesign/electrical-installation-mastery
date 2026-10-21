@@ -168,7 +168,8 @@ try {
   assert.ok(new URL(page.url()).hash.endsWith(seed.coreIds[1]), 'Suggested next follows the active mixed course');
   await openCourseTools(page);
   await page.getByRole('button', { name: 'Organise', exact: true }).click();
-  await page.getByRole('button', { name: 'Mark every video in section 3 as watched', exact: true }).click();
+  await page.getByRole('button', { name: 'Mark section 3 as watched', exact: true }).click();
+  await page.getByRole('dialog', { name: 'Mark section as watched?', exact: true }).getByRole('button', { name: 'Mark as watched', exact: true }).click();
   await checkMap(page, 4, 4);
   await page.getByRole('button', { name: 'Done', exact: true }).click();
   await checkHomeAndOverview(page, 4, 4);

@@ -74,7 +74,8 @@
     "test:c1-applications": "node scripts/test-c1-applications.mjs",
     "test:c1-generators": "node scripts/test-c1-generators.mjs",
     "test:c1-cable-design": "node scripts/test-c1-cable-design.mjs",
-    "test:c1-cable-design-browser": "node scripts/test-c1-cable-design-browser.mjs"
+    "test:c1-cable-design-browser": "node scripts/test-c1-cable-design-browser.mjs",
+    "test:section-watched-browser": "node scripts/test-section-watched-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

@@ -43,6 +43,7 @@ import PastPaperLinks from './past-paper-links';
 import StudyNavigationLink from './study-navigation-link';
 import StudyTabs from './study-tabs';
 import MobileNavigation from './mobile-navigation';
+import SectionWatchedDialog from './section-watched-dialog';
 import type { BookSelection } from './reader-state';
 
 const BookWorkspace = dynamic(() => import('./book-reader').then(module => module.BookWorkspace), { ssr: false });
@@ -146,6 +147,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
   const [collapseCompleted, setCollapseCompleted] = useState(true);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
+  const [confirmSectionId, setConfirmSectionId] = useState<string | null>(null);
   const [toast, setToast] = useState('');
 
   const [storageBlocked, setStorageBlocked] = useState(false);
@@ -246,6 +248,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     const optionalProgress = progressForVideos(optional, watchedRows);
     return { ...progressForVideos(ids, watchedRows), optionalTotal: optionalProgress.total, optionalRemaining: optionalProgress.total - optionalProgress.watched };
   };
+  const canMarkSections = Boolean(user) && hydrated && courseReady && Boolean(supplementary?.progressReady) && !storageBlocked;
+  const sectionToMark = Object.values(sectionsByModule).flat().find(section => section.id === confirmSectionId);
+  const sectionMarkRows = sectionToMark ? mapRows[sectionToMark.id] ?? [] : [];
   const nextUnwatchedRow = pathRows.find(row => !watchedRows.has(row.id));
   const weekMinutes = getRecentStudyMinutes(7, learner.studyMinutesByDate);
   const queuedNextLesson = autoNextState ? courseRowsById.get(autoNextState.nextLessonId) : undefined;
@@ -859,11 +864,13 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
     setToast(isComplete ? 'Watched mark removed.' : 'Video marked as watched.');
   };
 
-  const markGroupWatched = (lessonIds: string[], moduleId: string, label: string) => {
-    if (!user) { requestSignIn(); return; }
+  const markSectionWatched = () => {
+    if (!canMarkSections || !sectionToMark || !sectionMarkRows.length) return;
+    const lessonIds = sectionMarkRows.map(row => row.id);
     setLearner((current) => ({ ...markVideoGroupWatched(current, lessonIds.filter(id => lessonLookup.has(id))), updatedAt: new Date().toISOString() }));
-    window.dispatchEvent(new CustomEvent('supplementary-bulk-watch', { detail: { moduleId, lessonIds } }));
-    setToast(`${label} marked as watched.`);
+    window.dispatchEvent(new CustomEvent('supplementary-bulk-watch', { detail: { moduleId: sectionToMark.moduleId, lessonIds } }));
+    setToast(`Section ${sectionToMark.number} marked as watched.`);
+    setConfirmSectionId(null);
   };
 
   const toggleBookmark = () => {
@@ -1028,12 +1035,11 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                         </button>
                         <div className="module-actions">
                           <AddVideoButton sectionId={sectionsByModule[module.id][0].id} compact label={`Add video to module ${module.stageNumber}: ${module.title}`} />
-                          {isOpen&&<button type="button" className="bulk-watch-action" aria-label={`Mark every video in module ${pad(module.stageNumber)} as watched`} data-tooltip={`Mark every video in module ${pad(module.stageNumber)} as watched`} onClick={()=>markGroupWatched(allCourseRows.filter(row => row.moduleId === module.id).map(row => row.id),module.id,`Module ${pad(module.stageNumber)}`)}><CheckCircle2 size={17}/></button>}
                         </div>
                         {isOpen && <div className="accordion-lessons">{sectionsByModule[module.id].filter(group => organizing || lessonFilter === 'all' || mapRows[group.id]?.some(row => visibleRows.has(row.id))).map(group=>{
                           const progress = groupProgress((mapRows[group.id] ?? []).map(row => row.id));
                           const sectionOpen = sectionExpansion[group.id] ?? ((!organizing && lessonFilter !== 'all') || group.id === selectedSectionId || Boolean(user && !collapseCompleted && progress.total > 0 && progress.watched === progress.total));
-                          return <CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} open={sectionOpen} onToggle={event => { const open = event.currentTarget.open; if (open !== sectionOpen) setSectionExpansion(current => ({ ...current, [group.id]: open })); }}><summary><span className="section-eyebrow">Section {String(group.number).padStart(2, '0')}</span><span className="section-title">{group.title}</span>{user ? <CourseProgressSummary {...progress} label={group.title + ' progress'}/> : <small>{progress.total} videos</small>}</summary>{group.description && <p className="course-section-description">{group.description}</p>}<div className="course-topic-actions"><button type="button" className="bulk-watch-action" aria-label={`Mark every video in section ${group.number} as watched`} data-tooltip={`Mark every video in section ${group.number} as watched`} onClick={()=>markGroupWatched((mapRows[group.id] ?? []).map(row => row.id),module.id,`Section ${group.number}`)}><CheckCircle2 size={17}/></button><AddVideoButton sectionId={group.id} compact label={`Add video to section ${group.number}: ${group.title}`} /></div><CourseSectionRows visibleIds={organizing || lessonFilter === 'all' ? undefined : visibleRows} sectionId={group.id} renderCore={(lessonId, displayNumber) => {
+                          return <CourseDragSection key={group.id} id={group.id}><details className="course-topic-group" data-complete={Boolean(user) && progress.total > 0 && progress.watched === progress.total} open={sectionOpen} onToggle={event => { const open = event.currentTarget.open; if (open !== sectionOpen) setSectionExpansion(current => ({ ...current, [group.id]: open })); }}><summary><span className="section-eyebrow">Section {String(group.number).padStart(2, '0')}</span><span className="section-title">{group.title}</span>{user ? <CourseProgressSummary {...progress} label={group.title + ' progress'}/> : <small>{progress.total} videos</small>}</summary>{group.description && <p className="course-section-description">{group.description}</p>}<div className="course-topic-actions">{user && <button type="button" className="bulk-watch-action section-watch-action" aria-label={`Mark section ${group.number} as watched`} aria-haspopup="dialog" disabled={!canMarkSections || progress.total === 0 || progress.watched === progress.total} onClick={() => setConfirmSectionId(group.id)}><CheckCircle2 size={16} aria-hidden="true"/><span>{progress.total > 0 && progress.watched === progress.total ? 'Section watched' : 'Mark section as watched'}</span></button>}<AddVideoButton sectionId={group.id} compact label={`Add video to section ${group.number}: ${group.title}`} /></div><CourseSectionRows visibleIds={organizing || lessonFilter === 'all' ? undefined : visibleRows} sectionId={group.id} renderCore={(lessonId, displayNumber) => {
                           const lesson=lessonLookup.get(lessonId)!;
                           const isActiveLesson=!supplementaryId&&activeLesson.id===lesson.id;
                           return <button ref={isActiveLesson?activeLessonRowRef:undefined} type="button" className={isActiveLesson?'active':''} aria-current={isActiveLesson?'page':undefined} onClick={()=>chooseLesson(lesson.id)}>{completed.has(lesson.id)?<CheckCircle2 size={17} role={user?'img':undefined} aria-label={user?'Watched':undefined}/>:<Circle size={17} role={user?'img':undefined} aria-label={user?'Not watched':undefined}/>}<span><strong>L{pad(displayNumber)} · {lesson.title}</strong><LessonRowMetadata kind={lessonStudyRole(lesson.id)} duration={lesson.duration} watched={user?completed.has(lesson.id):undefined} current={isActiveLesson} completions={learner.videoCompletionCounts[lesson.id]??0} saved={bookmarked.has(lesson.id)}/></span></button>;
@@ -1091,6 +1097,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
         <MobileNavigation active={view} onCourseNavigate={navigate} papersHref={mapPath === 'C1' ? '/past-papers/c1' : '/past-papers/c2'}/>
       </div>
 
+      {user && sectionToMark && sectionMarkRows.length > 0 && <SectionWatchedDialog title={sectionToMark.title} number={sectionToMark.number} videoCount={sectionMarkRows.length} disabled={!canMarkSections} onConfirm={markSectionWatched} onClose={() => setConfirmSectionId(null)}/>}
       {settingsOpen && (
         <div className="modal-layer align-right" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setSettingsOpen(false); }}>
           <section ref={settingsDialogRef} className="settings-drawer" role="dialog" aria-modal="true" aria-labelledby="settings-title">

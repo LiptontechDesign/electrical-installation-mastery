@@ -11,7 +11,7 @@ export function recordVideoCompletion<T extends {completedLessonIds:string[];vid
 
 // Bulk marking is intentionally idempotent: it records at least one completion
 // for each lesson without inflating repeat-completion counts for lessons that
-// were already watched before the section/module action was used.
+// were already watched before the section action was used.
 export function markVideoGroupWatched<T extends {completedLessonIds:string[];videoCompletionCounts:Record<string,number>}>(state:T,lessonIds:string[]):T{
   const videoCompletionCounts={...state.videoCompletionCounts};
   for(const lessonId of lessonIds){

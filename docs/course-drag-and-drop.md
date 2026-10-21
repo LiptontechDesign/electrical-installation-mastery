@@ -14,7 +14,7 @@ All removals use the authenticated account ID on the server. Other learners and 
 
 **Move to…** opens a searchable destination picker with pathway/module browsing and exact insertion positions. The preview shows the resulting lesson numbers. Videos move independently by default. Where a legacy supporting sequence exists, an explicit checkbox lists the videos that can move together.
 
-**Organise** reveals drag handles and bulk watched controls. Mouse, touch hold, and keyboard dragging share the same placement model. Dropping saves once and offers **Undo**; Escape cancels without saving. The precise move dialog is also usable entirely by keyboard or touch without dragging. A saved move highlights its destination and keeps the current video selected.
+**Organise** reveals drag handles. **Mark section as watched** is available while studying and organising, and asks for confirmation before marking that section's videos. There is no whole-module watched action. Mouse, touch hold, and keyboard dragging share the same placement model. Dropping saves once and offers **Undo**; Escape cancels without saving. The precise move dialog is also usable entirely by keyboard or touch without dragging. A saved move highlights its destination and keeps the current video selected.
 
 Undo is available from the latest-change message and course menu during the current session. It reverses the affected items while preserving unrelated edits. If the same video has changed again, the older change cannot be undone over that newer edit. Undoing an addition archives it, preserving its notes and progress.
 

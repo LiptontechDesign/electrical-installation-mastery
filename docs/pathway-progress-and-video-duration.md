@@ -10,6 +10,7 @@ Implemented 1 October 2026.
 - The toolbar and My learning progress panel use the selected pathway and name it explicitly. My learning also shows the overall total. Settings retains the account-wide record and labels it All pathways / overall.
 - Next unwatched and Suggested next step search the selected pathway. Completing it does not suggest an unrelated pathway.
 - Required, optional and supplementary entries all count. Lesson filters do not change progress denominators. Archives and permanent removals are excluded; restores recover their retained watched marks. Cross-path moves change each pathway's membership while preserving the overall total.
+- Signed-in learners can mark a whole section as watched from its expanded section, without entering Organise. A themed confirmation identifies the section and active video count; Cancel and Escape leave progress unchanged. Confirmation includes core, optional and personal videos even when a lesson filter hides some rows. Other sections remain untouched, repeated completion counts are preserved, and there is no module-wide action.
 - Loading a linked video follows its resolved personal module/pathway, including when account ordering arrives after the first render. Subsequent tab browsing remains available.
 - Guest access and its absence of saved progress are unchanged.
 
@@ -26,6 +27,8 @@ Implemented 1 October 2026.
 - Successful public metadata responses are eligible for the existing daily server fetch cache. Private progress, notes and ordering are not part of that cache.
 
 ## Verification
+
+- `node scripts/test-section-watched-browser.mjs`: light desktop and 320px dark phone; normal-study visibility, confirmation, Cancel/Escape/focus, filtered mixed-video sections, scope within a module, persistence, completion counts, all seven C1 design videos, description removal and guest access.
 
 - `node scripts/test-supplementary-duration.mjs`: all bundled times, old saved-course enrichment, new personal duration persistence, invalid values, authenticated fixed-host lookup, escaped player JSON, wrong video identities and unavailable metadata.
 - `node scripts/test-pathway-progress-browser.mjs`: desktop and 320px mobile, all three scopes, overall totals, completion, next unwatched, watch/Undo, archive/Undo, cross-path move, deletion/reload, Home/header, duration before playback and menu spacing.

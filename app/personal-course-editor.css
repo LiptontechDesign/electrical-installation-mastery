@@ -21,7 +21,11 @@
 .accordion-lessons .course-add-icon > svg:first-child:last-child { color: var(--text-accent); }
 .course-add-icon:hover { background: var(--surface-selected); }
 [data-organizing="false"] .course-topic-actions { display: flex; }
-[data-organizing="false"] .course-topic-actions .bulk-watch-action { display: none; }
+.accordion-lessons .section-watch-action { display: inline-flex; align-items: center; justify-content: center; flex: 1; gap: 6px; width: auto; height: auto; min-height: 36px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-soft); color: var(--text-accent); font-size: 12px; font-weight: 600; }
+.accordion-lessons .section-watch-action:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.accordion-lessons .section-watch-action:disabled { cursor: default; color: var(--muted); }
+.section-watched-dialog .editor-moving-title { margin-bottom: 16px; }
+.section-watch-question { margin: 0; line-height: 1.6; }
 .guest-course .course-topic-actions, .guest-course .course-drag-handle { display: none; }
 .course-action-menu { position: fixed; z-index: 350; width: 212px; padding: 5px; border: 1px solid var(--line); border-radius: 9px; background: var(--white); box-shadow: var(--shadow-lg); color: var(--ink); }
 .course-action-menu button { display: flex; align-items: center; gap: 9px; width: 100%; min-height: 36px; padding: 8px; border-radius: 5px; background: transparent; color: var(--ink); font-size: 13px; text-align: left; }
@@ -109,6 +113,7 @@
 .personal-course-notice button { display: inline-flex; gap: 4px; align-items: center; flex-shrink: 0; color: var(--text-accent); background: transparent; padding: 5px; font-size: 12px; }
 .personal-course-notice.has-error { border-color: var(--text-danger); }
 @media (pointer: coarse) {
+  .accordion-lessons .section-watch-action { min-height: 44px; }
   .course-editor-toolbar .course-tool-action, .course-tools-more summary, .course-action-menu button, .editor-close, .editor-insertion, .editor-primary, .editor-secondary { min-height: 44px; }
   .course-draggable-row > .video-actions-button, .accordion-lessons .course-draggable-row > button.video-actions-button, .video-actions-button, .course-add-icon, .accordion-lessons .course-add-icon { flex-basis: 44px; min-width: 44px; width: 44px; height: 44px; }
 }

@@ -25,7 +25,8 @@ try {
     if(!await section.locator('details.course-topic-group').evaluate(node=>node.open))await section.locator('summary').click();
     assert.ok((await section.locator('summary').textContent()).includes(title));
     assert.deepEqual(await section.locator('[data-course-row]').evaluateAll(rows=>rows.map(row=>row.dataset.courseRow)),additions.map(v=>v.id));
-    assert.ok((await page.locator('.lesson-section-introduction').textContent()).includes('lighting and socket circuits'));
+    assert.equal(await section.locator('.course-section-description').count(),0);
+    assert.equal(await page.getByText(/Follow the same lighting and socket circuits/).count(),0);
     const displayedSections=await page.locator('[data-course-module="c1-design"] [data-course-section]').evaluateAll(rows=>rows.map(row=>row.dataset.courseSection));
     assert.ok(displayedSections.indexOf('c1-cable-factors-foundation')<displayedSections.indexOf(sectionId));
     assert.ok(displayedSections.indexOf(sectionId)<displayedSections.indexOf('c1-design-section-2'));
