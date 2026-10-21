@@ -7,6 +7,7 @@ const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCours
 const { isRequiredStudyVideo: required } = await import('../work/c1-module-tests/course-curriculum.js');
 const { progressForVideos } = await import('../work/c1-module-tests/course-progress-model.js');
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
+const cableDesignIds = new Set(read('scripts/fixtures/c1-cable-design-additions.json').map(v => v.id));
 const prior = read('scripts/fixtures/c1-modules-previous.json'), untouched = structuredClone(prior);
 const update = read('app/c1-module-update.json'), upgraded = parse(prior), view = snapshot(upgraded);
 const modules = view.course.modules.filter(m => m.path === 'C1');
@@ -16,8 +17,8 @@ assert.deepEqual(prior, untouched, 'Reading the new curriculum never mutates the
 assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every stable section retains its exact mixed row order: ' + id);
 assert.deepEqual(parse(upgraded), upgraded, 'Reloading the new revision is idempotent');
-assert.deepEqual(Object.values(upgraded.groups).flat().sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
-assert.equal(view.allRows.length, 478);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !cableDesignIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
+assert.equal(view.allRows.length, 485);
 assert.equal(modules.length, 16);
 assert.deepEqual(modules.map(m => m.id), update.moduleOrder);
 assert.deepEqual(modules.map(m => m.title), [
@@ -58,7 +59,7 @@ assert.match(view.label('c1-ac-waveforms'), /^C1 · Module 01 /);
 assert.match(view.label('c1-generator-building-integration'), /^C1 · Module 15 /);
 for (const video of upgraded.videos) assert.equal(video.moduleId, view.byId.get(video.id)?.moduleId, 'Bundled video metadata follows its actual section');
 const watched = new Set(Object.values(prior.groups).flat().filter((_, i) => i % 7 === 0));
-assert.deepEqual(progressForVideos(view.allRows.map(r => r.id), watched), progressForVideos(Object.values(prior.groups).flat(), watched), 'Overall watched/total counts do not change');
+assert.deepEqual(progressForVideos(view.allRows.filter(r => !cableDesignIds.has(r.id)).map(r => r.id), watched), progressForVideos(Object.values(prior.groups).flat(), watched), 'Existing videos retain their watched/total counts after the additive series');
 
 // Exercise saved custom order, nested private videos, archives, removals,
 // explicit destinations and an Undo receipt created before the module split.

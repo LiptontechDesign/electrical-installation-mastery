@@ -23,7 +23,7 @@ C1 has its own visible **Module 1–16** sequence, independent of C2. The course
 | 15 | Standby Generators: Connections and Operation | Apply earlier principles, design and verification to siting, earthing, transfer and operation. |
 | 16 | Fault Diagnosis | Combine installation/motor knowledge, measurements, emergency response and investigation. |
 
-Each row is an actual module with its own sections and progress. C1 contains 85 stable sections and 144 mixed video entries. The whole course retains 446 catalogue entries and 478 default mixed entries across 31 modules and 190 sections. One medium-voltage switchgear lesson/section moves to Advanced; no video is deleted.
+Each row is an actual module with its own sections and progress. After the [seven-step cable-design addition](c1-cable-design-series.md) on 21 October, C1 contains 86 stable sections and 151 mixed video entries. The whole course has 453 catalogue entries and 485 default mixed entries across 31 modules and 191 sections. One medium-voltage switchgear lesson/section moves to Advanced; no video is deleted.
 
 ## Prerequisite repairs
 

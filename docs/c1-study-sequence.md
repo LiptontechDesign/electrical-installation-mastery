@@ -2,7 +2,7 @@
 
 Follow the sections in order. C1 has its own Module 1–16 numbering. It builds on the C2 foundations, with selected reminders included. See the [current route and EPRA mapping](c1-focused-modules.md). The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
 
-85 sections · 144 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md).
+86 sections · 151 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md). [Connected seven-step cable design](c1-cable-design-series.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -232,20 +232,52 @@ Follow the sections in order. C1 has its own Module 1–16 numbering. It builds 
 
 - [Cable Rating Factors: Temperature, Grouping and Thermal Insulation](https://www.youtube.com/watch?v=4seJf2Ql_0E) — eFIXX; Core foundation.
 
-### 5. Design current, correction factors and cable current capacity
+### 5. Seven-Step Cable Design: From Load Current to Fault Checks
+
+Follow the same lighting and socket-circuit examples through all seven parts before the detailed calculations below. Total runtime: 56:43.
+
+- [Cable Design Step 1: Calculate the Design Current (Ib)](https://www.youtube.com/watch?v=bAdNXOLSwJg) — EccElectric; Core worked sequence (7:13).
+
+  Two 230 V single-phase examples introduce the method. Use the appropriate three-phase formula and actual load data for the C1 examples that follow.
+
+- [Cable Design Step 2: Select the Protective Device Rating (In)](https://www.youtube.com/watch?v=OoJvApVqZh4) — EccElectric; Core worked sequence (7:42).
+
+  Select the device rating and trip characteristic for the load and its starting current; check coordination with the cable capacity as the design develops.
+
+- [Cable Design Step 3: Apply Rating Factors to Find the Required Cable Table Rating](https://www.youtube.com/watch?v=0CT-mT2Gm5s) — EccElectric; Core worked sequence (7:04).
+
+  Dividing the device rating by the applicable rating factors gives the required tabulated capacity (It). The installed capacity (Iz) is the selected table rating multiplied by those factors. Keep the unrounded requirement when selecting a cable.
+
+- [Cable Design Step 4: Choose the Installation Method and Cable Size](https://www.youtube.com/watch?v=Ip2QJBOdalo) — EccElectric; Core worked sequence (9:05).
+
+  Choose the correct cable-type table and installation-method column. For these examples, 13 A and 23 A are table ratings; applying the temperature factors gives installed capacities of 11.31 A and 21.62 A.
+
+- [Cable Design Step 5: Check Voltage Drop](https://www.youtube.com/watch?v=vSKzLpKJMLE) — EccElectric; Core worked sequence (7:03).
+
+  Follow each example through the voltage-drop calculation. The next three-phase lesson extends this to the combined drop in a submain and final circuit.
+
+- [Cable Design Step 6: Calculate Line and Protective-Conductor Resistance (R1 + R2)](https://www.youtube.com/watch?v=-wi6pJPBW30) — EccElectric; Core worked sequence (8:45).
+
+  R1 + R2 combines line-conductor and circuit protective conductor resistance. Apply the operating-temperature multiplier and retain full precision until the final answer.
+
+- [Cable Design Step 7: Calculate Earth-Fault Loop Impedance (Zs) and Check the Limit](https://www.youtube.com/watch?v=tRF0Y2MaQ5g) — EccElectric; Core worked sequence (9:51).
+
+  Use verified external loop impedance (Ze), then add R1 + R2 at the design temperature. Compare with the matching design limit; measured ambient-temperature limits already include a temperature allowance.
+
+### 6. Design current, correction factors and cable current capacity
 
 - [Cable calculation. Calculating the live cable size from BS 7671](https://www.youtube.com/watch?v=wAcqKNBxy-w) — Electrical Student; Core lesson.
 - [Master Three-Phase Cable Calculations](https://www.youtube.com/watch?v=ChC_94Zmf4I) — Sparky Help; Core worked example.
 
   44 A is tabulated capacity; corrected Iz is 32.52 A.
 
-### 6. Add submain and final circuit voltage drop correctly
+### 7. Add submain and final circuit voltage drop correctly
 
 - [Voltage Drop in Three-Phase Installations and Single-Phase Circuits from a Three-Phase Supply](https://www.youtube.com/watch?v=RCHw0TUEAes) — LEARN ELECTRICS; Core worked example.
 
   For a balanced feeder, use 400 V for submain drop percentages and 230 V for single-phase final circuits.
 
-### 7. Optional extension: larger buildings and transformer loading
+### 8. Optional extension: larger buildings and transformer loading
 
 - [Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial](https://www.youtube.com/watch?v=XGMUpguNzao) — Elegant Power Solutions; Optional extension.
 

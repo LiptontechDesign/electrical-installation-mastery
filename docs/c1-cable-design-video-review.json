@@ -1,0 +1,237 @@
+{
+  "reviewedAt": "2026-10-21",
+  "channel": "https://www.youtube.com/@Eccelectricvideos/videos",
+  "sectionId": "c1-cable-design-process",
+  "sectionTitle": "Seven-Step Cable Design: From Load Current to Fault Checks",
+  "totalDurationSeconds": 3403,
+  "placement": "C1 Module 8, new Section 5, after rating-factor foundations and before the former Section 5 worked calculations.",
+  "coverage": "Two connected 230 V single-phase lighting and socket radial examples, from design current through cable selection, voltage drop, temperature-adjusted R1 + R2 and calculated Zs.",
+  "remainingScope": "The wider C1 course supplies three-phase load/current calculations and feeder/final-circuit voltage-drop coordination. Protective-conductor thermal sizing, full device coordination and practical verification are not completed by this series.",
+  "terminologySource": "https://electrical.theiet.org/media/1617/appendix-4-of-bs-7671.pdf",
+  "videos": [
+    {
+      "lessonId": "c1-cable-process-01",
+      "videoId": "bAdNXOLSwJg",
+      "sectionId": "c1-cable-design-process",
+      "step": 1,
+      "url": "https://www.youtube.com/watch?v=bAdNXOLSwJg",
+      "sourceTitle": "Step 1 (& Intro) - Calculate Design Current -- 7 Part Series - Cable Selection for circuit design",
+      "durationSeconds": 433,
+      "durationSource": "YouTube channel video accessibility label",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 216,
+        "captionEndSeconds": 434.18,
+        "sha256": "65609e67280c84f7c54df45d3e4ae55221d3738ed2ea8a723d979659bca5f437",
+        "rawExportSha256": "ab4641b852999f43fc1f10ee13b026d39c3685a3b58cca8740206c9faba9530e",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 434.18
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed; automatic transcription can misrender symbols and numbers. This is not frame-by-frame review."
+      },
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "teachingNote": "Two 230 V single-phase examples introduce the method. Use the appropriate three-phase formula and actual load data for the C1 examples that follow."
+    },
+    {
+      "lessonId": "c1-cable-process-02",
+      "videoId": "OoJvApVqZh4",
+      "sectionId": "c1-cable-design-process",
+      "step": 2,
+      "url": "https://www.youtube.com/watch?v=OoJvApVqZh4",
+      "sourceTitle": "Step 2 Determine In - Size / rated current of protective device - 7 Part Series - Cable Selection",
+      "durationSeconds": 462,
+      "durationSource": "YouTube channel video accessibility label",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 219,
+        "captionEndSeconds": 463.46,
+        "sha256": "57f76beb283dce850d24d720bf4998a996a82ef18c57cb303d7afc4ce157db8e",
+        "rawExportSha256": "1f2a5960e60360a67e26790b5e15540101c26d5073cb614131eab66e3aa13221",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 463.46
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed; automatic transcription can misrender symbols and numbers. This is not frame-by-frame review."
+      },
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "teachingNote": "Select the device rating and trip characteristic for the load and its starting current; check coordination with the cable capacity as the design develops."
+    },
+    {
+      "lessonId": "c1-cable-process-03",
+      "videoId": "0CT-mT2Gm5s",
+      "sectionId": "c1-cable-design-process",
+      "step": 3,
+      "url": "https://www.youtube.com/watch?v=0CT-mT2Gm5s",
+      "sourceTitle": "Step 3 - Calculate Iz new - 7 Part Series - Cable Selection",
+      "durationSeconds": 424,
+      "durationSource": "YouTube channel video accessibility label",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 190,
+        "captionEndSeconds": 425.18,
+        "sha256": "f9922f818e3da259dad8a2d7ae0bfbfe739c22fc12931b9e031c4bdfcf750d27",
+        "rawExportSha256": "47755d94f0dedd674a09546598c8372f8c94ec2fcf252c24cc884d7f211e482e",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 425.18
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed; automatic transcription can misrender symbols and numbers. This is not frame-by-frame review."
+      },
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "teachingNote": "Dividing the device rating by the applicable rating factors gives the required tabulated capacity (It). The installed capacity (Iz) is the selected table rating multiplied by those factors. Keep the unrounded requirement when selecting a cable."
+    },
+    {
+      "lessonId": "c1-cable-process-04",
+      "videoId": "Ip2QJBOdalo",
+      "sectionId": "c1-cable-design-process",
+      "step": 4,
+      "url": "https://www.youtube.com/watch?v=Ip2QJBOdalo",
+      "sourceTitle": "Step 4 - Select cable size & determine installation reference method - 4/7 - Cable Selection",
+      "durationSeconds": 545,
+      "durationSource": "YouTube channel video accessibility label",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 249,
+        "captionEndSeconds": 546.2,
+        "sha256": "51800f6bfb121d5abd756adbc3387cf957770d2cfbc7901cda44cc7693ac1f7c",
+        "rawExportSha256": "3c641d47cae2a311150cb856bb13fb4b946dd9710b044232de6f97a16f8e87db",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 546.2
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed; automatic transcription can misrender symbols and numbers. This is not frame-by-frame review."
+      },
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "teachingNote": "Choose the correct cable-type table and installation-method column. For these examples, 13 A and 23 A are table ratings; applying the temperature factors gives installed capacities of 11.31 A and 21.62 A."
+    },
+    {
+      "lessonId": "c1-cable-process-05",
+      "videoId": "vSKzLpKJMLE",
+      "sectionId": "c1-cable-design-process",
+      "step": 5,
+      "url": "https://www.youtube.com/watch?v=vSKzLpKJMLE",
+      "sourceTitle": "Step 5 - Calculate Voltage Drop - 7 Part Series - Cable Selection",
+      "durationSeconds": 423,
+      "durationSource": "YouTube channel video accessibility label",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 183,
+        "captionEndSeconds": 423.979,
+        "sha256": "c128bbc5e6d6db31f9724ff994a4a127e9a08bae4459b744a3b89829bac7fddf",
+        "rawExportSha256": "704ee94ae2e03dca733b1c6814977d3e8960df71c0e861d7e1c8ea2fcd56bb63",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 423.979
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed; automatic transcription can misrender symbols and numbers. This is not frame-by-frame review."
+      },
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "teachingNote": "Follow each example through the voltage-drop calculation. The next three-phase lesson extends this to the combined drop in a submain and final circuit."
+    },
+    {
+      "lessonId": "c1-cable-process-06",
+      "videoId": "-wi6pJPBW30",
+      "sectionId": "c1-cable-design-process",
+      "step": 6,
+      "url": "https://www.youtube.com/watch?v=-wi6pJPBW30",
+      "sourceTitle": "Step 6 - Calculate R1+R2 - 7 Part Series - Cable Selection",
+      "durationSeconds": 525,
+      "durationSource": "YouTube channel video accessibility label",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 220,
+        "captionEndSeconds": 526.399,
+        "sha256": "8d19545760300857df43de6dc3c64215db53e92d49d59b3f7ba7c56c17a2af9c",
+        "rawExportSha256": "b1e7cc40231bfede0d327b3a661de07578ea09bb5d2dfdbbb9600bc2aecbf3be",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 526.399
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed; automatic transcription can misrender symbols and numbers. This is not frame-by-frame review."
+      },
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "teachingNote": "R1 + R2 combines line-conductor and circuit protective conductor resistance. Apply the operating-temperature multiplier and retain full precision until the final answer."
+    },
+    {
+      "lessonId": "c1-cable-process-07",
+      "videoId": "tRF0Y2MaQ5g",
+      "sectionId": "c1-cable-design-process",
+      "step": 7,
+      "url": "https://www.youtube.com/watch?v=tRF0Y2MaQ5g",
+      "sourceTitle": "Step 7 Calculate Zs - 7 Part Series - Cable Selection",
+      "durationSeconds": 591,
+      "durationSource": "YouTube channel video accessibility label",
+      "transcript": {
+        "provider": "YTTools public English captions",
+        "language": [
+          "en"
+        ],
+        "captionSegments": 240,
+        "captionEndSeconds": 592.76,
+        "sha256": "08305d076910d6f13d0aae840a0c61571fe6c3132f762c11e55fcd469eb60573",
+        "rawExportSha256": "ed4ac0eaecd0594da8a66f2a807473e52a5168be83451e93b5e81ece0e0ebbbd",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 592.76
+          }
+        ],
+        "reviewQualification": "Complete available English caption text reviewed; automatic transcription can misrender symbols and numbers. This is not frame-by-frame review."
+      },
+      "availability": {
+        "oembedAvailable": true,
+        "playbackVerified": false
+      },
+      "teachingNote": "Use verified external loop impedance (Ze), then add R1 + R2 at the design temperature. Compare with the matching design limit; measured ambient-temperature limits already include a temperature allowance."
+    }
+  ]
+}

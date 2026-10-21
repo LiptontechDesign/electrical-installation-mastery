@@ -70,7 +70,9 @@ const canonical=new Set(course.modules.flatMap(m=>m.lessons.map(l=>l.videoId)));
 export const crossPathSupplementaryVideoIds = new Set(['wAcqKNBxy-w', ...c1GapFill.repeats.map(video => video.videoId)]);
 const c1GapFillVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => c1GapFill.addedLessonIds.includes(lesson.id)).map(lesson => lesson.videoId);
 const c1GeneratorVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => c1GeneratorUpdate.addedLessonIds.includes(lesson.id)).map(lesson => lesson.videoId);
-const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds, ...c1Update.repeatableVideoIds, ...c1GapFillVideoIds, ...c1FlowUpdate.repeatableVideoIds, ...c1ApplicationUpdate.repeatableVideoIds, ...c1GeneratorVideoIds]);
+const c1CableDesignLessonIds = new Set(learningSections.find(section => section.id === 'c1-cable-design-process')?.lessonIds ?? []);
+const c1CableDesignVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => c1CableDesignLessonIds.has(lesson.id)).map(lesson => lesson.videoId);
+const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds, ...c1Update.repeatableVideoIds, ...c1GapFillVideoIds, ...c1FlowUpdate.repeatableVideoIds, ...c1ApplicationUpdate.repeatableVideoIds, ...c1GeneratorVideoIds, ...c1CableDesignVideoIds]);
 const seedLocations=new Map<string,string>(locations);
 const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>{
   const moduleId=seedLocations.get(anchorId);

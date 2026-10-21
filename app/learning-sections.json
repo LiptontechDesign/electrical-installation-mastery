@@ -1222,9 +1222,25 @@
     ]
   },
   {
-    "id": "c1-design-section-2",
+    "id": "c1-cable-design-process",
     "moduleId": "c1-design",
     "number": 5,
+    "title": "Seven-Step Cable Design: From Load Current to Fault Checks",
+    "lessonIds": [
+      "c1-cable-process-01",
+      "c1-cable-process-02",
+      "c1-cable-process-03",
+      "c1-cable-process-04",
+      "c1-cable-process-05",
+      "c1-cable-process-06",
+      "c1-cable-process-07"
+    ],
+    "description": "Follow the same lighting and socket circuits through all seven steps: load current, protective device, rating factors, cable size, voltage drop, conductor resistance and earth-fault loop impedance. Then apply the method to the three-phase worked examples below."
+  },
+  {
+    "id": "c1-design-section-2",
+    "moduleId": "c1-design",
+    "number": 6,
     "title": "Design current, correction factors and cable current capacity",
     "lessonIds": [
       "p06-l05"
@@ -1233,7 +1249,7 @@
   {
     "id": "c1-design-voltage-drop",
     "moduleId": "c1-design",
-    "number": 6,
+    "number": 7,
     "title": "Add submain and final circuit voltage drop correctly",
     "lessonIds": [],
     "resource": {
@@ -1244,7 +1260,7 @@
   {
     "id": "c1-design-extension",
     "moduleId": "c1-design",
-    "number": 7,
+    "number": 8,
     "title": "Optional extension: larger buildings and transformer loading",
     "lessonIds": [
       "p07-l16"
