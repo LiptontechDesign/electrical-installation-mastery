@@ -11,6 +11,7 @@ Updated 21 October 2026. This index and the root README describe the current app
 - [Earth-electrode video selection](earth-electrode-video-selection.md): Module 5 sequence, verified creator links, electrode/test coverage and source limitations.
 - [C2 testing playlist integration](c2-testing-playlist-integration.md): approved JPElectric lessons, teaching order, excluded and retired videos, and preservation of personal course arrangements.
 - [Earthing, ADS and fault-loop learning order](earthing-ads-learning-order.md): revised Module 5 sections, conductor sizing in Module 6, bonding assessment in Module 8 and saved-course migration.
+- [C1 applied building, capacitor-bank and MDB examples](c1-rashid-worked-examples.md): three selected Rashid iqubal English-caption examples, prerequisite placements, technical qualifications and saved-course preservation.
 - [C1 connected seven-step cable design](c1-cable-design-series.md): complete EccElectric series before the detailed Module 8 calculations, English-caption review, terminology clarifications and saved-course preservation.
 - [C1 sixteen-module route](c1-focused-modules.md): independent C1 numbering, subject modules, prerequisites, EPRA scope, optional depth and saved-state preservation.
 - [C1 generator foundations and applications](c1-generator-learning.md): seven transcript-reviewed additions, a 16-minute foundation followed by UK equipment demonstrations, optional specialist controls, explicit remaining practical gaps and revision-12 preservation.

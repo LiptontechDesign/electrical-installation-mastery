@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), cableDesignIds=new Set(cableDesign.map(v=>v.id));
+const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json')].map(v=>v.id));
 await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.ts'],outdir:'work/c1-application-tests',bundle:true,platform:'node',format:'esm'});
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply,migratePersonalCourse}=await import('../work/c1-application-tests/personal-course-model.js');
 const {isRequiredStudyVideo:required,studyNoteFor:note}=await import('../work/c1-application-tests/course-curriculum.js');
@@ -15,11 +15,11 @@ assert.equal(prior.curriculumRevision,10);assert.equal(upgraded.curriculumRevisi
 assert.equal(Object.values(prior.groups).flat().length,464,'Fixture is the actual published revision-10 state');
 assert.deepEqual(upgraded.groups,base.groups,'Existing accounts receive the exact revision-11 sequence');
 assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!generators.addedLessonIds.includes(id)&&!cableDesignIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!generators.addedLessonIds.includes(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
 for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(generators.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Untouched groups retain their exact order: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids,'Published placement: '+id);
-assert.equal(c1.length, 151);assert.equal(view.allRows.length, 485);assert.equal(sections.length, 191);
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length, 86);
+assert.equal(c1.length, 154);assert.equal(view.allRows.length, 488);assert.equal(sections.length, 194);
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length, 89);
 for(const id of newIds){assert.ok(view.byId.has(id));assert.equal(required(id),true);}
 assert.equal(required('c1-wheatstone-bridge'),true);assert.equal(required('c1-lorenz-demonstration'),false);
 assert.match(core.get('c1-lorenz-demonstration').studyRole,/historical/);

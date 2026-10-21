@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {build} from 'esbuild';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), cableDesignIds=new Set(cableDesign.map(v=>v.id));
+const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json')].map(v=>v.id));
 await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.ts'],outdir:'work/c1-generator-tests',bundle:true,platform:'node',format:'esm'});
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply,migratePersonalCourse}=await import('../work/c1-generator-tests/personal-course-model.js');
 const {isRequiredStudyVideo:required}=await import('../work/c1-generator-tests/course-curriculum.js');
@@ -12,10 +12,10 @@ const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 const upgraded=parse(prior),view=snapshot(upgraded),order=view.allRows.map(r=>r.id);
 assert.equal(prior.curriculumRevision,11);assert.equal(Object.values(prior.groups).flat().length,471,'Fixture is the actual published pre-generator course');
 assert.equal(upgraded.curriculumRevision,13);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!cableDesignIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every original occurrence survives exactly once');
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every original occurrence survives exactly once');
 for(const [id,ids] of Object.entries(prior.groups))if(!Object.hasOwn(update.previous,id))assert.deepEqual(upgraded.groups[id],ids,'Other saved groups remain unchanged: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids);
-assert.equal(view.allRows.length, 485);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length, 151);assert.equal(sections.length, 191);
+assert.equal(view.allRows.length, 488);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length, 154);assert.equal(sections.length, 194);
 const before=(a,b)=>assert.ok(order.indexOf(a)>=0&&order.indexOf(a)<order.indexOf(b),a+' must precede '+b);
 for(const [a,b] of [
  ['c1-ac-generation','c1-generator-set-overview'],['p07-l03','c1-generator-set-overview'],['c1-power-triangle-foundation','c1-generator-set-overview'],

@@ -2,7 +2,7 @@
 
 Follow the sections in order. C1 has its own Module 1–16 numbering. It builds on the C2 foundations, with selected reminders included. See the [current route and EPRA mapping](c1-focused-modules.md). The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
 
-86 sections · 151 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md). [Connected seven-step cable design](c1-cable-design-series.md).
+89 sections · 154 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md). [Connected seven-step cable design](c1-cable-design-series.md). [Rashid iqubal applied examples](c1-rashid-worked-examples.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -178,18 +178,24 @@ Follow the sections in order. C1 has its own Module 1–16 numbering. It builds 
   This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
 - [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
 
-### 4. Synchronous condensers: another source of reactive-power compensation
+### 4. Applied example: capacitor-bank steps and protection
+
+- [Capacitor-Bank Selection and Protection: A 200 kW Worked Example](https://www.youtube.com/watch?v=vbytmPtvZi4) — Rashid iqubal; Optional applied example.
+
+  The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall.
+
+### 5. Synchronous condensers: another source of reactive-power compensation
 
 - [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
 
-### 5. Further study: complex numbers and conjugates for AC calculations
+### 6. Further study: complex numbers and conjugates for AC calculations
 
 - [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
 - [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
 
   Mathematical i is the same imaginary unit written j in electrical engineering.
 
-### 6. Further study: complex power and combined-load correction
+### 7. Further study: complex power and combined-load correction
 
 - [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
 
@@ -322,11 +328,17 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
 ## C1 Module 10: Submains and Board Installation
 
-### 1. Submain installation: SWA terminations and switch-fuse connections
+### 1. Worked Building Design: From Loads to Feeders
+
+- [Residential Building Design: Loads, Boards, Transformer and Feeders](https://www.youtube.com/watch?v=HmgqGPzYSMs) — Rashid iqubal; Optional applied example.
+
+  Worked comparison; verify its assumed demand factors and margins. Breaking capacity does not establish selectivity: check actual fault levels and manufacturer coordination data. Two 490 A cables derated by 0.8 provide 784 A; verify the overload setting of an 800 A frame. Complete phase balancing, full-route voltage drop and protective-conductor/fault checks before adopting the design.
+
+### 2. Submain installation: SWA terminations and switch-fuse connections
 
 - [Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)](https://www.youtube.com/watch?v=zSw0mVzcQ4A) — GSH Electrical; Applied practical.
 
-### 2. Three-phase board assembly, terminations and workmanship
+### 3. Three-phase board assembly, terminations and workmanship
 
 - [SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION](https://www.youtube.com/watch?v=_nba6f8ClgM) — eFIXX; Applied practical.
 - [THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES](https://www.youtube.com/watch?v=MNy60muYklo) — eFIXX; Applied practical.
@@ -535,6 +547,12 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 - [Follow a Real Standby Setup: Generator, ATS, Consumer Unit and Load](https://www.youtube.com/watch?v=jwBI-rd3-I4) — ThePowerSite Ltd; Core application.
 
   Trace mains and generator feeds → ATS → consumer unit → load; distinguish control/charging from output power. This is a functional demonstration, not a wiring or commissioning procedure. Do not copy the indoor engine location. Reapply the earlier verification lessons in both supply modes.
+
+### 2. Main distribution boards, bus couplers and automatic transfer
+
+- [Main Distribution Boards: Incomers, Bus Couplers and Generator Transfer](https://www.youtube.com/watch?v=j78uOSXYuOE) — Rashid iqubal; Optional applied example.
+
+  ATS = automatic transfer switch; ACB = air circuit breaker. Open-transition transfer prevents unintended source paralleling and interrupts supply; a suitable UPS supports only its connected loads during transfer. Use the actual design for neutral/earthing, load shedding, selectivity and timing.
 
 ## C1 Module 16: Fault Diagnosis
 

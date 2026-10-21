@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
-import { connectedProcessAdditions, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions } from './assert-c2-reorganization.mjs';
+import { connectedProcessAdditions, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions } from './assert-c2-reorganization.mjs';
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-order-model.ts', 'app/course-progress-model.ts'], outdir: 'work/process-tests', bundle: true, platform: 'node', format: 'esm' });
 const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCourseSnapshot: snapshot, applyCourseEdit: apply } = await import('../work/process-tests/personal-course-model.js');
 const { orderedSections } = await import('../work/process-tests/course-order-model.js');
@@ -9,7 +9,7 @@ const { progressForVideos } = await import('../work/process-tests/course-progres
 const read = path => JSON.parse(readFileSync(path, 'utf8'));
 const before = read('scripts/fixtures/connected-process-previous.json'), original = structuredClone(before);
 const update = read('app/connected-process-update.json'), sections = read('app/learning-sections.json');
-const newIds = new Set([...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions].map(lesson => lesson.id));
+const newIds = new Set([...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions].map(lesson => lesson.id));
 const upgraded = parse(before), view = snapshot(upgraded);
 const lessons = new Map(view.course.modules.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
 assert.equal(before.curriculumRevision, 5);
@@ -21,9 +21,9 @@ assert.deepEqual(upgraded.groups, base.groups, 'A revision-5 saved course receiv
 for (const [id, ids] of Object.entries(before.groups).filter(([id])=>!Object.hasOwn(JSON.parse(readFileSync('app/c1-learning-update.json','utf8')).previous,id))) assert.deepEqual(upgraded.groups[id], ids, 'Every existing section retains its exact order: ' + id);
 assert.deepEqual(upgraded.videos.filter(v=>!v.id.startsWith('c1-')), before.videos.filter(v=>!v.id.startsWith('c1-')), 'Existing supporting-video details remain unchanged');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)).sort(), Object.values(before.groups).flat().sort(), 'Every previous occurrence retains its place in the overall sequence');
-assert.equal(view.course.lessonCount, 453);
-assert.equal(view.allRows.length, 485);
-assert.equal(sections.length, 191);
+assert.equal(view.course.lessonCount, 456);
+assert.equal(view.allRows.length, 488);
+assert.equal(sections.length, 194);
 assert.deepEqual(update.overviewLessonIds, connectedProcessAdditions.map(lesson => lesson.id));
 const expected = [
   ['c2-boards', ['62lEhAuzeAI', 'dlkxzIQFvrk']],
@@ -45,7 +45,7 @@ const marked = new Set(['p03-l12', 'p08-l14', 'p09-l01']);
 const oldProgress = progressForVideos(Object.values(before.groups).flat(), marked);
 const newProgress = progressForVideos(view.allRows.map(row => row.id), marked);
 assert.equal(newProgress.watched, oldProgress.watched);
-assert.equal(newProgress.total, oldProgress.total + 14 + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length);
+assert.equal(newProgress.total, oldProgress.total + 14 + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length);
 assert.equal(progressForVideos(update.overviewLessonIds, marked).watched, 0, 'Repeated videos have independent watched occurrences');
 
 // Personal copies must survive when their YouTube videos become canonical.

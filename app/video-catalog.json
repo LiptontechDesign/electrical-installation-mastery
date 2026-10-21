@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 453,
-  "duration": "104 h 27 min",
+  "lessonCount": 456,
+  "duration": "105 h 17 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -4667,8 +4667,8 @@
       "number": 15,
       "title": "Power-Factor Correction",
       "description": "Build on AC-power calculations to explain the causes and consequences of poor power factor. Choose a target, size capacitor compensation and compare a synchronous condenser. Motor/drive-specific capacitor placement follows the motor-control lessons; complex-number derivations are further study.",
-      "duration": "2 h 2 min",
-      "durationSeconds": 7324,
+      "duration": "2 h 13 min",
+      "durationSeconds": 7967,
       "learningOutcome": "Build on AC-power calculations to explain the causes and consequences of poor power factor. Choose a target, size capacitor compensation and compare a synchronous condenser. Motor/drive-specific capacitor placement follows the motor-control lessons; complex-number derivations are further study.",
       "lessons": [
         {
@@ -4720,6 +4720,22 @@
           "studyNote": "This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95."
         },
         {
+          "id": "c1-rashid-capacitor-bank",
+          "number": 4,
+          "title": "Capacitor-Bank Selection and Protection: A 200 kW Worked Example",
+          "videoId": "vbytmPtvZi4",
+          "url": "https://www.youtube.com/watch?v=vbytmPtvZi4",
+          "instructor": "Rashid iqubal",
+          "duration": "10:43",
+          "durationSeconds": 643,
+          "topic": "Applied example: capacitor-bank steps and protection",
+          "layer": "HOW + REQUIREMENT",
+          "regulationSensitive": true,
+          "studyRole": "Optional applied example",
+          "required": false,
+          "studyNote": "The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall."
+        },
+        {
           "id": "c1-synchronous-condenser-overview",
           "videoId": "6U_rO5FWW0Y",
           "instructor": "Flirting with Technology",
@@ -4732,7 +4748,7 @@
           "required": true,
           "url": "https://www.youtube.com/watch?v=6U_rO5FWW0Y",
           "duration": "1:53",
-          "number": 4
+          "number": 5
         },
         {
           "videoId": "GfihUkWPCQQ",
@@ -4741,7 +4757,7 @@
           "durationSeconds": 1468,
           "regulationSensitive": false,
           "id": "c1-complex-number-foundation",
-          "number": 5,
+          "number": 6,
           "title": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
           "url": "https://www.youtube.com/watch?v=GfihUkWPCQQ",
           "topic": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
@@ -4756,7 +4772,7 @@
           "durationSeconds": 241,
           "regulationSensitive": false,
           "id": "c1-complex-conjugate-foundation",
-          "number": 6,
+          "number": 7,
           "title": "Complex Conjugates: Change the Imaginary Sign and Multiply",
           "url": "https://www.youtube.com/watch?v=dbxJ6LD0344",
           "topic": "Complex Conjugates: Change the Imaginary Sign and Multiply",
@@ -4773,7 +4789,7 @@
           "durationSeconds": 2834,
           "regulationSensitive": false,
           "id": "c1-shunt-pfc-examples",
-          "number": 7,
+          "number": 8,
           "title": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "topic": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "layer": "WHY",
@@ -5300,8 +5316,24 @@
       "classification": "C1 CORE",
       "lessons": [
         {
-          "id": "p07-l08",
+          "id": "c1-rashid-building-design",
           "number": 1,
+          "title": "Residential Building Design: Loads, Boards, Transformer and Feeders",
+          "videoId": "HmgqGPzYSMs",
+          "url": "https://www.youtube.com/watch?v=HmgqGPzYSMs",
+          "instructor": "Rashid iqubal",
+          "duration": "28:04",
+          "durationSeconds": 1684,
+          "topic": "Worked Building Design: From Loads to Feeders",
+          "layer": "HOW + REQUIREMENT",
+          "regulationSensitive": true,
+          "studyRole": "Optional applied example",
+          "required": false,
+          "studyNote": "Worked comparison; verify its assumed demand factors and margins. Breaking capacity does not establish selectivity: check actual fault levels and manufacturer coordination data. Two 490 A cables derated by 0.8 provide 784 A; verify the overload setting of an 800 A frame. Complete phase balancing, full-route voltage drop and protective-conductor/fault checks before adopting the design."
+        },
+        {
+          "id": "p07-l08",
+          "number": 2,
           "title": "Sub-Main SWA Circuit and the Connections in our Wylex DSF60M Switch-Disconnector Fuse (Switch Fuse)",
           "videoId": "zSw0mVzcQ4A",
           "url": "https://www.youtube.com/watch?v=zSw0mVzcQ4A",
@@ -5316,7 +5348,7 @@
         },
         {
           "id": "p10-l06",
-          "number": 2,
+          "number": 3,
           "title": "SCHNEIDER Acti 9 THREE PHASE DISTRIBUTION BOARD INSTALLATION",
           "videoId": "_nba6f8ClgM",
           "url": "https://www.youtube.com/watch?v=_nba6f8ClgM",
@@ -5331,7 +5363,7 @@
         },
         {
           "id": "p10-l07",
-          "number": 3,
+          "number": 4,
           "title": "THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES",
           "videoId": "MNy60muYklo",
           "url": "https://www.youtube.com/watch?v=MNy60muYklo",
@@ -5346,7 +5378,7 @@
         },
         {
           "id": "p07-l09",
-          "number": 4,
+          "number": 5,
           "title": "Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell",
           "videoId": "c6YyObUS4Mk",
           "url": "https://www.youtube.com/watch?v=c6YyObUS4Mk",
@@ -5360,8 +5392,8 @@
           "required": false
         }
       ],
-      "durationSeconds": 1906,
-      "duration": "32 min"
+      "durationSeconds": 3590,
+      "duration": "1 h 0 min"
     },
     {
       "id": "c1-motors",
@@ -6119,10 +6151,26 @@
           "regulationSensitive": true,
           "studyRole": "Core application",
           "required": true
+        },
+        {
+          "id": "c1-rashid-mdb-transfer",
+          "number": 6,
+          "title": "Main Distribution Boards: Incomers, Bus Couplers and Generator Transfer",
+          "videoId": "j78uOSXYuOE",
+          "url": "https://www.youtube.com/watch?v=j78uOSXYuOE",
+          "instructor": "Rashid iqubal",
+          "duration": "11:23",
+          "durationSeconds": 683,
+          "topic": "Main distribution boards, bus couplers and automatic transfer",
+          "layer": "HOW + REQUIREMENT",
+          "regulationSensitive": true,
+          "studyRole": "Optional applied example",
+          "required": false,
+          "studyNote": "ATS = automatic transfer switch; ACB = air circuit breaker. Open-transition transfer prevents unintended source paralleling and interrupts supply; a suitable UPS supports only its connected loads during transfer. Use the actual design for neutral/earthing, load shedding, selectivity and timing."
         }
       ],
-      "durationSeconds": 1838,
-      "duration": "31 min"
+      "durationSeconds": 2521,
+      "duration": "42 min"
     },
     {
       "id": "c1-faults",
@@ -7477,5 +7525,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 376020
+  "durationSeconds": 379030
 }

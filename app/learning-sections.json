@@ -1131,18 +1131,27 @@
     }
   },
   {
+    "id": "c1-pfc-bank-protection",
+    "moduleId": "c1-pfc",
+    "number": 4,
+    "title": "Applied example: capacitor-bank steps and protection",
+    "lessonIds": [
+      "c1-rashid-capacitor-bank"
+    ]
+  },
+  {
     "id": "c1-pfc-synchronous-condenser",
     "moduleId": "c1-pfc",
     "title": "Synchronous condensers: another source of reactive-power compensation",
     "lessonIds": [
       "c1-synchronous-condenser-overview"
     ],
-    "number": 4
+    "number": 5
   },
   {
     "id": "c1-pfc-complex-tools",
     "moduleId": "c1-pfc",
-    "number": 5,
+    "number": 6,
     "title": "Further study: complex numbers and conjugates for AC calculations",
     "lessonIds": [
       "c1-complex-number-foundation",
@@ -1152,7 +1161,7 @@
   {
     "id": "c1-pfc-shunt-examples",
     "moduleId": "c1-pfc",
-    "number": 6,
+    "number": 7,
     "title": "Further study: complex power and combined-load correction",
     "lessonIds": [
       "c1-shunt-pfc-examples"
@@ -1336,9 +1345,18 @@
     ]
   },
   {
-    "id": "c1-distribution-submains",
+    "id": "c1-building-design-capstone",
     "moduleId": "c1-installation",
     "number": 1,
+    "title": "Worked Building Design: From Loads to Feeders",
+    "lessonIds": [
+      "c1-rashid-building-design"
+    ]
+  },
+  {
+    "id": "c1-distribution-submains",
+    "moduleId": "c1-installation",
+    "number": 2,
     "title": "Submain installation: SWA terminations and switch-fuse connections",
     "lessonIds": [
       "p07-l08"
@@ -1351,7 +1369,7 @@
   {
     "id": "c1-distribution-installation",
     "moduleId": "c1-installation",
-    "number": 2,
+    "number": 3,
     "title": "Three-phase board assembly, terminations and workmanship",
     "lessonIds": [
       "p10-l06",
@@ -1649,6 +1667,15 @@
       "c1-generator-three-phase-changeover",
       "c1-generator-prestart-checks",
       "c1-generator-transfer-operation"
+    ]
+  },
+  {
+    "id": "c1-standby-mdb-transfer",
+    "moduleId": "c1-standby",
+    "number": 2,
+    "title": "Main distribution boards, bus couplers and automatic transfer",
+    "lessonIds": [
+      "c1-rashid-mdb-transfer"
     ]
   },
   {
