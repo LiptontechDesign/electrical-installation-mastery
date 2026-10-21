@@ -18,6 +18,8 @@ Read README.md and docs/README.md for the current application contract. This is 
 
 ## C1 video selection
 
+Prefer UK teachers, then suitable English-speaking teachers elsewhere. Avoid Hindi videos. Use an India-based teacher only if no suitable UK or other non-India alternative is found, and record the reason for the exception. This applies to new selections; do not remove existing lessons solely on location.
+
 The user requires English spoken teaching and complete available transcript review before selecting C1 videos. Evaluate explanation quality, technical accuracy and teaching flow rather than relying on a title. A translated caption export does not establish the original audio language; resolve English audio/track evidence and label any translated review honestly. See `docs/c1-motor-transcript-audit.md` for the current motor-specific evidence and remaining gaps.
 
 ## Standalone practice centre — explicitly requested September 2026

@@ -79,7 +79,9 @@
     "test:c1-rashid": "node scripts/test-c1-rashid.mjs",
     "test:c1-rashid-browser": "node scripts/test-c1-rashid-browser.mjs",
     "test:c1-protection": "node scripts/test-c1-protection.mjs",
-    "test:c1-protection-browser": "node scripts/test-c1-protection-browser.mjs"
+    "test:c1-protection-browser": "node scripts/test-c1-protection-browser.mjs",
+    "test:c1-motor-gap-fill": "node scripts/test-c1-motor-gap-fill.mjs",
+    "test:c1-motor-gap-browser": "node scripts/test-c1-motor-gap-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

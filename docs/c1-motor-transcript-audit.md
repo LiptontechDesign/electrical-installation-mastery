@@ -192,3 +192,7 @@ Recommended additions above are based on observed paper tasks. A new lesson shou
 The structured audit was checked against a fresh build of the actual published mixed-course model: all 30 motor-module rows appear exactly once, every reviewed video resolves, all 46 requirement IDs are unique, all paper references resolve and evidence ranges remain within the available captions (rounded seconds). Transcript hashes identify the exact locally retained material; full copyrighted transcripts and exam scans are excluded from Git. Independent calculation checks above use the stated data, not third-party answer keys.
 
 Passed: the audit's inventory/hash/reference/language/arithmetic checks; `node scripts/test-past-papers.mjs` (87 authored questions, 234 valid LaTeX expressions, 12 diagrams); `node scripts/test-epra.mjs` (688 complete protected source pairs and exact hashes); and `node scripts/audit-course-integrity.mjs` (471 catalogue lessons, 32 modules and retained application architecture). This change documents findings and the English-selection requirement; it does not change runtime curriculum, paper answers or personal records.
+
+## Follow-up additions — 21 October 2026
+
+The audit above records the pre-addition course and retains its original verdicts. See [the subsequent twelve-video gap fill](c1-motor-gap-fill.md) and [selection evidence](c1-motor-gap-video-review.json) for the added teaching and remaining limits. This does not turn every partial historical requirement into a complete observed practical demonstration.

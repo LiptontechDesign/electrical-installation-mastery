@@ -7,7 +7,7 @@ const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCours
 const { isRequiredStudyVideo: required } = await import('../work/c1-module-tests/course-curriculum.js');
 const { progressForVideos } = await import('../work/c1-module-tests/course-progress-model.js');
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
-const laterAdditionIds = new Set([...read('scripts/fixtures/c1-cable-design-additions.json'), ...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json')].map(v => v.id));
+const laterAdditionIds = new Set([...read('scripts/fixtures/c1-cable-design-additions.json'), ...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id}))].map(v => v.id));
 const prior = read('scripts/fixtures/c1-modules-previous.json'), untouched = structuredClone(prior);
 const update = read('app/c1-module-update.json'), upgraded = parse(prior), view = snapshot(upgraded);
 const modules = view.course.modules.filter(m => m.path === 'C1');
@@ -18,7 +18,7 @@ assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every stable section retains its exact mixed row order: ' + id);
 assert.deepEqual(parse(upgraded), upgraded, 'Reloading the new revision is idempotent');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !laterAdditionIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
-assert.equal(view.allRows.length, 503);
+assert.equal(view.allRows.length, 515);
 assert.equal(modules.length, 17);
 assert.deepEqual(modules.map(m => m.id), read('app/c1-protection-update.json').moduleOrder);
 assert.deepEqual(modules.map(m => m.title), [
@@ -49,7 +49,8 @@ for (const pair of [
  ['c1-certification-foundation', 'c1-generator-site-planning'], ['c1-generator-neutral-transfer', 'c1-generator-three-phase-changeover'],
  ['c1-generator-prestart-checks', 'c1-generator-transfer-operation'], ['c1-generator-transfer-operation', 'c1-motor-winding-tests'],
 ]) before(...pair);
-for (const id of ['c1-stepper-motor-principles', 'c1-servo-motor-feedback', 'c1-switchgear-compartments']) assert.equal(required(id), false);
+for (const id of ['c1-stepper-motor-principles', 'c1-servo-motor-feedback']) assert.equal(required(id), true);
+assert.equal(required('c1-switchgear-compartments'), false);
 assert.equal(view.byId.get('c1-switchgear-compartments').moduleId, 'professional-cables', 'MV equipment stays outside the C1 LV route');
 for (const id of ['p07-l08', 'p10-l06', 'p10-l07', 'p07-l09']) assert.equal(view.byId.get(id).moduleId, 'c1-installation');
 assert.equal(view.byId.get('c1-periodic-reporting').moduleId, 'c1-periodic');

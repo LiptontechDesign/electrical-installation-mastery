@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
-import { browser, fixture } from './personal-course-browser-fixture.mjs';
+import { browser, fixture, openCourseTools } from './personal-course-browser-fixture.mjs';
 try {
  const f = await fixture(); const {page} = f;
+ await openCourseTools(page);
  await page.getByRole('button', {name:'Add video',exact:true}).click();
  const dialog = page.getByRole('dialog',{name:'Add a video',exact:true});
  await dialog.getByLabel('YouTube link',{exact:true}).fill('https://youtu.be/abcdefghijk');
@@ -22,6 +23,7 @@ try {
  assert.deepEqual(f.errors,[]);
  await f.context.close();
  const mobile=await fixture({mobile:true});
+ await openCourseTools(mobile.page);
  await mobile.page.getByRole('button',{name:'Add video',exact:true}).click();
  await mobile.page.getByRole('dialog',{name:'Add a video',exact:true}).waitFor();
  await mobile.page.keyboard.press('Escape');

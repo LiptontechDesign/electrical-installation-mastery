@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "revision": 13,
+  "addedLessonIds": [
+    "c1-pfc-single-phase-target",
+    "c1-pfc-automatic-bank-demo",
+    "c1-pfc-svc-principle",
+    "c1-wound-rotor-starting",
+    "c1-single-phase-type-comparison",
+    "c1-shaded-pole-principle",
+    "c1-synchronous-motor-foundation",
+    "c1-synchronous-hunting",
+    "c1-dol-no-voltage-release",
+    "c1-star-delta-control-manual",
+    "c1-star-delta-timer-control",
+    "c1-motor-symptom-diagnosis"
+  ],
+  "addedSectionIds": [
+    "c1-pfc-single-phase-worked",
+    "c1-pfc-automatic-bank",
+    "c1-pfc-static-var",
+    "c1-motors-wound-rotor",
+    "c1-motors-single-phase-types",
+    "c1-motors-synchronous",
+    "c1-motors-hunting",
+    "c1-controls-no-voltage-release",
+    "c1-controls-star-delta-circuits",
+    "c1-faults-motor-diagnosis"
+  ],
+  "reclassifiedLessonIds": [
+    "c1-stepper-motor-principles",
+    "c1-servo-motor-feedback"
+  ],
+  "preservation": "Pure additions: keep revision 13, every existing identity and saved group placement.",
+  "titleUpdates": {
+    "p07-star-delta": "Star–Delta Starting: Power Circuit and Changeover"
+  }
+}
