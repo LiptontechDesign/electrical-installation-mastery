@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 471,
-  "duration": "107 h 38 min",
+  "lessonCount": 483,
+  "duration": "110 h 35 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -4667,8 +4667,8 @@
       "number": 15,
       "title": "Power-Factor Correction",
       "description": "Build on AC-power calculations to explain the causes and consequences of poor power factor. Choose a target, size capacitor compensation and compare a synchronous condenser. Motor/drive-specific capacitor placement follows the motor-control lessons; complex-number derivations are further study.",
-      "duration": "2 h 13 min",
-      "durationSeconds": 7967,
+      "duration": "2 h 57 min",
+      "durationSeconds": 10622,
       "learningOutcome": "Build on AC-power calculations to explain the causes and consequences of poor power factor. Choose a target, size capacitor compensation and compare a synchronous condenser. Motor/drive-specific capacitor placement follows the motor-control lessons; complex-number derivations are further study.",
       "lessons": [
         {
@@ -4704,8 +4704,24 @@
           "studyNote": "Use electrical input kW; convert shaft output through efficiency first."
         },
         {
-          "id": "c1-pfc-unity-bank",
+          "id": "c1-pfc-single-phase-target",
           "number": 3,
+          "title": "Single-Phase Motor Power-Factor Correction: Two Complete Worked Examples",
+          "videoId": "MWCqtJfQUt0",
+          "url": "https://www.youtube.com/watch?v=MWCqtJfQUt0",
+          "instructor": "Red Seal Electrician",
+          "duration": "25:54",
+          "durationSeconds": 1554,
+          "topic": "Single-phase motor correction: from current and power factor to microfarads",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core worked example",
+          "required": true,
+          "studyNote": "Examples use 120 V, 60 Hz. Use the question’s voltage/frequency; if shaft output is given, first use electrical input = shaft output/efficiency. Correction reduces supply current; motor-branch current and working kW do not automatically fall."
+        },
+        {
+          "id": "c1-pfc-unity-bank",
+          "number": 4,
           "title": "Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank",
           "videoId": "q5xjqXcCqNw",
           "url": "https://www.youtube.com/watch?v=q5xjqXcCqNw",
@@ -4721,7 +4737,7 @@
         },
         {
           "id": "c1-rashid-capacitor-bank",
-          "number": 4,
+          "number": 5,
           "title": "Capacitor-Bank Selection and Protection: A 200 kW Worked Example",
           "videoId": "vbytmPtvZi4",
           "url": "https://www.youtube.com/watch?v=vbytmPtvZi4",
@@ -4736,6 +4752,22 @@
           "studyNote": "The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall."
         },
         {
+          "id": "c1-pfc-automatic-bank-demo",
+          "number": 6,
+          "title": "Automatic Capacitor Banks: Schematic, Switching Steps and Target Power Factor",
+          "videoId": "FyGr8yMOGf8",
+          "url": "https://www.youtube.com/watch?v=FyGr8yMOGf8",
+          "instructor": "Festo Didactic – LabVolt Series",
+          "duration": "16:35",
+          "durationSeconds": 995,
+          "topic": "Read a stepped capacitor-bank schematic and observe automatic correction",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core bank demonstration",
+          "required": true,
+          "studyNote": "The bench uses 45/90 var steps. Controller CT scaling changes displayed current/power units; those settings are not installation ratings. Use actual CT/bank data and keep discharge/switching delays appropriate to the equipment."
+        },
+        {
           "id": "c1-synchronous-condenser-overview",
           "videoId": "6U_rO5FWW0Y",
           "instructor": "Flirting with Technology",
@@ -4748,7 +4780,23 @@
           "required": true,
           "url": "https://www.youtube.com/watch?v=6U_rO5FWW0Y",
           "duration": "1:53",
-          "number": 5
+          "number": 7
+        },
+        {
+          "id": "c1-pfc-svc-principle",
+          "number": 8,
+          "title": "Static VAR Compensators: Another Way to Control Reactive Power",
+          "videoId": "Z2S0QfoiGmc",
+          "url": "https://www.youtube.com/watch?v=Z2S0QfoiGmc",
+          "instructor": "ABB production / Smart & Green Technologies",
+          "duration": "1:46",
+          "durationSeconds": 106,
+          "topic": "Static VAR compensation: controlled reactors and capacitors",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core short comparison",
+          "required": true,
+          "studyNote": "An SVC controls reactors and capacitors electronically; it is distinct from a rotating synchronous condenser and from a voltage-source STATCOM. This is a principle-level grid example."
         },
         {
           "videoId": "GfihUkWPCQQ",
@@ -4757,7 +4805,7 @@
           "durationSeconds": 1468,
           "regulationSensitive": false,
           "id": "c1-complex-number-foundation",
-          "number": 6,
+          "number": 9,
           "title": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
           "url": "https://www.youtube.com/watch?v=GfihUkWPCQQ",
           "topic": "Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic",
@@ -4772,7 +4820,7 @@
           "durationSeconds": 241,
           "regulationSensitive": false,
           "id": "c1-complex-conjugate-foundation",
-          "number": 7,
+          "number": 10,
           "title": "Complex Conjugates: Change the Imaginary Sign and Multiply",
           "url": "https://www.youtube.com/watch?v=dbxJ6LD0344",
           "topic": "Complex Conjugates: Change the Imaginary Sign and Multiply",
@@ -4789,7 +4837,7 @@
           "durationSeconds": 2834,
           "regulationSensitive": false,
           "id": "c1-shunt-pfc-examples",
-          "number": 8,
+          "number": 11,
           "title": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "topic": "Power Factor Correction: Parallel Capacitors and Combined Loads",
           "layer": "WHY",
@@ -5654,8 +5702,8 @@
       "number": 21,
       "title": "Motor Principles and Connections",
       "description": "Begin with the rotating field and induction motor, then read nameplates and connect shaft output, efficiency, electrical input and supply current. Develop slip, torque and winding connections before single-phase and DC motors; precision motors are further study.",
-      "duration": "2 h 59 min",
-      "durationSeconds": 10732,
+      "duration": "4 h 14 min",
+      "durationSeconds": 15268,
       "learningOutcome": "Begin with the rotating field and induction motor, then read nameplates and connect shaft output, efficiency, electrical input and supply current. Develop slip, torque and winding connections before single-phase and DC motors; precision motors are further study.",
       "lessons": [
         {
@@ -5738,6 +5786,22 @@
           "studyNote": "The final NEMA classifications are US examples; the torque–speed principles apply generally."
         },
         {
+          "id": "c1-wound-rotor-starting",
+          "number": 6,
+          "title": "Wound-Rotor Motors: Slip Rings, External Resistance and Starting Torque",
+          "videoId": "Bstjh1gMUYk",
+          "url": "https://www.youtube.com/watch?v=Bstjh1gMUYk",
+          "instructor": "Zack Hartle",
+          "duration": "7:37",
+          "durationSeconds": 457,
+          "topic": "Slip-ring motors: external rotor resistance and starting torque",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core motor-type lesson",
+          "required": true,
+          "studyNote": "External resistance is reduced as the motor accelerates. The quoted torque percentages and NEMA comparisons are examples, not universal values; resistance adjustment does not itself change the winding inductance."
+        },
+        {
           "videoId": "bytt0ZCJwRk",
           "url": "https://www.youtube.com/watch?v=bytt0ZCJwRk",
           "instructor": "LEARN ELECTRICS",
@@ -5745,7 +5809,7 @@
           "durationSeconds": 776,
           "regulationSensitive": false,
           "id": "c1-single-phase-motor-principles",
-          "number": 6,
+          "number": 7,
           "title": "Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal",
           "topic": "Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal",
           "layer": "WHY",
@@ -5761,13 +5825,45 @@
           "durationSeconds": 649,
           "regulationSensitive": false,
           "id": "c1-single-phase-reversing-switch",
-          "number": 7,
+          "number": 8,
           "title": "Wire and Test a Single-Phase Forward/Reverse Drum Switch",
           "topic": "Wire and Test a Single-Phase Forward/Reverse Drum Switch",
           "layer": "WHY",
           "studyRole": "Core lesson",
           "required": true,
           "studyNote": "Isolate and prove capacitors discharged before touching terminals."
+        },
+        {
+          "id": "c1-single-phase-type-comparison",
+          "number": 9,
+          "title": "Single-Phase Motor Types: Starting Torque, Run Capacitors and Winding Connections",
+          "videoId": "utbt6_XK4C8",
+          "url": "https://www.youtube.com/watch?v=utbt6_XK4C8",
+          "instructor": "Red Seal Electrician",
+          "duration": "15:34",
+          "durationSeconds": 934,
+          "topic": "Compare resistance-start, capacitor and shaded-pole motors",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core motor-type comparison",
+          "required": true,
+          "studyNote": "The start capacitor is disconnected after starting; the run capacitor remains with the auxiliary winding. North American terminal labels and supply examples are not universal: follow the motor’s connection diagram."
+        },
+        {
+          "id": "c1-shaded-pole-principle",
+          "number": 10,
+          "title": "Single-Phase Starting and Shaded-Pole Motors: Why Starting Torque Differs",
+          "videoId": "2XYdTogWcIA",
+          "url": "https://www.youtube.com/watch?v=2XYdTogWcIA",
+          "instructor": "Jeremy Fielding",
+          "duration": "12:20",
+          "durationSeconds": 740,
+          "topic": "Compare resistance-start, capacitor and shaded-pole motors",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core physical demonstration",
+          "required": true,
+          "studyNote": "Treat the hand-started motor as a concept demonstration; do not hand-start an energised machine. Shaded-pole motors have low starting torque. Start/run capacitor duty and the manufacturer’s diagram remain essential."
         },
         {
           "videoId": "GQatiB-JHdI",
@@ -5777,7 +5873,7 @@
           "durationSeconds": 932,
           "regulationSensitive": false,
           "id": "c1-dc-motor-commutation",
-          "number": 8,
+          "number": 11,
           "title": "DC Motors: Magnetic Force, Brushes and Commutation",
           "topic": "DC Motors: Magnetic Force, Brushes and Commutation",
           "layer": "WHY",
@@ -5792,12 +5888,44 @@
           "durationSeconds": 708,
           "regulationSensitive": false,
           "id": "c1-dc-winding-reversal",
-          "number": 9,
+          "number": 12,
           "title": "Reverse a Wound-Field DC Motor: Armature or Field Connections",
           "topic": "Reverse a Wound-Field DC Motor: Armature or Field Connections",
           "layer": "WHY",
           "studyRole": "Core lesson",
           "required": true
+        },
+        {
+          "id": "c1-synchronous-motor-foundation",
+          "number": 13,
+          "title": "Synchronous Motors: Constant Speed, Pull-Out Torque and Leading Power Factor",
+          "videoId": "wlj4Oy6aw6A",
+          "url": "https://www.youtube.com/watch?v=wlj4Oy6aw6A",
+          "instructor": "Jim Pytel",
+          "duration": "29:08",
+          "durationSeconds": 1748,
+          "topic": "Synchronous motors: load angle, pull-out and field excitation",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core synchronous-motor lesson",
+          "required": true,
+          "studyNote": "Speed stays synchronous while the motor remains in step. Field excitation changes reactive power and pull-out capability; the 60 Hz laboratory values are examples. Deliberate loss-of-step tests are supervised demonstrations."
+        },
+        {
+          "id": "c1-synchronous-hunting",
+          "number": 14,
+          "title": "Synchronous-Motor Hunting: Load-Angle Oscillation and Damper Windings",
+          "videoId": "etgmqvrKgYA",
+          "url": "https://www.youtube.com/watch?v=etgmqvrKgYA",
+          "instructor": "Education 4u",
+          "duration": "10:57",
+          "durationSeconds": 657,
+          "topic": "Synchronous hunting: causes, effects and damping",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "studyRole": "Core specialist explanation",
+          "required": true,
+          "studyNote": "Hunting is transient oscillation about the operating load angle. The 0–2δ graph is an idealised load-step illustration, not a universal amplitude. Damper windings reduce oscillations; steady synchronous speed does not exclude temporary speed deviations."
         },
         {
           "videoId": "09Mpkjcr0bo",
@@ -5807,12 +5935,12 @@
           "durationSeconds": 842,
           "regulationSensitive": false,
           "id": "c1-stepper-motor-principles",
-          "number": 10,
+          "number": 15,
           "title": "Stepper Motors: Winding Sequences, Steps and Position",
           "topic": "Stepper Motors: Winding Sequences, Steps and Position",
           "layer": "WHY",
-          "studyRole": "Optional further study",
-          "required": false
+          "studyRole": "Core motor-type lesson",
+          "required": true
         },
         {
           "videoId": "ditS0a28Sko",
@@ -5822,12 +5950,12 @@
           "durationSeconds": 945,
           "regulationSensitive": false,
           "id": "c1-servo-motor-feedback",
-          "number": 11,
+          "number": 16,
           "title": "Servo Motors: Command, Error and Position Feedback",
           "topic": "Servo Motors: Command, Error and Position Feedback",
           "layer": "WHY",
-          "studyRole": "Optional further study",
-          "required": false,
+          "studyRole": "Core motor-type lesson",
+          "required": true,
           "studyNote": "Removing power does not stop a rotating load instantly."
         },
         {
@@ -5838,7 +5966,7 @@
           "durationSeconds": 1967,
           "regulationSensitive": false,
           "id": "c1-torque-slip-operating-point",
-          "number": 12,
+          "number": 17,
           "title": "Torque–Slip Curve: Load Changes, Stable Operation and Stalling",
           "topic": "Torque–Slip Curve: Load Changes, Stable Operation and Stalling",
           "layer": "WHY",
@@ -5856,8 +5984,8 @@
       "number": 22,
       "title": "Motor Starting, Protection and Speed Control",
       "description": "Use motor nameplates and winding connections to understand contactors and protection, read and wire DOL circuits, then compare reversal and reduced-voltage starting. Introduce soft starters before VFD speed control and regenerative braking. Apply capacitor-placement precautions after the induction-motor and VFD lessons.",
-      "duration": "1 h 30 min",
-      "durationSeconds": 5392,
+      "duration": "2 h 20 min",
+      "durationSeconds": 8447,
       "learningOutcome": "Use motor nameplates and winding connections to understand contactors and protection, read and wire DOL circuits, then compare reversal and reduced-voltage starting. Introduce soft starters before VFD speed control and regenerative braking. Apply capacitor-placement precautions after the induction-motor and VFD lessons.",
       "lessons": [
         {
@@ -5889,7 +6017,8 @@
           "sourceKind": "Educator",
           "regulationSensitive": true,
           "studyRole": "Core lesson",
-          "required": true
+          "required": true,
+          "studyNote": "High starting current occurs at standstill and falls as the motor accelerates; reactance does not simply appear later. DOL suitability depends on the motor, load and supply limits, not a universal 5 kW cut-off. Use actual manufacturer protection data."
         },
         {
           "id": "course-wQwGZMcDGXk",
@@ -5905,7 +6034,8 @@
           "sourceKind": "Educator",
           "regulationSensitive": true,
           "studyRole": "Core lesson",
-          "required": true
+          "required": true,
+          "studyNote": "C40 identifies a 40 A rated Type C breaker, not a 40 A instantaneous trip. Overload, magnetic-trip and phase-failure behaviour depend on the actual device and settings; use its manufacturer data and the motor nameplate."
         },
         {
           "id": "p15-v2-l01",
@@ -5954,8 +6084,24 @@
           "required": true
         },
         {
-          "id": "c1-reversing-interlocks",
+          "id": "c1-dol-no-voltage-release",
           "number": 7,
+          "title": "No-Voltage Release: Power Failure, Coil Drop-Out and Safe Restart",
+          "videoId": "vMCXb7AoPnU",
+          "url": "https://www.youtube.com/watch?v=vMCXb7AoPnU",
+          "instructor": "bigclivedotcom",
+          "duration": "6:40",
+          "durationSeconds": 400,
+          "topic": "Loss of supply: why a starter needs a fresh Start command",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core control demonstration",
+          "required": true,
+          "studyNote": "The small workshop switch demonstrates the principle; a three-phase starter uses the equivalent contactor holding circuit. No-voltage release prevents automatic restart but does not provide safe isolation."
+        },
+        {
+          "id": "c1-reversing-interlocks",
+          "number": 8,
           "title": "Reversing a Three-Phase Motor: Mechanical and Electrical Interlocks",
           "videoId": "VqgXVIi0jw8",
           "url": "https://www.youtube.com/watch?v=VqgXVIi0jw8",
@@ -5971,7 +6117,7 @@
         },
         {
           "id": "p07-star-delta",
-          "title": "Star–Delta Starting: Sequence and Interlocks",
+          "title": "Star–Delta Starting: Power Circuit and Changeover",
           "videoId": "h89TTwlNnpY",
           "instructor": "The Engineering Mindset",
           "durationSeconds": 668,
@@ -5979,11 +6125,44 @@
           "layer": "HOW",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 8,
+          "number": 9,
           "url": "https://www.youtube.com/watch?v=h89TTwlNnpY",
           "duration": "11:08",
           "studyRole": "Core lesson",
-          "required": true
+          "required": true,
+          "studyNote": "The motor must be delta-rated at the running supply voltage. Compared with direct delta at the same supply, star winding voltage/current are about 58%; starting line current and ideal starting torque are about one-third. Full control and timer circuits follow."
+        },
+        {
+          "id": "c1-star-delta-control-manual",
+          "number": 10,
+          "title": "Star–Delta Power and Control Circuits: Holding Contacts and Interlocks",
+          "videoId": "DpB-kdM2RA4",
+          "url": "https://www.youtube.com/watch?v=DpB-kdM2RA4",
+          "instructor": "Jim Pytel",
+          "duration": "21:57",
+          "durationSeconds": 1317,
+          "topic": "Draw star–delta control circuits: holding, interlocks and timer transition",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core control-circuit walkthrough",
+          "required": true,
+          "studyNote": "This first circuit uses separate Start/Run commands; the next lesson automates changeover. Y means star. Six- and twelve-lead North American examples require the motor to be delta-rated at the available running supply."
+        },
+        {
+          "id": "c1-star-delta-timer-control",
+          "number": 11,
+          "title": "Timed Starter Control: Automatic Star–Delta Changeover and Soft-Start Timing",
+          "videoId": "aCDD_IHUnro",
+          "url": "https://www.youtube.com/watch?v=aCDD_IHUnro",
+          "instructor": "Jim Pytel",
+          "duration": "22:18",
+          "durationSeconds": 1338,
+          "topic": "Draw star–delta control circuits: holding, interlocks and timer transition",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core timed-control walkthrough",
+          "required": true,
+          "studyNote": "Timed star–delta control follows the introductory on-delay examples. Star and delta must be interlocked with a suitable break-before-make interval; timer and overload settings depend on the actual starter and motor."
         },
         {
           "videoId": "iHFTVBWLOAg",
@@ -5993,7 +6172,7 @@
           "durationSeconds": 544,
           "regulationSensitive": true,
           "id": "c1-autotransformer-starter",
-          "number": 9,
+          "number": 12,
           "title": "Autotransformer Starting: Tap Voltage, Line Current and Torque",
           "topic": "Autotransformer Starting: Tap Voltage, Line Current and Torque",
           "layer": "WHY",
@@ -6008,7 +6187,7 @@
           "instructor": "AutomationDirect",
           "durationSeconds": 198,
           "duration": "≈ 3:18",
-          "number": 10,
+          "number": 13,
           "url": "https://www.youtube.com/watch?v=_tGyaE78WTA",
           "topic": "Soft starting",
           "layer": "WHY",
@@ -6027,7 +6206,7 @@
           "layer": "WHY",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 11,
+          "number": 14,
           "url": "https://www.youtube.com/watch?v=yEPe7RDtkgo",
           "duration": "15:17",
           "studyRole": "Core lesson",
@@ -6041,7 +6220,7 @@
           "durationSeconds": 188,
           "regulationSensitive": false,
           "id": "c1-regenerative-drive-principles",
-          "number": 12,
+          "number": 15,
           "title": "Four-Quadrant Drives: Motoring, Braking and Regeneration",
           "topic": "Four-Quadrant Drives: Motoring, Braking and Regeneration",
           "layer": "WHY",
@@ -6431,8 +6610,8 @@
       "number": 26,
       "title": "Fault Diagnosis",
       "description": "Use measured evidence to distinguish supply imbalance, lost-neutral and motor faults. Compare isolated winding tests, misleading lighting/stroboscopic effects and thermal observations, then connect emergency response to incident investigation.",
-      "duration": "2 h 32 min",
-      "durationSeconds": 9093,
+      "duration": "2 h 37 min",
+      "durationSeconds": 9471,
       "learningOutcome": "Use measured evidence to distinguish supply imbalance, lost-neutral and motor faults. Compare isolated winding tests, misleading lighting/stroboscopic effects and thermal observations, then connect emergency response to incident investigation.",
       "lessons": [
         {
@@ -6467,6 +6646,22 @@
           "studyNote": "Use manufacturer test limits; >200 MΩ is this meter’s range, not a universal pass value."
         },
         {
+          "id": "c1-motor-symptom-diagnosis",
+          "number": 3,
+          "title": "Three-Phase Motor Diagnosis: No Start, Low Voltage, Phase Loss and Mechanical Load",
+          "videoId": "R7hpQia0WXc",
+          "url": "https://www.youtube.com/watch?v=R7hpQia0WXc",
+          "instructor": "eMotors Direct",
+          "duration": "6:18",
+          "durationSeconds": 378,
+          "topic": "Motor will not start: work from symptoms to the cause",
+          "layer": "HOW",
+          "regulationSensitive": true,
+          "studyRole": "Core diagnostic route",
+          "required": true,
+          "studyNote": "Isolate and prove dead before mechanical or dead tests. No-load current and cable-length examples are not universal limits. Trace voltage loss under the actual load, establish the cause before resetting protection, and verify the repair."
+        },
+        {
           "id": "p16-l06",
           "title": "Detecting Electrical Energy Loss with Thermal Imaging",
           "videoId": "KceE8zdk35g",
@@ -6475,7 +6670,7 @@
           "topic": "Electrical thermography and condition assessment",
           "layer": "Diagnostic inspection",
           "sourceKind": "Manufacturer or trade specialist",
-          "number": 3,
+          "number": 4,
           "url": "https://www.youtube.com/watch?v=KceE8zdk35g",
           "duration": "51:00",
           "regulationSensitive": true,
@@ -6490,7 +6685,7 @@
           "durationSeconds": 1487,
           "regulationSensitive": false,
           "id": "c1-fluorescent-operation",
-          "number": 4,
+          "number": 5,
           "title": "Fluorescent Lighting: Starter, Choke, Tube and Correction Capacitor",
           "topic": "Fluorescent Lighting: Starter, Choke, Tube and Correction Capacitor",
           "layer": "WHY",
@@ -6505,7 +6700,7 @@
           "durationSeconds": 244,
           "regulationSensitive": false,
           "id": "c1-stroboscopic-demonstration",
-          "number": 5,
+          "number": 6,
           "title": "Stroboscopic Effect: Why Moving Machinery Can Appear Still",
           "topic": "Stroboscopic Effect: Why Moving Machinery Can Appear Still",
           "layer": "WHY",
@@ -6521,7 +6716,7 @@
           "durationSeconds": 747,
           "regulationSensitive": true,
           "id": "c1-fire-response-principles",
-          "number": 6,
+          "number": 7,
           "title": "Electrical Fire Risks: Prevention, Alarm, Evacuation and Extinguisher Types",
           "topic": "Electrical Fire Risks: Prevention, Alarm, Evacuation and Extinguisher Types",
           "layer": "WHY",
@@ -6543,7 +6738,7 @@
           "studyNote": "Make people and the scene safe before collecting evidence.",
           "url": "https://www.youtube.com/watch?v=_RMYPD-T1Aw",
           "duration": "12:40",
-          "number": 7
+          "number": 8
         },
         {
           "id": "c1-incident-causes-actions",
@@ -6558,7 +6753,7 @@
           "required": true,
           "url": "https://www.youtube.com/watch?v=vbmQ4yXcXB8",
           "duration": "18:43",
-          "number": 8
+          "number": 9
         }
       ],
       "path": "C1",
@@ -7779,5 +7974,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 387489
+  "durationSeconds": 398113
 }

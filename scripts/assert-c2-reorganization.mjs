@@ -15,6 +15,7 @@ export const c1GapFillAdditions = json('./fixtures/c1-gap-fill-additions.json');
 export const c1FlowAdditions = json('./fixtures/c1-flow-additions.json');
 export const c1ApplicationAdditions = json('./fixtures/c1-application-additions.json');
 export const c1GeneratorAdditions = json('./fixtures/c1-generator-additions.json');
+export const c1MotorGapAdditions = json('./fixtures/c1-motor-gap-additions.json');
 export const c1ProtectionAdditions = json('./fixtures/c1-protection-additions.json');
 export const c1RashidAdditions = json('./fixtures/c1-rashid-additions.json');
 export const c1CableDesignAdditions = json('./fixtures/c1-cable-design-additions.json');
@@ -27,10 +28,12 @@ const baseline = json('./course-baseline.json');
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions]) {
+  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions, ...c1MotorGapAdditions]) {
     assert.ok(!source.has(lesson.id), 'New lessons must not replace an original identity');
     source.set(lesson.id, lesson);
   }
+  // Explicit presentation correction; original media identity/duration remain frozen.
+  for (const [id,title] of Object.entries(json('../app/c1-motor-gap-update.json').titleUpdates)) source.set(id,{...source.get(id),title});
   const approvedOrder = { ...c2StageOrder, ...professionalStageOrder };
   const expected = baseline.filter(module => module.path !== 'C1').map(module => ({ ...module, lessons: approvedOrder[module.id]
     ? [...approvedOrder[module.id].flatMap(section => section.lessonIds), ...(professionalScopeAdditions[module.id] ?? [])].map(id => source.get(id)) : module.lessons }));

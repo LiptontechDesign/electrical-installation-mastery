@@ -1,8 +1,8 @@
 # C1 self-study video sequence
 
-Follow the sections in order. C1 has its own Module 1–17 numbering. It builds on the C2 foundations, with selected reminders included. See the [current route and EPRA mapping](c1-focused-modules.md). The existing [four-storey worked project](../public/c1-worked-project.md) remains available alongside the videos.
+Follow the sections in order. C1 has its own Module 1–17 numbering. It builds on C2 foundations, with selected reminders included. See [the current route and EPRA mapping](c1-focused-modules.md) and the [four-storey worked project](../public/c1-worked-project.md).
 
-98 sections · 169 video entries. [Modern applications and coverage limits](c1-modern-applications.md). [Generator foundations, UK demonstrations and remaining practical gaps](c1-generator-learning.md). [Connected seven-step cable design](c1-cable-design-series.md). [Rashid iqubal applied examples](c1-rashid-worked-examples.md). [Protective-device foundations](c1-protective-devices.md).
+108 sections · 181 video entries. [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -171,31 +171,49 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Use electrical input kW; convert shaft output through efficiency first.
 
-### 3. Size a three phase capacitor bank in kVAr and microfarads
+### 3. Single-phase motor correction: from current and power factor to microfarads
+
+- [Single-Phase Motor Power-Factor Correction: Two Complete Worked Examples](https://www.youtube.com/watch?v=MWCqtJfQUt0) — Red Seal Electrician; Core worked example.
+
+  Examples use 120 V, 60 Hz. Use the question’s voltage/frequency; if shaft output is given, first use electrical input = shaft output/efficiency. Correction reduces supply current; motor-branch current and working kW do not automatically fall.
+
+### 4. Size a three phase capacitor bank in kVAr and microfarads
 
 - [Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank](https://www.youtube.com/watch?v=q5xjqXcCqNw) — Dieter Monkey; Core lesson.
 
   This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
 - [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
 
-### 4. Applied example: capacitor-bank steps and protection
+### 5. Applied example: capacitor-bank steps and protection
 
 - [Capacitor-Bank Selection and Protection: A 200 kW Worked Example](https://www.youtube.com/watch?v=vbytmPtvZi4) — Rashid iqubal; Optional applied example.
 
   The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall.
 
-### 5. Synchronous condensers: another source of reactive-power compensation
+### 6. Read a stepped capacitor-bank schematic and observe automatic correction
+
+- [Automatic Capacitor Banks: Schematic, Switching Steps and Target Power Factor](https://www.youtube.com/watch?v=FyGr8yMOGf8) — Festo Didactic – LabVolt Series; Core bank demonstration.
+
+  The bench uses 45/90 var steps. Controller CT scaling changes displayed current/power units; those settings are not installation ratings. Use actual CT/bank data and keep discharge/switching delays appropriate to the equipment.
+
+### 7. Synchronous condensers: another source of reactive-power compensation
 
 - [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
 
-### 6. Further study: complex numbers and conjugates for AC calculations
+### 8. Static VAR compensation: controlled reactors and capacitors
+
+- [Static VAR Compensators: Another Way to Control Reactive Power](https://www.youtube.com/watch?v=Z2S0QfoiGmc) — ABB production / Smart & Green Technologies; Core short comparison.
+
+  An SVC controls reactors and capacitors electronically; it is distinct from a rotating synchronous condenser and from a voltage-source STATCOM. This is a principle-level grid example.
+
+### 9. Further study: complex numbers and conjugates for AC calculations
 
 - [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
 - [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
 
   Mathematical i is the same imaginary unit written j in electrical engineering.
 
-### 7. Further study: complex power and combined-load correction
+### 10. Further study: complex power and combined-load correction
 
 - [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
 
@@ -240,33 +258,25 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
 ### 5. Seven-Step Cable Design: From Load Current to Fault Checks
 
-Follow the same lighting and socket-circuit examples through all seven parts before the detailed calculations below. Total runtime: 56:43.
-
-- [Cable Design Step 1: Calculate the Design Current (Ib)](https://www.youtube.com/watch?v=bAdNXOLSwJg) — EccElectric; Core worked sequence (7:13).
+- [Cable Design Step 1: Calculate the Design Current (Ib)](https://www.youtube.com/watch?v=bAdNXOLSwJg) — EccElectric; Core worked sequence.
 
   Two 230 V single-phase examples introduce the method. Use the appropriate three-phase formula and actual load data for the C1 examples that follow.
-
-- [Cable Design Step 2: Select the Protective Device Rating (In)](https://www.youtube.com/watch?v=OoJvApVqZh4) — EccElectric; Core worked sequence (7:42).
+- [Cable Design Step 2: Select the Protective Device Rating (In)](https://www.youtube.com/watch?v=OoJvApVqZh4) — EccElectric; Core worked sequence.
 
   Select the device rating and trip characteristic for the load and its starting current; check coordination with the cable capacity as the design develops.
-
-- [Cable Design Step 3: Apply Rating Factors to Find the Required Cable Table Rating](https://www.youtube.com/watch?v=0CT-mT2Gm5s) — EccElectric; Core worked sequence (7:04).
+- [Cable Design Step 3: Apply Rating Factors to Find the Required Cable Table Rating](https://www.youtube.com/watch?v=0CT-mT2Gm5s) — EccElectric; Core worked sequence.
 
   Dividing the device rating by the applicable rating factors gives the required tabulated capacity (It). The installed capacity (Iz) is the selected table rating multiplied by those factors. Keep the unrounded requirement when selecting a cable.
-
-- [Cable Design Step 4: Choose the Installation Method and Cable Size](https://www.youtube.com/watch?v=Ip2QJBOdalo) — EccElectric; Core worked sequence (9:05).
+- [Cable Design Step 4: Choose the Installation Method and Cable Size](https://www.youtube.com/watch?v=Ip2QJBOdalo) — EccElectric; Core worked sequence.
 
   Choose the correct cable-type table and installation-method column. For these examples, 13 A and 23 A are table ratings; applying the temperature factors gives installed capacities of 11.31 A and 21.62 A.
-
-- [Cable Design Step 5: Check Voltage Drop](https://www.youtube.com/watch?v=vSKzLpKJMLE) — EccElectric; Core worked sequence (7:03).
+- [Cable Design Step 5: Check Voltage Drop](https://www.youtube.com/watch?v=vSKzLpKJMLE) — EccElectric; Core worked sequence.
 
   Follow each example through the voltage-drop calculation. The next three-phase lesson extends this to the combined drop in a submain and final circuit.
-
-- [Cable Design Step 6: Calculate Line and Protective-Conductor Resistance (R1 + R2)](https://www.youtube.com/watch?v=-wi6pJPBW30) — EccElectric; Core worked sequence (8:45).
+- [Cable Design Step 6: Calculate Line and Protective-Conductor Resistance (R1 + R2)](https://www.youtube.com/watch?v=-wi6pJPBW30) — EccElectric; Core worked sequence.
 
   R1 + R2 combines line-conductor and circuit protective conductor resistance. Apply the operating-temperature multiplier and retain full precision until the final answer.
-
-- [Cable Design Step 7: Calculate Earth-Fault Loop Impedance (Zs) and Check the Limit](https://www.youtube.com/watch?v=tRF0Y2MaQ5g) — EccElectric; Core worked sequence (9:51).
+- [Cable Design Step 7: Calculate Earth-Fault Loop Impedance (Zs) and Check the Limit](https://www.youtube.com/watch?v=tRF0Y2MaQ5g) — EccElectric; Core worked sequence.
 
   Use verified external loop impedance (Ze), then add R1 + R2 at the design temperature. Compare with the matching design limit; measured ambient-temperature limits already include a temperature allowance.
 
@@ -453,13 +463,19 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   The final NEMA classifications are US examples; the torque–speed principles apply generally.
 
-### 7. Identify six winding ends and select star or delta links
+### 7. Slip-ring motors: external rotor resistance and starting torque
+
+- [Wound-Rotor Motors: Slip Rings, External Resistance and Starting Torque](https://www.youtube.com/watch?v=Bstjh1gMUYk) — Zack Hartle; Core motor-type lesson.
+
+  External resistance is reduced as the motor accelerates. The quoted torque percentages and NEMA comparisons are examples, not universal values; resistance adjustment does not itself change the winding inductance.
+
+### 8. Identify six winding ends and select star or delta links
 
 - [How to Connect Motor Windings in Star and Delta](https://www.youtube.com/watch?v=p2hDLMeFJqs) — The Electrical Guy; Core demonstration.
 
   On 400 V: 230/400 V Δ/Y → star; 400/690 V Δ/Y → delta.
 
-### 8. Single-phase starting windings, capacitors and reversal
+### 9. Single-phase starting windings, capacitors and reversal
 
 - [Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal](https://www.youtube.com/watch?v=bytt0ZCJwRk) — LEARN ELECTRICS; Core lesson.
 
@@ -468,19 +484,40 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   Isolate and prove capacitors discharged before touching terminals.
 
-### 9. DC motor force, commutation and direction reversal
+### 10. Compare resistance-start, capacitor and shaded-pole motors
+
+- [Single-Phase Motor Types: Starting Torque, Run Capacitors and Winding Connections](https://www.youtube.com/watch?v=utbt6_XK4C8) — Red Seal Electrician; Core motor-type comparison.
+
+  The start capacitor is disconnected after starting; the run capacitor remains with the auxiliary winding. North American terminal labels and supply examples are not universal: follow the motor’s connection diagram.
+- [Single-Phase Starting and Shaded-Pole Motors: Why Starting Torque Differs](https://www.youtube.com/watch?v=2XYdTogWcIA) — Jeremy Fielding; Core physical demonstration.
+
+  Treat the hand-started motor as a concept demonstration; do not hand-start an energised machine. Shaded-pole motors have low starting torque. Start/run capacitor duty and the manufacturer’s diagram remain essential.
+
+### 11. DC motor force, commutation and direction reversal
 
 - [DC Motors: Magnetic Force, Brushes and Commutation](https://www.youtube.com/watch?v=GQatiB-JHdI) — The Engineering Mindset; Core lesson.
 - [Reverse a Wound-Field DC Motor: Armature or Field Connections](https://www.youtube.com/watch?v=GYuBVM_GyOw) — Chinmay Deshpande; Core lesson.
 
-### 10. Further study: stepper positioning and servo feedback
+### 12. Synchronous motors: load angle, pull-out and field excitation
 
-- [Stepper Motors: Winding Sequences, Steps and Position](https://www.youtube.com/watch?v=09Mpkjcr0bo) — The Engineering Mindset; Optional further study.
-- [Servo Motors: Command, Error and Position Feedback](https://www.youtube.com/watch?v=ditS0a28Sko) — RealPars; Optional further study.
+- [Synchronous Motors: Constant Speed, Pull-Out Torque and Leading Power Factor](https://www.youtube.com/watch?v=wlj4Oy6aw6A) — Jim Pytel; Core synchronous-motor lesson.
+
+  Speed stays synchronous while the motor remains in step. Field excitation changes reactive power and pull-out capability; the 60 Hz laboratory values are examples. Deliberate loss-of-step tests are supervised demonstrations.
+
+### 13. Synchronous hunting: causes, effects and damping
+
+- [Synchronous-Motor Hunting: Load-Angle Oscillation and Damper Windings](https://www.youtube.com/watch?v=etgmqvrKgYA) — Education 4u; Core specialist explanation.
+
+  Hunting is transient oscillation about the operating load angle. The 0–2δ graph is an idealised load-step illustration, not a universal amplitude. Damper windings reduce oscillations; steady synchronous speed does not exclude temporary speed deviations.
+
+### 14. Stepper and servo motors: positioning and feedback
+
+- [Stepper Motors: Winding Sequences, Steps and Position](https://www.youtube.com/watch?v=09Mpkjcr0bo) — The Engineering Mindset; Core motor-type lesson.
+- [Servo Motors: Command, Error and Position Feedback](https://www.youtube.com/watch?v=ditS0a28Sko) — RealPars; Core motor-type lesson.
 
   Removing power does not stop a rotating load instantly.
 
-### 11. Further study: torque–slip analysis and operating-point stability
+### 15. Further study: torque–slip analysis and operating-point stability
 
 - [Torque–Slip Curve: Load Changes, Stable Operation and Stalling](https://www.youtube.com/watch?v=zssTcEBkzh0) — NPTEL IIT Kharagpur; Optional advanced analysis.
 
@@ -493,9 +530,13 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 - [Single Phase Contactor - Connections Explained, Application plus the Current in the Coil and Load](https://www.youtube.com/watch?v=Ed3_zbZ0xaA) — GSH Electrical; Core lesson.
 - [How Do Direct On Line Motor (DOL) Starters Work?](https://www.youtube.com/watch?v=HFkTPmY7N7w) — eFIXX; Core lesson.
 
+  High starting current occurs at standstill and falls as the motor accelerates; reactance does not simply appear later. DOL suitability depends on the motor, load and supply limits, not a universal 5 kW cut-off. Use actual manufacturer protection data.
+
 ### 2. Motor protection: short circuit, overload and nameplate settings
 
 - [What is MPCB | MPCB Vs MCB | Motor Protection Circuit Breaker @the Electrical Guy](https://www.youtube.com/watch?v=wQwGZMcDGXk) — The Electrical Guy; Core lesson.
+
+  C40 identifies a 40 A rated Type C breaker, not a 40 A instantaneous trip. Overload, magnetic-trip and phase-failure behaviour depend on the actual device and settings; use its manufacturer data and the motor nameplate.
 - [How to Select MCB and Overload Relay Size for a Motor](https://www.youtube.com/watch?v=DWUuKNjMf3E) — The Electrical Guy; Optional comparison.
 
   Use nameplate current and manufacturer coordination; the 125% shortcut is not a general selection rule.
@@ -506,41 +547,58 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 - [3 Phase Direct Online Starter DOL Wiring Diagram Connections Explained](https://www.youtube.com/watch?v=mcXxhUaUb94) — GSH Electrical; Applied practical.
 - [3 Phase Direct Online Starter DOL Wiring and Connections Explained](https://www.youtube.com/watch?v=qlqPdLGwJxk) — GSH Electrical; Applied practical.
 
-### 4. Reverse rotation with electrical and mechanical interlocking
+### 4. Loss of supply: why a starter needs a fresh Start command
+
+- [No-Voltage Release: Power Failure, Coil Drop-Out and Safe Restart](https://www.youtube.com/watch?v=vMCXb7AoPnU) — bigclivedotcom; Core control demonstration.
+
+  The small workshop switch demonstrates the principle; a three-phase starter uses the equivalent contactor holding circuit. No-voltage release prevents automatic restart but does not provide safe isolation.
+
+### 5. Reverse rotation with electrical and mechanical interlocking
 
 - [Reversing a Three-Phase Motor: Mechanical and Electrical Interlocks](https://www.youtube.com/watch?v=VqgXVIi0jw8) — AutomationDirect.com; Core lesson.
 
   NFPA/UL references are US-specific; the phase-swapping and interlocking principles apply generally.
 
-### 5. Star delta starting: connection, transition and reduced torque
+### 6. Star delta starting: connection, transition and reduced torque
 
-- [Star–Delta Starting: Sequence and Interlocks](https://www.youtube.com/watch?v=h89TTwlNnpY) — The Engineering Mindset; Core lesson.
+- [Star–Delta Starting: Power Circuit and Changeover](https://www.youtube.com/watch?v=h89TTwlNnpY) — The Engineering Mindset; Core lesson.
 
-### 6. Autotransformer starting and reduced-current ratios
+  The motor must be delta-rated at the running supply voltage. Compared with direct delta at the same supply, star winding voltage/current are about 58%; starting line current and ideal starting torque are about one-third. Full control and timer circuits follow.
+
+### 7. Draw star–delta control circuits: holding, interlocks and timer transition
+
+- [Star–Delta Power and Control Circuits: Holding Contacts and Interlocks](https://www.youtube.com/watch?v=DpB-kdM2RA4) — Jim Pytel; Core control-circuit walkthrough.
+
+  This first circuit uses separate Start/Run commands; the next lesson automates changeover. Y means star. Six- and twelve-lead North American examples require the motor to be delta-rated at the available running supply.
+- [Timed Starter Control: Automatic Star–Delta Changeover and Soft-Start Timing](https://www.youtube.com/watch?v=aCDD_IHUnro) — Jim Pytel; Core timed-control walkthrough.
+
+  Timed star–delta control follows the introductory on-delay examples. Star and delta must be interlocked with a suitable break-before-make interval; timer and overload settings depend on the actual starter and motor.
+
+### 8. Autotransformer starting and reduced-current ratios
 
 - [Autotransformer Starting: Tap Voltage, Line Current and Torque](https://www.youtube.com/watch?v=iHFTVBWLOAg) — Zack Hartle; Core lesson.
 
   A tapped common winding is introduced before the starter circuits. Canadian 600 V and code examples explain the principle; use local supply values, manufacturer coordination and applicable BS 7671/EPRA requirements for selection. An autotransformer provides no galvanic isolation; reduced starting current does not by itself justify smaller conductors.
 
-### 7. Soft starters: limit starting current without continuous speed control
+### 9. Soft starters: limit starting current without continuous speed control
 
 - [What is a Soft Starter? from AutomationDirect](https://www.youtube.com/watch?v=_tGyaE78WTA) — AutomationDirect; Core lesson.
 
-### 8. VFD speed control: rectifier, DC link and inverter
+### 10. VFD speed control: rectifier, DC link and inverter
 
 - [Variable-Frequency Drives: From Rectifier to Motor Speed](https://www.youtube.com/watch?v=yEPe7RDtkgo) — The Engineering Mindset; Core lesson.
 
-### 9. Motoring, braking resistors and regeneration
+### 11. Motoring, braking resistors and regeneration
 
 - [Four-Quadrant Drives: Motoring, Braking and Regeneration](https://www.youtube.com/watch?v=IAnMVYOYHxg) — KEB America; Core lesson.
 
-### 10. Power-factor correction around motors and drives
+### 12. Power-factor correction around motors and drives
 
 - [5 Types of Power Factor Correction — Capacitor Bank Locations](https://www.youtube.com/watch?v=oaIRQ1Xm7OQ) — The Electrical Guy; Core application.
 
   Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs.
 
-### 11. Optional review: phase monitoring and protective contact placement
+### 13. Optional review: phase monitoring and protective contact placement
 
 - [Phase-Failure Relay with a DOL Starter](https://www.youtube.com/watch?v=-OCfG8inGSY) — The Electrical Guy; Optional circuit critique.
 
@@ -649,24 +707,30 @@ Follow the same lighting and socket-circuit examples through all seven parts bef
 
   Use manufacturer test limits; >200 MΩ is this meter’s range, not a universal pass value.
 
-### 4. Optional extension: thermal imaging and abnormal heating
+### 4. Motor will not start: work from symptoms to the cause
+
+- [Three-Phase Motor Diagnosis: No Start, Low Voltage, Phase Loss and Mechanical Load](https://www.youtube.com/watch?v=R7hpQia0WXc) — eMotors Direct; Core diagnostic route.
+
+  Isolate and prove dead before mechanical or dead tests. No-load current and cable-length examples are not universal limits. Trace voltage loss under the actual load, establish the cause before resetting protection, and verify the repair.
+
+### 5. Optional extension: thermal imaging and abnormal heating
 
 - [Detecting Electrical Energy Loss with Thermal Imaging](https://www.youtube.com/watch?v=KceE8zdk35g) — VoltimumUK/Fluke; Deep practice.
 
-### 5. Fluorescent starting, ballast operation and misleading motion
+### 6. Fluorescent starting, ballast operation and misleading motion
 
 - [Fluorescent Lighting: Starter, Choke, Tube and Correction Capacitor](https://www.youtube.com/watch?v=hkgKmjVMesE) — John Ward (jwflame); Core lesson.
 - [Stroboscopic Effect: Why Moving Machinery Can Appear Still](https://www.youtube.com/watch?v=muucS5fwtvU) — BBC Earth Science; Core lesson.
 
   Flashing light can make moving machinery look stationary; isolate before approaching it.
 
-### 6. Fire prevention, alarm and safe evacuation
+### 7. Fire prevention, alarm and safe evacuation
 
 - [Electrical Fire Risks: Prevention, Alarm, Evacuation and Extinguisher Types](https://www.youtube.com/watch?v=cnn-yvszLXE) — Zippyangels Productions; Core lesson.
 
   Raise the alarm and evacuate first. Use an extinguisher only if trained, the fire is small and your escape remains clear.
 
-### 7. After the emergency: collect evidence, identify causes and plan action
+### 8. After the emergency: collect evidence, identify causes and plan action
 
 - [After an Incident: Preserve the Scene and Collect Reliable Evidence](https://www.youtube.com/watch?v=_RMYPD-T1Aw) — Compassa eLearning; Core applied method.
 

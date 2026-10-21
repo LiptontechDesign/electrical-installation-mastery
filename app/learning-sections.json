@@ -1118,9 +1118,18 @@
     ]
   },
   {
-    "id": "c1-pfc-calculation",
+    "id": "c1-pfc-single-phase-worked",
     "moduleId": "c1-pfc",
     "number": 3,
+    "title": "Single-phase motor correction: from current and power factor to microfarads",
+    "lessonIds": [
+      "c1-pfc-single-phase-target"
+    ]
+  },
+  {
+    "id": "c1-pfc-calculation",
+    "moduleId": "c1-pfc",
+    "number": 4,
     "title": "Size a three phase capacitor bank in kVAr and microfarads",
     "lessonIds": [
       "c1-pfc-unity-bank"
@@ -1133,10 +1142,19 @@
   {
     "id": "c1-pfc-bank-protection",
     "moduleId": "c1-pfc",
-    "number": 4,
+    "number": 5,
     "title": "Applied example: capacitor-bank steps and protection",
     "lessonIds": [
       "c1-rashid-capacitor-bank"
+    ]
+  },
+  {
+    "id": "c1-pfc-automatic-bank",
+    "moduleId": "c1-pfc",
+    "number": 6,
+    "title": "Read a stepped capacitor-bank schematic and observe automatic correction",
+    "lessonIds": [
+      "c1-pfc-automatic-bank-demo"
     ]
   },
   {
@@ -1146,12 +1164,21 @@
     "lessonIds": [
       "c1-synchronous-condenser-overview"
     ],
-    "number": 5
+    "number": 7
+  },
+  {
+    "id": "c1-pfc-static-var",
+    "moduleId": "c1-pfc",
+    "number": 8,
+    "title": "Static VAR compensation: controlled reactors and capacitors",
+    "lessonIds": [
+      "c1-pfc-svc-principle"
+    ]
   },
   {
     "id": "c1-pfc-complex-tools",
     "moduleId": "c1-pfc",
-    "number": 6,
+    "number": 9,
     "title": "Further study: complex numbers and conjugates for AC calculations",
     "lessonIds": [
       "c1-complex-number-foundation",
@@ -1161,7 +1188,7 @@
   {
     "id": "c1-pfc-shunt-examples",
     "moduleId": "c1-pfc",
-    "number": 7,
+    "number": 10,
     "title": "Further study: complex power and combined-load correction",
     "lessonIds": [
       "c1-shunt-pfc-examples"
@@ -1517,16 +1544,25 @@
     ]
   },
   {
-    "id": "c1-motors-terminals",
+    "id": "c1-motors-wound-rotor",
     "moduleId": "c1-motors",
     "number": 7,
+    "title": "Slip-ring motors: external rotor resistance and starting torque",
+    "lessonIds": [
+      "c1-wound-rotor-starting"
+    ]
+  },
+  {
+    "id": "c1-motors-terminals",
+    "moduleId": "c1-motors",
+    "number": 8,
     "title": "Identify six winding ends and select star or delta links",
     "lessonIds": []
   },
   {
     "id": "c1-single-phase-motors",
     "moduleId": "c1-motors",
-    "number": 8,
+    "number": 9,
     "title": "Single-phase starting windings, capacitors and reversal",
     "lessonIds": [
       "c1-single-phase-motor-principles",
@@ -1534,9 +1570,19 @@
     ]
   },
   {
+    "id": "c1-motors-single-phase-types",
+    "moduleId": "c1-motors",
+    "number": 10,
+    "title": "Compare resistance-start, capacitor and shaded-pole motors",
+    "lessonIds": [
+      "c1-single-phase-type-comparison",
+      "c1-shaded-pole-principle"
+    ]
+  },
+  {
     "id": "c1-dc-motors",
     "moduleId": "c1-motors",
-    "number": 9,
+    "number": 11,
     "title": "DC motor force, commutation and direction reversal",
     "lessonIds": [
       "c1-dc-motor-commutation",
@@ -1544,10 +1590,28 @@
     ]
   },
   {
+    "id": "c1-motors-synchronous",
+    "moduleId": "c1-motors",
+    "number": 12,
+    "title": "Synchronous motors: load angle, pull-out and field excitation",
+    "lessonIds": [
+      "c1-synchronous-motor-foundation"
+    ]
+  },
+  {
+    "id": "c1-motors-hunting",
+    "moduleId": "c1-motors",
+    "number": 13,
+    "title": "Synchronous hunting: causes, effects and damping",
+    "lessonIds": [
+      "c1-synchronous-hunting"
+    ]
+  },
+  {
     "id": "c1-precision-motors",
     "moduleId": "c1-motors",
-    "number": 10,
-    "title": "Further study: stepper positioning and servo feedback",
+    "number": 14,
+    "title": "Stepper and servo motors: positioning and feedback",
     "lessonIds": [
       "c1-stepper-motor-principles",
       "c1-servo-motor-feedback"
@@ -1556,7 +1620,7 @@
   {
     "id": "c1-motor-torque-depth",
     "moduleId": "c1-motors",
-    "number": 11,
+    "number": 15,
     "title": "Further study: torque–slip analysis and operating-point stability",
     "lessonIds": [
       "c1-torque-slip-operating-point"
@@ -1593,9 +1657,18 @@
     ]
   },
   {
-    "id": "c1-controls-reversing",
+    "id": "c1-controls-no-voltage-release",
     "moduleId": "module-07",
     "number": 4,
+    "title": "Loss of supply: why a starter needs a fresh Start command",
+    "lessonIds": [
+      "c1-dol-no-voltage-release"
+    ]
+  },
+  {
+    "id": "c1-controls-reversing",
+    "moduleId": "module-07",
+    "number": 5,
     "title": "Reverse rotation with electrical and mechanical interlocking",
     "lessonIds": [
       "c1-reversing-interlocks"
@@ -1604,16 +1677,26 @@
   {
     "id": "module-07-section-2",
     "moduleId": "module-07",
-    "number": 5,
+    "number": 6,
     "title": "Star delta starting: connection, transition and reduced torque",
     "lessonIds": [
       "p07-star-delta"
     ]
   },
   {
+    "id": "c1-controls-star-delta-circuits",
+    "moduleId": "module-07",
+    "number": 7,
+    "title": "Draw star–delta control circuits: holding, interlocks and timer transition",
+    "lessonIds": [
+      "c1-star-delta-control-manual",
+      "c1-star-delta-timer-control"
+    ]
+  },
+  {
     "id": "c1-autotransformer-starting",
     "moduleId": "module-07",
-    "number": 6,
+    "number": 8,
     "title": "Autotransformer starting and reduced-current ratios",
     "lessonIds": [
       "c1-autotransformer-starter"
@@ -1622,7 +1705,7 @@
   {
     "id": "c1-controls-soft-start",
     "moduleId": "module-07",
-    "number": 7,
+    "number": 9,
     "title": "Soft starters: limit starting current without continuous speed control",
     "lessonIds": [
       "course-_tGyaE78WTA"
@@ -1631,7 +1714,7 @@
   {
     "id": "module-07-vfd-speed-control",
     "moduleId": "module-07",
-    "number": 8,
+    "number": 10,
     "title": "VFD speed control: rectifier, DC link and inverter",
     "lessonIds": [
       "p07-vfd"
@@ -1640,7 +1723,7 @@
   {
     "id": "c1-regenerative-braking",
     "moduleId": "module-07",
-    "number": 9,
+    "number": 11,
     "title": "Motoring, braking resistors and regeneration",
     "lessonIds": [
       "c1-regenerative-drive-principles"
@@ -1649,14 +1732,14 @@
   {
     "id": "c1-pfc-application",
     "moduleId": "module-07",
-    "number": 10,
+    "number": 12,
     "title": "Power-factor correction around motors and drives",
     "lessonIds": []
   },
   {
     "id": "c1-controls-phase-monitoring",
     "moduleId": "module-07",
-    "number": 11,
+    "number": 13,
     "title": "Optional review: phase monitoring and protective contact placement",
     "lessonIds": []
   },
@@ -1795,9 +1878,18 @@
     }
   },
   {
-    "id": "c1-faults-thermal-diagnosis",
+    "id": "c1-faults-motor-diagnosis",
     "moduleId": "c1-faults",
     "number": 4,
+    "title": "Motor will not start: work from symptoms to the cause",
+    "lessonIds": [
+      "c1-motor-symptom-diagnosis"
+    ]
+  },
+  {
+    "id": "c1-faults-thermal-diagnosis",
+    "moduleId": "c1-faults",
+    "number": 5,
     "title": "Optional extension: thermal imaging and abnormal heating",
     "lessonIds": [
       "p16-l06"
@@ -1806,7 +1898,7 @@
   {
     "id": "c1-stroboscopic-effect",
     "moduleId": "c1-faults",
-    "number": 5,
+    "number": 6,
     "title": "Fluorescent starting, ballast operation and misleading motion",
     "lessonIds": [
       "c1-fluorescent-operation",
@@ -1816,7 +1908,7 @@
   {
     "id": "c1-fire-response",
     "moduleId": "c1-faults",
-    "number": 6,
+    "number": 7,
     "title": "Fire prevention, alarm and safe evacuation",
     "lessonIds": [
       "c1-fire-response-principles"
@@ -1830,7 +1922,7 @@
       "c1-incident-evidence",
       "c1-incident-causes-actions"
     ],
-    "number": 7
+    "number": 8
   },
   {
     "id": "professional-cables-section-1",

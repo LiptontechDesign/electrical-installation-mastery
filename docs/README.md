@@ -52,3 +52,5 @@ Signed-in core and supplementary videos resume using positions keyed by YouTube 
 Supplementary lessons share the main lesson layout, course-order Previous/Next controls, save action, watched panel and private freeform notes. All 32 bundled supplementary videos have verified durations available before playback. New additions retain automatic timing metadata; older personal videos look up missing duration when displayed, with the embedded player as a fallback. Added videos use the same component automatically. Large screens use a fluid lesson canvas up to 1920px, with a preserved 16:9 player.
 
 Mobile layouts keep book page controls above navigation, retain guest playback settings, use larger touch targets and form text, and constrain dialogs to dynamic viewport height. Touch taps do not leave hover tooltips. See [mobile verification](mobile-experience.md) for coverage and device-testing limits.
+
+- [C1 motor gap-fill selections](c1-motor-gap-fill.md): twelve transcript-reviewed English additions, UK-first search, one justified hunting exception and coverage limits. [Evidence ledger](c1-motor-gap-video-review.json).
