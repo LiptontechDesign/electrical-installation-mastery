@@ -1345,6 +1345,93 @@
     ]
   },
   {
+    "id": "c1-protection-fuses-section",
+    "moduleId": "c1-protective-devices",
+    "number": 1,
+    "title": "Fuses and HRC Protection",
+    "lessonIds": [
+      "c1-protection-fuses",
+      "c1-protection-fuse-demo"
+    ]
+  },
+  {
+    "id": "c1-protection-mcb-section",
+    "moduleId": "c1-protective-devices",
+    "number": 2,
+    "title": "MCBs and Time–Current Curves",
+    "lessonIds": [
+      "c1-protection-mcb"
+    ]
+  },
+  {
+    "id": "c1-protection-mccb-section",
+    "moduleId": "c1-protective-devices",
+    "number": 3,
+    "title": "MCCBs: Ratings and Trip Units",
+    "lessonIds": [
+      "c1-protection-mccb"
+    ]
+  },
+  {
+    "id": "c1-protection-acb-section",
+    "moduleId": "c1-protective-devices",
+    "number": 4,
+    "title": "ACBs: Construction and Releases",
+    "lessonIds": [
+      "c1-protection-acb",
+      "c1-protection-acb-components"
+    ]
+  },
+  {
+    "id": "c1-protection-residual-section",
+    "moduleId": "c1-protective-devices",
+    "number": 5,
+    "title": "RCDs, RCCBs and RCBOs on Three-Phase Supplies",
+    "lessonIds": [
+      "c1-protection-rcd",
+      "c1-protection-rcbo",
+      "c1-protection-three-phase-rcd"
+    ]
+  },
+  {
+    "id": "c1-protection-surges-section",
+    "moduleId": "c1-protective-devices",
+    "number": 6,
+    "title": "Surge Protective Devices",
+    "lessonIds": [
+      "c1-protection-spd"
+    ]
+  },
+  {
+    "id": "c1-protection-coordination-section",
+    "moduleId": "c1-protective-devices",
+    "number": 7,
+    "title": "Selectivity and Coordination",
+    "lessonIds": [
+      "c1-protection-selectivity"
+    ]
+  },
+  {
+    "id": "c1-protection-overcurrent-section",
+    "moduleId": "c1-protective-devices",
+    "number": 8,
+    "title": "Overcurrent Relays",
+    "lessonIds": [
+      "c1-protection-overcurrent-relay"
+    ]
+  },
+  {
+    "id": "c1-protection-motor-devices-section",
+    "moduleId": "c1-protective-devices",
+    "number": 9,
+    "title": "Overload Relays, MPCBs and Phase Monitoring",
+    "lessonIds": [
+      "c1-protection-overload-relay",
+      "c1-protection-mpcb",
+      "c1-protection-phase-monitoring"
+    ]
+  },
+  {
     "id": "c1-building-design-capstone",
     "moduleId": "c1-installation",
     "number": 1,

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json')].map(v=>v.id));
+const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json')].map(v=>v.id));
 await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.ts'],outdir:'work/c1-gap-tests',bundle:true,platform:'node',format:'esm'});
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply}=await import('../work/c1-gap-tests/personal-course-model.js');
 const catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),update=read('app/c1-gap-fill-update.json'),evidence=read('docs/c1-gap-fill-review.json');
@@ -17,8 +17,9 @@ assert.deepEqual(parse(upgraded),upgraded,'Current normalisation is idempotent')
 for(const [sectionId,old] of Object.entries(previous.groups))assert.deepEqual(upgraded.groups[sectionId].filter(id=>!ids.has(id)),old,'Every old section keeps its relative order: '+sectionId);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!ids.has(id)&&!flow.addedLessonIds.includes(id)&&!applications.addedLessonIds.includes(id)&&!generators.addedLessonIds.includes(id)&&!laterAdditionIds.has(id)).sort(),Object.values(previous.groups).flat().sort(),'Every existing occurrence survives exactly once');
 // One existing MV section/video is now optional Advanced scope.
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length+generators.sections.length+1-1+3);
-assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length+generators.addedLessonIds.length+cableDesign.length-1+3);
+const protection=read('app/c1-protection-update.json');
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length+generators.sections.length+1-1+3+protection.sectionIds.length);
+assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length+generators.addedLessonIds.length+cableDesign.length-1+3+protection.addedLessonIds.length);
 for(const sectionId of update.sections){
  const s=sections.find(s=>s.id===sectionId);
  if(sectionId==='c1-switchgear-construction')assert.equal(s.moduleId,'professional-cables');else assert.ok(c1Modules.has(s.moduleId));

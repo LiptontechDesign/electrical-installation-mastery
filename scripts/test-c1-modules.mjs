@@ -7,7 +7,7 @@ const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCours
 const { isRequiredStudyVideo: required } = await import('../work/c1-module-tests/course-curriculum.js');
 const { progressForVideos } = await import('../work/c1-module-tests/course-progress-model.js');
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
-const laterAdditionIds = new Set([...read('scripts/fixtures/c1-cable-design-additions.json'), ...read('scripts/fixtures/c1-rashid-additions.json')].map(v => v.id));
+const laterAdditionIds = new Set([...read('scripts/fixtures/c1-cable-design-additions.json'), ...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json')].map(v => v.id));
 const prior = read('scripts/fixtures/c1-modules-previous.json'), untouched = structuredClone(prior);
 const update = read('app/c1-module-update.json'), upgraded = parse(prior), view = snapshot(upgraded);
 const modules = view.course.modules.filter(m => m.path === 'C1');
@@ -18,17 +18,17 @@ assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every stable section retains its exact mixed row order: ' + id);
 assert.deepEqual(parse(upgraded), upgraded, 'Reloading the new revision is idempotent');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !laterAdditionIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
-assert.equal(view.allRows.length, 488);
-assert.equal(modules.length, 16);
-assert.deepEqual(modules.map(m => m.id), update.moduleOrder);
+assert.equal(view.allRows.length, 503);
+assert.equal(modules.length, 17);
+assert.deepEqual(modules.map(m => m.id), read('app/c1-protection-update.json').moduleOrder);
 assert.deepEqual(modules.map(m => m.title), [
  'AC and Three-Phase Foundations', 'AC Power and Calculations', 'Generator Principles and Controls', 'Transformers', 'Electrical Measurements', 'Power-Factor Correction',
- 'Three-Phase Distribution', 'Load Assessment and Cable Design', 'Earthing and Fault Protection', 'Submains and Board Installation',
+ 'Three-Phase Distribution', 'Load Assessment and Cable Design', 'Earthing and Fault Protection', 'Protective Devices and Coordination', 'Submains and Board Installation',
  'Motor Principles and Connections', 'Motor Starting, Protection and Speed Control', 'Initial Verification and Commissioning',
  'Periodic Inspection', 'Standby Generators: Connections and Operation', 'Fault Diagnosis',
 ]);
-assert.deepEqual(modules.map(m => m.stageNumber), Array.from({ length: 16 }, (_, i) => i + 1));
-assert.deepEqual(view.course.modules.map(m => m.number), Array.from({ length: 31 }, (_, i) => i + 1));
+assert.deepEqual(modules.map(m => m.stageNumber), Array.from({ length: 17 }, (_, i) => i + 1));
+assert.deepEqual(view.course.modules.map(m => m.number), Array.from({ length: 32 }, (_, i) => i + 1));
 for (const m of modules) {
  assert.ok(view.sectionsByModule[m.id].length > 0 && view.allRows.some(r => r.moduleId === m.id), 'Each real module has sections and videos');
  assert.equal(m.durationSeconds, m.lessons.reduce((n, l) => n + l.durationSeconds, 0));
@@ -56,7 +56,7 @@ assert.equal(view.byId.get('c1-periodic-reporting').moduleId, 'c1-periodic');
 assert.equal(view.byId.get('c1-generator-transfer-operation').moduleId, 'c1-standby');
 assert.equal(view.byId.get('c1-capacitor-placement').moduleId, 'module-07', 'Drive-specific precautions follow the drive foundations');
 assert.match(view.label('c1-ac-waveforms'), /^C1 · Module 01 /);
-assert.match(view.label('c1-generator-building-integration'), /^C1 · Module 15 /);
+assert.match(view.label('c1-generator-building-integration'), /^C1 · Module 16 /);
 for (const video of upgraded.videos) assert.equal(video.moduleId, view.byId.get(video.id)?.moduleId, 'Bundled video metadata follows its actual section');
 const watched = new Set(Object.values(prior.groups).flat().filter((_, i) => i % 7 === 0));
 assert.deepEqual(progressForVideos(view.allRows.filter(r => !laterAdditionIds.has(r.id)).map(r => r.id), watched), progressForVideos(Object.values(prior.groups).flat(), watched), 'Existing videos retain their watched/total counts after the additive series');
@@ -96,4 +96,4 @@ const undone = apply(kept, { operationId: crypto.randomUUID(), revision: kept.re
 assert.equal(snapshot(undone).byId.get('c1-ct-ratios').moduleId, 'c1-measurements', 'Historical Undo resolves the original stable section in its new module');
 const legacy = { version: 1, revision: 5, curriculumRevision: 12, groups: Object.fromEntries(Object.entries(prior.groups).map(([id, ids]) => [id, ids.filter(id => view.course.modules.some(m => m.lessons.some(l => l.id === id)))])) };
 assert.deepEqual(migratePersonalCourse(legacy, { version: 1, revision: 5, videos: prior.videos }).groups, base.groups, 'Legacy order plus supplementary storage resolves to the same published sequence');
-console.log('PASS C1 focused modules: 16 subjects, prerequisite order, stable IDs, exact revision-12 groups, mixed progress, private descendants, explicit moves, archives/deletions, legacy migration and historical Undo.');
+console.log('PASS C1 focused modules: 17 subjects, prerequisite order, stable IDs, exact revision-12 groups, mixed progress, private descendants, explicit moves, archives/deletions, legacy migration and historical Undo.');

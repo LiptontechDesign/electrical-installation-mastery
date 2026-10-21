@@ -13,7 +13,8 @@ Updated 21 October 2026. This index and the root README describe the current app
 - [Earthing, ADS and fault-loop learning order](earthing-ads-learning-order.md): revised Module 5 sections, conductor sizing in Module 6, bonding assessment in Module 8 and saved-course migration.
 - [C1 applied building, capacitor-bank and MDB examples](c1-rashid-worked-examples.md): three selected Rashid iqubal English-caption examples, prerequisite placements, technical qualifications and saved-course preservation.
 - [C1 connected seven-step cable design](c1-cable-design-series.md): complete EccElectric series before the detailed Module 8 calculations, English-caption review, terminology clarifications and saved-course preservation.
-- [C1 sixteen-module route](c1-focused-modules.md): independent C1 numbering, subject modules, prerequisites, EPRA scope, optional depth and saved-state preservation.
+- [C1 protective devices before motors](c1-protective-devices.md): 15 English-caption-reviewed lessons, nine sections, focused ACB/overcurrent-relay/three-phase RCD additions, technical qualifications and saved-course preservation.
+- [C1 seventeen-module route](c1-focused-modules.md): independent C1 numbering, subject modules, prerequisites, EPRA scope, optional depth and saved-state preservation.
 - [C1 generator foundations and applications](c1-generator-learning.md): seven transcript-reviewed additions, a 16-minute foundation followed by UK equipment demonstrations, optional specialist controls, explicit remaining practical gaps and revision-12 preservation.
 - [C1 self-study sequence](c1-study-sequence.md): every C1 section and video in study order, with essential/optional roles and precise study notes.
 - [C1 design before installation](c1-design-before-installation.md): early board overview, then Modules 13–14 design/protection checks before full submain and board-assembly demonstrations, with stable saved-course identities.

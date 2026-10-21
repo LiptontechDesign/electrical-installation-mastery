@@ -1,0 +1,536 @@
+{
+  "reviewDate": "2026-10-21",
+  "method": "Read every complete available English caption export for the selected lessons. Review evaluates content and instructional sequence, not visual production or successful embedded playback. Public captions may contain transcription errors. Full transcripts remain ignored and are not redistributed.",
+  "selectedCount": 15,
+  "newMediaCount": 8,
+  "totalAddedDurationSeconds": 8459,
+  "videos": [
+    {
+      "lessonId": "c1-protection-fuses",
+      "videoId": "rijmYhVeUNs",
+      "url": "https://www.youtube.com/watch?v=rijmYhVeUNs",
+      "title": "Fuses and HRC Construction: Identify the Protective Devices",
+      "instructor": "GSH Electrical",
+      "durationSeconds": 839,
+      "selection": "Intentional reinforcement",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 393,
+        "captionEndSeconds": 836.16,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 836.16
+          }
+        ],
+        "sha256": "2b87320cec4ade6e6ba52decb29e5d74bb46aac03ac02c3b9625679ed64630b8",
+        "rawExportSha256": "acf0c7a14867e802fb82101e99b5a4e0fca400628d8075b4cc8476734fb313ee"
+      },
+      "flowRationale": "Identify physical fuse families before time/current behaviour.",
+      "qualification": "Historic BS examples support identification. Use marked ratings and actual characteristics; fuses can fail. HRC filler cools and de-ionises the arc. A fixed fusing factor is not a universal selection rule.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "Different Types of Protective Devices BS 3036, BS 1361, BSEN 60898 and BS 88 Fuses",
+        "publicAuthor": "GSH Electrical"
+      }
+    },
+    {
+      "lessonId": "c1-protection-fuse-demo",
+      "videoId": "iHjWlO0JKyQ",
+      "url": "https://www.youtube.com/watch?v=iHjWlO0JKyQ",
+      "title": "Fuse Operation: Current, Heating and Time",
+      "instructor": "eFIXX",
+      "durationSeconds": 239,
+      "selection": "Intentional reinforcement",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 45,
+        "captionEndSeconds": 238.32,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 238.32
+          }
+        ],
+        "sha256": "7c17a8bb15dde0e74015244b0c659eb0f8bd5a9508cd572b9d37024c68b5b999",
+        "rawExportSha256": "07d3dc1c92b43c177c8fc28413cbecc8d2831ba25a3f5e43b7baf8297cfdb280"
+      },
+      "flowRationale": "Optional heating demonstration immediately reinforces the fuse foundation.",
+      "qualification": "This glass-fuse experiment illustrates heating and time, not HRC breaking capacity. Rated current is not an instantaneous operating threshold.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "Fuses: When Breaking Something Is a GOOD Thing! 💥",
+        "publicAuthor": "eFIXX"
+      }
+    },
+    {
+      "lessonId": "c1-protection-mcb",
+      "videoId": "iVZhVeFoSfk",
+      "url": "https://www.youtube.com/watch?v=iVZhVeFoSfk",
+      "title": "MCB Fundamentals: Thermal Trips, Magnetic Trips and B/C/D Curves",
+      "instructor": "eFIXX",
+      "durationSeconds": 1520,
+      "selection": "Intentional reinforcement",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 731,
+        "captionEndSeconds": 1520.96,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1520.96
+          }
+        ],
+        "sha256": "b1e9858cf8b6dd44e92481b28ac3bf85e1d053bf45c39c83ffc193383b001d47",
+        "rawExportSha256": "89038ed0a57630ae0637e1d8c142bf5d1eb827fb6dc1f21e5e3491d712e96c15"
+      },
+      "flowRationale": "Progresses from thermal and magnetic mechanisms to curves and fault levels.",
+      "qualification": "Select the curve from load inrush and required disconnection, rather than the building label. Use current tables, manufacturer data and verified fault levels; the UK examples are historical.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "The Complete Guide to MCBs - Miniature Circuit Breakers",
+        "publicAuthor": "eFIXX"
+      }
+    },
+    {
+      "lessonId": "c1-protection-mccb",
+      "videoId": "yzXROOX2LfI",
+      "url": "https://www.youtube.com/watch?v=yzXROOX2LfI",
+      "title": "MCCB Fundamentals: Frame Size, Trip Settings and Breaking Capacity",
+      "instructor": "The M&E Engineers",
+      "durationSeconds": 668,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 297,
+        "captionEndSeconds": 669.44,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 669.44
+          }
+        ],
+        "sha256": "9e1356491eebd6c070036083c35a0d42533e244d88b0581bb84913b146c6bf1e",
+        "rawExportSha256": "4488a8e81c660c0e6f4eea5b863505d57caed42781d87b34903e7e52721f280b"
+      },
+      "flowRationale": "Frame and trip ratings follow the MCB foundation; prepares the same presenter’s ACB explanation.",
+      "qualification": "Frame size is not the overload setting. The 800 A crossover and pickup ranges are examples. Check rated voltage, Icu/Ics and manufacturer coordination. Ground-fault tripping is not necessarily personnel RCD protection and must satisfy the design.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "Episode 1 - What is a MCCB Moulded Case Circuit Breaker, LSIG, ICS, ICU? Explained by a M&E Engineer",
+        "publicAuthor": "The M&E Engineers"
+      }
+    },
+    {
+      "lessonId": "c1-protection-acb",
+      "videoId": "ILE7RM604CQ",
+      "url": "https://www.youtube.com/watch?v=ILE7RM604CQ",
+      "title": "ACB Fundamentals: Trip Units, Draw-Out Construction and Releases",
+      "instructor": "The M&E Engineers",
+      "durationSeconds": 559,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 247,
+        "captionEndSeconds": 559.839,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 559.839
+          }
+        ],
+        "sha256": "40f094aac88f04f7f092b829813ae448f8393acfa9e304a6c038f9b8caa14e56",
+        "rawExportSha256": "10ad42600f983e4fee433b461e3d11845908e1743012225c50b46810e391c507"
+      },
+      "flowRationale": "Direct sequel to the MCCB lesson: trip units, construction and releases.",
+      "qualification": "Read after the MCCB lesson. Ratings, coil voltages, undervoltage thresholds and maintenance-mode settings are model-specific. Recognise the functions here; actual operation and withdrawal require the approved equipment procedure.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "Episode 2 - What is a ACB, Air Circuit Breaker, Trip Units, draw-out explained by a M&E engineer!",
+        "publicAuthor": "The M&E Engineers"
+      }
+    },
+    {
+      "lessonId": "c1-protection-acb-components",
+      "videoId": "OWygTF_BO3E",
+      "url": "https://www.youtube.com/watch?v=OWygTF_BO3E",
+      "title": "ACB Component Recognition: Siemens 3WL Example",
+      "instructor": "Siemens Knowledge Hub",
+      "durationSeconds": 240,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 85,
+        "captionEndSeconds": 240.83,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 240.83
+          }
+        ],
+        "sha256": "ba3c41af6253ee6b6b80e8f6ef42fb5e6ba199aeae0baf2e525a5432a37f91d7",
+        "rawExportSha256": "773127c12bfaaa3960089331e2c51af2730829ee37fb18f4fd5c0075026e2c1c"
+      },
+      "flowRationale": "Optional manufacturer recognition consolidates the preceding ACB explanation.",
+      "qualification": "A product example for recognising the trip unit, charging motor, releases and auxiliary contacts. Features and ratings vary by model.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "Siemens 3WL air circuit breakers (ACBs)",
+        "publicAuthor": "Siemens Knowledge Hub"
+      }
+    },
+    {
+      "lessonId": "c1-protection-rcd",
+      "videoId": "bXS-uNxeTXo",
+      "url": "https://www.youtube.com/watch?v=bXS-uNxeTXo",
+      "title": "Residual-Current Protection: Principles and Types AC, A, F and B",
+      "instructor": "eFIXX",
+      "durationSeconds": 1265,
+      "selection": "Intentional reinforcement",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 560,
+        "captionEndSeconds": 1265.78,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1265.78
+          }
+        ],
+        "sha256": "47985bf7019367902576b1e01b7d1c16a40a76387184b3720c4dd1baafe3aecc",
+        "rawExportSha256": "6bb93d4ff529e393c2994e8bf9ca40a97b7461a97a058d13e668e375cb521820"
+      },
+      "flowRationale": "Starts with residual-current balance before waveform classifications.",
+      "qualification": "30 mA reduces shock risk; it is not a safe current. DC-tolerance figures are not residual trip-current ratings. Select waveform type for the actual load and manufacturer requirements; verify current local rules.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "The Complete Guide To RCDs - Residual Current Devices",
+        "publicAuthor": "eFIXX"
+      }
+    },
+    {
+      "lessonId": "c1-protection-rcbo",
+      "videoId": "eWaNJ-VD5m0",
+      "url": "https://www.youtube.com/watch?v=eWaNJ-VD5m0",
+      "title": "RCCB and RCBO: Separate and Combined Protection",
+      "instructor": "eFIXX",
+      "durationSeconds": 315,
+      "selection": "Intentional reinforcement",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 57,
+        "captionEndSeconds": 309.84,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 309.84
+          }
+        ],
+        "sha256": "f676af2b118600ada6b6e078cb850cde86ad4fa532fc2c776690055898459c06",
+        "rawExportSha256": "febfa0f1df6c0a573a74c6445cd97bb304507b5acfc5ab898685f6a66e289fd2"
+      },
+      "flowRationale": "Distinguishes the RCD family from combined overcurrent protection.",
+      "qualification": "An RCCB needs appropriate overcurrent protection. An RCBO combines residual-current and overcurrent protection; select its poles, ratings and fault duty for the circuit.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "What's the difference between an RCD and an RCBO? - Circuit protection.",
+        "publicAuthor": "eFIXX"
+      }
+    },
+    {
+      "lessonId": "c1-protection-three-phase-rcd",
+      "videoId": "tBjIVDu6YHo",
+      "url": "https://www.youtube.com/watch?v=tBjIVDu6YHo",
+      "title": "Three-Phase RCDs: Current Balance, Unequal Loads and Neutral Connections",
+      "instructor": "eFIXX",
+      "durationSeconds": 339,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 185,
+        "captionEndSeconds": 340.12,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 340.12
+          }
+        ],
+        "sha256": "45e4d677dffe9d9d42ba7a27cd42dca7944d5da0cdd8127dec8c69aee331bc72",
+        "rawExportSha256": "78ffa168bbca969a70dbde28550cb6c1c0d9171041da877ebf40867a2df0c63f"
+      },
+      "flowRationale": "Applies residual-current balance to three-phase and neutral conductors.",
+      "qualification": "Sense every live load conductor, including neutral where used; unequal phase loads alone do not cause residual current. A three-wire load may need no load neutral, but the RCD electronics or test circuit can need a specified supply. Follow the exact wiring diagram; Type B does not universally require neutral.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "This Simple RCD Error Could Be Deadly!",
+        "publicAuthor": "eFIXX"
+      }
+    },
+    {
+      "lessonId": "c1-protection-spd",
+      "videoId": "7en_Rc14c2g",
+      "url": "https://www.youtube.com/watch?v=7en_Rc14c2g",
+      "title": "SPD Fundamentals: Transient Surges, Clamping and Device Condition",
+      "instructor": "eFIXX",
+      "durationSeconds": 370,
+      "selection": "Intentional reinforcement",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 168,
+        "captionEndSeconds": 372.28,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 372.28
+          }
+        ],
+        "sha256": "898f311abfea407ac9233ae4a9ad65eca9fdc4fea17a71330424316cde6b9018",
+        "rawExportSha256": "11bad763b5b03540a1da2648c3ac39b899ac8639c75a8bdc88f5e6f6bb54f4ae"
+      },
+      "flowRationale": "Separates transient suppression from residual-current and overcurrent protection.",
+      "qualification": "SPDs limit transients; they do not replace overcurrent or residual-current protection, or protect against every sustained overvoltage. Coordinate Types 1/2/3 and any external lightning protection for the installation. Verify current local requirements.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "What is a Surge Protection Device (SPD)? and How Do They Work?",
+        "publicAuthor": "eFIXX"
+      }
+    },
+    {
+      "lessonId": "c1-protection-selectivity",
+      "videoId": "lOcbVQgCSpM",
+      "url": "https://www.youtube.com/watch?v=lOcbVQgCSpM",
+      "title": "Protective-Device Coordination: Selectivity and Discrimination",
+      "instructor": "LEARN ELECTRICS",
+      "durationSeconds": 816,
+      "selection": "Intentional reinforcement",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 363,
+        "captionEndSeconds": 818,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 818
+          }
+        ],
+        "sha256": "783a4d30802845b213941406639848f194a7df1845064d61e8f9b6dbb582dbab",
+        "rawExportSha256": "898a45b8e6ecfcd2b1c26975c0baaa4100bb96831aaf2a7cb7995884ab170252"
+      },
+      "flowRationale": "Compares upstream/downstream devices after their individual principles.",
+      "qualification": "One plotted overload point does not prove full selectivity. Check the actual fault-current range and manufacturer selectivity/energy tables. Use current RCD verification procedures; the half-rated test discussion is historical.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "SELECTIVITY, DISCRIMINATION and CO-ORDINATION of electrical devices for protection",
+        "publicAuthor": "LEARN ELECTRICS"
+      }
+    },
+    {
+      "lessonId": "c1-protection-overcurrent-relay",
+      "videoId": "bQ6fZrrP0H4",
+      "url": "https://www.youtube.com/watch?v=bQ6fZrrP0H4",
+      "title": "Overcurrent Relays: Pickup, Time Delay and Circuit-Breaker Tripping",
+      "instructor": "OMICRONenergy",
+      "durationSeconds": 250,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 35,
+        "captionEndSeconds": 235.8,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 235.8
+          }
+        ],
+        "sha256": "5565dea35eb07a7a1ecb2f901e116fa96d36b625bf168bda14e90a73c97df185",
+        "rawExportSha256": "38c872eb984375cf1d241b9a763eb5acebb59c9d58b840db929abccf4a44aa84"
+      },
+      "flowRationale": "Clear animated sensor–decision–breaker sequence before motor-specific relays.",
+      "qualification": "The CT–relay–breaker principle also applies at low voltage. This is a functional introduction, not a relay-testing procedure. Never open an energised CT secondary; testing requires approved isolation and shorting arrangements.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "How does overcurrent protection work?",
+        "publicAuthor": "OMICRONenergy"
+      }
+    },
+    {
+      "lessonId": "c1-protection-overload-relay",
+      "videoId": "3aur1tZYlKE",
+      "url": "https://www.youtube.com/watch?v=3aur1tZYlKE",
+      "title": "Thermal Overload Relays: Motor Current, Trip Contacts and Reset",
+      "instructor": "Automatedo",
+      "durationSeconds": 504,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 219,
+        "captionEndSeconds": 499.919,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 499.919
+          }
+        ],
+        "sha256": "ef371ea10031754050c82eb188e4138e2236593cb6b947535c0dee28c1cd13fd",
+        "rawExportSha256": "380fc92a6c41c21c2e3b795ec9b955c361ba4dc079b09309c9f99ac65b24e80c"
+      },
+      "flowRationale": "Explains heating, set current, control contacts and reset before starter applications.",
+      "qualification": "Normally 95–96 is closed; a trip opens it and closes 97–98. Contact checks do not establish thermal calibration. The relay needs coordinated short-circuit protection. Study detailed starter wiring after motor principles.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "What is an Overload Relay? Connection & Working Principle",
+        "publicAuthor": "Automatedo"
+      }
+    },
+    {
+      "lessonId": "c1-protection-mpcb",
+      "videoId": "1DDsOJa_FuU",
+      "url": "https://www.youtube.com/watch?v=1DDsOJa_FuU",
+      "title": "Motor-Protection Circuit Breakers: Thermal, Magnetic and Phase-Loss Mechanisms",
+      "instructor": "Power Eng. By Afshin",
+      "durationSeconds": 208,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 85,
+        "captionEndSeconds": 209.12,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 209.12
+          }
+        ],
+        "sha256": "3546c4f2181f2769729edcdbfa5fbd82a6735a9d3abe337c801355b5b4895ef1",
+        "rawExportSha256": "497f49669224a61d6019a650442794b2b5f8dcea6baee6d975c316bd866892c0"
+      },
+      "flowRationale": "Connects thermal, magnetic and phase-loss mechanisms to the breaker family.",
+      "qualification": "This mechanism is one MPCB design, not a universal feature list. Phase-loss sensitivity is not separate voltage monitoring. Select the current range and short-circuit coordination from the motor nameplate, starting duty and manufacturer data.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "How an MPCB Trips: Explained Simply",
+        "publicAuthor": "Power Eng. By Afshin"
+      }
+    },
+    {
+      "lessonId": "c1-protection-phase-monitoring",
+      "videoId": "sO2RPcGLshA",
+      "url": "https://www.youtube.com/watch?v=sO2RPcGLshA",
+      "title": "Phase-Monitoring Relays: Phase Failure, Sequence and Voltage Conditions",
+      "instructor": "ATO Automation",
+      "durationSeconds": 327,
+      "selection": "New media",
+      "transcript": {
+        "provider": "YTTools public caption export",
+        "language": [
+          "en"
+        ],
+        "segmentCount": 152,
+        "captionEndSeconds": 326.479,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 326.479
+          }
+        ],
+        "sha256": "e437a377c01344820f0df6e8cf4104d69ef66f3ef5f1d0de0095dfa1a524cab1",
+        "rawExportSha256": "96bef25e765d5eed9eefb41eeb920b885526c01d573707004407c34fd8fcb6ff"
+      },
+      "flowRationale": "Finishes by separating voltage/phase supervision from fault-current interruption.",
+      "qualification": "Functions and thresholds vary by model. The output controls a contactor; it does not interrupt motor fault current. Keep the protective contact effective in every energising path, including while Start is held. Detailed motor wiring follows later.",
+      "availability": {
+        "checkedDate": "2026-10-21",
+        "oembedAvailable": true,
+        "publicTitle": "Understanding Phase Failure Relays | What Are Phase Monitoring Relays?",
+        "publicAuthor": "ATO Automation"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "videoId": "GgfmwWFZ43A",
+      "reason": "Less consistent frame/thermal-magnetic distinctions; same 800 A boundary overgeneralisation as the selected lesson without its connected ACB sequel."
+    },
+    {
+      "videoId": "9iU83sXJ_gg",
+      "reason": "Misleading Ics percentages and an absolute Icu replacement claim."
+    },
+    {
+      "videoId": "_p59DWJ8MPg",
+      "reason": "Dismantled mechanism and coil handling are less suitable for a first recognition sequence."
+    },
+    {
+      "videoId": "v6Kkd0VgwyM",
+      "reason": "Generalises voltage-imbalance protection and spends time on prices; the selected mechanism lesson has a clearer progression."
+    },
+    {
+      "videoId": "TqdQRgf3uGs",
+      "reason": "Existing earlier comparison generalises current limits, pole counts and auxiliaries. Kept in its old location; not repeated in the new sequence."
+    },
+    {
+      "videoId": "QUC17Kju4ug",
+      "reason": "Historical UK application rules dominate the AFDD explanation. Existing C2 AFDD coverage remains available; no new C1 requirement is inferred."
+    }
+  ],
+  "notEnglishReviewed": [
+    {
+      "videoId": "wQwGZMcDGXk",
+      "reason": "Retrieved track was Arabic; no claim of an English transcript review. Existing placement retained."
+    }
+  ]
+}

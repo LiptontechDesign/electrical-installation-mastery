@@ -10,15 +10,16 @@ const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const prior=read('scripts/fixtures/c1-rashid-previous.json'),untouched=structuredClone(prior);
 const additions=read('scripts/fixtures/c1-rashid-additions.json'),addedIds=new Set(additions.map(v=>v.id));
 const catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),evidence=read('docs/c1-rashid-video-review.json');
+const laterIds=new Set(read('scripts/fixtures/c1-protection-additions.json').map(v=>v.id));
 const upgraded=parse(prior),view=snapshot(upgraded),core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 assert.equal(Object.values(prior.groups).flat().length,485,'Actual pre-addition published snapshot');
 assert.equal(prior.curriculumRevision,13);assert.equal(upgraded.curriculumRevision,13);
 assert.deepEqual(prior,untouched);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(parse(upgraded),upgraded);
 for(const [id,ids] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],ids,'Existing section order remains intact: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!addedIds.has(id)).sort(),Object.values(prior.groups).flat().sort());
-assert.equal(view.allRows.length,488);assert.equal(sections.length,194);
-assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,154);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!addedIds.has(id)&&!laterIds.has(id)).sort(),Object.values(prior.groups).flat().sort());
+assert.equal(view.allRows.length,503);assert.equal(sections.length,203);
+assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,169);
 const placement=[['c1-rashid-capacitor-bank','c1-pfc-bank-protection','c1-pfc',4],['c1-rashid-building-design','c1-building-design-capstone','c1-installation',1],['c1-rashid-mdb-transfer','c1-standby-mdb-transfer','c1-standby',2]];
 for(const [id,sectionId,moduleId,number] of placement){
  assert.equal(view.byId.get(id).sectionId,sectionId);assert.equal(view.byId.get(id).moduleId,moduleId);
@@ -29,7 +30,7 @@ for(const [id,sectionId,moduleId,number] of placement){
 const order=view.allRows.map(r=>r.id),before=(a,b)=>assert.ok(order.indexOf(a)>=0&&order.indexOf(a)<order.indexOf(b),a+' precedes '+b);
 for(const pair of [['c1-pfc-unity-bank','c1-rashid-capacitor-bank'],['c1-rashid-capacitor-bank','c1-complex-number-foundation'],['c1-cpc-size-foundation','c1-rashid-building-design'],['c1-rashid-building-design','p07-l08'],['c1-generator-neutral-transfer','c1-rashid-mdb-transfer'],['c1-generator-transfer-operation','c1-rashid-mdb-transfer']])before(...pair);
 const watched=new Set(['p06-l05','c1-pfc-unity-bank','c1-generator-transfer-operation']);
-assert.deepEqual(progressForVideos(view.allRows.filter(r=>!addedIds.has(r.id)).map(r=>r.id),watched),progressForVideos(Object.values(prior.groups).flat(),watched));
+assert.deepEqual(progressForVideos(view.allRows.filter(r=>!addedIds.has(r.id)&&!laterIds.has(r.id)).map(r=>r.id),watched),progressForVideos(Object.values(prior.groups).flat(),watched));
 assert.equal(evidence.selectedCount,3);assert.equal(evidence.videos.length,6);assert.equal(evidence.totalAddedDurationSeconds,3010);
 for(const v of evidence.videos){
  assert.ok([v.transcript.language].flat().every(l=>/^en(?:-|$)/.test(l)));
