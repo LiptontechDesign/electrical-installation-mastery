@@ -8,7 +8,7 @@ const {progressForVideos}=await import('../work/c1-protection-tests/course-progr
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const prior=read('scripts/fixtures/c1-protection-previous.json'),original=structuredClone(prior);
 const additions=read('scripts/fixtures/c1-protection-additions.json'),ids=new Set(additions.map(l=>l.id));
-const laterIds=new Set(read('app/c1-motor-gap-update.json').addedLessonIds);
+const laterIds=new Set([...read('app/c1-motor-gap-update.json').addedLessonIds,...read('app/c1-wound-rotor-update.json').addedLessonIds]);
 const catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),evidence=read('docs/c1-protection-video-review.json');
 const updated=parse(prior),view=snapshot(updated),modules=view.course.modules.filter(m=>m.path==='C1');
 const protectionModule=modules.find(m=>m.id==='c1-protective-devices'),core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
@@ -18,7 +18,7 @@ assert.equal(updated.curriculumRevision,13,'Pure additions do not replay earlier
 for(const [sectionId,order] of Object.entries(prior.groups))assert.deepEqual(updated.groups[sectionId],order,'Exact existing mixed order: '+sectionId);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(updated[key],prior[key]);
 assert.deepEqual(view.allRows.filter(r=>!ids.has(r.id)&&!laterIds.has(r.id)).map(r=>r.id),Object.values(prior.groups).flat(),'All old occurrences retain their relative published order');
-assert.equal(view.allRows.length,515);assert.equal(protectionModule.stageNumber,10);assert.equal(modules.length,17);
+assert.equal(view.allRows.length,517);assert.equal(protectionModule.stageNumber,10);assert.equal(modules.length,17);
 assert.equal(modules[8].id,'c1-earthing');assert.equal(modules[10].id,'c1-installation');assert.equal(modules[11].id,'c1-motors');
 const groups=sections.filter(s=>s.moduleId===protectionModule.id);
 assert.equal(groups.length,9);assert.deepEqual(groups.flatMap(s=>s.lessonIds),additions.map(l=>l.id));

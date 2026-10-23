@@ -1,6 +1,6 @@
 # Current documentation
 
-Updated 21 October 2026. This index and the root README describe the current application, not a future roadmap.
+Updated 23 October 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
 - [C1 written marks, oral priorities and course coverage](c1-exam-weight-and-coverage-audit.md): readable high-mark allocations, all 78 authored question mappings, actual lesson coverage, C2 prerequisites, remaining application gaps and explicit oral-evidence limits.
@@ -54,3 +54,5 @@ Supplementary lessons share the main lesson layout, course-order Previous/Next c
 Mobile layouts keep book page controls above navigation, retain guest playback settings, use larger touch targets and form text, and constrain dialogs to dynamic viewport height. Touch taps do not leave hover tooltips. See [mobile verification](mobile-experience.md) for coverage and device-testing limits.
 
 - [C1 motor gap-fill selections](c1-motor-gap-fill.md): twelve transcript-reviewed English additions, UK-first search, one justified hunting exception and coverage limits. [Evidence ledger](c1-motor-gap-video-review.json).
+
+- [Wound-rotor motor section](c1-wound-rotor-motors.md): exactly the two requested Red Seal Electrician lessons, construction before resistance/torque, English transcript/audio evidence and preserved progress.

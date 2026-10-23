@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 483,
-  "duration": "110 h 35 min",
+  "lessonCount": 485,
+  "duration": "111 h 01 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -5702,8 +5702,8 @@
       "number": 21,
       "title": "Motor Principles and Connections",
       "description": "Begin with the rotating field and induction motor, then read nameplates and connect shaft output, efficiency, electrical input and supply current. Develop slip, torque and winding connections before single-phase and DC motors; precision motors are further study.",
-      "duration": "4 h 14 min",
-      "durationSeconds": 15268,
+      "duration": "4 h 40 min",
+      "durationSeconds": 16838,
       "learningOutcome": "Begin with the rotating field and induction motor, then read nameplates and connect shaft output, efficiency, electrical input and supply current. Develop slip, torque and winding connections before single-phase and DC motors; precision motors are further study.",
       "lessons": [
         {
@@ -5786,8 +5786,40 @@
           "studyNote": "The final NEMA classifications are US examples; the torque–speed principles apply generally."
         },
         {
-          "id": "c1-wound-rotor-starting",
+          "id": "c1-wound-rotor-construction",
+          "videoId": "iSrt-hx9t5U",
+          "title": "Wound-Rotor Motors: Construction, Operation and Starting",
+          "durationSeconds": 893,
+          "studyRole": "Core motor-type lesson",
+          "studyNote": "Reduce rotor resistance as speed rises. Reversal depends on the motor and brush-gear design; wound-rotor motors are not universally non-reversible. Rotor-circuit faults can reduce torque or prevent starting; isolate before inspection.",
           "number": 6,
+          "url": "https://www.youtube.com/watch?v=iSrt-hx9t5U",
+          "instructor": "Red Seal Electrician",
+          "duration": "14:53",
+          "topic": "Wound-Rotor Motors: Construction, Resistance and Torque",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "required": true
+        },
+        {
+          "id": "c1-wound-rotor-resistance-torque",
+          "videoId": "F9f4i7LtTpE",
+          "title": "Wound-Rotor Motors: Rotor Resistance, Current and Torque",
+          "durationSeconds": 677,
+          "studyRole": "Core worked comparison",
+          "studyNote": "The 0.707 rotor power factor and constant-torque table describe a simplified model, not universal motor limits. Examples use 60 Hz; rotor frequency equals slip multiplied by supply frequency.",
+          "number": 7,
+          "url": "https://www.youtube.com/watch?v=F9f4i7LtTpE",
+          "instructor": "Red Seal Electrician",
+          "duration": "11:17",
+          "topic": "Wound-Rotor Motors: Construction, Resistance and Torque",
+          "layer": "HOW",
+          "regulationSensitive": false,
+          "required": true
+        },
+        {
+          "id": "c1-wound-rotor-starting",
+          "number": 8,
           "title": "Wound-Rotor Motors: Slip Rings, External Resistance and Starting Torque",
           "videoId": "Bstjh1gMUYk",
           "url": "https://www.youtube.com/watch?v=Bstjh1gMUYk",
@@ -5797,8 +5829,8 @@
           "topic": "Slip-ring motors: external rotor resistance and starting torque",
           "layer": "HOW",
           "regulationSensitive": false,
-          "studyRole": "Core motor-type lesson",
-          "required": true,
+          "studyRole": "Further study",
+          "required": false,
           "studyNote": "External resistance is reduced as the motor accelerates. The quoted torque percentages and NEMA comparisons are examples, not universal values; resistance adjustment does not itself change the winding inductance."
         },
         {
@@ -5809,7 +5841,7 @@
           "durationSeconds": 776,
           "regulationSensitive": false,
           "id": "c1-single-phase-motor-principles",
-          "number": 7,
+          "number": 9,
           "title": "Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal",
           "topic": "Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal",
           "layer": "WHY",
@@ -5825,7 +5857,7 @@
           "durationSeconds": 649,
           "regulationSensitive": false,
           "id": "c1-single-phase-reversing-switch",
-          "number": 8,
+          "number": 10,
           "title": "Wire and Test a Single-Phase Forward/Reverse Drum Switch",
           "topic": "Wire and Test a Single-Phase Forward/Reverse Drum Switch",
           "layer": "WHY",
@@ -5835,7 +5867,7 @@
         },
         {
           "id": "c1-single-phase-type-comparison",
-          "number": 9,
+          "number": 11,
           "title": "Single-Phase Motor Types: Starting Torque, Run Capacitors and Winding Connections",
           "videoId": "utbt6_XK4C8",
           "url": "https://www.youtube.com/watch?v=utbt6_XK4C8",
@@ -5851,7 +5883,7 @@
         },
         {
           "id": "c1-shaded-pole-principle",
-          "number": 10,
+          "number": 12,
           "title": "Single-Phase Starting and Shaded-Pole Motors: Why Starting Torque Differs",
           "videoId": "2XYdTogWcIA",
           "url": "https://www.youtube.com/watch?v=2XYdTogWcIA",
@@ -5873,7 +5905,7 @@
           "durationSeconds": 932,
           "regulationSensitive": false,
           "id": "c1-dc-motor-commutation",
-          "number": 11,
+          "number": 13,
           "title": "DC Motors: Magnetic Force, Brushes and Commutation",
           "topic": "DC Motors: Magnetic Force, Brushes and Commutation",
           "layer": "WHY",
@@ -5888,7 +5920,7 @@
           "durationSeconds": 708,
           "regulationSensitive": false,
           "id": "c1-dc-winding-reversal",
-          "number": 12,
+          "number": 14,
           "title": "Reverse a Wound-Field DC Motor: Armature or Field Connections",
           "topic": "Reverse a Wound-Field DC Motor: Armature or Field Connections",
           "layer": "WHY",
@@ -5897,7 +5929,7 @@
         },
         {
           "id": "c1-synchronous-motor-foundation",
-          "number": 13,
+          "number": 15,
           "title": "Synchronous Motors: Constant Speed, Pull-Out Torque and Leading Power Factor",
           "videoId": "wlj4Oy6aw6A",
           "url": "https://www.youtube.com/watch?v=wlj4Oy6aw6A",
@@ -5913,7 +5945,7 @@
         },
         {
           "id": "c1-synchronous-hunting",
-          "number": 14,
+          "number": 16,
           "title": "Synchronous-Motor Hunting: Load-Angle Oscillation and Damper Windings",
           "videoId": "etgmqvrKgYA",
           "url": "https://www.youtube.com/watch?v=etgmqvrKgYA",
@@ -5935,7 +5967,7 @@
           "durationSeconds": 842,
           "regulationSensitive": false,
           "id": "c1-stepper-motor-principles",
-          "number": 15,
+          "number": 17,
           "title": "Stepper Motors: Winding Sequences, Steps and Position",
           "topic": "Stepper Motors: Winding Sequences, Steps and Position",
           "layer": "WHY",
@@ -5950,7 +5982,7 @@
           "durationSeconds": 945,
           "regulationSensitive": false,
           "id": "c1-servo-motor-feedback",
-          "number": 16,
+          "number": 18,
           "title": "Servo Motors: Command, Error and Position Feedback",
           "topic": "Servo Motors: Command, Error and Position Feedback",
           "layer": "WHY",
@@ -5966,7 +5998,7 @@
           "durationSeconds": 1967,
           "regulationSensitive": false,
           "id": "c1-torque-slip-operating-point",
-          "number": 17,
+          "number": 19,
           "title": "Torque–Slip Curve: Load Changes, Stable Operation and Stalling",
           "topic": "Torque–Slip Curve: Load Changes, Stable Operation and Stalling",
           "layer": "WHY",
@@ -7974,5 +8006,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 398113
+  "durationSeconds": 399683
 }

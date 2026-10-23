@@ -2,7 +2,7 @@
 
 Follow the sections in order. C1 has its own Module 1–17 numbering. It builds on C2 foundations, with selected reminders included. See [the current route and EPRA mapping](c1-focused-modules.md) and the [four-storey worked project](../public/c1-worked-project.md).
 
-108 sections · 181 video entries. [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
+109 sections · 183 video entries. [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -463,19 +463,28 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   The final NEMA classifications are US examples; the torque–speed principles apply generally.
 
-### 7. Slip-ring motors: external rotor resistance and starting torque
+### 7. Wound-Rotor Motors: Construction, Resistance and Torque
 
-- [Wound-Rotor Motors: Slip Rings, External Resistance and Starting Torque](https://www.youtube.com/watch?v=Bstjh1gMUYk) — Zack Hartle; Core motor-type lesson.
+- [Wound-Rotor Motors: Construction, Operation and Starting](https://www.youtube.com/watch?v=iSrt-hx9t5U) — Red Seal Electrician; Core motor-type lesson.
+
+  Reduce rotor resistance as speed rises. Reversal depends on the motor and brush-gear design; wound-rotor motors are not universally non-reversible. Rotor-circuit faults can reduce torque or prevent starting; isolate before inspection.
+- [Wound-Rotor Motors: Rotor Resistance, Current and Torque](https://www.youtube.com/watch?v=F9f4i7LtTpE) — Red Seal Electrician; Core worked comparison.
+
+  The 0.707 rotor power factor and constant-torque table describe a simplified model, not universal motor limits. Examples use 60 Hz; rotor frequency equals slip multiplied by supply frequency.
+
+### 8. Further study: short slip-ring motor overview
+
+- [Wound-Rotor Motors: Slip Rings, External Resistance and Starting Torque](https://www.youtube.com/watch?v=Bstjh1gMUYk) — Zack Hartle; Further study.
 
   External resistance is reduced as the motor accelerates. The quoted torque percentages and NEMA comparisons are examples, not universal values; resistance adjustment does not itself change the winding inductance.
 
-### 8. Identify six winding ends and select star or delta links
+### 9. Identify six winding ends and select star or delta links
 
 - [How to Connect Motor Windings in Star and Delta](https://www.youtube.com/watch?v=p2hDLMeFJqs) — The Electrical Guy; Core demonstration.
 
   On 400 V: 230/400 V Δ/Y → star; 400/690 V Δ/Y → delta.
 
-### 9. Single-phase starting windings, capacitors and reversal
+### 10. Single-phase starting windings, capacitors and reversal
 
 - [Single-Phase Motors: Capacitor Start, Capacitor Run and Reversal](https://www.youtube.com/watch?v=bytt0ZCJwRk) — LEARN ELECTRICS; Core lesson.
 
@@ -484,7 +493,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Isolate and prove capacitors discharged before touching terminals.
 
-### 10. Compare resistance-start, capacitor and shaded-pole motors
+### 11. Compare resistance-start, capacitor and shaded-pole motors
 
 - [Single-Phase Motor Types: Starting Torque, Run Capacitors and Winding Connections](https://www.youtube.com/watch?v=utbt6_XK4C8) — Red Seal Electrician; Core motor-type comparison.
 
@@ -493,31 +502,31 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Treat the hand-started motor as a concept demonstration; do not hand-start an energised machine. Shaded-pole motors have low starting torque. Start/run capacitor duty and the manufacturer’s diagram remain essential.
 
-### 11. DC motor force, commutation and direction reversal
+### 12. DC motor force, commutation and direction reversal
 
 - [DC Motors: Magnetic Force, Brushes and Commutation](https://www.youtube.com/watch?v=GQatiB-JHdI) — The Engineering Mindset; Core lesson.
 - [Reverse a Wound-Field DC Motor: Armature or Field Connections](https://www.youtube.com/watch?v=GYuBVM_GyOw) — Chinmay Deshpande; Core lesson.
 
-### 12. Synchronous motors: load angle, pull-out and field excitation
+### 13. Synchronous motors: load angle, pull-out and field excitation
 
 - [Synchronous Motors: Constant Speed, Pull-Out Torque and Leading Power Factor](https://www.youtube.com/watch?v=wlj4Oy6aw6A) — Jim Pytel; Core synchronous-motor lesson.
 
   Speed stays synchronous while the motor remains in step. Field excitation changes reactive power and pull-out capability; the 60 Hz laboratory values are examples. Deliberate loss-of-step tests are supervised demonstrations.
 
-### 13. Synchronous hunting: causes, effects and damping
+### 14. Synchronous hunting: causes, effects and damping
 
 - [Synchronous-Motor Hunting: Load-Angle Oscillation and Damper Windings](https://www.youtube.com/watch?v=etgmqvrKgYA) — Education 4u; Core specialist explanation.
 
   Hunting is transient oscillation about the operating load angle. The 0–2δ graph is an idealised load-step illustration, not a universal amplitude. Damper windings reduce oscillations; steady synchronous speed does not exclude temporary speed deviations.
 
-### 14. Stepper and servo motors: positioning and feedback
+### 15. Stepper and servo motors: positioning and feedback
 
 - [Stepper Motors: Winding Sequences, Steps and Position](https://www.youtube.com/watch?v=09Mpkjcr0bo) — The Engineering Mindset; Core motor-type lesson.
 - [Servo Motors: Command, Error and Position Feedback](https://www.youtube.com/watch?v=ditS0a28Sko) — RealPars; Core motor-type lesson.
 
   Removing power does not stop a rotating load instantly.
 
-### 15. Further study: torque–slip analysis and operating-point stability
+### 16. Further study: torque–slip analysis and operating-point stability
 
 - [Torque–Slip Curve: Load Changes, Stable Operation and Stalling](https://www.youtube.com/watch?v=zssTcEBkzh0) — NPTEL IIT Kharagpur; Optional advanced analysis.
 

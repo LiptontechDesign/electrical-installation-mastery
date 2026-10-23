@@ -1,5 +1,7 @@
 # C1 motor gaps: reviewed English video additions
 
+Follow-up, 23 October: the [dedicated wound-rotor section](c1-wound-rotor-motors.md) now uses the two user-selected Red Seal Electrician videos as core. The Zack Hartle overview described below remains available as optional further study, preserving its saved identity. This document records the earlier twelve-video addition.
+
 21 October 2026 · additive curriculum revision 13 · follows the [motor transcript audit](c1-motor-transcript-audit.md).
 
 Twelve videos (2 h 57 min 04 s) are added in ten focused sections across existing Modules 6, 12, 13 and 17. No existing video is removed or moved. Stepper and servo foundations now count as core because they appear in the reviewed paper requirements. There are no additional student-facing section preambles.

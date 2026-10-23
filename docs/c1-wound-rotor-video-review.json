@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-23",
+  "basis": "User expressly selected exactly these two videos. Both complete available English transcripts read before implementation. Original English/default audio and English ASR verified in public player metadata. Caption review is not a full listening/frame review.",
+  "moduleId": "c1-motors",
+  "section": {
+    "id": "c1-wound-rotor-motors",
+    "moduleId": "c1-motors",
+    "number": 7,
+    "title": "Wound-Rotor Motors: Construction, Resistance and Torque",
+    "lessonIds": [
+      "c1-wound-rotor-construction",
+      "c1-wound-rotor-resistance-torque"
+    ]
+  },
+  "selectedCount": 2,
+  "totalDurationSeconds": 1570,
+  "previousOverview": "Original Zack Hartle ID/media/progress retained in its existing stable section, now optional further study. New core section contains exactly the two requested videos.",
+  "videos": [
+    {
+      "lessonId": "c1-wound-rotor-construction",
+      "videoId": "iSrt-hx9t5U",
+      "url": "https://www.youtube.com/watch?v=iSrt-hx9t5U",
+      "title": "Wound-Rotor Motors: Construction, Operation and Starting",
+      "instructor": "Red Seal Electrician",
+      "durationSeconds": 893,
+      "sectionId": "c1-wound-rotor-motors",
+      "availability": {
+        "oembedAvailable": true,
+        "playerStatus": "OK",
+        "checkedOn": "2026-10-23"
+      },
+      "transcript": {
+        "language": [
+          "en"
+        ],
+        "sha256": "b87e31e76e105e35413d8453036f190196200e3601af86d35a31237faa240555",
+        "captionSegments": 309,
+        "captionEndSeconds": 890,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 890
+          }
+        ],
+        "audioEvidence": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "captionTracks": [
+          {
+            "lang": "en",
+            "kind": "asr",
+            "name": "English (auto-generated)",
+            "vssId": "a.en"
+          }
+        ]
+      },
+      "teaches": "Wound stator/rotor, insulated slip rings, brushes, external resistor bank, starting sequence, high-torque applications, resistance speed control and losses, open-circuit and brush/connection faults.",
+      "flow": "Construction and cage comparison → induced rotor current → application → starting and speed control → equipment and maintenance. Explicitly refers learners to the supplied resistance/current/torque sequel.",
+      "ranges": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 147,
+          "topic": "Construction and slip rings"
+        },
+        {
+          "startSeconds": 147,
+          "endSeconds": 470,
+          "topic": "Operation, torque and applications"
+        },
+        {
+          "startSeconds": 470,
+          "endSeconds": 691,
+          "topic": "Starting, resistance controllers and speed control"
+        },
+        {
+          "startSeconds": 691,
+          "endSeconds": 890,
+          "topic": "Faults and maintenance"
+        }
+      ],
+      "limits": "Simplified torque/PF claims are not universal. The closing claim that these motors cannot reverse is too broad: suitability depends on motor, brush gear and drive design. A single open connection does not prove all rotor currents and torque are zero. The 50% slip example is not a universal speed range. Caption review is not visual confirmation of every diagram.",
+      "qualification": "Reduce rotor resistance as speed rises. Reversal depends on the motor and brush-gear design; wound-rotor motors are not universally non-reversible. Rotor-circuit faults can reduce torque or prevent starting; isolate before inspection."
+    },
+    {
+      "lessonId": "c1-wound-rotor-resistance-torque",
+      "videoId": "F9f4i7LtTpE",
+      "url": "https://www.youtube.com/watch?v=F9f4i7LtTpE",
+      "title": "Wound-Rotor Motors: Rotor Resistance, Current and Torque",
+      "instructor": "Red Seal Electrician",
+      "durationSeconds": 677,
+      "sectionId": "c1-wound-rotor-motors",
+      "availability": {
+        "oembedAvailable": true,
+        "playerStatus": "OK",
+        "checkedOn": "2026-10-23"
+      },
+      "transcript": {
+        "language": [
+          "en"
+        ],
+        "sha256": "f32d239eafecda134ebd3dcb406b7b717a386a51def8056aad0d9923eb2913b0",
+        "captionSegments": 235,
+        "captionEndSeconds": 678.48,
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 678.48
+          }
+        ],
+        "audioEvidence": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "captionTracks": [
+          {
+            "lang": "en",
+            "kind": "asr",
+            "name": "English (auto-generated)",
+            "vssId": "a.en"
+          }
+        ]
+      },
+      "teaches": "Slip speed, rotor speed/EMF/frequency/reactance, R/X/Z and in-phase rotor current; compares low-resistance cage, high-resistance cage and adjustable-resistance wound rotors.",
+      "flow": "Defines every table column before comparing three rotors; concludes with resistance reduction maintaining high starting/accelerating torque. Follows construction and basic slip/torque lessons.",
+      "ranges": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 324,
+          "topic": "Table quantities and rotor circuit"
+        },
+        {
+          "startSeconds": 324,
+          "endSeconds": 527,
+          "topic": "Low- and high-resistance comparison"
+        },
+        {
+          "startSeconds": 527,
+          "endSeconds": 678.48,
+          "topic": "Variable resistance and torque"
+        }
+      ],
+      "limits": "The 0.707 rotor-PF condition is an approximate rotor-only-model result, not a general stator supply power factor or universal full-equivalent-circuit result. Constant torque/current relies on the illustrated resistance schedule and model assumptions. The 60 Hz, 1800 rpm and 6 V examples are data, not local installation ratings; automatic captions obscure some decimal values.",
+      "qualification": "The 0.707 rotor power factor and constant-torque table describe a simplified model, not universal motor limits. Examples use 60 Hz; rotor frequency equals slip multiplied by supply frequency."
+    }
+  ],
+  "technicalSources": [
+    {
+      "url": "https://library.e.abb.com/public/6b4e1a3530814df0c12579bb0030e58b/1SFC132060M0201.pdf",
+      "supports": "Slip-ring resistance starting; printed page 9."
+    },
+    {
+      "url": "https://static.weg.net/medias/downloadcenter/h7a/hc0/WEG-Low-and-high-voltage-three-phase-induction-motors-slip-ring-rotor-fixed-brush-holder-m-line-14583796-manual-english.pdf",
+      "supports": "Motor-specific direction/brush-gear and maintenance instructions."
+    },
+    {
+      "url": "https://www.mdpi.com/2075-1702/9/12/340",
+      "supports": "Full T equivalent circuit includes stator/leakage/magnetising terms; rotor-only simplifications are conditional."
+    }
+  ]
+}
