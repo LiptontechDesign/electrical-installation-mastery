@@ -24,7 +24,7 @@ C1 has its own visible **Module 1–17** sequence, independent of C2. The course
 | 16 | Standby Generators: Connections and Operation | Apply earlier principles, design and verification to siting, earthing, transfer and operation. |
 | 17 | Fault Diagnosis | Combine installation/motor knowledge, measurements, emergency response and investigation. |
 
-Each row is an actual module with its own sections and progress. With the [protective-device module](c1-protective-devices.md), C1 contains 108 stable sections and 181 mixed video entries. The whole course has 483 catalogue entries and 515 default mixed entries across 32 modules and 213 sections. All earlier videos and their saved identities remain available.
+Each row is an actual module with its own sections and progress. With the [protective-device module](c1-protective-devices.md), C1 contains 109 stable sections and 183 mixed video entries. The whole course has 485 catalogue entries and 517 default mixed entries across 32 modules and 214 sections. All earlier videos and their saved identities remain available.
 
 ## Prerequisite repairs
 
@@ -70,3 +70,5 @@ Whole sections keep their IDs and exact mixed row groups. Account parsing resolv
 Validation passed: the focused-module and historical curriculum suites, account/API/guest isolation, learner-state and mixed-progress checks, course navigation/workspace/fullscreen component tests, protected EPRA questions, Past Papers, books, theme, ESLint, TypeScript, Next.js production build and Vinext production build. The API suite uses a deterministic storage fixture. Vinext retains its existing chunk-size warning. In the single dedicated Chrome tab, the local production build showed all sixteen C1 module labels and the foundation-first generator section; selecting a lesson and Previous/Next navigation worked without console errors. Embedded playback was not established during this tab check, so it is not included in that verification claim.
 
 Motor follow-up: [twelve English video additions, placements and remaining limits](c1-motor-gap-fill.md).
+
+[Wound-rotor motors: the two requested English lessons](c1-wound-rotor-motors.md) form a dedicated core section after slip and torque.

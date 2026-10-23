@@ -1,14 +1,14 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
-import { assertC2Reorganization, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions } from './assert-c2-reorganization.mjs';
+import { assertC2Reorganization, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions, c1WoundRotorAdditions } from './assert-c2-reorganization.mjs';
 const read = p => JSON.parse(readFileSync(p, 'utf8'));
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-order-model.ts', 'app/course-curriculum.ts'], outdir: 'work/c1-tests', bundle: true, platform: 'node', format: 'esm' });
 const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCourseSnapshot: snapshot, applyCourseEdit: apply, migratePersonalCourse } = await import('../work/c1-tests/personal-course-model.js');
 const { isRequiredStudyVideo: required, studyVideoRole: role, studyNoteFor: note } = await import('../work/c1-tests/course-curriculum.js');
 const before = read('scripts/fixtures/c1-learning-previous.json'), original = structuredClone(before), update = read('app/c1-learning-update.json');
 const sections = read('app/learning-sections.json'), catalog = read('app/video-catalog.json'), evidence = read('docs/c1-video-review.json');
-const newIds = new Set([...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions, ...c1MotorGapAdditions].map(l=>l.id)), oldIds = Object.values(before.groups).flat();
+const newIds = new Set([...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions, ...c1MotorGapAdditions, ...c1WoundRotorAdditions].map(l=>l.id)), oldIds = Object.values(before.groups).flat();
 const upgraded = parse(before), view = snapshot(upgraded);
 assert.equal(before.curriculumRevision, 6);
 assert.equal(upgraded.curriculumRevision, 13);
@@ -48,7 +48,7 @@ for (const id of Object.keys(update.previous)) assert.ok(Object.hasOwn(upgraded.
 for (const [id,ids] of Object.entries(before.groups).filter(([id])=>!Object.hasOwn(update.previous,id))) assert.deepEqual(upgraded.groups[id],ids,'Other pathways remain untouched: '+id);
 assert.equal(sections.filter(s=>Object.hasOwn(update.current,s.id)).length,40);
 // The medium-voltage switchgear occurrence now belongs to Advanced.
-assert.equal(view.allRows.filter(r=>catalog.modules.find(m=>m.id===r.moduleId).path==='C1').length,64+c1GapFillAdditions.length+c1FlowAdditions.length+c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length + c1ProtectionAdditions.length + c1MotorGapAdditions.length-1);
+assert.equal(view.allRows.filter(r=>catalog.modules.find(m=>m.id===r.moduleId).path==='C1').length,64+c1GapFillAdditions.length+c1FlowAdditions.length+c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length + c1ProtectionAdditions.length + c1MotorGapAdditions.length + c1WoundRotorAdditions.length-1);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'Published sections are populated, including supporting-only topics');
 assert.equal(view.byId.get('p06-l14').sectionId,'c1-power-triangle');
 assert.equal(view.byId.get('p10-l06').sectionId,'c1-distribution-installation');

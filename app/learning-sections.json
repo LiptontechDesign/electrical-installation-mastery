@@ -1544,10 +1544,20 @@
     ]
   },
   {
-    "id": "c1-motors-wound-rotor",
+    "id": "c1-wound-rotor-motors",
     "moduleId": "c1-motors",
     "number": 7,
-    "title": "Slip-ring motors: external rotor resistance and starting torque",
+    "title": "Wound-Rotor Motors: Construction, Resistance and Torque",
+    "lessonIds": [
+      "c1-wound-rotor-construction",
+      "c1-wound-rotor-resistance-torque"
+    ]
+  },
+  {
+    "id": "c1-motors-wound-rotor",
+    "moduleId": "c1-motors",
+    "number": 8,
+    "title": "Further study: short slip-ring motor overview",
     "lessonIds": [
       "c1-wound-rotor-starting"
     ]
@@ -1555,14 +1565,14 @@
   {
     "id": "c1-motors-terminals",
     "moduleId": "c1-motors",
-    "number": 8,
+    "number": 9,
     "title": "Identify six winding ends and select star or delta links",
     "lessonIds": []
   },
   {
     "id": "c1-single-phase-motors",
     "moduleId": "c1-motors",
-    "number": 9,
+    "number": 10,
     "title": "Single-phase starting windings, capacitors and reversal",
     "lessonIds": [
       "c1-single-phase-motor-principles",
@@ -1572,7 +1582,7 @@
   {
     "id": "c1-motors-single-phase-types",
     "moduleId": "c1-motors",
-    "number": 10,
+    "number": 11,
     "title": "Compare resistance-start, capacitor and shaded-pole motors",
     "lessonIds": [
       "c1-single-phase-type-comparison",
@@ -1582,7 +1592,7 @@
   {
     "id": "c1-dc-motors",
     "moduleId": "c1-motors",
-    "number": 11,
+    "number": 12,
     "title": "DC motor force, commutation and direction reversal",
     "lessonIds": [
       "c1-dc-motor-commutation",
@@ -1592,7 +1602,7 @@
   {
     "id": "c1-motors-synchronous",
     "moduleId": "c1-motors",
-    "number": 12,
+    "number": 13,
     "title": "Synchronous motors: load angle, pull-out and field excitation",
     "lessonIds": [
       "c1-synchronous-motor-foundation"
@@ -1601,7 +1611,7 @@
   {
     "id": "c1-motors-hunting",
     "moduleId": "c1-motors",
-    "number": 13,
+    "number": 14,
     "title": "Synchronous hunting: causes, effects and damping",
     "lessonIds": [
       "c1-synchronous-hunting"
@@ -1610,7 +1620,7 @@
   {
     "id": "c1-precision-motors",
     "moduleId": "c1-motors",
-    "number": 14,
+    "number": 15,
     "title": "Stepper and servo motors: positioning and feedback",
     "lessonIds": [
       "c1-stepper-motor-principles",
@@ -1620,7 +1630,7 @@
   {
     "id": "c1-motor-torque-depth",
     "moduleId": "c1-motors",
-    "number": 15,
+    "number": 16,
     "title": "Further study: torque–slip analysis and operating-point stability",
     "lessonIds": [
       "c1-torque-slip-operating-point"
