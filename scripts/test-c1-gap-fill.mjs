@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json')].map(v=>v.id));
+const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json')].map(v=>v.id));
 await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.ts'],outdir:'work/c1-gap-tests',bundle:true,platform:'node',format:'esm'});
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply}=await import('../work/c1-gap-tests/personal-course-model.js');
 const catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),update=read('app/c1-gap-fill-update.json'),evidence=read('docs/c1-gap-fill-review.json');
@@ -10,16 +10,16 @@ const previous=read('scripts/fixtures/c1-gap-fill-previous.json'), original=stru
 const applications=read('app/c1-application-update.json'), generators=read('app/c1-generator-update.json');
 const ids=new Set(update.addedLessonIds), core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])), c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(previous),view=snapshot(upgraded);
-assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 13);
+assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 14);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-8 published snapshot upgrades to the exact new sequence');
 assert.deepEqual(previous,original,'Stored snapshot is not mutated');
 assert.deepEqual(parse(upgraded),upgraded,'Current normalisation is idempotent');
 for(const [sectionId,old] of Object.entries(previous.groups))assert.deepEqual(upgraded.groups[sectionId].filter(id=>!ids.has(id)),old,'Every old section keeps its relative order: '+sectionId);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!ids.has(id)&&!flow.addedLessonIds.includes(id)&&!applications.addedLessonIds.includes(id)&&!generators.addedLessonIds.includes(id)&&!laterAdditionIds.has(id)).sort(),Object.values(previous.groups).flat().sort(),'Every existing occurrence survives exactly once');
 // One existing MV section/video is now optional Advanced scope.
-const protection=read('app/c1-protection-update.json');
-assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length+generators.sections.length+1-1+3+protection.sectionIds.length+read('app/c1-motor-gap-update.json').addedSectionIds.length+1);
-assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length+generators.addedLessonIds.length+cableDesign.length-1+3+protection.addedLessonIds.length+read('app/c1-motor-gap-update.json').addedLessonIds.length+2);
+const protection=read('app/c1-protection-update.json'), motorControl=read('app/motor-control-update.json');
+assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length,40+update.sections.length+flow.sections.length+applications.sections.length+generators.sections.length+1-1+3+protection.sectionIds.length+read('app/c1-motor-gap-update.json').addedSectionIds.length+1+motorControl.sectionIds.length);
+assert.equal(view.allRows.filter(r=>c1Modules.has(r.moduleId)).length,64+ids.size+flow.addedLessonIds.length+applications.addedLessonIds.length+generators.addedLessonIds.length+cableDesign.length-1+3+protection.addedLessonIds.length+read('app/c1-motor-gap-update.json').addedLessonIds.length+2+motorControl.addedLessonIds.length);
 for(const sectionId of update.sections){
  const s=sections.find(s=>s.id===sectionId);
  if(sectionId==='c1-switchgear-construction')assert.equal(s.moduleId,'professional-cables');else assert.ok(c1Modules.has(s.moduleId));

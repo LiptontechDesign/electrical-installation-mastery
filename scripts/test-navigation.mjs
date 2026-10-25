@@ -79,7 +79,7 @@ await choosePath('C1');
 assert.equal(pathPicker().props.value,'C1');
 assert.equal(mobileControls().find(node=>text(node)==='Papers').props.href,'/past-papers/c1','Papers follows the browsed C1 course pathway');
 assert.ok(mapModules().length>1&&mapModules().every(node=>node.props['data-pathway']==='C1'),'C1 shows its own module list');
-assert.deepEqual(mapModules().map(node=>text(node.findByProps({className:'module-eyebrow'})).match(/^Module (\d+)/)[1]),Array.from({length:16},(_,i)=>String(i+1).padStart(2,'0')),'C1 displays its own Module 01–16 sequence');
+assert.deepEqual(mapModules().map(node=>text(node.findByProps({className:'module-eyebrow'})).match(/^Module (\d+)/)[1]),Array.from({length:17},(_,i)=>String(i+1).padStart(2,'0')),'C1 displays its own Module 01–17 sequence');
 assert.ok(mapModules().every(node=>!node.props.className.includes('open')),'Switching pathways starts with a compact module overview on mobile');
 await click(moduleButton('01'));
 await click(moduleButton('13'));

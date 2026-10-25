@@ -1,3 +1,5 @@
+import { motorControlAdditions } from './assert-c2-reorganization.mjs';
+const motorControlIds = new Set(motorControlAdditions.map(v => v.id));
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {build} from 'esbuild';
@@ -14,11 +16,11 @@ const updated=parse(prior),view=snapshot(updated),modules=view.course.modules.fi
 const protectionModule=modules.find(m=>m.id==='c1-protective-devices'),core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 assert.equal(Object.values(prior.groups).flat().length,488,'Actual pre-addition published state');
 assert.deepEqual(prior,original);assert.deepEqual(updated.groups,base.groups);assert.deepEqual(parse(updated),updated);
-assert.equal(updated.curriculumRevision,13,'Pure additions do not replay earlier migrations');
+assert.equal(updated.curriculumRevision,14,'Pure additions do not replay earlier migrations');
 for(const [sectionId,order] of Object.entries(prior.groups))assert.deepEqual(updated.groups[sectionId],order,'Exact existing mixed order: '+sectionId);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(updated[key],prior[key]);
-assert.deepEqual(view.allRows.filter(r=>!ids.has(r.id)&&!laterIds.has(r.id)).map(r=>r.id),Object.values(prior.groups).flat(),'All old occurrences retain their relative published order');
-assert.equal(view.allRows.length,517);assert.equal(protectionModule.stageNumber,10);assert.equal(modules.length,17);
+assert.deepEqual(view.allRows.filter(r=>!ids.has(r.id)&&!laterIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id),Object.values(prior.groups).flat(),'All old occurrences retain their relative published order');
+assert.equal(view.allRows.length,541);assert.equal(protectionModule.stageNumber,10);assert.equal(modules.length,17);
 assert.equal(modules[8].id,'c1-earthing');assert.equal(modules[10].id,'c1-installation');assert.equal(modules[11].id,'c1-motors');
 const groups=sections.filter(s=>s.moduleId===protectionModule.id);
 assert.equal(groups.length,9);assert.deepEqual(groups.flatMap(s=>s.lessonIds),additions.map(l=>l.id));
@@ -35,7 +37,7 @@ for(const video of evidence.videos){
  assert.equal(lesson.studyNote,video.qualification);
 }
 const watched=new Set(['p05-l03','p05-l04','c2-selectivity-bridge']);
-assert.deepEqual(progressForVideos(view.allRows.filter(r=>!ids.has(r.id)&&!laterIds.has(r.id)).map(r=>r.id),watched),progressForVideos(Object.values(prior.groups).flat(),watched));
+assert.deepEqual(progressForVideos(view.allRows.filter(r=>!ids.has(r.id)&&!laterIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id),watched),progressForVideos(Object.values(prior.groups).flat(),watched));
 assert.equal(progressForVideos(additions.map(l=>l.id),watched).watched,0,'Repetition does not silently mark new lessons watched');
 assert.ok(view.byId.has('c2-selectivity-bridge'),'Keep the original C2 supplementary occurrence');
 assert.match(core.get('c1-protection-three-phase-rcd').studyNote,/does not universally require neutral/);

@@ -1637,9 +1637,41 @@
     ]
   },
   {
-    "id": "module-07-section-1",
+    "id": "c1-motor-control-series",
     "moduleId": "module-07",
     "number": 1,
+    "title": "Motor control",
+    "lessonIds": [
+      "c1-motor-control-efixx-01",
+      "c1-motor-control-efixx-02",
+      "c1-motor-control-efixx-03",
+      "c1-motor-control-efixx-04",
+      "c1-motor-control-efixx-05",
+      "c1-motor-control-gsh-contactors-01",
+      "c1-motor-control-gsh-contactors-02",
+      "c1-motor-control-gsh-01",
+      "c1-motor-control-gsh-02",
+      "c1-motor-control-gsh-03",
+      "c1-motor-control-gsh-04",
+      "c1-motor-control-gsh-05",
+      "c1-motor-control-gsh-06",
+      "c1-motor-control-gsh-07",
+      "c1-motor-control-gsh-08",
+      "c1-motor-control-gsh-09",
+      "c1-motor-control-gsh-10",
+      "c1-motor-control-gsh-11",
+      "c1-motor-control-gsh-12",
+      "c1-motor-control-gsh-13",
+      "c1-motor-control-gsh-14",
+      "c1-motor-control-gsh-15",
+      "c1-motor-control-gsh-16",
+      "c1-motor-control-gsh-17"
+    ]
+  },
+  {
+    "id": "module-07-section-1",
+    "moduleId": "module-07",
+    "number": 2,
     "title": "Contactors, control coils and the complete DOL starter",
     "lessonIds": [
       "p04-l21",
@@ -1649,7 +1681,7 @@
   {
     "id": "module-07-dol-protection-wiring",
     "moduleId": "module-07",
-    "number": 2,
+    "number": 3,
     "title": "Motor protection: short circuit, overload and nameplate settings",
     "lessonIds": [
       "course-wQwGZMcDGXk",
@@ -1659,7 +1691,7 @@
   {
     "id": "c1-controls-three-phase-dol",
     "moduleId": "module-07",
-    "number": 3,
+    "number": 4,
     "title": "Read and wire the three phase DOL power and control diagrams",
     "lessonIds": [
       "p04-l19",
@@ -1669,7 +1701,7 @@
   {
     "id": "c1-controls-no-voltage-release",
     "moduleId": "module-07",
-    "number": 4,
+    "number": 5,
     "title": "Loss of supply: why a starter needs a fresh Start command",
     "lessonIds": [
       "c1-dol-no-voltage-release"
@@ -1678,7 +1710,7 @@
   {
     "id": "c1-controls-reversing",
     "moduleId": "module-07",
-    "number": 5,
+    "number": 6,
     "title": "Reverse rotation with electrical and mechanical interlocking",
     "lessonIds": [
       "c1-reversing-interlocks"
@@ -1687,7 +1719,7 @@
   {
     "id": "module-07-section-2",
     "moduleId": "module-07",
-    "number": 6,
+    "number": 7,
     "title": "Star delta starting: connection, transition and reduced torque",
     "lessonIds": [
       "p07-star-delta"
@@ -1696,7 +1728,7 @@
   {
     "id": "c1-controls-star-delta-circuits",
     "moduleId": "module-07",
-    "number": 7,
+    "number": 8,
     "title": "Draw star–delta control circuits: holding, interlocks and timer transition",
     "lessonIds": [
       "c1-star-delta-control-manual",
@@ -1706,7 +1738,7 @@
   {
     "id": "c1-autotransformer-starting",
     "moduleId": "module-07",
-    "number": 8,
+    "number": 9,
     "title": "Autotransformer starting and reduced-current ratios",
     "lessonIds": [
       "c1-autotransformer-starter"
@@ -1715,7 +1747,7 @@
   {
     "id": "c1-controls-soft-start",
     "moduleId": "module-07",
-    "number": 9,
+    "number": 10,
     "title": "Soft starters: limit starting current without continuous speed control",
     "lessonIds": [
       "course-_tGyaE78WTA"
@@ -1724,7 +1756,7 @@
   {
     "id": "module-07-vfd-speed-control",
     "moduleId": "module-07",
-    "number": 10,
+    "number": 11,
     "title": "VFD speed control: rectifier, DC link and inverter",
     "lessonIds": [
       "p07-vfd"
@@ -1733,7 +1765,7 @@
   {
     "id": "c1-regenerative-braking",
     "moduleId": "module-07",
-    "number": 11,
+    "number": 12,
     "title": "Motoring, braking resistors and regeneration",
     "lessonIds": [
       "c1-regenerative-drive-principles"
@@ -1742,14 +1774,14 @@
   {
     "id": "c1-pfc-application",
     "moduleId": "module-07",
-    "number": 12,
+    "number": 13,
     "title": "Power-factor correction around motors and drives",
     "lessonIds": []
   },
   {
     "id": "c1-controls-phase-monitoring",
     "moduleId": "module-07",
-    "number": 13,
+    "number": 14,
     "title": "Optional review: phase monitoring and protective contact placement",
     "lessonIds": []
   },

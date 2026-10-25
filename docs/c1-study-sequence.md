@@ -2,7 +2,7 @@
 
 Follow the sections in order. C1 has its own Module 1–17 numbering. It builds on C2 foundations, with selected reminders included. See [the current route and EPRA mapping](c1-focused-modules.md) and the [four-storey worked project](../public/c1-worked-project.md).
 
-109 sections · 183 video entries. [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
+110 sections · 207 video entries. [Motor control opening series](motor-control-series.md). [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -534,14 +534,41 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
 ## C1 Module 13: Motor Starting, Protection and Speed Control
 
-### 1. Contactors, control coils and the complete DOL starter
+### 1. Motor control
+
+- [eFIXX Motor Control · 1: DOL Starter Operation](https://www.youtube.com/watch?v=HFkTPmY7N7w) — eFIXX; Series lesson.
+- [eFIXX Motor Control · 2: DOL Control Circuits and No-Volt Release](https://www.youtube.com/watch?v=cPQ9X0clG6w) — eFIXX; Series lesson.
+- [eFIXX Motor Control · 3: Remote Start/Stop and Inch Control](https://www.youtube.com/watch?v=_uz2bxi-vdY) — eFIXX; Series lesson.
+- [eFIXX Motor Control · 4: Star-Delta Starters](https://www.youtube.com/watch?v=J0rs0vSLpRk) — eFIXX; Series lesson.
+- [eFIXX Motor Control · 5: AC Motor Speed Control and Variable-Frequency Drives](https://www.youtube.com/watch?v=xIz-YhrLAFU) — eFIXX; Series lesson.
+- [GSH Contactors · 1: Two-Way Switching of a Contactor Control Circuit](https://www.youtube.com/watch?v=bkboBItqFXE) — GSH Electrical; Series lesson.
+- [GSH Contactors · 2: Single-Phase Contactor: Coil and Load Current](https://www.youtube.com/watch?v=Ed3_zbZ0xaA) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 1: Single Phase Direct Online Starter DOL Wiring Diagram Connections Explained - AM2, AM2S, AM2E](https://www.youtube.com/watch?v=7U-DqKQkSPU) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 2: Single Phase Direct Online Starter DOL Wiring - Connections Explained and Setting the Overload](https://www.youtube.com/watch?v=PIaqmCxN9KU) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 3: Connections in a Direct Online Starter DOL](https://www.youtube.com/watch?v=5wNm48d2jLU) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 4: Direct Online Starter DOL Adding Remote Stop Start Buttons Wiring Diagram Explained](https://www.youtube.com/watch?v=Shs9lTnZVCU) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 5: 3 Phase Direct Online Starter DOL Wiring Diagram Connections Explained](https://www.youtube.com/watch?v=mcXxhUaUb94) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 6: 3 Phase Direct Online Starter DOL Wiring and Connections Explained](https://www.youtube.com/watch?v=qlqPdLGwJxk) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 7: Wiring Diagram How to Wire (Connect) a Direct Online Starter (DOL) Connections Explained](https://www.youtube.com/watch?v=CuOjpBwJ8n0) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 8: Direct Online Starter DOL Part 2 Wiring Diagram for How to Connect a Stop and Start Buttons](https://www.youtube.com/watch?v=Y20len0l-G8) — GSH Electrical; Series lesson.
+- [GSH Motor Control · 9: How to Set an Overload Whilst the Load is LIVE - Direct Online Starter DOL](https://www.youtube.com/watch?v=0u2gW4lIbes) — GSH Electrical; Optional series case study.
+- [GSH Motor Control · 10: Electrical Fire 🔥 Star Delta Control Panel Rebuild by Electricians Matt & Clive O’Dell](https://www.youtube.com/watch?v=HwGLVNWetyw) — GSH Electrical; Series demonstration.
+- [GSH Motor Control · 11: What Happens to the Current When a Motor is On LOAD..?](https://www.youtube.com/watch?v=TNQBFWo45tg) — GSH Electrical; Optional series case study.
+- [GSH Motor Control · 12: Motor Control - 4 Three Phase Star Delta Starters with Electrician Matt](https://www.youtube.com/watch?v=d5uFPkCc-FA) — GSH Electrical; Series demonstration.
+- [GSH Motor Control · 13: How to SET a Motor Overload 🧐 AM2 and AM2S](https://www.youtube.com/watch?v=U46n_BnaqoI) — GSH Electrical; Series short.
+- [GSH Motor Control · 14: Star Delta Direct Online (DOL) Rig Preview - Measuring Current and Voltages](https://www.youtube.com/watch?v=BKscdOuu4tk) — GSH Electrical; Series demonstration.
+- [GSH Motor Control · 15: Star and Delta Direct Online (DOL) Rig for Measuring Voltages and Currents](https://www.youtube.com/watch?v=koUtbPZWVaM) — GSH Electrical; Series demonstration.
+- [GSH Motor Control · 16: Don't Make this Mistake 😡 - Motor Overload AM2 or AM2S](https://www.youtube.com/watch?v=NRqI-lDUfL0) — GSH Electrical; Series short.
+- [GSH Motor Control · 17: Was the Inrush Current the Problem ⚠️](https://www.youtube.com/watch?v=QWsxYqwtYCc) — GSH Electrical; Optional series case study.
+
+### 2. Contactors, control coils and the complete DOL starter
 
 - [Single Phase Contactor - Connections Explained, Application plus the Current in the Coil and Load](https://www.youtube.com/watch?v=Ed3_zbZ0xaA) — GSH Electrical; Core lesson.
 - [How Do Direct On Line Motor (DOL) Starters Work?](https://www.youtube.com/watch?v=HFkTPmY7N7w) — eFIXX; Core lesson.
 
   High starting current occurs at standstill and falls as the motor accelerates; reactance does not simply appear later. DOL suitability depends on the motor, load and supply limits, not a universal 5 kW cut-off. Use actual manufacturer protection data.
 
-### 2. Motor protection: short circuit, overload and nameplate settings
+### 3. Motor protection: short circuit, overload and nameplate settings
 
 - [What is MPCB | MPCB Vs MCB | Motor Protection Circuit Breaker @the Electrical Guy](https://www.youtube.com/watch?v=wQwGZMcDGXk) — The Electrical Guy; Core lesson.
 
@@ -551,30 +578,30 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
   Use nameplate current and manufacturer coordination; the 125% shortcut is not a general selection rule.
 - [Single-Phase Direct-On-Line Starter Wiring](https://www.youtube.com/watch?v=PIaqmCxN9KU) — GSH Electrical; Optional refresher.
 
-### 3. Read and wire the three phase DOL power and control diagrams
+### 4. Read and wire the three phase DOL power and control diagrams
 
 - [3 Phase Direct Online Starter DOL Wiring Diagram Connections Explained](https://www.youtube.com/watch?v=mcXxhUaUb94) — GSH Electrical; Applied practical.
 - [3 Phase Direct Online Starter DOL Wiring and Connections Explained](https://www.youtube.com/watch?v=qlqPdLGwJxk) — GSH Electrical; Applied practical.
 
-### 4. Loss of supply: why a starter needs a fresh Start command
+### 5. Loss of supply: why a starter needs a fresh Start command
 
 - [No-Voltage Release: Power Failure, Coil Drop-Out and Safe Restart](https://www.youtube.com/watch?v=vMCXb7AoPnU) — bigclivedotcom; Core control demonstration.
 
   The small workshop switch demonstrates the principle; a three-phase starter uses the equivalent contactor holding circuit. No-voltage release prevents automatic restart but does not provide safe isolation.
 
-### 5. Reverse rotation with electrical and mechanical interlocking
+### 6. Reverse rotation with electrical and mechanical interlocking
 
 - [Reversing a Three-Phase Motor: Mechanical and Electrical Interlocks](https://www.youtube.com/watch?v=VqgXVIi0jw8) — AutomationDirect.com; Core lesson.
 
   NFPA/UL references are US-specific; the phase-swapping and interlocking principles apply generally.
 
-### 6. Star delta starting: connection, transition and reduced torque
+### 7. Star delta starting: connection, transition and reduced torque
 
 - [Star–Delta Starting: Power Circuit and Changeover](https://www.youtube.com/watch?v=h89TTwlNnpY) — The Engineering Mindset; Core lesson.
 
   The motor must be delta-rated at the running supply voltage. Compared with direct delta at the same supply, star winding voltage/current are about 58%; starting line current and ideal starting torque are about one-third. Full control and timer circuits follow.
 
-### 7. Draw star–delta control circuits: holding, interlocks and timer transition
+### 8. Draw star–delta control circuits: holding, interlocks and timer transition
 
 - [Star–Delta Power and Control Circuits: Holding Contacts and Interlocks](https://www.youtube.com/watch?v=DpB-kdM2RA4) — Jim Pytel; Core control-circuit walkthrough.
 
@@ -583,31 +610,31 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Timed star–delta control follows the introductory on-delay examples. Star and delta must be interlocked with a suitable break-before-make interval; timer and overload settings depend on the actual starter and motor.
 
-### 8. Autotransformer starting and reduced-current ratios
+### 9. Autotransformer starting and reduced-current ratios
 
 - [Autotransformer Starting: Tap Voltage, Line Current and Torque](https://www.youtube.com/watch?v=iHFTVBWLOAg) — Zack Hartle; Core lesson.
 
   A tapped common winding is introduced before the starter circuits. Canadian 600 V and code examples explain the principle; use local supply values, manufacturer coordination and applicable BS 7671/EPRA requirements for selection. An autotransformer provides no galvanic isolation; reduced starting current does not by itself justify smaller conductors.
 
-### 9. Soft starters: limit starting current without continuous speed control
+### 10. Soft starters: limit starting current without continuous speed control
 
 - [What is a Soft Starter? from AutomationDirect](https://www.youtube.com/watch?v=_tGyaE78WTA) — AutomationDirect; Core lesson.
 
-### 10. VFD speed control: rectifier, DC link and inverter
+### 11. VFD speed control: rectifier, DC link and inverter
 
 - [Variable-Frequency Drives: From Rectifier to Motor Speed](https://www.youtube.com/watch?v=yEPe7RDtkgo) — The Engineering Mindset; Core lesson.
 
-### 11. Motoring, braking resistors and regeneration
+### 12. Motoring, braking resistors and regeneration
 
 - [Four-Quadrant Drives: Motoring, Braking and Regeneration](https://www.youtube.com/watch?v=IAnMVYOYHxg) — KEB America; Core lesson.
 
-### 12. Power-factor correction around motors and drives
+### 13. Power-factor correction around motors and drives
 
 - [5 Types of Power Factor Correction — Capacitor Bank Locations](https://www.youtube.com/watch?v=oaIRQ1Xm7OQ) — The Electrical Guy; Core application.
 
   Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs.
 
-### 13. Optional review: phase monitoring and protective contact placement
+### 14. Optional review: phase monitoring and protective contact placement
 
 - [Phase-Failure Relay with a DOL Starter](https://www.youtube.com/watch?v=-OCfG8inGSY) — The Electrical Guy; Optional circuit critique.
 

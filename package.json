@@ -30,6 +30,8 @@
     "prebuild": "npm run test:theme && npm run test:definitions && node scripts/prepare-reader.mjs",
     "test:books": "node scripts/test-books.mjs",
     "test:curriculum": "node scripts/test-curriculum.mjs",
+    "test:motor-control": "node scripts/test-motor-control.mjs",
+    "test:motor-control-browser": "node scripts/test-motor-control-browser.mjs",
     "test:c1-modules": "node scripts/test-c1-modules.mjs",
     "test:earthing": "node scripts/test-earthing-curriculum.mjs",
     "test:earthing-browser": "node scripts/test-earthing-browser.mjs",

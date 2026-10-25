@@ -95,13 +95,13 @@ assert.deepEqual(repaired.groups['module-05-section-3'], firstEightEarthingIds);
 assert.deepEqual(repaired.groups['module-05-ads'], ['p05-l06'], 'An authenticated read repairs empty ADS without relying on guest defaults');
 assert.deepEqual(repaired.groups['module-06-cpc-sizing'], ['p05-l10']);
 assert.equal(repaired.groups['module-08-section-2'][0], 'course-TFt3d77LujQ');
-assert.equal(repaired.curriculumRevision, 13);
+assert.equal(repaired.curriculumRevision, 14);
 assert.equal(repaired.revision, 42);
 assert.deepEqual(globalThis.editorTestDocuments.get('earthing-repair:personal-course'), incomplete, 'Repair on read does not overwrite stored records');
 const personalMove = command(repaired.revision, { type: 'move', id: 'p05-l06', sectionId: 'module-05-section-3', beforeId: null });
 const movedResponse = await post(personalMove); assert.equal(movedResponse.status, 200);
 const moved = await movedResponse.json();
-assert.equal(moved.curriculumRevision, 13);
+assert.equal(moved.curriculumRevision, 14);
 assert.ok((await (await api.GET()).json()).groups['module-05-section-3'].includes('p05-l06'), 'Saving the marker prevents remigration of later personal moves');
 assert.equal(globalThis.editorTestDocuments.get('earthing-repair:personal-course').revision, 20);
 const undoResponse = await post(command(moved.revision, { type: 'undo', targetOperationId: personalMove.operationId }));
@@ -116,9 +116,9 @@ const priorLearning = { payload: { notes: { 'p10-l04': 'My conduit notes' }, com
 globalThis.editorTestDocuments.set('reviewed-curriculum:personal-course', structuredClone(priorDocument));
 globalThis.editorTestDocuments.set('reviewed-curriculum:learner-state', structuredClone(priorLearning));
 const reviewedCourse = await (await api.GET()).json();
-assert.equal(reviewedCourse.curriculumRevision, 13);
-assert.equal(Object.keys(reviewedCourse.groups).length, 214);
-assert.equal(Object.values(reviewedCourse.groups).flat().length, 517);
+assert.equal(reviewedCourse.curriculumRevision, 14);
+assert.equal(Object.keys(reviewedCourse.groups).length, 215);
+assert.equal(Object.values(reviewedCourse.groups).flat().length, 541);
 assert.ok(reviewedCourse.groups['module-04-conduit-lighting'].includes('p10-l04'));
 assert.ok(reviewedCourse.groups['module-09-rcd-leakage'].includes('p08-l13'));
 assert.deepEqual(globalThis.editorTestDocuments.get('reviewed-curriculum:personal-course'), priorDocument, 'A full curriculum upgrade on read performs no database write');
@@ -126,7 +126,7 @@ const reviewMove = command(reviewedCourse.revision, { type: 'move', id: 'p10-l04
 assert.equal((await post(reviewMove)).status, 200);
 assert.equal(globalThis.editorTestDocuments.get('reviewed-curriculum:personal-course').revision, 22);
 const reloadedReview = await (await api.GET()).json();
-assert.equal(reloadedReview.curriculumRevision, 13);
+assert.equal(reloadedReview.curriculumRevision, 14);
 assert.ok(reloadedReview.groups['module-03-section-5'].includes('p10-l04'), 'The persisted update marker preserves subsequent personal placements');
 assert.deepEqual(globalThis.editorTestDocuments.get('reviewed-curriculum:learner-state'), priorLearning, 'Reorganising every module leaves account notes, watched marks and bookmarks untouched');
 
@@ -138,7 +138,7 @@ const surgeLearning = {payload:{notes:{'course-lIit5k8QVj8':'My arc-fault notes'
 globalThis.editorTestDocuments.set('surge-protection-update:personal-course', structuredClone(surgeDocument));
 globalThis.editorTestDocuments.set('surge-protection-update:learner-state', structuredClone(surgeLearning));
 const surgeCourse = await (await api.GET()).json();
-assert.equal(surgeCourse.curriculumRevision, 13);
+assert.equal(surgeCourse.curriculumRevision, 14);
 assert.deepEqual(surgeCourse.groups['module-05-arc-fault'], ['course-lIit5k8QVj8']);
 assert.deepEqual(surgeCourse.groups['module-05-section-5'], ['c2-spd-foundation','course-CNiLNvBLopI','course-DWBFHjE5zK0','course--ehw6uZOOfw','course-5XO5d2vLUsw','course-fczDUB6KNDk','course-f6PpvrCgyEA','course-EplV5B9fYVU','p05-spd']);
 const c1OldGroups = JSON.parse(await readFile('app/c1-learning-update.json','utf8')).previous;
@@ -163,7 +163,7 @@ const processLearning = { payload: { notes: { 'p03-l12': 'My assembly notes', [p
 globalThis.editorTestDocuments.set('connected-process-update:personal-course', structuredClone(processDocument));
 globalThis.editorTestDocuments.set('connected-process-update:learner-state', structuredClone(processLearning));
 const processCourse = await (await api.GET()).json();
-assert.equal(processCourse.curriculumRevision, 13);
+assert.equal(processCourse.curriculumRevision, 14);
 assert.equal(processCourse.revision, 27);
 assert.deepEqual(processCourse.groups['c2-boards-gary-hayers-overview'], ['c2-assembly-overview-01', 'c2-assembly-overview-02']);
 assert.equal(processCourse.groups['module-08-john-ward-overview'].length, 9);
@@ -184,7 +184,7 @@ globalThis.editorTestDocuments.set('c1-revision-seven:personal-course',structure
 globalThis.editorTestDocuments.set('c1-revision-seven:learner-state',structuredClone(c1Learning));
 globalThis.editorTestDocuments.set('c1-revision-seven:supplementary-progress',structuredClone(c1SupportingProgress));
 const c1Course = await (await api.GET()).json();
-assert.equal(c1Course.curriculumRevision, 13); assert.equal(c1Course.revision,29);
+assert.equal(c1Course.curriculumRevision, 14); assert.equal(c1Course.revision,29);
 assert.deepEqual(c1Course.groups['c1-power-triangle'],['p06-l14','c1-balanced-three-phase-power']);
 assert.deepEqual(c1Course.groups['c1-testing-dead-tests'],['c1-trace-three-phase','c1-three-phase-ir-sequence','c1-three-phase-ir-practical']);
 assert.deepEqual(globalThis.editorTestDocuments.get('c1-revision-seven:personal-course'),c1Document,'C1 migration on read performs no database write');

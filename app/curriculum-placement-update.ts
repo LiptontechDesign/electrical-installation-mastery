@@ -7,11 +7,11 @@ import { upgradeC1LearningGroups } from './c1-learning-migration';
 import c1FlowUpdate from './c1-flow-update.json';
 import c1ApplicationUpdate from './c1-application-update.json';
 import c1GeneratorUpdate from './c1-generator-update.json';
+import motorControlUpdate from './motor-control-update.json';
 
 export const reviewedPlacementRevision = 3;
-// Revision 13 assigns existing stable sections to focused subject modules.
-// Their saved row groups need no relocation or reordering migration.
-export const curriculumRevision = 13;
+// Revision 14 adds the opening motor-control sequence without relocating saved rows.
+export const curriculumRevision = 14;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));
@@ -20,7 +20,8 @@ function upgradeC1PublishedGroups(input: Record<string, string[]>, revision: num
   const historical = upgradeC1LearningGroups(input, revision, protectedIds, supporting);
   const foundations = upgradeC1LearningGroups(historical, revision, protectedIds, supporting, c1FlowUpdate);
   const applications = upgradeC1LearningGroups(foundations, revision, protectedIds, supporting, c1ApplicationUpdate);
-  return upgradeC1LearningGroups(applications, revision, protectedIds, supporting, c1GeneratorUpdate);
+  const generators = upgradeC1LearningGroups(applications, revision, protectedIds, supporting, c1GeneratorUpdate);
+  return upgradeC1LearningGroups(generators, revision, protectedIds, supporting, motorControlUpdate);
 }
 
 // Apply the published topic changes once. A known video moves only while it is

@@ -1,6 +1,6 @@
 # C1: seventeen focused subject modules
 
-Implemented 19 October 2026; protective-device module added 21 October · curriculum revision 13.
+Implemented 19 October 2026; protective-device module added 21 October · motor-control opening section added 25 October · curriculum revision 14.
 
 C1 has its own visible **Module 1–17** sequence, independent of C2. The course map, module cards, overview, search, Home resume context and organisation destinations all use the pathway's module number. Stable module IDs remain the persistence keys. Global catalogue ordinals are internal only.
 
@@ -24,7 +24,9 @@ C1 has its own visible **Module 1–17** sequence, independent of C2. The course
 | 16 | Standby Generators: Connections and Operation | Apply earlier principles, design and verification to siting, earthing, transfer and operation. |
 | 17 | Fault Diagnosis | Combine installation/motor knowledge, measurements, emergency response and investigation. |
 
-Each row is an actual module with its own sections and progress. With the [protective-device module](c1-protective-devices.md), C1 contains 109 stable sections and 183 mixed video entries. The whole course has 485 catalogue entries and 517 default mixed entries across 32 modules and 214 sections. All earlier videos and their saved identities remain available.
+Each row is an actual module with its own sections and progress. With the [protective-device module](c1-protective-devices.md), C1 contains 110 stable sections and 207 mixed video entries. The whole course has 509 catalogue entries and 541 default mixed entries across 32 modules and 215 sections. All earlier videos and their saved identities remain available.
+
+Module 13 opens with [Motor control](motor-control-series.md): complete eFIXX and GSH creator sequences, followed by the existing focused topics. The two extra GSH contactor lessons follow their theory-to-workshop relationship. All published playlist positions are preserved.
 
 ## Prerequisite repairs
 
