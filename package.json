@@ -85,7 +85,9 @@
     "test:c1-motor-gap-fill": "node scripts/test-c1-motor-gap-fill.mjs",
     "test:c1-motor-gap-browser": "node scripts/test-c1-motor-gap-browser.mjs",
     "test:c1-wound-rotor": "node scripts/test-c1-wound-rotor.mjs",
-    "test:c1-wound-rotor-browser": "node scripts/test-c1-wound-rotor-browser.mjs"
+    "test:c1-wound-rotor-browser": "node scripts/test-c1-wound-rotor-browser.mjs",
+    "test:c1-motor-practical": "node scripts/test-c1-motor-practical.mjs",
+    "test:c1-motor-practical-browser": "node scripts/test-c1-motor-practical-browser.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "6.3.1",

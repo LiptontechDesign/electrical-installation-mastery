@@ -1736,9 +1736,28 @@
     ]
   },
   {
-    "id": "c1-autotransformer-starting",
+    "id": "c1-star-delta-practical",
     "moduleId": "module-07",
     "number": 9,
+    "title": "Star–delta practical wiring: power, timer and interlocks",
+    "lessonIds": [
+      "c1-star-delta-practical-complete",
+      "c1-star-delta-practical-control"
+    ]
+  },
+  {
+    "id": "c1-star-delta-timer-variants",
+    "moduleId": "module-07",
+    "number": 10,
+    "title": "Further study: star–delta control using timer NC",
+    "lessonIds": [
+      "c1-star-delta-timer-nc-variant"
+    ]
+  },
+  {
+    "id": "c1-autotransformer-starting",
+    "moduleId": "module-07",
+    "number": 11,
     "title": "Autotransformer starting and reduced-current ratios",
     "lessonIds": [
       "c1-autotransformer-starter"
@@ -1747,16 +1766,26 @@
   {
     "id": "c1-controls-soft-start",
     "moduleId": "module-07",
-    "number": 10,
+    "number": 12,
     "title": "Soft starters: limit starting current without continuous speed control",
     "lessonIds": [
       "course-_tGyaE78WTA"
     ]
   },
   {
+    "id": "c1-vfd-applications",
+    "moduleId": "module-07",
+    "number": 13,
+    "title": "VFD applications: speed control and starter selection",
+    "lessonIds": [
+      "c1-vfd-purpose-applications",
+      "c1-vfd-soft-starter-selection"
+    ]
+  },
+  {
     "id": "module-07-vfd-speed-control",
     "moduleId": "module-07",
-    "number": 11,
+    "number": 14,
     "title": "VFD speed control: rectifier, DC link and inverter",
     "lessonIds": [
       "p07-vfd"
@@ -1765,7 +1794,7 @@
   {
     "id": "c1-regenerative-braking",
     "moduleId": "module-07",
-    "number": 12,
+    "number": 15,
     "title": "Motoring, braking resistors and regeneration",
     "lessonIds": [
       "c1-regenerative-drive-principles"
@@ -1774,14 +1803,14 @@
   {
     "id": "c1-pfc-application",
     "moduleId": "module-07",
-    "number": 13,
+    "number": 16,
     "title": "Power-factor correction around motors and drives",
     "lessonIds": []
   },
   {
     "id": "c1-controls-phase-monitoring",
     "moduleId": "module-07",
-    "number": 14,
+    "number": 17,
     "title": "Optional review: phase monitoring and protective contact placement",
     "lessonIds": []
   },

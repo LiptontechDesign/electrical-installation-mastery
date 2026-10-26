@@ -1,3 +1,5 @@
+import { motorPracticalAdditions } from './assert-c2-reorganization.mjs';
+const motorPracticalIds = new Set(motorPracticalAdditions.map(v => v.id));
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { build } from 'esbuild';
@@ -35,11 +37,11 @@ assert.deepEqual(videoIds(update.blocks[1].lessonIds), ['bkboBItqFXE', 'Ed3_zbZ0
 assert.deepEqual(videoIds(update.blocks[2].lessonIds), ['7U-DqKQkSPU', 'PIaqmCxN9KU', '5wNm48d2jLU', 'Shs9lTnZVCU', 'mcXxhUaUb94', 'qlqPdLGwJxk', 'CuOjpBwJ8n0', 'Y20len0l-G8', '0u2gW4lIbes', 'HwGLVNWetyw', 'TNQBFWo45tg', 'd5uFPkCc-FA', 'U46n_BnaqoI', 'BKscdOuu4tk', 'koUtbPZWVaM', 'NRqI-lDUfL0', 'QWsxYqwtYCc']);
 for (const block of update.blocks) assert.ok(block.lessonIds.every(id => core.get(id).instructor === block.instructor));
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Existing focused sections and mixed saved order stay unchanged: ' + id);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !added.has(id)).sort(), Object.values(prior.groups).flat().sort());
-assert.equal(view.allRows.length, 541);
-assert.equal(catalog.lessonCount, 509);
-assert.equal(sections.length, 215);
-assert.equal(view.allRows.filter(row => view.course.modules.find(module => module.id === row.moduleId).path === 'C1').length, 207);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !added.has(id) && !motorPracticalIds.has(id)).sort(), Object.values(prior.groups).flat().sort());
+assert.equal(view.allRows.length, 546);
+assert.equal(catalog.lessonCount, 514);
+assert.equal(sections.length, 218);
+assert.equal(view.allRows.filter(row => view.course.modules.find(module => module.id === row.moduleId).path === 'C1').length, 212);
 const rows = view.allRows.filter(row => row.moduleId === motorModule.id);
 assert.deepEqual(rows.slice(0, 24).map(row => row.id), section.lessonIds);
 assert.equal(rows[24].id, 'p04-l21', 'Focused topics follow the complete creator sequences');

@@ -1,0 +1,314 @@
+{
+  "reviewed": "2026-10-26",
+  "selectedCount": 5,
+  "totalDurationSeconds": 4075,
+  "selectionRule": "The three supplied lessons plus relevant discovered lessons with at least 1,000,000 views and verified English original/dub audio.",
+  "englishCaptionReviews": 4,
+  "translatedHindiCaptionReviews": 1,
+  "videos": [
+    {
+      "lessonId": "c1-star-delta-practical-complete",
+      "videoId": "aDhX7fzXmQQ",
+      "title": "Star–Delta Starter: Power Wiring and Standard Timer Control",
+      "sourceTitle": "Star Delta Starter इससे आसान कुछ भी नही अगर सीखना चाहते है तो एक बार जरूर देखिये।",
+      "instructor": "Tech Gaurav",
+      "channelId": "UCCiwAOjvgSdYgIJGVd2vs1A",
+      "sectionId": "c1-star-delta-practical",
+      "durationSeconds": 1043,
+      "required": true,
+      "studyRole": "Core practical walkthrough",
+      "requested": true,
+      "views": {
+        "count": 1994410,
+        "checked": "2026-10-26",
+        "source": "YouTube public player metadata",
+        "minimumForDiscoveredLessons": 1000000
+      },
+      "availability": {
+        "playerStatus": "OK",
+        "oembedAvailable": true,
+        "oembedAuthor": "Tech Gaurav",
+        "playableInEmbed": true
+      },
+      "audio": {
+        "englishTracks": [
+          {
+            "displayName": "English (US)",
+            "id": "en-US.10",
+            "audioIsDefault": true,
+            "isAutoDubbed": true
+          }
+        ],
+        "originalTracks": [
+          {
+            "displayName": "Hindi original",
+            "id": "hi.4",
+            "audioIsDefault": false
+          }
+        ],
+        "forcedByCoursePlayer": false
+      },
+      "transcript": {
+        "language": [
+          "hi"
+        ],
+        "captionSegments": 349,
+        "captionEndSeconds": 1043.32,
+        "sha256": "9f1857ce01937c4d3dead9c4576507a36804afe09e93b2211b9f1837a3390c0f",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1043.32
+          }
+        ],
+        "reviewQualification": "Complete Hindi ASR read with translation; English automatic-dub availability separately verified. This is not an English-dub transcript review."
+      },
+      "teaches": "Physical power wiring, six motor terminals, three contactors, overload trip contacts, start/stop holding and conventional timed cross-interlocking.",
+      "flowRationale": "After the existing nameplate and control-circuit foundations; the complete power/control build precedes the focused control-only demonstration.",
+      "limits": "Hindi ASR was reviewed with translation. The independent English auto-dub is available. Coil ratings, colours, overload location/settings and terminal numbering are equipment-specific. Separate live control supplies are not isolated by switching off only the power breaker. Control schematics are loosely called single-line/key diagrams."
+    },
+    {
+      "lessonId": "c1-star-delta-practical-control",
+      "videoId": "vVs_1oEVMgQ",
+      "title": "Star–Delta Starter: Holding Circuit, Timer and Interlocks",
+      "sourceTitle": "Star Delta Starter Control Wiring Explained Practically @TheElectricalGuy",
+      "instructor": "The Electrical Guy",
+      "channelId": "UCdKPm5KM99O75NtArFkMDDA",
+      "sectionId": "c1-star-delta-practical",
+      "durationSeconds": 810,
+      "required": true,
+      "studyRole": "Core control-wiring demonstration",
+      "requested": true,
+      "views": {
+        "count": 1028793,
+        "checked": "2026-10-26",
+        "source": "YouTube public player metadata",
+        "minimumForDiscoveredLessons": 1000000
+      },
+      "availability": {
+        "playerStatus": "OK",
+        "oembedAvailable": true,
+        "oembedAuthor": "The Electrical Guy",
+        "playableInEmbed": true
+      },
+      "audio": {
+        "englishTracks": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "originalTracks": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "forcedByCoursePlayer": false
+      },
+      "transcript": {
+        "language": [
+          "en"
+        ],
+        "captionSegments": 332,
+        "captionEndSeconds": 811.94,
+        "sha256": "88580069f02528284457b53ae264c23d18aa9fb11b5494917fdf42123765ad6e",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 811.94
+          }
+        ],
+        "reviewQualification": "Complete available English caption text read; audio metadata independently distinguishes English original from an English automatic dub."
+      },
+      "teaches": "Builds the DOL holding circuit first, adds the star/delta timer, then reciprocal NC electrical interlocks and demonstrates the sequence.",
+      "flowRationale": "Follows the full power/control project, reinforcing control logic on real contactors and a dedicated timer.",
+      "limits": "The demonstrated 500 ms transition and star duration are examples, not universal settings. Manual contactor operation is a demonstration rather than a maintenance instruction; a real starter requires suitable interlocking and manufacturer coordination."
+    },
+    {
+      "lessonId": "c1-star-delta-timer-nc-variant",
+      "videoId": "pseZ6W6K28Y",
+      "title": "Star–Delta Control Variant: Timer NC and Auxiliary Contacts",
+      "sourceTitle": "Unic Star Delta Starter ! Use Only Timer NC With Key Diagram (SLD)  @Tech_Gaurav",
+      "instructor": "Tech Gaurav",
+      "channelId": "UCCiwAOjvgSdYgIJGVd2vs1A",
+      "sectionId": "c1-star-delta-timer-variants",
+      "durationSeconds": 1452,
+      "required": false,
+      "studyRole": "Optional circuit comparison",
+      "requested": true,
+      "views": {
+        "count": 1030934,
+        "checked": "2026-10-26",
+        "source": "YouTube public player metadata",
+        "minimumForDiscoveredLessons": 1000000
+      },
+      "availability": {
+        "playerStatus": "OK",
+        "oembedAvailable": true,
+        "oembedAuthor": "Tech Gaurav",
+        "playableInEmbed": true
+      },
+      "audio": {
+        "englishTracks": [
+          {
+            "displayName": "English (US)",
+            "id": "en-US.10",
+            "audioIsDefault": true,
+            "isAutoDubbed": true
+          }
+        ],
+        "originalTracks": [
+          {
+            "displayName": "Hindi original",
+            "id": "hi.4",
+            "audioIsDefault": false
+          }
+        ],
+        "forcedByCoursePlayer": false
+      },
+      "transcript": {
+        "language": [
+          "en-US"
+        ],
+        "captionSegments": 549,
+        "captionEndSeconds": 1441.58,
+        "sha256": "61ff4c5ebb254a3b2f8744a624cc33eddc3e51c7113eefe62bdd92dbf4287fe4",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 1441.58
+          }
+        ],
+        "reviewQualification": "Complete available English caption text read; audio metadata independently distinguishes English original from an English automatic dub."
+      },
+      "teaches": "A different auxiliary-contact circuit uses the timer NC, main holding path and star/delta auxiliary contacts, then adds status indications.",
+      "flowRationale": "Optional comparison after conventional star/delta circuits and practical wiring; it is not the first or only starter model.",
+      "limits": "The claim that timer failure cannot damage the motor is not a general guarantee. Removing a neutral/control return does not establish safe isolation. A validated break-before-make arrangement, appropriate mechanical/electrical interlocking and protection still depend on the actual design. Captions simplify NO/NC operation and control-drawing terminology."
+    },
+    {
+      "lessonId": "c1-vfd-purpose-applications",
+      "videoId": "g7jFGOn6xfU",
+      "title": "Variable-Frequency Drives: Purpose, Operation and Pump Applications",
+      "sourceTitle": "What is a VFD? (Variable Frequency Drive)",
+      "instructor": "RealPars",
+      "channelId": "UCUKKQwBQZczpYzETkZNxi-w",
+      "sectionId": "c1-vfd-applications",
+      "durationSeconds": 320,
+      "required": true,
+      "studyRole": "Core VFD introduction",
+      "requested": false,
+      "views": {
+        "count": 1527924,
+        "checked": "2026-10-26",
+        "source": "YouTube public player metadata",
+        "minimumForDiscoveredLessons": 1000000
+      },
+      "availability": {
+        "playerStatus": "OK",
+        "oembedAvailable": true,
+        "oembedAuthor": "RealPars",
+        "playableInEmbed": true
+      },
+      "audio": {
+        "englishTracks": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "originalTracks": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "forcedByCoursePlayer": false
+      },
+      "transcript": {
+        "language": [
+          "en-US"
+        ],
+        "captionSegments": 71,
+        "captionEndSeconds": 301.1,
+        "sha256": "468137315b59a8156b68b14bf84d6a01e2ed75397fa77759e98d4b26536af8ad",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 301.1
+          }
+        ],
+        "reviewQualification": "Complete available English caption text read; audio metadata independently distinguishes English original from an English automatic dub."
+      },
+      "teaches": "A short rectifier/DC-link/inverter overview connects variable frequency to motor speed and pump-flow control, with manual and PLC examples.",
+      "flowRationale": "Introduces purpose and applications before the existing longer internal-power-stage lesson.",
+      "limits": "The water/filter analogy simplifies DC-link energy storage and ripple smoothing; the clip does not teach drive selection, detailed programming, isolation or regenerative hardware."
+    },
+    {
+      "lessonId": "c1-vfd-soft-starter-selection",
+      "videoId": "_ZztDN5XX5o",
+      "title": "Choosing a Soft Starter or Variable-Frequency Drive",
+      "sourceTitle": "What is the Difference between VFD and Soft Starter?",
+      "instructor": "RealPars",
+      "channelId": "UCUKKQwBQZczpYzETkZNxi-w",
+      "sectionId": "c1-vfd-applications",
+      "durationSeconds": 450,
+      "required": true,
+      "studyRole": "Core application comparison",
+      "requested": false,
+      "views": {
+        "count": 2594292,
+        "checked": "2026-10-26",
+        "source": "YouTube public player metadata",
+        "minimumForDiscoveredLessons": 1000000
+      },
+      "availability": {
+        "playerStatus": "OK",
+        "oembedAvailable": true,
+        "oembedAuthor": "RealPars",
+        "playableInEmbed": true
+      },
+      "audio": {
+        "englishTracks": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "originalTracks": [
+          {
+            "displayName": "English (US) original",
+            "id": "en-US.4",
+            "audioIsDefault": true
+          }
+        ],
+        "forcedByCoursePlayer": false
+      },
+      "transcript": {
+        "language": [
+          "en-US"
+        ],
+        "captionSegments": 102,
+        "captionEndSeconds": 428.79,
+        "sha256": "b328ee4d0c9c15e1324d5a27abffa9ca22f85757985cb3f8c505093a3d951b37",
+        "reviewedRanges": [
+          {
+            "startSeconds": 0,
+            "endSeconds": 428.79
+          }
+        ],
+        "reviewQualification": "Complete available English caption text read; audio metadata independently distinguishes English original from an English automatic dub."
+      },
+      "teaches": "Compares soft starting with continuous speed control using pump and fan examples, then discusses size, cost and application requirements.",
+      "flowRationale": "Follows the short VFD introduction and existing soft-starter foundation; detailed VFD construction then follows.",
+      "limits": "The SCR account omits natural commutation: removing gate drive does not instantly turn off a latched SCR. Soft starters do not regulate steady-state motor speed. The general replacement/price/size statements require actual load and manufacturer checks, and are not universal interchangeability rules."
+    }
+  ],
+  "reviewScope": "Complete available caption text read for all five; English audio availability verified using YouTube adaptive audio-track metadata. No continuous independent listening to every English dub or full visual electrical-design approval is claimed.",
+  "screening": "Popular feeds were checked for The Electrical Guy, Tech Gaurav and the creator-linked Electrical Technician channel. Their screened VFD lessons were below 1,000,000 views; two relevant original-English RealPars lessons meet the threshold. Popular unrelated lessons and repetitive timer examples were not added just for view counts."
+}

@@ -2,7 +2,7 @@
 
 Follow the sections in order. C1 has its own Module 1–17 numbering. It builds on C2 foundations, with selected reminders included. See [the current route and EPRA mapping](c1-focused-modules.md) and the [four-storey worked project](../public/c1-worked-project.md).
 
-110 sections · 207 video entries. [Motor control opening series](motor-control-series.md). [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
+113 sections · 212 video entries. [Motor control opening series](motor-control-series.md). [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -610,31 +610,45 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Timed star–delta control follows the introductory on-delay examples. Star and delta must be interlocked with a suitable break-before-make interval; timer and overload settings depend on the actual starter and motor.
 
-### 9. Autotransformer starting and reduced-current ratios
+### 9. Star–delta practical wiring: power, timer and interlocks
+
+- [Star–Delta Starter: Power Wiring and Standard Timer Control](https://www.youtube.com/watch?v=aDhX7fzXmQQ) — Tech Gaurav; Core practical walkthrough.
+- [Star–Delta Starter: Holding Circuit, Timer and Interlocks](https://www.youtube.com/watch?v=vVs_1oEVMgQ) — The Electrical Guy; Core control-wiring demonstration.
+
+### 10. Further study: star–delta control using timer NC
+
+- [Star–Delta Control Variant: Timer NC and Auxiliary Contacts](https://www.youtube.com/watch?v=pseZ6W6K28Y) — Tech Gaurav; Optional circuit comparison.
+
+### 11. Autotransformer starting and reduced-current ratios
 
 - [Autotransformer Starting: Tap Voltage, Line Current and Torque](https://www.youtube.com/watch?v=iHFTVBWLOAg) — Zack Hartle; Core lesson.
 
   A tapped common winding is introduced before the starter circuits. Canadian 600 V and code examples explain the principle; use local supply values, manufacturer coordination and applicable BS 7671/EPRA requirements for selection. An autotransformer provides no galvanic isolation; reduced starting current does not by itself justify smaller conductors.
 
-### 10. Soft starters: limit starting current without continuous speed control
+### 12. Soft starters: limit starting current without continuous speed control
 
 - [What is a Soft Starter? from AutomationDirect](https://www.youtube.com/watch?v=_tGyaE78WTA) — AutomationDirect; Core lesson.
 
-### 11. VFD speed control: rectifier, DC link and inverter
+### 13. VFD applications: speed control and starter selection
+
+- [Variable-Frequency Drives: Purpose, Operation and Pump Applications](https://www.youtube.com/watch?v=g7jFGOn6xfU) — RealPars; Core VFD introduction.
+- [Choosing a Soft Starter or Variable-Frequency Drive](https://www.youtube.com/watch?v=_ZztDN5XX5o) — RealPars; Core application comparison.
+
+### 14. VFD speed control: rectifier, DC link and inverter
 
 - [Variable-Frequency Drives: From Rectifier to Motor Speed](https://www.youtube.com/watch?v=yEPe7RDtkgo) — The Engineering Mindset; Core lesson.
 
-### 12. Motoring, braking resistors and regeneration
+### 15. Motoring, braking resistors and regeneration
 
 - [Four-Quadrant Drives: Motoring, Braking and Regeneration](https://www.youtube.com/watch?v=IAnMVYOYHxg) — KEB America; Core lesson.
 
-### 13. Power-factor correction around motors and drives
+### 16. Power-factor correction around motors and drives
 
 - [5 Types of Power Factor Correction — Capacitor Bank Locations](https://www.youtube.com/watch?v=oaIRQ1Xm7OQ) — The Electrical Guy; Core application.
 
   Capacitors can cause self-excited induction generation; keep correction capacitors off VFD outputs.
 
-### 14. Optional review: phase monitoring and protective contact placement
+### 17. Optional review: phase monitoring and protective contact placement
 
 - [Phase-Failure Relay with a DOL Starter](https://www.youtube.com/watch?v=-OCfG8inGSY) — The Electrical Guy; Optional circuit critique.
 

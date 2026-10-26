@@ -1,9 +1,10 @@
 # Current documentation
 
-Updated 25 October 2026. This index and the root README describe the current application, not a future roadmap.
+Updated 26 October 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
 - [C1 written marks, oral priorities and course coverage](c1-exam-weight-and-coverage-audit.md): readable high-mark allocations, all 78 authored question mappings, actual lesson coverage, C2 prerequisites, remaining application gaps and explicit oral-evidence limits.
+- [Star–delta practical wiring and English VFD additions](c1-motor-practical.md): three supplied lessons, two million-view RealPars additions, spoken-English track evidence, caption qualifications and saved-course preservation.
 - [Motor control opening series](motor-control-series.md): 24 eFIXX/GSH videos in creator sequences before the focused Module 13 topics, complete available-caption review and saved-course preservation; no new learner-facing notes.
 - [C1 motor questions and complete transcript audit](c1-motor-transcript-audit.md): all 30 motor-module videos and 12 related lessons, nine paper records, 46 specific requirements, English-language evidence, technical corrections and prioritised remaining gaps. Supersedes the earlier broad motor-coverage verdict.
 - [Course fullscreen player](course-fullscreen-player.md): persistent Previous/Next and Auto-next controls, phone landscape requests, expanded-view fallback and verification.

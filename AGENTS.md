@@ -20,6 +20,8 @@ Read README.md and docs/README.md for the current application contract. This is 
 
 Prefer UK teachers, then suitable English-speaking teachers elsewhere. Avoid Hindi videos. Use an India-based teacher only if no suitable UK or other non-India alternative is found, and record the reason for the exception. This applies to new selections; do not remove existing lessons solely on location.
 
+For the motor-control and VFD additions requested on 26 October 2026, the user explicitly permits Hindi-original teaching with a verified English audio dub. This exception overrides the location/language preference above for that request. Discovered additions must have at least 1,000,000 views when checked. Record dated view counts and original/dub audio-track evidence; English subtitles alone do not establish an English audio track. Read complete available captions and identify translated-caption reviews honestly. Keep source qualifications in the review documentation; the user does not want new learner-facing notes.
+
 The user requires English spoken teaching and complete available transcript review before selecting C1 videos. Evaluate explanation quality, technical accuracy and teaching flow rather than relying on a title. A translated caption export does not establish the original audio language; resolve English audio/track evidence and label any translated review honestly. See `docs/c1-motor-transcript-audit.md` for the current motor-specific evidence and remaining gaps.
 
 ## Standalone practice centre — explicitly requested September 2026

@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 509,
-  "duration": "113 h 51 min",
+  "lessonCount": 514,
+  "duration": "114 h 58 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -6016,8 +6016,8 @@
       "number": 22,
       "title": "Motor Starting, Protection and Speed Control",
       "description": "Begin with the complete eFIXX motor-control course, then GSH contactor foundations and its motor-control playlist. Continue into focused contactor, protection, DOL, reversing, reduced-voltage starting and drive sections for deeper study.",
-      "duration": "5 h 10 min",
-      "durationSeconds": 18627,
+      "duration": "6 h 18 min",
+      "durationSeconds": 22702,
       "learningOutcome": "Begin with the complete eFIXX motor-control course, then GSH contactor foundations and its motor-control playlist. Continue into focused contactor, protection, DOL, reversing, reduced-voltage starting and drive sections for deeper study.",
       "lessons": [
         {
@@ -6581,6 +6581,54 @@
           "studyNote": "Timed star–delta control follows the introductory on-delay examples. Star and delta must be interlocked with a suitable break-before-make interval; timer and overload settings depend on the actual starter and motor."
         },
         {
+          "id": "c1-star-delta-practical-complete",
+          "videoId": "aDhX7fzXmQQ",
+          "title": "Star–Delta Starter: Power Wiring and Standard Timer Control",
+          "instructor": "Tech Gaurav",
+          "durationSeconds": 1043,
+          "url": "https://www.youtube.com/watch?v=aDhX7fzXmQQ",
+          "duration": "17:23",
+          "topic": "Star–delta practical wiring: power, timer and interlocks",
+          "layer": "HOW",
+          "sourceKind": "Educator",
+          "regulationSensitive": true,
+          "studyRole": "Core practical walkthrough",
+          "required": true,
+          "number": 36
+        },
+        {
+          "id": "c1-star-delta-practical-control",
+          "videoId": "vVs_1oEVMgQ",
+          "title": "Star–Delta Starter: Holding Circuit, Timer and Interlocks",
+          "instructor": "The Electrical Guy",
+          "durationSeconds": 810,
+          "url": "https://www.youtube.com/watch?v=vVs_1oEVMgQ",
+          "duration": "13:30",
+          "topic": "Star–delta practical wiring: power, timer and interlocks",
+          "layer": "HOW",
+          "sourceKind": "Educator",
+          "regulationSensitive": true,
+          "studyRole": "Core control-wiring demonstration",
+          "required": true,
+          "number": 37
+        },
+        {
+          "id": "c1-star-delta-timer-nc-variant",
+          "videoId": "pseZ6W6K28Y",
+          "title": "Star–Delta Control Variant: Timer NC and Auxiliary Contacts",
+          "instructor": "Tech Gaurav",
+          "durationSeconds": 1452,
+          "url": "https://www.youtube.com/watch?v=pseZ6W6K28Y",
+          "duration": "24:12",
+          "topic": "Further study: star–delta control using timer NC",
+          "layer": "HOW",
+          "sourceKind": "Educator",
+          "regulationSensitive": true,
+          "studyRole": "Optional circuit comparison",
+          "required": false,
+          "number": 38
+        },
+        {
           "videoId": "iHFTVBWLOAg",
           "url": "https://www.youtube.com/watch?v=iHFTVBWLOAg",
           "instructor": "Zack Hartle",
@@ -6588,7 +6636,7 @@
           "durationSeconds": 544,
           "regulationSensitive": true,
           "id": "c1-autotransformer-starter",
-          "number": 36,
+          "number": 39,
           "title": "Autotransformer Starting: Tap Voltage, Line Current and Torque",
           "topic": "Autotransformer Starting: Tap Voltage, Line Current and Torque",
           "layer": "WHY",
@@ -6603,7 +6651,7 @@
           "instructor": "AutomationDirect",
           "durationSeconds": 198,
           "duration": "≈ 3:18",
-          "number": 37,
+          "number": 40,
           "url": "https://www.youtube.com/watch?v=_tGyaE78WTA",
           "topic": "Soft starting",
           "layer": "WHY",
@@ -6611,6 +6659,38 @@
           "regulationSensitive": true,
           "studyRole": "Core lesson",
           "required": true
+        },
+        {
+          "id": "c1-vfd-purpose-applications",
+          "videoId": "g7jFGOn6xfU",
+          "title": "Variable-Frequency Drives: Purpose, Operation and Pump Applications",
+          "instructor": "RealPars",
+          "durationSeconds": 320,
+          "url": "https://www.youtube.com/watch?v=g7jFGOn6xfU",
+          "duration": "5:20",
+          "topic": "VFD applications: speed control and starter selection",
+          "layer": "WHY",
+          "sourceKind": "Educator",
+          "regulationSensitive": false,
+          "studyRole": "Core VFD introduction",
+          "required": true,
+          "number": 41
+        },
+        {
+          "id": "c1-vfd-soft-starter-selection",
+          "videoId": "_ZztDN5XX5o",
+          "title": "Choosing a Soft Starter or Variable-Frequency Drive",
+          "instructor": "RealPars",
+          "durationSeconds": 450,
+          "url": "https://www.youtube.com/watch?v=_ZztDN5XX5o",
+          "duration": "7:30",
+          "topic": "VFD applications: speed control and starter selection",
+          "layer": "WHY",
+          "sourceKind": "Educator",
+          "regulationSensitive": false,
+          "studyRole": "Core application comparison",
+          "required": true,
+          "number": 42
         },
         {
           "id": "p07-vfd",
@@ -6622,7 +6702,7 @@
           "layer": "WHY",
           "sourceKind": "Educator",
           "regulationSensitive": true,
-          "number": 38,
+          "number": 43,
           "url": "https://www.youtube.com/watch?v=yEPe7RDtkgo",
           "duration": "15:17",
           "studyRole": "Core lesson",
@@ -6636,7 +6716,7 @@
           "durationSeconds": 188,
           "regulationSensitive": false,
           "id": "c1-regenerative-drive-principles",
-          "number": 39,
+          "number": 44,
           "title": "Four-Quadrant Drives: Motoring, Braking and Regeneration",
           "topic": "Four-Quadrant Drives: Motoring, Braking and Regeneration",
           "layer": "WHY",
@@ -8390,5 +8470,5 @@
       "classification": "PROFESSIONAL EXTENSION"
     }
   ],
-  "durationSeconds": 409863
+  "durationSeconds": 413938
 }
