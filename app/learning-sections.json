@@ -2281,5 +2281,103 @@
       "p16-l07",
       "p16-l08"
     ]
+  },
+  {
+    "id": "solar-t1-principles",
+    "moduleId": "solar-t1",
+    "number": 1,
+    "title": "PV principles and energy demand",
+    "lessonIds": [
+      "solar-t1-pv-principles",
+      "solar-t1-energy-demand"
+    ]
+  },
+  {
+    "id": "solar-t1-connectors",
+    "moduleId": "solar-t1",
+    "number": 2,
+    "title": "PV connector workmanship and compatibility",
+    "lessonIds": [
+      "solar-t1-connector-workmanship"
+    ]
+  },
+  {
+    "id": "solar-t2-sizing",
+    "moduleId": "solar-t2",
+    "number": 1,
+    "title": "Stand-alone PV and battery energy sizing",
+    "lessonIds": [
+      "solar-t2-energy-sizing"
+    ]
+  },
+  {
+    "id": "solar-t2-controller-selection",
+    "moduleId": "solar-t2",
+    "number": 2,
+    "title": "Select a controller and check temperature limits",
+    "lessonIds": [
+      "solar-t2-controller-limits"
+    ]
+  },
+  {
+    "id": "solar-t2-practical-controller",
+    "moduleId": "solar-t2",
+    "number": 3,
+    "title": "Practical controller sequence: disconnect, wiring and settings",
+    "lessonIds": [
+      "solar-t2-disconnect-assembly",
+      "solar-t2-controller-wiring",
+      "solar-t2-charge-configuration"
+    ]
+  },
+  {
+    "id": "solar-t2-testing",
+    "moduleId": "solar-t2",
+    "number": 4,
+    "title": "PV testing and insulation-fault investigation",
+    "lessonIds": [
+      "solar-t2-pv-checks",
+      "solar-t2-insulation-fault"
+    ]
+  },
+  {
+    "id": "solar-t3-domestic-planning",
+    "moduleId": "solar-t3",
+    "number": 1,
+    "title": "Connected planning sequence: array, inverter, battery and siting",
+    "lessonIds": [
+      "solar-t3-array-design",
+      "solar-t3-inverter-battery-match",
+      "solar-t3-equipment-siting"
+    ]
+  },
+  {
+    "id": "solar-t3-spirit-project",
+    "moduleId": "solar-t3",
+    "number": 2,
+    "title": "Sam’s Solar Journey: design through installation and handover",
+    "lessonIds": [
+      "solar-t3-project-introduction",
+      "solar-t3-project-01-layout",
+      "solar-t3-project-02-survey",
+      "solar-t3-project-03-shade-model",
+      "solar-t3-project-04-shade-solutions",
+      "solar-t3-project-05-battery",
+      "solar-t3-project-06-yield-cost",
+      "solar-t3-project-07-planning",
+      "solar-t3-project-08-roof-survey",
+      "solar-t3-project-09-roof-install",
+      "solar-t3-project-10-storage-install",
+      "solar-t3-project-11-handover"
+    ]
+  },
+  {
+    "id": "solar-t3-advanced-coupling",
+    "moduleId": "solar-t3",
+    "number": 3,
+    "title": "Further study: AC/DC coupling and larger hybrid systems",
+    "lessonIds": [
+      "solar-t3-hybrid-architecture"
+    ]
   }
 ]

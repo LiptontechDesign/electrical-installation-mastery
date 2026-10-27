@@ -8,6 +8,7 @@ import { learningSections } from './learning-sections';
 import { existingVideoId, relatedVideoIds, savedPlacement, type CourseEdit, type Placement } from './personal-course-model';
 import { youtubeId } from './supplementary-model';
 import { validVideoDuration } from './video-duration';
+import { coursePathways } from './course-pathways';
 
 export function PersonalCourseEditor() {
   const editor = useCourseOrder();
@@ -197,7 +198,7 @@ function PlacementPicker({ value, onChange, excluded, movingTitle }: { value: Pl
   return <section className="editor-placement" aria-label="Choose video placement">
     <label className="editor-search"><Search size={16}/><input aria-label="Find a destination section" placeholder="Find a module or section…" value={query} onChange={event => { setQuery(event.target.value); setModuleId(''); setPath(''); setBrowse(true); }}/></label>
     <button className="editor-text-action" type="button" aria-expanded={browse} onClick={() => setBrowse(value => !value)}>Browse pathways and modules <ChevronDown size={14}/></button>
-    {browse && <><div className="editor-browse-filters"><label>Pathway<select value={path} onChange={event => { setPath(event.target.value); setModuleId(''); }}><option value="">All pathways</option><option>C2</option><option>C1</option><option value="Professional">Advanced</option></select></label><label>Module<select value={moduleId} onChange={event => setModuleId(event.target.value)}><option value="">All modules</option>{editor.course.modules.filter(m => !path || m.path === path).map(m => <option key={m.id} value={m.id}>Module {String(m.number).padStart(2, '0')} — {m.title}</option>)}</select></label></div>
+    {browse && <><div className="editor-browse-filters"><label>Pathway<select value={path} onChange={event => { setPath(event.target.value); setModuleId(''); }}><option value="">All pathways</option>{coursePathways.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}</select></label><label>Module<select value={moduleId} onChange={event => setModuleId(event.target.value)}><option value="">All modules</option>{editor.course.modules.filter(m => !path || m.path === path).map(m => <option key={m.id} value={m.id}>Module {String(m.stageNumber).padStart(2, '0')} — {m.title}</option>)}</select></label></div>
       <div className="editor-section-results" aria-label="Destination sections">{results.map(section => <button type="button" key={section.id} aria-pressed={value.sectionId === section.id} onClick={() => { onChange({ sectionId: section.id, beforeId: null }); setBrowse(false); setQuery(''); }}><span><LocationDetails sectionId={section.id}/></span>{value.sectionId === section.id && <Check size={15}/>}</button>)}{results.length === 0 && <p>No sections match. Try a shorter search or another pathway.</p>}</div></>}
     <div className="editor-position-heading"><strong>Choose the exact position</strong><span>{rows.length} {rows.length === 1 ? 'video' : 'videos'}</span></div>
     <div className="editor-position-list" role="radiogroup" aria-label="Video position">

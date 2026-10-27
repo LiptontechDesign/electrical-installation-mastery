@@ -10,7 +10,7 @@ const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 const prior=read('scripts/fixtures/c1-rashid-previous.json'),untouched=structuredClone(prior);
 const additions=read('scripts/fixtures/c1-rashid-additions.json'),addedIds=new Set(additions.map(v=>v.id));
 const catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json'),evidence=read('docs/c1-rashid-video-review.json');
-const laterIds=new Set([...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json')].map(v=>v.id));
+const laterIds=new Set([...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json'), ...read('scripts/fixtures/solar-pathway-additions.json')].map(v=>v.id));
 const upgraded=parse(prior),view=snapshot(upgraded),core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 assert.equal(Object.values(prior.groups).flat().length,485,'Actual pre-addition published snapshot');
 assert.equal(prior.curriculumRevision,13);assert.equal(upgraded.curriculumRevision,14);
@@ -18,7 +18,7 @@ assert.deepEqual(prior,untouched);assert.deepEqual(upgraded.groups,base.groups);
 for(const [id,ids] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],ids,'Existing section order remains intact: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!addedIds.has(id)&&!laterIds.has(id)).sort(),Object.values(prior.groups).flat().sort());
-assert.equal(view.allRows.length,546);assert.equal(sections.length,218);
+assert.equal(view.allRows.length,572);assert.equal(sections.length,227);
 assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,212);
 const placement=[['c1-rashid-capacitor-bank','c1-pfc-bank-protection','c1-pfc',5],['c1-rashid-building-design','c1-building-design-capstone','c1-installation',1],['c1-rashid-mdb-transfer','c1-standby-mdb-transfer','c1-standby',2]];
 for(const [id,sectionId,moduleId,number] of placement){

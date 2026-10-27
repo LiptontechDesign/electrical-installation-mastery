@@ -15,7 +15,7 @@ const upgraded=parse(prior),view=snapshot(upgraded),oldIds=Object.values(prior.g
 assert.equal(oldIds.length,503,'Actual published baseline, including all bundled occurrences');
 assert.deepEqual(prior,untouched);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(parse(upgraded),upgraded);
 assert.equal(upgraded.curriculumRevision,14,'Additions do not replay historical placement migrations');
-assert.equal(view.allRows.length,546);assert.equal(catalog.lessonCount,514);assert.equal(sections.length,218);
+assert.equal(view.allRows.length,572);assert.equal(catalog.lessonCount,540);assert.equal(sections.length,227);
 assert.equal(view.course.modules.filter(m=>m.path==='C1').length,17);
 assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,212);
 assert.deepEqual(view.allRows.filter(r=>oldSet.has(r.id)).map(r=>r.id),oldIds,'All previous mixed occurrences keep exact relative order');

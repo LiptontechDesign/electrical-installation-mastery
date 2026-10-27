@@ -28,6 +28,7 @@ import { moduleTone, matchesLessonFilter, type LessonFilter } from './course-ui-
 import { buildCourseMapGroups } from './course-map-focus-model';
 import { CourseProgressSummary } from './course-progress-summary';
 import { pathwayLabel, progressForVideos } from './course-progress-model';
+import { coursePathways } from './course-pathways';
 import PathwayProgress from './pathway-progress';
 import LessonRowMetadata from './lesson-row-metadata';
 import { useSupplementary } from './supplementary-videos';
@@ -986,14 +987,14 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                 <div className="course-map-toolbar">
                   <div className="course-path-select">
                     <select aria-label="Choose learning pathway" value={mapPath} onChange={event => chooseMapPath(event.target.value as CourseModule['path'])}>
-                      <option value="C2">C2 · Foundations</option><option value="C1">C1 · Three-phase</option><option value="Professional">Advanced · Specialist</option>
+                      {coursePathways.map(path => <option key={path.id} value={path.id}>{path.optionLabel}</option>)}
                     </select><ChevronDown size={16} aria-hidden="true"/>
                   </div>
                   <button type="button" className="course-map-tools-toggle" aria-label="Course tools" aria-expanded={mapToolsExpanded || organizing} aria-controls="course-map-secondary-tools" onClick={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; const closing = mapToolsExpanded || organizing; setMapToolsExpanded(!closing); if (closing) setOrganizing(false); }}><SlidersHorizontal size={16} aria-hidden="true"/><span>Tools</span></button>
                   <button type="button" className="course-map-close" onClick={closeCourseMap} aria-label="Close course map"><X size={21} aria-hidden="true"/></button>
                 </div>
                 {organizing && <div className="course-path-switcher" role="group" aria-label="Move videos between pathways">
-                  {(['C2','C1','Professional'] as const).map(path=><CourseDragPath key={path} id={path} selected={mapPath===path} onSelect={()=>chooseMapPath(path)}>{path==='Professional'?'Advanced':path}</CourseDragPath>)}
+                  {coursePathways.map(path=><CourseDragPath key={path.id} id={path.id} selected={mapPath===path.id} onSelect={()=>chooseMapPath(path.id)}>{path.label}</CourseDragPath>)}
                 </div>}
                 </div>
                 <div ref={courseMapBodyRef} className="course-map-body" role="region" aria-label="Course content" tabIndex={0}>

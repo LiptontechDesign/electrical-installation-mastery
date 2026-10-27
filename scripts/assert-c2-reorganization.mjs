@@ -18,6 +18,7 @@ export const c1GeneratorAdditions = json('./fixtures/c1-generator-additions.json
 export const c1WoundRotorAdditions = json('./fixtures/c1-wound-rotor-additions.json');
 export const motorControlAdditions = json('./fixtures/motor-control-additions.json');
 export const motorPracticalAdditions = json('./fixtures/c1-motor-practical-additions.json');
+export const solarAdditions = json('./fixtures/solar-pathway-additions.json');
 export const c1MotorGapAdditions = json('./fixtures/c1-motor-gap-additions.json');
 export const c1ProtectionAdditions = json('./fixtures/c1-protection-additions.json');
 export const c1RashidAdditions = json('./fixtures/c1-rashid-additions.json');
@@ -26,12 +27,12 @@ export const c1FlowRepeatIds = json('../app/c1-flow-update.json').repeats.map(le
 export const c1FoundationIds = json('../app/c1-gap-fill-update.json').repeats.map(lesson => lesson.id);
 export const designOverviewIds = new Set(json('../app/design-learning-update.json').overviewLessonIds);
 export const processOverviewIds = new Set(json('../app/connected-process-update.json').overviewLessonIds);
-export const overviewIds = new Set([...designOverviewIds, ...processOverviewIds, ...c1FoundationIds, ...c1FlowRepeatIds, ...motorControlAdditions.map(v => v.id), 'c1-demand-example', ...json('../app/c1-protection-update.json').repeats.map(v => v.id)]);
+export const overviewIds = new Set([...designOverviewIds, ...processOverviewIds, ...c1FoundationIds, ...c1FlowRepeatIds, ...motorControlAdditions.map(v => v.id), 'c1-demand-example', ...json('../app/c1-protection-update.json').repeats.map(v => v.id), ...json('../app/solar-pathway-update.json').repeatedMediaLessonIds]);
 const baseline = json('./course-baseline.json');
 
 export function assertC2Reorganization(course) {
   const source = new Map(baseline.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
-  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions, ...c1MotorGapAdditions, ...c1WoundRotorAdditions, ...motorControlAdditions, ...motorPracticalAdditions]) {
+  for (const lesson of [...earthElectrodeAdditions, ...jpelectricAdditions, ...surgeProtectionAdditions, ...designLearningAdditions, ...connectedProcessAdditions, ...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions, ...c1MotorGapAdditions, ...c1WoundRotorAdditions, ...motorControlAdditions, ...motorPracticalAdditions, ...solarAdditions]) {
     assert.ok(!source.has(lesson.id), 'New lessons must not replace an original identity');
     source.set(lesson.id, lesson);
   }
@@ -40,7 +41,7 @@ export function assertC2Reorganization(course) {
   const approvedOrder = { ...c2StageOrder, ...professionalStageOrder };
   const expected = baseline.filter(module => module.path !== 'C1').map(module => ({ ...module, lessons: approvedOrder[module.id]
     ? [...approvedOrder[module.id].flatMap(section => section.lessonIds), ...(professionalScopeAdditions[module.id] ?? [])].map(id => source.get(id)) : module.lessons }));
-  const actual = course.modules.filter(module => module.path !== 'C1').map(module => ({ id: module.id, path: module.path,
+  const actual = course.modules.filter(module => ['C2', 'Professional'].includes(module.path)).map(module => ({ id: module.id, path: module.path,
     lessons: module.lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })) }));
   assert.deepEqual(actual, expected, 'Preserve the reviewed C2 and Professional topic order');
   const lessons = course.modules.flatMap(module => module.lessons);

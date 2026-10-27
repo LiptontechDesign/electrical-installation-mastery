@@ -1,6 +1,7 @@
 [data-pathway="C2"] { --pathway-accent: #3274b9; }
 [data-pathway="C1"] { --pathway-accent: #8261b5; }
 [data-pathway="Professional"] { --pathway-accent: #b27925; }
+[data-pathway="Solar"] { --pathway-accent: #17785b; }
 .module-card[data-pathway], .module-accordion[data-pathway] { border-inline-start: 3px solid var(--pathway-accent); }
 .module-accordion[data-pathway] { padding-inline-start: 5px; }
 .module-card[data-pathway] .module-card-head>span, .module-accordion[data-pathway] .module-index { background: color-mix(in srgb, var(--pathway-accent) 12%, var(--white)); color: var(--ink); }
@@ -23,6 +24,7 @@
   [data-pathway="C2"] { --pathway-accent: #87b9ee; }
   [data-pathway="C1"] { --pathway-accent: #bda1e6; }
   [data-pathway="Professional"] { --pathway-accent: #e6ba73; }
+  [data-pathway="Solar"] { --pathway-accent: #7bd4ae; }
 }
 
 @media (max-width: 700px) { .lesson-topline { flex-wrap: wrap; gap: 8px; } }

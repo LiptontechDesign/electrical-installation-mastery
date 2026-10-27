@@ -1,5 +1,5 @@
-import { motorControlAdditions, motorPracticalAdditions } from './assert-c2-reorganization.mjs';
-const motorControlIds = new Set([...motorControlAdditions, ...motorPracticalAdditions].map(v => v.id));
+import { motorControlAdditions, motorPracticalAdditions, solarAdditions } from './assert-c2-reorganization.mjs';
+const motorControlIds = new Set([...motorControlAdditions, ...motorPracticalAdditions, ...solarAdditions].map(v => v.id));
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {build} from 'esbuild';
@@ -20,7 +20,7 @@ assert.equal(updated.curriculumRevision,14,'Pure additions do not replay earlier
 for(const [sectionId,order] of Object.entries(prior.groups))assert.deepEqual(updated.groups[sectionId],order,'Exact existing mixed order: '+sectionId);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(updated[key],prior[key]);
 assert.deepEqual(view.allRows.filter(r=>!ids.has(r.id)&&!laterIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id),Object.values(prior.groups).flat(),'All old occurrences retain their relative published order');
-assert.equal(view.allRows.length,546);assert.equal(protectionModule.stageNumber,10);assert.equal(modules.length,17);
+assert.equal(view.allRows.length,572);assert.equal(protectionModule.stageNumber,10);assert.equal(modules.length,17);
 assert.equal(modules[8].id,'c1-earthing');assert.equal(modules[10].id,'c1-installation');assert.equal(modules[11].id,'c1-motors');
 const groups=sections.filter(s=>s.moduleId===protectionModule.id);
 assert.equal(groups.length,9);assert.deepEqual(groups.flatMap(s=>s.lessonIds),additions.map(l=>l.id));

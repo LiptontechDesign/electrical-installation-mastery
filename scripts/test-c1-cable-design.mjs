@@ -8,7 +8,7 @@ const { isRequiredStudyVideo: required } = await import('../work/c1-cable-design
 const read = path => JSON.parse(fs.readFileSync(path, 'utf8'));
 const prior = read('scripts/fixtures/c1-cable-design-previous.json'), original = structuredClone(prior);
 const additions = read('scripts/fixtures/c1-cable-design-additions.json'), addedIds = new Set(additions.map(v => v.id));
-const laterIds = new Set([...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json')].map(v => v.id));
+const laterIds = new Set([...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json'), ...read('scripts/fixtures/solar-pathway-additions.json')].map(v => v.id));
 const sections = read('app/learning-sections.json'), catalog = read('app/video-catalog.json');
 const evidence = read('docs/c1-cable-design-video-review.json');
 const section = sections.find(s => s.id === 'c1-cable-design-process');
@@ -24,7 +24,7 @@ assert.deepEqual(upgraded.receipts, prior.receipts);
 assert.equal(upgraded.revision, prior.revision);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every previous section retains its exact row order: ' + id);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !addedIds.has(id) && !laterIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every original video occurrence survives once');
-assert.equal(view.allRows.length, 546);
+assert.equal(view.allRows.length, 572);
 assert.equal(view.allRows.filter(r => view.course.modules.find(m => m.id === r.moduleId).path === 'C1').length, 212);
 assert.deepEqual(section.lessonIds, additions.map(v => v.id));
 assert.equal(section.number, 5);

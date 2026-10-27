@@ -1,14 +1,14 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
-import { assertC2Reorganization, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions, c1WoundRotorAdditions, motorControlAdditions, motorPracticalAdditions } from './assert-c2-reorganization.mjs';
+import { assertC2Reorganization, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions, c1WoundRotorAdditions, motorControlAdditions, motorPracticalAdditions, solarAdditions } from './assert-c2-reorganization.mjs';
 const read = p => JSON.parse(readFileSync(p, 'utf8'));
 await build({ entryPoints: ['app/personal-course-model.ts', 'app/course-order-model.ts', 'app/course-curriculum.ts'], outdir: 'work/c1-tests', bundle: true, platform: 'node', format: 'esm' });
 const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCourseSnapshot: snapshot, applyCourseEdit: apply, migratePersonalCourse } = await import('../work/c1-tests/personal-course-model.js');
 const { isRequiredStudyVideo: required, studyVideoRole: role, studyNoteFor: note } = await import('../work/c1-tests/course-curriculum.js');
 const before = read('scripts/fixtures/c1-learning-previous.json'), original = structuredClone(before), update = read('app/c1-learning-update.json');
 const sections = read('app/learning-sections.json'), catalog = read('app/video-catalog.json'), evidence = read('docs/c1-video-review.json');
-const newIds = new Set([...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions, ...c1MotorGapAdditions, ...c1WoundRotorAdditions, ...motorControlAdditions, ...motorPracticalAdditions].map(l=>l.id)), oldIds = Object.values(before.groups).flat();
+const newIds = new Set([...c1LearningAdditions, ...c1GapFillAdditions, ...c1FlowAdditions, ...c1ApplicationAdditions, ...c1GeneratorAdditions, ...c1CableDesignAdditions, ...c1RashidAdditions, ...c1ProtectionAdditions, ...c1MotorGapAdditions, ...c1WoundRotorAdditions, ...motorControlAdditions, ...motorPracticalAdditions, ...solarAdditions].map(l=>l.id)), oldIds = Object.values(before.groups).flat();
 const upgraded = parse(before), view = snapshot(upgraded);
 assert.equal(before.curriculumRevision, 6);
 assert.equal(upgraded.curriculumRevision, 14);

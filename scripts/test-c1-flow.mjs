@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {build} from 'esbuild';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
-const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json')].map(v=>v.id));
+const cableDesign=read('scripts/fixtures/c1-cable-design-additions.json'), laterAdditionIds=new Set([...cableDesign,...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json'), ...read('scripts/fixtures/solar-pathway-additions.json')].map(v=>v.id));
 await build({entryPoints:['app/personal-course-model.ts','app/course-curriculum.ts'],outdir:'work/c1-flow-tests',bundle:true,platform:'node',format:'esm'});
 const {publishedPersonalCourse:base,parsePersonalCourse:parse,personalCourseSnapshot:snapshot,applyCourseEdit:apply,migratePersonalCourse}=await import('../work/c1-flow-tests/personal-course-model.js');
 const {isRequiredStudyVideo:required}=await import('../work/c1-flow-tests/course-curriculum.js');
