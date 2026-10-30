@@ -83,6 +83,9 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
   const duplicateId = intent.type === 'add' ? existingVideoId(editor.state, url) : undefined;
   const duplicate = editor.videos.find(v => v.id === duplicateId);
   const duplicateArchived = Boolean(duplicate?.archived || editor.archivedVideos.some(video => video.id === duplicateId));
+  const duplicateTitle = duplicateId ? editor.byId.get(duplicateId)?.title ?? duplicate?.title ?? editor.archivedVideos.find(video => video.id === duplicateId)?.title : undefined;
+  const duplicateSection = duplicateId ? Object.entries(editor.state.groups).find(([, ids]) => ids.includes(duplicateId))?.[0] : undefined;
+  const duplicateMessageId = useId();
   const related = 'id' in intent ? relatedVideoIds(editor.state, intent.id) : [];
   const excluded = 'id' in intent ? [intent.id, ...(withSupporting ? related : [])] : [];
   const candidates = (editor.rows[placement.sectionId] ?? []).filter(row => !excluded.includes(row.id));
@@ -98,7 +101,7 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
     return () => { element.close(); document.body.style.overflow = overflow; if (previous?.isConnected) previous.focus({ preventScroll: true }); };
   }, []);
   useEffect(() => {
-    if (intent.type !== 'add' || !videoId) return;
+    if (intent.type !== 'add' || !videoId || duplicateId) return;
     const abort = new AbortController();
     const timer = window.setTimeout(async () => {
       setMetadataBusy(true); setMetadata('Looking up video details…');
@@ -116,7 +119,7 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
       } finally { if (!abort.signal.aborted) setMetadataBusy(false); }
     }, 400);
     return () => { window.clearTimeout(timer); abort.abort(); };
-  }, [url, videoId, intent.type, lookup]);
+  }, [url, videoId, intent.type, lookup, duplicateId]);
 
   function watch(id: string) {
     const video = editor.videos.find(v => v.id === id);
@@ -148,14 +151,14 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
         {intent.type === 'add' && <>
           <label className="editor-field">YouTube link<input autoFocus type="url" required value={url} placeholder="Paste a YouTube video link" onChange={event => { setUrl(event.target.value.trim()); setTitle(''); setInstructor(''); setDurationSeconds(undefined); setMetadata(''); setMetadataBusy(false); setFormError(''); touched.current = { title: false, instructor: false }; }}/></label>
           {url && !videoId && <p className="editor-help">Use a YouTube watch, share, Shorts, or live-video link.</p>}
-          {videoId && <div className="editor-video-preview">
+          {duplicateId && <div id={duplicateMessageId} className="editor-duplicate" role="status"><strong>{duplicateArchived ? 'This video is in your archive.' : 'This video is already in your course.'}</strong>{duplicateTitle && <p className="editor-duplicate-title">{duplicateTitle}</p>}{duplicateSection && <LocationDetails sectionId={duplicateSection}/>}<p>{duplicateArchived ? 'Restore it to watch it again.' : 'It cannot be added twice. Open it or move it to another section.'}</p><div className="editor-duplicate-actions">{!duplicateArchived && <button type="button" onClick={() => watch(duplicateId)}>Go to video</button>}<button type="button" onClick={() => editor.openEditor({ type: duplicateArchived ? 'restore' : 'move', id: duplicateId })}>{duplicateArchived ? 'Restore video…' : 'Move existing video…'}</button></div></div>}
+          {videoId && !duplicateId && <div className="editor-video-preview">
             {/* The thumbnail host and validated video ID are fixed, never supplied HTML. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`} alt="" width="112" height="63"/>
             <div><strong>{title || 'Your video'}</strong><small>{instructor || 'YouTube'}</small></div>
           </div>}
-          <div className="editor-metadata"><span role="status">{metadataBusy && <LoaderCircle size={13}/>} {metadata}</span>{videoId && <button type="button" onClick={() => setLookup(value => value + 1)}>Retry lookup</button>}</div>
-          {duplicateId && <div className="editor-duplicate" role="status"><strong>{duplicateArchived ? 'This video is in your archive.' : 'This video is already in your course.'}</strong><div>{!duplicateArchived && <button type="button" onClick={() => watch(duplicateId)}>Go to video</button>}<button type="button" onClick={() => editor.openEditor({ type: duplicateArchived ? 'restore' : 'move', id: duplicateId })}>{duplicateArchived ? 'Restore video…' : 'Move existing video…'}</button></div></div>}
+          {!duplicateId && <div className="editor-metadata"><span role="status">{metadataBusy && <LoaderCircle size={13}/>} {metadata}</span>{videoId && <button type="button" onClick={() => setLookup(value => value + 1)}>Retry lookup</button>}</div>}
           <button type="button" className="editor-text-action" aria-expanded={showDetails} onClick={() => setShowDetails(value => !value)}>Edit details <ChevronDown size={14}/></button>
         </>}
         {(intent.type === 'edit' || intent.type === 'add' && showDetails) && <div className="editor-details"><label className="editor-field">Video title<input required maxLength={240} value={title} onChange={event => { touched.current.title = true; setTitle(event.target.value); }}/></label><label className="editor-field">Instructor / channel<input maxLength={160} value={instructor} onChange={event => { touched.current.instructor = true; setInstructor(event.target.value); }}/></label></div>}
@@ -167,7 +170,7 @@ function EditorDialog({ intent }: { intent: Exclude<EditorIntent, { type: 'delet
         </>}
         {(formError || editor.error) && <p className="editor-error" role="alert">{formError || editor.error}</p>}
         {!editor.ready && <p className="editor-help" role="status">{editor.error ? 'Load your saved course before editing.' : 'Loading your course…'} <button type="button" onClick={() => void editor.refresh()}>Retry</button></p>}
-        </fieldset><footer className="editor-footer"><button type="button" className="editor-secondary" disabled={editor.busy} onClick={close}>Cancel</button><button className="editor-primary" type="submit" disabled={editor.busy || !editor.ready || Boolean(duplicateId) || (intent.type === 'add' && (!videoId || !title.trim())) || !validPosition}>{editor.busy ? 'Saving…' : intent.type === 'add' ? 'Add to my course' : intent.type === 'move' ? 'Move video' : intent.type === 'restore' ? 'Restore video' : 'Save details'}</button></footer>
+        </fieldset><footer className="editor-footer"><button type="button" className="editor-secondary" disabled={editor.busy} onClick={close}>Cancel</button><button className="editor-primary" type="submit" aria-describedby={duplicateId ? duplicateMessageId : undefined} disabled={editor.busy || !editor.ready || Boolean(duplicateId) || (intent.type === 'add' && (!videoId || !title.trim())) || !validPosition}>{editor.busy ? 'Saving…' : intent.type === 'add' ? 'Add to my course' : intent.type === 'move' ? 'Move video' : intent.type === 'restore' ? 'Restore video' : 'Save details'}</button></footer>
       </form>}
   </dialog>;
 }
