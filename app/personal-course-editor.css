@@ -101,6 +101,8 @@
 .editor-duplicate .editor-location-details { margin: 8px 0; }
 .editor-duplicate-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .editor-duplicate-actions button { min-height: 44px; padding: 8px 12px; border: 1px solid var(--surface-selected-border); border-radius: 7px; background: var(--white); color: var(--text-accent); font-size: 13px; font-weight: 700; }
+.editor-duplicate-choice { display: flex; align-items: flex-start; gap: 9px; margin-top: 12px; padding: 10px; border: 1px solid var(--surface-selected-border); border-radius: 7px; background: var(--white); font-weight: 700; cursor: pointer; }
+.editor-duplicate-choice input { flex: none; margin-top: 3px; }
 .editor-archive li button { background: transparent; color: var(--text-accent); font-size: 12px; padding: 5px 0; }
 .editor-success > svg { color: var(--text-success); }
 .editor-success h3 { font-size: 17px; line-height: 1.5; margin: 9px 0; }

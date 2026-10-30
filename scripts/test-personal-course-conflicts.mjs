@@ -27,6 +27,11 @@ try {
  await duplicate.getByRole('button',{name:'Move existing video…',exact:true}).waitFor();
  assert.match(await page.getByRole('button',{name:'Add to my course',exact:true}).getAttribute('aria-describedby'), /.+/);
  assert.equal(await page.getByRole('button',{name:'Add to my course',exact:true}).isDisabled(),true);
+ await duplicate.getByRole('checkbox',{name:'Create another copy in the selected location',exact:true}).check();
+ await dialog.getByRole('button',{name:'Add another copy',exact:true}).click();
+ await page.getByRole('dialog',{name:'Video added',exact:true}).waitFor();
+ assert.equal(f.state().videos.filter(v=>v.videoId==='abcdefghijk').length,2);
+ await page.getByRole('button',{name:'Add another',exact:true}).click();
  await dialog.getByRole('button',{name:'Cancel',exact:true}).click();
  const existing = f.state().videos.find(v => v.videoId === 'abcdefghijk');
  f.external({type:'archive',id:existing.id});
@@ -48,6 +53,8 @@ try {
  await mobile.page.locator('.editor-duplicate').getByText('This video is already in your course.',{exact:true}).waitFor();
  await mobile.page.locator('.editor-duplicate').getByText(/Module 06/).waitFor();
  assert.equal(await mobile.page.evaluate(() => document.documentElement.scrollWidth > innerWidth),false);
+ await mobile.page.getByRole('checkbox',{name:'Create another copy in the selected location',exact:true}).check();
+ assert.equal(await mobile.page.getByRole('button',{name:'Add another copy',exact:true}).isEnabled(),true);
  await mobile.page.screenshot({path:'work/editor-preview/duplicate-notice-mobile.png'});
  await mobile.page.keyboard.press('Escape');
  await mobile.page.getByRole('dialog',{name:'Add a video',exact:true}).waitFor({state:'hidden'});

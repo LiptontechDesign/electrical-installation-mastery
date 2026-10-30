@@ -3,6 +3,7 @@ export type SupplementaryVideo = {
   moduleId: string; anchorId: string; position: 'before' | 'after';
   archived: boolean; updatedAt: string;
   placementRevision?: number;
+  intentionalDuplicate?: boolean;
   durationSeconds?: number;
 };
 export type SupplementaryState = { version: 1; revision: number; videos: SupplementaryVideo[] };

@@ -99,7 +99,7 @@ const reviewedAnchors = new Map<string, { anchorId: string; position: 'before' |
 export function withSupplementaryDefaults(state:SupplementaryState, reviewedPlacements = true, designPlacements = true, c1Placements = true):SupplementaryState {
   // Preserve the approved cross-path bridge and personal copies of overview
   // videos: repeating those lessons is intentional reinforcement.
-  const saved=state.videos.filter(video=>!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)||intentionalRepeatVideoIds.has(video.videoId)).map(video=>{
+  const saved=state.videos.filter(video=>video.intentionalDuplicate === true||!canonical.has(video.videoId)||crossPathSupplementaryVideoIds.has(video.videoId)||intentionalRepeatVideoIds.has(video.videoId)).map(video=>{
     const seed=defaults.find(item=>item.id===video.id||item.videoId===video.videoId);
     // One curriculum migration; later visitor moves are preserved.
     let migrated=seed&&!video.placementRevision ? {...video,moduleId:seed.moduleId,anchorId:seed.anchorId,position:seed.position,title:video.title.replace(/^Protection study path \d+\/10 · /,''),placementRevision:3} : video;

@@ -21,7 +21,7 @@ export type PersonalCourse = {
 };
 export type CourseEdit =
   | ({ type: 'move'; id: string; withSupporting?: boolean } & Placement)
-  | ({ type: 'add'; url: string; title: string; instructor: string; durationSeconds?: number } & Placement)
+  | ({ type: 'add'; url: string; title: string; instructor: string; durationSeconds?: number; allowDuplicate?: boolean } & Placement)
   | { type: 'edit'; id: string; title: string; instructor: string }
   | { type: 'archive'; id: string }
   | { type: 'delete'; id: string }
@@ -172,6 +172,7 @@ export function validateEditRequest(value: unknown): EditRequest {
   if (edit.type === 'move' && edit.withSupporting !== undefined && typeof edit.withSupporting !== 'boolean') throw new CourseEditError('Invalid move.');
   if (edit.type === 'add' || edit.type === 'edit') validateDetails(edit.title, edit.instructor);
   if (edit.type === 'add' && (typeof edit.url !== 'string' || !youtubeId(edit.url))) throw new CourseEditError('Paste a valid YouTube video link.');
+  if (edit.type === 'add' && edit.allowDuplicate !== undefined && typeof edit.allowDuplicate !== 'boolean') throw new CourseEditError('Invalid duplicate choice.');
   if (edit.type === 'undo' && typeof edit.targetOperationId !== 'string') throw new CourseEditError('Choose a change to undo.');
   return request;
 }
@@ -198,9 +199,9 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
     if (edit.durationSeconds !== undefined && !validVideoDuration(edit.durationSeconds)) throw new CourseEditError('Video duration is invalid. Look up the video details again.');
     const videoId = youtubeId(edit.url)!;
     const duplicate = state.videos.find(v => v.videoId === videoId);
-    const coreDuplicate = [...core.values()].find(l => l.videoId === videoId);
-    if (duplicate || coreDuplicate && !state.deletedIds?.includes(coreDuplicate.id)) throw new CourseEditError('This video is already in your course. Open, move, or restore its existing entry.', 409, duplicate?.id ?? coreDuplicate!.id);
-    if (coreDuplicate) {
+    const coreDuplicate = [...core.values()].find(l => l.videoId === videoId && !state.deletedIds?.includes(l.id)) ?? [...core.values()].find(l => l.videoId === videoId);
+    if (!edit.allowDuplicate && (duplicate || coreDuplicate && !state.deletedIds?.includes(coreDuplicate.id))) throw new CourseEditError('This video is already in your course. Open, move, or restore its existing entry.', 409, duplicate?.id ?? coreDuplicate!.id);
+    if (coreDuplicate && !edit.allowDuplicate) {
       // An explicit addition may bring back a removed published lesson. Default
       // merging and Undo never bring a permanently removed lesson back.
       affected = [coreDuplicate.id];
@@ -212,7 +213,7 @@ export function applyCourseEdit(input: PersonalCourse, request: EditRequest, now
       if (state.videos.some(v => v.id === id)) throw new CourseEditError('This addition was already saved. Refresh your course.', 409, id);
       const section = sectionById.get(edit.sectionId);
       if (!section) throw new CourseEditError('Choose a destination section.');
-      const video: SupplementaryVideo = { id, videoId, ...validateDetails(edit.title, edit.instructor), moduleId: section.moduleId, anchorId: '', position: 'after', archived: false, placementRevision: 2, updatedAt: now, durationSeconds: edit.durationSeconds };
+      const video: SupplementaryVideo = { id, videoId, ...validateDetails(edit.title, edit.instructor), moduleId: section.moduleId, anchorId: '', position: 'after', archived: false, placementRevision: 2, updatedAt: now, durationSeconds: edit.durationSeconds, ...(edit.allowDuplicate ? { intentionalDuplicate: true } : {}) };
       affected = [id]; inverse.archiveIds = [id];
       next = placeVideos({ ...state, videos: [...state.videos, video] }, [id], edit);
     }

@@ -4,7 +4,7 @@ The published course includes 32 bundled supplementary entries. Guests can watch
 
 ## Adding and watching
 
-Use **Add video**, a section's small plus control, or a video's **Add video after** action. Paste a YouTube watch, share, Shorts or live link. Metadata lookup fills the title and channel; manual edits and retry remain available. Choose another destination if needed, then **Add to my course**. Success offers **Watch now** or **Add another** while keeping the current video in place. Duplicate links lead to the existing video or its restore action.
+Use **Add video**, a section's small plus control, or a video's **Add video after** action. Paste a YouTube watch, share, Shorts or live link. Metadata lookup fills the title and channel; manual edits and retry remain available. Choose another destination if needed, then **Add to my course**. Success offers **Watch now** or **Add another** while keeping the current video in place. For an existing link, the notice shows its location and offers open/move or restore; choose **Create another copy** to add an independent placement at the selected location. Duplicating is explicit and retries remain idempotent.
 
 Videos play inline in the shared lesson canvas with watched marks, bookmarks, private notes, timestamp notes, resume and sequence navigation. Duration is shown only after YouTube reports it. Core and supplementary videos share automatic advancement and continuous numbering. A YouTube fallback link is available for embedding restrictions.
 
@@ -16,7 +16,7 @@ Use the compact video menu to edit the title/channel, move to any section, or ar
 
 Catalogue and explicit section order share the authenticated account's revisioned `personal-course` document. See [course ordering](course-drag-and-drop.md) for atomic saves, conflict handling, Undo and legacy migration. Guest browsing never loads private records. Default merging preserves saved edits and archived entries. Complete account exports include both the new document and retained legacy records.
 
-Watched marks are keyed by YouTube ID in `supplementary-progress`. Bookmarks, freeform notes, playback positions and timestamp notes also retain their stable video identity. Moving, renaming or archiving does not reset them. Existing video links cannot be replaced through Edit details; add a different video separately.
+Watched marks are keyed by YouTube ID in `supplementary-progress`, so personal copies of one video share watched status. Core lessons retain their own watched marks. Video notes, timestamp notes and playback positions are shared by YouTube ID. Moving, renaming or archiving an individual placement does not reset them. Existing video links cannot be replaced through Edit details; add a different video separately.
 
 Supplementary watched marks count in the primary section, module and overall progress totals. Archived and deleted entries are excluded from active totals; restoring an archived entry restores its existing watched status. Adding and moving entries updates the same totals immediately. Progress backup/import includes supplementary marks, and Reset learning progress clears them with the catalogue marks.
 
