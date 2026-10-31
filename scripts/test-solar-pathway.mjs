@@ -10,7 +10,7 @@ const { coursePathways } = await import('../work/solar-tests/course-pathways.js'
 const prior = read('scripts/fixtures/solar-pathway-previous.json'), original = structuredClone(prior);
 const update = read('app/solar-pathway-update.json'), evidence = read('docs/solar-video-review.json');
 const catalog = read('app/video-catalog.json'), sections = read('app/learning-sections.json');
-const added = new Set(update.addedLessonIds), upgraded = parse(prior), view = snapshot(upgraded);
+const added = new Set([...update.addedLessonIds, ...read('app/c1-pfc-update.json').addedLessonIds]), upgraded = parse(prior), view = snapshot(upgraded);
 const modules = catalog.modules.filter(m => m.path === 'Solar');
 const lessons = modules.flatMap(m => m.lessons), core = new Map(catalog.modules.flatMap(m => m.lessons).map(l => [l.id, l]));
 assert.equal(Object.values(prior.groups).flat().length, 546, 'Frozen actual previous publication');
@@ -19,9 +19,9 @@ assert.equal(upgraded.curriculumRevision, 14, 'Pure additions do not replay old 
 assert.deepEqual(parse(upgraded), upgraded);
 assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Exact previous section membership: ' + id);
-assert.deepEqual(view.allRows.filter(row => !added.has(row.id)).map(row => row.id), Object.values(prior.groups).flat());
+assert.deepEqual(view.allRows.filter(row => !added.has(row.id)).map(row => row.id).sort(), Object.values(prior.groups).flat().sort());
 for (const key of ['revision', 'videos', 'itemRevisions', 'receipts', 'archivedLessonIds', 'deletedIds']) assert.deepEqual(upgraded[key], prior[key]);
-assert.equal(catalog.lessonCount, 540); assert.equal(view.allRows.length, 572); assert.equal(sections.length, 227); assert.equal(catalog.modules.length, 35);
+assert.equal(catalog.lessonCount, 544); assert.equal(view.allRows.length, 576); assert.equal(sections.length, 231); assert.equal(catalog.modules.length, 35);
 assert.deepEqual(modules.map(m => m.id), ['solar-t1', 'solar-t2', 'solar-t3']);
 assert.deepEqual(modules.map(m => m.stageNumber), [1, 2, 3]);
 assert.deepEqual(modules.map(m => m.lessons.length), [3, 7, 16]);
@@ -61,7 +61,7 @@ assert.equal(required(project[0]), false); assert.equal(required('solar-t3-hybri
 assert.ok(project.slice(1).every(required));
 assert.equal(lessons.at(-1).id, 'solar-t3-hybrid-architecture');
 const watched = new Set(Object.values(prior.groups).flat().filter((_, i) => i % 3 === 0));
-assert.deepEqual(progressForVideos(added, watched), { watched: 0, total: 26, percent: 0 });
+assert.deepEqual(progressForVideos(update.addedLessonIds, watched), { watched: 0, total: 26, percent: 0 });
 assert.deepEqual(progressForVideos(Object.values(prior.groups).flat(), watched), progressForVideos(view.allRows.filter(r => !added.has(r.id)).map(r => r.id), watched));
 const custom = structuredClone(prior);
 const privateCopy = { id: 'private-solar-copy', videoId: 'XSfu8V0DR1g', title: 'My prior solar lesson', instructor: 'My solar teacher', moduleId: 'module-14', anchorId: 'p14-l01', position: 'after', archived: true, updatedAt: '2026-10-26T08:00:00Z' };

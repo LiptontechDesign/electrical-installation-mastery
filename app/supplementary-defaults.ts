@@ -13,6 +13,7 @@ import c1GeneratorUpdate from './c1-generator-update.json';
 import motorControlUpdate from './motor-control-update.json';
 import motorPracticalUpdate from './c1-motor-practical-update.json';
 import solarUpdate from './solar-pathway-update.json';
+import pfcUpdate from './c1-pfc-update.json';
 import c1ProtectionUpdate from './c1-protection-update.json';
 import c1MotorGapUpdate from './c1-motor-gap-update.json';
 import c1WoundRotorUpdate from './c1-wound-rotor-update.json';
@@ -80,7 +81,7 @@ const c1CableDesignLessonIds = new Set(learningSections.find(section => section.
 const c1CableDesignVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => c1CableDesignLessonIds.has(lesson.id)).map(lesson => lesson.videoId);
 const c1RashidVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => lesson.id.startsWith('c1-rashid-')).map(lesson => lesson.videoId);
 const c1MotorGapVideoIds = course.modules.flatMap(module => module.lessons).filter(lesson => c1MotorGapUpdate.addedLessonIds.includes(lesson.id)).map(lesson => lesson.videoId);
-const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds, ...c1Update.repeatableVideoIds, ...c1GapFillVideoIds, ...c1FlowUpdate.repeatableVideoIds, ...c1ApplicationUpdate.repeatableVideoIds, ...c1GeneratorVideoIds, ...c1CableDesignVideoIds, ...c1RashidVideoIds, ...c1ProtectionUpdate.repeatableVideoIds, ...c1MotorGapVideoIds, ...c1WoundRotorUpdate.repeatableVideoIds, ...motorControlUpdate.repeatableVideoIds, ...motorPracticalUpdate.repeatableVideoIds, ...solarUpdate.repeatableVideoIds]);
+const intentionalRepeatVideoIds = new Set([...designUpdate.repeatableVideoIds, ...processUpdate.repeatableVideoIds, ...c1Update.repeatableVideoIds, ...c1GapFillVideoIds, ...c1FlowUpdate.repeatableVideoIds, ...c1ApplicationUpdate.repeatableVideoIds, ...c1GeneratorVideoIds, ...c1CableDesignVideoIds, ...c1RashidVideoIds, ...c1ProtectionUpdate.repeatableVideoIds, ...c1MotorGapVideoIds, ...c1WoundRotorUpdate.repeatableVideoIds, ...motorControlUpdate.repeatableVideoIds, ...motorPracticalUpdate.repeatableVideoIds, ...solarUpdate.repeatableVideoIds, ...pfcUpdate.repeatableVideoIds]);
 const seedLocations=new Map<string,string>(locations);
 const defaults:SupplementaryVideo[]=resources.filter(r=>!canonical.has(r[1])||crossPathSupplementaryVideoIds.has(r[1])).map(([id,videoId,title,instructor,anchorId,position])=>{
   const moduleId=seedLocations.get(anchorId);

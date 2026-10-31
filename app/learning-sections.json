@@ -1100,101 +1100,6 @@
     "number": 5
   },
   {
-    "id": "c1-pfc-section-1",
-    "moduleId": "c1-pfc",
-    "number": 1,
-    "title": "Why poor power factor increases supply current",
-    "lessonIds": [
-      "course-NIrKOVZrqnU"
-    ]
-  },
-  {
-    "id": "c1-pfc-target",
-    "moduleId": "c1-pfc",
-    "number": 2,
-    "title": "Find the kVAr needed to reach a target power factor",
-    "lessonIds": [
-      "c1-pfc-target-foundation"
-    ]
-  },
-  {
-    "id": "c1-pfc-single-phase-worked",
-    "moduleId": "c1-pfc",
-    "number": 3,
-    "title": "Single-phase motor correction: from current and power factor to microfarads",
-    "lessonIds": [
-      "c1-pfc-single-phase-target"
-    ]
-  },
-  {
-    "id": "c1-pfc-calculation",
-    "moduleId": "c1-pfc",
-    "number": 4,
-    "title": "Size a three phase capacitor bank in kVAr and microfarads",
-    "lessonIds": [
-      "c1-pfc-unity-bank"
-    ],
-    "resource": {
-      "href": "/c1-worked-project.md",
-      "label": "Four-storey worked project"
-    }
-  },
-  {
-    "id": "c1-pfc-bank-protection",
-    "moduleId": "c1-pfc",
-    "number": 5,
-    "title": "Applied example: capacitor-bank steps and protection",
-    "lessonIds": [
-      "c1-rashid-capacitor-bank"
-    ]
-  },
-  {
-    "id": "c1-pfc-automatic-bank",
-    "moduleId": "c1-pfc",
-    "number": 6,
-    "title": "Read a stepped capacitor-bank schematic and observe automatic correction",
-    "lessonIds": [
-      "c1-pfc-automatic-bank-demo"
-    ]
-  },
-  {
-    "id": "c1-pfc-synchronous-condenser",
-    "moduleId": "c1-pfc",
-    "title": "Synchronous condensers: another source of reactive-power compensation",
-    "lessonIds": [
-      "c1-synchronous-condenser-overview"
-    ],
-    "number": 7
-  },
-  {
-    "id": "c1-pfc-static-var",
-    "moduleId": "c1-pfc",
-    "number": 8,
-    "title": "Static VAR compensation: controlled reactors and capacitors",
-    "lessonIds": [
-      "c1-pfc-svc-principle"
-    ]
-  },
-  {
-    "id": "c1-pfc-complex-tools",
-    "moduleId": "c1-pfc",
-    "number": 9,
-    "title": "Further study: complex numbers and conjugates for AC calculations",
-    "lessonIds": [
-      "c1-complex-number-foundation",
-      "c1-complex-conjugate-foundation"
-    ]
-  },
-  {
-    "id": "c1-pfc-shunt-examples",
-    "moduleId": "c1-pfc",
-    "number": 10,
-    "title": "Further study: complex power and combined-load correction",
-    "lessonIds": [
-      "c1-shunt-pfc-examples"
-    ]
-  },
-  {
     "id": "c1-distribution-section-1",
     "moduleId": "c1-distribution",
     "number": 1,
@@ -1813,6 +1718,137 @@
     "number": 17,
     "title": "Optional review: phase monitoring and protective contact placement",
     "lessonIds": []
+  },
+  {
+    "id": "c1-pfc-section-1",
+    "moduleId": "c1-pfc",
+    "number": 1,
+    "title": "Why poor power factor increases supply current",
+    "lessonIds": [
+      "course-NIrKOVZrqnU"
+    ]
+  },
+  {
+    "id": "c1-pfc-target",
+    "moduleId": "c1-pfc",
+    "number": 2,
+    "title": "Find the kVAr needed to reach a target power factor",
+    "lessonIds": [
+      "c1-pfc-target-foundation"
+    ]
+  },
+  {
+    "id": "c1-pfc-single-phase-worked",
+    "moduleId": "c1-pfc",
+    "number": 3,
+    "title": "Single-phase motor correction: from current and power factor to microfarads",
+    "lessonIds": [
+      "c1-pfc-single-phase-target"
+    ]
+  },
+  {
+    "id": "c1-pfc-calculation",
+    "moduleId": "c1-pfc",
+    "number": 4,
+    "title": "Size a three phase capacitor bank in kVAr and microfarads",
+    "lessonIds": [
+      "c1-pfc-unity-bank"
+    ],
+    "resource": {
+      "href": "/c1-worked-project.md",
+      "label": "Four-storey worked project"
+    }
+  },
+  {
+    "id": "c1-pfc-bank-protection",
+    "moduleId": "c1-pfc",
+    "number": 5,
+    "title": "Applied example: capacitor-bank steps and protection",
+    "lessonIds": [
+      "c1-rashid-capacitor-bank"
+    ]
+  },
+  {
+    "id": "c1-pfc-apfc-sizing-section",
+    "moduleId": "c1-pfc",
+    "title": "Automatic capacitor-bank sizing and step selection",
+    "lessonIds": [
+      "c1-pfc-apfc-sizing"
+    ],
+    "number": 6
+  },
+  {
+    "id": "c1-pfc-automatic-bank",
+    "moduleId": "c1-pfc",
+    "number": 7,
+    "title": "Read a stepped capacitor-bank schematic and observe automatic correction",
+    "lessonIds": [
+      "c1-pfc-automatic-bank-demo"
+    ]
+  },
+  {
+    "id": "c1-pfc-controller-setup-section",
+    "moduleId": "c1-pfc",
+    "title": "Controller terminals and configuration",
+    "lessonIds": [
+      "c1-pfc-apfc-controller-setup"
+    ],
+    "number": 8
+  },
+  {
+    "id": "c1-pfc-apfc-wiring-section",
+    "moduleId": "c1-pfc",
+    "title": "Automatic power-factor controller panel wiring",
+    "lessonIds": [
+      "c1-pfc-apfc-wiring"
+    ],
+    "number": 9
+  },
+  {
+    "id": "c1-pfc-panel-controls-section",
+    "moduleId": "c1-pfc",
+    "title": "Trace the automatic and manual panel controls",
+    "lessonIds": [
+      "c1-pfc-apfc-panel-controls"
+    ],
+    "number": 10
+  },
+  {
+    "id": "c1-pfc-synchronous-condenser",
+    "moduleId": "c1-pfc",
+    "title": "Synchronous condensers: another source of reactive-power compensation",
+    "lessonIds": [
+      "c1-synchronous-condenser-overview"
+    ],
+    "number": 11
+  },
+  {
+    "id": "c1-pfc-static-var",
+    "moduleId": "c1-pfc",
+    "number": 12,
+    "title": "Static VAR compensation: controlled reactors and capacitors",
+    "lessonIds": [
+      "c1-pfc-svc-principle"
+    ]
+  },
+  {
+    "id": "c1-pfc-complex-tools",
+    "moduleId": "c1-pfc",
+    "number": 13,
+    "title": "Further study: complex numbers and conjugates for AC calculations",
+    "lessonIds": [
+      "c1-complex-number-foundation",
+      "c1-complex-conjugate-foundation"
+    ]
+  },
+  {
+    "id": "c1-pfc-shunt-examples",
+    "moduleId": "c1-pfc",
+    "number": 14,
+    "title": "Further study: complex power and combined-load correction",
+    "lessonIds": [
+      "c1-shunt-pfc-examples"
+    ]
   },
   {
     "id": "c1-verification-foundations",

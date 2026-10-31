@@ -3,6 +3,7 @@
 Updated 27 October 2026. This index and the root README describe the current application, not a future roadmap.
 
 - [Application overview and setup](../README.md): video course, books, Google sign-in, configuration and test commands.
+- [Power-factor module and APFC review](c1-power-factor.md): order, English audio evidence and technical qualifications.
 - [Solar T1–T3 pathway](solar-pathway.md): the reviewed 26-video selection, three-stage learning order, English-audio evidence, instructor blocks and saved-course preservation; includes an explicit coverage map and source limitations.
 - [C1 written marks, oral priorities and course coverage](c1-exam-weight-and-coverage-audit.md): readable high-mark allocations, all 78 authored question mappings, actual lesson coverage, C2 prerequisites, remaining application gaps and explicit oral-evidence limits.
 - [Star–delta practical wiring and English VFD additions](c1-motor-practical.md): three supplied lessons, two million-view RealPars additions, spoken-English track evidence, caption qualifications and saved-course preservation.

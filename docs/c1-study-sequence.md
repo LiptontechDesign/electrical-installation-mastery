@@ -2,7 +2,7 @@
 
 Follow the sections in order. C1 has its own Module 1–17 numbering. It builds on C2 foundations, with selected reminders included. See [the current route and EPRA mapping](c1-focused-modules.md) and the [four-storey worked project](../public/c1-worked-project.md).
 
-113 sections · 212 video entries. [Motor control opening series](motor-control-series.md). [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
+117 sections · 216 video entries. [Motor control opening series](motor-control-series.md). [Motor gap-fill and coverage limits](c1-motor-gap-fill.md). [Protective-device foundations](c1-protective-devices.md). [Generator teaching](c1-generator-learning.md). [Connected cable design](c1-cable-design-series.md).
 
 ## C1 Module 1: AC and Three-Phase Foundations
 
@@ -159,65 +159,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Historical apparatus overview; focus on absolute versus comparative resistance measurement.
 
-## C1 Module 6: Power-Factor Correction
-
-### 1. Why poor power factor increases supply current
-
-- [Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)](https://www.youtube.com/watch?v=NIrKOVZrqnU) — The Engineering Mindset; Core lesson.
-
-### 2. Find the kVAr needed to reach a target power factor
-
-- [Correct a Building’s Power Factor to a Chosen Target](https://www.youtube.com/watch?v=Tv_7XWf96gg) — The Engineering Mindset; Core foundation.
-
-  Use electrical input kW; convert shaft output through efficiency first.
-
-### 3. Single-phase motor correction: from current and power factor to microfarads
-
-- [Single-Phase Motor Power-Factor Correction: Two Complete Worked Examples](https://www.youtube.com/watch?v=MWCqtJfQUt0) — Red Seal Electrician; Core worked example.
-
-  Examples use 120 V, 60 Hz. Use the question’s voltage/frequency; if shaft output is given, first use electrical input = shaft output/efficiency. Correction reduces supply current; motor-branch current and working kW do not automatically fall.
-
-### 4. Size a three phase capacitor bank in kVAr and microfarads
-
-- [Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank](https://www.youtube.com/watch?v=q5xjqXcCqNw) — Dieter Monkey; Core lesson.
-
-  This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
-- [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
-
-### 5. Applied example: capacitor-bank steps and protection
-
-- [Capacitor-Bank Selection and Protection: A 200 kW Worked Example](https://www.youtube.com/watch?v=vbytmPtvZi4) — Rashid iqubal; Optional applied example.
-
-  The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall.
-
-### 6. Read a stepped capacitor-bank schematic and observe automatic correction
-
-- [Automatic Capacitor Banks: Schematic, Switching Steps and Target Power Factor](https://www.youtube.com/watch?v=FyGr8yMOGf8) — Festo Didactic – LabVolt Series; Core bank demonstration.
-
-  The bench uses 45/90 var steps. Controller CT scaling changes displayed current/power units; those settings are not installation ratings. Use actual CT/bank data and keep discharge/switching delays appropriate to the equipment.
-
-### 7. Synchronous condensers: another source of reactive-power compensation
-
-- [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
-
-### 8. Static VAR compensation: controlled reactors and capacitors
-
-- [Static VAR Compensators: Another Way to Control Reactive Power](https://www.youtube.com/watch?v=Z2S0QfoiGmc) — ABB production / Smart & Green Technologies; Core short comparison.
-
-  An SVC controls reactors and capacitors electronically; it is distinct from a rotating synchronous condenser and from a voltage-source STATCOM. This is a principle-level grid example.
-
-### 9. Further study: complex numbers and conjugates for AC calculations
-
-- [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
-- [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
-
-  Mathematical i is the same imaginary unit written j in electrical engineering.
-
-### 10. Further study: complex power and combined-load correction
-
-- [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
-
-## C1 Module 7: Three-Phase Distribution
+## C1 Module 6: Three-Phase Distribution
 
 ### 1. Safe isolation, board layout and phase identification
 
@@ -230,7 +172,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 - [Connections in a 3 Phase Plug and Socket Explained](https://www.youtube.com/watch?v=-9irkJ94xg0) — GSH Electrical; Applied practical.
 - [Industrial Plugs and Sockets: IP, IK and Duty Selection](https://www.youtube.com/watch?v=PNWdC47daYM) — eFIXX; Applied practical.
 
-## C1 Module 8: Load Assessment and Cable Design
+## C1 Module 7: Load Assessment and Cable Design
 
 ### 1. Read the design brief, plan circuit routes and establish cable lengths
 
@@ -297,7 +239,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
 - [Electrical Load Calculation for Buildings | Transformer Sizing, DB, SMDB, Main-DB Design Tutorial](https://www.youtube.com/watch?v=XGMUpguNzao) — Elegant Power Solutions; Optional extension.
 
-## C1 Module 9: Earthing and Fault Protection
+## C1 Module 8: Earthing and Fault Protection
 
 ### 1. Earthing arrangements, protective bonding and RCD operation
 
@@ -336,7 +278,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Principles and specialist examples; this is not a lightning-system installation procedure.
 
-## C1 Module 10: Protective Devices and Coordination
+## C1 Module 9: Protective Devices and Coordination
 
 ### 1. Fuses and HRC Protection
 
@@ -410,7 +352,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Functions and thresholds vary by model. The output controls a contactor; it does not interrupt motor fault current. Keep the protective contact effective in every energising path, including while Start is held. Detailed motor wiring follows later.
 
-## C1 Module 11: Submains and Board Installation
+## C1 Module 10: Submains and Board Installation
 
 ### 1. Worked Building Design: From Loads to Feeders
 
@@ -428,7 +370,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 - [THAT'S NOT A CONSUMER UNIT - 3 PHASE POWER FOR NEW BUILD HOMES](https://www.youtube.com/watch?v=MNy60muYklo) — eFIXX; Applied practical.
 - [Do You Cable Tie Your Conductors in 3 Phase Distribution Boards..? Electricians Matt & Clive O’Dell](https://www.youtube.com/watch?v=c6YyObUS4Mk) — GSH Electrical; Deep practice.
 
-## C1 Module 12: Motor Principles and Connections
+## C1 Module 11: Motor Principles and Connections
 
 ### 1. How the rotating field and induction motor produce torque
 
@@ -532,7 +474,7 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 
   Illustrative torque ratios are not motor ratings; use manufacturer limits.
 
-## C1 Module 13: Motor Starting, Protection and Speed Control
+## C1 Module 12: Motor Starting, Protection and Speed Control
 
 ### 1. Motor control
 
@@ -653,6 +595,80 @@ Follow the sections in order. C1 has its own Module 1–17 numbering. It builds 
 - [Phase-Failure Relay with a DOL Starter](https://www.youtube.com/watch?v=-OCfG8inGSY) — The Electrical Guy; Optional circuit critique.
 
   Protection can be bypassed while Start is held; do not copy this circuit.
+
+## C1 Module 13: Power-Factor Correction
+
+### 1. Why poor power factor increases supply current
+
+- [Power Factor Explained – Your Electricity Bill Money Drain (Reactive Power)](https://www.youtube.com/watch?v=NIrKOVZrqnU) — The Engineering Mindset; Core lesson.
+
+### 2. Find the kVAr needed to reach a target power factor
+
+- [Correct a Building’s Power Factor to a Chosen Target](https://www.youtube.com/watch?v=Tv_7XWf96gg) — The Engineering Mindset; Core foundation.
+
+  Use electrical input kW; convert shaft output through efficiency first.
+
+### 3. Single-phase motor correction: from current and power factor to microfarads
+
+- [Single-Phase Motor Power-Factor Correction: Two Complete Worked Examples](https://www.youtube.com/watch?v=MWCqtJfQUt0) — Red Seal Electrician; Core worked example.
+
+  Examples use 120 V, 60 Hz. Use the question’s voltage/frequency; if shaft output is given, first use electrical input = shaft output/efficiency. Correction reduces supply current; motor-branch current and working kW do not automatically fall.
+
+### 4. Size a three phase capacitor bank in kVAr and microfarads
+
+- [Three-Phase Power Factor Correction: From kVAr to a Star Capacitor Bank](https://www.youtube.com/watch?v=q5xjqXcCqNw) — Dieter Monkey; Core lesson.
+
+  This example uses 600 V, 60 Hz and unity PF; the project uses 400 V, 50 Hz and 0.95.
+- [Calculation of Capacitor Bank for Power Factor Improvement — kVAr](https://www.youtube.com/watch?v=u9m8vgz4aJs) — Electrical lectures; Optional earlier example.
+
+### 5. Applied example: capacitor-bank steps and protection
+
+- [Capacitor-Bank Selection and Protection: A 200 kW Worked Example](https://www.youtube.com/watch?v=vbytmPtvZi4) — Rashid iqubal; Optional applied example.
+
+  The target needs about 110.6 kVAr. Size protection for the installed 125 kVAr bank (about 174 A at 415 V), using actual tolerance, harmonics, inrush and manufacturer data. Check switching steps at light load to avoid leading PF. Correction reduces upstream current and losses; the load’s working kW does not automatically fall.
+
+### 6. Automatic capacitor-bank sizing and step selection
+
+- [Automatic Power-Factor Correction: Capacitor Bank Sizing](https://www.youtube.com/watch?v=-kyppHRdwX4) — Electrical Platform; Optional applied example.
+
+### 7. Read a stepped capacitor-bank schematic and observe automatic correction
+
+- [Automatic Capacitor Banks: Schematic, Switching Steps and Target Power Factor](https://www.youtube.com/watch?v=FyGr8yMOGf8) — Festo Didactic – LabVolt Series; Core bank demonstration.
+
+  The bench uses 45/90 var steps. Controller CT scaling changes displayed current/power units; those settings are not installation ratings. Use actual CT/bank data and keep discharge/switching delays appropriate to the equipment.
+
+### 8. Controller terminals and configuration
+
+- [APFC Controller: Terminals, Wiring Diagram and Setup](https://www.youtube.com/watch?v=-7yilF7U6i4) — Selec Controls; Optional applied example.
+
+### 9. Automatic power-factor controller panel wiring
+
+- [Automatic Power-Factor Controller: Panel Wiring Demonstration](https://www.youtube.com/watch?v=5084gua6bzY) — Electrician Ustaad; Optional applied example.
+
+### 10. Trace the automatic and manual panel controls
+
+- [APFC Control Wiring: Diagram and Practical Panel](https://www.youtube.com/watch?v=pyW7vbB3rP0) — Electrical Infinity; Optional applied example.
+
+### 11. Synchronous condensers: another source of reactive-power compensation
+
+- [Synchronous Condensers: Reactive Power and Voltage Support](https://www.youtube.com/watch?v=6U_rO5FWW0Y) — Flirting with Technology; Core short overview.
+
+### 12. Static VAR compensation: controlled reactors and capacitors
+
+- [Static VAR Compensators: Another Way to Control Reactive Power](https://www.youtube.com/watch?v=Z2S0QfoiGmc) — ABB production / Smart & Green Technologies; Core short comparison.
+
+  An SVC controls reactors and capacitors electronically; it is distinct from a rotating synchronous condenser and from a voltage-source STATCOM. This is a principle-level grid example.
+
+### 13. Further study: complex numbers and conjugates for AC calculations
+
+- [Complex Numbers for AC: Rectangular Form, Polar Form and Arithmetic](https://www.youtube.com/watch?v=GfihUkWPCQQ) — EEVblog; Optional mathematical foundation.
+- [Complex Conjugates: Change the Imaginary Sign and Multiply](https://www.youtube.com/watch?v=dbxJ6LD0344) — Khan Academy; Optional mathematical foundation.
+
+  Mathematical i is the same imaginary unit written j in electrical engineering.
+
+### 14. Further study: complex power and combined-load correction
+
+- [Power Factor Correction: Parallel Capacitors and Combined Loads](https://www.youtube.com/watch?v=KvOM5xz1LI4) — Jim Pytel; Optional advanced worked examples.
 
 ## C1 Module 14: Initial Verification and Commissioning
 

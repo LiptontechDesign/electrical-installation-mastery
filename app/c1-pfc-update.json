@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-30",
+  "revision": 14,
+  "preservation": "Move the existing power-factor module as a whole; preserve every prior section, lesson identity and personal placement. Add two optional lessons in new sections.",
+  "addedLessonIds": [
+    "c1-pfc-apfc-sizing",
+    "c1-pfc-apfc-wiring",
+    "c1-pfc-apfc-controller-setup",
+    "c1-pfc-apfc-panel-controls"
+  ],
+  "addedSectionIds": [
+    "c1-pfc-apfc-sizing-section",
+    "c1-pfc-apfc-wiring-section",
+    "c1-pfc-controller-setup-section",
+    "c1-pfc-panel-controls-section"
+  ],
+  "current": {
+    "c1-pfc-apfc-sizing-section": [
+      "c1-pfc-apfc-sizing"
+    ],
+    "c1-pfc-apfc-wiring-section": [
+      "c1-pfc-apfc-wiring"
+    ],
+    "c1-pfc-controller-setup-section": [
+      "c1-pfc-apfc-controller-setup"
+    ],
+    "c1-pfc-panel-controls-section": [
+      "c1-pfc-apfc-panel-controls"
+    ]
+  },
+  "repeatableVideoIds": [
+    "-kyppHRdwX4",
+    "5084gua6bzY",
+    "-7yilF7U6i4",
+    "pyW7vbB3rP0"
+  ],
+  "moduleOrder": [
+    "c1-fundamentals",
+    "c1-power",
+    "c1-generators",
+    "c1-transformers",
+    "c1-measurements",
+    "c1-distribution",
+    "c1-design",
+    "c1-earthing",
+    "c1-protective-devices",
+    "c1-installation",
+    "c1-motors",
+    "module-07",
+    "c1-pfc",
+    "c1-testing",
+    "c1-periodic",
+    "c1-standby",
+    "c1-faults"
+  ]
+}

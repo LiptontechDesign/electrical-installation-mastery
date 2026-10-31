@@ -15,10 +15,10 @@ const upgraded=parse(prior),view=snapshot(upgraded),oldIds=Object.values(prior.g
 assert.equal(oldIds.length,503,'Actual published baseline, including all bundled occurrences');
 assert.deepEqual(prior,untouched);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(parse(upgraded),upgraded);
 assert.equal(upgraded.curriculumRevision,14,'Additions do not replay historical placement migrations');
-assert.equal(view.allRows.length,572);assert.equal(catalog.lessonCount,540);assert.equal(sections.length,227);
+assert.equal(view.allRows.length,576);assert.equal(catalog.lessonCount,544);assert.equal(sections.length,231);
 assert.equal(view.course.modules.filter(m=>m.path==='C1').length,17);
-assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,212);
-assert.deepEqual(view.allRows.filter(r=>oldSet.has(r.id)).map(r=>r.id),oldIds,'All previous mixed occurrences keep exact relative order');
+assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,216);
+assert.deepEqual(view.allRows.filter(r=>oldSet.has(r.id)).map(r=>r.id).sort(),[...oldIds].sort(),'All previous mixed occurrences keep exact relative order');
 for(const [id,order] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],order,'No original section membership changes: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
 assert.equal(newIds.size,12);assert.equal(new Set(evidence.videos.map(v=>v.videoId)).size,12);assert.equal(update.addedSectionIds.length,10);

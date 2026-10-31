@@ -7,7 +7,7 @@ const { publishedPersonalCourse: base, parsePersonalCourse: parse, personalCours
 const { isRequiredStudyVideo: required } = await import('../work/c1-module-tests/course-curriculum.js');
 const { progressForVideos } = await import('../work/c1-module-tests/course-progress-model.js');
 const read = p => JSON.parse(fs.readFileSync(p, 'utf8'));
-const laterAdditionIds = new Set([...read('scripts/fixtures/c1-cable-design-additions.json'), ...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json'), ...read('scripts/fixtures/solar-pathway-additions.json')].map(v => v.id));
+const laterAdditionIds = new Set([...read('scripts/fixtures/c1-cable-design-additions.json'), ...read('scripts/fixtures/c1-rashid-additions.json'), ...read('scripts/fixtures/c1-protection-additions.json'), ...read('app/c1-motor-gap-update.json').addedLessonIds.map(id=>({id})), ...read('scripts/fixtures/c1-wound-rotor-additions.json'), ...read('scripts/fixtures/motor-control-additions.json'), ...read('scripts/fixtures/c1-motor-practical-additions.json'), ...read('scripts/fixtures/solar-pathway-additions.json'), ...read('scripts/fixtures/c1-pfc-additions.json')].map(v => v.id));
 const prior = read('scripts/fixtures/c1-modules-previous.json'), untouched = structuredClone(prior);
 const update = read('app/c1-module-update.json'), upgraded = parse(prior), view = snapshot(upgraded);
 const modules = view.course.modules.filter(m => m.path === 'C1');
@@ -18,13 +18,13 @@ assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every stable section retains its exact mixed row order: ' + id);
 assert.deepEqual(parse(upgraded), upgraded, 'Reloading the new revision is idempotent');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !laterAdditionIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
-assert.equal(view.allRows.length, 572);
+assert.equal(view.allRows.length, 576);
 assert.equal(modules.length, 17);
-assert.deepEqual(modules.map(m => m.id), read('app/c1-protection-update.json').moduleOrder);
+assert.deepEqual(modules.map(m => m.id), read('app/c1-pfc-update.json').moduleOrder);
 assert.deepEqual(modules.map(m => m.title), [
- 'AC and Three-Phase Foundations', 'AC Power and Calculations', 'Generator Principles and Controls', 'Transformers', 'Electrical Measurements', 'Power-Factor Correction',
+ 'AC and Three-Phase Foundations', 'AC Power and Calculations', 'Generator Principles and Controls', 'Transformers', 'Electrical Measurements',
  'Three-Phase Distribution', 'Load Assessment and Cable Design', 'Earthing and Fault Protection', 'Protective Devices and Coordination', 'Submains and Board Installation',
- 'Motor Principles and Connections', 'Motor Starting, Protection and Speed Control', 'Initial Verification and Commissioning',
+ 'Motor Principles and Connections', 'Motor Starting, Protection and Speed Control', 'Power-Factor Correction', 'Initial Verification and Commissioning',
  'Periodic Inspection', 'Standby Generators: Connections and Operation', 'Fault Diagnosis',
 ]);
 assert.deepEqual(modules.map(m => m.stageNumber), Array.from({ length: 17 }, (_, i) => i + 1));

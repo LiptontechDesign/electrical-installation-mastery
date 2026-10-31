@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import { build } from 'esbuild';
-import { assertC2Reorganization, earthElectrodeAdditions, jpelectricAdditions, surgeProtectionAdditions, designLearningAdditions, connectedProcessAdditions, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions, c1WoundRotorAdditions, motorControlAdditions, motorPracticalAdditions, solarAdditions, overviewIds } from './assert-c2-reorganization.mjs';
+import { assertC2Reorganization, earthElectrodeAdditions, jpelectricAdditions, surgeProtectionAdditions, designLearningAdditions, connectedProcessAdditions, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions, c1WoundRotorAdditions, motorControlAdditions, motorPracticalAdditions, solarAdditions, pfcAdditions, overviewIds } from './assert-c2-reorganization.mjs';
 await build({ entryPoints: ['app/course-curriculum.ts', 'app/learning-sections.ts'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm' });
 const { default: course } = await import('../work/curriculum-tests/course-curriculum.js');
 const { sectionsByModule } = await import('../work/curriculum-tests/learning-sections.js');
 const lessons = course.modules.flatMap(courseModule => courseModule.lessons);
 assert.equal(course.modules.length, 35);
-assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length + surgeProtectionAdditions.length + designLearningAdditions.length + connectedProcessAdditions.length + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length + c1ProtectionAdditions.length + c1MotorGapAdditions.length + c1WoundRotorAdditions.length + motorControlAdditions.length + motorPracticalAdditions.length + solarAdditions.length);
+assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length + surgeProtectionAdditions.length + designLearningAdditions.length + connectedProcessAdditions.length + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length + c1ProtectionAdditions.length + c1MotorGapAdditions.length + c1WoundRotorAdditions.length + motorControlAdditions.length + motorPracticalAdditions.length + solarAdditions.length + pfcAdditions.length);
 assert.equal(course.lessonCount, lessons.length);
 assert.equal(new Set(lessons.map(lesson => lesson.id)).size, lessons.length);
 const focusedLessons = lessons.filter(lesson => !overviewIds.has(lesson.id));

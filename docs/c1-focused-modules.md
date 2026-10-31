@@ -11,28 +11,28 @@ C1 has its own visible **Module 1–17** sequence, independent of C2. The course
 | 3 | Generator Principles and Controls | Complete set, alternator output, frequency, loading, governor, AVR and ratings; specialist controls optional. |
 | 4 | Transformers | Induction and ratios before EMF, losses and efficiency. |
 | 5 | Electrical Measurements | CT precautions, wattmeters, power analysers and bridge measurement; historical apparatus optional. |
-| 6 | Power-Factor Correction | Causes, consequences, target factor, capacitor sizing and compensation options. |
-| 7 | Three-Phase Distribution | Recognise phases, boards and industrial outlets before installing them. |
-| 8 | Load Assessment and Cable Design | Brief, demand, routes, rating factors, capacity and combined voltage drop. |
-| 9 | Earthing and Fault Protection | Bonding, RCDs, disconnection, conductor sizing, switching and surge principles. |
-| 10 | Protective Devices and Coordination | Fuses, MCB/MCCB/ACB, residual-current devices, SPDs, selectivity and protective-relay functions before applications. |
-| 11 | Submains and Board Installation | Apply completed design/protection checks to physical SWA and board connections. |
-| 12 | Motor Principles and Connections | Operation, nameplates, input/output efficiency examples, slip, torque and winding connections. |
-| 13 | Motor Starting, Protection and Speed Control | Contactors, protection, DOL, reversing, star/delta, autotransformer starting, soft starters and drives. |
+| 6 | Three-Phase Distribution | Recognise phases, boards and industrial outlets before installing them. |
+| 7 | Load Assessment and Cable Design | Brief, demand, routes, rating factors, capacity and combined voltage drop. |
+| 8 | Earthing and Fault Protection | Bonding, RCDs, disconnection, conductor sizing, switching and surge principles. |
+| 9 | Protective Devices and Coordination | Fuses, MCB/MCCB/ACB, residual-current devices, SPDs, selectivity and protective-relay functions before applications. |
+| 10 | Submains and Board Installation | Apply completed design/protection checks to physical SWA and board connections. |
+| 11 | Motor Principles and Connections | Operation, nameplates, input/output efficiency examples, slip, torque and winding connections. |
+| 12 | Motor Starting, Protection and Speed Control | Contactors, protection, DOL, reversing, star/delta, autotransformer starting, soft starters and drives. |
+| 13 | Power-Factor Correction | Causes, target factor, capacitor sizing, automatic controllers and compensation options. |
 | 14 | Initial Verification and Commissioning | Inspection, dead tests before live tests, result interpretation and handover. |
 | 15 | Periodic Inspection | Scope, observations and reporting for an existing installation. |
 | 16 | Standby Generators: Connections and Operation | Apply earlier principles, design and verification to siting, earthing, transfer and operation. |
 | 17 | Fault Diagnosis | Combine installation/motor knowledge, measurements, emergency response and investigation. |
 
-Each row is an actual module with its own sections and progress. With the [protective-device module](c1-protective-devices.md), C1 contains 110 stable sections and 207 mixed video entries. The whole course has 509 catalogue entries and 541 default mixed entries across 32 modules and 215 sections. All earlier videos and their saved identities remain available.
+Each row is an actual module with its own sections and progress. With the [protective-device module](c1-protective-devices.md), C1 contains 117 stable sections and 216 mixed video entries. The whole course has 544 catalogue entries and 576 default mixed entries across 35 modules and 231 sections. All earlier videos and their saved identities remain available.
 
-Module 13 opens with [Motor control](motor-control-series.md): complete eFIXX and GSH creator sequences, followed by the existing focused topics. The two extra GSH contactor lessons follow their theory-to-workshop relationship. All published playlist positions are preserved.
+Module 12 opens with [Motor control](motor-control-series.md): complete eFIXX and GSH creator sequences, followed by the existing focused topics. The two extra GSH contactor lessons follow their theory-to-workshop relationship. All published playlist positions are preserved.
 
 ## Prerequisite repairs
 
-The two existing three-phase motor worked examples and shaft-output/efficiency calculation now follow induction-motor operation and the nameplate lesson in Module 12. General power theory stays in Module 2. Learners no longer need to understand a motor nameplate before meeting the machine.
+The two existing three-phase motor worked examples and shaft-output/efficiency calculation now follow induction-motor operation and the nameplate lesson in Module 11. General power theory stays in Module 2. Learners no longer need to understand a motor nameplate before meeting the machine.
 
-Module 6 teaches power-factor causes, consequences and sizing as requested. The existing capacitor-placement demonstration refers to induction generation and VFD outputs, so its stable section follows motor/drive teaching in Module 13. A VFD is introduced in its own lesson before the associated capacitor precautions. This applies the earlier PFC calculations without requiring a new topic before its foundation.
+Module 13 teaches power-factor correction after motors. The motor/drive-specific capacitor-placement demonstration remains in Module 12 after the drive introduction.
 
 Generator principles remain early, immediately after AC power. Physical standby applications remain late, after cable design, protective-conductor checks, switching and verification. General transformer principles precede CTs and autotransformer starting. The existing autotransformer starter lesson itself introduces the tapped common winding before its starting circuits; an additional generic introduction would repeat that explanation.
 
@@ -44,11 +44,11 @@ The [EPRA written/oral competency document](https://www.epra.go.ke/sites/default
 
 | C1 competency | Main course coverage |
 |---|---|
-| Three-phase power, current and voltage | Modules 1–2, 5 and motor calculations in 12 |
-| Cable/protective-device sizing and special devices | Modules 7–11 and motor protection in 13 |
-| Domestic/small-commercial earthing | Modules 9–11, applied in 14 and 16 |
-| Power-factor causes, demerits, correction and sizing | Module 6, with motor/drive placement in 13 |
-| Motors, starting, speed control and protection | Modules 12–13 |
+| Three-phase power, current and voltage | Modules 1–2, 5 and motor calculations in 11 |
+| Cable/protective-device sizing and special devices | Modules 6–10 and motor protection in 12 |
+| Domestic/small-commercial earthing | Modules 8–10, applied in 14 and 16 |
+| Power-factor causes, demerits, correction and sizing | Module 13, with motor/drive placement in 12 |
+| Motors, starting, speed control and protection | Modules 11–12 |
 | Initial and periodic inspection/testing | Modules 14–15; interpretation and diagnosis in 17 |
 
 EPRA separately identifies medium-voltage installations and backup changeover under B, and detailed generator sizing, installation, protection and maintenance under A2 (Generators). Generator foundations and the requested UK practical examples support understanding and historical question preparation; their inclusion is not a claim that all A2 competence is required for C1 or achieved by these clips. UK examples require the actual Kenyan installation/examination conditions to be checked.
