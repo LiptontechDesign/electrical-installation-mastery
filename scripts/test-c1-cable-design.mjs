@@ -24,7 +24,7 @@ assert.deepEqual(upgraded.receipts, prior.receipts);
 assert.equal(upgraded.revision, prior.revision);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every previous section retains its exact row order: ' + id);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !addedIds.has(id) && !laterIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every original video occurrence survives once');
-assert.equal(view.allRows.length, 576);
+assert.equal(view.allRows.length, 581);
 assert.equal(view.allRows.filter(r => view.course.modules.find(m => m.id === r.moduleId).path === 'C1').length, 216);
 assert.deepEqual(section.lessonIds, additions.map(v => v.id));
 assert.equal(section.number, 5);

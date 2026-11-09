@@ -2,6 +2,10 @@
 
 Integrated 27 October 2026 from the previously selected 26-video shortlist. Choose **Solar · T1–T3** in the course map or public curriculum. Three independently numbered modules contain nine sections and 4:45:36 of video. The public route, search, progress, editor destinations and Organise mode all recognise Solar. Existing C2, C1 and Advanced modules retain their identities, order and content.
 
+## General Overview introduction
+
+The Solar pathway opens with the five-part eFIXX/Sunsynk teaching sequence before T1, in the course publisher’s order: energy consumption (`kPNGJ9aE57c`), panel array design (`I56pn15y41U`), inverter and battery selection (`nNd38LshIic`), equipment location (`46c1BXEloR8`), and electrical installation (`fMM-EPRKNhw`). The overview is a concise introduction, not a complete installation qualification. The original focused repetitions and their saved lesson identities remain in place. The published eFIXX curriculum lists a test after each video; the tests are available on the provider’s site, not in this video-only course. YouTube descriptions and chapter lists were checked; the full transcripts were not re-reviewed for this addition.
+
 ## Learning order
 
 | Module | Sections | Videos | Running time |

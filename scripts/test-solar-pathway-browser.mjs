@@ -12,9 +12,9 @@ try {
     if (mobile) await page.locator('.course-map').getByRole('button', { name: 'Close course map', exact: true }).click();
     await page.getByRole('button', { name: 'Course overview', exact: true }).click();
     await page.getByRole('group', { name: 'Filter course pathway' }).getByRole('button', { name: 'Solar · T1–T3', exact: true }).click();
-    assert.equal(await page.locator('.curriculum-modules > details').count(), 3);
+    assert.equal(await page.locator('.curriculum-modules > details').count(), 4);
     await page.getByRole('button', { name: 'Expand all', exact: true }).click();
-    assert.equal(await page.locator('.curriculum-lessons button:visible').count(), 26);
+    assert.equal(await page.locator('.curriculum-lessons button:visible').count(), 31);
     await page.locator('.curriculum-lessons button').first().click();
     await page.locator('.lesson-canvas h1').filter({ hasText: lessons[0].title }).waitFor();
     assert.equal(await page.locator('.course-path-select select').inputValue(), 'Solar');
@@ -39,7 +39,7 @@ try {
     assert.equal(f.reads.filter(path => /personal-course|learner-state|supplementary-progress/.test(path)).length, 0);
     assert.equal(f.writes.length, 0); assert.deepEqual(f.errors, []);
     await f.context.close();
-    console.log('PASS ' + (mobile ? '320px phone' : 'desktop') + ': public Solar filter, 26 embeds and continuous stage navigation, project order, no notes, overflow or guest tracking.');
+    console.log('PASS ' + (mobile ? '320px phone' : 'desktop') + ': public Solar filter, 31 embeds and continuous stage navigation, project order, no notes, overflow or guest tracking.');
   }
   const f = await fixture({ state: prior });
   await f.page.goto(origin + '/#learn/' + lessons[0].id);
@@ -47,13 +47,13 @@ try {
   await f.page.locator('.lesson-canvas h1').filter({ hasText: lessons[0].title }).waitFor();
   await f.page.locator('.course-editor-toolbar').waitFor({ state: 'attached' });
   await revealCourseModule(f.page, 'solar-t1');
-  assert.deepEqual(await f.page.locator('[data-course-module="solar-t1"] [data-course-row]').evaluateAll(nodes => nodes.map(n => n.dataset.courseRow)), lessons.slice(0, 3).map(l => l.id));
+  assert.deepEqual(await f.page.locator('[data-course-module="solar-t1"] [data-course-row]').evaluateAll(nodes => nodes.map(n => n.dataset.courseRow)), lessons.filter(l => l.id.startsWith('solar-t1-')).map(l => l.id));
   await f.page.locator('.lesson-canvas').getByRole('button', { name: 'Actions for ' + lessons[0].title, exact: true }).click();
   await f.page.getByRole('menuitem', { name: 'Move to…', exact: true }).click();
   const dialog = f.page.getByRole('dialog');
   await dialog.getByRole('button', { name: 'Browse pathways and modules', exact: true }).click();
   await dialog.locator('.editor-browse-filters select').nth(0).selectOption('Solar');
-  assert.equal(await dialog.locator('.editor-section-results button').count(), 9);
+  assert.equal(await dialog.locator('.editor-section-results button').count(), 10);
   assert.match(await dialog.locator('.editor-browse-filters select').nth(1).innerText(), /Module 01 — T1/);
   await dialog.getByRole('button', { name: 'Cancel', exact: true }).click();
   await openCourseTools(f.page);
@@ -65,5 +65,5 @@ try {
   assert.equal(await f.page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   assert.deepEqual(f.state(), prior); assert.equal(f.writes.length, 0); assert.deepEqual(f.errors, []);
   await f.context.close();
-  console.log('PASS saved revision-14 account: Solar appears, all nine editor destinations and four Organise pathways are available, phone controls fit, and the stored course arrangement stays unchanged.');
+  console.log('PASS saved revision-14 account: Solar appears, all ten editor destinations and four Organise pathways are available, phone controls fit, and the stored course arrangement stays unchanged.');
 } finally { await browser.close(); }

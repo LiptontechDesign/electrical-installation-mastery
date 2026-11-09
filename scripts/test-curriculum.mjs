@@ -5,7 +5,7 @@ await build({ entryPoints: ['app/course-curriculum.ts', 'app/learning-sections.t
 const { default: course } = await import('../work/curriculum-tests/course-curriculum.js');
 const { sectionsByModule } = await import('../work/curriculum-tests/learning-sections.js');
 const lessons = course.modules.flatMap(courseModule => courseModule.lessons);
-assert.equal(course.modules.length, 35);
+assert.equal(course.modules.length, 36);
 assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length + surgeProtectionAdditions.length + designLearningAdditions.length + connectedProcessAdditions.length + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length + c1ProtectionAdditions.length + c1MotorGapAdditions.length + c1WoundRotorAdditions.length + motorControlAdditions.length + motorPracticalAdditions.length + solarAdditions.length + pfcAdditions.length);
 assert.equal(course.lessonCount, lessons.length);
 assert.equal(new Set(lessons.map(lesson => lesson.id)).size, lessons.length);

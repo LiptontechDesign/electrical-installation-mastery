@@ -13,7 +13,7 @@ const evidence=read('docs/c1-wound-rotor-video-review.json'),catalog=read('app/v
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])),upgraded=parse(prior),view=snapshot(upgraded),oldIds=Object.values(prior.groups).flat();
 assert.equal(oldIds.length,515,'Actual published state before these two lessons');
 assert.deepEqual(prior,original);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(parse(upgraded),upgraded);assert.equal(upgraded.curriculumRevision,14);
-assert.equal(catalog.lessonCount,544);assert.equal(view.allRows.length,576);assert.equal(sections.length,231);
+assert.equal(catalog.lessonCount,549);assert.equal(view.allRows.length,581);assert.equal(sections.length,232);
 for(const [id,ids] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],ids,'Every original section membership remains intact: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
 const newIds=new Set(update.addedLessonIds);

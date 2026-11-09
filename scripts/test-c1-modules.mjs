@@ -18,7 +18,7 @@ assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every stable section retains its exact mixed row order: ' + id);
 assert.deepEqual(parse(upgraded), upgraded, 'Reloading the new revision is idempotent');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !laterAdditionIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
-assert.equal(view.allRows.length, 576);
+assert.equal(view.allRows.length, 581);
 assert.equal(modules.length, 17);
 assert.deepEqual(modules.map(m => m.id), read('app/c1-pfc-update.json').moduleOrder);
 assert.deepEqual(modules.map(m => m.title), [
@@ -28,7 +28,7 @@ assert.deepEqual(modules.map(m => m.title), [
  'Periodic Inspection', 'Standby Generators: Connections and Operation', 'Fault Diagnosis',
 ]);
 assert.deepEqual(modules.map(m => m.stageNumber), Array.from({ length: 17 }, (_, i) => i + 1));
-assert.deepEqual(view.course.modules.map(m => m.number), Array.from({ length: 35 }, (_, i) => i + 1));
+assert.deepEqual(view.course.modules.map(m => m.number), Array.from({ length: 36 }, (_, i) => i + 1));
 for (const m of modules) {
  assert.ok(view.sectionsByModule[m.id].length > 0 && view.allRows.some(r => r.moduleId === m.id), 'Each real module has sections and videos');
  assert.equal(m.durationSeconds, m.lessons.reduce((n, l) => n + l.durationSeconds, 0));

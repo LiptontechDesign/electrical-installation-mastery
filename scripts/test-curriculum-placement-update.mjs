@@ -21,13 +21,13 @@ assert.deepEqual(before,original,'Reading never mutates the saved input');
 assert.deepEqual(parse(upgraded),upgraded,'The update is idempotent');
 assert.equal(upgraded.curriculumRevision, 14);
 assert.equal(upgraded.revision,before.revision,'A read does not consume an edit revision');
-assert.equal(view.allRows.length, 576);
-assert.equal(Object.keys(view.rows).length, 231);
-assert.equal(sections.length, 231);
+assert.equal(view.allRows.length, 581);
+assert.equal(Object.keys(view.rows).length, 232);
+assert.equal(sections.length, 232);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'All published sections contain videos, including supplementary-only sections');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!surgeIds.has(id)).sort(),Object.values(before.groups).flat().sort(),'No old video is lost or duplicated');
 assert.ok(Object.keys(before.groups).every(id=>Object.hasOwn(upgraded.groups,id)),'Every previous section remains a valid edit/Undo destination');
-assert.equal(catalog.modules.length,35);
+assert.equal(catalog.modules.length,36);
 
 const expectedHomes={
   zVg40FUj3Ts:'module-04-conduit-lighting',
