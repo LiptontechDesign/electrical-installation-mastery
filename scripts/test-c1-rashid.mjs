@@ -18,7 +18,7 @@ assert.deepEqual(prior,untouched);assert.deepEqual(upgraded.groups,base.groups);
 for(const [id,ids] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],ids,'Existing section order remains intact: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!addedIds.has(id)&&!laterIds.has(id)).sort(),Object.values(prior.groups).flat().sort());
-assert.equal(view.allRows.length,576);assert.equal(sections.length,231);
+assert.equal(view.allRows.length,581);assert.equal(sections.length,232);
 assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,216);
 const placement=[['c1-rashid-capacitor-bank','c1-pfc-bank-protection','c1-pfc',5],['c1-rashid-building-design','c1-building-design-capstone','c1-installation',1],['c1-rashid-mdb-transfer','c1-standby-mdb-transfer','c1-standby',2]];
 for(const [id,sectionId,moduleId,number] of placement){

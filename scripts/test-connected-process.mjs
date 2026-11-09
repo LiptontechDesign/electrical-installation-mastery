@@ -21,9 +21,9 @@ assert.deepEqual(upgraded.groups, base.groups, 'A revision-5 saved course receiv
 for (const [id, ids] of Object.entries(before.groups).filter(([id])=>!Object.hasOwn(JSON.parse(readFileSync('app/c1-learning-update.json','utf8')).previous,id))) assert.deepEqual(upgraded.groups[id], ids, 'Every existing section retains its exact order: ' + id);
 assert.deepEqual(upgraded.videos.filter(v=>!v.id.startsWith('c1-')), before.videos.filter(v=>!v.id.startsWith('c1-')), 'Existing supporting-video details remain unchanged');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)).sort(), Object.values(before.groups).flat().sort(), 'Every previous occurrence retains its place in the overall sequence');
-assert.equal(view.course.lessonCount, 544);
-assert.equal(view.allRows.length, 576);
-assert.equal(sections.length, 231);
+assert.equal(view.course.lessonCount, 549);
+assert.equal(view.allRows.length, 581);
+assert.equal(sections.length, 232);
 assert.deepEqual(update.overviewLessonIds, connectedProcessAdditions.map(lesson => lesson.id));
 const expected = [
   ['c2-boards', ['62lEhAuzeAI', 'dlkxzIQFvrk']],

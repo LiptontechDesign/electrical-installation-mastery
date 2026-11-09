@@ -38,9 +38,9 @@ assert.deepEqual(videoIds(update.blocks[2].lessonIds), ['7U-DqKQkSPU', 'PIaqmCxN
 for (const block of update.blocks) assert.ok(block.lessonIds.every(id => core.get(id).instructor === block.instructor));
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Existing focused sections and mixed saved order stay unchanged: ' + id);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !added.has(id) && !motorPracticalIds.has(id)).sort(), Object.values(prior.groups).flat().sort());
-assert.equal(view.allRows.length, 576);
-assert.equal(catalog.lessonCount, 544);
-assert.equal(sections.length, 231);
+assert.equal(view.allRows.length, 581);
+assert.equal(catalog.lessonCount, 549);
+assert.equal(sections.length, 232);
 assert.equal(view.allRows.filter(row => view.course.modules.find(module => module.id === row.moduleId).path === 'C1').length, 216);
 const rows = view.allRows.filter(row => row.moduleId === motorModule.id);
 assert.deepEqual(rows.slice(0, 24).map(row => row.id), section.lessonIds);

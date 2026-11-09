@@ -10,7 +10,8 @@ const { coursePathways } = await import('../work/solar-tests/course-pathways.js'
 const prior = read('scripts/fixtures/solar-pathway-previous.json'), original = structuredClone(prior);
 const update = read('app/solar-pathway-update.json'), evidence = read('docs/solar-video-review.json');
 const catalog = read('app/video-catalog.json'), sections = read('app/learning-sections.json');
-const added = new Set([...update.addedLessonIds, ...read('app/c1-pfc-update.json').addedLessonIds]), upgraded = parse(prior), view = snapshot(upgraded);
+const overviewIds = ['solar-overview-01', 'solar-overview-02', 'solar-overview-03', 'solar-overview-04', 'solar-overview-05'];
+const added = new Set([...overviewIds, ...update.addedLessonIds, ...read('app/c1-pfc-update.json').addedLessonIds]), upgraded = parse(prior), view = snapshot(upgraded);
 const modules = catalog.modules.filter(m => m.path === 'Solar');
 const lessons = modules.flatMap(m => m.lessons), core = new Map(catalog.modules.flatMap(m => m.lessons).map(l => [l.id, l]));
 assert.equal(Object.values(prior.groups).flat().length, 546, 'Frozen actual previous publication');
@@ -21,14 +22,16 @@ assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Exact previous section membership: ' + id);
 assert.deepEqual(view.allRows.filter(row => !added.has(row.id)).map(row => row.id).sort(), Object.values(prior.groups).flat().sort());
 for (const key of ['revision', 'videos', 'itemRevisions', 'receipts', 'archivedLessonIds', 'deletedIds']) assert.deepEqual(upgraded[key], prior[key]);
-assert.equal(catalog.lessonCount, 544); assert.equal(view.allRows.length, 576); assert.equal(sections.length, 231); assert.equal(catalog.modules.length, 35);
-assert.deepEqual(modules.map(m => m.id), ['solar-t1', 'solar-t2', 'solar-t3']);
-assert.deepEqual(modules.map(m => m.stageNumber), [1, 2, 3]);
-assert.deepEqual(modules.map(m => m.lessons.length), [3, 7, 16]);
+assert.equal(catalog.lessonCount, 549); assert.equal(view.allRows.length, 581); assert.equal(sections.length, 232); assert.equal(catalog.modules.length, 36);
+assert.deepEqual(modules.map(m => m.id), ['solar-overview', 'solar-t1', 'solar-t2', 'solar-t3']);
+assert.deepEqual(modules.map(m => m.stageNumber), [0, 1, 2, 3]);
+assert.deepEqual(modules.map(m => m.lessons.length), [5, 3, 7, 16]);
 assert.equal(update.addedSectionIds.length, 9);
+assert.deepEqual(view.allRows.filter(row => row.moduleId === 'solar-overview').map(row => row.id), overviewIds);
+assert.deepEqual(sections.find(s => s.id === 'solar-overview-series').lessonIds, overviewIds);
 assert.deepEqual(coursePathways.map(p => p.id), ['C2', 'C1', 'Solar', 'Professional']);
 assert.equal(coursePathways.find(p => p.id === 'Solar').optionLabel, 'Solar · T1–T3');
-assert.equal(lessons.length, 26); assert.equal(evidence.videos.length, 26);
+assert.equal(lessons.length, 31); assert.equal(evidence.videos.length, 26);
 assert.equal(evidence.totalDurationSeconds, 17136);
 assert.equal(evidence.englishCaptionReviews, 21); assert.equal(evidence.translatedCaptionReviews, 5);
 for (const m of modules) {
@@ -53,7 +56,7 @@ for (const video of evidence.videos) {
   assert.ok(video.englishAudioEvidence.originalTracks.some(t => /^en/.test(t.id) && !t.isAutoDubbed) || video.englishAudioEvidence.captionLanguagesAvailable.includes('en'));
   assert.equal(video.translationReview, video.captionLanguages.some(l => l !== 'en'));
 }
-assert.deepEqual(lessons.slice(0, 3).map(l => l.videoId), ['Yxt72aDjFgY', 'kPNGJ9aE57c', '43dh2M_hNJo']);
+assert.deepEqual(lessons.slice(0, 5).map(l => l.videoId), ['kPNGJ9aE57c', 'I56pn15y41U', 'nNd38LshIic', '46c1BXEloR8', 'fMM-EPRKNhw']);
 assert.deepEqual(update.current['solar-t2-practical-controller'].map(id => core.get(id).videoId), ['HOXnWXvLXko', 'XSfu8V0DR1g', 'aPB4NiOAZIo']);
 const project = update.current['solar-t3-spirit-project'];
 assert.deepEqual(project.map(id => core.get(id).videoId), ['r50j3OeHdjE','ExDRYVr8Oqw','X39nKO5J3fY','4uD7JbN5Z8o','zLFvUKHETrQ','51no5dINzak','xoxZ2qx2Z1o','0PnQZoPjKb0','7sI04C7FBZI','nLCipLK4gLw','SUO9D_G5j_s','njCoaXOphlQ']);
@@ -80,4 +83,4 @@ assert.equal(snapshot(moved).byId.get('p14-l01').sectionId, 'solar-t3-domestic-p
 const undone = apply(moved, { operationId: 'solar-cross-path-undo-01', revision: moved.revision, edit: { type: 'undo', targetOperationId: 'solar-cross-path-move-01' } });
 assert.equal(snapshot(undone).byId.get('p14-l01').sectionId, 'module-14-section-1');
 assert.deepEqual(undone.archivedLessonIds, kept.archivedLessonIds);
-console.log('PASS Solar: 26 reviewed lessons, three stages, nine sections, original-English evidence, creator order, optional depth, exact 546-row preservation, private copies, progress, cross-path move and Undo.');
+console.log('PASS Solar: five-video overview, 26 reviewed lessons, three stages and ten sections, original-English evidence, creator order, optional depth, exact 546-row preservation, private copies, progress, cross-path move and Undo.');

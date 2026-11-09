@@ -15,7 +15,7 @@ assert.equal(upgraded.curriculumRevision,14);assert.deepEqual(upgraded.groups,ba
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every original occurrence survives exactly once');
 for(const [id,ids] of Object.entries(prior.groups))if(!Object.hasOwn(update.previous,id))assert.deepEqual(upgraded.groups[id],ids,'Other saved groups remain unchanged: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids);
-assert.equal(view.allRows.length, 576);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length, 216);assert.equal(sections.length, 231);
+assert.equal(view.allRows.length, 581);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length, 216);assert.equal(sections.length, 232);
 const before=(a,b)=>assert.ok(order.indexOf(a)>=0&&order.indexOf(a)<order.indexOf(b),a+' must precede '+b);
 for(const [a,b] of [
  ['c1-ac-generation','c1-generator-set-overview'],['p07-l03','c1-generator-set-overview'],['c1-power-triangle-foundation','c1-generator-set-overview'],

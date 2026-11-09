@@ -5,8 +5,8 @@
   "shortTitle": "Electrical Mastery",
   "subtitle": "A complete, dependency-ordered practical learning path",
   "description": "A connected path through electrical theory, design, installation, motors, verification and building systems.",
-  "lessonCount": 544,
-  "duration": "120 h 23 min",
+  "lessonCount": 549,
+  "duration": "121 h 34 min",
   "safetyNotice": "Electrical work can cause serious injury, fire or death. Practise only on safe training equipment, isolate supplies correctly, and use qualified supervision for live or regulated work.",
   "jurisdictionNotice": "Where a lesson is regulation-sensitive, verify the details against BS 7671, installation requirements and the rules that apply to your installation.",
   "modules": [
@@ -8530,8 +8530,102 @@
       "classification": "PROFESSIONAL EXTENSION"
     },
     {
-      "id": "solar-t1",
+      "id": "solar-overview",
       "number": 33,
+      "title": "General Overview",
+      "description": "Follow a complete solar PV, battery and inverter planning and installation introduction.",
+      "duration": "1 h 11 min",
+      "durationSeconds": 4264,
+      "learningOutcome": "Follow a complete solar PV, battery and inverter planning and installation introduction.",
+      "lessons": [
+        {
+          "id": "solar-overview-01",
+          "videoId": "kPNGJ9aE57c",
+          "title": "Understanding Energy Consumption",
+          "instructor": "eFIXX / Joe Hammond",
+          "durationSeconds": 456,
+          "duration": "7:36",
+          "url": "https://www.youtube.com/watch?v=kPNGJ9aE57c",
+          "topic": "General Overview",
+          "layer": "WHY",
+          "sourceKind": "Manufacturer or trade educator",
+          "regulationSensitive": true,
+          "studyRole": "Core introduction",
+          "required": true,
+          "number": 1
+        },
+        {
+          "id": "solar-overview-02",
+          "videoId": "I56pn15y41U",
+          "title": "Solar Panel Array Design",
+          "instructor": "eFIXX / Joe Hammond",
+          "durationSeconds": 974,
+          "duration": "16:14",
+          "url": "https://www.youtube.com/watch?v=I56pn15y41U",
+          "topic": "General Overview",
+          "layer": "WHY",
+          "sourceKind": "Manufacturer or trade educator",
+          "regulationSensitive": true,
+          "studyRole": "Core introduction",
+          "required": true,
+          "number": 2
+        },
+        {
+          "id": "solar-overview-03",
+          "videoId": "nNd38LshIic",
+          "title": "Inverter and Battery Specifications",
+          "instructor": "eFIXX / Joe Hammond",
+          "durationSeconds": 846,
+          "duration": "14:06",
+          "url": "https://www.youtube.com/watch?v=nNd38LshIic",
+          "topic": "General Overview",
+          "layer": "WHY",
+          "sourceKind": "Manufacturer or trade educator",
+          "regulationSensitive": true,
+          "studyRole": "Core introduction",
+          "required": true,
+          "number": 3
+        },
+        {
+          "id": "solar-overview-04",
+          "title": "Locating Equipment",
+          "videoId": "46c1BXEloR8",
+          "instructor": "eFIXX / Joe Hammond",
+          "durationSeconds": 814,
+          "topic": "General Overview",
+          "layer": "SELECT + COORDINATE",
+          "sourceKind": "Manufacturer or trade specialist",
+          "number": 4,
+          "url": "https://www.youtube.com/watch?v=46c1BXEloR8",
+          "duration": "13:34",
+          "regulationSensitive": true,
+          "studyRole": "Core introduction",
+          "required": true
+        },
+        {
+          "id": "solar-overview-05",
+          "title": "The Electrical Installation",
+          "videoId": "fMM-EPRKNhw",
+          "instructor": "eFIXX / Joe Hammond",
+          "durationSeconds": 1174,
+          "topic": "General Overview",
+          "layer": "INSPECT + PREPARE",
+          "sourceKind": "Manufacturer or trade specialist",
+          "number": 5,
+          "url": "https://www.youtube.com/watch?v=fMM-EPRKNhw",
+          "duration": "19:34",
+          "regulationSensitive": true,
+          "studyRole": "Core introduction",
+          "required": true
+        }
+      ],
+      "path": "Solar",
+      "stageNumber": 0,
+      "classification": "SOLAR PV STUDY"
+    },
+    {
+      "id": "solar-t1",
+      "number": 34,
       "title": "T1 · Solar Foundations and Small DC Systems",
       "description": "Understand PV components and energy demand, then study correct PV connector workmanship.",
       "duration": "0 h 43 min",
@@ -8593,7 +8687,7 @@
     },
     {
       "id": "solar-t2",
-      "number": 34,
+      "number": 35,
       "title": "T2 · Stand-Alone Design and Installation",
       "description": "Follow energy sizing, controller selection, practical DC connections and configuration, then testing and fault investigation.",
       "duration": "1 h 23 min",
@@ -8719,7 +8813,7 @@
     },
     {
       "id": "solar-t3",
-      "number": 35,
+      "number": 36,
       "title": "T3 · Grid-Connected and Hybrid Systems",
       "description": "Plan a grid-connected project, follow a complete solar-and-battery case study, then explore larger hybrid architectures.",
       "duration": "2 h 37 min",
@@ -8988,5 +9082,5 @@
       "classification": "SOLAR PV STUDY"
     }
   ],
-  "durationSeconds": 433391
+  "durationSeconds": 437655
 }

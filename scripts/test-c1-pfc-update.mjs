@@ -15,7 +15,7 @@ const pfcModule=c1[12], pfSections=sections.filter(s=>s.moduleId===pfcModule.id)
 assert.deepEqual(pfSections.flatMap(s=>s.lessonIds),lessons.map(l=>l.id));
 assert.deepEqual(lessons.filter(l=>update.addedLessonIds.includes(l.id)).map(l=>l.videoId),['-kyppHRdwX4','-7yilF7U6i4','5084gua6bzY','pyW7vbB3rP0']);
 assert.equal(pfcModule.durationSeconds,lessons.reduce((n,l)=>n+l.durationSeconds,0));
-assert.equal(view.allRows.length,576);
+assert.equal(view.allRows.length,581);
 for(const id of update.addedLessonIds){const lesson=lessons.find(l=>l.id===id);assert.ok(lesson);assert.equal(lesson.studyNote,undefined);assert.ok(view.byId.has(id));}
 for(const id of update.addedSectionIds){let section=pfSections.find(s=>s.id===id);assert.deepEqual(section.lessonIds,update.current[id]);assert.equal(section.description,undefined);}
 assert.ok(!catalog.modules.flatMap(m=>m.lessons).some(l=>['61m2l-moltc','UbhEL_yG57k','q2LHmZ6NbEY'].includes(l.videoId)));

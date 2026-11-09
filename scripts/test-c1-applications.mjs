@@ -18,7 +18,7 @@ assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!generators.addedLessonIds.includes(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
 for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(generators.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Untouched groups retain their exact order: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids,'Published placement: '+id);
-assert.equal(c1.length, 216);assert.equal(view.allRows.length, 576);assert.equal(sections.length, 231);
+assert.equal(c1.length, 216);assert.equal(view.allRows.length, 581);assert.equal(sections.length, 232);
 assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length, 117);
 for(const id of newIds){assert.ok(view.byId.has(id));assert.equal(required(id),true);}
 assert.equal(required('c1-wheatstone-bridge'),true);assert.equal(required('c1-lorenz-demonstration'),false);

@@ -28,7 +28,7 @@ export const c1FlowRepeatIds = json('../app/c1-flow-update.json').repeats.map(le
 export const c1FoundationIds = json('../app/c1-gap-fill-update.json').repeats.map(lesson => lesson.id);
 export const designOverviewIds = new Set(json('../app/design-learning-update.json').overviewLessonIds);
 export const processOverviewIds = new Set(json('../app/connected-process-update.json').overviewLessonIds);
-export const overviewIds = new Set([...designOverviewIds, ...processOverviewIds, ...c1FoundationIds, ...c1FlowRepeatIds, ...motorControlAdditions.map(v => v.id), 'c1-demand-example', ...json('../app/c1-protection-update.json').repeats.map(v => v.id), ...json('../app/solar-pathway-update.json').repeatedMediaLessonIds]);
+export const overviewIds = new Set([...designOverviewIds, ...processOverviewIds, ...c1FoundationIds, ...c1FlowRepeatIds, ...motorControlAdditions.map(v => v.id), ...solarAdditions.filter(v => v.id.startsWith("solar-overview-")).map(v => v.id), 'c1-demand-example', ...json('../app/c1-protection-update.json').repeats.map(v => v.id), ...json('../app/solar-pathway-update.json').repeatedMediaLessonIds]);
 const baseline = json('./course-baseline.json');
 
 export function assertC2Reorganization(course) {
