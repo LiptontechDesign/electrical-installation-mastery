@@ -1,6 +1,8 @@
 # Electrical Installation Mastery
 
-A video course with 549 lesson entries in 36 modules across C2, C1, Solar and Professional pathways, plus standalone Practice and C1/C2 Past Papers destinations.
+A video course with 621 lesson entries in 49 modules across C2, C1, Solar, Comprehensive Solar Installation and Professional pathways, plus standalone Practice and C1/C2 Past Papers destinations.
+
+**Comprehensive Solar Installation Training · T1–T3** is a separate 13-module, 72-video pathway following the previously prepared teaching order, from solar resources and system sizing through installation, testing and operation. The original Solar · T1–T3 pathway remains available. See [the complete video order and review limitations](docs/comprehensive-solar-course-order.md).
 
 The C1 pathway now has **17 independently numbered subject modules**, 117 focused sections and 216 default video rows. Generators, transformers, measurements, initial verification, periodic inspection and standby applications have their own modules. Motor calculations follow motor operation and nameplates; drive-specific capacitor precautions follow drives. Medium-voltage switchgear is optional Advanced study. See [the current C1 route and EPRA mapping](docs/c1-focused-modules.md), [every video in order](docs/c1-study-sequence.md) and [generator teaching, transcript evidence and practical limitations](docs/c1-generator-learning.md). Existing video identities, saved arrangements, progress and private notes remain intact.
 

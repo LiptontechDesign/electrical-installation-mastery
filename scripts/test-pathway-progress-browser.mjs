@@ -153,7 +153,7 @@ try {
   await page.getByRole('dialog', { name: 'Video added', exact: true }).getByRole('button', { name: 'Add another', exact: true }).waitFor();
   assert.equal(additions.state().videos.find(video => video.videoId === 'newDur00001').durationSeconds, 645, 'Automatic duration is saved with the new addition');
   await page.getByRole('dialog', { name: 'Video added', exact: true }).getByRole('button', { name: 'Add another', exact: true }).click();
-  await addDialog.getByLabel('YouTube link').fill('https://youtu.be/newDur00001');
+  await addDialog.getByLabel('YouTube link').fill('https://youtu.be/newDur00003');
   await addDialog.getByText('Details found. You can edit them below.', { exact: true }).waitFor();
   await addDialog.getByLabel('YouTube link').fill('https://youtu.be/newDur00002');
   await addDialog.getByText('Video details unavailable in this fixture.', { exact: true }).waitFor();

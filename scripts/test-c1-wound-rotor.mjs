@@ -1,5 +1,5 @@
-import { motorControlAdditions, motorPracticalAdditions, solarAdditions, pfcAdditions } from './assert-c2-reorganization.mjs';
-const motorControlIds = new Set([...motorControlAdditions, ...motorPracticalAdditions, ...solarAdditions, ...pfcAdditions].map(v => v.id));
+import { motorControlAdditions, motorPracticalAdditions, solarAdditions, pfcAdditions, comprehensiveSolarAdditions } from './assert-c2-reorganization.mjs';
+const motorControlIds = new Set([...motorControlAdditions, ...motorPracticalAdditions, ...solarAdditions, ...pfcAdditions, ...comprehensiveSolarAdditions].map(v => v.id));
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {build} from 'esbuild';
@@ -13,7 +13,7 @@ const evidence=read('docs/c1-wound-rotor-video-review.json'),catalog=read('app/v
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])),upgraded=parse(prior),view=snapshot(upgraded),oldIds=Object.values(prior.groups).flat();
 assert.equal(oldIds.length,515,'Actual published state before these two lessons');
 assert.deepEqual(prior,original);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(parse(upgraded),upgraded);assert.equal(upgraded.curriculumRevision,14);
-assert.equal(catalog.lessonCount,549);assert.equal(view.allRows.length,581);assert.equal(sections.length,232);
+assert.equal(catalog.lessonCount,621);assert.equal(view.allRows.length,653);assert.equal(sections.length,261);
 for(const [id,ids] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],ids,'Every original section membership remains intact: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
 const newIds=new Set(update.addedLessonIds);

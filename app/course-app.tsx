@@ -987,7 +987,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
                 <div className="course-map-toolbar">
                   <div className="course-path-select">
                     <select aria-label="Choose learning pathway" value={mapPath} onChange={event => chooseMapPath(event.target.value as CourseModule['path'])}>
-                      {coursePathways.map(path => <option key={path.id} value={path.id}>{path.optionLabel}</option>)}
+                      {coursePathways.map(path => <option key={path.id} value={path.id}>{'shortOptionLabel' in path ? path.shortOptionLabel : path.optionLabel}</option>)}
                     </select><ChevronDown size={16} aria-hidden="true"/>
                   </div>
                   <button type="button" className="course-map-tools-toggle" aria-label="Course tools" aria-expanded={mapToolsExpanded || organizing} aria-controls="course-map-secondary-tools" onClick={() => { if (document.querySelector('.course-drag-shell[data-moving="true"]')) return; const closing = mapToolsExpanded || organizing; setMapToolsExpanded(!closing); if (closing) setOrganizing(false); }}><SlidersHorizontal size={16} aria-hidden="true"/><span>Tools</span></button>
