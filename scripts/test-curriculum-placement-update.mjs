@@ -19,11 +19,11 @@ const change=(state,edit)=>apply(state,{revision:state.revision,operationId:cryp
 assert.deepEqual(upgraded.groups,base.groups,'An actual revision-2 saved course receives the complete public teaching order');
 assert.deepEqual(before,original,'Reading never mutates the saved input');
 assert.deepEqual(parse(upgraded),upgraded,'The update is idempotent');
-assert.equal(upgraded.curriculumRevision, 14);
+assert.equal(upgraded.curriculumRevision, 15);
 assert.equal(upgraded.revision,before.revision,'A read does not consume an edit revision');
 assert.equal(view.allRows.length, 653);
-assert.equal(Object.keys(view.rows).length, 261);
-assert.equal(sections.length, 261);
+assert.equal(Object.keys(view.rows).length, 263);
+assert.equal(sections.length, 263);
 assert.ok(Object.values(view.rows).every(rows=>rows.length),'All published sections contain videos, including supplementary-only sections');
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!surgeIds.has(id)).sort(),Object.values(before.groups).flat().sort(),'No old video is lost or duplicated');
 assert.ok(Object.keys(before.groups).every(id=>Object.hasOwn(upgraded.groups,id)),'Every previous section remains a valid edit/Undo destination');

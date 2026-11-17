@@ -2430,10 +2430,20 @@
     ]
   },
   {
-    "id": "solar-comprehensive-01-section-01",
+    "id": "solar-comprehensive-01-preview",
     "moduleId": "solar-comprehensive-01",
     "number": 1,
-    "title": "Solar radiation and the sun’s path",
+    "title": "See a complete solar system before sizing it",
+    "lessonIds": [
+      "solar-comprehensive-video-25",
+      "solar-comprehensive-video-55"
+    ]
+  },
+  {
+    "id": "solar-comprehensive-01-section-01",
+    "moduleId": "solar-comprehensive-01",
+    "number": 2,
+    "title": "Sunlight: irradiance, sun path and shading",
     "lessonIds": [
       "solar-comprehensive-video-01"
     ]
@@ -2441,8 +2451,8 @@
   {
     "id": "solar-comprehensive-01-section-02",
     "moduleId": "solar-comprehensive-01",
-    "number": 2,
-    "title": "PVGIS resource and yield estimates",
+    "number": 3,
+    "title": "Use PVGIS to estimate sunlight and solar yield",
     "lessonIds": [
       "solar-comprehensive-video-02",
       "solar-comprehensive-video-03",
@@ -2454,7 +2464,7 @@
     "id": "solar-comprehensive-02-section-01",
     "moduleId": "solar-comprehensive-02",
     "number": 1,
-    "title": "Module datasheets, temperature and bypass diodes",
+    "title": "Panel ratings, temperature and bypass diodes",
     "lessonIds": [
       "solar-comprehensive-video-06",
       "solar-comprehensive-video-07",
@@ -2466,7 +2476,7 @@
     "id": "solar-comprehensive-02-section-02",
     "moduleId": "solar-comprehensive-02",
     "number": 2,
-    "title": "Inverters and power conditioning",
+    "title": "How solar inverters work and types compared",
     "lessonIds": [
       "solar-comprehensive-video-10",
       "solar-comprehensive-video-11"
@@ -2476,7 +2486,7 @@
     "id": "solar-comprehensive-03-section-01",
     "moduleId": "solar-comprehensive-03",
     "number": 1,
-    "title": "Load profiles and system demand",
+    "title": "Calculate daily energy use and peak demand",
     "lessonIds": [
       "solar-comprehensive-video-12",
       "solar-comprehensive-video-13"
@@ -2486,7 +2496,7 @@
     "id": "solar-comprehensive-03-section-02",
     "moduleId": "solar-comprehensive-03",
     "number": 2,
-    "title": "Battery capacity and sizing",
+    "title": "Understand battery capacity and sizing",
     "lessonIds": [
       "solar-comprehensive-video-14",
       "solar-comprehensive-video-15",
@@ -2507,7 +2517,7 @@
     "id": "solar-comprehensive-04-section-02",
     "moduleId": "solar-comprehensive-04",
     "number": 2,
-    "title": "Shading and fire considerations",
+    "title": "Measure shading and consider rooftop fire safety",
     "lessonIds": [
       "solar-comprehensive-video-19",
       "solar-comprehensive-video-20"
@@ -2517,7 +2527,7 @@
     "id": "solar-comprehensive-05-section-01",
     "moduleId": "solar-comprehensive-05",
     "number": 1,
-    "title": "PV string sizing and temperature checks",
+    "title": "Calculate the number of panels in each string",
     "lessonIds": [
       "solar-comprehensive-video-21",
       "solar-comprehensive-video-22",
@@ -2529,9 +2539,8 @@
     "id": "solar-comprehensive-05-section-02",
     "moduleId": "solar-comprehensive-05",
     "number": 2,
-    "title": "Standalone design: loads and battery bank",
+    "title": "Off-grid design example: loads and battery bank",
     "lessonIds": [
-      "solar-comprehensive-video-25",
       "solar-comprehensive-video-26",
       "solar-comprehensive-video-27"
     ]
@@ -2540,7 +2549,7 @@
     "id": "solar-comprehensive-05-section-03",
     "moduleId": "solar-comprehensive-05",
     "number": 3,
-    "title": "Standalone design: array, controller and inverter",
+    "title": "Off-grid design example: array, controller and inverter",
     "lessonIds": [
       "solar-comprehensive-video-28",
       "solar-comprehensive-video-29",
@@ -2551,7 +2560,7 @@
     "id": "solar-comprehensive-05-section-04",
     "moduleId": "solar-comprehensive-05",
     "number": 4,
-    "title": "Roof layout and design software",
+    "title": "Plan a roof layout with SolarEdge Designer",
     "lessonIds": [
       "solar-comprehensive-video-31"
     ]
@@ -2560,7 +2569,7 @@
     "id": "solar-comprehensive-06-section-01",
     "moduleId": "solar-comprehensive-06",
     "number": 1,
-    "title": "System components and cable sizing principles",
+    "title": "Solar cables, connectors and sizing basics",
     "lessonIds": [
       "solar-comprehensive-video-32",
       "solar-comprehensive-video-33"
@@ -2570,7 +2579,7 @@
     "id": "solar-comprehensive-06-section-02",
     "moduleId": "solar-comprehensive-06",
     "number": 2,
-    "title": "PV cable voltage-drop calculations",
+    "title": "Calculate DC voltage drop in PV cables",
     "lessonIds": [
       "solar-comprehensive-video-34",
       "solar-comprehensive-video-35"
@@ -2580,7 +2589,7 @@
     "id": "solar-comprehensive-07-section-01",
     "moduleId": "solar-comprehensive-07",
     "number": 1,
-    "title": "DC isolation",
+    "title": "Understand and locate PV DC isolators",
     "lessonIds": [
       "solar-comprehensive-video-36",
       "solar-comprehensive-video-37"
@@ -2590,7 +2599,7 @@
     "id": "solar-comprehensive-07-section-02",
     "moduleId": "solar-comprehensive-07",
     "number": 2,
-    "title": "Surge and PV circuit protection",
+    "title": "Surge protection and PV circuit design",
     "lessonIds": [
       "solar-comprehensive-video-38",
       "solar-comprehensive-video-39"
@@ -2600,7 +2609,7 @@
     "id": "solar-comprehensive-07-section-03",
     "moduleId": "solar-comprehensive-07",
     "number": 3,
-    "title": "Battery circuit fuses and cables",
+    "title": "Battery cables, fuses and busbars",
     "lessonIds": [
       "solar-comprehensive-video-40",
       "solar-comprehensive-video-41"
@@ -2610,7 +2619,7 @@
     "id": "solar-comprehensive-08-section-01",
     "moduleId": "solar-comprehensive-08",
     "number": 1,
-    "title": "Supply earthing and inverter bonding",
+    "title": "Supply earthing and inverter neutral–earth bonding",
     "lessonIds": [
       "solar-comprehensive-video-42",
       "solar-comprehensive-video-43"
@@ -2620,16 +2629,26 @@
     "id": "solar-comprehensive-08-section-02",
     "moduleId": "solar-comprehensive-08",
     "number": 2,
-    "title": "Lightning and surge protection",
+    "title": "Lightning protection and surge devices",
     "lessonIds": [
       "solar-comprehensive-video-44"
     ]
   },
   {
-    "id": "solar-comprehensive-09-section-01",
+    "id": "solar-comprehensive-09-self-consumption",
     "moduleId": "solar-comprehensive-09",
     "number": 1,
-    "title": "Stationary batteries, gateway and wiring",
+    "title": "Self-consumption, excess solar and export limits",
+    "lessonIds": [
+      "solar-comprehensive-video-47",
+      "solar-comprehensive-video-48"
+    ]
+  },
+  {
+    "id": "solar-comprehensive-09-section-01",
+    "moduleId": "solar-comprehensive-09",
+    "number": 2,
+    "title": "UK battery rules and GivEnergy backup wiring",
     "lessonIds": [
       "solar-comprehensive-video-45",
       "solar-comprehensive-video-46"
@@ -2639,10 +2658,8 @@
     "id": "solar-comprehensive-10-section-01",
     "moduleId": "solar-comprehensive-10",
     "number": 1,
-    "title": "Self-consumption and grid connection principles",
+    "title": "How solar inverters connect to the grid",
     "lessonIds": [
-      "solar-comprehensive-video-47",
-      "solar-comprehensive-video-48",
       "solar-comprehensive-video-49"
     ]
   },
@@ -2662,10 +2679,9 @@
     "id": "solar-comprehensive-11-section-01",
     "moduleId": "solar-comprehensive-11",
     "number": 1,
-    "title": "Installation principles and small-system connections",
+    "title": "Installation methods and an off-grid example",
     "lessonIds": [
       "solar-comprehensive-video-54",
-      "solar-comprehensive-video-55",
       "solar-comprehensive-video-56"
     ]
   },
@@ -2673,7 +2689,7 @@
     "id": "solar-comprehensive-11-section-02",
     "moduleId": "solar-comprehensive-11",
     "number": 2,
-    "title": "UK off-grid installation case study",
+    "title": "Wiring a UK off-grid Victron system",
     "lessonIds": [
       "solar-comprehensive-video-57",
       "solar-comprehensive-video-58"
@@ -2683,7 +2699,7 @@
     "id": "solar-comprehensive-11-section-03",
     "moduleId": "solar-comprehensive-11",
     "number": 3,
-    "title": "Roof mounting and workmanship",
+    "title": "Mount rooftop panels and inspect workmanship",
     "lessonIds": [
       "solar-comprehensive-video-59",
       "solar-comprehensive-video-60",
@@ -2694,7 +2710,7 @@
     "id": "solar-comprehensive-12-section-01",
     "moduleId": "solar-comprehensive-12",
     "number": 1,
-    "title": "PV inspection and electrical tests",
+    "title": "Solar PV inspections and electrical tests",
     "lessonIds": [
       "solar-comprehensive-video-62",
       "solar-comprehensive-video-63",
@@ -2705,7 +2721,7 @@
     "id": "solar-comprehensive-12-section-02",
     "moduleId": "solar-comprehensive-12",
     "number": 2,
-    "title": "Troubleshooting and handover",
+    "title": "Find faults and complete handover",
     "lessonIds": [
       "solar-comprehensive-video-65",
       "solar-comprehensive-video-66"
@@ -2715,7 +2731,7 @@
     "id": "solar-comprehensive-13-section-01",
     "moduleId": "solar-comprehensive-13",
     "number": 1,
-    "title": "Maintenance, performance ratio and yield",
+    "title": "Maintain solar equipment and assess energy yield",
     "lessonIds": [
       "solar-comprehensive-video-67",
       "solar-comprehensive-video-68",
@@ -2726,7 +2742,7 @@
     "id": "solar-comprehensive-13-section-02",
     "moduleId": "solar-comprehensive-13",
     "number": 2,
-    "title": "Payback and export economics",
+    "title": "Payback and UK export-payment background",
     "lessonIds": [
       "solar-comprehensive-video-70",
       "solar-comprehensive-video-71",

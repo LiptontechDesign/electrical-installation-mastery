@@ -11,7 +11,7 @@ const applications=read('app/c1-application-update.json'), generators=read('app/
 const newIds=new Set(update.addedLessonIds),destinations=new Map(Object.entries(update.current).flatMap(([sectionId,ids])=>ids.map(id=>[id,sectionId])));
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])),c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(prior),view=snapshot(upgraded);
-assert.equal(prior.curriculumRevision,9);assert.equal(upgraded.curriculumRevision, 14);
+assert.equal(prior.curriculumRevision,9);assert.equal(upgraded.curriculumRevision, 15);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-9 published state receives the exact revised sequence');
 assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!applications.addedLessonIds.includes(id)&&!generators.addedLessonIds.includes(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every previous occurrence survives once');

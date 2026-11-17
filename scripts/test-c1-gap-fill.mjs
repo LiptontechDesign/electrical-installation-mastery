@@ -10,7 +10,7 @@ const previous=read('scripts/fixtures/c1-gap-fill-previous.json'), original=stru
 const applications=read('app/c1-application-update.json'), generators=read('app/c1-generator-update.json');
 const ids=new Set(update.addedLessonIds), core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])), c1Modules=new Set(catalog.modules.filter(m=>m.path==='C1').map(m=>m.id));
 const upgraded=parse(previous),view=snapshot(upgraded);
-assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 14);
+assert.equal(previous.curriculumRevision,8);assert.equal(upgraded.curriculumRevision, 15);
 assert.deepEqual(upgraded.groups,base.groups,'Actual revision-8 published snapshot upgrades to the exact new sequence');
 assert.deepEqual(previous,original,'Stored snapshot is not mutated');
 assert.deepEqual(parse(upgraded),upgraded,'Current normalisation is idempotent');

@@ -12,7 +12,7 @@ const prior = read('scripts/fixtures/c1-modules-previous.json'), untouched = str
 const update = read('app/c1-module-update.json'), upgraded = parse(prior), view = snapshot(upgraded);
 const modules = view.course.modules.filter(m => m.path === 'C1');
 assert.equal(prior.curriculumRevision, 12);
-assert.equal(upgraded.curriculumRevision, 14);
+assert.equal(upgraded.curriculumRevision, 15);
 assert.deepEqual(prior, untouched, 'Reading the new curriculum never mutates the stored document');
 assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every stable section retains its exact mixed row order: ' + id);
