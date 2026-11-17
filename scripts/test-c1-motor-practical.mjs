@@ -16,7 +16,7 @@ const added = new Set(update.addedLessonIds), oldIds = Object.values(prior.group
 const upgraded = parse(prior), view = snapshot(upgraded);
 assert.equal(oldIds.length, 541, 'Actual previous published course');
 assert.deepEqual(prior, original);
-assert.equal(upgraded.curriculumRevision, 14, 'Pure additions do not replay old migrations');
+assert.equal(upgraded.curriculumRevision, 15, 'Pure additions do not replay old migrations');
 assert.deepEqual(upgraded.groups, base.groups);
 assert.deepEqual(parse(upgraded), upgraded);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Preserve old section membership: ' + id);
@@ -24,7 +24,7 @@ for (const key of ['revision', 'videos', 'itemRevisions', 'receipts', 'archivedL
 assert.deepEqual(view.allRows.filter(row => !added.has(row.id) && !later.has(row.id)).map(row => row.id).sort(), [...oldIds].sort(), 'All 541 prior occurrences retain their relative order');
 assert.equal(catalog.lessonCount, 621);
 assert.equal(view.allRows.length, 653);
-assert.equal(sections.length, 261);
+assert.equal(sections.length, 263);
 assert.equal(view.allRows.filter(row => view.course.modules.find(m => m.id === row.moduleId).path === 'C1').length, 216);
 assert.equal(added.size, 5);
 assert.equal(update.addedSectionIds.length, 3);

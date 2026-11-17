@@ -8,10 +8,11 @@ import c1FlowUpdate from './c1-flow-update.json';
 import c1ApplicationUpdate from './c1-application-update.json';
 import c1GeneratorUpdate from './c1-generator-update.json';
 import motorControlUpdate from './motor-control-update.json';
+import { upgradeComprehensiveSolarGroups } from './comprehensive-solar-migration';
 
 export const reviewedPlacementRevision = 3;
-// Revision 14 adds the opening motor-control sequence without relocating saved rows.
-export const curriculumRevision = 14;
+// Revision 15 brings existing solar overviews and grid concepts forward when untouched.
+export const curriculumRevision = 15;
 const previous: Record<string, string[]> = update.previous;
 const current: Record<string, string[]> = update.current;
 const destinations = new Map(Object.entries(current).flatMap(([sectionId, ids]) => ids.map(id => [id, sectionId] as const)));
@@ -21,7 +22,8 @@ function upgradeC1PublishedGroups(input: Record<string, string[]>, revision: num
   const foundations = upgradeC1LearningGroups(historical, revision, protectedIds, supporting, c1FlowUpdate);
   const applications = upgradeC1LearningGroups(foundations, revision, protectedIds, supporting, c1ApplicationUpdate);
   const generators = upgradeC1LearningGroups(applications, revision, protectedIds, supporting, c1GeneratorUpdate);
-  return upgradeC1LearningGroups(generators, revision, protectedIds, supporting, motorControlUpdate);
+  const motors = upgradeC1LearningGroups(generators, revision, protectedIds, supporting, motorControlUpdate);
+  return upgradeComprehensiveSolarGroups(motors, revision, protectedIds, supporting);
 }
 
 // Apply the published topic changes once. A known video moves only while it is

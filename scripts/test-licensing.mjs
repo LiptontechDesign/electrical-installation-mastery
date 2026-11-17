@@ -9,8 +9,8 @@ const {withSupplementaryDefaults}=await import('../work/licensing-check/suppleme
 const {courseMapSnapshot}=await import('../work/licensing-check/course-drop-model.js');
 assert.deepEqual(course.modules.map(m=>m.path),[...Array(9).fill('C2'),...Array(17).fill('C1'),...Array(6).fill('Professional'),...Array(4).fill('Solar'),...Array(13).fill('Solar Comprehensive')]);
 assertC2Reorganization(course);
-assert.equal(learningSections.length, 261);
-assert.equal(new Set(learningSections.map(s=>s.id)).size, 261);
+assert.equal(learningSections.length, 263);
+assert.equal(new Set(learningSections.map(s=>s.id)).size, 263);
 for(const [moduleId,expected] of Object.entries(c2StageOrder)) {
  assert.deepEqual(sectionsByModule[moduleId].map(({title,lessonIds})=>({title,lessonIds})),expected);
 }

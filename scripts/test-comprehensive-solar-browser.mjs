@@ -3,8 +3,10 @@ import { readFileSync } from 'node:fs';
 import { browser, fixture, model, origin, openCourseTools } from './personal-course-browser-fixture.mjs';
 
 const previous = JSON.parse(readFileSync('scripts/fixtures/solar-pathway-previous.json', 'utf8'));
+const priorComprehensive = JSON.parse(readFileSync('scripts/fixtures/comprehensive-solar-revision-14.json', 'utf8'));
 const course = model.personalCourseSnapshot(model.publishedPersonalCourse).course;
 const lessons = course.modules.filter(module => module.path === 'Solar Comprehensive').flatMap(module => module.lessons);
+const { initialLearnerState } = await import('../work/editor-browser/learner-state.js');
 
 try {
   for (const mobile of [false, true]) {
@@ -72,6 +74,21 @@ try {
   assert.deepEqual(f.errors, []);
   await f.context.close();
   console.log('PASS saved account: new pathway appears with separate 0/72 progress, existing arrangement remains stored and phone controls fit.');
+
+  const saved = await fixture({
+    state: priorComprehensive,
+    learner: { ...initialLearnerState, activeLessonId: lessons[0].id, autoNextEnabled: false, completedLessonIds: ['solar-comprehensive-video-25', 'solar-comprehensive-video-55'] },
+  });
+  await saved.page.goto(origin + '/#learn/' + lessons[0].id);
+  await saved.page.reload();
+  await saved.page.locator('.lesson-canvas h1').filter({ hasText: 'Plan an Off-Grid Solar System: Six Design Steps' }).waitFor();
+  await saved.page.locator('.pathway-progress-count').filter({ hasText: '2/72 videos watched' }).waitFor();
+  assert.equal(await saved.page.locator('.course-path-select select').inputValue(), 'Solar Comprehensive');
+  assert.deepEqual(saved.state(), priorComprehensive, 'Opening the new order does not overwrite the saved revision-14 course');
+  assert.equal(saved.writes.length, 0);
+  assert.deepEqual(saved.errors, []);
+  await saved.context.close();
+  console.log('PASS saved comprehensive course: moved lessons keep their watched marks and the prior stored arrangement is not overwritten on viewing.');
 } finally {
   await browser.close();
 }

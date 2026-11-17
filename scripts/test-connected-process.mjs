@@ -13,7 +13,7 @@ const newIds = new Set([...connectedProcessAdditions, ...c1LearningAdditions, ..
 const upgraded = parse(before), view = snapshot(upgraded);
 const lessons = new Map(view.course.modules.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
 assert.equal(before.curriculumRevision, 5);
-assert.equal(upgraded.curriculumRevision, 14);
+assert.equal(upgraded.curriculumRevision, 15);
 assert.equal(upgraded.revision, before.revision, 'Reading does not consume a personal edit revision');
 assert.deepEqual(before, original, 'The saved input is unchanged');
 assert.deepEqual(parse(upgraded), upgraded, 'The additive upgrade is idempotent');
@@ -23,7 +23,7 @@ assert.deepEqual(upgraded.videos.filter(v=>!v.id.startsWith('c1-')), before.vide
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !newIds.has(id)).sort(), Object.values(before.groups).flat().sort(), 'Every previous occurrence retains its place in the overall sequence');
 assert.equal(view.course.lessonCount, 621);
 assert.equal(view.allRows.length, 653);
-assert.equal(sections.length, 261);
+assert.equal(sections.length, 263);
 assert.deepEqual(update.overviewLessonIds, connectedProcessAdditions.map(lesson => lesson.id));
 const expected = [
   ['c2-boards', ['62lEhAuzeAI', 'dlkxzIQFvrk']],

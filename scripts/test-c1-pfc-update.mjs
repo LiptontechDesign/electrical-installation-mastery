@@ -7,7 +7,7 @@ const {parsePersonalCourse:parse,personalCourseSnapshot:snapshot}=await import('
 const {withSupplementaryDefaults}=await import('../work/pfc-tests/supplementary-defaults.js');
 const previous=read('scripts/fixtures/c1-pfc-previous.json'),update=read('app/c1-pfc-update.json'),catalog=read('app/video-catalog.json'),sections=read('app/learning-sections.json');
 const original=structuredClone(previous),state=parse(previous),view=snapshot(state), c1=catalog.modules.filter(m=>m.path==='C1');
-assert.deepEqual(previous,original);assert.equal(state.curriculumRevision,14);assert.deepEqual(parse(state),state);
+assert.deepEqual(previous,original);assert.equal(state.curriculumRevision,15);assert.deepEqual(parse(state),state);
 for(const [id,rows] of Object.entries(previous.groups))assert.deepEqual(state.groups[id],rows,`Prior section unchanged: ${id}`);
 for(const k of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(state[k],previous[k]);
 assert.deepEqual(c1.map(m=>m.id),update.moduleOrder);assert.equal(c1[11].id,'module-07');assert.equal(c1[12].id,'c1-pfc');

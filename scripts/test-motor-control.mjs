@@ -16,7 +16,7 @@ const section = sections.find(section => section.id === update.sectionIds[0]);
 const core = new Map(catalog.modules.flatMap(module => module.lessons).map(lesson => [lesson.id, lesson]));
 const motorModule = catalog.modules.find(module => module.id === section.moduleId);
 assert.equal(prior.curriculumRevision, 13);
-assert.equal(upgraded.curriculumRevision, 14);
+assert.equal(upgraded.curriculumRevision, 15);
 assert.deepEqual(prior, original);
 assert.deepEqual(upgraded.groups, base.groups);
 assert.deepEqual(parse(upgraded), upgraded);
@@ -40,7 +40,7 @@ for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !added.has(id) && !motorPracticalIds.has(id)).sort(), Object.values(prior.groups).flat().sort());
 assert.equal(view.allRows.length, 653);
 assert.equal(catalog.lessonCount, 621);
-assert.equal(sections.length, 261);
+assert.equal(sections.length, 263);
 assert.equal(view.allRows.filter(row => view.course.modules.find(module => module.id === row.moduleId).path === 'C1').length, 216);
 const rows = view.allRows.filter(row => row.moduleId === motorModule.id);
 assert.deepEqual(rows.slice(0, 24).map(row => row.id), section.lessonIds);

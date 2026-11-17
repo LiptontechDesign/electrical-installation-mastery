@@ -11,11 +11,11 @@ const catalog=read('app/video-catalog.json'),sections=read('app/learning-section
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 const upgraded=parse(prior),view=snapshot(upgraded),order=view.allRows.map(r=>r.id);
 assert.equal(prior.curriculumRevision,11);assert.equal(Object.values(prior.groups).flat().length,471,'Fixture is the actual published pre-generator course');
-assert.equal(upgraded.curriculumRevision,14);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
+assert.equal(upgraded.curriculumRevision,15);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
 assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every original occurrence survives exactly once');
 for(const [id,ids] of Object.entries(prior.groups))if(!Object.hasOwn(update.previous,id))assert.deepEqual(upgraded.groups[id],ids,'Other saved groups remain unchanged: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids);
-assert.equal(view.allRows.length, 653);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length, 216);assert.equal(sections.length, 261);
+assert.equal(view.allRows.length, 653);assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length, 216);assert.equal(sections.length, 263);
 const before=(a,b)=>assert.ok(order.indexOf(a)>=0&&order.indexOf(a)<order.indexOf(b),a+' must precede '+b);
 for(const [a,b] of [
  ['c1-ac-generation','c1-generator-set-overview'],['p07-l03','c1-generator-set-overview'],['c1-power-triangle-foundation','c1-generator-set-overview'],

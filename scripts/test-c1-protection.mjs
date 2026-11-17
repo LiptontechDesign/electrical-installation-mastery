@@ -16,7 +16,7 @@ const updated=parse(prior),view=snapshot(updated),modules=view.course.modules.fi
 const protectionModule=modules.find(m=>m.id==='c1-protective-devices'),core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l]));
 assert.equal(Object.values(prior.groups).flat().length,488,'Actual pre-addition published state');
 assert.deepEqual(prior,original);assert.deepEqual(updated.groups,base.groups);assert.deepEqual(parse(updated),updated);
-assert.equal(updated.curriculumRevision,14,'Pure additions do not replay earlier migrations');
+assert.equal(updated.curriculumRevision,15,'Pure additions do not replay earlier migrations');
 for(const [sectionId,order] of Object.entries(prior.groups))assert.deepEqual(updated.groups[sectionId],order,'Exact existing mixed order: '+sectionId);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(updated[key],prior[key]);
 assert.deepEqual(view.allRows.filter(r=>!ids.has(r.id)&&!laterIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id).sort(),Object.values(prior.groups).flat().sort(),'All old occurrences retain their relative published order');

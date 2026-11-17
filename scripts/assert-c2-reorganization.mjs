@@ -40,6 +40,7 @@ export function assertC2Reorganization(course) {
   }
   // Explicit presentation correction; original media identity/duration remain frozen.
   for (const [id,title] of Object.entries(json('../app/c1-motor-gap-update.json').titleUpdates)) source.set(id,{...source.get(id),title});
+  for (const [id,title] of Object.entries(json('./fixtures/comprehensive-solar-title-updates.json'))) source.set(id,{...source.get(id),title});
   const approvedOrder = { ...c2StageOrder, ...professionalStageOrder };
   const expected = baseline.filter(module => module.path !== 'C1').map(module => ({ ...module, lessons: approvedOrder[module.id]
     ? [...approvedOrder[module.id].flatMap(section => section.lessonIds), ...(professionalScopeAdditions[module.id] ?? [])].map(id => source.get(id)) : module.lessons }));
