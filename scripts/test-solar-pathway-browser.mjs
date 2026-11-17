@@ -58,12 +58,12 @@ try {
   await dialog.getByRole('button', { name: 'Cancel', exact: true }).click();
   await openCourseTools(f.page);
   await f.page.getByRole('button', { name: 'Organise', exact: true }).click();
-  assert.deepEqual(await f.page.locator('[data-course-path]').evaluateAll(nodes => nodes.map(n => n.dataset.coursePath)), ['C2', 'C1', 'Solar', 'Professional']);
+  assert.deepEqual(await f.page.locator('[data-course-path]').evaluateAll(nodes => nodes.map(n => n.dataset.coursePath)), ['C2', 'C1', 'Solar', 'Solar Comprehensive', 'Professional']);
   await f.page.setViewportSize({ width: 320, height: 740 });
   if (!await f.page.locator('.course-map.drawer-open').count()) await f.page.getByRole('button', { name: 'Open course map', exact: true }).click();
   assert.equal(await f.page.locator('.course-path-switcher').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length), 2);
   assert.equal(await f.page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   assert.deepEqual(f.state(), prior); assert.equal(f.writes.length, 0); assert.deepEqual(f.errors, []);
   await f.context.close();
-  console.log('PASS saved revision-14 account: Solar appears, all ten editor destinations and four Organise pathways are available, phone controls fit, and the stored course arrangement stays unchanged.');
+  console.log('PASS saved revision-14 account: Solar appears, all ten editor destinations and five Organise pathways are available, phone controls fit, and the stored course arrangement stays unchanged.');
 } finally { await browser.close(); }
