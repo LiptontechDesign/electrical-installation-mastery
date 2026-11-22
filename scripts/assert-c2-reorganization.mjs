@@ -20,6 +20,11 @@ export const motorControlAdditions = json('./fixtures/motor-control-additions.js
 export const motorPracticalAdditions = json('./fixtures/c1-motor-practical-additions.json');
 export const solarAdditions = json('./fixtures/solar-pathway-additions.json');
 export const comprehensiveSolarAdditions = json('./fixtures/comprehensive-solar-additions.json');
+export const solarStudyOrder = json('./fixtures/solar-study-order.json');
+export const solarStudyLessonIds = new Set(Object.entries(solarStudyOrder.pathways).flatMap(([pathway, modules]) => {
+  const prefix = pathway.toLowerCase().replace(' ', '-');
+  return modules.flatMap(module => module.videos.map(video => `${prefix}-${Array.isArray(video) ? video[0] : video}`));
+}));
 export const pfcAdditions = json('./fixtures/c1-pfc-additions.json');
 export const c1MotorGapAdditions = json('./fixtures/c1-motor-gap-additions.json');
 export const c1ProtectionAdditions = json('./fixtures/c1-protection-additions.json');
@@ -47,7 +52,7 @@ export function assertC2Reorganization(course) {
   const actual = course.modules.filter(module => ['C2', 'Professional'].includes(module.path)).map(module => ({ id: module.id, path: module.path,
     lessons: module.lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })) }));
   assert.deepEqual(actual, expected, 'Preserve the reviewed C2 and Professional topic order');
-  const lessons = course.modules.flatMap(module => module.lessons);
+  const lessons = course.modules.filter(module => module.path !== 'PV3x' && module.path !== 'EPRA T3').flatMap(module => module.lessons);
   const identities = lessons.map(({ id, videoId, title, durationSeconds }) => ({ id, videoId, title, durationSeconds })).sort((a, b) => a.id.localeCompare(b.id));
   assert.deepEqual(identities, [...source.values()].sort((a, b) => a.id.localeCompare(b.id)), 'Preserve every original video and stable learner-state identity');
   for (const lesson of lessons) assert.equal(lesson.url, `https://www.youtube.com/watch?v=${lesson.videoId}`);

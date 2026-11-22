@@ -65,7 +65,7 @@ try {
   assert.equal(await f.page.locator('.course-path-select select').inputValue(), 'Solar Comprehensive');
   await openCourseTools(f.page);
   await f.page.getByRole('button', { name: 'Organise', exact: true }).click();
-  assert.deepEqual(await f.page.locator('[data-course-path]').evaluateAll(nodes => nodes.map(node => node.dataset.coursePath)), ['C2', 'C1', 'Solar', 'Solar Comprehensive', 'Professional']);
+  assert.deepEqual(await f.page.locator('[data-course-path]').evaluateAll(nodes => nodes.map(node => node.dataset.coursePath)), ['C2', 'C1', 'Solar', 'Solar Comprehensive', 'PV3x', 'EPRA T3', 'Professional']);
   await f.page.setViewportSize({ width: 320, height: 740 });
   if (!await f.page.locator('.course-map.drawer-open').count()) await f.page.getByRole('button', { name: 'Open course map', exact: true }).click();
   assert.equal(await f.page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);

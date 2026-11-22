@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { solarStudyLessonIds } from './assert-c2-reorganization.mjs';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
@@ -15,10 +16,10 @@ assert.equal(prior.curriculumRevision,10);assert.equal(upgraded.curriculumRevisi
 assert.equal(Object.values(prior.groups).flat().length,464,'Fixture is the actual published revision-10 state');
 assert.deepEqual(upgraded.groups,base.groups,'Existing accounts receive the exact revision-11 sequence');
 assert.deepEqual(prior,original);assert.deepEqual(parse(upgraded),upgraded);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!newIds.has(id)&&!generators.addedLessonIds.includes(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!solarStudyLessonIds.has(id) && !newIds.has(id)&&!generators.addedLessonIds.includes(id)&&!laterAdditionIds.has(id)).sort(),Object.values(prior.groups).flat().sort(),'Every existing occurrence survives once');
 for(const [id,ids] of Object.entries(prior.groups).filter(([id])=>!Object.hasOwn(update.previous,id)&&!Object.hasOwn(generators.previous,id)))assert.deepEqual(upgraded.groups[id],ids,'Untouched groups retain their exact order: '+id);
 for(const [id,ids] of Object.entries(update.current))assert.deepEqual(upgraded.groups[id],ids,'Published placement: '+id);
-assert.equal(c1.length, 216);assert.equal(view.allRows.length, 653);assert.equal(sections.length, 263);
+assert.equal(c1.length, 216);assert.equal(view.allRows.length, 768);assert.equal(sections.length, 299);
 assert.equal(sections.filter(s=>c1Modules.has(s.moduleId)).length, 117);
 for(const id of newIds){assert.ok(view.byId.has(id));assert.equal(required(id),true);}
 assert.equal(required('c1-wheatstone-bridge'),true);assert.equal(required('c1-lorenz-demonstration'),false);

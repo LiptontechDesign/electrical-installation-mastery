@@ -230,6 +230,8 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
   const location = lessonLocation.get(learner.activeLessonId) ?? lessonLocation.get(allLessons[0]?.id ?? '') ?? fallbackLocation;
   const activeLesson = location.module.lessons[location.lessonIndex];
+  const startSeconds = 'startSeconds' in activeLesson ? activeLesson.startSeconds ?? 0 : 0;
+  const endSeconds = 'endSeconds' in activeLesson ? activeLesson.endSeconds : undefined;
   const activeSection = sectionsByModule[location.module.id]?.find(section => section.id === courseRowsById.get(activeLesson.id)?.sectionId);
   const sectionIntroduction = location.module.path === 'C1' || activeSection?.lessonIds[0] === activeLesson.id ? activeSection?.description : undefined;
   const hasCoreLesson = lessonLookup.has(activeLesson.id);
@@ -571,7 +573,9 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
 
     const iframe = document.createElement('iframe');
     iframe.id = `youtube-player-${activeLesson.id}`;
-    iframe.src = playerSrc + (user ? '&start=' + (learnerRef.current.videoPositions[activeLesson.videoId] ?? 0) : '');
+    const savedPosition = user ? learnerRef.current.videoPositions[activeLesson.videoId] ?? 0 : 0;
+    const start = savedPosition >= startSeconds && (endSeconds === undefined || savedPosition < endSeconds) ? savedPosition : startSeconds;
+    iframe.src = playerSrc + (user || start ? `&start=${start}` : '') + (endSeconds === undefined ? '' : `&end=${endSeconds}`);
     iframe.title = activeLesson.title;
     iframe.allow = 'autoplay';
     iframe.allowFullscreen = true;
@@ -592,7 +596,7 @@ export default function CourseApp({ user }: { user: CourseUser | null }) {
       if (playerIframeRef.current === iframe) playerIframeRef.current = null;
       if (iframe.parentNode === host) host.removeChild(iframe);
     };
-  }, [view, playerSrc, activeLesson.id, activeLesson.title, activeLesson.videoId, user, supplementaryId]);
+  }, [view, playerSrc, activeLesson.id, activeLesson.title, activeLesson.videoId, startSeconds, endSeconds, user, supplementaryId]);
 
   useEffect(() => {
     if (view !== 'learn') return;

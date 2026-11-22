@@ -41,6 +41,42 @@ try {
     await f.context.close();
     console.log('PASS ' + (mobile ? '320px phone' : 'desktop') + ': public Solar filter, 31 embeds and continuous stage navigation, project order, no notes, overflow or guest tracking.');
   }
+  for (const mobile of [false, true]) {
+    const { context, page, errors, writes } = await fixture({ mobile, guest: true });
+    if (mobile) {
+      await page.setViewportSize({ width: 320, height: 740 });
+      await page.locator('.course-map').getByRole('button', { name: 'Close course map', exact: true }).click();
+    }
+    const filters = page.getByRole('group', { name: 'Filter course pathway' });
+    const pathways = [
+      ['PV3x', 'Solar PV Systems Foundations — TU Delft PV3x', 6, 47],
+      ['EPRA T3', 'Kenya EPRA T3 Exam Preparation — Written and Oral', 8, 68],
+    ];
+    for (const [path, title, moduleCount, videoCount] of pathways) {
+      await page.getByRole('button', { name: 'Course overview', exact: true }).click();
+      await filters.getByRole('button', { name: title, exact: true }).click();
+      assert.equal(await page.locator('.curriculum-modules > details').count(), moduleCount);
+      await page.getByRole('button', { name: 'Expand all', exact: true }).click();
+      assert.equal(await page.locator('.curriculum-lessons button:visible').count(), videoCount);
+      await page.locator('.curriculum-lessons button').first().click();
+      const first = catalog.modules.find(module => module.path === path).lessons[0];
+      await page.getByRole('heading', { name: first.title, exact: true }).waitFor();
+      assert.equal(await page.locator('.course-path-select select').inputValue(), path);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+    }
+    for (const [videoId, time, value] of [['Yxt72aDjFgY', 'start', '427'], ['3FjJ8Ozx9BQ', 'end', '289']]) {
+      await page.goto(origin + '/#learn/epra-t3-' + videoId);
+      await page.reload();
+      const iframe = page.locator(`.lesson-canvas iframe[src*="${videoId}"]`);
+      await iframe.waitFor();
+      assert.equal(new URL(await iframe.getAttribute('src')).searchParams.get(time), value);
+    }
+    assert.deepEqual(errors, []);
+    assert.deepEqual(writes, []);
+    await context.close();
+  }
+  console.log('PASS desktop and 320px: both added solar pathways use the existing course overview and player, with the selected EPRA playback ranges.');
+
   const f = await fixture({ state: prior });
   await f.page.goto(origin + '/#learn/' + lessons[0].id);
   await f.page.reload();
@@ -58,12 +94,12 @@ try {
   await dialog.getByRole('button', { name: 'Cancel', exact: true }).click();
   await openCourseTools(f.page);
   await f.page.getByRole('button', { name: 'Organise', exact: true }).click();
-  assert.deepEqual(await f.page.locator('[data-course-path]').evaluateAll(nodes => nodes.map(n => n.dataset.coursePath)), ['C2', 'C1', 'Solar', 'Solar Comprehensive', 'Professional']);
+  assert.deepEqual(await f.page.locator('[data-course-path]').evaluateAll(nodes => nodes.map(n => n.dataset.coursePath)), ['C2', 'C1', 'Solar', 'Solar Comprehensive', 'PV3x', 'EPRA T3', 'Professional']);
   await f.page.setViewportSize({ width: 320, height: 740 });
   if (!await f.page.locator('.course-map.drawer-open').count()) await f.page.getByRole('button', { name: 'Open course map', exact: true }).click();
   assert.equal(await f.page.locator('.course-path-switcher').evaluate(node => getComputedStyle(node).gridTemplateColumns.split(' ').length), 2);
   assert.equal(await f.page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   assert.deepEqual(f.state(), prior); assert.equal(f.writes.length, 0); assert.deepEqual(f.errors, []);
   await f.context.close();
-  console.log('PASS saved revision-14 account: Solar appears, all ten editor destinations and five Organise pathways are available, phone controls fit, and the stored course arrangement stays unchanged.');
+  console.log('PASS saved revision-14 account: Solar appears, all ten editor destinations and seven Organise pathways are available, phone controls fit, and the stored course arrangement stays unchanged.');
 } finally { await browser.close(); }

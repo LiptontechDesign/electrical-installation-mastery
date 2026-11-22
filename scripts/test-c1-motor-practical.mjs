@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { solarStudyLessonIds } from './assert-c2-reorganization.mjs';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 
@@ -21,10 +22,10 @@ assert.deepEqual(upgraded.groups, base.groups);
 assert.deepEqual(parse(upgraded), upgraded);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Preserve old section membership: ' + id);
 for (const key of ['revision', 'videos', 'itemRevisions', 'receipts', 'archivedLessonIds', 'deletedIds']) assert.deepEqual(upgraded[key], prior[key]);
-assert.deepEqual(view.allRows.filter(row => !added.has(row.id) && !later.has(row.id)).map(row => row.id).sort(), [...oldIds].sort(), 'All 541 prior occurrences retain their relative order');
-assert.equal(catalog.lessonCount, 621);
-assert.equal(view.allRows.length, 653);
-assert.equal(sections.length, 263);
+assert.deepEqual(view.allRows.filter(row => !solarStudyLessonIds.has(row.id) && !added.has(row.id) && !later.has(row.id)).map(row => row.id).sort(), [...oldIds].sort(), 'All 541 prior occurrences retain their relative order');
+assert.equal(catalog.lessonCount, 736);
+assert.equal(view.allRows.length, 768);
+assert.equal(sections.length, 299);
 assert.equal(view.allRows.filter(row => view.course.modules.find(m => m.id === row.moduleId).path === 'C1').length, 216);
 assert.equal(added.size, 5);
 assert.equal(update.addedSectionIds.length, 3);
@@ -69,7 +70,7 @@ const motorRows = view.allRows.filter(row => row.moduleId === 'module-07');
 assert.deepEqual(motorRows.map(row => row.displayNumber), motorRows.map((_, index) => index + 1));
 const marked = new Set(oldIds.filter((_, i) => i % 4 === 0));
 assert.equal(progressForVideos(added, marked).watched, 0);
-assert.deepEqual(progressForVideos(view.allRows.filter(row => !added.has(row.id) && !later.has(row.id)).map(row => row.id), marked), progressForVideos(oldIds, marked));
+assert.deepEqual(progressForVideos(view.allRows.filter(row => !solarStudyLessonIds.has(row.id) && !added.has(row.id) && !later.has(row.id)).map(row => row.id), marked), progressForVideos(oldIds, marked));
 
 const custom = structuredClone(prior);
 custom.revision = 91;

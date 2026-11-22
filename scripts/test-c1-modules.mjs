@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { solarStudyLessonIds } from './assert-c2-reorganization.mjs';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 
@@ -17,8 +18,8 @@ assert.deepEqual(prior, untouched, 'Reading the new curriculum never mutates the
 assert.deepEqual(upgraded.groups, base.groups);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every stable section retains its exact mixed row order: ' + id);
 assert.deepEqual(parse(upgraded), upgraded, 'Reloading the new revision is idempotent');
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !laterAdditionIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
-assert.equal(view.allRows.length, 653);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !solarStudyLessonIds.has(id) && !laterAdditionIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every previous video occurrence survives exactly once');
+assert.equal(view.allRows.length, 768);
 assert.equal(modules.length, 17);
 assert.deepEqual(modules.map(m => m.id), read('app/c1-pfc-update.json').moduleOrder);
 assert.deepEqual(modules.map(m => m.title), [
@@ -28,7 +29,7 @@ assert.deepEqual(modules.map(m => m.title), [
  'Periodic Inspection', 'Standby Generators: Connections and Operation', 'Fault Diagnosis',
 ]);
 assert.deepEqual(modules.map(m => m.stageNumber), Array.from({ length: 17 }, (_, i) => i + 1));
-assert.deepEqual(view.course.modules.map(m => m.number), Array.from({ length: 49 }, (_, i) => i + 1));
+assert.deepEqual(view.course.modules.map(m => m.number), Array.from({ length: 63 }, (_, i) => i + 1));
 for (const m of modules) {
  assert.ok(view.sectionsByModule[m.id].length > 0 && view.allRows.some(r => r.moduleId === m.id), 'Each real module has sections and videos');
  assert.equal(m.durationSeconds, m.lessons.reduce((n, l) => n + l.durationSeconds, 0));
@@ -60,7 +61,7 @@ assert.match(view.label('c1-ac-waveforms'), /^C1 · Module 01 /);
 assert.match(view.label('c1-generator-building-integration'), /^C1 · Module 16 /);
 for (const video of upgraded.videos) assert.equal(video.moduleId, view.byId.get(video.id)?.moduleId, 'Bundled video metadata follows its actual section');
 const watched = new Set(Object.values(prior.groups).flat().filter((_, i) => i % 7 === 0));
-assert.deepEqual(progressForVideos(view.allRows.filter(r => !laterAdditionIds.has(r.id)).map(r => r.id), watched), progressForVideos(Object.values(prior.groups).flat(), watched), 'Existing videos retain their watched/total counts after the additive series');
+assert.deepEqual(progressForVideos(view.allRows.filter(r => !solarStudyLessonIds.has(r.id) && !laterAdditionIds.has(r.id)).map(r => r.id), watched), progressForVideos(Object.values(prior.groups).flat(), watched), 'Existing videos retain their watched/total counts after the additive series');
 
 // Exercise saved custom order, nested private videos, archives, removals,
 // explicit destinations and an Undo receipt created before the module split.
