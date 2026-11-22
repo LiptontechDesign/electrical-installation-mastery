@@ -1,16 +1,36 @@
 import assert from 'node:assert/strict';
 import { build } from 'esbuild';
-import { assertC2Reorganization, earthElectrodeAdditions, jpelectricAdditions, surgeProtectionAdditions, designLearningAdditions, connectedProcessAdditions, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions, c1WoundRotorAdditions, motorControlAdditions, motorPracticalAdditions, solarAdditions, pfcAdditions, comprehensiveSolarAdditions, overviewIds } from './assert-c2-reorganization.mjs';
+import { assertC2Reorganization, earthElectrodeAdditions, jpelectricAdditions, surgeProtectionAdditions, designLearningAdditions, connectedProcessAdditions, c1LearningAdditions, c1GapFillAdditions, c1FlowAdditions, c1ApplicationAdditions, c1GeneratorAdditions, c1CableDesignAdditions, c1RashidAdditions, c1ProtectionAdditions, c1MotorGapAdditions, c1WoundRotorAdditions, motorControlAdditions, motorPracticalAdditions, solarAdditions, pfcAdditions, comprehensiveSolarAdditions, solarStudyOrder, overviewIds } from './assert-c2-reorganization.mjs';
 await build({ entryPoints: ['app/course-curriculum.ts', 'app/learning-sections.ts'], outdir: 'work/curriculum-tests', bundle: true, platform: 'node', format: 'esm' });
 const { default: course } = await import('../work/curriculum-tests/course-curriculum.js');
 const { sectionsByModule } = await import('../work/curriculum-tests/learning-sections.js');
 const lessons = course.modules.flatMap(courseModule => courseModule.lessons);
-assert.equal(course.modules.length, 49);
-assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length + surgeProtectionAdditions.length + designLearningAdditions.length + connectedProcessAdditions.length + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length + c1ProtectionAdditions.length + c1MotorGapAdditions.length + c1WoundRotorAdditions.length + motorControlAdditions.length + motorPracticalAdditions.length + solarAdditions.length + pfcAdditions.length + comprehensiveSolarAdditions.length);
+assert.equal(course.modules.length, 63);
+assert.equal(lessons.length, 296 + earthElectrodeAdditions.length + jpelectricAdditions.length + surgeProtectionAdditions.length + designLearningAdditions.length + connectedProcessAdditions.length + c1LearningAdditions.length + c1GapFillAdditions.length + c1FlowAdditions.length + c1ApplicationAdditions.length + c1GeneratorAdditions.length + c1CableDesignAdditions.length + c1RashidAdditions.length + c1ProtectionAdditions.length + c1MotorGapAdditions.length + c1WoundRotorAdditions.length + motorControlAdditions.length + motorPracticalAdditions.length + solarAdditions.length + pfcAdditions.length + comprehensiveSolarAdditions.length + 47 + 68);
 assert.equal(course.lessonCount, lessons.length);
 assert.equal(new Set(lessons.map(lesson => lesson.id)).size, lessons.length);
-const focusedLessons = lessons.filter(lesson => !overviewIds.has(lesson.id));
+const focusedLessons = lessons.filter(lesson => !overviewIds.has(lesson.id) && !Object.hasOwn(solarStudyOrder.repeats, lesson.id));
 assert.equal(new Set(focusedLessons.map(lesson => lesson.videoId)).size, focusedLessons.length);
+const byId = new Map(lessons.map(lesson => [lesson.id, lesson]));
+for (const [newId, existingId] of Object.entries(solarStudyOrder.repeats)) {
+  assert.equal(byId.get(newId).videoId, byId.get(existingId).videoId, 'Explicit repeats must use the same YouTube video');
+}
+for (const [pathway, expected] of Object.entries(solarStudyOrder.pathways)) {
+  const modules = course.modules.filter(module => module.path === pathway);
+  const counts = { PV3x: 47, 'EPRA T3': 68 };
+  const videos = modules.flatMap(module => module.lessons);
+  assert.equal(videos.length, counts[pathway]);
+  assert.equal(new Set(videos.map(lesson => lesson.videoId)).size, videos.length);
+  assert.deepEqual(modules.map((module, index) => {
+    assert.equal(module.stageNumber, index + 1);
+    return { id: module.id, videos: module.lessons.map(lesson => {
+      assert.equal(lesson.url, `https://www.youtube.com/watch?v=${lesson.videoId}`);
+      assert.ok(lesson.instructor && lesson.durationSeconds > 0 && !lesson.studyNote);
+      if (lesson.endSeconds) assert.equal(lesson.durationSeconds, lesson.endSeconds - (lesson.startSeconds ?? 0));
+      return lesson.startSeconds || lesson.endSeconds ? [lesson.videoId, lesson.startSeconds ?? 0, lesson.endSeconds ?? null] : lesson.videoId;
+    }) };
+  }), expected, `Preserve the ${pathway} study order and selected YouTube segments`);
+}
 assertC2Reorganization(course);
 for (const courseModule of course.modules) {
   assert.deepEqual(sectionsByModule[courseModule.id].flatMap(section => section.lessonIds), courseModule.lessons.map(lesson => lesson.id));

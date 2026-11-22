@@ -3,6 +3,8 @@
 [data-pathway="Professional"] { --pathway-accent: #b27925; }
 [data-pathway="Solar"] { --pathway-accent: #17785b; }
 [data-pathway="Solar Comprehensive"] { --pathway-accent: #a15c18; }
+[data-pathway="PV3x"] { --pathway-accent: #157c89; }
+[data-pathway="EPRA T3"] { --pathway-accent: #a65068; }
 .module-card[data-pathway], .module-accordion[data-pathway] { border-inline-start: 3px solid var(--pathway-accent); }
 .module-accordion[data-pathway] { padding-inline-start: 5px; }
 .module-card[data-pathway] .module-card-head>span, .module-accordion[data-pathway] .module-index { background: color-mix(in srgb, var(--pathway-accent) 12%, var(--white)); color: var(--ink); }
@@ -27,6 +29,8 @@
   [data-pathway="Professional"] { --pathway-accent: #e6ba73; }
   [data-pathway="Solar"] { --pathway-accent: #7bd4ae; }
   [data-pathway="Solar Comprehensive"] { --pathway-accent: #efbd7a; }
+  [data-pathway="PV3x"] { --pathway-accent: #74ccd7; }
+  [data-pathway="EPRA T3"] { --pathway-accent: #f0a7bc; }
 }
 
 @media (max-width: 700px) { .lesson-topline { flex-wrap: wrap; gap: 8px; } }

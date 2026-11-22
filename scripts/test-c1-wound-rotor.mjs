@@ -1,4 +1,4 @@
-import { motorControlAdditions, motorPracticalAdditions, solarAdditions, pfcAdditions, comprehensiveSolarAdditions } from './assert-c2-reorganization.mjs';
+import { solarStudyLessonIds, motorControlAdditions, motorPracticalAdditions, solarAdditions, pfcAdditions, comprehensiveSolarAdditions } from './assert-c2-reorganization.mjs';
 const motorControlIds = new Set([...motorControlAdditions, ...motorPracticalAdditions, ...solarAdditions, ...pfcAdditions, ...comprehensiveSolarAdditions].map(v => v.id));
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -13,11 +13,11 @@ const evidence=read('docs/c1-wound-rotor-video-review.json'),catalog=read('app/v
 const core=new Map(catalog.modules.flatMap(m=>m.lessons).map(l=>[l.id,l])),upgraded=parse(prior),view=snapshot(upgraded),oldIds=Object.values(prior.groups).flat();
 assert.equal(oldIds.length,515,'Actual published state before these two lessons');
 assert.deepEqual(prior,original);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(parse(upgraded),upgraded);assert.equal(upgraded.curriculumRevision,15);
-assert.equal(catalog.lessonCount,621);assert.equal(view.allRows.length,653);assert.equal(sections.length,263);
+assert.equal(catalog.lessonCount,736);assert.equal(view.allRows.length,768);assert.equal(sections.length,299);
 for(const [id,ids] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],ids,'Every original section membership remains intact: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
 const newIds=new Set(update.addedLessonIds);
-assert.deepEqual(view.allRows.filter(r=>!newIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id).sort(),[...oldIds].sort(),'Every prior occurrence keeps its relative order');
+assert.deepEqual(view.allRows.filter(r=>!solarStudyLessonIds.has(r.id) && !newIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id).sort(),[...oldIds].sort(),'Every prior occurrence keeps its relative order');
 const section=sections.find(s=>s.id===update.sectionId);
 assert.equal(section.moduleId,'c1-motors');assert.equal(section.number,7);assert.equal(section.lessonIds.length,2);
 assert.deepEqual(section.lessonIds.map(id=>core.get(id).videoId),['iSrt-hx9t5U','F9f4i7LtTpE'],'Exactly the supplied videos, in the supplied teaching order');
@@ -37,7 +37,7 @@ for(const v of evidence.videos){
 }
 assert.match(core.get(section.lessonIds[0]).studyNote,/not universally non-reversible/);assert.match(core.get(section.lessonIds[1]).studyNote,/simplified model/);
 const marked=new Set(['c1-wound-rotor-starting','p07-induction']);
-assert.equal(progressForVideos(newIds,marked).watched,0);assert.deepEqual(progressForVideos(oldIds,marked),progressForVideos(view.allRows.filter(r=>!newIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id),marked));
+assert.equal(progressForVideos(newIds,marked).watched,0);assert.deepEqual(progressForVideos(oldIds,marked),progressForVideos(view.allRows.filter(r=>!solarStudyLessonIds.has(r.id) && !newIds.has(r.id)&&!motorControlIds.has(r.id)).map(r=>r.id),marked));
 const custom=structuredClone(prior);custom.revision=91;custom.groups['c1-motors-wound-rotor']=[];custom.groups['module-01-section-1'].push('c1-wound-rotor-starting');custom.itemRevisions['c1-wound-rotor-starting']=91;
 const personal=(id,anchorId,videoId,archived=false)=>({id,anchorId,videoId,title:id,instructor:'My teacher',moduleId:'c1-motors',position:'after',archived,placementRevision:13,updatedAt:'2026-10-23T08:00:00Z'});
 const copies=evidence.videos.map((v,i)=>personal('wound-private-'+i,'c1-motors-wound-rotor',v.videoId,i===0));

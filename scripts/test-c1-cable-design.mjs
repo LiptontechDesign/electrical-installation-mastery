@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { solarStudyLessonIds } from './assert-c2-reorganization.mjs';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 
@@ -23,8 +24,8 @@ assert.deepEqual(upgraded.itemRevisions, prior.itemRevisions);
 assert.deepEqual(upgraded.receipts, prior.receipts);
 assert.equal(upgraded.revision, prior.revision);
 for (const [id, ids] of Object.entries(prior.groups)) assert.deepEqual(upgraded.groups[id], ids, 'Every previous section retains its exact row order: ' + id);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !addedIds.has(id) && !laterIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every original video occurrence survives once');
-assert.equal(view.allRows.length, 653);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id => !solarStudyLessonIds.has(id) && !addedIds.has(id) && !laterIds.has(id)).sort(), Object.values(prior.groups).flat().sort(), 'Every original video occurrence survives once');
+assert.equal(view.allRows.length, 768);
 assert.equal(view.allRows.filter(r => view.course.modules.find(m => m.id === r.moduleId).path === 'C1').length, 216);
 assert.deepEqual(section.lessonIds, additions.map(v => v.id));
 assert.equal(section.number, 5);

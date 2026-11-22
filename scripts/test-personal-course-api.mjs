@@ -124,8 +124,8 @@ globalThis.editorTestDocuments.set('reviewed-curriculum:personal-course', struct
 globalThis.editorTestDocuments.set('reviewed-curriculum:learner-state', structuredClone(priorLearning));
 const reviewedCourse = await (await api.GET()).json();
 assert.equal(reviewedCourse.curriculumRevision, 15);
-assert.equal(Object.keys(reviewedCourse.groups).length, 263);
-assert.equal(Object.values(reviewedCourse.groups).flat().length, 653);
+assert.equal(Object.keys(reviewedCourse.groups).length, 299);
+assert.equal(Object.values(reviewedCourse.groups).flat().length, 768);
 assert.ok(reviewedCourse.groups['module-04-conduit-lighting'].includes('p10-l04'));
 assert.ok(reviewedCourse.groups['module-09-rcd-leakage'].includes('p08-l13'));
 assert.deepEqual(globalThis.editorTestDocuments.get('reviewed-curriculum:personal-course'), priorDocument, 'A full curriculum upgrade on read performs no database write');

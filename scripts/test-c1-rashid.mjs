@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { solarStudyLessonIds } from './assert-c2-reorganization.mjs';
 import fs from 'node:fs';
 import { build } from 'esbuild';
 
@@ -17,8 +18,8 @@ assert.equal(prior.curriculumRevision,13);assert.equal(upgraded.curriculumRevisi
 assert.deepEqual(prior,untouched);assert.deepEqual(upgraded.groups,base.groups);assert.deepEqual(parse(upgraded),upgraded);
 for(const [id,ids] of Object.entries(prior.groups))assert.deepEqual(upgraded.groups[id],ids,'Existing section order remains intact: '+id);
 for(const key of ['revision','videos','itemRevisions','receipts','archivedLessonIds','deletedIds'])assert.deepEqual(upgraded[key],prior[key]);
-assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!addedIds.has(id)&&!laterIds.has(id)).sort(),Object.values(prior.groups).flat().sort());
-assert.equal(view.allRows.length,653);assert.equal(sections.length,263);
+assert.deepEqual(Object.values(upgraded.groups).flat().filter(id=>!solarStudyLessonIds.has(id) && !addedIds.has(id)&&!laterIds.has(id)).sort(),Object.values(prior.groups).flat().sort());
+assert.equal(view.allRows.length,768);assert.equal(sections.length,299);
 assert.equal(view.allRows.filter(r=>view.course.modules.find(m=>m.id===r.moduleId).path==='C1').length,216);
 const placement=[['c1-rashid-capacitor-bank','c1-pfc-bank-protection','c1-pfc',5],['c1-rashid-building-design','c1-building-design-capstone','c1-installation',1],['c1-rashid-mdb-transfer','c1-standby-mdb-transfer','c1-standby',2]];
 for(const [id,sectionId,moduleId,number] of placement){
@@ -30,7 +31,7 @@ for(const [id,sectionId,moduleId,number] of placement){
 const order=view.allRows.map(r=>r.id),before=(a,b)=>assert.ok(order.indexOf(a)>=0&&order.indexOf(a)<order.indexOf(b),a+' precedes '+b);
 for(const pair of [['c1-pfc-unity-bank','c1-rashid-capacitor-bank'],['c1-rashid-capacitor-bank','c1-complex-number-foundation'],['c1-cpc-size-foundation','c1-rashid-building-design'],['c1-rashid-building-design','p07-l08'],['c1-generator-neutral-transfer','c1-rashid-mdb-transfer'],['c1-generator-transfer-operation','c1-rashid-mdb-transfer']])before(...pair);
 const watched=new Set(['p06-l05','c1-pfc-unity-bank','c1-generator-transfer-operation']);
-assert.deepEqual(progressForVideos(view.allRows.filter(r=>!addedIds.has(r.id)&&!laterIds.has(r.id)).map(r=>r.id),watched),progressForVideos(Object.values(prior.groups).flat(),watched));
+assert.deepEqual(progressForVideos(view.allRows.filter(r=>!solarStudyLessonIds.has(r.id) && !addedIds.has(r.id)&&!laterIds.has(r.id)).map(r=>r.id),watched),progressForVideos(Object.values(prior.groups).flat(),watched));
 assert.equal(evidence.selectedCount,3);assert.equal(evidence.videos.length,6);assert.equal(evidence.totalAddedDurationSeconds,3010);
 for(const v of evidence.videos){
  assert.ok([v.transcript.language].flat().every(l=>/^en(?:-|$)/.test(l)));
